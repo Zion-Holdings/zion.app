@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-18T16:54:06.525Z",
-  "pagesScanned": 3050,
+  "generatedAt": "2025-08-18T16:56:37.029Z",
+  "pagesScanned": 3070,
   "items": [
     {
       "route": "/404",
@@ -3861,6 +3861,26 @@
       }
     },
     {
+      "route": "/reports/blueprints/blueprint-2025-08-18-165408",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/blueprints/blueprint-2025-08-18-165520",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Reference Architecture — Autonomous Content Mesh",
+        "description": "Reference Architecture — Autonomous Content Mesh — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/cases/case-2025-08-18-122902",
       "missing": [
         "og:image"
@@ -7562,6 +7582,26 @@
     },
     {
       "route": "/reports/cases/case-2025-08-18-165129",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Cloud Improving",
+        "description": "Case Study — Cloud Improving — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/case-2025-08-18-165409",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study — Cloud Improving",
+        "description": "Case Study — Cloud Improving — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/cases/case-2025-08-18-165520",
       "missing": [
         "og:image"
       ],
@@ -11281,6 +11321,26 @@
       }
     },
     {
+      "route": "/reports/guides/guide-2025-08-18-165409",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Cloud Improving Implementation",
+        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/guides/guide-2025-08-18-165520",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide — Cloud Improving Implementation",
+        "description": "Guide — Cloud Improving Implementation — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/innovation-2025-08-18-1229",
       "missing": [
         "og:image"
@@ -13318,6 +13378,26 @@
       "suggestion": {
         "title": "Reference Architecture — MLOps & Observability",
         "description": "Reference Architecture — MLOps & Observability — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/innovation-2025-08-18-1654",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Capability Map — Data Engineering Pipelines",
+        "description": "Capability Map — Data Engineering Pipelines — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/innovation-2025-08-18-1655",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Case Study Template — DevSecOps for AI",
+        "description": "Case Study Template — DevSecOps for AI — auto-suggested description"
       }
     },
     {
@@ -15371,6 +15451,26 @@
       }
     },
     {
+      "route": "/reports/innovations/insight-2025-08-18-1654",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Blueprint: Agent Ops",
+        "description": "Blueprint: Agent Ops — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-18-1655",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pilot Plan: MLOps",
+        "description": "Pilot Plan: MLOps — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-18T12-29",
       "missing": [
         "og:image"
@@ -17378,6 +17478,26 @@
       "suggestion": {
         "title": "Innovation Insight — 2025-08-18 16-51",
         "description": "Innovation Insight — 2025-08-18 16-51 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-18T16-54",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-18 16-54",
+        "description": "Innovation Insight — 2025-08-18 16-54 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-18T16-55",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Innovation Insight — 2025-08-18 16-55",
+        "description": "Innovation Insight — 2025-08-18 16-55 — auto-suggested description"
       }
     },
     {
@@ -21111,6 +21231,26 @@
       }
     },
     {
+      "route": "/reports/patterns/pattern-2025-08-18-165409",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Automation Trends 2025",
+        "description": "Pattern — Automation Trends 2025 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/patterns/pattern-2025-08-18-165520",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pattern — Automation Trends 2025",
+        "description": "Pattern — Automation Trends 2025 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/playbooks/playbook-2025-08-18-122902",
       "missing": [
         "og:image"
@@ -24602,6 +24742,26 @@
     },
     {
       "route": "/reports/playbooks/playbook-2025-08-18-165129",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-18-165409",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Autonomous Delivery",
+        "description": "Playbook — Autonomous Delivery — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/playbooks/playbook-2025-08-18-165521",
       "missing": [
         "og:image"
       ],
@@ -28451,6 +28611,26 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-18-1654",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Performance Tuning Guide — Agentic Workflows (2025-08-18 16:54 UTC)",
+        "description": "Autonomous Performance Tuning Guide — Agentic Workflows (2025-08-18 16:54 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-1655",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Playbook — AI Service Design (2025-08-18 16:55 UTC)",
+        "description": "Autonomous Playbook — AI Service Design (2025-08-18 16:55 UTC) — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-18T12-29",
       "missing": [
         "og:image"
@@ -29801,506 +29981,6 @@
       }
     },
     {
-      "route": "/reports/updates/update-2025-08-18T15-25",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 15-25",
-        "description": "Autonomous Update — 2025-08-18 15-25 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T15-27",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 15-27",
-        "description": "Autonomous Update — 2025-08-18 15-27 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T15-28",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 15-28",
-        "description": "Autonomous Update — 2025-08-18 15-28 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T15-29",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 15-29",
-        "description": "Autonomous Update — 2025-08-18 15-29 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T15-30",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 15-30",
-        "description": "Autonomous Update — 2025-08-18 15-30 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T15-31",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 15-31",
-        "description": "Autonomous Update — 2025-08-18 15-31 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T15-32",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 15-32",
-        "description": "Autonomous Update — 2025-08-18 15-32 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T15-33",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 15-33",
-        "description": "Autonomous Update — 2025-08-18 15-33 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T15-34",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 15-34",
-        "description": "Autonomous Update — 2025-08-18 15-34 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T15-36",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 15-36",
-        "description": "Autonomous Update — 2025-08-18 15-36 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T15-37",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 15-37",
-        "description": "Autonomous Update — 2025-08-18 15-37 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T15-38",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 15-38",
-        "description": "Autonomous Update — 2025-08-18 15-38 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T15-39",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 15-39",
-        "description": "Autonomous Update — 2025-08-18 15-39 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T15-40",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 15-40",
-        "description": "Autonomous Update — 2025-08-18 15-40 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T15-41",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 15-41",
-        "description": "Autonomous Update — 2025-08-18 15-41 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T15-42",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 15-42",
-        "description": "Autonomous Update — 2025-08-18 15-42 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T15-43",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 15-43",
-        "description": "Autonomous Update — 2025-08-18 15-43 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T15-44",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 15-44",
-        "description": "Autonomous Update — 2025-08-18 15-44 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T15-45",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 15-45",
-        "description": "Autonomous Update — 2025-08-18 15-45 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T15-48",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 15-48",
-        "description": "Autonomous Update — 2025-08-18 15-48 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T15-49",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 15-49",
-        "description": "Autonomous Update — 2025-08-18 15-49 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T15-50",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 15-50",
-        "description": "Autonomous Update — 2025-08-18 15-50 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T15-51",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 15-51",
-        "description": "Autonomous Update — 2025-08-18 15-51 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T15-52",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 15-52",
-        "description": "Autonomous Update — 2025-08-18 15-52 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T15-53",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 15-53",
-        "description": "Autonomous Update — 2025-08-18 15-53 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T15-54",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 15-54",
-        "description": "Autonomous Update — 2025-08-18 15-54 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T15-55",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 15-55",
-        "description": "Autonomous Update — 2025-08-18 15-55 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T15-58",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 15-58",
-        "description": "Autonomous Update — 2025-08-18 15-58 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T15-59",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 15-59",
-        "description": "Autonomous Update — 2025-08-18 15-59 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T16-00",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 16-00",
-        "description": "Autonomous Update — 2025-08-18 16-00 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T16-01",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 16-01",
-        "description": "Autonomous Update — 2025-08-18 16-01 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T16-02",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 16-02",
-        "description": "Autonomous Update — 2025-08-18 16-02 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T16-03",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 16-03",
-        "description": "Autonomous Update — 2025-08-18 16-03 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T16-04",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 16-04",
-        "description": "Autonomous Update — 2025-08-18 16-04 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T16-05",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 16-05",
-        "description": "Autonomous Update — 2025-08-18 16-05 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T16-07",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 16-07",
-        "description": "Autonomous Update — 2025-08-18 16-07 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T16-08",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 16-08",
-        "description": "Autonomous Update — 2025-08-18 16-08 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T16-09",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 16-09",
-        "description": "Autonomous Update — 2025-08-18 16-09 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T16-10",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 16-10",
-        "description": "Autonomous Update — 2025-08-18 16-10 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T16-12",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 16-12",
-        "description": "Autonomous Update — 2025-08-18 16-12 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T16-13",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 16-13",
-        "description": "Autonomous Update — 2025-08-18 16-13 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T16-14",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 16-14",
-        "description": "Autonomous Update — 2025-08-18 16-14 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T16-15",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 16-15",
-        "description": "Autonomous Update — 2025-08-18 16-15 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T16-18",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 16-18",
-        "description": "Autonomous Update — 2025-08-18 16-18 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T16-19",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 16-19",
-        "description": "Autonomous Update — 2025-08-18 16-19 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T16-20",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 16-20",
-        "description": "Autonomous Update — 2025-08-18 16-20 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T16-22",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 16-22",
-        "description": "Autonomous Update — 2025-08-18 16-22 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T16-24",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 16-24",
-        "description": "Autonomous Update — 2025-08-18 16-24 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T16-25",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 16-25",
-        "description": "Autonomous Update — 2025-08-18 16-25 — auto-suggested description"
-      }
-    },
-    {
-      "route": "/reports/updates/update-2025-08-18T16-26",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 16-26",
-        "description": "Autonomous Update — 2025-08-18 16-26 — auto-suggested description"
-      }
-    },
-    {
       "route": "/reports/updates/update-2025-08-18T16-28",
       "missing": [
         "og:image"
@@ -30458,6 +30138,26 @@
       "suggestion": {
         "title": "Autonomous Update — 2025-08-18 16-51",
         "description": "Autonomous Update — 2025-08-18 16-51 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18T16-54",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-18 16-54",
+        "description": "Autonomous Update — 2025-08-18 16-54 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18T16-55",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-18 16-55",
+        "description": "Autonomous Update — 2025-08-18 16-55 — auto-suggested description"
       }
     },
     {
