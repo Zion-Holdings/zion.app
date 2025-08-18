@@ -8,7 +8,10 @@ export default function UltraCasePage() {
         <meta name="description" content="Real-world case study demonstrating ultra-fast development success." />
         <meta name="keywords" content="case study, success story, development, ultra-fast, results" />
         <link rel="canonical" href="https://ziontechgroup.com/reports/cases/ultra-1755541822025-9rtzzu" />
-      </Head>
+      
+        <meta property="og:title" content="Case Study: Real-time data processing Success" />
+        <meta property="og:description" content="Case Study: Real-time data processing Success — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       <main className="container mx-auto px-6 py-12 prose prose-invert">
         <h1 className="text-4xl font-extrabold text-center mb-8">Case Study: Real-time data processing Success</h1>
         
