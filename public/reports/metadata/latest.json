@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-18T17:39:01.241Z",
-  "pagesScanned": 3443,
+  "generatedAt": "2025-08-18T17:41:01.801Z",
+  "pagesScanned": 3450,
   "items": [
     {
       "route": "/404",
@@ -14551,6 +14551,26 @@
       }
     },
     {
+      "route": "/reports/innovations/innovation-2025-08-18-1739",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Service Blueprint — Edge AI & IoT",
+        "description": "Service Blueprint — Edge AI & IoT — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/innovation-2025-08-18-1740",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Playbook — Evaluation & Safety",
+        "description": "Playbook — Evaluation & Safety — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/innovations/insight-2025-08-18-1229",
       "missing": [
         "og:image"
@@ -16868,6 +16888,26 @@
       "suggestion": {
         "title": "Checklist: AI QA & Eval",
         "description": "Checklist: AI QA & Eval — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-18-1739",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Guide: Edge AI",
+        "description": "Guide: Edge AI — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/innovations/insight-2025-08-18-1740",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Pilot Plan: Edge AI",
+        "description": "Pilot Plan: Edge AI — auto-suggested description"
       }
     },
     {
@@ -29851,6 +29891,19 @@
       }
     },
     {
+      "route": "/reports/updates/update-2025-08-18-1441",
+      "missing": [
+        "og:title",
+        "og:description",
+        "og:image",
+        "twitter:card"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-18 14:41",
+        "description": "Autonomous Update — 2025-08-18 14:41 — auto-suggested description"
+      }
+    },
+    {
       "route": "/reports/updates/update-2025-08-18-1442",
       "missing": [
         "og:image"
@@ -31218,6 +31271,26 @@
       "suggestion": {
         "title": "Autonomous Security Hardening Guide — AI Service Design (2025-08-18 17:38 UTC)",
         "description": "Autonomous Security Hardening Guide — AI Service Design (2025-08-18 17:38 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-1739",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Capability Map — Evaluation & Safety (2025-08-18 17:39 UTC)",
+        "description": "Autonomous Capability Map — Evaluation & Safety (2025-08-18 17:39 UTC) — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-1740",
+      "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Playbook — Vision & Multimodal (2025-08-18 17:40 UTC)",
+        "description": "Autonomous Playbook — Vision & Multimodal (2025-08-18 17:40 UTC) — auto-suggested description"
       }
     },
     {
