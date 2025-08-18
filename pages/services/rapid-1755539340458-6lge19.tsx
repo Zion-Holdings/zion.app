@@ -8,7 +8,10 @@ export default function ServicePage() {
         <meta name="description" content="Professional machine learning services to accelerate your business growth and digital transformation." />
         <meta name="keywords" content="machine learning, services, technology, business, digital transformation" />
         <link rel="canonical" href="https://ziontechgroup.com/services/rapid-1755539340458-6lge19" />
-      </Head>
+      
+        <meta property="og:title" content="Machine Learning" />
+        <meta property="og:description" content="Machine Learning — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       <main className="container mx-auto px-6 py-12 prose prose-invert">
         <h1 className="text-4xl font-extrabold text-center mb-8">Machine Learning</h1>
         
