@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-08-18T07:35:03.522Z",
-  "pagesScanned": 8808,
+  "generatedAt": "2025-08-18T07:49:01.741Z",
+  "pagesScanned": 8807,
   "items": [
     {
       "route": "/404",
@@ -87641,14 +87641,24 @@
     {
       "route": "/reports/updates/update-2025-08-18-0435",
       "missing": [
+        "og:image"
+      ],
+      "suggestion": {
+        "title": "Autonomous Update — 2025-08-18 04:35",
+        "description": "Autonomous Update — 2025-08-18 04:35 — auto-suggested description"
+      }
+    },
+    {
+      "route": "/reports/updates/update-2025-08-18-0449",
+      "missing": [
         "og:title",
         "og:description",
         "og:image",
         "twitter:card"
       ],
       "suggestion": {
-        "title": "Autonomous Update — 2025-08-18 04:35",
-        "description": "Autonomous Update — 2025-08-18 04:35 — auto-suggested description"
+        "title": "Autonomous Update — 2025-08-18 04:49",
+        "description": "Autonomous Update — 2025-08-18 04:49 — auto-suggested description"
       }
     },
     {
@@ -88063,30 +88073,6 @@
       "suggestion": {
         "title": "Search",
         "description": "Search — auto-suggested description"
-      }
-    },
-    {
-      "route": "/services/[slug]",
-      "missing": [
-        "og:image"
-      ],
-      "suggestion": {
-        "title": "{service.title}",
-        "description": "{service.title} — auto-suggested description"
-      }
-    },
-    {
-      "route": "/services/",
-      "missing": [
-        "description",
-        "og:title",
-        "og:description",
-        "og:image",
-        "twitter:card"
-      ],
-      "suggestion": {
-        "title": "Services",
-        "description": "Services — auto-suggested description"
       }
     },
     {
