@@ -64,7 +64,7 @@ jobs:
           jq -r 'to_entries[] | "- \(.key): \(.value.current) → \(.value.latest)"' outdated-deps.json >> update-report.md || echo "No updates available" >> update-report.md
       - name: Create Pull Request
         if: steps.check-deps.outputs.outdated_count > '0'
-        uses: peter-evans/create-pull-request@v5
+        uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: 'chore: update dependencies'
