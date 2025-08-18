@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T18:45:50.449Z",
+  "timestamp": "2025-08-18T18:47:12.035Z",
   "totalPackages": 0,
   "outdatedPackages": {
     "@testing-library/react": {
@@ -42,14 +42,6 @@
       "priority": "medium",
       "securityRisk": false
     },
-    "lucide-react": {
-      "current": "0.539.0",
-      "wanted": "0.539.0",
-      "latest": "0.540.0",
-      "updateType": "minor",
-      "priority": "high",
-      "securityRisk": false
-    },
     "next": {
       "current": "14.2.31",
       "wanted": "14.2.31",
@@ -84,21 +76,12 @@
     }
   },
   "securityIssues": {},
-  "healthScore": 60,
+  "healthScore": 70,
   "recommendations": [],
   "criticalIssues": [],
   "updatePlan": {
     "immediate": [],
-    "scheduled": [
-      {
-        "package": "lucide-react",
-        "from": "0.539.0",
-        "to": "0.540.0",
-        "type": "minor",
-        "priority": "high",
-        "securityRisk": false
-      }
-    ],
+    "scheduled": [],
     "manual": [
       {
         "package": "@testing-library/react",
@@ -174,9 +157,9 @@
       }
     ],
     "estimated": {
-      "time": 2,
+      "time": 0,
       "risk": "low",
-      "packages": 1
+      "packages": 0
     }
   }
 }
