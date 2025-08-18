@@ -3,7 +3,7 @@ name: Cloud Marketing Automations
 on:
   workflow_dispatch: null
   schedule:
-    - cron: 0 2 * * *
+    - cron: '0 2 * * *'
 permissions:
   contents: write
   pull-requests: write
