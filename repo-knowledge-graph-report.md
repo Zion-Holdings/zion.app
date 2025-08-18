@@ -1,19 +1,11 @@
 # repo-knowledge-graph Report
 
-<<<<<<< Updated upstream
-Generated: 2025-08-18T17:15:34.535Z
-=======
-Generated: 2025-08-18T17:16:11.008Z
->>>>>>> Stashed changes
+Generated: 2025-08-18T17:16:29.284Z
 
 ## Status
 - Task: repo-knowledge-graph
 - Status: Completed
-<<<<<<< Updated upstream
-- Timestamp: 2025-08-18T17:15:34.535Z
-=======
-- Timestamp: 2025-08-18T17:16:11.008Z
->>>>>>> Stashed changes
+- Timestamp: 2025-08-18T17:16:29.284Z
 
 ## Next Steps
 - Implement actual repo-knowledge-graph functionality
