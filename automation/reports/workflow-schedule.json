@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T05:46:26.552Z",
+  "timestamp": "2025-08-18T05:47:41.444Z",
   "critical": [
     {
       "name": "ci-self-heal.yml",
@@ -64,7 +64,7 @@
       "priority": "critical",
       "resourceIntensity": "medium",
       "estimatedDuration": 30,
-      "concurrentJobs": 7,
+      "concurrentJobs": 5,
       "runnerRequirements": {
         "runner": "ubuntu-latest",
         "size": "standard",
@@ -72,10 +72,10 @@
       },
       "dependencies": [],
       "triggers": [
-        "schedule",
-        "workflow_dispatch"
+        "# schedule",
+        "workflow_dispatch {}"
       ],
-      "resourceScore": 153
+      "resourceScore": 155
     }
   ],
   "high": [
@@ -841,25 +841,6 @@
       "triggers": [
         "workflow_dispatch {}",
         "schedule"
-      ],
-      "resourceScore": 114
-    },
-    {
-      "name": "auto-fix-workflows.yml",
-      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/auto-fix-workflows.yml",
-      "priority": "medium",
-      "resourceIntensity": "medium",
-      "estimatedDuration": 20,
-      "concurrentJobs": 6,
-      "runnerRequirements": {
-        "runner": "ubuntu-latest",
-        "size": "standard",
-        "special": []
-      },
-      "dependencies": [],
-      "triggers": [
-        "workflow_dispatch {}",
-        "# schedule"
       ],
       "resourceScore": 114
     },
@@ -2097,6 +2078,25 @@
         "workflow_dispatch {}"
       ],
       "resourceScore": 114
+    },
+    {
+      "name": "auto-fix-workflows.yml",
+      "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/auto-fix-workflows.yml",
+      "priority": "medium",
+      "resourceIntensity": "medium",
+      "estimatedDuration": 20,
+      "concurrentJobs": 7,
+      "runnerRequirements": {
+        "runner": "ubuntu-latest",
+        "size": "standard",
+        "special": []
+      },
+      "dependencies": [],
+      "triggers": [
+        "workflow_dispatch {}",
+        "schedule"
+      ],
+      "resourceScore": 113
     },
     {
       "name": "cleanup.yml",

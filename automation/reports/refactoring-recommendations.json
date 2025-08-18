@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T05:46:25.531Z",
+  "timestamp": "2025-08-18T05:47:40.503Z",
   "critical": [],
   "high": [],
   "medium": [
@@ -71,7 +71,7 @@
       "complexityScore": 40,
       "complexityLevel": "medium",
       "metrics": {
-        "totalLines": 228,
+        "totalLines": 215,
         "jobCount": 0,
         "stepCount": 17,
         "conditionalCount": 1,
