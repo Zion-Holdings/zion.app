@@ -45,10 +45,7 @@ export default function ComponentLibrary() {
       <Head>
         <title>Component Library | Zion Tech Group</title>
         <meta name="description" content="Comprehensive component library with documentation, examples, and usage guidelines." />
-      
-        <meta property="og:title" content="Component Library" />
-        <meta property="og:description" content="Component Library — automatically suggested description." />
-        <meta name="twitter:card" content="summary_large_image" /></Head>
+      </Head>
       
       <main className="container mx-auto px-6 py-12">
         <div className="text-center mb-12">
