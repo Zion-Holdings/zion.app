@@ -126,6 +126,11 @@ export default function ServicesPage() {
                   </p>
                 </div>
               </div>
+              <div className="mt-8 text-center">
+                <a href="/case-studies" className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-cyan-400 to-fuchsia-400 text-white font-semibold rounded-lg hover:from-cyan-500 hover:to-fuchsia-500 transition-all duration-200">
+                  View Our Success Stories →
+                </a>
+              </div>
             </div>
 
             <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8">
