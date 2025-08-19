@@ -339,7 +339,18 @@
     "redundancy:ultimate:master:restart": "node automation/ultimate-redundancy-master.cjs restart",
     "redundancy:ultimate:master:status": "node automation/ultimate-redundancy-master.cjs status",
     "redundancy:ultimate:master:report": "node automation/ultimate-redundancy-master.cjs report",
-    "redundancy:ultimate:master:monitor": "node automation/ultimate-redundancy-master.cjs monitor"
+    "redundancy:ultimate:master:monitor": "node automation/ultimate-redundancy-master.cjs monitor",
+    "redundancy:comprehensive:automation:start": "./automation/start-comprehensive-redundancy-automation.sh start",
+    "redundancy:comprehensive:automation:stop": "./automation/start-comprehensive-redundancy-automation.sh stop",
+    "redundancy:comprehensive:automation:restart": "./automation/start-comprehensive-redundancy-automation.sh restart",
+    "redundancy:comprehensive:automation:status": "./automation/start-comprehensive-redundancy-automation.sh status",
+    "redundancy:comprehensive:automation:health": "./automation/start-comprehensive-redundancy-automation.sh health",
+    "redundancy:comprehensive:automation:backup": "./automation/start-comprehensive-redundancy-automation.sh backup",
+    "redundancy:comprehensive:automation:logs": "./automation/start-comprehensive-redundancy-automation.sh logs",
+    "redundancy:comprehensive:automation:pm2:start": "pm2 start ecosystem.comprehensive-redundancy-automation.pm2.cjs --update-env",
+    "redundancy:comprehensive:automation:pm2:stop": "pm2 stop ecosystem.comprehensive-redundancy-automation.pm2.cjs",
+    "redundancy:comprehensive:automation:pm2:restart": "pm2 restart ecosystem.comprehensive-redundancy-automation.pm2.cjs",
+    "redundancy:comprehensive:automation:pm2:status": "pm2 status ecosystem.comprehensive-redundancy-automation.pm2.cjs"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
