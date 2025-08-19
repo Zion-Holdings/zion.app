@@ -47,12 +47,7 @@ export default function HomePage() {
 
           {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */}
           <section className="mx-auto max-w-7xl px-6 pb-14">
-            <div className="text-center mb-8">
-              <h2 className="text-2xl font-bold tracking-wide text-white/90 mb-4">Latest Autonomous Content</h2>
-              <a href="/reports" className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors">
-                View All Reports →
-              </a>
-            </div>
+            <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Latest Autonomous Content</h2>
             <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
               <a href="/reports/updates/update-2025-08-15-0406" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
