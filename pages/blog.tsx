@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 
 export default function BlogPage() {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('All');
+
   const blogPosts = [
     {
       id: 'ai-automation-trends-2025',
@@ -11,7 +14,13 @@ export default function BlogPage() {
       date: 'January 17, 2025',
       readTime: '8 min read',
       category: 'AI & Automation',
-      featured: true
+      featured: true,
+      author: {
+        name: 'Dr. Sarah Chen',
+        role: 'AI Research Director',
+        avatar: '👩‍🔬'
+      },
+      tags: ['AI', 'Automation', 'Trends', '2025', 'Technology']
     },
     {
       id: 'autonomous-content-generation',
@@ -19,7 +28,14 @@ export default function BlogPage() {
       excerpt: 'How Zion Tech Group is transforming content generation through intelligent automation and machine learning.',
       date: 'January 15, 2025',
       readTime: '6 min read',
-      category: 'Content & AI'
+      category: 'Content & AI',
+      featured: false,
+      author: {
+        name: 'Marcus Rodriguez',
+        role: 'Content Strategy Lead',
+        avatar: '👨‍💼'
+      },
+      tags: ['Content', 'AI', 'Automation', 'Marketing']
     },
     {
       id: 'cloud-native-automation',
@@ -27,7 +43,14 @@ export default function BlogPage() {
       excerpt: 'A deep dive into our cloud-native approach to building scalable, reliable automation systems.',
       date: 'January 12, 2025',
       readTime: '10 min read',
-      category: 'Infrastructure'
+      category: 'Infrastructure',
+      featured: false,
+      author: {
+        name: 'Alex Thompson',
+        role: 'DevOps Engineer',
+        avatar: '👨‍💻'
+      },
+      tags: ['Cloud', 'Infrastructure', 'DevOps', 'Automation']
     },
     {
       id: 'ai-ethics-automation',
@@ -35,7 +58,14 @@ export default function BlogPage() {
       excerpt: 'Exploring the ethical implications and responsible development of autonomous technology.',
       date: 'January 10, 2025',
       readTime: '7 min read',
-      category: 'AI Ethics'
+      category: 'AI Ethics',
+      featured: false,
+      author: {
+        name: 'Dr. Emily Watson',
+        role: 'AI Ethics Specialist',
+        avatar: '👩‍⚖️'
+      },
+      tags: ['AI Ethics', 'Responsibility', 'Governance', 'Technology']
     },
     {
       id: 'performance-optimization',
@@ -43,7 +73,14 @@ export default function BlogPage() {
       excerpt: 'Best practices for optimizing performance in large-scale autonomous technology deployments.',
       date: 'January 8, 2025',
       readTime: '9 min read',
-      category: 'Performance'
+      category: 'Performance',
+      featured: false,
+      author: {
+        name: 'David Kim',
+        role: 'Performance Engineer',
+        avatar: '👨‍🔧'
+      },
+      tags: ['Performance', 'Optimization', 'AI', 'Systems']
     },
     {
       id: 'future-of-work',
@@ -51,11 +88,59 @@ export default function BlogPage() {
       excerpt: 'How autonomous systems are reshaping the workplace and enhancing human capabilities.',
       date: 'January 5, 2025',
       readTime: '5 min read',
-      category: 'Future of Work'
+      category: 'Future of Work',
+      featured: false,
+      author: {
+        name: 'Lisa Park',
+        role: 'Workplace Innovation Lead',
+        avatar: '👩‍💼'
+      },
+      tags: ['Future of Work', 'AI', 'Collaboration', 'Innovation']
+    },
+    {
+      id: 'edge-ai-revolution',
+      title: 'The Edge AI Revolution: Processing Intelligence Locally',
+      excerpt: 'Discover how edge AI is transforming industries by bringing intelligence closer to data sources.',
+      date: 'January 3, 2025',
+      readTime: '11 min read',
+      category: 'AI & Automation',
+      featured: false,
+      author: {
+        name: 'Dr. Sarah Chen',
+        role: 'AI Research Director',
+        avatar: '👩‍🔬'
+      },
+      tags: ['Edge AI', 'IoT', 'Real-time', 'Processing']
+    },
+    {
+      id: 'autonomous-security',
+      title: 'Autonomous Security Systems: AI-Powered Threat Detection',
+      excerpt: 'How autonomous AI systems are revolutionizing cybersecurity and threat prevention.',
+      date: 'January 1, 2025',
+      readTime: '8 min read',
+      category: 'AI Ethics',
+      featured: false,
+      author: {
+        name: 'Mike Johnson',
+        role: 'Cybersecurity Expert',
+        avatar: '👨‍🔒'
+      },
+      tags: ['Security', 'AI', 'Cybersecurity', 'Threat Detection']
     }
   ];
 
   const categories = ['All', 'AI & Automation', 'Content & AI', 'Infrastructure', 'AI Ethics', 'Performance', 'Future of Work'];
+
+  const filteredPosts = blogPosts.filter(post => {
+    const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         post.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+    const matchesCategory = selectedCategory === 'All' || post.category === selectedCategory;
+    return matchesSearch && matchesCategory;
+  });
+
+  const featuredPost = blogPosts.find(post => post.featured);
+  const regularPosts = filteredPosts.filter(post => !post.featured);
 
   return (
     <>
@@ -83,78 +168,187 @@ export default function BlogPage() {
                 Insights, trends, and innovations in AI automation and autonomous technology
               </p>
             </header>
+
+            {/* Search and Filter Section */}
+            <section className="mb-12">
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Search Bar */}
+                  <div>
+                    <label htmlFor="search" className="block text-sm font-medium text-white/80 mb-2">
+                      Search Articles
+                    </label>
+                    <div className="relative">
+                      <input
+                        id="search"
+                        type="text"
+                        placeholder="Search by title, content, or tags..."
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-cyan-400/50 focus:ring-1 focus:ring-cyan-400/50 transition-all duration-300"
+                      />
+                      <div className="absolute right-3 top-1/2 transform -translate-y-1/2 text-white/50">
+                        🔍
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Category Filter */}
+                  <div>
+                    <label htmlFor="category" className="block text-sm font-medium text-white/80 mb-2">
+                      Filter by Category
+                    </label>
+                    <select
+                      id="category"
+                      value={selectedCategory}
+                      onChange={(e) => setSelectedCategory(e.target.value)}
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:border-cyan-400/50 focus:ring-1 focus:ring-cyan-400/50 transition-all duration-300"
+                    >
+                      {categories.map(category => (
+                        <option key={category} value={category} className="bg-slate-800 text-white">
+                          {category}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+
+                {/* Search Results Count */}
+                <div className="mt-4 text-center">
+                  <span className="text-white/60 text-sm">
+                    Showing {filteredPosts.length} of {blogPosts.length} articles
+                  </span>
+                </div>
+              </div>
+            </section>
             
             {/* Featured Post */}
-            <section className="mb-16">
-              <h2 className="text-2xl font-bold mb-8 text-white">Featured Article</h2>
-              {blogPosts.filter(post => post.featured).map(post => (
-                <div key={post.id} className="bg-gradient-to-br from-white/10 to-white/5 rounded-2xl p-8 border border-white/20 hover:border-cyan-400/30 transition-all duration-300">
+            {featuredPost && (
+              <section className="mb-16">
+                <h2 className="text-2xl font-bold mb-8 text-white">Featured Article</h2>
+                <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-2xl p-8 border border-white/20 hover:border-cyan-400/30 transition-all duration-300">
                   <div className="flex items-center gap-3 mb-4">
                     <span className="px-3 py-1 bg-cyan-400/20 text-cyan-400 text-sm rounded-full border border-cyan-400/30">
-                      {post.category}
+                      {featuredPost.category}
                     </span>
-                    <span className="text-white/60 text-sm">{post.date}</span>
+                    <span className="text-white/60 text-sm">{featuredPost.date}</span>
                     <span className="text-white/60 text-sm">•</span>
-                    <span className="text-white/60 text-sm">{post.readTime}</span>
+                    <span className="text-white/60 text-sm">{featuredPost.readTime}</span>
                   </div>
+                  
                   <h3 className="text-3xl font-bold mb-4 text-white hover:text-cyan-400 transition-colors">
-                    <Link href={`/blog/${post.id}`}>{post.title}</Link>
+                    <Link href={`/blog/${featuredPost.id}`}>{featuredPost.title}</Link>
                   </h3>
-                  <p className="text-lg text-white/80 mb-6">{post.excerpt}</p>
+                  
+                  <p className="text-lg text-white/80 mb-6">{featuredPost.excerpt}</p>
+                  
+                  {/* Author Info */}
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center text-white text-lg">
+                      {featuredPost.author.avatar}
+                    </div>
+                    <div>
+                      <div className="font-semibold text-white">{featuredPost.author.name}</div>
+                      <div className="text-white/60 text-sm">{featuredPost.author.role}</div>
+                    </div>
+                  </div>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {featuredPost.tags.map(tag => (
+                      <span key={tag} className="px-2 py-1 bg-white/10 text-white/70 text-xs rounded-full border border-white/20">
+                        #{tag}
+                      </span>
+                    ))}
+                  </div>
+                  
                   <Link 
-                    href={`/blog/${post.id}`}
+                    href={`/blog/${featuredPost.id}`}
                     className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors font-semibold"
                   >
                     Read Full Article
                     <span aria-hidden>→</span>
                   </Link>
                 </div>
-              ))}
-            </section>
-            
-            {/* Category Filter */}
-            <section className="mb-12">
-              <div className="flex flex-wrap gap-3 justify-center">
-                {categories.map(category => (
-                  <button
-                    key={category}
-                    className="px-4 py-2 rounded-lg border border-white/20 text-white/80 hover:border-cyan-400/50 hover:text-cyan-400 transition-all duration-300"
-                  >
-                    {category}
-                  </button>
-                ))}
-              </div>
-            </section>
+              </section>
+            )}
             
             {/* Blog Posts Grid */}
-            <section>
-              <h2 className="text-2xl font-bold mb-8 text-white">Latest Articles</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {blogPosts.filter(post => !post.featured).map(post => (
-                  <article key={post.id} className="bg-white/10 rounded-xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300 group">
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className="px-2 py-1 bg-fuchsia-400/20 text-fuchsia-400 text-xs rounded-full border border-fuchsia-400/30">
-                        {post.category}
-                      </span>
-                      <span className="text-white/60 text-xs">{post.readTime}</span>
-                    </div>
-                    <h3 className="text-xl font-semibold mb-3 text-white group-hover:text-cyan-400 transition-colors">
-                      <Link href={`/blog/${post.id}`}>{post.title}</Link>
-                    </h3>
-                    <p className="text-white/80 text-sm mb-4 line-clamp-3">{post.excerpt}</p>
-                    <div className="flex items-center justify-between">
-                      <span className="text-white/60 text-xs">{post.date}</span>
-                      <Link 
-                        href={`/blog/${post.id}`}
-                        className="text-cyan-400 hover:text-cyan-300 transition-colors text-sm font-medium"
-                      >
-                        Read More →
-                      </Link>
-                    </div>
-                  </article>
-                ))}
-              </div>
-            </section>
+            {regularPosts.length > 0 && (
+              <section>
+                <h2 className="text-2xl font-bold mb-8 text-white">
+                  {selectedCategory === 'All' ? 'Latest Articles' : `${selectedCategory} Articles`}
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {regularPosts.map(post => (
+                    <article key={post.id} className="bg-white/10 rounded-xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300 group">
+                      <div className="flex items-center gap-3 mb-4">
+                        <span className="px-2 py-1 bg-fuchsia-400/20 text-fuchsia-400 text-xs rounded-full border border-fuchsia-400/30">
+                          {post.category}
+                        </span>
+                        <span className="text-white/60 text-xs">{post.readTime}</span>
+                      </div>
+                      
+                      <h3 className="text-xl font-semibold mb-3 text-white group-hover:text-cyan-400 transition-colors">
+                        <Link href={`/blog/${post.id}`}>{post.title}</Link>
+                      </h3>
+                      
+                      <p className="text-white/80 text-sm mb-4 line-clamp-3">{post.excerpt}</p>
+                      
+                      {/* Author Info */}
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-8 h-8 bg-gradient-to-br from-fuchsia-400 to-purple-500 rounded-full flex items-center justify-center text-white text-sm">
+                          {post.author.avatar}
+                        </div>
+                        <div className="text-xs">
+                          <div className="text-white/80">{post.author.name}</div>
+                          <div className="text-white/60">{post.author.role}</div>
+                        </div>
+                      </div>
+
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-1 mb-4">
+                        {post.tags.slice(0, 3).map(tag => (
+                          <span key={tag} className="px-2 py-1 bg-white/5 text-white/50 text-xs rounded-full">
+                            #{tag}
+                          </span>
+                        ))}
+                      </div>
+                      
+                      <div className="flex items-center justify-between">
+                        <span className="text-white/60 text-xs">{post.date}</span>
+                        <Link 
+                          href={`/blog/${post.id}`}
+                          className="text-cyan-400 hover:text-cyan-300 transition-colors text-sm font-medium"
+                        >
+                          Read More →
+                        </Link>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {/* No Results Message */}
+            {filteredPosts.length === 0 && (
+              <section className="text-center py-16">
+                <div className="text-6xl mb-4">🔍</div>
+                <h2 className="text-2xl font-bold text-white mb-4">No Articles Found</h2>
+                <p className="text-white/70 mb-6">
+                  Try adjusting your search terms or category filter to find what you're looking for.
+                </p>
+                <button
+                  onClick={() => {
+                    setSearchTerm('');
+                    setSelectedCategory('All');
+                  }}
+                  className="px-6 py-3 bg-cyan-400 hover:bg-cyan-500 text-white font-semibold rounded-lg transition-all duration-300"
+                >
+                  Clear Filters
+                </button>
+              </section>
+            )}
             
             {/* Newsletter Signup */}
             <section className="mt-20 text-center">
@@ -192,7 +386,7 @@ export default function BlogPage() {
                   <p className="text-white/80 text-sm">Learn about our mission and vision for autonomous technology</p>
                 </Link>
                 
-                <Link href="/contact" className="bg-white/10 rounded-xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300 text-center group">
+                <Link href="/contact" className="bg-white/10 rounded-xl p-6 border border-white/20 hover:border-fuchsia-400/30 transition-all duration-300 text-center group">
                   <div className="w-16 h-16 bg-gradient-to-br from-fuchsia-400 to-purple-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                     <span className="text-2xl">📞</span>
                   </div>
@@ -200,7 +394,7 @@ export default function BlogPage() {
                   <p className="text-white/80 text-sm">Have questions? We&apos;d love to hear from you</p>
                 </Link>
                 
-                <Link href="/" className="bg-white/10 rounded-xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300 text-center group">
+                <Link href="/" className="bg-white/10 rounded-xl p-6 border border-white/20 hover:border-purple-400/30 transition-all duration-300 text-center group">
                   <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-indigo-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                     <span className="text-2xl">🚀</span>
                   </div>
