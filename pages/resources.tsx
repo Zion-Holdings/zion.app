@@ -54,6 +54,30 @@ export default function ResourcesPage() {
       downloadUrl: '#',
       pages: '28',
       category: 'Business'
+    },
+    {
+      id: 'cloud-native-automation',
+      title: 'Cloud-Native Automation Architecture',
+      description: 'Building scalable, resilient automation systems using modern cloud technologies and microservices.',
+      downloadUrl: '#',
+      pages: '38',
+      category: 'Technology'
+    },
+    {
+      id: 'performance-optimization-guide',
+      title: 'Performance Optimization in Autonomous Systems',
+      description: 'Best practices for optimizing AI model performance, infrastructure efficiency, and system responsiveness.',
+      downloadUrl: '#',
+      pages: '42',
+      category: 'Performance'
+    },
+    {
+      id: 'human-ai-collaboration',
+      title: 'Human-AI Collaboration in the Workplace',
+      description: 'Strategies for creating effective partnerships between human workers and autonomous AI systems.',
+      downloadUrl: '#',
+      pages: '35',
+      category: 'Workplace'
     }
   ];
 
@@ -78,6 +102,27 @@ export default function ResourcesPage() {
       description: 'Compare your automation performance against industry standards.',
       type: 'Analytics Tool',
       estimatedTime: '20 minutes'
+    },
+    {
+      id: 'cost-benefit-analyzer',
+      title: 'AI Automation Cost-Benefit Analyzer',
+      description: 'Calculate the financial impact of implementing autonomous systems in your organization.',
+      type: 'Financial Tool',
+      estimatedTime: '25 minutes'
+    },
+    {
+      id: 'security-assessment',
+      title: 'AI Security Assessment Framework',
+      description: 'Evaluate the security posture of your AI systems and identify potential vulnerabilities.',
+      type: 'Security Tool',
+      estimatedTime: '45 minutes'
+    },
+    {
+      id: 'compliance-checker',
+      title: 'AI Compliance Checker',
+      description: 'Ensure your autonomous systems meet regulatory requirements and industry standards.',
+      type: 'Compliance Tool',
+      estimatedTime: '35 minutes'
     }
   ];
 
@@ -192,6 +237,63 @@ export default function ResourcesPage() {
                     </Link>
                   </div>
                 ))}
+              </div>
+            </section>
+            
+            {/* Webinars and Events Section */}
+            <section className="mb-20">
+              <h2 className="text-3xl font-bold mb-8 text-center text-white">Upcoming Webinars & Events</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:border-purple-400/30 transition-all duration-300">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl">🎥</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-white">AI Ethics in Practice</h3>
+                  <p className="text-white/80 text-sm mb-4">Learn how to implement ethical AI practices in your organization.</p>
+                  <div className="space-y-2 mb-6">
+                    <span className="inline-block px-3 py-1 bg-purple-400/20 text-purple-400 text-xs rounded-full border border-purple-400/30">
+                      Webinar
+                    </span>
+                    <span className="block text-white/60 text-xs">January 25, 2025 • 2:00 PM EST</span>
+                  </div>
+                  <button className="w-full bg-gradient-to-r from-purple-400 to-pink-400 text-white px-6 py-3 rounded-lg font-semibold hover:from-purple-500 hover:to-pink-500 transition-all duration-300">
+                    Register Now
+                  </button>
+                </div>
+                
+                <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:border-blue-400/30 transition-all duration-300">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl">🏢</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-white">Enterprise Automation Summit</h3>
+                  <p className="text-white/80 text-sm mb-4">Join industry leaders for insights on enterprise automation strategies.</p>
+                  <div className="space-y-2 mb-6">
+                    <span className="inline-block px-3 py-1 bg-blue-400/20 text-blue-400 text-xs rounded-full border border-blue-400/30">
+                      Conference
+                    </span>
+                    <span className="block text-white/60 text-xs">February 15-16, 2025 • San Francisco</span>
+                  </div>
+                  <button className="w-full bg-gradient-to-r from-blue-400 to-cyan-400 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-500 hover:to-cyan-500 transition-all duration-300">
+                    Learn More
+                  </button>
+                </div>
+                
+                <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:border-green-400/30 transition-all duration-300">
+                  <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl">🚀</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-white">Performance Optimization Workshop</h3>
+                  <p className="text-white/80 text-sm mb-4">Hands-on workshop for optimizing autonomous system performance.</p>
+                  <div className="space-y-2 mb-6">
+                    <span className="inline-block px-3 py-1 bg-green-400/20 text-green-400 text-xs rounded-full border border-green-400/30">
+                      Workshop
+                    </span>
+                    <span className="block text-white/60 text-xs">February 28, 2025 • 10:00 AM EST</span>
+                  </div>
+                  <button className="w-full bg-gradient-to-r from-green-400 to-emerald-400 text-white px-6 py-3 rounded-lg font-semibold hover:from-green-500 hover:to-emerald-500 transition-all duration-300">
+                    Reserve Spot
+                  </button>
+                </div>
               </div>
             </section>
             

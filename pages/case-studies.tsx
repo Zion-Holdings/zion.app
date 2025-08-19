@@ -93,6 +93,60 @@ export default function CaseStudiesPage() {
       duration: '10 months',
       teamSize: '10 data scientists + 5 engineers',
       featured: false
+    },
+    {
+      id: 'supply-chain-optimization',
+      title: 'Supply Chain Optimization with AI',
+      company: 'Retail Chain',
+      industry: 'Retail',
+      challenge: 'Inefficient inventory management, stockouts, and high logistics costs',
+      solution: 'Implemented AI-powered demand forecasting and automated inventory management systems',
+      results: [
+        '45% reduction in stockouts',
+        '30% decrease in inventory carrying costs',
+        '25% improvement in delivery times',
+        '20% increase in profit margins'
+      ],
+      technologies: ['Demand Forecasting', 'Inventory Optimization', 'Route Planning', 'Real-time Tracking'],
+      duration: '7 months',
+      teamSize: '6 engineers + 3 supply chain specialists',
+      featured: false
+    },
+    {
+      id: 'quality-control-automation',
+      title: 'Automated Quality Control System',
+      company: 'Automotive Manufacturer',
+      industry: 'Automotive',
+      challenge: 'Manual quality inspection processes causing delays and inconsistent results',
+      solution: 'Deployed computer vision and AI systems for automated quality inspection and defect detection',
+      results: [
+        '95% accuracy in defect detection',
+        '70% reduction in inspection time',
+        'Zero false positives in critical components',
+        '24/7 automated quality monitoring'
+      ],
+      technologies: ['Computer Vision', 'Deep Learning', 'IoT Sensors', 'Real-time Monitoring'],
+      duration: '9 months',
+      teamSize: '7 engineers + 2 quality specialists',
+      featured: false
+    },
+    {
+      id: 'energy-efficiency-optimization',
+      title: 'Energy Efficiency Optimization',
+      company: 'Commercial Building Operator',
+      industry: 'Real Estate',
+      challenge: 'High energy costs and inefficient building management systems',
+      solution: 'Implemented AI-powered building management system with predictive energy optimization',
+      results: [
+        '35% reduction in energy consumption',
+        '40% decrease in utility costs',
+        'Improved occupant comfort',
+        'Predictive maintenance for HVAC systems'
+      ],
+      technologies: ['IoT Sensors', 'Machine Learning', 'Predictive Analytics', 'Building Automation'],
+      duration: '6 months',
+      teamSize: '5 engineers + 2 facility managers',
+      featured: false
     }
   ];
 
