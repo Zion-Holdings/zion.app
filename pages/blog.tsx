@@ -102,9 +102,9 @@ export default function BlogPage() {
                     <span>{post.date}</span>
                     <span>{post.readTime}</span>
                   </div>
-                  <button className="w-full mt-4 px-4 py-2 bg-gradient-to-r from-cyan-400 to-fuchsia-400 text-white font-semibold rounded-lg hover:from-cyan-500 hover:to-fuchsia-500 transition-all duration-200">
+                  <a href={post.id === 1 ? "/blog/autonomous-ai-systems-2025" : post.id === 3 ? "/blog/cloud-native-architecture-2025" : "/blog"} className="w-full mt-4 px-4 py-2 bg-gradient-to-r from-cyan-400 to-fuchsia-400 text-white font-semibold rounded-lg hover:from-cyan-500 hover:to-fuchsia-500 transition-all duration-200 text-center block">
                     Read More
-                  </button>
+                  </a>
                 </article>
               ))}
             </div>

@@ -42,6 +42,9 @@ export default function HomePage() {
               <a href="/reports" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-indigo-400/50">
                 Reports & Analytics
               </a>
+              <a href="/case-studies" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-orange-400/50">
+                Case Studies
+              </a>
               <a href="/contact" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-green-400/50">
                 Contact
               </a>
@@ -114,24 +117,24 @@ export default function HomePage() {
                     <li><a href="/services" className="hover:text-fuchsia-400 transition-colors">Consulting</a></li>
                   </ul>
                 </div>
-                <div>
-                  <h3 className="text-lg font-bold mb-4 text-green-400">Resources</h3>
-                  <ul className="space-y-2 text-white/70">
-                    <li><a href="/blog" className="hover:text-green-400 transition-colors">Blog</a></li>
-                    <li><a href="/reports" className="hover:text-green-400 transition-colors">Reports</a></li>
-                    <li><a href="/api-documentation" className="hover:text-green-400 transition-colors">API Docs</a></li>
-                    <li><a href="/component-library" className="hover:text-green-400 transition-colors">Components</a></li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold mb-4 text-blue-400">Legal</h3>
-                  <ul className="space-y-2 text-white/70">
-                    <li><a href="/privacy" className="hover:text-blue-400 transition-colors">Privacy Policy</a></li>
-                    <li><a href="/terms" className="hover:text-blue-400 transition-colors">Terms of Service</a></li>
-                    <li><a href="/security" className="hover:text-blue-400 transition-colors">Security</a></li>
-                    <li><a href="/accessibility" className="hover:text-blue-400 transition-colors">Accessibility</a></li>
-                  </ul>
-                </div>
+                                  <div>
+                    <h3 className="text-lg font-bold mb-4 text-green-400">Resources</h3>
+                    <ul className="space-y-2 text-white/70">
+                      <li><a href="/blog" className="hover:text-green-400 transition-colors">Blog</a></li>
+                      <li><a href="/reports" className="hover:text-green-400 transition-colors">Reports</a></li>
+                      <li><a href="/case-studies" className="hover:text-green-400 transition-colors">Case Studies</a></li>
+                      <li><a href="/resources" className="hover:text-green-400 transition-colors">Resources</a></li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold mb-4 text-blue-400">Legal</h3>
+                    <ul className="space-y-2 text-white/70">
+                      <li><a href="/privacy" className="hover:text-blue-400 transition-colors">Privacy Policy</a></li>
+                      <li><a href="/about" className="hover:text-blue-400 transition-colors">About</a></li>
+                      <li><a href="/contact" className="hover:text-blue-400 transition-colors">Contact</a></li>
+                      <li><a href="/events" className="hover:text-blue-400 transition-colors">Events</a></li>
+                    </ul>
+                  </div>
               </div>
               <div className="border-t border-white/10 mt-8 pt-8 text-center text-white/60">
                 <p>&copy; 2025 Zion Tech Group. All rights reserved. | Autonomous Innovation Hub</p>
