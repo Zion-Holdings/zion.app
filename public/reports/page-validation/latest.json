@@ -9,5 +9,9 @@
   },
   "results": [],
   "buildBreakingFiles": [],
+<<<<<<< HEAD
   "generatedAt": "2025-08-19T15:39:46.319Z"
+=======
+  "generatedAt": "2025-08-19T15:33:37.846Z"
+>>>>>>> fa991c3cf83 (chore(automation): run automations)
 }
