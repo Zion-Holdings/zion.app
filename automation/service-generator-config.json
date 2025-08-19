@@ -1,0 +1,22 @@
+{
+  "generation": {
+    "enabled": true,
+    "intervalSeconds": 10,
+    "batchSize": 3,
+    "exponentialGrowth": true,
+    "maxServicesPerHour": 100,
+    "maxServicesPerDay": 1000
+  },
+  "deployment": {
+    "autoDeploy": true,
+    "deployIntervalSeconds": 60,
+    "buildAfterDeploy": true,
+    "commitAfterDeploy": true
+  },
+  "monitoring": {
+    "enabled": true,
+    "metricsCollection": true,
+    "performanceAnalysis": true,
+    "growthPrediction": true
+  }
+}
