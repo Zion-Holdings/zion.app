@@ -1,405 +1,336 @@
 import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 
 export default function ServicesPage() {
   return (
     <>
       <Head>
-<<<<<<< HEAD
-        <title>Services | Zion Tech Group - AI & Automation Solutions</title>
-        <meta name="description" content="Explore Zion Tech Group's comprehensive range of AI development, automation, and technology consulting services." />
-        <meta property="og:title" content="Services - Zion Tech Group" />
-        <meta property="og:description" content="AI development, automation, and technology consulting services." />
-        <meta name="twitter:card" content="summary_large_image" />
-=======
         <title>Services | Zion Tech Group - Autonomous Innovation Solutions</title>
         <meta name="description" content="Discover Zion Tech Group's comprehensive range of autonomous technology services including AI automation, system optimization, and intelligent infrastructure solutions." />
         <meta property="og:title" content="Services | Zion Tech Group - Autonomous Innovation Solutions" />
         <meta property="og:description" content="Discover Zion Tech Group's comprehensive range of autonomous technology services including AI automation, system optimization, and intelligent infrastructure solutions." />
->>>>>>> cursor/update-content-and-fix-links-74fc
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
       
       <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-950 text-white">
         <main className="container mx-auto px-6 py-12">
-<<<<<<< HEAD
-          <section className="text-center mb-16">
-            <h1 className="text-5xl font-extrabold mb-6 bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent">
-              Our Services
-            </h1>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto">
-              Comprehensive AI and automation solutions designed to transform your business and drive innovation
-            </p>
-          </section>
-
-          <section className="mx-auto max-w-6xl">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
-                <div className="text-4xl mb-4">🤖</div>
-                <h3 className="text-2xl font-bold mb-4 text-cyan-400">AI Development</h3>
-                <p className="text-white/70 mb-6">
-                  Custom AI solutions including machine learning models, natural language processing, and computer vision systems.
-                </p>
-                <ul className="space-y-2 text-sm text-white/60">
-                  <li>• Machine Learning Models</li>
-                  <li>• Natural Language Processing</li>
-                  <li>• Computer Vision</li>
-                  <li>• Predictive Analytics</li>
-                </ul>
-              </div>
-
-              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
-                <div className="text-4xl mb-4">⚡</div>
-                <h3 className="text-2xl font-bold mb-4 text-fuchsia-400">Automation Systems</h3>
-                <p className="text-white/70 mb-6">
-                  End-to-end automation solutions that streamline operations and improve efficiency across your organization.
-                </p>
-                <ul className="space-y-2 text-sm text-white/60">
-                  <li>• Process Automation</li>
-                  <li>• Workflow Optimization</li>
-                  <li>• Robotic Process Automation</li>
-                  <li>• Smart Workflows</li>
-                </ul>
-              </div>
-
-              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
-                <div className="text-4xl mb-4">☁️</div>
-                <h3 className="text-2xl font-bold mb-4 text-green-400">Cloud Infrastructure</h3>
-                <p className="text-white/70 mb-6">
-                  Scalable cloud solutions with automated deployment, monitoring, and optimization for peak performance.
-                </p>
-                <ul className="space-y-2 text-sm text-white/60">
-                  <li>• Cloud Migration</li>
-                  <li>• Auto-scaling</li>
-                  <li>• Performance Optimization</li>
-                  <li>• Security Hardening</li>
-                </ul>
-              </div>
-
-              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
-                <div className="text-4xl mb-4">🔧</div>
-                <h3 className="text-2xl font-bold mb-4 text-blue-400">DevOps & CI/CD</h3>
-                <p className="text-white/70 mb-6">
-                  Streamlined development and deployment pipelines with automated testing, building, and deployment processes.
-                </p>
-                <ul className="space-y-2 text-sm text-white/60">
-                  <li>• CI/CD Pipeline Setup</li>
-                  <li>• Automated Testing</li>
-                  <li>• Infrastructure as Code</li>
-                  <li>• Monitoring & Alerting</li>
-                </ul>
-              </div>
-
-              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
-                <div className="text-4xl mb-4">📊</div>
-                <h3 className="text-2xl font-bold mb-4 text-purple-400">Data Analytics</h3>
-                <p className="text-white/70 mb-6">
-                  Advanced analytics and business intelligence solutions that turn your data into actionable insights.
-                </p>
-                <ul className="space-y-2 text-sm text-white/60">
-                  <li>• Data Visualization</li>
-                  <li>• Predictive Analytics</li>
-                  <li>• Business Intelligence</li>
-                  <li>• Real-time Dashboards</li>
-                </ul>
-              </div>
-
-              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
-                <div className="text-4xl mb-4">💡</div>
-                <h3 className="text-2xl font-bold mb-4 text-yellow-400">Technology Consulting</h3>
-                <p className="text-white/70 mb-6">
-                  Strategic technology consulting to help you navigate digital transformation and innovation challenges.
-                </p>
-                <ul className="space-y-2 text-sm text-white/60">
-                  <li>• Digital Strategy</li>
-                  <li>• Technology Roadmap</li>
-                  <li>• Innovation Workshops</li>
-                  <li>• Performance Audits</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 mb-16">
-              <h2 className="text-3xl font-bold mb-6 text-cyan-400">Why Choose Our Services?</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                  <h3 className="text-xl font-semibold mb-3 text-fuchsia-400">AI-Powered Excellence</h3>
-                  <p className="text-white/70">
-                    Our services leverage cutting-edge AI technology to deliver superior results, faster implementation, and continuous improvement.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-3 text-green-400">Proven Results</h3>
-                  <p className="text-white/70">
-                    With 227 active automations and 2,960+ pages generated, we have a track record of delivering measurable business value.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8">
-              <h2 className="text-3xl font-bold mb-6 text-blue-400">Service Delivery Process</h2>
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-cyan-400 mb-2">1</div>
-                  <h3 className="text-lg font-semibold mb-2">Discovery</h3>
-                  <p className="text-sm text-white/70">Understanding your needs and objectives</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-fuchsia-400 mb-2">2</div>
-                  <h3 className="text-lg font-semibold mb-2">Planning</h3>
-                  <p className="text-sm text-white/70">Creating detailed roadmap and strategy</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-green-400 mb-2">3</div>
-                  <h3 className="text-lg font-semibold mb-2">Implementation</h3>
-                  <p className="text-sm text-white/70">Building and deploying solutions</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-400 mb-2">4</div>
-                  <h3 className="text-lg font-semibold mb-2">Optimization</h3>
-                  <p className="text-sm text-white/70">Continuous improvement and support</p>
-                </div>
-              </div>
-            </div>
-          </section>
-=======
           <div className="max-w-6xl mx-auto">
-            <nav className="mb-8">
-              <a href="/" className="text-cyan-400 hover:text-cyan-300 transition-colors">
-                ← Back to Home
-              </a>
-            </nav>
+            <Link href="/" className="inline-flex items-center text-cyan-400 hover:text-cyan-300 mb-8">
+              ← Back to Home
+            </Link>
             
             <header className="text-center mb-16">
-              <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent">
+              <h1 className="text-5xl font-extrabold mb-6 bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent">
                 Our Services
               </h1>
               <p className="text-xl text-white/80 max-w-3xl mx-auto">
-                Comprehensive autonomous technology solutions designed to revolutionize your digital infrastructure
+                Comprehensive autonomous technology solutions designed to transform your business and drive innovation
               </p>
             </header>
 
-            {/* Core Services */}
             <section className="mb-20">
-              <h2 className="text-3xl font-bold text-center mb-12 text-white/90">Core Services</h2>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:border-cyan-400/30 transition-all duration-300">
-                  <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center mb-6">
+              <h2 className="text-3xl font-bold text-cyan-300 mb-8 text-center">AI & Automation Services</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="bg-gradient-to-br from-cyan-400/10 to-blue-400/10 rounded-2xl p-8 border border-cyan-400/30 hover:border-cyan-400/50 transition-all duration-300">
+                  <div className="w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center mb-6">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4 text-cyan-300">Intelligent Process Automation</h3>
+                  <p className="text-white/70 mb-6">
+                    Advanced automation systems that learn from your processes and continuously optimize workflows for maximum efficiency.
+                  </p>
+                  <ul className="space-y-2 text-sm text-white/60">
+                    <li className="flex items-center gap-2">
+                      <span className="text-cyan-400">✓</span>
+                      <span>Machine Learning Models</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-cyan-400">✓</span>
+                      <span>Natural Language Processing</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-cyan-400">✓</span>
+                      <span>Predictive Analytics</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-cyan-400">✓</span>
+                      <span>Adaptive Workflows</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="bg-gradient-to-br from-fuchsia-400/10 to-purple-400/10 rounded-2xl p-8 border border-fuchsia-400/30 hover:border-fuchsia-400/50 transition-all duration-300">
+                  <div className="w-16 h-16 bg-gradient-to-br from-fuchsia-400 to-purple-500 rounded-xl flex items-center justify-center mb-6">
                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 text-cyan-300">Autonomous System Development</h3>
-                  <p className="text-white/80 leading-relaxed mb-6">
-                    Build intelligent, self-managing systems that operate independently and continuously improve performance. Our autonomous agents handle complex tasks without human intervention.
+                  <h3 className="text-2xl font-bold mb-4 text-fuchsia-300">Machine Learning Solutions</h3>
+                  <p className="text-white/70 mb-6">
+                    Custom ML models and AI systems that adapt to your specific business needs and data patterns.
                   </p>
-                  <ul className="text-white/70 space-y-2">
-                    <li>• Self-healing infrastructure</li>
-                    <li>• Predictive maintenance systems</li>
-                    <li>• Automated optimization workflows</li>
-                    <li>• Intelligent resource management</li>
+                  <ul className="space-y-2 text-sm text-white/60">
+                    <li className="flex items-center gap-2">
+                      <span className="text-fuchsia-400">✓</span>
+                      <span>Custom Model Development</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-fuchsia-400">✓</span>
+                      <span>Data Pipeline Automation</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-fuchsia-400">✓</span>
+                      <span>Real-time Learning</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-fuchsia-400">✓</span>
+                      <span>Performance Optimization</span>
+                    </li>
                   </ul>
                 </div>
 
-                <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:border-fuchsia-400/30 transition-all duration-300">
-                  <div className="w-16 h-16 bg-gradient-to-br from-fuchsia-500 to-purple-500 rounded-xl flex items-center justify-center mb-6">
+                <div className="bg-gradient-to-br from-green-400/10 to-emerald-400/10 rounded-2xl p-8 border border-green-400/30 hover:border-green-400/50 transition-all duration-300">
+                  <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-500 rounded-xl flex items-center justify-center mb-6">
                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 text-fuchsia-300">AI-Powered Content Generation</h3>
-                  <p className="text-white/80 leading-relaxed mb-6">
-                    Leverage advanced AI systems to create, optimize, and manage content at scale. Our intelligent content engines generate high-quality, SEO-optimized material automatically.
+                  <h3 className="text-2xl font-bold mb-4 text-green-300">Autonomous Infrastructure</h3>
+                  <p className="text-white/70 mb-6">
+                    Self-managing infrastructure systems that automatically scale, optimize, and maintain your technology stack.
                   </p>
-                  <ul className="text-white/70 space-y-2">
-                    <li>• Automated content creation</li>
-                    <li>• SEO optimization engines</li>
-                    <li>• Multi-language support</li>
-                    <li>• Content quality assurance</li>
+                  <ul className="space-y-2 text-sm text-white/60">
+                    <li className="flex items-center gap-2">
+                      <span className="text-green-400">✓</span>
+                      <span>Auto-scaling Systems</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-green-400">✓</span>
+                      <span>Self-healing Networks</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-green-400">✓</span>
+                      <span>Performance Monitoring</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-green-400">✓</span>
+                      <span>Proactive Maintenance</span>
+                    </li>
                   </ul>
                 </div>
+              </div>
+            </section>
 
-                <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:border-green-400/30 transition-all duration-300">
-                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mb-6">
+            <section className="mb-20">
+              <h2 className="text-3xl font-bold text-cyan-300 mb-8 text-center">Cybersecurity & Protection</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="bg-gradient-to-br from-red-400/10 to-pink-400/10 rounded-2xl p-8 border border-red-400/30 hover:border-red-400/50 transition-all duration-300">
+                  <div className="w-16 h-16 bg-gradient-to-br from-red-400 to-pink-500 rounded-xl flex items-center justify-center mb-6">
                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 text-green-300">Infrastructure Optimization</h3>
-                  <p className="text-white/80 leading-relaxed mb-6">
-                    Transform your existing infrastructure with intelligent automation and optimization systems. Achieve unprecedented performance and reliability through autonomous management.
+                  <h3 className="text-2xl font-bold mb-4 text-red-300">Threat Detection & Response</h3>
+                  <p className="text-white/70 mb-6">
+                    AI-powered security systems that continuously monitor for threats and automatically respond to security incidents.
                   </p>
-                  <ul className="text-white/70 space-y-2">
-                    <li>• Performance monitoring</li>
-                    <li>• Automated scaling</li>
-                    <li>• Load balancing optimization</li>
-                    <li>• Resource utilization management</li>
+                  <ul className="space-y-2 text-sm text-white/60">
+                    <li className="flex items-center gap-2">
+                      <span className="text-red-400">✓</span>
+                      <span>Real-time Monitoring</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-red-400">✓</span>
+                      <span>Automated Response</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-red-400">✓</span>
+                      <span>Behavioral Analysis</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-red-400">✓</span>
+                      <span>Incident Management</span>
+                    </li>
                   </ul>
                 </div>
 
-                <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:border-blue-400/30 transition-all duration-300">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center mb-6">
+                <div className="bg-gradient-to-br from-blue-400/10 to-indigo-400/10 rounded-2xl p-8 border border-blue-400/30 hover:border-blue-400/50 transition-all duration-300">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-xl flex items-center justify-center mb-6">
                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 text-blue-300">Security & Compliance</h3>
-                  <p className="text-white/80 leading-relaxed mb-6">
-                    Comprehensive security solutions with autonomous threat detection and response. Our systems continuously monitor and protect your infrastructure from emerging threats.
+                  <h3 className="text-2xl font-bold mb-4 text-blue-300">Data Protection</h3>
+                  <p className="text-white/70 mb-6">
+                    Comprehensive data security solutions including encryption, access control, and compliance management.
                   </p>
-                  <ul className="text-white/70 space-y-2">
-                    <li>• Automated threat detection</li>
-                    <li>• Vulnerability scanning</li>
-                    <li>• Compliance monitoring</li>
-                    <li>• Incident response automation</li>
+                  <ul className="space-y-2 text-sm text-white/60">
+                    <li className="flex items-center gap-2">
+                      <span className="text-blue-400">✓</span>
+                      <span>End-to-end Encryption</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-blue-400">✓</span>
+                      <span>Access Control Systems</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-blue-400">✓</span>
+                      <span>Compliance Management</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-blue-400">✓</span>
+                      <span>Data Loss Prevention</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="bg-gradient-to-br from-yellow-400/10 to-orange-400/10 rounded-2xl p-8 border border-yellow-400/30 hover:border-yellow-400/50 transition-all duration-300">
+                  <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center mb-6">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4 text-yellow-300">Security Analytics</h3>
+                  <p className="text-white/70 mb-6">
+                    Advanced analytics and reporting that provide deep insights into your security posture and threat landscape.
+                  </p>
+                  <ul className="space-y-2 text-sm text-white/60">
+                    <li className="flex items-center gap-2">
+                      <span className="text-yellow-400">✓</span>
+                      <span>Security Intelligence</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-yellow-400">✓</span>
+                      <span>Risk Assessment</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-yellow-400">✓</span>
+                      <span>Compliance Reporting</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-yellow-400">✓</span>
+                      <span>Threat Intelligence</span>
+                    </li>
                   </ul>
                 </div>
               </div>
             </section>
 
-            {/* Specialized Solutions */}
             <section className="mb-20">
-              <h2 className="text-3xl font-bold text-center mb-12 text-white/90">Specialized Solutions</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="bg-gradient-to-br from-cyan-500/20 to-blue-500/20 backdrop-blur-xl rounded-2xl p-6 border border-cyan-400/30">
-                  <h3 className="text-xl font-semibold mb-4 text-cyan-300">GitHub Actions Automation</h3>
-                  <p className="text-white/80 mb-4">
-                    Comprehensive CI/CD automation with intelligent workflow management and autonomous optimization.
-                  </p>
-                  <div className="text-sm text-cyan-300/80">
-                    • 227+ Active Workflows<br/>
-                    • Automated Testing<br/>
-                    • Intelligent Deployment<br/>
-                    • Performance Monitoring
+              <h2 className="text-3xl font-bold text-cyan-300 mb-8 text-center">Cloud & DevOps Solutions</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="bg-gradient-to-br from-purple-400/10 to-pink-400/10 rounded-2xl p-8 border border-purple-400/30 hover:border-purple-400/50 transition-all duration-300">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-500 rounded-xl flex items-center justify-center mb-6">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                    </svg>
                   </div>
+                  <h3 className="text-2xl font-bold mb-4 text-purple-300">Cloud Migration</h3>
+                  <p className="text-white/70 mb-6">
+                    Seamless migration to cloud platforms with automated optimization and cost management.
+                  </p>
+                  <ul className="space-y-2 text-sm text-white/60">
+                    <li className="flex items-center gap-2">
+                      <span className="text-purple-400">✓</span>
+                      <span>Multi-cloud Strategy</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-purple-400">✓</span>
+                      <span>Cost Optimization</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-purple-400">✓</span>
+                      <span>Performance Tuning</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-purple-400">✓</span>
+                      <span>Disaster Recovery</span>
+                    </li>
+                  </ul>
                 </div>
 
-                <div className="bg-gradient-to-br from-fuchsia-500/20 to-purple-500/20 backdrop-blur-xl rounded-2xl p-6 border border-fuchsia-400/30">
-                  <h3 className="text-xl font-semibold mb-4 text-fuchsia-300">Content Management Systems</h3>
-                  <p className="text-white/80 mb-4">
-                    AI-powered content generation and management with automated optimization and quality control.
-                  </p>
-                  <div className="text-sm text-fuchsia-300/80">
-                    • 2,960+ Generated Pages<br/>
-                    • SEO Optimization<br/>
-                    • Multi-format Support<br/>
-                    • Quality Assurance
+                <div className="bg-gradient-to-br from-indigo-400/10 to-cyan-400/10 rounded-2xl p-8 border border-indigo-400/30 hover:border-indigo-400/50 transition-all duration-300">
+                  <div className="w-16 h-16 bg-gradient-to-br from-indigo-400 to-cyan-500 rounded-xl flex items-center justify-center mb-6">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                    </svg>
                   </div>
+                  <h3 className="text-2xl font-bold mb-4 text-indigo-300">DevOps Automation</h3>
+                  <p className="text-white/70 mb-6">
+                    Streamlined development and deployment pipelines with automated testing and continuous integration.
+                  </p>
+                  <ul className="space-y-2 text-sm text-white/60">
+                    <li className="flex items-center gap-2">
+                      <span className="text-indigo-400">✓</span>
+                      <span>CI/CD Pipelines</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-indigo-400">✓</span>
+                      <span>Automated Testing</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-indigo-400">✓</span>
+                      <span>Infrastructure as Code</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-indigo-400">✓</span>
+                      <span>Monitoring & Alerting</span>
+                    </li>
+                  </ul>
                 </div>
 
-                <div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-xl rounded-2xl p-6 border border-green-400/30">
-                  <h3 className="text-xl font-semibold mb-4 text-green-300">Performance Optimization</h3>
-                  <p className="text-white/80 mb-4">
-                    Continuous performance monitoring and optimization with predictive analytics and automated improvements.
-                  </p>
-                  <div className="text-sm text-green-300/80">
-                    • Real-time Monitoring<br/>
-                    • Predictive Analytics<br/>
-                    • Automated Optimization<br/>
-                    • Performance Reporting
+                <div className="bg-gradient-to-br from-teal-400/10 to-green-400/10 rounded-2xl p-8 border border-teal-400/30 hover:border-teal-400/50 transition-all duration-300">
+                  <div className="w-16 h-16 bg-gradient-to-br from-teal-400 to-green-500 rounded-xl flex items-center justify-center mb-6">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
                   </div>
+                  <h3 className="text-2xl font-bold mb-4 text-teal-300">Performance Optimization</h3>
+                  <p className="text-white/70 mb-6">
+                    Continuous performance monitoring and optimization to ensure your systems run at peak efficiency.
+                  </p>
+                  <ul className="space-y-2 text-sm text-white/60">
+                    <li className="flex items-center gap-2">
+                      <span className="text-teal-400">✓</span>
+                      <span>Performance Monitoring</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-teal-400">✓</span>
+                      <span>Load Balancing</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-teal-400">✓</span>
+                      <span>Resource Optimization</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-teal-400">✓</span>
+                      <span>Scalability Planning</span>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </section>
 
-            {/* Service Process */}
-            <section className="mb-20">
-              <h2 className="text-3xl font-bold text-center mb-12 text-white/90">Our Service Process</h2>
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <div className="text-center">
-                  <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
-                    1
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2 text-cyan-300">Discovery</h3>
-                  <p className="text-white/80 text-sm">
-                    We analyze your current infrastructure and identify optimization opportunities.
-                  </p>
-                </div>
-
-                <div className="text-center">
-                  <div className="w-20 h-20 bg-gradient-to-br from-fuchsia-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
-                    2
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2 text-fuchsia-300">Design</h3>
-                  <p className="text-white/80 text-sm">
-                    Custom autonomous solutions designed specifically for your needs and goals.
-                  </p>
-                </div>
-
-                <div className="text-center">
-                  <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
-                    3
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2 text-green-300">Implementation</h3>
-                  <p className="text-white/80 text-sm">
-                    Seamless deployment with minimal disruption to your existing operations.
-                  </p>
-                </div>
-
-                <div className="text-center">
-                  <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
-                    4
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2 text-blue-300">Optimization</h3>
-                  <p className="text-white/80 text-sm">
-                    Continuous monitoring and autonomous optimization for ongoing improvement.
-                  </p>
-                </div>
-              </div>
-            </section>
-
-            {/* Technology Stack */}
-            <section className="mb-20">
-              <h2 className="text-3xl font-bold text-center mb-12 text-white/90">Technology Stack</h2>
-              <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl flex items-center justify-center mx-auto mb-4">
-                      <span className="text-white font-bold">Next.js</span>
-                    </div>
-                    <p className="text-white/80 text-sm">React Framework</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-green-600 to-green-800 rounded-xl flex items-center justify-center mx-auto mb-4">
-                      <span className="text-white font-bold">GitHub</span>
-                    </div>
-                    <p className="text-white/80 text-sm">Actions & CI/CD</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-purple-800 rounded-xl flex items-center justify-center mx-auto mb-4">
-                      <span className="text-white font-bold">AI/ML</span>
-                    </div>
-                    <p className="text-white/80 text-sm">Machine Learning</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-cyan-600 to-cyan-800 rounded-xl flex items-center justify-center mx-auto mb-4">
-                      <span className="text-white font-bold">Cloud</span>
-                    </div>
-                    <p className="text-white/80 text-sm">Native Architecture</p>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            {/* Call to Action */}
             <section className="text-center">
-              <div className="bg-gradient-to-r from-cyan-500/20 to-fuchsia-500/20 backdrop-blur-xl rounded-2xl p-12 border border-cyan-400/30">
-                <h2 className="text-3xl font-bold mb-6 text-white/90">Ready to Transform Your Infrastructure?</h2>
-                <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-                  Let's discuss how our autonomous technology solutions can revolutionize your digital operations and drive unprecedented efficiency.
+              <div className="bg-gradient-to-r from-cyan-400/10 to-fuchsia-400/10 rounded-2xl p-8 border border-cyan-400/30">
+                <h2 className="text-2xl font-bold text-cyan-300 mb-4">Ready to Transform Your Business?</h2>
+                <p className="text-white/80 mb-6">
+                  Let our autonomous technology solutions drive innovation and efficiency in your organization.
                 </p>
                 <div className="flex flex-wrap justify-center gap-4">
-                  <a href="/about" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:scale-105">
+                  <Link href="/contact" className="px-6 py-3 bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-white font-semibold rounded-lg transition-all duration-200">
+                    Get Started Today
+                  </Link>
+                  <Link href="/about" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold rounded-lg transition-all duration-200">
                     Learn More About Us
-                  </a>
-                  <button className="border border-white/30 hover:border-cyan-400/50 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:scale-105 backdrop-blur-xl">
-                    Schedule Consultation
-                  </button>
+                  </Link>
                 </div>
               </div>
             </section>
           </div>
->>>>>>> cursor/update-content-and-fix-links-74fc
         </main>
       </div>
     </>
