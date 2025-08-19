@@ -320,7 +320,19 @@
     "redundancy:comprehensive:orchestrator:stop": "node automation/comprehensive-redundancy-orchestrator.cjs stop",
     "redundancy:comprehensive:orchestrator:status": "node automation/comprehensive-redundancy-orchestrator.cjs status",
     "redundancy:comprehensive:orchestrator:report": "node automation/comprehensive-redundancy-orchestrator.cjs report",
-    "redundancy:comprehensive:orchestrator:once": "node automation/comprehensive-redundancy-orchestrator.cjs once"
+    "redundancy:comprehensive:orchestrator:once": "node automation/comprehensive-redundancy-orchestrator.cjs once",
+    "redundancy:ultimate:start": "bash automation/start-ultimate-redundancy.sh start",
+    "redundancy:ultimate:stop": "bash automation/start-ultimate-redundancy.sh stop",
+    "redundancy:ultimate:restart": "bash automation/start-ultimate-redundancy.sh restart",
+    "redundancy:ultimate:status": "bash automation/start-ultimate-redundancy.sh status",
+    "redundancy:ultimate:logs": "bash automation/start-ultimate-redundancy.sh logs",
+    "redundancy:ultimate:report": "bash automation/start-ultimate-redundancy.sh report",
+    "redundancy:ultimate:test": "bash automation/start-ultimate-redundancy.sh test",
+    "redundancy:ultimate:master": "node automation/ultimate-redundancy-master.cjs",
+    "redundancy:ultimate:pm2": "pm2 start ecosystem.ultimate-redundancy.cjs --update-env",
+    "redundancy:ultimate:pm2:stop": "pm2 stop ecosystem.ultimate-redundancy.cjs",
+    "redundancy:ultimate:pm2:restart": "pm2 restart ecosystem.ultimate-redundancy.cjs",
+    "redundancy:ultimate:pm2:status": "pm2 status ecosystem.ultimate-redundancy.cjs"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
