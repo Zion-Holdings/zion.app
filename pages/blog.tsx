@@ -10,7 +10,9 @@ export default function BlogPage() {
       date: "2025-01-19",
       category: "AI Development",
       readTime: "5 min read",
-      image: "🤖"
+      image: "🤖",
+      author: "Dr. Sarah Chen",
+      featured: true
     },
     {
       id: 2,
@@ -19,7 +21,9 @@ export default function BlogPage() {
       date: "2025-01-18",
       category: "DevOps",
       readTime: "4 min read",
-      image: "⚡"
+      image: "⚡",
+      author: "Marcus Rodriguez",
+      featured: false
     },
     {
       id: 3,
@@ -28,7 +32,9 @@ export default function BlogPage() {
       date: "2025-01-17",
       category: "Cloud",
       readTime: "6 min read",
-      image: "☁️"
+      image: "☁️",
+      author: "Alex Thompson",
+      featured: false
     },
     {
       id: 4,
@@ -37,7 +43,9 @@ export default function BlogPage() {
       date: "2025-01-16",
       category: "Machine Learning",
       readTime: "7 min read",
-      image: "🧠"
+      image: "🧠",
+      author: "Dr. Priya Patel",
+      featured: true
     },
     {
       id: 5,
@@ -46,7 +54,9 @@ export default function BlogPage() {
       date: "2025-01-15",
       category: "Automation",
       readTime: "5 min read",
-      image: "🔧"
+      image: "🔧",
+      author: "David Kim",
+      featured: false
     },
     {
       id: 6,
@@ -55,11 +65,79 @@ export default function BlogPage() {
       date: "2025-01-14",
       category: "AI Ethics",
       readTime: "8 min read",
-      image: "⚖️"
+      image: "⚖️",
+      author: "Dr. Elena Rodriguez",
+      featured: true
+    },
+    {
+      id: 7,
+      title: "Edge Computing and IoT Automation",
+      excerpt: "How edge computing is enabling autonomous decision-making in IoT devices and smart infrastructure.",
+      date: "2025-01-13",
+      category: "IoT",
+      readTime: "6 min read",
+      image: "🌐",
+      author: "James Wilson",
+      featured: false
+    },
+    {
+      id: 8,
+      title: "Quantum Computing in AI Applications",
+      excerpt: "Exploring the potential of quantum computing to revolutionize AI algorithms and machine learning.",
+      date: "2025-01-12",
+      category: "Quantum AI",
+      readTime: "9 min read",
+      image: "⚛️",
+      author: "Dr. Michael Chang",
+      featured: true
+    },
+    {
+      id: 9,
+      title: "Cybersecurity in Autonomous Systems",
+      excerpt: "Protecting AI systems from emerging threats and ensuring secure autonomous operations.",
+      date: "2025-01-11",
+      category: "Cybersecurity",
+      readTime: "7 min read",
+      image: "🔒",
+      author: "Lisa Chen",
+      featured: false
+    },
+    {
+      id: 10,
+      title: "Sustainable AI: Green Computing Practices",
+      excerpt: "How AI can contribute to environmental sustainability and reduce carbon footprints in technology.",
+      date: "2025-01-10",
+      category: "Sustainability",
+      readTime: "5 min read",
+      image: "🌱",
+      author: "Dr. Robert Green",
+      featured: false
+    },
+    {
+      id: 11,
+      title: "Human-AI Collaboration in the Workplace",
+      excerpt: "Building effective partnerships between humans and AI systems for enhanced productivity and innovation.",
+      date: "2025-01-09",
+      category: "Collaboration",
+      readTime: "6 min read",
+      image: "🤝",
+      author: "Amanda Foster",
+      featured: false
+    },
+    {
+      id: 12,
+      title: "The Future of Autonomous Vehicles",
+      excerpt: "How AI is transforming transportation and creating safer, more efficient autonomous vehicle systems.",
+      date: "2025-01-08",
+      category: "Transportation",
+      readTime: "8 min read",
+      image: "🚗",
+      author: "Dr. Carlos Mendez",
+      featured: true
     }
   ];
 
-  const categories = ["All", "AI Development", "DevOps", "Cloud", "Machine Learning", "Automation", "AI Ethics"];
+  const categories = ["All", "AI Development", "DevOps", "Cloud", "Machine Learning", "Automation", "AI Ethics", "IoT", "Quantum AI", "Cybersecurity", "Sustainability", "Collaboration", "Transportation"];
 
   return (
     <>
@@ -82,7 +160,37 @@ export default function BlogPage() {
             </p>
           </section>
 
+          {/* Featured Posts */}
+          <section className="mb-16">
+            <h2 className="text-3xl font-bold mb-8 text-cyan-400">Featured Articles</h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+              {blogPosts.filter(post => post.featured).slice(0, 4).map((post) => (
+                <article key={post.id} className="bg-gradient-to-br from-cyan-500/10 to-fuchsia-500/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-cyan-500/15 transition-all duration-300 hover:scale-105 border border-cyan-400/20">
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="inline-block px-3 py-1 bg-cyan-400/20 text-cyan-300 text-sm rounded-full border border-cyan-400/30">
+                      {post.category}
+                    </span>
+                    <span className="text-white/60 text-sm">{post.readTime}</span>
+                  </div>
+                  <div className="text-6xl mb-4 text-center">{post.image}</div>
+                  <h3 className="text-2xl font-bold mb-3 text-white hover:text-cyan-400 transition-colors">
+                    {post.title}
+                  </h3>
+                  <p className="text-white/80 mb-4 text-base leading-relaxed">
+                    {post.excerpt}
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-cyan-300 text-sm">By {post.author}</span>
+                    <span className="text-white/60 text-sm">{post.date}</span>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          {/* All Posts */}
           <section className="mx-auto max-w-6xl">
+            <h2 className="text-3xl font-bold mb-8 text-fuchsia-400">All Articles</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {blogPosts.map((post) => (
                 <article key={post.id} className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 hover:bg-white/15 transition-all duration-300 hover:scale-105">
@@ -98,9 +206,9 @@ export default function BlogPage() {
                   <p className="text-white/70 mb-4 text-sm leading-relaxed">
                     {post.excerpt}
                   </p>
-                  <div className="flex items-center justify-between text-sm text-white/50">
-                    <span>{post.date}</span>
-                    <span>{post.readTime}</span>
+                  <div className="flex items-center justify-between">
+                    <span className="text-cyan-300 text-sm">By {post.author}</span>
+                    <span className="text-white/60 text-sm">{post.readTime}</span>
                   </div>
                   <button className="w-full mt-4 px-4 py-2 bg-gradient-to-r from-cyan-400 to-fuchsia-400 text-white font-semibold rounded-lg hover:from-cyan-500 hover:to-fuchsia-500 transition-all duration-200">
                     Read More
