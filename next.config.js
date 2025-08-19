@@ -1,11 +1,10 @@
 const nextConfig = {
 	reactStrictMode: true,
 	swcMinify: true,
-	output: 'standalone',
+	output: 'export',
 	trailingSlash: true,
-	distDir: '.next',
-	generateBuildId: async () => {
-		return 'build-' + Date.now()
+	images: {
+		unoptimized: true
 	}
 };
 
