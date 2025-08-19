@@ -1,11 +1,11 @@
 {
   "summary": {
     "totalChecks": 6,
-    "passedChecks": 5,
-    "failedChecks": 1,
+    "passedChecks": 4,
+    "failedChecks": 2,
     "criticalFailures": 0,
     "canBuild": true,
-    "timestamp": "2025-08-19T17:35:16.956Z"
+    "timestamp": "2025-08-19T17:35:26.602Z"
   },
   "results": [
     {
@@ -34,8 +34,8 @@
     },
     {
       "name": "File Permissions",
-      "status": "PASS",
-      "result": "All critical directories have proper permissions",
+      "status": "FAIL",
+      "error": "No write access to pages directory",
       "critical": false
     },
     {
@@ -46,6 +46,7 @@
     }
   ],
   "recommendations": [
-    "Verify all required environment variables are set"
+    "Verify all required environment variables are set",
+    "Check file permissions and ensure write access to key directories"
   ]
 }
