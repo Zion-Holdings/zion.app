@@ -1,0 +1,9 @@
+{
+  "name": "workflow-orchestrator-agent",
+  "version": "1.0.0",
+  "description": "Workflow orchestration agent",
+  "main": "WorkflowOrchestrator.cjs",
+  "scripts": {
+    "start": "node WorkflowOrchestrator.cjs"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "content-gap-analyzer-agent",
+  "version": "1.0.0",
+  "description": "Content gap analysis agent",
+  "main": "ContentGapAnalyzer.cjs",
+  "scripts": {
+    "start": "node ContentGapAnalyzer.cjs"
+  }
+}

@@ -1,0 +1,23 @@
+name: Demo Content Generation
+
+on:
+  schedule:
+    - cron: '0 2 * * 1'  # Every Monday at 2 AM
+  workflow_dispatch:  # Manual trigger
+
+jobs:
+  generate-content:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Run content analysis
+        run: |
+          echo "Content generation workflow running..."
+          echo "This would analyze content and generate suggestions"

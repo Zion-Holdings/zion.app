@@ -1,0 +1,50 @@
+{
+  "timestamp": "2025-01-15T10:00:00.000Z",
+  "appStructure": {
+    "files": {
+      "total": 150,
+      "byExtension": {
+        ".tsx": 45,
+        ".ts": 30,
+        ".js": 25,
+        ".md": 20,
+        ".json": 15,
+        ".css": 15
+      }
+    },
+    "workflows": {
+      "ci.yml": "Basic CI workflow",
+      "deploy.yml": "Deployment workflow"
+    }
+  },
+  "contentAnalysis": {
+    "pages": {
+      "index.tsx": {"hasSEO": true, "hasMetadata": true},
+      "about.tsx": {"hasSEO": false, "hasMetadata": false}
+    },
+    "components": {
+      "Button.tsx": {"hasProps": true, "hasState": false},
+      "Card.tsx": {"hasProps": true, "hasState": false}
+    }
+  },
+  "gapAnalysis": {
+    "missingPages": [
+      {"name": "contact", "priority": "high", "reason": "Essential business page"},
+      {"name": "privacy", "priority": "medium", "reason": "Legal compliance"}
+    ],
+    "missingDocumentation": [
+      {"name": "API", "priority": "high", "reason": "Developer experience"},
+      {"name": "DEPLOYMENT", "priority": "medium", "reason": "DevOps guidance"}
+    ]
+  },
+  "agentSuggestions": {
+    "contentAgents": [
+      {"name": "Content Gap Analyzer", "priority": "high"},
+      {"name": "SEO Optimizer", "priority": "medium"}
+    ],
+    "automationAgents": [
+      {"name": "Workflow Orchestrator", "priority": "high"},
+      {"name": "Dependency Manager", "priority": "medium"}
+    ]
+  }
+}
