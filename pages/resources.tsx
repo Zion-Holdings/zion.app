@@ -78,6 +78,81 @@ export default function ResourcesPage() {
       description: 'Compare your automation performance against industry standards.',
       type: 'Analytics Tool',
       estimatedTime: '20 minutes'
+    },
+    {
+      id: 'cost-calculator',
+      title: 'AI Implementation Cost Calculator',
+      description: 'Estimate the total cost of ownership for AI automation projects.',
+      type: 'Financial Tool',
+      estimatedTime: '25 minutes'
+    },
+    {
+      id: 'security-audit',
+      title: 'AI Security Assessment Tool',
+      description: 'Evaluate the security posture of your AI systems and identify vulnerabilities.',
+      type: 'Security Tool',
+      estimatedTime: '45 minutes'
+    },
+    {
+      id: 'compliance-checker',
+      title: 'AI Compliance Checker',
+      description: 'Ensure your AI systems meet regulatory requirements and industry standards.',
+      type: 'Compliance Tool',
+      estimatedTime: '35 minutes'
+    }
+  ];
+
+  const trainingPrograms = [
+    {
+      id: 'ai-fundamentals',
+      title: 'AI Fundamentals for Business Leaders',
+      description: 'Essential AI concepts and strategies for executives and decision-makers.',
+      duration: '2 days',
+      level: 'Beginner',
+      format: 'In-person & Virtual'
+    },
+    {
+      id: 'automation-implementation',
+      title: 'Automation Implementation Masterclass',
+      description: 'Step-by-step guide to implementing AI automation in your organization.',
+      duration: '3 days',
+      level: 'Intermediate',
+      format: 'Workshop'
+    },
+    {
+      id: 'ai-ethics-leadership',
+      title: 'AI Ethics Leadership Program',
+      description: 'Develop ethical AI strategies and governance frameworks for your organization.',
+      duration: '1 day',
+      level: 'Advanced',
+      format: 'Executive Session'
+    }
+  ];
+
+  const webinars = [
+    {
+      id: 'future-of-automation',
+      title: 'The Future of Automation: 2025 and Beyond',
+      description: 'Explore emerging trends and technologies that will shape automation in the coming years.',
+      date: 'January 25, 2025',
+      duration: '60 minutes',
+      speakers: ['Dr. Sarah Chen', 'Marcus Rodriguez']
+    },
+    {
+      id: 'ai-roi-strategies',
+      title: 'Maximizing AI ROI: Proven Strategies',
+      description: 'Learn how to measure and maximize return on investment for AI initiatives.',
+      date: 'February 8, 2025',
+      duration: '45 minutes',
+      speakers: ['Jennifer Park', 'David Thompson']
+    },
+    {
+      id: 'ethical-ai-implementation',
+      title: 'Building Ethical AI Systems',
+      description: 'Best practices for implementing AI systems that are fair, transparent, and accountable.',
+      date: 'February 22, 2025',
+      duration: '75 minutes',
+      speakers: ['Dr. Michael Chang', 'Lisa Rodriguez']
     }
   ];
 
@@ -195,6 +270,62 @@ export default function ResourcesPage() {
               </div>
             </section>
             
+            {/* Training Programs */}
+            <section className="mb-20">
+              <h2 className="text-3xl font-bold mb-8 text-center text-white">Training & Education</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {trainingPrograms.map(program => (
+                  <div key={program.id} className="bg-white/10 rounded-xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300">
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className="px-2 py-1 bg-fuchsia-400/20 text-fuchsia-400 text-xs rounded-full border border-fuchsia-400/30">
+                        {program.level}
+                      </span>
+                      <span className="text-white/60 text-xs">{program.duration}</span>
+                      <span className="text-white/60 text-xs">•</span>
+                      <span className="text-white/60 text-xs">{program.format}</span>
+                    </div>
+                    <h3 className="text-xl font-semibold mb-3 text-white">{program.title}</h3>
+                    <p className="text-white/80 text-sm mb-4">{program.description}</p>
+                    <button className="w-full bg-gradient-to-r from-cyan-400 to-fuchsia-400 text-white px-4 py-2 rounded-lg font-medium hover:from-cyan-500 hover:to-fuchsia-500 transition-all duration-300">
+                      Register Now
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Upcoming Webinars */}
+            <section className="mb-20">
+              <h2 className="text-3xl font-bold mb-8 text-center text-white">Upcoming Webinars</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {webinars.map(webinar => (
+                  <div key={webinar.id} className="bg-white/10 rounded-xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300">
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className="px-2 py-1 bg-green-400/20 text-green-400 text-xs rounded-full border border-green-400/30">
+                        {webinar.duration}
+                      </span>
+                      <span className="text-white/60 text-xs">{webinar.date}</span>
+                    </div>
+                    <h3 className="text-xl font-semibold mb-3 text-white">{webinar.title}</h3>
+                    <p className="text-white/80 text-sm mb-4">{webinar.description}</p>
+                    <div className="mb-4">
+                      <p className="text-white/60 text-xs mb-2">Speakers:</p>
+                      <div className="flex flex-wrap gap-2">
+                        {webinar.speakers.map((speaker, index) => (
+                          <span key={index} className="px-2 py-1 bg-white/10 text-white/80 text-xs rounded border border-white/20">
+                            {speaker}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    <button className="w-full bg-gradient-to-r from-green-400 to-emerald-400 text-white px-4 py-2 rounded-lg font-medium hover:from-green-500 hover:to-emerald-500 transition-all duration-300">
+                      Reserve Your Spot
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </section>
+
             {/* Newsletter Signup */}
             <section className="text-center">
               <div className="bg-gradient-to-r from-cyan-500/10 to-fuchsia-500/10 rounded-2xl p-8 border border-cyan-500/20">
