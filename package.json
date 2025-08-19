@@ -305,7 +305,19 @@
     "redundancy:monitor": "node automation/redundancy-automation-system.cjs monitor",
     "redundancy:pm2": "node automation/pm2-redundancy-monitor.cjs check",
     "redundancy:github": "node automation/github-actions-redundancy.cjs check",
-    "redundancy:netlify": "node automation/netlify-functions-redundancy.cjs check"
+    "redundancy:netlify": "node automation/netlify-functions-redundancy.cjs check",
+    "redundancy:comprehensive": "node automation/comprehensive-redundancy-system.cjs",
+    "redundancy:comprehensive:start": "node automation/comprehensive-redundancy-system.cjs start",
+    "redundancy:comprehensive:stop": "node automation/comprehensive-redundancy-system.cjs stop",
+    "redundancy:comprehensive:status": "node automation/comprehensive-redundancy-system.cjs status",
+    "redundancy:comprehensive:report": "node automation/comprehensive-redundancy-system.cjs report",
+    "redundancy:comprehensive:health": "node automation/comprehensive-redundancy-system.cjs health",
+    "redundancy:start:v2": "./start-comprehensive-redundancy-v2.sh",
+    "redundancy:start:v2:status": "./start-comprehensive-redundancy-v2.sh status",
+    "redundancy:start:v2:report": "./start-comprehensive-redundancy-v2.sh report",
+    "redundancy:start:v2:health": "./start-comprehensive-redundancy-v2.sh health",
+    "redundancy:start:v2:restart": "./start-comprehensive-redundancy-v2.sh restart",
+    "redundancy:start:v2:logs": "./start-comprehensive-redundancy-v2.sh logs"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
