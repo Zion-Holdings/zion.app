@@ -17,6 +17,16 @@ const nextConfig = {
     forceSwcTransforms: true,
   },
   reactStrictMode: false,
+  // React version enforcement
+  webpack: (config, { isServer }) => {
+    // Ensure React version consistency
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      'react': require.resolve('react'),
+      'react-dom': require.resolve('react-dom'),
+    };
+    return config;
+  },
 };
 
 module.exports = nextConfig;

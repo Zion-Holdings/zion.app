@@ -45,17 +45,4 @@ try {
   process.exit(1);
 }
 
-// Create a .babelrc file to ensure consistent React compilation
-const babelrc = {
-  presets: [
-    ['@babel/preset-react', {
-      runtime: 'automatic',
-      importSource: 'react'
-    }]
-  ]
-};
-
-fs.writeFileSync('.babelrc', JSON.stringify(babelrc, null, 2));
-console.log('✅ Created .babelrc configuration');
-
 console.log('🎉 Build environment prepared successfully!');
