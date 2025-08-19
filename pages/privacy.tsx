@@ -1,23 +1,24 @@
 import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 
 export default function PrivacyPage() {
   return (
     <>
       <Head>
         <title>Privacy Policy | Zion Tech Group</title>
-        <meta name="description" content="Zion Tech Group's privacy policy - learn how we collect, use, and protect your personal information." />
+        <meta name="description" content="Zion Tech Group&apos;s privacy policy - learn how we collect, use, and protect your personal information." />
         <meta property="og:title" content="Privacy Policy | Zion Tech Group" />
-        <meta property="og:description" content="Zion Tech Group's privacy policy - learn how we collect, use, and protect your personal information." />
+        <meta property="og:description" content="Zion Tech Group&apos;s privacy policy - learn how we collect, use, and protect your personal information." />
       </Head>
       
       <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-950 text-white">
         <main className="container mx-auto px-6 py-12">
           <div className="max-w-4xl mx-auto">
             <nav className="mb-8">
-              <a href="/" className="text-cyan-400 hover:text-cyan-300 transition-colors">
+              <Link href="/" className="text-cyan-400 hover:text-cyan-300 transition-colors">
                 ← Back to Home
-              </a>
+              </Link>
             </nav>
             
             <header className="mb-12">
@@ -33,7 +34,7 @@ export default function PrivacyPage() {
               <section className="mb-8">
                 <h2 className="text-2xl font-semibold mb-4 text-white">Introduction</h2>
                 <p className="text-white/90 mb-4">
-                  Zion Tech Group ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy 
+                  Zion Tech Group (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;) is committed to protecting your privacy. This Privacy Policy 
                   explains how we collect, use, disclose, and safeguard your information when you visit our website, 
                   use our services, or interact with our autonomous technology systems.
                 </p>
@@ -217,7 +218,7 @@ export default function PrivacyPage() {
               </section>
               
               <section className="mb-8">
-                <h2 className="text-2xl font-semibold mb-4 text-white">Children's Privacy</h2>
+                <h2 className="text-2xl font-semibold mb-4 text-white">Children&apos;s Privacy</h2>
                 <p className="text-white/90 mb-4">
                   Our services are not intended for children under the age of 13. We do not knowingly collect personal 
                   information from children under 13. If you believe we have collected such information, please contact us 
@@ -277,12 +278,12 @@ export default function PrivacyPage() {
             </article>
             
             <div className="mt-12 text-center">
-              <a 
+              <Link 
                 href="/contact" 
                 className="bg-gradient-to-r from-cyan-400 to-fuchsia-400 text-white px-8 py-3 rounded-lg font-semibold hover:from-cyan-500 hover:to-fuchsia-500 transition-all duration-300"
               >
                 Contact Us
-              </a>
+              </Link>
             </div>
           </div>
         </main>

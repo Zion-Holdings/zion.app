@@ -6,7 +6,7 @@ export default function ContactPage() {
     <>
       <Head>
         <title>Contact Zion Tech Group | Get in Touch</title>
-        <meta name="description" content="Get in touch with Zion Tech Group. We're here to help with your autonomous technology needs and AI innovation projects." />
+        <meta name="description" content="Get in touch with Zion Tech Group. We&apos;re here to help with your autonomous technology needs and AI innovation projects." />
         <meta property="og:title" content="Contact Zion Tech Group" />
         <meta property="og:description" content="Get in touch with Zion Tech Group." />
         <meta name="twitter:card" content="summary_large_image" />
@@ -19,7 +19,7 @@ export default function ContactPage() {
               Contact Us
             </h1>
             <p className="text-xl text-white/80 max-w-3xl mx-auto">
-              Ready to explore the future of autonomous technology? Let's connect and discuss how we can help transform your vision into reality.
+              Ready to explore the future of autonomous technology? Let&apos;s connect and discuss how we can help transform your vision into reality.
             </p>
           </section>
 

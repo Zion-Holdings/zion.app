@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 
 export default function BlogPage() {
   const blogPosts = [
@@ -69,9 +70,9 @@ export default function BlogPage() {
         <main className="container mx-auto px-6 py-12">
           <div className="max-w-6xl mx-auto">
             <nav className="mb-8">
-              <a href="/" className="text-cyan-400 hover:text-cyan-300 transition-colors">
+              <Link href="/" className="text-cyan-400 hover:text-cyan-300 transition-colors">
                 ← Back to Home
-              </a>
+              </Link>
             </nav>
             
             <header className="text-center mb-16">
@@ -97,16 +98,16 @@ export default function BlogPage() {
                     <span className="text-white/60 text-sm">{post.readTime}</span>
                   </div>
                   <h3 className="text-3xl font-bold mb-4 text-white hover:text-cyan-400 transition-colors">
-                    <a href={`/blog/${post.id}`}>{post.title}</a>
+                    <Link href={`/blog/${post.id}`}>{post.title}</Link>
                   </h3>
                   <p className="text-lg text-white/80 mb-6">{post.excerpt}</p>
-                  <a 
+                  <Link 
                     href={`/blog/${post.id}`}
                     className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors font-semibold"
                   >
                     Read Full Article
                     <span aria-hidden>→</span>
-                  </a>
+                  </Link>
                 </div>
               ))}
             </section>
@@ -138,17 +139,17 @@ export default function BlogPage() {
                       <span className="text-white/60 text-xs">{post.readTime}</span>
                     </div>
                     <h3 className="text-xl font-semibold mb-3 text-white group-hover:text-cyan-400 transition-colors">
-                      <a href={`/blog/${post.id}`}>{post.title}</a>
+                      <Link href={`/blog/${post.id}`}>{post.title}</Link>
                     </h3>
                     <p className="text-white/80 text-sm mb-4 line-clamp-3">{post.excerpt}</p>
                     <div className="flex items-center justify-between">
                       <span className="text-white/60 text-xs">{post.date}</span>
-                      <a 
+                      <Link 
                         href={`/blog/${post.id}`}
                         className="text-cyan-400 hover:text-cyan-300 transition-colors text-sm font-medium"
                       >
                         Read More →
-                      </a>
+                      </Link>
                     </div>
                   </article>
                 ))}
@@ -183,29 +184,29 @@ export default function BlogPage() {
             <section className="mt-16">
               <h2 className="text-2xl font-bold mb-8 text-center text-white">Explore More</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <a href="/about" className="bg-white/10 rounded-xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300 text-center group">
+                <Link href="/about" className="bg-white/10 rounded-xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300 text-center group">
                   <div className="w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                     <span className="text-2xl">🏢</span>
                   </div>
                   <h3 className="text-lg font-semibold text-cyan-400 mb-2">About Us</h3>
                   <p className="text-white/80 text-sm">Learn about our mission and vision for autonomous technology</p>
-                </a>
+                </Link>
                 
-                <a href="/contact" className="bg-white/10 rounded-xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300 text-center group">
+                <Link href="/contact" className="bg-white/10 rounded-xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300 text-center group">
                   <div className="w-16 h-16 bg-gradient-to-br from-fuchsia-400 to-purple-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                     <span className="text-2xl">📞</span>
                   </div>
                   <h3 className="text-lg font-semibold text-fuchsia-400 mb-2">Get in Touch</h3>
-                  <p className="text-white/80 text-sm">Have questions? We'd love to hear from you</p>
-                </a>
+                  <p className="text-white/80 text-sm">Have questions? We&apos;d love to hear from you</p>
+                </Link>
                 
-                <a href="/" className="bg-white/10 rounded-xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300 text-center group">
+                <Link href="/" className="bg-white/10 rounded-xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300 text-center group">
                   <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-indigo-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                     <span className="text-2xl">🚀</span>
                   </div>
                   <h3 className="text-lg font-semibold text-purple-400 mb-2">Platform Demo</h3>
                   <p className="text-white/80 text-sm">Experience our autonomous technology firsthand</p>
-                </a>
+                </Link>
               </div>
             </section>
           </div>
