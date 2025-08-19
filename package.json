@@ -339,7 +339,20 @@
     "redundancy:ultimate:master:restart": "node automation/ultimate-redundancy-master.cjs restart",
     "redundancy:ultimate:master:status": "node automation/ultimate-redundancy-master.cjs status",
     "redundancy:ultimate:master:report": "node automation/ultimate-redundancy-master.cjs report",
-    "redundancy:ultimate:master:monitor": "node automation/ultimate-redundancy-master.cjs monitor"
+    "redundancy:ultimate:master:monitor": "node automation/ultimate-redundancy-master.cjs monitor",
+    "redundancy:ultimate:automation:start": "./automation/start-ultimate-redundancy-automation.sh start",
+    "redundancy:ultimate:automation:stop": "./automation/start-ultimate-redundancy-automation.sh stop",
+    "redundancy:ultimate:automation:restart": "./automation/start-ultimate-redundancy-automation.sh restart",
+    "redundancy:ultimate:automation:status": "./automation/start-ultimate-redundancy-automation.sh status",
+    "redundancy:ultimate:automation:health": "./automation/start-ultimate-redundancy-automation.sh health",
+    "redundancy:ultimate:automation:logs": "./automation/start-ultimate-redundancy-automation.sh logs",
+    "redundancy:ultimate:automation:monitor": "./automation/start-ultimate-redundancy-automation.sh monitor",
+    "redundancy:ultimate:automation:emergency": "./automation/start-ultimate-redundancy-automation.sh emergency",
+    "automation:ultimate:orchestrator": "node automation/ultimate-automation-orchestrator.cjs",
+    "automation:ultimate:orchestrator:start": "node automation/ultimate-automation-orchestrator.cjs start",
+    "automation:ultimate:orchestrator:status": "node automation/ultimate-automation-orchestrator.cjs status",
+    "automation:ultimate:orchestrator:health": "node automation/ultimate-automation-orchestrator.cjs health",
+    "automation:ultimate:orchestrator:monitor": "node automation/ultimate-automation-orchestrator.cjs monitor"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
