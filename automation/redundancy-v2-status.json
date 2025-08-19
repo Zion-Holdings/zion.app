@@ -1,0 +1,1403 @@
+{
+  "startTime": "2025-08-19T17:56:01.748Z",
+  "lastHealthCheck": "2025-08-19T18:15:30.328Z",
+  "systems": {
+    "pm2": {
+      "healthy": false,
+      "needsRecovery": true,
+      "error": "Command failed: pm2 status --no-daemon\n/bin/sh: 1: pm2: not found\n",
+      "lastCheck": "2025-08-19T18:15:10.224Z",
+      "status": "unhealthy"
+    },
+    "github": {
+      "healthy": false,
+      "needsRecovery": true,
+      "details": {
+        "primaryWorkflows": [
+          {
+            "file": "automation-health-ultimate.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "build-monitor-ultimate.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "marketing-sync-redundancy.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "marketing-sync.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health-redundancy.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "ultimate-redundancy.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          }
+        ],
+        "backupWorkflows": [
+          {
+            "file": "backups",
+            "valid": false,
+            "error": "EISDIR: illegal operation on a directory, read"
+          },
+          {
+            "file": "marketing-sync-backup-redundancy.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "marketing-sync-backup.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health-backup-redundancy.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health-backup.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          }
+        ],
+        "totalWorkflows": 12,
+        "allValid": false
+      },
+      "lastCheck": "2025-08-19T18:15:10.217Z",
+      "status": "unhealthy"
+    },
+    "build": {
+      "healthy": false,
+      "needsRecovery": true,
+      "error": "Expected double-quoted property name in JSON at position 28657 (line 343 column 1)",
+      "lastCheck": "2025-08-19T18:14:10.209Z",
+      "status": "unhealthy"
+    },
+    "netlify": {
+      "healthy": true,
+      "needsRecovery": false,
+      "details": {
+        "hasNetlifyConfig": true,
+        "hasFunctions": true,
+        "hasAutomationScripts": true,
+        "automationScripts": [
+          "netlify-functions-redundancy.cjs",
+          "enhanced-netlify-healer.cjs"
+        ]
+      },
+      "lastCheck": "2025-08-19T18:15:10.215Z",
+      "status": "healthy"
+    },
+    "content": {
+      "healthy": false,
+      "needsRecovery": true,
+      "details": {
+        "hasContentScripts": false,
+        "hasContentGeneration": false,
+        "availableScripts": []
+      },
+      "lastCheck": "2025-08-19T18:14:10.208Z",
+      "status": "unhealthy"
+    },
+    "marketing": {
+      "healthy": "ts-node scripts/linkedin-automation.ts run",
+      "needsRecovery": false,
+      "details": {
+        "hasMarketingScripts": true,
+        "hasMarketingScriptsInPackage": "ts-node scripts/linkedin-automation.ts run",
+        "availableScripts": [
+          "marketing-sync.js"
+        ]
+      },
+      "lastCheck": "2025-08-19T18:06:01.771Z",
+      "status": "healthy"
+    }
+  },
+  "failures": [
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T17:56:31.763Z",
+      "error": "Command failed: pm2 status --no-daemon\n/bin/sh: 1: pm2: not found\n"
+    },
+    {
+      "system": "github",
+      "timestamp": "2025-08-19T17:57:01.758Z",
+      "error": "Unknown error",
+      "details": {
+        "primaryWorkflows": [
+          {
+            "file": "marketing-sync.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          }
+        ],
+        "backupWorkflows": [
+          {
+            "file": "backups",
+            "valid": false,
+            "error": "EISDIR: illegal operation on a directory, read"
+          },
+          {
+            "file": "marketing-sync-backup.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health-backup.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          }
+        ],
+        "totalWorkflows": 5,
+        "allValid": false
+      }
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T17:57:01.762Z",
+      "error": "Command failed: pm2 status --no-daemon\n/bin/sh: 1: pm2: not found\n"
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T17:57:31.763Z",
+      "error": "Command failed: pm2 status --no-daemon\n/bin/sh: 1: pm2: not found\n"
+    },
+    {
+      "system": "github",
+      "timestamp": "2025-08-19T17:58:01.759Z",
+      "error": "Unknown error",
+      "details": {
+        "primaryWorkflows": [
+          {
+            "file": "marketing-sync.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          }
+        ],
+        "backupWorkflows": [
+          {
+            "file": "backups",
+            "valid": false,
+            "error": "EISDIR: illegal operation on a directory, read"
+          },
+          {
+            "file": "marketing-sync-backup.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health-backup.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          }
+        ],
+        "totalWorkflows": 5,
+        "allValid": false
+      }
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T17:58:01.763Z",
+      "error": "Command failed: pm2 status --no-daemon\n/bin/sh: 1: pm2: not found\n"
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T17:58:31.773Z",
+      "error": "Command failed: pm2 status --no-daemon\n/bin/sh: 1: pm2: not found\n"
+    },
+    {
+      "system": "content",
+      "timestamp": "2025-08-19T17:59:01.758Z",
+      "error": "Unknown error",
+      "details": {
+        "hasContentScripts": false,
+        "hasContentGeneration": false,
+        "availableScripts": []
+      }
+    },
+    {
+      "system": "github",
+      "timestamp": "2025-08-19T17:59:01.759Z",
+      "error": "Unknown error",
+      "details": {
+        "primaryWorkflows": [
+          {
+            "file": "marketing-sync.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          }
+        ],
+        "backupWorkflows": [
+          {
+            "file": "backups",
+            "valid": false,
+            "error": "EISDIR: illegal operation on a directory, read"
+          },
+          {
+            "file": "marketing-sync-backup.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health-backup.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          }
+        ],
+        "totalWorkflows": 5,
+        "allValid": false
+      }
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T17:59:01.773Z",
+      "error": "Command failed: pm2 status --no-daemon\n/bin/sh: 1: pm2: not found\n"
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T17:59:31.780Z",
+      "error": "Command failed: pm2 status --no-daemon\n/bin/sh: 1: pm2: not found\n"
+    },
+    {
+      "system": "github",
+      "timestamp": "2025-08-19T18:00:01.768Z",
+      "error": "Unknown error",
+      "details": {
+        "primaryWorkflows": [
+          {
+            "file": "marketing-sync.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          }
+        ],
+        "backupWorkflows": [
+          {
+            "file": "backups",
+            "valid": false,
+            "error": "EISDIR: illegal operation on a directory, read"
+          },
+          {
+            "file": "marketing-sync-backup.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health-backup.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          }
+        ],
+        "totalWorkflows": 5,
+        "allValid": false
+      }
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T18:00:01.780Z",
+      "error": "Command failed: pm2 status --no-daemon\n/bin/sh: 1: pm2: not found\n"
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T18:00:31.781Z",
+      "error": "Command failed: pm2 status --no-daemon\n/bin/sh: 1: pm2: not found\n"
+    },
+    {
+      "system": "github",
+      "timestamp": "2025-08-19T18:01:01.768Z",
+      "error": "Unknown error",
+      "details": {
+        "primaryWorkflows": [
+          {
+            "file": "marketing-sync.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          }
+        ],
+        "backupWorkflows": [
+          {
+            "file": "backups",
+            "valid": false,
+            "error": "EISDIR: illegal operation on a directory, read"
+          },
+          {
+            "file": "marketing-sync-backup.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health-backup.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          }
+        ],
+        "totalWorkflows": 5,
+        "allValid": false
+      }
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T18:01:01.780Z",
+      "error": "Command failed: pm2 status --no-daemon\n/bin/sh: 1: pm2: not found\n"
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T18:01:31.791Z",
+      "error": "Command failed: pm2 status --no-daemon\n/bin/sh: 1: pm2: not found\n"
+    },
+    {
+      "system": "content",
+      "timestamp": "2025-08-19T18:02:01.758Z",
+      "error": "Unknown error",
+      "details": {
+        "hasContentScripts": false,
+        "hasContentGeneration": false,
+        "availableScripts": []
+      }
+    },
+    {
+      "system": "github",
+      "timestamp": "2025-08-19T18:02:01.769Z",
+      "error": "Unknown error",
+      "details": {
+        "primaryWorkflows": [
+          {
+            "file": "marketing-sync.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          }
+        ],
+        "backupWorkflows": [
+          {
+            "file": "backups",
+            "valid": false,
+            "error": "EISDIR: illegal operation on a directory, read"
+          },
+          {
+            "file": "marketing-sync-backup.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health-backup.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          }
+        ],
+        "totalWorkflows": 5,
+        "allValid": false
+      }
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T18:02:01.790Z",
+      "error": "Command failed: pm2 status --no-daemon\n/bin/sh: 1: pm2: not found\n"
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T18:02:31.794Z",
+      "error": "Command failed: pm2 status --no-daemon\n/bin/sh: 1: pm2: not found\n"
+    },
+    {
+      "system": "github",
+      "timestamp": "2025-08-19T18:03:01.776Z",
+      "error": "Unknown error",
+      "details": {
+        "primaryWorkflows": [
+          {
+            "file": "marketing-sync.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          }
+        ],
+        "backupWorkflows": [
+          {
+            "file": "backups",
+            "valid": false,
+            "error": "EISDIR: illegal operation on a directory, read"
+          },
+          {
+            "file": "marketing-sync-backup.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health-backup.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          }
+        ],
+        "totalWorkflows": 5,
+        "allValid": false
+      }
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T18:03:01.794Z",
+      "error": "Command failed: pm2 status --no-daemon\n/bin/sh: 1: pm2: not found\n"
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T18:03:31.795Z",
+      "error": "Command failed: pm2 status --no-daemon\n/bin/sh: 1: pm2: not found\n"
+    },
+    {
+      "system": "github",
+      "timestamp": "2025-08-19T18:04:01.779Z",
+      "error": "Unknown error",
+      "details": {
+        "primaryWorkflows": [
+          {
+            "file": "marketing-sync.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          }
+        ],
+        "backupWorkflows": [
+          {
+            "file": "backups",
+            "valid": false,
+            "error": "EISDIR: illegal operation on a directory, read"
+          },
+          {
+            "file": "marketing-sync-backup.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health-backup.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          }
+        ],
+        "totalWorkflows": 5,
+        "allValid": false
+      }
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T18:04:01.795Z",
+      "error": "Command failed: pm2 status --no-daemon\n/bin/sh: 1: pm2: not found\n"
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T18:04:31.803Z",
+      "error": "Command failed: pm2 status --no-daemon\n/bin/sh: 1: pm2: not found\n"
+    },
+    {
+      "system": "content",
+      "timestamp": "2025-08-19T18:05:01.768Z",
+      "error": "Unknown error",
+      "details": {
+        "hasContentScripts": false,
+        "hasContentGeneration": false,
+        "availableScripts": []
+      }
+    },
+    {
+      "system": "github",
+      "timestamp": "2025-08-19T18:05:01.778Z",
+      "error": "Unknown error",
+      "details": {
+        "primaryWorkflows": [
+          {
+            "file": "marketing-sync.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          }
+        ],
+        "backupWorkflows": [
+          {
+            "file": "backups",
+            "valid": false,
+            "error": "EISDIR: illegal operation on a directory, read"
+          },
+          {
+            "file": "marketing-sync-backup.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health-backup.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          }
+        ],
+        "totalWorkflows": 5,
+        "allValid": false
+      }
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T18:05:01.804Z",
+      "error": "Command failed: pm2 status --no-daemon\n/bin/sh: 1: pm2: not found\n"
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T18:05:31.804Z",
+      "error": "Command failed: pm2 status --no-daemon\n/bin/sh: 1: pm2: not found\n"
+    },
+    {
+      "system": "github",
+      "timestamp": "2025-08-19T18:06:01.779Z",
+      "error": "Unknown error",
+      "details": {
+        "primaryWorkflows": [
+          {
+            "file": "marketing-sync.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          }
+        ],
+        "backupWorkflows": [
+          {
+            "file": "backups",
+            "valid": false,
+            "error": "EISDIR: illegal operation on a directory, read"
+          },
+          {
+            "file": "marketing-sync-backup.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health-backup.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          }
+        ],
+        "totalWorkflows": 5,
+        "allValid": false
+      }
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T18:06:01.804Z",
+      "error": "Command failed: pm2 status --no-daemon\n/bin/sh: 1: pm2: not found\n"
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T18:06:31.805Z",
+      "error": "Command failed: pm2 status --no-daemon\n/bin/sh: 1: pm2: not found\n"
+    },
+    {
+      "system": "github",
+      "timestamp": "2025-08-19T18:07:01.785Z",
+      "error": "Unknown error",
+      "details": {
+        "primaryWorkflows": [
+          {
+            "file": "marketing-sync.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          }
+        ],
+        "backupWorkflows": [
+          {
+            "file": "backups",
+            "valid": false,
+            "error": "EISDIR: illegal operation on a directory, read"
+          },
+          {
+            "file": "marketing-sync-backup.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health-backup.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          }
+        ],
+        "totalWorkflows": 5,
+        "allValid": false
+      }
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T18:07:01.804Z",
+      "error": "Command failed: pm2 status --no-daemon\n/bin/sh: 1: pm2: not found\n"
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T18:07:31.811Z",
+      "error": "Command failed: pm2 status --no-daemon\n/bin/sh: 1: pm2: not found\n"
+    },
+    {
+      "system": "content",
+      "timestamp": "2025-08-19T18:08:01.768Z",
+      "error": "Unknown error",
+      "details": {
+        "hasContentScripts": false,
+        "hasContentGeneration": false,
+        "availableScripts": []
+      }
+    },
+    {
+      "system": "github",
+      "timestamp": "2025-08-19T18:08:01.785Z",
+      "error": "Unknown error",
+      "details": {
+        "primaryWorkflows": [
+          {
+            "file": "marketing-sync.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          }
+        ],
+        "backupWorkflows": [
+          {
+            "file": "backups",
+            "valid": false,
+            "error": "EISDIR: illegal operation on a directory, read"
+          },
+          {
+            "file": "marketing-sync-backup.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health-backup.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          }
+        ],
+        "totalWorkflows": 5,
+        "allValid": false
+      }
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T18:08:01.810Z",
+      "error": "Command failed: pm2 status --no-daemon\n/bin/sh: 1: pm2: not found\n"
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T18:08:31.817Z",
+      "error": "Command failed: pm2 status --no-daemon\n/bin/sh: 1: pm2: not found\n"
+    },
+    {
+      "system": "github",
+      "timestamp": "2025-08-19T18:09:01.792Z",
+      "error": "Unknown error",
+      "details": {
+        "primaryWorkflows": [
+          {
+            "file": "marketing-sync.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          }
+        ],
+        "backupWorkflows": [
+          {
+            "file": "backups",
+            "valid": false,
+            "error": "EISDIR: illegal operation on a directory, read"
+          },
+          {
+            "file": "marketing-sync-backup.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health-backup.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          }
+        ],
+        "totalWorkflows": 5,
+        "allValid": false
+      }
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T18:09:01.819Z",
+      "error": "Command failed: pm2 status --no-daemon\n/bin/sh: 1: pm2: not found\n"
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T18:09:31.817Z",
+      "error": "Command failed: pm2 status --no-daemon\n/bin/sh: 1: pm2: not found\n"
+    },
+    {
+      "system": "github",
+      "timestamp": "2025-08-19T18:10:01.792Z",
+      "error": "Unknown error",
+      "details": {
+        "primaryWorkflows": [
+          {
+            "file": "marketing-sync.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          }
+        ],
+        "backupWorkflows": [
+          {
+            "file": "backups",
+            "valid": false,
+            "error": "EISDIR: illegal operation on a directory, read"
+          },
+          {
+            "file": "marketing-sync-backup.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health-backup.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          }
+        ],
+        "totalWorkflows": 5,
+        "allValid": false
+      }
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T18:10:01.817Z",
+      "error": "Command failed: pm2 status --no-daemon\n/bin/sh: 1: pm2: not found\n"
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T18:10:31.824Z",
+      "error": "Command failed: pm2 status --no-daemon\n/bin/sh: 1: pm2: not found\n"
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T18:11:40.213Z",
+      "error": "Command failed: pm2 status --no-daemon\n/bin/sh: 1: pm2: not found\n"
+    },
+    {
+      "system": "github",
+      "timestamp": "2025-08-19T18:12:10.206Z",
+      "error": "Unknown error",
+      "details": {
+        "primaryWorkflows": [
+          {
+            "file": "marketing-sync.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          }
+        ],
+        "backupWorkflows": [
+          {
+            "file": "backups",
+            "valid": false,
+            "error": "EISDIR: illegal operation on a directory, read"
+          },
+          {
+            "file": "marketing-sync-backup.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health-backup.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          }
+        ],
+        "totalWorkflows": 5,
+        "allValid": false
+      }
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T18:12:10.210Z",
+      "error": "Command failed: pm2 status --no-daemon\n/bin/sh: 1: pm2: not found\n"
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T18:12:40.211Z",
+      "error": "Command failed: pm2 status --no-daemon\n/bin/sh: 1: pm2: not found\n"
+    },
+    {
+      "system": "github",
+      "timestamp": "2025-08-19T18:13:10.206Z",
+      "error": "Unknown error",
+      "details": {
+        "primaryWorkflows": [
+          {
+            "file": "marketing-sync.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          }
+        ],
+        "backupWorkflows": [
+          {
+            "file": "backups",
+            "valid": false,
+            "error": "EISDIR: illegal operation on a directory, read"
+          },
+          {
+            "file": "marketing-sync-backup.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health-backup.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          }
+        ],
+        "totalWorkflows": 5,
+        "allValid": false
+      }
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T18:13:10.209Z",
+      "error": "Command failed: pm2 status --no-daemon\n/bin/sh: 1: pm2: not found\n"
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T18:13:40.218Z",
+      "error": "Command failed: pm2 status --no-daemon\n/bin/sh: 1: pm2: not found\n"
+    },
+    {
+      "system": "content",
+      "timestamp": "2025-08-19T18:14:10.208Z",
+      "error": "Unknown error",
+      "details": {
+        "hasContentScripts": false,
+        "hasContentGeneration": false,
+        "availableScripts": []
+      }
+    },
+    {
+      "system": "build",
+      "timestamp": "2025-08-19T18:14:10.209Z",
+      "error": "Expected double-quoted property name in JSON at position 28657 (line 343 column 1)"
+    },
+    {
+      "system": "github",
+      "timestamp": "2025-08-19T18:14:10.209Z",
+      "error": "Unknown error",
+      "details": {
+        "primaryWorkflows": [
+          {
+            "file": "automation-health-ultimate.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "build-monitor-ultimate.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "marketing-sync-redundancy.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "marketing-sync.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health-redundancy.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "ultimate-redundancy.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          }
+        ],
+        "backupWorkflows": [
+          {
+            "file": "backups",
+            "valid": false,
+            "error": "EISDIR: illegal operation on a directory, read"
+          },
+          {
+            "file": "marketing-sync-backup-redundancy.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "marketing-sync-backup.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health-backup-redundancy.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health-backup.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          }
+        ],
+        "totalWorkflows": 12,
+        "allValid": false
+      }
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T18:14:10.218Z",
+      "error": "Command failed: pm2 status --no-daemon\n/bin/sh: 1: pm2: not found\n"
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T18:14:40.225Z",
+      "error": "Command failed: pm2 status --no-daemon\n/bin/sh: 1: pm2: not found\n"
+    },
+    {
+      "system": "github",
+      "timestamp": "2025-08-19T18:15:10.217Z",
+      "error": "Unknown error",
+      "details": {
+        "primaryWorkflows": [
+          {
+            "file": "automation-health-ultimate.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "build-monitor-ultimate.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "marketing-sync-redundancy.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "marketing-sync.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health-redundancy.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "ultimate-redundancy.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          }
+        ],
+        "backupWorkflows": [
+          {
+            "file": "backups",
+            "valid": false,
+            "error": "EISDIR: illegal operation on a directory, read"
+          },
+          {
+            "file": "marketing-sync-backup-redundancy.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "marketing-sync-backup.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health-backup-redundancy.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          },
+          {
+            "file": "sync-health-backup.yml",
+            "valid": true,
+            "hasSchedule": true,
+            "hasPermissions": true
+          }
+        ],
+        "totalWorkflows": 12,
+        "allValid": false
+      }
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T18:15:10.224Z",
+      "error": "Command failed: pm2 status --no-daemon\n/bin/sh: 1: pm2: not found\n"
+    }
+  ],
+  "recoveries": [
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T17:57:01.780Z",
+      "success": false,
+      "attempts": 3
+    },
+    {
+      "system": "github",
+      "timestamp": "2025-08-19T17:57:11.790Z",
+      "success": true,
+      "attempts": 1
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T17:58:11.808Z",
+      "success": false,
+      "attempts": 3
+    },
+    {
+      "system": "github",
+      "timestamp": "2025-08-19T17:58:21.819Z",
+      "success": true,
+      "attempts": 1
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T17:59:11.842Z",
+      "success": false,
+      "attempts": 3
+    },
+    {
+      "system": "github",
+      "timestamp": "2025-08-19T17:59:41.853Z",
+      "success": true,
+      "attempts": 1
+    },
+    {
+      "system": "github",
+      "timestamp": "2025-08-19T18:00:51.885Z",
+      "success": true,
+      "attempts": 1
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T18:01:11.893Z",
+      "success": false,
+      "attempts": 3
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T18:01:21.900Z",
+      "success": false,
+      "attempts": 3
+    },
+    {
+      "system": "github",
+      "timestamp": "2025-08-19T18:02:11.919Z",
+      "success": true,
+      "attempts": 1
+    },
+    {
+      "system": "content",
+      "timestamp": "2025-08-19T18:03:11.953Z",
+      "success": false,
+      "attempts": 3
+    },
+    {
+      "system": "github",
+      "timestamp": "2025-08-19T18:03:31.963Z",
+      "success": true,
+      "attempts": 1
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T18:03:51.981Z",
+      "success": false,
+      "attempts": 3
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T18:04:42.005Z",
+      "success": false,
+      "attempts": 3
+    },
+    {
+      "system": "github",
+      "timestamp": "2025-08-19T18:04:52.016Z",
+      "success": true,
+      "attempts": 1
+    },
+    {
+      "system": "github",
+      "timestamp": "2025-08-19T18:05:52.050Z",
+      "success": true,
+      "attempts": 1
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T18:06:32.065Z",
+      "success": false,
+      "attempts": 3
+    },
+    {
+      "system": "github",
+      "timestamp": "2025-08-19T18:07:12.085Z",
+      "success": true,
+      "attempts": 1
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T18:07:42.105Z",
+      "success": false,
+      "attempts": 3
+    },
+    {
+      "system": "github",
+      "timestamp": "2025-08-19T18:08:32.131Z",
+      "success": true,
+      "attempts": 1
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T18:09:02.150Z",
+      "success": false,
+      "attempts": 3
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T18:09:42.175Z",
+      "success": false,
+      "attempts": 3
+    },
+    {
+      "system": "github",
+      "timestamp": "2025-08-19T18:09:52.184Z",
+      "success": true,
+      "attempts": 1
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T18:12:10.228Z",
+      "success": false,
+      "attempts": 3
+    },
+    {
+      "system": "github",
+      "timestamp": "2025-08-19T18:12:20.236Z",
+      "success": true,
+      "attempts": 1
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T18:13:20.262Z",
+      "success": false,
+      "attempts": 3
+    },
+    {
+      "system": "github",
+      "timestamp": "2025-08-19T18:13:30.270Z",
+      "success": true,
+      "attempts": 1
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T18:14:20.292Z",
+      "success": false,
+      "attempts": 3
+    },
+    {
+      "system": "github",
+      "timestamp": "2025-08-19T18:15:00.312Z",
+      "success": true,
+      "attempts": 1
+    }
+  ],
+  "uptime": 1168580
+}
