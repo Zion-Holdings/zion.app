@@ -23,21 +23,9 @@ export default function HomePage() {
             <p className="text-2xl text-white/90 max-w-4xl mx-auto mb-8 leading-relaxed">
               Autonomous innovation hub delivering cutting-edge technology solutions and intelligent automation systems that revolutionize digital infrastructure.
             </p>
-<<<<<<< HEAD
             
-            {/* Navigation Links */}
-            <div className="flex flex-wrap justify-center gap-4 mt-8">
-              <a href="/about" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-cyan-400/50">
-                About Us
-              </a>
-              <a href="/services" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-fuchsia-400/50">
-                Our Services
-              </a>
-              <a href="/contact" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-green-400/50">
-                Contact
-              </a>
-=======
-            <div className="flex flex-wrap justify-center gap-6 text-lg">
+            {/* Stats and Navigation */}
+            <div className="flex flex-wrap justify-center gap-6 text-lg mb-8">
               <div className="bg-white/10 backdrop-blur-xl rounded-xl px-6 py-3 border border-white/20">
                 <span className="text-cyan-300 font-semibold">227+</span> Active Automations
               </div>
@@ -47,11 +35,28 @@ export default function HomePage() {
               <div className="bg-white/10 backdrop-blur-xl rounded-xl px-6 py-3 border border-white/20">
                 <span className="text-green-300 font-semibold">99.9%</span> Uptime
               </div>
->>>>>>> cursor/update-content-and-fix-links-74fc
+            </div>
+            
+            {/* Navigation Links */}
+            <div className="flex flex-wrap justify-center gap-4">
+              <a href="/about" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-cyan-400/50">
+                About Us
+              </a>
+              <a href="/services" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-fuchsia-400/50">
+                Our Services
+              </a>
+              <a href="/contact" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-green-400/50">
+                Contact
+              </a>
+              <a href="/api-documentation" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-purple-400/50">
+                API Docs
+              </a>
+              <a href="/component-library" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-yellow-400/50">
+                Components
+              </a>
             </div>
           </section>
 
-<<<<<<< HEAD
           {/* Features Section */}
           <section className="mb-20">
             <h2 className="text-3xl font-bold text-center mb-12 text-white/90">Core Capabilities</h2>
