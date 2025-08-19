@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 
 export default function Update202508150405() {
   return (
@@ -15,9 +16,9 @@ export default function Update202508150405() {
         <main className="container mx-auto px-6 py-12">
           <div className="max-w-4xl mx-auto">
             <nav className="mb-8">
-              <a href="/" className="text-cyan-400 hover:text-cyan-300 transition-colors">
+              <Link href="/" className="text-cyan-400 hover:text-cyan-300 transition-colors">
                 ← Back to Home
-              </a>
+              </Link>
             </nav>
             
             <header className="mb-12">
@@ -130,11 +131,11 @@ export default function Update202508150405() {
               </section>
             </article>
 
-            <footer className="mt-16 pt-8 border-t border-white/20">
-              <p className="text-center text-white/60">
-                This update was autonomously generated and published by Zion Tech Group's AI systems.
-              </p>
-            </footer>
+                          <footer className="mt-16 pt-8 border-t border-white/20">
+                <p className="text-center text-white/60">
+                  This update was autonomously generated and published by Zion Tech Group&apos;s AI systems.
+                </p>
+              </footer>
           </div>
         </main>
       </div>

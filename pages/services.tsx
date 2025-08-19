@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 
 export default function ServicesPage() {
   return (
@@ -15,9 +16,9 @@ export default function ServicesPage() {
         <main className="container mx-auto px-6 py-12">
           <div className="max-w-6xl mx-auto">
             <nav className="mb-8">
-              <a href="/" className="text-cyan-400 hover:text-cyan-300 transition-colors">
+              <Link href="/" className="text-cyan-400 hover:text-cyan-300 transition-colors">
                 ← Back to Home
-              </a>
+              </Link>
             </nav>
             
             <header className="text-center mb-16">
@@ -199,12 +200,12 @@ export default function ServicesPage() {
                 Let our autonomous systems transform your business with cutting-edge technology solutions.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/contact" className="bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105">
+                <Link href="/contact" className="bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105">
                   Get Started
-                </a>
-                <a href="/about" className="border border-white/20 hover:border-cyan-400/50 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 hover:bg-white/10">
+                </Link>
+                <Link href="/about" className="border border-white/20 hover:border-cyan-400/50 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 hover:bg-white/10">
                   Learn More
-                </a>
+                </Link>
               </div>
             </section>
           </div>

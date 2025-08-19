@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 
 export default function HomePage() {
   return (
@@ -18,19 +19,19 @@ export default function HomePage() {
           <div className="container mx-auto px-6 py-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-8">
-                <a href="/" className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent">
+                <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent">
                   Zion Tech Group
-                </a>
+                </Link>
                 <div className="hidden md:flex items-center space-x-6">
-                  <a href="/services" className="text-white/80 hover:text-cyan-400 transition-colors">Services</a>
-                  <a href="/about" className="text-white/80 hover:text-cyan-400 transition-colors">About</a>
-                  <a href="/contact" className="text-white/80 hover:text-cyan-400 transition-colors">Contact</a>
+                  <Link href="/services" className="text-white/80 hover:text-cyan-400 transition-colors">Services</Link>
+                  <Link href="/about" className="text-white/80 hover:text-cyan-400 transition-colors">About</Link>
+                  <Link href="/contact" className="text-white/80 hover:text-cyan-400 transition-colors">Contact</Link>
                 </div>
               </div>
               <div className="flex items-center space-x-4">
-                <a href="/contact" className="bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-white font-semibold py-2 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                <Link href="/contact" className="bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-white font-semibold py-2 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
                   Get Started
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -45,12 +46,12 @@ export default function HomePage() {
               Autonomous innovation hub delivering cutting-edge technology solutions and intelligent automation systems.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/services" className="bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105">
+              <Link href="/services" className="bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105">
                 Explore Services
-              </a>
-              <a href="/about" className="border border-white/20 hover:border-cyan-400/50 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 hover:bg-white/10">
+              </Link>
+              <Link href="/about" className="border border-white/20 hover:border-cyan-400/50 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 hover:bg-white/10">
                 Learn More
-              </a>
+              </Link>
             </div>
           </section>
 
@@ -68,9 +69,9 @@ export default function HomePage() {
                 <p className="text-white/80 mb-6">
                   Intelligent automation systems that streamline operations and enhance productivity.
                 </p>
-                <a href="/services" className="text-cyan-400 hover:text-cyan-300 transition-colors font-semibold">
+                <Link href="/services" className="text-cyan-400 hover:text-cyan-300 transition-colors font-semibold">
                   Learn More →
-                </a>
+                </Link>
               </div>
 
               <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-2xl p-8 border border-white/20 hover:border-cyan-400/30 transition-all duration-300 hover:scale-105">
@@ -83,9 +84,9 @@ export default function HomePage() {
                 <p className="text-white/80 mb-6">
                   Advanced infrastructure solutions for maximum performance and scalability.
                 </p>
-                <a href="/services" className="text-cyan-400 hover:text-cyan-300 transition-colors font-semibold">
+                <Link href="/services" className="text-cyan-400 hover:text-cyan-300 transition-colors font-semibold">
                   Learn More →
-                </a>
+                </Link>
               </div>
 
               <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-2xl p-8 border border-white/20 hover:border-cyan-400/30 transition-all duration-300 hover:scale-105">
@@ -98,9 +99,9 @@ export default function HomePage() {
                 <p className="text-white/80 mb-6">
                   Comprehensive security frameworks with AI-powered threat detection.
                 </p>
-                <a href="/services" className="text-cyan-400 hover:text-cyan-300 transition-colors font-semibold">
+                <Link href="/services" className="text-cyan-400 hover:text-cyan-300 transition-colors font-semibold">
                   Learn More →
-                </a>
+                </Link>
               </div>
             </div>
           </section>
@@ -109,42 +110,42 @@ export default function HomePage() {
           <section className="mx-auto max-w-7xl px-6 pb-14">
             <h2 className="text-center text-2xl font-bold tracking-wide text-white/90 mb-8">Latest Autonomous Content</h2>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              <a href="/reports/updates/update-2025-08-15-0406" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300 hover:scale-105">
+              <Link href="/reports/updates/update-2025-08-15-0406" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300 hover:scale-105">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
                 <h3 className="text-lg font-semibold">Autonomous Update — 2025:08:15:0406</h3>
                 <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
                 <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
-              </a>
-              <a href="/reports/updates/update-2025-08-15-0405" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300 hover:scale-105">
+              </Link>
+              <Link href="/reports/updates/update-2025-08-15-0405" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300 hover:scale-105">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
                 <h3 className="text-lg font-semibold">Autonomous Update — 2025:08:15:0405</h3>
                 <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
                 <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
-              </a>
-              <a href="/reports/updates/update-2025-08-15-0404" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300 hover:scale-105">
+              </Link>
+              <Link href="/reports/updates/update-2025-08-15-0404" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300 hover:scale-105">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
                 <h3 className="text-lg font-semibold">Autonomous Update — 2025:08:15:0404</h3>
                 <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
                 <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
-              </a>
-              <a href="/reports/updates/update-2025-08-15-0111" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300 hover:scale-105">
+              </Link>
+              <Link href="/reports/updates/update-2025-08-15-0111" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300 hover:scale-105">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
                 <h3 className="text-lg font-semibold">Autonomous Update — 2025:08:15:0111</h3>
                 <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
                 <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
-              </a>
-              <a href="/reports/updates/update-2025-08-15-0403" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300 hover:scale-105">
+              </Link>
+              <Link href="/reports/updates/update-2025-08-15-0403" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300 hover:scale-105">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
                 <h3 className="text-lg font-semibold">Autonomous Update — 2025:08:15:0403</h3>
                 <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
                 <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
-              </a>
-              <a href="/reports/updates/update-2025-08-15-0402" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300 hover:scale-105">
+              </Link>
+              <Link href="/reports/updates/update-2025-08-15-0402" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300 hover:scale-105">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
                 <h3 className="text-lg font-semibold">Autonomous Update — 2025:08:15:0402</h3>
                 <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
                 <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
-              </a>
+              </Link>
             </div>
           </section>
           {/* AUTO-GENERATED: HOME_LATEST_CONTENT_END */}
@@ -156,12 +157,12 @@ export default function HomePage() {
               Let our autonomous systems revolutionize your operations with cutting-edge technology solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/contact" className="bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105">
+              <Link href="/contact" className="bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105">
                 Get Started Today
-              </a>
-              <a href="/about" className="border border-white/20 hover:border-cyan-400/50 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 hover:bg-white/10">
+              </Link>
+              <Link href="/about" className="border border-white/20 hover:border-cyan-400/50 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 hover:bg-white/10">
                 Learn More
-              </a>
+              </Link>
             </div>
           </section>
         </main>
@@ -181,25 +182,25 @@ export default function HomePage() {
               <div>
                 <h4 className="text-lg font-semibold text-white mb-4">Services</h4>
                 <ul className="space-y-2 text-white/80">
-                  <li><a href="/services" className="hover:text-cyan-400 transition-colors">AI Automation</a></li>
-                  <li><a href="/services" className="hover:text-cyan-400 transition-colors">Infrastructure</a></li>
-                  <li><a href="/services" className="hover:text-cyan-400 transition-colors">Security</a></li>
+                  <li><Link href="/services" className="hover:text-cyan-400 transition-colors">AI Automation</Link></li>
+                  <li><Link href="/services" className="hover:text-cyan-400 transition-colors">Infrastructure</Link></li>
+                  <li><Link href="/services" className="hover:text-cyan-400 transition-colors">Security</Link></li>
                 </ul>
               </div>
               <div>
                 <h4 className="text-lg font-semibold text-white mb-4">Company</h4>
                 <ul className="space-y-2 text-white/80">
-                  <li><a href="/about" className="hover:text-cyan-400 transition-colors">About</a></li>
-                  <li><a href="/contact" className="hover:text-cyan-400 transition-colors">Contact</a></li>
-                  <li><a href="/services" className="hover:text-cyan-400 transition-colors">Services</a></li>
+                  <li><Link href="/about" className="hover:text-cyan-400 transition-colors">About</Link></li>
+                  <li><Link href="/contact" className="hover:text-cyan-400 transition-colors">Contact</Link></li>
+                  <li><Link href="/services" className="hover:text-cyan-400 transition-colors">Services</Link></li>
                 </ul>
               </div>
               <div>
                 <h4 className="text-lg font-semibold text-white mb-4">Connect</h4>
                 <ul className="space-y-2 text-white/80">
-                  <li><a href="/contact" className="hover:text-cyan-400 transition-colors">Get Started</a></li>
-                  <li><a href="/contact" className="hover:text-cyan-400 transition-colors">Support</a></li>
-                  <li><a href="/about" className="hover:text-cyan-400 transition-colors">Learn More</a></li>
+                  <li><Link href="/contact" className="hover:text-cyan-400 transition-colors">Get Started</Link></li>
+                  <li><Link href="/contact" className="hover:text-cyan-400 transition-colors">Support</Link></li>
+                  <li><Link href="/about" className="hover:text-cyan-400 transition-colors">Learn More</Link></li>
                 </ul>
               </div>
             </div>

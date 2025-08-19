@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 
 export default function ContactPage() {
   return (
@@ -15,9 +16,9 @@ export default function ContactPage() {
         <main className="container mx-auto px-6 py-12">
           <div className="max-w-6xl mx-auto">
             <nav className="mb-8">
-              <a href="/" className="text-cyan-400 hover:text-cyan-300 transition-colors">
+              <Link href="/" className="text-cyan-400 hover:text-cyan-300 transition-colors">
                 ← Back to Home
-              </a>
+              </Link>
             </nav>
             
             <header className="text-center mb-16">
@@ -25,7 +26,7 @@ export default function ContactPage() {
                 Get in Touch
               </h1>
               <p className="text-xl text-white/80 max-w-3xl mx-auto">
-                Ready to transform your business with autonomous technology? Let's start a conversation.
+                Ready to transform your business with autonomous technology? Let&apos;s start a conversation.
               </p>
             </header>
 
@@ -202,15 +203,15 @@ export default function ContactPage() {
             <section className="mt-20 text-center">
               <h2 className="text-3xl font-bold mb-8 text-cyan-300">Ready to Get Started?</h2>
               <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-                Our autonomous systems are ready to transform your business. Let's discuss how we can help you achieve your goals.
+                Our autonomous systems are ready to transform your business. Let&apos;s discuss how we can help you achieve your goals.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/services" className="bg-gradient-to-r from-purple-400 to-pink-500 hover:from-purple-500 hover:to-pink-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105">
+                <Link href="/services" className="bg-gradient-to-r from-purple-400 to-pink-500 hover:from-purple-500 hover:to-pink-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105">
                   Explore Services
-                </a>
-                <a href="/about" className="border border-white/20 hover:border-cyan-400/50 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 hover:bg-white/10">
+                </Link>
+                <Link href="/about" className="border border-white/20 hover:border-cyan-400/50 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 hover:bg-white/10">
                   Learn More
-                </a>
+                </Link>
               </div>
             </section>
           </div>
