@@ -37,6 +37,9 @@ export default function HomePage() {
               <Link href="/case-studies" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-yellow-400/50">
                 Case Studies
               </Link>
+              <Link href="/platform" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-indigo-400/50">
+                Platform
+              </Link>
               <Link href="/blog" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-purple-400/50">
                 Blog
               </Link>
@@ -124,6 +127,14 @@ export default function HomePage() {
                 </div>
                 <h3 className="text-lg font-semibold text-yellow-400 mb-2">Case Studies</h3>
                 <p className="text-white/70 text-sm">See real success stories</p>
+              </Link>
+              
+              <Link href="/platform" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-indigo-400/30 transition-all duration-300 text-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-indigo-400 to-blue-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-xl">🤖</span>
+                </div>
+                <h3 className="text-lg font-semibold text-indigo-400 mb-2">Platform</h3>
+                <p className="text-white/70 text-sm">Experience our technology</p>
               </Link>
               
               <Link href="/blog" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-purple-400/30 transition-all duration-300 text-center">
