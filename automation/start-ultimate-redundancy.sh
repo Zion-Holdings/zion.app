@@ -1,17 +1,9 @@
 #!/bin/bash
 
-# Ultimate Redundancy Master Startup Script
-# This script provides comprehensive redundancy for all automation systems
+# Ultimate Redundancy Automation System Startup Script
+# This script provides comprehensive redundancy for all PM2, GitHub Actions, and Netlify Functions automations
 
 set -e
-
-# Configuration
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-WORKSPACE_DIR="$(dirname "$SCRIPT_DIR")"
-LOG_DIR="$WORKSPACE_DIR/automation/logs"
-PID_FILE="$LOG_DIR/ultimate-redundancy.pid"
-LOG_FILE="$LOG_DIR/ultimate-redundancy.log"
-CONFIG_FILE="$WORKSPACE_DIR/automation/redundancy-config.json"
 
 # Colors for output
 RED='\033[0;31m'
@@ -19,6 +11,13 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
+
+# Configuration
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
+LOG_DIR="$PROJECT_ROOT/automation/logs"
+PID_FILE="$PROJECT_ROOT/automation/ultimate-redundancy.pid"
+LOCK_FILE="$PROJECT_ROOT/automation/ultimate-redundancy.lock"
 
 # Ensure log directory exists
 mkdir -p "$LOG_DIR"
@@ -28,350 +27,386 @@ log() {
     local level="$1"
     local message="$2"
     local timestamp=$(date '+%Y-%m-%d %H:%M:%S')
-    echo -e "[$timestamp] [$level] $message" | tee -a "$LOG_FILE"
+    
+    case "$level" in
+        "INFO")
+            echo -e "${GREEN}[$timestamp] [INFO]${NC} $message"
+            ;;
+        "WARN")
+            echo -e "${YELLOW}[$timestamp] [WARN]${NC} $message"
+            ;;
+        "ERROR")
+            echo -e "${RED}[$timestamp] [ERROR]${NC} $message"
+            ;;
+        "DEBUG")
+            echo -e "${BLUE}[$timestamp] [DEBUG]${NC} $message"
+            ;;
+    esac
+    
+    # Also log to file
+    echo "[$timestamp] [$level] $message" >> "$LOG_DIR/ultimate-redundancy-startup.log"
 }
 
-# Error handling
-error_exit() {
-    log "ERROR" "Script failed: $1"
-    exit 1
-}
-
-# Check if script is already running
-check_running() {
+# Check if system is already running
+is_running() {
     if [ -f "$PID_FILE" ]; then
         local pid=$(cat "$PID_FILE")
-        if ps -p "$pid" > /dev/null 2>&1; then
-            log "WARN" "Ultimate redundancy system already running (PID: $pid)"
+        if kill -0 "$pid" 2>/dev/null; then
             return 0
         else
-            log "WARN" "Stale PID file found, removing"
+            # PID file exists but process is dead
             rm -f "$PID_FILE"
+            return 1
         fi
     fi
     return 1
 }
 
-# Start PM2 redundancy systems
-start_pm2_redundancy() {
-    log "INFO" "Starting PM2 redundancy systems..."
+# Check if lock file exists
+is_locked() {
+    [ -f "$LOCK_FILE" ]
+}
+
+# Create lock file
+create_lock() {
+    echo "$$" > "$LOCK_FILE"
+    log "INFO" "Lock file created"
+}
+
+# Remove lock file
+remove_lock() {
+    if [ -f "$LOCK_FILE" ]; then
+        rm -f "$LOCK_FILE"
+        log "INFO" "Lock file removed"
+    fi
+}
+
+# Cleanup function
+cleanup() {
+    remove_lock
+    log "INFO" "Cleanup completed"
+}
+
+# Set trap for cleanup
+trap cleanup EXIT
+
+# Start the ultimate redundancy system
+start_system() {
+    log "INFO" "Starting Ultimate Redundancy Automation System..."
     
-    # Check if PM2 is installed
+    if is_running; then
+        log "WARN" "System is already running (PID: $(cat "$PID_FILE"))"
+        return 1
+    fi
+    
+    if is_locked; then
+        log "ERROR" "System is locked, another instance may be starting"
+        return 1
+    fi
+    
+    create_lock
+    
+    # Check prerequisites
+    log "INFO" "Checking prerequisites..."
+    
+    # Check if Node.js is available
+    if ! command -v node &> /dev/null; then
+        log "ERROR" "Node.js is not installed or not in PATH"
+        remove_lock
+        return 1
+    fi
+    
+    # Check if PM2 is available
     if ! command -v pm2 &> /dev/null; then
-        log "ERROR" "PM2 is not installed. Please install PM2 first."
-        return 1
+        log "WARN" "PM2 is not installed, some features may not work"
     fi
     
-    # Start core PM2 ecosystem
-    if [ -f "$WORKSPACE_DIR/ecosystem.pm2.cjs" ]; then
-        log "INFO" "Starting core PM2 ecosystem..."
-        cd "$WORKSPACE_DIR" && pm2 start ecosystem.pm2.cjs --update-env || log "WARN" "Failed to start core ecosystem"
+    # Check if git is available
+    if ! command -v git &> /dev/null; then
+        log "WARN" "Git is not installed, git sync features may not work"
     fi
     
-    # Start redundancy ecosystem
-    if [ -f "$WORKSPACE_DIR/ecosystem.redundancy.cjs" ]; then
-        log "INFO" "Starting redundancy ecosystem..."
-        cd "$WORKSPACE_DIR" && pm2 start ecosystem.redundancy.cjs --update-env || log "WARN" "Failed to start redundancy ecosystem"
-    fi
+    # Navigate to project root
+    cd "$PROJECT_ROOT"
     
-    # Start comprehensive redundancy ecosystem
-    if [ -f "$WORKSPACE_DIR/ecosystem.comprehensive-redundancy.cjs" ]; then
-        log "INFO" "Starting comprehensive redundancy ecosystem..."
-        cd "$WORKSPACE_DIR" && pm2 start ecosystem.comprehensive-redundancy.cjs --update-env || log "WARN" "Failed to start comprehensive ecosystem"
-    fi
+    # Start the ultimate redundancy system
+    log "INFO" "Launching Ultimate Redundancy Automation System..."
     
-    # Start ultimate redundancy ecosystem
-    if [ -f "$WORKSPACE_DIR/ecosystem.ultimate-redundancy.pm2.cjs" ]; then
-        log "INFO" "Starting ultimate redundancy ecosystem..."
-        cd "$WORKSPACE_DIR" && pm2 start ecosystem.ultimate-redundancy.pm2.cjs --update-env || log "WARN" "Failed to start ultimate ecosystem"
-    fi
+    nohup node automation/ultimate-redundancy-automation-system.cjs > "$LOG_DIR/ultimate-redundancy-system.log" 2>&1 &
+    local pid=$!
     
-    # Install and configure PM2 logrotate
-    log "INFO" "Configuring PM2 logrotate..."
-    pm2 install pm2-logrotate || log "WARN" "Failed to install pm2-logrotate"
-    pm2 set pm2-logrotate:max_size 10M || true
-    pm2 set pm2-logrotate:retain 30 || true
-    pm2 set pm2-logrotate:compress true || true
-    pm2 set pm2-logrotate:workerInterval 60 || true
-    pm2 set pm2-logrotate:rotateInterval '0 0 * * *' || true
+    # Save PID
+    echo "$pid" > "$PID_FILE"
     
-    # Save PM2 configuration
-    pm2 save || log "WARN" "Failed to save PM2 configuration"
+    # Wait a moment to see if it starts successfully
+    sleep 3
     
-    log "INFO" "PM2 redundancy systems started"
-}
-
-# Start GitHub Actions redundancy
-start_github_redundancy() {
-    log "INFO" "Starting GitHub Actions redundancy..."
-    
-    # Check if .github/workflows directory exists
-    if [ ! -d "$WORKSPACE_DIR/.github/workflows" ]; then
-        log "WARN" "GitHub workflows directory not found"
-        return 0
-    fi
-    
-    # Validate workflow files
-    local workflows=("marketing-sync.yml" "sync-health.yml" "marketing-sync-backup.yml" "sync-health-backup.yml")
-    for workflow in "${workflows[@]}"; do
-        if [ -f "$WORKSPACE_DIR/.github/workflows/$workflow" ]; then
-            log "INFO" "Found workflow: $workflow"
-        else
-            log "WARN" "Missing workflow: $workflow"
+    if kill -0 "$pid" 2>/dev/null; then
+        log "INFO" "Ultimate Redundancy Automation System started successfully (PID: $pid)"
+        log "INFO" "Logs are being written to: $LOG_DIR/ultimate-redundancy-system.log"
+        
+        # Start PM2 processes if available
+        if command -v pm2 &> /dev/null; then
+            log "INFO" "Starting PM2 processes..."
+            pm2 start ecosystem.pm2.cjs --update-env || log "WARN" "Failed to start PM2 ecosystem"
+            pm2 start ecosystem.redundancy.cjs --update-env || log "WARN" "Failed to start PM2 redundancy ecosystem"
+            
+            # Save PM2 configuration
+            pm2 save || log "WARN" "Failed to save PM2 configuration"
         fi
-    done
-    
-    log "INFO" "GitHub Actions redundancy configured"
-}
-
-# Start Netlify functions redundancy
-start_netlify_redundancy() {
-    log "INFO" "Starting Netlify functions redundancy..."
-    
-    # Check if netlify/functions directory exists
-    if [ ! -d "$WORKSPACE_DIR/netlify/functions" ]; then
-        log "WARN" "Netlify functions directory not found"
+        
+        # Generate initial health report
+        log "INFO" "Generating initial health report..."
+        sleep 5
+        node -e "
+            try {
+                const system = require('./automation/ultimate-redundancy-automation-system.cjs');
+                const instance = new system();
+                instance.generateHealthReport().then(() => {
+                    console.log('Initial health report generated');
+                    process.exit(0);
+                }).catch(err => {
+                    console.error('Failed to generate health report:', err.message);
+                    process.exit(1);
+                });
+            } catch (err) {
+                console.error('Failed to instantiate system:', err.message);
+                process.exit(1);
+            }
+        " || log "WARN" "Failed to generate initial health report"
+        
         return 0
-    fi
-    
-    # Regenerate functions manifest
-    log "INFO" "Regenerating Netlify functions manifest..."
-    cd "$WORKSPACE_DIR" && npm run netlify:manifest || log "WARN" "Failed to regenerate manifest"
-    
-    # Check functions manifest
-    if [ -f "$WORKSPACE_DIR/netlify/functions/functions-manifest.json" ]; then
-        local function_count=$(jq '.functions | length' "$WORKSPACE_DIR/netlify/functions/functions-manifest.json" 2>/dev/null || echo "0")
-        log "INFO" "Netlify functions manifest found with $function_count functions"
     else
-        log "WARN" "Netlify functions manifest not found"
-    fi
-    
-    log "INFO" "Netlify functions redundancy configured"
-}
-
-# Start npm scripts redundancy
-start_npm_redundancy() {
-    log "INFO" "Starting npm scripts redundancy..."
-    
-    # Check if package.json exists
-    if [ ! -f "$WORKSPACE_DIR/package.json" ]; then
-        log "ERROR" "package.json not found"
+        log "ERROR" "Failed to start Ultimate Redundancy Automation System"
+        rm -f "$PID_FILE"
+        remove_lock
         return 1
     fi
-    
-    # Validate critical npm scripts
-    local critical_scripts=("build" "dev" "start" "pm2:start" "redundancy:start")
-    for script in "${critical_scripts[@]}"; do
-        if npm run --silent "$script" --dry-run &>/dev/null; then
-            log "INFO" "NPM script available: $script"
-        else
-            log "WARN" "NPM script not available: $script"
-        fi
-    done
-    
-    log "INFO" "NPM scripts redundancy configured"
 }
 
-# Start ultimate redundancy master
-start_ultimate_master() {
-    log "INFO" "Starting ultimate redundancy master..."
+# Stop the ultimate redundancy system
+stop_system() {
+    log "INFO" "Stopping Ultimate Redundancy Automation System..."
     
-    # Start the master orchestrator
-    cd "$WORKSPACE_DIR" && node automation/ultimate-redundancy-master.cjs start || log "WARN" "Failed to start ultimate redundancy master"
-    
-    # Start continuous monitoring in background
-    nohup node automation/ultimate-redundancy-master.cjs monitor > "$LOG_DIR/ultimate-master-monitor.log" 2>&1 &
-    local monitor_pid=$!
-    echo "$monitor_pid" > "$PID_FILE"
-    
-    log "INFO" "Ultimate redundancy master started (PID: $monitor_pid)"
-}
-
-# Start all redundancy systems
-start_all() {
-    log "INFO" "Starting ultimate redundancy system..."
-    
-    # Check if already running
-    if check_running; then
-        log "INFO" "System already running, stopping first..."
-        stop_all
-        sleep 2
+    if ! is_running; then
+        log "WARN" "System is not running"
+        return 0
     fi
     
-    # Start all components
-    start_pm2_redundancy
-    start_github_redundancy
-    start_netlify_redundancy
-    start_npm_redundancy
-    start_ultimate_master
+    local pid=$(cat "$PID_FILE")
     
-    log "INFO" "Ultimate redundancy system started successfully"
+    # Stop the main process
+    log "INFO" "Stopping main process (PID: $pid)..."
+    kill "$pid" 2>/dev/null || true
     
-    # Show status
-    show_status
-}
-
-# Stop all redundancy systems
-stop_all() {
-    log "INFO" "Stopping ultimate redundancy system..."
+    # Wait for process to stop
+    local count=0
+    while kill -0 "$pid" 2>/dev/null && [ $count -lt 10 ]; do
+        sleep 1
+        count=$((count + 1))
+    done
     
-    # Stop PM2 processes
+    # Force kill if still running
+    if kill -0 "$pid" 2>/dev/null; then
+        log "WARN" "Process still running, force killing..."
+        kill -9 "$pid" 2>/dev/null || true
+    fi
+    
+    # Remove PID file
+    rm -f "$PID_FILE"
+    
+    # Stop PM2 processes if available
     if command -v pm2 &> /dev/null; then
         log "INFO" "Stopping PM2 processes..."
-        pm2 stop all || log "WARN" "Failed to stop some PM2 processes"
-        pm2 delete all || log "WARN" "Failed to delete some PM2 processes"
+        pm2 stop ecosystem.pm2.cjs || log "WARN" "Failed to stop PM2 ecosystem"
+        pm2 stop ecosystem.redundancy.cjs || log "WARN" "Failed to stop PM2 redundancy ecosystem"
     fi
     
-    # Stop ultimate redundancy master
-    if [ -f "$PID_FILE" ]; then
+    log "INFO" "Ultimate Redundancy Automation System stopped"
+    return 0
+}
+
+# Restart the ultimate redundancy system
+restart_system() {
+    log "INFO" "Restarting Ultimate Redundancy Automation System..."
+    
+    stop_system
+    sleep 2
+    start_system
+}
+
+# Check system status
+check_status() {
+    log "INFO" "Checking Ultimate Redundancy Automation System status..."
+    
+    if is_running; then
         local pid=$(cat "$PID_FILE")
-        if ps -p "$pid" > /dev/null 2>&1; then
-            log "INFO" "Stopping ultimate redundancy master (PID: $pid)..."
-            kill "$pid" || log "WARN" "Failed to stop process $pid"
+        log "INFO" "System is running (PID: $pid)"
+        
+        # Check PM2 status
+        if command -v pm2 &> /dev/null; then
+            log "INFO" "PM2 Status:"
+            pm2 status || log "WARN" "Failed to get PM2 status"
         fi
-        rm -f "$PID_FILE"
-    fi
-    
-    # Stop any remaining Node processes
-    pkill -f "ultimate-redundancy-master" || true
-    pkill -f "redundancy.*\.cjs" || true
-    
-    log "INFO" "Ultimate redundancy system stopped"
-}
-
-# Restart all redundancy systems
-restart_all() {
-    log "INFO" "Restarting ultimate redundancy system..."
-    stop_all
-    sleep 3
-    start_all
-}
-
-# Show system status
-show_status() {
-    log "INFO" "=== Ultimate Redundancy System Status ==="
-    
-    # PM2 status
-    if command -v pm2 &> /dev/null; then
-        log "INFO" "PM2 Status:"
-        pm2 status --no-daemon || log "WARN" "Failed to get PM2 status"
-    else
-        log "WARN" "PM2 not installed"
-    fi
-    
-    # Process status
-    if [ -f "$PID_FILE" ]; then
-        local pid=$(cat "$PID_FILE")
-        if ps -p "$pid" > /dev/null 2>&1; then
-            log "INFO" "Ultimate redundancy master running (PID: $pid)"
-        else
-            log "WARN" "PID file exists but process not running"
+        
+        # Check log file size
+        if [ -f "$LOG_DIR/ultimate-redundancy-system.log" ]; then
+            local log_size=$(du -h "$LOG_DIR/ultimate-redundancy-system.log" | cut -f1)
+            log "INFO" "Current log size: $log_size"
         fi
+        
+        return 0
     else
-        log "WARN" "No PID file found"
-    fi
-    
-    # Check log files
-    log "INFO" "Recent log entries:"
-    tail -n 10 "$LOG_FILE" 2>/dev/null || log "WARN" "No log file found"
-}
-
-# Show system health
-show_health() {
-    log "INFO" "=== Ultimate Redundancy System Health Check ==="
-    
-    # Run health check
-    cd "$WORKSPACE_DIR" && node automation/ultimate-redundancy-master.cjs check || log "WARN" "Health check failed"
-    
-    # Show status
-    show_status
-}
-
-# Generate report
-generate_report() {
-    log "INFO" "Generating redundancy report..."
-    
-    cd "$WORKSPACE_DIR" && node automation/ultimate-redundancy-master.cjs report || log "WARN" "Report generation failed"
-    
-    # Show report location
-    if [ -f "$WORKSPACE_DIR/automation/logs/redundancy-report.json" ]; then
-        log "INFO" "Report generated: automation/logs/redundancy-report.json"
-        cat "$WORKSPACE_DIR/automation/logs/redundancy-report.json" | jq '.' 2>/dev/null || cat "$WORKSPACE_DIR/automation/logs/redundancy-report.json"
-    else
-        log "WARN" "Report file not found"
+        log "INFO" "System is not running"
+        return 1
     fi
 }
 
-# Show logs
+# Show system logs
 show_logs() {
-    local lines=${1:-50}
-    log "INFO" "Showing last $lines log lines:"
+    log "INFO" "Showing Ultimate Redundancy Automation System logs..."
     
-    if [ -f "$LOG_FILE" ]; then
-        tail -n "$lines" "$LOG_FILE"
+    if [ -f "$LOG_DIR/ultimate-redundancy-system.log" ]; then
+        tail -n 100 "$LOG_DIR/ultimate-redundancy-system.log"
     else
         log "WARN" "No log file found"
     fi
 }
 
+# Generate health report
+generate_report() {
+    log "INFO" "Generating health report..."
+    
+    if is_running; then
+        local pid=$(cat "$PID_FILE")
+        
+        # Send signal to generate report
+        kill -USR1 "$pid" 2>/dev/null || log "WARN" "Failed to send signal to process"
+        
+        # Wait for report generation
+        sleep 3
+        
+        # Check for health report files
+        local report_files=$(find "$LOG_DIR" -name "health-report-*.json" -type f 2>/dev/null | head -1)
+        if [ -n "$report_files" ]; then
+            log "INFO" "Health report generated: $report_files"
+            echo "Health Report Contents:"
+            cat "$report_files" | jq '.' 2>/dev/null || cat "$report_files"
+        else
+            log "WARN" "No health report found"
+        fi
+    else
+        log "ERROR" "System is not running, cannot generate report"
+        return 1
+    fi
+}
+
+# Test the system
+test_system() {
+    log "INFO" "Testing Ultimate Redundancy Automation System..."
+    
+    # Test Node.js script
+    log "INFO" "Testing Node.js script syntax..."
+    if node -c automation/ultimate-redundancy-automation-system.cjs; then
+        log "INFO" "✅ Node.js script syntax is valid"
+    else
+        log "ERROR" "❌ Node.js script syntax is invalid"
+        return 1
+    fi
+    
+    # Test PM2 ecosystem files
+    if command -v pm2 &> /dev/null; then
+        log "INFO" "Testing PM2 ecosystem files..."
+        for ecosystem in ecosystem.pm2.cjs ecosystem.redundancy.cjs; do
+            if [ -f "$ecosystem" ]; then
+                if node -c "$ecosystem"; then
+                    log "INFO" "✅ $ecosystem syntax is valid"
+                else
+                    log "ERROR" "❌ $ecosystem syntax is invalid"
+                    return 1
+                fi
+            fi
+        done
+    fi
+    
+    # Test GitHub Actions workflows
+    log "INFO" "Testing GitHub Actions workflows..."
+    for workflow in .github/workflows/*.yml; do
+        if [ -f "$workflow" ]; then
+            if grep -q "name:" "$workflow" && grep -q "on:" "$workflow"; then
+                log "INFO" "✅ $workflow syntax appears valid"
+            else
+                log "WARN" "⚠️ $workflow may have syntax issues"
+            fi
+        fi
+    done
+    
+    # Test Netlify functions
+    log "INFO" "Testing Netlify functions..."
+    if [ -f "netlify/functions/functions-manifest.json" ]; then
+        if node -e "JSON.parse(require('fs').readFileSync('netlify/functions/functions-manifest.json', 'utf8'))" 2>/dev/null; then
+            log "INFO" "✅ Netlify functions manifest is valid JSON"
+        else
+            log "ERROR" "❌ Netlify functions manifest is invalid JSON"
+            return 1
+        fi
+    fi
+    
+    log "INFO" "✅ All tests passed"
+    return 0
+}
+
 # Main function
 main() {
-    local command="${1:-start}"
+    local action="${1:-start}"
     
-    case "$command" in
-        start)
-            start_all
+    case "$action" in
+        "start")
+            start_system
             ;;
-        stop)
-            stop_all
+        "stop")
+            stop_system
             ;;
-        restart)
-            restart_all
+        "restart")
+            restart_system
             ;;
-        status)
-            show_status
+        "status")
+            check_status
             ;;
-        health)
-            show_health
+        "logs")
+            show_logs
             ;;
-        report)
+        "report")
             generate_report
             ;;
-        logs)
-            show_logs "$2"
+        "test")
+            test_system
             ;;
-        check)
-            cd "$WORKSPACE_DIR" && node automation/ultimate-redundancy-master.cjs check
-            ;;
-        monitor)
-            cd "$WORKSPACE_DIR" && node automation/ultimate-redundancy-master.cjs monitor
-            ;;
-        help|--help|-h)
-            echo "Ultimate Redundancy System - Usage:"
-            echo "  $0 [command]"
+        "help"|"-h"|"--help")
+            echo "Usage: $0 [action]"
             echo ""
-            echo "Commands:"
-            echo "  start     - Start all redundancy systems"
-            echo "  stop      - Stop all redundancy systems"
-            echo "  restart   - Restart all redundancy systems"
-            echo "  status    - Show system status"
-            echo "  health    - Run health check"
-            echo "  report    - Generate redundancy report"
-            echo "  logs [N]  - Show last N log lines (default: 50)"
-            echo "  check     - Run comprehensive check"
-            echo "  monitor   - Start continuous monitoring"
-            echo "  help      - Show this help message"
+            echo "Actions:"
+            echo "  start     Start the Ultimate Redundancy Automation System"
+            echo "  stop      Stop the Ultimate Redundancy Automation System"
+            echo "  restart   Restart the Ultimate Redundancy Automation System"
+            echo "  status    Check system status"
+            echo "  logs      Show system logs"
+            echo "  report    Generate health report"
+            echo "  test      Test system components"
+            echo "  help      Show this help message"
+            echo ""
+            echo "Examples:"
+            echo "  $0 start"
+            echo "  $0 status"
+            echo "  $0 logs"
             ;;
         *)
-            log "ERROR" "Unknown command: $command"
-            echo "Use '$0 help' for usage information"
+            log "ERROR" "Unknown action: $action"
+            log "INFO" "Use '$0 help' for usage information"
             exit 1
             ;;
     esac
 }
 
-# Trap signals
-trap 'log "INFO" "Received signal, cleaning up..."; stop_all; exit 0' SIGINT SIGTERM
-
-# Run main function
+# Run main function with all arguments
 main "$@"
