@@ -1,12 +1,15 @@
 #!/usr/bin/env node
 "use strict";
 
-const { EnhancedPM2Redundancy } = require("./enhanced-pm2-redundancy.cjs");
-const { EnhancedGitHubActionsRedundancy } = require("./enhanced-github-actions-redundancy.cjs");
-const { EnhancedNetlifyFunctionsRedundancy } = require("./enhanced-netlify-functions-redundancy.cjs");
-
+const { spawnSync } = require("child_process");
 const fs = require("fs");
 const path = require("path");
+
+// Import the enhanced redundancy systems
+const ComprehensiveRedundancySystem = require('./comprehensive-redundancy-system.cjs');
+const EnhancedPM2Redundancy = require('./enhanced-pm2-redundancy.cjs');
+const EnhancedGitHubActionsRedundancy = require('./enhanced-github-actions-redundancy.cjs');
+const EnhancedNetlifyFunctionsRedundancy = require('./enhanced-netlify-functions-redundancy.cjs');
 
 class MasterRedundancyOrchestrator {
   constructor() {
@@ -16,42 +19,33 @@ class MasterRedundancyOrchestrator {
     this.ensureLogDir();
     
     this.config = {
-      orchestrationInterval: 60000, // 1 minute
-      healthCheckInterval: 300000, // 5 minutes
-      emergencyThreshold: 2, // Number of systems that can fail before emergency mode
-      autoRecovery: true,
-      notificationLevel: "WARN", // INFO, WARN, ERROR
       systems: {
-        pm2: {
-          enabled: true,
-          priority: "HIGH",
-          checkInterval: 30000
-        },
-        githubActions: {
-          enabled: true,
-          priority: "MEDIUM",
-          checkInterval: 60000
-        },
-        netlifyFunctions: {
-          enabled: true,
-          priority: "MEDIUM",
-          checkInterval: 120000
-        }
+        comprehensive: true,
+        pm2: true,
+        githubActions: true,
+        netlifyFunctions: true
+      },
+      orchestration: {
+        healthCheckInterval: 300000, // 5 minutes
+        systemStartupDelay: 10000, // 10 seconds between system starts
+        enableCrossSystemRecovery: true,
+        enableMetricsAggregation: true,
+        enableAlerting: true
+      },
+      monitoring: {
+        enableRealTimeMonitoring: true,
+        enableHistoricalTracking: true,
+        enablePerformanceMetrics: true,
+        logRetentionDays: 30
       }
     };
     
-    // Initialize redundancy systems
-    this.pm2Redundancy = new EnhancedPM2Redundancy();
-    this.githubActionsRedundancy = new EnhancedGitHubActionsRedundancy();
-    this.netlifyFunctionsRedundancy = new EnhancedNetlifyFunctionsRedundancy();
-    
-    this.orchestrating = false;
+    this.systems = {};
+    this.monitoring = false;
     this.orchestrationInterval = null;
-    this.healthCheckInterval = null;
     this.systemStatus = new Map();
-    this.emergencyMode = false;
-    this.recoveryAttempts = 0;
-    this.maxRecoveryAttempts = 3;
+    this.performanceMetrics = new Map();
+    this.startupTime = null;
   }
 
   ensureLogDir() {
@@ -62,7 +56,7 @@ class MasterRedundancyOrchestrator {
 
   log(message, level = "INFO") {
     const timestamp = new Date().toISOString();
-    const logMessage = `[${timestamp}] [${level}] [MASTER] ${message}`;
+    const logMessage = `[${timestamp}] [${level}] ${message}`;
     console.log(logMessage);
     
     try {
@@ -72,347 +66,497 @@ class MasterRedundancyOrchestrator {
     }
   }
 
-  async startPM2Redundancy() {
+  async runCommand(command, args = [], options = {}) {
+    return new Promise((resolve) => {
+      const result = spawnSync(command, args, {
+        cwd: this.workspace,
+        env: process.env,
+        shell: false,
+        encoding: "utf8",
+        maxBuffer: 1024 * 1024 * 10,
+        timeout: options.timeout || 30000,
+        ...options
+      });
+      
+      resolve({
+        status: result.status,
+        stdout: result.stdout || "",
+        stderr: result.stderr || "",
+        error: result.error
+      });
+    });
+  }
+
+  async initializeSystems() {
+    this.log("🚀 Initializing master redundancy orchestrator...");
+    this.startupTime = new Date();
+    
     try {
-      if (this.config.systems.pm2.enabled) {
-        this.log("Starting PM2 redundancy system...");
-        await this.pm2Redundancy.startMonitoring();
-        this.systemStatus.set("pm2", { status: "running", lastCheck: new Date() });
-        this.log("✅ PM2 redundancy system started");
-        return true;
+      // Initialize comprehensive redundancy system
+      if (this.config.systems.comprehensive) {
+        this.log("🔧 Initializing comprehensive redundancy system...");
+        this.systems.comprehensive = new ComprehensiveRedundancySystem();
+        this.systemStatus.set('comprehensive', { status: 'initializing', timestamp: new Date() });
       }
-      return false;
+
+      // Initialize enhanced PM2 redundancy system
+      if (this.config.systems.pm2) {
+        this.log("🔧 Initializing enhanced PM2 redundancy system...");
+        this.systems.pm2 = new EnhancedPM2Redundancy();
+        this.systemStatus.set('pm2', { status: 'initializing', timestamp: new Date() });
+      }
+
+      // Initialize enhanced GitHub Actions redundancy system
+      if (this.config.systems.githubActions) {
+        this.log("🔧 Initializing enhanced GitHub Actions redundancy system...");
+        this.systems.githubActions = new EnhancedGitHubActionsRedundancy();
+        this.systemStatus.set('githubActions', { status: 'initializing', timestamp: new Date() });
+      }
+
+      // Initialize enhanced Netlify functions redundancy system
+      if (this.config.systems.netlifyFunctions) {
+        this.log("🔧 Initializing enhanced Netlify functions redundancy system...");
+        this.systems.netlifyFunctions = new EnhancedNetlifyFunctionsRedundancy();
+        this.systemStatus.set('netlifyFunctions', { status: 'initializing', timestamp: new Date() });
+      }
+
+      this.log("✅ All redundancy systems initialized successfully");
+      return true;
     } catch (error) {
-      this.log(`❌ Failed to start PM2 redundancy: ${error.message}`, "ERROR");
-      this.systemStatus.set("pm2", { status: "failed", lastCheck: new Date(), error: error.message });
+      this.log(`❌ Failed to initialize systems: ${error.message}`, "ERROR");
       return false;
     }
   }
 
-  async startGitHubActionsRedundancy() {
-    try {
-      if (this.config.systems.githubActions.enabled) {
-        this.log("Starting GitHub Actions redundancy system...");
-        await this.githubActionsRedundancy.startMonitoring();
-        this.systemStatus.set("githubActions", { status: "running", lastCheck: new Date() });
-        this.log("✅ GitHub Actions redundancy system started");
-        return true;
-      }
-      return false;
-    } catch (error) {
-      this.log(`❌ Failed to start GitHub Actions redundancy: ${error.message}`, "ERROR");
-      this.systemStatus.set("githubActions", { status: "failed", lastCheck: new Date(), error: error.message });
-      return false;
-    }
-  }
-
-  async startNetlifyFunctionsRedundancy() {
-    try {
-      if (this.config.systems.netlifyFunctions.enabled) {
-        this.log("Starting Netlify Functions redundancy system...");
-        await this.netlifyFunctionsRedundancy.startMonitoring();
-        this.systemStatus.set("netlifyFunctions", { status: "running", lastCheck: new Date() });
-        this.log("✅ Netlify Functions redundancy system started");
-        return true;
-      }
-      return false;
-    } catch (error) {
-      this.log(`❌ Failed to start Netlify Functions redundancy: ${error.message}`, "ERROR");
-      this.systemStatus.set("netlifyFunctions", { status: "failed", lastCheck: new Date(), error: error.message });
-      return false;
-    }
-  }
-
-  async startAllSystems() {
+  async startSystems() {
     this.log("🚀 Starting all redundancy systems...");
     
-    const results = await Promise.allSettled([
-      this.startPM2Redundancy(),
-      this.startGitHubActionsRedundancy(),
-      this.startNetlifyFunctionsRedundancy()
-    ]);
-    
-    let successCount = 0;
-    results.forEach((result, index) => {
-      const systemNames = ["pm2", "githubActions", "netlifyFunctions"];
-      if (result.status === "fulfilled" && result.value) {
-        successCount++;
-      } else {
-        this.log(`❌ System ${systemNames[index]} failed to start`, "ERROR");
-      }
-    });
-    
-    this.log(`📊 Started ${successCount}/${results.length} redundancy systems`);
-    return successCount === results.length;
-  }
-
-  async stopAllSystems() {
-    this.log("🛑 Stopping all redundancy systems...");
-    
     try {
-      await this.pm2Redundancy.stopMonitoring();
-      await this.githubActionsRedundancy.stopMonitoring();
-      await this.netlifyFunctionsRedundancy.stopMonitoring();
+      // Start systems with staggered delays to prevent resource conflicts
+      const systemStartPromises = [];
       
-      this.log("✅ All redundancy systems stopped");
+      if (this.systems.comprehensive) {
+        systemStartPromises.push(
+          this.startSystem('comprehensive', async () => {
+            // Comprehensive system starts automatically
+            this.systemStatus.set('comprehensive', { status: 'running', timestamp: new Date() });
+          })
+        );
+      }
+
+      if (this.systems.pm2) {
+        systemStartPromises.push(
+          this.startSystem('pm2', async () => {
+            await this.systems.pm2.startMonitoring();
+            this.systemStatus.set('pm2', { status: 'running', timestamp: new Date() });
+          })
+        );
+      }
+
+      if (this.systems.githubActions) {
+        systemStartPromises.push(
+          this.startSystem('githubActions', async () => {
+            await this.systems.githubActions.startMonitoring();
+            this.systemStatus.set('githubActions', { status: 'running', timestamp: new Date() });
+          })
+        );
+      }
+
+      if (this.systems.netlifyFunctions) {
+        systemStartPromises.push(
+          this.startSystem('netlifyFunctions', async () => {
+            await this.systems.netlifyFunctions.startMonitoring();
+            this.systemStatus.set('netlifyFunctions', { status: 'running', timestamp: new Date() });
+          })
+        );
+      }
+
+      // Execute all system starts with delays
+      for (let i = 0; i < systemStartPromises.length; i++) {
+        await systemStartPromises[i];
+        if (i < systemStartPromises.length - 1) {
+          await this.delay(this.config.orchestration.systemStartupDelay);
+        }
+      }
+
+      this.log("✅ All redundancy systems started successfully");
       return true;
     } catch (error) {
-      this.log(`❌ Error stopping systems: ${error.message}`, "ERROR");
+      this.log(`❌ Failed to start systems: ${error.message}`, "ERROR");
       return false;
     }
   }
 
-  async checkSystemHealth(systemName) {
+  async startSystem(systemName, startFunction) {
     try {
-      let status = null;
-      
-      switch (systemName) {
-        case "pm2":
-          status = await this.pm2Redundancy.checkAllProcesses();
-          break;
-        case "githubActions":
-          status = await this.githubActionsRedundancy.checkAllWorkflows();
-          break;
-        case "netlifyFunctions":
-          status = await this.netlifyFunctionsRedundancy.checkAllFunctions();
-          break;
-        default:
-          this.log(`❌ Unknown system: ${systemName}`, "ERROR");
-          return false;
-      }
-      
-      this.systemStatus.set(systemName, {
-        status: status ? "healthy" : "unhealthy",
-        lastCheck: new Date()
-      });
-      
-      return status;
+      this.log(`🚀 Starting ${systemName} system...`);
+      await startFunction();
+      this.log(`✅ ${systemName} system started successfully`);
     } catch (error) {
-      this.log(`❌ Error checking ${systemName} health: ${error.message}`, "ERROR");
-      this.systemStatus.set(systemName, {
-        status: "error",
-        lastCheck: new Date(),
-        error: error.message
-      });
-      return false;
+      this.log(`❌ Failed to start ${systemName} system: ${error.message}`, "ERROR");
+      this.systemStatus.set(systemName, { status: 'failed', timestamp: new Date(), error: error.message });
+      throw error;
     }
   }
 
-  async checkAllSystemsHealth() {
-    this.log("🔍 Performing comprehensive system health check...");
-    
-    const healthResults = await Promise.allSettled([
-      this.checkSystemHealth("pm2"),
-      this.checkSystemHealth("githubActions"),
-      this.checkSystemHealth("netlifyFunctions")
-    ]);
-    
-    let healthyCount = 0;
-    const systemNames = ["pm2", "githubActions", "netlifyFunctions"];
-    
-    healthResults.forEach((result, index) => {
-      const systemName = systemNames[index];
-      if (result.status === "fulfilled" && result.value) {
-        healthyCount++;
-        this.log(`✅ ${systemName} system is healthy`);
-      } else {
-        this.log(`❌ ${systemName} system is unhealthy`);
-      }
-    });
-    
-    this.log(`📊 System health check complete: ${healthyCount}/${healthResults.length} systems healthy`);
-    
-    // Check if we need to enter emergency mode
-    const unhealthyCount = healthResults.length - healthyCount;
-    if (unhealthyCount >= this.config.emergencyThreshold) {
-      await this.enterEmergencyMode();
-    } else if (this.emergencyMode) {
-      await this.exitEmergencyMode();
-    }
-    
-    return healthyCount === healthResults.length;
+  async delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
   }
 
-  async enterEmergencyMode() {
-    if (this.emergencyMode) {
-      return; // Already in emergency mode
-    }
+  async performOrchestratedHealthCheck() {
+    this.log("🎯 Performing orchestrated health check across all systems...");
     
-    this.log("🚨 ENTERING EMERGENCY MODE - Multiple systems unhealthy!", "ERROR");
-    this.emergencyMode = true;
-    
-    try {
-      // Attempt emergency recovery
-      if (this.config.autoRecovery && this.recoveryAttempts < this.maxRecoveryAttempts) {
-        this.recoveryAttempts++;
-        this.log(`🔄 Attempting emergency recovery (attempt ${this.recoveryAttempts}/${this.maxRecoveryAttempts})...`);
+    const results = {
+      timestamp: new Date().toISOString(),
+      systems: {},
+      summary: {
+        total: 0,
+        healthy: 0,
+        unhealthy: 0,
+        failed: 0
+      },
+      crossSystemIssues: [],
+      recommendations: []
+    };
+
+    // Check each system's health
+    for (const [systemName, system] of Object.entries(this.systems)) {
+      try {
+        this.log(`🔍 Checking health of ${systemName} system...`);
         
-        await this.performEmergencyRecovery();
-      } else {
-        this.log("⚠️ Auto-recovery disabled or max attempts reached", "WARN");
+        let systemHealth;
+        if (systemName === 'comprehensive') {
+          systemHealth = await system.performComprehensiveHealthCheck();
+        } else if (systemName === 'pm2') {
+          systemHealth = await system.performComprehensiveHealthCheck();
+        } else if (systemName === 'githubActions') {
+          systemHealth = await system.performComprehensiveHealthCheck();
+        } else if (systemName === 'netlifyFunctions') {
+          systemHealth = await system.performComprehensiveHealthCheck();
+        }
+
+        results.systems[systemName] = {
+          status: 'healthy',
+          health: systemHealth,
+          timestamp: new Date().toISOString()
+        };
+
+        results.summary.total++;
+        results.summary.healthy++;
+        
+        this.systemStatus.set(systemName, { status: 'healthy', timestamp: new Date() });
+        this.log(`✅ ${systemName} system is healthy`);
+      } catch (error) {
+        this.log(`❌ ${systemName} system health check failed: ${error.message}`, "ERROR");
+        
+        results.systems[systemName] = {
+          status: 'unhealthy',
+          error: error.message,
+          timestamp: new Date().toISOString()
+        };
+
+        results.summary.total++;
+        results.summary.unhealthy++;
+        
+        this.systemStatus.set(systemName, { status: 'unhealthy', timestamp: new Date(), error: error.message });
       }
-    } catch (error) {
-      this.log(`❌ Emergency recovery failed: ${error.message}`, "ERROR");
     }
+
+    // Analyze cross-system dependencies and issues
+    results.crossSystemIssues = this.analyzeCrossSystemIssues(results);
+    
+    // Generate recommendations
+    results.recommendations = this.generateRecommendations(results);
+
+    // Generate and log orchestrated health report
+    const healthReport = this.generateOrchestratedHealthReport(results);
+    this.log(healthReport);
+
+    // Save orchestrated health report
+    this.saveOrchestratedHealthReport(results);
+
+    // Update performance metrics
+    this.updatePerformanceMetrics(results);
+
+    return results;
   }
 
-  async exitEmergencyMode() {
-    if (!this.emergencyMode) {
-      return; // Not in emergency mode
-    }
+  analyzeCrossSystemIssues(results) {
+    const issues = [];
     
-    this.log("✅ EXITING EMERGENCY MODE - Systems recovered", "INFO");
-    this.emergencyMode = false;
-    this.recoveryAttempts = 0;
+    // Check for PM2 and GitHub Actions conflicts
+    if (results.systems.pm2 && results.systems.githubActions) {
+      if (results.systems.pm2.status === 'unhealthy' && results.systems.githubActions.status === 'unhealthy') {
+        issues.push({
+          type: 'cross_system_failure',
+          systems: ['pm2', 'githubActions'],
+          description: 'Both PM2 and GitHub Actions systems are unhealthy, potential automation conflict',
+          severity: 'high'
+        });
+      }
+    }
+
+    // Check for Netlify functions and PM2 conflicts
+    if (results.systems.netlifyFunctions && results.systems.pm2) {
+      if (results.systems.netlifyFunctions.status === 'unhealthy' && results.systems.pm2.status === 'unhealthy') {
+        issues.push({
+          type: 'cross_system_failure',
+          systems: ['netlifyFunctions', 'pm2'],
+          description: 'Both Netlify functions and PM2 systems are unhealthy, potential deployment conflict',
+          severity: 'high'
+        });
+      }
+    }
+
+    return issues;
   }
 
-  async performEmergencyRecovery() {
-    this.log("🆘 Performing emergency recovery procedures...");
+  generateRecommendations(results) {
+    const recommendations = [];
     
+    // System-specific recommendations
+    for (const [systemName, systemResult] of Object.entries(results.systems)) {
+      if (systemResult.status === 'unhealthy') {
+        recommendations.push({
+          system: systemName,
+          action: 'restart',
+          description: `Restart ${systemName} system to resolve health issues`,
+          priority: 'high'
+        });
+      }
+    }
+
+    // Cross-system recommendations
+    if (results.crossSystemIssues.length > 0) {
+      recommendations.push({
+        system: 'all',
+        action: 'investigate',
+        description: 'Investigate cross-system dependencies and resolve conflicts',
+        priority: 'critical'
+      });
+    }
+
+    return recommendations;
+  }
+
+  generateOrchestratedHealthReport(results) {
+    let systemStatus = "";
+    for (const [systemName, systemResult] of Object.entries(results.systems)) {
+      const status = systemResult.status === 'healthy' ? "✅" : "❌";
+      const details = systemResult.status === 'healthy' ? "HEALTHY" : `UNHEALTHY: ${systemResult.error || 'Unknown error'}`;
+      systemStatus += `${status} ${systemName}: ${details}\n`;
+    }
+
+    let crossSystemIssues = "";
+    if (results.crossSystemIssues.length > 0) {
+      for (const issue of results.crossSystemIssues) {
+        crossSystemIssues += `⚠️ ${issue.description} (Severity: ${issue.severity})\n`;
+      }
+    } else {
+      crossSystemIssues = "No cross-system issues detected\n";
+    }
+
+    let recommendations = "";
+    if (results.recommendations.length > 0) {
+      for (const rec of results.recommendations) {
+        recommendations += `💡 ${rec.description} (Priority: ${rec.priority})\n`;
+      }
+    } else {
+      recommendations = "No immediate actions required\n";
+    }
+
+    return `
+🎯 MASTER REDUNDANCY ORCHESTRATOR HEALTH REPORT
+================================================
+Timestamp: ${results.timestamp}
+Uptime: ${this.getUptime()}
+
+📊 System Health Summary:
+Total Systems: ${results.summary.total}
+Healthy: ${results.summary.healthy}
+Unhealthy: ${results.summary.unhealthy}
+Failed: ${results.summary.failed}
+
+🔍 Individual System Status:
+${systemStatus}
+
+🔗 Cross-System Issues:
+${crossSystemIssues}
+
+💡 Recommendations:
+${recommendations}
+
+${results.summary.healthy === results.summary.total ? 
+  "🎉 All redundancy systems are operating normally!" : 
+  "⚠️ Some redundancy systems require attention. Check recommendations above."}
+`;
+  }
+
+  getUptime() {
+    if (!this.startupTime) return "Not started";
+    
+    const uptime = Date.now() - this.startupTime.getTime();
+    const days = Math.floor(uptime / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((uptime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((uptime % (1000 * 60 * 60)) / (1000 * 60));
+    
+    return `${days}d ${hours}h ${minutes}m`;
+  }
+
+  saveOrchestratedHealthReport(results) {
     try {
-      // Emergency PM2 restart
-      this.log("🔄 Emergency PM2 restart...");
-      await this.pm2Redundancy.emergencyRestart();
-      
-      // Emergency GitHub Actions trigger
-      this.log("🔄 Emergency GitHub Actions trigger...");
-      await this.githubActionsRedundancy.emergencyTrigger();
-      
-      // Emergency Netlify Functions regeneration
-      this.log("🔄 Emergency Netlify Functions regeneration...");
-      await this.netlifyFunctionsRedundancy.emergencyRegeneration();
-      
-      this.log("✅ Emergency recovery procedures completed");
-      return true;
+      const reportPath = path.join(this.logDir, `orchestrated-health-report-${new Date().toISOString().split('T')[0]}.json`);
+      fs.writeFileSync(reportPath, JSON.stringify(results, null, 2));
+      this.log(`📝 Orchestrated health report saved to ${reportPath}`);
     } catch (error) {
-      this.log(`❌ Emergency recovery failed: ${error.message}`, "ERROR");
-      return false;
+      this.log(`❌ Failed to save orchestrated health report: ${error.message}`, "ERROR");
+    }
+  }
+
+  updatePerformanceMetrics(results) {
+    const timestamp = new Date().toISOString();
+    
+    for (const [systemName, systemResult] of Object.entries(results.systems)) {
+      if (!this.performanceMetrics.has(systemName)) {
+        this.performanceMetrics.set(systemName, []);
+      }
+      
+      const metrics = this.performanceMetrics.get(systemName);
+      metrics.push({
+        timestamp,
+        status: systemResult.status,
+        responseTime: Date.now() - new Date(results.timestamp).getTime()
+      });
+      
+      // Keep only last 100 metrics per system
+      if (metrics.length > 100) {
+        metrics.splice(0, metrics.length - 100);
+      }
     }
   }
 
   async startOrchestration() {
-    if (this.orchestrating) {
-      this.log("Orchestration already active");
+    if (this.monitoring) {
+      this.log("⚠️ Orchestration is already running");
       return;
     }
+
+    this.log("🚀 Starting master redundancy orchestration...");
     
-    this.log("🎼 Starting master redundancy orchestration...");
-    this.orchestrating = true;
-    
-    // Start all systems
-    await this.startAllSystems();
-    
-    // Start periodic orchestration
-    this.orchestrationInterval = setInterval(async () => {
-      try {
-        await this.checkAllSystemsHealth();
-      } catch (error) {
-        this.log(`Error during orchestration: ${error.message}`, "ERROR");
+    try {
+      // Initialize systems
+      const initialized = await this.initializeSystems();
+      if (!initialized) {
+        throw new Error("Failed to initialize systems");
       }
-    }, this.config.orchestrationInterval);
-    
-    // Start periodic health checks
-    this.healthCheckInterval = setInterval(async () => {
-      try {
-        await this.checkAllSystemsHealth();
-      } catch (error) {
-        this.log(`Error during health check: ${error.message}`, "ERROR");
+
+      // Start systems
+      const started = await this.startSystems();
+      if (!started) {
+        throw new Error("Failed to start systems");
       }
-    }, this.config.healthCheckInterval);
-    
-    this.log("🎼 Master redundancy orchestration started");
+
+      this.monitoring = true;
+
+      // Set up orchestrated monitoring
+      this.orchestrationInterval = setInterval(async () => {
+        await this.performOrchestratedHealthCheck();
+      }, this.config.orchestration.healthCheckInterval);
+
+      this.log("✅ Master redundancy orchestration started successfully");
+    } catch (error) {
+      this.log(`❌ Failed to start orchestration: ${error.message}`, "ERROR");
+      throw error;
+    }
   }
 
   async stopOrchestration() {
+    if (!this.monitoring) {
+      this.log("⚠️ Orchestration is not running");
+      return;
+    }
+
+    this.log("🛑 Stopping master redundancy orchestration...");
+    this.monitoring = false;
+
     if (this.orchestrationInterval) {
       clearInterval(this.orchestrationInterval);
       this.orchestrationInterval = null;
     }
-    
-    if (this.healthCheckInterval) {
-      clearInterval(this.healthCheckInterval);
-      this.healthCheckInterval = null;
+
+    // Stop all systems
+    for (const [systemName, system] of Object.entries(this.systems)) {
+      try {
+        if (system && typeof system.stopMonitoring === 'function') {
+          await system.stopMonitoring();
+          this.log(`✅ Stopped ${systemName} system`);
+        }
+      } catch (error) {
+        this.log(`⚠️ Error stopping ${systemName} system: ${error.message}`, "WARN");
+      }
     }
-    
-    this.orchestrating = false;
-    this.log("🎼 Master redundancy orchestration stopped");
+
+    this.log("✅ Master redundancy orchestration stopped");
   }
 
-  getSystemStatus() {
-    const status = {};
+  async emergencyRecovery() {
+    this.log("🚨 Starting emergency recovery for all systems...");
     
-    for (const [systemName, systemInfo] of this.systemStatus) {
-      status[systemName] = {
-        ...systemInfo,
-        lastCheck: systemInfo.lastCheck.toISOString()
-      };
+    try {
+      for (const [systemName, system] of Object.entries(this.systems)) {
+        try {
+          if (system && typeof system.emergencyRecovery === 'function') {
+            this.log(`🚨 Starting emergency recovery for ${systemName} system...`);
+            await system.emergencyRecovery();
+            this.log(`✅ Emergency recovery completed for ${systemName} system`);
+          }
+        } catch (error) {
+          this.log(`❌ Emergency recovery failed for ${systemName} system: ${error.message}`, "ERROR");
+        }
+      }
+
+      this.log("✅ Emergency recovery completed for all systems");
+      return true;
+    } catch (error) {
+      this.log(`❌ Emergency recovery failed: ${error.message}`, "ERROR");
+      return false;
     }
-    
-    return status;
   }
 
-  getOrchestratorStatus() {
+  getStatus() {
     return {
-      orchestrating: this.orchestrating,
-      emergencyMode: this.emergencyMode,
-      recoveryAttempts: this.recoveryAttempts,
-      maxRecoveryAttempts: this.maxRecoveryAttempts,
-      systemStatus: this.getSystemStatus(),
-      config: this.config
+      monitoring: this.monitoring,
+      config: this.config,
+      systemStatus: Object.fromEntries(this.systemStatus),
+      performanceMetrics: Object.fromEntries(this.performanceMetrics),
+      startupTime: this.startupTime,
+      uptime: this.getUptime()
     };
-  }
-
-  async generateHealthReport() {
-    this.log("📊 Generating comprehensive health report...");
-    
-    const report = {
-      timestamp: new Date().toISOString(),
-      orchestrator: this.getOrchestratorStatus(),
-      pm2: this.pm2Redundancy.getStatus(),
-      githubActions: this.githubActionsRedundancy.getStatus(),
-      netlifyFunctions: this.netlifyFunctionsRedundancy.getStatus()
-    };
-    
-    const reportPath = path.join(this.logDir, `health-report-${new Date().toISOString().split('T')[0]}.json`);
-    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    
-    this.log(`📊 Health report generated: ${reportPath}`);
-    return report;
   }
 }
 
-// CLI interface
+// Start the master redundancy orchestrator
 if (require.main === module) {
   const orchestrator = new MasterRedundancyOrchestrator();
   
-  const command = process.argv[2];
+  // Handle graceful shutdown
+  process.on('SIGINT', async () => {
+    console.log('\n🛑 Shutting down master redundancy orchestrator...');
+    await orchestrator.stopOrchestration();
+    process.exit(0);
+  });
   
-  switch (command) {
-    case "start":
-      orchestrator.startOrchestration();
-      break;
-    case "stop":
-      orchestrator.stopOrchestration();
-      break;
-    case "health":
-      orchestrator.checkAllSystemsHealth();
-      break;
-    case "emergency":
-      orchestrator.performEmergencyRecovery();
-      break;
-    case "report":
-      orchestrator.generateHealthReport();
-      break;
-    case "status":
-      console.log(JSON.stringify(orchestrator.getOrchestratorStatus(), null, 2));
-      break;
-    case "systems":
-      console.log(JSON.stringify(orchestrator.getSystemStatus(), null, 2));
-      break;
-    default:
-      console.log("Usage: node master-redundancy-orchestrator.cjs [start|stop|health|emergency|report|status|systems]");
-      process.exit(1);
-  }
+  process.on('SIGTERM', async () => {
+    console.log('\n🛑 Terminating master redundancy orchestrator...');
+    await orchestrator.stopOrchestration();
+    process.exit(0);
+  });
+
+  // Start orchestration
+  orchestrator.startOrchestration().catch(error => {
+    console.error('Failed to start orchestration:', error);
+    process.exit(1);
+  });
 }
 
-module.exports = { MasterRedundancyOrchestrator };
+module.exports = MasterRedundancyOrchestrator;
