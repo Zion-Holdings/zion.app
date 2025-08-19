@@ -135,6 +135,93 @@ export default function HomePage() {
               </Link>
             </div>
           </section>
+
+          {/* Technology Stack Section */}
+          <section className="mx-auto max-w-7xl px-6 pb-14">
+            <h2 className="text-center text-2xl font-bold tracking-wide text-white/90 mb-8">Our Technology Stack</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20">
+                <div className="w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">🤖</span>
+                </div>
+                <h3 className="text-xl font-semibold text-cyan-400 mb-3 text-center">AI & Machine Learning</h3>
+                <ul className="space-y-2 text-white/80 text-sm">
+                  <li>• TensorFlow & PyTorch</li>
+                  <li>• Natural Language Processing</li>
+                  <li>• Computer Vision</li>
+                  <li>• Reinforcement Learning</li>
+                </ul>
+              </div>
+              
+              <div className="bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20">
+                <div className="w-16 h-16 bg-gradient-to-br from-fuchsia-400 to-purple-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">☁️</span>
+                </div>
+                <h3 className="text-xl font-semibold text-fuchsia-400 mb-3 text-center">Cloud & Infrastructure</h3>
+                <ul className="space-y-2 text-white/80 text-sm">
+                  <li>• AWS, Azure, GCP</li>
+                  <li>• Kubernetes & Docker</li>
+                  <li>• Serverless Architecture</li>
+                  <li>• Microservices</li>
+                </ul>
+              </div>
+              
+              <div className="bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">🔧</span>
+                </div>
+                <h3 className="text-xl font-semibold text-green-400 mb-3 text-center">Development Tools</h3>
+                <ul className="space-y-2 text-white/80 text-sm">
+                  <li>• React & Next.js</li>
+                  <li>• Python & Node.js</li>
+                  <li>• CI/CD Pipelines</li>
+                  <li>• Automated Testing</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          {/* Statistics Section */}
+          <section className="mx-auto max-w-7xl px-6 pb-14">
+            <h2 className="text-center text-2xl font-bold tracking-wide text-white/90 mb-8">Our Impact</h2>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+              <div className="text-center">
+                <div className="text-4xl font-bold text-cyan-400 mb-2">500+</div>
+                <div className="text-white/70 text-sm">AI Models Deployed</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold text-fuchsia-400 mb-2">99.9%</div>
+                <div className="text-white/70 text-sm">Uptime Reliability</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold text-green-400 mb-2">50+</div>
+                <div className="text-white/70 text-sm">Enterprise Clients</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold text-blue-400 mb-2">24/7</div>
+                <div className="text-white/70 text-sm">Autonomous Operation</div>
+              </div>
+            </div>
+          </section>
+
+          {/* Call to Action Section */}
+          <section className="mx-auto max-w-7xl px-6 pb-14">
+            <div className="bg-gradient-to-r from-cyan-500/10 to-fuchsia-500/10 rounded-2xl p-12 border border-cyan-500/20 text-center">
+              <h2 className="text-3xl font-bold mb-4 text-white">Ready to Transform Your Business?</h2>
+              <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
+                Join the autonomous revolution and discover how AI can enhance your operations, 
+                improve efficiency, and drive innovation across your organization.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/contact" className="bg-gradient-to-r from-cyan-400 to-fuchsia-400 text-white px-8 py-4 rounded-lg font-semibold hover:from-cyan-500 hover:to-fuchsia-500 transition-all duration-300">
+                  Get Started Today
+                </Link>
+                <Link href="/case-studies" className="px-8 py-4 border border-white/20 text-white rounded-lg font-semibold hover:border-cyan-400/50 hover:text-cyan-400 transition-all duration-300">
+                  View Case Studies
+                </Link>
+              </div>
+            </div>
+          </section>
         </main>
       </div>
     </>
