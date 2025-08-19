@@ -35,7 +35,7 @@ export default function ResourcesPage() {
       id: 'autonomous-systems-guide',
       title: 'The Complete Guide to Autonomous Systems',
       description: 'A comprehensive overview of autonomous technology, implementation strategies, and best practices.',
-      downloadUrl: '#',
+      downloadUrl: '/resources/whitepapers/autonomous-systems-guide.pdf',
       pages: '45',
       category: 'Technology'
     },
@@ -43,7 +43,7 @@ export default function ResourcesPage() {
       id: 'ai-ethics-framework',
       title: 'AI Ethics Framework for Business',
       description: 'Establishing ethical guidelines for AI implementation in enterprise environments.',
-      downloadUrl: '#',
+      downloadUrl: '/resources/whitepapers/ai-ethics-framework.pdf',
       pages: '32',
       category: 'Ethics'
     },
@@ -51,7 +51,7 @@ export default function ResourcesPage() {
       id: 'automation-roi-calculator',
       title: 'Automation ROI Calculator Guide',
       description: 'How to calculate and maximize return on investment for automation initiatives.',
-      downloadUrl: '#',
+      downloadUrl: '/resources/whitepapers/automation-roi-calculator.pdf',
       pages: '28',
       category: 'Business'
     }
