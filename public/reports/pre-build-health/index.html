@@ -1,0 +1,58 @@
+<!doctype html>
+<meta charset="utf-8"/>
+<title>Pre-Build Health Check Report</title>
+<style>
+body{font-family:ui-sans-serif,system-ui;padding:20px;background:#0b1020;color:#fff}
+.card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:12px;margin:8px 0}
+code{background:rgba(0,0,0,.4);padding:2px 4px;border-radius:6px}
+.status{display:inline-block;margin:2px;padding:2px 8px;border-radius:999px;font-size:12px}
+.pass{background:rgba(16,185,129,.2);border:1px solid #10b981;color:#10b981}
+.fail{background:rgba(239,68,68,.2);border:1px solid #ef4444;color:#ef4444}
+.build-status{font-size:24px;font-weight:bold;padding:20px;border-radius:12px;text-align:center;margin:20px 0}
+.build-success{background:rgba(16,185,129,.2);border:2px solid #10b981}
+.build-failure{background:rgba(239,68,68,.2);border:2px solid #ef4444}
+</style>
+<h1>Pre-Build Health Check Report</h1>
+<p>Generated 8/19/2025, 3:05:04 PM</p>
+<div class="build-status build-success">✅ BUILD READY</div>
+<div class="card">
+<h2>Summary</h2>
+<p><strong>Total Checks:</strong> 6</p>
+<p><strong>Passed:</strong> 5</p>
+<p><strong>Failed:</strong> 1</p>
+<p><strong>Critical Failures:</strong> 0</p>
+</div>
+<div class="card">
+<h2>Check Results</h2>
+<div style="margin:8px 0;padding:8px;border-radius:8px;background:rgba(255,255,255,.03)">
+<strong>✅ Page Structure Validation</strong> <span style="color:#ef4444">[CRITICAL]</span>
+<span class="status pass">PASS</span>
+</div>
+<div style="margin:8px 0;padding:8px;border-radius:8px;background:rgba(255,255,255,.03)">
+<strong>✅ Dependencies Check</strong> <span style="color:#ef4444">[CRITICAL]</span>
+<span class="status pass">PASS</span>
+</div>
+<div style="margin:8px 0;padding:8px;border-radius:8px;background:rgba(255,255,255,.03)">
+<strong>✅ Next.js Configuration</strong> <span style="color:#ef4444">[CRITICAL]</span>
+<span class="status pass">PASS</span>
+</div>
+<div style="margin:8px 0;padding:8px;border-radius:8px;background:rgba(255,255,255,.03)">
+<strong>❌ Environment Variables</strong>
+<span class="status fail">FAIL</span>
+<div style="margin-top:4px;color:#ef4444"><code>Missing environment variables: NODE_VERSION, NODE_OPTIONS</code></div>
+</div>
+<div style="margin:8px 0;padding:8px;border-radius:8px;background:rgba(255,255,255,.03)">
+<strong>✅ File Permissions</strong>
+<span class="status pass">PASS</span>
+</div>
+<div style="margin:8px 0;padding:8px;border-radius:8px;background:rgba(255,255,255,.03)">
+<strong>✅ Build Artifacts</strong>
+<span class="status pass">PASS</span>
+</div>
+</div>
+<div class="card">
+<h2>Recommendations</h2>
+<ul>
+<li>Verify all required environment variables are set</li>
+</ul>
+</div>
