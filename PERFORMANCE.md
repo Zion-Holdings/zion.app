@@ -41,7 +41,7 @@ We track these key performance indicators:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-org/zion-app.git
+   git clone https://github.com/Zion-Holdings/zion.app.git
    cd zion-app
    ```
 
