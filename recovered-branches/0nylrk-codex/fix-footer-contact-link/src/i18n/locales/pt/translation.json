@@ -1,0 +1,63 @@
+
+{
+  "general": {
+    "app_name": "Mercado de IA Zion",
+    "loading": "Carregando...",
+    "search": "Pesquisar",
+    "select_language": "Selecionar idioma",
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "submit": "Enviar",
+    "yes": "Sim",
+    "no": "Não",
+    "success": "Sucesso",
+    "error": "Erro"
+  },
+  "nav": {
+    "home": "Início",
+    "marketplace": "Mercado",
+    "categories": "Categorias",
+    "talent": "Talento",
+    "equipment": "Equipamento",
+    "dashboard": "Painel",
+    "messages": "Mensagens",
+    "post_job": "Publicar Vaga"
+  },
+  "auth": {
+    "login": "Entrar",
+    "signup": "Cadastrar",
+    "logout": "Sair",
+    "email": "Email",
+    "password": "Senha",
+    "forgot_password": "Esqueceu a senha?",
+    "remember_me": "Lembrar-me",
+    "login_success": "Login realizado com sucesso",
+    "logout_success": "Logout realizado com sucesso"
+  },
+  "home": {
+    "hero_title": "O Futuro do Mercado de Tecnologia e IA",
+    "hero_subtitle": "O primeiro mercado gratuito dedicado à alta tecnologia e inteligência artificial",
+    "browse_marketplace": "Explorar Mercado",
+    "create_profile": "Criar Perfil",
+    "explore_tools": "Explorar Nossas Ferramentas",
+    "tools_description": "Tudo o que você precisa para se conectar ao ecossistema de IA e tecnologia"
+  },
+  "jobs": {
+    "post_job_title": "Publicar uma Vaga",
+    "post_job_description": "Preencha o formulário abaixo para publicar sua vaga e encontrar o talento perfeito",
+    "job_title": "Título da Vaga",
+    "job_description": "Descrição da Vaga",
+    "skills_required": "Habilidades Necessárias",
+    "budget": "Orçamento",
+    "deadline": "Prazo",
+    "job_posted": "Vaga publicada com sucesso"
+  },
+  "language": {
+    "en": "English",
+    "es": "Español",
+    "pt": "Português",
+    "ar": "العربية",
+    "language_changed": "Idioma alterado para {{language}}",
+    "switch_to_detected": "Mudar para {{language}}?"
+  }
+}
