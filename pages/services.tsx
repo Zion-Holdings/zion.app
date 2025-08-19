@@ -125,6 +125,91 @@ export default function ServicesPage() {
                     With 227 active automations and 2,960+ pages generated, we have a track record of delivering measurable business value.
                   </p>
                 </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-3 text-blue-400">Industry Expertise</h3>
+                  <p className="text-white/70">
+                    Deep domain knowledge across healthcare, finance, retail, and manufacturing sectors with proven success stories.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-3 text-purple-400">Continuous Innovation</h3>
+                  <p className="text-white/70">
+                    We stay ahead of the curve with the latest AI research, tools, and methodologies to ensure your solutions are future-proof.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 mb-16">
+              <h2 className="text-3xl font-bold mb-6 text-fuchsia-400">Advanced AI Capabilities</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="bg-white/5 rounded-lg p-4 border border-white/20">
+                  <h4 className="font-semibold text-fuchsia-300 mb-2">Machine Learning</h4>
+                  <ul className="space-y-1 text-white/70 text-sm">
+                    <li>• Supervised & Unsupervised Learning</li>
+                    <li>• Deep Neural Networks</li>
+                    <li>• Reinforcement Learning</li>
+                    <li>• Transfer Learning</li>
+                  </ul>
+                </div>
+                <div className="bg-white/5 rounded-lg p-4 border border-white/20">
+                  <h4 className="font-semibold text-cyan-300 mb-2">Natural Language Processing</h4>
+                  <ul className="space-y-1 text-white/70 text-sm">
+                    <li>• Text Classification & Sentiment Analysis</li>
+                    <li>• Named Entity Recognition</li>
+                    <li>• Language Generation</li>
+                    <li>• Multilingual Support</li>
+                  </ul>
+                </div>
+                <div className="bg-white/5 rounded-lg p-4 border border-white/20">
+                  <h4 className="font-semibold text-green-300 mb-2">Computer Vision</h4>
+                  <ul className="space-y-1 text-white/70 text-sm">
+                    <li>• Image Classification & Detection</li>
+                    <li>• Object Recognition</li>
+                    <li>• Facial Recognition</li>
+                    <li>• Medical Image Analysis</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 mb-16">
+              <h2 className="text-3xl font-bold mb-6 text-green-400">Industry Solutions</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="text-xl font-semibold mb-4 text-green-300">Healthcare & Life Sciences</h3>
+                  <div className="space-y-3">
+                    <div className="bg-white/5 rounded-lg p-3 border border-white/20">
+                      <h4 className="font-semibold text-green-200 mb-1">Medical Imaging AI</h4>
+                      <p className="text-white/70 text-sm">Advanced diagnostic assistance for radiologists and pathologists</p>
+                    </div>
+                    <div className="bg-white/5 rounded-lg p-3 border border-white/20">
+                      <h4 className="font-semibold text-green-200 mb-1">Drug Discovery</h4>
+                      <p className="text-white/70 text-sm">AI-powered molecular modeling and drug candidate screening</p>
+                    </div>
+                    <div className="bg-white/5 rounded-lg p-3 border border-white/20">
+                      <h4 className="font-semibold text-green-200 mb-1">Patient Care Optimization</h4>
+                      <p className="text-white/70 text-sm">Predictive analytics for patient outcomes and treatment planning</p>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-4 text-blue-300">Financial Services</h3>
+                  <div className="space-y-3">
+                    <div className="bg-white/5 rounded-lg p-3 border border-white/20">
+                      <h4 className="font-semibold text-blue-200 mb-1">Fraud Detection</h4>
+                      <p className="text-white/70 text-sm">Real-time fraud detection using advanced ML algorithms</p>
+                    </div>
+                    <div className="bg-white/5 rounded-lg p-3 border border-white/20">
+                      <h4 className="font-semibold text-blue-200 mb-1">Risk Assessment</h4>
+                      <p className="text-white/70 text-sm">AI-powered credit scoring and risk modeling</p>
+                    </div>
+                    <div className="bg-white/5 rounded-lg p-3 border border-white/20">
+                      <h4 className="font-semibold text-blue-200 mb-1">Trading Algorithms</h4>
+                      <p className="text-white/70 text-sm">Automated trading strategies with risk management</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
