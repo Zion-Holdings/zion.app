@@ -307,7 +307,20 @@
     "redundancy:github": "node automation/redundancy/github-actions-redundancy-manager.cjs",
     "redundancy:netlify": "node automation/redundancy/netlify-functions-redundancy-manager.cjs",
     "redundancy:master": "node automation/redundancy/master-redundancy-orchestrator.cjs",
-    "redundancy:report": "node automation/redundancy/master-redundancy-orchestrator.cjs report"
+    "redundancy:report": "node automation/redundancy/master-redundancy-orchestrator.cjs report",
+    "redundancy:comprehensive:start": "bash automation/start-comprehensive-redundancy.sh start",
+    "redundancy:comprehensive:stop": "bash automation/start-comprehensive-redundancy.sh stop",
+    "redundancy:comprehensive:restart": "bash automation/start-comprehensive-redundancy.sh restart",
+    "redundancy:comprehensive:status": "bash automation/start-comprehensive-redundancy.sh status",
+    "redundancy:comprehensive:logs": "bash automation/start-comprehensive-redundancy.sh logs",
+    "redundancy:comprehensive:report": "bash automation/start-comprehensive-redundancy.sh report",
+    "redundancy:comprehensive:test": "bash automation/start-comprehensive-redundancy.sh test",
+    "redundancy:comprehensive:orchestrator": "node automation/comprehensive-redundancy-orchestrator.cjs",
+    "redundancy:comprehensive:orchestrator:start": "node automation/comprehensive-redundancy-orchestrator.cjs start",
+    "redundancy:comprehensive:orchestrator:stop": "node automation/comprehensive-redundancy-orchestrator.cjs stop",
+    "redundancy:comprehensive:orchestrator:status": "node automation/comprehensive-redundancy-orchestrator.cjs status",
+    "redundancy:comprehensive:orchestrator:report": "node automation/comprehensive-redundancy-orchestrator.cjs report",
+    "redundancy:comprehensive:orchestrator:once": "node automation/comprehensive-redundancy-orchestrator.cjs once"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
