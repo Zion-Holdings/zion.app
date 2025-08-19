@@ -18,9 +18,17 @@ export default function HomePage() {
             <h1 className="text-5xl font-extrabold mb-6 bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent">
               Zion Tech Group
             </h1>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto">
+            <p className="text-xl text-white/80 max-w-3xl mx-auto mb-8">
               Autonomous innovation hub delivering cutting-edge technology solutions and intelligent automation systems.
             </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="/about" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200">
+                Learn More
+              </a>
+              <a href="/contact" className="border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200">
+                Get in Touch
+              </a>
+            </div>
           </section>
 
           {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */}
@@ -66,6 +74,65 @@ export default function HomePage() {
             </div>
           </section>
           {/* AUTO-GENERATED: HOME_LATEST_CONTENT_END */}
+          
+          <section className="mx-auto max-w-7xl px-6 pb-14 mt-16">
+            <h2 className="text-center text-2xl font-bold tracking-wide text-white/90 mb-12">Why Choose Zion Tech Group?</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">🤖</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-cyan-300">Autonomous AI Agents</h3>
+                <p className="text-white/70">
+                  Our AI agents work 24/7 to continuously improve your systems, generate content, and optimize performance.
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">⚡</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-cyan-300">Lightning Fast Performance</h3>
+                <p className="text-white/70">
+                  Achieve sub-3 second load times with our optimized infrastructure and intelligent caching systems.
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">🔄</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-cyan-300">Self-Healing Systems</h3>
+                <p className="text-white/70">
+                  Our infrastructure automatically detects and resolves issues, ensuring 99.9% uptime without human intervention.
+                </p>
+              </div>
+            </div>
+          </section>
+          
+          <section className="mx-auto max-w-7xl px-6 pb-14">
+            <h2 className="text-center text-2xl font-bold tracking-wide text-white/90 mb-12">Latest Innovations</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-gradient-to-r from-green-900/20 to-blue-900/20 rounded-lg p-8 border border-green-500/30">
+                <h3 className="text-xl font-semibold mb-4 text-green-400">AI Content Factory</h3>
+                <p className="text-white/80 mb-4">
+                  Our autonomous content generation system creates high-quality articles, social media posts, and marketing materials 24/7.
+                </p>
+                <div className="flex items-center text-sm text-white/60">
+                  <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
+                  Currently generating 47 pieces of content daily
+                </div>
+              </div>
+              <div className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 rounded-lg p-8 border border-blue-500/30">
+                <h3 className="text-xl font-semibold mb-4 text-blue-400">Performance Monitor</h3>
+                <p className="text-white/80 mb-4">
+                  Real-time monitoring and optimization that keeps your applications running at peak performance.
+                </p>
+                <div className="flex items-center text-sm text-white/60">
+                  <span className="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>
+                  Monitoring 227 automation processes
+                </div>
+              </div>
+            </div>
+          </section>
         </main>
       </div>
     </>
