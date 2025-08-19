@@ -305,7 +305,16 @@
     "redundancy:monitor": "node automation/redundancy-automation-system.cjs monitor",
     "redundancy:pm2": "node automation/pm2-redundancy-monitor.cjs check",
     "redundancy:github": "node automation/github-actions-redundancy.cjs check",
-    "redundancy:netlify": "node automation/netlify-functions-redundancy.cjs check"
+    "redundancy:netlify": "node automation/netlify-functions-redundancy.cjs check",
+    "redundancy:enhanced:start": "cd automation/redundancy && chmod +x start-enhanced-redundancy-system.sh && ./start-enhanced-redundancy-system.sh start",
+    "redundancy:enhanced:stop": "cd automation/redundancy && chmod +x start-enhanced-redundancy-system.sh && ./start-enhanced-redundancy-system.sh stop",
+    "redundancy:enhanced:status": "cd automation/redundancy && ./start-enhanced-redundancy-system.sh status",
+    "redundancy:enhanced:health": "cd automation/redundancy && ./start-enhanced-redundancy-system.sh health",
+    "redundancy:enhanced:restart": "cd automation/redundancy && ./start-enhanced-redundancy-system.sh restart",
+    "redundancy:enhanced:pm2": "node automation/redundancy/enhanced-pm2-redundancy-manager.cjs",
+    "redundancy:enhanced:github": "node automation/redundancy/enhanced-github-actions-redundancy-manager.cjs",
+    "redundancy:enhanced:netlify": "node automation/redundancy/enhanced-netlify-functions-redundancy-manager.cjs",
+    "redundancy:enhanced:master": "node automation/redundancy/enhanced-master-redundancy-orchestrator.cjs"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
