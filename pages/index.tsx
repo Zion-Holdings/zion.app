@@ -30,6 +30,12 @@ export default function HomePage() {
               <a href="/services" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-fuchsia-400/50">
                 Our Services
               </a>
+              <a href="/case-studies" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-purple-400/50">
+                Case Studies
+              </a>
+              <a href="/resources" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-blue-400/50">
+                Resources
+              </a>
               <a href="/contact" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-green-400/50">
                 Contact
               </a>
@@ -84,6 +90,106 @@ export default function HomePage() {
             </div>
           </section>
           {/* AUTO-GENERATED: HOME_LATEST_CONTENT_END */}
+
+          {/* Featured Services */}
+          <section className="mx-auto max-w-7xl px-6 pb-14">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold tracking-wide text-white/90 mb-4">Our Core Services</h2>
+              <p className="text-lg text-white/70 max-w-3xl mx-auto">
+                Comprehensive AI and automation solutions designed to transform your business
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300">
+                <div className="text-4xl mb-4">🤖</div>
+                <h3 className="text-xl font-bold mb-3 text-cyan-400">AI Development</h3>
+                <p className="text-white/70 mb-4">
+                  Custom AI solutions including machine learning models, natural language processing, and computer vision systems.
+                </p>
+                <a href="/services" className="text-cyan-400 hover:text-cyan-300 transition-colors text-sm font-medium">
+                  Learn More →
+                </a>
+              </div>
+              
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:border-fuchsia-400/30 transition-all duration-300">
+                <div className="text-4xl mb-4">⚡</div>
+                <h3 className="text-xl font-bold mb-3 text-fuchsia-400">Automation Systems</h3>
+                <p className="text-white/70 mb-4">
+                  End-to-end automation solutions that streamline operations and improve efficiency across your organization.
+                </p>
+                <a href="/services" className="text-fuchsia-400 hover:text-fuchsia-300 transition-colors text-sm font-medium">
+                  Learn More →
+                </a>
+              </div>
+              
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:border-green-400/30 transition-all duration-300">
+                <div className="text-4xl mb-4">☁️</div>
+                <h3 className="text-xl font-bold mb-3 text-green-400">Cloud Infrastructure</h3>
+                <p className="text-white/70 mb-4">
+                  Scalable cloud solutions with automated deployment, monitoring, and optimization for peak performance.
+                </p>
+                <a href="/services" className="text-green-400 hover:text-green-300 transition-colors text-sm font-medium">
+                  Learn More →
+                </a>
+              </div>
+            </div>
+          </section>
+
+          {/* Success Metrics */}
+          <section className="mx-auto max-w-7xl px-6 pb-14">
+            <div className="bg-gradient-to-r from-cyan-500/10 to-fuchsia-500/10 rounded-2xl p-8 border border-cyan-500/20">
+              <div className="text-center mb-8">
+                <h2 className="text-3xl font-bold tracking-wide text-white/90 mb-4">Our Impact</h2>
+                <p className="text-lg text-white/70 max-w-3xl mx-auto">
+                  Measurable results from our autonomous technology solutions
+                </p>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-cyan-400 mb-2">227</div>
+                  <div className="text-white/70">Active Automations</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-fuchsia-400 mb-2">2,960</div>
+                  <div className="text-white/70">Pages Generated</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-green-400 mb-2">99.9%</div>
+                  <div className="text-white/70">Uptime</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-blue-400 mb-2">24/7</div>
+                  <div className="text-white/70">Monitoring</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Call to Action */}
+          <section className="mx-auto max-w-7xl px-6 pb-14">
+            <div className="text-center">
+              <div className="bg-gradient-to-r from-cyan-500/10 to-fuchsia-500/10 rounded-2xl p-8 border border-cyan-500/20">
+                <h2 className="text-3xl font-bold tracking-wide text-white/90 mb-4">Ready to Transform Your Business?</h2>
+                <p className="text-lg text-white/70 mb-8 max-w-3xl mx-auto">
+                  Join the future of autonomous technology and discover how our AI solutions can drive innovation and growth.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <a 
+                    href="/contact" 
+                    className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-fuchsia-500 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-fuchsia-600 transition-all duration-200"
+                  >
+                    Get Started Today
+                  </a>
+                  <a 
+                    href="/case-studies" 
+                    className="px-8 py-4 bg-white/10 text-white font-semibold rounded-xl border border-white/20 hover:border-cyan-400/50 transition-all duration-200"
+                  >
+                    View Case Studies
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
         </main>
       </div>
     </>

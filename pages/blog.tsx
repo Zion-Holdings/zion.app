@@ -72,6 +72,14 @@ export default function BlogPage() {
               <a href="/" className="text-cyan-400 hover:text-cyan-300 transition-colors">
                 ← Back to Home
               </a>
+              <span className="mx-2 text-white/40">|</span>
+              <a href="/resources" className="text-fuchsia-400 hover:text-fuchsia-300 transition-colors">
+                Resources
+              </a>
+              <span className="mx-2 text-white/40">|</span>
+              <a href="/case-studies" className="text-purple-400 hover:text-purple-300 transition-colors">
+                Case Studies
+              </a>
             </nav>
             
             <header className="text-center mb-16">

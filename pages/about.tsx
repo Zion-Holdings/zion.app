@@ -24,6 +24,13 @@ export default function AboutPage() {
           </section>
 
           <section className="mx-auto max-w-6xl">
+            {/* Navigation */}
+            <nav className="mb-8">
+              <a href="/" className="text-cyan-400 hover:text-cyan-300 transition-colors">
+                ← Back to Home
+              </a>
+            </nav>
+            
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
               <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8">
                 <h2 className="text-3xl font-bold mb-6 text-cyan-400">Our Mission</h2>
@@ -111,6 +118,36 @@ export default function AboutPage() {
                   <div className="text-sm text-white/70">Uptime</div>
                 </div>
               </div>
+            </div>
+          </section>
+
+          {/* Related Pages */}
+          <section className="mx-auto max-w-6xl mt-16">
+            <h2 className="text-2xl font-bold mb-8 text-center text-white">Explore More</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <a href="/services" className="bg-white/10 rounded-xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300 text-center group">
+                <div className="w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-2xl">⚡</span>
+                </div>
+                <h3 className="text-lg font-semibold text-cyan-400 mb-2">Our Services</h3>
+                <p className="text-white/80 text-sm">Discover our comprehensive AI and automation solutions</p>
+              </a>
+              
+              <a href="/case-studies" className="bg-white/10 rounded-xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300 text-center group">
+                <div className="w-16 h-16 bg-gradient-to-br from-fuchsia-400 to-purple-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-2xl">📊</span>
+                </div>
+                <h3 className="text-lg font-semibold text-fuchsia-400 mb-2">Case Studies</h3>
+                <p className="text-white/80 text-sm">See real-world results from our implementations</p>
+              </a>
+              
+              <a href="/contact" className="bg-white/10 rounded-xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300 text-center group">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-indigo-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-2xl">💬</span>
+                </div>
+                <h3 className="text-lg font-semibold text-purple-400 mb-2">Get in Touch</h3>
+                <p className="text-white/80 text-sm">Ready to start your transformation journey?</p>
+              </a>
             </div>
           </section>
         </main>

@@ -19,6 +19,14 @@ export default function ReportsIndex() {
               <a href="/" className="text-cyan-400 hover:text-cyan-300 transition-colors">
                 ← Back to Home
               </a>
+              <span className="mx-2 text-white/40">|</span>
+              <a href="/blog" className="text-fuchsia-400 hover:text-fuchsia-300 transition-colors">
+                Blog
+              </a>
+              <span className="mx-2 text-white/40">|</span>
+              <a href="/resources" className="text-purple-400 hover:text-purple-300 transition-colors">
+                Resources
+              </a>
             </nav>
             
             <header className="text-center mb-16">
