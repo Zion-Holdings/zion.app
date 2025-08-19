@@ -1,0 +1,53 @@
+{
+  "timestamp": "2025-08-18T17:34:53.261Z",
+  "metrics": {
+    "workflow_health": {
+      "success": true,
+      "score": 100,
+      "level": "excellent",
+      "metrics": {
+        "totalWorkflows": 0,
+        "workflowsWithIssues": 0,
+        "totalIssues": 0,
+        "successRate": 100
+      }
+    },
+    "automation_health": {
+      "success": true,
+      "score": 100,
+      "level": "excellent",
+      "message": "All automation systems operational"
+    },
+    "security_status": {
+      "success": true,
+      "score": 94.51219512195121,
+      "level": "good",
+      "metrics": {
+        "totalWorkflows": 328,
+        "securedWorkflows": 310,
+        "workflowsWithTimeouts": 310,
+        "securityScore": 94.51219512195121,
+        "timeoutScore": 94.51219512195121
+      }
+    },
+    "dependency_health": {
+      "success": false,
+      "reason": "Command failed: npm run automation:deps\n⚠️  Could not backup node_modules info: Command failed: npm list --depth=0 --json\nnpm error code ELSPROBLEMS\nnpm error missing: @commitlint/cli@^19.8.1, required by bolt.new.zion.app@0.1.0\nnpm error missing: @commitlint/config-conventional@^19.8.1, required by bolt.new.zion.app@0.1.0\nnpm error missing: @eslint/js@^9.32.0, required by bolt.new.zion.app@0.1.0\nnpm error missing: @google-analytics/data@^5.2.0, required by bolt.new.zion.app@0.1.0\nnpm error missing: @google/generative-ai@^0.24.1, required by bolt.new.zion.app@0.1.0\nnpm error missing: @magneticwatermelon/mcp-toolkit@^1.1.4, required by bolt.new.zion.app@0.1.0\nnpm error missing: @modelcontextprotocol/sdk@^1.17.1, required by bolt.new.zion.app@0.1.0\nnpm error missing: @modelcontextprotocol/server-filesystem@^2025.7.29, required by bolt.new.zion.app@0.1.0\nnpm error missing: @modelcontextprotocol/server-memory@^2025.8.4, required by bolt.new.zion.app@0.1.0\nnpm error missing: @modelcontextprotocol/server-sequential-thinking@^2025.7.1, required by bolt.new.zion.app@0.1.0\nnpm error missing: @playwright/test@^1.54.2, required by bolt.new.zion.app@0.1.0\nnpm error missing: @supabase/ssr@^0.6.1, required by bolt.new.zion.app@0.1.0\nnpm error missing: @supabase/supabase-js@^2.39.0, required by bolt.new.zion.app@0.1.0\nnpm error missing: @testing-library/jest-dom@^6.6.4, required by bolt.new.zion.app@0.1.0\nnpm error missing: @testing-library/react@^14.3.1, required by bolt.new.zion.app@0.1.0\nnpm error missing: @types/node-cron@^3.0.11, required by bolt.new.zion.app@0.1.0\nnpm error missing: @types/node@^24.3.0, required by bolt.new.zion.app@0.1.0\nnpm error missing: @types/react-datepicker@^6.2.0, required by bolt.new.zion.app@0.1.0\nnpm error missing: @types/react-dom@^18.3.0, required by bolt.new.zion.app@0.1.0\nnpm error missing: @types/react@18.3.23, required by bolt.new.zion.app@0.1.0\nnpm error missing: @typescript-eslint/eslint-plugin@^8.39.1, required by bolt.new.zion.app@0.1.0\nnpm error missing: @typescript-eslint/parser@^8.39.1, required by bolt.new.zion.app@0.1.0\nnpm error missing: autoprefixer@^10.4.16, required by bolt.new.zion.app@0.1.0\nnpm error missing: axios@^1.11.0, required by bolt.new.zion.app@0.1.0\nnpm error missing: chalk@^5.5.0, required by bolt.new.zion.app@0.1.0\nnpm error missing: cheerio@^1.1.2, required by bolt.new.zion.app@0.1.0\nnpm error missing: child_process@^1.0.2, required by bolt.new.zion.app@0.1.0\nnpm error missing: chokidar@^4.0.3, required by bolt.new.zion.app@0.1.0\nnpm error missing: cron-parser@^5.3.0, required by bolt.new.zion.app@0.1.0\nnpm error missing: eslint-config-next@^15.0.0, required by bolt.new.zion.app@0.1.0\nnpm error missing: eslint-plugin-react-hooks@^5.2.0, required by bolt.new.zion.app@0.1.0\nnpm error missing: eslint-plugin-react-refresh@^0.4.20, required by bolt.new.zion.app@0.1.0\nnpm error missing: eslint@^9.32.0, required by bolt.new.zion.app@0.1.0\nnpm error missing: events@^3.3.0, required by bolt.new.zion.app@0.1.0\nnpm error missing: framer-motion@^6.5.1, required by bolt.new.zion.app@0.1.0\nnpm error missing: fs-extra@^11.3.1, required by bolt.new.zion.app@0.1.0\nnpm error missing: fs@^0.0.1-security, required by bolt.new.zion.app@0.1.0\nnpm error missing: glob@^11.0.3, required by bolt.new.zion.app@0.1.0\nnpm error missing: https@^1.0.0, required by bolt.new.zion.app@0.1.0\nnpm error missing: husky@^9.1.7, required by bolt.new.zion.app@0.1.0\nnpm error missing: import-fresh@^3.3.1, required by bolt.new.zion.app@0.1.0\nnpm error missing: jsdom@^24.1.0, required by bolt.new.zion.app@0.1.0\nnpm error missing: lint-staged@^16.1.5, required by bolt.new.zion.app@0.1.0\nnpm error missing: lucide-react@^0.539.0, required by bolt.new.zion.app@0.1.0\nnpm error missing: next@^14.2.31, required by bolt.new.zion.app@0.1.0\nnpm error missing: node-cron@^4.2.1, required by bolt.new.zion.app@0.1.0\nnpm error missing: openai@^5.11.0, required by bolt.new.zion.app@0.1.0\nnpm error missing: path@^0.12.7, required by bolt.new.zion.app@0.1.0\nnpm error missing: postcss@^8.4.32, required by bolt.new.zion.app@0.1.0\nnpm error missing: react-datepicker@^8.4.0, required by bolt.new.zion.app@0.1.0\nnpm error missing: react-dom@18.2.0, required by bolt.new.zion.app@0.1.0\nnpm error missing: react@18.2.0, required by bolt.new.zion.app@0.1.0\nnpm error missing: sharp@^0.34.3, required by bolt.new.zion.app@0.1.0\nnpm error missing: tailwindcss@^3.4.0, required by bolt.new.zion.app@0.1.0\nnpm error missing: ts-node@^10.9.2, required by bolt.new.zion.app@0.1.0\nnpm error missing: typescript@5.9.2, required by bolt.new.zion.app@0.1.0\nnpm error missing: uuid@^11.1.0, required by bolt.new.zion.app@0.1.0\nnpm error A complete log of this run can be found in: /home/ubuntu/.npm/_logs/2025-08-18T17_34_53_707Z-debug-0.log\n\n❌ Error checking dependency health: TypeError: Cannot read properties of undefined (reading 'split')\n    at DependencyHealthChecker.determineUpdateType (/workspace/automation/dependency-health-checker.cjs:279:34)\n    at DependencyHealthChecker.analyzeDependencyHealth (/workspace/automation/dependency-health-checker.cjs:222:31)\n    at DependencyHealthChecker.checkDependencyHealth (/workspace/automation/dependency-health-checker.cjs:70:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async main (/workspace/automation/dependency-health-checker.cjs:630:22)\n❌ Error running dependency health checker: TypeError: Cannot read properties of undefined (reading 'split')\n    at DependencyHealthChecker.determineUpdateType (/workspace/automation/dependency-health-checker.cjs:279:34)\n    at DependencyHealthChecker.analyzeDependencyHealth (/workspace/automation/dependency-health-checker.cjs:222:31)\n    at DependencyHealthChecker.checkDependencyHealth (/workspace/automation/dependency-health-checker.cjs:70:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async main (/workspace/automation/dependency-health-checker.cjs:630:22)\n"
+    },
+    "resource_usage": {
+      "success": true,
+      "score": 100,
+      "level": "excellent",
+      "metrics": {
+        "diskUsage": 100,
+        "automationSize": 100
+      }
+    }
+  },
+  "alerts": [],
+  "recommendations": [],
+  "overall_health": {
+    "score": 99,
+    "level": "excellent"
+  }
+}

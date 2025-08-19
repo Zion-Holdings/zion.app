@@ -1,0 +1,6 @@
+{
+  "level": "warning",
+  "category": "overall_health",
+  "message": "Overall system health is below warning threshold: 76/100",
+  "timestamp": "2025-08-17T06:22:52.356Z"
+}

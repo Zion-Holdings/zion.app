@@ -1,0 +1,215 @@
+{
+  "timestamp": "2025-08-18T17:53:02.898Z",
+  "cycle": 24,
+  "instances": [
+    {
+      "id": 1,
+      "type": "navigation",
+      "status": "active",
+      "linksGenerated": 168,
+      "lastRun": "2025-08-18T17:53:02.837Z",
+      "startTime": "2025-08-18T17:07:02.938Z"
+    },
+    {
+      "id": 2,
+      "type": "footer",
+      "status": "active",
+      "linksGenerated": 144,
+      "lastRun": "2025-08-18T17:53:02.838Z",
+      "startTime": "2025-08-18T17:07:02.938Z"
+    },
+    {
+      "id": 3,
+      "type": "content",
+      "status": "active",
+      "linksGenerated": 120,
+      "lastRun": "2025-08-18T17:53:02.838Z",
+      "startTime": "2025-08-18T17:07:02.938Z"
+    },
+    {
+      "id": 4,
+      "type": "social",
+      "status": "active",
+      "linksGenerated": 96,
+      "lastRun": "2025-08-18T17:53:02.839Z",
+      "startTime": "2025-08-18T17:07:02.938Z"
+    },
+    {
+      "id": 5,
+      "type": "business",
+      "status": "active",
+      "linksGenerated": 96,
+      "lastRun": "2025-08-18T17:53:02.839Z",
+      "startTime": "2025-08-18T17:07:02.938Z"
+    }
+  ],
+  "results": [
+    {
+      "success": true,
+      "links": [
+        {
+          "from": "/",
+          "to": "/about",
+          "context": "main-nav"
+        },
+        {
+          "from": "/",
+          "to": "/services",
+          "context": "main-nav"
+        },
+        {
+          "from": "/",
+          "to": "/blog",
+          "context": "main-nav"
+        },
+        {
+          "from": "/",
+          "to": "/contact",
+          "context": "main-nav"
+        },
+        {
+          "from": "/about",
+          "to": "/services",
+          "context": "about-nav"
+        },
+        {
+          "from": "/services",
+          "to": "/contact",
+          "context": "services-nav"
+        },
+        {
+          "from": "/blog",
+          "to": "/services",
+          "context": "blog-nav"
+        }
+      ],
+      "injectedCount": 0
+    },
+    {
+      "success": true,
+      "links": [
+        {
+          "from": "/",
+          "to": "/privacy",
+          "context": "footer"
+        },
+        {
+          "from": "/",
+          "to": "/terms",
+          "context": "footer"
+        },
+        {
+          "from": "/",
+          "to": "/sitemap",
+          "context": "footer"
+        },
+        {
+          "from": "/",
+          "to": "/support",
+          "context": "footer"
+        },
+        {
+          "from": "/about",
+          "to": "/careers",
+          "context": "footer"
+        },
+        {
+          "from": "/services",
+          "to": "/pricing",
+          "context": "footer"
+        }
+      ],
+      "injectedCount": 0
+    },
+    {
+      "success": true,
+      "links": [
+        {
+          "from": "/blog",
+          "to": "/news",
+          "context": "content"
+        },
+        {
+          "from": "/services",
+          "to": "/case-studies",
+          "context": "content"
+        },
+        {
+          "from": "/about",
+          "to": "/team",
+          "context": "content"
+        },
+        {
+          "from": "/explore",
+          "to": "/resources",
+          "context": "content"
+        },
+        {
+          "from": "/main",
+          "to": "/dashboard",
+          "context": "content"
+        }
+      ],
+      "injectedCount": 0
+    },
+    {
+      "success": true,
+      "links": [
+        {
+          "from": "/",
+          "to": "https://twitter.com/ziontechgroup",
+          "context": "social"
+        },
+        {
+          "from": "/",
+          "to": "https://facebook.com/ziontechgroup",
+          "context": "social"
+        },
+        {
+          "from": "/",
+          "to": "https://instagram.com/ziontechgroup",
+          "context": "social"
+        },
+        {
+          "from": "/about",
+          "to": "https://youtube.com/ziontechgroup",
+          "context": "social"
+        }
+      ],
+      "injectedCount": 0
+    },
+    {
+      "success": true,
+      "links": [
+        {
+          "from": "/services",
+          "to": "https://calendly.com/ziontechgroup",
+          "context": "business"
+        },
+        {
+          "from": "/contact",
+          "to": "https://zoom.us/j/ziontechgroup",
+          "context": "business"
+        },
+        {
+          "from": "/about",
+          "to": "https://meet.google.com/ziontechgroup",
+          "context": "business"
+        },
+        {
+          "from": "/explore",
+          "to": "https://slack.com/ziontechgroup",
+          "context": "business"
+        }
+      ],
+      "injectedCount": 0
+    }
+  ],
+  "stats": {
+    "totalInstances": 5,
+    "activeInstances": 5,
+    "totalLinksGenerated": 624,
+    "lastRun": "2025-08-18T17:53:02.834Z",
+    "cycleCount": 24
+  }
+}

@@ -1,0 +1,104 @@
+---
+name: Comprehensive Test Suite
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+  schedule:
+    - cron: '0 2 * * *' # Daily at 2 AM UTC
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: "test-suite-${{ github.ref }}"
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Run Test Suite
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Run linting
+        run: npm run lint
+      - name: Type checking
+        run: npm run type-check
+      - name: Build project
+        run: npm run build
+      - name: Run Playwright tests
+        run: npm run test:ci
+        env:
+          CI: true
+      - name: Run smoke tests
+        run: npm run test:smoke
+      - name: Security scan
+        run: npm run security:scan
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-results
+          path: |
+            playwright-report/
+            test-results/
+            .next/
+          retention-days: 7
+
+  validate-workflows:
+    name: Validate GitHub Actions
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Validate workflows
+        run: |
+          chmod +x validate-workflows-comprehensive.sh
+          ./validate-workflows-comprehensive.sh
+
+  dependency-check:
+    name: Dependency Security Check
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Audit dependencies
+        run: npm audit --audit-level=high
+      - name: Check for outdated packages
+        run: npm outdated || true
+      - name: Check package lock
+        run: npm ci --dry-run

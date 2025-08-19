@@ -1,0 +1,25 @@
+=== Git Health Report ===
+Timestamp: Thu Aug 14 23:16:31 -03 2025
+Repository: miami2
+Branch: main
+================================
+
+[HIGH] locks: Rebase merge directory exists
+   Recommendation: Complete or abort rebase operation
+
+[LOW] status: 1 untracked files
+   Recommendation: Add files to git or add to .gitignore
+
+[LOW] branch: Branch is 1 commits ahead of upstream
+   Recommendation: Push changes with 'git push'
+
+[MEDIUM] files:        5 files larger than 10MB found
+   Recommendation: Consider adding large files to .gitignore or using Git LFS
+
+=== SUMMARY ===
+Total Issues: 4
+Critical: 0
+High: 1
+Medium: 1
+Low: 2
+==============

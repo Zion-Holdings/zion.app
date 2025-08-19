@@ -1,0 +1,12 @@
+{
+  "prefixToWorkflows": {
+    "pages/": ["ci.yml", "pr-smoke.yml", "playwright-smoke.yml", "actionlint.yml", "commitlint.yml"],
+    "components/": ["ci.yml", "pr-smoke.yml", "playwright-smoke.yml"],
+    "automation/": ["external-links.yml", "seo-validator.yml", "site-link.yml", "readme-auto-advertiser.yml"],
+    "scripts/": ["ci.yml", "actionlint.yml"],
+    "public/": ["seo-validator.yml"],
+    "styles/": ["ci.yml"],
+    "netlify/": ["netlify-config.yml", "netlify-functions-trigger.yml"],
+    ".github/workflows/": ["ci.yml", "actionlint.yml", "workflow-radar.yml"]
+  }
+}

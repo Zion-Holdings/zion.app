@@ -1,0 +1,21 @@
+{
+  "maxAgents": 100,
+  "generationInterval": 3600000,
+  "agentTypes": [
+    "full-stack",
+    "frontend",
+    "backend",
+    "testing",
+    "deployment",
+    "monitoring",
+    "optimization"
+  ],
+  "complexityLevels": [
+    "basic",
+    "intermediate",
+    "advanced",
+    "expert"
+  ],
+  "growthTarget": 2,
+  "autonomousMode": true
+}

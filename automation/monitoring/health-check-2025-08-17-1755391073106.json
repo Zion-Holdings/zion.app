@@ -1,0 +1,60 @@
+{
+  "timestamp": "2025-08-17T00:37:46.742Z",
+  "metrics": {
+    "workflow_health": {
+      "success": false,
+      "reason": "Command failed: npm run automation:health\n/Users/miami2/ ZION_APP_AUG_11_25/zion.app/automation/workflow-health-monitor.cjs:350\n  group: ${{ github.workflow }}-${{ github.ref }}\n                   ^\n\nSyntaxError: Unexpected token '.'\n    at wrapSafe (node:internal/modules/cjs/loader:1662:18)\n    at Module._compile (node:internal/modules/cjs/loader:1704:20)\n    at Object..js (node:internal/modules/cjs/loader:1895:10)\n    at Module.load (node:internal/modules/cjs/loader:1465:32)\n    at Function._load (node:internal/modules/cjs/loader:1282:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49\n\nNode.js v22.16.0\n"
+    },
+    "automation_health": {
+      "success": false,
+      "score": 0,
+      "level": "critical",
+      "reason": "Command failed: npm run automation:health\n/Users/miami2/ ZION_APP_AUG_11_25/zion.app/automation/workflow-health-monitor.cjs:350\n  group: ${{ github.workflow }}-${{ github.ref }}\n                   ^\n\nSyntaxError: Unexpected token '.'\n    at wrapSafe (node:internal/modules/cjs/loader:1662:18)\n    at Module._compile (node:internal/modules/cjs/loader:1704:20)\n    at Object..js (node:internal/modules/cjs/loader:1895:10)\n    at Module.load (node:internal/modules/cjs/loader:1465:32)\n    at Function._load (node:internal/modules/cjs/loader:1282:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49\n\nNode.js v22.16.0\n"
+    },
+    "security_status": {
+      "success": true,
+      "score": 79.8941798941799,
+      "level": "fair",
+      "metrics": {
+        "totalWorkflows": 189,
+        "securedWorkflows": 152,
+        "workflowsWithTimeouts": 150,
+        "securityScore": 80.42328042328042,
+        "timeoutScore": 79.36507936507937
+      }
+    },
+    "dependency_health": {
+      "success": false,
+      "reason": "Command failed: npm run automation:deps\n⚠️  Could not backup node_modules info: Command failed: npm list --depth=0 --json\nnpm error code ELSPROBLEMS\nnpm error extraneous: @emnapi/runtime@1.4.5 /Users/miami2/ ZION_APP_AUG_11_25/zion.app/node_modules/@emnapi/runtime\nnpm error missing: @playwright/test@^1.54.2, required by bolt.new.zion.app@0.1.0\nnpm error invalid: @types/node@24.2.1 /Users/miami2/ ZION_APP_AUG_11_25/zion.app/node_modules/@types/node\nnpm error invalid: lucide-react@0.536.0 /Users/miami2/ ZION_APP_AUG_11_25/zion.app/node_modules/lucide-react\nnpm error invalid: next@14.2.5 /Users/miami2/ ZION_APP_AUG_11_25/zion.app/node_modules/next\nnpm error invalid: sharp@0.33.5 /Users/miami2/ ZION_APP_AUG_11_25/zion.app/node_modules/sharp\nnpm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-08-17T00_37_48_241Z-debug-0.log\n\n❌ Error checking dependency health: TypeError: Cannot read properties of undefined (reading 'split')\n    at DependencyHealthChecker.determineUpdateType (/Users/miami2/ ZION_APP_AUG_11_25/zion.app/automation/dependency-health-checker.cjs:279:34)\n    at DependencyHealthChecker.analyzeDependencyHealth (/Users/miami2/ ZION_APP_AUG_11_25/zion.app/automation/dependency-health-checker.cjs:222:31)\n    at DependencyHealthChecker.checkDependencyHealth (/Users/miami2/ ZION_APP_AUG_11_25/zion.app/automation/dependency-health-checker.cjs:70:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async main (/Users/miami2/ ZION_APP_AUG_11_25/zion.app/automation/dependency-health-checker.cjs:630:22)\n❌ Error running dependency health checker: TypeError: Cannot read properties of undefined (reading 'split')\n    at DependencyHealthChecker.determineUpdateType (/Users/miami2/ ZION_APP_AUG_11_25/zion.app/automation/dependency-health-checker.cjs:279:34)\n    at DependencyHealthChecker.analyzeDependencyHealth (/Users/miami2/ ZION_APP_AUG_11_25/zion.app/automation/dependency-health-checker.cjs:222:31)\n    at DependencyHealthChecker.checkDependencyHealth (/Users/miami2/ ZION_APP_AUG_11_25/zion.app/automation/dependency-health-checker.cjs:70:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async main (/Users/miami2/ ZION_APP_AUG_11_25/zion.app/automation/dependency-health-checker.cjs:630:22)\n"
+    },
+    "resource_usage": {
+      "success": true,
+      "score": 100,
+      "level": "excellent",
+      "metrics": {
+        "diskUsage": 100,
+        "automationSize": 100
+      }
+    }
+  },
+  "alerts": [
+    {
+      "level": "warning",
+      "category": "security_status",
+      "message": "security_status health is fair: 79.8941798941799/100",
+      "timestamp": "2025-08-17T00:37:53.106Z"
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "medium",
+      "category": "security_status",
+      "message": "Improve security_status health from 79.8941798941799/100",
+      "action": "Review and optimize security_status systems"
+    }
+  ],
+  "overall_health": {
+    "score": 90,
+    "level": "good"
+  }
+}

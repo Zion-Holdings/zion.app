@@ -1,0 +1,14 @@
+{
+  "name": "ultra-fast-autonomous-agent-testing-expert-1755537607355",
+  "script": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/automation/ultra-fast-autonomous-agent-testing-expert-1755537607355.cjs",
+  "instances": 1,
+  "exec_mode": "fork",
+  "autorestart": true,
+  "watch": false,
+  "max_memory_restart": "1G",
+  "env": {
+    "NODE_ENV": "production",
+    "AUTOMATION_ID": "ultra-fast-autonomous-agent-testing-expert-1755537607355",
+    "AUTOMATION_TYPE": "autonomous-agent"
+  }
+}

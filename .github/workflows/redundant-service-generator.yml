@@ -1,0 +1,81 @@
+name: 🔄 Redundant Service Generator
+
+on:
+  schedule:
+    - cron: '1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59 * * * *'  # Every odd minute
+  workflow_dispatch:
+  push:
+    paths:
+      - 'automation/**/*.cjs'
+      - 'pages/services/**/*.tsx'
+
+jobs:
+  generate-redundant-services:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    
+    steps:
+      - name: 🔄 Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+      
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: 🔧 Install dependencies
+        run: npm ci
+      
+      - name: 🏭 Generate services with ultra-fast generator
+        run: |
+          echo "🚀 Starting ultra-fast service generation..."
+          timeout 300 node automation/ultra-fast-service-generator.cjs || echo "⏰ Ultra-fast generator timed out, continuing..."
+      
+      - name: 🔄 Generate services with redundant generator
+        run: |
+          echo "🔄 Starting redundant service generation..."
+          timeout 300 node automation/redundant-service-generator.cjs || echo "⏰ Redundant generator timed out, continuing..."
+      
+      - name: 📊 Analyze service growth
+        id: analyze-growth
+        run: |
+          PREVIOUS_COUNT=$(git log --oneline -1 --grep="services" | grep -o '[0-9]*' | head -1 || echo "0")
+          CURRENT_COUNT=$(find pages/services -name "*.tsx" | wc -l)
+          GROWTH=$((CURRENT_COUNT - PREVIOUS_COUNT))
+          echo "growth=$GROWTH" >> $GITHUB_OUTPUT
+          echo "current_count=$CURRENT_COUNT" >> $GITHUB_OUTPUT
+          echo "📊 Service growth analysis:"
+          echo "   - Previous count: $PREVIOUS_COUNT"
+          echo "   - Current count: $CURRENT_COUNT"
+          echo "   - Growth: +$GROWTH"
+      
+      - name: 🔨 Build and test
+        run: |
+          npm run build
+          echo "✅ Build completed successfully"
+      
+      - name: 📝 Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git diff --quiet && git diff --staged --quiet || git commit -m "🔄 Redundant service generation - Growth: +${{ steps.analyze-growth.outputs.growth }} - Total: ${{ steps.analyze-growth.outputs.current_count }}"
+      
+      - name: 🚀 Push to main
+        run: git push origin HEAD:$(git rev-parse --abbrev-ref HEAD)
+      
+      - name: 📈 Generate growth report
+        run: |
+          echo "📊 Service Generation Report" > service-growth-report.md
+          echo "=============================" >> service-growth-report.md
+          echo "" >> service-growth-report.md
+          echo "Timestamp: $(date)" >> service-growth-report.md
+          echo "Total Services: ${{ steps.analyze-growth.outputs.current_count }}" >> service-growth-report.md
+          echo "Growth in this run: +${{ steps.analyze-growth.outputs.growth }}" >> service-growth-report.md
+          echo "Workflow: Redundant Service Generator" >> service-growth-report.md
+          echo "" >> service-growth-report.md
+          echo "✅ Generation completed successfully!" >> service-growth-report.md

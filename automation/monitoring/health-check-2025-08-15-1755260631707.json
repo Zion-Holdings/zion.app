@@ -1,0 +1,91 @@
+{
+  "timestamp": "2025-08-15T12:22:29.375Z",
+  "metrics": {
+    "workflow_health": {
+      "success": true,
+      "score": 100,
+      "level": "excellent",
+      "metrics": {
+        "totalWorkflows": 140,
+        "workflowsWithIssues": 0,
+        "totalIssues": 83,
+        "successRate": 100
+      }
+    },
+    "automation_health": {
+      "success": true,
+      "score": 100,
+      "level": "excellent",
+      "message": "All automation systems operational"
+    },
+    "security_status": {
+      "success": true,
+      "score": 79.8507462686567,
+      "level": "fair",
+      "metrics": {
+        "totalWorkflows": 67,
+        "securedWorkflows": 40,
+        "workflowsWithTimeouts": 67,
+        "securityScore": 59.70149253731343,
+        "timeoutScore": 100
+      }
+    },
+    "dependency_health": {
+      "success": true,
+      "score": 0,
+      "level": "critical",
+      "metrics": {
+        "healthScore": 0,
+        "outdatedPackages": 0,
+        "securityIssues": 0
+      }
+    },
+    "resource_usage": {
+      "success": true,
+      "score": 100,
+      "level": "excellent",
+      "metrics": {
+        "diskUsage": 100,
+        "automationSize": 100
+      }
+    }
+  },
+  "alerts": [
+    {
+      "level": "warning",
+      "category": "overall_health",
+      "message": "Overall system health is below warning threshold: 76/100",
+      "timestamp": "2025-08-15T12:23:51.707Z"
+    },
+    {
+      "level": "warning",
+      "category": "security_status",
+      "message": "security_status health is fair: 79.8507462686567/100",
+      "timestamp": "2025-08-15T12:23:51.707Z"
+    },
+    {
+      "level": "critical",
+      "category": "dependency_health",
+      "message": "dependency_health health is critical: 0/100",
+      "timestamp": "2025-08-15T12:23:51.707Z"
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "medium",
+      "category": "security_status",
+      "message": "Improve security_status health from 79.8507462686567/100",
+      "action": "Review and optimize security_status systems"
+    },
+    {
+      "priority": "high",
+      "category": "dependency_health",
+      "message": "Improve dependency_health health from 0/100",
+      "action": "Review and optimize dependency_health systems"
+    }
+  ],
+  "overall_health": {
+    "score": 76,
+    "level": "fair"
+  }
+}

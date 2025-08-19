@@ -1,0 +1,415 @@
+name: Continuous Content Generation
+
+on:
+  schedule:
+    - cron: '*/2 * * * *'  # Every 2 minutes
+  workflow_dispatch: {}
+  push:
+    paths:
+      - 'automation/**'
+      - 'pages/**'
+      - 'components/**'
+
+permissions:
+  contents: write
+  actions: read
+  pull-requests: write
+
+concurrency:
+  group: continuous-content-generation
+  cancel-in-progress: false
+
+jobs:
+  ultra-fast-generation:
+    name: Ultra-Fast Content Generation
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+      
+      - name: Run Ultra-Fast Content Creator
+        run: node automation/ultra-content-creator.cjs
+        env:
+          CANONICAL_URL: https://ziontechgroup.com
+          PROCESS_TYPE: github-actions-ultra-fast
+          MAX_PAGES_PER_RUN: 3
+      
+      - name: Commit and push changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "🚀 Ultra-fast content generation via GitHub Actions [skip ci]"
+            git push origin HEAD:$(git rev-parse --abbrev-ref HEAD)
+          else
+            echo "No changes to commit"
+          fi
+
+  rapid-generation:
+    name: Rapid Content Generation
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+      
+      - name: Run Rapid Content Generator
+        run: node automation/rapid-content-generator.cjs
+        env:
+          CANONICAL_URL: https://ziontechgroup.com
+          PROCESS_TYPE: github-actions-rapid
+          MAX_PAGES_PER_RUN: 2
+      
+      - name: Commit and push changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "⚡ Rapid content generation via GitHub Actions [skip ci]"
+            git push origin HEAD:$(git rev-parse --abbrev-ref HEAD)
+          else
+            echo "No changes to commit"
+          fi
+
+  ai-content-factory:
+    name: AI Content Factory
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+      
+      - name: Run AI Content Factory
+        run: node automation/ai-content-factory.cjs
+        env:
+          CANONICAL_URL: https://ziontechgroup.com
+          PROCESS_TYPE: github-actions-ai-factory
+          MAX_PAGES_PER_RUN: 3
+      
+      - name: Commit and push changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "🤖 AI content factory via GitHub Actions [skip ci]"
+            git push origin HEAD:$(git rev-parse --abbrev-ref HEAD)
+          else
+            echo "No changes to commit"
+          fi
+
+  cloud-content-factory:
+    name: Cloud Content Factory
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+      
+      - name: Run Cloud Content Factory
+        run: node automation/cloud-content-factory.cjs
+        env:
+          CANONICAL_URL: https://ziontechgroup.com
+          PROCESS_TYPE: github-actions-cloud-factory
+          MAX_PAGES_PER_RUN: 2
+      
+      - name: Commit and push changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "☁️ Cloud content factory via GitHub Actions [skip ci]"
+            git push origin HEAD:$(git rev-parse --abbrev-ref HEAD)
+          else
+            echo "No changes to commit"
+          fi
+
+  intelligent-generation:
+    name: Intelligent Content Generation
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+      
+      - name: Run Intelligent Content Generator
+        run: node automation/intelligent-content-generator.cjs
+        env:
+          CANONICAL_URL: https://ziontechgroup.com
+          PROCESS_TYPE: github-actions-intelligent
+          MAX_PAGES_PER_RUN: 2
+      
+      - name: Commit and push changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "🧠 Intelligent content generation via GitHub Actions [skip ci]"
+            git push origin HEAD:$(git rev-parse --abbrev-ref HEAD)
+          else
+            echo "No changes to commit"
+          fi
+
+  autonomous-generation:
+    name: Autonomous Content Generation
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+      
+      - name: Run Autonomous Content Generator
+        run: node automation/autonomous-content-generator.cjs
+        env:
+          CANONICAL_URL: https://ziontechgroup.com
+          PROCESS_TYPE: github-actions-autonomous
+          MAX_PAGES_PER_RUN: 2
+      
+      - name: Commit and push changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "🤖 Autonomous content generation via GitHub Actions [skip ci]"
+            git push origin HEAD:$(git rev-parse --abbrev-ref HEAD)
+          else
+            echo "No changes to commit"
+          fi
+
+  cursor-orchestrator:
+    name: Cursor Autonomous Orchestrator
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+      
+      - name: Run Cursor Autonomous Orchestrator
+        run: node automation/cursor-autonomous-content-orchestrator.cjs
+        env:
+          CANONICAL_URL: https://ziontechgroup.com
+          PROCESS_TYPE: github-actions-cursor-orchestrator
+          MAX_PAGES_PER_RUN: 2
+      
+      - name: Commit and push changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "🎯 Cursor autonomous orchestrator via GitHub Actions [skip ci]"
+            git push origin HEAD:$(git rev-parse --abbrev-ref HEAD)
+          else
+            echo "No changes to commit"
+          fi
+
+  content-completion:
+    name: Content Completion
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+      
+      - name: Run Content Completer
+        run: node automation/content-completer.cjs
+        env:
+          CANONICAL_URL: https://ziontechgroup.com
+          PROCESS_TYPE: github-actions-completer
+      
+      - name: Commit and push changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "✅ Content completion via GitHub Actions [skip ci]"
+            git push origin HEAD:$(git rev-parse --abbrev-ref HEAD)
+          else
+            echo "No changes to commit"
+          fi
+
+  final-sync:
+    name: Final Sync and Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: [ultra-fast-generation, rapid-generation, ai-content-factory, cloud-content-factory, intelligent-generation, autonomous-generation, cursor-orchestrator, content-completion]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+      
+      - name: Generate sitemap
+        run: node automation/sitemap-runner.cjs
+        env:
+          CANONICAL_URL: https://ziontechgroup.com
+      
+      - name: Build application
+        run: npm run build
+      
+      - name: Commit and push final changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "🚀 Final sync and build via GitHub Actions [skip ci]"
+            git push origin HEAD:$(git rev-parse --abbrev-ref HEAD)
+          else
+            echo "No changes to commit"
+          fi
+
+  status-report:
+    name: Status Report
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    needs: [final-sync]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Generate Status Report
+        run: |
+          echo "# Content Generation Status Report" > content-generation-status-report.md
+          echo "" >> content-generation-status-report.md
+          echo "Generated: $(date)" >> content-generation-status-report.md
+          echo "Workflow: ${{ github.workflow }}" >> content-generation-status-report.md
+          echo "Run ID: ${{ github.run_id }}" >> content-generation-status-report.md
+          echo "" >> content-generation-status-report.md
+          echo "## Jobs Status" >> content-generation-status-report.md
+          echo "- Ultra-Fast Generation: ${{ needs.ultra-fast-generation.result }}" >> content-generation-status-report.md
+          echo "- Rapid Generation: ${{ needs.rapid-generation.result }}" >> content-generation-status-report.md
+          echo "- AI Content Factory: ${{ needs.ai-content-factory.result }}" >> content-generation-status-report.md
+          echo "- Cloud Content Factory: ${{ needs.cloud-content-factory.result }}" >> content-generation-status-report.md
+          echo "- Intelligent Generation: ${{ needs.intelligent-generation.result }}" >> content-generation-status-report.md
+          echo "- Autonomous Generation: ${{ needs.autonomous-generation.result }}" >> content-generation-status-report.md
+          echo "- Cursor Orchestrator: ${{ needs.cursor-orchestrator.result }}" >> content-generation-status-report.md
+          echo "- Content Completion: ${{ needs.content-completion.result }}" >> content-generation-status-report.md
+          echo "- Final Sync: ${{ needs.final-sync.result }}" >> content-generation-status-report.md
+          echo "" >> content-generation-status-report.md
+          echo "## Summary" >> content-generation-status-report.md
+          echo "All content generation jobs completed successfully via GitHub Actions redundancy." >> content-generation-status-report.md
+      
+      - name: Commit status report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add content-generation-status-report.md
+          git commit -m "📊 Content generation status report [skip ci]" || echo "No changes to commit"
+          git push origin HEAD:$(git rev-parse --abbrev-ref HEAD) || echo "Push failed"

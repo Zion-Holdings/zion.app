@@ -1,0 +1,34 @@
+{
+  "factoryId": "self-replicating-basic-automation-1755380602286",
+  "type": "self-replicating",
+  "complexity": "basic",
+  "specialization": "automation",
+  "createdAt": "2025-08-16T21:43:22.287Z",
+  "version": "1.0.0",
+  "exponentialCapabilities": {
+    "autonomousCreation": true,
+    "selfReplication": true,
+    "intelligentEvolution": true,
+    "exponentialGrowth": true,
+    "quantumOptimization": true,
+    "collaborativeLearning": true
+  },
+  "growthMetrics": {
+    "creationTime": 1755380602287,
+    "expectedGrowthRate": "3x",
+    "targetExponentialFactor": 10,
+    "autonomousEnabled": true
+  },
+  "specializations": [
+    "workflow-automation",
+    "process-optimization",
+    "intelligent-automation"
+  ],
+  "autonomousCapabilities": {
+    "selfReplication": true,
+    "intelligentEvolution": true,
+    "collaborativeLearning": true,
+    "performanceOptimization": true,
+    "resourceManagement": true
+  }
+}

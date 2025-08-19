@@ -1,0 +1,165 @@
+{
+  "timestamp": "2025-08-18T18:47:12.035Z",
+  "totalPackages": 0,
+  "outdatedPackages": {
+    "@testing-library/react": {
+      "current": "14.3.1",
+      "wanted": "14.3.1",
+      "latest": "16.3.0",
+      "updateType": "major",
+      "priority": "medium",
+      "securityRisk": false
+    },
+    "@types/react": {
+      "current": "18.3.23",
+      "wanted": "18.3.23",
+      "latest": "19.1.10",
+      "updateType": "major",
+      "priority": "medium",
+      "securityRisk": false
+    },
+    "@types/react-dom": {
+      "current": "18.3.7",
+      "wanted": "18.3.7",
+      "latest": "19.1.7",
+      "updateType": "major",
+      "priority": "medium",
+      "securityRisk": false
+    },
+    "framer-motion": {
+      "current": "6.5.1",
+      "wanted": "6.5.1",
+      "latest": "12.23.12",
+      "updateType": "major",
+      "priority": "medium",
+      "securityRisk": false
+    },
+    "jsdom": {
+      "current": "24.1.3",
+      "wanted": "24.1.3",
+      "latest": "26.1.0",
+      "updateType": "major",
+      "priority": "medium",
+      "securityRisk": false
+    },
+    "next": {
+      "current": "14.2.31",
+      "wanted": "14.2.31",
+      "latest": "15.4.6",
+      "updateType": "major",
+      "priority": "low",
+      "securityRisk": false
+    },
+    "react": {
+      "current": "18.2.0",
+      "wanted": "18.2.0",
+      "latest": "19.1.1",
+      "updateType": "major",
+      "priority": "low",
+      "securityRisk": false
+    },
+    "react-dom": {
+      "current": "18.2.0",
+      "wanted": "18.2.0",
+      "latest": "19.1.1",
+      "updateType": "major",
+      "priority": "low",
+      "securityRisk": false
+    },
+    "tailwindcss": {
+      "current": "3.4.17",
+      "wanted": "3.4.17",
+      "latest": "4.1.12",
+      "updateType": "major",
+      "priority": "medium",
+      "securityRisk": false
+    }
+  },
+  "securityIssues": {},
+  "healthScore": 70,
+  "recommendations": [],
+  "criticalIssues": [],
+  "updatePlan": {
+    "immediate": [],
+    "scheduled": [],
+    "manual": [
+      {
+        "package": "@testing-library/react",
+        "from": "14.3.1",
+        "to": "16.3.0",
+        "type": "major",
+        "priority": "medium",
+        "securityRisk": false
+      },
+      {
+        "package": "@types/react",
+        "from": "18.3.23",
+        "to": "19.1.10",
+        "type": "major",
+        "priority": "medium",
+        "securityRisk": false
+      },
+      {
+        "package": "@types/react-dom",
+        "from": "18.3.7",
+        "to": "19.1.7",
+        "type": "major",
+        "priority": "medium",
+        "securityRisk": false
+      },
+      {
+        "package": "framer-motion",
+        "from": "6.5.1",
+        "to": "12.23.12",
+        "type": "major",
+        "priority": "medium",
+        "securityRisk": false
+      },
+      {
+        "package": "jsdom",
+        "from": "24.1.3",
+        "to": "26.1.0",
+        "type": "major",
+        "priority": "medium",
+        "securityRisk": false
+      },
+      {
+        "package": "next",
+        "from": "14.2.31",
+        "to": "15.4.6",
+        "type": "major",
+        "priority": "low",
+        "securityRisk": false
+      },
+      {
+        "package": "react",
+        "from": "18.2.0",
+        "to": "19.1.1",
+        "type": "major",
+        "priority": "low",
+        "securityRisk": false
+      },
+      {
+        "package": "react-dom",
+        "from": "18.2.0",
+        "to": "19.1.1",
+        "type": "major",
+        "priority": "low",
+        "securityRisk": false
+      },
+      {
+        "package": "tailwindcss",
+        "from": "3.4.17",
+        "to": "4.1.12",
+        "type": "major",
+        "priority": "medium",
+        "securityRisk": false
+      }
+    ],
+    "estimated": {
+      "time": 0,
+      "risk": "low",
+      "packages": 0
+    }
+  }
+}
