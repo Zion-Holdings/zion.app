@@ -1,39 +1,39 @@
 # Agent Factory Documentation
 
-Generated on: 2025-08-18T18:43:30.536Z
+Generated on: 2025-08-19T11:01:58.166Z
 
 ## 🤖 Active Agents
 
 
-### agent-1755542610528-0-frontend-intermediate
+### agent-1755601318159-0-frontend-expert
 - **Type**: frontend
+- **Complexity**: expert
+- **Status**: generated
+- **Created**: 2025-08-19T11:01:58.160Z
+- **Capabilities**: code_generation, testing, deployment, monitoring, optimization, learning, ai_integration, quantum_computing, advanced_analytics, microservices, cloud_native, security_hardening
+
+
+### agent-1755601318162-1-monitoring-intermediate
+- **Type**: monitoring
 - **Complexity**: intermediate
 - **Status**: generated
-- **Created**: 2025-08-18T18:43:30.528Z
+- **Created**: 2025-08-19T11:01:58.162Z
 - **Capabilities**: code_generation, testing, deployment, monitoring, optimization, learning
 
 
-### agent-1755542610531-1-testing-advanced
-- **Type**: testing
-- **Complexity**: advanced
-- **Status**: generated
-- **Created**: 2025-08-18T18:43:30.531Z
-- **Capabilities**: code_generation, testing, deployment, monitoring, optimization, learning, microservices, cloud_native, security_hardening
-
-
-### agent-1755542610532-2-deployment-basic
-- **Type**: deployment
+### agent-1755601318163-2-frontend-basic
+- **Type**: frontend
 - **Complexity**: basic
 - **Status**: generated
-- **Created**: 2025-08-18T18:43:30.532Z
+- **Created**: 2025-08-19T11:01:58.163Z
 - **Capabilities**: code_generation, testing, deployment, monitoring, optimization, learning
 
 
 ## 📊 Agent Statistics
 
 - **Total Agents**: 3
-- **Agent Types**: frontend, testing, deployment
-- **Complexity Levels**: intermediate, advanced, basic
+- **Agent Types**: frontend, monitoring
+- **Complexity Levels**: expert, intermediate, basic
 
 ## 🚀 Getting Started
 
@@ -49,21 +49,21 @@ The factory configuration is stored in `automation/config/factory-config.json`
 ## 📈 Performance Metrics
 
 
-### agent-1755542610528-0-frontend-intermediate
+### agent-1755601318159-0-frontend-expert
 - Tasks Completed: 0
 - Success Rate: 0.5
 - Efficiency Score: 0.5
 - Learning Rate: 0.1
 
 
-### agent-1755542610531-1-testing-advanced
+### agent-1755601318162-1-monitoring-intermediate
 - Tasks Completed: 0
 - Success Rate: 0.5
 - Efficiency Score: 0.5
 - Learning Rate: 0.1
 
 
-### agent-1755542610532-2-deployment-basic
+### agent-1755601318163-2-frontend-basic
 - Tasks Completed: 0
 - Success Rate: 0.5
 - Efficiency Score: 0.5
