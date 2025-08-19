@@ -154,13 +154,23 @@ export default function ResourcesPage() {
                     </div>
                     <h3 className="text-xl font-bold mb-3 text-white">{paper.title}</h3>
                     <p className="text-white/80 text-sm mb-6">{paper.description}</p>
-                    <a 
-                      href={paper.downloadUrl}
-                      className="inline-flex items-center gap-2 bg-gradient-to-r from-fuchsia-400 to-purple-400 text-white px-6 py-3 rounded-lg font-semibold hover:from-fuchsia-500 hover:to-purple-500 transition-all duration-300"
-                    >
-                      Download Whitepaper
-                      <span aria-hidden>↓</span>
-                    </a>
+                    {paper.id === 'autonomous-systems-guide' ? (
+                  <Link 
+                    href="/resources/autonomous-systems-guide"
+                    className="inline-flex items-center gap-2 bg-gradient-to-r from-fuchsia-400 to-purple-400 text-white px-6 py-3 rounded-lg font-semibold hover:from-fuchsia-500 hover:to-purple-500 transition-all duration-300"
+                  >
+                    Read Guide →
+                    <span aria-hidden>→</span>
+                  </Link>
+                ) : (
+                  <a 
+                    href={paper.downloadUrl}
+                    className="inline-flex items-center gap-2 bg-gradient-to-r from-fuchsia-400 to-purple-400 text-white px-6 py-3 rounded-lg font-semibold hover:from-fuchsia-500 hover:to-purple-500 transition-all duration-300"
+                  >
+                    Download Whitepaper
+                    <span aria-hidden>↓</span>
+                  </a>
+                )}
                   </div>
                 ))}
               </div>
