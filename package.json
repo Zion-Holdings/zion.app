@@ -320,7 +320,22 @@
     "redundancy:comprehensive:orchestrator:stop": "node automation/comprehensive-redundancy-orchestrator.cjs stop",
     "redundancy:comprehensive:orchestrator:status": "node automation/comprehensive-redundancy-orchestrator.cjs status",
     "redundancy:comprehensive:orchestrator:report": "node automation/comprehensive-redundancy-orchestrator.cjs report",
-    "redundancy:comprehensive:orchestrator:once": "node automation/comprehensive-redundancy-orchestrator.cjs once"
+    "redundancy:comprehensive:orchestrator:once": "node automation/comprehensive-redundancy-orchestrator.cjs once",
+    "automation:ultimate:start": "bash automation/start-ultimate-redundancy.sh start",
+    "automation:ultimate:stop": "bash automation/start-ultimate-redundancy.sh stop",
+    "automation:ultimate:restart": "bash automation/start-ultimate-redundancy.sh restart",
+    "automation:ultimate:status": "bash automation/start-ultimate-redundancy.sh status",
+    "automation:ultimate:logs": "bash automation/start-ultimate-redundancy.sh logs",
+    "automation:ultimate:report": "bash automation/start-ultimate-redundancy.sh report",
+    "automation:ultimate:test": "bash automation/start-ultimate-redundancy.sh test",
+    "automation:comprehensive:start": "node automation/comprehensive-automation-orchestrator.cjs start",
+    "automation:comprehensive:health": "node automation/comprehensive-automation-orchestrator.cjs health",
+    "automation:comprehensive:report": "node automation/comprehensive-automation-orchestrator.cjs report",
+    "automation:comprehensive:recover": "node automation/comprehensive-automation-orchestrator.cjs recover",
+    "redundancy:ultimate:start": "node automation/ultimate-redundancy-master.cjs start",
+    "redundancy:ultimate:health": "node automation/ultimate-redundancy-master.cjs health",
+    "redundancy:ultimate:report": "node automation/ultimate-redundancy-master.cjs report",
+    "redundancy:ultimate:recover": "node automation/ultimate-redundancy-master.cjs recover"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
