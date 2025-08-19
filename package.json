@@ -289,7 +289,15 @@
     "redundancy:github": "node automation/redundancy/github-actions-redundancy-manager.cjs",
     "redundancy:netlify": "node automation/redundancy/netlify-functions-redundancy-manager.cjs",
     "redundancy:master": "node automation/redundancy/master-redundancy-orchestrator.cjs",
-    "redundancy:report": "node automation/redundancy/master-redundancy-orchestrator.cjs report"
+    "redundancy:report": "node automation/redundancy/master-redundancy-orchestrator.cjs report",
+    "coverage:start": "cd automation/redundancy && chmod +x start-comprehensive-coverage.sh && ./start-comprehensive-coverage.sh",
+    "coverage:stop": "cd automation/redundancy && chmod +x start-comprehensive-coverage.sh && ./start-comprehensive-coverage.sh stop",
+    "coverage:status": "cd automation/redundancy && chmod +x start-comprehensive-coverage.sh && ./start-comprehensive-coverage.sh status",
+    "coverage:restart": "cd automation/redundancy && chmod +x start-comprehensive-coverage.sh && ./start-comprehensive-coverage.sh restart",
+    "coverage:comprehensive": "node automation/redundancy/comprehensive-automation-coverage.cjs",
+    "coverage:enhanced": "node automation/redundancy/enhanced-coverage-manager.cjs",
+    "coverage:report": "node automation/redundancy/comprehensive-automation-coverage.cjs report",
+    "coverage:health": "node automation/redundancy/comprehensive-automation-coverage.cjs health"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
