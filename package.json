@@ -339,7 +339,13 @@
     "redundancy:ultimate:master:restart": "node automation/ultimate-redundancy-master.cjs restart",
     "redundancy:ultimate:master:status": "node automation/ultimate-redundancy-master.cjs status",
     "redundancy:ultimate:master:report": "node automation/ultimate-redundancy-master.cjs report",
-    "redundancy:ultimate:master:monitor": "node automation/ultimate-redundancy-master.cjs monitor"
+    "redundancy:ultimate:master:monitor": "node automation/ultimate-redundancy-master.cjs monitor",
+    "redundancy:master:start": "./automation/start-master-redundancy.sh start",
+    "redundancy:master:stop": "./automation/start-master-redundancy.sh stop",
+    "redundancy:master:restart": "./automation/start-master-redundancy.sh restart",
+    "redundancy:master:status": "./automation/start-master-redundancy.sh status",
+    "redundancy:master:health": "./automation/start-master-redundancy.sh health",
+    "redundancy:master:logs": "./automation/start-master-redundancy.sh logs"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
