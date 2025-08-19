@@ -30,16 +30,13 @@ export default function HomePage() {
               <a href="/services" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-fuchsia-400/50">
                 Our Services
               </a>
-              <a href="/blog" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-purple-400/50">
-                Blog
+              <a href="/case-studies" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-purple-400/50">
+                Case Studies
               </a>
-              <a href="/events" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-yellow-400/50">
-                Events
+              <a href="/insights" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-yellow-400/50">
+                Insights
               </a>
-              <a href="/news" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-blue-400/50">
-                News
-              </a>
-              <a href="/reports" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-indigo-400/50">
+              <a href="/reports" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-blue-400/50">
                 Reports & Analytics
               </a>
               <a href="/contact" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-green-400/50">
@@ -91,6 +88,39 @@ export default function HomePage() {
             </div>
           </section>
           {/* AUTO-GENERATED: HOME_LATEST_CONTENT_END */}
+
+          {/* New Content Showcase */}
+          <section className="mx-auto max-w-7xl px-6 pb-14">
+            <h2 className="text-center text-2xl font-bold tracking-wide text-white/90 mb-8">Explore Our Solutions</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300">
+                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-cyan-500/0 via-cyan-400/10 to-cyan-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                <h3 className="text-lg font-semibold text-cyan-300 mb-2">Case Studies</h3>
+                <p className="text-sm text-white/75 mb-4">Real-world success stories showcasing how our autonomous technology solutions have transformed businesses.</p>
+                <a href="/case-studies" className="inline-flex items-center gap-1 text-xs text-cyan-300/90 hover:text-cyan-300 transition-colors">
+                  View Case Studies <span aria-hidden>→</span>
+                </a>
+              </div>
+              
+              <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-fuchsia-400/30 transition-all duration-300">
+                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-fuchsia-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                <h3 className="text-lg font-semibold text-fuchsia-300 mb-2">Technology Insights</h3>
+                <p className="text-sm text-white/75 mb-4">Stay ahead with our latest research, trends, and thought leadership on autonomous technology and AI innovation.</p>
+                <a href="/insights" className="inline-flex items-center gap-1 text-xs text-fuchsia-300/90 hover:text-fuchsia-300 transition-colors">
+                  Read Insights <span aria-hidden>→</span>
+                </a>
+              </div>
+              
+              <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-green-400/30 transition-all duration-300">
+                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-green-500/0 via-green-400/10 to-green-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                <h3 className="text-lg font-semibold text-green-300 mb-2">Our Services</h3>
+                <p className="text-sm text-white/75 mb-4">Comprehensive autonomous technology solutions designed to transform your business and drive innovation.</p>
+                <a href="/services" className="inline-flex items-center gap-1 text-xs text-green-300/90 hover:text-green-300 transition-colors">
+                  Explore Services <span aria-hidden>→</span>
+                </a>
+              </div>
+            </div>
+          </section>
 
           {/* Footer Section */}
           <footer className="bg-black/20 backdrop-blur-xl border-t border-white/10 mt-20">
