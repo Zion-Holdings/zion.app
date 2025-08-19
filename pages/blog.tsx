@@ -5,13 +5,29 @@ import Link from 'next/link';
 export default function BlogPage() {
   const blogPosts = [
     {
+      id: 'quantum-ai-revolution-2025',
+      title: 'Quantum AI Revolution 2025: The Next Frontier of Computing',
+      excerpt: 'Discover how quantum computing is revolutionizing AI and automation in 2025, unlocking unprecedented computational power.',
+      date: 'January 20, 2025',
+      readTime: '12 min read',
+      category: 'Quantum Computing',
+      featured: true
+    },
+    {
       id: 'ai-automation-trends-2025',
       title: 'AI Automation Trends 2025: The Future of Autonomous Systems',
       excerpt: 'Explore the cutting-edge trends shaping the future of AI automation and autonomous technology systems.',
       date: 'January 17, 2025',
       readTime: '8 min read',
-      category: 'AI & Automation',
-      featured: true
+      category: 'AI & Automation'
+    },
+    {
+      id: 'sustainable-ai-green-computing-2025',
+      title: 'Sustainable AI: Green Computing Practices for 2025',
+      excerpt: 'Discover how Zion Tech Group is leading the charge in sustainable AI development and green computing practices.',
+      date: 'January 22, 2025',
+      readTime: '10 min read',
+      category: 'Sustainability'
     },
     {
       id: 'autonomous-content-generation',
@@ -55,7 +71,7 @@ export default function BlogPage() {
     }
   ];
 
-  const categories = ['All', 'AI & Automation', 'Content & AI', 'Infrastructure', 'AI Ethics', 'Performance', 'Future of Work'];
+  const categories = ['All', 'Quantum Computing', 'AI & Automation', 'Sustainability', 'Content & AI', 'Infrastructure', 'AI Ethics', 'Performance', 'Future of Work'];
 
   return (
     <>
