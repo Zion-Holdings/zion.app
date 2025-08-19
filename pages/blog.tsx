@@ -14,48 +14,34 @@ export default function BlogPage() {
       featured: true
     },
     {
+      id: 'digital-transformation-2025',
+      title: 'Digital Transformation Trends & Strategies for 2025',
+      excerpt: 'Discover the key digital transformation trends and strategies that will shape business success in 2025 and beyond.',
+      date: 'January 17, 2025',
+      readTime: '8 min read',
+      category: 'Digital Transformation',
+      featured: false
+    },
+    {
+      id: 'cloud-automation-best-practices',
+      title: 'Cloud Automation Best Practices: A Complete Guide',
+      excerpt: 'Master cloud automation with our comprehensive guide covering best practices, tools, and strategies for scalable, reliable cloud infrastructure.',
+      date: 'January 17, 2025',
+      readTime: '10 min read',
+      category: 'Cloud & Infrastructure',
+      featured: false
+    },
+    {
       id: 'autonomous-content-generation',
       title: 'Revolutionizing Content Creation with Autonomous AI Systems',
       excerpt: 'How Zion Tech Group is transforming content generation through intelligent automation and machine learning.',
       date: 'January 15, 2025',
       readTime: '6 min read',
       category: 'Content & AI'
-    },
-    {
-      id: 'cloud-native-automation',
-      title: 'Building Cloud-Native Automation Infrastructure',
-      excerpt: 'A deep dive into our cloud-native approach to building scalable, reliable automation systems.',
-      date: 'January 12, 2025',
-      readTime: '10 min read',
-      category: 'Infrastructure'
-    },
-    {
-      id: 'ai-ethics-automation',
-      title: 'Ethical Considerations in Autonomous AI Systems',
-      excerpt: 'Exploring the ethical implications and responsible development of autonomous technology.',
-      date: 'January 10, 2025',
-      readTime: '7 min read',
-      category: 'AI Ethics'
-    },
-    {
-      id: 'performance-optimization',
-      title: 'Performance Optimization in Autonomous Systems',
-      excerpt: 'Best practices for optimizing performance in large-scale autonomous technology deployments.',
-      date: 'January 8, 2025',
-      readTime: '9 min read',
-      category: 'Performance'
-    },
-    {
-      id: 'future-of-work',
-      title: 'The Future of Work: Human-AI Collaboration',
-      excerpt: 'How autonomous systems are reshaping the workplace and enhancing human capabilities.',
-      date: 'January 5, 2025',
-      readTime: '5 min read',
-      category: 'Future of Work'
     }
   ];
 
-  const categories = ['All', 'AI & Automation', 'Content & AI', 'Infrastructure', 'AI Ethics', 'Performance', 'Future of Work'];
+  const categories = ['All', 'AI & Automation', 'Digital Transformation', 'Cloud & Infrastructure', 'Content & AI'];
 
   return (
     <>

@@ -5,28 +5,20 @@ import Link from 'next/link';
 export default function ResourcesPage() {
   const caseStudies = [
     {
-      id: 'ai-automation-manufacturing',
-      title: 'AI-Powered Manufacturing Automation',
-      company: 'Global Manufacturing Corp',
-      industry: 'Manufacturing',
-      results: '40% increase in production efficiency, 60% reduction in downtime',
-      description: 'How we implemented autonomous AI systems to revolutionize manufacturing processes.'
-    },
-    {
-      id: 'content-generation-scale',
-      title: 'Scaling Content Generation 10x',
-      company: 'Digital Marketing Agency',
-      industry: 'Marketing',
-      results: '10x increase in content output, 85% improvement in engagement',
-      description: 'Transforming content creation through autonomous AI systems.'
-    },
-    {
-      id: 'cloud-infrastructure-optimization',
-      title: 'Cloud Infrastructure Optimization',
-      company: 'E-commerce Platform',
+      id: 'ai-automation-guide',
+      title: 'Complete Guide to AI-Powered Automation',
+      company: 'TechCorp Solutions',
       industry: 'Technology',
-      results: '50% reduction in cloud costs, 99.9% uptime achieved',
-      description: 'Building self-healing, auto-scaling cloud infrastructure.'
+      results: '85% reduction in manual processing time, 300% ROI within 6 months',
+      description: 'A comprehensive analysis of how AI automation transformed business processes at TechCorp Solutions.'
+    },
+    {
+      id: 'digital-transformation-guide',
+      title: 'Digital Transformation: A Manufacturing Success Story',
+      company: 'Global Manufacturing Inc.',
+      industry: 'Manufacturing',
+      results: '35% reduction in operational costs, 90% improvement in supply chain visibility',
+      description: 'How Global Manufacturing Inc. achieved operational excellence through comprehensive digital transformation.'
     }
   ];
 
@@ -59,25 +51,18 @@ export default function ResourcesPage() {
 
   const tools = [
     {
-      id: 'automation-assessment',
-      title: 'Automation Readiness Assessment',
-      description: 'Evaluate your organization\'s readiness for AI automation implementation.',
-      type: 'Interactive Tool',
+      id: 'automation-assessment-tool',
+      title: 'Business Process Automation Assessment Tool',
+      description: 'A comprehensive tool to evaluate your business processes and identify automation opportunities for maximum ROI.',
+      type: 'Assessment Tool',
       estimatedTime: '15 minutes'
     },
     {
-      id: 'ai-maturity-model',
-      title: 'AI Maturity Model',
-      description: 'Assess your current AI capabilities and plan your transformation journey.',
-      type: 'Framework',
+      id: 'process-mapping-guide',
+      title: 'Process Mapping & Documentation Guide',
+      description: 'Step-by-step guide and templates for mapping business processes to identify automation opportunities.',
+      type: 'Documentation Tool',
       estimatedTime: '30 minutes'
-    },
-    {
-      id: 'performance-benchmark',
-      title: 'Performance Benchmarking Tool',
-      description: 'Compare your automation performance against industry standards.',
-      type: 'Analytics Tool',
-      estimatedTime: '20 minutes'
     }
   ];
 

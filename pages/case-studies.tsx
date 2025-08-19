@@ -5,93 +5,57 @@ import Link from 'next/link';
 export default function CaseStudiesPage() {
   const caseStudies = [
     {
-      id: 'ai-automation-manufacturing',
-      title: 'AI-Powered Manufacturing Automation',
-      company: 'Global Manufacturing Corp',
-      industry: 'Manufacturing',
-      challenge: 'Inefficient production processes, high downtime, and quality control issues',
-      solution: 'Implemented autonomous AI systems for predictive maintenance, quality control, and production optimization',
+      id: 'ai-automation-success',
+      title: 'AI-Powered Automation Success Story',
+      company: 'TechCorp Solutions',
+      industry: 'Technology',
+      challenge: 'Manual processes were consuming 40+ hours per week and causing delays in customer service.',
+      solution: 'Implemented intelligent automation workflows using AI and machine learning algorithms.',
       results: [
-        '40% increase in production efficiency',
-        '60% reduction in unplanned downtime',
-        '35% improvement in product quality',
-        '25% reduction in operational costs'
+        'Reduced manual processing time by 85%',
+        'Improved customer response time from 24 hours to 2 hours',
+        'Increased team productivity by 60%',
+        'ROI of 300% within 6 months'
       ],
-      technologies: ['Machine Learning', 'Computer Vision', 'IoT Sensors', 'Predictive Analytics'],
-      duration: '6 months',
-      teamSize: '8 engineers',
+      technologies: ['AI/ML', 'RPA', 'Workflow Automation', 'API Integration'],
+      duration: '4 months',
+      teamSize: '8 developers + 2 business analysts',
       featured: true
     },
     {
-      id: 'content-generation-scale',
-      title: 'Scaling Content Generation 10x',
-      company: 'Digital Marketing Agency',
-      industry: 'Marketing',
-      challenge: 'Unable to meet client demand for high-quality content at scale',
-      solution: 'Deployed autonomous content generation systems with human oversight and quality control',
+      id: 'digital-transformation',
+      title: 'Complete Digital Transformation Journey',
+      company: 'Global Manufacturing Inc.',
+      industry: 'Manufacturing',
+      challenge: 'Legacy systems were preventing growth and causing operational inefficiencies across 12 locations.',
+      solution: 'End-to-end digital transformation including cloud migration, process automation, and data analytics.',
       results: [
-        '10x increase in content output',
-        '85% improvement in engagement metrics',
-        '70% reduction in content creation time',
-        '95% client satisfaction rate'
+        'Unified operations across all locations',
+        'Reduced operational costs by 35%',
+        'Improved supply chain visibility by 90%',
+        'Enhanced decision-making with real-time analytics'
       ],
-      technologies: ['Natural Language Processing', 'Content Optimization', 'SEO Automation', 'Analytics'],
-      duration: '4 months',
-      teamSize: '5 engineers + 3 content specialists',
+      technologies: ['Cloud Computing', 'IoT', 'Data Analytics', 'Process Automation'],
+      duration: '18 months',
+      teamSize: '15 developers + 5 architects + 10 business users',
       featured: false
     },
     {
-      id: 'cloud-infrastructure-optimization',
-      title: 'Cloud Infrastructure Optimization',
-      company: 'E-commerce Platform',
-      industry: 'Technology',
-      challenge: 'High cloud costs, performance issues, and manual scaling requirements',
-      solution: 'Built self-healing, auto-scaling cloud infrastructure with intelligent resource management',
+      id: 'startup-scaling',
+      title: 'Startup Scaling from 0 to 100K Users',
+      company: 'InnovateStart',
+      industry: 'SaaS',
+      challenge: 'Rapid user growth was overwhelming manual processes and causing system crashes.',
+      solution: 'Built scalable infrastructure and automated user onboarding, support, and analytics systems.',
       results: [
-        '50% reduction in cloud costs',
-        '99.9% uptime achieved',
-        '3x improvement in response times',
-        'Zero manual intervention required'
+        'Successfully handled 100K+ concurrent users',
+        'Automated 95% of user onboarding',
+        'Reduced support tickets by 70%',
+        'Achieved 99.9% uptime'
       ],
-      technologies: ['Auto-scaling', 'Load Balancing', 'Monitoring', 'Cost Optimization'],
-      duration: '8 months',
-      teamSize: '6 DevOps engineers',
-      featured: false
-    },
-    {
-      id: 'customer-service-automation',
-      title: 'Intelligent Customer Service Automation',
-      company: 'Financial Services Provider',
-      industry: 'Financial Services',
-      challenge: 'High customer service costs and long response times',
-      solution: 'Implemented AI-powered chatbots and automated ticket routing systems',
-      results: [
-        '80% reduction in response time',
-        '60% decrease in customer service costs',
-        '90% customer satisfaction rate',
-        '24/7 automated support coverage'
-      ],
-      technologies: ['Chatbots', 'Natural Language Processing', 'Ticket Routing', 'Sentiment Analysis'],
-      duration: '5 months',
-      teamSize: '4 engineers + 2 customer service specialists',
-      featured: false
-    },
-    {
-      id: 'data-analytics-transformation',
-      title: 'Data Analytics Transformation',
-      company: 'Healthcare Provider',
-      industry: 'Healthcare',
-      challenge: 'Inability to leverage data for patient care improvements and operational efficiency',
-      solution: 'Built comprehensive data analytics platform with real-time insights and predictive modeling',
-      results: [
-        '30% improvement in patient outcomes',
-        '40% reduction in operational costs',
-        'Real-time data insights',
-        'Predictive analytics for patient care'
-      ],
-      technologies: ['Big Data', 'Machine Learning', 'Real-time Analytics', 'Predictive Modeling'],
-      duration: '10 months',
-      teamSize: '10 data scientists + 5 engineers',
+      technologies: ['Microservices', 'Auto-scaling', 'CI/CD', 'Monitoring'],
+      duration: '6 months',
+      teamSize: '6 developers + 2 DevOps engineers',
       featured: false
     }
   ];
