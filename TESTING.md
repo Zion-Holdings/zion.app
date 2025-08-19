@@ -25,6 +25,18 @@ We follow the testing pyramid approach:
 - **Integration Tests**: Test component interactions
 - **E2E Tests**: Test complete user workflows
 
+## Unit Tests
+
+Unit tests focus on testing individual functions and components in isolation.
+
+## Integration Tests
+
+Integration tests verify that components work together correctly.
+
+## E2E Tests
+
+End-to-end tests simulate real user workflows and interactions.
+
 ## Test Coverage
 
 We aim for at least 80% test coverage across the codebase.

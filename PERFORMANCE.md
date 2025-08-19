@@ -25,6 +25,22 @@ We track these key performance indicators:
 - **Largest Contentful Paint (LCP)**: Target < 2.5s
 - **Cumulative Layout Shift (CLS)**: Target < 0.1
 - **Time to Interactive (TTI)**: Target < 3.8s
+
+## Optimization Techniques
+
+Performance optimization strategies and best practices.
+
+## Monitoring
+
+Tools and methods for monitoring application performance.
+
+## Benchmarking
+
+How to measure and compare performance metrics.
+
+## Best Practices
+
+Recommended approaches for maintaining high performance.
       
 
 ## Getting Started

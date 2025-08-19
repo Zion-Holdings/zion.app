@@ -33,6 +33,18 @@ The application uses a layered architecture with clear separation of concerns:
 - **Page Components**: Route-specific page layouts
 - **Layout Components**: Page structure and navigation
 - **Utility Components**: Helper components for common tasks
+
+## Data Flow
+
+Data flow patterns and state management strategies.
+
+## Security
+
+Security measures and best practices.
+
+## Scalability
+
+Scalability considerations and strategies.
       
 
 ## Getting Started

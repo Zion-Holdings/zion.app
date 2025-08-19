@@ -25,6 +25,22 @@ We follow the principle of defense in depth:
 - **Authentication**: Secure user authentication and session management
 - **Authorization**: Role-based access control for all features
 - **Data Protection**: Encryption for sensitive data at rest and in transit
+
+## Authentication
+
+Authentication methods and security measures.
+
+## Authorization
+
+Authorization mechanisms and access control.
+
+## Data Protection
+
+Data protection strategies and encryption.
+
+## Vulnerability Management
+
+Vulnerability assessment and response procedures.
       
 
 ## Getting Started

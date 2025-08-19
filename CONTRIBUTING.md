@@ -34,6 +34,18 @@ We follow these coding standards:
 - Write meaningful commit messages
 - Include tests for new features
 - Update documentation as needed
+
+## Testing
+
+Testing requirements and guidelines for contributions.
+
+## Pull Request Process
+
+How to submit and review pull requests.
+
+## Code Review
+
+Code review standards and expectations.
       
 
 ## Getting Started

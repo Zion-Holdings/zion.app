@@ -35,6 +35,14 @@ https://api.zion.app/v1
 ## Rate Limiting
 
 API requests are limited to 1000 requests per hour per API key.
+
+## Endpoints
+
+Available API endpoints and their functionality.
+
+## Error Handling
+
+Standard error responses and error codes.
       
 
 ## Getting Started

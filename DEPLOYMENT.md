@@ -31,6 +31,18 @@ This guide covers deploying Zion App to various hosting platforms.
 2. Configure build settings
 3. Set up monitoring and logging
 4. Configure CDN and caching
+
+## Deployment Steps
+
+Step-by-step deployment process.
+
+## Configuration
+
+Configuration options and settings.
+
+## Monitoring
+
+Monitoring and alerting setup.
       
 
 ## Getting Started
