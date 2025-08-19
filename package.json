@@ -321,7 +321,18 @@
     "redundancy:comprehensive:stop": "./automation/comprehensive-redundancy-stop.sh",
     "redundancy:comprehensive:pm2": "node automation/comprehensive-pm2-redundancy.cjs",
     "redundancy:comprehensive:github": "node automation/comprehensive-github-actions-redundancy.cjs",
-    "redundancy:comprehensive:netlify": "node automation/comprehensive-netlify-functions-redundancy.cjs"
+    "redundancy:comprehensive:netlify": "node automation/comprehensive-netlify-functions-redundancy.cjs",
+    "redundancy:ultimate:start": "bash automation/start-ultimate-redundancy.sh start",
+    "redundancy:ultimate:stop": "bash automation/start-ultimate-redundancy.sh stop",
+    "redundancy:ultimate:restart": "bash automation/start-ultimate-redundancy.sh restart",
+    "redundancy:ultimate:status": "bash automation/start-ultimate-redundancy.sh status",
+    "redundancy:ultimate:logs": "bash automation/start-ultimate-redundancy.sh logs",
+    "redundancy:ultimate:health": "bash automation/start-ultimate-redundancy.sh health",
+    "redundancy:ultimate:recover": "bash automation/start-ultimate-redundancy.sh recover",
+    "redundancy:ultimate:pm2": "bash automation/start-ultimate-redundancy.sh pm2",
+    "redundancy:ultimate:github": "bash automation/start-ultimate-redundancy.sh github",
+    "redundancy:ultimate:netlify": "bash automation/start-ultimate-redundancy.sh netlify",
+    "redundancy:ultimate:npm": "bash automation/start-ultimate-redundancy.sh npm"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
