@@ -295,16 +295,6 @@
     "cloud:continuous": "node scripts/continuous-cloud-agents.cjs",
     "gh:trigger": "node scripts/trigger-workflows.cjs",
     "gh:auto-heal": "node scripts/workflows-auto-healer.cjs && git add .github/workflows && git commit -m 'ci(auto-heal): normalize workflows [skip ci]' || true && git push origin HEAD",
-<<<<<<< Updated upstream
-    "redundancy:start": "cd automation/redundancy && chmod +x start-redundancy-system.sh && ./start-redundancy-system.sh",
-    "redundancy:stop": "cd automation/redundancy && chmod +x stop-redundancy-system.sh && ./stop-redundancy-system.sh",
-    "redundancy:status": "cd automation/redundancy && ./start-redundancy-system.sh status",
-    "redundancy:pm2": "node automation/redundancy/pm2-redundancy-manager.cjs",
-    "redundancy:github": "node automation/redundancy/github-actions-redundancy-manager.cjs",
-    "redundancy:netlify": "node automation/redundancy/netlify-functions-redundancy-manager.cjs",
-    "redundancy:master": "node automation/redundancy/master-redundancy-orchestrator.cjs",
-    "redundancy:report": "node automation/redundancy/master-redundancy-orchestrator.cjs report"
-=======
     "redundancy:start": "./automation/start-redundancy-system.sh start",
     "redundancy:stop": "./automation/start-redundancy-system.sh stop",
     "redundancy:status": "./automation/start-redundancy-system.sh status",
@@ -316,7 +306,6 @@
     "redundancy:pm2": "node automation/pm2-redundancy-monitor.cjs check",
     "redundancy:github": "node automation/github-actions-redundancy.cjs check",
     "redundancy:netlify": "node automation/netlify-functions-redundancy.cjs check"
->>>>>>> Stashed changes
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
