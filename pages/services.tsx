@@ -29,6 +29,22 @@ export default function ServicesPage() {
             <p className="text-xl text-white/80 max-w-3xl mx-auto">
               Comprehensive AI and automation solutions designed to transform your business and drive innovation
             </p>
+            
+            {/* Navigation Links */}
+            <div className="flex flex-wrap justify-center gap-4 mt-8">
+              <a href="/about" className="px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-cyan-400/50">
+                About Us
+              </a>
+              <a href="/case-studies" className="px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-fuchsia-400/50">
+                Case Studies
+              </a>
+              <a href="/team" className="px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-green-400/50">
+                Our Team
+              </a>
+              <a href="/contact" className="px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-blue-400/50">
+                Contact Us
+              </a>
+            </div>
           </section>
 
           <section className="mx-auto max-w-6xl">
