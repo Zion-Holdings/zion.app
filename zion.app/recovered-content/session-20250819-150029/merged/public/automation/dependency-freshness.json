@@ -1,0 +1,339 @@
+{
+  "generatedAt": "2025-08-11T23:12:56.940Z",
+  "total": 55,
+  "outdated": 24,
+  "upToDate": 31,
+  "errors": 0,
+  "results": [
+    {
+      "name": "@commitlint/cli",
+      "current": "^19.8.1",
+      "latest": "19.8.1",
+      "outdated": false
+    },
+    {
+      "name": "@commitlint/config-conventional",
+      "current": "^19.8.1",
+      "latest": "19.8.1",
+      "outdated": false
+    },
+    {
+      "name": "@eslint/js",
+      "current": "^9.32.0",
+      "latest": "9.33.0",
+      "outdated": true
+    },
+    {
+      "name": "@google-analytics/data",
+      "current": "^5.2.0",
+      "latest": "5.2.0",
+      "outdated": false
+    },
+    {
+      "name": "@google/generative-ai",
+      "current": "^0.24.1",
+      "latest": "0.24.1",
+      "outdated": false
+    },
+    {
+      "name": "@magneticwatermelon/mcp-toolkit",
+      "current": "^1.1.4",
+      "latest": "1.1.5",
+      "outdated": true
+    },
+    {
+      "name": "@modelcontextprotocol/sdk",
+      "current": "^1.17.1",
+      "latest": "1.17.2",
+      "outdated": true
+    },
+    {
+      "name": "@modelcontextprotocol/server-filesystem",
+      "current": "^2025.7.29",
+      "latest": "2025.7.29",
+      "outdated": false
+    },
+    {
+      "name": "@modelcontextprotocol/server-memory",
+      "current": "^2025.8.4",
+      "latest": "2025.8.4",
+      "outdated": false
+    },
+    {
+      "name": "@modelcontextprotocol/server-sequential-thinking",
+      "current": "^2025.7.1",
+      "latest": "2025.7.1",
+      "outdated": false
+    },
+    {
+      "name": "@supabase/ssr",
+      "current": "^0.6.1",
+      "latest": "0.6.1",
+      "outdated": false
+    },
+    {
+      "name": "@supabase/supabase-js",
+      "current": "^2.39.0",
+      "latest": "2.54.0",
+      "outdated": true
+    },
+    {
+      "name": "@testing-library/jest-dom",
+      "current": "^6.6.4",
+      "latest": "6.6.4",
+      "outdated": false
+    },
+    {
+      "name": "@testing-library/react",
+      "current": "12.1.5",
+      "latest": "16.3.0",
+      "outdated": true
+    },
+    {
+      "name": "@types/node",
+      "current": "^24.2.0",
+      "latest": "24.2.1",
+      "outdated": true
+    },
+    {
+      "name": "@types/node-cron",
+      "current": "^3.0.11",
+      "latest": "3.0.11",
+      "outdated": false
+    },
+    {
+      "name": "@types/react",
+      "current": "17.0.34",
+      "latest": "19.1.10",
+      "outdated": true
+    },
+    {
+      "name": "@types/react-datepicker",
+      "current": "^6.2.0",
+      "latest": "7.0.0",
+      "outdated": true
+    },
+    {
+      "name": "@types/react-dom",
+      "current": "17.0.11",
+      "latest": "19.1.7",
+      "outdated": true
+    },
+    {
+      "name": "@typescript-eslint/eslint-plugin",
+      "current": "^8.39.0",
+      "latest": "8.39.1",
+      "outdated": true
+    },
+    {
+      "name": "@typescript-eslint/parser",
+      "current": "^8.39.0",
+      "latest": "8.39.1",
+      "outdated": true
+    },
+    {
+      "name": "autoprefixer",
+      "current": "^10.4.16",
+      "latest": "10.4.21",
+      "outdated": true
+    },
+    {
+      "name": "axios",
+      "current": "^1.11.0",
+      "latest": "1.11.0",
+      "outdated": false
+    },
+    {
+      "name": "chalk",
+      "current": "^5.5.0",
+      "latest": "5.5.0",
+      "outdated": false
+    },
+    {
+      "name": "cheerio",
+      "current": "^1.1.2",
+      "latest": "1.1.2",
+      "outdated": false
+    },
+    {
+      "name": "child_process",
+      "current": "^1.0.2",
+      "latest": "1.0.2",
+      "outdated": false
+    },
+    {
+      "name": "chokidar",
+      "current": "^4.0.3",
+      "latest": "4.0.3",
+      "outdated": false
+    },
+    {
+      "name": "cron-parser",
+      "current": "^5.3.0",
+      "latest": "5.3.0",
+      "outdated": false
+    },
+    {
+      "name": "eslint",
+      "current": "^8.57.0",
+      "latest": "9.33.0",
+      "outdated": true
+    },
+    {
+      "name": "eslint-config-next",
+      "current": "^14.0.0",
+      "latest": "15.4.6",
+      "outdated": true
+    },
+    {
+      "name": "eslint-plugin-react-hooks",
+      "current": "^5.2.0",
+      "latest": "5.2.0",
+      "outdated": false
+    },
+    {
+      "name": "eslint-plugin-react-refresh",
+      "current": "^0.4.20",
+      "latest": "0.4.20",
+      "outdated": false
+    },
+    {
+      "name": "events",
+      "current": "^3.3.0",
+      "latest": "3.3.0",
+      "outdated": false
+    },
+    {
+      "name": "framer-motion",
+      "current": "^6.5.1",
+      "latest": "12.23.12",
+      "outdated": true
+    },
+    {
+      "name": "fs",
+      "current": "^0.0.1-security",
+      "latest": "0.0.1-security",
+      "outdated": false
+    },
+    {
+      "name": "fs-extra",
+      "current": "^11.3.1",
+      "latest": "11.3.1",
+      "outdated": false
+    },
+    {
+      "name": "glob",
+      "current": "^11.0.3",
+      "latest": "11.0.3",
+      "outdated": false
+    },
+    {
+      "name": "https",
+      "current": "^1.0.0",
+      "latest": "1.0.0",
+      "outdated": false
+    },
+    {
+      "name": "husky",
+      "current": "^9.1.7",
+      "latest": "9.1.7",
+      "outdated": false
+    },
+    {
+      "name": "import-fresh",
+      "current": "^3.3.1",
+      "latest": "3.3.1",
+      "outdated": false
+    },
+    {
+      "name": "lint-staged",
+      "current": "^16.1.5",
+      "latest": "16.1.5",
+      "outdated": false
+    },
+    {
+      "name": "lucide-react",
+      "current": "^0.536.0",
+      "latest": "0.539.0",
+      "outdated": true
+    },
+    {
+      "name": "next",
+      "current": "^11.1.4",
+      "latest": "15.4.6",
+      "outdated": true
+    },
+    {
+      "name": "node-cron",
+      "current": "^4.2.1",
+      "latest": "4.2.1",
+      "outdated": false
+    },
+    {
+      "name": "openai",
+      "current": "^5.11.0",
+      "latest": "5.12.2",
+      "outdated": true
+    },
+    {
+      "name": "path",
+      "current": "^0.12.7",
+      "latest": "0.12.7",
+      "outdated": false
+    },
+    {
+      "name": "postcss",
+      "current": "^8.4.32",
+      "latest": "8.5.6",
+      "outdated": true
+    },
+    {
+      "name": "react",
+      "current": "^17.0.2",
+      "latest": "19.1.1",
+      "outdated": true
+    },
+    {
+      "name": "react-datepicker",
+      "current": "^8.4.0",
+      "latest": "8.4.0",
+      "outdated": false
+    },
+    {
+      "name": "react-dom",
+      "current": "^17.0.2",
+      "latest": "19.1.1",
+      "outdated": true
+    },
+    {
+      "name": "sharp",
+      "current": "^0.33.4",
+      "latest": "0.34.3",
+      "outdated": true
+    },
+    {
+      "name": "tailwindcss",
+      "current": "^3.4.0",
+      "latest": "4.1.11",
+      "outdated": true
+    },
+    {
+      "name": "ts-node",
+      "current": "^10.9.2",
+      "latest": "10.9.2",
+      "outdated": false
+    },
+    {
+      "name": "typescript",
+      "current": "^5.6.3",
+      "latest": "5.9.2",
+      "outdated": true
+    },
+    {
+      "name": "uuid",
+      "current": "^11.1.0",
+      "latest": "11.1.0",
+      "outdated": false
+    }
+  ]
+}
