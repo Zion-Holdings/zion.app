@@ -365,7 +365,14 @@
     "redundancy:netlify:status": "node automation/netlify-functions-redundancy-manager.cjs status",
     "redundancy:netlify:health": "node automation/netlify-functions-redundancy-manager.cjs health",
     "redundancy:netlify:recover": "node automation/netlify-functions-redundancy-manager.cjs recover",
-    "redundancy:netlify:maintenance": "node automation/netlify-functions-redundancy-manager.cjs maintenance"
+    "redundancy:netlify:maintenance": "node automation/netlify-functions-redundancy-manager.cjs maintenance",
+    "redundancy:ultimate:automation": "bash automation/start-ultimate-redundancy-automation.sh start",
+    "redundancy:ultimate:automation:stop": "bash automation/start-ultimate-redundancy-automation.sh stop",
+    "redundancy:ultimate:automation:restart": "bash automation/start-ultimate-redundancy-automation.sh restart",
+    "redundancy:ultimate:automation:status": "bash automation/start-ultimate-redundancy-automation.sh status",
+    "redundancy:ultimate:automation:logs": "bash automation/start-ultimate-redundancy-automation.sh logs",
+    "redundancy:ultimate:automation:health": "bash automation/start-ultimate-redundancy-automation.sh health",
+    "redundancy:ultimate:automation:check": "bash automation/start-ultimate-redundancy-automation.sh check"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
