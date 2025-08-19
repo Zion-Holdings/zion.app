@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import Footer from '../components/Footer';
 
 export default function InnovationPage() {
   return (
@@ -186,6 +187,7 @@ export default function InnovationPage() {
             </div>
           </section>
         </main>
+        <Footer />
       </div>
     </>
   );

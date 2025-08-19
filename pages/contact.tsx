@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import Footer from '../components/Footer';
 
 export default function ContactPage() {
   return (
@@ -158,6 +159,7 @@ export default function ContactPage() {
             </div>
           </section>
         </main>
+        <Footer />
       </div>
     </>
   );
