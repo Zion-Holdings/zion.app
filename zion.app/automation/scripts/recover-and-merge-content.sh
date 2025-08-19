@@ -182,10 +182,19 @@ process_branch() {
     }
   fi
 
-  # Determine changed files vs base (since merge-base)
+  # Determine changed files vs base with graceful fallback
   local diff_file
   diff_file=$(mktemp)
-  git diff --name-status --diff-filter=ACMR "${BASE_REF}...${REMOTE}/${branch}" > "$diff_file"
+  if git merge-base "${BASE_REF}" "${REMOTE}/${branch}" >/dev/null 2>&1; then
+    if [[ "$INCLUDE_DELETED" == "true" ]]; then
+      git diff --name-status --diff-filter=ACMRD "${BASE_REF}...${REMOTE}/${branch}" > "$diff_file"
+    else
+      git diff --name-status --diff-filter=ACMR "${BASE_REF}...${REMOTE}/${branch}" > "$diff_file"
+    fi
+  else
+    # No common ancestor; treat all tracked files in the branch as added
+    git ls-tree -r --name-only "${REMOTE}/${branch}" | awk '{print "A\t"$0}' > "$diff_file"
+  fi
 
   local branch_changes=0
   local branch_conflicts=0
