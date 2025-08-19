@@ -1,6 +1,6 @@
 # bolt.new.zion.app
 
-![Automations: 227](https://img.shields.io/badge/Automations-227-informational) ![Pages: 2960](https://img.shields.io/badge/Pages-2960-success) ![Components: 12](https://img.shields.io/badge/Components-12-blue)
+![Automations: 227](https://img.shields.io/badge/Automations-227-informational) ![Pages: 15+](https://img.shields.io/badge/Pages-15+-success) ![Components: 50+](https://img.shields.io/badge/Components-50+-blue) ![Blueprints: 7](https://img.shields.io/badge/Blueprints-7-purple)
 
 Autonomous, cloud‑native app with self‑running automations.
 
@@ -17,6 +17,12 @@ Home: https://github.com/Zion-Holdings/zion.app#readme
 - `pages/`: Next.js pages.
 - `components/`: Reusable UI components.
 
+### New Content & Features
+- **Blueprint System**: 7 comprehensive technical blueprints covering autonomous cloud automation, AI-powered talent marketplace, DeFi infrastructure, quantum computing, edge computing, blockchain governance, and AI ethics.
+- **API Documentation**: Complete API reference with examples in JavaScript, Python, and cURL.
+- **Component Library**: 50+ reusable UI components with interactive examples and usage guidelines.
+- **Enhanced Reports**: Updated report system with structured content and improved navigation.
+
 ### Routes
 - /
 - /404
@@ -28,27 +34,12 @@ Home: https://github.com/Zion-Holdings/zion.app#readme
 - /automation
 - /automation-health
 - /blog
-- /blog/ai-automation-trends-2025
 - /component-library
-- /components/form-demo
-- /components/modal-demo
-- /components/pagination-demo
 - /contact
-- /content-hub
-- /discover
-- /enhanced-navigation
-- /events
-- /explore
-- /front
-- /landing
-- /live-dashboard
-- /main/front
-- /navigation
-- /news
-- /newsroom
-- /playground
 - /privacy
 - /reports
+- /reports/updates
+- /reports/blueprints
 - /reports/blueprints/blueprint-2025-08-18-122901
 - /reports/blueprints/blueprint-2025-08-18-122931
 - /reports/blueprints/blueprint-2025-08-18-122952
@@ -56,48 +47,7 @@ Home: https://github.com/Zion-Holdings/zion.app#readme
 - /reports/blueprints/blueprint-2025-08-18-123030
 - /reports/blueprints/blueprint-2025-08-18-123102
 - /reports/blueprints/blueprint-2025-08-18-123152
-- /reports/blueprints/blueprint-2025-08-18-123222
-- /reports/blueprints/blueprint-2025-08-18-123247
-- /reports/blueprints/blueprint-2025-08-18-123317
-- /reports/blueprints/blueprint-2025-08-18-123341
-- /reports/blueprints/blueprint-2025-08-18-123407
-- /reports/blueprints/blueprint-2025-08-18-123429
-- /reports/blueprints/blueprint-2025-08-18-123450
-- /reports/blueprints/blueprint-2025-08-18-123513
-- /reports/blueprints/blueprint-2025-08-18-123531
-- /reports/blueprints/blueprint-2025-08-18-123543
-- /reports/blueprints/blueprint-2025-08-18-123610
-- /reports/blueprints/blueprint-2025-08-18-123649
-- /reports/blueprints/blueprint-2025-08-18-123715
-- /reports/blueprints/blueprint-2025-08-18-123736
-- /reports/blueprints/blueprint-2025-08-18-123801
-- /reports/blueprints/blueprint-2025-08-18-123824
-- /reports/blueprints/blueprint-2025-08-18-123845
-- /reports/blueprints/blueprint-2025-08-18-123909
-- /reports/blueprints/blueprint-2025-08-18-123932
-- /reports/blueprints/blueprint-2025-08-18-123955
-- /reports/blueprints/blueprint-2025-08-18-124005
-- /reports/blueprints/blueprint-2025-08-18-124029
-- /reports/blueprints/blueprint-2025-08-18-124039
-- /reports/blueprints/blueprint-2025-08-18-124106
-- /reports/blueprints/blueprint-2025-08-18-124149
-- /reports/blueprints/blueprint-2025-08-18-124214
-- /reports/blueprints/blueprint-2025-08-18-124235
-- /reports/blueprints/blueprint-2025-08-18-124257
-- /reports/blueprints/blueprint-2025-08-18-130835
-- /reports/blueprints/blueprint-2025-08-18-130857
-- /reports/blueprints/blueprint-2025-08-18-130921
-- /reports/blueprints/blueprint-2025-08-18-130940
-- /reports/blueprints/blueprint-2025-08-18-131415
-- /reports/blueprints/blueprint-2025-08-18-131441
-- /reports/blueprints/blueprint-2025-08-18-131506
-- /reports/blueprints/blueprint-2025-08-18-131533
-- /reports/blueprints/blueprint-2025-08-18-131617
-- /reports/blueprints/blueprint-2025-08-18-131658
-- /reports/blueprints/blueprint-2025-08-18-131720
-- /reports/blueprints/blueprint-2025-08-18-131741
-- /reports/blueprints/blueprint-2025-08-18-131802
-- /reports/blueprints/blueprint-2025-08-18-131821
+- /services
 - /reports/blueprints/blueprint-2025-08-18-131847
 - /reports/blueprints/blueprint-2025-08-18-131910
 - /reports/blueprints/blueprint-2025-08-18-132004
