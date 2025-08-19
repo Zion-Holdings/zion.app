@@ -30,6 +30,15 @@ export default function HomePage() {
               <a href="/services" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-fuchsia-400/50">
                 Our Services
               </a>
+              <a href="/blog" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-purple-400/50">
+                Blog
+              </a>
+              <a href="/events" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-yellow-400/50">
+                Events
+              </a>
+              <a href="/news" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-blue-400/50">
+                News
+              </a>
               <a href="/contact" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-green-400/50">
                 Contact
               </a>
@@ -84,6 +93,53 @@ export default function HomePage() {
             </div>
           </section>
           {/* AUTO-GENERATED: HOME_LATEST_CONTENT_END */}
+
+          {/* Footer Section */}
+          <footer className="bg-black/20 backdrop-blur-xl border-t border-white/10 mt-20">
+            <div className="container mx-auto px-6 py-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                  <h3 className="text-lg font-bold mb-4 text-cyan-400">Company</h3>
+                  <ul className="space-y-2 text-white/70">
+                    <li><a href="/about" className="hover:text-cyan-400 transition-colors">About Us</a></li>
+                    <li><a href="/news" className="hover:text-cyan-400 transition-colors">News</a></li>
+                    <li><a href="/events" className="hover:text-cyan-400 transition-colors">Events</a></li>
+                    <li><a href="/contact" className="hover:text-cyan-400 transition-colors">Contact</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold mb-4 text-fuchsia-400">Services</h3>
+                  <ul className="space-y-2 text-white/70">
+                    <li><a href="/services" className="hover:text-fuchsia-400 transition-colors">AI Development</a></li>
+                    <li><a href="/services" className="hover:text-fuchsia-400 transition-colors">Automation</a></li>
+                    <li><a href="/services" className="hover:text-fuchsia-400 transition-colors">Cloud Infrastructure</a></li>
+                    <li><a href="/services" className="hover:text-fuchsia-400 transition-colors">Consulting</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold mb-4 text-green-400">Resources</h3>
+                  <ul className="space-y-2 text-white/70">
+                    <li><a href="/blog" className="hover:text-green-400 transition-colors">Blog</a></li>
+                    <li><a href="/reports" className="hover:text-green-400 transition-colors">Reports</a></li>
+                    <li><a href="/api-documentation" className="hover:text-green-400 transition-colors">API Docs</a></li>
+                    <li><a href="/component-library" className="hover:text-green-400 transition-colors">Components</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold mb-4 text-blue-400">Legal</h3>
+                  <ul className="space-y-2 text-white/70">
+                    <li><a href="/privacy" className="hover:text-blue-400 transition-colors">Privacy Policy</a></li>
+                    <li><a href="/terms" className="hover:text-blue-400 transition-colors">Terms of Service</a></li>
+                    <li><a href="/security" className="hover:text-blue-400 transition-colors">Security</a></li>
+                    <li><a href="/accessibility" className="hover:text-blue-400 transition-colors">Accessibility</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div className="border-t border-white/10 mt-8 pt-8 text-center text-white/60">
+                <p>&copy; 2025 Zion Tech Group. All rights reserved. | Autonomous Innovation Hub</p>
+              </div>
+            </div>
+          </footer>
         </main>
       </div>
     </>
