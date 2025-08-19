@@ -1,13 +1,16 @@
 # marketing-sync Report
 
-Generated: 2025-08-19T12:00:23.369Z
+Generated: 2025-08-19T15:51:04.540Z
 
 ## Status
 - Task: marketing-sync
-- Status: Completed
-- Timestamp: 2025-08-19T12:00:23.369Z
+- Status: Skipped/Failed
+- Timestamp: 2025-08-19T15:51:04.540Z
 
-## Next Steps
-- Implement actual marketing-sync functionality
-- Add proper error handling
-- Add logging and monitoring
+## Actions
+- linkedin: skipped
+- instagram: skipped
+
+## Notes
+- Uses environment variables only; no plaintext credentials.
+- Canonical URL: https://ziontechgroup.com
