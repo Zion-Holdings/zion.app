@@ -315,7 +315,14 @@
     "redundancy:monitor": "node automation/redundancy-automation-system.cjs monitor",
     "redundancy:pm2": "node automation/pm2-redundancy-monitor.cjs check",
     "redundancy:github": "node automation/github-actions-redundancy.cjs check",
-    "redundancy:netlify": "node automation/netlify-functions-redundancy.cjs check"
+    "redundancy:netlify": "node automation/netlify-functions-redundancy.cjs check",
+    "redundancy:comprehensive:start": "./automation/start-comprehensive-redundancy.sh",
+    "redundancy:comprehensive:status": "./automation/comprehensive-redundancy-status.sh",
+    "redundancy:comprehensive:restart": "./automation/comprehensive-redundancy-restart.sh",
+    "redundancy:comprehensive:stop": "./automation/comprehensive-redundancy-stop.sh",
+    "redundancy:comprehensive:pm2": "node automation/comprehensive-pm2-redundancy.cjs",
+    "redundancy:comprehensive:github": "node automation/comprehensive-github-actions-redundancy.cjs",
+    "redundancy:comprehensive:netlify": "node automation/comprehensive-netlify-functions-redundancy.cjs"
 >>>>>>> Stashed changes
   },
   "dependencies": {
@@ -344,6 +351,7 @@
     "https": "^1.0.0",
     "import-fresh": "^3.3.1",
     "jsdom": "^24.1.0",
+    "js-yaml": "^4.1.0",
     "lucide-react": "^0.536.0",
     "next": "^14.2.32",
     "node-cron": "^4.2.1",
