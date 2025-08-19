@@ -373,7 +373,7 @@
     "postcss": "^8.4.32",
     "react": "18.2.0",
     "react-datepicker": "^8.4.0",
-    "react-dom": "18.2.0",
+    "react-dom": "19.1.1",
     "uuid": "^11.1.0"
   },
   "devDependencies": {
@@ -385,7 +385,7 @@
     "@types/node": "24.2.1",
     "@types/node-cron": "^3.0.11",
     "@types/react": "18.3.23",
-    "@types/react-dom": "^18.3.0",
+    "@types/react-dom": "^19.1.7",
     "@typescript-eslint/eslint-plugin": "^8.39.0",
     "@typescript-eslint/parser": "^8.39.0",
     "autoprefixer": "^10.4.16",
