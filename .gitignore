@@ -15,6 +15,7 @@ automation/logs/
 automation/.git-sync.lock
 automation/.content-completer.lock
 automation/.chat-to-agents.lock
+.npm-cache/
 
 # OS/Editor
 .DS_Store
