@@ -1,0 +1,22 @@
+=== Git Health Report ===
+Timestamp: Tue Aug 19 11:38:58 AM UTC 2025
+Repository: workspace
+Branch: cursor/automate-git-sync-with-error-and-conflict-resolution-582d
+================================
+
+[LOW] status: 2 untracked files
+   Recommendation: Add files to git or add to .gitignore
+
+[MEDIUM] branch: No upstream branch set for cursor/automate-git-sync-with-error-and-conflict-resolution-582d
+   Recommendation: Set upstream with 'git branch --set-upstream-to=origin/cursor/automate-git-sync-with-error-and-conflict-resolution-582d'
+
+[MEDIUM] files: 1 files larger than 10MB found
+   Recommendation: Consider adding large files to .gitignore or using Git LFS
+
+=== SUMMARY ===
+Total Issues: 3
+Critical: 0
+High: 0
+Medium: 2
+Low: 1
+==============
