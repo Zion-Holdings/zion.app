@@ -21,6 +21,17 @@ export default function HomePage() {
             <p className="text-xl text-white/80 max-w-3xl mx-auto">
               Autonomous innovation hub delivering cutting-edge technology solutions and intelligent automation systems.
             </p>
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="/automation" className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold py-3 px-8 rounded-xl transition-all duration-300 transform hover:scale-105">
+                Explore Solutions
+              </a>
+              <a href="/about" className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white font-semibold py-3 px-8 rounded-xl transition-all duration-300 transform hover:scale-105">
+                About Us
+              </a>
+              <a href="/contact" className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-semibold py-3 px-8 rounded-xl transition-all duration-300 transform hover:scale-105">
+                Get in Touch
+              </a>
+            </div>
           </section>
 
           {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */}
