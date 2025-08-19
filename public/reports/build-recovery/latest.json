@@ -2,7 +2,11 @@
   "summary": {
     "totalFixes": 0,
     "successfulFixes": 0,
+<<<<<<< Updated upstream
     "timestamp": "2025-08-19T16:10:12.842Z"
+=======
+    "timestamp": "2025-08-19T16:24:44.959Z"
+>>>>>>> Stashed changes
   },
   "fixesApplied": [],
   "recommendations": [
