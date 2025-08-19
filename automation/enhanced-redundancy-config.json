@@ -1,0 +1,271 @@
+{
+  "version": "2.0.0",
+  "description": "Enhanced Redundancy Automation System Configuration",
+  "generatedAt": "2025-01-17T00:00:00.000Z",
+  "enabled": true,
+  
+  "enhanced": {
+    "enabled": true,
+    "checkInterval": 30000,
+    "maxFailures": 3,
+    "autoRecovery": true,
+    "recoveryDelay": 10000,
+    "healthCheckTimeout": 15000,
+    "alertThreshold": 2,
+    "systems": {
+      "pm2": { "enabled": true, "priority": "high" },
+      "github": { "enabled": true, "priority": "medium" },
+      "netlify": { "enabled": true, "priority": "medium" }
+    }
+  },
+  
+  "enhancedPM2": {
+    "enabled": true,
+    "checkInterval": 30000,
+    "maxRestarts": 10,
+    "healthCheckTimeout": 15000,
+    "autoRestart": true,
+    "restartDelay": 5000,
+    "maxRecoveryAttempts": 3,
+    "recoveryCooldown": 60000,
+    "processes": {
+      "zion-auto-sync": { 
+        "priority": "high", 
+        "maxRestarts": 15, 
+        "restartDelay": 3000,
+        "maxRecoveryAttempts": 5,
+        "recoveryCooldown": 30000
+      },
+      "zion-auto-sync-cron": { 
+        "priority": "medium", 
+        "maxRestarts": 8, 
+        "restartDelay": 5000,
+        "maxRecoveryAttempts": 3,
+        "recoveryCooldown": 60000
+      },
+      "redundancy-automation-system": { 
+        "priority": "high", 
+        "maxRestarts": 5, 
+        "restartDelay": 2000,
+        "maxRecoveryAttempts": 3,
+        "recoveryCooldown": 30000
+      },
+      "redundancy-health-monitor": { 
+        "priority": "high", 
+        "maxRestarts": 5, 
+        "restartDelay": 10000,
+        "maxRecoveryAttempts": 3,
+        "recoveryCooldown": 60000
+      },
+      "redundancy-git-sync": { 
+        "priority": "medium", 
+        "maxRestarts": 8, 
+        "restartDelay": 15000,
+        "maxRecoveryAttempts": 3,
+        "recoveryCooldown": 120000
+      },
+      "redundancy-build-monitor": { 
+        "priority": "medium", 
+        "maxRestarts": 3, 
+        "restartDelay": 15000,
+        "maxRecoveryAttempts": 2,
+        "recoveryCooldown": 180000
+      }
+    },
+    "ecosystems": [
+      "ecosystem.pm2.cjs",
+      "ecosystem.redundancy.cjs",
+      "ecosystem-redundancy.pm2.cjs"
+    ]
+  },
+  
+  "enhancedGitHub": {
+    "enabled": true,
+    "checkInterval": 60000,
+    "maxFailures": 3,
+    "healthCheckTimeout": 20000,
+    "autoRecovery": true,
+    "recoveryDelay": 10000,
+    "maxRecoveryAttempts": 3,
+    "recoveryCooldown": 120000,
+    "workflows": {
+      "marketing-sync.yml": { 
+        "priority": "medium", 
+        "schedule": "0 */12 * * *", 
+        "maxFailures": 2,
+        "maxRecoveryAttempts": 2,
+        "recoveryCooldown": 60000
+      },
+      "sync-health.yml": { 
+        "priority": "high", 
+        "schedule": "*/15 * * * *", 
+        "maxFailures": 1,
+        "maxRecoveryAttempts": 1,
+        "recoveryCooldown": 30000
+      },
+      "marketing-sync-backup.yml": { 
+        "priority": "low", 
+        "schedule": "0 */12 * * *", 
+        "maxFailures": 3,
+        "maxRecoveryAttempts": 3,
+        "recoveryCooldown": 180000
+      },
+      "sync-health-backup.yml": { 
+        "priority": "medium", 
+        "schedule": "*/15 * * * *", 
+        "maxFailures": 2,
+        "maxRecoveryAttempts": 2,
+        "recoveryCooldown": 120000
+      }
+    },
+    "validation": {
+      "syntaxCheck": true,
+      "scheduleValidation": true,
+      "permissionsCheck": true,
+      "jobValidation": true
+    }
+  },
+  
+  "enhancedNetlify": {
+    "enabled": true,
+    "checkInterval": 120000,
+    "maxFailures": 3,
+    "healthCheckTimeout": 30000,
+    "autoRecovery": true,
+    "recoveryDelay": 15000,
+    "maxRecoveryAttempts": 3,
+    "recoveryCooldown": 180000,
+    "functions": {
+      "autoRegenerate": true,
+      "healthCheck": true,
+      "deploymentCheck": true,
+      "validation": true
+    },
+    "validation": {
+      "syntaxCheck": true,
+      "manifestValidation": true,
+      "functionDiscovery": true,
+      "dependencyCheck": true
+    }
+  },
+  
+  "pm2": {
+    "enabled": true,
+    "checkInterval": 30000,
+    "maxRestarts": 5,
+    "healthCheckTimeout": 10000,
+    "processes": ["zion-auto-sync", "zion-auto-sync-cron"],
+    "autoRestart": true,
+    "restartDelay": 5000
+  },
+  
+  "githubActions": {
+    "enabled": true,
+    "checkInterval": 60000,
+    "maxFailures": 3,
+    "retryDelay": 30000,
+    "workflows": ["marketing-sync.yml", "sync-health.yml"],
+    "autoTrigger": true,
+    "healthCheckWorkflow": "sync-health.yml"
+  },
+  
+  "netlify": {
+    "enabled": true,
+    "checkInterval": 120000,
+    "maxFailures": 3,
+    "healthCheckTimeout": 15000,
+    "autoDeploy": true,
+    "deployTimeout": 300000,
+    "functions": {
+      "autoRegenerate": true,
+      "healthCheck": true,
+      "deploymentCheck": true
+    }
+  },
+  
+  "logging": {
+    "level": "INFO",
+    "maxLogSize": "10MB",
+    "maxLogFiles": 30,
+    "logRotation": true,
+    "logRotationInterval": "0 0 * * *",
+    "consoleOutput": true,
+    "fileOutput": true
+  },
+  
+  "monitoring": {
+    "enabled": true,
+    "metrics": {
+      "uptime": true,
+      "responseTime": true,
+      "errorRate": true,
+      "recoveryTime": true
+    },
+    "alerts": {
+      "enabled": true,
+      "channels": ["log", "console"],
+      "thresholds": {
+        "errorRate": 0.1,
+        "responseTime": 5000,
+        "recoveryTime": 30000
+      }
+    }
+  },
+  
+  "recovery": {
+    "enabled": true,
+    "strategies": {
+      "pm2": ["restart", "reload", "ecosystem_reload"],
+      "github": ["backup_restore", "workflow_fix", "regenerate"],
+      "netlify": ["manifest_regenerate", "function_fix", "deploy"]
+    },
+    "backoff": {
+      "initial": 1000,
+      "multiplier": 2,
+      "maxDelay": 60000
+    }
+  },
+  
+  "notifications": {
+    "enabled": false,
+    "providers": {
+      "email": {
+        "enabled": false,
+        "smtp": {
+          "host": "localhost",
+          "port": 587,
+          "secure": false
+        }
+      },
+      "webhook": {
+        "enabled": false,
+        "url": "",
+        "headers": {}
+      }
+    },
+    "events": {
+      "system_start": true,
+      "system_stop": true,
+      "health_check_failed": true,
+      "recovery_attempted": true,
+      "recovery_succeeded": true,
+      "recovery_failed": true
+    }
+  },
+  
+  "maintenance": {
+    "enabled": true,
+    "schedule": "0 2 * * *",
+    "tasks": {
+      "logRotation": true,
+      "logCleanup": true,
+      "healthCheck": true,
+      "configValidation": true
+    },
+    "cleanup": {
+      "maxLogAge": "30d",
+      "maxLogSize": "100MB",
+      "maxStatusFiles": 10
+    }
+  }
+}
