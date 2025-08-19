@@ -1,12 +1,12 @@
 {
   "startTime": "2025-08-19T17:56:01.748Z",
-  "lastHealthCheck": "2025-08-19T18:15:30.328Z",
+  "lastHealthCheck": "2025-08-19T18:15:50.466Z",
   "systems": {
     "pm2": {
       "healthy": false,
       "needsRecovery": true,
       "error": "Command failed: pm2 status --no-daemon\n/bin/sh: 1: pm2: not found\n",
-      "lastCheck": "2025-08-19T18:15:10.224Z",
+      "lastCheck": "2025-08-19T18:15:40.225Z",
       "status": "unhealthy"
     },
     "github": {
@@ -95,11 +95,21 @@
       "status": "unhealthy"
     },
     "build": {
-      "healthy": false,
-      "needsRecovery": true,
-      "error": "Expected double-quoted property name in JSON at position 28657 (line 343 column 1)",
-      "lastCheck": "2025-08-19T18:14:10.209Z",
-      "status": "unhealthy"
+      "healthy": "NODE_OPTIONS=\"--max-old-space-size=6144 --openssl-legacy-provider\" next build",
+      "needsRecovery": false,
+      "details": {
+        "hasBuildScripts": true,
+        "buildScriptsInPackage": "NODE_OPTIONS=\"--max-old-space-size=6144 --openssl-legacy-provider\" next build",
+        "availableScripts": [
+          "build-failure-recovery.cjs",
+          "continuous-build-monitor.cjs",
+          "master-build-orchestrator.cjs",
+          "pre-build-health-check.cjs",
+          "nextjs-page-validator.cjs"
+        ]
+      },
+      "lastCheck": "2025-08-19T18:15:40.217Z",
+      "status": "healthy"
     },
     "netlify": {
       "healthy": true,
@@ -1221,6 +1231,11 @@
       "system": "pm2",
       "timestamp": "2025-08-19T18:15:10.224Z",
       "error": "Command failed: pm2 status --no-daemon\n/bin/sh: 1: pm2: not found\n"
+    },
+    {
+      "system": "pm2",
+      "timestamp": "2025-08-19T18:15:40.225Z",
+      "error": "Command failed: pm2 status --no-daemon\n/bin/sh: 1: pm2: not found\n"
     }
   ],
   "recoveries": [
@@ -1399,5 +1414,5 @@
       "attempts": 1
     }
   ],
-  "uptime": 1168580
+  "uptime": 1188718
 }
