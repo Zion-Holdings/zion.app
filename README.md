@@ -18,86 +18,34 @@ Home: https://github.com/Zion-Holdings/zion.app#readme
 - `components/`: Reusable UI components.
 
 ### Routes
-- /
-- /404
-- /500
-- /_app
-- /_document
-- /about
-- /api-documentation
-- /automation
-- /automation-health
-- /blog
-- /blog/ai-automation-trends-2025
-- /component-library
-- /components/form-demo
-- /components/modal-demo
-- /components/pagination-demo
-- /contact
-- /content-hub
-- /discover
-- /enhanced-navigation
-- /events
-- /explore
-- /front
-- /landing
-- /live-dashboard
-- /main/front
-- /navigation
-- /news
-- /newsroom
-- /playground
-- /privacy
-- /reports
-- /reports/blueprints/blueprint-2025-08-18-122901
-- /reports/blueprints/blueprint-2025-08-18-122931
-- /reports/blueprints/blueprint-2025-08-18-122952
-- /reports/blueprints/blueprint-2025-08-18-123006
-- /reports/blueprints/blueprint-2025-08-18-123030
-- /reports/blueprints/blueprint-2025-08-18-123102
-- /reports/blueprints/blueprint-2025-08-18-123152
-- /reports/blueprints/blueprint-2025-08-18-123222
-- /reports/blueprints/blueprint-2025-08-18-123247
-- /reports/blueprints/blueprint-2025-08-18-123317
-- /reports/blueprints/blueprint-2025-08-18-123341
-- /reports/blueprints/blueprint-2025-08-18-123407
-- /reports/blueprints/blueprint-2025-08-18-123429
-- /reports/blueprints/blueprint-2025-08-18-123450
-- /reports/blueprints/blueprint-2025-08-18-123513
-- /reports/blueprints/blueprint-2025-08-18-123531
-- /reports/blueprints/blueprint-2025-08-18-123543
-- /reports/blueprints/blueprint-2025-08-18-123610
-- /reports/blueprints/blueprint-2025-08-18-123649
-- /reports/blueprints/blueprint-2025-08-18-123715
-- /reports/blueprints/blueprint-2025-08-18-123736
-- /reports/blueprints/blueprint-2025-08-18-123801
-- /reports/blueprints/blueprint-2025-08-18-123824
-- /reports/blueprints/blueprint-2025-08-18-123845
-- /reports/blueprints/blueprint-2025-08-18-123909
-- /reports/blueprints/blueprint-2025-08-18-123932
-- /reports/blueprints/blueprint-2025-08-18-123955
-- /reports/blueprints/blueprint-2025-08-18-124005
-- /reports/blueprints/blueprint-2025-08-18-124029
-- /reports/blueprints/blueprint-2025-08-18-124039
-- /reports/blueprints/blueprint-2025-08-18-124106
-- /reports/blueprints/blueprint-2025-08-18-124149
-- /reports/blueprints/blueprint-2025-08-18-124214
-- /reports/blueprints/blueprint-2025-08-18-124235
-- /reports/blueprints/blueprint-2025-08-18-124257
-- /reports/blueprints/blueprint-2025-08-18-130835
-- /reports/blueprints/blueprint-2025-08-18-130857
-- /reports/blueprints/blueprint-2025-08-18-130921
-- /reports/blueprints/blueprint-2025-08-18-130940
-- /reports/blueprints/blueprint-2025-08-18-131415
-- /reports/blueprints/blueprint-2025-08-18-131441
-- /reports/blueprints/blueprint-2025-08-18-131506
-- /reports/blueprints/blueprint-2025-08-18-131533
-- /reports/blueprints/blueprint-2025-08-18-131617
-- /reports/blueprints/blueprint-2025-08-18-131658
-- /reports/blueprints/blueprint-2025-08-18-131720
-- /reports/blueprints/blueprint-2025-08-18-131741
-- /reports/blueprints/blueprint-2025-08-18-131802
-- /reports/blueprints/blueprint-2025-08-18-131821
+- `/` - Home page
+- `/404` - Page Not Found
+- `/500` - Server Error
+- `/about` - About Zion
+- `/api-documentation` - API Documentation
+- `/automation` - Automation Features
+- `/blog` - Blog Index
+- `/blog/ai-automation-trends-2025` - AI Automation Trends 2025
+- `/component-library` - UI Component Library
+- `/contact` - Contact Us
+- `/content-hub` - Content Hub
+- `/discover` - Discover
+- `/enhanced-navigation` - Enhanced Navigation
+- `/events` - Events
+- `/explore` - Explore
+- `/front` - Front Control Center
+- `/landing` - Landing Page
+- `/live-dashboard` - Live Dashboard
+- `/main/front` - Main Front Control
+- `/navigation` - Site Navigation
+- `/news` - News
+- `/newsroom` - Newsroom
+- `/playground` - Interactive Playground
+- `/privacy` - Privacy Policy
+- `/reports` - Reports Index
+- `/services` - Our Services
+
+**Note**: All routes now have corresponding Next.js pages with proper content and styling.
 - /reports/blueprints/blueprint-2025-08-18-131847
 - /reports/blueprints/blueprint-2025-08-18-131910
 - /reports/blueprints/blueprint-2025-08-18-132004
