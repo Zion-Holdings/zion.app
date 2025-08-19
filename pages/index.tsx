@@ -135,6 +135,96 @@ export default function HomePage() {
               </Link>
             </div>
           </section>
+
+          {/* Technology Stack Section */}
+          <section className="mx-auto max-w-7xl px-6 pb-14">
+            <h2 className="text-center text-2xl font-bold tracking-wide text-white/90 mb-8">Our Technology Stack</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">🤖</span>
+                </div>
+                <h3 className="text-lg font-semibold text-green-400 mb-3 text-center">AI & Machine Learning</h3>
+                <div className="space-y-2 text-sm text-white/70">
+                  <p>• TensorFlow & PyTorch</p>
+                  <p>• Natural Language Processing</p>
+                  <p>• Computer Vision</p>
+                  <p>• Reinforcement Learning</p>
+                </div>
+              </div>
+              
+              <div className="bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">☁️</span>
+                </div>
+                <h3 className="text-lg font-semibold text-blue-400 mb-3 text-center">Cloud Infrastructure</h3>
+                <div className="space-y-2 text-sm text-white/70">
+                  <p>• AWS, Azure, GCP</p>
+                  <p>• Kubernetes & Docker</p>
+                  <p>• Serverless Architecture</p>
+                  <p>• Microservices</p>
+                </div>
+              </div>
+              
+              <div className="bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">🔧</span>
+                </div>
+                <h3 className="text-lg font-semibold text-purple-400 mb-3 text-center">Development Tools</h3>
+                <div className="space-y-2 text-sm text-white/70">
+                  <p>• React & Next.js</p>
+                  <p>• Python & Node.js</p>
+                  <p>• CI/CD Pipelines</p>
+                  <p>• DevOps Automation</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Success Metrics Section */}
+          <section className="mx-auto max-w-7xl px-6 pb-14">
+            <h2 className="text-center text-2xl font-bold tracking-wide text-white/90 mb-8">Success Metrics</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-xl p-6 border border-cyan-400/30 text-center">
+                <div className="text-3xl font-bold text-cyan-400 mb-2">99.9%</div>
+                <p className="text-white/80 text-sm">System Uptime</p>
+              </div>
+              
+              <div className="bg-gradient-to-br from-fuchsia-500/20 to-purple-500/20 rounded-xl p-6 border border-fuchsia-400/30 text-center">
+                <div className="text-3xl font-bold text-fuchsia-400 mb-2">10x</div>
+                <p className="text-white/80 text-sm">Performance Improvement</p>
+              </div>
+              
+              <div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-xl p-6 border border-green-400/30 text-center">
+                <div className="text-3xl font-bold text-green-400 mb-2">500+</div>
+                <p className="text-white/80 text-sm">Automated Processes</p>
+              </div>
+              
+              <div className="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 rounded-xl p-6 border border-yellow-400/30 text-center">
+                <div className="text-3xl font-bold text-yellow-400 mb-2">24/7</div>
+                <p className="text-white/80 text-sm">Autonomous Operation</p>
+              </div>
+            </div>
+          </section>
+
+          {/* Call to Action Section */}
+          <section className="mx-auto max-w-7xl px-6 pb-14">
+            <div className="bg-gradient-to-r from-cyan-500/10 to-fuchsia-500/10 rounded-2xl p-12 border border-cyan-500/20 text-center">
+              <h2 className="text-3xl font-bold mb-6 text-white">Ready to Transform Your Business?</h2>
+              <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto">
+                Join the autonomous revolution and discover how AI can enhance your operations, 
+                improve efficiency, and drive innovation across your organization.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/contact" className="bg-gradient-to-r from-cyan-400 to-fuchsia-400 text-white px-8 py-4 rounded-lg font-semibold hover:from-cyan-500 hover:to-fuchsia-500 transition-all duration-300 text-lg">
+                  Get Started Today
+                </Link>
+                <Link href="/case-studies" className="border border-white/30 text-white px-8 py-4 rounded-lg font-semibold hover:border-cyan-400/50 hover:text-cyan-400 transition-all duration-300 text-lg">
+                  View Case Studies
+                </Link>
+              </div>
+            </div>
+          </section>
         </main>
       </div>
     </>
