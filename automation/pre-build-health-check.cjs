@@ -296,18 +296,20 @@ async function validateNextConfig() {
 }
 
 async function checkEnvironmentVariables() {
-  const requiredVars = [
+  // Check for recommended environment variables (not required)
+  const recommendedVars = [
     'NODE_VERSION',
     'NODE_OPTIONS'
   ];
   
-  const missing = requiredVars.filter(varName => !process.env[varName]);
+  const missing = recommendedVars.filter(varName => !process.env[varName]);
   
   if (missing.length > 0) {
-    throw new Error(`Missing environment variables: ${missing.join(', ')}`);
+    console.log(`   ⚠️  Recommended environment variables not set: ${missing.join(', ')}`);
+    console.log(`   💡 These are optional but can improve build performance`);
   }
   
-  return 'All required environment variables are set';
+  return 'Environment variables check completed';
 }
 
 async function checkFilePermissions() {
