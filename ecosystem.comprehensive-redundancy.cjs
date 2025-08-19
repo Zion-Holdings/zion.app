@@ -3,7 +3,7 @@ module.exports = {
     // Master Redundancy Orchestrator
     {
       name: "master-redundancy-orchestrator",
-      script: "automation/master-redundancy-orchestrator.cjs",
+      script: "automation/ultimate-redundancy-master.cjs",
       interpreter: "node",
       cwd: __dirname,
       watch: false,
@@ -28,7 +28,7 @@ module.exports = {
     // Enhanced PM2 Redundancy System
     {
       name: "enhanced-pm2-redundancy",
-      script: "automation/enhanced-pm2-redundancy.cjs",
+      script: "automation/comprehensive-pm2-redundancy.cjs",
       interpreter: "node",
       cwd: __dirname,
       watch: false,
@@ -55,7 +55,7 @@ module.exports = {
     // Enhanced GitHub Actions Redundancy System
     {
       name: "enhanced-github-actions-redundancy",
-      script: "automation/enhanced-github-actions-redundancy.cjs",
+      script: "automation/comprehensive-github-actions-redundancy.cjs",
       interpreter: "node",
       cwd: __dirname,
       watch: false,
@@ -83,7 +83,7 @@ module.exports = {
     // Enhanced Netlify Functions Redundancy System
     {
       name: "enhanced-netlify-functions-redundancy",
-      script: "automation/enhanced-netlify-functions-redundancy.cjs",
+      script: "automation/comprehensive-netlify-functions-redundancy.cjs",
       interpreter: "node",
       cwd: __dirname,
       watch: false,

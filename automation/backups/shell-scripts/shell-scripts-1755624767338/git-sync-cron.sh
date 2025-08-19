@@ -1,0 +1,86 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Simple cron-like loop to run enhanced git sync periodically
+
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+LOG_DIR="$ROOT_DIR/automation/logs"
+PID_FILE="$ROOT_DIR/automation/git-sync-cron.pid"
+LOG_FILE="$LOG_DIR/git-sync-cron.log"
+INTERVAL_SECONDS="${SYNC_INTERVAL_SECONDS:-300}"
+
+mkdir -p "$LOG_DIR"
+
+is_running() {
+  if [[ -f "$PID_FILE" ]]; then
+    local pid
+    pid="$(cat "$PID_FILE" || true)"
+    if [[ -n "$pid" ]] && kill -0 "$pid" 2>/dev/null; then
+      return 0
+    fi
+  fi
+  return 1
+}
+
+start() {
+  if is_running; then
+    echo "git-sync-cron is already running (pid $(cat "$PID_FILE"))"
+    exit 0
+  fi
+  echo "Starting git-sync-cron loop (every ${INTERVAL_SECONDS}s) ..."
+  (
+    export SYNC_INTERVAL_SECONDS="$INTERVAL_SECONDS"
+    cd "$ROOT_DIR"
+    # background loop
+    nohup bash -c '
+      while true; do
+        echo "$(date -Is) [cron] running full-sync" >> "$LOG_FILE"
+        node automation/enhanced-git-sync-orchestrator.cjs full-sync >> "$LOG_FILE" 2>&1 || true
+        echo "$(date -Is) [cron] sleep ${SYNC_INTERVAL_SECONDS}s" >> "$LOG_FILE"
+        sleep "$SYNC_INTERVAL_SECONDS"
+      done
+    ' >/dev/null 2>&1 &
+    echo $! > "$PID_FILE"
+  )
+  echo "git-sync-cron started (pid $(cat "$PID_FILE"))"
+}
+
+stop() {
+  if ! is_running; then
+    echo "git-sync-cron is not running"
+    rm -f "$PID_FILE"
+    exit 0
+  fi
+  local pid
+  pid="$(cat "$PID_FILE")"
+  echo "Stopping git-sync-cron (pid $pid) ..."
+  kill "$pid" 2>/dev/null || true
+  # Give it a moment to stop
+  sleep 1
+  if kill -0 "$pid" 2>/dev/null; then
+    echo "Force killing pid $pid"
+    kill -9 "$pid" 2>/dev/null || true
+  fi
+  rm -f "$PID_FILE"
+  echo "git-sync-cron stopped"
+}
+
+status() {
+  if is_running; then
+    echo "git-sync-cron is running (pid $(cat "$PID_FILE"))"
+    echo "Log: $LOG_FILE"
+  else
+    echo "git-sync-cron is not running"
+    test -f "$LOG_FILE" && echo "Last log lines:" && tail -n 10 "$LOG_FILE" || true
+  fi
+}
+
+case "${1:-}" in
+  start) start ;;
+  stop) stop ;;
+  status) status ;;
+  *) echo "Usage: $0 {start|stop|status}"; exit 1 ;;
+esac
+
+

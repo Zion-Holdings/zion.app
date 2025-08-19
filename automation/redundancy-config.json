@@ -1,133 +1,230 @@
 {
+  "system": {
+    "name": "Ultimate Redundancy Automation System",
+    "version": "2.0.0",
+    "description": "Comprehensive redundancy for all PM2, GitHub Actions, and Netlify functions automations",
+    "author": "Zion Holdings",
+    "created": "2025-01-17",
+    "lastUpdated": "2025-01-17"
+  },
   "pm2": {
-    "enabled": true,
-    "checkInterval": 30000,
-    "maxRestarts": 5,
-    "healthCheckTimeout": 10000,
-    "processes": [
+    "ecosystemFiles": [
+      "ecosystem.pm2.cjs",
+      "ecosystem.redundancy.cjs",
+      "ecosystem.comprehensive-redundancy.cjs",
+      "ecosystem-redundancy.pm2.cjs"
+    ],
+    "criticalProcesses": [
       "zion-auto-sync",
-      "zion-auto-sync-cron"
+      "zion-auto-sync-cron",
+      "redundancy-automation-system",
+      "redundancy-health-monitor",
+      "redundancy-git-sync",
+      "redundancy-build-monitor",
+      "master-redundancy-orchestrator",
+      "enhanced-pm2-redundancy",
+      "enhanced-github-actions-redundancy",
+      "enhanced-netlify-functions-redundancy"
     ],
-    "autoRestart": true,
-    "restartDelay": 5000
-  },
-  "githubActions": {
-    "enabled": true,
-    "checkInterval": 60000,
-    "maxFailures": 3,
-    "retryDelay": 30000,
-    "workflows": [
-      "marketing-sync.yml",
-      "sync-health.yml"
-    ],
-    "autoTrigger": true,
-    "healthCheckWorkflow": "sync-health.yml"
-  },
-  "netlify": {
-    "enabled": true,
-    "checkInterval": 120000,
-    "maxFailures": 3,
-    "healthCheckTimeout": 15000,
-    "autoDeploy": true,
-    "deployTimeout": 300000,
-    "functions": {
-      "autoRegenerate": true,
-      "healthCheck": true,
-      "deploymentCheck": true
+    "healthCheckInterval": 30000,
+    "maxRestartAttempts": 5,
+    "restartDelay": 5000,
+    "memoryThreshold": 80,
+    "cpuThreshold": 90,
+    "logRotation": {
+      "maxSize": "10M",
+      "maxFiles": 30,
+      "compress": true,
+      "workerInterval": 60,
+      "rotateInterval": "0 0 * * *"
     }
   },
-  "marketing": {
-    "enabled": true,
-    "checkInterval": 7200000,
-    "platforms": [
-      "linkedin",
-      "instagram"
+  "githubActions": {
+    "workflows": [
+      "marketing-sync",
+      "sync-health"
     ],
-    "autoSync": true,
-    "fallbackScripts": [
-      "automation/marketing-sync.js",
-      "automation/git-sync.cjs"
-    ]
-  },
-  "git": {
-    "enabled": true,
-    "checkInterval": 300000,
-    "autoSync": true,
-    "syncStrategy": "hardreset",
-    "cleanUntracked": true,
-    "garbageCollection": false,
-    "remote": "origin",
-    "branch": "main"
-  },
-  "build": {
-    "enabled": true,
-    "checkInterval": 600000,
-    "autoRecovery": true,
-    "healthChecks": [
-      "build:health-check",
-      "build:validate"
+    "backupWorkflows": [
+      "marketing-sync-backup",
+      "sync-health-backup"
     ],
-    "recoveryScripts": [
-      "build:recovery",
-      "build:auto-fix"
+    "healthCheckInterval": 60000,
+    "maxFailures": 3,
+    "autoTrigger": true,
+    "backupTriggers": true,
+    "workflowValidation": true,
+    "apiHealthCheck": true
+  },
+  "netlifyFunctions": {
+    "functionsDir": "netlify/functions",
+    "manifestFile": "netlify/functions/functions-manifest.json",
+    "healthCheckInterval": 120000,
+    "maxFailures": 3,
+    "autoDeploy": true,
+    "autoRegenerate": true,
+    "deploymentCheck": true,
+    "logRotation": true,
+    "criticalFunctions": [
+      "a11y-alt-text-runner",
+      "adaptive-orchestrator",
+      "ai-changelog-runner",
+      "ai-trends-radar-runner",
+      "anchor-links-auto-fixer",
+      "auto-discovery-runner",
+      "auto-scheduler",
+      "automation-matrix",
+      "autonomous-invention-orchestrator",
+      "autonomous-meta-orchestrator",
+      "broken-image-scanner",
+      "broken-image-scanner-runner",
+      "canonical-auditor",
+      "cloud_deep_research",
+      "cloud_orchestrator",
+      "code-smell-audit-runner",
+      "component-coupling-graph-runner",
+      "component-props-docs-runner",
+      "component-size-report",
+      "content-freshness-score-runner",
+      "continuous-front-runner",
+      "continuous-orchestrator",
+      "dead-code-audit",
+      "dead-code-report",
+      "deps-auto-upgrade-runner",
+      "docs-index-runner",
+      "docs-search-index-runner",
+      "duplicate-media-finder-runner",
+      "external-link-check-runner",
+      "fast-front-promoter",
+      "fast-orchestrator",
+      "feature-advertiser",
+      "features-capabilities-benefits-advertiser",
+      "front-ads-promoter",
+      "front-enhancer",
+      "front-index-futurizer",
+      "front-index-orchestrator",
+      "front-index-scheduler",
+      "front-maximizer",
+      "front-visionary-expander",
+      "frontpage-enhancer",
+      "frontpage-scheduler",
+      "headers-enforcer",
+      "home-visionary-expander",
+      "homepage-advertiser-scheduler",
+      "homepage-enhancer",
+      "homepage-updater",
+      "homepage-updater-scheduler",
+      "homepage_advertiser",
+      "hyper-front-index-accelerator",
+      "image-optimizer-runner",
+      "innovation-lab",
+      "innovations-promoter",
+      "intelligent-meta-orchestrator",
+      "internal-link-graph-runner",
+      "knowledge-pack-runner",
+      "license-compliance-auditor",
+      "link-and-health-scheduler",
+      "link-crawler",
+      "maintenance-scheduler",
+      "marketing-and-features-promo",
+      "marketing-scheduler",
+      "media-og-and-optimize",
+      "metadata-optimizer-runner",
+      "netlify-auto-healer-runner",
+      "newsroom-auto-publisher",
+      "newsroom-runner",
+      "og-image-update-runner",
+      "orphan-pages-detector",
+      "pagespeed-insights-runner",
+      "readme-advertiser",
+      "repo-knowledge-graph-runner",
+      "repo-radar-and-graph",
+      "repo-radar-runner",
+      "revenue-ideas-lab",
+      "roadmap-curator",
+      "robots-auditor",
+      "schedule-content-index",
+      "schedule-homepage",
+      "schedule-knowledge-graph",
+      "schedule-site-health",
+      "security-audit",
+      "security-audit-runner",
+      "seo-audit-runner",
+      "site-404-map-runner",
+      "site-crawler",
+      "sitemap_runner",
+      "stale-content-auditor-runner",
+      "todo-scanner-runner",
+      "todo-summary-runner",
+      "topic-cluster-builder-runner",
+      "topics-map-runner",
+      "trigger-all-and-commit",
+      "ui-enhancer",
+      "ultrafast-front-orchestrator",
+      "ultrafast-orchestrator",
+      "unused-media-scanner"
     ]
   },
   "monitoring": {
-    "enabled": true,
-    "reportInterval": 300000,
-    "alertThreshold": 0.8,
-    "logRetention": 30,
-    "metrics": {
-      "enabled": true,
-      "collectSystemMetrics": true,
-      "collectProcessMetrics": true,
-      "collectDeploymentMetrics": true
-    },
-    "alerts": {
-      "enabled": true,
-      "channels": ["log", "console"],
-      "criticalThreshold": 0.5,
-      "warningThreshold": 0.8
+    "healthCheckInterval": 300000,
+    "alertThreshold": 3,
+    "logRotation": true,
+    "performanceMetrics": true,
+    "errorTracking": true,
+    "autoRecovery": true,
+    "loadBalancing": true,
+    "notifications": {
+      "enabled": false,
+      "email": "",
+      "webhook": "",
+      "slack": ""
     }
   },
-  "redundancy": {
-    "enabled": true,
-    "failoverEnabled": true,
-    "maxConcurrentChecks": 3,
-    "checkTimeout": 60000,
-    "retryAttempts": 3,
-    "retryDelay": 10000,
-    "circuitBreaker": {
-      "enabled": true,
-      "failureThreshold": 5,
-      "recoveryTimeout": 300000
+  "logging": {
+    "level": "INFO",
+    "maxSize": "10MB",
+    "maxFiles": 30,
+    "compress": true,
+    "directory": "automation/logs",
+    "files": {
+      "main": "ultimate-redundancy.log",
+      "pm2": "pm2-redundancy.log",
+      "github": "github-redundancy.log",
+      "netlify": "netlify-redundancy.log",
+      "health": "health-monitor.log"
     }
   },
-  "notifications": {
-    "enabled": false,
-    "providers": {
-      "email": {
-        "enabled": false,
-        "smtp": {
-          "host": "",
-          "port": 587,
-          "secure": false,
-          "auth": {
-            "user": "",
-            "pass": ""
-          }
-        },
-        "recipients": []
-      },
-      "slack": {
-        "enabled": false,
-        "webhook": "",
-        "channel": ""
-      },
-      "discord": {
-        "enabled": false,
-        "webhook": ""
-      }
+  "recovery": {
+    "autoRestart": true,
+    "maxRestartAttempts": 5,
+    "restartDelay": 10000,
+    "escalationDelay": 30000,
+    "fallbackStrategies": [
+      "restart_process",
+      "restart_ecosystem",
+      "regenerate_manifest",
+      "restore_backup",
+      "manual_intervention"
+    ]
+  },
+  "backup": {
+    "enabled": true,
+    "interval": "1h",
+    "retention": "7d",
+    "compression": true,
+    "locations": [
+      "automation/backups",
+      ".github/workflows/backups"
+    ]
+  },
+  "security": {
+    "validateScripts": true,
+    "checkPermissions": true,
+    "auditDependencies": true,
+    "scanVulnerabilities": true,
+    "rateLimiting": {
+      "enabled": true,
+      "maxRequests": 100,
+      "windowMs": 60000
     }
   }
 }
