@@ -281,7 +281,15 @@
     "cloud:advertise": "node automation/cloud-content-advertiser.cjs",
     "cloud:continuous": "node scripts/continuous-cloud-agents.cjs",
     "gh:trigger": "node scripts/trigger-workflows.cjs",
-    "gh:auto-heal": "node scripts/workflows-auto-healer.cjs && git add .github/workflows && git commit -m 'ci(auto-heal): normalize workflows [skip ci]' || true && git push origin HEAD"
+    "gh:auto-heal": "node scripts/workflows-auto-healer.cjs && git add .github/workflows && git commit -m 'ci(auto-heal): normalize workflows [skip ci]' || true && git push origin HEAD",
+    "redundancy:start": "cd automation/redundancy && chmod +x start-redundancy-system.sh && ./start-redundancy-system.sh",
+    "redundancy:stop": "cd automation/redundancy && chmod +x stop-redundancy-system.sh && ./stop-redundancy-system.sh",
+    "redundancy:status": "cd automation/redundancy && ./start-redundancy-system.sh status",
+    "redundancy:pm2": "node automation/redundancy/pm2-redundancy-manager.cjs",
+    "redundancy:github": "node automation/redundancy/github-actions-redundancy-manager.cjs",
+    "redundancy:netlify": "node automation/redundancy/netlify-functions-redundancy-manager.cjs",
+    "redundancy:master": "node automation/redundancy/master-redundancy-orchestrator.cjs",
+    "redundancy:report": "node automation/redundancy/master-redundancy-orchestrator.cjs report"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
@@ -310,7 +318,7 @@
     "import-fresh": "^3.3.1",
     "jsdom": "^24.1.0",
     "lucide-react": "^0.536.0",
-    "next": "14.2.5",
+    "next": "^14.2.32",
     "node-cron": "^4.2.1",
     "openai": "^5.11.0",
     "path": "^0.12.7",
