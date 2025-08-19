@@ -1,19 +1,11 @@
 # marketing-sync Report
 
-<<<<<<< HEAD
-Generated: 2025-08-19T16:38:29.154Z
-=======
-Generated: 2025-08-19T16:21:14.875Z
->>>>>>> cursor/automate-automation-redundancy-and-build-improvement-a895
+Generated: 2025-08-19T18:01:59.735Z
 
 ## Status
 - Task: marketing-sync
 - Status: Skipped/Failed
-<<<<<<< HEAD
-- Timestamp: 2025-08-19T16:38:29.154Z
-=======
-- Timestamp: 2025-08-19T16:21:14.875Z
->>>>>>> cursor/automate-automation-redundancy-and-build-improvement-a895
+- Timestamp: 2025-08-19T18:01:59.735Z
 
 ## Actions
 - linkedin: skipped
