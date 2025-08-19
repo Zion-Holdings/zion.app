@@ -130,8 +130,8 @@ export default function HomePage() {
                   <h3 className="text-lg font-bold mb-4 text-cyan-400">Company</h3>
                   <ul className="space-y-2 text-white/70">
                     <li><a href="/about" className="hover:text-cyan-400 transition-colors">About Us</a></li>
-                    <li><a href="/news" className="hover:text-cyan-400 transition-colors">News</a></li>
-                    <li><a href="/events" className="hover:text-cyan-400 transition-colors">Events</a></li>
+                                    <li><a href="/insights" className="hover:text-cyan-400 transition-colors">Insights</a></li>
+                <li><a href="/case-studies" className="hover:text-cyan-400 transition-colors">Case Studies</a></li>
                     <li><a href="/contact" className="hover:text-cyan-400 transition-colors">Contact</a></li>
                   </ul>
                 </div>
@@ -147,7 +147,7 @@ export default function HomePage() {
                 <div>
                   <h3 className="text-lg font-bold mb-4 text-green-400">Resources</h3>
                   <ul className="space-y-2 text-white/70">
-                    <li><a href="/blog" className="hover:text-green-400 transition-colors">Blog</a></li>
+                    <li><a href="/insights" className="hover:text-green-400 transition-colors">Insights</a></li>
                     <li><a href="/reports" className="hover:text-green-400 transition-colors">Reports</a></li>
                     <li><a href="/api-documentation" className="hover:text-green-400 transition-colors">API Docs</a></li>
                     <li><a href="/component-library" className="hover:text-green-400 transition-colors">Components</a></li>
