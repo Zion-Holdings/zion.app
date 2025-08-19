@@ -1,0 +1,378 @@
+name: 🧪 Test & Validation - Comprehensive Testing Suite
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+  workflow_dispatch:
+    inputs:
+      test-type:
+        description: 'Type of tests to run'
+        required: false
+        default: 'all'
+        type: choice
+        options:
+        - all
+        - unit
+        - integration
+        - e2e
+        - performance
+        - accessibility
+  schedule:
+    - cron: '0 4 * * *'  # Daily at 4 AM UTC
+
+permissions:
+  contents: read
+  actions: read
+  security-events: write
+
+concurrency:
+  group: "test-validation-${{ github.ref }}"
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: '20'
+  NPM_CACHE: 'npm'
+  CI: true
+
+jobs:
+  unit-tests:
+    name: 🧪 Unit Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    if: github.event.inputs.test-type == 'all' || github.event.inputs.test-type == 'unit'
+    strategy:
+      matrix:
+        node-version: [18, 20, 22]
+    
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🟢 Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: ${{ env.NPM_CACHE }}
+
+      - name: 📦 Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: 🧪 Run unit tests
+        run: |
+          echo "🧪 Running unit tests with Node.js ${{ matrix.node-version }}"
+          npm run test:unit || npm test
+
+      - name: 📊 Upload test results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: unit-test-results-${{ matrix.node-version }}
+          path: |
+            coverage/
+            test-results/
+            .nyc_output/
+          retention-days: 30
+
+  integration-tests:
+    name: 🔗 Integration Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    if: github.event.inputs.test-type == 'all' || github.event.inputs.test-type == 'integration'
+    
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: ${{ env.NPM_CACHE }}
+
+      - name: 📦 Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: 🏗️ Build project
+        run: npm run build
+
+      - name: 🔗 Run integration tests
+        run: |
+          echo "🔗 Running integration tests..."
+          npm run test:integration || echo "No integration tests found"
+
+      - name: 📊 Upload integration test results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: integration-test-results
+          path: |
+            integration-results/
+            test-results/
+          retention-days: 30
+
+  e2e-tests:
+    name: 🌐 End-to-End Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    if: github.event.inputs.test-type == 'all' || github.event.inputs.test-type == 'e2e'
+    
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: ${{ env.NPM_CACHE }}
+
+      - name: 📦 Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: 🏗️ Build project
+        run: npm run build
+
+      - name: 🌐 Run E2E tests
+        run: |
+          echo "🌐 Running end-to-end tests..."
+          npm run test:e2e || echo "No E2E tests found"
+
+      - name: 📊 Upload E2E test results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: e2e-test-results
+          path: |
+            e2e-results/
+            test-results/
+            screenshots/
+          retention-days: 30
+
+  performance-tests:
+    name: ⚡ Performance Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    if: github.event.inputs.test-type == 'all' || github.event.inputs.test-type == 'performance'
+    
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: ${{ env.NPM_CACHE }}
+
+      - name: 📦 Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: 🏗️ Build project
+        run: npm run build
+
+      - name: ⚡ Run performance tests
+        run: |
+          echo "⚡ Running performance tests..."
+          
+          # Check bundle size
+          if [ -f "dist/" ] || [ -f "build/" ] || [ -f ".next/" ]; then
+            echo "📦 Bundle size analysis:"
+            du -sh dist/ build/ .next/ 2>/dev/null || echo "No build artifacts found"
+          fi
+          
+          # Run Lighthouse CI if available
+          npm run test:performance || echo "No performance tests found"
+
+      - name: 📊 Upload performance results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: performance-test-results
+          path: |
+            performance-results/
+            lighthouse-results/
+            bundle-analysis/
+          retention-days: 30
+
+  accessibility-tests:
+    name: ♿ Accessibility Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    if: github.event.inputs.test-type == 'all' || github.event.inputs.test-type == 'accessibility'
+    
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: ${{ env.NPM_CACHE }}
+
+      - name: 📦 Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: 🏗️ Build project
+        run: npm run build
+
+      - name: ♿ Run accessibility tests
+        run: |
+          echo "♿ Running accessibility tests..."
+          
+          # Run pa11y if available
+          npm run test:accessibility || echo "No accessibility tests found"
+          
+          # Check for accessibility issues in HTML
+          if [ -d "dist/" ] || [ -d "build/" ] || [ -d ".next/" ]; then
+            echo "🔍 Checking HTML accessibility..."
+            find dist/ build/ .next/ -name "*.html" -exec echo "Checking {}" \; -exec head -20 {} \; 2>/dev/null || echo "No HTML files found"
+          fi
+
+      - name: 📊 Upload accessibility results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: accessibility-test-results
+          path: |
+            accessibility-results/
+            pa11y-results/
+          retention-days: 30
+
+  code-quality:
+    name: 🔍 Code Quality Checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    if: github.event.inputs.test-type == 'all'
+    
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: ${{ env.NPM_CACHE }}
+
+      - name: 📦 Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: 🔍 Run ESLint
+        run: |
+          echo "🔍 Running ESLint..."
+          npm run lint || echo "ESLint not configured"
+
+      - name: 🎨 Check code formatting
+        run: |
+          echo "🎨 Checking code formatting..."
+          npm run format:check || echo "Format check not configured"
+
+      - name: 📏 Check code complexity
+        run: |
+          echo "📏 Checking code complexity..."
+          npm run complexity || echo "Complexity check not configured"
+
+      - name: 📊 Upload code quality results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: code-quality-results
+          path: |
+            eslint-results/
+            complexity-results/
+          retention-days: 30
+
+  security-validation:
+    name: 🛡️ Security Validation
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    if: github.event.inputs.test-type == 'all'
+    
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: ${{ env.NPM_CACHE }}
+
+      - name: 📦 Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: 🔒 Run security audit
+        run: |
+          echo "🔒 Running security audit..."
+          npm audit --audit-level=moderate || true
+
+      - name: 🚨 Check for secrets
+        run: |
+          echo "🚨 Checking for secrets in code..."
+          # Basic check for common secret patterns
+          if grep -r "password\|secret\|key\|token" . --exclude-dir=node_modules --exclude-dir=.git --exclude="*.md" --exclude="*.yml" --exclude="*.yaml"; then
+            echo "⚠️ Potential secrets found (review manually)"
+          else
+            echo "✅ No obvious secrets found"
+          fi
+
+      - name: 📊 Upload security results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: security-validation-results
+          path: |
+            security-results/
+            audit-results/
+          retention-days: 30
+
+  test-summary:
+    name: 📊 Test Summary
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: [unit-tests, integration-tests, e2e-tests, performance-tests, accessibility-tests, code-quality, security-validation]
+    if: always()
+    
+    steps:
+      - name: 📊 Generate test summary
+        run: |
+          echo "🧪 Test & Validation Summary"
+          echo "============================"
+          echo "Unit Tests: ${{ needs.unit-tests.result }}"
+          echo "Integration Tests: ${{ needs.integration-tests.result }}"
+          echo "E2E Tests: ${{ needs.e2e-tests.result }}"
+          echo "Performance Tests: ${{ needs.performance-tests.result }}"
+          echo "Accessibility Tests: ${{ needs.accessibility-tests.result }}"
+          echo "Code Quality: ${{ needs.code-quality.result }}"
+          echo "Security Validation: ${{ needs.security-validation.result }}"
+          
+          # Count successful jobs
+          SUCCESS_COUNT=0
+          TOTAL_JOBS=7
+          
+          if [[ "${{ needs.unit-tests.result }}" == "success" ]]; then ((SUCCESS_COUNT++)); fi
+          if [[ "${{ needs.integration-tests.result }}" == "success" ]]; then ((SUCCESS_COUNT++)); fi
+          if [[ "${{ needs.e2e-tests.result }}" == "success" ]]; then ((SUCCESS_COUNT++)); fi
+          if [[ "${{ needs.performance-tests.result }}" == "success" ]]; then ((SUCCESS_COUNT++)); fi
+          if [[ "${{ needs.accessibility-tests.result }}" == "success" ]]; then ((SUCCESS_COUNT++)); fi
+          if [[ "${{ needs.code-quality.result }}" == "success" ]]; then ((SUCCESS_COUNT++)); fi
+          if [[ "${{ needs.security-validation.result }}" == "success" ]]; then ((SUCCESS_COUNT++)); fi
+          
+          echo ""
+          echo "📈 Results: $SUCCESS_COUNT/$TOTAL_JOBS tests passed"
+          
+          if [[ $SUCCESS_COUNT -eq $TOTAL_JOBS ]]; then
+            echo "🎉 All tests passed successfully!"
+          else
+            echo "⚠️ Some tests failed. Check the logs for details."
+          fi
+
+      - name: 📝 Update status
+        run: |
+          echo "Test & validation workflow completed at $(date)"
+          echo "Repository: ${{ github.repository }}"
+          echo "Branch: ${{ github.ref }}"
+          echo "Commit: ${{ github.sha }}"

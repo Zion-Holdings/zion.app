@@ -1,0 +1,192 @@
+name: 🚀 CI - Continuous Integration
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */6 * * *'  # Every 6 hours
+
+permissions:
+  contents: read
+  actions: read
+  security-events: write
+
+concurrency:
+  group: "ci-${{ github.ref }}"
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: 🧪 Run Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      matrix:
+        node-version: [18, 20, 22]
+    
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 🟢 Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: 📦 Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: 🧪 Run tests
+        run: npm test
+
+      - name: 📊 Upload test results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-results-${{ matrix.node-version }}
+          path: |
+            test-results/
+            coverage/
+          retention-days: 30
+
+  lint:
+    name: 🔍 Lint & Format Check
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: 📦 Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: 🔍 Run ESLint
+        run: npm run lint
+
+      - name: 🎨 Check code formatting
+        run: npm run format:check
+
+  security:
+    name: 🛡️ Security Scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: 📦 Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: 🔒 Run security audit
+        run: npm audit --audit-level=moderate
+
+      - name: 🚨 Run Snyk security scan
+        uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: --severity-threshold=high
+
+  build:
+    name: 🏗️ Build Check
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    needs: [test, lint, security]
+    
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: 📦 Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: 🏗️ Build project
+        run: npm run build
+
+      - name: 📊 Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-artifacts
+          path: |
+            dist/
+            build/
+            .next/
+          retention-days: 30
+
+  deploy-preview:
+    name: 🌐 Deploy Preview
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    needs: build
+    if: github.event_name == 'pull_request'
+    environment: preview
+    
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: 📦 Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: 🏗️ Build project
+        run: npm run build
+
+      - name: 🚀 Deploy to preview
+        run: |
+          echo "Deploying preview for PR #${{ github.event.number }}"
+          # Add your deployment logic here
+          echo "Preview deployed successfully"
+
+  notify:
+    name: 📢 Notify Results
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: [test, lint, security, build]
+    if: always()
+    
+    steps:
+      - name: 📊 Check job status
+        id: check-status
+        run: |
+          if [[ "${{ needs.test.result }}" == "success" && "${{ needs.lint.result }}" == "success" && "${{ needs.security.result }}" == "success" && "${{ needs.build.result }}" == "success" ]]; then
+            echo "status=✅ All checks passed" >> $GITHUB_OUTPUT
+          else
+            echo "status=❌ Some checks failed" >> $GITHUB_OUTPUT
+          fi
+
+      - name: 📢 Post status
+        run: |
+          echo "${{ steps.check-status.outputs.status }}"
+          echo "CI Pipeline completed for ${{ github.repository }}@${{ github.sha }}"

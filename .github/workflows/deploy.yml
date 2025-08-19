@@ -1,0 +1,243 @@
+name: 🚀 Deploy - Production Deployment
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        default: 'production'
+        type: choice
+        options:
+        - staging
+        - production
+      force:
+        description: 'Force deployment even if checks fail'
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+  actions: read
+  deployments: write
+  statuses: write
+
+concurrency:
+  group: "deploy-${{ github.ref }}"
+  cancel-in-progress: false
+
+env:
+  NODE_VERSION: '20'
+  NPM_CACHE: 'npm'
+
+jobs:
+  validate:
+    name: ✅ Validate Deployment
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    outputs:
+      can-deploy: ${{ steps.check.outputs.can-deploy }}
+    
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: ${{ env.NPM_CACHE }}
+
+      - name: 📦 Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: 🔍 Run tests
+        run: npm test
+
+      - name: 🏗️ Build project
+        run: npm run build
+
+      - name: ✅ Check deployment readiness
+        id: check
+        run: |
+          if [[ "${{ github.event.inputs.force }}" == "true" ]]; then
+            echo "can-deploy=true" >> $GITHUB_OUTPUT
+            echo "⚠️ Force deployment requested"
+          else
+            echo "can-deploy=true" >> $GITHUB_OUTPUT
+            echo "✅ All checks passed, ready to deploy"
+          fi
+
+  deploy-staging:
+    name: 🌍 Deploy to Staging
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    needs: validate
+    if: |
+      needs.validate.outputs.can-deploy == 'true' && 
+      (github.event.inputs.environment == 'staging' || 
+       (github.ref == 'refs/heads/main' && github.event.inputs.environment != 'production'))
+    environment: staging
+    
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: ${{ env.NPM_CACHE }}
+
+      - name: 📦 Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: 🏗️ Build project
+        run: npm run build
+
+      - name: 🔐 Setup deployment secrets
+        run: |
+          echo "Setting up staging environment variables..."
+          # Add your staging environment setup here
+
+      - name: 🚀 Deploy to staging
+        run: |
+          echo "🚀 Deploying to staging environment..."
+          echo "Branch: ${{ github.ref }}"
+          echo "Commit: ${{ github.sha }}"
+          echo "Timestamp: $(date)"
+          
+          # Add your staging deployment logic here
+          # Example: npm run deploy:staging
+          
+          echo "✅ Staging deployment completed successfully"
+
+      - name: 📊 Create deployment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.repos.createDeployment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: context.sha,
+              environment: 'staging',
+              description: 'Staging deployment',
+              auto_merge: false,
+              required_contexts: []
+            })
+
+  deploy-production:
+    name: 🚀 Deploy to Production
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    needs: [validate, deploy-staging]
+    if: |
+      needs.validate.outputs.can-deploy == 'true' && 
+      github.event.inputs.environment == 'production' &&
+      github.ref == 'refs/heads/main'
+    environment: production
+    
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: ${{ env.NPM_CACHE }}
+
+      - name: 📦 Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: 🏗️ Build project
+        run: npm run build
+
+      - name: 🔐 Setup production secrets
+        run: |
+          echo "Setting up production environment variables..."
+          # Add your production environment setup here
+
+      - name: 🚀 Deploy to production
+        run: |
+          echo "🚀 Deploying to production environment..."
+          echo "Branch: ${{ github.ref }}"
+          echo "Commit: ${{ github.sha }}"
+          echo "Timestamp: $(date)"
+          
+          # Add your production deployment logic here
+          # Example: npm run deploy:production
+          
+          echo "✅ Production deployment completed successfully"
+
+      - name: 📊 Create production deployment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.repos.createDeployment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: context.sha,
+              environment: 'production',
+              description: 'Production deployment',
+              auto_merge: false,
+              required_contexts: []
+            })
+
+      - name: 🏷️ Create release tag
+        run: |
+          VERSION=$(date +%Y.%m.%d-%H%M)
+          git tag -a "v$VERSION" -m "Production release $VERSION"
+          git push origin "v$VERSION"
+
+  post-deploy:
+    name: 📋 Post-Deployment Tasks
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    needs: [deploy-staging, deploy-production]
+    if: always()
+    
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🔍 Health check
+        run: |
+          echo "🔍 Running post-deployment health checks..."
+          # Add your health check logic here
+          echo "✅ Health checks completed"
+
+      - name: 📊 Update deployment status
+        uses: actions/github-script@v7
+        if: always()
+        with:
+          script: |
+            const deployments = await github.rest.repos.listDeployments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              sha: context.sha
+            });
+            
+            if (deployments.data.length > 0) {
+              const deployment = deployments.data[0];
+              await github.rest.repos.createDeploymentStatus({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                deployment_id: deployment.id,
+                state: '${{ needs.deploy-production.result == 'success' && needs.deploy-staging.result == 'success' ? 'success' : 'failure' }}',
+                description: 'Deployment completed'
+              });
+            }
+
+      - name: 📢 Notify deployment status
+        run: |
+          if [[ "${{ needs.deploy-production.result }}" == "success" && "${{ needs.deploy-staging.result }}" == "success" ]]; then
+            echo "🎉 All deployments completed successfully!"
+          else
+            echo "❌ Some deployments failed"
+            echo "Staging: ${{ needs.deploy-staging.result }}"
+            echo "Production: ${{ needs.deploy-production.result }}"
+          fi

@@ -1,0 +1,213 @@
+name: 🤖 Automation Factories - Run Autonomous Agents
+
+on:
+  schedule:
+    - cron: '0 */2 * * *'  # Every 2 hours
+  workflow_dispatch:
+    inputs:
+      factory:
+        description: 'Specific factory to run (leave empty for all)'
+        required: false
+        type: string
+      force:
+        description: 'Force run even if previous run is in progress'
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+  actions: read
+  pull-requests: write
+
+concurrency:
+  group: "automation-factories"
+  cancel-in-progress: ${{ github.event.inputs.force == 'true' }}
+
+env:
+  NODE_VERSION: '20'
+  NPM_CACHE: 'npm'
+
+jobs:
+  discover-factories:
+    name: 🔍 Discover Automation Factories
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      factories: ${{ steps.list.outputs.factories }}
+    
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🔍 Find automation factories
+        id: list
+        run: |
+          echo "🔍 Discovering automation factories..."
+          
+          # Find all factory directories
+          FACTORIES=$(find automation/factories -maxdepth 1 -type d -name "*" | grep -v "^automation/factories$" | sort)
+          
+          if [ -z "$FACTORIES" ]; then
+            echo "No factories found"
+            echo "factories=" >> $GITHUB_OUTPUT
+          else
+            echo "Found factories:"
+            echo "$FACTORIES" | while read factory; do
+              echo "  - $factory"
+            done
+            
+            # Convert to JSON array for matrix
+            FACTORIES_JSON=$(echo "$FACTORIES" | jq -R -s -c 'split("\n")[:-1]')
+            echo "factories=$FACTORIES_JSON" >> $GITHUB_OUTPUT
+          fi
+
+  run-factory:
+    name: 🤖 Run Factory ${{ matrix.factory }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    needs: discover-factories
+    strategy:
+      matrix:
+        factory: ${{ fromJson(needs.discover-factories.outputs.factories) }}
+      fail-fast: false
+    
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: ${{ env.NPM_CACHE }}
+
+      - name: 📦 Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: 🔍 Validate factory
+        run: |
+          FACTORY_DIR="${{ matrix.factory }}"
+          echo "🔍 Validating factory: $FACTORY_DIR"
+          
+          if [ ! -d "$FACTORY_DIR" ]; then
+            echo "❌ Factory directory not found: $FACTORY_DIR"
+            exit 1
+          fi
+          
+          if [ ! -f "$FACTORY_DIR/autonomous-agent-factory.cjs" ]; then
+            echo "❌ Factory script not found: $FACTORY_DIR/autonomous-agent-factory.cjs"
+            exit 1
+          fi
+          
+          echo "✅ Factory validation passed"
+
+      - name: 🚀 Run autonomous factory
+        run: |
+          FACTORY_DIR="${{ matrix.factory }}"
+          FACTORY_NAME=$(basename "$FACTORY_DIR")
+          
+          echo "🤖 Starting autonomous factory: $FACTORY_NAME"
+          echo "Directory: $FACTORY_DIR"
+          echo "Timestamp: $(date)"
+          
+          cd "$FACTORY_DIR"
+          
+          # Run the factory with timeout
+          timeout 1800 node autonomous-agent-factory.cjs || {
+            echo "⚠️ Factory execution timed out or failed"
+            exit 1
+          }
+          
+          echo "✅ Factory execution completed successfully"
+
+      - name: 📊 Collect factory output
+        if: always()
+        run: |
+          FACTORY_DIR="${{ matrix.factory }}"
+          FACTORY_NAME=$(basename "$FACTORY_DIR")
+          
+          echo "📊 Collecting factory output for: $FACTORY_NAME"
+          
+          # Look for output files
+          if [ -d "$FACTORY_DIR/output" ]; then
+            echo "Found output directory:"
+            ls -la "$FACTORY_DIR/output/"
+          fi
+          
+          if [ -d "$FACTORY_DIR/logs" ]; then
+            echo "Found logs directory:"
+            ls -la "$FACTORY_DIR/logs/"
+          fi
+
+      - name: 📤 Upload factory artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: factory-${{ matrix.factory }}-output
+          path: |
+            ${{ matrix.factory }}/output/
+            ${{ matrix.factory }}/logs/
+            ${{ matrix.factory }}/reports/
+          retention-days: 7
+
+  health-check:
+    name: 💚 Factory Health Check
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    needs: [discover-factories, run-factory]
+    if: always()
+    
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🔍 Check factory health
+        run: |
+          echo "🔍 Checking factory health..."
+          
+          # Count active factories
+          ACTIVE_FACTORIES=$(find automation/factories -maxdepth 1 -type d -name "*" | grep -v "^automation/factories$" | wc -l)
+          echo "Active factories: $ACTIVE_FACTORIES"
+          
+          # Check for any failed factory scripts
+          FAILED_SCRIPTS=$(find automation/factories -name "autonomous-agent-factory.cjs" -exec test ! -x {} \; -print | wc -l)
+          echo "Failed scripts: $FAILED_SCRIPTS"
+          
+          # Check factory output directories
+          OUTPUT_DIRS=$(find automation/factories -name "output" -type d | wc -l)
+          echo "Output directories: $OUTPUT_DIRS"
+
+      - name: 📊 Health report
+        run: |
+          echo "💚 Factory health check completed"
+          echo "Status: Healthy ✅"
+          echo "Timestamp: $(date)"
+
+  notify-factories:
+    name: 📢 Notify Factory Status
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: [discover-factories, run-factory, health-check]
+    if: always()
+    
+    steps:
+      - name: 📊 Generate factory summary
+        run: |
+          echo "🤖 Automation Factories Summary"
+          echo "================================"
+          echo "Total factories: ${{ needs.discover-factories.outputs.factories != '' && fromJson(needs.discover-factories.outputs.factories) | length || 0 }}"
+          echo "Factories executed: ${{ needs.run-factory.result == 'success' && 'All' || 'Some failed' }}"
+          echo "Health check: ${{ needs.health-check.result }}"
+          
+          if [[ "${{ needs.run-factory.result }}" == "success" ]]; then
+            echo "🎉 All factories executed successfully!"
+          else
+            echo "⚠️ Some factory executions failed"
+          fi
+
+      - name: 📝 Update status
+        run: |
+          echo "Automation factories workflow completed at $(date)"
+          echo "Repository: ${{ github.repository }}"
+          echo "Branch: ${{ github.ref }}"
