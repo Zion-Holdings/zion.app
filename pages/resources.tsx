@@ -54,6 +54,22 @@ export default function ResourcesPage() {
       downloadUrl: '#',
       pages: '28',
       category: 'Business'
+    },
+    {
+      id: 'quantum-computing-automation',
+      title: 'Quantum Computing in Automation: A Practical Guide',
+      description: 'Understanding how quantum computing will revolutionize automation and optimization systems.',
+      downloadUrl: '#',
+      pages: '52',
+      category: 'Technology'
+    },
+    {
+      id: 'edge-computing-implementation',
+      title: 'Edge Computing Implementation Strategy',
+      description: 'Comprehensive guide to implementing edge computing for real-time automation and IoT systems.',
+      downloadUrl: '#',
+      pages: '38',
+      category: 'Technology'
     }
   ];
 
@@ -78,6 +94,27 @@ export default function ResourcesPage() {
       description: 'Compare your automation performance against industry standards.',
       type: 'Analytics Tool',
       estimatedTime: '20 minutes'
+    },
+    {
+      id: 'quantum-readiness-assessment',
+      title: 'Quantum Computing Readiness Assessment',
+      description: 'Evaluate your organization\'s preparedness for quantum computing integration.',
+      type: 'Assessment Tool',
+      estimatedTime: '25 minutes'
+    },
+    {
+      id: 'edge-computing-calculator',
+      title: 'Edge Computing ROI Calculator',
+      description: 'Calculate the return on investment for edge computing implementation projects.',
+      type: 'Financial Tool',
+      estimatedTime: '20 minutes'
+    },
+    {
+      id: 'security-compliance-checker',
+      title: 'Security & Compliance Checker',
+      description: 'Assess your current security posture and compliance with industry standards.',
+      type: 'Security Tool',
+      estimatedTime: '35 minutes'
     }
   ];
 
