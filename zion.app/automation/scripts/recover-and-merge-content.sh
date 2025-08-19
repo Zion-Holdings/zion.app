@@ -9,7 +9,7 @@ set -euo pipefail
 # - A best-effort merged view with conflict sidecars
 # - A human-readable and machine-readable summary
 #
-# Requirements: git, rsync
+# Requirements: git
 #
 # Example:
 #   automation/scripts/recover-and-merge-content.sh \
@@ -65,7 +65,7 @@ copy_preserving_path() {
   local dest_dir
   dest_dir="${dest_root}/$(dirname -- "$rel_path")"
   mkdir -p -- "$dest_dir"
-  rsync -a -- "$source_root/$rel_path" "$dest_dir/"
+  cp -f -- "$source_root/$rel_path" "$dest_dir/"
 }
 
 log() {
@@ -99,7 +99,6 @@ while [[ $# -gt 0 ]]; do
 done
 
 ensure_tool git
-ensure_tool rsync
 
 # Ensure we're inside a git repo
 if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
@@ -311,4 +310,3 @@ fi
 log "\nRecovery complete. Artifacts under: ${SESSION_DIR}"
 
 exit 0
-
