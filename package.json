@@ -319,15 +319,7 @@
     "automation:comprehensive:status": "node automation/launch-all-automation.cjs status",
     "automation:comprehensive:health-check": "node automation/launch-all-automation.cjs health-check",
     "automation:comprehensive:recover": "node automation/launch-all-automation.cjs recover",
-    "automation:comprehensive:monitor": "node automation/launch-all-automation.cjs monitor",
-    "redundancy:ultimate:start": "bash automation/start-ultimate-redundancy.sh start",
-    "redundancy:ultimate:stop": "bash automation/start-ultimate-redundancy.sh stop",
-    "redundancy:ultimate:restart": "bash automation/start-ultimate-redundancy.sh restart",
-    "redundancy:ultimate:status": "bash automation/start-ultimate-redundancy.sh status",
-    "redundancy:ultimate:logs": "bash automation/start-ultimate-redundancy.sh logs",
-    "redundancy:ultimate:health-check": "bash automation/start-ultimate-redundancy.sh health-check",
-    "redundancy:ultimate:recover": "bash automation/start-ultimate-redundancy.sh recover",
-    "redundancy:ultimate:system": "node automation/ultimate-redundancy-automation-system.cjs"
+    "automation:comprehensive:monitor": "node automation/launch-all-automation.cjs monitor"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
@@ -347,6 +339,7 @@
     "child_process": "^1.0.2",
     "chokidar": "^4.0.3",
     "cron-parser": "^5.3.0",
+    "dotenv": "^17.2.1",
     "events": "^3.3.0",
     "framer-motion": "^6.5.1",
     "fs": "^0.0.1-security",

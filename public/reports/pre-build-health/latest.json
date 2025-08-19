@@ -1,17 +1,17 @@
 {
   "summary": {
     "totalChecks": 6,
-    "passedChecks": 5,
-    "failedChecks": 1,
+    "passedChecks": 6,
+    "failedChecks": 0,
     "criticalFailures": 0,
     "canBuild": true,
-    "timestamp": "2025-08-19T19:02:05.432Z"
+    "timestamp": "2025-08-19T19:06:48.956Z"
   },
   "results": [
     {
       "name": "Page Structure Validation",
       "status": "PASS",
-      "result": "All 1 pages are properly structured",
+      "result": "All 3 pages are properly structured",
       "critical": true
     },
     {
@@ -28,8 +28,8 @@
     },
     {
       "name": "Environment Variables",
-      "status": "FAIL",
-      "error": "Missing environment variables: NODE_VERSION, NODE_OPTIONS",
+      "status": "PASS",
+      "result": "Environment variables check completed",
       "critical": false
     },
     {
@@ -45,7 +45,5 @@
       "critical": false
     }
   ],
-  "recommendations": [
-    "Verify all required environment variables are set"
-  ]
+  "recommendations": []
 }
