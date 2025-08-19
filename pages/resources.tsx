@@ -54,6 +54,30 @@ export default function ResourcesPage() {
       downloadUrl: '#',
       pages: '28',
       category: 'Business'
+    },
+    {
+      id: 'cloud-native-automation',
+      title: 'Cloud-Native Automation Strategies',
+      description: 'Best practices for building scalable, resilient automation systems in the cloud.',
+      downloadUrl: '#',
+      pages: '38',
+      category: 'Technology'
+    },
+    {
+      id: 'performance-optimization-guide',
+      title: 'Performance Optimization in AI Systems',
+      description: 'Comprehensive guide to optimizing AI model performance and system efficiency.',
+      downloadUrl: '#',
+      pages: '42',
+      category: 'Performance'
+    },
+    {
+      id: 'human-ai-collaboration',
+      title: 'Human-AI Collaboration Framework',
+      description: 'Designing effective collaboration between human workers and AI systems.',
+      downloadUrl: '#',
+      pages: '35',
+      category: 'Workplace'
     }
   ];
 
@@ -78,6 +102,58 @@ export default function ResourcesPage() {
       description: 'Compare your automation performance against industry standards.',
       type: 'Analytics Tool',
       estimatedTime: '20 minutes'
+    },
+    {
+      id: 'cost-optimization-calculator',
+      title: 'Cost Optimization Calculator',
+      description: 'Calculate potential cost savings from automation initiatives.',
+      type: 'Financial Tool',
+      estimatedTime: '25 minutes'
+    },
+    {
+      id: 'security-assessment',
+      title: 'AI Security Assessment',
+      description: 'Evaluate security risks and compliance requirements for AI systems.',
+      type: 'Security Tool',
+      estimatedTime: '35 minutes'
+    },
+    {
+      id: 'scalability-planner',
+      title: 'Scalability Planning Tool',
+      description: 'Plan and design scalable automation architectures.',
+      type: 'Architecture Tool',
+      estimatedTime: '40 minutes'
+    }
+  ];
+
+  const additionalResources = [
+    {
+      id: 'webinars',
+      title: 'Webinars & Events',
+      description: 'Live and recorded webinars on AI automation topics',
+      icon: '🎥',
+      color: 'from-blue-400 to-indigo-500'
+    },
+    {
+      id: 'templates',
+      title: 'Implementation Templates',
+      description: 'Ready-to-use templates for common automation scenarios',
+      icon: '📋',
+      color: 'from-green-400 to-teal-500'
+    },
+    {
+      id: 'code-samples',
+      title: 'Code Samples & Libraries',
+      description: 'Open-source code examples and reusable components',
+      icon: '💻',
+      color: 'from-purple-400 to-pink-500'
+    },
+    {
+      id: 'training-materials',
+      title: 'Training Materials',
+      description: 'Educational content and learning resources',
+      icon: '🎓',
+      color: 'from-yellow-400 to-orange-500'
     }
   ];
 
@@ -195,6 +271,29 @@ export default function ResourcesPage() {
               </div>
             </section>
             
+            {/* Additional Resources Section */}
+            <section className="mb-20">
+              <h2 className="text-3xl font-bold mb-8 text-center text-white">Additional Resources</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {additionalResources.map((resource) => (
+                  <div key={resource.id} className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300 text-center">
+                    <div className={`w-16 h-16 bg-gradient-to-br ${resource.color} rounded-lg flex items-center justify-center mx-auto mb-4`}>
+                      <span className="text-2xl">{resource.icon}</span>
+                    </div>
+                    <h3 className="text-lg font-semibold mb-2 text-white">{resource.title}</h3>
+                    <p className="text-white/80 text-sm">{resource.description}</p>
+                    <Link 
+                      href={`/resources/${resource.id}`}
+                      className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors font-semibold text-sm mt-4"
+                    >
+                      Explore
+                      <span aria-hidden>→</span>
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            </section>
+
             {/* Newsletter Signup */}
             <section className="text-center">
               <div className="bg-gradient-to-r from-cyan-500/10 to-fuchsia-500/10 rounded-2xl p-8 border border-cyan-500/20">

@@ -93,6 +93,96 @@ export default function CaseStudiesPage() {
       duration: '10 months',
       teamSize: '10 data scientists + 5 engineers',
       featured: false
+    },
+    {
+      id: 'supply-chain-automation',
+      title: 'Supply Chain Automation & Optimization',
+      company: 'Retail Chain',
+      industry: 'Retail',
+      challenge: 'Complex supply chain management, inventory inefficiencies, and delivery delays',
+      solution: 'Implemented AI-driven supply chain optimization with predictive inventory management',
+      results: [
+        '45% reduction in inventory costs',
+        '70% improvement in delivery accuracy',
+        '30% faster order fulfillment',
+        'Real-time supply chain visibility'
+      ],
+      technologies: ['Supply Chain Optimization', 'Predictive Analytics', 'IoT Tracking', 'Machine Learning'],
+      duration: '7 months',
+      teamSize: '7 engineers + 3 supply chain specialists',
+      featured: false
+    },
+    {
+      id: 'quality-assurance-automation',
+      title: 'Automated Quality Assurance System',
+      company: 'Software Development Company',
+      industry: 'Technology',
+      challenge: 'Manual testing processes causing delays and inconsistent quality',
+      solution: 'Built comprehensive automated testing framework with AI-powered test case generation',
+      results: [
+        '90% reduction in testing time',
+        '95% improvement in bug detection',
+        'Continuous testing integration',
+        'Zero regression issues in production'
+      ],
+      technologies: ['Automated Testing', 'AI Test Generation', 'CI/CD Integration', 'Quality Metrics'],
+      duration: '5 months',
+      teamSize: '5 QA engineers + 3 developers',
+      featured: false
+    },
+    {
+      id: 'energy-optimization',
+      title: 'Smart Energy Management System',
+      company: 'Industrial Facility',
+      industry: 'Energy',
+      challenge: 'High energy costs and inefficient power consumption patterns',
+      solution: 'Deployed AI-powered energy optimization system with real-time monitoring and control',
+      results: [
+        '35% reduction in energy costs',
+        'Real-time consumption monitoring',
+        'Predictive maintenance alerts',
+        'Automated energy optimization'
+      ],
+      technologies: ['IoT Sensors', 'Machine Learning', 'Energy Analytics', 'Smart Controls'],
+      duration: '6 months',
+      teamSize: '6 engineers + 2 energy specialists',
+      featured: false
+    },
+    {
+      id: 'fraud-detection-system',
+      title: 'AI-Powered Fraud Detection',
+      company: 'Payment Processor',
+      industry: 'Financial Services',
+      challenge: 'Increasing fraud attempts and manual review processes',
+      solution: 'Built real-time fraud detection system using machine learning and behavioral analysis',
+      results: [
+        '95% fraud detection accuracy',
+        '80% reduction in false positives',
+        'Real-time transaction monitoring',
+        'Automated fraud prevention'
+      ],
+      technologies: ['Machine Learning', 'Behavioral Analysis', 'Real-time Processing', 'Risk Scoring'],
+      duration: '8 months',
+      teamSize: '8 engineers + 4 security specialists',
+      featured: false
+    },
+    {
+      id: 'predictive-maintenance',
+      title: 'Predictive Maintenance Platform',
+      company: 'Transportation Company',
+      industry: 'Transportation',
+      challenge: 'Unplanned equipment failures causing service disruptions and high maintenance costs',
+      solution: 'Implemented IoT-based predictive maintenance system with AI-powered failure prediction',
+      results: [
+        '70% reduction in unplanned downtime',
+        '50% decrease in maintenance costs',
+        'Predictive failure alerts',
+        'Optimized maintenance schedules'
+      ],
+      technologies: ['IoT Sensors', 'Predictive Analytics', 'Machine Learning', 'Real-time Monitoring'],
+      duration: '9 months',
+      teamSize: '9 engineers + 3 maintenance specialists',
+      featured: false
     }
   ];
 
