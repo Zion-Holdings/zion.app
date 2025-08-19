@@ -199,12 +199,12 @@ export default function BlogPage() {
                   <p className="text-white/80 text-sm">Have questions? We'd love to hear from you</p>
                 </a>
                 
-                <a href="/" className="bg-white/10 rounded-xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300 text-center group">
+                <a href="/case-studies" className="bg-white/10 rounded-xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300 text-center group">
                   <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-indigo-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <span className="text-2xl">🚀</span>
+                    <span className="text-2xl">📊</span>
                   </div>
-                  <h3 className="text-lg font-semibold text-purple-400 mb-2">Platform Demo</h3>
-                  <p className="text-white/80 text-sm">Experience our autonomous technology firsthand</p>
+                  <h3 className="text-lg font-semibold text-purple-400 mb-2">Case Studies</h3>
+                  <p className="text-white/80 text-sm">See real-world results from our autonomous systems</p>
                 </a>
               </div>
             </section>
