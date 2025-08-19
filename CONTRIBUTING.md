@@ -72,7 +72,7 @@ We follow these coding standards:
 
 ## First Steps
 
-1. Open your browser and navigate to `http://localhost:3000`
+1. Open your browser and navigate to `https://bolt.new.zion.app`
 2. Explore the application features
 3. Check the documentation for more details
 4. Start contributing to the project

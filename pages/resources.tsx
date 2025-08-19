@@ -35,7 +35,7 @@ export default function ResourcesPage() {
       id: 'autonomous-systems-guide',
       title: 'The Complete Guide to Autonomous Systems',
       description: 'A comprehensive overview of autonomous technology, implementation strategies, and best practices.',
-      downloadUrl: '#',
+      downloadUrl: 'https://github.com/Zion-Holdings/zion.app/blob/main/README.md',
       pages: '45',
       category: 'Technology'
     },
@@ -43,7 +43,7 @@ export default function ResourcesPage() {
       id: 'ai-ethics-framework',
       title: 'AI Ethics Framework for Business',
       description: 'Establishing ethical guidelines for AI implementation in enterprise environments.',
-      downloadUrl: '#',
+      downloadUrl: 'https://github.com/Zion-Holdings/zion.app/blob/main/SECURITY.md',
       pages: '32',
       category: 'Ethics'
     },
@@ -51,7 +51,7 @@ export default function ResourcesPage() {
       id: 'automation-roi-calculator',
       title: 'Automation ROI Calculator Guide',
       description: 'How to calculate and maximize return on investment for automation initiatives.',
-      downloadUrl: '#',
+      downloadUrl: 'https://github.com/Zion-Holdings/zion.app/blob/main/PERFORMANCE.md',
       pages: '28',
       category: 'Business'
     }
