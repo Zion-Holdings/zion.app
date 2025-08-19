@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: npm ci
+      - name: Build project
+        run: npm run build
+      - name: Verify build output
+        run: |
+          if [ ! -d dist ]; then
+            echo "Build failed: dist folder not found"
+            exit 1
+          fi
+      - run: npm run test -- --coverage
+      - run: npm run cypress:run
+      - uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage
+      - name: Upload build (optional)
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build
+          path: |
+            build
+            dist
