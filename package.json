@@ -289,7 +289,12 @@
     "redundancy:github": "node automation/redundancy/github-actions-redundancy-manager.cjs",
     "redundancy:netlify": "node automation/redundancy/netlify-functions-redundancy-manager.cjs",
     "redundancy:master": "node automation/redundancy/master-redundancy-orchestrator.cjs",
-    "redundancy:report": "node automation/redundancy/master-redundancy-orchestrator.cjs report"
+    "redundancy:report": "node automation/redundancy/master-redundancy-orchestrator.cjs report",
+    "redundancy:comprehensive:start": "cd automation/redundancy && chmod +x start-comprehensive-redundancy.sh && ./start-comprehensive-redundancy.sh",
+    "redundancy:comprehensive:stop": "cd automation/redundancy && chmod +x stop-comprehensive-redundancy.sh && ./stop-comprehensive-redundancy.sh",
+    "redundancy:comprehensive:status": "cd automation/redundancy && ./start-comprehensive-redundancy.sh status",
+    "redundancy:comprehensive:restart": "cd automation/redundancy && ./start-comprehensive-redundancy.sh restart",
+    "redundancy:comprehensive:manager": "node automation/redundancy/comprehensive-redundancy-manager.cjs"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
