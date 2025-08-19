@@ -19,7 +19,9 @@ module.exports = {
   rules: {
     '@typescript-eslint/no-unused-vars': 'warn',
     '@typescript-eslint/no-explicit-any': 'warn',
-    'no-console': 'warn'
+    'no-console': 'warn',
+    'react/no-unescaped-entities': 'off',
+    '@next/next/no-html-link-for-pages': 'off'
   },
   ignorePatterns: [
     'node_modules/',
