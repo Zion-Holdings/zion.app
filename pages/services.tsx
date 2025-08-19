@@ -5,18 +5,11 @@ export default function ServicesPage() {
   return (
     <>
       <Head>
-<<<<<<< HEAD
-        <title>Services | Zion Tech Group - AI & Automation Solutions</title>
-        <meta name="description" content="Explore Zion Tech Group's comprehensive range of AI development, automation, and technology consulting services." />
-        <meta property="og:title" content="Services - Zion Tech Group" />
-        <meta property="og:description" content="AI development, automation, and technology consulting services." />
-        <meta name="twitter:card" content="summary_large_image" />
-=======
         <title>Services | Zion Tech Group - Autonomous Innovation Solutions</title>
         <meta name="description" content="Discover Zion Tech Group's comprehensive range of autonomous technology services including AI automation, system optimization, and intelligent infrastructure solutions." />
         <meta property="og:title" content="Services | Zion Tech Group - Autonomous Innovation Solutions" />
         <meta property="og:description" content="Discover Zion Tech Group's comprehensive range of autonomous technology services including AI automation, system optimization, and intelligent infrastructure solutions." />
->>>>>>> cursor/update-content-and-fix-links-74fc
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
       
       <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-950 text-white">
@@ -27,7 +20,7 @@ export default function ServicesPage() {
               Our Services
             </h1>
             <p className="text-xl text-white/80 max-w-3xl mx-auto">
-              Comprehensive AI and automation solutions designed to transform your business and drive innovation
+              Comprehensive autonomous technology solutions designed to transform your business and drive innovation
             </p>
           </section>
 
@@ -398,8 +391,69 @@ export default function ServicesPage() {
                 </div>
               </div>
             </section>
+
+            {/* Additional Services */}
+            <section className="mb-20">
+              <h2 className="text-3xl font-bold text-center mb-12 text-white/90">Specialized Solutions</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:border-yellow-400/30 transition-all duration-300">
+                  <div className="text-4xl mb-4">🎯</div>
+                  <h3 className="text-2xl font-bold mb-4 text-yellow-400">Content Automation</h3>
+                  <p className="text-white/70 mb-6">
+                    AI-powered content generation systems that create high-quality, engaging content automatically.
+                  </p>
+                  <ul className="space-y-2 text-sm text-white/60">
+                    <li>• Blog Post Generation</li>
+                    <li>• Social Media Content</li>
+                    <li>• Marketing Copy</li>
+                    <li>• Technical Documentation</li>
+                  </ul>
+                </div>
+
+                <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:border-orange-400/30 transition-all duration-300">
+                  <div className="text-4xl mb-4">🔒</div>
+                  <h3 className="text-2xl font-bold mb-4 text-orange-400">Security Automation</h3>
+                  <p className="text-white/70 mb-6">
+                    Intelligent security systems that automatically detect and respond to threats in real-time.
+                  </p>
+                  <ul className="space-y-2 text-sm text-white/60">
+                    <li>• Threat Detection</li>
+                    <li>• Automated Response</li>
+                    <li>• Compliance Monitoring</li>
+                    <li>• Security Auditing</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            {/* Success Metrics */}
+            <section className="mb-20">
+              <h2 className="text-3xl font-bold text-center mb-12 text-white/90">Success Metrics</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="text-center bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20">
+                  <div className="text-4xl font-bold text-cyan-400 mb-2">99.9%</div>
+                  <h3 className="text-xl font-semibold mb-2 text-white">Uptime</h3>
+                  <p className="text-white/80 text-sm">
+                    Guaranteed system availability with autonomous monitoring and recovery.
+                  </p>
+                </div>
+                <div className="text-center bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20">
+                  <div className="text-4xl font-bold text-fuchsia-400 mb-2">10x</div>
+                  <h3 className="text-xl font-semibold mb-2 text-white">Efficiency Gain</h3>
+                  <p className="text-white/80 text-sm">
+                    Average improvement in operational efficiency for our clients.
+                  </p>
+                </div>
+                <div className="text-center bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20">
+                  <div className="text-4xl font-bold text-green-400 mb-2">24/7</div>
+                  <h3 className="text-xl font-semibold mb-2 text-white">Autonomous Operation</h3>
+                  <p className="text-white/80 text-sm">
+                    Continuous operation without human intervention required.
+                  </p>
+                </div>
+              </div>
+            </section>
           </div>
->>>>>>> cursor/update-content-and-fix-links-74fc
         </main>
       </div>
     </>

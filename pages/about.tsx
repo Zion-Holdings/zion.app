@@ -7,44 +7,16 @@ export default function AboutPage() {
     <>
       <Head>
         <title>About Zion Tech Group | Autonomous Innovation Hub</title>
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <meta name="description" content="Learn about Zion Tech Group's mission to revolutionize technology through autonomous innovation and AI-powered solutions." />
-        <meta property="og:title" content="About Zion Tech Group" />
-        <meta property="og:description" content="Learn about Zion Tech Group's mission and vision." />
-        <meta name="twitter:card" content="summary_large_image" />
-=======
         <meta name="description" content="Learn about Zion Tech Group's mission, vision, and commitment to autonomous innovation and cutting-edge technology solutions." />
         <meta property="og:title" content="About Zion Tech Group | Autonomous Innovation Hub" />
         <meta property="og:description" content="Learn about Zion Tech Group's mission, vision, and commitment to autonomous innovation and cutting-edge technology solutions." />
->>>>>>> cursor/update-content-and-fix-links-74fc
-=======
-        <meta name="description" content="Learn about Zion Tech Group's mission, vision, and autonomous innovation systems." />
-        <meta property="og:title" content="About Zion Tech Group | Autonomous Innovation Hub" />
-        <meta property="og:description" content="Learn about Zion Tech Group's mission, vision, and autonomous innovation systems." />
->>>>>>> 0ae946bee62d031392f0f6f25b15cd207de60919
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
       
       <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-950 text-white">
         <main className="container mx-auto px-6 py-12">
 <<<<<<< HEAD
 <<<<<<< HEAD
-          <section className="text-center mb-16">
-            <h1 className="text-5xl font-extrabold mb-6 bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent">
-              About Zion Tech Group
-            </h1>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto">
-              Pioneering the future of autonomous technology and AI-driven innovation
-            </p>
-          </section>
-
-          <section className="mx-auto max-w-6xl">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8">
-                <h2 className="text-3xl font-bold mb-6 text-cyan-400">Our Mission</h2>
-                <p className="text-lg text-white/80 mb-4">
-                  To create a world where technology operates autonomously, continuously improving and innovating without human intervention.
-=======
           <div className="max-w-6xl mx-auto">
             <Link href="/" className="inline-flex items-center text-cyan-400 hover:text-cyan-300 mb-8">
               ← Back to Home
@@ -57,7 +29,6 @@ export default function AboutPage() {
                 </h1>
                 <p className="text-xl text-white/80 max-w-3xl mx-auto">
                   Pioneering the future of autonomous technology and intelligent automation systems.
->>>>>>> 0ae946bee62d031392f0f6f25b15cd207de60919
                 </p>
               </header>
 
