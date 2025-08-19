@@ -21,6 +21,25 @@ export default function ContactPage() {
             <p className="text-xl text-white/80 max-w-3xl mx-auto">
               Ready to explore the future of autonomous technology? Let's connect and discuss how we can help transform your vision into reality.
             </p>
+            
+            {/* Navigation Links */}
+            <div className="flex flex-wrap justify-center gap-4 mt-8">
+              <a href="/" className="px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-cyan-400/50">
+                Home
+              </a>
+              <a href="/about" className="px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-fuchsia-400/50">
+                About
+              </a>
+              <a href="/services" className="px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-blue-400/50">
+                Services
+              </a>
+              <a href="/automation" className="px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-purple-400/50">
+                Automation
+              </a>
+              <a href="/blog" className="px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-green-400/50">
+                Blog
+              </a>
+            </div>
           </section>
 
           <section className="mx-auto max-w-6xl">
