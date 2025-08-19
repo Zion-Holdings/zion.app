@@ -14,6 +14,12 @@ export default function AboutPage() {
       
       <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-950 text-white">
         <main className="container mx-auto px-6 py-12">
+          <nav className="mb-8">
+            <a href="/" className="text-cyan-400 hover:text-cyan-300 transition-colors">
+              ← Back to Home
+            </a>
+          </nav>
+          
           <section className="text-center mb-16">
             <h1 className="text-5xl font-extrabold mb-6 bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent">
               About Zion Tech Group
@@ -91,7 +97,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8">
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 mb-16">
               <h2 className="text-3xl font-bold mb-6 text-purple-400">Our Impact</h2>
               <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                 <div className="text-center">
@@ -109,6 +115,35 @@ export default function AboutPage() {
                 <div className="text-center">
                   <div className="text-3xl font-bold text-blue-400">99.9%</div>
                   <div className="text-sm text-white/70">Uptime</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <div className="bg-gradient-to-r from-cyan-500/10 to-fuchsia-500/10 p-8 rounded-2xl border border-cyan-500/20">
+                <h2 className="text-2xl font-semibold mb-4 text-cyan-300">Ready to Learn More?</h2>
+                <p className="text-white/80 mb-6 max-w-2xl mx-auto">
+                  Explore our services, case studies, and latest innovations to see how we can help transform your business.
+                </p>
+                <div className="flex flex-wrap justify-center gap-4">
+                  <a 
+                    href="/services" 
+                    className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-fuchsia-500 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-fuchsia-600 transition-all duration-200"
+                  >
+                    Our Services
+                  </a>
+                  <a 
+                    href="/case-studies" 
+                    className="inline-flex items-center px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-xl text-white transition-all duration-200"
+                  >
+                    Case Studies
+                  </a>
+                  <a 
+                    href="/reports" 
+                    className="inline-flex items-center px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-xl text-white transition-all duration-200"
+                  >
+                    Latest Reports
+                  </a>
                 </div>
               </div>
             </div>

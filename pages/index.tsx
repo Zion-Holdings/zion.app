@@ -30,9 +30,58 @@ export default function HomePage() {
               <a href="/services" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-fuchsia-400/50">
                 Our Services
               </a>
-              <a href="/contact" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-green-400/50">
+              <a href="/case-studies" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-green-400/50">
+                Case Studies
+              </a>
+              <a href="/contact" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-orange-400/50">
                 Contact
               </a>
+            </div>
+          </section>
+
+          {/* Success Stories Section */}
+          <section className="mx-auto max-w-7xl px-6 pb-14 mb-16">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl font-bold tracking-wide text-white/90 mb-4">Success Stories</h2>
+              <p className="text-white/70 max-w-2xl mx-auto mb-6">
+                Discover how our autonomous AI solutions have transformed businesses across industries
+              </p>
+              <a href="/case-studies" className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors">
+                View All Case Studies →
+              </a>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="bg-gradient-to-br from-blue-500/20 to-blue-600/20 p-6 rounded-2xl border border-blue-500/30">
+                <div className="text-3xl mb-3">🏥</div>
+                <h3 className="text-lg font-semibold text-blue-400 mb-2">Healthcare</h3>
+                <p className="text-white/70 text-sm mb-3">40% reduction in patient wait times</p>
+                <div className="text-2xl font-bold text-white">$2.3M</div>
+                <div className="text-xs text-white/60">Annual savings</div>
+              </div>
+              
+              <div className="bg-gradient-to-br from-green-500/20 to-green-600/20 p-6 rounded-2xl border border-green-500/30">
+                <div className="text-3xl mb-3">🏭</div>
+                <h3 className="text-lg font-semibold text-green-400 mb-2">Manufacturing</h3>
+                <p className="text-white/70 text-sm mb-3">35% increase in efficiency</p>
+                <div className="text-2xl font-bold text-white">$4.1M</div>
+                <div className="text-xs text-white/60">Annual ROI</div>
+              </div>
+              
+              <div className="bg-gradient-to-br from-purple-500/20 to-purple-600/20 p-6 rounded-2xl border border-purple-500/30">
+                <div className="text-3xl mb-3">💳</div>
+                <h3 className="text-lg font-semibold text-purple-400 mb-2">Finance</h3>
+                <p className="text-white/70 text-sm mb-3">95% fraud detection accuracy</p>
+                <div className="text-2xl font-bold text-white">$8.7M</div>
+                <div className="text-xs text-white/60">Fraud prevented</div>
+              </div>
+              
+              <div className="bg-gradient-to-br from-orange-500/20 to-orange-600/20 p-6 rounded-2xl border border-orange-500/30">
+                <div className="text-3xl mb-3">🚚</div>
+                <h3 className="text-lg font-semibold text-orange-400 mb-2">Logistics</h3>
+                <p className="text-white/70 text-sm mb-3">45% faster delivery</p>
+                <div className="text-2xl font-bold text-white">$6.2M</div>
+                <div className="text-xs text-white/60">Annual savings</div>
+              </div>
             </div>
           </section>
 
