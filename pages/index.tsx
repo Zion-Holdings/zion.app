@@ -54,30 +54,86 @@ export default function HomePage() {
             </div>
           </section>
 
-          {/* Featured Content Sections */}
-          <section className="mx-auto max-w-7xl px-6 pb-14 mb-16">
-            <h2 className="text-center text-2xl font-bold tracking-wide text-white/90 mb-8">Featured Content</h2>
-            
-            {/* Main Content Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
-                <h3 className="text-2xl font-bold mb-4 text-cyan-400">Latest Insights</h3>
-                <p className="text-white/80 mb-6">
-                  Explore our latest articles on AI innovation, automation trends, and autonomous technology breakthroughs.
+          {/* Features Section */}
+          <section className="mb-20">
+            <h2 className="text-3xl font-bold text-center mb-12 text-white/90">Why Choose Zion Tech Group?</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="bg-gradient-to-br from-cyan-400/10 to-blue-400/10 rounded-2xl p-8 border border-cyan-400/30 hover:border-cyan-400/50 transition-all duration-300">
+                <div className="w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center mb-6">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-cyan-300">AI-Powered Automation</h3>
+                <p className="text-white/70 mb-4">
+                  Our intelligent systems learn from your processes and continuously optimize workflows for maximum efficiency.
                 </p>
-                <a href="/blog" className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors">
-                  Read Our Blog <span aria-hidden>→</span>
-                </a>
+                <ul className="space-y-2 text-sm text-white/60">
+                  <li className="flex items-center gap-2">
+                    <span className="text-cyan-400">✓</span>
+                    <span>Machine Learning Models</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-cyan-400">✓</span>
+                    <span>Predictive Analytics</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-cyan-400">✓</span>
+                    <span>Intelligent Workflows</span>
+                  </li>
+                </ul>
               </div>
-              
-              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
-                <h3 className="text-2xl font-bold mb-4 text-fuchsia-400">Success Stories</h3>
-                <p className="text-white/80 mb-6">
-                  Discover how our AI and automation solutions have transformed businesses across industries.
+
+              <div className="bg-gradient-to-br from-fuchsia-400/10 to-purple-400/10 rounded-2xl p-8 border border-fuchsia-400/30 hover:border-fuchsia-400/50 transition-all duration-300">
+                <div className="w-16 h-16 bg-gradient-to-br from-fuchsia-400 to-purple-500 rounded-xl flex items-center justify-center mb-6">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-fuchsia-300">Lightning Fast Performance</h3>
+                <p className="text-white/70 mb-4">
+                  Experience blazing-fast response times with our optimized infrastructure and cutting-edge technology stack.
                 </p>
-                <a href="/case-studies" className="inline-flex items-center gap-2 text-fuchsia-400 hover:text-fuchsia-300 transition-colors">
-                  View Case Studies <span aria-hidden>→</span>
-                </a>
+                <ul className="space-y-2 text-sm text-white/60">
+                  <li className="flex items-center gap-2">
+                    <span className="text-fuchsia-400">✓</span>
+                    <span>99.9% Uptime</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-fuchsia-400">✓</span>
+                    <span>Sub-second Response</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-fuchsia-400">✓</span>
+                    <span>Global CDN</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-br from-green-400/10 to-emerald-400/10 rounded-2xl p-8 border border-green-400/30 hover:border-green-400/50 transition-all duration-300">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-500 rounded-xl flex items-center justify-center mb-6">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-green-300">Enterprise Security</h3>
+                <p className="text-white/70 mb-4">
+                  Bank-grade security with end-to-end encryption, compliance certifications, and 24/7 monitoring.
+                </p>
+                <ul className="space-y-2 text-sm text-white/60">
+                  <li className="flex items-center gap-2">
+                    <span className="text-green-400">✓</span>
+                    <span>End-to-End Encryption</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-green-400">✓</span>
+                    <span>SOC 2 Type II</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-green-400">✓</span>
+                    <span>24/7 Monitoring</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </section>
