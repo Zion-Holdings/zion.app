@@ -13,17 +13,13 @@ code{background:rgba(0,0,0,.4);padding:2px 4px;border-radius:6px}
 .build-failure{background:rgba(239,68,68,.2);border:2px solid #ef4444}
 </style>
 <h1>Pre-Build Health Check Report</h1>
-<<<<<<< Updated upstream
-<p>Generated 8/19/2025, 6:09:00 PM</p>
-=======
-<p>Generated 8/19/2025, 6:03:00 PM</p>
->>>>>>> Stashed changes
+<p>Generated 8/19/2025, 6:11:09 PM</p>
 <div class="build-status build-success">✅ BUILD READY</div>
 <div class="card">
 <h2>Summary</h2>
 <p><strong>Total Checks:</strong> 6</p>
-<p><strong>Passed:</strong> 6</p>
-<p><strong>Failed:</strong> 0</p>
+<p><strong>Passed:</strong> 5</p>
+<p><strong>Failed:</strong> 1</p>
 <p><strong>Critical Failures:</strong> 0</p>
 </div>
 <div class="card">
@@ -41,8 +37,9 @@ code{background:rgba(0,0,0,.4);padding:2px 4px;border-radius:6px}
 <span class="status pass">PASS</span>
 </div>
 <div style="margin:8px 0;padding:8px;border-radius:8px;background:rgba(255,255,255,.03)">
-<strong>✅ Environment Variables</strong>
-<span class="status pass">PASS</span>
+<strong>❌ Environment Variables</strong>
+<span class="status fail">FAIL</span>
+<div style="margin-top:4px;color:#ef4444"><code>Missing environment variables: NODE_VERSION, NODE_OPTIONS</code></div>
 </div>
 <div style="margin:8px 0;padding:8px;border-radius:8px;background:rgba(255,255,255,.03)">
 <strong>✅ File Permissions</strong>
@@ -52,4 +49,10 @@ code{background:rgba(0,0,0,.4);padding:2px 4px;border-radius:6px}
 <strong>✅ Build Artifacts</strong>
 <span class="status pass">PASS</span>
 </div>
+</div>
+<div class="card">
+<h2>Recommendations</h2>
+<ul>
+<li>Verify all required environment variables are set</li>
+</ul>
 </div>
