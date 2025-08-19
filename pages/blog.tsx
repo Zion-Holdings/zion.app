@@ -14,6 +14,33 @@ export default function BlogPage() {
       featured: true
     },
     {
+      id: 'quantum-ai-revolution',
+      title: 'Quantum AI Revolution: The Next Frontier of Autonomous Systems',
+      excerpt: 'Discover how quantum computing is revolutionizing AI automation and creating unprecedented opportunities for autonomous systems.',
+      date: 'January 20, 2025',
+      readTime: '12 min read',
+      category: 'Quantum AI',
+      featured: false
+    },
+    {
+      id: 'cybersecurity-autonomous-systems',
+      title: 'Cybersecurity in Autonomous Systems: Protecting the Future of Automation',
+      excerpt: 'Explore the critical cybersecurity challenges facing autonomous systems and learn about advanced protection strategies.',
+      date: 'January 22, 2025',
+      readTime: '15 min read',
+      category: 'Cybersecurity',
+      featured: false
+    },
+    {
+      id: 'sustainable-automation-future',
+      title: 'Sustainable Automation: Building a Greener Future with AI',
+      excerpt: 'Discover how autonomous systems and AI automation are driving sustainability initiatives and creating a more environmentally conscious future.',
+      date: 'January 25, 2025',
+      readTime: '10 min read',
+      category: 'Sustainability',
+      featured: false
+    },
+    {
       id: 'autonomous-content-generation',
       title: 'Revolutionizing Content Creation with Autonomous AI Systems',
       excerpt: 'How Zion Tech Group is transforming content generation through intelligent automation and machine learning.',
@@ -55,7 +82,7 @@ export default function BlogPage() {
     }
   ];
 
-  const categories = ['All', 'AI & Automation', 'Content & AI', 'Infrastructure', 'AI Ethics', 'Performance', 'Future of Work'];
+  const categories = ['All', 'AI & Automation', 'Quantum AI', 'Cybersecurity', 'Sustainability', 'Content & AI', 'Infrastructure', 'AI Ethics', 'Performance', 'Future of Work'];
 
   return (
     <>
