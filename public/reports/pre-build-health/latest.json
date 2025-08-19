@@ -1,11 +1,11 @@
 {
   "summary": {
     "totalChecks": 6,
-    "passedChecks": 5,
-    "failedChecks": 1,
+    "passedChecks": 6,
+    "failedChecks": 0,
     "criticalFailures": 0,
     "canBuild": true,
-    "timestamp": "2025-08-19T17:27:35.849Z"
+    "timestamp": "2025-08-19T17:42:22.240Z"
   },
   "results": [
     {
@@ -28,8 +28,8 @@
     },
     {
       "name": "Environment Variables",
-      "status": "FAIL",
-      "error": "Missing environment variables: NODE_VERSION, NODE_OPTIONS",
+      "status": "PASS",
+      "result": "Environment variables check completed",
       "critical": false
     },
     {
@@ -45,7 +45,5 @@
       "critical": false
     }
   ],
-  "recommendations": [
-    "Verify all required environment variables are set"
-  ]
+  "recommendations": []
 }
