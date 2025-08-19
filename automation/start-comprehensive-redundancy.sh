@@ -1,19 +1,17 @@
 #!/bin/bash
 
-# Comprehensive Redundancy Automation System Startup Script
-# This script manages all redundancy automations: PM2, GitHub Actions, and Netlify Functions
+# Comprehensive Redundancy System Startup Script
+# This script manages all redundancy automations for PM2, GitHub Actions, and Netlify Functions
 
 set -e
 
 # Configuration
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-WORKSPACE_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+WORKSPACE_DIR="$(dirname "$SCRIPT_DIR")"
 LOG_DIR="$WORKSPACE_DIR/automation/logs"
 PID_FILE="$LOG_DIR/comprehensive-redundancy.pid"
 LOG_FILE="$LOG_DIR/comprehensive-redundancy.log"
-
-# Ensure log directory exists
-mkdir -p "$LOG_DIR"
+ORCHESTRATOR_SCRIPT="$SCRIPT_DIR/comprehensive-redundancy-orchestrator.cjs"
 
 # Colors for output
 RED='\033[0;31m'
@@ -22,28 +20,15 @@ YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
+# Ensure log directory exists
+mkdir -p "$LOG_DIR"
+
 # Logging function
 log() {
     local level="$1"
     local message="$2"
     local timestamp=$(date '+%Y-%m-%d %H:%M:%S')
-    
-    case "$level" in
-        "INFO")
-            echo -e "${GREEN}[$timestamp] [INFO]${NC} $message"
-            ;;
-        "WARN")
-            echo -e "${YELLOW}[$timestamp] [WARN]${NC} $message"
-            ;;
-        "ERROR")
-            echo -e "${RED}[$timestamp] [ERROR]${NC} $message"
-            ;;
-        "DEBUG")
-            echo -e "${BLUE}[$timestamp] [DEBUG]${NC} $message"
-            ;;
-    esac
-    
-    echo "[$timestamp] [$level] $message" >> "$LOG_FILE"
+    echo -e "[$timestamp] [$level] $message" | tee -a "$LOG_FILE"
 }
 
 # Check if Node.js is available
@@ -60,7 +45,7 @@ check_node() {
 # Check if PM2 is available
 check_pm2() {
     if ! command -v pm2 &> /dev/null; then
-        log "WARN" "PM2 is not installed or not in PATH"
+        log "WARN" "PM2 is not installed, some features may not work"
         return 1
     fi
     
@@ -69,152 +54,84 @@ check_pm2() {
     return 0
 }
 
-# Check if Git is available
-check_git() {
-    if ! command -v git &> /dev/null; then
-        log "ERROR" "Git is not installed or not in PATH"
+# Check if orchestrator script exists
+check_orchestrator() {
+    if [[ ! -f "$ORCHESTRATOR_SCRIPT" ]]; then
+        log "ERROR" "Orchestrator script not found: $ORCHESTRATOR_SCRIPT"
         exit 1
     fi
     
-    local git_version=$(git --version)
-    log "INFO" "Git version: $git_version"
+    log "INFO" "Orchestrator script found: $ORCHESTRATOR_SCRIPT"
 }
 
-# Check workspace status
-check_workspace() {
-    cd "$WORKSPACE_DIR"
-    
-    if [ ! -f "package.json" ]; then
-        log "ERROR" "Not in a valid Node.js workspace (package.json not found)"
-        exit 1
-    fi
-    
-    if [ ! -d ".git" ]; then
-        log "ERROR" "Not in a valid Git repository"
-        exit 1
-    fi
-    
-    log "INFO" "Workspace: $WORKSPACE_DIR"
-    log "INFO" "Repository: $(git remote get-url origin 2>/dev/null || echo 'No remote')"
-}
-
-# Start comprehensive redundancy system
+# Start the comprehensive redundancy system
 start_system() {
     log "INFO" "Starting Comprehensive Redundancy System..."
     
-    # Check prerequisites
-    check_node
-    check_git
-    check_workspace
-    
-    # Check if already running
-    if [ -f "$PID_FILE" ]; then
+    if [[ -f "$PID_FILE" ]]; then
         local pid=$(cat "$PID_FILE")
-        if ps -p "$pid" > /dev/null 2>&1; then
+        if kill -0 "$pid" 2>/dev/null; then
             log "WARN" "System already running with PID $pid"
-            return 0
+            return 1
         else
-            log "WARN" "Stale PID file found, removing..."
+            log "INFO" "Removing stale PID file"
             rm -f "$PID_FILE"
         fi
     fi
     
-    # Start the comprehensive redundancy orchestrator
-    cd "$WORKSPACE_DIR"
+    # Start the orchestrator
+    nohup node "$ORCHESTRATOR_SCRIPT" start > "$LOG_FILE" 2>&1 &
+    local pid=$!
     
-    log "INFO" "Starting PM2 redundancy management..."
-    if check_pm2; then
-        # Start PM2 processes if available
-        npm run redundancy:pm2 || log "WARN" "PM2 redundancy failed to start"
-    fi
-    
-    log "INFO" "Starting GitHub Actions redundancy management..."
-    npm run redundancy:github || log "WARN" "GitHub redundancy failed to start"
-    
-    log "INFO" "Starting Netlify Functions redundancy management..."
-    npm run redundancy:netlify || log "WARN" "Netlify redundancy failed to start"
-    
-    # Start the main orchestrator
-    log "INFO" "Starting main redundancy orchestrator..."
-    nohup node automation/comprehensive-redundancy-orchestrator.cjs start > "$LOG_FILE" 2>&1 &
-    local orchestrator_pid=$!
-    
-    # Save PID
-    echo "$orchestrator_pid" > "$PID_FILE"
+    echo "$pid" > "$PID_FILE"
+    log "INFO" "System started with PID $pid"
     
     # Wait a moment and check if it's running
     sleep 2
-    if ps -p "$orchestrator_pid" > /dev/null 2>&1; then
-        log "INFO" "Comprehensive Redundancy System started successfully with PID $orchestrator_pid"
-        log "INFO" "Log file: $LOG_FILE"
-        log "INFO" "PID file: $PID_FILE"
+    if kill -0 "$pid" 2>/dev/null; then
+        log "INFO" "System started successfully"
+        show_status
     else
-        log "ERROR" "Failed to start Comprehensive Redundancy System"
+        log "ERROR" "Failed to start system"
+        rm -f "$PID_FILE"
+        return 1
+    fi
+}
+
+# Stop the comprehensive redundancy system
+stop_system() {
+    log "INFO" "Stopping Comprehensive Redundancy System..."
+    
+    if [[ ! -f "$PID_FILE" ]]; then
+        log "WARN" "No PID file found, system may not be running"
+        return 1
+    fi
+    
+    local pid=$(cat "$PID_FILE")
+    if ! kill -0 "$pid" 2>/dev/null; then
+        log "WARN" "Process $pid not running, removing stale PID file"
         rm -f "$PID_FILE"
         return 1
     fi
     
-    # Start additional redundancy processes
-    log "INFO" "Starting additional redundancy processes..."
-    
-    # Start redundancy health monitor
-    nohup node automation/redundancy-health-monitor.cjs > "$LOG_DIR/redundancy-health.log" 2>&1 &
-    echo "$!" >> "$PID_FILE"
-    
-    # Start redundancy git sync
-    nohup node automation/redundancy-git-sync.cjs > "$LOG_DIR/redundancy-git-sync.log" 2>&1 &
-    echo "$!" >> "$PID_FILE"
-    
-    # Start redundancy build monitor
-    nohup node automation/redundancy-build-monitor.cjs > "$LOG_DIR/redundancy-build.log" 2>&1 &
-    echo "$!" >> "$PID_FILE"
-    
-    log "INFO" "All redundancy processes started"
-}
-
-# Stop comprehensive redundancy system
-stop_system() {
-    log "INFO" "Stopping Comprehensive Redundancy System..."
-    
-    if [ ! -f "$PID_FILE" ]; then
-        log "WARN" "No PID file found, system may not be running"
-        return 0
-    fi
-    
-    # Stop all processes in PID file
-    while read -r pid; do
-        if [ -n "$pid" ] && ps -p "$pid" > /dev/null 2>&1; then
-            log "INFO" "Stopping process with PID $pid"
-            kill "$pid" 2>/dev/null || true
-            
-            # Wait for process to stop
-            local count=0
-            while ps -p "$pid" > /dev/null 2>&1 && [ $count -lt 10 ]; do
-                sleep 1
-                count=$((count + 1))
-            done
-            
-            # Force kill if still running
-            if ps -p "$pid" > /dev/null 2>&1; then
-                log "WARN" "Force killing process with PID $pid"
-                kill -9 "$pid" 2>/dev/null || true
-            fi
+    # Stop the orchestrator gracefully
+    if node "$ORCHESTRATOR_SCRIPT" stop; then
+        log "INFO" "Orchestrator stopped gracefully"
+    else
+        log "WARN" "Graceful stop failed, forcing termination"
+        kill -TERM "$pid"
+        sleep 5
+        if kill -0 "$pid" 2>/dev/null; then
+            log "WARN" "Process still running, killing forcefully"
+            kill -KILL "$pid"
         fi
-    done < "$PID_FILE"
-    
-    # Remove PID file
-    rm -f "$PID_FILE"
-    
-    # Stop PM2 processes if available
-    if check_pm2; then
-        log "INFO" "Stopping PM2 redundancy processes..."
-        npm run redundancy:pm2:stop || log "WARN" "Failed to stop PM2 redundancy"
     fi
     
-    log "INFO" "Comprehensive Redundancy System stopped"
+    rm -f "$PID_FILE"
+    log "INFO" "System stopped"
 }
 
-# Restart comprehensive redundancy system
+# Restart the comprehensive redundancy system
 restart_system() {
     log "INFO" "Restarting Comprehensive Redundancy System..."
     stop_system
@@ -224,153 +141,173 @@ restart_system() {
 
 # Check system status
 check_status() {
-    log "INFO" "Checking Comprehensive Redundancy System status..."
-    
-    if [ ! -f "$PID_FILE" ]; then
-        log "INFO" "System is not running (no PID file)"
+    if [[ ! -f "$PID_FILE" ]]; then
+        echo -e "${RED}System not running${NC}"
         return 1
     fi
     
-    local running_count=0
-    local total_count=0
-    
-    while read -r pid; do
-        if [ -n "$pid" ]; then
-            total_count=$((total_count + 1))
-            if ps -p "$pid" > /dev/null 2>&1; then
-                running_count=$((running_count + 1))
-                log "INFO" "Process PID $pid: RUNNING"
-            else
-                log "WARN" "Process PID $pid: NOT RUNNING"
-            fi
+    local pid=$(cat "$PID_FILE")
+    if kill -0 "$pid" 2>/dev/null; then
+        echo -e "${GREEN}System running with PID $pid${NC}"
+        
+        # Get detailed status from orchestrator
+        if node "$ORCHESTRATOR_SCRIPT" status 2>/dev/null; then
+            echo ""
         fi
-    done < "$PID_FILE"
-    
-    log "INFO" "Status: $running_count/$total_count processes running"
-    
-    # Check PM2 status if available
-    if check_pm2; then
-        log "INFO" "PM2 Status:"
-        pm2 status --no-daemon 2>/dev/null || log "WARN" "Failed to get PM2 status"
+        return 0
+    else
+        echo -e "${RED}System not running (stale PID file)${NC}"
+        rm -f "$PID_FILE"
+        return 1
     fi
+}
+
+# Show system status
+show_status() {
+    echo -e "${BLUE}=== Comprehensive Redundancy System Status ===${NC}"
     
-    # Check orchestrator status
-    if [ -f "$PID_FILE" ]; then
-        local main_pid=$(head -n1 "$PID_FILE" 2>/dev/null)
-        if [ -n "$main_pid" ] && ps -p "$main_pid" > /dev/null 2>&1; then
-            log "INFO" "Main orchestrator is running (PID: $main_pid)"
+    # Check if system is running
+    if check_status; then
+        echo ""
+        
+        # Check PM2 status
+        if command -v pm2 &> /dev/null; then
+            echo -e "${BLUE}PM2 Status:${NC}"
+            pm2 status --no-daemon 2>/dev/null || echo "PM2 not running"
+        fi
+        
+        # Check GitHub Actions workflows
+        echo -e "${BLUE}GitHub Actions Workflows:${NC}"
+        if [[ -d "$WORKSPACE_DIR/.github/workflows" ]]; then
+            ls -la "$WORKSPACE_DIR/.github/workflows/" | grep "\.yml$" || echo "No workflows found"
         else
-            log "WARN" "Main orchestrator is not running"
+            echo "GitHub workflows directory not found"
         fi
+        
+        # Check Netlify functions
+        echo -e "${BLUE}Netlify Functions:${NC}"
+        if [[ -d "$WORKSPACE_DIR/netlify/functions" ]]; then
+            ls -la "$WORKSPACE_DIR/netlify/functions/" | grep "\.js$" | wc -l | xargs echo "Functions found:"
+        else
+            echo "Netlify functions directory not found"
+        fi
+        
+        echo ""
+        echo -e "${BLUE}Logs:${NC}"
+        echo "Main log: $LOG_FILE"
+        echo "PM2 logs: pm2 logs"
     fi
+}
+
+# Show system health
+show_health() {
+    echo -e "${BLUE}=== System Health Check ===${NC}"
     
-    return 0
+    if [[ -f "$PID_FILE" ]]; then
+        local pid=$(cat "$PID_FILE")
+        if kill -0 "$pid" 2>/dev/null; then
+            node "$ORCHESTRATOR_SCRIPT" health
+        else
+            echo -e "${RED}System not running${NC}"
+        fi
+    else
+        echo -e "${RED}System not running${NC}"
+    fi
 }
 
 # Show logs
 show_logs() {
-    local lines="${1:-50}"
+    echo -e "${BLUE}=== System Logs ===${NC}"
     
-    if [ -f "$LOG_FILE" ]; then
-        log "INFO" "Showing last $lines lines of main log:"
-        tail -n "$lines" "$LOG_FILE"
+    if [[ -f "$LOG_FILE" ]]; then
+        tail -n 50 "$LOG_FILE"
     else
-        log "WARN" "Main log file not found: $LOG_FILE"
+        echo "No log file found"
     fi
     
-    # Show other log files
-    for log_file in "$LOG_DIR"/*.log; do
-        if [ -f "$log_file" ] && [ "$log_file" != "$LOG_FILE" ]; then
-            local filename=$(basename "$log_file")
-            log "INFO" "Showing last 10 lines of $filename:"
-            tail -n 10 "$log_file" 2>/dev/null || true
-            echo
-        fi
-    done
-}
-
-# Generate health report
-generate_report() {
-    log "INFO" "Generating health report..."
-    
-    cd "$WORKSPACE_DIR"
-    
-    if [ -f "automation/comprehensive-redundancy-orchestrator.cjs" ]; then
-        node automation/comprehensive-redundancy-orchestrator.cjs report
-    else
-        log "ERROR" "Comprehensive redundancy orchestrator not found"
-        return 1
+    echo ""
+    echo -e "${BLUE}=== PM2 Logs ===${NC}"
+    if command -v pm2 &> /dev/null; then
+        pm2 logs --lines 20 --nostream 2>/dev/null || echo "PM2 logs not available"
     fi
 }
 
-# Test system
-test_system() {
-    log "INFO" "Testing Comprehensive Redundancy System..."
+# Run health check
+run_health_check() {
+    echo -e "${BLUE}=== Running Health Check ===${NC}"
     
-    cd "$WORKSPACE_DIR"
-    
-    if [ -f "automation/comprehensive-redundancy-orchestrator.cjs" ]; then
-        log "INFO" "Running one-time orchestration test..."
-        if node automation/comprehensive-redundancy-orchestrator.cjs once; then
-            log "INFO" "Test completed successfully"
+    if [[ -f "$PID_FILE" ]]; then
+        local pid=$(cat "$PID_FILE")
+        if kill -0 "$pid" 2>/dev/null; then
+            node "$ORCHESTRATOR_SCRIPT" once
         else
-            log "ERROR" "Test failed"
-            return 1
+            echo -e "${RED}System not running${NC}"
         fi
     else
-        log "ERROR" "Comprehensive redundancy orchestrator not found"
-        return 1
+        echo -e "${RED}System not running${NC}"
     fi
 }
 
-# Main script logic
+# Show help
+show_help() {
+    echo -e "${BLUE}Comprehensive Redundancy System Management${NC}"
+    echo ""
+    echo "Usage: $0 [COMMAND]"
+    echo ""
+    echo "Commands:"
+    echo "  start     Start the comprehensive redundancy system"
+    echo "  stop      Stop the comprehensive redundancy system"
+    echo "  restart   Restart the comprehensive redundancy system"
+    echo "  status    Show system status"
+    echo "  health    Show system health"
+    echo "  logs      Show system logs"
+    echo "  check     Run health check"
+    echo "  help      Show this help message"
+    echo ""
+    echo "Examples:"
+    echo "  $0 start"
+    echo "  $0 status"
+    echo "  $0 health"
+    echo ""
+}
+
+# Main function
 main() {
-    local command="${1:-start}"
+    local command="${1:-help}"
+    
+    # Check prerequisites
+    check_node
+    check_pm2 || true
+    check_orchestrator
     
     case "$command" in
-        "start")
+        start)
             start_system
             ;;
-        "stop")
+        stop)
             stop_system
             ;;
-        "restart")
+        restart)
             restart_system
             ;;
-        "status")
-            check_status
+        status)
+            show_status
             ;;
-        "logs")
-            show_logs "$2"
+        health)
+            show_health
             ;;
-        "report")
-            generate_report
+        logs)
+            show_logs
             ;;
-        "test")
-            test_system
+        check)
+            run_health_check
             ;;
-        "help"|"-h"|"--help")
-            echo "Usage: $0 [start|stop|restart|status|logs|report|test|help]"
-            echo ""
-            echo "Commands:"
-            echo "  start     - Start the comprehensive redundancy system"
-            echo "  stop      - Stop the comprehensive redundancy system"
-            echo "  restart   - Restart the comprehensive redundancy system"
-            echo "  status    - Check system status"
-            echo "  logs      - Show logs (optional: number of lines, default: 50)"
-            echo "  report    - Generate health report"
-            echo "  test      - Run system test"
-            echo "  help      - Show this help message"
-            echo ""
-            echo "Examples:"
-            echo "  $0 start"
-            echo "  $0 status"
-            echo "  $0 logs 100"
-            echo "  $0 report"
+        help|--help|-h)
+            show_help
             ;;
         *)
-            log "ERROR" "Unknown command: $command"
-            log "INFO" "Use '$0 help' for usage information"
+            echo -e "${RED}Unknown command: $command${NC}"
+            show_help
             exit 1
             ;;
     esac
