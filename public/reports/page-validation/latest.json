@@ -1,17 +1,27 @@
 {
   "summary": {
-    "totalFiles": 0,
-    "filesWithIssues": 0,
+    "totalFiles": 1,
+    "filesWithIssues": 1,
     "totalIssues": 0,
-    "totalWarnings": 0,
+    "totalWarnings": 1,
     "buildBreakingFiles": 0,
     "canBuild": true
   },
-  "results": [],
+  "results": [
+    {
+      "file": "pages/_app.tsx",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    }
+  ],
   "buildBreakingFiles": [],
-<<<<<<< HEAD
-  "generatedAt": "2025-08-19T17:23:21.218Z"
-=======
-  "generatedAt": "2025-08-19T17:04:24.359Z"
->>>>>>> cursor/automate-automation-redundancy-and-build-improvement-a895
+  "generatedAt": "2025-08-19T17:33:26.554Z"
 }
