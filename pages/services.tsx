@@ -128,7 +128,7 @@ export default function ServicesPage() {
               </div>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8">
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 mb-16">
               <h2 className="text-3xl font-bold mb-6 text-blue-400">Service Delivery Process</h2>
               <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                 <div className="text-center">
@@ -151,6 +151,41 @@ export default function ServicesPage() {
                   <h3 className="text-lg font-semibold mb-2">Optimization</h3>
                   <p className="text-sm text-white/70">Continuous improvement and support</p>
                 </div>
+              </div>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 mb-16">
+              <h2 className="text-3xl font-bold mb-6 text-purple-400">Success Stories</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="bg-white/5 rounded-xl p-6">
+                  <h3 className="text-xl font-semibold mb-3 text-cyan-400">E-commerce Automation</h3>
+                  <p className="text-white/70 mb-4">
+                    Helped a major retailer automate their inventory management, resulting in 40% reduction in stockouts and 25% increase in sales.
+                  </p>
+                  <div className="text-sm text-cyan-400">AI-powered inventory optimization</div>
+                </div>
+                <div className="bg-white/5 rounded-xl p-6">
+                  <h3 className="text-xl font-semibold mb-3 text-fuchsia-400">Healthcare AI</h3>
+                  <p className="text-white/70 mb-4">
+                    Developed autonomous diagnostic systems for a healthcare network, improving diagnosis accuracy by 35% and reducing wait times by 60%.
+                  </p>
+                  <div className="text-sm text-fuchsia-400">Medical AI diagnostics</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8">
+              <h2 className="text-3xl font-bold mb-6 text-green-400">Ready to Transform Your Business?</h2>
+              <p className="text-lg text-white/80 mb-6 text-center max-w-3xl mx-auto">
+                Let's discuss how our autonomous AI solutions can revolutionize your operations and drive unprecedented growth.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/contact" className="px-8 py-4 bg-gradient-to-r from-cyan-400 to-fuchsia-400 text-white font-bold rounded-lg hover:from-cyan-500 hover:to-fuchsia-500 transition-all duration-200">
+                  Start Your Project
+                </a>
+                <a href="/automation" className="px-8 py-4 bg-white/10 border border-white/20 text-white font-bold rounded-lg hover:bg-white/20 transition-all duration-200">
+                  See Automation in Action
+                </a>
               </div>
             </div>
           </section>

@@ -91,7 +91,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8">
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 mb-16">
               <h2 className="text-3xl font-bold mb-6 text-purple-400">Our Impact</h2>
               <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                 <div className="text-center">
@@ -110,6 +110,45 @@ export default function AboutPage() {
                   <div className="text-3xl font-bold text-blue-400">99.9%</div>
                   <div className="text-sm text-white/70">Uptime</div>
                 </div>
+              </div>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 mb-16">
+              <h2 className="text-3xl font-bold mb-6 text-yellow-400">Our Story</h2>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="text-xl font-semibold mb-3 text-cyan-400">The Beginning</h3>
+                  <p className="text-white/70 mb-4">
+                    Founded in 2023, Zion Tech Group emerged from a vision to create truly autonomous technology systems that could operate independently and continuously improve themselves.
+                  </p>
+                  <p className="text-white/70">
+                    Our founders, a team of AI researchers and automation experts, recognized that the future of technology lay not in human-controlled systems, but in intelligent, self-managing solutions.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-3 text-fuchsia-400">The Mission</h3>
+                  <p className="text-white/70 mb-4">
+                    Today, we're pioneering the next generation of autonomous AI systems that can think, learn, and innovate without human intervention.
+                  </p>
+                  <p className="text-white/70">
+                    Our mission is to democratize autonomous technology, making it accessible to businesses of all sizes while pushing the boundaries of what's possible.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8">
+              <h2 className="text-3xl font-bold mb-6 text-indigo-400">Join Our Journey</h2>
+              <p className="text-lg text-white/80 mb-6 text-center max-w-3xl mx-auto">
+                We're always looking for partners, clients, and collaborators who share our vision of a future powered by autonomous technology.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/contact" className="px-8 py-4 bg-gradient-to-r from-cyan-400 to-fuchsia-400 text-white font-bold rounded-lg hover:from-cyan-500 hover:to-fuchsia-500 transition-all duration-200">
+                  Get in Touch
+                </a>
+                <a href="/innovation" className="px-8 py-4 bg-white/10 border border-white/20 text-white font-bold rounded-lg hover:bg-white/20 transition-all duration-200">
+                  Explore Innovation
+                </a>
               </div>
             </div>
           </section>

@@ -30,6 +30,15 @@ export default function HomePage() {
               <a href="/services" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-fuchsia-400/50">
                 Our Services
               </a>
+              <a href="/automation" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-purple-400/50">
+                Automation
+              </a>
+              <a href="/blog" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-blue-400/50">
+                Blog
+              </a>
+              <a href="/innovation" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-yellow-400/50">
+                Innovation
+              </a>
               <a href="/contact" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-green-400/50">
                 Contact
               </a>
@@ -79,6 +88,52 @@ export default function HomePage() {
             </div>
           </section>
           {/* AUTO-GENERATED: HOME_LATEST_CONTENT_END */}
+
+          {/* Key Features Section */}
+          <section className="mx-auto max-w-6xl mb-16">
+            <h2 className="text-center text-3xl font-bold tracking-wide text-white/90 mb-12">Why Choose Zion Tech Group?</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 text-center hover:bg-white/15 transition-all duration-300">
+                <div className="text-5xl mb-4">🤖</div>
+                <h3 className="text-2xl font-bold mb-4 text-cyan-400">Autonomous AI</h3>
+                <p className="text-white/70">
+                  Our AI systems operate independently, continuously learning and improving without human intervention.
+                </p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 text-center hover:bg-white/15 transition-all duration-300">
+                <div className="text-5xl mb-4">⚡</div>
+                <h3 className="text-2xl font-bold mb-4 text-fuchsia-400">24/7 Operation</h3>
+                <p className="text-white/70">
+                  Round-the-clock automation ensures your systems never sleep and always perform at peak efficiency.
+                </p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 text-center hover:bg-white/15 transition-all duration-300">
+                <div className="text-5xl mb-4">🌐</div>
+                <h3 className="text-2xl font-bold mb-4 text-green-400">Global Scale</h3>
+                <p className="text-white/70">
+                  Multi-cloud infrastructure that scales automatically across regions and providers worldwide.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Call to Action Section */}
+          <section className="mx-auto max-w-4xl text-center mb-16">
+            <div className="bg-gradient-to-r from-cyan-400/20 to-fuchsia-400/20 backdrop-blur-xl rounded-2xl p-12">
+              <h2 className="text-3xl font-bold mb-6 text-white">Ready to Experience Autonomous Innovation?</h2>
+              <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
+                Join the future of technology with Zion Tech Group's autonomous systems that work 24/7 to drive your success.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/contact" className="px-8 py-4 bg-gradient-to-r from-cyan-400 to-fuchsia-400 text-white font-bold rounded-lg hover:from-cyan-500 hover:to-fuchsia-500 transition-all duration-200">
+                  Get Started Today
+                </a>
+                <a href="/automation" className="px-8 py-4 bg-white/10 border border-white/20 text-white font-bold rounded-lg hover:bg-white/20 transition-all duration-200">
+                  Explore Automation
+                </a>
+              </div>
+            </div>
+          </section>
         </main>
       </div>
     </>
