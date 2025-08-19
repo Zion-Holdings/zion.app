@@ -9,7 +9,7 @@ export default function BlogPage() {
       title: 'AI Automation Trends 2025: The Future of Autonomous Systems',
       excerpt: 'Explore the cutting-edge trends shaping the future of AI automation and autonomous technology systems.',
       date: 'January 17, 2025',
-      readTime: '8 min read',
+      readTime: '12 min read',
       category: 'AI & Automation',
       featured: true
     },
@@ -18,7 +18,7 @@ export default function BlogPage() {
       title: 'Revolutionizing Content Creation with Autonomous AI Systems',
       excerpt: 'How Zion Tech Group is transforming content generation through intelligent automation and machine learning.',
       date: 'January 15, 2025',
-      readTime: '6 min read',
+      readTime: '8 min read',
       category: 'Content & AI'
     },
     {
@@ -52,10 +52,26 @@ export default function BlogPage() {
       date: 'January 5, 2025',
       readTime: '5 min read',
       category: 'Future of Work'
+    },
+    {
+      id: 'edge-computing-ai',
+      title: 'Edge Computing and AI: The Future of Distributed Intelligence',
+      excerpt: 'How edge computing is revolutionizing AI deployment and enabling real-time autonomous systems.',
+      date: 'January 3, 2025',
+      readTime: '6 min read',
+      category: 'Infrastructure'
+    },
+    {
+      id: 'ai-governance-framework',
+      title: 'Building AI Governance Frameworks for Enterprise',
+      excerpt: 'Essential components and best practices for implementing effective AI governance in large organizations.',
+      date: 'December 30, 2024',
+      readTime: '8 min read',
+      category: 'AI Ethics'
     }
   ];
 
-  const categories = ['All', 'AI & Automation', 'Content & AI', 'Infrastructure', 'AI Ethics', 'Performance', 'Future of Work'];
+  const categories = ['All', 'AI & Automation', 'Content & AI', 'Infrastructure', 'AI Ethics', 'Performance', 'Future of Work', 'Edge Computing', 'Governance'];
 
   return (
     <>

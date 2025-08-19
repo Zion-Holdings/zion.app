@@ -135,6 +135,57 @@ export default function HomePage() {
               </Link>
             </div>
           </section>
+          
+          {/* Featured Articles Section */}
+          <section className="mx-auto max-w-7xl px-6 pb-14">
+            <h2 className="text-center text-2xl font-bold tracking-wide text-white/90 mb-8">Featured Articles</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <Link href="/ai-automation-trends-2025" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300">
+                <div className="mb-4">
+                  <span className="px-3 py-1 bg-cyan-400/20 text-cyan-400 text-sm rounded-full border border-cyan-400/30">
+                    AI & Automation
+                  </span>
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-cyan-400 transition-colors">
+                  AI Automation Trends 2025
+                </h3>
+                <p className="text-white/70 text-sm mb-3">
+                  Explore the cutting-edge trends shaping the future of AI automation and autonomous technology systems.
+                </p>
+                <div className="text-cyan-400 text-sm font-medium">Read More →</div>
+              </Link>
+              
+              <Link href="/autonomous-content-generation" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-fuchsia-400/30 transition-all duration-300">
+                <div className="mb-4">
+                  <span className="px-3 py-1 bg-fuchsia-400/20 text-fuchsia-400 text-sm rounded-full border border-fuchsia-400/30">
+                    Content & AI
+                  </span>
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-fuchsia-400 transition-colors">
+                  Autonomous Content Generation
+                </h3>
+                <p className="text-white/70 text-sm mb-3">
+                  How Zion Tech Group is transforming content generation through intelligent automation and machine learning.
+                </p>
+                <div className="text-fuchsia-400 text-sm font-medium">Read More →</div>
+              </Link>
+              
+              <Link href="/cloud-native-automation" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-blue-400/30 transition-all duration-300">
+                <div className="mb-4">
+                  <span className="px-3 py-1 bg-blue-400/20 text-blue-400 text-sm rounded-full border border-blue-400/30">
+                    Infrastructure
+                  </span>
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                  Cloud-Native Automation
+                </h3>
+                <p className="text-white/70 text-sm mb-3">
+                  A deep dive into our cloud-native approach to building scalable, reliable automation systems.
+                </p>
+                <div className="text-blue-400 text-sm font-medium">Read More →</div>
+              </Link>
+            </div>
+          </section>
         </main>
       </div>
     </>
