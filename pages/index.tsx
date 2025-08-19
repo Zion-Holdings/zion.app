@@ -23,7 +23,19 @@ export default function HomePage() {
             <p className="text-2xl text-white/90 max-w-4xl mx-auto mb-8 leading-relaxed">
               Autonomous innovation hub delivering cutting-edge technology solutions and intelligent automation systems that revolutionize digital infrastructure.
             </p>
-<<<<<<< HEAD
+            
+            {/* Stats and Navigation */}
+            <div className="flex flex-wrap justify-center gap-6 text-lg mb-8">
+              <div className="bg-white/10 backdrop-blur-xl rounded-xl px-6 py-3 border border-white/20">
+                <span className="text-cyan-300 font-semibold">227+</span> Active Automations
+              </div>
+              <div className="bg-white/10 backdrop-blur-xl rounded-xl px-6 py-3 border border-white/20">
+                <span className="text-blue-300 font-semibold">2,960+</span> Generated Pages
+              </div>
+              <div className="bg-white/10 backdrop-blur-xl rounded-xl px-6 py-3 border border-white/20">
+                <span className="text-green-300 font-semibold">99.9%</span> Uptime
+              </div>
+            </div>
             
             {/* Navigation Links */}
             <div className="flex flex-wrap justify-center gap-4 mt-8">
@@ -36,18 +48,18 @@ export default function HomePage() {
               <a href="/contact" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-green-400/50">
                 Contact
               </a>
-=======
-            <div className="flex flex-wrap justify-center gap-6 text-lg">
-              <div className="bg-white/10 backdrop-blur-xl rounded-xl px-6 py-3 border border-white/20">
-                <span className="text-cyan-300 font-semibold">227+</span> Active Automations
-              </div>
-              <div className="bg-white/10 backdrop-blur-xl rounded-xl px-6 py-3 border border-white/20">
-                <span className="text-blue-300 font-semibold">2,960+</span> Generated Pages
-              </div>
-              <div className="bg-white/10 backdrop-blur-xl rounded-xl px-6 py-3 border border-white/20">
-                <span className="text-green-300 font-semibold">99.9%</span> Uptime
-              </div>
->>>>>>> cursor/update-content-and-fix-links-74fc
+              <a href="/automation" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-purple-400/50">
+                Automation
+              </a>
+              <a href="/blog" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-orange-400/50">
+                Blog
+              </a>
+              <a href="/technology-insights" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-indigo-400/50">
+                Insights
+              </a>
+              <a href="/case-studies" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-emerald-400/50">
+                Case Studies
+              </a>
             </div>
           </section>
 
@@ -166,20 +178,13 @@ export default function HomePage() {
           {/* Latest Updates Section */}
           <section className="mb-20">
             <h2 className="text-3xl font-bold text-center mb-12 text-white/90">Latest Autonomous Updates</h2>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              <a href="/reports/updates/update-2025-08-15-0406" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300 hover:scale-105">
-=======
-          {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */}
-          <section className="mx-auto max-w-7xl px-6 pb-14">
             <div className="text-center mb-8">
-              <h2 className="text-2xl font-bold tracking-wide text-white/90 mb-4">Latest Autonomous Content</h2>
               <a href="/reports" className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors">
                 View All Reports →
               </a>
             </div>
-            <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              <a href="/reports/updates/update-2025-08-15-0406" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
->>>>>>> 0ae946bee62d031392f0f6f25b15cd207de60919
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <a href="/reports/updates/update-2025-08-15-0406" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300 hover:scale-105">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
                 <h3 className="text-lg font-semibold mb-2">Autonomous Update — 2025: 08: 15: 0406</h3>
                 <p className="text-sm text-white/75 mb-3">Latest system status and performance metrics from our autonomous agents.</p>
@@ -240,6 +245,59 @@ export default function HomePage() {
               </div>
             </div>
           </section>
+
+          {/* Footer Navigation */}
+          <footer className="mt-20 pt-12 border-t border-white/10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div>
+                <h3 className="text-lg font-semibold mb-4 text-cyan-300">Company</h3>
+                <ul className="space-y-2 text-white/70">
+                  <li><a href="/about" className="hover:text-cyan-300 transition-colors">About Us</a></li>
+                  <li><a href="/services" className="hover:text-cyan-300 transition-colors">Services</a></li>
+                  <li><a href="/case-studies" className="hover:text-cyan-300 transition-colors">Case Studies</a></li>
+                  <li><a href="/contact" className="hover:text-cyan-300 transition-colors">Contact</a></li>
+                </ul>
+              </div>
+              
+              <div>
+                <h3 className="text-lg font-semibold mb-4 text-fuchsia-300">Technology</h3>
+                <ul className="space-y-2 text-white/70">
+                  <li><a href="/automation" className="hover:text-fuchsia-300 transition-colors">Automation</a></li>
+                  <li><a href="/technology-insights" className="hover:text-fuchsia-300 transition-colors">Insights</a></li>
+                  <li><a href="/blog" className="hover:text-fuchsia-300 transition-colors">Blog</a></li>
+                  <li><a href="/reports" className="hover:text-fuchsia-300 transition-colors">Reports</a></li>
+                </ul>
+              </div>
+              
+              <div>
+                <h3 className="text-lg font-semibold mb-4 text-green-300">Resources</h3>
+                <ul className="space-y-2 text-white/70">
+                  <li><a href="/reports/updates" className="hover:text-green-300 transition-colors">Updates</a></li>
+                  <li><a href="/automation-health" className="hover:text-green-300 transition-colors">System Health</a></li>
+                  <li><a href="/privacy" className="hover:text-green-300 transition-colors">Privacy Policy</a></li>
+                  <li><a href="/security" className="hover:text-green-300 transition-colors">Security</a></li>
+                </ul>
+              </div>
+              
+              <div>
+                <h3 className="text-lg font-semibold mb-4 text-blue-300">Connect</h3>
+                <ul className="space-y-2 text-white/70">
+                  <li><a href="/contact" className="hover:text-blue-300 transition-colors">Get Started</a></li>
+                  <li><a href="/services" className="hover:text-blue-300 transition-colors">Request Quote</a></li>
+                  <li><a href="/about" className="hover:text-blue-300 transition-colors">Partnership</a></li>
+                  <li><a href="/contact" className="hover:text-blue-300 transition-colors">Support</a></li>
+                </ul>
+              </div>
+            </div>
+            
+            <div className="text-center mt-12 pt-8 border-t border-white/10">
+              <p className="text-white/60">
+                © 2025 Zion Tech Group. All rights reserved. | 
+                <a href="/privacy" className="hover:text-cyan-300 transition-colors ml-2">Privacy</a> | 
+                <a href="/security" className="hover:text-cyan-300 transition-colors ml-2">Security</a>
+              </p>
+            </div>
+          </footer>
         </main>
       </div>
     </>
