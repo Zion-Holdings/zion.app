@@ -5,13 +5,22 @@ import Link from 'next/link';
 export default function BlogPage() {
   const blogPosts = [
     {
-      id: 'ai-automation-trends-2025',
-      title: 'AI Automation Trends 2025: The Future of Autonomous Systems',
-      excerpt: 'Explore the cutting-edge trends shaping the future of AI automation and autonomous technology systems.',
+      id: 'ai-automation-best-practices-2025',
+      title: 'AI Automation Best Practices for 2025: A Comprehensive Guide',
+      excerpt: 'Discover the essential AI automation best practices that will drive success in 2025. Learn about implementation strategies, common pitfalls, and success factors.',
       date: 'January 17, 2025',
       readTime: '8 min read',
       category: 'AI & Automation',
       featured: true
+    },
+    {
+      id: 'ai-automation-trends-2025',
+      title: 'AI Automation Trends 2025: The Future of Autonomous Systems',
+      excerpt: 'Explore the cutting-edge trends shaping the future of AI automation and autonomous technology systems.',
+      date: 'January 16, 2025',
+      readTime: '8 min read',
+      category: 'AI & Automation',
+      featured: false
     },
     {
       id: 'autonomous-content-generation',
