@@ -2,11 +2,7 @@
   "summary": {
     "totalFixes": 0,
     "successfulFixes": 0,
-<<<<<<< HEAD
-    "timestamp": "2025-08-19T17:23:08.260Z"
-=======
-    "timestamp": "2025-08-19T16:49:16.150Z"
->>>>>>> cursor/automate-automation-redundancy-and-build-improvement-a895
+    "timestamp": "2025-08-19T17:35:02.654Z"
   },
   "fixesApplied": [],
   "recommendations": [
