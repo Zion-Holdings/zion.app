@@ -18,9 +18,17 @@ export default function HomePage() {
             <h1 className="text-5xl font-extrabold mb-6 bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent">
               Zion Tech Group
             </h1>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto">
+            <p className="text-xl text-white/80 max-w-3xl mx-auto mb-8">
               Autonomous innovation hub delivering cutting-edge technology solutions and intelligent automation systems.
             </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="/about" className="bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-cyan-600 hover:to-purple-700 transition-all duration-200">
+                Learn More
+              </a>
+              <a href="/contact" className="border border-white/30 text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition-all duration-200">
+                Get in Touch
+              </a>
+            </div>
           </section>
 
           {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */}
@@ -66,6 +74,33 @@ export default function HomePage() {
             </div>
           </section>
           {/* AUTO-GENERATED: HOME_LATEST_CONTENT_END */}
+
+          {/* Navigation Section */}
+          <section className="mx-auto max-w-7xl px-6 pb-14">
+            <h2 className="text-center text-2xl font-bold tracking-wide text-white/90 mb-8">Explore Our Platform</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <a href="/about" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-200">
+                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                <h3 className="text-xl font-semibold text-white mb-2">About Us</h3>
+                <p className="text-white/75 mb-4">Learn about our mission to revolutionize technology through autonomous innovation.</p>
+                <div className="inline-flex items-center gap-1 text-sm text-cyan-300/90">Discover More <span aria-hidden>→</span></div>
+              </a>
+              
+              <a href="/contact" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-200">
+                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                <h3 className="text-xl font-semibold text-white mb-2">Contact Us</h3>
+                <p className="text-white/75 mb-4">Ready to get started? Let's discuss how we can transform your business.</p>
+                <div className="inline-flex items-center gap-1 text-sm text-cyan-300/90">Get in Touch <span aria-hidden>→</span></div>
+              </a>
+              
+              <a href="/reports/updates/update-2025-08-15-0406" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-200">
+                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                <h3 className="text-xl font-semibold text-white mb-2">Latest Updates</h3>
+                <p className="text-white/75 mb-4">Stay informed with our latest autonomous system updates and achievements.</p>
+                <div className="inline-flex items-center gap-1 text-sm text-cyan-300/90">View Updates <span aria-hidden>→</span></div>
+              </a>
+            </div>
+          </section>
         </main>
       </div>
     </>
