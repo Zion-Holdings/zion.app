@@ -1,19 +1,11 @@
 # marketing-sync Report
 
-<<<<<<< HEAD
-Generated: 2025-08-19T16:21:14.875Z
-=======
-Generated: 2025-08-19T16:21:40.309Z
->>>>>>> 89c51fac6191d50fd66f333505bb220114294f14
+Generated: 2025-08-19T16:38:29.154Z
 
 ## Status
 - Task: marketing-sync
 - Status: Skipped/Failed
-<<<<<<< HEAD
-- Timestamp: 2025-08-19T16:21:14.875Z
-=======
-- Timestamp: 2025-08-19T16:21:40.309Z
->>>>>>> 89c51fac6191d50fd66f333505bb220114294f14
+- Timestamp: 2025-08-19T16:38:29.154Z
 
 ## Actions
 - linkedin: skipped
