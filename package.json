@@ -365,7 +365,22 @@
     "redundancy:netlify:status": "node automation/netlify-functions-redundancy-manager.cjs status",
     "redundancy:netlify:health": "node automation/netlify-functions-redundancy-manager.cjs health",
     "redundancy:netlify:recover": "node automation/netlify-functions-redundancy-manager.cjs recover",
-    "redundancy:netlify:maintenance": "node automation/netlify-functions-redundancy-manager.cjs maintenance"
+    "redundancy:netlify:maintenance": "node automation/netlify-functions-redundancy-manager.cjs maintenance",
+    "redundancy:ultimate:automation:start": "bash automation/start-ultimate-redundancy-automation.sh start",
+    "redundancy:ultimate:automation:stop": "bash automation/start-ultimate-redundancy-automation.sh stop",
+    "redundancy:ultimate:automation:restart": "bash automation/start-ultimate-redundancy-automation.sh restart",
+    "redundancy:ultimate:automation:status": "bash automation/start-ultimate-redundancy-automation.sh status",
+    "redundancy:ultimate:automation:logs": "bash automation/start-ultimate-redundancy-automation.sh logs",
+    "redundancy:ultimate:automation:pm2": "pm2 start ecosystem.ultimate-redundancy-automation.cjs --update-env",
+    "redundancy:ultimate:automation:pm2:stop": "pm2 stop ecosystem.ultimate-redundancy-automation.cjs",
+    "redundancy:ultimate:automation:pm2:restart": "pm2 restart ecosystem.ultimate-redundancy-automation.cjs",
+    "redundancy:ultimate:automation:pm2:status": "pm2 status",
+    "automation:orchestrator:start": "node automation/ultimate-automation-orchestrator.cjs",
+    "automation:orchestrator:status": "node -e \"const {UltimateAutomationOrchestrator} = require('./automation/ultimate-automation-orchestrator.cjs'); const o = new UltimateAutomationOrchestrator(); console.log(JSON.stringify(o.getStatus(), null, 2));\"",
+    "automation:ultimate:start": "npm run redundancy:ultimate:automation:start && npm run automation:orchestrator:start",
+    "automation:ultimate:stop": "npm run redundancy:ultimate:automation:stop",
+    "automation:ultimate:restart": "npm run redundancy:ultimate:automation:restart",
+    "automation:ultimate:status": "npm run redundancy:ultimate:automation:status"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
