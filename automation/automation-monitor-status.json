@@ -1,0 +1,31 @@
+{
+  "status": "running",
+  "lastUpdate": "2025-08-19T17:46:34.678Z",
+  "summary": {
+    "pm2": {
+      "total": 0,
+      "online": 0,
+      "offline": 0,
+      "errored": 0
+    },
+    "github": {
+      "total": 4,
+      "available": 4,
+      "missing": 0
+    },
+    "netlify": {
+      "total": 97,
+      "available": 97,
+      "missing": 0
+    },
+    "system": {
+      "timestamp": "2025-08-19T17:47:04.468Z",
+      "cpu": 0,
+      "memory": 9.4,
+      "disk": 10,
+      "processes": 38,
+      "uptime": 150.810349126
+    },
+    "alerts": 0
+  }
+}

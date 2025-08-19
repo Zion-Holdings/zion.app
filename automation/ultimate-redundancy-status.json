@@ -1,35 +1,529 @@
 {
-  "startTime": "2025-08-19T17:29:44.112Z",
-  "lastHealthCheck": "2025-08-19T17:30:00.082Z",
-  "pm2Status": {},
-  "githubActionsStatus": {
-    "totalWorkflows": 4,
-    "validWorkflows": 4,
-    "healthScore": 100,
-    "lastCheck": "2025-08-19T17:31:00.354Z"
+  "pm2": {
+    "healthy": false,
+    "processes": [],
+    "lastCheck": null
   },
-  "netlifyFunctionsStatus": {
-    "totalFunctions": 0,
-    "validFunctions": 0,
-    "healthScore": 100,
-    "lastCheck": "2025-08-19T17:32:00.050Z"
+  "github": {
+    "healthy": true,
+    "workflows": [
+      {
+        "name": "marketing-sync",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "sync-health",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "marketing-sync-backup",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "sync-health-backup",
+        "exists": true,
+        "lastRun": null
+      }
+    ],
+    "lastCheck": "2025-08-19T17:46:39.098Z"
   },
-  "buildStatus": {
-    "totalFiles": 3,
-    "validFiles": 3,
-    "healthScore": 100,
-    "lastCheck": "2025-08-19T17:30:00.240Z"
+  "netlify": {
+    "healthy": true,
+    "functions": [
+      {
+        "name": "a11y-alt-text-runner",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "adaptive-orchestrator",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "ai-changelog-runner",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "ai-trends-radar-runner",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "anchor-links-auto-fixer",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "auto-discovery-runner",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "auto-scheduler",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "automation-matrix",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "autonomous-invention-orchestrator",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "autonomous-meta-orchestrator",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "broken-image-scanner",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "broken-image-scanner-runner",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "canonical-auditor",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "cloud_deep_research",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "cloud_orchestrator",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "code-smell-audit-runner",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "component-coupling-graph-runner",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "component-props-docs-runner",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "component-size-report",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "content-freshness-score-runner",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "continuous-front-runner",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "continuous-orchestrator",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "dead-code-audit",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "dead-code-report",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "deps-auto-upgrade-runner",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "docs-index-runner",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "docs-search-index-runner",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "duplicate-media-finder-runner",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "external-link-check-runner",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "fast-front-promoter",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "fast-orchestrator",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "feature-advertiser",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "features-capabilities-benefits-advertiser",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "front-ads-promoter",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "front-enhancer",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "front-index-futurizer",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "front-index-orchestrator",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "front-index-scheduler",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "front-maximizer",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "front-visionary-expander",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "frontpage-enhancer",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "frontpage-scheduler",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "headers-enforcer",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "home-visionary-expander",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "homepage-advertiser-scheduler",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "homepage-enhancer",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "homepage-updater",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "homepage-updater-scheduler",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "homepage_advertiser",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "hyper-front-index-accelerator",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "image-optimizer-runner",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "innovation-lab",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "innovations-promoter",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "intelligent-meta-orchestrator",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "internal-link-graph-runner",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "knowledge-pack-runner",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "license-compliance-auditor",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "link-and-health-scheduler",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "link-crawler",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "maintenance-scheduler",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "marketing-and-features-promo",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "marketing-scheduler",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "media-og-and-optimize",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "metadata-optimizer-runner",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "netlify-auto-healer-runner",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "newsroom-auto-publisher",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "newsroom-runner",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "og-image-update-runner",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "orphan-pages-detector",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "pagespeed-insights-runner",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "readme-advertiser",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "repo-knowledge-graph-runner",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "repo-radar-and-graph",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "repo-radar-runner",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "revenue-ideas-lab",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "roadmap-curator",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "robots-auditor",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "schedule-content-index",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "schedule-homepage",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "schedule-knowledge-graph",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "schedule-site-health",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "security-audit",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "security-audit-runner",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "seo-audit-runner",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "site-404-map-runner",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "site-crawler",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "sitemap_runner",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "stale-content-auditor-runner",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "todo-scanner-runner",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "todo-summary-runner",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "topic-cluster-builder-runner",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "topics-map-runner",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "trigger-all-and-commit",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "ui-enhancer",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "ultrafast-front-orchestrator",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "ultrafast-orchestrator",
+        "exists": true,
+        "lastRun": null
+      },
+      {
+        "name": "unused-media-scanner",
+        "exists": true,
+        "lastRun": null
+      }
+    ],
+    "lastCheck": "2025-08-19T17:46:39.099Z"
   },
-  "gitSyncStatus": {
-    "isGitRepo": true,
-    "canExecuteGit": true,
-    "healthScore": 100,
-    "lastCheck": "2025-08-19T17:32:00.129Z"
+  "system": {
+    "healthy": true,
+    "lastCheck": "2025-08-19T17:46:39.312Z"
   },
-  "healthScore": 80,
-  "totalChecks": 1,
-  "successfulChecks": 0,
-  "failedChecks": 1,
-  "autoRecoveries": 1,
-  "lastError": null
+  "lastUpdate": "2025-08-19T17:46:39.312Z"
 }
