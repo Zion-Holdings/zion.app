@@ -339,7 +339,18 @@
     "redundancy:ultimate:master:restart": "node automation/ultimate-redundancy-master.cjs restart",
     "redundancy:ultimate:master:status": "node automation/ultimate-redundancy-master.cjs status",
     "redundancy:ultimate:master:report": "node automation/ultimate-redundancy-master.cjs report",
-    "redundancy:ultimate:master:monitor": "node automation/ultimate-redundancy-master.cjs monitor"
+    "redundancy:ultimate:master:monitor": "node automation/ultimate-redundancy-master.cjs monitor",
+    "redundancy:complete:start": "./automation/start-complete-redundancy.sh start",
+    "redundancy:complete:stop": "./automation/start-complete-redundancy.sh stop",
+    "redundancy:complete:restart": "./automation/start-complete-redundancy.sh restart",
+    "redundancy:complete:status": "./automation/start-complete-redundancy.sh status",
+    "redundancy:complete:health": "./automation/start-complete-redundancy.sh health",
+    "redundancy:complete:logs": "./automation/start-complete-redundancy.sh logs",
+    "redundancy:complete:check": "./automation/start-complete-redundancy.sh check",
+    "redundancy:complete:report": "./automation/start-complete-redundancy.sh report",
+    "redundancy:complete:monitor": "./automation/start-complete-redundancy.sh monitor",
+    "redundancy:complete:recovery": "./automation/start-complete-redundancy.sh recovery",
+    "redundancy:complete:master": "node automation/complete-redundancy-master.cjs"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
