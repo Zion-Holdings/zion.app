@@ -88,53 +88,102 @@ export default function HomePage() {
               </Link>
             </div>
           </section>
-          {/* AUTO-GENERATED: HOME_LATEST_CONTENT_END */}
-          
-          {/* Additional Content Section */}
-          <section className="mx-auto max-w-7xl px-6 pb-14">
-            <h2 className="text-center text-2xl font-bold tracking-wide text-white/90 mb-8">Explore Our Platform</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <Link href="/about" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300 text-center">
-                <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-xl">🏢</span>
-                </div>
-                <h3 className="text-lg font-semibold text-cyan-400 mb-2">About Us</h3>
-                <p className="text-white/70 text-sm">Learn about our mission and vision</p>
-              </Link>
-              
-              <Link href="/services" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-fuchsia-400/30 transition-all duration-300 text-center">
-                <div className="w-12 h-12 bg-gradient-to-br from-fuchsia-400 to-purple-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-xl">🚀</span>
-                </div>
-                <h3 className="text-lg font-semibold text-fuchsia-400 mb-2">Services</h3>
-                <p className="text-white/70 text-sm">Discover our AI solutions</p>
-              </Link>
-              
-              <Link href="/resources" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-blue-400/30 transition-all duration-300 text-center">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-xl">📚</span>
-                </div>
-                <h3 className="text-lg font-semibold text-blue-400 mb-2">Resources</h3>
-                <p className="text-white/70 text-sm">Access tools and insights</p>
-              </Link>
-              
-              <Link href="/case-studies" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-yellow-400/30 transition-all duration-300 text-center">
-                <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-xl">📊</span>
-                </div>
-                <h3 className="text-lg font-semibold text-yellow-400 mb-2">Case Studies</h3>
-                <p className="text-white/70 text-sm">See real success stories</p>
-              </Link>
-              
-              <Link href="/blog" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-purple-400/30 transition-all duration-300 text-center">
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-xl">✍️</span>
-                </div>
-                <h3 className="text-lg font-semibold text-purple-400 mb-2">Blog</h3>
-                <p className="text-white/70 text-sm">Read our latest insights</p>
-              </Link>
-            </div>
-          </section>
+                      {/* AUTO-GENERATED: HOME_LATEST_CONTENT_END */}
+            
+            {/* Featured Content Section */}
+            <section className="mx-auto max-w-7xl px-6 pb-14">
+              <h2 className="text-center text-2xl font-bold tracking-wide text-white/90 mb-8">Featured Insights</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <Link href="/ai-solutions" className="group bg-gradient-to-br from-cyan-400/20 to-blue-500/20 backdrop-blur-xl rounded-2xl p-6 border border-cyan-400/30 hover:border-cyan-400/50 transition-all duration-300">
+                  <div className="text-4xl mb-4">🤖</div>
+                  <h3 className="text-xl font-bold mb-3 text-cyan-400">AI Solutions</h3>
+                  <p className="text-white/80 mb-4">Explore our comprehensive AI capabilities including machine learning, NLP, and computer vision.</p>
+                  <div className="inline-flex items-center text-cyan-300 text-sm">Discover AI Solutions <span className="ml-1">→</span></div>
+                </Link>
+                
+                <Link href="/automation-insights" className="group bg-gradient-to-br from-fuchsia-400/20 to-purple-500/20 backdrop-blur-xl rounded-2xl p-6 border border-fuchsia-400/30 hover:border-fuchsia-400/50 transition-all duration-300">
+                  <div className="text-4xl mb-4">⚡</div>
+                  <h3 className="text-xl font-bold mb-3 text-fuchsia-400">Automation Insights</h3>
+                  <p className="text-white/80 mb-4">Learn about our automation expertise and discover the latest trends in autonomous systems.</p>
+                  <div className="inline-flex items-center text-fuchsia-300 text-sm">Explore Automation <span className="ml-1">→</span></div>
+                </Link>
+                
+                <Link href="/technology-insights" className="group bg-gradient-to-br from-green-400/20 to-emerald-500/20 backdrop-blur-xl rounded-2xl p-6 border border-green-400/30 hover:border-green-400/50 transition-all duration-300">
+                  <div className="text-4xl mb-4">🔬</div>
+                  <h3 className="text-xl font-bold mb-3 text-green-400">Technology Insights</h3>
+                  <p className="text-white/80 mb-4">Stay ahead with our research insights and thought leadership in emerging technologies.</p>
+                  <div className="inline-flex items-center text-green-300 text-sm">Read Insights <span className="ml-1">→</span></div>
+                </Link>
+              </div>
+            </section>
+            
+            {/* Additional Content Section */}
+            <section className="mx-auto max-w-7xl px-6 pb-14">
+              <h2 className="text-center text-2xl font-bold tracking-wide text-white/90 mb-8">Explore Our Platform</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <Link href="/about" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300 text-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-xl">🏢</span>
+                  </div>
+                  <h3 className="text-lg font-semibold text-cyan-400 mb-2">About Us</h3>
+                  <p className="text-white/70 text-sm">Learn about our mission and vision</p>
+                </Link>
+                
+                <Link href="/services" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-fuchsia-400/30 transition-all duration-300 text-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-fuchsia-400 to-purple-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-xl">🚀</span>
+                  </div>
+                  <h3 className="text-lg font-semibold text-fuchsia-400 mb-2">Services</h3>
+                  <p className="text-white/70 text-sm">Discover our AI solutions</p>
+                </Link>
+                
+                <Link href="/ai-solutions" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-green-400/30 transition-all duration-300 text-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-xl">🤖</span>
+                  </div>
+                  <h3 className="text-lg font-semibold text-green-400 mb-2">AI Solutions</h3>
+                  <p className="text-white/70 text-sm">Explore our AI capabilities</p>
+                </Link>
+                
+                <Link href="/automation-insights" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-blue-400/30 transition-all duration-300 text-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-xl">⚡</span>
+                  </div>
+                  <h3 className="text-lg font-semibold text-blue-400 mb-2">Automation Insights</h3>
+                  <p className="text-white/70 text-sm">Learn about automation</p>
+                </Link>
+                
+                <Link href="/technology-insights" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-yellow-400/30 transition-all duration-300 text-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-xl">🔬</span>
+                  </div>
+                  <h3 className="text-lg font-semibold text-yellow-400 mb-2">Tech Insights</h3>
+                  <p className="text-white/70 text-sm">Research & innovation</p>
+                </Link>
+                
+                <Link href="/case-studies" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-purple-400/30 transition-all duration-300 text-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-xl">📊</span>
+                  </div>
+                  <h3 className="text-lg font-semibold text-purple-400 mb-2">Case Studies</h3>
+                  <p className="text-white/70 text-sm">See real success stories</p>
+                </Link>
+              </div>
+            </section>
+
+            {/* Site Navigation */}
+            <section className="mx-auto max-w-7xl px-6 pb-14">
+              <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-8 text-center">
+                <h2 className="text-2xl font-bold mb-4 text-white">Site Navigation</h2>
+                <p className="text-white/70 mb-6">Need help finding something? Use our comprehensive sitemap for easy navigation.</p>
+                <Link 
+                  href="/sitemap"
+                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-cyan-400 to-fuchsia-400 text-white font-bold rounded-lg hover:from-cyan-500 hover:to-fuchsia-500 transition-all duration-200"
+                >
+                  View Sitemap <span className="ml-2">🗺️</span>
+                </Link>
+              </div>
+            </section>
         </main>
       </div>
     </>

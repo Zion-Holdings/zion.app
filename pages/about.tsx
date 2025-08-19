@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 
 export default function AboutPage() {
   return (
@@ -91,7 +92,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8">
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 mb-16">
               <h2 className="text-3xl font-bold mb-6 text-purple-400">Our Impact</h2>
               <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                 <div className="text-center">
@@ -110,6 +111,42 @@ export default function AboutPage() {
                   <div className="text-3xl font-bold text-blue-400">99.9%</div>
                   <div className="text-sm text-white/70">Uptime</div>
                 </div>
+              </div>
+            </div>
+
+            {/* Explore More Section */}
+            <div className="bg-gradient-to-r from-cyan-400/20 to-fuchsia-400/20 backdrop-blur-xl rounded-2xl p-8 text-center">
+              <h2 className="text-3xl font-bold mb-6 text-white">Explore Our Expertise</h2>
+              <p className="text-xl text-white/80 mb-8">
+                Discover more about our AI solutions, automation insights, and technology research
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <Link 
+                  href="/ai-solutions"
+                  className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300"
+                >
+                  <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">🤖</div>
+                  <h3 className="text-lg font-semibold text-cyan-400 mb-2">AI Solutions</h3>
+                  <p className="text-white/70 text-sm">Explore our AI capabilities and solutions</p>
+                </Link>
+                
+                <Link 
+                  href="/automation-insights"
+                  className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-fuchsia-400/30 transition-all duration-300"
+                >
+                  <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">⚡</div>
+                  <h3 className="text-lg font-semibold text-fuchsia-400 mb-2">Automation Insights</h3>
+                  <p className="text-white/70 text-sm">Learn about automation trends and tools</p>
+                </Link>
+                
+                <Link 
+                  href="/technology-insights"
+                  className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-green-400/30 transition-all duration-300"
+                >
+                  <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">🔬</div>
+                  <h3 className="text-lg font-semibold text-green-400 mb-2">Tech Insights</h3>
+                  <p className="text-white/70 text-sm">Research and innovation insights</p>
+                </Link>
               </div>
             </div>
           </section>
