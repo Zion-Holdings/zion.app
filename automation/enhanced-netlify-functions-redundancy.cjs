@@ -18,35 +18,31 @@ class EnhancedNetlifyFunctionsRedundancy {
       functionsDir: "netlify/functions",
       manifestFile: "netlify/functions/functions-manifest.json",
       configFile: "netlify/netlify.toml",
-      checkInterval: 120000, // 2 minutes
+      healthCheckInterval: 120000,
       maxFailures: 3,
       healthCheckTimeout: 15000,
       autoDeploy: true,
-      deployTimeout: 300000, // 5 minutes
-      functions: {
-        autoRegenerate: true,
-        healthCheck: true,
-        deploymentCheck: true,
-        backupExecution: true
-      },
-      backupStrategies: [
-        "local-execution",
-        "function-regeneration",
-        "deployment-trigger"
-      ],
-      localExecution: {
-        enabled: true,
-        timeout: 60000, // 1 minute
-        retryAttempts: 2
-      }
+      deployTimeout: 300000,
+      enableAutoRegeneration: true,
+      enableHealthCheck: true,
+      enableDeploymentCheck: true,
+      enableMetricsCollection: true,
+      functionCategories: [
+        "automation",
+        "content",
+        "monitoring",
+        "optimization",
+        "security",
+        "seo",
+        "social"
+      ]
     };
     
     this.monitoring = false;
     this.checkInterval = null;
     this.failureCounts = new Map();
-    this.lastRunTimes = new Map();
-    this.functionStatus = new Map();
-    this.manifestData = null;
+    this.lastHealthCheck = null;
+    this.deploymentStatus = new Map();
   }
 
   ensureLogDir() {
@@ -96,8 +92,8 @@ class EnhancedNetlifyFunctionsRedundancy {
         return { exists: false, functions: false, config: false };
       }
 
-      const functionsDir = path.join(netlifyDir, "functions");
-      const configFile = path.join(netlifyDir, "netlify.toml");
+      const functionsDir = path.join(this.workspace, this.config.functionsDir);
+      const configFile = path.join(this.workspace, this.config.configFile);
       
       return {
         exists: true,
@@ -110,355 +106,361 @@ class EnhancedNetlifyFunctionsRedundancy {
     }
   }
 
-  async loadFunctionsManifest() {
+  async validateFunctionsManifest() {
     try {
       const manifestPath = path.join(this.workspace, this.config.manifestFile);
       
       if (!fs.existsSync(manifestPath)) {
-        this.log("❌ Functions manifest not found", "ERROR");
-        return null;
+        this.log("❌ Netlify functions manifest not found", "ERROR");
+        return { exists: false, valid: false, functions: [], errors: ["Manifest file not found"] };
       }
 
       const manifestContent = fs.readFileSync(manifestPath, 'utf8');
-      this.manifestData = JSON.parse(manifestContent);
+      const manifest = JSON.parse(manifestContent);
       
-      this.log(`📋 Loaded functions manifest with ${this.manifestData.functions.length} functions`);
-      return this.manifestData;
+      // Validate manifest structure
+      const errors = [];
+      if (!manifest.functions || !Array.isArray(manifest.functions)) {
+        errors.push("Invalid manifest structure: functions array missing");
+      }
+      
+      if (!manifest.generatedAt) {
+        errors.push("Manifest missing generation timestamp");
+      }
+
+      if (errors.length > 0) {
+        this.log(`⚠️ Functions manifest has validation errors: ${errors.join(', ')}`, "WARN");
+        return { exists: true, valid: false, functions: [], errors };
+      }
+
+      const functions = manifest.functions || [];
+      this.log(`✅ Functions manifest is valid with ${functions.length} functions`);
+      
+      return { exists: true, valid: true, functions, errors: [] };
     } catch (error) {
-      this.log(`❌ Error loading functions manifest: ${error.message}`, "ERROR");
-      return null;
+      this.log(`❌ Error validating functions manifest: ${error.message}`, "ERROR");
+      return { exists: true, valid: false, functions: [], errors: [error.message] };
     }
   }
 
   async checkFunctionHealth(functionName) {
     try {
-      this.log(`Checking health of function: ${functionName}`);
-      
-      const functionDir = path.join(this.workspace, this.config.functionsDir, functionName);
-      
-      if (!fs.existsSync(functionDir)) {
-        this.log(`❌ Function directory not found: ${functionName}`, "ERROR");
-        return false;
+      // Check if function file exists
+      const functionPath = path.join(this.workspace, this.config.functionsDir, `${functionName}.js`);
+      if (!fs.existsSync(functionPath)) {
+        this.log(`❌ Function ${functionName} file not found`, "ERROR");
+        return { exists: false, valid: false, errors: ["Function file not found"] };
       }
 
-      // Check for required function files
-      const requiredFiles = ['index.js', 'index.cjs', 'index.mjs'];
-      let hasMainFile = false;
-      
-      for (const file of requiredFiles) {
-        if (fs.existsSync(path.join(functionDir, file))) {
-          hasMainFile = true;
-          break;
-        }
-      }
-      
-      if (!hasMainFile) {
-        this.log(`❌ Function ${functionName} missing main file`, "ERROR");
-        return false;
+      // Basic syntax validation
+      const functionContent = fs.readFileSync(functionPath, 'utf8');
+      const errors = [];
+
+      // Check for basic function structure
+      if (!functionContent.includes('exports.handler') && !functionContent.includes('module.exports')) {
+        errors.push("Missing handler export");
       }
 
-      // Check function configuration
-      const configFile = path.join(functionDir, 'netlify.toml');
-      if (fs.existsSync(configFile)) {
-        this.log(`⚙️ Function ${functionName} has configuration file`);
+      // Check for common syntax issues
+      if (functionContent.includes('require(') && !functionContent.includes('const') && !functionContent.includes('var') && !functionContent.includes('let')) {
+        errors.push("Potential missing variable declaration for require");
       }
 
-      // Check function dependencies
-      const packageFile = path.join(functionDir, 'package.json');
-      if (fs.existsSync(packageFile)) {
-        try {
-          const packageData = JSON.parse(fs.readFileSync(packageFile, 'utf8'));
-          if (packageData.dependencies) {
-            this.log(`📦 Function ${functionName} has ${Object.keys(packageData.dependencies).length} dependencies`);
-          }
-        } catch (error) {
-          this.log(`⚠️ Function ${functionName} has invalid package.json`, "WARN");
-        }
+      if (errors.length > 0) {
+        this.log(`⚠️ Function ${functionName} has validation issues: ${errors.join(', ')}`, "WARN");
+        return { exists: true, valid: false, errors };
       }
 
-      this.log(`✅ Function ${functionName} is healthy`);
-      return true;
+      this.log(`✅ Function ${functionName} appears valid`);
+      return { exists: true, valid: true, errors: [] };
     } catch (error) {
       this.log(`❌ Error checking function ${functionName}: ${error.message}`, "ERROR");
-      return false;
-    }
-  }
-
-  async executeFunctionLocally(functionName) {
-    try {
-      this.log(`Executing function ${functionName} locally...`);
-      
-      const functionDir = path.join(this.workspace, this.config.functionsDir, functionName);
-      
-      if (!fs.existsSync(functionDir)) {
-        throw new Error(`Function directory not found: ${functionName}`);
-      }
-
-      // Find the main function file
-      const mainFiles = ['index.js', 'index.cjs', 'index.mjs'];
-      let mainFile = null;
-      
-      for (const file of mainFiles) {
-        if (fs.existsSync(path.join(functionDir, file))) {
-          mainFile = file;
-          break;
-        }
-      }
-      
-      if (!mainFile) {
-        throw new Error(`No main file found for function: ${functionName}`);
-      }
-
-      // Check if function has dependencies
-      const packageFile = path.join(functionDir, 'package.json');
-      if (fs.existsSync(packageFile)) {
-        this.log(`Installing dependencies for ${functionName}...`);
-        const installResult = await this.runCommand("npm", ["install"], {
-          cwd: functionDir,
-          timeout: 120000 // 2 minutes for npm install
-        });
-        
-        if (installResult.status !== 0) {
-          this.log(`⚠️ Dependency installation failed for ${functionName}: ${installResult.stderr}`, "WARN");
-        }
-      }
-
-      // Execute the function
-      const result = await this.runCommand("node", [mainFile], {
-        cwd: functionDir,
-        timeout: this.config.localExecution.timeout
-      });
-      
-      if (result.status === 0) {
-        this.log(`✅ Local execution of ${functionName} completed successfully`);
-        this.lastRunTimes.set(functionName, new Date());
-        return true;
-      } else {
-        this.log(`❌ Local execution of ${functionName} failed: ${result.stderr}`, "ERROR");
-        return false;
-      }
-    } catch (error) {
-      this.log(`❌ Error executing function ${functionName} locally: ${error.message}`, "ERROR");
-      return false;
+      return { exists: true, valid: false, errors: [error.message] };
     }
   }
 
   async regenerateFunctionsManifest() {
+    if (!this.config.enableAutoRegeneration) {
+      this.log("⚠️ Auto-regeneration disabled for functions manifest");
+      return false;
+    }
+
+    this.log("🔧 Regenerating Netlify functions manifest...");
+    
     try {
-      this.log("Regenerating functions manifest...");
-      
-      const scriptPath = path.join(this.workspace, "scripts/generate-netlify-functions-manifest.cjs");
-      
-      if (fs.existsSync(scriptPath)) {
-        const result = await this.runCommand("node", [scriptPath], {
-          timeout: 60000
-        });
-        
-        if (result.status === 0) {
-          this.log("✅ Functions manifest regenerated successfully");
-          
-          // Reload the manifest
-          await this.loadFunctionsManifest();
-          return true;
-        } else {
-          this.log(`❌ Functions manifest regeneration failed: ${result.stderr}`, "ERROR");
-          return false;
-        }
-      } else {
-        this.log("⚠️ Functions manifest generation script not found", "WARN");
+      const functionsDir = path.join(this.workspace, this.config.functionsDir);
+      if (!fs.existsSync(functionsDir)) {
+        this.log("❌ Functions directory not found, cannot regenerate manifest", "ERROR");
         return false;
       }
+
+      // Scan for function files
+      const functionFiles = fs.readdirSync(functionsDir)
+        .filter(file => file.endsWith('.js'))
+        .map(file => file.replace('.js', ''));
+
+      // Create new manifest
+      const newManifest = {
+        generatedAt: new Date().toISOString(),
+        functions: functionFiles,
+        metadata: {
+          totalFunctions: functionFiles.length,
+          categories: this.categorizeFunctions(functionFiles),
+          generatedBy: "enhanced-netlify-functions-redundancy"
+        }
+      };
+
+      // Write new manifest
+      const manifestPath = path.join(this.workspace, this.config.manifestFile);
+      fs.writeFileSync(manifestPath, JSON.stringify(newManifest, null, 2));
+      
+      this.log(`✅ Successfully regenerated functions manifest with ${functionFiles.length} functions`);
+      return true;
     } catch (error) {
-      this.log(`❌ Error regenerating functions manifest: ${error.message}`, "ERROR");
+      this.log(`❌ Failed to regenerate functions manifest: ${error.message}`, "ERROR");
       return false;
     }
   }
 
-  async triggerNetlifyDeploy() {
-    try {
-      this.log("Triggering Netlify deployment...");
-      
-      // Check if netlify CLI is available
-      const netlifyCheck = await this.runCommand("netlify", ["--version"]);
-      
-      if (netlifyCheck.status === 0) {
-        // Trigger build and deploy
-        const deployResult = await this.runCommand("netlify", ["build", "--prod"], {
-          timeout: this.config.deployTimeout
-        });
-        
-        if (deployResult.status === 0) {
-          this.log("✅ Netlify deployment triggered successfully");
-          return true;
-        } else {
-          this.log(`❌ Netlify deployment failed: ${deployResult.stderr}`, "ERROR");
-          return false;
-        }
-      } else {
-        this.log("⚠️ Netlify CLI not available, skipping deployment trigger", "WARN");
-        return false;
-      }
-    } catch (error) {
-      this.log(`❌ Error triggering Netlify deployment: ${error.message}`, "ERROR");
-      return false;
-    }
-  }
-
-  async backupFunctionExecution(functionName) {
-    try {
-      this.log(`Executing backup strategy for function ${functionName}...`);
-      
-      let success = false;
-      
-      // Try local execution first
-      if (this.config.localExecution.enabled) {
-        this.log(`🔄 Attempting local execution as backup...`);
-        success = await this.executeFunctionLocally(functionName);
-        
-        if (success) {
-          this.log(`✅ Backup execution successful for ${functionName}`);
-          return true;
-        }
-      }
-      
-      // Try function regeneration
-      if (this.config.functions.autoRegenerate) {
-        this.log(`🔄 Attempting function regeneration as backup...`);
-        success = await this.regenerateFunctionsManifest();
-        
-        if (success) {
-          this.log(`✅ Function regeneration successful for ${functionName}`);
-          return true;
-        }
-      }
-      
-      // Try deployment trigger
-      if (this.config.autoDeploy) {
-        this.log(`🚀 Attempting deployment trigger as backup...`);
-        success = await this.triggerNetlifyDeploy();
-        
-        if (success) {
-          this.log(`✅ Deployment trigger successful for ${functionName}`);
-          return true;
-        }
-      }
-      
-      this.log(`❌ All backup strategies failed for ${functionName}`, "ERROR");
-      return false;
-    } catch (error) {
-      this.log(`❌ Error in backup execution for ${functionName}: ${error.message}`, "ERROR");
-      return false;
-    }
-  }
-
-  async checkAllFunctions() {
-    this.log("Starting comprehensive Netlify functions health check...");
+  categorizeFunctions(functionNames) {
+    const categories = {};
     
-    const { exists, functions } = await this.checkNetlifyDirectory();
-    if (!exists || !functions) {
-      this.log("❌ Cannot check functions - directory not found", "ERROR");
-      return false;
-    }
-    
-    // Load functions manifest
-    const manifest = await this.loadFunctionsManifest();
-    if (!manifest) {
-      this.log("❌ Cannot check functions - manifest not available", "ERROR");
-      return false;
-    }
-    
-    let healthyCount = 0;
-    const totalFunctions = manifest.functions.length;
-    
-    for (const functionName of manifest.functions) {
-      try {
-        const isHealthy = await this.checkFunctionHealth(functionName);
-        
-        if (isHealthy) {
-          healthyCount++;
-          this.functionStatus.set(functionName, "healthy");
-          
-          // Reset failure count for healthy functions
-          this.failureCounts.set(functionName, 0);
-        } else {
-          this.functionStatus.set(functionName, "unhealthy");
-          
-          // Increment failure count
-          const failureCount = (this.failureCounts.get(functionName) || 0) + 1;
-          this.failureCounts.set(functionName, failureCount);
-          
-          this.log(`⚠️ Function ${functionName} failure count: ${failureCount}/${this.config.maxFailures}`, "WARN");
-          
-          // If max failures reached, try backup execution
-          if (failureCount >= this.config.maxFailures) {
-            this.log(`🚨 Max failures reached for ${functionName}, attempting backup execution...`, "ERROR");
-            await this.backupFunctionExecution(functionName);
+    for (const functionName of functionNames) {
+      for (const category of this.config.functionCategories) {
+        if (functionName.toLowerCase().includes(category.toLowerCase())) {
+          if (!categories[category]) {
+            categories[category] = [];
           }
+          categories[category].push(functionName);
+          break;
         }
-        
-        // Small delay between checks
-        await new Promise(resolve => setTimeout(resolve, 2000));
-        
-      } catch (error) {
-        this.log(`❌ Error checking function ${functionName}: ${error.message}`, "ERROR");
-        this.functionStatus.set(functionName, "error");
       }
     }
     
-    this.log(`📊 Netlify functions health check complete: ${healthyCount}/${totalFunctions} functions healthy`);
-    return healthyCount === totalFunctions;
+    return categories;
+  }
+
+  async checkNetlifyConfiguration() {
+    try {
+      const configPath = path.join(this.workspace, this.config.configFile);
+      
+      if (!fs.existsSync(configPath)) {
+        this.log("⚠️ Netlify configuration file not found", "WARN");
+        return { exists: false, valid: false, errors: ["Configuration file not found"] };
+      }
+
+      const configContent = fs.readFileSync(configPath, 'utf8');
+      const errors = [];
+
+      // Basic TOML validation (simplified)
+      if (!configContent.includes('[build]') && !configContent.includes('[functions]')) {
+        errors.push("Missing required configuration sections");
+      }
+
+      if (errors.length > 0) {
+        this.log(`⚠️ Netlify configuration has validation issues: ${errors.join(', ')}`, "WARN");
+        return { exists: true, valid: false, errors };
+      }
+
+      this.log("✅ Netlify configuration appears valid");
+      return { exists: true, valid: true, errors: [] };
+    } catch (error) {
+      this.log(`❌ Error checking Netlify configuration: ${error.message}`, "ERROR");
+      return { exists: true, valid: false, errors: [error.message] };
+    }
+  }
+
+  async performComprehensiveHealthCheck() {
+    this.log("🚀 Starting comprehensive Netlify functions health check...");
+    
+    const results = {
+      directory: {},
+      manifest: {},
+      configuration: {},
+      functions: {},
+      summary: {
+        totalFunctions: 0,
+        healthyFunctions: 0,
+        unhealthyFunctions: 0,
+        manifestRegenerated: false
+      },
+      timestamp: new Date().toISOString()
+    };
+
+    // Check Netlify directory structure
+    results.directory = await this.checkNetlifyDirectory();
+    
+    // Check functions manifest
+    results.manifest = await this.validateFunctionsManifest();
+    if (!results.manifest.valid && this.config.enableAutoRegeneration) {
+      const regenerated = await this.regenerateFunctionsManifest();
+      if (regenerated) {
+        results.summary.manifestRegenerated = true;
+        // Re-validate after regeneration
+        results.manifest = await this.validateFunctionsManifest();
+      }
+    }
+
+    // Check Netlify configuration
+    results.configuration = await this.checkNetlifyConfiguration();
+
+    // Check individual functions
+    if (results.manifest.functions && results.manifest.functions.length > 0) {
+      results.summary.totalFunctions = results.manifest.functions.length;
+      
+      for (const functionName of results.manifest.functions) {
+        const functionHealth = await this.checkFunctionHealth(functionName);
+        results.functions[functionName] = functionHealth;
+        
+        if (functionHealth.valid) {
+          results.summary.healthyFunctions++;
+        } else {
+          results.summary.unhealthyFunctions++;
+        }
+      }
+    }
+
+    // Generate and log health report
+    const healthReport = this.generateHealthReport(results);
+    this.log(healthReport);
+
+    // Save health report
+    this.saveHealthReport(results);
+
+    this.lastHealthCheck = results;
+    return results;
+  }
+
+  generateHealthReport(results) {
+    const directoryStatus = results.directory.exists ? "✅ EXISTS" : "❌ MISSING";
+    const manifestStatus = results.manifest.valid ? "✅ VALID" : "❌ INVALID";
+    const configStatus = results.configuration.valid ? "✅ VALID" : "❌ INVALID";
+    
+    let functionStatus = "";
+    if (results.manifest.functions && results.manifest.functions.length > 0) {
+      for (const [functionName, health] of Object.entries(results.functions)) {
+        const status = health.valid ? "✅" : "❌";
+        const details = health.valid ? "HEALTHY" : `UNHEALTHY: ${health.errors.join(', ')}`;
+        functionStatus += `${status} ${functionName}: ${details}\n`;
+      }
+    } else {
+      functionStatus = "No functions found in manifest\n";
+    }
+
+    return `
+📊 ENHANCED NETLIFY FUNCTIONS HEALTH REPORT
+============================================
+Timestamp: ${results.timestamp}
+
+📁 Directory Structure: ${directoryStatus}
+📋 Functions Manifest: ${manifestStatus}
+⚙️ Netlify Configuration: ${configStatus}
+
+📊 Functions Health Summary:
+Total Functions: ${results.summary.totalFunctions}
+Healthy: ${results.summary.healthyFunctions}
+Unhealthy: ${results.summary.unhealthyFunctions}
+Manifest Regenerated: ${results.summary.manifestRegenerated ? "Yes" : "No"}
+
+🔍 Individual Function Status:
+${functionStatus}
+
+${results.summary.healthyFunctions === results.summary.totalFunctions && results.summary.totalFunctions > 0 ? 
+  "🎉 All Netlify functions are healthy!" : 
+  "⚠️ Some Netlify functions require attention. Check logs for details."}
+`;
+  }
+
+  saveHealthReport(results) {
+    try {
+      const reportPath = path.join(this.logDir, `netlify-functions-health-report-${new Date().toISOString().split('T')[0]}.json`);
+      fs.writeFileSync(reportPath, JSON.stringify(results, null, 2));
+      this.log(`📝 Netlify functions health report saved to ${reportPath}`);
+    } catch (error) {
+      this.log(`❌ Failed to save Netlify functions health report: ${error.message}`, "ERROR");
+    }
   }
 
   async startMonitoring() {
     if (this.monitoring) {
-      this.log("Monitoring already active");
+      this.log("⚠️ Monitoring is already running");
       return;
     }
-    
-    this.log("Starting enhanced Netlify functions redundancy monitoring...");
+
+    this.log("🚀 Starting enhanced Netlify functions redundancy monitoring...");
     this.monitoring = true;
-    
+
     // Initial health check
-    await this.checkAllFunctions();
-    
-    // Start periodic monitoring
+    await this.performComprehensiveHealthCheck();
+
+    // Set up periodic monitoring
     this.checkInterval = setInterval(async () => {
-      try {
-        await this.checkAllFunctions();
-      } catch (error) {
-        this.log(`Error during functions health check: ${error.message}`, "ERROR");
-      }
-    }, this.config.checkInterval);
-    
-    this.log("Enhanced Netlify functions redundancy monitoring started");
+      await this.performComprehensiveHealthCheck();
+    }, this.config.healthCheckInterval);
+
+    this.log("✅ Enhanced Netlify functions redundancy monitoring started successfully");
   }
 
   async stopMonitoring() {
+    if (!this.monitoring) {
+      this.log("⚠️ Monitoring is not running");
+      return;
+    }
+
+    this.log("🛑 Stopping enhanced Netlify functions redundancy monitoring...");
+    this.monitoring = false;
+
     if (this.checkInterval) {
       clearInterval(this.checkInterval);
       this.checkInterval = null;
     }
-    
-    this.monitoring = false;
-    this.log("Enhanced Netlify functions redundancy monitoring stopped");
+
+    this.log("✅ Enhanced Netlify functions redundancy monitoring stopped");
   }
 
-  async emergencyRegeneration() {
-    this.log("Performing emergency functions regeneration...");
+  async emergencyRecovery() {
+    this.log("🚨 Starting emergency Netlify functions recovery...");
     
     try {
-      // Regenerate manifest
-      await this.regenerateFunctionsManifest();
+      // Ensure directories exist
+      const netlifyDir = path.join(this.workspace, this.config.netlifyDir);
+      const functionsDir = path.join(this.workspace, this.config.functionsDir);
       
-      // Trigger deployment
-      if (this.config.autoDeploy) {
-        await this.triggerNetlifyDeploy();
+      if (!fs.existsSync(netlifyDir)) {
+        fs.mkdirSync(netlifyDir, { recursive: true });
+        this.log("📁 Created Netlify directory");
       }
       
-      this.log("Emergency functions regeneration completed");
+      if (!fs.existsSync(functionsDir)) {
+        fs.mkdirSync(functionsDir, { recursive: true });
+        this.log("📁 Created functions directory");
+      }
+
+      // Regenerate manifest
+      const manifestRegenerated = await this.regenerateFunctionsManifest();
+      
+      // Create basic netlify.toml if missing
+      const configPath = path.join(this.workspace, this.config.configFile);
+      if (!fs.existsSync(configPath)) {
+        const basicConfig = `[build]
+  functions = "netlify/functions"
+
+[functions]
+  directory = "netlify/functions"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat
+  status = 200`;
+        
+        fs.writeFileSync(configPath, basicConfig);
+        this.log("✅ Created basic Netlify configuration");
+      }
+
+      this.log("✅ Emergency Netlify functions recovery completed");
       return true;
     } catch (error) {
-      this.log(`Emergency functions regeneration failed: ${error.message}`, "ERROR");
+      this.log(`❌ Emergency Netlify functions recovery failed: ${error.message}`, "ERROR");
       return false;
     }
   }
@@ -466,43 +468,33 @@ class EnhancedNetlifyFunctionsRedundancy {
   getStatus() {
     return {
       monitoring: this.monitoring,
-      totalFunctions: this.manifestData ? this.manifestData.functions.length : 0,
-      functionStatus: Object.fromEntries(this.functionStatus),
+      config: this.config,
+      lastHealthCheck: this.lastHealthCheck,
       failureCounts: Object.fromEntries(this.failureCounts),
-      lastRunTimes: Object.fromEntries(
-        Array.from(this.lastRunTimes.entries()).map(([k, v]) => [k, v.toISOString()])
-      ),
-      config: this.config
+      deploymentStatus: Object.fromEntries(this.deploymentStatus)
     };
   }
 }
 
-// CLI interface
+// Start the enhanced Netlify functions redundancy system
 if (require.main === module) {
-  const redundancy = new EnhancedNetlifyFunctionsRedundancy();
+  const netlifyFunctionsRedundancy = new EnhancedNetlifyFunctionsRedundancy();
   
-  const command = process.argv[2];
+  // Handle graceful shutdown
+  process.on('SIGINT', async () => {
+    console.log('\n🛑 Shutting down enhanced Netlify functions redundancy system...');
+    await netlifyFunctionsRedundancy.stopMonitoring();
+    process.exit(0);
+  });
   
-  switch (command) {
-    case "start":
-      redundancy.startMonitoring();
-      break;
-    case "stop":
-      redundancy.stopMonitoring();
-      break;
-    case "check":
-      redundancy.checkAllFunctions();
-      break;
-    case "regenerate":
-      redundancy.emergencyRegeneration();
-      break;
-    case "status":
-      console.log(JSON.stringify(redundancy.getStatus(), null, 2));
-      break;
-    default:
-      console.log("Usage: node enhanced-netlify-functions-redundancy.cjs [start|stop|check|regenerate|status]");
-      process.exit(1);
-  }
+  process.on('SIGTERM', async () => {
+    console.log('\n🛑 Terminating enhanced Netlify functions redundancy system...');
+    await netlifyFunctionsRedundancy.stopMonitoring();
+    process.exit(0);
+  });
+
+  // Start monitoring
+  netlifyFunctionsRedundancy.startMonitoring();
 }
 
-module.exports = { EnhancedNetlifyFunctionsRedundancy };
+module.exports = EnhancedNetlifyFunctionsRedundancy;

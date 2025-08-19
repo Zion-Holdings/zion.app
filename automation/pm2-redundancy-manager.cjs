@@ -9,53 +9,72 @@ class PM2RedundancyManager {
   constructor() {
     this.workspace = process.cwd();
     this.logDir = path.join(this.workspace, "automation/logs");
-    this.logFile = path.join(this.logDir, "pm2-redundancy-manager.log");
+    this.logFile = path.join(this.logDir, "pm2-redundancy.log");
     this.ensureLogDir();
     
     this.config = {
-      ecosystemFiles: [
+      // PM2 Ecosystems to monitor
+      ecosystems: [
         "ecosystem.pm2.cjs",
-        "ecosystem-redundancy.pm2.cjs",
-        "ecosystem.redundancy.cjs"
+        "ecosystem.redundancy.cjs",
+        "ecosystem.fast-ads.local.cjs",
+        "ecosystem.cron.local.cjs"
       ],
-      primaryProcesses: [
-        "zion-auto-sync",
-        "zion-auto-sync-cron"
-      ],
-      backupProcesses: [
-        "zion-auto-sync-backup",
-        "zion-auto-sync-cron-backup"
-      ],
-      redundancyProcesses: [
-        "redundancy-master-orchestrator",
-        "redundancy-health-monitor",
-        "redundancy-git-sync",
-        "redundancy-build-monitor",
-        "redundancy-automation-system"
-      ],
-      allProcesses: [],
+      
+      // Process groups with their expected processes
+      processGroups: {
+        core: {
+          ecosystem: "ecosystem.pm2.cjs",
+          processes: ["zion-auto-sync", "zion-auto-sync-cron"],
+          restartStrategy: "individual",
+          maxRestarts: 5
+        },
+        redundancy: {
+          ecosystem: "ecosystem.redundancy.cjs",
+          processes: [
+            "redundancy-automation-system",
+            "redundancy-health-monitor",
+            "redundancy-git-sync",
+            "redundancy-build-monitor"
+          ],
+          restartStrategy: "group",
+          maxRestarts: 3
+        },
+        fastads: {
+          ecosystem: "ecosystem.fast-ads.local.cjs",
+          processes: ["fast-ads-orchestrator", "fast-ads-scheduler"],
+          restartStrategy: "individual",
+          maxRestarts: 3
+        },
+        cron: {
+          ecosystem: "ecosystem.cron.local.cjs",
+          processes: ["cron-automation-system", "cron-scheduler"],
+          restartStrategy: "individual",
+          maxRestarts: 3
+        }
+      },
+      
+      // Health check intervals
       healthCheckInterval: 30000, // 30 seconds
-      maxRestartAttempts: 5,
-      restartDelay: 5000,
+      restartDelay: 5000, // 5 seconds
+      
+      // Resource thresholds
       memoryThreshold: 80, // 80% memory usage
-      cpuThreshold: 90, // 90% CPU usage
-      backupProcessInterval: 300000, // 5 minutes
-      processRotationInterval: 600000 // 10 minutes
+      cpuThreshold: 90,    // 90% CPU usage
+      
+      // Log rotation
+      logRotation: {
+        maxSize: 10 * 1024 * 1024, // 10MB
+        maxFiles: 30,
+        compress: true
+      }
     };
-    
-    // Initialize all processes list
-    this.config.allProcesses = [
-      ...this.config.primaryProcesses,
-      ...this.config.backupProcesses,
-      ...this.config.redundancyProcesses
-    ];
     
     this.monitoring = false;
     this.checkInterval = null;
     this.restartCounts = new Map();
     this.healthHistory = new Map();
-    this.lastProcessRotation = Date.now();
-    this.backupProcessStatus = new Map();
+    this.lastRestart = new Map();
   }
 
   ensureLogDir() {
@@ -97,484 +116,464 @@ class PM2RedundancyManager {
     });
   }
 
-  async checkPM2Status() {
+  // Check if PM2 daemon is running
+  async checkPM2Daemon() {
     try {
       const result = await this.runCommand("pm2", ["status", "--no-daemon"]);
       return result.status === 0;
     } catch (error) {
-      this.log(`PM2 status check failed: ${error.message}`, "ERROR");
+      this.log(`PM2 daemon check failed: ${error.message}`, "ERROR");
       return false;
     }
   }
 
-  async getProcessInfo(processName) {
+  // Start PM2 daemon if not running
+  async startPM2Daemon() {
+    try {
+      this.log("Starting PM2 daemon", "INFO");
+      const result = await this.runCommand("pm2", ["start"]);
+      
+      if (result.status === 0) {
+        this.log("PM2 daemon started successfully", "INFO");
+        return true;
+      } else {
+        this.log(`Failed to start PM2 daemon: ${result.stderr}`, "ERROR");
+        return false;
+      }
+    } catch (error) {
+      this.log(`PM2 daemon start failed: ${error.message}`, "ERROR");
+      return false;
+    }
+  }
+
+  // Get PM2 process list
+  async getPM2ProcessList() {
+    try {
+      const result = await this.runCommand("pm2", ["list", "--no-daemon"]);
+      if (result.status === 0) {
+        return this.parsePM2List(result.stdout);
+      }
+      return [];
+    } catch (error) {
+      this.log(`Failed to get PM2 process list: ${error.message}`, "ERROR");
+      return [];
+    }
+  }
+
+  // Parse PM2 list output
+  parsePM2List(output) {
+    const processes = [];
+    const lines = output.split('\n');
+    
+    for (const line of lines) {
+      const match = line.match(/^(\d+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+)/);
+      if (match) {
+        processes.push({
+          id: match[1],
+          name: match[2],
+          namespace: match[3],
+          version: match[4],
+          mode: match[5],
+          pid: match[6],
+          uptime: match[7],
+          status: match[8]
+        });
+      }
+    }
+    
+    return processes;
+  }
+
+  // Check process health
+  async checkProcessHealth(processName) {
     try {
       const result = await this.runCommand("pm2", ["show", processName, "--no-daemon"]);
-      if (result.status === 0) {
-        const output = result.stdout;
-        const statusMatch = output.match(/status\s+:\s+(\w+)/);
-        const memoryMatch = output.match(/memory\s+:\s+(\d+)/);
-        const cpuMatch = output.match(/cpu\s+:\s+(\d+)/);
-        const uptimeMatch = output.match(/pm_uptime\s+:\s+(\d+)/);
-        const restartMatch = output.match(/restart_time\s+:\s+(\d+)/);
-        
-        return {
-          status: statusMatch ? statusMatch[1] : "unknown",
-          memory: memoryMatch ? parseInt(memoryMatch[1]) : 0,
-          cpu: cpuMatch ? parseInt(cpuMatch[1]) : 0,
-          uptime: uptimeMatch ? parseInt(uptimeMatch[1]) : 0,
-          restarts: restartMatch ? parseInt(restartMatch[1]) : 0,
-          running: statusMatch ? statusMatch[1] === "online" : false
-        };
+      if (result.status !== 0) {
+        return { status: "not_found", error: "Process not found" };
       }
+      
+      const output = result.stdout;
+      const health = {
+        status: "unknown",
+        memory: 0,
+        cpu: 0,
+        uptime: 0,
+        restarts: 0
+      };
+      
+      // Parse status
+      if (output.includes("online")) {
+        health.status = "online";
+      } else if (output.includes("stopped")) {
+        health.status = "stopped";
+      } else if (output.includes("errored")) {
+        health.status = "errored";
+      }
+      
+      // Parse memory usage
+      const memoryMatch = output.match(/memory\s+(\d+)/);
+      if (memoryMatch) {
+        health.memory = parseInt(memoryMatch[1]);
+      }
+      
+      // Parse CPU usage
+      const cpuMatch = output.match(/cpu\s+(\d+)/);
+      if (cpuMatch) {
+        health.cpu = parseInt(cpuMatch[1]);
+      }
+      
+      // Parse uptime
+      const uptimeMatch = output.match(/uptime\s+(\d+)/);
+      if (uptimeMatch) {
+        health.uptime = parseInt(uptimeMatch[1]);
+      }
+      
+      // Parse restart count
+      const restartMatch = output.match(/restarts\s+(\d+)/);
+      if (restartMatch) {
+        health.restarts = parseInt(restartMatch[1]);
+      }
+      
+      return health;
     } catch (error) {
-      this.log(`Failed to get PM2 process info for ${processName}: ${error.message}`, "ERROR");
+      return { status: "error", error: error.message };
     }
-    return null;
   }
 
-  async startProcess(processName) {
-    try {
-      this.log(`Starting PM2 process: ${processName}`);
-      
-      // Try to start from ecosystem file first
-      let result = await this.runCommand("pm2", ["start", processName]);
-      
-      if (result.status !== 0) {
-        // Try to start from ecosystem files
-        for (const ecosystemFile of this.config.ecosystemFiles) {
-          if (fs.existsSync(ecosystemFile)) {
-            this.log(`Trying to start ${processName} from ${ecosystemFile}`);
-            result = await this.runCommand("pm2", ["start", ecosystemFile, "--only", processName]);
-            if (result.status === 0) break;
-          }
-        }
-      }
-      
-      if (result.status === 0) {
-        this.log(`Successfully started PM2 process: ${processName}`);
-        this.restartCounts.set(processName, 0);
-        return true;
-      } else {
-        this.log(`Failed to start PM2 process: ${processName}`, "ERROR");
-        return false;
-      }
-    } catch (error) {
-      this.log(`Error starting PM2 process ${processName}: ${error.message}`, "ERROR");
+  // Check if process needs restart
+  shouldRestartProcess(processName, health) {
+    // Check if process is not online
+    if (health.status !== "online") {
+      return true;
+    }
+    
+    // Check resource thresholds
+    if (health.memory > this.config.memoryThreshold || health.cpu > this.config.cpuThreshold) {
+      return true;
+    }
+    
+    // Check restart count threshold
+    const restartCount = this.restartCounts.get(processName) || 0;
+    if (restartCount >= this.config.processGroups[this.getProcessGroup(processName)]?.maxRestarts || 5) {
+      return false; // Don't restart if max attempts reached
+    }
+    
+    // Check if enough time has passed since last restart
+    const lastRestart = this.lastRestart.get(processName);
+    if (lastRestart && (Date.now() - lastRestart) < this.config.restartDelay) {
       return false;
     }
+    
+    return false;
   }
 
+  // Get process group for a process
+  getProcessGroup(processName) {
+    for (const [groupName, group] of Object.entries(this.config.processGroups)) {
+      if (group.processes.includes(processName)) {
+        return groupName;
+      }
+    }
+    return "core"; // Default to core group
+  }
+
+  // Restart individual process
   async restartProcess(processName) {
     try {
-      this.log(`Restarting PM2 process: ${processName}`);
+      const restartCount = this.restartCounts.get(processName) || 0;
+      const maxRestarts = this.config.processGroups[this.getProcessGroup(processName)]?.maxRestarts || 5;
+      
+      if (restartCount >= maxRestarts) {
+        this.log(`Process ${processName} exceeded max restart attempts (${maxRestarts})`, "ERROR");
+        return false;
+      }
+      
+      this.log(`Restarting process ${processName} (attempt ${restartCount + 1}/${maxRestarts})`, "WARN");
+      
       const result = await this.runCommand("pm2", ["restart", processName]);
       if (result.status === 0) {
-        this.log(`Successfully restarted PM2 process: ${processName}`);
+        this.restartCounts.set(processName, restartCount + 1);
+        this.lastRestart.set(processName, Date.now());
+        this.log(`Process ${processName} restarted successfully`, "INFO");
+        
+        // Reset restart count after successful restart
+        setTimeout(() => {
+          this.restartCounts.set(processName, 0);
+        }, 300000); // 5 minutes
+        
         return true;
       } else {
-        this.log(`Failed to restart PM2 process: ${processName}`, "ERROR");
+        this.log(`Failed to restart process ${processName}: ${result.stderr}`, "ERROR");
         return false;
       }
     } catch (error) {
-      this.log(`Error restarting PM2 process ${processName}: ${error.message}`, "ERROR");
+      this.log(`Process restart failed for ${processName}: ${error.message}`, "ERROR");
       return false;
     }
   }
 
-  async stopProcess(processName) {
+  // Restart process group
+  async restartProcessGroup(groupName) {
     try {
-      this.log(`Stopping PM2 process: ${processName}`);
-      const result = await this.runCommand("pm2", ["stop", processName]);
+      const group = this.config.processGroups[groupName];
+      if (!group) {
+        this.log(`Unknown process group: ${groupName}`, "ERROR");
+        return false;
+      }
+      
+      this.log(`Restarting process group: ${groupName}`, "WARN");
+      
+      // Restart the entire ecosystem
+      const result = await this.runCommand("pm2", ["restart", group.ecosystem, "--update-env"]);
       if (result.status === 0) {
-        this.log(`Successfully stopped PM2 process: ${processName}`);
+        this.log(`Process group ${groupName} restarted successfully`, "INFO");
+        
+        // Reset restart counts for all processes in the group
+        for (const processName of group.processes) {
+          this.restartCounts.set(processName, 0);
+          this.lastRestart.set(processName, Date.now());
+        }
+        
         return true;
       } else {
-        this.log(`Failed to stop PM2 process: ${processName}`, "ERROR");
+        this.log(`Failed to restart process group ${groupName}: ${result.stderr}`, "ERROR");
         return false;
       }
     } catch (error) {
-      this.log(`Error stopping PM2 process ${processName}: ${error.message}`, "ERROR");
+      this.log(`Process group restart failed for ${groupName}: ${error.message}`, "ERROR");
       return false;
     }
   }
 
-  async deleteProcess(processName) {
+  // Start missing processes
+  async startMissingProcesses() {
     try {
-      this.log(`Deleting PM2 process: ${processName}`);
-      const result = await this.runCommand("pm2", ["delete", processName]);
-      if (result.status === 0) {
-        this.log(`Successfully deleted PM2 process: ${processName}`);
-        return true;
-      } else {
-        this.log(`Failed to delete PM2 process: ${processName}`, "ERROR");
-        return false;
-      }
-    } catch (error) {
-      this.log(`Error deleting PM2 process ${processName}: ${error.message}`, "ERROR");
-      return false;
-    }
-  }
-
-  async managePrimaryProcesses() {
-    this.log("Managing primary PM2 processes...");
-    
-    for (const processName of this.config.primaryProcesses) {
-      try {
-        const processInfo = await this.getProcessInfo(processName);
-        
-        if (!processInfo) {
-          this.log(`Primary process ${processName} not found, starting...`);
-          await this.startProcess(processName);
-          continue;
-        }
-        
-        if (!processInfo.running) {
-          this.log(`Primary process ${processName} is not running, restarting...`);
-          await this.restartProcess(processName);
-          continue;
-        }
-        
-        // Check resource usage
-        if (processInfo.memory > this.config.memoryThreshold || 
-            processInfo.cpu > this.config.cpuThreshold) {
-          this.log(`Primary process ${processName} using excessive resources, restarting...`);
-          await this.restartProcess(processName);
-          continue;
-        }
-        
-        // Check restart count
-        if (processInfo.restarts > this.config.maxRestartAttempts) {
-          this.log(`Primary process ${processName} has too many restarts, stopping and restarting...`);
-          await this.stopProcess(processName);
-          await new Promise(resolve => setTimeout(resolve, this.config.restartDelay));
-          await this.startProcess(processName);
-          continue;
-        }
-        
-        this.log(`Primary process ${processName} is healthy`);
-      } catch (error) {
-        this.log(`Error managing primary process ${processName}: ${error.message}`, "ERROR");
-      }
-    }
-  }
-
-  async manageBackupProcesses() {
-    this.log("Managing backup PM2 processes...");
-    
-    const now = Date.now();
-    
-    for (const processName of this.config.backupProcesses) {
-      try {
-        const processInfo = await this.getProcessInfo(processName);
-        const lastStatus = this.backupProcessStatus.get(processName) || { lastCheck: 0, status: "unknown" };
-        
-        // Check if it's time to rotate backup processes
-        if (now - lastStatus.lastCheck >= this.config.backupProcessInterval) {
-          if (processInfo && processInfo.running) {
-            // Stop backup process to allow primary to take over
-            this.log(`Rotating backup process ${processName}...`);
-            await this.stopProcess(processName);
-            this.backupProcessStatus.set(processName, { lastCheck: now, status: "stopped" });
-          } else if (!processInfo || !processInfo.running) {
-            // Start backup process if primary is having issues
-            this.log(`Starting backup process ${processName}...`);
-            await this.startProcess(processName);
-            this.backupProcessStatus.set(processName, { lastCheck: now, status: "started" });
-          }
-        } else {
-          // Regular health check
-          if (processInfo && !processInfo.running) {
-            this.log(`Backup process ${processName} is not running, starting...`);
-            await this.startProcess(processName);
-            this.backupProcessStatus.set(processName, { lastCheck: now, status: "started" });
+      const runningProcesses = await this.getPM2ProcessList();
+      const runningNames = runningProcesses.map(p => p.name);
+      
+      for (const [groupName, group] of Object.entries(this.config.processGroups)) {
+        for (const processName of group.processes) {
+          if (!runningNames.includes(processName)) {
+            this.log(`Starting missing process: ${processName}`, "INFO");
+            await this.startProcess(processName, group.ecosystem);
           }
         }
-        
-        this.log(`Backup process ${processName} status: ${processInfo ? processInfo.status : 'not found'}`);
-      } catch (error) {
-        this.log(`Error managing backup process ${processName}: ${error.message}`, "ERROR");
       }
+    } catch (error) {
+      this.log(`Failed to start missing processes: ${error.message}`, "ERROR");
     }
   }
 
-  async manageRedundancyProcesses() {
-    this.log("Managing redundancy PM2 processes...");
-    
-    for (const processName of this.config.redundancyProcesses) {
-      try {
-        const processInfo = await this.getProcessInfo(processName);
-        
-        if (!processInfo) {
-          this.log(`Redundancy process ${processName} not found, starting...`);
-          await this.startProcess(processName);
-          continue;
-        }
-        
-        if (!processInfo.running) {
-          this.log(`Redundancy process ${processName} is not running, restarting...`);
-          await this.restartProcess(processName);
-          continue;
-        }
-        
-        // Check resource usage
-        if (processInfo.memory > this.config.memoryThreshold || 
-            processInfo.cpu > this.config.cpuThreshold) {
-          this.log(`Redundancy process ${processName} using excessive resources, restarting...`);
-          await this.restartProcess(processName);
-          continue;
-        }
-        
-        this.log(`Redundancy process ${processName} is healthy`);
-      } catch (error) {
-        this.log(`Error managing redundancy process ${processName}: ${error.message}`, "ERROR");
-      }
-    }
-  }
-
-  async rotateProcesses() {
-    const now = Date.now();
-    if (now - this.lastProcessRotation >= this.config.processRotationInterval) {
-      this.log("Performing process rotation...");
-      
-      // Stop all backup processes
-      for (const processName of this.config.backupProcesses) {
-        await this.stopProcess(processName);
-      }
-      
-      // Wait a moment
-      await new Promise(resolve => setTimeout(resolve, this.config.restartDelay));
-      
-      // Start all backup processes
-      for (const processName of this.config.backupProcesses) {
-        await this.startProcess(processName);
-      }
-      
-      this.lastProcessRotation = now;
-      this.log("Process rotation completed");
-    }
-  }
-
-  async cleanupStaleProcesses() {
-    this.log("Cleaning up stale PM2 processes...");
-    
+  // Start a process
+  async startProcess(processName, ecosystemFile) {
     try {
-      const result = await this.runCommand("pm2", ["list"]);
+      if (!fs.existsSync(ecosystemFile)) {
+        this.log(`Ecosystem file not found: ${ecosystemFile}`, "ERROR");
+        return false;
+      }
+      
+      const result = await this.runCommand("pm2", ["start", ecosystemFile, "--update-env"]);
       if (result.status === 0) {
-        const output = result.stdout;
-        const lines = output.split('\n');
+        this.log(`Process ${processName} started from ${ecosystemFile}`, "INFO");
+        return true;
+      } else {
+        this.log(`Failed to start process ${processName}: ${result.stderr}`, "ERROR");
+        return false;
+      }
+    } catch (error) {
+      this.log(`Process start failed for ${processName}: ${error.message}`, "ERROR");
+      return false;
+    }
+  }
+
+  // Perform health check on all processes
+  async performHealthCheck() {
+    try {
+      this.log("Performing PM2 health check", "INFO");
+      
+      // Ensure PM2 daemon is running
+      if (!(await this.checkPM2Daemon())) {
+        this.log("PM2 daemon not running, starting it", "WARN");
+        await this.startPM2Daemon();
+        return false;
+      }
+      
+      // Start missing processes
+      await this.startMissingProcesses();
+      
+      // Check health of all processes
+      const healthResults = {};
+      let overallHealth = true;
+      
+      for (const [groupName, group] of Object.entries(this.config.processGroups)) {
+        healthResults[groupName] = {};
         
-        for (const line of lines) {
-          if (line.includes('errored') || line.includes('stopped')) {
-            const processMatch = line.match(/^\s*(\d+)\s+(\S+)/);
-            if (processMatch) {
-              const [, id, name] = processMatch;
-              if (this.config.allProcesses.includes(name)) {
-                this.log(`Cleaning up stale process: ${name} (ID: ${id})`);
-                await this.deleteProcess(name);
-              }
+        for (const processName of group.processes) {
+          const health = await this.checkProcessHealth(processName);
+          healthResults[groupName][processName] = health;
+          
+          if (this.shouldRestartProcess(processName, health)) {
+            this.log(`Process ${processName} needs restart`, "WARN");
+            
+            if (group.restartStrategy === "group") {
+              await this.restartProcessGroup(groupName);
+              break; // Restart the entire group
+            } else {
+              await this.restartProcess(processName);
             }
+            
+            overallHealth = false;
           }
         }
       }
-    } catch (error) {
-      this.log(`Error cleaning up stale processes: ${error.message}`, "ERROR");
-    }
-  }
-
-  async savePM2Configuration() {
-    try {
-      this.log("Saving PM2 configuration...");
-      const result = await this.runCommand("pm2", ["save"]);
-      if (result.status === 0) {
-        this.log("PM2 configuration saved successfully");
-        return true;
+      
+      // Save health history
+      this.healthHistory.set("pm2", {
+        timestamp: new Date().toISOString(),
+        health: healthResults,
+        overall: overallHealth
+      });
+      
+      if (overallHealth) {
+        this.log("All PM2 processes healthy", "INFO");
       } else {
-        this.log("Failed to save PM2 configuration", "ERROR");
-        return false;
+        this.log("Some PM2 processes unhealthy, recovery actions taken", "WARN");
       }
+      
+      return overallHealth;
     } catch (error) {
-      this.log(`Error saving PM2 configuration: ${error.message}`, "ERROR");
+      this.log(`PM2 health check failed: ${error.message}`, "ERROR");
       return false;
     }
   }
 
-  async checkOverallHealth() {
-    this.log("Checking PM2 system health...");
-    
-    const health = {
-      timestamp: new Date().toISOString(),
-      pm2Status: await this.checkPM2Status(),
-      processes: {},
-      summary: {
-        total: 0,
-        running: 0,
-        stopped: 0,
-        errored: 0
-      }
-    };
-    
-    for (const processName of this.config.allProcesses) {
-      const processInfo = await this.getProcessInfo(processName);
-      if (processInfo) {
-        health.processes[processName] = processInfo;
-        health.summary.total++;
-        
-        if (processInfo.running) {
-          health.summary.running++;
-        } else if (processInfo.status === 'stopped') {
-          health.summary.stopped++;
-        } else if (processInfo.status === 'errored') {
-          health.summary.errored++;
-        }
-      }
-    }
-    
-    // Store health history
-    this.healthHistory.set(Date.now(), health);
-    
-    // Clean old health history
-    const cutoff = Date.now() - (24 * 60 * 60 * 1000); // 24 hours
-    for (const [timestamp] of this.healthHistory) {
-      if (timestamp < cutoff) {
-        this.healthHistory.delete(timestamp);
-      }
-    }
-    
-    return health;
-  }
-
-  async orchestrate() {
-    this.log("Starting PM2 redundancy orchestration...");
-    
-    try {
-      // Check PM2 status
-      if (!(await this.checkPM2Status())) {
-        this.log("PM2 is not running, attempting to start...", "WARN");
-        // Try to start PM2 daemon
-        await this.runCommand("pm2", ["start"]);
-      }
-      
-      // Manage all process types
-      await this.managePrimaryProcesses();
-      await this.manageBackupProcesses();
-      await this.manageRedundancyProcesses();
-      
-      // Perform process rotation if needed
-      await this.rotateProcesses();
-      
-      // Clean up stale processes
-      await this.cleanupStaleProcesses();
-      
-      // Save configuration
-      await this.savePM2Configuration();
-      
-      // Check overall health
-      const health = await this.checkOverallHealth();
-      
-      this.log(`PM2 system health: ${health.summary.running}/${health.summary.total} processes running`);
-      
-      if (health.summary.errored > 0) {
-        this.log(`Warning: ${health.summary.errored} processes in error state`, "WARN");
-      }
-      
-    } catch (error) {
-      this.log(`Error during PM2 orchestration: ${error.message}`, "ERROR");
-    }
-  }
-
-  startMonitoring() {
+  // Start monitoring
+  start() {
     if (this.monitoring) {
-      this.log("PM2 monitoring is already running");
+      this.log("PM2 redundancy monitoring already started", "WARN");
       return;
     }
     
-    this.log("Starting PM2 redundancy monitoring...");
     this.monitoring = true;
+    this.log("Starting PM2 redundancy monitoring", "INFO");
     
     this.checkInterval = setInterval(async () => {
-      await this.orchestrate();
+      await this.performHealthCheck();
     }, this.config.healthCheckInterval);
+    
+    this.log("PM2 redundancy monitoring started", "INFO");
   }
 
-  stopMonitoring() {
+  // Stop monitoring
+  stop() {
+    if (!this.monitoring) {
+      this.log("PM2 redundancy monitoring not running", "WARN");
+      return;
+    }
+    
+    this.monitoring = false;
+    
     if (this.checkInterval) {
       clearInterval(this.checkInterval);
       this.checkInterval = null;
     }
-    this.monitoring = false;
-    this.log("Stopped PM2 redundancy monitoring");
+    
+    this.log("PM2 redundancy monitoring stopped", "INFO");
   }
 
+  // Get status
   getStatus() {
     return {
       monitoring: this.monitoring,
-      lastHealthCheck: this.healthHistory.size > 0 ? 
-        Array.from(this.healthHistory.keys()).pop() : null,
+      health: this.healthHistory.get("pm2") || null,
       restartCounts: Object.fromEntries(this.restartCounts),
-      backupProcessStatus: Object.fromEntries(this.backupProcessStatus),
+      lastRestart: Object.fromEntries(this.lastRestart),
       config: this.config
     };
   }
 
-  generateReport() {
-    const report = {
-      timestamp: new Date().toISOString(),
-      status: this.getStatus(),
-      healthHistory: Array.from(this.healthHistory.entries()).slice(-10), // Last 10 entries
-      recommendations: []
-    };
-    
-    // Generate recommendations based on health history
-    if (this.healthHistory.size > 0) {
-      const recentHealth = Array.from(this.healthHistory.values()).slice(-5);
-      
-      const totalProcesses = recentHealth.reduce((sum, h) => sum + h.summary.total, 0);
-      const totalRunning = recentHealth.reduce((sum, h) => sum + h.summary.running, 0);
-      const totalErrored = recentHealth.reduce((sum, h) => sum + h.summary.errored, 0);
-      
-      if (totalErrored > 0) {
-        report.recommendations.push("Some PM2 processes are in error state - investigate root causes");
+  // Run health check once
+  async runOnce() {
+    this.log("Running PM2 health check once", "INFO");
+    return await this.performHealthCheck();
+  }
+
+  // Save PM2 process list
+  async saveProcessList() {
+    try {
+      const result = await this.runCommand("pm2", ["save"]);
+      if (result.status === 0) {
+        this.log("PM2 process list saved", "INFO");
+        return true;
+      } else {
+        this.log(`Failed to save PM2 process list: ${result.stderr}`, "ERROR");
+        return false;
       }
-      
-      if (totalRunning < totalProcesses * 0.8) {
-        report.recommendations.push("Many PM2 processes are not running - check system resources");
-      }
+    } catch (error) {
+      this.log(`PM2 save failed: ${error.message}`, "ERROR");
+      return false;
     }
-    
-    return report;
+  }
+
+  // Resurrect PM2 processes
+  async resurrectProcesses() {
+    try {
+      const result = await this.runCommand("pm2", ["resurrect"]);
+      if (result.status === 0) {
+        this.log("PM2 processes resurrected", "INFO");
+        return true;
+      } else {
+        this.log(`Failed to resurrect PM2 processes: ${result.stderr}`, "ERROR");
+        return false;
+      }
+    } catch (error) {
+      this.log(`PM2 resurrect failed: ${error.message}`, "ERROR");
+      return false;
+    }
   }
 }
 
-// CLI Interface
+// CLI interface
 if (require.main === module) {
   const manager = new PM2RedundancyManager();
   const command = process.argv[2] || "start";
   
   switch (command) {
     case "start":
-      manager.startMonitoring();
+      manager.start();
       break;
     case "stop":
-      manager.stopMonitoring();
+      manager.stop();
       break;
     case "status":
       console.log(JSON.stringify(manager.getStatus(), null, 2));
       break;
-    case "report":
-      console.log(JSON.stringify(manager.generateReport(), null, 2));
-      break;
     case "once":
-      manager.orchestrate().then(() => {
-        console.log("PM2 orchestration completed");
+      manager.runOnce().then(result => {
+        console.log(JSON.stringify(result, null, 2));
         process.exit(0);
-      }).catch(error => {
-        console.error("PM2 orchestration failed:", error);
-        process.exit(1);
+      });
+      break;
+    case "health":
+      manager.performHealthCheck().then(result => {
+        console.log(JSON.stringify(result, null, 2));
+        process.exit(0);
+      });
+      break;
+    case "save":
+      manager.saveProcessList().then(result => {
+        console.log(JSON.stringify({ saved: result }, null, 2));
+        process.exit(0);
+      });
+      break;
+    case "resurrect":
+      manager.resurrectProcesses().then(result => {
+        console.log(JSON.stringify({ resurrected: result }, null, 2));
+        process.exit(0);
       });
       break;
     default:
-      console.log("Usage: node pm2-redundancy-manager.cjs [start|stop|status|report|once]");
+      console.log("Usage: node pm2-redundancy-manager.cjs [start|stop|status|once|health|save|resurrect]");
       process.exit(1);
   }
 }
