@@ -95,9 +95,120 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold mb-6 text-purple-400">Our Impact</h2>
               <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-cyan-400">227</div>
+                  <div className="text-3xl font-bold text-cyan-400">500+</div>
                   <div className="text-sm text-white/70">Active Automations</div>
                 </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-fuchsia-400">50+</div>
+                  <div className="text-sm text-white/70">Client Success Stories</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-green-400">99.9%</div>
+                  <div className="text-sm text-white/70">System Uptime</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-blue-400">24/7</div>
+                  <div className="text-sm text-white/70">Autonomous Operation</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 mb-16">
+              <h2 className="text-3xl font-bold mb-6 text-yellow-400">Our Journey</h2>
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-3 h-3 bg-yellow-400 rounded-full mt-2"></div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-yellow-400">2020 - Foundation</h4>
+                    <p className="text-white/70">Started with a vision to create truly autonomous systems that could operate independently.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-3 h-3 bg-yellow-400 rounded-full mt-2"></div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-yellow-400">2022 - Breakthrough</h4>
+                    <p className="text-white/70">Developed our first fully autonomous AI system capable of self-improvement and adaptation.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-3 h-3 bg-yellow-400 rounded-full mt-2"></div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-yellow-400">2024 - Scale</h4>
+                    <p className="text-white/70">Expanded to serve clients across multiple industries with proven automation solutions.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-3 h-3 bg-yellow-400 rounded-full mt-2"></div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-yellow-400">2025 - Innovation</h4>
+                    <p className="text-white/70">Leading the charge in next-generation autonomous systems and AI innovation.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 mb-16">
+              <h2 className="text-3xl font-bold mb-6 text-indigo-400">Our Team</h2>
+              <p className="text-white/80 mb-6 text-center">
+                We're a diverse team of engineers, researchers, and innovators passionate about 
+                pushing the boundaries of what's possible with autonomous technology.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="text-center">
+                  <div className="w-20 h-20 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl">🧠</span>
+                  </div>
+                  <h3 className="text-lg font-semibold text-cyan-400 mb-2">AI Researchers</h3>
+                  <p className="text-white/70 text-sm">Pioneering new approaches to machine learning and autonomous systems</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-20 h-20 bg-gradient-to-br from-fuchsia-400 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl">⚡</span>
+                  </div>
+                  <h3 className="text-lg font-semibold text-fuchsia-400 mb-2">Systems Engineers</h3>
+                  <p className="text-white/70 text-sm">Building robust, scalable infrastructure for autonomous operations</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl">🔧</span>
+                  </div>
+                  <h3 className="text-lg font-semibold text-green-400 mb-2">DevOps Specialists</h3>
+                  <p className="text-white/70 text-sm">Ensuring seamless deployment and continuous operation of our systems</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 mb-16">
+              <h2 className="text-3xl font-bold mb-6 text-red-400">Our Commitment</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="text-xl font-semibold mb-3 text-red-400">Ethical AI</h3>
+                  <p className="text-white/70 mb-4">
+                    We're committed to developing AI systems that are fair, transparent, and beneficial to society. 
+                    Every system we build includes ethical considerations and human oversight.
+                  </p>
+                  <ul className="space-y-2 text-white/70 text-sm">
+                    <li>• Bias detection and mitigation</li>
+                    <li>• Transparent decision-making processes</li>
+                    <li>• Privacy protection and data security</li>
+                    <li>• Human oversight and control mechanisms</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-3 text-red-400">Continuous Innovation</h3>
+                  <p className="text-white/70 mb-4">
+                    Our commitment to innovation drives us to constantly explore new technologies and approaches. 
+                    We invest heavily in research and development to stay at the forefront of autonomous technology.
+                  </p>
+                  <ul className="space-y-2 text-white/70 text-sm">
+                    <li>• Research partnerships with leading institutions</li>
+                    <li>• Open source contributions and collaboration</li>
+                    <li>• Regular technology assessments and updates</li>
+                    <li>• Investment in emerging technologies</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-fuchsia-400">2,960</div>
                   <div className="text-sm text-white/70">Pages Generated</div>
