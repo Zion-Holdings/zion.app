@@ -54,6 +54,30 @@ export default function ResourcesPage() {
       downloadUrl: '#',
       pages: '28',
       category: 'Business'
+    },
+    {
+      id: 'edge-computing-implementation',
+      title: 'Edge Computing Implementation Guide',
+      description: 'Step-by-step guide to implementing edge computing solutions for real-time AI applications.',
+      downloadUrl: '#',
+      pages: '38',
+      category: 'Technology'
+    },
+    {
+      id: 'ai-security-best-practices',
+      title: 'AI Security Best Practices',
+      description: 'Comprehensive security guidelines for protecting AI systems and data in enterprise environments.',
+      downloadUrl: '#',
+      pages: '41',
+      category: 'Security'
+    },
+    {
+      id: 'automation-governance-framework',
+      title: 'Automation Governance Framework',
+      description: 'Establishing governance structures and policies for enterprise automation initiatives.',
+      downloadUrl: '#',
+      pages: '35',
+      category: 'Governance'
     }
   ];
 
@@ -78,6 +102,27 @@ export default function ResourcesPage() {
       description: 'Compare your automation performance against industry standards.',
       type: 'Analytics Tool',
       estimatedTime: '20 minutes'
+    },
+    {
+      id: 'edge-computing-calculator',
+      title: 'Edge Computing ROI Calculator',
+      description: 'Calculate the return on investment for edge computing implementations.',
+      type: 'Financial Tool',
+      estimatedTime: '25 minutes'
+    },
+    {
+      id: 'ai-ethics-checklist',
+      title: 'AI Ethics Implementation Checklist',
+      description: 'Ensure your AI systems meet ethical standards and compliance requirements.',
+      type: 'Compliance Tool',
+      estimatedTime: '45 minutes'
+    },
+    {
+      id: 'automation-workflow-builder',
+      title: 'Automation Workflow Builder',
+      description: 'Design and prototype automation workflows for your business processes.',
+      type: 'Design Tool',
+      estimatedTime: '60 minutes'
     }
   ];
 

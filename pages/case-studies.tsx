@@ -93,6 +93,60 @@ export default function CaseStudiesPage() {
       duration: '10 months',
       teamSize: '10 data scientists + 5 engineers',
       featured: false
+    },
+    {
+      id: 'retail-automation-revolution',
+      title: 'Retail Automation Revolution',
+      company: 'Global Retail Chain',
+      industry: 'Retail',
+      challenge: 'High operational costs, inventory management inefficiencies, and poor customer experience',
+      solution: 'Implemented comprehensive retail automation including smart inventory, automated checkout, and AI-powered customer insights',
+      results: [
+        '45% reduction in operational costs',
+        '70% improvement in inventory accuracy',
+        '60% faster checkout process',
+        '35% increase in customer satisfaction'
+      ],
+      technologies: ['Computer Vision', 'IoT Sensors', 'Machine Learning', 'Robotic Process Automation'],
+      duration: '12 months',
+      teamSize: '12 engineers + 6 retail specialists',
+      featured: true
+    },
+    {
+      id: 'energy-grid-optimization',
+      title: 'Smart Energy Grid Optimization',
+      company: 'Municipal Energy Company',
+      industry: 'Energy',
+      challenge: 'Inefficient energy distribution, high maintenance costs, and inability to handle renewable energy integration',
+      solution: 'Built AI-powered smart grid system with predictive maintenance and dynamic load balancing',
+      results: [
+        '25% reduction in energy losses',
+        '40% decrease in maintenance costs',
+        '90% improvement in renewable energy integration',
+        'Real-time grid monitoring and control'
+      ],
+      technologies: ['IoT Sensors', 'Predictive Analytics', 'Machine Learning', 'Real-time Control Systems'],
+      duration: '18 months',
+      teamSize: '15 engineers + 8 energy specialists',
+      featured: false
+    },
+    {
+      id: 'logistics-automation-platform',
+      title: 'Intelligent Logistics Automation Platform',
+      company: 'International Shipping Company',
+      industry: 'Logistics',
+      challenge: 'Complex supply chain management, high transportation costs, and delivery delays',
+      solution: 'Developed AI-powered logistics platform with route optimization, demand forecasting, and automated scheduling',
+      results: [
+        '30% reduction in transportation costs',
+        '50% improvement in delivery accuracy',
+        '25% faster order processing',
+        'Real-time shipment tracking and optimization'
+      ],
+      technologies: ['Route Optimization', 'Demand Forecasting', 'Machine Learning', 'Real-time Analytics'],
+      duration: '14 months',
+      teamSize: '9 engineers + 5 logistics specialists',
+      featured: false
     }
   ];
 

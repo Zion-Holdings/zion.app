@@ -108,6 +108,34 @@ export default function ServicesPage() {
                   <li>• Performance Audits</li>
                 </ul>
               </div>
+
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
+                <div className="text-4xl mb-4">🔒</div>
+                <h3 className="text-2xl font-bold mb-4 text-red-400">AI Security & Compliance</h3>
+                <p className="text-white/70 mb-6">
+                  Comprehensive security solutions and compliance frameworks for AI systems and automation platforms.
+                </p>
+                <ul className="space-y-2 text-sm text-white/60">
+                  <li>• AI Model Security</li>
+                  <li>• Data Privacy Protection</li>
+                  <li>• Compliance Auditing</li>
+                  <li>• Threat Detection</li>
+                </ul>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
+                <div className="text-4xl mb-4">🚀</div>
+                <h3 className="text-2xl font-bold mb-4 text-orange-400">Edge Computing Solutions</h3>
+                <p className="text-white/70 mb-6">
+                  Edge AI deployment and optimization for real-time processing and reduced latency applications.
+                </p>
+                <ul className="space-y-2 text-sm text-white/60">
+                  <li>• Edge AI Deployment</li>
+                  <li>• IoT Integration</li>
+                  <li>• Real-time Processing</li>
+                  <li>• Edge-Cloud Orchestration</li>
+                </ul>
+              </div>
             </div>
 
             <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 mb-16">
