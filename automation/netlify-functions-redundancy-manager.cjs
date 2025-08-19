@@ -1,617 +1,674 @@
 #!/usr/bin/env node
 "use strict";
 
+const { spawnSync } = require("child_process");
 const fs = require("fs");
 const path = require("path");
-const { execSync, spawnSync } = require("child_process");
 
 class NetlifyFunctionsRedundancyManager {
   constructor() {
     this.workspace = process.cwd();
-    this.netlifyDir = path.join(this.workspace, "netlify");
-    this.functionsDir = path.join(this.netlifyDir, "functions");
     this.logDir = path.join(this.workspace, "automation/logs");
+    this.logFile = path.join(this.logDir, "netlify-functions-redundancy-manager.log");
+    this.ensureLogDir();
     
-    this.ensureDirectories();
+    this.config = {
+      functionsDir: "netlify/functions",
+      manifestFile: "netlify/functions/functions-manifest.json",
+      functions: [
+        "a11y-alt-text-runner",
+        "adaptive-orchestrator",
+        "ai-changelog-runner",
+        "ai-trends-radar-runner",
+        "anchor-links-auto-fixer",
+        "auto-discovery-runner",
+        "auto-scheduler",
+        "automation-matrix",
+        "autonomous-invention-orchestrator",
+        "autonomous-meta-orchestrator",
+        "broken-image-scanner",
+        "broken-image-scanner-runner",
+        "canonical-auditor",
+        "cloud_deep_research",
+        "cloud_orchestrator",
+        "code-smell-audit-runner",
+        "component-coupling-graph-runner",
+        "component-props-docs-runner",
+        "component-size-report",
+        "content-freshness-score-runner",
+        "continuous-front-runner",
+        "continuous-orchestrator",
+        "dead-code-audit",
+        "dead-code-report",
+        "deps-auto-upgrade-runner",
+        "docs-index-runner",
+        "docs-search-index-runner",
+        "duplicate-media-finder-runner",
+        "external-link-check-runner",
+        "fast-front-promoter",
+        "fast-orchestrator",
+        "feature-advertiser",
+        "features-capabilities-benefits-advertiser",
+        "front-ads-promoter",
+        "front-enhancer",
+        "front-index-futurizer",
+        "front-index-orchestrator",
+        "front-index-scheduler",
+        "front-maximizer",
+        "front-visionary-expander",
+        "frontpage-enhancer",
+        "frontpage-scheduler",
+        "headers-enforcer",
+        "home-visionary-expander",
+        "homepage-advertiser-scheduler",
+        "homepage-enhancer",
+        "homepage-updater",
+        "homepage-updater-scheduler",
+        "homepage_advertiser",
+        "hyper-front-index-accelerator",
+        "image-optimizer-runner",
+        "innovation-lab",
+        "innovations-promoter",
+        "intelligent-meta-orchestrator",
+        "internal-link-graph-runner",
+        "knowledge-pack-runner",
+        "license-compliance-auditor",
+        "link-and-health-scheduler",
+        "link-crawler",
+        "maintenance-scheduler",
+        "marketing-and-features-promo",
+        "marketing-scheduler",
+        "media-og-and-optimize",
+        "metadata-optimizer-runner",
+        "netlify-auto-healer-runner",
+        "newsroom-auto-publisher",
+        "newsroom-runner",
+        "og-image-update-runner",
+        "orphan-pages-detector",
+        "pagespeed-insights-runner",
+        "readme-advertiser",
+        "repo-knowledge-graph-runner",
+        "repo-radar-and-graph",
+        "repo-radar-runner",
+        "revenue-ideas-lab",
+        "roadmap-curator",
+        "robots-auditor",
+        "schedule-content-index",
+        "schedule-homepage",
+        "schedule-knowledge-graph",
+        "schedule-site-health",
+        "security-audit",
+        "security-audit-runner",
+        "seo-audit-runner",
+        "site-404-map-runner",
+        "site-crawler",
+        "sitemap_runner",
+        "stale-content-auditor-runner",
+        "todo-scanner-runner",
+        "todo-summary-runner",
+        "topic-cluster-builder-runner",
+        "topics-map-runner",
+        "trigger-all-and-commit",
+        "ui-enhancer",
+        "ultrafast-front-orchestrator",
+        "ultrafast-orchestrator",
+        "unused-media-scanner"
+      ],
+      healthCheckInterval: 60000, // 1 minute
+      maxRetries: 3,
+      retryDelay: 30000, // 30 seconds
+      functionTimeout: 30000, // 30 seconds
+      manifestRegenerationInterval: 300000, // 5 minutes
+      backupFunctionInterval: 600000, // 10 minutes
+      healthThreshold: 90 // 90% functions must be healthy
+    };
     
-    this.logger = this.createLogger();
-    
-    this.expectedFunctions = [
-      "a11y-alt-text-runner",
-      "adaptive-orchestrator",
-      "ai-changelog-runner",
-      "ai-trends-radar-runner",
-      "anchor-links-auto-fixer",
-      "auto-discovery-runner",
-      "auto-scheduler",
-      "automation-matrix",
-      "autonomous-invention-orchestrator",
-      "autonomous-meta-orchestrator",
-      "broken-image-scanner",
-      "broken-image-scanner-runner",
-      "canonical-auditor",
-      "cloud_deep_research",
-      "cloud_orchestrator",
-      "code-smell-audit-runner",
-      "component-coupling-graph-runner",
-      "component-props-docs-runner",
-      "component-size-report",
-      "content-freshness-score-runner",
-      "continuous-front-runner",
-      "continuous-orchestrator",
-      "dead-code-audit",
-      "dead-code-report",
-      "deps-auto-upgrade-runner",
-      "docs-index-runner",
-      "docs-search-index-runner",
-      "duplicate-media-finder-runner",
-      "external-link-check-runner",
-      "fast-front-promoter",
-      "fast-orchestrator",
-      "feature-advertiser",
-      "features-capabilities-benefits-advertiser",
-      "front-ads-promoter",
-      "front-enhancer",
-      "front-index-futurizer",
-      "front-index-orchestrator",
-      "front-index-scheduler",
-      "front-maximizer",
-      "front-visionary-expander",
-      "frontpage-enhancer",
-      "frontpage-scheduler",
-      "headers-enforcer",
-      "home-visionary-expander",
-      "homepage-advertiser-scheduler",
-      "homepage-enhancer",
-      "homepage-updater",
-      "homepage-updater-scheduler",
-      "homepage_advertiser",
-      "hyper-front-index-accelerator",
-      "image-optimizer-runner",
-      "innovation-lab",
-      "innovations-promoter",
-      "intelligent-meta-orchestrator",
-      "internal-link-graph-runner",
-      "knowledge-pack-runner",
-      "license-compliance-auditor",
-      "link-and-health-scheduler",
-      "link-crawler",
-      "maintenance-scheduler",
-      "marketing-and-features-promo",
-      "marketing-scheduler",
-      "media-og-and-optimize",
-      "metadata-optimizer-runner",
-      "netlify-auto-healer-runner",
-      "newsroom-auto-publisher",
-      "newsroom-runner",
-      "og-image-update-runner",
-      "orphan-pages-detector",
-      "pagespeed-insights-runner",
-      "readme-advertiser",
-      "repo-knowledge-graph-runner",
-      "repo-radar-and-graph",
-      "repo-radar-runner",
-      "revenue-ideas-lab",
-      "roadmap-curator",
-      "robots-auditor",
-      "schedule-content-index",
-      "schedule-homepage",
-      "schedule-knowledge-graph",
-      "schedule-site-health",
-      "security-audit",
-      "security-audit-runner",
-      "seo-audit-runner",
-      "site-404-map-runner",
-      "site-crawler",
-      "sitemap_runner",
-      "stale-content-auditor-runner",
-      "todo-scanner-runner",
-      "todo-summary-runner",
-      "topic-cluster-builder-runner",
-      "topics-map-runner",
-      "trigger-all-and-commit",
-      "ui-enhancer",
-      "ultrafast-front-orchestrator",
-      "ultrafast-orchestrator",
-      "unused-media-scanner"
-    ];
+    this.monitoring = false;
+    this.checkInterval = null;
+    this.functionHealth = new Map();
+    this.healthHistory = new Map();
+    this.lastManifestRegeneration = Date.now();
+    this.lastBackupFunctionCheck = Date.now();
+    this.backupFunctions = new Map();
   }
 
-  ensureDirectories() {
+  ensureLogDir() {
     if (!fs.existsSync(this.logDir)) {
       fs.mkdirSync(this.logDir, { recursive: true });
     }
   }
 
-  createLogger() {
-    const logFile = path.join(this.logDir, "netlify-functions-redundancy.log");
-    return {
-      info: (msg) => this.log("INFO", msg, logFile),
-      warn: (msg) => this.log("WARN", msg, logFile),
-      error: (msg) => this.log("ERROR", msg, logFile),
-      debug: (msg) => this.log("DEBUG", msg, logFile)
-    };
-  }
-
-  log(level, message, logFile) {
+  log(message, level = "INFO") {
     const timestamp = new Date().toISOString();
-    const logEntry = `[${timestamp}] [${level}] ${message}\n`;
+    const logMessage = `[${timestamp}] [${level}] ${message}`;
+    console.log(logMessage);
     
     try {
-      fs.appendFileSync(logFile, logEntry);
-    } catch (err) {
-      console.error(`Failed to write to log file: ${err.message}`);
+      fs.appendFileSync(this.logFile, logMessage + "\n");
+    } catch (error) {
+      console.error(`Failed to write to log file: ${error.message}`);
+    }
+  }
+
+  async runCommand(command, args = [], options = {}) {
+    return new Promise((resolve) => {
+      const result = spawnSync(command, args, {
+        cwd: this.workspace,
+        env: process.env,
+        shell: false,
+        encoding: "utf8",
+        maxBuffer: 1024 * 1024 * 20,
+        timeout: options.timeout || 30000,
+        ...options
+      });
+      
+      resolve({
+        status: result.status,
+        stdout: result.stdout || "",
+        stderr: result.stderr || "",
+        error: result.error
+      });
+    });
+  }
+
+  async checkFunctionFile(functionName) {
+    const functionFile = path.join(this.workspace, this.config.functionsDir, `${functionName}.js`);
+    if (!fs.existsSync(functionFile)) {
+      return { exists: false, path: functionFile };
     }
     
-    console.log(`[${level}] ${message}`);
+    try {
+      const stats = fs.statSync(functionFile);
+      return {
+        exists: true,
+        path: functionFile,
+        size: stats.size,
+        modified: stats.mtime,
+        isFile: stats.isFile()
+      };
+    } catch (error) {
+      return { exists: false, path: functionFile, error: error.message };
+    }
   }
 
-  async scanFunctions() {
-    this.logger.info("Scanning Netlify Functions directory...");
-    
-    const results = {
-      timestamp: new Date().toISOString(),
-      totalExpected: this.expectedFunctions.length,
-      found: [],
-      missing: [],
-      invalid: [],
-      manifest: null
-    };
-    
+  async validateFunctionFile(functionName) {
     try {
-      // Check if functions directory exists
-      if (!fs.existsSync(this.functionsDir)) {
-        this.logger.warn("Netlify Functions directory not found");
-        results.missing = this.expectedFunctions;
-        return results;
+      const functionInfo = await this.checkFunctionFile(functionName);
+      
+      if (!functionInfo.exists) {
+        this.log(`Function file not found: ${functionName}`, "WARN");
+        return false;
       }
       
-      // Scan for function files
-      const files = fs.readdirSync(this.functionsDir);
-      const jsFiles = files.filter(f => f.endsWith('.js'));
+      if (!functionInfo.isFile) {
+        this.log(`Function path is not a file: ${functionName}`, "WARN");
+        return false;
+      }
       
-      this.logger.info(`Found ${jsFiles.length} JavaScript files in functions directory`);
+      if (functionInfo.size === 0) {
+        this.log(`Function file is empty: ${functionName}`, "WARN");
+        return false;
+      }
       
-      // Check each expected function
-      for (const expectedFunc of this.expectedFunctions) {
-        const funcFile = path.join(this.functionsDir, `${expectedFunc}.js`);
+      // Read and validate function content
+      const content = fs.readFileSync(functionInfo.path, 'utf8');
+      
+      // Check for required exports
+      if (!content.includes('exports.handler') && !content.includes('module.exports')) {
+        this.log(`Function ${functionName} missing handler export`, "WARN");
+        return false;
+      }
+      
+      // Check for basic function structure
+      if (!content.includes('function') && !content.includes('=>')) {
+        this.log(`Function ${functionName} appears to be missing function definition`, "WARN");
+        return false;
+      }
+      
+      // Check for common issues
+      if (content.includes('console.error') && !content.includes('console.log')) {
+        this.log(`Function ${functionName} has error logging but no success logging`, "INFO");
+      }
+      
+      return true;
+    } catch (error) {
+      this.log(`Error validating function file ${functionName}: ${error.message}`, "ERROR");
+      return false;
+    }
+  }
+
+  async testFunctionLocally(functionName) {
+    try {
+      const functionFile = path.join(this.workspace, this.config.functionsDir, `${functionName}.js`);
+      
+      if (!fs.existsSync(functionFile)) {
+        return { success: false, error: "Function file not found" };
+      }
+      
+      // Create a simple test context
+      const testContext = {
+        callbackWaitsForEmptyEventLoop: false,
+        functionName: functionName,
+        functionVersion: "1.0.0",
+        invokedFunctionArn: `arn:aws:lambda:us-east-1:123456789012:function:${functionName}`,
+        memoryLimitInMB: "128",
+        awsRequestId: "test-request-id",
+        logGroupName: `/aws/lambda/${functionName}`,
+        logStreamName: "test-log-stream",
+        getRemainingTimeInMillis: () => this.config.functionTimeout,
+        done: () => {},
+        fail: () => {},
+        succeed: () => {}
+      };
+      
+      // Create a test event
+      const testEvent = {
+        httpMethod: "GET",
+        path: "/test",
+        headers: {},
+        queryStringParameters: {},
+        body: null,
+        isBase64Encoded: false
+      };
+      
+      // Try to require and test the function
+      try {
+        const functionModule = require(functionFile);
         
-        if (fs.existsSync(funcFile)) {
-          try {
-            const stats = fs.statSync(funcFile);
-            const content = fs.readFileSync(funcFile, "utf8");
+        if (typeof functionModule.handler === 'function') {
+          // Test with a timeout
+          const testPromise = new Promise((resolve, reject) => {
+            const timeout = setTimeout(() => {
+              reject(new Error("Function execution timeout"));
+            }, this.config.functionTimeout);
             
-            // Basic validation
-            let isValid = true;
-            let validationErrors = [];
-            
-            // Check if it's a valid function
-            if (!content.includes("exports.handler") && !content.includes("module.exports")) {
-              isValid = false;
-              validationErrors.push("Missing handler export");
-            }
-            
-            // Check file size
-            if (stats.size < 100) {
-              isValid = false;
-              validationErrors.push("File too small, likely empty or incomplete");
-            }
-            
-            if (isValid) {
-              results.found.push({
-                name: expectedFunc,
-                file: `${expectedFunc}.js`,
-                size: stats.size,
-                lastModified: stats.mtime,
-                path: funcFile
+            try {
+              functionModule.handler(testEvent, testContext, (error, result) => {
+                clearTimeout(timeout);
+                if (error) {
+                  resolve({ success: false, error: error.message });
+                } else {
+                  resolve({ success: true, result: result });
+                }
               });
-            } else {
-              results.invalid.push({
-                name: expectedFunc,
-                file: `${expectedFunc}.js`,
-                errors: validationErrors,
-                path: funcFile
-              });
+            } catch (error) {
+              clearTimeout(timeout);
+              resolve({ success: false, error: error.message });
             }
-          } catch (error) {
-            results.invalid.push({
-              name: expectedFunc,
-              file: `${expectedFunc}.js`,
-              errors: [`File read error: ${error.message}`],
-              path: funcFile
-            });
-          }
+          });
+          
+          return await testPromise;
         } else {
-          results.missing.push(expectedFunc);
+          return { success: false, error: "Handler function not found" };
         }
+      } catch (requireError) {
+        return { success: false, error: `Module require failed: ${requireError.message}` };
       }
-      
-      // Check manifest file
-      const manifestFile = path.join(this.functionsDir, "functions-manifest.json");
-      if (fs.existsSync(manifestFile)) {
-        try {
-          const manifest = JSON.parse(fs.readFileSync(manifestFile, "utf8"));
-          results.manifest = {
-            exists: true,
-            generatedAt: manifest.generatedAt,
-            functionCount: manifest.functions ? manifest.functions.length : 0,
-            functions: manifest.functions || []
-          };
-        } catch (error) {
-          results.manifest = {
-            exists: true,
-            error: `Failed to parse manifest: ${error.message}`
-          };
-        }
-      } else {
-        results.manifest = {
-          exists: false,
-          error: "Manifest file not found"
-        };
-      }
-      
-      this.logger.info(`Scan completed: ${results.found.length} found, ${results.missing.length} missing, ${results.invalid.length} invalid`);
       
     } catch (error) {
-      this.logger.error(`Function scan failed: ${error.message}`);
-      throw error;
+      return { success: false, error: error.message };
     }
-    
-    return results;
   }
 
-  async regenerateManifest() {
-    this.logger.info("Regenerating Netlify Functions manifest...");
-    
+  async createBackupFunction(functionName) {
     try {
-      // Run the manifest generation script
-      const result = spawnSync("npm", ["run", "netlify:manifest"], {
-        cwd: this.workspace,
-        stdio: "pipe",
-        encoding: "utf8"
-      });
+      const functionFile = path.join(this.workspace, this.config.functionsDir, `${functionName}.js`);
+      const backupFile = path.join(this.workspace, this.config.functionsDir, `${functionName}-backup.js`);
+      
+      if (fs.existsSync(functionFile) && !fs.existsSync(backupFile)) {
+        const content = fs.readFileSync(functionFile, 'utf8');
+        
+        // Create backup with timestamp
+        const timestamp = new Date().toISOString();
+        const backupContent = `// Backup of ${functionName} created at ${timestamp}\n// Original function preserved for redundancy\n\n${content}`;
+        
+        fs.writeFileSync(backupFile, backupContent);
+        this.log(`Created backup function: ${functionName}-backup.js`);
+        
+        this.backupFunctions.set(functionName, {
+          backupFile: backupFile,
+          created: timestamp,
+          originalSize: content.length
+        });
+        
+        return true;
+      }
+      
+      return false;
+    } catch (error) {
+      this.log(`Error creating backup function for ${functionName}: ${error.message}`, "ERROR");
+      return false;
+    }
+  }
+
+  async regenerateFunctionsManifest() {
+    try {
+      this.log("Regenerating Netlify functions manifest...");
+      
+      const result = await this.runCommand("node", ["scripts/generate-netlify-functions-manifest.cjs"]);
       
       if (result.status === 0) {
-        this.logger.info("Manifest regenerated successfully");
-        
-        // Verify the manifest was created
-        const manifestFile = path.join(this.functionsDir, "functions-manifest.json");
-        if (fs.existsSync(manifestFile)) {
-          const manifest = JSON.parse(fs.readFileSync(manifestFile, "utf8"));
-          this.logger.info(`New manifest contains ${manifest.functions ? manifest.functions.length : 0} functions`);
-          return { success: true, functionCount: manifest.functions ? manifest.functions.length : 0 };
-        } else {
-          throw new Error("Manifest file not found after regeneration");
-        }
+        this.log("Successfully regenerated Netlify functions manifest");
+        this.lastManifestRegeneration = Date.now();
+        return true;
       } else {
-        throw new Error(`Manifest generation failed: ${result.stderr}`);
+        this.log("Failed to regenerate Netlify functions manifest", "ERROR");
+        return false;
       }
     } catch (error) {
-      this.logger.error(`Failed to regenerate manifest: ${error.message}`);
-      return { success: false, error: error.message };
+      this.log(`Error regenerating Netlify functions manifest: ${error.message}`, "ERROR");
+      return false;
     }
   }
 
-  async validateFunctions() {
-    this.logger.info("Validating Netlify Functions...");
+  async checkFunctionHealth(functionName) {
+    try {
+      // Check file existence and validation
+      const isValid = await this.validateFunctionFile(functionName);
+      if (!isValid) {
+        return { healthy: false, reason: "validation_failed" };
+      }
+      
+      // Test function locally
+      const testResult = await this.testFunctionLocally(functionName);
+      if (!testResult.success) {
+        return { healthy: false, reason: "test_failed", error: testResult.error };
+      }
+      
+      return { healthy: true, reason: "all_checks_passed" };
+      
+    } catch (error) {
+      return { healthy: false, reason: "exception", error: error.message };
+    }
+  }
+
+  async manageFunctionHealth() {
+    this.log("Managing Netlify functions health...");
     
-    const scanResults = await this.scanFunctions();
-    const validationResults = {
+    let healthyFunctions = 0;
+    let totalFunctions = this.config.functions.length;
+    
+    for (const functionName of this.config.functions) {
+      try {
+        const health = await this.checkFunctionHealth(functionName);
+        
+        this.functionHealth.set(functionName, {
+          ...health,
+          lastCheck: Date.now(),
+          timestamp: new Date().toISOString()
+        });
+        
+        if (health.healthy) {
+          healthyFunctions++;
+          this.log(`Function ${functionName} is healthy`);
+        } else {
+          this.log(`Function ${functionName} is unhealthy: ${health.reason}`, "WARN");
+          
+          // Try to create backup if function is unhealthy
+          if (health.reason === "validation_failed" || health.reason === "test_failed") {
+            await this.createBackupFunction(functionName);
+          }
+        }
+        
+      } catch (error) {
+        this.log(`Error checking function health for ${functionName}: ${error.message}`, "ERROR");
+        this.functionHealth.set(functionName, {
+          healthy: false,
+          reason: "check_error",
+          error: error.message,
+          lastCheck: Date.now(),
+          timestamp: new Date().toISOString()
+        });
+      }
+    }
+    
+    const healthPercentage = (healthyFunctions / totalFunctions) * 100;
+    this.log(`Netlify functions health: ${healthyFunctions}/${totalFunctions} (${healthPercentage.toFixed(1)}%)`);
+    
+    // Regenerate manifest if health is below threshold
+    if (healthPercentage < this.config.healthThreshold) {
+      this.log(`Functions health below threshold (${healthPercentage.toFixed(1)}% < ${this.config.healthThreshold}%), regenerating manifest...`);
+      await this.regenerateFunctionsManifest();
+    }
+    
+    return { healthyFunctions, totalFunctions, healthPercentage };
+  }
+
+  async manageBackupFunctions() {
+    const now = Date.now();
+    
+    if (now - this.lastBackupFunctionCheck >= this.config.backupFunctionInterval) {
+      this.log("Managing backup functions...");
+      
+      for (const functionName of this.config.functions) {
+        try {
+          const health = this.functionHealth.get(functionName);
+          
+          if (health && !health.healthy) {
+            // Create backup for unhealthy functions
+            await this.createBackupFunction(functionName);
+          }
+          
+          // Check if backup exists and is older than 24 hours
+          const backupInfo = this.backupFunctions.get(functionName);
+          if (backupInfo) {
+            const backupAge = now - new Date(backupInfo.created).getTime();
+            const maxBackupAge = 24 * 60 * 60 * 1000; // 24 hours
+            
+            if (backupAge > maxBackupAge) {
+              // Remove old backup
+              try {
+                fs.unlinkSync(backupInfo.backupFile);
+                this.backupFunctions.delete(functionName);
+                this.log(`Removed old backup function: ${functionName}-backup.js`);
+              } catch (error) {
+                this.log(`Error removing old backup function ${functionName}-backup.js: ${error.message}`, "WARN");
+              }
+            }
+          }
+          
+        } catch (error) {
+          this.log(`Error managing backup function for ${functionName}: ${error.message}`, "ERROR");
+        }
+      }
+      
+      this.lastBackupFunctionCheck = now;
+    }
+  }
+
+  async checkOverallHealth() {
+    this.log("Checking Netlify functions system health...");
+    
+    const health = {
       timestamp: new Date().toISOString(),
-      overall: {
-        healthy: false,
-        score: 0,
-        issues: []
-      },
-      functions: scanResults.found,
-      missing: scanResults.missing,
-      invalid: scanResults.invalid,
-      manifest: scanResults.manifest
+      functions: {},
+      summary: {
+        total: this.config.functions.length,
+        healthy: 0,
+        unhealthy: 0,
+        backupCount: this.backupFunctions.size
+      }
     };
     
-    // Calculate health score
-    const totalFunctions = scanResults.totalExpected;
-    const foundFunctions = scanResults.found.length;
-    const invalidFunctions = scanResults.invalid.length;
-    
-    let score = 0;
-    const issues = [];
-    
-    // Score based on found functions
-    if (foundFunctions > 0) {
-      score += (foundFunctions / totalFunctions) * 60; // 60% for found functions
-    }
-    
-    // Penalty for invalid functions
-    if (invalidFunctions > 0) {
-      score -= (invalidFunctions / totalFunctions) * 20; // 20% penalty for invalid
-      issues.push(`${invalidFunctions} functions are invalid`);
-    }
-    
-    // Penalty for missing functions
-    if (scanResults.missing.length > 0) {
-      score -= (scanResults.missing.length / totalFunctions) * 20; // 20% penalty for missing
-      issues.push(`${scanResults.missing.length} functions are missing`);
-    }
-    
-    // Check manifest
-    if (scanResults.manifest && scanResults.manifest.exists) {
-      if (scanResults.manifest.functionCount === foundFunctions) {
-        score += 10; // 10% bonus for accurate manifest
-      } else {
-        score -= 10; // 10% penalty for inaccurate manifest
-        issues.push("Manifest function count doesn't match actual functions");
-      }
-    } else {
-      score -= 10; // 10% penalty for missing manifest
-      issues.push("Functions manifest is missing");
-    }
-    
-    // Ensure score is within bounds
-    score = Math.max(0, Math.min(100, score));
-    
-    validationResults.overall.score = Math.round(score);
-    validationResults.overall.healthy = score >= 80;
-    validationResults.overall.issues = issues;
-    
-    this.logger.info(`Validation completed: Score ${score}/100, Healthy: ${validationResults.overall.healthy}`);
-    
-    return validationResults;
-  }
-
-  async deployFunctions() {
-    this.logger.info("Deploying Netlify Functions...");
-    
-    try {
-      // Check if Netlify CLI is available
-      const netlifyCheck = spawnSync("netlify", ["--version"], { stdio: "pipe" });
-      if (netlifyCheck.status !== 0) {
-        this.logger.warn("Netlify CLI not found, attempting to install...");
-        execSync("npm install -g netlify-cli", { stdio: "inherit" });
-      }
-      
-      // Build the project first
-      this.logger.info("Building project...");
-      const buildResult = spawnSync("npm", ["run", "build"], {
-        cwd: this.workspace,
-        stdio: "pipe",
-        encoding: "utf8"
-      });
-      
-      if (buildResult.status !== 0) {
-        throw new Error(`Build failed: ${buildResult.stderr}`);
-      }
-      
-      this.logger.info("Build completed successfully");
-      
-      // Deploy to Netlify
-      this.logger.info("Deploying to Netlify...");
-      const deployResult = spawnSync("netlify", ["deploy", "--prod"], {
-        cwd: this.workspace,
-        stdio: "pipe",
-        encoding: "utf8"
-      });
-      
-      if (deployResult.status === 0) {
-        this.logger.info("Deployment completed successfully");
-        return { success: true, output: deployResult.stdout };
-      } else {
-        throw new Error(`Deployment failed: ${deployResult.stderr}`);
-      }
-    } catch (error) {
-      this.logger.error(`Function deployment failed: ${error.message}`);
-      return { success: false, error: error.message };
-    }
-  }
-
-  async checkDeploymentStatus() {
-    this.logger.info("Checking Netlify deployment status...");
-    
-    try {
-      // Check if Netlify CLI is available
-      const netlifyCheck = spawnSync("netlify", ["--version"], { stdio: "pipe" });
-      if (netlifyCheck.status !== 0) {
-        return { success: false, error: "Netlify CLI not available" };
-      }
-      
-      // Get deployment status
-      const statusResult = spawnSync("netlify", ["status"], {
-        cwd: this.workspace,
-        stdio: "pipe",
-        encoding: "utf8"
-      });
-      
-      if (statusResult.status === 0) {
-        this.logger.info("Deployment status retrieved");
-        return { success: true, status: statusResult.stdout };
-      } else {
-        throw new Error(`Status check failed: ${statusResult.stderr}`);
-      }
-    } catch (error) {
-      this.logger.error(`Deployment status check failed: ${error.message}`);
-      return { success: false, error: error.message };
-    }
-  }
-
-  async runHealthCheck() {
-    this.logger.info("Running Netlify Functions health check...");
-    
-    try {
-      const validationResults = await this.validateFunctions();
-      const deploymentStatus = await this.checkDeploymentStatus();
-      
-      const healthReport = {
-        timestamp: new Date().toISOString(),
-        validation: validationResults,
-        deployment: deploymentStatus,
-        overall: {
-          healthy: validationResults.overall.healthy && deploymentStatus.success,
-          score: validationResults.overall.score,
-          issues: [
-            ...validationResults.overall.issues,
-            ...(deploymentStatus.success ? [] : [deploymentStatus.error])
-          ]
+    for (const functionName of this.config.functions) {
+      const functionHealth = this.functionHealth.get(functionName);
+      if (functionHealth) {
+        health.functions[functionName] = functionHealth;
+        
+        if (functionHealth.healthy) {
+          health.summary.healthy++;
+        } else {
+          health.summary.unhealthy++;
         }
-      };
+      }
+    }
+    
+    // Store health history
+    this.healthHistory.set(Date.now(), health);
+    
+    // Clean old health history
+    const cutoff = Date.now() - (24 * 60 * 60 * 1000); // 24 hours
+    for (const [timestamp] of this.healthHistory) {
+      if (timestamp < cutoff) {
+        this.healthHistory.delete(timestamp);
+      }
+    }
+    
+    return health;
+  }
+
+  async orchestrate() {
+    this.log("Starting Netlify functions redundancy orchestration...");
+    
+    try {
+      // Check and manage function health
+      const healthResult = await this.manageFunctionHealth();
       
-      // Save health report
-      const reportFile = path.join(this.logDir, "netlify-functions-health.json");
-      fs.writeFileSync(reportFile, JSON.stringify(healthReport, null, 2));
+      // Manage backup functions
+      await this.manageBackupFunctions();
       
-      this.logger.info(`Health check completed: Overall healthy: ${healthReport.overall.healthy}`);
+      // Regenerate manifest if needed
+      const now = Date.now();
+      if (now - this.lastManifestRegeneration >= this.config.manifestRegenerationInterval) {
+        await this.regenerateFunctionsManifest();
+      }
       
-      return healthReport;
+      // Check overall health
+      const health = await this.checkOverallHealth();
+      
+      this.log(`Netlify functions system health: ${health.summary.healthy}/${health.summary.total} functions healthy`);
+      
+      if (health.summary.unhealthy > 0) {
+        this.log(`Warning: ${health.summary.unhealthy} functions are unhealthy`, "WARN");
+      }
+      
+      if (health.summary.backupCount > 0) {
+        this.log(`Info: ${health.summary.backupCount} backup functions available`);
+      }
+      
     } catch (error) {
-      this.logger.error(`Health check failed: ${error.message}`);
-      throw error;
+      this.log(`Error during Netlify functions orchestration: ${error.message}`, "ERROR");
     }
   }
 
-  async performRecovery() {
-    this.logger.info("Performing Netlify Functions recovery...");
-    
-    try {
-      const recoverySteps = [];
-      
-      // Step 1: Regenerate manifest
-      this.logger.info("Step 1: Regenerating functions manifest...");
-      const manifestResult = await this.regenerateManifest();
-      recoverySteps.push({ step: "manifest_regeneration", success: manifestResult.success });
-      
-      // Step 2: Validate functions
-      this.logger.info("Step 2: Validating functions...");
-      const validationResults = await this.validateFunctions();
-      recoverySteps.push({ step: "function_validation", success: validationResults.overall.healthy });
-      
-      // Step 3: Deploy if needed
-      if (validationResults.overall.healthy) {
-        this.logger.info("Step 3: Deploying functions...");
-        const deployResult = await this.deployFunctions();
-        recoverySteps.push({ step: "function_deployment", success: deployResult.success });
-      } else {
-        recoverySteps.push({ step: "function_deployment", success: false, reason: "Validation failed" });
-      }
-      
-      // Step 4: Final health check
-      this.logger.info("Step 4: Final health check...");
-      const finalHealth = await this.runHealthCheck();
-      recoverySteps.push({ step: "final_health_check", success: finalHealth.overall.healthy });
-      
-      const recoveryReport = {
-        timestamp: new Date().toISOString(),
-        steps: recoverySteps,
-        overall: {
-          successful: recoverySteps.filter(s => s.success).length,
-          total: recoverySteps.length,
-          success: recoverySteps.every(s => s.success)
-        }
-      };
-      
-      this.logger.info(`Recovery completed: ${recoveryReport.overall.successful}/${recoveryReport.overall.total} steps successful`);
-      
-      return recoveryReport;
-    } catch (error) {
-      this.logger.error(`Recovery failed: ${error.message}`);
-      throw error;
+  startMonitoring() {
+    if (this.monitoring) {
+      this.log("Netlify functions monitoring is already running");
+      return;
     }
+    
+    this.log("Starting Netlify functions redundancy monitoring...");
+    this.monitoring = true;
+    
+    this.checkInterval = setInterval(async () => {
+      await this.orchestrate();
+    }, this.config.healthCheckInterval);
   }
 
-  async runMaintenanceCycle() {
-    this.logger.info("Starting Netlify Functions maintenance cycle...");
+  stopMonitoring() {
+    if (this.checkInterval) {
+      clearInterval(this.checkInterval);
+      this.checkInterval = null;
+    }
+    this.monitoring = false;
+    this.log("Stopped Netlify functions redundancy monitoring");
+  }
+
+  getStatus() {
+    return {
+      monitoring: this.monitoring,
+      lastHealthCheck: this.healthHistory.size > 0 ? 
+        Array.from(this.healthHistory.keys()).pop() : null,
+      functionHealth: Object.fromEntries(this.functionHealth),
+      backupFunctions: Object.fromEntries(this.backupFunctions),
+      lastManifestRegeneration: this.lastManifestRegeneration,
+      lastBackupFunctionCheck: this.lastBackupFunctionCheck,
+      config: this.config
+    };
+  }
+
+  generateReport() {
+    const report = {
+      timestamp: new Date().toISOString(),
+      status: this.getStatus(),
+      healthHistory: Array.from(this.healthHistory.entries()).slice(-10), // Last 10 entries
+      recommendations: []
+    };
     
-    try {
-      // Step 1: Health check
-      const healthCheck = await this.runHealthCheck();
+    // Generate recommendations based on health history
+    if (this.healthHistory.size > 0) {
+      const recentHealth = Array.from(this.healthHistory.values()).slice(-5);
       
-      // Step 2: Recovery if needed
-      let recoveryReport = null;
-      if (!healthCheck.overall.healthy) {
-        this.logger.info("Health check failed, starting recovery...");
-        recoveryReport = await this.performRecovery();
+      const totalFunctions = recentHealth.reduce((sum, h) => sum + h.summary.total, 0);
+      const totalHealthy = recentHealth.reduce((sum, h) => sum + h.summary.healthy, 0);
+      const totalUnhealthy = recentHealth.reduce((sum, h) => sum + h.summary.unhealthy, 0);
+      
+      if (totalUnhealthy > 0) {
+        report.recommendations.push("Some functions are unhealthy - investigate and fix issues");
       }
       
-      // Step 3: Final status
-      const finalStatus = await this.scanFunctions();
+      if (totalHealthy < totalFunctions * 0.8) {
+        report.recommendations.push("Many functions are unhealthy - check function implementations");
+      }
       
-      const cycleReport = {
-        timestamp: new Date().toISOString(),
-        initialHealth: healthCheck,
-        recovery: recoveryReport,
-        finalStatus: finalStatus,
-        summary: {
-          startedHealthy: healthCheck.overall.healthy,
-          recoveryNeeded: !!recoveryReport,
-          recoverySuccessful: recoveryReport ? recoveryReport.overall.success : null,
-          finalHealthy: finalStatus.found.length >= finalStatus.totalExpected * 0.8
-        }
-      };
-      
-      this.logger.info("Maintenance cycle completed");
-      return cycleReport;
-    } catch (error) {
-      this.logger.error(`Maintenance cycle failed: ${error.message}`);
-      throw error;
+      if (recentHealth.some(h => h.summary.backupCount === 0)) {
+        report.recommendations.push("No backup functions available - consider creating backups for critical functions");
+      }
     }
+    
+    return report;
   }
 }
 
-// CLI interface
+// CLI Interface
 if (require.main === module) {
   const manager = new NetlifyFunctionsRedundancyManager();
-  
-  const command = process.argv[2];
+  const command = process.argv[2] || "start";
   
   switch (command) {
-    case "scan":
-      manager.scanFunctions().then(results => {
-        console.log("Scan results:", JSON.stringify(results, null, 2));
-      });
+    case "start":
+      manager.startMonitoring();
       break;
-      
-    case "validate":
-      manager.validateFunctions().then(results => {
-        console.log("Validation results:", JSON.stringify(results, null, 2));
-      });
+    case "stop":
+      manager.stopMonitoring();
       break;
-      
-    case "manifest":
-      manager.regenerateManifest().then(result => {
-        console.log("Manifest regeneration result:", JSON.stringify(result, null, 2));
-      });
-      break;
-      
-    case "deploy":
-      manager.deployFunctions().then(result => {
-        console.log("Deployment result:", JSON.stringify(result, null, 2));
-      });
-      break;
-      
     case "status":
-      manager.checkDeploymentStatus().then(result => {
-        console.log("Deployment status:", JSON.stringify(result, null, 2));
+      console.log(JSON.stringify(manager.getStatus(), null, 2));
+      break;
+    case "report":
+      console.log(JSON.stringify(manager.generateReport(), null, 2));
+      break;
+    case "once":
+      manager.orchestrate().then(() => {
+        console.log("Netlify functions orchestration completed");
+        process.exit(0);
+      }).catch(error => {
+        console.error("Netlify functions orchestration failed:", error);
+        process.exit(1);
       });
       break;
-      
-    case "health":
-      manager.runHealthCheck().then(result => {
-        console.log("Health check result:", JSON.stringify(result, null, 2));
+    case "create-backups":
+      Promise.all(manager.config.functions.map(name => manager.createBackupFunction(name)))
+        .then(() => {
+          console.log("Backup functions creation completed");
+          process.exit(0);
+        })
+        .catch(error => {
+          console.error("Backup functions creation failed:", error);
+          process.exit(1);
+        });
+      break;
+    case "regenerate-manifest":
+      manager.regenerateFunctionsManifest().then(() => {
+        console.log("Functions manifest regeneration completed");
+        process.exit(0);
+      }).catch(error => {
+        console.error("Functions manifest regeneration failed:", error);
+        process.exit(1);
       });
       break;
-      
-    case "recover":
-      manager.performRecovery().then(result => {
-        console.log("Recovery result:", JSON.stringify(result, null, 2));
-      });
-      break;
-      
-    case "maintenance":
-      manager.runMaintenanceCycle().then(result => {
-        console.log("Maintenance cycle result:", JSON.stringify(result, null, 2));
-      });
-      break;
-      
     default:
-      console.log("Usage: node netlify-functions-redundancy-manager.cjs [scan|validate|manifest|deploy|status|health|recover|maintenance]");
+      console.log("Usage: node netlify-functions-redundancy-manager.cjs [start|stop|status|report|once|create-backups|regenerate-manifest]");
       process.exit(1);
   }
 }
