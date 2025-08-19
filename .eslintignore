@@ -10,3 +10,5 @@ node_modules/
 # Generated artifacts
 *.log
 **/*.generated.*
+zion.app/
+public/reports/
