@@ -18,9 +18,23 @@ export default function HomePage() {
             <h1 className="text-5xl font-extrabold mb-6 bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent">
               Zion Tech Group
             </h1>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto">
+            <p className="text-xl text-white/80 max-w-3xl mx-auto mb-8">
               Autonomous innovation hub delivering cutting-edge technology solutions and intelligent automation systems.
             </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a 
+                href="/services" 
+                className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-fuchsia-500 text-white font-medium rounded-xl hover:from-cyan-600 hover:to-fuchsia-600 transition-all duration-200"
+              >
+                Explore Services
+              </a>
+              <a 
+                href="/about" 
+                className="inline-flex items-center justify-center px-8 py-4 border border-white/20 text-white font-medium rounded-xl hover:bg-white/10 transition-all duration-200"
+              >
+                Learn More
+              </a>
+            </div>
           </section>
 
           {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */}
@@ -66,6 +80,39 @@ export default function HomePage() {
             </div>
           </section>
           {/* AUTO-GENERATED: HOME_LATEST_CONTENT_END */}
+
+          <section className="mx-auto max-w-7xl px-6 pb-14 mt-16">
+            <h2 className="text-center text-2xl font-bold tracking-wide text-white/90 mb-8">Quick Navigation</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <a href="/about" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-200">
+                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                <h3 className="text-lg font-semibold mb-2">About Us</h3>
+                <p className="text-sm text-white/75">Learn about our mission and vision for autonomous technology.</p>
+                <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Learn More <span aria-hidden>→</span></div>
+              </a>
+              
+              <a href="/services" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-200">
+                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                <h3 className="text-lg font-semibold mb-2">Our Services</h3>
+                <p className="text-sm text-white/75">Explore our comprehensive range of autonomous solutions.</p>
+                <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">View Services <span aria-hidden>→</span></div>
+              </a>
+              
+              <a href="/contact" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-200">
+                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                <h3 className="text-lg font-semibold mb-2">Contact Us</h3>
+                <p className="text-sm text-white/75">Get in touch to discuss your automation needs.</p>
+                <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Get in Touch <span aria-hidden>→</span></div>
+              </a>
+              
+              <a href="/reports" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-200">
+                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                <h3 className="text-lg font-semibold mb-2">Reports</h3>
+                <p className="text-sm text-white/75">View detailed reports and system status updates.</p>
+                <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">View Reports <span aria-hidden>→</span></div>
+              </a>
+            </div>
+          </section>
         </main>
       </div>
     </>
