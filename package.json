@@ -406,6 +406,7 @@
     "child_process": "^1.0.2",
     "chokidar": "^4.0.3",
     "cron-parser": "^5.3.0",
+    "dotenv": "^16.4.5",
     "events": "^3.3.0",
     "framer-motion": "^6.5.1",
     "fs": "^0.0.1-security",
