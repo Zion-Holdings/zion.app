@@ -122,8 +122,85 @@ export default function ServicesPage() {
                 <div>
                   <h3 className="text-xl font-semibold mb-3 text-green-400">Proven Results</h3>
                   <p className="text-white/70">
-                    With 227 active automations and 2,960+ pages generated, we have a track record of delivering measurable business value.
+                    With 248 active automations and 3,127+ pages generated, we have a track record of delivering measurable business value.
                   </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Additional Service Offerings */}
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 mb-16">
+              <h2 className="text-3xl font-bold mb-6 text-purple-400">Specialized Solutions</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="bg-white/5 rounded-xl p-6 border border-white/20">
+                  <div className="text-3xl mb-3">🔐</div>
+                  <h3 className="text-xl font-semibold mb-3 text-cyan-400">Cybersecurity & AI</h3>
+                  <p className="text-white/70 text-sm">
+                    AI-powered threat detection, automated incident response, and intelligent security monitoring systems.
+                  </p>
+                </div>
+                
+                <div className="bg-white/5 rounded-xl p-6 border border-white/20">
+                  <div className="text-3xl mb-3">🏥</div>
+                  <h3 className="text-xl font-semibold mb-3 text-fuchsia-400">Healthcare AI</h3>
+                  <p className="text-white/70 text-sm">
+                    Medical image analysis, patient data processing, and automated diagnostic assistance systems.
+                  </p>
+                </div>
+                
+                <div className="bg-white/5 rounded-xl p-6 border border-white/20">
+                  <div className="text-3xl mb-3">🏭</div>
+                  <h3 className="text-xl font-semibold mb-3 text-green-400">Industrial IoT</h3>
+                  <p className="text-white/70 text-sm">
+                    Smart manufacturing, predictive maintenance, and automated quality control systems.
+                  </p>
+                </div>
+                
+                <div className="bg-white/5 rounded-xl p-6 border border-white/20">
+                  <div className="text-3xl mb-3">🚗</div>
+                  <h3 className="text-xl font-semibold mb-3 text-blue-400">Autonomous Vehicles</h3>
+                  <p className="text-white/70 text-sm">
+                    Self-driving systems, traffic optimization, and intelligent transportation infrastructure.
+                  </p>
+                </div>
+                
+                <div className="bg-white/5 rounded-xl p-6 border border-white/20">
+                  <div className="text-3xl mb-3">🌱</div>
+                  <h3 className="text-xl font-semibold mb-3 text-emerald-400">Green Tech</h3>
+                  <p className="text-white/70 text-sm">
+                    Renewable energy optimization, environmental monitoring, and sustainable resource management.
+                  </p>
+                </div>
+                
+                <div className="bg-white/5 rounded-xl p-6 border border-white/20">
+                  <div className="text-3xl mb-3">🎯</div>
+                  <h3 className="text-xl font-semibold mb-3 text-yellow-400">Marketing AI</h3>
+                  <p className="text-white/70 text-sm">
+                    Automated content generation, personalized campaigns, and intelligent customer engagement systems.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Success Metrics */}
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 mb-16">
+              <h2 className="text-3xl font-bold mb-6 text-yellow-400">Our Success Metrics</h2>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-cyan-400 mb-2">500+</div>
+                  <div className="text-sm text-white/70">Projects Delivered</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-fuchsia-400 mb-2">99.9%</div>
+                  <div className="text-sm text-white/70">Client Satisfaction</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-green-400 mb-2">40%</div>
+                  <div className="text-sm text-white/70">Avg. Efficiency Gain</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-blue-400 mb-2">24/7</div>
+                  <div className="text-sm text-white/70">Support Available</div>
                 </div>
               </div>
             </div>
@@ -151,6 +228,23 @@ export default function ServicesPage() {
                   <h3 className="text-lg font-semibold mb-2">Optimization</h3>
                   <p className="text-sm text-white/70">Continuous improvement and support</p>
                 </div>
+              </div>
+            </div>
+
+            {/* Call to Action */}
+            <div className="bg-gradient-to-r from-cyan-500/20 to-fuchsia-500/20 backdrop-blur-xl rounded-3xl p-12 text-center border border-white/20 mt-16">
+              <h2 className="text-4xl font-bold text-white mb-6">Ready to Transform Your Business?</h2>
+              <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto">
+                Let's discuss how our AI and automation services can drive innovation, 
+                improve efficiency, and create competitive advantages for your organization.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/contact" className="px-8 py-4 bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-105 shadow-lg">
+                  Get Started Today
+                </a>
+                <a href="/case-studies" className="px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/30 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-105">
+                  View Case Studies
+                </a>
               </div>
             </div>
           </section>
