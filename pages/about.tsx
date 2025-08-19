@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import Footer from '../components/Footer';
 
 export default function AboutPage() {
   return (
@@ -114,6 +115,7 @@ export default function AboutPage() {
             </div>
           </section>
         </main>
+        <Footer />
       </div>
     </>
   );
