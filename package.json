@@ -317,10 +317,13 @@
     "redundancy:ultimate:stop": "bash automation/start-ultimate-redundancy.sh stop",
     "redundancy:ultimate:restart": "bash automation/start-ultimate-redundancy.sh restart",
     "redundancy:ultimate:status": "bash automation/start-ultimate-redundancy.sh status",
-    "redundancy:ultimate:health": "bash automation/start-ultimate-redundancy.sh health",
     "redundancy:ultimate:logs": "bash automation/start-ultimate-redundancy.sh logs",
-    "redundancy:ultimate:test": "bash automation/start-ultimate-redundancy.sh test",
-    "redundancy:ultimate:once": "node automation/ultimate-redundancy-master.cjs once"
+    "redundancy:ultimate:check": "bash automation/start-ultimate-redundancy.sh check",
+    "redundancy:ultimate:automation": "node automation/ultimate-redundancy-automation.cjs start",
+    "redundancy:ultimate:check:run": "node automation/ultimate-redundancy-automation.cjs check",
+    "automation:comprehensive:start": "node automation/comprehensive-automation-orchestrator.cjs start",
+    "automation:comprehensive:check": "node automation/comprehensive-automation-orchestrator.cjs check",
+    "automation:comprehensive:status": "node automation/comprehensive-automation-orchestrator.cjs status"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
@@ -340,7 +343,6 @@
     "child_process": "^1.0.2",
     "chokidar": "^4.0.3",
     "cron-parser": "^5.3.0",
-    "dotenv": "^17.2.1",
     "events": "^3.3.0",
     "framer-motion": "^6.5.1",
     "fs": "^0.0.1-security",
