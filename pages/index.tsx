@@ -23,8 +23,20 @@ export default function HomePage() {
             <p className="text-2xl text-white/90 max-w-4xl mx-auto mb-8 leading-relaxed">
               Autonomous innovation hub delivering cutting-edge technology solutions and intelligent automation systems that revolutionize digital infrastructure.
             </p>
-<<<<<<< HEAD
             
+            {/* Stats */}
+            <div className="flex flex-wrap justify-center gap-6 text-lg mb-8">
+              <div className="bg-white/10 backdrop-blur-xl rounded-xl px-6 py-3 border border-white/20">
+                <span className="text-cyan-300 font-semibold">227+</span> Active Automations
+              </div>
+              <div className="bg-white/10 backdrop-blur-xl rounded-xl px-6 py-3 border border-white/20">
+                <span className="text-blue-300 font-semibold">2,960+</span> Generated Pages
+              </div>
+              <div className="bg-white/10 backdrop-blur-xl rounded-xl px-6 py-3 border border-white/20">
+                <span className="text-green-300 font-semibold">99.9%</span> Uptime
+              </div>
+            </div>
+
             {/* Navigation Links */}
             <div className="flex flex-wrap justify-center gap-4 mt-8">
               <a href="/about" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-cyan-400/50">
@@ -36,22 +48,15 @@ export default function HomePage() {
               <a href="/contact" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-green-400/50">
                 Contact
               </a>
-=======
-            <div className="flex flex-wrap justify-center gap-6 text-lg">
-              <div className="bg-white/10 backdrop-blur-xl rounded-xl px-6 py-3 border border-white/20">
-                <span className="text-cyan-300 font-semibold">227+</span> Active Automations
-              </div>
-              <div className="bg-white/10 backdrop-blur-xl rounded-xl px-6 py-3 border border-white/20">
-                <span className="text-blue-300 font-semibold">2,960+</span> Generated Pages
-              </div>
-              <div className="bg-white/10 backdrop-blur-xl rounded-xl px-6 py-3 border border-white/20">
-                <span className="text-green-300 font-semibold">99.9%</span> Uptime
-              </div>
->>>>>>> cursor/update-content-and-fix-links-74fc
+              <a href="/dashboard" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-blue-400/50">
+                Dashboard
+              </a>
+              <a href="/analytics" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-indigo-400/50">
+                Analytics
+              </a>
             </div>
           </section>
 
-<<<<<<< HEAD
           {/* Features Section */}
           <section className="mb-20">
             <h2 className="text-3xl font-bold text-center mb-12 text-white/90">Core Capabilities</h2>
@@ -122,9 +127,9 @@ export default function HomePage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold mb-4 text-yellow-300">Intelligent Automation</h3>
+                <h3 className="text-xl font-semibold mb-4 text-yellow-300">Customer Success</h3>
                 <p className="text-white/80 leading-relaxed">
-                  Smart automation systems that learn, adapt, and optimize processes for maximum efficiency and reliability.
+                  Dedicated support and success teams ensuring optimal system performance and user satisfaction.
                 </p>
               </div>
             </div>
@@ -167,19 +172,7 @@ export default function HomePage() {
           <section className="mb-20">
             <h2 className="text-3xl font-bold text-center mb-12 text-white/90">Latest Autonomous Updates</h2>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              <a href="/reports/updates/update-2025-08-15-0406" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300 hover:scale-105">
-=======
-          {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */}
-          <section className="mx-auto max-w-7xl px-6 pb-14">
-            <div className="text-center mb-8">
-              <h2 className="text-2xl font-bold tracking-wide text-white/90 mb-4">Latest Autonomous Content</h2>
-              <a href="/reports" className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors">
-                View All Reports →
-              </a>
-            </div>
-            <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
               <a href="/reports/updates/update-2025-08-15-0406" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
->>>>>>> 0ae946bee62d031392f0f6f25b15cd207de60919
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
                 <h3 className="text-lg font-semibold mb-2">Autonomous Update — 2025: 08: 15: 0406</h3>
                 <p className="text-sm text-white/75 mb-3">Latest system status and performance metrics from our autonomous agents.</p>
