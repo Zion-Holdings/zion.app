@@ -2,361 +2,358 @@
 
 ## Overview
 
-The Ultimate Redundancy Automation System provides comprehensive redundancy for all automations in your project, ensuring maximum uptime and reliability. This system covers:
+The Ultimate Redundancy Automation System provides comprehensive redundancy for all automation systems in the Zion.app project, including:
 
-- **PM2 Automations**: Ecosystem files, processes, health monitoring, and auto-recovery
-- **GitHub Actions Automations**: Workflow validation, API health checks, and backup triggers
-- **Netlify Functions Automations**: Manifest regeneration, deployment checks, and function validation
+- **PM2 Process Management** - Redundancy for all PM2 processes and ecosystems
+- **GitHub Actions** - Redundancy for all GitHub workflow automations
+- **Netlify Functions** - Redundancy for all Netlify serverless functions
+- **System Health Monitoring** - Comprehensive health checks and auto-recovery
 
 ## Features
 
-### 🚀 Comprehensive Coverage
-- **PM2 Processes**: Monitors and manages all PM2 ecosystem files and processes
-- **GitHub Workflows**: Validates workflow syntax and checks API accessibility
-- **Netlify Functions**: Ensures function manifest integrity and deployment health
-- **Auto-Recovery**: Automatically recovers failed systems and processes
-- **Health Monitoring**: Continuous health checks with detailed reporting
+### 🔄 PM2 Redundancy
+- **Process Monitoring**: Continuous monitoring of all PM2 processes
+- **Auto-Recovery**: Automatic restart of failed processes
+- **Resource Monitoring**: Memory and CPU usage tracking
+- **Log Rotation**: Automated log management with compression
+- **Ecosystem Management**: Support for multiple ecosystem configurations
 
-### 🔧 Smart Management
-- **Load Balancing**: Distributes load across multiple redundancy systems
-- **Process Monitoring**: Real-time monitoring of all automation processes
-- **Log Rotation**: Automatic log management and cleanup
-- **Error Handling**: Graceful error handling with detailed logging
+### 🚀 GitHub Actions Redundancy
+- **Workflow Validation**: Ensures all workflow files are present and valid
+- **Backup Restoration**: Automatic restoration from backup workflows
+- **Auto-Triggering**: Can trigger workflows when needed
+- **Health Monitoring**: Continuous monitoring of workflow status
 
-### 📊 Monitoring & Reporting
-- **Health Reports**: Comprehensive health status reports
-- **Performance Metrics**: Real-time performance monitoring
-- **Alert System**: Automated alerts for system failures
-- **Log Management**: Centralized logging with search capabilities
+### ⚡ Netlify Functions Redundancy
+- **Function Monitoring**: Tracks all Netlify functions
+- **Manifest Management**: Automatic regeneration of function manifests
+- **Deployment Checks**: Verifies function deployment status
+- **Auto-Recovery**: Regenerates missing or stale functions
+
+### 🏥 System Health Monitoring
+- **Resource Monitoring**: Disk, memory, and CPU usage tracking
+- **Performance Metrics**: Continuous performance monitoring
+- **Auto-Recovery**: Automatic system recovery procedures
+- **Alert System**: Configurable alerting for critical issues
 
 ## Quick Start
 
 ### 1. Start the System
-
 ```bash
-# Start the ultimate redundancy automation system
+# Start the ultimate redundancy system
 npm run redundancy:ultimate:start
 
-# Or use the direct command
-bash automation/start-ultimate-redundancy-automation.sh start
+# Or use the script directly
+bash automation/start-ultimate-redundancy.sh start
 ```
 
 ### 2. Check Status
-
 ```bash
 # Check system status
 npm run redundancy:ultimate:status
 
-# Check PM2 status
-npm run redundancy:ultimate:pm2:status
+# Or use the script directly
+bash automation/start-ultimate-redundancy.sh status
 ```
 
-### 3. Perform Health Check
-
+### 3. Run Health Check
 ```bash
-# Run comprehensive health check
+# Run a health check
 npm run redundancy:ultimate:health
 
-# Or use the system directly
-npm run redundancy:ultimate:system:health
+# Or use the script directly
+bash automation/start-ultimate-redundancy.sh health
+```
+
+### 4. View Logs
+```bash
+# View recent logs
+npm run redundancy:ultimate:logs
+
+# Follow logs in real-time
+bash automation/start-ultimate-redundancy.sh logs follow
 ```
 
 ## Available Commands
 
-### System Management
+### NPM Scripts
 ```bash
-npm run redundancy:ultimate:start      # Start the system
-npm run redundancy:ultimate:stop       # Stop the system
-npm run redundancy:ultimate:restart    # Restart the system
-npm run redundancy:ultimate:status     # Check system status
-npm run redundancy:ultimate:health     # Perform health check
-npm run redundancy:ultimate:recovery   # Perform auto-recovery
-npm run redundancy:ultimate:logs       # Show system logs
+# Start the system
+npm run redundancy:ultimate:start
+
+# Stop the system
+npm run redundancy:ultimate:stop
+
+# Restart the system
+npm run redundancy:ultimate:restart
+
+# Check status
+npm run redundancy:ultimate:status
+
+# Run health check
+npm run redundancy:ultimate:health
+
+# View logs
+npm run redundancy:ultimate:logs
+
+# Test system
+npm run redundancy:ultimate:test
+
+# Run once (for testing)
+npm run redundancy:ultimate:once
 ```
 
-### PM2 Management
+### Direct Script Usage
 ```bash
-npm run redundancy:ultimate:pm2:start   # Start PM2 processes
-npm run redundancy:ultimate:pm2:stop    # Stop PM2 processes
-npm run redundancy:ultimate:pm2:restart # Restart PM2 processes
-npm run redundancy:ultimate:pm2:status  # Check PM2 status
-npm run redundancy:ultimate:pm2:logs    # Show PM2 logs
+# Start
+bash automation/start-ultimate-redundancy.sh start
+
+# Stop
+bash automation/start-ultimate-redundancy.sh stop
+
+# Restart
+bash automation/start-ultimate-redundancy.sh restart
+
+# Status
+bash automation/start-ultimate-redundancy.sh status
+
+# Health check
+bash automation/start-ultimate-redundancy.sh health
+
+# View logs
+bash automation/start-ultimate-redundancy.sh logs
+
+# Follow logs
+bash automation/start-ultimate-redundancy.sh logs follow
+
+# Test system
+bash automation/start-ultimate-redundancy.sh test
+
+# Help
+bash automation/start-ultimate-redundancy.sh help
 ```
-
-### Direct System Access
-```bash
-npm run redundancy:ultimate:system:start    # Start system directly
-npm run redundancy:ultimate:system:stop     # Stop system directly
-npm run redundancy:ultimate:system:status   # Get system status
-npm run redundancy:ultimate:system:health   # Run health check
-npm run redundancy:ultimate:system:recovery # Run recovery
-```
-
-## System Architecture
-
-### Core Components
-
-1. **Ultimate Redundancy Automation System** (`ultimate-redundancy-automation-system.cjs`)
-   - Main controller for the entire system
-   - Orchestrates all redundancy operations
-   - Manages monitoring and recovery
-
-2. **Enhanced PM2 Redundancy** (`enhanced-pm2-redundancy.cjs`)
-   - Monitors PM2 processes and ecosystem files
-   - Handles process restarts and recovery
-   - Manages log rotation and health checks
-
-3. **Enhanced GitHub Actions Redundancy** (`enhanced-github-actions-redundancy.cjs`)
-   - Validates GitHub workflow syntax
-   - Checks API health and accessibility
-   - Manages backup triggers and validation
-
-4. **Enhanced Netlify Functions Redundancy** (`enhanced-netlify-functions-redundancy.cjs`)
-   - Monitors Netlify functions manifest
-   - Handles function regeneration
-   - Checks deployment health
-
-### Ecosystem Files
-
-The system supports multiple PM2 ecosystem files for maximum flexibility:
-
-- `ecosystem.ultimate-redundancy.cjs` - Main ecosystem (recommended)
-- `ecosystem.comprehensive-redundancy.cjs` - Comprehensive redundancy
-- `ecosystem.redundancy.cjs` - Basic redundancy
-- `ecosystem.pm2.cjs` - Legacy PM2 setup
 
 ## Configuration
 
-### Environment Variables
+The system is configured through `automation/redundancy-config.json`:
 
-```bash
-# Ultimate Redundancy System
-ULTIMATE_REDUNDANCY_LOG_LEVEL=INFO
-ULTIMATE_REDUNDANCY_MASTER_CHECK_INTERVAL=30000
-ULTIMATE_REDUNDANCY_AUTO_RECOVERY=true
-ULTIMATE_REDUNDANCY_LOAD_BALANCING=true
-
-# PM2 Redundancy
-PM2_REDUNDANCY_LOG_LEVEL=INFO
-PM2_HEALTH_CHECK_INTERVAL=30000
-PM2_MAX_RESTART_ATTEMPTS=5
-PM2_AUTO_RECOVERY=true
-
-# GitHub Actions Redundancy
-GITHUB_REDUNDANCY_LOG_LEVEL=INFO
-GITHUB_HEALTH_CHECK_INTERVAL=60000
-GITHUB_MAX_FAILURES=3
-GITHUB_AUTO_TRIGGER=true
-
-# Netlify Functions Redundancy
-NETLIFY_REDUNDANCY_LOG_LEVEL=INFO
-NETLIFY_HEALTH_CHECK_INTERVAL=120000
-NETLIFY_MAX_FAILURES=3
-NETLIFY_AUTO_REGENERATE=true
-```
-
-### Logging Configuration
-
-```bash
-# Log directory
-LOG_DIR=automation/logs
-
-# Log rotation
-MAX_LOG_SIZE=10MB
-MAX_LOG_FILES=30
-
-# Log levels
-LOG_LEVEL=INFO
-```
-
-## Health Monitoring
-
-### Health Check Components
-
-1. **PM2 Health**
-   - Process status monitoring
-   - Ecosystem file validation
-   - Auto-restart and recovery
-
-2. **GitHub Actions Health**
-   - Workflow file validation
-   - API accessibility checks
-   - Rate limit monitoring
-
-3. **Netlify Functions Health**
-   - Manifest file validation
-   - Function count verification
-   - CLI accessibility checks
-
-### Health Report Format
-
+### PM2 Configuration
 ```json
 {
-  "timestamp": "2025-01-17T12:00:00.000Z",
-  "status": {
-    "pm2": "HEALTHY",
-    "githubActions": "HEALTHY",
-    "netlifyFunctions": "HEALTHY"
-  },
-  "summary": {
-    "total": 3,
-    "healthy": 3,
-    "unhealthy": 0
-  },
-  "recommendations": []
+  "pm2": {
+    "criticalProcesses": [
+      "zion-auto-sync",
+      "redundancy-automation-system",
+      "enhanced-pm2-redundancy"
+    ],
+    "healthCheckInterval": 30000,
+    "maxRestartAttempts": 5,
+    "memoryThreshold": 80,
+    "cpuThreshold": 90
+  }
 }
 ```
 
-## Auto-Recovery
+### GitHub Actions Configuration
+```json
+{
+  "githubActions": {
+    "workflows": ["marketing-sync", "sync-health"],
+    "backupWorkflows": ["marketing-sync-backup", "sync-health-backup"],
+    "healthCheckInterval": 60000,
+    "maxFailures": 3,
+    "autoTrigger": true
+  }
+}
+```
 
-### Recovery Strategies
+### Netlify Functions Configuration
+```json
+{
+  "netlifyFunctions": {
+    "functionsDir": "netlify/functions",
+    "manifestFile": "netlify/functions/functions-manifest.json",
+    "healthCheckInterval": 120000,
+    "autoRegenerate": true
+  }
+}
+```
 
-1. **PM2 Recovery**
-   - Automatic process restart
-   - Ecosystem file fallback
-   - Health check validation
+## Architecture
 
-2. **Netlify Functions Recovery**
-   - Manifest regeneration
-   - Function validation
-   - Deployment checks
+### Core Components
 
-3. **System Recovery**
-   - Component health monitoring
-   - Automatic restart sequences
-   - Error threshold management
+1. **Ultimate Redundancy Master** (`automation/ultimate-redundancy-master.cjs`)
+   - Main orchestrator for all redundancy systems
+   - Handles PM2, GitHub Actions, and Netlify Functions redundancy
+   - Provides health monitoring and auto-recovery
 
-## Monitoring & Alerts
+2. **Startup Script** (`automation/start-ultimate-redundancy.sh`)
+   - Bash script for system management
+   - Handles dependencies and initialization
+   - Provides CLI interface for all operations
 
-### Monitoring Intervals
+3. **Configuration** (`automation/redundancy-config.json`)
+   - Centralized configuration for all redundancy systems
+   - Configurable thresholds and intervals
+   - Process and workflow definitions
 
-- **Health Checks**: Every 30 seconds
-- **PM2 Monitoring**: Every 30 seconds
+### Redundancy Layers
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    Ultimate Redundancy Master               │
+├─────────────────────────────────────────────────────────────┤
+│  PM2 Redundancy  │  GitHub Actions  │  Netlify Functions  │
+│                   │  Redundancy      │  Redundancy         │
+├─────────────────────────────────────────────────────────────┤
+│  Process Monitor │  Workflow Valid  │  Function Monitor   │
+│  Auto-Restart    │  Backup Restore  │  Manifest Gen       │
+│  Resource Check  │  Auto-Trigger    │  Auto-Recovery      │
+└─────────────────────────────────────────────────────────────┘
+```
+
+## Monitoring and Logging
+
+### Log Files
+- **Main Log**: `automation/logs/ultimate-redundancy.log`
+- **PM2 Logs**: `automation/logs/pm2-redundancy.log`
+- **GitHub Logs**: `automation/logs/github-redundancy.log`
+- **Netlify Logs**: `automation/logs/netlify-redundancy.log`
+
+### Health Checks
+The system performs continuous health checks:
+- **PM2 Processes**: Every 30 seconds
 - **GitHub Actions**: Every 60 seconds
 - **Netlify Functions**: Every 120 seconds
-- **Auto-Recovery**: Every 60 seconds
+- **System Health**: Every 5 minutes
 
-### Alert Thresholds
-
-- **PM2 Failures**: 5 attempts before alert
-- **GitHub API Failures**: 3 failures before alert
-- **Netlify Failures**: 2 failures before alert
-- **System Failures**: 3 failures before alert
+### Auto-Recovery
+When issues are detected, the system automatically:
+1. Attempts to restart failed processes
+2. Restores missing workflows from backups
+3. Regenerates stale function manifests
+4. Escalates to more aggressive recovery if needed
 
 ## Troubleshooting
 
 ### Common Issues
 
-1. **PM2 Not Starting**
-   ```bash
-   # Check PM2 installation
-   pm2 --version
-   
-   # Check ecosystem files
-   ls -la ecosystem*.cjs
-   
-   # Start manually
-   npm run redundancy:ultimate:pm2:start
-   ```
-
-2. **GitHub Actions Issues**
-   ```bash
-   # Check workflow files
-   ls -la .github/workflows/
-   
-   # Validate syntax
-   npm run redundancy:ultimate:health
-   ```
-
-3. **Netlify Functions Issues**
-   ```bash
-   # Check manifest
-   cat netlify/functions/functions-manifest.json
-   
-   # Regenerate manifest
-   npm run netlify:manifest
-   ```
-
-### Debug Mode
-
+#### PM2 Processes Not Starting
 ```bash
-# Enable debug logging
-export ULTIMATE_REDUNDANCY_LOG_LEVEL=DEBUG
+# Check PM2 status
+pm2 status
 
-# Start system with debug
-npm run redundancy:ultimate:start
+# Check PM2 logs
+pm2 logs
+
+# Restart PM2 ecosystem
+pm2 restart ecosystem.comprehensive-redundancy.cjs
 ```
 
-## Performance Optimization
+#### GitHub Actions Workflows Missing
+```bash
+# Check workflow files
+ls -la .github/workflows/
 
-### Resource Management
+# Restore from backup
+cp .github/workflows/marketing-sync-backup.yml .github/workflows/marketing-sync.yml
+```
 
-- **Memory Usage**: Optimized for low memory footprint
-- **CPU Usage**: Efficient monitoring algorithms
-- **Disk I/O**: Minimal logging overhead
-- **Network**: Optimized API calls and health checks
+#### Netlify Functions Issues
+```bash
+# Regenerate manifest
+npm run netlify:manifest
 
-### Scaling Considerations
+# Check functions directory
+ls -la netlify/functions/
+```
 
-- **Single Instance**: Recommended for most deployments
-- **Multiple Instances**: Can be configured for high-availability
-- **Load Balancing**: Built-in load distribution
-- **Failover**: Automatic failover between systems
+### Debug Mode
+```bash
+# Run with debug logging
+NODE_ENV=development node automation/ultimate-redundancy-master.cjs start
 
-## Security
-
-### Access Control
-
-- **Process Isolation**: Each component runs in isolation
-- **File Permissions**: Secure file access controls
-- **Environment Variables**: Secure configuration management
-- **Log Security**: Sensitive data filtering
-
-### Best Practices
-
-- **Regular Updates**: Keep system components updated
-- **Access Monitoring**: Monitor system access and changes
-- **Backup Strategy**: Regular backup of configuration
-- **Audit Logging**: Comprehensive audit trail
+# Check system logs
+tail -f automation/logs/ultimate-redundancy.log
+```
 
 ## Integration
 
-### Existing Systems
+### With Existing Systems
+The Ultimate Redundancy System integrates with:
+- **Existing PM2 Ecosystems**: Works alongside current PM2 configurations
+- **GitHub Actions**: Monitors and backs up all workflows
+- **Netlify Functions**: Ensures function availability
+- **Build Systems**: Monitors build health and recovery
 
-The Ultimate Redundancy System integrates seamlessly with:
+### With Other Redundancy Systems
+- **Comprehensive Redundancy**: Can run alongside existing redundancy systems
+- **Enhanced Redundancy**: Integrates with enhanced redundancy components
+- **Legacy Systems**: Maintains backward compatibility
 
-- **Existing PM2 setups**: No disruption to current processes
-- **GitHub Actions workflows**: Automatic validation and monitoring
-- **Netlify deployments**: Continuous health monitoring
-- **Custom automations**: Extensible architecture
+## Performance
 
-### Extensions
+### Resource Usage
+- **Memory**: Minimal overhead (~50-100MB)
+- **CPU**: Low usage during normal operation
+- **Disk**: Log rotation keeps disk usage minimal
+- **Network**: Minimal network traffic for health checks
 
-The system can be extended with:
+### Scalability
+- **Process Monitoring**: Scales with number of PM2 processes
+- **Workflow Monitoring**: Scales with number of GitHub workflows
+- **Function Monitoring**: Scales with number of Netlify functions
 
-- **Custom health checks**: Add your own monitoring
-- **Additional recovery strategies**: Implement custom recovery logic
-- **External integrations**: Connect to monitoring services
-- **Custom reporting**: Generate custom health reports
+## Security
 
-## Support & Maintenance
+### Security Features
+- **Script Validation**: Validates all scripts before execution
+- **Permission Checks**: Ensures proper file permissions
+- **Dependency Auditing**: Monitors for security vulnerabilities
+- **Rate Limiting**: Prevents abuse of automation systems
 
-### Regular Maintenance
+### Best Practices
+- Run with minimal required permissions
+- Regularly update dependencies
+- Monitor logs for suspicious activity
+- Use secure authentication for external services
 
-- **Health Check Monitoring**: Daily health check reviews
-- **Log Rotation**: Automatic log cleanup
-- **Performance Monitoring**: Regular performance reviews
-- **Update Management**: Keep system components updated
+## Development
 
-### Troubleshooting Support
+### Adding New Processes
+1. Add process name to `redundancy-config.json`
+2. Update PM2 ecosystem files if needed
+3. Test with `npm run redundancy:ultimate:test`
 
-- **Log Analysis**: Comprehensive logging for debugging
-- **Health Reports**: Detailed health status information
-- **Recovery Logs**: Recovery attempt documentation
-- **Performance Metrics**: System performance tracking
+### Adding New Workflows
+1. Add workflow name to `redundancy-config.json`
+2. Create backup workflow file
+3. Test workflow restoration
 
-## Conclusion
+### Adding New Functions
+1. Add function name to `redundancy-config.json`
+2. Ensure function is in Netlify functions directory
+3. Test manifest regeneration
 
-The Ultimate Redundancy Automation System provides enterprise-grade reliability for your automation infrastructure. With comprehensive coverage, intelligent monitoring, and automatic recovery, your systems will maintain maximum uptime and performance.
+## Support
 
-For questions or support, refer to the system logs and health reports, or consult the troubleshooting section above.
+### Getting Help
+- Check the logs: `npm run redundancy:ultimate:logs`
+- Run health check: `npm run redundancy:ultimate:health`
+- Test system: `npm run redundancy:ultimate:test`
+- View status: `npm run redundancy:ultimate:status`
+
+### Reporting Issues
+1. Check existing logs for error details
+2. Run health check to identify problems
+3. Test system components individually
+4. Check system resources and dependencies
+
+## License
+
+This system is part of the Zion.app project and follows the same licensing terms.
+
+---
+
+**Note**: This system provides comprehensive redundancy but should not replace proper monitoring and alerting systems. It's designed to work alongside existing monitoring solutions to provide additional layers of reliability.

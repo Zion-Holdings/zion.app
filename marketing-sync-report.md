@@ -1,11 +1,19 @@
 # marketing-sync Report
 
-Generated: 2025-08-19T18:06:59.781Z
+<<<<<<< Updated upstream
+Generated: 2025-08-19T18:37:00.178Z
+=======
+Generated: 2025-08-19T18:30:00.078Z
+>>>>>>> Stashed changes
 
 ## Status
 - Task: marketing-sync
 - Status: Skipped/Failed
-- Timestamp: 2025-08-19T18:06:59.781Z
+<<<<<<< Updated upstream
+- Timestamp: 2025-08-19T18:37:00.178Z
+=======
+- Timestamp: 2025-08-19T18:30:00.078Z
+>>>>>>> Stashed changes
 
 ## Actions
 - linkedin: skipped
