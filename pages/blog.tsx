@@ -14,6 +14,24 @@ export default function BlogPage() {
       featured: true
     },
     {
+      id: 'ai-powered-business-intelligence',
+      title: 'AI-Powered Business Intelligence: Transforming Data into Strategic Insights',
+      excerpt: 'Discover how AI-powered business intelligence is revolutionizing decision-making processes and providing unprecedented insights for modern enterprises.',
+      date: 'January 20, 2025',
+      readTime: '12 min read',
+      category: 'AI & Business Intelligence',
+      featured: false
+    },
+    {
+      id: 'cybersecurity-ai-era',
+      title: 'Cybersecurity in the AI Era: Protecting Digital Assets in an Intelligent World',
+      excerpt: 'Explore the evolving cybersecurity landscape in the AI era, including emerging threats, AI-powered defense mechanisms, and best practices.',
+      date: 'January 22, 2025',
+      readTime: '15 min read',
+      category: 'Cybersecurity & AI',
+      featured: false
+    },
+    {
       id: 'autonomous-content-generation',
       title: 'Revolutionizing Content Creation with Autonomous AI Systems',
       excerpt: 'How Zion Tech Group is transforming content generation through intelligent automation and machine learning.',
@@ -55,7 +73,7 @@ export default function BlogPage() {
     }
   ];
 
-  const categories = ['All', 'AI & Automation', 'Content & AI', 'Infrastructure', 'AI Ethics', 'Performance', 'Future of Work'];
+  const categories = ['All', 'AI & Automation', 'AI & Business Intelligence', 'Cybersecurity & AI', 'Content & AI', 'Infrastructure', 'AI Ethics', 'Performance', 'Future of Work'];
 
   return (
     <>
