@@ -10,8 +10,4 @@ node_modules/
 # Generated artifacts
 *.log
 **/*.generated.*
-# Ignore recovered and generated content
-zion.app/
-**/recovered-content/**
-automation/logs/
-public/reports/
+zion.app/recovered-content/**
