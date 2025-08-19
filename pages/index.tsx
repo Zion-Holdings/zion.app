@@ -135,6 +135,138 @@ export default function HomePage() {
               </Link>
             </div>
           </section>
+
+          {/* Technology Stack Section */}
+          <section className="mx-auto max-w-7xl px-6 pb-14">
+            <h2 className="text-center text-2xl font-bold tracking-wide text-white/90 mb-8">Our Technology Stack</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <span className="text-xl">🤖</span>
+                </div>
+                <h3 className="text-lg font-semibold text-green-400 mb-2 text-center">AI & Machine Learning</h3>
+                <p className="text-white/70 text-sm text-center">Advanced neural networks, natural language processing, and computer vision systems</p>
+              </div>
+              
+              <div className="bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <span className="text-xl">☁️</span>
+                </div>
+                <h3 className="text-lg font-semibold text-blue-400 mb-2 text-center">Cloud Infrastructure</h3>
+                <p className="text-white/70 text-sm text-center">Scalable cloud platforms with Kubernetes orchestration and microservices architecture</p>
+              </div>
+              
+              <div className="bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <span className="text-xl">🔒</span>
+                </div>
+                <h3 className="text-lg font-semibold text-purple-400 mb-2 text-center">Security & Compliance</h3>
+                <p className="text-white/70 text-sm text-center">Enterprise-grade security with SOC 2 compliance and advanced threat protection</p>
+              </div>
+            </div>
+          </section>
+
+          {/* Statistics Section */}
+          <section className="mx-auto max-w-7xl px-6 pb-14">
+            <h2 className="text-center text-2xl font-bold tracking-wide text-white/90 mb-8">By The Numbers</h2>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+              <div className="bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 text-center">
+                <div className="text-3xl font-bold text-cyan-400 mb-2">99.9%</div>
+                <p className="text-white/70 text-sm">System Uptime</p>
+              </div>
+              
+              <div className="bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 text-center">
+                <div className="text-3xl font-bold text-fuchsia-400 mb-2">50M+</div>
+                <p className="text-white/70 text-sm">API Calls/Day</p>
+              </div>
+              
+              <div className="bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 text-center">
+                <div className="text-3xl font-bold text-green-400 mb-2">24/7</div>
+                <p className="text-white/70 text-sm">Monitoring</p>
+              </div>
+              
+              <div className="bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 text-center">
+                <div className="text-3xl font-bold text-yellow-400 mb-2">100+</div>
+                <p className="text-white/70 text-sm">Enterprise Clients</p>
+              </div>
+            </div>
+          </section>
+
+          {/* Call to Action Section */}
+          <section className="mx-auto max-w-7xl px-6 pb-14">
+            <div className="bg-gradient-to-r from-cyan-500/10 to-fuchsia-500/10 rounded-2xl p-12 border border-cyan-500/20 text-center">
+              <h2 className="text-3xl font-bold mb-6 text-white">Ready to Transform Your Business?</h2>
+              <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto">
+                Join the autonomous revolution and discover how AI can enhance your operations, 
+                improve efficiency, and drive innovation across your organization.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/contact" className="bg-gradient-to-r from-cyan-400 to-fuchsia-400 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-cyan-500 hover:to-fuchsia-500 transition-all duration-300">
+                  Get Started Today
+                </Link>
+                <Link href="/case-studies" className="bg-white/10 text-white px-8 py-4 rounded-lg font-semibold text-lg border border-white/20 hover:border-cyan-400/50 transition-all duration-300">
+                  View Case Studies
+                </Link>
+              </div>
+            </div>
+          </section>
+
+          {/* Footer */}
+          <footer className="border-t border-white/20 mt-20">
+            <div className="max-w-7xl mx-auto px-6 py-12">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                  <h3 className="text-xl font-bold text-white mb-4">Zion Tech Group</h3>
+                  <p className="text-white/70 text-sm mb-4">
+                    Leading-edge technology solutions and autonomous innovation systems.
+                  </p>
+                  <div className="flex space-x-4">
+                    <a href="#" className="text-white/60 hover:text-cyan-400 transition-colors">Twitter</a>
+                    <a href="#" className="text-white/60 hover:text-cyan-400 transition-colors">LinkedIn</a>
+                    <a href="#" className="text-white/60 hover:text-cyan-400 transition-colors">GitHub</a>
+                  </div>
+                </div>
+                
+                <div>
+                  <h4 className="text-lg font-semibold text-white mb-4">Solutions</h4>
+                  <ul className="space-y-2 text-sm">
+                    <li><Link href="/services" className="text-white/70 hover:text-cyan-400 transition-colors">AI Automation</Link></li>
+                    <li><Link href="/services" className="text-white/70 hover:text-cyan-400 transition-colors">Cloud Infrastructure</Link></li>
+                    <li><Link href="/services" className="text-white/70 hover:text-cyan-400 transition-colors">Data Analytics</Link></li>
+                    <li><Link href="/services" className="text-white/70 hover:text-cyan-400 transition-colors">Security & Compliance</Link></li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <h4 className="text-lg font-semibold text-white mb-4">Resources</h4>
+                  <ul className="space-y-2 text-sm">
+                    <li><Link href="/blog" className="text-white/70 hover:text-cyan-400 transition-colors">Blog</Link></li>
+                    <li><Link href="/resources" className="text-white/70 hover:text-cyan-400 transition-colors">Documentation</Link></li>
+                    <li><Link href="/case-studies" className="text-white/70 hover:text-cyan-400 transition-colors">Case Studies</Link></li>
+                    <li><Link href="/resources" className="text-white/70 hover:text-cyan-400 transition-colors">API Reference</Link></li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <h4 className="text-lg font-semibold text-white mb-4">Company</h4>
+                  <ul className="space-y-2 text-sm">
+                    <li><Link href="/about" className="text-white/70 hover:text-cyan-400 transition-colors">About Us</Link></li>
+                    <li><Link href="/contact" className="text-white/70 hover:text-cyan-400 transition-colors">Contact</Link></li>
+                    <li><Link href="/privacy" className="text-white/70 hover:text-cyan-400 transition-colors">Privacy Policy</Link></li>
+                    <li><Link href="/resources" className="text-white/70 hover:text-cyan-400 transition-colors">Careers</Link></li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div className="border-t border-white/20 mt-8 pt-8 text-center">
+                <p className="text-white/60 text-sm">
+                  © 2025 Zion Tech Group. All rights reserved. | 
+                  <Link href="/privacy" className="ml-2 hover:text-cyan-400 transition-colors">Privacy Policy</Link> | 
+                  <Link href="/resources" className="ml-2 hover:text-cyan-400 transition-colors">Terms of Service</Link>
+                </p>
+              </div>
+            </div>
+          </footer>
         </main>
       </div>
     </>
