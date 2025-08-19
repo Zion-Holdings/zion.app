@@ -84,7 +84,7 @@ init_pm2_redundancy() {
     
     # Start redundancy ecosystem
     log "Starting PM2 redundancy ecosystem..."
-    pm2 start ecosystem-redundancy.pm2.cjs
+    pm2 start ecosystem.redundancy.cjs
     
     # Save PM2 configuration
     pm2 save
@@ -260,6 +260,35 @@ main() {
     log "🔄 System will automatically manage redundancy and failover"
 }
 
+# Health check function
+health_check() {
+    log "Performing comprehensive health check..."
+    
+    # Check PM2 processes
+    log "Checking PM2 processes..."
+    pm2 status
+    
+    # Check GitHub Actions workflows
+    log "Checking GitHub Actions workflows..."
+    if [ -d ".github/workflows" ]; then
+        echo "Workflows found:"
+        ls -la .github/workflows/
+    else
+        warn "GitHub workflows directory not found"
+    fi
+    
+    # Check Netlify functions
+    log "Checking Netlify functions..."
+    if [ -f "netlify/functions/functions-manifest.json" ]; then
+        local function_count=$(jq '.functions | length' netlify/functions/functions-manifest.json 2>/dev/null || echo "0")
+        log "Found $function_count functions in manifest"
+    else
+        warn "Netlify functions manifest not found"
+    fi
+    
+    log "Health check completed"
+}
+
 # Handle script arguments
 case "${1:-start}" in
     "start")
@@ -268,13 +297,21 @@ case "${1:-start}" in
     "status")
         verify_redundancy_status
         ;;
+    "check")
+        health_check
+        ;;
+    "health")
+        health_check
+        ;;
     "report")
         generate_report
         ;;
     "help"|"-h"|"--help")
-        echo "Usage: $0 [start|status|report|help]"
+        echo "Usage: $0 [start|status|check|health|report|help]"
         echo "  start  - Start the comprehensive redundancy system (default)"
         echo "  status - Check redundancy system status"
+        echo "  check  - Run comprehensive health check"
+        echo "  health - Run comprehensive health check"
         echo "  report - Generate redundancy system report"
         echo "  help   - Show this help message"
         ;;
