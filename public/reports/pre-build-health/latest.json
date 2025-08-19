@@ -5,11 +5,7 @@
     "failedChecks": 1,
     "criticalFailures": 0,
     "canBuild": true,
-<<<<<<< Updated upstream
-    "timestamp": "2025-08-19T17:37:08.869Z"
-=======
-    "timestamp": "2025-08-19T17:37:42.457Z"
->>>>>>> Stashed changes
+    "timestamp": "2025-08-19T17:37:49.459Z"
   },
   "results": [
     {
