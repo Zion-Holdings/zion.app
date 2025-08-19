@@ -1,0 +1,94 @@
+{
+  "timestamp": "2025-08-18T18:40:56.487Z",
+  "buildId": "build-1755542456211",
+  "metrics": {
+    "timestamp": "2025-08-18T18:40:56.211Z",
+    "buildId": "build-1755542456211",
+    "environment": {
+      "nodeVersion": "v22.16.0",
+      "npmVersion": "",
+      "platform": "darwin",
+      "arch": "x64",
+      "memoryUsage": {
+        "rss": 122986496,
+        "heapTotal": 16318464,
+        "heapUsed": 11280296,
+        "external": 1958893,
+        "arrayBuffers": 33003
+      },
+      "envVars": {
+        "hasNodeOptions": true,
+        "hasNextTelemetry": false,
+        "hasCi": false,
+        "nodeOptions": "--max-old-space-size=6144 --openssl-legacy-provider"
+      }
+    },
+    "performance": {},
+    "dependencies": {},
+    "fileSystem": {},
+    "buildArtifacts": {},
+    "errors": [
+      "startTime is not defined"
+    ]
+  },
+  "performance": {
+    "timestamp": "2025-08-18T18:40:56.486Z",
+    "metrics": {
+      "timestamp": "2025-08-18T18:40:56.211Z",
+      "buildId": "build-1755542456211",
+      "environment": {
+        "nodeVersion": "v22.16.0",
+        "npmVersion": "",
+        "platform": "darwin",
+        "arch": "x64",
+        "memoryUsage": {
+          "rss": 122986496,
+          "heapTotal": 16318464,
+          "heapUsed": 11280296,
+          "external": 1958893,
+          "arrayBuffers": 33003
+        },
+        "envVars": {
+          "hasNodeOptions": true,
+          "hasNextTelemetry": false,
+          "hasCi": false,
+          "nodeOptions": "--max-old-space-size=6144 --openssl-legacy-provider"
+        }
+      },
+      "performance": {},
+      "dependencies": {},
+      "fileSystem": {},
+      "buildArtifacts": {},
+      "errors": [
+        "startTime is not defined"
+      ]
+    },
+    "analysis": {
+      "buildTimes": {
+        "recent": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "average": 0,
+        "min": 0,
+        "max": 0,
+        "trend": "stable"
+      }
+    },
+    "recommendations": []
+  },
+  "summary": {
+    "totalMetrics": 8,
+    "recommendations": 0,
+    "criticalIssues": 0,
+    "buildHealth": "good"
+  }
+}

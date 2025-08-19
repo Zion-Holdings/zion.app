@@ -1,0 +1,111 @@
+{
+  "plan": {
+    "timestamp": "2025-08-18T17:13:16.450Z",
+    "changes": [
+      "package.json",
+      "src/components/Button.tsx",
+      "docs/README.md"
+    ],
+    "manualTrigger": null,
+    "workflows": [
+      {
+        "name": "ci.yml",
+        "priority": "critical",
+        "reason": "code_change",
+        "immediate": true
+      },
+      {
+        "name": "dependency-auto-upgrade.yml",
+        "priority": "high",
+        "reason": "dependency_change",
+        "immediate": false
+      }
+    ],
+    "batches": [
+      {
+        "type": "ci",
+        "workflows": [
+          {
+            "name": "ci.yml",
+            "priority": "critical",
+            "reason": "code_change",
+            "immediate": true
+          }
+        ],
+        "estimatedDuration": 30
+      },
+      {
+        "type": "security",
+        "workflows": [
+          {
+            "name": "dependency-auto-upgrade.yml",
+            "priority": "high",
+            "reason": "dependency_change",
+            "immediate": false
+          }
+        ],
+        "estimatedDuration": 30
+      }
+    ],
+    "estimatedDuration": 60,
+    "resourceRequirements": {
+      "maxConcurrent": 1,
+      "totalMemory": "standard",
+      "totalTimeout": 30
+    }
+  },
+  "executions": [
+    {
+      "type": "ci",
+      "workflows": [
+        {
+          "name": "ci.yml",
+          "priority": "critical",
+          "reason": "code_change",
+          "immediate": true
+        }
+      ],
+      "executions": [
+        {
+          "workflow": "ci.yml",
+          "success": true,
+          "skipped": false,
+          "executionId": "exec_1755537199034_b8jzj7k8h",
+          "duration": 5109.342517354828
+        }
+      ],
+      "success": 1,
+      "failed": 0,
+      "skipped": 0,
+      "duration": 2584
+    },
+    {
+      "type": "security",
+      "workflows": [
+        {
+          "name": "dependency-auto-upgrade.yml",
+          "priority": "high",
+          "reason": "dependency_change",
+          "immediate": false
+        }
+      ],
+      "executions": [
+        {
+          "workflow": "dependency-auto-upgrade.yml",
+          "success": true,
+          "skipped": false,
+          "executionId": "exec_1755537206338_bzpiq4l3v",
+          "duration": 6061.025522097377
+        }
+      ],
+      "success": 1,
+      "failed": 0,
+      "skipped": 0,
+      "duration": 2299
+    }
+  ],
+  "success": 2,
+  "failed": 0,
+  "skipped": 0,
+  "totalDuration": 4883
+}

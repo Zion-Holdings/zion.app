@@ -1,0 +1,7570 @@
+{
+  "accessibility-audit.yml": {
+    "name": "accessibility-audit.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/accessibility-audit.yml",
+    "size": 1589,
+    "lines": 49,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch"
+    ],
+    "jobs": [
+      "schedule",
+      "workflow_dispatch",
+      "jobs",
+      "pa11y",
+      "steps",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "read"
+      },
+      {
+        "permission": "issues",
+        "value": "write"
+      }
+    ],
+    "concurrency": "accessibility-audit",
+    "issues": [],
+    "recommendations": [
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "actionlint.yml": {
+    "name": "actionlint.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/actionlint.yml",
+    "size": 940,
+    "lines": 44,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "actions-keepalive.yml": {
+    "name": "actions-keepalive.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/actions-keepalive.yml",
+    "size": 654,
+    "lines": 35,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "agent-agent-1755379731005-0-full-stack-expert.yml": {
+    "name": "agent-agent-1755379731005-0-full-stack-expert.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379731005-0-full-stack-expert.yml",
+    "size": 504,
+    "lines": 22,
+    "triggers": [
+      "workflow_dispatch",
+      "schedule"
+    ],
+    "jobs": [
+      "workflow_dispatch",
+      "schedule",
+      "jobs",
+      "agent-execution",
+      "steps",
+      "with"
+    ],
+    "timeouts": [],
+    "permissions": [],
+    "concurrency": null,
+    "issues": [
+      "missing_npm_cache"
+    ],
+    "recommendations": [
+      "Add npm cache to improve build performance",
+      "Add timeout-minutes to prevent infinite hanging",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "agent-agent-1755379731007-1-deployment-expert.yml": {
+    "name": "agent-agent-1755379731007-1-deployment-expert.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379731007-1-deployment-expert.yml",
+    "size": 504,
+    "lines": 22,
+    "triggers": [
+      "workflow_dispatch",
+      "schedule"
+    ],
+    "jobs": [
+      "workflow_dispatch",
+      "schedule",
+      "jobs",
+      "agent-execution",
+      "steps",
+      "with"
+    ],
+    "timeouts": [],
+    "permissions": [],
+    "concurrency": null,
+    "issues": [
+      "missing_npm_cache"
+    ],
+    "recommendations": [
+      "Add npm cache to improve build performance",
+      "Add timeout-minutes to prevent infinite hanging",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "agent-agent-1755379731008-2-monitoring-expert.yml": {
+    "name": "agent-agent-1755379731008-2-monitoring-expert.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379731008-2-monitoring-expert.yml",
+    "size": 504,
+    "lines": 22,
+    "triggers": [
+      "workflow_dispatch",
+      "schedule"
+    ],
+    "jobs": [
+      "workflow_dispatch",
+      "schedule",
+      "jobs",
+      "agent-execution",
+      "steps",
+      "with"
+    ],
+    "timeouts": [],
+    "permissions": [],
+    "concurrency": null,
+    "issues": [
+      "missing_npm_cache"
+    ],
+    "recommendations": [
+      "Add npm cache to improve build performance",
+      "Add timeout-minutes to prevent infinite hanging",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "agent-agent-1755379759029-0-optimization-intermediate.yml": {
+    "name": "agent-agent-1755379759029-0-optimization-intermediate.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379759029-0-optimization-intermediate.yml",
+    "size": 522,
+    "lines": 22,
+    "triggers": [
+      "workflow_dispatch",
+      "schedule"
+    ],
+    "jobs": [
+      "workflow_dispatch",
+      "schedule",
+      "jobs",
+      "agent-execution",
+      "steps",
+      "with"
+    ],
+    "timeouts": [],
+    "permissions": [],
+    "concurrency": null,
+    "issues": [
+      "missing_npm_cache"
+    ],
+    "recommendations": [
+      "Add npm cache to improve build performance",
+      "Add timeout-minutes to prevent infinite hanging",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "agent-agent-1755379759032-1-full-stack-intermediate.yml": {
+    "name": "agent-agent-1755379759032-1-full-stack-intermediate.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379759032-1-full-stack-intermediate.yml",
+    "size": 516,
+    "lines": 22,
+    "triggers": [
+      "workflow_dispatch",
+      "schedule"
+    ],
+    "jobs": [
+      "workflow_dispatch",
+      "schedule",
+      "jobs",
+      "agent-execution",
+      "steps",
+      "with"
+    ],
+    "timeouts": [],
+    "permissions": [],
+    "concurrency": null,
+    "issues": [
+      "missing_npm_cache"
+    ],
+    "recommendations": [
+      "Add npm cache to improve build performance",
+      "Add timeout-minutes to prevent infinite hanging",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "agent-agent-1755379759033-2-deployment-expert.yml": {
+    "name": "agent-agent-1755379759033-2-deployment-expert.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379759033-2-deployment-expert.yml",
+    "size": 502,
+    "lines": 20,
+    "triggers": [
+      "workflow_dispatch",
+      "schedule"
+    ],
+    "jobs": [
+      "workflow_dispatch",
+      "schedule",
+      "jobs",
+      "agent-execution",
+      "steps",
+      "with"
+    ],
+    "timeouts": [],
+    "permissions": [],
+    "concurrency": null,
+    "issues": [
+      "missing_npm_cache"
+    ],
+    "recommendations": [
+      "Add npm cache to improve build performance",
+      "Add timeout-minutes to prevent infinite hanging",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "agent-agent-1755379759033-3-frontend-expert.yml": {
+    "name": "agent-agent-1755379759033-3-frontend-expert.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379759033-3-frontend-expert.yml",
+    "size": 498,
+    "lines": 22,
+    "triggers": [
+      "workflow_dispatch",
+      "schedule"
+    ],
+    "jobs": [
+      "workflow_dispatch",
+      "schedule",
+      "jobs",
+      "agent-execution",
+      "steps",
+      "with"
+    ],
+    "timeouts": [],
+    "permissions": [],
+    "concurrency": null,
+    "issues": [
+      "missing_npm_cache"
+    ],
+    "recommendations": [
+      "Add npm cache to improve build performance",
+      "Add timeout-minutes to prevent infinite hanging",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "agent-agent-1755379759035-4-full-stack-intermediate.yml": {
+    "name": "agent-agent-1755379759035-4-full-stack-intermediate.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379759035-4-full-stack-intermediate.yml",
+    "size": 516,
+    "lines": 22,
+    "triggers": [
+      "workflow_dispatch",
+      "schedule"
+    ],
+    "jobs": [
+      "workflow_dispatch",
+      "schedule",
+      "jobs",
+      "agent-execution",
+      "steps",
+      "with"
+    ],
+    "timeouts": [],
+    "permissions": [],
+    "concurrency": null,
+    "issues": [
+      "missing_npm_cache"
+    ],
+    "recommendations": [
+      "Add npm cache to improve build performance",
+      "Add timeout-minutes to prevent infinite hanging",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "agent-agent-1755379759035-5-frontend-basic.yml": {
+    "name": "agent-agent-1755379759035-5-frontend-basic.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379759035-5-frontend-basic.yml",
+    "size": 496,
+    "lines": 22,
+    "triggers": [
+      "workflow_dispatch",
+      "schedule"
+    ],
+    "jobs": [
+      "workflow_dispatch",
+      "schedule",
+      "jobs",
+      "agent-execution",
+      "steps",
+      "with"
+    ],
+    "timeouts": [],
+    "permissions": [],
+    "concurrency": null,
+    "issues": [
+      "missing_npm_cache"
+    ],
+    "recommendations": [
+      "Add npm cache to improve build performance",
+      "Add timeout-minutes to prevent infinite hanging",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "agent-agent-1755379759036-6-monitoring-advanced.yml": {
+    "name": "agent-agent-1755379759036-6-monitoring-advanced.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379759036-6-monitoring-advanced.yml",
+    "size": 508,
+    "lines": 22,
+    "triggers": [
+      "workflow_dispatch",
+      "schedule"
+    ],
+    "jobs": [
+      "workflow_dispatch",
+      "schedule",
+      "jobs",
+      "agent-execution",
+      "steps",
+      "with"
+    ],
+    "timeouts": [],
+    "permissions": [],
+    "concurrency": null,
+    "issues": [
+      "missing_npm_cache"
+    ],
+    "recommendations": [
+      "Add npm cache to improve build performance",
+      "Add timeout-minutes to prevent infinite hanging",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "agent-agent-1755379759037-7-full-stack-intermediate.yml": {
+    "name": "agent-agent-1755379759037-7-full-stack-intermediate.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379759037-7-full-stack-intermediate.yml",
+    "size": 516,
+    "lines": 22,
+    "triggers": [
+      "workflow_dispatch",
+      "schedule"
+    ],
+    "jobs": [
+      "workflow_dispatch",
+      "schedule",
+      "jobs",
+      "agent-execution",
+      "steps",
+      "with"
+    ],
+    "timeouts": [],
+    "permissions": [],
+    "concurrency": null,
+    "issues": [
+      "missing_npm_cache"
+    ],
+    "recommendations": [
+      "Add npm cache to improve build performance",
+      "Add timeout-minutes to prevent infinite hanging",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "agent-agent-1755379777746-0-full-stack-advanced.yml": {
+    "name": "agent-agent-1755379777746-0-full-stack-advanced.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379777746-0-full-stack-advanced.yml",
+    "size": 508,
+    "lines": 22,
+    "triggers": [
+      "workflow_dispatch",
+      "schedule"
+    ],
+    "jobs": [
+      "workflow_dispatch",
+      "schedule",
+      "jobs",
+      "agent-execution",
+      "steps",
+      "with"
+    ],
+    "timeouts": [],
+    "permissions": [],
+    "concurrency": null,
+    "issues": [
+      "missing_npm_cache"
+    ],
+    "recommendations": [
+      "Add npm cache to improve build performance",
+      "Add timeout-minutes to prevent infinite hanging",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "agent-agent-1755379777749-1-full-stack-basic.yml": {
+    "name": "agent-agent-1755379777749-1-full-stack-basic.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379777749-1-full-stack-basic.yml",
+    "size": 502,
+    "lines": 22,
+    "triggers": [
+      "workflow_dispatch",
+      "schedule"
+    ],
+    "jobs": [
+      "workflow_dispatch",
+      "schedule",
+      "jobs",
+      "agent-execution",
+      "steps",
+      "with"
+    ],
+    "timeouts": [],
+    "permissions": [],
+    "concurrency": null,
+    "issues": [
+      "missing_npm_cache"
+    ],
+    "recommendations": [
+      "Add npm cache to improve build performance",
+      "Add timeout-minutes to prevent infinite hanging",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "agent-agent-1755379777750-2-monitoring-intermediate.yml": {
+    "name": "agent-agent-1755379777750-2-monitoring-intermediate.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379777750-2-monitoring-intermediate.yml",
+    "size": 516,
+    "lines": 22,
+    "triggers": [
+      "workflow_dispatch",
+      "schedule"
+    ],
+    "jobs": [
+      "workflow_dispatch",
+      "schedule",
+      "jobs",
+      "agent-execution",
+      "steps",
+      "with"
+    ],
+    "timeouts": [],
+    "permissions": [],
+    "concurrency": null,
+    "issues": [
+      "missing_npm_cache"
+    ],
+    "recommendations": [
+      "Add npm cache to improve build performance",
+      "Add timeout-minutes to prevent infinite hanging",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "agent-agent-1755379777751-3-monitoring-advanced.yml": {
+    "name": "agent-agent-1755379777751-3-monitoring-advanced.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379777751-3-monitoring-advanced.yml",
+    "size": 508,
+    "lines": 22,
+    "triggers": [
+      "workflow_dispatch",
+      "schedule"
+    ],
+    "jobs": [
+      "workflow_dispatch",
+      "schedule",
+      "jobs",
+      "agent-execution",
+      "steps",
+      "with"
+    ],
+    "timeouts": [],
+    "permissions": [],
+    "concurrency": null,
+    "issues": [
+      "missing_npm_cache"
+    ],
+    "recommendations": [
+      "Add npm cache to improve build performance",
+      "Add timeout-minutes to prevent infinite hanging",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "agent-agent-1755379777752-5-testing-expert.yml": {
+    "name": "agent-agent-1755379777752-5-testing-expert.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379777752-5-testing-expert.yml",
+    "size": 495,
+    "lines": 22,
+    "triggers": [
+      "workflow_dispatch",
+      "schedule"
+    ],
+    "jobs": [
+      "workflow_dispatch",
+      "schedule",
+      "jobs",
+      "agent-execution",
+      "steps",
+      "with"
+    ],
+    "timeouts": [],
+    "permissions": [],
+    "concurrency": null,
+    "issues": [
+      "missing_npm_cache"
+    ],
+    "recommendations": [
+      "Add npm cache to improve build performance",
+      "Add timeout-minutes to prevent infinite hanging",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "agent-agent-1755379777754-6-backend-expert.yml": {
+    "name": "agent-agent-1755379777754-6-backend-expert.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379777754-6-backend-expert.yml",
+    "size": 495,
+    "lines": 22,
+    "triggers": [
+      "workflow_dispatch",
+      "schedule"
+    ],
+    "jobs": [
+      "workflow_dispatch",
+      "schedule",
+      "jobs",
+      "agent-execution",
+      "steps",
+      "with"
+    ],
+    "timeouts": [],
+    "permissions": [],
+    "concurrency": null,
+    "issues": [
+      "missing_npm_cache"
+    ],
+    "recommendations": [
+      "Add npm cache to improve build performance",
+      "Add timeout-minutes to prevent infinite hanging",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "agent-agent-1755379777755-7-backend-intermediate.yml": {
+    "name": "agent-agent-1755379777755-7-backend-intermediate.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755379777755-7-backend-intermediate.yml",
+    "size": 507,
+    "lines": 22,
+    "triggers": [
+      "workflow_dispatch",
+      "schedule"
+    ],
+    "jobs": [
+      "workflow_dispatch",
+      "schedule",
+      "jobs",
+      "agent-execution",
+      "steps",
+      "with"
+    ],
+    "timeouts": [],
+    "permissions": [],
+    "concurrency": null,
+    "issues": [
+      "missing_npm_cache"
+    ],
+    "recommendations": [
+      "Add npm cache to improve build performance",
+      "Add timeout-minutes to prevent infinite hanging",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "agent-agent-1755381089841-0-backend-expert.yml": {
+    "name": "agent-agent-1755381089841-0-backend-expert.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755381089841-0-backend-expert.yml",
+    "size": 492,
+    "lines": 19,
+    "triggers": [
+      "workflow_dispatch",
+      "schedule"
+    ],
+    "jobs": [
+      "workflow_dispatch",
+      "schedule",
+      "jobs",
+      "agent-execution",
+      "steps",
+      "with"
+    ],
+    "timeouts": [],
+    "permissions": [],
+    "concurrency": null,
+    "issues": [
+      "missing_npm_cache"
+    ],
+    "recommendations": [
+      "Add npm cache to improve build performance",
+      "Add timeout-minutes to prevent infinite hanging",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "agent-agent-1755381089844-1-deployment-advanced.yml": {
+    "name": "agent-agent-1755381089844-1-deployment-advanced.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755381089844-1-deployment-advanced.yml",
+    "size": 505,
+    "lines": 19,
+    "triggers": [
+      "workflow_dispatch",
+      "schedule"
+    ],
+    "jobs": [
+      "workflow_dispatch",
+      "schedule",
+      "jobs",
+      "agent-execution",
+      "steps",
+      "with"
+    ],
+    "timeouts": [],
+    "permissions": [],
+    "concurrency": null,
+    "issues": [
+      "missing_npm_cache"
+    ],
+    "recommendations": [
+      "Add npm cache to improve build performance",
+      "Add timeout-minutes to prevent infinite hanging",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "agent-agent-1755381089845-2-full-stack-advanced.yml": {
+    "name": "agent-agent-1755381089845-2-full-stack-advanced.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755381089845-2-full-stack-advanced.yml",
+    "size": 540,
+    "lines": 23,
+    "triggers": [
+      "workflow_dispatch",
+      "schedule"
+    ],
+    "jobs": [
+      "workflow_dispatch",
+      "schedule",
+      "jobs",
+      "agent-execution",
+      "steps",
+      "with"
+    ],
+    "timeouts": [],
+    "permissions": [],
+    "concurrency": null,
+    "issues": [
+      "missing_npm_cache"
+    ],
+    "recommendations": [
+      "Add npm cache to improve build performance",
+      "Add timeout-minutes to prevent infinite hanging",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "agent-agent-1755381089846-3-optimization-expert.yml": {
+    "name": "agent-agent-1755381089846-3-optimization-expert.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755381089846-3-optimization-expert.yml",
+    "size": 507,
+    "lines": 19,
+    "triggers": [
+      "workflow_dispatch",
+      "schedule"
+    ],
+    "jobs": [
+      "workflow_dispatch",
+      "schedule",
+      "jobs",
+      "agent-execution",
+      "steps",
+      "with"
+    ],
+    "timeouts": [],
+    "permissions": [],
+    "concurrency": null,
+    "issues": [
+      "missing_npm_cache"
+    ],
+    "recommendations": [
+      "Add npm cache to improve build performance",
+      "Add timeout-minutes to prevent infinite hanging",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "agent-agent-1755381089846-4-testing-advanced.yml": {
+    "name": "agent-agent-1755381089846-4-testing-advanced.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755381089846-4-testing-advanced.yml",
+    "size": 534,
+    "lines": 23,
+    "triggers": [
+      "workflow_dispatch",
+      "schedule"
+    ],
+    "jobs": [
+      "workflow_dispatch",
+      "schedule",
+      "jobs",
+      "agent-execution",
+      "steps",
+      "with"
+    ],
+    "timeouts": [],
+    "permissions": [],
+    "concurrency": null,
+    "issues": [
+      "missing_npm_cache"
+    ],
+    "recommendations": [
+      "Add npm cache to improve build performance",
+      "Add timeout-minutes to prevent infinite hanging",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "agent-agent-1755381089847-5-frontend-expert.yml": {
+    "name": "agent-agent-1755381089847-5-frontend-expert.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755381089847-5-frontend-expert.yml",
+    "size": 495,
+    "lines": 19,
+    "triggers": [
+      "workflow_dispatch",
+      "schedule"
+    ],
+    "jobs": [
+      "workflow_dispatch",
+      "schedule",
+      "jobs",
+      "agent-execution",
+      "steps",
+      "with"
+    ],
+    "timeouts": [],
+    "permissions": [],
+    "concurrency": null,
+    "issues": [
+      "missing_npm_cache"
+    ],
+    "recommendations": [
+      "Add npm cache to improve build performance",
+      "Add timeout-minutes to prevent infinite hanging",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "agent-agent-1755381089848-6-testing-intermediate.yml": {
+    "name": "agent-agent-1755381089848-6-testing-intermediate.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755381089848-6-testing-intermediate.yml",
+    "size": 504,
+    "lines": 19,
+    "triggers": [
+      "workflow_dispatch",
+      "schedule"
+    ],
+    "jobs": [
+      "workflow_dispatch",
+      "schedule",
+      "jobs",
+      "agent-execution",
+      "steps",
+      "with"
+    ],
+    "timeouts": [],
+    "permissions": [],
+    "concurrency": null,
+    "issues": [
+      "missing_npm_cache"
+    ],
+    "recommendations": [
+      "Add npm cache to improve build performance",
+      "Add timeout-minutes to prevent infinite hanging",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "agent-agent-1755381089849-7-monitoring-intermediate.yml": {
+    "name": "agent-agent-1755381089849-7-monitoring-intermediate.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-agent-1755381089849-7-monitoring-intermediate.yml",
+    "size": 513,
+    "lines": 19,
+    "triggers": [
+      "workflow_dispatch",
+      "schedule"
+    ],
+    "jobs": [
+      "workflow_dispatch",
+      "schedule",
+      "jobs",
+      "agent-execution",
+      "steps",
+      "with"
+    ],
+    "timeouts": [],
+    "permissions": [],
+    "concurrency": null,
+    "issues": [
+      "missing_npm_cache"
+    ],
+    "recommendations": [
+      "Add npm cache to improve build performance",
+      "Add timeout-minutes to prevent infinite hanging",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "agent-factory-automation.yml": {
+    "name": "agent-factory-automation.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-factory-automation.yml",
+    "size": 19879,
+    "lines": 511,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch",
+      "push"
+    ],
+    "jobs": [
+      "schedule",
+      "workflow_dispatch",
+      "inputs",
+      "agent_type",
+      "options",
+      "complexity_level",
+      "options",
+      "push",
+      "paths",
+      "jobs",
+      "generate-agents",
+      "strategy",
+      "matrix",
+      "steps",
+      "with",
+      "with",
+      "deploy-agents",
+      "steps",
+      "with",
+      "optimize-agents",
+      "strategy",
+      "matrix",
+      "steps",
+      "try",
+      "monitor-growth",
+      "steps",
+      "autonomous-decisions",
+      "steps"
+    ],
+    "timeouts": [],
+    "permissions": [],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add timeout-minutes to prevent infinite hanging",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "agent-factory-proliferation.yml": {
+    "name": "agent-factory-proliferation.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-factory-proliferation.yml",
+    "size": 14088,
+    "lines": 364,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch",
+      "push"
+    ],
+    "jobs": [
+      "schedule",
+      "workflow_dispatch",
+      "inputs",
+      "growth_factor",
+      "target_count",
+      "push",
+      "paths",
+      "jobs",
+      "analyze-current-state",
+      "outputs",
+      "steps",
+      "with",
+      "create-factory-templates",
+      "strategy",
+      "matrix",
+      "steps",
+      "with",
+      "deploy-factories",
+      "steps",
+      "exponential-growth-monitor",
+      "steps",
+      "Where",
+      "notify-growth",
+      "steps"
+    ],
+    "timeouts": [],
+    "permissions": [],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add timeout-minutes to prevent infinite hanging",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "agent-of-agents-trigger.yml": {
+    "name": "agent-of-agents-trigger.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/agent-of-agents-trigger.yml",
+    "size": 654,
+    "lines": 35,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "ai-changelog.yml": {
+    "name": "ai-changelog.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ai-changelog.yml",
+    "size": 1093,
+    "lines": 40,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "generate",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      10
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "ai-content-autonomy.yml": {
+    "name": "ai-content-autonomy.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ai-content-autonomy.yml",
+    "size": 554,
+    "lines": 32,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "ai-content-factory.yml": {
+    "name": "ai-content-factory.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ai-content-factory.yml",
+    "size": 1184,
+    "lines": 48,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "ai-it-ads-sync.yml": {
+    "name": "ai-it-ads-sync.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ai-it-ads-sync.yml",
+    "size": 1180,
+    "lines": 48,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "ai-it-innovations.yml": {
+    "name": "ai-it-innovations.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ai-it-innovations.yml",
+    "size": 1191,
+    "lines": 48,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "ai-it-multi-factory.yml": {
+    "name": "ai-it-multi-factory.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ai-it-multi-factory.yml",
+    "size": 1185,
+    "lines": 48,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "ai-it-ultrafast-sync.yml": {
+    "name": "ai-it-ultrafast-sync.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ai-it-ultrafast-sync.yml",
+    "size": 1186,
+    "lines": 48,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "ai-research-scout.yml": {
+    "name": "ai-research-scout.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ai-research-scout.yml",
+    "size": 1183,
+    "lines": 48,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "ai-trends-radar.yml": {
+    "name": "ai-trends-radar.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ai-trends-radar.yml",
+    "size": 550,
+    "lines": 32,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "app-automation.yml": {
+    "name": "app-automation.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/app-automation.yml",
+    "size": 1687,
+    "lines": 61,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch  # Manual trigger",
+      "push"
+    ],
+    "jobs": [
+      "schedule",
+      "push",
+      "paths",
+      "jobs",
+      "run-orchestrator",
+      "steps",
+      "with",
+      "with",
+      "notify-completion",
+      "steps",
+      "with"
+    ],
+    "timeouts": [],
+    "permissions": [],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add timeout-minutes to prevent infinite hanging",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "app-monitoring.yml": {
+    "name": "app-monitoring.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/app-monitoring.yml",
+    "size": 2147,
+    "lines": 86,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch  # Manual trigger"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "monitor-performance",
+      "steps",
+      "with",
+      "with",
+      "monitor-security",
+      "steps",
+      "with",
+      "with",
+      "monitor-uptime",
+      "steps",
+      "with"
+    ],
+    "timeouts": [],
+    "permissions": [],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add timeout-minutes to prevent infinite hanging",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "auto-heal-workflows.yml": {
+    "name": "auto-heal-workflows.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/auto-heal-workflows.yml",
+    "size": 586,
+    "lines": 32,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "auto-media-release.yml": {
+    "name": "auto-media-release.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/auto-media-release.yml",
+    "size": 1114,
+    "lines": 40,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "media",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      10
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "auto-pr-automerge.yml": {
+    "name": "auto-pr-automerge.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/auto-pr-automerge.yml",
+    "size": 3474,
+    "lines": 109,
+    "triggers": [
+      "push"
+    ],
+    "jobs": [
+      "push",
+      "branches-ignore",
+      "jobs",
+      "open-and-automerge",
+      "steps",
+      "with",
+      "with",
+      "with",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "pull-requests",
+        "value": "write"
+      }
+    ],
+    "concurrency": "auto-pr-${{ github.ref }}",
+    "issues": [],
+    "recommendations": [
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "auto-pr-cursor-branches.yml": {
+    "name": "auto-pr-cursor-branches.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/auto-pr-cursor-branches.yml",
+    "size": 1358,
+    "lines": 49,
+    "triggers": [
+      "push",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "push",
+      "branches",
+      "jobs",
+      "open-pr",
+      "steps",
+      "with",
+      "with",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      10
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "pull-requests",
+        "value": "write"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "auto-semver-release.yml": {
+    "name": "auto-semver-release.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/auto-semver-release.yml",
+    "size": 2322,
+    "lines": 69,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "release",
+      "steps",
+      "with",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "read"
+      },
+      {
+        "permission": "id-token",
+        "value": "write"
+      }
+    ],
+    "concurrency": "auto-semver-release",
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "auto-update-prs.yml": {
+    "name": "auto-update-prs.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/auto-update-prs.yml",
+    "size": 1344,
+    "lines": 41,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "update-branches",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      10
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "pull-requests",
+        "value": "write"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "automation-advertiser.yml": {
+    "name": "automation-advertiser.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/automation-advertiser.yml",
+    "size": 556,
+    "lines": 32,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "automation-cleanup.yml": {
+    "name": "automation-cleanup.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/automation-cleanup.yml",
+    "size": 2135,
+    "lines": 65,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "cleanup",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      30
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      }
+    ],
+    "concurrency": null,
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "automation-dashboard.yml": {
+    "name": "automation-dashboard.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/automation-dashboard.yml",
+    "size": 5329,
+    "lines": 127,
+    "triggers": [
+      "workflow_dispatch",
+      "schedule"
+    ],
+    "jobs": [
+      "workflow_dispatch",
+      "schedule",
+      "workflow_run",
+      "jobs",
+      "dashboard-generation",
+      "steps",
+      "with",
+      "with",
+      "dashboard-deployment",
+      "steps",
+      "with"
+    ],
+    "timeouts": [],
+    "permissions": [],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add timeout-minutes to prevent infinite hanging",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "automation-guardian-10min.yml": {
+    "name": "automation-guardian-10min.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/automation-guardian-10min.yml",
+    "size": 839,
+    "lines": 40,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "guardian",
+      "steps",
+      "with",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      10
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "automation-orchestrator.yml": {
+    "name": "automation-orchestrator.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/automation-orchestrator.yml",
+    "size": 1189,
+    "lines": 48,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "automations.yml": {
+    "name": "automations.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/automations.yml",
+    "size": 1016,
+    "lines": 45,
+    "triggers": [
+      "schedule",
+      "push"
+    ],
+    "jobs": [
+      "schedule",
+      "push",
+      "jobs",
+      "run-automations",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "steps",
+        "value": ""
+      },
+      {
+        "permission": "- name",
+        "value": "Checkout"
+      },
+      {
+        "permission": "uses",
+        "value": "actions/checkout@v4"
+      },
+      {
+        "permission": "with",
+        "value": ""
+      },
+      {
+        "permission": "fetch-depth",
+        "value": "0"
+      }
+    ],
+    "concurrency": null,
+    "issues": [
+      "missing_npm_cache"
+    ],
+    "recommendations": [
+      "Add npm cache to improve build performance",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "automerge-main.yml": {
+    "name": "automerge-main.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/automerge-main.yml",
+    "size": 973,
+    "lines": 35,
+    "triggers": [
+      "pull_request"
+    ],
+    "jobs": [
+      "pull_request",
+      "jobs",
+      "automerge",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      10
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "pull-requests",
+        "value": "write"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "autonomous-agent-orchestrator.yml": {
+    "name": "autonomous-agent-orchestrator.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-agent-orchestrator.yml",
+    "size": 25416,
+    "lines": 659,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch",
+      "push"
+    ],
+    "jobs": [
+      "schedule",
+      "workflow_dispatch",
+      "inputs",
+      "orchestration_mode",
+      "target_agents",
+      "push",
+      "paths",
+      "jobs",
+      "agent-inventory",
+      "outputs",
+      "steps",
+      "exponential-growth-orchestrator",
+      "strategy",
+      "matrix",
+      "steps",
+      "with",
+      "growth-metrics-analyzer",
+      "steps",
+      "autonomous-decision-engine",
+      "steps",
+      "default",
+      "notify-orchestration",
+      "steps"
+    ],
+    "timeouts": [],
+    "permissions": [],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add timeout-minutes to prevent infinite hanging",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "autonomous-auto-discovery.yml": {
+    "name": "autonomous-auto-discovery.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-auto-discovery.yml",
+    "size": 1284,
+    "lines": 54,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "matrix-runner",
+      "strategy",
+      "matrix",
+      "steps",
+      "with",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      15
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      }
+    ],
+    "concurrency": "autonomous-auto-discovery-${{ github.ref }}",
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "autonomous-auto-merge-to-main.yml": {
+    "name": "autonomous-auto-merge-to-main.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-auto-merge-to-main.yml",
+    "size": 2980,
+    "lines": 92,
+    "triggers": [
+      "push",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "push",
+      "branches",
+      "jobs",
+      "build-and-pr",
+      "steps",
+      "with",
+      "with",
+      "with",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      25
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "pull-requests",
+        "value": "write"
+      }
+    ],
+    "concurrency": "auto-merge-to-main-${{ github.ref }}",
+    "issues": [],
+    "recommendations": [
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "autonomous-cloud-automations.yml": {
+    "name": "autonomous-cloud-automations.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-cloud-automations.yml",
+    "size": 1701,
+    "lines": 57,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "run-automations",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      30
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      }
+    ],
+    "concurrency": null,
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "autonomous-cloud-fast.yml": {
+    "name": "autonomous-cloud-fast.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-cloud-fast.yml",
+    "size": 1330,
+    "lines": 52,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "run-fast-cloud-automation",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      10
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "read"
+      }
+    ],
+    "concurrency": "autonomous-cloud-fast-${{ github.ref }}",
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "autonomous-cloud-runner.yml": {
+    "name": "autonomous-cloud-runner.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-cloud-runner.yml",
+    "size": 1846,
+    "lines": 65,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "run-fast-suite",
+      "steps",
+      "with",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      }
+    ],
+    "concurrency": "autonomous-cloud-runner-${{ github.ref }}",
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "autonomous-cloud.yml": {
+    "name": "autonomous-cloud.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-cloud.yml",
+    "size": 2663,
+    "lines": 72,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch"
+    ],
+    "jobs": [
+      "schedule",
+      "workflow_dispatch",
+      "jobs",
+      "cloud-automation",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      25
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "read"
+      },
+      {
+        "permission": "steps",
+        "value": ""
+      },
+      {
+        "permission": "- name",
+        "value": "Checkout"
+      },
+      {
+        "permission": "uses",
+        "value": "actions/checkout@v4"
+      },
+      {
+        "permission": "with",
+        "value": ""
+      },
+      {
+        "permission": "fetch-depth",
+        "value": "0"
+      },
+      {
+        "permission": "- name",
+        "value": "Setup Node.js"
+      },
+      {
+        "permission": "uses",
+        "value": "actions/setup-node@v4"
+      },
+      {
+        "permission": "with",
+        "value": ""
+      },
+      {
+        "permission": "node-version",
+        "value": "20"
+      },
+      {
+        "permission": "cache",
+        "value": "npm"
+      },
+      {
+        "permission": "- name",
+        "value": "Install dependencies"
+      },
+      {
+        "permission": "run",
+        "value": "npm ci"
+      },
+      {
+        "permission": "- name",
+        "value": "Clean git state"
+      },
+      {
+        "permission": "run",
+        "value": "|"
+      },
+      {
+        "permission": "- name",
+        "value": "Run Marketing Orchestrator (single cycle)"
+      },
+      {
+        "permission": "run",
+        "value": "node automation/marketing-orchestrator.cjs once | cat"
+      },
+      {
+        "permission": "- name",
+        "value": "Update What's New page"
+      },
+      {
+        "permission": "run",
+        "value": "node automation/whats-new-generator.cjs | cat"
+      },
+      {
+        "permission": "- name",
+        "value": "Ensure What's New banner on homepage"
+      },
+      {
+        "permission": "run",
+        "value": "node automation/homepage-whatsnew-applier.cjs | cat"
+      },
+      {
+        "permission": "- name",
+        "value": "Newsroom Generator"
+      },
+      {
+        "permission": "run",
+        "value": "node automation/newsroom-generator.cjs | cat"
+      },
+      {
+        "permission": "- name",
+        "value": "Changelog Generator"
+      },
+      {
+        "permission": "run",
+        "value": "node automation/changelog-generator.cjs | cat"
+      },
+      {
+        "permission": "- name",
+        "value": "Broken Image Scanner"
+      },
+      {
+        "permission": "run",
+        "value": "node automation/broken-image-scanner.cjs | cat"
+      },
+      {
+        "permission": "- name",
+        "value": "Sitemap Runner"
+      },
+      {
+        "permission": "run",
+        "value": "node automation/sitemap-runner.cjs | cat"
+      },
+      {
+        "permission": "- name",
+        "value": "Competitor Watch"
+      },
+      {
+        "permission": "run",
+        "value": "node automation/competitor-watch-analyzer.cjs | cat"
+      },
+      {
+        "permission": "- name",
+        "value": "FAQ Generator"
+      },
+      {
+        "permission": "run",
+        "value": "node automation/faq-generator.cjs | cat"
+      },
+      {
+        "permission": "- name",
+        "value": "Analytics Promoter (optional)"
+      },
+      {
+        "permission": "run",
+        "value": "node automation/analytics-promoter.cjs | cat"
+      },
+      {
+        "permission": "env",
+        "value": ""
+      },
+      {
+        "permission": "GA4_PROJECT_ID",
+        "value": "${{ secrets.GA4_PROJECT_ID }}"
+      },
+      {
+        "permission": "GA4_PROPERTY_ID",
+        "value": "${{ secrets.GA4_PROPERTY_ID }}"
+      },
+      {
+        "permission": "GOOGLE_APPLICATION_CREDENTIALS_JSON",
+        "value": "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}"
+      },
+      {
+        "permission": "- name",
+        "value": "Commit and push changes"
+      },
+      {
+        "permission": "run",
+        "value": "|"
+      },
+      {
+        "permission": "git commit -m \"chore(cloud)",
+        "value": "autonomous updates (30m cadence) [skip ci]\""
+      },
+      {
+        "permission": "git push origin HEAD",
+        "value": "$(git rev-parse --abbrev-ref HEAD)"
+      }
+    ],
+    "concurrency": null,
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "autonomous-content-curation.yml": {
+    "name": "autonomous-content-curation.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-content-curation.yml",
+    "size": 1233,
+    "lines": 50,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "content-curation",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      }
+    ],
+    "concurrency": "automation-content-curation",
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "autonomous-content-scanner.yml": {
+    "name": "autonomous-content-scanner.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-content-scanner.yml",
+    "size": 1327,
+    "lines": 47,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "scan-and-commit",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      10
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "read"
+      }
+    ],
+    "concurrency": "autonomous-content-scanner-${{ github.ref }}",
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "autonomous-deep-maintenance.yml": {
+    "name": "autonomous-deep-maintenance.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-deep-maintenance.yml",
+    "size": 1363,
+    "lines": 53,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "deep-maintenance",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      45
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      }
+    ],
+    "concurrency": "automation-deep-maintenance",
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "autonomous-deps-upgrade.yml": {
+    "name": "autonomous-deps-upgrade.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-deps-upgrade.yml",
+    "size": 2443,
+    "lines": 77,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "deps-upgrade",
+      "steps",
+      "with",
+      "with",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      30
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "pull-requests",
+        "value": "write"
+      }
+    ],
+    "concurrency": "automation-deps-upgrade",
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "autonomous-external-links.yml": {
+    "name": "autonomous-external-links.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-external-links.yml",
+    "size": 1221,
+    "lines": 50,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "external-links",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      }
+    ],
+    "concurrency": "automation-external-links",
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "autonomous-image-optimizer.yml": {
+    "name": "autonomous-image-optimizer.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-image-optimizer.yml",
+    "size": 1236,
+    "lines": 50,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "image-optimizer",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      }
+    ],
+    "concurrency": "automation-image-optimizer",
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "autonomous-intelligence.yml": {
+    "name": "autonomous-intelligence.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-intelligence.yml",
+    "size": 1525,
+    "lines": 56,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch"
+    ],
+    "jobs": [
+      "schedule",
+      "workflow_dispatch",
+      "jobs",
+      "orchestrate",
+      "steps",
+      "with",
+      "with",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      15
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "pull-requests",
+        "value": "write"
+      }
+    ],
+    "concurrency": "autonomous-intelligence-${{ github.ref }}",
+    "issues": [],
+    "recommendations": [
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "autonomous-keepalive.yml": {
+    "name": "autonomous-keepalive.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-keepalive.yml",
+    "size": 838,
+    "lines": 32,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "keepalive",
+      "steps",
+      "with"
+    ],
+    "timeouts": [
+      10
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "autonomous-lighthouse.yml": {
+    "name": "autonomous-lighthouse.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-lighthouse.yml",
+    "size": 875,
+    "lines": 45,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "lhci",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      25
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      }
+    ],
+    "concurrency": "automation-lighthouse",
+    "issues": [
+      "missing_npm_cache"
+    ],
+    "recommendations": [
+      "Add npm cache to improve build performance",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "autonomous-marketing-seo.yml": {
+    "name": "autonomous-marketing-seo.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-marketing-seo.yml",
+    "size": 1443,
+    "lines": 55,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "marketing-seo",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      25
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      }
+    ],
+    "concurrency": "automation-marketing-seo",
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "autonomous-minute-orchestrator.yml": {
+    "name": "autonomous-minute-orchestrator.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-minute-orchestrator.yml",
+    "size": 1729,
+    "lines": 63,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "run-autonomous-suite",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      15
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "read"
+      }
+    ],
+    "concurrency": "autonomous-minute-orchestrator-${{ github.ref }}",
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "autonomous-quick-fixes.yml": {
+    "name": "autonomous-quick-fixes.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-quick-fixes.yml",
+    "size": 1424,
+    "lines": 55,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "quick-fixes",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      15
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      }
+    ],
+    "concurrency": "automation-quick-fixes",
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "autonomous-release.yml": {
+    "name": "autonomous-release.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-release.yml",
+    "size": 1606,
+    "lines": 65,
+    "triggers": [
+      "push",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "push",
+      "jobs",
+      "release",
+      "steps",
+      "with",
+      "with",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      25
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      }
+    ],
+    "concurrency": null,
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "autonomous-self-tune.yml": {
+    "name": "autonomous-self-tune.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-self-tune.yml",
+    "size": 1568,
+    "lines": 60,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "self-tune",
+      "steps",
+      "with",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      15
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "read"
+      }
+    ],
+    "concurrency": "autonomous-self-tuning-${{ github.ref }}",
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "autonomous-ultrafast.yml": {
+    "name": "autonomous-ultrafast.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-ultrafast.yml",
+    "size": 1188,
+    "lines": 51,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "run-ultrafast",
+      "steps",
+      "with",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      10
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      }
+    ],
+    "concurrency": "autonomous-ultrafast-${{ github.ref }}",
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "autonomous-workflow-cleanup.yml": {
+    "name": "autonomous-workflow-cleanup.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-workflow-cleanup.yml",
+    "size": 2717,
+    "lines": 76,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch"
+    ],
+    "jobs": [
+      "schedule",
+      "workflow_dispatch",
+      "jobs",
+      "cleanup",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      15
+    ],
+    "permissions": [
+      {
+        "permission": "actions",
+        "value": "write"
+      },
+      {
+        "permission": "contents",
+        "value": "read"
+      }
+    ],
+    "concurrency": "workflow-cleanup-${{ github.ref }}",
+    "issues": [],
+    "recommendations": [
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "autonomous-workflow-watchdog.yml": {
+    "name": "autonomous-workflow-watchdog.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/autonomous-workflow-watchdog.yml",
+    "size": 3136,
+    "lines": 87,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch"
+    ],
+    "jobs": [
+      "schedule",
+      "workflow_dispatch",
+      "jobs",
+      "watchdog",
+      "steps",
+      "with"
+    ],
+    "timeouts": [
+      15
+    ],
+    "permissions": [
+      {
+        "permission": "actions",
+        "value": "write"
+      },
+      {
+        "permission": "issues",
+        "value": "write"
+      },
+      {
+        "permission": "contents",
+        "value": "read"
+      }
+    ],
+    "concurrency": "workflow-watchdog-${{ github.ref }}",
+    "issues": [],
+    "recommendations": [
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "branch-cleanup.yml": {
+    "name": "branch-cleanup.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/branch-cleanup.yml",
+    "size": 740,
+    "lines": 34,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch"
+    ],
+    "jobs": [
+      "schedule",
+      "workflow_dispatch",
+      "jobs",
+      "cleanup",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      10
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "pull-requests",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "branch-pruner.yml": {
+    "name": "branch-pruner.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/branch-pruner.yml",
+    "size": 1586,
+    "lines": 49,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "prune",
+      "steps",
+      "with"
+    ],
+    "timeouts": [
+      10
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      }
+    ],
+    "concurrency": null,
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "broken-images.yml": {
+    "name": "broken-images.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/broken-images.yml",
+    "size": 553,
+    "lines": 32,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "ci-auto-heal.yml": {
+    "name": "ci-auto-heal.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ci-auto-heal.yml",
+    "size": 1536,
+    "lines": 56,
+    "triggers": [],
+    "jobs": [
+      "workflow_run",
+      "jobs",
+      "auto-heal",
+      "steps",
+      "with",
+      "with",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      15
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "pull-requests",
+        "value": "write"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "ci-merge-main.yml": {
+    "name": "ci-merge-main.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ci-merge-main.yml",
+    "size": 1015,
+    "lines": 38,
+    "triggers": [
+      "push"
+    ],
+    "jobs": [
+      "push",
+      "branches",
+      "workflow_run",
+      "types",
+      "jobs",
+      "merge-to-main",
+      "steps",
+      "with"
+    ],
+    "timeouts": [
+      10
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "read"
+      },
+      {
+        "permission": "pull-requests",
+        "value": "write"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "ci-quality.yml": {
+    "name": "ci-quality.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ci-quality.yml",
+    "size": 647,
+    "lines": 35,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "ci-self-heal.yml": {
+    "name": "ci-self-heal.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ci-self-heal.yml",
+    "size": 643,
+    "lines": 35,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "ci.yml": {
+    "name": "ci.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ci.yml",
+    "size": 633,
+    "lines": 35,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "cleanup-merged-branches.yml": {
+    "name": "cleanup-merged-branches.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/cleanup-merged-branches.yml",
+    "size": 1740,
+    "lines": 57,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "cleanup",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      15
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      }
+    ],
+    "concurrency": null,
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "cloud-agents-fast.yml": {
+    "name": "cloud-agents-fast.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/cloud-agents-fast.yml",
+    "size": 1112,
+    "lines": 46,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "cloud-agents.yml": {
+    "name": "cloud-agents.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/cloud-agents.yml",
+    "size": 1189,
+    "lines": 48,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "cloud-autonomous-orchestrator.yml": {
+    "name": "cloud-autonomous-orchestrator.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/cloud-autonomous-orchestrator.yml",
+    "size": 564,
+    "lines": 32,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "cloud-deep-research.yml": {
+    "name": "cloud-deep-research.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/cloud-deep-research.yml",
+    "size": 2069,
+    "lines": 67,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "cloud-orchestrator-plus.yml": {
+    "name": "cloud-orchestrator-plus.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/cloud-orchestrator-plus.yml",
+    "size": 1189,
+    "lines": 48,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "codeql-analysis.yml": {
+    "name": "codeql-analysis.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/codeql-analysis.yml",
+    "size": 753,
+    "lines": 34,
+    "triggers": [
+      "push",
+      "pull_request",
+      "schedule"
+    ],
+    "jobs": [
+      "push",
+      "pull_request",
+      "schedule",
+      "jobs",
+      "analyze",
+      "strategy",
+      "matrix",
+      "steps",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "actions",
+        "value": "read"
+      },
+      {
+        "permission": "contents",
+        "value": "read"
+      },
+      {
+        "permission": "security-events",
+        "value": "write"
+      },
+      {
+        "permission": "strategy",
+        "value": ""
+      },
+      {
+        "permission": "fail-fast",
+        "value": "false"
+      },
+      {
+        "permission": "matrix",
+        "value": ""
+      },
+      {
+        "permission": "language",
+        "value": "[ 'javascript' ]"
+      },
+      {
+        "permission": "steps",
+        "value": ""
+      },
+      {
+        "permission": "- name",
+        "value": "Checkout repository"
+      },
+      {
+        "permission": "uses",
+        "value": "actions/checkout@v4"
+      },
+      {
+        "permission": "- name",
+        "value": "Initialize CodeQL"
+      },
+      {
+        "permission": "uses",
+        "value": "github/codeql-action/init@v2"
+      },
+      {
+        "permission": "with",
+        "value": ""
+      },
+      {
+        "permission": "languages",
+        "value": "${{ matrix.language }}"
+      },
+      {
+        "permission": "- name",
+        "value": "Autobuild"
+      },
+      {
+        "permission": "uses",
+        "value": "github/codeql-action/autobuild@v2"
+      },
+      {
+        "permission": "- name",
+        "value": "Perform CodeQL Analysis"
+      },
+      {
+        "permission": "uses",
+        "value": "github/codeql-action/analyze@v2"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "codeql.yml": {
+    "name": "codeql.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/codeql.yml",
+    "size": 929,
+    "lines": 44,
+    "triggers": [
+      "push",
+      "pull_request",
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "push",
+      "pull_request",
+      "schedule",
+      "jobs",
+      "analyze",
+      "strategy",
+      "matrix",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "read"
+      },
+      {
+        "permission": "security-events",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "commit-message-lint.yml": {
+    "name": "commit-message-lint.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/commit-message-lint.yml",
+    "size": 650,
+    "lines": 35,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "commitlint.yml": {
+    "name": "commitlint.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/commitlint.yml",
+    "size": 641,
+    "lines": 35,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "components-size-report.yml": {
+    "name": "components-size-report.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/components-size-report.yml",
+    "size": 556,
+    "lines": 32,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "content-generation.yml": {
+    "name": "content-generation.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/content-generation.yml",
+    "size": 1522,
+    "lines": 60,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch  # Manual trigger",
+      "push"
+    ],
+    "jobs": [
+      "schedule",
+      "push",
+      "paths",
+      "jobs",
+      "generate-content",
+      "steps",
+      "with",
+      "with",
+      "create-content-tasks",
+      "steps"
+    ],
+    "timeouts": [],
+    "permissions": [],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add timeout-minutes to prevent infinite hanging",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "crawl-normalize.yml": {
+    "name": "crawl-normalize.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/crawl-normalize.yml",
+    "size": 650,
+    "lines": 35,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "cursor-chat.yml": {
+    "name": "cursor-chat.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/cursor-chat.yml",
+    "size": 557,
+    "lines": 32,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "dead-code-report.yml": {
+    "name": "dead-code-report.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/dead-code-report.yml",
+    "size": 1140,
+    "lines": 44,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "scan",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      10
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "read"
+      }
+    ],
+    "concurrency": "dead-code-report-${{ github.ref }}",
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "dependabot-auto-approve.yml": {
+    "name": "dependabot-auto-approve.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/dependabot-auto-approve.yml",
+    "size": 853,
+    "lines": 33,
+    "triggers": [
+      "pull_request"
+    ],
+    "jobs": [
+      "pull_request",
+      "jobs",
+      "auto-approve",
+      "steps",
+      "with",
+      "enable-automerge",
+      "steps",
+      "with"
+    ],
+    "timeouts": [
+      10
+    ],
+    "permissions": [
+      {
+        "permission": "pull-requests",
+        "value": "write"
+      },
+      {
+        "permission": "contents",
+        "value": "write"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "dependency-auto-upgrade.yml": {
+    "name": "dependency-auto-upgrade.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/dependency-auto-upgrade.yml",
+    "size": 1194,
+    "lines": 48,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "dependency-management.yml": {
+    "name": "dependency-management.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/dependency-management.yml",
+    "size": 652,
+    "lines": 35,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "deploy.yml": {
+    "name": "deploy.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/deploy.yml",
+    "size": 637,
+    "lines": 35,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "docs-autogen.yml": {
+    "name": "docs-autogen.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/docs-autogen.yml",
+    "size": 1149,
+    "lines": 31,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "generate-docs",
+      "steps",
+      "with"
+    ],
+    "timeouts": [
+      10
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      }
+    ],
+    "concurrency": null,
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "docs-intelligence.yml": {
+    "name": "docs-intelligence.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/docs-intelligence.yml",
+    "size": 1183,
+    "lines": 48,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "emergency-fix.yml": {
+    "name": "emergency-fix.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/emergency-fix.yml",
+    "size": 679,
+    "lines": 35,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "ephemeral-branch-autorebase.yml": {
+    "name": "ephemeral-branch-autorebase.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ephemeral-branch-autorebase.yml",
+    "size": 1785,
+    "lines": 61,
+    "triggers": [
+      "push",
+      "workflow_dispatch"
+    ],
+    "jobs": [
+      "push",
+      "branches",
+      "workflow_dispatch",
+      "jobs",
+      "autorebase",
+      "steps",
+      "with"
+    ],
+    "timeouts": [
+      15
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "pull-requests",
+        "value": "write"
+      }
+    ],
+    "concurrency": null,
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "exponential-agent-factory-proliferation.yml": {
+    "name": "exponential-agent-factory-proliferation.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/exponential-agent-factory-proliferation.yml",
+    "size": 20817,
+    "lines": 518,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch",
+      "push"
+    ],
+    "jobs": [
+      "schedule",
+      "workflow_dispatch",
+      "inputs",
+      "growth_multiplier",
+      "target_exponential_factor",
+      "enable_autonomous_creation",
+      "push",
+      "paths",
+      "jobs",
+      "analyze-exponential-growth",
+      "outputs",
+      "steps",
+      "with",
+      "create-exponential-factories",
+      "strategy",
+      "matrix",
+      "steps",
+      "with",
+      "schedule",
+      "workflow_dispatch",
+      "jobs",
+      "autonomous-operation",
+      "steps",
+      "deploy-exponential-factories",
+      "steps",
+      "monitor-exponential-growth",
+      "steps",
+      "autonomous-decision-engine",
+      "steps"
+    ],
+    "timeouts": [],
+    "permissions": [],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add timeout-minutes to prevent infinite hanging",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "exponential-ai-delegation.yml": {
+    "name": "exponential-ai-delegation.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/exponential-ai-delegation.yml",
+    "size": 6949,
+    "lines": 183,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}",
+      "push"
+    ],
+    "jobs": [
+      "schedule",
+      "push",
+      "paths",
+      "workflow_run",
+      "jobs",
+      "exponential-delegation",
+      "steps",
+      "with",
+      "with",
+      "with"
+    ],
+    "timeouts": [],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "read"
+      },
+      {
+        "permission": "actions",
+        "value": "write"
+      },
+      {
+        "permission": "pull-requests",
+        "value": "write"
+      },
+      {
+        "permission": "steps",
+        "value": ""
+      },
+      {
+        "permission": "- name",
+        "value": "Checkout"
+      },
+      {
+        "permission": "uses",
+        "value": "actions/checkout@v4"
+      },
+      {
+        "permission": "with",
+        "value": ""
+      },
+      {
+        "permission": "fetch-depth",
+        "value": "0"
+      }
+    ],
+    "concurrency": "exponential-ai-delegation-${{ github.ref }}",
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add timeout-minutes to prevent infinite hanging",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "external-links.yml": {
+    "name": "external-links.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/external-links.yml",
+    "size": 555,
+    "lines": 32,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "fast-auto-push-to-main.yml": {
+    "name": "fast-auto-push-to-main.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/fast-auto-push-to-main.yml",
+    "size": 735,
+    "lines": 39,
+    "triggers": [
+      "push",
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "push",
+      "branches-ignore",
+      "schedule",
+      "jobs",
+      "fast-push",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      10
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      }
+    ],
+    "concurrency": "fast-auto-push-${{ github.ref }}",
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "fast-lint-sync.yml": {
+    "name": "fast-lint-sync.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/fast-lint-sync.yml",
+    "size": 1101,
+    "lines": 42,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch"
+    ],
+    "jobs": [
+      "schedule",
+      "workflow_dispatch",
+      "jobs",
+      "lint-fix",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      15
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "front-scheduler.yml": {
+    "name": "front-scheduler.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/front-scheduler.yml",
+    "size": 561,
+    "lines": 32,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "git-ultrafast-sync.yml": {
+    "name": "git-ultrafast-sync.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/git-ultrafast-sync.yml",
+    "size": 649,
+    "lines": 35,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "gitleaks.yml": {
+    "name": "gitleaks.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/gitleaks.yml",
+    "size": 1110,
+    "lines": 46,
+    "triggers": [
+      "push",
+      "pull_request",
+      "schedule"
+    ],
+    "jobs": [
+      "push",
+      "pull_request",
+      "schedule",
+      "jobs",
+      "gitleaks",
+      "steps",
+      "with",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "read"
+      },
+      {
+        "permission": "security-events",
+        "value": "write"
+      }
+    ],
+    "concurrency": "gitleaks-${{ github.ref }}",
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "guardian-scheduler.yml": {
+    "name": "guardian-scheduler.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/guardian-scheduler.yml",
+    "size": 553,
+    "lines": 32,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "homepage-auto-advertiser.yml": {
+    "name": "homepage-auto-advertiser.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/homepage-auto-advertiser.yml",
+    "size": 1212,
+    "lines": 44,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch"
+    ],
+    "jobs": [
+      "schedule",
+      "workflow_dispatch",
+      "jobs",
+      "run",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      10
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "read"
+      }
+    ],
+    "concurrency": "homepage-auto-advertiser-${{ github.ref }}",
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "homepage-auto-update.yml": {
+    "name": "homepage-auto-update.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/homepage-auto-update.yml",
+    "size": 1235,
+    "lines": 50,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "homepage-update",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      }
+    ],
+    "concurrency": "automation-homepage-update",
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "instagram-marketing.yml": {
+    "name": "instagram-marketing.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/instagram-marketing.yml",
+    "size": 554,
+    "lines": 32,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "intelligent-content-generation.yml": {
+    "name": "intelligent-content-generation.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/intelligent-content-generation.yml",
+    "size": 2072,
+    "lines": 73,
+    "triggers": [
+      "workflow_dispatch",
+      "schedule",
+      "push"
+    ],
+    "jobs": [
+      "workflow_dispatch",
+      "schedule",
+      "push",
+      "paths",
+      "jobs",
+      "content-generation",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [],
+    "permissions": [],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add timeout-minutes to prevent infinite hanging",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "knowledge-graph-radar.yml": {
+    "name": "knowledge-graph-radar.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/knowledge-graph-radar.yml",
+    "size": 582,
+    "lines": 32,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "labeler.yml": {
+    "name": "labeler.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/labeler.yml",
+    "size": 345,
+    "lines": 20,
+    "triggers": [],
+    "jobs": [
+      "pull_request_target",
+      "jobs",
+      "label",
+      "steps",
+      "with"
+    ],
+    "timeouts": [
+      10
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "read"
+      },
+      {
+        "permission": "pull-requests",
+        "value": "write"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "lighthouse-budgets.yml": {
+    "name": "lighthouse-budgets.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/lighthouse-budgets.yml",
+    "size": 659,
+    "lines": 35,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "lighthouse-live.yml": {
+    "name": "lighthouse-live.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/lighthouse-live.yml",
+    "size": 646,
+    "lines": 35,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "link-auto-fix.yml": {
+    "name": "link-auto-fix.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/link-auto-fix.yml",
+    "size": 1137,
+    "lines": 43,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch"
+    ],
+    "jobs": [
+      "schedule",
+      "workflow_dispatch",
+      "jobs",
+      "crawl-and-fix",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      10
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "read"
+      }
+    ],
+    "concurrency": "link-auto-fix",
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "link-scan-hourly.yml": {
+    "name": "link-scan-hourly.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/link-scan-hourly.yml",
+    "size": 1044,
+    "lines": 41,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch"
+    ],
+    "jobs": [
+      "schedule",
+      "workflow_dispatch",
+      "jobs",
+      "link-scan",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      10
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "linkedin-marketing.yml": {
+    "name": "linkedin-marketing.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/linkedin-marketing.yml",
+    "size": 553,
+    "lines": 32,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "linkedin-pro.yml": {
+    "name": "linkedin-pro.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/linkedin-pro.yml",
+    "size": 547,
+    "lines": 32,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "marketing-sync.yml": {
+    "name": "marketing-sync.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/marketing-sync.yml",
+    "size": 572,
+    "lines": 32,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "media-optimizer.yml": {
+    "name": "media-optimizer.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/media-optimizer.yml",
+    "size": 550,
+    "lines": 32,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "monetization.yml": {
+    "name": "monetization.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/monetization.yml",
+    "size": 560,
+    "lines": 32,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "netlify-auto-healer.yml": {
+    "name": "netlify-auto-healer.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/netlify-auto-healer.yml",
+    "size": 1405,
+    "lines": 44,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch"
+    ],
+    "jobs": [
+      "schedule",
+      "workflow_dispatch",
+      "jobs",
+      "heal",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      10
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "read"
+      },
+      {
+        "permission": "issues",
+        "value": "write"
+      }
+    ],
+    "concurrency": "netlify-auto-healer",
+    "issues": [],
+    "recommendations": [
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "netlify-automation.yml": {
+    "name": "netlify-automation.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/netlify-automation.yml",
+    "size": 8283,
+    "lines": 237,
+    "triggers": [
+      "push",
+      "pull_request",
+      "schedule",
+      "workflow_dispatch"
+    ],
+    "jobs": [
+      "push",
+      "pull_request",
+      "schedule",
+      "workflow_dispatch",
+      "inputs",
+      "automation_type",
+      "options",
+      "jobs",
+      "automation",
+      "strategy",
+      "matrix",
+      "steps",
+      "with",
+      "with",
+      "with",
+      "monitoring",
+      "steps",
+      "with",
+      "with",
+      "notification",
+      "steps"
+    ],
+    "timeouts": [],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "read"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add timeout-minutes to prevent infinite hanging",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "netlify-config.yml": {
+    "name": "netlify-config.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/netlify-config.yml",
+    "size": 660,
+    "lines": 35,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "netlify-functions-trigger.yml": {
+    "name": "netlify-functions-trigger.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/netlify-functions-trigger.yml",
+    "size": 656,
+    "lines": 35,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "og-image-refresh.yml": {
+    "name": "og-image-refresh.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/og-image-refresh.yml",
+    "size": 551,
+    "lines": 32,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "og-image-update.yml": {
+    "name": "og-image-update.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/og-image-update.yml",
+    "size": 1089,
+    "lines": 43,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch"
+    ],
+    "jobs": [
+      "schedule",
+      "workflow_dispatch",
+      "jobs",
+      "generate",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      10
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "read"
+      }
+    ],
+    "concurrency": "og-images-update",
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "optimize-images.yml": {
+    "name": "optimize-images.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/optimize-images.yml",
+    "size": 1085,
+    "lines": 43,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch"
+    ],
+    "jobs": [
+      "schedule",
+      "workflow_dispatch",
+      "jobs",
+      "optimize",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      10
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "read"
+      }
+    ],
+    "concurrency": "optimize-images",
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "pa11y.yml": {
+    "name": "pa11y.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/pa11y.yml",
+    "size": 657,
+    "lines": 35,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "performance-audit.yml": {
+    "name": "performance-audit.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/performance-audit.yml",
+    "size": 2109,
+    "lines": 62,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch"
+    ],
+    "jobs": [
+      "schedule",
+      "workflow_dispatch",
+      "jobs",
+      "lighthouse",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "read"
+      },
+      {
+        "permission": "issues",
+        "value": "write"
+      }
+    ],
+    "concurrency": "performance-audit",
+    "issues": [],
+    "recommendations": [
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "performance-monitoring.yml": {
+    "name": "performance-monitoring.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/performance-monitoring.yml",
+    "size": 3741,
+    "lines": 129,
+    "triggers": [
+      "workflow_dispatch",
+      "schedule",
+      "push"
+    ],
+    "jobs": [
+      "workflow_dispatch",
+      "schedule",
+      "push",
+      "paths",
+      "jobs",
+      "performance-audit",
+      "steps",
+      "with",
+      "with",
+      "with",
+      "with",
+      "bundle-optimization",
+      "steps",
+      "with",
+      "with",
+      "performance-alerts",
+      "steps",
+      "with"
+    ],
+    "timeouts": [],
+    "permissions": [],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add timeout-minutes to prevent infinite hanging",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "pin-actions-weekly.yml": {
+    "name": "pin-actions-weekly.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/pin-actions-weekly.yml",
+    "size": 1192,
+    "lines": 48,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "playwright-smoke.yml": {
+    "name": "playwright-smoke.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/playwright-smoke.yml",
+    "size": 653,
+    "lines": 35,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "pr-auto-curator.yml": {
+    "name": "pr-auto-curator.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/pr-auto-curator.yml",
+    "size": 646,
+    "lines": 35,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "pr-quality-gate.yml": {
+    "name": "pr-quality-gate.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/pr-quality-gate.yml",
+    "size": 646,
+    "lines": 35,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "pr-size-labeler.yml": {
+    "name": "pr-size-labeler.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/pr-size-labeler.yml",
+    "size": 523,
+    "lines": 26,
+    "triggers": [
+      "pull_request"
+    ],
+    "jobs": [
+      "pull_request",
+      "jobs",
+      "size-label",
+      "steps",
+      "with"
+    ],
+    "timeouts": [
+      10
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "read"
+      },
+      {
+        "permission": "pull-requests",
+        "value": "write"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "pr-smoke.yml": {
+    "name": "pr-smoke.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/pr-smoke.yml",
+    "size": 645,
+    "lines": 35,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "pr-update-with-main.yml": {
+    "name": "pr-update-with-main.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/pr-update-with-main.yml",
+    "size": 1513,
+    "lines": 57,
+    "triggers": [
+      "push",
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "push",
+      "schedule",
+      "jobs",
+      "list",
+      "outputs",
+      "steps",
+      "with",
+      "update",
+      "strategy",
+      "matrix",
+      "steps",
+      "with"
+    ],
+    "timeouts": [
+      15
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "pull-requests",
+        "value": "write"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "rapid-git-sync.yml": {
+    "name": "rapid-git-sync.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/rapid-git-sync.yml",
+    "size": 1580,
+    "lines": 56,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "sync",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      15
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      }
+    ],
+    "concurrency": "rapid-git-sync-${{ github.ref }}",
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "readme-auto-advertiser.yml": {
+    "name": "readme-auto-advertiser.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/readme-auto-advertiser.yml",
+    "size": 557,
+    "lines": 32,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "readme-autogen.yml": {
+    "name": "readme-autogen.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/readme-autogen.yml",
+    "size": 1078,
+    "lines": 40,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "build-readme",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      10
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "release-drafter.yml": {
+    "name": "release-drafter.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/release-drafter.yml",
+    "size": 356,
+    "lines": 21,
+    "triggers": [
+      "push",
+      "workflow_dispatch"
+    ],
+    "jobs": [
+      "push",
+      "branches",
+      "workflow_dispatch",
+      "jobs",
+      "update_release_draft",
+      "steps"
+    ],
+    "timeouts": [
+      10
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "release.yml": {
+    "name": "release.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/release.yml",
+    "size": 1184,
+    "lines": 48,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "repo-knowledge-graph.yml": {
+    "name": "repo-knowledge-graph.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/repo-knowledge-graph.yml",
+    "size": 1132,
+    "lines": 40,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "graph",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      10
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "repo-radar.yml": {
+    "name": "repo-radar.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/repo-radar.yml",
+    "size": 1113,
+    "lines": 40,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "radar",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      10
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "responsive-content.yml": {
+    "name": "responsive-content.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/responsive-content.yml",
+    "size": 566,
+    "lines": 32,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "search-index-autogen.yml": {
+    "name": "search-index-autogen.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/search-index-autogen.yml",
+    "size": 1127,
+    "lines": 40,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "build-search-index",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      10
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "security-audit.yml": {
+    "name": "security-audit.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/security-audit.yml",
+    "size": 633,
+    "lines": 33,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch"
+    ],
+    "jobs": [
+      "schedule",
+      "workflow_dispatch",
+      "jobs",
+      "audit",
+      "steps",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "read"
+      },
+      {
+        "permission": "issues",
+        "value": "write"
+      }
+    ],
+    "concurrency": "security-audit",
+    "issues": [],
+    "recommendations": [
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "security-auto-heal.yml": {
+    "name": "security-auto-heal.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/security-auto-heal.yml",
+    "size": 553,
+    "lines": 32,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "security-gates.yml": {
+    "name": "security-gates.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/security-gates.yml",
+    "size": 1217,
+    "lines": 48,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "security-scan.yml": {
+    "name": "security-scan.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/security-scan.yml",
+    "size": 644,
+    "lines": 35,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "security-weekly.yml": {
+    "name": "security-weekly.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/security-weekly.yml",
+    "size": 1103,
+    "lines": 43,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch"
+    ],
+    "jobs": [
+      "schedule",
+      "workflow_dispatch",
+      "jobs",
+      "security-scan",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "pull-requests",
+        "value": "write"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "self-healing-build.yml": {
+    "name": "self-healing-build.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/self-healing-build.yml",
+    "size": 1256,
+    "lines": 50,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch"
+    ],
+    "jobs": [
+      "schedule",
+      "workflow_dispatch",
+      "jobs",
+      "build-and-heal",
+      "steps",
+      "with",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      25
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "pull-requests",
+        "value": "write"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "self-replicating-factory-manager.yml": {
+    "name": "self-replicating-factory-manager.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/self-replicating-factory-manager.yml",
+    "size": 22109,
+    "lines": 553,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch",
+      "push"
+    ],
+    "jobs": [
+      "schedule",
+      "workflow_dispatch",
+      "inputs",
+      "replication_mode",
+      "max_factories",
+      "push",
+      "paths",
+      "jobs",
+      "factory-health-check",
+      "outputs",
+      "steps",
+      "replication-engine",
+      "strategy",
+      "matrix",
+      "steps",
+      "with",
+      "default",
+      "self-replication-monitor",
+      "steps",
+      "infinite-growth-validator",
+      "steps",
+      "notify-replication",
+      "steps"
+    ],
+    "timeouts": [],
+    "permissions": [],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add timeout-minutes to prevent infinite hanging",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "seo-audit.yml": {
+    "name": "seo-audit.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/seo-audit.yml",
+    "size": 3847,
+    "lines": 121,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "seo-validator.yml": {
+    "name": "seo-validator.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/seo-validator.yml",
+    "size": 577,
+    "lines": 32,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "site-health-guardian.yml": {
+    "name": "site-health-guardian.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/site-health-guardian.yml",
+    "size": 555,
+    "lines": 32,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "site-link.yml": {
+    "name": "site-link.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/site-link.yml",
+    "size": 557,
+    "lines": 32,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "sitemap-and-search.yml": {
+    "name": "sitemap-and-search.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/sitemap-and-search.yml",
+    "size": 567,
+    "lines": 32,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "sitemap-auto-commit.yml": {
+    "name": "sitemap-auto-commit.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/sitemap-auto-commit.yml",
+    "size": 1074,
+    "lines": 43,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch"
+    ],
+    "jobs": [
+      "schedule",
+      "workflow_dispatch",
+      "jobs",
+      "build-and-update",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      10
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "read"
+      }
+    ],
+    "concurrency": "sitemap-auto-commit",
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "sitemap-daily.yml": {
+    "name": "sitemap-daily.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/sitemap-daily.yml",
+    "size": 1018,
+    "lines": 40,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch"
+    ],
+    "jobs": [
+      "schedule",
+      "workflow_dispatch",
+      "jobs",
+      "sitemap",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      10
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "stale.yml": {
+    "name": "stale.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/stale.yml",
+    "size": 1333,
+    "lines": 39,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "stale",
+      "steps",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "issues",
+        "value": "write"
+      },
+      {
+        "permission": "pull-requests",
+        "value": "write"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "test-auth.yml": {
+    "name": "test-auth.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/test-auth.yml",
+    "size": 650,
+    "lines": 35,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "test.yml": {
+    "name": "test.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/test.yml",
+    "size": 641,
+    "lines": 35,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "todo-issue-sync.yml": {
+    "name": "todo-issue-sync.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/todo-issue-sync.yml",
+    "size": 1758,
+    "lines": 58,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "sync-todos",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      15
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "read"
+      },
+      {
+        "permission": "issues",
+        "value": "write"
+      }
+    ],
+    "concurrency": null,
+    "issues": [
+      "missing_npm_cache",
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add npm cache to improve build performance",
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "topics-and-clusters.yml": {
+    "name": "topics-and-clusters.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/topics-and-clusters.yml",
+    "size": 576,
+    "lines": 32,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "ultra-rapid-sync.yml": {
+    "name": "ultra-rapid-sync.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/ultra-rapid-sync.yml",
+    "size": 1182,
+    "lines": 48,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "unused-deps-cleaner.yml": {
+    "name": "unused-deps-cleaner.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/unused-deps-cleaner.yml",
+    "size": 1963,
+    "lines": 53,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "detect-and-prune",
+      "steps",
+      "with",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      25
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "pull-requests",
+        "value": "write"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "unused-exports-report.yml": {
+    "name": "unused-exports-report.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/unused-exports-report.yml",
+    "size": 1238,
+    "lines": 44,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "report",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "read"
+      }
+    ],
+    "concurrency": "unused-exports-report",
+    "issues": [
+      "unsafe_git_push"
+    ],
+    "recommendations": [
+      "Add branch protection to git push operations",
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "variation.yml": {
+    "name": "variation.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/variation.yml",
+    "size": 557,
+    "lines": 32,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "venture.yml": {
+    "name": "venture.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/venture.yml",
+    "size": 555,
+    "lines": 32,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "workflow-radar.yml": {
+    "name": "workflow-radar.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/workflow-radar.yml",
+    "size": 582,
+    "lines": 32,
+    "triggers": [
+      "workflow_dispatch {}",
+      "schedule"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "main",
+      "steps",
+      "with",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "actions",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "workflow-supervisor.yml": {
+    "name": "workflow-supervisor.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/workflow-supervisor.yml",
+    "size": 4320,
+    "lines": 106,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "supervise",
+      "steps",
+      "with"
+    ],
+    "timeouts": [
+      20
+    ],
+    "permissions": [
+      {
+        "permission": "contents",
+        "value": "write"
+      },
+      {
+        "permission": "issues",
+        "value": "write"
+      }
+    ],
+    "concurrency": "workflow-supervisor-${{ github.ref }}",
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "workflow-watchdog.yml": {
+    "name": "workflow-watchdog.yml",
+    "status": "active",
+    "path": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/.github/workflows/workflow-watchdog.yml",
+    "size": 3678,
+    "lines": 99,
+    "triggers": [
+      "schedule",
+      "workflow_dispatch {}"
+    ],
+    "jobs": [
+      "schedule",
+      "jobs",
+      "guard",
+      "steps",
+      "with"
+    ],
+    "timeouts": [
+      15
+    ],
+    "permissions": [
+      {
+        "permission": "actions",
+        "value": "write"
+      },
+      {
+        "permission": "contents",
+        "value": "read"
+      }
+    ],
+    "concurrency": null,
+    "issues": [],
+    "recommendations": [
+      "Add workflow_dispatch trigger for manual testing",
+      "Consider splitting into smaller workflows for better maintainability"
+    ]
+  },
+  "optimizations": {
+    "immediate": [
+      "Add timeout-minutes to agent-agent-1755379731005-0-full-stack-expert.yml",
+      "Add timeout-minutes to agent-agent-1755379731007-1-deployment-expert.yml",
+      "Add timeout-minutes to agent-agent-1755379731008-2-monitoring-expert.yml",
+      "Add timeout-minutes to agent-agent-1755379759029-0-optimization-intermediate.yml",
+      "Add timeout-minutes to agent-agent-1755379759032-1-full-stack-intermediate.yml",
+      "Add timeout-minutes to agent-agent-1755379759033-2-deployment-expert.yml",
+      "Add timeout-minutes to agent-agent-1755379759033-3-frontend-expert.yml",
+      "Add timeout-minutes to agent-agent-1755379759035-4-full-stack-intermediate.yml",
+      "Add timeout-minutes to agent-agent-1755379759035-5-frontend-basic.yml",
+      "Add timeout-minutes to agent-agent-1755379759036-6-monitoring-advanced.yml",
+      "Add timeout-minutes to agent-agent-1755379759037-7-full-stack-intermediate.yml",
+      "Add timeout-minutes to agent-agent-1755379777746-0-full-stack-advanced.yml",
+      "Add timeout-minutes to agent-agent-1755379777749-1-full-stack-basic.yml",
+      "Add timeout-minutes to agent-agent-1755379777750-2-monitoring-intermediate.yml",
+      "Add timeout-minutes to agent-agent-1755379777751-3-monitoring-advanced.yml",
+      "Add timeout-minutes to agent-agent-1755379777752-5-testing-expert.yml",
+      "Add timeout-minutes to agent-agent-1755379777754-6-backend-expert.yml",
+      "Add timeout-minutes to agent-agent-1755379777755-7-backend-intermediate.yml",
+      "Add timeout-minutes to agent-agent-1755381089841-0-backend-expert.yml",
+      "Add timeout-minutes to agent-agent-1755381089844-1-deployment-advanced.yml",
+      "Add timeout-minutes to agent-agent-1755381089845-2-full-stack-advanced.yml",
+      "Add timeout-minutes to agent-agent-1755381089846-3-optimization-expert.yml",
+      "Add timeout-minutes to agent-agent-1755381089846-4-testing-advanced.yml",
+      "Add timeout-minutes to agent-agent-1755381089847-5-frontend-expert.yml",
+      "Add timeout-minutes to agent-agent-1755381089848-6-testing-intermediate.yml",
+      "Add timeout-minutes to agent-agent-1755381089849-7-monitoring-intermediate.yml",
+      "Add timeout-minutes to agent-factory-automation.yml",
+      "Add timeout-minutes to agent-factory-proliferation.yml",
+      "Add timeout-minutes to app-automation.yml",
+      "Add timeout-minutes to app-monitoring.yml",
+      "Add timeout-minutes to automation-dashboard.yml",
+      "Add timeout-minutes to autonomous-agent-orchestrator.yml",
+      "Add timeout-minutes to content-generation.yml",
+      "Add timeout-minutes to exponential-agent-factory-proliferation.yml",
+      "Add timeout-minutes to exponential-ai-delegation.yml",
+      "Add timeout-minutes to intelligent-content-generation.yml",
+      "Add timeout-minutes to netlify-automation.yml",
+      "Add timeout-minutes to performance-monitoring.yml",
+      "Add timeout-minutes to self-replicating-factory-manager.yml"
+    ],
+    "shortTerm": [
+      "Add branch protection to ai-changelog.yml",
+      "Add branch protection to ai-content-factory.yml",
+      "Add branch protection to ai-it-ads-sync.yml",
+      "Add branch protection to ai-it-innovations.yml",
+      "Add branch protection to ai-it-multi-factory.yml",
+      "Add branch protection to ai-it-ultrafast-sync.yml",
+      "Add branch protection to ai-research-scout.yml",
+      "Add branch protection to auto-media-release.yml",
+      "Add branch protection to auto-semver-release.yml",
+      "Add branch protection to automation-cleanup.yml",
+      "Add branch protection to automation-orchestrator.yml",
+      "Add branch protection to autonomous-cloud-automations.yml",
+      "Add branch protection to autonomous-cloud-fast.yml",
+      "Add branch protection to autonomous-cloud.yml",
+      "Add branch protection to autonomous-content-curation.yml",
+      "Add branch protection to autonomous-content-scanner.yml",
+      "Add branch protection to autonomous-deep-maintenance.yml",
+      "Add branch protection to autonomous-external-links.yml",
+      "Add branch protection to autonomous-image-optimizer.yml",
+      "Add branch protection to autonomous-keepalive.yml",
+      "Add branch protection to autonomous-marketing-seo.yml",
+      "Add branch protection to autonomous-minute-orchestrator.yml",
+      "Add branch protection to autonomous-quick-fixes.yml",
+      "Add branch protection to autonomous-release.yml",
+      "Add branch protection to branch-pruner.yml",
+      "Add branch protection to cleanup-merged-branches.yml",
+      "Add branch protection to cloud-agents-fast.yml",
+      "Add branch protection to cloud-agents.yml",
+      "Add branch protection to cloud-deep-research.yml",
+      "Add branch protection to cloud-orchestrator-plus.yml",
+      "Add branch protection to dead-code-report.yml",
+      "Add branch protection to dependency-auto-upgrade.yml",
+      "Add branch protection to docs-autogen.yml",
+      "Add branch protection to docs-intelligence.yml",
+      "Add branch protection to ephemeral-branch-autorebase.yml",
+      "Add branch protection to exponential-ai-delegation.yml",
+      "Add branch protection to fast-lint-sync.yml",
+      "Add branch protection to homepage-auto-advertiser.yml",
+      "Add branch protection to homepage-auto-update.yml",
+      "Add branch protection to link-auto-fix.yml",
+      "Add branch protection to link-scan-hourly.yml",
+      "Add branch protection to og-image-update.yml",
+      "Add branch protection to optimize-images.yml",
+      "Add branch protection to pin-actions-weekly.yml",
+      "Add branch protection to readme-autogen.yml",
+      "Add branch protection to release.yml",
+      "Add branch protection to repo-knowledge-graph.yml",
+      "Add branch protection to repo-radar.yml",
+      "Add branch protection to search-index-autogen.yml",
+      "Add branch protection to security-gates.yml",
+      "Add branch protection to sitemap-auto-commit.yml",
+      "Add branch protection to sitemap-daily.yml",
+      "Add branch protection to todo-issue-sync.yml",
+      "Add branch protection to ultra-rapid-sync.yml",
+      "Add branch protection to unused-exports-report.yml"
+    ],
+    "longTerm": [
+      "Refactor accessibility-audit.yml into smaller, focused workflows",
+      "Refactor actionlint.yml into smaller, focused workflows",
+      "Refactor actions-keepalive.yml into smaller, focused workflows",
+      "Refactor agent-agent-1755379731005-0-full-stack-expert.yml into smaller, focused workflows",
+      "Refactor agent-agent-1755379731007-1-deployment-expert.yml into smaller, focused workflows",
+      "Refactor agent-agent-1755379731008-2-monitoring-expert.yml into smaller, focused workflows",
+      "Refactor agent-agent-1755379759029-0-optimization-intermediate.yml into smaller, focused workflows",
+      "Refactor agent-agent-1755379759032-1-full-stack-intermediate.yml into smaller, focused workflows",
+      "Refactor agent-agent-1755379759033-2-deployment-expert.yml into smaller, focused workflows",
+      "Refactor agent-agent-1755379759033-3-frontend-expert.yml into smaller, focused workflows",
+      "Refactor agent-agent-1755379759035-4-full-stack-intermediate.yml into smaller, focused workflows",
+      "Refactor agent-agent-1755379759035-5-frontend-basic.yml into smaller, focused workflows",
+      "Refactor agent-agent-1755379759036-6-monitoring-advanced.yml into smaller, focused workflows",
+      "Refactor agent-agent-1755379759037-7-full-stack-intermediate.yml into smaller, focused workflows",
+      "Refactor agent-agent-1755379777746-0-full-stack-advanced.yml into smaller, focused workflows",
+      "Refactor agent-agent-1755379777749-1-full-stack-basic.yml into smaller, focused workflows",
+      "Refactor agent-agent-1755379777750-2-monitoring-intermediate.yml into smaller, focused workflows",
+      "Refactor agent-agent-1755379777751-3-monitoring-advanced.yml into smaller, focused workflows",
+      "Refactor agent-agent-1755379777752-5-testing-expert.yml into smaller, focused workflows",
+      "Refactor agent-agent-1755379777754-6-backend-expert.yml into smaller, focused workflows",
+      "Refactor agent-agent-1755379777755-7-backend-intermediate.yml into smaller, focused workflows",
+      "Refactor agent-agent-1755381089841-0-backend-expert.yml into smaller, focused workflows",
+      "Refactor agent-agent-1755381089844-1-deployment-advanced.yml into smaller, focused workflows",
+      "Refactor agent-agent-1755381089845-2-full-stack-advanced.yml into smaller, focused workflows",
+      "Refactor agent-agent-1755381089846-3-optimization-expert.yml into smaller, focused workflows",
+      "Refactor agent-agent-1755381089846-4-testing-advanced.yml into smaller, focused workflows",
+      "Refactor agent-agent-1755381089847-5-frontend-expert.yml into smaller, focused workflows",
+      "Refactor agent-agent-1755381089848-6-testing-intermediate.yml into smaller, focused workflows",
+      "Refactor agent-agent-1755381089849-7-monitoring-intermediate.yml into smaller, focused workflows",
+      "Refactor agent-factory-automation.yml into smaller, focused workflows",
+      "Refactor agent-factory-proliferation.yml into smaller, focused workflows",
+      "Refactor agent-of-agents-trigger.yml into smaller, focused workflows",
+      "Refactor ai-changelog.yml into smaller, focused workflows",
+      "Refactor ai-content-autonomy.yml into smaller, focused workflows",
+      "Refactor ai-content-factory.yml into smaller, focused workflows",
+      "Refactor ai-it-ads-sync.yml into smaller, focused workflows",
+      "Refactor ai-it-innovations.yml into smaller, focused workflows",
+      "Refactor ai-it-multi-factory.yml into smaller, focused workflows",
+      "Refactor ai-it-ultrafast-sync.yml into smaller, focused workflows",
+      "Refactor ai-research-scout.yml into smaller, focused workflows",
+      "Refactor ai-trends-radar.yml into smaller, focused workflows",
+      "Refactor app-automation.yml into smaller, focused workflows",
+      "Refactor app-monitoring.yml into smaller, focused workflows",
+      "Refactor auto-heal-workflows.yml into smaller, focused workflows",
+      "Refactor auto-media-release.yml into smaller, focused workflows",
+      "Refactor auto-pr-automerge.yml into smaller, focused workflows",
+      "Refactor auto-pr-cursor-branches.yml into smaller, focused workflows",
+      "Refactor auto-semver-release.yml into smaller, focused workflows",
+      "Refactor auto-update-prs.yml into smaller, focused workflows",
+      "Refactor automation-advertiser.yml into smaller, focused workflows",
+      "Refactor automation-cleanup.yml into smaller, focused workflows",
+      "Refactor automation-dashboard.yml into smaller, focused workflows",
+      "Refactor automation-guardian-10min.yml into smaller, focused workflows",
+      "Refactor automation-orchestrator.yml into smaller, focused workflows",
+      "Refactor automations.yml into smaller, focused workflows",
+      "Refactor automerge-main.yml into smaller, focused workflows",
+      "Refactor autonomous-agent-orchestrator.yml into smaller, focused workflows",
+      "Refactor autonomous-auto-discovery.yml into smaller, focused workflows",
+      "Refactor autonomous-auto-merge-to-main.yml into smaller, focused workflows",
+      "Refactor autonomous-cloud-automations.yml into smaller, focused workflows",
+      "Refactor autonomous-cloud-fast.yml into smaller, focused workflows",
+      "Refactor autonomous-cloud-runner.yml into smaller, focused workflows",
+      "Refactor autonomous-cloud.yml into smaller, focused workflows",
+      "Refactor autonomous-content-curation.yml into smaller, focused workflows",
+      "Refactor autonomous-content-scanner.yml into smaller, focused workflows",
+      "Refactor autonomous-deep-maintenance.yml into smaller, focused workflows",
+      "Refactor autonomous-deps-upgrade.yml into smaller, focused workflows",
+      "Refactor autonomous-external-links.yml into smaller, focused workflows",
+      "Refactor autonomous-image-optimizer.yml into smaller, focused workflows",
+      "Refactor autonomous-intelligence.yml into smaller, focused workflows",
+      "Refactor autonomous-lighthouse.yml into smaller, focused workflows",
+      "Refactor autonomous-marketing-seo.yml into smaller, focused workflows",
+      "Refactor autonomous-minute-orchestrator.yml into smaller, focused workflows",
+      "Refactor autonomous-quick-fixes.yml into smaller, focused workflows",
+      "Refactor autonomous-release.yml into smaller, focused workflows",
+      "Refactor autonomous-self-tune.yml into smaller, focused workflows",
+      "Refactor autonomous-ultrafast.yml into smaller, focused workflows",
+      "Refactor autonomous-workflow-cleanup.yml into smaller, focused workflows",
+      "Refactor autonomous-workflow-watchdog.yml into smaller, focused workflows",
+      "Refactor branch-cleanup.yml into smaller, focused workflows",
+      "Refactor broken-images.yml into smaller, focused workflows",
+      "Refactor ci-auto-heal.yml into smaller, focused workflows",
+      "Refactor ci-merge-main.yml into smaller, focused workflows",
+      "Refactor ci-quality.yml into smaller, focused workflows",
+      "Refactor ci-self-heal.yml into smaller, focused workflows",
+      "Refactor ci.yml into smaller, focused workflows",
+      "Refactor cleanup-merged-branches.yml into smaller, focused workflows",
+      "Refactor cloud-agents-fast.yml into smaller, focused workflows",
+      "Refactor cloud-agents.yml into smaller, focused workflows",
+      "Refactor cloud-autonomous-orchestrator.yml into smaller, focused workflows",
+      "Refactor cloud-deep-research.yml into smaller, focused workflows",
+      "Refactor cloud-orchestrator-plus.yml into smaller, focused workflows",
+      "Refactor codeql-analysis.yml into smaller, focused workflows",
+      "Refactor codeql.yml into smaller, focused workflows",
+      "Refactor commit-message-lint.yml into smaller, focused workflows",
+      "Refactor commitlint.yml into smaller, focused workflows",
+      "Refactor components-size-report.yml into smaller, focused workflows",
+      "Refactor content-generation.yml into smaller, focused workflows",
+      "Refactor crawl-normalize.yml into smaller, focused workflows",
+      "Refactor cursor-chat.yml into smaller, focused workflows",
+      "Refactor dead-code-report.yml into smaller, focused workflows",
+      "Refactor dependabot-auto-approve.yml into smaller, focused workflows",
+      "Refactor dependency-auto-upgrade.yml into smaller, focused workflows",
+      "Refactor dependency-management.yml into smaller, focused workflows",
+      "Refactor deploy.yml into smaller, focused workflows",
+      "Refactor docs-intelligence.yml into smaller, focused workflows",
+      "Refactor emergency-fix.yml into smaller, focused workflows",
+      "Refactor ephemeral-branch-autorebase.yml into smaller, focused workflows",
+      "Refactor exponential-agent-factory-proliferation.yml into smaller, focused workflows",
+      "Refactor exponential-ai-delegation.yml into smaller, focused workflows",
+      "Refactor external-links.yml into smaller, focused workflows",
+      "Refactor fast-auto-push-to-main.yml into smaller, focused workflows",
+      "Refactor fast-lint-sync.yml into smaller, focused workflows",
+      "Refactor front-scheduler.yml into smaller, focused workflows",
+      "Refactor git-ultrafast-sync.yml into smaller, focused workflows",
+      "Refactor gitleaks.yml into smaller, focused workflows",
+      "Refactor guardian-scheduler.yml into smaller, focused workflows",
+      "Refactor homepage-auto-advertiser.yml into smaller, focused workflows",
+      "Refactor homepage-auto-update.yml into smaller, focused workflows",
+      "Refactor instagram-marketing.yml into smaller, focused workflows",
+      "Refactor intelligent-content-generation.yml into smaller, focused workflows",
+      "Refactor knowledge-graph-radar.yml into smaller, focused workflows",
+      "Refactor lighthouse-budgets.yml into smaller, focused workflows",
+      "Refactor lighthouse-live.yml into smaller, focused workflows",
+      "Refactor link-auto-fix.yml into smaller, focused workflows",
+      "Refactor link-scan-hourly.yml into smaller, focused workflows",
+      "Refactor linkedin-marketing.yml into smaller, focused workflows",
+      "Refactor linkedin-pro.yml into smaller, focused workflows",
+      "Refactor marketing-sync.yml into smaller, focused workflows",
+      "Refactor media-optimizer.yml into smaller, focused workflows",
+      "Refactor monetization.yml into smaller, focused workflows",
+      "Refactor netlify-auto-healer.yml into smaller, focused workflows",
+      "Refactor netlify-automation.yml into smaller, focused workflows",
+      "Refactor netlify-config.yml into smaller, focused workflows",
+      "Refactor netlify-functions-trigger.yml into smaller, focused workflows",
+      "Refactor og-image-refresh.yml into smaller, focused workflows",
+      "Refactor og-image-update.yml into smaller, focused workflows",
+      "Refactor optimize-images.yml into smaller, focused workflows",
+      "Refactor pa11y.yml into smaller, focused workflows",
+      "Refactor performance-audit.yml into smaller, focused workflows",
+      "Refactor performance-monitoring.yml into smaller, focused workflows",
+      "Refactor pin-actions-weekly.yml into smaller, focused workflows",
+      "Refactor playwright-smoke.yml into smaller, focused workflows",
+      "Refactor pr-auto-curator.yml into smaller, focused workflows",
+      "Refactor pr-quality-gate.yml into smaller, focused workflows",
+      "Refactor pr-smoke.yml into smaller, focused workflows",
+      "Refactor pr-update-with-main.yml into smaller, focused workflows",
+      "Refactor rapid-git-sync.yml into smaller, focused workflows",
+      "Refactor readme-auto-advertiser.yml into smaller, focused workflows",
+      "Refactor readme-autogen.yml into smaller, focused workflows",
+      "Refactor release-drafter.yml into smaller, focused workflows",
+      "Refactor release.yml into smaller, focused workflows",
+      "Refactor repo-knowledge-graph.yml into smaller, focused workflows",
+      "Refactor repo-radar.yml into smaller, focused workflows",
+      "Refactor responsive-content.yml into smaller, focused workflows",
+      "Refactor search-index-autogen.yml into smaller, focused workflows",
+      "Refactor security-audit.yml into smaller, focused workflows",
+      "Refactor security-auto-heal.yml into smaller, focused workflows",
+      "Refactor security-gates.yml into smaller, focused workflows",
+      "Refactor security-scan.yml into smaller, focused workflows",
+      "Refactor security-weekly.yml into smaller, focused workflows",
+      "Refactor self-healing-build.yml into smaller, focused workflows",
+      "Refactor self-replicating-factory-manager.yml into smaller, focused workflows",
+      "Refactor seo-audit.yml into smaller, focused workflows",
+      "Refactor seo-validator.yml into smaller, focused workflows",
+      "Refactor site-health-guardian.yml into smaller, focused workflows",
+      "Refactor site-link.yml into smaller, focused workflows",
+      "Refactor sitemap-and-search.yml into smaller, focused workflows",
+      "Refactor sitemap-auto-commit.yml into smaller, focused workflows",
+      "Refactor sitemap-daily.yml into smaller, focused workflows",
+      "Refactor test-auth.yml into smaller, focused workflows",
+      "Refactor test.yml into smaller, focused workflows",
+      "Refactor todo-issue-sync.yml into smaller, focused workflows",
+      "Refactor topics-and-clusters.yml into smaller, focused workflows",
+      "Refactor ultra-rapid-sync.yml into smaller, focused workflows",
+      "Refactor unused-deps-cleaner.yml into smaller, focused workflows",
+      "Refactor unused-exports-report.yml into smaller, focused workflows",
+      "Refactor variation.yml into smaller, focused workflows",
+      "Refactor venture.yml into smaller, focused workflows",
+      "Refactor workflow-radar.yml into smaller, focused workflows"
+    ]
+  }
+}

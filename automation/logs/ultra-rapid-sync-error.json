@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-08-19T03:44:19.118Z",
+  "currentBranch": null,
+  "targetBranch": "main",
+  "hasUncommittedChanges": false,
+  "syncInterval": 30,
+  "status": "error",
+  "error": "Failed to switch to target branch"
+}

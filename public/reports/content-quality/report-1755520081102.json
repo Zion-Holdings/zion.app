@@ -1,0 +1,18 @@
+{
+  "generatedAt": "2025-08-18T12:28:01.100Z",
+  "files": [
+    "update-2025-08-18-0928.tsx"
+  ],
+  "metrics": {
+    "diversityScore": 100,
+    "avgLen": 2287,
+    "duplicateCount": 0,
+    "seoScore": 0
+  },
+  "guidance": [
+    "Aim for varied intros, highlights, and CTAs across updates.",
+    "Keep meta description and keywords present for each page.",
+    "Include at least one external source highlight when available.",
+    "Target 300–1000 characters per update for skim-ability."
+  ]
+}

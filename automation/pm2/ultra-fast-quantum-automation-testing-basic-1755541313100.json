@@ -1,0 +1,14 @@
+{
+  "name": "ultra-fast-quantum-automation-testing-basic-1755541313100",
+  "script": "/Users/miami2/ ZION_APP_AUG_11_25/zion.app/automation/ultra-fast-quantum-automation-testing-basic-1755541313100.cjs",
+  "instances": 1,
+  "exec_mode": "fork",
+  "autorestart": true,
+  "watch": false,
+  "max_memory_restart": "1G",
+  "env": {
+    "NODE_ENV": "production",
+    "AUTOMATION_ID": "ultra-fast-quantum-automation-testing-basic-1755541313100",
+    "AUTOMATION_TYPE": "quantum-automation"
+  }
+}

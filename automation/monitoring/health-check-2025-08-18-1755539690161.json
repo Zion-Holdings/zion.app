@@ -1,0 +1,53 @@
+{
+  "timestamp": "2025-08-18T17:54:30.435Z",
+  "metrics": {
+    "workflow_health": {
+      "success": true,
+      "score": 100,
+      "level": "excellent",
+      "metrics": {
+        "totalWorkflows": 0,
+        "workflowsWithIssues": 0,
+        "totalIssues": 0,
+        "successRate": 100
+      }
+    },
+    "automation_health": {
+      "success": true,
+      "score": 100,
+      "level": "excellent",
+      "message": "All automation systems operational"
+    },
+    "security_status": {
+      "success": true,
+      "score": 93.93939393939394,
+      "level": "good",
+      "metrics": {
+        "totalWorkflows": 396,
+        "securedWorkflows": 372,
+        "workflowsWithTimeouts": 372,
+        "securityScore": 93.93939393939394,
+        "timeoutScore": 93.93939393939394
+      }
+    },
+    "dependency_health": {
+      "success": false,
+      "reason": "Command failed: npm run automation:deps\n❌ Dependency tests failed: Command failed: npm run type-check\n❌ Error during automatic update: Error: Command failed: npm run type-check\n    at genericNodeError (node:internal/errors:983:15)\n    at wrappedFn (node:internal/errors:537:14)\n    at checkExecSyncError (node:child_process:882:11)\n    at execSync (node:child_process:954:15)\n    at DependencyHealthChecker.testUpdatedDependencies (/workspace/automation/dependency-health-checker.cjs:533:7)\n    at DependencyHealthChecker.performAutoUpdate (/workspace/automation/dependency-health-checker.cjs:481:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async DependencyHealthChecker.checkDependencyHealth (/workspace/automation/dependency-health-checker.cjs:80:9)\n    at async main (/workspace/automation/dependency-health-checker.cjs:630:22) {\n  status: 2,\n  signal: null,\n  output: [ null, null, null ],\n  pid: 47429,\n  stdout: null,\n  stderr: null\n}\nnpm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead\n❌ Error checking dependency health: Error: Command failed: npm run type-check\n    at genericNodeError (node:internal/errors:983:15)\n    at wrappedFn (node:internal/errors:537:14)\n    at checkExecSyncError (node:child_process:882:11)\n    at execSync (node:child_process:954:15)\n    at DependencyHealthChecker.testUpdatedDependencies (/workspace/automation/dependency-health-checker.cjs:533:7)\n    at DependencyHealthChecker.performAutoUpdate (/workspace/automation/dependency-health-checker.cjs:481:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async DependencyHealthChecker.checkDependencyHealth (/workspace/automation/dependency-health-checker.cjs:80:9)\n    at async main (/workspace/automation/dependency-health-checker.cjs:630:22) {\n  status: 2,\n  signal: null,\n  output: [ null, null, null ],\n  pid: 47429,\n  stdout: null,\n  stderr: null\n}\n❌ Error running dependency health checker: Error: Command failed: npm run type-check\n    at genericNodeError (node:internal/errors:983:15)\n    at wrappedFn (node:internal/errors:537:14)\n    at checkExecSyncError (node:child_process:882:11)\n    at execSync (node:child_process:954:15)\n    at DependencyHealthChecker.testUpdatedDependencies (/workspace/automation/dependency-health-checker.cjs:533:7)\n    at DependencyHealthChecker.performAutoUpdate (/workspace/automation/dependency-health-checker.cjs:481:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async DependencyHealthChecker.checkDependencyHealth (/workspace/automation/dependency-health-checker.cjs:80:9)\n    at async main (/workspace/automation/dependency-health-checker.cjs:630:22) {\n  status: 2,\n  signal: null,\n  output: [ null, null, null ],\n  pid: 47429,\n  stdout: null,\n  stderr: null\n}\n"
+    },
+    "resource_usage": {
+      "success": true,
+      "score": 100,
+      "level": "excellent",
+      "metrics": {
+        "diskUsage": 100,
+        "automationSize": 100
+      }
+    }
+  },
+  "alerts": [],
+  "recommendations": [],
+  "overall_health": {
+    "score": 98,
+    "level": "excellent"
+  }
+}

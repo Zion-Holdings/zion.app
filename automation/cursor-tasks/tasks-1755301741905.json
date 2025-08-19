@@ -1,0 +1,41 @@
+[
+  {
+    "id": "task-1755301741905-1",
+    "title": "Update Coding Standards",
+    "description": "Review and update coding standards document based on code review findings",
+    "type": "code-review",
+    "priority": "high",
+    "estimatedEffort": "2-3 hours",
+    "assignedTo": "frontend-specialist",
+    "status": "pending",
+    "createdAt": "2025-08-15T23:49:01.905Z",
+    "dueDate": "2025-08-17T23:49:01.905Z",
+    "conversationId": "conv-1755301741904"
+  },
+  {
+    "id": "task-1755301741905-2",
+    "title": "Implement Code Quality Tools",
+    "description": "Set up automated code quality checks and linting rules",
+    "type": "code-review",
+    "priority": "high",
+    "estimatedEffort": "4-6 hours",
+    "assignedTo": "backend-developer",
+    "status": "pending",
+    "createdAt": "2025-08-15T23:49:01.905Z",
+    "dueDate": "2025-08-18T23:49:01.905Z",
+    "conversationId": "conv-1755301741904"
+  },
+  {
+    "id": "task-1755301741905-3",
+    "title": "Performance Optimization",
+    "description": "Implement performance improvements identified during code review",
+    "type": "code-review",
+    "priority": "medium",
+    "estimatedEffort": "8-12 hours",
+    "assignedTo": "qa-tester",
+    "status": "pending",
+    "createdAt": "2025-08-15T23:49:01.905Z",
+    "dueDate": "2025-08-20T23:49:01.905Z",
+    "conversationId": "conv-1755301741904"
+  }
+]

@@ -1,0 +1,32 @@
+{
+  "id": "agent-1755539845214-0-backend-expert",
+  "type": "backend",
+  "complexity": "expert",
+  "created_at": "2025-08-18T17:57:25.214Z",
+  "status": "generated",
+  "capabilities": {
+    "code_generation": true,
+    "testing": true,
+    "deployment": true,
+    "monitoring": true,
+    "optimization": true,
+    "learning": true,
+    "ai_integration": true,
+    "quantum_computing": true,
+    "advanced_analytics": true,
+    "microservices": true,
+    "cloud_native": true,
+    "security_hardening": true
+  },
+  "specializations": [
+    "scalability",
+    "security",
+    "monitoring"
+  ],
+  "performance_metrics": {
+    "tasks_completed": 0,
+    "success_rate": 0.5,
+    "efficiency_score": 0.5,
+    "learning_rate": 0.1
+  }
+}

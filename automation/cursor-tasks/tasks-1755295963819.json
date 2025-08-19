@@ -1,0 +1,41 @@
+[
+  {
+    "id": "task-1755295963819-1",
+    "title": "Technical Specification",
+    "description": "Create detailed technical specification document for the new feature",
+    "type": "testing-strategy",
+    "priority": "high",
+    "estimatedEffort": "6-8 hours",
+    "assignedTo": "qa-tester",
+    "status": "pending",
+    "createdAt": "2025-08-15T22:12:43.819Z",
+    "dueDate": "2025-08-18T22:12:43.819Z",
+    "conversationId": "conv-1755295963817"
+  },
+  {
+    "id": "task-1755295963819-2",
+    "title": "User Experience Design",
+    "description": "Design user interface mockups and user experience flow",
+    "type": "testing-strategy",
+    "priority": "high",
+    "estimatedEffort": "8-12 hours",
+    "assignedTo": "frontend-specialist",
+    "status": "pending",
+    "createdAt": "2025-08-15T22:12:43.819Z",
+    "dueDate": "2025-08-19T22:12:43.819Z",
+    "conversationId": "conv-1755295963817"
+  },
+  {
+    "id": "task-1755295963819-3",
+    "title": "Implementation Plan",
+    "description": "Create detailed implementation plan with timeline and milestones",
+    "type": "testing-strategy",
+    "priority": "medium",
+    "estimatedEffort": "4-6 hours",
+    "assignedTo": "backend-developer",
+    "status": "pending",
+    "createdAt": "2025-08-15T22:12:43.819Z",
+    "dueDate": "2025-08-17T22:12:43.819Z",
+    "conversationId": "conv-1755295963817"
+  }
+]

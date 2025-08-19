@@ -1,0 +1,15 @@
+[2025-08-08T17:31:41.334Z] 🚀 Spec-dev orchestrator started
+[2025-08-08T17:31:41.336Z] ▶ node /workspace/automation/spec-dev-chat-fetcher.cjs
+Spec-dev chat fetched → /workspace/data/reports/spec-dev/chat-raw.html
+[2025-08-08T17:31:46.844Z] ▶ node /workspace/automation/spec-dev-site-crawler.cjs
+Spec-dev site crawled: 12 page(s)
+[2025-08-08T17:31:47.644Z] ▶ node /workspace/automation/spec-dev-analyzer.cjs
+Spec-dev analyzer: 3 action(s)
+[2025-08-08T17:31:47.839Z] ▶ node /workspace/automation/spec-dev-factory.cjs
+Spec-dev agents created: 2
+[2025-08-08T17:31:47.868Z] ▶ node /workspace/automation/homepage-promo-analyzer.cjs
+Homepage promo analyzer: 1 action(s), 0 new page(s)
+[2025-08-08T17:31:47.890Z] ▶ node /workspace/automation/homepage-promo-factory.cjs
+Created 0 homepage promo agents
+[2025-08-08T17:31:47.908Z] ▶ node /workspace/automation/homepage-promo-applier.cjs
+No homepage promo changes needed.

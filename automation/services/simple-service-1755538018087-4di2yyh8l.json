@@ -1,0 +1,46 @@
+{
+  "id": "simple-service-1755538018087-4di2yyh8l",
+  "category": "Training",
+  "template": "basicService",
+  "title": "Training Service",
+  "description": "Professional Training solution for modern businesses",
+  "features": [
+    "Professional service delivery",
+    "Quality assurance",
+    "Customer support",
+    "Regular updates",
+    "Scalable solutions"
+  ],
+  "pricing": [
+    {
+      "plan": "Basic",
+      "price": "$49/month",
+      "features": [
+        "Core features",
+        "Email support"
+      ]
+    },
+    {
+      "plan": "Professional",
+      "price": "$149/month",
+      "features": [
+        "All features",
+        "Priority support"
+      ]
+    },
+    {
+      "plan": "Enterprise",
+      "price": "$299/month",
+      "features": [
+        "Custom features",
+        "Dedicated support"
+      ]
+    }
+  ],
+  "createdAt": "2025-08-18T17:26:58.087Z",
+  "status": "active",
+  "metadata": {
+    "generatedBy": "simple-service-generator",
+    "version": "1.0.0"
+  }
+}

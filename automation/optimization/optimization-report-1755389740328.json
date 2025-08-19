@@ -1,0 +1,227 @@
+{
+  "timestamp": "2025-08-17T00:15:40.328Z",
+  "baselines": {
+    "workflow": {
+      "totalWorkflows": 188,
+      "activeWorkflows": 0,
+      "workflowsWithIssues": 0,
+      "totalIssues": 83,
+      "successRate": null
+    },
+    "resource": {
+      "memoryUsage": {
+        "rss": 31539200,
+        "heapUsed": 5086144,
+        "heapTotal": 5812224,
+        "external": 1574532
+      },
+      "cpuUsage": {
+        "user": 97200,
+        "system": 4520,
+        "percentage": 101.71999999999998
+      },
+      "diskUsage": {
+        "automationDirSize": 2232345,
+        "availableSpace": "unknown",
+        "usagePercentage": "unknown"
+      },
+      "networkLatency": {
+        "latency": 0,
+        "status": "local",
+        "timestamp": "2025-08-17T00:15:33.529Z"
+      }
+    },
+    "system": {
+      "responseTime": 799,
+      "systemLoad": {
+        "loadAverage": "unknown",
+        "processCount": 57615,
+        "timestamp": "2025-08-17T00:15:34.329Z"
+      },
+      "uptime": {
+        "processUptime": 1.409504249,
+        "timestamp": "2025-08-17T00:15:34.329Z"
+      },
+      "timestamp": "2025-08-17T00:15:34.329Z"
+    },
+    "timestamp": "2025-08-17T00:15:34.329Z"
+  },
+  "optimizations": [
+    {
+      "success": true,
+      "optimizations": [
+        "file_caching_optimization",
+        "memory_pool_optimization"
+      ],
+      "message": "Applied 2 memory optimizations",
+      "type": "memory_optimization",
+      "timestamp": "2025-08-17T00:15:34.332Z",
+      "opportunity": {
+        "type": "memory_optimization",
+        "priority": "medium",
+        "description": "Optimize memory usage and reduce heap consumption",
+        "estimatedImpact": "10-20% improvement",
+        "effort": "low",
+        "strategies": [
+          "garbage_collection",
+          "memory_pooling",
+          "cache_optimization"
+        ]
+      }
+    },
+    {
+      "success": true,
+      "optimizations": [
+        "code_optimization",
+        "configuration_optimization",
+        "monitoring_optimization"
+      ],
+      "message": "Applied 3 general optimizations",
+      "type": "general_optimization",
+      "timestamp": "2025-08-17T00:15:34.332Z",
+      "opportunity": {
+        "type": "general_optimization",
+        "priority": "low",
+        "description": "Apply general performance improvements",
+        "estimatedImpact": "5-15% improvement",
+        "effort": "low",
+        "strategies": [
+          "code_optimization",
+          "configuration_tuning",
+          "monitoring_improvement"
+        ]
+      }
+    }
+  ],
+  "validation": [
+    {
+      "type": "memory_optimization",
+      "validated": true,
+      "improvement": 0.017990839425702457,
+      "shouldKeep": false,
+      "afterPerformance": {
+        "workflow": {
+          "totalWorkflows": 188,
+          "activeWorkflows": 0,
+          "workflowsWithIssues": 0,
+          "totalIssues": 83,
+          "successRate": null
+        },
+        "resource": {
+          "memoryUsage": {
+            "rss": 40157184,
+            "heapUsed": 4994640,
+            "heapTotal": 7385088,
+            "external": 1574588
+          },
+          "cpuUsage": {
+            "user": 98427,
+            "system": 636,
+            "percentage": 99.063
+          },
+          "diskUsage": {
+            "automationDirSize": 2232345,
+            "availableSpace": "unknown",
+            "usagePercentage": "unknown"
+          },
+          "networkLatency": {
+            "latency": 1,
+            "status": "local",
+            "timestamp": "2025-08-17T00:15:36.884Z"
+          }
+        },
+        "system": {
+          "responseTime": 452,
+          "systemLoad": {
+            "loadAverage": "unknown",
+            "processCount": 57615,
+            "timestamp": "2025-08-17T00:15:37.336Z"
+          },
+          "uptime": {
+            "processUptime": 4.416512018,
+            "timestamp": "2025-08-17T00:15:37.336Z"
+          },
+          "timestamp": "2025-08-17T00:15:37.336Z"
+        },
+        "timestamp": "2025-08-17T00:15:37.336Z"
+      },
+      "timestamp": "2025-08-17T00:15:37.336Z"
+    },
+    {
+      "type": "general_optimization",
+      "validated": true,
+      "improvement": 0.05,
+      "shouldKeep": false,
+      "afterPerformance": {
+        "workflow": {
+          "totalWorkflows": 188,
+          "activeWorkflows": 0,
+          "workflowsWithIssues": 0,
+          "totalIssues": 83,
+          "successRate": null
+        },
+        "resource": {
+          "memoryUsage": {
+            "rss": 40591360,
+            "heapUsed": 5439224,
+            "heapTotal": 7622656,
+            "external": 1594489
+          },
+          "cpuUsage": {
+            "user": 98653,
+            "system": 395,
+            "percentage": 99.048
+          },
+          "diskUsage": {
+            "automationDirSize": 2232345,
+            "availableSpace": "unknown",
+            "usagePercentage": "unknown"
+          },
+          "networkLatency": {
+            "latency": 0,
+            "status": "local",
+            "timestamp": "2025-08-17T00:15:39.880Z"
+          }
+        },
+        "system": {
+          "responseTime": 447,
+          "systemLoad": {
+            "loadAverage": "unknown",
+            "processCount": 57615,
+            "timestamp": "2025-08-17T00:15:40.327Z"
+          },
+          "uptime": {
+            "processUptime": 7.407750488,
+            "timestamp": "2025-08-17T00:15:40.327Z"
+          },
+          "timestamp": "2025-08-17T00:15:40.327Z"
+        },
+        "timestamp": "2025-08-17T00:15:40.327Z"
+      },
+      "timestamp": "2025-08-17T00:15:40.327Z"
+    }
+  ],
+  "summary": {
+    "totalOptimizations": 2,
+    "successfulOptimizations": 2,
+    "validatedOptimizations": 2,
+    "keptOptimizations": 0,
+    "averageImprovement": 3.3995419712851227,
+    "successRate": 100,
+    "validationRate": 100
+  },
+  "recommendations": [
+    {
+      "priority": "medium",
+      "action": "Review low-impact optimizations",
+      "description": "2 optimizations showed minimal improvement",
+      "impact": "medium"
+    },
+    {
+      "priority": "low",
+      "action": "Monitor optimization performance",
+      "description": "Continue monitoring to ensure optimizations remain effective",
+      "impact": "low"
+    }
+  ]
+}

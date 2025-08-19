@@ -1,0 +1,12 @@
+{
+  "generation": {
+    "enabled": true,
+    "intervalMs": 20000,
+    "batchSize": 2,
+    "maxServices": 1000
+  },
+  "deployment": {
+    "autoCommit": true,
+    "autoPush": true
+  }
+}

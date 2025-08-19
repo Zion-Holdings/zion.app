@@ -1,0 +1,25 @@
+{
+  "id": "agent-1755536560537-6-optimization-basic",
+  "type": "optimization",
+  "complexity": "basic",
+  "created_at": "2025-08-18T17:02:40.537Z",
+  "status": "generated",
+  "capabilities": {
+    "code_generation": true,
+    "testing": true,
+    "deployment": true,
+    "monitoring": true,
+    "optimization": true,
+    "learning": true
+  },
+  "specializations": [
+    "code-review",
+    "performance-audit"
+  ],
+  "performance_metrics": {
+    "tasks_completed": 0,
+    "success_rate": 0.5,
+    "efficiency_score": 0.5,
+    "learning_rate": 0.1
+  }
+}

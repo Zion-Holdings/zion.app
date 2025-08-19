@@ -1,0 +1,35 @@
+{
+  "factoryId": "self-replicating-intermediate-research-1755380602309",
+  "type": "self-replicating",
+  "complexity": "intermediate",
+  "specialization": "research",
+  "createdAt": "2025-08-16T21:43:22.310Z",
+  "version": "1.0.0",
+  "exponentialCapabilities": {
+    "autonomousCreation": true,
+    "selfReplication": true,
+    "intelligentEvolution": true,
+    "exponentialGrowth": true,
+    "quantumOptimization": true,
+    "collaborativeLearning": true
+  },
+  "growthMetrics": {
+    "creationTime": 1755380602310,
+    "expectedGrowthRate": "3x",
+    "targetExponentialFactor": 10,
+    "autonomousEnabled": true
+  },
+  "specializations": [
+    "ai-research",
+    "innovation",
+    "future-prediction",
+    "trend-analysis"
+  ],
+  "autonomousCapabilities": {
+    "selfReplication": true,
+    "intelligentEvolution": true,
+    "collaborativeLearning": true,
+    "performanceOptimization": true,
+    "resourceManagement": true
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "total": 1,
+  "success": 0,
+  "failed": 0,
+  "unknown": 0,
+  "errors": 1,
+  "results": [
+    {
+      "workflow": "test.yml",
+      "status": "error",
+      "conclusion": null,
+      "error": {
+        "message": "Resource not accessible by integration",
+        "documentation_url": "https://docs.github.com/rest/actions/workflows#create-a-workflow-dispatch-event",
+        "status": "403"
+      }
+    }
+  ]
+}
