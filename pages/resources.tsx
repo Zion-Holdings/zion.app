@@ -13,12 +13,36 @@ export default function ResourcesPage() {
       description: 'How we implemented autonomous AI systems to revolutionize manufacturing processes.'
     },
     {
+      id: 'healthcare-ai-transformation',
+      title: 'AI-Powered Healthcare Diagnosis',
+      company: 'Metropolitan Medical Center',
+      industry: 'Healthcare',
+      results: '35% improvement in diagnostic accuracy, 45% reduction in wait times',
+      description: 'Implementing AI diagnostic systems to enhance patient care and operational efficiency.'
+    },
+    {
+      id: 'financial-services-automation',
+      title: 'Intelligent Financial Services Automation',
+      company: 'Global Bank International',
+      industry: 'Financial Services',
+      results: '70% faster transaction processing, 99.99% fraud detection accuracy',
+      description: 'Building autonomous financial systems for secure, efficient banking operations.'
+    },
+    {
       id: 'content-generation-scale',
       title: 'Scaling Content Generation 10x',
       company: 'Digital Marketing Agency',
       industry: 'Marketing',
       results: '10x increase in content output, 85% improvement in engagement',
       description: 'Transforming content creation through autonomous AI systems.'
+    },
+    {
+      id: 'smart-city-infrastructure',
+      title: 'Smart City Infrastructure Management',
+      company: 'City of Innovation',
+      industry: 'Government',
+      results: '30% reduction in energy consumption, 50% improvement in traffic flow',
+      description: 'Creating intelligent urban infrastructure through AI and IoT integration.'
     },
     {
       id: 'cloud-infrastructure-optimization',
@@ -48,6 +72,30 @@ export default function ResourcesPage() {
       category: 'Ethics'
     },
     {
+      id: 'edge-computing-healthcare',
+      title: 'Edge AI in Healthcare: A Comprehensive Guide',
+      description: 'Exploring the implementation of edge AI systems in healthcare for improved patient outcomes and operational efficiency.',
+      downloadUrl: '#',
+      pages: '38',
+      category: 'Healthcare'
+    },
+    {
+      id: 'cybersecurity-autonomous-systems',
+      title: 'Securing Autonomous Systems: Best Practices',
+      description: 'Essential cybersecurity strategies for protecting AI-powered autonomous infrastructure.',
+      downloadUrl: '#',
+      pages: '41',
+      category: 'Security'
+    },
+    {
+      id: 'sustainable-ai-implementation',
+      title: 'Sustainable AI: Green Computing for Autonomous Systems',
+      description: 'Implementing environmentally conscious AI systems while maintaining performance and reliability.',
+      downloadUrl: '#',
+      pages: '29',
+      category: 'Sustainability'
+    },
+    {
       id: 'automation-roi-calculator',
       title: 'Automation ROI Calculator Guide',
       description: 'How to calculate and maximize return on investment for automation initiatives.',
@@ -73,11 +121,32 @@ export default function ResourcesPage() {
       estimatedTime: '30 minutes'
     },
     {
+      id: 'cybersecurity-audit-tool',
+      title: 'AI Security Audit Tool',
+      description: 'Comprehensive security assessment for autonomous systems and AI infrastructure.',
+      type: 'Security Tool',
+      estimatedTime: '45 minutes'
+    },
+    {
       id: 'performance-benchmark',
       title: 'Performance Benchmarking Tool',
       description: 'Compare your automation performance against industry standards.',
       type: 'Analytics Tool',
       estimatedTime: '20 minutes'
+    },
+    {
+      id: 'sustainability-calculator',
+      title: 'AI Sustainability Calculator',
+      description: 'Measure the environmental impact of your AI systems and identify optimization opportunities.',
+      type: 'Environmental Tool',
+      estimatedTime: '25 minutes'
+    },
+    {
+      id: 'edge-computing-optimizer',
+      title: 'Edge Computing Optimizer',
+      description: 'Optimize your edge AI deployment for maximum performance and efficiency.',
+      type: 'Optimization Tool',
+      estimatedTime: '35 minutes'
     }
   ];
 
@@ -192,6 +261,54 @@ export default function ResourcesPage() {
                     </Link>
                   </div>
                 ))}
+              </div>
+            </section>
+            
+            {/* Webinars and Events Section */}
+            <section className="mb-20">
+              <h2 className="text-3xl font-bold mb-8 text-center text-white">Upcoming Webinars & Events</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:border-purple-400/30 transition-all duration-300">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="px-3 py-1 bg-purple-400/20 text-purple-400 text-sm rounded-full border border-purple-400/30">
+                      Webinar
+                    </span>
+                    <span className="text-white/60 text-sm">February 15, 2025</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-white">The Future of Edge AI in Healthcare</h3>
+                  <p className="text-white/80 text-sm mb-4">
+                    Join us for an in-depth discussion on how edge AI is revolutionizing healthcare delivery, 
+                    featuring real-world case studies and expert insights.
+                  </p>
+                  <div className="flex items-center gap-4 mb-6">
+                    <span className="text-purple-400 text-sm">⏰ 2:00 PM EST</span>
+                    <span className="text-purple-400 text-sm">👥 500+ attendees</span>
+                  </div>
+                  <button className="w-full bg-gradient-to-r from-purple-400 to-indigo-400 text-white px-6 py-3 rounded-lg font-semibold hover:from-purple-500 hover:to-indigo-500 transition-all duration-300">
+                    Register Now
+                  </button>
+                </div>
+                
+                <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:border-orange-400/30 transition-all duration-300">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="px-3 py-1 bg-orange-400/20 text-orange-400 text-sm rounded-full border border-orange-400/30">
+                      Conference
+                    </span>
+                    <span className="text-white/60 text-sm">March 8-10, 2025</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-white">AI Automation Summit 2025</h3>
+                  <p className="text-white/80 text-sm mb-4">
+                    Our flagship conference featuring keynote speakers, hands-on workshops, and networking 
+                    opportunities with AI automation leaders.
+                  </p>
+                  <div className="flex items-center gap-4 mb-6">
+                    <span className="text-orange-400 text-sm">📍 San Francisco, CA</span>
+                    <span className="text-orange-400 text-sm">🎯 1000+ attendees</span>
+                  </div>
+                  <button className="w-full bg-gradient-to-r from-orange-400 to-red-400 text-white px-6 py-3 rounded-lg font-semibold hover:from-orange-500 hover:to-red-500 transition-all duration-300">
+                    Get Early Bird Tickets
+                  </button>
+                </div>
               </div>
             </section>
             
