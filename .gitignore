@@ -27,3 +27,4 @@ Thumbs.db
 .env.local
 .env.*.local
 core
+public/reports/
