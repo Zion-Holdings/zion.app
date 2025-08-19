@@ -1,0 +1,67 @@
+
+{
+  "general": {
+    "app_name": "سوق زيون للذكاء الاصطناعي",
+    "loading": "جاري التحميل...",
+    "search": "البحث",
+    "select_language": "اختر اللغة",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "submit": "إرسال",
+    "yes": "نعم",
+    "no": "لا",
+    "success": "نجاح",
+    "error": "خطأ",
+    "open_main_menu": "افتح القائمة الرئيسية",
+    "toggle_mobile_menu": "تبديل قائمة الجوال"
+  },
+  "nav": {
+    "home": "الرئيسية",
+    "marketplace": "السوق",
+    "categories": "الفئات",
+    "talent": "المواهب",
+    "equipment": "المعدات",
+    "community": "المجتمع",
+    "dashboard": "لوحة التحكم",
+    "messages": "الرسائل",
+    "post_job": "نشر وظيفة",
+    "analytics": "تحليلات"
+  },
+  "auth": {
+    "login": "تسجيل الدخول",
+    "signup": "إنشاء حساب",
+    "logout": "تسجيل الخروج",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "forgot_password": "نسيت كلمة المرور؟",
+    "remember_me": "تذكرني",
+    "login_success": "تم تسجيل الدخول بنجاح",
+    "logout_success": "تم تسجيل الخروج بنجاح"
+  },
+  "home": {
+    "hero_title": "مستقبل سوق التكنولوجيا والذكاء الاصطناعي",
+    "hero_subtitle": "أول سوق مجاني مخصص للتكنولوجيا المتطورة والذكاء الاصطناعي",
+    "browse_marketplace": "تصفح السوق",
+    "create_profile": "إنشاء ملف شخصي",
+    "explore_tools": "استكشاف أدواتنا",
+    "tools_description": "كل ما تحتاجه للتواصل مع نظام الذكاء الاصطناعي والتكنولوجيا"
+  },
+  "jobs": {
+    "post_job_title": "نشر وظيفة",
+    "post_job_description": "املأ النموذج أدناه لنشر وظيفتك والعثور على المواهب المناسبة",
+    "job_title": "عنوان الوظيفة",
+    "job_description": "وصف الوظيفة",
+    "skills_required": "المهارات المطلوبة",
+    "budget": "الميزانية",
+    "deadline": "الموعد النهائي",
+    "job_posted": "تم نشر الوظيفة بنجاح"
+  },
+  "language": {
+    "en": "English",
+    "es": "Español",
+    "pt": "Português",
+    "ar": "العربية",
+    "language_changed": "تم تغيير اللغة إلى {{language}}",
+    "switch_to_detected": "التبديل إلى {{language}}؟"
+  }
+}
