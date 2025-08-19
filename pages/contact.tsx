@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import Footer from '../components/Footer';
 
 export default function ContactPage() {
   return (
@@ -19,7 +20,7 @@ export default function ContactPage() {
               Contact Us
             </h1>
             <p className="text-xl text-white/80 max-w-3xl mx-auto">
-              Ready to explore the future of autonomous technology? Let's connect and discuss how we can help transform your vision into reality.
+              Ready to explore the future of autonomous technology? Let&apos;s connect and discuss how we can help transform your vision into reality.
             </p>
           </section>
 
@@ -158,6 +159,7 @@ export default function ContactPage() {
             </div>
           </section>
         </main>
+        <Footer />
       </div>
     </>
   );

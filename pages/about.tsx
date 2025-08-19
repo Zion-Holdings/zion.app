@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import Footer from '../components/Footer';
 
 export default function AboutPage() {
   return (
@@ -91,7 +92,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8">
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 mb-16">
               <h2 className="text-3xl font-bold mb-6 text-purple-400">Our Impact</h2>
               <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                 <div className="text-center">
@@ -112,8 +113,64 @@ export default function AboutPage() {
                 </div>
               </div>
             </div>
+
+            {/* Team & Expertise */}
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 mb-16">
+              <h2 className="text-3xl font-bold mb-6 text-cyan-400">Our Team & Expertise</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="text-xl font-semibold mb-4 text-fuchsia-400">AI Researchers & Engineers</h3>
+                  <p className="text-white/70 mb-4">
+                    Our team includes PhD-level researchers and senior engineers with expertise in machine learning, 
+                    natural language processing, computer vision, and autonomous systems.
+                  </p>
+                  <ul className="space-y-2 text-sm text-white/60">
+                    <li>• 15+ years average experience</li>
+                    <li>• Published research papers</li>
+                    <li>• Industry-leading certifications</li>
+                    <li>• Continuous learning programs</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-4 text-green-400">Domain Specialists</h3>
+                  <p className="text-white/70 mb-4">
+                    We have deep expertise across multiple industries including healthcare, finance, manufacturing, 
+                    and e-commerce, enabling us to deliver contextually relevant solutions.
+                  </p>
+                  <ul className="space-y-2 text-sm text-white/60">
+                    <li>• Industry-specific knowledge</li>
+                    <li>• Regulatory compliance expertise</li>
+                    <li>• Best practice frameworks</li>
+                    <li>• Proven methodologies</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Innovation Timeline */}
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8">
+              <h2 className="text-3xl font-bold mb-6 text-blue-400">Innovation Timeline</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-cyan-400 mb-2">2023</div>
+                  <h3 className="text-lg font-semibold mb-2">Foundation</h3>
+                  <p className="text-sm text-white/70">Established core AI capabilities and first autonomous systems</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-fuchsia-400 mb-2">2024</div>
+                  <h3 className="text-lg font-semibold mb-2">Expansion</h3>
+                  <p className="text-sm text-white/70">Scaled to 100+ automations and launched cloud platform</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-green-400 mb-2">2025</div>
+                  <h3 className="text-lg font-semibold mb-2">Innovation</h3>
+                  <p className="text-sm text-white/70">Advanced autonomous agents and self-healing systems</p>
+                </div>
+              </div>
+            </div>
           </section>
         </main>
+        <Footer />
       </div>
     </>
   );

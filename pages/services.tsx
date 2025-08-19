@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import Footer from '../components/Footer';
 
 export default function ServicesPage() {
   return (
@@ -153,8 +154,96 @@ export default function ServicesPage() {
                 </div>
               </div>
             </div>
+
+            {/* AI Capabilities Section */}
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 mb-16">
+              <h2 className="text-3xl font-bold mb-6 text-purple-400">Advanced AI Capabilities</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="text-xl font-semibold mb-4 text-cyan-400">Natural Language Processing</h3>
+                  <ul className="space-y-2 text-white/70">
+                    <li>• Conversational AI and chatbots</li>
+                    <li>• Document analysis and extraction</li>
+                    <li>• Sentiment analysis and insights</li>
+                    <li>• Multi-language support</li>
+                    <li>• Custom language models</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-4 text-fuchsia-400">Computer Vision</h3>
+                  <ul className="space-y-2 text-white/70">
+                    <li>• Image and video analysis</li>
+                    <li>• Object detection and recognition</li>
+                    <li>• Quality control automation</li>
+                    <li>• Facial recognition systems</li>
+                    <li>• Medical imaging analysis</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-4 text-green-400">Predictive Analytics</h3>
+                  <ul className="space-y-2 text-white/70">
+                    <li>• Demand forecasting</li>
+                    <li>• Risk assessment models</li>
+                    <li>• Customer behavior prediction</li>
+                    <li>• Maintenance scheduling</li>
+                    <li>• Financial market analysis</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-4 text-blue-400">Autonomous Systems</h3>
+                  <ul className="space-y-2 text-white/70">
+                    <li>• Self-healing applications</li>
+                    <li>• Automated decision making</li>
+                    <li>• Continuous learning systems</li>
+                    <li>• Adaptive workflows</li>
+                    <li>• Intelligent resource allocation</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Technology Stack */}
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8">
+              <h2 className="text-3xl font-bold mb-6 text-yellow-400">Technology Stack</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                  <h3 className="text-xl font-semibold mb-4 text-cyan-400">AI & ML Frameworks</h3>
+                  <div className="grid grid-cols-2 gap-2 text-sm text-white/70">
+                    <span>• TensorFlow</span>
+                    <span>• PyTorch</span>
+                    <span>• Scikit-learn</span>
+                    <span>• Hugging Face</span>
+                    <span>• OpenAI GPT</span>
+                    <span>• Claude</span>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-4 text-fuchsia-400">Cloud Platforms</h3>
+                  <div className="grid grid-cols-2 gap-2 text-sm text-white/70">
+                    <span>• AWS</span>
+                    <span>• Azure</span>
+                    <span>• Google Cloud</span>
+                    <span>• Kubernetes</span>
+                    <span>• Docker</span>
+                    <span>• Terraform</span>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-4 text-green-400">Development Tools</h3>
+                  <div className="grid grid-cols-2 gap-2 text-sm text-white/70">
+                    <span>• Python</span>
+                    <span>• JavaScript</span>
+                    <span>• React</span>
+                    <span>• Node.js</span>
+                    <span>• FastAPI</span>
+                    <span>• PostgreSQL</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </section>
         </main>
+        <Footer />
       </div>
     </>
   );

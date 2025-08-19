@@ -53,7 +53,7 @@ export default function Update202508150404() {
                 <li className="flex items-start">
                   <span className="text-cyan-400 mr-3">•</span>
                   <div>
-                    <h4 className="font-semibold">Content Delivery</h3>
+                    <h4 className="font-semibold">Content Delivery</h4>
                     <p className="text-white/70">Global CDN optimization for faster loading</p>
                   </div>
                 </li>
