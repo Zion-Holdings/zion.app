@@ -89,6 +89,85 @@ export default function HomePage() {
           </section>
           {/* AUTO-GENERATED: HOME_LATEST_CONTENT_END */}
 
+          {/* Features Section */}
+          <section className="mx-auto max-w-7xl px-6 pb-14">
+            <h2 className="text-center text-2xl font-bold tracking-wide text-white/90 mb-8">Core Capabilities</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-white/10 p-6 rounded-lg border border-white/20 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300">
+                <div className="text-3xl mb-3">🤖</div>
+                <h3 className="text-xl font-semibold mb-2 text-cyan-400">AI-Powered Automation</h3>
+                <p className="text-white/80 text-sm">
+                  Intelligent systems that learn, adapt, and optimize processes automatically without human intervention.
+                </p>
+              </div>
+              
+              <div className="bg-white/10 p-6 rounded-lg border border-white/20 backdrop-blur-xl hover:border-fuchsia-400/30 transition-all duration-300">
+                <div className="text-3xl mb-3">☁️</div>
+                <h3 className="text-xl font-semibold mb-2 text-fuchsia-400">Cloud Infrastructure</h3>
+                <p className="text-white/80 text-sm">
+                  Scalable, secure cloud solutions with 99.9% uptime guarantee and global edge distribution.
+                </p>
+              </div>
+              
+              <div className="bg-white/10 p-6 rounded-lg border border-white/20 backdrop-blur-xl hover:border-green-400/30 transition-all duration-300">
+                <div className="text-3xl mb-3">🔒</div>
+                <h3 className="text-xl font-semibold mb-2 text-green-400">Enterprise Security</h3>
+                <p className="text-white/80 text-sm">
+                  SOC 2 Type II certified with end-to-end encryption and advanced threat protection.
+                </p>
+              </div>
+              
+              <div className="bg-white/10 p-6 rounded-lg border border-white/20 backdrop-blur-xl hover:border-blue-400/30 transition-all duration-300">
+                <div className="text-3xl mb-3">📊</div>
+                <h3 className="text-xl font-semibold mb-2 text-blue-400">Real-time Analytics</h3>
+                <p className="text-white/80 text-sm">
+                  Live monitoring and insights with predictive analytics and automated reporting.
+                </p>
+              </div>
+              
+              <div className="bg-white/10 p-6 rounded-lg border border-white/20 backdrop-blur-xl hover:border-yellow-400/30 transition-all duration-300">
+                <div className="text-3xl mb-3">🚀</div>
+                <h3 className="text-xl font-semibold mb-2 text-yellow-400">Rapid Deployment</h3>
+                <p className="text-white/80 text-sm">
+                  CI/CD pipelines with automated testing and zero-downtime deployments.
+                </p>
+              </div>
+              
+              <div className="bg-white/10 p-6 rounded-lg border border-white/20 backdrop-blur-xl hover:border-purple-400/30 transition-all duration-300">
+                <div className="text-3xl mb-3">🌐</div>
+                <h3 className="text-xl font-semibold mb-2 text-purple-400">Global Scale</h3>
+                <p className="text-white/80 text-sm">
+                  Multi-region infrastructure with intelligent routing and edge computing capabilities.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Stats Section */}
+          <section className="mx-auto max-w-7xl px-6 pb-14">
+            <div className="bg-white/10 p-8 rounded-2xl border border-white/20 backdrop-blur-xl">
+              <h2 className="text-center text-2xl font-bold tracking-wide text-white/90 mb-8">Platform Statistics</h2>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div>
+                  <div className="text-3xl font-bold text-cyan-400 mb-2">99.9%</div>
+                  <div className="text-white/70 text-sm">Uptime</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-fuchsia-400 mb-2">50M+</div>
+                  <div className="text-white/70 text-sm">API Calls/Day</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-green-400 mb-2">24/7</div>
+                  <div className="text-white/70 text-sm">Monitoring</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-blue-400 mb-2">15+</div>
+                  <div className="text-white/70 text-sm">Global Regions</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* Footer Section */}
           <footer className="bg-black/20 backdrop-blur-xl border-t border-white/10 mt-20">
             <div className="container mx-auto px-6 py-12">
