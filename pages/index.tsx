@@ -400,6 +400,102 @@ export default function HomePage() {
             </div>
           </section>
 
+          {/* Advanced Automation Capabilities */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">⚡ Advanced Automation Capabilities</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-cyan-400 mb-4 text-center">🔄 Ultimate Redundancy</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Multi-layer failover systems</li>
+                  <li>• Automatic process recovery</li>
+                  <li>• Health monitoring & alerts</li>
+                  <li>• Self-healing infrastructure</li>
+                  <li>• Geographic distribution</li>
+                </ul>
+                <div className="text-cyan-400 text-xs font-semibold">
+                  ✓ Ultimate Redundancy V2 ✓ Comprehensive Redundancy ✓ PM2 Redundancy
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-fuchsia-400 mb-4 text-center">🧠 AI Orchestration</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Master automation orchestrator</li>
+                  <li>• Intelligent build systems</li>
+                  <li>• Content generation agents</li>
+                  <li>• Predictive maintenance</li>
+                  <li>• Autonomous decision making</li>
+                </ul>
+                <div className="text-fuchsia-400 text-xs font-semibold">
+                  ✓ 227+ Autonomous Agents ✓ AI Content Factory ✓ Intelligent Orchestrator
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-green-400 mb-4 text-center">🚀 Build & Deploy</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Smart build orchestration</li>
+                  <li>• Continuous monitoring</li>
+                  <li>• Self-healing CI/CD</li>
+                  <li>• Performance optimization</li>
+                  <li>• Quality assurance</li>
+                </ul>
+                <div className="text-green-400 text-xs font-semibold">
+                  ✓ Master Build Orchestrator ✓ Build Guardian ✓ Continuous Monitoring
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Project Documentation & Resources */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">📚 Project Documentation & Resources</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-blue-400 mb-4 text-center">📖 Core Documentation</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• README.md - Project overview</li>
+                  <li>• ARCHITECTURE.md - System design</li>
+                  <li>• API.md - API documentation</li>
+                  <li>• DEPLOYMENT.md - Deployment guide</li>
+                  <li>• CONTRIBUTING.md - Contribution guide</li>
+                </ul>
+                <div className="text-blue-400 text-xs font-semibold">
+                  ✓ Comprehensive documentation ✓ Architecture diagrams ✓ API specs
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-purple-400 mb-4 text-center">🔧 Automation Guides</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Redundancy system guides</li>
+                  <li>• Build automation docs</li>
+                  <li>• Monitoring setup guides</li>
+                  <li>• Security implementation</li>
+                  <li>• Performance optimization</li>
+                </ul>
+                <div className="text-purple-400 text-xs font-semibold">
+                  ✓ Step-by-step guides ✓ Best practices ✓ Troubleshooting
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-yellow-400 mb-4 text-center">📊 Reports & Analytics</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Performance reports</li>
+                  <li>• Health monitoring data</li>
+                  <li>• Automation status reports</li>
+                  <li>• Security audit results</li>
+                  <li>• Build optimization metrics</li>
+                </ul>
+                <div className="text-yellow-400 text-xs font-semibold">
+                  ✓ Real-time metrics ✓ Historical data ✓ Performance insights
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* Latest Autonomous Content */}
           <section className="mx-auto max-w-7xl px-6 pb-14">
             <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Latest Autonomous Content</h2>
