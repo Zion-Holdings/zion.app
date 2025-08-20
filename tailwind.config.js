@@ -208,6 +208,17 @@ module.exports = {
         'float': 'float 6s ease-in-out infinite',
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'bounce-slow': 'bounce 2s infinite',
+        'glow': 'glow 2s ease-in-out infinite alternate',
+        'shimmer': 'shimmer 2.5s linear infinite',
+        'matrix': 'matrix 20s linear infinite',
+        'neon-pulse': 'neonPulse 1.5s ease-in-out infinite',
+        'cyber-float': 'cyberFloat 8s ease-in-out infinite',
+        'hologram': 'hologram 3s ease-in-out infinite',
+        'energy-wave': 'energyWave 4s ease-in-out infinite',
+        'quantum-spin': 'quantumSpin 6s linear infinite',
+        'neural-network': 'neuralNetwork 10s linear infinite',
+        'plasma-flow': 'plasmaFlow 5s ease-in-out infinite',
+        'cyber-grid': 'cyberGrid 15s linear infinite',
       },
       keyframes: {
         fadeIn: {
@@ -238,6 +249,62 @@ module.exports = {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-20px)' },
         },
+        glow: {
+          '0%': { boxShadow: '0 0 20px rgba(59, 130, 246, 0.3)' },
+          '100%': { boxShadow: '0 0 40px rgba(59, 130, 246, 0.6)' },
+        },
+        shimmer: {
+          '0%': { backgroundPosition: '-200% 0' },
+          '100%': { backgroundPosition: '200% 0' },
+        },
+        matrix: {
+          '0%': { transform: 'translateY(0)' },
+          '100%': { transform: 'translateY(-100%)' },
+        },
+        neonPulse: {
+          '0%, 100%': { 
+            textShadow: '0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor',
+            opacity: '1'
+          },
+          '50%': { 
+            textShadow: '0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor',
+            opacity: '0.8'
+          },
+        },
+        cyberFloat: {
+          '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+          '25%': { transform: 'translateY(-15px) rotate(2deg)' },
+          '50%': { transform: 'translateY(-25px) rotate(0deg)' },
+          '75%': { transform: 'translateY(-15px) rotate(-2deg)' },
+        },
+        hologram: {
+          '0%, 100%': { opacity: '0.7', transform: 'scale(1)' },
+          '50%': { opacity: '1', transform: 'scale(1.05)' },
+        },
+        energyWave: {
+          '0%': { transform: 'scaleX(0)', opacity: '1' },
+          '50%': { transform: 'scaleX(1)', opacity: '0.5' },
+          '100%': { transform: 'scaleX(0)', opacity: '0' },
+        },
+        quantumSpin: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
+        neuralNetwork: {
+          '0%': { strokeDasharray: '0 1000', opacity: '0' },
+          '50%': { opacity: '1' },
+          '100%': { strokeDasharray: '1000 0', opacity: '0' },
+        },
+        plasmaFlow: {
+          '0%': { transform: 'translateX(-100%)', opacity: '0' },
+          '50%': { opacity: '1' },
+          '100%': { transform: 'translateX(100%)', opacity: '0' },
+        },
+        cyberGrid: {
+          '0%': { transform: 'translateY(0) scale(1)' },
+          '50%': { transform: 'translateY(-10px) scale(1.1)' },
+          '100%': { transform: 'translateY(0) scale(1)' },
+        },
       },
       backdropBlur: {
         'xs': '2px',
@@ -247,6 +314,14 @@ module.exports = {
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         'gradient-primary': 'linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%)',
         'gradient-primary-hover': 'linear-gradient(135deg, #2563eb 0%, #3b82f6 100%)',
+        'cyber-grid': 'linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px)',
+        'neural-dots': 'radial-gradient(circle at 1px 1px, rgba(59, 130, 246, 0.15) 1px, transparent 0)',
+        'quantum-waves': 'repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(59, 130, 246, 0.03) 35px, rgba(59, 130, 246, 0.03) 70px)',
+        'plasma-flow': 'linear-gradient(90deg, transparent 0%, rgba(59, 130, 246, 0.1) 50%, transparent 100%)',
+        'hologram-pattern': 'conic-gradient(from 0deg at 50% 50%, rgba(59, 130, 246, 0.1) 0deg, transparent 60deg, rgba(34, 197, 94, 0.1) 120deg, transparent 180deg, rgba(168, 85, 247, 0.1) 240deg, transparent 300deg, rgba(59, 130, 246, 0.1) 360deg)',
+        'matrix-rain': 'linear-gradient(180deg, transparent 0%, rgba(34, 197, 94, 0.1) 50%, transparent 100%)',
+        'energy-field': 'radial-gradient(ellipse at center, rgba(59, 130, 246, 0.1) 0%, transparent 70%)',
+        'cyber-circuit': 'linear-gradient(90deg, transparent 0%, rgba(59, 130, 246, 0.05) 25%, rgba(59, 130, 246, 0.1) 50%, rgba(59, 130, 246, 0.05) 75%, transparent 100%)',
       },
       container: {
         center: true,
