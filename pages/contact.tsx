@@ -1,130 +1,153 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
+import Container from '../components/ui/Container';
+import Card from '../components/ui/Card';
+import Button from '../components/ui/Button';
 
 export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    message: '',
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle form submission
+    // Form submission logic would go here
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const contactMethods = [
+    {
+      icon: '📧',
+      title: 'Email',
+      description: 'Get in touch with our team',
+      contact: 'hello@ziontechgroup.com',
+      color: 'bg-gradient-to-br from-blue-400 to-indigo-500',
+    },
+    {
+      icon: '💬',
+      title: 'Live Chat',
+      description: 'Chat with us in real-time',
+      contact: 'Available 24/7',
+      color: 'bg-gradient-to-br from-green-400 to-emerald-500',
+    },
+    {
+      icon: '📱',
+      title: 'Phone',
+      description: 'Speak with an expert',
+      contact: '+1 (555) 123-4567',
+      color: 'bg-gradient-to-br from-purple-400 to-pink-500',
+    },
+  ];
+
   return (
     <>
       <Head>
         <title>Contact Us | Zion Tech Group</title>
-        <meta name="description" content="Get in touch with Zion Tech Group to discuss your AI and automation needs." />
+        <meta name="description" content="Get in touch with Zion Tech Group to discuss your technology needs and start your transformation journey." />
         <meta property="og:title" content="Contact Us | Zion Tech Group" />
-        <meta property="og:description" content="Get in touch with Zion Tech Group." />
+        <meta property="og:description" content="Contact us to discuss your technology needs." />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      
+
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="animate-fade-in-up">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-              Get In Touch
+      <section className="py-20 sm:py-24 lg:py-32 bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-100">
+        <Container>
+          <div className="text-center">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-6">
+              Get in Touch
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
-              Ready to transform your business with autonomous AI technology? Let's discuss your needs.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Ready to transform your business with autonomous technology? Let&apos;s start a conversation.
             </p>
           </div>
-        </div>
+        </Container>
       </section>
 
-      {/* Contact Form Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Information */}
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">Let's Start a Conversation</h2>
-              <p className="text-lg text-gray-600 mb-8">
-                Whether you're looking to implement autonomous systems, optimize your cloud infrastructure, 
-                or explore AI-powered solutions, we're here to help.
+      {/* Contact Methods */}
+      <section className="py-16 lg:py-24 bg-white">
+        <Container>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Multiple Ways to Connect
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Choose the method that works best for you
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {contactMethods.map((method, index) => (
+              <Card key={index} className="text-center">
+                <div className={`w-16 h-16 ${method.color} rounded-xl flex items-center justify-center mx-auto mb-6`}>
+                  <span className="text-3xl">{method.icon}</span>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">{method.title}</h3>
+                <p className="text-gray-600 mb-4">{method.description}</p>
+                <p className="text-lg font-medium text-blue-600">{method.contact}</p>
+              </Card>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Contact Form */}
+      <section className="py-16 lg:py-24 bg-gray-50">
+        <Container>
+          <div className="max-w-2xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+                Send Us a Message
+              </h2>
+              <p className="text-xl text-gray-600">
+                Tell us about your project and we&apos;ll get back to you within 24 hours
               </p>
-              
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Email Us</h3>
-                    <p className="text-gray-600">hello@ziontechgroup.com</p>
-                    <p className="text-sm text-gray-500">We'll respond within 24 hours</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Call Us</h3>
-                    <p className="text-gray-600">+1 (555) 123-4567</p>
-                    <p className="text-sm text-gray-500">Mon-Fri 9AM-6PM EST</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Visit Us</h3>
-                    <p className="text-gray-600">123 Innovation Drive</p>
-                    <p className="text-gray-600">Tech City, TC 12345</p>
-                  </div>
-                </div>
-              </div>
             </div>
 
-            {/* Contact Form */}
-            <div className="card p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Send us a message</h3>
-              <form className="space-y-6">
+            <Card>
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
-                      First Name
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                      Full Name *
                     </label>
                     <input
                       type="text"
-                      id="firstName"
-                      name="firstName"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
-                      placeholder="John"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+                      placeholder="John Doe"
                     />
                   </div>
                   <div>
-                    <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
-                      Last Name
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                      Email Address *
                     </label>
                     <input
-                      type="text"
-                      id="lastName"
-                      name="lastName"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
-                      placeholder="Doe"
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+                      placeholder="john@company.com"
                     />
                   </div>
                 </div>
-                
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
-                    placeholder="john@company.com"
-                  />
-                </div>
-                
+
                 <div>
                   <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
                     Company
@@ -133,110 +156,90 @@ export default function ContactPage() {
                     type="text"
                     id="company"
                     name="company"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+                    value={formData.company}
+                    onChange={handleChange}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
                     placeholder="Your Company"
                   />
                 </div>
-                
-                <div>
-                  <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
-                    Service Interest
-                  </label>
-                  <select
-                    id="service"
-                    name="service"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
-                  >
-                    <option value="">Select a service</option>
-                    <option value="autonomous-cloud">Autonomous Cloud Systems</option>
-                    <option value="ai-automation">AI-Powered Automation</option>
-                    <option value="redundancy">Redundancy & Reliability</option>
-                    <option value="monitoring">Advanced Monitoring</option>
-                    <option value="security">Security & Compliance</option>
-                    <option value="infrastructure">Global Infrastructure</option>
-                    <option value="consulting">Technology Consulting</option>
-                  </select>
-                </div>
-                
+
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    Message
+                    Message *
                   </label>
                   <textarea
                     id="message"
                     name="message"
-                    rows={4}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
-                    placeholder="Tell us about your project and how we can help..."
-                  ></textarea>
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows={6}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+                    placeholder="Tell us about your project, goals, and how we can help..."
+                  />
                 </div>
-                
-                <button
-                  type="submit"
-                  className="w-full btn-primary text-lg py-4"
-                >
-                  Send Message
-                </button>
+
+                <div className="text-center">
+                  <Button type="submit" size="lg">
+                    Send Message
+                  </Button>
+                </div>
               </form>
-            </div>
+            </Card>
           </div>
-        </div>
+        </Container>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Office Locations */}
+      <section className="py-16 lg:py-24 bg-white">
+        <Container>
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Frequently Asked Questions
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Global Presence
             </h2>
-            <p className="text-xl text-gray-600">
-              Common questions about our services and process
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Serving clients worldwide with local expertise
             </p>
           </div>
-          
-          <div className="space-y-6">
-            <div className="card p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                How quickly can you implement autonomous systems?
-              </h3>
-              <p className="text-gray-600">
-                Implementation timelines vary based on complexity, but our autonomous systems typically go live within 2-4 weeks. 
-                We prioritize rapid deployment while maintaining quality and security standards.
-              </p>
-            </div>
-            
-            <div className="card p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                What kind of support do you provide after implementation?
-              </h3>
-              <p className="text-gray-600">
-                We provide 24/7 monitoring and support, with dedicated account managers and technical teams. 
-                Our autonomous systems also include self-healing capabilities to minimize downtime.
-              </p>
-            </div>
-            
-            <div className="card p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                Can your systems integrate with our existing infrastructure?
-              </h3>
-              <p className="text-gray-600">
-                Absolutely! Our autonomous systems are designed to integrate seamlessly with existing infrastructure. 
-                We provide comprehensive migration support and ensure zero disruption to your operations.
-              </p>
-            </div>
-            
-            <div className="card p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                What makes your AI solutions different from others?
-              </h3>
-              <p className="text-gray-600">
-                Our AI systems are truly autonomous - they learn, adapt, and improve without human intervention. 
-                With 227+ active automations and 99.99% uptime, we've proven that autonomous technology delivers superior results.
-              </p>
-            </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card className="text-center">
+              <div className="text-4xl mb-4">🇺🇸</div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">San Francisco</h3>
+              <p className="text-gray-600">Innovation Hub</p>
+              <p className="text-sm text-gray-500 mt-2">123 Tech Street, CA 94105</p>
+            </Card>
+            <Card className="text-center">
+              <div className="text-4xl mb-4">🇬🇧</div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">London</h3>
+              <p className="text-gray-600">European HQ</p>
+              <p className="text-sm text-gray-500 mt-2">456 Innovation Lane, EC1A 1BB</p>
+            </Card>
+            <Card className="text-center">
+              <div className="text-4xl mb-4">🇸🇬</div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Singapore</h3>
+              <p className="text-gray-600">Asia Pacific</p>
+              <p className="text-sm text-gray-500 mt-2">789 Digital Road, 018956</p>
+            </Card>
           </div>
-        </div>
+        </Container>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 lg:py-24 bg-gradient-to-r from-blue-600 to-purple-600">
+        <Container>
+          <div className="text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+              Ready to Get Started?
+            </h2>
+            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+              Join thousands of organizations already leveraging our autonomous technology platform
+            </p>
+            <Button href="/services" variant="secondary" size="lg">
+              Explore Our Services
+            </Button>
+          </div>
+        </Container>
       </section>
     </>
   );

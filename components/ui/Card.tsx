@@ -5,37 +5,27 @@ interface CardProps {
   className?: string;
   hover?: boolean;
   padding?: 'sm' | 'md' | 'lg';
-  shadow?: 'sm' | 'md' | 'lg';
 }
 
-export default function Card({
-  children,
-  className = '',
+export default function Card({ 
+  children, 
+  className = '', 
   hover = true,
-  padding = 'md',
-  shadow = 'md',
-  ...props
+  padding = 'md' 
 }: CardProps) {
   const paddingClasses = {
     sm: 'p-4',
     md: 'p-6',
-    lg: 'p-8'
+    lg: 'p-8',
   };
+
+  const baseClasses = 'bg-white rounded-xl border border-gray-200 shadow-sm';
+  const hoverClasses = hover ? 'hover:shadow-lg hover:border-gray-300 transition-all duration-200' : '';
   
-  const shadowClasses = {
-    sm: 'shadow-sm',
-    md: 'shadow-md',
-    lg: 'shadow-lg'
-  };
-  
-  const hoverClasses = hover 
-    ? 'hover:shadow-xl hover:-translate-y-1 transition-all duration-300' 
-    : '';
-  
-  const classes = `bg-white rounded-xl border border-gray-200/50 ${paddingClasses[padding]} ${shadowClasses[shadow]} ${hoverClasses} ${className}`;
-  
+  const classes = `${baseClasses} ${hoverClasses} ${paddingClasses[padding]} ${className}`;
+
   return (
-    <div className={classes} {...props}>
+    <div className={classes}>
       {children}
     </div>
   );

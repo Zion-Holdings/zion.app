@@ -15,7 +15,7 @@ export default function Footer() {
               <span className="text-xl font-bold">Zion Tech Group</span>
             </div>
             <p className="text-gray-400 mb-6 max-w-md">
-              The world's most advanced autonomous innovation hub delivering cutting-edge technology solutions, 
+              The world&apos;s most advanced autonomous innovation hub delivering cutting-edge technology solutions, 
               intelligent automation systems, and the future of cloud-native AI infrastructure.
             </p>
             <div className="flex space-x-4">
