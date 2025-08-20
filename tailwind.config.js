@@ -8,17 +8,19 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Cursor.com inspired color palette
-        cursor: {
-          blue: '#007acc',
-          'blue-hover': '#005a9e',
-          'blue-light': '#4da6ff',
-          dark: '#1e1e1e',
-          darker: '#0a0a0a',
-          light: '#2d2d2d',
-          lighter: '#404040',
-          'blue-bg': 'rgba(0, 122, 204, 0.1)',
-          'blue-border': 'rgba(0, 122, 204, 0.3)',
+        // Modern color palette
+        primary: {
+          50: '#eff6ff',
+          100: '#dbeafe',
+          200: '#bfdbfe',
+          300: '#93c5fd',
+          400: '#60a5fa',
+          500: '#3b82f6',
+          600: '#2563eb',
+          700: '#1d4ed8',
+          800: '#1e40af',
+          900: '#1e3a8a',
+          950: '#172554',
         },
         // Extended color palette
         gray: {
@@ -181,12 +183,9 @@ module.exports = {
         '5xl': '2.5rem',
       },
       boxShadow: {
-        'cursor': '0 0 0 1px rgba(0, 122, 204, 0.2)',
-        'cursor-lg': '0 0 0 1px rgba(0, 122, 204, 0.3)',
-        'cursor-xl': '0 0 0 1px rgba(0, 122, 204, 0.4)',
-        'glow': '0 0 20px rgba(0, 122, 204, 0.3)',
-        'glow-lg': '0 0 40px rgba(0, 122, 204, 0.4)',
-        'glow-xl': '0 0 60px rgba(0, 122, 204, 0.5)',
+        'glow': '0 0 20px rgba(59, 130, 246, 0.3)',
+        'glow-lg': '0 0 40px rgba(59, 130, 246, 0.4)',
+        'glow-xl': '0 0 60px rgba(59, 130, 246, 0.5)',
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out forwards',
@@ -235,8 +234,8 @@ module.exports = {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'gradient-cursor': 'linear-gradient(135deg, #007acc 0%, #4da6ff 100%)',
-        'gradient-cursor-hover': 'linear-gradient(135deg, #005a9e 0%, #007acc 100%)',
+        'gradient-primary': 'linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%)',
+        'gradient-primary-hover': 'linear-gradient(135deg, #2563eb 0%, #3b82f6 100%)',
       },
       container: {
         center: true,

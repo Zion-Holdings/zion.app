@@ -5,39 +5,23 @@
 /* Import Inter font for modern typography */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
-/* CSS Variables for Cursor.com-inspired theming */
+/* CSS Variables for modern theming */
 :root {
-  --background: #0a0a0a;
+  --background: #000000;
   --foreground: #ffffff;
-  --primary: #007acc;
+  --primary: #3b82f6;
   --primary-foreground: #ffffff;
-  --secondary: #1e1e1e;
+  --secondary: #1f2937;
   --secondary-foreground: #f9fafb;
-  --accent: #007acc;
+  --accent: #10b981;
   --accent-foreground: #ffffff;
-  --muted: #2d2d2d;
+  --muted: #374151;
   --muted-foreground: #9ca3af;
-  --border: #404040;
-  --input: #2d2d2d;
-  --ring: #007acc;
+  --border: #374151;
+  --input: #374151;
+  --ring: #3b82f6;
   --radius: 0.75rem;
   --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  --cursor-blue: #007acc;
-  --cursor-blue-hover: #005a9e;
-  --cursor-dark: #1e1e1e;
-  --cursor-darker: #0a0a0a;
-  --cursor-light: #2d2d2d;
-  --cursor-lighter: #404040;
-  --cursor-accent: #00d4aa;
-  --cursor-accent-hover: #00b894;
-  --cursor-purple: #8b5cf6;
-  --cursor-purple-hover: #7c3aed;
-  --cursor-orange: #f59e0b;
-  --cursor-orange-hover: #d97706;
-  --cursor-red: #ef4444;
-  --cursor-red-hover: #dc2626;
-  --cursor-green: #10b981;
-  --cursor-green-hover: #059669;
 }
 
 /* Base styles */
@@ -92,7 +76,7 @@ a {
 }
 
 a:hover {
-  color: var(--cursor-blue);
+  color: var(--primary);
 }
 
 /* Custom scrollbar */
@@ -101,16 +85,16 @@ a:hover {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--cursor-dark);
+  background: #1f2937;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--cursor-lighter);
+  background: #4b5563;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--cursor-blue);
+  background: #3b82f6;
 }
 
 /* Focus styles */
@@ -217,10 +201,10 @@ a:hover {
 
 @keyframes glow {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(0, 122, 204, 0.3);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
   }
   50% {
-    box-shadow: 0 0 40px rgba(0, 122, 204, 0.6);
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.6);
   }
 }
 
@@ -270,11 +254,11 @@ a:hover {
 
 .hover-lift:hover {
   transform: translateY(-2px);
-  box-shadow: 0 20px 40px rgba(0, 122, 204, 0.15);
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
 }
 
 .hover-glow:hover {
-  box-shadow: 0 0 30px rgba(0, 122, 204, 0.4);
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
 }
 
 /* Gradient text utilities */
@@ -328,40 +312,40 @@ a:hover {
 /* Background patterns */
 .bg-grid {
   background-image: 
-    linear-gradient(rgba(0, 122, 204, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 122, 204, 0.1) 1px, transparent 1px);
+    linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
   background-size: 50px 50px;
 }
 
 .bg-dots {
-  background-image: radial-gradient(circle, rgba(0, 122, 204, 0.3) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(59, 130, 246, 0.3) 1px, transparent 1px);
   background-size: 20px 20px;
 }
 
 /* Gradient backgrounds */
 .bg-gradient-cursor {
-  @apply bg-gradient-to-br from-cursor-darker via-cursor-dark to-cursor-darker;
+  @apply bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900;
 }
 
 .bg-gradient-cursor-blue {
-  @apply bg-gradient-to-br from-cursor-darker via-cursor-dark to-blue-900/20;
+  @apply bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900/20;
 }
 
 .bg-gradient-cursor-accent {
-  @apply bg-gradient-to-br from-cursor-darker via-cursor-dark to-cursor-accent/10;
+  @apply bg-gradient-to-br from-gray-900 via-gray-800 to-green-500/10;
 }
 
 /* Border gradients */
 .border-gradient-blue {
   border: 1px solid transparent;
-  background: linear-gradient(var(--cursor-darker), var(--cursor-darker)) padding-box,
-              linear-gradient(45deg, var(--cursor-blue), var(--cursor-accent)) border-box;
+  background: linear-gradient(var(--background), var(--background)) padding-box,
+              linear-gradient(45deg, #3b82f6, #10b981) border-box;
 }
 
 .border-gradient-purple {
   border: 1px solid transparent;
-  background: linear-gradient(var(--cursor-darker), var(--cursor-darker)) padding-box,
-              linear-gradient(45deg, var(--cursor-purple), var(--cursor-blue)) border-box;
+  background: linear-gradient(var(--background), var(--background)) padding-box,
+              linear-gradient(45deg, #8b5cf6, #3b82f6) border-box;
 }
 
 /* Text shadows */

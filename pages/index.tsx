@@ -4,6 +4,7 @@ import Hero from '../components/sections/Hero';
 import Features from '../components/sections/Features';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
+import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight } from 'lucide-react';
 
 export default function HomePage() {
   const heroStats = [
@@ -15,42 +16,42 @@ export default function HomePage() {
 
   const platformFeatures = [
     {
-      icon: '☁️',
+      icon: <Cloud className="w-8 h-8 text-white" />,
       title: 'Autonomous Cloud Systems',
       description: 'Self-healing CI/CD pipelines, intelligent build orchestration, and zero-downtime deployments.',
       color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
       gradient: 'from-cyan-400 to-blue-500',
     },
     {
-      icon: '🤖',
+      icon: <Bot className="w-8 h-8 text-white" />,
       title: 'AI-Powered Automation',
       description: '227+ autonomous agents, intelligent content generation, and predictive maintenance.',
       color: 'bg-gradient-to-br from-fuchsia-500 to-purple-600',
       gradient: 'from-fuchsia-400 to-purple-500',
     },
     {
-      icon: '🔄',
+      icon: <RefreshCw className="w-8 h-8 text-white" />,
       title: 'Redundancy & Reliability',
       description: 'Multi-layer redundancy systems, intelligent failover, and 99.99% uptime guarantee.',
       color: 'bg-gradient-to-br from-green-500 to-emerald-600',
       gradient: 'from-green-400 to-emerald-500',
     },
     {
-      icon: '🚀',
+      icon: <Zap className="w-8 h-8 text-white" />,
       title: 'Performance Optimization',
       description: 'Real-time monitoring, automated scaling, and intelligent resource management.',
       color: 'bg-gradient-to-br from-orange-500 to-red-600',
       gradient: 'from-orange-400 to-red-500',
     },
     {
-      icon: '🔒',
+      icon: <Shield className="w-8 h-8 text-white" />,
       title: 'Security & Compliance',
       description: 'Advanced threat detection, automated security updates, and compliance monitoring.',
       color: 'bg-gradient-to-br from-indigo-500 to-purple-600',
       gradient: 'from-indigo-400 to-purple-500',
     },
     {
-      icon: '📊',
+      icon: <BarChart3 className="w-8 h-8 text-white" />,
       title: 'Analytics & Insights',
       description: 'Comprehensive reporting, predictive analytics, and actionable business intelligence.',
       color: 'bg-gradient-to-br from-teal-500 to-cyan-600',
@@ -107,17 +108,17 @@ export default function HomePage() {
       />
 
       {/* Technology Stack */}
-      <section className="section-padding bg-gradient-cursor-blue">
-        <div className="container-cursor">
+      <section className="py-24 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20 animate-fade-in">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-cursor-blue/10 border border-cursor-blue/20 text-cursor-blue text-sm font-medium mb-6">
-              <span className="w-2 h-2 bg-cursor-blue rounded-full mr-2 animate-pulse" />
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse" />
               Built with Modern Technology
             </div>
-            <h2 className="text-responsive-lg font-bold mb-8 gradient-text text-shadow">
+            <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight">
               Technology Stack
             </h2>
-            <p className="text-responsive-md text-gray-400 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
               Our platform leverages the latest technologies and best practices to deliver exceptional performance and reliability.
             </p>
           </div>
@@ -126,7 +127,7 @@ export default function HomePage() {
             {technologyStack.map((tech, index) => (
               <Card
                 key={index}
-                className="card-hover text-center group border-gradient-blue"
+                className="text-center group border border-gray-800 hover:border-blue-500/30"
                 style={{ animationDelay: `${(index * 0.05) + 0.2}s` }}
               >
                 <div className="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -141,13 +142,13 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-r from-cursor-blue to-blue-600 relative overflow-hidden">
-        <div className="absolute inset-0 bg-dots opacity-10" />
-        <div className="container-cursor text-center relative z-10">
-          <h2 className="text-responsive-lg font-bold text-white mb-8 text-shadow-lg">
+      <section className="py-24 bg-gradient-to-r from-blue-600 to-blue-700 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px] opacity-10" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8">
             Ready to Transform Your Business?
           </h2>
-          <p className="text-responsive-md text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed">
             Join the future of autonomous technology and experience unprecedented efficiency, reliability, and innovation.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
@@ -155,15 +156,16 @@ export default function HomePage() {
               href="/contact"
               variant="secondary"
               size="lg"
-              className="bg-white text-cursor-blue hover:bg-gray-100 shadow-2xl hover-glow"
+              className="bg-white text-blue-600 hover:bg-gray-100 shadow-2xl"
             >
               Start Your Journey
+              <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
             <Button
               href="/case-studies"
               variant="outline"
               size="lg"
-              className="border-white text-white hover:bg-white hover:text-cursor-blue shadow-2xl"
+              className="border-white text-white hover:bg-white hover:text-blue-600 shadow-2xl"
             >
               View Case Studies
             </Button>
