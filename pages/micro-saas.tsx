@@ -25,7 +25,7 @@ export default function MicroSaasPage() {
       icon: '📝',
       color: 'from-pink-500 to-rose-600',
       textColor: 'text-pink-400',
-      link: 'https://contentgen.ziontechgroup.com',
+      link: 'https://ziontechgroup.com/ai-content-generator',
       marketPosition: 'Competitive with Jasper ($39-99), Copy.ai ($36-186), and Writesonic ($12.67-100)',
       targetAudience: 'Content marketers, agencies, e-commerce businesses, and content creators'
     },
@@ -49,7 +49,7 @@ export default function MicroSaasPage() {
       icon: '🎨',
       color: 'from-violet-500 to-purple-600',
       textColor: 'text-violet-400',
-      link: 'https://design.ziontechgroup.com',
+      link: 'https://ziontechgroup.com/design-system-builder',
       marketPosition: 'Competitive with Zeroheight ($0-200), Frontify ($0-200), and InVision DSM ($0-100)',
       targetAudience: 'Design teams, product managers, and design system architects'
     },
@@ -73,7 +73,7 @@ export default function MicroSaasPage() {
       icon: '📱',
       color: 'from-amber-500 to-orange-600',
       textColor: 'text-amber-400',
-      link: 'https://monitor.ziontechgroup.com',
+      link: 'https://ziontechgroup.com/app-performance-monitor',
       marketPosition: 'Competitive with Sentry ($26-80), LogRocket ($99-199), and New Relic ($0-99)',
       targetAudience: 'Developers, DevOps teams, and product managers'
     },
@@ -97,7 +97,7 @@ export default function MicroSaasPage() {
       icon: '🔍',
       color: 'from-emerald-500 to-green-600',
       textColor: 'text-emerald-400',
-      link: 'https://seo.ziontechgroup.com',
+      link: 'https://ziontechgroup.com/seo-automation-suite',
       marketPosition: 'Competitive with Ahrefs ($99-999), SEMrush ($119-449), and Moz ($99-599)',
       targetAudience: 'SEO specialists, digital marketers, and agencies'
     },
@@ -121,7 +121,7 @@ export default function MicroSaasPage() {
       icon: '💬',
       color: 'from-sky-500 to-blue-600',
       textColor: 'text-sky-400',
-      link: 'https://chatbot.ziontechgroup.com',
+      link: 'https://ziontechgroup.com/ai-chatbot-platform',
       marketPosition: 'Competitive with Intercom ($39-499), Drift ($0-2500), and ManyChat ($0-15)',
       targetAudience: 'Customer support teams, marketers, and e-commerce businesses'
     },
@@ -145,7 +145,7 @@ export default function MicroSaasPage() {
       icon: '📊',
       color: 'from-rose-500 to-pink-600',
       textColor: 'text-rose-400',
-      link: 'https://bi.ziontechgroup.com',
+      link: 'https://ziontechgroup.com/business-intelligence-hub',
       marketPosition: 'Competitive with Tableau ($70-70), Power BI ($9.99-20), and Looker ($500-5000)',
       targetAudience: 'Data analysts, business intelligence teams, and executives'
     },
@@ -169,7 +169,7 @@ export default function MicroSaasPage() {
       icon: '📧',
       color: 'from-indigo-500 to-blue-600',
       textColor: 'text-indigo-400',
-      link: 'https://email.ziontechgroup.com',
+      link: 'https://ziontechgroup.com/email-marketing-automation',
       marketPosition: 'Competitive with Mailchimp ($13-350), ConvertKit ($29-59), and ActiveCampaign ($29-259)',
       targetAudience: 'Digital marketers, e-commerce businesses, and content creators'
     },
@@ -193,7 +193,7 @@ export default function MicroSaasPage() {
       icon: '📱',
       color: 'from-teal-500 to-cyan-600',
       textColor: 'text-teal-400',
-      link: 'https://social.ziontechgroup.com',
+      link: 'https://ziontechgroup.com/social-media-scheduler',
       marketPosition: 'Competitive with Buffer ($15-99), Hootsuite ($29-599), and Later ($18-40)',
       targetAudience: 'Social media managers, influencers, and marketing teams'
     },
@@ -217,7 +217,7 @@ export default function MicroSaasPage() {
       icon: '💡',
       color: 'from-yellow-500 to-orange-600',
       textColor: 'text-yellow-400',
-      link: 'https://feedback.ziontechgroup.com',
+      link: 'https://ziontechgroup.com/customer-feedback-analytics',
       marketPosition: 'Competitive with UserVoice ($15-500), Productboard ($20-2000), and Canny ($50-400)',
       targetAudience: 'Product managers, customer success teams, and UX researchers'
     },
@@ -241,7 +241,7 @@ export default function MicroSaasPage() {
       icon: '💰',
       color: 'from-green-500 to-emerald-600',
       textColor: 'text-green-400',
-      link: 'https://billing.ziontechgroup.com',
+      link: 'https://ziontechgroup.com/invoice-billing-manager',
       marketPosition: 'Competitive with FreshBooks ($15-55), Wave (Free), and QuickBooks ($30-200)',
       targetAudience: 'Freelancers, small businesses, and accounting professionals'
     },
@@ -265,7 +265,7 @@ export default function MicroSaasPage() {
       icon: '📋',
       color: 'from-purple-500 to-indigo-600',
       textColor: 'text-purple-400',
-      link: 'https://projects.ziontechgroup.com',
+      link: 'https://ziontechgroup.com/project-management-hub',
       marketPosition: 'Competitive with Asana ($10.99-24.99), Monday.com ($8-16), and ClickUp ($5-12)',
       targetAudience: 'Project managers, development teams, and creative agencies'
     },
@@ -289,7 +289,7 @@ export default function MicroSaasPage() {
       icon: '🔌',
       color: 'from-gray-500 to-slate-600',
       textColor: 'text-gray-400',
-      link: 'https://api.ziontechgroup.com',
+      link: 'https://ziontechgroup.com/api-gateway-management',
       marketPosition: 'Competitive with Kong ($250-500), AWS API Gateway ($3.50/million calls), and Azure API Management ($0.50-4.00)',
       targetAudience: 'Developers, DevOps engineers, and platform architects'
     },
@@ -313,7 +313,7 @@ export default function MicroSaasPage() {
       icon: '🎬',
       color: 'from-red-500 to-pink-600',
       textColor: 'text-red-400',
-      link: 'https://video.ziontechgroup.com',
+      link: 'https://ziontechgroup.com/ai-video-generator',
       marketPosition: 'Competitive with Synthesia ($30-99), Lumen5 ($19-79), and InVideo ($15-39)',
       targetAudience: 'Content creators, marketers, educators, and social media managers'
     },
@@ -337,7 +337,7 @@ export default function MicroSaasPage() {
       icon: '🛒',
       color: 'from-blue-500 to-indigo-600',
       textColor: 'text-blue-400',
-      link: 'https://ecommerce.ziontechgroup.com',
+      link: 'https://ziontechgroup.com/ecommerce-analytics-platform',
       marketPosition: 'Competitive with Google Analytics 4 (Free), Hotjar ($32-500), and Crazy Egg ($24-99)',
       targetAudience: 'E-commerce businesses, online retailers, and digital marketers'
     },
@@ -361,7 +361,7 @@ export default function MicroSaasPage() {
       icon: '⚖️',
       color: 'from-slate-500 to-gray-600',
       textColor: 'text-slate-400',
-      link: 'https://legal.ziontechgroup.com',
+      link: 'https://ziontechgroup.com/legal-document-generator',
       marketPosition: 'Competitive with LegalZoom ($0-299), Rocket Lawyer ($39.99-99.99), and DocuSign ($10-25)',
       targetAudience: 'Small businesses, freelancers, legal professionals, and startups'
     },
@@ -385,7 +385,7 @@ export default function MicroSaasPage() {
       icon: '👥',
       color: 'from-cyan-500 to-blue-600',
       textColor: 'text-cyan-400',
-      link: 'https://hr.ziontechgroup.com',
+      link: 'https://ziontechgroup.com/hr-management-suite',
       marketPosition: 'Competitive with BambooHR ($6.19-8.75), Gusto ($40-80), and Zenefits ($8-27)',
       targetAudience: 'HR professionals, small to medium businesses, and growing companies'
     },
@@ -409,7 +409,7 @@ export default function MicroSaasPage() {
       icon: '🎧',
       color: 'from-emerald-500 to-green-600',
       textColor: 'text-emerald-400',
-      link: 'https://support.ziontechgroup.com',
+      link: 'https://ziontechgroup.com/ai-customer-support',
       marketPosition: 'Competitive with Zendesk ($49-215), Freshdesk ($15-79), and Intercom ($39-499)',
       targetAudience: 'Customer support teams, e-commerce businesses, and service companies'
     },
@@ -433,9 +433,226 @@ export default function MicroSaasPage() {
       icon: '💾',
       color: 'from-indigo-500 to-purple-600',
       textColor: 'text-indigo-400',
-      link: 'https://backup.ziontechgroup.com',
+      link: 'https://ziontechgroup.com/data-backup-recovery',
       marketPosition: 'Competitive with Backblaze ($7-70), Carbonite ($6-24), and Acronis ($69-99)',
       targetAudience: 'Businesses, IT professionals, and organizations requiring data protection'
+    },
+    // New enhanced services
+    {
+      name: 'AI Code Assistant Pro',
+      tagline: 'Intelligent coding companion',
+      price: '$79',
+      period: '/month',
+      description: 'AI-powered code completion, refactoring, and debugging assistance for developers.',
+      features: [
+        'Intelligent code completion',
+        'AI-powered refactoring',
+        'Bug detection & fixes',
+        'Code documentation generation',
+        'Multi-language support',
+        'IDE integration',
+        'Team collaboration features',
+        'Code review assistance'
+      ],
+      popular: true,
+      icon: '⚡',
+      color: 'from-yellow-500 to-orange-600',
+      textColor: 'text-yellow-400',
+      link: 'https://ziontechgroup.com/ai-code-assistant',
+      marketPosition: 'Competitive with GitHub Copilot ($10-19), Tabnine ($12-39), and Kite (Free-$99)',
+      targetAudience: 'Software developers, engineering teams, and coding bootcamps'
+    },
+    {
+      name: 'Cybersecurity Threat Monitor',
+      tagline: 'Real-time security threat detection',
+      price: '$89',
+      period: '/month',
+      description: 'Advanced cybersecurity monitoring with AI-powered threat detection and automated response.',
+      features: [
+        'Real-time threat detection',
+        'AI-powered risk assessment',
+        'Automated incident response',
+        'Vulnerability scanning',
+        'Compliance monitoring',
+        'Security analytics dashboard',
+        '24/7 security operations',
+        'Integration with SIEM tools'
+      ],
+      popular: false,
+      icon: '🛡️',
+      color: 'from-red-500 to-pink-600',
+      textColor: 'text-red-400',
+      link: 'https://ziontechgroup.com/cybersecurity-threat-monitor',
+      marketPosition: 'Competitive with CrowdStrike ($8.99-15.99), SentinelOne ($2.99-6.99), and Carbon Black ($6.99-12.99)',
+      targetAudience: 'IT security teams, cybersecurity professionals, and compliance officers'
+    },
+    {
+      name: 'Supply Chain Analytics',
+      tagline: 'End-to-end supply chain optimization',
+      price: '$119',
+      period: '/month',
+      description: 'Comprehensive supply chain analytics with predictive modeling and optimization recommendations.',
+      features: [
+        'Supply chain mapping',
+        'Demand forecasting',
+        'Inventory optimization',
+        'Supplier performance tracking',
+        'Risk assessment & mitigation',
+        'Cost optimization analysis',
+        'Real-time monitoring',
+        'Integration with ERP systems'
+      ],
+      popular: false,
+      icon: '🚚',
+      color: 'from-blue-500 to-indigo-600',
+      textColor: 'text-blue-400',
+      link: 'https://ziontechgroup.com/supply-chain-analytics',
+      marketPosition: 'Competitive with SAP Ariba ($0-1000+), Oracle SCM ($0-500+), and Kinaxis ($0-500+)',
+      targetAudience: 'Supply chain managers, logistics professionals, and manufacturing companies'
+    },
+    {
+      name: 'AI Market Research Platform',
+      tagline: 'Intelligent market intelligence',
+      price: '$99',
+      period: '/month',
+      description: 'AI-powered market research with competitor analysis, trend prediction, and consumer insights.',
+      features: [
+        'Competitor intelligence',
+        'Market trend analysis',
+        'Consumer behavior insights',
+        'AI-powered predictions',
+        'Custom research reports',
+        'Data visualization tools',
+        'Real-time market updates',
+        'Export & sharing capabilities'
+      ],
+      popular: false,
+      icon: '🔬',
+      color: 'from-purple-500 to-violet-600',
+      textColor: 'text-purple-400',
+      link: 'https://ziontechgroup.com/ai-market-research',
+      marketPosition: 'Competitive with SimilarWeb ($125-833), SEMrush ($119-449), and Ahrefs ($99-999)',
+      targetAudience: 'Market researchers, business strategists, and product managers'
+    },
+    {
+      name: 'Financial Planning & Forecasting',
+      tagline: 'AI-powered financial intelligence',
+      price: '$89',
+      period: '/month',
+      description: 'Advanced financial planning with AI-powered forecasting, budgeting, and scenario analysis.',
+      features: [
+        'AI-powered forecasting',
+        'Budget planning & tracking',
+        'Scenario analysis',
+        'Cash flow management',
+        'Financial modeling',
+        'Risk assessment',
+        'Compliance reporting',
+        'Integration with accounting systems'
+      ],
+      popular: false,
+      icon: '📈',
+      color: 'from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      link: 'https://ziontechgroup.com/financial-planning-forecasting',
+      marketPosition: 'Competitive with Adaptive Insights ($9-50), Anaplan ($0-1000+), and Planful ($0-1000+)',
+      targetAudience: 'Financial analysts, CFOs, and business consultants'
+    },
+    {
+      name: 'AI-Powered CRM',
+      tagline: 'Intelligent customer relationship management',
+      price: '$79',
+      period: '/month',
+      description: 'Next-generation CRM with AI-powered lead scoring, sales forecasting, and customer insights.',
+      features: [
+        'AI lead scoring',
+        'Sales forecasting',
+        'Customer behavior analysis',
+        'Automated follow-ups',
+        'Pipeline management',
+        'Performance analytics',
+        'Mobile app access',
+        'Integration with popular tools'
+      ],
+      popular: true,
+      icon: '🤝',
+      color: 'from-teal-500 to-cyan-600',
+      textColor: 'text-teal-400',
+      link: 'https://ziontechgroup.com/ai-powered-crm',
+      marketPosition: 'Competitive with Salesforce ($25-300), HubSpot ($45-1200), and Pipedrive ($12.50-99)',
+      targetAudience: 'Sales teams, business development professionals, and customer success managers'
+    },
+    {
+      name: 'Learning Management System',
+      tagline: 'AI-powered corporate learning platform',
+      price: '$69',
+      period: '/month',
+      description: 'Modern LMS with AI-powered content recommendations, adaptive learning, and progress tracking.',
+      features: [
+        'AI content recommendations',
+        'Adaptive learning paths',
+        'Progress tracking',
+        'Interactive assessments',
+        'Mobile learning',
+        'Analytics & reporting',
+        'Integration with HR systems',
+        'Multi-language support'
+      ],
+      popular: false,
+      icon: '🎓',
+      color: 'from-indigo-500 to-purple-600',
+      textColor: 'text-indigo-400',
+      link: 'https://ziontechgroup.com/learning-management-system',
+      marketPosition: 'Competitive with Cornerstone ($0-1000+), Saba ($0-1000+), and Docebo ($0-1000+)',
+      targetAudience: 'HR professionals, training managers, and corporate educators'
+    },
+    {
+      name: 'IoT Device Management',
+      tagline: 'Enterprise IoT platform',
+      price: '$129',
+      period: '/month',
+      description: 'Comprehensive IoT device management with monitoring, analytics, and automation capabilities.',
+      features: [
+        'Device provisioning & management',
+        'Real-time monitoring',
+        'Data analytics & insights',
+        'Automated alerts',
+        'Security & compliance',
+        'Integration with cloud platforms',
+        'Scalable architecture',
+        'API access for developers'
+      ],
+      popular: false,
+      icon: '🌐',
+      color: 'from-slate-500 to-gray-600',
+      textColor: 'text-slate-400',
+      link: 'https://ziontechgroup.com/iot-device-management',
+      marketPosition: 'Competitive with AWS IoT ($0-5), Azure IoT Hub ($0-50), and Google Cloud IoT ($0-50)',
+      targetAudience: 'IoT developers, system integrators, and enterprise IoT deployments'
+    },
+    {
+      name: 'AI-Powered Analytics Dashboard',
+      tagline: 'Intelligent business intelligence',
+      price: '$89',
+      period: '/month',
+      description: 'AI-powered analytics dashboard with automated insights, predictive analytics, and custom reporting.',
+      features: [
+        'AI-powered insights',
+        'Predictive analytics',
+        'Custom dashboards',
+        'Real-time data processing',
+        'Automated reporting',
+        'Data visualization',
+        'Integration with data sources',
+        'Mobile-responsive design'
+      ],
+      popular: false,
+      icon: '📊',
+      color: 'from-rose-500 to-pink-600',
+      textColor: 'text-rose-400',
+      link: 'https://ziontechgroup.com/ai-powered-analytics-dashboard',
+      marketPosition: 'Competitive with Tableau ($70-70), Power BI ($9.99-20), and Looker ($500-5000)',
+      targetAudience: 'Data analysts, business intelligence teams, and executives'
     }
   ];
 
@@ -470,6 +687,31 @@ export default function MicroSaasPage() {
       marketSize: "$22.1B",
       growthRate: "13.7%",
       keyTrends: ["Conversion optimization", "Customer behavior analytics", "AI-powered recommendations"]
+    },
+    "Cybersecurity & Compliance": {
+      marketSize: "$15.2B",
+      growthRate: "21.3%",
+      keyTrends: ["AI-powered threat detection", "Zero-trust security", "Compliance automation"]
+    },
+    "Supply Chain & Logistics": {
+      marketSize: "$19.8B",
+      growthRate: "16.7%",
+      keyTrends: ["Predictive analytics", "Real-time tracking", "AI optimization"]
+    },
+    "Financial Technology": {
+      marketSize: "$25.4B",
+      growthRate: "19.2%",
+      keyTrends: ["AI-powered forecasting", "Automated compliance", "Real-time analytics"]
+    },
+    "Learning & Development": {
+      marketSize: "$13.6B",
+      growthRate: "14.8%",
+      keyTrends: ["Adaptive learning", "AI content recommendations", "Mobile-first platforms"]
+    },
+    "IoT & Edge Computing": {
+      marketSize: "$11.9B",
+      growthRate: "23.1%",
+      keyTrends: ["Edge AI", "Real-time processing", "Scalable architectures"]
     }
   };
 
@@ -477,33 +719,43 @@ export default function MicroSaasPage() {
   const competitiveAdvantages = [
     {
       title: "Specialized Focus",
-      description: "Each service is designed for a specific business need, ensuring deep functionality and expertise.",
+      description: "Each of our 30 services is designed for a specific business need, ensuring deep functionality and expertise without feature bloat.",
       icon: "🎯"
     },
     {
       title: "AI Integration",
-      description: "Advanced AI capabilities across all services for automation and intelligent insights.",
+      description: "Advanced AI capabilities across all services for automation, intelligent insights, and predictive analytics.",
       icon: "🤖"
     },
     {
       title: "Seamless Integration",
-      description: "All services work together seamlessly with unified authentication and data sharing.",
+      description: "All services work together seamlessly with unified authentication, data sharing, and cross-service workflows.",
       icon: "🔗"
     },
     {
       title: "Transparent Pricing",
-      description: "Clear, predictable pricing with no hidden fees or complex tier structures.",
+      description: "Clear, predictable pricing with no hidden fees, complex tier structures, or surprise charges.",
       icon: "💰"
     },
     {
       title: "Enterprise Security",
-      description: "Bank-level security with SOC 2 compliance and regular security audits.",
+      description: "Bank-level security with SOC 2 compliance, regular security audits, and enterprise-grade infrastructure.",
       icon: "🔒"
     },
     {
       title: "24/7 Support",
-      description: "Round-the-clock customer support with dedicated success managers.",
+      description: "Round-the-clock customer support with dedicated success managers and comprehensive documentation.",
       icon: "🔄"
+    },
+    {
+      title: "Rapid Implementation",
+      description: "Get up and running in minutes with our pre-built templates, integrations, and guided setup processes.",
+      icon: "⚡"
+    },
+    {
+      title: "Scalable Architecture",
+      description: "Built for growth with auto-scaling, performance optimization, and enterprise-grade reliability.",
+      icon: "📈"
     }
   ];
 
@@ -535,10 +787,12 @@ export default function MicroSaasPage() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400"> Every Business Need</span>
             </h1>
             <p className="text-xl text-gray-400 max-w-5xl mx-auto leading-relaxed mb-12">
-              18 specialized micro SaaS solutions covering content creation, video generation, design systems, performance monitoring, 
+              30 specialized micro SaaS solutions covering content creation, video generation, design systems, performance monitoring, 
               SEO automation, chatbots, business intelligence, email marketing, social media management, 
               customer feedback, billing, project management, API infrastructure, e-commerce analytics, legal document generation, 
-              HR management, AI customer support, and data backup. Focused, affordable solutions that deliver specific value 
+              HR management, AI customer support, data backup, AI code assistance, cybersecurity monitoring, supply chain analytics, 
+              market research, financial planning, CRM systems, learning management, IoT management, and analytics dashboards. 
+              Focused, affordable solutions that deliver specific value 
               without the complexity of enterprise platforms. Start with a free trial and scale as you grow.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -558,6 +812,74 @@ export default function MicroSaasPage() {
                 className="border-green-500 text-green-400 hover:bg-green-500 hover:text-white"
               >
                 View Pricing
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* Popular Services Highlight */}
+        <section className="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">
+                Most Popular Services
+              </h2>
+              <p className="text-xl text-gray-400 max-w-4xl mx-auto">
+                Our top-performing solutions that customers love for their reliability, ease of use, and exceptional value.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {microSaasServices.filter(service => service.popular).map((service, index) => (
+                <div key={index} className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 border border-gray-700 hover:border-green-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-green-500/20 group">
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="text-4xl">{service.icon}</div>
+                    <div className="inline-flex items-center px-3 py-1 rounded-full bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 text-sm font-medium">
+                      <Star className="w-4 h-4 mr-1" />
+                      Popular
+                    </div>
+                  </div>
+                  
+                  <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-green-400 transition-colors">
+                    {service.name}
+                  </h3>
+                  <p className="text-gray-400 mb-4">{service.tagline}</p>
+                  
+                  <div className="mb-6">
+                    <div className="flex items-baseline mb-2">
+                      <span className="text-3xl font-bold text-white">{service.price}</span>
+                      <span className="text-gray-400 ml-1">{service.period}</span>
+                    </div>
+                    <p className="text-sm text-green-400 font-medium">✓ 14-day free trial</p>
+                  </div>
+
+                  <p className="text-gray-300 leading-relaxed mb-6">{service.description}</p>
+
+                  <Button
+                    href={service.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 group-hover:shadow-lg group-hover:shadow-green-500/25 transition-all duration-300"
+                  >
+                    Start Free Trial
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </div>
+              ))}
+            </div>
+
+            <div className="text-center mt-12">
+              <p className="text-lg text-gray-400 mb-6">
+                All popular services include enterprise features, priority support, and advanced analytics.
+              </p>
+              <Button
+                href="#services"
+                variant="outline"
+                size="lg"
+                className="border-green-500 text-green-400 hover:bg-green-500 hover:text-white"
+              >
+                View All 30 Services
+                <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </div>
           </div>
@@ -655,7 +977,7 @@ export default function MicroSaasPage() {
                 Our Micro SaaS Portfolio
               </h2>
               <p className="text-xl text-gray-400 max-w-4xl mx-auto">
-                Our portfolio of 18 specialized solutions covers the most critical business needs, from content creation 
+                Our portfolio of 30 specialized solutions covers the most critical business needs, from content creation 
                 and video generation to API management and data protection. Each solution is designed to solve a specific 
                 business problem with deep functionality and competitive pricing.
               </p>
@@ -932,7 +1254,7 @@ export default function MicroSaasPage() {
               Ready to Get Started?
             </h2>
             <p className="text-xl text-green-100 mb-12 max-w-4xl mx-auto leading-relaxed">
-              Choose from our portfolio of 18 specialized solutions. All services include comprehensive documentation, 
+              Choose from our portfolio of 30 specialized solutions. All services include comprehensive documentation, 
               dedicated support, enterprise-grade reliability, and 14-day free trials. Start with one solution 
               and add more as your business grows.
             </p>
