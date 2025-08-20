@@ -400,6 +400,92 @@ export default function HomePage() {
             </div>
           </section>
 
+          {/* Advanced Automation Capabilities */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">⚙️ Advanced Automation Capabilities</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-blue-400 mb-4 text-center">🔍 Content Intelligence</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• AI Content Generation</li>
+                  <li>• SEO Optimization</li>
+                  <li>• Content Quality Analysis</li>
+                  <li>• Automated Blog Creation</li>
+                  <li>• Social Media Automation</li>
+                </ul>
+                <Link href="/automation" className="text-blue-400 hover:text-blue-300 text-sm font-semibold">
+                  Explore Content Systems →
+                </Link>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-purple-400 mb-4 text-center">🎯 Marketing Automation</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• LinkedIn Marketing</li>
+                  <li>• Instagram Automation</li>
+                  <li>• Content Promotion</li>
+                  <li>• Lead Generation</li>
+                  <li>• Campaign Management</li>
+                </ul>
+                <Link href="/automation" className="text-purple-400 hover:text-purple-300 text-sm font-semibold">
+                  Explore Marketing Systems →
+                </Link>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-emerald-400 mb-4 text-center">🔄 Continuous Improvement</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Self-Healing Systems</li>
+                  <li>• Performance Optimization</li>
+                  <li>• Error Detection & Recovery</li>
+                  <li>• Automated Testing</li>
+                  <li>• Quality Assurance</li>
+                </ul>
+                <Link href="/automation" className="text-emerald-400 hover:text-emerald-300 text-sm font-semibold">
+                  Explore Improvement Systems →
+                </Link>
+              </div>
+            </div>
+          </section>
+
+          {/* Enterprise Features & Capabilities */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">🏢 Enterprise Features & Capabilities</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 text-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-indigo-400 to-blue-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <span className="text-xl">🔐</span>
+                </div>
+                <h3 className="text-lg font-semibold text-indigo-400 mb-2">Security & Compliance</h3>
+                <p className="text-white/70 text-sm">Enterprise-grade protection</p>
+              </div>
+              
+              <div className="bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 text-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-rose-400 to-pink-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <span className="text-xl">📈</span>
+                </div>
+                <h3 className="text-lg font-semibold text-rose-400 mb-2">Analytics & Insights</h3>
+                <p className="text-white/70 text-sm">Real-time performance data</p>
+              </div>
+              
+              <div className="bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 text-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-orange-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <span className="text-xl">🌐</span>
+                </div>
+                <h3 className="text-lg font-semibold text-amber-400 mb-2">Global CDN</h3>
+                <p className="text-white/70 text-sm">Worldwide content delivery</p>
+              </div>
+              
+              <div className="bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 text-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-teal-400 to-cyan-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <span className="text-xl">⚡</span>
+                </div>
+                <h3 className="text-lg font-semibold text-teal-400 mb-2">Performance</h3>
+                <p className="text-white/70 text-sm">Lightning-fast optimization</p>
+              </div>
+            </div>
+          </section>
+
           {/* Latest Autonomous Content */}
           <section className="mx-auto max-w-7xl px-6 pb-14">
             <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Latest Autonomous Content</h2>
