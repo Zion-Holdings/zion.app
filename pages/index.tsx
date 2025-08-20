@@ -121,7 +121,9 @@ export default function HomePage() {
               Specialized Tools for Every Business Need
             </h2>
             <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
-              From AI-powered content creation to advanced analytics, our micro SaaS solutions deliver focused value with transparent pricing.
+              Discover 12 specialized micro SaaS solutions covering content creation, design systems, performance monitoring, 
+              SEO automation, chatbots, business intelligence, email marketing, social media, customer feedback, project management, 
+              billing, and HR operations. Focused value with transparent pricing and 14-day free trials.
             </p>
           </div>
 
@@ -144,7 +146,7 @@ export default function HomePage() {
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-500">14-day free trial</span>
                   <Button
-                    href="https://contentgen.zion.app"
+                    href="https://contentgen.ziontechgroup.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     size="sm"
@@ -174,7 +176,7 @@ export default function HomePage() {
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-500">14-day free trial</span>
                   <Button
-                    href="https://design.zion.app"
+                    href="https://design.ziontechgroup.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     size="sm"
@@ -204,7 +206,7 @@ export default function HomePage() {
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-500">14-day free trial</span>
                   <Button
-                    href="https://monitor.zion.app"
+                    href="https://monitor.ziontechgroup.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     size="sm"
@@ -234,7 +236,7 @@ export default function HomePage() {
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-500">14-day free trial</span>
                   <Button
-                    href="https://seo.zion.app"
+                    href="https://seo.ziontechgroup.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     size="sm"
@@ -264,7 +266,7 @@ export default function HomePage() {
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-500">14-day free trial</span>
                   <Button
-                    href="https://chatbot.zion.app"
+                    href="https://chatbot.ziontechgroup.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     size="sm"
@@ -294,7 +296,7 @@ export default function HomePage() {
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-500">14-day free trial</span>
                   <Button
-                    href="https://bi.zion.app"
+                    href="https://bi.ziontechgroup.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     size="sm"
@@ -309,17 +311,17 @@ export default function HomePage() {
 
           <div className="text-center">
             <p className="text-gray-400 mb-8 max-w-3xl mx-auto">
-              All services include comprehensive documentation, dedicated support, and enterprise-grade reliability. 
-              Start with a free trial and scale as you grow.
+              All 12 services include comprehensive documentation, dedicated support, enterprise-grade reliability, and 14-day free trials. 
+              Start with one solution and scale as you grow. View our complete portfolio for more specialized tools.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
-                href="/services"
+                href="/micro-saas"
                 variant="secondary"
                 size="lg"
                 className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700"
               >
-                View All Services
+                View All Micro SaaS
               </Button>
               <Button
                 href="/pricing"

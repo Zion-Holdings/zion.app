@@ -243,7 +243,8 @@ export default function PricingPage() {
                 Specialized Tools & Services
               </h2>
               <p className="text-xl text-gray-400 max-w-4xl mx-auto">
-                Focused solutions for specific business needs with transparent, competitive pricing.
+                Discover our 12 specialized micro SaaS solutions covering every essential business operation. 
+                Focused solutions for specific business needs with transparent, competitive pricing and 14-day free trials.
               </p>
             </div>
 
@@ -281,7 +282,7 @@ export default function PricingPage() {
                   </li>
                 </ul>
                 <Button
-                  href="https://contentgen.zion.app"
+                  href="https://contentgen.ziontechgroup.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700"
@@ -323,7 +324,7 @@ export default function PricingPage() {
                   </li>
                 </ul>
                 <Button
-                  href="https://design.zion.app"
+                  href="https://design.ziontechgroup.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700"
@@ -365,7 +366,7 @@ export default function PricingPage() {
                   </li>
                 </ul>
                 <Button
-                  href="https://monitor.zion.app"
+                  href="https://monitor.ziontechgroup.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700"
@@ -407,7 +408,7 @@ export default function PricingPage() {
                   </li>
                 </ul>
                 <Button
-                  href="https://seo.zion.app"
+                  href="https://seo.ziontechgroup.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700"
@@ -449,7 +450,7 @@ export default function PricingPage() {
                   </li>
                 </ul>
                 <Button
-                  href="https://chatbot.zion.app"
+                  href="https://chatbot.ziontechgroup.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700"
@@ -491,7 +492,7 @@ export default function PricingPage() {
                   </li>
                 </ul>
                 <Button
-                  href="https://bi.zion.app"
+                  href="https://bi.ziontechgroup.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-600 hover:to-pink-700"
