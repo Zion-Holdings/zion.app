@@ -64,27 +64,24 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-black/80 backdrop-blur-xl border-t border-white/10 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(0,122,204,0.03),transparent_50%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(0,162,255,0.02),transparent_50%)]" />
+    <footer className="bg-black/90 backdrop-blur-xl border-t border-white/10 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-gradient-mesh opacity-20" />
+      <div className="absolute inset-0 bg-grid opacity-10" />
       
-      <div className="container-cursor py-16 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+      <div className="container-wide py-20 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-16">
           {/* Brand Section */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center space-x-3 mb-6 group">
-              <div className="relative">
-                <div className="w-12 h-12 bg-gradient-to-br from-cursor-blue to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg">
-                  <span className="text-white font-bold text-2xl">Z</span>
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-br from-cursor-blue to-blue-600 rounded-xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-300" />
+            <Link href="/" className="flex items-center space-x-3 mb-8 group">
+              <div className="w-14 h-14 bg-gradient-to-br from-cursor-blue to-blue-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-glow">
+                <span className="text-white font-bold text-2xl">Z</span>
               </div>
-              <span className="text-2xl font-bold gradient-text-white group-hover:from-cursor-blue group-hover:to-blue-400 transition-all duration-300">
+              <span className="text-3xl font-bold gradient-text-blue group-hover:from-cursor-blue group-hover:to-blue-400 transition-all duration-300">
                 Zion Tech
               </span>
             </Link>
-            <p className="text-gray-400 mb-8 max-w-md leading-relaxed font-light">
+            <p className="text-gray-400 mb-10 max-w-md leading-relaxed text-lg font-light">
               The world&apos;s most advanced autonomous innovation hub delivering cutting-edge technology solutions, 
               intelligent automation systems, and the future of cloud-native AI infrastructure.
             </p>
@@ -93,7 +90,7 @@ const Footer = () => {
                 <a
                   key={social.name}
                   href={social.href}
-                  className="w-11 h-11 bg-gray-900/50 hover:bg-cursor-blue rounded-xl flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-cursor-blue/25 border border-gray-800/50 hover:border-cursor-blue/50"
+                  className="w-12 h-12 bg-white/10 hover:bg-cursor-blue rounded-2xl flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:shadow-glow backdrop-blur-sm"
                   aria-label={social.name}
                 >
                   {social.icon}
@@ -111,7 +108,7 @@ const Footer = () => {
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-gray-400 hover:text-cursor-blue transition-colors duration-200 font-medium"
+                      className="text-gray-400 hover:text-white transition-colors duration-200 font-light"
                     >
                       {link.name}
                     </Link>
@@ -124,17 +121,17 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className="border-t border-white/10 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">
+          <p className="text-gray-500 text-sm font-light">
             © {currentYear} Zion Tech Group. All rights reserved.
           </p>
-          <div className="flex items-center space-x-6 mt-4 md:mt-0">
-            <Link href="/privacy" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">
+          <div className="flex space-x-6 mt-4 md:mt-0">
+            <Link href="/privacy" className="text-gray-500 hover:text-white text-sm font-light transition-colors duration-200">
               Privacy
             </Link>
-            <Link href="/terms" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">
+            <Link href="/terms" className="text-gray-500 hover:text-white text-sm font-light transition-colors duration-200">
               Terms
             </Link>
-            <Link href="/cookies" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">
+            <Link href="/cookies" className="text-gray-500 hover:text-white text-sm font-light transition-colors duration-200">
               Cookies
             </Link>
           </div>

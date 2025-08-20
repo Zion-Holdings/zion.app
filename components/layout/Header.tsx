@@ -32,42 +32,38 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-black/80 backdrop-blur-xl border-b border-white/10'
+          ? 'bg-black/80 backdrop-blur-xl border-b border-white/10 shadow-glow'
           : 'bg-transparent'
       }`}
     >
-      <div className="container-cursor">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+      <div className="container-wide">
+        <div className="flex items-center justify-between h-20 lg:h-24">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
-            <div className="relative">
-              <div className="w-10 h-10 bg-gradient-to-br from-cursor-blue to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-cursor-blue/25">
-                <span className="text-white font-bold text-xl">Z</span>
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-br from-cursor-blue to-blue-600 rounded-xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-300" />
+            <div className="w-12 h-12 bg-gradient-to-br from-cursor-blue to-blue-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-glow">
+              <span className="text-white font-bold text-2xl">Z</span>
             </div>
-            <span className="text-xl font-bold gradient-text-white group-hover:from-cursor-blue group-hover:to-blue-400 transition-all duration-300">
+            <span className="text-2xl font-bold gradient-text-blue group-hover:from-cursor-blue group-hover:to-blue-400 transition-all duration-300">
               Zion Tech
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-1">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className={`text-sm font-medium transition-all duration-300 relative group ${
+                className={`px-4 py-2 text-sm font-medium transition-all duration-300 relative rounded-xl ${
                   isActive(item.href)
-                    ? 'text-cursor-blue'
-                    : 'text-gray-300 hover:text-white'
+                    ? 'text-cursor-blue bg-white/5 backdrop-blur-sm'
+                    : 'text-gray-300 hover:text-white hover:bg-white/5'
                 }`}
               >
                 {item.name}
                 {isActive(item.href) && (
-                  <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-cursor-blue to-blue-600 rounded-full" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-cursor-blue/20 to-transparent rounded-xl" />
                 )}
-                <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-cursor-blue to-blue-600 rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
               </Link>
             ))}
           </nav>
@@ -76,7 +72,7 @@ const Header = () => {
           <div className="hidden lg:flex items-center space-x-4">
             <Link
               href="/contact"
-              className="btn btn-primary btn-md hover-lift"
+              className="btn btn-primary hover-lift shadow-glow"
             >
               Get Started
             </Link>
@@ -85,69 +81,64 @@ const Header = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-200 focus-ring"
+            className="lg:hidden p-3 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-all duration-200"
             aria-label="Toggle mobile menu"
           >
-            <div className="w-6 h-6 relative">
-              <span
-                className={`absolute inset-0 transform transition-all duration-300 ${
-                  isMobileMenuOpen ? 'rotate-45 translate-y-0' : '-translate-y-1'
-                }`}
-              >
-                <div className="w-6 h-0.5 bg-current rounded-full" />
-              </span>
-              <span
-                className={`absolute inset-0 transform transition-all duration-300 ${
-                  isMobileMenuOpen ? 'opacity-0' : 'opacity-100'
-                }`}
-              >
-                <div className="w-6 h-0.5 bg-current rounded-full" />
-              </span>
-              <span
-                className={`absolute inset-0 transform transition-all duration-300 ${
-                  isMobileMenuOpen ? '-rotate-45 translate-y-0' : 'translate-y-1'
-                }`}
-              >
-                <div className="w-6 h-0.5 bg-current rounded-full" />
-              </span>
-            </div>
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              {isMobileMenuOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
+            </svg>
           </button>
         </div>
 
-        {/* Mobile Navigation */}
-        <div
-          className={`lg:hidden transition-all duration-300 ease-in-out ${
-            isMobileMenuOpen
-              ? 'max-h-96 opacity-100 visible'
-              : 'max-h-0 opacity-0 invisible'
-          }`}
-        >
-          <div className="py-4 space-y-2 border-t border-white/10">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 ${
-                  isActive(item.href)
-                    ? 'bg-cursor-blue/20 text-cursor-blue border border-cursor-blue/30'
-                    : 'text-gray-300 hover:text-white hover:bg-white/5'
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
-            <div className="pt-4 border-t border-white/10">
-              <Link
-                href="/contact"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="btn btn-primary btn-md w-full justify-center"
-              >
-                Get Started
-              </Link>
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="lg:hidden">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-black/90 backdrop-blur-xl border-t border-white/10 rounded-b-2xl">
+              {navigation.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={`block px-3 py-2 text-base font-medium rounded-xl transition-all duration-200 ${
+                    isActive(item.href)
+                      ? 'text-cursor-blue bg-white/5'
+                      : 'text-gray-300 hover:text-white hover:bg-white/5'
+                  }`}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ))}
+              <div className="pt-4">
+                <Link
+                  href="/contact"
+                  className="btn btn-primary w-full justify-center"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Get Started
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </header>
   );
