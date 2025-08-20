@@ -8,7 +8,7 @@ import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, Exter
 
 export default function HomePage() {
   const heroStats = [
-    { value: '28+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
+    { value: '55+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
     { value: '99.9%', label: 'Uptime Guarantee', color: 'text-fuchsia-400' },
     { value: '14', label: 'Day Free Trials', color: 'text-blue-400' },
     { value: '24/7', label: 'AI Support', color: 'text-green-400' },
@@ -18,7 +18,7 @@ export default function HomePage() {
     {
       icon: <Cloud className="w-8 h-8 text-white" />,
       title: 'Real Micro SaaS Services',
-      description: '50+ fully functional micro SaaS tools with real implementations, not just mockups.',
+      description: '55+ fully functional micro SaaS tools with real implementations, not just mockups.',
       color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
       gradient: 'from-cyan-400 to-blue-500',
     },
@@ -196,7 +196,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <Hero
         title="Zion Tech Group"
-        subtitle="The world&apos;s most advanced autonomous innovation hub delivering cutting-edge technology solutions, intelligent automation systems, and the future of cloud-native AI infrastructure."
+        subtitle="The world&apos;s most advanced autonomous innovation hub delivering 55+ cutting-edge micro SaaS solutions, intelligent automation systems, and the future of cloud-native AI infrastructure."
         primaryAction={{
           text: "Explore Micro SaaS",
           href: "/micro-saas"
@@ -209,7 +209,7 @@ export default function HomePage() {
       />
 
       {/* Stats Section */}
-      <section className="py-20 bg-gray-800/50">
+      <section className="py-20 bg-gray-800/50 futuristic-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat) => (
@@ -231,10 +231,10 @@ export default function HomePage() {
       />
 
       {/* Features Section */}
-      <section className="py-20">
+      <section className="py-20 futuristic-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">
+            <h2 className="text-4xl font-bold text-white mb-4 holographic-text neon-glow">
               Why Choose Zion Tech Group?
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -256,23 +256,24 @@ export default function HomePage() {
       </section>
 
       {/* Micro SaaS Services Showcase */}
-      <section className="py-24 bg-gradient-to-br from-gray-900 to-black relative overflow-hidden">
+      <section className="py-24 bg-gradient-to-br from-gray-900 to-black relative overflow-hidden futuristic-bg particles-bg">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(120,119,198,0.1),transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,119,198,0.1),transparent_50%)]" />
+        <div className="absolute inset-0 grid-bg opacity-20" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium mb-6">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium mb-6 glow-border">
               <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse" />
               🚀 Premium Micro SaaS Solutions
             </div>
-            <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight">
+            <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight holographic-text neon-glow">
               Enterprise-Grade Tools for Every Business Need
             </h2>
             <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
-              Discover <span className="text-green-400 font-semibold">28+ specialized micro SaaS solutions</span> covering AI-powered content creation, design systems, performance monitoring, 
+              Discover <span className="text-green-400 font-semibold">55+ specialized micro SaaS solutions</span> covering AI-powered content creation, design systems, performance monitoring, 
               SEO automation, chatbots, business intelligence, email marketing, social media, project management, 
               billing, HR operations, video editing, cloud optimization, legal automation, sales intelligence, customer analytics, 
-              API management, compliance monitoring, and more. <span className="text-green-400 font-semibold">Focused value with transparent pricing, 14-day free trials, and enterprise-grade infrastructure.</span>
+              API management, compliance monitoring, emerging technologies, and more. <span className="text-green-400 font-semibold">Focused value with transparent pricing, 14-day free trials, and enterprise-grade infrastructure.</span>
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4 text-sm text-gray-400">
               <span className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>14-Day Free Trials</span>
@@ -1569,17 +1570,18 @@ export default function HomePage() {
       </section>
 
       {/* Micro SaaS Services CTA */}
-      <section className="py-24 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 relative overflow-hidden">
+      <section className="py-24 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 relative overflow-hidden futuristic-bg particles-bg">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.1),transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,119,198,0.1),transparent_50%)]" />
+        <div className="absolute inset-0 grid-bg opacity-20" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-sm font-medium mb-6">
-            <span className="w-2 h-2 bg-purple-500 rounded-full mr-2 animate-pulse" />
-            🚀 Explore Our Micro SaaS Solutions
-          </div>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8">
-            Ready to Discover Your Perfect Business Tools?
-          </h2>
+                      <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-sm font-medium mb-6 glow-border">
+              <span className="w-2 h-2 bg-purple-500 rounded-full mr-2 animate-pulse" />
+              🚀 Explore Our Micro SaaS Solutions
+            </div>
+                      <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8 holographic-text neon-glow">
+              Ready to Discover Your Perfect Business Tools?
+            </h2>
           <p className="text-xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
             From AI-powered content creation to cloud cost optimization, we have the specialized tools your business needs. 
             All services come with 14-day free trials, transparent pricing, and enterprise-grade infrastructure.
@@ -1631,10 +1633,11 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-r from-blue-600 to-blue-700 relative overflow-hidden">
+      <section className="py-24 bg-gradient-to-r from-blue-600 to-blue-700 relative overflow-hidden futuristic-bg">
         <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px] opacity-10" />
+        <div className="absolute inset-0 grid-bg opacity-20" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8">
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8 holographic-text neon-glow">
             Ready to Transform Your Business?
           </h2>
           <p className="text-xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed">
@@ -1661,6 +1664,82 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Footer with Contact Information */}
+      <footer className="bg-black border-t border-gray-800 futuristic-bg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {/* Company Info */}
+            <div className="col-span-1 md:col-span-2">
+              <h3 className="text-2xl font-bold text-white mb-4 holographic-text neon-glow">Zion Tech Group</h3>
+              <p className="text-gray-400 mb-6 max-w-md">
+                Empowering businesses with innovative AI solutions, micro SaaS services, and cutting-edge technology. 
+                Transform your business with our specialized tools and expert support.
+              </p>
+              <div className="flex space-x-4">
+                <a href="https://ziontechgroup.com" className="text-gray-400 hover:text-white transition-colors neon-glow">
+                  🌐 ziontechgroup.com
+                </a>
+              </div>
+            </div>
+
+            {/* Contact Information */}
+            <div>
+              <h4 className="text-lg font-semibold text-white mb-4 neon-glow">Contact Us</h4>
+              <div className="space-y-3">
+                <div className="flex items-center text-gray-400">
+                  <span className="mr-3">📱</span>
+                  <a href="tel:+13024640950" className="hover:text-white transition-colors neon-glow">
+                    +1 302 464 0950
+                  </a>
+                </div>
+                <div className="flex items-center text-gray-400">
+                  <span className="mr-3">📧</span>
+                  <a href="mailto:kleber@ziontechgroup.com" className="hover:text-white transition-colors neon-glow">
+                    kleber@ziontechgroup.com
+                  </a>
+                </div>
+                                  <div className="flex items-start text-gray-400">
+                    <span className="mr-3 mt-1">📍</span>
+                    <div>
+                      <p className="hover:text-white transition-colors neon-glow">
+                        364 E Main St STE 1008<br />
+                        Middletown, DE 19709
+                      </p>
+                    </div>
+                  </div>
+              </div>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h4 className="text-lg font-semibold text-white mb-4 neon-glow">Quick Links</h4>
+              <div className="space-y-3">
+                <a href="/micro-saas" className="block text-gray-400 hover:text-white transition-colors neon-glow">
+                  Micro SaaS Services
+                </a>
+                <a href="/pricing" className="block text-gray-400 hover:text-white transition-colors neon-glow">
+                  Pricing
+                </a>
+                <a href="/case-studies" className="block text-gray-400 hover:text-white transition-colors neon-glow">
+                  Case Studies
+                </a>
+                <a href="/contact" className="block text-gray-400 hover:text-white transition-colors neon-glow">
+                  Contact
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="border-t border-gray-800 mt-12 pt-8 text-center">
+            <p className="text-gray-400">
+              © 2024 Zion Tech Group. All rights reserved. | 
+              <a href="/privacy" className="ml-2 hover:text-white transition-colors neon-glow">Privacy Policy</a> | 
+              <a href="/terms" className="ml-2 hover:text-white transition-colors neon-glow">Terms of Service</a>
+            </p>
+          </div>
+        </div>
+      </footer>
     </>
   );
 }
