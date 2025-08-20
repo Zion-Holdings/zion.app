@@ -343,9 +343,9 @@ export default function HomePage() {
                   <li>• Threat detection & response</li>
                   <li>• Zero-trust architecture</li>
                 </ul>
-                <Link href="/SECURITY.md" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
+                <a href="https://github.com/Zion-Holdings/zion.app/blob/main/SECURITY.md" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
                   View Security Guide →
-                </Link>
+                </a>
               </div>
 
               <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
@@ -357,9 +357,9 @@ export default function HomePage() {
                   <li>• Security testing</li>
                   <li>• Continuous validation</li>
                 </ul>
-                <Link href="/TESTING.md" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
+                <a href="https://github.com/Zion-Holdings/zion.app/blob/main/TESTING.md" target="_blank" rel="noopener noreferrer" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
                   View Testing Guide →
-                </Link>
+                </a>
               </div>
 
               <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
@@ -371,9 +371,9 @@ export default function HomePage() {
                   <li>• Analytics dashboard</li>
                   <li>• Predictive maintenance</li>
                 </ul>
-                <Link href="/PERFORMANCE.md" className="text-green-400 hover:text-green-300 text-sm font-semibold">
+                <a href="https://github.com/Zion-Holdings/zion.app/blob/main/PERFORMANCE.md" target="_blank" rel="noopener noreferrer" className="text-green-400 hover:text-green-300 text-sm font-semibold">
                   View Performance Guide →
-                </Link>
+                </a>
               </div>
             </div>
           </section>
@@ -391,9 +391,9 @@ export default function HomePage() {
                   <li>• Health monitoring</li>
                   <li>• Self-healing infrastructure</li>
                 </ul>
-                <Link href="/README_ULTIMATE_REDUNDANCY.md" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
+                <a href="https://github.com/Zion-Holdings/zion.app/blob/main/README_ULTIMATE_REDUNDANCY.md" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
                   Learn More →
-                </Link>
+                </a>
               </div>
 
               <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
@@ -405,9 +405,9 @@ export default function HomePage() {
                   <li>• Error prevention</li>
                   <li>• Predictive analytics</li>
                 </ul>
-                <Link href="/README_COMPREHENSIVE_REDUNDANCY.md" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
+                <a href="https://github.com/Zion-Holdings/zion.app/blob/main/COMPREHENSIVE_REDUNDANCY_README.md" target="_blank" rel="noopener noreferrer" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
                   Learn More →
-                </Link>
+                </a>
               </div>
 
               <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
@@ -419,9 +419,9 @@ export default function HomePage() {
                   <li>• Performance monitoring</li>
                   <li>• Cluster management</li>
                 </ul>
-                <Link href="/README_PM2_REDUNDANCY_COMPLETE.md" className="text-green-400 hover:text-green-300 text-sm font-semibold">
+                <a href="https://github.com/Zion-Holdings/zion.app/search?q=pm2+redundancy" target="_blank" rel="noopener noreferrer" className="text-green-400 hover:text-green-300 text-sm font-semibold">
                   Learn More →
-                </Link>
+                </a>
               </div>
             </div>
           </section>
@@ -512,9 +512,9 @@ export default function HomePage() {
                   <li>• Content quality assurance</li>
                   <li>• Multi-language support</li>
                 </ul>
-                <Link href="/content-generation-report.md" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
+                <a href="https://github.com/Zion-Holdings/zion.app/blob/main/content-generation-report.md" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
                   Learn More →
-                </Link>
+                </a>
               </div>
 
               <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
@@ -526,9 +526,9 @@ export default function HomePage() {
                   <li>• PR automation</li>
                   <li>• Code quality checks</li>
                 </ul>
-                <Link href="/GITHUB_ACTIONS_IMPROVEMENTS.md" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
+                <a href="https://github.com/Zion-Holdings/zion.app/blob/main/GITHUB_ACTIONS_IMPROVEMENTS.md" target="_blank" rel="noopener noreferrer" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
                   Learn More →
-                </Link>
+                </a>
               </div>
 
               <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
@@ -540,9 +540,9 @@ export default function HomePage() {
                   <li>• Predictive analytics</li>
                   <li>• Automated reporting</li>
                 </ul>
-                <Link href="/performance-weekly-report.md" className="text-green-400 hover:text-green-300 text-sm font-semibold">
+                <a href="https://github.com/Zion-Holdings/zion.app/blob/main/performance-weekly-report.md" target="_blank" rel="noopener noreferrer" className="text-green-400 hover:text-green-300 text-sm font-semibold">
                   Learn More →
-                </Link>
+                </a>
               </div>
             </div>
           </section>
@@ -621,20 +621,20 @@ export default function HomePage() {
               <div>
                 <h3 className="text-lg font-semibold text-green-400 mb-4">Documentation</h3>
                 <ul className="space-y-2 text-sm text-white/70">
-                  <li><Link href="/README.md" className="hover:text-green-300 transition-colors">Project Overview</Link></li>
-                  <li><Link href="/ARCHITECTURE.md" className="hover:text-green-300 transition-colors">Architecture</Link></li>
-                  <li><Link href="/API.md" className="hover:text-green-300 transition-colors">API Docs</Link></li>
-                  <li><Link href="/CONTRIBUTING.md" className="hover:text-green-300 transition-colors">Contributing</Link></li>
+                  <li><a href="https://github.com/Zion-Holdings/zion.app/blob/main/README.md" target="_blank" rel="noopener noreferrer" className="hover:text-green-300 transition-colors">Project Overview</a></li>
+                  <li><a href="https://github.com/Zion-Holdings/zion.app/blob/main/ARCHITECTURE.md" target="_blank" rel="noopener noreferrer" className="hover:text-green-300 transition-colors">Architecture</a></li>
+                  <li><a href="https://github.com/Zion-Holdings/zion.app/blob/main/API.md" target="_blank" rel="noopener noreferrer" className="hover:text-green-300 transition-colors">API Docs</a></li>
+                  <li><a href="https://github.com/Zion-Holdings/zion.app/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" className="hover:text-green-300 transition-colors">Contributing</a></li>
                 </ul>
               </div>
               
               <div>
                 <h3 className="text-lg font-semibold text-yellow-400 mb-4">Automation</h3>
                 <ul className="space-y-2 text-sm text-white/70">
-                  <li><Link href="/README_COMPREHENSIVE_REDUNDANCY.md" className="hover:text-yellow-300 transition-colors">Redundancy Systems</Link></li>
-                  <li><Link href="/README_ULTIMATE_REDUNDANCY.md" className="hover:text-yellow-300 transition-colors">Ultimate Redundancy</Link></li>
-                  <li><Link href="/README_PM2_REDUNDANCY_COMPLETE.md" className="hover:text-yellow-300 transition-colors">PM2 Orchestration</Link></li>
-                  <li><Link href="/AUTOMATION_COMPLETION_REPORT.md" className="hover:text-yellow-300 transition-colors">Automation Status</Link></li>
+                  <li><a href="https://github.com/Zion-Holdings/zion.app/blob/main/COMPREHENSIVE_REDUNDANCY_README.md" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-300 transition-colors">Redundancy Systems</a></li>
+                  <li><a href="https://github.com/Zion-Holdings/zion.app/blob/main/README_ULTIMATE_REDUNDANCY.md" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-300 transition-colors">Ultimate Redundancy</a></li>
+                  <li><a href="https://github.com/Zion-Holdings/zion.app/search?q=pm2+redundancy" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-300 transition-colors">PM2 Orchestration</a></li>
+                  <li><a href="https://github.com/Zion-Holdings/zion.app/blob/main/AUTOMATION_COMPLETION_REPORT.md" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-300 transition-colors">Automation Status</a></li>
                 </ul>
               </div>
             </div>
