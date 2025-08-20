@@ -4,7 +4,7 @@ import Hero from '../components/sections/Hero';
 import Features from '../components/sections/Features';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
-import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check } from 'lucide-react';
+import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight } from 'lucide-react';
 
 export default function HomePage() {
   const heroStats = [
@@ -115,15 +115,16 @@ export default function HomePage() {
           <div className="text-center mb-20">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium mb-6">
               <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse" />
-              Market-Leading Micro SaaS Solutions
+              New Micro SaaS Solutions
             </div>
             <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight">
-              40+ Specialized Tools for Every Business Need
+              Specialized Tools for Every Business Need
             </h2>
             <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
-              Transform your business with our portfolio of specialized micro SaaS solutions. Each tool is designed to solve a specific business challenge 
-              with AI-powered automation, real-time analytics, and enterprise-grade reliability. Save 60-90% compared to complex enterprise platforms 
-              while getting focused functionality that delivers immediate value.
+              Discover 45+ specialized micro SaaS solutions covering AI-powered content creation, design systems, performance monitoring, 
+              SEO automation, chatbots, business intelligence, email marketing, social media, project management, 
+              billing, HR operations, video editing, cloud optimization, legal automation, sales intelligence, customer analytics, 
+              and more. Focused value with transparent pricing and 14-day free trials.
             </p>
           </div>
 
@@ -136,31 +137,17 @@ export default function HomePage() {
                     📝
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-white">AI Content Generator Pro</h3>
+                    <h3 className="text-lg font-semibold text-white">AI Content Generator</h3>
                     <p className="text-pink-400 text-sm font-medium">$49/month</p>
                   </div>
                 </div>
                 <p className="text-gray-300 text-sm mb-4">
-                  Professional AI-powered content creation with SEO optimization, brand voice customization, and 15+ language support.
+                  Professional AI-powered content creation with SEO optimization and brand voice customization.
                 </p>
-                <div className="space-y-2 mb-4">
-                  <div className="flex items-center text-gray-400 text-xs">
-                    <Check className="w-3 h-3 text-green-400 mr-2" />
-                    SEO-optimized content generation
-                  </div>
-                  <div className="flex items-center text-gray-400 text-xs">
-                    <Check className="w-3 h-3 text-green-400 mr-2" />
-                    Multi-language support (15+ languages)
-                  </div>
-                  <div className="flex items-center text-gray-400 text-xs">
-                    <Check className="w-3 h-3 text-green-400 mr-2" />
-                    Brand voice customization
-                  </div>
-                </div>
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-500">14-day free trial</span>
                   <Button
-                    href="https://ziontechgroup.com/ai-content-generator"
+                    href="https://contentgen.ziontechgroup.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     size="sm"
@@ -185,26 +172,12 @@ export default function HomePage() {
                   </div>
                 </div>
                 <p className="text-gray-300 text-sm mb-4">
-                  Create and maintain consistent design systems with automated component generation and team collaboration tools.
+                  Create and maintain consistent design systems with automated component generation.
                 </p>
-                <div className="space-y-2 mb-4">
-                  <div className="flex items-center text-gray-400 text-xs">
-                    <Check className="w-3 h-3 text-green-400 mr-2" />
-                    Component library management
-                  </div>
-                  <div className="flex items-center text-gray-400 text-xs">
-                    <Check className="w-3 h-3 text-green-400 mr-2" />
-                    Design token automation
-                  </div>
-                  <div className="flex items-center text-gray-400 text-xs">
-                    <Check className="w-3 h-3 text-green-400 mr-2" />
-                    Figma, Sketch, Adobe XD integration
-                  </div>
-                </div>
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-500">14-day free trial</span>
                   <Button
-                    href="https://ziontechgroup.com/design-system-builder"
+                    href="https://design.ziontechgroup.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     size="sm"
@@ -229,26 +202,12 @@ export default function HomePage() {
                   </div>
                 </div>
                 <p className="text-gray-300 text-sm mb-4">
-                  Monitor and optimize your web and mobile applications with real-time performance insights and automated optimization.
+                  Real-time monitoring and optimization for web and mobile applications.
                 </p>
-                <div className="space-y-2 mb-4">
-                  <div className="flex items-center text-gray-400 text-xs">
-                    <Check className="w-3 h-3 text-green-400 mr-2" />
-                    Performance metrics tracking
-                  </div>
-                  <div className="flex items-center text-gray-400 text-xs">
-                    <Check className="w-3 h-3 text-green-400 mr-2" />
-                    Error monitoring & alerting
-                  </div>
-                  <div className="flex items-center text-gray-400 text-xs">
-                    <Check className="w-3 h-3 text-green-400 mr-2" />
-                    Automated optimization
-                  </div>
-                </div>
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-500">14-day free trial</span>
                   <Button
-                    href="https://ziontechgroup.com/app-performance-monitor"
+                    href="https://monitor.ziontechgroup.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     size="sm"
@@ -260,39 +219,55 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* AI Meeting Transcription */}
+            {/* SEO Automation Suite */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-green-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    🔍
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">SEO Automation Suite</h3>
+                    <p className="text-emerald-400 text-sm font-medium">$89/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Comprehensive SEO tools with automated optimization and reporting.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://seo.ziontechgroup.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* AI Sales Intelligence */}
             <div className="group relative">
               <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20">
                 <div className="flex items-center mb-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center text-2xl mr-4">
-                    🎤
+                    💼
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-white">AI Meeting Transcription</h3>
-                    <p className="text-blue-400 text-sm font-medium">$59/month</p>
+                    <h3 className="text-lg font-semibold text-white">AI Sales Intelligence</h3>
+                    <p className="text-blue-400 text-sm font-medium">$99/month</p>
                   </div>
                 </div>
                 <p className="text-gray-300 text-sm mb-4">
-                  Transform meetings into actionable insights with AI-powered transcription, summarization, and action item extraction.
+                  AI-driven sales intelligence for lead generation, prospect research, and sales automation.
                 </p>
-                <div className="space-y-2 mb-4">
-                  <div className="flex items-center text-gray-400 text-xs">
-                    <Check className="w-3 h-3 text-green-400 mr-2" />
-                    Real-time transcription (15+ languages)
-                  </div>
-                  <div className="flex items-center text-gray-400 text-xs">
-                    <Check className="w-3 h-3 text-green-400 mr-2" />
-                    AI-powered meeting summaries
-                  </div>
-                  <div className="flex items-center text-gray-400 text-xs">
-                    <Check className="w-3 h-3 text-green-400 mr-2" />
-                    Action item & task extraction
-                  </div>
-                </div>
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-500">14-day free trial</span>
                   <Button
-                    href="https://ziontechgroup.com/ai-meeting-transcription"
+                    href="https://ziontechgroup.com/ai-sales-intelligence"
                     target="_blank"
                     rel="noopener noreferrer"
                     size="sm"
@@ -304,43 +279,29 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* AI-Powered CRM */}
+            {/* AI Chatbot Platform */}
             <div className="group relative">
-              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-teal-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-teal-500/20">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-sky-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-sky-500/20">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-xl flex items-center justify-center text-2xl mr-4">
-                    🤝
+                  <div className="w-12 h-12 bg-gradient-to-br from-sky-500 to-blue-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    💬
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-white">AI-Powered CRM</h3>
-                    <p className="text-teal-400 text-sm font-medium">$79/month</p>
+                    <h3 className="text-lg font-semibold text-white">AI Chatbot Platform</h3>
+                    <p className="text-sky-400 text-sm font-medium">$69/month</p>
                   </div>
                 </div>
                 <p className="text-gray-300 text-sm mb-4">
-                  Next-generation CRM with AI-powered lead scoring, sales forecasting, and customer insights.
+                  Intelligent chatbot solutions for customer support and lead generation.
                 </p>
-                <div className="space-y-2 mb-4">
-                  <div className="flex items-center text-gray-400 text-xs">
-                    <Check className="w-3 h-3 text-green-400 mr-2" />
-                    AI lead scoring
-                  </div>
-                  <div className="flex items-center text-gray-400 text-xs">
-                    <Check className="w-3 h-3 text-green-400 mr-2" />
-                    Sales forecasting
-                  </div>
-                  <div className="flex items-center text-gray-400 text-xs">
-                    <Check className="w-3 h-3 text-green-400 mr-2" />
-                    Customer behavior analysis
-                  </div>
-                </div>
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-500">14-day free trial</span>
                   <Button
-                    href="https://ziontechgroup.com/ai-powered-crm"
+                    href="https://chatbot.ziontechgroup.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     size="sm"
-                    className="bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700"
+                    className="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700"
                   >
                     Try Free
                   </Button>
@@ -348,39 +309,55 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Cybersecurity Threat Monitor */}
+            {/* Business Intelligence Hub */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-rose-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-rose-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-rose-500 to-pink-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    📊
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">BI Hub</h3>
+                    <p className="text-rose-400 text-sm font-medium">$99/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Turn your data into actionable insights with automated reporting and analytics.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://bi.ziontechgroup.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-600 hover:to-pink-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* AI Video Editor Pro */}
             <div className="group relative">
               <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-red-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-red-500/20">
                 <div className="flex items-center mb-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-pink-600 rounded-xl flex items-center justify-center text-2xl mr-4">
-                    🛡️
+                    🎬
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-white">Cybersecurity Monitor</h3>
-                    <p className="text-red-400 text-sm font-medium">$89/month</p>
+                    <h3 className="text-lg font-semibold text-white">AI Video Editor Pro</h3>
+                    <p className="text-red-400 text-sm font-medium">$79/month</p>
                   </div>
                 </div>
                 <p className="text-gray-300 text-sm mb-4">
-                  Advanced cybersecurity monitoring with AI-powered threat detection and automated incident response.
+                  Professional video editing with AI-powered automation and enhancement tools.
                 </p>
-                <div className="space-y-2 mb-4">
-                  <div className="flex items-center text-gray-400 text-xs">
-                    <Check className="w-3 h-3 text-green-400 mr-2" />
-                    Real-time threat detection
-                  </div>
-                  <div className="flex items-center text-gray-400 text-xs">
-                    <Check className="w-3 h-3 text-green-400 mr-2" />
-                    AI-powered risk assessment
-                  </div>
-                  <div className="flex items-center text-gray-400 text-xs">
-                    <Check className="w-3 h-3 text-green-400 mr-2" />
-                    Automated incident response
-                  </div>
-                </div>
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-500">14-day free trial</span>
                   <Button
-                    href="https://ziontechgroup.com/cybersecurity-threat-monitor"
+                    href="https://video.ziontechgroup.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     size="sm"
@@ -391,29 +368,59 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
+
+            {/* Cloud Cost Optimizer */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    ☁️
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Cloud Cost Optimizer</h3>
+                    <p className="text-blue-400 text-sm font-medium">$99/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Reduce cloud spending by 30% with intelligent cost management and optimization.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://cloudcost.ziontechgroup.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="text-center">
-            <p className="text-lg text-gray-300 mb-8">
-              All 40+ services include comprehensive documentation, dedicated support, enterprise-grade reliability, and 14-day free trials.
+            <p className="text-gray-400 mb-8 max-w-3xl mx-auto">
+              All 45+ services include comprehensive documentation, dedicated support, enterprise-grade reliability, and 14-day free trials. 
+              Start with one solution and scale as you grow. View our complete portfolio for more specialized tools.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 href="/micro-saas"
-                variant="primary"
+                variant="secondary"
                 size="lg"
                 className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700"
               >
-                View All Services
-                <ArrowRight className="w-5 h-5 ml-2" />
+                View All Micro SaaS
               </Button>
               <Button
-                href="/contact"
+                href="/pricing"
                 variant="outline"
                 size="lg"
-                className="border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white"
+                className="border-green-500 text-green-400 hover:bg-green-500 hover:text-white"
               >
-                Get Custom Quote
+                See Pricing
               </Button>
             </div>
           </div>
