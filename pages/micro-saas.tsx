@@ -793,6 +793,195 @@ export default function MicroSaasPage() {
       category: 'Content & Marketing'
     },
     {
+      name: 'AI Cybersecurity Monitor',
+      tagline: 'Proactive threat detection',
+      price: '$149',
+      period: '/month',
+      description: 'Monitor and protect your digital assets with AI-powered cybersecurity. Detect threats before they become incidents.',
+      features: [
+        'Real-time threat detection',
+        'Vulnerability assessment',
+        'Incident response automation',
+        'Security compliance monitoring',
+        '24/7 security operations',
+        'Threat intelligence feeds',
+        'Security awareness training',
+        'Integration with security tools'
+      ],
+      popular: false,
+      icon: '🔒',
+      color: 'from-red-500 to-orange-600',
+      textColor: 'text-red-400',
+      link: 'https://security.ziontechgroup.com',
+      marketPosition: 'Competitive with CrowdStrike ($0-500), SentinelOne ($0-500), and Darktrace ($0-1000)',
+      targetAudience: 'IT security teams, businesses, and organizations',
+      trialDays: 14,
+      setupTime: '60 minutes',
+      category: 'Security & Compliance'
+    },
+    {
+      name: 'AI Supply Chain Optimizer',
+      tagline: 'End-to-end supply chain intelligence',
+      price: '$199',
+      period: '/month',
+      description: 'Optimize your entire supply chain with AI-powered insights. Reduce costs, improve efficiency, and mitigate risks.',
+      features: [
+        'Supply chain mapping',
+        'Demand forecasting',
+        'Risk assessment',
+        'Cost optimization',
+        'Supplier performance tracking',
+        'Real-time monitoring',
+        'Predictive analytics',
+        'Integration with ERP systems'
+      ],
+      popular: false,
+      icon: '🚚',
+      color: 'from-blue-500 to-cyan-600',
+      textColor: 'text-blue-400',
+      link: 'https://supplychain.ziontechgroup.com',
+      marketPosition: 'Competitive with SAP Ariba ($0-1000), Coupa ($0-500), and Jaggaer ($0-500)',
+      targetAudience: 'Manufacturers, retailers, and logistics companies',
+      trialDays: 14,
+      setupTime: '90 minutes',
+      category: 'Operations & Logistics'
+    },
+    {
+      name: 'AI Financial Planning Assistant',
+      tagline: 'Personalized financial guidance',
+      price: '$39',
+      period: '/month',
+      description: 'Get personalized financial planning advice with AI. Budgeting, investment recommendations, and retirement planning.',
+      features: [
+        'Personalized budgeting',
+        'Investment recommendations',
+        'Retirement planning',
+        'Debt management',
+        'Financial goal tracking',
+        'Tax optimization',
+        'Portfolio analysis',
+        'Mobile app access'
+      ],
+      popular: false,
+      icon: '💰',
+      color: 'from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      link: 'https://financialplanning.ziontechgroup.com',
+      marketPosition: 'Competitive with Mint (Free), Personal Capital (Free), and YNAB ($11.99-14.99)',
+      targetAudience: 'Individuals, families, and financial advisors',
+      trialDays: 14,
+      setupTime: '20 minutes',
+      category: 'Personal Finance'
+    },
+    {
+      name: 'AI Healthcare Assistant',
+      tagline: 'Intelligent healthcare support',
+      price: '$79',
+      period: '/month',
+      description: 'AI-powered healthcare support for patients and providers. Symptom analysis, appointment scheduling, and health monitoring.',
+      features: [
+        'Symptom analysis',
+        'Appointment scheduling',
+        'Health monitoring',
+        'Medication reminders',
+        'Health record management',
+        'Telemedicine integration',
+        'Health analytics',
+        'HIPAA compliance'
+      ],
+      popular: false,
+      icon: '🏥',
+      color: 'from-emerald-500 to-teal-600',
+      textColor: 'text-emerald-400',
+      link: 'https://healthcare.ziontechgroup.com',
+      marketPosition: 'Competitive with Zocdoc (Free), HealthTap ($15-99), and Babylon Health ($0-100)',
+      targetAudience: 'Healthcare providers, patients, and health tech companies',
+      trialDays: 14,
+      setupTime: '45 minutes',
+      category: 'Healthcare & Wellness'
+    },
+    {
+      name: 'AI Real Estate Platform',
+      tagline: 'Smart property management',
+      price: '$89',
+      period: '/month',
+      description: 'Manage properties intelligently with AI. Tenant screening, maintenance automation, and market analysis.',
+      features: [
+        'Tenant screening automation',
+        'Maintenance request management',
+        'Market analysis',
+        'Property valuation',
+        'Rent optimization',
+        'Document management',
+        'Financial reporting',
+        'Mobile app for tenants'
+      ],
+      popular: false,
+      icon: '🏠',
+      color: 'from-amber-500 to-orange-600',
+      textColor: 'text-amber-400',
+      link: 'https://realestate.ziontechgroup.com',
+      marketPosition: 'Competitive with Buildium ($50-460), AppFolio ($1.25-3), and RentManager ($0-500)',
+      targetAudience: 'Property managers, real estate investors, and landlords',
+      trialDays: 14,
+      setupTime: '30 minutes',
+      category: 'Real Estate & Property'
+    },
+    {
+      name: 'AI Education Platform',
+      tagline: 'Personalized learning experience',
+      price: '$49',
+      period: '/month',
+      description: 'Create personalized learning experiences with AI. Adaptive content, progress tracking, and intelligent tutoring.',
+      features: [
+        'Adaptive learning paths',
+        'Progress tracking',
+        'Intelligent tutoring',
+        'Content personalization',
+        'Assessment automation',
+        'Learning analytics',
+        'Multi-format content',
+        'Integration with LMS'
+      ],
+      popular: false,
+      icon: '🎓',
+      color: 'from-purple-500 to-indigo-600',
+      textColor: 'text-purple-400',
+      link: 'https://education.ziontechgroup.com',
+      marketPosition: 'Competitive with Coursera ($39-399), Udemy ($0-199), and Khan Academy (Free)',
+      targetAudience: 'Educational institutions, corporate training, and online educators',
+      trialDays: 14,
+      setupTime: '25 minutes',
+      category: 'Education & Training'
+    },
+    {
+      name: 'AI Marketing Automation Hub',
+      tagline: 'End-to-end marketing automation',
+      price: '$129',
+      period: '/month',
+      description: 'Automate your entire marketing funnel with AI. Lead generation, nurturing, and conversion optimization.',
+      features: [
+        'Lead generation automation',
+        'Email marketing automation',
+        'Social media automation',
+        'Ad campaign optimization',
+        'Marketing analytics',
+        'A/B testing automation',
+        'CRM integration',
+        'Multi-channel campaigns'
+      ],
+      popular: true,
+      icon: '📢',
+      color: 'from-pink-500 to-rose-600',
+      textColor: 'text-pink-400',
+      link: 'https://marketing.ziontechgroup.com',
+      marketPosition: 'Competitive with HubSpot ($45-4500), Marketo ($0-2000), and Pardot ($0-1250)',
+      targetAudience: 'Marketing teams, agencies, and growth-focused businesses',
+      trialDays: 14,
+      setupTime: '40 minutes',
+      category: 'Content & Marketing'
+    },
+    {
       name: 'AI Recruitment Platform',
       tagline: 'Smart hiring automation',
       price: '$89',
@@ -1223,6 +1412,195 @@ export default function MicroSaasPage() {
       trialDays: 14,
       setupTime: '45 minutes',
       category: 'Security & Compliance'
+    },
+    {
+      name: 'AI Video Analytics Platform',
+      tagline: 'Intelligent video insights & monitoring',
+      price: '$129',
+      period: '/month',
+      description: 'AI-powered video analytics platform for security, retail analytics, and business intelligence. Extract actionable insights from video data.',
+      features: [
+        'Real-time video analysis',
+        'Object & face recognition',
+        'Behavioral analytics',
+        'Retail traffic counting',
+        'Security incident detection',
+        'Custom alert rules',
+        'Cloud storage integration',
+        'Mobile app access'
+      ],
+      popular: false,
+      icon: '📹',
+      color: 'from-purple-500 to-indigo-600',
+      textColor: 'text-purple-400',
+      link: 'https://videoanalytics.ziontechgroup.com',
+      marketPosition: 'Competitive with Avigilon ($0-500), Milestone ($0-300), and Genetec ($0-500)',
+      targetAudience: 'Security teams, retail businesses, and facility managers',
+      trialDays: 14,
+      setupTime: '60 minutes',
+      category: 'Security & Analytics'
+    },
+    {
+      name: 'AI Contract Management',
+      tagline: 'Intelligent contract lifecycle management',
+      price: '$89',
+      period: '/month',
+      description: 'AI-powered contract management platform with automated review, risk assessment, and compliance monitoring. Streamline your legal operations.',
+      features: [
+        'AI contract review',
+        'Risk assessment automation',
+        'Compliance monitoring',
+        'Contract templates library',
+        'Electronic signature',
+        'Version control',
+        'Approval workflows',
+        'Integration with legal tools'
+      ],
+      popular: false,
+      icon: '📋',
+      color: 'from-blue-500 to-cyan-600',
+      textColor: 'text-blue-400',
+      link: 'https://contracts.ziontechgroup.com',
+      marketPosition: 'Competitive with DocuSign ($10-25), PandaDoc ($19-99), and ContractPodAi ($0-500)',
+      targetAudience: 'Legal teams, contract managers, and businesses',
+      trialDays: 14,
+      setupTime: '30 minutes',
+      category: 'Legal & Compliance'
+    },
+    {
+      name: 'AI Customer Churn Predictor',
+      tagline: 'Predict & prevent customer churn',
+      price: '$79',
+      period: '/month',
+      description: 'AI-powered platform that predicts customer churn and provides actionable insights to improve retention and customer lifetime value.',
+      features: [
+        'Churn prediction models',
+        'Risk scoring algorithms',
+        'Retention recommendations',
+        'Customer health monitoring',
+        'Behavioral analysis',
+        'Automated alerts',
+        'Integration with CRMs',
+        'Analytics dashboard'
+      ],
+      popular: false,
+      icon: '📉',
+      color: 'from-red-500 to-orange-600',
+      textColor: 'text-red-400',
+      link: 'https://churnpredictor.ziontechgroup.com',
+      marketPosition: 'Competitive with Gainsight ($0-500), Totango ($0-500), and ChurnZero ($0-500)',
+      targetAudience: 'Customer success teams, SaaS companies, and subscription businesses',
+      trialDays: 14,
+      setupTime: '25 minutes',
+      category: 'Customer Experience'
+    },
+    {
+      name: 'AI Inventory Forecasting',
+      tagline: 'Predictive inventory optimization',
+      price: '$99',
+      period: '/month',
+      description: 'AI-powered inventory forecasting platform that predicts demand, optimizes stock levels, and reduces carrying costs.',
+      features: [
+        'Demand forecasting',
+        'Seasonal trend analysis',
+        'Stock level optimization',
+        'Reorder point automation',
+        'Supplier performance tracking',
+        'Cost optimization',
+        'Real-time monitoring',
+        'Integration with ERPs'
+      ],
+      popular: false,
+      icon: '📦',
+      color: 'from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      link: 'https://inventoryforecast.ziontechgroup.com',
+      marketPosition: 'Competitive with TradeGecko ($0-299), Zoho Inventory ($0-239), and Fishbowl ($0-500)',
+      targetAudience: 'Retailers, manufacturers, and e-commerce businesses',
+      trialDays: 14,
+      setupTime: '40 minutes',
+      category: 'Operations & Logistics'
+    },
+    {
+      name: 'AI Social Media Analytics',
+      tagline: 'Comprehensive social media intelligence',
+      price: '$69',
+      period: '/month',
+      description: 'AI-powered social media analytics platform with sentiment analysis, competitor monitoring, and content optimization insights.',
+      features: [
+        'Sentiment analysis',
+        'Competitor monitoring',
+        'Content performance tracking',
+        'Hashtag optimization',
+        'Audience insights',
+        'Trend identification',
+        'Automated reporting',
+        'Multi-platform integration'
+      ],
+      popular: false,
+      icon: '📱',
+      color: 'from-pink-500 to-rose-600',
+      textColor: 'text-pink-400',
+      link: 'https://socialanalytics.ziontechgroup.com',
+      marketPosition: 'Competitive with Sprout Social ($89-249), Hootsuite ($29-599), and Buffer ($6-99)',
+      targetAudience: 'Social media managers, marketers, and agencies',
+      trialDays: 14,
+      setupTime: '20 minutes',
+      category: 'Content & Marketing'
+    },
+    {
+      name: 'AI Email Deliverability Optimizer',
+      tagline: 'Maximize email deliverability & engagement',
+      price: '$49',
+      period: '/month',
+      description: 'AI-powered email deliverability platform that optimizes sending times, improves inbox placement, and maximizes engagement rates.',
+      features: [
+        'Deliverability monitoring',
+        'Optimal sending time optimization',
+        'Spam score analysis',
+        'List hygiene management',
+        'Engagement optimization',
+        'A/B testing automation',
+        'Real-time analytics',
+        'Integration with email platforms'
+      ],
+      popular: false,
+      icon: '📧',
+      color: 'from-blue-500 to-indigo-600',
+      textColor: 'text-blue-400',
+      link: 'https://emaildeliverability.ziontechgroup.com',
+      marketPosition: 'Competitive with Mailgun ($35-1000), SendGrid ($14-449), and Mailchimp ($13-350)',
+      targetAudience: 'Email marketers, businesses, and agencies',
+      trialDays: 14,
+      setupTime: '15 minutes',
+      category: 'Content & Marketing'
+    },
+    {
+      name: 'AI Customer Journey Mapper',
+      tagline: 'Visualize & optimize customer journeys',
+      price: '$89',
+      period: '/month',
+      description: 'AI-powered customer journey mapping platform that visualizes customer touchpoints and identifies optimization opportunities.',
+      features: [
+        'Journey visualization',
+        'Touchpoint analysis',
+        'Conversion optimization',
+        'Customer behavior tracking',
+        'A/B testing support',
+        'Integration with analytics tools',
+        'Custom journey templates',
+        'Team collaboration'
+      ],
+      popular: false,
+      icon: '🗺️',
+      color: 'from-teal-500 to-cyan-600',
+      textColor: 'text-teal-400',
+      link: 'https://customerjourney.ziontechgroup.com',
+      marketPosition: 'Competitive with Hotjar ($0-99), FullStory ($0-1000), and Mixpanel ($25-1000)',
+      targetAudience: 'UX designers, product managers, and marketers',
+      trialDays: 14,
+      setupTime: '30 minutes',
+      category: 'Customer Experience'
     }
   ];
 
@@ -1295,16 +1673,16 @@ export default function MicroSaasPage() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400"> Every Business Need</span>
             </h1>
             <p className="text-xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
-              Discover our comprehensive suite of 45+ AI-powered micro SaaS solutions, all hosted on <strong className="text-green-400">ziontechgroup.com</strong>. 
-              From content creation to compliance monitoring, we provide specialized tools that integrate seamlessly with your existing workflows. 
-              One domain, one billing, unlimited possibilities.
+              Discover our comprehensive suite of <strong className="text-green-400">50+ AI-powered micro SaaS solutions</strong>, all hosted on <strong className="text-green-400">ziontechgroup.com</strong>. 
+              From content creation to cybersecurity, from healthcare to real estate, we provide specialized tools that integrate seamlessly with your existing workflows. 
+              One domain, one billing, unlimited possibilities. <strong className="text-green-400">All services include 14-day free trials and competitive pricing.</strong>
             </p>
             
             {/* Domain Information */}
                           <div className="bg-gray-800/50 rounded-2xl p-6 border border-gray-700 mb-12 max-w-4xl mx-auto">
                 <div className="flex items-center justify-center mb-4">
                   <Globe className="w-6 h-6 text-green-400 mr-3" />
-                  <h3 className="text-lg font-semibold text-white">All 45+ Services Available on Zion Tech Group Domain</h3>
+                  <h3 className="text-lg font-semibold text-white">All 50+ Services Available on Zion Tech Group Domain</h3>
                 </div>
                 <p className="text-gray-300 mb-4">
                   Every micro SaaS service is accessible through our main domain <strong className="text-green-400">ziontechgroup.com</strong>, 
@@ -1928,6 +2306,189 @@ export default function MicroSaasPage() {
           </div>
         </section>
 
+        {/* Pricing Comparison Section */}
+        <section className="py-24 bg-gray-900">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-20">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">
+                Competitive Pricing Analysis
+              </h2>
+              <p className="text-xl text-gray-400 max-w-4xl mx-auto">
+                See how our micro SaaS solutions compare to enterprise alternatives. Get enterprise-grade features at micro SaaS prices.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+              {/* Enterprise Solutions */}
+              <div className="bg-gradient-to-br from-red-900/20 to-red-800/20 rounded-2xl p-8 border border-red-500/30">
+                <div className="text-center mb-8">
+                  <div className="w-16 h-16 bg-red-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <Building className="w-8 h-8 text-red-400" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Enterprise Solutions</h3>
+                  <p className="text-red-300 text-sm">Traditional enterprise platforms</p>
+                </div>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center text-red-300">
+                    <Check className="w-4 h-4 mr-3 text-red-400" />
+                    <span className="text-sm">Comprehensive features</span>
+                  </div>
+                  <div className="flex items-center text-red-300">
+                    <Check className="w-4 h-4 mr-3 text-red-400" />
+                    <span className="text-sm">Enterprise support</span>
+                  </div>
+                  <div className="flex items-center text-red-300">
+                    <Check className="w-4 h-4 mr-3 text-red-400" />
+                    <span className="text-sm">Advanced security</span>
+                  </div>
+                </div>
+
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-red-400 mb-2">$500-5000</div>
+                  <div className="text-red-300 text-sm">per month</div>
+                  <div className="text-red-400 text-xs mt-2">+ Setup fees + Long contracts</div>
+                </div>
+              </div>
+
+              {/* Zion Tech Group Micro SaaS */}
+              <div className="bg-gradient-to-br from-green-900/20 to-green-800/20 rounded-2xl p-8 border border-green-500/30 relative">
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                  <div className="bg-green-500 text-white px-4 py-1 rounded-full text-sm font-medium">
+                    RECOMMENDED
+                  </div>
+                </div>
+                
+                <div className="text-center mb-8">
+                  <div className="w-16 h-16 bg-green-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <Zap className="w-8 h-8 text-green-400" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Zion Tech Group</h3>
+                  <p className="text-green-300 text-sm">Specialized micro SaaS solutions</p>
+                </div>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center text-green-300">
+                    <Check className="w-4 h-4 mr-3 text-green-400" />
+                    <span className="text-sm">Focused functionality</span>
+                  </div>
+                  <div className="flex items-center text-green-300">
+                    <Check className="w-4 h-4 mr-3 text-green-400" />
+                    <span className="text-sm">AI-powered automation</span>
+                  </div>
+                  <div className="flex items-center text-green-300">
+                    <Check className="w-4 h-4 mr-3 text-green-400" />
+                    <span className="text-sm">Enterprise-grade security</span>
+                  </div>
+                  <div className="flex items-center text-green-300">
+                    <Check className="w-4 h-4 mr-3 text-green-400" />
+                    <span className="text-sm">14-day free trials</span>
+                  </div>
+                  <div className="flex items-center text-green-300">
+                    <Check className="w-4 h-4 mr-3 text-green-400" />
+                    <span className="text-sm">No long-term contracts</span>
+                  </div>
+                </div>
+
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-green-400 mb-2">$19-199</div>
+                  <div className="text-green-300 text-sm">per month</div>
+                  <div className="text-green-400 text-xs mt-2">+ Instant setup + Cancel anytime</div>
+                </div>
+              </div>
+
+              {/* Market Average */}
+              <div className="bg-gradient-to-br from-blue-900/20 to-blue-800/20 rounded-2xl p-8 border border-blue-500/30">
+                <div className="text-center mb-8">
+                  <div className="w-16 h-16 bg-blue-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <BarChart3 className="w-8 h-8 text-blue-400" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Market Average</h3>
+                  <p className="text-blue-300 text-sm">Other SaaS platforms</p>
+                </div>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center text-blue-300">
+                    <Check className="w-4 h-4 mr-3 text-blue-400" />
+                    <span className="text-sm">Good features</span>
+                  </div>
+                  <div className="flex items-center text-blue-300">
+                    <Check className="w-4 h-4 mr-3 text-blue-400" />
+                    <span className="text-sm">Standard support</span>
+                  </div>
+                  <div className="flex items-center text-blue-300">
+                    <Check className="w-4 h-4 mr-3 text-blue-400" />
+                    <span className="text-sm">Basic security</span>
+                  </div>
+                </div>
+
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-blue-400 mb-2">$100-500</div>
+                  <div className="text-blue-300 text-sm">per month</div>
+                  <div className="text-blue-400 text-xs mt-2">+ Limited features + Basic support</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Cost Savings Calculator */}
+            <div className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700 max-w-4xl mx-auto">
+              <h3 className="text-2xl font-bold text-white text-center mb-8">Calculate Your Savings</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <h4 className="text-lg font-semibold text-white mb-4">Enterprise Solution Costs</h4>
+                  <div className="space-y-3 text-gray-300">
+                    <div className="flex justify-between">
+                      <span>Monthly subscription:</span>
+                      <span className="text-red-400">$2,000</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Setup fees:</span>
+                      <span className="text-red-400">$5,000</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Annual cost:</span>
+                      <span className="text-red-400">$29,000</span>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-white mb-4">Zion Tech Group Costs</h4>
+                  <div className="space-y-3 text-gray-300">
+                    <div className="flex justify-between">
+                      <span>Monthly subscription:</span>
+                      <span className="text-green-400">$400</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Setup fees:</span>
+                      <span className="text-green-400">$0</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Annual cost:</span>
+                      <span className="text-green-400">$4,800</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="mt-8 text-center p-6 bg-green-500/10 rounded-xl border border-green-500/20">
+                <div className="text-2xl font-bold text-green-400 mb-2">Save $24,200 Annually</div>
+                <p className="text-green-300 text-sm">That's an 83% cost reduction while maintaining enterprise-grade quality</p>
+                <div className="mt-4">
+                  <a 
+                    href="https://ziontechgroup.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-6 py-3 rounded-lg bg-green-500 text-white font-medium hover:bg-green-600 transition-colors"
+                  >
+                    Start Saving Today
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* CTA Section */}
         <section className="py-24 bg-gradient-to-r from-green-600 to-emerald-700 relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px] opacity-10" />
@@ -1947,7 +2508,7 @@ export default function MicroSaasPage() {
                 <h3 className="text-xl font-semibold text-white">All Services on Zion Tech Group Domain</h3>
               </div>
               <p className="text-green-100 mb-4">
-                Access all 45+ micro SaaS tools through <strong className="text-white">ziontechgroup.com</strong> for a unified experience, 
+                Access all 50+ micro SaaS tools through <strong className="text-white">ziontechgroup.com</strong> for a unified experience, 
                 single billing, and seamless integration between services. No need to manage multiple accounts or domains.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm mb-4">
