@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import Head from 'next/head';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
-import { Mail, Phone, MapPin, MessageSquare, Clock, Globe, Send, CheckCircle, Star, Zap, Shield, Users } from 'lucide-react';
+import { Mail, Phone, MapPin, MessageSquare, Clock, Globe, Send, CheckCircle, Star, Zap, Shield, Users, ArrowRight, DollarSign } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -109,22 +110,23 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
       <Head>
-        <title>Contact Us | Zion Tech Group</title>
-        <meta name="description" content="Get in touch with Zion Tech Group. Contact our team for sales inquiries, technical support, or partnership opportunities. Available 24/7." />
-        <meta name="keywords" content="contact, support, sales, Zion Tech Group, micro SaaS, business solutions" />
-        <meta name="author" content="Zion Tech Group" />
-        <link rel="canonical" href="https://ziontechgroup.com/contact" />
+        <title>Contact Us - Zion Tech Group</title>
+        <meta name="description" content="Get in touch with Zion Tech Group. Contact our team of experts for support, sales inquiries, or technical assistance. Available 24/7." />
+        <meta name="keywords" content="contact Zion Tech Group, support, sales, technical assistance, micro SaaS services" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         
         {/* Open Graph */}
-        <meta property="og:title" content="Contact Us | Zion Tech Group" />
-        <meta property="og:description" content="Get in touch with Zion Tech Group. Contact our team for sales inquiries, technical support, or partnership opportunities." />
-        <meta property="og:url" content="https://ziontechgroup.com/contact" />
+        <meta property="og:title" content="Contact Us - Zion Tech Group" />
+        <meta property="og:description" content="Get in touch with Zion Tech Group. Contact our team of experts for support, sales inquiries, or technical assistance." />
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ziontechgroup.com/contact" />
+        <meta property="og:image" content="https://ziontechgroup.com/og-image.jpg" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Contact Us | Zion Tech Group" />
-        <meta name="twitter:description" content="Get in touch with Zion Tech Group. Contact our team for sales inquiries, technical support, or partnership opportunities." />
+        <meta name="twitter:title" content="Contact Us - Zion Tech Group" />
+        <meta name="twitter:description" content="Get in touch with Zion Tech Group. Contact our team of experts for support, sales inquiries, or technical assistance." />
+        <meta name="twitter:image" content="https://ziontechgroup.com/og-image.jpg" />
       </Head>
 
       {/* Hero Section */}
@@ -155,6 +157,97 @@ export default function ContactPage() {
             Ready to transform your business with our micro SaaS solutions? 
             Our expert team is here to help you succeed. Get in touch today.
           </p>
+        </div>
+      </section>
+
+      {/* Contact Information Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-900 to-black relative overflow-hidden">
+        <div className="absolute inset-0 cyber-grid opacity-10" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Get in <span className="neon-text-green">Touch</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Our team of experts is here to help you succeed with our micro SaaS services
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="text-center"
+            >
+              <div className="bg-gradient-to-br from-neon-blue/10 to-neon-blue/5 border border-neon-blue/20 rounded-2xl p-8 backdrop-blur-sm hover-glow">
+                <Phone className="h-16 w-16 text-neon-blue mx-auto mb-6" />
+                <h3 className="text-2xl font-bold text-white mb-4">Phone Support</h3>
+                <p className="text-neon-blue font-semibold text-xl mb-2">+1 302 464 0950</p>
+                <p className="text-gray-400 text-sm">Available 24/7 for urgent support</p>
+                <p className="text-gray-400 text-sm mt-2">International calls welcome</p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="text-center"
+            >
+              <div className="bg-gradient-to-br from-neon-green/10 to-neon-green/5 border border-neon-green/20 rounded-2xl p-8 backdrop-blur-sm hover-glow">
+                <Mail className="h-16 w-16 text-neon-green mx-auto mb-6" />
+                <h3 className="text-2xl font-bold text-white mb-4">Email Support</h3>
+                <p className="text-neon-green font-semibold text-xl mb-2">kleber@ziontechgroup.com</p>
+                <p className="text-gray-400 text-sm">Response within 2 hours</p>
+                <p className="text-gray-400 text-sm mt-2">Technical and sales inquiries</p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="text-center"
+            >
+              <div className="bg-gradient-to-br from-neon-purple/10 to-neon-purple/5 border border-neon-purple/20 rounded-2xl p-8 backdrop-blur-sm hover-glow">
+                <MapPin className="h-16 w-16 text-neon-purple mx-auto mb-6" />
+                <h3 className="text-2xl font-bold text-white mb-4">Headquarters</h3>
+                <p className="text-neon-purple font-semibold text-base leading-tight mb-2">
+                  364 E Main St STE 1008<br />
+                  Middletown DE 19709<br />
+                  United States
+                </p>
+                <p className="text-gray-400 text-sm">Main office location</p>
+              </div>
+            </motion.div>
+          </div>
+
+          <div className="text-center">
+            <p className="text-gray-400 text-lg mb-8">
+              Ready to transform your business? Start your free trial today or schedule a consultation with our experts.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button
+                href="/micro-saas"
+                className="btn-futuristic px-8 py-3 text-lg font-semibold"
+              >
+                Explore Services
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+              <Button
+                href="/pricing"
+                variant="outline"
+                className="border-2 border-neon-green text-neon-green hover:bg-neon-green hover:text-black px-8 py-3 text-lg font-semibold transition-all duration-300"
+              >
+                View Pricing
+                <DollarSign className="ml-2 h-5 w-5" />
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
 
