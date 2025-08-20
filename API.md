@@ -3,18 +3,15 @@
 undefined
 
 ## Table of Contents
-
-
 - [Overview](#overview)
 - [Authentication](#authentication)
 - [Endpoints](#endpoints)
 - [Error Handling](#error-handling)
 - [Rate Limiting](#rate-limiting)
 - [Examples](#examples)
-      
+ 
 
 ## Overview
-
 
 The Zion App API provides programmatic access to application features and data.
 
@@ -35,13 +32,11 @@ https://api.zion.app/v1
 ## Rate Limiting
 
 API requests are limited to 1000 requests per hour per API key.
-      
+ 
 
 ## Getting Started
 
-
 ## Prerequisites
-
 - Node.js 18+ installed
 - npm or yarn package manager
 - Git for version control
@@ -50,26 +45,26 @@ API requests are limited to 1000 requests per hour per API key.
 ## Installation
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-org/zion-app.git
-   cd zion-app
-   ```
+ ```bash
+ git clone https://github.com/your-org/zion-app.git
+ cd zion-app
+ ```
 
 2. Install dependencies:
-   ```bash
-   npm install
-   ```
+ ```bash
+ npm install
+ ```
 
 3. Set up environment variables:
-   ```bash
-   cp .env.example .env.local
-   # Edit .env.local with your configuration
-   ```
+ ```bash
+ cp .env.example .env.local
+ # Edit .env.local with your configuration
+ ```
 
 4. Start the development server:
-   ```bash
-   npm run dev
-   ```
+ ```bash
+ npm run dev
+ ```
 
 ## First Steps
 
@@ -77,10 +72,9 @@ API requests are limited to 1000 requests per hour per API key.
 2. Explore the application features
 3. Check the documentation for more details
 4. Start contributing to the project
-    
+ 
 
 ## Examples
-
 
 ## Basic Example
 
@@ -101,9 +95,9 @@ For more complex use cases:
 ```typescript
 // Advanced example code
 const advancedExample = {
-  feature1: 'value1',
-  feature2: 'value2',
-  feature3: 'value3'
+ feature1: 'value1',
+ feature2: 'value2',
+ feature3: 'value3'
 };
 ```
 
@@ -117,10 +111,9 @@ const app = new Application();
 app.configure(API);
 app.start();
 ```
-    
+ 
 
 ## API Reference
-
 
 ## Methods
 
@@ -152,10 +145,9 @@ Description of this property.
 ```typescript
 console.log(instance.propertyName);
 ```
-    
+ 
 
 ## Contributing
-
 
 ## How to Contribute
 
@@ -168,7 +160,6 @@ console.log(instance.propertyName);
 7. **Open a Pull Request**: Describe your changes and link any related issues
 
 ## Code Standards
-
 - Follow the existing code style and conventions
 - Write clear, readable code with meaningful variable names
 - Add comments for complex logic
@@ -182,10 +173,9 @@ If you need help or have questions:
 - Search through existing issues
 - Create a new issue with a clear description
 - Join our community discussions
-    
+ 
 
 ## License
-
 
 ## License
 
@@ -212,4 +202,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-    
+ 

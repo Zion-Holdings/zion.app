@@ -11,17 +11,17 @@ The redundancy system ensures that your automation infrastructure remains operat
 ```
 Master Redundancy Orchestrator
 ├── PM2 Redundancy Manager
-│   ├── Backup auto-sync processes
-│   ├── Backup cron processes
-│   └── Health monitoring & recovery
+│ ├── Backup auto-sync processes
+│ ├── Backup cron processes
+│ └── Health monitoring & recovery
 ├── GitHub Actions Redundancy Manager
-│   ├── Backup workflow creation
-│   ├── Workflow health monitoring
-│   └── Automatic recovery
+│ ├── Backup workflow creation
+│ ├── Workflow health monitoring
+│ └── Automatic recovery
 └── Netlify Functions Redundancy Manager
-    ├── Backup function generation
-    ├── Function testing & validation
-    └── Deployment & health checks
+ ├── Backup function generation
+ ├── Function testing & validation
+ └── Deployment & health checks
 ```
 
 ## Components
@@ -84,7 +84,6 @@ Coordinates all redundancy managers and provides system-wide oversight.
 ## Installation & Setup
 
 ### Prerequisites
-
 - Node.js 20.18.1 or higher
 - PM2 (will be auto-installed if missing)
 - npm packages: `node-cron`
@@ -92,22 +91,22 @@ Coordinates all redundancy managers and provides system-wide oversight.
 ### Quick Start
 
 1. **Start the entire system:**
-   ```bash
-   cd automation/redundancy
-   chmod +x start-redundancy-system.sh
-   ./start-redundancy-system.sh
-   ```
+ ```bash
+ cd automation/redundancy
+ chmod +x start-redundancy-system.sh
+ ./start-redundancy-system.sh
+ ```
 
 2. **Check status:**
-   ```bash
-   ./start-redundancy-system.sh status
-   ```
+ ```bash
+ ./start-redundancy-system.sh status
+ ```
 
 3. **Stop the system:**
-   ```bash
-   chmod +x stop-redundancy-system.sh
-   ./stop-redundancy-system.sh
-   ```
+ ```bash
+ chmod +x stop-redundancy-system.sh
+ ./stop-redundancy-system.sh
+ ```
 
 ### Manual Management
 
@@ -166,16 +165,15 @@ AUTO_SYNC_CLEAN=1
 AUTO_SYNC_GC=0
 
 # GitHub Configuration
-GITHUB_TOKEN=your_github_token  # For workflow triggering
+GITHUB_TOKEN=your_github_token # For workflow triggering
 
 # Netlify Configuration
-NETLIFY_TOKEN=your_netlify_token  # For function deployment
+NETLIFY_TOKEN=your_netlify_token # For function deployment
 ```
 
 ### Logging
 
 All logs are stored in `automation/logs/`:
-
 - `pm2-redundancy.log`: PM2 manager logs
 - `github-actions-redundancy.log`: GitHub manager logs
 - `netlify-functions-redundancy.log`: Netlify manager logs
@@ -184,7 +182,6 @@ All logs are stored in `automation/logs/`:
 ### Reports
 
 Reports are generated in JSON format:
-
 - `pm2-redundancy-report.json`: PM2 backup status
 - `github-actions-redundancy-report.json`: Workflow backup status
 - `netlify-functions-redundancy-report.json`: Function backup status
@@ -193,7 +190,6 @@ Reports are generated in JSON format:
 ## Monitoring & Health Checks
 
 ### Health Check Schedule
-
 - **Individual Managers**: Every 5-15 minutes
 - **System Health**: Every hour
 - **Comprehensive Reports**: Every 2 hours
@@ -207,7 +203,6 @@ Reports are generated in JSON format:
 4. **Process Resurrection**: PM2 processes are resurrected if needed
 
 ### Health Indicators
-
 - **Healthy**: Component operating normally
 - **Unhealthy**: Component has issues but recovery is possible
 - **Failed**: Component has failed and needs manual intervention
@@ -216,19 +211,16 @@ Reports are generated in JSON format:
 ## Backup Strategies
 
 ### PM2 Processes
-
 - **Enhanced Restart Policies**: Higher max restarts and exponential backoff
 - **Dedicated Monitoring**: Separate process for health monitoring
 - **Graceful Degradation**: Fallback to basic functionality if needed
 
 ### GitHub Actions
-
 - **Reduced Frequency**: Backup workflows run less frequently to avoid conflicts
 - **Manual Override**: Maintains manual dispatch capabilities
 - **Conflict Avoidance**: Schedules adjusted to prevent overlap
 
 ### Netlify Functions
-
 - **Function Wrapping**: Original functions wrapped with backup logic
 - **Error Handling**: Graceful fallback responses on failures
 - **Automatic Deployment**: Backup functions deployed automatically
@@ -238,61 +230,59 @@ Reports are generated in JSON format:
 ### Common Issues
 
 1. **PM2 Process Failures**
-   ```bash
-   # Check PM2 status
-   pm2 status
-   
-   # Restart specific process
-   pm2 restart zion-auto-sync-backup
-   ```
+ ```bash
+ # Check PM2 status
+ pm2 status
+ 
+ # Restart specific process
+ pm2 restart zion-auto-sync-backup
+ ```
 
 2. **GitHub Workflow Issues**
-   ```bash
-   # Check workflow health
-   node github-actions-redundancy-manager.cjs health
-   
-   # Recreate backup workflows
-   node github-actions-redundancy-manager.cjs backup
-   ```
+ ```bash
+ # Check workflow health
+ node github-actions-redundancy-manager.cjs health
+ 
+ # Recreate backup workflows
+ node github-actions-redundancy-manager.cjs backup
+ ```
 
 3. **Netlify Function Problems**
-   ```bash
-   # Test functions
-   node netlify-functions-redundancy-manager.cjs test
-   
-   # Redeploy functions
-   node netlify-functions-redundancy-manager.cjs deploy
-   ```
+ ```bash
+ # Test functions
+ node netlify-functions-redundancy-manager.cjs test
+ 
+ # Redeploy functions
+ node netlify-functions-redundancy-manager.cjs deploy
+ ```
 
 ### Emergency Procedures
 
 1. **Force Stop All**
-   ```bash
-   ./stop-redundancy-system.sh force
-   ```
+ ```bash
+ ./stop-redundancy-system.sh force
+ ```
 
 2. **Emergency Recovery**
-   ```bash
-   node master-redundancy-orchestrator.cjs recovery
-   ```
+ ```bash
+ node master-redundancy-orchestrator.cjs recovery
+ ```
 
 3. **Clean Restart**
-   ```bash
-   ./stop-redundancy-system.sh
-   ./start-redundancy-system.sh
-   ```
+ ```bash
+ ./stop-redundancy-system.sh
+ ./start-redundancy-system.sh
+ ```
 
 ## Performance Considerations
 
 ### Resource Usage
-
 - **Memory**: ~50-100MB per manager process
 - **CPU**: Minimal during idle, spikes during operations
 - **Disk**: Log files grow ~1-5MB per day
 - **Network**: Minimal for health checks, moderate for deployments
 
 ### Optimization
-
 - **Log Rotation**: Logs are automatically managed
 - **Health Check Throttling**: Configurable intervals
 - **Process Pooling**: Efficient process management
@@ -301,14 +291,12 @@ Reports are generated in JSON format:
 ## Security
 
 ### Access Control
-
 - **Process Isolation**: Each manager runs independently
 - **File Permissions**: Logs and reports use appropriate permissions
 - **Environment Variables**: Sensitive data stored in environment
 - **Network Security**: Minimal external network access
 
 ### Best Practices
-
 - Keep environment variables secure
 - Regularly rotate access tokens
 - Monitor log files for suspicious activity
@@ -319,7 +307,6 @@ Reports are generated in JSON format:
 ### With Existing Systems
 
 The redundancy system is designed to work alongside existing automation:
-
 - **Non-Intrusive**: Doesn't modify existing processes
 - **Parallel Operation**: Runs independently of primary systems
 - **Failover Ready**: Automatically takes over when needed
@@ -339,19 +326,16 @@ manager.healthCheckInterval = 300000; // 5 minutes
 ## Support & Maintenance
 
 ### Regular Maintenance
-
 - **Weekly**: Review logs and reports
 - **Monthly**: Update backup strategies
 - **Quarterly**: Performance review and optimization
 
 ### Updates
-
 - **Automatic**: System updates itself when possible
 - **Manual**: Critical updates require manual intervention
 - **Rollback**: Previous versions can be restored
 
 ### Monitoring
-
 - **Real-time**: Live status monitoring
 - **Historical**: Trend analysis and reporting
 - **Alerts**: Automatic notification of issues

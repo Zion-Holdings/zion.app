@@ -3,9 +3,8 @@
 ## Overview
 
 The Ultimate Redundancy Automation System provides comprehensive redundancy for all automation systems in the project:
-
 - **PM2 Process Management** - Process monitoring and auto-recovery
-- **GitHub Actions** - Workflow monitoring and backup triggers  
+- **GitHub Actions** - Workflow monitoring and backup triggers 
 - **Netlify Functions** - Function monitoring and auto-regeneration
 - **Cross-System Coordination** - Unified health monitoring and failover
 
@@ -13,26 +12,26 @@ The Ultimate Redundancy Automation System provides comprehensive redundancy for 
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                 Master Automation Launcher                  │
-│              (Central Control & Coordination)               │
+│ Master Automation Launcher │
+│ (Central Control & Coordination) │
 └─────────────────────┬───────────────────────────────────────┘
-                      │
-        ┌─────────────┼─────────────┐
-        │             │             │
+ │
+ ┌─────────────┼─────────────┐
+ │ │ │
 ┌───────▼──────┐ ┌────▼────┐ ┌─────▼─────┐
-│   Ultimate   │ │Compreh. │ │  PM2      │
-│  Redundancy  │ │Orchestr.│ │Redundancy │
-│   System     │ │         │ │           │
+│ Ultimate │ │Compreh. │ │ PM2 │
+│ Redundancy │ │Orchestr.│ │Redundancy │
+│ System │ │ │ │ │
 └──────────────┘ └─────────┘ └───────────┘
-        │             │             │
-        └─────────────┼─────────────┘
-                      │
-        ┌─────────────┼─────────────┐
-        │             │             │
+ │ │ │
+ └─────────────┼─────────────┘
+ │
+ ┌─────────────┼─────────────┐
+ │ │ │
 ┌───────▼──────┐ ┌────▼────┐ ┌─────▼─────┐
-│   GitHub     │ │ Netlify │ │  Cross    │
-│   Actions    │ │Functions│ │  System   │
-│ Redundancy   │ │Redundancy│ │ Recovery  │
+│ GitHub │ │ Netlify │ │ Cross │
+│ Actions │ │Functions│ │ System │
+│ Redundancy │ │Redundancy│ │ Recovery │
 └──────────────┘ └─────────┘ └───────────┘
 ```
 
@@ -200,7 +199,6 @@ ORCHESTRATOR_CROSS_SYSTEM=true
 ```
 
 ### Configuration Files
-
 - **PM2 Ecosystem**: `ecosystem.comprehensive-redundancy.cjs`
 - **Logs Directory**: `automation/logs/`
 - **Backups Directory**: `automation/backups/`
@@ -211,9 +209,8 @@ ORCHESTRATOR_CROSS_SYSTEM=true
 ### Health Checks
 
 The system performs automatic health checks at configurable intervals:
-
 - **PM2 Processes**: Every 30 seconds
-- **GitHub Actions**: Every 60 seconds  
+- **GitHub Actions**: Every 60 seconds 
 - **Netlify Functions**: Every 120 seconds
 - **Cross-System**: Every 5 minutes
 - **Master Health**: Every 2 minutes
@@ -240,7 +237,6 @@ npm run master:start-all
 ### Logging
 
 All systems log to `automation/logs/`:
-
 - `ultimate-redundancy.log` - Ultimate redundancy system logs
 - `comprehensive-orchestrator.log` - Orchestrator logs
 - `master-automation-launcher.log` - Master launcher logs
@@ -299,21 +295,18 @@ export ORCHESTRATOR_LOG_LEVEL=DEBUG
 ### PM2 Integration
 
 The redundancy system integrates with existing PM2 processes:
-
 - Monitors all PM2 processes
 - Auto-restarts failed processes
 - Manages process dependencies
 - Provides process health reporting
 
 ### GitHub Actions Integration
-
 - Monitors workflow files
 - Validates workflow syntax
 - Triggers backup workflows
 - Provides workflow health status
 
 ### Netlify Functions Integration
-
 - Monitors function manifest
 - Validates function files
 - Regenerates manifest when needed
@@ -322,14 +315,12 @@ The redundancy system integrates with existing PM2 processes:
 ## Performance Considerations
 
 ### Resource Usage
-
 - **Memory**: ~50-100MB per system
 - **CPU**: Minimal during idle, spikes during health checks
 - **Disk**: Log files grow to ~10-50MB per day
 - **Network**: Minimal, only for health checks
 
 ### Optimization
-
 - Health check intervals can be adjusted
 - Log rotation is automatic
 - Recovery procedures are optimized for speed
@@ -338,14 +329,12 @@ The redundancy system integrates with existing PM2 processes:
 ## Security
 
 ### Access Control
-
 - All systems run with minimal privileges
 - No external network access by default
 - Log files contain no sensitive information
 - Recovery procedures are safe and non-destructive
 
 ### Backup and Recovery
-
 - Automatic backup before any recovery
 - Backup retention policies
 - Safe recovery procedures
@@ -354,14 +343,12 @@ The redundancy system integrates with existing PM2 processes:
 ## Support and Maintenance
 
 ### Regular Maintenance
-
 - Monitor log files for errors
 - Check system health regularly
 - Update configuration as needed
 - Review and optimize health check intervals
 
 ### Updates
-
 - Systems are designed to be self-updating
 - Configuration changes require restart
 - New systems can be added easily

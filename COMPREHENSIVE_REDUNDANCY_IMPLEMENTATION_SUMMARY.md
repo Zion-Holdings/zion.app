@@ -88,17 +88,17 @@ The following npm scripts have been added to package.json:
 
 ```json
 {
-  "redundancy:comprehensive:start": "./automation/start-comprehensive-redundancy.sh start",
-  "redundancy:comprehensive:stop": "./automation/start-comprehensive-redundancy.sh stop",
-  "redundancy:comprehensive:restart": "./automation/start-comprehensive-redundancy.sh restart",
-  "redundancy:comprehensive:status": "./automation/start-comprehensive-redundancy.sh status",
-  "redundancy:comprehensive:health": "./automation/start-comprehensive-redundancy.sh health",
-  "redundancy:comprehensive:logs": "./automation/start-comprehensive-redundancy.sh logs",
-  "redundancy:comprehensive:check": "./automation/start-comprehensive-redundancy.sh check",
-  "redundancy:pm2:manager": "node automation/pm2-redundancy-manager.cjs",
-  "redundancy:github:manager": "node automation/github-actions-redundancy-manager.cjs",
-  "redundancy:netlify:manager": "node automation/netlify-functions-redundancy-manager.cjs",
-  "redundancy:orchestrator": "node automation/comprehensive-redundancy-orchestrator.cjs"
+ "redundancy:comprehensive:start": "./automation/start-comprehensive-redundancy.sh start",
+ "redundancy:comprehensive:stop": "./automation/start-comprehensive-redundancy.sh stop",
+ "redundancy:comprehensive:restart": "./automation/start-comprehensive-redundancy.sh restart",
+ "redundancy:comprehensive:status": "./automation/start-comprehensive-redundancy.sh status",
+ "redundancy:comprehensive:health": "./automation/start-comprehensive-redundancy.sh health",
+ "redundancy:comprehensive:logs": "./automation/start-comprehensive-redundancy.sh logs",
+ "redundancy:comprehensive:check": "./automation/start-comprehensive-redundancy.sh check",
+ "redundancy:pm2:manager": "node automation/pm2-redundancy-manager.cjs",
+ "redundancy:github:manager": "node automation/github-actions-redundancy-manager.cjs",
+ "redundancy:netlify:manager": "node automation/netlify-functions-redundancy-manager.cjs",
+ "redundancy:orchestrator": "node automation/comprehensive-redundancy-orchestrator.cjs"
 }
 ```
 
@@ -157,7 +157,6 @@ npm run redundancy:comprehensive:stop
 ```
 
 ## Monitoring Intervals
-
 - **PM2 Health**: Every 30 seconds
 - **GitHub Actions**: Every 1 minute
 - **Netlify Functions**: Every 2 minutes
@@ -165,7 +164,6 @@ npm run redundancy:comprehensive:stop
 - **Backup Sync**: Every 15 minutes
 
 ## Thresholds
-
 - **Memory Usage**: 80% (triggers restart)
 - **CPU Usage**: 90% (triggers restart)
 - **Max Restart Attempts**: 5 per process
@@ -181,7 +179,6 @@ All redundancy systems log to `automation/logs/`:
 - `netlify-functions-redundancy.log` - Netlify Functions manager logs
 
 ## Dependencies Added
-
 - `js-yaml`: For GitHub Actions workflow validation
 
 ## Next Steps

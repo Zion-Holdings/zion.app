@@ -16,15 +16,15 @@ The comprehensive redundancy system consists of:
 
 ```
 automation/
-├── comprehensive-redundancy-system.cjs          # Main comprehensive system
-├── enhanced-pm2-redundancy.cjs                 # Enhanced PM2 redundancy
-├── enhanced-github-actions-redundancy.cjs      # Enhanced GitHub Actions redundancy
-├── enhanced-netlify-functions-redundancy.cjs   # Enhanced Netlify functions redundancy
-├── master-redundancy-orchestrator.cjs          # Master orchestrator
-├── start-comprehensive-redundancy.sh           # Startup script
+├── comprehensive-redundancy-system.cjs # Main comprehensive system
+├── enhanced-pm2-redundancy.cjs # Enhanced PM2 redundancy
+├── enhanced-github-actions-redundancy.cjs # Enhanced GitHub Actions redundancy
+├── enhanced-netlify-functions-redundancy.cjs # Enhanced Netlify functions redundancy
+├── master-redundancy-orchestrator.cjs # Master orchestrator
+├── start-comprehensive-redundancy.sh # Startup script
 └── [existing legacy files...]
 
-ecosystem.comprehensive-redundancy.cjs          # Comprehensive PM2 ecosystem
+ecosystem.comprehensive-redundancy.cjs # Comprehensive PM2 ecosystem
 ```
 
 ## 🔧 Features
@@ -107,11 +107,11 @@ chmod +x automation/start-comprehensive-redundancy.sh
 ./automation/start-comprehensive-redundancy.sh status
 
 # View specific system logs
-./automation/start-comprehensive-redundancy.sh logs master      # Master orchestrator
-./automation/start-comprehensive-redundancy.sh logs pm2         # PM2 redundancy
-./automation/start-comprehensive-redundancy.sh logs github      # GitHub Actions redundancy
-./automation/start-comprehensive-redundancy.sh logs netlify     # Netlify functions redundancy
-./automation/start-comprehensive-redundancy.sh logs all         # All systems
+./automation/start-comprehensive-redundancy.sh logs master # Master orchestrator
+./automation/start-comprehensive-redundancy.sh logs pm2 # PM2 redundancy
+./automation/start-comprehensive-redundancy.sh logs github # GitHub Actions redundancy
+./automation/start-comprehensive-redundancy.sh logs netlify # Netlify functions redundancy
+./automation/start-comprehensive-redundancy.sh logs all # All systems
 
 # Perform health check
 ./automation/start-comprehensive-redundancy.sh health
@@ -145,7 +145,6 @@ pm2 save
 ## 🔍 Monitoring and Health Checks
 
 ### Health Check Intervals
-
 - **Master Orchestrator**: Every 1 minute
 - **PM2 Redundancy**: Every 30 seconds
 - **GitHub Actions Redundancy**: Every 1 minute
@@ -154,7 +153,6 @@ pm2 save
 ### Health Check Results
 
 Health check results are stored in JSON format in the `automation/logs/` directory:
-
 - `master-orchestrator-health-check-results.json`
 - `pm2-health-check-results.json`
 - `github-actions-health-check-results.json`
@@ -163,7 +161,6 @@ Health check results are stored in JSON format in the `automation/logs/` directo
 ### Log Files
 
 All systems generate comprehensive logs:
-
 - **Master Orchestrator**: `master-orchestrator.log`
 - **PM2 Redundancy**: `enhanced-pm2-redundancy.log`
 - **GitHub Actions Redundancy**: `enhanced-github-actions-redundancy.log`
@@ -172,13 +169,11 @@ All systems generate comprehensive logs:
 ## 💾 Backup and Recovery
 
 ### Backup Locations
-
 - **PM2 Backups**: `automation/backups/pm2/`
 - **GitHub Actions Backups**: `automation/backups/github-actions/`
 - **Netlify Functions Backups**: `automation/backups/netlify-functions/`
 
 ### Backup Retention
-
 - **Log Files**: 30 days
 - **Backup Files**: 20 most recent
 - **Health Check Results**: 100 most recent
@@ -235,24 +230,24 @@ You can customize the behavior by modifying:
 ### Common Issues
 
 1. **PM2 Not Running**
-   ```bash
-   pm2 start
-   ```
+ ```bash
+ pm2 start
+ ```
 
 2. **Missing Dependencies**
-   ```bash
-   npm install js-yaml
-   ```
+ ```bash
+ npm install js-yaml
+ ```
 
 3. **Permission Issues**
-   ```bash
-   chmod +x automation/start-comprehensive-redundancy.sh
-   ```
+ ```bash
+ chmod +x automation/start-comprehensive-redundancy.sh
+ ```
 
 4. **Log File Issues**
-   ```bash
-   ./automation/start-comprehensive-redundancy.sh cleanup
-   ```
+ ```bash
+ ./automation/start-comprehensive-redundancy.sh cleanup
+ ```
 
 ### Debug Mode
 
@@ -284,20 +279,17 @@ The comprehensive redundancy system is designed to work alongside existing syste
 ## 📊 Performance and Resource Usage
 
 ### Resource Requirements
-
 - **Memory**: ~50-100MB per redundancy system
 - **CPU**: Minimal impact (health checks every 30 seconds to 2 minutes)
 - **Disk**: Logs and backups (configurable retention)
 - **Network**: Minimal (health checks and API calls)
 
 ### Optimization
-
 - **Health Check Intervals**: Adjust based on your needs
 - **Log Retention**: Reduce retention periods for high-traffic systems
 - **Backup Frequency**: Adjust backup frequency based on change rate
 
 ## 🔐 Security Considerations
-
 - **Environment Variables**: Store sensitive tokens in environment variables
 - **File Permissions**: Ensure backup directories have appropriate permissions
 - **Network Access**: Limit network access for security-sensitive systems

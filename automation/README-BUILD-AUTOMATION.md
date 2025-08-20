@@ -15,22 +15,22 @@ The build automation systems provide:
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                    Master Build Orchestrator                │
-│                     (Central Coordinator)                   │
+│ Master Build Orchestrator │
+│ (Central Coordinator) │
 └─────────────────────┬───────────────────────────────────────┘
-                      │
-    ┌─────────────────┼─────────────────┐
-    │                 │                 │
-┌───▼────┐    ┌──────▼──────┐    ┌─────▼─────┐
-│ Page   │    │ Pre-Build  │    │ Build     │
-│Validator│    │ Health     │    │ Recovery  │
-└────────┘    │ Checker    │    └───────────┘
-              └────────────┘
-                      │
-              ┌───────▼──────┐
-              │ Continuous   │
-              │ Build Monitor│
-              └──────────────┘
+ │
+ ┌─────────────────┼─────────────────┐
+ │ │ │
+┌───▼────┐ ┌──────▼──────┐ ┌─────▼─────┐
+│ Page │ │ Pre-Build │ │ Build │
+│Validator│ │ Health │ │ Recovery │
+└────────┘ │ Checker │ └───────────┘
+ └────────────┘
+ │
+ ┌───────▼──────┐
+ │ Continuous │
+ │ Build Monitor│
+ └──────────────┘
 ```
 
 ## 🔧 **Core Systems**
@@ -188,7 +188,7 @@ The systems automatically integrate with your existing build process:
 
 ```json
 {
-  "prebuild": "npm run build:health-check && npm run netlify:manifest"
+ "prebuild": "npm run build:health-check && npm run netlify:manifest"
 }
 ```
 
@@ -222,12 +222,12 @@ All systems generate detailed HTML and JSON reports:
 
 ```
 public/reports/
-├── page-validation/      # Page structure validation
-├── pre-build-health/     # Pre-build health checks
-├── build-recovery/       # Build failure recovery
-├── build-monitor/        # Continuous monitoring
-├── netlify-healing/      # Netlify recovery
-└── build-orchestrator/   # Master system status
+├── page-validation/ # Page structure validation
+├── pre-build-health/ # Pre-build health checks
+├── build-recovery/ # Build failure recovery
+├── build-monitor/ # Continuous monitoring
+├── netlify-healing/ # Netlify recovery
+└── build-orchestrator/ # Master system status
 ```
 
 ### **Report Features**
@@ -352,16 +352,16 @@ The system is designed for easy extension:
 ```javascript
 // Add custom health checks
 class CustomHealthChecker extends PreBuildHealthChecker {
-  async customCheck() {
-    // Your custom validation logic
-  }
+ async customCheck() {
+ // Your custom validation logic
+ }
 }
 
 // Add custom recovery strategies
 class CustomRecovery extends BuildFailureRecovery {
-  async customFix(error) {
-    // Your custom fix logic
-  }
+ async customFix(error) {
+ // Your custom fix logic
+ }
 }
 ```
 

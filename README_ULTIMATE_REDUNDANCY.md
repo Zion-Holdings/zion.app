@@ -3,7 +3,6 @@
 ## Overview
 
 The Ultimate Redundancy Automation System provides comprehensive redundancy for all automation systems in the Zion.app project, including:
-
 - **PM2 Process Management** - Redundancy for all PM2 processes and ecosystems
 - **GitHub Actions** - Redundancy for all GitHub workflow automations
 - **Netlify Functions** - Redundancy for all Netlify serverless functions
@@ -140,42 +139,42 @@ The system is configured through `automation/redundancy-config.json`:
 ### PM2 Configuration
 ```json
 {
-  "pm2": {
-    "criticalProcesses": [
-      "zion-auto-sync",
-      "redundancy-automation-system",
-      "enhanced-pm2-redundancy"
-    ],
-    "healthCheckInterval": 30000,
-    "maxRestartAttempts": 5,
-    "memoryThreshold": 80,
-    "cpuThreshold": 90
-  }
+ "pm2": {
+ "criticalProcesses": [
+ "zion-auto-sync",
+ "redundancy-automation-system",
+ "enhanced-pm2-redundancy"
+ ],
+ "healthCheckInterval": 30000,
+ "maxRestartAttempts": 5,
+ "memoryThreshold": 80,
+ "cpuThreshold": 90
+ }
 }
 ```
 
 ### GitHub Actions Configuration
 ```json
 {
-  "githubActions": {
-    "workflows": ["marketing-sync", "sync-health"],
-    "backupWorkflows": ["marketing-sync-backup", "sync-health-backup"],
-    "healthCheckInterval": 60000,
-    "maxFailures": 3,
-    "autoTrigger": true
-  }
+ "githubActions": {
+ "workflows": ["marketing-sync", "sync-health"],
+ "backupWorkflows": ["marketing-sync-backup", "sync-health-backup"],
+ "healthCheckInterval": 60000,
+ "maxFailures": 3,
+ "autoTrigger": true
+ }
 }
 ```
 
 ### Netlify Functions Configuration
 ```json
 {
-  "netlifyFunctions": {
-    "functionsDir": "netlify/functions",
-    "manifestFile": "netlify/functions/functions-manifest.json",
-    "healthCheckInterval": 120000,
-    "autoRegenerate": true
-  }
+ "netlifyFunctions": {
+ "functionsDir": "netlify/functions",
+ "manifestFile": "netlify/functions/functions-manifest.json",
+ "healthCheckInterval": 120000,
+ "autoRegenerate": true
+ }
 }
 ```
 
@@ -184,32 +183,32 @@ The system is configured through `automation/redundancy-config.json`:
 ### Core Components
 
 1. **Ultimate Redundancy Master** (`automation/ultimate-redundancy-master.cjs`)
-   - Main orchestrator for all redundancy systems
-   - Handles PM2, GitHub Actions, and Netlify Functions redundancy
-   - Provides health monitoring and auto-recovery
+- Main orchestrator for all redundancy systems
+- Handles PM2, GitHub Actions, and Netlify Functions redundancy
+- Provides health monitoring and auto-recovery
 
 2. **Startup Script** (`automation/start-ultimate-redundancy.sh`)
-   - Bash script for system management
-   - Handles dependencies and initialization
-   - Provides CLI interface for all operations
+- Bash script for system management
+- Handles dependencies and initialization
+- Provides CLI interface for all operations
 
 3. **Configuration** (`automation/redundancy-config.json`)
-   - Centralized configuration for all redundancy systems
-   - Configurable thresholds and intervals
-   - Process and workflow definitions
+- Centralized configuration for all redundancy systems
+- Configurable thresholds and intervals
+- Process and workflow definitions
 
 ### Redundancy Layers
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                    Ultimate Redundancy Master               │
+│ Ultimate Redundancy Master │
 ├─────────────────────────────────────────────────────────────┤
-│  PM2 Redundancy  │  GitHub Actions  │  Netlify Functions  │
-│                   │  Redundancy      │  Redundancy         │
+│ PM2 Redundancy │ GitHub Actions │ Netlify Functions │
+│ │ Redundancy │ Redundancy │
 ├─────────────────────────────────────────────────────────────┤
-│  Process Monitor │  Workflow Valid  │  Function Monitor   │
-│  Auto-Restart    │  Backup Restore  │  Manifest Gen       │
-│  Resource Check  │  Auto-Trigger    │  Auto-Recovery      │
+│ Process Monitor │ Workflow Valid │ Function Monitor │
+│ Auto-Restart │ Backup Restore │ Manifest Gen │
+│ Resource Check │ Auto-Trigger │ Auto-Recovery │
 └─────────────────────────────────────────────────────────────┘
 ```
 

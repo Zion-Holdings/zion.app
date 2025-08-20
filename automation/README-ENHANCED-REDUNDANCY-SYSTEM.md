@@ -3,7 +3,6 @@
 ## Overview
 
 The Enhanced Redundancy Automation System provides comprehensive redundancy coverage for all automation systems in the project, including:
-
 - **PM2 Process Management** - Monitoring and auto-restart of all PM2 processes
 - **GitHub Actions Workflows** - Health checks and backup execution of GitHub Actions
 - **Netlify Functions** - Monitoring, regeneration, and deployment of Netlify functions
@@ -13,29 +12,29 @@ The Enhanced Redundancy Automation System provides comprehensive redundancy cove
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                Master Redundancy Orchestrator               │
-│                     (Coordinator)                          │
+│ Master Redundancy Orchestrator │
+│ (Coordinator) │
 └─────────────────┬─────────────────┬─────────────────────────┘
-                  │                 │
-                  ▼                 ▼
-    ┌─────────────────────┐ ┌─────────────────────┐
-    │   PM2 Redundancy    │ │ GitHub Actions      │
-    │      System         │ │   Redundancy        │
-    │                     │ │     System          │
-    │ • Process Monitoring│ │ • Workflow Health   │
-    │ • Auto-restart      │ │ • Local Execution   │
-    │ • Resource Checks   │ │ • Backup Strategies │
-    └─────────────────────┘ └─────────────────────┘
-                  │                 │
-                  ▼                 ▼
-    ┌─────────────────────────────────────────────────────────┐
-    │              Netlify Functions                         │
-    │                Redundancy System                       │
-    │                                                       │
-    │ • Function Health Checks                              │
-    │ • Auto-regeneration                                   │
-    │ • Deployment Triggers                                 │
-    └─────────────────────────────────────────────────────────┘
+ │ │
+ ▼ ▼
+ ┌─────────────────────┐ ┌─────────────────────┐
+ │ PM2 Redundancy │ │ GitHub Actions │
+ │ System │ │ Redundancy │
+ │ │ │ System │
+ │ • Process Monitoring│ │ • Workflow Health │
+ │ • Auto-restart │ │ • Local Execution │
+ │ • Resource Checks │ │ • Backup Strategies │
+ └─────────────────────┘ └─────────────────────┘
+ │ │
+ ▼ ▼
+ ┌─────────────────────────────────────────────────────────┐
+ │ Netlify Functions │
+ │ Redundancy System │
+ │ │
+ │ • Function Health Checks │
+ │ • Auto-regeneration │
+ │ • Deployment Triggers │
+ └─────────────────────────────────────────────────────────┘
 ```
 
 ## Components
@@ -200,29 +199,29 @@ The system can be configured through environment variables or by modifying the c
 ```javascript
 // PM2 Redundancy Configuration
 {
-  healthCheckInterval: 30000,        // 30 seconds
-  maxRestartAttempts: 5,
-  restartDelay: 5000,
-  memoryThreshold: 80,               // 80% memory usage
-  cpuThreshold: 90                   // 90% CPU usage
+ healthCheckInterval: 30000, // 30 seconds
+ maxRestartAttempts: 5,
+ restartDelay: 5000,
+ memoryThreshold: 80, // 80% memory usage
+ cpuThreshold: 90 // 90% CPU usage
 }
 
 // GitHub Actions Redundancy Configuration
 {
-  checkInterval: 60000,              // 1 minute
-  maxFailures: 3,
-  localExecution: {
-    enabled: true,
-    timeout: 300000                  // 5 minutes
-  }
+ checkInterval: 60000, // 1 minute
+ maxFailures: 3,
+ localExecution: {
+ enabled: true,
+ timeout: 300000 // 5 minutes
+ }
 }
 
 // Netlify Functions Redundancy Configuration
 {
-  checkInterval: 120000,             // 2 minutes
-  maxFailures: 3,
-  autoDeploy: true,
-  deployTimeout: 300000              // 5 minutes
+ checkInterval: 120000, // 2 minutes
+ maxFailures: 3,
+ autoDeploy: true,
+ deployTimeout: 300000 // 5 minutes
 }
 ```
 
@@ -236,7 +235,6 @@ The master orchestrator will enter emergency mode when:
 ## Monitoring and Alerts
 
 ### Health Checks
-
 - **PM2**: Every 30 seconds
 - **GitHub Actions**: Every 1 minute
 - **Netlify Functions**: Every 2 minutes
@@ -295,34 +293,34 @@ npm run redundancy:orchestrator emergency
 ### Common Issues
 
 1. **PM2 Processes Not Starting**
-   ```bash
-   # Check PM2 status
-   pm2 status
-   
-   # Check logs
-   pm2 logs
-   
-   # Manual restart
-   npm run redundancy:pm2 restart
-   ```
+ ```bash
+ # Check PM2 status
+ pm2 status
+ 
+ # Check logs
+ pm2 logs
+ 
+ # Manual restart
+ npm run redundancy:pm2 restart
+ ```
 
 2. **GitHub Actions Workflows Failing**
-   ```bash
-   # Check workflow health
-   npm run redundancy:github check
-   
-   # Local execution test
-   npm run redundancy:github trigger
-   ```
+ ```bash
+ # Check workflow health
+ npm run redundancy:github check
+ 
+ # Local execution test
+ npm run redundancy:github trigger
+ ```
 
 3. **Netlify Functions Issues**
-   ```bash
-   # Check function health
-   npm run redundancy:netlify check
-   
-   # Regenerate manifest
-   npm run redundancy:netlify regenerate
-   ```
+ ```bash
+ # Check function health
+ npm run redundancy:netlify check
+ 
+ # Regenerate manifest
+ npm run redundancy:netlify regenerate
+ ```
 
 ### Log Analysis
 
@@ -347,14 +345,12 @@ The enhanced redundancy system works alongside existing PM2 configurations:
 - Enhanced monitoring and auto-restart capabilities
 
 ### GitHub Actions Integration
-
 - Monitors existing workflows
 - Provides local execution backup
 - Maintains workflow integrity
 - Automatic failure detection and recovery
 
 ### Netlify Functions Integration
-
 - Monitors all functions from manifest
 - Automatic regeneration capabilities
 - Deployment trigger integration
@@ -363,7 +359,6 @@ The enhanced redundancy system works alongside existing PM2 configurations:
 ## Performance Considerations
 
 ### Resource Usage
-
 - **PM2 Monitoring**: Minimal overhead (~1-2% CPU)
 - **GitHub Actions Monitoring**: Network calls every minute
 - **Netlify Functions Monitoring**: File system operations every 2 minutes
@@ -380,14 +375,12 @@ The system is designed to handle:
 ## Security
 
 ### Access Control
-
 - All scripts run with current user permissions
 - No elevated privileges required
 - Log files contain only operational data
 - No sensitive information in logs
 
 ### Network Security
-
 - GitHub API calls use standard authentication
 - Netlify CLI operations use standard authentication
 - No external network calls for PM2 operations
@@ -417,7 +410,6 @@ npm run redundancy:status
 ## Support and Documentation
 
 ### Additional Resources
-
 - [PM2 Documentation](https://pm2.keymetrics.io/docs/)
 - [GitHub Actions Documentation](https://docs.github.com/en/actions)
 - [Netlify Functions Documentation](https://docs.netlify.com/functions/)
