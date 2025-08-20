@@ -1,0 +1,42 @@
+import React from 'react';
+import Head from 'next/head';
+import Link from 'next/link';
+
+export default function ReportsIndexPage() {
+  return (
+    <>
+      <Head>
+        <title>Reports & Analytics — Zion Tech Group</title>
+        <meta name="description" content="Browse the latest autonomous update reports and analytics." />
+      </Head>
+      <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-950 text-white">
+        <main className="container mx-auto px-6 py-12">
+          <section className="mb-10 text-center">
+            <h1 className="text-4xl font-extrabold mb-4">Reports & Analytics</h1>
+            <p className="text-white/80">Latest autonomous platform updates and performance insights.</p>
+          </section>
+
+          <section className="mx-auto max-w-5xl">
+            <h2 className="text-2xl font-bold mb-6">Latest Updates</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                'update-2025-08-15-0406',
+                'update-2025-08-15-0405',
+                'update-2025-08-15-0404',
+                'update-2025-08-15-0403',
+                'update-2025-08-15-0402',
+                'update-2025-08-15-0111',
+              ].map((slug) => (
+                <Link key={slug} href={`/reports/updates/${slug}`} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30">
+                  <h3 className="text-lg font-semibold">{slug.replace('update-', 'Autonomous Update — ').replaceAll('-', ': ')}</h3>
+                  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
+                </Link>
+              ))}
+            </div>
+          </section>
+        </main>
+      </div>
+    </>
+  );
+}
+
