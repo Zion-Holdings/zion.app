@@ -327,6 +327,9 @@ export default function HomePage() {
                   <li>• GitHub Actions Redundancy</li>
                   <li>• Netlify Functions Redundancy</li>
                 </ul>
+                <div className="text-cyan-400 text-sm font-semibold mb-3">
+                  Status: Multi-layer Protection Active
+                </div>
                 <Link href="/automation" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
                   Explore Redundancy Systems →
                 </Link>
@@ -341,6 +344,9 @@ export default function HomePage() {
                   <li>• Autonomous Agents</li>
                   <li>• Innovation Systems</li>
                 </ul>
+                <div className="text-fuchsia-400 text-sm font-semibold mb-3">
+                  Status: Continuously Learning
+                </div>
                 <Link href="/automation" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
                   Explore AI Systems →
                 </Link>
@@ -355,6 +361,9 @@ export default function HomePage() {
                   <li>• Performance Optimization</li>
                   <li>• Quality Assurance</li>
                 </ul>
+                <div className="text-green-400 text-sm font-semibold mb-3">
+                  Status: Self-Optimizing
+                </div>
                 <Link href="/automation" className="text-green-400 hover:text-green-300 text-sm font-semibold">
                   Explore Build Systems →
                 </Link>
@@ -556,6 +565,150 @@ export default function HomePage() {
                 <Link href="/PERFORMANCE.md" className="text-green-400 hover:text-green-300 text-sm font-semibold">
                   View Performance Guide →
                 </Link>
+              </div>
+            </div>
+          </section>
+
+          {/* Automation Tools & Scripts Showcase */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">🛠️ Automation Tools & Scripts</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-cyan-400 mb-4 text-center">🚀 Build & Deploy Tools</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Master Build Orchestrator</li>
+                  <li>• Build Failure Recovery</li>
+                  <li>• Continuous Build Monitor</li>
+                  <li>• Build Guardian System</li>
+                  <li>• Smart Build Automation</li>
+                </ul>
+                <div className="text-cyan-400 text-sm font-semibold">
+                  Status: Active & Optimizing
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-fuchsia-400 mb-4 text-center">🔧 Development Tools</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Content Quality Fixer</li>
+                  <li>• Page Validator</li>
+                  <li>• Search Index Generator</li>
+                  <li>• Sitemap Generator</li>
+                  <li>• README Generator</li>
+                </ul>
+                <div className="text-fuchsia-400 text-sm font-semibold">
+                  Status: Continuously Improving
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-green-400 mb-4 text-center">📊 Monitoring & Analytics</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Performance Monitor</li>
+                  <li>• Health Check Systems</li>
+                  <li>• Analytics Dashboard</li>
+                  <li>• Status Reporting</li>
+                  <li>• Real-time Metrics</li>
+                </ul>
+                <div className="text-green-400 text-sm font-semibold">
+                  Status: Real-time Monitoring
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Advanced Redundancy Systems */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">🔄 Advanced Redundancy Systems</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-blue-400 mb-4 text-center">☁️ Netlify Functions</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Ultimate Redundancy V2</li>
+                  <li>• Comprehensive Redundancy</li>
+                  <li>• Enhanced Redundancy</li>
+                  <li>• Auto-healing Systems</li>
+                  <li>• Fallback Protection</li>
+                </ul>
+                <div className="text-blue-400 text-sm font-semibold">
+                  Status: Multi-layer Protection
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-purple-400 mb-4 text-center">⚙️ PM2 Process Management</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Ultimate PM2 Redundancy</li>
+                  <li>• Comprehensive PM2</li>
+                  <li>• Enhanced PM2 Systems</li>
+                  <li>• Auto-restart Protection</li>
+                  <li>• Process Monitoring</li>
+                </ul>
+                <div className="text-purple-400 text-sm font-semibold">
+                  Status: Process Guardian Active
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-yellow-400 mb-4 text-center">🔗 GitHub Actions</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Ultimate GitHub Redundancy</li>
+                  <li>• Comprehensive GitHub</li>
+                  <li>• Enhanced GitHub Systems</li>
+                  <li>• CI/CD Protection</li>
+                  <li>• Workflow Redundancy</li>
+                </ul>
+                <div className="text-yellow-400 text-sm font-semibold">
+                  Status: CI/CD Guardian Active
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Automation Scripts & Tools */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">📜 Automation Scripts & Tools</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-indigo-400 mb-4 text-center">🎯 Core Scripts</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Master Automation Launcher</li>
+                  <li>• Intelligent Orchestrator</li>
+                  <li>• Content Quality Analyzer</li>
+                  <li>• Dependency Update Orchestrator</li>
+                  <li>• Marketing Sync Automation</li>
+                </ul>
+                <div className="text-indigo-400 text-sm font-semibold">
+                  Status: Core Systems Active
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-pink-400 mb-4 text-center">🚀 Launch Scripts</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Enhanced Autonomous System</li>
+                  <li>• Google Docs Automation</li>
+                  <li>• LinkedIn Automation</li>
+                  <li>• MCP Integration</li>
+                  <li>• Cursor Memory System</li>
+                </ul>
+                <div className="text-pink-400 text-sm font-semibold">
+                  Status: Launch Systems Ready
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-orange-400 mb-4 text-center">⚡ Utility Scripts</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Git Sync Automation</li>
+                  <li>• Backup Triggers</li>
+                  <li>• Health Check Systems</li>
+                  <li>• Performance Optimizers</li>
+                  <li>• Security Scanners</li>
+                </ul>
+                <div className="text-orange-400 text-sm font-semibold">
+                  Status: Utility Systems Active
+                </div>
               </div>
             </div>
           </section>
