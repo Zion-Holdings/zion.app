@@ -1,7 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
-import { Check, Star, Zap, Shield, Users, Globe } from 'lucide-react';
+import { Check, Star, Zap, Shield, Users, Globe, ArrowRight } from 'lucide-react';
 import Button from '../components/ui/Button';
+import { microSaasServices, serviceCategories, getServicesByCategory } from '../data/micro-saas-services';
 
 export default function PricingPage() {
   const plans = [
@@ -300,6 +301,130 @@ export default function PricingPage() {
               >
                 Contact Sales
               </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* Micro SaaS Services Pricing */}
+        <section className="py-24 bg-gray-900">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-20">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
+                <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse" />
+                Micro SaaS Services
+              </div>
+              <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight">
+                Individual Service Pricing
+              </h2>
+              <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+                Choose from our portfolio of specialized micro SaaS services. Each service is designed to solve specific business problems with transparent, competitive pricing.
+              </p>
+            </div>
+
+            {/* Service Categories */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+              {serviceCategories.map((category, index) => {
+                const categoryServices = getServicesByCategory(category);
+                const avgPrice = categoryServices.length > 0 
+                  ? Math.round(categoryServices.reduce((sum, service) => sum + parseInt(service.pricing.starter), 0) / categoryServices.length)
+                  : 0;
+                
+                return (
+                  <div key={category} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700 hover:border-blue-500/30 transition-all duration-300">
+                    <h3 className="text-xl font-bold text-white mb-4">{category}</h3>
+                    <div className="text-3xl font-bold text-blue-400 mb-2">${avgPrice}</div>
+                    <div className="text-gray-400 text-sm mb-4">Average starting price</div>
+                    <div className="text-gray-300 text-sm mb-4">
+                      {categoryServices.length} service{categoryServices.length !== 1 ? 's' : ''} available
+                    </div>
+                    <Button
+                      href={`/services?category=${encodeURIComponent(category)}`}
+                      variant="outline"
+                      size="sm"
+                      className="w-full"
+                    >
+                      View Services
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Featured Services */}
+            <div className="text-center mb-16">
+              <h3 className="text-2xl font-bold text-white mb-8">Popular Services</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {microSaasServices.slice(0, 6).map((service, index) => (
+                  <div key={service.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700 hover:border-blue-500/30 transition-all duration-300">
+                    <div className="text-center mb-4">
+                      <h4 className="text-lg font-semibold text-white mb-2">{service.name}</h4>
+                      <div className="text-2xl font-bold text-blue-400">${service.pricing.starter}</div>
+                      <div className="text-gray-400 text-sm">per month</div>
+                    </div>
+                    <p className="text-gray-300 text-sm mb-4 line-clamp-3">{service.description}</p>
+                    <div className="space-y-2 mb-4">
+                      {service.features.slice(0, 3).map((feature, featureIndex) => (
+                        <div key={featureIndex} className="flex items-center text-xs text-gray-400">
+                          <Check className="w-3 h-3 text-green-400 mr-2 flex-shrink-0" />
+                          {feature}
+                        </div>
+                      ))}
+                    </div>
+                    <div className="flex gap-2">
+                      <Button
+                        href={service.website}
+                        variant="primary"
+                        size="sm"
+                        className="flex-1"
+                      >
+                        Visit Service
+                      </Button>
+                      <Button
+                        href={`/services/${service.id}`}
+                        variant="outline"
+                        size="sm"
+                        className="flex-1"
+                      >
+                        Details
+                      </Button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* CTA Section */}
+            <div className="text-center">
+              <div className="inline-flex items-center px-6 py-3 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
+                <Star className="w-4 h-4 mr-2" />
+                Ready to explore?
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">
+                Find the Perfect Service for Your Business
+              </h3>
+              <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
+                Browse our complete portfolio of micro SaaS services and discover solutions that can transform your business operations.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button
+                  href="/services"
+                  variant="primary"
+                  size="lg"
+                  className="shadow-2xl shadow-blue-500/25"
+                >
+                  View All Services
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+                <Button
+                  href="/contact"
+                  variant="outline"
+                  size="lg"
+                  className="border-white/20 text-white hover:border-white/40"
+                >
+                  Get Custom Quote
+                </Button>
+              </div>
             </div>
           </div>
         </section>

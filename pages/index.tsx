@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Hero from '../components/sections/Hero';
 import Features from '../components/sections/Features';
+import MicroSaasServices from '../components/sections/MicroSaasServices';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight } from 'lucide-react';
@@ -105,6 +106,14 @@ export default function HomePage() {
         subtitle="Discover the cutting-edge technologies and intelligent systems that power the future of autonomous innovation."
         features={platformFeatures}
         columns={3}
+      />
+
+      {/* Micro SaaS Services */}
+      <MicroSaasServices
+        title="Our Micro SaaS Portfolio"
+        subtitle="Discover our collection of innovative, AI-powered micro SaaS solutions that solve real business problems. Each service is designed to be powerful, affordable, and easy to use."
+        maxServices={6}
+        featured={true}
       />
 
       {/* Technology Stack */}

@@ -2,6 +2,8 @@ import React from 'react';
 import Head from 'next/head';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
+import MicroSaasServices from '../components/sections/MicroSaasServices';
+import ServiceComparison from '../components/sections/ServiceComparison';
 
 export default function ServicesPage() {
   const services = [
@@ -190,6 +192,16 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+
+      {/* Micro SaaS Services */}
+      <MicroSaasServices
+        title="Our Micro SaaS Portfolio"
+        subtitle="Explore our comprehensive collection of AI-powered micro SaaS solutions. Each service is designed to solve specific business challenges with cutting-edge technology and competitive pricing."
+        showCategoryFilter={true}
+      />
+
+      {/* Service Comparison */}
+      <ServiceComparison />
 
       {/* Technology Stack */}
       <section className="section-padding bg-gradient-cursor">
