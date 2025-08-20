@@ -54,6 +54,7 @@ class ComprehensiveMonitoringDashboard {
   ensureLogDirectory() {
     if (!fs.existsSync(this.logDir)) {
       fs.mkdirSync(this.logDir, { recursive: true });
+    }
   }
 
   log(message, level = "INFO") {
