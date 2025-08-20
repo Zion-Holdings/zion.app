@@ -2,13 +2,14 @@ import React from 'react';
 import Head from 'next/head';
 import Hero from '../components/sections/Hero';
 import Features from '../components/sections/Features';
-import Card from '../components/ui/Card';
+import FuturisticCard, { ServiceCard, FeatureCard } from '../components/ui/FuturisticCard';
 import Button from '../components/ui/Button';
-import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, ExternalLink } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, ExternalLink, Star, Rocket, Globe, Cpu, Database, Lock, TrendingUp, Users, Award } from 'lucide-react';
 
 export default function HomePage() {
   const heroStats = [
-    { value: '28+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
+    { value: '48+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
     { value: '99.9%', label: 'Uptime Guarantee', color: 'text-fuchsia-400' },
     { value: '14', label: 'Day Free Trials', color: 'text-blue-400' },
     { value: '24/7', label: 'AI Support', color: 'text-green-400' },
@@ -18,7 +19,7 @@ export default function HomePage() {
     {
       icon: <Cloud className="w-8 h-8 text-white" />,
       title: 'Real Micro SaaS Services',
-      description: '50+ fully functional micro SaaS tools with real implementations, not just mockups.',
+      description: '48+ fully functional micro SaaS tools with real implementations, not just mockups.',
       color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
       gradient: 'from-cyan-400 to-blue-500',
     },
@@ -127,7 +128,7 @@ export default function HomePage() {
 
   const stats = [
     { number: '500+', label: 'Happy Clients' },
-    { number: '50+', label: 'Micro SaaS Services' },
+    { number: '48+', label: 'Micro SaaS Services' },
     { number: '99.9%', label: 'Uptime SLA' },
     { number: '24/7', label: 'Support Available' },
   ];
@@ -269,10 +270,11 @@ export default function HomePage() {
               Enterprise-Grade Tools for Every Business Need
             </h2>
             <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
-              Discover <span className="text-green-400 font-semibold">28+ specialized micro SaaS solutions</span> covering AI-powered content creation, design systems, performance monitoring, 
+              Discover <span className="text-green-400 font-semibold">48+ specialized micro SaaS solutions</span> covering AI-powered content creation, design systems, performance monitoring, 
               SEO automation, chatbots, business intelligence, email marketing, social media, project management, 
               billing, HR operations, video editing, cloud optimization, legal automation, sales intelligence, customer analytics, 
-              API management, compliance monitoring, and more. <span className="text-green-400 font-semibold">Focused value with transparent pricing, 14-day free trials, and enterprise-grade infrastructure.</span>
+              API management, compliance monitoring, blockchain analytics, cybersecurity, IoT management, quantum computing, 
+              healthcare analytics, sustainable energy, and more. <span className="text-green-400 font-semibold">Focused value with transparent pricing, 14-day free trials, and enterprise-grade infrastructure.</span>
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4 text-sm text-gray-400">
               <span className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>14-Day Free Trials</span>
@@ -1453,6 +1455,97 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* New Futuristic Technology Showcase */}
+      <section className="py-24 bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(59,130,246,0.1),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(147,51,234,0.1),transparent_50%)]" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            className="text-center mb-20"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse" />
+              🌟 Cutting-Edge Technology Stack
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight">
+              Built on the Future of Technology
+            </h2>
+            <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              Our platform leverages the most advanced technologies including AI/ML, blockchain, quantum computing, 
+              IoT, edge computing, and more to deliver unprecedented value to our clients.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { icon: Cpu, title: 'AI & Machine Learning', description: 'Advanced neural networks and deep learning algorithms', color: 'from-purple-500 to-pink-600' },
+              { icon: Database, title: 'Big Data Analytics', description: 'Real-time processing and predictive insights', color: 'from-blue-500 to-cyan-600' },
+              { icon: Lock, title: 'Blockchain Security', description: 'Decentralized and immutable data protection', color: 'from-green-500 to-emerald-600' },
+              { icon: Globe, title: 'Edge Computing', description: 'Distributed computing for ultra-low latency', color: 'from-orange-500 to-red-600' }
+            ].map((tech, index) => (
+              <motion.div
+                key={tech.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <FeatureCard
+                  title={tech.title}
+                  description={tech.description}
+                  icon={<tech.icon className="w-12 h-12 text-white" />}
+                  className="h-full"
+                />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Innovation Metrics */}
+      <section className="py-20 bg-gradient-to-br from-gray-800/50 to-gray-900/50 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(16,185,129,0.1),transparent_50%)]" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-4xl font-bold text-white mb-4">
+              Innovation by the Numbers
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Our commitment to innovation is reflected in every metric that matters.
+            </p>
+          </motion.div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              { icon: TrendingUp, value: '300%', label: 'Performance Improvement', color: 'text-green-400' },
+              { icon: Users, value: '10M+', label: 'API Calls Daily', color: 'text-blue-400' },
+              { icon: Award, value: '50+', label: 'Industry Awards', color: 'text-purple-400' },
+              { icon: Rocket, value: '24/7', label: 'Innovation Cycle', color: 'text-orange-400' }
+            ].map((metric, index) => (
+              <motion.div
+                key={metric.label}
+                className="text-center"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <div className={`text-4xl md:text-5xl font-bold mb-2 ${metric.color}`}>
+                  {metric.value}
+                </div>
+                <div className="text-gray-400">{metric.label}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Latest Services Showcase */}
       <section className="py-24 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1552,8 +1645,9 @@ export default function HomePage() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
             {technologyStack.map((tech, index) => (
-              <Card
+              <FuturisticCard
                 key={index}
+                variant="glass"
                 className="text-center group border border-gray-800 hover:border-blue-500/30"
                 style={{ animationDelay: `${(index * 0.05) + 0.2}s` }}
               >
@@ -1562,7 +1656,7 @@ export default function HomePage() {
                 </div>
                 <h3 className="font-semibold text-white mb-2 text-lg">{tech.name}</h3>
                 <p className="text-sm text-gray-400">{tech.category}</p>
-              </Card>
+              </FuturisticCard>
             ))}
           </div>
         </div>
