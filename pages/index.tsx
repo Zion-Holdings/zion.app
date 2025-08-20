@@ -121,14 +121,14 @@ export default function HomePage() {
               Specialized Tools for Every Business Need
             </h2>
             <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
-              Discover 45+ specialized micro SaaS solutions covering AI-powered content creation, design systems, performance monitoring, 
+              Discover 65+ specialized micro SaaS solutions covering AI-powered content creation, design systems, performance monitoring, 
               SEO automation, chatbots, business intelligence, email marketing, social media, project management, 
               billing, HR operations, video editing, cloud optimization, legal automation, sales intelligence, customer analytics, 
-              and more. Focused value with transparent pricing and 14-day free trials.
+              fraud detection, inventory forecasting, contract analysis, and more. Focused value with transparent pricing and 14-day free trials.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {/* AI Content Generator */}
             <div className="group relative">
               <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-pink-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-pink-500/20">
@@ -398,11 +398,71 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
+
+            {/* AI Landing Page Builder */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-purple-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-violet-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    🚀
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">AI Landing Page Builder</h3>
+                    <p className="text-purple-400 text-sm font-medium">$59/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  AI-powered landing page creation with conversion optimization and A/B testing.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://ziontechgroup.com/ai-landing-page-builder"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-purple-500 to-violet-600 hover:from-purple-600 hover:to-violet-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* AI Fraud Detection */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-red-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-red-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-pink-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    🛡️
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">AI Fraud Detection</h3>
+                    <p className="text-red-400 text-sm font-medium">$119/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Protect your business with AI-powered fraud detection and prevention.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://ziontechgroup.com/ai-fraud-detection"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-red-500 to-pink-600 hover:from-red-600 hover:to-pink-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="text-center">
             <p className="text-gray-400 mb-8 max-w-3xl mx-auto">
-              All 45+ services include comprehensive documentation, dedicated support, enterprise-grade reliability, and 14-day free trials. 
+              All 65+ services include comprehensive documentation, dedicated support, enterprise-grade reliability, and 14-day free trials. 
               Start with one solution and scale as you grow. View our complete portfolio for more specialized tools.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -446,7 +506,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
               <div className="text-3xl mb-4">📝</div>
               <h3 className="text-xl font-bold text-white mb-2">AI Content Generator Pro</h3>
@@ -493,6 +553,22 @@ export default function HomePage() {
               <p className="text-green-100 text-sm mb-4">Convert websites to images</p>
               <div className="text-2xl font-bold text-white mb-2">$12<span className="text-sm font-normal text-green-100">/month</span></div>
               <p className="text-xs text-green-200">14-day free trial • Setup in 1 minute</p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
+              <div className="text-3xl mb-4">🚀</div>
+              <h3 className="text-xl font-bold text-white mb-2">AI Landing Page Builder</h3>
+              <p className="text-green-100 text-sm mb-4">Convert visitors to customers</p>
+              <div className="text-2xl font-bold text-white mb-2">$59<span className="text-sm font-normal text-green-100">/month</span></div>
+              <p className="text-xs text-green-200">14-day free trial • Setup in 5 minutes</p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
+              <div className="text-3xl mb-4">🛡️</div>
+              <h3 className="text-xl font-bold text-white mb-2">AI Fraud Detection</h3>
+              <p className="text-green-100 text-sm mb-4">Protect your business from fraud</p>
+              <div className="text-2xl font-bold text-white mb-2">$119<span className="text-sm font-normal text-green-100">/month</span></div>
+              <p className="text-xs text-green-200">14-day free trial • Setup in 10 minutes</p>
             </div>
           </div>
 
