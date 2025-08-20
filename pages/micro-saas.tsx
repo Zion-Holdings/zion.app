@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink } from 'lucide-react';
+import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target } from 'lucide-react';
 import Button from '../components/ui/Button';
 
 export default function MicroSaasPage() {
@@ -10,7 +10,7 @@ export default function MicroSaasPage() {
       tagline: 'Professional AI-powered content creation',
       price: '$49',
       period: '/month',
-      description: 'Create high-quality, SEO-optimized content at scale with our advanced AI writing assistant. Supports 15+ languages and includes plagiarism detection.',
+      description: 'Create high-quality, SEO-optimized content at scale with our advanced AI writing assistant. Perfect for content marketers, agencies, and businesses.',
       features: [
         'SEO-optimized content generation',
         'Multi-language support (15+ languages)',
@@ -19,24 +19,24 @@ export default function MicroSaasPage() {
         'Plagiarism-free writing guarantee',
         'Advanced content analytics',
         'Team collaboration tools',
-        'API access for integrations',
-        'Real-time collaboration',
-        'Version control & history'
+        'API access for integrations'
       ],
       popular: true,
       icon: '📝',
       color: 'from-pink-500 to-rose-600',
       textColor: 'text-pink-400',
       link: 'https://contentgen.ziontechgroup.com',
-      marketPosition: 'Competitive with Jasper ($39-99), Copy.ai ($36-186), and Writesonic ($12.67-100). Our pricing is 20-30% below market average.',
-      targetAudience: 'Content marketers, agencies, e-commerce businesses, and content creators'
+      marketPosition: 'Competitive with Jasper ($39-99), Copy.ai ($36-186), and Writesonic ($12.67-100)',
+      targetAudience: 'Content marketers, agencies, e-commerce businesses, and content creators',
+      trialDays: 14,
+      setupTime: '5 minutes'
     },
     {
       name: 'Design System Builder',
       tagline: 'Automated design system management',
       price: '$79',
       period: '/month',
-      description: 'Build and maintain consistent design systems with automated component generation, team collaboration, and seamless design-to-code workflow.',
+      description: 'Build and maintain consistent design systems with automated component generation and team collaboration. Streamline your design workflow.',
       features: [
         'Component library management',
         'Design token automation',
@@ -45,24 +45,24 @@ export default function MicroSaasPage() {
         'Team collaboration tools',
         'Version control & history',
         'Design system analytics',
-        'Integration with Figma, Sketch, Adobe XD',
-        'Automated documentation',
-        'Design system health monitoring'
+        'Integration with Figma, Sketch, Adobe XD'
       ],
       popular: false,
       icon: '🎨',
       color: 'from-violet-500 to-purple-600',
       textColor: 'text-violet-400',
       link: 'https://design.ziontechgroup.com',
-      marketPosition: 'Competitive with Zeroheight ($0-200), Frontify ($0-200), and InVision DSM ($0-100). Premium features at mid-tier pricing.',
-      targetAudience: 'Design teams, product managers, and design system architects'
+      marketPosition: 'Competitive with Zeroheight ($0-200), Frontify ($0-200), and InVision DSM ($0-100)',
+      targetAudience: 'Design teams, product managers, and design system architects',
+      trialDays: 14,
+      setupTime: '15 minutes'
     },
     {
       name: 'App Performance Monitor',
       tagline: 'Real-time performance monitoring',
       price: '$39',
       period: '/month',
-      description: 'Monitor and optimize your web and mobile applications with real-time performance insights, error tracking, and automated optimization recommendations.',
+      description: 'Monitor and optimize your web and mobile applications with real-time performance insights. Catch issues before they affect users.',
       features: [
         'Performance metrics tracking',
         'Error monitoring & alerting',
@@ -71,24 +71,24 @@ export default function MicroSaasPage() {
         'Custom dashboards',
         'Real-time alerts',
         'Performance budgets',
-        'Integration with popular frameworks',
-        'Core Web Vitals monitoring',
-        'Performance regression detection'
+        'Integration with popular frameworks'
       ],
       popular: false,
       icon: '📱',
       color: 'from-amber-500 to-orange-600',
       textColor: 'text-amber-400',
       link: 'https://monitor.ziontechgroup.com',
-      marketPosition: 'Competitive with Sentry ($26-80), LogRocket ($99-199), and New Relic ($0-99). 50% more affordable than LogRocket.',
-      targetAudience: 'Developers, DevOps teams, and product managers'
+      marketPosition: 'Competitive with Sentry ($26-80), LogRocket ($99-199), and New Relic ($0-99)',
+      targetAudience: 'Developers, DevOps teams, and product managers',
+      trialDays: 14,
+      setupTime: '10 minutes'
     },
     {
       name: 'SEO Automation Suite',
       tagline: 'Comprehensive SEO automation',
       price: '$89',
       period: '/month',
-      description: 'Automate your SEO workflow with advanced tools for keyword research, optimization, technical audits, and comprehensive reporting.',
+      description: 'Automate your SEO workflow with advanced tools for keyword research, optimization, and reporting. Boost your search rankings.',
       features: [
         'Keyword research automation',
         'On-page optimization',
@@ -97,24 +97,24 @@ export default function MicroSaasPage() {
         'Ranking tracking',
         'Automated reporting',
         'SEO score monitoring',
-        'Integration with Google Analytics & Search Console',
-        'Local SEO optimization',
-        'Schema markup generator'
+        'Integration with Google Analytics & Search Console'
       ],
       popular: false,
       icon: '🔍',
       color: 'from-emerald-500 to-green-600',
       textColor: 'text-emerald-400',
       link: 'https://seo.ziontechgroup.com',
-      marketPosition: 'Competitive with Ahrefs ($99-999), SEMrush ($119-449), and Moz ($99-599). 10-20% below market average with comparable features.',
-      targetAudience: 'SEO specialists, digital marketers, and agencies'
+      marketPosition: 'Competitive with Ahrefs ($99-999), SEMrush ($119-449), and Moz ($99-599)',
+      targetAudience: 'SEO specialists, digital marketers, and agencies',
+      trialDays: 14,
+      setupTime: '20 minutes'
     },
     {
       name: 'AI Chatbot Platform',
       tagline: 'Intelligent conversational AI',
       price: '$69',
       period: '/month',
-      description: 'Build intelligent chatbots for customer support, lead generation, and user engagement with advanced NLP and multi-channel integration.',
+      description: 'Build intelligent chatbots for customer support, lead generation, and user engagement. Reduce support costs and improve customer satisfaction.',
       features: [
         'Natural language processing',
         'Multi-channel integration',
@@ -123,24 +123,24 @@ export default function MicroSaasPage() {
         '24/7 availability',
         'Multi-language support',
         'Conversation flow builder',
-        'Integration with popular platforms',
-        'Sentiment analysis',
-        'Automated escalation to humans'
+        'Integration with popular platforms'
       ],
       popular: false,
       icon: '💬',
       color: 'from-sky-500 to-blue-600',
       textColor: 'text-sky-400',
       link: 'https://chatbot.ziontechgroup.com',
-      marketPosition: 'Competitive with Intercom ($39-499), Drift ($0-2500), and ManyChat ($0-15). Premium features at affordable pricing.',
-      targetAudience: 'Customer support teams, marketers, and e-commerce businesses'
+      marketPosition: 'Competitive with Intercom ($39-499), Drift ($0-2500), and ManyChat ($0-15)',
+      targetAudience: 'Customer support teams, marketers, and e-commerce businesses',
+      trialDays: 14,
+      setupTime: '30 minutes'
     },
     {
       name: 'Business Intelligence Hub',
       tagline: 'Data-driven insights platform',
       price: '$99',
       period: '/month',
-      description: 'Transform your data into actionable insights with advanced analytics, automated reporting, and predictive analytics capabilities.',
+      description: 'Transform your data into actionable insights with advanced analytics and automated reporting. Make data-driven decisions faster.',
       features: [
         'Data visualization tools',
         'Automated reporting',
@@ -149,173 +149,174 @@ export default function MicroSaasPage() {
         'Data integration',
         'Real-time data processing',
         'Custom metrics & calculations',
-        'Team collaboration features',
-        'Data governance tools',
-        'Advanced filtering & segmentation'
+        'Team collaboration features'
       ],
       popular: false,
       icon: '📊',
       color: 'from-rose-500 to-pink-600',
       textColor: 'text-rose-400',
       link: 'https://bi.ziontechgroup.com',
-      marketPosition: 'Competitive with Tableau ($70-70), Power BI ($9.99-20), and Looker ($500-5000). Enterprise features at SMB pricing.',
-      targetAudience: 'Data analysts, business intelligence teams, and executives'
+      marketPosition: 'Competitive with Tableau ($70-70), Power BI ($9.99-20), and Looker ($500-5000)',
+      targetAudience: 'Data analysts, business intelligence teams, and executives',
+      trialDays: 14,
+      setupTime: '45 minutes'
     },
+    // New Real Micro SaaS Services
     {
       name: 'Email Marketing Automation',
-      tagline: 'Advanced email campaign management',
-      price: '$59',
+      tagline: 'Smart email campaigns that convert',
+      price: '$29',
       period: '/month',
-      description: 'Create, automate, and optimize email marketing campaigns with advanced segmentation, A/B testing, and comprehensive analytics.',
+      description: 'Create personalized email campaigns with AI-powered automation. Increase open rates and conversions with smart segmentation.',
       features: [
-        'Drag-and-drop email builder',
-        'Advanced segmentation',
-        'A/B testing automation',
+        'AI-powered subject line optimization',
+        'Smart audience segmentation',
         'Behavioral triggers',
-        'Email deliverability tools',
-        'Comprehensive analytics',
-        'Template library (200+ templates)',
-        'Integration with popular platforms',
+        'A/B testing automation',
+        'Email template library',
+        'Analytics & reporting',
         'GDPR compliance tools',
-        'Advanced personalization'
+        'Integration with popular CRMs'
       ],
-      popular: true,
+      popular: false,
       icon: '📧',
-      color: 'from-indigo-500 to-purple-600',
+      color: 'from-indigo-500 to-blue-600',
       textColor: 'text-indigo-400',
       link: 'https://email.ziontechgroup.com',
-      marketPosition: 'Competitive with Mailchimp ($13-350), ConvertKit ($9-25), and ActiveCampaign ($9-49). 30% more features at similar pricing.',
-      targetAudience: 'Marketers, e-commerce businesses, and content creators'
+      marketPosition: 'Competitive with Mailchimp ($13-350), ConvertKit ($9-29), and ActiveCampaign ($9-49)',
+      targetAudience: 'Small businesses, marketers, and e-commerce stores',
+      trialDays: 14,
+      setupTime: '15 minutes'
     },
     {
       name: 'Social Media Scheduler',
-      tagline: 'Intelligent social media management',
-      price: '$39',
+      tagline: 'Automate your social presence',
+      price: '$19',
       period: '/month',
-      description: 'Schedule, publish, and analyze social media content across multiple platforms with AI-powered content optimization.',
+      description: 'Schedule and automate your social media posts across multiple platforms. Save time and maintain consistent engagement.',
       features: [
         'Multi-platform scheduling',
-        'AI content optimization',
-        'Visual content calendar',
-        'Hashtag research tools',
-        'Performance analytics',
+        'AI-powered optimal timing',
+        'Content calendar management',
+        'Hashtag suggestions',
+        'Analytics & insights',
         'Team collaboration',
         'Content recycling',
-        'Best time to post analysis',
-        'Social listening tools',
-        'Competitor analysis'
+        'Integration with Canva & Unsplash'
       ],
       popular: false,
       icon: '📱',
       color: 'from-teal-500 to-cyan-600',
       textColor: 'text-teal-400',
       link: 'https://social.ziontechgroup.com',
-      marketPosition: 'Competitive with Buffer ($6-99), Hootsuite ($29-599), and Later ($18-40). 40% more affordable with premium features.',
-      targetAudience: 'Social media managers, marketers, and small businesses'
+      marketPosition: 'Competitive with Buffer ($6-99), Hootsuite ($29-599), and Later ($18-40)',
+      targetAudience: 'Social media managers, small businesses, and influencers',
+      trialDays: 14,
+      setupTime: '10 minutes'
     },
     {
-      name: 'Customer Feedback Platform',
-      tagline: 'Comprehensive feedback collection',
-      price: '$49',
+      name: 'Invoice & Billing Manager',
+      tagline: 'Streamline your invoicing process',
+      price: '$25',
       period: '/month',
-      description: 'Collect, analyze, and act on customer feedback with surveys, NPS tracking, and sentiment analysis tools.',
-      features: [
-        'Survey builder & templates',
-        'NPS & CSAT tracking',
-        'Sentiment analysis',
-        'Feedback analytics',
-        'Automated follow-ups',
-        'Integration with CRM',
-        'Real-time notifications',
-        'Custom branding',
-        'Multi-language support',
-        'Advanced reporting'
-      ],
-      popular: false,
-      icon: '💭',
-      color: 'from-orange-500 to-red-600',
-      textColor: 'text-orange-400',
-      link: 'https://feedback.ziontechgroup.com',
-      marketPosition: 'Competitive with SurveyMonkey ($25-75), Typeform ($0-70), and Qualtrics ($150-500). 50% more affordable with enterprise features.',
-      targetAudience: 'Product managers, customer success teams, and researchers'
-    },
-    {
-      name: 'Project Management Hub',
-      tagline: 'Streamlined project collaboration',
-      price: '$69',
-      period: '/month',
-      description: 'Manage projects, tasks, and team collaboration with intuitive tools, time tracking, and comprehensive reporting.',
-      features: [
-        'Task & project management',
-        'Team collaboration tools',
-        'Time tracking & reporting',
-        'Gantt charts & timelines',
-        'File sharing & storage',
-        'Custom workflows',
-        'Mobile applications',
-        'Integration with popular tools',
-        'Resource allocation',
-        'Performance analytics'
-      ],
-      popular: false,
-      icon: '📋',
-      color: 'from-lime-500 to-green-600',
-      textColor: 'text-lime-400',
-      link: 'https://projects.ziontechgroup.com',
-      marketPosition: 'Competitive with Asana ($0-24.99), Monday.com ($0-20), and ClickUp ($0-12). 25% more features at competitive pricing.',
-      targetAudience: 'Project managers, teams, and small businesses'
-    },
-    {
-      name: 'Invoice & Billing System',
-      tagline: 'Professional invoicing & payment',
-      price: '$29',
-      period: '/month',
-      description: 'Create professional invoices, track payments, and manage your business finances with automated billing and payment processing.',
+      description: 'Create professional invoices, track payments, and manage your billing workflow. Get paid faster with automated reminders.',
       features: [
         'Professional invoice templates',
         'Automated payment reminders',
         'Multiple payment gateways',
         'Expense tracking',
         'Financial reporting',
-        'Tax calculation tools',
         'Client portal',
-        'Recurring billing',
-        'Multi-currency support',
+        'Tax calculations',
         'Integration with accounting software'
       ],
       popular: false,
       icon: '💰',
-      color: 'from-yellow-500 to-amber-600',
+      color: 'from-yellow-500 to-orange-600',
       textColor: 'text-yellow-400',
       link: 'https://billing.ziontechgroup.com',
-      marketPosition: 'Competitive with FreshBooks ($7.50-55), QuickBooks ($12.50-90), and Wave (Free). 60% more affordable than QuickBooks.',
-      targetAudience: 'Freelancers, small businesses, and consultants'
+      marketPosition: 'Competitive with FreshBooks ($17-55), Wave (Free), and Zoho Invoice ($9-29)',
+      targetAudience: 'Freelancers, small businesses, and consultants',
+      trialDays: 14,
+      setupTime: '20 minutes'
     },
     {
-      name: 'HR Management Suite',
-      tagline: 'Complete HR operations platform',
-      price: '$79',
+      name: 'Project Management Hub',
+      tagline: 'Simple project management for teams',
+      price: '$35',
       period: '/month',
-      description: 'Streamline HR operations with employee management, time tracking, payroll integration, and performance management tools.',
+      description: 'Manage projects, tasks, and team collaboration with an intuitive interface. Perfect for small to medium teams.',
       features: [
-        'Employee database management',
-        'Time & attendance tracking',
-        'Leave management',
-        'Performance reviews',
-        'Payroll integration',
-        'Benefits administration',
-        'Compliance monitoring',
-        'Employee self-service portal',
-        'Reporting & analytics',
-        'Integration with popular HR tools'
+        'Task management & tracking',
+        'Team collaboration tools',
+        'Time tracking',
+        'File sharing & storage',
+        'Project templates',
+        'Progress reporting',
+        'Mobile app access',
+        'Integration with popular tools'
       ],
       popular: false,
-      icon: '👥',
-      color: 'from-slate-500 to-gray-600',
-      textColor: 'text-slate-400',
-      link: 'https://hr.ziontechgroup.com',
-      marketPosition: 'Competitive with BambooHR ($6.19-8.95), Gusto ($40-160), and Zenefits ($8-27). 20% more features at similar pricing.',
-      targetAudience: 'HR professionals, small businesses, and growing companies'
+      icon: '📋',
+      color: 'from-purple-500 to-indigo-600',
+      textColor: 'text-purple-400',
+      link: 'https://projects.ziontechgroup.com',
+      marketPosition: 'Competitive with Asana ($10.99-24.99), Trello ($5-17.50), and Monday.com ($8-16)',
+      targetAudience: 'Project managers, development teams, and creative agencies',
+      trialDays: 14,
+      setupTime: '25 minutes'
+    },
+    {
+      name: 'Customer Support Ticketing',
+      tagline: 'Organized customer support system',
+      price: '$45',
+      period: '/month',
+      description: 'Manage customer inquiries efficiently with a powerful ticketing system. Improve response times and customer satisfaction.',
+      features: [
+        'Ticket management system',
+        'Knowledge base creation',
+        'Automated responses',
+        'Customer satisfaction surveys',
+        'Performance analytics',
+        'Multi-channel support',
+        'Team collaboration tools',
+        'Integration with popular platforms'
+      ],
+      popular: false,
+      icon: '🎫',
+      color: 'from-red-500 to-pink-600',
+      textColor: 'text-red-400',
+      link: 'https://support.ziontechgroup.com',
+      marketPosition: 'Competitive with Zendesk ($49-99), Freshdesk ($15-99), and Help Scout ($20-65)',
+      targetAudience: 'Customer support teams, SaaS companies, and e-commerce businesses',
+      trialDays: 14,
+      setupTime: '30 minutes'
+    },
+    {
+      name: 'Analytics Dashboard',
+      tagline: 'Beautiful data visualization',
+      price: '$55',
+      period: '/month',
+      description: 'Create stunning dashboards and reports with drag-and-drop simplicity. Connect to your data sources and visualize insights.',
+      features: [
+        'Drag-and-drop dashboard builder',
+        '100+ chart types',
+        'Real-time data connections',
+        'Custom branding',
+        'Team sharing & collaboration',
+        'Automated reporting',
+        'Mobile-responsive design',
+        'API access for custom integrations'
+      ],
+      popular: false,
+      icon: '📈',
+      color: 'from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      link: 'https://analytics.ziontechgroup.com',
+      marketPosition: 'Competitive with Grafana ($0-49), Metabase ($0-85), and Tableau ($70-70)',
+      targetAudience: 'Data analysts, business users, and product teams',
+      trialDays: 14,
+      setupTime: '35 minutes'
     }
   ];
 
@@ -323,22 +324,20 @@ export default function MicroSaasPage() {
     {
       title: 'Growing Market Demand',
       description: 'The micro SaaS market is experiencing rapid growth, with businesses increasingly seeking specialized, affordable solutions over complex enterprise platforms.',
-      stats: '32% annual growth rate'
+      stats: '32% annual growth rate',
+      icon: TrendingUp
     },
     {
       title: 'Competitive Pricing',
-      description: 'Our pricing strategy positions us 15-60% below market average while maintaining premium features and enterprise-grade quality standards.',
-      stats: '15-60% below market average'
+      description: 'Our pricing strategy positions us competitively in the market while maintaining high value and quality standards.',
+      stats: '15-40% below market average',
+      icon: Target
     },
     {
-      title: 'Focus on Specialization',
-      description: 'Unlike broad platforms, our 12 micro SaaS solutions focus on specific use cases, delivering deeper functionality and better user experience.',
-      stats: '3x faster time-to-value'
-    },
-    {
-      title: 'Comprehensive Coverage',
-      description: 'From content creation to HR management, we cover the essential business operations that growing companies need to succeed.',
-      stats: '12 specialized solutions'
+      title: 'Quick Setup & ROI',
+      description: 'Unlike complex enterprise solutions, our micro SaaS tools can be set up in minutes and deliver immediate value.',
+      stats: '3x faster time-to-value',
+      icon: Clock
     }
   ];
 
@@ -346,7 +345,7 @@ export default function MicroSaasPage() {
     <>
       <Head>
         <title>Micro SaaS Services | Zion Tech Group - Specialized Business Solutions</title>
-        <meta name="description" content="Discover our 12 specialized micro SaaS solutions covering content creation, design systems, performance monitoring, SEO automation, chatbots, business intelligence, email marketing, social media, customer feedback, project management, billing, and HR operations. Competitive pricing with 14-day free trials." />
+        <meta name="description" content="Discover our specialized micro SaaS solutions for content creation, design systems, performance monitoring, SEO automation, chatbots, and business intelligence. Competitive pricing with 14-day free trials." />
         <meta property="og:title" content="Micro SaaS Services | Zion Tech Group" />
         <meta property="og:description" content="Specialized business solutions with competitive pricing and free trials." />
         <meta name="twitter:card" content="summary_large_image" />
@@ -370,9 +369,7 @@ export default function MicroSaasPage() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400"> Every Business Need</span>
             </h1>
             <p className="text-xl text-gray-400 max-w-5xl mx-auto leading-relaxed mb-12">
-              Discover 12 specialized micro SaaS solutions covering content creation, design systems, performance monitoring, 
-              SEO automation, chatbots, business intelligence, email marketing, social media, customer feedback, project management, 
-              billing, and HR operations. Focused, affordable solutions that deliver specific value without the complexity of enterprise platforms. 
+              Focused, affordable solutions that deliver specific value without the complexity of enterprise platforms. 
               Start with a free trial and scale as you grow.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -410,15 +407,21 @@ export default function MicroSaasPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {marketInsights.map((insight, index) => (
-                <div key={index} className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700 hover:border-green-500/30 transition-all duration-300">
-                  <h3 className="text-xl font-bold text-white mb-4">{insight.title}</h3>
-                  <p className="text-gray-400 mb-6 leading-relaxed">{insight.description}</p>
-                  <div className="inline-flex items-center px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium">
-                    {insight.stats}
+              {marketInsights.map((insight, index) => {
+                const IconComponent = insight.icon;
+                return (
+                  <div key={index} className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700 hover:border-green-500/30 transition-all duration-300">
+                    <div className="flex items-center justify-center w-16 h-16 bg-green-500/10 rounded-2xl mb-6 mx-auto">
+                      <IconComponent className="w-8 h-8 text-green-400" />
+                    </div>
+                    <h3 className="text-xl font-bold text-white mb-4 text-center">{insight.title}</h3>
+                    <p className="text-gray-400 mb-6 leading-relaxed text-center">{insight.description}</p>
+                    <div className="inline-flex items-center px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium mx-auto block">
+                      {insight.stats}
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>
@@ -431,8 +434,7 @@ export default function MicroSaasPage() {
                 Our Micro SaaS Portfolio
               </h2>
               <p className="text-xl text-gray-400 max-w-4xl mx-auto">
-                Twelve specialized solutions covering every essential business operation. Each solution is designed to solve a specific business problem 
-                with deep functionality, competitive pricing, and enterprise-grade reliability.
+                Each solution is designed to solve a specific business problem with deep functionality and competitive pricing.
               </p>
             </div>
 
@@ -464,7 +466,10 @@ export default function MicroSaasPage() {
                       <span className="text-3xl font-bold text-white">{service.price}</span>
                       <span className="text-gray-400 ml-1">{service.period}</span>
                     </div>
-                    <p className="text-sm text-gray-500">14-day free trial included</p>
+                    <div className="flex items-center justify-between text-sm text-gray-500 mb-2">
+                      <span>{service.trialDays}-day free trial</span>
+                      <span>Setup: {service.setupTime}</span>
+                    </div>
                   </div>
 
                   <ul className="space-y-3 mb-8">
@@ -503,6 +508,84 @@ export default function MicroSaasPage() {
           </div>
         </section>
 
+        {/* Pricing Comparison Section */}
+        <section className="py-24 bg-gray-900">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-20">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">
+                Competitive Market Positioning
+              </h2>
+              <p className="text-xl text-gray-400 max-w-4xl mx-auto">
+                See how our micro SaaS solutions compare to industry leaders in pricing and value.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+              <div className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700">
+                <h3 className="text-2xl font-bold text-white mb-6 text-center">Our Approach</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center text-green-400">
+                    <Check className="w-5 h-5 mr-3 flex-shrink-0" />
+                    <span className="text-gray-300">Focused, specialized solutions</span>
+                  </div>
+                  <div className="flex items-center text-green-400">
+                    <Check className="w-5 h-5 mr-3 flex-shrink-0" />
+                    <span className="text-gray-300">15-40% below market average pricing</span>
+                  </div>
+                  <div className="flex items-center text-green-400">
+                    <Check className="w-5 h-5 mr-3 flex-shrink-0" />
+                    <span className="text-gray-300">Setup in minutes, not days</span>
+                  </div>
+                  <div className="flex items-center text-green-400">
+                    <Check className="w-5 h-5 mr-3 flex-shrink-0" />
+                    <span className="text-gray-300">Dedicated support for all plans</span>
+                  </div>
+                  <div className="flex items-center text-green-400">
+                    <Check className="w-5 h-5 mr-3 flex-shrink-0" />
+                    <span className="text-gray-300">14-day free trial on all services</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700">
+                <h3 className="text-2xl font-bold text-white mb-6 text-center">Market Advantages</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center text-blue-400">
+                    <Zap className="w-5 h-5 mr-3 flex-shrink-0" />
+                    <span className="text-gray-300">3x faster time-to-value</span>
+                  </div>
+                  <div className="flex items-center text-blue-400">
+                    <Zap className="w-5 h-5 mr-3 flex-shrink-0" />
+                    <span className="text-gray-300">No complex enterprise setup</span>
+                  </div>
+                  <div className="flex items-center text-blue-400">
+                    <Zap className="w-5 h-5 mr-3 flex-shrink-0" />
+                    <span className="text-gray-300">Pay only for what you need</span>
+                  </div>
+                  <div className="flex items-center text-blue-400">
+                    <Zap className="w-5 h-5 mr-3 flex-shrink-0" />
+                    <span className="text-gray-300">Scalable as your business grows</span>
+                  </div>
+                  <div className="flex items-center text-blue-400">
+                    <Zap className="w-5 h-5 mr-3 flex-shrink-0" />
+                    <span className="text-gray-300">Regular feature updates</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <p className="text-lg text-gray-400 mb-8">
+                All services are hosted on enterprise-grade infrastructure with 99.9% uptime guarantee
+              </p>
+              <div className="inline-flex items-center px-6 py-3 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-lg font-medium">
+                <Shield className="w-5 h-5 mr-2" />
+                Enterprise-grade security & reliability
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* CTA Section */}
         <section className="py-24 bg-gradient-to-r from-green-600 to-emerald-700 relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px] opacity-10" />
@@ -511,8 +594,8 @@ export default function MicroSaasPage() {
               Ready to Get Started?
             </h2>
             <p className="text-xl text-green-100 mb-12 max-w-4xl mx-auto leading-relaxed">
-              Choose from 12 specialized solutions that fit your business needs. All services include comprehensive documentation, 
-              dedicated support, enterprise-grade reliability, and 14-day free trials. Start with one solution and add more as you grow.
+              Choose the solution that fits your needs. All services include comprehensive documentation, 
+              dedicated support, and enterprise-grade reliability.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button

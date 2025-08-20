@@ -197,6 +197,108 @@ export default function ServicesPage() {
       gradient: 'from-rose-400 to-pink-500',
       pricing: '$99/month',
       link: 'https://bi.ziontechgroup.com'
+    },
+    {
+      icon: '📧',
+      title: 'Email Marketing Automation',
+      description: 'Smart email campaigns with AI-powered automation and personalization.',
+      features: [
+        'AI-powered subject line optimization',
+        'Smart audience segmentation',
+        'Behavioral triggers',
+        'A/B testing automation',
+        'Email template library'
+      ],
+      color: 'bg-gradient-to-br from-indigo-500 to-blue-600',
+      textColor: 'text-indigo-400',
+      gradient: 'from-indigo-400 to-blue-500',
+      pricing: '$29/month',
+      link: 'https://email.ziontechgroup.com'
+    },
+    {
+      icon: '📱',
+      title: 'Social Media Scheduler',
+      description: 'Automate your social media presence across multiple platforms.',
+      features: [
+        'Multi-platform scheduling',
+        'AI-powered optimal timing',
+        'Content calendar management',
+        'Hashtag suggestions',
+        'Analytics & insights'
+      ],
+      color: 'bg-gradient-to-br from-teal-500 to-cyan-600',
+      textColor: 'text-teal-400',
+      gradient: 'from-teal-400 to-cyan-500',
+      pricing: '$19/month',
+      link: 'https://social.ziontechgroup.com'
+    },
+    {
+      icon: '💰',
+      title: 'Invoice & Billing Manager',
+      description: 'Streamline your invoicing process with professional templates and automation.',
+      features: [
+        'Professional invoice templates',
+        'Automated payment reminders',
+        'Multiple payment gateways',
+        'Expense tracking',
+        'Financial reporting'
+      ],
+      color: 'bg-gradient-to-br from-yellow-500 to-orange-600',
+      textColor: 'text-yellow-400',
+      gradient: 'from-yellow-400 to-orange-500',
+      pricing: '$25/month',
+      link: 'https://billing.ziontechgroup.com'
+    },
+    {
+      icon: '📋',
+      title: 'Project Management Hub',
+      description: 'Simple project management for teams with intuitive collaboration tools.',
+      features: [
+        'Task management & tracking',
+        'Team collaboration tools',
+        'Time tracking',
+        'File sharing & storage',
+        'Project templates'
+      ],
+      color: 'bg-gradient-to-br from-purple-500 to-indigo-600',
+      textColor: 'text-purple-400',
+      gradient: 'from-purple-400 to-indigo-500',
+      pricing: '$35/month',
+      link: 'https://projects.ziontechgroup.com'
+    },
+    {
+      icon: '🎫',
+      title: 'Customer Support Ticketing',
+      description: 'Organized customer support system with knowledge base and automation.',
+      features: [
+        'Ticket management system',
+        'Knowledge base creation',
+        'Automated responses',
+        'Customer satisfaction surveys',
+        'Performance analytics'
+      ],
+      color: 'bg-gradient-to-br from-red-500 to-pink-600',
+      textColor: 'text-red-400',
+      gradient: 'from-red-400 to-pink-500',
+      pricing: '$45/month',
+      link: 'https://support.ziontechgroup.com'
+    },
+    {
+      icon: '📈',
+      title: 'Analytics Dashboard',
+      description: 'Beautiful data visualization with drag-and-drop dashboard builder.',
+      features: [
+        'Drag-and-drop dashboard builder',
+        '100+ chart types',
+        'Real-time data connections',
+        'Custom branding',
+        'Team sharing & collaboration'
+      ],
+      color: 'bg-gradient-to-br from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      gradient: 'from-green-400 to-emerald-500',
+      pricing: '$55/month',
+      link: 'https://analytics.ziontechgroup.com'
     }
   ];
 
@@ -305,43 +407,6 @@ export default function ServicesPage() {
                 </div>
               </Card>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Micro SaaS Services Promotion */}
-      <section className="section-padding bg-gradient-to-br from-gray-900 to-black relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(34,197,94,0.1),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(34,197,94,0.1),transparent_50%)]" />
-        <div className="container-cursor text-center relative z-10">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium mb-6">
-            <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse" />
-            Micro SaaS Solutions
-          </div>
-          <h2 className="text-responsive-lg font-bold mb-8 text-white">
-            Specialized Tools for Every Business Need
-          </h2>
-          <p className="text-responsive-md text-gray-400 max-w-4xl mx-auto leading-relaxed mb-12">
-            Discover our 12 specialized micro SaaS solutions covering content creation, design systems, performance monitoring, 
-            SEO automation, chatbots, business intelligence, email marketing, social media, customer feedback, project management, 
-            billing, and HR operations. All with competitive pricing and 14-day free trials.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              href="/micro-saas"
-              size="lg"
-              className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 shadow-2xl"
-            >
-              Explore Micro SaaS
-            </Button>
-            <Button
-              href="/pricing"
-              variant="outline"
-              size="lg"
-              className="border-green-500 text-green-400 hover:bg-green-500 hover:text-white shadow-2xl"
-            >
-              View Pricing
-            </Button>
           </div>
         </div>
       </section>
