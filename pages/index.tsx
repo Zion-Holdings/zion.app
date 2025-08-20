@@ -311,6 +311,56 @@ export default function HomePage() {
                 <h3 className="text-lg font-semibold text-green-400 mb-2">Contact</h3>
                 <p className="text-white/70 text-sm">Get in touch</p>
               </Link>
+
+              <Link href="/privacy" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-rose-400/30 transition-all duration-300 text-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-rose-400 to-pink-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-xl">🔏</span>
+                </div>
+                <h3 className="text-lg font-semibold text-rose-400 mb-2">Privacy Policy</h3>
+                <p className="text-white/70 text-sm">Your data, protected</p>
+              </Link>
+            </div>
+          </section>
+
+          {/* Featured Articles */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">📝 Featured Articles</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <Link href="/blog/ai-automation-trends-2025" className="group bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300">
+                <h3 className="text-xl font-semibold text-cyan-300 group-hover:text-cyan-200 mb-2">AI Automation Trends 2025</h3>
+                <p className="text-white/75 text-sm">Key developments shaping intelligent automation.</p>
+                <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Read article <span aria-hidden>→</span></div>
+              </Link>
+
+              <Link href="/blog/autonomous-content-generation" className="group bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:border-fuchsia-400/30 transition-all duration-300">
+                <h3 className="text-xl font-semibold text-fuchsia-300 group-hover:text-fuchsia-200 mb-2">Autonomous Content Generation</h3>
+                <p className="text-white/75 text-sm">How AI agents produce high-quality content at scale.</p>
+                <div className="mt-3 inline-flex items-center gap-1 text-xs text-fuchsia-300/90">Read article <span aria-hidden>→</span></div>
+              </Link>
+
+              <Link href="/blog/performance-optimization" className="group bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:border-green-400/30 transition-all duration-300">
+                <h3 className="text-xl font-semibold text-green-300 group-hover:text-green-200 mb-2">Performance Optimization</h3>
+                <p className="text-white/75 text-sm">Techniques for speed, reliability, and scale.</p>
+                <div className="mt-3 inline-flex items-center gap-1 text-xs text-green-300/90">Read article <span aria-hidden>→</span></div>
+              </Link>
+
+              <Link href="/blog/cloud-native-automation" className="group bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:border-blue-400/30 transition-all duration-300">
+                <h3 className="text-xl font-semibold text-blue-300 group-hover:text-blue-200 mb-2">Cloud-Native Automation</h3>
+                <p className="text-white/75 text-sm">Modern patterns for autonomous cloud systems.</p>
+                <div className="mt-3 inline-flex items-center gap-1 text-xs text-blue-300/90">Read article <span aria-hidden>→</span></div>
+              </Link>
+
+              <Link href="/blog/ai-ethics-automation" className="group bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:border-amber-400/30 transition-all duration-300">
+                <h3 className="text-xl font-semibold text-amber-300 group-hover:text-amber-200 mb-2">AI Ethics in Automation</h3>
+                <p className="text-white/75 text-sm">Responsible and transparent autonomous systems.</p>
+                <div className="mt-3 inline-flex items-center gap-1 text-xs text-amber-300/90">Read article <span aria-hidden>→</span></div>
+              </Link>
+
+              <Link href="/blog/future-of-work" className="group bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:border-purple-400/30 transition-all duration-300">
+                <h3 className="text-xl font-semibold text-purple-300 group-hover:text-purple-200 mb-2">The Future of Work</h3>
+                <p className="text-white/75 text-sm">Augmenting teams with autonomous AI platforms.</p>
+                <div className="mt-3 inline-flex items-center gap-1 text-xs text-purple-300/90">Read article <span aria-hidden>→</span></div>
+              </Link>
             </div>
           </section>
 
