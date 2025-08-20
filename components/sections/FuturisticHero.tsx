@@ -42,7 +42,12 @@ const FuturisticHero: React.FC = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated Background */}
-      <AnimatedBackground variant="particles" intensity="medium" />
+      <AnimatedBackground 
+        particleCount={60}
+        colors={['#00ffff', '#ff00ff', '#ffff00', '#00ff00', '#ff0080']}
+        speed={1.0}
+        interactive={true}
+      />
       
       {/* Futuristic Background Effects */}
       <div className="absolute inset-0 futuristic-bg">
