@@ -15,6 +15,9 @@
     "npm": ">=10.0.0"
   },
   "scripts": {
+    "dev:clean": "rm -rf .next && npm run dev",
+    "dev:analyze": "ANALYZE=true npm run build",
+    "dev:profile": "NODE_OPTIONS='--inspect' npm run dev",
     "pm2:start": "node -e \"const fs=require('fs');fs.mkdirSync('automation/logs',{recursive:true})\" && pm2 start ecosystem.config.cjs --update-env",
     "pm2:stop": "pm2 stop ecosystem.config.cjs || true",
     "pm2:restart": "node -e \"const fs=require('fs');fs.mkdirSync('automation/logs',{recursive:true})\" && (pm2 restart ecosystem.config.cjs || pm2 start ecosystem.config.cjs --update-env)",
@@ -370,7 +373,13 @@
     "master:stop-all": "node automation/master-automation-launcher.cjs stop-all",
     "master:health": "node automation/master-automation-launcher.cjs health",
     "master:status": "node automation/master-automation-launcher.cjs status",
-    "master:report": "node automation/master-automation-launcher.cjs report"
+    "master:report": "node automation/master-automation-launcher.cjs report",
+    "check:all": "npm run lint && npm run type-check && npm run build",
+    "format:check": "prettier --check .",
+    "format:fix": "prettier --write .",
+    "test:all": "npm run lint && npm run type-check && npm run build",
+    "health:check": "npm run build:health-check && npm run build:validate",
+    "clean:all": "rm -rf .next out tsconfig.tsbuildinfo node_modules/.cache"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
@@ -382,6 +391,7 @@
     "@modelcontextprotocol/server-sequential-thinking": "^2025.7.1",
     "@supabase/ssr": "^0.6.1",
     "@supabase/supabase-js": "^2.39.0",
+    "@tailwindcss/postcss": "^4.1.12",
     "@types/react-datepicker": "^6.2.0",
     "autoprefixer": "^10.4.21",
     "axios": "^1.11.0",

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { memo } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 
-export default function HomePage() {
+const HomePage = memo(function HomePage() {
   return (
     <>
       <Head>
@@ -139,4 +139,6 @@ export default function HomePage() {
       </div>
     </>
   );
-}
+});
+
+export default HomePage;
