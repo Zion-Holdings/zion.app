@@ -411,6 +411,7 @@ export default function HomePage() {
             </h2>
             <p className="text-xl text-green-100 max-w-4xl mx-auto leading-relaxed">
               Discover our focused micro SaaS solutions that deliver specific value without enterprise complexity. 
+              From API protection to email validation, each service solves a real business problem with transparent pricing. 
               Start with a free trial and scale as you grow.
             </p>
           </div>
@@ -425,19 +426,43 @@ export default function HomePage() {
             </div>
 
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
-              <div className="text-3xl mb-4">🎨</div>
-              <h3 className="text-xl font-bold text-white mb-2">Design System Builder</h3>
-              <p className="text-green-100 text-sm mb-4">Automated design system management</p>
-              <div className="text-2xl font-bold text-white mb-2">$79<span className="text-sm font-normal text-green-100">/month</span></div>
-              <p className="text-xs text-green-200">14-day free trial • Setup in 15 minutes</p>
+              <div className="text-3xl mb-4">🛡️</div>
+              <h3 className="text-xl font-bold text-white mb-2">API Rate Limiter</h3>
+              <p className="text-green-100 text-sm mb-4">Protect your APIs from abuse</p>
+              <div className="text-2xl font-bold text-white mb-2">$29<span className="text-sm font-normal text-green-100">/month</span></div>
+              <p className="text-xs text-green-200">14-day free trial • Setup in 3 minutes</p>
             </div>
 
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
-              <div className="text-3xl mb-4">📱</div>
-              <h3 className="text-xl font-bold text-white mb-2">App Performance Monitor</h3>
-              <p className="text-green-100 text-sm mb-4">Real-time performance monitoring</p>
-              <div className="text-2xl font-bold text-white mb-2">$39<span className="text-sm font-normal text-green-100">/month</span></div>
-              <p className="text-xs text-green-200">14-day free trial • Setup in 10 minutes</p>
+              <div className="text-3xl mb-4">✅</div>
+              <h3 className="text-xl font-bold text-white mb-2">Email Validation</h3>
+              <p className="text-green-100 text-sm mb-4">Real-time email verification</p>
+              <div className="text-2xl font-bold text-white mb-2">$19<span className="text-sm font-normal text-green-100">/month</span></div>
+              <p className="text-xs text-green-200">14-day free trial • Setup in 2 minutes</p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
+              <div className="text-3xl mb-4">📋</div>
+              <h3 className="text-xl font-bold text-white mb-2">Form Builder Pro</h3>
+              <p className="text-green-100 text-sm mb-4">Create powerful forms without coding</p>
+              <div className="text-2xl font-bold text-white mb-2">$25<span className="text-sm font-normal text-green-100">/month</span></div>
+              <p className="text-xs text-green-200">14-day free trial • Setup in 5 minutes</p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
+              <div className="text-3xl mb-4">🧾</div>
+              <h3 className="text-xl font-bold text-white mb-2">Invoice Generator</h3>
+              <p className="text-green-100 text-sm mb-4">Professional invoicing made simple</p>
+              <div className="text-2xl font-bold text-white mb-2">$15<span className="text-sm font-normal text-green-100">/month</span></div>
+              <p className="text-xs text-green-200">14-day free trial • Setup in 3 minutes</p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
+              <div className="text-3xl mb-4">📸</div>
+              <h3 className="text-xl font-bold text-white mb-2">Screenshot API</h3>
+              <p className="text-green-100 text-sm mb-4">Convert websites to images</p>
+              <div className="text-2xl font-bold text-white mb-2">$12<span className="text-sm font-normal text-green-100">/month</span></div>
+              <p className="text-xs text-green-200">14-day free trial • Setup in 1 minute</p>
             </div>
           </div>
 
@@ -464,6 +489,31 @@ export default function HomePage() {
             <p className="text-sm text-green-200">
               All services include enterprise-grade infrastructure, 99.9% uptime guarantee, and dedicated support
             </p>
+          </div>
+
+          {/* Market Positioning & Competitive Advantages */}
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">💰</span>
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2">Transparent Pricing</h3>
+              <p className="text-green-200 text-sm">No hidden fees, no enterprise sales calls. Simple monthly pricing that scales with your business.</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">⚡</span>
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2">Lightning Fast Setup</h3>
+              <p className="text-green-200 text-sm">Get started in minutes, not weeks. Our services are designed for immediate value delivery.</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">🔒</span>
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2">Enterprise Security</h3>
+              <p className="text-green-200 text-sm">Bank-level security, SOC 2 compliance, and 99.9% uptime guarantee for all services.</p>
+            </div>
           </div>
         </div>
       </section>

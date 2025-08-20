@@ -300,6 +300,160 @@ export default function ServicesPage() {
       pricing: '$55/month',
       link: 'https://analytics.ziontechgroup.com'
     },
+    // New Micro SaaS Services
+    {
+      icon: '🛡️',
+      title: 'API Rate Limiter',
+      description: 'Protect your APIs from abuse with intelligent rate limiting and DDoS protection.',
+      features: [
+        'Intelligent rate limiting algorithms',
+        'DDoS protection & mitigation',
+        'Geographic restrictions',
+        'API key management',
+        'Real-time monitoring & alerts'
+      ],
+      color: 'bg-gradient-to-br from-red-500 to-pink-600',
+      textColor: 'text-red-400',
+      gradient: 'from-red-400 to-pink-500',
+      pricing: '$29/month',
+      link: 'https://ziontechgroup.com/api-rate-limiter'
+    },
+    {
+      icon: '✅',
+      title: 'Email Validation Service',
+      description: 'Clean your email lists with real-time validation and deliverability scoring.',
+      features: [
+        'Real-time email validation',
+        'Syntax & format checking',
+        'Domain & MX record verification',
+        'Disposable email detection',
+        'Bulk validation API'
+      ],
+      color: 'bg-gradient-to-br from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      gradient: 'from-green-400 to-emerald-500',
+      pricing: '$19/month',
+      link: 'https://ziontechgroup.com/email-validation'
+    },
+    {
+      icon: '📋',
+      title: 'Form Builder Pro',
+      description: 'Create powerful forms without coding with advanced features and integrations.',
+      features: [
+        'Drag & drop form builder',
+        'Conditional logic & branching',
+        '100+ field types',
+        'File uploads & storage',
+        'Payment integrations'
+      ],
+      color: 'bg-gradient-to-br from-blue-500 to-indigo-600',
+      textColor: 'text-blue-400',
+      gradient: 'from-blue-400 to-indigo-500',
+      pricing: '$25/month',
+      link: 'https://ziontechgroup.com/form-builder'
+    },
+    {
+      icon: '🧾',
+      title: 'Invoice Generator',
+      description: 'Professional invoicing made simple with automated reminders and payment processing.',
+      features: [
+        'Professional invoice templates',
+        'Automated payment reminders',
+        'Multiple payment gateways',
+        'Tax calculation & compliance',
+        'Client portal access'
+      ],
+      color: 'bg-gradient-to-br from-purple-500 to-violet-600',
+      textColor: 'text-purple-400',
+      gradient: 'from-purple-400 to-violet-500',
+      pricing: '$15/month',
+      link: 'https://ziontechgroup.com/invoice-generator'
+    },
+    {
+      icon: '🔐',
+      title: 'Password Manager API',
+      description: 'Enterprise-grade password management with secure sharing and compliance features.',
+      features: [
+        'Secure password generation',
+        'Team password sharing',
+        'Role-based access control',
+        'Audit trails & logging',
+        'SSO integration'
+      ],
+      color: 'bg-gradient-to-br from-gray-500 to-slate-600',
+      textColor: 'text-gray-400',
+      gradient: 'from-gray-400 to-slate-500',
+      pricing: '$35/month',
+      link: 'https://ziontechgroup.com/password-manager'
+    },
+    {
+      icon: '📸',
+      title: 'Screenshot API',
+      description: 'Convert any website to an image with our fast, reliable screenshot API service.',
+      features: [
+        'High-quality screenshots',
+        'Multiple viewport sizes',
+        'PDF generation support',
+        'Custom CSS injection',
+        'JavaScript rendering'
+      ],
+      color: 'bg-gradient-to-br from-yellow-500 to-orange-600',
+      textColor: 'text-yellow-400',
+      gradient: 'from-yellow-400 to-orange-500',
+      pricing: '$12/month',
+      link: 'https://ziontechgroup.com/screenshot-api'
+    },
+    {
+      icon: '🔗',
+      title: 'Webhook Manager',
+      description: 'Ensure reliable webhook delivery with retry logic, monitoring, and detailed analytics.',
+      features: [
+        'Automatic retry logic',
+        'Webhook monitoring & alerts',
+        'Delivery status tracking',
+        'Custom retry policies',
+        'Webhook testing tools'
+      ],
+      color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
+      textColor: 'text-cyan-400',
+      gradient: 'from-cyan-400 to-blue-500',
+      pricing: '$22/month',
+      link: 'https://ziontechgroup.com/webhook-manager'
+    },
+    {
+      icon: '🔄',
+      title: 'File Converter API',
+      description: 'Convert documents, images, and media files between hundreds of formats.',
+      features: [
+        '100+ file format support',
+        'Batch processing',
+        'High-quality conversions',
+        'Custom conversion options',
+        'Secure file handling'
+      ],
+      color: 'bg-gradient-to-br from-lime-500 to-green-600',
+      textColor: 'text-lime-400',
+      gradient: 'from-lime-400 to-green-500',
+      pricing: '$18/month',
+      link: 'https://ziontechgroup.com/file-converter'
+    },
+    {
+      icon: '📱',
+      title: 'QR Code Generator',
+      description: 'Generate custom QR codes with tracking, analytics, and dynamic content management.',
+      features: [
+        'Custom QR code design',
+        'Dynamic QR codes',
+        'Click tracking & analytics',
+        'Bulk QR code generation',
+        'API access for developers'
+      ],
+      color: 'bg-gradient-to-br from-emerald-500 to-teal-600',
+      textColor: 'text-emerald-400',
+      gradient: 'from-emerald-400 to-teal-500',
+      pricing: '$8/month',
+      link: 'https://ziontechgroup.com/qr-code-generator'
+    },
     // Additional Enhanced Micro SaaS Services
     {
       icon: '🎬',
