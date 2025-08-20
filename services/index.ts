@@ -13,6 +13,9 @@ export { aiHrService } from './aiHrService';
 export { designSystemBuilderService } from './designSystemBuilderService';
 export { performanceMonitorService } from './performanceMonitorService';
 export { videoEditingService } from './videoEditingService';
+export { aiCodeReviewService } from './aiCodeReviewService';
+export { apiDocGeneratorService } from './apiDocGeneratorService';
+export { databasePerformanceMonitorService } from './databasePerformanceMonitorService';
 
 // Export types
 export type {
@@ -132,3 +135,40 @@ export type {
   VideoExportOptions,
   VideoAnalytics
 } from './videoEditingService';
+
+export type {
+  CodeReview,
+  CodeIssue,
+  CodeRecommendation,
+  CodeMetrics
+} from './aiCodeReviewService';
+
+export type {
+  APIDocumentation,
+  APIEndpoint,
+  APIParameter,
+  APIRequestBody,
+  APIContent,
+  APIResponse,
+  APIHeader,
+  APISchema,
+  APIExample,
+  ExampleRequest,
+  ExampleResponse,
+  RateLimit,
+  AuthenticationRequirement,
+  DocumentationConfig
+} from './apiDocGeneratorService';
+
+export type {
+  DatabaseConnection,
+  ConnectionMetrics,
+  QueryPerformance,
+  ExecutionPlan,
+  PlanNode,
+  QueryMetrics,
+  QueryRecommendation,
+  DatabaseMetrics,
+  DatabasePerformanceAlert,
+  IndexRecommendation
+} from './databasePerformanceMonitorService';
