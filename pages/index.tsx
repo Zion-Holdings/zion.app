@@ -4,11 +4,18 @@ import Hero from '../components/sections/Hero';
 import Features from '../components/sections/Features';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
+import AnimatedBackground from '../components/ui/AnimatedBackground';
+import FuturisticCard from '../components/ui/FuturisticCard';
 import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, ExternalLink, Globe } from 'lucide-react';
 
 export default function HomePage() {
+  // Add animated background
+  React.useEffect(() => {
+    // Any additional initialization can go here
+  }, []);
+
   const heroStats = [
-    { value: '55+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
+    { value: '60+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
     { value: '99.9%', label: 'Uptime Guarantee', color: 'text-fuchsia-400' },
     { value: '14', label: 'Day Free Trials', color: 'text-blue-400' },
     { value: '24/7', label: 'AI Support', color: 'text-green-400' },
@@ -191,6 +198,12 @@ export default function HomePage() {
 
   return (
     <>
+      <AnimatedBackground 
+        particleCount={80}
+        colors={['#00ffff', '#ff00ff', '#ffff00', '#00ff00', '#ff0080']}
+        speed={1.2}
+        interactive={true}
+      />
       <Head>
         <title>Zion Tech Group — World&apos;s Most Advanced Autonomous Innovation Hub & AI-Powered Cloud Platform</title>
         <meta name="description" content="Experience the future of autonomous technology with 227+ intelligent automations, AI-powered cloud systems, comprehensive redundancy infrastructure, and zero-downtime operations. The most advanced autonomous platform ever built." />

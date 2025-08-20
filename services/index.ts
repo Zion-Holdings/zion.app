@@ -13,6 +13,9 @@ export { aiHrService } from './aiHrService';
 export { designSystemBuilderService } from './designSystemBuilderService';
 export { performanceMonitorService } from './performanceMonitorService';
 export { videoEditingService } from './videoEditingService';
+export { aiMarketResearchService } from './aiMarketResearchService';
+export { aiCustomerServiceService } from './aiCustomerServiceService';
+export { aiDataAnalyticsService } from './aiDataAnalyticsService';
 
 // Export types
 export type {
@@ -132,3 +135,26 @@ export type {
   VideoExportOptions,
   VideoAnalytics
 } from './videoEditingService';
+
+export type {
+  MarketTrend,
+  CompetitorAnalysis as MarketCompetitorAnalysis,
+  MarketOpportunity,
+  MarketReport
+} from './aiMarketResearchService';
+
+export type {
+  CustomerInquiry,
+  SupportTicket,
+  KnowledgeBaseArticle,
+  CustomerServiceMetrics
+} from './aiCustomerServiceService';
+
+export type {
+  DataSource as AnalyticsDataSource,
+  DataTransformation,
+  DataVisualization,
+  PredictiveModel,
+  DataInsight,
+  DataAnalyticsMetrics
+} from './aiDataAnalyticsService';
