@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Mail, MessageCircle, Kanban, Headphones, ChevronRight, Play, BookOpen, Code, Server, Shield as ShieldIcon, Zap as ZapIcon2, Globe as GlobeIcon, Users as UsersIcon } from 'lucide-react';
 import Button from '../components/ui/Button';
+import ParticleBackground from '../components/ui/ParticleBackground';
 
 export default function HomePage() {
   const features = [
@@ -83,7 +84,7 @@ export default function HomePage() {
   ];
 
   const stats = [
-    { number: '28+', label: 'Real Micro SaaS Services' },
+    { number: '40+', label: 'Real Micro SaaS Services' },
     { number: '99.9%', label: 'Uptime Guarantee' },
     { number: '14 Days', label: 'Free Trial' },
     { number: '24/7', label: 'Expert Support' }
@@ -114,13 +115,14 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div className="min-h-screen futuristic-bg particle-bg">
+      <ParticleBackground />
       <Head>
         <title>Zion Tech Group - Real Micro SaaS Services for Modern Businesses</title>
-        <meta name="description" content="Discover 28+ real, fully functional micro SaaS services built with modern technology. AI-powered tools for content, marketing, development, and business automation." />
-        <meta name="keywords" content="micro SaaS, AI services, business automation, content generation, cloud optimization, project management, customer support" />
+        <meta name="description" content="Discover 40+ real, fully functional micro SaaS services built with modern technology. AI-powered tools for content, marketing, development, and business automation." />
+        <meta name="keywords" content="micro SaaS, AI services, business automation, content generation, cloud optimization, project management, customer support, healthcare, manufacturing, energy, education, real estate" />
         <meta property="og:title" content="Zion Tech Group - Real Micro SaaS Services" />
-        <meta property="og:description" content="28+ real micro SaaS services with AI-powered automation, modern tech stack, and enterprise-grade reliability." />
+        <meta property="og:description" content="40+ real micro SaaS services with AI-powered automation, modern tech stack, and enterprise-grade reliability." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://ziontechgroup.com" />
       </Head>
@@ -128,23 +130,24 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20"></div>
+        <div className="absolute inset-0 grid-bg opacity-20"></div>
         <div className="relative max-w-7xl mx-auto text-center">
           <div className="mb-8">
             <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-blue-100 text-blue-800 mb-4">
               <Zap className="w-4 h-4 mr-2" />
-              28+ Real Micro SaaS Services
+              40+ Real Micro SaaS Services
             </span>
           </div>
           
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight neon-text">
             Real Micro SaaS Services
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 holographic">
               Built for Real Businesses
             </span>
           </h1>
           
           <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-            Discover 28+ fully functional micro SaaS tools built with modern technology. 
+            Discover 40+ fully functional micro SaaS tools built with modern technology. 
             No mockups, no demos - just real services that solve real business problems.
           </p>
 
@@ -217,8 +220,8 @@ export default function HomePage() {
             {features.map((feature, index) => {
               const IconComponent = feature.icon;
               return (
-                <div key={index} className="text-center group">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                <div key={index} className="text-center group futuristic-card p-6 float" style={{animationDelay: `${index * 0.5}s`}}>
+                  <div className={`w-16 h-16 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 glow-blue`}>
                     <IconComponent className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
@@ -246,9 +249,10 @@ export default function HomePage() {
             {microSaasServices.map((service, index) => (
               <div
                 key={index}
-                className={`relative group rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 ${
-                  service.popular ? 'ring-2 ring-yellow-400' : ''
+                className={`relative group futuristic-card overflow-hidden transition-all duration-300 hover:scale-105 ${
+                  service.popular ? 'ring-2 ring-yellow-400 glow-yellow' : ''
                 }`}
+                style={{animationDelay: `${index * 0.2}s`}}
               >
                 {/* Popular Badge */}
                 {service.popular && (
@@ -260,7 +264,7 @@ export default function HomePage() {
                   </div>
                 )}
 
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-6 h-full">
+                <div className="p-6 h-full">
                   <div className="text-center mb-6">
                     <div className="text-4xl mb-4">{service.icon}</div>
                     <h3 className="text-xl font-semibold text-white mb-2">{service.name}</h3>
@@ -295,7 +299,7 @@ export default function HomePage() {
               variant="outline"
               className="border-white text-white hover:bg-white hover:text-gray-900 px-8 py-3 text-lg"
             >
-              View All 28 Services
+              View All 40 Services
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </div>
@@ -316,7 +320,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
+              <div key={index} className="futuristic-card p-6 float" style={{animationDelay: `${index * 0.3}s`}}>
                 <div className="flex items-center mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
@@ -346,31 +350,31 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center group">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+            <div className="text-center group futuristic-card p-6 float" style={{animationDelay: '0s'}}>
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 glow-blue">
                 <Code className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-lg font-semibold text-white">React & Next.js</h3>
               <p className="text-gray-400 text-sm">Modern frontend framework</p>
             </div>
 
-            <div className="text-center group">
-              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+            <div className="text-center group futuristic-card p-6 float" style={{animationDelay: '0.5s'}}>
+              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 glow-green">
                 <Server className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-lg font-semibold text-white">Node.js</h3>
               <p className="text-gray-400 text-sm">Scalable backend runtime</p>
             </div>
 
-            <div className="text-center group">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+            <div className="text-center group futuristic-card p-6 float" style={{animationDelay: '1s'}}>
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 glow-purple">
                 <Database className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-lg font-semibold text-white">PostgreSQL</h3>
               <p className="text-gray-400 text-sm">Enterprise database</p>
             </div>
 
-            <div className="text-center group">
+            <div className="text-center group futuristic-card p-6 float" style={{animationDelay: '1.5s'}}>
               <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                 <ShieldIcon className="w-8 h-8 text-white" />
               </div>
@@ -381,16 +385,50 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Contact Information Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600/20 to-purple-600/20">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Ready to Transform Your Business?
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 neon-text">
+            Get in Touch with Zion Tech Group
           </h2>
           <p className="text-xl text-gray-300 mb-8">
-            Join thousands of businesses using our real micro SaaS services to automate, 
-            optimize, and scale their operations.
+            Ready to transform your business with our real micro SaaS services? 
+            Contact our team for personalized consultation and support.
           </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="futuristic-card p-6 float" style={{animationDelay: '0s'}}>
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4 glow-blue">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.554.554l1.122 2.226A2 2 0 0010.28 7H13a2 2 0 012 2v1a2 2 0 01-2 2H5a2 2 0 01-2-2V5z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">Mobile</h3>
+              <p className="text-gray-300">+1 302 464 0950</p>
+            </div>
+            
+            <div className="futuristic-card p-6 float" style={{animationDelay: '0.5s'}}>
+              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-4 glow-green">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">Email</h3>
+              <p className="text-gray-300">kleber@ziontechgroup.com</p>
+            </div>
+            
+            <div className="futuristic-card p-6 float" style={{animationDelay: '1s'}}>
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-4 glow-purple">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">Address</h3>
+              <p className="text-gray-300">364 E Main St STE 1008<br />Middletown DE 19709</p>
+            </div>
+          </div>
+          
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               href="https://ziontechgroup.com"

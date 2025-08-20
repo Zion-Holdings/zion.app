@@ -98,65 +98,12 @@ a:hover {
 }
 
 /* Focus styles */
-*:focus {
-  outline: 2px solid var(--ring);
+:focus {
+  outline: 2px solid var(--primary);
   outline-offset: 2px;
 }
 
-/* Button styles */
-.btn {
-  @apply inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-cursor-blue disabled:opacity-50 disabled:cursor-not-allowed;
-}
-
-.btn-primary {
-  @apply bg-gradient-to-r from-cursor-blue to-blue-600 hover:from-cursor-blue-hover hover:to-blue-700 text-white shadow-lg hover:shadow-xl hover:-translate-y-0.5 border-0;
-}
-
-.btn-secondary {
-  @apply bg-cursor-light hover:bg-cursor-lighter text-white border border-cursor-lighter hover:border-cursor-blue;
-}
-
-.btn-outline {
-  @apply bg-transparent border border-cursor-lighter text-gray-300 hover:bg-cursor-light hover:border-cursor-blue hover:text-white;
-}
-
-.btn-ghost {
-  @apply bg-transparent hover:bg-cursor-light text-gray-300 hover:text-white;
-}
-
-.btn-accent {
-  @apply bg-gradient-to-r from-cursor-accent to-cursor-green hover:from-cursor-accent-hover hover:to-cursor-green-hover text-white shadow-lg hover:shadow-xl hover:-translate-y-0.5 border-0;
-}
-
-.btn-purple {
-  @apply bg-gradient-to-r from-cursor-purple to-purple-600 hover:from-cursor-purple-hover hover:to-purple-700 text-white shadow-lg hover:shadow-xl hover:-translate-y-0.5 border-0;
-}
-
-/* Card styles */
-.card {
-  @apply bg-cursor-dark border border-cursor-lighter rounded-xl p-6 transition-all duration-300 hover:border-cursor-blue/30 hover:shadow-lg hover:shadow-cursor-blue/10;
-}
-
-.card-hover {
-  @apply hover:border-cursor-blue/40 hover:shadow-2xl hover:shadow-cursor-blue/20 hover:-translate-y-1;
-}
-
-.card-gradient {
-  @apply bg-gradient-to-br from-cursor-dark to-cursor-darker border border-cursor-lighter/50;
-}
-
-/* Animation classes */
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+/* Futuristic Animations and Effects */
 @keyframes float {
   0%, 100% {
     transform: translateY(0px);
@@ -166,219 +113,287 @@ a:hover {
   }
 }
 
-@keyframes scale-in {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes slide-in-left {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slide-in-right {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes glow {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 40px rgba(59, 130, 246, 0.6);
-  }
-}
-
 @keyframes pulse-glow {
   0%, 100% {
-    opacity: 0.5;
-    transform: scale(1);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
   }
   50% {
-    opacity: 1;
-    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.8), 0 0 60px rgba(59, 130, 246, 0.4);
   }
 }
 
-.animate-fade-in {
-  animation: fade-in 0.8s ease-out forwards;
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 
-.animate-float {
-  animation: float 6s ease-in-out infinite;
+@keyframes rotate-3d {
+  0% {
+    transform: rotateY(0deg) rotateX(0deg);
+  }
+  100% {
+    transform: rotateY(360deg) rotateX(360deg);
+  }
 }
 
-.animate-scale-in {
-  animation: scale-in 0.6s ease-out forwards;
+@keyframes particle-float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+  }
 }
 
-.animate-slide-in-left {
-  animation: slide-in-left 0.8s ease-out forwards;
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
-.animate-slide-in-right {
-  animation: slide-in-right 0.8s ease-out forwards;
+@keyframes neon-pulse {
+  0%, 100% {
+    text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
+  }
+  50% {
+    text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+  }
 }
 
-.animate-glow {
-  animation: glow 2s ease-in-out infinite;
+/* Futuristic Background Effects */
+.futuristic-bg {
+  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #533483 100%);
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
 }
 
-.animate-pulse-glow {
+.particle-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.particle-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #3b82f6, transparent),
+    radial-gradient(2px 2px at 40px 70px, #8b5cf6, transparent),
+    radial-gradient(1px 1px at 90px 40px, #06b6d4, transparent),
+    radial-gradient(1px 1px at 130px 80px, #10b981, transparent),
+    radial-gradient(2px 2px at 160px 30px, #f59e0b, transparent);
+  background-repeat: repeat;
+  background-size: 200px 100px;
+  animation: particle-float 20s linear infinite;
+  opacity: 0.3;
+}
+
+/* Futuristic Card Effects */
+.futuristic-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.futuristic-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.futuristic-card:hover::before {
+  left: 100%;
+}
+
+.futuristic-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border-color: rgba(59, 130, 246, 0.5);
+}
+
+/* Glowing Elements */
+.glow-blue {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
   animation: pulse-glow 2s ease-in-out infinite;
 }
 
-/* Hover effects */
-.hover-lift {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+.glow-purple {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+  animation: pulse-glow 2s ease-in-out infinite;
 }
 
-.hover-lift:hover {
+.glow-green {
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Floating Animation */
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.float-delay-1 {
+  animation-delay: 1s;
+}
+
+.float-delay-2 {
+  animation-delay: 2s;
+}
+
+.float-delay-3 {
+  animation-delay: 3s;
+}
+
+/* Shimmer Effect */
+.shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* 3D Rotation */
+.rotate-3d {
+  animation: rotate-3d 20s linear infinite;
+}
+
+/* Neon Text Effect */
+.neon-text {
+  animation: neon-pulse 2s ease-in-out infinite;
+}
+
+/* Futuristic Button Styles */
+.futuristic-btn {
+  position: relative;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  border: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.futuristic-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.futuristic-btn:hover::before {
+  left: 100%;
+}
+
+.futuristic-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
+  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.4);
 }
 
-.hover-glow:hover {
-  box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
-}
-
-/* Gradient text utilities */
-.gradient-text {
-  @apply bg-gradient-to-r from-white via-gray-100 to-gray-200 bg-clip-text text-transparent;
-}
-
-.gradient-text-blue {
-  @apply bg-gradient-to-r from-cursor-blue via-blue-400 to-blue-300 bg-clip-text text-transparent;
-}
-
-.gradient-text-accent {
-  @apply bg-gradient-to-r from-cursor-accent via-cursor-green to-green-400 bg-clip-text text-transparent;
-}
-
-.gradient-text-purple {
-  @apply bg-gradient-to-r from-cursor-purple via-purple-400 to-purple-300 bg-clip-text text-transparent;
-}
-
-/* Glass morphism effect */
-.glass {
-  @apply bg-white/5 backdrop-blur-xl border border-white/10;
-}
-
-.glass-dark {
-  @apply bg-black/20 backdrop-blur-xl border border-white/5;
-}
-
-/* Responsive utilities */
-.container-cursor {
-  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
-}
-
-.container-cursor-sm {
-  @apply max-w-5xl mx-auto px-4 sm:px-6 lg:px-8;
-}
-
-.container-cursor-lg {
-  @apply max-w-8xl mx-auto px-4 sm:px-6 lg:px-8;
-}
-
-/* Custom cursor styles */
-.cursor-dot {
-  @apply w-2 h-2 bg-cursor-blue rounded-full;
-}
-
-.cursor-dot-outline {
-  @apply w-4 h-4 border border-cursor-blue rounded-full;
-}
-
-/* Background patterns */
-.bg-grid {
+/* Grid Background */
+.grid-bg {
   background-image: 
     linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
     linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
   background-size: 50px 50px;
+  animation: grid-move 20s linear infinite;
 }
 
-.bg-dots {
-  background-image: radial-gradient(circle, rgba(59, 130, 246, 0.3) 1px, transparent 1px);
-  background-size: 20px 20px;
+@keyframes grid-move {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
 }
 
-/* Gradient backgrounds */
-.bg-gradient-cursor {
-  @apply bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900;
+/* Holographic Effect */
+.holographic {
+  background: linear-gradient(45deg, #ff0080, #ff8c00, #40e0d0, #ee82ee, #ff0080);
+  background-size: 400% 400%;
+  animation: gradient-shift 3s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.bg-gradient-cursor-blue {
-  @apply bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900/20;
+/* Futuristic Input Styles */
+.futuristic-input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 12px 16px;
+  color: white;
+  transition: all 0.3s ease;
 }
 
-.bg-gradient-cursor-accent {
-  @apply bg-gradient-to-br from-gray-900 via-gray-800 to-green-500/10;
+.futuristic-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  outline: none;
 }
 
-/* Border gradients */
-.border-gradient-blue {
-  border: 1px solid transparent;
-  background: linear-gradient(var(--background), var(--background)) padding-box,
-              linear-gradient(45deg, #3b82f6, #10b981) border-box;
+/* Responsive Design */
+@media (max-width: 768px) {
+  .futuristic-card:hover {
+    transform: translateY(-5px) scale(1.01);
+  }
+  
+  .particle-bg::before {
+    background-size: 100px 50px;
+  }
 }
 
-.border-gradient-purple {
-  border: 1px solid transparent;
-  background: linear-gradient(var(--background), var(--background)) padding-box,
-              linear-gradient(45deg, #8b5cf6, #3b82f6) border-box;
+/* Dark Mode Enhancements */
+@media (prefers-color-scheme: dark) {
+  .futuristic-card {
+    background: rgba(0, 0, 0, 0.3);
+  }
 }
 
-/* Text shadows */
-.text-shadow {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .futuristic-card {
+    border-width: 2px;
+  }
+  
+  .futuristic-btn {
+    border: 2px solid white;
+  }
 }
 
-.text-shadow-lg {
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-}
-
-/* Responsive text sizes */
-.text-responsive-xl {
-  @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl;
-}
-
-.text-responsive-lg {
-  @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl;
-}
-
-.text-responsive-md {
-  @apply text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl;
-}
-
-/* Spacing utilities */
-.section-padding {
-  @apply py-16 sm:py-20 md:py-24 lg:py-32;
-}
-
-.section-padding-sm {
-  @apply py-12 sm:py-16 md:py-20 lg:py-24;
-}
-
-.section-padding-lg {
-  @apply py-20 sm:py-24 md:py-32 lg:py-40;
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

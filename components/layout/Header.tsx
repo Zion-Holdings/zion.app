@@ -44,17 +44,20 @@ const Header = () => {
           : 'bg-transparent'
       }`}
     >
+      {/* Futuristic Background Effect */}
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 via-purple-600/5 to-blue-600/5"></div>
+      <div className="absolute inset-0 grid-bg opacity-10"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
             <div className="relative">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-2xl group-hover:shadow-blue-500/25">
+              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-2xl group-hover:shadow-blue-500/25 glow-blue">
                 <span className="text-white font-bold text-xl">Z</span>
               </div>
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl blur opacity-0 group-hover:opacity-75 transition-opacity duration-300 -z-10" />
             </div>
-            <span className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300">
+            <span className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300 neon-text">
               Zion Tech
             </span>
           </Link>
