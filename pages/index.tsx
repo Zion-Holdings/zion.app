@@ -343,7 +343,7 @@ export default function HomePage() {
                   <li>• Threat detection & response</li>
                   <li>• Zero-trust architecture</li>
                 </ul>
-                <Link href="/SECURITY.md" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
+                <Link href="/security" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
                   View Security Guide →
                 </Link>
               </div>
@@ -357,7 +357,7 @@ export default function HomePage() {
                   <li>• Security testing</li>
                   <li>• Continuous validation</li>
                 </ul>
-                <Link href="/TESTING.md" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
+                <Link href="/testing" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
                   View Testing Guide →
                 </Link>
               </div>
@@ -371,7 +371,7 @@ export default function HomePage() {
                   <li>• Analytics dashboard</li>
                   <li>• Predictive maintenance</li>
                 </ul>
-                <Link href="/PERFORMANCE.md" className="text-green-400 hover:text-green-300 text-sm font-semibold">
+                <Link href="/performance" className="text-green-400 hover:text-green-300 text-sm font-semibold">
                   View Performance Guide →
                 </Link>
               </div>
@@ -391,7 +391,7 @@ export default function HomePage() {
                   <li>• Health monitoring</li>
                   <li>• Self-healing infrastructure</li>
                 </ul>
-                <Link href="/README_ULTIMATE_REDUNDANCY.md" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
+                <Link href="/ULTIMATE_REDUNDANCY_IMPLEMENTATION_SUMMARY.md" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
                   Learn More →
                 </Link>
               </div>
@@ -423,6 +423,57 @@ export default function HomePage() {
                   Learn More →
                 </Link>
               </div>
+            </div>
+          </section>
+
+          {/* Site Directory & Quick Links */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">🗺️ Site Directory & Quick Links</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <Link href="/about" className="group bg-white/10 rounded-xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300">
+                <h3 className="text-lg font-semibold text-cyan-400 mb-1">About</h3>
+                <p className="text-white/70 text-sm">Mission, vision, and values</p>
+              </Link>
+              <Link href="/services" className="group bg-white/10 rounded-xl p-6 border border-white/20 hover:border-fuchsia-400/30 transition-all duration-300">
+                <h3 className="text-lg font-semibold text-fuchsia-400 mb-1">Services</h3>
+                <p className="text-white/70 text-sm">AI solutions and offerings</p>
+              </Link>
+              <Link href="/case-studies" className="group bg-white/10 rounded-xl p-6 border border-white/20 hover:border-yellow-400/30 transition-all duration-300">
+                <h3 className="text-lg font-semibold text-yellow-400 mb-1">Case Studies</h3>
+                <p className="text-white/70 text-sm">Success stories and results</p>
+              </Link>
+              <Link href="/blog" className="group bg-white/10 rounded-xl p-6 border border-white/20 hover:border-purple-400/30 transition-all duration-300">
+                <h3 className="text-lg font-semibold text-purple-400 mb-1">Blog</h3>
+                <p className="text-white/70 text-sm">Insights and thought leadership</p>
+              </Link>
+              <Link href="/resources" className="group bg-white/10 rounded-xl p-6 border border-white/20 hover:border-blue-400/30 transition-all duration-300">
+                <h3 className="text-lg font-semibold text-blue-400 mb-1">Resources</h3>
+                <p className="text-white/70 text-sm">Guides, tools, and downloads</p>
+              </Link>
+              <Link href="/reports" className="group bg-white/10 rounded-xl p-6 border border-white/20 hover:border-indigo-400/30 transition-all duration-300">
+                <h3 className="text-lg font-semibold text-indigo-400 mb-1">Reports</h3>
+                <p className="text-white/70 text-sm">Autonomous updates and analytics</p>
+              </Link>
+              <Link href="/security" className="group bg-white/10 rounded-xl p-6 border border-white/20 hover:border-red-400/30 transition-all duration-300">
+                <h3 className="text-lg font-semibold text-red-400 mb-1">Security</h3>
+                <p className="text-white/70 text-sm">Practices and commitments</p>
+              </Link>
+              <Link href="/performance" className="group bg-white/10 rounded-xl p-6 border border-white/20 hover:border-green-400/30 transition-all duration-300">
+                <h3 className="text-lg font-semibold text-green-400 mb-1">Performance</h3>
+                <p className="text-white/70 text-sm">Budgets and monitoring</p>
+              </Link>
+              <Link href="/testing" className="group bg-white/10 rounded-xl p-6 border border-white/20 hover:border-amber-400/30 transition-all duration-300">
+                <h3 className="text-lg font-semibold text-amber-400 mb-1">Testing</h3>
+                <p className="text-white/70 text-sm">QA and validation systems</p>
+              </Link>
+              <Link href="/privacy" className="group bg-white/10 rounded-xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
+                <h3 className="text-lg font-semibold text-white mb-1">Privacy</h3>
+                <p className="text-white/70 text-sm">Policy and compliance</p>
+              </Link>
+              <Link href="/contact" className="group bg-white/10 rounded-xl p-6 border border-white/20 hover:border-emerald-400/30 transition-all duration-300">
+                <h3 className="text-lg font-semibold text-emerald-400 mb-1">Contact</h3>
+                <p className="text-white/70 text-sm">Talk to our team</p>
+              </Link>
             </div>
           </section>
 
