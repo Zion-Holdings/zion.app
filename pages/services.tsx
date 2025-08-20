@@ -821,22 +821,41 @@ export default function ServicesPage() {
                 href="/micro-saas"
                 variant="secondary"
                 size="lg"
-                className="bg-white text-green-600 hover:bg-gray-100 shadow-2xl"
+                className="bg-white text-green-600 hover:bg-gray-100 shadow-2xl transform hover:scale-105 transition-all duration-300"
               >
-                Explore Full Portfolio
+                Explore 45+ Micro SaaS
               </Button>
               <Button
                 href="/pricing"
                 variant="outline"
                 size="lg"
-                className="border-white text-white hover:bg-white hover:text-green-600 shadow-2xl"
+                className="border-white text-white hover:bg-white hover:text-green-600 shadow-2xl transform hover:scale-105 transition-all duration-300"
               >
-                View Pricing
+                View Complete Pricing
               </Button>
             </div>
-            <p className="text-green-200 text-sm">
+            <p className="text-green-200 text-sm mb-8">
               All services include 14-day free trials, comprehensive documentation, and dedicated support
             </p>
+            
+            {/* Micro SaaS Highlights */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
+              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-white/20 transition-all duration-300">
+                <div className="text-2xl mb-3">🚀</div>
+                <h4 className="text-lg font-semibold text-white mb-2">AI-Powered Solutions</h4>
+                <p className="text-green-200 text-sm">From content generation to customer analytics, leverage cutting-edge AI technology</p>
+              </div>
+              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-white/20 transition-all duration-300">
+                <div className="text-2xl mb-3">⚡</div>
+                <h4 className="text-lg font-semibold text-white mb-2">Lightning Fast Setup</h4>
+                <p className="text-green-200 text-sm">Get started in minutes with our intuitive interfaces and automated onboarding</p>
+              </div>
+              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-white/20 transition-all duration-300">
+                <div className="text-2xl mb-3">💰</div>
+                <h4 className="text-lg font-semibold text-white mb-2">Transparent Pricing</h4>
+                <p className="text-green-200 text-sm">No hidden fees, no enterprise sales calls. Simple monthly pricing that scales</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

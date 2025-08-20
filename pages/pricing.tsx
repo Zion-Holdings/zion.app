@@ -93,7 +93,7 @@ export default function PricingPage() {
             <div className="mb-8">
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
                 <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse" />
-                Simple Pricing
+                Transparent Pricing
               </div>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight">
