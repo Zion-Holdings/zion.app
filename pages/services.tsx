@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
+import { ArrowRight } from 'lucide-react';
 
 export default function ServicesPage() {
   const services = [
@@ -95,57 +96,63 @@ export default function ServicesPage() {
       textColor: 'text-teal-400',
       gradient: 'from-teal-400 to-cyan-500',
     },
-    // New Micro SaaS Services
+    // Micro SaaS Services - Content & Marketing
     {
       icon: '📝',
       title: 'AI Content Generator Pro',
       description: 'Professional AI-powered content creation tool for blogs, marketing copy, and social media.',
       features: [
         'SEO-optimized content generation',
-        'Multi-language support',
+        'Multi-language support (15+ languages)',
         'Brand voice customization',
-        'Content templates library',
-        'Plagiarism-free writing'
+        'Content templates library (100+ templates)',
+        'Plagiarism-free writing guarantee'
       ],
       color: 'bg-gradient-to-br from-pink-500 to-rose-600',
       textColor: 'text-pink-400',
       gradient: 'from-pink-400 to-rose-500',
       pricing: '$49/month',
-      link: 'https://contentgen.zion.app'
+      link: 'https://contentgen.zion.app',
+      category: 'Content & Marketing',
+      marketSize: '$1.2B'
     },
     {
-      icon: '🎨',
-      title: 'Design System Builder',
-      description: 'Create and maintain consistent design systems with automated component generation.',
+      icon: '📧',
+      title: 'Email Marketing Automation',
+      description: 'Advanced email marketing with AI optimization and smart segmentation.',
       features: [
-        'Component library management',
-        'Design token automation',
-        'Style guide generation',
-        'Design-to-code workflow',
-        'Team collaboration tools'
+        'AI-powered personalization',
+        'Advanced segmentation & targeting',
+        'A/B testing automation',
+        'Behavioral triggers',
+        'Advanced analytics & reporting'
       ],
-      color: 'bg-gradient-to-br from-violet-500 to-purple-600',
-      textColor: 'text-violet-400',
-      gradient: 'from-violet-400 to-purple-500',
+      color: 'bg-gradient-to-br from-blue-500 to-indigo-600',
+      textColor: 'text-blue-400',
+      gradient: 'from-blue-400 to-indigo-500',
       pricing: '$79/month',
-      link: 'https://design.zion.app'
+      link: 'https://email.zion.app',
+      category: 'Content & Marketing',
+      marketSize: '$1.5B'
     },
     {
       icon: '📱',
-      title: 'App Performance Monitor',
-      description: 'Real-time monitoring and optimization for web and mobile applications.',
+      title: 'Social Media Automation',
+      description: 'Multi-platform social media management across 5 platforms.',
       features: [
-        'Performance metrics tracking',
-        'Error monitoring & alerting',
-        'User experience analytics',
-        'Automated optimization',
-        'Custom dashboards'
+        'Multi-platform posting (5 platforms)',
+        'Smart scheduling & automation',
+        'Content calendar management',
+        'Advanced analytics & insights',
+        'AI-powered content suggestions'
       ],
-      color: 'bg-gradient-to-br from-amber-500 to-orange-600',
-      textColor: 'text-amber-400',
-      gradient: 'from-amber-400 to-orange-500',
-      pricing: '$39/month',
-      link: 'https://monitor.zion.app'
+      color: 'bg-gradient-to-br from-purple-500 to-violet-600',
+      textColor: 'text-purple-400',
+      gradient: 'from-purple-400 to-violet-500',
+      pricing: '$89/month',
+      link: 'https://social.zion.app',
+      category: 'Content & Marketing',
+      marketSize: '$2.1B'
     },
     {
       icon: '🔍',
@@ -162,7 +169,29 @@ export default function ServicesPage() {
       textColor: 'text-emerald-400',
       gradient: 'from-emerald-400 to-green-500',
       pricing: '$89/month',
-      link: 'https://seo.zion.app'
+      link: 'https://seo.zion.app',
+      category: 'Content & Marketing',
+      marketSize: '$1.8B'
+    },
+    // Micro SaaS Services - Customer Experience
+    {
+      icon: '🎧',
+      title: 'Customer Support Automation',
+      description: 'AI-powered customer support platform with chatbots and ticket management.',
+      features: [
+        'AI chatbot with 95% accuracy',
+        'Smart ticket routing',
+        'Knowledge base management',
+        'Multi-channel support',
+        'Performance analytics'
+      ],
+      color: 'bg-gradient-to-br from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      gradient: 'from-green-400 to-emerald-500',
+      pricing: '$69/month',
+      link: 'https://support.zion.app',
+      category: 'Customer Experience',
+      marketSize: '$3.2B'
     },
     {
       icon: '💬',
@@ -179,199 +208,255 @@ export default function ServicesPage() {
       textColor: 'text-sky-400',
       gradient: 'from-sky-400 to-blue-500',
       pricing: '$69/month',
-      link: 'https://chatbot.zion.app'
+      link: 'https://chatbot.zion.app',
+      category: 'Customer Experience',
+      marketSize: '$1.6B'
     },
+    // Micro SaaS Services - Productivity & Collaboration
     {
       icon: '📊',
-      title: 'Business Intelligence Hub',
-      description: 'Turn your data into actionable insights with automated reporting and analytics.',
+      title: 'Project Management Suite',
+      description: 'Comprehensive project management platform with advanced planning tools.',
       features: [
-        'Data visualization tools',
-        'Automated reporting',
-        'KPI dashboards',
-        'Predictive analytics',
-        'Data integration'
+        'Project planning & scheduling',
+        'Team collaboration tools',
+        'Time tracking & reporting',
+        'Resource management',
+        'Gantt charts & timelines'
       ],
-      color: 'bg-gradient-to-br from-rose-500 to-pink-600',
-      textColor: 'text-rose-400',
-      gradient: 'from-rose-400 to-pink-500',
+      color: 'bg-gradient-to-br from-orange-500 to-red-600',
+      textColor: 'text-orange-400',
+      gradient: 'from-orange-400 to-red-500',
       pricing: '$99/month',
-      link: 'https://bi.zion.app'
+      link: 'https://projects.zion.app',
+      category: 'Productivity & Collaboration',
+      marketSize: '$4.8B'
+    },
+    {
+      icon: '🎨',
+      title: 'Design System Builder',
+      description: 'Create and maintain consistent design systems with automated component generation.',
+      features: [
+        'Component library management',
+        'Design token automation',
+        'Style guide generation',
+        'Design-to-code workflow',
+        'Team collaboration tools'
+      ],
+      color: 'bg-gradient-to-br from-violet-500 to-purple-600',
+      textColor: 'text-violet-400',
+      gradient: 'from-violet-400 to-purple-500',
+      pricing: '$79/month',
+      link: 'https://design.zion.app',
+      category: 'Productivity & Collaboration',
+      marketSize: '$800M'
+    },
+    // Micro SaaS Services - Analytics & Monitoring
+    {
+      icon: '📈',
+      title: 'Data Analytics Platform',
+      description: 'Business intelligence and data visualization with predictive analytics.',
+      features: [
+        'Real-time data processing',
+        'Advanced data visualization',
+        'Predictive analytics',
+        'Custom dashboard builder',
+        'Data integration tools'
+      ],
+      color: 'bg-gradient-to-br from-teal-500 to-cyan-600',
+      textColor: 'text-teal-400',
+      gradient: 'from-teal-400 to-cyan-500',
+      pricing: '$129/month',
+      link: 'https://analytics.zion.app',
+      category: 'Analytics & Monitoring',
+      marketSize: '$6.8B'
+    },
+    {
+      icon: '⚡',
+      title: 'App Performance Monitor',
+      description: 'Real-time monitoring and optimization for web and mobile applications.',
+      features: [
+        'Performance metrics tracking',
+        'Error monitoring & alerting',
+        'User experience analytics',
+        'Automated optimization',
+        'Custom dashboards'
+      ],
+      color: 'bg-gradient-to-br from-amber-500 to-orange-600',
+      textColor: 'text-amber-400',
+      gradient: 'from-amber-400 to-orange-500',
+      pricing: '$39/month',
+      link: 'https://monitor.zion.app',
+      category: 'Analytics & Monitoring',
+      marketSize: '$2.4B'
     }
   ];
 
-  const technologies = [
-    { name: 'Next.js', category: 'Frontend', icon: '⚡' },
-    { name: 'React', category: 'Frontend', icon: '⚛️' },
-    { name: 'Node.js', category: 'Backend', icon: '🟢' },
-    { name: 'Python', category: 'Backend', icon: '🐍' },
-    { name: 'AWS', category: 'Cloud', icon: '☁️' },
-    { name: 'Azure', category: 'Cloud', icon: '🔷' },
-    { name: 'Docker', category: 'DevOps', icon: '🐳' },
-    { name: 'Kubernetes', category: 'DevOps', icon: '☸️' },
-    { name: 'PostgreSQL', category: 'Database', icon: '🐘' },
-    { name: 'Redis', category: 'Cache', icon: '🔴' },
-    { name: 'TensorFlow', category: 'AI/ML', icon: '🧠' },
-    { name: 'PyTorch', category: 'AI/ML', icon: '🔥' },
+  const categories = [
+    {
+      name: 'Core Services',
+      description: 'Enterprise-grade technology solutions for modern businesses',
+      services: services.filter(s => !s.category)
+    },
+    {
+      name: 'Content & Marketing',
+      description: 'AI-powered tools for content creation, email marketing, and social media',
+      services: services.filter(s => s.category === 'Content & Marketing')
+    },
+    {
+      name: 'Customer Experience',
+      description: 'Solutions to enhance customer support and engagement',
+      services: services.filter(s => s.category === 'Customer Experience')
+    },
+    {
+      name: 'Productivity & Collaboration',
+      description: 'Tools to streamline workflows and improve team collaboration',
+      services: services.filter(s => s.category === 'Productivity & Collaboration')
+    },
+    {
+      name: 'Analytics & Monitoring',
+      description: 'Data-driven insights and performance monitoring solutions',
+      services: services.filter(s => s.category === 'Analytics & Monitoring')
+    }
   ];
 
   return (
     <>
       <Head>
-        <title>Services | Zion Tech Group - AI-Powered Solutions & Cloud Infrastructure</title>
-        <meta name="description" content="Comprehensive technology services including AI automation, cloud infrastructure, security, data analytics, DevOps, and digital transformation solutions." />
-        <meta property="og:title" content="Services | Zion Tech Group" />
-        <meta property="og:description" content="AI-powered automation, cloud infrastructure, security, and digital transformation services." />
-        <meta name="twitter:card" content="summary_large_image" />
+        <title>Services - Zion Tech Group</title>
+        <meta name="description" content="Comprehensive technology services including AI automation, cloud infrastructure, security, and specialized micro SaaS solutions for modern businesses." />
       </Head>
 
-      {/* Hero Section */}
-      <section className="relative section-padding bg-gradient-cursor overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,122,204,0.08),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(0,122,204,0.06),transparent_50%)]" />
-        <div className="absolute inset-0 bg-grid opacity-10" />
-        
-        <div className="relative z-10 container-cursor text-center">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-cursor-blue/10 border border-cursor-blue/20 text-cursor-blue text-sm font-medium mb-6">
-            <span className="w-2 h-2 bg-cursor-blue rounded-full mr-2 animate-pulse" />
-            Our Services
-          </div>
-          <h1 className="text-responsive-xl font-black mb-8 gradient-text text-shadow-lg">
-            Comprehensive Technology Solutions
-          </h1>
-          <p className="text-responsive-md text-gray-300 max-w-5xl mx-auto leading-relaxed">
-            From AI-powered automation to cloud infrastructure, we deliver cutting-edge solutions that drive innovation and transform businesses.
-          </p>
-        </div>
-      </section>
-
-      {/* Services Grid */}
-      <section className="section-padding bg-gradient-cursor-accent">
-        <div className="container-cursor">
-          <div className="text-center mb-20">
-            <h2 className="text-responsive-lg font-bold mb-8 gradient-text text-shadow">
-              What We Offer
-            </h2>
-            <p className="text-responsive-md text-gray-400 max-w-4xl mx-auto leading-relaxed">
-              Discover our comprehensive range of technology services designed to accelerate your digital transformation.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {services.map((service, index) => (
-              <Card
-                key={index}
-                className="card-hover group border-gradient-blue"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="flex items-start space-x-6">
-                  <div className="relative">
-                    <div className={`w-20 h-20 rounded-2xl flex items-center justify-center text-3xl bg-gradient-to-br ${service.color} shadow-xl group-hover:scale-110 transition-transform duration-300`}>
-                      {service.icon}
-                    </div>
-                    <div className={`absolute -inset-2 bg-gradient-to-r from-transparent via-${service.gradient} to-transparent rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-sm`} />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className={`text-2xl font-bold mb-4 ${service.textColor}`}>
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-400 leading-relaxed mb-6">
-                      {service.description}
-                    </p>
-                    <ul className="space-y-2">
-                      {service.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-center text-gray-300">
-                          <span className="w-2 h-2 bg-cursor-blue rounded-full mr-3 flex-shrink-0" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                    {service.pricing && (
-                      <p className="mt-6 text-lg font-semibold text-white">
-                        Starting at {service.pricing}
-                      </p>
-                    )}
-                    {service.link && (
-                      <Button
-                        href={service.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="mt-4"
-                      >
-                        Learn More
-                      </Button>
-                    )}
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Technology Stack */}
-      <section className="section-padding bg-gradient-cursor">
-        <div className="container-cursor">
-          <div className="text-center mb-20">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-cursor-blue/10 border border-cursor-blue/20 text-cursor-blue text-sm font-medium mb-6">
-              <span className="w-2 h-2 bg-cursor-blue rounded-full mr-2 animate-pulse" />
-              Technology Stack
+      <div className="min-h-screen bg-black">
+        {/* Header Section */}
+        <section className="pt-32 pb-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div className="mb-8">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
+                <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse" />
+                Our Services
+              </div>
             </div>
-            <h2 className="text-responsive-lg font-bold mb-8 gradient-text text-shadow">
-              Built with Modern Technologies
-            </h2>
-            <p className="text-responsive-md text-gray-400 max-w-4xl mx-auto leading-relaxed">
-              We leverage cutting-edge technologies and frameworks to deliver robust, scalable, and innovative solutions.
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight">
+              Comprehensive
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400"> Technology Solutions</span>
+            </h1>
+            <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              From enterprise infrastructure to specialized micro SaaS tools, we provide the technology solutions 
+              your business needs to thrive in the digital age.
             </p>
           </div>
+        </section>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-            {technologies.map((tech, index) => (
-              <Card
-                key={index}
-                className="card-hover text-center group border-gradient-blue"
-                style={{ animationDelay: `${(index * 0.05) + 0.2}s` }}
-              >
-                <div className="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                  {tech.icon}
+        {/* Services by Category */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {categories.map((category, categoryIndex) => (
+              <div key={categoryIndex} className="mb-24">
+                <div className="text-center mb-16">
+                  <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+                    {category.name}
+                  </h2>
+                  <p className="text-xl text-gray-400 max-w-4xl mx-auto">
+                    {category.description}
+                  </p>
                 </div>
-                <h3 className="font-semibold text-white mb-2 text-lg">{tech.name}</h3>
-                <p className="text-sm text-gray-400">{tech.category}</p>
-              </Card>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {category.services.map((service, serviceIndex) => (
+                    <Card key={serviceIndex} className="h-full">
+                      <div className="p-8 h-full flex flex-col">
+                        <div className={`w-16 h-16 ${service.color} rounded-2xl flex items-center justify-center text-3xl mb-6`}>
+                          {service.icon}
+                        </div>
+                        
+                        <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
+                        <p className="text-gray-400 mb-6 flex-grow">{service.description}</p>
+                        
+                        <div className="mb-6">
+                          <h4 className="text-lg font-semibold text-white mb-3">Key Features:</h4>
+                          <ul className="space-y-2">
+                            {service.features.map((feature, featureIndex) => (
+                              <li key={featureIndex} className="flex items-center text-gray-300 text-sm">
+                                <div className={`w-2 h-2 rounded-full ${service.gradient} mr-3`} />
+                                {feature}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        {service.pricing && (
+                          <div className="mb-6 p-4 bg-gray-800/50 rounded-lg">
+                            <div className="text-center">
+                              <div className="text-2xl font-bold text-white">{service.pricing}</div>
+                              {service.marketSize && (
+                                <div className="text-sm text-gray-400 mt-1">Market Size: {service.marketSize}</div>
+                              )}
+                            </div>
+                          </div>
+                        )}
+
+                        <div className="mt-auto">
+                          {service.link ? (
+                            <Button
+                              href={service.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={`w-full bg-gradient-to-r ${service.gradient} hover:opacity-90`}
+                            >
+                              Learn More
+                            </Button>
+                          ) : (
+                            <Button
+                              href="/contact"
+                              className={`w-full bg-gradient-to-r ${service.gradient} hover:opacity-90`}
+                            >
+                              Get Started
+                            </Button>
+                          )}
+                        </div>
+                      </div>
+                    </Card>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-r from-cursor-blue to-blue-600 relative overflow-hidden">
-        <div className="absolute inset-0 bg-dots opacity-10" />
-        <div className="container-cursor text-center relative z-10">
-          <h2 className="text-responsive-lg font-bold text-white mb-8 text-shadow-lg">
-            Ready to Get Started?
-          </h2>
-          <p className="text-responsive-md text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed">
-            Let&apos;s discuss how our services can help transform your business and accelerate your digital journey.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button
-              href="/contact"
-              size="lg"
-              className="bg-white text-cursor-blue hover:bg-gray-100 shadow-2xl hover-glow"
-            >
-              Get a Quote
-            </Button>
-            <Button
-              href="/case-studies"
-              variant="outline"
-              size="lg"
-              className="border-white text-white hover:bg-white hover:text-cursor-blue shadow-2xl"
-            >
-              View Case Studies
-            </Button>
+        {/* CTA Section */}
+        <section className="py-24 bg-gradient-to-r from-blue-600 to-cyan-700 relative overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px] opacity-10" />
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8">
+              Ready to Transform Your Business?
+            </h2>
+            <p className="text-xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed">
+              Whether you need enterprise infrastructure or specialized micro SaaS tools, 
+              we have the solutions to help your business succeed.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Button
+                href="/contact"
+                variant="secondary"
+                size="lg"
+                className="bg-white text-blue-600 hover:bg-gray-100 shadow-2xl"
+              >
+                Contact Us
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+              <Button
+                href="/micro-saas"
+                variant="outline"
+                size="lg"
+                className="border-white text-white hover:bg-white hover:text-blue-600 shadow-2xl"
+              >
+                Explore Micro SaaS
+              </Button>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </>
   );
 }
