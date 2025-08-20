@@ -5,6 +5,40 @@ import Button from '../components/ui/Button';
 
 export default function MicroSaasPage() {
   const [selectedCategory, setSelectedCategory] = useState('All');
+  
+  const competitiveAdvantages = [
+    {
+      icon: '⚡',
+      title: 'Lightning Fast Setup',
+      description: 'Get started in minutes, not weeks. Our services are designed for immediate value delivery with minimal configuration.'
+    },
+    {
+      icon: '💰',
+      title: 'Transparent Pricing',
+      description: 'No hidden fees, no enterprise sales calls. Simple monthly pricing that scales with your business needs.'
+    },
+    {
+      icon: '🔒',
+      title: 'Enterprise Security',
+      description: 'Bank-level security, SOC 2 compliance, and 99.9% uptime guarantee for all services.'
+    },
+    {
+      icon: '📊',
+      title: 'Real Business Value',
+      description: 'Each service solves a specific business problem with measurable ROI and immediate impact.'
+    },
+    {
+      icon: '🌐',
+      title: 'Unified Platform',
+      description: 'Access all services through ziontechgroup.com with single sign-on and integrated billing.'
+    },
+    {
+      icon: '🎯',
+      title: 'Focused Solutions',
+      description: 'Specialized tools that do one thing exceptionally well, without enterprise complexity.'
+    }
+  ];
+  
   const microSaasServices = [
     {
       name: 'AI Content Generator Pro',

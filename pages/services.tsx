@@ -114,6 +114,40 @@ export default function ServicesPage() {
       link: 'https://contentgen.ziontechgroup.com'
     },
     {
+      icon: '🛡️',
+      title: 'API Rate Limiter Pro',
+      description: 'Protect your APIs from abuse with intelligent rate limiting and DDoS protection.',
+      features: [
+        'Smart rate limiting algorithms',
+        'DDoS protection & mitigation',
+        'Real-time traffic analytics',
+        'Custom rule engine',
+        'Geographic restrictions'
+      ],
+      color: 'bg-gradient-to-br from-red-500 to-pink-600',
+      textColor: 'text-red-400',
+      gradient: 'from-red-400 to-pink-500',
+      pricing: '$29/month',
+      link: 'https://ziontechgroup.com/api-rate-limiter'
+    },
+    {
+      icon: '✅',
+      title: 'Email Validation Suite',
+      description: 'Professional email verification with advanced validation algorithms and compliance tools.',
+      features: [
+        'Real-time email validation',
+        'Disposable email detection',
+        'Domain reputation checking',
+        'Syntax validation',
+        'GDPR compliance tools'
+      ],
+      color: 'bg-gradient-to-br from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      gradient: 'from-green-400 to-emerald-500',
+      pricing: '$19/month',
+      link: 'https://ziontechgroup.com/email-validation'
+    },
+    {
       icon: '🎨',
       title: 'Design System Builder',
       description: 'Create and maintain consistent design systems with automated component generation.',
@@ -232,23 +266,57 @@ export default function ServicesPage() {
       pricing: '$19/month',
       link: 'https://social.ziontechgroup.com'
     },
-    {
-      icon: '💰',
-      title: 'Invoice & Billing Manager',
-      description: 'Streamline your invoicing process with professional templates and automation.',
-      features: [
-        'Professional invoice templates',
-        'Automated payment reminders',
-        'Multiple payment gateways',
-        'Expense tracking',
-        'Financial reporting'
-      ],
-      color: 'bg-gradient-to-br from-yellow-500 to-orange-600',
-      textColor: 'text-yellow-400',
-      gradient: 'from-yellow-400 to-orange-500',
-      pricing: '$25/month',
-      link: 'https://billing.ziontechgroup.com'
-    },
+          {
+        icon: '💰',
+        title: 'Invoice & Billing Manager',
+        description: 'Streamline your invoicing process with professional templates and automation.',
+        features: [
+          'Professional invoice templates',
+          'Automated payment reminders',
+          'Multiple payment gateways',
+          'Expense tracking',
+          'Financial reporting'
+        ],
+        color: 'bg-gradient-to-br from-yellow-500 to-orange-600',
+        textColor: 'text-yellow-400',
+        gradient: 'from-yellow-400 to-orange-500',
+        pricing: '$25/month',
+        link: 'https://billing.ziontechgroup.com'
+      },
+      {
+        icon: '🔐',
+        title: 'Password Generator Pro',
+        description: 'Generate strong, secure passwords with advanced algorithms and secure storage.',
+        features: [
+          'Advanced password algorithms',
+          'Customizable complexity',
+          'Secure password storage',
+          'Password strength testing',
+          'Bulk generation'
+        ],
+        color: 'bg-gradient-to-br from-orange-500 to-red-600',
+        textColor: 'text-orange-400',
+        gradient: 'from-orange-400 to-red-500',
+        pricing: '$7/month',
+        link: 'https://ziontechgroup.com/password-generator'
+      },
+      {
+        icon: '🔗',
+        title: 'URL Shortener Pro',
+        description: 'Create branded short links with detailed analytics, click tracking, and custom domains.',
+        features: [
+          'Custom branded links',
+          'Click analytics & tracking',
+          'QR code generation',
+          'Link expiration',
+          'Password protection'
+        ],
+        color: 'bg-gradient-to-br from-teal-500 to-green-600',
+        textColor: 'text-teal-400',
+        gradient: 'from-teal-400 to-green-500',
+        pricing: '$9/month',
+        link: 'https://ziontechgroup.com/url-shortener'
+      },
     // New enhanced services
     {
       icon: '🎤',

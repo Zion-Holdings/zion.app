@@ -115,16 +115,16 @@ export default function HomePage() {
           <div className="text-center mb-20">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium mb-6">
               <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse" />
-              New Micro SaaS Solutions
+              Premium Micro SaaS Solutions
             </div>
             <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight">
-              Specialized Tools for Every Business Need
+              Enterprise-Grade Tools for Every Business Need
             </h2>
             <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
-              Discover 45+ specialized micro SaaS solutions covering AI-powered content creation, design systems, performance monitoring, 
+              Discover 50+ specialized micro SaaS solutions covering AI-powered content creation, design systems, performance monitoring, 
               SEO automation, chatbots, business intelligence, email marketing, social media, project management, 
               billing, HR operations, video editing, cloud optimization, legal automation, sales intelligence, customer analytics, 
-              and more. Focused value with transparent pricing and 14-day free trials.
+              API management, compliance monitoring, and more. Focused value with transparent pricing, 14-day free trials, and enterprise-grade infrastructure.
             </p>
           </div>
 
@@ -398,12 +398,72 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
+
+            {/* API Rate Limiter Pro */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-red-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-red-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-pink-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    🛡️
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">API Rate Limiter Pro</h3>
+                    <p className="text-red-400 text-sm font-medium">$29/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Protect your APIs from abuse with intelligent rate limiting and DDoS protection.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://ziontechgroup.com/api-rate-limiter"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-red-500 to-pink-600 hover:from-red-600 hover:to-pink-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* Email Validation Suite */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-green-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-green-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    ✅
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Email Validation Suite</h3>
+                    <p className="text-green-400 text-sm font-medium">$19/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Professional email verification with advanced validation algorithms and compliance tools.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://ziontechgroup.com/email-validation"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="text-center">
             <p className="text-gray-400 mb-8 max-w-3xl mx-auto">
-              All 45+ services include comprehensive documentation, dedicated support, enterprise-grade reliability, and 14-day free trials. 
-              Start with one solution and scale as you grow. View our complete portfolio for more specialized tools.
+              All 50+ services include comprehensive documentation, dedicated support, enterprise-grade reliability, 99.9% uptime guarantee, and 14-day free trials. 
+              Start with one solution and scale as you grow. Each service is designed for immediate value delivery with transparent pricing.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
@@ -446,7 +506,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
               <div className="text-3xl mb-4">📝</div>
               <h3 className="text-xl font-bold text-white mb-2">AI Content Generator Pro</h3>
@@ -489,10 +549,26 @@ export default function HomePage() {
 
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
               <div className="text-3xl mb-4">📸</div>
-              <h3 className="text-xl font-bold text-white mb-2">Screenshot API</h3>
-              <p className="text-green-100 text-sm mb-4">Convert websites to images</p>
+              <h3 className="text-xl font-bold text-white mb-2">Screenshot API Pro</h3>
+              <p className="text-green-100 text-sm mb-4">Convert websites to high-quality images</p>
               <div className="text-2xl font-bold text-white mb-2">$12<span className="text-sm font-normal text-green-100">/month</span></div>
               <p className="text-xs text-green-200">14-day free trial • Setup in 1 minute</p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
+              <div className="text-3xl mb-4">🔐</div>
+              <h3 className="text-xl font-bold text-white mb-2">Password Generator Pro</h3>
+              <p className="text-green-100 text-sm mb-4">Secure password creation & management</p>
+              <div className="text-2xl font-bold text-white mb-2">$7<span className="text-sm font-normal text-green-100">/month</span></div>
+              <p className="text-xs text-green-200">14-day free trial • Setup in 2 minutes</p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
+              <div className="text-3xl mb-4">🔗</div>
+              <h3 className="text-xl font-bold text-white mb-2">URL Shortener Pro</h3>
+              <p className="text-green-100 text-sm mb-4">Advanced link management & analytics</p>
+              <div className="text-2xl font-bold text-white mb-2">$9<span className="text-sm font-normal text-green-100">/month</span></div>
+              <p className="text-xs text-green-200">14-day free trial • Setup in 3 minutes</p>
             </div>
           </div>
 
