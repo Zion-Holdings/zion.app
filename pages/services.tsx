@@ -111,7 +111,7 @@ export default function ServicesPage() {
       textColor: 'text-pink-400',
       gradient: 'from-pink-400 to-rose-500',
       pricing: '$49/month',
-      link: 'https://contentgen.zion.app'
+      link: 'https://contentgen.ziontechgroup.com'
     },
     {
       icon: '🎨',
@@ -128,7 +128,7 @@ export default function ServicesPage() {
       textColor: 'text-violet-400',
       gradient: 'from-violet-400 to-purple-500',
       pricing: '$79/month',
-      link: 'https://design.zion.app'
+      link: 'https://design.ziontechgroup.com'
     },
     {
       icon: '📱',
@@ -145,7 +145,7 @@ export default function ServicesPage() {
       textColor: 'text-amber-400',
       gradient: 'from-amber-400 to-orange-500',
       pricing: '$39/month',
-      link: 'https://monitor.zion.app'
+      link: 'https://monitor.ziontechgroup.com'
     },
     {
       icon: '🔍',
@@ -160,9 +160,9 @@ export default function ServicesPage() {
       ],
       color: 'bg-gradient-to-br from-emerald-500 to-green-600',
       textColor: 'text-emerald-400',
-      gradient: 'from-emerald-400 to-emerald-500',
+      gradient: 'from-emerald-400 to-green-500',
       pricing: '$89/month',
-      link: 'https://seo.zion.app'
+      link: 'https://seo.ziontechgroup.com'
     },
     {
       icon: '💬',
@@ -179,7 +179,7 @@ export default function ServicesPage() {
       textColor: 'text-sky-400',
       gradient: 'from-sky-400 to-blue-500',
       pricing: '$69/month',
-      link: 'https://chatbot.zion.app'
+      link: 'https://chatbot.ziontechgroup.com'
     },
     {
       icon: '📊',
@@ -196,127 +196,246 @@ export default function ServicesPage() {
       textColor: 'text-rose-400',
       gradient: 'from-rose-400 to-pink-500',
       pricing: '$99/month',
-      link: 'https://bi.zion.app'
+      link: 'https://bi.ziontechgroup.com'
     },
-    // Additional New Micro SaaS Services
     {
       icon: '📧',
-      title: 'Email Automation Studio',
-      description: 'Advanced email marketing automation with AI-powered personalization.',
+      title: 'Email Marketing Automation',
+      description: 'Smart email campaigns with AI-powered automation and personalization.',
       features: [
-        'AI-powered personalization',
-        'Advanced segmentation',
+        'AI-powered subject line optimization',
+        'Smart audience segmentation',
         'Behavioral triggers',
         'A/B testing automation',
-        'Email template builder'
+        'Email template library'
       ],
-      color: 'bg-gradient-to-br from-blue-500 to-indigo-600',
-      textColor: 'text-blue-400',
-      gradient: 'from-blue-400 to-indigo-500',
-      pricing: '$59/month',
-      link: 'https://emailstudio.zion.app'
+      color: 'bg-gradient-to-br from-indigo-500 to-blue-600',
+      textColor: 'text-indigo-400',
+      gradient: 'from-indigo-400 to-blue-500',
+      pricing: '$29/month',
+      link: 'https://email.ziontechgroup.com'
     },
     {
       icon: '📱',
       title: 'Social Media Scheduler',
-      description: 'Intelligent social media management across all platforms.',
+      description: 'Automate your social media presence across multiple platforms.',
       features: [
         'Multi-platform scheduling',
-        'AI content optimization',
-        'Best time to post analysis',
+        'AI-powered optimal timing',
         'Content calendar management',
-        'Hashtag research tools'
+        'Hashtag suggestions',
+        'Analytics & insights'
       ],
-      color: 'bg-gradient-to-br from-green-500 to-teal-600',
-      textColor: 'text-green-400',
-      gradient: 'from-green-400 to-teal-500',
-      pricing: '$29/month',
-      link: 'https://socialscheduler.zion.app'
-    },
-    {
-      icon: '📋',
-      title: 'Project Management Hub',
-      description: 'Streamlined project collaboration and task management.',
-      features: [
-        'Task management & tracking',
-        'Team collaboration tools',
-        'Time tracking & reporting',
-        'Project templates',
-        'File sharing & storage'
-      ],
-      color: 'bg-gradient-to-br from-purple-500 to-pink-600',
-      textColor: 'text-purple-400',
-      gradient: 'from-purple-400 to-pink-500',
-      pricing: '$45/month',
-      link: 'https://projecthub.zion.app'
+      color: 'bg-gradient-to-br from-teal-500 to-cyan-600',
+      textColor: 'text-teal-400',
+      gradient: 'from-teal-400 to-cyan-500',
+      pricing: '$19/month',
+      link: 'https://social.ziontechgroup.com'
     },
     {
       icon: '💰',
       title: 'Invoice & Billing Manager',
-      description: 'Professional invoicing and payment tracking system.',
+      description: 'Streamline your invoicing process with professional templates and automation.',
       features: [
         'Professional invoice templates',
-        'Payment tracking',
-        'Automated reminders',
-        'Multi-currency support',
-        'Tax calculation'
+        'Automated payment reminders',
+        'Multiple payment gateways',
+        'Expense tracking',
+        'Financial reporting'
       ],
       color: 'bg-gradient-to-br from-yellow-500 to-orange-600',
       textColor: 'text-yellow-400',
       gradient: 'from-yellow-400 to-orange-500',
       pricing: '$25/month',
-      link: 'https://invoice.zion.app'
+      link: 'https://billing.ziontechgroup.com'
     },
     {
-      icon: '🎧',
-      title: 'Customer Support Suite',
-      description: 'Complete customer service and helpdesk solution.',
+      icon: '📋',
+      title: 'Project Management Hub',
+      description: 'Simple project management for teams with intuitive collaboration tools.',
+      features: [
+        'Task management & tracking',
+        'Team collaboration tools',
+        'Time tracking',
+        'File sharing & storage',
+        'Project templates'
+      ],
+      color: 'bg-gradient-to-br from-purple-500 to-indigo-600',
+      textColor: 'text-purple-400',
+      gradient: 'from-purple-400 to-indigo-500',
+      pricing: '$35/month',
+      link: 'https://projects.ziontechgroup.com'
+    },
+    {
+      icon: '🎫',
+      title: 'Customer Support Ticketing',
+      description: 'Organized customer support system with knowledge base and automation.',
       features: [
         'Ticket management system',
-        'Knowledge base builder',
-        'Live chat integration',
+        'Knowledge base creation',
+        'Automated responses',
         'Customer satisfaction surveys',
-        'Automated responses'
+        'Performance analytics'
       ],
       color: 'bg-gradient-to-br from-red-500 to-pink-600',
       textColor: 'text-red-400',
       gradient: 'from-red-400 to-pink-500',
-      pricing: '$75/month',
-      link: 'https://support.zion.app'
+      pricing: '$45/month',
+      link: 'https://support.ziontechgroup.com'
+    },
+    {
+      icon: '📈',
+      title: 'Analytics Dashboard',
+      description: 'Beautiful data visualization with drag-and-drop dashboard builder.',
+      features: [
+        'Drag-and-drop dashboard builder',
+        '100+ chart types',
+        'Real-time data connections',
+        'Custom branding',
+        'Team sharing & collaboration'
+      ],
+      color: 'bg-gradient-to-br from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      gradient: 'from-green-400 to-emerald-500',
+      pricing: '$55/month',
+      link: 'https://analytics.ziontechgroup.com'
+    },
+    // Additional Enhanced Micro SaaS Services
+    {
+      icon: '🎬',
+      title: 'AI Video Editor Pro',
+      description: 'Professional video editing with AI-powered automation and enhancement tools.',
+      features: [
+        'AI-powered scene detection',
+        'Automated video enhancement',
+        'Smart subtitle generation',
+        'Background music matching',
+        'Video templates library'
+      ],
+      color: 'bg-gradient-to-br from-red-500 to-pink-600',
+      textColor: 'text-red-400',
+      gradient: 'from-red-400 to-pink-500',
+      pricing: '$79/month',
+      link: 'https://video.ziontechgroup.com'
+    },
+    {
+      icon: '☁️',
+      title: 'Cloud Cost Optimizer',
+      description: 'Intelligent cloud cost management and optimization to reduce spending by 30%.',
+      features: [
+        'Real-time cost monitoring',
+        'Automated resource optimization',
+        'Cost anomaly detection',
+        'Multi-cloud support',
+        'Budget alerts & controls'
+      ],
+      color: 'bg-gradient-to-br from-blue-500 to-indigo-600',
+      textColor: 'text-blue-400',
+      gradient: 'from-blue-400 to-indigo-500',
+      pricing: '$99/month',
+      link: 'https://cloudcost.ziontechgroup.com'
+    },
+    {
+      icon: '⚖️',
+      title: 'AI Legal Assistant',
+      description: 'Legal document automation with AI assistance for contracts and compliance.',
+      features: [
+        'Contract template library',
+        'AI-powered document review',
+        'Legal compliance checking',
+        'Electronic signature integration',
+        'Document version control'
+      ],
+      color: 'bg-gradient-to-br from-gray-500 to-slate-600',
+      textColor: 'text-gray-400',
+      gradient: 'from-gray-400 to-slate-500',
+      pricing: '$149/month',
+      link: 'https://legal.ziontechgroup.com'
+    },
+    {
+      icon: '💼',
+      title: 'AI Sales Assistant',
+      description: 'AI-powered sales automation to boost conversions and close more deals.',
+      features: [
+        'Intelligent lead scoring',
+        'Automated follow-up sequences',
+        'Sales conversation analysis',
+        'Pipeline optimization',
+        'Revenue forecasting'
+      ],
+      color: 'bg-gradient-to-br from-emerald-500 to-teal-600',
+      textColor: 'text-emerald-400',
+      gradient: 'from-emerald-400 to-teal-500',
+      pricing: '$89/month',
+      link: 'https://sales.ziontechgroup.com'
     },
     {
       icon: '👥',
-      title: 'HR Management System',
-      description: 'Streamlined HR operations and employee management.',
+      title: 'AI HR Assistant',
+      description: 'Streamline HR operations with AI-powered automation and insights.',
       features: [
-        'Employee database management',
-        'Time & attendance tracking',
-        'Leave management',
-        'Performance reviews',
-        'Payroll integration'
+        'AI-powered candidate screening',
+        'Automated interview scheduling',
+        'Performance review automation',
+        'Employee onboarding workflows',
+        'HR analytics & reporting'
       ],
-      color: 'bg-gradient-to-br from-indigo-500 to-blue-600',
-      textColor: 'text-indigo-400',
-      gradient: 'from-indigo-400 to-blue-500',
-      pricing: '$85/month',
-      link: 'https://hr.zion.app'
+      color: 'bg-gradient-to-br from-purple-500 to-violet-600',
+      textColor: 'text-purple-400',
+      gradient: 'from-purple-400 to-violet-500',
+      pricing: '$69/month',
+      link: 'https://hr.ziontechgroup.com'
     },
     {
-      icon: '📦',
-      title: 'Inventory Management Pro',
-      description: 'Smart inventory control and supply chain management.',
+      icon: '🧮',
+      title: 'AI Accounting Assistant',
+      description: 'Smart financial management with automated accounting tasks and insights.',
       features: [
-        'Real-time inventory tracking',
-        'Stock level alerts',
-        'Purchase order management',
-        'Supplier management',
-        'Barcode scanning'
+        'Automated expense categorization',
+        'Invoice processing with OCR',
+        'Real-time financial reporting',
+        'Tax preparation assistance',
+        'Bank reconciliation'
       ],
-      color: 'bg-gradient-to-br from-teal-500 to-cyan-600',
-      textColor: 'text-teal-400',
-      gradient: 'from-teal-400 to-cyan-500',
-      pricing: '$55/month',
-      link: 'https://inventory.zion.app'
+      color: 'bg-gradient-to-br from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      gradient: 'from-green-400 to-emerald-500',
+      pricing: '$59/month',
+      link: 'https://accounting.ziontechgroup.com'
+    },
+    {
+      icon: '🎯',
+      title: 'AI Customer Success Platform',
+      description: 'Proactive customer success with churn prediction and retention automation.',
+      features: [
+        'Churn prediction analytics',
+        'Automated health scoring',
+        'Customer journey mapping',
+        'Success playbook automation',
+        'Customer feedback analysis'
+      ],
+      color: 'bg-gradient-to-br from-orange-500 to-red-600',
+      textColor: 'text-orange-400',
+      gradient: 'from-orange-400 to-red-500',
+      pricing: '$79/month',
+      link: 'https://customersuccess.ziontechgroup.com'
+    },
+    {
+      icon: '📊',
+      title: 'AI Product Analytics',
+      description: 'Deep product insights with AI-powered user behavior analysis.',
+      features: [
+        'User behavior tracking',
+        'Feature usage analytics',
+        'A/B testing automation',
+        'User segmentation',
+        'Funnel analysis'
+      ],
+      color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
+      textColor: 'text-cyan-400',
+      gradient: 'from-cyan-400 to-blue-500',
+      pricing: '$89/month',
+      link: 'https://productanalytics.ziontechgroup.com'
     }
   ];
 
@@ -425,6 +544,76 @@ export default function ServicesPage() {
                 </div>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Micro SaaS Portfolio Promotion */}
+      <section className="py-24 bg-gradient-to-r from-green-600 to-emerald-700 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px] opacity-10" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse" />
+              Micro SaaS Portfolio
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8 leading-tight">
+              20+ Specialized Business Solutions
+            </h2>
+            <p className="text-xl text-green-100 max-w-4xl mx-auto leading-relaxed">
+              Our micro SaaS portfolio delivers focused value for specific business needs. Each solution is designed to solve 
+              real problems with transparent pricing, 14-day free trials, and enterprise-grade reliability.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
+              <div className="text-3xl mb-4">📝</div>
+              <h3 className="text-lg font-bold text-white mb-2">Content Creation</h3>
+              <p className="text-green-100 text-sm">AI-powered writing & video editing</p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
+              <div className="text-3xl mb-4">🎨</div>
+              <h3 className="text-lg font-bold text-white mb-2">Design & UX</h3>
+              <p className="text-green-100 text-sm">Design systems & collaboration</p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
+              <div className="text-3xl mb-4">📊</div>
+              <h3 className="text-lg font-bold text-white mb-2">Analytics & Data</h3>
+              <p className="text-green-100 text-sm">Business intelligence & insights</p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
+              <div className="text-3xl mb-4">💼</div>
+              <h3 className="text-lg font-bold text-white mb-2">Business Operations</h3>
+              <p className="text-green-100 text-sm">HR, accounting & project management</p>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+              <Button
+                href="/micro-saas"
+                variant="secondary"
+                size="lg"
+                className="bg-white text-green-600 hover:bg-gray-100 shadow-2xl"
+              >
+                Explore Full Portfolio
+              </Button>
+              <Button
+                href="/pricing"
+                variant="outline"
+                size="lg"
+                className="border-white text-white hover:bg-white hover:text-green-600 shadow-2xl"
+              >
+                View Pricing
+              </Button>
+            </div>
+            <p className="text-green-200 text-sm">
+              All services include 14-day free trials, comprehensive documentation, and dedicated support
+            </p>
           </div>
         </div>
       </section>
