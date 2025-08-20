@@ -4,7 +4,7 @@ import Hero from '../components/sections/Hero';
 import Features from '../components/sections/Features';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
-import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight } from 'lucide-react';
+import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Globe, Brain, Rocket } from 'lucide-react';
 
 export default function HomePage() {
   const heroStats = [
@@ -107,8 +107,77 @@ export default function HomePage() {
         columns={3}
       />
 
-      {/* Technology Stack */}
+      {/* SaaS Tools Showcase */}
       <section className="py-24 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20 animate-fade-in">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse" />
+              Curated Business Tools
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight">
+              SaaS Tools & Resources
+            </h2>
+            <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              Discover hand-picked SaaS services and AI tools that power modern businesses. 
+              Expert-curated selection for startups, entrepreneurs, and growing companies.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card className="text-center group border border-gray-800 hover:border-green-500/30 hover:bg-gray-900/80 transition-all duration-300 hover:-translate-y-1">
+              <div className="w-16 h-16 mx-auto mb-6 rounded-2xl flex items-center justify-center bg-gradient-to-br from-blue-500 to-indigo-600 shadow-xl group-hover:scale-110 transition-transform duration-300">
+                <Globe className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-4 text-white group-hover:text-green-400 transition-colors duration-300">
+                SaaS Marketplace
+              </h3>
+              <p className="text-gray-400 leading-relaxed mb-6">
+                Explore our curated selection of the best micro SaaS services for automation, productivity, and business growth.
+              </p>
+              <Button href="/saas-marketplace" variant="outline" size="sm" className="group-hover:border-green-500 group-hover:text-green-400">
+                Explore Tools
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            </Card>
+
+            <Card className="text-center group border border-gray-800 hover:border-green-500/30 hover:bg-gray-900/80 transition-all duration-300 hover:-translate-y-1">
+              <div className="w-16 h-16 mx-auto mb-6 rounded-2xl flex items-center justify-center bg-gradient-to-br from-green-500 to-emerald-600 shadow-xl group-hover:scale-110 transition-transform duration-300">
+                <Brain className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-4 text-white group-hover:text-green-400 transition-colors duration-300">
+                AI Business Tools
+              </h3>
+              <p className="text-gray-400 leading-relaxed mb-6">
+                Transform your business with cutting-edge AI tools for content creation, automation, and productivity.
+              </p>
+              <Button href="/ai-business-tools" variant="outline" size="sm" className="group-hover:border-green-500 group-hover:text-green-400">
+                Discover AI Tools
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            </Card>
+
+            <Card className="text-center group border border-gray-800 hover:border-green-500/30 hover:bg-gray-900/80 transition-all duration-300 hover:-translate-y-1">
+              <div className="w-16 h-16 mx-auto mb-6 rounded-2xl flex items-center justify-center bg-gradient-to-br from-orange-500 to-red-600 shadow-xl group-hover:scale-110 transition-transform duration-300">
+                <Rocket className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-4 text-white group-hover:text-green-400 transition-colors duration-300">
+                Startup Tools
+              </h3>
+              <p className="text-gray-400 leading-relaxed mb-6">
+                Essential tools and resources for startups and entrepreneurs to accelerate growth and scale efficiently.
+              </p>
+              <Button href="/startup-tools" variant="outline" size="sm" className="group-hover:border-green-500 group-hover:text-green-400">
+                View Startup Tools
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Technology Stack */}
+      <section className="py-24 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20 animate-fade-in">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
@@ -133,7 +202,7 @@ export default function HomePage() {
                 <div className="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
                   {tech.icon}
                 </div>
-                <h3 className="font-semibold text-white mb-2 text-lg">{tech.name}</h3>
+                <h3 className="text-xl font-bold text-white mb-2 text-lg">{tech.name}</h3>
                 <p className="text-sm text-gray-400">{tech.category}</p>
               </Card>
             ))}

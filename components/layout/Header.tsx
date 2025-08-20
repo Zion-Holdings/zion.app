@@ -7,6 +7,7 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isProductDropdownOpen, setIsProductDropdownOpen] = useState(false);
+  const [isSaasToolsDropdownOpen, setIsSaasToolsDropdownOpen] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -21,6 +22,7 @@ const Header = () => {
   const navigation = [
     { name: 'Product', href: '#', hasDropdown: true },
     { name: 'Solutions', href: '/services' },
+    { name: 'SaaS Tools', href: '#', hasDropdown: true },
     { name: 'Resources', href: '/resources' },
     { name: 'Company', href: '/about' },
     { name: 'Pricing', href: '/pricing' },
@@ -31,6 +33,13 @@ const Header = () => {
     { name: 'Cloud Platform', href: '/cloud-platform', description: 'Scalable cloud infrastructure' },
     { name: 'Automation Hub', href: '/automation', description: 'AI-powered workflow automation' },
     { name: 'Analytics', href: '/analytics', description: 'Real-time insights and reporting' },
+  ];
+
+  const saasToolsDropdown = [
+    { name: 'SaaS Marketplace', href: '/saas-marketplace', description: 'Curated selection of business tools' },
+    { name: 'AI Business Tools', href: '/ai-business-tools', description: 'AI-powered productivity solutions' },
+    { name: 'Startup Tools', href: '/startup-tools', description: 'Essential tools for entrepreneurs' },
+    { name: 'Tool Comparison', href: '/tool-comparison', description: 'Compare tools and make informed decisions' },
   ];
 
   const isActive = (href: string) => router.pathname === href;
@@ -65,11 +74,22 @@ const Header = () => {
                 {item.hasDropdown ? (
                   <div className="relative">
                     <button
-                      onClick={() => setIsProductDropdownOpen(!isProductDropdownOpen)}
+                      onClick={() => {
+                        if (item.name === 'Product') {
+                          setIsProductDropdownOpen(!isProductDropdownOpen);
+                          setIsSaasToolsDropdownOpen(false);
+                        } else if (item.name === 'SaaS Tools') {
+                          setIsSaasToolsDropdownOpen(!isSaasToolsDropdownOpen);
+                          setIsProductDropdownOpen(false);
+                        }
+                      }}
                       className="flex items-center space-x-1 px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 rounded-lg hover:bg-white/5"
                     >
                       {item.name}
-                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isProductDropdownOpen ? 'rotate-180' : ''}`} />
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
+                        (item.name === 'Product' && isProductDropdownOpen) || 
+                        (item.name === 'SaaS Tools' && isSaasToolsDropdownOpen) ? 'rotate-180' : ''
+                      }`} />
                     </button>
                     
                     {isProductDropdownOpen && (
@@ -84,6 +104,24 @@ const Header = () => {
                             >
                               <div className="font-medium text-white mb-1">{product.name}</div>
                               <div className="text-sm text-gray-400">{product.description}</div>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {isSaasToolsDropdownOpen && (
+                      <div className="absolute top-full left-0 mt-2 w-80 bg-black/90 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl p-4">
+                        <div className="grid gap-3">
+                          {saasToolsDropdown.map((tool) => (
+                            <Link
+                              key={tool.name}
+                              href={tool.href}
+                              className="flex flex-col p-3 rounded-lg hover:bg-white/5 transition-colors duration-200"
+                              onClick={() => setIsSaasToolsDropdownOpen(false)}
+                            >
+                              <div className="font-medium text-white mb-1">{tool.name}</div>
+                              <div className="text-sm text-gray-400">{tool.description}</div>
                             </Link>
                           ))}
                         </div>
@@ -143,7 +181,7 @@ const Header = () => {
                         {item.name}
                       </div>
                       <div className="pl-4 space-y-2">
-                        {productDropdown.map((product) => (
+                        {item.name === 'Product' && productDropdown.map((product) => (
                           <Link
                             key={product.name}
                             href={product.href}
@@ -152,6 +190,17 @@ const Header = () => {
                           >
                             <div className="font-medium">{product.name}</div>
                             <div className="text-xs text-gray-500">{product.description}</div>
+                          </Link>
+                        ))}
+                        {item.name === 'SaaS Tools' && saasToolsDropdown.map((tool) => (
+                          <Link
+                            key={tool.name}
+                            href={tool.href}
+                            className="block px-4 py-2 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors duration-200"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            <div className="font-medium">{tool.name}</div>
+                            <div className="text-xs text-gray-500">{tool.description}</div>
                           </Link>
                         ))}
                       </div>
