@@ -498,423 +498,235 @@ export default function ServicesPage() {
         'Automated payment reminders',
         'Multiple payment gateways',
         'Tax calculation & compliance',
-        'Client portal access',
-        'Multi-currency support'
+        'Client portal & management'
       ],
       color: 'bg-gradient-to-br from-yellow-500 to-orange-600',
       textColor: 'text-yellow-400',
       gradient: 'from-yellow-400 to-orange-500',
       pricing: '$25/month',
-      link: 'https://billing.ziontechgroup.com'
+      link: 'https://ziontechgroup.com/invoice-generator'
     },
-    // Additional High-Value Real Micro SaaS Services
+    // Additional New Micro SaaS Services
     {
-      icon: '🔍',
-      title: 'AI Code Review Assistant',
-      description: 'Automate code reviews with AI-powered analysis for quality assurance and security.',
+      icon: '🎬',
+      title: 'AI Video Editor Pro',
+      description: 'Professional video editing with AI-powered tools and automated effects.',
       features: [
-        'AI-powered code analysis',
-        'Security vulnerability detection',
-        'Code style enforcement',
-        'Performance optimization suggestions',
-        'Integration with Git workflows'
-      ],
-      color: 'bg-gradient-to-br from-blue-500 to-cyan-600',
-      textColor: 'text-blue-400',
-      gradient: 'from-blue-400 to-cyan-500',
-      pricing: '$69/month',
-      link: 'https://codereview.ziontechgroup.com'
-    },
-    {
-      icon: '📊',
-      title: 'AI Market Research Platform',
-      description: 'Get real-time market insights with AI-powered research tools and competitor analysis.',
-      features: [
-        'Competitor monitoring',
-        'Market trend analysis',
-        'Sentiment analysis',
-        'Keyword tracking',
-        'Industry reports'
-      ],
-      color: 'bg-gradient-to-br from-purple-500 to-indigo-600',
-      textColor: 'text-purple-400',
-      gradient: 'from-purple-400 to-indigo-500',
-      pricing: '$129/month',
-      link: 'https://marketresearch.ziontechgroup.com'
-    },
-    {
-      icon: '💭',
-      title: 'AI Customer Feedback Analyzer',
-      description: 'Analyze customer feedback across all channels with AI-powered sentiment analysis.',
-      features: [
-        'Multi-channel feedback collection',
-        'Sentiment analysis',
-        'Topic clustering',
-        'Trend identification',
-        'Automated reporting'
-      ],
-      color: 'bg-gradient-to-br from-green-500 to-teal-600',
-      textColor: 'text-green-400',
-      gradient: 'from-green-400 to-teal-500',
-      pricing: '$49/month',
-      link: 'https://feedback.ziontechgroup.com'
-    },
-    {
-      icon: '📦',
-      title: 'AI Inventory Management',
-      description: 'Optimize inventory levels with AI-powered forecasting and automated reordering.',
-      features: [
-        'Demand forecasting',
-        'Automated reorder points',
-        'Inventory optimization',
-        'Supplier management',
-        'Real-time tracking'
-      ],
-      color: 'bg-gradient-to-br from-orange-500 to-red-600',
-      textColor: 'text-orange-400',
-      gradient: 'from-orange-400 to-red-500',
-      pricing: '$79/month',
-      link: 'https://inventory.ziontechgroup.com'
-    },
-    {
-      icon: '🎯',
-      title: 'AI Lead Scoring Platform',
-      description: 'Score and prioritize leads with AI-powered algorithms and behavioral tracking.',
-      features: [
-        'AI-powered lead scoring',
-        'Behavioral tracking',
-        'Custom scoring models',
-        'Lead nurturing automation',
-        'CRM integration'
-      ],
-      color: 'bg-gradient-to-br from-pink-500 to-rose-600',
-      textColor: 'text-pink-400',
-      gradient: 'from-pink-400 to-rose-500',
-      pricing: '$89/month',
-      link: 'https://leadscoring.ziontechgroup.com'
-    },
-    {
-      icon: '📄',
-      title: 'AI Document Management',
-      description: 'Organize, search, and manage documents with AI-powered categorization and automation.',
-      features: [
-        'AI-powered categorization',
-        'Advanced search capabilities',
-        'Document version control',
-        'Collaboration tools',
-        'Security & compliance'
-      ],
-      color: 'bg-gradient-to-br from-gray-500 to-slate-600',
-      textColor: 'text-gray-400',
-      gradient: 'from-gray-400 to-slate-500',
-      pricing: '$39/month',
-      link: 'https://documents.ziontechgroup.com'
-    },
-    {
-      icon: '🎤',
-      title: 'AI Meeting Assistant',
-      description: 'Record, transcribe, and analyze meetings with AI-powered automation and insights.',
-      features: [
-        'Meeting transcription',
-        'Action item extraction',
-        'Meeting summaries',
-        'Voice recognition',
-        'Integration with calendar tools'
-      ],
-      color: 'bg-gradient-to-br from-blue-500 to-indigo-600',
-      textColor: 'text-blue-400',
-      gradient: 'from-blue-400 to-indigo-500',
-      pricing: '$29/month',
-      link: 'https://meetings.ziontechgroup.com'
-    },
-    {
-      icon: '🛡️',
-      title: 'AI Compliance Monitor',
-      description: 'Monitor compliance requirements with AI-powered automation and risk assessment.',
-      features: [
-        'Regulatory monitoring',
-        'Compliance reporting',
-        'Risk assessment',
-        'Audit trail',
-        'Integration with business systems'
-      ],
-      color: 'bg-gradient-to-br from-red-500 to-pink-600',
-      textColor: 'text-red-400',
-      gradient: 'from-red-400 to-red-500',
-      pricing: '$199/month',
-      link: 'https://compliance.ziontechgroup.com'
-    },
-    {
-      icon: '🌐',
-      title: 'AI Translation Hub',
-      description: 'Professional translation with AI-powered accuracy and brand voice preservation.',
-      features: [
-        '100+ language support',
-        'AI-powered translation',
-        'Brand voice preservation',
-        'Industry-specific terminology',
-        'Quality assurance tools'
-      ],
-      color: 'bg-gradient-to-br from-indigo-500 to-purple-600',
-      textColor: 'text-indigo-400',
-      gradient: 'from-indigo-400 to-purple-500',
-      pricing: '$59/month',
-      link: 'https://translation.ziontechgroup.com'
-    },
-    {
-      icon: '👨‍💼',
-      title: 'AI Recruitment Platform',
-      description: 'Streamline hiring with AI-powered candidate screening and interview automation.',
-      features: [
-        'AI candidate screening',
-        'Automated interview scheduling',
-        'Skills assessment tools',
-        'Candidate scoring algorithms',
-        'Talent pipeline management'
-      ],
-      color: 'bg-gradient-to-br from-blue-500 to-cyan-600',
-      textColor: 'text-blue-400',
-      gradient: 'from-blue-400 to-cyan-500',
-      pricing: '$89/month',
-      link: 'https://recruitment.ziontechgroup.com'
-    },
-    {
-      icon: '🎯',
-      title: 'AI Customer Segmentation',
-      description: 'Create precise customer segments with AI-powered behavioral analysis.',
-      features: [
-        'Behavioral segmentation',
-        'Predictive modeling',
-        'Real-time segmentation',
-        'Custom segment rules',
-        'Integration with marketing tools'
-      ],
-      color: 'bg-gradient-to-br from-purple-500 to-pink-600',
-      textColor: 'text-purple-400',
-      gradient: 'from-purple-400 to-pink-500',
-      pricing: '$69/month',
-      link: 'https://segmentation.ziontechgroup.com'
-    },
-    {
-      icon: '⚡',
-      title: 'AI Workflow Automation',
-      description: 'Build intelligent workflows that automate repetitive tasks and business processes.',
-      features: [
-        'Visual workflow builder',
-        '500+ app integrations',
-        'AI-powered automation',
-        'Conditional logic',
-        'Error handling'
-      ],
-      color: 'bg-gradient-to-br from-yellow-500 to-orange-600',
-      textColor: 'text-yellow-400',
-      gradient: 'from-yellow-400 to-orange-500',
-      pricing: '$79/month',
-      link: 'https://workflow.ziontechgroup.com'
-    },
-    {
-      icon: '🔒',
-      title: 'AI Security Monitor',
-      description: 'Monitor and protect digital assets with AI-powered threat detection and response.',
-      features: [
-        'Real-time threat detection',
-        'AI-powered analysis',
-        'Vulnerability scanning',
-        'Incident response automation',
-        'Compliance monitoring'
+        'AI-powered video enhancement',
+        'Automated scene detection',
+        'Smart background removal',
+        'Professional templates',
+        'Cloud rendering'
       ],
       color: 'bg-gradient-to-br from-red-500 to-pink-600',
       textColor: 'text-red-400',
       gradient: 'from-red-400 to-pink-500',
-      pricing: '$149/month',
-      link: 'https://security.ziontechgroup.com'
-    },
-    {
-      icon: '🔄',
-      title: 'AI Data Pipeline',
-      description: 'Build and manage data pipelines with AI-powered automation and processing.',
-      features: [
-        'Visual pipeline builder',
-        'AI-powered data cleaning',
-        'Real-time processing',
-        'Error handling & recovery',
-        'Data quality monitoring'
-      ],
-      color: 'bg-gradient-to-br from-green-500 to-teal-600',
-      textColor: 'text-green-400',
-      gradient: 'from-green-400 to-teal-500',
-      pricing: '$99/month',
-      link: 'https://datapipeline.ziontechgroup.com'
-    },
-    {
-      icon: '📚',
-      title: 'AI Knowledge Base',
-      description: 'Create intelligent knowledge bases with AI-powered search and content management.',
-      features: [
-        'AI-powered search',
-        'Content organization',
-        'Version control',
-        'Team collaboration',
-        'Analytics & insights'
-      ],
-      color: 'bg-gradient-to-br from-blue-500 to-indigo-600',
-      textColor: 'text-blue-400',
-      gradient: 'from-blue-400 to-indigo-500',
-      pricing: '$49/month',
-      link: 'https://knowledgebase.ziontechgroup.com'
-    },
-    {
-      icon: '🤖',
-      title: 'AI Code Generation Platform',
-      description: 'Generate production-ready code with AI from natural language descriptions and designs.',
-      features: [
-        'Natural language to code',
-        'Multi-language support',
-        'Design to code conversion',
-        'Code review & optimization',
-        'Testing automation'
-      ],
-      color: 'bg-gradient-to-br from-purple-500 to-pink-600',
-      textColor: 'text-purple-400',
-      gradient: 'from-purple-400 to-pink-500',
-      pricing: '$199/month',
-      link: 'https://codegen.ziontechgroup.com'
-    },
-    {
-      icon: '🖥️',
-      title: 'AI Infrastructure Monitoring',
-      description: 'Intelligent infrastructure observability with AI-powered anomaly detection and automation.',
-      features: [
-        'AI-powered anomaly detection',
-        'Predictive maintenance',
-        'Automated incident response',
-        'Multi-cloud monitoring',
-        'Custom dashboards'
-      ],
-      color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
-      textColor: 'text-cyan-400',
-      gradient: 'from-cyan-400 to-blue-500',
-      pricing: '$179/month',
-      link: 'https://infrastructure.ziontechgroup.com'
-    },
-    {
-      icon: '📋',
-      title: 'AI Contract Analysis Platform',
-      description: 'Intelligent contract review with AI-powered risk identification and compliance checking.',
-      features: [
-        'AI contract review',
-        'Risk identification',
-        'Term extraction',
-        'Compliance checking',
-        'Version comparison'
-      ],
-      color: 'bg-gradient-to-br from-gray-500 to-slate-600',
-      textColor: 'text-gray-400',
-      gradient: 'from-gray-400 to-slate-500',
-      pricing: '$159/month',
-      link: 'https://contracts.ziontechgroup.com'
-    },
-    {
-      icon: '🔬',
-      title: 'AI Patent Research Platform',
-      description: 'Intelligent patent search and analysis with AI-powered prior art detection.',
-      features: [
-        'AI-powered patent search',
-        'Prior art detection',
-        'Patent landscape analysis',
-        'Citation analysis',
-        'Competitor monitoring'
-      ],
-      color: 'bg-gradient-to-br from-indigo-500 to-purple-600',
-      textColor: 'text-indigo-400',
-      gradient: 'from-indigo-400 to-purple-500',
-      pricing: '$299/month',
-      link: 'https://patents.ziontechgroup.com'
-    },
-    {
-      icon: '🚚',
-      title: 'AI Supply Chain Optimization',
-      description: 'Intelligent supply chain management with AI-powered demand forecasting and risk assessment.',
-      features: [
-        'AI demand forecasting',
-        'Supply chain risk assessment',
-        'Inventory optimization',
-        'Supplier performance tracking',
-        'Real-time monitoring'
-      ],
-      color: 'bg-gradient-to-br from-orange-500 to-red-600',
-      textColor: 'text-orange-400',
-      gradient: 'from-orange-400 to-red-500',
-      pricing: '$199/month',
-      link: 'https://supplychain.ziontechgroup.com'
-    },
-    {
-      icon: '⚡',
-      title: 'AI Energy Management Platform',
-      description: 'Intelligent energy optimization with AI-powered consumption analysis and cost optimization.',
-      features: [
-        'AI energy optimization',
-        'Usage pattern analysis',
-        'Cost optimization',
-        'Renewable energy integration',
-        'Real-time monitoring'
-      ],
-      color: 'bg-gradient-to-br from-green-500 to-emerald-600',
-      textColor: 'text-green-400',
-      gradient: 'from-green-400 to-emerald-500',
-      pricing: '$129/month',
-      link: 'https://energy.ziontechgroup.com'
-    },
-    {
-      icon: '🏥',
-      title: 'AI Healthcare Analytics Platform',
-      description: 'Intelligent healthcare insights with AI-powered patient outcome analysis and operational efficiency.',
-      features: [
-        'Patient outcome analysis',
-        'Operational efficiency insights',
-        'Clinical decision support',
-        'Predictive analytics',
-        'HIPAA compliance'
-      ],
-      color: 'bg-gradient-to-br from-blue-500 to-indigo-600',
-      textColor: 'text-blue-400',
-      gradient: 'from-blue-400 to-indigo-500',
-      pricing: '$399/month',
-      link: 'https://healthcare.ziontechgroup.com'
-    },
-    {
-      icon: '🎓',
-      title: 'AI Education Platform',
-      description: 'Intelligent learning and assessment with AI-powered personalization and performance analytics.',
-      features: [
-        'AI-powered personalization',
-        'Automated assessment',
-        'Performance analytics',
-        'Adaptive learning paths',
-        'Content creation tools'
-      ],
-      color: 'bg-gradient-to-br from-purple-500 to-pink-600',
-      textColor: 'text-purple-400',
-      gradient: 'from-purple-400 to-pink-500',
       pricing: '$79/month',
-      link: 'https://education.ziontechgroup.com'
+      link: 'https://ziontechgroup.com/ai-video-editor-pro'
     },
     {
-      icon: '🧾',
-      title: 'Invoice Generator',
-      description: 'Professional invoicing made simple with automated reminders and payment processing.',
+      icon: '☁️',
+      title: 'Cloud Cost Optimizer',
+      description: 'Reduce cloud spending by 30% with intelligent cost management.',
       features: [
-        'Professional invoice templates',
-        'Automated payment reminders',
-        'Multiple payment gateways',
-        'Tax calculation & compliance',
-        'Client portal access'
+        'Multi-cloud cost monitoring',
+        'Automated optimization',
+        'Reserved instance recommendations',
+        'Cost anomaly detection',
+        'Budget management'
+      ],
+      color: 'bg-gradient-to-br from-blue-500 to-indigo-600',
+      textColor: 'text-blue-400',
+      gradient: 'from-blue-400 to-indigo-500',
+      pricing: '$99/month',
+      link: 'https://ziontechgroup.com/cloud-cost-optimizer'
+    },
+    {
+      icon: '⚖️',
+      title: 'AI Legal Document Generator',
+      description: 'Generate professional legal documents with AI-powered templates.',
+      features: [
+        'AI-powered document generation',
+        'Legal template library',
+        'Compliance checking',
+        'Custom clause builder',
+        'Electronic signature support'
       ],
       color: 'bg-gradient-to-br from-purple-500 to-violet-600',
       textColor: 'text-purple-400',
       gradient: 'from-purple-400 to-violet-500',
+      pricing: '$69/month',
+      link: 'https://ziontechgroup.com/ai-legal-document-generator'
+    },
+    {
+      icon: '💼',
+      title: 'AI Sales Intelligence Platform',
+      description: 'AI-driven sales intelligence for lead generation and automation.',
+      features: [
+        'AI-powered lead scoring',
+        'Prospect research automation',
+        'Sales pipeline analytics',
+        'Email sequence automation',
+        'CRM integration'
+      ],
+      color: 'bg-gradient-to-br from-blue-500 to-indigo-600',
+      textColor: 'text-blue-400',
+      gradient: 'from-blue-400 to-indigo-500',
+      pricing: '$99/month',
+      link: 'https://ziontechgroup.com/ai-sales-intelligence-platform'
+    },
+    {
+      icon: '📋',
+      title: 'AI Compliance Monitor',
+      description: 'Monitor and maintain compliance with automated tracking.',
+      features: [
+        'Automated compliance monitoring',
+        'Regulatory update alerts',
+        'Audit trail generation',
+        'Compliance reporting',
+        'Risk assessment tools'
+      ],
+      color: 'bg-gradient-to-br from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      gradient: 'from-green-400 to-emerald-500',
+      pricing: '$79/month',
+      link: 'https://ziontechgroup.com/ai-compliance-monitor'
+    },
+    {
+      icon: '👥',
+      title: 'AI HR Assistant',
+      description: 'Automate HR processes with AI-powered recruitment.',
+      features: [
+        'AI-powered candidate screening',
+        'Resume parsing & matching',
+        'Interview scheduling automation',
+        'Performance review management',
+        'Employee onboarding'
+      ],
+      color: 'bg-gradient-to-br from-teal-500 to-cyan-600',
+      textColor: 'text-teal-400',
+      gradient: 'from-teal-400 to-cyan-500',
+      pricing: '$59/month',
+      link: 'https://ziontechgroup.com/ai-hr-assistant'
+    },
+    {
+      icon: '💰',
+      title: 'AI Financial Advisor',
+      description: 'AI-powered financial planning and investment advice.',
+      features: [
+        'AI financial planning',
+        'Investment portfolio analysis',
+        'Risk assessment tools',
+        'Tax optimization suggestions',
+        'Retirement planning'
+      ],
+      color: 'bg-gradient-to-br from-yellow-500 to-orange-600',
+      textColor: 'text-yellow-400',
+      gradient: 'from-yellow-400 to-orange-500',
+      pricing: '$89/month',
+      link: 'https://ziontechgroup.com/ai-financial-advisor'
+    },
+    {
+      icon: '📦',
+      title: 'AI Inventory Manager',
+      description: 'AI-powered inventory management with demand forecasting.',
+      features: [
+        'AI demand forecasting',
+        'Automated reorder points',
+        'Inventory optimization',
+        'Multi-location management',
+        'Supplier management'
+      ],
+      color: 'bg-gradient-to-br from-indigo-500 to-purple-600',
+      textColor: 'text-indigo-400',
+      gradient: 'from-indigo-400 to-purple-500',
+      pricing: '$45/month',
+      link: 'https://ziontechgroup.com/ai-inventory-manager'
+    },
+    {
+      icon: '📅',
+      title: 'AI Meeting Assistant',
+      description: 'AI-powered meeting scheduling and transcription.',
+      features: [
+        'AI meeting scheduling',
+        'Automated transcription',
+        'Action item extraction',
+        'Meeting analytics',
+        'Calendar integration'
+      ],
+      color: 'bg-gradient-to-br from-blue-500 to-indigo-600',
+      textColor: 'text-blue-400',
+      gradient: 'from-blue-400 to-indigo-500',
+      pricing: '$25/month',
+      link: 'https://ziontechgroup.com/ai-meeting-assistant'
+    },
+    {
+      icon: '🌐',
+      title: 'AI Translation Pro',
+      description: 'AI-powered translation with human review.',
+      features: [
+        'AI-powered translation',
+        'Human review integration',
+        '100+ language support',
+        'Industry-specific terminology',
+        'Quality assurance tools'
+      ],
+      color: 'bg-gradient-to-br from-teal-500 to-cyan-600',
+      textColor: 'text-teal-400',
+      gradient: 'from-teal-400 to-cyan-500',
+      pricing: '$35/month',
+      link: 'https://ziontechgroup.com/ai-translation-pro'
+    },
+    {
+      icon: '🧹',
+      title: 'AI Data Cleaner',
+      description: 'AI-powered data cleaning and validation.',
+      features: [
+        'AI data validation',
+        'Duplicate detection',
+        'Data standardization',
+        'Missing data imputation',
+        'Data quality scoring'
+      ],
+      color: 'bg-gradient-to-br from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      gradient: 'from-green-400 to-emerald-500',
+      pricing: '$29/month',
+      link: 'https://ziontechgroup.com/ai-data-cleaner'
+    },
+    {
+      icon: '💾',
+      title: 'AI Backup Manager',
+      description: 'AI-powered backup management and disaster recovery.',
+      features: [
+        'AI backup scheduling',
+        'Intelligent deduplication',
+        'Disaster recovery planning',
+        'Multi-cloud backup',
+        'Automated testing'
+      ],
+      color: 'bg-gradient-to-br from-blue-500 to-indigo-600',
+      textColor: 'text-blue-400',
+      gradient: 'from-blue-400 to-indigo-500',
       pricing: '$15/month',
-      link: 'https://ziontechgroup.com/invoice-generator'
+      link: 'https://ziontechgroup.com/ai-backup-manager'
+    },
+    {
+      icon: '🔐',
+      title: 'Password Manager API',
+      description: 'Enterprise-grade password management with secure sharing and compliance features.',
+      features: [
+        'Secure password generation',
+        'Team password sharing',
+        'Role-based access control',
+        'Audit trails & logging',
+        'SSO integration'
+      ],
+      color: 'bg-gradient-to-br from-gray-500 to-slate-600',
+      textColor: 'text-gray-400',
+      gradient: 'from-gray-400 to-slate-500',
+      pricing: '$35/month',
+      link: 'https://ziontechgroup.com/password-manager'
     },
     {
       icon: '🔐',
