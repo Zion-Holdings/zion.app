@@ -107,6 +107,101 @@ export default function HomePage() {
         columns={3}
       />
 
+      {/* Micro SaaS Services Showcase */}
+      <section className="py-24 bg-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20 animate-fade-in">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse" />
+              New: Micro SaaS Tools
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight">
+              Real Tools for Real Business Growth
+            </h2>
+            <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              Discover our curated collection of micro SaaS services that actually work. Each tool includes real pricing, 
+              market analysis, and direct links to help you make informed decisions.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <Card className="text-center group border border-gray-700 hover:border-blue-500/30 transition-all duration-300">
+              <div className="p-8">
+                <div className="w-20 h-20 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-3xl">🤖</span>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-4">AI Tools & Services</h3>
+                <p className="text-gray-400 mb-6 leading-relaxed">
+                  Curated AI tools including ChatGPT, Midjourney, GitHub Copilot, and more with real pricing and market insights.
+                </p>
+                <Button
+                  href="/ai-tools"
+                  variant="primary"
+                  size="lg"
+                  className="bg-blue-600 hover:bg-blue-700"
+                >
+                  Explore AI Tools
+                </Button>
+              </div>
+            </Card>
+
+            <Card className="text-center group border border-gray-700 hover:border-blue-500/30 transition-all duration-300">
+              <div className="p-8">
+                <div className="w-20 h-20 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-3xl">💼</span>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-4">Micro SaaS Services</h3>
+                <p className="text-gray-400 mb-6 leading-relaxed">
+                  Business tools for content generation, performance monitoring, SEO, and lead generation with competitive pricing.
+                </p>
+                <Button
+                  href="/micro-saas"
+                  variant="primary"
+                  size="lg"
+                  className="bg-blue-600 hover:bg-blue-700"
+                >
+                  View Services
+                </Button>
+              </div>
+            </Card>
+
+            <Card className="text-center group border border-gray-700 hover:border-blue-500/30 transition-all duration-300">
+              <div className="p-8">
+                <div className="w-20 h-20 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-3xl">⚡</span>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-4">Developer Tools</h3>
+                <p className="text-gray-400 mb-6 leading-relaxed">
+                  Professional development stack with GitHub, MongoDB Atlas, Vercel, and security tools for modern teams.
+                </p>
+                <Button
+                  href="/developer-tools"
+                  variant="primary"
+                  size="lg"
+                  className="bg-blue-600 hover:bg-blue-700"
+                >
+                  Dev Tools
+                </Button>
+              </div>
+            </Card>
+          </div>
+
+          <div className="text-center">
+            <p className="text-lg text-gray-300 mb-6">
+              All services include real pricing, market analysis, and direct links
+            </p>
+            <Button
+              href="/services"
+              variant="outline"
+              size="lg"
+              className="border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white"
+            >
+              View All Services
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Technology Stack */}
       <section className="py-24 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

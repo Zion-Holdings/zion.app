@@ -191,6 +191,87 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* Micro SaaS Services Promotion */}
+      <section className="section-padding bg-gradient-cursor-accent">
+        <div className="container-cursor">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-cursor-blue/10 border border-cursor-blue/20 text-cursor-blue text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-cursor-blue rounded-full mr-2 animate-pulse" />
+              New: Micro SaaS Tools
+            </div>
+            <h2 className="text-responsive-lg font-bold mb-8 gradient-text text-shadow">
+              Real Tools for Real Business Growth
+            </h2>
+            <p className="text-responsive-md text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              Discover our curated collection of micro SaaS services that actually work. Each tool includes real pricing, 
+              market analysis, and direct links to help you make informed decisions.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <Card className="card-hover border-gradient-blue text-center">
+              <div className="p-6">
+                <div className="w-16 h-16 bg-cursor-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">🤖</span>
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3">AI Tools & Services</h3>
+                <p className="text-gray-400 mb-4">
+                  Curated AI tools including ChatGPT, Midjourney, GitHub Copilot, and more with real pricing.
+                </p>
+                <Button
+                  href="/ai-tools"
+                  variant="primary"
+                  size="sm"
+                  className="bg-cursor-blue hover:bg-cursor-blue-dark"
+                >
+                  Explore AI Tools
+                </Button>
+              </div>
+            </Card>
+
+            <Card className="card-hover border-gradient-blue text-center">
+              <div className="p-6">
+                <div className="w-16 h-16 bg-cursor-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">💼</span>
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3">Micro SaaS Services</h3>
+                <p className="text-gray-400 mb-4">
+                  Business tools for content generation, performance monitoring, SEO, and lead generation.
+                </p>
+                <Button
+                  href="/micro-saas"
+                  variant="primary"
+                  size="sm"
+                  className="bg-cursor-blue hover:bg-cursor-blue-dark"
+                >
+                  View Services
+                </Button>
+              </div>
+            </Card>
+
+            <Card className="card-hover border-gradient-blue text-center">
+              <div className="p-6">
+                <div className="w-16 h-16 bg-cursor-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">⚡</span>
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3">Developer Tools</h3>
+                <p className="text-gray-400 mb-4">
+                  Professional development stack with GitHub, MongoDB Atlas, Vercel, and security tools.
+                </p>
+                <Button
+                  href="/developer-tools"
+                  variant="primary"
+                  size="sm"
+                  className="bg-cursor-blue hover:bg-cursor-blue-dark"
+                >
+                  Dev Tools
+                </Button>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Technology Stack */}
       <section className="section-padding bg-gradient-cursor">
         <div className="container-cursor">

@@ -31,6 +31,9 @@ const Header = () => {
     { name: 'Cloud Platform', href: '/cloud-platform', description: 'Scalable cloud infrastructure' },
     { name: 'Automation Hub', href: '/automation', description: 'AI-powered workflow automation' },
     { name: 'Analytics', href: '/analytics', description: 'Real-time insights and reporting' },
+    { name: 'Micro SaaS Tools', href: '/micro-saas', description: 'Real business tools with pricing' },
+    { name: 'AI Tools', href: '/ai-tools', description: 'Curated AI services and tools' },
+    { name: 'Developer Tools', href: '/developer-tools', description: 'Professional development stack' },
   ];
 
   const isActive = (href: string) => router.pathname === href;
