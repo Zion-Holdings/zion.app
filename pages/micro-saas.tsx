@@ -969,6 +969,438 @@ export default function MicroSaasPage() {
       trialDays: 14,
       setupTime: '20 minutes',
       category: 'Productivity & Collaboration'
+    },
+    {
+      name: 'AI Email Marketing Pro',
+      tagline: 'Advanced email automation',
+      price: '$79',
+      period: '/month',
+      description: 'Professional email marketing platform with AI-powered personalization, automation, and advanced analytics.',
+      features: [
+        'AI-powered personalization',
+        'Advanced automation workflows',
+        'Behavioral targeting',
+        'A/B testing automation',
+        'Predictive analytics',
+        'Advanced segmentation',
+        'Revenue attribution',
+        'Integration with major platforms'
+      ],
+      popular: true,
+      icon: '📧',
+      color: 'from-indigo-500 to-purple-600',
+      textColor: 'text-indigo-400',
+      link: 'https://ziontechgroup.com/ai-email-marketing-pro',
+      marketPosition: 'Competitive with Klaviyo ($20-2000), ActiveCampaign ($9-49), and ConvertKit ($9-29)',
+      targetAudience: 'E-commerce businesses, marketers, and growth teams',
+      trialDays: 14,
+      setupTime: '15 minutes',
+      category: 'Marketing & Automation'
+    },
+    {
+      name: 'AI SEO Suite',
+      tagline: 'Comprehensive SEO optimization',
+      price: '$89',
+      period: '/month',
+      description: 'All-in-one SEO platform with AI-powered keyword research, content optimization, and technical SEO tools.',
+      features: [
+        'AI keyword research',
+        'Content optimization',
+        'Technical SEO audit',
+        'Ranking tracking',
+        'Competitor analysis',
+        'Local SEO tools',
+        'Schema markup generator',
+        'Performance reporting'
+      ],
+      popular: true,
+      icon: '🔍',
+      color: 'from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      link: 'https://ziontechgroup.com/ai-seo-suite',
+      marketPosition: 'Competitive with Ahrefs ($99-999), SEMrush ($119-449), and Moz ($99-599)',
+      targetAudience: 'SEO professionals, digital marketers, and website owners',
+      trialDays: 14,
+      setupTime: '20 minutes',
+      category: 'Marketing & SEO'
+    },
+    {
+      name: 'AI Social Media Manager',
+      tagline: 'Intelligent social media automation',
+      price: '$59',
+      period: '/month',
+      description: 'AI-powered social media management with content creation, scheduling, and performance optimization.',
+      features: [
+        'AI content generation',
+        'Smart scheduling',
+        'Performance analytics',
+        'Hashtag optimization',
+        'Competitor monitoring',
+        'Multi-platform management',
+        'Content calendar',
+        'Team collaboration'
+      ],
+      popular: false,
+      icon: '📱',
+      color: 'from-pink-500 to-rose-600',
+      textColor: 'text-pink-400',
+      link: 'https://ziontechgroup.com/ai-social-media-manager',
+      marketPosition: 'Competitive with Buffer ($6-99), Hootsuite ($29-599), and Later ($18-40)',
+      targetAudience: 'Social media managers, small businesses, and influencers',
+      trialDays: 14,
+      setupTime: '10 minutes',
+      category: 'Marketing & Social Media'
+    },
+    {
+      name: 'AI E-commerce Analytics',
+      tagline: 'Data-driven e-commerce insights',
+      price: '$69',
+      period: '/month',
+      description: 'Advanced e-commerce analytics platform with AI-powered insights for conversion optimization.',
+      features: [
+        'Conversion funnel analysis',
+        'Customer behavior tracking',
+        'Product performance insights',
+        'A/B testing tools',
+        'Revenue attribution',
+        'Customer lifetime value',
+        'Predictive analytics',
+        'Integration with major platforms'
+      ],
+      popular: false,
+      icon: '🛒',
+      color: 'from-orange-500 to-red-600',
+      textColor: 'text-orange-400',
+      link: 'https://ziontechgroup.com/ai-ecommerce-analytics',
+      marketPosition: 'Competitive with Google Analytics 4 (Free), Mixpanel ($25-1000), and Amplitude ($0-995)',
+      targetAudience: 'E-commerce businesses, online retailers, and digital marketers',
+      trialDays: 14,
+      setupTime: '25 minutes',
+      category: 'Analytics & E-commerce'
+    },
+    {
+      name: 'AI Customer Support Bot',
+      tagline: '24/7 intelligent support',
+      price: '$49',
+      period: '/month',
+      description: 'AI-powered customer support chatbot that handles inquiries, tickets, and escalations automatically.',
+      features: [
+        'Natural language processing',
+        'Multi-language support',
+        'Ticket automation',
+        'Knowledge base integration',
+        'Escalation management',
+        'Performance analytics',
+        'Custom branding',
+        'Integration with help desks'
+      ],
+      popular: false,
+      icon: '🤖',
+      color: 'from-blue-500 to-indigo-600',
+      textColor: 'text-blue-400',
+      link: 'https://ziontechgroup.com/ai-customer-support-bot',
+      marketPosition: 'Competitive with Intercom ($39-499), Drift ($0-2500), and ManyChat ($0-15)',
+      targetAudience: 'Customer support teams, SaaS companies, and e-commerce businesses',
+      trialDays: 14,
+      setupTime: '20 minutes',
+      category: 'Customer Experience'
+    },
+    {
+      name: 'AI Project Management',
+      tagline: 'Intelligent project coordination',
+      price: '$79',
+      period: '/month',
+      description: 'AI-powered project management platform with smart task allocation, progress tracking, and resource optimization.',
+      features: [
+        'AI task prioritization',
+        'Resource optimization',
+        'Progress tracking',
+        'Risk assessment',
+        'Team collaboration',
+        'Time tracking',
+        'Reporting & analytics',
+        'Integration with popular tools'
+      ],
+      popular: false,
+      icon: '📋',
+      color: 'from-purple-500 to-indigo-600',
+      textColor: 'text-purple-400',
+      link: 'https://ziontechgroup.com/ai-project-management',
+      marketPosition: 'Competitive with Asana ($10.99-24.99), Monday.com ($8-16), and ClickUp ($5-12)',
+      targetAudience: 'Project managers, development teams, and creative agencies',
+      trialDays: 14,
+      setupTime: '25 minutes',
+      category: 'Productivity & Collaboration'
+    },
+    {
+      name: 'AI Financial Planning',
+      tagline: 'Smart financial management',
+      price: '$89',
+      period: '/month',
+      description: 'AI-powered financial planning platform for businesses with budgeting, forecasting, and financial analysis.',
+      features: [
+        'AI-powered budgeting',
+        'Financial forecasting',
+        'Cash flow analysis',
+        'Expense tracking',
+        'Financial reporting',
+        'Tax planning',
+        'Investment analysis',
+        'Integration with accounting software'
+      ],
+      popular: false,
+      icon: '💰',
+      color: 'from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      link: 'https://ziontechgroup.com/ai-financial-planning',
+      marketPosition: 'Competitive with Mint (Free), YNAB ($8.25-14.99), and Personal Capital (Free)',
+      targetAudience: 'Small businesses, financial advisors, and individuals',
+      trialDays: 14,
+      setupTime: '30 minutes',
+      category: 'Finance & Planning'
+    },
+    {
+      name: 'AI Content Calendar',
+      tagline: 'Strategic content planning',
+      price: '$39',
+      period: '/month',
+      description: 'AI-powered content calendar with content ideation, scheduling, and performance optimization.',
+      features: [
+        'AI content ideation',
+        'Smart scheduling',
+        'Performance tracking',
+        'Content templates',
+        'Team collaboration',
+        'Multi-platform publishing',
+        'Analytics & insights',
+        'Integration with CMS platforms'
+      ],
+      popular: false,
+      icon: '📅',
+      color: 'from-teal-500 to-cyan-600',
+      textColor: 'text-teal-400',
+      link: 'https://ziontechgroup.com/ai-content-calendar',
+      marketPosition: 'Competitive with CoSchedule ($29-99), Buffer ($6-99), and Hootsuite ($29-599)',
+      targetAudience: 'Content marketers, social media managers, and marketing teams',
+      trialDays: 14,
+      setupTime: '15 minutes',
+      category: 'Content & Marketing'
+    },
+    {
+      name: 'AI Performance Monitoring',
+      tagline: 'Real-time system monitoring',
+      price: '$69',
+      period: '/month',
+      description: 'AI-powered performance monitoring for web applications, servers, and infrastructure.',
+      features: [
+        'Real-time monitoring',
+        'Performance alerts',
+        'Root cause analysis',
+        'Capacity planning',
+        'Custom dashboards',
+        'API monitoring',
+        'Mobile app monitoring',
+        'Integration with DevOps tools'
+      ],
+      popular: false,
+      icon: '📊',
+      color: 'from-blue-500 to-indigo-600',
+      textColor: 'text-blue-400',
+      link: 'https://ziontechgroup.com/ai-performance-monitoring',
+      marketPosition: 'Competitive with New Relic ($0-99), Datadog ($15-23), and AppDynamics ($0-60)',
+      targetAudience: 'DevOps teams, system administrators, and developers',
+      trialDays: 14,
+      setupTime: '20 minutes',
+      category: 'Development & DevOps'
+    },
+    {
+      name: 'AI Data Visualization',
+      tagline: 'Beautiful data insights',
+      price: '$59',
+      period: '/month',
+      description: 'AI-powered data visualization platform that transforms complex data into actionable insights.',
+      features: [
+        'AI chart recommendations',
+        'Interactive dashboards',
+        'Real-time data updates',
+        'Custom branding',
+        'Export capabilities',
+        'Team collaboration',
+        'Mobile responsiveness',
+        'API integration'
+      ],
+      popular: false,
+      icon: '📈',
+      color: 'from-purple-500 to-indigo-600',
+      textColor: 'text-purple-400',
+      link: 'https://ziontechgroup.com/ai-data-visualization',
+      marketPosition: 'Competitive with Tableau ($70-70), Power BI ($9.99-20), and Looker ($500-5000)',
+      targetAudience: 'Data analysts, business intelligence teams, and executives',
+      trialDays: 14,
+      setupTime: '25 minutes',
+      category: 'Analytics & Data'
+    },
+    {
+      name: 'AI Customer Onboarding',
+      tagline: 'Streamlined customer success',
+      price: '$49',
+      period: '/month',
+      description: 'AI-powered customer onboarding platform that guides new users through product adoption.',
+      features: [
+        'Interactive product tours',
+        'Progress tracking',
+        'Personalized guidance',
+        'Success metrics',
+        'Integration with products',
+        'Analytics & reporting',
+        'Custom workflows',
+        'Multi-language support'
+      ],
+      popular: false,
+      icon: '🚀',
+      color: 'from-emerald-500 to-teal-600',
+      textColor: 'text-emerald-400',
+      link: 'https://ziontechgroup.com/ai-customer-onboarding',
+      marketPosition: 'Competitive with Appcues ($249-2499), WalkMe ($0-10000), and Pendo ($0-2000)',
+      targetAudience: 'SaaS companies, product managers, and customer success teams',
+      trialDays: 14,
+      setupTime: '20 minutes',
+      category: 'Customer Experience'
+    },
+    {
+      name: 'AI A/B Testing Platform',
+      tagline: 'Data-driven optimization',
+      price: '$79',
+      period: '/month',
+      description: 'AI-powered A/B testing platform with statistical analysis and optimization recommendations.',
+      features: [
+        'Statistical significance testing',
+        'AI optimization suggestions',
+        'Multivariate testing',
+        'Real-time results',
+        'Integration capabilities',
+        'Advanced analytics',
+        'Custom goals',
+        'Team collaboration'
+      ],
+      popular: false,
+      icon: '🧪',
+      color: 'from-orange-500 to-red-600',
+      textColor: 'text-orange-400',
+      link: 'https://ziontechgroup.com/ai-ab-testing-platform',
+      marketPosition: 'Competitive with Optimizely ($0-1000), VWO ($0-199), and Google Optimize (Free)',
+      targetAudience: 'Product managers, marketers, and UX researchers',
+      trialDays: 14,
+      setupTime: '15 minutes',
+      category: 'Analytics & Optimization'
+    },
+    {
+      name: 'AI Customer Feedback Hub',
+      tagline: 'Centralized feedback management',
+      price: '$39',
+      period: '/month',
+      description: 'AI-powered customer feedback platform that collects, analyzes, and acts on customer insights.',
+      features: [
+        'Multi-channel feedback collection',
+        'AI sentiment analysis',
+        'Feedback categorization',
+        'Action item tracking',
+        'Integration with tools',
+        'Real-time dashboards',
+        'Team collaboration',
+        'Export capabilities'
+      ],
+      popular: false,
+      icon: '💬',
+      color: 'from-pink-500 to-rose-600',
+      textColor: 'text-pink-400',
+      link: 'https://ziontechgroup.com/ai-customer-feedback-hub',
+      marketPosition: 'Competitive with UserVoice ($0-500), Productboard ($0-20000), and Canny ($0-400)',
+      targetAudience: 'Product managers, customer success teams, and UX researchers',
+      trialDays: 14,
+      setupTime: '20 minutes',
+      category: 'Customer Experience'
+    },
+    {
+      name: 'AI Inventory Forecasting',
+      tagline: 'Predictive inventory management',
+      price: '$89',
+      period: '/month',
+      description: 'AI-powered inventory forecasting that predicts demand and optimizes stock levels.',
+      features: [
+        'Demand forecasting',
+        'Seasonal analysis',
+        'Supplier optimization',
+        'Cost optimization',
+        'Real-time tracking',
+        'Integration with ERP systems',
+        'Mobile app access',
+        'Advanced analytics'
+      ],
+      popular: false,
+      icon: '📦',
+      color: 'from-blue-500 to-indigo-600',
+      textColor: 'text-blue-400',
+      link: 'https://ziontechgroup.com/ai-inventory-forecasting',
+      marketPosition: 'Competitive with TradeGecko ($0-100), Zoho Inventory ($0-239), and Fishbowl ($0-500)',
+      targetAudience: 'Retail businesses, e-commerce stores, and warehouse managers',
+      trialDays: 14,
+      setupTime: '30 minutes',
+      category: 'Operations & Logistics'
+    },
+    {
+      name: 'AI Lead Generation',
+      tagline: 'Automated lead discovery',
+      price: '$99',
+      period: '/month',
+      description: 'AI-powered lead generation platform that finds and qualifies prospects automatically.',
+      features: [
+        'AI prospect discovery',
+        'Lead qualification',
+        'Contact enrichment',
+        'Integration with CRM systems',
+        'Campaign automation',
+        'Performance analytics',
+        'Team collaboration',
+        'Export capabilities'
+      ],
+      popular: true,
+      icon: '🎯',
+      color: 'from-emerald-500 to-teal-600',
+      textColor: 'text-emerald-400',
+      link: 'https://ziontechgroup.com/ai-lead-generation',
+      marketPosition: 'Competitive with Apollo ($0-1000), ZoomInfo ($0-10000), and Hunter ($0-499)',
+      targetAudience: 'Sales teams, B2B companies, and marketing agencies',
+      trialDays: 14,
+      setupTime: '25 minutes',
+      category: 'Sales & Marketing'
+    },
+    {
+      name: 'AI Customer Churn Prediction',
+      tagline: 'Prevent customer churn',
+      price: '$69',
+      period: '/month',
+      description: 'AI-powered churn prediction platform that identifies at-risk customers and suggests retention strategies.',
+      features: [
+        'Churn risk scoring',
+        'Behavioral analysis',
+        'Retention recommendations',
+        'Early warning alerts',
+        'Integration with CRM systems',
+        'Performance analytics',
+        'Team collaboration',
+        'Custom models'
+      ],
+      popular: false,
+      icon: '📉',
+      color: 'from-red-500 to-pink-600',
+      textColor: 'text-red-400',
+      link: 'https://ziontechgroup.com/ai-churn-prediction',
+      marketPosition: 'Competitive with Gainsight ($0-500), Totango ($0-200), and ChurnZero ($0-500)',
+      targetAudience: 'Customer success teams, SaaS companies, and subscription businesses',
+      trialDays: 14,
+      setupTime: '30 minutes',
+      category: 'Customer Experience'
     }
   ];
 
@@ -1053,7 +1485,7 @@ export default function MicroSaasPage() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400"> Every Business Need</span>
             </h1>
             <p className="text-xl text-gray-400 max-w-5xl mx-auto leading-relaxed mb-12">
-              55+ specialized micro SaaS solutions covering AI-powered content creation, video generation, design systems, performance monitoring, 
+              75+ specialized micro SaaS solutions covering AI-powered content creation, video generation, design systems, performance monitoring, 
               SEO automation, chatbots, business intelligence, email marketing, social media management, 
               customer feedback, billing, project management, API infrastructure, e-commerce analytics, legal document generation, 
               HR management, AI customer support, data backup, AI code assistance, cybersecurity monitoring, supply chain analytics, 
@@ -1061,7 +1493,8 @@ export default function MicroSaasPage() {
               meeting transcription, invoice automation, churn prediction, lead scoring, real-time analytics, content optimization, 
               predictive maintenance, email security, dynamic pricing, customer segmentation, sales intelligence, content calendar optimization, 
               email deliverability, landing page building, customer journey mapping, contract analysis, sales forecasting, customer service analytics,
-              product recommendations, fraud detection, inventory forecasting, customer onboarding, and social media automation. Focused, affordable solutions that deliver specific value 
+              product recommendations, fraud detection, inventory forecasting, customer onboarding, social media automation, lead generation, 
+              churn prediction, and advanced analytics. Focused, affordable solutions that deliver specific value 
               without the complexity of enterprise platforms. Start with a free trial and scale as you grow.
             </p>
             
@@ -1069,7 +1502,7 @@ export default function MicroSaasPage() {
                           <div className="bg-gray-800/50 rounded-2xl p-6 border border-gray-700 mb-12 max-w-4xl mx-auto">
                 <div className="flex items-center justify-center mb-4">
                   <Globe className="w-6 h-6 text-green-400 mr-3" />
-                  <h3 className="text-lg font-semibold text-white">All 45+ Services Available on Zion Tech Group Domain</h3>
+                  <h3 className="text-lg font-semibold text-white">All 75+ Services Available on Zion Tech Group Domain</h3>
                 </div>
                 <p className="text-gray-300 mb-4">
                   Every micro SaaS service is accessible through our main domain <strong className="text-green-400">ziontechgroup.com</strong>, 
@@ -1223,7 +1656,7 @@ export default function MicroSaasPage() {
                 size="lg"
                 className="border-green-500 text-green-400 hover:bg-green-500 hover:text-white"
               >
-                View All 55 Services
+                View All 75 Services
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </div>
