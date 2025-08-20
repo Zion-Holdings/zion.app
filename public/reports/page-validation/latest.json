@@ -1,11 +1,11 @@
 {
   "summary": {
-    "totalFiles": 1,
-    "filesWithIssues": 1,
-    "totalIssues": 0,
-    "totalWarnings": 1,
-    "buildBreakingFiles": 0,
-    "canBuild": true
+    "totalFiles": 2,
+    "filesWithIssues": 2,
+    "totalIssues": 3,
+    "totalWarnings": 2,
+    "buildBreakingFiles": 1,
+    "canBuild": false
   },
   "results": [
     {
@@ -20,8 +20,45 @@
           "severity": "warning"
         }
       ]
+    },
+    {
+      "file": "pages/index.tsx",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
     }
   ],
-  "buildBreakingFiles": [],
-  "generatedAt": "2025-08-20T12:52:53.869Z"
+  "buildBreakingFiles": [
+    "pages/index.tsx"
+  ],
+  "generatedAt": "2025-08-20T13:01:33.954Z"
 }
