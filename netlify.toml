@@ -1,0 +1,11 @@
+[build]
+  command = "npm ci && npm install react@18.3.1 react-dom@18.3.1 && npm run build"
+  publish = "out"
+
+[build.environment]
+  NODE_VERSION = "22.18.0"
+  NPM_VERSION = "10.9.3"
+  NODE_OPTIONS = "--max-old-space-size=6144 --openssl-legacy-provider"
+
+[[plugins]]
+  package = "netlify-plugin-cloudinary"
