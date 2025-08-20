@@ -11,7 +11,7 @@ export default function HomePage() {
   const popularServices = getPopularServices();
 
   const stats = [
-    { number: '35+', label: 'Real Micro SaaS Services' },
+    { number: '50+', label: 'Real Micro SaaS Services' },
     { number: '99.9%', label: 'Uptime Guarantee' },
     { number: '14 Days', label: 'Free Trial' },
     { number: '24/7', label: 'Expert Support' }
@@ -46,29 +46,36 @@ export default function HomePage() {
       name: 'AI & Machine Learning',
       description: 'Intelligent solutions that learn and adapt',
       icon: '🤖',
-      count: 12,
+      count: 15,
       color: 'from-purple-500 to-pink-600'
     },
     {
       name: 'Cloud & DevOps',
       description: 'Scalable infrastructure and automation',
       icon: '☁️',
-      count: 8,
+      count: 10,
       color: 'from-blue-500 to-cyan-600'
     },
     {
       name: 'Business & Productivity',
       description: 'Tools to streamline operations',
       icon: '💼',
-      count: 9,
+      count: 12,
       color: 'from-green-500 to-emerald-600'
     },
     {
       name: 'Marketing & Sales',
       description: 'Drive growth and conversions',
       icon: '📈',
-      count: 6,
+      count: 8,
       color: 'from-orange-500 to-red-600'
+    },
+    {
+      name: 'Cutting-Edge Innovation',
+      description: 'Future technology solutions',
+      icon: '🚀',
+      count: 15,
+      color: 'from-violet-500 to-purple-600'
     }
   ];
 
@@ -173,6 +180,163 @@ export default function HomePage() {
               className="border-2 border-neon-blue text-neon-blue hover:bg-neon-blue hover:text-black px-8 py-3 font-semibold transition-all duration-300"
             >
               View All Services
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Cutting-Edge Innovation Section */}
+      <section className="py-20 bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),transparent_50%)]" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
+                Cutting-Edge Innovation
+              </span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-4xl mx-auto">
+              Experience the future of technology with our most advanced and innovative services
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {/* Quantum Computing */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="group relative"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500" />
+              <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-purple-500/50 transition-all duration-300 h-full">
+                <div className="text-6xl mb-6">⚛️</div>
+                <h3 className="text-2xl font-bold text-white mb-4">Quantum Computing</h3>
+                <p className="text-gray-300 mb-6">
+                  Access to real quantum hardware and simulators for solving complex optimization problems
+                </p>
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-center text-sm text-gray-400">
+                    <span className="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                    Drug discovery & molecular modeling
+                  </div>
+                  <div className="flex items-center text-sm text-gray-400">
+                    <span className="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                    Financial portfolio optimization
+                  </div>
+                  <div className="flex items-center text-sm text-gray-400">
+                    <span className="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                    Logistics & supply chain optimization
+                  </div>
+                </div>
+                <div className="text-3xl font-bold text-purple-400 mb-2">$499</div>
+                <div className="text-sm text-gray-400 mb-4">per month</div>
+                <Button
+                  href="https://ziontechgroup.com/quantum-optimization-suite"
+                  className="w-full btn-futuristic"
+                >
+                  Learn More
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </div>
+            </motion.div>
+
+            {/* Neuromorphic Computing */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="group relative"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-pink-500/20 to-rose-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500" />
+              <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-pink-500/50 transition-all duration-300 h-full">
+                <div className="text-6xl mb-6">🧠</div>
+                <h3 className="text-2xl font-bold text-white mb-4">Neuromorphic Computing</h3>
+                <p className="text-gray-300 mb-6">
+                  Brain-inspired computing for ultra-efficient AI processing at the edge
+                </p>
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-center text-sm text-gray-400">
+                    <span className="w-2 h-2 bg-pink-400 rounded-full mr-3"></span>
+                    1000x more energy efficient
+                  </div>
+                  <div className="flex items-center text-sm text-gray-400">
+                    <span className="w-2 h-2 bg-pink-400 rounded-full mr-3"></span>
+                    Real-time learning capabilities
+                  </div>
+                  <div className="flex items-center text-sm text-gray-400">
+                    <span className="w-2 h-2 bg-pink-400 rounded-full mr-3"></span>
+                    Edge AI applications
+                  </div>
+                </div>
+                <div className="text-3xl font-bold text-pink-400 mb-2">$799</div>
+                <div className="text-sm text-gray-400 mb-4">per month</div>
+                <Button
+                  href="https://ziontechgroup.com/neuromorphic-computing-platform"
+                  className="w-full btn-futuristic"
+                >
+                  Learn More
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </div>
+            </motion.div>
+
+            {/* Metaverse Platform */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="group relative"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-violet-500/20 to-purple-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500" />
+              <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-violet-500/50 transition-all duration-300 h-full">
+                <div className="text-6xl mb-6">🥽</div>
+                <h3 className="text-2xl font-bold text-white mb-4">Metaverse Platform</h3>
+                <p className="text-gray-300 mb-6">
+                  Create immersive 3D virtual worlds and VR experiences
+                </p>
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-center text-sm text-gray-400">
+                    <span className="w-2 h-2 bg-violet-400 rounded-full mr-3"></span>
+                    3D world builder
+                  </div>
+                  <div className="flex items-center text-sm text-gray-400">
+                    <span className="w-2 h-2 bg-violet-400 rounded-full mr-3"></span>
+                    VR/AR support
+                  </div>
+                  <div className="flex items-center text-sm text-gray-400">
+                    <span className="w-2 h-2 bg-violet-400 rounded-full mr-3"></span>
+                    Multi-user environments
+                  </div>
+                </div>
+                <div className="text-3xl font-bold text-violet-400 mb-2">$299</div>
+                <div className="text-sm text-gray-400 mb-4">per month</div>
+                <Button
+                  href="https://ziontechgroup.com/metaverse-platform-builder"
+                  className="w-full btn-futuristic"
+                >
+                  Learn More
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </div>
+            </motion.div>
+          </div>
+
+          <div className="text-center">
+            <p className="text-gray-300 mb-8 max-w-3xl mx-auto">
+              These cutting-edge services represent the future of technology. Each service is designed to solve real-world problems 
+              and provide measurable ROI for your business.
+            </p>
+            <Button
+              href="/services"
+              variant="outline"
+              className="border-2 border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white px-8 py-3 font-semibold transition-all duration-300"
+            >
+              Explore All Innovation Services
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>

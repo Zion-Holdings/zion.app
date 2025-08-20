@@ -1002,41 +1002,291 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Contact Information Section */}
-      <section className="section-padding bg-gradient-to-r from-gray-900 to-black relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(59,130,246,0.1)_1px,transparent_1px)] bg-[size:30px_30px] opacity-20" />
-        <div className="container-cursor text-center relative z-10">
-          <h2 className="text-responsive-lg font-bold text-white mb-8 text-shadow-lg">
-            Get in Touch
-          </h2>
-          <p className="text-responsive-md text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
-            Ready to transform your business with our innovative micro SaaS solutions? Contact us today for a personalized consultation.
-          </p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-blue-500/50 transition-all duration-300">
-              <div className="text-4xl mb-4">📱</div>
-              <h3 className="text-xl font-bold text-white mb-4">Phone</h3>
-              <p className="text-blue-400 text-lg font-semibold mb-2">+1 302 464 0950</p>
-              <p className="text-gray-400 text-sm">Available Mon-Fri, 9AM-6PM EST</p>
+      {/* Innovative Services Showcase */}
+      <section className="section-padding bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),transparent_50%)]" />
+        <div className="container-cursor relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-responsive-xl font-bold text-white mb-6">
+              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
+                Cutting-Edge Innovation
+              </span>
+            </h2>
+            <p className="text-responsive-md text-gray-300 max-w-4xl mx-auto leading-relaxed">
+              Explore our most advanced and innovative services that are shaping the future of technology
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 mb-16">
+            {/* Quantum Computing */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500" />
+              <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-purple-500/50 transition-all duration-300 h-full">
+                <div className="text-6xl mb-6">⚛️</div>
+                <h3 className="text-2xl font-bold text-white mb-4">Quantum Computing</h3>
+                <p className="text-gray-300 mb-6">
+                  Access to real quantum hardware and simulators for solving complex optimization problems
+                </p>
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-center text-sm text-gray-400">
+                    <span className="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                    Drug discovery & molecular modeling
+                  </div>
+                  <div className="flex items-center text-sm text-gray-400">
+                    <span className="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                    Financial portfolio optimization
+                  </div>
+                  <div className="flex items-center text-sm text-gray-400">
+                    <span className="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                    Logistics & supply chain optimization
+                  </div>
+                </div>
+                <div className="text-3xl font-bold text-purple-400 mb-2">$499</div>
+                <div className="text-sm text-gray-400 mb-4">per month</div>
+                <Button
+                  href="https://ziontechgroup.com/quantum-optimization-suite"
+                  size="sm"
+                  className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700"
+                >
+                  Learn More
+                </Button>
+              </div>
             </div>
-            
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-blue-500/50 transition-all duration-300">
-              <div className="text-4xl mb-4">✉️</div>
-              <h3 className="text-xl font-bold text-white mb-4">Email</h3>
-              <p className="text-blue-400 text-lg font-semibold mb-2">kleber@ziontechgroup.com</p>
-              <p className="text-gray-400 text-sm">We respond within 2 hours</p>
+
+            {/* Neuromorphic Computing */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-pink-500/20 to-rose-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500" />
+              <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-pink-500/50 transition-all duration-300 h-full">
+                <div className="text-6xl mb-6">🧠</div>
+                <h3 className="text-2xl font-bold text-white mb-4">Neuromorphic Computing</h3>
+                <p className="text-gray-300 mb-6">
+                  Brain-inspired computing for ultra-efficient AI processing at the edge
+                </p>
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-center text-sm text-gray-400">
+                    <span className="w-2 h-2 bg-pink-400 rounded-full mr-3"></span>
+                    1000x more energy efficient
+                  </div>
+                  <div className="flex items-center text-sm text-gray-400">
+                    <span className="w-2 h-2 bg-pink-400 rounded-full mr-3"></span>
+                    Real-time learning capabilities
+                  </div>
+                  <div className="flex items-center text-sm text-gray-400">
+                    <span className="w-2 h-2 bg-pink-400 rounded-full mr-3"></span>
+                    Edge AI applications
+                  </div>
+                </div>
+                <div className="text-3xl font-bold text-pink-400 mb-2">$799</div>
+                <div className="text-sm text-gray-400 mb-4">per month</div>
+                <Button
+                  href="https://ziontechgroup.com/neuromorphic-computing-platform"
+                  size="sm"
+                  className="w-full bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-700 hover:to-rose-700"
+                >
+                  Learn More
+                </Button>
+              </div>
             </div>
-            
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-blue-500/50 transition-all duration-300">
-              <div className="text-4xl mb-4">📍</div>
-              <h3 className="text-xl font-bold text-white mb-4">Address</h3>
-              <p className="text-blue-400 text-lg font-semibold mb-2">364 E Main St STE 1008</p>
-              <p className="text-gray-400 text-sm">Middletown DE 19709, USA</p>
+
+            {/* Synthetic Biology */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500" />
+              <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-green-500/50 transition-all duration-300 h-full">
+                <div className="text-6xl mb-6">🧬</div>
+                <h3 className="text-2xl font-bold text-white mb-4">Synthetic Biology</h3>
+                <p className="text-gray-300 mb-6">
+                  Digital platform for designing and simulating biological systems
+                </p>
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-center text-sm text-gray-400">
+                    <span className="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                    DNA sequence design
+                  </div>
+                  <div className="flex items-center text-sm text-gray-400">
+                    <span className="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                    Protein structure prediction
+                  </div>
+                  <div className="flex items-center text-sm text-gray-400">
+                    <span className="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                    Lab protocol automation
+                  </div>
+                </div>
+                <div className="text-3xl font-bold text-green-400 mb-2">$599</div>
+                <div className="text-sm text-gray-400 mb-4">per month</div>
+                <Button
+                  href="https://ziontechgroup.com/synthetic-biology-lab"
+                  size="sm"
+                  className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700"
+                >
+                  Learn More
+                </Button>
+              </div>
+            </div>
+
+            {/* Metaverse Platform */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-violet-500/20 to-purple-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500" />
+              <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-violet-500/50 transition-all duration-300 h-full">
+                <div className="text-6xl mb-6">🥽</div>
+                <h3 className="text-2xl font-bold text-white mb-4">Metaverse Platform</h3>
+                <p className="text-gray-300 mb-6">
+                  Create immersive 3D virtual worlds and VR experiences
+                </p>
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-center text-sm text-gray-400">
+                    <span className="w-2 h-2 bg-violet-400 rounded-full mr-3"></span>
+                    3D world builder
+                  </div>
+                  <div className="flex items-center text-sm text-gray-400">
+                    <span className="w-2 h-2 bg-violet-400 rounded-full mr-3"></span>
+                    VR/AR support
+                  </div>
+                  <div className="flex items-center text-sm text-gray-400">
+                    <span className="w-2 h-2 bg-violet-400 rounded-full mr-3"></span>
+                    Multi-user environments
+                  </div>
+                </div>
+                <div className="text-3xl font-bold text-violet-400 mb-2">$299</div>
+                <div className="text-sm text-gray-400 mb-4">per month</div>
+                <Button
+                  href="https://ziontechgroup.com/metaverse-platform-builder"
+                  size="sm"
+                  className="w-full bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700"
+                >
+                  Learn More
+                </Button>
+              </div>
+            </div>
+
+            {/* AI Voice Cloning */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500" />
+              <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-purple-500/50 transition-all duration-300 h-full">
+                <div className="text-6xl mb-6">🎤</div>
+                <h3 className="text-2xl font-bold text-white mb-4">AI Voice Cloning</h3>
+                <p className="text-gray-300 mb-6">
+                  Professional voice cloning with just 30 seconds of audio
+                </p>
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-center text-sm text-gray-400">
+                    <span className="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                    High-quality voice synthesis
+                  </div>
+                  <div className="flex items-center text-sm text-gray-400">
+                    <span className="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                    Multi-language support
+                  </div>
+                  <div className="flex items-center text-sm text-gray-400">
+                    <span className="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                    Real-time conversion
+                  </div>
+                </div>
+                <div className="text-3xl font-bold text-purple-400 mb-2">$79</div>
+                <div className="text-sm text-gray-400 mb-4">per month</div>
+                <Button
+                  href="https://ziontechgroup.com/ai-voice-cloning-studio"
+                  size="sm"
+                  className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
+                >
+                  Learn More
+                </Button>
+              </div>
+            </div>
+
+            {/* NFT Marketplace */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500" />
+              <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-blue-500/50 transition-all duration-300 h-full">
+                <div className="text-6xl mb-6">🖼️</div>
+                <h3 className="text-2xl font-bold text-white mb-4">NFT Marketplace</h3>
+                <p className="text-gray-300 mb-6">
+                  Launch your own NFT marketplace in minutes
+                </p>
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-center text-sm text-gray-400">
+                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                    Multi-blockchain support
+                  </div>
+                  <div className="flex items-center text-sm text-gray-400">
+                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                    White-label customization
+                  </div>
+                  <div className="flex items-center text-sm text-gray-400">
+                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                    Built-in monetization
+                  </div>
+                </div>
+                <div className="text-3xl font-bold text-blue-400 mb-2">$199</div>
+                <div className="text-sm text-gray-400 mb-4">per month</div>
+                <Button
+                  href="https://ziontechgroup.com/nft-marketplace-builder"
+                  size="sm"
+                  className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700"
+                >
+                  Learn More
+                </Button>
+              </div>
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          <div className="text-center">
+            <p className="text-gray-300 mb-8 max-w-3xl mx-auto">
+              These cutting-edge services represent the future of technology. Each service is designed to solve real-world problems 
+              and provide measurable ROI for your business.
+            </p>
+            <Button
+              href="/pricing"
+              size="lg"
+              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white shadow-2xl hover-glow"
+            >
+              View All Pricing Plans
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="section-padding bg-gradient-to-br from-slate-900 via-blue-900/20 to-slate-900 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]" />
+        <div className="container-cursor relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-responsive-xl font-bold text-white mb-6">
+              <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                Get in Touch
+              </span>
+            </h2>
+            <p className="text-responsive-md text-gray-300 max-w-4xl mx-auto leading-relaxed">
+              Ready to transform your business with our innovative micro SaaS solutions? Contact us today for a personalized consultation.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-blue-500/50 transition-all duration-300 hover:scale-105">
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">📱</div>
+              <h3 className="text-xl font-bold text-white mb-4">Phone</h3>
+              <p className="text-blue-400 text-lg font-semibold mb-2">+1 302 464 0950</p>
+              <p className="text-gray-400 text-sm">Available Mon-Fri, 9AM-6PM EST</p>
+              <p className="text-gray-400 text-sm mt-2">Emergency support: 24/7</p>
+            </div>
+            
+            <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-blue-500/50 transition-all duration-300 hover:scale-105">
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">✉️</div>
+              <h3 className="text-xl font-bold text-white mb-4">Email</h3>
+              <p className="text-blue-400 text-lg font-semibold mb-2">kleber@ziontechgroup.com</p>
+              <p className="text-gray-400 text-sm">We respond within 2 hours</p>
+              <p className="text-gray-400 text-sm mt-2">Support: support@ziontechgroup.com</p>
+            </div>
+            
+            <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-blue-500/50 transition-all duration-300 hover:scale-105">
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">📍</div>
+              <h3 className="text-xl font-bold text-white mb-4">Address</h3>
+              <p className="text-blue-400 text-lg font-semibold mb-2">364 E Main St STE 1008</p>
+              <p className="text-gray-400 text-sm">Middletown DE 19709, USA</p>
+              <p className="text-gray-400 text-sm mt-2">Global offices available</p>
+            </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
             <Button
               href="/contact"
               size="lg"
@@ -1054,24 +1304,61 @@ export default function ServicesPage() {
             </Button>
           </div>
           
-          <div className="mt-12 p-6 bg-gradient-to-r from-blue-600/10 to-purple-600/10 rounded-2xl border border-blue-500/20">
-            <h3 className="text-xl font-bold text-white mb-4">Why Choose Zion Tech Group?</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-sm text-gray-300">
-              <div className="flex items-center">
-                <span className="text-green-400 mr-2">✓</span>
-                <span>50+ Real Micro SaaS Services</span>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            <div className="bg-gradient-to-r from-blue-600/10 to-purple-600/10 rounded-2xl border border-blue-500/20 p-8">
+              <h3 className="text-xl font-bold text-white mb-6">Why Choose Zion Tech Group?</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-300">
+                <div className="flex items-center">
+                  <span className="text-green-400 mr-3 text-lg">✓</span>
+                  <span>50+ Real Micro SaaS Services</span>
+                </div>
+                <div className="flex items-center">
+                  <span className="text-green-400 mr-3 text-lg">✓</span>
+                  <span>14-Day Free Trials</span>
+                </div>
+                <div className="flex items-center">
+                  <span className="text-green-400 mr-3 text-lg">✓</span>
+                  <span>99.9% Uptime Guarantee</span>
+                </div>
+                <div className="flex items-center">
+                  <span className="text-green-400 mr-3 text-lg">✓</span>
+                  <span>24/7 AI Support</span>
+                </div>
+                <div className="flex items-center">
+                  <span className="text-green-400 mr-3 text-lg">✓</span>
+                  <span>Cutting-Edge Technology</span>
+                </div>
+                <div className="flex items-center">
+                  <span className="text-green-400 mr-3 text-lg">✓</span>
+                  <span>Global Implementation</span>
+                </div>
               </div>
-              <div className="flex items-center">
-                <span className="text-green-400 mr-2">✓</span>
-                <span>14-Day Free Trials</span>
-              </div>
-              <div className="flex items-center">
-                <span className="text-green-400 mr-2">✓</span>
-                <span>99.9% Uptime Guarantee</span>
-              </div>
-              <div className="flex items-center">
-                <span className="text-green-400 mr-2">✓</span>
-                <span>24/7 AI Support</span>
+            </div>
+
+            <div className="bg-gradient-to-r from-purple-600/10 to-pink-600/10 rounded-2xl border border-purple-500/20 p-8">
+              <h3 className="text-xl font-bold text-white mb-6">Our Commitment</h3>
+              <div className="space-y-4 text-sm text-gray-300">
+                <div className="flex items-start">
+                  <span className="text-purple-400 mr-3 text-lg mt-1">🚀</span>
+                  <div>
+                    <span className="font-semibold text-white">Innovation First:</span>
+                    <span className="block">Leading-edge technology solutions</span>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <span className="text-purple-400 mr-3 text-lg mt-1">💎</span>
+                  <div>
+                    <span className="font-semibold text-white">Quality Assured:</span>
+                    <span className="block">Enterprise-grade reliability</span>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <span className="text-purple-400 mr-3 text-lg mt-1">🌍</span>
+                  <div>
+                    <span className="font-semibold text-white">Global Reach:</span>
+                    <span className="block">Worldwide implementation support</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
