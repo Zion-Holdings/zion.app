@@ -215,6 +215,7 @@ export default function MicroSaasPage() {
       icon: '📱',
       color: 'from-teal-500 to-cyan-600',
       textColor: 'text-teal-400',
+<<<<<<< HEAD
       link: 'https://social.ziontechgroup.com',
       marketPosition: 'Competitive with Buffer ($6-99), Hootsuite ($29-599), and Later ($18-40)',
       targetAudience: 'Social media managers, small businesses, and influencers',
@@ -329,9 +330,136 @@ export default function MicroSaasPage() {
       trialDays: 14,
       setupTime: '35 minutes',
       category: 'Analytics & Data'
+=======
+      link: 'https://ziontechgroup.com/social-media-scheduler',
+      marketPosition: 'Competitive with Buffer ($15-99), Hootsuite ($29-599), and Later ($18-40)',
+      targetAudience: 'Social media managers, influencers, and marketing teams'
+    },
+    // New Real Micro SaaS Services
+    {
+      name: 'API Rate Limiter',
+      tagline: 'Protect your APIs from abuse',
+      price: '$29',
+      period: '/month',
+      description: 'Implement intelligent rate limiting, DDoS protection, and API security for your applications.',
+      features: [
+        'Intelligent rate limiting algorithms',
+        'DDoS protection & mitigation',
+        'Geographic restrictions',
+        'API key management',
+        'Real-time monitoring & alerts',
+        'Custom rules & policies',
+        'Analytics & reporting',
+        'Webhook notifications'
+      ],
+      popular: false,
+      icon: '🛡️',
+      color: 'from-red-500 to-pink-600',
+      textColor: 'text-red-400',
+      link: 'https://ziontechgroup.com/api-rate-limiter',
+      marketPosition: 'Competitive with Cloudflare ($20-200), AWS Shield ($3000+), and Fastly ($50-500)',
+      targetAudience: 'Developers, API providers, and SaaS companies'
+    },
+    {
+      name: 'Email Validation Service',
+      tagline: 'Verify email addresses in real-time',
+      price: '$19',
+      period: '/month',
+      description: 'Clean your email lists with real-time validation, syntax checking, and deliverability scoring.',
+      features: [
+        'Real-time email validation',
+        'Syntax & format checking',
+        'Domain & MX record verification',
+        'Disposable email detection',
+        'Bulk validation API',
+        'Deliverability scoring',
+        'Integration with major platforms',
+        'Detailed validation reports'
+      ],
+      popular: false,
+      icon: '✅',
+      color: 'from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      link: 'https://ziontechgroup.com/email-validation',
+      marketPosition: 'Competitive with Zero Bounce ($15-100), Hunter ($50-500), and NeverBounce ($15-100)',
+      targetAudience: 'Email marketers, sales teams, and data analysts'
+    },
+    {
+      name: 'Form Builder Pro',
+      tagline: 'Create powerful forms without coding',
+      price: '$25',
+      period: '/month',
+      description: 'Build beautiful, responsive forms with advanced features, conditional logic, and seamless integrations.',
+      features: [
+        'Drag & drop form builder',
+        'Conditional logic & branching',
+        '100+ field types',
+        'File uploads & storage',
+        'Payment integrations',
+        'Advanced validation rules',
+        'Multi-language support',
+        'Analytics & conversion tracking'
+      ],
+      popular: false,
+      icon: '📋',
+      color: 'from-blue-500 to-indigo-600',
+      textColor: 'text-blue-400',
+      link: 'https://ziontechgroup.com/form-builder',
+      marketPosition: 'Competitive with Typeform ($25-120), JotForm ($34-99), and Formstack ($50-200)',
+      targetAudience: 'Business owners, marketers, and web developers'
+    },
+    {
+      name: 'Invoice Generator',
+      tagline: 'Professional invoicing made simple',
+      price: '$15',
+      period: '/month',
+      description: 'Create, send, and track professional invoices with automated reminders and payment processing.',
+      features: [
+        'Professional invoice templates',
+        'Automated payment reminders',
+        'Multiple payment gateways',
+        'Tax calculation & compliance',
+        'Client portal access',
+        'Recurring invoice automation',
+        'Multi-currency support',
+        'Financial reporting & analytics'
+      ],
+      popular: false,
+      icon: '🧾',
+      color: 'from-purple-500 to-violet-600',
+      textColor: 'text-purple-400',
+      link: 'https://ziontechgroup.com/invoice-generator',
+      marketPosition: 'Competitive with FreshBooks ($15-55), Wave (Free), and Zoho Invoice ($9-29)',
+      targetAudience: 'Freelancers, small businesses, and consultants'
+    },
+    {
+      name: 'Password Manager API',
+      tagline: 'Secure password management for teams',
+      price: '$35',
+      period: '/month',
+      description: 'Enterprise-grade password management with secure sharing, audit trails, and compliance features.',
+      features: [
+        'Secure password generation',
+        'Team password sharing',
+        'Role-based access control',
+        'Audit trails & logging',
+        'SSO integration',
+        'API access for developers',
+        'Compliance reporting',
+        'Emergency access protocols'
+      ],
+      popular: false,
+      icon: '🔐',
+      color: 'from-gray-500 to-slate-600',
+      textColor: 'text-gray-400',
+      link: 'https://ziontechgroup.com/password-manager',
+      marketPosition: 'Competitive with 1Password ($7.99-19.99), LastPass ($3-6), and Dashlane ($3.33-6.49)',
+      targetAudience: 'IT teams, security professionals, and enterprise organizations'
+>>>>>>> cursor/enhance-app-with-micro-saas-and-marketing-a456
     },
     // Enhanced Real Micro SaaS Services
     {
+<<<<<<< HEAD
       name: 'AI Video Editor Pro',
       tagline: 'Professional video editing with AI',
       price: '$79',
@@ -953,6 +1081,102 @@ export default function MicroSaasPage() {
       trialDays: 14,
       setupTime: '20 minutes',
       category: 'Productivity & Collaboration'
+=======
+      name: 'Screenshot API',
+      tagline: 'Capture websites as images',
+      price: '$12',
+      period: '/month',
+      description: 'Convert any website to an image with our fast, reliable screenshot API service.',
+      features: [
+        'High-quality screenshots',
+        'Multiple viewport sizes',
+        'PDF generation support',
+        'Custom CSS injection',
+        'JavaScript rendering',
+        'Bulk screenshot processing',
+        'Webhook notifications',
+        'CDN delivery worldwide'
+      ],
+      popular: false,
+      icon: '📸',
+      color: 'from-yellow-500 to-orange-600',
+      textColor: 'text-yellow-400',
+      link: 'https://ziontechgroup.com/screenshot-api',
+      marketPosition: 'Competitive with CloudConvert ($15-50), Browserless ($20-100), and Urlbox ($20-100)',
+      targetAudience: 'Developers, marketers, and content creators'
+    },
+    {
+      name: 'Webhook Manager',
+      tagline: 'Reliable webhook delivery & monitoring',
+      price: '$22',
+      period: '/month',
+      description: 'Ensure reliable webhook delivery with retry logic, monitoring, and detailed analytics.',
+      features: [
+        'Automatic retry logic',
+        'Webhook monitoring & alerts',
+        'Delivery status tracking',
+        'Custom retry policies',
+        'Webhook testing tools',
+        'Rate limiting & throttling',
+        'Detailed delivery logs',
+        'Integration with major platforms'
+      ],
+      popular: false,
+      icon: '🔗',
+      color: 'from-cyan-500 to-blue-600',
+      textColor: 'text-cyan-400',
+      link: 'https://ziontechgroup.com/webhook-manager',
+      marketPosition: 'Competitive with Svix ($15-100), Hookdeck ($20-100), and Convoy ($0-50)',
+      targetAudience: 'Developers, SaaS companies, and integration specialists'
+    },
+    {
+      name: 'File Converter API',
+      tagline: 'Convert files between formats',
+      price: '$18',
+      period: '/month',
+      description: 'Convert documents, images, and media files between hundreds of formats with our reliable API.',
+      features: [
+        '100+ file format support',
+        'Batch processing',
+        'High-quality conversions',
+        'Custom conversion options',
+        'Secure file handling',
+        'Progress tracking',
+        'Webhook notifications',
+        'CDN delivery'
+      ],
+      popular: false,
+      icon: '🔄',
+      color: 'from-lime-500 to-green-600',
+      textColor: 'text-lime-400',
+      link: 'https://ziontechgroup.com/file-converter',
+      marketPosition: 'Competitive with CloudConvert ($15-50), Zamzar (Free-$25), and Convertio ($9.99-25)',
+      targetAudience: 'Developers, content creators, and business users'
+    },
+    {
+      name: 'QR Code Generator',
+      tagline: 'Create & track QR codes',
+      price: '$8',
+      period: '/month',
+      description: 'Generate custom QR codes with tracking, analytics, and dynamic content management.',
+      features: [
+        'Custom QR code design',
+        'Dynamic QR codes',
+        'Click tracking & analytics',
+        'Bulk QR code generation',
+        'API access for developers',
+        'QR code management dashboard',
+        'Export in multiple formats',
+        'White-label solutions'
+      ],
+      popular: false,
+      icon: '📱',
+      color: 'from-emerald-500 to-teal-600',
+      textColor: 'text-emerald-400',
+      link: 'https://ziontechgroup.com/qr-code-generator',
+      marketPosition: 'Competitive with QR Code Generator (Free), Beaconstac ($25-100), and Flowcode ($25-100)',
+      targetAudience: 'Marketers, event organizers, and retail businesses'
+>>>>>>> cursor/enhance-app-with-micro-saas-and-marketing-a456
     }
   ];
 
