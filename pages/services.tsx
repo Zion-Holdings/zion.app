@@ -111,7 +111,7 @@ export default function ServicesPage() {
       textColor: 'text-pink-400',
       gradient: 'from-pink-400 to-rose-500',
       pricing: '$49/month',
-      link: 'https://contentgen.zion.app'
+      link: 'https://contentgen.ziontechgroup.com'
     },
     {
       icon: '🎨',
@@ -128,7 +128,7 @@ export default function ServicesPage() {
       textColor: 'text-violet-400',
       gradient: 'from-violet-400 to-purple-500',
       pricing: '$79/month',
-      link: 'https://design.zion.app'
+      link: 'https://design.ziontechgroup.com'
     },
     {
       icon: '📱',
@@ -145,7 +145,7 @@ export default function ServicesPage() {
       textColor: 'text-amber-400',
       gradient: 'from-amber-400 to-orange-500',
       pricing: '$39/month',
-      link: 'https://monitor.zion.app'
+      link: 'https://monitor.ziontechgroup.com'
     },
     {
       icon: '🔍',
@@ -162,7 +162,7 @@ export default function ServicesPage() {
       textColor: 'text-emerald-400',
       gradient: 'from-emerald-400 to-green-500',
       pricing: '$89/month',
-      link: 'https://seo.zion.app'
+      link: 'https://seo.ziontechgroup.com'
     },
     {
       icon: '💬',
@@ -179,7 +179,7 @@ export default function ServicesPage() {
       textColor: 'text-sky-400',
       gradient: 'from-sky-400 to-blue-500',
       pricing: '$69/month',
-      link: 'https://chatbot.zion.app'
+      link: 'https://chatbot.ziontechgroup.com'
     },
     {
       icon: '📊',
@@ -196,7 +196,109 @@ export default function ServicesPage() {
       textColor: 'text-rose-400',
       gradient: 'from-rose-400 to-pink-500',
       pricing: '$99/month',
-      link: 'https://bi.zion.app'
+      link: 'https://bi.ziontechgroup.com'
+    },
+    {
+      icon: '📧',
+      title: 'Email Marketing Automation',
+      description: 'Smart email campaigns with AI-powered automation and personalization.',
+      features: [
+        'AI-powered subject line optimization',
+        'Smart audience segmentation',
+        'Behavioral triggers',
+        'A/B testing automation',
+        'Email template library'
+      ],
+      color: 'bg-gradient-to-br from-indigo-500 to-blue-600',
+      textColor: 'text-indigo-400',
+      gradient: 'from-indigo-400 to-blue-500',
+      pricing: '$29/month',
+      link: 'https://email.ziontechgroup.com'
+    },
+    {
+      icon: '📱',
+      title: 'Social Media Scheduler',
+      description: 'Automate your social media presence across multiple platforms.',
+      features: [
+        'Multi-platform scheduling',
+        'AI-powered optimal timing',
+        'Content calendar management',
+        'Hashtag suggestions',
+        'Analytics & insights'
+      ],
+      color: 'bg-gradient-to-br from-teal-500 to-cyan-600',
+      textColor: 'text-teal-400',
+      gradient: 'from-teal-400 to-cyan-500',
+      pricing: '$19/month',
+      link: 'https://social.ziontechgroup.com'
+    },
+    {
+      icon: '💰',
+      title: 'Invoice & Billing Manager',
+      description: 'Streamline your invoicing process with professional templates and automation.',
+      features: [
+        'Professional invoice templates',
+        'Automated payment reminders',
+        'Multiple payment gateways',
+        'Expense tracking',
+        'Financial reporting'
+      ],
+      color: 'bg-gradient-to-br from-yellow-500 to-orange-600',
+      textColor: 'text-yellow-400',
+      gradient: 'from-yellow-400 to-orange-500',
+      pricing: '$25/month',
+      link: 'https://billing.ziontechgroup.com'
+    },
+    {
+      icon: '📋',
+      title: 'Project Management Hub',
+      description: 'Simple project management for teams with intuitive collaboration tools.',
+      features: [
+        'Task management & tracking',
+        'Team collaboration tools',
+        'Time tracking',
+        'File sharing & storage',
+        'Project templates'
+      ],
+      color: 'bg-gradient-to-br from-purple-500 to-indigo-600',
+      textColor: 'text-purple-400',
+      gradient: 'from-purple-400 to-indigo-500',
+      pricing: '$35/month',
+      link: 'https://projects.ziontechgroup.com'
+    },
+    {
+      icon: '🎫',
+      title: 'Customer Support Ticketing',
+      description: 'Organized customer support system with knowledge base and automation.',
+      features: [
+        'Ticket management system',
+        'Knowledge base creation',
+        'Automated responses',
+        'Customer satisfaction surveys',
+        'Performance analytics'
+      ],
+      color: 'bg-gradient-to-br from-red-500 to-pink-600',
+      textColor: 'text-red-400',
+      gradient: 'from-red-400 to-pink-500',
+      pricing: '$45/month',
+      link: 'https://support.ziontechgroup.com'
+    },
+    {
+      icon: '📈',
+      title: 'Analytics Dashboard',
+      description: 'Beautiful data visualization with drag-and-drop dashboard builder.',
+      features: [
+        'Drag-and-drop dashboard builder',
+        '100+ chart types',
+        'Real-time data connections',
+        'Custom branding',
+        'Team sharing & collaboration'
+      ],
+      color: 'bg-gradient-to-br from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      gradient: 'from-green-400 to-emerald-500',
+      pricing: '$55/month',
+      link: 'https://analytics.ziontechgroup.com'
     }
   ];
 

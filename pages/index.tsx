@@ -334,6 +334,77 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Micro SaaS Services Promotion */}
+      <section className="py-24 bg-gradient-to-r from-green-600 to-emerald-700 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px] opacity-10" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse" />
+              New: Micro SaaS Solutions
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8 leading-tight">
+              Specialized Tools for Every Business Need
+            </h2>
+            <p className="text-xl text-green-100 max-w-4xl mx-auto leading-relaxed">
+              Discover our focused micro SaaS solutions that deliver specific value without enterprise complexity. 
+              Start with a free trial and scale as you grow.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
+              <div className="text-3xl mb-4">📝</div>
+              <h3 className="text-xl font-bold text-white mb-2">AI Content Generator Pro</h3>
+              <p className="text-green-100 text-sm mb-4">Professional AI-powered content creation</p>
+              <div className="text-2xl font-bold text-white mb-2">$49<span className="text-sm font-normal text-green-100">/month</span></div>
+              <p className="text-xs text-green-200">14-day free trial • Setup in 5 minutes</p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
+              <div className="text-3xl mb-4">🎨</div>
+              <h3 className="text-xl font-bold text-white mb-2">Design System Builder</h3>
+              <p className="text-green-100 text-sm mb-4">Automated design system management</p>
+              <div className="text-2xl font-bold text-white mb-2">$79<span className="text-sm font-normal text-green-100">/month</span></div>
+              <p className="text-xs text-green-200">14-day free trial • Setup in 15 minutes</p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
+              <div className="text-3xl mb-4">📱</div>
+              <h3 className="text-xl font-bold text-white mb-2">App Performance Monitor</h3>
+              <p className="text-green-100 text-sm mb-4">Real-time performance monitoring</p>
+              <div className="text-2xl font-bold text-white mb-2">$39<span className="text-sm font-normal text-green-100">/month</span></div>
+              <p className="text-xs text-green-200">14-day free trial • Setup in 10 minutes</p>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+              <Button
+                href="/micro-saas"
+                variant="secondary"
+                size="lg"
+                className="bg-white text-green-600 hover:bg-gray-100 shadow-2xl"
+              >
+                Explore All Micro SaaS
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+              <Button
+                href="/pricing"
+                variant="outline"
+                size="lg"
+                className="border-white text-white hover:bg-white hover:text-green-600 shadow-2xl"
+              >
+                View Pricing
+              </Button>
+            </div>
+            <p className="text-sm text-green-200">
+              All services include enterprise-grade infrastructure, 99.9% uptime guarantee, and dedicated support
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Technology Stack */}
       <section className="py-24 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
