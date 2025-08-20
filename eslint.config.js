@@ -5,8 +5,13 @@ export default [
   {
     files: ['**/*.{js,jsx,ts,tsx}'],
     languageOptions: {
-      ecmaVersion: 2020,
+      ecmaVersion: 2022,
       sourceType: 'module',
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true
+        }
+      },
       globals: {
         process: 'readonly',
         console: 'readonly',
@@ -17,7 +22,9 @@ export default [
         setTimeout: 'readonly',
         setInterval: 'readonly',
         clearTimeout: 'readonly',
-        clearInterval: 'readonly'
+        clearInterval: 'readonly',
+        React: 'readonly',
+        JSX: 'readonly'
       }
     },
     rules: {
@@ -39,13 +46,7 @@ export default [
       'public/reports/**',
       'netlify/',
       'ecosystem*.cjs',
-      '**/*.cjs',
-      '**/*.tsx',
-      '**/*.ts',
-      '**/*.jsx',
-      'components/',
-      'pages/',
-      'services/'
+      '**/*.cjs'
     ]
   }
 ];
