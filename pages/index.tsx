@@ -4,7 +4,7 @@ import Hero from '../components/sections/Hero';
 import Features from '../components/sections/Features';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
-import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight } from 'lucide-react';
+import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Brain, Monitor, Search } from 'lucide-react';
 
 export default function HomePage() {
   const heroStats = [
@@ -106,6 +106,71 @@ export default function HomePage() {
         features={platformFeatures}
         columns={3}
       />
+
+      {/* Micro SaaS Services Preview */}
+      <section className="py-24 bg-gradient-to-r from-purple-900 to-pink-900 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(168,85,247,0.1),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(236,72,153,0.1),transparent_50%)]" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-20 animate-fade-in">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-purple-500 rounded-full mr-2 animate-pulse" />
+              Professional Micro SaaS Solutions
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight">
+              Enterprise-Grade Micro SaaS Services
+            </h2>
+            <p className="text-xl text-purple-200 max-w-4xl mx-auto leading-relaxed">
+              Discover our comprehensive suite of professional micro SaaS solutions designed for modern businesses. 
+              From AI content generation to performance monitoring, we deliver exceptional value at competitive prices.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-purple-500/30 transition-all duration-300 group">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Brain className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">AI Content Generator</h3>
+              <p className="text-purple-200 mb-6">Generate high-quality, SEO-optimized content for blogs, social media, and marketing campaigns.</p>
+              <div className="text-3xl font-bold text-white mb-4">From $29<span className="text-lg text-purple-300">/month</span></div>
+              <Button href="/micro-saas-services" variant="outline" className="w-full border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white">
+                Learn More
+              </Button>
+            </div>
+
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-purple-500/30 transition-all duration-300 group">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Monitor className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">Performance Monitor</h3>
+              <p className="text-purple-200 mb-6">Monitor website performance in real-time with comprehensive metrics and optimization recommendations.</p>
+              <div className="text-3xl font-bold text-white mb-4">From $19<span className="text-lg text-purple-300">/month</span></div>
+              <Button href="/micro-saas-services" variant="outline" className="w-full border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white">
+                Learn More
+              </Button>
+            </div>
+
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-purple-500/30 transition-all duration-300 group">
+              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Search className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">SEO Analytics</h3>
+              <p className="text-purple-200 mb-6">Comprehensive SEO tracking, competitor analysis, and keyword monitoring to improve rankings.</p>
+              <div className="text-3xl font-bold text-white mb-4">From $39<span className="text-lg text-purple-300">/month</span></div>
+              <Button href="/micro-saas-services" variant="outline" className="w-full border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white">
+                Learn More
+              </Button>
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <Button href="/micro-saas-services" size="lg" className="bg-purple-600 hover:bg-purple-700 text-white shadow-2xl hover-glow">
+              View All Micro SaaS Services
+            </Button>
+          </div>
+        </div>
+      </section>
 
       {/* Technology Stack */}
       <section className="py-24 bg-gray-900">

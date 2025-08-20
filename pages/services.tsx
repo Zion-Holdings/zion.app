@@ -225,6 +225,37 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* Micro SaaS Services CTA */}
+      <section className="section-padding bg-gradient-to-r from-purple-600 to-pink-600 relative overflow-hidden">
+        <div className="absolute inset-0 bg-dots opacity-10" />
+        <div className="container-cursor text-center relative z-10">
+          <h2 className="text-responsive-lg font-bold text-white mb-8 text-shadow-lg">
+            Discover Our Micro SaaS Services
+          </h2>
+          <p className="text-responsive-md text-purple-100 mb-12 max-w-4xl mx-auto leading-relaxed">
+            Explore our comprehensive suite of professional micro SaaS solutions designed for modern businesses. 
+            From AI content generation to performance monitoring, we deliver enterprise-grade features at competitive prices.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Button
+              href="/micro-saas-services"
+              size="lg"
+              className="bg-white text-purple-600 hover:bg-gray-100 shadow-2xl hover-glow"
+            >
+              Explore Micro SaaS Services
+            </Button>
+            <Button
+              href="/pricing"
+              variant="outline"
+              size="lg"
+              className="border-white text-white hover:bg-white hover:text-purple-600 shadow-2xl"
+            >
+              View Pricing
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="section-padding bg-gradient-to-r from-cursor-blue to-blue-600 relative overflow-hidden">
         <div className="absolute inset-0 bg-dots opacity-10" />
