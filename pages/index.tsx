@@ -326,7 +326,7 @@ export default function HomePage() {
                     <p className="text-white/60">How we protect your data and ensure compliance.</p>
                   </li>
                   <li>
-                    <Link href="/contact" className="text-cyan-300 hover:text-cyan-2 00 font-semibold">Contact</Link>
+                    <Link href="/contact" className="text-cyan-300 hover:text-cyan-200 font-semibold">Contact</Link>
                     <p className="text-white/60">Talk to our team to discuss your goals.</p>
                   </li>
                   <li>
