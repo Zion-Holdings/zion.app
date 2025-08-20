@@ -121,9 +121,10 @@ export default function HomePage() {
               Specialized Tools for Every Business Need
             </h2>
             <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
-              Discover 12 specialized micro SaaS solutions covering content creation, design systems, performance monitoring, 
-              SEO automation, chatbots, business intelligence, email marketing, social media, customer feedback, project management, 
-              billing, and HR operations. Focused value with transparent pricing and 14-day free trials.
+              Discover 20+ specialized micro SaaS solutions covering content creation, design systems, performance monitoring, 
+              SEO automation, chatbots, business intelligence, email marketing, social media, project management, 
+              billing, HR operations, video editing, cloud optimization, legal automation, sales intelligence, and more. 
+              Focused value with transparent pricing and 14-day free trials.
             </p>
           </div>
 
@@ -307,11 +308,71 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
+
+            {/* AI Video Editor Pro */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-red-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-red-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-pink-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    🎬
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">AI Video Editor Pro</h3>
+                    <p className="text-red-400 text-sm font-medium">$79/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Professional video editing with AI-powered automation and enhancement tools.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://video.ziontechgroup.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-red-500 to-pink-600 hover:from-red-600 hover:to-pink-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* Cloud Cost Optimizer */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    ☁️
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Cloud Cost Optimizer</h3>
+                    <p className="text-blue-400 text-sm font-medium">$99/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Reduce cloud spending by 30% with intelligent cost management and optimization.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://cloudcost.ziontechgroup.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="text-center">
             <p className="text-gray-400 mb-8 max-w-3xl mx-auto">
-              All 12 services include comprehensive documentation, dedicated support, enterprise-grade reliability, and 14-day free trials. 
+              All 20+ services include comprehensive documentation, dedicated support, enterprise-grade reliability, and 14-day free trials. 
               Start with one solution and scale as you grow. View our complete portfolio for more specialized tools.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

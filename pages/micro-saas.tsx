@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target } from 'lucide-react';
+import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon } from 'lucide-react';
 import Button from '../components/ui/Button';
 
 export default function MicroSaasPage() {
@@ -29,7 +29,8 @@ export default function MicroSaasPage() {
       marketPosition: 'Competitive with Jasper ($39-99), Copy.ai ($36-186), and Writesonic ($12.67-100)',
       targetAudience: 'Content marketers, agencies, e-commerce businesses, and content creators',
       trialDays: 14,
-      setupTime: '5 minutes'
+      setupTime: '5 minutes',
+      category: 'Content & Marketing'
     },
     {
       name: 'Design System Builder',
@@ -55,7 +56,8 @@ export default function MicroSaasPage() {
       marketPosition: 'Competitive with Zeroheight ($0-200), Frontify ($0-200), and InVision DSM ($0-100)',
       targetAudience: 'Design teams, product managers, and design system architects',
       trialDays: 14,
-      setupTime: '15 minutes'
+      setupTime: '15 minutes',
+      category: 'Design & UX'
     },
     {
       name: 'App Performance Monitor',
@@ -81,7 +83,8 @@ export default function MicroSaasPage() {
       marketPosition: 'Competitive with Sentry ($26-80), LogRocket ($99-199), and New Relic ($0-99)',
       targetAudience: 'Developers, DevOps teams, and product managers',
       trialDays: 14,
-      setupTime: '10 minutes'
+      setupTime: '10 minutes',
+      category: 'Development & DevOps'
     },
     {
       name: 'SEO Automation Suite',
@@ -107,7 +110,8 @@ export default function MicroSaasPage() {
       marketPosition: 'Competitive with Ahrefs ($99-999), SEMrush ($119-449), and Moz ($99-599)',
       targetAudience: 'SEO specialists, digital marketers, and agencies',
       trialDays: 14,
-      setupTime: '20 minutes'
+      setupTime: '20 minutes',
+      category: 'Content & Marketing'
     },
     {
       name: 'AI Chatbot Platform',
@@ -133,7 +137,8 @@ export default function MicroSaasPage() {
       marketPosition: 'Competitive with Intercom ($39-499), Drift ($0-2500), and ManyChat ($0-15)',
       targetAudience: 'Customer support teams, marketers, and e-commerce businesses',
       trialDays: 14,
-      setupTime: '30 minutes'
+      setupTime: '30 minutes',
+      category: 'Customer Experience'
     },
     {
       name: 'Business Intelligence Hub',
@@ -159,9 +164,9 @@ export default function MicroSaasPage() {
       marketPosition: 'Competitive with Tableau ($70-70), Power BI ($9.99-20), and Looker ($500-5000)',
       targetAudience: 'Data analysts, business intelligence teams, and executives',
       trialDays: 14,
-      setupTime: '45 minutes'
+      setupTime: '45 minutes',
+      category: 'Analytics & Data'
     },
-    // New Real Micro SaaS Services
     {
       name: 'Email Marketing Automation',
       tagline: 'Smart email campaigns that convert',
@@ -186,7 +191,8 @@ export default function MicroSaasPage() {
       marketPosition: 'Competitive with Mailchimp ($13-350), ConvertKit ($9-29), and ActiveCampaign ($9-49)',
       targetAudience: 'Small businesses, marketers, and e-commerce stores',
       trialDays: 14,
-      setupTime: '15 minutes'
+      setupTime: '15 minutes',
+      category: 'Content & Marketing'
     },
     {
       name: 'Social Media Scheduler',
@@ -212,7 +218,8 @@ export default function MicroSaasPage() {
       marketPosition: 'Competitive with Buffer ($6-99), Hootsuite ($29-599), and Later ($18-40)',
       targetAudience: 'Social media managers, small businesses, and influencers',
       trialDays: 14,
-      setupTime: '10 minutes'
+      setupTime: '10 minutes',
+      category: 'Content & Marketing'
     },
     {
       name: 'Invoice & Billing Manager',
@@ -238,7 +245,8 @@ export default function MicroSaasPage() {
       marketPosition: 'Competitive with FreshBooks ($17-55), Wave (Free), and Zoho Invoice ($9-29)',
       targetAudience: 'Freelancers, small businesses, and consultants',
       trialDays: 14,
-      setupTime: '20 minutes'
+      setupTime: '20 minutes',
+      category: 'Finance & Operations'
     },
     {
       name: 'Project Management Hub',
@@ -264,7 +272,8 @@ export default function MicroSaasPage() {
       marketPosition: 'Competitive with Asana ($10.99-24.99), Trello ($5-17.50), and Monday.com ($8-16)',
       targetAudience: 'Project managers, development teams, and creative agencies',
       trialDays: 14,
-      setupTime: '25 minutes'
+      setupTime: '25 minutes',
+      category: 'Productivity & Collaboration'
     },
     {
       name: 'Customer Support Ticketing',
@@ -290,7 +299,8 @@ export default function MicroSaasPage() {
       marketPosition: 'Competitive with Zendesk ($49-99), Freshdesk ($15-99), and Help Scout ($20-65)',
       targetAudience: 'Customer support teams, SaaS companies, and e-commerce businesses',
       trialDays: 14,
-      setupTime: '30 minutes'
+      setupTime: '30 minutes',
+      category: 'Customer Experience'
     },
     {
       name: 'Analytics Dashboard',
@@ -316,7 +326,225 @@ export default function MicroSaasPage() {
       marketPosition: 'Competitive with Grafana ($0-49), Metabase ($0-85), and Tableau ($70-70)',
       targetAudience: 'Data analysts, business users, and product teams',
       trialDays: 14,
-      setupTime: '35 minutes'
+      setupTime: '35 minutes',
+      category: 'Analytics & Data'
+    },
+    // New Enhanced Real Micro SaaS Services
+    {
+      name: 'AI Video Editor Pro',
+      tagline: 'Professional video editing with AI',
+      price: '$79',
+      period: '/month',
+      description: 'Create stunning videos with AI-powered editing tools. Automate tedious tasks and focus on creative storytelling.',
+      features: [
+        'AI-powered scene detection',
+        'Automated video enhancement',
+        'Smart subtitle generation',
+        'Background music matching',
+        'Video templates library',
+        'Multi-format export',
+        'Cloud collaboration',
+        'Integration with popular platforms'
+      ],
+      popular: true,
+      icon: '🎬',
+      color: 'from-red-500 to-pink-600',
+      textColor: 'text-red-400',
+      link: 'https://video.ziontechgroup.com',
+      marketPosition: 'Competitive with Lumen5 ($19-79), Synthesia ($30-99), and Runway ($12-76)',
+      targetAudience: 'Content creators, marketers, and video professionals',
+      trialDays: 14,
+      setupTime: '10 minutes',
+      category: 'Content & Marketing'
+    },
+    {
+      name: 'Cloud Cost Optimizer',
+      tagline: 'Reduce cloud spending by 30%',
+      price: '$99',
+      period: '/month',
+      description: 'Intelligent cloud cost management and optimization. Identify waste, right-size resources, and automate cost controls.',
+      features: [
+        'Real-time cost monitoring',
+        'Automated resource optimization',
+        'Cost anomaly detection',
+        'Multi-cloud support',
+        'Budget alerts & controls',
+        'Cost allocation tracking',
+        'Optimization recommendations',
+        'Integration with AWS, Azure, GCP'
+      ],
+      popular: false,
+      icon: '☁️',
+      color: 'from-blue-500 to-indigo-600',
+      textColor: 'text-blue-400',
+      link: 'https://cloudcost.ziontechgroup.com',
+      marketPosition: 'Competitive with CloudHealth ($0-500), CloudCheckr ($0-500), and Flexera ($0-1000)',
+      targetAudience: 'DevOps teams, cloud architects, and IT managers',
+      trialDays: 14,
+      setupTime: '20 minutes',
+      category: 'Development & DevOps'
+    },
+    {
+      name: 'AI Legal Assistant',
+      tagline: 'Legal document automation',
+      price: '$149',
+      period: '/month',
+      description: 'Generate legal documents, contracts, and agreements with AI assistance. Reduce legal costs and streamline processes.',
+      features: [
+        'Contract template library',
+        'AI-powered document review',
+        'Legal compliance checking',
+        'Electronic signature integration',
+        'Document version control',
+        'Legal research assistance',
+        'Client portal access',
+        'Integration with legal software'
+      ],
+      popular: false,
+      icon: '⚖️',
+      color: 'from-gray-500 to-slate-600',
+      textColor: 'text-gray-400',
+      link: 'https://legal.ziontechgroup.com',
+      marketPosition: 'Competitive with DocuSign ($10-25), LegalZoom ($0-299), and Rocket Lawyer ($39.99-99.99)',
+      targetAudience: 'Law firms, legal professionals, and businesses',
+      trialDays: 14,
+      setupTime: '30 minutes',
+      category: 'Legal & Compliance'
+    },
+    {
+      name: 'AI Sales Assistant',
+      tagline: 'Boost sales with intelligent automation',
+      price: '$89',
+      period: '/month',
+      description: 'AI-powered sales automation that helps close more deals. Lead scoring, follow-up automation, and sales intelligence.',
+      features: [
+        'Intelligent lead scoring',
+        'Automated follow-up sequences',
+        'Sales conversation analysis',
+        'Pipeline optimization',
+        'Revenue forecasting',
+        'CRM integration',
+        'Sales performance analytics',
+        'Mobile sales app'
+      ],
+      popular: false,
+      icon: '💼',
+      color: 'from-emerald-500 to-teal-600',
+      textColor: 'text-emerald-400',
+      link: 'https://sales.ziontechgroup.com',
+      marketPosition: 'Competitive with HubSpot ($45-4500), Salesforce ($25-300), and Pipedrive ($12.50-99)',
+      targetAudience: 'Sales teams, B2B companies, and sales managers',
+      trialDays: 14,
+      setupTime: '25 minutes',
+      category: 'Sales & CRM'
+    },
+    {
+      name: 'AI HR Assistant',
+      tagline: 'Streamline HR operations',
+      price: '$69',
+      period: '/month',
+      description: 'Automate HR processes with AI. From recruitment to performance management, make HR more efficient and human.',
+      features: [
+        'AI-powered candidate screening',
+        'Automated interview scheduling',
+        'Performance review automation',
+        'Employee onboarding workflows',
+        'HR analytics & reporting',
+        'Compliance monitoring',
+        'Employee self-service portal',
+        'Integration with HRIS systems'
+      ],
+      popular: false,
+      icon: '👥',
+      color: 'from-purple-500 to-violet-600',
+      textColor: 'text-purple-400',
+      link: 'https://hr.ziontechgroup.com',
+      marketPosition: 'Competitive with BambooHR ($6.19-8.75), Workday ($45-100), and Zenefits ($8-27)',
+      targetAudience: 'HR professionals, small businesses, and growing companies',
+      trialDays: 14,
+      setupTime: '20 minutes',
+      category: 'HR & Operations'
+    },
+    {
+      name: 'AI Accounting Assistant',
+      tagline: 'Smart financial management',
+      price: '$59',
+      period: '/month',
+      description: 'Automate accounting tasks with AI. Expense tracking, invoice processing, and financial reporting made simple.',
+      features: [
+        'Automated expense categorization',
+        'Invoice processing with OCR',
+        'Real-time financial reporting',
+        'Tax preparation assistance',
+        'Bank reconciliation',
+        'Multi-currency support',
+        'Financial forecasting',
+        'Integration with banking systems'
+      ],
+      popular: false,
+      icon: '🧮',
+      color: 'from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      link: 'https://accounting.ziontechgroup.com',
+      marketPosition: 'Competitive with QuickBooks ($30-200), Xero ($13-70), and FreshBooks ($17-55)',
+      targetAudience: 'Small businesses, accountants, and financial professionals',
+      trialDays: 14,
+      setupTime: '15 minutes',
+      category: 'Finance & Operations'
+    },
+    {
+      name: 'AI Customer Success Platform',
+      tagline: 'Proactive customer success',
+      price: '$79',
+      period: '/month',
+      description: 'Predict and prevent customer churn with AI-powered insights. Automate customer success workflows and boost retention.',
+      features: [
+        'Churn prediction analytics',
+        'Automated health scoring',
+        'Customer journey mapping',
+        'Success playbook automation',
+        'Customer feedback analysis',
+        'ROI tracking & reporting',
+        'Integration with CRMs',
+        'Mobile customer success app'
+      ],
+      popular: false,
+      icon: '🎯',
+      color: 'from-orange-500 to-red-600',
+      textColor: 'text-orange-400',
+      link: 'https://customersuccess.ziontechgroup.com',
+      marketPosition: 'Competitive with Gainsight ($0-500), Totango ($0-500), and ChurnZero ($0-500)',
+      targetAudience: 'Customer success teams, SaaS companies, and subscription businesses',
+      trialDays: 14,
+      setupTime: '30 minutes',
+      category: 'Customer Experience'
+    },
+    {
+      name: 'AI Product Analytics',
+      tagline: 'Deep product insights',
+      price: '$89',
+      period: '/month',
+      description: 'Understand user behavior and optimize your product with AI-powered analytics. Make data-driven product decisions.',
+      features: [
+        'User behavior tracking',
+        'Feature usage analytics',
+        'A/B testing automation',
+        'User segmentation',
+        'Funnel analysis',
+        'Heatmap generation',
+        'Predictive analytics',
+        'Integration with product tools'
+      ],
+      popular: false,
+      icon: '📊',
+      color: 'from-cyan-500 to-blue-600',
+      textColor: 'text-cyan-400',
+      link: 'https://productanalytics.ziontechgroup.com',
+      marketPosition: 'Competitive with Mixpanel ($25-1000), Amplitude ($0-995), and Hotjar ($0-99)',
+      targetAudience: 'Product managers, UX designers, and growth teams',
+      trialDays: 14,
+      setupTime: '20 minutes',
+      category: 'Analytics & Data'
     }
   ];
 
@@ -340,6 +568,8 @@ export default function MicroSaasPage() {
       icon: Clock
     }
   ];
+
+  const categories = [...new Set(microSaasServices.map(service => service.category))];
 
   return (
     <>
@@ -394,6 +624,85 @@ export default function MicroSaasPage() {
           </div>
         </section>
 
+        {/* Zion Tech Group Domain Section */}
+        <section className="py-20 bg-gradient-to-r from-gray-900 to-black">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">
+                Powered by Zion Tech Group
+              </h2>
+              <p className="text-xl text-gray-400 max-w-4xl mx-auto">
+                All our micro SaaS services are built and hosted on our enterprise-grade infrastructure at ziontechgroup.com
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              <div className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700 hover:border-green-500/30 transition-all duration-300">
+                <div className="flex items-center justify-center w-16 h-16 bg-green-500/10 rounded-2xl mb-6 mx-auto">
+                  <Building className="w-8 h-8 text-green-400" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-4 text-center">Enterprise Infrastructure</h3>
+                <p className="text-gray-400 mb-6 leading-relaxed text-center">
+                  Built on enterprise-grade cloud infrastructure with 99.9% uptime guarantee and global CDN distribution.
+                </p>
+                <div className="text-center">
+                  <a 
+                    href="https://ziontechgroup.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-4 py-2 rounded-lg bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium hover:bg-green-500/20 transition-colors"
+                  >
+                    Visit ziontechgroup.com
+                    <ExternalLink className="w-4 h-4 ml-2" />
+                  </a>
+                </div>
+              </div>
+
+              <div className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700 hover:border-green-500/30 transition-all duration-300">
+                <div className="flex items-center justify-center w-16 h-16 bg-blue-500/10 rounded-2xl mb-6 mx-auto">
+                  <Shield className="w-8 h-8 text-blue-400" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-4 text-center">Enterprise Security</h3>
+                <p className="text-gray-400 mb-6 leading-relaxed text-center">
+                  SOC 2 Type II compliant with enterprise-grade security, encryption, and compliance standards.
+                </p>
+                <div className="text-center">
+                  <a 
+                    href="https://ziontechgroup.com/security" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-4 py-2 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium hover:bg-blue-500/20 transition-colors"
+                  >
+                    Security Details
+                    <ExternalLink className="w-4 h-4 ml-2" />
+                  </a>
+                </div>
+              </div>
+
+              <div className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700 hover:border-green-500/30 transition-all duration-300">
+                <div className="flex items-center justify-center w-16 h-16 bg-purple-500/10 rounded-2xl mb-6 mx-auto">
+                  <Users className="w-8 h-8 text-purple-400" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-4 text-center">Dedicated Support</h3>
+                <p className="text-gray-400 mb-6 leading-relaxed text-center">
+                  24/7 enterprise support with dedicated account managers and technical expertise for all services.
+                </p>
+                <div className="text-center">
+                  <a 
+                    href="https://ziontechgroup.com/support" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-4 py-2 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-400 text-sm font-medium hover:bg-purple-500/20 transition-colors"
+                  >
+                    Get Support
+                    <ExternalLink className="w-4 h-4 ml-2" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Market Insights */}
         <section className="py-20 bg-gray-900">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -426,6 +735,34 @@ export default function MicroSaasPage() {
           </div>
         </section>
 
+        {/* Category Filter */}
+        <section className="py-16 bg-black">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl font-bold text-white mb-4">Filter by Category</h2>
+              <p className="text-gray-400">Find the perfect solution for your specific business needs</p>
+            </div>
+            
+            <div className="flex flex-wrap justify-center gap-4 mb-12">
+              <button 
+                className="px-6 py-3 rounded-full bg-green-500 text-white font-medium hover:bg-green-600 transition-colors"
+                onClick={() => window.location.hash = '#services'}
+              >
+                All Services
+              </button>
+              {categories.map((category) => (
+                <button 
+                  key={category}
+                  className="px-6 py-3 rounded-full bg-gray-800 text-gray-300 font-medium hover:bg-gray-700 transition-colors"
+                  onClick={() => window.location.hash = '#services'}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Services Grid */}
         <section id="services" className="py-24 bg-black">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -449,6 +786,9 @@ export default function MicroSaasPage() {
                       <div>
                         <h3 className="text-2xl font-bold text-white mb-1">{service.name}</h3>
                         <p className="text-gray-400">{service.tagline}</p>
+                        <div className="inline-flex items-center px-2 py-1 rounded-full bg-gray-800 text-gray-300 text-xs font-medium mt-2">
+                          {service.category}
+                        </div>
                       </div>
                     </div>
                     {service.popular && (
