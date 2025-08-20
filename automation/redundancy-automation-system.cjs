@@ -57,21 +57,34 @@ class RedundancyAutomationSystem {
 
   async runCommand(command, args = [], options = {}) {
     return new Promise((resolve) => {
-      const result = spawnSync(command, args, {
-        cwd: process.cwd(),
-        env: process.env,
-        shell: false,
-        encoding: "utf8",
-        maxBuffer: 1024 * 1024 * 20,
-        ...options
-      });
-      
-      resolve({
-        status: result.status,
-        stdout: result.stdout || "",
-        stderr: result.stderr || "",
-        error: result.error
-      });
+      try {
+        const result = spawnSync(command, args, {
+          cwd: process.cwd(),
+          env: process.env,
+          shell: false,
+          encoding: "utf8",
+          maxBuffer: 1024 * 1024 * 20,
+          timeout: 30000, // 30 second timeout
+          ...options
+        });
+        
+        resolve({
+          status: result.status,
+          stdout: result.stdout || "",
+          stderr: result.stderr || "",
+          error: result.error,
+          timedOut: result.signal === 'SIGTERM'
+        });
+      } catch (error) {
+        this.log(`Command execution error: ${error.message}`, "ERROR");
+        resolve({
+          status: -1,
+          stdout: "",
+          stderr: error.message,
+          error: error,
+          timedOut: false
+        });
+      }
     });
   }
 

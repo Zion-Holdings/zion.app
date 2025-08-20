@@ -92,12 +92,34 @@ check_dependencies() {
     if [ ! -d "$PROJECT_ROOT/node_modules" ]; then
         log "WARN" "node_modules not found, installing dependencies..."
         cd "$PROJECT_ROOT"
-        npm install
-        if [ $? -ne 0 ]; then
-            log "ERROR" "Failed to install dependencies"
-            exit 1
+        
+        # Check if npm cache is corrupted and clear if needed
+        if npm cache verify 2>/dev/null; then
+            log "INFO" "npm cache is valid"
+        else
+            log "WARN" "npm cache may be corrupted, clearing..."
+            npm cache clean --force
         fi
-        log "INFO" "Dependencies installed successfully"
+        
+        # Install dependencies with retry logic
+        local max_retries=3
+        local retry_count=0
+        
+        while [ $retry_count -lt $max_retries ]; do
+            if npm install; then
+                log "INFO" "Dependencies installed successfully"
+                break
+            else
+                retry_count=$((retry_count + 1))
+                if [ $retry_count -lt $max_retries ]; then
+                    log "WARN" "Dependency installation failed, retrying... (attempt $retry_count/$max_retries)"
+                    sleep 5
+                else
+                    log "ERROR" "Failed to install dependencies after $max_retries attempts"
+                    exit 1
+                fi
+            fi
+        done
     else
         log "INFO" "Dependencies are available"
     fi

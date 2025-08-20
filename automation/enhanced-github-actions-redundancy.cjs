@@ -144,6 +144,15 @@ jobs:
       fs.appendFileSync(this.logFile, logMessage + "\n");
     } catch (error) {
       console.error(`Failed to write to log file: ${error.message}`);
+      // Fallback to console if file logging fails
+      console.log(logMessage);
+    }
+  }
+
+  logError(message, error) {
+    this.log(`ERROR: ${message} - ${error?.message || error}`, "ERROR");
+    if (error?.stack) {
+      this.log(`Stack trace: ${error.stack}`, "ERROR");
     }
   }
 

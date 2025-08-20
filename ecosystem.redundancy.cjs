@@ -9,19 +9,25 @@ module.exports = {
       autorestart: true,
       max_restarts: 10,
       exp_backoff_restart_delay: 5000,
+      min_uptime: "10s",
+      max_memory_restart: "1G",
+      node_args: "--max-old-space-size=1024",
       env: {
         NODE_ENV: "production",
         REDUNDANCY_LOG_LEVEL: "INFO",
         REDUNDANCY_PM2_CHECK_INTERVAL: "30000",
         REDUNDANCY_GITHUB_CHECK_INTERVAL: "60000",
-        REDUNDANCY_NETLIFY_CHECK_INTERVAL: "120000"
+        REDUNDANCY_NETLIFY_CHECK_INTERVAL: "120000",
+        PM2_HOME: __dirname + "/.pm2"
       },
       log_date_format: "YYYY-MM-DD HH:mm:ss Z",
       error_file: "automation/logs/redundancy-system-error.log",
       out_file: "automation/logs/redundancy-system-out.log",
       time: true,
       instances: 1,
-      exec_mode: "fork"
+      exec_mode: "fork",
+      kill_timeout: 5000,
+      listen_timeout: 3000
     },
     {
       name: "redundancy-health-monitor",

@@ -195,8 +195,21 @@ class ComprehensiveRedundancyAutomationSystem {
     const timestamp = new Date().toISOString();
     const logEntry = `[${timestamp}] [${level}] ${message}\n`;
     
-    fs.appendFileSync(this.logFile, logEntry);
-    
+    try {
+      fs.appendFileSync(this.logFile, logEntry);
+    } catch (error) {
+      console.error(`Failed to write to log file: ${error.message}`);
+      // Fallback to console if file logging fails
+      console.log(logEntry);
+    }
+  }
+
+  logError(message, error) {
+    this.log(`ERROR: ${message} - ${error?.message || error}`, "ERROR");
+    if (error?.stack) {
+      this.log(`Stack trace: ${error.stack}`, "ERROR");
+    }
+  }
     if (level === "ERROR") {
       console.error(`[${timestamp}] [${level}] ${message}`);
     } else if (level === "WARN") {
