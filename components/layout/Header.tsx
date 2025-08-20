@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { Menu, X, ChevronDown } from 'lucide-react';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const router = useRouter();
 
   useEffect(() => {
@@ -18,21 +20,33 @@ const Header = () => {
 
   const navigation = [
     { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Services', href: '/services' },
-    { name: 'Case Studies', href: '/case-studies' },
-    { name: 'Blog', href: '/blog' },
+    { 
+      name: 'Products', 
+      href: '/services',
+      dropdown: [
+        { name: 'AI Automation', href: '/services#ai-automation' },
+        { name: 'Cloud Infrastructure', href: '/services#cloud' },
+        { name: 'DevOps Solutions', href: '/services#devops' },
+        { name: 'Security & Compliance', href: '/services#security' }
+      ]
+    },
+    { name: 'Solutions', href: '/case-studies' },
     { name: 'Resources', href: '/resources' },
+    { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact' },
   ];
 
   const isActive = (href: string) => router.pathname === href;
 
+  const handleDropdownToggle = (name: string) => {
+    setActiveDropdown(activeDropdown === name ? null : name);
+  };
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-black/90 backdrop-blur-xl border-b border-white/10 shadow-2xl'
+          ? 'bg-black/95 backdrop-blur-xl border-b border-white/10 shadow-2xl'
           : 'bg-transparent'
       }`}
     >
@@ -54,25 +68,63 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-1">
             {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${
-                  isActive(item.href)
-                    ? 'text-blue-400 bg-blue-400/10'
-                    : 'text-gray-300 hover:text-white hover:bg-white/5'
-                }`}
-              >
-                {item.name}
-                {isActive(item.href) && (
-                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-blue-400 rounded-full" />
+              <div key={item.name} className="relative">
+                {item.dropdown ? (
+                  <button
+                    onClick={() => handleDropdownToggle(item.name)}
+                    className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 flex items-center space-x-1 ${
+                      isActive(item.href)
+                        ? 'text-blue-400 bg-blue-400/10'
+                        : 'text-gray-300 hover:text-white hover:bg-white/5'
+                    }`}
+                  >
+                    {item.name}
+                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
+                      activeDropdown === item.name ? 'rotate-180' : ''
+                    }`} />
+                  </button>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${
+                      isActive(item.href)
+                        ? 'text-blue-400 bg-blue-400/10'
+                        : 'text-gray-300 hover:text-white hover:bg-white/5'
+                    }`}
+                  >
+                    {item.name}
+                    {isActive(item.href) && (
+                      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-blue-400 rounded-full" />
+                    )}
+                  </Link>
                 )}
-              </Link>
+
+                {/* Dropdown Menu */}
+                {item.dropdown && activeDropdown === item.name && (
+                  <div className="absolute top-full left-0 mt-2 w-64 bg-black/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl py-2 animate-fade-in">
+                    {item.dropdown.map((dropdownItem) => (
+                      <Link
+                        key={dropdownItem.name}
+                        href={dropdownItem.href}
+                        className="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-all duration-200"
+                      >
+                        {dropdownItem.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
           </nav>
 
-          {/* CTA Button */}
+          {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
+            <Link
+              href="/docs"
+              className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200"
+            >
+              Docs
+            </Link>
             <Link
               href="/contact"
               className="relative px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:-translate-y-0.5 group overflow-hidden"
@@ -88,53 +140,76 @@ const Header = () => {
             className="lg:hidden relative p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-all duration-300"
             aria-label="Toggle mobile menu"
           >
-            <div className="w-6 h-6 flex flex-col justify-center items-center">
-              <span className={`w-5 h-0.5 bg-current transition-all duration-300 ${
-                isMobileMenuOpen ? 'rotate-45 translate-y-1' : '-translate-y-1'
-              }`} />
-              <span className={`w-5 h-0.5 bg-current transition-all duration-300 ${
-                isMobileMenuOpen ? 'opacity-0' : 'opacity-100'
-              }`} />
-              <span className={`w-5 h-0.5 bg-current transition-all duration-300 ${
-                isMobileMenuOpen ? '-rotate-45 -translate-y-1' : 'translate-y-1'
-              }`} />
-            </div>
+            {isMobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
           </button>
         </div>
 
         {/* Mobile Navigation */}
-        <div className={`lg:hidden transition-all duration-500 ease-in-out ${
-          isMobileMenuOpen 
-            ? 'max-h-96 opacity-100 visible' 
-            : 'max-h-0 opacity-0 invisible'
-        }`}>
-          <div className="px-2 pt-2 pb-4 space-y-1 bg-black/95 backdrop-blur-xl rounded-xl mt-2 border border-white/10 shadow-2xl">
-            {navigation.map((item, index) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={`block px-4 py-3 rounded-lg text-base font-medium transition-all duration-300 ${
-                  isActive(item.href)
-                    ? 'text-blue-400 bg-blue-400/10 border border-blue-400/20'
-                    : 'text-gray-300 hover:text-white hover:bg-white/5'
-                }`}
-                onClick={() => setIsMobileMenuOpen(false)}
-                style={{ animationDelay: `${index * 50}ms` }}
-              >
-                {item.name}
-              </Link>
-            ))}
-            <div className="pt-4 border-t border-white/10">
-              <Link
-                href="/contact"
-                className="block w-full px-4 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-lg text-center transition-all duration-300 hover:shadow-lg"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Get Started
-              </Link>
-            </div>
+        {isMobileMenuOpen && (
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-xl border-b border-white/10 py-4 animate-fade-in">
+            <nav className="space-y-2">
+              {navigation.map((item) => (
+                <div key={item.name}>
+                  {item.dropdown ? (
+                    <div>
+                      <button
+                        onClick={() => handleDropdownToggle(item.name)}
+                        className="w-full text-left px-4 py-3 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all duration-200 flex items-center justify-between"
+                      >
+                        {item.name}
+                        <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
+                          activeDropdown === item.name ? 'rotate-180' : ''
+                        }`} />
+                      </button>
+                      {activeDropdown === item.name && (
+                        <div className="pl-4 space-y-1">
+                          {item.dropdown.map((dropdownItem) => (
+                            <Link
+                              key={dropdownItem.name}
+                              href={dropdownItem.href}
+                              className="block px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-white/5 transition-all duration-200"
+                              onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                              {dropdownItem.name}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="block px-4 py-3 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all duration-200"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  )}
+                </div>
+              ))}
+              <div className="pt-4 border-t border-white/10">
+                <Link
+                  href="/docs"
+                  className="block px-4 py-3 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all duration-200"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Documentation
+                </Link>
+                <Link
+                  href="/contact"
+                  className="block mx-4 mt-3 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl text-center transition-all duration-300 hover:from-blue-700 hover:to-purple-700"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Get Started
+                </Link>
+              </div>
+            </nav>
           </div>
-        </div>
+        )}
       </div>
     </header>
   );
