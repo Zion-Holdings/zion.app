@@ -343,7 +343,7 @@ export default function HomePage() {
                   <li>• Threat detection & response</li>
                   <li>• Zero-trust architecture</li>
                 </ul>
-                <Link href="/SECURITY.md" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
+                <Link href="/docs/security" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
                   View Security Guide →
                 </Link>
               </div>
@@ -357,7 +357,7 @@ export default function HomePage() {
                   <li>• Security testing</li>
                   <li>• Continuous validation</li>
                 </ul>
-                <Link href="/TESTING.md" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
+                <Link href="/docs/testing" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
                   View Testing Guide →
                 </Link>
               </div>
@@ -371,7 +371,7 @@ export default function HomePage() {
                   <li>• Analytics dashboard</li>
                   <li>• Predictive maintenance</li>
                 </ul>
-                <Link href="/PERFORMANCE.md" className="text-green-400 hover:text-green-300 text-sm font-semibold">
+                <Link href="/docs/performance" className="text-green-400 hover:text-green-300 text-sm font-semibold">
                   View Performance Guide →
                 </Link>
               </div>
@@ -391,7 +391,7 @@ export default function HomePage() {
                   <li>• Health monitoring</li>
                   <li>• Self-healing infrastructure</li>
                 </ul>
-                <Link href="/README_ULTIMATE_REDUNDANCY.md" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
+                <Link href="/docs/redundancy-ultimate" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
                   Learn More →
                 </Link>
               </div>
@@ -405,7 +405,7 @@ export default function HomePage() {
                   <li>• Error prevention</li>
                   <li>• Predictive analytics</li>
                 </ul>
-                <Link href="/README_COMPREHENSIVE_REDUNDANCY.md" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
+                <Link href="/docs/redundancy-comprehensive" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
                   Learn More →
                 </Link>
               </div>
@@ -419,7 +419,7 @@ export default function HomePage() {
                   <li>• Performance monitoring</li>
                   <li>• Cluster management</li>
                 </ul>
-                <Link href="/README_PM2_REDUNDANCY_COMPLETE.md" className="text-green-400 hover:text-green-300 text-sm font-semibold">
+                <Link href="/docs/redundancy-pm2" className="text-green-400 hover:text-green-300 text-sm font-semibold">
                   Learn More →
                 </Link>
               </div>
@@ -464,7 +464,7 @@ export default function HomePage() {
                   <li>• Scalable patterns</li>
                   <li>• Modern tech stack</li>
                 </ul>
-                <Link href="/ARCHITECTURE.md" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
+                <Link href="/docs/architecture" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
                   View Architecture Guide →
                 </Link>
               </div>
@@ -478,7 +478,7 @@ export default function HomePage() {
                   <li>• Blue-green deployments</li>
                   <li>• Rollback strategies</li>
                 </ul>
-                <Link href="/DEPLOYMENT.md" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
+                <Link href="/docs/deployment" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
                   View Deployment Guide →
                 </Link>
               </div>
@@ -492,7 +492,7 @@ export default function HomePage() {
                   <li>• Best practices</li>
                   <li>• Developer guides</li>
                 </ul>
-                <Link href="/API.md" className="text-green-400 hover:text-green-300 text-sm font-semibold">
+                <Link href="/docs/api" className="text-green-400 hover:text-green-300 text-sm font-semibold">
                   View API Documentation →
                 </Link>
               </div>
@@ -621,20 +621,20 @@ export default function HomePage() {
               <div>
                 <h3 className="text-lg font-semibold text-green-400 mb-4">Documentation</h3>
                 <ul className="space-y-2 text-sm text-white/70">
-                  <li><Link href="/README.md" className="hover:text-green-300 transition-colors">Project Overview</Link></li>
-                  <li><Link href="/ARCHITECTURE.md" className="hover:text-green-300 transition-colors">Architecture</Link></li>
-                  <li><Link href="/API.md" className="hover:text-green-300 transition-colors">API Docs</Link></li>
-                  <li><Link href="/CONTRIBUTING.md" className="hover:text-green-300 transition-colors">Contributing</Link></li>
+                  <li><Link href="/docs/project-overview" className="hover:text-green-300 transition-colors">Project Overview</Link></li>
+                  <li><Link href="/docs/architecture" className="hover:text-green-300 transition-colors">Architecture</Link></li>
+                  <li><Link href="/docs/api" className="hover:text-green-300 transition-colors">API Docs</Link></li>
+                  <li><Link href="/docs/contributing" className="hover:text-green-300 transition-colors">Contributing</Link></li>
                 </ul>
               </div>
               
               <div>
                 <h3 className="text-lg font-semibold text-yellow-400 mb-4">Automation</h3>
                 <ul className="space-y-2 text-sm text-white/70">
-                  <li><Link href="/README_COMPREHENSIVE_REDUNDANCY.md" className="hover:text-yellow-300 transition-colors">Redundancy Systems</Link></li>
-                  <li><Link href="/README_ULTIMATE_REDUNDANCY.md" className="hover:text-yellow-300 transition-colors">Ultimate Redundancy</Link></li>
-                  <li><Link href="/README_PM2_REDUNDANCY_COMPLETE.md" className="hover:text-yellow-300 transition-colors">PM2 Orchestration</Link></li>
-                  <li><Link href="/AUTOMATION_COMPLETION_REPORT.md" className="hover:text-yellow-300 transition-colors">Automation Status</Link></li>
+                  <li><Link href="/docs/redundancy-comprehensive" className="hover:text-yellow-300 transition-colors">Redundancy Systems</Link></li>
+                  <li><Link href="/docs/redundancy-ultimate" className="hover:text-yellow-300 transition-colors">Ultimate Redundancy</Link></li>
+                  <li><Link href="/docs/redundancy-pm2" className="hover:text-yellow-300 transition-colors">PM2 Orchestration</Link></li>
+                  <li><Link href="/docs/automation-status" className="hover:text-yellow-300 transition-colors">Automation Status</Link></li>
                 </ul>
               </div>
             </div>
