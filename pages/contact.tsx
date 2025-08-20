@@ -29,7 +29,7 @@ export default function ContactPage() {
       icon: '📧',
       title: 'Email',
       description: 'Get in touch with our team',
-      contact: 'hello@ziontech.com',
+      contact: 'kleber@ziontechgroup.com',
       color: 'text-cyan-400',
       gradient: 'from-cyan-400 to-blue-500',
     },
@@ -37,7 +37,7 @@ export default function ContactPage() {
       icon: '📱',
       title: 'Phone',
       description: 'Speak with an expert',
-      contact: '+1 (555) 123-4567',
+      contact: '+1 302 464 0950',
       color: 'text-fuchsia-400',
       gradient: 'from-fuchsia-400 to-purple-500',
     },
@@ -53,25 +53,11 @@ export default function ContactPage() {
 
   const officeLocations = [
     {
-      city: 'San Francisco',
+      city: 'Middletown',
       country: 'United States',
-      address: '123 Innovation Drive, San Francisco, CA 94105',
+      address: '364 E Main St STE 1008, Middletown, DE 19709',
       icon: '🏢',
       gradient: 'from-blue-400 to-cyan-500',
-    },
-    {
-      city: 'London',
-      country: 'United Kingdom',
-      address: '456 Tech Street, London, EC1A 1BB',
-      icon: '🏛️',
-      gradient: 'from-purple-400 to-pink-500',
-    },
-    {
-      city: 'Singapore',
-      country: 'Singapore',
-      address: '789 Digital Road, Singapore 018956',
-      icon: '🌆',
-      gradient: 'from-green-400 to-teal-500',
     },
   ];
 

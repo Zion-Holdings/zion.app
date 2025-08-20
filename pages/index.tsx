@@ -16,45 +16,51 @@ export default function HomePage() {
 
   const platformFeatures = [
     {
-      icon: <Cloud className="w-8 h-8 text-white" />,
+      icon: '☁️',
       title: 'Real Micro SaaS Services',
       description: '55+ fully functional micro SaaS tools with real implementations, not just mockups.',
       color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
+      textColor: 'text-cyan-400',
       gradient: 'from-cyan-400 to-blue-500',
     },
     {
-      icon: <Bot className="w-8 h-8 text-white" />,
+      icon: '🤖',
       title: 'AI-Powered Solutions',
       description: 'Advanced AI content generation, SEO automation, chatbots, and business intelligence.',
       color: 'bg-gradient-to-br from-fuchsia-500 to-purple-600',
+      textColor: 'text-fuchsia-400',
       gradient: 'from-fuchsia-400 to-purple-500',
     },
     {
-      icon: <RefreshCw className="w-8 h-8 text-white" />,
+      icon: '🔄',
       title: 'Enterprise Reliability',
       description: '99.9% uptime guarantee, automated scaling, and intelligent resource management.',
       color: 'bg-gradient-to-br from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
       gradient: 'from-green-400 to-emerald-500',
     },
     {
-      icon: <Zap className="w-8 h-8 text-white" />,
+      icon: '⚡',
       title: 'Lightning Fast Setup',
       description: 'Get started in minutes with our intuitive interfaces and automated onboarding.',
       color: 'bg-gradient-to-br from-orange-500 to-red-600',
+      textColor: 'text-orange-400',
       gradient: 'from-orange-400 to-red-500',
     },
     {
-      icon: <Shield className="w-8 h-8 text-white" />,
+      icon: '🛡️',
       title: 'Bank-Level Security',
       description: 'SOC 2 compliance, advanced encryption, and automated security monitoring.',
       color: 'bg-gradient-to-br from-indigo-500 to-purple-600',
+      textColor: 'text-indigo-400',
       gradient: 'from-indigo-400 to-purple-500',
     },
     {
-      icon: <BarChart3 className="w-8 h-8 text-white" />,
+      icon: '📊',
       title: 'Transparent Pricing',
       description: 'No hidden fees, simple monthly pricing that scales with your business needs.',
       color: 'bg-gradient-to-br from-teal-500 to-cyan-600',
+      textColor: 'text-teal-400',
       gradient: 'from-teal-400 to-cyan-500',
     },
   ];
@@ -223,12 +229,7 @@ export default function HomePage() {
       </section>
 
       {/* Platform Capabilities */}
-      <Features
-        title="Revolutionary Platform Capabilities"
-        subtitle="Discover the cutting-edge technologies and intelligent systems that power the future of autonomous innovation."
-        features={platformFeatures}
-        columns={3}
-      />
+      <Features features={platformFeatures} />
 
       {/* Features Section */}
       <section className="py-20">

@@ -77,7 +77,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Content marketers, agencies, e-commerce businesses, and content creators',
       trialDays: 14,
       setupTime: '5 minutes',
-      category: 'Content & Marketing'
+      category: 'Content & Marketing',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI SEO Automation Suite',
@@ -104,7 +109,12 @@ export default function MicroSaasPage() {
       targetAudience: 'SEO specialists, digital marketers, and agencies',
       trialDays: 14,
       setupTime: '15 minutes',
-      category: 'Content & Marketing'
+      category: 'Content & Marketing',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Chatbot Builder',
@@ -131,7 +141,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Customer support teams, e-commerce businesses, and SaaS companies',
       trialDays: 14,
       setupTime: '20 minutes',
-      category: 'Customer Experience'
+      category: 'Customer Experience',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'Cloud Cost Optimizer',
@@ -158,7 +173,12 @@ export default function MicroSaasPage() {
       targetAudience: 'DevOps teams, cloud architects, IT managers, and finance teams',
       trialDays: 14,
       setupTime: '20 minutes',
-      category: 'Development & DevOps'
+      category: 'Development & DevOps',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'Performance Monitoring Hub',
@@ -185,7 +205,12 @@ export default function MicroSaasPage() {
       targetAudience: 'DevOps teams, developers, and performance engineers',
       trialDays: 14,
       setupTime: '25 minutes',
-      category: 'Development & DevOps'
+      category: 'Development & DevOps',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'Design System Builder',
@@ -212,7 +237,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Design teams, UI/UX designers, and product managers',
       trialDays: 14,
       setupTime: '30 minutes',
-      category: 'Design & UX'
+      category: 'Design & UX',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Sales Assistant',
@@ -239,7 +269,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Sales teams, B2B companies, and sales managers',
       trialDays: 14,
       setupTime: '25 minutes',
-      category: 'Sales & CRM'
+      category: 'Sales & CRM',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Legal Assistant',
@@ -293,7 +328,12 @@ export default function MicroSaasPage() {
       targetAudience: 'HR teams, small to medium businesses, and HR managers',
       trialDays: 14,
       setupTime: '30 minutes',
-      category: 'Human Resources'
+      category: 'Human Resources',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'Business Intelligence Hub',
@@ -320,7 +360,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Data analysts, business intelligence teams, and executives',
       trialDays: 14,
       setupTime: '45 minutes',
-      category: 'Analytics & Data'
+      category: 'Analytics & Data',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Video Editor Pro',
@@ -347,7 +392,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Content creators, marketers, and video professionals',
       trialDays: 14,
       setupTime: '10 minutes',
-      category: 'Content & Marketing'
+      category: 'Content & Marketing',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'Email Marketing Automation',
@@ -374,7 +424,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Small businesses, marketers, and e-commerce stores',
       trialDays: 14,
       setupTime: '15 minutes',
-      category: 'Content & Marketing'
+      category: 'Content & Marketing',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'Social Media Scheduler',
@@ -401,7 +456,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Social media managers, small businesses, and influencers',
       trialDays: 14,
       setupTime: '10 minutes',
-      category: 'Content & Marketing'
+      category: 'Content & Marketing',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'Invoice & Billing Manager',
@@ -428,7 +488,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Freelancers, small businesses, and consultants',
       trialDays: 14,
       setupTime: '20 minutes',
-      category: 'Finance & Operations'
+      category: 'Finance & Operations',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'Project Management Hub',
@@ -455,7 +520,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Project managers, development teams, and creative agencies',
       trialDays: 14,
       setupTime: '25 minutes',
-      category: 'Productivity & Collaboration'
+      category: 'Productivity & Collaboration',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'Customer Support Ticketing',
@@ -482,7 +552,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Customer support teams, SaaS companies, and e-commerce businesses',
       trialDays: 14,
       setupTime: '30 minutes',
-      category: 'Customer Experience'
+      category: 'Customer Experience',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'Analytics Dashboard',
@@ -509,7 +584,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Data analysts, business users, and product teams',
       trialDays: 14,
       setupTime: '35 minutes',
-      category: 'Analytics & Data'
+      category: 'Analytics & Data',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     // New Real Micro SaaS Services
     {
@@ -564,7 +644,12 @@ export default function MicroSaasPage() {
       targetAudience: 'API developers, technical writers, and product managers',
       trialDays: 14,
       setupTime: '10 minutes',
-      category: 'Development & DevOps'
+      category: 'Development & DevOps',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'Database Performance Monitor',
@@ -591,7 +676,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Database administrators, DevOps teams, and system architects',
       trialDays: 14,
       setupTime: '20 minutes',
-      category: 'Development & DevOps'
+      category: 'Development & DevOps',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Customer Feedback Analyzer',
@@ -645,7 +735,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Market researchers, business analysts, and product managers',
       trialDays: 14,
       setupTime: '20 minutes',
-      category: 'Analytics & Data'
+      category: 'Analytics & Data',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Legal Document Generator',
@@ -699,7 +794,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Individuals, small businesses, and financial advisors',
       trialDays: 14,
       setupTime: '20 minutes',
-      category: 'Finance & Operations'
+      category: 'Finance & Operations',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Supply Chain Optimizer',
@@ -726,7 +826,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Supply chain managers, logistics companies, and manufacturers',
       trialDays: 14,
       setupTime: '45 minutes',
-      category: 'Finance & Operations'
+      category: 'Finance & Operations',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     // Enhanced Real Micro SaaS Services
     {
@@ -754,7 +859,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Customer support teams, marketers, and e-commerce businesses',
       trialDays: 14,
       setupTime: '30 minutes',
-      category: 'Customer Experience'
+      category: 'Customer Experience',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'App Performance Monitor',
@@ -781,7 +891,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Developers, DevOps teams, and product managers',
       trialDays: 14,
       setupTime: '10 minutes',
-      category: 'Development & DevOps'
+      category: 'Development & DevOps',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'Design System Builder',
@@ -808,7 +923,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Design teams, product managers, and design system architects',
       trialDays: 14,
       setupTime: '15 minutes',
-      category: 'Design & UX'
+      category: 'Design & UX',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Accounting Assistant',
@@ -835,7 +955,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Small businesses, accountants, and financial managers',
       trialDays: 14,
       setupTime: '25 minutes',
-      category: 'Finance & Operations'
+      category: 'Finance & Operations',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Customer Success Platform',
@@ -862,7 +987,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Customer success teams, SaaS companies, and B2B businesses',
       trialDays: 14,
       setupTime: '30 minutes',
-      category: 'Customer Experience'
+      category: 'Customer Experience',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Product Analytics',
@@ -889,7 +1019,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Product managers, UX researchers, and growth teams',
       trialDays: 14,
       setupTime: '20 minutes',
-      category: 'Analytics & Data'
+      category: 'Analytics & Data',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Code Review Assistant',
@@ -943,7 +1078,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Business analysts, marketing teams, and strategic planners',
       trialDays: 14,
       setupTime: '25 minutes',
-      category: 'Business Intelligence'
+      category: 'Business Intelligence',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Customer Feedback Analyzer',
@@ -997,7 +1137,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Retail businesses, e-commerce stores, and warehouse managers',
       trialDays: 14,
       setupTime: '30 minutes',
-      category: 'Operations & Logistics'
+      category: 'Operations & Logistics',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Lead Scoring Platform',
@@ -1024,7 +1169,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Sales teams, marketing teams, and B2B companies',
       trialDays: 14,
       setupTime: '20 minutes',
-      category: 'Sales & Marketing'
+      category: 'Sales & Marketing',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Document Management',
@@ -1051,7 +1201,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Businesses of all sizes, legal firms, and document-heavy industries',
       trialDays: 14,
       setupTime: '20 minutes',
-      category: 'Productivity & Collaboration'
+      category: 'Productivity & Collaboration',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Meeting Assistant',
@@ -1078,7 +1233,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Businesses, remote teams, and meeting-heavy organizations',
       trialDays: 14,
       setupTime: '10 minutes',
-      category: 'Productivity & Collaboration'
+      category: 'Productivity & Collaboration',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Compliance Monitor',
@@ -1105,7 +1265,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Compliance officers, legal teams, and regulated businesses',
       trialDays: 14,
       setupTime: '30 minutes',
-      category: 'Legal & Compliance'
+      category: 'Legal & Compliance',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Translation Hub',
@@ -1132,7 +1297,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Global businesses, e-commerce stores, and content creators',
       trialDays: 14,
       setupTime: '15 minutes',
-      category: 'Content & Marketing'
+      category: 'Content & Marketing',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Recruitment Platform',
@@ -1159,7 +1329,12 @@ export default function MicroSaasPage() {
       targetAudience: 'HR teams, recruiters, and growing businesses',
       trialDays: 14,
       setupTime: '25 minutes',
-      category: 'Human Resources'
+      category: 'Human Resources',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Customer Segmentation',
@@ -1186,7 +1361,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Marketing teams, data analysts, and customer success teams',
       trialDays: 14,
       setupTime: '20 minutes',
-      category: 'Analytics & Data'
+      category: 'Analytics & Data',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Workflow Automation',
@@ -1213,7 +1393,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Businesses of all sizes, operations teams, and process managers',
       trialDays: 14,
       setupTime: '25 minutes',
-      category: 'Productivity & Collaboration'
+      category: 'Productivity & Collaboration',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Security Monitor',
@@ -1240,7 +1425,12 @@ export default function MicroSaasPage() {
       targetAudience: 'IT security teams, compliance officers, and security-conscious businesses',
       trialDays: 14,
       setupTime: '30 minutes',
-      category: 'Security & Compliance'
+      category: 'Security & Compliance',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Data Pipeline',
@@ -1267,7 +1457,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Data engineers, DevOps teams, and data-driven businesses',
       trialDays: 14,
       setupTime: '30 minutes',
-      category: 'Development & DevOps'
+      category: 'Development & DevOps',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Knowledge Base',
@@ -1294,7 +1489,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Businesses of all sizes, knowledge workers, and documentation teams',
       trialDays: 14,
       setupTime: '20 minutes',
-      category: 'Productivity & Collaboration'
+      category: 'Productivity & Collaboration',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Marketing Automation Suite',
@@ -1321,7 +1521,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Marketing teams, agencies, and growth-focused businesses',
       trialDays: 14,
       setupTime: '25 minutes',
-      category: 'Marketing & Growth'
+      category: 'Marketing & Growth',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Customer Support Platform',
@@ -1348,7 +1553,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Customer support teams, e-commerce businesses, and service companies',
       trialDays: 14,
       setupTime: '20 minutes',
-      category: 'Customer Experience'
+      category: 'Customer Experience',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Financial Planning Tool',
@@ -1375,7 +1585,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Individuals, small businesses, and financial advisors',
       trialDays: 14,
       setupTime: '15 minutes',
-      category: 'Finance & Accounting'
+      category: 'Finance & Accounting',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Project Management Hub',
@@ -1402,7 +1617,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Project managers, development teams, and creative agencies',
       trialDays: 14,
       setupTime: '20 minutes',
-      category: 'Productivity & Collaboration'
+      category: 'Productivity & Collaboration',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI E-commerce Optimization',
@@ -1429,7 +1649,12 @@ export default function MicroSaasPage() {
       targetAudience: 'E-commerce businesses, online retailers, and dropshippers',
       trialDays: 14,
       setupTime: '30 minutes',
-      category: 'E-commerce & Retail'
+      category: 'E-commerce & Retail',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI HR Management Platform',
@@ -1456,7 +1681,12 @@ export default function MicroSaasPage() {
       targetAudience: 'HR professionals, small businesses, and growing companies',
       trialDays: 14,
       setupTime: '25 minutes',
-      category: 'Human Resources'
+      category: 'Human Resources',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Security & Compliance Monitor',
@@ -1483,7 +1713,12 @@ export default function MicroSaasPage() {
       targetAudience: 'IT security teams, compliance officers, and enterprise businesses',
       trialDays: 14,
       setupTime: '45 minutes',
-      category: 'Security & Compliance'
+      category: 'Security & Compliance',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'API Gateway Manager',
@@ -1510,7 +1745,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Developers, DevOps teams, and businesses with multiple APIs',
       trialDays: 14,
       setupTime: '20 minutes',
-      category: 'Development & DevOps'
+      category: 'Development & DevOps',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'Database Performance Optimizer',
@@ -1537,7 +1777,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Database administrators, DevOps engineers, and businesses with performance-critical databases',
       trialDays: 14,
       setupTime: '30 minutes',
-      category: 'Development & DevOps'
+      category: 'Development & DevOps',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'Container Orchestration Platform',
@@ -1564,7 +1809,12 @@ export default function MicroSaasPage() {
       targetAudience: 'DevOps teams, cloud engineers, and businesses using containerized applications',
       trialDays: 14,
       setupTime: '45 minutes',
-      category: 'Development & DevOps'
+      category: 'Development & DevOps',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'Real-time Analytics Engine',
@@ -1591,7 +1841,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Data engineers, real-time applications, and businesses requiring instant insights',
       trialDays: 14,
       setupTime: '60 minutes',
-      category: 'Analytics & Data'
+      category: 'Analytics & Data',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'Multi-cloud Cost Manager',
@@ -1618,7 +1873,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Cloud architects, DevOps teams, and businesses using multiple cloud providers',
       trialDays: 14,
       setupTime: '25 minutes',
-      category: 'Cloud & Infrastructure'
+      category: 'Cloud & Infrastructure',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'DevOps Automation Platform',
@@ -1645,7 +1905,12 @@ export default function MicroSaasPage() {
       targetAudience: 'DevOps engineers, development teams, and businesses automating their software delivery',
       trialDays: 14,
       setupTime: '40 minutes',
-      category: 'Development & DevOps'
+      category: 'Development & DevOps',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI-Powered Testing Suite',
@@ -1672,7 +1937,12 @@ export default function MicroSaasPage() {
       targetAudience: 'QA engineers, developers, and businesses requiring comprehensive testing automation',
       trialDays: 14,
       setupTime: '35 minutes',
-      category: 'Development & DevOps'
+      category: 'Development & DevOps',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'Microservices Monitoring',
@@ -1699,7 +1969,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Microservices architects, DevOps teams, and businesses with distributed systems',
       trialDays: 14,
       setupTime: '50 minutes',
-      category: 'Development & DevOps'
+      category: 'Development & DevOps',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'Data Pipeline Orchestrator',
@@ -1753,7 +2028,12 @@ export default function MicroSaasPage() {
       targetAudience: 'E-commerce businesses, online retailers, and digital marketers',
       trialDays: 14,
       setupTime: '20 minutes',
-      category: 'Analytics & Data'
+      category: 'Analytics & Data',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'Customer Journey Mapper',
@@ -1780,7 +2060,12 @@ export default function MicroSaasPage() {
       targetAudience: 'UX designers, product managers, and customer experience teams',
       trialDays: 14,
       setupTime: '25 minutes',
-      category: 'Customer Experience'
+      category: 'Customer Experience',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'Subscription Management Platform',
@@ -1807,7 +2092,12 @@ export default function MicroSaasPage() {
       targetAudience: 'SaaS businesses, subscription companies, and recurring revenue models',
       trialDays: 14,
       setupTime: '30 minutes',
-      category: 'Finance & Operations'
+      category: 'Finance & Operations',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'Vendor Management System',
@@ -1834,7 +2124,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Procurement teams, compliance officers, and businesses managing multiple vendors',
       trialDays: 14,
       setupTime: '20 minutes',
-      category: 'Finance & Operations'
+      category: 'Finance & Operations',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'Employee Onboarding Platform',
@@ -1861,7 +2156,12 @@ export default function MicroSaasPage() {
       targetAudience: 'HR teams, small businesses, and companies with frequent hiring',
       trialDays: 14,
       setupTime: '15 minutes',
-      category: 'HR & People'
+      category: 'HR & People',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'Inventory Forecasting Engine',
@@ -1888,7 +2188,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Retail businesses, manufacturers, and distributors',
       trialDays: 14,
       setupTime: '40 minutes',
-      category: 'Finance & Operations'
+      category: 'Finance & Operations',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'Legal Document Generator',
@@ -1915,7 +2220,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Legal professionals, small businesses, and contract-heavy industries',
       trialDays: 14,
       setupTime: '25 minutes',
-      category: 'Legal & Compliance'
+      category: 'Legal & Compliance',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'Financial Planning Tool',
@@ -1939,7 +2249,15 @@ export default function MicroSaasPage() {
       textColor: 'text-green-400',
       link: 'https://ziontechgroup.com/financial-planning-tool',
       marketPosition: 'Competitive with Mint ($0), YNAB ($14.99), and Personal Capital ($0)',
-      targetAudience: 'Individuals, financial advisors, and small businesses'
+      targetAudience: 'Individuals, financial advisors, and small businesses',
+      trialDays: 14,
+      setupTime: '20 minutes',
+      category: 'Finance & Investment',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI-Powered Landing Page Builder',
@@ -1963,7 +2281,15 @@ export default function MicroSaasPage() {
       textColor: 'text-orange-400',
       link: 'https://ziontechgroup.com/ai-landing-page-builder',
       marketPosition: 'Competitive with Unbounce ($80-300), Leadpages ($27-197), and Instapage ($199-999)',
-      targetAudience: 'Digital marketers, e-commerce businesses, and lead generation specialists'
+      targetAudience: 'Digital marketers, e-commerce businesses, and lead generation specialists',
+      trialDays: 14,
+      setupTime: '25 minutes',
+      category: 'Marketing & Growth',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI-Powered Customer Churn Prediction',
@@ -1987,7 +2313,15 @@ export default function MicroSaasPage() {
       textColor: 'text-red-400',
       link: 'https://ziontechgroup.com/ai-churn-prediction',
       marketPosition: 'Competitive with Gainsight ($0-1000+), Totango ($0-1000+), and ChurnZero ($0-1000+)',
-      targetAudience: 'Customer success teams, product managers, and subscription businesses'
+      targetAudience: 'Customer success teams, product managers, and subscription businesses',
+      trialDays: 14,
+      setupTime: '30 minutes',
+      category: 'Customer Experience',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI-Powered Inventory Management',
@@ -2011,7 +2345,15 @@ export default function MicroSaasPage() {
       textColor: 'text-indigo-400',
       link: 'https://ziontechgroup.com/ai-inventory-management',
       marketPosition: 'Competitive with TradeGecko ($0-1000+), Zoho Inventory ($0-1000+), and Fishbowl ($0-1000+)',
-      targetAudience: 'E-commerce businesses, retailers, and inventory managers'
+      targetAudience: 'E-commerce businesses, retailers, and inventory managers',
+      trialDays: 14,
+      setupTime: '35 minutes',
+      category: 'Operations & Logistics',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI-Powered Social Media Analytics',
@@ -2059,7 +2401,15 @@ export default function MicroSaasPage() {
       textColor: 'text-blue-400',
       link: 'https://ziontechgroup.com/ai-support-analytics',
       marketPosition: 'Competitive with Zendesk ($49-215), Freshdesk ($15-79), and Help Scout ($20-65)',
-      targetAudience: 'Customer support managers, support teams, and customer experience professionals'
+      targetAudience: 'Customer support managers, support teams, and customer experience professionals',
+      trialDays: 14,
+      setupTime: '25 minutes',
+      category: 'Customer Experience',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI-Powered Website Performance Optimizer',
@@ -2083,7 +2433,15 @@ export default function MicroSaasPage() {
       textColor: 'text-yellow-400',
       link: 'https://ziontechgroup.com/ai-website-optimizer',
       marketPosition: 'Competitive with GTmetrix (Free-$15), PageSpeed Insights (Free), and WebPageTest (Free-$99)',
-      targetAudience: 'Web developers, digital marketers, and website owners'
+      targetAudience: 'Web developers, digital marketers, and website owners',
+      trialDays: 14,
+      setupTime: '30 minutes',
+      category: 'Development & Performance',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI-Powered Customer Feedback Sentiment Analysis',
@@ -2131,7 +2489,15 @@ export default function MicroSaasPage() {
       textColor: 'text-green-400',
       link: 'https://ziontechgroup.com/ai-email-automation',
       marketPosition: 'Competitive with Mailchimp ($13-350), ConvertKit ($29-59), and ActiveCampaign ($29-259)',
-      targetAudience: 'Email marketers, digital marketers, and e-commerce businesses'
+      targetAudience: 'Email marketers, digital marketers, and e-commerce businesses',
+      trialDays: 14,
+      setupTime: '25 minutes',
+      category: 'Marketing & Automation',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI-Powered Customer Journey Mapping',
@@ -2155,7 +2521,15 @@ export default function MicroSaasPage() {
       textColor: 'text-teal-400',
       link: 'https://ziontechgroup.com/ai-customer-journey',
       marketPosition: 'Competitive with UXPressia ($0-1000+), Smaply ($0-1000+), and Touchpoint Dashboard ($0-1000+)',
-      targetAudience: 'Customer experience professionals, UX designers, and product managers'
+      targetAudience: 'Customer experience professionals, UX designers, and product managers',
+      trialDays: 14,
+      setupTime: '30 minutes',
+      category: 'Customer Experience',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI-Powered Competitive Intelligence',
@@ -2179,7 +2553,15 @@ export default function MicroSaasPage() {
       textColor: 'text-blue-400',
       link: 'https://ziontechgroup.com/ai-competitive-intelligence',
       marketPosition: 'Competitive with Crayon ($0-1000+), Kompyte ($0-1000+), and Brandwatch ($0-1000+)',
-      targetAudience: 'Business strategists, marketing teams, and product managers'
+      targetAudience: 'Business strategists, marketing teams, and product managers',
+      trialDays: 14,
+      setupTime: '25 minutes',
+      category: 'Business Intelligence',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI-Powered Customer Lifetime Value Optimization',
@@ -2203,7 +2585,15 @@ export default function MicroSaasPage() {
       textColor: 'text-green-400',
       link: 'https://ziontechgroup.com/ai-clv-optimization',
       marketPosition: 'Competitive with Optimove ($0-1000+), Retention Science ($0-1000+), and Custora ($0-1000+)',
-      targetAudience: 'Customer success managers, marketing teams, and business analysts'
+      targetAudience: 'Customer success managers, marketing teams, and business analysts',
+      trialDays: 14,
+      setupTime: '30 minutes',
+      category: 'Customer Experience',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     // NEW REAL MICRO SAAS SERVICES
     {
@@ -2228,7 +2618,15 @@ export default function MicroSaasPage() {
       textColor: 'text-indigo-400',
       link: 'https://ziontechgroup.com/ai-contract-analysis',
       marketPosition: 'Competitive with Evisort ($0-1000+), ContractPodAi ($0-1000+), and DocuSign ($10-25)',
-      targetAudience: 'Legal teams, contract managers, and compliance officers'
+      targetAudience: 'Legal teams, contract managers, and compliance officers',
+      trialDays: 14,
+      setupTime: '35 minutes',
+      category: 'Legal & Compliance',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI-Powered Sales Forecasting',
@@ -2252,7 +2650,15 @@ export default function MicroSaasPage() {
       textColor: 'text-blue-400',
       link: 'https://ziontechgroup.com/ai-sales-forecasting',
       marketPosition: 'Competitive with Clari ($0-1000+), Gong ($0-1000+), and Chorus ($0-1000+)',
-      targetAudience: 'Sales managers, revenue operations, and business analysts'
+      targetAudience: 'Sales managers, revenue operations, and business analysts',
+      trialDays: 14,
+      setupTime: '30 minutes',
+      category: 'Sales & Operations',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI-Powered Customer Service Analytics',
@@ -2276,7 +2682,15 @@ export default function MicroSaasPage() {
       textColor: 'text-teal-400',
       link: 'https://ziontechgroup.com/ai-customer-service-analytics',
       marketPosition: 'Competitive with Zendesk ($49-215), Freshdesk ($15-79), and Help Scout ($20-65)',
-      targetAudience: 'Customer service managers, support teams, and CX professionals'
+      targetAudience: 'Customer service managers, support teams, and CX professionals',
+      trialDays: 14,
+      setupTime: '25 minutes',
+      category: 'Customer Experience',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI-Powered Product Recommendation Engine',
@@ -2300,7 +2714,15 @@ export default function MicroSaasPage() {
       textColor: 'text-purple-400',
       link: 'https://ziontechgroup.com/ai-product-recommendations',
       marketPosition: 'Competitive with Algolia ($1-1000+), Elasticsearch ($0-1000+), and Amazon Personalize ($0-1000+)',
-      targetAudience: 'E-commerce businesses, online retailers, and product managers'
+      targetAudience: 'E-commerce businesses, online retailers, and product managers',
+      trialDays: 14,
+      setupTime: '35 minutes',
+      category: 'E-commerce & Retail',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI-Powered Fraud Detection',
@@ -2324,7 +2746,15 @@ export default function MicroSaasPage() {
       textColor: 'text-red-400',
       link: 'https://ziontechgroup.com/ai-fraud-detection',
       marketPosition: 'Competitive with Sift ($0-1000+), Signifyd ($0-1000+), and Forter ($0-1000+)',
-      targetAudience: 'Financial institutions, e-commerce businesses, and security teams'
+      targetAudience: 'Financial institutions, e-commerce businesses, and security teams',
+      trialDays: 14,
+      setupTime: '40 minutes',
+      category: 'Security & Compliance',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI-Powered Inventory Forecasting',
@@ -2348,7 +2778,15 @@ export default function MicroSaasPage() {
       textColor: 'text-green-400',
       link: 'https://ziontechgroup.com/ai-inventory-forecasting',
       marketPosition: 'Competitive with TradeGecko ($0-1000+), Zoho Inventory ($0-1000+), and Fishbowl ($0-1000+)',
-      targetAudience: 'Manufacturing companies, retailers, and supply chain managers'
+      targetAudience: 'Manufacturing companies, retailers, and supply chain managers',
+      trialDays: 14,
+      setupTime: '45 minutes',
+      category: 'Operations & Logistics',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI-Powered Customer Onboarding',
@@ -2372,7 +2810,15 @@ export default function MicroSaasPage() {
       textColor: 'text-orange-400',
       link: 'https://ziontechgroup.com/ai-customer-onboarding',
       marketPosition: 'Competitive with Appcues ($0-1000+), Userflow ($0-1000+), and Pendo ($0-1000+)',
-      targetAudience: 'Product managers, customer success teams, and growth marketers'
+      targetAudience: 'Product managers, customer success teams, and growth marketers',
+      trialDays: 14,
+      setupTime: '30 minutes',
+      category: 'Customer Experience',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI-Powered Email Deliverability',
@@ -2396,7 +2842,15 @@ export default function MicroSaasPage() {
       textColor: 'text-blue-400',
       link: 'https://ziontechgroup.com/ai-email-deliverability',
       marketPosition: 'Competitive with Mailgun ($35-675), SendGrid ($14.95-449), and Amazon SES ($0.10 per 1000 emails)',
-      targetAudience: 'Email marketers, marketing agencies, and businesses with large email lists'
+      targetAudience: 'Email marketers, marketing agencies, and businesses with large email lists',
+      trialDays: 14,
+      setupTime: '25 minutes',
+      category: 'Marketing & Automation',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI-Powered Social Media Management',
@@ -2498,7 +2952,12 @@ export default function MicroSaasPage() {
       targetAudience: 'DevOps engineers, cloud architects, and IT managers',
       trialDays: 14,
       setupTime: '30 minutes',
-      category: 'Cloud & Infrastructure'
+      category: 'Cloud & Infrastructure',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'API Rate Limiter Pro',
@@ -2525,7 +2984,12 @@ export default function MicroSaasPage() {
       targetAudience: 'API developers, DevOps teams, and platform engineers',
       trialDays: 14,
       setupTime: '10 minutes',
-      category: 'Development & DevOps'
+      category: 'Development & DevOps',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'Email Validation Suite',
@@ -2552,7 +3016,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Marketers, sales teams, and data quality managers',
       trialDays: 14,
       setupTime: '5 minutes',
-      category: 'Data Quality'
+      category: 'Data Quality',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'Password Generator Pro',
@@ -2579,7 +3048,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Individuals, small teams, and security-conscious users',
       trialDays: 14,
       setupTime: '2 minutes',
-      category: 'Security & Privacy'
+      category: 'Security & Privacy',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Legal Document Generator',
@@ -2606,7 +3080,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Small businesses, startups, and legal professionals',
       trialDays: 14,
       setupTime: '25 minutes',
-      category: 'Legal & Compliance'
+      category: 'Legal & Compliance',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Sales Intelligence Platform',
@@ -2633,7 +3112,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Sales teams, business development, and growth marketers',
       trialDays: 14,
       setupTime: '30 minutes',
-      category: 'Sales & Marketing'
+      category: 'Sales & Marketing',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Customer Support Analyzer',
@@ -2660,7 +3144,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Customer support teams, product managers, and customer success managers',
       trialDays: 14,
       setupTime: '15 minutes',
-      category: 'Customer Experience'
+      category: 'Customer Experience',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Compliance Monitor',
@@ -2687,7 +3176,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Compliance officers, legal teams, and risk managers',
       trialDays: 14,
       setupTime: '45 minutes',
-      category: 'Legal & Compliance'
+      category: 'Legal & Compliance',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Content Moderation',
@@ -2714,7 +3208,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Community managers, platform owners, and content teams',
       trialDays: 14,
       setupTime: '20 minutes',
-      category: 'Content & Media'
+      category: 'Content & Media',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI HR Assistant',
@@ -2741,7 +3240,12 @@ export default function MicroSaasPage() {
       targetAudience: 'HR professionals, recruiters, and small to medium businesses',
       trialDays: 14,
       setupTime: '30 minutes',
-      category: 'HR & Operations'
+      category: 'HR & Operations',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Financial Advisor',
@@ -2768,7 +3272,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Individuals, small business owners, and financial advisors',
       trialDays: 14,
       setupTime: '25 minutes',
-      category: 'Finance & Planning'
+      category: 'Finance & Planning',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Inventory Manager',
@@ -2795,7 +3304,12 @@ export default function MicroSaasPage() {
       targetAudience: 'E-commerce businesses, retailers, and warehouse managers',
       trialDays: 14,
       setupTime: '35 minutes',
-      category: 'Operations & Logistics'
+      category: 'Operations & Logistics',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Meeting Assistant',
@@ -2822,7 +3336,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Teams, executives, and busy professionals',
       trialDays: 14,
       setupTime: '10 minutes',
-      category: 'Productivity & Collaboration'
+      category: 'Productivity & Collaboration',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Customer Success Analytics',
@@ -2849,7 +3368,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Customer success managers, product managers, and business analysts',
       trialDays: 14,
       setupTime: '25 minutes',
-      category: 'Customer Experience'
+      category: 'Customer Experience',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Supply Chain Analytics',
@@ -2876,7 +3400,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Supply chain managers, operations directors, and logistics professionals',
       trialDays: 14,
       setupTime: '45 minutes',
-      category: 'Operations & Logistics'
+      category: 'Operations & Logistics',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Financial Planning Platform',
@@ -2903,7 +3432,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Individuals, small businesses, and financial advisors',
       trialDays: 14,
       setupTime: '15 minutes',
-      category: 'Finance & Planning'
+      category: 'Finance & Planning',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI HR Analytics Platform',
@@ -2930,7 +3464,12 @@ export default function MicroSaasPage() {
       targetAudience: 'HR professionals, people analytics teams, and business leaders',
       trialDays: 14,
       setupTime: '30 minutes',
-      category: 'Human Resources'
+      category: 'Human Resources',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Marketing Attribution Platform',
@@ -2957,7 +3496,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Marketing teams, growth marketers, and digital agencies',
       trialDays: 14,
       setupTime: '35 minutes',
-      category: 'Marketing & Analytics'
+      category: 'Marketing & Analytics',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Content Analytics Platform',
@@ -2984,7 +3528,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Content marketers, SEO specialists, and digital marketers',
       trialDays: 14,
       setupTime: '20 minutes',
-      category: 'Content & Marketing'
+      category: 'Content & Marketing',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI API Management Platform',
@@ -3011,7 +3560,12 @@ export default function MicroSaasPage() {
       targetAudience: 'API developers, DevOps teams, and platform engineers',
       trialDays: 14,
       setupTime: '40 minutes',
-      category: 'Development & DevOps'
+      category: 'Development & DevOps',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Compliance Monitoring Platform',
@@ -3038,7 +3592,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Compliance officers, legal teams, and risk managers',
       trialDays: 14,
       setupTime: '50 minutes',
-      category: 'Legal & Compliance'
+      category: 'Legal & Compliance',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Data Pipeline Orchestrator',
@@ -3092,7 +3651,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Global businesses, content creators, and localization teams',
       trialDays: 14,
       setupTime: '15 minutes',
-      category: 'Content & Media'
+      category: 'Content & Media',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Data Cleaner',
@@ -3119,7 +3683,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Data analysts, data engineers, and business intelligence teams',
       trialDays: 14,
       setupTime: '20 minutes',
-      category: 'Data Quality'
+      category: 'Data Quality',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Form Builder Pro',
@@ -3146,7 +3715,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Marketers, business owners, and web developers',
       trialDays: 14,
       setupTime: '10 minutes',
-      category: 'Web Development'
+      category: 'Web Development',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Backup Manager',
@@ -3173,7 +3747,12 @@ export default function MicroSaasPage() {
       targetAudience: 'IT administrators, small businesses, and data protection teams',
       trialDays: 14,
       setupTime: '15 minutes',
-      category: 'Data Protection'
+      category: 'Data Protection',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'Design System Builder Pro',
@@ -3200,7 +3779,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Design teams, product managers, and frontend developers',
       trialDays: 14,
       setupTime: '20 minutes',
-      category: 'Design & Development'
+      category: 'Design & Development',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'Performance Monitor Pro',
@@ -3227,7 +3811,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Web developers, DevOps engineers, and performance engineers',
       trialDays: 14,
       setupTime: '10 minutes',
-      category: 'Performance & Monitoring'
+      category: 'Performance & Monitoring',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'Video Editor Pro',
@@ -3281,7 +3870,12 @@ export default function MicroSaasPage() {
       targetAudience: 'IT administrators, security teams, and businesses of all sizes',
       trialDays: 14,
       setupTime: '20 minutes',
-      category: 'Security & Compliance'
+      category: 'Security & Compliance',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Learning Management System',
@@ -3308,7 +3902,12 @@ export default function MicroSaasPage() {
       targetAudience: 'HR teams, training managers, and educational institutions',
       trialDays: 14,
       setupTime: '30 minutes',
-      category: 'Human Resources'
+      category: 'Human Resources',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'IoT Device Management Hub',
@@ -3335,7 +3934,12 @@ export default function MicroSaasPage() {
       targetAudience: 'IT administrators, facility managers, and IoT developers',
       trialDays: 14,
       setupTime: '25 minutes',
-      category: 'Development & DevOps'
+      category: 'Development & DevOps',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Contract Analyzer',
@@ -3362,7 +3966,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Legal teams, contract managers, and compliance officers',
       trialDays: 14,
       setupTime: '20 minutes',
-      category: 'Legal & Compliance'
+      category: 'Legal & Compliance',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     },
     {
       name: 'AI Sales Forecasting Engine',
@@ -3389,7 +3998,12 @@ export default function MicroSaasPage() {
       targetAudience: 'Sales managers, business analysts, and revenue operations teams',
       trialDays: 14,
       setupTime: '25 minutes',
-      category: 'Sales & CRM'
+      category: 'Sales & CRM',
+      contactInfo: {
+        phone: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008, Middletown, DE 19709'
+      }
     }
   ];
 
