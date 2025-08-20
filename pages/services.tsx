@@ -983,6 +983,19 @@ export default function ServicesPage() {
       gradient: 'from-red-400 to-orange-500',
       pricing: '$89/month',
       link: 'https://ziontechgroup.com/video-editor-pro'
+    },
+    {
+      icon: '🛡️',
+      title: 'AI Fraud Detection',
+      description: 'Advanced security monitoring with real-time threat detection and automated response.',
+      features: [
+        'AI fraud detection',
+        'Real-time monitoring',
+        'Risk assessment',
+        'Automated threat response',
+        'Pattern recognition'
+      ],
+      color: 'bg-gradient-to-br from-red-500 to-pink-600',
       textColor: 'text-red-400',
       gradient: 'from-red-400 to-pink-500',
       pricing: '$199/month',
@@ -1191,7 +1204,6 @@ export default function ServicesPage() {
       gradient: 'from-pink-400 to-rose-500',
       pricing: '$79/month',
       link: 'https://ziontechgroup.com/ai-content-analytics'
->>>>>>> 32d8dc89ba9616594d7d6cf44734204dc3aba7f9
     }
   ];
 

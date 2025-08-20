@@ -1187,6 +1187,19 @@ export default function MicroSaasPage() {
       trialDays: 14,
       setupTime: '20 minutes',
       category: 'Productivity & Collaboration'
+    },
+    {
+      name: 'AI Marketing Automation Suite',
+      tagline: 'Automate your entire marketing funnel',
+      price: '$99',
+      period: '/month',
+      description: 'Comprehensive marketing automation platform with AI-powered campaign optimization, lead nurturing, and ROI tracking. Scale your marketing efforts efficiently.',
+      features: [
+        'Multi-channel automation',
+        'AI campaign optimization',
+        'Lead scoring & nurturing',
+        'A/B testing tools',
+        'ROI tracking & analytics',
         'Email marketing automation',
         'Social media scheduling',
         'CRM integration'
@@ -2891,8 +2904,6 @@ export default function MicroSaasPage() {
       trialDays: 14,
       setupTime: '15 minutes',
       category: 'Content & Media'
-=======
->>>>>>> 32d8dc89ba9616594d7d6cf44734204dc3aba7f9
     }
   ];
 
