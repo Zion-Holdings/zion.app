@@ -4,60 +4,185 @@ import { Check, Star, Zap, Shield, Users, Globe } from 'lucide-react';
 import Button from '../components/ui/Button';
 
 export default function PricingPage() {
-  const plans = [
+  const pricingTiers = [
     {
       name: 'Starter',
       price: '$29',
       period: '/month',
-      description: 'Perfect for small teams and individual developers',
+      description: 'Perfect for small businesses and startups getting started with automation.',
       features: [
         'Up to 5 team members',
-        'Basic AI assistance',
-        '10GB storage',
+        'Basic AI automation tools',
         'Email support',
+        'Standard templates',
         'Basic analytics',
-        'Standard security'
+        '1 project',
+        'Community forum access'
       ],
+      color: 'bg-gradient-to-br from-blue-500 to-indigo-600',
+      textColor: 'text-blue-400',
+      gradient: 'from-blue-400 to-indigo-500',
       popular: false,
-      icon: <Zap className="w-6 h-6" />
+      cta: 'Get Started',
+      link: 'https://ziontechgroup.com/pricing/starter'
     },
     {
       name: 'Professional',
-      price: '$99',
+      price: '$79',
       period: '/month',
-      description: 'Ideal for growing teams and businesses',
+      description: 'Ideal for growing businesses that need advanced features and team collaboration.',
       features: [
         'Up to 25 team members',
-        'Advanced AI features',
-        '100GB storage',
-        'Priority support',
-        'Advanced analytics',
-        'Enhanced security',
-        'Custom integrations',
-        'Team collaboration tools'
+        'Advanced AI automation suite',
+        'Priority email & chat support',
+        'Custom templates & branding',
+        'Advanced analytics & reporting',
+        'Unlimited projects',
+        'API access',
+        'White-label options',
+        'Advanced integrations'
       ],
+      color: 'bg-gradient-to-br from-purple-500 to-pink-600',
+      textColor: 'text-purple-400',
+      gradient: 'from-purple-400 to-pink-500',
       popular: true,
-      icon: <Star className="w-6 h-6" />
+      cta: 'Start Free Trial',
+      link: 'https://ziontechgroup.com/pricing/professional'
     },
     {
       name: 'Enterprise',
-      price: 'Custom',
-      period: '',
-      description: 'For large organizations with custom requirements',
+      price: '$199',
+      period: '/month',
+      description: 'For large organizations that need enterprise-grade features and dedicated support.',
       features: [
         'Unlimited team members',
-        'Full AI suite access',
-        'Unlimited storage',
-        '24/7 dedicated support',
-        'Custom analytics',
-        'Enterprise security',
+        'Full AI automation platform',
+        '24/7 phone & priority support',
+        'Custom development',
+        'Advanced security & compliance',
+        'Multi-tenant architecture',
         'Custom integrations',
-        'Advanced collaboration',
+        'Dedicated account manager',
         'SLA guarantees',
-        'On-premise options'
+        'On-premise deployment options'
       ],
+      color: 'bg-gradient-to-br from-emerald-500 to-teal-600',
+      textColor: 'text-emerald-400',
+      gradient: 'from-emerald-400 to-teal-500',
       popular: false,
-      icon: <Shield className="w-6 h-6" />
+      cta: 'Contact Sales',
+      link: 'https://ziontechgroup.com/pricing/enterprise'
+    }
+  ];
+
+  const microSaasPricing = [
+    {
+      category: 'Content & Marketing',
+      services: [
+        { name: 'AI Content Generator Pro', price: '$49/month', trial: '14 days free' },
+        { name: 'AI-Powered SEO Suite', price: '$89/month', trial: '14 days free' },
+        { name: 'AI Video Editor Pro', price: '$79/month', trial: '14 days free' },
+        { name: 'Email Marketing Automation Pro', price: '$29/month', trial: '14 days free' },
+        { name: 'Social Media Scheduler Pro', price: '$19/month', trial: '14 days free' }
+      ]
+    },
+    {
+      category: 'Development & DevOps',
+      services: [
+        { name: 'AI Code Review Assistant', price: '$59/month', trial: '14 days free' },
+        { name: 'API Documentation Generator', price: '$39/month', trial: '14 days free' },
+        { name: 'Database Performance Monitor', price: '$79/month', trial: '14 days free' },
+        { name: 'AI Performance Monitor Pro', price: '$39/month', trial: '14 days free' }
+      ]
+    },
+    {
+      category: 'Customer Experience',
+      services: [
+        { name: 'AI Customer Feedback Analyzer', price: '$49/month', trial: '14 days free' },
+        { name: 'AI Chatbot Platform Pro', price: '$69/month', trial: '14 days free' },
+        { name: 'Customer Support Ticketing Pro', price: '$45/month', trial: '14 days free' }
+      ]
+    },
+    {
+      category: 'Sales & CRM',
+      services: [
+        { name: 'AI Sales Intelligence Platform', price: '$99/month', trial: '14 days free' }
+      ]
+    },
+    {
+      category: 'Legal & Compliance',
+      services: [
+        { name: 'AI Legal Document Generator', price: '$149/month', trial: '14 days free' }
+      ]
+    },
+    {
+      category: 'Human Resources',
+      services: [
+        { name: 'AI HR Assistant Pro', price: '$69/month', trial: '14 days free' }
+      ]
+    },
+    {
+      category: 'Analytics & Data',
+      services: [
+        { name: 'Business Intelligence Hub', price: '$99/month', trial: '14 days free' },
+        { name: 'Analytics Dashboard Pro', price: '$55/month', trial: '14 days free' }
+      ]
+    },
+    {
+      category: 'Finance & Operations',
+      services: [
+        { name: 'Invoice & Billing Manager Pro', price: '$25/month', trial: '14 days free' },
+        { name: 'AI Financial Advisor Pro', price: '$89/month', trial: '14 days free' }
+      ]
+    },
+    {
+      category: 'Productivity & Collaboration',
+      services: [
+        { name: 'Project Management Hub Pro', price: '$35/month', trial: '14 days free' }
+      ]
+    },
+    {
+      category: 'Design & Creative',
+      services: [
+        { name: 'AI Design System Builder Pro', price: '$79/month', trial: '14 days free' }
+      ]
+    },
+    {
+      category: 'Security & Compliance',
+      services: [
+        { name: 'AI Security Monitor Pro', price: '$129/month', trial: '14 days free' }
+      ]
+    }
+  ];
+
+  const addOns = [
+    {
+      name: 'Custom Development',
+      price: '$150',
+      period: '/hour',
+      description: 'Custom feature development and integrations tailored to your specific needs.',
+      features: ['Custom API development', 'Third-party integrations', 'White-label solutions', 'Custom workflows']
+    },
+    {
+      name: 'Dedicated Support',
+      price: '$500',
+      period: '/month',
+      description: 'Priority support with dedicated technical account manager and faster response times.',
+      features: ['Dedicated account manager', 'Priority support queue', 'Custom SLA agreements', 'Quarterly business reviews']
+    },
+    {
+      name: 'Training & Onboarding',
+      price: '$2,000',
+      period: '/session',
+      description: 'Comprehensive training sessions for your team to maximize platform adoption.',
+      features: ['Custom training curriculum', 'On-site or virtual sessions', 'Best practices workshops', 'Ongoing support']
+    },
+    {
+      name: 'Data Migration',
+      price: '$3,000',
+      period: '/project',
+      description: 'Professional data migration services to ensure smooth transition to our platform.',
+      features: ['Data analysis & mapping', 'ETL process development', 'Data validation & testing', 'Go-live support']
     }
   ];
 
@@ -117,7 +242,7 @@ export default function PricingPage() {
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {plans.map((plan) => (
+              {pricingTiers.map((plan) => (
                 <div
                   key={plan.name}
                   className={`relative rounded-2xl p-8 transition-all duration-300 ${
@@ -138,7 +263,7 @@ export default function PricingPage() {
                     <div className={`w-16 h-16 mx-auto mb-6 rounded-2xl flex items-center justify-center ${
                       plan.popular ? 'bg-white/20 text-white' : 'bg-blue-500/10 text-blue-400'
                     }`}>
-                      {plan.icon}
+                      {/* Icon will be added here based on plan.name */}
                     </div>
                     <h3 className={`text-2xl font-bold mb-2 ${
                       plan.popular ? 'text-white' : 'text-white'
@@ -183,25 +308,16 @@ export default function PricingPage() {
                   </ul>
 
                   <div className="text-center">
-                    {plan.name === 'Enterprise' ? (
-                      <Button
-                        href="/contact"
-                        variant={plan.popular ? 'secondary' : 'outline'}
-                        size="lg"
-                        className="w-full"
-                      >
-                        Contact Sales
-                      </Button>
-                    ) : (
-                      <Button
-                        href="/contact"
-                        variant={plan.popular ? 'secondary' : 'outline'}
-                        size="lg"
-                        className="w-full"
-                      >
-                        Get Started
-                      </Button>
-                    )}
+                    <Button
+                      href={plan.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      variant={plan.popular ? 'secondary' : 'outline'}
+                      size="lg"
+                      className="w-full"
+                    >
+                      {plan.cta}
+                    </Button>
                   </div>
                 </div>
               ))}
@@ -984,6 +1100,90 @@ export default function PricingPage() {
               >
                 View All 50+ Services
               </Button>
+            </div>
+                      </div>
+          </section>
+
+          {/* Micro SaaS Services Pricing */}
+          <section className="py-20">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl font-bold text-white mb-4">
+                  Micro SaaS Services Pricing
+                </h2>
+                <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                  Choose from our comprehensive suite of specialized AI-powered tools. All services include a 14-day free trial.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+                {microSaasPricing.map((category) => (
+                  <div key={category.category} className="bg-gray-800/50 rounded-2xl p-6 border border-gray-700/50">
+                    <h3 className="text-xl font-semibold text-white mb-4 pb-2 border-b border-gray-600">
+                      {category.category}
+                    </h3>
+                    <div className="space-y-3">
+                      {category.services.map((service) => (
+                        <div key={service.name} className="flex justify-between items-center py-2">
+                          <div className="flex-1">
+                            <h4 className="text-white font-medium">{service.name}</h4>
+                            <p className="text-sm text-gray-400">{service.trial}</p>
+                          </div>
+                          <div className="text-right">
+                            <span className="text-lg font-bold text-green-400">{service.price}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+  
+          {/* Add-Ons Section */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-white mb-4">
+                Professional Services & Add-Ons
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Additional services to help you maximize the value of our platform and accelerate your success.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {addOns.map((addon) => (
+                <div key={addon.name} className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300">
+                  <div className="flex justify-between items-start mb-4">
+                    <h3 className="text-2xl font-bold text-white">{addon.name}</h3>
+                    <div className="text-right">
+                      <span className="text-3xl font-bold text-green-400">{addon.price}</span>
+                      <span className="text-gray-400 ml-1">{addon.period}</span>
+                    </div>
+                  </div>
+                  <p className="text-gray-300 mb-6">{addon.description}</p>
+                  <ul className="space-y-2 mb-6">
+                    {addon.features.map((feature) => (
+                      <li key={feature} className="flex items-center text-gray-300">
+                        <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <Button
+                    href="https://ziontechgroup.com/contact"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    variant="outline"
+                    size="lg"
+                    className="w-full"
+                  >
+                    Contact Sales
+                  </Button>
+                </div>
+              ))}
             </div>
           </div>
         </section>
