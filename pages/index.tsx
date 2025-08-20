@@ -8,7 +8,7 @@ import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, Exter
 
 export default function HomePage() {
   const heroStats = [
-    { value: '38+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
+    { value: '55+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
     { value: '99.9%', label: 'Uptime Guarantee', color: 'text-fuchsia-400' },
     { value: '14', label: 'Day Free Trials', color: 'text-blue-400' },
     { value: '24/7', label: 'AI Support', color: 'text-green-400' },
@@ -18,7 +18,7 @@ export default function HomePage() {
     {
       icon: <Cloud className="w-8 h-8 text-white" />,
       title: 'Real Micro SaaS Services',
-      description: '38+ fully functional micro SaaS tools with real implementations, not just mockups.',
+      description: '55+ fully functional micro SaaS tools with real implementations, not just mockups.',
       color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
       gradient: 'from-cyan-400 to-blue-500',
     },
@@ -159,7 +159,7 @@ export default function HomePage() {
       period: '/month',
       description: 'Perfect for small teams and startups',
       features: [
-        'Access to 10 core services',
+        'Access to 15 core services',
         'Basic AI features',
         'Email support',
         '14-day free trial',
@@ -475,17 +475,18 @@ export default function HomePage() {
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div>
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-blue-500/50 transition-all duration-300">
               <h3 className="text-xl font-semibold text-white mb-4">Contact Information</h3>
               <div className="space-y-2 text-gray-300">
-                <p>+1 302 464 0950</p>
-                <p>kleber@ziontechgroup.com</p>
-                <p>364 E Main St STE 1008</p>
-                <p>Middletown DE 19709</p>
+                <p className="text-blue-400 font-semibold">+1 302 464 0950</p>
+                <p className="text-blue-400 font-semibold">kleber@ziontechgroup.com</p>
+                <p className="text-gray-300">364 E Main St STE 1008</p>
+                <p className="text-gray-300">Middletown DE 19709</p>
+                <p className="text-xs text-gray-400 mt-2">Available Mon-Fri, 9AM-6PM EST</p>
               </div>
             </div>
             
-            <div>
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-blue-500/50 transition-all duration-300">
               <h3 className="text-xl font-semibold text-white mb-4">Quick Links</h3>
               <div className="space-y-2">
                 <a href="/micro-saas" className="block text-gray-300 hover:text-blue-400 transition-colors">Services</a>
@@ -495,19 +496,55 @@ export default function HomePage() {
               </div>
             </div>
             
-            <div>
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-blue-500/50 transition-all duration-300">
               <h3 className="text-xl font-semibold text-white mb-4">Connect With Us</h3>
               <div className="space-y-2">
-                <a href="https://ziontechgroup.com" className="block text-gray-300 hover:text-blue-400 transition-colors">
+                <a href="https://ziontechgroup.com" className="block text-blue-400 hover:text-blue-300 transition-colors font-semibold">
                   ziontechgroup.com
                 </a>
                 <p className="text-gray-400 text-sm">Follow us for updates and insights</p>
+                <div className="mt-4 flex justify-center space-x-4">
+                  <div className="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center">
+                    <span className="text-blue-400 text-sm">📧</span>
+                  </div>
+                  <div className="w-8 h-8 bg-purple-500/20 rounded-full flex items-center justify-center">
+                    <span className="text-purple-400 text-sm">📱</span>
+                  </div>
+                  <div className="w-8 h-8 bg-green-500/20 rounded-full flex items-center justify-center">
+                    <span className="text-green-400 text-sm">🌐</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="mt-8 pt-8 border-t border-gray-700/50 text-center">
+            <div className="bg-gradient-to-r from-blue-600/10 to-purple-600/10 rounded-2xl p-6 border border-blue-500/20">
+              <h3 className="text-xl font-bold text-white mb-4">Why Choose Zion Tech Group?</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-sm text-gray-300">
+                <div className="flex items-center">
+                  <span className="text-green-400 mr-2">✓</span>
+                  <span>55+ Real Micro SaaS Services</span>
+                </div>
+                <div className="flex items-center">
+                  <span className="text-green-400 mr-2">✓</span>
+                  <span>14-Day Free Trials</span>
+                </div>
+                <div className="flex items-center">
+                  <span className="text-green-400 mr-2">✓</span>
+                  <span>99.9% Uptime Guarantee</span>
+                </div>
+                <div className="flex items-center">
+                  <span className="text-green-400 mr-2">✓</span>
+                  <span>24/7 AI Support</span>
+                </div>
               </div>
             </div>
           </div>
           
           <div className="mt-8 pt-8 border-t border-gray-700/50 text-center text-gray-400">
             <p>&copy; 2025 Zion Tech Group. All rights reserved. | Real micro SaaS solutions for modern businesses.</p>
+            <p className="text-sm mt-2">Enterprise-grade solutions without enterprise complexity.</p>
           </div>
         </div>
       </section>
