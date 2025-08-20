@@ -8,7 +8,7 @@ import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, Exter
 
 export default function HomePage() {
   const heroStats = [
-    { value: '55+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
+    { value: '38+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
     { value: '99.9%', label: 'Uptime Guarantee', color: 'text-fuchsia-400' },
     { value: '14', label: 'Day Free Trials', color: 'text-blue-400' },
     { value: '24/7', label: 'AI Support', color: 'text-green-400' },
@@ -18,7 +18,7 @@ export default function HomePage() {
     {
       icon: <Cloud className="w-8 h-8 text-white" />,
       title: 'Real Micro SaaS Services',
-      description: '55+ fully functional micro SaaS tools with real implementations, not just mockups.',
+      description: '38+ fully functional micro SaaS tools with real implementations, not just mockups.',
       color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
       gradient: 'from-cyan-400 to-blue-500',
     },
