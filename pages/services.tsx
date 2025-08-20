@@ -949,6 +949,40 @@ export default function ServicesPage() {
       gradient: 'from-cyan-400 to-blue-500',
       pricing: '$89/month',
       link: 'https://ziontechgroup.com/ai-product-analytics'
+    },
+    {
+      icon: '📊',
+      title: 'Performance Monitor Pro',
+      description: 'Real-time performance monitoring with Core Web Vitals tracking and optimization insights.',
+      features: [
+        'Core Web Vitals monitoring',
+        'Real-time performance tracking',
+        'Error monitoring & alerting',
+        'Performance optimization insights',
+        'Custom performance budgets'
+      ],
+      color: 'bg-gradient-to-br from-green-500 to-teal-600',
+      textColor: 'text-green-400',
+      gradient: 'from-green-400 to-teal-500',
+      pricing: '$49/month',
+      link: 'https://ziontechgroup.com/performance-monitor-pro'
+    },
+    {
+      icon: '🎬',
+      title: 'Video Editor Pro',
+      description: 'AI-powered video editing with automated workflows, templates, and professional-grade output.',
+      features: [
+        'AI-powered video editing',
+        'Professional templates library',
+        'Automated workflows',
+        'Multi-format export',
+        'Cloud-based processing'
+      ],
+      color: 'bg-gradient-to-br from-red-500 to-orange-600',
+      textColor: 'text-red-400',
+      gradient: 'from-red-400 to-orange-500',
+      pricing: '$89/month',
+      link: 'https://ziontechgroup.com/video-editor-pro'
     }
   ];
 

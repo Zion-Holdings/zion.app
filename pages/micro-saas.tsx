@@ -2933,6 +2933,87 @@ export default function MicroSaasPage() {
       trialDays: 14,
       setupTime: '15 minutes',
       category: 'Data Protection'
+    },
+    {
+      name: 'Design System Builder Pro',
+      tagline: 'Professional design system management',
+      price: '$79',
+      period: '/month',
+      description: 'Build and manage comprehensive design systems with component libraries, design tokens, and collaboration tools.',
+      features: [
+        'Component library management',
+        'Design token system',
+        'Version control & collaboration',
+        'Design handoff tools',
+        'Code generation (React, Vue, HTML)',
+        'Design system analytics',
+        'Integration with design tools',
+        'Multi-team collaboration'
+      ],
+      popular: false,
+      icon: '🎨',
+      color: 'from-purple-500 to-pink-600',
+      textColor: 'text-purple-400',
+      link: 'https://ziontechgroup.com/design-system-builder-pro',
+      marketPosition: 'Competitive with Figma ($12-45), Sketch ($99/year), and InVision ($4-99)',
+      targetAudience: 'Design teams, product managers, and frontend developers',
+      trialDays: 14,
+      setupTime: '20 minutes',
+      category: 'Design & Development'
+    },
+    {
+      name: 'Performance Monitor Pro',
+      tagline: 'Real-time performance monitoring',
+      price: '$49',
+      period: '/month',
+      description: 'Monitor web application performance with Core Web Vitals tracking, error monitoring, and optimization insights.',
+      features: [
+        'Core Web Vitals monitoring',
+        'Real-time performance tracking',
+        'Error monitoring & alerting',
+        'Performance optimization insights',
+        'Custom performance budgets',
+        'Multi-site monitoring',
+        'API performance tracking',
+        'Integration with popular platforms'
+      ],
+      popular: false,
+      icon: '📊',
+      color: 'from-green-500 to-teal-600',
+      textColor: 'text-green-400',
+      link: 'https://ziontechgroup.com/performance-monitor-pro',
+      marketPosition: 'Competitive with New Relic ($99-149), DataDog ($15-23), and Pingdom ($15-49)',
+      targetAudience: 'Web developers, DevOps engineers, and performance engineers',
+      trialDays: 14,
+      setupTime: '10 minutes',
+      category: 'Performance & Monitoring'
+    },
+    {
+      name: 'Video Editor Pro',
+      tagline: 'Professional video editing suite',
+      price: '$89',
+      period: '/month',
+      description: 'AI-powered video editing with automated workflows, templates, and professional-grade output.',
+      features: [
+        'AI-powered video editing',
+        'Professional templates library',
+        'Automated workflows',
+        'Multi-format export',
+        'Cloud-based processing',
+        'Collaboration tools',
+        'Advanced effects & transitions',
+        'Integration with popular platforms'
+      ],
+      popular: false,
+      icon: '🎬',
+      color: 'from-red-500 to-orange-600',
+      textColor: 'text-red-400',
+      link: 'https://ziontechgroup.com/video-editor-pro',
+      marketPosition: 'Competitive with Adobe Premiere Pro ($20.99/month), DaVinci Resolve (Free-$295), and Final Cut Pro ($299)',
+      targetAudience: 'Content creators, marketers, and video professionals',
+      trialDays: 14,
+      setupTime: '15 minutes',
+      category: 'Content & Media'
     }
   ];
 

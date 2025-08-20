@@ -8,7 +8,7 @@ import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, Exter
 
 export default function HomePage() {
   const heroStats = [
-    { value: '25+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
+    { value: '28+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
     { value: '99.9%', label: 'Uptime Guarantee', color: 'text-fuchsia-400' },
     { value: '14', label: 'Day Free Trials', color: 'text-blue-400' },
     { value: '24/7', label: 'AI Support', color: 'text-green-400' },
@@ -121,7 +121,7 @@ export default function HomePage() {
               Enterprise-Grade Tools for Every Business Need
             </h2>
             <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
-              Discover <span className="text-green-400 font-semibold">50+ specialized micro SaaS solutions</span> covering AI-powered content creation, design systems, performance monitoring, 
+              Discover <span className="text-green-400 font-semibold">28+ specialized micro SaaS solutions</span> covering AI-powered content creation, design systems, performance monitoring, 
               SEO automation, chatbots, business intelligence, email marketing, social media, project management, 
               billing, HR operations, video editing, cloud optimization, legal automation, sales intelligence, customer analytics, 
               API management, compliance monitoring, and more. <span className="text-green-400 font-semibold">Focused value with transparent pricing, 14-day free trials, and enterprise-grade infrastructure.</span>
@@ -511,6 +511,66 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
+
+            {/* Performance Monitor Pro */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-green-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-green-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    📊
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Performance Monitor Pro</h3>
+                    <p className="text-green-400 text-sm font-medium">$49/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Real-time performance monitoring with Core Web Vitals tracking and optimization insights.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://ziontechgroup.com/micro-saas"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-green-500 to-teal-600 hover:from-green-600 hover:to-teal-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* AI Inventory Manager */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-indigo-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    📦
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">AI Inventory Manager</h3>
+                    <p className="text-indigo-400 text-sm font-medium">$45/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  AI-powered inventory management with demand forecasting and automated optimization.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://ziontechgroup.com/micro-saas"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="text-center">
@@ -851,6 +911,101 @@ export default function HomePage() {
               View All Services
               <ArrowRight className="ml-2 w-5 h-5" />
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Our Micro SaaS */}
+      <section className="py-24 bg-gradient-to-br from-gray-800 to-gray-900 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(59,130,246,0.1),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(168,85,247,0.1),transparent_50%)]" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse" />
+              🚀 Why Choose Zion Tech Group Micro SaaS
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight">
+              Real Solutions, Real Results, Real Business Value
+            </h2>
+            <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              Unlike mock services or landing page generators, we deliver <span className="text-blue-400 font-semibold">fully functional micro SaaS applications</span> that solve real business problems with enterprise-grade infrastructure.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                icon: '⚡',
+                title: 'Real Implementation',
+                description: 'Every service is a fully functional application, not just a mockup or landing page. Ready to use immediately.',
+                color: 'from-blue-500 to-indigo-600'
+              },
+              {
+                icon: '🏗️',
+                title: 'Enterprise Infrastructure',
+                description: 'Built on ziontechgroup.com with 99.9% uptime, SOC 2 compliance, and automated scaling.',
+                color: 'from-green-500 to-emerald-600'
+              },
+              {
+                icon: '💰',
+                title: 'Market-Validated Pricing',
+                description: 'Competitive pricing based on real market research, 15-40% below industry averages.',
+                color: 'from-purple-500 to-pink-600'
+              },
+              {
+                icon: '🚀',
+                title: 'Lightning Fast Setup',
+                description: 'Get started in 5-45 minutes with automated onboarding and intuitive interfaces.',
+                color: 'from-orange-500 to-red-600'
+              },
+              {
+                icon: '🔒',
+                title: 'Bank-Level Security',
+                description: 'Advanced encryption, automated security monitoring, and compliance with industry standards.',
+                color: 'from-teal-500 to-cyan-600'
+              },
+              {
+                icon: '📊',
+                title: 'Proven ROI',
+                description: 'Customers see measurable results within 30 days, with transparent analytics and reporting.',
+                color: 'from-indigo-500 to-purple-600'
+              }
+            ].map((feature, index) => (
+              <div key={index} className="group">
+                <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20">
+                  <div className={`w-16 h-16 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-4">{feature.title}</h3>
+                  <p className="text-gray-400 leading-relaxed">{feature.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-16">
+            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-semibold rounded-full mb-6">
+              <span className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse" />
+              Ready to Get Started?
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                href="/micro-saas"
+                size="lg"
+                className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-8 py-4 text-lg font-semibold"
+              >
+                Explore All Services
+              </Button>
+              <Button
+                href="/contact"
+                size="lg"
+                variant="outline"
+                className="border-2 border-gray-600 hover:border-gray-500 text-gray-300 hover:text-white px-8 py-4 text-lg font-semibold"
+              >
+                Get Custom Quote
+              </Button>
+            </div>
           </div>
         </div>
       </section>

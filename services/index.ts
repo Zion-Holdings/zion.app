@@ -10,6 +10,9 @@ export { cloudCostService } from './cloudCostService';
 export { aiLegalService } from './aiLegalService';
 export { aiSalesService } from './aiSalesService';
 export { aiHrService } from './aiHrService';
+export { designSystemBuilderService } from './designSystemBuilderService';
+export { performanceMonitorService } from './performanceMonitorService';
+export { videoEditingService } from './videoEditingService';
 
 // Export types
 export type {
@@ -99,3 +102,33 @@ export type {
   Document,
   RecruitmentMetrics
 } from './aiHrService';
+
+export type {
+  DesignComponent,
+  ComponentVariant,
+  ComponentProp,
+  DesignToken,
+  ComponentUsage,
+  DesignSystem
+} from './designSystemBuilderService';
+
+export type {
+  PerformanceMetric,
+  CoreWebVitals,
+  PerformanceAlert,
+  PerformanceReport,
+  ResourceTiming,
+  ErrorEvent
+} from './performanceMonitorService';
+
+export type {
+  VideoProject,
+  VideoResolution,
+  VideoFormat,
+  VideoClip,
+  VideoEffect,
+  VideoTimeline,
+  VideoTrack,
+  VideoExportOptions,
+  VideoAnalytics
+} from './videoEditingService';
