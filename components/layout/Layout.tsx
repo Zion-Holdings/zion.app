@@ -1,6 +1,7 @@
 import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
+import FuturisticNav from './FuturisticNav';
+import FuturisticFooter from './FuturisticFooter';
+import AnimatedBackground from '../ui/AnimatedBackground';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -8,12 +9,20 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="min-h-screen bg-black text-white">
-      <Header />
-      <main className="pt-24 lg:pt-28">
+    <div className="min-h-screen bg-black text-white relative">
+      {/* Animated background */}
+      <AnimatedBackground variant="stars" intensity="low" />
+      
+      {/* Navigation */}
+      <FuturisticNav />
+      
+      {/* Main content */}
+      <main className="relative z-10">
         {children}
       </main>
-      <Footer />
+      
+      {/* Footer */}
+      <FuturisticFooter />
     </div>
   );
 };
