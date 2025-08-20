@@ -577,6 +577,120 @@ export default function HomePage() {
               </div>
             </div>
           </section>
+
+          {/* Competitive Advantages & Unique Selling Points */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">🏆 Competitive Advantages & Unique Selling Points</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-cyan-400 mb-4 text-center">🚀 First-Mover Advantage</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• World&apos;s first autonomous innovation hub</li>
+                  <li>• 227+ automation systems already deployed</li>
+                  <li>• Proven track record of zero-downtime</li>
+                  <li>• Industry-leading redundancy architecture</li>
+                  <li>• Continuous innovation pipeline</li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-fuchsia-400 mb-4 text-center">🧠 AI-First Architecture</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Built from ground up for AI automation</li>
+                  <li>• Self-learning and self-improving systems</li>
+                  <li>• Predictive analytics and maintenance</li>
+                  <li>• Autonomous decision-making capabilities</li>
+                  <li>• Continuous optimization algorithms</li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-green-400 mb-4 text-center">🔒 Enterprise-Grade Security</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Bank-level security protocols</li>
+                  <li>• Automated threat detection</li>
+                  <li>• Zero-trust architecture</li>
+                  <li>• Compliance automation</li>
+                  <li>• Real-time security monitoring</li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-yellow-400 mb-4 text-center">⚡ Performance Excellence</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• 99.99% uptime guarantee</li>
+                  <li>• Sub-second response times</li>
+                  <li>• Global edge computing</li>
+                  <li>• Automatic scaling</li>
+                  <li>• Performance optimization</li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-purple-400 mb-4 text-center">🌍 Global Infrastructure</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Multi-region deployment</li>
+                  <li>• Geographic redundancy</li>
+                  <li>• Edge computing optimization</li>
+                  <li>• Global CDN integration</li>
+                  <li>• Low-latency routing</li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-red-400 mb-4 text-center">💡 Innovation Leadership</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Cutting-edge technology stack</li>
+                  <li>• Continuous R&D investment</li>
+                  <li>• Open-source contributions</li>
+                  <li>• Industry partnerships</li>
+                  <li>• Future-ready architecture</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          {/* Project Statistics & Metrics */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">📊 Project Statistics & Metrics</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20 text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">🤖</span>
+                </div>
+                <div className="text-3xl font-bold text-cyan-400 mb-2">227+</div>
+                <h3 className="text-lg font-semibold text-white mb-2">Automation Systems</h3>
+                <p className="text-white/70 text-sm">Intelligent agents running</p>
+              </div>
+              
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20 text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-fuchsia-400 to-purple-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">📄</span>
+                </div>
+                <div className="text-3xl font-bold text-fuchsia-400 mb-2">2960+</div>
+                <h3 className="text-lg font-semibold text-white mb-2">Dynamic Pages</h3>
+                <p className="text-white/70 text-sm">Auto-generated content</p>
+              </div>
+              
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20 text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">⚡</span>
+                </div>
+                <div className="text-3xl font-bold text-green-400 mb-2">99.99%</div>
+                <h3 className="text-lg font-semibold text-white mb-2">Uptime</h3>
+                <p className="text-white/70 text-sm">Zero-downtime guarantee</p>
+              </div>
+              
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20 text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">🚀</span>
+                </div>
+                <div className="text-3xl font-bold text-yellow-400 mb-2">12</div>
+                <h3 className="text-lg font-semibold text-white mb-2">Core Components</h3>
+                <p className="text-white/70 text-sm">Modular architecture</p>
+              </div>
+            </div>
+          </section>
         </main>
       </div>
     </>
