@@ -426,6 +426,102 @@ export default function HomePage() {
             </div>
           </section>
 
+          {/* Advanced Automation Systems */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">⚙️ Advanced Automation & Orchestration Systems</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-blue-400 mb-4 text-center">🎯 Master Orchestrator</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Intelligent automation coordination</li>
+                  <li>• Cross-system integration</li>
+                  <li>• Performance optimization</li>
+                  <li>• Resource management</li>
+                  <li>• Adaptive workflows</li>
+                </ul>
+                <Link href="/automation/master-automation-orchestrator.cjs" className="text-blue-400 hover:text-blue-300 text-sm font-semibold">
+                  View System →
+                </Link>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-purple-400 mb-4 text-center">🧠 AI Research & Innovation</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• AI trends research</li>
+                  <li>• Innovation orchestration</li>
+                  <li>• Content generation</li>
+                  <li>• Market analysis</li>
+                  <li>• Predictive insights</li>
+                </ul>
+                <Link href="/automation/ai-trends-researcher.cjs" className="text-purple-400 hover:text-purple-300 text-sm font-semibold">
+                  View System →
+                </Link>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-yellow-400 mb-4 text-center">🔧 Build & Deployment</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Smart build orchestration</li>
+                  <li>• Failure recovery</li>
+                  <li>• Health monitoring</li>
+                  <li>• Performance validation</li>
+                  <li>• Continuous optimization</li>
+                </ul>
+                <Link href="/automation/master-build-orchestrator.cjs" className="text-yellow-400 hover:text-yellow-300 text-sm font-semibold">
+                  View System →
+                </Link>
+              </div>
+            </div>
+          </section>
+
+          {/* GitHub Actions & CI/CD */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">🚀 GitHub Actions & CI/CD Automation</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-indigo-400 mb-4 text-center">🔄 GitHub Actions Redundancy</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Multi-repository sync</li>
+                  <li>• Automated workflows</li>
+                  <li>• Failure recovery</li>
+                  <li>• Performance monitoring</li>
+                  <li>• Cross-platform integration</li>
+                </ul>
+                <Link href="/automation/github-actions-redundancy-manager.cjs" className="text-indigo-400 hover:text-indigo-300 text-sm font-semibold">
+                  View System →
+                </Link>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-pink-400 mb-4 text-center">⚡ Netlify Functions</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Serverless automation</li>
+                  <li>• Function redundancy</li>
+                  <li>• Auto-healing systems</li>
+                  <li>• Performance optimization</li>
+                  <li>• Global distribution</li>
+                </ul>
+                <Link href="/automation/netlify-functions-redundancy-manager.cjs" className="text-pink-400 hover:text-pink-300 text-sm font-semibold">
+                  View System →
+                </Link>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-emerald-400 mb-4 text-center">🎯 PM2 Process Management</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Process orchestration</li>
+                  <li>• Auto-restart systems</li>
+                  <li>• Load balancing</li>
+                  <li>• Health monitoring</li>
+                  <li>• Cluster management</li>
+                </ul>
+                <Link href="/automation/pm2-redundancy-monitor.cjs" className="text-emerald-400 hover:text-emerald-300 text-sm font-semibold">
+                  View System →
+                </Link>
+              </div>
+            </div>
+          </section>
+
           {/* Latest Autonomous Content */}
           <section className="mx-auto max-w-7xl px-6 pb-14">
             <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Latest Autonomous Content</h2>
