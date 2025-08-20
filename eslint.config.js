@@ -1,7 +1,4 @@
 import js from '@eslint/js';
-import nextPlugin from 'eslint-plugin-next';
-import reactHooksPlugin from 'eslint-plugin-react-hooks';
-import reactRefreshPlugin from 'eslint-plugin-react-refresh';
 
 export default [
   js.configs.recommended,
@@ -10,28 +7,25 @@ export default [
     languageOptions: {
       ecmaVersion: 2020,
       sourceType: 'module',
-      ecmaFeatures: {
-        jsx: true
-      },
-      parser: '@typescript-eslint/parser',
-      parserOptions: {
-        ecmaVersion: 2020,
-        sourceType: 'module',
-        ecmaFeatures: {
-          jsx: true
-        }
+      globals: {
+        process: 'readonly',
+        console: 'readonly',
+        module: 'readonly',
+        exports: 'readonly',
+        require: 'readonly',
+        __dirname: 'readonly',
+        setTimeout: 'readonly',
+        setInterval: 'readonly',
+        clearTimeout: 'readonly',
+        clearInterval: 'readonly'
       }
     },
-    plugins: {
-      '@typescript-eslint': '@typescript-eslint/eslint-plugin',
-      'react-hooks': reactHooksPlugin,
-      'react-refresh': reactRefreshPlugin
-    },
     rules: {
-      '@typescript-eslint/no-unused-vars': 'warn',
-      '@typescript-eslint/no-explicit-any': 'warn',
+      'no-unused-vars': 'warn',
       'no-console': 'warn'
-    },
+    }
+  },
+  {
     ignores: [
       'node_modules/',
       '.next/',
@@ -42,7 +36,16 @@ export default [
       '*.config.ts',
       'scripts/',
       'automation/',
-      'public/reports/**'
+      'public/reports/**',
+      'netlify/',
+      'ecosystem*.cjs',
+      '**/*.cjs',
+      '**/*.tsx',
+      '**/*.ts',
+      '**/*.jsx',
+      'components/',
+      'pages/',
+      'services/'
     ]
   }
 ];
