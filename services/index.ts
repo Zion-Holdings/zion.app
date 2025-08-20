@@ -16,6 +16,9 @@ export { videoEditingService } from './videoEditingService';
 export { aiCodeReviewService } from './aiCodeReviewService';
 export { apiDocGeneratorService } from './apiDocGeneratorService';
 export { databasePerformanceMonitorService } from './databasePerformanceMonitorService';
+export { aiMarketResearchService } from './aiMarketResearchService';
+export { aiDataAnalyticsService } from './aiDataAnalyticsService';
+export { aiCybersecurityService } from './aiCybersecurityService';
 
 // Export types
 export type {
@@ -107,10 +110,10 @@ export type {
 } from './aiHrService';
 
 export type {
+  DesignToken,
   DesignComponent,
   ComponentVariant,
   ComponentProp,
-  DesignToken,
   ComponentUsage,
   DesignSystem
 } from './designSystemBuilderService';
@@ -172,3 +175,32 @@ export type {
   DatabasePerformanceAlert,
   IndexRecommendation
 } from './databasePerformanceMonitorService';
+
+export type {
+  MarketTrend,
+  CompetitorAnalysis as MarketCompetitorAnalysis,
+  MarketInsight,
+  MarketResearchRequest,
+  MarketResearchResponse
+} from './aiMarketResearchService';
+
+export type {
+  DataSource as AnalyticsDataSource,
+  DataQuery,
+  DataVisualization,
+  PredictiveModel,
+  AnalyticsInsight,
+  DataAnalyticsRequest,
+  DataAnalyticsResponse
+} from './aiDataAnalyticsService';
+
+export type {
+  SecurityThreat,
+  VulnerabilityAssessment,
+  SecurityIncident,
+  SecurityPolicy,
+  ComplianceReport,
+  SecurityMetrics,
+  SecurityScanRequest,
+  SecurityScanResponse
+} from './aiCybersecurityService';

@@ -8,7 +8,7 @@ import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, Exter
 
 export default function HomePage() {
   const heroStats = [
-    { value: '55+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
+    { value: '75+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
     { value: '99.9%', label: 'Uptime Guarantee', color: 'text-fuchsia-400' },
     { value: '14', label: 'Day Free Trials', color: 'text-blue-400' },
     { value: '24/7', label: 'AI Support', color: 'text-green-400' },
@@ -18,14 +18,14 @@ export default function HomePage() {
     {
       icon: <Cloud className="w-8 h-8 text-white" />,
       title: 'Real Micro SaaS Services',
-      description: '55+ fully functional micro SaaS tools with real implementations, not just mockups.',
+      description: '75+ fully functional micro SaaS tools with real implementations, not just mockups.',
       color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
       gradient: 'from-cyan-400 to-blue-500',
     },
     {
       icon: <Bot className="w-8 h-8 text-white" />,
       title: 'AI-Powered Solutions',
-      description: 'Advanced AI content generation, SEO automation, chatbots, and business intelligence.',
+      description: 'Advanced AI content generation, market research, cybersecurity, data analytics, and business intelligence.',
       color: 'bg-gradient-to-br from-fuchsia-500 to-purple-600',
       gradient: 'from-fuchsia-400 to-purple-500',
     },
@@ -196,7 +196,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <Hero
         title="Zion Tech Group"
-        subtitle="The world&apos;s most advanced autonomous innovation hub delivering 55+ cutting-edge micro SaaS solutions, intelligent automation systems, and the future of cloud-native AI infrastructure."
+        subtitle="The world&apos;s most advanced autonomous innovation hub delivering 75+ cutting-edge micro SaaS solutions, intelligent automation systems, and the future of cloud-native AI infrastructure."
         primaryAction={{
           text: "Explore Micro SaaS",
           href: "/micro-saas"
@@ -223,12 +223,7 @@ export default function HomePage() {
       </section>
 
       {/* Platform Capabilities */}
-      <Features
-        title="Revolutionary Platform Capabilities"
-        subtitle="Discover the cutting-edge technologies and intelligent systems that power the future of autonomous innovation."
-        features={platformFeatures}
-        columns={3}
-      />
+      <Features features={platformFeatures} />
 
       {/* Features Section */}
       <section className="py-20 futuristic-bg">
@@ -270,7 +265,7 @@ export default function HomePage() {
               Enterprise-Grade Tools for Every Business Need
             </h2>
             <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
-              Discover <span className="text-green-400 font-semibold">55+ specialized micro SaaS solutions</span> covering AI-powered content creation, design systems, performance monitoring, 
+              Discover <span className="text-green-400 font-semibold">75+ specialized micro SaaS solutions</span> covering AI-powered content creation, design systems, performance monitoring, 
               SEO automation, chatbots, business intelligence, email marketing, social media, project management, 
               billing, HR operations, video editing, cloud optimization, legal automation, sales intelligence, customer analytics, 
               API management, compliance monitoring, emerging technologies, and more. <span className="text-green-400 font-semibold">Focused value with transparent pricing, 14-day free trials, and enterprise-grade infrastructure.</span>
@@ -1740,6 +1735,151 @@ export default function HomePage() {
           </div>
         </div>
       </footer>
+
+      {/* Innovative AI Services Section */}
+      <section className="relative section-padding bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(147,51,234,0.1),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(59,130,246,0.1),transparent_50%)]" />
+        <div className="absolute inset-0 bg-grid opacity-5" />
+        
+        <div className="relative z-10 container-cursor">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-purple-500 rounded-full mr-2 animate-pulse" />
+              AI Innovation
+            </div>
+            <h2 className="text-responsive-lg font-bold mb-8 gradient-text text-shadow">
+              Revolutionary AI-Powered Solutions
+            </h2>
+            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+              Experience the future of business automation with our cutting-edge AI services that deliver real value and measurable results.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            <Card className="group hover:scale-105 transition-all duration-300 bg-gradient-to-br from-purple-500/10 to-blue-500/10 border border-purple-500/20 backdrop-blur-sm">
+              <div className="p-8 text-center">
+                <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-purple-500 to-blue-600 rounded-2xl flex items-center justify-center">
+                  <span className="text-3xl">🔍</span>
+                </div>
+                <h3 className="text-xl font-bold mb-4 text-white">AI Market Research Pro</h3>
+                <p className="text-gray-300 mb-6">Get real-time market insights, competitor analysis, and trend predictions powered by advanced AI algorithms.</p>
+                <div className="text-sm text-gray-400 mb-4">
+                  <span className="text-green-400 font-semibold">$79/month</span> • 14-day free trial
+                </div>
+                <Button href="https://ziontechgroup.com/ai-market-research" variant="secondary" className="w-full">
+                  Learn More
+                </Button>
+              </div>
+            </Card>
+
+            <Card className="group hover:scale-105 transition-all duration-300 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 border border-emerald-500/20 backdrop-blur-sm">
+              <div className="p-8 text-center">
+                <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center">
+                  <span className="text-3xl">📊</span>
+                </div>
+                <h3 className="text-xl font-bold mb-4 text-white">AI Data Analytics Suite</h3>
+                <p className="text-gray-300 mb-6">Transform your data into actionable insights with AI-powered analytics and predictive modeling.</p>
+                <div className="text-sm text-gray-400 mb-4">
+                  <span className="text-green-400 font-semibold">$149/month</span> • 14-day free trial
+                </div>
+                <Button href="https://ziontechgroup.com/ai-data-analytics" variant="secondary" className="w-full">
+                  Learn More
+                </Button>
+              </div>
+            </Card>
+
+            <Card className="group hover:scale-105 transition-all duration-300 bg-gradient-to-br from-red-500/10 to-pink-500/10 border border-red-500/20 backdrop-blur-sm">
+              <div className="p-8 text-center">
+                <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-red-500 to-pink-600 rounded-2xl flex items-center justify-center">
+                  <span className="text-3xl">🛡️</span>
+                </div>
+                <h3 className="text-xl font-bold mb-4 text-white">AI Cybersecurity Shield</h3>
+                <p className="text-gray-300 mb-6">Advanced cybersecurity protection with AI-powered threat detection and automated incident response.</p>
+                <div className="text-sm text-gray-400 mb-4">
+                  <span className="text-green-400 font-semibold">$199/month</span> • 14-day free trial
+                </div>
+                <Button href="https://ziontechgroup.com/ai-cybersecurity" variant="secondary" className="w-full">
+                  Learn More
+                </Button>
+              </div>
+            </Card>
+          </div>
+
+          <div className="text-center">
+            <p className="text-lg text-gray-300 mb-8">
+              Ready to experience the future of AI-powered business solutions?
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button href="/micro-saas" variant="primary" size="lg">
+                Explore All Services
+              </Button>
+              <Button href="/contact" variant="secondary" size="lg">
+                Get Expert Consultation
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Information Section */}
+      <section className="relative section-padding bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(16,185,129,0.1),transparent_50%)]" />
+        
+        <div className="relative z-10 container-cursor">
+          <div className="text-center mb-16">
+            <h2 className="text-responsive-lg font-bold mb-8 gradient-text text-shadow">
+              Get Started Today
+            </h2>
+            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+              Transform your business with our AI-powered solutions. Our experts are ready to help you succeed.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-blue-500/20">
+              <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center">
+                <span className="text-2xl">📧</span>
+              </div>
+              <h3 className="text-lg font-semibold mb-2 text-white">Email Us</h3>
+              <p className="text-gray-300 mb-3">Get in touch with our team</p>
+              <a href="mailto:kleber@ziontechgroup.com" className="text-blue-400 hover:text-blue-300 transition-colors">
+                kleber@ziontechgroup.com
+              </a>
+            </div>
+
+            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-fuchsia-500/10 to-purple-500/10 border border-fuchsia-500/20">
+              <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-fuchsia-500 to-purple-600 rounded-xl flex items-center justify-center">
+                <span className="text-2xl">📱</span>
+              </div>
+              <h3 className="text-lg font-semibold mb-2 text-white">Call Us</h3>
+              <p className="text-gray-300 mb-3">Speak with an expert</p>
+              <a href="tel:+13024640950" className="text-fuchsia-400 hover:text-fuchsia-300 transition-colors">
+                +1 302 464 0950
+              </a>
+            </div>
+
+            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-green-500/10 to-emerald-500/10 border border-green-500/20">
+              <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center">
+                <span className="text-2xl">🏢</span>
+              </div>
+              <h3 className="text-lg font-semibold mb-2 text-white">Visit Us</h3>
+              <p className="text-gray-300 mb-3">Our headquarters</p>
+              <address className="text-green-400 not-italic">
+                364 E Main St STE 1008<br />
+                Middletown, DE 19709
+              </address>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <Button href="/contact" variant="primary" size="lg">
+              Start Your Journey
+            </Button>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

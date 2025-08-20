@@ -40,25 +40,25 @@ const Hero: React.FC<HeroProps> = ({
       <div className="absolute inset-0 scan-lines" />
       
       {/* Enhanced Floating Elements with Glow */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-full blur-3xl float pulse-glow" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-full blur-3xl float pulse-glow" style={{ animationDelay: '1.5s' }} />
-      <div className="absolute top-1/2 left-1/4 w-48 h-48 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full blur-3xl float pulse-glow" style={{ animationDelay: '3s' }} />
+      <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-full blur-3xl floating pulse-glow" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-full blur-3xl floating pulse-glow" style={{ animationDelay: '1.5s' }} />
+      <div className="absolute top-1/2 left-1/4 w-48 h-48 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full blur-3xl floating pulse-glow" style={{ animationDelay: '3s' }} />
       
       {/* Additional Futuristic Elements */}
-      <div className="absolute top-1/3 right-1/4 w-32 h-32 bg-gradient-to-br from-yellow-500/15 to-orange-500/15 rounded-full blur-2xl float" style={{ animationDelay: '2s' }} />
-      <div className="absolute bottom-1/3 left-1/3 w-24 h-24 bg-gradient-to-br from-red-500/15 to-pink-500/15 rounded-full blur-2xl float" style={{ animationDelay: '2.5s' }} />
+      <div className="absolute top-1/3 right-1/4 w-32 h-32 bg-gradient-to-br from-yellow-500/15 to-orange-500/15 rounded-full blur-2xl floating" style={{ animationDelay: '2s' }} />
+      <div className="absolute bottom-1/3 left-1/3 w-24 h-24 bg-gradient-to-br from-red-500/15 to-pink-500/15 rounded-full blur-2xl floating" style={{ animationDelay: '2.5s' }} />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Main Content */}
         <div className="mb-20 animate-fade-in">
           <div className="mb-8">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6 animate-scale-in glow-border">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6 animate-scale-in neon-glow-blue">
               <Zap className="w-4 h-4 mr-2" />
               World&apos;s Most Advanced Autonomous Platform
             </div>
           </div>
           
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-8 leading-tight tracking-tight holographic-text neon-glow">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-8 leading-tight tracking-tight gradient-text neon-glow">
             {title}
           </h1>
           <p className="text-xl sm:text-2xl md:text-3xl text-gray-300 max-w-4xl mx-auto mb-16 leading-relaxed font-light">
@@ -72,7 +72,7 @@ const Hero: React.FC<HeroProps> = ({
                 <Button
                   href={primaryAction.href}
                   size="lg"
-                  className="animate-scale-in shadow-2xl shadow-blue-500/25 hover:shadow-blue-500/40"
+                  className="animate-scale-in shadow-2xl shadow-blue-500/25 hover:shadow-blue-500/40 futuristic-btn"
                   style={{ animationDelay: '0.2s' }}
                 >
                   {primaryAction.text}
@@ -84,7 +84,7 @@ const Hero: React.FC<HeroProps> = ({
                   href={secondaryAction.href}
                   variant="outline"
                   size="lg"
-                  className="animate-scale-in border-white/20 hover:border-white/40 hover:bg-white/5"
+                  className="animate-scale-in border-white/20 hover:border-white/40 hover:bg-white/5 futuristic-btn"
                   style={{ animationDelay: '0.4s' }}
                 >
                   <Play className="w-5 h-5 mr-2" />
@@ -99,14 +99,17 @@ const Hero: React.FC<HeroProps> = ({
         {stats && (
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto animate-fade-in" style={{ animationDelay: '0.6s' }}>
             {stats.map((stat, index) => (
-              <div key={index} className="text-center group">
-                <div className="relative">
-                  <div className={`text-3xl md:text-4xl font-bold mb-3 ${stat.color} group-hover:scale-110 transition-transform duration-300`}>
+              <div
+                key={index}
+                className="text-center group"
+                style={{ animationDelay: `${0.8 + index * 0.1}s` }}
+              >
+                <div className="mb-4">
+                  <div className={`text-3xl md:text-4xl font-black ${stat.color} neon-glow group-hover:scale-110 transition-transform duration-300`}>
                     {stat.value}
                   </div>
-                  <div className="absolute -inset-2 bg-gradient-to-r from-transparent via-blue-500/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
-                <div className="text-gray-400 text-sm md:text-base font-medium">
+                <div className="text-sm md:text-base text-gray-400 font-medium group-hover:text-gray-300 transition-colors duration-300">
                   {stat.label}
                 </div>
               </div>

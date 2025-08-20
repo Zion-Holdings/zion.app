@@ -1,6 +1,5 @@
 import React from 'react';
 import Card from '../ui/Card';
-import { Zap } from 'lucide-react';
 
 interface Feature {
   icon: React.ReactNode;
@@ -8,67 +7,51 @@ interface Feature {
   description: string;
   color: string;
   gradient: string;
-  delay?: number;
 }
 
 interface FeaturesProps {
-  title: string;
-  subtitle: string;
   features: Feature[];
-  columns?: 2 | 3 | 4;
 }
 
-const Features: React.FC<FeaturesProps> = ({
-  title,
-  subtitle,
-  features,
-  columns = 3,
-}) => {
-  const gridCols = {
-    2: 'md:grid-cols-2',
-    3: 'md:grid-cols-2 lg:grid-cols-3',
-    4: 'md:grid-cols-2 lg:grid-cols-4',
-  };
-
+const Features: React.FC<FeaturesProps> = ({ features }) => {
   return (
-    <section className="py-24 bg-black relative overflow-hidden futuristic-bg particles-bg">
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.05)_1px,transparent_1px)] bg-[size:50px_50px] opacity-20" />
-      <div className="absolute inset-0 grid-bg opacity-20" />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
-        <div className="text-center mb-20 animate-fade-in">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6 glow-border">
-            <Zap className="w-4 h-4 mr-2" />
+    <section className="relative section-padding bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 overflow-hidden">
+      {/* Futuristic Background Elements */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.08),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(16,185,129,0.08),transparent_50%)]" />
+      <div className="absolute inset-0 bg-grid opacity-10" />
+      
+      <div className="relative z-10 container-cursor">
+        <div className="text-center mb-20">
+          <h2 className="text-responsive-lg font-bold mb-8 gradient-text text-shadow">
             Platform Features
-          </div>
-          <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight holographic-text neon-glow">
-            {title}
           </h2>
-          <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
-            {subtitle}
+          <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+            Experience the future of business automation with our cutting-edge platform features.
           </p>
         </div>
 
-        {/* Features Grid */}
-        <div className={`grid grid-cols-1 gap-8 ${gridCols[columns]}`}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <Card
               key={index}
-              className="text-center group bg-gray-900/50 border border-gray-800 hover:border-blue-500/30 hover:bg-gray-900/80 transition-all duration-300 hover:-translate-y-1"
-              style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
+              className={`group hover:scale-105 transition-all duration-500 futuristic-card ${feature.color} border-opacity-20 backdrop-blur-sm`}
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="relative">
-                <div className={`w-16 h-16 mx-auto mb-6 rounded-2xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg bg-gradient-to-br ${feature.color} shadow-xl`}>
+              <div className="p-8 text-center">
+                <div className={`w-16 h-16 mx-auto mb-6 ${feature.color} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 neon-glow`}>
                   {feature.icon}
                 </div>
-                <div className={`absolute -inset-2 bg-gradient-to-r from-transparent via-blue-500/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm`} />
+                <h3 className="text-xl font-bold mb-4 text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 transition-all duration-300">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-300 group-hover:text-gray-200 transition-colors duration-300">
+                  {feature.description}
+                </p>
+                
+                {/* Futuristic hover effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl" />
               </div>
-              <h3 className="text-xl font-bold mb-4 text-white group-hover:text-blue-400 transition-colors duration-300">
-                {feature.title}
-              </h3>
-              <p className="text-gray-400 leading-relaxed">
-                {feature.description}
-              </p>
             </Card>
           ))}
         </div>
