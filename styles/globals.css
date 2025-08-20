@@ -85,6 +85,116 @@ a {
   }
 }
 
+/* Tilt on hover effect */
+.tilt-on-hover {
+  transition: transform 0.2s ease-out;
+}
+
+.tilt-on-hover:hover {
+  transform: rotate(1deg) scale(1.02);
+}
+
+/* Enhanced backdrop blur utilities */
+.backdrop-blur-xs {
+  backdrop-filter: blur(2px);
+}
+
+/* Custom gradient utilities */
+.bg-gradient-to-br {
+  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+}
+
+.from-white\/10 {
+  --tw-gradient-from: rgb(255 255 255 / 0.1);
+  --tw-gradient-to: rgb(255 255 255 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-white\/5 {
+  --tw-gradient-to: rgb(255 255 255 / 0.05);
+}
+
+/* Enhanced transition utilities */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.duration-200 {
+  transition-duration: 200ms;
+}
+
+.duration-300 {
+  transition-duration: 300ms;
+}
+
+/* Hover state utilities */
+.hover\:bg-white\/20:hover {
+  background-color: rgb(255 255 255 / 0.2);
+}
+
+.hover\:border-cyan-400\/50:hover {
+  border-color: rgb(34 211 238 / 0.5);
+}
+
+.hover\:border-fuchsia-400\/50:hover {
+  border-color: rgb(232 121 249 / 0.5);
+}
+
+.hover\:border-blue-400\/50:hover {
+  border-color: rgb(96 165 250 / 0.5);
+}
+
+.hover\:border-yellow-400\/50:hover {
+  border-color: rgb(250 204 21 / 0.5);
+}
+
+.hover\:border-purple-400\/50:hover {
+  border-color: rgb(196 181 253 / 0.5);
+}
+
+.hover\:border-green-400\/50:hover {
+  border-color: rgb(74 222 128 / 0.5);
+}
+
+.hover\:border-cyan-400\/30:hover {
+  border-color: rgb(34 211 238 / 0.3);
+}
+
+/* Group hover utilities */
+.group:hover .group-hover\:opacity-100 {
+  opacity: 1;
+}
+
+.group:hover .group-hover\:scale-110 {
+  transform: scale(1.1);
+}
+
+.group:hover .group-hover\:border-cyan-400\/30 {
+  border-color: rgb(34 211 238 / 0.3);
+}
+
+.group:hover .group-hover\:border-fuchsia-400\/30 {
+  border-color: rgb(232 121 249 / 0.3);
+}
+
+.group:hover .group-hover\:border-blue-400\/30 {
+  border-color: rgb(96 165 250 / 0.3);
+}
+
+.group:hover .group-hover\:border-yellow-400\/30 {
+  border-color: rgb(250 204 21 / 0.3);
+}
+
+.group:hover .group-hover\:border-purple-400\/30 {
+  border-color: rgb(196 181 253 / 0.3);
+}
+
+.group:hover .group-hover\:border-green-400\/30 {
+  border-color: rgb(74 222 128 / 0.3);
+}
+
 /* Responsive utilities */
 @media (max-width: 768px) {
   .mobile-hidden {
@@ -96,4 +206,41 @@ a {
   .desktop-hidden {
     display: none;
   }
+}
+
+/* Enhanced color utilities for better compatibility */
+.text-cyan-300\/90 {
+  color: rgb(34 211 238 / 0.9);
+}
+
+.text-white\/80 {
+  color: rgb(255 255 255 / 0.8);
+}
+
+.text-white\/75 {
+  color: rgb(255 255 255 / 0.75);
+}
+
+.text-white\/70 {
+  color: rgb(255 255 255 / 0.7);
+}
+
+.text-white\/90 {
+  color: rgb(255 255 255 / 0.9);
+}
+
+.border-white\/10 {
+  border-color: rgb(255 255 255 / 0.1);
+}
+
+.border-white\/20 {
+  border-color: rgb(255 255 255 / 0.2);
+}
+
+.bg-white\/10 {
+  background-color: rgb(255 255 255 / 0.1);
+}
+
+.bg-white\/5 {
+  background-color: rgb(255 255 255 / 0.05);
 }
