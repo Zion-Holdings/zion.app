@@ -311,6 +311,79 @@ export default function HomePage() {
                 <h3 className="text-lg font-semibold text-green-400 mb-2">Contact</h3>
                 <p className="text-white/70 text-sm">Get in touch</p>
               </Link>
+
+              <Link href="/privacy" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-indigo-400/30 transition-all duration-300 text-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-indigo-400 to-sky-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-xl">⚖️</span>
+                </div>
+                <h3 className="text-lg font-semibold text-indigo-300 mb-2">Privacy Policy</h3>
+                <p className="text-white/70 text-sm">Your data, protected</p>
+              </Link>
+            </div>
+          </section>
+
+          {/* Featured Articles & Guides */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">📝 Featured Articles & Guides</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <Link href="/blog/ai-automation-trends-2025" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30">
+                <h3 className="text-lg font-semibold text-cyan-300">AI Automation Trends 2025</h3>
+                <p className="mt-1 text-sm text-white/75">What’s next in autonomous AI systems.</p>
+                <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Read <span aria-hidden>→</span></div>
+              </Link>
+              <Link href="/blog/cloud-native-automation" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-green-400/30">
+                <h3 className="text-lg font-semibold text-green-300">Cloud-Native Automation</h3>
+                <p className="mt-1 text-sm text-white/75">Best practices for resilient platforms.</p>
+                <div className="mt-3 inline-flex items-center gap-1 text-xs text-green-300/90">Read <span aria-hidden>→</span></div>
+              </Link>
+              <Link href="/blog/performance-optimization" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-yellow-400/30">
+                <h3 className="text-lg font-semibold text-yellow-300">Performance Optimization</h3>
+                <p className="mt-1 text-sm text-white/75">Speed, reliability, and scale.</p>
+                <div className="mt-3 inline-flex items-center gap-1 text-xs text-yellow-300/90">Read <span aria-hidden>→</span></div>
+              </Link>
+              <Link href="/blog/autonomous-content-generation" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-fuchsia-400/30">
+                <h3 className="text-lg font-semibold text-fuchsia-300">Autonomous Content Generation</h3>
+                <p className="mt-1 text-sm text-white/75">Scale content with AI safely.</p>
+                <div className="mt-3 inline-flex items-center gap-1 text-xs text-fuchsia-300/90">Read <span aria-hidden>→</span></div>
+              </Link>
+              <Link href="/blog/future-of-work" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-purple-400/30">
+                <h3 className="text-lg font-semibold text-purple-300">The Future of Work</h3>
+                <p className="mt-1 text-sm text-white/75">Humans + AI, better together.</p>
+                <div className="mt-3 inline-flex items-center gap-1 text-xs text-purple-300/90">Read <span aria-hidden>→</span></div>
+              </Link>
+              <Link href="/blog/ai-ethics-automation" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-red-400/30">
+                <h3 className="text-lg font-semibold text-red-300">AI Ethics in Automation</h3>
+                <p className="mt-1 text-sm text-white/75">Responsible, transparent AI.</p>
+                <div className="mt-3 inline-flex items-center gap-1 text-xs text-red-300/90">Read <span aria-hidden>→</span></div>
+              </Link>
+            </div>
+          </section>
+
+          {/* Developer & Documentation */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">📚 Developer & Documentation</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <a href="https://github.com/Zion-Holdings/zion.app#readme" target="_blank" rel="noopener noreferrer" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300 text-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-xl">📖</span>
+                </div>
+                <h3 className="text-lg font-semibold text-cyan-300 mb-2">Project README</h3>
+                <p className="text-white/70 text-sm">Overview, scripts, and workflows</p>
+              </a>
+              <a href="https://github.com/Zion-Holdings/zion.app/blob/main/API.md" target="_blank" rel="noopener noreferrer" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-green-400/30 transition-all duration-300 text-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-xl">🧩</span>
+                </div>
+                <h3 className="text-lg font-semibold text-green-300 mb-2">API Documentation</h3>
+                <p className="text-white/70 text-sm">Endpoints and integration</p>
+              </a>
+              <a href="https://github.com/Zion-Holdings/zion.app/blob/main/ARCHITECTURE.md" target="_blank" rel="noopener noreferrer" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-yellow-400/30 transition-all duration-300 text-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-xl">🏗️</span>
+                </div>
+                <h3 className="text-lg font-semibold text-yellow-300 mb-2">Architecture</h3>
+                <p className="text-white/70 text-sm">Systems design and topology</p>
+              </a>
             </div>
           </section>
 
