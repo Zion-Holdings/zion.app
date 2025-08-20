@@ -121,10 +121,11 @@ export default function HomePage() {
               Specialized Tools for Every Business Need
             </h2>
             <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
-              20 specialized micro SaaS solutions covering content creation, design systems, performance monitoring, 
+              25 specialized micro SaaS solutions covering content creation, design systems, performance monitoring, 
               SEO automation, chatbots, business intelligence, email marketing, social media management, 
               customer feedback, billing, project management, API infrastructure, AI video editing, image generation, 
-              customer support automation, code assistance, e-commerce analytics, and legal automation. Focused value with transparent pricing.
+              customer support automation, code assistance, e-commerce analytics, legal automation, sales automation, 
+              HR management, financial planning, supply chain optimization, and cybersecurity. Focused value with transparent pricing.
             </p>
           </div>
 
@@ -675,7 +676,7 @@ export default function HomePage() {
 
           <div className="text-center">
             <p className="text-gray-400 mb-8 max-w-3xl mx-auto">
-              Our portfolio of 20 specialized micro SaaS solutions covers content creation, design, analytics, 
+              Our portfolio of 25 specialized micro SaaS solutions covers content creation, design, analytics, 
               marketing, business operations, AI video editing, image generation, customer support automation, 
               code assistance, e-commerce analytics, and legal automation. All services include comprehensive documentation, dedicated support, 
               enterprise-grade reliability, and 14-day free trials. Start with one solution and scale as you grow.
