@@ -426,6 +426,64 @@ export default function HomePage() {
             </div>
           </section>
 
+          {/* Project Documentation & Resources */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">📚 Project Documentation & Technical Resources</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-blue-400 mb-4 text-center">🏗️ Architecture</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• System design</li>
+                  <li>• Infrastructure</li>
+                  <li>• Scalability</li>
+                  <li>• Best practices</li>
+                </ul>
+                <Link href="/ARCHITECTURE.md" className="text-blue-400 hover:text-blue-300 text-sm font-semibold">
+                  View Architecture →
+                </Link>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-purple-400 mb-4 text-center">🚀 Deployment</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• CI/CD pipelines</li>
+                  <li>• Environment setup</li>
+                  <li>• Monitoring</li>
+                  <li>• Rollback strategies</li>
+                </ul>
+                <Link href="/DEPLOYMENT.md" className="text-purple-400 hover:text-purple-300 text-sm font-semibold">
+                  View Deployment →
+                </Link>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-green-400 mb-4 text-center">🔧 API Reference</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Endpoints</li>
+                  <li>• Authentication</li>
+                  <li>• Examples</li>
+                  <li>• Integration</li>
+                </ul>
+                <Link href="/API.md" className="text-green-400 hover:text-green-300 text-sm font-semibold">
+                  View API Docs →
+                </Link>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-yellow-400 mb-4 text-center">🤝 Contributing</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Guidelines</li>
+                  <li>• Code standards</li>
+                  <li>• Pull requests</li>
+                  <li>• Community</li>
+                </ul>
+                <Link href="/CONTRIBUTING.md" className="text-yellow-400 hover:text-yellow-300 text-sm font-semibold">
+                  View Guidelines →
+                </Link>
+              </div>
+            </div>
+          </section>
+
           {/* Latest Autonomous Content */}
           <section className="mx-auto max-w-7xl px-6 pb-14">
             <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Latest Autonomous Content</h2>
