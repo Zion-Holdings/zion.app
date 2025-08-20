@@ -160,7 +160,7 @@ export default function HomePage() {
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-lg flex items-center justify-center mx-auto mb-4">
                   <span className="text-xl">⚛️</span>
                 </div>
-                <h3 className="text-lg font-semibold text-blue-400 mb-2">Next.js 15</h3>
+                <h3 className="text-lg font-semibold text-blue-400 mb-2">Next.js 14</h3>
                 <p className="text-white/70 text-sm">React framework with SSR/SSG</p>
               </div>
               
@@ -320,7 +320,7 @@ export default function HomePage() {
                 <p className="text-white/70 text-sm">Trust & compliance</p>
               </Link>
               
-              <Link href="/reports" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-indigo-400/30 transition-all duration-300 text-center">
+              <Link href="/reports/updates" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-indigo-400/30 transition-all duration-300 text-center">
                 <div className="w-12 h-12 bg-gradient-to-br from-indigo-400 to-blue-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <span className="text-xl">📈</span>
                 </div>
