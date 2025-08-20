@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 
 interface AnimatedBackgroundProps {
-  variant?: 'particles' | 'matrix' | 'cyber-grid' | 'hologram' | 'data-stream';
+  variant?: 'particles' | 'matrix' | 'cyber-grid' | 'hologram' | 'data-stream' | 'quantum' | 'metaverse';
   intensity?: 'low' | 'medium' | 'high';
   className?: string;
 }
@@ -242,6 +242,97 @@ const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
       }
     };
 
+    const drawQuantum = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      const time = Date.now() * 0.001;
+      const qubitCount = 12;
+      const centerX = canvas.width / 2;
+      const centerY = canvas.height / 2;
+      
+      for (let i = 0; i < qubitCount; i++) {
+        const angle = (i / qubitCount) * Math.PI * 2;
+        const radius = 150 + Math.sin(time + i) * 50;
+        const x = centerX + Math.cos(angle) * radius;
+        const y = centerY + Math.sin(angle) * radius;
+        
+        // Quantum state visualization
+        const state = Math.sin(time * 2 + i) * 0.5 + 0.5;
+        const size = 8 + state * 12;
+        
+        ctx.save();
+        ctx.fillStyle = `rgba(139, 92, 246, ${0.6 + state * 0.4})`;
+        ctx.beginPath();
+        ctx.arc(x, y, size, 0, Math.PI * 2);
+        ctx.fill();
+        
+        // Quantum entanglement lines
+        for (let j = i + 1; j < qubitCount; j++) {
+          const otherAngle = (j / qubitCount) * Math.PI * 2;
+          const otherRadius = 150 + Math.sin(time + j) * 50;
+          const otherX = centerX + Math.cos(otherAngle) * otherRadius;
+          const otherY = centerY + Math.sin(otherAngle) * otherRadius;
+          
+          const distance = Math.sqrt(Math.pow(x - otherX, 2) + Math.pow(y - otherY, 2));
+          if (distance < 200) {
+            ctx.strokeStyle = `rgba(139, 92, 246, ${0.3 * (1 - distance / 200)})`;
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            ctx.lineTo(otherX, otherY);
+            ctx.stroke();
+          }
+        }
+        
+        ctx.restore();
+      }
+    };
+
+    const drawMetaverse = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      const time = Date.now() * 0.001;
+      const worldCount = 8;
+      
+      for (let i = 0; i < worldCount; i++) {
+        const x = (canvas.width / worldCount) * i + 50;
+        const y = canvas.height / 2 + Math.sin(time + i) * 100;
+        const size = 60 + Math.sin(time * 0.5 + i) * 20;
+        
+        // 3D world representation
+        ctx.save();
+        ctx.fillStyle = `rgba(236, 72, 153, ${0.4 + Math.sin(time + i) * 0.3})`;
+        ctx.beginPath();
+        ctx.arc(x, y, size, 0, Math.PI * 2);
+        ctx.fill();
+        
+        // World details
+        ctx.strokeStyle = `rgba(236, 72, 153, ${0.6 + Math.sin(time + i) * 0.4})`;
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.arc(x, y, size * 0.7, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.arc(x, y, size * 0.4, 0, Math.PI * 2);
+        ctx.stroke();
+        
+        // Connection portals
+        for (let j = i + 1; j < worldCount; j++) {
+          const otherX = (canvas.width / worldCount) * j + 50;
+          const otherY = canvas.height / 2 + Math.sin(time + j) * 100;
+          
+          ctx.strokeStyle = `rgba(236, 72, 153, ${0.2})`;
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(x, y);
+          ctx.lineTo(otherX, otherY);
+          ctx.stroke();
+        }
+        
+        ctx.restore();
+      }
+    };
+
     const animate = () => {
       switch (variant) {
         case 'particles':
@@ -258,6 +349,12 @@ const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
           break;
         case 'data-stream':
           drawDataStream();
+          break;
+        case 'quantum':
+          drawQuantum();
+          break;
+        case 'metaverse':
+          drawMetaverse();
           break;
       }
       

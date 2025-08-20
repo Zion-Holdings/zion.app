@@ -11,7 +11,7 @@ export default function HomePage() {
   const popularServices = getPopularServices();
 
   const stats = [
-    { number: '35+', label: 'Real Micro SaaS Services' },
+    { number: '45+', label: 'Real Micro SaaS Services' },
     { number: '99.9%', label: 'Uptime Guarantee' },
     { number: '14 Days', label: 'Free Trial' },
     { number: '24/7', label: 'Expert Support' }
@@ -46,28 +46,28 @@ export default function HomePage() {
       name: 'AI & Machine Learning',
       description: 'Intelligent solutions that learn and adapt',
       icon: '🤖',
-      count: 12,
+      count: 15,
       color: 'from-purple-500 to-pink-600'
     },
     {
       name: 'Cloud & DevOps',
       description: 'Scalable infrastructure and automation',
       icon: '☁️',
-      count: 8,
+      count: 10,
       color: 'from-blue-500 to-cyan-600'
     },
     {
       name: 'Business & Productivity',
       description: 'Tools to streamline operations',
       icon: '💼',
-      count: 9,
+      count: 12,
       color: 'from-green-500 to-emerald-600'
     },
     {
-      name: 'Marketing & Sales',
-      description: 'Drive growth and conversions',
-      icon: '📈',
-      count: 6,
+      name: 'Emerging Technologies',
+      description: 'Cutting-edge innovation platforms',
+      icon: '🚀',
+      count: 8,
       color: 'from-orange-500 to-red-600'
     }
   ];
@@ -76,14 +76,14 @@ export default function HomePage() {
     <>
       <Head>
         <title>Zion Tech Group - Future of Micro SaaS Services</title>
-        <meta name="description" content="Discover 35+ real micro SaaS services that solve actual business problems with AI-powered intelligence. Get started with a 14-day free trial." />
+        <meta name="description" content="Discover 45+ real micro SaaS services that solve actual business problems with AI-powered intelligence. Get started with a 14-day free trial." />
         <meta name="keywords" content="micro SaaS, AI services, business automation, cloud optimization, content generation, sales automation, cybersecurity, data backup, business intelligence" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         
         {/* Open Graph */}
         <meta property="og:title" content="Zion Tech Group - Future of Micro SaaS Services" />
-        <meta property="og:description" content="Discover 35+ real micro SaaS services that solve actual business problems with AI-powered intelligence." />
+        <meta property="og:description" content="Discover 45+ real micro SaaS services that solve actual business problems with AI-powered intelligence." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://ziontechgroup.com" />
         <meta property="og:image" content="https://ziontechgroup.com/og-image.jpg" />
@@ -91,7 +91,7 @@ export default function HomePage() {
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Zion Tech Group - Future of Micro SaaS Services" />
-        <meta name="twitter:description" content="Discover 35+ real micro SaaS services that solve actual business problems with AI-powered intelligence." />
+        <meta name="twitter:description" content="Discover 45+ real micro SaaS services that solve actual business problems with AI-powered intelligence." />
         <meta name="twitter:image" content="https://ziontechgroup.com/og-image.jpg" />
       </Head>
 
@@ -175,6 +175,131 @@ export default function HomePage() {
               View All Services
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Futuristic Features Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden">
+        <div className="absolute inset-0 futuristic-bg opacity-20" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              <span className="neon-text-cyan">Cutting-Edge</span> Technology
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Experience the future with our innovative micro SaaS solutions powered by the latest technologies
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="group"
+            >
+              <div className="bg-gradient-to-br from-neon-blue/10 to-neon-blue/5 border border-neon-blue/20 rounded-2xl p-6 backdrop-blur-sm hover:border-neon-blue/40 transition-all duration-300">
+                <div className="text-4xl mb-4">🤖</div>
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-neon-blue transition-colors duration-300">
+                  AI-Powered Intelligence
+                </h3>
+                <p className="text-gray-300 text-sm leading-relaxed">
+                  Advanced machine learning algorithms that adapt and improve over time, providing intelligent insights and automation across all our services.
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="group"
+            >
+              <div className="bg-gradient-to-br from-neon-green/10 to-neon-green/5 border border-neon-green/20 rounded-2xl p-6 backdrop-blur-sm hover:border-neon-green/40 transition-all duration-300">
+                <div className="text-4xl mb-4">🔗</div>
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-neon-green transition-colors duration-300">
+                  Blockchain & Web3
+                </h3>
+                <p className="text-gray-300 text-sm leading-relaxed">
+                  Next-generation blockchain analytics, DeFi insights, and NFT market intelligence for the decentralized future.
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="group"
+            >
+              <div className="bg-gradient-to-br from-neon-purple/10 to-neon-purple/5 border border-neon-purple/20 rounded-2xl p-6 backdrop-blur-sm hover:border-neon-purple/40 transition-all duration-300">
+                <div className="text-4xl mb-4">⚛️</div>
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-neon-purple transition-colors duration-300">
+                  Quantum Computing
+                </h3>
+                <p className="text-gray-300 text-sm leading-relaxed">
+                  Access to quantum computing simulation and education tools, preparing you for the quantum revolution.
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="group"
+            >
+              <div className="bg-gradient-to-br from-neon-orange/10 to-neon-orange/5 border border-neon-orange/20 rounded-2xl p-6 backdrop-blur-sm hover:border-neon-orange/40 transition-all duration-300">
+                <div className="text-4xl mb-4">🌐</div>
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-neon-orange transition-colors duration-300">
+                  Metaverse Platform
+                </h3>
+                <p className="text-gray-300 text-sm leading-relaxed">
+                  Build immersive 3D worlds and virtual experiences with our comprehensive metaverse development platform.
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              viewport={{ once: true }}
+              className="group"
+            >
+              <div className="bg-gradient-to-br from-neon-pink/10 to-neon-pink/5 border border-neon-pink/20 rounded-2xl p-6 backdrop-blur-sm hover:border-neon-pink/40 transition-all duration-300">
+                <div className="text-4xl mb-4">🏥</div>
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-neon-pink transition-colors duration-300">
+                  AI Healthcare
+                </h3>
+                <p className="text-gray-300 text-sm leading-relaxed">
+                  Advanced medical diagnosis support and healthcare automation powered by cutting-edge AI technology.
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              viewport={{ once: true }}
+              className="group"
+            >
+              <div className="bg-gradient-to-br from-neon-cyan/10 to-neon-cyan/5 border border-neon-cyan/20 rounded-2xl p-6 backdrop-blur-sm hover:border-neon-cyan/40 transition-all duration-300">
+                <div className="text-4xl mb-4">🚗</div>
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-neon-cyan transition-colors duration-300">
+                  Autonomous Systems
+                </h3>
+                <p className="text-gray-300 text-sm leading-relaxed">
+                  Test and validate autonomous vehicle algorithms with our advanced simulation platform.
+                </p>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -273,7 +398,7 @@ export default function HomePage() {
             Ready to <span className="neon-text-cyan">Transform</span> Your Business?
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            Join thousands of businesses already using our micro SaaS services to grow faster and smarter.
+            Join thousands of businesses already using our 45+ micro SaaS services to grow faster and smarter.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button

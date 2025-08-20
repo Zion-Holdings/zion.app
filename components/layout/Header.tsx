@@ -19,7 +19,7 @@ const Header = () => {
   }, []);
 
   const navigation = [
-    { name: 'Product', href: '#', hasDropdown: true },
+    { name: 'Services', href: '/micro-saas', hasDropdown: true },
     { name: 'Solutions', href: '/services' },
     { name: 'Resources', href: '/resources' },
     { name: 'Company', href: '/about' },
@@ -27,11 +27,12 @@ const Header = () => {
   ];
 
   const productDropdown = [
-    { name: 'AI Code Assistant', href: '/ai-assistant', description: 'Intelligent code completion and suggestions' },
-    { name: 'Cloud Platform', href: '/cloud-platform', description: 'Scalable cloud infrastructure' },
-    { name: 'Automation Hub', href: '/automation', description: 'AI-powered workflow automation' },
-    { name: 'Analytics', href: '/analytics', description: 'Real-time insights and reporting' },
-    { name: 'Micro SaaS Services', href: '/micro-saas', description: 'Specialized business solutions' },
+    { name: 'AI Content Generator', href: '/micro-saas#ai-content-generator-pro', description: 'Professional AI-powered content creation' },
+    { name: 'Cloud Cost Optimizer', href: '/micro-saas#cloud-cost-optimizer', description: 'Reduce cloud spending by 30%' },
+    { name: 'AI Sales Assistant', href: '/micro-saas#ai-sales-assistant', description: 'Boost sales with intelligent automation' },
+    { name: 'AI Legal Assistant', href: '/micro-saas#ai-legal-assistant', description: 'Legal document analysis and contract review' },
+    { name: 'Blockchain Analytics', href: '/micro-saas#blockchain-analytics-platform', description: 'Comprehensive blockchain data insights' },
+    { name: 'View All Services', href: '/micro-saas', description: '45+ specialized micro SaaS solutions' },
   ];
 
   const isActive = (href: string) => router.pathname === href;
@@ -61,6 +62,13 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-1">
+            {/* Contact Info */}
+            <div className="flex items-center space-x-4 mr-6">
+              <a href="tel:+13024640950" className="flex items-center space-x-2 text-sm text-gray-300 hover:text-neon-blue transition-colors duration-200">
+                <span className="w-2 h-2 bg-neon-blue rounded-full animate-pulse"></span>
+                <span>+1 302 464 0950</span>
+              </a>
+            </div>
             {navigation.map((item) => (
               <div key={item.name} className="relative">
                 {item.hasDropdown ? (
@@ -106,6 +114,16 @@ const Header = () => {
               </div>
             ))}
           </nav>
+
+          {/* Contact Button */}
+          <div className="hidden lg:flex items-center space-x-4">
+            <Link
+              href="/contact"
+              className="px-6 py-2 bg-gradient-to-r from-neon-blue to-neon-cyan text-black font-semibold rounded-lg hover:from-neon-cyan hover:to-neon-blue transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-neon-blue/25"
+            >
+              Contact Us
+            </Link>
+          </div>
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">

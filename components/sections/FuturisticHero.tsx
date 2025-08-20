@@ -33,7 +33,7 @@ const FuturisticHero: React.FC = () => {
   ];
 
   const stats = [
-    { number: '28+', label: 'Real Micro SaaS Services' },
+    { number: '45+', label: 'Real Micro SaaS Services' },
     { number: '99.9%', label: 'Uptime Guarantee' },
     { number: '14 Days', label: 'Free Trial' },
     { number: '24/7', label: 'Expert Support' }
@@ -42,7 +42,7 @@ const FuturisticHero: React.FC = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated Background */}
-      <AnimatedBackground variant="particles" intensity="medium" />
+      <AnimatedBackground variant="quantum" intensity="medium" />
       
       {/* Futuristic Background Effects */}
       <div className="absolute inset-0 futuristic-bg">
@@ -66,7 +66,7 @@ const FuturisticHero: React.FC = () => {
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
             The future of <span className="neon-text-cyan">micro SaaS</span> is here. 
-            Discover <span className="neon-text-green">28+ real services</span> that solve 
+            Discover <span className="neon-text-green">45+ real services</span> that solve 
             actual business problems with <span className="neon-text-pink">AI-powered intelligence</span>.
           </p>
         </motion.div>
@@ -94,11 +94,55 @@ const FuturisticHero: React.FC = () => {
           </Button>
         </motion.div>
 
-        {/* Stats Grid */}
+        {/* Floating Tech Icons */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
+          className="flex justify-center items-center gap-8 mb-12"
+        >
+          <motion.div
+            animate={{ y: [-10, 10, -10] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            className="text-4xl opacity-60 hover:opacity-100 transition-opacity duration-300"
+          >
+            🤖
+          </motion.div>
+          <motion.div
+            animate={{ y: [10, -10, 10] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+            className="text-4xl opacity-60 hover:opacity-100 transition-opacity duration-300"
+          >
+            🔗
+          </motion.div>
+          <motion.div
+            animate={{ y: [-10, 10, -10] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            className="text-4xl opacity-60 hover:opacity-100 transition-opacity duration-300"
+          >
+            ⚛️
+          </motion.div>
+          <motion.div
+            animate={{ y: [10, -10, 10] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+            className="text-4xl opacity-60 hover:opacity-100 transition-opacity duration-300"
+          >
+            🌐
+          </motion.div>
+          <motion.div
+            animate={{ y: [-10, 10, -10] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+            className="text-4xl opacity-60 hover:opacity-100 transition-opacity duration-300"
+          >
+            🚗
+          </motion.div>
+        </motion.div>
+
+        {/* Stats Grid */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
           className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16"
         >
           {stats.map((stat, index) => (
@@ -123,7 +167,7 @@ const FuturisticHero: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto"
         >
           {features.map((feature, index) => (
@@ -131,7 +175,7 @@ const FuturisticHero: React.FC = () => {
               key={feature.title}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
+              transition={{ duration: 0.6, delay: 1.0 + index * 0.1 }}
               className="group"
             >
               <div className="relative p-6 rounded-xl bg-gray-900/50 border border-gray-700/50 hover:border-neon-blue/50 transition-all duration-300 hover:transform hover:scale-105">
@@ -165,7 +209,7 @@ const FuturisticHero: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.0 }}
+          transition={{ duration: 0.8, delay: 1.2 }}
           className="mt-16 text-center"
         >
           <p className="text-gray-400 text-sm mb-4">Trusted by innovative companies worldwide</p>
