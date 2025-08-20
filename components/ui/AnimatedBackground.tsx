@@ -1,18 +1,34 @@
 import React, { useEffect, useRef } from 'react';
 
-interface AnimatedBackgroundProps {
-  variant?: 'particles' | 'matrix' | 'cyber-grid' | 'hologram' | 'data-stream';
-  intensity?: 'low' | 'medium' | 'high';
-  className?: string;
+interface Particle {
+  x: number;
+  y: number;
+  vx: number;
+  vy: number;
+  size: number;
+  opacity: number;
+  color: string;
 }
 
-const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
-  variant = 'particles',
-  intensity = 'medium',
-  className = ''
-}) => {
+interface AnimatedBackgroundProps {
+  className?: string;
+  particleCount?: number;
+  colors?: string[];
+  speed?: number;
+  interactive?: boolean;
+}
+
+export default function AnimatedBackground({
+  className = '',
+  particleCount = 50,
+  colors = ['#00ffff', '#ff00ff', '#ffff00', '#00ff00', '#ff0080'],
+  speed = 1,
+  interactive = true,
+}: AnimatedBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const particlesRef = useRef<Particle[]>([]);
   const animationRef = useRef<number | undefined>(undefined);
+  const mouseRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -29,123 +45,135 @@ const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    let particles: Array<{
-      x: number;
-      y: number;
-      vx: number;
-      vy: number;
-      size: number;
-      opacity: number;
-      color: string;
-    }> = [];
-
-    const colors = [
-      'rgba(0, 212, 255, 0.8)',
-      'rgba(139, 92, 246, 0.8)',
-      'rgba(236, 72, 153, 0.8)',
-      'rgba(16, 185, 129, 0.8)',
-      'rgba(245, 158, 11, 0.8)'
-    ];
-
+    // Initialize particles
     const initParticles = () => {
-      particles = [];
-      const count = intensity === 'low' ? 50 : intensity === 'medium' ? 100 : 200;
+      particlesRef.current = Array.from({ length: particleCount }, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 2 * speed,
+        vy: (Math.random() - 0.5) * 2 * speed,
+        size: Math.random() * 3 + 1,
+        opacity: Math.random() * 0.5 + 0.3,
+        color: colors[Math.floor(Math.random() * colors.length)],
+      }));
+    };
 
-      for (let i = 0; i < count; i++) {
-        particles.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          vx: (Math.random() - 0.5) * 2,
-          vy: (Math.random() - 0.5) * 2,
-          size: Math.random() * 3 + 1,
-          opacity: Math.random() * 0.5 + 0.3,
-          color: colors[Math.floor(Math.random() * colors.length)]
-        });
+    initParticles();
+
+    // Mouse move handler
+    const handleMouseMove = (e: MouseEvent) => {
+      if (interactive) {
+        mouseRef.current.x = e.clientX;
+        mouseRef.current.y = e.clientY;
       }
     };
 
-    const drawParticles = () => {
+    if (interactive) {
+      window.addEventListener('mousemove', handleMouseMove);
+    }
+
+    // Animation loop
+    const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      particles.forEach(particle => {
-        ctx.save();
-        ctx.globalAlpha = particle.opacity;
-        ctx.fillStyle = particle.color;
-        ctx.beginPath();
-        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.restore();
+      // Create gradient background
+      const gradient = ctx.createRadialGradient(
+        canvas.width / 2,
+        canvas.height / 2,
+        0,
+        canvas.width / 2,
+        canvas.height / 2,
+        Math.max(canvas.width, canvas.height) / 2
+      );
+      gradient.addColorStop(0, 'rgba(0, 0, 0, 0.1)');
+      gradient.addColorStop(0.5, 'rgba(0, 0, 0, 0.05)');
+      gradient.addColorStop(1, 'rgba(0, 0, 0, 0.1)');
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+      // Update and draw particles
+      particlesRef.current.forEach((particle, index) => {
         // Update position
         particle.x += particle.vx;
         particle.y += particle.vy;
 
-        // Wrap around edges
-        if (particle.x < 0) particle.x = canvas.width;
-        if (particle.x > canvas.width) particle.x = 0;
-        if (particle.y < 0) particle.y = canvas.height;
-        if (particle.y > canvas.height) particle.y = 0;
+        // Bounce off edges
+        if (particle.x <= 0 || particle.x >= canvas.width) {
+          particle.vx *= -1;
+        }
+        if (particle.y <= 0 || particle.y >= canvas.height) {
+          particle.vy *= -1;
+        }
 
-        // Draw connections
-        particles.forEach(otherParticle => {
-          const distance = Math.sqrt(
-            Math.pow(particle.x - otherParticle.x, 2) + 
-            Math.pow(particle.y - otherParticle.y, 2)
-          );
-
+        // Interactive mouse effect
+        if (interactive) {
+          const dx = mouseRef.current.x - particle.x;
+          const dy = mouseRef.current.y - particle.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          
           if (distance < 100) {
-            ctx.save();
-            ctx.globalAlpha = (100 - distance) / 100 * 0.3;
-            ctx.strokeStyle = particle.color;
-            ctx.lineWidth = 1;
-            ctx.beginPath();
-            ctx.moveTo(particle.x, particle.y);
-            ctx.lineTo(otherParticle.x, otherParticle.y);
-            ctx.stroke();
-            ctx.restore();
+            const force = (100 - distance) / 100;
+            particle.vx += dx * force * 0.01;
+            particle.vy += dy * force * 0.01;
+          }
+        }
+
+        // Draw particle
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+        ctx.fillStyle = particle.color;
+        ctx.globalAlpha = particle.opacity;
+        ctx.fill();
+
+        // Draw connection lines
+        particlesRef.current.forEach((otherParticle, otherIndex) => {
+          if (index !== otherIndex) {
+            const dx = particle.x - otherParticle.x;
+            const dy = particle.y - otherParticle.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < 150) {
+              ctx.beginPath();
+              ctx.moveTo(particle.x, particle.y);
+              ctx.lineTo(otherParticle.x, otherParticle.y);
+              ctx.strokeStyle = particle.color;
+              ctx.globalAlpha = (150 - distance) / 150 * 0.3;
+              ctx.lineWidth = 1;
+              ctx.stroke();
+            }
           }
         });
+
+        // Reset global alpha
+        ctx.globalAlpha = 1;
       });
-    };
 
-    const drawMatrix = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
-      const columns = Math.floor(canvas.width / 20);
-      const drops: number[] = [];
-      
-      for (let i = 0; i < columns; i++) {
-        drops[i] = Math.random() * canvas.height;
-      }
-
-      for (let i = 0; i < drops.length; i++) {
-        const x = i * 20;
-        const y = drops[i] * 1;
-        
-        ctx.save();
-        ctx.fillStyle = '#0f0';
-        ctx.font = '16px monospace';
-        ctx.fillText('01', x, y);
-        ctx.restore();
-
-        if (drops[i] * 1 > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0;
-        }
-        drops[i]++;
-      }
-    };
-
-    const drawCyberGrid = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
-      const gridSize = 30;
+      // Draw floating orbs
       const time = Date.now() * 0.001;
-      
-      ctx.save();
-      ctx.strokeStyle = 'rgba(0, 212, 255, 0.3)';
+      for (let i = 0; i < 3; i++) {
+        const x = canvas.width / 2 + Math.cos(time + i * Math.PI * 2 / 3) * 200;
+        const y = canvas.height / 2 + Math.sin(time + i * Math.PI * 2 / 3) * 200;
+        
+        ctx.beginPath();
+        ctx.arc(x, y, 50 + Math.sin(time * 2 + i) * 20, 0, Math.PI * 2);
+        ctx.fillStyle = colors[i % colors.length];
+        ctx.globalAlpha = 0.1;
+        ctx.fill();
+        
+        // Inner glow
+        ctx.beginPath();
+        ctx.arc(x, y, 20 + Math.sin(time * 3 + i) * 10, 0, Math.PI * 2);
+        ctx.fillStyle = colors[i % colors.length];
+        ctx.globalAlpha = 0.3;
+        ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+
+      // Draw grid lines
+      ctx.strokeStyle = 'rgba(0, 255, 255, 0.1)';
       ctx.lineWidth = 1;
+      const gridSize = 100;
       
-      // Vertical lines
       for (let x = 0; x < canvas.width; x += gridSize) {
         ctx.beginPath();
         ctx.moveTo(x, 0);
@@ -153,118 +181,16 @@ const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
         ctx.stroke();
       }
       
-      // Horizontal lines
       for (let y = 0; y < canvas.height; y += gridSize) {
         ctx.beginPath();
         ctx.moveTo(0, y);
         ctx.lineTo(canvas.width, y);
         ctx.stroke();
       }
-      
-      // Animated nodes
-      for (let x = gridSize / 2; x < canvas.width; x += gridSize) {
-        for (let y = gridSize / 2; y < canvas.height; y += gridSize) {
-          const pulse = Math.sin(time + x * 0.01 + y * 0.01) * 0.5 + 0.5;
-          ctx.save();
-          ctx.fillStyle = `rgba(0, 212, 255, ${pulse * 0.8})`;
-          ctx.beginPath();
-          ctx.arc(x, y, 2, 0, Math.PI * 2);
-          ctx.fill();
-          ctx.restore();
-        }
-      }
-      
-      ctx.restore();
-    };
 
-    const drawHologram = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
-      const time = Date.now() * 0.001;
-      const centerX = canvas.width / 2;
-      const centerY = canvas.height / 2;
-      
-      // Holographic rings
-      for (let i = 0; i < 5; i++) {
-        const radius = 50 + i * 40;
-        const opacity = Math.sin(time + i) * 0.5 + 0.5;
-        
-        ctx.save();
-        ctx.strokeStyle = `rgba(0, 212, 255, ${opacity * 0.6})`;
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
-        ctx.stroke();
-        ctx.restore();
-      }
-      
-      // Scanning line
-      const scanY = (Math.sin(time * 2) * 0.5 + 0.5) * canvas.height;
-      ctx.save();
-      ctx.strokeStyle = 'rgba(0, 212, 255, 0.8)';
-      ctx.lineWidth = 3;
-      ctx.beginPath();
-      ctx.moveTo(0, scanY);
-      ctx.lineTo(canvas.width, scanY);
-      ctx.stroke();
-      ctx.restore();
-    };
-
-    const drawDataStream = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
-      const time = Date.now() * 0.001;
-      const streamCount = 8;
-      
-      for (let i = 0; i < streamCount; i++) {
-        const x = (canvas.width / streamCount) * i;
-        const speed = 2 + Math.sin(time + i) * 0.5;
-        const height = 100 + Math.sin(time * 0.5 + i) * 50;
-        
-        ctx.save();
-        ctx.strokeStyle = `rgba(0, 212, 255, ${0.6 + Math.sin(time + i) * 0.4})`;
-        ctx.lineWidth = 3;
-        ctx.beginPath();
-        ctx.moveTo(x, 0);
-        ctx.lineTo(x, height);
-        ctx.stroke();
-        
-        // Data packets
-        for (let j = 0; j < 5; j++) {
-          const packetY = (time * speed * 50 + j * 20) % height;
-          ctx.fillStyle = `rgba(0, 212, 255, ${0.8 + Math.sin(time * 3 + j) * 0.2})`;
-          ctx.beginPath();
-          ctx.arc(x, packetY, 3, 0, Math.PI * 2);
-          ctx.fill();
-        }
-        
-        ctx.restore();
-      }
-    };
-
-    const animate = () => {
-      switch (variant) {
-        case 'particles':
-          drawParticles();
-          break;
-        case 'matrix':
-          drawMatrix();
-          break;
-        case 'cyber-grid':
-          drawCyberGrid();
-          break;
-        case 'hologram':
-          drawHologram();
-          break;
-        case 'data-stream':
-          drawDataStream();
-          break;
-      }
-      
       animationRef.current = requestAnimationFrame(animate);
     };
 
-    initParticles();
     animate();
 
     return () => {
@@ -272,16 +198,17 @@ const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
         cancelAnimationFrame(animationRef.current);
       }
       window.removeEventListener('resize', resizeCanvas);
+      if (interactive) {
+        window.removeEventListener('mousemove', handleMouseMove);
+      }
     };
-  }, [variant, intensity]);
+  }, [particleCount, colors, speed, interactive]);
 
   return (
     <canvas
       ref={canvasRef}
       className={`fixed inset-0 pointer-events-none z-0 ${className}`}
-      style={{ background: 'transparent' }}
+      style={{ background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%)' }}
     />
   );
-};
-
-export default AnimatedBackground;
+}

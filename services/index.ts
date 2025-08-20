@@ -17,6 +17,11 @@ export { aiCodeReviewService } from './aiCodeReviewService';
 export { apiDocGeneratorService } from './apiDocGeneratorService';
 export { databasePerformanceMonitorService } from './databasePerformanceMonitorService';
 
+// New innovative services
+export { aiMarketplaceService } from './aiMarketplaceService';
+export { quantumComputingService } from './quantumComputingService';
+export { blockchainService } from './blockchainService';
+
 // Export types
 export type {
   ContentTemplate,
@@ -172,3 +177,43 @@ export type {
   DatabasePerformanceAlert,
   IndexRecommendation
 } from './databasePerformanceMonitorService';
+
+// New service types
+export type {
+  AIModel,
+  ModelFilters,
+  PurchaseResult,
+  SellResult,
+  MarketplaceStats,
+  TestResult,
+  BenchmarkResult,
+  RevenueAnalytics,
+  PopularModel
+} from './aiMarketplaceService';
+
+export type {
+  QuantumCircuit,
+  QuantumGate,
+  QuantumParameter,
+  QuantumJob,
+  QuantumResult,
+  QuantumBackend,
+  QuantumAlgorithm,
+  QuantumMLModel,
+  QuantumPrediction,
+  QuantumStats,
+  JobAnalytics
+} from './quantumComputingService';
+
+export type {
+  SmartContract,
+  NFT,
+  NFTMetadata,
+  NFTAttribute,
+  DeFiPool,
+  BlockchainTransaction,
+  TransactionResult,
+  BlockchainStats,
+  WalletAnalytics,
+  NetworkStatus
+} from './blockchainService';

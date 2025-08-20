@@ -100,6 +100,42 @@ body {
   animation: particleFloat 30s ease-in-out infinite;
 }
 
+
+  color: #00ffff;
+  z-index: -1;
+}
+
+.glitch-text::after {
+  animation: glitch-2 0.5s infinite;
+  color: #ff00ff;
+  z-index: -2;
+}
+
+@keyframes glitch {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+}
+
+@keyframes glitch-1 {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+}
+
+@keyframes glitch-2 {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(2px, -2px); }
+  40% { transform: translate(2px, 2px); }
+  60% { transform: translate(-2px, -2px); }
+  80% { transform: translate(-2px, 2px); }
+}
+
+>>>>>>> 540ab0393ad3cdd60de484ecb1d2503ce3278d41
 @keyframes particleFloat {
   0%, 100% { transform: translateY(0px) rotate(0deg); }
   25% { transform: translateY(-20px) rotate(90deg); }
