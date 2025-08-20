@@ -29,9 +29,15 @@ export default function TestingPage() {
             <div className="bg-white/10 rounded-xl p-6 border border-white/20">
               <h2 className="text-lg font-semibold text-amber-400 mb-3">Documentation</h2>
               <ul className="text-white/80 text-sm space-y-2">
-                <li><Link href="/TESTING.md" className="text-amber-300 hover:text-amber-200">Testing Guide →</Link></li>
-                <li><Link href="/pr-smoke-report.md" className="text-amber-300 hover:text-amber-200">PR Smoke Report →</Link></li>
-                <li><Link href="/playwright-smoke-report.md" className="text-amber-300 hover:text-amber-200">Playwright Smoke →</Link></li>
+                <li>
+                  <a href="https://github.com/Zion-Holdings/zion.app/blob/main/TESTING.md" target="_blank" rel="noopener noreferrer" className="text-amber-300 hover:text-amber-200">Testing Guide →</a>
+                </li>
+                <li>
+                  <a href="https://github.com/Zion-Holdings/zion.app/blob/main/pr-smoke-report.md" target="_blank" rel="noopener noreferrer" className="text-amber-300 hover:text-amber-200">PR Smoke Report →</a>
+                </li>
+                <li>
+                  <a href="https://github.com/Zion-Holdings/zion.app/blob/main/playwright-smoke-report.md" target="_blank" rel="noopener noreferrer" className="text-amber-300 hover:text-amber-200">Playwright Smoke →</a>
+                </li>
               </ul>
             </div>
           </div>

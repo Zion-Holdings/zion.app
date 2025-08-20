@@ -29,7 +29,16 @@ export default function SecurityPage() {
             <div className="bg-white/10 rounded-xl p-6 border border-white/20">
               <h2 className="text-lg font-semibold text-red-400 mb-3">Documentation</h2>
               <ul className="text-white/80 text-sm space-y-2">
-                <li><Link href="/SECURITY.md" className="text-red-300 hover:text-red-200">Security Guide →</Link></li>
+                <li>
+                  <a
+                    href="https://github.com/Zion-Holdings/zion.app/blob/main/SECURITY.md"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-red-300 hover:text-red-200"
+                  >
+                    Security Guide →
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
