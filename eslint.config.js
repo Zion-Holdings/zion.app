@@ -1,4 +1,7 @@
 import js from '@eslint/js';
+import react from 'eslint-plugin-react';
+import reactHooks from 'eslint-plugin-react-hooks';
+import reactRefresh from 'eslint-plugin-react-refresh';
 
 export default [
   js.configs.recommended,
@@ -18,11 +21,23 @@ export default [
         setInterval: 'readonly',
         clearTimeout: 'readonly',
         clearInterval: 'readonly'
+      },
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true
+        }
       }
+    },
+    plugins: {
+      react,
+      'react-hooks': reactHooks,
+      'react-refresh': reactRefresh
     },
     rules: {
       'no-unused-vars': 'warn',
-      'no-console': 'warn'
+      'no-console': 'warn',
+      'react/jsx-uses-react': 'off',
+      'react/react-in-jsx-scope': 'off'
     }
   },
   {
@@ -39,13 +54,7 @@ export default [
       'public/reports/**',
       'netlify/',
       'ecosystem*.cjs',
-      '**/*.cjs',
-      '**/*.tsx',
-      '**/*.ts',
-      '**/*.jsx',
-      'components/',
-      'pages/',
-      'services/'
+      '**/*.cjs'
     ]
   }
 ];

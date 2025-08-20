@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink } from 'lucide-react';
+import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target } from 'lucide-react';
 import Button from '../components/ui/Button';
 
 export default function MicroSaasPage() {
@@ -27,7 +27,9 @@ export default function MicroSaasPage() {
       textColor: 'text-pink-400',
       link: 'https://contentgen.zion.app',
       marketPosition: 'Competitive with Jasper ($39-99), Copy.ai ($36-186), and Writesonic ($12.67-100)',
-      targetAudience: 'Content marketers, agencies, e-commerce businesses, and content creators'
+      targetAudience: 'Content marketers, agencies, e-commerce businesses, and content creators',
+      marketSize: '$15.8B content marketing industry',
+      growthRate: '16.1% CAGR expected through 2030'
     },
     {
       name: 'Design System Builder',
@@ -51,7 +53,9 @@ export default function MicroSaasPage() {
       textColor: 'text-violet-400',
       link: 'https://design.zion.app',
       marketPosition: 'Competitive with Zeroheight ($0-200), Frontify ($0-200), and InVision DSM ($0-100)',
-      targetAudience: 'Design teams, product managers, and design system architects'
+      targetAudience: 'Design teams, product managers, and design system architects',
+      marketSize: '$8.2B design tools market',
+      growthRate: '12.3% CAGR expected through 2030'
     },
     {
       name: 'App Performance Monitor',
@@ -75,7 +79,9 @@ export default function MicroSaasPage() {
       textColor: 'text-amber-400',
       link: 'https://monitor.zion.app',
       marketPosition: 'Competitive with Sentry ($26-80), LogRocket ($99-199), and New Relic ($0-99)',
-      targetAudience: 'Developers, DevOps teams, and product managers'
+      targetAudience: 'Developers, DevOps teams, and product managers',
+      marketSize: '$4.1B application performance monitoring market',
+      growthRate: '18.7% CAGR expected through 2030'
     },
     {
       name: 'SEO Automation Suite',
@@ -99,7 +105,9 @@ export default function MicroSaasPage() {
       textColor: 'text-emerald-400',
       link: 'https://seo.zion.app',
       marketPosition: 'Competitive with Ahrefs ($99-999), SEMrush ($119-449), and Moz ($99-599)',
-      targetAudience: 'SEO specialists, digital marketers, and agencies'
+      targetAudience: 'SEO specialists, digital marketers, and agencies',
+      marketSize: '$68.8B SEO industry',
+      growthRate: '14.2% CAGR expected through 2030'
     },
     {
       name: 'AI Chatbot Platform',
@@ -123,7 +131,9 @@ export default function MicroSaasPage() {
       textColor: 'text-sky-400',
       link: 'https://chatbot.zion.app',
       marketPosition: 'Competitive with Intercom ($39-499), Drift ($0-2500), and ManyChat ($0-15)',
-      targetAudience: 'Customer support teams, marketers, and e-commerce businesses'
+      targetAudience: 'Customer support teams, marketers, and e-commerce businesses',
+      marketSize: '$12.7B chatbot market',
+      growthRate: '23.5% CAGR expected through 2030'
     },
     {
       name: 'Business Intelligence Hub',
@@ -147,7 +157,166 @@ export default function MicroSaasPage() {
       textColor: 'text-rose-400',
       link: 'https://bi.zion.app',
       marketPosition: 'Competitive with Tableau ($70-70), Power BI ($9.99-20), and Looker ($500-5000)',
-      targetAudience: 'Data analysts, business intelligence teams, and executives'
+      targetAudience: 'Data analysts, business intelligence teams, and executives',
+      marketSize: '$29.5B business intelligence market',
+      growthRate: '13.2% CAGR expected through 2030'
+    },
+    // New additional services
+    {
+      name: 'Email Marketing Automation',
+      tagline: 'Advanced email campaign management',
+      price: '$59',
+      period: '/month',
+      description: 'Create, automate, and optimize email marketing campaigns with AI-powered personalization.',
+      features: [
+        'AI-powered subject line optimization',
+        'Behavioral email triggers',
+        'A/B testing automation',
+        'Advanced segmentation',
+        'Email template builder',
+        'Performance analytics',
+        'GDPR compliance tools',
+        'Integration with major CRMs'
+      ],
+      popular: false,
+      icon: '📧',
+      color: 'from-indigo-500 to-purple-600',
+      textColor: 'text-indigo-400',
+      link: 'https://email.zion.app',
+      marketPosition: 'Competitive with Mailchimp ($13-350), ConvertKit ($29-59), and ActiveCampaign ($9-49)',
+      targetAudience: 'Email marketers, e-commerce businesses, and marketing agencies',
+      marketSize: '$22.2B email marketing market',
+      growthRate: '15.7% CAGR expected through 2030'
+    },
+    {
+      name: 'Social Media Scheduler',
+      tagline: 'Intelligent social media management',
+      price: '$44',
+      period: '/month',
+      description: 'Schedule, analyze, and optimize your social media presence across all platforms.',
+      features: [
+        'Multi-platform scheduling',
+        'AI-powered content optimization',
+        'Best time to post analysis',
+        'Content calendar management',
+        'Social media analytics',
+        'Hashtag research tools',
+        'Team collaboration',
+        'Automated responses'
+      ],
+      popular: false,
+      icon: '📱',
+      color: 'from-teal-500 to-cyan-600',
+      textColor: 'text-teal-400',
+      link: 'https://social.zion.app',
+      marketPosition: 'Competitive with Buffer ($6-99), Hootsuite ($29-599), and Later ($18-40)',
+      targetAudience: 'Social media managers, influencers, and businesses',
+      marketSize: '$17.9B social media management market',
+      growthRate: '19.8% CAGR expected through 2030'
+    },
+    {
+      name: 'Invoice & Billing Manager',
+      tagline: 'Streamlined financial operations',
+      price: '$34',
+      period: '/month',
+      description: 'Automate invoicing, payment processing, and financial reporting for small businesses.',
+      features: [
+        'Automated invoice generation',
+        'Payment gateway integration',
+        'Recurring billing setup',
+        'Expense tracking',
+        'Financial reporting',
+        'Tax calculation',
+        'Multi-currency support',
+        'Client portal access'
+      ],
+      popular: false,
+      icon: '💰',
+      color: 'from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      link: 'https://billing.zion.app',
+      marketPosition: 'Competitive with FreshBooks ($15-55), QuickBooks ($30-200), and Wave (Free)',
+      targetAudience: 'Freelancers, small businesses, and accounting professionals',
+      marketSize: '$4.8B accounting software market',
+      growthRate: '11.9% CAGR expected through 2030'
+    },
+    {
+      name: 'Project Management Hub',
+      tagline: 'Collaborative project organization',
+      price: '$54',
+      period: '/month',
+      description: 'Streamline project workflows with task management, team collaboration, and progress tracking.',
+      features: [
+        'Kanban and Gantt views',
+        'Time tracking integration',
+        'Team collaboration tools',
+        'Resource allocation',
+        'Progress reporting',
+        'File sharing & storage',
+        'Mobile app access',
+        'API integrations'
+      ],
+      popular: false,
+      icon: '📋',
+      color: 'from-orange-500 to-red-600',
+      textColor: 'text-orange-400',
+      link: 'https://projects.zion.app',
+      marketPosition: 'Competitive with Asana ($10.99-24.99), Monday.com ($8-16), and ClickUp ($5-12)',
+      targetAudience: 'Project managers, development teams, and creative agencies',
+      marketSize: '$6.8B project management software market',
+      growthRate: '17.4% CAGR expected through 2030'
+    },
+    {
+      name: 'Customer Support Suite',
+      tagline: 'Comprehensive support management',
+      price: '$74',
+      period: '/month',
+      description: 'Manage customer inquiries, tickets, and support operations with AI-powered automation.',
+      features: [
+        'Ticket management system',
+        'AI-powered response suggestions',
+        'Knowledge base builder',
+        'Live chat integration',
+        'Customer satisfaction surveys',
+        'Support analytics',
+        'Multi-language support',
+        'Integration with popular platforms'
+      ],
+      popular: false,
+      icon: '🎧',
+      color: 'from-blue-500 to-indigo-600',
+      textColor: 'text-blue-400',
+      link: 'https://support.zion.app',
+      marketPosition: 'Competitive with Zendesk ($49-99), Freshdesk ($15-99), and Help Scout ($20-40)',
+      targetAudience: 'Customer support teams, SaaS companies, and e-commerce businesses',
+      marketSize: '$11.2B customer service software market',
+      growthRate: '21.3% CAGR expected through 2030'
+    },
+    {
+      name: 'HR Management Platform',
+      tagline: 'Streamlined human resources',
+      price: '$64',
+      period: '/month',
+      description: 'Simplify HR operations with employee management, payroll, and performance tracking.',
+      features: [
+        'Employee onboarding automation',
+        'Time and attendance tracking',
+        'Performance management',
+        'Payroll integration',
+        'Benefits administration',
+        'Compliance monitoring',
+        'Employee self-service portal',
+        'Reporting and analytics'
+      ],
+      popular: false,
+      icon: '👥',
+      color: 'from-purple-500 to-pink-600',
+      textColor: 'text-purple-400',
+      link: 'https://hr.zion.app',
+      marketPosition: 'Competitive with BambooHR ($6.19-8.75), Gusto ($40-80), and Zenefits ($8-27)',
+      targetAudience: 'HR professionals, small businesses, and growing companies',
+      marketSize: '$15.8B HR software market',
+      growthRate: '14.8% CAGR expected through 2030'
     }
   ];
 
@@ -166,6 +335,34 @@ export default function MicroSaasPage() {
       title: 'Focus on Specialization',
       description: 'Unlike broad platforms, our micro SaaS solutions focus on specific use cases, delivering deeper functionality and better user experience.',
       stats: '3x faster time-to-value'
+    },
+    {
+      title: 'Market Validation',
+      description: 'All services are based on validated market needs with proven demand and competitive positioning.',
+      stats: '12 validated solutions'
+    }
+  ];
+
+  const industryTrends = [
+    {
+      trend: 'AI Integration',
+      description: 'Every service includes AI-powered features for enhanced automation and intelligence.',
+      impact: 'High'
+    },
+    {
+      trend: 'API-First Design',
+      description: 'All services provide robust APIs for seamless integration with existing workflows.',
+      impact: 'High'
+    },
+    {
+      trend: 'Mobile Optimization',
+      description: 'Responsive design and mobile apps for all services ensure accessibility anywhere.',
+      impact: 'Medium'
+    },
+    {
+      trend: 'Security Focus',
+      description: 'Enterprise-grade security and compliance built into every service.',
+      impact: 'High'
     }
   ];
 
@@ -311,6 +508,17 @@ export default function MicroSaasPage() {
                       <ExternalLink className="w-4 h-4 ml-2" />
                     </Button>
                     
+                    <div className="grid grid-cols-2 gap-4 text-center">
+                      <div>
+                        <p className="text-xs text-gray-500 mb-2">Market Size</p>
+                        <p className="text-sm text-gray-400 font-medium">{service.marketSize}</p>
+                      </div>
+                      <div>
+                        <p className="text-xs text-gray-500 mb-2">Growth Rate</p>
+                        <p className="text-sm text-gray-400 font-medium">{service.growthRate}</p>
+                      </div>
+                    </div>
+
                     <div className="text-center">
                       <p className="text-xs text-gray-500 mb-2">Market Position</p>
                       <p className="text-sm text-gray-400 leading-relaxed">{service.marketPosition}</p>
@@ -321,6 +529,38 @@ export default function MicroSaasPage() {
                       <p className="text-sm text-gray-400">{service.targetAudience}</p>
                     </div>
                   </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Industry Trends */}
+        <section className="py-24 bg-gray-900">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-20">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">
+                Industry Trends & Innovation
+              </h2>
+              <p className="text-xl text-gray-400 max-w-4xl mx-auto">
+                Our micro SaaS solutions are built on the latest industry trends and technological innovations.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {industryTrends.map((trend, index) => (
+                <div key={index} className="bg-gray-800/50 rounded-2xl p-6 border border-gray-700 hover:border-green-500/30 transition-all duration-300">
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-lg font-bold text-white">{trend.trend}</h3>
+                    <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                      trend.impact === 'High' ? 'bg-green-500/20 text-green-400' :
+                      trend.impact === 'Medium' ? 'bg-yellow-500/20 text-yellow-400' :
+                      'bg-blue-500/20 text-blue-400'
+                    }`}>
+                      {trend.impact} Impact
+                    </span>
+                  </div>
+                  <p className="text-gray-400 text-sm leading-relaxed">{trend.description}</p>
                 </div>
               ))}
             </div>
