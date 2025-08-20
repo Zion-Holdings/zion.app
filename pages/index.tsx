@@ -121,10 +121,10 @@ export default function HomePage() {
               Specialized Tools for Every Business Need
             </h2>
             <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
-              Discover 20+ specialized micro SaaS solutions covering content creation, design systems, performance monitoring, 
+              Discover 45+ specialized micro SaaS solutions covering AI-powered content creation, design systems, performance monitoring, 
               SEO automation, chatbots, business intelligence, email marketing, social media, project management, 
-              billing, HR operations, video editing, cloud optimization, legal automation, sales intelligence, and more. 
-              Focused value with transparent pricing and 14-day free trials.
+              billing, HR operations, video editing, cloud optimization, legal automation, sales intelligence, customer analytics, 
+              and more. Focused value with transparent pricing and 14-day free trials.
             </p>
           </div>
 
@@ -242,6 +242,36 @@ export default function HomePage() {
                     rel="noopener noreferrer"
                     size="sm"
                     className="bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* AI Sales Intelligence */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    💼
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">AI Sales Intelligence</h3>
+                    <p className="text-blue-400 text-sm font-medium">$99/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  AI-driven sales intelligence for lead generation, prospect research, and sales automation.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://ziontechgroup.com/ai-sales-intelligence"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700"
                   >
                     Try Free
                   </Button>
@@ -372,7 +402,7 @@ export default function HomePage() {
 
           <div className="text-center">
             <p className="text-gray-400 mb-8 max-w-3xl mx-auto">
-              All 20+ services include comprehensive documentation, dedicated support, enterprise-grade reliability, and 14-day free trials. 
+              All 45+ services include comprehensive documentation, dedicated support, enterprise-grade reliability, and 14-day free trials. 
               Start with one solution and scale as you grow. View our complete portfolio for more specialized tools.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

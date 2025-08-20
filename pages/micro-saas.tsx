@@ -945,8 +945,8 @@ export default function MicroSaasPage() {
     },
     {
       name: 'AI-Powered Customer Segmentation',
-      tagline: 'Intelligent audience targeting',
-      price: '$64',
+      tagline: 'Intelligent customer targeting platform',
+      price: '$89',
       period: '/month',
       description: 'Create precise customer segments with AI-powered behavioral analysis and predictive modeling.',
       features: [
@@ -966,6 +966,343 @@ export default function MicroSaasPage() {
       link: 'https://ziontechgroup.com/ai-powered-customer-segmentation',
       marketPosition: 'Competitive with Segment ($0-1000+), Amplitude ($0-1000+), and Mixpanel ($0-1000+)',
       targetAudience: 'Marketing teams, data analysts, and customer experience professionals'
+    },
+    // New enhanced services
+    {
+      name: 'AI-Powered Sales Intelligence',
+      tagline: 'Intelligent sales prospecting and insights',
+      price: '$99',
+      period: '/month',
+      description: 'AI-driven sales intelligence platform for lead generation, prospect research, and sales automation.',
+      features: [
+        'AI-powered lead scoring',
+        'Prospect research automation',
+        'Sales sequence optimization',
+        'Competitive intelligence',
+        'Sales performance analytics',
+        'CRM integration',
+        'Email tracking & analytics',
+        'Sales forecasting AI'
+      ],
+      popular: true,
+      icon: '💼',
+      color: 'from-blue-500 to-indigo-600',
+      textColor: 'text-blue-400',
+      link: 'https://ziontechgroup.com/ai-sales-intelligence',
+      marketPosition: 'Competitive with ZoomInfo ($0-1000+), Apollo ($0-1000+), and LinkedIn Sales Navigator ($64.99-99.99)',
+      targetAudience: 'Sales professionals, business development teams, and sales managers'
+    },
+    {
+      name: 'AI-Powered Content Calendar',
+      tagline: 'Intelligent content planning and optimization',
+      price: '$59',
+      period: '/month',
+      description: 'AI-driven content calendar with automated scheduling, topic suggestions, and performance optimization.',
+      features: [
+        'AI content topic suggestions',
+        'Optimal posting time analysis',
+        'Content performance prediction',
+        'Multi-platform scheduling',
+        'Content repurposing suggestions',
+        'SEO optimization tips',
+        'Team collaboration tools',
+        'Analytics & reporting'
+      ],
+      popular: false,
+      icon: '📅',
+      color: 'from-purple-500 to-violet-600',
+      textColor: 'text-purple-400',
+      link: 'https://ziontechgroup.com/ai-content-calendar',
+      marketPosition: 'Competitive with CoSchedule ($29-99), Buffer ($15-99), and Hootsuite ($29-599)',
+      targetAudience: 'Content marketers, social media managers, and marketing teams'
+    },
+    {
+      name: 'AI-Powered Email Deliverability',
+      tagline: 'Maximize email inbox placement',
+      price: '$79',
+      period: '/month',
+      description: 'AI-powered email deliverability optimization with real-time monitoring and automated improvements.',
+      features: [
+        'Real-time deliverability monitoring',
+        'AI-powered subject line optimization',
+        'Sender reputation management',
+        'Spam filter analysis',
+        'Email authentication setup',
+        'Deliverability testing tools',
+        'Performance analytics',
+        'ISP relationship management'
+      ],
+      popular: false,
+      icon: '📮',
+      color: 'from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      link: 'https://ziontechgroup.com/ai-email-deliverability',
+      marketPosition: 'Competitive with Mailgun ($35-675), SendGrid ($14.95-449), and Amazon SES ($0.10 per 1000 emails)',
+      targetAudience: 'Email marketers, marketing agencies, and businesses with large email lists'
+    },
+    {
+      name: 'AI-Powered Landing Page Builder',
+      tagline: 'Intelligent conversion optimization',
+      price: '$69',
+      period: '/month',
+      description: 'AI-driven landing page builder with automated A/B testing, conversion optimization, and performance analytics.',
+      features: [
+        'AI-powered page optimization',
+        'Automated A/B testing',
+        'Conversion rate optimization',
+        'Mobile-first design',
+        'SEO optimization',
+        'Analytics & heatmaps',
+        'Template library',
+        'Integration with marketing tools'
+      ],
+      popular: true,
+      icon: '🏠',
+      color: 'from-orange-500 to-red-600',
+      textColor: 'text-orange-400',
+      link: 'https://ziontechgroup.com/ai-landing-page-builder',
+      marketPosition: 'Competitive with Unbounce ($80-300), Leadpages ($27-197), and Instapage ($199-999)',
+      targetAudience: 'Digital marketers, e-commerce businesses, and lead generation specialists'
+    },
+    {
+      name: 'AI-Powered Customer Churn Prediction',
+      tagline: 'Predict and prevent customer churn',
+      price: '$89',
+      period: '/month',
+      description: 'AI-powered customer churn prediction with automated alerts and retention strategies.',
+      features: [
+        'AI churn prediction models',
+        'Early warning alerts',
+        'Customer health scoring',
+        'Retention strategy recommendations',
+        'Behavioral analysis',
+        'Automated retention campaigns',
+        'Churn analytics dashboard',
+        'Integration with CRM systems'
+      ],
+      popular: false,
+      icon: '📉',
+      color: 'from-red-500 to-pink-600',
+      textColor: 'text-red-400',
+      link: 'https://ziontechgroup.com/ai-churn-prediction',
+      marketPosition: 'Competitive with Gainsight ($0-1000+), Totango ($0-1000+), and ChurnZero ($0-1000+)',
+      targetAudience: 'Customer success teams, product managers, and subscription businesses'
+    },
+    {
+      name: 'AI-Powered Inventory Management',
+      tagline: 'Intelligent inventory optimization',
+      price: '$79',
+      period: '/month',
+      description: 'AI-driven inventory management with demand forecasting, automated reordering, and optimization recommendations.',
+      features: [
+        'AI demand forecasting',
+        'Automated reorder points',
+        'Inventory optimization',
+        'Multi-location management',
+        'Supplier performance tracking',
+        'Cost optimization',
+        'Real-time analytics',
+        'Integration with e-commerce platforms'
+      ],
+      popular: false,
+      icon: '📦',
+      color: 'from-indigo-500 to-purple-600',
+      textColor: 'text-indigo-400',
+      link: 'https://ziontechgroup.com/ai-inventory-management',
+      marketPosition: 'Competitive with TradeGecko ($0-1000+), Zoho Inventory ($0-1000+), and Fishbowl ($0-1000+)',
+      targetAudience: 'E-commerce businesses, retailers, and inventory managers'
+    },
+    {
+      name: 'AI-Powered Social Media Analytics',
+      tagline: 'Intelligent social media insights',
+      price: '$59',
+      period: '/month',
+      description: 'AI-powered social media analytics with sentiment analysis, trend prediction, and performance optimization.',
+      features: [
+        'AI sentiment analysis',
+        'Trend prediction',
+        'Content performance analysis',
+        'Competitor benchmarking',
+        'Optimal posting time',
+        'Hashtag optimization',
+        'ROI tracking',
+        'Multi-platform analytics'
+      ],
+      popular: false,
+      icon: '📊',
+      color: 'from-teal-500 to-cyan-600',
+      textColor: 'text-teal-400',
+      link: 'https://ziontechgroup.com/ai-social-media-analytics',
+      marketPosition: 'Competitive with Sprout Social ($99-249), Brandwatch ($0-1000+), and Mention ($29-99)',
+      targetAudience: 'Social media managers, digital marketers, and brand managers'
+    },
+    {
+      name: 'AI-Powered Customer Support Analytics',
+      tagline: 'Intelligent support optimization',
+      price: '$69',
+      period: '/month',
+      description: 'AI-powered customer support analytics with automated insights, performance tracking, and optimization recommendations.',
+      features: [
+        'AI-powered insights',
+        'Support performance analytics',
+        'Customer satisfaction tracking',
+        'Response time optimization',
+        'Support ticket analysis',
+        'Agent performance metrics',
+        'Automated reporting',
+        'Integration with support tools'
+      ],
+      popular: false,
+      icon: '📞',
+      color: 'from-blue-500 to-indigo-600',
+      textColor: 'text-blue-400',
+      link: 'https://ziontechgroup.com/ai-support-analytics',
+      marketPosition: 'Competitive with Zendesk ($49-215), Freshdesk ($15-79), and Help Scout ($20-65)',
+      targetAudience: 'Customer support managers, support teams, and customer experience professionals'
+    },
+    {
+      name: 'AI-Powered Website Performance Optimizer',
+      tagline: 'Intelligent website optimization',
+      price: '$89',
+      period: '/month',
+      description: 'AI-driven website performance optimization with automated testing, speed improvements, and SEO enhancements.',
+      features: [
+        'AI performance analysis',
+        'Automated optimization',
+        'Speed testing & monitoring',
+        'SEO optimization',
+        'Mobile optimization',
+        'Core Web Vitals tracking',
+        'Performance analytics',
+        'Integration with analytics tools'
+      ],
+      popular: true,
+      icon: '⚡',
+      color: 'from-yellow-500 to-orange-600',
+      textColor: 'text-yellow-400',
+      link: 'https://ziontechgroup.com/ai-website-optimizer',
+      marketPosition: 'Competitive with GTmetrix (Free-$15), PageSpeed Insights (Free), and WebPageTest (Free-$99)',
+      targetAudience: 'Web developers, digital marketers, and website owners'
+    },
+    {
+      name: 'AI-Powered Customer Feedback Sentiment Analysis',
+      tagline: 'Intelligent feedback insights',
+      price: '$59',
+      period: '/month',
+      description: 'AI-powered sentiment analysis for customer feedback with automated insights and action recommendations.',
+      features: [
+        'AI sentiment analysis',
+        'Feedback categorization',
+        'Trend identification',
+        'Automated insights',
+        'Action recommendations',
+        'Real-time monitoring',
+        'Integration with feedback tools',
+        'Custom reporting'
+      ],
+      popular: false,
+      icon: '💭',
+      color: 'from-purple-500 to-violet-600',
+      textColor: 'text-purple-400',
+      link: 'https://ziontechgroup.com/ai-feedback-sentiment',
+      marketPosition: 'Competitive with MonkeyLearn ($299-999), Lexalytics ($0-1000+), and MeaningCloud ($0-1000+)',
+      targetAudience: 'Product managers, customer success teams, and UX researchers'
+    },
+    {
+      name: 'AI-Powered Email Marketing Automation',
+      tagline: 'Intelligent email campaigns',
+      price: '$79',
+      period: '/month',
+      description: 'AI-powered email marketing automation with intelligent segmentation, personalization, and optimization.',
+      features: [
+        'AI-powered segmentation',
+        'Intelligent personalization',
+        'Automated workflows',
+        'A/B testing automation',
+        'Send time optimization',
+        'Performance analytics',
+        'Template optimization',
+        'Integration with marketing tools'
+      ],
+      popular: true,
+      icon: '📧',
+      color: 'from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      link: 'https://ziontechgroup.com/ai-email-automation',
+      marketPosition: 'Competitive with Mailchimp ($13-350), ConvertKit ($29-59), and ActiveCampaign ($29-259)',
+      targetAudience: 'Email marketers, digital marketers, and e-commerce businesses'
+    },
+    {
+      name: 'AI-Powered Customer Journey Mapping',
+      tagline: 'Intelligent customer experience optimization',
+      price: '$99',
+      period: '/month',
+      description: 'AI-powered customer journey mapping with automated insights, optimization recommendations, and performance tracking.',
+      features: [
+        'AI journey mapping',
+        'Touchpoint analysis',
+        'Optimization recommendations',
+        'Performance tracking',
+        'Customer behavior insights',
+        'Journey analytics',
+        'Integration with analytics tools',
+        'Custom reporting'
+      ],
+      popular: false,
+      icon: '🗺️',
+      color: 'from-teal-500 to-cyan-600',
+      textColor: 'text-teal-400',
+      link: 'https://ziontechgroup.com/ai-customer-journey',
+      marketPosition: 'Competitive with UXPressia ($0-1000+), Smaply ($0-1000+), and Touchpoint Dashboard ($0-1000+)',
+      targetAudience: 'Customer experience professionals, UX designers, and product managers'
+    },
+    {
+      name: 'AI-Powered Competitive Intelligence',
+      tagline: 'Intelligent market monitoring',
+      price: '$89',
+      period: '/month',
+      description: 'AI-powered competitive intelligence with automated monitoring, analysis, and strategic insights.',
+      features: [
+        'AI competitive monitoring',
+        'Market analysis',
+        'Strategy insights',
+        'Performance benchmarking',
+        'Trend identification',
+        'Automated alerts',
+        'Custom reporting',
+        'Integration with analytics tools'
+      ],
+      popular: false,
+      icon: '🔍',
+      color: 'from-blue-500 to-indigo-600',
+      textColor: 'text-blue-400',
+      link: 'https://ziontechgroup.com/ai-competitive-intelligence',
+      marketPosition: 'Competitive with Crayon ($0-1000+), Kompyte ($0-1000+), and Brandwatch ($0-1000+)',
+      targetAudience: 'Business strategists, marketing teams, and product managers'
+    },
+    {
+      name: 'AI-Powered Customer Lifetime Value Optimization',
+      tagline: 'Maximize customer value',
+      price: '$79',
+      period: '/month',
+      description: 'AI-powered customer lifetime value optimization with predictive modeling and automated strategies.',
+      features: [
+        'AI CLV prediction',
+        'Optimization strategies',
+        'Customer segmentation',
+        'Retention optimization',
+        'Upselling automation',
+        'Performance analytics',
+        'Integration with CRM',
+        'Custom reporting'
+      ],
+      popular: false,
+      icon: '💰',
+      color: 'from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      link: 'https://ziontechgroup.com/ai-clv-optimization',
+      marketPosition: 'Competitive with Optimove ($0-1000+), Retention Science ($0-1000+), and Custora ($0-1000+)',
+      targetAudience: 'Customer success managers, marketing teams, and business analysts'
     }
   ];
 
@@ -1032,7 +1369,7 @@ export default function MicroSaasPage() {
   const competitiveAdvantages = [
     {
       title: "Specialized Focus",
-      description: "Each of our 30 services is designed for a specific business need, ensuring deep functionality and expertise without feature bloat.",
+      description: "Each of our 45+ services is designed for a specific business need, ensuring deep functionality and expertise without feature bloat.",
       icon: "🎯"
     },
     {
@@ -1100,13 +1437,14 @@ export default function MicroSaasPage() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400"> Every Business Need</span>
             </h1>
             <p className="text-xl text-gray-400 max-w-5xl mx-auto leading-relaxed mb-12">
-              40 specialized micro SaaS solutions covering content creation, video generation, design systems, performance monitoring, 
+              45+ specialized micro SaaS solutions covering AI-powered content creation, video generation, design systems, performance monitoring, 
               SEO automation, chatbots, business intelligence, email marketing, social media management, 
               customer feedback, billing, project management, API infrastructure, e-commerce analytics, legal document generation, 
               HR management, AI customer support, data backup, AI code assistance, cybersecurity monitoring, supply chain analytics, 
               market research, financial planning, CRM systems, learning management, IoT management, analytics dashboards, 
               meeting transcription, invoice automation, churn prediction, lead scoring, real-time analytics, content optimization, 
-              predictive maintenance, email security, dynamic pricing, and customer segmentation. Focused, affordable solutions that deliver specific value 
+              predictive maintenance, email security, dynamic pricing, customer segmentation, sales intelligence, content calendar optimization, 
+              email deliverability, landing page building, and customer journey mapping. Focused, affordable solutions that deliver specific value 
               without the complexity of enterprise platforms. Start with a free trial and scale as you grow.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -1656,6 +1994,224 @@ export default function MicroSaasPage() {
           </div>
         </section>
 
+        {/* Latest AI-Powered Services Section */}
+        <section className="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(120,119,198,0.1),transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,119,198,0.1),transparent_50%)]" />
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
+                <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse" />
+                Latest AI-Powered Services
+              </div>
+              <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight">
+                Cutting-Edge AI Solutions
+              </h2>
+              <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+                Our newest AI-powered micro SaaS services designed to give you a competitive edge with intelligent automation, 
+                predictive analytics, and advanced insights that transform how you do business.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+              {/* AI Sales Intelligence */}
+              <div className="group relative">
+                <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                      💼
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white">AI Sales Intelligence</h3>
+                      <p className="text-blue-400 text-sm font-medium">$99/month</p>
+                    </div>
+                  </div>
+                  <p className="text-gray-300 text-sm mb-4">
+                    AI-driven sales intelligence for lead generation, prospect research, and sales automation.
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs text-gray-500">14-day free trial</span>
+                    <Button
+                      href="https://ziontechgroup.com/ai-sales-intelligence"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      size="sm"
+                      className="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700"
+                    >
+                      Try Free
+                    </Button>
+                  </div>
+                </div>
+              </div>
+
+              {/* AI Landing Page Builder */}
+              <div className="group relative">
+                <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-orange-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/20">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                      🏠
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white">AI Landing Page Builder</h3>
+                      <p className="text-orange-400 text-sm font-medium">$69/month</p>
+                    </div>
+                  </div>
+                  <p className="text-gray-300 text-sm mb-4">
+                    AI-driven landing page builder with automated A/B testing and conversion optimization.
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs text-gray-500">14-day free trial</span>
+                    <Button
+                      href="https://ziontechgroup.com/ai-landing-page-builder"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      size="sm"
+                      className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700"
+                    >
+                      Try Free
+                    </Button>
+                  </div>
+                </div>
+              </div>
+
+              {/* AI Website Performance Optimizer */}
+              <div className="group relative">
+                <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-yellow-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-yellow-500/20">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                      ⚡
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white">AI Website Optimizer</h3>
+                      <p className="text-yellow-400 text-sm font-medium">$89/month</p>
+                    </div>
+                  </div>
+                  <p className="text-gray-300 text-sm mb-4">
+                    AI-driven website performance optimization with automated testing and speed improvements.
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs text-gray-500">14-day free trial</span>
+                    <Button
+                      href="https://ziontechgroup.com/ai-website-optimizer"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      size="sm"
+                      className="bg-gradient-to-r from-yellow-500 to-orange-600 hover:from-yellow-600 hover:to-orange-700"
+                    >
+                      Try Free
+                    </Button>
+                  </div>
+                </div>
+              </div>
+
+              {/* AI Customer Churn Prediction */}
+              <div className="group relative">
+                <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-red-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-red-500/20">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-pink-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                      📉
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white">AI Churn Prediction</h3>
+                      <p className="text-red-400 text-sm font-medium">$89/month</p>
+                    </div>
+                  </div>
+                  <p className="text-gray-300 text-sm mb-4">
+                    AI-powered customer churn prediction with automated alerts and retention strategies.
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs text-gray-500">14-day free trial</span>
+                    <Button
+                      href="https://ziontechgroup.com/ai-churn-prediction"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      size="sm"
+                      className="bg-gradient-to-r from-red-500 to-pink-600 hover:from-red-600 hover:to-pink-700"
+                    >
+                      Try Free
+                    </Button>
+                  </div>
+                </div>
+              </div>
+
+              {/* AI Email Deliverability */}
+              <div className="group relative">
+                <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-green-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-green-500/20">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                      📮
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white">AI Email Deliverability</h3>
+                      <p className="text-green-400 text-sm font-medium">$79/month</p>
+                    </div>
+                  </div>
+                  <p className="text-gray-300 text-sm mb-4">
+                    AI-powered email deliverability optimization with real-time monitoring and improvements.
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs text-gray-500">14-day free trial</span>
+                    <Button
+                      href="https://ziontechgroup.com/ai-email-deliverability"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      size="sm"
+                      className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700"
+                    >
+                      Try Free
+                    </Button>
+                  </div>
+                </div>
+              </div>
+
+              {/* AI Customer Journey Mapping */}
+              <div className="group relative">
+                <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-teal-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-teal-500/20">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                      🗺️
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white">AI Customer Journey</h3>
+                      <p className="text-teal-400 text-sm font-medium">$99/month</p>
+                    </div>
+                  </div>
+                  <p className="text-gray-300 text-sm mb-4">
+                    AI-powered customer journey mapping with automated insights and optimization recommendations.
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs text-gray-500">14-day free trial</span>
+                    <Button
+                      href="https://ziontechgroup.com/ai-customer-journey"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      size="sm"
+                      className="bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700"
+                    >
+                      Try Free
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <p className="text-lg text-gray-300 mb-8">
+                All new AI-powered services include advanced machine learning models, real-time optimization, and enterprise-grade security.
+              </p>
+              <Button
+                href="#services"
+                variant="outline"
+                size="lg"
+                className="border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white"
+              >
+                View All AI Services
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </div>
+          </div>
+        </section>
+
         {/* Competitive Advantages Section */}
         <div className="py-20 bg-gradient-to-br from-gray-800 via-gray-900 to-gray-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1688,7 +2244,7 @@ export default function MicroSaasPage() {
               Ready to Get Started?
             </h2>
             <p className="text-xl text-green-100 mb-12 max-w-4xl mx-auto leading-relaxed">
-              Choose from our portfolio of 40 specialized solutions. All services include comprehensive documentation, 
+              Choose from our portfolio of 45+ specialized solutions. All services include comprehensive documentation, 
               dedicated support, enterprise-grade reliability, and 14-day free trials. Start with one solution 
               and add more as your business grows.
             </p>
