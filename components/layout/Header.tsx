@@ -115,23 +115,23 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden animate-fade-in">
-            <div className="px-4 pt-4 pb-6 space-y-2 bg-cursor-darker/98 backdrop-blur-xl rounded-2xl mt-2 border border-cursor-lighter/20 shadow-2xl">
+          <div className="lg:hidden">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-cursor-dark/95 backdrop-blur-xl border-t border-cursor-lighter/20">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`block px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
+                  className={`block px-3 py-2 rounded-lg text-base font-medium transition-all duration-300 ${
                     isActive(item.href)
-                      ? 'text-cursor-blue bg-cursor-blue/10 border border-cursor-blue/20 shadow-lg'
-                      : 'text-gray-300 hover:text-white hover:bg-cursor-light hover:shadow-md'
+                      ? 'text-cursor-blue bg-cursor-light/20'
+                      : 'text-gray-300 hover:text-white hover:bg-cursor-light/20'
                   }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <div className="pt-4 border-t border-cursor-lighter/20">
+              <div className="pt-4">
                 <Link
                   href="/contact"
                   className="btn btn-primary w-full justify-center"

@@ -1,5 +1,4 @@
 import React from 'react';
-import Head from 'next/head';
 import Hero from '../components/sections/Hero';
 import Features from '../components/sections/Features';
 import Card from '../components/ui/Card';
@@ -90,16 +89,6 @@ export default function HomePage() {
 
   return (
     <>
-      <Head>
-        <title>Zion Tech Group — World&apos;s Most Advanced Autonomous Innovation Hub & AI-Powered Cloud Platform</title>
-        <meta name="description" content="Experience the future of autonomous technology with 227+ intelligent automations, AI-powered cloud systems, comprehensive redundancy infrastructure, and zero-downtime operations. The most advanced autonomous platform ever built." />
-        <meta property="og:title" content="Zion Tech Group — World's Most Advanced Autonomous Innovation Hub & AI-Powered Cloud Platform" />
-        <meta property="og:description" content="Experience the future of autonomous technology with 227+ intelligent automations, AI-powered cloud systems, comprehensive redundancy infrastructure, and zero-downtime operations." />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       {/* Hero Section */}
       <Hero
         title="Zion Tech Group"
@@ -124,7 +113,7 @@ export default function HomePage() {
       />
 
       {/* Technology Stack */}
-      <section className="section-padding relative bg-gradient-to-b from-cursor-dark to-cursor-darker overflow-hidden">
+      <section className="py-16 lg:py-24 relative bg-gradient-to-b from-cursor-dark to-cursor-darker overflow-hidden">
         {/* Background decoration */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(0,122,204,0.05),transparent_50%)]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(0,212,170,0.05),transparent_50%)]"></div>
@@ -150,7 +139,7 @@ export default function HomePage() {
                 className="animate-fade-in-up"
                 style={{ animationDelay: `${(index * 0.05) + 0.2}s` }}
               >
-                <Card className="text-center group hover:border-cursor-blue/30 hover:shadow-lg hover:shadow-cursor-blue/10 card-hover">
+                <Card className="text-center group hover:border-cursor-blue/30 hover:shadow-lg hover:shadow-cursor-blue/10">
                   <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
                     {tech.icon}
                   </div>
@@ -164,7 +153,7 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="section-padding relative bg-gradient-to-r from-cursor-blue/5 to-cursor-accent/5 overflow-hidden">
+      <section className="py-16 lg:py-24 relative bg-gradient-to-r from-cursor-blue/5 to-cursor-accent/5 overflow-hidden">
         <div className="container-cursor relative z-10">
           <div className="text-center mb-20 animate-fade-in">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold gradient-text leading-tight mb-8">
@@ -182,7 +171,7 @@ export default function HomePage() {
                 className="animate-fade-in-up"
                 style={{ animationDelay: `${(index * 0.2) + 0.4}s` }}
               >
-                <Card className="text-center group hover:border-cursor-blue/30 hover:shadow-lg hover:shadow-cursor-blue/10 card-hover h-full">
+                <Card className="text-center group hover:border-cursor-blue/30 hover:shadow-lg hover:shadow-cursor-blue/10 h-full">
                   <div className="text-6xl mb-6 group-hover:scale-110 transition-transform duration-300">
                     {testimonial.avatar}
                   </div>
@@ -201,7 +190,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding relative bg-gradient-to-r from-cursor-blue to-blue-600 overflow-hidden">
+      <section className="py-16 lg:py-24 relative bg-gradient-to-r from-cursor-blue to-blue-600 overflow-hidden">
         {/* Background decoration */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent_50%)]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(255,255,255,0.1),transparent_50%)]"></div>

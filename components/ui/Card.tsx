@@ -17,12 +17,12 @@ const Card: React.FC<CardProps> = ({
   hover = true,
   variant = 'default',
 }) => {
-  const baseClasses = 'bg-cursor-dark border border-cursor-lighter rounded-2xl p-6 transition-all duration-500 backdrop-blur-sm relative overflow-hidden';
+  const baseClasses = 'card';
   
   const variantClasses = {
-    default: 'bg-cursor-dark',
-    glass: 'bg-white/5 backdrop-blur-xl border-white/10',
-    elevated: 'bg-cursor-dark shadow-lg',
+    default: '',
+    glass: 'glass',
+    elevated: 'shadow-lg',
   };
   
   const hoverClasses = hover ? 'hover:border-cursor-blue/30 hover:shadow-xl hover:shadow-cursor-blue/15 hover:-translate-y-2 group' : '';

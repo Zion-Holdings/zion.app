@@ -100,11 +100,11 @@ const Hero: React.FC<HeroProps> = ({
                   <div className={`text-4xl md:text-5xl font-bold mb-3 ${stat.color} group-hover:scale-110 transition-all duration-300`}>
                     {stat.value}
                   </div>
+                  <div className="text-sm md:text-base text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
+                    {stat.label}
+                  </div>
                   {/* Hover glow effect */}
-                  <div className={`absolute inset-0 ${stat.color} blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-300 -z-10`}></div>
-                </div>
-                <div className="text-gray-400 text-sm md:text-base font-medium group-hover:text-white transition-colors duration-300">
-                  {stat.label}
+                  <div className="absolute inset-0 bg-gradient-to-r from-cursor-blue/20 to-cursor-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
                 </div>
               </div>
             ))}
@@ -112,18 +112,12 @@ const Hero: React.FC<HeroProps> = ({
         )}
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-gentle">
-        <div className="w-6 h-10 border-2 border-cursor-lighter rounded-full flex justify-center group cursor-pointer hover:border-cursor-blue transition-colors duration-300">
-          <div className="w-1 h-3 bg-cursor-blue rounded-full mt-2 animate-pulse group-hover:bg-cursor-accent transition-colors duration-300" />
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
-
-      {/* Decorative corner elements */}
-      <div className="absolute top-0 left-0 w-32 h-32 border-l-2 border-t-2 border-cursor-blue/20 rounded-tl-3xl"></div>
-      <div className="absolute top-0 right-0 w-32 h-32 border-r-2 border-t-2 border-cursor-accent/20 rounded-tr-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-32 h-32 border-l-2 border-b-2 border-cursor-accent/20 rounded-bl-3xl"></div>
-      <div className="absolute bottom-0 right-0 w-32 h-32 border-r-2 border-b-2 border-cursor-blue/20 rounded-br-3xl"></div>
     </section>
   );
 };

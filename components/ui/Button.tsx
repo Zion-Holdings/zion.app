@@ -28,20 +28,20 @@ const Button: React.FC<ButtonProps> = ({
   iconPosition = 'left',
   style,
 }) => {
-  const baseClasses = 'inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-cursor-blue disabled:opacity-50 disabled:cursor-not-allowed group relative overflow-hidden';
+  const baseClasses = 'btn';
   
   const variantClasses = {
-    primary: 'bg-gradient-to-r from-cursor-blue to-blue-600 hover:from-cursor-blue-hover hover:to-blue-700 text-white shadow-lg hover:shadow-xl hover:-translate-y-1 border-0 hover:shadow-cursor-blue/25',
-    secondary: 'bg-cursor-light hover:bg-cursor-lighter text-white border border-cursor-lighter hover:border-cursor-blue hover:shadow-lg hover:-translate-y-0.5',
-    ghost: 'bg-transparent hover:bg-cursor-light text-gray-300 hover:text-white hover:shadow-md hover:-translate-y-0.5',
-    outline: 'bg-transparent border border-cursor-lighter text-gray-300 hover:bg-cursor-light hover:border-cursor-blue hover:text-white hover:shadow-md hover:-translate-y-0.5',
-    accent: 'bg-gradient-to-r from-cursor-accent to-green-500 hover:from-cursor-accent-hover hover:to-green-600 text-black font-semibold shadow-lg hover:shadow-xl hover:-translate-y-1 border-0 hover:shadow-cursor-accent/25',
+    primary: 'btn-primary',
+    secondary: 'btn-secondary',
+    ghost: 'bg-transparent hover:bg-cursor-light text-gray-300 hover:text-white',
+    outline: 'btn-outline',
+    accent: 'btn-accent',
   };
 
   const sizeClasses = {
-    sm: 'px-4 py-2.5 text-sm',
-    md: 'px-6 py-3 text-base',
-    lg: 'px-8 py-4 text-lg',
+    sm: 'btn-sm',
+    md: 'btn-md',
+    lg: 'btn-lg',
   };
 
   const classes = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;

@@ -29,7 +29,7 @@ const Features: React.FC<FeaturesProps> = ({
   };
 
   return (
-    <section className="section-padding relative bg-gradient-to-b from-cursor-darker to-cursor-dark overflow-hidden">
+    <section className="py-16 lg:py-24 relative bg-gradient-to-b from-cursor-darker to-cursor-dark overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(0,122,204,0.05),transparent_50%)]"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(0,212,170,0.05),transparent_50%)]"></div>
@@ -57,7 +57,7 @@ const Features: React.FC<FeaturesProps> = ({
               className="animate-fade-in-up"
               style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
             >
-              <Card className="text-center group hover:border-cursor-blue/40 hover:shadow-2xl hover:shadow-cursor-blue/20 card-hover h-full">
+              <Card className="text-center group hover:border-cursor-blue/40 hover:shadow-2xl hover:shadow-cursor-blue/20 h-full">
                 <div className="relative">
                   <div className={`w-20 h-20 mx-auto mb-8 rounded-2xl flex items-center justify-center text-3xl transition-all duration-500 group-hover:scale-110 group-hover:shadow-lg ${feature.color} relative overflow-hidden`}>
                     {feature.icon}
