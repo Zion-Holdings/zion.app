@@ -6,9 +6,9 @@ export default function HomePage() {
   return (
     <>
       <Head>
-        <title>Zion Tech Group — World's Most Advanced Autonomous Innovation Hub & AI-Powered Cloud Platform</title>
+        <title>Zion Tech Group — World&apos;s Most Advanced Autonomous Innovation Hub & AI-Powered Cloud Platform</title>
         <meta name="description" content="Experience the future of autonomous technology with 227+ intelligent automations, AI-powered cloud systems, comprehensive redundancy infrastructure, and zero-downtime operations. The most advanced autonomous platform ever built." />
-        <meta property="og:title" content="Zion Tech Group — World's Most Advanced Autonomous Innovation Hub & AI-Powered Cloud Platform" />
+        <meta property="og:title" content="Zion Tech Group — World&apos;s Most Advanced Autonomous Innovation Hub & AI-Powered Cloud Platform" />
         <meta property="og:description" content="Experience the future of autonomous technology with 227+ intelligent automations, AI-powered cloud systems, comprehensive redundancy infrastructure, and zero-downtime operations." />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
@@ -21,7 +21,7 @@ export default function HomePage() {
               Zion Tech Group
             </h1>
             <p className="text-2xl text-white/90 max-w-4xl mx-auto mb-8">
-              The world's most advanced autonomous innovation hub delivering cutting-edge technology solutions, intelligent automation systems, and the future of cloud-native AI infrastructure.
+              The world&apos;s most advanced autonomous innovation hub delivering cutting-edge technology solutions, intelligent automation systems, and the future of cloud-native AI infrastructure.
             </p>
             <div className="flex flex-wrap justify-center gap-6 mb-12">
               <div className="bg-white/10 backdrop-blur-xl rounded-xl px-6 py-3 border border-white/20">
@@ -568,7 +568,7 @@ export default function HomePage() {
             <div className="mt-12">
               <h3 className="text-center text-2xl font-bold text-white/90 mb-8">🔄 Ecosystem & Automation Files</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                <Link href="/ecosystem-ultimate-redundancy.pm2.cjs" className="bg-white/5 backdrop-blur-xl rounded-xl p-4 border border-white/10 hover:border-cyan-400/30 transition-all duration-300 text-center">
+                <Link href="https://github.com/Zion-Holdings/zion.app/blob/main/ecosystem-ultimate-redundancy.pm2.cjs" className="bg-white/5 backdrop-blur-xl rounded-xl p-4 border border-white/10 hover:border-cyan-400/30 transition-all duration-300 text-center">
                   <div className="w-8 h-8 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center mx-auto mb-2">
                     <span className="text-sm">🔄</span>
                   </div>
@@ -576,7 +576,7 @@ export default function HomePage() {
                   <p className="text-white/60 text-xs">PM2 Ecosystem</p>
                 </Link>
                 
-                <Link href="/ecosystem.comprehensive-redundancy.cjs" className="bg-white/5 backdrop-blur-xl rounded-xl p-4 border border-white/10 hover:border-fuchsia-400/30 transition-all duration-300 text-center">
+                <Link href="https://github.com/Zion-Holdings/zion.app/blob/main/ecosystem.comprehensive-redundancy.cjs" className="bg-white/5 backdrop-blur-xl rounded-xl p-4 border border-white/10 hover:border-fuchsia-400/30 transition-all duration-300 text-center">
                   <div className="w-8 h-8 bg-gradient-to-br from-fuchsia-400 to-purple-500 rounded-lg flex items-center justify-center mx-auto mb-2">
                     <span className="text-sm">🧠</span>
                   </div>
@@ -584,7 +584,7 @@ export default function HomePage() {
                   <p className="text-white/60 text-xs">Advanced System</p>
                 </Link>
                 
-                <Link href="/start-comprehensive-ultimate-redundancy.sh" className="bg-white/5 backdrop-blur-xl rounded-xl p-4 border border-white/10 hover:border-green-400/30 transition-all duration-300 text-center">
+                <Link href="https://github.com/Zion-Holdings/zion.app/blob/main/start-comprehensive-ultimate-redundancy.sh" className="bg-white/5 backdrop-blur-xl rounded-xl p-4 border border-white/10 hover:border-green-400/30 transition-all duration-300 text-center">
                   <div className="w-8 h-8 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center mx-auto mb-2">
                     <span className="text-sm">⚡</span>
                   </div>
@@ -592,7 +592,7 @@ export default function HomePage() {
                   <p className="text-white/60 text-xs">Automation Launchers</p>
                 </Link>
                 
-                <Link href="/automation/master-automation-launcher.cjs" className="bg-white/5 backdrop-blur-xl rounded-xl p-4 border border-white/10 hover:border-yellow-400/30 transition-all duration-300 text-center">
+                <Link href="https://github.com/Zion-Holdings/zion.app/blob/main/automation/master-automation-launcher.cjs" className="bg-white/5 backdrop-blur-xl rounded-xl p-4 border border-white/10 hover:border-yellow-400/30 transition-all duration-300 text-center">
                   <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg flex items-center justify-center mx-auto mb-2">
                     <span className="text-sm">🚀</span>
                   </div>
