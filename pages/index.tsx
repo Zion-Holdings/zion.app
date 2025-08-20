@@ -14,6 +14,13 @@ export default function HomePage() {
     { value: '24/7', label: 'AI Support', color: 'text-green-400' },
   ];
 
+  const contactInfo = {
+    mobile: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com'
+  };
+
   const platformFeatures = [
     {
       icon: <Cloud className="w-8 h-8 text-white" />,
