@@ -191,6 +191,76 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* Micro SaaS Services */}
+      <section className="section-padding bg-gradient-cursor-accent">
+        <div className="container-cursor">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-cursor-blue/10 border border-cursor-blue/20 text-cursor-blue text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-cursor-blue rounded-full mr-2 animate-pulse" />
+              Professional Tools
+            </div>
+            <h2 className="text-responsive-lg font-bold mb-8 gradient-text text-shadow">
+              Micro SaaS Services
+            </h2>
+            <p className="text-responsive-md text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              Discover our comprehensive suite of professional micro SaaS services designed to accelerate your business growth and operational efficiency.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            <Card className="card-hover group border-gradient-blue text-center">
+              <div className="p-8">
+                <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <span className="text-3xl">🤖</span>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-4">AI Content Generator</h3>
+                <p className="text-gray-400 mb-6">
+                  Generate high-quality, SEO-optimized content for blogs, social media, emails, and technical documentation.
+                </p>
+                <div className="text-cursor-blue font-semibold">Starting at $29/month</div>
+              </div>
+            </Card>
+
+            <Card className="card-hover group border-gradient-blue text-center">
+              <div className="p-8">
+                <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <span className="text-3xl">📊</span>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-4">Performance Monitor</h3>
+                <p className="text-gray-400 mb-6">
+                  Comprehensive website performance monitoring with real-time metrics and optimization recommendations.
+                </p>
+                <div className="text-cursor-blue font-semibold">Starting at $49/month</div>
+              </div>
+            </Card>
+
+            <Card className="card-hover group border-gradient-blue text-center">
+              <div className="p-8">
+                <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <span className="text-3xl">🔍</span>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-4">SEO Analyzer</h3>
+                <p className="text-gray-400 mb-6">
+                  Advanced SEO analysis tool with comprehensive website audits and actionable recommendations.
+                </p>
+                <div className="text-cursor-blue font-semibold">Starting at $39/month</div>
+              </div>
+            </Card>
+          </div>
+
+          <div className="text-center">
+            <Button
+              href="/micro-saas-services"
+              variant="primary"
+              size="lg"
+              className="bg-cursor-blue hover:bg-cursor-blue/90"
+            >
+              View All Micro SaaS Services
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Technology Stack */}
       <section className="section-padding bg-gradient-cursor">
         <div className="container-cursor">

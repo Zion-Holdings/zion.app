@@ -107,6 +107,71 @@ export default function HomePage() {
         columns={3}
       />
 
+      {/* Micro SaaS Services */}
+      <section className="py-24 bg-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20 animate-fade-in">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-purple-500 rounded-full mr-2 animate-pulse" />
+              Professional Tools
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight">
+              Micro SaaS Services
+            </h2>
+            <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              Transform your business with our comprehensive suite of professional micro SaaS services designed for modern enterprises.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            <div className="bg-gray-900 rounded-2xl p-8 border border-gray-700 hover:border-purple-500/50 transition-all duration-300 group">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <span className="text-3xl">🤖</span>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">AI Content Generator</h3>
+              <p className="text-gray-400 mb-6">
+                Generate high-quality, SEO-optimized content for blogs, social media, emails, and technical documentation.
+              </p>
+              <div className="text-purple-400 font-semibold">Starting at $29/month</div>
+            </div>
+
+            <div className="bg-gray-900 rounded-2xl p-8 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 group">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <span className="text-3xl">📊</span>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">Performance Monitor</h3>
+              <p className="text-gray-400 mb-6">
+                Comprehensive website performance monitoring with real-time metrics and optimization recommendations.
+              </p>
+              <div className="text-blue-400 font-semibold">Starting at $49/month</div>
+            </div>
+
+            <div className="bg-gray-900 rounded-2xl p-8 border border-gray-700 hover:border-green-500/50 transition-all duration-300 group">
+              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <span className="text-3xl">🔍</span>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">SEO Analyzer</h3>
+              <p className="text-gray-400 mb-6">
+                Advanced SEO analysis tool with comprehensive website audits and actionable recommendations.
+              </p>
+              <div className="text-green-400 font-semibold">Starting at $39/month</div>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <Button
+              href="/micro-saas-services"
+              variant="primary"
+              size="lg"
+              className="bg-purple-600 hover:bg-purple-700 shadow-2xl"
+            >
+              View All Services
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Technology Stack */}
       <section className="py-24 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
