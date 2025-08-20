@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 export default function HomePage() {
+  const repoBaseUrl = 'https://github.com/Zion-Holdings/zion.app/blob/main';
   return (
     <>
       <Head>
@@ -314,6 +315,36 @@ export default function HomePage() {
             </div>
           </section>
 
+          {/* Featured Articles & Case Studies */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">📰 Featured Articles & Case Studies</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <Link href="/blog/ai-automation-trends-2025" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30">
+                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                <h3 className="text-lg font-semibold">AI Automation Trends 2025</h3>
+                <p className="mt-1 text-sm text-white/75">What’s next in autonomous systems and enterprise AI.</p>
+                <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Read article <span aria-hidden>→</span></div>
+              </Link>
+              <Link href="/blog/cloud-native-automation" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30">
+                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                <h3 className="text-lg font-semibold">Cloud-Native Automation</h3>
+                <p className="mt-1 text-sm text-white/75">Design patterns for resilient, zero-downtime operations.</p>
+                <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Read article <span aria-hidden>→</span></div>
+              </Link>
+              <Link href="/blog/performance-optimization" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30">
+                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                <h3 className="text-lg font-semibold">Performance Optimization</h3>
+                <p className="mt-1 text-sm text-white/75">How autonomous pipelines keep apps fast and reliable.</p>
+                <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Read article <span aria-hidden>→</span></div>
+              </Link>
+            </div>
+            <div className="mt-8 text-center">
+              <Link href="/blog" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white font-semibold transition-all duration-300 hover:border-cyan-400/50">
+                Explore all articles
+              </Link>
+            </div>
+          </section>
+
           {/* Advanced Automation Systems Showcase */}
           <section className="mx-auto max-w-7xl px-6 pb-16">
             <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">🤖 Advanced Automation Systems</h2>
@@ -455,33 +486,33 @@ export default function HomePage() {
               <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
                 <h3 className="text-xl font-bold text-blue-400 mb-4 text-center">📖 Core Documentation</h3>
                 <ul className="text-white/80 text-sm space-y-2 mb-4">
-                  <li>• <Link href="/README.md" className="text-blue-400 hover:text-blue-300">Main README</Link> - Project overview</li>
-                  <li>• <Link href="/ARCHITECTURE.md" className="text-blue-400 hover:text-blue-300">Architecture Guide</Link> - System design</li>
-                  <li>• <Link href="/API.md" className="text-blue-400 hover:text-blue-300">API Documentation</Link> - Integration guide</li>
-                  <li>• <Link href="/DEPLOYMENT.md" className="text-blue-400 hover:text-blue-300">Deployment Guide</Link> - Setup instructions</li>
-                  <li>• <Link href="/CONTRIBUTING.md" className="text-blue-400 hover:text-blue-300">Contributing Guide</Link> - Development workflow</li>
+                  <li>• <a href={`${repoBaseUrl}/README.md`} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300">Main README</a> - Project overview</li>
+                  <li>• <a href={`${repoBaseUrl}/ARCHITECTURE.md`} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300">Architecture Guide</a> - System design</li>
+                  <li>• <a href={`${repoBaseUrl}/API.md`} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300">API Documentation</a> - Integration guide</li>
+                  <li>• <a href={`${repoBaseUrl}/DEPLOYMENT.md`} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300">Deployment Guide</a> - Setup instructions</li>
+                  <li>• <a href={`${repoBaseUrl}/CONTRIBUTING.md`} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300">Contributing Guide</a> - Development workflow</li>
                 </ul>
               </div>
 
               <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
                 <h3 className="text-xl font-bold text-purple-400 mb-4 text-center">🔧 Automation Guides</h3>
                 <ul className="text-white/80 text-sm space-y-2 mb-4">
-                  <li>• <Link href="/README_ULTIMATE_REDUNDANCY.md" className="text-purple-400 hover:text-purple-300">Ultimate Redundancy</Link> - System overview</li>
-                  <li>• <Link href="/README_COMPREHENSIVE_REDUNDANCY.md" className="text-purple-400 hover:text-purple-300">Comprehensive Redundancy</Link> - Advanced features</li>
-                  <li>• <Link href="/README_PM2_REDUNDANCY_COMPLETE.md" className="text-purple-400 hover:text-purple-300">PM2 Redundancy</Link> - Process management</li>
-                  <li>• <Link href="/README_GITHUB_ACTIONS.md" className="text-purple-400 hover:text-purple-300">GitHub Actions</Link> - CI/CD automation</li>
-                  <li>• <Link href="/README_CONTINUOUS_OPERATION.md" className="text-purple-400 hover:text-purple-300">Continuous Operation</Link> - Zero-downtime</li>
+                  <li>• <a href={`${repoBaseUrl}/README_ULTIMATE_REDUNDANCY.md`} target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:text-purple-300">Ultimate Redundancy</a> - System overview</li>
+                  <li>• <a href={`${repoBaseUrl}/README_COMPREHENSIVE_REDUNDANCY.md`} target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:text-purple-300">Comprehensive Redundancy</a> - Advanced features</li>
+                  <li>• <a href={`${repoBaseUrl}/README_PM2_REDUNDANCY_COMPLETE.md`} target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:text-purple-300">PM2 Redundancy</a> - Process management</li>
+                  <li>• <a href={`${repoBaseUrl}/README_GITHUB_ACTIONS.md`} target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:text-purple-300">GitHub Actions</a> - CI/CD automation</li>
+                  <li>• <a href={`${repoBaseUrl}/README_CONTINUOUS_OPERATION.md`} target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:text-purple-300">Continuous Operation</a> - Zero-downtime</li>
                 </ul>
               </div>
 
               <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
                 <h3 className="text-xl font-bold text-green-400 mb-4 text-center">🚀 Advanced Features</h3>
                 <ul className="text-white/80 text-sm space-y-2 mb-4">
-                  <li>• <Link href="/SECURITY.md" className="text-green-400 hover:text-green-300">Security Guide</Link> - Protection measures</li>
-                  <li>• <Link href="/TESTING.md" className="text-green-400 hover:text-green-300">Testing Guide</Link> - Quality assurance</li>
-                  <li>• <Link href="/SERVICE_GENERATION_README.md" className="text-green-400 hover:text-green-300">Service Generation</Link> - Auto-creation</li>
-                  <li>• <Link href="/ULTIMATE_REDUNDANCY_AUTOMATION_README.md" className="text-green-400 hover:text-green-300">Automation README</Link> - System details</li>
-                  <li>• <Link href="/EXPONENTIAL_GROWTH_AUTOMATION.md" className="text-green-400 hover:text-green-300">Growth Automation</Link> - Scaling systems</li>
+                  <li>• <a href={`${repoBaseUrl}/SECURITY.md`} target="_blank" rel="noopener noreferrer" className="text-green-400 hover:text-green-300">Security Guide</a> - Protection measures</li>
+                  <li>• <a href={`${repoBaseUrl}/TESTING.md`} target="_blank" rel="noopener noreferrer" className="text-green-400 hover:text-green-300">Testing Guide</a> - Quality assurance</li>
+                  <li>• <a href={`${repoBaseUrl}/SERVICE_GENERATION_README.md`} target="_blank" rel="noopener noreferrer" className="text-green-400 hover:text-green-300">Service Generation</a> - Auto-creation</li>
+                  <li>• <a href={`${repoBaseUrl}/ULTIMATE_REDUNDANCY_AUTOMATION_README.md`} target="_blank" rel="noopener noreferrer" className="text-green-400 hover:text-green-300">Automation README</a> - System details</li>
+                  <li>• <a href={`${repoBaseUrl}/EXPONENTIAL_GROWTH_AUTOMATION.md`} target="_blank" rel="noopener noreferrer" className="text-green-400 hover:text-green-300">Growth Automation</a> - Scaling systems</li>
                 </ul>
               </div>
             </div>
