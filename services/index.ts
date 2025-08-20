@@ -16,6 +16,9 @@ export { videoEditingService } from './videoEditingService';
 export { aiCodeReviewService } from './aiCodeReviewService';
 export { apiDocGeneratorService } from './apiDocGeneratorService';
 export { databasePerformanceMonitorService } from './databasePerformanceMonitorService';
+export { aiMarketResearchService } from './aiMarketResearchService';
+export { aiCustomerSupportService } from './aiCustomerSupportService';
+export { aiFinancialAdvisorService } from './aiFinancialAdvisorService';
 
 // Export types
 export type {
@@ -172,3 +175,34 @@ export type {
   DatabasePerformanceAlert,
   IndexRecommendation
 } from './databasePerformanceMonitorService';
+
+export type {
+  MarketTrend,
+  CompetitorAnalysis as MarketCompetitorAnalysis,
+  MarketSegment,
+  MarketReport,
+  MarketResearchRequest,
+  MarketResearchResponse
+} from './aiMarketResearchService';
+
+export type {
+  SupportTicket,
+  CustomerInteraction,
+  AutomatedResponse,
+  SupportAnalytics,
+  CustomerProfile,
+  SupportRequest,
+  SupportResponse
+} from './aiCustomerSupportService';
+
+export type {
+  InvestmentPortfolio,
+  PortfolioAsset,
+  PortfolioPerformance,
+  InvestmentRecommendation,
+  FinancialGoal,
+  MarketAnalysis,
+  FinancialPlan,
+  FinancialRequest,
+  FinancialResponse
+} from './aiFinancialAdvisorService';

@@ -100,103 +100,118 @@ body {
   animation: particleFloat 30s ease-in-out infinite;
 }
 
-@keyframes particleFloat {
-  0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
-  25% { transform: translateY(-15px) rotate(90deg) scale(1.1); }
-  50% { transform: translateY(-25px) rotate(180deg) scale(0.9); }
-  75% { transform: translateY(-10px) rotate(270deg) scale(1.05); }
-}
+/* New Futuristic Effects */
 
-/* New: Holographic effect */
+/* Holographic effect */
 .holographic {
-  background: linear-gradient(
-    45deg,
-    transparent 30%,
-    rgba(255, 255, 255, 0.1) 50%,
-    transparent 70%
-  );
+  background: linear-gradient(45deg, 
+    rgba(59, 130, 246, 0.1) 0%, 
+    rgba(147, 51, 234, 0.1) 25%, 
+    rgba(16, 185, 129, 0.1) 50%, 
+    rgba(239, 68, 68, 0.1) 75%, 
+    rgba(59, 130, 246, 0.1) 100%);
   background-size: 200% 200%;
-  animation: holographicShift 3s ease-in-out infinite;
-}
-
-@keyframes holographicShift {
-  0% { background-position: 0% 0%; }
-  50% { background-position: 100% 100%; }
-  100% { background-position: 0% 0%; }
-}
-
-/* New: Neon glow effects */
-.neon-glow {
-  box-shadow: 
-    0 0 5px currentColor,
-    0 0 10px currentColor,
-    0 0 15px currentColor,
-    0 0 20px currentColor;
-}
-
-.neon-text {
-  text-shadow: 
-    0 0 5px currentColor,
-    0 0 10px currentColor,
-    0 0 15px currentColor,
-    0 0 20px currentColor;
-}
-
-/* New: Matrix rain effect */
-.matrix-bg {
+  animation: holographicShift 8s ease-in-out infinite;
   position: relative;
-  overflow: hidden;
 }
 
-.matrix-bg::before {
+.holographic::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(0, 255, 0, 0.1) 50%,
-    transparent 100%
+  background: linear-gradient(45deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.1) 50%, 
+    transparent 100%);
+  animation: holographicScan 4s linear infinite;
+}
+
+@keyframes holographicShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes holographicScan {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Neural network effect */
+.neural-bg {
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(147, 51, 234, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 40% 60%, rgba(16, 185, 129, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 60% 40%, rgba(239, 68, 68, 0.3) 0%, transparent 50%),
+    linear-gradient(45deg, transparent 30%, rgba(59, 130, 246, 0.1) 50%, transparent 70%);
+  background-size: 100px 100px, 150px 150px, 200px 200px, 120px 120px, 300px 300px;
+  animation: neuralPulse 15s ease-in-out infinite;
+}
+
+@keyframes neuralPulse {
+  0%, 100% { 
+    background-size: 100px 100px, 150px 150px, 200px 200px, 120px 120px, 300px 300px;
+    opacity: 0.7;
+  }
+  50% { 
+    background-size: 120px 120px, 180px 180px, 240px 240px, 140px 140px, 360px 360px;
+    opacity: 1;
+  }
+}
+
+/* Quantum tunnel effect */
+.quantum-tunnel {
+  background: conic-gradient(
+    from 0deg at 50% 50%,
+    #000000 0deg,
+    #1a1a2e 90deg,
+    #16213e 180deg,
+    #0f3460 270deg,
+    #533483 360deg
   );
-  animation: matrixRain 8s linear infinite;
+  background-size: 200% 200%;
+  animation: quantumShift 12s ease-in-out infinite;
 }
 
-@keyframes matrixRain {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(100vh); }
+@keyframes quantumShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
-/* New: Cyberpunk scan lines */
-.cyberpunk-scan {
-  position: relative;
-  overflow: hidden;
+/* Cyberpunk neon effect */
+.cyberpunk-neon {
+  box-shadow: 
+    0 0 5px currentColor,
+    0 0 10px currentColor,
+    0 0 15px currentColor,
+    0 0 20px currentColor,
+    inset 0 0 5px rgba(255, 255, 255, 0.1);
+  animation: neonPulse 2s ease-in-out infinite alternate;
 }
 
-.cyberpunk-scan::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(0, 255, 255, 0.8) 50%,
-    transparent 100%
-  );
-  animation: scanLine 2s linear infinite;
+@keyframes neonPulse {
+  from { 
+    box-shadow: 
+      0 0 5px currentColor,
+      0 0 10px currentColor,
+      0 0 15px currentColor,
+      0 0 20px currentColor,
+      inset 0 0 5px rgba(255, 255, 255, 0.1);
+  }
+  to { 
+    box-shadow: 
+      0 0 10px currentColor,
+      0 0 20px currentColor,
+      0 0 30px currentColor,
+      0 0 40px currentColor,
+      inset 0 0 10px rgba(255, 255, 255, 0.2);
+  }
 }
 
-@keyframes scanLine {
-  0% { transform: translateY(-100vh); }
-  100% { transform: translateY(100vh); }
-}
-
-/* New: Floating orbs */
+/* Floating orbs effect */
 .floating-orbs {
   position: relative;
   overflow: hidden;
@@ -210,29 +225,72 @@ body {
   height: 100px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%);
-  animation: floatOrb 15s ease-in-out infinite;
-}
-
-.floating-orbs::before {
-  top: 20%;
-  left: 10%;
-  animation-delay: 0s;
+  animation: floatOrb 20s ease-in-out infinite;
 }
 
 .floating-orbs::after {
-  top: 60%;
-  right: 15%;
-  animation-delay: 7.5s;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(147, 51, 234, 0.3) 0%, transparent 70%);
+  animation: floatOrb 25s ease-in-out infinite reverse;
+  animation-delay: -10s;
 }
 
 @keyframes floatOrb {
-  0%, 100% { transform: translateY(0px) scale(1); opacity: 0.3; }
-  50% { transform: translateY(-30px) scale(1.2); opacity: 0.6; }
+  0%, 100% { 
+    transform: translate(0, 0) scale(1);
+    opacity: 0.3;
+  }
+  25% { 
+    transform: translate(50px, -30px) scale(1.2);
+    opacity: 0.6;
+  }
+  50% { 
+    transform: translate(100px, 0) scale(0.8);
+    opacity: 0.3;
+  }
+  75% { 
+    transform: translate(50px, 30px) scale(1.1);
+    opacity: 0.5;
+  }
 }
 
-/* New: Glitch effect */
+/* Matrix rain effect */
+.matrix-rain {
+  position: relative;
+  overflow: hidden;
+}
+
+.matrix-rain::before {
+  content: '01';
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 255, 0, 0.1) 50%,
+    transparent 100%
+  );
+  animation: matrixFall 8s linear infinite;
+  font-family: 'Courier New', monospace;
+  font-size: 20px;
+  color: rgba(0, 255, 0, 0.3);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@keyframes matrixFall {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+/* Glitch effect */
 .glitch {
   position: relative;
+  animation: glitch 3s infinite;
 }
 
 .glitch::before,
@@ -246,15 +304,23 @@ body {
 }
 
 .glitch::before {
-  animation: glitch-1 0.5s infinite;
-  color: #00ffff;
+  animation: glitch-1 2s infinite;
+  color: #ff0000;
   z-index: -1;
 }
 
 .glitch::after {
-  animation: glitch-2 0.5s infinite;
-  color: #ff00ff;
+  animation: glitch-2 2s infinite;
+  color: #00ff00;
   z-index: -2;
+}
+
+@keyframes glitch {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
 }
 
 @keyframes glitch-1 {
@@ -273,150 +339,101 @@ body {
   80% { transform: translate(-2px, 2px); }
 }
 
-/* New: Energy pulse */
-.energy-pulse {
-  animation: energyPulse 2s ease-in-out infinite;
+/* Enhanced component styles */
+.card {
+  @apply bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-6 shadow-2xl;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@keyframes energyPulse {
-  0%, 100% { 
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
-    transform: scale(1);
-  }
-  50% { 
-    box-shadow: 0 0 40px rgba(59, 130, 246, 0.8);
-    transform: scale(1.05);
-  }
+.card:hover {
+  @apply transform scale-105 border-blue-500/50;
+  box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.25);
 }
 
-/* New: Data stream effect */
-.data-stream {
+.button {
+  @apply px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl shadow-lg;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
 }
 
-.data-stream::before {
-  content: '01';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(0, 255, 0, 0.1) 50%,
-    transparent 100%
-  );
-  font-family: 'Courier New', monospace;
-  font-size: 12px;
-  color: rgba(0, 255, 0, 0.3);
-  white-space: nowrap;
-  animation: dataStream 10s linear infinite;
-}
-
-@keyframes dataStream {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
-
-/* Enhanced glassmorphism */
-.glass {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-}
-
-/* Enhanced button hover effects */
-.btn-futuristic {
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-.btn-futuristic::before {
+.button::before {
   content: '';
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
   transition: left 0.5s;
 }
 
-.btn-futuristic:hover::before {
+.button:hover::before {
   left: 100%;
 }
 
-.btn-futuristic:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+.button:hover {
+  @apply transform scale-105 shadow-xl;
+  box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.3);
 }
 
-/* Enhanced card hover effects */
-.card-futuristic {
-  transition: all 0.3s ease;
-  position: relative;
+/* Enhanced typography */
+.futuristic-text {
+  background: linear-gradient(45deg, #3b82f6, #8b5cf6, #06b6d4, #10b981);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: textGradient 8s ease infinite;
 }
 
-.card-futuristic::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(45deg, transparent, rgba(59, 130, 246, 0.1), transparent);
-  opacity: 0;
-  transition: opacity 0.3s ease;
+@keyframes textGradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
-.card-futuristic:hover::before {
-  opacity: 1;
+/* Enhanced scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-.card-futuristic:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+::-webkit-scrollbar-track {
+  background: rgba(31, 41, 55, 0.5);
+  border-radius: 4px;
 }
 
-/* Responsive design enhancements */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #2563eb, #7c3aed);
+}
+
+/* Enhanced focus states */
+.focus-ring:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+}
+
+/* Enhanced transitions */
+.transition-futuristic {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-futuristic:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* Responsive utilities */
 @media (max-width: 768px) {
-  .futuristic-bg {
-    background-size: 200% 200%;
-    animation-duration: 15s;
+  .card {
+    @apply p-4;
   }
   
-  .grid-bg {
-    background-size: 30px 30px;
-    animation-duration: 20s;
-  }
-  
-  .particles-bg::before {
-    animation-duration: 25s;
-  }
-}
-
-/* Accessibility improvements */
-@media (prefers-reduced-motion: reduce) {
-  .futuristic-bg,
-  .grid-bg,
-  .particles-bg,
-  .holographic,
-  .matrix-bg,
-  .cyberpunk-scan,
-  .floating-orbs,
-  .glitch,
-  .energy-pulse,
-  .data-stream {
-    animation: none;
+  .button {
+    @apply px-4 py-2 text-sm;
   }
 }
 
@@ -426,12 +443,11 @@ body {
   .grid-bg,
   .particles-bg,
   .holographic,
-  .matrix-bg,
-  .cyberpunk-scan,
+  .neural-bg,
+  .quantum-tunnel,
   .floating-orbs,
-  .glitch,
-  .energy-pulse,
-  .data-stream {
-    display: none;
+  .matrix-rain {
+    background: none !important;
+    animation: none !important;
   }
 }

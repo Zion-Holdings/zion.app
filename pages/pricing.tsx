@@ -99,7 +99,7 @@ export default function PricingPage() {
       name: 'Cloud Cost Optimizer',
       price: 99,
       period: '/month',
-      description: 'Intelligent cloud cost management and optimization. Reduce cloud spending by 30%.',
+      description: 'Intelligent cloud cost management and optimization across AWS, Azure, and GCP.',
       features: [
         'Real-time cost monitoring',
         'Automated resource optimization',
@@ -115,391 +115,247 @@ export default function PricingPage() {
       color: 'from-blue-500 to-indigo-600',
       textColor: 'text-blue-400',
       link: 'https://ziontechgroup.com/cloud-cost-optimizer',
-      category: 'Development & DevOps',
+      category: 'Cloud & DevOps',
       realService: true,
       savings: 'Save 20% with yearly billing'
     },
     {
-      name: 'AI Code Review Assistant',
+      name: 'AI Market Research Pro',
       price: 79,
       period: '/month',
-      description: 'Automated code review with AI-powered security scanning and performance analysis.',
+      description: 'AI-powered market research platform providing real-time insights and competitive analysis.',
       features: [
-        'Multi-language support (JS, TS, Python, Java, C#, Go, Rust)',
-        'Security vulnerability detection',
-        'Performance optimization suggestions',
-        'Code quality metrics',
-        'Automated issue prioritization',
-        'Integration with Git workflows',
-        'Custom rule configuration',
-        'Team collaboration features'
+        'Real-time market trend analysis',
+        'Competitor intelligence & SWOT analysis',
+        'Market segmentation & targeting',
+        'AI-generated market reports',
+        'Custom research requests',
+        'Export to PDF/Excel/CSV',
+        'Scheduled reporting',
+        'API access for integrations'
       ],
       popular: false,
       icon: '🔍',
       color: 'from-emerald-500 to-teal-600',
       textColor: 'text-emerald-400',
-      link: 'https://ziontechgroup.com/ai-code-review',
-      category: 'Development & DevOps',
+      link: 'https://ziontechgroup.com/ai-market-research',
+      category: 'Business Intelligence',
       realService: true,
       savings: 'Save 20% with yearly billing'
     },
     {
-      name: 'API Documentation Generator',
-      price: 59,
-      period: '/month',
-      description: 'Generate comprehensive API documentation automatically from your source code.',
-      features: [
-        'Multi-framework support (Express, Django, Spring, FastAPI)',
-        'Automatic endpoint discovery',
-        'Interactive documentation',
-        'Multiple export formats (HTML, Markdown, PDF, OpenAPI)',
-        'Version control integration',
-        'Custom branding options',
-        'API testing tools',
-        'Documentation analytics'
-      ],
-      popular: false,
-      icon: '📚',
-      color: 'from-violet-500 to-purple-600',
-      textColor: 'text-violet-400',
-      link: 'https://ziontechgroup.com/api-doc-generator',
-      category: 'Development & DevOps',
-      realService: true,
-      savings: 'Save 20% with yearly billing'
-    },
-    {
-      name: 'Database Performance Monitor',
-      price: 89,
-      period: '/month',
-      description: 'Monitor and optimize database performance across multiple database types.',
-      features: [
-        'Multi-database support (PostgreSQL, MySQL, MongoDB, Redis)',
-        'Real-time query monitoring',
-        'Performance bottleneck detection',
-        'Automated index recommendations',
-        'Query execution plan analysis',
-        'Performance trend analysis',
-        'Alert system',
-        'Capacity planning tools'
-      ],
-      popular: false,
-      icon: '📊',
-      color: 'from-amber-500 to-orange-600',
-      textColor: 'text-amber-400',
-      link: 'https://ziontechgroup.com/database-monitor',
-      category: 'Development & DevOps',
-      realService: true,
-      savings: 'Save 20% with yearly billing'
-    },
-    {
-      name: 'AI Sales Assistant',
-      price: 89,
-      period: '/month',
-      description: 'AI-powered sales automation that helps close more deals.',
-      features: [
-        'Intelligent lead scoring',
-        'Automated follow-up sequences',
-        'Sales conversation analysis',
-        'Pipeline optimization',
-        'Revenue forecasting',
-        'CRM integration',
-        'Sales performance analytics',
-        'Mobile sales app'
-      ],
-      popular: false,
-      icon: '💼',
-      color: 'from-emerald-500 to-teal-600',
-      textColor: 'text-emerald-400',
-      link: 'https://ziontechgroup.com/ai-sales-assistant',
-      category: 'Sales & CRM',
-      realService: true,
-      savings: 'Save 20% with yearly billing'
-    },
-    {
-      name: 'AI Legal Assistant',
-      price: 149,
-      period: '/month',
-      description: 'Generate legal documents and contracts with AI assistance.',
-      features: [
-        'Contract template library',
-        'AI-powered document review',
-        'Legal compliance checking',
-        'Electronic signature integration',
-        'Document version control',
-        'Legal research assistance',
-        'Client portal access',
-        'Integration with legal software'
-      ],
-      popular: false,
-      icon: '⚖️',
-      color: 'from-gray-500 to-slate-600',
-      textColor: 'text-gray-400',
-      link: 'https://ziontechgroup.com/ai-legal-assistant',
-      category: 'Legal & Compliance',
-      realService: true,
-      savings: 'Save 20% with yearly billing'
-    },
-    {
-      name: 'AI HR Assistant',
+      name: 'AI Customer Support Suite',
       price: 69,
       period: '/month',
-      description: 'Automate HR processes with AI-powered tools.',
+      description: 'AI-powered customer support platform with intelligent ticket routing and sentiment analysis.',
+      features: [
+        'AI-powered ticket routing',
+        'Sentiment analysis & intent detection',
+        'Automated response generation',
+        'Knowledge base search',
+        'Customer profile analytics',
+        'Performance metrics & reporting',
+        'Multi-channel support',
+        'Integration with popular CRMs'
+      ],
+      popular: false,
+      icon: '🎧',
+      color: 'from-purple-500 to-violet-600',
+      textColor: 'text-purple-400',
+      link: 'https://ziontechgroup.com/ai-customer-support',
+      category: 'Customer Support',
+      realService: true,
+      savings: 'Save 20% with yearly billing'
+    },
+    {
+      name: 'AI Financial Advisor Pro',
+      price: 89,
+      period: '/month',
+      description: 'AI-powered financial advisory platform providing investment recommendations and portfolio analysis.',
+      features: [
+        'AI investment recommendations',
+        'Portfolio performance analysis',
+        'Risk assessment & management',
+        'Financial goal tracking',
+        'Tax optimization strategies',
+        'Retirement planning tools',
+        'Market analysis & insights',
+        'Comprehensive financial reports'
+      ],
+      popular: false,
+      icon: '💰',
+      color: 'from-amber-500 to-orange-600',
+      textColor: 'text-amber-400',
+      link: 'https://ziontechgroup.com/ai-financial-advisor',
+      category: 'Financial Services',
+      realService: true,
+      savings: 'Save 20% with yearly billing'
+    },
+    {
+      name: 'AI HR Assistant Pro',
+      price: 59,
+      period: '/month',
+      description: 'AI-powered HR platform for intelligent recruitment and employee performance tracking.',
       features: [
         'AI-powered candidate screening',
-        'Automated interview scheduling',
-        'Performance review automation',
-        'Employee onboarding workflows',
-        'HR analytics & reporting',
+        'Resume parsing & analysis',
+        'Interview scheduling automation',
+        'Performance review management',
+        'Employee engagement analytics',
         'Compliance monitoring',
-        'Employee self-service portal',
+        'Document generation',
         'Integration with HRIS systems'
       ],
       popular: false,
       icon: '👥',
-      color: 'from-purple-500 to-indigo-600',
-      textColor: 'text-purple-400',
+      color: 'from-cyan-500 to-blue-600',
+      textColor: 'text-cyan-400',
       link: 'https://ziontechgroup.com/ai-hr-assistant',
       category: 'Human Resources',
       realService: true,
       savings: 'Save 20% with yearly billing'
     },
     {
-      name: 'Business Intelligence Hub',
-      price: 99,
+      name: 'AI Legal Assistant Pro',
+      price: 79,
       period: '/month',
-      description: 'Transform your data into actionable insights with advanced analytics.',
+      description: 'AI-powered legal platform for document generation, contract review, and legal research assistance.',
       features: [
-        'Data visualization tools',
-        'Automated reporting',
-        'KPI dashboards',
-        'Predictive analytics',
-        'Data integration',
-        'Real-time data processing',
-        'Custom metrics & calculations',
-        'Team collaboration features'
+        'AI contract review & analysis',
+        'Legal document generation',
+        'Compliance checking',
+        'Legal research assistance',
+        'Document template library',
+        'Version control & tracking',
+        'Client portal access',
+        'Integration with legal software'
       ],
       popular: false,
-      icon: '📊',
-      color: 'from-rose-500 to-pink-600',
-      textColor: 'text-rose-400',
-      link: 'https://ziontechgroup.com/business-intelligence-hub',
-      category: 'Analytics & Data',
+      icon: '⚖️',
+      color: 'from-slate-500 to-gray-600',
+      textColor: 'text-slate-400',
+      link: 'https://ziontechgroup.com/ai-legal-assistant',
+      category: 'Legal Services',
+      realService: true,
+      savings: 'Save 20% with yearly billing'
+    },
+    {
+      name: 'AI Sales Assistant Pro',
+      price: 69,
+      period: '/month',
+      description: 'AI-powered sales platform for lead scoring, pipeline management, and sales process automation.',
+      features: [
+        'AI lead scoring & prioritization',
+        'Sales pipeline analytics',
+        'Email sequence automation',
+        'Meeting scheduling automation',
+        'Sales forecasting & analytics',
+        'CRM integration',
+        'Performance tracking',
+        'Custom sales workflows'
+      ],
+      popular: false,
+      icon: '📈',
+      color: 'from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      link: 'https://ziontechgroup.com/ai-sales-assistant',
+      category: 'Sales & Marketing',
+      realService: true,
+      savings: 'Save 20% with yearly billing'
+    },
+    {
+      name: 'AI Code Review Pro',
+      price: 49,
+      period: '/month',
+      description: 'AI-powered code review platform for automated code analysis, quality checks, and security vulnerability detection.',
+      features: [
+        'Automated code review',
+        'Security vulnerability detection',
+        'Code quality metrics',
+        'Performance optimization suggestions',
+        'Best practices enforcement',
+        'Integration with Git platforms',
+        'Team collaboration tools',
+        'Custom rule configuration'
+      ],
+      popular: false,
+      icon: '💻',
+      color: 'from-indigo-500 to-purple-600',
+      textColor: 'text-indigo-400',
+      link: 'https://ziontechgroup.com/ai-code-review',
+      category: 'Development Tools',
       realService: true,
       savings: 'Save 20% with yearly billing'
     },
     {
       name: 'AI Video Editor Pro',
-      price: 79,
+      price: 89,
       period: '/month',
-      description: 'Create stunning videos with AI-powered editing tools.',
+      description: 'AI-powered video editing platform for automated video creation, editing, and optimization.',
       features: [
-        'AI-powered scene detection',
-        'Automated video enhancement',
-        'Smart subtitle generation',
-        'Background music matching',
-        'Video templates library',
-        'Multi-format export',
-        'Cloud collaboration',
-        'Integration with popular platforms'
+        'AI-powered video editing',
+        'Automated scene detection',
+        'Smart content cropping',
+        'Background removal & replacement',
+        'Auto-caption generation',
+        'Video optimization for platforms',
+        'Template library',
+        'Export in multiple formats'
       ],
-      popular: true,
+      popular: false,
       icon: '🎬',
       color: 'from-red-500 to-pink-600',
       textColor: 'text-red-400',
-      link: 'https://ziontechgroup.com/ai-video-editor-pro',
-      category: 'Content & Marketing',
+      link: 'https://ziontechgroup.com/ai-video-editor',
+      category: 'Content Creation',
       realService: true,
       savings: 'Save 20% with yearly billing'
     },
     {
-      name: 'Email Marketing Automation',
-      price: 29,
+      name: 'AI SEO Automation Pro',
+      price: 59,
       period: '/month',
-      description: 'Create personalized email campaigns with AI-powered automation.',
+      description: 'AI-powered SEO platform for automated optimization, keyword research, and performance monitoring.',
       features: [
-        'AI-powered subject line optimization',
-        'Smart audience segmentation',
-        'Behavioral triggers',
-        'A/B testing automation',
-        'Email template library',
-        'Analytics & reporting',
-        'GDPR compliance tools',
-        'Integration with popular CRMs'
-      ],
-      popular: false,
-      icon: '📧',
-      color: 'from-indigo-500 to-blue-600',
-      textColor: 'text-indigo-400',
-      link: 'https://ziontechgroup.com/email-marketing-automation',
-      category: 'Content & Marketing',
-      realService: true,
-      savings: 'Save 20% with yearly billing'
-    },
-    {
-      name: 'Social Media Scheduler',
-      price: 19,
-      period: '/month',
-      description: 'Schedule and automate your social media posts across multiple platforms.',
-      features: [
-        'Multi-platform scheduling',
-        'AI-powered optimal timing',
-        'Content calendar management',
-        'Hashtag suggestions',
-        'Analytics & insights',
-        'Team collaboration',
-        'Content recycling',
-        'Integration with Canva & Unsplash'
-      ],
-      popular: false,
-      icon: '📱',
-      color: 'from-teal-500 to-cyan-600',
-      textColor: 'text-teal-400',
-      link: 'https://ziontechgroup.com/social-media-scheduler',
-      category: 'Content & Marketing',
-      realService: true,
-      savings: 'Save 20% with yearly billing'
-    },
-    {
-      name: 'Invoice & Billing Manager',
-      price: 39,
-      period: '/month',
-      description: 'Automate invoicing, payment tracking, and financial reporting.',
-      features: [
-        'Automated invoice generation',
-        'Payment tracking & reminders',
-        'Multiple payment gateways',
-        'Recurring billing',
-        'Financial reporting',
-        'Client portal',
-        'Tax calculation',
-        'Integration with accounting software'
-      ],
-      popular: false,
-      icon: '🧾',
-      color: 'from-green-500 to-emerald-600',
-      textColor: 'text-green-400',
-      link: 'https://ziontechgroup.com/invoice-billing-manager',
-      category: 'Finance & Accounting',
-      realService: true,
-      savings: 'Save 20% with yearly billing'
-    },
-    {
-      name: 'Project Management Suite',
-      price: 69,
-      period: '/month',
-      description: 'Complete project management solution with task tracking and team collaboration.',
-      features: [
-        'Task & project tracking',
-        'Team collaboration tools',
-        'Time tracking & reporting',
-        'Resource management',
-        'Gantt charts & timelines',
-        'File sharing & storage',
-        'Mobile app access',
-        'Integration with popular tools'
-      ],
-      popular: false,
-      icon: '📋',
-      color: 'from-blue-500 to-indigo-600',
-      textColor: 'text-blue-400',
-      link: 'https://ziontechgroup.com/project-management-suite',
-      category: 'Project Management',
-      realService: true,
-      savings: 'Save 20% with yearly billing'
-    },
-    {
-      name: 'Customer Support Hub',
-      price: 49,
-      period: '/month',
-      description: 'Centralized customer support platform with ticket management and knowledge base.',
-      features: [
-        'Ticket management system',
-        'Knowledge base creation',
-        'Live chat support',
-        'Customer self-service portal',
-        'Support analytics',
-        'Multi-channel support',
-        'Automated workflows',
-        'Integration with CRM systems'
-      ],
-      popular: false,
-      icon: '🎧',
-      color: 'from-purple-500 to-pink-600',
-      textColor: 'text-purple-400',
-      link: 'https://ziontechgroup.com/customer-support-hub',
-      category: 'Customer Experience',
-      realService: true,
-      savings: 'Save 20% with yearly billing'
-    },
-    {
-      name: 'AI SEO Optimizer',
-      price: 89,
-      period: '/month',
-      description: 'AI-powered SEO optimization that improves your search rankings.',
-      features: [
-        'Keyword research automation',
-        'Technical SEO audits',
-        'Content optimization suggestions',
+        'AI keyword research & analysis',
+        'On-page optimization suggestions',
+        'Technical SEO auditing',
         'Competitor analysis',
-        'Ranking tracking',
-        'Backlink monitoring',
-        'Local SEO optimization',
-        'Performance reporting'
+        'Ranking tracking & reporting',
+        'Content optimization recommendations',
+        'Local SEO tools',
+        'Integration with analytics platforms'
       ],
       popular: false,
       icon: '🔍',
-      color: 'from-emerald-500 to-green-600',
-      textColor: 'text-emerald-400',
-      link: 'https://ziontechgroup.com/ai-seo-optimizer',
-      category: 'Content & Marketing',
+      color: 'from-teal-500 to-cyan-600',
+      textColor: 'text-teal-400',
+      link: 'https://ziontechgroup.com/ai-seo-automation',
+      category: 'Digital Marketing',
       realService: true,
       savings: 'Save 20% with yearly billing'
     },
     {
-      name: 'AI Chatbot Platform',
-      price: 59,
+      name: 'AI Business Intelligence Pro',
+      price: 99,
       period: '/month',
-      description: 'Build AI-powered chatbots that provide 24/7 customer support.',
+      description: 'AI-powered business intelligence platform for data analysis, visualization, and predictive insights.',
       features: [
-        'Natural language processing',
-        'Multi-language support',
-        'Integration with popular platforms',
-        'Analytics & insights',
-        'Custom training',
-        'Lead qualification',
-        'Appointment scheduling',
-        'Payment processing'
+        'AI-powered data analysis',
+        'Interactive dashboards',
+        'Predictive analytics',
+        'Data visualization tools',
+        'Custom report generation',
+        'Real-time data monitoring',
+        'Integration with data sources',
+        'Advanced filtering & segmentation'
       ],
       popular: false,
-      icon: '💬',
-      color: 'from-sky-500 to-blue-600',
-      textColor: 'text-sky-400',
-      link: 'https://ziontechgroup.com/ai-chatbot-platform',
-      category: 'Customer Experience',
-      realService: true,
-      savings: 'Save 20% with yearly billing'
-    },
-    {
-      name: 'AI Fraud Detection',
-      price: 199,
-      period: '/month',
-      description: 'Advanced AI-powered fraud detection that identifies and prevents fraudulent activities.',
-      features: [
-        'Real-time transaction monitoring',
-        'Machine learning algorithms',
-        'Behavioral analysis',
-        'Risk scoring',
-        'Automated blocking',
-        'Compliance reporting',
-        'API integration',
-        'Custom rule configuration'
-      ],
-      popular: false,
-      icon: '🛡️',
-      color: 'from-red-500 to-pink-600',
-      textColor: 'text-red-400',
-      link: 'https://ziontechgroup.com/ai-fraud-detection',
-      category: 'Security & Compliance',
+      icon: '📊',
+      color: 'from-yellow-500 to-orange-600',
+      textColor: 'text-yellow-400',
+      link: 'https://ziontechgroup.com/ai-business-intelligence',
+      category: 'Business Intelligence',
       realService: true,
       savings: 'Save 20% with yearly billing'
     }
@@ -908,6 +764,92 @@ export default function PricingPage() {
           </Card>
         </div>
       </section>
+
+        {/* Contact Information Section */}
+        <section className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-black relative overflow-hidden">
+          <div className="absolute inset-0 quantum-tunnel opacity-20"></div>
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Ready to Get Started?
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Have questions about our pricing or need help choosing the right plan? 
+                Our team is here to help you make the best decision for your business.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="bg-gradient-to-r from-blue-600/10 to-purple-600/10 border border-blue-500/20 rounded-2xl p-8 backdrop-blur-xl text-center">
+                <Mail className="w-12 h-12 text-blue-400 mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-white mb-3">Email Us</h3>
+                <p className="text-gray-300 mb-4">
+                  Get detailed pricing information and custom quotes
+                </p>
+                <a 
+                  href="mailto:kleber@ziontechgroup.com" 
+                  className="text-blue-400 hover:text-blue-300 transition-colors font-semibold"
+                >
+                  kleber@ziontechgroup.com
+                </a>
+              </div>
+
+              <div className="bg-gradient-to-r from-green-600/10 to-emerald-600/10 border border-green-500/20 rounded-2xl p-8 backdrop-blur-xl text-center">
+                <Phone className="w-12 h-12 text-green-400 mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-white mb-3">Call Us</h3>
+                <p className="text-gray-300 mb-4">
+                  Speak directly with our sales team
+                </p>
+                <a 
+                  href="tel:+13024640950" 
+                  className="text-green-400 hover:text-green-300 transition-colors font-semibold"
+                >
+                  +1 302 464 0950
+                </a>
+              </div>
+
+              <div className="bg-gradient-to-r from-purple-600/10 to-pink-600/10 border border-purple-500/20 rounded-2xl p-8 backdrop-blur-xl text-center">
+                <MapPin className="w-12 h-12 text-purple-400 mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-white mb-3">Visit Us</h3>
+                <p className="text-gray-300 mb-4">
+                  Our headquarters location
+                </p>
+                <p className="text-purple-400 font-semibold">
+                  364 E Main St STE 1008<br />
+                  Middletown DE 19709
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-16 text-center">
+              <div className="bg-gradient-to-r from-blue-600/10 to-purple-600/10 border border-blue-500/20 rounded-2xl p-8 backdrop-blur-xl max-w-4xl mx-auto">
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  Enterprise Solutions & Custom Pricing
+                </h3>
+                <p className="text-gray-300 mb-6">
+                  Need a custom solution or have specific requirements? We offer enterprise-grade 
+                  solutions with custom pricing, dedicated support, and white-label options.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button 
+                    href="https://ziontechgroup.com/contact"
+                    className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105"
+                  >
+                    <Mail className="w-5 h-5 mr-2" />
+                    Request Custom Quote
+                  </Button>
+                  <Button 
+                    href="https://ziontechgroup.com"
+                    className="bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105"
+                  >
+                    <Globe className="w-5 h-5 mr-2" />
+                    Visit Website
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
     </div>
   );
 }
