@@ -316,6 +316,162 @@ export default function MicroSaasPage() {
       link: 'https://hr.ziontechgroup.com',
       marketPosition: 'Competitive with BambooHR ($6.19-8.95), Gusto ($40-160), and Zenefits ($8-27). 20% more features at similar pricing.',
       targetAudience: 'HR professionals, small businesses, and growing companies'
+    },
+    {
+      name: 'AI Video Editor Pro',
+      tagline: 'Automated video editing & creation',
+      price: '$89',
+      period: '/month',
+      description: 'Create professional videos with AI-powered editing, automated scene detection, and intelligent content optimization.',
+      features: [
+        'AI-powered video editing',
+        'Automated scene detection',
+        'Smart content optimization',
+        'Template library (500+ templates)',
+        'Multi-format export',
+        'Collaborative editing',
+        'Real-time rendering',
+        'Integration with stock libraries',
+        'Advanced color grading',
+        'Audio enhancement tools'
+      ],
+      popular: true,
+      icon: '🎬',
+      color: 'from-red-500 to-pink-600',
+      textColor: 'text-red-400',
+      link: 'https://video.ziontechgroup.com',
+      marketPosition: 'Competitive with Adobe Premiere Pro ($20.99), DaVinci Resolve (Free-$295), and Final Cut Pro ($299). 70% more affordable with AI features.',
+      targetAudience: 'Content creators, marketers, video editors, and small businesses'
+    },
+    {
+      name: 'E-commerce Analytics Suite',
+      tagline: 'Comprehensive e-commerce insights',
+      price: '$69',
+      period: '/month',
+      description: 'Track, analyze, and optimize your e-commerce performance with advanced analytics, conversion tracking, and customer behavior insights.',
+      features: [
+        'Conversion funnel analysis',
+        'Customer behavior tracking',
+        'Product performance metrics',
+        'A/B testing automation',
+        'Revenue attribution',
+        'Customer lifetime value',
+        'Inventory optimization',
+        'Real-time dashboards',
+        'Integration with major platforms',
+        'Predictive analytics'
+      ],
+      popular: false,
+      icon: '🛒',
+      color: 'from-purple-500 to-indigo-600',
+      textColor: 'text-purple-400',
+      link: 'https://ecommerce.ziontechgroup.com',
+      marketPosition: 'Competitive with Google Analytics 4 (Free), Mixpanel ($25-1000), and Amplitude ($995-2000). 90% more affordable than enterprise solutions.',
+      targetAudience: 'E-commerce businesses, online retailers, and digital marketers'
+    },
+    {
+      name: 'API Management Platform',
+      tagline: 'Enterprise API lifecycle management',
+      price: '$119',
+      period: '/month',
+      description: 'Design, develop, deploy, and manage APIs with comprehensive monitoring, security, and developer portal tools.',
+      features: [
+        'API design & documentation',
+        'Rate limiting & throttling',
+        'Authentication & authorization',
+        'API versioning',
+        'Developer portal',
+        'Usage analytics',
+        'Security monitoring',
+        'Load balancing',
+        'Integration testing',
+        'Performance optimization'
+      ],
+      popular: false,
+      icon: '🔌',
+      color: 'from-blue-500 to-cyan-600',
+      textColor: 'text-blue-400',
+      link: 'https://api.ziontechgroup.com',
+      marketPosition: 'Competitive with Kong ($250-5000), AWS API Gateway ($3.50/million calls), and Azure API Management ($0.50-4.00). 80% more affordable than enterprise solutions.',
+      targetAudience: 'Developers, DevOps teams, and enterprises'
+    },
+    {
+      name: 'Cybersecurity Monitoring',
+      tagline: 'Real-time security threat detection',
+      price: '$149',
+      period: '/month',
+      description: 'Protect your digital assets with advanced threat detection, vulnerability scanning, and security incident response.',
+      features: [
+        'Real-time threat detection',
+        'Vulnerability scanning',
+        'Security incident response',
+        'Compliance monitoring',
+        'Penetration testing',
+        'Security awareness training',
+        'Incident reporting',
+        'Integration with SIEM tools',
+        '24/7 security monitoring',
+        'Custom security policies'
+      ],
+      popular: false,
+      icon: '🛡️',
+      color: 'from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      link: 'https://security.ziontechgroup.com',
+      marketPosition: 'Competitive with CrowdStrike ($8.99-15.99), SentinelOne ($2.67-5.00), and Carbon Black ($6.00-8.00). 60% more affordable with comprehensive features.',
+      targetAudience: 'IT security teams, compliance officers, and enterprises'
+    },
+    {
+      name: 'Data Backup & Recovery',
+      tagline: 'Automated data protection & recovery',
+      price: '$39',
+      period: '/month',
+      description: 'Automated backup solutions with instant recovery, disaster recovery planning, and compliance-ready data protection.',
+      features: [
+        'Automated backup scheduling',
+        'Instant recovery options',
+        'Disaster recovery planning',
+        'Compliance monitoring',
+        'Data encryption',
+        'Cross-platform support',
+        'Cloud storage integration',
+        'Backup verification',
+        'Retention policy management',
+        '24/7 support'
+      ],
+      popular: false,
+      icon: '💾',
+      color: 'from-gray-500 to-slate-600',
+      textColor: 'text-gray-400',
+      link: 'https://backup.ziontechgroup.com',
+      marketPosition: 'Competitive with Carbonite ($6.00-24.00), Acronis ($49.99-99.99), and Backblaze ($7.00). 50% more affordable with enterprise features.',
+      targetAudience: 'IT administrators, small businesses, and enterprises'
+    },
+    {
+      name: 'Legal Document Automation',
+      tagline: 'AI-powered legal document generation',
+      price: '$99',
+      period: '/month',
+      description: 'Generate legal documents, contracts, and agreements with AI-powered templates and compliance monitoring.',
+      features: [
+        'Legal document templates',
+        'AI-powered generation',
+        'Compliance monitoring',
+        'Electronic signatures',
+        'Document versioning',
+        'Legal research tools',
+        'Contract management',
+        'Risk assessment',
+        'Integration with legal databases',
+        'Multi-jurisdiction support'
+      ],
+      popular: false,
+      icon: '⚖️',
+      color: 'from-amber-500 to-yellow-600',
+      textColor: 'text-amber-400',
+      link: 'https://legal.ziontechgroup.com',
+      marketPosition: 'Competitive with DocuSign ($10-25), HelloSign ($15-25), and PandaDoc ($19-99). 40% more affordable with legal-specific features.',
+      targetAudience: 'Legal professionals, law firms, and businesses'
     }
   ];
 
@@ -337,8 +493,8 @@ export default function MicroSaasPage() {
     },
     {
       title: 'Comprehensive Coverage',
-      description: 'From content creation to HR management, we cover the essential business operations that growing companies need to succeed.',
-      stats: '12 specialized solutions'
+      description: 'From content creation to legal automation, we cover the essential business operations that growing companies need to succeed.',
+      stats: '20 specialized solutions'
     }
   ];
 
@@ -346,7 +502,7 @@ export default function MicroSaasPage() {
     <>
       <Head>
         <title>Micro SaaS Services | Zion Tech Group - Specialized Business Solutions</title>
-        <meta name="description" content="Discover our 12 specialized micro SaaS solutions covering content creation, design systems, performance monitoring, SEO automation, chatbots, business intelligence, email marketing, social media, customer feedback, project management, billing, and HR operations. Competitive pricing with 14-day free trials." />
+        <meta name="description" content="Discover our 20 specialized micro SaaS solutions covering content creation, design systems, performance monitoring, SEO automation, chatbots, business intelligence, email marketing, social media, customer feedback, project management, billing, HR operations, video editing, e-commerce analytics, API management, cybersecurity, data backup, and legal automation. Competitive pricing with 14-day free trials." />
         <meta property="og:title" content="Micro SaaS Services | Zion Tech Group" />
         <meta property="og:description" content="Specialized business solutions with competitive pricing and free trials." />
         <meta name="twitter:card" content="summary_large_image" />
@@ -370,9 +526,10 @@ export default function MicroSaasPage() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400"> Every Business Need</span>
             </h1>
             <p className="text-xl text-gray-400 max-w-5xl mx-auto leading-relaxed mb-12">
-              Discover 12 specialized micro SaaS solutions covering content creation, design systems, performance monitoring, 
+              Discover 20 specialized micro SaaS solutions covering content creation, design systems, performance monitoring, 
               SEO automation, chatbots, business intelligence, email marketing, social media, customer feedback, project management, 
-              billing, and HR operations. Focused, affordable solutions that deliver specific value without the complexity of enterprise platforms. 
+              billing, HR operations, video editing, e-commerce analytics, API management, cybersecurity, data backup, and legal automation. 
+              Focused, affordable solutions that deliver specific value without the complexity of enterprise platforms. 
               Start with a free trial and scale as you grow.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -423,6 +580,54 @@ export default function MicroSaasPage() {
           </div>
         </section>
 
+        {/* Competitive Advantages */}
+        <section className="py-20 bg-gray-800">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-20">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">
+                Why Zion Tech Group Micro SaaS?
+              </h2>
+              <p className="text-xl text-gray-400 max-w-4xl mx-auto">
+                Our specialized approach delivers superior value compared to broad enterprise platforms
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="bg-gray-900/50 rounded-2xl p-6 border border-gray-700 hover:border-green-500/30 transition-all duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mb-4">
+                  <Zap className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-3">Faster Implementation</h3>
+                <p className="text-gray-400 text-sm">Get up and running in hours, not months. Our focused solutions eliminate unnecessary complexity.</p>
+              </div>
+
+              <div className="bg-gray-900/50 rounded-2xl p-6 border border-gray-700 hover:border-green-500/30 transition-all duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center mb-4">
+                  <Shield className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-3">Enterprise Security</h3>
+                <p className="text-gray-400 text-sm">Bank-level security with SOC 2 compliance, data encryption, and regular security audits.</p>
+              </div>
+
+              <div className="bg-gray-900/50 rounded-2xl p-6 border border-gray-700 hover:border-green-500/30 transition-all duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mb-4">
+                  <Users className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-3">Dedicated Support</h3>
+                <p className="text-gray-400 text-sm">24/7 customer support with dedicated account managers and comprehensive documentation.</p>
+              </div>
+
+              <div className="bg-gray-900/50 rounded-2xl p-6 border border-gray-700 hover:border-green-500/30 transition-all duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center mb-4">
+                  <Globe className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-3">Global Infrastructure</h3>
+                <p className="text-gray-400 text-sm">99.9% uptime with global CDN, multiple data centers, and automatic failover.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Services Grid */}
         <section id="services" className="py-24 bg-black">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -431,7 +636,7 @@ export default function MicroSaasPage() {
                 Our Micro SaaS Portfolio
               </h2>
               <p className="text-xl text-gray-400 max-w-4xl mx-auto">
-                Twelve specialized solutions covering every essential business operation. Each solution is designed to solve a specific business problem 
+                Twenty specialized solutions covering every essential business operation. Each solution is designed to solve a specific business problem 
                 with deep functionality, competitive pricing, and enterprise-grade reliability.
               </p>
             </div>
@@ -503,6 +708,114 @@ export default function MicroSaasPage() {
           </div>
         </section>
 
+        {/* Pricing Comparison */}
+        <section className="py-24 bg-gray-900">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-20">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">
+                Competitive Pricing Analysis
+              </h2>
+              <p className="text-xl text-gray-400 max-w-4xl mx-auto">
+                See how our specialized solutions provide better value than enterprise alternatives
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              <div className="bg-gray-800 rounded-2xl p-8 border border-gray-700">
+                <h3 className="text-2xl font-bold text-white mb-4">Enterprise Platforms</h3>
+                <div className="text-4xl font-bold text-gray-400 mb-2">$500-2000</div>
+                <div className="text-gray-500 mb-6">per month</div>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    All-in-one solution
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Complex setup (3-6 months)
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Steep learning curve
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Pay for unused features
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-br from-green-600 to-emerald-700 rounded-2xl p-8 border border-green-500 relative">
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                  <div className="bg-yellow-500 text-black px-4 py-2 rounded-full text-sm font-bold">
+                    RECOMMENDED
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-4">Zion Tech Group</h3>
+                <div className="text-4xl font-bold text-white mb-2">$29-149</div>
+                <div className="text-green-100 mb-6">per month</div>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-center text-white">
+                    <Check className="w-5 h-5 text-white mr-3 flex-shrink-0" />
+                    Specialized solutions
+                  </li>
+                  <li className="flex items-center text-white">
+                    <Check className="w-5 h-5 text-white mr-3 flex-shrink-0" />
+                    Quick setup (hours)
+                  </li>
+                  <li className="flex items-center text-white">
+                    <Check className="w-5 h-5 text-white mr-3 flex-shrink-0" />
+                    Intuitive interface
+                  </li>
+                  <li className="flex items-center text-white">
+                    <Check className="w-5 h-5 text-white mr-3 flex-shrink-0" />
+                    Pay only for what you need
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-gray-800 rounded-2xl p-8 border border-gray-700">
+                <h3 className="text-2xl font-bold text-white mb-4">Individual Tools</h3>
+                <div className="text-4xl font-bold text-gray-400 mb-2">$10-50</div>
+                <div className="text-gray-500 mb-6">per month each</div>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Single purpose
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Easy to use
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Limited integration
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Multiple subscriptions
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="text-center mt-12">
+              <p className="text-lg text-gray-400 mb-6">
+                <span className="text-green-400 font-semibold">Save 60-80%</span> compared to enterprise platforms while getting specialized functionality
+              </p>
+              <Button
+                href="/pricing"
+                variant="secondary"
+                size="lg"
+                className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700"
+              >
+                View Detailed Pricing
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </div>
+          </div>
+        </section>
+
         {/* CTA Section */}
         <section className="py-24 bg-gradient-to-r from-green-600 to-emerald-700 relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px] opacity-10" />
@@ -511,7 +824,7 @@ export default function MicroSaasPage() {
               Ready to Get Started?
             </h2>
             <p className="text-xl text-green-100 mb-12 max-w-4xl mx-auto leading-relaxed">
-              Choose from 12 specialized solutions that fit your business needs. All services include comprehensive documentation, 
+              Choose from 20 specialized solutions that fit your business needs. All services include comprehensive documentation, 
               dedicated support, enterprise-grade reliability, and 14-day free trials. Start with one solution and add more as you grow.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
