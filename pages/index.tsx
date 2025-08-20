@@ -10,7 +10,7 @@ export default function HomePage() {
     { value: '227+', label: 'Intelligent Automations', color: 'text-cyan-400' },
     { value: '2960+', label: 'Dynamic Pages', color: 'text-fuchsia-400' },
     { value: '12', label: 'Core Components', color: 'text-blue-400' },
-    { value: '100%', label: 'Autonomous', color: 'text-green-400' },
+    { value: '100%', label: 'Autonomous', color: 'text-emerald-400' },
   ];
 
   const platformFeatures = [
@@ -30,7 +30,7 @@ export default function HomePage() {
       icon: '🔄',
       title: 'Redundancy & Reliability',
       description: 'Multi-layer redundancy systems, intelligent failover, and 99.99% uptime guarantee.',
-      color: 'bg-gradient-to-br from-green-500 to-emerald-600',
+      color: 'bg-gradient-to-br from-emerald-500 to-green-600',
     },
     {
       icon: '🚀',
@@ -53,38 +53,38 @@ export default function HomePage() {
   ];
 
   const technologyStack = [
-    { name: 'Next.js', category: 'Framework', icon: '⚡' },
-    { name: 'React', category: 'Library', icon: '⚛️' },
-    { name: 'TypeScript', category: 'Language', icon: '📘' },
-    { name: 'Tailwind CSS', category: 'Styling', icon: '🎨' },
-    { name: 'Node.js', category: 'Runtime', icon: '🟢' },
-    { name: 'PostgreSQL', category: 'Database', icon: '🐘' },
-    { name: 'Redis', category: 'Cache', icon: '🔴' },
-    { name: 'Docker', category: 'Containerization', icon: '🐳' },
-    { name: 'Kubernetes', category: 'Orchestration', icon: '☸️' },
-    { name: 'AWS', category: 'Cloud', icon: '☁️' },
-    { name: 'Terraform', category: 'Infrastructure', icon: '🏗️' },
-    { name: 'Prometheus', category: 'Monitoring', icon: '📊' },
+    { name: 'Next.js', category: 'Framework', color: 'from-gray-500 to-gray-700' },
+    { name: 'React', category: 'Library', color: 'from-blue-500 to-blue-700' },
+    { name: 'TypeScript', category: 'Language', color: 'from-blue-600 to-blue-800' },
+    { name: 'Tailwind CSS', category: 'Styling', color: 'from-cyan-500 to-cyan-700' },
+    { name: 'Node.js', category: 'Runtime', color: 'from-green-500 to-green-700' },
+    { name: 'PostgreSQL', category: 'Database', color: 'from-blue-400 to-blue-600' },
+    { name: 'Redis', category: 'Cache', color: 'from-red-500 to-red-700' },
+    { name: 'Docker', category: 'Containerization', color: 'from-blue-500 to-blue-700' },
+    { name: 'Kubernetes', category: 'Orchestration', color: 'from-blue-600 to-blue-800' },
+    { name: 'AWS', category: 'Cloud', color: 'from-orange-500 to-orange-700' },
+    { name: 'Terraform', category: 'Infrastructure', color: 'from-purple-500 to-purple-700' },
+    { name: 'Prometheus', category: 'Monitoring', color: 'from-red-600 to-red-800' },
   ];
 
   const testimonials = [
     {
-      quote: "Zion Tech has revolutionized our development workflow with their autonomous systems.",
+      quote: "Zion Tech has revolutionized our development workflow. The autonomous systems are game-changing.",
       author: "Sarah Chen",
-      role: "CTO, TechCorp",
-      avatar: "👩‍💼"
+      role: "CTO, TechFlow Inc.",
+      avatar: "SC"
     },
     {
-      quote: "The AI-powered automation has increased our productivity by 300%.",
+      quote: "The level of automation and reliability we've achieved is unprecedented. Highly recommended!",
       author: "Marcus Rodriguez",
-      role: "Lead Developer, InnovateLab",
-      avatar: "👨‍💻"
+      role: "VP Engineering, DataSync",
+      avatar: "MR"
     },
     {
-      quote: "Zero-downtime deployments and intelligent monitoring have transformed our operations.",
+      quote: "Outstanding performance and zero downtime. This is the future of cloud infrastructure.",
       author: "Emily Watson",
-      role: "DevOps Engineer, CloudScale",
-      avatar: "👩‍🔧"
+      role: "DevOps Lead, CloudScale",
+      avatar: "EW"
     }
   ];
 
@@ -96,8 +96,6 @@ export default function HomePage() {
         <meta property="og:title" content="Zion Tech Group — World's Most Advanced Autonomous Innovation Hub & AI-Powered Cloud Platform" />
         <meta property="og:description" content="Experience the future of autonomous technology with 227+ intelligent automations, AI-powered cloud systems, comprehensive redundancy infrastructure, and zero-downtime operations." />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       {/* Hero Section */}
@@ -124,110 +122,99 @@ export default function HomePage() {
       />
 
       {/* Technology Stack */}
-      <section className="section-padding relative bg-gradient-to-b from-cursor-dark to-cursor-darker overflow-hidden">
-        {/* Background decoration */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(0,122,204,0.05),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(0,212,170,0.05),transparent_50%)]"></div>
+      <section className="py-24 bg-gradient-to-b from-cursor-dark to-cursor-darker relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,122,204,0.05),transparent_70%)]" />
         
-        <div className="container-cursor relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-20 animate-fade-in">
-            <div className="relative mb-8">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold gradient-text leading-tight">
-                Built with Modern Technology
-              </h2>
-              {/* Subtle glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-cursor-blue/10 via-cursor-accent/10 to-cursor-blue/10 blur-2xl -z-10 scale-110"></div>
-            </div>
-            <p className="text-xl lg:text-2xl text-gray-400 max-w-4xl mx-auto leading-relaxed text-balance">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 gradient-text leading-tight">
+              Built with Modern Technology
+            </h2>
+            <p className="text-xl lg:text-2xl text-gray-400 max-w-4xl mx-auto leading-relaxed font-light">
               Our platform leverages the latest technologies and best practices to deliver exceptional performance and reliability.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {technologyStack.map((tech, index) => (
               <div
-                key={index}
-                className="animate-fade-in-up"
-                style={{ animationDelay: `${(index * 0.05) + 0.2}s` }}
+                key={tech.name}
+                className="text-center group animate-fade-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <Card className="text-center group hover:border-cursor-blue/30 hover:shadow-lg hover:shadow-cursor-blue/10 card-hover">
-                  <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                    {tech.icon}
-                  </div>
-                  <h3 className="font-semibold text-white mb-2 text-lg group-hover:text-cursor-blue transition-colors duration-300">{tech.name}</h3>
-                  <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors duration-300">{tech.category}</p>
-                </Card>
+                <div className={`w-16 h-16 mx-auto mb-4 rounded-xl bg-gradient-to-br ${tech.color} flex items-center justify-center text-white font-bold text-lg group-hover:scale-110 transition-transform duration-300`}>
+                  {tech.name.charAt(0)}
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2">{tech.name}</h3>
+                <p className="text-sm text-gray-400 font-light">{tech.category}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="section-padding relative bg-gradient-to-r from-cursor-blue/5 to-cursor-accent/5 overflow-hidden">
-        <div className="container-cursor relative z-10">
+      {/* Testimonials */}
+      <section className="py-24 bg-gradient-to-b from-cursor-darker to-cursor-dark relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(0,122,204,0.03),transparent_50%)]" />
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-20 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold gradient-text leading-tight mb-8">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 gradient-text leading-tight">
               Trusted by Industry Leaders
             </h2>
-            <p className="text-xl lg:text-2xl text-gray-400 max-w-4xl mx-auto leading-relaxed text-balance">
-              See what our clients say about the transformative impact of Zion Tech&apos;s autonomous systems.
+            <p className="text-xl lg:text-2xl text-gray-400 max-w-4xl mx-auto leading-relaxed font-light">
+              See what our clients say about the transformative impact of Zion Tech solutions.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <div
+              <Card
                 key={index}
-                className="animate-fade-in-up"
-                style={{ animationDelay: `${(index * 0.2) + 0.4}s` }}
+                className="text-center group hover:border-cursor-blue/40 hover:shadow-2xl hover:shadow-cursor-blue/20"
+                style={{ animationDelay: `${index * 0.2}s` }}
               >
-                <Card className="text-center group hover:border-cursor-blue/30 hover:shadow-lg hover:shadow-cursor-blue/10 card-hover h-full">
-                  <div className="text-6xl mb-6 group-hover:scale-110 transition-transform duration-300">
-                    {testimonial.avatar}
-                  </div>
-                  <blockquote className="text-gray-300 text-lg mb-6 italic leading-relaxed group-hover:text-white transition-colors duration-300">
-                    &ldquo;{testimonial.quote}&rdquo;
-                  </blockquote>
-                  <div className="border-t border-cursor-lighter/20 pt-4">
-                    <div className="font-semibold text-white text-lg">{testimonial.author}</div>
-                    <div className="text-cursor-blue text-sm">{testimonial.role}</div>
-                  </div>
-                </Card>
-              </div>
+                <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-br from-cursor-blue to-blue-600 flex items-center justify-center text-white font-bold text-xl">
+                  {testimonial.avatar}
+                </div>
+                <blockquote className="text-gray-300 text-lg leading-relaxed mb-6 font-light italic">
+                  &ldquo;{testimonial.quote}&rdquo;
+                </blockquote>
+                <div>
+                  <div className="font-semibold text-white">{testimonial.author}</div>
+                  <div className="text-sm text-gray-400 font-light">{testimonial.role}</div>
+                </div>
+              </Card>
             ))}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding relative bg-gradient-to-r from-cursor-blue to-blue-600 overflow-hidden">
-        {/* Background decoration */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(255,255,255,0.1),transparent_50%)]"></div>
+      <section className="py-24 bg-gradient-to-r from-cursor-blue to-blue-600 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(255,255,255,0.1),transparent_50%)]" />
         
-        <div className="container-cursor text-center relative z-10">
-          <div className="animate-fade-in">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-white leading-tight">
               Ready to Transform Your Business?
             </h2>
-            <p className="text-xl lg:text-2xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed text-balance">
+            <p className="text-xl lg:text-2xl text-blue-100 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
               Join the future of autonomous technology and experience unprecedented efficiency, reliability, and innovation.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Button
                 href="/contact"
-                variant="secondary"
                 size="lg"
-                className="bg-white text-cursor-blue hover:bg-gray-100 shadow-2xl hover:shadow-white/25"
+                className="bg-white text-cursor-blue hover:bg-gray-100 hover:shadow-2xl"
               >
-                Start Your Journey
+                Get Started Today
               </Button>
               <Button
                 href="/case-studies"
                 variant="outline"
                 size="lg"
-                className="border-white text-white hover:bg-white hover:text-cursor-blue shadow-2xl hover:shadow-white/25"
+                className="border-white text-white hover:bg-white hover:text-cursor-blue"
               >
                 View Case Studies
               </Button>
@@ -237,4 +224,4 @@ export default function HomePage() {
       </section>
     </>
   );
-}
+};
