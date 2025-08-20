@@ -20,17 +20,20 @@ const Header = () => {
 
   const navigation = [
     { name: 'Product', href: '#', hasDropdown: true },
-    { name: 'Solutions', href: '/services' },
+    { name: 'Services', href: '/services' },
+    { name: 'Micro SaaS', href: '/micro-saas' },
     { name: 'Resources', href: '/resources' },
     { name: 'Company', href: '/about' },
     { name: 'Pricing', href: '/pricing' },
   ];
 
   const productDropdown = [
-    { name: 'AI Code Assistant', href: '/ai-assistant', description: 'Intelligent code completion and suggestions' },
-    { name: 'Cloud Platform', href: '/cloud-platform', description: 'Scalable cloud infrastructure' },
-    { name: 'Automation Hub', href: '/automation', description: 'AI-powered workflow automation' },
-    { name: 'Analytics', href: '/analytics', description: 'Real-time insights and reporting' },
+    { name: 'Social Media Analytics', href: '/services', description: 'AI-powered social media performance tracking' },
+    { name: 'SEO Content Optimization', href: '/services', description: 'AI-driven content optimization for better rankings' },
+    { name: 'Email Marketing Automation', href: '/services', description: 'Intelligent email automation with AI segmentation' },
+    { name: 'Customer Feedback Platform', href: '/services', description: 'AI-powered feedback collection and analysis' },
+    { name: 'Business Intelligence', href: '/services', description: 'Real-time BI dashboards and reporting' },
+    { name: 'AI Chatbot Builder', href: '/services', description: 'No-code AI chatbot platform' },
   ];
 
   const isActive = (href: string) => router.pathname === href;
