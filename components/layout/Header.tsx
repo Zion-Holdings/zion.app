@@ -21,6 +21,7 @@ const Header = () => {
   const navigation = [
     { name: 'Product', href: '#', hasDropdown: true },
     { name: 'Solutions', href: '/services' },
+    { name: 'Micro SaaS', href: '/micro-saas' },
     { name: 'Resources', href: '/resources' },
     { name: 'Company', href: '/about' },
     { name: 'Pricing', href: '/pricing' },

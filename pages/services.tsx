@@ -6,6 +6,108 @@ import Button from '../components/ui/Button';
 export default function ServicesPage() {
   const services = [
     {
+      icon: '🛡️',
+      title: 'API Rate Limiting Service',
+      description: 'Protect your APIs from abuse with intelligent rate limiting and traffic control.',
+      features: [
+        'Configurable rate limits',
+        'Multiple time windows',
+        'Automatic cleanup',
+        'Statistics and monitoring',
+        'IP-based limiting'
+      ],
+      color: 'bg-gradient-to-br from-red-500 to-pink-600',
+      textColor: 'text-red-400',
+      gradient: 'from-red-400 to-pink-500',
+      pricing: 'Free tier available, premium from $9/month',
+      category: 'Security & Performance'
+    },
+    {
+      icon: '✉️',
+      title: 'Email Validation Service',
+      description: 'Comprehensive email validation with deliverability insights and spam detection.',
+      features: [
+        'Syntax validation',
+        'Domain verification',
+        'Disposable email detection',
+        'Role-based account detection',
+        'Deliverability scoring'
+      ],
+      color: 'bg-gradient-to-br from-blue-500 to-indigo-600',
+      textColor: 'text-blue-400',
+      gradient: 'from-blue-400 to-indigo-500',
+      pricing: 'Free tier: 100 validations/month, premium from $19/month',
+      category: 'Data Quality'
+    },
+    {
+      icon: '🔐',
+      title: 'Password Strength Analyzer',
+      description: 'Advanced password security analysis with crack time estimation and recommendations.',
+      features: [
+        'Multi-factor scoring',
+        'Common password detection',
+        'Pattern analysis',
+        'Crack time estimation',
+        'Improvement suggestions'
+      ],
+      color: 'bg-gradient-to-br from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      gradient: 'from-green-400 to-emerald-500',
+      pricing: 'Free tier available, enterprise from $49/month',
+      category: 'Security'
+    },
+    {
+      icon: '🔗',
+      title: 'URL Shortener Service',
+      description: 'Professional URL shortening with analytics, tracking, and management features.',
+      features: [
+        'Custom short codes',
+        'Click analytics',
+        'Geographic tracking',
+        'Device detection',
+        'Password protection'
+      ],
+      color: 'bg-gradient-to-br from-purple-500 to-violet-600',
+      textColor: 'text-purple-400',
+      gradient: 'from-purple-400 to-violet-500',
+      pricing: 'Free tier: 100 URLs, premium from $29/month',
+      category: 'Marketing & Analytics'
+    },
+    {
+      icon: '🗜️',
+      title: 'File Compression Service',
+      description: 'Intelligent file compression for images, videos, and documents with quality control.',
+      features: [
+        'Multi-format support',
+        'Quality control',
+        'Batch processing',
+        'Compression recommendations',
+        'Metadata preservation'
+      ],
+      color: 'bg-gradient-to-br from-orange-500 to-red-600',
+      textColor: 'text-orange-400',
+      gradient: 'from-orange-400 to-red-500',
+      pricing: 'Free tier: 10 files/month, premium from $39/month',
+      category: 'Performance & Storage'
+    },
+    {
+      icon: '🔒',
+      title: 'Data Encryption Service',
+      description: 'Enterprise-grade encryption with key management and security assessment.',
+      features: [
+        'Multiple algorithms',
+        'Key generation',
+        'Secure storage',
+        'Key rotation',
+        'Strength assessment'
+      ],
+      color: 'bg-gradient-to-br from-indigo-500 to-purple-600',
+      textColor: 'text-indigo-400',
+      gradient: 'from-indigo-400 to-purple-500',
+      pricing: 'Free tier: 1GB/month, enterprise from $99/month',
+      category: 'Security'
+    },
+    {
       icon: '🤖',
       title: 'AI-Powered Automation',
       description: 'Intelligent systems that learn, adapt, and optimize your business processes automatically.',
@@ -19,6 +121,8 @@ export default function ServicesPage() {
       color: 'bg-gradient-to-br from-fuchsia-500 to-purple-600',
       textColor: 'text-fuchsia-400',
       gradient: 'from-fuchsia-400 to-purple-500',
+      pricing: 'Custom pricing based on requirements',
+      category: 'AI & Automation'
     },
     {
       icon: '☁️',
@@ -34,66 +138,8 @@ export default function ServicesPage() {
       color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
       textColor: 'text-cyan-400',
       gradient: 'from-cyan-400 to-blue-500',
-    },
-    {
-      icon: '🔒',
-      title: 'Security & Compliance',
-      description: 'Comprehensive security solutions that protect your data and ensure regulatory compliance.',
-      features: [
-        'Threat Detection',
-        'Vulnerability Assessment',
-        'Compliance Monitoring',
-        'Data Encryption',
-        'Access Control'
-      ],
-      color: 'bg-gradient-to-br from-green-500 to-emerald-600',
-      textColor: 'text-green-400',
-      gradient: 'from-green-400 to-emerald-500',
-    },
-    {
-      icon: '📊',
-      title: 'Data Analytics',
-      description: 'Transform your data into actionable insights with advanced analytics and visualization.',
-      features: [
-        'Real-time Analytics',
-        'Business Intelligence',
-        'Data Visualization',
-        'Predictive Modeling',
-        'Performance Metrics'
-      ],
-      color: 'bg-gradient-to-br from-orange-500 to-red-600',
-      textColor: 'text-orange-400',
-      gradient: 'from-orange-400 to-red-500',
-    },
-    {
-      icon: '🚀',
-      title: 'DevOps & CI/CD',
-      description: 'Streamline your development process with automated pipelines and deployment strategies.',
-      features: [
-        'Continuous Integration',
-        'Automated Testing',
-        'Deployment Automation',
-        'Infrastructure as Code',
-        'Monitoring & Alerting'
-      ],
-      color: 'bg-gradient-to-br from-indigo-500 to-purple-600',
-      textColor: 'text-indigo-400',
-      gradient: 'from-indigo-400 to-purple-500',
-    },
-    {
-      icon: '🌐',
-      title: 'Digital Transformation',
-      description: 'Modernize your business with cutting-edge digital solutions and strategic consulting.',
-      features: [
-        'Technology Strategy',
-        'Process Optimization',
-        'Change Management',
-        'Digital Innovation',
-        'Legacy Modernization'
-      ],
-      color: 'bg-gradient-to-br from-teal-500 to-cyan-600',
-      textColor: 'text-teal-400',
-      gradient: 'from-teal-400 to-cyan-500',
+      pricing: 'Pay-as-you-use model, starting from $50/month',
+      category: 'Infrastructure'
     },
   ];
 
@@ -175,7 +221,7 @@ export default function ServicesPage() {
                     <p className="text-gray-400 leading-relaxed mb-6">
                       {service.description}
                     </p>
-                    <ul className="space-y-2">
+                    <ul className="space-y-2 mb-4">
                       {service.features.map((feature, featureIndex) => (
                         <li key={featureIndex} className="flex items-center text-gray-300">
                           <span className="w-2 h-2 bg-cursor-blue rounded-full mr-3 flex-shrink-0" />
@@ -183,6 +229,16 @@ export default function ServicesPage() {
                         </li>
                       ))}
                     </ul>
+                    
+                    {/* Pricing and Category */}
+                    <div className="flex items-center justify-between">
+                      <div className="inline-flex items-center px-2 py-1 rounded-full bg-cursor-blue/10 border border-cursor-blue/20 text-cursor-blue text-xs font-medium">
+                        {service.category}
+                      </div>
+                      <div className="text-sm text-gray-400">
+                        {service.pricing}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </Card>

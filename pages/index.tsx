@@ -141,6 +141,78 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Micro SaaS Services Preview */}
+      <section className="py-24 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20 animate-fade-in">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse" />
+              New: Micro SaaS Services
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight">
+              Professional Developer Tools & APIs
+            </h2>
+            <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              Discover our comprehensive suite of micro SaaS services designed to accelerate your development, 
+              enhance security, and optimize performance. Built by developers, for developers.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {[
+              {
+                icon: '🛡️',
+                title: 'API Rate Limiting',
+                description: 'Protect your APIs from abuse',
+                color: 'from-red-500 to-pink-600'
+              },
+              {
+                icon: '✉️',
+                title: 'Email Validation',
+                description: 'Comprehensive email verification',
+                color: 'from-blue-500 to-indigo-600'
+              },
+              {
+                icon: '🔐',
+                title: 'Password Strength',
+                description: 'Advanced security analysis',
+                color: 'from-green-500 to-emerald-600'
+              },
+              {
+                icon: '🔗',
+                title: 'URL Shortener',
+                description: 'Professional link management',
+                color: 'from-purple-500 to-violet-600'
+              }
+            ].map((service, index) => (
+              <Card
+                key={index}
+                className="text-center group border border-gray-800 hover:border-blue-500/30"
+                style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
+              >
+                <div className={`text-3xl mb-4 group-hover:scale-110 transition-transform duration-300 bg-gradient-to-br ${service.color} bg-clip-text text-transparent`}>
+                  {service.icon}
+                </div>
+                <h3 className="font-semibold text-white mb-2 text-lg">{service.title}</h3>
+                <p className="text-sm text-gray-400">{service.description}</p>
+              </Card>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Button
+              href="/micro-saas"
+              variant="primary"
+              size="lg"
+              className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 shadow-2xl"
+            >
+              Explore All Services
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-24 bg-gradient-to-r from-blue-600 to-blue-700 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px] opacity-10" />
