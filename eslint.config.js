@@ -1,4 +1,5 @@
 import js from '@eslint/js';
+import globals from 'globals';
 
 export default [
   js.configs.recommended,
@@ -8,6 +9,8 @@ export default [
       ecmaVersion: 2020,
       sourceType: 'module',
       globals: {
+        ...globals.browser,
+        ...globals.node,
         process: 'readonly',
         console: 'readonly',
         module: 'readonly',
@@ -18,6 +21,13 @@ export default [
         setInterval: 'readonly',
         clearTimeout: 'readonly',
         clearInterval: 'readonly'
+      },
+      parserOptions: {
+        ecmaVersion: 2020,
+        sourceType: 'module',
+        ecmaFeatures: {
+          jsx: true
+        }
       }
     },
     rules: {
@@ -39,13 +49,7 @@ export default [
       'public/reports/**',
       'netlify/',
       'ecosystem*.cjs',
-      '**/*.cjs',
-      '**/*.tsx',
-      '**/*.ts',
-      '**/*.jsx',
-      'components/',
-      'pages/',
-      'services/'
+      '**/*.cjs'
     ]
   }
 ];

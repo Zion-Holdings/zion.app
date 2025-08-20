@@ -107,6 +107,100 @@ export default function HomePage() {
         columns={3}
       />
 
+      {/* Micro SaaS Services */}
+      <section className="py-24 bg-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-purple-500 rounded-full mr-2 animate-pulse" />
+              Ready-to-Use Services
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight">
+              Professional Micro SaaS Services
+            </h2>
+            <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              Instant access to enterprise-grade micro services that solve real business problems. 
+              No setup required, just use and scale as needed.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="text-center p-8 bg-gray-700 border border-gray-600 hover:border-purple-500/50 transition-all duration-300 group">
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">✨</div>
+              <h3 className="text-xl font-bold text-white mb-4">AI Content Generator</h3>
+              <p className="text-gray-400 mb-6">
+                Generate high-quality content for blogs, social media, emails, and more with AI-powered tools.
+              </p>
+              <Button href="/ai-content-generator" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700">
+                Try Now
+              </Button>
+            </Card>
+
+            <Card className="text-center p-8 bg-gray-700 border border-gray-600 hover:border-green-500/50 transition-all duration-300 group">
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">🛡️</div>
+              <h3 className="text-xl font-bold text-white mb-4">API Rate Limiter</h3>
+              <p className="text-gray-400 mb-6">
+                Protect your APIs from abuse with intelligent rate limiting and DDoS protection.
+              </p>
+              <Button href="/api-rate-limiter" className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700">
+                Try Now
+              </Button>
+            </Card>
+
+            <Card className="text-center p-8 bg-gray-700 border border-gray-600 hover:border-blue-500/50 transition-all duration-300 group">
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">📧</div>
+              <h3 className="text-xl font-bold text-white mb-4">Email Validator</h3>
+              <p className="text-gray-400 mb-6">
+                Validate email addresses with advanced checks for deliverability and security.
+              </p>
+              <Button href="/email-validator" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700">
+                Try Now
+              </Button>
+            </Card>
+
+            <Card className="text-center p-8 bg-gray-700 border border-gray-600 hover:border-orange-500/50 transition-all duration-300 group">
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">🔗</div>
+              <h3 className="text-xl font-bold text-white mb-4">URL Shortener</h3>
+              <p className="text-gray-400 mb-6">
+                Create professional, trackable short URLs with analytics and QR code generation.
+              </p>
+              <Button href="/url-shortener" className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700">
+                Try Now
+              </Button>
+            </Card>
+
+            <Card className="text-center p-8 bg-gray-700 border border-gray-600 hover:border-indigo-500/50 transition-all duration-300 group">
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">🔐</div>
+              <h3 className="text-xl font-bold text-white mb-4">Password Checker</h3>
+              <p className="text-gray-400 mb-6">
+                Analyze password strength with comprehensive security checks and suggestions.
+              </p>
+              <Button href="/password-checker" className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700">
+                Try Now
+              </Button>
+            </Card>
+
+            <Card className="text-center p-8 bg-gray-700 border border-gray-600 hover:border-teal-500/50 transition-all duration-300 group">
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">📄</div>
+              <h3 className="text-xl font-bold text-white mb-4">JSON Formatter</h3>
+              <p className="text-gray-400 mb-6">
+                Format, validate, and beautify JSON data with professional tools and options.
+              </p>
+              <Button href="/json-formatter" className="bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700">
+                Try Now
+              </Button>
+            </Card>
+          </div>
+
+          <div className="text-center mt-12">
+            <Button href="/services" variant="outline" size="lg" className="border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white">
+              View All Services
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Technology Stack */}
       <section className="py-24 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
