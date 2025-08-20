@@ -1,161 +1,188 @@
 import React from 'react';
 import Head from 'next/head';
+import Container from '../components/ui/Container';
+
+import Button from '../components/ui/Button';
+import FeaturesGrid from '../components/ui/FeaturesGrid';
 
 export default function ServicesPage() {
+  const services = [
+    {
+      icon: '🤖',
+      title: 'AI-Powered Automation',
+      description: 'Intelligent systems that learn, adapt, and optimize your business processes automatically.',
+      color: 'bg-gradient-to-br from-blue-400 to-indigo-500',
+    },
+    {
+      icon: '☁️',
+      title: 'Cloud Infrastructure',
+      description: 'Scalable, secure, and high-performance cloud solutions built for modern applications.',
+      color: 'bg-gradient-to-br from-green-400 to-emerald-500',
+    },
+    {
+      icon: '🔒',
+      title: 'Security & Compliance',
+      description: 'Enterprise-grade security with automated threat detection and compliance monitoring.',
+      color: 'bg-gradient-to-br from-red-400 to-pink-500',
+    },
+    {
+      icon: '📊',
+      title: 'Analytics & Insights',
+      description: 'Data-driven decision making with real-time analytics and predictive intelligence.',
+      color: 'bg-gradient-to-br from-purple-400 to-pink-500',
+    },
+    {
+      icon: '⚡',
+      title: 'Performance Optimization',
+      description: 'Lightning-fast applications with automated optimization and monitoring.',
+      color: 'bg-gradient-to-br from-yellow-400 to-orange-500',
+    },
+    {
+      icon: '🔄',
+      title: 'DevOps & CI/CD',
+      description: 'Streamlined development workflows with automated testing and deployment.',
+      color: 'bg-gradient-to-br from-cyan-400 to-blue-500',
+    },
+  ];
+
+  const features = [
+    {
+      icon: '🚀',
+      title: 'Scalable Architecture',
+      description: 'Built to grow with your business needs, from startup to enterprise.',
+      color: 'bg-gradient-to-br from-blue-400 to-indigo-500',
+    },
+    {
+      icon: '🔧',
+      title: 'Custom Development',
+      description: 'Tailored solutions designed specifically for your unique requirements.',
+      color: 'bg-gradient-to-br from-green-400 to-emerald-500',
+    },
+    {
+      icon: '📱',
+      title: 'Multi-Platform Support',
+      description: 'Seamless experience across web, mobile, and desktop platforms.',
+      color: 'bg-gradient-to-br from-purple-400 to-pink-500',
+    },
+    {
+      icon: '🌍',
+      title: 'Global Deployment',
+      description: 'Worldwide infrastructure ensuring fast performance everywhere.',
+      color: 'bg-gradient-to-br from-yellow-400 to-orange-500',
+    },
+  ];
+
   return (
     <>
       <Head>
-        <title>Services | Zion Tech Group - AI & Automation Solutions</title>
-        <meta name="description" content="Explore Zion Tech Group's comprehensive range of AI development, automation, and technology consulting services." />
-        <meta property="og:title" content="Services - Zion Tech Group" />
-        <meta property="og:description" content="AI development, automation, and technology consulting services." />
+        <title>Services | Zion Tech Group</title>
+        <meta name="description" content="Comprehensive technology services including AI automation, cloud infrastructure, security, and performance optimization." />
+        <meta property="og:title" content="Services | Zion Tech Group" />
+        <meta property="og:description" content="Explore our comprehensive technology services." />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      
-      <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-950 text-white">
-        <main className="container mx-auto px-6 py-12">
-          <section className="text-center mb-16">
-            <h1 className="text-5xl font-extrabold mb-6 bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent">
+
+      {/* Hero Section */}
+      <section className="py-20 sm:py-24 lg:py-32 bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-100">
+        <Container>
+          <div className="text-center">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-6">
               Our Services
             </h1>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto">
-              Comprehensive AI and automation solutions designed to transform your business and drive innovation
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+              Comprehensive technology solutions designed to transform your business and drive innovation
             </p>
-          </section>
+            <Button href="/contact" size="lg">
+              Get Started
+            </Button>
+          </div>
+        </Container>
+      </section>
 
-          <section className="mx-auto max-w-6xl">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
-                <div className="text-4xl mb-4">🤖</div>
-                <h3 className="text-2xl font-bold mb-4 text-cyan-400">AI Development</h3>
-                <p className="text-white/70 mb-6">
-                  Custom AI solutions including machine learning models, natural language processing, and computer vision systems.
-                </p>
-                <ul className="space-y-2 text-sm text-white/60">
-                  <li>• Machine Learning Models</li>
-                  <li>• Natural Language Processing</li>
-                  <li>• Computer Vision</li>
-                  <li>• Predictive Analytics</li>
-                </ul>
-              </div>
+      {/* Services Grid */}
+      <FeaturesGrid
+        title="What We Offer"
+        subtitle="End-to-end solutions for modern businesses"
+        features={services}
+        columns={3}
+        className="bg-white"
+      />
 
-              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
-                <div className="text-4xl mb-4">⚡</div>
-                <h3 className="text-2xl font-bold mb-4 text-fuchsia-400">Automation Systems</h3>
-                <p className="text-white/70 mb-6">
-                  End-to-end automation solutions that streamline operations and improve efficiency across your organization.
-                </p>
-                <ul className="space-y-2 text-sm text-white/60">
-                  <li>• Process Automation</li>
-                  <li>• Workflow Optimization</li>
-                  <li>• Robotic Process Automation</li>
-                  <li>• Smart Workflows</li>
-                </ul>
-              </div>
+      {/* Features */}
+      <FeaturesGrid
+        title="Why Choose Us"
+        subtitle="The advantages that set us apart"
+        features={features}
+        columns={2}
+        className="bg-gray-50"
+      />
 
-              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
-                <div className="text-4xl mb-4">☁️</div>
-                <h3 className="text-2xl font-bold mb-4 text-green-400">Cloud Infrastructure</h3>
-                <p className="text-white/70 mb-6">
-                  Scalable cloud solutions with automated deployment, monitoring, and optimization for peak performance.
-                </p>
-                <ul className="space-y-2 text-sm text-white/60">
-                  <li>• Cloud Migration</li>
-                  <li>• Auto-scaling</li>
-                  <li>• Performance Optimization</li>
-                  <li>• Security Hardening</li>
-                </ul>
-              </div>
+      {/* Process Section */}
+      <section className="py-16 lg:py-24 bg-white">
+        <Container>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Our Process
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              A proven methodology for delivering exceptional results
+            </p>
+          </div>
 
-              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
-                <div className="text-4xl mb-4">🔧</div>
-                <h3 className="text-2xl font-bold mb-4 text-blue-400">DevOps & CI/CD</h3>
-                <p className="text-white/70 mb-6">
-                  Streamlined development and deployment pipelines with automated testing, building, and deployment processes.
-                </p>
-                <ul className="space-y-2 text-sm text-white/60">
-                  <li>• CI/CD Pipeline Setup</li>
-                  <li>• Automated Testing</li>
-                  <li>• Infrastructure as Code</li>
-                  <li>• Monitoring & Alerting</li>
-                </ul>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-blue-600">1</span>
               </div>
-
-              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
-                <div className="text-4xl mb-4">📊</div>
-                <h3 className="text-2xl font-bold mb-4 text-purple-400">Data Analytics</h3>
-                <p className="text-white/70 mb-6">
-                  Advanced analytics and business intelligence solutions that turn your data into actionable insights.
-                </p>
-                <ul className="space-y-2 text-sm text-white/60">
-                  <li>• Data Visualization</li>
-                  <li>• Predictive Analytics</li>
-                  <li>• Business Intelligence</li>
-                  <li>• Real-time Dashboards</li>
-                </ul>
-              </div>
-
-              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
-                <div className="text-4xl mb-4">💡</div>
-                <h3 className="text-2xl font-bold mb-4 text-yellow-400">Technology Consulting</h3>
-                <p className="text-white/70 mb-6">
-                  Strategic technology consulting to help you navigate digital transformation and innovation challenges.
-                </p>
-                <ul className="space-y-2 text-sm text-white/60">
-                  <li>• Digital Strategy</li>
-                  <li>• Technology Roadmap</li>
-                  <li>• Innovation Workshops</li>
-                  <li>• Performance Audits</li>
-                </ul>
-              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Discovery</h3>
+              <p className="text-gray-600">Understanding your needs and objectives</p>
             </div>
-
-            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 mb-16">
-              <h2 className="text-3xl font-bold mb-6 text-cyan-400">Why Choose Our Services?</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                  <h3 className="text-xl font-semibold mb-3 text-fuchsia-400">AI-Powered Excellence</h3>
-                  <p className="text-white/70">
-                    Our services leverage cutting-edge AI technology to deliver superior results, faster implementation, and continuous improvement.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-3 text-green-400">Proven Results</h3>
-                  <p className="text-white/70">
-                    With 227 active automations and 2,960+ pages generated, we have a track record of delivering measurable business value.
-                  </p>
-                </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-green-600">2</span>
               </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Planning</h3>
+              <p className="text-gray-600">Strategic roadmap and architecture design</p>
             </div>
-
-            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8">
-              <h2 className="text-3xl font-bold mb-6 text-blue-400">Service Delivery Process</h2>
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-cyan-400 mb-2">1</div>
-                  <h3 className="text-lg font-semibold mb-2">Discovery</h3>
-                  <p className="text-sm text-white/70">Understanding your needs and objectives</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-fuchsia-400 mb-2">2</div>
-                  <h3 className="text-lg font-semibold mb-2">Planning</h3>
-                  <p className="text-sm text-white/70">Creating detailed roadmap and strategy</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-green-400 mb-2">3</div>
-                  <h3 className="text-lg font-semibold mb-2">Implementation</h3>
-                  <p className="text-sm text-white/70">Building and deploying solutions</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-400 mb-2">4</div>
-                  <h3 className="text-lg font-semibold mb-2">Optimization</h3>
-                  <p className="text-sm text-white/70">Continuous improvement and support</p>
-                </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-purple-600">3</span>
               </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Development</h3>
+              <p className="text-gray-600">Agile development with continuous feedback</p>
             </div>
-          </section>
-        </main>
-      </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-orange-600">4</span>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Deployment</h3>
+              <p className="text-gray-600">Smooth launch with ongoing support</p>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 lg:py-24 bg-gradient-to-r from-blue-600 to-purple-600">
+        <Container>
+          <div className="text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+              Ready to Transform Your Business?
+            </h2>
+            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+              Let&apos;s discuss how our services can help you achieve your goals
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button href="/contact" variant="secondary" size="lg">
+                Start a Conversation
+              </Button>
+              <Button href="/case-studies" variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-blue-600">
+                View Case Studies
+              </Button>
+            </div>
+          </div>
+        </Container>
+      </section>
     </>
   );
 }
