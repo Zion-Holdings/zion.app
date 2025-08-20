@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
+import { ExternalLink } from 'lucide-react';
 
 export default function ServicesPage() {
   const services = [
@@ -187,6 +188,45 @@ export default function ServicesPage() {
                 </div>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Micro SaaS Services CTA */}
+      <section className="section-padding bg-gradient-cursor-accent">
+        <div className="container-cursor">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-cursor-blue/10 border border-cursor-blue/20 text-cursor-blue text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-cursor-blue rounded-full mr-2 animate-pulse" />
+              New: Micro SaaS Services
+            </div>
+            <h2 className="text-responsive-lg font-bold mb-8 gradient-text text-shadow">
+              Professional Utility Tools
+            </h2>
+            <p className="text-responsive-md text-gray-400 max-w-4xl mx-auto leading-relaxed mb-12">
+              Discover our collection of powerful micro SaaS services designed to streamline your workflow, 
+              enhance productivity, and solve everyday challenges. All services are built with enterprise-grade 
+              reliability and security.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Button
+                href="/micro-saas"
+                variant="primary"
+                size="lg"
+                className="shadow-2xl"
+              >
+                Explore Micro SaaS Services
+                <ExternalLink className="w-5 h-5 ml-2" />
+              </Button>
+              <Button
+                href="/contact"
+                variant="outline"
+                size="lg"
+                className="border-cursor-blue text-cursor-blue hover:bg-cursor-blue hover:text-white"
+              >
+                Get Custom Solution
+              </Button>
+            </div>
           </div>
         </div>
       </section>
