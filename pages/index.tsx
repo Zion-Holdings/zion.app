@@ -314,6 +314,45 @@ export default function HomePage() {
             </div>
           </section>
 
+          {/* All Key Pages */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-3xl font-bold tracking-wide text-white/90 mb-10">🗺️ Everything At A Glance</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <Link href="/about" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300">
+                <h3 className="text-lg font-semibold text-cyan-400 mb-2">About</h3>
+                <p className="text-white/70 text-sm">Mission, vision, and values</p>
+              </Link>
+              <Link href="/services" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-fuchsia-400/30 transition-all duration-300">
+                <h3 className="text-lg font-semibold text-fuchsia-400 mb-2">Services</h3>
+                <p className="text-white/70 text-sm">AI development, automation, cloud, DevOps</p>
+              </Link>
+              <Link href="/resources" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-blue-400/30 transition-all duration-300">
+                <h3 className="text-lg font-semibold text-blue-400 mb-2">Resources</h3>
+                <p className="text-white/70 text-sm">Case studies, whitepapers, tools</p>
+              </Link>
+              <Link href="/case-studies" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-yellow-400/30 transition-all duration-300">
+                <h3 className="text-lg font-semibold text-yellow-400 mb-2">Case Studies</h3>
+                <p className="text-white/70 text-sm">Real-world success stories</p>
+              </Link>
+              <Link href="/blog" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-purple-400/30 transition-all duration-300">
+                <h3 className="text-lg font-semibold text-purple-400 mb-2">Blog</h3>
+                <p className="text-white/70 text-sm">Insights and trends in AI & automation</p>
+              </Link>
+              <Link href="/privacy" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-green-400/30 transition-all duration-300">
+                <h3 className="text-lg font-semibold text-green-400 mb-2">Privacy</h3>
+                <p className="text-white/70 text-sm">How we protect your data</p>
+              </Link>
+              <Link href="/contact" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-emerald-400/30 transition-all duration-300">
+                <h3 className="text-lg font-semibold text-emerald-400 mb-2">Contact</h3>
+                <p className="text-white/70 text-sm">Start a conversation with our team</p>
+              </Link>
+              <a href="https://github.com/Zion-Holdings/zion.app" target="_blank" rel="noopener noreferrer" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-slate-400/30 transition-all duration-300">
+                <h3 className="text-lg font-semibold text-white mb-2">GitHub Repository</h3>
+                <p className="text-white/70 text-sm">Source code, issues, and roadmap</p>
+              </a>
+            </div>
+          </section>
+
           {/* Advanced Automation Systems Showcase */}
           <section className="mx-auto max-w-7xl px-6 pb-16">
             <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">🤖 Advanced Automation Systems</h2>
@@ -327,7 +366,7 @@ export default function HomePage() {
                   <li>• GitHub Actions Redundancy</li>
                   <li>• Netlify Functions Redundancy</li>
                 </ul>
-                <Link href="/automation" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
+                <Link href="/services" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
                   Explore Redundancy Systems →
                 </Link>
               </div>
@@ -341,7 +380,7 @@ export default function HomePage() {
                   <li>• Autonomous Agents</li>
                   <li>• Innovation Systems</li>
                 </ul>
-                <Link href="/automation" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
+                <Link href="/services" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
                   Explore AI Systems →
                 </Link>
               </div>
@@ -355,7 +394,7 @@ export default function HomePage() {
                   <li>• Performance Optimization</li>
                   <li>• Quality Assurance</li>
                 </ul>
-                <Link href="/automation" className="text-green-400 hover:text-green-300 text-sm font-semibold">
+                <Link href="/services" className="text-green-400 hover:text-green-300 text-sm font-semibold">
                   Explore Build Systems →
                 </Link>
               </div>
