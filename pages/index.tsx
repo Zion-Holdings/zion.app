@@ -6,7 +6,7 @@ export default function HomePage() {
   return (
     <>
       <Head>
-        <title>Zion Tech Group — World's Most Advanced Autonomous Innovation Hub & AI-Powered Cloud Platform</title>
+        <title>Zion Tech Group — World&#39;s Most Advanced Autonomous Innovation Hub & AI-Powered Cloud Platform</title>
         <meta name="description" content="Experience the future of autonomous technology with 227+ intelligent automations, AI-powered cloud systems, comprehensive redundancy infrastructure, and zero-downtime operations. The most advanced autonomous platform ever built." />
         <meta property="og:title" content="Zion Tech Group — World's Most Advanced Autonomous Innovation Hub & AI-Powered Cloud Platform" />
         <meta property="og:description" content="Experience the future of autonomous technology with 227+ intelligent automations, AI-powered cloud systems, comprehensive redundancy infrastructure, and zero-downtime operations." />
@@ -22,7 +22,7 @@ export default function HomePage() {
               Zion Tech Group
             </h1>
             <p className="text-2xl text-white/90 max-w-4xl mx-auto mb-8">
-              The world's most advanced autonomous innovation hub delivering cutting-edge technology solutions, intelligent automation systems, and the future of cloud-native AI infrastructure.
+              The world&#39;s most advanced autonomous innovation hub delivering cutting-edge technology solutions, intelligent automation systems, and the future of cloud-native AI infrastructure.
             </p>
             <div className="flex flex-wrap justify-center gap-6 mb-12">
               <div className="bg-white/10 backdrop-blur-xl rounded-xl px-6 py-3 border border-white/20">
@@ -328,6 +328,25 @@ export default function HomePage() {
                 <h3 className="text-lg font-semibold text-rose-300 mb-2">Privacy</h3>
                 <p className="text-white/70 text-sm">Policy details</p>
               </Link>
+            </div>
+          </section>
+
+          {/* Quick Links to Key Content */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-3xl font-bold tracking-wide text-white/90 mb-8">✨ Quick Links</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-sm">
+              <Link href="/about" className="underline text-white/80 hover:text-cyan-300">About</Link>
+              <Link href="/services" className="underline text-white/80 hover:text-fuchsia-300">Services</Link>
+              <Link href="/resources" className="underline text-white/80 hover:text-blue-300">Resources</Link>
+              <Link href="/case-studies" className="underline text-white/80 hover:text-yellow-300">Case Studies</Link>
+              <Link href="/blog" className="underline text-white/80 hover:text-purple-300">Blog</Link>
+              <Link href="/contact" className="underline text-white/80 hover:text-green-300">Contact</Link>
+              <Link href="/privacy" className="underline text-white/80 hover:text-rose-300">Privacy</Link>
+              <Link href="/reports/updates" className="underline text-white/80 hover:text-cyan-300">Reports</Link>
+              <Link href="/blog/ai-automation-trends-2025" className="underline text-white/80 hover:text-purple-300">AI Automation Trends</Link>
+              <Link href="/blog/cloud-native-automation" className="underline text-white/80 hover:text-purple-300">Cloud-Native Automation</Link>
+              <Link href="/blog/autonomous-content-generation" className="underline text-white/80 hover:text-purple-300">Autonomous Content</Link>
+              <Link href="/blog/ai-ethics-automation" className="underline text-white/80 hover:text-purple-300">AI Ethics</Link>
             </div>
           </section>
 
