@@ -115,17 +115,23 @@ export default function HomePage() {
           <div className="text-center mb-20">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium mb-6">
               <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse" />
-              Premium Micro SaaS Solutions
+              🚀 Premium Micro SaaS Solutions
             </div>
             <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight">
               Enterprise-Grade Tools for Every Business Need
             </h2>
             <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
-              Discover 50+ specialized micro SaaS solutions covering AI-powered content creation, design systems, performance monitoring, 
+              Discover <span className="text-green-400 font-semibold">50+ specialized micro SaaS solutions</span> covering AI-powered content creation, design systems, performance monitoring, 
               SEO automation, chatbots, business intelligence, email marketing, social media, project management, 
               billing, HR operations, video editing, cloud optimization, legal automation, sales intelligence, customer analytics, 
-              API management, compliance monitoring, and more. Focused value with transparent pricing, 14-day free trials, and enterprise-grade infrastructure.
+              API management, compliance monitoring, and more. <span className="text-green-400 font-semibold">Focused value with transparent pricing, 14-day free trials, and enterprise-grade infrastructure.</span>
             </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-4 text-sm text-gray-400">
+              <span className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>14-Day Free Trials</span>
+              <span className="flex items-center"><span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>Enterprise Security</span>
+              <span className="flex items-center"><span className="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>99.9% Uptime</span>
+              <span className="flex items-center"><span className="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>24/7 Support</span>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
@@ -147,7 +153,7 @@ export default function HomePage() {
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-500">14-day free trial</span>
                   <Button
-                    href="https://ziontechgroup.com/ai-content-generator"
+                    href="https://ziontechgroup.com/micro-saas"
                     target="_blank"
                     rel="noopener noreferrer"
                     size="sm"
@@ -177,7 +183,7 @@ export default function HomePage() {
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-500">14-day free trial</span>
                   <Button
-                    href="https://ziontechgroup.com/design-system-builder"
+                    href="https://ziontechgroup.com/micro-saas"
                     target="_blank"
                     rel="noopener noreferrer"
                     size="sm"
@@ -207,7 +213,7 @@ export default function HomePage() {
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-500">14-day free trial</span>
                   <Button
-                    href="https://ziontechgroup.com/app-performance-monitor"
+                    href="https://ziontechgroup.com/micro-saas"
                     target="_blank"
                     rel="noopener noreferrer"
                     size="sm"
@@ -237,7 +243,7 @@ export default function HomePage() {
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-500">14-day free trial</span>
                   <Button
-                    href="https://ziontechgroup.com/seo-automation-suite"
+                    href="https://ziontechgroup.com/micro-saas"
                     target="_blank"
                     rel="noopener noreferrer"
                     size="sm"
@@ -267,7 +273,7 @@ export default function HomePage() {
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-500">14-day free trial</span>
                   <Button
-                    href="https://ziontechgroup.com/ai-sales-intelligence"
+                    href="https://ziontechgroup.com/micro-saas"
                     target="_blank"
                     rel="noopener noreferrer"
                     size="sm"
@@ -297,7 +303,7 @@ export default function HomePage() {
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-500">14-day free trial</span>
                   <Button
-                    href="https://ziontechgroup.com/ai-chatbot-platform"
+                    href="https://ziontechgroup.com/micro-saas"
                     target="_blank"
                     rel="noopener noreferrer"
                     size="sm"
@@ -327,7 +333,7 @@ export default function HomePage() {
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-500">14-day free trial</span>
                   <Button
-                    href="https://ziontechgroup.com/business-intelligence-hub"
+                    href="https://ziontechgroup.com/micro-saas"
                     target="_blank"
                     rel="noopener noreferrer"
                     size="sm"
@@ -357,7 +363,7 @@ export default function HomePage() {
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-500">14-day free trial</span>
                   <Button
-                    href="https://ziontechgroup.com/ai-video-editor-pro"
+                    href="https://ziontechgroup.com/micro-saas"
                     target="_blank"
                     rel="noopener noreferrer"
                     size="sm"
@@ -387,7 +393,7 @@ export default function HomePage() {
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-500">14-day free trial</span>
                   <Button
-                    href="https://ziontechgroup.com/cloud-cost-optimizer"
+                    href="https://ziontechgroup.com/micro-saas"
                     target="_blank"
                     rel="noopener noreferrer"
                     size="sm"
@@ -417,7 +423,7 @@ export default function HomePage() {
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-500">14-day free trial</span>
                   <Button
-                    href="https://ziontechgroup.com/api-rate-limiter"
+                    href="https://ziontechgroup.com/micro-saas"
                     target="_blank"
                     rel="noopener noreferrer"
                     size="sm"
@@ -447,7 +453,7 @@ export default function HomePage() {
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-500">14-day free trial</span>
                   <Button
-                    href="https://ziontechgroup.com/email-validation"
+                    href="https://ziontechgroup.com/micro-saas"
                     target="_blank"
                     rel="noopener noreferrer"
                     size="sm"
@@ -461,8 +467,41 @@ export default function HomePage() {
           </div>
 
           <div className="text-center">
+            <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/20 rounded-2xl p-8 mb-8">
+              <h3 className="text-2xl font-bold text-white mb-4">Why Choose Zion Tech Group Micro SaaS?</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center mx-auto mb-3">
+                    <span className="text-2xl">⚡</span>
+                  </div>
+                  <h4 className="font-semibold text-white mb-2">Lightning Fast</h4>
+                  <p className="text-sm text-gray-400">Get started in minutes, not weeks</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mx-auto mb-3">
+                    <span className="text-2xl">🔒</span>
+                  </div>
+                  <h4 className="font-semibold text-white mb-2">Enterprise Security</h4>
+                  <p className="text-sm text-gray-400">SOC 2 compliant, bank-level security</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mx-auto mb-3">
+                    <span className="text-2xl">📊</span>
+                  </div>
+                  <h4 className="font-semibold text-white mb-2">Proven ROI</h4>
+                  <p className="text-sm text-gray-400">Measurable business impact</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-orange-500/20 rounded-xl flex items-center justify-center mx-auto mb-3">
+                    <span className="text-2xl">🌐</span>
+                  </div>
+                  <h4 className="font-semibold text-white mb-2">Unified Platform</h4>
+                  <p className="text-sm text-gray-400">Single sign-on, integrated billing</p>
+                </div>
+              </div>
+            </div>
             <p className="text-gray-400 mb-8 max-w-3xl mx-auto">
-              All 50+ services include comprehensive documentation, dedicated support, enterprise-grade reliability, 99.9% uptime guarantee, and 14-day free trials. 
+              All <span className="text-green-400 font-semibold">50+ services</span> include comprehensive documentation, dedicated support, enterprise-grade reliability, <span className="text-green-400 font-semibold">99.9% uptime guarantee</span>, and <span className="text-green-400 font-semibold">14-day free trials</span>. 
               Start with one solution and scale as you grow. Each service is designed for immediate value delivery with transparent pricing.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -470,17 +509,17 @@ export default function HomePage() {
                 href="/micro-saas"
                 variant="secondary"
                 size="lg"
-                className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700"
+                className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-lg px-8 py-4"
               >
-                View All Micro SaaS
+                🚀 View All 50+ Micro SaaS
               </Button>
               <Button
                 href="/pricing"
                 variant="outline"
                 size="lg"
-                className="border-green-500 text-green-400 hover:bg-green-500 hover:text-white"
+                className="border-green-500 text-green-400 hover:bg-green-500 hover:text-white text-lg px-8 py-4"
               >
-                See Pricing
+                💰 See Transparent Pricing
               </Button>
             </div>
           </div>
