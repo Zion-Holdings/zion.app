@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://zion.app/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Disallow admin and automation areas
+Disallow: /automation/
+Disallow: /scripts/
+Disallow: /reports/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Allow important pages
+Allow: /about
+Allow: /services
+Allow: /resources
+Allow: /case-studies
+Allow: /blog
+Allow: /contact
+Allow: /privacy
