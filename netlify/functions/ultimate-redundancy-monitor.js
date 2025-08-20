@@ -1,4 +1,5 @@
 // Ultimate Redundancy Monitor Function
+/* eslint-disable @typescript-eslint/no-unused-vars */
 exports.handler = async function(event, context) {
   try {
     // Enhanced health check with ultimate redundancy

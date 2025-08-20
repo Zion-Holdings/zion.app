@@ -109,8 +109,13 @@ function validatePageStructure(filePath, content) {
     });
   }
   
-  // Check for proper HTML structure
-  if (content.includes('<') && !content.includes('</')) {
+  // Check for proper HTML structure (only for files that should contain HTML)
+  // Skip this check for JSX/TSX files as they use self-closing tags and component syntax
+  const isJsxFile = filePath.endsWith('.jsx') || filePath.endsWith('.tsx');
+  const hasJsxContent = content.includes('jsx') || content.includes('Component') || 
+                        content.includes('React.createElement') || content.includes('export default');
+  
+  if (!isJsxFile && !hasJsxContent && content.includes('<') && !content.includes('</')) {
     warnings.push({
       type: 'WARNING',
       code: 'INCOMPLETE_HTML',
