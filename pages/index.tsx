@@ -560,6 +560,44 @@ export default function HomePage() {
             </div>
           </section>
 
+          {/* Project Statistics & Achievements */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">📊 Project Statistics & Achievements</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20 text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl">🚀</span>
+                </div>
+                <h3 className="text-xl font-semibold text-cyan-400 mb-2">227+ Automations</h3>
+                <p className="text-white/70 text-sm">Intelligent autonomous systems</p>
+              </div>
+              
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20 text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-fuchsia-400 to-purple-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl">📄</span>
+                </div>
+                <h3 className="text-xl font-semibold text-fuchsia-400 mb-2">2960+ Pages</h3>
+                <p className="text-white/70 text-sm">Dynamic content generation</p>
+              </div>
+              
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20 text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl">⚛️</span>
+                </div>
+                <h3 className="text-xl font-semibold text-green-400 mb-2">12 Components</h3>
+                <p className="text-white/70 text-sm">Reusable UI elements</p>
+              </div>
+              
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20 text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl">🔧</span>
+                </div>
+                <h3 className="text-xl font-semibold text-yellow-400 mb-2">50+ Scripts</h3>
+                <p className="text-white/70 text-sm">Automation utilities</p>
+              </div>
+            </div>
+          </section>
+
           {/* Revolutionary Call to Action */}
           <section className="text-center mx-auto max-w-4xl px-6 pb-16">
             <div className="bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-12 border border-white/20">
