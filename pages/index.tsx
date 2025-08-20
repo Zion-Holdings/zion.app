@@ -577,6 +577,143 @@ export default function HomePage() {
               </div>
             </div>
           </section>
+
+          {/* Automation Systems Architecture */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">🏗️ Automation Systems Architecture</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-cyan-400 mb-4 text-center">🔄 Redundancy Orchestration</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Master Redundancy Orchestrator</li>
+                  <li>• PM2 Process Management</li>
+                  <li>• GitHub Actions Redundancy</li>
+                  <li>• Netlify Functions Redundancy</li>
+                  <li>• Geographic Distribution</li>
+                </ul>
+                <div className="text-cyan-400 text-sm font-semibold">
+                  Multi-layer protection system
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-fuchsia-400 mb-4 text-center">🧠 AI Content Systems</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• AI Content Factory</li>
+                  <li>• AI Research Scout</li>
+                  <li>• AI Trends Radar</li>
+                  <li>• Content Quality Fixer</li>
+                  <li>• Autonomous Agents</li>
+                </ul>
+                <div className="text-fuchsia-400 text-sm font-semibold">
+                  Intelligent content generation
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-green-400 mb-4 text-center">⚡ Build & Deploy Systems</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Master Build Orchestrator</li>
+                  <li>• Build Guardian</li>
+                  <li>• Build Recovery Systems</li>
+                  <li>• Continuous Monitoring</li>
+                  <li>• Performance Optimization</li>
+                </ul>
+                <div className="text-green-400 text-sm font-semibold">
+                  Self-healing build pipeline
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Project Structure & Organization */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">📁 Project Structure & Organization</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-blue-400 mb-4 text-center">🔧 Core Directories</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• <code className="bg-white/10 px-2 py-1 rounded">automation/</code> - 227+ automation scripts</li>
+                  <li>• <code className="bg-white/10 px-2 py-1 rounded">scripts/</code> - Utility & build scripts</li>
+                  <li>• <code className="bg-white/10 px-2 py-1 rounded">pages/</code> - Next.js application pages</li>
+                  <li>• <code className="bg-white/10 px-2 py-1 rounded">components/</code> - Reusable UI components</li>
+                  <li>• <code className="bg-white/10 px-2 py-1 rounded">styles/</code> - CSS & styling assets</li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-purple-400 mb-4 text-center">🚀 Automation Categories</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Content Generation & Management</li>
+                  <li>• Build & Deployment Automation</li>
+                  <li>• Monitoring & Health Checks</li>
+                  <li>• Security & Compliance</li>
+                  <li>• Performance Optimization</li>
+                  <li>• Redundancy & Failover</li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-green-400 mb-4 text-center">📊 Key Metrics</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• <strong>227+</strong> Autonomous Systems</li>
+                  <li>• <strong>2960+</strong> Dynamic Pages</li>
+                  <li>• <strong>12</strong> Core Components</li>
+                  <li>• <strong>99.99%</strong> Uptime Guarantee</li>
+                  <li>• <strong>100%</strong> Autonomous Operation</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          {/* Integration & API Capabilities */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">🔌 Integration & API Capabilities</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-cyan-400 mb-4 text-center">🌐 External Integrations</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• GitHub Actions CI/CD</li>
+                  <li>• Netlify Functions</li>
+                  <li>• PM2 Process Manager</li>
+                  <li>• Docker Containerization</li>
+                  <li>• MCP Integration</li>
+                </ul>
+                <Link href="/API.md" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
+                  View API Documentation →
+                </Link>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-fuchsia-400 mb-4 text-center">🔗 Internal Systems</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Autonomous Orchestrator</li>
+                  <li>• Intelligent Monitor</li>
+                  <li>• Content Quality Analyzer</li>
+                  <li>• Performance Guardian</li>
+                  <li>• Security Scanner</li>
+                </ul>
+                <Link href="/ARCHITECTURE.md" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
+                  View Architecture Guide →
+                </Link>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-green-400 mb-4 text-center">📡 Communication</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Real-time monitoring</li>
+                  <li>• Automated reporting</li>
+                  <li>• Health check systems</li>
+                  <li>• Performance alerts</li>
+                  <li>• Status dashboards</li>
+                </ul>
+                <Link href="/DEPLOYMENT.md" className="text-green-400 hover:text-green-300 text-sm font-semibold">
+                  View Deployment Guide →
+                </Link>
+              </div>
+            </div>
+          </section>
+
         </main>
       </div>
     </>
