@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
-import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Mail, MessageCircle, Kanban, Headphones } from 'lucide-react';
+import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Mail, MessageCircle, Kanban, Headphones, Brain, Code, Server, Shield as ShieldIcon, Zap as ZapIcon2, Globe as GlobeIcon, Users as UsersIcon, Bot, Database as DatabaseIcon, Network, Key, Eye, Fingerprint, Lock as LockIcon, Globe as GlobeIcon2, Zap as ZapIcon3, Shield as ShieldIcon2, Users as UsersIcon2, Rocket as RocketIcon, Target as TargetIcon, TrendingUp as TrendingUpIcon, Clock as ClockIcon, Award as AwardIcon, DollarSign as DollarSignIcon, ChartBar as ChartBarIcon, Lock as LockIcon2, Cpu as CpuIcon, Database as DatabaseIcon2, Cloud as CloudIcon, Smartphone as SmartphoneIcon, Palette as PaletteIcon, Search as SearchIcon, MessageSquare as MessageSquareIcon, FileText as FileTextIcon, Calendar as CalendarIcon, CreditCard as CreditCardIcon, BarChart3 as BarChart3Icon, Settings as SettingsIcon, Zap as ZapIcon4, Mail as MailIcon, MessageCircle as MessageCircleIcon, Kanban as KanbanIcon, Headphones as HeadphonesIcon, Brain as BrainIcon, Code as CodeIcon, Server as ServerIcon, Shield as ShieldIcon3, Zap as ZapIcon5, Globe as GlobeIcon3, Users as UsersIcon3 } from 'lucide-react';
 import Button from '../components/ui/Button';
+import AnimatedBackground from '../components/ui/AnimatedBackground';
+import GradientText from '../components/ui/GradientText';
+import FuturisticCard from '../components/ui/FuturisticCard';
 
 export default function MicroSaasPage() {
   const [selectedCategory, setSelectedCategory] = useState('All');
