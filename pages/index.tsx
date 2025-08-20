@@ -378,6 +378,88 @@ export default function HomePage() {
             </div>
           </section>
 
+          {/* Developer & Operations Documentation */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">📚 Developer & Operations Documentation</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <Link href="/README.md" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300 text-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-xl">📖</span>
+                </div>
+                <h3 className="text-lg font-semibold text-cyan-400 mb-2">Project Overview</h3>
+                <p className="text-white/70 text-sm">Start here: full platform overview</p>
+              </Link>
+
+              <Link href="/ARCHITECTURE.md" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-purple-400/30 transition-all duration-300 text-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-indigo-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-xl">🏗️</span>
+                </div>
+                <h3 className="text-lg font-semibold text-purple-400 mb-2">System Architecture</h3>
+                <p className="text-white/70 text-sm">Deep dive into core systems</p>
+              </Link>
+
+              <Link href="/API.md" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-green-400/30 transition-all duration-300 text-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-xl">🔌</span>
+                </div>
+                <h3 className="text-lg font-semibold text-green-400 mb-2">API Reference</h3>
+                <p className="text-white/70 text-sm">Endpoints, payloads, examples</p>
+              </Link>
+
+              <Link href="/DEPLOYMENT.md" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-yellow-400/30 transition-all duration-300 text-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-xl">🚢</span>
+                </div>
+                <h3 className="text-lg font-semibold text-yellow-400 mb-2">Deployment Guide</h3>
+                <p className="text-white/70 text-sm">CI/CD & hosting strategies</p>
+              </Link>
+
+              <Link href="/README_ULTIMATE_REDUNDANCY.md" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-pink-400/30 transition-all duration-300 text-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-pink-400 to-rose-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-xl">🛡️</span>
+                </div>
+                <h3 className="text-lg font-semibold text-pink-400 mb-2">Ultimate Redundancy</h3>
+                <p className="text-white/70 text-sm">Zero downtime architecture</p>
+              </Link>
+
+              <Link href="/README_ULTIMATE_REDUNDANCY_V2.md" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-indigo-400/30 transition-all duration-300 text-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-indigo-400 to-blue-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-xl">🧬</span>
+                </div>
+                <h3 className="text-lg font-semibold text-indigo-400 mb-2">Redundancy v2</h3>
+                <p className="text-white/70 text-sm">Next-gen failover systems</p>
+              </Link>
+
+              <Link href="/README_COMPREHENSIVE_REDUNDANCY.md" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-lime-400/30 transition-all duration-300 text-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-lime-400 to-green-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-xl">♻️</span>
+                </div>
+                <h3 className="text-lg font-semibold text-lime-400 mb-2">Comprehensive Automation</h3>
+                <p className="text-white/70 text-sm">Autonomous ops at scale</p>
+              </Link>
+
+              <Link href="/CONTRIBUTING.md" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-sky-400/30 transition-all duration-300 text-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-sky-400 to-cyan-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-xl">🤝</span>
+                </div>
+                <h3 className="text-lg font-semibold text-sky-400 mb-2">Contributing</h3>
+                <p className="text-white/70 text-sm">How to collaborate</p>
+              </Link>
+            </div>
+          </section>
+
+          {/* Quick Links Strip */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <div className="flex flex-wrap justify-center gap-3">
+              <Link href="/blog" className="px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full text-white text-sm transition-all">Blog</Link>
+              <Link href="/case-studies" className="px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full text-white text-sm transition-all">Case Studies</Link>
+              <Link href="/resources" className="px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full text-white text-sm transition-all">Resources</Link>
+              <Link href="/services" className="px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full text-white text-sm transition-all">Services</Link>
+              <Link href="/contact" className="px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full text-white text-sm transition-all">Contact</Link>
+              <Link href="/privacy" className="px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full text-white text-sm transition-all">Privacy</Link>
+            </div>
+          </section>
+
           {/* Automation & Redundancy Systems */}
           <section className="mx-auto max-w-7xl px-6 pb-16">
             <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">🤖 Autonomous Systems & Redundancy Infrastructure</h2>
