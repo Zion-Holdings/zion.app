@@ -19,6 +19,10 @@ export default function ServicesPage() {
       color: 'bg-gradient-to-br from-fuchsia-500 to-purple-600',
       textColor: 'text-fuchsia-400',
       gradient: 'from-fuchsia-400 to-purple-500',
+      pricing: 'Starting at $299/month',
+      marketPrice: '$200-500/month',
+      link: 'https://zapier.com/pricing',
+      competitor: 'Zapier'
     },
     {
       icon: '☁️',
@@ -34,6 +38,10 @@ export default function ServicesPage() {
       color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
       textColor: 'text-cyan-400',
       gradient: 'from-cyan-400 to-blue-500',
+      pricing: 'Starting at $199/month',
+      marketPrice: '$150-400/month',
+      link: 'https://aws.amazon.com/pricing/',
+      competitor: 'AWS'
     },
     {
       icon: '🔒',
@@ -49,6 +57,10 @@ export default function ServicesPage() {
       color: 'bg-gradient-to-br from-green-500 to-emerald-600',
       textColor: 'text-green-400',
       gradient: 'from-green-400 to-emerald-500',
+      pricing: 'Starting at $399/month',
+      marketPrice: '$300-800/month',
+      link: 'https://www.crowdstrike.com/pricing/',
+      competitor: 'CrowdStrike'
     },
     {
       icon: '📊',
@@ -64,6 +76,10 @@ export default function ServicesPage() {
       color: 'bg-gradient-to-br from-orange-500 to-red-600',
       textColor: 'text-orange-400',
       gradient: 'from-orange-400 to-red-500',
+      pricing: 'Starting at $249/month',
+      marketPrice: '$200-600/month',
+      link: 'https://www.tableau.com/pricing',
+      competitor: 'Tableau'
     },
     {
       icon: '🚀',
@@ -79,6 +95,10 @@ export default function ServicesPage() {
       color: 'bg-gradient-to-br from-indigo-500 to-purple-600',
       textColor: 'text-indigo-400',
       gradient: 'from-indigo-400 to-purple-500',
+      pricing: 'Starting at $179/month',
+      marketPrice: '$150-350/month',
+      link: 'https://www.atlassian.com/software/jira/pricing',
+      competitor: 'Atlassian'
     },
     {
       icon: '🌐',
@@ -94,7 +114,126 @@ export default function ServicesPage() {
       color: 'bg-gradient-to-br from-teal-500 to-cyan-600',
       textColor: 'text-teal-400',
       gradient: 'from-teal-400 to-cyan-500',
+      pricing: 'Starting at $599/month',
+      marketPrice: '$500-1200/month',
+      link: 'https://www.accenture.com/us-en/services/technology/technology-consulting-index',
+      competitor: 'Accenture'
     },
+    // New Micro SaaS Services
+    {
+      icon: '📧',
+      title: 'Email Marketing Automation',
+      description: 'Advanced email marketing with AI-powered personalization, automation workflows, and analytics.',
+      features: [
+        'AI-Powered Personalization',
+        'Automated Email Sequences',
+        'Advanced Segmentation',
+        'A/B Testing Tools',
+        'ROI Analytics'
+      ],
+      color: 'bg-gradient-to-br from-pink-500 to-rose-600',
+      textColor: 'text-pink-400',
+      gradient: 'from-pink-400 to-rose-500',
+      pricing: 'Starting at $89/month',
+      marketPrice: '$75-200/month',
+      link: 'https://mailchimp.com/pricing/',
+      competitor: 'Mailchimp'
+    },
+    {
+      icon: '💳',
+      title: 'Payment Processing & Billing',
+      description: 'Secure payment processing, subscription billing, and financial management solutions.',
+      features: [
+        'Multi-Payment Gateway Support',
+        'Subscription Billing',
+        'Recurring Payments',
+        'Fraud Detection',
+        'Financial Reporting'
+      ],
+      color: 'bg-gradient-to-br from-emerald-500 to-green-600',
+      textColor: 'text-emerald-400',
+      gradient: 'from-emerald-400 to-green-500',
+      pricing: 'Starting at $49/month + 2.9%',
+      marketPrice: '$29-99/month + 2.5-3.5%',
+      link: 'https://stripe.com/pricing',
+      competitor: 'Stripe'
+    },
+    {
+      icon: '🎯',
+      title: 'Customer Relationship Management',
+      description: 'Comprehensive CRM solution with sales automation, lead management, and customer insights.',
+      features: [
+        'Lead Management',
+        'Sales Pipeline Tracking',
+        'Customer Analytics',
+        'Email Integration',
+        'Mobile App'
+      ],
+      color: 'bg-gradient-to-br from-violet-500 to-purple-600',
+      textColor: 'text-violet-400',
+      gradient: 'from-violet-400 to-purple-500',
+      pricing: 'Starting at $25/month/user',
+      marketPrice: '$20-50/month/user',
+      link: 'https://www.salesforce.com/crm/pricing/',
+      competitor: 'Salesforce'
+    },
+    {
+      icon: '📱',
+      title: 'Mobile App Development',
+      description: 'Native and cross-platform mobile app development with modern frameworks and cloud backend.',
+      features: [
+        'iOS & Android Development',
+        'Cross-Platform Solutions',
+        'Cloud Backend Integration',
+        'Push Notifications',
+        'App Store Optimization'
+      ],
+      color: 'bg-gradient-to-br from-blue-500 to-indigo-600',
+      textColor: 'text-blue-400',
+      gradient: 'from-blue-400 to-indigo-500',
+      pricing: 'Starting at $5,000/project',
+      marketPrice: '$3,000-15,000/project',
+      link: 'https://www.mobomo.com/mobile-app-development-cost/',
+      competitor: 'Mobomo'
+    },
+    {
+      icon: '🛒',
+      title: 'E-commerce Platform',
+      description: 'Complete e-commerce solution with inventory management, payment processing, and analytics.',
+      features: [
+        'Product Catalog Management',
+        'Shopping Cart & Checkout',
+        'Inventory Tracking',
+        'Order Management',
+        'Analytics Dashboard'
+      ],
+      color: 'bg-gradient-to-br from-amber-500 to-orange-600',
+      textColor: 'text-amber-400',
+      gradient: 'from-amber-400 to-orange-500',
+      pricing: 'Starting at $79/month',
+      marketPrice: '$29-299/month',
+      link: 'https://www.shopify.com/pricing',
+      competitor: 'Shopify'
+    },
+    {
+      icon: '📈',
+      title: 'SEO & Content Marketing',
+      description: 'Search engine optimization and content marketing services to improve online visibility.',
+      features: [
+        'Keyword Research & Analysis',
+        'On-Page SEO Optimization',
+        'Content Strategy & Creation',
+        'Link Building',
+        'Performance Tracking'
+      ],
+      color: 'bg-gradient-to-br from-red-500 to-pink-600',
+      textColor: 'text-red-400',
+      gradient: 'from-red-400 to-pink-500',
+      pricing: 'Starting at $299/month',
+      marketPrice: '$200-800/month',
+      link: 'https://www.semrush.com/prices/',
+      competitor: 'SEMrush'
+    }
   ];
 
   const technologies = [
@@ -175,7 +314,7 @@ export default function ServicesPage() {
                     <p className="text-gray-400 leading-relaxed mb-6">
                       {service.description}
                     </p>
-                    <ul className="space-y-2">
+                    <ul className="space-y-2 mb-6">
                       {service.features.map((feature, featureIndex) => (
                         <li key={featureIndex} className="flex items-center text-gray-300">
                           <span className="w-2 h-2 bg-cursor-blue rounded-full mr-3 flex-shrink-0" />
@@ -183,6 +322,29 @@ export default function ServicesPage() {
                         </li>
                       ))}
                     </ul>
+                    
+                    {/* Pricing and Market Comparison */}
+                    <div className="border-t border-gray-700 pt-4">
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="text-sm text-gray-400">Our Pricing:</span>
+                        <span className="text-lg font-bold text-white">{service.pricing}</span>
+                      </div>
+                      <div className="flex items-center justify-between mb-4">
+                        <span className="text-sm text-gray-400">Market Average:</span>
+                        <span className="text-sm text-gray-300">{service.marketPrice}</span>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm text-gray-400">Compare with:</span>
+                        <a 
+                          href={service.link} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-sm text-blue-400 hover:text-blue-300 underline"
+                        >
+                          {service.competitor}
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </Card>

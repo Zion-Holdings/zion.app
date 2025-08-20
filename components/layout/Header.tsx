@@ -7,6 +7,7 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isProductDropdownOpen, setIsProductDropdownOpen] = useState(false);
+  const [isSolutionsDropdownOpen, setIsSolutionsDropdownOpen] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -20,7 +21,7 @@ const Header = () => {
 
   const navigation = [
     { name: 'Product', href: '#', hasDropdown: true },
-    { name: 'Solutions', href: '/services' },
+    { name: 'Solutions', href: '/services', hasDropdown: true },
     { name: 'Resources', href: '/resources' },
     { name: 'Company', href: '/about' },
     { name: 'Pricing', href: '/pricing' },
@@ -31,6 +32,14 @@ const Header = () => {
     { name: 'Cloud Platform', href: '/cloud-platform', description: 'Scalable cloud infrastructure' },
     { name: 'Automation Hub', href: '/automation', description: 'AI-powered workflow automation' },
     { name: 'Analytics', href: '/analytics', description: 'Real-time insights and reporting' },
+  ];
+
+  const solutionsDropdown = [
+    { name: 'All Services', href: '/services', description: 'Complete technology solutions' },
+    { name: 'Micro SaaS', href: '/micro-saas', description: 'Specialized business solutions' },
+    { name: 'Service Comparison', href: '/service-comparison', description: 'Compare services & pricing' },
+    { name: 'AI & Automation', href: '/ai-assistant', description: 'Intelligent automation systems' },
+    { name: 'Cloud Infrastructure', href: '/cloud-platform', description: 'Scalable cloud solutions' },
   ];
 
   const isActive = (href: string) => router.pathname === href;
@@ -65,14 +74,23 @@ const Header = () => {
                 {item.hasDropdown ? (
                   <div className="relative">
                     <button
-                      onClick={() => setIsProductDropdownOpen(!isProductDropdownOpen)}
+                      onClick={() => {
+                        if (item.name === 'Product') {
+                          setIsProductDropdownOpen(!isProductDropdownOpen);
+                        } else if (item.name === 'Solutions') {
+                          setIsSolutionsDropdownOpen(!isSolutionsDropdownOpen);
+                        }
+                      }}
                       className="flex items-center space-x-1 px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 rounded-lg hover:bg-white/5"
                     >
                       {item.name}
-                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isProductDropdownOpen ? 'rotate-180' : ''}`} />
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
+                        (item.name === 'Product' && isProductDropdownOpen) || 
+                        (item.name === 'Solutions' && isSolutionsDropdownOpen) ? 'rotate-180' : ''
+                      }`} />
                     </button>
                     
-                    {isProductDropdownOpen && (
+                    {item.name === 'Product' && isProductDropdownOpen && (
                       <div className="absolute top-full left-0 mt-2 w-80 bg-black/90 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl p-4">
                         <div className="grid gap-3">
                           {productDropdown.map((product) => (
@@ -84,6 +102,24 @@ const Header = () => {
                             >
                               <div className="font-medium text-white mb-1">{product.name}</div>
                               <div className="text-sm text-gray-400">{product.description}</div>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {item.name === 'Solutions' && isSolutionsDropdownOpen && (
+                      <div className="absolute top-full left-0 mt-2 w-80 bg-black/90 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl p-4">
+                        <div className="grid gap-3">
+                          {solutionsDropdown.map((solution) => (
+                            <Link
+                              key={solution.name}
+                              href={solution.href}
+                              className="flex flex-col p-3 rounded-lg hover:bg-white/5 transition-colors duration-200"
+                              onClick={() => setIsSolutionsDropdownOpen(false)}
+                            >
+                              <div className="font-medium text-white mb-1">{solution.name}</div>
+                              <div className="text-sm text-gray-400">{solution.description}</div>
                             </Link>
                           ))}
                         </div>
@@ -143,17 +179,31 @@ const Header = () => {
                         {item.name}
                       </div>
                       <div className="pl-4 space-y-2">
-                        {productDropdown.map((product) => (
-                          <Link
-                            key={product.name}
-                            href={product.href}
-                            className="block px-4 py-2 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors duration-200"
-                            onClick={() => setIsMobileMenuOpen(false)}
-                          >
-                            <div className="font-medium">{product.name}</div>
-                            <div className="text-xs text-gray-500">{product.description}</div>
-                          </Link>
-                        ))}
+                        {item.name === 'Product' ? 
+                          productDropdown.map((product) => (
+                            <Link
+                              key={product.name}
+                              href={product.href}
+                              className="block px-4 py-2 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors duration-200"
+                              onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                              <div className="font-medium">{product.name}</div>
+                              <div className="text-xs text-gray-500">{product.description}</div>
+                            </Link>
+                          ))
+                        : 
+                          solutionsDropdown.map((solution) => (
+                            <Link
+                              key={solution.name}
+                              href={solution.href}
+                              className="block px-4 py-2 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors duration-200"
+                              onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                              <div className="font-medium">{solution.name}</div>
+                              <div className="text-xs text-gray-500">{solution.description}</div>
+                            </Link>
+                          ))
+                        }
                       </div>
                     </div>
                   ) : (

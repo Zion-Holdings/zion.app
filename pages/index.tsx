@@ -107,6 +107,61 @@ export default function HomePage() {
         columns={3}
       />
 
+      {/* Micro SaaS Services */}
+      <section className="py-24 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20 animate-fade-in">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse" />
+              Specialized Business Solutions
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight">
+              Micro SaaS Services
+            </h2>
+            <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              Focused solutions for specific business challenges with competitive pricing and comprehensive features.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            <Card className="text-center group border border-gray-800 hover:border-green-500/30">
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">📧</div>
+              <h3 className="text-xl font-semibold text-white mb-3">Email Marketing Automation</h3>
+              <p className="text-gray-400 mb-4">AI-powered email marketing with advanced automation and analytics.</p>
+              <div className="text-2xl font-bold text-green-400 mb-2">Starting at $89/month</div>
+              <div className="text-sm text-gray-500">Market average: $75-200/month</div>
+            </Card>
+
+            <Card className="text-center group border border-gray-800 hover:border-green-500/30">
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">💳</div>
+              <h3 className="text-xl font-semibold text-white mb-3">Payment Processing</h3>
+              <p className="text-gray-400 mb-4">Secure payment gateway with subscription billing and fraud detection.</p>
+              <div className="text-2xl font-bold text-green-400 mb-2">Starting at $49/month</div>
+              <div className="text-sm text-gray-500">Market average: $29-99/month</div>
+            </Card>
+
+            <Card className="text-center group border border-gray-800 hover:border-green-500/30">
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">🎯</div>
+              <h3 className="text-xl font-semibold text-white mb-3">CRM Solutions</h3>
+              <p className="text-gray-400 mb-4">Comprehensive CRM with sales automation and customer insights.</p>
+              <div className="text-2xl font-bold text-green-400 mb-2">Starting at $25/user/month</div>
+              <div className="text-sm text-gray-500">Market average: $20-50/user/month</div>
+            </Card>
+          </div>
+
+          <div className="text-center">
+            <Button
+              href="/micro-saas"
+              size="lg"
+              className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700"
+            >
+              Explore All Micro SaaS Services
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Technology Stack */}
       <section className="py-24 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
