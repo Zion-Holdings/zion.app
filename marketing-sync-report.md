@@ -1,11 +1,11 @@
 # marketing-sync Report
 
-Generated: 2025-08-20T00:02:34.191Z
+Generated: 2025-08-20T00:05:35.041Z
 
 ## Status
 - Task: marketing-sync
 - Status: Skipped/Failed
-- Timestamp: 2025-08-20T00:02:34.191Z
+- Timestamp: 2025-08-20T00:05:35.041Z
 
 ## Actions
 - linkedin: skipped
