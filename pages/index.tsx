@@ -4,11 +4,11 @@ import Hero from '../components/sections/Hero';
 import Features from '../components/sections/Features';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
-import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, ExternalLink } from 'lucide-react';
+import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, ExternalLink, Globe } from 'lucide-react';
 
 export default function HomePage() {
   const heroStats = [
-    { value: '28+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
+    { value: '55+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
     { value: '99.9%', label: 'Uptime Guarantee', color: 'text-fuchsia-400' },
     { value: '14', label: 'Day Free Trials', color: 'text-blue-400' },
     { value: '24/7', label: 'AI Support', color: 'text-green-400' },
@@ -18,7 +18,7 @@ export default function HomePage() {
     {
       icon: <Cloud className="w-8 h-8 text-white" />,
       title: 'Real Micro SaaS Services',
-      description: '50+ fully functional micro SaaS tools with real implementations, not just mockups.',
+      description: '55+ fully functional micro SaaS tools with real implementations, not just mockups.',
       color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
       gradient: 'from-cyan-400 to-blue-500',
     },
@@ -1584,6 +1584,43 @@ export default function HomePage() {
             From AI-powered content creation to cloud cost optimization, we have the specialized tools your business needs. 
             All services come with 14-day free trials, transparent pricing, and enterprise-grade infrastructure.
           </p>
+          
+          {/* Domain Integration Highlight */}
+          <div className="bg-gray-800/50 rounded-2xl p-6 mb-12 max-w-4xl mx-auto border border-gray-700">
+            <div className="flex items-center justify-center mb-4">
+              <Globe className="w-6 h-6 text-purple-400 mr-3" />
+              <h3 className="text-lg font-semibold text-white">All 55+ Services Available on Zion Tech Group Domain</h3>
+            </div>
+            <p className="text-gray-300 mb-4">
+              Every micro SaaS service is accessible through our main domain <strong className="text-purple-400">ziontechgroup.com</strong>, 
+              ensuring consistent branding, unified billing, and seamless integration across all tools.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm mb-4">
+              <div className="flex items-center text-purple-400">
+                <Check className="w-4 h-4 mr-2" />
+                <span className="text-gray-300">Unified user dashboard</span>
+              </div>
+              <div className="flex items-center text-purple-400">
+                <Check className="w-4 h-4 mr-2" />
+                <span className="text-gray-300">Single sign-on access</span>
+              </div>
+              <div className="flex items-center text-purple-400">
+                <Check className="w-4 h-4 mr-2" />
+                <span className="text-gray-300">Integrated billing & usage</span>
+              </div>
+            </div>
+            <div className="text-center">
+              <a 
+                href="https://ziontechgroup.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 text-sm font-medium hover:bg-purple-500/30 transition-colors"
+              >
+                Explore ziontechgroup.com
+                <ExternalLink className="w-4 h-4 ml-2" />
+              </a>
+            </div>
+          </div>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Button
               href="/micro-saas"

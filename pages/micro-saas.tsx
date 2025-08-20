@@ -80,6 +80,60 @@ export default function MicroSaasPage() {
       category: 'Content & Marketing'
     },
     {
+      name: 'AI SEO Automation Suite',
+      tagline: 'Automate your SEO strategy',
+      price: '$79',
+      period: '/month',
+      description: 'Comprehensive SEO automation platform that handles keyword research, on-page optimization, technical audits, and competitor analysis.',
+      features: [
+        'Automated keyword research & tracking',
+        'On-page SEO optimization',
+        'Technical SEO audits',
+        'Competitor analysis & monitoring',
+        'Local SEO optimization',
+        'SEO performance reporting',
+        'Automated content suggestions',
+        'Integration with Google Analytics & Search Console'
+      ],
+      popular: true,
+      icon: '🔍',
+      color: 'from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      link: 'https://ziontechgroup.com/ai-seo-automation',
+      marketPosition: 'Competitive with Ahrefs ($99-999), SEMrush ($119-449), and Moz ($99-599)',
+      targetAudience: 'SEO specialists, digital marketers, and agencies',
+      trialDays: 14,
+      setupTime: '15 minutes',
+      category: 'Content & Marketing'
+    },
+    {
+      name: 'AI Chatbot Builder',
+      tagline: 'Intelligent customer support automation',
+      price: '$59',
+      period: '/month',
+      description: 'Build and deploy AI-powered chatbots for customer support, lead generation, and sales automation across multiple channels.',
+      features: [
+        'No-code chatbot builder',
+        'Multi-channel deployment (Web, WhatsApp, Facebook)',
+        'Natural language processing',
+        'Integration with CRM systems',
+        'Analytics & conversation insights',
+        'Custom training & knowledge base',
+        'Multi-language support',
+        'API access for custom integrations'
+      ],
+      popular: false,
+      icon: '🤖',
+      color: 'from-blue-500 to-indigo-600',
+      textColor: 'text-blue-400',
+      link: 'https://ziontechgroup.com/ai-chatbot-builder',
+      marketPosition: 'Competitive with Intercom ($74-499), Drift ($2,500-25,000), and ManyChat ($15-39)',
+      targetAudience: 'Customer support teams, e-commerce businesses, and SaaS companies',
+      trialDays: 14,
+      setupTime: '20 minutes',
+      category: 'Customer Experience'
+    },
+    {
       name: 'Cloud Cost Optimizer',
       tagline: 'Reduce cloud spending by 30%',
       price: '$99',
@@ -105,6 +159,60 @@ export default function MicroSaasPage() {
       trialDays: 14,
       setupTime: '20 minutes',
       category: 'Development & DevOps'
+    },
+    {
+      name: 'Performance Monitoring Hub',
+      tagline: 'Real-time application performance insights',
+      price: '$69',
+      period: '/month',
+      description: 'Comprehensive application performance monitoring with real-time alerts, detailed analytics, and automated optimization recommendations.',
+      features: [
+        'Real-time performance monitoring',
+        'Core Web Vitals tracking',
+        'Error tracking & alerting',
+        'Performance optimization recommendations',
+        'Custom performance metrics',
+        'Team collaboration & reporting',
+        'Integration with popular tools',
+        'Mobile performance monitoring'
+      ],
+      popular: false,
+      icon: '📊',
+      color: 'from-purple-500 to-violet-600',
+      textColor: 'text-purple-400',
+      link: 'https://ziontechgroup.com/performance-monitoring-hub',
+      marketPosition: 'Competitive with New Relic ($99-349), Datadog ($15-23), and AppDynamics ($6-60)',
+      targetAudience: 'DevOps teams, developers, and performance engineers',
+      trialDays: 14,
+      setupTime: '25 minutes',
+      category: 'Development & DevOps'
+    },
+    {
+      name: 'Design System Builder',
+      tagline: 'Create consistent design systems',
+      price: '$89',
+      period: '/month',
+      description: 'Build and maintain consistent design systems with component libraries, design tokens, and automated documentation for your design team.',
+      features: [
+        'Component library management',
+        'Design token system',
+        'Automated documentation',
+        'Version control & collaboration',
+        'Design handoff tools',
+        'Integration with design tools',
+        'Accessibility guidelines',
+        'Design system analytics'
+      ],
+      popular: false,
+      icon: '🎨',
+      color: 'from-indigo-500 to-purple-600',
+      textColor: 'text-indigo-400',
+      link: 'https://ziontechgroup.com/design-system-builder',
+      marketPosition: 'Competitive with Figma ($12-75), Sketch ($99/year), and Adobe XD ($9.99/month)',
+      targetAudience: 'Design teams, UI/UX designers, and product managers',
+      trialDays: 14,
+      setupTime: '30 minutes',
+      category: 'Design & UX'
     },
     {
       name: 'AI Sales Assistant',
@@ -3147,6 +3255,141 @@ export default function MicroSaasPage() {
       trialDays: 14,
       setupTime: '15 minutes',
       category: 'Content & Media'
+    },
+    {
+      name: 'AI Email Security Shield',
+      tagline: 'Advanced email threat protection',
+      price: '$45',
+      period: '/month',
+      description: 'Protect your business from email threats with AI-powered security that detects and blocks phishing, malware, and spam.',
+      features: [
+        'AI-powered threat detection',
+        'Phishing & malware protection',
+        'Advanced spam filtering',
+        'Email encryption',
+        'Real-time threat monitoring',
+        'Custom security policies',
+        'Integration with email platforms',
+        'Security analytics & reporting'
+      ],
+      popular: false,
+      icon: '🛡️',
+      color: 'from-red-500 to-pink-600',
+      textColor: 'text-red-400',
+      link: 'https://ziontechgroup.com/ai-email-security-shield',
+      marketPosition: 'Competitive with Mimecast ($3-8), Proofpoint ($2-8), and Barracuda ($2-6)',
+      targetAudience: 'IT administrators, security teams, and businesses of all sizes',
+      trialDays: 14,
+      setupTime: '20 minutes',
+      category: 'Security & Compliance'
+    },
+    {
+      name: 'AI Learning Management System',
+      tagline: 'Intelligent learning platform',
+      price: '$89',
+      period: '/month',
+      description: 'Create and manage online learning experiences with AI-powered personalization and automated content delivery.',
+      features: [
+        'AI-powered learning paths',
+        'Automated content delivery',
+        'Progress tracking & analytics',
+        'Interactive assessments',
+        'Multi-format content support',
+        'Team collaboration tools',
+        'Mobile learning app',
+        'Integration with HR systems'
+      ],
+      popular: false,
+      icon: '🎓',
+      color: 'from-purple-500 to-violet-600',
+      textColor: 'text-purple-400',
+      link: 'https://ziontechgroup.com/ai-learning-management-system',
+      marketPosition: 'Competitive with Coursera ($39-399), Udemy Business ($360-1200), and Skillshare ($168/year)',
+      targetAudience: 'HR teams, training managers, and educational institutions',
+      trialDays: 14,
+      setupTime: '30 minutes',
+      category: 'Human Resources'
+    },
+    {
+      name: 'IoT Device Management Hub',
+      tagline: 'Centralized IoT device control',
+      price: '$69',
+      period: '/month',
+      description: 'Manage and monitor IoT devices across your organization with centralized control and automated maintenance.',
+      features: [
+        'Device discovery & onboarding',
+        'Remote monitoring & control',
+        'Automated maintenance alerts',
+        'Security policy management',
+        'Data collection & analytics',
+        'Integration with popular IoT platforms',
+        'Custom automation rules',
+        'Multi-tenant support'
+      ],
+      popular: false,
+      icon: '🌐',
+      color: 'from-teal-500 to-cyan-600',
+      textColor: 'text-teal-400',
+      link: 'https://ziontechgroup.com/iot-device-management-hub',
+      marketPosition: 'Competitive with AWS IoT ($0-5), Azure IoT ($0-50), and Google Cloud IoT ($0-40)',
+      targetAudience: 'IT administrators, facility managers, and IoT developers',
+      trialDays: 14,
+      setupTime: '25 minutes',
+      category: 'Development & DevOps'
+    },
+    {
+      name: 'AI Contract Analyzer',
+      tagline: 'Intelligent contract review',
+      price: '$79',
+      period: '/month',
+      description: 'Analyze contracts and legal documents with AI to identify risks, extract key terms, and ensure compliance.',
+      features: [
+        'AI-powered contract analysis',
+        'Risk identification & scoring',
+        'Key term extraction',
+        'Compliance checking',
+        'Contract comparison tools',
+        'Automated reporting',
+        'Integration with legal software',
+        'Custom clause library'
+      ],
+      popular: false,
+      icon: '📄',
+      color: 'from-gray-500 to-slate-600',
+      textColor: 'text-gray-400',
+      link: 'https://ziontechgroup.com/ai-contract-analyzer',
+      marketPosition: 'Competitive with ContractPodAi ($0-500), Evisort ($0-300), and Kira Systems ($0-200)',
+      targetAudience: 'Legal teams, contract managers, and compliance officers',
+      trialDays: 14,
+      setupTime: '20 minutes',
+      category: 'Legal & Compliance'
+    },
+    {
+      name: 'AI Sales Forecasting Engine',
+      tagline: 'Predictive sales intelligence',
+      price: '$99',
+      period: '/month',
+      description: 'Predict sales outcomes with AI-powered forecasting that analyzes historical data and market trends.',
+      features: [
+        'AI-powered sales forecasting',
+        'Trend analysis & prediction',
+        'Pipeline optimization',
+        'Revenue projection',
+        'Custom forecasting models',
+        'Real-time updates',
+        'Integration with CRM systems',
+        'Advanced analytics dashboard'
+      ],
+      popular: false,
+      icon: '📈',
+      color: 'from-emerald-500 to-teal-600',
+      textColor: 'text-emerald-400',
+      link: 'https://ziontechgroup.com/ai-sales-forecasting-engine',
+      marketPosition: 'Competitive with Salesforce ($25-300), HubSpot ($45-4500), and Pipedrive ($12.50-99)',
+      targetAudience: 'Sales managers, business analysts, and revenue operations teams',
+      trialDays: 14,
+      setupTime: '25 minutes',
+      category: 'Sales & CRM'
     }
   ];
 
@@ -3239,6 +3482,7 @@ export default function MicroSaasPage() {
               meeting transcription, invoice automation, churn prediction, lead scoring, real-time analytics, content optimization, 
               predictive maintenance, email security, dynamic pricing, customer segmentation, sales intelligence, content calendar optimization, 
               email deliverability, landing page building, customer journey mapping, contract analysis, sales forecasting, customer service analytics,
+              and much more - all accessible through ziontechgroup.com with unified billing and support.
               product recommendations, fraud detection, inventory forecasting, customer onboarding, and social media automation. Focused, affordable solutions that deliver specific value 
               without the complexity of enterprise platforms. Start with a free trial and scale as you grow.
             </p>
@@ -3310,6 +3554,56 @@ export default function MicroSaasPage() {
               >
                 Contact Sales
               </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* Zion Tech Group Domain CTA */}
+        <section className="py-16 bg-gradient-to-r from-green-600/20 to-emerald-600/20 border-y border-green-500/30">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div className="bg-gray-900/80 rounded-3xl p-8 border border-green-500/30 backdrop-blur-sm">
+              <div className="flex items-center justify-center mb-6">
+                <Globe className="w-8 h-8 text-green-400 mr-3" />
+                <h2 className="text-3xl font-bold text-white">All Services Available on Zion Tech Group Domain</h2>
+              </div>
+              <p className="text-xl text-gray-300 mb-8 max-w-4xl mx-auto">
+                Access all 55+ micro SaaS services through our unified platform at <strong className="text-green-400 text-2xl">ziontechgroup.com</strong>. 
+                Enjoy seamless integration, unified billing, and enterprise-grade support across all tools.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 text-sm">
+                <div className="flex items-center justify-center text-green-400">
+                  <Check className="w-5 h-5 mr-2" />
+                  <span className="text-gray-300">Single sign-on access</span>
+                </div>
+                <div className="flex items-center justify-center text-green-400">
+                  <Check className="w-5 h-5 mr-2" />
+                  <span className="text-gray-300">Unified billing & usage</span>
+                </div>
+                <div className="flex items-center justify-center text-green-400">
+                  <Check className="w-5 h-5 mr-2" />
+                  <span className="text-gray-300">24/7 enterprise support</span>
+                </div>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a 
+                  href="https://ziontechgroup.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-6 py-3 rounded-xl bg-green-500 hover:bg-green-600 text-white font-semibold transition-colors shadow-lg"
+                >
+                  Visit ziontechgroup.com
+                  <ExternalLink className="w-5 h-5 ml-2" />
+                </a>
+                <Button
+                  href="#services"
+                  variant="outline"
+                  size="lg"
+                  className="border-green-500 text-green-400 hover:bg-green-500 hover:text-white"
+                >
+                  View All Services
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+              </div>
             </div>
           </div>
         </section>
@@ -3643,6 +3937,13 @@ export default function MicroSaasPage() {
                       </div>
                     </div>
 
+                    <div className="mb-4">
+                      <div className="inline-flex items-center px-2 py-1 rounded-lg bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-medium mb-3">
+                        <Globe className="w-3 h-3 mr-1" />
+                        ziontechgroup.com
+                      </div>
+                    </div>
+                    
                     <div className="flex items-center justify-between">
                       <div className="flex items-center text-yellow-400 text-sm">
                         <Star className="w-4 h-4 mr-1 fill-current" />
@@ -3731,6 +4032,14 @@ export default function MicroSaasPage() {
                   </ul>
 
                   <div className="space-y-4">
+                    {/* Domain Badge */}
+                    <div className="text-center mb-4">
+                      <div className="inline-flex items-center px-3 py-2 rounded-lg bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium">
+                        <Globe className="w-4 h-4 mr-2" />
+                        Available on ziontechgroup.com
+                      </div>
+                    </div>
+                    
                     <Button
                       href={service.link}
                       target="_blank"
@@ -4780,7 +5089,7 @@ export default function MicroSaasPage() {
               Ready to Get Started?
             </h2>
             <p className="text-xl text-green-100 mb-12 max-w-4xl mx-auto leading-relaxed">
-              Choose from our portfolio of 60+ specialized solutions. All services include comprehensive documentation, 
+              Choose from our portfolio of 55+ specialized solutions. All services include comprehensive documentation, 
               dedicated support, enterprise-grade reliability, and 14-day free trials. Start with one solution 
               and add more as your business grows.
             </p>
@@ -4792,7 +5101,7 @@ export default function MicroSaasPage() {
                 <h3 className="text-xl font-semibold text-white">All Services on Zion Tech Group Domain</h3>
               </div>
               <p className="text-green-100 mb-4">
-                Access all 60+ micro SaaS tools through <strong className="text-white">ziontechgroup.com</strong> for a unified experience, 
+                Access all 55+ micro SaaS tools through <strong className="text-white">ziontechgroup.com</strong> for a unified experience, 
                 single billing, and seamless integration between services. No need to manage multiple accounts or domains.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm mb-4">
