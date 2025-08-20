@@ -1,5 +1,6 @@
 // Ultimate Redundancy Monitor Function
-exports.handler = async function(event, context) {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+exports.handler = async function(_event, _context) {
   try {
     // Enhanced health check with ultimate redundancy
     const healthStatus = await checkUltimateRedundancyHealth();
