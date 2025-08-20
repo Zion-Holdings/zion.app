@@ -8,7 +8,7 @@ import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check } from
 
 export default function HomePage() {
   const heroStats = [
-    { value: '25+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
+    { value: '50+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
     { value: '99.9%', label: 'Uptime Guarantee', color: 'text-fuchsia-400' },
     { value: '14', label: 'Day Free Trials', color: 'text-blue-400' },
     { value: '24/7', label: 'AI Support', color: 'text-green-400' },
@@ -18,7 +18,7 @@ export default function HomePage() {
     {
       icon: <Cloud className="w-8 h-8 text-white" />,
       title: 'Real Micro SaaS Services',
-      description: '25+ fully functional micro SaaS tools with real implementations, not just mockups.',
+      description: '50+ fully functional micro SaaS tools with real implementations, not just mockups.',
       color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
       gradient: 'from-cyan-400 to-blue-500',
     },
@@ -121,10 +121,10 @@ export default function HomePage() {
               Enterprise-Grade Tools for Every Business Need
             </h2>
             <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
-              Discover <span className="text-green-400 font-semibold">75+ specialized micro SaaS solutions</span> covering AI-powered content creation, design systems, performance monitoring, 
-              SEO automation, chatbots, business intelligence, email marketing, social media, project management, 
-              billing, HR operations, video editing, cloud optimization, legal automation, sales intelligence, customer analytics, 
-              API management, compliance monitoring, fraud detection, contract analysis, sales forecasting, and more. <span className="text-green-400 font-semibold">Focused value with transparent pricing, 14-day free trials, and enterprise-grade infrastructure.</span>
+              Discover <span className="text-green-400 font-semibold">50+ specialized micro SaaS solutions</span> covering AI-powered content creation, cloud cost optimization, sales intelligence, legal automation, 
+              HR operations, business intelligence, video editing, email marketing, social media management, project management, 
+              billing, customer support, performance monitoring, SEO automation, chatbots, analytics, compliance monitoring, 
+              fraud detection, and more. <span className="text-green-400 font-semibold">Focused value with transparent pricing, 14-day free trials, and enterprise-grade infrastructure.</span>
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4 text-sm text-gray-400">
               <span className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>14-Day Free Trials</span>
@@ -1078,6 +1078,68 @@ export default function HomePage() {
                 <p className="text-sm text-gray-400">{tech.category}</p>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Micro SaaS Services CTA */}
+      <section className="py-24 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.1),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,119,198,0.1),transparent_50%)]" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-sm font-medium mb-6">
+            <span className="w-2 h-2 bg-purple-500 rounded-full mr-2 animate-pulse" />
+            🚀 Explore Our Micro SaaS Solutions
+          </div>
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8">
+            Ready to Discover Your Perfect Business Tools?
+          </h2>
+          <p className="text-xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
+            From AI-powered content creation to cloud cost optimization, we have the specialized tools your business needs. 
+            All services come with 14-day free trials, transparent pricing, and enterprise-grade infrastructure.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Button
+              href="/micro-saas"
+              variant="secondary"
+              size="lg"
+              className="bg-gradient-to-r from-purple-500 to-pink-600 text-white hover:from-purple-600 hover:to-pink-700 shadow-2xl transform hover:scale-105 transition-all duration-300"
+            >
+              Explore All Services
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+            <Button
+              href="/pricing"
+              variant="outline"
+              size="lg"
+              className="border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white shadow-2xl"
+            >
+              View Pricing
+            </Button>
+          </div>
+          
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">🎯</span>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">Focused Solutions</h3>
+              <p className="text-gray-400">Each tool does one thing exceptionally well, solving specific business problems</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">⚡</span>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">Lightning Fast Setup</h3>
+              <p className="text-gray-400">Get started in minutes with our intuitive interfaces and automated onboarding</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">🔒</span>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">Enterprise Security</h3>
+              <p className="text-gray-400">Bank-level security, SOC 2 compliance, and 99.9% uptime guarantee</p>
+            </div>
           </div>
         </div>
       </section>
