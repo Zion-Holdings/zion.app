@@ -1,8 +1,18 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import type { GetStaticProps } from 'next';
 
-export default function HomePage() {
+type PageLink = {
+  href: string;
+  label: string;
+};
+
+type HomePageProps = {
+  pageLinks: PageLink[];
+};
+
+export default function HomePage({ pageLinks }: HomePageProps) {
   return (
     <>
       <Head>
@@ -343,8 +353,8 @@ export default function HomePage() {
                   <li>• Threat detection & response</li>
                   <li>• Zero-trust architecture</li>
                 </ul>
-                <Link href="/SECURITY.md" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
-                  View Security Guide →
+                <Link href="/privacy" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
+                  Security & Privacy →
                 </Link>
               </div>
 
@@ -357,8 +367,8 @@ export default function HomePage() {
                   <li>• Security testing</li>
                   <li>• Continuous validation</li>
                 </ul>
-                <Link href="/TESTING.md" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
-                  View Testing Guide →
+                <Link href="/resources" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
+                  Explore Testing Resources →
                 </Link>
               </div>
 
@@ -371,8 +381,8 @@ export default function HomePage() {
                   <li>• Analytics dashboard</li>
                   <li>• Predictive maintenance</li>
                 </ul>
-                <Link href="/PERFORMANCE.md" className="text-green-400 hover:text-green-300 text-sm font-semibold">
-                  View Performance Guide →
+                <Link href="/case-studies" className="text-green-400 hover:text-green-300 text-sm font-semibold">
+                  See Performance Case Studies →
                 </Link>
               </div>
             </div>
@@ -451,6 +461,20 @@ export default function HomePage() {
             </div>
           </section>
 
+          {/* All Pages & Content Directory */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-3xl font-bold tracking-wide text-white/90 mb-8">🗂️ All Pages & Content</h2>
+            <p className="text-center text-white/70 mb-6">Explore everything available on our site.</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {pageLinks.map((link) => (
+                <Link key={link.href} href={link.href} className="group rounded-lg border border-white/10 bg-white/5 p-4 text-white/90 hover:border-cyan-400/30 hover:bg-white/10 transition-colors">
+                  <span className="font-semibold text-cyan-300 group-hover:text-cyan-200">{link.label}</span>
+                  <span className="ml-2 text-xs text-white/60">{link.href}</span>
+                </Link>
+              ))}
+            </div>
+          </section>
+
           {/* Revolutionary Call to Action */}
           <section className="text-center mx-auto max-w-4xl px-6 pb-16">
             <div className="bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-12 border border-white/20">
@@ -473,3 +497,85 @@ export default function HomePage() {
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
+  const path = await import('path');
+  const fs = await import('fs');
+  const pagesDir = path.default.join(process.cwd(), 'pages');
+
+  const isPageFile = (filePath: string) => filePath.endsWith('.tsx') || filePath.endsWith('.ts') || filePath.endsWith('.jsx') || filePath.endsWith('.js');
+  const shouldExclude = (relativePath: string) => {
+    if (relativePath.startsWith('_')) return true; // _app, _document
+    if (relativePath.startsWith('api')) return true;
+    if (relativePath === 'index.tsx' || relativePath === 'index.jsx' || relativePath === 'index.js' || relativePath === 'index.ts') return false;
+    return false;
+  };
+
+  const humanize = (slug: string) => {
+    const cleaned = slug
+      .replace(/[\/_-]+/g, ' ')
+      .replace(/\b\w/g, (c) => c.toUpperCase())
+      .trim();
+    return cleaned;
+  };
+
+  const collected: PageLink[] = [];
+
+  const walk = (dir: string, baseRoute: string = '') => {
+    const entries = fs.readdirSync(dir, { withFileTypes: true }) as unknown as Array<import('fs').Dirent>;
+    for (const entry of entries) {
+      // Skip Next.js special files and hidden/system files
+      if (entry.name.startsWith('.')) continue;
+      if (entry.name === '_app.tsx' || entry.name === '_document.tsx') continue;
+
+      const full = path.default.join(dir, entry.name);
+      const rel = path.default.relative(pagesDir, full).replace(/\\/g, '/');
+
+      if (entry.isDirectory()) {
+        if (entry.name === 'api') continue;
+        walk(full, path.default.join(baseRoute, entry.name));
+        continue;
+      }
+
+      if (!isPageFile(full)) continue;
+      if (shouldExclude(rel)) {
+        if (rel.startsWith('index.')) {
+          // Root index
+          collected.push({ href: '/', label: 'Home' });
+        }
+        continue;
+      }
+
+      // Derive route path
+      const routePath = (() => {
+        const noExt = rel.replace(/\.(tsx|ts|jsx|js)$/i, '');
+        if (noExt.endsWith('/index')) return `/${noExt.replace(/\/index$/, '')}`;
+        return `/${noExt}`;
+      })();
+
+      // Filter out dynamic and bracketed routes for simplicity
+      if (routePath.includes('[')) continue;
+
+      // Prefer concise labels
+      const label = humanize(routePath.replace(/^\//, '')) || 'Home';
+      collected.push({ href: routePath, label });
+    }
+  };
+
+  try {
+    walk(pagesDir);
+  } catch {
+    // ignore
+  }
+
+  // De-duplicate and sort
+  const map = new Map<string, PageLink>();
+  for (const link of collected) {
+    map.set(link.href, link);
+  }
+  const pageLinks = Array.from(map.values()).sort((a, b) => a.href.localeCompare(b.href));
+
+  return {
+    props: { pageLinks },
+  };
+};
