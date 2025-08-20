@@ -965,7 +965,7 @@ export default function ServicesPage() {
       textColor: 'text-green-400',
       gradient: 'from-green-400 to-teal-500',
       pricing: '$49/month',
-      link: 'https://ziontechgroup.com/performance-monitor-pro'
+      link: 'https://ziontechgroup.com/ai-product-analytics'
     },
     {
       icon: '🎬',
@@ -983,6 +983,215 @@ export default function ServicesPage() {
       gradient: 'from-red-400 to-orange-500',
       pricing: '$89/month',
       link: 'https://ziontechgroup.com/video-editor-pro'
+      textColor: 'text-red-400',
+      gradient: 'from-red-400 to-pink-500',
+      pricing: '$199/month',
+      link: 'https://ziontechgroup.com/ai-fraud-detection'
+    },
+    {
+      icon: '📦',
+      title: 'AI Inventory Forecasting',
+      description: 'Predictive inventory management with demand prediction and optimization recommendations.',
+      features: [
+        'AI demand forecasting',
+        'Inventory optimization',
+        'Automated reordering',
+        'Seasonal trend analysis',
+        'Supplier performance tracking'
+      ],
+      color: 'bg-gradient-to-br from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      gradient: 'from-green-400 to-emerald-500',
+      pricing: '$139/month',
+      link: 'https://ziontechgroup.com/ai-inventory-forecasting'
+    },
+    {
+      icon: '🚀',
+      title: 'AI Customer Onboarding',
+      description: 'Intelligent user activation with personalized experiences and progress tracking.',
+      features: [
+        'AI onboarding personalization',
+        'Progress tracking',
+        'Activation optimization',
+        'User behavior analysis',
+        'Automated workflows'
+      ],
+      color: 'bg-gradient-to-br from-orange-500 to-red-600',
+      textColor: 'text-orange-400',
+      gradient: 'from-orange-400 to-red-500',
+      pricing: '$79/month',
+      link: 'https://ziontechgroup.com/ai-customer-onboarding'
+    },
+    {
+      icon: '📮',
+      title: 'AI Email Deliverability',
+      description: 'Maximize inbox placement with AI-powered deliverability optimization.',
+      features: [
+        'AI deliverability optimization',
+        'Real-time monitoring',
+        'Reputation management',
+        'Spam filter analysis',
+        'Authentication setup'
+      ],
+      color: 'bg-gradient-to-br from-blue-500 to-indigo-600',
+      textColor: 'text-blue-400',
+      gradient: 'from-blue-400 to-indigo-500',
+      pricing: '$89/month',
+      link: 'https://ziontechgroup.com/ai-email-deliverability'
+    },
+    {
+      icon: '⚡',
+      title: 'AI Website Performance Optimizer',
+      description: 'Intelligent website optimization with automated testing and SEO enhancements.',
+      features: [
+        'AI performance analysis',
+        'Automated optimization',
+        'Speed testing & monitoring',
+        'SEO optimization',
+        'Mobile optimization'
+      ],
+      color: 'bg-gradient-to-br from-yellow-500 to-orange-600',
+      textColor: 'text-yellow-400',
+      gradient: 'from-yellow-400 to-orange-500',
+      pricing: '$89/month',
+      link: 'https://ziontechgroup.com/ai-website-optimizer'
+    },
+    {
+      icon: '🗺️',
+      title: 'AI Customer Journey Mapping',
+      description: 'Intelligent customer experience optimization with automated insights and recommendations.',
+      features: [
+        'AI journey mapping',
+        'Touchpoint analysis',
+        'Optimization recommendations',
+        'Performance tracking',
+        'Customer behavior insights'
+      ],
+      color: 'bg-gradient-to-br from-teal-500 to-cyan-600',
+      textColor: 'text-teal-400',
+      gradient: 'from-teal-400 to-cyan-500',
+      pricing: '$99/month',
+      link: 'https://ziontechgroup.com/ai-customer-journey'
+    },
+    {
+      icon: '🔍',
+      title: 'AI Competitive Intelligence',
+      description: 'Intelligent market monitoring with automated analysis and strategic insights.',
+      features: [
+        'AI competitive monitoring',
+        'Market analysis',
+        'Strategy insights',
+        'Performance benchmarking',
+        'Trend identification'
+      ],
+      color: 'bg-gradient-to-br from-blue-500 to-indigo-600',
+      textColor: 'text-blue-400',
+      gradient: 'from-blue-400 to-indigo-500',
+      pricing: '$89/month',
+      link: 'https://ziontechgroup.com/ai-competitive-intelligence'
+    },
+    {
+      icon: '💰',
+      title: 'AI Customer Lifetime Value Optimization',
+      description: 'Maximize customer value with predictive modeling and automated strategies.',
+      features: [
+        'AI CLV prediction',
+        'Optimization strategies',
+        'Customer segmentation',
+        'Retention optimization',
+        'Upselling automation'
+      ],
+      color: 'bg-gradient-to-br from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      gradient: 'from-green-400 to-emerald-500',
+      pricing: '$79/month',
+      link: 'https://ziontechgroup.com/ai-clv-optimization'
+    },
+    {
+      icon: '🚚',
+      title: 'AI Supply Chain Analytics',
+      description: 'Intelligent supply chain insights with demand forecasting and risk assessment.',
+      features: [
+        'AI demand forecasting',
+        'Risk assessment',
+        'Optimization recommendations',
+        'Real-time monitoring',
+        'Supplier performance tracking'
+      ],
+      color: 'bg-gradient-to-br from-orange-500 to-red-600',
+      textColor: 'text-orange-400',
+      gradient: 'from-orange-400 to-red-500',
+      pricing: '$159/month',
+      link: 'https://ziontechgroup.com/ai-supply-chain-analytics'
+    },
+    {
+      icon: '📊',
+      title: 'AI Financial Planning Assistant',
+      description: 'Intelligent financial guidance with automated budgeting and investment recommendations.',
+      features: [
+        'AI financial analysis',
+        'Automated budgeting',
+        'Investment recommendations',
+        'Retirement planning',
+        'Tax optimization'
+      ],
+      color: 'bg-gradient-to-br from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      gradient: 'from-green-400 to-emerald-500',
+      pricing: '$119/month',
+      link: 'https://ziontechgroup.com/ai-financial-planning'
+    },
+    {
+      icon: '👥',
+      title: 'AI HR Analytics Platform',
+      description: 'Intelligent HR insights with employee performance tracking and retention prediction.',
+      features: [
+        'AI performance tracking',
+        'Retention prediction',
+        'Workforce optimization',
+        'Recruitment analytics',
+        'Employee engagement insights'
+      ],
+      color: 'bg-gradient-to-br from-purple-500 to-violet-600',
+      textColor: 'text-purple-400',
+      gradient: 'from-purple-400 to-violet-500',
+      pricing: '$109/month',
+      link: 'https://ziontechgroup.com/ai-hr-analytics'
+    },
+    {
+      icon: '🎯',
+      title: 'AI Marketing Attribution',
+      description: 'Intelligent marketing ROI tracking with multi-touch attribution and campaign optimization.',
+      features: [
+        'AI attribution modeling',
+        'Multi-touch attribution',
+        'ROI analysis',
+        'Campaign optimization',
+        'Customer journey tracking'
+      ],
+      color: 'bg-gradient-to-br from-blue-500 to-indigo-600',
+      textColor: 'text-blue-400',
+      gradient: 'from-blue-400 to-indigo-500',
+      pricing: '$129/month',
+      link: 'https://ziontechgroup.com/ai-marketing-attribution'
+    },
+    {
+      icon: '📝',
+      title: 'AI Content Performance Analytics',
+      description: 'Intelligent content optimization with engagement tracking and ROI measurement.',
+      features: [
+        'AI content analysis',
+        'Engagement tracking',
+        'Optimization recommendations',
+        'ROI measurement',
+        'Content performance scoring'
+      ],
+      color: 'bg-gradient-to-br from-pink-500 to-rose-600',
+      textColor: 'text-pink-400',
+      gradient: 'from-pink-400 to-rose-500',
+      pricing: '$79/month',
+      link: 'https://ziontechgroup.com/ai-content-analytics'
+>>>>>>> 32d8dc89ba9616594d7d6cf44734204dc3aba7f9
     }
   ];
 
@@ -1105,7 +1314,7 @@ export default function ServicesPage() {
               Micro SaaS Portfolio
             </div>
             <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8 leading-tight">
-              20+ Specialized Business Solutions
+              50+ Specialized Business Solutions
             </h2>
             <p className="text-xl text-green-100 max-w-4xl mx-auto leading-relaxed">
               Our micro SaaS portfolio delivers focused value for specific business needs. Each solution is designed to solve 
