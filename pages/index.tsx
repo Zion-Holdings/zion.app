@@ -426,6 +426,150 @@ export default function HomePage() {
             </div>
           </section>
 
+          {/* New: Comprehensive Project Documentation */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">📚 Comprehensive Project Documentation & Architecture</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-blue-400 mb-4 text-center">🏗️ Architecture & Design</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• System architecture overview</li>
+                  <li>• Component relationships</li>
+                  <li>• Data flow diagrams</li>
+                  <li>• Scalability patterns</li>
+                  <li>• Integration strategies</li>
+                </ul>
+                <Link href="/ARCHITECTURE.md" className="text-blue-400 hover:text-blue-300 text-sm font-semibold">
+                  View Architecture Guide →
+                </Link>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-purple-400 mb-4 text-center">🚀 Deployment & Operations</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Deployment strategies</li>
+                  <li>• Environment management</li>
+                  <li>• Monitoring & alerting</li>
+                  <li>• Backup & recovery</li>
+                  <li>• Disaster recovery</li>
+                </ul>
+                <Link href="/DEPLOYMENT.md" className="text-purple-400 hover:text-purple-300 text-sm font-semibold">
+                  View Deployment Guide →
+                </Link>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-emerald-400 mb-4 text-center">🔧 API & Integration</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• RESTful API endpoints</li>
+                  <li>• Authentication & authorization</li>
+                  <li>• Rate limiting</li>
+                  <li>• Webhook integration</li>
+                  <li>• SDK documentation</li>
+                </ul>
+                <Link href="/API.md" className="text-emerald-400 hover:text-emerald-300 text-sm font-semibold">
+                  View API Guide →
+                </Link>
+              </div>
+            </div>
+          </section>
+
+          {/* New: Advanced Automation Features */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">⚡ Advanced Automation Features & Capabilities</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-cyan-400 mb-4 text-center">🧠 AI-Powered Intelligence</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Machine learning models</li>
+                  <li>• Natural language processing</li>
+                  <li>• Predictive analytics</li>
+                  <li>• Pattern recognition</li>
+                  <li>• Autonomous decision making</li>
+                </ul>
+                <Link href="/README.md#ai-powered-intelligence" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
+                  Learn More →
+                </Link>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-fuchsia-400 mb-4 text-center">🔄 Continuous Integration</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Automated testing pipelines</li>
+                  <li>• Code quality checks</li>
+                  <li>• Security scanning</li>
+                  <li>• Performance testing</li>
+                  <li>• Deployment automation</li>
+                </ul>
+                <Link href="/README.md#continuous-integration" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
+                  Learn More →
+                </Link>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-green-400 mb-4 text-center">📊 Real-Time Analytics</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Live performance metrics</li>
+                  <li>• User behavior tracking</li>
+                  <li>• System health monitoring</li>
+                  <li>• Predictive maintenance</li>
+                  <li>• Business intelligence</li>
+                </ul>
+                <Link href="/README.md#real-time-analytics" className="text-green-400 hover:text-green-300 text-sm font-semibold">
+                  Learn More →
+                </Link>
+              </div>
+            </div>
+          </section>
+
+          {/* New: Innovation & Research */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">🔬 Innovation & Research Initiatives</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-yellow-400 mb-4 text-center">🚀 Future Technologies</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Quantum computing research</li>
+                  <li>• Edge AI development</li>
+                  <li>• Blockchain integration</li>
+                  <li>• IoT platform expansion</li>
+                  <li>• 5G optimization</li>
+                </ul>
+                <Link href="/README.md#future-technologies" className="text-yellow-400 hover:text-yellow-300 text-sm font-semibold">
+                  Explore Research →
+                </Link>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-orange-400 mb-4 text-center">🌱 Sustainability & Green Tech</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Energy-efficient algorithms</li>
+                  <li>• Carbon footprint reduction</li>
+                  <li>• Renewable energy integration</li>
+                  <li>• Green cloud computing</li>
+                  <li>• Environmental monitoring</li>
+                </ul>
+                <Link href="/README.md#sustainability" className="text-orange-400 hover:text-orange-300 text-sm font-semibold">
+                  Learn More →
+                </Link>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-pink-400 mb-4 text-center">🤝 Open Source & Community</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Open source contributions</li>
+                  <li>• Developer community</li>
+                  <li>• Knowledge sharing</li>
+                  <li>• Collaborative innovation</li>
+                  <li>• Educational resources</li>
+                </ul>
+                <Link href="/CONTRIBUTING.md" className="text-pink-400 hover:text-pink-300 text-sm font-semibold">
+                  Join Community →
+                </Link>
+              </div>
+            </div>
+          </section>
+
           {/* Latest Autonomous Content */}
           <section className="mx-auto max-w-7xl px-6 pb-14">
             <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Latest Autonomous Content</h2>
