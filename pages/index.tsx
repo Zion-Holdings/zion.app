@@ -19,52 +19,58 @@ export default function HomePage() {
       title: 'Autonomous Cloud Systems',
       description: 'Self-healing CI/CD pipelines, intelligent build orchestration, and zero-downtime deployments.',
       color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
+      gradient: 'from-cyan-400 to-blue-500',
     },
     {
       icon: '🤖',
       title: 'AI-Powered Automation',
       description: '227+ autonomous agents, intelligent content generation, and predictive maintenance.',
       color: 'bg-gradient-to-br from-fuchsia-500 to-purple-600',
+      gradient: 'from-fuchsia-400 to-purple-500',
     },
     {
       icon: '🔄',
       title: 'Redundancy & Reliability',
       description: 'Multi-layer redundancy systems, intelligent failover, and 99.99% uptime guarantee.',
       color: 'bg-gradient-to-br from-green-500 to-emerald-600',
+      gradient: 'from-green-400 to-emerald-500',
     },
     {
       icon: '🚀',
       title: 'Performance Optimization',
       description: 'Real-time monitoring, automated scaling, and intelligent resource management.',
       color: 'bg-gradient-to-br from-orange-500 to-red-600',
+      gradient: 'from-orange-400 to-red-500',
     },
     {
       icon: '🔒',
       title: 'Security & Compliance',
       description: 'Advanced threat detection, automated security updates, and compliance monitoring.',
       color: 'bg-gradient-to-br from-indigo-500 to-purple-600',
+      gradient: 'from-indigo-400 to-purple-500',
     },
     {
       icon: '📊',
       title: 'Analytics & Insights',
       description: 'Comprehensive reporting, predictive analytics, and actionable business intelligence.',
       color: 'bg-gradient-to-br from-teal-500 to-cyan-600',
+      gradient: 'from-teal-400 to-cyan-500',
     },
   ];
 
   const technologyStack = [
-    { name: 'Next.js', category: 'Framework' },
-    { name: 'React', category: 'Library' },
-    { name: 'TypeScript', category: 'Language' },
-    { name: 'Tailwind CSS', category: 'Styling' },
-    { name: 'Node.js', category: 'Runtime' },
-    { name: 'PostgreSQL', category: 'Database' },
-    { name: 'Redis', category: 'Cache' },
-    { name: 'Docker', category: 'Containerization' },
-    { name: 'Kubernetes', category: 'Orchestration' },
-    { name: 'AWS', category: 'Cloud' },
-    { name: 'Terraform', category: 'Infrastructure' },
-    { name: 'Prometheus', category: 'Monitoring' },
+    { name: 'Next.js', category: 'Framework', icon: '⚡' },
+    { name: 'React', category: 'Library', icon: '⚛️' },
+    { name: 'TypeScript', category: 'Language', icon: '📘' },
+    { name: 'Tailwind CSS', category: 'Styling', icon: '🎨' },
+    { name: 'Node.js', category: 'Runtime', icon: '🟢' },
+    { name: 'PostgreSQL', category: 'Database', icon: '🐘' },
+    { name: 'Redis', category: 'Cache', icon: '🔴' },
+    { name: 'Docker', category: 'Containerization', icon: '🐳' },
+    { name: 'Kubernetes', category: 'Orchestration', icon: '☸️' },
+    { name: 'AWS', category: 'Cloud', icon: '☁️' },
+    { name: 'Terraform', category: 'Infrastructure', icon: '🏗️' },
+    { name: 'Prometheus', category: 'Monitoring', icon: '📊' },
   ];
 
   return (
@@ -101,13 +107,17 @@ export default function HomePage() {
       />
 
       {/* Technology Stack */}
-      <section className="py-24 bg-gradient-to-b from-cursor-dark to-cursor-darker">
+      <section className="section-padding bg-gradient-cursor-blue">
         <div className="container-cursor">
           <div className="text-center mb-20 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 gradient-text">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-cursor-blue/10 border border-cursor-blue/20 text-cursor-blue text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-cursor-blue rounded-full mr-2 animate-pulse" />
               Built with Modern Technology
+            </div>
+            <h2 className="text-responsive-lg font-bold mb-8 gradient-text text-shadow">
+              Technology Stack
             </h2>
-            <p className="text-xl lg:text-2xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-responsive-md text-gray-400 max-w-4xl mx-auto leading-relaxed">
               Our platform leverages the latest technologies and best practices to deliver exceptional performance and reliability.
             </p>
           </div>
@@ -116,22 +126,11 @@ export default function HomePage() {
             {technologyStack.map((tech, index) => (
               <Card
                 key={index}
-                className="text-center group hover:border-cursor-blue/30 hover:shadow-lg hover:shadow-cursor-blue/10"
+                className="card-hover text-center group border-gradient-blue"
                 style={{ animationDelay: `${(index * 0.05) + 0.2}s` }}
               >
                 <div className="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                  {tech.name === 'Next.js' && '⚡'}
-                  {tech.name === 'React' && '⚛️'}
-                  {tech.name === 'TypeScript' && '📘'}
-                  {tech.name === 'Tailwind CSS' && '🎨'}
-                  {tech.name === 'Node.js' && '🟢'}
-                  {tech.name === 'PostgreSQL' && '🐘'}
-                  {tech.name === 'Redis' && '🔴'}
-                  {tech.name === 'Docker' && '🐳'}
-                  {tech.name === 'Kubernetes' && '☸️'}
-                  {tech.name === 'AWS' && '☁️'}
-                  {tech.name === 'Terraform' && '🏗️'}
-                  {tech.name === 'Prometheus' && '📊'}
+                  {tech.icon}
                 </div>
                 <h3 className="font-semibold text-white mb-2 text-lg">{tech.name}</h3>
                 <p className="text-sm text-gray-400">{tech.category}</p>
@@ -142,12 +141,13 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-r from-cursor-blue to-blue-600">
-        <div className="container-cursor text-center">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8">
+      <section className="section-padding bg-gradient-to-r from-cursor-blue to-blue-600 relative overflow-hidden">
+        <div className="absolute inset-0 bg-dots opacity-10" />
+        <div className="container-cursor text-center relative z-10">
+          <h2 className="text-responsive-lg font-bold text-white mb-8 text-shadow-lg">
             Ready to Transform Your Business?
           </h2>
-          <p className="text-xl lg:text-2xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-responsive-md text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed">
             Join the future of autonomous technology and experience unprecedented efficiency, reliability, and innovation.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
@@ -155,7 +155,7 @@ export default function HomePage() {
               href="/contact"
               variant="secondary"
               size="lg"
-              className="bg-white text-cursor-blue hover:bg-gray-100 shadow-2xl"
+              className="bg-white text-cursor-blue hover:bg-gray-100 shadow-2xl hover-glow"
             >
               Start Your Journey
             </Button>

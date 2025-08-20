@@ -2,10 +2,11 @@ import React from 'react';
 import Card from '../ui/Card';
 
 interface Feature {
-  icon: React.ReactNode;
+  icon: string;
   title: string;
   description: string;
   color: string;
+  gradient: string;
   delay?: number;
 }
 
@@ -29,14 +30,19 @@ const Features: React.FC<FeaturesProps> = ({
   };
 
   return (
-    <section className="py-24 bg-gradient-to-b from-cursor-darker to-cursor-dark">
-      <div className="container-cursor">
+    <section className="section-padding bg-gradient-cursor relative overflow-hidden">
+      <div className="absolute inset-0 bg-grid opacity-10" />
+      <div className="container-cursor relative z-10">
         {/* Section Header */}
         <div className="text-center mb-20 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 gradient-text">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-cursor-blue/10 border border-cursor-blue/20 text-cursor-blue text-sm font-medium mb-6">
+            <span className="w-2 h-2 bg-cursor-blue rounded-full mr-2 animate-pulse" />
+            Platform Features
+          </div>
+          <h2 className="text-responsive-lg font-bold mb-8 gradient-text text-shadow">
             {title}
           </h2>
-          <p className="text-xl lg:text-2xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-responsive-md text-gray-400 max-w-4xl mx-auto leading-relaxed">
             {subtitle}
           </p>
         </div>
@@ -46,11 +52,14 @@ const Features: React.FC<FeaturesProps> = ({
           {features.map((feature, index) => (
             <Card
               key={index}
-              className="text-center group hover:border-cursor-blue/40 hover:shadow-2xl hover:shadow-cursor-blue/20"
+              className="card-hover text-center group border-gradient-blue"
               style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
             >
-              <div className={`w-20 h-20 mx-auto mb-8 rounded-2xl flex items-center justify-center text-3xl transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg ${feature.color}`}>
-                {feature.icon}
+              <div className="relative">
+                <div className={`w-20 h-20 mx-auto mb-8 rounded-2xl flex items-center justify-center text-3xl transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg bg-gradient-to-br ${feature.color} shadow-xl`}>
+                  {feature.icon}
+                </div>
+                <div className={`absolute -inset-2 bg-gradient-to-r from-transparent via-${feature.gradient} to-transparent rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-sm`} />
               </div>
               <h3 className="text-2xl font-bold mb-6 text-white group-hover:text-cursor-blue transition-colors duration-300">
                 {feature.title}

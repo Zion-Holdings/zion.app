@@ -23,7 +23,6 @@ const Header = () => {
     { name: 'Case Studies', href: '/case-studies' },
     { name: 'Blog', href: '/blog' },
     { name: 'Resources', href: '/resources' },
-    { name: 'Changes', href: '/changes' },
     { name: 'Contact', href: '/contact' },
   ];
 
@@ -31,9 +30,9 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-cursor-darker/90 backdrop-blur-xl border-b border-cursor-lighter/20'
+          ? 'bg-cursor-darker/95 backdrop-blur-xl border-b border-cursor-lighter/20 shadow-2xl'
           : 'bg-transparent'
       }`}
     >
@@ -41,29 +40,32 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-cursor-blue to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <span className="text-white font-bold text-xl">Z</span>
+            <div className="relative">
+              <div className="w-10 h-10 bg-gradient-to-br from-cursor-blue to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-2xl group-hover:shadow-cursor-blue/25">
+                <span className="text-white font-bold text-xl">Z</span>
+              </div>
+              <div className="absolute -inset-1 bg-gradient-to-r from-cursor-blue to-cursor-accent rounded-xl blur opacity-0 group-hover:opacity-75 transition-opacity duration-300 -z-10" />
             </div>
-            <span className="text-xl font-bold gradient-text-blue group-hover:from-cursor-blue group-hover:to-blue-400 transition-all duration-300">
+            <span className="text-xl font-bold gradient-text-blue group-hover:from-cursor-blue group-hover:to-cursor-accent transition-all duration-300">
               Zion Tech
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-1">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className={`text-sm font-medium transition-all duration-200 relative ${
+                className={`relative px-4 py-2 text-sm font-medium transition-all duration-200 rounded-lg ${
                   isActive(item.href)
-                    ? 'text-cursor-blue'
-                    : 'text-gray-300 hover:text-white'
+                    ? 'text-cursor-blue bg-cursor-blue/10'
+                    : 'text-gray-300 hover:text-white hover:bg-cursor-light/50'
                 }`}
               >
                 {item.name}
                 {isActive(item.href) && (
-                  <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-cursor-blue rounded-full" />
+                  <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-cursor-blue rounded-full animate-pulse" />
                 )}
               </Link>
             ))}
@@ -73,7 +75,7 @@ const Header = () => {
           <div className="hidden lg:flex items-center space-x-4">
             <Link
               href="/contact"
-              className="btn btn-primary hover-lift"
+              className="btn btn-primary hover-lift hover-glow px-6 py-2.5"
             >
               Get Started
             </Link>
@@ -112,7 +114,7 @@ const Header = () => {
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <div className="lg:hidden">
-            <div className="px-4 pt-4 pb-6 space-y-2 bg-cursor-darker/95 backdrop-blur-xl rounded-xl mt-2 border border-cursor-lighter/20">
+            <div className="px-4 pt-4 pb-6 space-y-2 bg-cursor-darker/95 backdrop-blur-xl rounded-xl mt-2 border border-cursor-lighter/20 shadow-2xl">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
