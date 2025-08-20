@@ -64,29 +64,35 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-black/90 backdrop-blur-xl border-t border-white/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+    <footer className="relative bg-black/95 backdrop-blur-xl border-t border-white/10 overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-dots opacity-20" />
+      
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand Section */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">Z</span>
+            <Link href="/" className="flex items-center space-x-3 mb-6 group">
+              <div className="relative">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-blue-500/25 transition-all duration-300 group-hover:scale-110">
+                  <span className="text-white font-bold text-2xl">Z</span>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-500 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl scale-110" />
               </div>
-              <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent group-hover:from-blue-300 group-hover:to-purple-300 transition-all duration-300">
                 Zion Tech
               </span>
             </Link>
-            <p className="text-gray-400 mb-6 max-w-md">
-                             The world&apos;s most advanced autonomous innovation hub delivering cutting-edge technology solutions, 
-               intelligent automation systems, and the future of cloud-native AI infrastructure.
+            <p className="text-gray-400 mb-8 max-w-md text-lg leading-relaxed">
+              The world&apos;s most advanced autonomous innovation hub delivering cutting-edge technology solutions, 
+              intelligent automation systems, and the future of cloud-native AI infrastructure.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
                   href={social.href}
-                  className="w-10 h-10 bg-gray-800 hover:bg-gray-700 rounded-lg flex items-center justify-center text-gray-400 hover:text-white transition-colors duration-200"
+                  className="w-12 h-12 bg-gray-800/50 hover:bg-gray-700/50 rounded-xl flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25 border border-gray-700/50 hover:border-gray-600/50"
                   aria-label={social.name}
                 >
                   {social.icon}
@@ -98,13 +104,13 @@ const Footer = () => {
           {/* Footer Links */}
           {footerSections.map((section) => (
             <div key={section.title}>
-              <h3 className="text-white font-semibold mb-4">{section.title}</h3>
-              <ul className="space-y-2">
+              <h3 className="text-white font-semibold mb-6 text-lg">{section.title}</h3>
+              <ul className="space-y-4">
                 {section.links.map((link) => (
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-gray-400 hover:text-white transition-colors duration-200"
+                      className="text-gray-400 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block"
                     >
                       {link.name}
                     </Link>
@@ -116,16 +122,16 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-white/10 mt-12 pt-8">
+        <div className="border-t border-white/10 mt-16 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
               © {currentYear} Zion Tech Group. All rights reserved.
             </p>
-            <div className="flex items-center space-x-6 mt-4 md:mt-0">
-              <Link href="/privacy" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">
+            <div className="flex items-center space-x-8 mt-4 md:mt-0">
+              <Link href="/privacy" className="text-gray-400 hover:text-white text-sm transition-all duration-300 hover:underline">
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">
+              <Link href="/terms" className="text-gray-400 hover:text-white text-sm transition-all duration-300 hover:underline">
                 Terms of Service
               </Link>
             </div>

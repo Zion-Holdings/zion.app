@@ -20,24 +20,32 @@ const Card: React.FC<CardProps> = ({
   style,
 }) => {
   const paddingClasses = {
-    sm: 'p-4',
-    md: 'p-6',
-    lg: 'p-8',
+    sm: 'p-6',
+    md: 'p-8',
+    lg: 'p-10',
   };
 
-  const baseClasses = `rounded-2xl border transition-all duration-300 ${
-    glass ? 'glass border-white/10' : 'bg-gray-900/50 border-gray-700'
+  const baseClasses = `rounded-2xl border transition-all duration-500 ${
+    glass ? 'glass border-white/8' : 'bg-gray-900/50 border-gray-700/50'
   } ${paddingClasses[padding]} ${className}`;
 
   const hoverClasses = hover
-    ? 'hover:border-white/20 hover:shadow-2xl hover:-translate-y-1 cursor-pointer'
+    ? 'hover:border-white/20 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2 cursor-pointer hover:bg-white/[0.02]'
     : '';
 
   const classes = `${baseClasses} ${hoverClasses}`;
 
   return (
     <div className={classes} onClick={onClick} style={style}>
-      {children}
+      {/* Background Glow Effect */}
+      {hover && (
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 hover:opacity-100 transition-opacity duration-500 rounded-2xl -z-10" />
+      )}
+      
+      {/* Content */}
+      <div className="relative z-10">
+        {children}
+      </div>
     </div>
   );
 };
