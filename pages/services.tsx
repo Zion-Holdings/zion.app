@@ -19,6 +19,8 @@ export default function ServicesPage() {
       color: 'bg-gradient-to-br from-fuchsia-500 to-purple-600',
       textColor: 'text-fuchsia-400',
       gradient: 'from-fuchsia-400 to-purple-500',
+      link: '/ai-content-generator',
+      cta: 'Try AI Content Generator'
     },
     {
       icon: '☁️',
@@ -34,6 +36,8 @@ export default function ServicesPage() {
       color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
       textColor: 'text-cyan-400',
       gradient: 'from-cyan-400 to-blue-500',
+      link: '/cloud-monitoring',
+      cta: 'Explore Cloud Monitoring'
     },
     {
       icon: '🔒',
@@ -79,6 +83,8 @@ export default function ServicesPage() {
       color: 'bg-gradient-to-br from-indigo-500 to-purple-600',
       textColor: 'text-indigo-400',
       gradient: 'from-indigo-400 to-purple-500',
+      link: '/devops-automation',
+      cta: 'Try DevOps Automation'
     },
     {
       icon: '🌐',
@@ -175,7 +181,7 @@ export default function ServicesPage() {
                     <p className="text-gray-400 leading-relaxed mb-6">
                       {service.description}
                     </p>
-                    <ul className="space-y-2">
+                    <ul className="space-y-2 mb-6">
                       {service.features.map((feature, featureIndex) => (
                         <li key={featureIndex} className="flex items-center text-gray-300">
                           <span className="w-2 h-2 bg-cursor-blue rounded-full mr-3 flex-shrink-0" />
@@ -183,6 +189,16 @@ export default function ServicesPage() {
                         </li>
                       ))}
                     </ul>
+                    {service.link && service.cta && (
+                      <Button
+                        href={service.link}
+                        variant="outline"
+                        size="sm"
+                        className="border-cursor-blue text-cursor-blue hover:bg-cursor-blue hover:text-white"
+                      >
+                        {service.cta}
+                      </Button>
+                    )}
                   </div>
                 </div>
               </Card>

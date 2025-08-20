@@ -107,8 +107,124 @@ export default function HomePage() {
         columns={3}
       />
 
-      {/* Technology Stack */}
+      {/* Micro SaaS Services */}
       <section className="py-24 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20 animate-fade-in">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-purple-500 rounded-full mr-2 animate-pulse" />
+              Professional Micro SaaS Services
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight">
+              Ready-to-Use Solutions
+            </h2>
+            <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              Deploy professional-grade SaaS services instantly. No development time, no maintenance overhead.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card className="group border border-gray-800 hover:border-purple-500/30 transition-all duration-300 hover:scale-105">
+              <div className="text-center p-6">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center text-white text-2xl mx-auto mb-6">
+                  🤖
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-4">AI Content Generator</h3>
+                <p className="text-gray-400 mb-6">Professional AI writing tool with plans from $19/month. Generate blog posts, social media, and marketing copy instantly.</p>
+                <div className="space-y-2 mb-6 text-sm text-gray-300">
+                  <div className="flex justify-between">
+                    <span>Starting Price:</span>
+                    <span className="text-green-400 font-semibold">$19/month</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Free Trial:</span>
+                    <span className="text-blue-400">7 days</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Market Leader:</span>
+                    <span className="text-purple-400">Jasper AI ($39/month)</span>
+                  </div>
+                </div>
+                <Button
+                  href="/ai-content-generator"
+                  variant="primary"
+                  size="lg"
+                  className="w-full bg-purple-600 hover:bg-purple-700 text-white"
+                >
+                  Start Free Trial
+                </Button>
+              </div>
+            </Card>
+
+            <Card className="group border border-gray-800 hover:border-green-500/30 transition-all duration-300 hover:scale-105">
+              <div className="text-center p-6">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center text-white text-2xl mx-auto mb-6">
+                  ☁️
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-4">Cloud Monitoring</h3>
+                <p className="text-gray-400 mb-6">Professional infrastructure monitoring starting at $29/month. Real-time alerts and AI-powered anomaly detection.</p>
+                <div className="space-y-2 mb-6 text-sm text-gray-300">
+                  <div className="flex justify-between">
+                    <span>Starting Price:</span>
+                    <span className="text-green-400 font-semibold">$29/month</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Free Trial:</span>
+                    <span className="text-blue-400">7 days</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Market Leader:</span>
+                    <span className="text-purple-400">Datadog ($15/host)</span>
+                  </div>
+                </div>
+                <Button
+                  href="/cloud-monitoring"
+                  variant="primary"
+                  size="lg"
+                  className="w-full bg-green-600 hover:bg-green-700 text-white"
+                >
+                  Start Free Trial
+                </Button>
+              </div>
+            </Card>
+
+            <Card className="group border border-gray-800 hover:border-blue-500/30 transition-all duration-300 hover:scale-105">
+              <div className="text-center p-6">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center text-white text-2xl mx-auto mb-6">
+                  🚀
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-4">DevOps Automation</h3>
+                <p className="text-gray-400 mb-6">Complete CI/CD automation platform starting at $39/month. Streamline your development workflow.</p>
+                <div className="space-y-2 mb-6 text-sm text-gray-300">
+                  <div className="flex justify-between">
+                    <span>Starting Price:</span>
+                    <span className="text-green-400 font-semibold">$39/month</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Free Trial:</span>
+                    <span className="text-blue-400">14 days</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Market Leader:</span>
+                    <span className="text-purple-400">GitHub Actions ($0.008/min)</span>
+                  </div>
+                </div>
+                <Button
+                  href="/devops-automation"
+                  variant="primary"
+                  size="lg"
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+                >
+                  Start Free Trial
+                </Button>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Technology Stack */}
+      <section className="py-24 bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20 animate-fade-in">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">

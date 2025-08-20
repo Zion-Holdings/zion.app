@@ -24,9 +24,13 @@ const Header = () => {
     { name: 'Resources', href: '/resources' },
     { name: 'Company', href: '/about' },
     { name: 'Pricing', href: '/pricing' },
+    { name: 'Compare', href: '/pricing-comparison' },
   ];
 
   const productDropdown = [
+    { name: 'AI Content Generator', href: '/ai-content-generator', description: 'Professional AI writing tool from $19/month' },
+    { name: 'Cloud Monitoring', href: '/cloud-monitoring', description: 'Infrastructure monitoring from $29/month' },
+    { name: 'DevOps Automation', href: '/devops-automation', description: 'CI/CD automation from $39/month' },
     { name: 'AI Code Assistant', href: '/ai-assistant', description: 'Intelligent code completion and suggestions' },
     { name: 'Cloud Platform', href: '/cloud-platform', description: 'Scalable cloud infrastructure' },
     { name: 'Automation Hub', href: '/automation', description: 'AI-powered workflow automation' },
