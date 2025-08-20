@@ -311,6 +311,36 @@ export default function HomePage() {
                 <h3 className="text-lg font-semibold text-green-400 mb-2">Contact</h3>
                 <p className="text-white/70 text-sm">Get in touch</p>
               </Link>
+              
+              <Link href="/privacy" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-red-400/30 transition-all duration-300 text-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-red-400 to-pink-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-xl">📜</span>
+                </div>
+                <h3 className="text-lg font-semibold text-red-400 mb-2">Privacy</h3>
+                <p className="text-white/70 text-sm">Trust & compliance</p>
+              </Link>
+            </div>
+          </section>
+
+          {/* Use Cases Tailored For You */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">🎯 Use Cases Tailored For You</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <Link href="/case-studies" className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300">
+                <h3 className="text-xl font-bold text-cyan-400 mb-2">Zero-Downtime Platforms</h3>
+                <p className="text-white/80 text-sm mb-3">Deliver 99.99% availability with multi-layer redundancy and automated failover.</p>
+                <span className="text-cyan-300 text-sm font-semibold">View case studies →</span>
+              </Link>
+              <Link href="/services" className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:border-fuchsia-400/30 transition-all duration-300">
+                <h3 className="text-xl font-bold text-fuchsia-400 mb-2">AI Content & Automation</h3>
+                <p className="text-white/80 text-sm mb-3">Deploy autonomous agents for content generation, QA, and continuous optimization.</p>
+                <span className="text-fuchsia-300 text-sm font-semibold">See AI services →</span>
+              </Link>
+              <Link href="/resources" className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:border-green-400/30 transition-all duration-300">
+                <h3 className="text-xl font-bold text-green-400 mb-2">Enterprise-Grade Security</h3>
+                <p className="text-white/80 text-sm mb-3">Adopt bank-grade security with automated scanning, zero-trust policies, and audits.</p>
+                <span className="text-green-300 text-sm font-semibold">Explore resources →</span>
+              </Link>
             </div>
           </section>
 
@@ -557,6 +587,21 @@ export default function HomePage() {
                   View Performance Guide →
                 </Link>
               </div>
+            </div>
+          </section>
+
+          {/* Quick Links */}
+          <section className="mx-auto max-w-7xl px-6 pb-8">
+            <h2 className="text-center text-2xl font-bold tracking-wide text-white/90 mb-6">🔎 Quick Links</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 text-sm">
+              <Link href="/about" className="text-white/80 hover:text-cyan-300">About</Link>
+              <Link href="/services" className="text-white/80 hover:text-cyan-300">Services</Link>
+              <Link href="/resources" className="text-white/80 hover:text-cyan-300">Resources</Link>
+              <Link href="/case-studies" className="text-white/80 hover:text-cyan-300">Case Studies</Link>
+              <Link href="/blog" className="text-white/80 hover:text-cyan-300">Blog</Link>
+              <Link href="/privacy" className="text-white/80 hover:text-cyan-300">Privacy</Link>
+              <Link href="/contact" className="text-white/80 hover:text-cyan-300">Contact</Link>
+              <Link href="/README.md" className="text-white/80 hover:text-cyan-300">Documentation</Link>
             </div>
           </section>
 
