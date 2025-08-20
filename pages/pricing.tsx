@@ -243,7 +243,7 @@ export default function PricingPage() {
                 Specialized Tools & Services
               </h2>
               <p className="text-xl text-gray-400 max-w-4xl mx-auto">
-                Discover our 12 specialized micro SaaS solutions covering every essential business operation. 
+                Discover our 20 specialized micro SaaS solutions covering every essential business operation. 
                 Focused solutions for specific business needs with transparent, competitive pricing and 14-day free trials.
               </p>
             </div>

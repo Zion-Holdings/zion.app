@@ -121,9 +121,11 @@ export default function HomePage() {
               Specialized Tools for Every Business Need
             </h2>
             <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
-              12 specialized micro SaaS solutions covering content creation, design systems, performance monitoring, 
+              20 specialized micro SaaS solutions covering content creation, design systems, performance monitoring, 
               SEO automation, chatbots, business intelligence, email marketing, social media management, 
-              customer feedback, billing, project management, and API infrastructure. Focused value with transparent pricing.
+              customer feedback, billing, project management, API infrastructure, video generation, e-commerce analytics,
+              HR management, legal automation, inventory management, customer support, financial planning, learning management,
+              and real estate management. Focused value with transparent pricing.
             </p>
           </div>
 
@@ -146,7 +148,7 @@ export default function HomePage() {
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-500">14-day free trial</span>
                   <Button
-                    href="https://contentgen.zion.app"
+                    href="https://contentgen.ziontechgroup.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     size="sm"
@@ -176,7 +178,7 @@ export default function HomePage() {
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-500">14-day free trial</span>
                   <Button
-                    href="https://design.zion.app"
+                    href="https://design.ziontechgroup.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     size="sm"
@@ -206,7 +208,7 @@ export default function HomePage() {
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-500">14-day free trial</span>
                   <Button
-                    href="https://monitor.zion.app"
+                    href="https://monitor.ziontechgroup.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     size="sm"
