@@ -85,6 +85,15 @@ a {
   }
 }
 
+/* Tilt on hover effect */
+.tilt-on-hover {
+  transition: transform 0.2s ease-in-out;
+}
+
+.tilt-on-hover:hover {
+  transform: rotate(1deg) scale(1.02);
+}
+
 /* Responsive utilities */
 @media (max-width: 768px) {
   .mobile-hidden {
