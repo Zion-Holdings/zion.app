@@ -191,6 +191,80 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* Specialized Solutions */}
+      <section className="section-padding bg-gradient-cursor-accent">
+        <div className="container-cursor">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-cursor-blue/10 border border-cursor-blue/20 text-cursor-blue text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-cursor-blue rounded-full mr-2 animate-pulse" />
+              Specialized Solutions
+            </div>
+            <h2 className="text-responsive-lg font-bold mb-8 gradient-text text-shadow">
+              Explore Our Specialized Service Categories
+            </h2>
+            <p className="text-responsive-md text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              Discover our curated collections of specialized tools and services designed to solve specific business challenges.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card className="card-hover group border-gradient-blue text-center">
+              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <span className="text-3xl">🚀</span>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">Micro SaaS Services</h3>
+              <p className="text-gray-400 mb-6 leading-relaxed">
+                Curated collection of innovative micro SaaS solutions for modern businesses. From automation to analytics, find the perfect tool for your needs.
+              </p>
+              <Button
+                href="/micro-saas"
+                variant="outline"
+                size="lg"
+                className="border-cursor-blue text-cursor-blue hover:bg-cursor-blue hover:text-white"
+              >
+                Explore Micro SaaS
+              </Button>
+            </Card>
+
+            <Card className="card-hover group border-gradient-blue text-center">
+              <div className="w-20 h-20 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <span className="text-3xl">🔌</span>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">API Tools & Services</h3>
+              <p className="text-gray-400 mb-6 leading-relaxed">
+                Powerful APIs and developer tools for building modern applications. From AI-powered code generation to real-time data synchronization.
+              </p>
+              <Button
+                href="/api-tools"
+                variant="outline"
+                size="lg"
+                className="border-cursor-blue text-cursor-blue hover:bg-cursor-blue hover:text-white"
+              >
+                Browse API Tools
+              </Button>
+            </Card>
+
+            <Card className="card-hover group border-gradient-blue text-center">
+              <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <span className="text-3xl">🤖</span>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">AI Tools & Automation</h3>
+              <p className="text-gray-400 mb-6 leading-relaxed">
+                Cutting-edge AI tools and automation solutions that transform how you work. From autonomous agents to custom model training.
+              </p>
+              <Button
+                href="/ai-tools"
+                variant="outline"
+                size="lg"
+                className="border-cursor-blue text-cursor-blue hover:bg-cursor-blue hover:text-white"
+              >
+                Discover AI Tools
+              </Button>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Technology Stack */}
       <section className="section-padding bg-gradient-cursor">
         <div className="container-cursor">

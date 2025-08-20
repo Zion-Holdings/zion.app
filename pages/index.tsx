@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Hero from '../components/sections/Hero';
 import Features from '../components/sections/Features';
+import FeaturedServices from '../components/sections/FeaturedServices';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight } from 'lucide-react';
@@ -107,8 +108,85 @@ export default function HomePage() {
         columns={3}
       />
 
-      {/* Technology Stack */}
+      {/* Featured Services */}
+      <FeaturedServices />
+
+      {/* Specialized Solutions Showcase */}
       <section className="py-24 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20 animate-fade-in">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse" />
+              Specialized Solutions
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight">
+              Discover Our Curated Collections
+            </h2>
+            <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              Explore our specialized service categories designed to solve specific business challenges with proven solutions.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card className="text-center group border border-gray-800 hover:border-blue-500/30 transition-all duration-300">
+              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <span className="text-3xl">🚀</span>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">Micro SaaS Services</h3>
+              <p className="text-gray-400 mb-6 leading-relaxed">
+                Curated collection of innovative micro SaaS solutions for modern businesses. From automation to analytics, find the perfect tool for your needs.
+              </p>
+              <Button
+                href="/micro-saas"
+                variant="outline"
+                size="lg"
+                className="border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white"
+              >
+                Explore Micro SaaS
+              </Button>
+            </Card>
+
+            <Card className="text-center group border border-gray-800 hover:border-blue-500/30 transition-all duration-300">
+              <div className="w-20 h-20 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <span className="text-3xl">🔌</span>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">API Tools & Services</h3>
+              <p className="text-gray-400 mb-6 leading-relaxed">
+                Powerful APIs and developer tools for building modern applications. From AI-powered code generation to real-time data synchronization.
+              </p>
+              <Button
+                href="/api-tools"
+                variant="outline"
+                size="lg"
+                className="border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white"
+              >
+                Browse API Tools
+              </Button>
+            </Card>
+
+            <Card className="text-center group border border-gray-800 hover:border-blue-500/30 transition-all duration-300">
+              <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <span className="text-3xl">🤖</span>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">AI Tools & Automation</h3>
+              <p className="text-gray-400 mb-6 leading-relaxed">
+                Cutting-edge AI tools and automation solutions that transform how you work. From autonomous agents to custom model training.
+              </p>
+              <Button
+                href="/ai-tools"
+                variant="outline"
+                size="lg"
+                className="border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white"
+              >
+                Discover AI Tools
+              </Button>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Technology Stack */}
+      <section className="py-24 bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20 animate-fade-in">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
