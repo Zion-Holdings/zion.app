@@ -32,38 +32,42 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-black/80 backdrop-blur-xl border-b border-white/10 shadow-glow'
+          ? 'bg-cursor-darker/95 backdrop-blur-xl border-b border-cursor-lighter/20 shadow-2xl'
           : 'bg-transparent'
       }`}
     >
-      <div className="container-wide">
-        <div className="flex items-center justify-between h-20 lg:h-24">
+      <div className="container-cursor">
+        <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
-            <div className="w-12 h-12 bg-gradient-to-br from-cursor-blue to-blue-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-glow">
-              <span className="text-white font-bold text-2xl">Z</span>
+            <div className="relative">
+              <div className="w-10 h-10 bg-gradient-to-br from-cursor-blue to-cursor-accent rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-cursor-blue/50">
+                <span className="text-white font-bold text-xl">Z</span>
+              </div>
+              <div className="absolute -inset-1 bg-gradient-to-r from-cursor-blue to-cursor-accent rounded-2xl blur opacity-20 group-hover:opacity-40 transition-opacity duration-300 -z-10"></div>
             </div>
-            <span className="text-2xl font-bold gradient-text-blue group-hover:from-cursor-blue group-hover:to-blue-400 transition-all duration-300">
+            <span className="text-xl font-bold gradient-text-blue group-hover:from-cursor-blue group-hover:to-cursor-accent transition-all duration-300">
               Zion Tech
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-1">
+          <nav className="hidden lg:flex items-center space-x-8">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className={`px-4 py-2 text-sm font-medium transition-all duration-300 relative rounded-xl ${
+                className={`text-sm font-medium transition-all duration-300 relative group ${
                   isActive(item.href)
-                    ? 'text-cursor-blue bg-white/5 backdrop-blur-sm'
-                    : 'text-gray-300 hover:text-white hover:bg-white/5'
+                    ? 'text-cursor-blue'
+                    : 'text-gray-300 hover:text-white'
                 }`}
               >
                 {item.name}
                 {isActive(item.href) && (
-                  <div className="absolute inset-0 bg-gradient-to-r from-cursor-blue/20 to-transparent rounded-xl" />
+                  <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-cursor-blue to-cursor-accent rounded-full" />
                 )}
+                <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-cursor-blue to-cursor-accent rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
               </Link>
             ))}
           </nav>
@@ -72,7 +76,7 @@ const Header = () => {
           <div className="hidden lg:flex items-center space-x-4">
             <Link
               href="/contact"
-              className="btn btn-primary hover-lift shadow-glow"
+              className="btn btn-primary hover-lift"
             >
               Get Started
             </Link>
@@ -81,7 +85,7 @@ const Header = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-3 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-all duration-200"
+            className="lg:hidden p-2 rounded-xl text-gray-400 hover:text-white hover:bg-cursor-light transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cursor-blue focus:ring-offset-2 focus:ring-offset-black"
             aria-label="Toggle mobile menu"
           >
             <svg
@@ -109,25 +113,25 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-black/90 backdrop-blur-xl border-t border-white/10 rounded-b-2xl">
+          <div className="lg:hidden animate-fade-in">
+            <div className="px-4 pt-4 pb-6 space-y-2 bg-cursor-darker/98 backdrop-blur-xl rounded-2xl mt-2 border border-cursor-lighter/20 shadow-2xl">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`block px-3 py-2 text-base font-medium rounded-xl transition-all duration-200 ${
+                  className={`block px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
                     isActive(item.href)
-                      ? 'text-cursor-blue bg-white/5'
-                      : 'text-gray-300 hover:text-white hover:bg-white/5'
+                      ? 'text-cursor-blue bg-cursor-blue/10 border border-cursor-blue/20 shadow-lg'
+                      : 'text-gray-300 hover:text-white hover:bg-cursor-light hover:shadow-md'
                   }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <div className="pt-4">
+              <div className="pt-4 border-t border-cursor-lighter/20">
                 <Link
                   href="/contact"
                   className="btn btn-primary w-full justify-center"

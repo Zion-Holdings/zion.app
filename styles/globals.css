@@ -2,45 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Import Inter font for modern typography */
+/* Import modern fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
-/* CSS Variables for modern Cursor.com-inspired theming */
+/* CSS Variables for modern theming */
 :root {
-  --background: #000000;
+  --background: #0a0a0a;
   --foreground: #ffffff;
   --primary: #007acc;
   --primary-foreground: #ffffff;
-  --secondary: #0a0a0a;
+  --secondary: #1e1e1e;
   --secondary-foreground: #f9fafb;
-  --accent: #007acc;
-  --accent-foreground: #ffffff;
-  --muted: #1a1a1a;
-  --muted-foreground: #a1a1aa;
-  --border: #262626;
-  --input: #1a1a1a;
+  --accent: #00d4aa;
+  --accent-foreground: #000000;
+  --muted: #2d2d2d;
+  --muted-foreground: #9ca3af;
+  --border: #404040;
+  --input: #2d2d2d;
   --ring: #007acc;
   --radius: 0.75rem;
   --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   
-  /* Modern color palette */
+  /* Cursor.com color palette */
   --cursor-blue: #007acc;
   --cursor-blue-hover: #005a9e;
-  --cursor-dark: #0a0a0a;
-  --cursor-darker: #000000;
-  --cursor-light: #1a1a1a;
-  --cursor-lighter: #262626;
-  
-  /* Additional modern colors */
-  --cursor-purple: #8b5cf6;
-  --cursor-green: #10b981;
-  --cursor-orange: #f59e0b;
-  --cursor-red: #ef4444;
-  --cursor-cyan: #06b6d4;
-  
-  /* Glass morphism */
-  --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.1);
+  --cursor-blue-light: #4fc3f7;
+  --cursor-dark: #1e1e1e;
+  --cursor-darker: #0a0a0a;
+  --cursor-light: #2d2d2d;
+  --cursor-lighter: #404040;
+  --cursor-accent: #00d4aa;
+  --cursor-accent-hover: #00b894;
+  --cursor-success: #00d4aa;
+  --cursor-warning: #ffa726;
+  --cursor-error: #ef5350;
+  --cursor-info: #42a5f5;
 }
 
 /* Base styles */
@@ -52,6 +49,7 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
@@ -68,26 +66,32 @@ body {
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
 }
 
 h1 {
-  font-size: clamp(3rem, 8vw, 6rem);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
   font-weight: 900;
-  line-height: 0.9;
+  background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 h2 {
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-size: clamp(2rem, 4vw, 3.5rem);
   font-weight: 800;
-  line-height: 1;
+  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 h3 {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
   font-weight: 700;
-  line-height: 1.1;
 }
 
 /* Links */
@@ -95,6 +99,7 @@ a {
   color: inherit;
   text-decoration: none;
   transition: all 0.2s ease;
+  position: relative;
 }
 
 a:hover {
@@ -103,7 +108,7 @@ a:hover {
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -112,7 +117,7 @@ a:hover {
 
 ::-webkit-scrollbar-thumb {
   background: var(--cursor-lighter);
-  border-radius: 3px;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -131,24 +136,32 @@ a:hover {
 }
 
 .btn-primary {
-  @apply bg-gradient-to-r from-cursor-blue to-blue-600 hover:from-cursor-blue-hover hover:to-blue-700 text-white shadow-lg hover:shadow-xl hover:-translate-y-1 border-0 hover:shadow-cursor-blue/25;
+  @apply bg-gradient-to-r from-cursor-blue to-blue-600 hover:from-cursor-blue-hover hover:to-blue-700 text-white shadow-lg hover:shadow-xl hover:-translate-y-1 border-0 px-6 py-3;
 }
 
 .btn-secondary {
-  @apply bg-cursor-light hover:bg-cursor-lighter text-white border border-cursor-lighter hover:border-cursor-blue;
+  @apply bg-cursor-light hover:bg-cursor-lighter text-white border border-cursor-lighter hover:border-cursor-blue px-6 py-3;
 }
 
 .btn-outline {
-  @apply bg-transparent border border-cursor-lighter text-gray-300 hover:bg-cursor-light hover:border-cursor-blue hover:text-white;
+  @apply bg-transparent border border-cursor-lighter text-gray-300 hover:bg-cursor-light hover:border-cursor-blue hover:text-white px-6 py-3;
 }
 
 .btn-ghost {
-  @apply bg-transparent hover:bg-cursor-light text-gray-300 hover:text-white;
+  @apply bg-transparent hover:bg-cursor-light text-gray-300 hover:text-white px-4 py-2;
+}
+
+.btn-accent {
+  @apply bg-gradient-to-r from-cursor-accent to-green-500 hover:from-cursor-accent-hover hover:to-green-600 text-black font-semibold px-6 py-3 shadow-lg hover:shadow-xl hover:-translate-y-1;
 }
 
 /* Card styles */
 .card {
-  @apply bg-cursor-dark/50 backdrop-blur-xl border border-cursor-lighter/20 rounded-2xl p-8 transition-all duration-300 hover:border-cursor-blue/30 hover:shadow-2xl hover:shadow-cursor-blue/10 hover:-translate-y-1;
+  @apply bg-cursor-dark border border-cursor-lighter rounded-2xl p-6 transition-all duration-300 hover:border-cursor-blue/30 hover:shadow-lg hover:shadow-cursor-blue/10 backdrop-blur-sm;
+}
+
+.card-hover {
+  @apply hover:scale-105 hover:shadow-2xl hover:shadow-cursor-blue/20;
 }
 
 /* Glass morphism effect */
@@ -156,15 +169,15 @@ a:hover {
   @apply bg-white/5 backdrop-blur-xl border border-white/10;
 }
 
-.glass-card {
-  @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl;
+.glass-dark {
+  @apply bg-black/20 backdrop-blur-xl border border-white/5;
 }
 
 /* Animation classes */
 @keyframes fade-in {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -195,7 +208,7 @@ a:hover {
 @keyframes slide-in-left {
   from {
     opacity: 0;
-    transform: translateX(-50px);
+    transform: translateX(-30px);
   }
   to {
     opacity: 1;
@@ -206,7 +219,7 @@ a:hover {
 @keyframes slide-in-right {
   from {
     opacity: 0;
-    transform: translateX(50px);
+    transform: translateX(30px);
   }
   to {
     opacity: 1;
@@ -224,7 +237,7 @@ a:hover {
 }
 
 .animate-fade-in {
-  animation: fade-in 1s ease-out forwards;
+  animation: fade-in 0.8s ease-out forwards;
 }
 
 .animate-float {
@@ -232,15 +245,15 @@ a:hover {
 }
 
 .animate-scale-in {
-  animation: scale-in 0.8s ease-out forwards;
+  animation: scale-in 0.6s ease-out forwards;
 }
 
 .animate-slide-in-left {
-  animation: slide-in-left 1s ease-out forwards;
+  animation: slide-in-left 0.8s ease-out forwards;
 }
 
 .animate-slide-in-right {
-  animation: slide-in-right 1s ease-out forwards;
+  animation: slide-in-right 0.8s ease-out forwards;
 }
 
 .animate-glow {
@@ -249,12 +262,16 @@ a:hover {
 
 /* Hover effects */
 .hover-lift {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .hover-lift:hover {
   transform: translateY(-4px);
-  box-shadow: 0 25px 50px rgba(0, 122, 204, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 122, 204, 0.15);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 30px rgba(0, 122, 204, 0.4);
 }
 
 /* Gradient text utilities */
@@ -266,12 +283,8 @@ a:hover {
   @apply bg-gradient-to-r from-cursor-blue via-blue-400 to-blue-300 bg-clip-text text-transparent;
 }
 
-.gradient-text-purple {
-  @apply bg-gradient-to-r from-cursor-purple via-purple-400 to-purple-300 bg-clip-text text-transparent;
-}
-
-.gradient-text-green {
-  @apply bg-gradient-to-r from-cursor-green via-green-400 to-green-300 bg-clip-text text-transparent;
+.gradient-text-accent {
+  @apply bg-gradient-to-r from-cursor-accent via-green-400 to-emerald-300 bg-clip-text text-transparent;
 }
 
 /* Responsive utilities */
@@ -279,8 +292,8 @@ a:hover {
   @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
 }
 
-.container-wide {
-  @apply max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8;
+.container-narrow {
+  @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
 }
 
 /* Custom cursor styles */
@@ -292,40 +305,68 @@ a:hover {
   @apply w-4 h-4 border border-cursor-blue rounded-full;
 }
 
-/* Background patterns */
-.bg-grid {
-  background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  background-size: 50px 50px;
+/* Section spacing */
+.section-padding {
+  @apply py-16 lg:py-24;
 }
 
-.bg-dots {
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-  background-size: 20px 20px;
+.section-padding-sm {
+  @apply py-12 lg:py-16;
 }
 
-/* Modern shadows */
-.shadow-glow {
-  box-shadow: 0 0 40px rgba(0, 122, 204, 0.3);
+.section-padding-lg {
+  @apply py-20 lg:py-32;
 }
 
-.shadow-glow-lg {
-  box-shadow: 0 0 80px rgba(0, 122, 204, 0.4);
+/* Grid layouts */
+.grid-auto-fit {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-/* Gradient backgrounds */
-.bg-gradient-radial {
-  background: radial-gradient(ellipse at center, rgba(0, 122, 204, 0.1) 0%, transparent 70%);
+.grid-auto-fill {
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 
-.bg-gradient-mesh {
-  background: 
-    radial-gradient(at 40% 20%, rgba(0, 122, 204, 0.1) 0px, transparent 50%),
-    radial-gradient(at 80% 0%, rgba(139, 92, 246, 0.1) 0px, transparent 50%),
-    radial-gradient(at 0% 50%, rgba(16, 185, 129, 0.1) 0px, transparent 50%),
-    radial-gradient(at 80% 50%, rgba(245, 158, 11, 0.1) 0px, transparent 50%),
-    radial-gradient(at 0% 100%, rgba(6, 182, 212, 0.1) 0px, transparent 50%),
-    radial-gradient(at 80% 100%, rgba(239, 68, 68, 0.1) 0px, transparent 50%),
-    radial-gradient(at 0% 0%, rgba(0, 122, 204, 0.1) 0px, transparent 50%);
+/* Text utilities */
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+/* Focus visible */
+.focus-visible {
+  @apply focus:outline-none focus:ring-2 focus:ring-cursor-blue focus:ring-offset-2 focus:ring-offset-black;
+}
+
+/* Selection */
+::selection {
+  background-color: rgba(0, 122, 204, 0.2);
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background-color: rgba(0, 122, 204, 0.2);
+  color: #ffffff;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ffffff;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

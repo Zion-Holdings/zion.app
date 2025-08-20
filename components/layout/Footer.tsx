@@ -64,24 +64,27 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-black/90 backdrop-blur-xl border-t border-white/10 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-mesh opacity-20" />
-      <div className="absolute inset-0 bg-grid opacity-10" />
+    <footer className="relative bg-gradient-to-b from-cursor-darker to-black border-t border-cursor-lighter/20 overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,122,204,0.1),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(0,212,170,0.1),transparent_50%)]"></div>
       
-      <div className="container-wide py-20 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-16">
+      <div className="container-cursor py-20 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center space-x-3 mb-8 group">
-              <div className="w-14 h-14 bg-gradient-to-br from-cursor-blue to-blue-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-glow">
-                <span className="text-white font-bold text-2xl">Z</span>
+              <div className="relative">
+                <div className="w-12 h-12 bg-gradient-to-br from-cursor-blue to-cursor-accent rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-cursor-blue/50">
+                  <span className="text-white font-bold text-2xl">Z</span>
+                </div>
+                <div className="absolute -inset-1 bg-gradient-to-r from-cursor-blue to-cursor-accent rounded-2xl blur opacity-20 group-hover:opacity-40 transition-opacity duration-300 -z-10"></div>
               </div>
-              <span className="text-3xl font-bold gradient-text-blue group-hover:from-cursor-blue group-hover:to-blue-400 transition-all duration-300">
+              <span className="text-2xl font-bold gradient-text-blue group-hover:from-cursor-blue group-hover:to-cursor-accent transition-all duration-300">
                 Zion Tech
               </span>
             </Link>
-            <p className="text-gray-400 mb-10 max-w-md leading-relaxed text-lg font-light">
+            <p className="text-gray-400 mb-8 max-w-md leading-relaxed text-lg">
               The world&apos;s most advanced autonomous innovation hub delivering cutting-edge technology solutions, 
               intelligent automation systems, and the future of cloud-native AI infrastructure.
             </p>
@@ -90,7 +93,7 @@ const Footer = () => {
                 <a
                   key={social.name}
                   href={social.href}
-                  className="w-12 h-12 bg-white/10 hover:bg-cursor-blue rounded-2xl flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:shadow-glow backdrop-blur-sm"
+                  className="w-12 h-12 bg-cursor-light/50 hover:bg-cursor-blue rounded-2xl flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-cursor-blue/25 backdrop-blur-sm border border-cursor-lighter/20"
                   aria-label={social.name}
                 >
                   {social.icon}
@@ -102,15 +105,18 @@ const Footer = () => {
           {/* Footer Links */}
           {footerSections.map((section) => (
             <div key={section.title}>
-              <h3 className="text-lg font-semibold text-white mb-6">{section.title}</h3>
+              <h3 className="text-white font-semibold mb-6 text-lg">{section.title}</h3>
               <ul className="space-y-4">
                 {section.links.map((link) => (
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-gray-400 hover:text-white transition-colors duration-200 font-light"
+                      className="text-gray-400 hover:text-cursor-blue transition-all duration-300 hover:translate-x-1 inline-block group"
                     >
-                      {link.name}
+                      <span className="relative">
+                        {link.name}
+                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cursor-blue to-cursor-accent transition-all duration-300 group-hover:w-full"></span>
+                      </span>
                     </Link>
                   </li>
                 ))}
@@ -120,20 +126,19 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-white/10 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-500 text-sm font-light">
-            © {currentYear} Zion Tech Group. All rights reserved.
-          </p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link href="/privacy" className="text-gray-500 hover:text-white text-sm font-light transition-colors duration-200">
-              Privacy
-            </Link>
-            <Link href="/terms" className="text-gray-500 hover:text-white text-sm font-light transition-colors duration-200">
-              Terms
-            </Link>
-            <Link href="/cookies" className="text-gray-500 hover:text-white text-sm font-light transition-colors duration-200">
-              Cookies
-            </Link>
+        <div className="border-t border-cursor-lighter/20 mt-16 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-gray-400 text-sm">
+              © {currentYear} Zion Tech Group. All rights reserved.
+            </p>
+            <div className="flex items-center space-x-8 mt-4 md:mt-0">
+              <Link href="/privacy" className="text-gray-400 hover:text-cursor-blue text-sm transition-colors duration-300 hover:underline">
+                Privacy Policy
+              </Link>
+              <Link href="/terms" className="text-gray-400 hover:text-cursor-blue text-sm transition-colors duration-300 hover:underline">
+                Terms of Service
+              </Link>
+            </div>
           </div>
         </div>
       </div>

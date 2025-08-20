@@ -6,6 +6,7 @@ interface CardProps {
   style?: React.CSSProperties;
   onClick?: () => void;
   hover?: boolean;
+  variant?: 'default' | 'glass' | 'elevated';
 }
 
 const Card: React.FC<CardProps> = ({
@@ -14,12 +15,20 @@ const Card: React.FC<CardProps> = ({
   style,
   onClick,
   hover = true,
+  variant = 'default',
 }) => {
-  const baseClasses = 'bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 transition-all duration-500';
-  const hoverClasses = hover ? 'hover:border-cursor-blue/30 hover:shadow-glow hover:shadow-cursor-blue/20 hover:-translate-y-2 hover:bg-white/10' : '';
+  const baseClasses = 'bg-cursor-dark border border-cursor-lighter rounded-2xl p-6 transition-all duration-500 backdrop-blur-sm relative overflow-hidden';
+  
+  const variantClasses = {
+    default: 'bg-cursor-dark',
+    glass: 'bg-white/5 backdrop-blur-xl border-white/10',
+    elevated: 'bg-cursor-dark shadow-lg',
+  };
+  
+  const hoverClasses = hover ? 'hover:border-cursor-blue/30 hover:shadow-xl hover:shadow-cursor-blue/15 hover:-translate-y-2 group' : '';
   const clickableClasses = onClick ? 'cursor-pointer' : '';
   
-  const classes = `${baseClasses} ${hoverClasses} ${clickableClasses} ${className}`;
+  const classes = `${baseClasses} ${variantClasses[variant]} ${hoverClasses} ${clickableClasses} ${className}`;
 
   return (
     <div
@@ -27,7 +36,25 @@ const Card: React.FC<CardProps> = ({
       style={style}
       onClick={onClick}
     >
-      {children}
+      {/* Hover background effect */}
+      {hover && (
+        <div className="absolute inset-0 bg-gradient-to-br from-cursor-blue/5 via-transparent to-cursor-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+      )}
+      
+      {/* Subtle border glow on hover */}
+      {hover && (
+        <div className="absolute inset-0 border border-cursor-blue/0 group-hover:border-cursor-blue/20 rounded-2xl transition-all duration-500 group-hover:shadow-cursor-blue/10"></div>
+      )}
+      
+      {/* Content */}
+      <div className="relative z-10">
+        {children}
+      </div>
+      
+      {/* Corner accent */}
+      {hover && (
+        <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-cursor-blue/10 to-transparent rounded-bl-2xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+      )}
     </div>
   );
 };
