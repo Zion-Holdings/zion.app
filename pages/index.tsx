@@ -7,9 +7,9 @@ export default function HomePage() {
     <>
       <Head>
         <title>Zion Tech Group — Autonomous Innovation Hub & AI-Powered Cloud Platform</title>
-        <meta name="description" content="Leading-edge autonomous technology platform with 227+ automations, AI-powered cloud systems, and comprehensive redundancy infrastructure. Experience the future of autonomous innovation." />
+        <meta name="description" content="Leading-edge autonomous technology platform with 227+ automations, AI-powered cloud systems, comprehensive redundancy infrastructure, and 2960+ pages of content. Experience the future of autonomous innovation." />
         <meta property="og:title" content="Zion Tech Group — Autonomous Innovation Hub & AI-Powered Cloud Platform" />
-        <meta property="og:description" content="Leading-edge autonomous technology platform with 227+ automations, AI-powered cloud systems, and comprehensive redundancy infrastructure." />
+        <meta property="og:description" content="Leading-edge autonomous technology platform with 227+ automations, AI-powered cloud systems, comprehensive redundancy infrastructure, and 2960+ pages of content." />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       
@@ -69,6 +69,11 @@ export default function HomePage() {
                   <li>• Automated dependency management</li>
                   <li>• Real-time performance monitoring</li>
                 </ul>
+                <div className="mt-4 text-center">
+                  <Link href="/automation" className="text-cyan-400 hover:text-cyan-300 text-sm font-medium">
+                    Explore Automation →
+                  </Link>
+                </div>
               </div>
 
               {/* AI-Powered Automation */}
@@ -83,6 +88,11 @@ export default function HomePage() {
                   <li>• Automated quality assurance</li>
                   <li>• Smart error recovery</li>
                 </ul>
+                <div className="mt-4 text-center">
+                  <Link href="/reports" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-medium">
+                    View AI Reports →
+                  </Link>
+                </div>
               </div>
 
               {/* Redundancy & Reliability */}
@@ -97,6 +107,11 @@ export default function HomePage() {
                   <li>• Continuous health monitoring</li>
                   <li>• Self-repairing infrastructure</li>
                 </ul>
+                <div className="mt-4 text-center">
+                  <Link href="/reports/blueprints" className="text-green-400 hover:text-green-300 text-sm font-medium">
+                    View Blueprints →
+                  </Link>
+                </div>
               </div>
 
               {/* Advanced Monitoring */}
@@ -111,6 +126,11 @@ export default function HomePage() {
                   <li>• Predictive failure detection</li>
                   <li>• Comprehensive logging systems</li>
                 </ul>
+                <div className="mt-4 text-center">
+                  <Link href="/live-dashboard" className="text-yellow-400 hover:text-yellow-300 text-sm font-medium">
+                    Live Dashboard →
+                  </Link>
+                </div>
               </div>
 
               {/* Security & Compliance */}
@@ -125,6 +145,11 @@ export default function HomePage() {
                   <li>• Compliance monitoring</li>
                   <li>• Threat detection & response</li>
                 </ul>
+                <div className="mt-4 text-center">
+                  <Link href="/security" className="text-red-400 hover:text-red-300 text-sm font-medium">
+                    Security Details →
+                  </Link>
+                </div>
               </div>
 
               {/* Global Infrastructure */}
@@ -139,6 +164,75 @@ export default function HomePage() {
                   <li>• Global CDN integration</li>
                   <li>• Geographic redundancy</li>
                 </ul>
+                <div className="mt-4 text-center">
+                  <Link href="/deployment" className="text-purple-400 hover:text-purple-300 text-sm font-medium">
+                    Deployment Info →
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Advanced Automation Systems */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">⚡ Advanced Automation Systems</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              
+              {/* Comprehensive Redundancy */}
+              <div className="group bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:border-emerald-400/30 transition-all duration-300">
+                <div className="w-16 h-16 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-3xl">🛡️</span>
+                </div>
+                <h3 className="text-xl font-bold text-emerald-400 mb-4 text-center">Comprehensive Redundancy</h3>
+                <ul className="text-white/80 text-sm space-y-2">
+                  <li>• Multi-system failover</li>
+                  <li>• Automated recovery</li>
+                  <li>• Health monitoring</li>
+                  <li>• Performance optimization</li>
+                </ul>
+                <div className="mt-4 text-center">
+                  <Link href="/reports/comprehensive-redundancy" className="text-emerald-400 hover:text-emerald-300 text-sm font-medium">
+                    Learn More →
+                  </Link>
+                </div>
+              </div>
+
+              {/* Ultimate Redundancy */}
+              <div className="group bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:border-violet-400/30 transition-all duration-300">
+                <div className="w-16 h-16 bg-gradient-to-br from-violet-400 to-purple-500 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-3xl">⚡</span>
+                </div>
+                <h3 className="text-xl font-bold text-violet-400 mb-4 text-center">Ultimate Redundancy</h3>
+                <ul className="text-white/80 text-sm space-y-2">
+                  <li>• Maximum uptime guarantee</li>
+                  <li>• Intelligent load balancing</li>
+                  <li>• Predictive maintenance</li>
+                  <li>• Zero-downtime updates</li>
+                </ul>
+                <div className="mt-4 text-center">
+                  <Link href="/reports/ultimate-redundancy" className="text-violet-400 hover:text-violet-300 text-sm font-medium">
+                    Explore System →
+                  </Link>
+                </div>
+              </div>
+
+              {/* AI Orchestration */}
+              <div className="group bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:border-rose-400/30 transition-all duration-300">
+                <div className="w-16 h-16 bg-gradient-to-br from-rose-400 to-pink-500 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-3xl">🎯</span>
+                </div>
+                <h3 className="text-xl font-bold text-rose-400 mb-4 text-center">AI Orchestration</h3>
+                <ul className="text-white/80 text-sm space-y-2">
+                  <li>• Intelligent task routing</li>
+                  <li>• Adaptive workflows</li>
+                  <li>• Learning algorithms</li>
+                  <li>• Performance optimization</li>
+                </ul>
+                <div className="mt-4 text-center">
+                  <Link href="/automation/orchestrator" className="text-rose-400 hover:text-rose-300 text-sm font-medium">
+                    View Orchestrator →
+                  </Link>
+                </div>
               </div>
             </div>
           </section>
@@ -251,7 +345,7 @@ export default function HomePage() {
             </div>
           </section>
 
-          {/* Quick Navigation */}
+          {/* Comprehensive Navigation */}
           <section className="mx-auto max-w-7xl px-6 pb-16">
             <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">🔗 Explore Our Platform</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -301,6 +395,101 @@ export default function HomePage() {
                 </div>
                 <h3 className="text-lg font-semibold text-green-400 mb-2">Contact</h3>
                 <p className="text-white/70 text-sm">Get in touch</p>
+              </Link>
+
+              <Link href="/automation" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-indigo-400/30 transition-all duration-300 text-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-indigo-400 to-blue-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-xl">⚙️</span>
+                </div>
+                <h3 className="text-lg font-semibold text-indigo-400 mb-2">Automation</h3>
+                <p className="text-white/70 text-sm">AI systems</p>
+              </Link>
+
+              <Link href="/reports" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-teal-400/30 transition-all duration-300 text-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-teal-400 to-cyan-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-xl">📈</span>
+                </div>
+                <h3 className="text-lg font-semibold text-teal-400 mb-2">Reports</h3>
+                <p className="text-white/70 text-sm">Analytics & insights</p>
+              </Link>
+            </div>
+          </section>
+
+          {/* Advanced Features Grid */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">🚀 Advanced Features & Capabilities</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              
+              <Link href="/live-dashboard" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300">
+                <div className="flex items-center space-x-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center">
+                    <span className="text-lg">📊</span>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-cyan-400">Live Dashboard</h3>
+                    <p className="text-white/70 text-sm">Real-time monitoring</p>
+                  </div>
+                </div>
+              </Link>
+
+              <Link href="/component-library" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-fuchsia-400/30 transition-all duration-300">
+                <div className="flex items-center space-x-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-fuchsia-400 to-purple-500 rounded-lg flex items-center justify-center">
+                    <span className="text-lg">🧩</span>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-fuchsia-400">Component Library</h3>
+                    <p className="text-white/70 text-sm">UI components</p>
+                  </div>
+                </div>
+              </Link>
+
+              <Link href="/content-hub" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-green-400/30 transition-all duration-300">
+                <div className="flex items-center space-x-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center">
+                    <span className="text-lg">📚</span>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-green-400">Content Hub</h3>
+                    <p className="text-white/70 text-sm">Centralized content</p>
+                  </div>
+                </div>
+              </Link>
+
+              <Link href="/discover" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-yellow-400/30 transition-all duration-300">
+                <div className="flex items-center space-x-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg flex items-center justify-center">
+                    <span className="text-lg">🔍</span>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-yellow-400">Discover</h3>
+                    <p className="text-white/70 text-sm">Explore features</p>
+                  </div>
+                </div>
+              </Link>
+
+              <Link href="/events" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-red-400/30 transition-all duration-300">
+                <div className="flex items-center space-x-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-red-400 to-pink-500 rounded-lg flex items-center justify-center">
+                    <span className="text-lg">🎉</span>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-red-400">Events</h3>
+                    <p className="text-white/70 text-sm">Upcoming events</p>
+                  </div>
+                </div>
+              </Link>
+
+              <Link href="/newsroom" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-purple-400/30 transition-all duration-300">
+                <div className="flex items-center space-x-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-purple-400 to-indigo-500 rounded-lg flex items-center justify-center">
+                    <span className="text-lg">📰</span>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-purple-400">Newsroom</h3>
+                    <p className="text-white/70 text-sm">Latest news</p>
+                  </div>
+                </div>
               </Link>
             </div>
           </section>
