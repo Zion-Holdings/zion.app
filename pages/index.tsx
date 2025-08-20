@@ -512,6 +512,88 @@ export default function HomePage() {
             </div>
           </section>
 
+          {/* Featured Blog Articles */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">📰 Featured Blog Articles</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <Link href="/blog/ai-automation-trends-2025" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300">
+                <h3 className="text-xl font-semibold text-cyan-400 mb-2">AI Automation Trends 2025</h3>
+                <p className="text-white/70 text-sm">Where AI-driven automation is heading next.</p>
+                <div className="mt-3 inline-flex items-center gap-1 text-sm text-cyan-300/90">Read article <span aria-hidden>→</span></div>
+              </Link>
+              <Link href="/blog/ai-ethics-automation" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-fuchsia-400/30 transition-all duration-300">
+                <h3 className="text-xl font-semibold text-fuchsia-400 mb-2">AI Ethics in Automation</h3>
+                <p className="text-white/70 text-sm">Building responsible and transparent systems.</p>
+                <div className="mt-3 inline-flex items-center gap-1 text-sm text-fuchsia-300/90">Read article <span aria-hidden>→</span></div>
+              </Link>
+              <Link href="/blog/autonomous-content-generation" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-green-400/30 transition-all duration-300">
+                <h3 className="text-xl font-semibold text-green-400 mb-2">Autonomous Content Generation</h3>
+                <p className="text-white/70 text-sm">How agents create, test, and optimize content.</p>
+                <div className="mt-3 inline-flex items-center gap-1 text-sm text-green-300/90">Read article <span aria-hidden>→</span></div>
+              </Link>
+              <Link href="/blog/cloud-native-automation" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-blue-400/30 transition-all duration-300">
+                <h3 className="text-xl font-semibold text-blue-400 mb-2">Cloud-Native Automation</h3>
+                <p className="text-white/70 text-sm">Modern patterns for scalable autonomy.</p>
+                <div className="mt-3 inline-flex items-center gap-1 text-sm text-blue-300/90">Read article <span aria-hidden>→</span></div>
+              </Link>
+              <Link href="/blog/performance-optimization" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-yellow-400/30 transition-all duration-300">
+                <h3 className="text-xl font-semibold text-yellow-400 mb-2">Performance Optimization</h3>
+                <p className="text-white/70 text-sm">Ship faster with intelligent tuning.</p>
+                <div className="mt-3 inline-flex items-center gap-1 text-sm text-yellow-300/90">Read article <span aria-hidden>→</span></div>
+              </Link>
+              <Link href="/blog/future-of-work" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-purple-400/30 transition-all duration-300">
+                <h3 className="text-xl font-semibold text-purple-400 mb-2">The Future of Work</h3>
+                <p className="text-white/70 text-sm">Humans and agents collaborating at scale.</p>
+                <div className="mt-3 inline-flex items-center gap-1 text-sm text-purple-300/90">Read article <span aria-hidden>→</span></div>
+              </Link>
+            </div>
+            <div className="text-center mt-8">
+              <Link href="/blog" className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white font-semibold transition-all">
+                Browse all blog posts
+                <span aria-hidden>→</span>
+              </Link>
+            </div>
+          </section>
+
+          {/* Quick Links */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">🔎 Quick Links</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <Link href="/about" className="group bg-white/10 backdrop-blur-xl rounded-xl p-5 border border-white/20 hover:border-cyan-400/30 transition-all">
+                <h3 className="text-lg font-semibold text-cyan-400">About</h3>
+                <p className="text-white/60 text-sm">Mission, vision, and approach</p>
+              </Link>
+              <Link href="/services" className="group bg-white/10 backdrop-blur-xl rounded-xl p-5 border border-white/20 hover:border-fuchsia-400/30 transition-all">
+                <h3 className="text-lg font-semibold text-fuchsia-400">Services</h3>
+                <p className="text-white/60 text-sm">AI solutions and offerings</p>
+              </Link>
+              <Link href="/resources" className="group bg-white/10 backdrop-blur-xl rounded-xl p-5 border border-white/20 hover:border-blue-400/30 transition-all">
+                <h3 className="text-lg font-semibold text-blue-400">Resources</h3>
+                <p className="text-white/60 text-sm">Tools, docs, and templates</p>
+              </Link>
+              <Link href="/case-studies" className="group bg-white/10 backdrop-blur-xl rounded-xl p-5 border border-white/20 hover:border-yellow-400/30 transition-all">
+                <h3 className="text-lg font-semibold text-yellow-400">Case Studies</h3>
+                <p className="text-white/60 text-sm">Real-world results</p>
+              </Link>
+              <Link href="/contact" className="group bg-white/10 backdrop-blur-xl rounded-xl p-5 border border-white/20 hover:border-green-400/30 transition-all">
+                <h3 className="text-lg font-semibold text-green-400">Contact</h3>
+                <p className="text-white/60 text-sm">Talk to our team</p>
+              </Link>
+              <Link href="/privacy" className="group bg-white/10 backdrop-blur-xl rounded-xl p-5 border border-white/20 hover:border-orange-400/30 transition-all">
+                <h3 className="text-lg font-semibold text-orange-400">Privacy Policy</h3>
+                <p className="text-white/60 text-sm">Your data, protected</p>
+              </Link>
+              <Link href="/blog" className="group bg-white/10 backdrop-blur-xl rounded-xl p-5 border border-white/20 hover:border-purple-400/30 transition-all">
+                <h3 className="text-lg font-semibold text-purple-400">Blog</h3>
+                <p className="text-white/60 text-sm">Insights and updates</p>
+              </Link>
+              <Link href="/reports/updates/update-2025-08-15-0406" className="group bg-white/10 backdrop-blur-xl rounded-xl p-5 border border-white/20 hover:border-lime-400/30 transition-all">
+                <h3 className="text-lg font-semibold text-lime-400">Latest Report</h3>
+                <p className="text-white/60 text-sm">Newest autonomous update</p>
+              </Link>
+            </div>
+          </section>
+
           {/* Advanced Features Showcase */}
           <section className="mx-auto max-w-7xl px-6 pb-16">
             <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">🌟 Advanced Features & Capabilities</h2>
