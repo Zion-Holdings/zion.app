@@ -141,6 +141,66 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Micro SaaS Services Section */}
+      <section className="py-24 bg-gradient-to-r from-purple-600 to-indigo-700 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px] opacity-10" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white text-sm font-medium mb-6">
+            <span className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse" />
+            New: Micro SaaS Directory
+          </div>
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8">
+            Essential Tools & Services Directory
+          </h2>
+          <p className="text-xl text-purple-100 mb-12 max-w-4xl mx-auto leading-relaxed">
+            Discover curated micro SaaS services, developer tools, and business solutions with real pricing, 
+            market insights, and direct links. Everything you need to build and grow your business.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">💼</span>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Micro SaaS Services</h3>
+              <p className="text-purple-200 text-sm">Real pricing and features for essential business tools</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">🛠️</span>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Developer Tools</h3>
+              <p className="text-purple-200 text-sm">Professional development tools and learning resources</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">📊</span>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Business Tools</h3>
+              <p className="text-purple-200 text-sm">Productivity and business management solutions</p>
+            </div>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Button
+              href="/micro-saas"
+              variant="secondary"
+              size="lg"
+              className="bg-white text-purple-600 hover:bg-gray-100 shadow-2xl"
+            >
+              Explore Micro SaaS
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+            <Button
+              href="/developer-tools"
+              variant="outline"
+              size="lg"
+              className="border-white text-white hover:bg-white hover:text-purple-600 shadow-2xl"
+            >
+              Developer Tools
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-24 bg-gradient-to-r from-blue-600 to-blue-700 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px] opacity-10" />

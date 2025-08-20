@@ -6,6 +6,7 @@ interface ButtonProps {
   variant?: 'primary' | 'secondary' | 'ghost' | 'outline';
   size?: 'sm' | 'md' | 'lg';
   href?: string;
+  external?: boolean;
   onClick?: () => void;
   className?: string;
   disabled?: boolean;
@@ -20,6 +21,7 @@ const Button: React.FC<ButtonProps> = ({
   variant = 'primary',
   size = 'md',
   href,
+  external = false,
   onClick,
   className = '',
   disabled = false,
@@ -59,6 +61,13 @@ const Button: React.FC<ButtonProps> = ({
   );
 
   if (href) {
+    if (external) {
+      return (
+        <a href={href} className={classes} style={style} target="_blank" rel="noopener noreferrer">
+          {content}
+        </a>
+      );
+    }
     return (
       <Link href={href} className={classes} style={style}>
         {content}

@@ -21,6 +21,7 @@ const Header = () => {
   const navigation = [
     { name: 'Product', href: '#', hasDropdown: true },
     { name: 'Solutions', href: '/services' },
+    { name: 'Tools', href: '/micro-saas', hasDropdown: false },
     { name: 'Resources', href: '/resources' },
     { name: 'Company', href: '/about' },
     { name: 'Pricing', href: '/pricing' },
@@ -31,6 +32,9 @@ const Header = () => {
     { name: 'Cloud Platform', href: '/cloud-platform', description: 'Scalable cloud infrastructure' },
     { name: 'Automation Hub', href: '/automation', description: 'AI-powered workflow automation' },
     { name: 'Analytics', href: '/analytics', description: 'Real-time insights and reporting' },
+    { name: 'Micro SaaS Directory', href: '/micro-saas', description: 'Curated micro SaaS services with real pricing' },
+    { name: 'Developer Tools', href: '/developer-tools', description: 'Essential developer tools and resources' },
+    { name: 'Business Tools', href: '/business-tools', description: 'Productivity and business management tools' },
   ];
 
   const isActive = (href: string) => router.pathname === href;
