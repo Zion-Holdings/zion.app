@@ -6,7 +6,7 @@ export default function HomePage() {
   return (
     <>
       <Head>
-        <title>Zion Tech Group — World's Most Advanced Autonomous Innovation Hub & AI-Powered Cloud Platform</title>
+        <title>Zion Tech Group — World&#39;s Most Advanced Autonomous Innovation Hub & AI-Powered Cloud Platform</title>
         <meta name="description" content="Experience the future of autonomous technology with 227+ intelligent automations, AI-powered cloud systems, comprehensive redundancy infrastructure, and zero-downtime operations. The most advanced autonomous platform ever built." />
         <meta property="og:title" content="Zion Tech Group — World's Most Advanced Autonomous Innovation Hub & AI-Powered Cloud Platform" />
         <meta property="og:description" content="Experience the future of autonomous technology with 227+ intelligent automations, AI-powered cloud systems, comprehensive redundancy infrastructure, and zero-downtime operations." />
@@ -21,7 +21,7 @@ export default function HomePage() {
               Zion Tech Group
             </h1>
             <p className="text-2xl text-white/90 max-w-4xl mx-auto mb-8">
-              The world's most advanced autonomous innovation hub delivering cutting-edge technology solutions, intelligent automation systems, and the future of cloud-native AI infrastructure.
+              The world&#39;s most advanced autonomous innovation hub delivering cutting-edge technology solutions, intelligent automation systems, and the future of cloud-native AI infrastructure.
             </p>
             <div className="flex flex-wrap justify-center gap-6 mb-12">
               <div className="bg-white/10 backdrop-blur-xl rounded-xl px-6 py-3 border border-white/20">
@@ -311,6 +311,14 @@ export default function HomePage() {
                 <h3 className="text-lg font-semibold text-green-400 mb-2">Contact</h3>
                 <p className="text-white/70 text-sm">Get in touch</p>
               </Link>
+
+              <Link href="/privacy" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-rose-400/30 transition-all duration-300 text-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-rose-400 to-red-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-xl">📜</span>
+                </div>
+                <h3 className="text-lg font-semibold text-rose-400 mb-2">Privacy Policy</h3>
+                <p className="text-white/70 text-sm">Security & compliance</p>
+              </Link>
             </div>
           </section>
 
@@ -397,6 +405,39 @@ export default function HomePage() {
                 <h3 className="text-lg font-semibold text-yellow-400 mb-2">Security</h3>
                 <p className="text-white/70 text-sm">Scanning, Compliance, Protection</p>
               </div>
+            </div>
+          </section>
+
+          {/* Featured Articles */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">📰 Featured Articles</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <Link href="/blog/ai-automation-trends-2025" className="group bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-fuchsia-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-xl">🔮</span>
+                </div>
+                <h3 className="text-lg font-semibold text-center">AI Automation Trends 2025</h3>
+                <p className="text-white/70 text-sm text-center mt-2">The future of autonomous systems</p>
+                <div className="mt-4 text-cyan-300 text-sm font-semibold text-center">Read article →</div>
+              </Link>
+
+              <Link href="/blog/cloud-native-automation" className="group bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:border-green-400/30 transition-all duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-xl">☁️</span>
+                </div>
+                <h3 className="text-lg font-semibold text-center">Cloud-Native Automation</h3>
+                <p className="text-white/70 text-sm text-center mt-2">Building scalable, reliable systems</p>
+                <div className="mt-4 text-emerald-300 text-sm font-semibold text-center">Read article →</div>
+              </Link>
+
+              <Link href="/blog/autonomous-content-generation" className="group bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:border-purple-400/30 transition-all duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-xl">✍️</span>
+                </div>
+                <h3 className="text-lg font-semibold text-center">Autonomous Content Generation</h3>
+                <p className="text-white/70 text-sm text-center mt-2">AI-powered content at scale</p>
+                <div className="mt-4 text-fuchsia-300 text-sm font-semibold text-center">Read article →</div>
+              </Link>
             </div>
           </section>
 
