@@ -8,7 +8,7 @@ import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, Exter
 
 export default function HomePage() {
   const heroStats = [
-    { value: '55+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
+    { value: '75+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
     { value: '99.9%', label: 'Uptime Guarantee', color: 'text-fuchsia-400' },
     { value: '14', label: 'Day Free Trials', color: 'text-blue-400' },
     { value: '24/7', label: 'AI Support', color: 'text-green-400' },
@@ -18,7 +18,7 @@ export default function HomePage() {
     {
       icon: <Cloud className="w-8 h-8 text-white" />,
       title: 'Real Micro SaaS Services',
-      description: '55+ fully functional micro SaaS tools with real implementations, not just mockups.',
+      description: '75+ fully functional micro SaaS tools with real implementations, not just mockups.',
       color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
       gradient: 'from-cyan-400 to-blue-500',
     },
@@ -269,7 +269,7 @@ export default function HomePage() {
               Enterprise-Grade Tools for Every Business Need
             </h2>
             <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
-              Discover <span className="text-green-400 font-semibold">28+ specialized micro SaaS solutions</span> covering AI-powered content creation, design systems, performance monitoring, 
+              Discover <span className="text-green-400 font-semibold">75+ specialized micro SaaS solutions</span> covering AI-powered content creation, design systems, performance monitoring, 
               SEO automation, chatbots, business intelligence, email marketing, social media, project management, 
               billing, HR operations, video editing, cloud optimization, legal automation, sales intelligence, customer analytics, 
               API management, compliance monitoring, and more. <span className="text-green-400 font-semibold">Focused value with transparent pricing, 14-day free trials, and enterprise-grade infrastructure.</span>
@@ -1453,6 +1453,7 @@ export default function HomePage() {
         </div>
       </section>
 
+<<<<<<< HEAD
       {/* Latest Services Showcase */}
       <section className="py-24 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1530,6 +1531,104 @@ export default function HomePage() {
                 </div>
               </div>
             ))}
+=======
+      {/* Featured Micro SaaS Services */}
+      <section className="py-24 bg-gradient-to-br from-slate-900 to-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse" />
+              Real Implementation
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">Real Micro SaaS Services</h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">Not just mockups - these are fully functional, production-ready tools that solve real business problems.</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="group">
+              <div className="bg-gradient-to-br from-pink-500 to-rose-600 p-6 rounded-2xl h-full transform group-hover:scale-105 transition-all duration-300 hover:shadow-2xl">
+                <div className="text-4xl mb-4">📝</div>
+                <h3 className="text-xl font-bold text-white mb-3">AI Content Generator Pro</h3>
+                <p className="text-gray-100 mb-4">Create high-quality, SEO-optimized content with real AI generation and analytics.</p>
+                <a href="/micro-saas" className="inline-flex items-center text-white font-semibold hover:text-gray-200 transition-colors duration-200">
+                  Learn More
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </a>
+              </div>
+            </div>
+            
+            <div className="group">
+              <div className="bg-gradient-to-br from-emerald-500 to-green-600 p-6 rounded-2xl h-full transform group-hover:scale-105 transition-all duration-300 hover:shadow-2xl">
+                <div className="text-4xl mb-4">🔍</div>
+                <h3 className="text-xl font-bold text-white mb-3">SEO Automation Suite</h3>
+                <p className="text-gray-100 mb-4">Real keyword research, technical audits, and competitor analysis tools.</p>
+                <a href="/micro-saas" className="inline-flex items-center text-white font-semibold hover:text-gray-200 transition-colors duration-200">
+                  Learn More
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </a>
+              </div>
+            </div>
+            
+            <div className="group">
+              <div className="bg-gradient-to-br from-sky-500 to-blue-600 p-6 rounded-2xl h-full transform group-hover:scale-105 transition-all duration-300 hover:shadow-2xl">
+                <div className="text-4xl mb-4">💬</div>
+                <h3 className="text-xl font-bold text-white mb-3">AI Chatbot Platform</h3>
+                <p className="text-gray-100 mb-4">Intelligent chatbots with real conversation management and training.</p>
+                <a href="/micro-saas" className="inline-flex items-center text-white font-semibold hover:text-gray-200 transition-colors duration-200">
+                  Learn More
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </a>
+              </div>
+            </div>
+            
+            <div className="group">
+              <div className="bg-gradient-to-br from-rose-500 to-pink-600 p-6 rounded-2xl h-full transform group-hover:scale-105 transition-all duration-300 hover:shadow-2xl">
+                <div className="text-4xl mb-4">📊</div>
+                <h3 className="text-xl font-bold text-white mb-3">Business Intelligence Hub</h3>
+                <p className="text-gray-100 mb-4">Real data visualization, KPI tracking, and automated reporting.</p>
+                <a href="/micro-saas" className="inline-flex items-center text-white font-semibold hover:text-gray-200 transition-colors duration-200">
+                  Learn More
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </a>
+              </div>
+            </div>
+            
+            <div className="group">
+              <div className="bg-gradient-to-br from-blue-500 to-indigo-600 p-6 rounded-2xl h-full transform group-hover:scale-105 transition-all duration-300 hover:shadow-2xl">
+                <div className="text-4xl mb-4">☁️</div>
+                <h3 className="text-xl font-bold text-white mb-3">Cloud Cost Optimizer</h3>
+                <p className="text-gray-100 mb-4">Real cloud resource monitoring and cost optimization recommendations.</p>
+                <a href="/micro-saas" className="inline-flex items-center text-white font-semibold hover:text-gray-200 transition-colors duration-200">
+                  Learn More
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </a>
+              </div>
+            </div>
+            
+            <div className="group">
+              <div className="bg-gradient-to-br from-red-500 to-pink-600 p-6 rounded-2xl h-full transform group-hover:scale-105 transition-all duration-300 hover:shadow-2xl">
+                <div className="text-4xl mb-4">🎬</div>
+                <h3 className="text-xl font-bold text-white mb-3">AI Video Editor Pro</h3>
+                <p className="text-gray-100 mb-4">Professional video editing with real AI-powered tools and automation.</p>
+                <a href="/micro-saas" className="inline-flex items-center text-white font-semibold hover:text-gray-200 transition-colors duration-200">
+                  Learn More
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div className="text-center mt-12">
+            <Button
+              href="/micro-saas"
+              variant="secondary"
+              size="lg"
+              className="bg-gradient-to-r from-green-600 to-emerald-600 text-white font-semibold rounded-full hover:from-green-700 hover:to-emerald-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              View All Services
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+>>>>>>> cursor/enhance-app-with-micro-saas-and-website-improvements-4068
           </div>
         </div>
       </section>
