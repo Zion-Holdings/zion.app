@@ -13,9 +13,14 @@ export { aiHrService } from './aiHrService';
 export { designSystemBuilderService } from './designSystemBuilderService';
 export { performanceMonitorService } from './performanceMonitorService';
 export { videoEditingService } from './videoEditingService';
-export { aiMarketResearchService } from './aiMarketResearchService';
-export { aiCustomerServiceService } from './aiCustomerServiceService';
-export { aiDataAnalyticsService } from './aiDataAnalyticsService';
+export { aiCodeReviewService } from './aiCodeReviewService';
+export { apiDocGeneratorService } from './apiDocGeneratorService';
+export { databasePerformanceMonitorService } from './databasePerformanceMonitorService';
+
+// New innovative services
+export { aiMarketplaceService } from './aiMarketplaceService';
+export { quantumComputingService } from './quantumComputingService';
+export { blockchainService } from './blockchainService';
 
 // Export types
 export type {
@@ -137,24 +142,78 @@ export type {
 } from './videoEditingService';
 
 export type {
-  MarketTrend,
-  CompetitorAnalysis as MarketCompetitorAnalysis,
-  MarketOpportunity,
-  MarketReport
-} from './aiMarketResearchService';
+  CodeReview,
+  CodeIssue,
+  CodeRecommendation,
+  CodeMetrics
+} from './aiCodeReviewService';
 
 export type {
-  CustomerInquiry,
-  SupportTicket,
-  KnowledgeBaseArticle,
-  CustomerServiceMetrics
-} from './aiCustomerServiceService';
+  APIDocumentation,
+  APIEndpoint,
+  APIParameter,
+  APIRequestBody,
+  APIContent,
+  APIResponse,
+  APIHeader,
+  APISchema,
+  APIExample,
+  ExampleRequest,
+  ExampleResponse,
+  RateLimit,
+  AuthenticationRequirement,
+  DocumentationConfig
+} from './apiDocGeneratorService';
 
 export type {
-  DataSource as AnalyticsDataSource,
-  DataTransformation,
-  DataVisualization,
-  PredictiveModel,
-  DataInsight,
-  DataAnalyticsMetrics
-} from './aiDataAnalyticsService';
+  DatabaseConnection,
+  ConnectionMetrics,
+  QueryPerformance,
+  ExecutionPlan,
+  PlanNode,
+  QueryMetrics,
+  QueryRecommendation,
+  DatabaseMetrics,
+  DatabasePerformanceAlert,
+  IndexRecommendation
+} from './databasePerformanceMonitorService';
+
+// New service types
+export type {
+  AIModel,
+  ModelFilters,
+  PurchaseResult,
+  SellResult,
+  MarketplaceStats,
+  TestResult,
+  BenchmarkResult,
+  RevenueAnalytics,
+  PopularModel
+} from './aiMarketplaceService';
+
+export type {
+  QuantumCircuit,
+  QuantumGate,
+  QuantumParameter,
+  QuantumJob,
+  QuantumResult,
+  QuantumBackend,
+  QuantumAlgorithm,
+  QuantumMLModel,
+  QuantumPrediction,
+  QuantumStats,
+  JobAnalytics
+} from './quantumComputingService';
+
+export type {
+  SmartContract,
+  NFT,
+  NFTMetadata,
+  NFTAttribute,
+  DeFiPool,
+  BlockchainTransaction,
+  TransactionResult,
+  BlockchainStats,
+  WalletAnalytics,
+  NetworkStatus
+} from './blockchainService';

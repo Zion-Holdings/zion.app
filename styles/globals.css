@@ -100,6 +100,21 @@ body {
   animation: particleFloat 30s ease-in-out infinite;
 }
 
+/* Quantum background effect */
+.quantum-bg {
+  background: linear-gradient(45deg, #000000, #0f172a, #1e293b, #334155, #475569, #64748b);
+  background-size: 400% 400%;
+  animation: quantumShift 15s ease infinite;
+}
+
+@keyframes quantumShift {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 100% 50%; }
+  50% { background-position: 100% 100%; }
+  75% { background-position: 0% 100%; }
+  100% { background-position: 0% 50%; }
+}
+
 /* Futuristic scan lines effect */
 .cyberpunk-scan {
   position: relative;
