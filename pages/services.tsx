@@ -160,7 +160,7 @@ export default function ServicesPage() {
       ],
       color: 'bg-gradient-to-br from-emerald-500 to-green-600',
       textColor: 'text-emerald-400',
-      gradient: 'from-emerald-400 to-green-500',
+      gradient: 'from-emerald-400 to-emerald-500',
       pricing: '$89/month',
       link: 'https://seo.zion.app'
     },
@@ -198,107 +198,125 @@ export default function ServicesPage() {
       pricing: '$99/month',
       link: 'https://bi.zion.app'
     },
+    // Additional New Micro SaaS Services
     {
       icon: '📧',
-      title: 'Email Marketing Automation',
-      description: 'AI-powered email campaigns with advanced personalization and automation.',
+      title: 'Email Automation Studio',
+      description: 'Advanced email marketing automation with AI-powered personalization.',
       features: [
         'AI-powered personalization',
         'Advanced segmentation',
-        'A/B testing automation',
         'Behavioral triggers',
-        'Email template library'
+        'A/B testing automation',
+        'Email template builder'
       ],
-      color: 'bg-gradient-to-br from-indigo-500 to-blue-600',
-      textColor: 'text-indigo-400',
-      gradient: 'from-indigo-400 to-blue-500',
+      color: 'bg-gradient-to-br from-blue-500 to-indigo-600',
+      textColor: 'text-blue-400',
+      gradient: 'from-blue-400 to-indigo-500',
       pricing: '$59/month',
-      link: 'https://email.zion.app'
+      link: 'https://emailstudio.zion.app'
     },
     {
       icon: '📱',
       title: 'Social Media Scheduler',
-      description: 'Intelligent social media management with AI-powered content suggestions.',
+      description: 'Intelligent social media management across all platforms.',
       features: [
         'Multi-platform scheduling',
-        'AI-powered content suggestions',
-        'Best time to post optimization',
+        'AI content optimization',
+        'Best time to post analysis',
         'Content calendar management',
-        'Performance analytics'
+        'Hashtag research tools'
       ],
-      color: 'bg-gradient-to-br from-teal-500 to-cyan-600',
-      textColor: 'text-teal-400',
-      gradient: 'from-teal-400 to-cyan-500',
-      pricing: '$39/month',
-      link: 'https://social.zion.app'
-    },
-    {
-      icon: '💡',
-      title: 'Customer Feedback Analytics',
-      description: 'Collect and analyze customer feedback with sentiment analysis and insights.',
-      features: [
-        'Multi-channel feedback collection',
-        'Sentiment analysis',
-        'Feedback categorization',
-        'Action item tracking',
-        'Customer satisfaction metrics'
-      ],
-      color: 'bg-gradient-to-br from-yellow-500 to-orange-600',
-      textColor: 'text-yellow-400',
-      gradient: 'from-yellow-400 to-orange-500',
-      pricing: '$79/month',
-      link: 'https://feedback.zion.app'
-    },
-    {
-      icon: '💰',
-      title: 'Invoice & Billing Manager',
-      description: 'Streamlined financial operations with automated invoicing and payment processing.',
-      features: [
-        'Automated invoicing',
-        'Payment processing integration',
-        'Recurring billing',
-        'Financial reporting',
-        'Tax calculation'
-      ],
-      color: 'bg-gradient-to-br from-green-500 to-emerald-600',
+      color: 'bg-gradient-to-br from-green-500 to-teal-600',
       textColor: 'text-green-400',
-      gradient: 'from-green-400 to-emerald-500',
-      pricing: '$49/month',
-      link: 'https://billing.zion.app'
+      gradient: 'from-green-400 to-teal-500',
+      pricing: '$29/month',
+      link: 'https://socialscheduler.zion.app'
     },
     {
       icon: '📋',
       title: 'Project Management Hub',
-      description: 'Collaborative project management with task tracking and team collaboration tools.',
+      description: 'Streamlined project collaboration and task management.',
       features: [
         'Task management & tracking',
         'Team collaboration tools',
+        'Time tracking & reporting',
         'Project templates',
-        'Time tracking',
-        'Resource allocation'
+        'File sharing & storage'
       ],
-      color: 'bg-gradient-to-br from-purple-500 to-indigo-600',
+      color: 'bg-gradient-to-br from-purple-500 to-pink-600',
       textColor: 'text-purple-400',
-      gradient: 'from-purple-400 to-indigo-500',
-      pricing: '$69/month',
-      link: 'https://projects.zion.app'
+      gradient: 'from-purple-400 to-pink-500',
+      pricing: '$45/month',
+      link: 'https://projecthub.zion.app'
     },
     {
-      icon: '🔌',
-      title: 'API Gateway & Management',
-      description: 'Enterprise API infrastructure with security, monitoring, and developer tools.',
+      icon: '💰',
+      title: 'Invoice & Billing Manager',
+      description: 'Professional invoicing and payment tracking system.',
       features: [
-        'API design & documentation',
-        'Rate limiting & throttling',
-        'Authentication & authorization',
-        'API analytics & monitoring',
-        'Developer portal'
+        'Professional invoice templates',
+        'Payment tracking',
+        'Automated reminders',
+        'Multi-currency support',
+        'Tax calculation'
       ],
-      color: 'bg-gradient-to-br from-gray-500 to-slate-600',
-      textColor: 'text-gray-400',
-      gradient: 'from-gray-400 to-slate-500',
-      pricing: '$129/month',
-      link: 'https://api.zion.app'
+      color: 'bg-gradient-to-br from-yellow-500 to-orange-600',
+      textColor: 'text-yellow-400',
+      gradient: 'from-yellow-400 to-orange-500',
+      pricing: '$25/month',
+      link: 'https://invoice.zion.app'
+    },
+    {
+      icon: '🎧',
+      title: 'Customer Support Suite',
+      description: 'Complete customer service and helpdesk solution.',
+      features: [
+        'Ticket management system',
+        'Knowledge base builder',
+        'Live chat integration',
+        'Customer satisfaction surveys',
+        'Automated responses'
+      ],
+      color: 'bg-gradient-to-br from-red-500 to-pink-600',
+      textColor: 'text-red-400',
+      gradient: 'from-red-400 to-pink-500',
+      pricing: '$75/month',
+      link: 'https://support.zion.app'
+    },
+    {
+      icon: '👥',
+      title: 'HR Management System',
+      description: 'Streamlined HR operations and employee management.',
+      features: [
+        'Employee database management',
+        'Time & attendance tracking',
+        'Leave management',
+        'Performance reviews',
+        'Payroll integration'
+      ],
+      color: 'bg-gradient-to-br from-indigo-500 to-blue-600',
+      textColor: 'text-indigo-400',
+      gradient: 'from-indigo-400 to-blue-500',
+      pricing: '$85/month',
+      link: 'https://hr.zion.app'
+    },
+    {
+      icon: '📦',
+      title: 'Inventory Management Pro',
+      description: 'Smart inventory control and supply chain management.',
+      features: [
+        'Real-time inventory tracking',
+        'Stock level alerts',
+        'Purchase order management',
+        'Supplier management',
+        'Barcode scanning'
+      ],
+      color: 'bg-gradient-to-br from-teal-500 to-cyan-600',
+      textColor: 'text-teal-400',
+      gradient: 'from-teal-400 to-cyan-500',
+      pricing: '$55/month',
+      link: 'https://inventory.zion.app'
     }
   ];
 

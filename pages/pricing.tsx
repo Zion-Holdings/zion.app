@@ -503,6 +503,303 @@ export default function PricingPage() {
               </div>
             </div>
 
+            {/* Additional Micro SaaS Services */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+              {/* Email Automation Studio */}
+              <div className="bg-gray-900 rounded-2xl p-8 border border-gray-800 hover:border-blue-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10">
+                <div className="text-center mb-6">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl text-3xl mb-4">
+                    📧
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Email Automation Studio</h3>
+                  <div className="text-4xl font-bold text-blue-400 mb-2">$59</div>
+                  <div className="text-gray-400">per month</div>
+                </div>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    AI-powered personalization
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Advanced segmentation
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Behavioral triggers
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    A/B testing automation
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Email template builder
+                  </li>
+                </ul>
+                <Button
+                  href="https://emailstudio.zion.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700"
+                >
+                  Get Started
+                </Button>
+              </div>
+
+              {/* Social Media Scheduler */}
+              <div className="bg-gray-900 rounded-2xl p-8 border border-gray-800 hover:border-green-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-green-500/10">
+                <div className="text-center mb-6">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-green-500 to-teal-600 rounded-2xl text-3xl mb-4">
+                    📱
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Social Media Scheduler</h3>
+                  <div className="text-4xl font-bold text-green-400 mb-2">$29</div>
+                  <div className="text-gray-400">per month</div>
+                </div>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Multi-platform scheduling
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    AI content optimization
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Best time to post analysis
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Content calendar management
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Hashtag research tools
+                  </li>
+                </ul>
+                <Button
+                  href="https://socialscheduler.zion.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-gradient-to-r from-green-500 to-teal-600 hover:from-green-600 hover:to-teal-700"
+                >
+                  Get Started
+                </Button>
+              </div>
+
+              {/* Project Management Hub */}
+              <div className="bg-gray-900 rounded-2xl p-8 border border-gray-800 hover:border-purple-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/10">
+                <div className="text-center mb-6">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl text-3xl mb-4">
+                    📋
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Project Management Hub</h3>
+                  <div className="text-4xl font-bold text-purple-400 mb-2">$45</div>
+                  <div className="text-gray-400">per month</div>
+                </div>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Task management & tracking
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Team collaboration tools
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Time tracking & reporting
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Project templates
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    File sharing & storage
+                  </li>
+                </ul>
+                <Button
+                  href="https://projecthub.zion.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700"
+                >
+                  Get Started
+                </Button>
+              </div>
+
+              {/* Invoice & Billing Manager */}
+              <div className="bg-gray-900 rounded-2xl p-8 border border-gray-800 hover:border-yellow-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-yellow-500/10">
+                <div className="text-center mb-6">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-2xl text-3xl mb-4">
+                    💰
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Invoice & Billing Manager</h3>
+                  <div className="text-4xl font-bold text-yellow-400 mb-2">$25</div>
+                  <div className="text-gray-400">per month</div>
+                </div>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Professional invoice templates
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Payment tracking
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Automated reminders
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Multi-currency support
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Tax calculation
+                  </li>
+                </ul>
+                <Button
+                  href="https://invoice.zion.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-gradient-to-r from-yellow-500 to-orange-600 hover:from-yellow-600 hover:to-orange-700"
+                >
+                  Get Started
+                </Button>
+              </div>
+
+              {/* Customer Support Suite */}
+              <div className="bg-gray-900 rounded-2xl p-8 border border-gray-800 hover:border-red-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-red-500/10">
+                <div className="text-center mb-6">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-red-500 to-pink-600 rounded-2xl text-3xl mb-4">
+                    🎧
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Customer Support Suite</h3>
+                  <div className="text-4xl font-bold text-red-400 mb-2">$75</div>
+                  <div className="text-gray-400">per month</div>
+                </div>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Ticket management system
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Knowledge base builder
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Live chat integration
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Customer satisfaction surveys
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Automated responses
+                  </li>
+                </ul>
+                <Button
+                  href="https://support.zion.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-gradient-to-r from-red-500 to-pink-600 hover:from-red-600 hover:to-pink-700"
+                >
+                  Get Started
+                </Button>
+              </div>
+
+              {/* HR Management System */}
+              <div className="bg-gray-900 rounded-2xl p-8 border border-gray-800 hover:border-indigo-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/10">
+                <div className="text-center mb-6">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-2xl text-3xl mb-4">
+                    👥
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">HR Management System</h3>
+                  <div className="text-4xl font-bold text-indigo-400 mb-2">$85</div>
+                  <div className="text-gray-400">per month</div>
+                </div>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Employee database management
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Time & attendance tracking
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Leave management
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Performance reviews
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Payroll integration
+                  </li>
+                </ul>
+                <Button
+                  href="https://hr.zion.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-gradient-to-r from-indigo-500 to-blue-600 hover:from-indigo-600 hover:to-blue-700"
+                >
+                  Get Started
+                </Button>
+              </div>
+
+              {/* Inventory Management Pro */}
+              <div className="bg-gray-900 rounded-2xl p-8 border border-gray-800 hover:border-teal-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-teal-500/10">
+                <div className="text-center mb-6">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-2xl text-3xl mb-4">
+                    📦
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Inventory Management Pro</h3>
+                  <div className="text-4xl font-bold text-teal-400 mb-2">$55</div>
+                  <div className="text-gray-400">per month</div>
+                </div>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Real-time inventory tracking
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Stock level alerts
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Purchase order management
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Supplier management
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Barcode scanning
+                  </li>
+                </ul>
+                <Button
+                  href="https://inventory.zion.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700"
+                >
+                  Get Started
+                </Button>
+              </div>
+            </div>
+
             <div className="text-center mt-16">
               <p className="text-gray-400 mb-8 max-w-3xl mx-auto">
                 All micro SaaS services include 14-day free trials, comprehensive documentation, 

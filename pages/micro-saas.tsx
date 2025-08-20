@@ -292,39 +292,237 @@ export default function MicroSaasPage() {
       link: 'https://api.zion.app',
       marketPosition: 'Competitive with Kong ($250-500), AWS API Gateway ($3.50/million calls), and Azure API Management ($0.50-4.00)',
       targetAudience: 'Developers, DevOps engineers, and platform architects'
+    },
+    {
+      name: "AI Content Generator",
+      tagline: "Create engaging content in seconds",
+      price: 49,
+      period: "month",
+      description: "AI-powered content creation tool that generates high-quality articles, social media posts, and marketing copy.",
+      features: [
+        "AI-powered content generation",
+        "Multiple content types",
+        "SEO optimization",
+        "Plagiarism detection",
+        "Content scheduling"
+      ],
+      popular: false,
+      icon: "🤖",
+      color: "from-purple-500 to-pink-500",
+      textColor: "text-purple-400",
+      link: "https://aicontent.zion.app",
+      marketPosition: "Leading AI content creation platform",
+      targetAudience: "Content creators, marketers, small businesses"
+    },
+    {
+      name: "Email Automation Studio",
+      tagline: "Automate your email marketing campaigns",
+      price: 59,
+      period: "month",
+      description: "Advanced email automation platform with AI-powered personalization, behavioral triggers, and comprehensive analytics.",
+      features: [
+        "AI-powered personalization",
+        "Advanced segmentation",
+        "Behavioral triggers",
+        "A/B testing automation",
+        "Email template builder"
+      ],
+      popular: true,
+      icon: "📧",
+      color: "from-blue-500 to-indigo-600",
+      textColor: "text-blue-400",
+      link: "https://emailstudio.zion.app",
+      marketPosition: "Premium email automation solution",
+      targetAudience: "Marketing teams, e-commerce businesses, agencies"
+    },
+    {
+      name: "Social Media Scheduler",
+      tagline: "Schedule and optimize your social media presence",
+      price: 29,
+      period: "month",
+      description: "Comprehensive social media management tool with AI content optimization and multi-platform scheduling.",
+      features: [
+        "Multi-platform scheduling",
+        "AI content optimization",
+        "Best time to post analysis",
+        "Content calendar management",
+        "Hashtag research tools"
+      ],
+      popular: false,
+      icon: "📱",
+      color: "from-green-500 to-teal-600",
+      textColor: "text-green-400",
+      link: "https://socialscheduler.zion.app",
+      marketPosition: "Affordable social media automation",
+      targetAudience: "Small businesses, influencers, marketing teams"
+    },
+    {
+      name: "Project Management Hub",
+      tagline: "Streamline your team collaboration",
+      price: 45,
+      period: "month",
+      description: "Comprehensive project management solution with task tracking, team collaboration, and time management tools.",
+      features: [
+        "Task management & tracking",
+        "Team collaboration tools",
+        "Time tracking & reporting",
+        "Project templates",
+        "File sharing & storage"
+      ],
+      popular: false,
+      icon: "📋",
+      color: "from-purple-500 to-pink-600",
+      textColor: "text-purple-400",
+      link: "https://projecthub.zion.app",
+      marketPosition: "Team collaboration platform",
+      targetAudience: "Project managers, development teams, agencies"
+    },
+    {
+      name: "Invoice & Billing Manager",
+      tagline: "Simplify your billing and invoicing",
+      price: 25,
+      period: "month",
+      description: "Professional invoicing and billing solution with automated reminders and multi-currency support.",
+      features: [
+        "Professional invoice templates",
+        "Payment tracking",
+        "Automated reminders",
+        "Multi-currency support",
+        "Tax calculation"
+      ],
+      popular: false,
+      icon: "💰",
+      color: "from-yellow-500 to-orange-600",
+      textColor: "text-yellow-400",
+      link: "https://invoice.zion.app",
+      marketPosition: "Entry-level billing solution",
+      targetAudience: "Freelancers, small businesses, consultants"
+    },
+    {
+      name: "Customer Support Suite",
+      tagline: "Deliver exceptional customer support",
+      price: 75,
+      period: "month",
+      description: "Complete customer support platform with ticket management, knowledge base, and live chat integration.",
+      features: [
+        "Ticket management system",
+        "Knowledge base builder",
+        "Live chat integration",
+        "Customer satisfaction surveys",
+        "Automated responses"
+      ],
+      popular: false,
+      icon: "🎧",
+      color: "from-red-500 to-pink-600",
+      textColor: "text-red-400",
+      link: "https://support.zion.app",
+      marketPosition: "Enterprise support solution",
+      targetAudience: "Customer support teams, SaaS companies, e-commerce"
+    },
+    {
+      name: "HR Management System",
+      tagline: "Streamline your HR operations",
+      price: 85,
+      period: "month",
+      description: "Comprehensive HR management platform for employee database, time tracking, and performance management.",
+      features: [
+        "Employee database management",
+        "Time & attendance tracking",
+        "Leave management",
+        "Performance reviews",
+        "Payroll integration"
+      ],
+      popular: false,
+      icon: "👥",
+      color: "from-indigo-500 to-blue-600",
+      textColor: "text-indigo-400",
+      link: "https://hr.zion.app",
+      marketPosition: "Professional HR solution",
+      targetAudience: "HR departments, growing companies, remote teams"
+    },
+    {
+      name: "Inventory Management Pro",
+      tagline: "Optimize your inventory operations",
+      price: 55,
+      period: "month",
+      description: "Advanced inventory management system with real-time tracking, stock alerts, and supplier management.",
+      features: [
+        "Real-time inventory tracking",
+        "Stock level alerts",
+        "Purchase order management",
+        "Supplier management",
+        "Barcode scanning"
+      ],
+      popular: false,
+      icon: "📦",
+      color: "from-teal-500 to-cyan-600",
+      textColor: "text-teal-400",
+      link: "https://inventory.zion.app",
+      marketPosition: "Mid-market inventory solution",
+      targetAudience: "Retail businesses, warehouses, manufacturers"
     }
   ];
 
-  const marketInsights = [
+  // Market analysis data
+  const marketAnalysis = {
+    "Content & Marketing": {
+      marketSize: "$15.2B",
+      growthRate: "12.4%",
+      keyTrends: ["AI-powered personalization", "Automation focus", "Multi-channel integration"]
+    },
+    "Design & Development": {
+      marketSize: "$8.7B",
+      growthRate: "15.8%",
+      keyTrends: ["Low-code platforms", "Collaboration tools", "Cloud-first approach"]
+    },
+    "Business Operations": {
+      marketSize: "$22.1B",
+      growthRate: "9.6%",
+      keyTrends: ["Process automation", "Data-driven decisions", "Remote work support"]
+    },
+    "Customer Experience": {
+      marketSize: "$18.9B",
+      growthRate: "11.2%",
+      keyTrends: ["Omnichannel support", "AI chatbots", "Personalization"]
+    },
+    "Data & Analytics": {
+      marketSize: "$12.4B",
+      growthRate: "14.7%",
+      keyTrends: ["Real-time insights", "Predictive analytics", "Data visualization"]
+    }
+  };
+
+  // Competitive advantages
+  const competitiveAdvantages = [
     {
-      title: 'Growing Market Demand',
-      description: 'The micro SaaS market is experiencing rapid growth, with businesses increasingly seeking specialized, affordable solutions over complex enterprise platforms.',
-      stats: '32% annual growth rate'
+      title: "Specialized Focus",
+      description: "Each service is designed for a specific business need, ensuring deep functionality and expertise.",
+      icon: "🎯"
     },
     {
-      title: 'Competitive Pricing',
-      description: 'Our pricing strategy positions us competitively in the market while maintaining high value and quality standards.',
-      stats: '15-40% below market average'
+      title: "AI Integration",
+      description: "Advanced AI capabilities across all services for automation and intelligent insights.",
+      icon: "🤖"
     },
     {
-      title: 'Focus on Specialization',
-      description: 'Unlike broad platforms, our micro SaaS solutions focus on specific use cases, delivering deeper functionality and better user experience.',
-      stats: '3x faster time-to-value'
+      title: "Seamless Integration",
+      description: "All services work together seamlessly with unified authentication and data sharing.",
+      icon: "🔗"
     },
     {
-      title: 'Comprehensive Portfolio',
-      description: '12 specialized solutions covering content creation, design, analytics, marketing, and business operations.',
-      stats: '12 micro SaaS solutions'
+      title: "Transparent Pricing",
+      description: "Clear, predictable pricing with no hidden fees or complex tier structures.",
+      icon: "💰"
     },
     {
-      title: 'Enterprise-Grade Features',
-      description: 'Each solution includes advanced features, API access, and enterprise-grade reliability at micro SaaS pricing.',
-      stats: 'Enterprise features, micro pricing'
+      title: "Enterprise Security",
+      description: "Bank-level security with SOC 2 compliance and regular security audits.",
+      icon: "🔒"
     },
     {
-      title: 'Rapid Implementation',
-      description: 'Focused solutions mean faster setup, easier onboarding, and quicker time to value compared to complex enterprise platforms.',
-      stats: '50% faster implementation'
+      title: "24/7 Support",
+      description: "Round-the-clock customer support with dedicated success managers.",
+      icon: "🔄"
     }
   ];
 
@@ -396,12 +594,12 @@ export default function MicroSaasPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {marketInsights.map((insight, index) => (
+              {competitiveAdvantages.map((advantage, index) => (
                 <div key={index} className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700 hover:border-green-500/30 transition-all duration-300">
-                  <h3 className="text-xl font-bold text-white mb-4">{insight.title}</h3>
-                  <p className="text-gray-400 mb-6 leading-relaxed">{insight.description}</p>
+                  <h3 className="text-xl font-bold text-white mb-4">{advantage.title}</h3>
+                  <p className="text-gray-400 mb-6 leading-relaxed">{advantage.description}</p>
                   <div className="inline-flex items-center px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium">
-                    {insight.stats}
+                    {advantage.icon}
                   </div>
                 </div>
               ))}
@@ -548,103 +746,72 @@ export default function MicroSaasPage() {
           </div>
         </section>
 
-        {/* Pricing Comparison */}
-        <section className="py-24 bg-gray-900">
+        {/* Market Analysis Section */}
+        <div className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-20">
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">
-                Competitive Pricing Analysis
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Market Analysis & Trends
               </h2>
-              <p className="text-xl text-gray-400 max-w-4xl mx-auto">
-                See how our micro SaaS solutions compare to enterprise alternatives in terms of cost and value.
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Understanding the micro SaaS landscape and positioning our services for maximum impact
               </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  title: 'Enterprise Platforms',
-                  description: 'Complex, feature-rich platforms with high costs',
-                  pros: ['Comprehensive features', 'Enterprise support', 'Advanced integrations'],
-                  cons: ['High cost ($500-5000/month)', 'Complex setup', 'Overkill for small teams', 'Long implementation time'],
-                  color: 'from-red-500 to-pink-600',
-                  icon: '🏢'
-                },
-                {
-                  title: 'Our Micro SaaS',
-                  description: 'Focused solutions with enterprise-grade features',
-                  pros: ['Affordable pricing ($39-129/month)', 'Focused functionality', 'Quick setup', 'Enterprise features'],
-                  cons: ['Single-purpose solutions', 'May need multiple tools'],
-                  color: 'from-green-500 to-emerald-600',
-                  icon: '🎯',
-                  popular: true
-                },
-                {
-                  title: 'DIY Solutions',
-                  description: 'Building solutions in-house or using free tools',
-                  pros: ['No monthly cost', 'Full customization', 'Complete control'],
-                  cons: ['Development time', 'Maintenance overhead', 'Limited features', 'No support'],
-                  color: 'from-gray-500 to-slate-600',
-                  icon: '🔧'
-                }
-              ].map((option, index) => (
-                <div key={index} className={`bg-gray-800 rounded-2xl p-8 border ${option.popular ? 'border-green-500/50 ring-2 ring-green-500/20' : 'border-gray-700'} transition-all duration-300`}>
-                  {option.popular && (
-                    <div className="inline-flex items-center px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium mb-4">
-                      <Star className="w-4 h-4 mr-1" />
-                      Recommended
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+              {Object.entries(marketAnalysis).map(([category, data], index) => (
+                <div key={index} className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700 hover:border-blue-500/30 transition-all duration-300">
+                  <h3 className="text-2xl font-bold text-white mb-4">{category}</h3>
+                  <div className="space-y-4">
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-400">Market Size:</span>
+                      <span className="text-2xl font-bold text-blue-400">{data.marketSize}</span>
                     </div>
-                  )}
-                  <div className={`w-16 h-16 bg-gradient-to-br ${option.color} rounded-2xl flex items-center justify-center text-3xl mb-6`}>
-                    {option.icon}
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">{option.title}</h3>
-                  <p className="text-gray-400 mb-6">{option.description}</p>
-                  
-                  <div className="mb-6">
-                    <h4 className="text-white font-semibold mb-3">Advantages</h4>
-                    <ul className="space-y-2">
-                      {option.pros.map((pro, proIndex) => (
-                        <li key={proIndex} className="text-gray-300 text-sm flex items-center">
-                          <Check className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" />
-                          {pro}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div>
-                    <h4 className="text-white font-semibold mb-3">Considerations</h4>
-                    <ul className="space-y-2">
-                      {option.cons.map((con, conIndex) => (
-                        <li key={conIndex} className="text-gray-300 text-sm flex items-center">
-                          <span className="w-4 h-4 text-red-400 mr-2 flex-shrink-0">✕</span>
-                          {con}
-                        </li>
-                      ))}
-                    </ul>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-400">Growth Rate:</span>
+                      <span className="text-xl font-bold text-green-400">{data.growthRate}</span>
+                    </div>
+                    <div className="pt-4">
+                      <span className="text-gray-400 text-sm">Key Trends:</span>
+                      <ul className="mt-2 space-y-1">
+                        {data.keyTrends.map((trend, trendIndex) => (
+                          <li key={trendIndex} className="text-sm text-gray-300 flex items-center">
+                            <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                            {trend}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
+          </div>
+        </div>
 
-            <div className="text-center mt-12">
-              <p className="text-gray-400 mb-6">
-                <strong className="text-white">Bottom Line:</strong> Our micro SaaS solutions provide enterprise-grade features 
-                at 70-90% lower cost, with faster implementation and focused functionality.
+        {/* Competitive Advantages Section */}
+        <div className="py-20 bg-gradient-to-br from-gray-800 via-gray-900 to-gray-800">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Why Choose Our Micro SaaS?
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Discover the unique advantages that set our specialized solutions apart from complex enterprise platforms
               </p>
-              <Button
-                href="#services"
-                variant="secondary"
-                size="lg"
-                className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700"
-              >
-                Explore All Solutions
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {competitiveAdvantages.map((advantage, index) => (
+                <div key={index} className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700 hover:border-green-500/30 transition-all duration-300">
+                  <div className="text-4xl mb-4">{advantage.icon}</div>
+                  <h3 className="text-xl font-bold text-white mb-4">{advantage.title}</h3>
+                  <p className="text-gray-400 mb-6 leading-relaxed">{advantage.description}</p>
+                </div>
+              ))}
             </div>
           </div>
-        </section>
+        </div>
 
         {/* CTA Section */}
         <section className="py-24 bg-gradient-to-r from-green-600 to-emerald-700 relative overflow-hidden">
