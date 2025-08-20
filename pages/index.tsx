@@ -327,7 +327,7 @@ export default function HomePage() {
                   <li>• GitHub Actions Redundancy</li>
                   <li>• Netlify Functions Redundancy</li>
                 </ul>
-                <Link href="/automation" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
+                <Link href="/services" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
                   Explore Redundancy Systems →
                 </Link>
               </div>
@@ -341,7 +341,7 @@ export default function HomePage() {
                   <li>• Autonomous Agents</li>
                   <li>• Innovation Systems</li>
                 </ul>
-                <Link href="/automation" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
+                <Link href="/services" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
                   Explore AI Systems →
                 </Link>
               </div>
@@ -355,7 +355,7 @@ export default function HomePage() {
                   <li>• Performance Optimization</li>
                   <li>• Quality Assurance</li>
                 </ul>
-                <Link href="/automation" className="text-green-400 hover:text-green-300 text-sm font-semibold">
+                <Link href="/services" className="text-green-400 hover:text-green-300 text-sm font-semibold">
                   Explore Build Systems →
                 </Link>
               </div>
@@ -448,40 +448,32 @@ export default function HomePage() {
             </div>
           </section>
 
-          {/* Project Documentation & Resources */}
+          {/* Key Pages & Resources */}
           <section className="mx-auto max-w-7xl px-6 pb-16">
-            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">📚 Project Documentation & Resources</h2>
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">📚 Explore Key Pages & Resources</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
-                <h3 className="text-xl font-bold text-blue-400 mb-4 text-center">📖 Core Documentation</h3>
+                <h3 className="text-xl font-bold text-blue-400 mb-4 text-center">📖 Company & Platform</h3>
                 <ul className="text-white/80 text-sm space-y-2 mb-4">
-                  <li>• <Link href="/README.md" className="text-blue-400 hover:text-blue-300">Main README</Link> - Project overview</li>
-                  <li>• <Link href="/ARCHITECTURE.md" className="text-blue-400 hover:text-blue-300">Architecture Guide</Link> - System design</li>
-                  <li>• <Link href="/API.md" className="text-blue-400 hover:text-blue-300">API Documentation</Link> - Integration guide</li>
-                  <li>• <Link href="/DEPLOYMENT.md" className="text-blue-400 hover:text-blue-300">Deployment Guide</Link> - Setup instructions</li>
-                  <li>• <Link href="/CONTRIBUTING.md" className="text-blue-400 hover:text-blue-300">Contributing Guide</Link> - Development workflow</li>
+                  <li>• <Link href="/about" className="text-blue-400 hover:text-blue-300">About</Link> — Mission, vision, and team</li>
+                  <li>• <Link href="/services" className="text-blue-400 hover:text-blue-300">Services</Link> — AI and automation offerings</li>
+                  <li>• <Link href="/case-studies" className="text-blue-400 hover:text-blue-300">Case Studies</Link> — Results and success stories</li>
                 </ul>
               </div>
 
               <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
-                <h3 className="text-xl font-bold text-purple-400 mb-4 text-center">🔧 Automation Guides</h3>
+                <h3 className="text-xl font-bold text-purple-400 mb-4 text-center">🧠 Resources & Insights</h3>
                 <ul className="text-white/80 text-sm space-y-2 mb-4">
-                  <li>• <Link href="/README_ULTIMATE_REDUNDANCY.md" className="text-purple-400 hover:text-purple-300">Ultimate Redundancy</Link> - System overview</li>
-                  <li>• <Link href="/README_COMPREHENSIVE_REDUNDANCY.md" className="text-purple-400 hover:text-purple-300">Comprehensive Redundancy</Link> - Advanced features</li>
-                  <li>• <Link href="/README_PM2_REDUNDANCY_COMPLETE.md" className="text-purple-400 hover:text-purple-300">PM2 Redundancy</Link> - Process management</li>
-                  <li>• <Link href="/README_GITHUB_ACTIONS.md" className="text-purple-400 hover:text-purple-300">GitHub Actions</Link> - CI/CD automation</li>
-                  <li>• <Link href="/README_CONTINUOUS_OPERATION.md" className="text-purple-400 hover:text-purple-300">Continuous Operation</Link> - Zero-downtime</li>
+                  <li>• <Link href="/resources" className="text-purple-400 hover:text-purple-300">Resources</Link> — Tools, guides, and downloads</li>
+                  <li>• <Link href="/blog" className="text-purple-400 hover:text-purple-300">Blog</Link> — Research and thought leadership</li>
                 </ul>
               </div>
 
               <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
-                <h3 className="text-xl font-bold text-green-400 mb-4 text-center">🚀 Advanced Features</h3>
+                <h3 className="text-xl font-bold text-green-400 mb-4 text-center">🚀 Get Started & Legal</h3>
                 <ul className="text-white/80 text-sm space-y-2 mb-4">
-                  <li>• <Link href="/SECURITY.md" className="text-green-400 hover:text-green-300">Security Guide</Link> - Protection measures</li>
-                  <li>• <Link href="/TESTING.md" className="text-green-400 hover:text-green-300">Testing Guide</Link> - Quality assurance</li>
-                  <li>• <Link href="/SERVICE_GENERATION_README.md" className="text-green-400 hover:text-green-300">Service Generation</Link> - Auto-creation</li>
-                  <li>• <Link href="/ULTIMATE_REDUNDANCY_AUTOMATION_README.md" className="text-green-400 hover:text-green-300">Automation README</Link> - System details</li>
-                  <li>• <Link href="/EXPONENTIAL_GROWTH_AUTOMATION.md" className="text-green-400 hover:text-green-300">Growth Automation</Link> - Scaling systems</li>
+                  <li>• <Link href="/contact" className="text-green-400 hover:text-green-300">Contact</Link> — Talk to our team</li>
+                  <li>• <Link href="/privacy" className="text-green-400 hover:text-green-300">Privacy Policy</Link> — Data and security</li>
                 </ul>
               </div>
             </div>
@@ -525,8 +517,8 @@ export default function HomePage() {
                   <li>• Threat detection & response</li>
                   <li>• Zero-trust architecture</li>
                 </ul>
-                <Link href="/SECURITY.md" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
-                  View Security Guide →
+                <Link href="/services" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
+                  Learn About Security →
                 </Link>
               </div>
 
@@ -539,8 +531,8 @@ export default function HomePage() {
                   <li>• Security testing</li>
                   <li>• Continuous validation</li>
                 </ul>
-                <Link href="/TESTING.md" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
-                  View Testing Guide →
+                <Link href="/resources" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
+                  Explore Testing Resources →
                 </Link>
               </div>
 
@@ -553,8 +545,8 @@ export default function HomePage() {
                   <li>• Analytics dashboard</li>
                   <li>• Predictive maintenance</li>
                 </ul>
-                <Link href="/PERFORMANCE.md" className="text-green-400 hover:text-green-300 text-sm font-semibold">
-                  View Performance Guide →
+                <Link href="/resources" className="text-green-400 hover:text-green-300 text-sm font-semibold">
+                  Performance & Monitoring Resources →
                 </Link>
               </div>
             </div>
