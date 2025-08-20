@@ -5,23 +5,29 @@
 /* Import Inter font for modern typography */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
-/* CSS Variables for consistent theming */
+/* CSS Variables for Cursor.com-inspired theming */
 :root {
   --background: #0a0a0a;
   --foreground: #ffffff;
-  --primary: #3b82f6;
+  --primary: #007acc;
   --primary-foreground: #ffffff;
-  --secondary: #1f2937;
+  --secondary: #1e1e1e;
   --secondary-foreground: #f9fafb;
-  --accent: #8b5cf6;
+  --accent: #007acc;
   --accent-foreground: #ffffff;
-  --muted: #374151;
+  --muted: #2d2d2d;
   --muted-foreground: #9ca3af;
-  --border: #374151;
-  --input: #374151;
-  --ring: #3b82f6;
+  --border: #404040;
+  --input: #2d2d2d;
+  --ring: #007acc;
   --radius: 0.75rem;
   --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --cursor-blue: #007acc;
+  --cursor-blue-hover: #005a9e;
+  --cursor-dark: #1e1e1e;
+  --cursor-darker: #0a0a0a;
+  --cursor-light: #2d2d2d;
+  --cursor-lighter: #404040;
 }
 
 /* Base styles */
@@ -52,17 +58,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
   font-weight: 900;
 }
 
 h2 {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(2rem, 4vw, 3.5rem);
   font-weight: 800;
 }
 
 h3 {
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
   font-weight: 700;
 }
 
@@ -74,7 +80,7 @@ a {
 }
 
 a:hover {
-  color: var(--primary);
+  color: var(--cursor-blue);
 }
 
 /* Custom scrollbar */
@@ -83,16 +89,16 @@ a:hover {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--secondary);
+  background: var(--cursor-dark);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--muted);
+  background: var(--cursor-lighter);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--primary);
+  background: var(--cursor-blue);
 }
 
 /* Focus styles */
@@ -101,27 +107,34 @@ a:hover {
   outline-offset: 2px;
 }
 
-/* Selection styles */
-::selection {
-  background-color: var(--primary);
-  color: var(--primary-foreground);
+/* Button styles */
+.btn {
+  @apply inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-cursor-blue disabled:opacity-50 disabled:cursor-not-allowed;
 }
 
-/* Utility classes */
-.glass {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+.btn-primary {
+  @apply bg-gradient-to-r from-cursor-blue to-blue-600 hover:from-cursor-blue-hover hover:to-blue-700 text-white shadow-lg hover:shadow-xl hover:-translate-y-0.5 border-0;
 }
 
-.glass-dark {
-  background: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+.btn-secondary {
+  @apply bg-cursor-light hover:bg-cursor-lighter text-white border border-cursor-lighter hover:border-cursor-blue;
 }
 
-/* Animations */
-@keyframes fadeIn {
+.btn-outline {
+  @apply bg-transparent border border-cursor-lighter text-gray-300 hover:bg-cursor-light hover:border-cursor-blue hover:text-white;
+}
+
+.btn-ghost {
+  @apply bg-transparent hover:bg-cursor-light text-gray-300 hover:text-white;
+}
+
+/* Card styles */
+.card {
+  @apply bg-cursor-dark border border-cursor-lighter rounded-xl p-6 transition-all duration-300 hover:border-cursor-blue/30 hover:shadow-lg hover:shadow-cursor-blue/10;
+}
+
+/* Animation classes */
+@keyframes fade-in {
   from {
     opacity: 0;
     transform: translateY(20px);
@@ -132,29 +145,16 @@ a:hover {
   }
 }
 
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
   }
-  to {
-    opacity: 1;
-    transform: translateX(0);
+  50% {
+    transform: translateY(-20px);
   }
 }
 
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes scaleIn {
+@keyframes scale-in {
   from {
     opacity: 0;
     transform: scale(0.9);
@@ -165,34 +165,46 @@ a:hover {
   }
 }
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
   }
-  50% {
-    transform: translateY(-10px);
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
-/* Animation utility classes */
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .animate-fade-in {
-  animation: fadeIn 0.6s ease-out;
-}
-
-.animate-slide-in-left {
-  animation: slideInLeft 0.6s ease-out;
-}
-
-.animate-slide-in-right {
-  animation: slideInRight 0.6s ease-out;
-}
-
-.animate-scale-in {
-  animation: scaleIn 0.6s ease-out;
+  animation: fade-in 0.8s ease-out forwards;
 }
 
 .animate-float {
-  animation: float 3s ease-in-out infinite;
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.6s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.8s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.8s ease-out forwards;
 }
 
 /* Hover effects */
@@ -201,95 +213,34 @@ a:hover {
 }
 
 .hover-lift:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px rgba(0, 122, 204, 0.15);
 }
 
-/* Gradient text */
+/* Gradient text utilities */
 .gradient-text {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  @apply bg-gradient-to-r from-white via-gray-100 to-gray-200 bg-clip-text text-transparent;
 }
 
 .gradient-text-blue {
-  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  @apply bg-gradient-to-r from-cursor-blue via-blue-400 to-blue-300 bg-clip-text text-transparent;
 }
 
-.gradient-text-purple {
-  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+/* Glass morphism effect */
+.glass {
+  @apply bg-white/5 backdrop-blur-xl border border-white/10;
 }
 
 /* Responsive utilities */
-@media (max-width: 768px) {
-  .mobile-hidden {
-    display: none;
-  }
+.container-cursor {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
 }
 
-@media (min-width: 769px) {
-  .desktop-hidden {
-    display: none;
-  }
+/* Custom cursor styles */
+.cursor-dot {
+  @apply w-2 h-2 bg-cursor-blue rounded-full;
 }
 
-/* Loading states */
-.loading {
-  opacity: 0.6;
-  pointer-events: none;
-}
-
-/* Button styles */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.75rem 1.5rem;
-  font-weight: 600;
-  border-radius: var(--radius);
-  transition: all 0.2s ease;
-  cursor: pointer;
-  border: none;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, var(--primary) 0%, #1d4ed8 100%);
-  color: var(--primary-foreground);
-  box-shadow: 0 4px 14px 0 rgba(59, 130, 246, 0.4);
-}
-
-.btn-primary:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 8px 25px 0 rgba(59, 130, 246, 0.5);
-}
-
-.btn-secondary {
-  background: var(--secondary);
-  color: var(--secondary-foreground);
-  border: 1px solid var(--border);
-}
-
-.btn-secondary:hover {
-  background: var(--muted);
-  border-color: var(--primary);
-}
-
-.btn-ghost {
-  background: transparent;
-  color: var(--foreground);
-  border: 1px solid var(--border);
-}
-
-.btn-ghost:hover {
-  background: var(--secondary);
-  border-color: var(--primary);
+.cursor-dot-outline {
+  @apply w-4 h-4 border border-cursor-blue rounded-full;
 }

@@ -64,29 +64,29 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-black/90 backdrop-blur-xl border-t border-white/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+    <footer className="bg-cursor-darker/90 backdrop-blur-xl border-t border-cursor-lighter/20">
+      <div className="container-cursor py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand Section */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">Z</span>
+            <Link href="/" className="flex items-center space-x-3 mb-6 group">
+              <div className="w-12 h-12 bg-gradient-to-br from-cursor-blue to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <span className="text-white font-bold text-2xl">Z</span>
               </div>
-              <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="text-2xl font-bold gradient-text-blue group-hover:from-cursor-blue group-hover:to-blue-400 transition-all duration-300">
                 Zion Tech
               </span>
             </Link>
-            <p className="text-gray-400 mb-6 max-w-md">
-                             The world&apos;s most advanced autonomous innovation hub delivering cutting-edge technology solutions, 
-               intelligent automation systems, and the future of cloud-native AI infrastructure.
+            <p className="text-gray-400 mb-8 max-w-md leading-relaxed">
+              The world&apos;s most advanced autonomous innovation hub delivering cutting-edge technology solutions, 
+              intelligent automation systems, and the future of cloud-native AI infrastructure.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
                   href={social.href}
-                  className="w-10 h-10 bg-gray-800 hover:bg-gray-700 rounded-lg flex items-center justify-center text-gray-400 hover:text-white transition-colors duration-200"
+                  className="w-11 h-11 bg-cursor-light hover:bg-cursor-blue rounded-xl flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 hover:scale-110"
                   aria-label={social.name}
                 >
                   {social.icon}
@@ -98,13 +98,13 @@ const Footer = () => {
           {/* Footer Links */}
           {footerSections.map((section) => (
             <div key={section.title}>
-              <h3 className="text-white font-semibold mb-4">{section.title}</h3>
-              <ul className="space-y-2">
+              <h3 className="text-white font-semibold mb-6 text-lg">{section.title}</h3>
+              <ul className="space-y-3">
                 {section.links.map((link) => (
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-gray-400 hover:text-white transition-colors duration-200"
+                      className="text-gray-400 hover:text-cursor-blue transition-all duration-200 hover:translate-x-1 inline-block"
                     >
                       {link.name}
                     </Link>
@@ -116,16 +116,16 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-white/10 mt-12 pt-8">
+        <div className="border-t border-cursor-lighter/20 mt-16 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
               © {currentYear} Zion Tech Group. All rights reserved.
             </p>
-            <div className="flex items-center space-x-6 mt-4 md:mt-0">
-              <Link href="/privacy" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">
+            <div className="flex items-center space-x-8 mt-4 md:mt-0">
+              <Link href="/privacy" className="text-gray-400 hover:text-cursor-blue text-sm transition-colors duration-200">
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">
+              <Link href="/terms" className="text-gray-400 hover:text-cursor-blue text-sm transition-colors duration-200">
                 Terms of Service
               </Link>
             </div>

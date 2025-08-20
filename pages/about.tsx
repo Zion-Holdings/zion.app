@@ -58,40 +58,40 @@ export default function AboutPage() {
       </Head>
 
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-black via-gray-900 to-black overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(139,92,246,0.1),transparent_50%)]" />
+      <section className="relative py-24 bg-gradient-to-br from-cursor-darker via-cursor-dark to-cursor-darker overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,122,204,0.08),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(0,122,204,0.06),transparent_50%)]" />
         
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-7xl font-black mb-8 bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent">
+        <div className="relative z-10 container-cursor text-center">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 gradient-text">
             About Zion Tech Group
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl lg:text-3xl text-gray-300 max-w-5xl mx-auto leading-relaxed">
             Pioneering the future of autonomous technology and AI-driven innovation
           </p>
         </div>
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-            <Card className="group hover:border-cyan-400/30">
+      <section className="py-24 bg-gradient-to-b from-cursor-dark to-cursor-darker">
+        <div className="container-cursor">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+            <Card className="group hover:border-cyan-400/40 hover:shadow-2xl hover:shadow-cyan-400/20">
               <h2 className="text-3xl font-bold mb-6 text-cyan-400">Our Mission</h2>
-              <p className="text-lg text-gray-300 mb-4">
+              <p className="text-lg text-gray-300 mb-4 leading-relaxed">
                 To create a world where technology operates autonomously, continuously improving and innovating without human intervention.
               </p>
-              <p className="text-gray-400">
+              <p className="text-gray-400 leading-relaxed">
                 We believe in the power of AI to solve complex problems, automate routine tasks, and unlock new possibilities for humanity.
               </p>
             </Card>
             
-            <Card className="group hover:border-fuchsia-400/30">
+            <Card className="group hover:border-fuchsia-400/40 hover:shadow-2xl hover:shadow-fuchsia-400/20">
               <h2 className="text-3xl font-bold mb-6 text-fuchsia-400">Our Vision</h2>
-              <p className="text-lg text-gray-300 mb-4">
+              <p className="text-lg text-gray-300 mb-4 leading-relaxed">
                 To be the leading force in autonomous technology, creating systems that think, learn, and evolve independently.
               </p>
-              <p className="text-gray-400">
+              <p className="text-gray-400 leading-relaxed">
                 We envision a future where AI and automation work seamlessly together to enhance human capabilities and drive progress.
               </p>
             </Card>

@@ -28,13 +28,13 @@ const Button: React.FC<ButtonProps> = ({
   iconPosition = 'left',
   style,
 }) => {
-  const baseClasses = 'inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed';
+  const baseClasses = 'inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-cursor-blue disabled:opacity-50 disabled:cursor-not-allowed';
   
   const variantClasses = {
-    primary: 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl hover:-translate-y-0.5',
-    secondary: 'bg-gray-800 hover:bg-gray-700 text-white border border-gray-700 hover:border-gray-600',
-    ghost: 'bg-transparent hover:bg-gray-800 text-gray-300 hover:text-white',
-    outline: 'bg-transparent border border-gray-600 text-gray-300 hover:bg-gray-800 hover:border-gray-500 hover:text-white',
+    primary: 'bg-gradient-to-r from-cursor-blue to-blue-600 hover:from-cursor-blue-hover hover:to-blue-700 text-white shadow-lg hover:shadow-xl hover:-translate-y-1 border-0 hover:shadow-cursor-blue/25',
+    secondary: 'bg-cursor-light hover:bg-cursor-lighter text-white border border-cursor-lighter hover:border-cursor-blue hover:shadow-lg',
+    ghost: 'bg-transparent hover:bg-cursor-light text-gray-300 hover:text-white hover:shadow-md',
+    outline: 'bg-transparent border border-cursor-lighter text-gray-300 hover:bg-cursor-light hover:border-cursor-blue hover:text-white hover:shadow-md',
   };
 
   const sizeClasses = {

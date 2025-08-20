@@ -29,14 +29,14 @@ const Features: React.FC<FeaturesProps> = ({
   };
 
   return (
-    <section className="py-20 bg-gradient-to-b from-black to-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-gradient-to-b from-cursor-darker to-cursor-dark">
+      <div className="container-cursor">
         {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+        <div className="text-center mb-20 animate-fade-in">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 gradient-text">
             {title}
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-xl lg:text-2xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
             {subtitle}
           </p>
         </div>
@@ -46,16 +46,16 @@ const Features: React.FC<FeaturesProps> = ({
           {features.map((feature, index) => (
             <Card
               key={index}
-              className="text-center group"
+              className="text-center group hover:border-cursor-blue/40 hover:shadow-2xl hover:shadow-cursor-blue/20"
               style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
             >
-              <div className={`w-16 h-16 mx-auto mb-6 rounded-2xl flex items-center justify-center text-2xl transition-transform duration-300 group-hover:scale-110 ${feature.color}`}>
+              <div className={`w-20 h-20 mx-auto mb-8 rounded-2xl flex items-center justify-center text-3xl transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg ${feature.color}`}>
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-bold mb-4 text-white group-hover:text-blue-400 transition-colors duration-300">
+              <h3 className="text-2xl font-bold mb-6 text-white group-hover:text-cursor-blue transition-colors duration-300">
                 {feature.title}
               </h3>
-              <p className="text-gray-400 leading-relaxed">
+              <p className="text-gray-400 leading-relaxed text-lg">
                 {feature.description}
               </p>
             </Card>

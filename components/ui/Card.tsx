@@ -3,40 +3,30 @@ import React from 'react';
 interface CardProps {
   children: React.ReactNode;
   className?: string;
-  hover?: boolean;
-  glass?: boolean;
-  padding?: 'sm' | 'md' | 'lg';
-  onClick?: () => void;
   style?: React.CSSProperties;
+  onClick?: () => void;
+  hover?: boolean;
 }
 
 const Card: React.FC<CardProps> = ({
   children,
   className = '',
-  hover = true,
-  glass = true,
-  padding = 'md',
-  onClick,
   style,
+  onClick,
+  hover = true,
 }) => {
-  const paddingClasses = {
-    sm: 'p-4',
-    md: 'p-6',
-    lg: 'p-8',
-  };
-
-  const baseClasses = `rounded-2xl border transition-all duration-300 ${
-    glass ? 'glass border-white/10' : 'bg-gray-900/50 border-gray-700'
-  } ${paddingClasses[padding]} ${className}`;
-
-  const hoverClasses = hover
-    ? 'hover:border-white/20 hover:shadow-2xl hover:-translate-y-1 cursor-pointer'
-    : '';
-
-  const classes = `${baseClasses} ${hoverClasses}`;
+  const baseClasses = 'bg-cursor-dark border border-cursor-lighter rounded-xl p-6 transition-all duration-300';
+  const hoverClasses = hover ? 'hover:border-cursor-blue/30 hover:shadow-lg hover:shadow-cursor-blue/10 hover:-translate-y-1' : '';
+  const clickableClasses = onClick ? 'cursor-pointer' : '';
+  
+  const classes = `${baseClasses} ${hoverClasses} ${clickableClasses} ${className}`;
 
   return (
-    <div className={classes} onClick={onClick} style={style}>
+    <div
+      className={classes}
+      style={style}
+      onClick={onClick}
+    >
       {children}
     </div>
   );

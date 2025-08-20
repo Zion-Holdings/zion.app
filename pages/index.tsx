@@ -101,13 +101,13 @@ export default function HomePage() {
       />
 
       {/* Technology Stack */}
-      <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+      <section className="py-24 bg-gradient-to-b from-cursor-dark to-cursor-darker">
+        <div className="container-cursor">
+          <div className="text-center mb-20 animate-fade-in">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 gradient-text">
               Built with Modern Technology
             </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            <p className="text-xl lg:text-2xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
               Our platform leverages the latest technologies and best practices to deliver exceptional performance and reliability.
             </p>
           </div>
@@ -116,10 +116,10 @@ export default function HomePage() {
             {technologyStack.map((tech, index) => (
               <Card
                 key={index}
-                className="text-center group hover:border-blue-500/30"
+                className="text-center group hover:border-cursor-blue/30 hover:shadow-lg hover:shadow-cursor-blue/10"
                 style={{ animationDelay: `${(index * 0.05) + 0.2}s` }}
               >
-                <div className="text-2xl mb-3 group-hover:scale-110 transition-transform duration-300">
+                <div className="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
                   {tech.name === 'Next.js' && '⚡'}
                   {tech.name === 'React' && '⚛️'}
                   {tech.name === 'TypeScript' && '📘'}
@@ -133,7 +133,7 @@ export default function HomePage() {
                   {tech.name === 'Terraform' && '🏗️'}
                   {tech.name === 'Prometheus' && '📊'}
                 </div>
-                <h3 className="font-semibold text-white mb-1">{tech.name}</h3>
+                <h3 className="font-semibold text-white mb-2 text-lg">{tech.name}</h3>
                 <p className="text-sm text-gray-400">{tech.category}</p>
               </Card>
             ))}
@@ -142,20 +142,20 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+      <section className="py-24 bg-gradient-to-r from-cursor-blue to-blue-600">
+        <div className="container-cursor text-center">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8">
             Ready to Transform Your Business?
           </h2>
-          <p className="text-xl text-blue-100 mb-8">
+          <p className="text-xl lg:text-2xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed">
             Join the future of autonomous technology and experience unprecedented efficiency, reliability, and innovation.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Button
               href="/contact"
               variant="secondary"
               size="lg"
-              className="bg-white text-blue-600 hover:bg-gray-100"
+              className="bg-white text-cursor-blue hover:bg-gray-100 shadow-2xl"
             >
               Start Your Journey
             </Button>
@@ -163,7 +163,7 @@ export default function HomePage() {
               href="/case-studies"
               variant="outline"
               size="lg"
-              className="border-white text-white hover:bg-white hover:text-blue-600"
+              className="border-white text-white hover:bg-white hover:text-cursor-blue shadow-2xl"
             >
               View Case Studies
             </Button>
