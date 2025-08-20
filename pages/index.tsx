@@ -160,7 +160,7 @@ export default function HomePage() {
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-lg flex items-center justify-center mx-auto mb-4">
                   <span className="text-xl">⚛️</span>
                 </div>
-                <h3 className="text-lg font-semibold text-blue-400 mb-2">Next.js 15</h3>
+                <h3 className="text-lg font-semibold text-blue-400 mb-2">Next.js 14</h3>
                 <p className="text-white/70 text-sm">React framework with SSR/SSG</p>
               </div>
               
@@ -320,13 +320,72 @@ export default function HomePage() {
                 <p className="text-white/70 text-sm">Trust & compliance</p>
               </Link>
               
-              <Link href="/reports" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-indigo-400/30 transition-all duration-300 text-center">
+              <Link href="/reports/updates" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-indigo-400/30 transition-all duration-300 text-center">
                 <div className="w-12 h-12 bg-gradient-to-br from-indigo-400 to-blue-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <span className="text-xl">📈</span>
                 </div>
                 <h3 className="text-lg font-semibold text-indigo-400 mb-2">Reports & Analytics</h3>
                 <p className="text-white/70 text-sm">Performance data</p>
               </Link>
+            </div>
+          </section>
+
+          {/* Quick Directory of Core Pages */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">🗂️ Explore All Core Pages</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <Link href="/about" className="bg-white/10 hover:bg-white/15 rounded-xl p-6 border border-white/20 transition-colors">
+                <h3 className="text-lg font-semibold text-cyan-300 mb-1">About</h3>
+                <p className="text-white/70 text-sm">Who we are and how we build.</p>
+              </Link>
+              <Link href="/services" className="bg-white/10 hover:bg-white/15 rounded-xl p-6 border border-white/20 transition-colors">
+                <h3 className="text-lg font-semibold text-fuchsia-300 mb-1">Services</h3>
+                <p className="text-white/70 text-sm">AI, automation, cloud-native solutions.</p>
+              </Link>
+              <Link href="/resources" className="bg-white/10 hover:bg-white/15 rounded-xl p-6 border border-white/20 transition-colors">
+                <h3 className="text-lg font-semibold text-blue-300 mb-1">Resources</h3>
+                <p className="text-white/70 text-sm">Guides, tools, and learning materials.</p>
+              </Link>
+              <Link href="/case-studies" className="bg-white/10 hover:bg-white/15 rounded-xl p-6 border border-white/20 transition-colors">
+                <h3 className="text-lg font-semibold text-yellow-300 mb-1">Case Studies</h3>
+                <p className="text-white/70 text-sm">Outcomes and proof at scale.</p>
+              </Link>
+              <Link href="/blog" className="bg-white/10 hover:bg-white/15 rounded-xl p-6 border border-white/20 transition-colors">
+                <h3 className="text-lg font-semibold text-purple-300 mb-1">Blog</h3>
+                <p className="text-white/70 text-sm">Trends, research, and insights.</p>
+              </Link>
+              <Link href="/reports/updates" className="bg-white/10 hover:bg-white/15 rounded-xl p-6 border border-white/20 transition-colors">
+                <h3 className="text-lg font-semibold text-indigo-300 mb-1">Reports</h3>
+                <p className="text-white/70 text-sm">Autonomous updates and analytics.</p>
+              </Link>
+              <Link href="/contact" className="bg-white/10 hover:bg-white/15 rounded-xl p-6 border border-white/20 transition-colors">
+                <h3 className="text-lg font-semibold text-emerald-300 mb-1">Contact</h3>
+                <p className="text-white/70 text-sm">Start your project with us.</p>
+              </Link>
+              <Link href="/privacy" className="bg-white/10 hover:bg-white/15 rounded-xl p-6 border border-white/20 transition-colors">
+                <h3 className="text-lg font-semibold text-rose-300 mb-1">Privacy</h3>
+                <p className="text-white/70 text-sm">Security, data, and compliance.</p>
+              </Link>
+            </div>
+          </section>
+
+          {/* Blog Highlights */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">📰 Featured Blog Highlights</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { href: '/blog/performance-optimization', title: 'Performance Optimization at Scale' },
+                { href: '/blog/ai-automation-trends-2025', title: 'AI Automation Trends 2025' },
+                { href: '/blog/ai-ethics-automation', title: 'AI Ethics in Automation' },
+                { href: '/blog/autonomous-content-generation', title: 'Autonomous Content Generation' },
+                { href: '/blog/cloud-native-automation', title: 'Cloud-Native Automation' },
+                { href: '/blog/future-of-work', title: 'The Future of Work' }
+              ].map((post) => (
+                <Link key={post.href} href={post.href} className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-white/30 transition-all duration-300">
+                  <h3 className="text-lg font-semibold text-white group-hover:text-cyan-300 mb-2">{post.title}</h3>
+                  <div className="text-sm text-white/70">Read now →</div>
+                </Link>
+              ))}
             </div>
           </section>
 
@@ -343,9 +402,9 @@ export default function HomePage() {
                   <li>• Threat detection & response</li>
                   <li>• Zero-trust architecture</li>
                 </ul>
-                <Link href="/SECURITY.md" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
+                <a href="https://github.com/Zion-Holdings/zion.app/blob/main/SECURITY.md" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
                   View Security Guide →
-                </Link>
+                </a>
               </div>
 
               <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
@@ -357,9 +416,9 @@ export default function HomePage() {
                   <li>• Security testing</li>
                   <li>• Continuous validation</li>
                 </ul>
-                <Link href="/TESTING.md" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
+                <a href="https://github.com/Zion-Holdings/zion.app/blob/main/TESTING.md" target="_blank" rel="noopener noreferrer" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
                   View Testing Guide →
-                </Link>
+                </a>
               </div>
 
               <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
@@ -371,9 +430,9 @@ export default function HomePage() {
                   <li>• Analytics dashboard</li>
                   <li>• Predictive maintenance</li>
                 </ul>
-                <Link href="/PERFORMANCE.md" className="text-green-400 hover:text-green-300 text-sm font-semibold">
+                <a href="https://github.com/Zion-Holdings/zion.app/blob/main/PERFORMANCE.md" target="_blank" rel="noopener noreferrer" className="text-green-400 hover:text-green-300 text-sm font-semibold">
                   View Performance Guide →
-                </Link>
+                </a>
               </div>
             </div>
           </section>
@@ -391,9 +450,9 @@ export default function HomePage() {
                   <li>• Health monitoring</li>
                   <li>• Self-healing infrastructure</li>
                 </ul>
-                <Link href="/README_ULTIMATE_REDUNDANCY.md" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
+                <a href="https://github.com/Zion-Holdings/zion.app/blob/main/README_ULTIMATE_REDUNDANCY.md" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
                   Learn More →
-                </Link>
+                </a>
               </div>
 
               <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
@@ -405,9 +464,9 @@ export default function HomePage() {
                   <li>• Error prevention</li>
                   <li>• Predictive analytics</li>
                 </ul>
-                <Link href="/README_COMPREHENSIVE_REDUNDANCY.md" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
+                <a href="https://github.com/Zion-Holdings/zion.app/blob/main/README_COMPREHENSIVE_REDUNDANCY.md" target="_blank" rel="noopener noreferrer" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
                   Learn More →
-                </Link>
+                </a>
               </div>
 
               <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
@@ -419,9 +478,9 @@ export default function HomePage() {
                   <li>• Performance monitoring</li>
                   <li>• Cluster management</li>
                 </ul>
-                <Link href="/README_PM2_REDUNDANCY_COMPLETE.md" className="text-green-400 hover:text-green-300 text-sm font-semibold">
+                <a href="https://github.com/Zion-Holdings/zion.app/blob/main/README_PM2_REDUNDANCY_COMPLETE.md" target="_blank" rel="noopener noreferrer" className="text-green-400 hover:text-green-300 text-sm font-semibold">
                   Learn More →
-                </Link>
+                </a>
               </div>
             </div>
           </section>
