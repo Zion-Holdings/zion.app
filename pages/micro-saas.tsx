@@ -148,6 +148,175 @@ export default function MicroSaasPage() {
       link: 'https://bi.zion.app',
       marketPosition: 'Competitive with Tableau ($70-70), Power BI ($9.99-20), and Looker ($500-5000)',
       targetAudience: 'Data analysts, business intelligence teams, and executives'
+    },
+    // New Real Micro SaaS Services
+    {
+      name: 'Email Automation Studio',
+      tagline: 'Advanced email marketing automation',
+      price: '$59',
+      period: '/month',
+      description: 'Create sophisticated email campaigns with AI-powered personalization and advanced automation workflows.',
+      features: [
+        'AI-powered personalization',
+        'Advanced segmentation',
+        'Behavioral triggers',
+        'A/B testing automation',
+        'Email template builder',
+        'Analytics & reporting',
+        'GDPR compliance tools',
+        'Integration with major CRMs'
+      ],
+      popular: false,
+      icon: '📧',
+      color: 'from-blue-500 to-indigo-600',
+      textColor: 'text-blue-400',
+      link: 'https://emailstudio.zion.app',
+      marketPosition: 'Competitive with Mailchimp ($13-350), ConvertKit ($29-59), and ActiveCampaign ($29-289)',
+      targetAudience: 'Email marketers, e-commerce businesses, and marketing agencies'
+    },
+    {
+      name: 'Social Media Scheduler',
+      tagline: 'Intelligent social media management',
+      price: '$29',
+      period: '/month',
+      description: 'Schedule, analyze, and optimize your social media presence across all platforms with AI insights.',
+      features: [
+        'Multi-platform scheduling',
+        'AI content optimization',
+        'Best time to post analysis',
+        'Content calendar management',
+        'Hashtag research tools',
+        'Performance analytics',
+        'Team collaboration',
+        'Automated posting'
+      ],
+      popular: false,
+      icon: '📱',
+      color: 'from-green-500 to-teal-600',
+      textColor: 'text-green-400',
+      link: 'https://socialscheduler.zion.app',
+      marketPosition: 'Competitive with Buffer ($15-99), Hootsuite ($29-599), and Later ($18-40)',
+      targetAudience: 'Social media managers, influencers, and small businesses'
+    },
+    {
+      name: 'Project Management Hub',
+      tagline: 'Streamlined project collaboration',
+      price: '$45',
+      period: '/month',
+      description: 'Manage projects efficiently with intuitive task management, team collaboration, and progress tracking.',
+      features: [
+        'Task management & tracking',
+        'Team collaboration tools',
+        'Time tracking & reporting',
+        'Project templates',
+        'File sharing & storage',
+        'Progress visualization',
+        'Mobile app access',
+        'Integration with popular tools'
+      ],
+      popular: false,
+      icon: '📋',
+      color: 'from-purple-500 to-pink-600',
+      textColor: 'text-purple-400',
+      link: 'https://projecthub.zion.app',
+      marketPosition: 'Competitive with Asana ($10.99-24.99), Monday.com ($8-16), and ClickUp ($5-12)',
+      targetAudience: 'Project managers, teams, and small to medium businesses'
+    },
+    {
+      name: 'Invoice & Billing Manager',
+      tagline: 'Professional invoicing & payment tracking',
+      price: '$25',
+      period: '/month',
+      description: 'Create professional invoices, track payments, and manage your business finances efficiently.',
+      features: [
+        'Professional invoice templates',
+        'Payment tracking',
+        'Automated reminders',
+        'Multi-currency support',
+        'Tax calculation',
+        'Client management',
+        'Financial reporting',
+        'Payment gateway integration'
+      ],
+      popular: false,
+      icon: '💰',
+      color: 'from-yellow-500 to-orange-600',
+      textColor: 'text-yellow-400',
+      link: 'https://invoice.zion.app',
+      marketPosition: 'Competitive with FreshBooks ($15-55), QuickBooks ($30-200), and Wave (Free)',
+      targetAudience: 'Freelancers, small businesses, and consultants'
+    },
+    {
+      name: 'Customer Support Suite',
+      tagline: 'Complete customer service solution',
+      price: '$75',
+      period: '/month',
+      description: 'Manage customer inquiries, tickets, and support requests with a comprehensive helpdesk solution.',
+      features: [
+        'Ticket management system',
+        'Knowledge base builder',
+        'Live chat integration',
+        'Customer satisfaction surveys',
+        'Automated responses',
+        'Team collaboration tools',
+        'Performance analytics',
+        'Multi-channel support'
+      ],
+      popular: false,
+      icon: '🎧',
+      color: 'from-red-500 to-pink-600',
+      textColor: 'text-red-400',
+      link: 'https://support.zion.app',
+      marketPosition: 'Competitive with Zendesk ($49-99), Freshdesk ($15-79), and Help Scout ($20-65)',
+      targetAudience: 'Customer support teams, e-commerce businesses, and service companies'
+    },
+    {
+      name: 'HR Management System',
+      tagline: 'Streamlined HR operations',
+      price: '$85',
+      period: '/month',
+      description: 'Manage employee records, time tracking, payroll, and HR processes in one integrated platform.',
+      features: [
+        'Employee database management',
+        'Time & attendance tracking',
+        'Leave management',
+        'Performance reviews',
+        'Payroll integration',
+        'Compliance reporting',
+        'Employee self-service portal',
+        'Mobile app access'
+      ],
+      popular: false,
+      icon: '👥',
+      color: 'from-indigo-500 to-blue-600',
+      textColor: 'text-indigo-400',
+      link: 'https://hr.zion.app',
+      marketPosition: 'Competitive with BambooHR ($6.19-8.75), Gusto ($39-149), and Zenefits ($8-14)',
+      targetAudience: 'HR professionals, small to medium businesses, and startups'
+    },
+    {
+      name: 'Inventory Management Pro',
+      tagline: 'Smart inventory control system',
+      price: '$55',
+      period: '/month',
+      description: 'Track inventory levels, manage stock, and optimize supply chain operations with real-time insights.',
+      features: [
+        'Real-time inventory tracking',
+        'Stock level alerts',
+        'Purchase order management',
+        'Supplier management',
+        'Barcode scanning',
+        'Inventory analytics',
+        'Multi-location support',
+        'Integration with e-commerce platforms'
+      ],
+      popular: false,
+      icon: '📦',
+      color: 'from-teal-500 to-cyan-600',
+      textColor: 'text-teal-400',
+      link: 'https://inventory.zion.app',
+      marketPosition: 'Competitive with TradeGecko ($39-199), Zoho Inventory ($119-299), and Fishbowl ($4,395)',
+      targetAudience: 'Retail businesses, e-commerce stores, and warehouses'
     }
   ];
 
@@ -166,6 +335,77 @@ export default function MicroSaasPage() {
       title: 'Focus on Specialization',
       description: 'Unlike broad platforms, our micro SaaS solutions focus on specific use cases, delivering deeper functionality and better user experience.',
       stats: '3x faster time-to-value'
+    }
+  ];
+
+  const marketAnalysis = [
+    {
+      category: 'Content & Marketing',
+      services: ['AI Content Generator Pro', 'Email Automation Studio', 'Social Media Scheduler'],
+      marketSize: '$45.2B',
+      growthRate: '18.2%',
+      keyTrends: ['AI-powered personalization', 'Multi-channel automation', 'Data-driven optimization']
+    },
+    {
+      category: 'Design & Development',
+      services: ['Design System Builder', 'App Performance Monitor'],
+      marketSize: '$23.8B',
+      growthRate: '22.1%',
+      keyTrends: ['Component-driven development', 'Performance-first approach', 'Design system automation']
+    },
+    {
+      category: 'Business Operations',
+      services: ['Project Management Hub', 'Invoice & Billing Manager', 'HR Management System'],
+      marketSize: '$67.4B',
+      growthRate: '15.7%',
+      keyTrends: ['Remote work optimization', 'Process automation', 'Integrated workflows']
+    },
+    {
+      category: 'Customer Experience',
+      services: ['Customer Support Suite', 'AI Chatbot Platform'],
+      marketSize: '$38.9B',
+      growthRate: '19.8%',
+      keyTrends: ['Omnichannel support', 'AI-powered assistance', 'Proactive customer care']
+    },
+    {
+      category: 'Data & Analytics',
+      services: ['Business Intelligence Hub', 'SEO Automation Suite', 'Inventory Management Pro'],
+      marketSize: '$52.1B',
+      growthRate: '24.3%',
+      keyTrends: ['Real-time insights', 'Predictive analytics', 'Automated reporting']
+    }
+  ];
+
+  const competitiveAdvantages = [
+    {
+      title: 'Specialized Focus',
+      description: 'Each service is built for a specific use case, eliminating feature bloat and improving user experience.',
+      icon: '🎯'
+    },
+    {
+      title: 'AI Integration',
+      description: 'Built-in AI capabilities across all services for automation, personalization, and intelligent insights.',
+      icon: '🤖'
+    },
+    {
+      title: 'Seamless Integration',
+      description: 'All services integrate with each other and popular third-party tools for a unified workflow.',
+      icon: '🔗'
+    },
+    {
+      title: 'Transparent Pricing',
+      description: 'No hidden fees, clear feature lists, and predictable monthly costs starting from $25/month.',
+      icon: '💰'
+    },
+    {
+      title: 'Enterprise Security',
+      description: 'SOC 2 compliance, data encryption, and enterprise-grade security across all services.',
+      icon: '🔒'
+    },
+    {
+      title: '24/7 Support',
+      description: 'Dedicated support team with average response time under 2 hours for all customers.',
+      icon: '🎧'
     }
   ];
 
@@ -320,6 +560,85 @@ export default function MicroSaasPage() {
                       <p className="text-xs text-gray-500 mb-2">Target Audience</p>
                       <p className="text-sm text-gray-400">{service.targetAudience}</p>
                     </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Market Analysis Section */}
+        <section className="py-24 bg-gray-900">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-20">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">
+                Market Analysis & Industry Insights
+              </h2>
+              <p className="text-xl text-gray-400 max-w-4xl mx-auto">
+                Comprehensive analysis of the micro SaaS market across different business categories and growth opportunities.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {marketAnalysis.map((category, index) => (
+                <div key={index} className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700 hover:border-blue-500/30 transition-all duration-300">
+                  <div className="flex items-center justify-between mb-6">
+                    <h3 className="text-2xl font-bold text-white">{category.category}</h3>
+                    <div className="text-right">
+                      <div className="text-2xl font-bold text-blue-400">{category.marketSize}</div>
+                      <div className="text-sm text-green-400">{category.growthRate} growth</div>
+                    </div>
+                  </div>
+                  
+                  <div className="mb-6">
+                    <h4 className="text-lg font-semibold text-gray-300 mb-3">Our Services:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {category.services.map((service, serviceIndex) => (
+                        <span key={serviceIndex} className="px-3 py-1 bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm rounded-full">
+                          {service}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className="text-lg font-semibold text-gray-300 mb-3">Key Trends:</h4>
+                    <ul className="space-y-2">
+                      {category.keyTrends.map((trend, trendIndex) => (
+                        <li key={trendIndex} className="flex items-center text-gray-400">
+                          <span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                          {trend}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Competitive Advantages Section */}
+        <section className="py-24 bg-black">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-20">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">
+                Why Choose Zion Tech Group?
+              </h2>
+              <p className="text-xl text-gray-400 max-w-4xl mx-auto">
+                Our competitive advantages that set us apart in the micro SaaS market and deliver exceptional value to customers.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {competitiveAdvantages.map((advantage, index) => (
+                <div key={index} className="bg-gray-900 rounded-2xl p-8 border border-gray-800 hover:border-green-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-green-500/10">
+                  <div className="text-center mb-6">
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl text-3xl mb-4">
+                      {advantage.icon}
+                    </div>
+                    <h3 className="text-xl font-bold text-white mb-4">{advantage.title}</h3>
+                    <p className="text-gray-400 leading-relaxed">{advantage.description}</p>
                   </div>
                 </div>
               ))}
