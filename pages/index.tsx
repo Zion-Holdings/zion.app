@@ -39,6 +39,9 @@ export default function HomePage() {
               <div className="bg-white/10 backdrop-blur-xl rounded-xl px-6 py-3 border border-white/20">
                 <span className="text-yellow-400 font-bold">99.99%</span> Uptime
               </div>
+              <div className="bg-white/10 backdrop-blur-xl rounded-xl px-6 py-3 border border-white/20">
+                <span className="text-purple-400 font-bold">15+</span> Redundancy Systems
+              </div>
             </div>
             
             {/* Primary Navigation Links */}
@@ -49,9 +52,84 @@ export default function HomePage() {
               <Link href="/services" className="px-8 py-4 bg-gradient-to-r from-fuchsia-500 to-purple-600 hover:from-fuchsia-600 hover:to-purple-700 rounded-lg text-white font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
                 AI Services
               </Link>
+              <Link href="/automation" className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 rounded-lg text-white font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                Automation Systems
+              </Link>
               <Link href="/contact" className="px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 rounded-lg text-white font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
                 Get Started
               </Link>
+            </div>
+          </section>
+
+          {/* Project Overview & Key Metrics */}
+          <section className="mx-auto max-w-7xl px-6 pb-16 mb-20">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">📊 Project Overview & Key Metrics</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/20">
+                <h3 className="text-xl font-bold text-cyan-400 mb-4 text-center">🚀 Core Infrastructure</h3>
+                <div className="space-y-3 text-white/80">
+                  <div className="flex justify-between">
+                    <span>Next.js Version:</span>
+                    <span className="text-cyan-400 font-semibold">15.0.0</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>TypeScript:</span>
+                    <span className="text-cyan-400 font-semibold">5.0+</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Node.js:</span>
+                    <span className="text-cyan-400 font-semibold">20.18.1+</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Deployment:</span>
+                    <span className="text-cyan-400 font-semibold">Netlify</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/20">
+                <h3 className="text-xl font-bold text-fuchsia-400 mb-4 text-center">🤖 Automation Systems</h3>
+                <div className="space-y-3 text-white/80">
+                  <div className="flex justify-between">
+                    <span>Total Automations:</span>
+                    <span className="text-fuchsia-400 font-semibold">227+</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Redundancy Systems:</span>
+                    <span className="text-fuchsia-400 font-semibold">15+</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>AI Agents:</span>
+                    <span className="text-fuchsia-400 font-semibold">50+</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Monitoring Tools:</span>
+                    <span className="text-fuchsia-400 font-semibold">25+</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/20">
+                <h3 className="text-xl font-bold text-green-400 mb-4 text-center">📈 Performance Metrics</h3>
+                <div className="space-y-3 text-white/80">
+                  <div className="flex justify-between">
+                    <span>Uptime:</span>
+                    <span className="text-green-400 font-semibold">99.99%</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Build Success:</span>
+                    <span className="text-green-400 font-semibold">99.8%</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Response Time:</span>
+                    <span className="text-green-400 font-semibold">&lt;200ms</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Coverage:</span>
+                    <span className="text-green-400 font-semibold">95%+</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
 
@@ -186,6 +264,41 @@ export default function HomePage() {
                 </div>
                 <h3 className="text-lg font-semibold text-yellow-400 mb-2">GitHub Actions</h3>
                 <p className="text-white/70 text-sm">CI/CD automation</p>
+              </div>
+            </div>
+            
+            {/* Additional Tech Stack */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+              <div className="bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 text-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-red-400 to-pink-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <span className="text-xl">🔒</span>
+                </div>
+                <h3 className="text-lg font-semibold text-red-400 mb-2">Security Tools</h3>
+                <p className="text-white/70 text-sm">ESLint, Husky, Pre-commit</p>
+              </div>
+              
+              <div className="bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 text-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <span className="text-xl">📊</span>
+                </div>
+                <h3 className="text-lg font-semibold text-indigo-400 mb-2">Monitoring</h3>
+                <p className="text-white/70 text-sm">Lighthouse, Performance</p>
+              </div>
+              
+              <div className="bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 text-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <span className="text-xl">🧪</span>
+                </div>
+                <h3 className="text-lg font-semibold text-emerald-400 mb-2">Testing</h3>
+                <p className="text-white/70 text-sm">Playwright, Jest</p>
+              </div>
+              
+              <div className="bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 text-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-orange-400 to-red-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <span className="text-xl">📱</span>
+                </div>
+                <h3 className="text-lg font-semibold text-orange-400 mb-2">Mobile</h3>
+                <p className="text-white/70 text-sm">Responsive, PWA ready</p>
               </div>
             </div>
           </section>
@@ -355,8 +468,53 @@ export default function HomePage() {
                   <li>• Performance Optimization</li>
                   <li>• Quality Assurance</li>
                 </ul>
-                <Link href="/automation" className="text-green-400 hover:text-green-300 text-sm font-semibold">
+                <Link href="/automation" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
                   Explore Build Systems →
+                </Link>
+              </div>
+            </div>
+            
+            {/* Additional Automation Categories */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-yellow-400 mb-4 text-center">📊 Monitoring & Analytics</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Performance Monitoring</li>
+                  <li>• Health Checks</li>
+                  <li>• Real-time Analytics</li>
+                  <li>• Predictive Maintenance</li>
+                  <li>• Automated Reporting</li>
+                </ul>
+                <Link href="/automation" className="text-yellow-400 hover:text-yellow-300 text-sm font-semibold">
+                  Explore Monitoring →
+                </Link>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-purple-400 mb-4 text-center">🔒 Security & Compliance</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Automated Security Scanning</li>
+                  <li>• Vulnerability Assessment</li>
+                  <li>• Compliance Monitoring</li>
+                  <li>• Threat Detection</li>
+                  <li>• Security Automation</li>
+                </ul>
+                <Link href="/automation" className="text-purple-400 hover:text-purple-300 text-sm font-semibold">
+                  Explore Security →
+                </Link>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-red-400 mb-4 text-center">🌐 Global Infrastructure</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Multi-region Deployment</li>
+                  <li>• Edge Computing</li>
+                  <li>• Global CDN</li>
+                  <li>• Geographic Redundancy</li>
+                  <li>• Load Balancing</li>
+                </ul>
+                <Link href="/automation" className="text-red-400 hover:text-red-300 text-sm font-semibold">
+                  Explore Infrastructure →
                 </Link>
               </div>
             </div>
@@ -487,6 +645,102 @@ export default function HomePage() {
             </div>
           </section>
 
+          {/* Comprehensive Project Features */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">🌟 Comprehensive Project Features & Capabilities</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-cyan-400 mb-4 text-center">🔄 Redundancy & Reliability</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Ultimate Redundancy V2 System</li>
+                  <li>• Comprehensive Redundancy Suite</li>
+                  <li>• PM2 Process Management</li>
+                  <li>• GitHub Actions Redundancy</li>
+                  <li>• Netlify Functions Redundancy</li>
+                  <li>• Multi-layer Failover Protection</li>
+                </ul>
+                <Link href="/automation" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
+                  Explore Redundancy Systems →
+                </Link>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-fuchsia-400 mb-4 text-center">🧠 AI & Machine Learning</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• AI Trends Research System</li>
+                  <li>• Autonomous Content Generation</li>
+                  <li>• Intelligent Orchestration</li>
+                  <li>• 50+ AI Agents</li>
+                  <li>• Machine Learning Pipelines</li>
+                  <li>• Predictive Analytics</li>
+                </ul>
+                <Link href="/automation" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
+                  Explore AI Systems →
+                </Link>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-green-400 mb-4 text-center">⚡ Build & Deployment</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Smart Build Orchestration</li>
+                  <li>• Continuous Integration/Deployment</li>
+                  <li>• Self-Healing Build Systems</li>
+                  <li>• Performance Optimization</li>
+                  <li>• Automated Testing Suites</li>
+                  <li>• Quality Assurance Automation</li>
+                </ul>
+                <Link href="/automation" className="text-green-400 hover:text-green-300 text-sm font-semibold">
+                  Explore Build Systems →
+                </Link>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-yellow-400 mb-4 text-center">📊 Monitoring & Analytics</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Real-time Performance Monitoring</li>
+                  <li>• Automated Health Checks</li>
+                  <li>• Predictive Failure Detection</li>
+                  <li>• Comprehensive Logging</li>
+                  <li>• AI-Driven Insights</li>
+                  <li>• Automated Reporting</li>
+                </ul>
+                <Link href="/automation" className="text-yellow-400 hover:text-yellow-300 text-sm font-semibold">
+                  Explore Monitoring →
+                </Link>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-purple-400 mb-4 text-center">🔒 Security & Compliance</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Automated Security Scanning</li>
+                  <li>• Vulnerability Assessment</li>
+                  <li>• Compliance Monitoring</li>
+                  <li>• Threat Detection & Response</li>
+                  <li>• Zero-trust Architecture</li>
+                  <li>• Security Automation</li>
+                </ul>
+                <Link href="/SECURITY.md" className="text-purple-400 hover:text-purple-300 text-sm font-semibold">
+                  View Security Guide →
+                </Link>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-red-400 mb-4 text-center">🌐 Global Infrastructure</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Multi-region Deployment</li>
+                  <li>• Edge Computing Optimization</li>
+                  <li>• Global CDN Integration</li>
+                  <li>• Geographic Redundancy</li>
+                  <li>• Low-latency Routing</li>
+                  <li>• Auto-scaling Systems</li>
+                </ul>
+                <Link href="/automation" className="text-red-400 hover:text-red-300 text-sm font-semibold">
+                  Explore Infrastructure →
+                </Link>
+              </div>
+            </div>
+          </section>
+
           {/* Latest Autonomous Content */}
           <section className="mx-auto max-w-7xl px-6 pb-14">
             <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Latest Autonomous Content</h2>
@@ -560,6 +814,76 @@ export default function HomePage() {
             </div>
           </section>
 
+          {/* Project Competitive Advantages */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">🏆 Why Zion Tech Group Leads the Industry</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-white text-sm font-bold">🚀</span>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-cyan-400 mb-2">Unmatched Automation Scale</h3>
+                    <p className="text-white/80">With 227+ intelligent automations, we operate the largest autonomous infrastructure ever built, ensuring unparalleled reliability and efficiency.</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-fuchsia-400 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-white text-sm font-bold">🧠</span>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-fuchsia-400 mb-2">AI-First Architecture</h3>
+                    <p className="text-white/80">Our platform is built from the ground up with AI at its core, enabling intelligent decision-making and autonomous problem-solving.</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-white text-sm font-bold">⚡</span>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-green-400 mb-2">Zero-Downtime Operations</h3>
+                    <p className="text-white/80">Achieve 99.99% uptime through our multi-layer redundancy systems and self-healing infrastructure that automatically recovers from any failure.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-white text-sm font-bold">🔒</span>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-yellow-400 mb-2">Enterprise-Grade Security</h3>
+                    <p className="text-white/80">Bank-level security with automated threat detection, compliance monitoring, and zero-trust architecture protecting your infrastructure 24/7.</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-red-400 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-white text-sm font-bold">🌍</span>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-red-400 mb-2">Global Infrastructure</h3>
+                    <p className="text-white/80">Multi-region deployment with edge computing, global CDN, and geographic redundancy ensuring optimal performance worldwide.</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-purple-400 to-indigo-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-white text-sm font-bold">📈</span>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-purple-400 mb-2">Continuous Innovation</h3>
+                    <p className="text-white/80">Our autonomous systems continuously learn, adapt, and improve, ensuring your platform stays ahead of the technology curve.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* Revolutionary Call to Action */}
           <section className="text-center mx-auto max-w-4xl px-6 pb-16">
             <div className="bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-12 border border-white/20">
@@ -570,6 +894,9 @@ export default function HomePage() {
               <div className="flex flex-wrap justify-center gap-4">
                 <Link href="/contact" className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 rounded-lg text-white font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
                   Start Your Journey
+                </Link>
+                <Link href="/automation" className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 rounded-lg text-white font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                  Explore Automation
                 </Link>
                 <Link href="/about" className="px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white font-semibold transition-all duration-300 hover:border-cyan-400/50">
                   Learn More
