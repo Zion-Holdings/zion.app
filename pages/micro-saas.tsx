@@ -376,10 +376,6 @@ export default function MicroSaasPage() {
       setupTime: '35 minutes',
       category: 'Analytics & Data'
     },
-      trialDays: 14,
-      setupTime: '20 minutes',
-      category: 'Development & DevOps'
-    },
     {
       name: 'AI Video Editor Pro',
       tagline: 'Professional video editing with AI',

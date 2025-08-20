@@ -63,7 +63,7 @@ export type {
 export type {
   ContentRequest,
   ContentResponse,
-  ContentTemplate
+  ContentTemplate as ContentTemplateLegacy
 } from './aiContentService';
 
 export type {
