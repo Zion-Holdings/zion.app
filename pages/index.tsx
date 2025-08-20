@@ -561,6 +561,82 @@ export default function HomePage() {
             </div>
           </section>
 
+          {/* Open Source & Community */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">🌟 Open Source & Community</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/20">
+                <h3 className="text-2xl font-bold text-cyan-400 mb-4 text-center">🚀 Open Source Innovation</h3>
+                <p className="text-white/80 mb-6">
+                  Zion Tech Group is built on the principles of open collaboration and transparent innovation. Our entire platform is open source, allowing developers worldwide to contribute, learn, and build upon our revolutionary technology.
+                </p>
+                <div className="space-y-3">
+                  <div className="flex items-center space-x-3">
+                    <span className="text-green-400">✓</span>
+                    <span className="text-white/80">Full source code available</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <span className="text-green-400">✓</span>
+                    <span className="text-white/80">MIT License</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <span className="text-green-400">✓</span>
+                    <span className="text-white/80">Active community</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <span className="text-green-400">✓</span>
+                    <span className="text-white/80">Regular updates</span>
+                  </div>
+                </div>
+                <div className="mt-6">
+                  <a 
+                    href="https://github.com/Zion-Holdings/zion.app" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-6 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg text-white font-semibold transition-all duration-300"
+                  >
+                    <span className="mr-2">📁</span>
+                    View on GitHub
+                  </a>
+                </div>
+              </div>
+              
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/20">
+                <h3 className="text-2xl font-bold text-fuchsia-400 mb-4 text-center">🤝 Join Our Community</h3>
+                <p className="text-white/80 mb-6">
+                  Become part of the future of autonomous technology. Contribute to our open-source projects, share your ideas, and help shape the next generation of AI-powered automation systems.
+                </p>
+                <div className="space-y-3">
+                  <div className="flex items-center space-x-3">
+                    <span className="text-fuchsia-400">💡</span>
+                    <span className="text-white/80">Submit feature requests</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <span className="text-fuchsia-400">🐛</span>
+                    <span className="text-white/80">Report bugs & issues</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <span className="text-fuchsia-400">📝</span>
+                    <span className="text-white/80">Improve documentation</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <span className="text-fuchsia-400">🔧</span>
+                    <span className="text-white/80">Contribute code</span>
+                  </div>
+                </div>
+                <div className="mt-6">
+                  <Link 
+                    href="/CONTRIBUTING.md"
+                    className="inline-flex items-center px-6 py-3 bg-fuchsia-600 hover:bg-fuchsia-700 rounded-lg text-white font-semibold transition-all duration-300"
+                  >
+                    <span className="mr-2">📖</span>
+                    Contributing Guide
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* Revolutionary Call to Action */}
           <section className="text-center mx-auto max-w-4xl px-6 pb-16">
             <div className="bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-12 border border-white/20">
