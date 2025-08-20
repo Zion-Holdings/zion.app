@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
-import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Mail, MessageCircle, Kanban, Headphones, ChevronRight, Play, BookOpen, Code, Server, Shield as ShieldIcon, Zap as ZapIcon2, Globe as GlobeIcon, Users as UsersIcon } from 'lucide-react';
+import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Mail, MessageCircle, Kanban, Headphones, ChevronRight, Play, BookOpen, Code, Server, Shield as ShieldIcon, Zap as ZapIcon2, Globe as GlobeIcon, Users as UsersIcon, Phone, MapPin } from 'lucide-react';
 import Button from '../components/ui/Button';
 import FuturisticHero from '../components/sections/FuturisticHero';
 import FuturisticCard from '../components/ui/FuturisticCard';
@@ -11,7 +11,7 @@ export default function HomePage() {
   const popularServices = getPopularServices();
 
   const stats = [
-    { number: '28+', label: 'Real Micro SaaS Services' },
+    { number: '35+', label: 'Real Micro SaaS Services' },
     { number: '99.9%', label: 'Uptime Guarantee' },
     { number: '14 Days', label: 'Free Trial' },
     { number: '24/7', label: 'Expert Support' }
@@ -46,28 +46,28 @@ export default function HomePage() {
       name: 'AI & Machine Learning',
       description: 'Intelligent solutions that learn and adapt',
       icon: '🤖',
-      count: 8,
+      count: 12,
       color: 'from-purple-500 to-pink-600'
     },
     {
       name: 'Cloud & DevOps',
       description: 'Scalable infrastructure and automation',
       icon: '☁️',
-      count: 6,
+      count: 8,
       color: 'from-blue-500 to-cyan-600'
     },
     {
       name: 'Business & Productivity',
       description: 'Tools to streamline operations',
       icon: '💼',
-      count: 7,
+      count: 9,
       color: 'from-green-500 to-emerald-600'
     },
     {
       name: 'Marketing & Sales',
       description: 'Drive growth and conversions',
       icon: '📈',
-      count: 5,
+      count: 6,
       color: 'from-orange-500 to-red-600'
     }
   ];
@@ -76,14 +76,14 @@ export default function HomePage() {
     <>
       <Head>
         <title>Zion Tech Group - Future of Micro SaaS Services</title>
-        <meta name="description" content="Discover 28+ real micro SaaS services that solve actual business problems with AI-powered intelligence. Get started with a 14-day free trial." />
-        <meta name="keywords" content="micro SaaS, AI services, business automation, cloud optimization, content generation, sales automation" />
+        <meta name="description" content="Discover 35+ real micro SaaS services that solve actual business problems with AI-powered intelligence. Get started with a 14-day free trial." />
+        <meta name="keywords" content="micro SaaS, AI services, business automation, cloud optimization, content generation, sales automation, cybersecurity, data backup, business intelligence" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         
         {/* Open Graph */}
         <meta property="og:title" content="Zion Tech Group - Future of Micro SaaS Services" />
-        <meta property="og:description" content="Discover 28+ real micro SaaS services that solve actual business problems with AI-powered intelligence." />
+        <meta property="og:description" content="Discover 35+ real micro SaaS services that solve actual business problems with AI-powered intelligence." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://ziontechgroup.com" />
         <meta property="og:image" content="https://ziontechgroup.com/og-image.jpg" />
@@ -91,7 +91,7 @@ export default function HomePage() {
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Zion Tech Group - Future of Micro SaaS Services" />
-        <meta name="twitter:description" content="Discover 28+ real micro SaaS services that solve actual business problems with AI-powered intelligence." />
+        <meta name="twitter:description" content="Discover 35+ real micro SaaS services that solve actual business problems with AI-powered intelligence." />
         <meta name="twitter:image" content="https://ziontechgroup.com/og-image.jpg" />
       </Head>
 
@@ -201,16 +201,14 @@ export default function HomePage() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <FuturisticCard
-                  variant="cyber"
-                  glowColor="purple"
-                  className="text-center h-full cursor-pointer hover:scale-105 transition-transform duration-300"
-                >
+                <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 text-center hover:border-neon-blue/50 transition-all duration-300 group cursor-pointer">
                   <div className="text-4xl mb-4">{category.icon}</div>
-                  <h3 className="text-lg font-bold text-white mb-2">{category.name}</h3>
-                  <p className="text-gray-300 text-sm mb-4">{category.description}</p>
-                  <div className="text-neon-purple font-semibold">{category.count} services</div>
-                </FuturisticCard>
+                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-neon-blue transition-colors duration-300">
+                    {category.name}
+                  </h3>
+                  <p className="text-gray-400 text-sm mb-4">{category.description}</p>
+                  <div className="text-neon-blue font-semibold">{category.count} Services</div>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -296,25 +294,77 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Contact Information */}
-      <section className="py-12 bg-gray-900 border-t border-gray-800">
-        <div className="container mx-auto px-4 text-center">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <h3 className="text-lg font-semibold text-white mb-2">Contact Us</h3>
-              <p className="text-gray-400">Ready to get started? Reach out to our team.</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold text-white mb-2">Phone</h3>
-              <p className="text-neon-blue">+1 302 464 0950</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold text-white mb-2">Email</h3>
-              <p className="text-neon-blue">kleber@ziontechgroup.com</p>
-            </div>
+      {/* Contact Information Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-900 to-black relative overflow-hidden">
+        <div className="absolute inset-0 cyber-grid opacity-10" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Get in <span className="neon-text-green">Touch</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Ready to transform your business? Contact our team of experts today
+            </p>
           </div>
-          <div className="mt-6 text-gray-400">
-            <p>Address: 364 E Main St STE 1008, Middletown DE 19709</p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="text-center"
+            >
+              <div className="bg-gradient-to-br from-neon-blue/10 to-neon-blue/5 border border-neon-blue/20 rounded-2xl p-6 backdrop-blur-sm">
+                <Phone className="h-12 w-12 text-neon-blue mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-white mb-2">Phone</h3>
+                <p className="text-neon-blue font-semibold text-lg">+1 302 464 0950</p>
+                <p className="text-gray-400 text-sm mt-2">Available 24/7 for urgent support</p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="text-center"
+            >
+              <div className="bg-gradient-to-br from-neon-green/10 to-neon-green/5 border border-neon-green/20 rounded-2xl p-6 backdrop-blur-sm">
+                <Mail className="h-12 w-12 text-neon-green mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-white mb-2">Email</h3>
+                <p className="text-neon-green font-semibold text-lg">kleber@ziontechgroup.com</p>
+                <p className="text-gray-400 text-sm mt-2">Response within 2 hours</p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="text-center"
+            >
+              <div className="bg-gradient-to-br from-neon-purple/10 to-neon-purple/5 border border-neon-purple/20 rounded-2xl p-6 backdrop-blur-sm">
+                <MapPin className="h-12 w-12 text-neon-purple mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-white mb-2">Address</h3>
+                <p className="text-neon-purple font-semibold text-sm leading-tight">
+                  364 E Main St STE 1008<br />
+                  Middletown DE 19709
+                </p>
+                <p className="text-gray-400 text-sm mt-2">Headquarters location</p>
+              </div>
+            </motion.div>
+          </div>
+
+          <div className="text-center mt-12">
+            <Button
+              href="/contact"
+              className="btn-futuristic px-8 py-3 text-lg font-semibold"
+            >
+              Start Your Free Trial
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
           </div>
         </div>
       </section>

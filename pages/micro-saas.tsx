@@ -560,17 +560,11 @@ export default function MicroSaasPage() {
   ];
 
   const categories = [
-    'All',
-    'Content & Marketing',
-    'Development & DevOps',
-    'Sales & CRM',
-    'Legal & Compliance',
-    'Human Resources',
-    'Analytics & Data',
-    'Finance & Accounting',
-    'Project Management',
-    'Customer Experience',
-    'Security & Compliance'
+    { name: 'All', count: 35 },
+    { name: 'AI & Machine Learning', count: 12 },
+    { name: 'Cloud & DevOps', count: 8 },
+    { name: 'Business & Productivity', count: 9 },
+    { name: 'Marketing & Sales', count: 6 }
   ];
 
   const filteredServices = selectedCategory === 'All' 
@@ -582,22 +576,23 @@ export default function MicroSaasPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
       <Head>
-        <title>Real Micro SaaS Services | Zion Tech Group</title>
-        <meta name="description" content="Discover 28+ real, fully-functional micro SaaS services. From AI content generation to cloud cost optimization, get started in minutes with our enterprise-grade solutions." />
-        <meta name="keywords" content="micro SaaS, AI automation, cloud optimization, business tools, enterprise software, Zion Tech Group" />
-        <meta name="author" content="Zion Tech Group" />
-        <link rel="canonical" href="https://ziontechgroup.com/micro-saas" />
+        <title>35+ Micro SaaS Services - Zion Tech Group</title>
+        <meta name="description" content="Discover 35+ real micro SaaS services including AI tools, cloud optimization, cybersecurity, business intelligence, and more. Start your free trial today." />
+        <meta name="keywords" content="micro SaaS services, AI tools, cloud optimization, cybersecurity, business intelligence, marketing automation, team collaboration" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         
         {/* Open Graph */}
-        <meta property="og:title" content="Real Micro SaaS Services | Zion Tech Group" />
-        <meta property="og:description" content="Discover 28+ real, fully-functional micro SaaS services. From AI content generation to cloud cost optimization, get started in minutes." />
-        <meta property="og:url" content="https://ziontechgroup.com/micro-saas" />
+        <meta property="og:title" content="35+ Micro SaaS Services - Zion Tech Group" />
+        <meta property="og:description" content="Discover 35+ real micro SaaS services that solve actual business problems with AI-powered intelligence." />
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ziontechgroup.com/micro-saas" />
+        <meta property="og:image" content="https://ziontechgroup.com/og-image.jpg" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Real Micro SaaS Services | Zion Tech Group" />
-        <meta name="twitter:description" content="Discover 28+ real, fully-functional micro SaaS services. From AI content generation to cloud cost optimization, get started in minutes." />
+        <meta name="twitter:title" content="35+ Micro SaaS Services - Zion Tech Group" />
+        <meta name="twitter:description" content="Discover 35+ real micro SaaS services that solve actual business problems with AI-powered intelligence." />
+        <meta name="twitter:image" content="https://ziontechgroup.com/og-image.jpg" />
       </Head>
 
       {/* Hero Section */}
@@ -724,15 +719,15 @@ export default function MicroSaasPage() {
             <div className="flex flex-wrap justify-center gap-2 mb-8">
               {categories.map((category) => (
                 <button
-                  key={category}
-                  onClick={() => setSelectedCategory(category)}
+                  key={category.name}
+                  onClick={() => setSelectedCategory(category.name)}
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                    selectedCategory === category
+                    selectedCategory === category.name
                       ? 'bg-blue-600 text-white shadow-lg'
                       : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
                   }`}
                 >
-                  {category}
+                  {category.name} ({category.count})
                 </button>
               ))}
             </div>
@@ -842,58 +837,59 @@ export default function MicroSaasPage() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-900 to-purple-900">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Card variant="holographic" size="xl" className="text-center">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
-              Ready to Get Started?
+      {/* Contact Information Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-900 to-black relative overflow-hidden">
+        <div className="absolute inset-0 cyber-grid opacity-10" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Ready to <span className="neon-text-green">Transform</span> Your Business?
             </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Join thousands of businesses already using our micro SaaS solutions to automate, optimize, and scale their operations.
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Get started with any of our 35+ micro SaaS services today. Our team of experts is here to help you succeed.
             </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              <div className="flex items-center justify-center space-x-3 text-gray-300">
-                <Phone className="w-5 h-5 text-blue-400" />
-                <span>+1 302 464 0950</span>
-              </div>
-              <div className="flex items-center justify-center space-x-3 text-gray-300">
-                <Mail className="w-5 h-5 text-green-400" />
-                <span>kleber@ziontechgroup.com</span>
-              </div>
-              <div className="flex items-center justify-center space-x-3 text-gray-300">
-                <MapPin className="w-5 h-5 text-purple-400" />
-                <span>Middletown DE 19709</span>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
+            <div className="text-center">
+              <div className="bg-gradient-to-br from-neon-blue/10 to-neon-blue/5 border border-neon-blue/20 rounded-2xl p-6 backdrop-blur-sm">
+                <Phone className="h-12 w-12 text-neon-blue mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-white mb-2">Phone Support</h3>
+                <p className="text-neon-blue font-semibold text-lg">+1 302 464 0950</p>
+                <p className="text-gray-400 text-sm mt-2">Available 24/7</p>
               </div>
             </div>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button
-                variant="futuristic"
-                size="lg"
-                href="/contact"
-                icon={<MessageSquare className="w-5 h-5" />}
-                iconPosition="right"
-                glow
-                className="min-w-[200px]"
-              >
-                Contact Sales
-              </Button>
-              
-              <Button
-                variant="outline"
-                size="lg"
-                href="/pricing"
-                icon={<DollarSign className="w-5 h-5" />}
-                iconPosition="left"
-                glow
-                className="min-w-[200px]"
-              >
-                View Pricing
-              </Button>
+
+            <div className="text-center">
+              <div className="bg-gradient-to-br from-neon-green/10 to-neon-green/5 border border-neon-green/20 rounded-2xl p-6 backdrop-blur-sm">
+                <Mail className="h-12 w-12 text-neon-green mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-white mb-2">Email Support</h3>
+                <p className="text-neon-green font-semibold text-lg">kleber@ziontechgroup.com</p>
+                <p className="text-gray-400 text-sm mt-2">Response within 2 hours</p>
+              </div>
             </div>
-          </Card>
+
+            <div className="text-center">
+              <div className="bg-gradient-to-br from-neon-purple/10 to-neon-purple/5 border border-neon-purple/20 rounded-2xl p-6 backdrop-blur-sm">
+                <MapPin className="h-12 w-12 text-neon-purple mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-white mb-2">Headquarters</h3>
+                <p className="text-neon-purple font-semibold text-sm leading-tight">
+                  364 E Main St STE 1008<br />
+                  Middletown DE 19709
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <Button
+              href="/contact"
+              className="btn-futuristic px-8 py-3 text-lg font-semibold"
+            >
+              Start Your Free Trial Today
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </div>
         </div>
       </section>
     </div>
