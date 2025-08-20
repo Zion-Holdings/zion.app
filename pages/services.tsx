@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
+import { ArrowRight } from 'lucide-react';
 
 export default function ServicesPage() {
   const services = [
@@ -19,6 +20,7 @@ export default function ServicesPage() {
       color: 'bg-gradient-to-br from-fuchsia-500 to-purple-600',
       textColor: 'text-fuchsia-400',
       gradient: 'from-fuchsia-400 to-purple-500',
+      href: '/automation'
     },
     {
       icon: '☁️',
@@ -34,6 +36,55 @@ export default function ServicesPage() {
       color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
       textColor: 'text-cyan-400',
       gradient: 'from-cyan-400 to-blue-500',
+      href: '/cloud-platform'
+    },
+    {
+      icon: '📝',
+      title: 'AI Content Generator',
+      description: 'Generate high-quality, SEO-optimized content in seconds with advanced AI writing assistance.',
+      features: [
+        'Real-time Content Creation',
+        '50+ Language Support',
+        'SEO Optimization',
+        'Plagiarism-Free Writing',
+        'Content Templates'
+      ],
+      color: 'bg-gradient-to-br from-purple-500 to-indigo-600',
+      textColor: 'text-purple-400',
+      gradient: 'from-purple-400 to-indigo-500',
+      href: '/ai-content-generator'
+    },
+    {
+      icon: '👁️',
+      title: 'Cloud Monitoring & Analytics',
+      description: 'Real-time infrastructure monitoring with AI-powered insights and intelligent alerting.',
+      features: [
+        'Real-time Monitoring',
+        'AI-Powered Alerting',
+        'Multi-Cloud Support',
+        'Performance Analytics',
+        'Security Monitoring'
+      ],
+      color: 'bg-gradient-to-br from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      gradient: 'from-green-400 to-emerald-500',
+      href: '/cloud-monitoring'
+    },
+    {
+      icon: '🔍',
+      title: 'AI-Powered SEO Suite',
+      description: 'Comprehensive SEO tools with AI-powered optimization, keyword research, and analytics.',
+      features: [
+        'AI Keyword Research',
+        'Content Optimization',
+        'Technical SEO Audits',
+        'Ranking Analytics',
+        'Local SEO Tools'
+      ],
+      color: 'bg-gradient-to-br from-blue-500 to-cyan-600',
+      textColor: 'text-blue-400',
+      gradient: 'from-blue-400 to-cyan-500',
+      href: '/ai-seo-suite'
     },
     {
       icon: '🔒',
@@ -46,55 +97,11 @@ export default function ServicesPage() {
         'Data Encryption',
         'Access Control'
       ],
-      color: 'bg-gradient-to-br from-green-500 to-emerald-600',
-      textColor: 'text-green-400',
-      gradient: 'from-green-400 to-emerald-500',
-    },
-    {
-      icon: '📊',
-      title: 'Data Analytics',
-      description: 'Transform your data into actionable insights with advanced analytics and visualization.',
-      features: [
-        'Real-time Analytics',
-        'Business Intelligence',
-        'Data Visualization',
-        'Predictive Modeling',
-        'Performance Metrics'
-      ],
-      color: 'bg-gradient-to-br from-orange-500 to-red-600',
-      textColor: 'text-orange-400',
-      gradient: 'from-orange-400 to-red-500',
-    },
-    {
-      icon: '🚀',
-      title: 'DevOps & CI/CD',
-      description: 'Streamline your development process with automated pipelines and deployment strategies.',
-      features: [
-        'Continuous Integration',
-        'Automated Testing',
-        'Deployment Automation',
-        'Infrastructure as Code',
-        'Monitoring & Alerting'
-      ],
-      color: 'bg-gradient-to-br from-indigo-500 to-purple-600',
-      textColor: 'text-indigo-400',
-      gradient: 'from-indigo-400 to-purple-500',
-    },
-    {
-      icon: '🌐',
-      title: 'Digital Transformation',
-      description: 'Modernize your business with cutting-edge digital solutions and strategic consulting.',
-      features: [
-        'Technology Strategy',
-        'Process Optimization',
-        'Change Management',
-        'Digital Innovation',
-        'Legacy Modernization'
-      ],
-      color: 'bg-gradient-to-br from-teal-500 to-cyan-600',
-      textColor: 'text-teal-400',
-      gradient: 'from-teal-400 to-cyan-500',
-    },
+      color: 'bg-gradient-to-br from-red-500 to-pink-600',
+      textColor: 'text-red-400',
+      gradient: 'from-red-400 to-pink-500',
+      href: '/security'
+    }
   ];
 
   const technologies = [
@@ -158,8 +165,9 @@ export default function ServicesPage() {
             {services.map((service, index) => (
               <Card
                 key={index}
-                className="card-hover group border-gradient-blue"
+                className="card-hover group border-gradient-blue cursor-pointer"
                 style={{ animationDelay: `${index * 0.1}s` }}
+                onClick={() => { if (service.href) window.location.href = service.href; }}
               >
                 <div className="flex items-start space-x-6">
                   <div className="relative">
@@ -183,6 +191,12 @@ export default function ServicesPage() {
                         </li>
                       ))}
                     </ul>
+                    {service.href && (
+                      <div className="mt-6 flex items-center text-cursor-blue group-hover:text-white transition-colors duration-300">
+                        <span className="text-sm font-medium">Learn More</span>
+                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                      </div>
+                    )}
                   </div>
                 </div>
               </Card>

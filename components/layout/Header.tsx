@@ -27,6 +27,9 @@ const Header = () => {
   ];
 
   const productDropdown = [
+    { name: 'AI Content Generator', href: '/ai-content-generator', description: 'AI-powered content creation in 50+ languages' },
+    { name: 'Cloud Monitoring', href: '/cloud-monitoring', description: 'Real-time infrastructure monitoring & analytics' },
+    { name: 'AI SEO Suite', href: '/ai-seo-suite', description: 'Comprehensive SEO tools with AI optimization' },
     { name: 'AI Code Assistant', href: '/ai-assistant', description: 'Intelligent code completion and suggestions' },
     { name: 'Cloud Platform', href: '/cloud-platform', description: 'Scalable cloud infrastructure' },
     { name: 'Automation Hub', href: '/automation', description: 'AI-powered workflow automation' },

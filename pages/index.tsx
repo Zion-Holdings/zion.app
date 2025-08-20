@@ -59,6 +59,33 @@ export default function HomePage() {
     },
   ];
 
+  const microSaasServices = [
+    {
+      icon: '📝',
+      title: 'AI Content Generator',
+      description: 'Generate high-quality, SEO-optimized content in seconds with advanced AI writing assistance.',
+      href: '/ai-content-generator',
+      color: 'from-purple-500 to-indigo-600',
+      stats: ['50+ Languages', '10M+ Words Generated', '99.9% Plagiarism-Free']
+    },
+    {
+      icon: '👁️',
+      title: 'Cloud Monitoring & Analytics',
+      description: 'Real-time infrastructure monitoring with AI-powered insights and intelligent alerting.',
+      href: '/cloud-monitoring',
+      color: 'from-green-500 to-emerald-600',
+      stats: ['99.99% Uptime', '1M+ Metrics Tracked', '<100ms Latency']
+    },
+    {
+      icon: '🔍',
+      title: 'AI-Powered SEO Suite',
+      description: 'Comprehensive SEO tools with AI-powered optimization, keyword research, and analytics.',
+      href: '/ai-seo-suite',
+      color: 'from-blue-500 to-cyan-600',
+      stats: ['+150% Organic Traffic', '+45% Search Rankings', '400% ROI']
+    }
+  ];
+
   const technologyStack = [
     { name: 'Next.js', category: 'Framework', icon: '⚡' },
     { name: 'React', category: 'Library', icon: '⚛️' },
@@ -107,8 +134,61 @@ export default function HomePage() {
         columns={3}
       />
 
-      {/* Technology Stack */}
+      {/* Micro SaaS Services */}
       <section className="py-24 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20 animate-fade-in">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-purple-500 rounded-full mr-2 animate-pulse" />
+              Our Micro SaaS Services
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight">
+              Ready-to-Use SaaS Solutions
+            </h2>
+            <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              Discover our suite of specialized micro SaaS services designed to solve specific business challenges with AI-powered intelligence.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {microSaasServices.map((service, index) => (
+              <Card
+                key={index}
+                className="text-center group border border-gray-800 hover:border-purple-500/30 cursor-pointer"
+                style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
+                onClick={() => window.location.href = service.href}
+              >
+                <div className="relative">
+                  <div className={`w-20 h-20 mx-auto mb-6 rounded-2xl flex items-center justify-center text-4xl bg-gradient-to-br ${service.color} shadow-xl group-hover:scale-110 transition-transform duration-300`}>
+                    {service.icon}
+                  </div>
+                  <div className={`absolute -inset-2 bg-gradient-to-r from-transparent via-${service.color} to-transparent rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-sm`} />
+                </div>
+                <h3 className="text-xl font-bold mb-4 text-white group-hover:text-purple-400 transition-colors duration-300">
+                  {service.title}
+                </h3>
+                <p className="text-gray-400 leading-relaxed mb-6">
+                  {service.description}
+                </p>
+                <div className="space-y-2 mb-6">
+                  {service.stats.map((stat, statIndex) => (
+                    <div key={statIndex} className="text-sm text-gray-300">
+                      {stat}
+                    </div>
+                  ))}
+                </div>
+                <div className="flex items-center justify-center text-purple-400 group-hover:text-white transition-colors duration-300">
+                  <span className="text-sm font-medium">Learn More</span>
+                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Technology Stack */}
+      <section className="py-24 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20 animate-fade-in">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
