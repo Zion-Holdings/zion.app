@@ -147,7 +147,7 @@ export default function HomePage() {
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-500">14-day free trial</span>
                   <Button
-                    href="https://contentgen.ziontechgroup.com"
+                    href="https://ziontechgroup.com/ai-content-generator"
                     target="_blank"
                     rel="noopener noreferrer"
                     size="sm"
@@ -177,7 +177,7 @@ export default function HomePage() {
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-500">14-day free trial</span>
                   <Button
-                    href="https://design.ziontechgroup.com"
+                    href="https://ziontechgroup.com/design-system-builder"
                     target="_blank"
                     rel="noopener noreferrer"
                     size="sm"
@@ -207,7 +207,7 @@ export default function HomePage() {
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-500">14-day free trial</span>
                   <Button
-                    href="https://monitor.ziontechgroup.com"
+                    href="https://ziontechgroup.com/app-performance-monitor"
                     target="_blank"
                     rel="noopener noreferrer"
                     size="sm"
@@ -237,7 +237,7 @@ export default function HomePage() {
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-500">14-day free trial</span>
                   <Button
-                    href="https://seo.ziontechgroup.com"
+                    href="https://ziontechgroup.com/seo-automation-suite"
                     target="_blank"
                     rel="noopener noreferrer"
                     size="sm"
@@ -297,7 +297,7 @@ export default function HomePage() {
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-500">14-day free trial</span>
                   <Button
-                    href="https://chatbot.ziontechgroup.com"
+                    href="https://ziontechgroup.com/ai-chatbot-platform"
                     target="_blank"
                     rel="noopener noreferrer"
                     size="sm"
@@ -327,7 +327,7 @@ export default function HomePage() {
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-500">14-day free trial</span>
                   <Button
-                    href="https://bi.ziontechgroup.com"
+                    href="https://ziontechgroup.com/business-intelligence-hub"
                     target="_blank"
                     rel="noopener noreferrer"
                     size="sm"
@@ -357,7 +357,7 @@ export default function HomePage() {
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-500">14-day free trial</span>
                   <Button
-                    href="https://video.ziontechgroup.com"
+                    href="https://ziontechgroup.com/ai-video-editor-pro"
                     target="_blank"
                     rel="noopener noreferrer"
                     size="sm"
@@ -387,7 +387,7 @@ export default function HomePage() {
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-500">14-day free trial</span>
                   <Button
-                    href="https://cloudcost.ziontechgroup.com"
+                    href="https://ziontechgroup.com/cloud-cost-optimizer"
                     target="_blank"
                     rel="noopener noreferrer"
                     size="sm"

@@ -111,7 +111,7 @@ export default function ServicesPage() {
       textColor: 'text-pink-400',
       gradient: 'from-pink-400 to-rose-500',
       pricing: '$49/month',
-      link: 'https://contentgen.ziontechgroup.com'
+      link: 'https://ziontechgroup.com/ai-content-generator'
     },
     {
       icon: '🎨',
@@ -128,7 +128,7 @@ export default function ServicesPage() {
       textColor: 'text-violet-400',
       gradient: 'from-violet-400 to-purple-500',
       pricing: '$79/month',
-      link: 'https://design.ziontechgroup.com'
+      link: 'https://ziontechgroup.com/design-system-builder'
     },
     {
       icon: '📱',
@@ -145,7 +145,7 @@ export default function ServicesPage() {
       textColor: 'text-amber-400',
       gradient: 'from-amber-400 to-orange-500',
       pricing: '$39/month',
-      link: 'https://monitor.ziontechgroup.com'
+      link: 'https://ziontechgroup.com/app-performance-monitor'
     },
     {
       icon: '🔍',
@@ -162,7 +162,7 @@ export default function ServicesPage() {
       textColor: 'text-emerald-400',
       gradient: 'from-emerald-400 to-green-500',
       pricing: '$89/month',
-      link: 'https://seo.ziontechgroup.com'
+      link: 'https://ziontechgroup.com/seo-automation-suite'
     },
     {
       icon: '💬',
@@ -179,7 +179,7 @@ export default function ServicesPage() {
       textColor: 'text-sky-400',
       gradient: 'from-sky-400 to-blue-500',
       pricing: '$69/month',
-      link: 'https://chatbot.ziontechgroup.com'
+      link: 'https://ziontechgroup.com/ai-chatbot-platform'
     },
     {
       icon: '📊',
@@ -196,7 +196,7 @@ export default function ServicesPage() {
       textColor: 'text-rose-400',
       gradient: 'from-rose-400 to-pink-500',
       pricing: '$99/month',
-      link: 'https://bi.ziontechgroup.com'
+      link: 'https://ziontechgroup.com/business-intelligence-hub'
     },
     {
       icon: '📧',
@@ -213,7 +213,7 @@ export default function ServicesPage() {
       textColor: 'text-indigo-400',
       gradient: 'from-indigo-400 to-blue-500',
       pricing: '$29/month',
-      link: 'https://email.ziontechgroup.com'
+      link: 'https://ziontechgroup.com/email-marketing-automation'
     },
     {
       icon: '📱',
@@ -230,7 +230,7 @@ export default function ServicesPage() {
       textColor: 'text-teal-400',
       gradient: 'from-teal-400 to-cyan-500',
       pricing: '$19/month',
-      link: 'https://social.ziontechgroup.com'
+      link: 'https://ziontechgroup.com/social-media-scheduler'
     },
     {
       icon: '💰',
@@ -247,7 +247,7 @@ export default function ServicesPage() {
       textColor: 'text-yellow-400',
       gradient: 'from-yellow-400 to-orange-500',
       pricing: '$25/month',
-      link: 'https://billing.ziontechgroup.com'
+      link: 'https://ziontechgroup.com/invoice-billing-manager'
     },
     // New enhanced services
     {
@@ -265,7 +265,7 @@ export default function ServicesPage() {
       textColor: 'text-blue-400',
       gradient: 'from-blue-400 to-indigo-500',
       pricing: '$59/month',
-      link: 'https://transcription.ziontechgroup.com'
+      link: 'https://ziontechgroup.com/ai-meeting-transcription'
     },
     {
       icon: '🧾',
@@ -282,7 +282,7 @@ export default function ServicesPage() {
       textColor: 'text-green-400',
       gradient: 'from-green-400 to-emerald-500',
       pricing: '$89/month',
-      link: 'https://invoice.ziontechgroup.com'
+      link: 'https://ziontechgroup.com/automated-invoice-processing'
     },
     {
       icon: '📉',
@@ -299,7 +299,7 @@ export default function ServicesPage() {
       textColor: 'text-red-400',
       gradient: 'from-red-400 to-pink-500',
       pricing: '$79/month',
-      link: 'https://churn.ziontechgroup.com'
+      link: 'https://ziontechgroup.com/customer-churn-prediction'
     },
     {
       icon: '🎯',
