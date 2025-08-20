@@ -28,7 +28,7 @@ export default function HomePage() {
                 <span className="text-cyan-400 font-bold">227+</span> Intelligent Automations
               </div>
               <div className="bg-white/10 backdrop-blur-xl rounded-xl px-6 py-3 border border-white/20">
-                <span className="text-fuchsia-400 font-bold">2960+</span> Dynamic Pages
+                <span className="text-fuchsia-400 font-bold">20+</span> Dynamic Pages
               </div>
               <div className="bg-white/10 backdrop-blur-xl rounded-xl px-6 py-3 border border-white/20">
                 <span className="text-blue-400 font-bold">12</span> Core Components
@@ -48,6 +48,9 @@ export default function HomePage() {
               </Link>
               <Link href="/services" className="px-8 py-4 bg-gradient-to-r from-fuchsia-500 to-purple-600 hover:from-fuchsia-600 hover:to-purple-700 rounded-lg text-white font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
                 AI Services
+              </Link>
+              <Link href="/reports" className="px-8 py-4 bg-gradient-to-r from-yellow-500 to-amber-600 hover:from-yellow-600 hover:to-amber-700 rounded-lg text-white font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                Reports
               </Link>
               <Link href="/contact" className="px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 rounded-lg text-white font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
                 Get Started
@@ -160,7 +163,7 @@ export default function HomePage() {
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-lg flex items-center justify-center mx-auto mb-4">
                   <span className="text-xl">⚛️</span>
                 </div>
-                <h3 className="text-lg font-semibold text-blue-400 mb-2">Next.js 15</h3>
+                <h3 className="text-lg font-semibold text-blue-400 mb-2">Next.js 14</h3>
                 <p className="text-white/70 text-sm">React framework with SSR/SSG</p>
               </div>
               
@@ -303,6 +306,14 @@ export default function HomePage() {
                 <h3 className="text-lg font-semibold text-purple-400 mb-2">Blog</h3>
                 <p className="text-white/70 text-sm">Latest insights</p>
               </Link>
+
+              <Link href="/reports" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-amber-400/30 transition-all duration-300 text-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-yellow-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-xl">📰</span>
+                </div>
+                <h3 className="text-lg font-semibold text-amber-400 mb-2">Reports</h3>
+                <p className="text-white/70 text-sm">Autonomous updates</p>
+              </Link>
               
               <Link href="/contact" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-green-400/30 transition-all duration-300 text-center">
                 <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -310,6 +321,14 @@ export default function HomePage() {
                 </div>
                 <h3 className="text-lg font-semibold text-green-400 mb-2">Contact</h3>
                 <p className="text-white/70 text-sm">Get in touch</p>
+              </Link>
+
+              <Link href="/privacy" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-slate-400/30 transition-all duration-300 text-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-slate-400 to-slate-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-xl">⚖️</span>
+                </div>
+                <h3 className="text-lg font-semibold text-slate-300 mb-2">Privacy</h3>
+                <p className="text-white/70 text-sm">Your data & trust</p>
               </Link>
             </div>
           </section>
