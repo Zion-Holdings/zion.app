@@ -249,6 +249,75 @@ export default function ServicesPage() {
       pricing: '$25/month',
       link: 'https://billing.ziontechgroup.com'
     },
+    // New enhanced services
+    {
+      icon: '🎤',
+      title: 'AI Meeting Transcription Pro',
+      description: 'Transform meetings into actionable insights with AI-powered transcription and summarization.',
+      features: [
+        'Real-time transcription (15+ languages)',
+        'AI-powered meeting summaries',
+        'Action item & task extraction',
+        'Speaker identification',
+        'Integration with calendar & video platforms'
+      ],
+      color: 'bg-gradient-to-br from-blue-500 to-indigo-600',
+      textColor: 'text-blue-400',
+      gradient: 'from-blue-400 to-indigo-500',
+      pricing: '$59/month',
+      link: 'https://transcription.ziontechgroup.com'
+    },
+    {
+      icon: '🧾',
+      title: 'Automated Invoice Processing',
+      description: 'Streamline financial operations with AI-powered invoice automation and approval workflows.',
+      features: [
+        'AI-powered data extraction',
+        'Automated approval workflows',
+        'Payment processing integration',
+        'Fraud detection & validation',
+        'Compliance & audit trails'
+      ],
+      color: 'bg-gradient-to-br from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      gradient: 'from-green-400 to-emerald-500',
+      pricing: '$89/month',
+      link: 'https://invoice.ziontechgroup.com'
+    },
+    {
+      icon: '📉',
+      title: 'Customer Churn Prediction',
+      description: 'Predict and prevent customer churn with AI-powered analytics and retention strategies.',
+      features: [
+        'AI-powered churn prediction',
+        'Behavioral pattern analysis',
+        'Risk scoring algorithms',
+        'Automated retention campaigns',
+        'ROI tracking & reporting'
+      ],
+      color: 'bg-gradient-to-br from-red-500 to-pink-600',
+      textColor: 'text-red-400',
+      gradient: 'from-red-400 to-pink-500',
+      pricing: '$79/month',
+      link: 'https://churn.ziontechgroup.com'
+    },
+    {
+      icon: '🎯',
+      title: 'AI-Powered Lead Scoring',
+      description: 'Automate lead qualification with AI-powered scoring and conversion prediction.',
+      features: [
+        'AI-powered lead scoring',
+        'Behavioral pattern analysis',
+        'Conversion probability prediction',
+        'Automated lead routing',
+        'Performance analytics'
+      ],
+      color: 'bg-gradient-to-br from-purple-500 to-violet-600',
+      textColor: 'text-purple-400',
+      gradient: 'from-purple-400 to-violet-500',
+      pricing: '$69/month',
+      link: 'https://leads.ziontechgroup.com'
+    },
     {
       icon: '📋',
       title: 'Project Management Hub',
