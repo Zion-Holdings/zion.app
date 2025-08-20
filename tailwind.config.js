@@ -208,6 +208,12 @@ module.exports = {
         'float': 'float 6s ease-in-out infinite',
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'bounce-slow': 'bounce 2s infinite',
+        'grid-flow': 'gridFlow 20s linear infinite',
+        'particle': 'particle 7s linear infinite',
+        'scan-line': 'scanLine 3s ease-in-out infinite',
+        'gradient-x': 'gradientX 3s ease-in-out infinite',
+        'bounce-x': 'bounceX 2s ease-in-out infinite',
+        'count-up': 'countUp 2s ease-out forwards',
       },
       keyframes: {
         fadeIn: {
@@ -237,6 +243,31 @@ module.exports = {
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-20px)' },
+        },
+        gridFlow: {
+          '0%': { transform: 'translateX(0) translateY(0)' },
+          '100%': { transform: 'translateX(60px) translateY(60px)' },
+        },
+        particle: {
+          '0%': { transform: 'translateY(0) scale(1)', opacity: '1' },
+          '50%': { transform: 'translateY(-100px) scale(1.5)', opacity: '0.7' },
+          '100%': { transform: 'translateY(-200px) scale(0.5)', opacity: '0' },
+        },
+        scanLine: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
+        gradientX: {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+        },
+        bounceX: {
+          '0%, 100%': { transform: 'translateX(0)' },
+          '50%': { transform: 'translateX(25%)' },
+        },
+        countUp: {
+          '0%': { transform: 'scale(0.8)', opacity: '0' },
+          '100%': { transform: 'scale(1)', opacity: '1' },
         },
       },
       backdropBlur: {

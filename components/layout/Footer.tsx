@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { Mail, Smartphone, Building, Globe, Zap, Shield, Users } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -65,33 +66,64 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-cursor-darker/95 backdrop-blur-xl border-t border-cursor-lighter/20 relative overflow-hidden">
-      <div className="absolute inset-0 bg-grid opacity-5" />
-      <div className="container-cursor py-16 relative z-10">
+    <footer className="bg-black/95 backdrop-blur-2xl border-t border-white/20 relative overflow-hidden">
+      {/* Futuristic Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.05),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(34,197,94,0.05),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(168,85,247,0.05),transparent_50%)]" />
+      </div>
+
+      {/* Animated Grid Pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.1)_1px,transparent_1px)] bg-[size:40px_40px] opacity-20 animate-grid-flow" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center space-x-3 mb-6 group">
               <div className="relative">
-                <div className="w-12 h-12 bg-gradient-to-br from-cursor-blue to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 via-purple-500 to-cyan-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg group-hover:shadow-2xl group-hover:shadow-blue-500/25">
                   <span className="text-white font-bold text-2xl">Z</span>
                 </div>
-                <div className="absolute -inset-1 bg-gradient-to-r from-cursor-blue to-cursor-accent rounded-xl blur opacity-0 group-hover:opacity-75 transition-opacity duration-300 -z-10" />
+                <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 rounded-xl blur opacity-0 group-hover:opacity-75 transition-opacity duration-300 -z-10" />
               </div>
-              <span className="text-2xl font-bold gradient-text-blue group-hover:from-cursor-blue group-hover:to-cursor-accent transition-all duration-300">
-                Zion Tech
-              </span>
+              <div className="flex flex-col">
+                <span className="text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-400 transition-all duration-300">
+                  Zion Tech
+                </span>
+                <span className="text-sm text-gray-400 group-hover:text-blue-400 transition-colors duration-300">
+                  Group
+                </span>
+              </div>
             </Link>
             <p className="text-gray-400 mb-8 max-w-md leading-relaxed">
               The world&apos;s most advanced autonomous innovation hub delivering cutting-edge technology solutions, 
               intelligent automation systems, and the future of cloud-native AI infrastructure.
             </p>
+            
+            {/* Contact Information */}
+            <div className="mb-8 space-y-3">
+              <div className="flex items-center text-gray-400 hover:text-blue-400 transition-colors duration-300">
+                <Smartphone className="w-4 h-4 mr-3" />
+                <span>+1 302 464 0950</span>
+              </div>
+              <div className="flex items-center text-gray-400 hover:text-blue-400 transition-colors duration-300">
+                <Mail className="w-4 h-4 mr-3" />
+                <span>kleber@ziontechgroup.com</span>
+              </div>
+              <div className="flex items-center text-gray-400 hover:text-blue-400 transition-colors duration-300">
+                <Building className="w-4 h-4 mr-3" />
+                <span>364 E Main St STE 1008<br />Middletown DE 19709</span>
+              </div>
+            </div>
+
             <div className="flex space-x-4">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
                   href={social.href}
-                  className="w-11 h-11 bg-cursor-light hover:bg-cursor-blue rounded-xl flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-cursor-blue/25"
+                  className="w-11 h-11 bg-gray-800/50 hover:bg-blue-500/20 rounded-xl flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25 border border-gray-700/50 hover:border-blue-500/30"
                   aria-label={social.name}
                 >
                   {social.icon}
@@ -100,21 +132,23 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Footer Links */}
+          {/* Footer Sections */}
           {footerSections.map((section) => (
             <div key={section.title}>
-              <h3 className="text-white font-semibold mb-6 text-lg">{section.title}</h3>
+              <h3 className="text-lg font-semibold text-white mb-6 flex items-center">
+                {section.title === 'Company' && <Users className="w-5 h-5 mr-2 text-blue-400" />}
+                {section.title === 'Resources' && <Globe className="w-5 h-5 mr-2 text-green-400" />}
+                {section.title === 'Legal' && <Shield className="w-5 h-5 mr-2 text-purple-400" />}
+                {section.title}
+              </h3>
               <ul className="space-y-3">
                 {section.links.map((link) => (
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-gray-400 hover:text-cursor-blue transition-all duration-200 hover:translate-x-1 inline-block group"
+                      className="text-gray-400 hover:text-white transition-colors duration-300 hover:translate-x-1 inline-block"
                     >
-                      <span className="relative">
-                        {link.name}
-                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cursor-blue transition-all duration-200 group-hover:w-full" />
-                      </span>
+                      {link.name}
                     </Link>
                   </li>
                 ))}
@@ -124,18 +158,24 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-cursor-lighter/20 mt-16 pt-8">
+        <div className="mt-16 pt-8 border-t border-white/20">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm">
+            <div className="text-gray-400 text-sm mb-4 md:mb-0">
               © {currentYear} Zion Tech Group. All rights reserved.
-            </p>
-            <div className="flex items-center space-x-8 mt-4 md:mt-0">
-              <Link href="/privacy" className="text-gray-400 hover:text-cursor-blue text-sm transition-colors duration-200">
-                Privacy Policy
-              </Link>
-              <Link href="/terms" className="text-gray-400 hover:text-cursor-blue text-sm transition-colors duration-200">
-                Terms of Service
-              </Link>
+            </div>
+            <div className="flex items-center space-x-6 text-sm text-gray-400">
+              <div className="flex items-center">
+                <Zap className="w-4 h-4 mr-2 text-blue-400" />
+                <span>75+ Micro SaaS Services</span>
+              </div>
+              <div className="flex items-center">
+                <Shield className="w-4 h-4 mr-2 text-green-400" />
+                <span>99.9% Uptime</span>
+              </div>
+              <div className="flex items-center">
+                <Globe className="w-4 h-4 mr-2 text-purple-400" />
+                <span>ziontechgroup.com</span>
+              </div>
             </div>
           </div>
         </div>
