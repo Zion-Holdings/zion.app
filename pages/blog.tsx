@@ -1,217 +1,315 @@
 import React from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
+import Section from '../components/ui/Section';
+import Card from '../components/ui/Card';
+import Button from '../components/ui/Button';
 
 export default function BlogPage() {
   const blogPosts = [
     {
-      id: 'ai-automation-trends-2025',
-      title: 'AI Automation Trends 2025: The Future of Autonomous Systems',
-      excerpt: 'Explore the cutting-edge trends shaping the future of AI automation and autonomous technology systems.',
-      date: 'January 17, 2025',
+      title: 'The Future of Autonomous Technology in 2025',
+      excerpt: 'Explore how autonomous systems are revolutionizing industries and what to expect in the coming year.',
+      author: 'Zion Tech Team',
+      date: 'January 15, 2025',
+      readTime: '5 min read',
+      category: 'Technology Trends',
+      image: '/api/placeholder/400/250',
+      color: 'from-blue-500 to-blue-600'
+    },
+    {
+      title: 'AI-Powered Automation: From Theory to Practice',
+      excerpt: 'Real-world implementation strategies for deploying intelligent automation systems in your organization.',
+      author: 'Dr. Sarah Chen',
+      date: 'January 12, 2025',
       readTime: '8 min read',
       category: 'AI & Automation',
-      featured: true
+      image: '/api/placeholder/400/250',
+      color: 'from-purple-500 to-purple-600'
     },
     {
-      id: 'autonomous-content-generation',
-      title: 'Revolutionizing Content Creation with Autonomous AI Systems',
-      excerpt: 'How Zion Tech Group is transforming content generation through intelligent automation and machine learning.',
-      date: 'January 15, 2025',
-      readTime: '6 min read',
-      category: 'Content & AI'
-    },
-    {
-      id: 'cloud-native-automation',
-      title: 'Building Cloud-Native Automation Infrastructure',
-      excerpt: 'A deep dive into our cloud-native approach to building scalable, reliable automation systems.',
-      date: 'January 12, 2025',
-      readTime: '10 min read',
-      category: 'Infrastructure'
-    },
-    {
-      id: 'ai-ethics-automation',
-      title: 'Ethical Considerations in Autonomous AI Systems',
-      excerpt: 'Exploring the ethical implications and responsible development of autonomous technology.',
+      title: 'Building Zero-Downtime Infrastructure',
+      excerpt: 'Learn the secrets behind our 99.99% uptime guarantee and how to implement similar systems.',
+      author: 'Mike Rodriguez',
       date: 'January 10, 2025',
-      readTime: '7 min read',
-      category: 'AI Ethics'
+      readTime: '6 min read',
+      category: 'Infrastructure',
+      image: '/api/placeholder/400/250',
+      color: 'from-green-500 to-green-600'
     },
     {
-      id: 'performance-optimization',
-      title: 'Performance Optimization in Autonomous Systems',
-      excerpt: 'Best practices for optimizing performance in large-scale autonomous technology deployments.',
+      title: 'The Economics of Autonomous Systems',
+      excerpt: 'Understanding the ROI and cost benefits of implementing autonomous technology solutions.',
+      author: 'Lisa Thompson',
       date: 'January 8, 2025',
-      readTime: '9 min read',
-      category: 'Performance'
+      readTime: '7 min read',
+      category: 'Business Insights',
+      image: '/api/placeholder/400/250',
+      color: 'from-orange-500 to-orange-600'
     },
     {
-      id: 'future-of-work',
-      title: 'The Future of Work: Human-AI Collaboration',
-      excerpt: 'How autonomous systems are reshaping the workplace and enhancing human capabilities.',
+      title: 'Content Generation at Scale: Lessons Learned',
+      excerpt: 'How we built systems that generate 1000+ articles daily while maintaining quality and accuracy.',
+      author: 'Alex Johnson',
       date: 'January 5, 2025',
-      readTime: '5 min read',
-      category: 'Future of Work'
+      readTime: '9 min read',
+      category: 'Content Strategy',
+      image: '/api/placeholder/400/250',
+      color: 'from-red-500 to-red-600'
+    },
+    {
+      title: 'Security in the Age of Autonomous Systems',
+      excerpt: 'Best practices for securing AI-powered automation systems and maintaining compliance.',
+      author: 'David Kim',
+      date: 'January 3, 2025',
+      readTime: '6 min read',
+      category: 'Security',
+      image: '/api/placeholder/400/250',
+      color: 'from-indigo-500 to-indigo-600'
     }
   ];
 
-  const categories = ['All', 'AI & Automation', 'Content & AI', 'Infrastructure', 'AI Ethics', 'Performance', 'Future of Work'];
+  const categories = ['All', 'Technology Trends', 'AI & Automation', 'Infrastructure', 'Business Insights', 'Content Strategy', 'Security'];
 
   return (
     <>
       <Head>
-        <title>Blog | Zion Tech Group - AI & Automation Insights</title>
-        <meta name="description" content="Explore insights, trends, and innovations in AI automation, autonomous systems, and cutting-edge technology from Zion Tech Group." />
-        <meta property="og:title" content="Blog | Zion Tech Group - AI & Automation Insights" />
-        <meta property="og:description" content="Explore insights, trends, and innovations in AI automation, autonomous systems, and cutting-edge technology from Zion Tech Group." />
+        <title>Blog | Zion Tech Group - Insights & Updates</title>
+        <meta name="description" content="Stay updated with the latest insights on autonomous technology, AI automation, and industry trends from Zion Tech Group." />
+        <meta property="og:title" content="Blog - Zion Tech Group" />
+        <meta property="og:description" content="Latest insights on autonomous technology and AI automation." />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
       
-      <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-950 text-white">
-        <main className="container mx-auto px-6 py-12">
-          <div className="max-w-6xl mx-auto">
-            <nav className="mb-8">
-              <Link href="/" className="text-cyan-400 hover:text-cyan-300 transition-colors">
-                ← Back to Home
-              </Link>
-            </nav>
-            
-            <header className="text-center mb-16">
-              <h1 className="text-5xl font-extrabold mb-6 bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent">
-                Zion Tech Group Blog
-              </h1>
-              <p className="text-xl text-white/80 max-w-3xl mx-auto">
-                Insights, trends, and innovations in AI automation and autonomous technology
-              </p>
-            </header>
-            
-            {/* Featured Post */}
-            <section className="mb-16">
-              <h2 className="text-2xl font-bold mb-8 text-white">Featured Article</h2>
-              {blogPosts.filter(post => post.featured).map(post => (
-                <div key={post.id} className="bg-gradient-to-br from-white/10 to-white/5 rounded-2xl p-8 border border-white/20 hover:border-cyan-400/30 transition-all duration-300">
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="px-3 py-1 bg-cyan-400/20 text-cyan-400 text-sm rounded-full border border-cyan-400/30">
-                      {post.category}
-                    </span>
-                    <span className="text-white/60 text-sm">{post.date}</span>
-                    <span className="text-white/60 text-sm">•</span>
-                    <span className="text-white/60 text-sm">{post.readTime}</span>
-                  </div>
-                  <h3 className="text-3xl font-bold mb-4 text-white hover:text-cyan-400 transition-colors">
-                    <Link href={`/blog/${post.id}`}>{post.title}</Link>
-                  </h3>
-                  <p className="text-lg text-white/80 mb-6">{post.excerpt}</p>
-                  <Link 
-                    href={`/blog/${post.id}`}
-                    className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors font-semibold"
-                  >
-                    Read Full Article
-                    <span aria-hidden>→</span>
-                  </Link>
-                </div>
-              ))}
-            </section>
-            
-            {/* Category Filter */}
-            <section className="mb-12">
-              <div className="flex flex-wrap gap-3 justify-center">
-                {categories.map(category => (
-                  <button
-                    key={category}
-                    className="px-4 py-2 rounded-lg border border-white/20 text-white/80 hover:border-cyan-400/50 hover:text-cyan-400 transition-all duration-300"
-                  >
-                    {category}
-                  </button>
-                ))}
-              </div>
-            </section>
-            
-            {/* Blog Posts Grid */}
-            <section>
-              <h2 className="text-2xl font-bold mb-8 text-white">Latest Articles</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {blogPosts.filter(post => !post.featured).map(post => (
-                  <article key={post.id} className="bg-white/10 rounded-xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300 group">
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className="px-2 py-1 bg-fuchsia-400/20 text-fuchsia-400 text-xs rounded-full border border-fuchsia-400/30">
-                        {post.category}
-                      </span>
-                      <span className="text-white/60 text-xs">{post.readTime}</span>
-                    </div>
-                    <h3 className="text-xl font-semibold mb-3 text-white group-hover:text-cyan-400 transition-colors">
-                      <Link href={`/blog/${post.id}`}>{post.title}</Link>
-                    </h3>
-                    <p className="text-white/80 text-sm mb-4 line-clamp-3">{post.excerpt}</p>
-                    <div className="flex items-center justify-between">
-                      <span className="text-white/60 text-xs">{post.date}</span>
-                      <Link 
-                        href={`/blog/${post.id}`}
-                        className="text-cyan-400 hover:text-cyan-300 transition-colors text-sm font-medium"
-                      >
-                        Read More →
-                      </Link>
-                    </div>
-                  </article>
-                ))}
-              </div>
-            </section>
-            
-            {/* Newsletter Signup */}
-            <section className="mt-20 text-center">
-              <div className="bg-gradient-to-r from-cyan-500/10 to-fuchsia-500/10 rounded-2xl p-8 border border-cyan-500/20">
-                <h2 className="text-2xl font-bold mb-4 text-white">Stay Updated</h2>
-                <p className="text-white/80 mb-6 max-w-2xl mx-auto">
-                  Get the latest insights on AI automation, autonomous systems, and technology innovation 
-                  delivered directly to your inbox.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                  <input
-                    type="email"
-                    placeholder="Enter your email address"
-                    className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-cyan-400/50 focus:ring-1 focus:ring-cyan-400/50 transition-all duration-300"
-                  />
-                  <button className="bg-gradient-to-r from-cyan-400 to-fuchsia-400 text-white px-6 py-3 rounded-lg font-semibold hover:from-cyan-500 hover:to-fuchsia-500 transition-all duration-300">
-                    Subscribe
-                  </button>
-                </div>
-                <p className="text-white/60 text-sm mt-4">
-                  No spam, unsubscribe at any time. We respect your privacy.
-                </p>
-              </div>
-            </section>
-            
-            {/* Related Resources */}
-            <section className="mt-16">
-              <h2 className="text-2xl font-bold mb-8 text-center text-white">Explore More</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <Link href="/about" className="bg-white/10 rounded-xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300 text-center group">
-                  <div className="w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <span className="text-2xl">🏢</span>
-                  </div>
-                  <h3 className="text-lg font-semibold text-cyan-400 mb-2">About Us</h3>
-                  <p className="text-white/80 text-sm">Learn about our mission and vision for autonomous technology</p>
-                </Link>
-                
-                <Link href="/contact" className="bg-white/10 rounded-xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300 text-center group">
-                  <div className="w-16 h-16 bg-gradient-to-br from-fuchsia-400 to-purple-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <span className="text-2xl">📞</span>
-                  </div>
-                  <h3 className="text-lg font-semibold text-fuchsia-400 mb-2">Get in Touch</h3>
-                  <p className="text-white/80 text-sm">Have questions? We&apos;d love to hear from you</p>
-                </Link>
-                
-                <Link href="/" className="bg-white/10 rounded-xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300 text-center group">
-                  <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-indigo-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <span className="text-2xl">🚀</span>
-                  </div>
-                  <h3 className="text-lg font-semibold text-purple-400 mb-2">Platform Demo</h3>
-                  <p className="text-white/80 text-sm">Experience our autonomous technology firsthand</p>
-                </Link>
-              </div>
-            </section>
+      {/* Hero Section */}
+      <Section className="bg-gradient-to-br from-gray-50 to-blue-50" spacing="xl">
+        <div className="text-center max-w-4xl mx-auto">
+          <h1 className="text-5xl md:text-6xl font-black mb-8 gradient-text">
+            Latest Insights
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Stay ahead of the curve with expert insights on autonomous technology, AI automation, and industry trends
+          </p>
+        </div>
+      </Section>
+
+      {/* Featured Post */}
+      <Section className="bg-white" spacing="lg">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-8">
+            <span className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-4">
+              Featured Post
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              The Future of Autonomous Technology in 2025
+            </h2>
+            <p className="text-lg text-gray-600 mb-6">
+              Explore how autonomous systems are revolutionizing industries and what to expect in the coming year.
+            </p>
+            <div className="flex items-center justify-center space-x-4 text-sm text-gray-500">
+              <span>By Zion Tech Team</span>
+              <span>•</span>
+              <span>January 15, 2025</span>
+              <span>•</span>
+              <span>5 min read</span>
+            </div>
           </div>
-        </main>
-      </div>
+          
+          <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-8 text-white text-center">
+            <div className="max-w-2xl mx-auto">
+              <h3 className="text-2xl font-bold mb-4">
+                Autonomous systems are not just the future—they're already here
+              </h3>
+              <p className="text-blue-100 mb-6">
+                Discover how businesses are leveraging autonomous technology to achieve unprecedented efficiency, 
+                innovation, and competitive advantage in today's rapidly evolving digital landscape.
+              </p>
+              <Button variant="secondary" size="lg">
+                Read Full Article
+              </Button>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* Blog Posts Grid */}
+      <Section className="bg-gray-50" spacing="xl">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Latest Articles
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Explore our latest insights and expert analysis
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {blogPosts.slice(1).map((post, index) => (
+            <Card key={index} className="group hover:shadow-2xl transition-all duration-300">
+              <div className="mb-6">
+                <div className={`w-full h-48 bg-gradient-to-br ${post.color} rounded-lg mb-4 flex items-center justify-center`}>
+                  <div className="text-white text-center">
+                    <div className="text-lg font-bold mb-2">{post.category}</div>
+                    <div className="text-sm opacity-90">Featured Image</div>
+                  </div>
+                </div>
+                <div className="inline-block bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium mb-3">
+                  {post.category}
+                </div>
+              </div>
+              
+              <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-200">
+                {post.title}
+              </h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">{post.excerpt}</p>
+              
+              <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+                <span>By {post.author}</span>
+                <span>{post.readTime}</span>
+              </div>
+              
+              <div className="text-sm text-gray-500 mb-6">{post.date}</div>
+              
+              <Button variant="outline" size="sm" className="w-full">
+                Read Article
+              </Button>
+            </Card>
+          ))}
+        </div>
+      </Section>
+
+      {/* Newsletter Section */}
+      <Section className="bg-white" spacing="xl">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Stay Updated
+          </h2>
+          <p className="text-xl text-gray-600 mb-8">
+            Get the latest insights on autonomous technology delivered to your inbox
+          </p>
+          
+          <div className="bg-gray-50 rounded-2xl p-8">
+            <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+              />
+              <Button type="submit" size="md">
+                Subscribe
+              </Button>
+            </form>
+            <p className="text-sm text-gray-500 mt-4">
+              No spam, unsubscribe at any time. We respect your privacy.
+            </p>
+          </div>
+        </div>
+      </Section>
+
+      {/* Topics We Cover */}
+      <Section className="bg-gray-50" spacing="xl">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Topics We Cover
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Expert insights across the autonomous technology ecosystem
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <Card className="text-center group hover:shadow-2xl transition-all duration-300">
+            <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+              <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 className="text-xl font-bold mb-4 text-gray-900">Technology Trends</h3>
+            <p className="text-gray-600">
+              Stay ahead with insights on emerging technologies and industry developments
+            </p>
+          </Card>
+          
+          <Card className="text-center group hover:shadow-2xl transition-all duration-300">
+            <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+              <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+              </svg>
+            </div>
+            <h3 className="text-xl font-bold mb-4 text-gray-900">AI & Automation</h3>
+            <p className="text-gray-600">
+              Deep dives into artificial intelligence and automation implementation strategies
+            </p>
+          </Card>
+          
+          <Card className="text-center group hover:shadow-2xl transition-all duration-300">
+            <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+              <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+              </svg>
+            </div>
+            <h3 className="text-xl font-bold mb-4 text-gray-900">Infrastructure</h3>
+            <p className="text-gray-600">
+              Best practices for building scalable, reliable autonomous systems
+            </p>
+          </Card>
+          
+          <Card className="text-center group hover:shadow-2xl transition-all duration-300">
+            <div className="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+              <svg className="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+            </div>
+            <h3 className="text-xl font-bold mb-4 text-gray-900">Business Insights</h3>
+            <p className="text-gray-600">
+              Strategic guidance on implementing autonomous technology for business growth
+            </p>
+          </Card>
+          
+          <Card className="text-center group hover:shadow-2xl transition-all duration-300">
+            <div className="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+              <svg className="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+              </svg>
+            </div>
+            <h3 className="text-xl font-bold mb-4 text-gray-900">Content Strategy</h3>
+            <p className="text-gray-600">
+              Strategies for leveraging AI-powered content generation and optimization
+            </p>
+          </Card>
+          
+          <Card className="text-center group hover:shadow-2xl transition-all duration-300">
+            <div className="w-16 h-16 bg-indigo-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+              <svg className="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h3 className="text-xl font-bold mb-4 text-gray-900">Security</h3>
+            <p className="text-gray-600">
+              Best practices for securing autonomous systems and maintaining compliance
+            </p>
+          </Card>
+        </div>
+      </Section>
+
+      {/* CTA Section */}
+      <Section className="bg-gradient-to-r from-blue-600 to-purple-600 text-white" spacing="lg">
+        <div className="text-center max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Ready to Learn More?
+          </h2>
+          <p className="text-xl text-blue-100 mb-8">
+            Explore our services and discover how autonomous technology can transform your business
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button variant="secondary" size="lg" href="/services">
+              Explore Services
+            </Button>
+            <Button variant="outline" size="lg" href="/contact" className="border-white text-white hover:bg-white hover:text-blue-600">
+              Get in Touch
+            </Button>
+          </div>
+        </div>
+      </Section>
     </>
   );
 }
