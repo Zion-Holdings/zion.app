@@ -13,9 +13,9 @@ export { aiHrService } from './aiHrService';
 export { designSystemBuilderService } from './designSystemBuilderService';
 export { performanceMonitorService } from './performanceMonitorService';
 export { videoEditingService } from './videoEditingService';
-export { aiCodeReviewService } from './aiCodeReviewService';
-export { apiDocGeneratorService } from './apiDocGeneratorService';
-export { databasePerformanceMonitorService } from './databasePerformanceMonitorService';
+export { aiMarketResearchService } from './aiMarketResearchService';
+export { aiCustomerServiceService } from './aiCustomerServiceService';
+export { aiDataAnalyticsService } from './aiDataAnalyticsService';
 
 // Export types
 export type {
@@ -137,38 +137,24 @@ export type {
 } from './videoEditingService';
 
 export type {
-  CodeReview,
-  CodeIssue,
-  CodeRecommendation,
-  CodeMetrics
-} from './aiCodeReviewService';
+  MarketTrend,
+  CompetitorAnalysis as MarketCompetitorAnalysis,
+  MarketOpportunity,
+  MarketReport
+} from './aiMarketResearchService';
 
 export type {
-  APIDocumentation,
-  APIEndpoint,
-  APIParameter,
-  APIRequestBody,
-  APIContent,
-  APIResponse,
-  APIHeader,
-  APISchema,
-  APIExample,
-  ExampleRequest,
-  ExampleResponse,
-  RateLimit,
-  AuthenticationRequirement,
-  DocumentationConfig
-} from './apiDocGeneratorService';
+  CustomerInquiry,
+  SupportTicket,
+  KnowledgeBaseArticle,
+  CustomerServiceMetrics
+} from './aiCustomerServiceService';
 
 export type {
-  DatabaseConnection,
-  ConnectionMetrics,
-  QueryPerformance,
-  ExecutionPlan,
-  PlanNode,
-  QueryMetrics,
-  QueryRecommendation,
-  DatabaseMetrics,
-  DatabasePerformanceAlert,
-  IndexRecommendation
-} from './databasePerformanceMonitorService';
+  DataSource as AnalyticsDataSource,
+  DataTransformation,
+  DataVisualization,
+  PredictiveModel,
+  DataInsight,
+  DataAnalyticsMetrics
+} from './aiDataAnalyticsService';
