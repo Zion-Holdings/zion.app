@@ -6,6 +6,9 @@ interface CardProps {
   style?: React.CSSProperties;
   onClick?: () => void;
   hover?: boolean;
+  role?: string;
+  'aria-label'?: string;
+  'aria-describedby'?: string;
 }
 
 const Card: React.FC<CardProps> = ({
@@ -14,6 +17,9 @@ const Card: React.FC<CardProps> = ({
   style,
   onClick,
   hover = true,
+  role,
+  'aria-label': ariaLabel,
+  'aria-describedby': ariaDescribedby,
 }) => {
   const baseClasses = 'bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-xl p-6 transition-all duration-300 relative overflow-hidden';
   const hoverClasses = hover ? 'hover:border-blue-500/30 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-1 hover:bg-gray-900/80' : '';
@@ -21,12 +27,17 @@ const Card: React.FC<CardProps> = ({
   
   const classes = `${baseClasses} ${hoverClasses} ${clickableClasses} ${className}`;
 
+  const commonProps = {
+    className: classes,
+    style,
+    onClick,
+    role,
+    'aria-label': ariaLabel,
+    'aria-describedby': ariaDescribedby,
+  };
+
   return (
-    <div
-      className={classes}
-      style={style}
-      onClick={onClick}
-    >
+    <div {...commonProps}>
       {/* Subtle background pattern */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5 opacity-0 hover:opacity-100 transition-opacity duration-300" />
       
