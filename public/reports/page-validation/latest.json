@@ -1,27 +1,13 @@
 {
   "summary": {
-    "totalFiles": 1,
-    "filesWithIssues": 1,
+    "totalFiles": 0,
+    "filesWithIssues": 0,
     "totalIssues": 0,
-    "totalWarnings": 1,
+    "totalWarnings": 0,
     "buildBreakingFiles": 0,
     "canBuild": true
   },
-  "results": [
-    {
-      "file": "pages/_app.tsx",
-      "issues": [],
-      "warnings": [
-        {
-          "type": "WARNING",
-          "code": "INCOMPLETE_HTML",
-          "message": "Incomplete HTML tags detected",
-          "line": 0,
-          "severity": "warning"
-        }
-      ]
-    }
-  ],
+  "results": [],
   "buildBreakingFiles": [],
-  "generatedAt": "2025-08-20T13:20:37.240Z"
+  "generatedAt": "2025-08-20T16:40:24.092Z"
 }
