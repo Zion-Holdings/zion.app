@@ -4,6 +4,13 @@ exports.handler = async function(event, context) {
     // Enhanced build health check with ultimate redundancy
     const buildHealth = await checkUltimateBuildHealth();
     
+    // Log function invocation for monitoring (event and context are used for logging)
+    console.log('Ultimate Build Guardian invoked:', {
+      eventType: event?.httpMethod || 'unknown',
+      requestId: context?.awsRequestId || 'unknown',
+      timestamp: new Date().toISOString()
+    });
+    
     return {
       statusCode: 200,
       headers: {
@@ -35,6 +42,14 @@ exports.handler = async function(event, context) {
       })
     };
   } catch (error) {
+    // Log error for monitoring
+    console.error('Ultimate Build Guardian error:', {
+      error: error.message,
+      eventType: event?.httpMethod || 'unknown',
+      requestId: context?.awsRequestId || 'unknown',
+      timestamp: new Date().toISOString()
+    });
+    
     return {
       statusCode: 500,
       headers: {

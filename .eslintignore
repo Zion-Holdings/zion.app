@@ -11,3 +11,6 @@ node_modules/
 *.log
 **/*.generated.*
 zion.app/recovered-content/**
+
+# Netlify functions (serverless functions with different linting rules)
+netlify/functions/

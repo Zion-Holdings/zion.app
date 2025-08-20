@@ -1,6 +1,22 @@
 {
   "extends": [
-    "next/core-web-vitals"
+    "next/core-web-vitals",
+    "@typescript-eslint/recommended",
+    "@typescript-eslint/recommended-requiring-type-checking"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "project": "./tsconfig.json"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "react",
+    "react-hooks"
   ],
   "env": {
     "browser": true,
@@ -8,11 +24,44 @@
     "node": true
   },
   "rules": {
-    "no-console": "off",
+    // TypeScript specific rules
+    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-non-null-assertion": "warn",
+    "@typescript-eslint/prefer-const": "error",
+    "@typescript-eslint/no-var-requires": "error",
+    
+    // React specific rules
     "react/no-unescaped-entities": "warn",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off",
+    
+    // Next.js specific rules
     "@next/next/no-html-link-for-pages": "warn",
     "@next/next/no-title-in-document-head": "warn",
-    "react-hooks/exhaustive-deps": "warn"
+    "@next/next/no-img-element": "warn",
+    
+    // General code quality rules
+    "no-console": ["warn", { "allow": ["warn", "error", "info"] }],
+    "no-debugger": "error",
+    "no-alert": "warn",
+    "no-var": "error",
+    "prefer-const": "error",
+    "no-unused-expressions": "error",
+    "no-duplicate-imports": "error",
+    "no-multiple-empty-lines": ["error", { "max": 2 }],
+    "eol-last": "error",
+    "comma-dangle": ["error", "always-multiline"],
+    "semi": ["error", "always"],
+    "quotes": ["error", "single", { "avoidEscape": true }],
+    
+    // Performance rules
+    "react/jsx-no-bind": "warn",
+    "react/jsx-key": "error",
+    "react/jsx-no-duplicate-props": "error"
   },
   "ignorePatterns": [
     "node_modules/",
@@ -22,6 +71,23 @@
     "*.config.js",
     "*.config.ts",
     "scripts/",
-    "automation/"
+    "automation/",
+    "dist/",
+    "build/"
+  ],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "@typescript-eslint/no-unused-vars": "error",
+        "@typescript-eslint/no-explicit-any": "warn"
+      }
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    }
   ]
 }
