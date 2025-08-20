@@ -5,29 +5,42 @@
 /* Import Inter font for modern typography */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
-/* CSS Variables for Cursor.com-inspired theming */
+/* CSS Variables for modern Cursor.com-inspired theming */
 :root {
-  --background: #0a0a0a;
+  --background: #000000;
   --foreground: #ffffff;
   --primary: #007acc;
   --primary-foreground: #ffffff;
-  --secondary: #1e1e1e;
+  --secondary: #0a0a0a;
   --secondary-foreground: #f9fafb;
   --accent: #007acc;
   --accent-foreground: #ffffff;
-  --muted: #2d2d2d;
-  --muted-foreground: #9ca3af;
-  --border: #404040;
-  --input: #2d2d2d;
+  --muted: #1a1a1a;
+  --muted-foreground: #a1a1aa;
+  --border: #262626;
+  --input: #1a1a1a;
   --ring: #007acc;
   --radius: 0.75rem;
   --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  
+  /* Modern color palette */
   --cursor-blue: #007acc;
   --cursor-blue-hover: #005a9e;
-  --cursor-dark: #1e1e1e;
-  --cursor-darker: #0a0a0a;
-  --cursor-light: #2d2d2d;
-  --cursor-lighter: #404040;
+  --cursor-dark: #0a0a0a;
+  --cursor-darker: #000000;
+  --cursor-light: #1a1a1a;
+  --cursor-lighter: #262626;
+  
+  /* Additional modern colors */
+  --cursor-purple: #8b5cf6;
+  --cursor-green: #10b981;
+  --cursor-orange: #f59e0b;
+  --cursor-red: #ef4444;
+  --cursor-cyan: #06b6d4;
+  
+  /* Glass morphism */
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
 }
 
 /* Base styles */
@@ -48,28 +61,33 @@ body {
   line-height: 1.6;
   font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   font-variation-settings: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.025em;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
 h1 {
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-size: clamp(3rem, 8vw, 6rem);
   font-weight: 900;
+  line-height: 0.9;
 }
 
 h2 {
-  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
   font-weight: 800;
+  line-height: 1;
 }
 
 h3 {
-  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
+  line-height: 1.1;
 }
 
 /* Links */
@@ -85,7 +103,7 @@ a:hover {
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -94,7 +112,7 @@ a:hover {
 
 ::-webkit-scrollbar-thumb {
   background: var(--cursor-lighter);
-  border-radius: 4px;
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -109,11 +127,11 @@ a:hover {
 
 /* Button styles */
 .btn {
-  @apply inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-cursor-blue disabled:opacity-50 disabled:cursor-not-allowed;
+  @apply inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-cursor-blue disabled:opacity-50 disabled:cursor-not-allowed;
 }
 
 .btn-primary {
-  @apply bg-gradient-to-r from-cursor-blue to-blue-600 hover:from-cursor-blue-hover hover:to-blue-700 text-white shadow-lg hover:shadow-xl hover:-translate-y-0.5 border-0;
+  @apply bg-gradient-to-r from-cursor-blue to-blue-600 hover:from-cursor-blue-hover hover:to-blue-700 text-white shadow-lg hover:shadow-xl hover:-translate-y-1 border-0 hover:shadow-cursor-blue/25;
 }
 
 .btn-secondary {
@@ -130,14 +148,23 @@ a:hover {
 
 /* Card styles */
 .card {
-  @apply bg-cursor-dark border border-cursor-lighter rounded-xl p-6 transition-all duration-300 hover:border-cursor-blue/30 hover:shadow-lg hover:shadow-cursor-blue/10;
+  @apply bg-cursor-dark/50 backdrop-blur-xl border border-cursor-lighter/20 rounded-2xl p-8 transition-all duration-300 hover:border-cursor-blue/30 hover:shadow-2xl hover:shadow-cursor-blue/10 hover:-translate-y-1;
+}
+
+/* Glass morphism effect */
+.glass {
+  @apply bg-white/5 backdrop-blur-xl border border-white/10;
+}
+
+.glass-card {
+  @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl;
 }
 
 /* Animation classes */
 @keyframes fade-in {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -168,7 +195,7 @@ a:hover {
 @keyframes slide-in-left {
   from {
     opacity: 0;
-    transform: translateX(-30px);
+    transform: translateX(-50px);
   }
   to {
     opacity: 1;
@@ -179,7 +206,7 @@ a:hover {
 @keyframes slide-in-right {
   from {
     opacity: 0;
-    transform: translateX(30px);
+    transform: translateX(50px);
   }
   to {
     opacity: 1;
@@ -187,8 +214,17 @@ a:hover {
   }
 }
 
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 122, 204, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 122, 204, 0.6);
+  }
+}
+
 .animate-fade-in {
-  animation: fade-in 0.8s ease-out forwards;
+  animation: fade-in 1s ease-out forwards;
 }
 
 .animate-float {
@@ -196,25 +232,29 @@ a:hover {
 }
 
 .animate-scale-in {
-  animation: scale-in 0.6s ease-out forwards;
+  animation: scale-in 0.8s ease-out forwards;
 }
 
 .animate-slide-in-left {
-  animation: slide-in-left 0.8s ease-out forwards;
+  animation: slide-in-left 1s ease-out forwards;
 }
 
 .animate-slide-in-right {
-  animation: slide-in-right 0.8s ease-out forwards;
+  animation: slide-in-right 1s ease-out forwards;
+}
+
+.animate-glow {
+  animation: glow 3s ease-in-out infinite;
 }
 
 /* Hover effects */
 .hover-lift {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .hover-lift:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 20px 40px rgba(0, 122, 204, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 25px 50px rgba(0, 122, 204, 0.2);
 }
 
 /* Gradient text utilities */
@@ -226,14 +266,21 @@ a:hover {
   @apply bg-gradient-to-r from-cursor-blue via-blue-400 to-blue-300 bg-clip-text text-transparent;
 }
 
-/* Glass morphism effect */
-.glass {
-  @apply bg-white/5 backdrop-blur-xl border border-white/10;
+.gradient-text-purple {
+  @apply bg-gradient-to-r from-cursor-purple via-purple-400 to-purple-300 bg-clip-text text-transparent;
+}
+
+.gradient-text-green {
+  @apply bg-gradient-to-r from-cursor-green via-green-400 to-green-300 bg-clip-text text-transparent;
 }
 
 /* Responsive utilities */
 .container-cursor {
   @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.container-wide {
+  @apply max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8;
 }
 
 /* Custom cursor styles */
@@ -243,4 +290,42 @@ a:hover {
 
 .cursor-dot-outline {
   @apply w-4 h-4 border border-cursor-blue rounded-full;
+}
+
+/* Background patterns */
+.bg-grid {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.bg-dots {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Modern shadows */
+.shadow-glow {
+  box-shadow: 0 0 40px rgba(0, 122, 204, 0.3);
+}
+
+.shadow-glow-lg {
+  box-shadow: 0 0 80px rgba(0, 122, 204, 0.4);
+}
+
+/* Gradient backgrounds */
+.bg-gradient-radial {
+  background: radial-gradient(ellipse at center, rgba(0, 122, 204, 0.1) 0%, transparent 70%);
+}
+
+.bg-gradient-mesh {
+  background: 
+    radial-gradient(at 40% 20%, rgba(0, 122, 204, 0.1) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, rgba(139, 92, 246, 0.1) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, rgba(16, 185, 129, 0.1) 0px, transparent 50%),
+    radial-gradient(at 80% 50%, rgba(245, 158, 11, 0.1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(6, 182, 212, 0.1) 0px, transparent 50%),
+    radial-gradient(at 80% 100%, rgba(239, 68, 68, 0.1) 0px, transparent 50%),
+    radial-gradient(at 0% 0%, rgba(0, 122, 204, 0.1) 0px, transparent 50%);
 }

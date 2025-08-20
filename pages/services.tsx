@@ -117,28 +117,29 @@ export default function ServicesPage() {
       </Head>
 
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-black via-gray-900 to-black overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(139,92,246,0.1),transparent_50%)]" />
+      <section className="relative py-32 bg-gradient-to-br from-black via-gray-900 to-black overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-mesh opacity-30" />
+        <div className="absolute inset-0 bg-grid opacity-20" />
         
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-7xl font-black mb-8 bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent">
+        <div className="relative z-10 container-wide text-center">
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-black mb-8 gradient-text leading-none">
             Our Services
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-light">
             Comprehensive AI-powered solutions designed to transform your business and drive innovation
           </p>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+      <section className="py-32 bg-gradient-to-b from-gray-900 to-black relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-mesh opacity-20" />
+        <div className="container-wide relative z-10">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-black mb-8 gradient-text leading-none">
               What We Offer
             </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto font-light">
               From AI automation to cloud infrastructure, we provide end-to-end solutions for modern businesses
             </p>
           </div>
@@ -174,13 +175,14 @@ export default function ServicesPage() {
       </section>
 
       {/* Technology Stack */}
-      <section className="py-20 bg-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+      <section className="py-32 bg-black relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-mesh opacity-20" />
+        <div className="container-wide relative z-10">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-black mb-8 gradient-text leading-none">
               Technology Expertise
             </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto font-light">
               We leverage cutting-edge technologies to deliver exceptional results
             </p>
           </div>
@@ -215,13 +217,14 @@ export default function ServicesPage() {
       </section>
 
       {/* Process Section */}
-      <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+      <section className="py-32 bg-gradient-to-b from-gray-900 to-black relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-mesh opacity-20" />
+        <div className="container-wide relative z-10">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-black mb-8 gradient-text leading-none">
               Our Process
             </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto font-light">
               A proven methodology that ensures successful project delivery and maximum value
             </p>
           </div>
@@ -248,31 +251,33 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Ready to Get Started?
-          </h2>
-          <p className="text-xl text-blue-100 mb-8">
-                         Let&apos;s discuss how our services can transform your business and drive innovation.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              href="/contact"
-              variant="secondary"
-              size="lg"
-              className="bg-white text-blue-600 hover:bg-gray-100"
-            >
-              Start a Project
-            </Button>
-            <Button
-              href="/case-studies"
-              variant="outline"
-              size="lg"
-              className="border-white text-white hover:bg-white hover:text-blue-600"
-            >
-              View Case Studies
-            </Button>
+      <section className="py-32 bg-gradient-to-b from-gray-900 to-black relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-mesh opacity-30" />
+        <div className="container-wide relative z-10 text-center">
+          <div className="max-w-4xl mx-auto animate-fade-in">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-black mb-8 gradient-text leading-none">
+              Ready to Get Started?
+            </h2>
+            <p className="text-xl text-gray-400 mb-12 leading-relaxed font-light">
+              Let&apos;s discuss how our services can transform your business and drive innovation.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <Button
+                href="/contact"
+                size="lg"
+                className="shadow-glow-lg hover:shadow-glow"
+              >
+                Start a Project
+              </Button>
+              <Button
+                href="/case-studies"
+                variant="outline"
+                size="lg"
+                className="backdrop-blur-sm"
+              >
+                View Case Studies
+              </Button>
+            </div>
           </div>
         </div>
       </section>

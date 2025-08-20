@@ -23,7 +23,6 @@ const Header = () => {
     { name: 'Case Studies', href: '/case-studies' },
     { name: 'Blog', href: '/blog' },
     { name: 'Resources', href: '/resources' },
-    { name: 'Changes', href: '/changes' },
     { name: 'Contact', href: '/contact' },
   ];
 
@@ -31,39 +30,39 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-cursor-darker/90 backdrop-blur-xl border-b border-cursor-lighter/20'
+          ? 'bg-black/80 backdrop-blur-xl border-b border-white/10 shadow-glow'
           : 'bg-transparent'
       }`}
     >
-      <div className="container-cursor">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+      <div className="container-wide">
+        <div className="flex items-center justify-between h-20 lg:h-24">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-cursor-blue to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <span className="text-white font-bold text-xl">Z</span>
+            <div className="w-12 h-12 bg-gradient-to-br from-cursor-blue to-blue-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-glow">
+              <span className="text-white font-bold text-2xl">Z</span>
             </div>
-            <span className="text-xl font-bold gradient-text-blue group-hover:from-cursor-blue group-hover:to-blue-400 transition-all duration-300">
+            <span className="text-2xl font-bold gradient-text-blue group-hover:from-cursor-blue group-hover:to-blue-400 transition-all duration-300">
               Zion Tech
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-1">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className={`text-sm font-medium transition-all duration-200 relative ${
+                className={`px-4 py-2 text-sm font-medium transition-all duration-300 relative rounded-xl ${
                   isActive(item.href)
-                    ? 'text-cursor-blue'
-                    : 'text-gray-300 hover:text-white'
+                    ? 'text-cursor-blue bg-white/5 backdrop-blur-sm'
+                    : 'text-gray-300 hover:text-white hover:bg-white/5'
                 }`}
               >
                 {item.name}
                 {isActive(item.href) && (
-                  <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-cursor-blue rounded-full" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-cursor-blue/20 to-transparent rounded-xl" />
                 )}
               </Link>
             ))}
@@ -73,7 +72,7 @@ const Header = () => {
           <div className="hidden lg:flex items-center space-x-4">
             <Link
               href="/contact"
-              className="btn btn-primary hover-lift"
+              className="btn btn-primary hover-lift shadow-glow"
             >
               Get Started
             </Link>
@@ -82,7 +81,8 @@ const Header = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-cursor-light transition-all duration-200"
+            className="lg:hidden p-3 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-all duration-200"
+            aria-label="Toggle mobile menu"
           >
             <svg
               className="w-6 h-6"
@@ -109,25 +109,25 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="lg:hidden">
-            <div className="px-4 pt-4 pb-6 space-y-2 bg-cursor-darker/95 backdrop-blur-xl rounded-xl mt-2 border border-cursor-lighter/20">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-black/90 backdrop-blur-xl border-t border-white/10 rounded-b-2xl">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 ${
+                  className={`block px-3 py-2 text-base font-medium rounded-xl transition-all duration-200 ${
                     isActive(item.href)
-                      ? 'text-cursor-blue bg-cursor-blue/10 border border-cursor-blue/20'
-                      : 'text-gray-300 hover:text-white hover:bg-cursor-light'
+                      ? 'text-cursor-blue bg-white/5'
+                      : 'text-gray-300 hover:text-white hover:bg-white/5'
                   }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <div className="pt-4 border-t border-cursor-lighter/20">
+              <div className="pt-4">
                 <Link
                   href="/contact"
                   className="btn btn-primary w-full justify-center"
