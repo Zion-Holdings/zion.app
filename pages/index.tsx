@@ -15,6 +15,20 @@ export default function HomePage() {
       
       <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-950 text-white">
         <main className="container mx-auto px-6 py-12">
+          {/* Top Navigation */}
+          <header className="mb-12 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <Link href="/" className="text-2xl font-extrabold tracking-tight bg-gradient-to-r from-cyan-400 via-fuchsia-400 to-blue-400 bg-clip-text text-transparent">
+              Zion Tech Group
+            </Link>
+            <nav className="flex flex-wrap items-center gap-3 sm:gap-6 text-white/90">
+              <Link href="/about" className="hover:text-cyan-300 transition-colors">About</Link>
+              <Link href="/services" className="hover:text-fuchsia-300 transition-colors">Services</Link>
+              <Link href="/blog" className="hover:text-purple-300 transition-colors">Blog</Link>
+              <Link href="/resources" className="hover:text-blue-300 transition-colors">Resources</Link>
+              <Link href="/case-studies" className="hover:text-yellow-300 transition-colors">Case Studies</Link>
+              <Link href="/contact" className="hover:text-green-300 transition-colors">Contact</Link>
+            </nav>
+          </header>
           {/* Hero Section */}
           <section className="text-center mb-20">
             <h1 className="text-6xl font-extrabold mb-8 bg-gradient-to-r from-cyan-400 via-fuchsia-400 to-blue-400 bg-clip-text text-transparent">
@@ -391,7 +405,7 @@ export default function HomePage() {
                   <li>• Health monitoring</li>
                   <li>• Self-healing infrastructure</li>
                 </ul>
-                <Link href="/README_ULTIMATE_REDUNDANCY.md" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
+                <Link href="/ULTIMATE_REDUNDANCY_AUTOMATION_README.md" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
                   Learn More →
                 </Link>
               </div>
@@ -468,6 +482,18 @@ export default function HomePage() {
               </div>
             </div>
           </section>
+          {/* Footer */}
+          <footer className="mx-auto max-w-7xl px-6 pb-8 text-center text-sm text-white/60">
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link href="/README.md" className="hover:text-white/80">README</Link>
+              <Link href="/SECURITY.md" className="hover:text-white/80">Security</Link>
+              <Link href="/TESTING.md" className="hover:text-white/80">Testing</Link>
+              <Link href="/PERFORMANCE.md" className="hover:text-white/80">Performance</Link>
+              <Link href="/privacy" className="hover:text-white/80">Privacy</Link>
+              <Link href="/resources" className="hover:text-white/80">Resources</Link>
+            </div>
+            <div className="mt-3">© {new Date().getFullYear()} Zion Tech Group. All rights reserved.</div>
+          </footer>
         </main>
       </div>
     </>
