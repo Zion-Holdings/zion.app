@@ -1,5 +1,5 @@
 [build]
-  command = "npm ci && npm install react@18.3.1 react-dom@18.3.1 && npm run build"
+  command = "npm ci && npm install react@18.3.1 react-dom@18.3.1 && npm run export"
   publish = "out"
   functions = "netlify/functions"
 
