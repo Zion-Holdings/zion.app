@@ -49,7 +49,10 @@ export default function HomePage() {
               <Link href="/services" className="px-8 py-4 bg-gradient-to-r from-fuchsia-500 to-purple-600 hover:from-fuchsia-600 hover:to-purple-700 rounded-lg text-white font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
                 AI Services
               </Link>
-              <Link href="/contact" className="px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 rounded-lg text-white font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+              <Link href="/automation" className="px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 rounded-lg text-white font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                Automation Systems
+              </Link>
+              <Link href="/contact" className="px-8 py-4 bg-gradient-to-r from-yellow-500 to-orange-600 hover:from-yellow-600 hover:to-orange-700 rounded-lg text-white font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
                 Get Started
               </Link>
             </div>
@@ -73,6 +76,11 @@ export default function HomePage() {
                   <li>• Real-time performance monitoring</li>
                   <li>• Zero-downtime deployments</li>
                 </ul>
+                <div className="mt-4 text-center">
+                  <Link href="/automation" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
+                    Explore Cloud Systems →
+                  </Link>
+                </div>
               </div>
 
               {/* AI-Powered Automation */}
@@ -88,6 +96,11 @@ export default function HomePage() {
                   <li>• Smart error recovery</li>
                   <li>• Predictive maintenance</li>
                 </ul>
+                <div className="mt-4 text-center">
+                  <Link href="/automation" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
+                    Explore AI Systems →
+                  </Link>
+                </div>
               </div>
 
               {/* Redundancy & Reliability */}
@@ -103,6 +116,11 @@ export default function HomePage() {
                   <li>• Self-repairing infrastructure</li>
                   <li>• Geographic distribution</li>
                 </ul>
+                <div className="mt-4 text-center">
+                  <Link href="/automation" className="text-green-400 hover:text-green-300 text-sm font-semibold">
+                    Explore Redundancy →
+                  </Link>
+                </div>
               </div>
 
               {/* Advanced Monitoring */}
@@ -118,6 +136,11 @@ export default function HomePage() {
                   <li>• Comprehensive logging systems</li>
                   <li>• AI-driven insights</li>
                 </ul>
+                <div className="mt-4 text-center">
+                  <Link href="/automation" className="text-yellow-400 hover:text-yellow-300 text-sm font-semibold">
+                    Explore Monitoring →
+                  </Link>
+                </div>
               </div>
 
               {/* Security & Compliance */}
@@ -133,6 +156,11 @@ export default function HomePage() {
                   <li>• Threat detection & response</li>
                   <li>• Zero-trust architecture</li>
                 </ul>
+                <div className="mt-4 text-center">
+                  <Link href="/automation" className="text-red-400 hover:text-red-300 text-sm font-semibold">
+                    Explore Security →
+                  </Link>
+                </div>
               </div>
 
               {/* Global Infrastructure */}
@@ -148,6 +176,11 @@ export default function HomePage() {
                   <li>• Geographic redundancy</li>
                   <li>• Low-latency routing</li>
                 </ul>
+                <div className="mt-4 text-center">
+                  <Link href="/automation" className="text-purple-400 hover:text-purple-300 text-sm font-semibold">
+                    Explore Infrastructure →
+                  </Link>
+                </div>
               </div>
             </div>
           </section>
@@ -280,6 +313,14 @@ export default function HomePage() {
                 <p className="text-white/70 text-sm">Intelligent solutions</p>
               </Link>
               
+              <Link href="/automation" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-green-400/30 transition-all duration-300 text-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-xl">🤖</span>
+                </div>
+                <h3 className="text-lg font-semibold text-green-400 mb-2">Automation</h3>
+                <p className="text-white/70 text-sm">Advanced systems</p>
+              </Link>
+              
               <Link href="/resources" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-blue-400/30 transition-all duration-300 text-center">
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <span className="text-xl">📚</span>
@@ -304,11 +345,11 @@ export default function HomePage() {
                 <p className="text-white/70 text-sm">Latest insights</p>
               </Link>
               
-              <Link href="/contact" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-green-400/30 transition-all duration-300 text-center">
-                <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+              <Link href="/contact" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-red-400/30 transition-all duration-300 text-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-red-400 to-pink-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <span className="text-xl">💬</span>
                 </div>
-                <h3 className="text-lg font-semibold text-green-400 mb-2">Contact</h3>
+                <h3 className="text-lg font-semibold text-red-400 mb-2">Contact</h3>
                 <p className="text-white/70 text-sm">Get in touch</p>
               </Link>
             </div>
@@ -438,6 +479,9 @@ export default function HomePage() {
                 </Link>
                 <Link href="/about" className="px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white font-semibold transition-all duration-300 hover:border-cyan-400/50">
                   Learn More
+                </Link>
+                <Link href="/automation" className="px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 rounded-lg text-white font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                  Explore Automation
                 </Link>
               </div>
             </div>
