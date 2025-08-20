@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
-import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Code, BookOpen, Activity, Database as DatabaseIcon } from 'lucide-react';
+import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Code, BookOpen, Activity, Database as DatabaseIcon, Play, Mail, Phone, MapPin } from 'lucide-react';
 import Button from '../components/ui/Button';
+import Card from '../components/ui/Card';
 
 export default function MicroSaasPage() {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -33,14 +34,14 @@ export default function MicroSaasPage() {
       title: 'Real Business Value',
       description: 'Each service solves a specific business problem with measurable ROI and immediate impact.',
       color: 'from-purple-500 to-violet-600',
-      bgColor: 'from-purple-500/10 to-purple-500/10'
+      bgColor: 'from-purple-500/10 to-violet-500/10'
     },
     {
       icon: '🌐',
       title: 'Unified Platform',
       description: 'Access all services through ziontechgroup.com with single sign-on and integrated billing.',
       color: 'from-teal-500 to-cyan-600',
-      bgColor: 'from-teal-500/10 to-teal-500/10'
+      bgColor: 'from-teal-500/10 to-cyan-500/10'
     },
     {
       icon: '🎯',
@@ -471,6 +472,90 @@ export default function MicroSaasPage() {
       setupTime: '25 minutes',
       category: 'Customer Experience',
       realService: true
+    },
+    {
+      name: 'AI SEO Optimizer',
+      tagline: 'Automate your SEO strategy',
+      price: '$89',
+      period: '/month',
+      description: 'AI-powered SEO optimization that improves your search rankings and drives organic traffic growth.',
+      features: [
+        'Keyword research automation',
+        'Technical SEO audits',
+        'Content optimization suggestions',
+        'Competitor analysis',
+        'Ranking tracking',
+        'Backlink monitoring',
+        'Local SEO optimization',
+        'Performance reporting'
+      ],
+      popular: false,
+      icon: '🔍',
+      color: 'from-emerald-500 to-green-600',
+      textColor: 'text-emerald-400',
+      link: 'https://ziontechgroup.com/ai-seo-optimizer',
+      marketPosition: 'Competitive with Ahrefs ($99-999), SEMrush ($119-449), and Moz ($99-599)',
+      targetAudience: 'SEO specialists, digital marketers, and website owners',
+      trialDays: 14,
+      setupTime: '15 minutes',
+      category: 'Content & Marketing',
+      realService: true
+    },
+    {
+      name: 'AI Chatbot Platform',
+      tagline: 'Intelligent customer conversations',
+      price: '$59',
+      period: '/month',
+      description: 'Build AI-powered chatbots that provide 24/7 customer support and lead generation.',
+      features: [
+        'Natural language processing',
+        'Multi-language support',
+        'Integration with popular platforms',
+        'Analytics & insights',
+        'Custom training',
+        'Lead qualification',
+        'Appointment scheduling',
+        'Payment processing'
+      ],
+      popular: false,
+      icon: '💬',
+      color: 'from-sky-500 to-blue-600',
+      textColor: 'text-sky-400',
+      link: 'https://ziontechgroup.com/ai-chatbot-platform',
+      marketPosition: 'Competitive with Intercom ($39-499), Drift ($50-2500), and ManyChat ($15-390)',
+      targetAudience: 'Customer support teams, e-commerce businesses, and service providers',
+      trialDays: 14,
+      setupTime: '20 minutes',
+      category: 'Customer Experience',
+      realService: true
+    },
+    {
+      name: 'AI Fraud Detection',
+      tagline: 'Protect your business from fraud',
+      price: '$199',
+      period: '/month',
+      description: 'Advanced AI-powered fraud detection that identifies and prevents fraudulent activities in real-time.',
+      features: [
+        'Real-time transaction monitoring',
+        'Machine learning algorithms',
+        'Behavioral analysis',
+        'Risk scoring',
+        'Automated blocking',
+        'Compliance reporting',
+        'API integration',
+        'Custom rule configuration'
+      ],
+      popular: false,
+      icon: '🛡️',
+      color: 'from-red-500 to-pink-600',
+      textColor: 'text-red-400',
+      link: 'https://ziontechgroup.com/ai-fraud-detection',
+      marketPosition: 'Competitive with Sift ($0-500), Signifyd ($0-1000), and Riskified ($0-500)',
+      targetAudience: 'E-commerce businesses, financial institutions, and online marketplaces',
+      trialDays: 14,
+      setupTime: '45 minutes',
+      category: 'Security & Compliance',
+      realService: true
     }
   ];
 
@@ -484,7 +569,8 @@ export default function MicroSaasPage() {
     'Analytics & Data',
     'Finance & Accounting',
     'Project Management',
-    'Customer Experience'
+    'Customer Experience',
+    'Security & Compliance'
   ];
 
   const filteredServices = selectedCategory === 'All' 
@@ -498,71 +584,94 @@ export default function MicroSaasPage() {
       <Head>
         <title>Real Micro SaaS Services | Zion Tech Group</title>
         <meta name="description" content="Discover 28+ real, fully-functional micro SaaS services. From AI content generation to cloud cost optimization, get started in minutes with our enterprise-grade solutions." />
-        <meta name="keywords" content="micro SaaS, AI services, cloud optimization, content generation, business automation, software as a service" />
+        <meta name="keywords" content="micro SaaS, AI automation, cloud optimization, business tools, enterprise software, Zion Tech Group" />
+        <meta name="author" content="Zion Tech Group" />
+        <link rel="canonical" href="https://ziontechgroup.com/micro-saas" />
+        
+        {/* Open Graph */}
         <meta property="og:title" content="Real Micro SaaS Services | Zion Tech Group" />
-        <meta property="og:description" content="28+ real micro SaaS services with immediate value delivery. Start your free trial today." />
+        <meta property="og:description" content="Discover 28+ real, fully-functional micro SaaS services. From AI content generation to cloud cost optimization, get started in minutes." />
         <meta property="og:url" content="https://ziontechgroup.com/micro-saas" />
         <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://ziontechgroup.com/micro-saas" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Real Micro SaaS Services | Zion Tech Group" />
+        <meta name="twitter:description" content="Discover 28+ real, fully-functional micro SaaS services. From AI content generation to cloud cost optimization, get started in minutes." />
       </Head>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="text-center">
-            <div className="flex items-center justify-center space-x-2 mb-6">
-              <div className="bg-green-500/20 border border-green-500/30 rounded-full px-4 py-2">
-                <span className="text-green-400 text-sm font-medium">✨ {realServicesCount}+ Real Services</span>
-              </div>
-              <div className="bg-blue-500/20 border border-blue-500/30 rounded-full px-4 py-2">
-                <span className="text-blue-400 text-sm font-medium">🚀 Production Ready</span>
-              </div>
-            </div>
-            
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-blue-100 to-indigo-200 bg-clip-text text-transparent">
+      <section className="relative py-20 overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
+        <div className="absolute inset-0">
+          <div className="particles-bg opacity-30" />
+        </div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30 backdrop-blur-sm mb-6">
+            <Star className="w-4 h-4 text-yellow-400 mr-2" />
+            <span className="text-sm font-medium text-blue-300">
+              Real Micro SaaS Solutions
+            </span>
+          </div>
+          
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            <span className="bg-gradient-to-r from-white via-blue-100 to-cyan-100 bg-clip-text text-transparent">
+              Transform Your Business with
+            </span>
+            <br />
+            <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
               Real Micro SaaS Services
-            </h1>
-            <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-4xl mx-auto">
-              Discover {realServicesCount}+ fully-functional micro SaaS tools that solve real business problems. 
-              No mockups, no demos - just real services you can use immediately.
-            </p>
+            </span>
+          </h1>
+          
+          <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed">
+            Discover {realServicesCount}+ fully-functional micro SaaS tools that deliver immediate value. 
+            From AI-powered automation to cloud optimization, get enterprise-grade solutions without enterprise complexity.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+            <Button
+              variant="futuristic"
+              size="lg"
+              href="#services"
+              icon={<ArrowRight className="w-5 h-5" />}
+              iconPosition="right"
+              glow
+              className="min-w-[200px]"
+            >
+              Explore Services
+            </Button>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button 
-                href="https://ziontechgroup.com/pricing"
-                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                View Pricing
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button 
-                href="https://ziontechgroup.com/contact"
-                variant="outline"
-                className="border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg font-semibold rounded-xl"
-              >
-                Contact Sales
-              </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              href="#demo"
+              icon={<Play className="w-5 h-5" />}
+              iconPosition="left"
+              glow
+              className="min-w-[200px]"
+            >
+              Watch Demo
+            </Button>
+          </div>
+          
+          {/* Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-cyan-400 mb-2">{realServicesCount}+</div>
+              <div className="text-sm text-gray-400">Real Services</div>
             </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-blue-300">{realServicesCount}+</div>
-                <div className="text-blue-200 text-sm">Real Services</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-green-300">99.9%</div>
-                <div className="text-green-200 text-sm">Uptime</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-purple-300">14</div>
-                <div className="text-purple-200 text-sm">Day Trial</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-orange-300">24/7</div>
-                <div className="text-orange-200 text-sm">Support</div>
-              </div>
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-fuchsia-400 mb-2">99.9%</div>
+              <div className="text-sm text-gray-400">Uptime</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-blue-400 mb-2">14</div>
+              <div className="text-sm text-gray-400">Day Trials</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-green-400 mb-2">24/7</div>
+              <div className="text-sm text-gray-400">Support</div>
             </div>
           </div>
         </div>
@@ -572,177 +681,219 @@ export default function MicroSaasPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
               Why Choose Zion Tech Group?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We're not just another SaaS provider. We deliver real, working solutions that solve actual business problems.
+              We combine cutting-edge technology with deep industry expertise to deliver solutions that drive real business results.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {competitiveAdvantages.map((advantage, index) => (
-              <div key={index} className="group">
-                <div className={`p-8 rounded-2xl bg-gradient-to-br ${advantage.bgColor} border border-gray-200/50 hover:shadow-xl transition-all duration-300 group-hover:scale-105`}>
-                  <div className="text-4xl mb-4">{advantage.icon}</div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">{advantage.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{advantage.description}</p>
+              <Card
+                key={index}
+                variant="glass"
+                size="lg"
+                hover
+                className="text-center group"
+              >
+                <div className={`w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br ${advantage.bgColor} flex items-center justify-center text-3xl`}>
+                  {advantage.icon}
                 </div>
-              </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">{advantage.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{advantage.description}</p>
+              </Card>
             ))}
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-gray-50">
+      <section id="services" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
               Real Micro SaaS Services
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Every service listed below is fully functional and ready for production use. 
-              Start your free trial today and see the difference.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+              Not just mockups - these are fully functional, production-ready tools that solve real business problems.
             </p>
+            
+            {/* Category Filter */}
+            <div className="flex flex-wrap justify-center gap-2 mb-8">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setSelectedCategory(category)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                    selectedCategory === category
+                      ? 'bg-blue-600 text-white shadow-lg'
+                      : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
+                  }`}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
           </div>
-
-          {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                  selectedCategory === category
-                    ? 'bg-blue-600 text-white shadow-lg'
-                    : 'bg-white text-gray-700 hover:bg-blue-50 border border-gray-200'
-                }`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-
-          {/* Services Grid */}
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredServices.map((service, index) => (
-              <div key={index} className="group">
-                <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:scale-105 border border-gray-200/50 overflow-hidden">
-                  {/* Service Header */}
-                  <div className={`p-6 bg-gradient-to-br ${service.color} text-white`}>
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="text-3xl">{service.icon}</div>
-                      {service.popular && (
-                        <div className="bg-yellow-400 text-yellow-900 px-3 py-1 rounded-full text-xs font-semibold">
-                          Most Popular
-                        </div>
-                      )}
+              <Card
+                key={index}
+                variant="futuristic"
+                size="lg"
+                hover
+                glow
+                className="group relative"
+              >
+                {service.popular && (
+                  <div className="absolute -top-3 -right-3 z-20">
+                    <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                      Most Popular
                     </div>
-                    <h3 className="text-xl font-bold mb-2">{service.name}</h3>
-                    <p className="text-white/90 text-sm">{service.tagline}</p>
                   </div>
-
-                  {/* Service Content */}
-                  <div className="p-6">
-                    <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
-                    
-                    {/* Features */}
-                    <div className="space-y-3 mb-6">
-                      {service.features.slice(0, 4).map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-center text-sm text-gray-600">
-                          <Check className="h-4 w-4 text-green-500 mr-3 flex-shrink-0" />
-                          {feature}
-                        </div>
-                      ))}
-                      {service.features.length > 4 && (
-                        <div className="text-sm text-gray-500 text-center">
-                          +{service.features.length - 4} more features
-                        </div>
-                      )}
-                    </div>
-
-                    {/* Market Position */}
-                    <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
-                      <div className="flex items-center mb-2">
-                        <TrendingUp className="h-4 w-4 text-blue-600 mr-2" />
-                        <span className="text-sm font-medium text-blue-900">Market Position</span>
-                      </div>
-                      <p className="text-xs text-blue-700 leading-relaxed">{service.marketPosition}</p>
-                    </div>
-
-                    {/* Target Audience */}
-                    <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
-                      <div className="flex items-center mb-2">
-                        <Target className="h-4 w-4 text-green-600 mr-2" />
-                        <span className="text-sm font-medium text-green-900">Target Audience</span>
-                      </div>
-                      <p className="text-xs text-green-700 leading-relaxed">{service.targetAudience}</p>
-                    </div>
-
-                    {/* Quick Stats */}
-                    <div className="grid grid-cols-2 gap-4 mb-6">
-                      <div className="text-center p-3 bg-gray-50 rounded-lg">
-                        <div className="text-lg font-bold text-gray-900">{service.trialDays}</div>
-                        <div className="text-xs text-gray-600">Day Trial</div>
-                      </div>
-                      <div className="text-center p-3 bg-gray-50 rounded-lg">
-                        <div className="text-lg font-bold text-gray-900">{service.setupTime}</div>
-                        <div className="text-xs text-gray-600">Setup Time</div>
-                      </div>
-                    </div>
-
-                    {/* CTA */}
-                    <div className="space-y-3">
-                      <Button 
-                        href={service.link}
-                        className={`w-full bg-gradient-to-r ${service.color} hover:shadow-lg text-white font-semibold py-3 rounded-xl transition-all duration-300`}
-                      >
-                        Start Free Trial
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Button>
-                      <Button 
-                        href={`${service.link}/pricing`}
-                        variant="outline"
-                        className="w-full border-gray-300 text-gray-700 hover:bg-gray-50 font-medium py-3 rounded-xl"
-                      >
-                        View Pricing
-                      </Button>
-                    </div>
+                )}
+                
+                <div className="flex items-center mb-4">
+                  <div className={`text-3xl mr-3 ${service.textColor}`}>
+                    {service.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-400 group-hover:bg-clip-text transition-all duration-300">
+                      {service.name}
+                    </h3>
+                    <p className="text-sm text-gray-500">{service.tagline}</p>
                   </div>
                 </div>
-              </div>
+                
+                <p className="text-gray-600 mb-4 leading-relaxed">
+                  {service.description}
+                </p>
+                
+                <div className="mb-6">
+                  <div className="flex items-baseline mb-2">
+                    <span className="text-3xl font-bold text-gray-900">{service.price}</span>
+                    <span className="text-gray-500 ml-1">{service.period}</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500 space-x-4">
+                    <span className="flex items-center">
+                      <Clock className="w-4 h-4 mr-1" />
+                      {service.setupTime} setup
+                    </span>
+                    <span className="flex items-center">
+                      <Star className="w-4 h-4 mr-1" />
+                      {service.trialDays}-day trial
+                    </span>
+                  </div>
+                </div>
+                
+                <div className="space-y-2 mb-6">
+                  {service.features.slice(0, 4).map((feature, featureIndex) => (
+                    <div key={featureIndex} className="flex items-center text-sm text-gray-600">
+                      <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                      {feature}
+                    </div>
+                  ))}
+                  {service.features.length > 4 && (
+                    <div className="text-sm text-gray-500 text-center">
+                      +{service.features.length - 4} more features
+                    </div>
+                  )}
+                </div>
+                
+                <div className="flex flex-col sm:flex-row gap-2">
+                  <Button
+                    variant="primary"
+                    size="sm"
+                    href={service.link}
+                    icon={<ExternalLink className="w-4 h-4" />}
+                    iconPosition="right"
+                    fullWidth
+                    className="sm:flex-1"
+                  >
+                    Start Free Trial
+                  </Button>
+                  
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    href={`/services/${service.name.toLowerCase().replace(/\s+/g, '-')}`}
+                    fullWidth
+                    className="sm:flex-1"
+                  >
+                    Learn More
+                  </Button>
+                </div>
+                
+                {/* Market Position */}
+                <div className="mt-4 p-3 bg-gray-50 rounded-lg">
+                  <p className="text-xs text-gray-600">
+                    <strong>Market Position:</strong> {service.marketPosition}
+                  </p>
+                  <p className="text-xs text-gray-600 mt-1">
+                    <strong>Target:</strong> {service.targetAudience}
+                  </p>
+                </div>
+              </Card>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 to-indigo-700 text-white">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold mb-6">
-            Ready to Transform Your Business?
-          </h2>
-          <p className="text-xl text-blue-100 mb-8">
-            Join thousands of businesses using our real micro SaaS services to automate, 
-            optimize, and scale their operations.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              href="https://ziontechgroup.com/contact"
-              className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold rounded-xl shadow-lg"
-            >
-              Get Started Today
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button 
-              href="https://ziontechgroup.com/demo"
-              variant="outline"
-              className="border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg font-semibold rounded-xl"
-            >
-              Schedule Demo
-            </Button>
-          </div>
+      {/* Contact Section */}
+      <section className="py-20 bg-gradient-to-br from-blue-900 to-purple-900">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <Card variant="holographic" size="xl" className="text-center">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+              Ready to Get Started?
+            </h2>
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+              Join thousands of businesses already using our micro SaaS solutions to automate, optimize, and scale their operations.
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div className="flex items-center justify-center space-x-3 text-gray-300">
+                <Phone className="w-5 h-5 text-blue-400" />
+                <span>+1 302 464 0950</span>
+              </div>
+              <div className="flex items-center justify-center space-x-3 text-gray-300">
+                <Mail className="w-5 h-5 text-green-400" />
+                <span>kleber@ziontechgroup.com</span>
+              </div>
+              <div className="flex items-center justify-center space-x-3 text-gray-300">
+                <MapPin className="w-5 h-5 text-purple-400" />
+                <span>Middletown DE 19709</span>
+              </div>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button
+                variant="futuristic"
+                size="lg"
+                href="/contact"
+                icon={<MessageSquare className="w-5 h-5" />}
+                iconPosition="right"
+                glow
+                className="min-w-[200px]"
+              >
+                Contact Sales
+              </Button>
+              
+              <Button
+                variant="outline"
+                size="lg"
+                href="/pricing"
+                icon={<DollarSign className="w-5 h-5" />}
+                iconPosition="left"
+                glow
+                className="min-w-[200px]"
+              >
+                View Pricing
+              </Button>
+            </div>
+          </Card>
         </div>
       </section>
     </div>
