@@ -34,14 +34,16 @@ const Features: React.FC<FeaturesProps> = ({
     <section className="py-24 bg-black relative overflow-hidden futuristic-bg particles-bg">
       <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.05)_1px,transparent_1px)] bg-[size:50px_50px] opacity-20" />
       <div className="absolute inset-0 grid-bg opacity-20" />
+      <div className="absolute inset-0 floating-orbs" />
+      <div className="absolute inset-0 neural-network" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-20 animate-fade-in">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6 glow-border">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6 neon-border">
             <Zap className="w-4 h-4 mr-2" />
             Platform Features
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight holographic-text neon-glow">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight text-cyber">
             {title}
           </h2>
           <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
@@ -54,7 +56,7 @@ const Features: React.FC<FeaturesProps> = ({
           {features.map((feature, index) => (
             <Card
               key={index}
-              className="text-center group bg-gray-900/50 border border-gray-800 hover:border-blue-500/30 hover:bg-gray-900/80 transition-all duration-300 hover:-translate-y-1"
+              className="text-center group bg-gray-900/50 border border-gray-800 hover:border-blue-500/30 hover:bg-gray-900/80 transition-all duration-300 hover:-translate-y-1 card-futuristic"
               style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
             >
               <div className="relative">

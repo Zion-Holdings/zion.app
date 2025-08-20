@@ -72,33 +72,36 @@ export default function ContactPage() {
       </Head>
 
       {/* Hero Section */}
-      <section className="relative section-padding bg-gradient-cursor overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,122,204,0.08),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(0,122,204,0.06),transparent_50%)]" />
-        <div className="absolute inset-0 bg-grid opacity-10" />
+      <section className="relative py-24 bg-black overflow-hidden futuristic-bg">
+        <div className="absolute inset-0 particles-bg" />
+        <div className="absolute inset-0 grid-bg opacity-30" />
+        <div className="absolute inset-0 floating-orbs" />
+        <div className="absolute inset-0 neural-network" />
         
-        <div className="relative z-10 container-cursor text-center">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-cursor-blue/10 border border-cursor-blue/20 text-cursor-blue text-sm font-medium mb-6">
-            <span className="w-2 h-2 bg-cursor-blue rounded-full mr-2 animate-pulse" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6 neon-border">
+            <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse" />
             Contact Us
           </div>
-          <h1 className="text-responsive-xl font-black mb-8 gradient-text text-shadow-lg">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-8 text-cyber">
             Get in Touch
           </h1>
-          <p className="text-responsive-md text-gray-300 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl sm:text-2xl md:text-3xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
             Ready to transform your business with AI-powered solutions? Let&apos;s start a conversation.
           </p>
         </div>
       </section>
 
       {/* Contact Methods */}
-      <section className="section-padding bg-gradient-cursor-accent">
-        <div className="container-cursor">
+      <section className="py-24 bg-gray-900 relative overflow-hidden">
+        <div className="absolute inset-0 grid-bg opacity-20" />
+        <div className="absolute inset-0 floating-orbs" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-20">
-            <h2 className="text-responsive-lg font-bold mb-8 gradient-text text-shadow">
+            <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-cyber">
               Multiple Ways to Connect
             </h2>
-            <p className="text-responsive-md text-gray-400 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
               Choose the method that works best for you. Our team is ready to help with your next project.
             </p>
           </div>
@@ -107,7 +110,7 @@ export default function ContactPage() {
             {contactMethods.map((method, index) => (
               <Card
                 key={index}
-                className="card-hover text-center group border-gradient-blue"
+                className="card-futuristic text-center group bg-gray-800/50 border border-gray-700 hover:border-blue-500/30 hover:bg-gray-800/80 transition-all duration-300"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="relative">
@@ -132,13 +135,15 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form & Office Locations */}
-      <section className="section-padding bg-gradient-cursor">
-        <div className="container-cursor">
+      <section className="py-24 bg-black relative overflow-hidden">
+        <div className="absolute inset-0 grid-bg opacity-20" />
+        <div className="absolute inset-0 neural-network" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Contact Form */}
             <div>
               <div className="mb-8">
-                <h2 className="text-responsive-lg font-bold mb-6 gradient-text text-shadow">
+                <h2 className="text-4xl font-bold mb-6 text-cyber">
                   Send Us a Message
                 </h2>
                 <p className="text-gray-400 leading-relaxed">
@@ -159,7 +164,7 @@ export default function ContactPage() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-cursor-light border border-cursor-lighter rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cursor-blue focus:border-transparent transition-all duration-200"
+                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                       placeholder="Your full name"
                     />
                   </div>
@@ -174,7 +179,7 @@ export default function ContactPage() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-cursor-light border border-cursor-lighter rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cursor-blue focus:border-transparent transition-all duration-200"
+                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                       placeholder="your@email.com"
                     />
                   </div>
@@ -189,7 +194,7 @@ export default function ContactPage() {
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-cursor-light border border-cursor-lighter rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cursor-blue focus:border-transparent transition-all duration-200"
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                     placeholder="Your company name"
                   />
                 </div>
@@ -204,14 +209,14 @@ export default function ContactPage() {
                     onChange={handleChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 bg-cursor-light border border-cursor-lighter rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cursor-blue focus:border-transparent transition-all duration-200 resize-none"
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none"
                     placeholder="Tell us about your project..."
                   />
                 </div>
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full shadow-2xl hover-glow"
+                  className="w-full shadow-2xl btn-futuristic"
                 >
                   Send Message
                 </Button>
@@ -221,7 +226,7 @@ export default function ContactPage() {
             {/* Office Locations */}
             <div>
               <div className="mb-8">
-                <h2 className="text-responsive-lg font-bold mb-6 gradient-text text-shadow">
+                <h2 className="text-4xl font-bold mb-6 text-cyber">
                   Our Offices
                 </h2>
                 <p className="text-gray-400 leading-relaxed">
@@ -233,7 +238,7 @@ export default function ContactPage() {
                 {officeLocations.map((location, index) => (
                   <Card
                     key={index}
-                    className="card-hover group border-gradient-blue"
+                    className="card-futuristic group bg-gray-800/50 border border-gray-700 hover:border-blue-500/30 hover:bg-gray-800/80 transition-all duration-300"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     <div className="flex items-start space-x-4">
