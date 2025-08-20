@@ -100,79 +100,73 @@ export default function ServicesPage() {
     { name: 'Azure', category: 'Cloud' },
     { name: 'Docker', category: 'DevOps' },
     { name: 'Kubernetes', category: 'DevOps' },
-    { name: 'PostgreSQL', category: 'Database' },
-    { name: 'Redis', category: 'Cache' },
     { name: 'TensorFlow', category: 'AI/ML' },
     { name: 'PyTorch', category: 'AI/ML' },
+    { name: 'PostgreSQL', category: 'Database' },
+    { name: 'MongoDB', category: 'Database' },
   ];
 
   return (
     <>
       <Head>
-        <title>Services | Zion Tech Group - AI-Powered Solutions & Cloud Infrastructure</title>
-        <meta name="description" content="Discover our comprehensive range of AI-powered services including automation, cloud infrastructure, security, data analytics, and digital transformation solutions." />
+        <title>Services | Zion Tech Group - AI-Powered Solutions</title>
+        <meta name="description" content="Discover our comprehensive range of AI-powered services including automation, cloud infrastructure, security, and digital transformation solutions." />
         <meta property="og:title" content="Services | Zion Tech Group" />
-        <meta property="og:description" content="AI-powered solutions and cloud infrastructure services." />
+        <meta property="og:description" content="AI-powered solutions for modern businesses." />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
       {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-black via-gray-900 to-black overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,122,204,0.1),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(0,162,255,0.06),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]" />
+      <section className="relative py-20 bg-gradient-to-br from-black via-gray-900 to-black overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(139,92,246,0.1),transparent_50%)]" />
         
-        <div className="relative z-10 container-cursor text-center">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 gradient-text-white leading-tight tracking-tight">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-5xl md:text-7xl font-black mb-8 bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent">
             Our Services
           </h1>
-          <p className="text-xl md:text-2xl lg:text-3xl text-gray-300 max-w-5xl mx-auto leading-relaxed font-light">
+          <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
             Comprehensive AI-powered solutions designed to transform your business and drive innovation
           </p>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="py-24 bg-gradient-to-b from-black to-gray-900 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(0,122,204,0.03),transparent_50%)]" />
-        
-        <div className="container-cursor relative z-10">
+      <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+              What We Offer
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              From AI automation to cloud infrastructure, we provide end-to-end solutions for modern businesses
+            </p>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <Card
                 key={index}
-                variant="glass"
-                className="group hover:border-cursor-blue/40 hover:shadow-2xl hover:shadow-cursor-blue/20 hover-lift relative overflow-hidden"
+                className="group hover:border-blue-400/30"
                 style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
               >
-                {/* Hover background effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-cursor-blue/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
-                <div className={`w-20 h-20 mx-auto mb-8 rounded-2xl flex items-center justify-center text-3xl transition-all duration-500 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-cursor-blue/25 relative ${service.color}`}>
-                  {service.icon}
-                  {/* Glow effect on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-cursor-blue/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className={`w-16 h-16 ${service.color} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <span className="text-3xl">{service.icon}</span>
                 </div>
-                
-                <h3 className={`text-2xl font-bold mb-4 ${service.textColor} relative z-10`}>
+                <h3 className={`text-xl font-bold mb-4 text-center ${service.textColor}`}>
                   {service.title}
                 </h3>
-                
-                <p className="text-gray-400 mb-6 leading-relaxed relative z-10">
+                <p className="text-gray-400 mb-6 text-center">
                   {service.description}
                 </p>
-                
-                <ul className="space-y-2 relative z-10">
+                <ul className="space-y-2 text-sm text-gray-400">
                   {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-gray-300">
-                      <div className="w-2 h-2 bg-cursor-blue rounded-full mr-3 flex-shrink-0" />
+                    <li key={featureIndex} className="flex items-center">
+                      <span className="text-blue-400 mr-2">•</span>
                       {feature}
                     </li>
                   ))}
                 </ul>
-                
-                {/* Bottom accent line */}
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-cursor-blue to-blue-600 group-hover:w-full transition-all duration-500" />
               </Card>
             ))}
           </div>

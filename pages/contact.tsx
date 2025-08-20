@@ -80,47 +80,47 @@ export default function ContactPage() {
       </Head>
 
       {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-black via-gray-900 to-black overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,122,204,0.1),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(0,162,255,0.06),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]" />
+      <section className="relative py-20 bg-gradient-to-br from-black via-gray-900 to-black overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(139,92,246,0.1),transparent_50%)]" />
         
-        <div className="relative z-10 container-cursor text-center">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 gradient-text-white leading-tight tracking-tight">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-5xl md:text-7xl font-black mb-8 bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent">
             Get in Touch
           </h1>
-          <p className="text-xl md:text-2xl lg:text-3xl text-gray-300 max-w-5xl mx-auto leading-relaxed font-light">
-            Ready to transform your business with AI-powered solutions? Let&apos;s start a conversation.
+          <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                         Ready to transform your business with AI-powered solutions? Let&apos;s start a conversation.
           </p>
         </div>
       </section>
 
       {/* Contact Methods */}
-      <section className="py-24 bg-gradient-to-b from-black to-gray-900 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(0,122,204,0.03),transparent_50%)]" />
-        
-        <div className="container-cursor relative z-10">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 gradient-text-white leading-tight">
-              How to Reach Us
+      <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+              Ways to Connect
             </h2>
-            <p className="text-xl lg:text-2xl text-gray-400 max-w-4xl mx-auto leading-relaxed font-light">
-              Multiple ways to connect with our team of experts
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Choose the method that works best for you
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {contactMethods.map((method, index) => (
               <Card
                 key={index}
-                variant="glass"
-                className="text-center group hover:border-cursor-blue/40 hover:shadow-2xl hover:shadow-cursor-blue/20 hover-lift"
+                className="text-center group hover:border-blue-400/30"
                 style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
               >
-                <div className="text-4xl mb-6">{method.icon}</div>
-                <h3 className="text-2xl font-bold mb-4 text-white">{method.title}</h3>
+                <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                  {method.icon}
+                </div>
+                <h3 className={`text-xl font-semibold mb-3 ${method.color}`}>
+                  {method.title}
+                </h3>
                 <p className="text-gray-400 mb-4">{method.description}</p>
-                <div className={`text-lg font-semibold ${method.color}`}>{method.contact}</div>
+                <div className="text-white font-medium">{method.contact}</div>
               </Card>
             ))}
           </div>

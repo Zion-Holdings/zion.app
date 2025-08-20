@@ -17,15 +17,15 @@ const Card: React.FC<CardProps> = ({
   hover = true,
   variant = 'default',
 }) => {
-  const baseClasses = 'relative overflow-hidden transition-all duration-500 focus-ring';
+  const baseClasses = 'bg-cursor-dark border border-cursor-lighter rounded-2xl p-6 transition-all duration-500 backdrop-blur-sm relative overflow-hidden';
   
   const variantClasses = {
-    default: 'bg-gray-900/50 border border-gray-800/50 rounded-2xl p-8 backdrop-blur-sm',
-    glass: 'glass border-white/10 rounded-2xl p-8',
-    elevated: 'bg-gray-900/80 border border-gray-800/50 rounded-2xl p-8 shadow-2xl shadow-black/20',
+    default: 'bg-cursor-dark',
+    glass: 'bg-white/5 backdrop-blur-xl border-white/10',
+    elevated: 'bg-cursor-dark shadow-lg',
   };
   
-  const hoverClasses = hover ? 'hover:border-cursor-blue/40 hover:shadow-2xl hover:shadow-cursor-blue/20 hover:-translate-y-1' : '';
+  const hoverClasses = hover ? 'hover:border-cursor-blue/30 hover:shadow-xl hover:shadow-cursor-blue/15 hover:-translate-y-2 group' : '';
   const clickableClasses = onClick ? 'cursor-pointer' : '';
   
   const classes = `${baseClasses} ${variantClasses[variant]} ${hoverClasses} ${clickableClasses} ${className}`;
@@ -36,13 +36,25 @@ const Card: React.FC<CardProps> = ({
       style={style}
       onClick={onClick}
     >
-      {/* Subtle background pattern */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.02),transparent_50%)] opacity-0 hover:opacity-100 transition-opacity duration-500" />
+      {/* Hover background effect */}
+      {hover && (
+        <div className="absolute inset-0 bg-gradient-to-br from-cursor-blue/5 via-transparent to-cursor-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+      )}
+      
+      {/* Subtle border glow on hover */}
+      {hover && (
+        <div className="absolute inset-0 border border-cursor-blue/0 group-hover:border-cursor-blue/20 rounded-2xl transition-all duration-500 group-hover:shadow-cursor-blue/10"></div>
+      )}
       
       {/* Content */}
       <div className="relative z-10">
         {children}
       </div>
+      
+      {/* Corner accent */}
+      {hover && (
+        <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-cursor-blue/10 to-transparent rounded-bl-2xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+      )}
     </div>
   );
 };

@@ -97,96 +97,113 @@ export default function CaseStudiesPage() {
     },
   ];
 
+  const industries = ['All', 'E-commerce', 'Healthcare', 'Fintech', 'Manufacturing', 'Education', 'Logistics'];
+
   return (
     <>
       <Head>
-        <title>Case Studies | Zion Tech Group - Success Stories & Results</title>
-        <meta name="description" content="Explore real-world success stories and results from our AI-powered solutions across various industries including e-commerce, healthcare, fintech, and more." />
+        <title>Case Studies | Zion Tech Group - Success Stories</title>
+        <meta name="description" content="Explore real-world success stories and case studies showcasing how Zion Tech Group has transformed businesses with AI-powered solutions." />
         <meta property="og:title" content="Case Studies | Zion Tech Group" />
-        <meta property="og:description" content="Success stories and results from our AI-powered solutions." />
+        <meta property="og:description" content="Real-world success stories and transformations." />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
       {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-black via-gray-900 to-black overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,122,204,0.1),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(0,162,255,0.06),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]" />
+      <section className="relative py-20 bg-gradient-to-br from-black via-gray-900 to-black overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(139,92,246,0.1),transparent_50%)]" />
         
-        <div className="relative z-10 container-cursor text-center">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 gradient-text-white leading-tight tracking-tight">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-5xl md:text-7xl font-black mb-8 bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent">
             Case Studies
           </h1>
-          <p className="text-xl md:text-2xl lg:text-3xl text-gray-300 max-w-5xl mx-auto leading-relaxed font-light">
-            Real-world success stories showcasing the transformative power of our AI-powered solutions
+          <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+            Real-world success stories showcasing how we&apos;ve transformed businesses with AI-powered solutions
           </p>
         </div>
       </section>
 
+      {/* Industry Filter */}
+      <section className="py-12 bg-gradient-to-b from-gray-900 to-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap justify-center gap-4">
+            {industries.map((industry) => (
+              <button
+                key={industry}
+                className="px-6 py-3 rounded-full bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white transition-all duration-200 border border-gray-700 hover:border-blue-500"
+              >
+                {industry}
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Case Studies Grid */}
-      <section className="py-24 bg-gradient-to-b from-black to-gray-900 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(0,122,204,0.03),transparent_50%)]" />
-        
-        <div className="container-cursor relative z-10">
+      <section className="py-20 bg-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {caseStudies.map((study, index) => (
               <Card
                 key={index}
-                variant="glass"
-                className="group hover:border-cursor-blue/40 hover:shadow-2xl hover:shadow-cursor-blue/20 hover-lift relative overflow-hidden"
+                className="group hover:border-blue-400/30 overflow-hidden"
                 style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
               >
-                {/* Hover background effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-cursor-blue/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
-                <div className="text-4xl mb-6 text-center">{study.image}</div>
-                
-                <div className="mb-4">
-                  <span className="inline-block px-3 py-1 bg-gray-800/50 text-gray-300 text-sm rounded-full border border-gray-700/50">
-                    {study.industry}
-                  </span>
+                <div className="text-6xl mb-6 text-center group-hover:scale-110 transition-transform duration-300">
+                  {study.image}
                 </div>
                 
-                <h3 className="text-xl font-bold mb-2 text-white group-hover:text-cursor-blue transition-colors duration-300 relative z-10">
-                  {study.title}
-                </h3>
-                
-                <p className="text-gray-400 mb-4 text-sm relative z-10">
-                  {study.company}
-                </p>
-                
-                <p className="text-gray-300 mb-6 leading-relaxed relative z-10">
+                <div className="mb-4">
+                  <span className="inline-block px-3 py-1 bg-gray-800 text-gray-300 text-sm rounded-full mb-3">
+                    {study.industry}
+                  </span>
+                  <h3 className="text-xl font-bold text-white mb-2">
+                    {study.title}
+                  </h3>
+                  <p className={`text-sm font-medium ${study.color}`}>
+                    {study.company}
+                  </p>
+                </div>
+
+                <p className="text-gray-400 mb-6 leading-relaxed">
                   {study.description}
                 </p>
-                
-                <div className="mb-6 relative z-10">
-                  <h4 className="font-semibold text-white mb-3">Key Results:</h4>
+
+                <div className="mb-6">
+                  <h4 className="text-white font-semibold mb-3">Key Results:</h4>
                   <ul className="space-y-2">
                     {study.results.map((result, resultIndex) => (
-                      <li key={resultIndex} className="flex items-start text-sm text-gray-300">
-                        <div className="w-2 h-2 bg-cursor-blue rounded-full mr-3 mt-2 flex-shrink-0" />
-                        {result}
+                      <li key={resultIndex} className="flex items-start">
+                        <span className="text-green-400 mr-2 mt-1">✓</span>
+                        <span className="text-gray-300 text-sm">{result}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
-                
-                <div className="mb-6 relative z-10">
-                  <h4 className="font-semibold text-white mb-3">Technologies:</h4>
+
+                <div className="mb-6">
+                  <h4 className="text-white font-semibold mb-3">Technologies Used:</h4>
                   <div className="flex flex-wrap gap-2">
                     {study.technologies.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-2 py-1 bg-gray-800/50 text-gray-300 text-xs rounded border border-gray-700/50"
+                        className="px-2 py-1 bg-gray-800 text-gray-300 text-xs rounded"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
                 </div>
-                
-                {/* Bottom accent line */}
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-br from-cursor-blue to-blue-600 group-hover:w-full transition-all duration-500" />
+
+                <Button
+                  href="/contact"
+                  variant="outline"
+                  size="sm"
+                  className="w-full"
+                >
+                  View Full Case Study
+                </Button>
               </Card>
             ))}
           </div>

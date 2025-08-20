@@ -32,7 +32,7 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-black/80 backdrop-blur-xl border-b border-white/10'
+          ? 'bg-cursor-darker/95 backdrop-blur-xl border-b border-cursor-lighter/20 shadow-2xl'
           : 'bg-transparent'
       }`}
     >
@@ -41,12 +41,12 @@ const Header = () => {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
             <div className="relative">
-              <div className="w-10 h-10 bg-gradient-to-br from-cursor-blue to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-cursor-blue/25">
+              <div className="w-10 h-10 bg-gradient-to-br from-cursor-blue to-cursor-accent rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-cursor-blue/50">
                 <span className="text-white font-bold text-xl">Z</span>
               </div>
-              <div className="absolute inset-0 bg-gradient-to-br from-cursor-blue to-blue-600 rounded-xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-300" />
+              <div className="absolute -inset-1 bg-gradient-to-r from-cursor-blue to-cursor-accent rounded-2xl blur opacity-20 group-hover:opacity-40 transition-opacity duration-300 -z-10"></div>
             </div>
-            <span className="text-xl font-bold gradient-text-white group-hover:from-cursor-blue group-hover:to-blue-400 transition-all duration-300">
+            <span className="text-xl font-bold gradient-text-blue group-hover:from-cursor-blue group-hover:to-cursor-accent transition-all duration-300">
               Zion Tech
             </span>
           </Link>
@@ -65,9 +65,9 @@ const Header = () => {
               >
                 {item.name}
                 {isActive(item.href) && (
-                  <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-cursor-blue to-blue-600 rounded-full" />
+                  <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-cursor-blue to-cursor-accent rounded-full" />
                 )}
-                <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-cursor-blue to-blue-600 rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-cursor-blue to-cursor-accent rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
               </Link>
             ))}
           </nav>
@@ -76,7 +76,7 @@ const Header = () => {
           <div className="hidden lg:flex items-center space-x-4">
             <Link
               href="/contact"
-              className="btn btn-primary btn-md hover-lift"
+              className="btn btn-primary hover-lift"
             >
               Get Started
             </Link>
@@ -85,69 +85,64 @@ const Header = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-200 focus-ring"
+            className="lg:hidden p-2 rounded-xl text-gray-400 hover:text-white hover:bg-cursor-light transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cursor-blue focus:ring-offset-2 focus:ring-offset-black"
             aria-label="Toggle mobile menu"
           >
-            <div className="w-6 h-6 relative">
-              <span
-                className={`absolute inset-0 transform transition-all duration-300 ${
-                  isMobileMenuOpen ? 'rotate-45 translate-y-0' : '-translate-y-1'
-                }`}
-              >
-                <div className="w-6 h-0.5 bg-current rounded-full" />
-              </span>
-              <span
-                className={`absolute inset-0 transform transition-all duration-300 ${
-                  isMobileMenuOpen ? 'opacity-0' : 'opacity-100'
-                }`}
-              >
-                <div className="w-6 h-0.5 bg-current rounded-full" />
-              </span>
-              <span
-                className={`absolute inset-0 transform transition-all duration-300 ${
-                  isMobileMenuOpen ? '-rotate-45 translate-y-0' : 'translate-y-1'
-                }`}
-              >
-                <div className="w-6 h-0.5 bg-current rounded-full" />
-              </span>
-            </div>
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              {isMobileMenuOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
+            </svg>
           </button>
         </div>
 
         {/* Mobile Navigation */}
-        <div
-          className={`lg:hidden transition-all duration-300 ease-in-out ${
-            isMobileMenuOpen
-              ? 'max-h-96 opacity-100 visible'
-              : 'max-h-0 opacity-0 invisible'
-          }`}
-        >
-          <div className="py-4 space-y-2 border-t border-white/10">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 ${
-                  isActive(item.href)
-                    ? 'bg-cursor-blue/20 text-cursor-blue border border-cursor-blue/30'
-                    : 'text-gray-300 hover:text-white hover:bg-white/5'
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
-            <div className="pt-4 border-t border-white/10">
-              <Link
-                href="/contact"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="btn btn-primary btn-md w-full justify-center"
-              >
-                Get Started
-              </Link>
+        {isMobileMenuOpen && (
+          <div className="lg:hidden animate-fade-in">
+            <div className="px-4 pt-4 pb-6 space-y-2 bg-cursor-darker/98 backdrop-blur-xl rounded-2xl mt-2 border border-cursor-lighter/20 shadow-2xl">
+              {navigation.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={`block px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
+                    isActive(item.href)
+                      ? 'text-cursor-blue bg-cursor-blue/10 border border-cursor-blue/20 shadow-lg'
+                      : 'text-gray-300 hover:text-white hover:bg-cursor-light hover:shadow-md'
+                  }`}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ))}
+              <div className="pt-4 border-t border-cursor-lighter/20">
+                <Link
+                  href="/contact"
+                  className="btn btn-primary w-full justify-center"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Get Started
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </header>
   );

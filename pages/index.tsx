@@ -53,18 +53,39 @@ export default function HomePage() {
   ];
 
   const technologyStack = [
-    { name: 'Next.js', category: 'Framework' },
-    { name: 'React', category: 'Library' },
-    { name: 'TypeScript', category: 'Language' },
-    { name: 'Tailwind CSS', category: 'Styling' },
-    { name: 'Node.js', category: 'Runtime' },
-    { name: 'PostgreSQL', category: 'Database' },
-    { name: 'Redis', category: 'Cache' },
-    { name: 'Docker', category: 'Containerization' },
-    { name: 'Kubernetes', category: 'Orchestration' },
-    { name: 'AWS', category: 'Cloud' },
-    { name: 'Terraform', category: 'Infrastructure' },
-    { name: 'Prometheus', category: 'Monitoring' },
+    { name: 'Next.js', category: 'Framework', icon: '⚡' },
+    { name: 'React', category: 'Library', icon: '⚛️' },
+    { name: 'TypeScript', category: 'Language', icon: '📘' },
+    { name: 'Tailwind CSS', category: 'Styling', icon: '🎨' },
+    { name: 'Node.js', category: 'Runtime', icon: '🟢' },
+    { name: 'PostgreSQL', category: 'Database', icon: '🐘' },
+    { name: 'Redis', category: 'Cache', icon: '🔴' },
+    { name: 'Docker', category: 'Containerization', icon: '🐳' },
+    { name: 'Kubernetes', category: 'Orchestration', icon: '☸️' },
+    { name: 'AWS', category: 'Cloud', icon: '☁️' },
+    { name: 'Terraform', category: 'Infrastructure', icon: '🏗️' },
+    { name: 'Prometheus', category: 'Monitoring', icon: '📊' },
+  ];
+
+  const testimonials = [
+    {
+      quote: "Zion Tech has revolutionized our development workflow with their autonomous systems.",
+      author: "Sarah Chen",
+      role: "CTO, TechCorp",
+      avatar: "👩‍💼"
+    },
+    {
+      quote: "The AI-powered automation has increased our productivity by 300%.",
+      author: "Marcus Rodriguez",
+      role: "Lead Developer, InnovateLab",
+      avatar: "👨‍💻"
+    },
+    {
+      quote: "Zero-downtime deployments and intelligent monitoring have transformed our operations.",
+      author: "Emily Watson",
+      role: "DevOps Engineer, CloudScale",
+      avatar: "👩‍🔧"
+    }
   ];
 
   return (
@@ -75,6 +96,8 @@ export default function HomePage() {
         <meta property="og:title" content="Zion Tech Group — World's Most Advanced Autonomous Innovation Hub & AI-Powered Cloud Platform" />
         <meta property="og:description" content="Experience the future of autonomous technology with 227+ intelligent automations, AI-powered cloud systems, comprehensive redundancy infrastructure, and zero-downtime operations." />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       {/* Hero Section */}
@@ -100,70 +123,115 @@ export default function HomePage() {
         columns={3}
       />
 
-      {/* Technology Stack Section */}
-      <section className="py-24 bg-gradient-to-b from-black to-gray-900 relative overflow-hidden">
+      {/* Technology Stack */}
+      <section className="section-padding relative bg-gradient-to-b from-cursor-dark to-cursor-darker overflow-hidden">
         {/* Background decoration */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,122,204,0.03),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(0,122,204,0.05),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(0,212,170,0.05),transparent_50%)]"></div>
         
         <div className="container-cursor relative z-10">
           <div className="text-center mb-20 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 gradient-text-white leading-tight">
-              Built with Modern Technology
-            </h2>
-            <p className="text-xl lg:text-2xl text-gray-400 max-w-4xl mx-auto leading-relaxed font-light">
-              Our platform leverages the latest technologies and best practices to deliver exceptional performance, reliability, and scalability.
+            <div className="relative mb-8">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold gradient-text leading-tight">
+                Built with Modern Technology
+              </h2>
+              {/* Subtle glow effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-cursor-blue/10 via-cursor-accent/10 to-cursor-blue/10 blur-2xl -z-10 scale-110"></div>
+            </div>
+            <p className="text-xl lg:text-2xl text-gray-400 max-w-4xl mx-auto leading-relaxed text-balance">
+              Our platform leverages the latest technologies and best practices to deliver exceptional performance and reliability.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
             {technologyStack.map((tech, index) => (
-              <Card
+              <div
                 key={index}
-                variant="glass"
-                className="text-center group hover:border-cursor-blue/40 hover:shadow-2xl hover:shadow-cursor-blue/20 hover-lift"
+                className="animate-fade-in-up"
                 style={{ animationDelay: `${(index * 0.05) + 0.2}s` }}
               >
-                <div className="text-2xl font-bold text-white mb-2 group-hover:text-cursor-blue transition-colors duration-300">
-                  {tech.name}
-                </div>
-                <div className="text-sm text-gray-400 font-medium">
-                  {tech.category}
-                </div>
-              </Card>
+                <Card className="text-center group hover:border-cursor-blue/30 hover:shadow-lg hover:shadow-cursor-blue/10 card-hover">
+                  <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                    {tech.icon}
+                  </div>
+                  <h3 className="font-semibold text-white mb-2 text-lg group-hover:text-cursor-blue transition-colors duration-300">{tech.name}</h3>
+                  <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors duration-300">{tech.category}</p>
+                </Card>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="section-padding relative bg-gradient-to-r from-cursor-blue/5 to-cursor-accent/5 overflow-hidden">
+        <div className="container-cursor relative z-10">
+          <div className="text-center mb-20 animate-fade-in">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold gradient-text leading-tight mb-8">
+              Trusted by Industry Leaders
+            </h2>
+            <p className="text-xl lg:text-2xl text-gray-400 max-w-4xl mx-auto leading-relaxed text-balance">
+              See what our clients say about the transformative impact of Zion Tech&apos;s autonomous systems.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <div
+                key={index}
+                className="animate-fade-in-up"
+                style={{ animationDelay: `${(index * 0.2) + 0.4}s` }}
+              >
+                <Card className="text-center group hover:border-cursor-blue/30 hover:shadow-lg hover:shadow-cursor-blue/10 card-hover h-full">
+                  <div className="text-6xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                    {testimonial.avatar}
+                  </div>
+                  <blockquote className="text-gray-300 text-lg mb-6 italic leading-relaxed group-hover:text-white transition-colors duration-300">
+                    &ldquo;{testimonial.quote}&rdquo;
+                  </blockquote>
+                  <div className="border-t border-cursor-lighter/20 pt-4">
+                    <div className="font-semibold text-white text-lg">{testimonial.author}</div>
+                    <div className="text-cursor-blue text-sm">{testimonial.role}</div>
+                  </div>
+                </Card>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-r from-cursor-blue to-blue-600 relative overflow-hidden">
+      <section className="section-padding relative bg-gradient-to-r from-cursor-blue to-blue-600 overflow-hidden">
         {/* Background decoration */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(255,255,255,0.1),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(255,255,255,0.05),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(255,255,255,0.1),transparent_50%)]"></div>
         
         <div className="container-cursor text-center relative z-10">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-white leading-tight">
-            Ready to Transform Your Business?
-          </h2>
-          <p className="text-xl lg:text-2xl text-blue-100 max-w-4xl mx-auto mb-12 leading-relaxed font-light">
-            Join the future of autonomous technology and experience unprecedented efficiency, reliability, and innovation.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Button
-              href="/contact"
-              size="xl"
-              className="bg-white text-cursor-blue hover:bg-gray-100 hover-lift shadow-2xl"
-            >
-              Start Your Journey
-            </Button>
-            <Button
-              href="/case-studies"
-              variant="outline"
-              size="xl"
-              className="border-white/30 text-white hover:bg-white/10 hover-lift"
-            >
-              View Case Studies
-            </Button>
+          <div className="animate-fade-in">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight">
+              Ready to Transform Your Business?
+            </h2>
+            <p className="text-xl lg:text-2xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed text-balance">
+              Join the future of autonomous technology and experience unprecedented efficiency, reliability, and innovation.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Button
+                href="/contact"
+                variant="secondary"
+                size="lg"
+                className="bg-white text-cursor-blue hover:bg-gray-100 shadow-2xl hover:shadow-white/25"
+              >
+                Start Your Journey
+              </Button>
+              <Button
+                href="/case-studies"
+                variant="outline"
+                size="lg"
+                className="border-white text-white hover:bg-white hover:text-cursor-blue shadow-2xl hover:shadow-white/25"
+              >
+                View Case Studies
+              </Button>
+            </div>
           </div>
         </div>
       </section>
