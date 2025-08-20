@@ -11,6 +11,7 @@ export default function HomePage() {
         <meta property="og:title" content="Zion Tech Group — World's Most Advanced Autonomous Innovation Hub & AI-Powered Cloud Platform" />
         <meta property="og:description" content="Experience the future of autonomous technology with 227+ intelligent automations, AI-powered cloud systems, comprehensive redundancy infrastructure, and zero-downtime operations." />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="keywords" content="autonomous technology, AI automation, cloud infrastructure, redundancy systems, zero-downtime, intelligent systems, innovation hub" />
       </Head>
       
       <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-950 text-white">
@@ -310,6 +311,22 @@ export default function HomePage() {
                 </div>
                 <h3 className="text-lg font-semibold text-green-400 mb-2">Contact</h3>
                 <p className="text-white/70 text-sm">Get in touch</p>
+              </Link>
+
+              <Link href="/reports/updates" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300 text-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-xl">📈</span>
+                </div>
+                <h3 className="text-lg font-semibold text-cyan-400 mb-2">Reports</h3>
+                <p className="text-white/70 text-sm">Live updates</p>
+              </Link>
+
+              <Link href="/privacy" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-rose-400/30 transition-all duration-300 text-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-rose-400 to-pink-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-xl">🛡️</span>
+                </div>
+                <h3 className="text-lg font-semibold text-rose-300 mb-2">Privacy</h3>
+                <p className="text-white/70 text-sm">Policy details</p>
               </Link>
             </div>
           </section>
