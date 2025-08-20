@@ -1,242 +1,243 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Head from 'next/head';
-import Section from '../components/ui/Section';
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    message: ''
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission logic here
-    console.log('Form submitted:', formData);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
   return (
     <>
       <Head>
-        <title>Contact Us | Zion Tech Group - Get Started Today</title>
-        <meta name="description" content="Get in touch with Zion Tech Group to discuss your AI and automation needs. Start your journey towards autonomous technology today." />
+        <title>Contact Us | Zion Tech Group</title>
+        <meta name="description" content="Get in touch with Zion Tech Group to discuss your AI and automation needs." />
         <meta property="og:title" content="Contact Us | Zion Tech Group" />
-        <meta property="og:description" content="Get in touch to discuss your AI and automation needs." />
+        <meta property="og:description" content="Get in touch with Zion Tech Group." />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       
       {/* Hero Section */}
-      <Section className="bg-gradient-to-br from-black via-gray-900 to-black py-24 lg:py-32">
-        <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8">
-            <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
-              Get in Touch
-            </span>
-          </h1>
-          <p className="text-xl md:text-2xl text-white/80 leading-relaxed">
-            Ready to transform your business with autonomous technology? Let's start the conversation.
-          </p>
+      <section className="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="animate-fade-in-up">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+              Get In Touch
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
+              Ready to transform your business with autonomous AI technology? Let's discuss your needs.
+            </p>
+          </div>
         </div>
-      </Section>
+      </section>
 
       {/* Contact Form Section */}
-      <Section className="bg-gradient-to-br from-gray-900 to-black">
-        <div className="max-w-4xl mx-auto">
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10">
-              <h2 className="text-3xl font-bold mb-8 text-white">Send us a Message</h2>
+            {/* Contact Information */}
+            <div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-8">Let's Start a Conversation</h2>
+              <p className="text-lg text-gray-600 mb-8">
+                Whether you're looking to implement autonomous systems, optimize your cloud infrastructure, 
+                or explore AI-powered solutions, we're here to help.
+              </p>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-white/80 mb-2">
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                    placeholder="Enter your full name"
-                  />
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Email Us</h3>
+                    <p className="text-gray-600">hello@ziontechgroup.com</p>
+                    <p className="text-sm text-gray-500">We'll respond within 24 hours</p>
+                  </div>
                 </div>
+                
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Call Us</h3>
+                    <p className="text-gray-600">+1 (555) 123-4567</p>
+                    <p className="text-sm text-gray-500">Mon-Fri 9AM-6PM EST</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Visit Us</h3>
+                    <p className="text-gray-600">123 Innovation Drive</p>
+                    <p className="text-gray-600">Tech City, TC 12345</p>
+                  </div>
+                </div>
+              </div>
+            </div>
 
+            {/* Contact Form */}
+            <div className="card p-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Send us a message</h3>
+              <form className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
+                      First Name
+                    </label>
+                    <input
+                      type="text"
+                      id="firstName"
+                      name="firstName"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+                      placeholder="John"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
+                      Last Name
+                    </label>
+                    <input
+                      type="text"
+                      id="lastName"
+                      name="lastName"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+                      placeholder="Doe"
+                    />
+                  </div>
+                </div>
+                
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-white/80 mb-2">
-                    Email Address *
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    Email Address
                   </label>
                   <input
                     type="email"
                     id="email"
                     name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                    placeholder="Enter your email address"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+                    placeholder="john@company.com"
                   />
                 </div>
-
+                
                 <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-white/80 mb-2">
+                  <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
                     Company
                   </label>
                   <input
                     type="text"
                     id="company"
                     name="company"
-                    value={formData.company}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                    placeholder="Enter your company name"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+                    placeholder="Your Company"
                   />
                 </div>
-
+                
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-white/80 mb-2">
-                    Message *
+                  <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
+                    Service Interest
+                  </label>
+                  <select
+                    id="service"
+                    name="service"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+                  >
+                    <option value="">Select a service</option>
+                    <option value="autonomous-cloud">Autonomous Cloud Systems</option>
+                    <option value="ai-automation">AI-Powered Automation</option>
+                    <option value="redundancy">Redundancy & Reliability</option>
+                    <option value="monitoring">Advanced Monitoring</option>
+                    <option value="security">Security & Compliance</option>
+                    <option value="infrastructure">Global Infrastructure</option>
+                    <option value="consulting">Technology Consulting</option>
+                  </select>
+                </div>
+                
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                    Message
                   </label>
                   <textarea
                     id="message"
                     name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows={5}
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none"
-                    placeholder="Tell us about your project or requirements"
-                  />
+                    rows={4}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+                    placeholder="Tell us about your project and how we can help..."
+                  ></textarea>
                 </div>
-
+                
                 <button
                   type="submit"
-                  className="w-full px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-semibold text-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-200 transform hover:scale-105 shadow-lg"
+                  className="w-full btn-primary text-lg py-4"
                 >
                   Send Message
                 </button>
               </form>
             </div>
-
-            {/* Contact Information */}
-            <div className="space-y-8">
-              <div>
-                <h2 className="text-3xl font-bold mb-6 text-white">Let's Connect</h2>
-                <p className="text-white/70 text-lg leading-relaxed mb-8">
-                  Ready to explore how autonomous technology can transform your business? We're here to help you navigate the future of AI and automation.
-                </p>
-              </div>
-
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <span className="text-white text-xl">📧</span>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-white mb-2">Email</h3>
-                    <p className="text-white/70">hello@ziontech.com</p>
-                    <p className="text-white/50 text-sm">We'll respond within 24 hours</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <span className="text-white text-xl">🌍</span>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-white mb-2">Global Reach</h3>
-                    <p className="text-white/70">Available worldwide</p>
-                    <p className="text-white/50 text-sm">Remote-first approach</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <span className="text-white text-xl">⚡</span>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-white mb-2">Quick Start</h3>
-                    <p className="text-white/70">Get started in days, not months</p>
-                    <p className="text-white/50 text-sm">Rapid prototyping available</p>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
-      </Section>
+      </section>
 
       {/* FAQ Section */}
-      <Section className="bg-black">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Frequently Asked Questions</h2>
-          <p className="text-xl text-white/70 max-w-3xl mx-auto">
-            Common questions about our services and process
-          </p>
-        </div>
-
-        <div className="max-w-4xl mx-auto space-y-6">
-          {[
-            {
-              question: "How quickly can you get started on a project?",
-              answer: "We can typically begin work within 1-2 weeks of initial consultation. For urgent projects, we offer rapid prototyping services that can start immediately."
-            },
-            {
-              question: "What industries do you specialize in?",
-              answer: "We work across all industries, with particular expertise in technology, healthcare, finance, manufacturing, and e-commerce. Our autonomous solutions are adaptable to any sector."
-            },
-            {
-              question: "Do you provide ongoing support after project completion?",
-              answer: "Yes, we offer comprehensive support packages including monitoring, maintenance, and continuous optimization. Our autonomous systems also provide self-healing capabilities."
-            },
-            {
-              question: "What is your approach to data security and privacy?",
-              answer: "Security is built into every solution from the ground up. We follow industry best practices and can help ensure compliance with GDPR, HIPAA, SOC 2, and other standards."
-            }
-          ].map((faq, index) => (
-            <div key={index} className="bg-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/10">
-              <h3 className="text-lg font-semibold text-white mb-3">{faq.question}</h3>
-              <p className="text-white/70">{faq.answer}</p>
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-xl text-gray-600">
+              Common questions about our services and process
+            </p>
+          </div>
+          
+          <div className="space-y-6">
+            <div className="card p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                How quickly can you implement autonomous systems?
+              </h3>
+              <p className="text-gray-600">
+                Implementation timelines vary based on complexity, but our autonomous systems typically go live within 2-4 weeks. 
+                We prioritize rapid deployment while maintaining quality and security standards.
+              </p>
             </div>
-          ))}
-        </div>
-      </Section>
-
-      {/* CTA Section */}
-      <Section className="bg-gradient-to-r from-blue-600 to-purple-600">
-        <div className="text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Ready to Get Started?
-          </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Join the future of autonomous technology and experience unprecedented efficiency, reliability, and innovation.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="#contact-form"
-              className="px-8 py-4 bg-white text-blue-600 rounded-lg font-semibold text-lg hover:bg-white/90 transition-all duration-200 transform hover:scale-105 shadow-lg"
-            >
-              Start Your Project
-            </a>
-            <a
-              href="/services"
-              className="px-8 py-4 border-2 border-white text-white rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-all duration-200"
-            >
-              Explore Services
-            </a>
+            
+            <div className="card p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                What kind of support do you provide after implementation?
+              </h3>
+              <p className="text-gray-600">
+                We provide 24/7 monitoring and support, with dedicated account managers and technical teams. 
+                Our autonomous systems also include self-healing capabilities to minimize downtime.
+              </p>
+            </div>
+            
+            <div className="card p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                Can your systems integrate with our existing infrastructure?
+              </h3>
+              <p className="text-gray-600">
+                Absolutely! Our autonomous systems are designed to integrate seamlessly with existing infrastructure. 
+                We provide comprehensive migration support and ensure zero disruption to your operations.
+              </p>
+            </div>
+            
+            <div className="card p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                What makes your AI solutions different from others?
+              </h3>
+              <p className="text-gray-600">
+                Our AI systems are truly autonomous - they learn, adapt, and improve without human intervention. 
+                With 227+ active automations and 99.99% uptime, we've proven that autonomous technology delivers superior results.
+              </p>
+            </div>
           </div>
         </div>
-      </Section>
+      </section>
     </>
   );
 }
