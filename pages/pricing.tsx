@@ -243,9 +243,8 @@ export default function PricingPage() {
                 Specialized Tools & Services
               </h2>
               <p className="text-xl text-gray-400 max-w-4xl mx-auto">
-                Our portfolio of 12 specialized micro SaaS solutions covers content creation, design, analytics, 
-                marketing, and business operations. Focused solutions for specific business needs with transparent, 
-                competitive pricing and 14-day free trials.
+                Discover our 12 specialized micro SaaS solutions covering every essential business operation. 
+                Focused solutions for specific business needs with transparent, competitive pricing and 14-day free trials.
               </p>
             </div>
 
@@ -283,7 +282,7 @@ export default function PricingPage() {
                   </li>
                 </ul>
                 <Button
-                  href="https://contentgen.zion.app"
+                  href="https://contentgen.ziontechgroup.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700"
@@ -325,7 +324,7 @@ export default function PricingPage() {
                   </li>
                 </ul>
                 <Button
-                  href="https://design.zion.app"
+                  href="https://design.ziontechgroup.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700"
@@ -367,7 +366,7 @@ export default function PricingPage() {
                   </li>
                 </ul>
                 <Button
-                  href="https://monitor.zion.app"
+                  href="https://monitor.ziontechgroup.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700"
@@ -409,7 +408,7 @@ export default function PricingPage() {
                   </li>
                 </ul>
                 <Button
-                  href="https://seo.zion.app"
+                  href="https://seo.ziontechgroup.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700"
@@ -451,7 +450,7 @@ export default function PricingPage() {
                   </li>
                 </ul>
                 <Button
-                  href="https://chatbot.zion.app"
+                  href="https://chatbot.ziontechgroup.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700"
@@ -493,7 +492,7 @@ export default function PricingPage() {
                   </li>
                 </ul>
                 <Button
-                  href="https://bi.zion.app"
+                  href="https://bi.ziontechgroup.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-600 hover:to-pink-700"
@@ -555,258 +554,6 @@ export default function PricingPage() {
                 <p className="text-gray-400">
                   We accept all major credit cards, PayPal, and wire transfers for enterprise plans.
                 </p>
-              </div>
-
-              {/* Email Marketing Automation */}
-              <div className="bg-gray-900 rounded-2xl p-8 border border-gray-800 hover:border-indigo-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/10">
-                <div className="text-center mb-6">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-2xl text-3xl mb-4">
-                    📧
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Email Marketing Automation</h3>
-                  <div className="text-4xl font-bold text-indigo-400 mb-2">$59</div>
-                  <div className="text-gray-400">per month</div>
-                </div>
-                <ul className="space-y-3 mb-8">
-                  <li className="flex items-center text-gray-300">
-                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
-                    AI-powered personalization
-                  </li>
-                  <li className="flex items-center text-gray-300">
-                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
-                    Advanced segmentation
-                  </li>
-                  <li className="flex items-center text-gray-300">
-                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
-                    A/B testing automation
-                  </li>
-                  <li className="flex items-center text-gray-300">
-                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
-                    Behavioral triggers
-                  </li>
-                  <li className="flex items-center text-gray-300">
-                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
-                    Email template library
-                  </li>
-                </ul>
-                <Button
-                  href="https://email.zion.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full bg-gradient-to-r from-indigo-500 to-blue-600 hover:from-indigo-600 hover:to-blue-700"
-                >
-                  Get Started
-                </Button>
-              </div>
-
-              {/* Social Media Scheduler */}
-              <div className="bg-gray-900 rounded-2xl p-8 border border-gray-800 hover:border-teal-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-teal-500/10">
-                <div className="text-center mb-6">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-2xl text-3xl mb-4">
-                    📱
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Social Media Scheduler</h3>
-                  <div className="text-4xl font-bold text-teal-400 mb-2">$39</div>
-                  <div className="text-gray-400">per month</div>
-                </div>
-                <ul className="space-y-3 mb-8">
-                  <li className="flex items-center text-gray-300">
-                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
-                    Multi-platform scheduling
-                  </li>
-                  <li className="flex items-center text-gray-300">
-                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
-                    AI-powered content suggestions
-                  </li>
-                  <li className="flex items-center text-gray-300">
-                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
-                    Best time to post optimization
-                  </li>
-                  <li className="flex items-center text-gray-300">
-                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
-                    Content calendar management
-                  </li>
-                  <li className="flex items-center text-gray-300">
-                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
-                    Performance analytics
-                  </li>
-                </ul>
-                <Button
-                  href="https://social.zion.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700"
-                >
-                  Get Started
-                </Button>
-              </div>
-
-              {/* Customer Feedback Analytics */}
-              <div className="bg-gray-900 rounded-2xl p-8 border border-gray-800 hover:border-yellow-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-yellow-500/10">
-                <div className="text-center mb-6">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-2xl text-3xl mb-4">
-                    💡
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Customer Feedback Analytics</h3>
-                  <div className="text-4xl font-bold text-yellow-400 mb-2">$79</div>
-                  <div className="text-gray-400">per month</div>
-                </div>
-                <ul className="space-y-3 mb-8">
-                  <li className="flex items-center text-gray-300">
-                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
-                    Multi-channel feedback collection
-                  </li>
-                  <li className="flex items-center text-gray-300">
-                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
-                    Sentiment analysis
-                  </li>
-                  <li className="flex items-center text-gray-300">
-                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
-                    Feedback categorization
-                  </li>
-                  <li className="flex items-center text-gray-300">
-                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
-                    Action item tracking
-                  </li>
-                  <li className="flex items-center text-gray-300">
-                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
-                    Customer satisfaction metrics
-                  </li>
-                </ul>
-                <Button
-                  href="https://feedback.zion.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full bg-gradient-to-r from-yellow-500 to-orange-600 hover:from-yellow-600 hover:to-orange-700"
-                >
-                  Get Started
-                </Button>
-              </div>
-
-              {/* Invoice & Billing Manager */}
-              <div className="bg-gray-900 rounded-2xl p-8 border border-gray-800 hover:border-green-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-green-500/10">
-                <div className="text-center mb-6">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl text-3xl mb-4">
-                    💰
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Invoice & Billing Manager</h3>
-                  <div className="text-4xl font-bold text-green-400 mb-2">$49</div>
-                  <div className="text-gray-400">per month</div>
-                </div>
-                <ul className="space-y-3 mb-8">
-                  <li className="flex items-center text-gray-300">
-                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
-                    Automated invoicing
-                  </li>
-                  <li className="flex items-center text-gray-300">
-                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
-                    Payment processing integration
-                  </li>
-                  <li className="flex items-center text-gray-300">
-                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
-                    Recurring billing
-                  </li>
-                  <li className="flex items-center text-gray-300">
-                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
-                    Financial reporting
-                  </li>
-                  <li className="flex items-center text-gray-300">
-                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
-                    Tax calculation
-                  </li>
-                </ul>
-                <Button
-                  href="https://billing.zion.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700"
-                >
-                  Get Started
-                </Button>
-              </div>
-
-              {/* Project Management Hub */}
-              <div className="bg-gray-900 rounded-2xl p-8 border border-gray-800 hover:border-purple-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/10">
-                <div className="text-center mb-6">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl text-3xl mb-4">
-                    📋
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Project Management Hub</h3>
-                  <div className="text-4xl font-bold text-purple-400 mb-2">$69</div>
-                  <div className="text-gray-400">per month</div>
-                </div>
-                <ul className="space-y-3 mb-8">
-                  <li className="flex items-center text-gray-300">
-                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
-                    Task management & tracking
-                  </li>
-                  <li className="flex items-center text-gray-300">
-                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
-                    Team collaboration tools
-                  </li>
-                  <li className="flex items-center text-gray-300">
-                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
-                    Project templates
-                  </li>
-                  <li className="flex items-center text-gray-300">
-                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
-                    Time tracking
-                  </li>
-                  <li className="flex items-center text-gray-300">
-                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
-                    Resource allocation
-                  </li>
-                </ul>
-                <Button
-                  href="https://projects.zion.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700"
-                >
-                  Get Started
-                </Button>
-              </div>
-
-              {/* API Gateway & Management */}
-              <div className="bg-gray-900 rounded-2xl p-8 border border-gray-800 hover:border-gray-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-gray-500/10">
-                <div className="text-center mb-6">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-gray-500 to-slate-600 rounded-2xl text-3xl mb-4">
-                    🔌
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">API Gateway & Management</h3>
-                  <div className="text-4xl font-bold text-gray-400 mb-2">$129</div>
-                  <div className="text-gray-400">per month</div>
-                </div>
-                <ul className="space-y-3 mb-8">
-                  <li className="flex items-center text-gray-300">
-                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
-                    API design & documentation
-                  </li>
-                  <li className="flex items-center text-gray-300">
-                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
-                    Rate limiting & throttling
-                  </li>
-                  <li className="flex items-center text-gray-300">
-                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
-                    Authentication & authorization
-                  </li>
-                  <li className="flex items-center text-gray-300">
-                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
-                    API analytics & monitoring
-                  </li>
-                  <li className="flex items-center text-gray-300">
-                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
-                    Developer portal
-                  </li>
-                </ul>
-                <Button
-                  href="https://api.zion.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full bg-gradient-to-r from-gray-500 to-slate-600 hover:from-gray-600 hover:to-slate-700"
-                >
-                  Get Started
-                </Button>
               </div>
             </div>
           </div>
