@@ -30,6 +30,7 @@ module.exports = {
     '*.config.js',
     '*.config.ts',
     'scripts/',
-    'automation/'
+    'automation/',
+    'netlify/'
   ]
 };
