@@ -379,7 +379,7 @@ export default function HomePage() {
                   <h3 className="text-lg font-semibold text-cyan-400">AI Automation Trends 2025</h3>
                   <span className="opacity-70 group-hover:opacity-100">→</span>
                 </div>
-                <p className="mt-2 text-white/70 text-sm">Whats next in automation</p>
+                <p className="mt-2 text-white/70 text-sm">What&apos;s next in automation</p>
               </Link>
 
               <Link href="/blog/cloud-native-automation" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-emerald-400/30 transition-all duration-300">
