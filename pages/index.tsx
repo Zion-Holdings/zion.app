@@ -595,6 +595,90 @@ export default function HomePage() {
             </div>
           </section>
 
+          {/* Site Directory & Quick Links */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">🗺️ Site Directory & Quick Links</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-cyan-400 mb-4">Getting Started</h3>
+                <ul className="space-y-2 text-sm text-white/80">
+                  <li><Link href="/about" className="hover:text-cyan-300 transition-colors">About Our Mission</Link></li>
+                  <li><Link href="/services" className="hover:text-cyan-300 transition-colors">AI Services</Link></li>
+                  <li><Link href="/contact" className="hover:text-cyan-300 transition-colors">Contact & Onboarding</Link></li>
+                </ul>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-fuchsia-400 mb-4">Learn & Explore</h3>
+                <ul className="space-y-2 text-sm text-white/80">
+                  <li><Link href="/blog" className="hover:text-fuchsia-300 transition-colors">Blog & Insights</Link></li>
+                  <li><Link href="/resources" className="hover:text-fuchsia-300 transition-colors">Resources</Link></li>
+                  <li><Link href="/case-studies" className="hover:text-fuchsia-300 transition-colors">Case Studies</Link></li>
+                </ul>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-green-400 mb-4">Core Documentation</h3>
+                <ul className="space-y-2 text-sm text-white/80">
+                  <li>
+                    <a href="https://github.com/Zion-Holdings/zion.app/blob/main/README.md" target="_blank" rel="noopener noreferrer" className="hover:text-green-300 transition-colors">Project Overview (README)</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Zion-Holdings/zion.app/blob/main/ARCHITECTURE.md" target="_blank" rel="noopener noreferrer" className="hover:text-green-300 transition-colors">Architecture</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Zion-Holdings/zion.app/blob/main/API.md" target="_blank" rel="noopener noreferrer" className="hover:text-green-300 transition-colors">API Documentation</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Zion-Holdings/zion.app/blob/main/DEPLOYMENT.md" target="_blank" rel="noopener noreferrer" className="hover:text-green-300 transition-colors">Deployment Guide</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Zion-Holdings/zion.app/blob/main/SECURITY.md" target="_blank" rel="noopener noreferrer" className="hover:text-green-300 transition-colors">Security</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Zion-Holdings/zion.app/blob/main/TESTING.md" target="_blank" rel="noopener noreferrer" className="hover:text-green-300 transition-colors">Testing</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Zion-Holdings/zion.app/blob/main/PERFORMANCE.md" target="_blank" rel="noopener noreferrer" className="hover:text-green-300 transition-colors">Performance</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-yellow-400 mb-4">Autonomous & Redundancy</h3>
+                <ul className="space-y-2 text-sm text-white/80">
+                  <li>
+                    <a href="https://github.com/Zion-Holdings/zion.app/blob/main/README_COMPREHENSIVE_REDUNDANCY.md" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-300 transition-colors">Comprehensive Redundancy</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Zion-Holdings/zion.app/blob/main/README_ULTIMATE_REDUNDANCY.md" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-300 transition-colors">Ultimate Redundancy</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Zion-Holdings/zion.app/blob/main/README_PM2_REDUNDANCY_COMPLETE.md" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-300 transition-colors">PM2 Orchestration</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Zion-Holdings/zion.app/blob/main/AUTOMATION_COMPLETION_REPORT.md" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-300 transition-colors">Automation Completion Report</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-indigo-400 mb-4">Reports & Analytics</h3>
+                <ul className="space-y-2 text-sm text-white/80">
+                  <li><Link href="/reports" className="hover:text-indigo-300 transition-colors">Reports Index</Link></li>
+                  <li><Link href="/reports/updates/update-2025-08-15-0406" className="hover:text-indigo-300 transition-colors">Latest Autonomous Update</Link></li>
+                </ul>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-red-400 mb-4">Legal & Privacy</h3>
+                <ul className="space-y-2 text-sm text-white/80">
+                  <li><Link href="/privacy" className="hover:text-red-300 transition-colors">Privacy & Security</Link></li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
           {/* Footer Navigation */}
           <section className="mx-auto max-w-7xl px-6 pb-16">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
