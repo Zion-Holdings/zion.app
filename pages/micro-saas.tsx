@@ -653,6 +653,78 @@ export default function MicroSaasPage() {
       link: 'https://ziontechgroup.com/ai-powered-analytics-dashboard',
       marketPosition: 'Competitive with Tableau ($70-70), Power BI ($9.99-20), and Looker ($500-5000)',
       targetAudience: 'Data analysts, business intelligence teams, and executives'
+    },
+    {
+      name: 'Customer Relationship Management',
+      tagline: 'Complete CRM solution for modern businesses',
+      price: '$89',
+      period: '/month',
+      description: 'Comprehensive CRM platform with lead management, sales tracking, and customer lifecycle management.',
+      features: [
+        'Lead management & scoring',
+        'Sales pipeline tracking',
+        'Contact management',
+        'Email integration',
+        'Reporting & analytics',
+        'Mobile app access',
+        'Integration with popular tools',
+        'Custom workflows'
+      ],
+      popular: false,
+      icon: '👥',
+      color: 'from-blue-500 to-indigo-600',
+      textColor: 'text-blue-400',
+      link: 'https://ziontechgroup.com/customer-relationship-management',
+      marketPosition: 'Competitive with Salesforce ($25-300), HubSpot ($45-1200), and Pipedrive ($12.50-99)',
+      targetAudience: 'Sales teams, business development professionals, and customer success managers'
+    },
+    {
+      name: 'Business Process Automation',
+      tagline: 'Streamline workflows with intelligent automation',
+      price: '$79',
+      period: '/month',
+      description: 'Automate repetitive business processes with AI-powered workflow automation and intelligent routing.',
+      features: [
+        'Workflow automation',
+        'Process mapping',
+        'AI-powered routing',
+        'Approval workflows',
+        'Integration with business systems',
+        'Performance analytics',
+        'Custom automation rules',
+        'Mobile workflow access'
+      ],
+      popular: false,
+      icon: '⚙️',
+      color: 'from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      link: 'https://ziontechgroup.com/business-process-automation',
+      marketPosition: 'Competitive with Zapier ($19.99-599), Microsoft Power Automate ($15-40), and UiPath ($0-1000+)',
+      targetAudience: 'Operations managers, business analysts, and process improvement teams'
+    },
+    {
+      name: 'Digital Asset Management',
+      tagline: 'Centralized digital asset organization',
+      price: '$69',
+      period: '/month',
+      description: 'Organize, manage, and distribute digital assets with advanced metadata and collaboration tools.',
+      features: [
+        'Centralized asset storage',
+        'Advanced metadata management',
+        'Version control',
+        'Collaboration tools',
+        'Asset search & discovery',
+        'Access control & permissions',
+        'Integration with design tools',
+        'Analytics & usage tracking'
+      ],
+      popular: false,
+      icon: '🗂️',
+      color: 'from-purple-500 to-violet-600',
+      textColor: 'text-purple-400',
+      link: 'https://ziontechgroup.com/digital-asset-management',
+      marketPosition: 'Competitive with Bynder ($450-2000), Widen ($0-1000+), and Canto ($0-1000+)',
+      targetAudience: 'Marketing teams, creative agencies, and brand managers'
     }
   ];
 
