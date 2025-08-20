@@ -38,7 +38,7 @@ export async function getStaticProps() {
         };
       })
       .sort((a, b) => (a.slug < b.slug ? 1 : -1));
-  } catch (err) {
+  } catch {
     updates = [];
   }
 
