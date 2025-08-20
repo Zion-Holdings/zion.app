@@ -1,48 +1,47 @@
 {
-  "master": {
-    "logLevel": "INFO",
-    "orchestrationInterval": 60000,
-    "autoRecovery": true,
-    "loadBalancing": true,
-    "healthCheckInterval": 30000,
-    "backupInterval": 300000
+  "version": "2.0.0",
+  "system": "Ultimate Redundancy Master V2",
+  "enabled": true,
+  "autoRecovery": true,
+  "healthCheckInterval": 30000,
+  "maxRetries": 5,
+  "retryDelay": 5000,
+  "systems": {
+    "pm2": {
+      "enabled": true,
+      "priority": "high",
+      "autoRestart": true,
+      "healthCheck": true
+    },
+    "github": {
+      "enabled": true,
+      "priority": "medium",
+      "autoRestart": false,
+      "healthCheck": true
+    },
+    "netlify": {
+      "enabled": true,
+      "priority": "medium",
+      "autoRestart": false,
+      "healthCheck": true
+    },
+    "build": {
+      "enabled": true,
+      "priority": "high",
+      "autoRestart": true,
+      "healthCheck": true
+    },
+    "automation": {
+      "enabled": true,
+      "priority": "high",
+      "autoRestart": true,
+      "healthCheck": true
+    }
   },
-  "ultimate": {
-    "logLevel": "INFO",
-    "checkInterval": 30000,
-    "maxRetries": 5,
-    "autoRecovery": true,
-    "loadBalancing": true,
-    "healthCheckInterval": 60000
-  },
-  "pm2": {
-    "logLevel": "INFO",
-    "healthCheckInterval": 30000,
-    "maxRestartAttempts": 5,
-    "autoRecovery": true,
-    "processMonitoring": true,
-    "logRotation": true,
-    "loadBalancing": true,
-    "backupInterval": 300000
-  },
-  "github": {
-    "logLevel": "INFO",
-    "healthCheckInterval": 60000,
-    "maxFailures": 3,
-    "autoTrigger": true,
-    "backupTriggers": true,
-    "workflowValidation": true,
-    "apiHealthCheck": true,
-    "backupInterval": 300000
-  },
-  "netlify": {
-    "logLevel": "INFO",
-    "healthCheckInterval": 120000,
-    "maxFailures": 3,
-    "autoDeploy": true,
-    "autoRegenerate": true,
-    "deploymentCheck": true,
-    "manifestValidation": true,
-    "backupInterval": 600000
+  "monitoring": {
+    "enabled": true,
+    "logLevel": "info",
+    "metrics": true,
+    "alerts": true
   }
 }
