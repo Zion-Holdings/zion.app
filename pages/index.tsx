@@ -8,7 +8,7 @@ import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, Exter
 
 export default function HomePage() {
   const heroStats = [
-    { value: '55+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
+    { value: '58+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
     { value: '99.9%', label: 'Uptime Guarantee', color: 'text-fuchsia-400' },
     { value: '14', label: 'Day Free Trials', color: 'text-blue-400' },
     { value: '24/7', label: 'AI Support', color: 'text-green-400' },
@@ -25,7 +25,7 @@ export default function HomePage() {
     {
       icon: <Cloud className="w-8 h-8 text-white" />,
       title: 'Real Micro SaaS Services',
-      description: '55+ fully functional micro SaaS tools with real implementations, not just mockups.',
+      description: '58+ fully functional micro SaaS tools with real implementations, not just mockups.',
       color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
       gradient: 'from-cyan-400 to-blue-500',
     },
@@ -408,6 +408,161 @@ export default function HomePage() {
                 </Button>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Innovative Services Section */}
+      <section className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="quantum-bg opacity-30" />
+        </div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+              <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+                Revolutionary
+              </span>{' '}
+              Technology Services
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Experience the future with our cutting-edge AI marketplace, quantum computing platform, and blockchain development suite.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* AI Marketplace */}
+            <Card variant="futuristic" size="lg" className="group hover:scale-105 transition-transform duration-300">
+              <div className="text-center">
+                <div className="text-5xl mb-4">🤖</div>
+                <h3 className="text-2xl font-bold text-white mb-3">AI Marketplace Platform</h3>
+                <p className="text-gray-300 mb-6">
+                  Buy, sell, and trade AI models and services in our revolutionary marketplace. Built-in testing, benchmarking, and revenue analytics.
+                </p>
+                <div className="space-y-3 mb-6 text-left">
+                  <div className="flex items-center text-sm text-gray-300">
+                    <Check className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" />
+                    AI model marketplace with 1000+ models
+                  </div>
+                  <div className="flex items-center text-sm text-gray-300">
+                    <Check className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" />
+                    Built-in testing and benchmarking
+                  </div>
+                  <div className="flex items-center text-sm text-gray-300">
+                    <Check className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" />
+                    Revenue analytics and tracking
+                  </div>
+                  <div className="flex items-center text-sm text-gray-300">
+                    <Check className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" />
+                    Multi-language support (15+ languages)
+                  </div>
+                </div>
+                <div className="text-center mb-4">
+                  <span className="text-3xl font-bold text-white">$199</span>
+                  <span className="text-gray-400">/month</span>
+                </div>
+                <Button
+                  variant="futuristic"
+                  size="sm"
+                  href="https://ziontechgroup.com/ai-marketplace"
+                  icon={<ExternalLink className="w-4 h-4" />}
+                  iconPosition="right"
+                  glow
+                  fullWidth
+                >
+                  Learn More
+                </Button>
+              </div>
+            </Card>
+
+            {/* Quantum Computing */}
+            <Card variant="futuristic" size="lg" className="group hover:scale-105 transition-transform duration-300">
+              <div className="text-center">
+                <div className="text-5xl mb-4">⚛️</div>
+                <h3 className="text-2xl font-bold text-white mb-3">Quantum Computing Platform</h3>
+                <p className="text-gray-300 mb-6">
+                  Access quantum computing power and algorithms. Circuit design tools, quantum machine learning, and real quantum hardware access.
+                </p>
+                <div className="space-y-3 mb-6 text-left">
+                  <div className="flex items-center text-sm text-gray-300">
+                    <Check className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" />
+                    Quantum circuit designer and simulator
+                  </div>
+                  <div className="flex items-center text-sm text-gray-300">
+                    <Check className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" />
+                    Access to real quantum hardware
+                  </div>
+                  <div className="flex items-center text-sm text-gray-300">
+                    <Check className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" />
+                    Quantum ML algorithms library
+                  </div>
+                  <div className="flex items-center text-sm text-gray-300">
+                    <Check className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" />
+                    Performance benchmarking tools
+                  </div>
+                </div>
+                <div className="text-center mb-4">
+                  <span className="text-3xl font-bold text-white">$299</span>
+                  <span className="text-gray-400">/month</span>
+                </div>
+                <Button
+                  variant="futuristic"
+                  size="sm"
+                  href="https://ziontechgroup.com/quantum-computing"
+                  icon={<ExternalLink className="w-4 h-4" />}
+                  iconPosition="right"
+                  glow
+                  fullWidth
+                >
+                  Learn More
+                </Button>
+              </div>
+            </Card>
+
+            {/* Blockchain Suite */}
+            <Card variant="futuristic" size="lg" className="group hover:scale-105 transition-transform duration-300">
+              <div className="text-center">
+                <div className="text-5xl mb-4">🔗</div>
+                <h3 className="text-2xl font-bold text-white mb-3">Blockchain Development Suite</h3>
+                <p className="text-gray-300 mb-6">
+                  Complete blockchain and DeFi development platform. Smart contracts, NFTs, DeFi protocols, and multi-chain support.
+                </p>
+                <div className="space-y-3 mb-6 text-left">
+                  <div className="flex items-center text-sm text-gray-300">
+                    <Check className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" />
+                    Smart contract development tools
+                  </div>
+                  <div className="flex items-center text-sm text-gray-300">
+                    <Check className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" />
+                    NFT creation and marketplace
+                  </div>
+                  <div className="flex items-center text-sm text-gray-300">
+                    <Check className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" />
+                    DeFi protocol development
+                  </div>
+                  <div className="flex items-center text-sm text-gray-300">
+                    <Check className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" />
+                    Multi-chain support
+                  </div>
+                </div>
+                <div className="text-center mb-4">
+                  <span className="text-3xl font-bold text-white">$149</span>
+                  <span className="text-gray-400">/month</span>
+                </div>
+                <Button
+                  variant="futuristic"
+                  size="sm"
+                  href="https://ziontechgroup.com/blockchain-suite"
+                  icon={<ExternalLink className="w-4 h-4" />}
+                  iconPosition="right"
+                  glow
+                  fullWidth
+                >
+                  Learn More
+                </Button>
+              </div>
+            </Card>
           </div>
         </div>
       </section>
