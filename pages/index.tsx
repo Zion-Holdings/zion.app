@@ -681,28 +681,27 @@ export default function HomePage() {
                   <li>• <Link href="/case-studies" className="text-cyan-400 hover:text-cyan-300">Case Studies</Link> - Success Stories</li>
                   <li>• <Link href="/blog" className="text-cyan-400 hover:text-cyan-300">Blog</Link> - Latest Insights</li>
                   <li>• <Link href="/contact" className="text-cyan-400 hover:text-cyan-300">Contact</Link> - Get Started</li>
+                  <li>• <Link href="/privacy" className="text-cyan-400 hover:text-cyan-300">Privacy</Link> - Data & Policies</li>
                 </ul>
               </div>
 
               <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
-                <h3 className="text-xl font-bold text-fuchsia-400 mb-4 text-center">🔧 Automation Systems</h3>
+                <h3 className="text-xl font-bold text-fuchsia-400 mb-4 text-center">📚 Popular Reads</h3>
                 <ul className="text-white/80 text-sm space-y-2 mb-4">
-                  <li>• <Link href="/automation" className="text-fuchsia-400 hover:text-fuchsia-300">Automation Hub</Link> - Main Dashboard</li>
-                  <li>• <Link href="/automation-health" className="text-fuchsia-400 hover:text-fuchsia-300">Health Monitor</Link> - System Status</li>
-                  <li>• <Link href="/live-dashboard" className="text-fuchsia-400 hover:text-fuchsia-300">Live Dashboard</Link> - Real-time Data</li>
-                  <li>• <Link href="/component-library" className="text-fuchsia-400 hover:text-fuchsia-300">Components</Link> - UI Library</li>
-                  <li>• <Link href="/playground" className="text-fuchsia-400 hover:text-fuchsia-300">Playground</Link> - Test Features</li>
+                  <li>• <Link href="/blog/ai-automation-trends-2025" className="text-fuchsia-400 hover:text-fuchsia-300">AI Automation Trends 2025</Link></li>
+                  <li>• <Link href="/blog/cloud-native-automation" className="text-fuchsia-400 hover:text-fuchsia-300">Cloud-Native Automation</Link></li>
+                  <li>• <Link href="/blog/autonomous-content-generation" className="text-fuchsia-400 hover:text-fuchsia-300">Autonomous Content Generation</Link></li>
+                  <li>• <Link href="/blog/performance-optimization" className="text-fuchsia-400 hover:text-fuchsia-300">Performance Optimization</Link></li>
+                  <li>• <Link href="/blog/ai-ethics-automation" className="text-fuchsia-400 hover:text-fuchsia-300">AI Ethics & Automation</Link></li>
                 </ul>
               </div>
 
               <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
-                <h3 className="text-xl font-bold text-green-400 mb-4 text-center">📊 Reports & Analytics</h3>
+                <h3 className="text-xl font-bold text-green-400 mb-4 text-center">📝 Latest Reports</h3>
                 <ul className="text-white/80 text-sm space-y-2 mb-4">
-                  <li>• <Link href="/reports" className="text-green-400 hover:text-green-300">Reports Hub</Link> - All Reports</li>
-                  <li>• <Link href="/reports/updates" className="text-green-400 hover:text-green-300">Updates</Link> - Latest Changes</li>
-                  <li>• <Link href="/reports/blueprints" className="text-green-400 hover:text-green-300">Blueprints</Link> - System Designs</li>
-                  <li>• <Link href="/performance" className="text-green-400 hover:text-green-300">Performance</Link> - Metrics & KPIs</li>
-                  <li>• <Link href="/testing" className="text-green-400 hover:text-green-300">Testing</Link> - Quality Assurance</li>
+                  <li>• <Link href="/reports/updates/update-2025-08-15-0406" className="text-green-400 hover:text-green-300">Autonomous Update 0406</Link></li>
+                  <li>• <Link href="/reports/updates/update-2025-08-15-0405" className="text-green-400 hover:text-green-300">Autonomous Update 0405</Link></li>
+                  <li>• <Link href="/reports/updates/update-2025-08-15-0404" className="text-green-400 hover:text-green-300">Autonomous Update 0404</Link></li>
                 </ul>
               </div>
             </div>
