@@ -6,9 +6,9 @@ export default function HomePage() {
   return (
     <>
       <Head>
-        <title>Zion Tech Group — World's Most Advanced Autonomous Innovation Hub & AI-Powered Cloud Platform</title>
+        <title>Zion Tech Group — World&apos;s Most Advanced Autonomous Innovation Hub & AI-Powered Cloud Platform</title>
         <meta name="description" content="Experience the future of autonomous technology with 227+ intelligent automations, AI-powered cloud systems, comprehensive redundancy infrastructure, and zero-downtime operations. The most advanced autonomous platform ever built." />
-        <meta property="og:title" content="Zion Tech Group — World's Most Advanced Autonomous Innovation Hub & AI-Powered Cloud Platform" />
+        <meta property="og:title" content="Zion Tech Group — World&apos;s Most Advanced Autonomous Innovation Hub & AI-Powered Cloud Platform" />
         <meta property="og:description" content="Experience the future of autonomous technology with 227+ intelligent automations, AI-powered cloud systems, comprehensive redundancy infrastructure, and zero-downtime operations." />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
@@ -21,7 +21,7 @@ export default function HomePage() {
               Zion Tech Group
             </h1>
             <p className="text-2xl text-white/90 max-w-4xl mx-auto mb-8">
-              The world's most advanced autonomous innovation hub delivering cutting-edge technology solutions, intelligent automation systems, and the future of cloud-native AI infrastructure.
+              The world&apos;s most advanced autonomous innovation hub delivering cutting-edge technology solutions, intelligent automation systems, and the future of cloud-native AI infrastructure.
             </p>
             <div className="flex flex-wrap justify-center gap-6 mb-12">
               <div className="bg-white/10 backdrop-blur-xl rounded-xl px-6 py-3 border border-white/20">
@@ -709,7 +709,7 @@ export default function HomePage() {
                   </div>
                 </div>
                 <p className="text-white/80 text-sm italic">
-                  "Zion Tech Group's autonomous systems reduced our deployment time by 90% and eliminated 99% of manual errors."
+                  &ldquo;Zion Tech Group&apos;s autonomous systems reduced our deployment time by 90% and eliminated 99% of manual errors.&rdquo;
                 </p>
               </div>
 
@@ -724,7 +724,7 @@ export default function HomePage() {
                   </div>
                 </div>
                 <p className="text-white/80 text-sm italic">
-                  "The AI-powered automation transformed our legacy systems into a modern, efficient infrastructure."
+                  &ldquo;The AI-powered automation transformed our legacy systems into a modern, efficient infrastructure.&rdquo;
                 </p>
               </div>
 
@@ -739,7 +739,7 @@ export default function HomePage() {
                   </div>
                 </div>
                 <p className="text-white/80 text-sm italic">
-                  "Zero-downtime deployments and self-healing systems have revolutionized our development workflow."
+                  &ldquo;Zero-downtime deployments and self-healing systems have revolutionized our development workflow.&rdquo;
                 </p>
               </div>
             </div>
@@ -750,7 +750,7 @@ export default function HomePage() {
             <div className="bg-gradient-to-r from-cyan-500/20 to-blue-500/20 backdrop-blur-xl rounded-2xl p-12 border border-cyan-400/30">
               <h2 className="text-3xl font-bold text-white mb-6">Join the Autonomous Technology Revolution</h2>
               <p className="text-xl text-white/80 mb-8">
-                Experience unprecedented efficiency, innovation, and reliability with the world's most advanced autonomous platform.
+                Experience unprecedented efficiency, innovation, and reliability with the world&apos;s most advanced autonomous platform.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link href="/contact" className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 rounded-lg text-white font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
