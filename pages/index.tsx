@@ -343,7 +343,7 @@ export default function HomePage() {
                   <li>• Threat detection & response</li>
                   <li>• Zero-trust architecture</li>
                 </ul>
-                <Link href="/SECURITY.md" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
+                <Link href="/privacy" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
                   View Security Guide →
                 </Link>
               </div>
@@ -357,7 +357,7 @@ export default function HomePage() {
                   <li>• Security testing</li>
                   <li>• Continuous validation</li>
                 </ul>
-                <Link href="/TESTING.md" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
+                <Link href="/resources" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
                   View Testing Guide →
                 </Link>
               </div>
@@ -371,7 +371,7 @@ export default function HomePage() {
                   <li>• Analytics dashboard</li>
                   <li>• Predictive maintenance</li>
                 </ul>
-                <Link href="/PERFORMANCE.md" className="text-green-400 hover:text-green-300 text-sm font-semibold">
+                <Link href="/resources" className="text-green-400 hover:text-green-300 text-sm font-semibold">
                   View Performance Guide →
                 </Link>
               </div>
