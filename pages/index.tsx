@@ -512,6 +512,54 @@ export default function HomePage() {
             </div>
           </section>
 
+          {/* Advanced Features Showcase */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">🌟 Advanced Features & Capabilities</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-cyan-400 mb-4 text-center">🔐 Security & Compliance</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Automated security scanning</li>
+                  <li>• Vulnerability assessment</li>
+                  <li>• Compliance monitoring</li>
+                  <li>• Threat detection & response</li>
+                  <li>• Zero-trust architecture</li>
+                </ul>
+                <Link href="/SECURITY.md" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
+                  View Security Guide →
+                </Link>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-fuchsia-400 mb-4 text-center">🧪 Testing & Quality</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Automated testing suites</li>
+                  <li>• Quality assurance</li>
+                  <li>• Performance testing</li>
+                  <li>• Security testing</li>
+                  <li>• Continuous validation</li>
+                </ul>
+                <Link href="/TESTING.md" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
+                  View Testing Guide →
+                </Link>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-green-400 mb-4 text-center">📈 Performance & Monitoring</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Real-time monitoring</li>
+                  <li>• Performance optimization</li>
+                  <li>• Health checks</li>
+                  <li>• Analytics dashboard</li>
+                  <li>• Predictive maintenance</li>
+                </ul>
+                <Link href="/PERFORMANCE.md" className="text-green-400 hover:text-green-300 text-sm font-semibold">
+                  View Performance Guide →
+                </Link>
+              </div>
+            </div>
+          </section>
+
           {/* Revolutionary Call to Action */}
           <section className="text-center mx-auto max-w-4xl px-6 pb-16">
             <div className="bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-12 border border-white/20">
