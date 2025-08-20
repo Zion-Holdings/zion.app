@@ -74,6 +74,115 @@ export default function HomePage() {
     { name: 'Prometheus', category: 'Monitoring', icon: '📊' },
   ];
 
+  const features = [
+    {
+      icon: '🤖',
+      title: 'AI-Powered Automation',
+      description: 'Intelligent systems that learn, adapt, and optimize your business processes automatically.',
+      color: 'bg-gradient-to-br from-fuchsia-500 to-purple-600',
+      textColor: 'text-fuchsia-400',
+      gradient: 'from-fuchsia-400 to-purple-500',
+    },
+    {
+      icon: '☁️',
+      title: 'Cloud Infrastructure',
+      description: 'Scalable, secure, and high-performance cloud solutions designed for modern applications.',
+      color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
+      textColor: 'text-cyan-400',
+      gradient: 'from-cyan-400 to-blue-500',
+    },
+    {
+      icon: '🔒',
+      title: 'Security & Compliance',
+      description: 'Comprehensive security solutions that protect your data and ensure regulatory compliance.',
+      color: 'bg-gradient-to-br from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      gradient: 'from-green-400 to-emerald-500',
+    },
+    {
+      icon: '📊',
+      title: 'Data Analytics',
+      description: 'Transform your data into actionable insights with advanced analytics and visualization.',
+      color: 'bg-gradient-to-br from-orange-500 to-red-600',
+      textColor: 'text-orange-400',
+      gradient: 'from-orange-400 to-red-500',
+    },
+    {
+      icon: '🚀',
+      title: 'DevOps & CI/CD',
+      description: 'Streamline your development process with automated pipelines and deployment strategies.',
+      color: 'bg-gradient-to-br from-indigo-500 to-purple-600',
+      textColor: 'text-indigo-400',
+      gradient: 'from-indigo-400 to-purple-500',
+    },
+    {
+      icon: '🌐',
+      title: 'Digital Transformation',
+      description: 'Modernize your business with cutting-edge digital solutions and strategic consulting.',
+      color: 'bg-gradient-to-br from-teal-500 to-cyan-600',
+      textColor: 'text-teal-400',
+      gradient: 'from-teal-400 to-cyan-500',
+    },
+  ];
+
+  const stats = [
+    { number: '500+', label: 'Happy Clients' },
+    { number: '50+', label: 'Micro SaaS Services' },
+    { number: '99.9%', label: 'Uptime SLA' },
+    { number: '24/7', label: 'Support Available' },
+  ];
+
+  const testimonials = [
+    {
+      name: 'Sarah Johnson',
+      role: 'CTO at TechFlow Inc.',
+      content: 'Zion Tech Group transformed our development process. Their AI-powered tools increased our productivity by 300% and reduced deployment time by 80%.',
+      avatar: '👩‍💼',
+      rating: 5
+    },
+    {
+      name: 'Michael Chen',
+      role: 'CEO at DataViz Solutions',
+      content: 'The AI Content Generator Pro saved us countless hours. We now produce 10x more content with better quality and SEO optimization.',
+      avatar: '👨‍💼',
+      rating: 5
+    },
+    {
+      name: 'Emily Rodriguez',
+      role: 'Marketing Director at GrowthCo',
+      content: 'Their AI Sales Intelligence Platform helped us increase our conversion rate by 45% and reduce sales cycle time significantly.',
+      avatar: '👩‍💻',
+      rating: 5
+    }
+  ];
+
+  const latestServices = [
+    {
+      name: 'AI Content Generator Pro',
+      description: 'Professional AI-powered content creation with SEO optimization',
+      price: '$49/month',
+      category: 'Content & Marketing',
+      link: 'https://ziontechgroup.com/ai-content-generator',
+      features: ['SEO optimization', 'Multi-language support', 'Brand voice customization', '100+ templates']
+    },
+    {
+      name: 'AI Code Review Assistant',
+      description: 'Intelligent code review automation with security detection',
+      price: '$59/month',
+      category: 'Development & DevOps',
+      link: 'https://ziontechgroup.com/ai-code-review-assistant',
+      features: ['AI-powered analysis', 'Security detection', 'Quality scoring', 'GitHub integration']
+    },
+    {
+      name: 'AI Sales Intelligence Platform',
+      description: 'AI-powered sales automation and lead scoring',
+      price: '$99/month',
+      category: 'Sales & CRM',
+      link: 'https://ziontechgroup.com/ai-sales-intelligence',
+      features: ['Lead scoring', 'Follow-up automation', 'Pipeline optimization', 'Revenue forecasting']
+    }
+  ];
+
   return (
     <>
       <Head>
@@ -99,6 +208,20 @@ export default function HomePage() {
         stats={heroStats}
       />
 
+      {/* Stats Section */}
+      <section className="py-20 bg-gray-800/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat) => (
+              <div key={stat.label} className="text-center">
+                <div className="text-4xl md:text-5xl font-bold text-white mb-2">{stat.number}</div>
+                <div className="text-gray-400">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Platform Capabilities */}
       <Features
         title="Revolutionary Platform Capabilities"
@@ -106,6 +229,31 @@ export default function HomePage() {
         features={platformFeatures}
         columns={3}
       />
+
+      {/* Features Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-4">
+              Why Choose Zion Tech Group?
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              We combine cutting-edge AI technology with deep industry expertise to deliver solutions that drive real business results.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {features.map((feature) => (
+              <div key={feature.title} className="group">
+                <div className={`w-16 h-16 mx-auto mb-6 rounded-2xl flex items-center justify-center text-3xl ${feature.color}`}>
+                  {feature.icon}
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3 text-center">{feature.title}</h3>
+                <p className="text-gray-300 text-center">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Micro SaaS Services Showcase */}
       <section className="py-24 bg-gradient-to-br from-gray-900 to-black relative overflow-hidden">
@@ -1301,6 +1449,87 @@ export default function HomePage() {
               View Detailed Pricing
               <ArrowRight className="ml-2 w-5 h-5" />
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Latest Services Showcase */}
+      <section className="py-24 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl font-bold text-white mb-4">
+              Latest Micro SaaS Services
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Discover our newest AI-powered tools designed to solve specific business challenges with precision and efficiency.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {latestServices.map((service) => (
+              <div key={service.name} className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300">
+                <div className="mb-4">
+                  <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-blue-500/20 text-blue-400 border border-blue-500/30">
+                    {service.category}
+                  </span>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">{service.name}</h3>
+                <p className="text-gray-300 mb-4">{service.description}</p>
+                <div className="mb-6">
+                  <span className="text-2xl font-bold text-green-400">{service.price}</span>
+                </div>
+                <ul className="space-y-2 mb-6">
+                  {service.features.map((feature) => (
+                    <li key={feature} className="flex items-center text-gray-300 text-sm">
+                      <span className="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <Button
+                  href={service.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant="outline"
+                  size="lg"
+                  className="w-full"
+                >
+                  Learn More
+                </Button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-24 bg-gray-800/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl font-bold text-white mb-4">
+              What Our Clients Say
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Join hundreds of satisfied customers who have transformed their businesses with our AI-powered solutions.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial) => (
+              <div key={testimonial.name} className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700/50">
+                <div className="flex items-center mb-4">
+                  <div className="text-4xl mr-4">{testimonial.avatar}</div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-white">{testimonial.name}</h4>
+                    <p className="text-gray-400 text-sm">{testimonial.role}</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 mb-4">{testimonial.content}</p>
+                <div className="flex items-center">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <span key={i} className="text-yellow-400">⭐</span>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
