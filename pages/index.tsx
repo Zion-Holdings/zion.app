@@ -107,6 +107,106 @@ export default function HomePage() {
         columns={3}
       />
 
+      {/* New Micro SaaS Services */}
+      <section className="py-24 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20 animate-fade-in">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-purple-500 rounded-full mr-2 animate-pulse" />
+              New Micro SaaS Services
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight">
+              Ready-to-Use SaaS Solutions
+            </h2>
+            <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              Discover our new micro SaaS services designed to solve specific business challenges with ready-to-use solutions.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="text-center group border border-gray-800 hover:border-purple-500/30 relative overflow-hidden">
+              <div className="absolute top-4 right-4">
+                <span className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-medium">
+                  New
+                </span>
+              </div>
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                ✍️
+              </div>
+              <h3 className="font-semibold text-white mb-2 text-lg">AI Content Generator</h3>
+              <p className="text-sm text-gray-400 mb-4">Generate high-quality, SEO-optimized content in seconds</p>
+              <Button href="/ai-content-generator" size="sm" className="bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700 text-white">
+                Try Now
+              </Button>
+            </Card>
+
+            <Card className="text-center group border border-gray-800 hover:border-blue-500/30 relative overflow-hidden">
+              <div className="absolute top-4 right-4">
+                <span className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-medium">
+                  New
+                </span>
+              </div>
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                ⚡
+              </div>
+              <h3 className="font-semibold text-white mb-2 text-lg">Performance Monitor</h3>
+              <p className="text-sm text-gray-400 mb-4">Real-time website performance monitoring and optimization</p>
+              <Button href="/website-performance-monitor" size="sm" className="bg-gradient-to-r from-blue-500 to-cyan-600 hover:from-blue-600 hover:to-cyan-700 text-white">
+                Try Now
+              </Button>
+            </Card>
+
+            <Card className="text-center group border border-gray-800 hover:border-green-500/30 relative overflow-hidden">
+              <div className="absolute top-4 right-4">
+                <span className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-medium">
+                  New
+                </span>
+              </div>
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                🔍
+              </div>
+              <h3 className="font-semibold text-white mb-2 text-lg">SEO Analyzer</h3>
+              <p className="text-sm text-gray-400 mb-4">Comprehensive SEO analysis and optimization recommendations</p>
+              <Button href="/seo-analyzer-tool" size="sm" className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white">
+                Try Now
+              </Button>
+            </Card>
+
+            <Card className="text-center group border border-gray-800 hover:border-indigo-500/30 relative overflow-hidden">
+              <div className="absolute top-4 right-4">
+                <span className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-medium">
+                  New
+                </span>
+              </div>
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                🔧
+              </div>
+              <h3 className="font-semibold text-white mb-2 text-lg">API Testing Suite</h3>
+              <p className="text-sm text-gray-400 mb-4">Comprehensive API testing and monitoring tools</p>
+              <Button href="/api-testing-suite" size="sm" className="bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white">
+                Try Now
+              </Button>
+            </Card>
+
+            <Card className="text-center group border border-gray-800 hover:border-teal-500/30 relative overflow-hidden">
+              <div className="absolute top-4 right-4">
+                <span className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-medium">
+                  New
+                </span>
+              </div>
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                💻
+              </div>
+              <h3 className="font-semibold text-white mb-2 text-lg">Code Quality Checker</h3>
+              <p className="text-sm text-gray-400 mb-4">Multi-language code analysis and improvement tool</p>
+              <Button href="/code-quality-checker" size="sm" className="bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white">
+                Try Now
+              </Button>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Technology Stack */}
       <section className="py-24 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
