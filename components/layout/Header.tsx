@@ -21,6 +21,7 @@ const Header = () => {
   const navigation = [
     { name: 'Product', href: '#', hasDropdown: true },
     { name: 'Solutions', href: '/services' },
+    { name: 'Market Research', href: '/market-research' },
     { name: 'Resources', href: '/resources' },
     { name: 'Company', href: '/about' },
     { name: 'Pricing', href: '/pricing' },

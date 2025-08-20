@@ -4,7 +4,7 @@ import Hero from '../components/sections/Hero';
 import Features from '../components/sections/Features';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
-import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight } from 'lucide-react';
+import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Target, TrendingUp } from 'lucide-react';
 
 export default function HomePage() {
   const heroStats = [
@@ -141,6 +141,59 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Market Intelligence Section */}
+      <section className="py-24 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse" />
+              Market Intelligence
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight">
+              Data-Driven Market Insights
+            </h2>
+            <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              Access comprehensive market research, competitive analysis, and industry trends to make informed decisions about your technology investments.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
+                <BarChart3 className="w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">Market Research</h3>
+              <p className="text-gray-400">Comprehensive analysis of micro SaaS market segments, growth rates, and opportunities</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-green-500/10 border border-green-500/20 flex items-center justify-center text-green-400">
+                <Target className="w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">Competitive Analysis</h3>
+              <p className="text-gray-400">Detailed insights into competitor positioning, strengths, weaknesses, and market share</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400">
+                <TrendingUp className="w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">Trend Analysis</h3>
+              <p className="text-gray-400">Emerging market trends, investment insights, and pricing strategy analysis</p>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <Button
+              href="/market-research"
+              size="lg"
+              className="bg-blue-600 hover:bg-blue-700 text-white shadow-2xl"
+            >
+              Explore Market Research
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-24 bg-gradient-to-r from-blue-600 to-blue-700 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px] opacity-10" />
@@ -162,12 +215,12 @@ export default function HomePage() {
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
             <Button
-              href="/case-studies"
+              href="/services"
               variant="outline"
               size="lg"
               className="border-white text-white hover:bg-white hover:text-blue-600 shadow-2xl"
             >
-              View Case Studies
+              View Our Services
             </Button>
           </div>
         </div>
