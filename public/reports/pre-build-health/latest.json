@@ -5,11 +5,7 @@
     "failedChecks": 0,
     "criticalFailures": 0,
     "canBuild": true,
-<<<<<<< HEAD
-    "timestamp": "2025-08-20T17:36:01.630Z"
-=======
-    "timestamp": "2025-08-20T17:35:37.016Z"
->>>>>>> cursor/update-app-design-fix-errors-and-upgrade-dependencies-487c
+    "timestamp": "2025-08-20T17:40:00.105Z"
   },
   "results": [
     {

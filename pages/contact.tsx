@@ -113,7 +113,6 @@ export default function ContactPage() {
             {contactMethods.map((method, index) => (
               <Card
                 key={index}
-                variant="glass"
                 className="text-center group hover:border-cursor-blue/40 hover:shadow-2xl hover:shadow-cursor-blue/20 hover-lift"
                 style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
               >

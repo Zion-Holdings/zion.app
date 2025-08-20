@@ -132,7 +132,6 @@ export default function CaseStudiesPage() {
             {caseStudies.map((study, index) => (
               <Card
                 key={index}
-                variant="glass"
                 className="group hover:border-cursor-blue/40 hover:shadow-2xl hover:shadow-cursor-blue/20 hover-lift relative overflow-hidden"
                 style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
               >

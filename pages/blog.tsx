@@ -112,7 +112,6 @@ export default function BlogPage() {
             </div>
             
             <Card
-              variant="elevated"
               className="max-w-4xl mx-auto group hover:border-cursor-blue/40 hover:shadow-2xl hover:shadow-cursor-blue/20 hover-lift"
             >
               <div className="text-center mb-8">
@@ -164,7 +163,6 @@ export default function BlogPage() {
             {blogPosts.filter(post => !post.featured).map((post, index) => (
               <Card
                 key={index}
-                variant="glass"
                 className="group hover:border-cursor-blue/40 hover:shadow-2xl hover:shadow-cursor-blue/20 hover-lift relative overflow-hidden"
                 style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
               >
