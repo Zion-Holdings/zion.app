@@ -1,256 +1,312 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '../components/ui/Card';
+import { Button } from '../components/ui/Button';
 
 export default function ResourcesPage() {
-  const caseStudies = [
+  const resources = [
     {
-      id: 'ai-automation-manufacturing',
-      title: 'AI-Powered Manufacturing Automation',
-      company: 'Global Manufacturing Corp',
-      industry: 'Manufacturing',
-      results: '40% increase in production efficiency, 60% reduction in downtime',
-      description: 'How we implemented autonomous AI systems to revolutionize manufacturing processes.'
-    },
-    {
-      id: 'content-generation-scale',
-      title: 'Scaling Content Generation 10x',
-      company: 'Digital Marketing Agency',
-      industry: 'Marketing',
-      results: '10x increase in content output, 85% improvement in engagement',
-      description: 'Transforming content creation through autonomous AI systems.'
-    },
-    {
-      id: 'cloud-infrastructure-optimization',
-      title: 'Cloud Infrastructure Optimization',
-      company: 'E-commerce Platform',
-      industry: 'Technology',
-      results: '50% reduction in cloud costs, 99.9% uptime achieved',
-      description: 'Building self-healing, auto-scaling cloud infrastructure.'
-    }
-  ];
-
-  const whitepapers = [
-    {
-      id: 'autonomous-systems-guide',
-      title: 'The Complete Guide to Autonomous Systems',
-      description: 'A comprehensive overview of autonomous technology, implementation strategies, and best practices.',
+      id: 'ai-automation-guide',
+      title: 'Complete Guide to AI Automation',
+      description: 'A comprehensive guide covering everything you need to know about implementing AI automation in your business.',
+      type: 'Guide',
+      category: 'AI & Automation',
       downloadUrl: '#',
-      pages: '45',
-      category: 'Technology'
+      fileSize: '2.3 MB',
+      featured: true
     },
     {
-      id: 'ai-ethics-framework',
-      title: 'AI Ethics Framework for Business',
-      description: 'Establishing ethical guidelines for AI implementation in enterprise environments.',
+      id: 'cloud-optimization-whitepaper',
+      title: 'Cloud Infrastructure Optimization Whitepaper',
+      description: 'Learn the best practices for optimizing cloud infrastructure and reducing costs with autonomous systems.',
+      type: 'Whitepaper',
+      category: 'Cloud Computing',
       downloadUrl: '#',
-      pages: '32',
-      category: 'Ethics'
+      fileSize: '1.8 MB',
+      featured: false
+    },
+    {
+      id: 'content-generation-case-study',
+      title: 'Content Generation ROI Case Study',
+      description: 'Real-world examples of how AI-powered content generation delivers measurable business results.',
+      type: 'Case Study',
+      category: 'Content Marketing',
+      downloadUrl: '#',
+      fileSize: '1.2 MB',
+      featured: false
+    },
+    {
+      id: 'security-automation-checklist',
+      title: 'Security Automation Implementation Checklist',
+      description: 'A step-by-step checklist for implementing automated security systems in your organization.',
+      type: 'Checklist',
+      category: 'Cybersecurity',
+      downloadUrl: '#',
+      fileSize: '0.8 MB',
+      featured: false
+    },
+    {
+      id: 'performance-monitoring-guide',
+      title: 'Performance Monitoring Best Practices',
+      description: 'Essential guidelines for setting up effective performance monitoring with AI-driven insights.',
+      type: 'Guide',
+      category: 'Performance',
+      downloadUrl: '#',
+      fileSize: '1.5 MB',
+      featured: false
     },
     {
       id: 'automation-roi-calculator',
-      title: 'Automation ROI Calculator Guide',
-      description: 'How to calculate and maximize return on investment for automation initiatives.',
+      title: 'Automation ROI Calculator',
+      description: 'Interactive tool to calculate the return on investment for your automation projects.',
+      type: 'Tool',
+      category: 'Business Strategy',
       downloadUrl: '#',
-      pages: '28',
-      category: 'Business'
+      fileSize: '0.5 MB',
+      featured: false
     }
   ];
 
-  const tools = [
-    {
-      id: 'automation-assessment',
-      title: 'Automation Readiness Assessment',
-      description: 'Evaluate your organization\'s readiness for AI automation implementation.',
-      type: 'Interactive Tool',
-      estimatedTime: '15 minutes'
-    },
-    {
-      id: 'ai-maturity-model',
-      title: 'AI Maturity Model',
-      description: 'Assess your current AI capabilities and plan your transformation journey.',
-      type: 'Framework',
-      estimatedTime: '30 minutes'
-    },
-    {
-      id: 'performance-benchmark',
-      title: 'Performance Benchmarking Tool',
-      description: 'Compare your automation performance against industry standards.',
-      type: 'Analytics Tool',
-      estimatedTime: '20 minutes'
-    }
-  ];
+  const categories = ['All', 'AI & Automation', 'Cloud Computing', 'Content Marketing', 'Cybersecurity', 'Performance', 'Business Strategy'];
 
   return (
     <>
       <Head>
-        <title>Resources | Zion Tech Group - AI & Automation Resources</title>
-        <meta name="description" content="Access case studies, whitepapers, tools, and resources to help you understand and implement AI automation solutions." />
-        <meta property="og:title" content="Resources | Zion Tech Group" />
-        <meta property="og:description" content="Access case studies, whitepapers, tools, and resources for AI automation." />
+        <title>Resources | Zion Tech Group</title>
+        <meta name="description" content="Access our comprehensive library of guides, whitepapers, case studies, and tools to help you implement autonomous technology solutions." />
+        <meta property="og:title" content="Resources" />
+        <meta property="og:description" content="Comprehensive library of guides and tools for autonomous technology." />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       
-      <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-950 text-white">
-        <main className="container mx-auto px-6 py-12">
-          <div className="max-w-7xl mx-auto">
-            <nav className="mb-8">
-              <Link href="/" className="text-cyan-400 hover:text-cyan-300 transition-colors">
-                ← Back to Home
-              </Link>
-            </nav>
-            
-            <header className="text-center mb-16">
-              <h1 className="text-5xl font-extrabold mb-6 bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent">
-                Resources & Tools
-              </h1>
-              <p className="text-xl text-white/80 max-w-3xl mx-auto">
-                Access our comprehensive collection of case studies, whitepapers, tools, and resources 
-                to accelerate your AI automation journey.
-              </p>
-            </header>
-            
-            {/* Case Studies Section */}
-            <section className="mb-20">
-              <h2 className="text-3xl font-bold mb-8 text-center text-white">Success Stories</h2>
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                {caseStudies.map((study) => (
-                  <div key={study.id} className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:border-cyan-400/30 transition-all duration-300">
-                    <div className="mb-4">
-                      <span className="px-3 py-1 bg-cyan-400/20 text-cyan-400 text-sm rounded-full border border-cyan-400/30">
-                        {study.industry}
-                      </span>
-                    </div>
-                    <h3 className="text-xl font-bold mb-3 text-white">{study.title}</h3>
-                    <p className="text-cyan-400 font-semibold mb-2">{study.company}</p>
-                    <p className="text-white/80 text-sm mb-4">{study.description}</p>
-                    <div className="bg-white/5 rounded-lg p-4 mb-4">
-                      <h4 className="font-semibold text-green-400 mb-2">Results</h4>
-                      <p className="text-white/70 text-sm">{study.results}</p>
-                    </div>
-                    <Link 
-                      href={`/resources/case-studies/${study.id}`}
-                      className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors font-semibold"
-                    >
-                      Read Full Case Study
-                      <span aria-hidden>→</span>
-                    </Link>
-                  </div>
-                ))}
-              </div>
-            </section>
-            
-            {/* Whitepapers Section */}
-            <section className="mb-20">
-              <h2 className="text-3xl font-bold mb-8 text-center text-white">Whitepapers & Guides</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {whitepapers.map((paper) => (
-                  <div key={paper.id} className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:border-fuchsia-400/30 transition-all duration-300">
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="px-3 py-1 bg-fuchsia-400/20 text-fuchsia-400 text-sm rounded-full border border-fuchsia-400/30">
-                        {paper.category}
-                      </span>
-                      <span className="text-white/60 text-sm">{paper.pages} pages</span>
-                    </div>
-                    <h3 className="text-xl font-bold mb-3 text-white">{paper.title}</h3>
-                    <p className="text-white/80 text-sm mb-6">{paper.description}</p>
-                    <a 
-                      href={paper.downloadUrl}
-                      className="inline-flex items-center gap-2 bg-gradient-to-r from-fuchsia-400 to-purple-400 text-white px-6 py-3 rounded-lg font-semibold hover:from-fuchsia-500 hover:to-purple-500 transition-all duration-300"
-                    >
-                      Download Whitepaper
-                      <span aria-hidden>↓</span>
-                    </a>
-                  </div>
-                ))}
-              </div>
-            </section>
-            
-            {/* Tools Section */}
-            <section className="mb-20">
-              <h2 className="text-3xl font-bold mb-8 text-center text-white">Interactive Tools</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {tools.map((tool) => (
-                  <div key={tool.id} className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:border-green-400/30 transition-all duration-300 text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-blue-500 rounded-lg flex items-center justify-center mx-auto mb-4">
-                      <span className="text-2xl">🔧</span>
-                    </div>
-                    <h3 className="text-xl font-bold mb-3 text-white">{tool.title}</h3>
-                    <p className="text-white/80 text-sm mb-4">{tool.description}</p>
-                    <div className="space-y-2 mb-6">
-                      <span className="inline-block px-3 py-1 bg-green-400/20 text-green-400 text-xs rounded-full border border-green-400/30">
-                        {tool.type}
-                      </span>
-                      <span className="block text-white/60 text-xs">Est. time: {tool.estimatedTime}</span>
-                    </div>
-                    <Link 
-                      href={`/resources/tools/${tool.id}`}
-                      className="inline-flex items-center gap-2 bg-gradient-to-r from-green-400 to-blue-400 text-white px-6 py-3 rounded-lg font-semibold hover:from-green-500 hover:to-blue-500 transition-all duration-300"
-                    >
-                      Launch Tool
-                      <span aria-hidden>→</span>
-                    </Link>
-                  </div>
-                ))}
-              </div>
-            </section>
-            
-            {/* Newsletter Signup */}
-            <section className="text-center">
-              <div className="bg-gradient-to-r from-cyan-500/10 to-fuchsia-500/10 rounded-2xl p-8 border border-cyan-500/20">
-                <h2 className="text-2xl font-bold mb-4 text-white">Stay Updated with New Resources</h2>
-                <p className="text-white/80 mb-6 max-w-2xl mx-auto">
-                  Get notified when we release new case studies, whitepapers, and tools. 
-                  Be the first to access our latest AI automation insights and resources.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                  <input
-                    type="email"
-                    placeholder="Enter your email address"
-                    className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-cyan-400/50 focus:ring-1 focus:ring-cyan-400/50 transition-all duration-300"
-                  />
-                  <button className="bg-gradient-to-r from-cyan-400 to-fuchsia-400 text-white px-6 py-3 rounded-lg font-semibold hover:from-cyan-500 hover:to-fuchsia-500 transition-all duration-300">
-                    Subscribe
-                  </button>
-                </div>
-                <p className="text-white/60 text-sm mt-4">
-                  No spam, unsubscribe at any time. We respect your privacy.
-                </p>
-              </div>
-            </section>
-            
-            {/* Related Pages */}
-            <section className="mt-16">
-              <h2 className="text-2xl font-bold mb-8 text-center text-white">Explore More</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <Link href="/services" className="bg-white/10 rounded-xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300 text-center group">
-                  <div className="w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <span className="text-2xl">🚀</span>
-                  </div>
-                  <h3 className="text-lg font-semibold text-cyan-400 mb-2">Our Services</h3>
-                  <p className="text-white/80 text-sm">Discover our comprehensive AI automation solutions</p>
-                </Link>
-                
-                <Link href="/blog" className="bg-white/10 rounded-xl p-6 border border-white/20 hover:border-fuchsia-400/30 transition-all duration-300 text-center group">
-                  <div className="w-16 h-16 bg-gradient-to-br from-fuchsia-400 to-purple-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <span className="text-2xl">📚</span>
-                  </div>
-                  <h3 className="text-lg font-semibold text-fuchsia-400 mb-2">Blog & Insights</h3>
-                  <p className="text-white/80 text-sm">Read our latest thoughts on AI and automation</p>
-                </Link>
-                
-                <Link href="/contact" className="bg-white/10 rounded-xl p-6 border border-white/20 hover:border-green-400/30 transition-all duration-300 text-center group">
-                  <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-teal-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <span className="text-2xl">💬</span>
-                  </div>
-                  <h3 className="text-lg font-semibold text-green-400 mb-2">Get in Touch</h3>
-                  <p className="text-white/80 text-sm">Have questions about our resources?</p>
-                </Link>
-              </div>
-            </section>
+      {/* Hero Section */}
+      <section className="py-24 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            Resource Center
+          </h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Access our comprehensive library of guides, whitepapers, case studies, and tools
+          </p>
+        </div>
+      </section>
+
+      {/* Featured Resource */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Featured Resource
+            </h2>
+            <p className="text-xl text-gray-600">
+              Our most comprehensive guide to AI automation
+            </p>
           </div>
-        </main>
-      </div>
+
+          {resources.filter(resource => resource.featured).map(resource => (
+            <Card key={resource.id} className="hover-lift">
+              <CardHeader>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center space-x-3">
+                    <span className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">
+                      {resource.type}
+                    </span>
+                    <span className="px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-full">
+                      {resource.category}
+                    </span>
+                  </div>
+                  <div className="text-sm text-gray-500">
+                    {resource.fileSize}
+                  </div>
+                </div>
+                <CardTitle className="text-3xl text-gray-900">{resource.title}</CardTitle>
+                <CardDescription className="text-lg text-gray-600">
+                  {resource.description}
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex items-center justify-between">
+                  <div className="text-sm text-gray-500">
+                    Free download • No registration required
+                  </div>
+                  <Button variant="gradient" size="lg">
+                    Download Now
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* Category Filter */}
+      <section className="py-12 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap justify-center gap-3">
+            {categories.map(category => (
+              <button
+                key={category}
+                className="px-4 py-2 rounded-lg bg-white border border-gray-200 text-gray-700 hover:bg-blue-50 hover:border-blue-200 hover:text-blue-700 transition-all duration-200"
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* All Resources */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              All Resources
+            </h2>
+            <p className="text-xl text-gray-600">
+              Explore our complete collection of guides, tools, and insights
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {resources.filter(resource => !resource.featured).map(resource => (
+              <Card key={resource.id} className="hover-lift">
+                <CardHeader>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">
+                      {resource.type}
+                    </span>
+                    <div className="text-xs text-gray-500">
+                      {resource.fileSize}
+                    </div>
+                  </div>
+                  <CardTitle className="text-xl text-gray-900">{resource.title}</CardTitle>
+                  <CardDescription className="text-gray-600">
+                    {resource.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex items-center justify-between">
+                    <span className="px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-full">
+                      {resource.category}
+                    </span>
+                    <Button variant="outline" size="sm">
+                      Download
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Additional Resources */}
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Additional Resources
+            </h2>
+            <p className="text-xl text-gray-600">
+              More ways to learn and grow with autonomous technology
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card className="hover-lift text-center">
+              <CardHeader>
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  </svg>
+                </div>
+                <CardTitle className="text-xl text-gray-900">Documentation</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 mb-4">
+                  Comprehensive technical documentation for all our autonomous systems and APIs.
+                </p>
+                <Button variant="outline" className="w-full">
+                  View Docs
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="hover-lift text-center">
+              <CardHeader>
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <CardTitle className="text-xl text-gray-900">Video Tutorials</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 mb-4">
+                  Step-by-step video tutorials covering implementation and best practices.
+                </p>
+                <Button variant="outline" className="w-full">
+                  Watch Videos
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="hover-lift text-center">
+              <CardHeader>
+                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </div>
+                <CardTitle className="text-xl text-gray-900">Community</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 mb-4">
+                  Join our community of developers and technology professionals.
+                </p>
+                <Button variant="outline" className="w-full">
+                  Join Community
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24 bg-gradient-to-r from-blue-600 to-purple-600">
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            Need More Help?
+          </h2>
+          <p className="text-xl text-blue-100 mb-8">
+            Can&apos;t find what you&apos;re looking for? Our team is here to help
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              asChild
+              size="lg"
+              variant="secondary"
+              className="transform hover:scale-105 transition-transform duration-200"
+            >
+              <Link href="/contact">
+                Contact Support
+              </Link>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-blue-600 transform hover:scale-105 transition-all duration-200"
+            >
+              <Link href="/services">
+                Explore Services
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

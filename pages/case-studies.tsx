@@ -1,6 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/Card';
+import { Button } from '../components/ui/Button';
 
 export default function CaseStudiesPage() {
   const caseStudies = [
@@ -99,183 +101,177 @@ export default function CaseStudiesPage() {
   return (
     <>
       <Head>
-        <title>Case Studies | Zion Tech Group - AI & Automation Success Stories</title>
-        <meta name="description" content="Explore real-world success stories of AI automation implementation across various industries. See how our solutions drive measurable business results." />
-        <meta property="og:title" content="Case Studies | Zion Tech Group" />
-        <meta property="og:description" content="Real-world success stories of AI automation implementation." />
+        <title>Case Studies | Zion Tech Group</title>
+        <meta name="description" content="Explore real-world success stories of how our autonomous technology solutions have transformed businesses across industries." />
+        <meta property="og:title" content="Case Studies" />
+        <meta property="og:description" content="Real-world success stories of our autonomous technology solutions." />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       
-      <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-950 text-white">
-        <main className="container mx-auto px-6 py-12">
-          <div className="max-w-7xl mx-auto">
-            <nav className="mb-8">
-              <Link href="/" className="text-cyan-400 hover:text-cyan-300 transition-colors">
-                ← Back to Home
-              </Link>
-            </nav>
-            
-            <header className="text-center mb-16">
-              <h1 className="text-5xl font-extrabold mb-6 bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent">
-                Case Studies
-              </h1>
-              <p className="text-xl text-white/80 max-w-3xl mx-auto">
-                Real-world success stories demonstrating the transformative power of AI automation 
-                across various industries and use cases.
-              </p>
-            </header>
-            
-            {/* Featured Case Study */}
-            {caseStudies.filter(study => study.featured).map(study => (
-              <section key={study.id} className="mb-20">
-                <div className="text-center mb-8">
-                  <span className="px-4 py-2 bg-cyan-400/20 text-cyan-400 text-sm rounded-full border border-cyan-400/30">
-                    Featured Case Study
-                  </span>
+      {/* Hero Section */}
+      <section className="py-24 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            Success Stories
+          </h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Discover how our autonomous technology solutions have transformed businesses across industries
+          </p>
+        </div>
+      </section>
+
+      {/* Featured Case Study */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Featured Case Study
+            </h2>
+            <p className="text-xl text-gray-600">
+              Our most impactful transformation story
+            </p>
+          </div>
+
+          {caseStudies.filter(cs => cs.featured).map(caseStudy => (
+            <Card key={caseStudy.id} className="hover-lift">
+              <CardHeader>
+                <div className="flex items-center justify-between mb-4">
+                  <div>
+                    <CardTitle className="text-2xl text-blue-600">{caseStudy.title}</CardTitle>
+                    <p className="text-gray-600 mt-2">{caseStudy.company} • {caseStudy.industry}</p>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-sm text-gray-500">Duration</div>
+                    <div className="font-semibold text-gray-900">{caseStudy.duration}</div>
+                  </div>
                 </div>
-                <div className="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/20">
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <div>
-                      <div className="mb-4">
-                        <span className="px-3 py-1 bg-cyan-400/20 text-cyan-400 text-sm rounded-full border border-cyan-400/30">
-                          {study.industry}
-                        </span>
-                      </div>
-                      <h2 className="text-3xl font-bold mb-4 text-white">{study.title}</h2>
-                      <p className="text-cyan-400 font-semibold text-lg mb-4">{study.company}</p>
-                      
-                      <div className="space-y-4 mb-6">
-                        <div>
-                          <h4 className="font-semibold text-cyan-400 mb-2">Challenge</h4>
-                          <p className="text-white/80">{study.challenge}</p>
-                        </div>
-                        <div>
-                          <h4 className="font-semibold text-fuchsia-400 mb-2">Solution</h4>
-                          <p className="text-white/80">{study.solution}</p>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-center gap-4 text-sm text-white/60 mb-6">
-                        <span>Duration: {study.duration}</span>
-                        <span>Team: {study.teamSize}</span>
-                      </div>
-                    </div>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-3">The Challenge</h3>
+                    <p className="text-gray-600 mb-6">{caseStudy.challenge}</p>
                     
-                    <div>
-                      <h4 className="font-semibold text-green-400 mb-4 text-lg">Results</h4>
-                      <div className="space-y-3 mb-6">
-                        {study.results.map((result, index) => (
-                          <div key={index} className="flex items-center gap-3">
-                            <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                            <span className="text-white/90">{result}</span>
-                          </div>
-                        ))}
-                      </div>
-                      
-                      <h4 className="font-semibold text-blue-400 mb-3">Technologies Used</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {study.technologies.map((tech, index) => (
-                          <span key={index} className="px-3 py-1 bg-blue-400/20 text-blue-400 text-xs rounded-full border border-blue-400/30">
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-3">Our Solution</h3>
+                    <p className="text-gray-600 mb-6">{caseStudy.solution}</p>
                   </div>
                   
-                  <div className="mt-8 pt-6 border-t border-white/20 text-center">
-                    <Link 
-                      href={`/case-studies/${study.id}`}
-                      className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-400 to-fuchsia-400 text-white px-8 py-4 rounded-lg font-semibold hover:from-cyan-500 hover:to-fuchsia-500 transition-all duration-300"
-                    >
-                      Read Full Case Study
-                      <span aria-hidden>→</span>
-                    </Link>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-3">Results</h3>
+                    <ul className="space-y-2 mb-6">
+                      {caseStudy.results.map((result, index) => (
+                        <li key={index} className="flex items-start">
+                          <span className="text-green-500 mr-2">✓</span>
+                          <span className="text-gray-600">{result}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    
+                    <h3 className="text-lg font-semibold text-gray-900 mb-3">Technologies Used</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {caseStudy.technologies.map((tech, index) => (
+                        <span key={index} className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </section>
-            ))}
-            
-            {/* All Case Studies Grid */}
-            <section>
-              <h2 className="text-3xl font-bold mb-8 text-center text-white">All Case Studies</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {caseStudies.filter(study => !study.featured).map(study => (
-                  <div key={study.id} className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:border-cyan-400/30 transition-all duration-300">
-                    <div className="mb-4">
-                      <span className="px-3 py-1 bg-cyan-400/20 text-cyan-400 text-sm rounded-full border border-cyan-400/30">
-                        {study.industry}
-                      </span>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* All Case Studies */}
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              All Case Studies
+            </h2>
+            <p className="text-xl text-gray-600">
+              Explore our complete portfolio of successful transformations
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {caseStudies.filter(cs => !cs.featured).map(caseStudy => (
+              <Card key={caseStudy.id} className="hover-lift">
+                <CardHeader>
+                  <CardTitle className="text-xl text-gray-900">{caseStudy.title}</CardTitle>
+                  <p className="text-gray-600">{caseStudy.company} • {caseStudy.industry}</p>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-2">Challenge</h4>
+                      <p className="text-gray-600 text-sm">{caseStudy.challenge}</p>
                     </div>
-                    <h3 className="text-xl font-bold mb-3 text-white">{study.title}</h3>
-                    <p className="text-cyan-400 font-semibold mb-4">{study.company}</p>
                     
-                    <div className="space-y-3 mb-6">
-                      <div>
-                        <h4 className="font-semibold text-cyan-400 text-sm">Challenge</h4>
-                        <p className="text-white/80 text-sm">{study.challenge}</p>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-fuchsia-400 text-sm">Solution</h4>
-                        <p className="text-white/80 text-sm">{study.solution}</p>
-                      </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-2">Solution</h4>
+                      <p className="text-gray-600 text-sm">{caseStudy.solution}</p>
                     </div>
                     
-                    <div className="mb-4">
-                      <h4 className="font-semibold text-green-400 text-sm mb-2">Key Results</h4>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-2">Key Results</h4>
                       <ul className="space-y-1">
-                        {study.results.slice(0, 2).map((result, index) => (
-                          <li key={index} className="text-white/70 text-sm flex items-center gap-2">
-                            <div className="w-1.5 h-1.5 bg-green-400 rounded-full"></div>
-                            {result}
+                        {caseStudy.results.slice(0, 2).map((result, index) => (
+                          <li key={index} className="flex items-start text-sm">
+                            <span className="text-green-500 mr-2">✓</span>
+                            <span className="text-gray-600">{result}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
                     
-                    <div className="flex items-center justify-between">
-                      <div className="text-white/60 text-xs">
-                        Duration: {study.duration}
-                      </div>
-                      <Link 
-                        href={`/case-studies/${study.id}`}
-                        className="text-cyan-400 hover:text-cyan-300 transition-colors font-semibold text-sm"
-                      >
-                        Read More →
-                      </Link>
+                    <div className="pt-4">
+                      <Button variant="outline" className="w-full">
+                        View Full Case Study
+                      </Button>
                     </div>
                   </div>
-                ))}
-              </div>
-            </section>
-            
-            {/* Call to Action */}
-            <section className="mt-20 text-center">
-              <div className="bg-gradient-to-r from-cyan-500/10 to-fuchsia-500/10 rounded-2xl p-8 border border-cyan-500/20">
-                <h2 className="text-2xl font-bold mb-4 text-white">Ready to Transform Your Business?</h2>
-                <p className="text-white/80 mb-6 max-w-2xl mx-auto">
-                  These case studies demonstrate the real impact of AI automation. 
-                  Let&apos;s discuss how we can help you achieve similar results.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link 
-                    href="/contact"
-                    className="bg-gradient-to-r from-cyan-400 to-fuchsia-400 text-white px-8 py-4 rounded-lg font-semibold hover:from-cyan-500 hover:to-fuchsia-500 transition-all duration-300"
-                  >
-                    Get Started
-                  </Link>
-                  <Link 
-                    href="/services"
-                    className="px-8 py-4 border border-white/20 rounded-lg text-white hover:border-cyan-400/50 transition-all duration-300"
-                  >
-                    Learn More
-                  </Link>
-                </div>
-              </div>
-            </section>
+                </CardContent>
+              </Card>
+            ))}
           </div>
-        </main>
-      </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24 bg-gradient-to-r from-blue-600 to-purple-600">
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            Ready to Create Your Success Story?
+          </h2>
+          <p className="text-xl text-blue-100 mb-8">
+            Let&apos;s discuss how our autonomous technology can transform your business
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              asChild
+              size="lg"
+              variant="secondary"
+              className="transform hover:scale-105 transition-transform duration-200"
+            >
+              <Link href="/contact">
+                Get Started Today
+              </Link>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-blue-600 transform hover:scale-105 transition-all duration-200"
+            >
+              <Link href="/services">
+                Explore Our Services
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
