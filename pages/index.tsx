@@ -400,6 +400,54 @@ export default function HomePage() {
             </div>
           </section>
 
+          {/* Advanced Automation Features */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">⚡ Advanced Automation Features & Capabilities</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-cyan-400 mb-4 text-center">🔄 Ultimate Redundancy V2</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Multi-layer failover systems</li>
+                  <li>• Automatic process recovery</li>
+                  <li>• Health monitoring & alerts</li>
+                  <li>• Geographic distribution</li>
+                  <li>• Self-healing infrastructure</li>
+                </ul>
+                <Link href="/automation" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
+                  Learn More →
+                </Link>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-fuchsia-400 mb-4 text-center">🧠 AI Content Factory</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Autonomous content generation</li>
+                  <li>• AI-powered research & trends</li>
+                  <li>• Intelligent content optimization</li>
+                  <li>• Automated quality assurance</li>
+                  <li>• Dynamic content updates</li>
+                </ul>
+                <Link href="/automation" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
+                  Explore AI Factory →
+                </Link>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-green-400 mb-4 text-center">⚙️ Build Orchestration</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Smart build monitoring</li>
+                  <li>• Automatic failure recovery</li>
+                  <li>• Performance optimization</li>
+                  <li>• Dependency management</li>
+                  <li>• Quality gate enforcement</li>
+                </ul>
+                <Link href="/automation" className="text-green-400 hover:text-green-300 text-sm font-semibold">
+                  Explore Build Systems →
+                </Link>
+              </div>
+            </div>
+          </section>
+
           {/* Latest Autonomous Content */}
           <section className="mx-auto max-w-7xl px-6 pb-14">
             <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Latest Autonomous Content</h2>
