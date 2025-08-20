@@ -1098,19 +1098,500 @@ export default function MicroSaasPage() {
         'AI demand forecasting',
         'Automated reorder points',
         'Inventory optimization',
-        'Multi-location management',
-        'Supplier performance tracking',
+        'Real-time stock monitoring',
+        'Supplier management',
         'Cost optimization',
-        'Real-time analytics',
-        'Integration with e-commerce platforms'
+        'Multi-location support',
+        'Integration with ERP systems'
       ],
       popular: false,
       icon: '📦',
+      color: 'from-blue-500 to-indigo-600',
+      textColor: 'text-blue-400',
+      link: 'https://ziontechgroup.com/ai-inventory-management',
+      marketPosition: 'Competitive with TradeGecko ($39-99), Zoho Inventory ($119-239), and Fishbowl ($0-1000+)',
+      targetAudience: 'E-commerce businesses, retailers, and manufacturing companies'
+    },
+    // NEW HIGH-VALUE MICRO SAAS SERVICES
+    {
+      name: 'AI-Powered Legal Contract Analysis',
+      tagline: 'Intelligent contract review and analysis',
+      price: '$149',
+      period: '/month',
+      description: 'AI-powered legal contract analysis with risk assessment, compliance checking, and automated review workflows.',
+      features: [
+        'AI contract review',
+        'Risk assessment scoring',
+        'Compliance checking',
+        'Automated clause analysis',
+        'Contract template library',
+        'Version control & tracking',
+        'Legal team collaboration',
+        'Integration with legal software'
+      ],
+      popular: true,
+      icon: '⚖️',
+      color: 'from-slate-500 to-gray-600',
+      textColor: 'text-slate-400',
+      link: 'https://ziontechgroup.com/ai-legal-contract-analysis',
+      marketPosition: 'Competitive with LawGeex ($0-1000+), Evisort ($0-1000+), and ContractPodAi ($0-1000+)',
+      targetAudience: 'Legal professionals, law firms, and corporate legal departments'
+    },
+    {
+      name: 'AI-Powered Healthcare Analytics',
+      tagline: 'Intelligent healthcare insights platform',
+      price: '$199',
+      period: '/month',
+      description: 'AI-powered healthcare analytics with patient outcome prediction, treatment optimization, and clinical decision support.',
+      features: [
+        'Patient outcome prediction',
+        'Treatment optimization',
+        'Clinical decision support',
+        'Healthcare data integration',
+        'Compliance monitoring',
+        'Real-time analytics',
+        'HIPAA compliance',
+        'Integration with EHR systems'
+      ],
+      popular: false,
+      icon: '🏥',
+      color: 'from-emerald-500 to-green-600',
+      textColor: 'text-emerald-400',
+      link: 'https://ziontechgroup.com/ai-healthcare-analytics',
+      marketPosition: 'Competitive with Cerner ($0-1000+), Epic ($0-1000+), and Allscripts ($0-1000+)',
+      targetAudience: 'Healthcare providers, hospitals, and medical research institutions'
+    },
+    {
+      name: 'AI-Powered Financial Fraud Detection',
+      tagline: 'Real-time fraud prevention platform',
+      price: '$179',
+      period: '/month',
+      description: 'AI-powered financial fraud detection with real-time monitoring, risk scoring, and automated prevention.',
+      features: [
+        'Real-time fraud detection',
+        'AI risk scoring',
+        'Behavioral analysis',
+        'Transaction monitoring',
+        'Automated alerts',
+        'Compliance reporting',
+        'Integration with banking systems',
+        '24/7 monitoring'
+      ],
+      popular: true,
+      icon: '🔒',
+      color: 'from-red-500 to-pink-600',
+      textColor: 'text-red-400',
+      link: 'https://ziontechgroup.com/ai-fraud-detection',
+      marketPosition: 'Competitive with Sift ($0-1000+), Signifyd ($0-1000+), and Forter ($0-1000+)',
+      targetAudience: 'Financial institutions, fintech companies, and e-commerce businesses'
+    },
+    {
+      name: 'AI-Powered Supply Chain Risk Management',
+      tagline: 'Intelligent supply chain risk assessment',
+      price: '$159',
+      period: '/month',
+      description: 'AI-powered supply chain risk management with predictive analytics, disruption forecasting, and mitigation strategies.',
+      features: [
+        'Supply chain risk assessment',
+        'Disruption forecasting',
+        'Mitigation strategy recommendations',
+        'Real-time monitoring',
+        'Vendor risk scoring',
+        'Compliance tracking',
+        'Integration with ERP systems',
+        'Automated reporting'
+      ],
+      popular: false,
+      icon: '🚚',
+      color: 'from-orange-500 to-red-600',
+      textColor: 'text-orange-400',
+      link: 'https://ziontechgroup.com/ai-supply-chain-risk',
+      marketPosition: 'Competitive with Resilinc ($0-1000+), RiskMethods ($0-1000+), and Avetta ($0-1000+)',
+      targetAudience: 'Supply chain managers, procurement professionals, and manufacturing companies'
+    },
+    {
+      name: 'AI-Powered Energy Management',
+      tagline: 'Intelligent energy optimization platform',
+      price: '$129',
+      period: '/month',
+      description: 'AI-powered energy management with consumption optimization, cost reduction, and sustainability tracking.',
+      features: [
+        'Energy consumption optimization',
+        'Cost reduction analysis',
+        'Sustainability tracking',
+        'Predictive maintenance',
+        'Real-time monitoring',
+        'Integration with IoT devices',
+        'Compliance reporting',
+        'Mobile app access'
+      ],
+      popular: false,
+      icon: '⚡',
+      color: 'from-yellow-500 to-orange-600',
+      textColor: 'text-yellow-400',
+      link: 'https://ziontechgroup.com/ai-energy-management',
+      marketPosition: 'Competitive with Schneider Electric ($0-1000+), Siemens ($0-1000+), and Honeywell ($0-1000+)',
+      targetAudience: 'Facility managers, energy consultants, and sustainability professionals'
+    },
+    {
+      name: 'AI-Powered Customer Service Analytics',
+      tagline: 'Intelligent customer service insights',
+      price: '$89',
+      period: '/month',
+      description: 'AI-powered customer service analytics with sentiment analysis, performance optimization, and quality monitoring.',
+      features: [
+        'Customer sentiment analysis',
+        'Service quality monitoring',
+        'Performance optimization',
+        'Agent productivity tracking',
+        'Customer satisfaction metrics',
+        'Real-time insights',
+        'Integration with CRM systems',
+        'Automated reporting'
+      ],
+      popular: false,
+      icon: '🎧',
+      color: 'from-cyan-500 to-blue-600',
+      textColor: 'text-cyan-400',
+      link: 'https://ziontechgroup.com/ai-customer-service-analytics',
+      marketPosition: 'Competitive with Zendesk ($49-215), Freshdesk ($15-79), and Intercom ($39-499)',
+      targetAudience: 'Customer service managers, support teams, and contact centers'
+    },
+    {
+      name: 'AI-Powered Marketing Attribution',
+      tagline: 'Intelligent marketing ROI tracking',
+      price: '$119',
+      period: '/month',
+      description: 'AI-powered marketing attribution with multi-touch analysis, ROI optimization, and campaign performance insights.',
+      features: [
+        'Multi-touch attribution',
+        'ROI optimization',
+        'Campaign performance insights',
+        'Customer journey mapping',
+        'Cross-channel analytics',
+        'Real-time reporting',
+        'Integration with marketing tools',
+        'Predictive analytics'
+      ],
+      popular: true,
+      icon: '📊',
+      color: 'from-purple-500 to-violet-600',
+      textColor: 'text-purple-400',
+      link: 'https://ziontechgroup.com/ai-marketing-attribution',
+      marketPosition: 'Competitive with AppsFlyer ($0-1000+), Branch ($0-1000+), and Kochava ($0-1000+)',
+      targetAudience: 'Marketing professionals, digital agencies, and growth teams'
+    },
+    {
+      name: 'AI-Powered Product Recommendation Engine',
+      tagline: 'Intelligent product personalization',
+      price: '$99',
+      period: '/month',
+      description: 'AI-powered product recommendation engine with personalized suggestions, conversion optimization, and analytics.',
+      features: [
+        'Personalized product recommendations',
+        'Conversion optimization',
+        'Behavioral analysis',
+        'Real-time personalization',
+        'A/B testing tools',
+        'Performance analytics',
+        'Integration with e-commerce platforms',
+        'Mobile app support'
+      ],
+      popular: false,
+      icon: '🛍️',
+      color: 'from-pink-500 to-rose-600',
+      textColor: 'text-pink-400',
+      link: 'https://ziontechgroup.com/ai-product-recommendations',
+      marketPosition: 'Competitive with Algolia ($1-1000+), Elasticsearch ($0-1000+), and Amazon Personalize ($0-1000+)',
+      targetAudience: 'E-commerce businesses, online retailers, and digital marketplaces'
+    },
+    {
+      name: 'AI-Powered Compliance Monitoring',
+      tagline: 'Automated compliance management',
+      price: '$139',
+      period: '/month',
+      description: 'AI-powered compliance monitoring with automated audits, risk assessment, and regulatory updates.',
+      features: [
+        'Automated compliance audits',
+        'Risk assessment',
+        'Regulatory updates',
+        'Document management',
+        'Compliance reporting',
+        'Integration with business systems',
+        'Mobile app access',
+        '24/7 monitoring'
+      ],
+      popular: false,
+      icon: '✅',
+      color: 'from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      link: 'https://ziontechgroup.com/ai-compliance-monitoring',
+      marketPosition: 'Competitive with LogicGate ($0-1000+), MetricStream ($0-1000+), and ServiceNow ($0-1000+)',
+      targetAudience: 'Compliance officers, risk managers, and regulated industries'
+    },
+    {
+      name: 'AI-Powered Talent Acquisition',
+      tagline: 'Intelligent recruitment platform',
+      price: '$109',
+      period: '/month',
+      description: 'AI-powered talent acquisition with candidate matching, skill assessment, and recruitment automation.',
+      features: [
+        'AI candidate matching',
+        'Skill assessment',
+        'Recruitment automation',
+        'Candidate sourcing',
+        'Interview scheduling',
+        'Performance analytics',
+        'Integration with HR systems',
+        'Mobile app access'
+      ],
+      popular: true,
+      icon: '👥',
       color: 'from-indigo-500 to-purple-600',
       textColor: 'text-indigo-400',
+      link: 'https://ziontechgroup.com/ai-talent-acquisition',
+      marketPosition: 'Competitive with HireVue ($0-1000+), Pymetrics ($0-1000+), and Harver ($0-1000+)',
+      targetAudience: 'HR professionals, recruiters, and talent acquisition teams'
+    },
+    {
+      name: 'AI-Powered Data Quality Management',
+      tagline: 'Intelligent data governance platform',
+      price: '$129',
+      period: '/month',
+      description: 'AI-powered data quality management with automated cleaning, validation, and governance workflows.',
+      features: [
+        'Automated data cleaning',
+        'Data validation',
+        'Governance workflows',
+        'Quality scoring',
+        'Data lineage tracking',
+        'Integration with data platforms',
+        'Compliance monitoring',
+        'Real-time alerts'
+      ],
+      popular: false,
+      icon: '🔍',
+      color: 'from-teal-500 to-cyan-600',
+      textColor: 'text-teal-400',
+      link: 'https://ziontechgroup.com/ai-data-quality',
+      marketPosition: 'Competitive with Informatica ($0-1000+), Talend ($0-1000+), and DataRobot ($0-1000+)',
+      targetAudience: 'Data engineers, data scientists, and IT professionals'
+    },
+    {
+      name: 'AI-Powered Workflow Automation',
+      tagline: 'Intelligent business process automation',
+      price: '$89',
+      period: '/month',
+      description: 'AI-powered workflow automation with intelligent routing, decision making, and process optimization.',
+      features: [
+        'Intelligent workflow routing',
+        'AI decision making',
+        'Process optimization',
+        'Integration with business systems',
+        'Performance analytics',
+        'Custom automation rules',
+        'Mobile workflow access',
+        'Real-time monitoring'
+      ],
+      popular: false,
+      icon: '⚙️',
+      color: 'from-gray-500 to-slate-600',
+      textColor: 'text-gray-400',
+      link: 'https://ziontechgroup.com/ai-workflow-automation',
+      marketPosition: 'Competitive with UiPath ($0-1000+), Automation Anywhere ($0-1000+), and Blue Prism ($0-1000+)',
+      targetAudience: 'Operations managers, business analysts, and process improvement teams'
+    },
+    {
+      name: 'AI-Powered Knowledge Management',
+      tagline: 'Intelligent knowledge organization platform',
+      price: '$79',
+      period: '/month',
+      description: 'AI-powered knowledge management with intelligent search, content organization, and knowledge discovery.',
+      features: [
+        'Intelligent search',
+        'Content organization',
+        'Knowledge discovery',
+        'Collaboration tools',
+        'Version control',
+        'Integration with business systems',
+        'Mobile app access',
+        'Analytics & insights'
+      ],
+      popular: false,
+      icon: '📚',
+      color: 'from-amber-500 to-orange-600',
+      textColor: 'text-amber-400',
+      link: 'https://ziontechgroup.com/ai-knowledge-management',
+      marketPosition: 'Competitive with Notion ($0-16), Confluence ($0-7), and Slite ($0-8)',
+      targetAudience: 'Knowledge workers, research teams, and organizations with extensive documentation'
+    },
+    {
+      name: 'AI-Powered Event Management',
+      tagline: 'Intelligent event planning platform',
+      price: '$69',
+      period: '/month',
+      description: 'AI-powered event management with automated planning, attendee engagement, and performance analytics.',
+      features: [
+        'Automated event planning',
+        'Attendee engagement',
+        'Performance analytics',
+        'Registration management',
+        'Virtual event support',
+        'Integration with marketing tools',
+        'Mobile app access',
+        'Real-time insights'
+      ],
+      popular: false,
+      icon: '🎪',
+      color: 'from-fuchsia-500 to-purple-600',
+      textColor: 'text-fuchsia-400',
+      link: 'https://ziontechgroup.com/ai-event-management',
+      marketPosition: 'Competitive with Eventbrite ($0-1000+), Cvent ($0-1000+), and Bizzabo ($0-1000+)',
+      targetAudience: 'Event planners, marketing teams, and conference organizers'
+    },
+    {
+      name: 'AI-Powered Translation Management',
+      tagline: 'Intelligent multilingual content platform',
+      price: '$89',
+      period: '/month',
+      description: 'AI-powered translation management with automated translation, quality assurance, and localization workflows.',
+      features: [
+        'Automated translation',
+        'Quality assurance',
+        'Localization workflows',
+        'Multi-language support',
+        'Integration with CMS platforms',
+        'Translation memory',
+        'Collaboration tools',
+        'Performance analytics'
+      ],
+      popular: false,
+      icon: '🌐',
+      color: 'from-sky-500 to-blue-600',
+      textColor: 'text-sky-400',
+      link: 'https://ziontechgroup.com/ai-translation-management',
+      marketPosition: 'Competitive with Smartling ($0-1000+), Lokalise ($0-1000+), and Crowdin ($0-1000+)',
+      targetAudience: 'Global businesses, content creators, and localization teams'
+    },
+    {
+      name: 'AI-Powered Video Analytics',
+      tagline: 'Intelligent video content analysis',
+      price: '$119',
+      period: '/month',
+      description: 'AI-powered video analytics with content analysis, engagement tracking, and performance optimization.',
+      features: [
+        'Video content analysis',
+        'Engagement tracking',
+        'Performance optimization',
+        'Content recommendations',
+        'Real-time analytics',
+        'Integration with video platforms',
+        'Mobile app support',
+        'Custom reporting'
+      ],
+      popular: true,
+      icon: '🎬',
+      color: 'from-red-500 to-pink-600',
+      textColor: 'text-red-400',
+      link: 'https://ziontechgroup.com/ai-video-analytics',
+      marketPosition: 'Competitive with Wistia ($0-1000+), Vidyard ($0-1000+), and Loom ($0-1000+)',
+      targetAudience: 'Content creators, marketers, and video platform managers'
+    },
+    {
+      name: 'AI-Powered Social Media Intelligence',
+      tagline: 'Intelligent social media monitoring',
+      price: '$94',
+      period: '/month',
+      description: 'AI-powered social media intelligence with sentiment analysis, trend detection, and competitive monitoring.',
+      features: [
+        'Social media monitoring',
+        'Sentiment analysis',
+        'Trend detection',
+        'Competitive monitoring',
+        'Influencer identification',
+        'Real-time alerts',
+        'Integration with social platforms',
+        'Custom reporting'
+      ],
+      popular: false,
+      icon: '📱',
+      color: 'from-teal-500 to-cyan-600',
+      textColor: 'text-teal-400',
+      link: 'https://ziontechgroup.com/ai-social-media-intelligence',
+      marketPosition: 'Competitive with Brandwatch ($0-1000+), Sprinklr ($0-1000+), and Hootsuite ($29-599)',
+      targetAudience: 'Social media managers, brand managers, and marketing teams'
+    },
+    {
+      name: 'AI-Powered Customer Lifetime Value Prediction',
+      tagline: 'Intelligent customer value forecasting',
+      price: '$109',
+      period: '/month',
+      description: 'AI-powered customer lifetime value prediction with behavioral analysis, revenue forecasting, and optimization strategies.',
+      features: [
+        'Customer value forecasting',
+        'Behavioral analysis',
+        'Revenue optimization',
+        'Retention strategies',
+        'Predictive analytics',
+        'Integration with CRM systems',
+        'Real-time insights',
+        'Custom reporting'
+      ],
+      popular: false,
+      icon: '💎',
+      color: 'from-purple-500 to-violet-600',
+      textColor: 'text-purple-400',
+      link: 'https://ziontechgroup.com/ai-customer-lifetime-value',
+      marketPosition: 'Competitive with Optimove ($0-1000+), Blueshift ($0-1000+), and Segment ($0-1000+)',
+      targetAudience: 'Customer success teams, marketing professionals, and business analysts'
+    },
+    {
+      name: 'AI-Powered A/B Testing Platform',
+      tagline: 'Intelligent experimentation platform',
+      price: '$79',
+      period: '/month',
+      description: 'AI-powered A/B testing platform with intelligent test design, statistical analysis, and optimization recommendations.',
+      features: [
+        'Intelligent test design',
+        'Statistical analysis',
+        'Optimization recommendations',
+        'Multivariate testing',
+        'Real-time results',
+        'Integration with analytics tools',
+        'Mobile app support',
+        'Custom reporting'
+      ],
+      popular: false,
+      icon: '🧪',
+      color: 'from-indigo-500 to-purple-600',
+      textColor: 'text-indigo-400',
+      link: 'https://ziontechgroup.com/ai-ab-testing',
+      marketPosition: 'Competitive with Optimizely ($0-1000+), VWO ($0-1000+), and Google Optimize (Free)',
+      targetAudience: 'Product managers, UX researchers, and digital marketers'
+    },
+    {
+      name: 'AI-Powered Inventory Management',
+      tagline: 'Intelligent inventory optimization',
+      price: '$79',
+      period: '/month',
+      description: 'AI-driven inventory management with demand forecasting, automated reordering, and optimization recommendations.',
+      features: [
+        'AI demand forecasting',
+        'Automated reorder points',
+        'Inventory optimization',
+        'Real-time stock monitoring',
+        'Supplier management',
+        'Cost optimization',
+        'Multi-location support',
+        'Integration with ERP systems'
+      ],
+      popular: false,
+      icon: '📦',
+      color: 'from-blue-500 to-indigo-600',
+      textColor: 'text-blue-400',
       link: 'https://ziontechgroup.com/ai-inventory-management',
-      marketPosition: 'Competitive with TradeGecko ($0-1000+), Zoho Inventory ($0-1000+), and Fishbowl ($0-1000+)',
-      targetAudience: 'E-commerce businesses, retailers, and inventory managers'
+      marketPosition: 'Competitive with TradeGecko ($39-99), Zoho Inventory ($119-239), and Fishbowl ($0-1000+)',
+      targetAudience: 'E-commerce businesses, retailers, and manufacturing companies'
     },
     {
       name: 'AI-Powered Social Media Analytics',
@@ -1748,11 +2229,124 @@ export default function MicroSaasPage() {
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">
                 Our Micro SaaS Portfolio
               </h2>
-                          <p className="text-xl text-gray-400 max-w-4xl mx-auto">
-              Our portfolio of 40 specialized solutions covers the most critical business needs, from content creation 
-              and video generation to API management and data protection. Each solution is designed to solve a specific 
-              business problem with deep functionality and competitive pricing.
-            </p>
+              <p className="text-xl text-gray-400 max-w-4xl mx-auto">
+                Our portfolio of 45+ specialized solutions covers the most critical business needs, from content creation 
+                and video generation to API management and data protection. Each solution is designed to solve a specific 
+                business problem with deep functionality and competitive pricing.
+              </p>
+            </div>
+
+            {/* Service Categories & Pricing Tiers */}
+            <div className="mb-16">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div className="bg-gradient-to-br from-blue-900/50 to-blue-800/30 rounded-2xl p-8 border border-blue-700/30">
+                  <div className="text-center mb-6">
+                    <div className="text-4xl mb-4">🚀</div>
+                    <h3 className="text-2xl font-bold text-white mb-2">Starter Solutions</h3>
+                    <p className="text-blue-200 text-sm">Perfect for small businesses and startups</p>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-300">AI Content Generator</span>
+                      <span className="text-blue-400 font-semibold">$49/month</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-300">Email Marketing Automation</span>
+                      <span className="text-blue-400 font-semibold">$59/month</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-300">Social Media Scheduler</span>
+                      <span className="text-blue-400 font-semibold">$39/month</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-300">Form Builder Pro</span>
+                      <span className="text-blue-400 font-semibold">$25/month</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-gradient-to-br from-green-900/50 to-green-800/30 rounded-2xl p-8 border border-green-700/30">
+                  <div className="text-center mb-6">
+                    <div className="text-4xl mb-4">💼</div>
+                    <h3 className="text-2xl font-bold text-white mb-2">Professional Tools</h3>
+                    <p className="text-green-200 text-sm">For growing businesses and teams</p>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-300">AI Sales Intelligence</span>
+                      <span className="text-green-400 font-semibold">$99/month</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-300">Business Intelligence Hub</span>
+                      <span className="text-green-400 font-semibold">$99/month</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-300">AI-Powered CRM</span>
+                      <span className="text-green-400 font-semibold">$79/month</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-300">Customer Feedback Analytics</span>
+                      <span className="text-green-400 font-semibold">$79/month</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-gradient-to-br from-purple-900/50 to-purple-800/30 rounded-2xl p-8 border border-purple-700/30">
+                  <div className="text-center mb-6">
+                    <div className="text-4xl mb-4">🏢</div>
+                    <h3 className="text-2xl font-bold text-white mb-2">Enterprise Solutions</h3>
+                    <p className="text-purple-200 text-sm">Advanced tools for large organizations</p>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-300">AI Healthcare Analytics</span>
+                      <span className="text-purple-400 font-semibold">$199/month</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-300">Financial Fraud Detection</span>
+                      <span className="text-purple-400 font-semibold">$179/month</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-300">Supply Chain Risk Management</span>
+                      <span className="text-purple-400 font-semibold">$159/month</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-300">IoT Device Management</span>
+                      <span className="text-purple-400 font-semibold">$129/month</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Market Positioning Highlights */}
+              <div className="bg-gradient-to-r from-gray-800 to-gray-900 rounded-2xl p-8 border border-gray-700">
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl font-bold text-white mb-4">Competitive Market Positioning</h3>
+                  <p className="text-gray-400">Our services are priced competitively against industry leaders while offering superior functionality and ease of use.</p>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                  <div className="text-center">
+                    <div className="text-3xl mb-2">💰</div>
+                    <h4 className="text-lg font-semibold text-white mb-2">Cost Effective</h4>
+                    <p className="text-sm text-gray-400">Up to 70% savings vs enterprise solutions</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl mb-2">⚡</div>
+                    <h4 className="text-lg font-semibold text-white mb-2">Fast Setup</h4>
+                    <p className="text-sm text-gray-400">Get started in minutes, not weeks</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl mb-2">🔒</div>
+                    <h4 className="text-lg font-semibold text-white mb-2">Enterprise Security</h4>
+                    <p className="text-sm text-gray-400">Bank-level security & compliance</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl mb-2">📈</div>
+                    <h4 className="text-lg font-semibold text-white mb-2">Scalable Growth</h4>
+                    <p className="text-sm text-gray-400">Start small, scale as you grow</p>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -1818,6 +2412,129 @@ export default function MicroSaasPage() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Market Analysis & Competitive Intelligence */}
+        <section className="py-24 bg-gradient-to-br from-gray-900 via-black to-gray-900">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-20">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">
+                Market Analysis & Competitive Intelligence
+              </h2>
+              <p className="text-xl text-gray-400 max-w-4xl mx-auto">
+                Our micro SaaS services are strategically positioned in the market with competitive pricing, 
+                superior functionality, and clear value propositions that outperform traditional enterprise solutions.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              {/* Market Positioning Analysis */}
+              <div className="space-y-8">
+                <div className="bg-gradient-to-r from-blue-900/30 to-blue-800/20 rounded-2xl p-8 border border-blue-700/30">
+                  <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
+                    <span className="text-3xl mr-3">📊</span>
+                    Market Positioning Strategy
+                  </h3>
+                  <div className="space-y-4">
+                    <div className="flex justify-between items-center p-3 bg-blue-800/20 rounded-lg">
+                      <span className="text-gray-300">Enterprise Solutions</span>
+                      <span className="text-red-400 font-semibold">$500-2000+/month</span>
+                    </div>
+                    <div className="flex justify-between items-center p-3 bg-blue-800/20 rounded-lg">
+                      <span className="text-gray-300">Our Micro SaaS</span>
+                      <span className="text-green-400 font-semibold">$19-199/month</span>
+                    </div>
+                    <div className="flex justify-between items-center p-3 bg-green-800/20 rounded-lg">
+                      <span className="text-gray-300">Cost Savings</span>
+                      <span className="text-green-400 font-semibold">Up to 90%</span>
+                    </div>
+                  </div>
+                  <p className="text-blue-200 text-sm mt-4">
+                    We deliver enterprise-grade functionality at micro SaaS prices, making advanced technology accessible to businesses of all sizes.
+                  </p>
+                </div>
+
+                <div className="bg-gradient-to-r from-green-900/30 to-green-800/20 rounded-2xl p-8 border border-green-700/30">
+                  <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
+                    <span className="text-3xl mr-3">🎯</span>
+                    Target Market Segments
+                  </h3>
+                  <div className="space-y-3">
+                    <div className="flex items-center p-3 bg-green-800/20 rounded-lg">
+                      <span className="text-2xl mr-3">🚀</span>
+                      <div>
+                        <span className="text-white font-semibold">Startups & SMBs</span>
+                        <p className="text-green-200 text-sm">Affordable access to enterprise tools</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center p-3 bg-green-800/20 rounded-lg">
+                      <span className="text-2xl mr-3">💼</span>
+                      <div>
+                        <span className="text-white font-semibold">Growing Businesses</span>
+                        <p className="text-green-200 text-sm">Scalable solutions that grow with you</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center p-3 bg-green-800/20 rounded-lg">
+                      <span className="text-2xl mr-3">🏢</span>
+                      <div>
+                        <span className="text-white font-semibold">Enterprise Teams</span>
+                        <p className="text-green-200 text-sm">Specialized tools for specific needs</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Competitive Analysis */}
+              <div className="space-y-8">
+                <div className="bg-gradient-to-r from-purple-900/30 to-purple-800/20 rounded-2xl p-8 border border-purple-700/30">
+                  <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
+                    <span className="text-3xl mr-3">⚔️</span>
+                    Competitive Advantages
+                  </h3>
+                  <div className="space-y-4">
+                    <div className="p-4 bg-purple-800/20 rounded-lg">
+                      <h4 className="text-white font-semibold mb-2">🚀 Speed to Market</h4>
+                      <p className="text-purple-200 text-sm">Setup in minutes vs. weeks for enterprise solutions</p>
+                    </div>
+                    <div className="p-4 bg-purple-800/20 rounded-lg">
+                      <h4 className="text-white font-semibold mb-2">💰 Transparent Pricing</h4>
+                      <p className="text-purple-200 text-sm">No hidden fees, no sales calls, no surprises</p>
+                    </div>
+                    <div className="p-4 bg-purple-800/20 rounded-lg">
+                      <h4 className="text-white font-semibold mb-2">🔧 Focused Functionality</h4>
+                      <p className="text-purple-200 text-sm">Do one thing exceptionally well vs. jack-of-all-trades</p>
+                    </div>
+                    <div className="p-4 bg-purple-800/20 rounded-lg">
+                      <h4 className="text-white font-semibold mb-2">📱 Modern UX</h4>
+                      <p className="text-purple-200 text-sm">Built for 2024, not legacy enterprise systems</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-gradient-to-r from-orange-900/30 to-orange-800/20 rounded-2xl p-8 border border-orange-700/30">
+                  <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
+                    <span className="text-3xl mr-3">📈</span>
+                    Growth & Expansion
+                  </h3>
+                  <div className="space-y-4">
+                    <div className="text-center p-4 bg-orange-800/20 rounded-lg">
+                      <div className="text-3xl font-bold text-orange-400 mb-2">45+</div>
+                      <p className="text-orange-200 text-sm">Specialized Services</p>
+                    </div>
+                    <div className="text-center p-4 bg-orange-800/20 rounded-lg">
+                      <div className="text-3xl font-bold text-orange-400 mb-2">15+</div>
+                      <p className="text-orange-200 text-sm">Industry Verticals</p>
+                    </div>
+                    <div className="text-center p-4 bg-orange-800/20 rounded-lg">
+                      <div className="text-3xl font-bold text-orange-400 mb-2">99.9%</div>
+                      <p className="text-orange-200 text-sm">Uptime Guarantee</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
