@@ -426,6 +426,92 @@ export default function HomePage() {
             </div>
           </section>
 
+          {/* Enhanced Documentation & Resources */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">📚 Comprehensive Documentation & Resources</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-blue-400 mb-4 text-center">🏗️ Architecture</h3>
+                <p className="text-white/80 text-sm mb-4">Comprehensive system architecture documentation and design patterns.</p>
+                <Link href="/ARCHITECTURE.md" className="text-blue-400 hover:text-blue-300 text-sm font-semibold">
+                  View Architecture →
+                </Link>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-purple-400 mb-4 text-center">🔌 API Reference</h3>
+                <p className="text-white/80 text-sm mb-4">Complete API documentation and integration guides.</p>
+                <Link href="/API.md" className="text-purple-400 hover:text-purple-300 text-sm font-semibold">
+                  View API Docs →
+                </Link>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-green-400 mb-4 text-center">🚀 Deployment</h3>
+                <p className="text-white/80 text-sm mb-4">Deployment strategies and infrastructure management.</p>
+                <Link href="/DEPLOYMENT.md" className="text-green-400 hover:text-green-300 text-sm font-semibold">
+                  View Deployment →
+                </Link>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-yellow-400 mb-4 text-center">🤝 Contributing</h3>
+                <p className="text-white/80 text-sm mb-4">Guidelines for contributing to the project.</p>
+                <Link href="/CONTRIBUTING.md" className="text-yellow-400 hover:text-yellow-300 text-sm font-semibold">
+                  View Guidelines →
+                </Link>
+              </div>
+            </div>
+          </section>
+
+          {/* Advanced Automation Systems */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">⚡ Advanced Automation & Orchestration Systems</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-cyan-400 mb-4 text-center">🧠 AI Research & Trends</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• AI trends research</li>
+                  <li>• Innovation orchestration</li>
+                  <li>• Market analysis</li>
+                  <li>• Technology forecasting</li>
+                  <li>• Competitive intelligence</li>
+                </ul>
+                <Link href="/EXPONENTIAL_GROWTH_AUTOMATION.md" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
+                  Learn More →
+                </Link>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-fuchsia-400 mb-4 text-center">🎨 Design Automation</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• UI/UX optimization</li>
+                  <li>• Responsive design</li>
+                  <li>• Visual enhancement</li>
+                  <li>• Navigation improvement</li>
+                  <li>• Layout optimization</li>
+                </ul>
+                <Link href="/AUTOMATION_COMPLETION_REPORT.md" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
+                  Learn More →
+                </Link>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-green-400 mb-4 text-center">🔧 Syntax & Linting</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Code quality automation</li>
+                  <li>• Syntax error fixing</li>
+                  <li>• Linting automation</li>
+                  <li>• Code formatting</li>
+                  <li>• Quality assurance</li>
+                </ul>
+                <Link href="/FINAL_WORKFLOW_FIX_SUMMARY.md" className="text-green-400 hover:text-green-300 text-sm font-semibold">
+                  Learn More →
+                </Link>
+              </div>
+            </div>
+          </section>
+
           {/* Latest Autonomous Content */}
           <section className="mx-auto max-w-7xl px-6 pb-14">
             <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Latest Autonomous Content</h2>
