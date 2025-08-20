@@ -197,7 +197,7 @@ export default function CaseStudiesPage() {
                 </div>
 
                 <Button
-                  href="#"
+                  href="/contact"
                   variant="outline"
                   size="sm"
                   className="w-full"
