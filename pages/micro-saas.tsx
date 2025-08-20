@@ -10,32 +10,44 @@ export default function MicroSaasPage() {
     {
       icon: '⚡',
       title: 'Lightning Fast Setup',
-      description: 'Get started in minutes, not weeks. Our services are designed for immediate value delivery with minimal configuration.'
+      description: 'Get started in minutes, not weeks. Our services are designed for immediate value delivery with minimal configuration.',
+      color: 'from-yellow-500 to-orange-600',
+      bgColor: 'from-yellow-500/10 to-orange-500/10'
     },
     {
       icon: '💰',
       title: 'Transparent Pricing',
-      description: 'No hidden fees, no enterprise sales calls. Simple monthly pricing that scales with your business needs.'
+      description: 'No hidden fees, no enterprise sales calls. Simple monthly pricing that scales with your business needs.',
+      color: 'from-green-500 to-emerald-600',
+      bgColor: 'from-green-500/10 to-emerald-500/10'
     },
     {
       icon: '🔒',
       title: 'Enterprise Security',
-      description: 'Bank-level security, SOC 2 compliance, and 99.9% uptime guarantee for all services.'
+      description: 'Bank-level security, SOC 2 compliance, and 99.9% uptime guarantee for all services.',
+      color: 'from-blue-500 to-indigo-600',
+      bgColor: 'from-blue-500/10 to-indigo-500/10'
     },
     {
       icon: '📊',
       title: 'Real Business Value',
-      description: 'Each service solves a specific business problem with measurable ROI and immediate impact.'
+      description: 'Each service solves a specific business problem with measurable ROI and immediate impact.',
+      color: 'from-purple-500 to-violet-600',
+      bgColor: 'from-purple-500/10 to-violet-500/10'
     },
     {
       icon: '🌐',
       title: 'Unified Platform',
-      description: 'Access all services through ziontechgroup.com with single sign-on and integrated billing.'
+      description: 'Access all services through ziontechgroup.com with single sign-on and integrated billing.',
+      color: 'from-teal-500 to-cyan-600',
+      bgColor: 'from-teal-500/10 to-cyan-500/10'
     },
     {
       icon: '🎯',
       title: 'Focused Solutions',
-      description: 'Specialized tools that do one thing exceptionally well, without enterprise complexity.'
+      description: 'Specialized tools that do one thing exceptionally well, without enterprise complexity.',
+      color: 'from-rose-500 to-pink-600',
+      bgColor: 'from-rose-500/10 to-pink-500/10'
     }
   ];
   
@@ -330,7 +342,7 @@ export default function MicroSaasPage() {
       icon: '🎫',
       color: 'from-red-500 to-pink-600',
       textColor: 'text-red-400',
-      link: 'https://support.ziontechgroup.com',
+      link: 'https://ziontechgroup.com/customer-support-ticketing',
       marketPosition: 'Competitive with Zendesk ($49-99), Freshdesk ($15-99), and Help Scout ($20-65)',
       targetAudience: 'Customer support teams, SaaS companies, and e-commerce businesses',
       trialDays: 14,
@@ -364,6 +376,223 @@ export default function MicroSaasPage() {
       setupTime: '35 minutes',
       category: 'Analytics & Data'
     },
+    // New Real Micro SaaS Services
+    {
+      name: 'AI Code Review Assistant',
+      tagline: 'Intelligent code review automation',
+      price: '$59',
+      period: '/month',
+      description: 'Automate code reviews with AI-powered analysis. Catch bugs, security issues, and maintain code quality standards.',
+      features: [
+        'AI-powered code analysis',
+        'Security vulnerability detection',
+        'Code quality scoring',
+        'Automated review comments',
+        'Integration with GitHub, GitLab',
+        'Custom rule configuration',
+        'Team collaboration tools',
+        'Performance optimization suggestions'
+      ],
+      popular: false,
+      icon: '🔍',
+      color: 'from-indigo-500 to-blue-600',
+      textColor: 'text-indigo-400',
+      link: 'https://ziontechgroup.com/ai-code-review-assistant',
+      marketPosition: 'Competitive with SonarQube ($0-150), CodeClimate ($0-100), and DeepCode ($0-50)',
+      targetAudience: 'Development teams, DevOps engineers, and code quality managers',
+      trialDays: 14,
+      setupTime: '15 minutes',
+      category: 'Development & DevOps'
+    },
+    {
+      name: 'API Documentation Generator',
+      tagline: 'Automated API documentation',
+      price: '$39',
+      period: '/month',
+      description: 'Generate comprehensive API documentation automatically from your code. Keep docs in sync with your API changes.',
+      features: [
+        'Auto-generated API docs',
+        'Interactive API explorer',
+        'Multiple format support (OpenAPI, Postman)',
+        'Version control integration',
+        'Custom branding & themes',
+        'Team collaboration tools',
+        'API testing integration',
+        'Analytics & usage tracking'
+      ],
+      popular: false,
+      icon: '📚',
+      color: 'from-teal-500 to-cyan-600',
+      textColor: 'text-teal-400',
+      link: 'https://ziontechgroup.com/api-documentation-generator',
+      marketPosition: 'Competitive with Swagger ($0-50), ReadMe ($0-99), and Stoplight ($0-50)',
+      targetAudience: 'API developers, technical writers, and product managers',
+      trialDays: 14,
+      setupTime: '10 minutes',
+      category: 'Development & DevOps'
+    },
+    {
+      name: 'Database Performance Monitor',
+      tagline: 'Real-time database optimization',
+      price: '$79',
+      period: '/month',
+      description: 'Monitor and optimize your database performance with intelligent insights and automated recommendations.',
+      features: [
+        'Real-time performance monitoring',
+        'Query optimization suggestions',
+        'Index optimization',
+        'Performance bottleneck detection',
+        'Automated alerting',
+        'Multi-database support',
+        'Historical performance tracking',
+        'Integration with popular databases'
+      ],
+      popular: false,
+      icon: '🗄️',
+      color: 'from-orange-500 to-red-600',
+      textColor: 'text-orange-400',
+      link: 'https://ziontechgroup.com/database-performance-monitor',
+      marketPosition: 'Competitive with SolarWinds ($0-200), Percona ($0-100), and DataDog ($15-23)',
+      targetAudience: 'Database administrators, DevOps teams, and system architects',
+      trialDays: 14,
+      setupTime: '20 minutes',
+      category: 'Development & DevOps'
+    },
+    {
+      name: 'AI Customer Feedback Analyzer',
+      tagline: 'Intelligent feedback insights',
+      price: '$49',
+      period: '/month',
+      description: 'Analyze customer feedback with AI to extract actionable insights and improve customer satisfaction.',
+      features: [
+        'AI-powered sentiment analysis',
+        'Feedback categorization',
+        'Trend identification',
+        'Customer satisfaction scoring',
+        'Automated reporting',
+        'Integration with support tools',
+        'Real-time feedback monitoring',
+        'Actionable insights dashboard'
+      ],
+      popular: false,
+      icon: '💭',
+      color: 'from-purple-500 to-violet-600',
+      textColor: 'text-purple-400',
+      link: 'https://ziontechgroup.com/ai-customer-feedback-analyzer',
+      marketPosition: 'Competitive with Qualtrics ($0-500), SurveyMonkey ($0-75), and Typeform ($0-25)',
+      targetAudience: 'Product managers, customer success teams, and UX researchers',
+      trialDays: 14,
+      setupTime: '15 minutes',
+      category: 'Customer Experience'
+    },
+    {
+      name: 'AI Market Research Assistant',
+      tagline: 'Intelligent market insights',
+      price: '$89',
+      period: '/month',
+      description: 'Conduct comprehensive market research with AI-powered analysis and competitive intelligence.',
+      features: [
+        'AI-powered market analysis',
+        'Competitive intelligence',
+        'Trend forecasting',
+        'Customer behavior insights',
+        'Market size estimation',
+        'Automated reporting',
+        'Data visualization tools',
+        'Integration with research platforms'
+      ],
+      popular: false,
+      icon: '📊',
+      color: 'from-blue-500 to-indigo-600',
+      textColor: 'text-blue-400',
+      link: 'https://ziontechgroup.com/ai-market-research-assistant',
+      marketPosition: 'Competitive with SimilarWeb ($0-200), SEMrush ($119-449), and Ahrefs ($99-999)',
+      targetAudience: 'Marketing teams, business analysts, and product strategists',
+      trialDays: 14,
+      setupTime: '25 minutes',
+      category: 'Analytics & Data'
+    },
+    {
+      name: 'AI Legal Document Generator',
+      tagline: 'Automated legal document creation',
+      price: '$129',
+      period: '/month',
+      description: 'Generate legal documents, contracts, and agreements with AI assistance and compliance checking.',
+      features: [
+        'AI-powered document generation',
+        'Legal compliance checking',
+        'Contract template library',
+        'Electronic signature integration',
+        'Document version control',
+        'Legal research assistance',
+        'Client portal access',
+        'Integration with legal software'
+      ],
+      popular: false,
+      icon: '⚖️',
+      color: 'from-gray-500 to-slate-600',
+      textColor: 'text-gray-400',
+      link: 'https://ziontechgroup.com/ai-legal-document-generator',
+      marketPosition: 'Competitive with DocuSign ($10-25), LegalZoom ($0-299), and Rocket Lawyer ($39.99-99.99)',
+      targetAudience: 'Law firms, legal professionals, and businesses',
+      trialDays: 14,
+      setupTime: '30 minutes',
+      category: 'Legal & Compliance'
+    },
+    {
+      name: 'AI Financial Advisor',
+      tagline: 'Intelligent financial planning',
+      price: '$99',
+      period: '/month',
+      description: 'AI-powered financial planning and investment advice for individuals and small businesses.',
+      features: [
+        'AI-powered financial analysis',
+        'Investment portfolio optimization',
+        'Risk assessment tools',
+        'Tax optimization strategies',
+        'Retirement planning',
+        'Financial goal tracking',
+        'Automated reporting',
+        'Integration with financial institutions'
+      ],
+      popular: false,
+      icon: '💰',
+      color: 'from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      link: 'https://ziontechgroup.com/ai-financial-advisor',
+      marketPosition: 'Competitive with Betterment ($0-100), Wealthfront ($0-100), and Personal Capital ($0-100)',
+      targetAudience: 'Individuals, small businesses, and financial advisors',
+      trialDays: 14,
+      setupTime: '20 minutes',
+      category: 'Finance & Operations'
+    },
+    {
+      name: 'AI Supply Chain Optimizer',
+      tagline: 'Intelligent supply chain management',
+      price: '$149',
+      period: '/month',
+      description: 'Optimize your supply chain with AI-powered forecasting, inventory management, and logistics optimization.',
+      features: [
+        'AI-powered demand forecasting',
+        'Inventory optimization',
+        'Supplier performance tracking',
+        'Logistics route optimization',
+        'Cost optimization analysis',
+        'Risk assessment tools',
+        'Real-time monitoring',
+        'Integration with ERP systems'
+      ],
+      popular: false,
+      icon: '🚚',
+      color: 'from-yellow-500 to-orange-600',
+      textColor: 'text-yellow-400',
+      link: 'https://ziontechgroup.com/ai-supply-chain-optimizer',
+      marketPosition: 'Competitive with SAP ($0-500), Oracle ($0-1000), and Manhattan Associates ($0-500)',
+      targetAudience: 'Supply chain managers, logistics companies, and manufacturers',
+      trialDays: 14,
+      setupTime: '45 minutes',
+      category: 'Finance & Operations'
+    },
     // Enhanced Real Micro SaaS Services
     {
       name: 'AI Video Editor Pro',
@@ -385,7 +614,7 @@ export default function MicroSaasPage() {
       icon: '🎬',
       color: 'from-red-500 to-pink-600',
       textColor: 'text-red-400',
-      link: 'https://video.ziontechgroup.com',
+      link: 'https://ziontechgroup.com/ai-video-editor-pro',
       marketPosition: 'Competitive with Lumen5 ($19-79), Synthesia ($30-99), and Runway ($12-76)',
       targetAudience: 'Content creators, marketers, and video professionals',
       trialDays: 14,
@@ -466,7 +695,7 @@ export default function MicroSaasPage() {
       icon: '💼',
       color: 'from-emerald-500 to-teal-600',
       textColor: 'text-emerald-400',
-      link: 'https://sales.ziontechgroup.com',
+      link: 'https://ziontechgroup.com/ai-sales-assistant',
       marketPosition: 'Competitive with HubSpot ($45-4500), Salesforce ($25-300), and Pipedrive ($12.50-99)',
       targetAudience: 'Sales teams, B2B companies, and sales managers',
       trialDays: 14,
@@ -493,7 +722,7 @@ export default function MicroSaasPage() {
       icon: '👥',
       color: 'from-purple-500 to-violet-600',
       textColor: 'text-purple-400',
-      link: 'https://hr.ziontechgroup.com',
+      link: 'https://ziontechgroup.com/ai-hr-assistant',
       marketPosition: 'Competitive with BambooHR ($6.19-8.75), Workday ($45-100), and Zenefits ($8-27)',
       targetAudience: 'HR professionals, small businesses, and growing companies',
       trialDays: 14,
@@ -3633,10 +3862,14 @@ export default function MicroSaasPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {competitiveAdvantages.map((advantage, index) => (
-                <div key={index} className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700 hover:border-green-500/30 transition-all duration-300">
-                  <div className="text-4xl mb-4">{advantage.icon}</div>
-                  <h3 className="text-xl font-bold text-white mb-4">{advantage.title}</h3>
-                  <p className="text-gray-400 mb-6 leading-relaxed">{advantage.description}</p>
+                <div key={index} className="group">
+                  <div className={`bg-gradient-to-br ${advantage.bgColor} border border-gray-700 rounded-2xl p-8 h-full transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:border-${advantage.color.split('-')[1]}-500/50`}>
+                    <div className={`w-16 h-16 bg-gradient-to-br ${advantage.color} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                      <span className="text-3xl">{advantage.icon}</span>
+                    </div>
+                    <h3 className="text-xl font-bold text-white mb-4">{advantage.title}</h3>
+                    <p className="text-gray-400 mb-6 leading-relaxed">{advantage.description}</p>
+                  </div>
                 </div>
               ))}
             </div>
