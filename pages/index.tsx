@@ -55,6 +55,66 @@ export default function HomePage() {
             </div>
           </section>
 
+          {/* Documentation & Reports Hub */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">📚 Documentation & Reports Hub</h2>
+            <p className="text-center text-white/70 max-w-3xl mx-auto mb-8">
+              Explore in-depth documentation, implementation guides, performance reports, and security practices that power our autonomous platform.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <Link href="/README.md" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300">
+                <h3 className="text-lg font-semibold text-cyan-400 mb-2">Project Overview</h3>
+                <p className="text-white/70 text-sm">High-level overview, philosophy, and scope</p>
+                <div className="mt-3 text-cyan-300/90 text-sm">Open →</div>
+              </Link>
+              <Link href="/ARCHITECTURE.md" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-purple-400/30 transition-all duration-300">
+                <h3 className="text-lg font-semibold text-purple-400 mb-2">Architecture</h3>
+                <p className="text-white/70 text-sm">Systems design, patterns, and decisions</p>
+                <div className="mt-3 text-purple-300/90 text-sm">Open →</div>
+              </Link>
+              <Link href="/API.md" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-green-400/30 transition-all duration-300">
+                <h3 className="text-lg font-semibold text-green-400 mb-2">API Documentation</h3>
+                <p className="text-white/70 text-sm">Endpoints, schemas, and examples</p>
+                <div className="mt-3 text-green-300/90 text-sm">Open →</div>
+              </Link>
+              <Link href="/DEPLOYMENT.md" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-yellow-400/30 transition-all duration-300">
+                <h3 className="text-lg font-semibold text-yellow-400 mb-2">Deployment</h3>
+                <p className="text-white/70 text-sm">CI/CD, environments, and rollouts</p>
+                <div className="mt-3 text-yellow-300/90 text-sm">Open →</div>
+              </Link>
+              <Link href="/PERFORMANCE.md" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-indigo-400/30 transition-all duration-300">
+                <h3 className="text-lg font-semibold text-indigo-400 mb-2">Performance</h3>
+                <p className="text-white/70 text-sm">Budgets, monitoring, and tuning</p>
+                <div className="mt-3 text-indigo-300/90 text-sm">Open →</div>
+              </Link>
+              <Link href="/TESTING.md" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-fuchsia-400/30 transition-all duration-300">
+                <h3 className="text-lg font-semibold text-fuchsia-400 mb-2">Testing</h3>
+                <p className="text-white/70 text-sm">Quality, coverage, and validation</p>
+                <div className="mt-3 text-fuchsia-300/90 text-sm">Open →</div>
+              </Link>
+              <Link href="/SECURITY.md" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-red-400/30 transition-all duration-300">
+                <h3 className="text-lg font-semibold text-red-400 mb-2">Security</h3>
+                <p className="text-white/70 text-sm">Threat modeling, scans, and posture</p>
+                <div className="mt-3 text-red-300/90 text-sm">Open →</div>
+              </Link>
+              <Link href="/README_COMPREHENSIVE_REDUNDANCY.md" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-emerald-400/30 transition-all duration-300">
+                <h3 className="text-lg font-semibold text-emerald-400 mb-2">Comprehensive Redundancy</h3>
+                <p className="text-white/70 text-sm">Multi-layer reliability approach</p>
+                <div className="mt-3 text-emerald-300/90 text-sm">Open →</div>
+              </Link>
+              <Link href="/README_ULTIMATE_REDUNDANCY.md" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-sky-400/30 transition-all duration-300">
+                <h3 className="text-lg font-semibold text-sky-400 mb-2">Ultimate Redundancy</h3>
+                <p className="text-white/70 text-sm">Zero-downtime strategy</p>
+                <div className="mt-3 text-sky-300/90 text-sm">Open →</div>
+              </Link>
+              <Link href="/README_PM2_REDUNDANCY_COMPLETE.md" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-lime-400/30 transition-all duration-300">
+                <h3 className="text-lg font-semibold text-lime-400 mb-2">PM2 Orchestration</h3>
+                <p className="text-white/70 text-sm">Process management and scaling</p>
+                <div className="mt-3 text-lime-300/90 text-sm">Open →</div>
+              </Link>
+            </div>
+          </section>
+
           {/* Revolutionary Platform Capabilities */}
           <section className="mx-auto max-w-7xl px-6 pb-16">
             <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">🚀 Revolutionary Platform Capabilities</h2>
