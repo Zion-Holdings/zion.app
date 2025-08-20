@@ -659,6 +659,194 @@ export default function ServicesPage() {
       gradient: 'from-cyan-400 to-blue-500',
       pricing: '$89/month',
       link: 'https://productanalytics.ziontechgroup.com'
+    },
+    // Additional high-quality micro SaaS services
+    {
+      icon: '💼',
+      title: 'AI Sales Intelligence',
+      description: 'AI-powered sales prospecting with real-time company insights and contact discovery.',
+      features: [
+        'Real-time company intelligence',
+        'AI-powered contact discovery',
+        'Sales automation workflows',
+        'Lead scoring & prioritization',
+        'Competitor monitoring'
+      ],
+      color: 'bg-gradient-to-br from-blue-500 to-indigo-600',
+      textColor: 'text-blue-400',
+      gradient: 'from-blue-400 to-indigo-500',
+      pricing: '$129/month',
+      link: 'https://ziontechgroup.com/ai-sales-intelligence'
+    },
+    {
+      icon: '📅',
+      title: 'Content Calendar Optimization',
+      description: 'AI-powered content planning with optimal publishing times and performance prediction.',
+      features: [
+        'AI-powered content suggestions',
+        'Optimal publishing time analysis',
+        'Content performance prediction',
+        'Multi-platform calendar sync',
+        'Team collaboration tools'
+      ],
+      color: 'bg-gradient-to-br from-purple-500 to-violet-600',
+      textColor: 'text-purple-400',
+      gradient: 'from-purple-400 to-violet-500',
+      pricing: '$69/month',
+      link: 'https://ziontechgroup.com/content-calendar-optimization'
+    },
+    {
+      icon: '📬',
+      title: 'Email Deliverability Optimizer',
+      description: 'Maximize email inbox placement with sender reputation monitoring and authentication.',
+      features: [
+        'Sender reputation monitoring',
+        'Email authentication setup',
+        'Inbox placement testing',
+        'Spam score analysis',
+        'Deliverability reporting'
+      ],
+      color: 'bg-gradient-to-br from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      gradient: 'from-green-400 to-emerald-500',
+      pricing: '$79/month',
+      link: 'https://ziontechgroup.com/email-deliverability-optimizer'
+    },
+    {
+      icon: '🚀',
+      title: 'Landing Page Builder Pro',
+      description: 'Create high-converting landing pages with AI-powered design suggestions and A/B testing.',
+      features: [
+        'AI-powered design suggestions',
+        'Drag-and-drop builder',
+        'A/B testing automation',
+        'Conversion optimization',
+        'Mobile-responsive templates'
+      ],
+      color: 'bg-gradient-to-br from-orange-500 to-red-600',
+      textColor: 'text-orange-400',
+      gradient: 'from-orange-400 to-red-500',
+      pricing: '$49/month',
+      link: 'https://ziontechgroup.com/landing-page-builder-pro'
+    },
+    {
+      icon: '🗺️',
+      title: 'Customer Journey Mapping',
+      description: 'Create comprehensive customer journey maps with AI-powered insights and optimization.',
+      features: [
+        'Interactive journey mapping',
+        'AI-powered insights',
+        'Touchpoint analysis',
+        'Optimization recommendations',
+        'Customer feedback integration'
+      ],
+      color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
+      textColor: 'text-cyan-400',
+      gradient: 'from-cyan-400 to-blue-500',
+      pricing: '$94/month',
+      link: 'https://ziontechgroup.com/customer-journey-mapping'
+    },
+    {
+      icon: '📋',
+      title: 'Contract Analysis AI',
+      description: 'AI-powered contract analysis with risk assessment and compliance checking.',
+      features: [
+        'AI-powered contract review',
+        'Risk assessment & scoring',
+        'Compliance checking',
+        'Clause analysis',
+        'Automated summaries'
+      ],
+      color: 'bg-gradient-to-br from-indigo-500 to-purple-600',
+      textColor: 'text-indigo-400',
+      gradient: 'from-indigo-400 to-purple-500',
+      pricing: '$119/month',
+      link: 'https://ziontechgroup.com/contract-analysis-ai'
+    },
+    {
+      icon: '📈',
+      title: 'Sales Forecasting Engine',
+      description: 'AI-powered sales prediction with machine learning algorithms and pipeline analysis.',
+      features: [
+        'AI-powered forecasting',
+        'Pipeline analysis',
+        'Revenue prediction',
+        'Scenario modeling',
+        'Performance tracking'
+      ],
+      color: 'bg-gradient-to-br from-emerald-500 to-green-600',
+      textColor: 'text-emerald-400',
+      gradient: 'from-emerald-400 to-green-500',
+      pricing: '$79/month',
+      link: 'https://ziontechgroup.com/sales-forecasting-engine'
+    },
+    {
+      icon: '🎧',
+      title: 'Customer Service Analytics',
+      description: 'Data-driven customer service optimization with sentiment analysis and performance tracking.',
+      features: [
+        'Sentiment analysis',
+        'Response time tracking',
+        'Customer satisfaction metrics',
+        'Agent performance analytics',
+        'Service quality monitoring'
+      ],
+      color: 'bg-gradient-to-br from-teal-500 to-cyan-600',
+      textColor: 'text-teal-400',
+      gradient: 'from-teal-400 to-cyan-500',
+      pricing: '$74/month',
+      link: 'https://ziontechgroup.com/customer-service-analytics'
+    },
+    {
+      icon: '🛍️',
+      title: 'AI Product Recommendations',
+      description: 'AI-powered product recommendation engine with personalized suggestions and conversion optimization.',
+      features: [
+        'AI-powered recommendations',
+        'Personalized suggestions',
+        'Behavioral analysis',
+        'Conversion optimization',
+        'A/B testing'
+      ],
+      color: 'bg-gradient-to-br from-pink-500 to-rose-600',
+      textColor: 'text-pink-400',
+      gradient: 'from-pink-400 to-rose-500',
+      pricing: '$84/month',
+      link: 'https://ziontechgroup.com/ai-product-recommendations'
+    },
+    {
+      icon: '🛡️',
+      title: 'Fraud Detection System',
+      description: 'AI-powered fraud prevention with machine learning algorithms and real-time monitoring.',
+      features: [
+        'AI-powered fraud detection',
+        'Real-time monitoring',
+        'Risk assessment scoring',
+        'Automated alerts',
+        'Pattern recognition'
+      ],
+      color: 'bg-gradient-to-br from-red-500 to-pink-600',
+      textColor: 'text-red-400',
+      gradient: 'from-red-400 to-pink-500',
+      pricing: '$149/month',
+      link: 'https://ziontechgroup.com/fraud-detection-system'
+    },
+    {
+      icon: '📦',
+      title: 'Inventory Forecasting AI',
+      description: 'AI-powered inventory forecasting with demand prediction and stock optimization.',
+      features: [
+        'AI-powered demand forecasting',
+        'Stock level optimization',
+        'Automated reorder management',
+        'Seasonal trend analysis',
+        'Supplier performance tracking'
+      ],
+      color: 'bg-gradient-to-br from-amber-500 to-orange-600',
+      textColor: 'text-amber-400',
+      gradient: 'from-amber-400 to-orange-500',
+      pricing: '$99/month',
+      link: 'https://ziontechgroup.com/inventory-forecasting-ai'
     }
   ];
 

@@ -402,7 +402,7 @@ export default function HomePage() {
 
           <div className="text-center">
             <p className="text-gray-400 mb-8 max-w-3xl mx-auto">
-              All 45+ services include comprehensive documentation, dedicated support, enterprise-grade reliability, and 14-day free trials. 
+              All 75+ services include comprehensive documentation, dedicated support, enterprise-grade reliability, and 14-day free trials. 
               Start with one solution and scale as you grow. View our complete portfolio for more specialized tools.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -437,11 +437,11 @@ export default function HomePage() {
               New: Micro SaaS Solutions
             </div>
             <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8 leading-tight">
-              Specialized Tools for Every Business Need
+              75+ Specialized Tools for Every Business Need
             </h2>
             <p className="text-xl text-green-100 max-w-4xl mx-auto leading-relaxed">
-              Discover our focused micro SaaS solutions that deliver specific value without enterprise complexity. 
-              From API protection to email validation, each service solves a real business problem with transparent pricing. 
+              Discover our comprehensive micro SaaS solutions that deliver specific value without enterprise complexity. 
+              From AI-powered content creation to advanced fraud detection, each service solves a real business problem with transparent pricing. 
               Start with a free trial and scale as you grow.
             </p>
           </div>
@@ -493,6 +493,22 @@ export default function HomePage() {
               <p className="text-green-100 text-sm mb-4">Convert websites to images</p>
               <div className="text-2xl font-bold text-white mb-2">$12<span className="text-sm font-normal text-green-100">/month</span></div>
               <p className="text-xs text-green-200">14-day free trial • Setup in 1 minute</p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
+              <div className="text-3xl mb-4">💼</div>
+              <h3 className="text-xl font-bold text-white mb-2">AI Sales Intelligence</h3>
+              <p className="text-green-100 text-sm mb-4">AI-powered sales prospecting</p>
+              <div className="text-2xl font-bold text-white mb-2">$129<span className="text-sm font-normal text-green-100">/month</span></div>
+              <p className="text-xs text-green-200">14-day free trial • Setup in 10 minutes</p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
+              <div className="text-3xl mb-4">🛡️</div>
+              <h3 className="text-xl font-bold text-white mb-2">Fraud Detection</h3>
+              <p className="text-green-100 text-sm mb-4">AI-powered fraud prevention</p>
+              <div className="text-2xl font-bold text-white mb-2">$149<span className="text-sm font-normal text-green-100">/month</span></div>
+              <p className="text-xs text-green-200">14-day free trial • Setup in 15 minutes</p>
             </div>
           </div>
 
