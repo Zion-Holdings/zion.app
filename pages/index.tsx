@@ -330,6 +330,50 @@ export default function HomePage() {
             </div>
           </section>
 
+          {/* Comprehensive Directory & Quick Links */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">🗂️ Comprehensive Directory & Quick Links</h2>
+            <div className="grid grid-cols-1 gap-10">
+              <div>
+                <h3 className="text-xl font-semibold text-white/90 mb-4">Key Pages</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  <Link href="/about" className="group rounded-xl border border-white/15 bg-white/5 p-4 hover:border-cyan-400/30 transition-all">About</Link>
+                  <Link href="/services" className="group rounded-xl border border-white/15 bg-white/5 p-4 hover:border-fuchsia-400/30 transition-all">Services</Link>
+                  <Link href="/resources" className="group rounded-xl border border-white/15 bg-white/5 p-4 hover:border-blue-400/30 transition-all">Resources</Link>
+                  <Link href="/case-studies" className="group rounded-xl border border-white/15 bg-white/5 p-4 hover:border-yellow-400/30 transition-all">Case Studies</Link>
+                  <Link href="/blog" className="group rounded-xl border border-white/15 bg-white/5 p-4 hover:border-purple-400/30 transition-all">Blog</Link>
+                  <Link href="/contact" className="group rounded-xl border border-white/15 bg-white/5 p-4 hover:border-green-400/30 transition-all">Contact</Link>
+                  <Link href="/privacy" className="group rounded-xl border border-white/15 bg-white/5 p-4 hover:border-red-400/30 transition-all">Privacy</Link>
+                  <Link href="/reports/updates/update-2025-08-15-0406" className="group rounded-xl border border-white/15 bg-white/5 p-4 hover:border-indigo-400/30 transition-all">Latest Report</Link>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold text-white/90 mb-4">Featured Blog Posts</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  <Link href="/blog/ai-automation-trends-2025" className="group rounded-xl border border-white/15 bg-white/5 p-4 hover:border-cyan-400/30 transition-all">AI Automation Trends 2025</Link>
+                  <Link href="/blog/ai-ethics-automation" className="group rounded-xl border border-white/15 bg-white/5 p-4 hover:border-fuchsia-400/30 transition-all">AI Ethics in Automation</Link>
+                  <Link href="/blog/autonomous-content-generation" className="group rounded-xl border border-white/15 bg-white/5 p-4 hover:border-blue-400/30 transition-all">Autonomous Content Generation</Link>
+                  <Link href="/blog/cloud-native-automation" className="group rounded-xl border border-white/15 bg-white/5 p-4 hover:border-yellow-400/30 transition-all">Cloud-Native Automation</Link>
+                  <Link href="/blog/future-of-work" className="group rounded-xl border border-white/15 bg-white/5 p-4 hover:border-purple-400/30 transition-all">Future of Work</Link>
+                  <Link href="/blog/performance-optimization" className="group rounded-xl border border-white/15 bg-white/5 p-4 hover:border-green-400/30 transition-all">Performance Optimization</Link>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold text-white/90 mb-4">Latest Updates</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  <Link href="/reports/updates/update-2025-08-15-0406" className="group rounded-xl border border-white/15 bg-white/5 p-4 hover:border-cyan-400/30 transition-all">Update — 2025-08-15-0406</Link>
+                  <Link href="/reports/updates/update-2025-08-15-0405" className="group rounded-xl border border-white/15 bg-white/5 p-4 hover:border-fuchsia-400/30 transition-all">Update — 2025-08-15-0405</Link>
+                  <Link href="/reports/updates/update-2025-08-15-0404" className="group rounded-xl border border-white/15 bg-white/5 p-4 hover:border-blue-400/30 transition-all">Update — 2025-08-15-0404</Link>
+                  <Link href="/reports/updates/update-2025-08-15-0403" className="group rounded-xl border border-white/15 bg-white/5 p-4 hover:border-yellow-400/30 transition-all">Update — 2025-08-15-0403</Link>
+                  <Link href="/reports/updates/update-2025-08-15-0402" className="group rounded-xl border border-white/15 bg-white/5 p-4 hover:border-purple-400/30 transition-all">Update — 2025-08-15-0402</Link>
+                  <Link href="/reports/updates/update-2025-08-15-0111" className="group rounded-xl border border-white/15 bg-white/5 p-4 hover:border-green-400/30 transition-all">Update — 2025-08-15-0111</Link>
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* Advanced Features Showcase */}
           <section className="mx-auto max-w-7xl px-6 pb-16">
             <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">🌟 Advanced Features & Capabilities</h2>
