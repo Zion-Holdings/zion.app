@@ -13,6 +13,8 @@ interface ButtonProps {
   icon?: React.ReactNode;
   iconPosition?: 'left' | 'right';
   style?: React.CSSProperties;
+  target?: string;
+  rel?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -27,6 +29,8 @@ const Button: React.FC<ButtonProps> = ({
   icon,
   iconPosition = 'left',
   style,
+  target,
+  rel,
 }) => {
   const baseClasses = 'inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden group';
   
@@ -60,7 +64,7 @@ const Button: React.FC<ButtonProps> = ({
 
   if (href) {
     return (
-      <Link href={href} className={classes} style={style}>
+      <Link href={href} className={classes} style={style} target={target} rel={rel}>
         {content}
       </Link>
     );

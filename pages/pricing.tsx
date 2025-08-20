@@ -202,34 +202,318 @@ export default function PricingPage() {
         </section>
 
         {/* Enterprise Features */}
-        <section className="py-20 bg-gray-900">
+        <section className="py-24 bg-gray-900">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-                Enterprise Features
+            <div className="text-center mb-20">
+              <h2 className="text-4xl font-bold text-white mb-8">
+                Enterprise-Grade Features
               </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Advanced capabilities for large organizations with complex requirements
+              <p className="text-xl text-gray-400 max-w-4xl mx-auto">
+                Advanced capabilities designed for large organizations and complex requirements.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {enterpriseFeatures.map((feature, index) => (
-                <div
-                  key={index}
-                  className="text-center p-8 bg-gray-800/50 rounded-2xl border border-gray-700 hover:border-blue-500/30 transition-all duration-300"
-                >
-                  <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-blue-500/10 flex items-center justify-center text-blue-400">
+                <div key={index} className="text-center">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-500/10 rounded-full mb-6">
                     {feature.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-4">
+                  <h3 className="text-xl font-semibold text-white mb-4">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-400 leading-relaxed">
+                  <p className="text-gray-400">
                     {feature.description}
                   </p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Micro SaaS Services */}
+        <section className="py-24 bg-black">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-20">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium mb-6">
+                <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse" />
+                Micro SaaS Solutions
+              </div>
+              <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8">
+                Specialized Tools & Services
+              </h2>
+              <p className="text-xl text-gray-400 max-w-4xl mx-auto">
+                Focused solutions for specific business needs with transparent, competitive pricing.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* AI Content Generator Pro */}
+              <div className="bg-gray-900 rounded-2xl p-8 border border-gray-800 hover:border-pink-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-pink-500/10">
+                <div className="text-center mb-6">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-pink-500 to-rose-600 rounded-2xl text-3xl mb-4">
+                    📝
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">AI Content Generator Pro</h3>
+                  <div className="text-4xl font-bold text-pink-400 mb-2">$49</div>
+                  <div className="text-gray-400">per month</div>
+                </div>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    SEO-optimized content generation
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Multi-language support
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Brand voice customization
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Content templates library
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Plagiarism-free writing
+                  </li>
+                </ul>
+                <Button
+                  href="https://contentgen.zion.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700"
+                >
+                  Get Started
+                </Button>
+              </div>
+
+              {/* Design System Builder */}
+              <div className="bg-gray-900 rounded-2xl p-8 border border-gray-800 hover:border-violet-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-violet-500/10">
+                <div className="text-center mb-6">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-violet-500 to-purple-600 rounded-2xl text-3xl mb-4">
+                    🎨
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Design System Builder</h3>
+                  <div className="text-4xl font-bold text-violet-400 mb-2">$79</div>
+                  <div className="text-gray-400">per month</div>
+                </div>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Component library management
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Design token automation
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Style guide generation
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Design-to-code workflow
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Team collaboration tools
+                  </li>
+                </ul>
+                <Button
+                  href="https://design.zion.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700"
+                >
+                  Get Started
+                </Button>
+              </div>
+
+              {/* App Performance Monitor */}
+              <div className="bg-gray-900 rounded-2xl p-8 border border-gray-800 hover:border-amber-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-500/10">
+                <div className="text-center mb-6">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl text-3xl mb-4">
+                    📱
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">App Performance Monitor</h3>
+                  <div className="text-4xl font-bold text-amber-400 mb-2">$39</div>
+                  <div className="text-gray-400">per month</div>
+                </div>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Performance metrics tracking
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Error monitoring & alerting
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    User experience analytics
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Automated optimization
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Custom dashboards
+                  </li>
+                </ul>
+                <Button
+                  href="https://monitor.zion.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700"
+                >
+                  Get Started
+                </Button>
+              </div>
+
+              {/* SEO Automation Suite */}
+              <div className="bg-gray-900 rounded-2xl p-8 border border-gray-800 hover:border-emerald-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/10">
+                <div className="text-center mb-6">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-emerald-500 to-green-600 rounded-2xl text-3xl mb-4">
+                    🔍
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">SEO Automation Suite</h3>
+                  <div className="text-4xl font-bold text-emerald-400 mb-2">$89</div>
+                  <div className="text-gray-400">per month</div>
+                </div>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Keyword research automation
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    On-page optimization
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Technical SEO audits
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Competitor analysis
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Ranking tracking
+                  </li>
+                </ul>
+                <Button
+                  href="https://seo.zion.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700"
+                >
+                  Get Started
+                </Button>
+              </div>
+
+              {/* AI Chatbot Platform */}
+              <div className="bg-gray-900 rounded-2xl p-8 border border-gray-800 hover:border-sky-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-sky-500/10">
+                <div className="text-center mb-6">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-sky-500 to-blue-600 rounded-2xl text-3xl mb-4">
+                    💬
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">AI Chatbot Platform</h3>
+                  <div className="text-4xl font-bold text-sky-400 mb-2">$69</div>
+                  <div className="text-gray-400">per month</div>
+                </div>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Natural language processing
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Multi-channel integration
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Analytics & insights
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Custom training data
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    24/7 availability
+                  </li>
+                </ul>
+                <Button
+                  href="https://chatbot.zion.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700"
+                >
+                  Get Started
+                </Button>
+              </div>
+
+              {/* Business Intelligence Hub */}
+              <div className="bg-gray-900 rounded-2xl p-8 border border-gray-800 hover:border-rose-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-rose-500/10">
+                <div className="text-center mb-6">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-rose-500 to-pink-600 rounded-2xl text-3xl mb-4">
+                    📊
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Business Intelligence Hub</h3>
+                  <div className="text-4xl font-bold text-rose-400 mb-2">$99</div>
+                  <div className="text-gray-400">per month</div>
+                </div>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Data visualization tools
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Automated reporting
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    KPI dashboards
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Predictive analytics
+                  </li>
+                  <li className="flex items-center text-gray-300">
+                    <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    Data integration
+                  </li>
+                </ul>
+                <Button
+                  href="https://bi.zion.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-600 hover:to-pink-700"
+                >
+                  Get Started
+                </Button>
+              </div>
+            </div>
+
+            <div className="text-center mt-16">
+              <p className="text-gray-400 mb-8 max-w-3xl mx-auto">
+                All micro SaaS services include 14-day free trials, comprehensive documentation, 
+                and dedicated support. Enterprise customers receive volume discounts and custom integrations.
+              </p>
+              <Button
+                href="/contact"
+                variant="secondary"
+                size="lg"
+                className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800"
+              >
+                Contact Sales for Enterprise
+              </Button>
             </div>
           </div>
         </section>

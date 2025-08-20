@@ -95,6 +95,109 @@ export default function ServicesPage() {
       textColor: 'text-teal-400',
       gradient: 'from-teal-400 to-cyan-500',
     },
+    // New Micro SaaS Services
+    {
+      icon: '📝',
+      title: 'AI Content Generator Pro',
+      description: 'Professional AI-powered content creation tool for blogs, marketing copy, and social media.',
+      features: [
+        'SEO-optimized content generation',
+        'Multi-language support',
+        'Brand voice customization',
+        'Content templates library',
+        'Plagiarism-free writing'
+      ],
+      color: 'bg-gradient-to-br from-pink-500 to-rose-600',
+      textColor: 'text-pink-400',
+      gradient: 'from-pink-400 to-rose-500',
+      pricing: '$49/month',
+      link: 'https://contentgen.zion.app'
+    },
+    {
+      icon: '🎨',
+      title: 'Design System Builder',
+      description: 'Create and maintain consistent design systems with automated component generation.',
+      features: [
+        'Component library management',
+        'Design token automation',
+        'Style guide generation',
+        'Design-to-code workflow',
+        'Team collaboration tools'
+      ],
+      color: 'bg-gradient-to-br from-violet-500 to-purple-600',
+      textColor: 'text-violet-400',
+      gradient: 'from-violet-400 to-purple-500',
+      pricing: '$79/month',
+      link: 'https://design.zion.app'
+    },
+    {
+      icon: '📱',
+      title: 'App Performance Monitor',
+      description: 'Real-time monitoring and optimization for web and mobile applications.',
+      features: [
+        'Performance metrics tracking',
+        'Error monitoring & alerting',
+        'User experience analytics',
+        'Automated optimization',
+        'Custom dashboards'
+      ],
+      color: 'bg-gradient-to-br from-amber-500 to-orange-600',
+      textColor: 'text-amber-400',
+      gradient: 'from-amber-400 to-orange-500',
+      pricing: '$39/month',
+      link: 'https://monitor.zion.app'
+    },
+    {
+      icon: '🔍',
+      title: 'SEO Automation Suite',
+      description: 'Comprehensive SEO tools with automated optimization and reporting.',
+      features: [
+        'Keyword research automation',
+        'On-page optimization',
+        'Technical SEO audits',
+        'Competitor analysis',
+        'Ranking tracking'
+      ],
+      color: 'bg-gradient-to-br from-emerald-500 to-green-600',
+      textColor: 'text-emerald-400',
+      gradient: 'from-emerald-400 to-green-500',
+      pricing: '$89/month',
+      link: 'https://seo.zion.app'
+    },
+    {
+      icon: '💬',
+      title: 'AI Chatbot Platform',
+      description: 'Intelligent chatbot solutions for customer support and lead generation.',
+      features: [
+        'Natural language processing',
+        'Multi-channel integration',
+        'Analytics & insights',
+        'Custom training data',
+        '24/7 availability'
+      ],
+      color: 'bg-gradient-to-br from-sky-500 to-blue-600',
+      textColor: 'text-sky-400',
+      gradient: 'from-sky-400 to-blue-500',
+      pricing: '$69/month',
+      link: 'https://chatbot.zion.app'
+    },
+    {
+      icon: '📊',
+      title: 'Business Intelligence Hub',
+      description: 'Turn your data into actionable insights with automated reporting and analytics.',
+      features: [
+        'Data visualization tools',
+        'Automated reporting',
+        'KPI dashboards',
+        'Predictive analytics',
+        'Data integration'
+      ],
+      color: 'bg-gradient-to-br from-rose-500 to-pink-600',
+      textColor: 'text-rose-400',
+      gradient: 'from-rose-400 to-pink-500',
+      pricing: '$99/month',
+      link: 'https://bi.zion.app'
+    }
   ];
 
   const technologies = [
@@ -183,6 +286,21 @@ export default function ServicesPage() {
                         </li>
                       ))}
                     </ul>
+                    {service.pricing && (
+                      <p className="mt-6 text-lg font-semibold text-white">
+                        Starting at {service.pricing}
+                      </p>
+                    )}
+                    {service.link && (
+                      <Button
+                        href={service.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-4"
+                      >
+                        Learn More
+                      </Button>
+                    )}
                   </div>
                 </div>
               </Card>
