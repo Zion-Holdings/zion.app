@@ -3,7 +3,7 @@
 // Netlify Function Fallback: content-optimizer
 // This is a local fallback when the main function is unavailable
 
-exports.handler = async (event, context) => {
+exports.handler = async (_event, _context) => {
     console.log('content-optimizer fallback executed locally');
     
     try {

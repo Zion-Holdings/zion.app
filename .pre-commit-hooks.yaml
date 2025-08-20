@@ -7,17 +7,17 @@ repos:
         description: Validates YAML files for syntax errors
         types: [yaml, yml]
         args: [--allow-multiple-documents]
-      
+
       - id: check-json
         name: Check JSON syntax
         description: Validates JSON files for syntax errors
         types: [json]
-      
+
       - id: trailing-whitespace
         name: Trailing whitespace
         description: Trims trailing whitespace
         types: [text]
-      
+
       - id: end-of-file-fixer
         name: End of file fixer
         description: Ensures files end with a newline

@@ -1,35 +1,49 @@
 module.exports = {
-  extends: [
-    'next/core-web-vitals'
-  ],
+  extends: ['next/core-web-vitals', 'eslint:recommended', 'prettier'],
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint'],
-  parserOptions: {
-    ecmaVersion: 2020,
-    sourceType: 'module',
-    ecmaFeatures: {
-      jsx: true
-    }
+  plugins: ['@typescript-eslint', 'react-hooks', 'prettier'],
+  rules: {
+    // TypeScript specific rules
+    '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+    'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+    '@typescript-eslint/no-explicit-any': 'warn',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-non-null-assertion': 'warn',
+
+    // React specific rules
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
+    'react/prop-types': 'off',
+    'react/react-in-jsx-scope': 'off',
+
+    // General code quality rules
+    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-debugger': 'error',
+    'no-alert': 'warn',
+    'prefer-const': 'error',
+    'no-var': 'error',
+    'object-shorthand': 'error',
+    'prefer-template': 'error',
+
+    // Prettier integration
+    'prettier/prettier': 'error',
   },
   env: {
     browser: true,
-    es6: true,
-    node: true
+    es2021: true,
+    node: true,
   },
-  rules: {
-    '@typescript-eslint/no-unused-vars': 'warn',
-    '@typescript-eslint/no-explicit-any': 'warn',
-    'no-console': 'warn'
+  settings: {
+    react: {
+      version: 'detect',
+    },
   },
   ignorePatterns: [
     'node_modules/',
     '.next/',
     'out/',
-    'dist/',
-    'build/',
     '*.config.js',
     '*.config.ts',
-    'scripts/',
-    'automation/'
-  ]
+  ],
 };

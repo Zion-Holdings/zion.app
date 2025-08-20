@@ -5,15 +5,15 @@ repos:
       - id: check-yaml
         name: Check YAML syntax
         types: [yaml, yml]
-      
+
       - id: check-json
         name: Check JSON syntax
         types: [json]
-      
+
       - id: trailing-whitespace
         name: Trailing whitespace
         types: [text]
-      
+
       - id: end-of-file-fixer
         name: End of file fixer
         types: [text]
