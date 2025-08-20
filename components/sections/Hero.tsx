@@ -41,7 +41,7 @@ const Hero: React.FC<HeroProps> = ({
 
       {/* Floating Elements */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-float" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-green-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1.5s' }} />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1.5s' }} />
       <div className="absolute top-1/2 left-1/4 w-48 h-48 bg-purple-500/8 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }} />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -93,16 +93,16 @@ const Hero: React.FC<HeroProps> = ({
 
         {/* Stats Section */}
         {stats && (
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto animate-fade-in" style={{ animationDelay: '0.6s' }}>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-5xl mx-auto animate-fade-in" style={{ animationDelay: '0.6s' }}>
             {stats.map((stat, index) => (
               <div key={index} className="text-center group">
                 <div className="relative">
-                  <div className={`text-3xl md:text-4xl font-bold mb-3 ${stat.color} group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-2 md:mb-3 ${stat.color} group-hover:scale-110 transition-transform duration-300`}>
                     {stat.value}
                   </div>
                   <div className="absolute -inset-2 bg-gradient-to-r from-transparent via-blue-500/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
-                <div className="text-gray-400 text-sm md:text-base font-medium">
+                <div className="text-gray-400 text-xs sm:text-sm md:text-base font-medium">
                   {stat.label}
                 </div>
               </div>
@@ -111,8 +111,8 @@ const Hero: React.FC<HeroProps> = ({
         )}
 
         {/* Trust Indicators */}
-        <div className="mt-20 animate-fade-in" style={{ animationDelay: '0.8s' }}>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-gray-400 text-sm">
+        <div className="mt-16 md:mt-20 animate-fade-in" style={{ animationDelay: '0.8s' }}>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-gray-400 text-xs sm:text-sm">
             <div className="flex items-center gap-2">
               <Shield className="w-4 h-4" />
               <span>Enterprise Security</span>

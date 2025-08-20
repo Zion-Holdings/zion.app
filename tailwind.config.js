@@ -184,6 +184,22 @@ module.exports = {
         extrabold: '800',
         black: '900',
       },
+      // Add cursor color palette to match CSS variables
+      colors: {
+        // ... existing colors ...
+        cursor: {
+          blue: '#3b82f6',
+          'blue-hover': '#2563eb',
+          accent: '#10b981',
+          'accent-hover': '#059669',
+          purple: '#8b5cf6',
+          'purple-hover': '#7c3aed',
+          light: '#374151',
+          lighter: '#4b5563',
+          dark: '#1f2937',
+          darker: '#111827',
+        },
+      },
       spacing: {
         '18': '4.5rem',
         '88': '22rem',

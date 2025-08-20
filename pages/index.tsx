@@ -108,8 +108,9 @@ export default function HomePage() {
       />
 
       {/* Technology Stack */}
-      <section className="py-24 bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 bg-gray-900 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.05)_1px,transparent_1px)] bg-[size:50px_50px] opacity-20" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-20 animate-fade-in">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
               <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse" />
@@ -123,11 +124,11 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
             {technologyStack.map((tech, index) => (
               <Card
                 key={index}
-                className="text-center group border border-gray-800 hover:border-blue-500/30"
+                className="text-center group border border-gray-800 hover:border-blue-500/30 hover:bg-gray-900/80 transition-all duration-300"
                 style={{ animationDelay: `${(index * 0.05) + 0.2}s` }}
               >
                 <div className="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -142,10 +143,11 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-r from-blue-600 to-blue-700 relative overflow-hidden">
+      <section className="py-24 bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px] opacity-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-transparent to-blue-800/20" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8">
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8 leading-tight">
             Ready to Transform Your Business?
           </h2>
           <p className="text-xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed">
@@ -156,7 +158,7 @@ export default function HomePage() {
               href="/contact"
               variant="secondary"
               size="lg"
-              className="bg-white text-blue-600 hover:bg-gray-100 shadow-2xl"
+              className="bg-white text-blue-600 hover:bg-gray-100 shadow-2xl hover:shadow-blue-500/25"
             >
               Start Your Journey
               <ArrowRight className="w-5 h-5 ml-2" />
@@ -165,7 +167,7 @@ export default function HomePage() {
               href="/case-studies"
               variant="outline"
               size="lg"
-              className="border-white text-white hover:bg-white hover:text-blue-600 shadow-2xl"
+              className="border-white text-white hover:bg-white hover:text-blue-600 shadow-2xl hover:shadow-white/25"
             >
               View Case Studies
             </Button>

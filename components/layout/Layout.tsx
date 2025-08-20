@@ -8,9 +8,9 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black text-white antialiased">
       <Header />
-      <main className="pt-24 lg:pt-28">
+      <main className="pt-24 lg:pt-28 relative">
         {children}
       </main>
       <Footer />
