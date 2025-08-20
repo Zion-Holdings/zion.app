@@ -299,6 +299,109 @@ export default function ServicesPage() {
       gradient: 'from-gray-400 to-slate-500',
       pricing: '$129/month',
       link: 'https://api.zion.app'
+    },
+    // New Micro SaaS Services
+    {
+      icon: '🎬',
+      title: 'AI Video Editor Pro',
+      description: 'Professional AI-powered video editing with automated enhancement, effects, and scene detection.',
+      features: [
+        'AI-powered scene detection',
+        'Automated video enhancement',
+        'Smart background removal',
+        'Auto-caption generation',
+        'Professional templates library'
+      ],
+      color: 'bg-gradient-to-br from-red-500 to-pink-600',
+      textColor: 'text-red-400',
+      gradient: 'from-red-400 to-pink-500',
+      pricing: '$79/month',
+      link: 'https://video.zion.app'
+    },
+    {
+      icon: '🎨',
+      title: 'AI Image Generator Studio',
+      description: 'Create stunning, high-resolution images with advanced AI models and professional editing tools.',
+      features: [
+        'Multiple AI models (DALL-E, Midjourney, Stable Diffusion)',
+        'High-resolution output (up to 4K)',
+        'Style transfer and customization',
+        'Batch image generation',
+        'Commercial usage rights'
+      ],
+      color: 'bg-gradient-to-br from-purple-500 to-indigo-600',
+      textColor: 'text-purple-400',
+      gradient: 'from-purple-400 to-indigo-500',
+      pricing: '$59/month',
+      link: 'https://images.zion.app'
+    },
+    {
+      icon: '🎧',
+      title: 'Customer Support Automation',
+      description: 'AI-powered customer service platform with intelligent ticket routing and response generation.',
+      features: [
+        'AI-powered ticket classification',
+        'Automated response generation',
+        'Smart routing algorithms',
+        'Knowledge base management',
+        'Customer satisfaction tracking'
+      ],
+      color: 'bg-gradient-to-br from-blue-500 to-indigo-600',
+      textColor: 'text-blue-400',
+      gradient: 'from-blue-400 to-indigo-500',
+      pricing: '$89/month',
+      link: 'https://support.zion.app'
+    },
+    {
+      icon: '💻',
+      title: 'AI Code Assistant Pro',
+      description: 'Boost developer productivity with AI-powered code generation, debugging, and optimization.',
+      features: [
+        'AI code generation',
+        'Smart debugging assistance',
+        'Code review automation',
+        'Performance optimization',
+        'Multi-language support'
+      ],
+      color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
+      textColor: 'text-cyan-400',
+      gradient: 'from-cyan-400 to-blue-500',
+      pricing: '$89/month',
+      link: 'https://code.zion.app'
+    },
+    {
+      icon: '🛒',
+      title: 'E-commerce Analytics Suite',
+      description: 'Comprehensive analytics and optimization for e-commerce businesses with real-time insights.',
+      features: [
+        'Sales performance tracking',
+        'Customer behavior analysis',
+        'Conversion optimization',
+        'Inventory management',
+        'Marketing attribution'
+      ],
+      color: 'bg-gradient-to-br from-orange-500 to-red-600',
+      textColor: 'text-orange-400',
+      gradient: 'from-orange-400 to-red-500',
+      pricing: '$79/month',
+      link: 'https://ecommerce.zion.app'
+    },
+    {
+      icon: '⚖️',
+      title: 'AI Legal Assistant',
+      description: 'Intelligent legal document automation and contract analysis with compliance monitoring.',
+      features: [
+        'Legal document generation',
+        'Contract analysis & review',
+        'Compliance monitoring',
+        'Legal research automation',
+        'Document templates library'
+      ],
+      color: 'bg-gradient-to-br from-slate-500 to-gray-600',
+      textColor: 'text-slate-400',
+      gradient: 'from-slate-400 to-gray-500',
+      pricing: '$149/month',
+      link: 'https://legal.zion.app'
     }
   ];
 
@@ -407,6 +510,153 @@ export default function ServicesPage() {
                 </div>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Micro SaaS Portfolio Highlight */}
+      <section className="section-padding bg-gradient-to-br from-gray-900 to-black relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(34,197,94,0.1),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(59,130,246,0.1),transparent_50%)]" />
+        <div className="container-cursor relative z-10">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse" />
+              Micro SaaS Portfolio
+            </div>
+            <h2 className="text-responsive-lg font-bold mb-8 gradient-text text-shadow">
+              20 Specialized Business Solutions
+            </h2>
+            <p className="text-responsive-md text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              Our comprehensive micro SaaS portfolio covers the most in-demand business needs with focused, 
+              affordable solutions that deliver enterprise-grade features at micro SaaS pricing.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            {/* AI Content & Media Services */}
+            <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 hover:border-green-500/30 transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center text-3xl mb-6 mx-auto">
+                📝
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-4 text-center">Content & Media</h3>
+              <p className="text-gray-400 text-center mb-6">
+                AI-powered content generation, video editing, and image creation for modern businesses.
+              </p>
+              <div className="text-center space-y-2">
+                <div className="text-green-400 font-medium">AI Content Generator - $49/month</div>
+                <div className="text-green-400 font-medium">AI Video Editor - $79/month</div>
+                <div className="text-green-400 font-medium">AI Image Generator - $59/month</div>
+              </div>
+            </div>
+
+            {/* Business Operations */}
+            <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 hover:border-blue-500/30 transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center text-3xl mb-6 mx-auto">
+                ⚙️
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-4 text-center">Business Operations</h3>
+              <p className="text-gray-400 text-center mb-6">
+                Streamlined solutions for project management, billing, and customer support automation.
+              </p>
+              <div className="text-center space-y-2">
+                <div className="text-blue-400 font-medium">Project Management - $69/month</div>
+                <div className="text-blue-400 font-medium">Billing Manager - $49/month</div>
+                <div className="text-blue-400 font-medium">Support Automation - $89/month</div>
+              </div>
+            </div>
+
+            {/* Analytics & Intelligence */}
+            <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 hover:border-purple-500/30 transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center text-3xl mb-6 mx-auto">
+                📊
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-4 text-center">Analytics & Intelligence</h3>
+              <p className="text-gray-400 text-center mb-6">
+                Data-driven insights and business intelligence for informed decision-making.
+              </p>
+              <div className="text-center space-y-2">
+                <div className="text-purple-400 font-medium">BI Hub - $99/month</div>
+                <div className="text-purple-400 font-medium">E-commerce Analytics - $79/month</div>
+                <div className="text-purple-400 font-medium">Customer Feedback - $79/month</div>
+              </div>
+            </div>
+
+            {/* Marketing & SEO */}
+            <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 hover:border-orange-500/30 transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center text-3xl mb-6 mx-auto">
+                🎯
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-4 text-center">Marketing & SEO</h3>
+              <p className="text-gray-400 text-center mb-6">
+                Comprehensive marketing automation and SEO optimization tools.
+              </p>
+              <div className="text-center space-y-2">
+                <div className="text-orange-400 font-medium">Email Marketing - $59/month</div>
+                <div className="text-orange-400 font-medium">SEO Suite - $89/month</div>
+                <div className="text-orange-400 font-medium">Social Media - $39/month</div>
+              </div>
+            </div>
+
+            {/* Development & API */}
+            <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 hover:border-cyan-500/30 transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center text-3xl mb-6 mx-auto">
+                💻
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-4 text-center">Development & API</h3>
+              <p className="text-gray-400 text-center mb-6">
+                Developer tools and API infrastructure for modern applications.
+              </p>
+              <div className="text-center space-y-2">
+                <div className="text-cyan-400 font-medium">AI Code Assistant - $89/month</div>
+                <div className="text-cyan-400 font-medium">API Gateway - $129/month</div>
+                <div className="text-cyan-400 font-medium">Performance Monitor - $39/month</div>
+              </div>
+            </div>
+
+            {/* Specialized Solutions */}
+            <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 hover:border-slate-500/30 transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-slate-500 to-gray-600 rounded-2xl flex items-center justify-center text-3xl mb-6 mx-auto">
+                ⚖️
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-4 text-center">Specialized Solutions</h3>
+              <p className="text-gray-400 text-center mb-6">
+                Niche solutions for specific industries and business needs.
+              </p>
+              <div className="text-center space-y-2">
+                <div className="text-slate-400 font-medium">AI Legal Assistant - $149/month</div>
+                <div className="text-slate-400 font-medium">Design System Builder - $79/month</div>
+                <div className="text-slate-400 font-medium">AI Chatbot Platform - $69/month</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 max-w-4xl mx-auto">
+              <h3 className="text-2xl font-bold text-white mb-6">Why Choose Our Micro SaaS Solutions?</h3>
+              <p className="text-gray-400 mb-8 leading-relaxed">
+                Each solution is built with enterprise-grade technology, offers comprehensive features, 
+                includes 14-day free trials, and provides dedicated support. Our pricing is 15-40% below 
+                market average while maintaining the quality and reliability you expect from enterprise solutions.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button
+                  href="/micro-saas"
+                  size="lg"
+                  className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700"
+                >
+                  Explore All Services
+                </Button>
+                <Button
+                  href="/pricing"
+                  variant="outline"
+                  size="lg"
+                  className="border-green-500 text-green-400 hover:bg-green-500 hover:text-white"
+                >
+                  View Pricing
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </section>

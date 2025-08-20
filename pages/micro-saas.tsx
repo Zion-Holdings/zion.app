@@ -30,6 +30,54 @@ export default function MicroSaasPage() {
       targetAudience: 'Content marketers, agencies, e-commerce businesses, and content creators'
     },
     {
+      name: 'AI Video Editor Pro',
+      tagline: 'Professional AI-powered video editing',
+      price: '$79',
+      period: '/month',
+      description: 'Transform raw footage into professional videos with AI-powered editing, effects, and automation.',
+      features: [
+        'AI-powered scene detection',
+        'Automated video enhancement',
+        'Smart background removal',
+        'Auto-caption generation',
+        'Professional templates library',
+        '4K/8K video support',
+        'Cloud-based processing',
+        'Team collaboration tools'
+      ],
+      popular: true,
+      icon: '🎬',
+      color: 'from-red-500 to-pink-600',
+      textColor: 'text-red-400',
+      link: 'https://video.zion.app',
+      marketPosition: 'Competitive with Runway ML ($12-76), Synthesia ($22-67), and Lumen5 ($19-79)',
+      targetAudience: 'Content creators, marketers, agencies, and video professionals'
+    },
+    {
+      name: 'AI Image Generator Studio',
+      tagline: 'Professional AI image creation platform',
+      price: '$59',
+      period: '/month',
+      description: 'Create stunning, high-resolution images with advanced AI models and professional editing tools.',
+      features: [
+        'Multiple AI models (DALL-E, Midjourney, Stable Diffusion)',
+        'High-resolution output (up to 4K)',
+        'Style transfer and customization',
+        'Batch image generation',
+        'Commercial usage rights',
+        'API access for developers',
+        'Advanced editing tools',
+        'Team collaboration features'
+      ],
+      popular: true,
+      icon: '🎨',
+      color: 'from-purple-500 to-indigo-600',
+      textColor: 'text-purple-400',
+      link: 'https://images.zion.app',
+      marketPosition: 'Competitive with Midjourney ($10-30), DALL-E ($0.02-0.04 per image), and Stable Diffusion ($0.002 per image)',
+      targetAudience: 'Designers, marketers, content creators, and developers'
+    },
+    {
       name: 'Design System Builder',
       tagline: 'Automated design system management',
       price: '$79',
@@ -124,6 +172,30 @@ export default function MicroSaasPage() {
       link: 'https://chatbot.zion.app',
       marketPosition: 'Competitive with Intercom ($39-499), Drift ($0-2500), and ManyChat ($0-15)',
       targetAudience: 'Customer support teams, marketers, and e-commerce businesses'
+    },
+    {
+      name: 'Customer Support Automation',
+      tagline: 'Intelligent customer service platform',
+      price: '$89',
+      period: '/month',
+      description: 'Automate customer support with AI-powered ticket routing, response generation, and analytics.',
+      features: [
+        'AI-powered ticket classification',
+        'Automated response generation',
+        'Smart routing algorithms',
+        'Knowledge base management',
+        'Customer satisfaction tracking',
+        'Multi-channel support',
+        'Performance analytics',
+        'Integration with CRM systems'
+      ],
+      popular: true,
+      icon: '🎧',
+      color: 'from-blue-500 to-indigo-600',
+      textColor: 'text-blue-400',
+      link: 'https://support.zion.app',
+      marketPosition: 'Competitive with Zendesk ($19-99), Freshdesk ($15-99), and Help Scout ($20-65)',
+      targetAudience: 'Customer support teams, e-commerce businesses, and SaaS companies'
     },
     {
       name: 'Business Intelligence Hub',
@@ -292,6 +364,78 @@ export default function MicroSaasPage() {
       link: 'https://api.zion.app',
       marketPosition: 'Competitive with Kong ($250-500), AWS API Gateway ($3.50/million calls), and Azure API Management ($0.50-4.00)',
       targetAudience: 'Developers, DevOps engineers, and platform architects'
+    },
+    {
+      name: 'AI Code Assistant Pro',
+      tagline: 'Intelligent coding companion',
+      price: '$89',
+      period: '/month',
+      description: 'Boost developer productivity with AI-powered code generation, debugging, and optimization.',
+      features: [
+        'AI code generation',
+        'Smart debugging assistance',
+        'Code review automation',
+        'Performance optimization',
+        'Multi-language support',
+        'IDE integration',
+        'Team collaboration',
+        'Custom model training'
+      ],
+      popular: true,
+      icon: '💻',
+      color: 'from-cyan-500 to-blue-600',
+      textColor: 'text-cyan-400',
+      link: 'https://code.zion.app',
+      marketPosition: 'Competitive with GitHub Copilot ($10-19), Tabnine ($12-39), and Kite ($0-99)',
+      targetAudience: 'Developers, engineering teams, and software companies'
+    },
+    {
+      name: 'E-commerce Analytics Suite',
+      tagline: 'Comprehensive e-commerce insights',
+      price: '$79',
+      period: '/month',
+      description: 'Track, analyze, and optimize your e-commerce performance with advanced analytics and automation.',
+      features: [
+        'Sales performance tracking',
+        'Customer behavior analysis',
+        'Conversion optimization',
+        'Inventory management',
+        'Marketing attribution',
+        'A/B testing tools',
+        'Real-time dashboards',
+        'Integration with major platforms'
+      ],
+      popular: false,
+      icon: '🛒',
+      color: 'from-orange-500 to-red-600',
+      textColor: 'text-orange-400',
+      link: 'https://ecommerce.zion.app',
+      marketPosition: 'Competitive with Google Analytics 4 (Free), Mixpanel ($25-1000), and Amplitude ($995-9950)',
+      targetAudience: 'E-commerce businesses, online retailers, and digital marketers'
+    },
+    {
+      name: 'AI Legal Assistant',
+      tagline: 'Intelligent legal document automation',
+      price: '$149',
+      period: '/month',
+      description: 'Automate legal document creation, contract analysis, and compliance monitoring with AI.',
+      features: [
+        'Legal document generation',
+        'Contract analysis & review',
+        'Compliance monitoring',
+        'Legal research automation',
+        'Document templates library',
+        'Risk assessment tools',
+        'Team collaboration',
+        'Secure document storage'
+      ],
+      popular: false,
+      icon: '⚖️',
+      color: 'from-slate-500 to-gray-600',
+      textColor: 'text-slate-400',
+      link: 'https://legal.zion.app',
+      marketPosition: 'Competitive with DocuSign ($10-25), PandaDoc ($19-99), and ContractPodAi ($500-2000)',
+      targetAudience: 'Law firms, legal departments, and compliance officers'
     }
   ];
 
@@ -313,8 +457,8 @@ export default function MicroSaasPage() {
     },
     {
       title: 'Comprehensive Portfolio',
-      description: '12 specialized solutions covering content creation, design, analytics, marketing, and business operations.',
-      stats: '12 micro SaaS solutions'
+      description: '20 specialized solutions covering content creation, design, analytics, marketing, business operations, and emerging technologies.',
+      stats: '20 micro SaaS solutions'
     },
     {
       title: 'Enterprise-Grade Features',
@@ -356,9 +500,10 @@ export default function MicroSaasPage() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400"> Every Business Need</span>
             </h1>
             <p className="text-xl text-gray-400 max-w-5xl mx-auto leading-relaxed mb-12">
-              12 specialized micro SaaS solutions covering content creation, design systems, performance monitoring, 
+              20 specialized micro SaaS solutions covering content creation, design systems, performance monitoring, 
               SEO automation, chatbots, business intelligence, email marketing, social media management, 
-              customer feedback, billing, project management, and API infrastructure. Focused, affordable solutions 
+              customer feedback, billing, project management, API infrastructure, AI video editing, image generation, 
+              customer support automation, code assistance, e-commerce analytics, and legal automation. Focused, affordable solutions 
               that deliver specific value without the complexity of enterprise platforms. Start with a free trial and scale as you grow.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
