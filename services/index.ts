@@ -13,6 +13,9 @@ export { aiHrService } from './aiHrService';
 export { designSystemBuilderService } from './designSystemBuilderService';
 export { performanceMonitorService } from './performanceMonitorService';
 export { videoEditingService } from './videoEditingService';
+export { aiMarketingAutomationService } from './aiMarketingAutomationService';
+export { aiProjectManagementService } from './aiProjectManagementService';
+export { aiCustomerSupportService } from './aiCustomerSupportService';
 
 // Export types
 export type {
@@ -132,3 +135,39 @@ export type {
   VideoExportOptions,
   VideoAnalytics
 } from './videoEditingService';
+
+export type {
+  MarketingCampaign,
+  CampaignMetrics,
+  EmailTemplate,
+  SocialMediaPost,
+  MarketingAutomation,
+  AutomationCondition,
+  AutomationAction
+} from './aiMarketingAutomationService';
+
+export type {
+  Project,
+  TeamMember,
+  Task,
+  Milestone,
+  Risk,
+  Attachment,
+  Comment,
+  ProjectAnalytics,
+  BurndownData,
+  AIRecommendation
+} from './aiProjectManagementService';
+
+export type {
+  SupportTicket,
+  TicketMessage,
+  Customer,
+  SupportAgent,
+  AgentPerformance,
+  ChatbotSession,
+  ChatbotMessage,
+  KnowledgeBaseArticle,
+  SupportAnalytics,
+  AIRecommendation as SupportAIRecommendation
+} from './aiCustomerSupportService';
