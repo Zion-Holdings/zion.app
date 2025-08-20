@@ -141,6 +141,67 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Micro SaaS Services Section */}
+      <section className="py-24 bg-gray-900 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.05)_1px,transparent_1px)] bg-[size:50px_50px] opacity-20" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-20 animate-fade-in">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse" />
+              New: Micro SaaS Services
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight">
+              Professional API Services
+            </h2>
+            <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              Discover our suite of professional micro SaaS services with free tiers, enterprise-grade reliability, and lightning-fast performance.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div className="text-center group">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center text-2xl">
+                📧
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">Email Validator Pro</h3>
+              <p className="text-sm text-gray-400">Advanced email validation with deliverability scoring</p>
+            </div>
+            <div className="text-center group">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center text-2xl">
+                🔒
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">Password Strength</h3>
+              <p className="text-sm text-gray-400">Comprehensive security analysis with entropy calculation</p>
+            </div>
+            <div className="text-center group">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center text-2xl">
+                🔗
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">Smart URL Shortener</h3>
+              <p className="text-sm text-gray-400">Professional shortening with analytics and tracking</p>
+            </div>
+            <div className="text-center group">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center text-2xl">
+                📊
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">Text Analysis Suite</h3>
+              <p className="text-sm text-gray-400">Readability, sentiment, and keyword analysis</p>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <Button
+              href="/micro-saas"
+              size="lg"
+              className="bg-blue-600 hover:bg-blue-700 text-white shadow-2xl"
+            >
+              Explore Services
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-24 bg-gradient-to-r from-blue-600 to-blue-700 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px] opacity-10" />

@@ -1,21 +1,66 @@
 {
   "summary": {
-    "totalFiles": 0,
-    "filesWithIssues": 0,
+    "totalFiles": 4,
+    "filesWithIssues": 4,
     "totalIssues": 0,
-    "totalWarnings": 0,
+    "totalWarnings": 4,
     "buildBreakingFiles": 0,
     "canBuild": true
   },
-  "results": [],
+  "results": [
+    {
+      "file": "pages/api/email-validator.ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 81,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/password-strength.ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 68,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/text-analyzer.ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 71,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "file": "pages/api/url-shortener.ts",
+      "issues": [],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "INCOMPLETE_HTML",
+          "message": "Incomplete HTML tags detected",
+          "line": 31,
+          "severity": "warning"
+        }
+      ]
+    }
+  ],
   "buildBreakingFiles": [],
-<<<<<<< HEAD
-  "generatedAt": "2025-08-20T17:40:31.095Z"
-=======
-<<<<<<< HEAD
-  "generatedAt": "2025-08-20T17:38:13.136Z"
-=======
-  "generatedAt": "2025-08-20T17:35:34.842Z"
->>>>>>> 95fa6c311d4b41251eb6072c8584329039d31eab
->>>>>>> 1022be7ec5b2dd8bc7a04b5606bfc8176d950021
+  "generatedAt": "2025-08-20T18:45:58.084Z"
 }
