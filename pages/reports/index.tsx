@@ -41,7 +41,7 @@ export const getStaticProps: GetStaticProps<ReportsPageProps> = async () => {
         reports,
       },
     };
-  } catch (_err) {
+  } catch {
     return { props: { reports: [] } };
   }
 };
