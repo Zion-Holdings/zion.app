@@ -23,7 +23,6 @@ const Header = () => {
     { name: 'Case Studies', href: '/case-studies' },
     { name: 'Blog', href: '/blog' },
     { name: 'Resources', href: '/resources' },
-    { name: 'Changes', href: '/changes' },
     { name: 'Contact', href: '/contact' },
   ];
 
@@ -33,15 +32,15 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-cursor-darker/90 backdrop-blur-xl border-b border-cursor-lighter/20'
+          ? 'bg-cursor-darker/95 backdrop-blur-xl border-b border-cursor-lighter/20 shadow-lg'
           : 'bg-transparent'
       }`}
     >
-      <div className="container-cursor">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-cursor-blue to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <div className="w-10 h-10 bg-gradient-to-br from-cursor-blue to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
               <span className="text-white font-bold text-xl">Z</span>
             </div>
             <span className="text-xl font-bold gradient-text-blue group-hover:from-cursor-blue group-hover:to-blue-400 transition-all duration-300">
@@ -55,7 +54,7 @@ const Header = () => {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`text-sm font-medium transition-all duration-200 relative ${
+                className={`text-sm font-medium transition-all duration-200 relative group ${
                   isActive(item.href)
                     ? 'text-cursor-blue'
                     : 'text-gray-300 hover:text-white'
@@ -65,6 +64,7 @@ const Header = () => {
                 {isActive(item.href) && (
                   <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-cursor-blue rounded-full" />
                 )}
+                <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-cursor-blue/20 rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
               </Link>
             ))}
           </nav>
@@ -73,7 +73,7 @@ const Header = () => {
           <div className="hidden lg:flex items-center space-x-4">
             <Link
               href="/contact"
-              className="btn btn-primary hover-lift"
+              className="btn btn-primary hover-lift px-6 py-3 text-sm font-semibold"
             >
               Get Started
             </Link>
@@ -83,6 +83,7 @@ const Header = () => {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="lg:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-cursor-light transition-all duration-200"
+            aria-label="Toggle mobile menu"
           >
             <svg
               className="w-6 h-6"
@@ -112,14 +113,14 @@ const Header = () => {
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <div className="lg:hidden">
-            <div className="px-4 pt-4 pb-6 space-y-2 bg-cursor-darker/95 backdrop-blur-xl rounded-xl mt-2 border border-cursor-lighter/20">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-cursor-darker/95 backdrop-blur-xl border-t border-cursor-lighter/20">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 ${
+                  className={`block px-3 py-2 rounded-md text-base font-medium transition-all duration-200 ${
                     isActive(item.href)
-                      ? 'text-cursor-blue bg-cursor-blue/10 border border-cursor-blue/20'
+                      ? 'text-cursor-blue bg-cursor-blue/10'
                       : 'text-gray-300 hover:text-white hover:bg-cursor-light'
                   }`}
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -127,10 +128,10 @@ const Header = () => {
                   {item.name}
                 </Link>
               ))}
-              <div className="pt-4 border-t border-cursor-lighter/20">
+              <div className="pt-4">
                 <Link
                   href="/contact"
-                  className="btn btn-primary w-full justify-center"
+                  className="btn btn-primary w-full text-center"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Get Started

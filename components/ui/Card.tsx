@@ -15,8 +15,8 @@ const Card: React.FC<CardProps> = ({
   onClick,
   hover = true,
 }) => {
-  const baseClasses = 'bg-cursor-dark border border-cursor-lighter rounded-xl p-6 transition-all duration-300';
-  const hoverClasses = hover ? 'hover:border-cursor-blue/30 hover:shadow-lg hover:shadow-cursor-blue/10 hover:-translate-y-1' : '';
+  const baseClasses = 'bg-cursor-dark/80 backdrop-blur-sm border border-cursor-lighter/30 rounded-xl p-6 transition-all duration-300 relative overflow-hidden';
+  const hoverClasses = hover ? 'hover:border-cursor-blue/40 hover:shadow-2xl hover:shadow-cursor-blue/20 hover:-translate-y-1 hover:bg-cursor-dark/90' : '';
   const clickableClasses = onClick ? 'cursor-pointer' : '';
   
   const classes = `${baseClasses} ${hoverClasses} ${clickableClasses} ${className}`;
@@ -27,7 +27,18 @@ const Card: React.FC<CardProps> = ({
       style={style}
       onClick={onClick}
     >
-      {children}
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 bg-gradient-to-br from-cursor-blue/5 via-transparent to-purple-500/5 opacity-0 hover:opacity-100 transition-opacity duration-300" />
+      
+      {/* Content wrapper */}
+      <div className="relative z-10">
+        {children}
+      </div>
+      
+      {/* Hover glow effect */}
+      {hover && (
+        <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-cursor-blue/0 via-cursor-blue/5 to-cursor-blue/0 opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+      )}
     </div>
   );
 };

@@ -5,6 +5,9 @@
 /* Import Inter font for modern typography */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
+/* Import JetBrains Mono for code sections */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
 /* CSS Variables for Cursor.com-inspired theming */
 :root {
   --background: #0a0a0a;
@@ -22,12 +25,6 @@
   --ring: #007acc;
   --radius: 0.75rem;
   --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  --cursor-blue: #007acc;
-  --cursor-blue-hover: #005a9e;
-  --cursor-dark: #1e1e1e;
-  --cursor-darker: #0a0a0a;
-  --cursor-light: #2d2d2d;
-  --cursor-lighter: #404040;
 }
 
 /* Base styles */
@@ -39,6 +36,7 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
@@ -48,6 +46,8 @@ body {
   line-height: 1.6;
   font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   font-variation-settings: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Typography */
@@ -80,7 +80,7 @@ a {
 }
 
 a:hover {
-  color: var(--cursor-blue);
+  color: var(--primary);
 }
 
 /* Custom scrollbar */
@@ -89,16 +89,16 @@ a:hover {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--cursor-dark);
+  background: var(--secondary);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--cursor-lighter);
+  background: var(--border);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--cursor-blue);
+  background: var(--primary);
 }
 
 /* Focus styles */
@@ -113,7 +113,7 @@ a:hover {
 }
 
 .btn-primary {
-  @apply bg-gradient-to-r from-cursor-blue to-blue-600 hover:from-cursor-blue-hover hover:to-blue-700 text-white shadow-lg hover:shadow-xl hover:-translate-y-0.5 border-0;
+  @apply bg-gradient-to-r from-cursor-blue to-blue-600 hover:from-cursor-blue-hover hover:to-blue-700 text-white shadow-lg hover:shadow-xl hover:-translate-y-0.5 border-0 hover:shadow-cursor-blue/25;
 }
 
 .btn-secondary {
@@ -243,4 +243,35 @@ a:hover {
 
 .cursor-dot-outline {
   @apply w-4 h-4 border border-cursor-blue rounded-full;
+}
+
+/* Code block styling */
+.code-block {
+  @apply bg-cursor-dark border border-cursor-lighter rounded-lg p-4 font-mono text-sm;
+}
+
+/* Selection styling */
+::selection {
+  background-color: rgba(0, 122, 204, 0.3);
+  color: white;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Focus visible for better accessibility */
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* Reduced motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
