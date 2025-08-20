@@ -5,9 +5,6 @@
 /* Import Inter font for modern typography */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
-/* Import JetBrains Mono for code sections */
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
-
 /* CSS Variables for Cursor.com-inspired theming */
 :root {
   --background: #0a0a0a;
@@ -25,6 +22,22 @@
   --ring: #007acc;
   --radius: 0.75rem;
   --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --cursor-blue: #007acc;
+  --cursor-blue-hover: #005a9e;
+  --cursor-dark: #1e1e1e;
+  --cursor-darker: #0a0a0a;
+  --cursor-light: #2d2d2d;
+  --cursor-lighter: #404040;
+  --cursor-accent: #00d4aa;
+  --cursor-accent-hover: #00b894;
+  --cursor-purple: #8b5cf6;
+  --cursor-purple-hover: #7c3aed;
+  --cursor-orange: #f59e0b;
+  --cursor-orange-hover: #d97706;
+  --cursor-red: #ef4444;
+  --cursor-red-hover: #dc2626;
+  --cursor-green: #10b981;
+  --cursor-green-hover: #059669;
 }
 
 /* Base styles */
@@ -36,7 +49,6 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
 }
 
 body {
@@ -80,7 +92,7 @@ a {
 }
 
 a:hover {
-  color: var(--primary);
+  color: var(--cursor-blue);
 }
 
 /* Custom scrollbar */
@@ -89,16 +101,16 @@ a:hover {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--secondary);
+  background: var(--cursor-dark);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--border);
+  background: var(--cursor-lighter);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--primary);
+  background: var(--cursor-blue);
 }
 
 /* Focus styles */
@@ -113,7 +125,7 @@ a:hover {
 }
 
 .btn-primary {
-  @apply bg-gradient-to-r from-cursor-blue to-blue-600 hover:from-cursor-blue-hover hover:to-blue-700 text-white shadow-lg hover:shadow-xl hover:-translate-y-0.5 border-0 hover:shadow-cursor-blue/25;
+  @apply bg-gradient-to-r from-cursor-blue to-blue-600 hover:from-cursor-blue-hover hover:to-blue-700 text-white shadow-lg hover:shadow-xl hover:-translate-y-0.5 border-0;
 }
 
 .btn-secondary {
@@ -128,9 +140,25 @@ a:hover {
   @apply bg-transparent hover:bg-cursor-light text-gray-300 hover:text-white;
 }
 
+.btn-accent {
+  @apply bg-gradient-to-r from-cursor-accent to-cursor-green hover:from-cursor-accent-hover hover:to-cursor-green-hover text-white shadow-lg hover:shadow-xl hover:-translate-y-0.5 border-0;
+}
+
+.btn-purple {
+  @apply bg-gradient-to-r from-cursor-purple to-purple-600 hover:from-cursor-purple-hover hover:to-purple-700 text-white shadow-lg hover:shadow-xl hover:-translate-y-0.5 border-0;
+}
+
 /* Card styles */
 .card {
   @apply bg-cursor-dark border border-cursor-lighter rounded-xl p-6 transition-all duration-300 hover:border-cursor-blue/30 hover:shadow-lg hover:shadow-cursor-blue/10;
+}
+
+.card-hover {
+  @apply hover:border-cursor-blue/40 hover:shadow-2xl hover:shadow-cursor-blue/20 hover:-translate-y-1;
+}
+
+.card-gradient {
+  @apply bg-gradient-to-br from-cursor-dark to-cursor-darker border border-cursor-lighter/50;
 }
 
 /* Animation classes */
@@ -187,6 +215,26 @@ a:hover {
   }
 }
 
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 122, 204, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 122, 204, 0.6);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
 .animate-fade-in {
   animation: fade-in 0.8s ease-out forwards;
 }
@@ -207,6 +255,14 @@ a:hover {
   animation: slide-in-right 0.8s ease-out forwards;
 }
 
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
 /* Hover effects */
 .hover-lift {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -215,6 +271,10 @@ a:hover {
 .hover-lift:hover {
   transform: translateY(-2px);
   box-shadow: 0 20px 40px rgba(0, 122, 204, 0.15);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 30px rgba(0, 122, 204, 0.4);
 }
 
 /* Gradient text utilities */
@@ -226,14 +286,34 @@ a:hover {
   @apply bg-gradient-to-r from-cursor-blue via-blue-400 to-blue-300 bg-clip-text text-transparent;
 }
 
+.gradient-text-accent {
+  @apply bg-gradient-to-r from-cursor-accent via-cursor-green to-green-400 bg-clip-text text-transparent;
+}
+
+.gradient-text-purple {
+  @apply bg-gradient-to-r from-cursor-purple via-purple-400 to-purple-300 bg-clip-text text-transparent;
+}
+
 /* Glass morphism effect */
 .glass {
   @apply bg-white/5 backdrop-blur-xl border border-white/10;
 }
 
+.glass-dark {
+  @apply bg-black/20 backdrop-blur-xl border border-white/5;
+}
+
 /* Responsive utilities */
 .container-cursor {
   @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.container-cursor-sm {
+  @apply max-w-5xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.container-cursor-lg {
+  @apply max-w-8xl mx-auto px-4 sm:px-6 lg:px-8;
 }
 
 /* Custom cursor styles */
@@ -245,33 +325,76 @@ a:hover {
   @apply w-4 h-4 border border-cursor-blue rounded-full;
 }
 
-/* Code block styling */
-.code-block {
-  @apply bg-cursor-dark border border-cursor-lighter rounded-lg p-4 font-mono text-sm;
+/* Background patterns */
+.bg-grid {
+  background-image: 
+    linear-gradient(rgba(0, 122, 204, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 122, 204, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
 }
 
-/* Selection styling */
-::selection {
-  background-color: rgba(0, 122, 204, 0.3);
-  color: white;
+.bg-dots {
+  background-image: radial-gradient(circle, rgba(0, 122, 204, 0.3) 1px, transparent 1px);
+  background-size: 20px 20px;
 }
 
-/* Smooth transitions for all interactive elements */
-* {
-  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+/* Gradient backgrounds */
+.bg-gradient-cursor {
+  @apply bg-gradient-to-br from-cursor-darker via-cursor-dark to-cursor-darker;
 }
 
-/* Focus visible for better accessibility */
-:focus-visible {
-  outline: 2px solid var(--ring);
-  outline-offset: 2px;
+.bg-gradient-cursor-blue {
+  @apply bg-gradient-to-br from-cursor-darker via-cursor-dark to-blue-900/20;
 }
 
-/* Reduced motion for users who prefer it */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
+.bg-gradient-cursor-accent {
+  @apply bg-gradient-to-br from-cursor-darker via-cursor-dark to-cursor-accent/10;
+}
+
+/* Border gradients */
+.border-gradient-blue {
+  border: 1px solid transparent;
+  background: linear-gradient(var(--cursor-darker), var(--cursor-darker)) padding-box,
+              linear-gradient(45deg, var(--cursor-blue), var(--cursor-accent)) border-box;
+}
+
+.border-gradient-purple {
+  border: 1px solid transparent;
+  background: linear-gradient(var(--cursor-darker), var(--cursor-darker)) padding-box,
+              linear-gradient(45deg, var(--cursor-purple), var(--cursor-blue)) border-box;
+}
+
+/* Text shadows */
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.text-shadow-lg {
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive text sizes */
+.text-responsive-xl {
+  @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl;
+}
+
+.text-responsive-lg {
+  @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl;
+}
+
+.text-responsive-md {
+  @apply text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl;
+}
+
+/* Spacing utilities */
+.section-padding {
+  @apply py-16 sm:py-20 md:py-24 lg:py-32;
+}
+
+.section-padding-sm {
+  @apply py-12 sm:py-16 md:py-20 lg:py-24;
+}
+
+.section-padding-lg {
+  @apply py-20 sm:py-24 md:py-32 lg:py-40;
 }

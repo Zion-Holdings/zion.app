@@ -31,6 +31,7 @@ export default function ContactPage() {
       description: 'Get in touch with our team',
       contact: 'hello@ziontech.com',
       color: 'text-cyan-400',
+      gradient: 'from-cyan-400 to-blue-500',
     },
     {
       icon: '📱',
@@ -38,6 +39,7 @@ export default function ContactPage() {
       description: 'Speak with an expert',
       contact: '+1 (555) 123-4567',
       color: 'text-fuchsia-400',
+      gradient: 'from-fuchsia-400 to-purple-500',
     },
     {
       icon: '💬',
@@ -45,6 +47,7 @@ export default function ContactPage() {
       description: 'Chat with us online',
       contact: 'Available 24/7',
       color: 'text-green-400',
+      gradient: 'from-green-400 to-emerald-500',
     },
   ];
 
@@ -54,18 +57,21 @@ export default function ContactPage() {
       country: 'United States',
       address: '123 Innovation Drive, San Francisco, CA 94105',
       icon: '🏢',
+      gradient: 'from-blue-400 to-cyan-500',
     },
     {
       city: 'London',
       country: 'United Kingdom',
       address: '456 Tech Street, London, EC1A 1BB',
       icon: '🏛️',
+      gradient: 'from-purple-400 to-pink-500',
     },
     {
       city: 'Singapore',
       country: 'Singapore',
       address: '789 Digital Road, Singapore 018956',
       icon: '🌆',
+      gradient: 'from-green-400 to-teal-500',
     },
   ];
 
@@ -80,29 +86,34 @@ export default function ContactPage() {
       </Head>
 
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-black via-gray-900 to-black overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(139,92,246,0.1),transparent_50%)]" />
+      <section className="relative section-padding bg-gradient-cursor overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,122,204,0.08),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(0,122,204,0.06),transparent_50%)]" />
+        <div className="absolute inset-0 bg-grid opacity-10" />
         
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-7xl font-black mb-8 bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent">
+        <div className="relative z-10 container-cursor text-center">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-cursor-blue/10 border border-cursor-blue/20 text-cursor-blue text-sm font-medium mb-6">
+            <span className="w-2 h-2 bg-cursor-blue rounded-full mr-2 animate-pulse" />
+            Contact Us
+          </div>
+          <h1 className="text-responsive-xl font-black mb-8 gradient-text text-shadow-lg">
             Get in Touch
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                         Ready to transform your business with AI-powered solutions? Let&apos;s start a conversation.
+          <p className="text-responsive-md text-gray-300 max-w-4xl mx-auto leading-relaxed">
+            Ready to transform your business with AI-powered solutions? Let&apos;s start a conversation.
           </p>
         </div>
       </section>
 
       {/* Contact Methods */}
-      <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-              Ways to Connect
+      <section className="section-padding bg-gradient-cursor-accent">
+        <div className="container-cursor">
+          <div className="text-center mb-20">
+            <h2 className="text-responsive-lg font-bold mb-8 gradient-text text-shadow">
+              Multiple Ways to Connect
             </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Choose the method that works best for you
+            <p className="text-responsive-md text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              Choose the method that works best for you. Our team is ready to help with your next project.
             </p>
           </div>
 
@@ -110,17 +121,24 @@ export default function ContactPage() {
             {contactMethods.map((method, index) => (
               <Card
                 key={index}
-                className="text-center group hover:border-blue-400/30"
-                style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
+                className="card-hover text-center group border-gradient-blue"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">
-                  {method.icon}
+                <div className="relative">
+                  <div className={`w-16 h-16 mx-auto mb-6 rounded-2xl flex items-center justify-center text-2xl bg-gradient-to-br ${method.gradient} shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                    {method.icon}
+                  </div>
+                  <div className={`absolute -inset-2 bg-gradient-to-r from-transparent via-${method.gradient} to-transparent rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-sm`} />
                 </div>
-                <h3 className={`text-xl font-semibold mb-3 ${method.color}`}>
+                <h3 className={`text-xl font-bold mb-3 ${method.color}`}>
                   {method.title}
                 </h3>
-                <p className="text-gray-400 mb-4">{method.description}</p>
-                <div className="text-white font-medium">{method.contact}</div>
+                <p className="text-gray-400 mb-4 text-sm">
+                  {method.description}
+                </p>
+                <p className="text-white font-medium">
+                  {method.contact}
+                </p>
               </Card>
             ))}
           </div>
@@ -128,19 +146,25 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form & Office Locations */}
-      <section className="py-20 bg-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <section className="section-padding bg-gradient-cursor">
+        <div className="container-cursor">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Contact Form */}
             <div>
-              <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                Send us a Message
-              </h2>
-              <Card className="p-8">
-                <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="mb-8">
+                <h2 className="text-responsive-lg font-bold mb-6 gradient-text text-shadow">
+                  Send Us a Message
+                </h2>
+                <p className="text-gray-400 leading-relaxed">
+                  Tell us about your project and we&apos;ll get back to you within 24 hours.
+                </p>
+              </div>
+
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                      Full Name *
+                      Name *
                     </label>
                     <input
                       type="text"
@@ -149,14 +173,13 @@ export default function ContactPage() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      placeholder="Enter your full name"
+                      className="w-full px-4 py-3 bg-cursor-light border border-cursor-lighter rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cursor-blue focus:border-transparent transition-all duration-200"
+                      placeholder="Your full name"
                     />
                   </div>
-
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                      Email Address *
+                      Email *
                     </label>
                     <input
                       type="email"
@@ -165,75 +188,85 @@ export default function ContactPage() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      placeholder="Enter your email address"
+                      className="w-full px-4 py-3 bg-cursor-light border border-cursor-lighter rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cursor-blue focus:border-transparent transition-all duration-200"
+                      placeholder="your@email.com"
                     />
                   </div>
-
-                  <div>
-                    <label htmlFor="company" className="block text-sm font-medium text-gray-300 mb-2">
-                      Company
-                    </label>
-                    <input
-                      type="text"
-                      id="company"
-                      name="company"
-                      value={formData.company}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      placeholder="Enter your company name"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                      Message *
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      rows={5}
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
-                      placeholder="Tell us about your project or inquiry"
-                    />
-                  </div>
-
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="w-full"
-                  >
-                    Send Message
-                  </Button>
-                </form>
-              </Card>
+                </div>
+                <div>
+                  <label htmlFor="company" className="block text-sm font-medium text-gray-300 mb-2">
+                    Company
+                  </label>
+                  <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 bg-cursor-light border border-cursor-lighter rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cursor-blue focus:border-transparent transition-all duration-200"
+                    placeholder="Your company name"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                    Message *
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows={6}
+                    className="w-full px-4 py-3 bg-cursor-light border border-cursor-lighter rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cursor-blue focus:border-transparent transition-all duration-200 resize-none"
+                    placeholder="Tell us about your project..."
+                  />
+                </div>
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="w-full shadow-2xl hover-glow"
+                >
+                  Send Message
+                </Button>
+              </form>
             </div>
 
             {/* Office Locations */}
             <div>
-              <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                Our Offices
-              </h2>
+              <div className="mb-8">
+                <h2 className="text-responsive-lg font-bold mb-6 gradient-text text-shadow">
+                  Our Offices
+                </h2>
+                <p className="text-gray-400 leading-relaxed">
+                  Visit us at one of our global locations or schedule a virtual meeting.
+                </p>
+              </div>
+
               <div className="space-y-6">
-                {officeLocations.map((office, index) => (
+                {officeLocations.map((location, index) => (
                   <Card
                     key={index}
-                    className="p-6 group hover:border-blue-400/30"
-                    style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
+                    className="card-hover group border-gradient-blue"
+                    style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     <div className="flex items-start space-x-4">
-                      <div className="text-3xl group-hover:scale-110 transition-transform duration-300">
-                        {office.icon}
+                      <div className="relative">
+                        <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-xl bg-gradient-to-br ${location.gradient} shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                          {location.icon}
+                        </div>
+                        <div className={`absolute -inset-1 bg-gradient-to-r from-transparent via-${location.gradient} to-transparent rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-sm`} />
                       </div>
-                      <div>
+                      <div className="flex-1">
                         <h3 className="text-lg font-semibold text-white mb-1">
-                          {office.city}
+                          {location.city}
                         </h3>
-                        <p className="text-gray-400 text-sm mb-2">{office.country}</p>
-                        <p className="text-gray-300 text-sm">{office.address}</p>
+                        <p className="text-gray-400 text-sm mb-2">
+                          {location.country}
+                        </p>
+                        <p className="text-gray-300 text-sm leading-relaxed">
+                          {location.address}
+                        </p>
                       </div>
                     </div>
                   </Card>
@@ -244,67 +277,21 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-20 bg-gradient-to-b from-black to-gray-900">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-xl text-gray-400">
-              Quick answers to common questions
-            </p>
-          </div>
-
-          <div className="space-y-6">
-            {[
-              {
-                question: 'How quickly can you start a project?',
-                answer: 'We can typically begin projects within 1-2 weeks of initial consultation, depending on complexity and current capacity.',
-              },
-              {
-                question: 'Do you offer ongoing support?',
-                answer: 'Yes, we provide comprehensive ongoing support, maintenance, and optimization services for all our solutions.',
-              },
-              {
-                question: 'What industries do you specialize in?',
-                answer: 'We work across various industries including fintech, healthcare, e-commerce, manufacturing, and more.',
-              },
-              {
-                question: 'Can you work with existing systems?',
-                answer: 'Absolutely! We specialize in integrating with and modernizing existing systems and infrastructure.',
-              },
-            ].map((faq, index) => (
-              <Card
-                key={index}
-                className="p-6 group hover:border-blue-400/30"
-                style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
-              >
-                <h3 className="text-lg font-semibold text-white mb-3">
-                  {faq.question}
-                </h3>
-                <p className="text-gray-400">{faq.answer}</p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Ready to Get Started?
+      <section className="section-padding bg-gradient-to-r from-cursor-blue to-blue-600 relative overflow-hidden">
+        <div className="absolute inset-0 bg-dots opacity-10" />
+        <div className="container-cursor text-center relative z-10">
+          <h2 className="text-responsive-lg font-bold text-white mb-8 text-shadow-lg">
+            Ready to Start Your Project?
           </h2>
-          <p className="text-xl text-blue-100 mb-8">
-                         Let&apos;s discuss how we can help transform your business with AI-powered solutions.
+          <p className="text-responsive-md text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed">
+            Let&apos;s discuss how we can help bring your vision to life with cutting-edge technology solutions.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Button
               href="/services"
-              variant="secondary"
               size="lg"
-              className="bg-white text-blue-600 hover:bg-gray-100"
+              className="bg-white text-cursor-blue hover:bg-gray-100 shadow-2xl hover-glow"
             >
               Explore Services
             </Button>
@@ -312,7 +299,7 @@ export default function ContactPage() {
               href="/case-studies"
               variant="outline"
               size="lg"
-              className="border-white text-white hover:bg-white hover:text-blue-600"
+              className="border-white text-white hover:bg-white hover:text-cursor-blue shadow-2xl"
             >
               View Case Studies
             </Button>

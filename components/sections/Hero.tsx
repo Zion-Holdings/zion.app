@@ -27,30 +27,36 @@ const Hero: React.FC<HeroProps> = ({
   stats,
 }) => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-cursor-darker via-cursor-dark to-cursor-darker">
-        {/* Radial gradients for depth */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,122,204,0.15),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(0,122,204,0.1),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,122,204,0.08),transparent_70%)]" />
-        
-        {/* Grid pattern overlay */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,122,204,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,122,204,0.03)_1px,transparent_1px)] bg-[size:64px_64px]" />
+      <div className="absolute inset-0 bg-gradient-cursor">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,122,204,0.08),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(0,122,204,0.06),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(0,212,170,0.04),transparent_50%)]" />
       </div>
+
+      {/* Grid Pattern */}
+      <div className="absolute inset-0 bg-grid opacity-20" />
 
       {/* Floating Elements */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-cursor-blue/10 rounded-full blur-3xl animate-float" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1.5s' }} />
-      <div className="absolute top-1/2 left-1/4 w-48 h-48 bg-purple-500/8 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }} />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-cursor-accent/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1.5s' }} />
+      <div className="absolute top-1/2 left-1/4 w-48 h-48 bg-cursor-purple/8 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }} />
 
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 container-cursor text-center">
         {/* Main Content */}
         <div className="mb-20 animate-fade-in">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 gradient-text leading-tight tracking-tight">
+          <div className="mb-8">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-cursor-blue/10 border border-cursor-blue/20 text-cursor-blue text-sm font-medium mb-6 animate-scale-in">
+              <span className="w-2 h-2 bg-cursor-blue rounded-full mr-2 animate-pulse" />
+              World&apos;s Most Advanced Autonomous Platform
+            </div>
+          </div>
+          
+          <h1 className="text-responsive-xl font-black mb-8 gradient-text leading-tight text-shadow-lg">
             {title}
           </h1>
-          <p className="text-xl md:text-2xl lg:text-3xl text-gray-300 max-w-5xl mx-auto mb-16 leading-relaxed font-light">
+          <p className="text-responsive-md text-gray-300 max-w-5xl mx-auto mb-16 leading-relaxed">
             {subtitle}
           </p>
 
@@ -61,12 +67,10 @@ const Hero: React.FC<HeroProps> = ({
                 <Button
                   href={primaryAction.href}
                   size="lg"
-                  className="animate-scale-in shadow-2xl shadow-cursor-blue/25 group"
+                  className="animate-scale-in shadow-2xl shadow-cursor-blue/25 hover-glow"
                   style={{ animationDelay: '0.2s' }}
                 >
-                  <span className="group-hover:scale-105 transition-transform duration-200">
-                    {primaryAction.text}
-                  </span>
+                  {primaryAction.text}
                 </Button>
               )}
               {secondaryAction && (
@@ -74,12 +78,10 @@ const Hero: React.FC<HeroProps> = ({
                   href={secondaryAction.href}
                   variant="outline"
                   size="lg"
-                  className="animate-scale-in group"
+                  className="animate-scale-in border-cursor-lighter hover:border-cursor-blue hover:bg-cursor-light/20"
                   style={{ animationDelay: '0.4s' }}
                 >
-                  <span className="group-hover:scale-105 transition-transform duration-200">
-                    {secondaryAction.text}
-                  </span>
+                  {secondaryAction.text}
                 </Button>
               )}
             </div>
@@ -91,8 +93,11 @@ const Hero: React.FC<HeroProps> = ({
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto animate-fade-in" style={{ animationDelay: '0.6s' }}>
             {stats.map((stat, index) => (
               <div key={index} className="text-center group">
-                <div className={`text-4xl md:text-5xl font-bold mb-3 ${stat.color} group-hover:scale-110 transition-transform duration-300`}>
-                  {stat.value}
+                <div className="relative">
+                  <div className={`text-4xl md:text-5xl font-bold mb-3 ${stat.color} group-hover:scale-110 transition-transform duration-300`}>
+                    {stat.value}
+                  </div>
+                  <div className="absolute -inset-2 bg-gradient-to-r from-transparent via-cursor-blue/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
                 <div className="text-gray-400 text-sm md:text-base font-medium">
                   {stat.label}
@@ -110,10 +115,10 @@ const Hero: React.FC<HeroProps> = ({
         </div>
       </div>
 
-      {/* Decorative elements */}
-      <div className="absolute top-1/4 right-1/4 w-2 h-2 bg-cursor-blue rounded-full animate-pulse" style={{ animationDelay: '0.5s' }} />
-      <div className="absolute bottom-1/4 left-1/4 w-1 h-1 bg-blue-400 rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
-      <div className="absolute top-1/2 right-1/3 w-1.5 h-1.5 bg-purple-400 rounded-full animate-pulse" style={{ animationDelay: '1.5s' }} />
+      {/* Decorative Elements */}
+      <div className="absolute top-1/4 right-1/4 w-2 h-2 bg-cursor-blue rounded-full animate-pulse" />
+      <div className="absolute bottom-1/4 left-1/4 w-1 h-1 bg-cursor-accent rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
+      <div className="absolute top-1/2 right-1/3 w-1.5 h-1.5 bg-cursor-purple rounded-full animate-pulse" style={{ animationDelay: '2s' }} />
     </section>
   );
 };
