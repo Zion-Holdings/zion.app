@@ -29,14 +29,17 @@ const Features: React.FC<FeaturesProps> = ({
   };
 
   return (
-    <section className="py-20 bg-gradient-to-b from-black to-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-24 bg-gradient-to-b from-black to-gray-900 overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-dots opacity-5" />
+      
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+        <div className="text-center mb-20 animate-fade-in">
+          <h2 className="text-5xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent leading-tight">
             {title}
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-gray-400 max-w-4xl mx-auto text-balance leading-relaxed">
             {subtitle}
           </p>
         </div>
@@ -46,18 +49,28 @@ const Features: React.FC<FeaturesProps> = ({
           {features.map((feature, index) => (
             <Card
               key={index}
-              className="text-center group"
+              className="text-center group relative overflow-hidden hover:border-blue-500/30 transition-all duration-500"
               style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
             >
-              <div className={`w-16 h-16 mx-auto mb-6 rounded-2xl flex items-center justify-center text-2xl transition-transform duration-300 group-hover:scale-110 ${feature.color}`}>
-                {feature.icon}
+              {/* Background Glow Effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+              
+              {/* Icon Container */}
+              <div className={`relative w-20 h-20 mx-auto mb-8 rounded-2xl flex items-center justify-center text-3xl transition-all duration-500 group-hover:scale-110 group-hover:shadow-2xl ${feature.color}`}>
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10">{feature.icon}</div>
               </div>
-              <h3 className="text-xl font-bold mb-4 text-white group-hover:text-blue-400 transition-colors duration-300">
+              
+              {/* Content */}
+              <h3 className="text-2xl font-bold mb-6 text-white group-hover:text-blue-400 transition-colors duration-300">
                 {feature.title}
               </h3>
-              <p className="text-gray-400 leading-relaxed">
+              <p className="text-gray-400 leading-relaxed text-lg group-hover:text-gray-300 transition-colors duration-300">
                 {feature.description}
               </p>
+              
+              {/* Hover Border Effect */}
+              <div className="absolute inset-0 border-2 border-transparent rounded-2xl group-hover:border-blue-500/20 transition-all duration-500" />
             </Card>
           ))}
         </div>
