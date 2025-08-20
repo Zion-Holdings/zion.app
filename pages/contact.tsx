@@ -1,164 +1,324 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
+import Card from '../components/ui/Card';
+import Button from '../components/ui/Button';
 
 export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    message: '',
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle form submission
+    // Form submission logic would go here
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const contactMethods = [
+    {
+      icon: '📧',
+      title: 'Email',
+      description: 'Get in touch with our team',
+      contact: 'hello@ziontech.com',
+      color: 'text-cyan-400',
+    },
+    {
+      icon: '📱',
+      title: 'Phone',
+      description: 'Speak with an expert',
+      contact: '+1 (555) 123-4567',
+      color: 'text-fuchsia-400',
+    },
+    {
+      icon: '💬',
+      title: 'Live Chat',
+      description: 'Chat with us online',
+      contact: 'Available 24/7',
+      color: 'text-green-400',
+    },
+  ];
+
+  const officeLocations = [
+    {
+      city: 'San Francisco',
+      country: 'United States',
+      address: '123 Innovation Drive, San Francisco, CA 94105',
+      icon: '🏢',
+    },
+    {
+      city: 'London',
+      country: 'United Kingdom',
+      address: '456 Tech Street, London, EC1A 1BB',
+      icon: '🏛️',
+    },
+    {
+      city: 'Singapore',
+      country: 'Singapore',
+      address: '789 Digital Road, Singapore 018956',
+      icon: '🌆',
+    },
+  ];
+
   return (
     <>
       <Head>
-        <title>Contact Zion Tech Group | Get in Touch</title>
-        <meta name="description" content="Get in touch with Zion Tech Group. We&apos;re here to help with your autonomous technology needs and AI innovation projects." />
-        <meta property="og:title" content="Contact Zion Tech Group" />
-        <meta property="og:description" content="Get in touch with Zion Tech Group." />
+        <title>Contact Us | Zion Tech Group - Get Started Today</title>
+        <meta name="description" content="Get in touch with Zion Tech Group to discuss your AI and automation needs. Our experts are ready to help transform your business." />
+        <meta property="og:title" content="Contact Us | Zion Tech Group" />
+        <meta property="og:description" content="Get in touch to discuss your AI and automation needs." />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      
-      <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-950 text-white">
-        <main className="container mx-auto px-6 py-12">
-          <section className="text-center mb-16">
-            <h1 className="text-5xl font-extrabold mb-6 bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent">
-              Contact Us
-            </h1>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto">
-              Ready to explore the future of autonomous technology? Let&apos;s connect and discuss how we can help transform your vision into reality.
-            </p>
-          </section>
 
-          <section className="mx-auto max-w-6xl">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8">
-                <h2 className="text-3xl font-bold mb-6 text-cyan-400">Get in Touch</h2>
-                <form className="space-y-6">
+      {/* Hero Section */}
+      <section className="relative py-20 bg-gradient-to-br from-black via-gray-900 to-black overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(139,92,246,0.1),transparent_50%)]" />
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-5xl md:text-7xl font-black mb-8 bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent">
+            Get in Touch
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                         Ready to transform your business with AI-powered solutions? Let&apos;s start a conversation.
+          </p>
+        </div>
+      </section>
+
+      {/* Contact Methods */}
+      <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+              Ways to Connect
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Choose the method that works best for you
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {contactMethods.map((method, index) => (
+              <Card
+                key={index}
+                className="text-center group hover:border-blue-400/30"
+                style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
+              >
+                <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                  {method.icon}
+                </div>
+                <h3 className={`text-xl font-semibold mb-3 ${method.color}`}>
+                  {method.title}
+                </h3>
+                <p className="text-gray-400 mb-4">{method.description}</p>
+                <div className="text-white font-medium">{method.contact}</div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form & Office Locations */}
+      <section className="py-20 bg-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Contact Form */}
+            <div>
+              <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                Send us a Message
+              </h2>
+              <Card className="p-8">
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-white/80 mb-2">
-                      Name
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                      Full Name *
                     </label>
                     <input
                       type="text"
                       id="name"
                       name="name"
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent"
-                      placeholder="Your full name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="Enter your full name"
                     />
                   </div>
-                  
+
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-white/80 mb-2">
-                      Email
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                      Email Address *
                     </label>
                     <input
                       type="email"
                       id="email"
                       name="email"
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent"
-                      placeholder="your.email@example.com"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="Enter your email address"
                     />
                   </div>
-                  
+
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-white/80 mb-2">
-                      Subject
+                    <label htmlFor="company" className="block text-sm font-medium text-gray-300 mb-2">
+                      Company
                     </label>
-                    <select
-                      id="subject"
-                      name="subject"
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent"
-                    >
-                      <option value="">Select a subject</option>
-                      <option value="ai-development">AI Development</option>
-                      <option value="automation">Automation Services</option>
-                      <option value="consulting">Consulting</option>
-                      <option value="partnership">Partnership</option>
-                      <option value="other">Other</option>
-                    </select>
+                    <input
+                      type="text"
+                      id="company"
+                      name="company"
+                      value={formData.company}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="Enter your company name"
+                    />
                   </div>
-                  
+
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-white/80 mb-2">
-                      Message
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                      Message *
                     </label>
                     <textarea
                       id="message"
                       name="message"
-                      rows={6}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent"
-                      placeholder="Tell us about your project or inquiry..."
-                    ></textarea>
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
+                      rows={5}
+                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+                      placeholder="Tell us about your project or inquiry"
+                    />
                   </div>
-                  
-                  <button
+
+                  <Button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-cyan-400 to-fuchsia-400 text-white font-bold py-3 px-6 rounded-lg hover:from-cyan-500 hover:to-fuchsia-500 transition-all duration-200 transform hover:scale-105"
+                    size="lg"
+                    className="w-full"
                   >
                     Send Message
-                  </button>
+                  </Button>
                 </form>
-              </div>
-              
-              <div className="space-y-8">
-                <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8">
-                  <h3 className="text-2xl font-bold mb-4 text-fuchsia-400">Contact Information</h3>
-                  <div className="space-y-4">
-                    <div className="flex items-center">
-                      <div className="text-2xl mr-4">📧</div>
-                      <div>
-                        <div className="font-semibold">Email</div>
-                        <div className="text-white/70">hello@zion.tech</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center">
-                      <div className="text-2xl mr-4">🌐</div>
-                      <div>
-                        <div className="font-semibold">Website</div>
-                        <div className="text-white/70">zion.tech</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center">
-                      <div className="text-2xl mr-4">📍</div>
-                      <div>
-                        <div className="font-semibold">Location</div>
-                        <div className="text-white/70">Global (Remote First)</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8">
-                  <h3 className="text-2xl font-bold mb-4 text-green-400">Business Hours</h3>
-                  <div className="space-y-2 text-white/70">
-                    <div>Monday - Friday: 9:00 AM - 6:00 PM UTC</div>
-                    <div>Saturday: 10:00 AM - 2:00 PM UTC</div>
-                    <div>Sunday: Closed</div>
-                  </div>
-                  <div className="mt-4 text-sm text-white/50">
-                    * Our AI systems operate 24/7 for continuous support
-                  </div>
-                </div>
-              </div>
+              </Card>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8">
-              <h2 className="text-3xl font-bold mb-6 text-blue-400">Why Choose Zion Tech Group?</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="text-center">
-                  <div className="text-4xl mb-4">⚡</div>
-                  <h3 className="text-xl font-semibold mb-2">Fast Response</h3>
-                  <p className="text-white/70">Get a response within 24 hours, often much sooner</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl mb-4">🤖</div>
-                  <h3 className="text-xl font-semibold mb-2">AI-Powered</h3>
-                  <p className="text-white/70">Leverage our autonomous systems for your projects</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl mb-4">🌍</div>
-                  <h3 className="text-xl font-semibold mb-2">Global Reach</h3>
-                  <p className="text-white/70">We work with clients worldwide, 24/7</p>
-                </div>
+            {/* Office Locations */}
+            <div>
+              <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                Our Offices
+              </h2>
+              <div className="space-y-6">
+                {officeLocations.map((office, index) => (
+                  <Card
+                    key={index}
+                    className="p-6 group hover:border-blue-400/30"
+                    style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
+                  >
+                    <div className="flex items-start space-x-4">
+                      <div className="text-3xl group-hover:scale-110 transition-transform duration-300">
+                        {office.icon}
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-semibold text-white mb-1">
+                          {office.city}
+                        </h3>
+                        <p className="text-gray-400 text-sm mb-2">{office.country}</p>
+                        <p className="text-gray-300 text-sm">{office.address}</p>
+                      </div>
+                    </div>
+                  </Card>
+                ))}
               </div>
             </div>
-          </section>
-        </main>
-      </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-gradient-to-b from-black to-gray-900">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-xl text-gray-400">
+              Quick answers to common questions
+            </p>
+          </div>
+
+          <div className="space-y-6">
+            {[
+              {
+                question: 'How quickly can you start a project?',
+                answer: 'We can typically begin projects within 1-2 weeks of initial consultation, depending on complexity and current capacity.',
+              },
+              {
+                question: 'Do you offer ongoing support?',
+                answer: 'Yes, we provide comprehensive ongoing support, maintenance, and optimization services for all our solutions.',
+              },
+              {
+                question: 'What industries do you specialize in?',
+                answer: 'We work across various industries including fintech, healthcare, e-commerce, manufacturing, and more.',
+              },
+              {
+                question: 'Can you work with existing systems?',
+                answer: 'Absolutely! We specialize in integrating with and modernizing existing systems and infrastructure.',
+              },
+            ].map((faq, index) => (
+              <Card
+                key={index}
+                className="p-6 group hover:border-blue-400/30"
+                style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
+              >
+                <h3 className="text-lg font-semibold text-white mb-3">
+                  {faq.question}
+                </h3>
+                <p className="text-gray-400">{faq.answer}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Ready to Get Started?
+          </h2>
+          <p className="text-xl text-blue-100 mb-8">
+                         Let&apos;s discuss how we can help transform your business with AI-powered solutions.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              href="/services"
+              variant="secondary"
+              size="lg"
+              className="bg-white text-blue-600 hover:bg-gray-100"
+            >
+              Explore Services
+            </Button>
+            <Button
+              href="/case-studies"
+              variant="outline"
+              size="lg"
+              className="border-white text-white hover:bg-white hover:text-blue-600"
+            >
+              View Case Studies
+            </Button>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

@@ -1,7 +1,52 @@
 import React from 'react';
 import Head from 'next/head';
+import Card from '../components/ui/Card';
+import Button from '../components/ui/Button';
 
 export default function AboutPage() {
+  const values = [
+    {
+      icon: '🚀',
+      title: 'Innovation',
+      description: 'Constantly pushing boundaries and exploring new frontiers in technology',
+      color: 'text-cyan-400',
+    },
+    {
+      icon: '🤖',
+      title: 'Autonomy',
+      description: 'Building systems that can operate independently and make intelligent decisions',
+      color: 'text-fuchsia-400',
+    },
+    {
+      icon: '🌍',
+      title: 'Impact',
+      description: 'Creating technology that makes a positive difference in the world',
+      color: 'text-green-400',
+    },
+  ];
+
+  const services = [
+    {
+      title: 'AI Development',
+      description: 'Advanced machine learning models, natural language processing, computer vision systems, and autonomous decision making.',
+      icon: '🧠',
+      color: 'text-cyan-400',
+    },
+    {
+      title: 'Automation Systems',
+      description: 'Cloud infrastructure automation, CI/CD pipeline optimization, self-healing applications, and performance monitoring.',
+      icon: '⚙️',
+      color: 'text-fuchsia-400',
+    },
+  ];
+
+  const achievements = [
+    { number: '227+', label: 'Active Automations', color: 'text-cyan-400' },
+    { number: '2960+', label: 'Dynamic Pages', color: 'text-fuchsia-400' },
+    { number: '99.99%', label: 'Uptime Guarantee', color: 'text-green-400' },
+    { number: '12', label: 'Core Components', color: 'text-blue-400' },
+  ];
+
   return (
     <>
       <Head>
@@ -11,110 +56,179 @@ export default function AboutPage() {
         <meta property="og:description" content="Learn about Zion Tech Group's mission and vision." />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      
-      <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-950 text-white">
-        <main className="container mx-auto px-6 py-12">
-          <section className="text-center mb-16">
-            <h1 className="text-5xl font-extrabold mb-6 bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent">
-              About Zion Tech Group
-            </h1>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto">
-              Pioneering the future of autonomous technology and AI-driven innovation
+
+      {/* Hero Section */}
+      <section className="relative py-20 bg-gradient-to-br from-black via-gray-900 to-black overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(139,92,246,0.1),transparent_50%)]" />
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-5xl md:text-7xl font-black mb-8 bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent">
+            About Zion Tech Group
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+            Pioneering the future of autonomous technology and AI-driven innovation
+          </p>
+        </div>
+      </section>
+
+      {/* Mission & Vision */}
+      <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+            <Card className="group hover:border-cyan-400/30">
+              <h2 className="text-3xl font-bold mb-6 text-cyan-400">Our Mission</h2>
+              <p className="text-lg text-gray-300 mb-4">
+                To create a world where technology operates autonomously, continuously improving and innovating without human intervention.
+              </p>
+              <p className="text-gray-400">
+                We believe in the power of AI to solve complex problems, automate routine tasks, and unlock new possibilities for humanity.
+              </p>
+            </Card>
+            
+            <Card className="group hover:border-fuchsia-400/30">
+              <h2 className="text-3xl font-bold mb-6 text-fuchsia-400">Our Vision</h2>
+              <p className="text-lg text-gray-300 mb-4">
+                To be the leading force in autonomous technology, creating systems that think, learn, and evolve independently.
+              </p>
+              <p className="text-gray-400">
+                We envision a future where AI and automation work seamlessly together to enhance human capabilities and drive progress.
+              </p>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Core Values */}
+      <section className="py-20 bg-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+              Core Values
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              The principles that guide our innovation and shape our future
             </p>
-          </section>
+          </div>
 
-          <section className="mx-auto max-w-6xl">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8">
-                <h2 className="text-3xl font-bold mb-6 text-cyan-400">Our Mission</h2>
-                <p className="text-lg text-white/80 mb-4">
-                  To create a world where technology operates autonomously, continuously improving and innovating without human intervention.
-                </p>
-                <p className="text-white/70">
-                  We believe in the power of AI to solve complex problems, automate routine tasks, and unlock new possibilities for humanity.
-                </p>
-              </div>
-              
-              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8">
-                <h2 className="text-3xl font-bold mb-6 text-fuchsia-400">Our Vision</h2>
-                <p className="text-lg text-white/80 mb-4">
-                  To be the leading force in autonomous technology, creating systems that think, learn, and evolve independently.
-                </p>
-                <p className="text-white/70">
-                  We envision a future where AI and automation work seamlessly together to enhance human capabilities and drive progress.
-                </p>
-              </div>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {values.map((value, index) => (
+              <Card
+                key={index}
+                className="text-center group hover:border-green-400/30"
+                style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
+              >
+                <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                  {value.icon}
+                </div>
+                <h3 className={`text-xl font-semibold mb-4 ${value.color}`}>
+                  {value.title}
+                </h3>
+                <p className="text-gray-400">{value.description}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 mb-16">
-              <h2 className="text-3xl font-bold mb-6 text-green-400">Core Values</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="text-center">
-                  <div className="text-4xl mb-4">🚀</div>
-                  <h3 className="text-xl font-semibold mb-2">Innovation</h3>
-                  <p className="text-white/70">Constantly pushing boundaries and exploring new frontiers in technology</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl mb-4">🤖</div>
-                  <h3 className="text-xl font-semibold mb-2">Autonomy</h3>
-                  <p className="text-white/70">Building systems that can operate independently and make intelligent decisions</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl mb-4">🌍</div>
-                  <h3 className="text-xl font-semibold mb-2">Impact</h3>
-                  <p className="text-white/70">Creating technology that makes a positive difference in the world</p>
-                </div>
-              </div>
-            </div>
+      {/* What We Do */}
+      <section className="py-20 bg-gradient-to-b from-black to-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+              What We Do
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Comprehensive solutions that drive innovation and transformation
+            </p>
+          </div>
 
-            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 mb-16">
-              <h2 className="text-3xl font-bold mb-6 text-blue-400">What We Do</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                  <h3 className="text-xl font-semibold mb-3 text-cyan-400">AI Development</h3>
-                  <ul className="space-y-2 text-white/70">
-                    <li>• Advanced machine learning models</li>
-                    <li>• Natural language processing</li>
-                    <li>• Computer vision systems</li>
-                    <li>• Autonomous decision making</li>
-                  </ul>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {services.map((service, index) => (
+              <Card
+                key={index}
+                className="group hover:border-blue-400/30"
+                style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
+              >
+                <div className="flex items-start space-x-4">
+                  <div className="text-4xl group-hover:scale-110 transition-transform duration-300">
+                    {service.icon}
+                  </div>
+                  <div>
+                    <h3 className={`text-xl font-semibold mb-3 ${service.color}`}>
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-400 leading-relaxed">
+                      {service.description}
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-3 text-fuchsia-400">Automation Systems</h3>
-                  <ul className="space-y-2 text-white/70">
-                    <li>• Cloud infrastructure automation</li>
-                    <li>• CI/CD pipeline optimization</li>
-                    <li>• Self-healing applications</li>
-                    <li>• Performance monitoring</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8">
-              <h2 className="text-3xl font-bold mb-6 text-purple-400">Our Impact</h2>
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-cyan-400">227</div>
-                  <div className="text-sm text-white/70">Active Automations</div>
+      {/* Achievements */}
+      <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+              Our Impact
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Numbers that tell the story of our success and innovation
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {achievements.map((achievement, index) => (
+              <Card
+                key={index}
+                className="text-center group hover:border-blue-400/30"
+                style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
+              >
+                <div className={`text-4xl md:text-5xl font-bold mb-2 ${achievement.color}`}>
+                  {achievement.number}
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-fuchsia-400">2,960</div>
-                  <div className="text-sm text-white/70">Pages Generated</div>
+                <div className="text-gray-400 text-sm md:text-base">
+                  {achievement.label}
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-green-400">12</div>
-                  <div className="text-sm text-white/70">AI Components</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-400">99.9%</div>
-                  <div className="text-sm text-white/70">Uptime</div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </main>
-      </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Join Us in Shaping the Future
+          </h2>
+          <p className="text-xl text-blue-100 mb-8">
+            Be part of the autonomous technology revolution and help us build a better tomorrow.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              href="/contact"
+              variant="secondary"
+              size="lg"
+              className="bg-white text-blue-600 hover:bg-gray-100"
+            >
+              Get in Touch
+            </Button>
+            <Button
+              href="/services"
+              variant="outline"
+              size="lg"
+              className="border-white text-white hover:bg-white hover:text-blue-600"
+            >
+              Explore Services
+            </Button>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
