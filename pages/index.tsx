@@ -89,12 +89,12 @@ export default function HomePage() {
         title="Zion Tech Group"
         subtitle="The world&apos;s most advanced autonomous innovation hub delivering cutting-edge technology solutions, intelligent automation systems, and the future of cloud-native AI infrastructure."
         primaryAction={{
-          text: "Get Started",
-          href: "/contact"
+          text: "Explore Micro SaaS",
+          href: "/micro-saas"
         }}
         secondaryAction={{
-          text: "Learn More",
-          href: "/about"
+          text: "View All Services",
+          href: "/services"
         }}
         stats={heroStats}
       />
@@ -131,6 +131,23 @@ export default function HomePage() {
               <span className="flex items-center"><span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>Enterprise Security</span>
               <span className="flex items-center"><span className="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>99.9% Uptime</span>
               <span className="flex items-center"><span className="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>24/7 Support</span>
+            </div>
+            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                href="/micro-saas"
+                size="lg"
+                className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-8 py-4 text-lg font-semibold"
+              >
+                View All Services
+              </Button>
+              <Button
+                href="/contact"
+                size="lg"
+                variant="outline"
+                className="border-2 border-gray-600 hover:border-gray-500 text-gray-300 hover:text-white px-8 py-4 text-lg font-semibold"
+              >
+                Get Custom Quote
+              </Button>
             </div>
           </div>
 
@@ -405,20 +422,20 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* API Rate Limiter Pro */}
+            {/* AI Legal Document Generator */}
             <div className="group relative">
-              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-red-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-red-500/20">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-purple-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-pink-600 rounded-xl flex items-center justify-center text-2xl mr-4">
-                    🛡️
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-violet-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    ⚖️
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-white">API Rate Limiter Pro</h3>
-                    <p className="text-red-400 text-sm font-medium">$29/month</p>
+                    <h3 className="text-lg font-semibold text-white">AI Legal Documents</h3>
+                    <p className="text-purple-400 text-sm font-medium">$69/month</p>
                   </div>
                 </div>
                 <p className="text-gray-300 text-sm mb-4">
-                  Protect your APIs from abuse with intelligent rate limiting and DDoS protection.
+                  Generate professional legal documents with AI-powered templates and compliance checking.
                 </p>
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-500">14-day free trial</span>
@@ -427,7 +444,7 @@ export default function HomePage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     size="sm"
-                    className="bg-gradient-to-r from-red-500 to-pink-600 hover:from-red-600 hover:to-pink-700"
+                    className="bg-gradient-to-r from-purple-500 to-violet-600 hover:from-purple-600 hover:to-violet-700"
                   >
                     Try Free
                   </Button>
@@ -435,20 +452,20 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Email Validation Suite */}
+            {/* AI HR Assistant */}
             <div className="group relative">
-              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-green-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-green-500/20">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-teal-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-teal-500/20">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center text-2xl mr-4">
-                    ✅
+                  <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    👥
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-white">Email Validation Suite</h3>
-                    <p className="text-green-400 text-sm font-medium">$19/month</p>
+                    <h3 className="text-lg font-semibold text-white">AI HR Assistant</h3>
+                    <p className="text-teal-400 text-sm font-medium">$59/month</p>
                   </div>
                 </div>
                 <p className="text-gray-300 text-sm mb-4">
-                  Professional email verification with advanced validation algorithms and compliance tools.
+                  Automate HR processes with AI-powered recruitment and employee management.
                 </p>
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-500">14-day free trial</span>
@@ -457,7 +474,37 @@ export default function HomePage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     size="sm"
-                    className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700"
+                    className="bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* AI Financial Advisor */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-yellow-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-yellow-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    💰
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">AI Financial Advisor</h3>
+                    <p className="text-yellow-400 text-sm font-medium">$89/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  AI-powered financial planning and investment advice for individuals and businesses.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://ziontechgroup.com/micro-saas"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-yellow-500 to-orange-600 hover:from-yellow-600 hover:to-orange-700"
                   >
                     Try Free
                   </Button>

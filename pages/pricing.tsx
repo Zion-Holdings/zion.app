@@ -100,14 +100,22 @@ export default function PricingPage() {
               Choose Your Plan
             </h1>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-              Transparent pricing with enterprise-grade features. Scale as you grow with our flexible plans.
+              Transparent pricing for every business size. Start with our platform plans or choose individual micro SaaS services.
             </p>
           </div>
         </section>
 
-        {/* Pricing Cards */}
+        {/* Platform Plans */}
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+                Platform Plans
+              </h2>
+              <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+                Comprehensive platform access with all core features and AI automation capabilities.
+              </p>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {plans.map((plan) => (
                 <div
@@ -811,6 +819,170 @@ export default function PricingPage() {
                 className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800"
               >
                 Contact Sales for Enterprise
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* Micro SaaS Services Pricing */}
+        <section className="py-20 bg-gradient-to-br from-gray-900 to-black">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+                Micro SaaS Services
+              </h2>
+              <p className="text-lg text-gray-400 max-w-3xl mx-auto">
+                Choose individual services that fit your specific needs. All services include 14-day free trials and enterprise-grade infrastructure.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+              {/* AI Content Generator */}
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-pink-500/50 transition-all duration-300">
+                <div className="flex items-center mb-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-pink-500 to-rose-600 rounded-lg flex items-center justify-center text-xl mr-3">
+                    📝
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-white">AI Content Generator</h3>
+                    <p className="text-pink-400 text-sm font-medium">$49/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Professional AI-powered content creation with SEO optimization.
+                </p>
+                <Button
+                  href="/micro-saas"
+                  size="sm"
+                  className="w-full bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700"
+                >
+                  Learn More
+                </Button>
+              </div>
+
+              {/* Design System Builder */}
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-violet-500/50 transition-all duration-300">
+                <div className="flex items-center mb-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-violet-500 to-purple-600 rounded-lg flex items-center justify-center text-xl mr-3">
+                    🎨
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-white">Design System Builder</h3>
+                    <p className="text-violet-400 text-sm font-medium">$79/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Create and maintain consistent design systems with automation.
+                </p>
+                <Button
+                  href="/micro-saas"
+                  size="sm"
+                  className="w-full bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700"
+                >
+                  Learn More
+                </Button>
+              </div>
+
+              {/* App Performance Monitor */}
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-amber-500/50 transition-all duration-300">
+                <div className="flex items-center mb-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-amber-500 to-orange-600 rounded-lg flex items-center justify-center text-xl mr-3">
+                    📱
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-white">Performance Monitor</h3>
+                    <p className="text-amber-400 text-sm font-medium">$39/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Real-time monitoring and optimization for applications.
+                </p>
+                <Button
+                  href="/micro-saas"
+                  size="sm"
+                  className="w-full bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700"
+                >
+                  Learn More
+                </Button>
+              </div>
+
+              {/* SEO Automation Suite */}
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-emerald-500/50 transition-all duration-300">
+                <div className="flex items-center mb-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-green-600 rounded-lg flex items-center justify-center text-xl mr-3">
+                    🔍
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-white">SEO Automation Suite</h3>
+                    <p className="text-emerald-400 text-sm font-medium">$89/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Comprehensive SEO tools with automated optimization.
+                </p>
+                <Button
+                  href="/micro-saas"
+                  size="sm"
+                  className="w-full bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700"
+                >
+                  Learn More
+                </Button>
+              </div>
+
+              {/* AI Chatbot Platform */}
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-sky-500/50 transition-all duration-300">
+                <div className="flex items-center mb-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-sky-500 to-blue-600 rounded-lg flex items-center justify-center text-xl mr-3">
+                    💬
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-white">AI Chatbot Platform</h3>
+                    <p className="text-sky-400 text-sm font-medium">$69/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Intelligent chatbot solutions for customer support.
+                </p>
+                <Button
+                  href="/micro-saas"
+                  size="sm"
+                  className="w-full bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700"
+                >
+                  Learn More
+                </Button>
+              </div>
+
+              {/* Business Intelligence Hub */}
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-rose-500/50 transition-all duration-300">
+                <div className="flex items-center mb-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-rose-500 to-pink-600 rounded-lg flex items-center justify-center text-xl mr-3">
+                    📊
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-white">Business Intelligence</h3>
+                    <p className="text-rose-400 text-sm font-medium">$99/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Turn data into actionable insights with analytics.
+                </p>
+                <Button
+                  href="/micro-saas"
+                  size="sm"
+                  className="w-full bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-600 hover:to-pink-700"
+                >
+                  Learn More
+                </Button>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <Button
+                href="/micro-saas"
+                size="lg"
+                className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-8 py-4 text-lg font-semibold"
+              >
+                View All 50+ Services
               </Button>
             </div>
           </div>
