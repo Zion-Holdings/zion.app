@@ -7,27 +7,30 @@
 
 /* CSS Variables for Cursor.com-inspired theming */
 :root {
-  --background: #0a0a0a;
+  --background: #000000;
   --foreground: #ffffff;
   --primary: #007acc;
   --primary-foreground: #ffffff;
-  --secondary: #1e1e1e;
+  --secondary: #1a1a1a;
   --secondary-foreground: #f9fafb;
   --accent: #007acc;
   --accent-foreground: #ffffff;
-  --muted: #2d2d2d;
-  --muted-foreground: #9ca3af;
-  --border: #404040;
-  --input: #2d2d2d;
+  --muted: #1a1a1a;
+  --muted-foreground: #a1a1aa;
+  --border: #2a2a2a;
+  --input: #1a1a1a;
   --ring: #007acc;
   --radius: 0.75rem;
   --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   --cursor-blue: #007acc;
   --cursor-blue-hover: #005a9e;
-  --cursor-dark: #1e1e1e;
-  --cursor-darker: #0a0a0a;
-  --cursor-light: #2d2d2d;
+  --cursor-dark: #1a1a1a;
+  --cursor-darker: #000000;
+  --cursor-light: #2a2a2a;
   --cursor-lighter: #404040;
+  --gradient-primary: linear-gradient(135deg, #007acc 0%, #005a9e 100%);
+  --gradient-secondary: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  --gradient-accent: linear-gradient(135deg, #007acc 0%, #00a2ff 100%);
 }
 
 /* Base styles */
@@ -48,6 +51,7 @@ body {
   line-height: 1.6;
   font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   font-variation-settings: normal;
+  overflow-x: hidden;
 }
 
 /* Typography */
@@ -101,39 +105,94 @@ a:hover {
   background: var(--cursor-blue);
 }
 
-/* Focus styles */
-*:focus {
-  outline: 2px solid var(--ring);
-  outline-offset: 2px;
+/* Container utilities */
+.container-cursor {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-/* Button styles */
+@media (min-width: 640px) {
+  .container-cursor {
+    padding: 0 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-cursor {
+    padding: 0 4rem;
+  }
+}
+
+/* Gradient text utilities */
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-blue {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-white {
+  background: linear-gradient(135deg, #ffffff 0%, #e5e7eb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Button utilities */
 .btn {
-  @apply inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-cursor-blue disabled:opacity-50 disabled:cursor-not-allowed;
+  @apply inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-cursor-blue disabled:opacity-50 disabled:cursor-not-allowed;
 }
 
 .btn-primary {
-  @apply bg-gradient-to-r from-cursor-blue to-blue-600 hover:from-cursor-blue-hover hover:to-blue-700 text-white shadow-lg hover:shadow-xl hover:-translate-y-0.5 border-0;
+  @apply bg-gradient-to-r from-cursor-blue to-blue-600 hover:from-cursor-blue-hover hover:to-blue-700 text-white shadow-lg hover:shadow-xl hover:-translate-y-1 border-0 hover:shadow-cursor-blue/25;
 }
 
 .btn-secondary {
-  @apply bg-cursor-light hover:bg-cursor-lighter text-white border border-cursor-lighter hover:border-cursor-blue;
-}
-
-.btn-outline {
-  @apply bg-transparent border border-cursor-lighter text-gray-300 hover:bg-cursor-light hover:border-cursor-blue hover:text-white;
+  @apply bg-cursor-light hover:bg-cursor-lighter text-white border border-cursor-lighter hover:border-cursor-blue hover:shadow-lg;
 }
 
 .btn-ghost {
-  @apply bg-transparent hover:bg-cursor-light text-gray-300 hover:text-white;
+  @apply bg-transparent hover:bg-cursor-light text-gray-300 hover:text-white hover:shadow-md;
 }
 
-/* Card styles */
-.card {
-  @apply bg-cursor-dark border border-cursor-lighter rounded-xl p-6 transition-all duration-300 hover:border-cursor-blue/30 hover:shadow-lg hover:shadow-cursor-blue/10;
+.btn-outline {
+  @apply bg-transparent border border-cursor-lighter text-gray-300 hover:bg-cursor-light hover:border-cursor-blue hover:text-white hover:shadow-md;
 }
 
-/* Animation classes */
+.btn-sm {
+  @apply px-4 py-2 text-sm;
+}
+
+.btn-md {
+  @apply px-6 py-3 text-base;
+}
+
+.btn-lg {
+  @apply px-8 py-4 text-lg;
+}
+
+.btn-xl {
+  @apply px-10 py-5 text-xl;
+}
+
+/* Hover effects */
+.hover-lift {
+  @apply transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl;
+}
+
+.hover-glow {
+  @apply transition-all duration-300 hover:shadow-lg hover:shadow-cursor-blue/25;
+}
+
+/* Animation utilities */
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -142,15 +201,6 @@ a:hover {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
   }
 }
 
@@ -165,25 +215,21 @@ a:hover {
   }
 }
 
-@keyframes slide-in-left {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
   }
-  to {
-    opacity: 1;
-    transform: translateX(0);
+  50% {
+    transform: translateY(-20px);
   }
 }
 
-@keyframes slide-in-right {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 122, 204, 0.3);
   }
-  to {
-    opacity: 1;
-    transform: translateX(0);
+  50% {
+    box-shadow: 0 0 40px rgba(0, 122, 204, 0.6);
   }
 }
 
@@ -191,56 +237,77 @@ a:hover {
   animation: fade-in 0.8s ease-out forwards;
 }
 
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
 .animate-scale-in {
   animation: scale-in 0.6s ease-out forwards;
 }
 
-.animate-slide-in-left {
-  animation: slide-in-left 0.8s ease-out forwards;
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }
 
-.animate-slide-in-right {
-  animation: slide-in-right 0.8s ease-out forwards;
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
 }
 
-/* Hover effects */
-.hover-lift {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.hover-lift:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 20px 40px rgba(0, 122, 204, 0.15);
-}
-
-/* Gradient text utilities */
-.gradient-text {
-  @apply bg-gradient-to-r from-white via-gray-100 to-gray-200 bg-clip-text text-transparent;
-}
-
-.gradient-text-blue {
-  @apply bg-gradient-to-r from-cursor-blue via-blue-400 to-blue-300 bg-clip-text text-transparent;
-}
-
-/* Glass morphism effect */
+/* Glass morphism effects */
 .glass {
-  @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  background: rgba(26, 26, 26, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-light {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Grid utilities */
+.grid-auto-fit {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-auto-fill {
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 
 /* Responsive utilities */
-.container-cursor {
-  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+@media (max-width: 640px) {
+  .container-cursor {
+    padding: 0 1rem;
+  }
 }
 
-/* Custom cursor styles */
-.cursor-dot {
-  @apply w-2 h-2 bg-cursor-blue rounded-full;
+@media (min-width: 768px) {
+  .container-cursor {
+    padding: 0 2rem;
+  }
 }
 
-.cursor-dot-outline {
-  @apply w-4 h-4 border border-cursor-blue rounded-full;
+@media (min-width: 1024px) {
+  .container-cursor {
+    padding: 0 4rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container-cursor {
+    padding: 0 6rem;
+  }
+}
+
+/* Focus states */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-cursor-blue focus:ring-offset-2 focus:ring-offset-black;
+}
+
+/* Selection styles */
+::selection {
+  background: var(--cursor-blue);
+  color: white;
+}
+
+::-moz-selection {
+  background: var(--cursor-blue);
+  color: white;
 }

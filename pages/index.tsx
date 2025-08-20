@@ -100,41 +100,35 @@ export default function HomePage() {
         columns={3}
       />
 
-      {/* Technology Stack */}
-      <section className="py-24 bg-gradient-to-b from-cursor-dark to-cursor-darker">
-        <div className="container-cursor">
+      {/* Technology Stack Section */}
+      <section className="py-24 bg-gradient-to-b from-black to-gray-900 relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,122,204,0.03),transparent_50%)]" />
+        
+        <div className="container-cursor relative z-10">
           <div className="text-center mb-20 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 gradient-text">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 gradient-text-white leading-tight">
               Built with Modern Technology
             </h2>
-            <p className="text-xl lg:text-2xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
-              Our platform leverages the latest technologies and best practices to deliver exceptional performance and reliability.
+            <p className="text-xl lg:text-2xl text-gray-400 max-w-4xl mx-auto leading-relaxed font-light">
+              Our platform leverages the latest technologies and best practices to deliver exceptional performance, reliability, and scalability.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {technologyStack.map((tech, index) => (
               <Card
                 key={index}
-                className="text-center group hover:border-cursor-blue/30 hover:shadow-lg hover:shadow-cursor-blue/10"
+                variant="glass"
+                className="text-center group hover:border-cursor-blue/40 hover:shadow-2xl hover:shadow-cursor-blue/20 hover-lift"
                 style={{ animationDelay: `${(index * 0.05) + 0.2}s` }}
               >
-                <div className="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                  {tech.name === 'Next.js' && '⚡'}
-                  {tech.name === 'React' && '⚛️'}
-                  {tech.name === 'TypeScript' && '📘'}
-                  {tech.name === 'Tailwind CSS' && '🎨'}
-                  {tech.name === 'Node.js' && '🟢'}
-                  {tech.name === 'PostgreSQL' && '🐘'}
-                  {tech.name === 'Redis' && '🔴'}
-                  {tech.name === 'Docker' && '🐳'}
-                  {tech.name === 'Kubernetes' && '☸️'}
-                  {tech.name === 'AWS' && '☁️'}
-                  {tech.name === 'Terraform' && '🏗️'}
-                  {tech.name === 'Prometheus' && '📊'}
+                <div className="text-2xl font-bold text-white mb-2 group-hover:text-cursor-blue transition-colors duration-300">
+                  {tech.name}
                 </div>
-                <h3 className="font-semibold text-white mb-2 text-lg">{tech.name}</h3>
-                <p className="text-sm text-gray-400">{tech.category}</p>
+                <div className="text-sm text-gray-400 font-medium">
+                  {tech.category}
+                </div>
               </Card>
             ))}
           </div>
@@ -142,28 +136,31 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-r from-cursor-blue to-blue-600">
-        <div className="container-cursor text-center">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8">
+      <section className="py-24 bg-gradient-to-r from-cursor-blue to-blue-600 relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(255,255,255,0.1),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(255,255,255,0.05),transparent_50%)]" />
+        
+        <div className="container-cursor text-center relative z-10">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-white leading-tight">
             Ready to Transform Your Business?
           </h2>
-          <p className="text-xl lg:text-2xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl lg:text-2xl text-blue-100 max-w-4xl mx-auto mb-12 leading-relaxed font-light">
             Join the future of autonomous technology and experience unprecedented efficiency, reliability, and innovation.
           </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Button
               href="/contact"
-              variant="secondary"
-              size="lg"
-              className="bg-white text-cursor-blue hover:bg-gray-100 shadow-2xl"
+              size="xl"
+              className="bg-white text-cursor-blue hover:bg-gray-100 hover-lift shadow-2xl"
             >
               Start Your Journey
             </Button>
             <Button
               href="/case-studies"
               variant="outline"
-              size="lg"
-              className="border-white text-white hover:bg-white hover:text-cursor-blue shadow-2xl"
+              size="xl"
+              className="border-white/30 text-white hover:bg-white/10 hover-lift"
             >
               View Case Studies
             </Button>
