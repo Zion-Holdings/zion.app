@@ -78,7 +78,7 @@ export const getStaticProps: GetStaticProps<ReportsIndexProps> = async () => {
       })
       .sort((a, b) => (a.slug < b.slug ? 1 : -1))
       .slice(0, 12);
-  } catch (_) {
+  } catch {
     updates = [];
   }
 
