@@ -55,6 +55,142 @@ export default function HomePage() {
             </div>
           </section>
 
+          {/* Content Directory */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">🗂️ Content Directory</h2>
+
+            {/* Core Pages */}
+            <div className="mb-10">
+              <h3 className="text-2xl font-semibold text-white mb-4">Core Pages</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <Link href="/about" className="group rounded-xl border border-white/20 bg-white/5 p-4 hover:border-cyan-400/30 transition-all">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="text-cyan-300 font-semibold">About</div>
+                      <div className="text-white/70 text-sm">Mission, vision, and approach</div>
+                    </div>
+                    <span className="opacity-75 group-hover:opacity-100">→</span>
+                  </div>
+                </Link>
+                <Link href="/services" className="group rounded-xl border border-white/20 bg-white/5 p-4 hover:border-fuchsia-400/30 transition-all">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="text-fuchsia-300 font-semibold">Services</div>
+                      <div className="text-white/70 text-sm">AI solutions and offerings</div>
+                    </div>
+                    <span className="opacity-75 group-hover:opacity-100">→</span>
+                  </div>
+                </Link>
+                <Link href="/resources" className="group rounded-xl border border-white/20 bg-white/5 p-4 hover:border-blue-400/30 transition-all">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="text-blue-300 font-semibold">Resources</div>
+                      <div className="text-white/70 text-sm">Tools, guides, and insights</div>
+                    </div>
+                    <span className="opacity-75 group-hover:opacity-100">→</span>
+                  </div>
+                </Link>
+                <Link href="/case-studies" className="group rounded-xl border border-white/20 bg-white/5 p-4 hover:border-yellow-400/30 transition-all">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="text-yellow-300 font-semibold">Case Studies</div>
+                      <div className="text-white/70 text-sm">Real-world success stories</div>
+                    </div>
+                    <span className="opacity-75 group-hover:opacity-100">→</span>
+                  </div>
+                </Link>
+                <Link href="/blog" className="group rounded-xl border border-white/20 bg-white/5 p-4 hover:border-purple-400/30 transition-all">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="text-purple-300 font-semibold">Blog</div>
+                      <div className="text-white/70 text-sm">Analyses and deep-dives</div>
+                    </div>
+                    <span className="opacity-75 group-hover:opacity-100">→</span>
+                  </div>
+                </Link>
+                <Link href="/contact" className="group rounded-xl border border-white/20 bg-white/5 p-4 hover:border-green-400/30 transition-all">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="text-green-300 font-semibold">Contact</div>
+                      <div className="text-white/70 text-sm">Get in touch</div>
+                    </div>
+                    <span className="opacity-75 group-hover:opacity-100">→</span>
+                  </div>
+                </Link>
+                <Link href="/privacy" className="group rounded-xl border border-white/20 bg-white/5 p-4 hover:border-red-400/30 transition-all">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="text-red-300 font-semibold">Privacy</div>
+                      <div className="text-white/70 text-sm">Trust and compliance</div>
+                    </div>
+                    <span className="opacity-75 group-hover:opacity-100">→</span>
+                  </div>
+                </Link>
+              </div>
+            </div>
+
+            {/* Featured Blog Posts */}
+            <div>
+              <h3 className="text-2xl font-semibold text-white mb-4">Featured Blog Posts</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <Link href="/blog/ai-automation-trends-2025" className="group rounded-xl border border-white/20 bg-white/5 p-4 hover:border-cyan-400/30 transition-all">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="text-cyan-300 font-semibold">AI Automation Trends 2025</div>
+                      <div className="text-white/70 text-sm">What to expect next</div>
+                    </div>
+                    <span className="opacity-75 group-hover:opacity-100">→</span>
+                  </div>
+                </Link>
+                <Link href="/blog/ai-ethics-automation" className="group rounded-xl border border-white/20 bg-white/5 p-4 hover:border-fuchsia-400/30 transition-all">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="text-fuchsia-300 font-semibold">AI Ethics & Automation</div>
+                      <div className="text-white/70 text-sm">Responsible systems</div>
+                    </div>
+                    <span className="opacity-75 group-hover:opacity-100">→</span>
+                  </div>
+                </Link>
+                <Link href="/blog/autonomous-content-generation" className="group rounded-xl border border-white/20 bg-white/5 p-4 hover:border-green-400/30 transition-all">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="text-green-300 font-semibold">Autonomous Content Generation</div>
+                      <div className="text-white/70 text-sm">Scaling content safely</div>
+                    </div>
+                    <span className="opacity-75 group-hover:opacity-100">→</span>
+                  </div>
+                </Link>
+                <Link href="/blog/cloud-native-automation" className="group rounded-xl border border-white/20 bg-white/5 p-4 hover:border-blue-400/30 transition-all">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="text-blue-300 font-semibold">Cloud-Native Automation</div>
+                      <div className="text-white/70 text-sm">Modern infra patterns</div>
+                    </div>
+                    <span className="opacity-75 group-hover:opacity-100">→</span>
+                  </div>
+                </Link>
+                <Link href="/blog/future-of-work" className="group rounded-xl border border-white/20 bg-white/5 p-4 hover:border-yellow-400/30 transition-all">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="text-yellow-300 font-semibold">The Future of Work</div>
+                      <div className="text-white/70 text-sm">AI x human collaboration</div>
+                    </div>
+                    <span className="opacity-75 group-hover:opacity-100">→</span>
+                  </div>
+                </Link>
+                <Link href="/blog/performance-optimization" className="group rounded-xl border border-white/20 bg-white/5 p-4 hover:border-purple-400/30 transition-all">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="text-purple-300 font-semibold">Performance Optimization</div>
+                      <div className="text-white/70 text-sm">Ship fast, stay fast</div>
+                    </div>
+                    <span className="opacity-75 group-hover:opacity-100">→</span>
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </section>
+
           {/* Revolutionary Platform Capabilities */}
           <section className="mx-auto max-w-7xl px-6 pb-16">
             <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">🚀 Revolutionary Platform Capabilities</h2>
