@@ -6,9 +6,9 @@ export default function HomePage() {
   return (
     <>
       <Head>
-        <title>Zion Tech Group — World's Most Advanced Autonomous Innovation Hub & AI-Powered Cloud Platform</title>
+        <title>Zion Tech Group — World&apos;s Most Advanced Autonomous Innovation Hub & AI-Powered Cloud Platform</title>
         <meta name="description" content="Experience the future of autonomous technology with 227+ intelligent automations, AI-powered cloud systems, comprehensive redundancy infrastructure, and zero-downtime operations. The most advanced autonomous platform ever built." />
-        <meta property="og:title" content="Zion Tech Group — World's Most Advanced Autonomous Innovation Hub & AI-Powered Cloud Platform" />
+        <meta property="og:title" content="Zion Tech Group — World&apos;s Most Advanced Autonomous Innovation Hub & AI-Powered Cloud Platform" />
         <meta property="og:description" content="Experience the future of autonomous technology with 227+ intelligent automations, AI-powered cloud systems, comprehensive redundancy infrastructure, and zero-downtime operations." />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
@@ -21,7 +21,7 @@ export default function HomePage() {
               Zion Tech Group
             </h1>
             <p className="text-2xl text-white/90 max-w-4xl mx-auto mb-8">
-              The world's most advanced autonomous innovation hub delivering cutting-edge technology solutions, intelligent automation systems, and the future of cloud-native AI infrastructure.
+              The world&apos;s most advanced autonomous innovation hub delivering cutting-edge technology solutions, intelligent automation systems, and the future of cloud-native AI infrastructure.
             </p>
             <div className="flex flex-wrap justify-center gap-6 mb-12">
               <div className="bg-white/10 backdrop-blur-xl rounded-xl px-6 py-3 border border-white/20">
@@ -757,7 +757,7 @@ export default function HomePage() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-emerald-400 mb-2">Future-Ready Platform</h3>
-                    <p className="text-white/80">Continuously evolving with cutting-edge technologies and autonomous system improvements for tomorrow's challenges.</p>
+                    <p className="text-white/80">Continuously evolving with cutting-edge technologies and autonomous system improvements for tomorrow&apos;s challenges.</p>
                   </div>
                 </div>
               </div>
@@ -850,7 +850,7 @@ export default function HomePage() {
                   The only platform where 227+ autonomous agents continuously innovate, optimize, and evolve your systems without human intervention.
                 </p>
                 <div className="text-center">
-                  <span className="inline-block bg-cyan-400/20 text-cyan-400 text-xs px-3 py-1 rounded-full">World's First</span>
+                  <span className="inline-block bg-cyan-400/20 text-cyan-400 text-xs px-3 py-1 rounded-full">World&apos;s First</span>
                 </div>
               </div>
 
