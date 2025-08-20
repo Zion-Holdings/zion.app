@@ -400,6 +400,54 @@ export default function HomePage() {
             </div>
           </section>
 
+          {/* Advanced Automation Capabilities */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">⚡ Advanced Automation Capabilities</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-cyan-400 mb-4 text-center">🔄 Ultimate Redundancy V2</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Multi-layer failover systems</li>
+                  <li>• Automatic health monitoring</li>
+                  <li>• Self-repairing infrastructure</li>
+                  <li>• Geographic distribution</li>
+                  <li>• Zero-downtime operations</li>
+                </ul>
+                <div className="text-cyan-400 text-sm font-semibold">
+                  Status: Active & Monitoring
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-fuchsia-400 mb-4 text-center">🧠 AI Content Factory</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Autonomous content generation</li>
+                  <li>• Intelligent trend analysis</li>
+                  <li>• Automated quality assurance</li>
+                  <li>• SEO optimization</li>
+                  <li>• Multi-language support</li>
+                </ul>
+                <div className="text-fuchsia-400 text-sm font-semibold">
+                  Status: Continuously Learning
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-green-400 mb-4 text-center">⚡ Smart Build System</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Intelligent build orchestration</li>
+                  <li>• Automatic failure recovery</li>
+                  <li>• Performance optimization</li>
+                  <li>• Dependency management</li>
+                  <li>• Quality validation</li>
+                </ul>
+                <div className="text-green-400 text-sm font-semibold">
+                  Status: Self-Healing
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* Latest Autonomous Content */}
           <section className="mx-auto max-w-7xl px-6 pb-14">
             <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Latest Autonomous Content</h2>
@@ -425,6 +473,150 @@ export default function HomePage() {
             </div>
           </section>
 
+          {/* Comprehensive Automation Systems */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">🔧 Comprehensive Automation Systems</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-cyan-400 mb-4 text-center">🔄 Redundancy Orchestration</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Master Redundancy Orchestrator</li>
+                  <li>• PM2 Process Management</li>
+                  <li>• GitHub Actions Redundancy</li>
+                  <li>• Netlify Functions Backup</li>
+                  <li>• Comprehensive Health Monitoring</li>
+                </ul>
+                <div className="text-cyan-400 text-sm font-semibold">
+                  Multi-Layer Protection
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-fuchsia-400 mb-4 text-center">🧠 AI Content Systems</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Content Quality Fixer</li>
+                  <li>• AI Research Scout</li>
+                  <li>• Trend Analysis Radar</li>
+                  <li>• Autonomous Content Factory</li>
+                  <li>• Intelligent Orchestration</li>
+                </ul>
+                <div className="text-fuchsia-400 text-sm font-semibold">
+                  Continuously Learning
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-green-400 mb-4 text-center">⚡ Build & Deploy</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Master Build Orchestrator</li>
+                  <li>• Build Failure Recovery</li>
+                  <li>• Continuous Build Monitor</li>
+                  <li>• Build Guardian System</li>
+                  <li>• Smart Build Orchestration</li>
+                </ul>
+                <div className="text-green-400 text-sm font-semibold">
+                  Self-Healing & Optimized
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Advanced Monitoring & Security */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">🛡️ Advanced Monitoring & Security</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-yellow-400 mb-4 text-center">📊 Performance Monitoring</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Lighthouse Performance Monitoring</li>
+                  <li>• Real-time Health Checks</li>
+                  <li>• Automated Performance Reports</li>
+                  <li>• Continuous Optimization</li>
+                  <li>• Predictive Analytics</li>
+                </ul>
+                <div className="text-yellow-400 text-sm font-semibold">
+                  Real-Time Insights
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-red-400 mb-4 text-center">🔒 Security & Compliance</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Automated Security Scanning</li>
+                  <li>• Vulnerability Assessment</li>
+                  <li>• Dependency Security Monitoring</li>
+                  <li>• Compliance Validation</li>
+                  <li>• Threat Detection & Response</li>
+                </ul>
+                <div className="text-red-400 text-sm font-semibold">
+                  Enterprise-Grade Security
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-purple-400 mb-4 text-center">🌐 Infrastructure Management</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Netlify Auto-Healer</li>
+                  <li>• Media Optimization</li>
+                  <li>• Sitemap Generation</li>
+                  <li>• SEO Optimization</li>
+                  <li>• Content Distribution</li>
+                </ul>
+                <div className="text-purple-400 text-sm font-semibold">
+                  Intelligent Infrastructure
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Marketing & Growth Automation */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">📈 Marketing & Growth Automation</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-cyan-400 mb-4 text-center">💼 LinkedIn Automation</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Automated Content Generation</li>
+                  <li>• Intelligent Posting Schedule</li>
+                  <li>• Engagement Optimization</li>
+                  <li>• Trend Analysis</li>
+                  <li>• Performance Tracking</li>
+                </ul>
+                <div className="text-cyan-400 text-sm font-semibold">
+                  Smart Social Growth
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-fuchsia-400 mb-4 text-center">📱 Instagram Marketing</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Visual Content Optimization</li>
+                  <li>• Hashtag Strategy</li>
+                  <li>• Engagement Automation</li>
+                  <li>• Story Management</li>
+                  <li>• Analytics & Insights</li>
+                </ul>
+                <div className="text-fuchsia-400 text-sm font-semibold">
+                  Visual Brand Growth
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-green-400 mb-4 text-center">🚀 Growth Orchestration</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Marketing Sync Automation</li>
+                  <li>• Content Distribution</li>
+                  <li>• SEO Optimization</li>
+                  <li>• Performance Analytics</li>
+                  <li>• Growth Strategy</li>
+                </ul>
+                <div className="text-green-400 text-sm font-semibold">
+                  Automated Growth
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* Revolutionary Call to Action */}
           <section className="text-center mx-auto max-w-4xl px-6 pb-16">
             <div className="bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-12 border border-white/20">
@@ -439,6 +631,58 @@ export default function HomePage() {
                 <Link href="/about" className="px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white font-semibold transition-all duration-300 hover:border-cyan-400/50">
                   Learn More
                 </Link>
+              </div>
+            </div>
+          </section>
+
+          {/* Comprehensive Footer Navigation */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <div className="bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/20">
+              <h2 className="text-center text-2xl font-bold text-white/90 mb-8">🔗 Complete Platform Navigation</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div>
+                  <h3 className="text-lg font-semibold text-cyan-400 mb-4">Core Platform</h3>
+                  <ul className="space-y-2 text-sm text-white/80">
+                    <li><Link href="/about" className="hover:text-cyan-400 transition-colors">About Our Mission</Link></li>
+                    <li><Link href="/services" className="hover:text-cyan-400 transition-colors">AI Services</Link></li>
+                    <li><Link href="/resources" className="hover:text-cyan-400 transition-colors">Resources & Tools</Link></li>
+                    <li><Link href="/case-studies" className="hover:text-cyan-400 transition-colors">Case Studies</Link></li>
+                    <li><Link href="/blog" className="hover:text-cyan-400 transition-colors">Blog & Insights</Link></li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <h3 className="text-lg font-semibold text-fuchsia-400 mb-4">Automation Systems</h3>
+                  <ul className="space-y-2 text-sm text-white/80">
+                    <li><Link href="/automation" className="hover:text-fuchsia-400 transition-colors">Automation Hub</Link></li>
+                    <li><Link href="/redundancy" className="hover:text-fuchsia-400 transition-colors">Redundancy Systems</Link></li>
+                    <li><Link href="/monitoring" className="hover:text-fuchsia-400 transition-colors">Performance Monitoring</Link></li>
+                    <li><Link href="/security" className="hover:text-fuchsia-400 transition-colors">Security & Compliance</Link></li>
+                    <li><Link href="/build-systems" className="hover:text-fuchsia-400 transition-colors">Build & Deploy</Link></li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <h3 className="text-lg font-semibold text-green-400 mb-4">Marketing & Growth</h3>
+                  <ul className="space-y-2 text-sm text-white/80">
+                    <li><Link href="/linkedin-automation" className="hover:text-green-400 transition-colors">LinkedIn Automation</Link></li>
+                    <li><Link href="/instagram-marketing" className="hover:text-green-400 transition-colors">Instagram Marketing</Link></li>
+                    <li><Link href="/content-generation" className="hover:text-green-400 transition-colors">AI Content Factory</Link></li>
+                    <li><Link href="/seo-optimization" className="hover:text-green-400 transition-colors">SEO Optimization</Link></li>
+                    <li><Link href="/growth-analytics" className="hover:text-green-400 transition-colors">Growth Analytics</Link></li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <h3 className="text-lg font-semibold text-yellow-400 mb-4">Support & Contact</h3>
+                  <ul className="space-y-2 text-sm text-white/80">
+                    <li><Link href="/contact" className="hover:text-yellow-400 transition-colors">Get in Touch</Link></li>
+                    <li><Link href="/documentation" className="hover:text-yellow-400 transition-colors">Documentation</Link></li>
+                    <li><Link href="/api-reference" className="hover:text-yellow-400 transition-colors">API Reference</Link></li>
+                    <li><Link href="/privacy" className="hover:text-yellow-400 transition-colors">Privacy Policy</Link></li>
+                    <li><Link href="/status" className="hover:text-yellow-400 transition-colors">System Status</Link></li>
+                  </ul>
+                </div>
               </div>
             </div>
           </section>
