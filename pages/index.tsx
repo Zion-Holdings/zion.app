@@ -327,7 +327,7 @@ export default function HomePage() {
                   <li>• GitHub Actions Redundancy</li>
                   <li>• Netlify Functions Redundancy</li>
                 </ul>
-                <Link href="/automation" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
+                <Link href="/README_ULTIMATE_REDUNDANCY_V2.md" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
                   Explore Redundancy Systems →
                 </Link>
               </div>
@@ -341,7 +341,7 @@ export default function HomePage() {
                   <li>• Autonomous Agents</li>
                   <li>• Innovation Systems</li>
                 </ul>
-                <Link href="/automation" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
+                <Link href="/README_ULTIMATE_REDUNDANCY_AUTOMATION.md" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
                   Explore AI Systems →
                 </Link>
               </div>
@@ -355,7 +355,7 @@ export default function HomePage() {
                   <li>• Performance Optimization</li>
                   <li>• Quality Assurance</li>
                 </ul>
-                <Link href="/automation" className="text-green-400 hover:text-green-300 text-sm font-semibold">
+                <Link href="/README_GITHUB_ACTIONS.md" className="text-green-400 hover:text-green-300 text-sm font-semibold">
                   Explore Build Systems →
                 </Link>
               </div>
@@ -455,7 +455,7 @@ export default function HomePage() {
               <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
                 <h3 className="text-xl font-bold text-blue-400 mb-4 text-center">📖 Core Documentation</h3>
                 <ul className="text-white/80 text-sm space-y-2 mb-4">
-                  <li>• <Link href="/README.md" className="text-blue-400 hover:text-blue-300">Main README</Link> - Project overview</li>
+                  <li>• <Link href="/README_COMPLETE_PM2_REDUNDANCY.md" className="text-blue-400 hover:text-blue-300">PM2 Redundancy</Link> - Complete system</li>
                   <li>• <Link href="/ARCHITECTURE.md" className="text-blue-400 hover:text-blue-300">Architecture Guide</Link> - System design</li>
                   <li>• <Link href="/API.md" className="text-blue-400 hover:text-blue-300">API Documentation</Link> - Integration guide</li>
                   <li>• <Link href="/DEPLOYMENT.md" className="text-blue-400 hover:text-blue-300">Deployment Guide</Link> - Setup instructions</li>
@@ -553,7 +553,7 @@ export default function HomePage() {
                   <li>• Analytics dashboard</li>
                   <li>• Predictive maintenance</li>
                 </ul>
-                <Link href="/PERFORMANCE.md" className="text-green-400 hover:text-green-300 text-sm font-semibold">
+                <Link href="/README_COMPREHENSIVE_REDUNDANCY.md" className="text-green-400 hover:text-green-300 text-sm font-semibold">
                   View Performance Guide →
                 </Link>
               </div>
