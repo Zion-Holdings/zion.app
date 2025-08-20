@@ -426,6 +426,102 @@ export default function HomePage() {
             </div>
           </section>
 
+          {/* Advanced Automation Capabilities */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">⚡ Advanced Automation Capabilities</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-blue-400 mb-4 text-center">🧠 AI Content Factory</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Autonomous content generation</li>
+                  <li>• SEO optimization</li>
+                  <li>• Multi-language support</li>
+                  <li>• Content quality assurance</li>
+                  <li>• Trend analysis</li>
+                </ul>
+                <Link href="/README.md" className="text-blue-400 hover:text-blue-300 text-sm font-semibold">
+                  Explore AI Factory →
+                </Link>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-purple-400 mb-4 text-center">🔧 Build Orchestration</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Smart build management</li>
+                  <li>• Error recovery systems</li>
+                  <li>• Performance optimization</li>
+                  <li>• Health monitoring</li>
+                  <li>• Automated deployment</li>
+                </ul>
+                <Link href="/README_BUILD_AUTOMATION.md" className="text-purple-400 hover:text-purple-300 text-sm font-semibold">
+                  View Build System →
+                </Link>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-orange-400 mb-4 text-center">📊 Monitoring Dashboard</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Real-time metrics</li>
+                  <li>• Performance analytics</li>
+                  <li>• Health status</li>
+                  <li>• Alert systems</li>
+                  <li>• Predictive insights</li>
+                </ul>
+                <Link href="/README_COMPREHENSIVE_REDUNDANCY.md" className="text-orange-400 hover:text-orange-300 text-sm font-semibold">
+                  Access Dashboard →
+                </Link>
+              </div>
+            </div>
+          </section>
+
+          {/* GitHub Actions & CI/CD */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">🔄 GitHub Actions & CI/CD Automation</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-indigo-400 mb-4 text-center">🚀 Automated Workflows</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• 1-minute sync cadence</li>
+                  <li>• Self-healing CI/CD</li>
+                  <li>• Automated testing</li>
+                  <li>• Quality gates</li>
+                  <li>• Deployment automation</li>
+                </ul>
+                <Link href="/README_GITHUB_ACTIONS.md" className="text-indigo-400 hover:text-indigo-300 text-sm font-semibold">
+                  View Workflows →
+                </Link>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-teal-400 mb-4 text-center">🔍 Health Monitoring</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Automated health checks</li>
+                  <li>• Performance monitoring</li>
+                  <li>• Error detection</li>
+                  <li>• Recovery automation</li>
+                  <li>• Status reporting</li>
+                </ul>
+                <Link href="/README_CONTINUOUS_OPERATION.md" className="text-teal-400 hover:text-teal-300 text-sm font-semibold">
+                  Monitor Health →
+                </Link>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                <h3 className="text-xl font-bold text-pink-400 mb-4 text-center">⚙️ Smart Automation</h3>
+                <ul className="text-white/80 text-sm space-y-2 mb-4">
+                  <li>• Intelligent orchestration</li>
+                  <li>• Predictive maintenance</li>
+                  <li>• Auto-scaling</li>
+                  <li>• Load balancing</li>
+                  <li>• Resource optimization</li>
+                </ul>
+                <Link href="/README_REDUNDANCY_AUTOMATION.md" className="text-pink-400 hover:text-pink-300 text-sm font-semibold">
+                  Explore Automation →
+                </Link>
+              </div>
+            </div>
+          </section>
+
           {/* Latest Autonomous Content */}
           <section className="mx-auto max-w-7xl px-6 pb-14">
             <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Latest Autonomous Content</h2>
