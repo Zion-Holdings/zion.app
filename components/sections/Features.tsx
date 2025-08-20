@@ -31,16 +31,17 @@ const Features: React.FC<FeaturesProps> = ({
   };
 
   return (
-    <section className="py-24 bg-black relative overflow-hidden">
+    <section className="py-24 bg-black relative overflow-hidden futuristic-bg particles-bg">
       <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.05)_1px,transparent_1px)] bg-[size:50px_50px] opacity-20" />
+      <div className="absolute inset-0 grid-bg opacity-20" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-20 animate-fade-in">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6 glow-border">
             <Zap className="w-4 h-4 mr-2" />
             Platform Features
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight holographic-text neon-glow">
             {title}
           </h2>
           <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
