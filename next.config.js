@@ -1,7 +1,9 @@
 const nextConfig = {
 	reactStrictMode: true,
 	swcMinify: true,
-	optimizeFonts: false
+	optimizeFonts: false,
+	output: 'export',
+	trailingSlash: true
 };
 
 module.exports = nextConfig;
