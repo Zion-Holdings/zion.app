@@ -1,72 +1,97 @@
 import React, { useEffect, useRef } from 'react';
 
 interface AnimatedBackgroundProps {
-  variant?: 'particles' | 'matrix' | 'cyber-grid' | 'hologram' | 'data-stream';
+  variant?: 'particles' | 'matrix' | 'hologram' | 'cyber';
   intensity?: 'low' | 'medium' | 'high';
   className?: string;
 }
 
-const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
-  variant = 'particles',
+const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({ 
+  variant = 'particles', 
   intensity = 'medium',
-  className = ''
+  className = '' 
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationRef = useRef<number | undefined>(undefined);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
+    if (!canvasRef.current) return;
 
+    const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-
-    let particles: Array<{
+    let animationFrameId: number;
+    let particles: any[] = [];
+    let matrixChars: Array<{
       x: number;
       y: number;
-      vx: number;
-      vy: number;
-      size: number;
+      speed: number;
+      chars: string;
       opacity: number;
-      color: string;
     }> = [];
+    let hologramLines: any[] = [];
 
-    const colors = [
-      'rgba(0, 212, 255, 0.8)',
-      'rgba(139, 92, 246, 0.8)',
-      'rgba(236, 72, 153, 0.8)',
-      'rgba(16, 185, 129, 0.8)',
-      'rgba(245, 158, 11, 0.8)'
-    ];
+    const resizeCanvas = () => {
+      if (containerRef.current) {
+        const rect = containerRef.current.getBoundingClientRect();
+        canvas.width = rect.width;
+        canvas.height = rect.height;
+      }
+    };
 
     const initParticles = () => {
       particles = [];
-      const count = intensity === 'low' ? 50 : intensity === 'medium' ? 100 : 200;
-
-      for (let i = 0; i < count; i++) {
+      const particleCount = intensity === 'high' ? 100 : intensity === 'medium' ? 60 : 30;
+      
+      for (let i = 0; i < particleCount; i++) {
         particles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          vx: (Math.random() - 0.5) * 2,
-          vy: (Math.random() - 0.5) * 2,
-          size: Math.random() * 3 + 1,
+          vx: (Math.random() - 0.5) * 0.5,
+          vy: (Math.random() - 0.5) * 0.5,
+          size: Math.random() * 2 + 1,
           opacity: Math.random() * 0.5 + 0.3,
-          color: colors[Math.floor(Math.random() * colors.length)]
+          color: `hsl(${Math.random() * 60 + 180}, 70%, 60%)`
+        });
+      }
+    };
+
+    const initMatrix = () => {
+      matrixChars = [];
+      const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+      const columnCount = Math.floor(canvas.width / 20);
+      
+      for (let i = 0; i < columnCount; i++) {
+        matrixChars.push({
+          x: i * 20,
+          y: Math.random() * canvas.height,
+          speed: Math.random() * 2 + 1,
+          chars: chars[Math.floor(Math.random() * chars.length)],
+          opacity: Math.random() * 0.5 + 0.5
+        });
+      }
+    };
+
+    const initHologram = () => {
+      hologramLines = [];
+      const lineCount = intensity === 'high' ? 8 : intensity === 'medium' ? 6 : 4;
+      
+      for (let i = 0; i < lineCount; i++) {
+        hologramLines.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          length: Math.random() * 100 + 50,
+          angle: Math.random() * Math.PI * 2,
+          speed: Math.random() * 2 + 1,
+          opacity: Math.random() * 0.3 + 0.2
         });
       }
     };
 
     const drawParticles = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-
+      
       particles.forEach(particle => {
         ctx.save();
         ctx.globalAlpha = particle.opacity;
@@ -80,23 +105,29 @@ const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
         particle.x += particle.vx;
         particle.y += particle.vy;
 
-        // Wrap around edges
+        // Bounce off edges
+        if (particle.x <= 0 || particle.x >= canvas.width) particle.vx *= -1;
+        if (particle.y <= 0 || particle.y >= canvas.height) particle.vy *= -1;
+
+        // Wrap around
         if (particle.x < 0) particle.x = canvas.width;
         if (particle.x > canvas.width) particle.x = 0;
         if (particle.y < 0) particle.y = canvas.height;
         if (particle.y > canvas.height) particle.y = 0;
+      });
 
-        // Draw connections
-        particles.forEach(otherParticle => {
+      // Draw connections
+      particles.forEach((particle, i) => {
+        particles.slice(i + 1).forEach(otherParticle => {
           const distance = Math.sqrt(
             Math.pow(particle.x - otherParticle.x, 2) + 
             Math.pow(particle.y - otherParticle.y, 2)
           );
-
+          
           if (distance < 100) {
             ctx.save();
             ctx.globalAlpha = (100 - distance) / 100 * 0.3;
-            ctx.strokeStyle = particle.color;
+            ctx.strokeStyle = '#00d4ff';
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
@@ -111,135 +142,44 @@ const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
     const drawMatrix = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
-      const columns = Math.floor(canvas.width / 20);
-      const drops: number[] = [];
-      
-      for (let i = 0; i < columns; i++) {
-        drops[i] = Math.random() * canvas.height;
-      }
-
-      for (let i = 0; i < drops.length; i++) {
-        const x = i * 20;
-        const y = drops[i] * 1;
-        
+      matrixChars.forEach(char => {
         ctx.save();
-        ctx.fillStyle = '#0f0';
+        ctx.globalAlpha = char.opacity;
+        ctx.fillStyle = '#00ff00';
         ctx.font = '16px monospace';
-        ctx.fillText('01', x, y);
+        ctx.fillText(char.chars, char.x, char.y);
         ctx.restore();
 
-        if (drops[i] * 1 > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0;
+        char.y += char.speed;
+        if (char.y > canvas.height) {
+          char.y = -20;
         }
-        drops[i]++;
-      }
-    };
-
-    const drawCyberGrid = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
-      const gridSize = 30;
-      const time = Date.now() * 0.001;
-      
-      ctx.save();
-      ctx.strokeStyle = 'rgba(0, 212, 255, 0.3)';
-      ctx.lineWidth = 1;
-      
-      // Vertical lines
-      for (let x = 0; x < canvas.width; x += gridSize) {
-        ctx.beginPath();
-        ctx.moveTo(x, 0);
-        ctx.lineTo(x, canvas.height);
-        ctx.stroke();
-      }
-      
-      // Horizontal lines
-      for (let y = 0; y < canvas.height; y += gridSize) {
-        ctx.beginPath();
-        ctx.moveTo(0, y);
-        ctx.lineTo(canvas.width, y);
-        ctx.stroke();
-      }
-      
-      // Animated nodes
-      for (let x = gridSize / 2; x < canvas.width; x += gridSize) {
-        for (let y = gridSize / 2; y < canvas.height; y += gridSize) {
-          const pulse = Math.sin(time + x * 0.01 + y * 0.01) * 0.5 + 0.5;
-          ctx.save();
-          ctx.fillStyle = `rgba(0, 212, 255, ${pulse * 0.8})`;
-          ctx.beginPath();
-          ctx.arc(x, y, 2, 0, Math.PI * 2);
-          ctx.fill();
-          ctx.restore();
-        }
-      }
-      
-      ctx.restore();
+      });
     };
 
     const drawHologram = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
-      const time = Date.now() * 0.001;
-      const centerX = canvas.width / 2;
-      const centerY = canvas.height / 2;
-      
-      // Holographic rings
-      for (let i = 0; i < 5; i++) {
-        const radius = 50 + i * 40;
-        const opacity = Math.sin(time + i) * 0.5 + 0.5;
-        
+      hologramLines.forEach(line => {
         ctx.save();
-        ctx.strokeStyle = `rgba(0, 212, 255, ${opacity * 0.6})`;
+        ctx.globalAlpha = line.opacity;
+        ctx.strokeStyle = '#00d4ff';
         ctx.lineWidth = 2;
+        ctx.lineCap = 'round';
+        
+        const endX = line.x + Math.cos(line.angle) * line.length;
+        const endY = line.y + Math.sin(line.angle) * line.length;
+        
         ctx.beginPath();
-        ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
+        ctx.moveTo(line.x, line.y);
+        ctx.lineTo(endX, endY);
         ctx.stroke();
         ctx.restore();
-      }
-      
-      // Scanning line
-      const scanY = (Math.sin(time * 2) * 0.5 + 0.5) * canvas.height;
-      ctx.save();
-      ctx.strokeStyle = 'rgba(0, 212, 255, 0.8)';
-      ctx.lineWidth = 3;
-      ctx.beginPath();
-      ctx.moveTo(0, scanY);
-      ctx.lineTo(canvas.width, scanY);
-      ctx.stroke();
-      ctx.restore();
-    };
 
-    const drawDataStream = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
-      const time = Date.now() * 0.001;
-      const streamCount = 8;
-      
-      for (let i = 0; i < streamCount; i++) {
-        const x = (canvas.width / streamCount) * i;
-        const speed = 2 + Math.sin(time + i) * 0.5;
-        const height = 100 + Math.sin(time * 0.5 + i) * 50;
-        
-        ctx.save();
-        ctx.strokeStyle = `rgba(0, 212, 255, ${0.6 + Math.sin(time + i) * 0.4})`;
-        ctx.lineWidth = 3;
-        ctx.beginPath();
-        ctx.moveTo(x, 0);
-        ctx.lineTo(x, height);
-        ctx.stroke();
-        
-        // Data packets
-        for (let j = 0; j < 5; j++) {
-          const packetY = (time * speed * 50 + j * 20) % height;
-          ctx.fillStyle = `rgba(0, 212, 255, ${0.8 + Math.sin(time * 3 + j) * 0.2})`;
-          ctx.beginPath();
-          ctx.arc(x, packetY, 3, 0, Math.PI * 2);
-          ctx.fill();
-        }
-        
-        ctx.restore();
-      }
+        // Animate line
+        line.angle += 0.02;
+        line.opacity = Math.sin(Date.now() * 0.001 + line.x * 0.01) * 0.3 + 0.3;
+      });
     };
 
     const animate = () => {
@@ -250,37 +190,68 @@ const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
         case 'matrix':
           drawMatrix();
           break;
-        case 'cyber-grid':
-          drawCyberGrid();
-          break;
         case 'hologram':
           drawHologram();
           break;
-        case 'data-stream':
-          drawDataStream();
+        case 'cyber':
+          drawParticles();
+          drawMatrix();
           break;
       }
       
-      animationRef.current = requestAnimationFrame(animate);
+      animationFrameId = requestAnimationFrame(animate);
     };
 
-    initParticles();
+    // Initialize based on variant
+    switch (variant) {
+      case 'particles':
+        initParticles();
+        break;
+      case 'matrix':
+        initMatrix();
+        break;
+      case 'hologram':
+        initHologram();
+        break;
+      case 'cyber':
+        initParticles();
+        initMatrix();
+        break;
+    }
+
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
     animate();
 
     return () => {
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
-      }
       window.removeEventListener('resize', resizeCanvas);
+      cancelAnimationFrame(animationFrameId);
     };
   }, [variant, intensity]);
 
   return (
-    <canvas
-      ref={canvasRef}
-      className={`fixed inset-0 pointer-events-none z-0 ${className}`}
-      style={{ background: 'transparent' }}
-    />
+    <div ref={containerRef} className={`absolute inset-0 ${className}`}>
+      <canvas
+        ref={canvasRef}
+        className="w-full h-full"
+        style={{ display: 'block' }}
+      />
+      
+      {/* Additional futuristic overlay effects */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Cyber grid overlay */}
+        <div className="absolute inset-0 cyber-grid opacity-5" />
+        
+        {/* Glowing corners */}
+        <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-neon-blue/20 to-transparent" />
+        <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-neon-purple/20 to-transparent" />
+        <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-neon-green/20 to-transparent" />
+        <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-neon-pink/20 to-transparent" />
+        
+        {/* Scanning lines */}
+        <div className="absolute inset-0 scanning-lines opacity-10" />
+      </div>
+    </div>
   );
 };
 
