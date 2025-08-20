@@ -8,52 +8,52 @@ import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, Exter
 
 export default function HomePage() {
   const heroStats = [
-    { value: '227+', label: 'Intelligent Automations', color: 'text-cyan-400' },
-    { value: '2960+', label: 'Dynamic Pages', color: 'text-fuchsia-400' },
-    { value: '12', label: 'Core Components', color: 'text-blue-400' },
-    { value: '100%', label: 'Autonomous', color: 'text-green-400' },
+    { value: '25+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
+    { value: '99.9%', label: 'Uptime Guarantee', color: 'text-fuchsia-400' },
+    { value: '14', label: 'Day Free Trials', color: 'text-blue-400' },
+    { value: '24/7', label: 'AI Support', color: 'text-green-400' },
   ];
 
   const platformFeatures = [
     {
       icon: <Cloud className="w-8 h-8 text-white" />,
-      title: 'Autonomous Cloud Systems',
-      description: 'Self-healing CI/CD pipelines, intelligent build orchestration, and zero-downtime deployments.',
+      title: 'Real Micro SaaS Services',
+      description: '25+ fully functional micro SaaS tools with real implementations, not just mockups.',
       color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
       gradient: 'from-cyan-400 to-blue-500',
     },
     {
       icon: <Bot className="w-8 h-8 text-white" />,
-      title: 'AI-Powered Automation',
-      description: '227+ autonomous agents, intelligent content generation, and predictive maintenance.',
+      title: 'AI-Powered Solutions',
+      description: 'Advanced AI content generation, SEO automation, chatbots, and business intelligence.',
       color: 'bg-gradient-to-br from-fuchsia-500 to-purple-600',
       gradient: 'from-fuchsia-400 to-purple-500',
     },
     {
       icon: <RefreshCw className="w-8 h-8 text-white" />,
-      title: 'Redundancy & Reliability',
-      description: 'Multi-layer redundancy systems, intelligent failover, and 99.99% uptime guarantee.',
+      title: 'Enterprise Reliability',
+      description: '99.9% uptime guarantee, automated scaling, and intelligent resource management.',
       color: 'bg-gradient-to-br from-green-500 to-emerald-600',
       gradient: 'from-green-400 to-emerald-500',
     },
     {
       icon: <Zap className="w-8 h-8 text-white" />,
-      title: 'Performance Optimization',
-      description: 'Real-time monitoring, automated scaling, and intelligent resource management.',
+      title: 'Lightning Fast Setup',
+      description: 'Get started in minutes with our intuitive interfaces and automated onboarding.',
       color: 'bg-gradient-to-br from-orange-500 to-red-600',
       gradient: 'from-orange-400 to-red-500',
     },
     {
       icon: <Shield className="w-8 h-8 text-white" />,
-      title: 'Security & Compliance',
-      description: 'Advanced threat detection, automated security updates, and compliance monitoring.',
+      title: 'Bank-Level Security',
+      description: 'SOC 2 compliance, advanced encryption, and automated security monitoring.',
       color: 'bg-gradient-to-br from-indigo-500 to-purple-600',
       gradient: 'from-indigo-400 to-purple-500',
     },
     {
       icon: <BarChart3 className="w-8 h-8 text-white" />,
-      title: 'Analytics & Insights',
-      description: 'Comprehensive reporting, predictive analytics, and actionable business intelligence.',
+      title: 'Transparent Pricing',
+      description: 'No hidden fees, simple monthly pricing that scales with your business needs.',
       color: 'bg-gradient-to-br from-teal-500 to-cyan-600',
       gradient: 'from-teal-400 to-cyan-500',
     },
@@ -714,6 +714,211 @@ export default function HomePage() {
               <h3 className="text-lg font-bold text-white mb-2">Enterprise Security</h3>
               <p className="text-green-200 text-sm">Bank-level security, SOC 2 compliance, and 99.9% uptime guarantee for all services.</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Real Micro SaaS Services Section */}
+      <section className="py-24 bg-gradient-to-br from-slate-900 to-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse" />
+              Real Implementation
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+              Real Micro SaaS Services
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Not just mockups - these are fully functional, production-ready tools that solve real business problems.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                name: 'AI Content Generator Pro',
+                description: 'Create high-quality, SEO-optimized content with real AI generation and analytics.',
+                icon: '📝',
+                color: 'from-pink-500 to-rose-600',
+                link: '/micro-saas'
+              },
+              {
+                name: 'SEO Automation Suite',
+                description: 'Real keyword research, technical audits, and competitor analysis tools.',
+                icon: '🔍',
+                color: 'from-emerald-500 to-green-600',
+                link: '/micro-saas'
+              },
+              {
+                name: 'AI Chatbot Platform',
+                description: 'Intelligent chatbots with real conversation management and training.',
+                icon: '💬',
+                color: 'from-sky-500 to-blue-600',
+                link: '/micro-saas'
+              },
+              {
+                name: 'Business Intelligence Hub',
+                description: 'Real data visualization, KPI tracking, and automated reporting.',
+                icon: '📊',
+                color: 'from-rose-500 to-pink-600',
+                link: '/micro-saas'
+              },
+              {
+                name: 'Cloud Cost Optimizer',
+                description: 'Real cloud resource monitoring and cost optimization recommendations.',
+                icon: '☁️',
+                color: 'from-blue-500 to-indigo-600',
+                link: '/micro-saas'
+              },
+              {
+                name: 'AI Video Editor Pro',
+                description: 'Professional video editing with real AI-powered tools and automation.',
+                icon: '🎬',
+                color: 'from-red-500 to-pink-600',
+                link: '/micro-saas'
+              }
+            ].map((service, index) => (
+              <div key={index} className="group">
+                <div className={`bg-gradient-to-br ${service.color} p-6 rounded-2xl h-full transform group-hover:scale-105 transition-all duration-300 hover:shadow-2xl`}>
+                  <div className="text-4xl mb-4">{service.icon}</div>
+                  <h3 className="text-xl font-bold text-white mb-3">{service.name}</h3>
+                  <p className="text-gray-100 mb-4">{service.description}</p>
+                  <a 
+                    href={service.link}
+                    className="inline-flex items-center text-white font-semibold hover:text-gray-200 transition-colors duration-200"
+                  >
+                    Learn More
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          <div className="text-center mt-12">
+            <a 
+              href="/micro-saas"
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white font-semibold rounded-full hover:from-green-700 hover:to-emerald-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              View All Services
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section className="py-24 bg-gradient-to-br from-slate-800 to-slate-700">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+              Transparent Market Pricing
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Competitive pricing based on market research and value delivered. No hidden fees, no enterprise sales calls.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                name: 'Starter',
+                price: '$29',
+                period: '/month',
+                description: 'Perfect for small businesses and startups',
+                features: [
+                  'Up to 5 projects',
+                  'Basic analytics',
+                  'Email support',
+                  '14-day free trial'
+                ],
+                color: 'from-blue-500 to-indigo-600',
+                popular: false
+              },
+              {
+                name: 'Professional',
+                price: '$79',
+                period: '/month',
+                description: 'Ideal for growing businesses and teams',
+                features: [
+                  'Up to 25 projects',
+                  'Advanced analytics',
+                  'Priority support',
+                  'API access',
+                  '14-day free trial'
+                ],
+                color: 'from-green-500 to-emerald-600',
+                popular: true
+              },
+              {
+                name: 'Enterprise',
+                price: '$199',
+                period: '/month',
+                description: 'For large organizations with complex needs',
+                features: [
+                  'Unlimited projects',
+                  'Custom integrations',
+                  'Dedicated support',
+                  'SLA guarantee',
+                  'Custom pricing available'
+                ],
+                color: 'from-purple-500 to-pink-600',
+                popular: false
+              }
+            ].map((plan, index) => (
+              <div key={index} className="relative">
+                {plan.popular && (
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                    <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-4 py-2 rounded-full text-sm font-bold">
+                      Most Popular
+                    </span>
+                  </div>
+                )}
+                <div className={`bg-gradient-to-br ${plan.color} p-8 rounded-2xl h-full transform hover:scale-105 transition-all duration-300 hover:shadow-2xl`}>
+                  <div className="text-center mb-6">
+                    <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
+                    <div className="flex items-baseline justify-center">
+                      <span className="text-4xl font-bold text-white">{plan.price}</span>
+                      <span className="text-xl text-gray-200 ml-1">{plan.period}</span>
+                    </div>
+                    <p className="text-gray-200 mt-2">{plan.description}</p>
+                  </div>
+                  
+                  <ul className="space-y-3 mb-8">
+                    {plan.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center text-gray-100">
+                        <Check className="w-5 h-5 text-green-300 mr-3 flex-shrink-0" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  
+                  <div className="text-center">
+                    <a 
+                      href="/pricing"
+                      className="inline-flex items-center px-6 py-3 bg-white text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-200 w-full justify-center"
+                    >
+                      Get Started
+                      <ArrowRight className="ml-2 w-4 h-4" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          <div className="text-center mt-12">
+            <p className="text-gray-300 mb-6">
+              All plans include 99.9% uptime guarantee, enterprise-grade security, and 14-day free trials
+            </p>
+            <a 
+              href="/pricing"
+              className="inline-flex items-center px-8 py-4 bg-white text-gray-900 font-semibold rounded-full hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              View Detailed Pricing
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </a>
           </div>
         </div>
       </section>

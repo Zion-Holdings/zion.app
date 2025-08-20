@@ -1,4 +1,9 @@
 // Export all micro SaaS services
+export { aiContentGeneratorService } from './aiContentGeneratorService';
+export { seoAutomationService } from './seoAutomationService';
+export { aiChatbotService } from './aiChatbotService';
+export { businessIntelligenceService } from './businessIntelligenceService';
+export { cloudCostOptimizerService } from './cloudCostOptimizerService';
 export { gitService } from './gitService';
 export { aiContentService } from './aiContentService';
 export { cloudCostService } from './cloudCostService';
@@ -6,7 +11,47 @@ export { aiLegalService } from './aiLegalService';
 export { aiSalesService } from './aiSalesService';
 export { aiHrService } from './aiHrService';
 
-// Export service types
+// Export types
+export type {
+  ContentTemplate,
+  GeneratedContent,
+  ContentAnalytics
+} from './aiContentGeneratorService';
+
+export type {
+  KeywordData,
+  OnPageOptimization,
+  TechnicalSEOAudit,
+  CompetitorAnalysis,
+  SEORanking
+} from './seoAutomationService';
+
+export type {
+  ChatMessage,
+  Conversation,
+  TrainingData,
+  ChatbotAnalytics,
+  ChatbotConfig
+} from './aiChatbotService';
+
+export type {
+  DataSource,
+  Dashboard,
+  Widget,
+  Filter,
+  Report,
+  KPI
+} from './businessIntelligenceService';
+
+export type {
+  CloudResource,
+  CostOptimization,
+  CostAlert,
+  CostBudget,
+  CostReport,
+  ResourceRecommendation
+} from './cloudCostOptimizerService';
+
 export type {
   GitFileStatus,
   GitCommit,
@@ -18,11 +63,11 @@ export type {
 export type {
   ContentRequest,
   ContentResponse,
-  ContentTemplate
+  ContentTemplate as ContentTemplateLegacy
 } from './aiContentService';
 
 export type {
-  CloudResource,
+  CloudResource as CloudResourceLegacy,
   CostAnalysis,
   BudgetAlert,
   OptimizationRecommendation
