@@ -4,7 +4,7 @@ import Hero from '../components/sections/Hero';
 import Features from '../components/sections/Features';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
-import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight } from 'lucide-react';
+import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, ExternalLink } from 'lucide-react';
 
 export default function HomePage() {
   const heroStats = [
@@ -462,9 +462,64 @@ export default function HomePage() {
 
           <div className="text-center">
             <p className="text-gray-400 mb-8 max-w-3xl mx-auto">
-              All 50+ services include comprehensive documentation, dedicated support, enterprise-grade reliability, 99.9% uptime guarantee, and 14-day free trials. 
+              All 60+ services include comprehensive documentation, dedicated support, enterprise-grade reliability, 99.9% uptime guarantee, and 14-day free trials. 
               Start with one solution and scale as you grow. Each service is designed for immediate value delivery with transparent pricing.
             </p>
+            
+            {/* Micro SaaS Portfolio Highlight */}
+            <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-8 border border-blue-500/20 mb-8 max-w-4xl mx-auto">
+              <h3 className="text-2xl font-bold text-white mb-4">Complete Micro SaaS Portfolio</h3>
+              <p className="text-blue-100 mb-6 max-w-3xl mx-auto">
+                Access all 60+ specialized solutions through <strong className="text-white">ziontechgroup.com</strong> for a unified experience, 
+                single billing, and seamless integration between services.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                <div className="flex items-center text-blue-200">
+                  <Check className="w-4 h-4 mr-2" />
+                  <span className="text-blue-100">Single sign-on access</span>
+                </div>
+                <div className="flex items-center text-blue-200">
+                  <Check className="w-4 h-4 mr-2" />
+                  <span className="text-blue-100">Unified dashboard</span>
+                </div>
+                <div className="flex items-center text-blue-200">
+                  <Check className="w-4 h-4 mr-2" />
+                  <span className="text-blue-100">Integrated billing</span>
+                </div>
+                <div className="flex items-center text-blue-200">
+                  <Check className="w-4 h-4 mr-2" />
+                  <span className="text-blue-100">Consistent support</span>
+                </div>
+                <div className="flex items-center text-blue-200">
+                  <Check className="w-4 h-4 mr-2" />
+                  <span className="text-blue-100">Seamless tool integration</span>
+                </div>
+                <div className="flex items-center text-blue-200">
+                  <Check className="w-4 h-4 mr-2" />
+                  <span className="text-blue-100">Enterprise security</span>
+                </div>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a 
+                  href="https://ziontechgroup.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-6 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium transition-colors"
+                >
+                  Visit ziontechgroup.com
+                  <ExternalLink className="w-4 h-4 ml-2" />
+                </a>
+                <Button
+                  href="/micro-saas"
+                  variant="outline"
+                  size="lg"
+                  className="border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white"
+                >
+                  Explore Full Portfolio
+                </Button>
+              </div>
+            </div>
+            
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 href="/micro-saas"
