@@ -155,7 +155,7 @@ export default function BlogPage() {
                   </div>
                   
                   <Button
-                    href="#"
+                    href="/blog/ai-automation-trends-2025"
                     size="lg"
                     className="group-hover:scale-105 transition-transform duration-200"
                   >
@@ -225,7 +225,7 @@ export default function BlogPage() {
                 </div>
 
                 <Button
-                  href="#"
+                  href="/blog/ai-automation-trends-2025"
                   variant="outline"
                   size="sm"
                   className="w-full"

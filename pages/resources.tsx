@@ -10,7 +10,7 @@ export default function ResourcesPage() {
       description: 'A comprehensive guide to implementing AI solutions in your business, from strategy to deployment.',
       type: 'Guide',
       category: 'AI & Automation',
-      downloadUrl: '#',
+      downloadUrl: '/docs',
       image: '📚',
       color: 'text-cyan-400',
       size: '2.4 MB',
@@ -21,7 +21,7 @@ export default function ResourcesPage() {
       description: 'Learn the best practices for building scalable, secure, and efficient cloud infrastructure.',
       type: 'Whitepaper',
       category: 'Cloud Computing',
-      downloadUrl: '#',
+      downloadUrl: '/docs',
       image: '☁️',
       color: 'text-blue-400',
       size: '1.8 MB',
@@ -32,7 +32,7 @@ export default function ResourcesPage() {
       description: 'A practical checklist for implementing DevOps automation in your organization.',
       type: 'Checklist',
       category: 'DevOps',
-      downloadUrl: '#',
+      downloadUrl: '/docs',
       image: '⚙️',
       color: 'text-purple-400',
       size: '856 KB',
@@ -43,7 +43,7 @@ export default function ResourcesPage() {
       description: 'Comprehensive framework for ensuring data security and compliance in AI systems.',
       type: 'Framework',
       category: 'Security',
-      downloadUrl: '#',
+      downloadUrl: '/docs',
       image: '🔒',
       color: 'text-green-400',
       size: '3.2 MB',
@@ -54,7 +54,7 @@ export default function ResourcesPage() {
       description: 'Advanced techniques for optimizing AI and automation system performance.',
       type: 'Guide',
       category: 'Performance',
-      downloadUrl: '#',
+      downloadUrl: '/docs',
       image: '🚀',
       color: 'text-orange-400',
       size: '2.1 MB',
@@ -65,7 +65,7 @@ export default function ResourcesPage() {
       description: 'Detailed comparison of different technology stacks for AI and automation projects.',
       type: 'Analysis',
       category: 'Technology',
-      downloadUrl: '#',
+      downloadUrl: '/docs',
       image: '⚡',
       color: 'text-fuchsia-400',
       size: '1.5 MB',
@@ -80,7 +80,7 @@ export default function ResourcesPage() {
       category: 'Calculator',
       image: '🧮',
       color: 'text-cyan-400',
-      url: '#'
+      url: '/contact'
     },
     {
       name: 'Performance Benchmark Tool',
@@ -88,7 +88,7 @@ export default function ResourcesPage() {
       category: 'Tool',
       image: '📊',
       color: 'text-blue-400',
-      url: '#'
+      url: '/contact'
     },
     {
       name: 'Security Assessment Framework',
@@ -96,7 +96,7 @@ export default function ResourcesPage() {
       category: 'Framework',
       image: '🛡️',
       color: 'text-green-400',
-      url: '#'
+      url: '/contact'
     },
     {
       name: 'Cost Optimization Analyzer',
@@ -104,7 +104,7 @@ export default function ResourcesPage() {
       category: 'Analyzer',
       image: '💰',
       color: 'text-purple-400',
-      url: '#'
+      url: '/contact'
     }
   ];
 
@@ -309,7 +309,7 @@ export default function ResourcesPage() {
                   </h3>
                   
                   <Button
-                    href="#"
+                    href="/docs"
                     variant="outline"
                     size="sm"
                     className="w-full"
@@ -350,7 +350,7 @@ export default function ResourcesPage() {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
-                href="#"
+                href="/contact"
                 size="lg"
                 className="group-hover:scale-105 transition-transform duration-200"
               >
