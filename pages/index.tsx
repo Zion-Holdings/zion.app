@@ -3,11 +3,12 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shield, Mail, MapPin, Rocket, Users } from 'lucide-react';
 import Button from '../components/ui/Button';
-import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import UltraQuantumHolographicMatrixBackground from '../components/ui/UltraQuantumHolographicMatrixBackground';
 import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
 import EnhancedNavigation2025 from '../components/layout/EnhancedNavigation2025';
 import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
 import RevolutionaryServicesShowcase from '../components/sections/RevolutionaryServicesShowcase';
+import Revolutionary2026ServicesShowcase from '../components/sections/Revolutionary2026ServicesShowcase';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
@@ -36,6 +37,10 @@ import { revolutionary2025Innovations } from '../data/revolutionary-2025-innovat
 import { emergingTech2025Innovations } from '../data/emerging-tech-2025-innovations';
 import { enterpriseIT2025Services } from '../data/enterprise-it-2025-services';
 import { revolutionary2025MicroSaasServices } from '../data/revolutionary-2025-micro-saas';
+import { revolutionary2026AIServices } from '../data/revolutionary-2026-ai-services';
+import { revolutionary2026ITInfrastructureServices } from '../data/revolutionary-2026-it-infrastructure';
+import { revolutionary2026MicroSaasServices } from '../data/revolutionary-2026-micro-saas';
+import { revolutionary2026SpaceTechServices } from '../data/revolutionary-2026-space-tech';
 
 export default function HomePage() {
   const contactInfo = {
@@ -73,7 +78,11 @@ export default function HomePage() {
     ...emergingTech2025Innovations,
     ...enterpriseIT2025Services,
     ...revolutionary2025MicroSaasServices,
-    ...emergingTech2025Services
+    ...emergingTech2025Services,
+    ...revolutionary2026AIServices,
+    ...revolutionary2026ITInfrastructureServices,
+    ...revolutionary2026MicroSaasServices,
+    ...revolutionary2026SpaceTechServices
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);
@@ -89,13 +98,15 @@ export default function HomePage() {
   };
 
   return (
-    <UltraAdvancedFuturisticBackground 
+    <UltraQuantumHolographicMatrixBackground 
       intensity="extreme" 
       colorScheme="quantum-fusion"
-      particleCount={400}
-      animationSpeed={2.0}
+      particleCount={500}
+      animationSpeed={2.5}
       enableHolographic={true}
       enableQuantumEffects={true}
+      enableMatrixFlow={true}
+      enableNeuralPulse={true}
     >
       <div className="min-h-screen">
         <Head>
@@ -918,6 +929,19 @@ export default function HomePage() {
 
         {/* Revolutionary 2025 Services Showcase */}
         <RevolutionaryServicesShowcase />
+        
+        {/* Revolutionary 2026 Services Showcase */}
+        <Revolutionary2026ServicesShowcase 
+          services={[
+            ...revolutionary2026AIServices,
+            ...revolutionary2026ITInfrastructureServices,
+            ...revolutionary2026MicroSaasServices,
+            ...revolutionary2026SpaceTechServices
+          ]}
+          title="Revolutionary 2026 Services"
+          subtitle="Experience the future of technology with our cutting-edge AI, quantum, and space solutions"
+          maxServices={18}
+        />
 
         {/* Featured Offers */}
         <section className="py-16 px-4 sm:px-6 lg:px-8">

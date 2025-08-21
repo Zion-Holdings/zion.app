@@ -35,6 +35,16 @@
   --holographic-resonance: 0 0 800px rgba(139, 92, 246, 0.04);
   --neural-resonance: 0 0 700px rgba(16, 185, 129, 0.03);
   --cyberpunk-resonance: 0 0 900px rgba(236, 73, 153, 0.04);
+  
+  /* 2026 Revolutionary Variables */
+  --quantum-fusion: 0 0 1000px rgba(0, 255, 255, 0.02);
+  --holographic-matrix-2026: 0 0 1200px rgba(139, 92, 246, 0.03);
+  --neural-network-2026: 0 0 1100px rgba(16, 185, 129, 0.025);
+  --cyberpunk-fusion-2026: 0 0 1300px rgba(236, 73, 153, 0.03);
+  --space-tech-glow: 0 0 800px rgba(255, 69, 0, 0.04);
+  --ai-consciousness: 0 0 900px rgba(138, 43, 226, 0.035);
+  --quantum-space: 0 0 1400px rgba(0, 255, 255, 0.015);
+  --holographic-events: 0 0 1000px rgba(255, 20, 147, 0.04);
 }
 
 /* Enhanced Scrollbar */
@@ -74,6 +84,81 @@
   background: rgba(0, 255, 255, 0.5);
   color: white;
   text-shadow: 0 0 15px rgba(0, 255, 255, 0.9);
+}
+
+/* 2026 Revolutionary Animations */
+@keyframes quantum-pulse {
+  0%, 100% { 
+    box-shadow: var(--quantum-glow), var(--quantum-aura);
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: var(--quantum-fusion), var(--quantum-resonance);
+    transform: scale(1.02);
+  }
+}
+
+@keyframes holographic-matrix {
+  0% { 
+    background-position: 0% 50%;
+    box-shadow: var(--holographic-glow);
+  }
+  50% { 
+    background-position: 100% 50%;
+    box-shadow: var(--holographic-matrix-2026);
+  }
+  100% { 
+    background-position: 0% 50%;
+    box-shadow: var(--holographic-resonance);
+  }
+}
+
+@keyframes neural-network-pulse {
+  0%, 100% { 
+    box-shadow: var(--neural-pulse);
+    opacity: 0.8;
+  }
+  50% { 
+    box-shadow: var(--neural-network-2026);
+    opacity: 1;
+  }
+}
+
+@keyframes space-tech-float {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg);
+    box-shadow: var(--space-tech-glow);
+  }
+  25% { 
+    transform: translateY(-10px) rotate(1deg);
+    box-shadow: var(--quantum-space);
+  }
+  50% { 
+    transform: translateY(-5px) rotate(0deg);
+    box-shadow: var(--holographic-events);
+  }
+  75% { 
+    transform: translateY(-15px) rotate(-1deg);
+    box-shadow: var(--ai-consciousness);
+  }
+}
+
+@keyframes cyberpunk-fusion {
+  0% { 
+    background: linear-gradient(45deg, #ec4899, #8b5cf6, #00ffff);
+    background-size: 200% 200%;
+    box-shadow: var(--cyberpunk-glow);
+  }
+  50% { 
+    background: linear-gradient(45deg, #8b5cf6, #00ffff, #ec4899);
+    background-size: 200% 200%;
+    box-shadow: var(--cyberpunk-fusion-2026);
+  }
+  100% { 
+    background: linear-gradient(45deg, #00ffff, #ec4899, #8b5cf6);
+    background-size: 200% 200%;
+    box-shadow: var(--cyberpunk-resonance);
+  }
 }
 
 /* Enhanced Body Styles */
