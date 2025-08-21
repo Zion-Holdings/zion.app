@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { Cloud, Cpu, Server, Database, Settings, Shield, Phone, Mail, MapPin, Check } from 'lucide-react';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 import Button from '../components/ui/Button';
+import ServiceAds from '../components/sections/ServiceAds';
 
 export default function ITServicesPage() {
   const contactInfo = {
@@ -27,6 +28,41 @@ export default function ITServicesPage() {
     { name: 'Managed', price: 'From $2,000/month', items: ['Ops on-call 24/7', 'Release & env mgmt', 'Weekly tune-ups', 'Monthly executive report'] },
   ];
 
+  const featuredITAds = [
+    {
+      title: '💸 Cloud Cost Optimizer Pro',
+      description: 'Rightsizing, storage lifecycle, anomaly detection and K8s bin-packing insights.',
+      price: 'Starting at $99/month',
+      features: ['Rightsizing & schedules', 'Lifecycle policies', 'Anomaly alerts', 'IaC outputs'],
+      link: 'https://ziontechgroup.com/cloud-cost-optimizer',
+      contactInfo
+    },
+    {
+      title: '🗄️ Database Performance Monitor',
+      description: 'Slow query capture, AI index suggestions, capacity forecasting for Postgres/MySQL.',
+      price: 'Starting at $79/month',
+      features: ['Slow query ranking', 'AI index advice', 'Pool tuning', 'SLA/SLO dashboards'],
+      link: 'https://ziontechgroup.com/database-performance-monitor',
+      contactInfo
+    },
+    {
+      title: '🔐 API Security Scanner',
+      description: 'Automated OpenAPI/GraphQL scanning, auth/Z checks, and dependency audit.',
+      price: 'Starting at $59/month',
+      features: ['Auth/Z misconfig checks', 'OWASP top-10 tests', 'CI gate', 'Fix guidance'],
+      link: 'https://ziontechgroup.com/api-security-scanner',
+      contactInfo
+    },
+    {
+      title: '📈 API Observability & SLA Guard',
+      description: 'OpenTelemetry-based tracing, error budgets, and SLO enforcement for services.',
+      price: 'Starting at $69/month',
+      features: ['OTel traces/metrics/logs', 'SLOs & error budgets', 'Alerting', 'Dashboards'],
+      link: 'https://ziontechgroup.com/api-observability',
+      contactInfo
+    }
+  ];
+
   return (
     <UltraAdvancedFuturisticBackground>
       <Head>
@@ -36,6 +72,7 @@ export default function ITServicesPage() {
       </Head>
 
       <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
+        <ServiceAds heading="Featured IT Services" subheading="Production-grade solutions with clear pricing." items={featuredITAds} />
         <div className="text-center max-w-4xl mx-auto mb-12">
           <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-6">Modern IT Services</h1>
           <p className="text-xl text-gray-300">Outcome-driven cloud, platform, and reliability engineering to accelerate delivery and reduce costs.</p>
