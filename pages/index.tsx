@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import { motion } from 'framer-motion';
 import Hero from '../components/sections/Hero';
 import Features from '../components/sections/Features';
 import Card from '../components/ui/Card';
@@ -8,7 +9,9 @@ import EnhancedFuturisticBackground from '../components/ui/EnhancedFuturisticBac
 import EnhancedFuturisticCard from '../components/ui/EnhancedFuturisticCard';
 import QuantumHolographicBackground from '../components/ui/QuantumHolographicBackground';
 import QuantumHolographicCard from '../components/ui/QuantumHolographicCard';
-import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, ExternalLink, Star, Users, Globe, Lock, Rocket, Cpu, Database, TrendingUp, Clock, Target, Building, Award, DollarSign, ChartBar, Code, BookOpen, Activity, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, Settings, BookOpen as BookOpenIcon, Activity as ActivityIcon, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Sparkles, Atom, Brain, Eye, Shield as ShieldIcon, Zap as ZapIcon, Globe as GlobeIcon, Cpu as CpuIcon, Cloud as CloudIcon, Bot as BotIcon, Lock as LockIcon, BarChart3 as BarChart3Icon, TrendingUp as TrendingUpIcon, Users as UsersIcon, Award as AwardIcon, Star as StarIcon, Check as CheckIcon, ArrowRight as ArrowRightIcon, ExternalLink as ExternalLinkIcon, Phone as PhoneIcon, Mail as MailIcon, MapPin as MapPinIcon, Trophy, FlaskConical, Dna, Car, Leaf, Factory, Truck, Microscope, GraduationCap, ShieldCheck } from 'lucide-react';
+import NeoFuturisticBackground from '../components/ui/NeoFuturisticBackground';
+import NeoFuturisticCard from '../components/ui/NeoFuturisticCard';
+import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, ExternalLink, Star, Users, Globe, Lock, Rocket, Cpu, Database, TrendingUp, Clock, Target, Building, Award, DollarSign, ChartBar, Code, BookOpen, Activity, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, Settings, BookOpen as BookOpenIcon, Activity as ActivityIcon, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Sparkles, Atom, Brain, Eye, Shield as ShieldIcon, Zap as ZapIcon, Globe as GlobeIcon, Cpu as CpuIcon, Cloud as CloudIcon, Bot as BotIcon, Lock as LockIcon, BarChart3 as BarChart3Icon, TrendingUp as TrendingUpIcon, Users as UsersIcon, Award as AwardIcon, Star as StarStarIcon, Check as CheckIcon, ArrowRight as ArrowRightIcon, ExternalLink as ExternalLinkIcon, Phone as PhoneIcon, Mail as MailIcon, MapPin as MapPinIcon, Trophy, FlaskConical, Dna, Car, Leaf, Factory, Truck, Microscope, GraduationCap, ShieldCheck } from 'lucide-react';
 
 export default function HomePage() {
   const heroStats = [
@@ -86,61 +89,87 @@ export default function HomePage() {
     { name: 'Prometheus', category: 'Monitoring', icon: '📊' },
   ];
 
-  // Innovative Services Showcase
+  // Innovative Services Showcase - 2025
   const innovativeServices = [
     {
       icon: '🧬',
-      title: 'Quantum Biomedical Research',
-      description: 'Revolutionary drug discovery using quantum algorithms. 100x faster than traditional methods.',
+      title: 'Quantum Biomedical Research Platform',
+      description: 'Revolutionary drug discovery using quantum algorithms. 100x faster than traditional methods. Used by leading pharmaceutical companies worldwide.',
       price: '$599/month',
       category: 'Healthcare & Life Sciences',
       variant: 'holographic' as const,
-      link: 'https://ziontechgroup.com/quantum-biomedical'
+      link: 'https://ziontechgroup.com/quantum-biomedical',
+      features: ['Quantum molecular dynamics', 'AI drug screening', 'Protein analysis', 'Clinical optimization']
     },
     {
       icon: '🚗',
-      title: 'AI Autonomous Vehicles',
-      description: 'Next-generation self-driving technology with 99.99% safety rating.',
+      title: 'AI Autonomous Vehicle Platform',
+      description: 'Next-generation self-driving technology with 99.99% safety rating. Deployed in commercial fleets and trusted by automotive manufacturers.',
       price: '$899/month',
       category: 'Autonomous Systems',
       variant: 'cyberpunk' as const,
-      link: 'https://ziontechgroup.com/ai-autonomous-vehicles'
+      link: 'https://ziontechgroup.com/ai-autonomous-vehicles',
+      features: ['Computer vision systems', 'Sensor fusion', 'Real-time decision making', 'Fleet management']
     },
     {
       icon: '📈',
-      title: 'Quantum Financial Trading',
-      description: 'Quantum-powered algorithmic trading with 50x faster execution.',
+      title: 'Quantum Financial Trading Platform',
+      description: 'Quantum-powered algorithmic trading with 50x faster execution. Revolutionary platform for financial markets.',
       price: '$799/month',
       category: 'Financial Technology',
       variant: 'quantum' as const,
-      link: 'https://ziontechgroup.com/quantum-financial-trading'
+      link: 'https://ziontechgroup.com/quantum-financial-trading',
+      features: ['Quantum algorithms', 'Risk assessment', 'Portfolio optimization', 'Market prediction']
     },
     {
       icon: '🚀',
-      title: 'AI Space Exploration',
-      description: 'Intelligent space mission planning trusted by NASA and SpaceX partners.',
+      title: 'AI Space Exploration Platform',
+      description: 'Intelligent space mission planning trusted by NASA and SpaceX partners. Advanced AI for extraterrestrial research.',
       price: '$1299/month',
       category: 'Space Technology',
-      variant: 'space-time' as const,
-      link: 'https://ziontechgroup.com/ai-space-exploration'
+      variant: 'quantum' as const,
+      link: 'https://ziontechgroup.com/ai-space-exploration',
+      features: ['Mission planning', 'Satellite management', 'Space debris tracking', 'Resource optimization']
     },
     {
       icon: '🌍',
-      title: 'Quantum Climate Modeling',
-      description: 'Precise climate prediction using quantum computing. 100x more accurate.',
+      title: 'Quantum Climate Modeling Platform',
+      description: 'Precise climate prediction using quantum computing. 100x more accurate than traditional methods.',
       price: '$699/month',
       category: 'Environmental Technology',
       variant: 'holographic' as const,
-      link: 'https://ziontechgroup.com/quantum-climate-modeling'
+      link: 'https://ziontechgroup.com/quantum-climate-modeling',
+      features: ['Quantum simulation', 'Weather modeling', 'Environmental assessment', 'Policy simulation']
     },
     {
       icon: '🧠',
-      title: 'AI Neural Interface',
-      description: 'Brain-computer interface for the future with breakthrough accuracy.',
+      title: 'AI Neural Interface Platform',
+      description: 'Brain-computer interface for the future with breakthrough accuracy. Enabling direct brain-computer communication.',
       price: '$1599/month',
       category: 'Neural Technology',
       variant: 'neural' as const,
-      link: 'https://ziontechgroup.com/ai-neural-interface'
+      link: 'https://ziontechgroup.com/ai-neural-interface',
+      features: ['Neural processing', 'Brain communication', 'Cognitive enhancement', 'Medical integration']
+    },
+    {
+      icon: '🛡️',
+      title: 'Quantum Cybersecurity Sentinel',
+      description: 'Quantum-resistant security with AI-powered threat detection. Future-proof protection against quantum threats.',
+      price: '$399/month',
+      category: 'Cybersecurity',
+      variant: 'cyberpunk' as const,
+      link: 'https://ziontechgroup.com/quantum-cybersecurity',
+      features: ['Quantum encryption', 'AI threat detection', 'Zero-day protection', 'Real-time monitoring']
+    },
+    {
+      icon: '🤖',
+      title: 'AI Robotics Automation Platform',
+      description: 'Intelligent robotics automation for manufacturing and logistics. Trusted by Fortune 500 manufacturers.',
+      price: '$549/month',
+      category: 'Industrial Automation',
+      variant: 'default' as const,
+      link: 'https://ziontechgroup.com/ai-robotics-automation',
+      features: ['AI robotics control', 'Manufacturing automation', 'Logistics optimization', 'Predictive maintenance']
     }
   ];
 
@@ -224,7 +253,11 @@ export default function HomePage() {
     }
   ];
 
-
+  const handleServiceClick = (link: string) => {
+    if (typeof window !== 'undefined') {
+      window.open(link, '_blank');
+    }
+  };
 
   return (
     <EnhancedFuturisticBackground variant="quantum-holographic-advanced" intensity="high">
@@ -385,7 +418,7 @@ export default function HomePage() {
                   intensity="high"
                   className="h-full group cursor-pointer"
                   interactive={true}
-                  onClick={() => window.open(service.link, '_blank')}
+                  onClick={() => handleServiceClick(service.link)}
                 >
                   <div className="text-center">
                     <div className="text-4xl mb-4">{service.icon}</div>
@@ -457,32 +490,51 @@ export default function HomePage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {innovativeServices.map((service, index) => (
-                <QuantumHolographicCard
-                  key={index}
-                  variant={service.variant}
-                  intensity="high"
-                  className="h-full"
-                  onClick={() => window.open(service.link, '_blank')}
-                >
-                  <div className="text-center">
-                    <div className="text-4xl mb-4">{service.icon}</div>
-                    <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
-                    <p className="text-gray-300 mb-4 leading-relaxed">{service.description}</p>
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="text-2xl font-bold text-cyan-400">{service.price}</span>
-                      <span className="text-sm text-gray-400 bg-gray-800 px-3 py-1 rounded-full">
-                        {service.category}
-                      </span>
+                <div key={index}>
+                  <EnhancedFuturisticCard
+                    variant={service.variant}
+                    intensity="high"
+                    className="h-full"
+                    onClick={() => handleServiceClick(service.link)}
+                  >
+                    <div className="text-center">
+                      <div className="text-4xl mb-4">{service.icon}</div>
+                      <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
+                      <p className="text-gray-300 mb-4 leading-relaxed">{service.description}</p>
+                      
+                      {/* Features list */}
+                      {service.features && (
+                        <div className="mb-4">
+                          <div className="text-xs text-gray-400 mb-2">Key Features:</div>
+                          <div className="flex flex-wrap justify-center gap-1">
+                            {service.features.slice(0, 3).map((feature, idx) => (
+                              <span 
+                                key={idx}
+                                className="px-2 py-1 bg-cyan-400/10 text-cyan-400 text-xs rounded-full border border-cyan-400/20"
+                              >
+                                {feature}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                      
+                      <div className="flex items-center justify-between mb-4">
+                        <span className="text-2xl font-bold text-cyan-400">{service.price}</span>
+                        <span className="text-sm text-gray-400 bg-gray-800 px-3 py-1 rounded-full">
+                          {service.category}
+                        </span>
+                      </div>
+                      <div className="flex items-center justify-center text-cyan-400 hover:text-cyan-300 transition-colors">
+                        <span className="text-sm font-semibold">Learn More</span>
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </div>
                     </div>
-                    <div className="flex items-center justify-center text-cyan-400 hover:text-cyan-300 transition-colors">
-                      <span className="text-sm font-semibold">Learn More</span>
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </div>
-                  </div>
-                </QuantumHolographicCard>
+                  </EnhancedFuturisticCard>
+                </div>
               ))}
             </div>
-
+            
             <div className="text-center mt-12">
               <QuantumHolographicCard
                 variant="quantum"
@@ -502,7 +554,11 @@ export default function HomePage() {
                       variant="primary"
                       size="lg"
                       className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700"
-                      onClick={() => window.open('/services', '_self')}
+                      onClick={() => {
+                        if (typeof window !== 'undefined') {
+                          window.open('/services', '_self');
+                        }
+                      }}
                     >
                       Explore All Services
                       <ArrowRight className="w-5 h-5 ml-2" />
@@ -511,7 +567,11 @@ export default function HomePage() {
                       variant="secondary"
                       size="lg"
                       className="border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-white"
-                      onClick={() => window.open('/contact', '_self')}
+                      onClick={() => {
+                        if (typeof window !== 'undefined') {
+                          window.open('/contact', '_self');
+                        }
+                      }}
                     >
                       Get Started Today
                       <Rocket className="w-5 h-5 ml-2" />
