@@ -77,7 +77,7 @@ export default function ServicesPage() {
   const popularServices = getPopularServices();
 
   return (
-    <EnhancedFuturisticBackground variant="quantum" intensity="medium">
+    <EnhancedFuturisticBackground variant="holographic-advanced" intensity="high">
       <div className="min-h-screen">
         <Head>
           <title>Complete Services Portfolio | Zion Tech Group - AI, Cloud, Security & More</title>
@@ -104,7 +104,7 @@ export default function ServicesPage() {
               
               <h1 className="text-5xl md:text-7xl font-bold mb-8 text-white">
                 <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                  100+ Revolutionary
+                  150+ Revolutionary
                 </span>
                 <br />
                 <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">
@@ -114,8 +114,28 @@ export default function ServicesPage() {
               
               <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
                 From AI-powered automation to quantum computing solutions, discover our comprehensive portfolio 
-                of cutting-edge micro SaaS services designed to transform your business.
+                of cutting-edge micro SaaS services designed to transform your business. Starting from $49/month with 14-day free trials.
               </p>
+
+              {/* Key Benefits Banner */}
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8 max-w-5xl mx-auto">
+                <div className="bg-gradient-to-br from-cyan-500/20 to-blue-600/20 backdrop-blur-sm border border-cyan-500/30 rounded-2xl p-4 text-center">
+                  <div className="text-2xl font-bold text-cyan-400 mb-1">150+</div>
+                  <div className="text-sm text-cyan-300">Real Services</div>
+                </div>
+                <div className="bg-gradient-to-br from-purple-500/20 to-pink-600/20 backdrop-blur-sm border border-purple-500/30 rounded-2xl p-4 text-center">
+                  <div className="text-2xl font-bold text-purple-400 mb-1">500%+</div>
+                  <div className="text-sm text-purple-300">Average ROI</div>
+                </div>
+                <div className="bg-gradient-to-br from-green-500/20 to-emerald-600/20 backdrop-blur-sm border border-green-500/30 rounded-2xl p-4 text-center">
+                  <div className="text-2xl font-bold text-green-400 mb-1">$49</div>
+                  <div className="text-sm text-green-300">Starting Price</div>
+                </div>
+                <div className="bg-gradient-to-br from-orange-500/20 to-red-600/20 backdrop-blur-sm border border-orange-500/30 rounded-2xl p-4 text-center">
+                  <div className="text-2xl font-bold text-orange-400 mb-1">14 Days</div>
+                  <div className="text-sm text-orange-300">Free Trial</div>
+                </div>
+              </div>
 
               {/* Enhanced Contact Information Banner */}
               <div className="bg-gradient-to-r from-gray-900/80 to-gray-800/80 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 max-w-4xl mx-auto shadow-2xl mb-12">
