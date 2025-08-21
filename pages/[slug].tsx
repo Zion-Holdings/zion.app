@@ -22,6 +22,12 @@ import { comprehensiveITSolutions } from '../data/comprehensive-it-solutions';
 import { marketValidatedServices } from '../data/market-validated-services';
 import { newRealInnovations } from '../data/new-real-innovations';
 import { realMarketServices } from '../data/real-market-services';
+import { new2025Services } from '../data/new-2025-services';
+import { curatedMarketServices } from '../data/curated-market-services';
+import { cuttingEdgeITServices } from '../data/cutting-edge-it-services';
+import { nextGenAIServices } from '../data/next-gen-ai-services';
+import { industryRealServices } from '../data/industry-real-services';
+import { professionalServices } from '../data/professional-services';
 
 export default function ServiceFallbackPage() {
   const router = useRouter();
@@ -29,15 +35,28 @@ export default function ServiceFallbackPage() {
 
   const service = useMemo(() => {
     if (!slug) return undefined;
-    const all = enhancedRealMicroSaasServices
+    const all: any[] = ([] as any[])
       .concat(
-        extraServices,
-        additionalEnhancedServices,
-        innovativeAIServices,
-        quantumSpaceServices,
-        enterpriseITServices,
-        newRealServices,
-        marketReadyServices
+        enhancedRealMicroSaasServices as any,
+        extraServices as any,
+        additionalEnhancedServices as any,
+        innovativeAIServices as any,
+        quantumSpaceServices as any,
+        enterpriseITServices as any,
+        newRealServices as any,
+        marketReadyServices as any,
+        realMarketServices as any,
+        new2025Services as any,
+        newRealInnovations as any,
+        emergingTechnologyServices as any,
+        comprehensiveITSolutions as any,
+        marketValidatedServices as any,
+        curatedMarketServices as any,
+        cuttingEdgeITServices as any,
+        nextGenerationAIServices as any,
+        nextGenAIServices as any,
+        industryRealServices as any,
+        professionalServices as any
       );
     const byLink = all.find(s => {
       try {
@@ -130,7 +149,7 @@ export default function ServiceFallbackPage() {
             <Card className="p-6 bg-black/40 border border-gray-700/50">
               <h3 className="text-white font-semibold mb-3">Contact</h3>
               <div className="space-y-3 text-sm">
-                <div className="flex items-center gap-2 text-cyan-400"><Phone className="w-4 h-4" /><a href={`tel:${contactInfo.mobile.replace(/[^+\\d]/g, '')}`} className="hover:underline">{contactInfo.mobile}</a></div>
+                <div className="flex items-center gap-2 text-cyan-400"><Phone className="w-4 h-4" /><a href={`tel:${contactInfo.mobile.replace(/[^+\d]/g, '')}`} className="hover:underline">{contactInfo.mobile}</a></div>
                 <div className="flex items-center gap-2 text-purple-400"><Mail className="w-4 h-4" /><a href={`mailto:${contactInfo.email}`} className="hover:underline">{contactInfo.email}</a></div>
                 <div className="flex items-center gap-2 text-green-400"><MapPin className="w-4 h-4" /><a href={`https://maps.google.com/?q=${encodeURIComponent(contactInfo.address)}`} target="_blank" rel="noopener noreferrer" className="text-xs hover:underline">{contactInfo.address}</a></div>
               </div>
@@ -196,32 +215,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
     }
   }
 
-  // Exclude any slugs that already exist as top-level pages to avoid conflicts
-  const pagesDir = path.join(process.cwd(), 'pages');
-  const entries = fs.readdirSync(pagesDir, { withFileTypes: true });
-  const reserved = new Set<string>();
-  for (const entry of entries) {
-    if (entry.isFile() && entry.name.endsWith('.tsx')) {
-      const base = entry.name.replace(/\.tsx$/, '');
-      // ignore special files
-      if (['_app', '_document', 'index', '[slug]'].includes(base)) continue;
-      reserved.add(base);
-    }
-    if (entry.isDirectory()) {
-      reserved.add(entry.name); // directories like services, blog, etc.
-    }
-  }
-
-  const finalSlugs: string[] = Array.from(candidateSlugs).filter((s) => !reserved.has(s));
-
   return {
-    paths: finalSlugs.map((slug) => ({ params: { slug } })),
-    fallback: false
+    paths: Array.from(candidateSlugs).map((slug) => ({ params: { slug } })),
+    fallback: true
   };
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  // no specific props needed; page resolves on client using slug mapping
+  // No dynamic fetching needed; the component resolves the service client-side.
   return { props: {} };
 };
-
