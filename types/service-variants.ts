@@ -76,4 +76,17 @@ export type ServiceVariant =
   | 'integration-futuristic'
   | 'monitoring-futuristic'
   | 'backup-futuristic'
-  | 'analytics-futuristic';
+  | 'analytics-futuristic'
+  | 'it-futuristic'
+  | 'saas-futuristic'
+  | 'micro-saas-futuristic'
+  | 'business-intelligence-futuristic'
+  | 'customer-service-futuristic'
+  | 'marketing-futuristic'
+  | 'sales-futuristic'
+  | 'hr-futuristic'
+  | 'finance-futuristic'
+  | 'project-management-futuristic'
+  | 'supply-chain-futuristic'
+  | 'legal-futuristic'
+  | 'healthcare-futuristic';

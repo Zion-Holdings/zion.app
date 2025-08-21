@@ -37,6 +37,13 @@ import { revolutionary2025Innovations } from '../data/revolutionary-2025-innovat
 import { emergingTech2025Innovations } from '../data/emerging-tech-2025-innovations';
 import { enterpriseIT2025Services } from '../data/enterprise-it-2025-services';
 import { revolutionary2025MicroSaasServices } from '../data/revolutionary-2025-micro-saas';
+import { innovative2025MicroSaasServices } from '../data/innovative-2025-micro-saas';
+import { emergingTech2025Services as newEmergingTech2025Services } from '../data/emerging-tech-2025-services';
+import { revolutionaryAI2025Services } from '../data/revolutionary-2025-ai-services';
+import { revolutionaryITInfrastructure2025Services } from '../data/revolutionary-2025-it-infrastructure';
+import { innovative2026MicroSaasServices } from '../data/innovative-2026-micro-saas-services';
+import { innovative2026ITServices } from '../data/innovative-2026-it-services';
+import { innovative2026AIServices } from '../data/innovative-2026-ai-services';
 
 export default function HomePage() {
   const contactInfo = {
@@ -74,7 +81,13 @@ export default function HomePage() {
     ...emergingTech2025Innovations,
     ...enterpriseIT2025Services,
     ...revolutionary2025MicroSaasServices,
-    ...emergingTech2025Services
+    ...innovative2025MicroSaasServices,
+    ...newEmergingTech2025Services,
+    ...revolutionaryAI2025Services,
+    ...revolutionaryITInfrastructure2025Services,
+    ...innovative2026MicroSaasServices,
+    ...innovative2026ITServices,
+    ...innovative2026AIServices
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);
@@ -82,18 +95,20 @@ export default function HomePage() {
   // Service statistics
   const serviceStats = {
     totalServices: allServices.length,
-    aiServices: nextGenerationAIServices.length + innovativeAIServices.length + realMarketServices.filter(s => s.category.includes('AI')).length + revolutionary2025Services.filter(s => s.category.includes('AI')).length + nextGenInnovations2025.filter(s => s.category.includes('AI')).length + innovative2025Services.filter(s => s.category.includes('AI')).length + emergingTech2025Services.filter(s => s.category.includes('AI')).length,
-    quantumServices: quantumSpaceServices.length + quantumAIServices2025.length + revolutionary2025Services.filter(s => s.category.includes('Quantum')).length + nextGenInnovations2025.filter(s => s.category.includes('Quantum')).length,
-    emergingTech: emergingTechnologyServices.length + emergingTech2025Services.length + emergingTech2025Services.length,
-    itSolutions: comprehensiveITSolutions.length + enterpriseITServices.length + enterpriseIT2025Services.length,
-    microSaas: enhancedRealMicroSaasServices.length + innovativeMicroSaasServices.length + innovative2025Services.filter(s => s.category.includes('SaaS')).length,
-    revolutionaryServices: revolutionary2025Services.length + nextGenInnovations2025.length + innovative2025Services.length + emergingTech2025Services.length
+    aiServices: nextGenerationAIServices.length + innovativeAIServices.length + realMarketServices.filter(s => s.category.includes('AI')).length + revolutionary2025Services.filter(s => s.category.includes('AI')).length + nextGenInnovations2025.filter(s => s.category.includes('AI')).length + innovative2025Services.filter(s => s.category.includes('AI')).length + emergingTech2025Services.filter(s => s.category.includes('AI')).length + revolutionaryAI2025Services.length + innovative2026AIServices.length,
+    quantumServices: quantumSpaceServices.length + quantumAIServices2025.length + revolutionary2025Services.filter(s => s.category.includes('Quantum')).length + nextGenInnovations2025.filter(s => s.category.includes('Quantum')).length + revolutionaryAI2025Services.filter(s => s.category.includes('Quantum')).length + revolutionaryITInfrastructure2025Services.filter(s => s.category.includes('Quantum')).length,
+    emergingTech: emergingTechnologyServices.length + emergingTech2025Services.length + newEmergingTech2025Services.length,
+    itSolutions: comprehensiveITSolutions.length + enterpriseITServices.length + enterpriseIT2025Services.length + revolutionaryITInfrastructure2025Services.length + innovative2026ITServices.length,
+    microSaas: enhancedRealMicroSaasServices.length + innovativeMicroSaasServices.length + innovative2025Services.filter(s => s.category.includes('SaaS')).length + innovative2025MicroSaasServices.length + revolutionary2025MicroSaasServices.length + innovative2026MicroSaasServices.length,
+    revolutionaryServices: revolutionary2025Services.length + nextGenInnovations2025.length + innovative2025Services.length + emergingTech2025Services.length + revolutionaryAI2025Services.length + revolutionaryITInfrastructure2025Services.length + revolutionary2025MicroSaasServices.length,
+    blockchainServices: revolutionaryAI2025Services.filter(s => s.category.includes('Blockchain')).length + revolutionaryITInfrastructure2025Services.filter(s => s.category.includes('Blockchain')).length,
+    spaceTech: revolutionaryAI2025Services.filter(s => s.category.includes('Space')).length + revolutionaryITInfrastructure2025Services.filter(s => s.category.includes('Space')).length
   };
 
   return (
     <UltraAdvancedFuturisticBackground 
       intensity="extreme" 
-      colorScheme="quantum-fusion"
+      colorScheme="quantum"
       particleCount={400}
       animationSpeed={2.0}
       enableHolographic={true}
@@ -114,7 +129,7 @@ export default function HomePage() {
         </Head>
 
         {/* Ultra Advanced Navigation */}
-        <EnhancedNavigation2025 />
+        <UltraAdvancedNavigation />
 
         {/* Hero Section */}
         <section className="relative z-10 pt-32 pb-16 px-4 sm:px-6 lg:px-8">
@@ -165,7 +180,7 @@ export default function HomePage() {
                 transition={{ duration: 0.8, delay: 0.5 }}
                 className="text-lg md:text-xl text-gray-400 mb-8 max-w-4xl mx-auto leading-relaxed"
               >
-                <span className="text-cyan-300 font-semibold">{serviceStats.totalServices}+</span> revolutionary services delivering <span className="text-green-400 font-bold">1000% ROI</span>. Experience the future with AI emotional intelligence, quantum drug discovery, autonomous manufacturing, and space technology that transforms industries.
+                <span className="text-cyan-300 font-semibold">{serviceStats.totalServices}+</span> cutting-edge services delivering <span className="text-green-400 font-bold">1000% ROI</span>. From AI consciousness simulation to quantum space mining, we're building the future.
               </motion.p>
               
               {/* Service Statistics Grid */}
@@ -906,19 +921,27 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Enhanced Service Showcase */}
+        {/* Enhanced Service Showcase - 2026 Services */}
+        <EnhancedServiceShowcase 
+          services={[...innovative2026MicroSaasServices, ...innovative2026ITServices, ...innovative2026AIServices]}
+          title="Revolutionary 2026 Services"
+          subtitle="Cutting-edge AI, IT, and Micro SaaS solutions for the future"
+          showPricing={true}
+          showFeatures={true}
+          showStats={true}
+          maxServices={12}
+        />
+
+        {/* Enhanced Service Showcase - All Services */}
         <EnhancedServiceShowcase 
           services={allServices}
-          title="Revolutionary AI, Quantum & IT Services"
-          subtitle="Discover 1000+ cutting-edge solutions that will transform your business with unprecedented ROI and innovation"
-          maxServices={24}
+          title="Complete Service Portfolio"
+          subtitle="1000+ revolutionary services across all technology domains"
+          showPricing={true}
+          showFeatures={true}
+          showStats={true}
+          maxServices={18}
         />
-        
-        {/* 2026 Services Showcase */}
-        <Enhanced2026ServicesShowcase />
-
-        {/* Revolutionary 2025 Services Showcase */}
-        <RevolutionaryServicesShowcase />
 
         {/* Featured Offers */}
         <section className="py-16 px-4 sm:px-6 lg:px-8">
