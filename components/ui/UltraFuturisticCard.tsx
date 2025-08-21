@@ -1,281 +1,498 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
-interface UltraFuturisticCardProps {
-  variant?: 'default' | 'holographic' | 'quantum' | 'cyberpunk' | 'neural' | 'quantum-holographic' | 'quantum-advanced' | 'holographic-advanced' | 'neural-quantum' | 'quantum-cyberpunk' | 'holographic-neural' | 'quantum-holographic-advanced' | 'quantum-matrix' | 'neural-cyberpunk' | 'holographic-quantum' | 'quantum-neural-advanced' | 'cyberpunk-holographic' | 'quantum-space' | 'ai-futuristic' | 'quantum-entanglement' | 'holographic-matrix' | 'neural-quantum-cyberpunk';
+export interface UltraFuturisticCardProps {
+  children: React.ReactNode;
   className?: string;
-  children?: React.ReactNode;
   onClick?: () => void;
-  hover?: boolean;
-  glow?: boolean;
+  variant?: 'default' | 'holographic' | 'quantum' | 'cyberpunk' | 'neural' | 'quantum-holographic' | 'quantum-advanced' | 'holographic-advanced' | 'neural-quantum' | 'quantum-cyberpunk' | 'holographic-neural' | 'quantum-holographic-advanced' | 'quantum-matrix' | 'neural-cyberpunk' | 'holographic-quantum' | 'quantum-neural-advanced' | 'cyberpunk-holographic' | 'quantum-space' | 'ai-futuristic' | 'quantum-entanglement' | 'holographic-matrix' | 'neural-quantum-cyberpunk';
+  hoverEffect?: boolean;
+  glowIntensity?: 'low' | 'medium' | 'high';
   animated?: boolean;
 }
 
 const UltraFuturisticCard: React.FC<UltraFuturisticCardProps> = ({
-  variant = 'quantum-holographic-advanced',
-  className = '',
   children,
+  variant = 'default',
+  className = '',
   onClick,
-  hover = true,
-  glow = true,
+  hoverEffect = true,
+  glowIntensity = 'medium',
   animated = true
 }) => {
-  const getCardStyles = () => {
-    const baseStyles = "relative overflow-hidden rounded-2xl backdrop-blur-xl border transition-all duration-500";
+  const [isHovered, setIsHovered] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  // Get variant-specific styles
+  const getVariantStyles = () => {
+    switch (variant) {
+      case 'quantum':
+        return {
+          bg: 'bg-gradient-to-br from-slate-900 via-blue-900 to-cyan-900',
+          border: 'border border-cyan-500/30',
+          glow: 'shadow-[0_0_30px_rgba(6,182,212,0.3)]',
+          hoverGlow: 'hover:shadow-[0_0_50px_rgba(6,182,212,0.5)]',
+          accent: 'from-cyan-400 to-blue-500'
+        };
+      case 'quantum-advanced':
+        return {
+          bg: 'bg-gradient-to-br from-slate-900 via-cyan-900 via-blue-900 to-indigo-900',
+          border: 'border border-cyan-500/30',
+          glow: 'shadow-[0_0_30px_rgba(6,182,212,0.3)]',
+          hoverGlow: 'hover:shadow-[0_0_50px_rgba(6,182,212,0.5)]',
+          accent: 'from-cyan-400 via-blue-400 to-indigo-400'
+        };
+      case 'holographic':
+        return {
+          bg: 'bg-gradient-to-br from-slate-900 via-purple-900 to-pink-900',
+          border: 'border border-pink-500/30',
+          glow: 'shadow-[0_0_30px_rgba(236,72,153,0.3)]',
+          hoverGlow: 'hover:shadow-[0_0_50px_rgba(236,72,153,0.5)]',
+          accent: 'from-pink-400 to-purple-500'
+        };
+      case 'holographic-advanced':
+        return {
+          bg: 'bg-gradient-to-br from-slate-900 via-purple-900 via-pink-900 to-rose-900',
+          border: 'border border-purple-500/30',
+          glow: 'shadow-[0_0_30px_rgba(168,85,247,0.3)]',
+          hoverGlow: 'hover:shadow-[0_0_50px_rgba(168,85,247,0.5)]',
+          accent: 'from-purple-400 via-pink-400 to-rose-400'
+        };
+      case 'cyberpunk':
+        return {
+          bg: 'bg-gradient-to-br from-slate-900 via-red-900 to-orange-900',
+          border: 'border border-red-500/30',
+          glow: 'shadow-[0_0_30px_rgba(239,68,68,0.3)]',
+          hoverGlow: 'hover:shadow-[0_0_50px_rgba(239,68,68,0.5)]',
+          accent: 'from-red-400 to-orange-500'
+        };
+      case 'neural':
+        return {
+          bg: 'bg-gradient-to-br from-slate-900 via-green-900 to-emerald-900',
+          border: 'border border-emerald-500/30',
+          glow: 'shadow-[0_0_30px_rgba(16,185,129,0.3)]',
+          hoverGlow: 'hover:shadow-[0_0_50px_rgba(16,185,129,0.5)]',
+          accent: 'from-emerald-400 to-green-500'
+        };
+      case 'quantum-holographic':
+        return {
+          bg: 'bg-gradient-to-br from-slate-900 via-cyan-900 via-purple-900 to-pink-900',
+          border: 'border border-cyan-500/30',
+          glow: 'shadow-[0_0_30px_rgba(6,182,212,0.3)]',
+          hoverGlow: 'hover:shadow-[0_0_50px_rgba(6,182,212,0.5)]',
+          accent: 'from-cyan-400 via-purple-400 to-pink-400'
+        };
+      case 'quantum-holographic-advanced':
+        return {
+          bg: 'bg-gradient-to-br from-slate-900 via-cyan-900 via-purple-900 to-pink-900',
+          border: 'border border-cyan-500/30',
+          glow: 'shadow-[0_0_30px_rgba(6,182,212,0.3)]',
+          hoverGlow: 'hover:shadow-[0_0_50px_rgba(6,182,212,0.5)]',
+          accent: 'from-cyan-400 via-purple-400 to-pink-400'
+        };
+      case 'neural-quantum':
+        return {
+          bg: 'bg-gradient-to-br from-slate-900 via-emerald-900 via-green-900 to-cyan-900',
+          border: 'border border-emerald-500/30',
+          glow: 'shadow-[0_0_30px_rgba(16,185,129,0.3)]',
+          hoverGlow: 'hover:shadow-[0_0_50px_rgba(16,185,129,0.5)]',
+          accent: 'from-emerald-400 via-green-400 to-cyan-400'
+        };
+      case 'quantum-cyberpunk':
+        return {
+          bg: 'bg-gradient-to-br from-slate-900 via-cyan-900 via-blue-900 to-red-900',
+          border: 'border border-cyan-500/30',
+          glow: 'shadow-[0_0_30px_rgba(6,182,212,0.3)]',
+          hoverGlow: 'hover:shadow-[0_0_50px_rgba(6,182,212,0.5)]',
+          accent: 'from-cyan-400 via-blue-400 to-red-400'
+        };
+      case 'holographic-neural':
+        return {
+          bg: 'bg-gradient-to-br from-slate-900 via-purple-900 via-pink-900 to-emerald-900',
+          border: 'border border-purple-500/30',
+          glow: 'shadow-[0_0_30px_rgba(168,85,247,0.3)]',
+          hoverGlow: 'hover:shadow-[0_0_50px_rgba(168,85,247,0.5)]',
+          accent: 'from-purple-400 via-pink-400 to-emerald-400'
+        };
+      case 'quantum-neural-advanced':
+        return {
+          bg: 'bg-gradient-to-br from-slate-900 via-cyan-900 via-blue-900 to-emerald-900',
+          border: 'border border-cyan-500/30',
+          glow: 'shadow-[0_0_30px_rgba(6,182,212,0.3)]',
+          hoverGlow: 'hover:shadow-[0_0_50px_rgba(6,182,212,0.5)]',
+          accent: 'from-cyan-400 via-blue-400 to-emerald-400'
+        };
+      case 'cyberpunk-holographic':
+        return {
+          bg: 'bg-gradient-to-br from-slate-900 via-red-900 via-pink-900 to-purple-900',
+          border: 'border border-red-500/30',
+          glow: 'shadow-[0_0_30px_rgba(239,68,68,0.3)]',
+          hoverGlow: 'hover:shadow-[0_0_50px_rgba(239,68,68,0.5)]',
+          accent: 'from-red-400 via-pink-400 to-purple-400'
+        };
+      case 'quantum-space':
+        return {
+          bg: 'bg-gradient-to-br from-slate-900 via-cyan-900 via-indigo-900 to-blue-900',
+          border: 'border border-cyan-500/30',
+          glow: 'shadow-[0_0_30px_rgba(6,182,212,0.3)]',
+          hoverGlow: 'hover:shadow-[0_0_50px_rgba(6,182,212,0.5)]',
+          accent: 'from-cyan-400 via-indigo-400 to-blue-400'
+        };
+      case 'ai-futuristic':
+        return {
+          bg: 'bg-gradient-to-br from-slate-900 via-blue-900 via-indigo-900 to-purple-900',
+          border: 'border border-blue-500/30',
+          glow: 'shadow-[0_0_30px_rgba(59,130,246,0.3)]',
+          hoverGlow: 'hover:shadow-[0_0_50px_rgba(59,130,246,0.5)]',
+          accent: 'from-blue-400 via-indigo-400 to-purple-400'
+        };
+      case 'quantum-entanglement':
+        return {
+          bg: 'bg-gradient-to-br from-slate-900 via-violet-900 to-purple-900',
+          border: 'border border-violet-500/30',
+          glow: 'shadow-[0_0_30px_rgba(139,92,246,0.3)]',
+          hoverGlow: 'hover:shadow-[0_0_50px_rgba(139,92,246,0.5)]',
+          accent: 'from-violet-400 to-purple-500'
+        };
+      case 'holographic-matrix':
+        return {
+          bg: 'bg-gradient-to-br from-slate-900 via-teal-900 to-cyan-900',
+          border: 'border border-teal-500/30',
+          glow: 'shadow-[0_0_30px_rgba(20,184,166,0.3)]',
+          hoverGlow: 'hover:shadow-[0_0_50px_rgba(20,184,166,0.5)]',
+          accent: 'from-teal-400 to-cyan-500'
+        };
+      case 'neural-quantum-cyberpunk':
+        return {
+          bg: 'bg-gradient-to-br from-slate-900 via-emerald-900 via-purple-900 to-red-900',
+          border: 'border border-emerald-500/30',
+          glow: 'shadow-[0_0_30px_rgba(16,185,129,0.3)]',
+          hoverGlow: 'hover:shadow-[0_0_50px_rgba(16,185,129,0.5)]',
+          accent: 'from-emerald-400 via-purple-400 to-red-400'
+        };
+      case 'quantum-matrix':
+        return {
+          bg: 'bg-gradient-to-br from-slate-900 via-green-900 to-emerald-900',
+          border: 'border border-green-500/30',
+          glow: 'shadow-[0_0_30px_rgba(34,197,94,0.3)]',
+          hoverGlow: 'hover:shadow-[0_0_50px_rgba(34,197,94,0.5)]',
+          accent: 'from-green-400 to-emerald-500'
+        };
+      case 'neural-cyberpunk':
+        return {
+          bg: 'bg-gradient-to-br from-slate-900 via-emerald-900 via-green-900 to-red-900',
+          border: 'border border-emerald-500/30',
+          glow: 'shadow-[0_0_30px_rgba(16,185,129,0.3)]',
+          hoverGlow: 'hover:shadow-[0_0_50px_rgba(16,185,129,0.5)]',
+          accent: 'from-emerald-400 via-green-400 to-red-400'
+        };
+      case 'holographic-quantum':
+        return {
+          bg: 'bg-gradient-to-br from-slate-900 via-purple-900 via-pink-900 to-cyan-900',
+          border: 'border border-purple-500/30',
+          glow: 'shadow-[0_0_30px_rgba(168,85,247,0.3)]',
+          hoverGlow: 'hover:shadow-[0_0_50px_rgba(168,85,247,0.5)]',
+          accent: 'from-purple-400 via-pink-400 to-cyan-400'
+        };
+      default:
+        return {
+          bg: 'bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900',
+          border: 'border border-slate-600/30',
+          glow: 'shadow-[0_0_30px_rgba(148,163,184,0.3)]',
+          hoverGlow: 'hover:shadow-[0_0_50px_rgba(148,163,184,0.5)]',
+          accent: 'from-slate-400 to-slate-500'
+        };
+    }
+  };
+
+  const styles = getVariantStyles();
+
+  // Get glow intensity
+  const getGlowIntensity = () => {
+    switch (glowIntensity) {
+      case 'low':
+        return 'shadow-[0_0_20px_rgba(148,163,184,0.2)]';
+      case 'high':
+        return 'shadow-[0_0_40px_rgba(148,163,184,0.6)]';
+      default:
+        return styles.glow;
+    }
+  };
+
+  // Canvas animation for advanced effects
+  useEffect(() => {
+    if (!animated || !canvasRef.current) return;
+
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    let animationFrameId: number;
+    let time = 0;
+
+    const resizeCanvas = () => {
+      if (cardRef.current) {
+        const rect = cardRef.current.getBoundingClientRect();
+        canvas.width = rect.width;
+        canvas.height = rect.height;
+      }
+    };
+
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    const animate = () => {
+      time += 0.02;
+      
+      // Clear canvas
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      // Draw variant-specific effects
+      switch (variant) {
+        case 'quantum':
+          drawQuantumEffects(ctx, canvas, time);
+          break;
+        case 'holographic':
+          drawHolographicEffects(ctx, canvas, time);
+          break;
+        case 'cyberpunk':
+          drawCyberpunkEffects(ctx, canvas, time);
+          break;
+        case 'neural':
+          drawNeuralEffects(ctx, canvas, time);
+          break;
+        case 'quantum-entanglement':
+          drawQuantumEntanglementEffects(ctx, canvas, time);
+          break;
+        case 'holographic-matrix':
+          drawHolographicMatrixEffects(ctx, canvas, time);
+          break;
+        case 'neural-quantum-cyberpunk':
+          drawNeuralQuantumCyberpunkEffects(ctx, canvas, time);
+          break;
+      }
+      
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    animate();
+
+    return () => {
+      window.removeEventListener('resize', resizeCanvas);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, [variant, animated]);
+
+  // Effect drawing functions
+  const drawQuantumEffects = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement, time: number) => {
+    // Quantum particles
+    for (let i = 0; i < 5; i++) {
+      const x = Math.sin(time + i) * canvas.width * 0.3 + canvas.width * 0.5;
+      const y = Math.cos(time + i * 0.7) * canvas.height * 0.3 + canvas.height * 0.5;
+      
+      ctx.beginPath();
+      ctx.arc(x, y, 3 + Math.sin(time * 2 + i) * 2, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(6, 182, 212, ${0.6 + Math.sin(time + i) * 0.4})`;
+      ctx.fill();
+    }
+  };
+
+  const drawHolographicEffects = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement, time: number) => {
+    // Holographic grid
+    ctx.strokeStyle = `rgba(236, 72, 153, ${0.3 + Math.sin(time) * 0.2})`;
+    ctx.lineWidth = 1;
     
-    const variantStyles = {
-      'quantum': "bg-gradient-to-br from-cyan-900/20 to-blue-900/20 border-cyan-500/30",
-      'holographic': "bg-gradient-to-br from-fuchsia-900/20 to-pink-900/20 border-fuchsia-500/30",
-      'cyberpunk': "bg-gradient-to-br from-red-900/20 to-orange-900/20 border-red-500/30",
-      'neural': "bg-gradient-to-br from-orange-900/20 to-yellow-900/20 border-orange-500/30",
-      'quantum-holographic': "bg-gradient-to-br from-cyan-900/20 via-blue-900/20 to-fuchsia-900/20 border-cyan-500/30",
-      'quantum-advanced': "bg-gradient-to-br from-cyan-900/20 via-blue-900/20 to-indigo-900/20 border-cyan-500/30",
-      'holographic-advanced': "bg-gradient-to-br from-fuchsia-900/20 via-pink-900/20 to-purple-900/20 border-fuchsia-500/30",
-      'neural-quantum': "bg-gradient-to-br from-orange-900/20 via-yellow-900/20 to-cyan-900/20 border-orange-500/30",
-      'quantum-cyberpunk': "bg-gradient-to-br from-cyan-900/20 via-blue-900/20 to-red-900/20 border-cyan-500/30",
-      'holographic-neural': "bg-gradient-to-br from-fuchsia-900/20 via-pink-900/20 to-orange-900/20 border-fuchsia-500/30",
-      'quantum-holographic-advanced': "bg-gradient-to-br from-cyan-900/20 via-blue-900/20 via-fuchsia-900/20 to-purple-900/20 border-cyan-500/30",
-      'quantum-matrix': "bg-gradient-to-br from-cyan-900/20 via-green-900/20 to-emerald-900/20 border-cyan-500/30",
-      'neural-cyberpunk': "bg-gradient-to-br from-orange-900/20 via-yellow-900/20 to-red-900/20 border-orange-500/30",
-      'holographic-quantum': "bg-gradient-to-br from-fuchsia-900/20 via-pink-900/20 to-cyan-900/20 border-fuchsia-500/30",
-      'quantum-neural-advanced': "bg-gradient-to-br from-cyan-900/20 via-blue-900/20 to-orange-900/20 border-cyan-500/30",
-      'cyberpunk-holographic': "bg-gradient-to-br from-red-900/20 via-orange-900/20 to-fuchsia-900/20 border-red-500/30",
-      'quantum-space': "bg-gradient-to-br from-cyan-900/20 via-indigo-900/20 to-purple-900/20 border-cyan-500/30",
-      'ai-futuristic': "bg-gradient-to-br from-blue-900/20 via-indigo-900/20 to-purple-900/20 border-blue-500/30",
-      'quantum-entanglement': "bg-gradient-to-br from-cyan-900/20 via-blue-900/20 to-violet-900/20 border-cyan-500/30",
-      'holographic-matrix': "bg-gradient-to-br from-fuchsia-900/20 via-purple-900/20 to-emerald-900/20 border-fuchsia-500/30",
-      'neural-quantum-cyberpunk': "bg-gradient-to-br from-orange-900/20 via-yellow-900/20 via-red-900/20 to-cyan-900/20 border-orange-500/30",
-      'default': "bg-gradient-to-br from-gray-900/20 to-slate-900/20 border-gray-500/30"
-    };
-
-    return `${baseStyles} ${variantStyles[variant as keyof typeof variantStyles] || variantStyles.default}`;
+    for (let i = 0; i < canvas.width; i += 30) {
+      ctx.beginPath();
+      ctx.moveTo(i, 0);
+      ctx.lineTo(i, canvas.height);
+      ctx.stroke();
+    }
+    
+    for (let i = 0; i < canvas.height; i += 30) {
+      ctx.beginPath();
+      ctx.moveTo(0, i);
+      ctx.lineTo(canvas.width, i);
+      ctx.stroke();
+    }
   };
 
-  const getGlowColor = () => {
-    const glowColors = {
-      'quantum': 'rgba(0, 255, 255, 0.3)',
-      'holographic': 'rgba(255, 0, 255, 0.3)',
-      'cyberpunk': 'rgba(255, 0, 64, 0.3)',
-      'neural': 'rgba(255, 128, 0, 0.3)',
-      'quantum-holographic': 'rgba(0, 255, 255, 0.3)',
-      'quantum-advanced': 'rgba(0, 255, 255, 0.4)',
-      'holographic-advanced': 'rgba(255, 0, 255, 0.4)',
-      'neural-quantum': 'rgba(255, 128, 0, 0.4)',
-      'quantum-cyberpunk': 'rgba(0, 255, 255, 0.4)',
-      'holographic-neural': 'rgba(255, 0, 255, 0.4)',
-      'quantum-holographic-advanced': 'rgba(0, 255, 255, 0.5)',
-      'quantum-matrix': 'rgba(0, 255, 255, 0.4)',
-      'neural-cyberpunk': 'rgba(255, 128, 0, 0.4)',
-      'holographic-quantum': 'rgba(255, 0, 255, 0.4)',
-      'quantum-neural-advanced': 'rgba(0, 255, 255, 0.4)',
-      'cyberpunk-holographic': 'rgba(255, 0, 64, 0.4)',
-      'quantum-space': 'rgba(0, 255, 255, 0.4)',
-      'ai-futuristic': 'rgba(59, 130, 246, 0.4)',
-      'quantum-entanglement': 'rgba(0, 255, 255, 0.4)',
-      'holographic-matrix': 'rgba(255, 0, 255, 0.4)',
-      'neural-quantum-cyberpunk': 'rgba(255, 128, 0, 0.4)',
-      'default': 'rgba(156, 163, 175, 0.3)'
-    };
-
-    return glowColors[variant as keyof typeof glowColors] || glowColors.default;
+  const drawCyberpunkEffects = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement, time: number) => {
+    // Scanning lines
+    const y = (time * 100) % canvas.height;
+    ctx.strokeStyle = 'rgba(239, 68, 68, 0.8)';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(0, y);
+    ctx.lineTo(canvas.width, y);
+    ctx.stroke();
   };
 
-  const getAnimatedElements = () => {
-    if (!animated) return null;
+  const drawNeuralEffects = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement, time: number) => {
+    // Neural connections
+    for (let i = 0; i < 3; i++) {
+      const x1 = Math.sin(time + i) * canvas.width * 0.3 + canvas.width * 0.3;
+      const y1 = Math.cos(time + i * 0.5) * canvas.height * 0.3 + canvas.height * 0.3;
+      const x2 = Math.sin(time + i + 1) * canvas.width * 0.3 + canvas.width * 0.7;
+      const y2 = Math.cos(time + i * 0.5 + 1) * canvas.height * 0.3 + canvas.height * 0.7;
+      
+      ctx.beginPath();
+      ctx.moveTo(x1, y1);
+      ctx.lineTo(x2, y2);
+      ctx.strokeStyle = `rgba(16, 185, 129, ${0.4 + Math.sin(time + i) * 0.3})`;
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    }
+  };
 
-    return (
-      <>
-        {/* Floating particles */}
-        {variant.includes('quantum') && (
-          <>
-            <motion.div
-              className="absolute -top-2 -left-2 w-2 h-2 bg-cyan-400 rounded-full"
-              animate={{
-                x: [0, 10, 0],
-                y: [0, -10, 0],
-                opacity: [0.5, 1, 0.5]
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-            <motion.div
-              className="absolute -bottom-2 -right-2 w-1.5 h-1.5 bg-blue-400 rounded-full"
-              animate={{
-                x: [0, -8, 0],
-                y: [0, 8, 0],
-                opacity: [0.3, 0.8, 0.3]
-              }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 1
-              }}
-            />
-          </>
-        )}
+  const drawSpaceEffects = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement, time: number) => {
+    // Stars
+    for (let i = 0; i < 20; i++) {
+      const x = (i * 50 + time * 20) % canvas.width;
+      const y = (i * 30 + time * 15) % canvas.height;
+      const size = Math.sin(time + i) * 2 + 1;
+      
+      ctx.beginPath();
+      ctx.arc(x, y, size, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(255, 255, 255, ${0.8 + Math.sin(time + i) * 0.2})`;
+      ctx.fill();
+    }
+  };
 
-        {/* Holographic elements */}
-        {variant.includes('holographic') && (
-          <>
-            <motion.div
-              className="absolute top-2 right-2 w-3 h-3 border border-fuchsia-400"
-              animate={{
-                rotate: [0, 90, 180, 270, 360],
-                scale: [1, 1.2, 1]
-              }}
-              transition={{
-                duration: 6,
-                repeat: Infinity,
-                ease: "linear"
-              }}
-            />
-            <motion.div
-              className="absolute bottom-2 left-2 w-2 h-2 border border-pink-400 rounded-full"
-              animate={{
-                rotate: [360, 0],
-                scale: [1, 1.5, 1]
-              }}
-              transition={{
-                duration: 8,
-                repeat: Infinity,
-                ease: "linear",
-                delay: 2
-              }}
-            />
-          </>
-        )}
+  const drawQuantumEntanglementEffects = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement, time: number) => {
+    // Entangled particles
+    for (let i = 0; i < 4; i++) {
+      const x1 = Math.sin(time + i) * canvas.width * 0.2 + canvas.width * 0.3;
+      const y1 = Math.cos(time + i * 0.7) * canvas.height * 0.2 + canvas.height * 0.3;
+      const x2 = Math.sin(time + i + Math.PI) * canvas.width * 0.2 + canvas.width * 0.7;
+      const y2 = Math.cos(time + i * 0.7 + Math.PI) * canvas.height * 0.2 + canvas.height * 0.7;
+      
+      // Draw particles
+      ctx.beginPath();
+      ctx.arc(x1, y1, 3, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(139, 92, 246, 0.8)`;
+      ctx.fill();
+      
+      ctx.beginPath();
+      ctx.arc(x2, y2, 3, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(139, 92, 246, 0.8)`;
+      ctx.fill();
+      
+      // Draw connection
+      ctx.beginPath();
+      ctx.moveTo(x1, y1);
+      ctx.lineTo(x2, y2);
+      ctx.strokeStyle = `rgba(139, 92, 246, ${0.3 + Math.sin(time * 2) * 0.2})`;
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    }
+  };
 
-        {/* Neural network nodes */}
-        {variant.includes('neural') && (
-          <>
-            <motion.div
-              className="absolute top-1/2 left-1/2 w-1.5 h-1.5 bg-orange-400 rounded-full"
-              animate={{
-                scale: [1, 2, 1],
-                opacity: [0.4, 1, 0.4]
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-            <motion.div
-              className="absolute top-1/4 right-1/4 w-1 h-1 bg-yellow-400 rounded-full"
-              animate={{
-                scale: [1, 2.5, 1],
-                opacity: [0.3, 0.9, 0.3]
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 1
-              }}
-            />
-          </>
-        )}
+  const drawHolographicMatrixEffects = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement, time: number) => {
+    // Matrix-style grid
+    ctx.strokeStyle = `rgba(20, 184, 166, ${0.4 + Math.sin(time) * 0.2})`;
+    ctx.lineWidth = 1;
+    
+    for (let i = 0; i < canvas.width; i += 20) {
+      ctx.beginPath();
+      ctx.moveTo(i, 0);
+      ctx.lineTo(i, canvas.height);
+      ctx.stroke();
+    }
+    
+    for (let i = 0; i < canvas.height; i += 20) {
+      ctx.beginPath();
+      ctx.moveTo(0, i);
+      ctx.lineTo(canvas.width, i);
+      ctx.stroke();
+    }
+    
+    // Floating elements
+    for (let i = 0; i < 3; i++) {
+      const x = Math.sin(time + i) * canvas.width * 0.3 + canvas.width * 0.5;
+      const y = Math.cos(time + i * 0.5) * canvas.height * 0.3 + canvas.height * 0.5;
+      
+      ctx.beginPath();
+      ctx.rect(x - 15, y - 15, 30, 30);
+      ctx.strokeStyle = `rgba(20, 184, 166, ${0.6 + Math.sin(time * 3 + i) * 0.4})`;
+      ctx.lineWidth = 2;
+      ctx.stroke();
+    }
+  };
 
-        {/* Cyberpunk elements */}
-        {variant.includes('cyberpunk') && (
-          <>
-            <motion.div
-              className="absolute top-0 left-0 w-full h-0.5 bg-red-500"
-              animate={{
-                opacity: [0, 1, 0],
-                scaleY: [1, 2, 1]
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-            <motion.div
-              className="absolute bottom-0 right-0 w-0.5 h-full bg-green-500"
-              animate={{
-                opacity: [0, 1, 0],
-                scaleX: [1, 2, 1]
-              }}
-              transition={{
-                duration: 2.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 1
-              }}
-            />
-          </>
-        )}
-
-        {/* Scanning line effect */}
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"
-          animate={{
-            x: ['-100%', '100%']
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            ease: "linear",
-            delay: 1.5
-          }}
-        />
-      </>
-    );
+  const drawNeuralQuantumCyberpunkEffects = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement, time: number) => {
+    // Combined effects
+    drawNeuralEffects(ctx, canvas, time);
+    drawQuantumEffects(ctx, canvas, time);
+    drawCyberpunkEffects(ctx, canvas, time);
   };
 
   return (
     <motion.div
-      className={`${getCardStyles()} ${className}`}
+      ref={cardRef}
+      className={`
+        relative overflow-hidden rounded-2xl backdrop-blur-sm
+        ${styles.bg} ${styles.border} ${getGlowIntensity()}
+        ${hoverEffect ? styles.hoverGlow : ''}
+        transition-all duration-500 ease-out
+        ${className}
+      `}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      onFocus={() => setIsFocused(true)}
+      onBlur={() => setIsFocused(false)}
       onClick={onClick}
-      whileHover={hover ? {
-        scale: 1.02,
-        y: -5,
-        transition: { duration: 0.3 }
-      } : {}}
+      whileHover={hoverEffect ? { scale: 1.02, y: -5 } : {}}
+      whileTap={{ scale: 0.98 }}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      style={{
-        boxShadow: glow ? `0 0 30px ${getGlowColor()}` : 'none'
-      }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-white/10" />
-        {variant.includes('holographic') && (
-          <div className="absolute inset-0" style={{
-            backgroundImage: `radial-gradient(circle at 20% 80%, rgba(255, 0, 255, 0.1) 0%, transparent 50%),
-                             radial-gradient(circle at 80% 20%, rgba(0, 255, 255, 0.1) 0%, transparent 50%)`
-          }} />
-        )}
-        {variant.includes('quantum') && (
-          <div className="absolute inset-0" style={{
-            backgroundImage: `radial-gradient(circle at 30% 70%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
-                             radial-gradient(circle at 70% 30%, rgba(0, 128, 255, 0.1) 0%, transparent 50%)`
-          }} />
-        )}
-      </div>
+      {/* Animated canvas background */}
+      {animated && (
+        <canvas
+          ref={canvasRef}
+          className="absolute inset-0 w-full h-full pointer-events-none opacity-30"
+        />
+      )}
 
-      {/* Animated elements */}
-      {getAnimatedElements()}
+      {/* Holographic overlay */}
+      <AnimatePresence>
+        {isHovered && (
+          <motion.div
+            className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          />
+        )}
+      </AnimatePresence>
+
+      {/* Glowing border effect */}
+      <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500" />
 
       {/* Content */}
       <div className="relative z-10 p-6">
         {children}
       </div>
 
-      {/* Border glow effect */}
-      {glow && (
-        <div className="absolute inset-0 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-             style={{
-               background: `linear-gradient(45deg, ${getGlowColor()}, transparent, ${getGlowColor()})`,
-               backgroundSize: '200% 200%'
-             }} />
+      {/* Corner accents */}
+      <div className="absolute top-0 left-0 w-8 h-8 border-l-2 border-t-2 border-gradient-to-br from-transparent to-white/20 rounded-tl-2xl" />
+      <div className="absolute top-0 right-0 w-8 h-8 border-r-2 border-t-2 border-gradient-to-bl from-transparent to-white/20 rounded-tr-2xl" />
+      <div className="absolute bottom-0 left-0 w-8 h-8 border-l-2 border-b-2 border-gradient-to-tr from-transparent to-white/20 rounded-bl-2xl" />
+      <div className="absolute bottom-0 right-0 w-8 h-8 border-r-2 border-b-2 border-gradient-to-tl from-transparent to-white/20 rounded-br-2xl" />
+
+      {/* Focus indicator */}
+      {isFocused && (
+        <motion.div
+          className="absolute inset-0 rounded-2xl ring-2 ring-white/50 ring-offset-2 ring-offset-slate-900"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        />
       )}
     </motion.div>
   );
