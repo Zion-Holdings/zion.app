@@ -23,6 +23,10 @@ import { spaceMetaverseServices2033 } from '../data/2033-space-metaverse-service
 import { researchDevelopmentServices2033 } from '../data/2033-research-development-services-v2';
 import { enterpriseITServices2033 } from '../data/2033-enterprise-it-services-v2';
 
+// Import new 2024 real market services
+import { realMarketServices } from '../data/2024-real-market-services';
+import { aiEmergingTechServices } from '../data/2024-ai-emerging-tech-services';
+
 // Import existing services for comprehensive coverage
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { innovativeMicroSaasServices } from '../data/innovative-micro-saas-services';
@@ -38,12 +42,12 @@ const contactInfo = {
 
 const serviceCategories = [
   {
-    id: 'ai-consciousness',
-    title: '🧠 AI & Consciousness',
-    description: 'Revolutionary AI consciousness and emotional intelligence platforms',
+    id: 'ai-services',
+    title: '🧠 Revolutionary AI Services',
+    description: 'Next-generation AI consciousness and creativity',
     icon: Brain,
     color: 'from-violet-500 to-purple-500',
-    services: [...futuristicAIServices2032, ...innovativeAIServices2033],
+    services: [...futuristicAIServices2032, ...innovativeAIServices2033, ...aiEmergingTechServices.filter(s => s.category.includes('AI'))],
     gradient: 'from-violet-500/20 to-indigo-500/20'
   },
   {
@@ -52,34 +56,34 @@ const serviceCategories = [
     description: 'Quantum computing, DNA computing, and beyond',
     icon: Atom,
     color: 'from-indigo-500 to-blue-500',
-    services: [...quantumEmergingTechServices2032, ...quantumEmergingTechServices2033],
+    services: [...quantumEmergingTechServices2032, ...quantumEmergingTechServices2033, ...aiEmergingTechServices.filter(s => s.category.includes('Quantum') || s.category.includes('Blockchain'))],
     gradient: 'from-indigo-500/20 to-cyan-500/20'
   },
   {
     id: 'enterprise-it',
-    title: '🏙️ Enterprise IT',
+    title: '🏙️ Enterprise IT Solutions',
     description: 'Autonomous operations and zero-trust security',
     icon: Shield,
     color: 'from-blue-500 to-cyan-500',
-    services: [...enterpriseITServices2032, ...enterpriseITServices2033],
+    services: [...enterpriseITServices2032, ...enterpriseITServices2033, ...realMarketServices.filter(s => s.category.includes('Security') || s.category.includes('HR') || s.category.includes('Project'))],
     gradient: 'from-blue-500/20 to-teal-500/20'
   },
   {
-    id: 'space-metaverse',
-    title: '🌌 Space & Metaverse',
-    description: 'Space mining, metaverse development, and more',
-    icon: Rocket,
+    id: 'business-automation',
+    title: '🛒 Business Automation',
+    description: 'Streamline business operations',
+    icon: Target,
     color: 'from-teal-500 to-emerald-500',
-    services: [...spaceMetaverseServices2032, ...spaceMetaverseServices2033],
+    services: [...realMarketServices.filter(s => s.category.includes('E-commerce') || s.category.includes('Marketing') || s.category.includes('Finance'))],
     gradient: 'from-teal-500/20 to-green-500/20'
   },
   {
-    id: 'micro-saas',
-    title: '🎯 Micro SAAS',
-    description: 'Innovative solutions for every business need',
-    icon: Target,
+    id: 'robotics-automation',
+    title: '🤖 Robotics & Automation',
+    description: 'Intelligent automation solutions',
+    icon: Rocket,
     color: 'from-green-500 to-yellow-500',
-    services: [...innovativeMicroSaasServices2032, ...innovativeMicroSaasServices2033],
+    services: [...aiEmergingTechServices.filter(s => s.category.includes('Robotics') || s.category.includes('Edge'))],
     gradient: 'from-green-500/20 to-orange-500/20'
   },
   {
@@ -88,7 +92,7 @@ const serviceCategories = [
     description: 'Breakthrough technologies and innovations',
     icon: Microscope,
     color: 'from-orange-500 to-red-500',
-    services: [...researchDevelopmentServices2032, ...researchDevelopmentServices2033],
+    services: [...researchDevelopmentServices2032, ...researchDevelopmentServices2033, ...aiEmergingTechServices.filter(s => s.category.includes('Drug') || s.category.includes('Climate'))],
     gradient: 'from-orange-500/20 to-pink-500/20'
   }
 ];
