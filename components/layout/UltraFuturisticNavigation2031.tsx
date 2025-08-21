@@ -103,6 +103,7 @@ const serviceCategories = [
 const mainNavigation = [
   { name: 'Home', href: '/', icon: Home },
   { name: 'Services', href: '/services', icon: Briefcase },
+  { name: '2030 Services', href: '/services/2030-futuristic-services', icon: Rocket },
   { name: 'AI Solutions', href: '/ai-services', icon: Brain },
   { name: 'IT Solutions', href: '/it-services', icon: Cpu },
   { name: 'Quantum Tech', href: '/quantum-services', icon: Atom },

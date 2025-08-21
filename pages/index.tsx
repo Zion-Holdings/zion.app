@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shield, Mail, MapPin, Rocket, Brain, Sparkles, Atom, Dna } from 'lucide-react';
 import Button from '../components/ui/Button';
 import UltraFuturisticBackground2030 from '../components/ui/UltraFuturisticBackground2030';
+import UltraFuturisticBackground2031 from '../components/ui/UltraFuturisticBackground2031';
 import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
 import UltraAdvancedNavigation2026 from '../components/layout/UltraAdvancedNavigation2026';
 import UltraFuturisticNavigation2031 from '../components/layout/UltraFuturisticNavigation2031';
@@ -79,6 +80,12 @@ import { innovativeMicroSaasServices2029 } from '../data/2029-innovative-micro-s
 import { innovativeMicroSaasServices2029V2 } from '../data/2029-innovative-micro-saas-v2';
 import { innovativeITServices2029V2 } from '../data/2029-innovative-it-services-v2';
 import { innovativeAIServices2029V2 } from '../data/2029-innovative-ai-services-v2';
+import { futuristicAIServices2030 } from '../data/2030-futuristic-ai-services';
+import { quantumEmergingTechServices2030 } from '../data/2030-quantum-emerging-tech';
+import { enterpriseITSolutions2030 } from '../data/2030-enterprise-it-solutions';
+import { spaceMetaverseTechServices2030 } from '../data/2030-space-metaverse-tech';
+import { innovativeMicroSaasServices2030 } from '../data/2030-innovative-micro-saas';
+import { researchDevelopmentServices2030 } from '../data/2030-research-development';
 
 export default function HomePage() {
   const contactInfo = {
@@ -155,7 +162,13 @@ export default function HomePage() {
     ...innovativeMicroSaasServices2029V2,
     ...innovativeITServices2029V2,
     ...innovativeAIServices2029V2,
-    ...enterpriseIT2029Services
+    ...enterpriseIT2029Services,
+    ...futuristicAIServices2030,
+    ...quantumEmergingTechServices2030,
+    ...enterpriseITSolutions2030,
+    ...spaceMetaverseTechServices2030,
+    ...innovativeMicroSaasServices2030,
+    ...researchDevelopmentServices2030
   ];
 
   // Get unique services by ID to avoid duplicates
@@ -246,6 +259,138 @@ export default function HomePage() {
         <UltraFuturisticServiceShowcase2029 services={[
           ...futuristicAIServices2029
         ]} />
+
+        {/* Ultra Futuristic 2030 Service Showcase */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/20 to-cyan-900/20"></div>
+          
+          <div className="max-w-7xl mx-auto relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                  2030 Revolutionary Technology Services
+                </span>
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Experience the future with our cutting-edge 2030 technology services. 
+                From quantum computing to space mining, we're building tomorrow's solutions today.
+              </p>
+            </motion.div>
+
+            {/* 2030 Services Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Futuristic AI Services 2030 */}
+              {futuristicAIServices2030.slice(0, 3).map((service, index) => (
+                <motion.div
+                  key={service.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -5 }}
+                  className="group cursor-pointer"
+                >
+                  <div className="p-6 rounded-2xl bg-gradient-to-br from-gray-900/60 to-gray-800/60 border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-300 backdrop-blur-sm">
+                    <div className="text-4xl mb-4">{service.icon}</div>
+                    <h3 className="text-xl font-semibold text-white mb-3">{service.name}</h3>
+                    <p className="text-gray-300 text-sm mb-4">{service.description}</p>
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="text-cyan-400 font-semibold">{service.price}{service.period}</span>
+                      <span className="text-xs text-purple-400 bg-purple-400/10 px-2 py-1 rounded-full">
+                        {service.innovationLevel}
+                      </span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-gray-400">Setup: {service.setupTime}</span>
+                      <ArrowRight className="w-5 h-5 text-cyan-400 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+
+              {/* Quantum & Emerging Tech 2030 */}
+              {quantumEmergingTechServices2030.slice(0, 3).map((service, index) => (
+                <motion.div
+                  key={service.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: (index + 3) * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -5 }}
+                  className="group cursor-pointer"
+                >
+                  <div className="p-6 rounded-2xl bg-gradient-to-br from-gray-900/60 to-gray-800/60 border border-purple-500/30 hover:border-purple-400/50 transition-all duration-300 backdrop-blur-sm">
+                    <div className="text-4xl mb-4">{service.icon}</div>
+                    <h3 className="text-xl font-semibold text-white mb-3">{service.name}</h3>
+                    <p className="text-gray-300 text-sm mb-4">{service.description}</p>
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="text-purple-400 font-semibold">{service.price}{service.period}</span>
+                      <span className="text-xs text-purple-400 bg-purple-400/10 px-2 py-1 rounded-full">
+                        {service.innovationLevel}
+                      </span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-gray-400">Setup: {service.setupTime}</span>
+                      <ArrowRight className="w-5 h-5 text-purple-400 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+
+              {/* Space & Metaverse Tech 2030 */}
+              {spaceMetaverseTechServices2030.slice(0, 3).map((service, index) => (
+                <motion.div
+                  key={service.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: (index + 6) * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -5 }}
+                  className="group cursor-pointer"
+                >
+                  <div className="p-6 rounded-2xl bg-gradient-to-br from-gray-900/60 to-gray-800/60 border border-emerald-500/30 hover:border-emerald-400/50 transition-all duration-300 backdrop-blur-sm">
+                    <div className="text-4xl mb-4">{service.icon}</div>
+                    <h3 className="text-xl font-semibold text-white mb-3">{service.name}</h3>
+                    <p className="text-gray-300 text-sm mb-4">{service.description}</p>
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="text-emerald-400 font-semibold">{service.price}{service.period}</span>
+                      <span className="text-xs text-emerald-400 bg-emerald-400/10 px-2 py-1 rounded-full">
+                        {service.innovationLevel}
+                      </span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-gray-400">Setup: {service.setupTime}</span>
+                      <ArrowRight className="w-5 h-5 text-emerald-400 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* View All 2030 Services Button */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mt-12"
+            >
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-4 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 text-white rounded-xl font-semibold text-lg hover:from-cyan-600 hover:via-purple-600 hover:to-pink-600 transition-all duration-200"
+              >
+                Explore All 2030 Services
+              </motion.button>
+            </motion.div>
+          </div>
+        </section>
 
         {/* Revolutionary 2027 Services Showcase */}
         <Revolutionary2027ServicesShowcase />
