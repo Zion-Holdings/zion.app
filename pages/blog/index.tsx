@@ -1,8 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import UltraFuturisticBackground from '../../components/ui/UltraFuturisticBackground';
-import Card from '../../components/ui/Card';
+import Layout from '../../components/layout/Layout';
 
 const posts = [
   { slug: 'ai-automation-trends-2025', title: 'AI Automation Trends 2025', excerpt: 'What forward-leaning teams ship next with agents, RAG, and guardrails.' },
@@ -15,7 +14,7 @@ const posts = [
 
 export default function BlogIndexPage() {
   return (
-    <UltraFuturisticBackground variant="quantum" intensity="medium">
+    <Layout>
       <Head>
         <title>Blog | Zion Tech Group</title>
         <meta name="description" content="Insights on AI, cloud, automation, and platform engineering." />
@@ -32,15 +31,15 @@ export default function BlogIndexPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {posts.map((p) => (
-            <Card key={p.slug} className="p-6 bg-black/40 border border-gray-700/50 hover:border-cyan-500/40 transition-colors">
+            <div key={p.slug} className="p-6 bg-black/40 border border-gray-700/50 hover:border-cyan-500/40 transition-colors rounded-lg">
               <h2 className="text-white text-xl font-semibold mb-2">{p.title}</h2>
               <p className="text-gray-400 mb-4">{p.excerpt}</p>
               <Link href={`/blog/${p.slug}`} className="text-cyan-400 hover:text-white font-medium">Read →</Link>
-            </Card>
+            </div>
           ))}
         </div>
       </div>
-    </UltraFuturisticBackground>
+    </Layout>
   );
 }
 
