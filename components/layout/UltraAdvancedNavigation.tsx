@@ -122,6 +122,8 @@ const companyLinks = [
   { name: 'About Us', href: '/about' },
   { name: 'Revolutionary 2026', href: '/revolutionary-2026-services' },
   { name: '2026 Services', href: '/2026-services-showcase' },
+  { name: 'Enterprise Solutions', href: '/enterprise-solutions-showcase' },
+  { name: 'Innovative Micro SAAS', href: '/innovative-micro-saas-showcase' },
   { name: 'All Services', href: '/services' },
   { name: 'Pricing', href: '/pricing' },
   { name: 'News', href: '/news' },
