@@ -22,12 +22,12 @@ export default function FuturisticFooter() {
   ];
 
   const serviceCategories = [
-    { name: 'AI & Machine Learning', href: '/services#ai' },
-    { name: 'Cloud Infrastructure', href: '/services#cloud' },
-    { name: 'Security & Compliance', href: '/services#security' },
-    { name: 'Data Analytics', href: '/services#analytics' },
-    { name: 'DevOps & CI/CD', href: '/services#devops' },
-    { name: 'E-commerce Solutions', href: '/services#ecommerce' },
+    { name: 'AI & Machine Learning', href: '/services?category=AI%20%26%20Machine%20Learning' },
+    { name: 'Cloud & Infrastructure', href: '/services?category=Cloud%20%26%20Infrastructure' },
+    { name: 'Cybersecurity', href: '/services?category=Cybersecurity' },
+    { name: 'Analytics & Business Intelligence', href: '/services?category=Analytics%20%26%20Business%20Intelligence' },
+    { name: 'Robotics & Automation', href: '/services?category=Robotics%20%26%20Automation' },
+    { name: 'Blockchain & Web3', href: '/services?category=Blockchain%20%26%20Web3' },
   ];
 
   const socialLinks = [
