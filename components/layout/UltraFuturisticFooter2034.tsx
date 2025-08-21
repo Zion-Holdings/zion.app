@@ -23,54 +23,55 @@ const serviceCategories = [
     title: 'AI & Consciousness',
     icon: <Brain className="w-5 h-5 text-cyan-400" />,
     services: [
+      { name: 'AI Business Intelligence Suite Pro', href: '/ai-business-intelligence-suite-pro' },
+      { name: 'AI Content Creation Studio', href: '/ai-content-creation-studio' },
+      { name: 'Autonomous Customer Service AI', href: '/autonomous-customer-service-ai' },
+      { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer' },
       { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029' },
       { name: 'Quantum AI Fusion', href: '/quantum-ai-fusion' },
       { name: 'AI Autonomous Ecosystem', href: '/ai-autonomous-ecosystem' },
       { name: 'AI Ethics & Governance', href: '/ai-ethics-governance' },
       { name: 'AI Creativity Studio', href: '/ai-creativity-studio' },
-      { name: 'AI Education Platform', href: '/ai-education-platform' },
-      { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics' },
-      { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence' },
-      { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform' },
-      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-platform' }
+      { name: 'AI Education Platform', href: '/ai-education-platform' }
     ]
   },
   {
     title: 'Quantum & Emerging Tech',
     icon: <Atom className="w-5 h-5 text-blue-400" />,
     services: [
-      { name: 'Space Mining Platform', href: '/space-mining-platform' },
-      { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing' },
-      { name: 'Brain-Computer Interface', href: '/brain-computer-interface' },
-      { name: 'Quantum Energy Platform', href: '/quantum-energy-platform' },
-      { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai' },
-      { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery' },
-      { name: 'Quantum Robotics', href: '/quantum-robotics' },
-      { name: 'Quantum Internet Security', href: '/quantum-internet-security' },
-      { name: 'Quantum Logistics', href: '/quantum-logistics-optimization' },
-      { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity-platform' }
+      { name: 'Quantum-Safe Cybersecurity Platform', href: '/quantum-safe-cybersecurity-platform' },
+      { name: 'Quantum Machine Learning Platform', href: '/quantum-machine-learning-platform' },
+      { name: 'Quantum Internet Security Platform', href: '/quantum-internet-security-platform' },
+      { name: 'Quantum Sensing Platform', href: '/quantum-sensing-platform' },
+      { name: 'Neuromorphic Computing Platform', href: '/neuromorphic-computing-platform' },
+      { name: 'Bio-Computing Platform', href: '/bio-computing-platform' },
+      { name: 'Space-Based Computing Platform', href: '/space-based-computing-platform' },
+      { name: 'Holographic Computing Interface', href: '/holographic-computing-interface' },
+      { name: 'Brain-Computer Interface Platform', href: '/brain-computer-interface-platform' },
+      { name: 'Fusion Power Simulation Platform', href: '/fusion-power-simulation-platform' }
     ]
   },
   {
     title: 'Enterprise IT',
     icon: <Shield className="w-5 h-5 text-green-400" />,
     services: [
-      { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure' },
-      { name: 'Edge Computing Orchestrator', href: '/edge-computing-orchestration' },
-      { name: 'Zero Trust Security Platform', href: '/zero-trust-network-architecture' },
-      { name: 'Blockchain Enterprise Platform', href: '/blockchain-infrastructure-platform' },
-      { name: 'AI-Powered DevOps', href: '/ai-powered-devops' },
-      { name: 'Quantum Networking', href: '/quantum-networking' },
-      { name: 'Autonomous IT Operations', href: '/autonomous-it-operations' },
-      { name: 'Quantum Data Center', href: '/quantum-data-center' },
-      { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity' },
-      { name: 'Quantum Cloud Migration', href: '/quantum-cloud-migration' }
+      { name: 'Autonomous DevOps Platform', href: '/autonomous-devops-platform' },
+      { name: 'Edge AI Computing Platform', href: '/edge-ai-computing-platform' },
+      { name: 'IoT Security & Management Platform', href: '/iot-security-management-platform' },
+      { name: 'Healthcare AI Platform', href: '/healthcare-ai-platform' },
+      { name: 'Financial AI Trading Platform', href: '/financial-ai-trading-platform' },
+      { name: 'Manufacturing AI Platform', href: '/manufacturing-ai-platform' },
+      { name: 'Retail AI Platform', href: '/retail-ai-platform' },
+      { name: 'Energy AI Platform', href: '/energy-ai-platform' },
+      { name: 'Transportation AI Platform', href: '/transportation-ai-platform' },
+      { name: 'Education AI Platform', href: '/education-ai-platform' }
     ]
   },
   {
     title: 'Micro SAAS',
     icon: <Rocket className="w-5 h-5 text-purple-400" />,
     services: [
+      { name: 'Blockchain-as-a-Service Platform', href: '/blockchain-as-a-service-platform' },
       { name: 'AI Content Factory Pro', href: '/ai-content-factory-pro' },
       { name: 'Quantum CRM Suite', href: '/quantum-crm-suite' },
       { name: 'AI Autonomous Decision Engine', href: '/ai-autonomous-decision-engine' },
@@ -79,8 +80,7 @@ const serviceCategories = [
       { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics' },
       { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence' },
       { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform' },
-      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-platform' },
-      { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer' }
+      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-platform' }
     ]
   }
 ];

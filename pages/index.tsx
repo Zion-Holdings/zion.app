@@ -62,6 +62,14 @@ const serviceCategories = [
     icon: Rocket,
     color: 'from-teal-500 to-emerald-600',
     href: '/micro-saas'
+  },
+  {
+    title: '2025 Innovative Services',
+    description: 'Latest cutting-edge services and breakthrough technologies',
+    services: [],
+    icon: Globe,
+    color: 'from-pink-500 to-rose-600',
+    href: '/2025-innovative-services-showcase'
   }
 ];
 

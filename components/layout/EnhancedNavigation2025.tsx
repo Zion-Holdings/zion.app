@@ -34,11 +34,12 @@ const contactInfo = {
 const navigationItems: NavigationItem[] = [
   {
     name: 'All Services',
-    href: '/comprehensive-services-showcase-2025',
+    href: '/2025-innovative-services-showcase',
     icon: <Globe className="w-5 h-5" />,
     description: 'Complete portfolio of all technology services',
-    badge: 'Showcase',
+    badge: 'New',
     children: [
+      { name: '2025 Innovative Services', href: '/2025-innovative-services-showcase', description: 'Latest innovative services portfolio' },
       { name: 'View All Services', href: '/comprehensive-services-showcase-2025', description: 'Complete services portfolio' },
       { name: 'Service Categories', href: '/comprehensive-services-showcase-2025#categories', description: 'Browse by category' },
       { name: 'Pricing Comparison', href: '/comprehensive-services-showcase-2025#pricing', description: 'Compare service costs' },
