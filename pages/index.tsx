@@ -173,7 +173,7 @@ export default function HomePage() {
       </Head>
 
       {/* Hero Section */}
-      <section className="relative z-10 pt-20 pb-16 px-4 sm:px-6 lg:px-8">
+      <section className="relative z-10 pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -297,19 +297,63 @@ export default function HomePage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {/* Revolutionary Services Grid */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16"
+          >
             {revolutionaryServices.map((service, index) => (
               <motion.div
                 key={service.id}
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
               >
-                <EnhancedFuturisticCard service={service} />
+                <EnhancedFuturisticCard
+                  title={service.name}
+                  description={service.description}
+                  icon={<span className="text-4xl">{service.icon}</span>}
+                  price={service.price}
+                  period={service.period}
+                  features={service.features.slice(0, 4)}
+                  popular={service.popular}
+                  variant={service.variant}
+                  color={service.color}
+                  textColor={service.textColor}
+                  link={service.link}
+                  contactInfo={service.contactInfo}
+                  stats={[
+                    {
+                      value: service.customers.toLocaleString(),
+                      label: 'Customers',
+                      icon: <Users className="w-4 h-4" />,
+                      color: 'text-blue-400'
+                    },
+                    {
+                      value: service.rating.toString(),
+                      label: 'Rating',
+                      icon: <Star className="w-4 h-4" />,
+                      color: 'text-yellow-400'
+                    },
+                    {
+                      value: service.roi.split(' ')[0],
+                      label: 'ROI',
+                      icon: <TrendingUp className="w-4 h-4" />,
+                      color: 'text-green-400'
+                    },
+                    {
+                      value: service.growthRate.split(' ')[0],
+                      label: 'Growth',
+                      icon: <Rocket className="w-4 h-4" />,
+                      color: 'text-purple-400'
+                    }
+                  ]}
+                />
               </motion.div>
             ))}
-          </div>
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}

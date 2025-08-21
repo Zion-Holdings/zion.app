@@ -4,9 +4,10 @@ import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, Trend
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
-import UltraAdvancedFuturisticCard from '../components/ui/UltraAdvancedFuturisticCard';
+
 import { enhancedRealMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices, getServicesByPriceRange } from '../data/enhanced-real-micro-saas-services';
 import { motion } from 'framer-motion';
+import EnhancedFuturisticCard from '../components/ui/EnhancedFuturisticCard';
 
 export default function ServicesPage() {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -304,40 +305,58 @@ export default function ServicesPage() {
         </motion.div>
 
         {/* Services Grid */}
-        <motion.div 
-          className="max-w-7xl mx-auto"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.0 }}
-        >
-          {filteredServices.length === 0 ? (
-            <div className="text-center py-20">
-              <Search className="w-16 h-16 text-gray-500 mx-auto mb-4" />
-              <h3 className="text-2xl font-semibold text-gray-400 mb-2">No services found</h3>
-              <p className="text-gray-500">Try adjusting your search criteria or filters.</p>
-            </div>
-          ) : (
-            <div className={`grid gap-8 ${
-              viewMode === 'grid' 
-                ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' 
-                : 'grid-cols-1'
-            }`}>
-              {filteredServices.map((service, index) => (
-                <motion.div
-                  key={service.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                >
-                  <UltraAdvancedFuturisticCard
-                    service={service}
-                    onClick={() => window.open(service.link, '_blank')}
-                  />
-                </motion.div>
-              ))}
-            </div>
-          )}
-        </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {filteredServices.map((service, index) => (
+            <motion.div
+              key={service.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+            >
+              <EnhancedFuturisticCard
+                title={service.name}
+                description={service.description}
+                icon={<span className="text-4xl">{service.icon}</span>}
+                price={service.price}
+                period={service.period}
+                features={service.features.slice(0, 4)}
+                popular={service.popular}
+                variant={service.variant}
+                color={service.color}
+                textColor={service.textColor}
+                link={service.link}
+                contactInfo={service.contactInfo}
+                stats={[
+                  {
+                    value: service.customers.toLocaleString(),
+                    label: 'Customers',
+                    icon: <Users className="w-4 h-4" />,
+                    color: 'text-blue-400'
+                  },
+                  {
+                    value: service.rating.toString(),
+                    label: 'Rating',
+                    icon: <Star className="w-4 h-4" />,
+                    color: 'text-yellow-400'
+                  },
+                  {
+                    value: service.roi.split(' ')[0],
+                    label: 'ROI',
+                    icon: <TrendingUp className="w-4 h-4" />,
+                    color: 'text-green-400'
+                  },
+                  {
+                    value: service.growthRate.split(' ')[0],
+                    label: 'Growth',
+                    icon: <Rocket className="w-4 h-4" />,
+                    color: 'text-purple-400'
+                  }
+                ]}
+              />
+            </motion.div>
+          ))}
+        </div>
 
         {/* Popular Services Section */}
         {popularServices.length > 0 && (
@@ -359,9 +378,45 @@ export default function ServicesPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
-                  <UltraAdvancedFuturisticCard
-                    service={service}
-                    onClick={() => window.open(service.link, '_blank')}
+                  <EnhancedFuturisticCard
+                    title={service.name}
+                    description={service.description}
+                    icon={<span className="text-4xl">{service.icon}</span>}
+                    price={service.price}
+                    period={service.period}
+                    features={service.features.slice(0, 4)}
+                    popular={service.popular}
+                    variant={service.variant}
+                    color={service.color}
+                    textColor={service.textColor}
+                    link={service.link}
+                    contactInfo={service.contactInfo}
+                    stats={[
+                      {
+                        value: service.customers.toLocaleString(),
+                        label: 'Customers',
+                        icon: <Users className="w-4 h-4" />,
+                        color: 'text-blue-400'
+                      },
+                      {
+                        value: service.rating.toString(),
+                        label: 'Rating',
+                        icon: <Star className="w-4 h-4" />,
+                        color: 'text-yellow-400'
+                      },
+                      {
+                        value: service.roi.split(' ')[0],
+                        label: 'ROI',
+                        icon: <TrendingUp className="w-4 h-4" />,
+                        color: 'text-green-400'
+                      },
+                      {
+                        value: service.growthRate.split(' ')[0],
+                        label: 'Growth',
+                        icon: <Rocket className="w-4 h-4" />,
+                        color: 'text-purple-400'
+                      }
+                    ]}
                   />
                 </motion.div>
               ))}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
-import { Shield, Clock, DollarSign, TrendingUp, Brain, Rocket, ArrowRight, ExternalLink, Search, Filter, Grid, List, Phone, Mail, MapPin, Star, Check, Sparkles, Atom, Cpu, Globe, FlaskConical } from 'lucide-react';
+import { Shield, Clock, DollarSign, TrendingUp, Brain, Rocket, ArrowRight, ExternalLink, Search, Filter, Grid, List, Phone, Mail, MapPin, Star, Check, Sparkles, Atom, Cpu, Globe, FlaskConical, Users } from 'lucide-react';
 import Button from '../components/ui/Button';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 import EnhancedFuturisticCard from '../components/ui/EnhancedFuturisticCard';
@@ -232,7 +232,46 @@ export default function MicroSaasPage() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <EnhancedFuturisticCard service={service} />
+                <EnhancedFuturisticCard
+                  title={service.name}
+                  description={service.description}
+                  icon={<span className="text-4xl">{service.icon}</span>}
+                  price={service.price}
+                  period={service.period}
+                  features={service.features.slice(0, 4)}
+                  popular={service.popular}
+                  variant={service.variant}
+                  color={service.color}
+                  textColor={service.textColor}
+                  link={service.link}
+                  contactInfo={service.contactInfo}
+                  stats={[
+                    {
+                      value: service.customers.toLocaleString(),
+                      label: 'Customers',
+                      icon: <Users className="w-4 h-4" />,
+                      color: 'text-blue-400'
+                    },
+                    {
+                      value: service.rating.toString(),
+                      label: 'Rating',
+                      icon: <Star className="w-4 h-4" />,
+                      color: 'text-yellow-400'
+                    },
+                    {
+                      value: service.roi.split(' ')[0],
+                      label: 'ROI',
+                      icon: <TrendingUp className="w-4 h-4" />,
+                      color: 'text-green-400'
+                    },
+                    {
+                      value: service.growthRate.split(' ')[0],
+                      label: 'Growth',
+                      icon: <Rocket className="w-4 h-4" />,
+                      color: 'text-purple-400'
+                    }
+                  ]}
+                />
               </motion.div>
             ))}
           </div>
@@ -325,20 +364,55 @@ export default function MicroSaasPage() {
           </div>
 
           {/* Services Grid */}
-          <div className={`grid gap-6 ${
-            viewMode === 'grid' 
-              ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4' 
-              : 'grid-cols-1'
-          }`}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {filteredServices.map((service, index) => (
               <motion.div
                 key={service.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.05 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <EnhancedFuturisticCard service={service} />
+                <EnhancedFuturisticCard
+                  title={service.name}
+                  description={service.description}
+                  icon={<span className="text-4xl">{service.icon}</span>}
+                  price={service.price}
+                  period={service.period}
+                  features={service.features.slice(0, 4)}
+                  popular={service.popular}
+                  variant={service.variant}
+                  color={service.color}
+                  textColor={service.textColor}
+                  link={service.link}
+                  contactInfo={service.contactInfo}
+                  stats={[
+                    {
+                      value: service.customers.toLocaleString(),
+                      label: 'Customers',
+                      icon: <Users className="w-4 h-4" />,
+                      color: 'text-blue-400'
+                    },
+                    {
+                      value: service.rating.toString(),
+                      label: 'Rating',
+                      icon: <Star className="w-4 h-4" />,
+                      color: 'text-yellow-400'
+                    },
+                    {
+                      value: service.roi.split(' ')[0],
+                      label: 'ROI',
+                      icon: <TrendingUp className="w-4 h-4" />,
+                      color: 'text-green-400'
+                    },
+                    {
+                      value: service.growthRate.split(' ')[0],
+                      label: 'Growth',
+                      icon: <Rocket className="w-4 h-4" />,
+                      color: 'text-purple-400'
+                    }
+                  ]}
+                />
               </motion.div>
             ))}
           </div>

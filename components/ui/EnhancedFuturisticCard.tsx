@@ -1,368 +1,460 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Star, Users, TrendingUp, Zap, Shield, Brain, Rocket } from 'lucide-react';
+import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
+import { ArrowRight, ExternalLink, Star, Check, Zap, Shield, TrendingUp, Clock, DollarSign, Users, Globe, Cpu, Brain, Rocket, FlaskConical, Leaf, Factory, Truck, Microscope, GraduationCap, ShieldCheck, Globe2, Cloud, Database, Lock, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Code, BookOpen, Activity, Settings, Mail, Phone, MapPin, Sparkles, Atom, Eye, Trophy, Dna } from 'lucide-react';
 
 interface EnhancedFuturisticCardProps {
-  service: {
-    id: string;
-    name: string;
-    tagline: string;
-    price: string;
-    period: string;
-    description: string;
-    features: string[];
-    popular: boolean;
-    icon: string;
-    color: string;
-    textColor: string;
-    link: string;
-    marketPosition: string;
-    targetAudience: string;
-    category: string;
-    realService: boolean;
-    technology: string[];
-    integrations: string[];
-    useCases: string[];
-    roi: string;
-    competitors: string[];
-    marketSize: string;
-    growthRate: string;
-    variant: string;
-    contactInfo: {
-      mobile: string;
-      email: string;
-      address: string;
-      website: string;
-    };
-    realImplementation: boolean;
-    implementationDetails: string;
-    launchDate: string;
-    customers: number;
-    rating: number;
-    reviews: number;
-  };
+  title: string;
+  description: string;
+  icon?: React.ReactNode;
+  price?: string;
+  period?: string;
+  features?: string[];
+  popular?: boolean;
+  variant?: 'default' | 'holographic' | 'quantum' | 'cyberpunk' | 'neural' | 'quantum-holographic' | 'quantum-advanced' | 'holographic-advanced' | 'neural-quantum' | 'quantum-cyberpunk' | 'holographic-neural' | 'quantum-holographic-advanced' | 'quantum-matrix' | 'neural-cyberpunk' | 'holographic-quantum' | 'quantum-neural-advanced' | 'cyberpunk-holographic' | 'quantum-space' | 'ai-futuristic' | 'quantum-entanglement' | 'holographic-matrix' | 'neural-quantum-cyberpunk';
+  color?: string;
+  textColor?: string;
+  link?: string;
+  onClick?: () => void;
   className?: string;
+  children?: React.ReactNode;
+  stats?: Array<{
+    value: string;
+    label: string;
+    icon: React.ReactNode;
+    color: string;
+  }>;
+  contactInfo?: {
+    mobile: string;
+    email: string;
+    address: string;
+    website: string;
+  };
 }
 
-const EnhancedFuturisticCard: React.FC<EnhancedFuturisticCardProps> = ({ service, className = '' }) => {
+const EnhancedFuturisticCard: React.FC<EnhancedFuturisticCardProps> = ({
+  title,
+  description,
+  icon,
+  price,
+  period,
+  features = [],
+  popular = false,
+  variant = 'default',
+  color = 'from-indigo-500 to-purple-600',
+  textColor = 'text-indigo-400',
+  link,
+  onClick,
+  className = '',
+  children,
+  stats = [],
+  contactInfo
+}) => {
   const [isHovered, setIsHovered] = useState(false);
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isPressed, setIsPressed] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  
+  // Enhanced motion values for advanced interactions
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const rotateX = useTransform(mouseY, [-300, 300], [15, -15]);
+  const rotateY = useTransform(mouseX, [-300, 300], [-15, 15]);
+  const scale = useSpring(isHovered ? 1.05 : 1, { stiffness: 300, damping: 20 });
+  const glowIntensity = useSpring(isHovered ? 1 : 0.3, { stiffness: 200, damping: 20 });
+
+  // Quantum particle effect
+  const [particles, setParticles] = useState<Array<{id: number, x: number, y: number, vx: number, vy: number, life: number}>>([]);
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (cardRef.current) {
-        const rect = cardRef.current.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        setMousePosition({ x, y });
-      }
-    };
-
-    const card = cardRef.current;
-    if (card) {
-      card.addEventListener('mousemove', handleMouseMove);
-      return () => card.removeEventListener('mousemove', handleMouseMove);
+    if (isHovered && variant.includes('quantum')) {
+      const newParticles = Array.from({ length: 20 }, (_, i) => ({
+        id: i,
+        x: Math.random() * 100,
+        y: Math.random() * 100,
+        vx: (Math.random() - 0.5) * 2,
+        vy: (Math.random() - 0.5) * 2,
+        life: 100
+      }));
+      setParticles(newParticles);
+    } else {
+      setParticles([]);
     }
-  }, []);
+  }, [isHovered, variant]);
+
+  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
+    if (!cardRef.current) return;
+    
+    const rect = cardRef.current.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    
+    mouseX.set(event.clientX - centerX);
+    mouseY.set(event.clientY - centerY);
+  };
+
+  const handleMouseLeave = () => {
+    mouseX.set(0);
+    mouseY.set(0);
+    setIsHovered(false);
+  };
 
   const getVariantStyles = () => {
-    const baseStyles = 'relative overflow-hidden rounded-2xl border backdrop-blur-xl transition-all duration-500';
-    
-    switch (service.variant) {
+    switch (variant) {
       case 'quantum':
-        return `${baseStyles} border-cyan-500/30 bg-gradient-to-br from-cyan-900/20 via-slate-900/40 to-cyan-800/20 shadow-[0_0_50px_rgba(0,255,255,0.1)]`;
+        return {
+          background: 'linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(139, 92, 246, 0.1))',
+          border: '1px solid rgba(0, 255, 255, 0.3)',
+          shadow: '0 0 30px rgba(0, 255, 255, 0.2)'
+        };
       case 'holographic':
-        return `${baseStyles} border-purple-500/30 bg-gradient-to-br from-purple-900/20 via-slate-900/40 to-pink-800/20 shadow-[0_0_50px_rgba(139,92,246,0.1)]`;
+        return {
+          background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 73, 153, 0.1))',
+          border: '1px solid rgba(139, 92, 246, 0.3)',
+          shadow: '0 0 30px rgba(139, 92, 246, 0.2)'
+        };
       case 'neural':
-        return `${baseStyles} border-green-500/30 bg-gradient-to-br from-green-900/20 via-slate-900/40 to-emerald-800/20 shadow-[0_0_50px_rgba(16,185,129,0.1)]`;
+        return {
+          background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(59, 130, 246, 0.1))',
+          border: '1px solid rgba(16, 185, 129, 0.3)',
+          shadow: '0 0 30px rgba(16, 185, 129, 0.2)'
+        };
       case 'cyberpunk':
-        return `${baseStyles} border-pink-500/30 bg-gradient-to-br from-pink-900/20 via-slate-900/40 to-red-800/20 shadow-[0_0_50px_rgba(236,73,153,0.1)]`;
-      case 'space':
-        return `${baseStyles} border-blue-500/30 bg-gradient-to-br from-blue-900/20 via-slate-900/40 to-indigo-800/20 shadow-[0_0_50px_rgba(59,130,246,0.1)]`;
-      case 'matrix':
-        return `${baseStyles} border-green-500/30 bg-gradient-to-br from-green-900/20 via-slate-900/40 to-emerald-800/20 shadow-[0_0_50px_rgba(16,185,129,0.1)]`;
+        return {
+          background: 'linear-gradient(135deg, rgba(236, 73, 153, 0.1), rgba(245, 158, 11, 0.1))',
+          border: '1px solid rgba(236, 73, 153, 0.3)',
+          shadow: '0 0 30px rgba(236, 73, 153, 0.2)'
+        };
       default:
-        return `${baseStyles} border-slate-500/30 bg-gradient-to-br from-slate-900/20 via-slate-900/40 to-slate-800/20`;
+        return {
+          background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1))',
+          border: '1px solid rgba(59, 130, 246, 0.3)',
+          shadow: '0 0 30px rgba(59, 130, 246, 0.2)'
+        };
     }
   };
 
-  const getGlowColor = () => {
-    switch (service.variant) {
-      case 'quantum': return 'rgba(0, 255, 255, 0.3)';
-      case 'holographic': return 'rgba(139, 92, 246, 0.3)';
-      case 'neural': return 'rgba(16, 185, 129, 0.3)';
-      case 'cyberpunk': return 'rgba(236, 73, 153, 0.3)';
-      case 'space': return 'rgba(59, 130, 246, 0.3)';
-      case 'matrix': return 'rgba(16, 185, 129, 0.3)';
-      default: return 'rgba(148, 163, 184, 0.3)';
-    }
-  };
+  const variantStyles = getVariantStyles();
 
   return (
     <motion.div
       ref={cardRef}
-      className={`${getVariantStyles()} ${className}`}
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(false)}
-      whileHover={{ 
-        scale: 1.02,
-        y: -5,
-        transition: { duration: 0.3 }
+      className={`relative group cursor-pointer overflow-hidden rounded-2xl backdrop-blur-xl transition-all duration-500 ${className}`}
+      style={{
+        background: variantStyles.background,
+        border: variantStyles.border,
+        boxShadow: variantStyles.shadow,
+        transformStyle: 'preserve-3d',
+        perspective: '1000px'
       }}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={handleMouseLeave}
+      onMouseDown={() => setIsPressed(true)}
+      onMouseUp={() => setIsPressed(false)}
+      onClick={onClick}
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+      animate={{
+        rotateX: isHovered ? rotateX.get() : 0,
+        rotateY: isHovered ? rotateY.get() : 0,
+        scale: scale.get()
+      }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
     >
-      {/* Animated background gradient */}
-      <div 
-        className="absolute inset-0 opacity-50"
-        style={{
-          background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, ${getGlowColor()}, transparent 40%)`,
-          transition: 'all 0.3s ease'
-        }}
-      />
+      {/* Enhanced background effects */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Quantum particles */}
+        {variant.includes('quantum') && (
+          <div className="absolute inset-0">
+            {particles.map((particle) => (
+              <motion.div
+                key={particle.id}
+                className="absolute w-1 h-1 bg-cyan-400 rounded-full"
+                style={{
+                  left: `${particle.x}%`,
+                  top: `${particle.y}%`,
+                }}
+                animate={{
+                  x: [0, particle.vx * 50],
+                  y: [0, particle.vy * 50],
+                  opacity: [0, 1, 0],
+                  scale: [0, 1, 0],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+              />
+            ))}
+          </div>
+        )}
 
-      {/* Holographic border effect */}
-      <div className="absolute inset-0 rounded-2xl">
-        <div 
-          className="absolute inset-0 rounded-2xl opacity-30"
-          style={{
-            background: `linear-gradient(45deg, transparent 30%, ${getGlowColor()}, transparent 70%)`,
-            animation: isHovered ? 'borderGlow 2s linear infinite' : 'none'
-          }}
-        />
+        {/* Holographic grid */}
+        {variant.includes('holographic') && (
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-b from-purple-500/5 to-transparent" />
+            {[...Array(5)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute border border-purple-400/10 rounded-full"
+                style={{
+                  left: '50%',
+                  top: '50%',
+                  width: `${100 + i * 50}px`,
+                  height: `${100 + i * 50}px`,
+                  transform: 'translate(-50%, -50%)',
+                }}
+                animate={{
+                  rotate: 360,
+                  scale: [1, 1.1, 1],
+                  opacity: [0.05, 0.15, 0.05],
+                }}
+                transition={{
+                  duration: 8 + i * 2,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+              />
+            ))}
+          </div>
+        )}
+
+        {/* Neural network connections */}
+        {variant.includes('neural') && (
+          <div className="absolute inset-0">
+            {[...Array(8)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute w-1 h-1 bg-green-400/30 rounded-full"
+                style={{
+                  left: `${(i * 12.5) % 100}%`,
+                  top: `${(i * 10) % 100}%`,
+                }}
+                animate={{
+                  scale: [1, 1.5, 1],
+                  opacity: [0.3, 0.8, 0.3],
+                }}
+                transition={{
+                  duration: 2 + Math.random() * 2,
+                  repeat: Infinity,
+                  delay: Math.random() * 2,
+                }}
+              />
+            ))}
+          </div>
+        )}
+
+        {/* Cyberpunk glitch effect */}
+        {variant.includes('cyberpunk') && (
+          <div className="absolute inset-0">
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-r from-pink-500/5 to-transparent"
+              animate={{
+                opacity: [0, 0.2, 0],
+                x: [0, 2, 0],
+              }}
+              transition={{
+                duration: 0.1,
+                repeat: Infinity,
+                repeatDelay: Math.random() * 2,
+              }}
+            />
+          </div>
+        )}
       </div>
 
-      {/* Content */}
+      {/* Popular badge */}
+      {popular && (
+        <motion.div
+          className="absolute top-4 right-4 z-20"
+          initial={{ scale: 0, rotate: -180 }}
+          animate={{ scale: 1, rotate: 0 }}
+          transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+        >
+          <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
+            <Star className="w-3 h-3 fill-current" />
+            POPULAR
+          </div>
+        </motion.div>
+      )}
+
+      {/* Card content */}
       <div className="relative z-10 p-6">
         {/* Header */}
         <div className="flex items-start justify-between mb-4">
-          <div className="flex items-center space-x-3">
-            <motion.div
-              className="text-4xl"
-              animate={{ 
-                rotate: isHovered ? [0, 10, -10, 0] : 0,
-                scale: isHovered ? 1.1 : 1
-              }}
-              transition={{ duration: 0.3 }}
-            >
-              {service.icon}
-            </motion.div>
+          <div className="flex items-center gap-3">
+            {icon && (
+              <motion.div
+                className={`text-3xl ${textColor}`}
+                animate={{ rotate: isHovered ? 360 : 0 }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
+              >
+                {icon}
+              </motion.div>
+            )}
             <div>
-              <h3 className="text-xl font-bold text-white mb-1">{service.name}</h3>
-              <p className="text-sm text-slate-400">{service.tagline}</p>
+              <motion.h3
+                className="text-xl font-bold text-white mb-1"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+              >
+                {title}
+              </motion.h3>
+              {price && (
+                <motion.div
+                  className="flex items-baseline gap-1"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.2 }}
+                >
+                  <span className="text-2xl font-bold text-white">{price}</span>
+                  {period && <span className="text-gray-400">{period}</span>}
+                </motion.div>
+              )}
             </div>
-          </div>
-          
-          {service.popular && (
-            <motion.div
-              className="px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full text-xs font-semibold text-white"
-              animate={{ 
-                scale: isHovered ? 1.1 : 1,
-                rotate: isHovered ? [0, 5, -5, 0] : 0
-              }}
-              transition={{ duration: 0.3 }}
-            >
-              POPULAR
-            </motion.div>
-          )}
-        </div>
-
-        {/* Price and Rating */}
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center space-x-2">
-            <span className="text-3xl font-bold text-white">{service.price}</span>
-            <span className="text-slate-400">{service.period}</span>
-          </div>
-          <div className="flex items-center space-x-1">
-            <Star className="w-4 h-4 text-yellow-400 fill-current" />
-            <span className="text-sm text-white">{service.rating}</span>
-            <span className="text-xs text-slate-400">({service.reviews})</span>
           </div>
         </div>
 
         {/* Description */}
-        <p className="text-slate-300 text-sm mb-4 line-clamp-2">{service.description}</p>
+        <motion.p
+          className="text-gray-300 mb-6 leading-relaxed"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+        >
+          {description}
+        </motion.p>
 
-        {/* Quick Stats */}
-        <div className="grid grid-cols-3 gap-3 mb-4">
-          <div className="text-center p-2 bg-slate-800/50 rounded-lg">
-            <Users className="w-4 h-4 text-blue-400 mx-auto mb-1" />
-            <div className="text-xs text-slate-400">Customers</div>
-            <div className="text-sm font-semibold text-white">{service.customers.toLocaleString()}</div>
-          </div>
-          <div className="text-center p-2 bg-slate-800/50 rounded-lg">
-            <TrendingUp className="w-4 h-4 text-green-400 mx-auto mb-1" />
-            <div className="text-xs text-slate-400">Growth</div>
-            <div className="text-sm font-semibold text-white">{service.growthRate}</div>
-          </div>
-          <div className="text-center p-2 bg-slate-800/50 rounded-lg">
-            <Zap className="w-4 h-4 text-yellow-400 mx-auto mb-1" />
-            <div className="text-xs text-slate-400">ROI</div>
-            <div className="text-sm font-semibold text-white">{service.roi.split(' ')[0]}</div>
-          </div>
-        </div>
-
-        {/* Features Preview */}
-        <div className="mb-4">
-          <h4 className="text-sm font-semibold text-white mb-2">Key Features:</h4>
-          <div className="space-y-1">
-            {service.features.slice(0, 3).map((feature, index) => (
-              <motion.div
-                key={index}
-                className="flex items-center space-x-2 text-xs text-slate-300"
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full" />
-                <span className="line-clamp-1">{feature}</span>
-              </motion.div>
-            ))}
-            {service.features.length > 3 && (
-              <div className="text-xs text-slate-500 mt-2">
-                +{service.features.length - 3} more features
-              </div>
-            )}
-          </div>
-        </div>
-
-        {/* Technology Stack */}
-        <div className="mb-4">
-          <h4 className="text-sm font-semibold text-white mb-2">Technology:</h4>
-          <div className="flex flex-wrap gap-1">
-            {service.technology.slice(0, 4).map((tech, index) => (
-              <motion.span
-                key={index}
-                className="px-2 py-1 bg-slate-800/50 rounded text-xs text-slate-300"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: index * 0.1 }}
-              >
-                {tech}
-              </motion.span>
-            ))}
-            {service.technology.length > 4 && (
-              <span className="px-2 py-1 bg-slate-800/50 rounded text-xs text-slate-500">
-                +{service.technology.length - 4}
-              </span>
-            )}
-          </div>
-        </div>
-
-        {/* Action Buttons */}
-        <div className="flex space-x-3">
-          <motion.button
-            className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-2 px-4 rounded-lg font-semibold text-sm transition-all duration-300 flex items-center justify-center space-x-2"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => window.open(service.link, '_blank')}
-          >
-            <span>Get Started</span>
-            <ExternalLink className="w-4 h-4" />
-          </motion.button>
-          
-          <motion.button
-            className="px-4 py-2 border border-slate-600 hover:border-slate-500 text-slate-300 hover:text-white rounded-lg text-sm transition-all duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => setIsExpanded(!isExpanded)}
-          >
-            {isExpanded ? 'Less' : 'More'}
-          </motion.button>
-        </div>
-
-        {/* Expanded Content */}
-        <AnimatePresence>
-          {isExpanded && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-              className="mt-4 pt-4 border-t border-slate-700"
-            >
-              {/* Market Position */}
-              <div className="mb-4">
-                <h4 className="text-sm font-semibold text-white mb-2">Market Position:</h4>
-                <p className="text-xs text-slate-300">{service.marketPosition}</p>
-              </div>
-
-              {/* Use Cases */}
-              <div className="mb-4">
-                <h4 className="text-sm font-semibold text-white mb-2">Use Cases:</h4>
-                <div className="grid grid-cols-2 gap-2">
-                  {service.useCases.map((useCase, index) => (
-                    <div key={index} className="text-xs text-slate-300 bg-slate-800/30 p-2 rounded">
-                      {useCase}
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Integrations */}
-              <div className="mb-4">
-                <h4 className="text-sm font-semibold text-white mb-2">Integrations:</h4>
-                <div className="flex flex-wrap gap-1">
-                  {service.integrations.slice(0, 6).map((integration, index) => (
-                    <span key={index} className="px-2 py-1 bg-slate-800/50 rounded text-xs text-slate-300">
-                      {integration}
-                    </span>
-                  ))}
-                  {service.integrations.length > 6 && (
-                    <span className="px-2 py-1 bg-slate-800/50 rounded text-xs text-slate-500">
-                      +{service.integrations.length - 6}
-                    </span>
-                  )}
-                </div>
-              </div>
-
-              {/* Contact Information */}
-              <div className="bg-slate-800/30 p-3 rounded-lg">
-                <h4 className="text-sm font-semibold text-white mb-2">Contact:</h4>
-                <div className="space-y-1 text-xs text-slate-300">
-                  <div>📱 {service.contactInfo.mobile}</div>
-                  <div>✉️ {service.contactInfo.email}</div>
-                  <div>📍 {service.contactInfo.address}</div>
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-
-      {/* Floating particles effect */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {[...Array(5)].map((_, index) => (
+        {/* Features */}
+        {features.length > 0 && (
           <motion.div
-            key={index}
-            className="absolute w-1 h-1 bg-cyan-400 rounded-full opacity-30"
-            style={{
-              left: `${20 + index * 15}%`,
-              top: `${30 + index * 10}%`,
-            }}
-            animate={{
-              y: [0, -20, 0],
-              opacity: [0.3, 0.8, 0.3],
-              scale: [1, 1.5, 1],
-            }}
-            transition={{
-              duration: 3 + index,
-              repeat: Infinity,
-              delay: index * 0.5,
-            }}
-          />
-        ))}
+            className="mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+          >
+            <h4 className="text-white font-semibold mb-3 flex items-center gap-2">
+              <Check className="w-4 h-4 text-green-400" />
+              Key Features
+            </h4>
+            <div className="grid grid-cols-1 gap-2">
+              {features.slice(0, 4).map((feature, index) => (
+                <motion.div
+                  key={index}
+                  className="flex items-center gap-2 text-sm text-gray-300"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.5 + index * 0.1 }}
+                >
+                  <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full" />
+                  {feature}
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        )}
+
+        {/* Stats */}
+        {stats.length > 0 && (
+          <motion.div
+            className="mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+          >
+            <div className="grid grid-cols-2 gap-4">
+              {stats.map((stat, index) => (
+                <motion.div
+                  key={index}
+                  className="text-center p-3 rounded-lg bg-black/20 backdrop-blur-sm"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.6 + index * 0.1 }}
+                >
+                  <div className={`text-2xl font-bold ${stat.color} mb-1`}>
+                    {stat.value}
+                  </div>
+                  <div className="text-xs text-gray-400">{stat.label}</div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        )}
+
+        {/* Contact Info */}
+        {contactInfo && (
+          <motion.div
+            className="mb-6 p-4 rounded-lg bg-black/20 backdrop-blur-sm"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+          >
+            <h4 className="text-white font-semibold mb-3 flex items-center gap-2">
+              <Mail className="w-4 h-4 text-cyan-400" />
+              Contact Information
+            </h4>
+            <div className="space-y-2 text-sm text-gray-300">
+              <div className="flex items-center gap-2">
+                <Phone className="w-4 h-4 text-green-400" />
+                <span>{contactInfo.mobile}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Mail className="w-4 h-4 text-blue-400" />
+                <span>{contactInfo.email}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <MapPin className="w-4 h-4 text-red-400" />
+                <span>{contactInfo.address}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Globe className="w-4 h-4 text-purple-400" />
+                <span>{contactInfo.website}</span>
+              </div>
+            </div>
+          </motion.div>
+        )}
+
+        {/* Action button */}
+        {(link || onClick) && (
+          <motion.div
+            className="flex justify-end"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7 }}
+          >
+            <motion.button
+              className={`px-6 py-3 rounded-lg font-semibold text-white bg-gradient-to-r ${color} hover:shadow-lg transition-all duration-300 flex items-center gap-2 group/btn`}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              {link ? 'Learn More' : 'Get Started'}
+              <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
+            </motion.button>
+          </motion.div>
+        )}
+
+        {/* Children content */}
+        {children && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8 }}
+          >
+            {children}
+          </motion.div>
+        )}
       </div>
 
-      <style jsx>{`
-        @keyframes borderGlow {
-          0%, 100% { opacity: 0.3; }
-          50% { opacity: 0.8; }
-        }
-      `}</style>
+      {/* Enhanced glow effect */}
+      <motion.div
+        className="absolute inset-0 rounded-2xl pointer-events-none"
+        style={{
+          background: `radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(0, 255, 255, 0.1) 0%, transparent 50%)`,
+          opacity: glowIntensity,
+        }}
+      />
     </motion.div>
   );
 };
