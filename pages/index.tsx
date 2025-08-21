@@ -394,6 +394,22 @@ export default function HomePage() {
             contactInfo
           },
           {
+            title: '🔒 TLS/SSL Certificate Monitor',
+            description: 'Expiry, chain trust, OCSP, HSTS and weak cipher checks with proactive alerts.',
+            price: '$39/month',
+            features: ['Expiry lead-time alerts', 'OCSP and chain checks', 'HSTS/weak cipher detection', 'Slack/Email/PagerDuty alerts'],
+            link: 'https://ziontechgroup.com/tls-certificate-monitor',
+            contactInfo
+          },
+          {
+            title: '🌐 Domain & DNS Health Monitor',
+            description: 'Domains, DNSSEC, NS/DS drift, and MX/SPF/DMARC validation to prevent outages.',
+            price: '$49/month',
+            features: ['Registrar expiry', 'NS/DS drift', 'DNSSEC validity', 'MX/SPF/DMARC health'],
+            link: 'https://ziontechgroup.com/domain-dns-monitor',
+            contactInfo
+          },
+          {
             title: '🏗️ Infrastructure Drift Detector',
             description: 'Continuously detect and remediate IaC drift across AWS/Azure/GCP with PR-based fixes.',
             price: '$129/month',
