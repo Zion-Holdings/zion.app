@@ -4,7 +4,7 @@ import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFut
 
 export default function GitHubComplianceBotPage() {
   return (
-    <UltraAdvancedFuturisticBackground variant="quantum-holographic" intensity={0.9}>
+    <UltraAdvancedFuturisticBackground intensity="high" colorScheme="quantum-fusion" particleCount={300} animationSpeed={1.5} enableHolographic={true} enableQuantumEffects={true}>
       <Head>
         <title>GitHub Compliance Bot | Zion Tech Group</title>
         <meta name="description" content="Automated GitHub compliance checks for SOC 2, ISO 27001, secrets scanning, and repo hygiene with reports and alerts." />
