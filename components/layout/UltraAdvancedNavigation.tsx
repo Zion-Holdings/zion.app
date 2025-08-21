@@ -30,10 +30,10 @@ const serviceCategories = [
     title: '2026 AI Services',
     icon: Sparkles,
     services: [
-      { name: 'AI Predictive Analytics Platform', href: '/ai-predictive-analytics-platform', description: 'Predict the future with AI-powered analytics', price: '$1,299/month' },
-      { name: 'AI Natural Language Processing', href: '/ai-natural-language-processing', description: 'Understand and process human language with AI', price: '$899/month' },
-      { name: 'AI Computer Vision Platform', href: '/ai-computer-vision-platform', description: 'See and understand images with AI intelligence', price: '$1,199/month' },
-      { name: 'AI Fraud Detection System', href: '/ai-fraud-detection-system', description: 'Detect and prevent fraud with AI intelligence', price: '$1,499/month' }
+      { name: 'AI Consciousness Simulator Pro', href: '/ai-consciousness-simulator-pro', description: 'Simulate human-like consciousness in AI systems', price: '$4,999/month' },
+      { name: 'AI Quantum Hybrid Computing', href: '/quantum-ai-hybrid-computing', description: 'Hybrid AI-Quantum computing for complex problem solving', price: '$7,999/month' },
+      { name: 'AI Multimodal Fusion Platform', href: '/ai-multimodal-fusion-platform', description: 'Unified AI platform for text, image, audio, and video processing', price: '$2,999/month' },
+      { name: 'AI Autonomous Decision Engine', href: '/ai-autonomous-decision-engine', description: 'AI system that makes complex decisions autonomously', price: '$5,999/month' }
     ]
   },
   {
@@ -70,10 +70,20 @@ const serviceCategories = [
     title: 'Emerging Technologies',
     icon: Rocket,
     services: [
-      { name: 'Neuromorphic Computing', href: '/neuromorphic-computing-platform', description: 'Brain-inspired computing for next-generation AI', price: '$1,499/month' },
-      { name: 'DNA Computing Platform', href: '/dna-computing-platform', description: 'Molecular computing for complex problem solving', price: '$2,999/month' },
-      { name: 'Photonic Computing', href: '/photonic-computing-platform', description: 'Light-speed computing with photonic processors', price: '$1,999/month' },
-      { name: 'Holographic Display', href: '/holographic-display-platform', description: 'Next-generation 3D holographic visualization', price: '$699/month' }
+      { name: 'Neuromorphic Computing', href: '/neuromorphic-computing-platform', description: 'Brain-inspired computing for next-generation AI', price: '$6,999/month' },
+      { name: 'DNA Computing Platform', href: '/dna-computing-platform', description: 'Molecular computing for complex problem solving', price: '$11,999/month' },
+      { name: 'Photonic Computing', href: '/photonic-computing-platform', description: 'Light-speed computing with photonic processors', price: '$7,499/month' },
+      { name: 'Holographic Display', href: '/holographic-display-platform', description: 'Next-generation 3D holographic visualization', price: '$5,999/month' }
+    ]
+  },
+  {
+    title: 'Revolutionary 2026 Services',
+    icon: Star,
+    services: [
+      { name: 'AI Consciousness Transfer', href: '/ai-consciousness-transfer', description: 'Transfer consciousness between AI systems and humans', price: '$15,999/month' },
+      { name: 'Quantum Internet Infrastructure', href: '/quantum-internet-infrastructure', description: 'Ultra-secure quantum communication network', price: '$8,999/month' },
+      { name: 'Edge Quantum Computing', href: '/edge-quantum-computing', description: 'Quantum computing at the edge for real-time processing', price: '$4,999/month' },
+      { name: 'AI Space Mining Automation', href: '/ai-space-mining-automation', description: 'Automated space mining using advanced AI', price: '$8,999/month' }
     ]
   }
 ];
@@ -81,6 +91,7 @@ const serviceCategories = [
 const companyLinks = [
   { name: 'About Us', href: '/about' },
   { name: '2026 Services', href: '/2026-services-showcase' },
+  { name: 'Revolutionary 2026', href: '/revolutionary-2026-services-showcase' },
   { name: 'News', href: '/news' },
   { name: 'Case Studies', href: '/case-studies' },
   { name: 'Blog', href: '/blog' },
