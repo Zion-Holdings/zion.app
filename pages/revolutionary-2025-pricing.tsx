@@ -143,13 +143,13 @@ export default function Revolutionary2025Pricing() {
   return (
     <UltraQuantumHolographicBackground 
       intensity="extreme" 
-      colorScheme="quantum-fusion"
+      colorScheme="quantum-field"
       particleCount={600}
       animationSpeed={2.0}
       enableHolographic={true}
       enableQuantumEffects={true}
-      enableNeuralNetworks={true}
-      enableSpaceTime={true}
+      enableNeuralNetwork={true}
+      enableCosmicWaves={true}
     >
       <div className="min-h-screen">
         <Head>
