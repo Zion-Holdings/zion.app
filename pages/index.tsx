@@ -12,12 +12,22 @@ import {
   RocketIcon, GlobeIcon, CpuIcon as CpuIcon2
 } from 'lucide-react';
 import Button from '../components/ui/Button';
-import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
 import EnhancedFuturisticCard from '../components/ui/EnhancedFuturisticCard';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices, getServicesByCategory, getPopularServices, serviceCategories } from '../data/enhanced-real-micro-saas-services';
 
 export default function HomePage() {
+  // Function to map service variants to EnhancedFuturisticCard variants
+  const mapVariant = (serviceVariant: string) => {
+    if (serviceVariant.includes('quantum')) return 'quantum';
+    if (serviceVariant.includes('holographic')) return 'holographic';
+    if (serviceVariant.includes('cyberpunk')) return 'cyberpunk';
+    if (serviceVariant.includes('neural')) return 'neural';
+    if (serviceVariant.includes('space')) return 'space';
+    return 'default';
+  };
+
   const heroStats = [
     { value: '150+', label: 'Revolutionary Micro SaaS Services', color: 'text-cyan-400', icon: <CpuIcon className="w-6 h-6" /> },
     { value: '99.99%', label: 'Uptime Guarantee', color: 'text-fuchsia-400', icon: <ShieldCheck className="w-6 h-6" /> },
@@ -98,382 +108,470 @@ export default function HomePage() {
       avatar: '🏭',
       name: 'Marcus Rodriguez',
       role: 'Operations Director',
-      company: 'AutoManufacture Inc',
+      company: 'AutoManufacture Inc.',
       rating: 5,
-      content: 'Our autonomous manufacturing platform increased production efficiency by 300% while reducing costs by 40%. Game-changing technology.',
-      service: 'Autonomous Manufacturing Platform'
+      content: 'The Autonomous Manufacturing AI has increased our production efficiency by 300% while reducing costs by 40%. Game-changing technology.',
+      service: 'Autonomous Manufacturing AI'
     },
     {
-      avatar: '🔒',
+      avatar: '🔐',
       name: 'Jennifer Kim',
       role: 'CISO',
       company: 'SecureBank Global',
       rating: 5,
-      content: 'The quantum cybersecurity suite provides unprecedented protection. We\'ve had zero security incidents since implementation.',
+      content: 'The Quantum Cybersecurity Suite provides unprecedented protection. We\'re future-proofed against all emerging threats.',
       service: 'Quantum Cybersecurity Suite'
     }
   ];
 
-  const serviceCategories = [
-    {
-      name: 'Quantum Computing & AI',
-      description: 'Revolutionary quantum AI solutions',
-      icon: <Brain className="w-8 h-8" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category.includes('Quantum') || s.category.includes('AI')).length,
-      color: 'from-indigo-500 to-purple-600'
-    },
-    {
-      name: 'Autonomous Systems',
-      description: 'Next-generation automation',
-      icon: <Factory className="w-8 h-8" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category.includes('Manufacturing') || s.category.includes('Autonomous')).length,
-      color: 'from-orange-500 to-red-600'
-    },
-    {
-      name: 'Space Technology',
-      description: 'Satellite and space operations',
-      icon: <Rocket className="w-8 h-8" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category.includes('Space')).length,
-      color: 'from-blue-500 to-indigo-600'
-    },
-    {
-      name: 'Metaverse & VR',
-      description: 'Immersive digital experiences',
-      icon: <Globe className="w-8 h-8" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category.includes('Metaverse')).length,
-      color: 'from-purple-500 to-violet-600'
-    },
-    {
-      name: 'Biomedical AI',
-      description: 'Healthcare and biotechnology',
-      icon: <FlaskConical className="w-8 h-8" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category.includes('Healthcare') || s.category.includes('Biomedical')).length,
-      color: 'from-green-500 to-emerald-600'
-    },
-    {
-      name: 'Quantum Finance',
-      description: 'Financial modeling and trading',
-      icon: <DollarSign className="w-8 h-8" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category.includes('Finance')).length,
-      color: 'from-emerald-500 to-teal-600'
-    }
-  ];
-
   return (
-    <UltraAdvancedFuturisticBackground variant="quantum">
+    <div className="min-h-screen bg-black text-white overflow-x-hidden">
       <Head>
-        <title>Zion Tech Group - Revolutionary Micro SaaS Services & AI Solutions</title>
-        <meta name="description" content="Discover 150+ revolutionary micro SaaS services powered by quantum computing, AI, and cutting-edge technology. Transform your business with our innovative solutions." />
-        <meta name="keywords" content="micro SaaS, AI services, quantum computing, autonomous systems, space technology, metaverse, biomedical AI, quantum finance" />
+        <title>Zion Tech Group - Revolutionary Micro SaaS Services | Next-Generation Technology Solutions</title>
+        <meta name="description" content="Discover 150+ revolutionary micro SaaS services powered by AI, quantum computing, and cutting-edge technology. Transform your business with our innovative solutions." />
+        <meta name="keywords" content="micro SaaS, AI services, quantum computing, space technology, autonomous manufacturing, cybersecurity, metaverse development, biomedical AI" />
+        <meta name="author" content="Zion Tech Group" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://ziontechgroup.com" />
+        
+        {/* Open Graph */}
         <meta property="og:title" content="Zion Tech Group - Revolutionary Micro SaaS Services" />
-        <meta property="og:description" content="150+ revolutionary micro SaaS services powered by quantum computing and AI" />
+        <meta property="og:description" content="Discover 150+ revolutionary micro SaaS services powered by AI, quantum computing, and cutting-edge technology." />
         <meta property="og:url" content="https://ziontechgroup.com" />
         <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://ziontechgroup.com" />
+        <meta property="og:site_name" content="Zion Tech Group" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Zion Tech Group - Revolutionary Micro SaaS Services" />
+        <meta name="twitter:description" content="Discover 150+ revolutionary micro SaaS services powered by AI, quantum computing, and cutting-edge technology." />
+        
+        {/* Contact Information */}
+        <meta name="contact:mobile" content="+1 302 464 0950" />
+        <meta name="contact:email" content="kleber@ziontechgroup.com" />
+        <meta name="contact:address" content="364 E Main St STE 1008 Middletown DE 19709" />
       </Head>
 
-      {/* Hero Section */}
-      <section className="relative z-10 pt-20 pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="mb-8"
-          >
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-              <span className="text-gradient-cyan">Revolutionary</span> Micro SaaS
-              <br />
-              <span className="text-gradient-purple">Services</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-              Transform your business with 150+ cutting-edge micro SaaS solutions powered by quantum computing, 
-              AI, autonomous systems, and space technology. Experience the future of business automation.
-            </p>
-          </motion.div>
-
-          {/* Hero Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-12"
-          >
-            {heroStats.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                className="bg-slate-900/50 backdrop-blur-xl rounded-xl p-4 border border-slate-700/50"
-              >
-                <div className={`${stat.color} mb-2`}>{stat.icon}</div>
-                <div className="text-2xl font-bold text-white mb-1">{stat.value}</div>
-                <div className="text-sm text-slate-400">{stat.label}</div>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          {/* CTA Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-          >
-            <Button
-              href="/micro-saas"
-              className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-8 py-4 text-lg font-semibold rounded-xl"
+      <UltraFuturisticBackground variant="quantum" intensity="high">
+        {/* Hero Section */}
+        <section className="futuristic-hero relative z-10">
+          <div className="futuristic-hero-content">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
             >
-              Explore Services
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
-            <Button
-              href="/contact"
-              variant="outline"
-              className="border-slate-600 text-white hover:border-cyan-500 hover:text-cyan-400 px-8 py-4 text-lg font-semibold rounded-xl"
+              <h1 className="futuristic-hero-title text-gradient-quantum">
+                Revolutionary Micro SaaS Services
+              </h1>
+              <p className="futuristic-hero-subtitle">
+                Discover 150+ cutting-edge micro SaaS solutions powered by AI, quantum computing, and next-generation technology. 
+                Transform your business with our innovative services that deliver unprecedented ROI and competitive advantages.
+              </p>
+              
+              <div className="flex flex-wrap gap-4 justify-center mt-8">
+                <Button 
+                  href="/micro-saas" 
+                  className="futuristic-button quantum-glow"
+                  icon={<Rocket className="w-5 h-5" />}
+                >
+                  Explore Services
+                </Button>
+                <Button 
+                  href="/contact" 
+                  variant="outline"
+                  className="futuristic-button"
+                  icon={<MessageSquare className="w-5 h-5" />}
+                >
+                  Get Started
+                </Button>
+              </div>
+            </motion.div>
+
+            {/* Hero Stats */}
+            <motion.div 
+              className="futuristic-stats mt-16"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Get Started
-            </Button>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Market Insights */}
-      <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              <span className="text-gradient-cyan">Market</span> Insights
-            </h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Discover the explosive growth in emerging technology markets and position your business for success
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {marketInsights.map((insight, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className={`bg-gradient-to-br ${insight.color} p-6 rounded-2xl text-white`}
-              >
-                <div className="flex items-center justify-between mb-4">
-                  <div className="text-3xl font-bold">{insight.metric}</div>
-                  <div className="text-white/80">{insight.icon}</div>
-                </div>
-                <h3 className="text-xl font-semibold mb-2">{insight.label}</h3>
-                <p className="text-white/80">{insight.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Services */}
-      <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              <span className="text-gradient-purple">Featured</span> Services
-            </h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Experience our most revolutionary micro SaaS services that are transforming industries worldwide
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {revolutionaryServices.map((service, index) => (
-              <motion.div
-                key={service.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <EnhancedFuturisticCard service={service} />
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-            className="text-center mt-12"
-          >
-            <Button
-              href="/micro-saas"
-              className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-4 text-lg font-semibold rounded-xl"
-            >
-              View All Services
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Service Categories */}
-      <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              <span className="text-gradient-cyan">Service</span> Categories
-            </h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Explore our comprehensive range of micro SaaS services across cutting-edge technology domains
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {serviceCategories.map((category, index) => (
-              <motion.div
-                key={category.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-slate-900/50 backdrop-blur-xl rounded-2xl p-6 border border-slate-700/50 hover:border-cyan-500/50 transition-all duration-300 group cursor-pointer"
-                onClick={() => window.location.href = `/micro-saas?category=${encodeURIComponent(category.name)}`}
-              >
-                <div className={`bg-gradient-to-br ${category.color} p-3 rounded-xl w-fit mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                  {category.icon}
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-2">{category.name}</h3>
-                <p className="text-slate-400 mb-4">{category.description}</p>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-slate-500">{category.count} services</span>
-                  <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-cyan-400 transition-colors duration-300" />
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              <span className="text-gradient-purple">Customer</span> Success Stories
-            </h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              See how our revolutionary services are transforming businesses across industries
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-slate-900/50 backdrop-blur-xl rounded-2xl p-6 border border-slate-700/50"
-              >
-                <div className="flex items-center mb-4">
-                  <div className="text-3xl mr-3">{testimonial.avatar}</div>
-                  <div>
-                    <div className="font-semibold text-white">{testimonial.name}</div>
-                    <div className="text-sm text-slate-400">{testimonial.role} at {testimonial.company}</div>
+              {heroStats.map((stat, index) => (
+                <motion.div
+                  key={stat.label}
+                  className="futuristic-stat"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                >
+                  <div className={`${stat.color} mb-2`}>
+                    {stat.icon}
                   </div>
-                </div>
-                <div className="flex items-center mb-3">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
-                  ))}
-                </div>
-                <p className="text-slate-300 mb-3">{testimonial.content}</p>
-                <div className="text-sm text-cyan-400 font-medium">{testimonial.service}</div>
-              </motion.div>
-            ))}
+                  <div className="futuristic-stat-value text-gradient-cyan">
+                    {stat.value}
+                  </div>
+                  <div className="futuristic-stat-label">
+                    {stat.label}
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Contact Section */}
-      <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to <span className="text-gradient-cyan">Transform</span> Your Business?
-            </h2>
-            <p className="text-xl text-slate-300 mb-8">
-              Join thousands of businesses already leveraging our revolutionary micro SaaS services
-            </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              <div className="bg-slate-900/50 backdrop-blur-xl rounded-xl p-4 border border-slate-700/50">
-                <Phone className="w-8 h-8 text-cyan-400 mx-auto mb-2" />
-                <div className="text-white font-semibold">Call Us</div>
-                <div className="text-slate-400 text-sm">{contactInfo.mobile}</div>
-              </div>
-              <div className="bg-slate-900/50 backdrop-blur-xl rounded-xl p-4 border border-slate-700/50">
-                <Mail className="w-8 h-8 text-purple-400 mx-auto mb-2" />
-                <div className="text-white font-semibold">Email Us</div>
-                <div className="text-slate-400 text-sm">{contactInfo.email}</div>
-              </div>
-              <div className="bg-slate-900/50 backdrop-blur-xl rounded-xl p-4 border border-slate-700/50">
-                <MapPin className="w-8 h-8 text-green-400 mx-auto mb-2" />
-                <div className="text-white font-semibold">Visit Us</div>
-                <div className="text-slate-400 text-sm">{contactInfo.address}</div>
-              </div>
+        {/* Market Insights Section */}
+        <section className="futuristic-section">
+          <div className="futuristic-container">
+            <div className="futuristic-section-header">
+              <h2 className="futuristic-section-title text-gradient-purple">
+                Market Insights & Growth Opportunities
+              </h2>
+              <p className="futuristic-section-subtitle">
+                Stay ahead of the curve with our analysis of emerging technology markets and growth opportunities
+              </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                href="/contact"
-                className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-8 py-4 text-lg font-semibold rounded-xl"
+            <div className="futuristic-grid">
+              {marketInsights.map((insight, index) => (
+                <motion.div
+                  key={insight.label}
+                  className="futuristic-card p-6"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${insight.color} flex items-center justify-center mb-4`}>
+                    <div className="text-white">
+                      {insight.icon}
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold mb-2 text-gradient-cyan">
+                    {insight.metric}
+                  </h3>
+                  <p className="text-lg font-semibold mb-2">
+                    {insight.label}
+                  </p>
+                  <p className="text-gray-400">
+                    {insight.description}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Revolutionary Services Section */}
+        <section className="futuristic-section bg-gradient-to-b from-black to-gray-900">
+          <div className="futuristic-container">
+            <div className="futuristic-section-header">
+              <h2 className="futuristic-section-title text-gradient-rainbow">
+                Revolutionary Micro SaaS Services
+              </h2>
+              <p className="futuristic-section-subtitle">
+                Experience the future of business technology with our cutting-edge micro SaaS solutions
+              </p>
+            </div>
+
+            <div className="futuristic-grid">
+              {revolutionaryServices.map((service, index) => (
+                <motion.div
+                  key={service.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="futuristic-card p-6 h-full">
+                    <div className="text-center">
+                      <div className="text-4xl mb-4">{service.icon}</div>
+                      <h3 className="text-xl font-bold text-white mb-2">{service.name}</h3>
+                      <p className="text-gray-300 text-sm mb-4">{service.tagline}</p>
+                      <div className="flex items-center justify-center mb-4">
+                        <span className="text-2xl font-bold text-cyan-400">{service.price}</span>
+                        <span className="text-gray-400 ml-1">{service.period}</span>
+                      </div>
+                      <div className="flex items-center justify-center mb-4">
+                        <div className="flex items-center">
+                          {[...Array(5)].map((_, i) => (
+                            <Star
+                              key={i}
+                              className={`w-4 h-4 ${
+                                i < Math.floor(service.rating) ? 'text-yellow-400 fill-current' : 'text-gray-600'
+                              }`}
+                            />
+                          ))}
+                        </div>
+                        <span className="text-gray-400 text-sm ml-2">({service.reviews})</span>
+                      </div>
+                      <div className="text-sm text-gray-400 mb-4">{service.category}</div>
+                      <Button
+                        href={service.link}
+                        variant="secondary"
+                        size="sm"
+                        className="w-full"
+                      >
+                        Learn More
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </Button>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="text-center mt-12">
+              <Button 
+                href="/micro-saas" 
+                className="futuristic-button quantum-glow"
+                icon={<ArrowRight className="w-5 h-5" />}
               >
-                Get Started Today
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-              <Button
-                href="/micro-saas"
-                variant="outline"
-                className="border-slate-600 text-white hover:border-purple-500 hover:text-purple-400 px-8 py-4 text-lg font-semibold rounded-xl"
-              >
-                Explore Services
+                View All Services
               </Button>
             </div>
-          </motion.div>
-        </div>
-      </section>
-    </UltraAdvancedFuturisticBackground>
+          </div>
+        </section>
+
+        {/* Competitive Advantages Section */}
+        <section className="futuristic-section">
+          <div className="futuristic-container">
+            <div className="futuristic-section-header">
+              <h2 className="futuristic-section-title text-gradient-cyan">
+                Why Choose Zion Tech Group?
+              </h2>
+              <p className="futuristic-section-subtitle">
+                Discover the competitive advantages that make our micro SaaS services the preferred choice for forward-thinking businesses
+              </p>
+            </div>
+
+            <div className="futuristic-grid">
+              <motion.div
+                className="futuristic-feature"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <div className="futuristic-feature-icon">⚡</div>
+                <h3 className="text-xl font-bold mb-3 text-gradient-cyan">Lightning Fast Setup</h3>
+                <p className="text-gray-400">
+                  Get started in minutes, not weeks. Our services are designed for immediate value delivery with minimal configuration.
+                </p>
+              </motion.div>
+
+              <motion.div
+                className="futuristic-feature"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
+              >
+                <div className="futuristic-feature-icon">💰</div>
+                <h3 className="text-xl font-bold mb-3 text-gradient-purple">Transparent Pricing</h3>
+                <p className="text-gray-400">
+                  No hidden fees, no enterprise sales calls. Simple monthly pricing that scales with your business needs.
+                </p>
+              </motion.div>
+
+              <motion.div
+                className="futuristic-feature"
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                <div className="futuristic-feature-icon">🔒</div>
+                <h3 className="text-xl font-bold mb-3 text-gradient-green">Enterprise Security</h3>
+                <p className="text-gray-400">
+                  Bank-level security, SOC 2 compliance, and 99.9% uptime guarantee for all services.
+                </p>
+              </motion.div>
+
+              <motion.div
+                className="futuristic-feature"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
+              >
+                <div className="futuristic-feature-icon">📊</div>
+                <h3 className="text-xl font-bold mb-3 text-gradient-yellow">Real Business Value</h3>
+                <p className="text-gray-400">
+                  Each service solves a specific business problem with measurable ROI and immediate impact.
+                </p>
+              </motion.div>
+
+              <motion.div
+                className="futuristic-feature"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+              >
+                <div className="futuristic-feature-icon">🌐</div>
+                <h3 className="text-xl font-bold mb-3 text-gradient-pink">Unified Platform</h3>
+                <p className="text-gray-400">
+                  Access all services through ziontechgroup.com with single sign-on and integrated billing.
+                </p>
+              </motion.div>
+
+              <motion.div
+                className="futuristic-feature"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                viewport={{ once: true }}
+              >
+                <div className="futuristic-feature-icon">🎯</div>
+                <h3 className="text-xl font-bold mb-3 text-gradient-rainbow">Focused Solutions</h3>
+                <p className="text-gray-400">
+                  Specialized tools that do one thing exceptionally well, without enterprise complexity.
+                </p>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section className="futuristic-section bg-gradient-to-b from-gray-900 to-black">
+          <div className="futuristic-container">
+            <div className="futuristic-section-header">
+              <h2 className="futuristic-section-title text-gradient-purple">
+                What Our Customers Say
+              </h2>
+              <p className="futuristic-section-subtitle">
+                Real feedback from businesses that have transformed their operations with our micro SaaS services
+              </p>
+            </div>
+
+            <div className="futuristic-grid">
+              {testimonials.map((testimonial, index) => (
+                <motion.div
+                  key={testimonial.name}
+                  className="futuristic-testimonial"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="flex items-center mb-4">
+                    <div className="text-3xl mr-3">{testimonial.avatar}</div>
+                    <div>
+                      <h4 className="font-bold text-gradient-cyan">{testimonial.name}</h4>
+                      <p className="text-sm text-gray-400">{testimonial.role} at {testimonial.company}</p>
+                    </div>
+                  </div>
+                  <div className="flex mb-3">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                    ))}
+                  </div>
+                  <p className="text-gray-300 mb-3 italic">"{testimonial.content}"</p>
+                  <p className="text-sm text-cyan-400">
+                    <strong>Service:</strong> {testimonial.service}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section className="futuristic-section">
+          <div className="futuristic-container">
+            <div className="futuristic-section-header">
+              <h2 className="futuristic-section-title text-gradient-cyan">
+                Ready to Transform Your Business?
+              </h2>
+              <p className="futuristic-section-subtitle">
+                Get in touch with our team to discover how our revolutionary micro SaaS services can accelerate your growth
+              </p>
+            </div>
+
+            <div className="futuristic-form max-w-4xl mx-auto">
+              <div className="futuristic-grid">
+                <div className="futuristic-feature text-center">
+                  <div className="futuristic-feature-icon">📞</div>
+                  <h3 className="text-xl font-bold mb-3 text-gradient-cyan">Call Us</h3>
+                  <p className="text-gray-400 mb-4">
+                    Speak directly with our technology experts
+                  </p>
+                  <a 
+                    href={`tel:${contactInfo.mobile}`}
+                    className="futuristic-link text-lg font-semibold"
+                  >
+                    {contactInfo.mobile}
+                  </a>
+                </div>
+
+                <div className="futuristic-feature text-center">
+                  <div className="futuristic-feature-icon">✉️</div>
+                  <h3 className="text-xl font-bold mb-3 text-gradient-purple">Email Us</h3>
+                  <p className="text-gray-400 mb-4">
+                    Send us a detailed message about your needs
+                  </p>
+                  <a 
+                    href={`mailto:${contactInfo.email}`}
+                    className="futuristic-link text-lg font-semibold"
+                  >
+                    {contactInfo.email}
+                  </a>
+                </div>
+
+                <div className="futuristic-feature text-center">
+                  <div className="futuristic-feature-icon">📍</div>
+                  <h3 className="text-xl font-bold mb-3 text-gradient-green">Visit Us</h3>
+                  <p className="text-gray-400 mb-4">
+                    Our headquarters in Delaware
+                  </p>
+                  <p className="text-gray-300 text-sm">
+                    {contactInfo.address}
+                  </p>
+                </div>
+              </div>
+
+              <div className="text-center mt-8">
+                <Button 
+                  href="/contact" 
+                  className="futuristic-button quantum-glow"
+                  icon={<MessageSquare className="w-5 h-5" />}
+                >
+                  Start Your Transformation
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer className="futuristic-footer py-12">
+          <div className="futuristic-container">
+            <div className="text-center">
+              <h3 className="text-2xl font-bold mb-4 text-gradient-cyan">
+                Zion Tech Group
+              </h3>
+              <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
+                Leading the future of business technology with revolutionary micro SaaS services powered by AI, quantum computing, and cutting-edge innovation.
+              </p>
+              
+              <div className="flex flex-wrap justify-center gap-6 mb-8">
+                <a href="/micro-saas" className="futuristic-link">Services</a>
+                <a href="/about" className="futuristic-link">About</a>
+                <a href="/contact" className="futuristic-link">Contact</a>
+                <a href="/pricing" className="futuristic-link">Pricing</a>
+                <a href="/blog" className="futuristic-link">Blog</a>
+              </div>
+
+              <div className="text-gray-500 text-sm">
+                <p>© 2024 Zion Tech Group. All rights reserved.</p>
+                <p className="mt-2">
+                  <a href="/privacy" className="futuristic-link text-sm">Privacy Policy</a> • 
+                  <a href="/terms" className="futuristic-link text-sm ml-2">Terms of Service</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </UltraFuturisticBackground>
+    </div>
   );
 }

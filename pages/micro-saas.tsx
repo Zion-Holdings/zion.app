@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
-import { Shield, Clock, DollarSign, TrendingUp, Brain, Rocket, ArrowRight, ExternalLink, Search, Filter, Grid, List, Phone, Mail, MapPin, Star, Check, Sparkles, Atom, Cpu, Globe, FlaskConical } from 'lucide-react';
+import { Shield, Clock, DollarSign, TrendingUp, Brain, Rocket, ArrowRight, ExternalLink, Search, Filter, Grid, List, Phone, Mail, MapPin, Star, Check, Sparkles, Atom, Cpu, Globe, FlaskConical, MessageSquare } from 'lucide-react';
 import Button from '../components/ui/Button';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 import EnhancedFuturisticCard from '../components/ui/EnhancedFuturisticCard';
@@ -8,6 +8,16 @@ import { enhancedRealMicroSaasServices, serviceCategories, getServicesByCategory
 import { motion } from 'framer-motion';
 
 export default function MicroSaasPage() {
+  // Function to map service variants to EnhancedFuturisticCard variants
+  const mapVariant = (serviceVariant: string) => {
+    if (serviceVariant.includes('quantum')) return 'quantum';
+    if (serviceVariant.includes('holographic')) return 'holographic';
+    if (serviceVariant.includes('cyberpunk')) return 'cyberpunk';
+    if (serviceVariant.includes('neural')) return 'neural';
+    if (serviceVariant.includes('space')) return 'space';
+    return 'default';
+  };
+
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [sortBy, setSortBy] = useState<'name' | 'price' | 'rating' | 'innovation'>('innovation');
@@ -47,7 +57,7 @@ export default function MicroSaasPage() {
       title: 'Unified Platform',
       description: 'Access all services through ziontechgroup.com with single sign-on and integrated billing.',
       color: 'from-teal-500 to-cyan-600',
-      bgColor: 'from-teal-500/10 to-teal-500/10'
+      bgColor: 'from-teal-500/10 to-cyan-500/10'
     },
     {
       icon: '🎯',
@@ -107,309 +117,462 @@ export default function MicroSaasPage() {
   };
 
   return (
-    <UltraAdvancedFuturisticBackground variant="holographic">
+    <div className="min-h-screen bg-black text-white overflow-x-hidden">
       <Head>
-        <title>Micro SaaS Services - Zion Tech Group | Revolutionary AI & Quantum Solutions</title>
-        <meta name="description" content="Explore 150+ revolutionary micro SaaS services powered by quantum computing, AI, autonomous systems, and cutting-edge technology. Transform your business today." />
-        <meta name="keywords" content="micro SaaS, AI services, quantum computing, autonomous systems, space technology, metaverse, biomedical AI, quantum finance" />
+        <title>Micro SaaS Services - Zion Tech Group | Revolutionary Business Technology Solutions</title>
+        <meta name="description" content="Explore 150+ revolutionary micro SaaS services powered by AI, quantum computing, and cutting-edge technology. Transform your business with proven ROI solutions." />
+        <meta name="keywords" content="micro SaaS, AI services, quantum computing, space technology, autonomous manufacturing, cybersecurity, metaverse development, biomedical AI, business technology" />
+        <meta name="author" content="Zion Tech Group" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://ziontechgroup.com/micro-saas" />
+        
+        {/* Open Graph */}
         <meta property="og:title" content="Micro SaaS Services - Zion Tech Group" />
-        <meta property="og:description" content="150+ revolutionary micro SaaS services powered by quantum computing and AI" />
+        <meta property="og:description" content="Explore 150+ revolutionary micro SaaS services powered by AI, quantum computing, and cutting-edge technology." />
         <meta property="og:url" content="https://ziontechgroup.com/micro-saas" />
         <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://ziontechgroup.com/micro-saas" />
+        
+        {/* Contact Information */}
+        <meta name="contact:mobile" content="+1 302 464 0950" />
+        <meta name="contact:email" content="kleber@ziontechgroup.com" />
+        <meta name="contact:address" content="364 E Main St STE 1008 Middletown DE 19709" />
       </Head>
 
-      {/* Hero Section */}
-      <section className="relative z-10 pt-20 pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
+      <UltraAdvancedFuturisticBackground>
+        {/* Hero Section */}
+      <section className="futuristic-hero relative z-10">
+        <div className="futuristic-hero-content">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="mb-8"
           >
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-              <span className="text-gradient-cyan">150+ Revolutionary</span>
-              <br />
-              <span className="text-gradient-purple">Micro SaaS Services</span>
+            <h1 className="futuristic-hero-title text-gradient-quantum">
+              Revolutionary Micro SaaS Services
             </h1>
-            <p className="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-              Transform your business with cutting-edge micro SaaS solutions powered by quantum computing, 
-              AI, autonomous systems, and space technology. Experience unprecedented ROI and efficiency.
+            <p className="futuristic-hero-subtitle">
+              Discover 150+ cutting-edge micro SaaS solutions that deliver unprecedented ROI and competitive advantages. 
+              From quantum computing to autonomous manufacturing, transform your business with next-generation technology.
             </p>
-          </motion.div>
-
-          {/* Quick Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12"
-          >
-            <div className="bg-slate-900/50 backdrop-blur-xl rounded-xl p-4 border border-slate-700/50">
-              <div className="text-2xl font-bold text-cyan-400 mb-1">{enhancedRealMicroSaasServices.length}+</div>
-              <div className="text-sm text-slate-400">Total Services</div>
-            </div>
-            <div className="bg-slate-900/50 backdrop-blur-xl rounded-xl p-4 border border-slate-700/50">
-              <div className="text-2xl font-bold text-purple-400 mb-1">30+</div>
-              <div className="text-sm text-slate-400">Day Free Trials</div>
-            </div>
-            <div className="bg-slate-900/50 backdrop-blur-xl rounded-xl p-4 border border-slate-700/50">
-              <div className="text-2xl font-bold text-green-400 mb-1">500%+</div>
-              <div className="text-sm text-slate-400">Average ROI</div>
-            </div>
-            <div className="bg-slate-900/50 backdrop-blur-xl rounded-xl p-4 border border-slate-700/50">
-              <div className="text-2xl font-bold text-yellow-400 mb-1">99.99%</div>
-              <div className="text-sm text-slate-400">Uptime Guarantee</div>
+            
+            <div className="flex flex-wrap gap-4 justify-center mt-8">
+              <Button 
+                href="/contact" 
+                className="futuristic-button quantum-glow"
+                icon={<MessageSquare className="w-5 h-5" />}
+              >
+                Get Started Today
+              </Button>
+              <Button 
+                href="#services" 
+                variant="outline"
+                className="futuristic-button"
+                icon={<ArrowRight className="w-5 h-5" />}
+              >
+                Explore Services
+              </Button>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Competitive Advantages */}
-      <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Why Choose <span className="text-gradient-cyan">Zion Tech Group</span>?
+      {/* Competitive Advantages Section */}
+      <section className="futuristic-section">
+        <div className="futuristic-container">
+          <div className="futuristic-section-header">
+            <h2 className="futuristic-section-title text-gradient-cyan">
+              Why Choose Zion Tech Group?
             </h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              We deliver real business value with revolutionary technology that actually works
+            <p className="futuristic-section-subtitle">
+              Discover the competitive advantages that make our micro SaaS services the preferred choice for forward-thinking businesses
             </p>
-          </motion.div>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="futuristic-grid">
             {competitiveAdvantages.map((advantage, index) => (
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
+                key={advantage.title}
+                className="futuristic-feature"
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-slate-900/50 backdrop-blur-xl rounded-2xl p-6 border border-slate-700/50 hover:border-cyan-500/50 transition-all duration-300"
               >
-                <div className={`bg-gradient-to-br ${advantage.color} p-3 rounded-xl w-fit mb-4`}>
-                  <span className="text-2xl">{advantage.icon}</span>
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-3">{advantage.title}</h3>
-                <p className="text-slate-300">{advantage.description}</p>
+                <div className="futuristic-feature-icon">{advantage.icon}</div>
+                <h3 className="text-xl font-bold mb-3 text-gradient-cyan">{advantage.title}</h3>
+                <p className="text-gray-400">{advantage.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Featured Services */}
-      <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              <span className="text-gradient-purple">Featured</span> Revolutionary Services
+      {/* Featured Services Section */}
+      <section className="futuristic-section bg-gradient-to-b from-black to-gray-900">
+        <div className="futuristic-container">
+          <div className="futuristic-section-header">
+            <h2 className="futuristic-section-title text-gradient-rainbow">
+              Featured Revolutionary Services
             </h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Our most popular and innovative micro SaaS services that are transforming industries
+            <p className="futuristic-section-subtitle">
+              Experience the future of business technology with our most popular and innovative micro SaaS solutions
             </p>
-          </motion.div>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="futuristic-grid">
             {revolutionaryServices.slice(0, 6).map((service, index) => (
               <motion.div
                 key={service.id}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <EnhancedFuturisticCard service={service} />
+                <div className="futuristic-card p-6 h-full">
+                  <div className="text-center">
+                    <div className="text-4xl mb-4">{service.icon}</div>
+                    <h3 className="text-xl font-bold text-white mb-2">{service.name}</h3>
+                    <p className="text-gray-300 text-sm mb-4">{service.tagline}</p>
+                    <div className="flex items-center justify-center mb-4">
+                      <span className="text-2xl font-bold text-cyan-400">{service.price}</span>
+                      <span className="text-gray-400 ml-1">{service.period}</span>
+                    </div>
+                    <div className="flex items-center justify-center mb-4">
+                      <div className="flex items-center">
+                        {[...Array(5)].map((_, i) => (
+                          <Star
+                            key={i}
+                            className={`w-4 h-4 ${
+                              i < Math.floor(service.rating) ? 'text-yellow-400 fill-current' : 'text-gray-600'
+                            }`}
+                          />
+                        ))}
+                      </div>
+                      <span className="text-gray-400 text-sm ml-2">({service.reviews})</span>
+                    </div>
+                    <div className="text-sm text-gray-400 mb-4">{service.category}</div>
+                    <Button
+                      href={service.link}
+                      variant="secondary"
+                      size="sm"
+                      className="w-full"
+                    >
+                      Learn More
+                      <ArrowRight className="ml-2 w-4 h-4" />
+                    </Button>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* All Services Section */}
-      <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Explore <span className="text-gradient-cyan">All Services</span>
+      {/* Services Section */}
+      <section id="services" className="futuristic-section">
+        <div className="futuristic-container">
+          <div className="futuristic-section-header">
+            <h2 className="futuristic-section-title text-gradient-purple">
+              All Micro SaaS Services
             </h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Discover our complete portfolio of revolutionary micro SaaS solutions
+            <p className="futuristic-section-subtitle">
+              Browse our complete catalog of revolutionary micro SaaS services across all technology domains
             </p>
-          </motion.div>
+          </div>
 
-          {/* Filters and Search */}
-          <div className="bg-slate-900/50 backdrop-blur-xl rounded-2xl p-6 border border-slate-700/50 mb-8">
-            <div className="flex flex-col lg:flex-row gap-4 items-center justify-between">
+          {/* Search and Filter Controls */}
+          <div className="futuristic-form mb-8">
+            <div className="futuristic-grid">
               {/* Search */}
-              <div className="relative flex-1 max-w-md">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 w-5 h-5" />
-                <input
-                  type="text"
-                  placeholder="Search services..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2 bg-slate-800/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-cyan-500"
-                />
+              <div className="futuristic-form-group">
+                <label className="futuristic-form-label">Search Services</label>
+                <div className="relative">
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                  <input
+                    type="text"
+                    placeholder="Search by name, description, or technology..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="futuristic-input pl-10 w-full"
+                  />
+                </div>
               </div>
 
               {/* Category Filter */}
-              <div className="flex items-center space-x-4">
+              <div className="futuristic-form-group">
+                <label className="futuristic-form-label">Category</label>
                 <select
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="px-4 py-2 bg-slate-800/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-cyan-500"
+                  className="futuristic-input w-full"
                 >
                   <option value="All">All Categories</option>
                   {serviceCategories.map((category) => (
                     <option key={category} value={category}>{category}</option>
                   ))}
                 </select>
+              </div>
 
-                {/* Sort Options */}
+              {/* Sort By */}
+              <div className="futuristic-form-group">
+                <label className="futuristic-form-label">Sort By</label>
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value as any)}
-                  className="px-4 py-2 bg-slate-800/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-cyan-500"
+                  className="futuristic-input w-full"
                 >
-                  <option value="innovation">Most Innovative</option>
-                  <option value="rating">Highest Rated</option>
-                  <option value="price">Price: Low to High</option>
-                  <option value="name">Name A-Z</option>
+                  <option value="innovation">Innovation & Popularity</option>
+                  <option value="name">Name</option>
+                  <option value="price">Price</option>
+                  <option value="rating">Rating</option>
                 </select>
+              </div>
 
-                {/* View Mode */}
-                <div className="flex items-center space-x-2">
+              {/* View Mode */}
+              <div className="futuristic-form-group">
+                <label className="futuristic-form-label">View Mode</label>
+                <div className="flex gap-2">
                   <button
                     onClick={() => setViewMode('grid')}
-                    className={`p-2 rounded-lg transition-colors ${
-                      viewMode === 'grid' 
-                        ? 'bg-cyan-500 text-white' 
-                        : 'bg-slate-800/50 text-slate-400 hover:text-white'
-                    }`}
+                    className={`futuristic-button ${viewMode === 'grid' ? 'quantum-glow' : ''}`}
                   >
-                    <Grid className="w-5 h-5" />
+                    <Grid className="w-4 h-4" />
                   </button>
                   <button
                     onClick={() => setViewMode('list')}
-                    className={`p-2 rounded-lg transition-colors ${
-                      viewMode === 'list' 
-                        ? 'bg-cyan-500 text-white' 
-                        : 'bg-slate-800/50 text-slate-400 hover:text-white'
-                    }`}
+                    className={`futuristic-button ${viewMode === 'list' ? 'quantum-glow' : ''}`}
                   >
-                    <List className="w-5 h-5" />
+                    <List className="w-4 h-4" />
                   </button>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Services Grid */}
-          <div className={`grid gap-6 ${
-            viewMode === 'grid' 
-              ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4' 
-              : 'grid-cols-1'
-          }`}>
+          {/* Services Grid/List */}
+          <div className={viewMode === 'grid' ? 'futuristic-grid' : 'space-y-6'}>
             {filteredServices.map((service, index) => (
               <motion.div
                 key={service.id}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.05 }}
                 viewport={{ once: true }}
               >
-                <EnhancedFuturisticCard service={service} />
+                {viewMode === 'grid' ? (
+                  <div className="futuristic-card p-6 h-full">
+                    <div className="text-center">
+                      <div className="text-4xl mb-4">{service.icon}</div>
+                      <h3 className="text-xl font-bold text-white mb-2">{service.name}</h3>
+                      <p className="text-gray-300 text-sm mb-4">{service.tagline}</p>
+                      <div className="flex items-center justify-center mb-4">
+                        <span className="text-2xl font-bold text-cyan-400">{service.price}</span>
+                        <span className="text-gray-400 ml-1">{service.period}</span>
+                      </div>
+                      <div className="flex items-center justify-center mb-4">
+                        <div className="flex items-center">
+                          {[...Array(5)].map((_, i) => (
+                            <Star
+                              key={i}
+                              className={`w-4 h-4 ${
+                                i < Math.floor(service.rating) ? 'text-yellow-400 fill-current' : 'text-gray-600'
+                              }`}
+                            />
+                          ))}
+                        </div>
+                        <span className="text-gray-400 text-sm ml-2">({service.reviews})</span>
+                      </div>
+                      <div className="text-sm text-gray-400 mb-4">{service.category}</div>
+                      <Button
+                        href={service.link}
+                        variant="secondary"
+                        size="sm"
+                        className="w-full"
+                      >
+                        Learn More
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </Button>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="futuristic-card p-6">
+                    <div className="flex flex-col md:flex-row gap-6">
+                      <div className="flex-shrink-0">
+                        <div className="text-4xl">{service.icon}</div>
+                      </div>
+                      <div className="flex-1">
+                        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                          <div>
+                            <h3 className="text-xl font-bold text-gradient-cyan mb-2">{service.name}</h3>
+                            <p className="text-gray-400 mb-2">{service.tagline}</p>
+                            <div className="flex items-center gap-4 text-sm">
+                              <span className="text-cyan-400 font-semibold">{service.category}</span>
+                              <div className="flex items-center">
+                                <Star className="w-4 h-4 fill-yellow-400 text-yellow-400 mr-1" />
+                                <span>{service.rating}</span>
+                                <span className="text-gray-500 ml-1">({service.reviews})</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="text-right">
+                            <div className="text-2xl font-bold text-gradient-purple mb-1">
+                              {service.price}<span className="text-gray-400 text-lg">{service.period}</span>
+                            </div>
+                            <div className="text-sm text-gray-400 mb-2">{service.trialDays} day free trial</div>
+                            <Button 
+                              href={service.link}
+                              className="futuristic-button"
+                              icon={<ExternalLink className="w-4 h-4" />}
+                            >
+                              Learn More
+                            </Button>
+                          </div>
+                        </div>
+                        <p className="text-gray-300 mb-4">{service.description}</p>
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          {service.features.slice(0, 5).map((feature, featureIndex) => (
+                            <span key={featureIndex} className="futuristic-badge">
+                              {feature}
+                            </span>
+                          ))}
+                          {service.features.length > 5 && (
+                            <span className="futuristic-badge">
+                              +{service.features.length - 5} more
+                            </span>
+                          )}
+                        </div>
+                        <div className="flex flex-wrap gap-2 text-sm text-gray-400">
+                          <span><strong>ROI:</strong> {service.roi}</span>
+                          <span><strong>Setup:</strong> {service.setupTime}</span>
+                          <span><strong>Customers:</strong> {service.customers.toLocaleString()}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </motion.div>
             ))}
           </div>
 
           {filteredServices.length === 0 && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-center py-12"
-            >
+            <div className="text-center py-12">
               <div className="text-6xl mb-4">🔍</div>
-              <h3 className="text-xl font-semibold text-white mb-2">No services found</h3>
-              <p className="text-slate-400">Try adjusting your search criteria or category filter</p>
-            </motion.div>
+              <h3 className="text-xl font-bold mb-2 text-gradient-cyan">No services found</h3>
+              <p className="text-gray-400 mb-4">
+                Try adjusting your search criteria or browse all categories
+              </p>
+              <Button 
+                onClick={() => {
+                  setSearchQuery('');
+                  setSelectedCategory('All');
+                }}
+                className="futuristic-button"
+                icon={<Filter className="w-4 h-4" />}
+              >
+                Clear Filters
+              </Button>
+            </div>
           )}
         </div>
       </section>
 
       {/* Contact Section */}
-      <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to <span className="text-gradient-cyan">Transform</span> Your Business?
+      <section className="futuristic-section bg-gradient-to-b from-gray-900 to-black">
+        <div className="futuristic-container">
+          <div className="futuristic-section-header">
+            <h2 className="futuristic-section-title text-gradient-cyan">
+              Ready to Transform Your Business?
             </h2>
-            <p className="text-xl text-slate-300 mb-8">
-              Get started with our revolutionary micro SaaS services today
+            <p className="futuristic-section-subtitle">
+              Get in touch with our team to discover how our revolutionary micro SaaS services can accelerate your growth
             </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              <div className="bg-slate-900/50 backdrop-blur-xl rounded-xl p-4 border border-slate-700/50">
-                <Phone className="w-8 h-8 text-cyan-400 mx-auto mb-2" />
-                <div className="text-white font-semibold">Call Us</div>
-                <div className="text-slate-400 text-sm">{contactInfo.mobile}</div>
+          </div>
+
+          <div className="futuristic-form max-w-4xl mx-auto">
+            <div className="futuristic-grid">
+              <div className="futuristic-feature text-center">
+                <div className="futuristic-feature-icon">📞</div>
+                <h3 className="text-xl font-bold mb-3 text-gradient-cyan">Call Us</h3>
+                <p className="text-gray-400 mb-4">
+                  Speak directly with our technology experts
+                </p>
+                <a 
+                  href={`tel:${contactInfo.mobile}`}
+                  className="futuristic-link text-lg font-semibold"
+                >
+                  {contactInfo.mobile}
+                </a>
               </div>
-              <div className="bg-slate-900/50 backdrop-blur-xl rounded-xl p-4 border border-slate-700/50">
-                <Mail className="w-8 h-8 text-purple-400 mx-auto mb-2" />
-                <div className="text-white font-semibold">Email Us</div>
-                <div className="text-slate-400 text-sm">{contactInfo.email}</div>
+
+              <div className="futuristic-feature text-center">
+                <div className="futuristic-feature-icon">✉️</div>
+                <h3 className="text-xl font-bold mb-3 text-gradient-purple">Email Us</h3>
+                <p className="text-gray-400 mb-4">
+                  Send us a detailed message about your needs
+                </p>
+                <a 
+                  href={`mailto:${contactInfo.email}`}
+                  className="futuristic-link text-lg font-semibold"
+                >
+                  {contactInfo.email}
+                </a>
               </div>
-              <div className="bg-slate-900/50 backdrop-blur-xl rounded-xl p-4 border border-slate-700/50">
-                <MapPin className="w-8 h-8 text-green-400 mx-auto mb-2" />
-                <div className="text-white font-semibold">Visit Us</div>
-                <div className="text-slate-400 text-sm">{contactInfo.address}</div>
+
+              <div className="futuristic-feature text-center">
+                <div className="futuristic-feature-icon">📍</div>
+                <h3 className="text-xl font-bold mb-3 text-gradient-green">Visit Us</h3>
+                <p className="text-gray-400 mb-4">
+                  Our headquarters in Delaware
+                </p>
+                <p className="text-gray-300 text-sm">
+                  {contactInfo.address}
+                </p>
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                href="/contact"
-                className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-8 py-4 text-lg font-semibold rounded-xl"
+            <div className="text-center mt-8">
+              <Button 
+                href="/contact" 
+                className="futuristic-button quantum-glow"
+                icon={<MessageSquare className="w-5 h-5" />}
               >
-                Get Started Today
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-              <Button
-                href="/pricing"
-                variant="outline"
-                className="border-slate-600 text-white hover:border-purple-500 hover:text-purple-400 px-8 py-4 text-lg font-semibold rounded-xl"
-              >
-                View Pricing
+                Start Your Transformation
               </Button>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
-    </UltraAdvancedFuturisticBackground>
+
+      {/* Footer */}
+      <footer className="futuristic-footer py-12">
+        <div className="futuristic-container">
+          <div className="text-center">
+            <h3 className="text-2xl font-bold mb-4 text-gradient-cyan">
+              Zion Tech Group
+            </h3>
+            <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
+              Leading the future of business technology with revolutionary micro SaaS services powered by AI, quantum computing, and cutting-edge innovation.
+            </p>
+            
+            <div className="flex flex-wrap justify-center gap-6 mb-8">
+              <a href="/" className="futuristic-link">Home</a>
+              <a href="/micro-saas" className="futuristic-link">Services</a>
+              <a href="/about" className="futuristic-link">About</a>
+              <a href="/contact" className="futuristic-link">Contact</a>
+              <a href="/pricing" className="futuristic-link">Pricing</a>
+            </div>
+
+            <div className="text-gray-500 text-sm">
+              <p>© 2024 Zion Tech Group. All rights reserved.</p>
+              <p className="mt-2">
+                <a href="/privacy" className="futuristic-link text-sm">Privacy Policy</a> • 
+                <a href="/terms" className="futuristic-link text-sm ml-2">Terms of Service</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+      </UltraAdvancedFuturisticBackground>
+    </div>
   );
 }
