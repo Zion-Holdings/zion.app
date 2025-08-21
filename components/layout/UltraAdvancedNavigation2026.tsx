@@ -97,6 +97,7 @@ const companyLinks = [
   { name: 'Home', href: '/', icon: Home },
   { name: 'About Us', href: '/about', icon: Users },
   { name: '2026 Services', href: '/2026-services-showcase', icon: Rocket },
+  { name: '2026 Services V3', href: '/2026-services-showcase-v3', icon: Rocket },
   { name: 'Case Studies', href: '/case-studies', icon: Briefcase },
   { name: 'Blog & Resources', href: '/blog', icon: BookOpen },
   { name: 'Careers', href: '/careers', icon: Team },

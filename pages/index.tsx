@@ -10,6 +10,7 @@ import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowc
 import Enhanced2026ServicesShowcase from '../components/sections/Enhanced2026ServicesShowcase';
 import UltraAdvancedHero2026 from '../components/sections/UltraAdvancedHero2026';
 import Revolutionary2026ServicesShowcase from '../components/sections/Revolutionary2026ServicesShowcase';
+import Enhanced2026ServicesShowcaseV3 from '../components/sections/Enhanced2026ServicesShowcaseV3';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
@@ -44,6 +45,10 @@ import { emergingTech2026ServicesV2 } from '../data/emerging-tech-2026-services-
 import { enterpriseIT2026ServicesV2 } from '../data/enterprise-it-2026-services-v2';
 import { revolutionary2026Innovations } from '../data/revolutionary-2026-innovations';
 import { nextGenAI2026Services } from '../data/next-gen-ai-2026-services';
+import { innovative2026MicroSaasServicesV3 } from '../data/innovative-2026-micro-saas-v3';
+import { emergingTech2026ServicesV3 } from '../data/emerging-tech-2026-services-v3';
+import { enterpriseIT2026ServicesV3 } from '../data/enterprise-it-2026-services-v3';
+import { nextGenAI2026ServicesV3 } from '../data/next-gen-ai-2026-services-v3';
 
 export default function HomePage() {
   const contactInfo = {
@@ -87,7 +92,11 @@ export default function HomePage() {
     ...emergingTech2026ServicesV2,
     ...enterpriseIT2026ServicesV2,
     ...revolutionary2026Innovations,
-    ...nextGenAI2026Services
+    ...nextGenAI2026Services,
+    ...innovative2026MicroSaasServicesV3,
+    ...emergingTech2026ServicesV3,
+    ...enterpriseIT2026ServicesV3,
+    ...nextGenAI2026ServicesV3
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);
@@ -263,6 +272,9 @@ export default function HomePage() {
 
         {/* Enhanced Service Showcase */}
         <Enhanced2026ServicesShowcase />
+
+        {/* New 2026 Services Showcase V3 */}
+        <Enhanced2026ServicesShowcaseV3 />
 
         {/* Service Statistics */}
         <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
