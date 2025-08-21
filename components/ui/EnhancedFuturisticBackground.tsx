@@ -65,9 +65,9 @@ const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> 
   };
 
   const intensitySettings = {
-    low: { particleCount: 50, speed: 0.5, size: 2, opacity: 0.3 },
-    medium: { particleCount: 100, speed: 1, size: 3, opacity: 0.5 },
-    high: { particleCount: 200, speed: 1.5, size: 4, opacity: 0.7 }
+    low: { particleCount: 40, speed: 0.45, size: 2, opacity: 0.25 },
+    medium: { particleCount: 90, speed: 0.9, size: 3, opacity: 0.45 },
+    high: { particleCount: 160, speed: 1.25, size: 3.5, opacity: 0.6 }
   };
 
   useEffect(() => {
@@ -193,7 +193,7 @@ const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> 
     // Matrix rain effect
     const matrixRain = () => {
       const characters = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
-      const fontSize = 14;
+      const fontSize = 12;
       const columns = canvas.width / fontSize;
       const drops: number[] = [];
 
@@ -202,7 +202,7 @@ const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> 
       }
 
       const drawMatrix = () => {
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.06)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
         ctx.fillStyle = colors.primary;

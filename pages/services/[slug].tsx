@@ -7,6 +7,8 @@ import { Check, Mail, MapPin, Phone, ExternalLink } from 'lucide-react';
 import { enhancedRealMicroSaasServices } from '../../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../../data/extra-services';
 import { additionalEnhancedServices } from '../../data/additional-real-services';
+import { newRealServices } from '../../data/new-real-services';
+import { marketReadyServices } from '../../data/market-ready-services';
 
 type Service = typeof enhancedRealMicroSaasServices[number];
 
@@ -18,7 +20,13 @@ const contactInfo = {
 };
 
 function getAllServices(): Service[] {
-	return enhancedRealMicroSaasServices.concat(extraServices as Service[], additionalEnhancedServices as Service[]);
+	return enhancedRealMicroSaasServices
+		.concat(
+			extraServices as Service[],
+			additionalEnhancedServices as Service[],
+			newRealServices as Service[],
+			marketReadyServices as Service[]
+		);
 }
 
 function toSlug(value: string): string {
@@ -145,4 +153,3 @@ export default function ServiceDetailPage({ service }: { service: Service }) {
 		</UltraFuturisticBackground>
 	);
 }
-

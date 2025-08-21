@@ -7,6 +7,8 @@ import { enhancedRealMicroSaasServices } from '../../data/enhanced-real-micro-sa
 import { additionalEnhancedServices } from '../../data/additional-real-services';
 import { extraServices } from '../../data/extra-services';
 import { newlyAddedServices } from '../../data/newly-added-services';
+import { newRealServices } from '../../data/new-real-services';
+import { marketReadyServices } from '../../data/market-ready-services';
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -21,7 +23,14 @@ const categories = [
 ];
 
 export default function ServicesIndexPage() {
-  const all = (enhancedRealMicroSaasServices as any[]).concat(extraServices as any[], additionalEnhancedServices as any[], newlyAddedServices as any[]);
+  const all = (enhancedRealMicroSaasServices as any[])
+    .concat(
+      extraServices as any[],
+      additionalEnhancedServices as any[],
+      newlyAddedServices as any[],
+      newRealServices as any[],
+      marketReadyServices as any[]
+    );
   const byCategory: Record<string, any[]> = {};
   for (const c of categories) byCategory[c] = [];
   for (const s of all) {

@@ -64,7 +64,7 @@ export default function HomePage() {
       <div className="min-h-screen">
         <Head>
           <title>Zion Tech Group - Revolutionary AI, Quantum & IT Services | 800+ Solutions</title>
-          <meta name="description" content="Zion Tech Group offers 800+ revolutionary AI, quantum computing, and IT services. Achieve 1000% ROI with our cutting-edge solutions. Contact: +1 302 464 0950" />
+          <meta name="description" content="Zion Tech Group offers 800+ revolutionary AI, quantum computing, and IT services. Achieve high ROI with our cutting-edge solutions. Contact: +1 302 464 0950" />
           <meta name="keywords" content="AI services, quantum computing, IT services, micro SaaS, cybersecurity, cloud migration, neural interface, quantum internet, blockchain, metaverse, IoT, edge computing" />
           <meta name="author" content="Zion Tech Group" />
           <meta name="robots" content="index, follow" />
@@ -89,8 +89,8 @@ export default function HomePage() {
               <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
                 Revolutionary AI, Quantum Computing & IT Services
               </p>
-              <p className="text-lg md:text-xl text-gray-400 mb-12 max-w-3xl mx-auto">
-                800+ cutting-edge services delivering 1000% ROI. From neural quantum brain interfaces to enterprise IT infrastructure.
+              <p className="text-lg md:text-xl text-gray-300/90 mb-12 max-w-3xl mx-auto">
+                800+ cutting-edge services delivering measurable ROI. From AI copilots to enterprise IT infrastructure.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">

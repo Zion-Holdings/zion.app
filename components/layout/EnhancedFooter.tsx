@@ -63,10 +63,9 @@ const supportLinks = [
 ];
 
 const socialLinks = [
-  { name: 'Twitter', href: '#', icon: Twitter },
-  { name: 'LinkedIn', href: '#', icon: Linkedin },
-  { name: 'Facebook', href: '#', icon: Facebook },
-  { name: 'Instagram', href: '#', icon: Instagram }
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/company/zion-tech-group', icon: Linkedin },
+  { name: 'Instagram', href: 'https://www.instagram.com/ziontechgroup', icon: Instagram },
+  { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: Globe },
 ];
 
 export default function EnhancedFooter() {
