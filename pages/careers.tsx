@@ -108,16 +108,8 @@ const CareersPage: React.FC = () => {
             >
               Help us revolutionize the future of technology. Work on cutting-edge AI, quantum computing, and emerging technology solutions that will shape tomorrow's world.
             </motion.p>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              <a
-                href="#open-positions"
-                className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-200 shadow-lg hover:shadow-cyan-500/25 inline-flex items-center space-x-2"
-              >
+            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}>
+              <a href="#open-positions" className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-200 shadow-lg hover:shadow-cyan-500/25 inline-flex items-center space-x-2">
                 <span>View Open Positions</span>
                 <ArrowRight className="w-5 h-5" />
               </a>
@@ -128,31 +120,13 @@ const CareersPage: React.FC = () => {
         {/* Values Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
-            <motion.div 
-              className="text-center mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Our Values
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                The principles that guide everything we do
-              </p>
+            <motion.div className="text-center mb-16" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Our Values</h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">The principles that guide everything we do</p>
             </motion.div>
-
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {values.map((value, index) => (
-                <motion.div
-                  key={index}
-                  className="text-center group"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
+                <motion.div key={index} className="text-center group" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: index * 0.1 }} viewport={{ once: true }}>
                   <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center text-white mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                     {value.icon}
                   </div>
@@ -167,31 +141,13 @@ const CareersPage: React.FC = () => {
         {/* Benefits Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black/20">
           <div className="max-w-7xl mx-auto">
-            <motion.div 
-              className="text-center mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Why Work With Us?
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                We believe in taking care of our team members
-              </p>
+            <motion.div className="text-center mb-16" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Why Work With Us?</h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">We believe in taking care of our team members</p>
             </motion.div>
-
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {benefits.map((benefit, index) => (
-                <motion.div
-                  key={index}
-                  className="bg-black/40 backdrop-blur-sm border border-cyan-400/20 rounded-2xl p-8 hover:border-cyan-400/40 transition-all duration-300"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
+                <motion.div key={index} className="bg-black/40 backdrop-blur-sm border border-cyan-400/20 rounded-2xl p-8 hover:border-cyan-400/40 transition-all duration-300" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: index * 0.1 }} viewport={{ once: true }}>
                   <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center text-white mb-6">
                     {benefit.icon}
                   </div>
@@ -206,31 +162,13 @@ const CareersPage: React.FC = () => {
         {/* Open Positions */}
         <section id="open-positions" className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
-            <motion.div 
-              className="text-center mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Open Positions
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Join our team of innovators and problem solvers
-              </p>
+            <motion.div className="text-center mb-16" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Open Positions</h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">Join our team of innovators and problem solvers</p>
             </motion.div>
-
             <div className="space-y-8">
               {openPositions.map((position, index) => (
-                <motion.div
-                  key={index}
-                  className="bg-black/40 backdrop-blur-sm border border-cyan-400/20 rounded-2xl p-8 hover:border-cyan-400/40 transition-all duration-300"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
+                <motion.div key={index} className="bg-black/40 backdrop-blur-sm border border-cyan-400/20 rounded-2xl p-8 hover:border-cyan-400/40 transition-all duration-300" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: index * 0.1 }} viewport={{ once: true }}>
                   <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
                     <div className="flex items-start space-x-4 mb-4 lg:mb-0">
                       <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center text-white flex-shrink-0">
@@ -240,32 +178,18 @@ const CareersPage: React.FC = () => {
                         <h3 className="text-2xl font-bold text-white mb-2">{position.title}</h3>
                         <p className="text-cyan-400 mb-1">{position.department}</p>
                         <div className="flex flex-wrap gap-4 text-sm text-gray-400">
-                          <span className="flex items-center space-x-1">
-                            <MapPin className="w-4 h-4" />
-                            <span>{position.location}</span>
-                          </span>
-                          <span className="flex items-center space-x-1">
-                            <Clock className="w-4 h-4" />
-                            <span>{position.type}</span>
-                          </span>
-                          <span className="flex items-center space-x-1">
-                            <Award className="w-4 h-4" />
-                            <span>{position.experience}</span>
-                          </span>
+                          <span className="flex items-center space-x-1"><MapPin className="w-4 h-4" /><span>{position.location}</span></span>
+                          <span className="flex items-center space-x-1"><Clock className="w-4 h-4" /><span>{position.type}</span></span>
+                          <span className="flex items-center space-x-1"><Award className="w-4 h-4" /><span>{position.experience}</span></span>
                         </div>
                       </div>
                     </div>
-                    <a
-                      href="/contact"
-                      className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 inline-flex items-center space-x-2"
-                    >
+                    <a href="/contact" className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 inline-flex items-center space-x-2">
                       <span>Apply Now</span>
                       <ArrowRight className="w-4 h-4" />
                     </a>
                   </div>
-                  
                   <p className="text-gray-300 mb-6">{position.description}</p>
-                  
                   <div>
                     <h4 className="text-lg font-semibold text-white mb-3">Requirements:</h4>
                     <ul className="space-y-2">
@@ -286,23 +210,10 @@ const CareersPage: React.FC = () => {
         {/* CTA Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              className="bg-gradient-to-r from-cyan-900/20 to-blue-900/20 border border-cyan-400/20 rounded-3xl p-12"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-4xl font-bold text-white mb-6">
-                Don't See the Right Role?
-              </h2>
-              <p className="text-xl text-gray-300 mb-8">
-                We're always looking for talented individuals. Send us your resume and let's discuss how you can contribute to our mission.
-              </p>
-              <a
-                href="/contact"
-                className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-200 shadow-lg hover:shadow-cyan-500/25 inline-flex items-center space-x-2"
-              >
+            <motion.div className="bg-gradient-to-r from-cyan-900/20 to-blue-900/20 border border-cyan-400/20 rounded-3xl p-12" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
+              <h2 className="text-4xl font-bold text-white mb-6">Don't See the Right Role?</h2>
+              <p className="text-xl text-gray-300 mb-8">We're always looking for talented individuals. Send us your resume and let's discuss how you can contribute to our mission.</p>
+              <a href="/contact" className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-200 shadow-lg hover:shadow-cyan-500/25 inline-flex items-center space-x-2">
                 <span>Send Your Resume</span>
                 <ArrowRight className="w-5 h-5" />
               </a>

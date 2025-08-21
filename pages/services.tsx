@@ -27,6 +27,7 @@ import { realMarketServices } from '../data/real-market-services';
 import { new2025Services } from '../data/new-2025-services';
 import { newRealInnovations } from '../data/new-real-innovations';
 import { serviceExpansions2025 } from '../data/service-expansions-2025';
+import { newRealMarketAdditions } from '../data/new-real-market-additions';
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -55,6 +56,7 @@ export default function ServicesPage() {
     ...newRealInnovations,
     ...serviceExpansions2025
   ];
+  allServices.push(...(newRealMarketAdditions as any));
 
   // Dynamic category counts mapped to the same filter logic below
   const aiCount = allServices.filter(service => (service.category?.includes('AI') || service.category?.includes('Machine Learning'))).length;
@@ -67,7 +69,11 @@ export default function ServicesPage() {
     { id: 'ai', name: 'AI & Machine Learning', icon: '🧠', count: aiCount },
     { id: 'quantum', name: 'Quantum & Space', icon: '⚛️', count: quantumCount },
     { id: 'enterprise', name: 'Enterprise IT', icon: '🏢', count: enterpriseCount },
-    { id: 'micro-saas', name: 'Micro SaaS', icon: '💻', count: microSaasCount }
+    { id: 'micro-saas', name: 'Micro SaaS', icon: '💻', count: microSaasCount },
+    { id: 'cloud', name: 'Cloud & FinOps', icon: '☁️', count: allServices.filter(s => (s.category?.includes('Cloud') || s.category?.includes('FinOps'))).length },
+    { id: 'observability', name: 'Observability', icon: '📈', count: allServices.filter(s => (s.category?.includes('Observability') || (s as any).name?.toLowerCase().includes('observability'))).length },
+    { id: 'developer-tools', name: 'Developer Tools', icon: '🧰', count: allServices.filter(s => (s.category?.includes('Developer') || s.category?.includes('Tools'))).length },
+    { id: 'quality', name: 'Quality & Monitoring', icon: '✅', count: allServices.filter(s => (s.category?.includes('Quality') || (s as any).name?.toLowerCase().includes('monitor'))).length }
   ];
 
   const priceRanges = [
@@ -107,8 +113,12 @@ export default function ServicesPage() {
       const matchesCategory = selectedCategory === 'all' || 
                              (selectedCategory === 'ai' && (service.category.includes('AI') || service.category.includes('Machine Learning'))) ||
                              (selectedCategory === 'quantum' && (service.category.includes('Quantum') || service.category.includes('Space'))) ||
-                             (selectedCategory === 'enterprise' && (service.category.includes('Enterprise') || service.category.includes('IT') || service.category.includes('Cloud') || service.category.includes('Security'))) ||
-                             (selectedCategory === 'micro-saas' && service.category.includes('Micro SaaS'));
+                             (selectedCategory === 'enterprise' && (service.category.includes('Enterprise') || service.category.includes('IT') || service.category.includes('Security'))) ||
+                             (selectedCategory === 'micro-saas' && service.category.includes('Micro SaaS')) ||
+                             (selectedCategory === 'cloud' && (service.category.includes('Cloud') || service.category.includes('FinOps'))) ||
+                             (selectedCategory === 'observability' && (service.category.includes('Observability') || service.name.toLowerCase().includes('observability'))) ||
+                             (selectedCategory === 'developer-tools' && (service.category.includes('Developer') || service.category.includes('Tools'))) ||
+                             (selectedCategory === 'quality' && (service.category.includes('Quality') || service.name.toLowerCase().includes('monitor')));
       
       const numericPrice = parsePriceToNumber((service as any).price);
       const matchesPrice = selectedPriceRange === 'all' ||
@@ -153,6 +163,10 @@ export default function ServicesPage() {
     else if (hash === 'quantum') setSelectedCategory('quantum');
     else if (hash === 'enterprise' || hash === 'it') setSelectedCategory('enterprise');
     else if (hash === 'micro-saas') setSelectedCategory('micro-saas');
+    else if (hash === 'cloud') setSelectedCategory('cloud');
+    else if (hash === 'observability') setSelectedCategory('observability');
+    else if (hash === 'developer-tools') setSelectedCategory('developer-tools');
+    else if (hash === 'quality') setSelectedCategory('quality');
   }, []);
 
   return (

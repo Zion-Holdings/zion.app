@@ -332,6 +332,29 @@ export default function MarketPricingPage() {
               <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $0–$300/month per team depending on usage.</div>
             </div>
           </div>
+
+          {/* Added references for Affiliate & Partner Tools and Developer Analytics */}
+          <div className="space-y-6">
+            <div className="bg-black/30 rounded-2xl border border-cyan-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Affiliate & Partner Tools</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Tapfiliate: <a className="text-cyan-400 underline" href={`https://tapfiliate.com/pricing/`} target="_blank" rel="noopener noreferrer">tapfiliate.com/pricing</a></li>
+                <li>PartnerStack: <a className="text-cyan-400 underline" href={`https://partnerstack.com/pricing`} target="_blank" rel="noopener noreferrer">partnerstack.com/pricing</a></li>
+                <li>FirstPromoter: <a className="text-cyan-400 underline" href={`https://firstpromoter.com/pricing`} target="_blank" rel="noopener noreferrer">firstpromoter.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $49–$500/month depending on partners and payouts.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-indigo-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Developer Analytics</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Linear: <a className="text-cyan-400 underline" href={`https://linear.app/pricing`} target="_blank" rel="noopener noreferrer">linear.app/pricing</a></li>
+                <li>GitHub: <a className="text-cyan-400 underline" href={`https://github.com/pricing`} target="_blank" rel="noopener noreferrer">github.com/pricing</a> (Actions & Seats)</li>
+                <li>Grafana Cloud: <a className="text-cyan-400 underline" href={`https://grafana.com/products/cloud/pricing/`} target="_blank" rel="noopener noreferrer">grafana.com/products/cloud/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $0–$500/month depending on seats and volume.</div>
+            </div>
+          </div>
         </div>
       </div>
     </UltraAdvancedFuturisticBackground>
