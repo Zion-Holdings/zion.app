@@ -7,7 +7,7 @@ import UltraQuantumHolographicBackground from '../components/ui/UltraQuantumHolo
 import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
 import { revolutionaryAI2025Services } from '../data/revolutionary-2025-ai-services';
 import { revolutionaryITInfrastructure2025Services } from '../data/revolutionary-2025-it-infrastructure';
-import { revolutionaryMicroSaas2025Services } from '../data/revolutionary-2025-micro-saas';
+import { revolutionary2025MicroSaasServices } from '../data/revolutionary-2025-micro-saas';
 
 export default function Revolutionary2025Pricing() {
   const [billingCycle, setBillingCycle] = useState<'monthly' | 'yearly'>('monthly');
@@ -24,7 +24,7 @@ export default function Revolutionary2025Pricing() {
   const allRevolutionaryServices = [
     ...revolutionaryAI2025Services,
     ...revolutionaryITInfrastructure2025Services,
-    ...revolutionaryMicroSaas2025Services
+    ...revolutionary2025MicroSaasServices
   ];
 
   // Service categories
@@ -32,7 +32,7 @@ export default function Revolutionary2025Pricing() {
     { id: 'all', name: 'All Services', icon: Sparkles, count: allRevolutionaryServices.length },
     { id: 'ai', name: 'AI & Machine Learning', icon: Brain, count: revolutionaryAI2025Services.length },
     { id: 'infrastructure', name: 'IT Infrastructure', icon: Cpu, count: revolutionaryITInfrastructure2025Services.length },
-    { id: 'saas', name: 'Micro SaaS', icon: Zap, count: revolutionaryMicroSaas2025Services.length }
+          { id: 'saas', name: 'Micro SaaS', icon: Zap, count: revolutionary2025MicroSaasServices.length }
   ];
 
   // Filter services based on selected category

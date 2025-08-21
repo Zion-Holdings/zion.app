@@ -8,6 +8,7 @@ import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigatio
 import EnhancedNavigation2025 from '../components/layout/EnhancedNavigation2025';
 import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
 import RevolutionaryServicesShowcase from '../components/sections/RevolutionaryServicesShowcase';
+import Enhanced2026ServicesShowcase from '../components/sections/Enhanced2026ServicesShowcase';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
@@ -81,11 +82,12 @@ export default function HomePage() {
   // Service statistics
   const serviceStats = {
     totalServices: allServices.length,
-    aiServices: nextGenerationAIServices.length + innovativeAIServices.length + realMarketServices.filter(s => s.category.includes('AI')).length + revolutionary2025Services.filter(s => s.category.includes('AI')).length + nextGenInnovations2025.filter(s => s.category.includes('AI')).length + innovative2026Services.filter(s => s.category.includes('AI')).length + emergingTech2026Services.filter(s => s.category.includes('AI')).length,
-    emergingTech: emergingTechnologyServices.length + emergingTech2025Services.length + emergingTech2026Services.length,
-    itSolutions: comprehensiveITSolutions.length + enterpriseITServices.length + enterpriseIT2026Services.length,
-    microSaas: enhancedRealMicroSaasServices.length + innovativeMicroSaasServices.length + innovative2026Services.filter(s => s.category.includes('SaaS')).length,
-    revolutionaryServices: revolutionary2025Services.length + nextGenInnovations2025.length + innovative2026Services.length + emergingTech2026Services.length
+    aiServices: nextGenerationAIServices.length + innovativeAIServices.length + realMarketServices.filter(s => s.category.includes('AI')).length + revolutionary2025Services.filter(s => s.category.includes('AI')).length + nextGenInnovations2025.filter(s => s.category.includes('AI')).length + innovative2025Services.filter(s => s.category.includes('AI')).length + emergingTech2025Services.filter(s => s.category.includes('AI')).length,
+    quantumServices: quantumSpaceServices.length + quantumAIServices2025.length + revolutionary2025Services.filter(s => s.category.includes('Quantum')).length + nextGenInnovations2025.filter(s => s.category.includes('Quantum')).length,
+    emergingTech: emergingTechnologyServices.length + emergingTech2025Services.length + emergingTech2025Services.length,
+    itSolutions: comprehensiveITSolutions.length + enterpriseITServices.length + enterpriseIT2025Services.length,
+    microSaas: enhancedRealMicroSaasServices.length + innovativeMicroSaasServices.length + innovative2025Services.filter(s => s.category.includes('SaaS')).length,
+    revolutionaryServices: revolutionary2025Services.length + nextGenInnovations2025.length + innovative2025Services.length + emergingTech2025Services.length
   };
 
   return (
@@ -274,7 +276,6 @@ export default function HomePage() {
             </motion.div>
           </div>
         </section>
->>>>>>> cursor/enhance-app-with-new-services-and-futuristic-design-f53d
 
         {/* Revolutionary 2025 Services Preview */}
         <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-transparent to-gray-900/20">
