@@ -7,7 +7,7 @@ import {
   Zap,
   Target, Atom,
   BookOpen,
-  Truck, DollarSign, BarChart3, Globe, Users, X, Phone, Mail, MapPin, ArrowRight
+  Truck, DollarSign, BarChart3, Globe, Users, X, Phone, Mail, MapPin, ArrowRight, Sparkles, Cpu, Lock, Cloud, BarChart3 as BarChart3Icon, Settings, Eye, Award, Clock, Heart, Lightbulb
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -17,7 +17,7 @@ interface NavigationItem {
   description?: string;
   children?: NavigationItem[];
   badge?: string;
-  title?: string; // Added for dropdown titles
+  title?: string;
 }
 
 const contactInfo = {
@@ -103,15 +103,15 @@ const navigationItems: NavigationItem[] = [
     icon: <Rocket className="w-5 h-5" />,
     description: 'Innovative business solutions',
     children: [
-      { name: 'AI Autonomous Content Factory', href: '/ai-autonomous-content-factory', description: 'Automated content creation' },
-      { name: 'Quantum CRM Intelligence', href: '/quantum-crm-intelligence', description: 'AI-powered customer insights' },
-      { name: 'AI Autonomous Decision Engine', href: '/ai-autonomous-decision-engine', description: 'Smart business decisions' },
-      { name: 'AI Creativity Studio Pro', href: '/ai-creativity-studio-pro', description: 'AI-powered design tools' },
-      { name: 'Quantum Financial Trading', href: '/quantum-financial-trading', description: 'Advanced trading platform' },
-      { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics', description: 'Medical AI solutions' },
-      { name: 'Quantum Cybersecurity Platform', href: '/quantum-cybersecurity-platform', description: 'Unbreakable security' },
-      { name: 'AI Education Platform', href: '/ai-education-platform', description: 'Personalized learning' },
-      { name: 'Quantum Energy Platform', href: '/quantum-energy-platform', description: 'Energy optimization' }
+      { name: 'AI Content Factory', href: '/ai-content-factory', description: 'AI-powered content creation' },
+      { name: 'CRM Intelligence Platform', href: '/crm-intelligence-platform', description: 'Intelligent CRM automation' },
+      { name: 'Decision Engine Platform', href: '/decision-engine-platform', description: 'AI-powered decision making' },
+      { name: 'E-commerce Optimization', href: '/ecommerce-optimization-platform', description: 'AI e-commerce optimization' },
+      { name: 'HR Automation Platform', href: '/hr-automation-platform', description: 'AI-powered HR automation' },
+      { name: 'Financial Analytics Platform', href: '/financial-analytics-platform', description: 'AI financial intelligence' },
+      { name: 'Supply Chain Intelligence', href: '/supply-chain-intelligence', description: 'AI supply chain optimization' },
+      { name: 'Marketing Automation Platform', href: '/marketing-automation-platform', description: 'AI marketing automation' },
+      { name: 'Project Management Intelligence', href: '/project-management-intelligence', description: 'AI project optimization' }
     ]
   },
   {
@@ -120,29 +120,12 @@ const navigationItems: NavigationItem[] = [
     icon: <Target className="w-5 h-5" />,
     description: 'Industry-specific solutions',
     children: [
-      { name: 'Healthcare Solutions', href: '/healthcare-solutions', description: 'Medical technology innovations' },
-      { name: 'Financial Services', href: '/financial-solutions', description: 'Fintech and banking solutions' },
-      { name: 'Manufacturing', href: '/manufacturing-solutions', description: 'Industry 4.0 automation' },
-      { name: 'Retail & E-commerce', href: '/retail-solutions', description: 'Digital commerce platforms' },
-      { name: 'Education Technology', href: '/education-solutions', description: 'Learning management systems' },
-      { name: 'Government & Defense', href: '/government-solutions', description: 'Public sector technology' },
-      { name: 'Energy & Utilities', href: '/energy-solutions', description: 'Smart grid and sustainability' },
-      { name: 'Transportation & Logistics', href: '/transportation-solutions', description: 'Supply chain optimization' }
-    ]
-  },
-  {
-    name: 'Company',
-    href: '/about',
-    icon: <Users className="w-5 h-5" />,
-    description: 'About Zion Tech Group',
-    children: [
-      { name: 'About Us', href: '/about', description: 'Our mission and vision' },
-      { name: 'Leadership Team', href: '/leadership', description: 'Meet our executives' },
-      { name: 'Careers', href: '/careers', description: 'Join our team' },
-      { name: 'News & Updates', href: '/news', description: 'Latest company news' },
-      { name: 'Case Studies', href: '/case-studies', description: 'Success stories' },
-      { name: 'Partners', href: '/partners', description: 'Strategic partnerships' },
-      { name: 'Investors', href: '/investors', description: 'Investment information' }
+      { name: 'Healthcare Solutions', href: '/healthcare-solutions', description: 'AI healthcare innovations' },
+      { name: 'Financial Services', href: '/financial-solutions', description: 'Quantum financial solutions' },
+      { name: 'Manufacturing', href: '/manufacturing-solutions', description: 'Smart manufacturing' },
+      { name: 'Retail & E-commerce', href: '/retail-solutions', description: 'AI retail optimization' },
+      { name: 'Government & Defense', href: '/government-solutions', description: 'Secure government solutions' },
+      { name: 'Education & Research', href: '/education-solutions', description: 'AI education platforms' }
     ]
   },
   {
@@ -151,33 +134,28 @@ const navigationItems: NavigationItem[] = [
     icon: <BookOpen className="w-5 h-5" />,
     description: 'Knowledge and support',
     children: [
-      { name: 'Documentation', href: '/docs', description: 'Technical guides' },
-      { name: 'API Reference', href: '/api-docs', description: 'Developer documentation' },
-      { name: 'Blog', href: '/blog', description: 'Industry insights' },
-      { name: 'Whitepapers', href: '/whitepapers', description: 'Research and analysis' },
-      { name: 'Webinars', href: '/webinars', description: 'Educational sessions' },
-      { name: 'Training', href: '/training', description: 'Skill development' },
-      { name: 'Support Center', href: '/support', description: 'Help and assistance' }
+      { name: 'Documentation', href: '/docs', description: 'Technical documentation' },
+      { name: 'API Reference', href: '/api-docs', description: 'API documentation' },
+      { name: 'Case Studies', href: '/case-studies', description: 'Success stories' },
+      { name: 'Blog & News', href: '/blog', description: 'Latest insights' },
+      { name: 'Support Center', href: '/support', description: 'Help and support' },
+      { name: 'Training', href: '/training', description: 'Learning resources' }
+    ]
+  },
+  {
+    name: 'Company',
+    href: '/about',
+    icon: <Users className="w-5 h-5" />,
+    description: 'About Zion Tech Group',
+    children: [
+      { name: 'About Us', href: '/about', description: 'Our story and mission' },
+      { name: 'Leadership Team', href: '/leadership', description: 'Meet our leaders' },
+      { name: 'Careers', href: '/careers', description: 'Join our team' },
+      { name: 'News & Press', href: '/news', description: 'Company updates' },
+      { name: 'Contact', href: '/contact', description: 'Get in touch' },
+      { name: 'Partners', href: '/partners', description: 'Partnership opportunities' }
     ]
   }
-];
-
-const companyInfo = [
-  { name: 'About Us', href: '/about', description: 'Learn about our mission and vision' },
-  { name: 'Careers', href: '/careers', description: 'Join our innovative team' },
-  { name: 'News & Updates', href: '/news', description: 'Latest company news and updates' },
-  { name: 'Case Studies', href: '/case-studies', description: 'Success stories and implementations' },
-  { name: 'Resources', href: '/resources', description: 'Whitepapers, guides, and tools' },
-  { name: 'Blog', href: '/blog', description: 'Insights and industry trends' }
-];
-
-const supportInfo = [
-  { name: 'Contact Support', href: '/support', description: 'Get help from our team' },
-  { name: 'Documentation', href: '/docs', description: 'Technical documentation and guides' },
-  { name: 'API Reference', href: '/api-docs', description: 'Developer API documentation' },
-  { name: 'Status Page', href: '/status', description: 'Service status and uptime' },
-  { name: 'Training', href: '/training', description: 'Learn to use our platforms' },
-  { name: 'Community', href: '/community', description: 'Connect with other users' }
 ];
 
 export default function EnhancedNavigation2025() {
@@ -187,7 +165,7 @@ export default function EnhancedNavigation2025() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      setIsScrolled(window.scrollY > 20);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -198,45 +176,68 @@ export default function EnhancedNavigation2025() {
     setActiveDropdown(activeDropdown === name ? null : name);
   };
 
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Implement search functionality
-    // TODO: Add search implementation
-  };
-
-  const closeDropdown = () => {
+  const closeAllDropdowns = () => {
     setActiveDropdown(null);
+    setIsOpen(false);
   };
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-black/95 backdrop-blur-md border-b border-cyan-500/30' : 'bg-transparent'
+      isScrolled ? 'bg-black/90 backdrop-blur-md border-b border-gray-800/50' : 'bg-transparent'
     }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Top Contact Bar */}
+      <div className="bg-gradient-to-r from-cyan-900/80 to-purple-900/80 backdrop-blur-sm border-b border-cyan-500/20">
+        <div className="max-w-7xl mx-auto px-4 py-2">
+          <div className="flex items-center justify-between text-sm">
+            <div className="flex items-center gap-6 text-cyan-300">
+              <div className="flex items-center gap-2">
+                <Phone className="w-4 h-4" />
+                <span>{contactInfo.mobile}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Mail className="w-4 h-4" />
+                <span>{contactInfo.email}</span>
+              </div>
+            </div>
+            <div className="flex items-center gap-2">
+              <Sparkles className="w-4 h-4 text-yellow-400 animate-pulse" />
+              <span className="text-yellow-400 font-semibold">Revolutionary Technology Solutions</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Navigation */}
+      <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3 group">
-            <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <Zap className="w-6 h-6 text-white" />
+          <Link href="/" className="flex items-center gap-3 group" onClick={closeAllDropdowns}>
+            <div className="relative">
+              <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <Zap className="w-7 h-7 text-white" />
+              </div>
+              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-xl blur opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
             </div>
             <div>
-              <div className="text-xl font-bold text-white">Zion Tech Group</div>
-              <div className="text-xs text-cyan-400">Revolutionary Technology</div>
+              <div className="text-xl font-bold bg-gradient-to-r from-white to-cyan-300 bg-clip-text text-transparent">
+                Zion Tech Group
+              </div>
+              <div className="text-xs text-gray-400">Revolutionary Technology</div>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center gap-1">
             {navigationItems.map((item) => (
               <div key={item.name} className="relative group">
                 <button
                   onClick={() => toggleDropdown(item.name)}
-                  className="flex items-center space-x-2 px-4 py-2 text-gray-300 hover:text-white transition-colors duration-200 group-hover:text-cyan-400"
+                  className="flex items-center gap-2 px-4 py-3 text-gray-300 hover:text-white transition-colors duration-200 rounded-lg hover:bg-white/5 group"
                 >
                   {item.icon}
                   <span>{item.name}</span>
                   {item.badge && (
-                    <span className="px-2 py-1 text-xs bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full">
+                    <span className="px-2 py-1 text-xs font-semibold bg-gradient-to-r from-purple-500 to-pink-600 text-white rounded-full">
                       {item.badge}
                     </span>
                   )}
@@ -253,23 +254,24 @@ export default function EnhancedNavigation2025() {
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 10, scale: 0.95 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute top-full left-0 mt-2 w-96 bg-gray-900/95 backdrop-blur-md border border-cyan-500/30 rounded-2xl shadow-2xl shadow-cyan-500/20 overflow-hidden"
-                      onMouseLeave={closeDropdown}
+                      className="absolute top-full left-0 mt-2 w-80 bg-gray-900/95 backdrop-blur-xl border border-gray-700/50 rounded-2xl shadow-2xl overflow-hidden"
                     >
                       <div className="p-6">
                         <div className="mb-4">
                           <h3 className="text-lg font-semibold text-white mb-2">{item.title || item.name}</h3>
                           <p className="text-sm text-gray-400">{item.description}</p>
                         </div>
-                        <div className="grid grid-cols-1 gap-2">
+                        <div className="space-y-2">
                           {item.children?.map((child) => (
                             <Link
                               key={child.name}
                               href={child.href}
-                              className="flex items-center justify-between p-3 rounded-lg hover:bg-gray-800/50 transition-colors duration-200 group"
+                              onClick={closeAllDropdowns}
+                              className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/5 transition-colors duration-200 group"
                             >
-                              <div>
-                                <div className="font-medium text-white group-hover:text-cyan-400 transition-colors duration-200">
+                              <div className="w-2 h-2 bg-cyan-400 rounded-full group-hover:scale-150 transition-transform duration-200"></div>
+                              <div className="flex-1">
+                                <div className="font-medium text-white group-hover:text-cyan-300 transition-colors duration-200">
                                   {child.name}
                                 </div>
                                 <div className="text-sm text-gray-400">{child.description}</div>
@@ -284,113 +286,18 @@ export default function EnhancedNavigation2025() {
                 </AnimatePresence>
               </div>
             ))}
-
-            {/* Company & Support Dropdowns */}
-            <div className="relative group">
-              <button
-                onClick={() => toggleDropdown('company')}
-                className="flex items-center space-x-2 px-4 py-2 text-gray-300 hover:text-white transition-colors duration-200 group-hover:text-cyan-400"
-              >
-                <span>Company</span>
-                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
-                  activeDropdown === 'company' ? 'rotate-180' : ''
-                }`} />
-              </button>
-
-              <AnimatePresence>
-                {activeDropdown === 'company' && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 mt-2 w-80 bg-gray-900/95 backdrop-blur-md border border-cyan-500/30 rounded-2xl shadow-2xl shadow-cyan-500/20 overflow-hidden"
-                    onMouseLeave={closeDropdown}
-                  >
-                    <div className="p-6">
-                      <h3 className="text-lg font-semibold text-white mb-4">Company</h3>
-                      <div className="space-y-2">
-                        {companyInfo.map((item) => (
-                          <Link
-                            key={item.name}
-                            href={item.href}
-                            className="block p-3 rounded-lg hover:bg-gray-800/50 transition-colors duration-200 group"
-                          >
-                            <div className="font-medium text-white group-hover:text-cyan-400 transition-colors duration-200">
-                              {item.name}
-                            </div>
-                            <div className="text-sm text-gray-400">{item.description}</div>
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-
-            <div className="relative group">
-              <button
-                onClick={() => toggleDropdown('support')}
-                className="flex items-center space-x-2 px-4 py-2 text-gray-300 hover:text-white transition-colors duration-200 group-hover:text-cyan-400"
-              >
-                <span>Support</span>
-                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
-                  activeDropdown === 'support' ? 'rotate-180' : ''
-                }`} />
-              </button>
-
-              <AnimatePresence>
-                {activeDropdown === 'support' && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 mt-2 w-80 bg-gray-900/95 backdrop-blur-md border border-cyan-500/30 rounded-2xl shadow-2xl shadow-cyan-500/20 overflow-hidden"
-                    onMouseLeave={closeDropdown}
-                  >
-                    <div className="p-6">
-                      <h3 className="text-lg font-semibold text-white mb-4">Support</h3>
-                      <div className="space-y-2">
-                        {supportInfo.map((item) => (
-                          <Link
-                            key={item.name}
-                            href={item.href}
-                            className="block p-3 rounded-lg hover:bg-gray-800/50 transition-colors duration-200 group"
-                          >
-                            <div className="font-medium text-white group-hover:text-cyan-400 transition-colors duration-200">
-                              {item.name}
-                            </div>
-                            <div className="text-sm text-gray-400">{item.description}</div>
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
           </div>
 
-          {/* Right Side - Contact & CTA */}
-          <div className="hidden lg:flex items-center space-x-4">
-            {/* Contact Information */}
-            <div className="flex items-center space-x-4 text-sm text-gray-300">
-              <div className="flex items-center space-x-2 hover:text-cyan-400 transition-colors duration-200">
-                <Phone className="w-4 h-4" />
-                <span>{contactInfo.mobile}</span>
-              </div>
-              <div className="flex items-center space-x-2 hover:text-cyan-400 transition-colors duration-200">
-                <Mail className="w-4 h-4" />
-                <span>{contactInfo.email}</span>
-              </div>
-            </div>
-
-            {/* CTA Button */}
+          {/* CTA Buttons */}
+          <div className="hidden lg:flex items-center gap-3">
             <Link href="/contact">
-              <button className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/25">
+              <button className="px-6 py-3 border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black font-semibold rounded-lg transition-all duration-300 transform hover:scale-105">
                 Get Started
+              </button>
+            </Link>
+            <Link href="/comprehensive-services-showcase-2025">
+              <button className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105">
+                View Services
               </button>
             </Link>
           </div>
@@ -405,7 +312,7 @@ export default function EnhancedNavigation2025() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Navigation */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -413,73 +320,63 @@ export default function EnhancedNavigation2025() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-black/95 backdrop-blur-md border-t border-cyan-500/30"
+            className="lg:hidden bg-gray-900/95 backdrop-blur-xl border-t border-gray-700/50 overflow-hidden"
           >
             <div className="px-4 py-6 space-y-4">
-              {/* Mobile Contact Info */}
-              <div className="p-4 bg-gray-900/50 rounded-lg border border-cyan-500/30">
-                <div className="space-y-3">
-                  <div className="flex items-center space-x-3 text-cyan-400">
-                    <Phone className="w-4 h-4" />
-                    <span className="text-white">{contactInfo.mobile}</span>
-                  </div>
-                  <div className="flex items-center space-x-3 text-cyan-400">
-                    <Mail className="w-4 h-4" />
-                    <span className="text-white">{contactInfo.email}</span>
-                  </div>
-                  <div className="flex items-center space-x-3 text-cyan-400">
-                    <MapPin className="w-4 h-4" />
-                    <span className="text-white text-sm">{contactInfo.address}</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Mobile Navigation Items */}
               {navigationItems.map((item) => (
-                <div key={item.name} className="space-y-2">
-                  <Link
-                    href={item.href}
-                    className="block px-4 py-3 text-white font-medium hover:text-cyan-400 transition-colors duration-200"
-                    onClick={() => setIsOpen(false)}
+                <div key={item.name}>
+                  <button
+                    onClick={() => toggleDropdown(item.name)}
+                    className="flex items-center justify-between w-full p-3 text-left text-gray-300 hover:text-white transition-colors duration-200 rounded-lg hover:bg-white/5"
                   >
-                    {item.name}
-                    {item.badge && (
-                      <span className="ml-2 px-2 py-1 text-xs bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full">
-                        {item.badge}
-                      </span>
-                    )}
-                  </Link>
-                  {item.children && (
-                    <div className="pl-4 space-y-1">
-                      {item.children.slice(0, 3).map((child) => (
+                    <div className="flex items-center gap-3">
+                      {item.icon}
+                      <span>{item.name}</span>
+                      {item.badge && (
+                        <span className="px-2 py-1 text-xs font-semibold bg-gradient-to-r from-purple-500 to-pink-600 text-white rounded-full">
+                          {item.badge}
+                        </span>
+                      )}
+                    </div>
+                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
+                      activeDropdown === item.name ? 'rotate-180' : ''
+                    }`} />
+                  </button>
+                  
+                  {activeDropdown === item.name && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="ml-6 mt-2 space-y-2"
+                    >
+                      {item.children?.map((child) => (
                         <Link
                           key={child.name}
                           href={child.href}
-                          className="block px-4 py-2 text-sm text-gray-400 hover:text-cyan-400 transition-colors duration-200"
-                          onClick={() => setIsOpen(false)}
+                          onClick={closeAllDropdowns}
+                          className="block p-3 text-gray-400 hover:text-cyan-300 transition-colors duration-200 rounded-lg hover:bg-white/5"
                         >
-                          {child.name}
+                          <div className="font-medium">{child.name}</div>
+                          <div className="text-sm text-gray-500">{child.description}</div>
                         </Link>
                       ))}
-                      {item.children.length > 3 && (
-                        <Link
-                          href={item.href}
-                          className="block px-4 py-2 text-sm text-cyan-400 hover:text-cyan-300 transition-colors duration-200"
-                          onClick={() => setIsOpen(false)}
-                        >
-                          View all {item.name} services →
-                        </Link>
-                      )}
-                    </div>
+                    </motion.div>
                   )}
                 </div>
               ))}
-
-              {/* Mobile CTA */}
-              <div className="pt-4">
-                <Link href="/contact">
-                  <button className="w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:scale-105 transition-all duration-300">
-                    Get Started Today
+              
+              {/* Mobile CTA Buttons */}
+              <div className="pt-4 space-y-3">
+                <Link href="/contact" onClick={closeAllDropdowns}>
+                  <button className="w-full px-6 py-3 border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black font-semibold rounded-lg transition-all duration-300">
+                    Get Started
+                  </button>
+                </Link>
+                <Link href="/comprehensive-services-showcase-2025" onClick={closeAllDropdowns}>
+                  <button className="w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white font-semibold rounded-lg transition-all duration-300">
+                    View Services
                   </button>
                 </Link>
               </div>
@@ -487,6 +384,14 @@ export default function EnhancedNavigation2025() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Click outside to close dropdowns */}
+      {activeDropdown && (
+        <div
+          className="fixed inset-0 z-40"
+          onClick={() => setActiveDropdown(null)}
+        />
+      )}
     </nav>
   );
 }
