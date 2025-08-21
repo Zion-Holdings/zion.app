@@ -35,6 +35,10 @@ import { emergingTech2025Services as newEmergingTech2025Services } from '../data
 import { revolutionaryAI2025Services } from '../data/revolutionary-2025-ai-services';
 import { revolutionaryITInfrastructure2025Services } from '../data/revolutionary-2025-it-infrastructure';
 import { revolutionaryMicroSaas2025Services } from '../data/revolutionary-2025-micro-saas';
+import { revolutionaryAI2025ServicesV2 } from '../data/revolutionary-2025-ai-services-v2';
+import { emergingTechSpaceServices2025 } from '../data/emerging-tech-space-services-2025';
+import { emergingTechInnovations2025 } from '../data/emerging-tech-innovations-2025';
+import { autonomousSystemsRobotics2025 } from '../data/autonomous-systems-robotics-2025';
 
 export default function HomePage() {
   const contactInfo = {
@@ -72,7 +76,11 @@ export default function HomePage() {
     ...newEmergingTech2025Services,
     ...revolutionaryAI2025Services,
     ...revolutionaryITInfrastructure2025Services,
-    ...revolutionaryMicroSaas2025Services
+    ...revolutionaryMicroSaas2025Services,
+    ...revolutionaryAI2025ServicesV2,
+    ...emergingTechSpaceServices2025,
+    ...emergingTechInnovations2025,
+    ...autonomousSystemsRobotics2025
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);
@@ -80,14 +88,20 @@ export default function HomePage() {
   // Service statistics
   const serviceStats = {
     totalServices: allServices.length,
-    aiServices: nextGenerationAIServices.length + innovativeAIServices.length + realMarketServices.filter(s => s.category.includes('AI')).length + revolutionary2025Services.filter(s => s.category.includes('AI')).length + nextGenInnovations2025.filter(s => s.category.includes('AI')).length + revolutionaryAI2025Services.length + revolutionaryMicroSaas2025Services.filter(s => s.category.includes('AI')).length,
-    emergingTech: emergingTechnologyServices.length + emergingTech2025Services.length + newEmergingTech2025Services.length,
+    aiServices: nextGenerationAIServices.length + innovativeAIServices.length + realMarketServices.filter(s => s.category.includes('AI')).length + revolutionary2025Services.filter(s => s.category.includes('AI')).length + nextGenInnovations2025.filter(s => s.category.includes('AI')).length + revolutionaryAI2025Services.length + revolutionaryMicroSaas2025Services.filter(s => s.category.includes('AI')).length + revolutionaryAI2025ServicesV2.filter(s => s.category.includes('AI')).length,
+    emergingTech: emergingTechnologyServices.length + emergingTech2025Services.length + newEmergingTech2025Services.length + emergingTechInnovations2025.length,
     itSolutions: comprehensiveITSolutions.length + enterpriseITServices.length + revolutionaryITInfrastructure2025Services.length,
     microSaas: enhancedRealMicroSaasServices.length + innovativeMicroSaasServices.length + innovative2025MicroSaasServices.length + revolutionaryMicroSaas2025Services.length,
-    revolutionaryServices: revolutionary2025Services.length + nextGenInnovations2025.length + revolutionaryAI2025Services.length + revolutionaryITInfrastructure2025Services.length + revolutionaryMicroSaas2025Services.length,
-    quantumServices: quantumSpaceServices.length + revolutionaryAI2025Services.filter(s => s.category.includes('Quantum')).length + revolutionaryITInfrastructure2025Services.filter(s => s.category.includes('Quantum')).length,
+    revolutionaryServices: revolutionary2025Services.length + nextGenInnovations2025.length + revolutionaryAI2025Services.length + revolutionaryITInfrastructure2025Services.length + revolutionaryMicroSaas2025Services.length + revolutionaryAI2025ServicesV2.length,
+    quantumServices: quantumSpaceServices.length + revolutionaryAI2025Services.filter(s => s.category.includes('Quantum')).length + revolutionaryITInfrastructure2025Services.filter(s => s.category.includes('Quantum')).length + emergingTechSpaceServices2025.filter(s => s.category.includes('Quantum')).length + emergingTechInnovations2025.filter(s => s.category.includes('Quantum')).length,
     blockchainServices: revolutionaryAI2025Services.filter(s => s.category.includes('Blockchain')).length + revolutionaryITInfrastructure2025Services.filter(s => s.category.includes('Blockchain')).length,
-    spaceTech: revolutionaryAI2025Services.filter(s => s.category.includes('Space')).length + revolutionaryITInfrastructure2025Services.filter(s => s.category.includes('Space')).length
+    spaceTech: revolutionaryAI2025Services.filter(s => s.category.includes('Space')).length + revolutionaryITInfrastructure2025Services.filter(s => s.category.includes('Space')).length + emergingTechSpaceServices2025.length,
+    autonomousSystems: autonomousSystemsRobotics2025.length,
+    consciousnessAI: revolutionaryAI2025ServicesV2.filter(s => s.category.includes('Consciousness')).length,
+    neuromorphicComputing: emergingTechInnovations2025.filter(s => s.category.includes('Neuromorphic')).length,
+    dnaComputing: emergingTechInnovations2025.filter(s => s.category.includes('DNA')).length,
+    photonicComputing: emergingTechInnovations2025.filter(s => s.category.includes('Photonic')).length,
+    holographicTech: emergingTechInnovations2025.filter(s => s.category.includes('Holographic')).length
   };
 
   return (
@@ -173,7 +187,7 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.55 }}
-                className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 max-w-4xl mx-auto"
+                className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-12 max-w-6xl mx-auto"
               >
                 <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20 hover:bg-white/20 transition-all duration-300">
                   <div className="text-2xl font-bold text-cyan-400">{serviceStats.aiServices}+</div>
@@ -190,6 +204,35 @@ export default function HomePage() {
                 <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20 hover:bg-white/20 transition-all duration-300">
                   <div className="text-2xl font-bold text-pink-400">{serviceStats.emergingTech}+</div>
                   <div className="text-sm text-gray-300">Emerging Tech</div>
+                </div>
+                <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                  <div className="text-2xl font-bold text-yellow-400">{serviceStats.spaceTech}+</div>
+                  <div className="text-sm text-gray-300">Space Technology</div>
+                </div>
+              </motion.div>
+              
+              {/* Advanced Service Categories */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.65 }}
+                className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 max-w-5xl mx-auto"
+              >
+                <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 backdrop-blur-md rounded-lg p-4 border border-purple-500/30 hover:bg-purple-600/30 transition-all duration-300">
+                  <div className="text-xl font-bold text-purple-300">{serviceStats.consciousnessAI}+</div>
+                  <div className="text-sm text-purple-200">AI Consciousness</div>
+                </div>
+                <div className="bg-gradient-to-r from-blue-600/20 to-cyan-600/20 backdrop-blur-md rounded-lg p-4 border border-blue-500/30 hover:bg-blue-600/30 transition-all duration-300">
+                  <div className="text-xl font-bold text-blue-300">{serviceStats.autonomousSystems}+</div>
+                  <div className="text-sm text-blue-200">Autonomous Systems</div>
+                </div>
+                <div className="bg-gradient-to-r from-green-600/20 to-emerald-600/20 backdrop-blur-md rounded-lg p-4 border border-green-500/30 hover:bg-green-600/30 transition-all duration-300">
+                  <div className="text-xl font-bold text-green-300">{serviceStats.neuromorphicComputing}+</div>
+                  <div className="text-sm text-green-200">Neuromorphic Computing</div>
+                </div>
+                <div className="bg-gradient-to-r from-orange-600/20 to-yellow-600/20 backdrop-blur-md rounded-lg p-4 border border-orange-500/30 hover:bg-orange-600/30 transition-all duration-300">
+                  <div className="text-xl font-bold text-orange-300">{serviceStats.holographicTech}+</div>
+                  <div className="text-sm text-orange-200">Holographic Tech</div>
                 </div>
               </motion.div>
               
@@ -260,7 +303,7 @@ export default function HomePage() {
                 transition={{ duration: 1, delay: 0.8 }}
                 className="flex justify-center space-x-8 mb-8"
               >
-                {['🧠', '⚛️', '🔒', '☁️', '🌐', '🚀'].map((icon, index) => (
+                {['🧠', '⚛️', '🔒', '☁️', '🌐', '🚀', '🧬', '💡', '🎭', '🦾'].map((icon, index) => (
                   <motion.div
                     key={index}
                     initial={{ y: 20, opacity: 0 }}
@@ -299,130 +342,130 @@ export default function HomePage() {
             </motion.div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* AI Business Intelligence */}
+              {/* AI Consciousness Simulator */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8, y: 20 }}
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.02, y: -5 }}
-                className="group p-6 bg-gradient-to-br from-blue-900/40 to-indigo-900/40 border border-blue-700/50 rounded-2xl hover:border-blue-500/60 hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 relative overflow-hidden"
+                className="group p-6 bg-gradient-to-br from-purple-900/40 to-indigo-900/40 border border-purple-700/50 rounded-2xl hover:border-purple-500/60 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 relative overflow-hidden"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
-                  <div className="text-4xl mb-4">📊</div>
-                  <h3 className="text-xl font-bold text-white mb-3">AI Business Intelligence Suite</h3>
-                  <p className="text-gray-300 text-sm mb-4">Transform data into actionable business insights with AI-powered analytics and predictive modeling.</p>
+                  <div className="text-4xl mb-4">🧠</div>
+                  <h3 className="text-xl font-bold text-white mb-3">AI Consciousness Simulator Pro</h3>
+                  <p className="text-gray-300 text-sm mb-4">Simulate human-like consciousness in AI systems with advanced neural architecture.</p>
                   <div className="flex items-center justify-between">
-                    <span className="text-2xl font-bold text-blue-400">$299</span>
+                    <span className="text-2xl font-bold text-purple-400">$4,999</span>
                     <span className="text-gray-400 text-sm">/month</span>
                   </div>
                   <div className="mt-4">
-                    <Button href="/ai-business-intelligence" variant="primary" size="sm" className="w-full">
+                    <Button href="/ai-consciousness-simulator" variant="primary" size="sm" className="w-full">
                       Learn More
                     </Button>
                   </div>
                 </div>
               </motion.div>
 
-              {/* Quantum Cybersecurity */}
+              {/* Quantum Space Mining */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8, y: 20 }}
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.02, y: -5 }}
-                className="group p-6 bg-gradient-to-br from-purple-900/40 to-pink-900/40 border border-purple-700/50 rounded-2xl hover:border-purple-500/60 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 relative overflow-hidden"
+                className="group p-6 bg-gradient-to-br from-slate-800/40 to-slate-900/40 border border-slate-700/50 rounded-2xl hover:border-slate-500/60 hover:shadow-2xl hover:shadow-slate-500/20 transition-all duration-300 relative overflow-hidden"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-slate-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
-                  <div className="text-4xl mb-4">🔒</div>
-                  <h3 className="text-xl font-bold text-white mb-3">Quantum Cybersecurity Platform</h3>
-                  <p className="text-gray-300 text-sm mb-4">Next-generation security powered by quantum computing for unbreakable encryption.</p>
+                  <div className="text-4xl mb-4">🚀</div>
+                  <h3 className="text-xl font-bold text-white mb-3">Quantum Space Mining Platform</h3>
+                  <p className="text-gray-300 text-sm mb-4">Revolutionary space resource exploration and mining with quantum computing.</p>
                   <div className="flex items-center justify-between">
-                    <span className="text-2xl font-bold text-purple-400">$599</span>
+                    <span className="text-2xl font-bold text-slate-300">$12,999</span>
                     <span className="text-gray-400 text-sm">/month</span>
                   </div>
                   <div className="mt-4">
-                    <Button href="/quantum-cybersecurity" variant="primary" size="sm" className="w-full">
+                    <Button href="/quantum-space-mining-platform" variant="primary" size="sm" className="w-full">
                       Learn More
                     </Button>
                   </div>
                 </div>
               </motion.div>
 
-              {/* Blockchain Infrastructure */}
+              {/* Neuromorphic Computing */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8, y: 20 }}
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.02, y: -5 }}
-                className="group p-6 bg-gradient-to-br from-emerald-900/40 to-teal-900/40 border border-emerald-700/50 rounded-2xl hover:border-emerald-500/60 hover:shadow-2xl hover:shadow-emerald-500/20 transition-all duration-300 relative overflow-hidden"
+                className="group p-6 bg-gradient-to-br from-purple-700/40 to-violet-800/40 border border-purple-600/50 rounded-2xl hover:border-purple-500/60 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 relative overflow-hidden"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
-                  <div className="text-4xl mb-4">⛓️</div>
-                  <h3 className="text-xl font-bold text-white mb-3">Blockchain Infrastructure Platform</h3>
-                  <p className="text-gray-300 text-sm mb-4">Enterprise-grade blockchain infrastructure and development for Web3 applications.</p>
+                  <div className="text-4xl mb-4">🧠</div>
+                  <h3 className="text-xl font-bold text-white mb-3">Neuromorphic Computing Platform</h3>
+                  <p className="text-gray-300 text-sm mb-4">Brain-inspired computing for next-generation AI with ultra-low power consumption.</p>
                   <div className="flex items-center justify-between">
-                    <span className="text-2xl font-bold text-emerald-400">$499</span>
+                    <span className="text-2xl font-bold text-purple-300">$9,999</span>
                     <span className="text-gray-400 text-sm">/month</span>
                   </div>
                   <div className="mt-4">
-                    <Button href="/blockchain-infrastructure" variant="primary" size="sm" className="w-full">
+                    <Button href="/neuromorphic-computing-platform" variant="primary" size="sm" className="w-full">
                       Learn More
                     </Button>
                   </div>
                 </div>
               </motion.div>
 
-              {/* Space Technology */}
+              {/* Holographic Display Platform */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8, y: 20 }}
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.02, y: -5 }}
-                className="group p-6 bg-gradient-to-br from-indigo-900/40 to-purple-900/40 border border-indigo-700/50 rounded-2xl hover:border-indigo-500/60 hover:shadow-2xl hover:shadow-indigo-500/20 transition-all duration-300 relative overflow-hidden"
+                className="group p-6 bg-gradient-to-br from-pink-600/40 to-rose-700/40 border border-pink-600/50 rounded-2xl hover:border-pink-500/60 hover:shadow-2xl hover:shadow-pink-500/20 transition-all duration-300 relative overflow-hidden"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-pink-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
-                  <div className="text-4xl mb-4">🚀</div>
-                  <h3 className="text-xl font-bold text-white mb-3">Space Technology Platform</h3>
-                  <p className="text-gray-300 text-sm mb-4">Revolutionary space technology solutions for satellite management and space analytics.</p>
+                  <div className="text-4xl mb-4">🎭</div>
+                  <h3 className="text-xl font-bold text-white mb-3">Holographic Display Platform</h3>
+                  <p className="text-gray-300 text-sm mb-4">Next-generation 3D holographic visualization for immersive experiences.</p>
                   <div className="flex items-center justify-between">
-                    <span className="text-2xl font-bold text-indigo-400">$899</span>
+                    <span className="text-2xl font-bold text-pink-300">$6,999</span>
                     <span className="text-gray-400 text-sm">/month</span>
                   </div>
                   <div className="mt-4">
-                    <Button href="/space-technology" variant="primary" size="sm" className="w-full">
+                    <Button href="/holographic-display-platform" variant="primary" size="sm" className="w-full">
                       Learn More
                     </Button>
                   </div>
                 </div>
               </motion.div>
 
-              {/* Metaverse Development */}
+              {/* Autonomous Manufacturing AI */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8, y: 20 }}
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.02, y: -5 }}
-                className="group p-6 bg-gradient-to-br from-pink-900/40 to-rose-900/40 border border-pink-700/50 rounded-2xl hover:border-pink-500/60 hover:shadow-2xl hover:shadow-pink-500/20 transition-all duration-300 relative overflow-hidden"
+                className="group p-6 bg-gradient-to-br from-gray-700/40 to-slate-800/40 border border-gray-600/50 rounded-2xl hover:border-gray-500/60 hover:shadow-2xl hover:shadow-gray-500/20 transition-all duration-300 relative overflow-hidden"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-pink-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-gray-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
-                  <div className="text-4xl mb-4">🌍</div>
-                  <h3 className="text-xl font-bold text-white mb-3">Metaverse Development Platform</h3>
-                  <p className="text-gray-300 text-sm mb-4">Build the future of digital experiences with immersive 3D worlds and VR/AR.</p>
+                  <div className="text-4xl mb-4">🏭</div>
+                  <h3 className="text-xl font-bold text-white mb-3">Autonomous Manufacturing AI</h3>
+                  <p className="text-gray-300 text-sm mb-4">AI-powered manufacturing automation with 24/7 production and zero defects.</p>
                   <div className="flex items-center justify-between">
-                    <span className="text-2xl font-bold text-pink-400">$299</span>
+                    <span className="text-2xl font-bold text-gray-300">$8,999</span>
                     <span className="text-gray-400 text-sm">/month</span>
                   </div>
                   <div className="mt-4">
-                    <Button href="/metaverse-development" variant="primary" size="sm" className="w-full">
+                    <Button href="/autonomous-manufacturing-ai" variant="primary" size="sm" className="w-full">
                       Learn More
                     </Button>
                   </div>
@@ -436,19 +479,19 @@ export default function HomePage() {
                 transition={{ duration: 0.6, delay: 0.6 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.02, y: -5 }}
-                className="group p-6 bg-gradient-to-br from-gray-800/40 to-slate-900/40 border border-gray-700/50 rounded-2xl hover:border-gray-500/60 hover:shadow-2xl hover:shadow-gray-500/20 transition-all duration-300 relative overflow-hidden"
+                className="group p-6 bg-gradient-to-br from-green-700/40 to-emerald-800/40 border border-green-600/50 rounded-2xl hover:border-green-500/60 hover:shadow-2xl hover:shadow-green-500/20 transition-all duration-300 relative overflow-hidden"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-gray-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-green-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
-                  <div className="text-4xl mb-4">🏢</div>
-                  <h3 className="text-xl font-bold text-white mb-3">Enterprise IT Solutions</h3>
-                  <p className="text-gray-300 text-sm mb-4">Comprehensive enterprise solutions including cloud migration, cybersecurity, and DevOps.</p>
+                  <div className="text-4xl mb-4">🧬</div>
+                  <h3 className="text-xl font-bold text-white mb-3">DNA Computing Platform</h3>
+                  <p className="text-gray-300 text-sm mb-4">Molecular computing for complex problem solving with DNA-based algorithms.</p>
                   <div className="flex items-center justify-between">
-                    <span className="text-2xl font-bold text-gray-400">From $599</span>
+                    <span className="text-2xl font-bold text-green-300">$18,999</span>
                     <span className="text-gray-400 text-sm">/month</span>
                   </div>
                   <div className="mt-4">
-                    <Button href="/enterprise-it" variant="primary" size="sm" className="w-full">
+                    <Button href="/dna-computing-platform" variant="primary" size="sm" className="w-full">
                       Learn More
                     </Button>
                   </div>
