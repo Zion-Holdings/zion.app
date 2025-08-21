@@ -67,18 +67,6 @@ export default function QuantumHolographicNavbar() {
       description: 'Innovative Solutions'
     },
     { 
-      name: 'AI Services', 
-      href: '/ai-services', 
-      icon: <Brain className="w-4 h-4" />,
-      description: 'LLM, RAG, MLOps'
-    },
-    { 
-      name: 'IT Services', 
-      href: '/it-services', 
-      icon: <Cloud className="w-4 h-4" />,
-      description: 'Cloud, DevOps, SRE'
-    },
-    { 
       name: 'Pricing', 
       href: '/pricing', 
       icon: <Globe className="w-4 h-4" />,
