@@ -66,7 +66,7 @@ export default function MicroSaasPage() {
   };
 
   return (
-    <EnhancedFuturisticBackground variant="holographic" intensity="medium">
+    <EnhancedFuturisticBackground variant="neural-quantum" intensity="medium">
       <div className="min-h-screen">
         <Head>
           <title>75+ Micro SaaS Services | Zion Tech Group - AI, Cloud, Security Solutions</title>
