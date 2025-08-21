@@ -10,6 +10,7 @@ import { additionalEnhancedServices } from '../../data/additional-real-services'
 import { newlyAddedServices } from '../../data/newly-added-services';
 import { curatedMarketServices } from '../../data/curated-market-services';
 import { new2025Services } from '../../data/new-2025-services';
+import { marketValidatedServices } from '../../data/market-validated-services';
 
 type Service = typeof enhancedRealMicroSaasServices[number];
 
@@ -25,7 +26,8 @@ function getAllServices(): Service[] {
 		.concat(extraServices as Service[], additionalEnhancedServices as Service[])
 		.concat(newlyAddedServices as unknown as Service[])
 		.concat(curatedMarketServices as Service[])
-		.concat(new2025Services as unknown as Service[]);
+		.concat(new2025Services as unknown as Service[])
+		.concat(marketValidatedServices as unknown as Service[]);
 }
 
 function toSlug(value: string): string {
@@ -97,6 +99,33 @@ export default function ServiceDetailPage({ service }: { service: Service }) {
 				<title>{service.name} | Zion Tech Group</title>
 				<meta name="description" content={service.tagline || service.description} />
 				<link rel="canonical" href={service.link} />
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{
+						__html: JSON.stringify(
+							{
+								"@context": "https://schema.org",
+								"@type": "Service",
+								name: service.name,
+								description: service.tagline || service.description,
+								url: service.link,
+								provider: {
+									"@type": "Organization",
+									name: "Zion Tech Group",
+									url: "https://ziontechgroup.com"
+								},
+								offers: {
+									"@type": "Offer",
+									price: (service.price || '').replace(/[^0-9.]/g, ''),
+									priceCurrency: "USD",
+									availability: "https://schema.org/InStock"
+								}
+							},
+							null,
+							2
+							)
+						}}
+				/>
 			</Head>
 
 			<div className="container mx-auto px-4 py-16">

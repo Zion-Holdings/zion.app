@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { 
   Phone, Mail, MapPin, Globe, 
-  Twitter, Linkedin, Facebook, Instagram,
+  Twitter, Linkedin, Facebook, Instagram, Github, Youtube,
   ArrowRight, Rocket, Brain, Cpu, Shield,
   Star, Users, TrendingUp, Zap
 } from 'lucide-react';
@@ -65,10 +65,10 @@ const supportLinks = [
 ];
 
 const socialLinks = [
-  { name: 'Twitter', href: '#', icon: Twitter },
-  { name: 'LinkedIn', href: '#', icon: Linkedin },
-  { name: 'Facebook', href: '#', icon: Facebook },
-  { name: 'Instagram', href: '#', icon: Instagram }
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/company/zion-tech-group', icon: Linkedin },
+  { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: Github },
+  { name: 'Instagram', href: 'https://www.instagram.com/ziontechgroup', icon: Instagram },
+  { name: 'YouTube', href: 'https://www.youtube.com/@ziontechgroup', icon: Youtube }
 ];
 
 export default function EnhancedFooter() {
