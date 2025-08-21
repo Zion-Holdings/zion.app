@@ -27,6 +27,7 @@ import { innovative2025Services } from '../data/innovative-2025-services';
 import { emergingTech2025Services } from '../data/emerging-tech-2025-services';
 import { revolutionary2025Services } from '../data/revolutionary-2025-services';
 import { nextGenInnovations2025 } from '../data/next-gen-innovations-2025';
+import { innovative2025Batch3Services } from '../data/innovative-2025-batch3';
 
 export default function HomePage() {
   const contactInfo = {
@@ -56,7 +57,8 @@ export default function HomePage() {
     ...innovative2025Services,
     ...emergingTech2025Services,
     ...revolutionary2025Services,
-    ...nextGenInnovations2025
+    ...nextGenInnovations2025,
+    ...innovative2025Batch3Services
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);
@@ -359,9 +361,10 @@ export default function HomePage() {
 
         {/* Enhanced Service Showcase */}
         <EnhancedServiceShowcase 
-          title="Revolutionary AI & Technology Services"
-          subtitle="Discover the future of business with our cutting-edge solutions"
-          showFilters={true}
+          services={allServices}
+          title="Revolutionary AI, Quantum & IT Services"
+          subtitle="Discover 1000+ cutting-edge solutions that deliver 1000% ROI through breakthrough technology"
+          maxDisplay={12}
         />
 
         {/* Featured Offers */}
