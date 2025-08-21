@@ -13,9 +13,10 @@ import {
 } from 'lucide-react';
 import Button from '../components/ui/Button';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import UltraFuturisticServiceCard from '../components/ui/UltraFuturisticServiceCard';
 import Card from '../components/ui/Card';
 import { motion } from 'framer-motion';
-import { enhancedRealMicroSaasServices, getServicesByCategory, getPopularServices, serviceCategories } from '../data/enhanced-real-micro-saas-services';
+import { enhancedRealMicroSaasServices, getServicesByCategory, getPopularServices, getRevolutionaryServices, serviceCategories } from '../data/enhanced-real-micro-saas-services';
 
 export default function HomePage() {
   const heroStats = [
@@ -826,6 +827,54 @@ export default function HomePage() {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Revolutionary Services Showcase */}
+      <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              <span className="text-gradient-cyan">Revolutionary</span> Services
+            </h2>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+              Experience the future with our most advanced quantum AI and technology platforms
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {getRevolutionaryServices(6).map((service, index) => (
+              <motion.div
+                key={service.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group"
+              >
+                <UltraFuturisticServiceCard
+                  service={service}
+                  className="h-full transform hover:scale-105 transition-all duration-300"
+                />
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Button
+              href="/micro-saas"
+              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 text-lg font-semibold rounded-xl transform hover:scale-105 transition-all duration-300"
+            >
+              View All Services
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
           </div>
         </div>
       </section>

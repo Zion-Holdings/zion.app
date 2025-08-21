@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
-import { Shield, Clock, DollarSign, TrendingUp, Brain, Rocket, ArrowRight, ExternalLink, Search, Filter, Grid, List, Phone, Mail, MapPin, Star, Check, Sparkles, Atom, Cpu, Globe, FlaskConical } from 'lucide-react';
+import { Shield, Clock, DollarSign, TrendingUp, Brain, Rocket, ArrowRight, ExternalLink, Search, Filter, Grid, List, Phone, Mail, MapPin, Star, Check, Sparkles, Atom, Cpu, Globe, FlaskConical, Zap, Users, Target, Building, Award, ChartBar, Lock, Database, Cloud, Smartphone, Palette, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Code, BookOpen, Activity, Bot, ChevronRight, LinkIcon, Building2 } from 'lucide-react';
 import Button from '../components/ui/Button';
-import QuantumHolographicMatrixBackground from '../components/ui/QuantumHolographicMatrixBackground';
-import EnhancedFuturisticCard from '../components/ui/EnhancedFuturisticCard';
-import { enhancedRealMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices } from '../data/enhanced-real-micro-saas-services';
+import UltraFuturisticMatrixBackground from '../components/ui/UltraFuturisticMatrixBackground';
+import UltraFuturisticServiceCard from '../components/ui/UltraFuturisticServiceCard';
+import { enhancedRealMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices, getRevolutionaryServices } from '../data/enhanced-real-micro-saas-services';
 import { motion } from 'framer-motion';
 
 export default function MicroSaasPage() {
@@ -95,9 +95,7 @@ export default function MicroSaasPage() {
     }
   });
 
-  const revolutionaryServices = enhancedRealMicroSaasServices.filter(service => 
-    service.realImplementation && service.popular
-  );
+  const revolutionaryServices = getRevolutionaryServices(12);
 
   // Enhanced service advertising content with real market data and competitive advantages
   const serviceHighlights = [
@@ -177,7 +175,7 @@ export default function MicroSaasPage() {
   };
 
   return (
-    <QuantumHolographicMatrixBackground intensity="high">
+    <UltraFuturisticMatrixBackground>
       <Head>
         <title>Micro SAAS Services - Zion Tech Group | Revolutionary AI & Technology Solutions</title>
         <meta name="description" content="Discover 150+ revolutionary micro SAAS services powered by quantum AI, autonomous systems, and cutting-edge technology. Achieve 500%+ ROI with our innovative solutions." />
@@ -372,7 +370,7 @@ export default function MicroSaasPage() {
                     viewport={{ once: true }}
                     className="group"
                   >
-                    <EnhancedFuturisticCard
+                    <UltraFuturisticServiceCard
                       service={service}
                       className="h-full transform hover:scale-105 transition-all duration-300"
                     />
@@ -434,6 +432,6 @@ export default function MicroSaasPage() {
           </div>
         </section>
       </div>
-    </QuantumHolographicMatrixBackground>
+    </UltraFuturisticMatrixBackground>
   );
 }

@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Code, BookOpen, Activity, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Filter, Grid, List, ChevronDown, ChevronUp, Sparkles, FlaskConical, Dna, Car, Leaf, Factory, Truck, Microscope, GraduationCap, ShieldCheck, Brain, Atom, Globe2, Bot, ChevronRight, LinkIcon, Building2 } from 'lucide-react';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
-import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import UltraFuturisticMatrixBackground from '../components/ui/UltraFuturisticMatrixBackground';
 import { enhancedRealMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices, getServicesByPriceRange } from '../data/enhanced-real-micro-saas-services';
 import { motion } from 'framer-motion';
 
@@ -258,7 +258,7 @@ export default function ServicesPage() {
   ];
 
   return (
-    <UltraAdvancedFuturisticBackground>
+    <UltraFuturisticMatrixBackground>
       <Head>
         <title>Revolutionary Micro SAAS Services - Zion Tech Group</title>
         <meta name="description" content="Discover our cutting-edge micro SAAS services including quantum AI, autonomous manufacturing, cybersecurity, and more. Transform your business with next-generation technology." />
@@ -906,6 +906,6 @@ export default function ServicesPage() {
           </div>
         </section>
       </div>
-    </UltraAdvancedFuturisticBackground>
+    </UltraFuturisticMatrixBackground>
   );
 }
