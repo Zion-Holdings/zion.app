@@ -184,6 +184,46 @@ export default function MarketPricingPage() {
               </ul>
               <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $100–$1,500/month depending on MAUs and features.</div>
             </div>
+
+            <div className="bg-black/30 rounded-2xl border border-teal-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Subscription Analytics</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>ProfitWell Metrics: <a className="text-cyan-400 underline" href={`https://www.profitwell.com/pricing`} target="_blank" rel="noopener noreferrer">profitwell.com/pricing</a></li>
+                <li>ChartMogul pricing: <a className="text-cyan-400 underline" href={`https://chartmogul.com/pricing/`} target="_blank" rel="noopener noreferrer">chartmogul.com/pricing</a></li>
+                <li>Baremetrics pricing: <a className="text-cyan-400 underline" href={`https://baremetrics.com/pricing`} target="_blank" rel="noopener noreferrer">baremetrics.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $0–$500/month; hands-on analysis services add $500–$2,000/month.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-cyan-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Digital Product Commerce</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Lemon Squeezy pricing: <a className="text-cyan-400 underline" href={`https://www.lemonsqueezy.com/pricing`} target="_blank" rel="noopener noreferrer">lemonsqueezy.com/pricing</a></li>
+                <li>Paddle pricing: <a className="text-cyan-400 underline" href={`https://www.paddle.com/pricing`} target="_blank" rel="noopener noreferrer">paddle.com/pricing</a></li>
+                <li>Stripe fees: <a className="text-cyan-400 underline" href={`https://stripe.com/pricing`} target="_blank" rel="noopener noreferrer">stripe.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: Platform fees + 2.9%+ per transaction; implementation $500–$3,000.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-purple-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">WordPress Internal Linking</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Link Whisper pricing: <a className="text-cyan-400 underline" href={`https://linkwhisper.com/pricing/`} target="_blank" rel="noopener noreferrer">linkwhisper.com/pricing</a></li>
+                <li>Yoast SEO: <a className="text-cyan-400 underline" href={`https://yoast.com/wordpress/plugins/seo/`} target="_blank" rel="noopener noreferrer">yoast.com/wordpress/plugins/seo</a></li>
+                <li>Rank Math: <a className="text-cyan-400 underline" href={`https://rankmath.com/pricing/`} target="_blank" rel="noopener noreferrer">rankmath.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $49–$200/year in plugins; managed tuning $200–$800/month.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-amber-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Reviews & UGC</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Yotpo pricing: <a className="text-cyan-400 underline" href={`https://www.yotpo.com/pricing/`} target="_blank" rel="noopener noreferrer">yotpo.com/pricing</a></li>
+                <li>Judge.me pricing: <a className="text-cyan-400 underline" href={`https://judge.me/pricing`} target="_blank" rel="noopener noreferrer">judge.me/pricing</a></li>
+                <li>Loox pricing: <a className="text-cyan-400 underline" href={`https://loox.app/pricing`} target="_blank" rel="noopener noreferrer">loox.app/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $9–$299/month; implementation $500–$2,000 one-time.</div>
+            </div>
           </div>
 
           <div className="space-y-6">

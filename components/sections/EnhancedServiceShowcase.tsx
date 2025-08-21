@@ -18,6 +18,7 @@ import { realMarketServices } from '../../data/real-market-services';
 import { realOperationalServices } from '../../data/real-operational-services';
 import { professionalServices } from '../../data/professional-services';
 import { verified2025Additions } from '../../data/verified-2025-additions';
+import { realServicesQ32025 } from '../../data/real-services-q3-2025';
 
 interface ServiceShowcaseProps {
   className?: string;
@@ -48,7 +49,8 @@ const EnhancedServiceShowcase: React.FC<ServiceShowcaseProps> = ({
     ...realMarketServices,
     ...realOperationalServices,
     ...professionalServices,
-    ...verified2025Additions
+    ...verified2025Additions,
+    ...realServicesQ32025
   ];
 
   // Derived counts to better reflect all datasets
@@ -276,14 +278,16 @@ const EnhancedServiceShowcase: React.FC<ServiceShowcaseProps> = ({
                 </div>
 
                 {/* Contact Info */}
-                <div className="mt-4 pt-4 border-t border-gray-700">
-                  <div className="text-xs text-gray-400 mb-2">Contact Information:</div>
-                  <div className="text-xs text-gray-300 space-y-1">
-                    <div>📱 {service.contactInfo.mobile}</div>
-                    <div>✉️ {service.contactInfo.email}</div>
-                    <div>🌐 {service.contactInfo.website}</div>
+                {'contactInfo' in service && (service as any).contactInfo ? (
+                  <div className="mt-4 pt-4 border-t border-gray-700">
+                    <div className="text-xs text-gray-400 mb-2">Contact Information:</div>
+                    <div className="text-xs text-gray-300 space-y-1">
+                      <div>📱 {(service as any).contactInfo.mobile}</div>
+                      <div>✉️ {(service as any).contactInfo.email}</div>
+                      <div>🌐 {(service as any).contactInfo.website}</div>
+                    </div>
                   </div>
-                </div>
+                ) : null}
               </motion.div>
             ))}
           </AnimatePresence>
