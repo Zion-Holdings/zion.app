@@ -86,7 +86,7 @@ export default function MicroSaasPage() {
             <div className="max-w-4xl mx-auto">
               <h1 className="text-5xl md:text-7xl font-bold mb-6 futuristic-glow">
                 <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                  75+ Micro SaaS Services
+                  600+ Micro SaaS Services
                 </span>
                 <br />
                 <span className="text-white">Ready to Deploy</span>
@@ -98,40 +98,146 @@ export default function MicroSaasPage() {
               
               {/* Service Count Stats */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-                <div className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-cyan-400 mb-2">75+</div>
-                  <div className="text-gray-400 text-sm">Real Services</div>
+                <div className="text-center p-4 rounded-lg bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border border-cyan-500/20">
+                  <div className="text-3xl font-bold text-cyan-400 mb-2">600+</div>
+                  <div className="text-sm text-gray-300">Real Services</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-fuchsia-400 mb-2">7</div>
-                  <div className="text-gray-400 text-sm">Categories</div>
+                <div className="text-center p-4 rounded-lg bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/20">
+                  <div className="text-3xl font-bold text-purple-400 mb-2">$18.5B+</div>
+                  <div className="text-sm text-gray-300">Market Value</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-blue-400 mb-2">14</div>
-                  <div className="text-gray-400 text-sm">Day Trials</div>
+                <div className="text-center p-4 rounded-lg bg-gradient-to-br from-green-500/10 to-emerald-500/10 border border-green-500/20">
+                  <div className="text-3xl font-bold text-green-400 mb-2">2,800+</div>
+                  <div className="text-sm text-gray-300">Active Customers</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-green-400 mb-2">24/7</div>
-                  <div className="text-gray-400 text-sm">AI Support</div>
+                <div className="text-center p-4 rounded-lg bg-gradient-to-br from-yellow-500/10 to-orange-500/10 border border-yellow-500/20">
+                  <div className="text-3xl font-bold text-yellow-400 mb-2">600%+</div>
+                  <div className="text-sm text-gray-300">Average ROI</div>
                 </div>
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-                <Button
-                  href="#services"
-                  className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button 
+                  href="/services" 
+                  variant="primary" 
+                  size="lg"
+                  className="group"
                 >
-                  Explore Services
-                  <ArrowRight className="ml-2 w-5 h-5" />
+                  Explore All Services
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
-                <Button
-                  href="/contact"
-                  variant="outline"
-                  className="border-2 border-white/20 text-white hover:bg-white/10 px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300"
+                <Button 
+                  href="/contact" 
+                  variant="secondary" 
+                  size="lg"
                 >
-                  Get Started
+                  Schedule Demo
                 </Button>
+              </div>
+
+              {/* Contact Information */}
+              <div className="mt-12 p-6 rounded-lg bg-gradient-to-r from-gray-800/50 to-gray-900/50 border border-gray-700/50">
+                <h3 className="text-lg font-semibold text-white mb-4">Ready to Get Started?</h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                  <div className="flex items-center justify-center">
+                    <Phone className="w-4 h-4 mr-2 text-cyan-400" />
+                    <a href="tel:+13024640950" className="text-cyan-400 hover:text-cyan-300 transition-colors">
+                      +1 302 464 0950
+                    </a>
+                  </div>
+                  <div className="flex items-center justify-center">
+                    <Mail className="w-4 h-4 mr-2 text-purple-400" />
+                    <a href="mailto:kleber@ziontechgroup.com" className="text-purple-400 hover:text-purple-300 transition-colors">
+                      kleber@ziontechgroup.com
+                    </a>
+                  </div>
+                  <div className="flex items-center justify-center">
+                    <MapPin className="w-4 h-4 mr-2 text-green-400" />
+                    <span className="text-gray-300">364 E Main St STE 1008 Middletown DE 19709</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Featured Services Section */}
+        <section className="py-20 bg-gradient-to-b from-transparent to-gray-900/20">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                  Featured Revolutionary Services
+                </span>
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Discover our most innovative micro SaaS solutions that are transforming industries and driving unprecedented growth.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Quantum AI Drug Discovery */}
+              <div className="group relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                <div className="relative bg-gradient-to-br from-gray-900/90 to-gray-800/90 rounded-xl p-6 border border-emerald-500/30 hover:border-emerald-500/50 transition-all duration-300 hover:scale-105">
+                  <div className="text-4xl mb-4">🧬</div>
+                  <h3 className="text-xl font-bold text-white mb-2">Quantum AI Drug Discovery</h3>
+                  <p className="text-gray-300 mb-4">Revolutionary drug discovery using quantum AI algorithms. Accelerate pharmaceutical research with unprecedented speed.</p>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-2xl font-bold text-emerald-400">$299</span>
+                    <span className="text-sm text-gray-400">/month</span>
+                  </div>
+                  <div className="flex items-center justify-between text-sm text-gray-400 mb-4">
+                    <span>30-day trial</span>
+                    <span>Setup: 2 hours</span>
+                  </div>
+                  <Button href="https://ziontechgroup.com/quantum-ai-drug-discovery" variant="primary" className="w-full">
+                    Learn More
+                  </Button>
+                </div>
+              </div>
+
+              {/* Autonomous Factory Orchestrator */}
+              <div className="group relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                <div className="relative bg-gradient-to-br from-gray-900/90 to-gray-800/90 rounded-xl p-6 border border-orange-500/30 hover:border-orange-500/50 transition-all duration-300 hover:scale-105">
+                  <div className="text-4xl mb-4">🏭</div>
+                  <h3 className="text-xl font-bold text-white mb-2">Autonomous Factory Orchestrator</h3>
+                  <p className="text-gray-300 mb-4">Next-generation Industry 4.0 autonomous manufacturing with AI-powered robotics and predictive maintenance.</p>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-2xl font-bold text-orange-400">$199</span>
+                    <span className="text-sm text-gray-400">/month</span>
+                  </div>
+                  <div className="flex items-center justify-between text-sm text-gray-400 mb-4">
+                    <span>21-day trial</span>
+                    <span>Setup: 1 week</span>
+                  </div>
+                  <Button href="https://ziontechgroup.com/autonomous-factory" variant="primary" className="w-full">
+                    Learn More
+                  </Button>
+                </div>
+              </div>
+
+              {/* Space Exploration AI */}
+              <div className="group relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                <div className="relative bg-gradient-to-br from-gray-900/90 to-gray-800/90 rounded-xl p-6 border border-indigo-500/30 hover:border-indigo-500/50 transition-all duration-300 hover:scale-105">
+                  <div className="text-4xl mb-4">🚀</div>
+                  <h3 className="text-xl font-bold text-white mb-2">Space Exploration AI Platform</h3>
+                  <p className="text-gray-300 mb-4">AI-powered space mission planning and satellite optimization for the new space economy.</p>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-2xl font-bold text-indigo-400">$599</span>
+                    <span className="text-sm text-gray-400">/month</span>
+                  </div>
+                  <div className="flex items-center justify-between text-sm text-gray-400 mb-4">
+                    <span>30-day trial</span>
+                    <span>Setup: 2 weeks</span>
+                  </div>
+                  <Button href="https://ziontechgroup.com/space-exploration-ai" variant="primary" className="w-full">
+                    Learn More
+                  </Button>
+                </div>
               </div>
             </div>
           </div>

@@ -83,37 +83,73 @@ export default function ServicesPage() {
       name: 'Quantum Computing & AI',
       description: 'Revolutionary quantum AI solutions with unprecedented computing power',
       icon: <Brain className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Quantum Computing & AI' || s.category === 'AI & Machine Learning').length
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Quantum Computing & AI' || s.category === 'AI & Machine Learning' || s.category === 'Healthcare & Biotechnology').length,
+      marketSize: '$12.5B',
+      growthRate: '300%',
+      featuredServices: ['Quantum AI Drug Discovery', 'Quantum Financial Optimizer', 'Quantum Healthcare Diagnostics']
     },
     {
       name: 'Autonomous Systems & Robotics',
       description: 'Next-generation autonomous manufacturing and robotics platforms',
       icon: <Factory className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Manufacturing & Industry 4.0' || s.category === 'Robotics & Automation').length
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Manufacturing & Industry 4.0' || s.category === 'Robotics & Automation').length,
+      marketSize: '$180B',
+      growthRate: '200%',
+      featuredServices: ['Autonomous Factory Orchestrator', 'AI Robotics Platform', 'Smart Manufacturing Suite']
     },
     {
       name: 'Healthcare & Biotechnology',
       description: 'AI-powered biomedical research and drug discovery platforms',
       icon: <FlaskConical className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Healthcare & Biotechnology').length
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Healthcare & Biotechnology').length,
+      marketSize: '$75B',
+      growthRate: '280%',
+      featuredServices: ['Quantum AI Drug Discovery', 'Quantum Healthcare Diagnostics', 'AI Medical Imaging']
     },
     {
-      name: 'Cybersecurity & Quantum Security',
-      description: 'Future-proof cybersecurity using quantum-resistant encryption',
+      name: 'Space Technology',
+      description: 'AI-powered space mission planning and satellite optimization',
+      icon: <Rocket className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Space Technology').length,
+      marketSize: '$8B',
+      growthRate: '400%',
+      featuredServices: ['Space Exploration AI Platform', 'Satellite Optimization Suite', 'Mission Planning AI']
+    },
+    {
+      name: 'Cybersecurity & Defense',
+      description: 'Quantum-resistant encryption and AI-powered threat detection',
       icon: <Shield className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Cybersecurity').length
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Cybersecurity').length,
+      marketSize: '$180B',
+      growthRate: '200%',
+      featuredServices: ['Quantum Cybersecurity Shield', 'AI Threat Intelligence', 'Zero Trust Security']
+    },
+    {
+      name: 'Environmental Technology',
+      description: 'AI-powered climate prediction and sustainability optimization',
+      icon: <Leaf className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Environmental Technology').length,
+      marketSize: '$12B',
+      growthRate: '250%',
+      featuredServices: ['AI Climate Prediction Platform', 'Sustainability Analytics', 'Green Energy Optimization']
     },
     {
       name: 'Financial Technology',
       description: 'Quantum-powered financial optimization and trading platforms',
       icon: <DollarSign className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Financial Technology').length
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Financial Technology').length,
+      marketSize: '$25B',
+      growthRate: '300%',
+      featuredServices: ['Quantum Financial Optimizer', 'AI Trading Platform', 'Risk Management Suite']
     },
     {
-      name: 'Space Technology & IoT',
-      description: 'AI-powered space exploration and smart city platforms',
-      icon: <Rocket className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Space Technology & IoT').length
+      name: 'Education Technology',
+      description: 'AI-powered personalized learning and educational platforms',
+      icon: <GraduationCap className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Education Technology').length,
+      marketSize: '$20B',
+      growthRate: '180%',
+      featuredServices: ['AI Education Personalizer', 'Learning Analytics Platform', 'Adaptive Content System']
     }
   ];
 
@@ -154,7 +190,7 @@ export default function ServicesPage() {
   };
 
   return (
-    <UltraFuturisticBackground variant="holographic" className="min-h-screen">
+    <UltraFuturisticBackground variant="holographic">
       <Head>
         <title>Micro SaaS Services - Zion Tech Group | 500+ Revolutionary Solutions</title>
         <meta name="description" content="Explore 500+ revolutionary micro SaaS services including quantum AI, autonomous systems, biomedical research, cybersecurity, and emerging technologies. Starting from $49/month." />
@@ -389,8 +425,6 @@ export default function ServicesPage() {
                   key={service.id}
                   variant={service.variant as any}
                   className="h-full"
-                  hoverEffect={true}
-                  animated={true}
                 >
                   <div className="flex items-center mb-4">
                     <div className="text-3xl mr-3">{service.icon}</div>
@@ -455,8 +489,6 @@ export default function ServicesPage() {
                   key={service.id}
                   variant={service.variant as any}
                   className="p-6"
-                  hoverEffect={true}
-                  animated={true}
                 >
                   <div className="flex flex-col lg:flex-row gap-6">
                     <div className="flex items-center lg:w-1/4">
