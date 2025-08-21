@@ -62,7 +62,7 @@ export default function AIServicesPage() {
   ];
 
   return (
-    <QuantumHolographicMatrixBackground intensity="high">
+    <QuantumHolographicMatrixBackground intensity={1.5}>
       <Head>
         <title>AI Services | Zion Tech Group</title>
         <meta name="description" content="LLM apps, RAG, MLOps, and AI research enablement with transparent pricing and measurable outcomes." />

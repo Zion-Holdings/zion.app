@@ -254,7 +254,7 @@ export default function ContactPage() {
   ];
 
   return (
-    <UltraFuturisticBackground variant="neural" intensity="medium">
+    <UltraFuturisticBackground variant="neural" intensity={1}>
       <Head>
         <title>Contact Us - Zion Tech Group | Get Expert AI & Quantum Computing Support</title>
         <meta name="description" content="Contact Zion Tech Group for expert AI & quantum computing support. Available 24/7 via phone, email, or visit our Delaware headquarters. Get started with your revolutionary tech project today." />

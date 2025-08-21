@@ -19,7 +19,7 @@ export default function AIEvalsPage() {
 	];
 
 	return (
-		<QuantumHolographicMatrixBackground intensity="high">
+		<QuantumHolographicMatrixBackground intensity={1.5}>
 			<Head>
 				<title>AI Evaluations Platform | Zion Tech Group</title>
 				<meta name="description" content="Automated LLM evaluation with accuracy, faithfulness, latency, and cost metrics. Integrate with CI and guardrails." />

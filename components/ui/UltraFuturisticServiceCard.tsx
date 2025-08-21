@@ -1,261 +1,403 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Star, Users, TrendingUp, Clock, ArrowRight, 
-  ExternalLink, Check, ChevronDown, ChevronUp,
-  Mail, Phone, MapPin, Globe, ShieldCheck
-} from 'lucide-react';
-import Button from './Button';
-import { EnhancedRealMicroSaasService } from '../../data/enhanced-real-micro-saas-services';
+import { ArrowRight, ExternalLink, Star, Users, TrendingUp, Zap, Shield, Clock } from 'lucide-react';
 
 interface UltraFuturisticServiceCardProps {
-  service: EnhancedRealMicroSaasService;
+  service: {
+    id: string;
+    name: string;
+    tagline: string;
+    price: string;
+    period: string;
+    description: string;
+    features: string[];
+    popular: boolean;
+    icon: string;
+    color: string;
+    textColor: string;
+    link: string;
+    marketPosition: string;
+    targetAudience: string;
+    trialDays: number;
+    setupTime: string;
+    category: string;
+    realService: boolean;
+    technology: string[];
+    integrations: string[];
+    useCases: string[];
+    roi: string;
+    competitors: string[];
+    marketSize: string;
+    growthRate: string;
+    variant: string;
+    contactInfo: {
+      mobile: string;
+      email: string;
+      address: string;
+      website: string;
+    };
+    realImplementation: boolean;
+    implementationDetails: string;
+    launchDate: string;
+    customers: number;
+    rating: number;
+    reviews: number;
+  };
+  className?: string;
 }
 
-export default function UltraFuturisticServiceCard({ service }: UltraFuturisticServiceCardProps) {
+const UltraFuturisticServiceCard: React.FC<UltraFuturisticServiceCardProps> = ({
+  service,
+  className = ''
+}) => {
+  const [isHovered, setIsHovered] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const contactInfo = {
-    mobile: '+1 302 464 0950',
-    email: 'kleber@ziontechgroup.com',
-    address: '364 E Main St STE 1008 Middletown DE 19709',
-    website: 'https://ziontechgroup.com'
+  const cardVariants = {
+    initial: { 
+      scale: 1, 
+      rotateY: 0,
+      boxShadow: "0 0 20px rgba(0, 255, 255, 0.3)"
+    },
+    hover: { 
+      scale: 1.02, 
+      rotateY: 2,
+      boxShadow: "0 0 40px rgba(0, 255, 255, 0.6)"
+    },
+    expanded: {
+      scale: 1.05,
+      rotateY: 0,
+      boxShadow: "0 0 60px rgba(139, 92, 246, 0.8)"
+    }
+  };
+
+  const contentVariants = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: -20 }
+  };
+
+  const featureVariants = {
+    initial: { opacity: 0, x: -20 },
+    animate: { opacity: 1, x: 0 },
+    exit: { opacity: 0, x: 20 }
+  };
+
+  const getGradientClass = (color: string) => {
+    const gradients: { [key: string]: string } = {
+      'from-pink-500 to-rose-600': 'from-pink-500 via-rose-600 to-pink-700',
+      'from-purple-600 to-indigo-700': 'from-purple-600 via-indigo-700 to-purple-800',
+      'from-blue-600 to-cyan-700': 'from-blue-600 via-cyan-700 to-blue-800',
+      'from-green-600 to-emerald-700': 'from-green-600 via-emerald-700 to-green-800',
+      'from-orange-600 to-red-700': 'from-orange-600 via-red-700 to-orange-800',
+      'from-indigo-600 to-purple-700': 'from-indigo-600 via-purple-700 to-indigo-800',
+      'from-pink-600 to-rose-700': 'from-pink-600 via-rose-700 to-pink-800',
+      'from-yellow-600 to-amber-700': 'from-yellow-600 via-amber-700 to-yellow-800',
+      'from-red-600 to-pink-700': 'from-red-600 via-pink-700 to-red-800',
+      'from-cyan-600 to-blue-700': 'from-cyan-600 via-blue-700 to-cyan-800'
+    };
+    return gradients[color] || color;
   };
 
   return (
     <motion.div
-      className="relative group"
-      whileHover={{ y: -5 }}
-      transition={{ duration: 0.3 }}
+      className={`relative group cursor-pointer ${className}`}
+      variants={cardVariants}
+      initial="initial"
+      animate={isExpanded ? "expanded" : isHovered ? "hover" : "initial"}
+      whileHover="hover"
+      onHoverStart={() => setIsHovered(true)}
+      onHoverEnd={() => setIsHovered(false)}
+      onClick={() => setIsExpanded(!isExpanded)}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
     >
-      {/* Holographic Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-black/95 to-gray-900/90 rounded-2xl border border-gray-700/50 backdrop-blur-xl overflow-hidden">
-        {/* Animated Border */}
-        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-        
-        {/* Quantum Particles */}
-        <div className="absolute inset-0 overflow-hidden">
-          {[...Array(8)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-1 h-1 bg-cyan-400 rounded-full"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`
-              }}
-              animate={{
-                scale: [0, 1, 0],
-                opacity: [0, 0.8, 0],
-                x: [0, (Math.random() - 0.5) * 50],
-                y: [0, (Math.random() - 0.5) * 50]
-              }}
-              transition={{
-                duration: Math.random() * 3 + 2,
-                repeat: Infinity,
-                delay: Math.random() * 2,
-                ease: "easeInOut"
-              }}
-            />
-          ))}
-        </div>
+      {/* Quantum Holographic Border */}
+      <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 p-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 blur-sm opacity-50" />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 p-6">
-        {/* Header */}
-        <div className="mb-4">
-          <div className="flex items-center justify-between mb-3">
-            <div className="flex items-center space-x-2">
-              <span className="px-3 py-1 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-xs font-semibold rounded-full">
-                {service.category}
-              </span>
-              <span className="px-3 py-1 bg-gray-700 text-gray-300 text-xs font-semibold rounded-full">
-                {service.variant}
-              </span>
-            </div>
-            <motion.button
-              onClick={() => setIsExpanded(!isExpanded)}
-              className="p-1 text-gray-400 hover:text-white transition-colors"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
+      {/* Main Card */}
+      <div className="relative bg-black/80 backdrop-blur-xl rounded-2xl p-6 border border-gray-800/50 overflow-hidden">
+        {/* Animated Background Pattern */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-purple-500/5 to-pink-500/10" />
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(0,255,255,0.1),transparent_50%)]" />
+        </div>
+
+        {/* Header Section */}
+        <motion.div
+          className="flex items-start justify-between mb-4"
+          variants={contentVariants}
+          initial="initial"
+          animate="animate"
+        >
+          <div className="flex items-center space-x-3">
+            <motion.div
+              className={`text-4xl ${service.textColor}`}
+              animate={{ rotate: isHovered ? [0, 10, -10, 0] : 0 }}
+              transition={{ duration: 0.5 }}
             >
-              {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
-            </motion.button>
+              {service.icon}
+            </motion.div>
+            <div>
+              <h3 className="text-xl font-bold text-white mb-1">{service.name}</h3>
+              <p className="text-gray-400 text-sm">{service.tagline}</p>
+            </div>
           </div>
           
-          <h3 className="text-xl font-bold text-white mb-2">{service.name}</h3>
-          <p className="text-gray-300 text-sm leading-relaxed">{service.description}</p>
-        </div>
+          {service.popular && (
+            <motion.div
+              className="px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full text-xs font-semibold text-black"
+              animate={{ scale: isHovered ? 1.1 : 1 }}
+              transition={{ duration: 0.2 }}
+            >
+              POPULAR
+            </motion.div>
+          )}
+        </motion.div>
 
-        {/* Price and Quick Stats */}
-        <div className="mb-4">
-          <div className="text-3xl font-bold text-white mb-3">
-            {service.price}
-            <span className="text-sm text-gray-400 font-normal">{service.period}</span>
+        {/* Price and Trial Info */}
+        <motion.div
+          className="mb-4"
+          variants={contentVariants}
+          initial="initial"
+          animate="animate"
+          transition={{ delay: 0.1 }}
+        >
+          <div className="flex items-center justify-between mb-2">
+            <div className="flex items-baseline space-x-2">
+              <span className="text-3xl font-bold text-white">{service.price}</span>
+              <span className="text-gray-400">{service.period}</span>
+            </div>
+            <div className="flex items-center space-x-2 text-sm text-gray-400">
+              <Clock className="w-4 h-4" />
+              <span>{service.trialDays} day trial</span>
+            </div>
           </div>
           
-          <div className="grid grid-cols-2 gap-3 text-sm">
-            <div className="flex items-center space-x-2 text-gray-400">
-              <Users className="w-4 h-4 text-blue-400" />
-              <span>{service.customers}+ users</span>
+          <div className="flex items-center space-x-4 text-sm text-gray-400">
+            <div className="flex items-center space-x-1">
+              <Users className="w-4 h-4" />
+              <span>{service.customers.toLocaleString()}+ users</span>
             </div>
-            <div className="flex items-center space-x-2 text-gray-400">
-              <Star className="w-4 h-4 text-yellow-400" />
-              <span>{service.rating}/5.0</span>
-            </div>
-            <div className="flex items-center space-x-2 text-gray-400">
-              <TrendingUp className="w-4 h-4 text-green-400" />
-              <span>ROI</span>
-            </div>
-            <div className="flex items-center space-x-2 text-gray-400">
-              <Clock className="w-4 h-4 text-purple-400" />
-              <span>{service.trialDays} days trial</span>
+            <div className="flex items-center space-x-1">
+              <Star className="w-4 h-4 text-yellow-400 fill-current" />
+              <span>{service.rating} ({service.reviews})</span>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Key Features */}
-        <div className="mb-4">
-          <h4 className="text-sm font-semibold text-cyan-400 mb-2">Key Features:</h4>
-          <div className="space-y-1">
-            {service.features.slice(0, 3).map((feature, index) => (
-              <div key={index} className="flex items-center space-x-2 text-xs text-gray-300">
-                <Check className="w-3 h-3 text-green-400 flex-shrink-0" />
+        {/* Description */}
+        <motion.p
+          className="text-gray-300 mb-4 leading-relaxed"
+          variants={contentVariants}
+          initial="initial"
+          animate="animate"
+          transition={{ delay: 0.2 }}
+        >
+          {service.description}
+        </motion.p>
+
+        {/* Market Position */}
+        <motion.div
+          className="mb-4 p-3 bg-gradient-to-r from-blue-900/20 to-purple-900/20 rounded-lg border border-blue-500/20"
+          variants={contentVariants}
+          initial="initial"
+          animate="animate"
+          transition={{ delay: 0.3 }}
+        >
+          <div className="flex items-center space-x-2 mb-2">
+            <TrendingUp className="w-4 h-4 text-blue-400" />
+            <span className="text-sm font-semibold text-blue-400">Market Position</span>
+          </div>
+          <p className="text-sm text-gray-300">{service.marketPosition}</p>
+        </motion.div>
+
+        {/* Features Grid */}
+        <motion.div
+          className="mb-4"
+          variants={contentVariants}
+          initial="initial"
+          animate="animate"
+          transition={{ delay: 0.4 }}
+        >
+          <h4 className="text-sm font-semibold text-gray-300 mb-3 flex items-center space-x-2">
+            <Zap className="w-4 h-4 text-yellow-400" />
+            <span>Key Features</span>
+          </h4>
+          <div className="grid grid-cols-1 gap-2">
+            {service.features.slice(0, isExpanded ? service.features.length : 4).map((feature, index) => (
+              <motion.div
+                key={index}
+                className="flex items-center space-x-2 text-sm text-gray-400"
+                variants={featureVariants}
+                initial="initial"
+                animate="animate"
+                transition={{ delay: 0.5 + index * 0.1 }}
+              >
+                <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full" />
                 <span>{feature}</span>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+          
+          {!isExpanded && service.features.length > 4 && (
+            <motion.button
+              className="text-cyan-400 text-sm hover:text-cyan-300 transition-colors mt-2"
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsExpanded(true);
+              }}
+            >
+              +{service.features.length - 4} more features
+            </motion.button>
+          )}
+        </motion.div>
 
-        {/* Contact Information */}
-        <div className="mb-4 p-3 bg-gray-800/50 rounded-lg border border-gray-700/50">
-          <h4 className="text-xs font-semibold text-cyan-400 mb-2">Contact Information:</h4>
-          <div className="grid grid-cols-1 gap-2 text-xs text-gray-300">
-            <div className="flex items-center space-x-2">
-              <Phone className="w-3 h-3 text-cyan-400" />
-              <span>{service.contactInfo.mobile}</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Mail className="w-3 h-3 text-cyan-400" />
-              <span>{service.contactInfo.email}</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <MapPin className="w-3 h-3 text-cyan-400" />
-              <span className="text-xs">{service.contactInfo.address}</span>
-            </div>
+        {/* ROI and Market Data */}
+        <motion.div
+          className="mb-4 grid grid-cols-2 gap-3"
+          variants={contentVariants}
+          initial="initial"
+          animate="animate"
+          transition={{ delay: 0.5 }}
+        >
+          <div className="p-3 bg-gradient-to-r from-green-900/20 to-emerald-900/20 rounded-lg border border-green-500/20">
+            <div className="text-sm font-semibold text-green-400 mb-1">ROI</div>
+            <div className="text-xs text-gray-300">{service.roi}</div>
           </div>
-        </div>
+          <div className="p-3 bg-gradient-to-r from-purple-900/20 to-pink-900/20 rounded-lg border border-purple-500/20">
+            <div className="text-sm font-semibold text-purple-400 mb-1">Market Size</div>
+            <div className="text-xs text-gray-300">{service.marketSize}</div>
+          </div>
+        </motion.div>
 
         {/* Action Buttons */}
-        <div className="flex space-x-2">
-          <Button
-            href={service.link || `/services/${service.id}`}
-            className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white py-2 px-3 rounded-lg text-sm font-semibold transition-all duration-300"
+        <motion.div
+          className="flex space-x-3"
+          variants={contentVariants}
+          initial="initial"
+          animate="animate"
+          transition={{ delay: 0.6 }}
+        >
+          <motion.a
+            href={service.link}
+            className={`flex-1 bg-gradient-to-r ${getGradientClass(service.color)} text-white py-3 px-4 rounded-lg font-semibold text-center hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2`}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={(e) => e.stopPropagation()}
           >
-            <ArrowRight className="w-3 h-3 mr-1" />
-            Details
-          </Button>
-          <Button
-            href="/contact"
-            variant="outline"
-            className="px-3 py-2 border border-gray-600 text-gray-300 rounded-lg hover:border-cyan-500 hover:text-cyan-400 transition-all duration-300 text-sm"
+            <span>Get Started</span>
+            <ArrowRight className="w-4 h-4" />
+          </motion.a>
+          
+          <motion.button
+            className="px-4 py-3 border border-gray-600 text-gray-300 rounded-lg hover:border-cyan-400 hover:text-cyan-400 transition-colors duration-300"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={(e) => {
+              e.stopPropagation();
+              // Add to favorites or show more info
+            }}
           >
-            Contact
-          </Button>
-        </div>
+            <Star className="w-4 h-4" />
+          </motion.button>
+        </motion.div>
 
-        {/* Expandable Section */}
+        {/* Contact Information */}
+        <motion.div
+          className="mt-4 pt-4 border-t border-gray-700/50"
+          variants={contentVariants}
+          initial="initial"
+          animate="animate"
+          transition={{ delay: 0.7 }}
+        >
+          <div className="text-xs text-gray-500 space-y-1">
+            <div className="flex items-center space-x-2">
+              <span>📱 {service.contactInfo.mobile}</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <span>✉️ {service.contactInfo.email}</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <span>📍 {service.contactInfo.address}</span>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Expanded Content */}
         <AnimatePresence>
           {isExpanded && (
             <motion.div
+              className="mt-4 pt-4 border-t border-gray-700/50"
               initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
+              animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="mt-4 pt-4 border-top border-gray-700/50"
             >
-              {/* Technology Stack */}
-              <div className="mb-4">
-                <h4 className="text-sm font-semibold text-cyan-400 mb-2">Technology Stack:</h4>
-                <div className="flex flex-wrap gap-2">
-                  {service.technology.map((tech, index) => (
-                    <span
-                      key={index}
-                      className="px-2 py-1 bg-gray-800 text-gray-300 text-xs rounded-md border border-gray-700"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Use Cases */}
-              <div className="mb-4">
-                <h4 className="text-sm font-semibold text-cyan-400 mb-2">Use Cases:</h4>
-                <div className="space-y-1">
-                  {service.useCases.map((useCase, index) => (
-                    <div key={index} className="flex items-center space-x-2 text-xs text-gray-300">
-                      <Check className="w-3 h-3 text-green-400 flex-shrink-0" />
-                      <span>{useCase}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Compliance & Security */}
-              <div className="mb-2">
-                <h4 className="text-sm font-semibold text-cyan-400 mb-2">Assurance:</h4>
-                <div className="flex items-center space-x-2 text-xs text-gray-300">
-                  <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                  <span>99.99% uptime SLA • SOC 2-ready controls • Privacy-first</span>
-                </div>
-              </div>
-
-              {/* Market Position */}
-              <div className="mb-4">
-                <h4 className="text-sm font-semibold text-cyan-400 mb-2">Market Position:</h4>
-                <div className="p-3 bg-gray-800/50 rounded-lg border border-gray-700/50">
-                  <p className="text-xs text-gray-300 mb-2">{service.marketPosition}</p>
-                  <div className="grid grid-cols-1 gap-2 text-xs">
-                    <div className="flex justify-between">
-                      <span className="text-gray-400">Market Size:</span>
-                      <span className="text-blue-400">{service.marketSize}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-400">Growth Rate:</span>
-                      <span className="text-green-400">{service.growthRate}</span>
-                    </div>
+              <div className="space-y-4">
+                {/* Technology Stack */}
+                <div>
+                  <h4 className="text-sm font-semibold text-gray-300 mb-2">Technology Stack</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {service.technology.map((tech, index) => (
+                      <span
+                        key={index}
+                        className="px-2 py-1 bg-gray-800/50 text-gray-300 text-xs rounded-md border border-gray-600/50"
+                      >
+                        {tech}
+                      </span>
+                    ))}
                   </div>
                 </div>
-              </div>
 
-              {/* Competitive Advantages */}
-              <div className="mb-4">
-                <h4 className="text-sm font-semibold text-cyan-400 mb-2">Competitive Advantages:</h4>
-                <div className="space-y-1">
-                  {service.competitors.map((competitor, index) => (
-                    <div key={index} className="flex items-center space-x-2 text-xs text-gray-300">
-                      <Check className="w-3 h-3 text-green-400 flex-shrink-0" />
-                      <span>Competes with {competitor}</span>
-                    </div>
-                  ))}
+                {/* Use Cases */}
+                <div>
+                  <h4 className="text-sm font-semibold text-gray-300 mb-2">Use Cases</h4>
+                  <div className="grid grid-cols-1 gap-1">
+                    {service.useCases.map((useCase, index) => (
+                      <div key={index} className="text-sm text-gray-400 flex items-center space-x-2">
+                        <div className="w-1.5 h-1.5 bg-purple-400 rounded-full" />
+                        <span>{useCase}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
 
-              {/* Learn More Button */}
-              <div className="text-center">
-                <Button
-                  href={service.link || `/services/${service.id}`}
-                  className="w-full bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white py-2 px-4 rounded-lg text-sm font-semibold transition-all duration-300"
-                >
-                  <ExternalLink className="w-3 h-3 mr-2" />
-                  Learn More & Get Started
-                </Button>
+                {/* Competitors */}
+                <div>
+                  <h4 className="text-sm font-semibold text-gray-300 mb-2">Competitors</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {service.competitors.map((competitor, index) => (
+                      <span
+                        key={index}
+                        className="px-2 py-1 bg-red-900/20 text-red-300 text-xs rounded-md border border-red-500/20"
+                      >
+                        {competitor}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
             </motion.div>
           )}
         </AnimatePresence>
       </div>
+
+      {/* Hover Effects */}
+      <motion.div
+        className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-400/20 via-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+        animate={{
+          background: isHovered ? [
+            "radial-gradient(circle at 20% 20%, rgba(0, 255, 255, 0.1) 0%, transparent 50%)",
+            "radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%)",
+            "radial-gradient(circle at 20% 20%, rgba(0, 255, 255, 0.1) 0%, transparent 50%)"
+          ] : "radial-gradient(circle at 50% 50%, rgba(0, 255, 255, 0.05) 0%, transparent 50%)"
+        }}
+        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+      />
     </motion.div>
   );
-}
+};
+
+export default UltraFuturisticServiceCard;

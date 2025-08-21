@@ -19,7 +19,7 @@ export default function AIGuardrailsPage() {
 	];
 
 	return (
-		<UltraFuturisticBackground variant="quantum" intensity="high">
+		<UltraFuturisticBackground variant="quantum" intensity={1.5}>
 			<Head>
 				<title>AI Guardrails Platform | Zion Tech Group</title>
 				<meta name="description" content="Safety and compliance for AI. PII redaction, toxicity and jailbreak detection, policy enforcement with audit logs." />

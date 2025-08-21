@@ -29,7 +29,7 @@ export default function ServicesIndexPage() {
   }
 
   return (
-    <UltraFuturisticBackground variant="quantum" intensity="high">
+    <UltraFuturisticBackground variant="quantum" intensity={1.5}>
       <Head>
         <title>Services | Zion Tech Group</title>
         <meta name="description" content="Browse 350+ real micro SaaS, IT, and AI services with transparent pricing and fast onboarding." />

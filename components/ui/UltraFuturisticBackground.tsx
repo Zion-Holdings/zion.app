@@ -3,13 +3,13 @@ import React, { useEffect, useRef } from 'react';
 interface UltraFuturisticBackgroundProps {
   children: React.ReactNode;
   variant?: 'default' | 'quantum' | 'holographic' | 'neural' | 'cyberpunk' | 'space';
-  intensity?: 'low' | 'medium' | 'high';
+  intensity?: number;
 }
 
 const UltraFuturisticBackground: React.FC<UltraFuturisticBackgroundProps> = ({
   children,
   variant = 'default',
-  intensity = 'medium'
+  intensity = 1
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number | null>(null);
@@ -44,7 +44,7 @@ const UltraFuturisticBackground: React.FC<UltraFuturisticBackgroundProps> = ({
     // Initialize particles based on variant
     const initParticles = () => {
       particles.length = 0;
-      const particleCount = intensity === 'high' ? 200 : intensity === 'medium' ? 120 : 60;
+      const particleCount = Math.floor(intensity * 100);
       
       for (let i = 0; i < particleCount; i++) {
         particles.push({
@@ -79,7 +79,7 @@ const UltraFuturisticBackground: React.FC<UltraFuturisticBackgroundProps> = ({
 
     // Quantum entanglement effect
     const createQuantumEntanglement = () => {
-      if (variant === 'quantum' && intensity !== 'low') {
+      if (variant === 'quantum' && intensity > 0.5) {
         for (let i = 0; i < particles.length; i += 2) {
           if (i + 1 < particles.length) {
             const p1 = particles[i];
@@ -215,7 +215,7 @@ const UltraFuturisticBackground: React.FC<UltraFuturisticBackgroundProps> = ({
         ctx.fill();
         
         // Add glow effect
-        if (intensity !== 'low') {
+        if (intensity > 0.5) {
           ctx.shadowColor = particle.color;
           ctx.shadowBlur = particle.size * 2;
           ctx.fill();
@@ -233,7 +233,7 @@ const UltraFuturisticBackground: React.FC<UltraFuturisticBackgroundProps> = ({
       createSpaceNebula();
       
       // Add floating geometric shapes
-      if (intensity !== 'low') {
+              if (intensity > 0.5) {
         const time = Date.now() * 0.001;
         
         // Floating triangles
@@ -300,7 +300,7 @@ const UltraFuturisticBackground: React.FC<UltraFuturisticBackgroundProps> = ({
         />
         
         {/* Animated light rays */}
-        {intensity !== 'low' && (
+        {intensity > 0.5 && (
           <div className="absolute inset-0">
             {[...Array(5)].map((_, i) => (
               <div

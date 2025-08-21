@@ -58,7 +58,7 @@ export default function ServiceFallbackPage() {
   }
 
   return (
-    <UltraFuturisticBackground variant="quantum" intensity="high">
+    <UltraFuturisticBackground variant="quantum" intensity={1.5}>
       <Head>
         <title>{service.name} | Zion Tech Group</title>
         <meta name="description" content={service.tagline || service.description} />

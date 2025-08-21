@@ -15,7 +15,7 @@ const posts = [
 
 export default function BlogIndexPage() {
   return (
-    <UltraFuturisticBackground variant="quantum" intensity="medium">
+    <UltraFuturisticBackground variant="quantum" intensity={1}>
       <Head>
         <title>Blog | Zion Tech Group</title>
         <meta name="description" content="Insights on AI, cloud, automation, and platform engineering." />
