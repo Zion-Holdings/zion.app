@@ -8,6 +8,7 @@ import UltraFuturisticServiceCard from '../components/ui/UltraFuturisticServiceC
 import Card from '../components/ui/Card';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices, serviceCategories } from '../data/enhanced-real-micro-saas-services';
+import { extraServices } from '../data/extra-services';
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -28,7 +29,7 @@ export default function ServicesPage() {
   }, [router.query.category, router.query.cat]);
 
   const filteredServices = useMemo(() => {
-    let filtered = enhancedRealMicroSaasServices.slice();
+    let filtered = enhancedRealMicroSaasServices.concat(extraServices).slice();
 
     if (selectedCategory) {
       filtered = filtered.filter(s => s.category === selectedCategory);
@@ -207,7 +208,7 @@ export default function ServicesPage() {
       {/* Results */}
       <section className="py-10 px-4">
         <div className="container mx-auto">
-          <div className="mb-6 text-gray-300">Showing <span className="text-white font-semibold">{filteredServices.length}</span> of <span className="text-white font-semibold">{enhancedRealMicroSaasServices.length}</span> services</div>
+          <div className="mb-6 text-gray-300">Showing <span className="text-white font-semibold">{filteredServices.length}</span> of <span className="text-white font-semibold">{enhancedRealMicroSaasServices.length + extraServices.length}</span> services</div>
 
           {viewMode === 'grid' ? (
             <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
