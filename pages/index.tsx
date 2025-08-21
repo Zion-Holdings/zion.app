@@ -224,15 +224,15 @@ export default function HomePage() {
     ...emergingTechBreakthroughs2029V3,
     ...aiAutonomousEcosystem2029V2,
     ...futuristicAIServices2031,
-    ...quantumEmergingTechServices2031,
-    ...enterpriseITServices2031,
-    ...innovativeMicroSaasServices2031,
-    ...researchDevelopmentServices2031,
-    ...spaceMetaverseServices2031,
-    // Add new 2032 services
-    ...futuristicInnovations2032,
-    ...enterpriseInnovations2032,
-    ...healthcareInnovations2032
+            ...quantumEmergingTechServices2031,
+            ...enterpriseITServices2031,
+            ...innovativeMicroSaasServices2031,
+            ...researchDevelopmentServices2031,
+            ...spaceMetaverseServices2031,
+            // Add new 2032 services
+            ...futuristicInnovations2032,
+            ...enterpriseInnovations2032,
+            ...healthcareInnovations2032
   ];
 
   // Adapt services to the expected interface
