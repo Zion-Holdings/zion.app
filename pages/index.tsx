@@ -44,6 +44,10 @@ import { emergingTech2026ServicesV2 } from '../data/emerging-tech-2026-services-
 import { enterpriseIT2026ServicesV2 } from '../data/enterprise-it-2026-services-v2';
 import { revolutionary2026Innovations } from '../data/revolutionary-2026-innovations';
 import { nextGenAI2026Services } from '../data/next-gen-ai-2026-services';
+import { revolutionary2026AIServices } from '../data/revolutionary-2026-ai-services';
+import { emergingTech2026Innovations } from '../data/emerging-tech-2026-innovations';
+import { enterpriseIT2026Comprehensive } from '../data/enterprise-it-2026-comprehensive';
+import { comprehensiveMicroSaas2026 } from '../data/comprehensive-micro-saas-2026';
 
 export default function HomePage() {
   const contactInfo = {
@@ -87,7 +91,11 @@ export default function HomePage() {
     ...emergingTech2026ServicesV2,
     ...enterpriseIT2026ServicesV2,
     ...revolutionary2026Innovations,
-    ...nextGenAI2026Services
+    ...nextGenAI2026Services,
+    ...revolutionary2026AIServices,
+    ...emergingTech2026Innovations,
+    ...enterpriseIT2026Comprehensive,
+    ...comprehensiveMicroSaas2026
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);
