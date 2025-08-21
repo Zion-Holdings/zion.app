@@ -175,7 +175,7 @@ export default function AutonomousContentGeneration() {
                 <a href="https://www.linkedin.com/sharing/share-offsite/" className="px-4 py-2 bg-blue-800 hover:bg-blue-900 rounded-lg text-white transition-colors" target="_blank" rel="noopener noreferrer">
                   LinkedIn
                 </a>
-                <a href="mailto:?subject=Interesting%20Read%20from%20Zion%20Tech&body=Check%20out%20this%20article:%20https://zion.app/blog/autonomous-content-generation" className="px-4 py-2 bg-green-600 hover:bg-green-700 rounded-lg text-white transition-colors">
+                <a href="mailto:?subject=Interesting%20Read%20from%20Zion%20Tech&body=Check%20out%20this%20article:%20https://ziontechgroup.com/blog/autonomous-content-generation" className="px-4 py-2 bg-green-600 hover:bg-green-700 rounded-lg text-white transition-colors">
                   Email
                 </a>
               </div>
