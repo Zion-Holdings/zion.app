@@ -1,5 +1,8 @@
 import React, { useMemo } from 'react';
 import Head from 'next/head';
+import { GetStaticPaths, GetStaticProps } from 'next';
+import fs from 'fs';
+import path from 'path';
 import { useRouter } from 'next/router';
 import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
 import Button from '../components/ui/Button';
@@ -13,6 +16,12 @@ import { quantumSpaceServices } from '../data/quantum-space-services';
 import { enterpriseITServices } from '../data/enterprise-it-services';
 import { newRealServices } from '../data/new-real-services';
 import { marketReadyServices } from '../data/market-ready-services';
+import { nextGenerationAIServices } from '../data/next-generation-ai-services';
+import { emergingTechnologyServices } from '../data/emerging-technology-services';
+import { comprehensiveITSolutions } from '../data/comprehensive-it-solutions';
+import { marketValidatedServices } from '../data/market-validated-services';
+import { newRealInnovations } from '../data/new-real-innovations';
+import { realMarketServices } from '../data/real-market-services';
 
 export default function ServiceFallbackPage() {
   const router = useRouter();
@@ -132,4 +141,87 @@ export default function ServiceFallbackPage() {
     </UltraFuturisticBackground>
   );
 }
+
+// Static export support: generate root-level pages for service slugs
+type Svc = typeof enhancedRealMicroSaasServices[number];
+
+function collectAllServices(): Svc[] {
+  return enhancedRealMicroSaasServices
+    .concat(
+      extraServices as Svc[],
+      additionalEnhancedServices as Svc[],
+      innovativeAIServices as Svc[],
+      quantumSpaceServices as Svc[],
+      enterpriseITServices as Svc[],
+      newRealServices as Svc[],
+      marketReadyServices as Svc[],
+      nextGenerationAIServices as Svc[],
+      emergingTechnologyServices as Svc[],
+      comprehensiveITSolutions as Svc[],
+      marketValidatedServices as Svc[],
+      newRealInnovations as Svc[],
+      realMarketServices as Svc[]
+    );
+}
+
+function normalizeSlug(value: string): string {
+  return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+}
+
+function extractRootSlugFromLink(link?: string): string | null {
+  if (!link) return null;
+  try {
+    const url = new URL(link);
+    const path = url.pathname.replace(/^\/+|\/+$/g, '');
+    // Accept root-level slugs like "/ai-energy-management"; ignore nested like "services/..."
+    if (path && !path.includes('/')) return path;
+    return null;
+  } catch {
+    return null;
+  }
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const services = collectAllServices();
+  const candidateSlugs = new Set<string>();
+
+  for (const s of services) {
+    const fromLink = extractRootSlugFromLink((s as any).link);
+    if (fromLink) {
+      candidateSlugs.add(fromLink);
+    } else if (s.id) {
+      candidateSlugs.add(normalizeSlug(s.id));
+    } else if (s.name) {
+      candidateSlugs.add(normalizeSlug(s.name));
+    }
+  }
+
+  // Exclude any slugs that already exist as top-level pages to avoid conflicts
+  const pagesDir = path.join(process.cwd(), 'pages');
+  const entries = fs.readdirSync(pagesDir, { withFileTypes: true });
+  const reserved = new Set<string>();
+  for (const entry of entries) {
+    if (entry.isFile() && entry.name.endsWith('.tsx')) {
+      const base = entry.name.replace(/\.tsx$/, '');
+      // ignore special files
+      if (['_app', '_document', 'index', '[slug]'].includes(base)) continue;
+      reserved.add(base);
+    }
+    if (entry.isDirectory()) {
+      reserved.add(entry.name); // directories like services, blog, etc.
+    }
+  }
+
+  const finalSlugs: string[] = Array.from(candidateSlugs).filter((s) => !reserved.has(s));
+
+  return {
+    paths: finalSlugs.map((slug) => ({ params: { slug } })),
+    fallback: false
+  };
+};
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  // no specific props needed; page resolves on client using slug mapping
+  return { props: {} };
+};
 
