@@ -105,7 +105,7 @@ export default function ServicesPage() {
       <div className="min-h-screen">
         <Head>
           <title>Complete Services Portfolio | Zion Tech Group - AI, Cloud, Security & More</title>
-          <meta name="description" content="Explore our complete portfolio of 250+ micro SaaS services. AI solutions, cloud infrastructure, cybersecurity, data analytics, IoT, blockchain, and emerging technologies." />
+          <meta name="description" content="Explore our complete portfolio of 300+ micro SaaS services. AI solutions, cloud infrastructure, cybersecurity, data analytics, IoT, blockchain, and emerging technologies." />
           <meta name="keywords" content="AI services, cloud solutions, cybersecurity, data analytics, IoT platform, blockchain, quantum computing, AR/VR, micro SaaS, business automation" />
           <meta name="author" content="Zion Tech Group" />
           <meta property="og:title" content="Complete Services Portfolio | Zion Tech Group" />
@@ -125,7 +125,7 @@ export default function ServicesPage() {
                   Complete Technology Portfolio
                 </div>
                 <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent">
-                  250+ Revolutionary
+                  300+ Revolutionary
                   <span className="block bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
                     Micro SaaS Services
                   </span>
@@ -139,11 +139,11 @@ export default function ServicesPage() {
               {/* Service Stats */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-cyan-400 mb-2">250+</div>
+                  <div className="text-3xl font-bold text-cyan-400 mb-2">300+</div>
                   <div className="text-sm text-gray-400">Services</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-purple-400 mb-2">20</div>
+                  <div className="text-3xl font-bold text-purple-400 mb-2">21</div>
                   <div className="text-sm text-gray-400">Categories</div>
                 </div>
                 <div className="text-center">

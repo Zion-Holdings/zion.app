@@ -399,6 +399,94 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* Premium Services Showcase */}
+      <section className="py-20 bg-gradient-to-br from-gray-900 to-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-6">
+              Our Premium Services
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Experience the future with our most advanced and innovative micro SaaS solutions.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card variant="glass" size="lg" className="text-center group hover:scale-105 transition-transform duration-300">
+              <div className="text-5xl mb-4">⚛️</div>
+              <h3 className="text-xl font-bold text-white mb-2">Quantum AI Optimizer</h3>
+              <p className="text-gray-300 mb-4">$299/month - 10x faster AI training</p>
+              <div className="text-sm text-gray-400 mb-4">
+                Revolutionary quantum AI optimization with 500% average ROI
+              </div>
+              <Button href="/services?category=AI%20%26%20Machine%20Learning" variant="secondary" size="sm">
+                Learn More
+              </Button>
+            </Card>
+
+            <Card variant="glass" size="lg" className="text-center group hover:scale-105 transition-transform duration-300">
+              <div className="text-5xl mb-4">🧬</div>
+              <h3 className="text-xl font-bold text-white mb-2">Quantum AI Synthetic Biology</h3>
+              <p className="text-gray-300 mb-4">$1,299/month - 100x faster drug discovery</p>
+              <div className="text-sm text-gray-400 mb-4">
+                AI-driven synthetic biology platform with 1200% average ROI
+              </div>
+              <Button href="/services?category=Biomedical%20%26%20Healthcare" variant="secondary" size="sm">
+                Learn More
+              </Button>
+            </Card>
+
+            <Card variant="glass" size="lg" className="text-center group hover:scale-105 transition-transform duration-300">
+              <div className="text-5xl mb-4">💰</div>
+              <h3 className="text-xl font-bold text-white mb-2">Quantum Financial Trading</h3>
+              <p className="text-gray-300 mb-4">$2,999/month - 100x faster trading</p>
+              <div className="text-sm text-gray-400 mb-4">
+                Quantum-powered algorithmic trading with 2000% average ROI
+              </div>
+              <Button href="/services?category=Financial%20Technology" variant="secondary" size="sm">
+                Learn More
+              </Button>
+            </Card>
+
+            <Card variant="glass" size="lg" className="text-center group hover:scale-105 transition-transform duration-300">
+              <div className="text-5xl mb-4">🌐</div>
+              <h3 className="text-xl font-bold text-white mb-2">Quantum Internet Infrastructure</h3>
+              <p className="text-gray-300 mb-4">$1,599/month - Unbreakable security</p>
+              <div className="text-sm text-gray-400 mb-4">
+                Next-generation quantum-secured internet with 1500% average ROI
+              </div>
+              <Button href="/services?category=Emerging%20Technologies" variant="secondary" size="sm">
+                Learn More
+              </Button>
+            </Card>
+
+            <Card variant="glass" size="lg" className="text-center group hover:scale-105 transition-transform duration-300">
+              <div className="text-5xl mb-4">🏰</div>
+              <h3 className="text-xl font-bold text-white mb-2">Quantum Cybersecurity Fortress</h3>
+              <p className="text-gray-300 mb-4">$1,199/month - Future-proof security</p>
+              <div className="text-sm text-gray-400 mb-4">
+                Quantum-resistant cybersecurity with 900% average ROI
+              </div>
+              <Button href="/services?category=Cybersecurity" variant="secondary" size="sm">
+                Learn More
+              </Button>
+            </Card>
+
+            <Card variant="glass" size="lg" className="text-center group hover:scale-105 transition-transform duration-300">
+              <div className="text-5xl mb-4">🚗</div>
+              <h3 className="text-xl font-bold text-white mb-2">AI Autonomous Vehicle Platform</h3>
+              <p className="text-gray-300 mb-4">$1,499/month - 99.9% safety rating</p>
+              <div className="text-sm text-gray-400 mb-4">
+                Next-generation autonomous vehicle AI with 1200% average ROI
+              </div>
+              <Button href="/services?category=Transportation%20%26%20Logistics" variant="secondary" size="sm">
+                Learn More
+              </Button>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-br from-blue-900 to-purple-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

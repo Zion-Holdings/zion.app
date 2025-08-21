@@ -422,3 +422,278 @@ body {
     box-shadow: none !important;
   }
 }
+
+/* Advanced Futuristic Effects */
+
+/* Quantum Particle System */
+.quantum-particles {
+  position: relative;
+  overflow: hidden;
+}
+
+.quantum-particles::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(147, 51, 234, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(16, 185, 129, 0.3) 0%, transparent 50%);
+  animation: quantumFloat 20s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes quantumFloat {
+  0%, 100% { 
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 0.3;
+  }
+  25% { 
+    transform: translate(10px, -10px) rotate(90deg) scale(1.1);
+    opacity: 0.6;
+  }
+  50% { 
+    transform: translate(-5px, 15px) rotate(180deg) scale(0.9);
+    opacity: 0.8;
+  }
+  75% { 
+    transform: translate(15px, 5px) rotate(270deg) scale(1.05);
+    opacity: 0.5;
+  }
+}
+
+/* Holographic Glow Effect */
+.holographic-glow {
+  position: relative;
+}
+
+.holographic-glow::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, 
+    #ff0080, #ff8c00, #40e0d0, #ee82ee, #ff0080);
+  background-size: 400% 400%;
+  border-radius: inherit;
+  z-index: -1;
+  animation: holographicShift 3s ease infinite;
+  filter: blur(8px);
+  opacity: 0.7;
+}
+
+@keyframes holographicShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Neural Network Animation */
+.neural-network {
+  position: relative;
+}
+
+.neural-network::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(90deg, transparent 49%, rgba(59, 130, 246, 0.3) 50%, transparent 51%),
+    linear-gradient(0deg, transparent 49%, rgba(147, 51, 234, 0.3) 50%, transparent 51%);
+  background-size: 20px 20px;
+  animation: neuralPulse 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes neuralPulse {
+  0%, 100% { 
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+/* Advanced Hover Effects */
+.futuristic-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.futuristic-hover:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    0 20px 40px rgba(59, 130, 246, 0.3),
+    0 0 0 1px rgba(59, 130, 246, 0.1);
+}
+
+/* Quantum Entanglement Effect */
+.quantum-entangled {
+  position: relative;
+}
+
+.quantum-entangled::before,
+.quantum-entangled::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid transparent;
+  border-radius: inherit;
+  background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899) border-box;
+  background-size: 200% 200%;
+  animation: quantumEntangle 6s ease infinite;
+  z-index: -1;
+}
+
+.quantum-entangled::after {
+  animation-delay: -3s;
+  filter: blur(4px);
+  opacity: 0.5;
+}
+
+@keyframes quantumEntangle {
+  0%, 100% { 
+    background-position: 0% 0%;
+    transform: rotate(0deg);
+  }
+  25% { 
+    background-position: 100% 0%;
+    transform: rotate(90deg);
+  }
+  50% { 
+    background-position: 100% 100%;
+    transform: rotate(180deg);
+  }
+  75% { 
+    background-position: 0% 100%;
+    transform: rotate(270deg);
+  }
+}
+
+/* Futuristic Text Glow */
+.futuristic-text-glow {
+  text-shadow: 
+    0 0 10px currentColor,
+    0 0 20px currentColor,
+    0 0 30px currentColor;
+  animation: textGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes textGlow {
+  from { 
+    text-shadow: 
+      0 0 10px currentColor,
+      0 0 20px currentColor,
+      0 0 30px currentColor;
+  }
+  to { 
+    text-shadow: 
+      0 0 20px currentColor,
+      0 0 30px currentColor,
+      0 0 40px currentColor;
+  }
+}
+
+/* Advanced Card Hover */
+.futuristic-card-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.futuristic-card-hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.1), 
+    transparent);
+  transition: left 0.5s ease;
+}
+
+.futuristic-card-hover:hover::before {
+  left: 100%;
+}
+
+/* Quantum State Transition */
+.quantum-transition {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.quantum-transition:hover {
+  transform: perspective(1000px) rotateX(10deg) rotateY(10deg) translateZ(20px);
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(59, 130, 246, 0.2);
+}
+
+/* Futuristic Loading Animation */
+.futuristic-loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.futuristic-loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(59, 130, 246, 0.2), 
+    transparent);
+  animation: loadingSweep 1.5s ease-in-out infinite;
+}
+
+@keyframes loadingSweep {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Enhanced Responsive Animations */
+@media (max-width: 768px) {
+  .quantum-particles::before {
+    animation-duration: 15s;
+  }
+  
+  .holographic-glow::after {
+    filter: blur(4px);
+  }
+  
+  .neural-network::before {
+    background-size: 15px 15px;
+  }
+}
+
+/* Performance Optimizations for Animations */
+@media (prefers-reduced-motion: reduce) {
+  .quantum-particles::before,
+  .holographic-glow::after,
+  .neural-network::before,
+  .quantum-entangled::before,
+  .quantum-entangled::after {
+    animation: none;
+  }
+  
+  .futuristic-hover:hover {
+    transform: none;
+  }
+  
+  .quantum-transition:hover {
+    transform: none;
+  }
+}
