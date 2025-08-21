@@ -152,7 +152,7 @@ export default function EnhancedServicesShowcase() {
   ];
 
   return (
-    <UltraAdvancedFuturisticMatrixBackground intensity="high" colorScheme="quantum">
+    <UltraAdvancedFuturisticMatrixBackground intensity="high"       colorScheme="quantum">
       <div className="min-h-screen">
         <Head>
           <title>Enhanced Services Showcase - Zion Tech Group | 600+ Revolutionary Solutions</title>
