@@ -3,7 +3,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shield, Mail, MapPin, Rocket } from 'lucide-react';
 import Button from '../components/ui/Button';
-import EnhancedFuturisticBackground from '../components/ui/EnhancedFuturisticBackground';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
 import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
@@ -24,6 +25,8 @@ import { realOperationalServices } from '../data/real-operational-services';
 import { newOperationalServices2025 } from '../data/new-operational-services-2025';
 import { innovative2025Services } from '../data/innovative-2025-services';
 import { emergingTech2025Services } from '../data/emerging-tech-2025-services';
+import { revolutionary2025Services } from '../data/revolutionary-2025-services';
+import { nextGenInnovations2025 } from '../data/next-gen-innovations-2025';
 
 export default function HomePage() {
   const contactInfo = {
@@ -51,7 +54,9 @@ export default function HomePage() {
     ...newOperationalServices2025,
     ...verifiedRealServices2025Batch2,
     ...innovative2025Services,
-    ...emergingTech2025Services
+    ...emergingTech2025Services,
+    ...revolutionary2025Services,
+    ...nextGenInnovations2025
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);
@@ -59,35 +64,41 @@ export default function HomePage() {
   // Service statistics
   const serviceStats = {
     totalServices: allServices.length,
-    aiServices: nextGenerationAIServices.length + innovativeAIServices.length + realMarketServices.filter(s => s.category.includes('AI')).length,
-    emergingTech: emergingTechnologyServices.length,
+    aiServices: nextGenerationAIServices.length + innovativeAIServices.length + realMarketServices.filter(s => s.category.includes('AI')).length + revolutionary2025Services.filter(s => s.category.includes('AI')).length + nextGenInnovations2025.filter(s => s.category.includes('AI')).length,
+    emergingTech: emergingTechnologyServices.length + emergingTech2025Services.length,
     itSolutions: comprehensiveITSolutions.length + enterpriseITServices.length,
-    microSaas: enhancedRealMicroSaasServices.length + innovativeMicroSaasServices.length
+    microSaas: enhancedRealMicroSaasServices.length + innovativeMicroSaasServices.length,
+    revolutionaryServices: revolutionary2025Services.length + nextGenInnovations2025.length
   };
 
   return (
-    <EnhancedFuturisticBackground 
-      intensity="high" 
-      colorScheme="quantum"
-      particleCount={200}
-      animationSpeed={1.2}
+    <UltraAdvancedFuturisticBackground 
+      intensity="extreme" 
+      colorScheme="quantum-fusion"
+      particleCount={500}
+      animationSpeed={2.0}
+      enableHolographic={true}
+      enableQuantumEffects={true}
     >
       <div className="min-h-screen">
         <Head>
-          <title>Zion Tech Group - Revolutionary AI, Quantum & IT Services | 800+ Solutions</title>
-          <meta name="description" content="Zion Tech Group offers 800+ revolutionary AI, quantum computing, and IT services. Achieve 1000% ROI with our cutting-edge solutions. Contact: +1 302 464 0950" />
-          <meta name="keywords" content="AI services, quantum computing, IT services, micro SaaS, cybersecurity, cloud migration, neural interface, quantum internet, blockchain, metaverse, IoT, edge computing" />
+          <title>Zion Tech Group - Revolutionary AI, Quantum & IT Services | 1000+ Solutions</title>
+          <meta name="description" content="Zion Tech Group offers 1000+ revolutionary AI, quantum computing, and IT services. Achieve 1000% ROI with our cutting-edge solutions. Contact: +1 302 464 0950" />
+          <meta name="keywords" content="AI services, quantum computing, IT services, micro SaaS, cybersecurity, cloud migration, neural interface, quantum internet, blockchain, metaverse, IoT, edge computing, consciousness simulation, quantum brain interface" />
           <meta name="author" content="Zion Tech Group" />
           <meta name="robots" content="index, follow" />
           <meta property="og:title" content="Zion Tech Group - Revolutionary AI, Quantum & IT Services" />
-          <meta property="og:description" content="800+ cutting-edge services with 1000% ROI guarantee. Contact: +1 302 464 0950" />
+          <meta property="og:description" content="1000+ cutting-edge services with 1000% ROI guarantee. Contact: +1 302 464 0950" />
           <meta property="og:url" content="https://ziontechgroup.com" />
           <meta property="og:type" content="website" />
           <link rel="canonical" href="https://ziontechgroup.com" />
         </Head>
 
+        {/* Ultra Advanced Navigation */}
+        <UltraAdvancedNavigation />
+
         {/* Hero Section */}
-        <section className="relative z-10 pt-20 pb-16 px-4 sm:px-6 lg:px-8">
+        <section className="relative z-10 pt-32 pb-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -135,7 +146,7 @@ export default function HomePage() {
                 transition={{ duration: 0.8, delay: 0.5 }}
                 className="text-lg md:text-xl text-gray-400 mb-12 max-w-4xl mx-auto leading-relaxed"
               >
-                <span className="text-cyan-300 font-semibold">800+</span> cutting-edge services delivering <span className="text-green-400 font-bold">1000% ROI</span>. From neural quantum brain interfaces to enterprise IT infrastructure.
+                <span className="text-cyan-300 font-semibold">1000+</span> cutting-edge services delivering <span className="text-green-400 font-bold">1000% ROI</span>. From AI consciousness simulation to quantum space mining, we're building the future.
               </motion.p>
               
               {/* Enhanced CTA Buttons */}
@@ -157,7 +168,7 @@ export default function HomePage() {
                   >
                     <span className="flex items-center">
                       <Rocket className="mr-3 w-6 h-6" />
-                      Explore 800+ Services
+                      Explore 1000+ Services
                       <ArrowRight className="ml-3 w-5 h-5" />
                     </span>
                   </Button>
@@ -624,6 +635,6 @@ export default function HomePage() {
           </div>
         </section>
       </div>
-    </EnhancedFuturisticBackground>
+    </UltraAdvancedFuturisticBackground>
   );
 }
