@@ -25,6 +25,7 @@ import { comprehensiveITSolutions } from '../data/comprehensive-it-solutions';
 import { curatedMarketServices } from '../data/curated-market-services';
 import { realMarketServices } from '../data/real-market-services';
 import { new2025Services } from '../data/new-2025-services';
+import { real2025Additions } from '../data/real-2025-additions';
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -49,7 +50,8 @@ export default function ServicesPage() {
     ...comprehensiveITSolutions,
     ...curatedMarketServices,
     ...realMarketServices,
-    ...new2025Services
+    ...new2025Services,
+    ...real2025Additions
   ];
 
   // Dynamic category counts mapped to the same filter logic below

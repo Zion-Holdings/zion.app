@@ -16,6 +16,7 @@ import { innovativeMicroSaasServices } from '../data/innovative-micro-saas-servi
 import { innovativeAIServices } from '../data/innovative-ai-services';
 import { quantumSpaceServices } from '../data/quantum-space-services';
 import { enterpriseITServices } from '../data/enterprise-it-services';
+import { real2025Additions } from '../data/real-2025-additions';
 import { professionalServices } from '../data/professional-services';
 import { nextGenerationAIServices } from '../data/next-generation-ai-services';
 import { emergingTechnologyServices } from '../data/emerging-technology-services';
@@ -42,7 +43,8 @@ export default function HomePage() {
     ...nextGenerationAIServices,
     ...emergingTechnologyServices,
     ...comprehensiveITSolutions,
-    ...realMarketServices
+    ...realMarketServices,
+    ...real2025Additions
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);

@@ -26,6 +26,9 @@ const UltraAdvancedNavigation: React.FC = () => {
 			{ name: 'Quantum', href: '/quantum-cloud-infrastructure', icon: Atom, description: 'Quantum & space' },
 			{ name: 'Enterprise IT', href: '/it-services', icon: Building2, description: 'Cloud, DevOps, Security' },
 			{ name: 'Services', href: '/services', icon: Monitor, description: 'Directory of services' },
+			{ name: 'Features', href: '/features', description: 'Capabilities & benefits' },
+			{ name: 'Pricing', href: '/pricing', description: 'Plans & tiers' },
+			{ name: 'Services Advertising', href: '/services-advertising', description: 'Offers & promos' },
 			{ name: 'Market Pricing', href: '/market-pricing', icon: DollarSign, description: 'Vendor references' },
 			{ name: 'Contact', href: '/contact' }
 		];

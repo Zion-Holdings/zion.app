@@ -490,7 +490,6 @@ export default function EnhancedServicesShowcase() {
                 <h3 className="text-2xl font-bold text-white mb-2">No services found</h3>
                 <p className="text-gray-400 mb-6">Try adjusting your search criteria or browse all categories</p>
                 <Button 
-                  href="#"
                   onClick={() => {
                     setSearchTerm('');
                     setSelectedCategory('all');
