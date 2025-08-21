@@ -136,68 +136,7 @@ export default function HomePage() {
     },
   ];
 
-  const innovativeServices = [
-    {
-      name: 'Quantum AI Optimizer',
-      description: 'Next-generation AI optimization using quantum algorithms',
-      price: '$299/month',
-      category: 'AI & Quantum Computing',
-      icon: '⚛️',
-      color: 'from-cyan-500 to-blue-600',
-      link: 'https://ziontechgroup.com/quantum-ai-optimizer',
-      variant: 'quantum-holographic' as const
-    },
-    {
-      name: 'AI Biomedical Research',
-      description: 'Revolutionary AI-powered drug discovery platform',
-      price: '$899/month',
-      category: 'Biomedical & Healthcare',
-      icon: '🧬',
-      color: 'from-green-500 to-emerald-600',
-      link: 'https://ziontechgroup.com/ai-biomedical-research',
-      variant: 'holographic' as const
-    },
-    {
-      name: 'Quantum Financial Modeling',
-      description: 'Quantum-powered financial analytics and risk assessment',
-      price: '$699/month',
-      category: 'Financial Technology',
-      icon: '💰',
-      color: 'from-yellow-500 to-orange-600',
-      link: 'https://ziontechgroup.com/quantum-financial-modeling',
-      variant: 'quantum' as const
-    },
-    {
-      name: 'AI Climate Prediction',
-      description: 'Advanced AI-powered climate modeling and prediction',
-      price: '$599/month',
-      category: 'Climate & Environment',
-      icon: '🌍',
-      color: 'from-teal-500 to-cyan-600',
-      link: 'https://ziontechgroup.com/ai-climate-prediction',
-      variant: 'neural' as const
-    },
-    {
-      name: 'AI Autonomous Vehicles',
-      description: 'Next-generation autonomous vehicle intelligence',
-      price: '$999/month',
-      category: 'Transportation & Logistics',
-      icon: '🚗',
-      color: 'from-blue-500 to-indigo-600',
-      link: 'https://ziontechgroup.com/ai-autonomous-vehicle',
-      variant: 'cyberpunk' as const
-    },
-    {
-      name: 'Quantum Supply Chain',
-      description: 'Quantum-powered supply chain optimization',
-      price: '$799/month',
-      category: 'Manufacturing & Industry 4.0',
-      icon: '📦',
-      color: 'from-orange-500 to-red-600',
-      link: 'https://ziontechgroup.com/quantum-supply-chain',
-      variant: 'quantum-holographic' as const
-    }
-  ];
+
 
   const marketInsights = [
     {
@@ -223,6 +162,63 @@ export default function HomePage() {
       label: 'Smart Energy Market',
       description: '150% annual growth rate',
       icon: <Leaf className="w-6 h-6" />
+    }
+  ];
+
+  const innovativeServices = [
+    {
+      name: 'Quantum AI Cognitive Platform',
+      description: 'Next-generation cognitive computing with quantum AI for unprecedented problem-solving capabilities.',
+      icon: '🧠',
+      price: '$1,299/month',
+      category: 'Quantum Computing',
+      variant: 'quantum-advanced',
+      link: 'https://ziontechgroup.com/quantum-ai-cognitive'
+    },
+    {
+      name: 'Autonomous AI Factory',
+      description: 'Complete autonomous manufacturing system powered by AI that runs 24/7 with zero human intervention.',
+      icon: '🏭',
+      price: '$2,499/month',
+      category: 'Manufacturing & Industry 4.0',
+      variant: 'holographic-advanced',
+      link: 'https://ziontechgroup.com/autonomous-ai-factory'
+    },
+    {
+      name: 'Quantum Cybersecurity Fortress',
+      description: 'Unbreakable quantum-resistant security using quantum-resistant encryption and AI-powered threat detection.',
+      icon: '🛡️',
+      price: '$1,599/month',
+      category: 'Cybersecurity',
+      variant: 'cyberpunk',
+      link: 'https://ziontechgroup.com/quantum-cybersecurity'
+    },
+    {
+      name: 'Biomedical AI Research Platform',
+      description: 'AI-powered biomedical breakthroughs accelerating drug discovery, disease diagnosis, and medical research.',
+      icon: '🧬',
+      price: '$899/month',
+      category: 'Biomedical & Healthcare',
+      variant: 'neural-quantum',
+      link: 'https://ziontechgroup.com/biomedical-ai-research'
+    },
+    {
+      name: 'Climate AI Prediction Engine',
+      description: 'Predicting climate patterns and extreme weather events with unprecedented accuracy using quantum AI.',
+      icon: '🌍',
+      price: '$699/month',
+      category: 'Climate & Environment',
+      variant: 'quantum-holographic',
+      link: 'https://ziontechgroup.com/climate-ai-prediction'
+    },
+    {
+      name: 'Quantum Financial Trading Platform',
+      description: 'Quantum-powered algorithmic trading with real-time market analysis and predictive modeling.',
+      icon: '💰',
+      price: '$1,999/month',
+      category: 'Financial Technology',
+      variant: 'quantum-cyberpunk',
+      link: 'https://ziontechgroup.com/quantum-financial-trading'
     }
   ];
 
@@ -296,22 +292,35 @@ export default function HomePage() {
               </div>
 
               {/* Contact Info */}
-              <div className="mt-12 p-6 bg-gradient-to-r from-gray-800/50 to-gray-900/50 rounded-2xl backdrop-blur-sm border border-gray-700/50">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                  <div className="flex flex-col items-center">
+              <div className="mt-12 p-8 bg-gradient-to-r from-gray-800/50 to-gray-900/50 rounded-2xl backdrop-blur-sm border border-gray-700/50">
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-bold text-white mb-2">Ready to Transform Your Business?</h3>
+                  <p className="text-gray-300">Get in touch with our experts today for a free consultation</p>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center mb-6">
+                  <div className="flex flex-col items-center p-4 rounded-xl bg-gradient-to-br from-blue-500/20 to-blue-600/20 border border-blue-500/30">
                     <Phone className="w-6 h-6 text-blue-400 mb-2" />
                     <div className="text-sm text-gray-400">Mobile</div>
                     <div className="text-white font-semibold">{contactInfo.mobile}</div>
+                    <div className="text-xs text-blue-400 mt-1">Available 24/7</div>
                   </div>
-                  <div className="flex flex-col items-center">
+                  <div className="flex flex-col items-center p-4 rounded-xl bg-gradient-to-br from-green-500/20 to-green-600/20 border border-green-500/30">
                     <Mail className="w-6 h-6 text-green-400 mb-2" />
                     <div className="text-sm text-gray-400">Email</div>
                     <div className="text-white font-semibold">{contactInfo.email}</div>
+                    <div className="text-xs text-green-400 mt-1">Response within 2 hours</div>
                   </div>
-                  <div className="flex flex-col items-center">
+                  <div className="flex flex-col items-center p-4 rounded-xl bg-gradient-to-br from-purple-500/20 to-purple-600/20 border border-purple-500/30">
                     <MapPin className="w-6 h-6 text-purple-400 mb-2" />
                     <div className="text-sm text-gray-400">Address</div>
                     <div className="text-white font-semibold text-sm">{contactInfo.address}</div>
+                    <div className="text-xs text-purple-400 mt-1">Global headquarters</div>
+                  </div>
+                </div>
+                <div className="text-center">
+                  <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full text-white font-semibold text-sm">
+                    <Globe className="w-4 h-4 mr-2" />
+                    Visit us at: {contactInfo.website}
                   </div>
                 </div>
               </div>
@@ -368,7 +377,7 @@ export default function HomePage() {
               {innovativeServices.map((service, index) => (
                 <EnhancedFuturisticCard
                   key={index}
-                  variant={service.variant}
+                  variant={service.variant as any}
                   intensity="high"
                   className="h-full group cursor-pointer"
                   interactive={true}

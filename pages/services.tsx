@@ -458,12 +458,13 @@ export default function ServicesPage() {
             >
               <div className="text-center">
                 <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                  Ready to Get Started?
+                  Ready to Transform Your Business?
                 </h2>
                 <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                  Contact our team to discuss your specific needs and find the perfect solution for your business.
+                  Contact our team to discuss your specific needs and find the perfect solution for your business. 
+                  Get a free consultation and start your 14-day trial today.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
                   <Button href="/contact" variant="primary" size="lg">
                     Get Free Consultation
                     <ArrowRight className="w-5 h-5 ml-2" />
@@ -472,8 +473,37 @@ export default function ServicesPage() {
                     View Pricing
                   </Button>
                 </div>
-                <div className="mt-6 text-sm text-gray-400">
-                  Free 14-day trial • No credit card required • Expert support included
+                <div className="mt-6 text-sm text-gray-400 mb-8">
+                  Free 14-day trial • No credit card required • Expert support included • 99.9% uptime guarantee
+                </div>
+                
+                {/* Contact Information */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                  <div className="flex flex-col items-center p-4 rounded-xl bg-gradient-to-br from-blue-500/20 to-blue-600/20 border border-blue-500/30">
+                    <Phone className="w-6 h-6 text-blue-400 mb-2" />
+                    <div className="text-sm text-gray-400">Mobile</div>
+                    <div className="text-white font-semibold">{contactInfo.mobile}</div>
+                    <div className="text-xs text-blue-400 mt-1">Available 24/7</div>
+                  </div>
+                  <div className="flex flex-col items-center p-4 rounded-xl bg-gradient-to-br from-green-500/20 to-green-600/20 border border-green-500/30">
+                    <Mail className="w-6 h-6 text-green-400 mb-2" />
+                    <div className="text-sm text-gray-400">Email</div>
+                    <div className="text-white font-semibold">{contactInfo.email}</div>
+                    <div className="text-xs text-green-400 mt-1">Response within 2 hours</div>
+                  </div>
+                  <div className="flex flex-col items-center p-4 rounded-xl bg-gradient-to-br from-purple-500/20 to-purple-600/20 border border-purple-500/30">
+                    <MapPin className="w-6 h-6 text-purple-400 mb-2" />
+                    <div className="text-sm text-gray-400">Address</div>
+                    <div className="text-white font-semibold text-sm">{contactInfo.address}</div>
+                    <div className="text-xs text-purple-400 mt-1">Global headquarters</div>
+                  </div>
+                </div>
+                
+                <div className="mt-6 text-center">
+                  <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full text-white font-semibold text-sm">
+                    <Globe className="w-4 h-4 mr-2" />
+                    Visit us at: {contactInfo.website}
+                  </div>
                 </div>
               </div>
             </EnhancedFuturisticCard>

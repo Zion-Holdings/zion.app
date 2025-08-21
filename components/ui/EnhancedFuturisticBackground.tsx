@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 
 interface EnhancedFuturisticBackgroundProps {
   children: React.ReactNode;
-  variant?: 'neural' | 'quantum' | 'holographic' | 'cyberpunk' | 'quantum-advanced' | 'holographic-advanced' | 'quantum-holographic' | 'neural-quantum' | 'quantum-cyberpunk' | 'holographic-neural' | 'quantum-holographic-advanced';
+  variant?: 'neural' | 'quantum' | 'holographic' | 'cyberpunk' | 'quantum-advanced' | 'holographic-advanced' | 'quantum-holographic' | 'neural-quantum' | 'quantum-cyberpunk' | 'holographic-neural' | 'quantum-holographic-advanced' | 'quantum-matrix' | 'neural-cyberpunk' | 'holographic-quantum' | 'quantum-neural-advanced' | 'cyberpunk-holographic' | 'quantum-space' | 'ai-futuristic' | 'quantum-entanglement' | 'holographic-matrix' | 'neural-quantum-cyberpunk';
   intensity?: 'low' | 'medium' | 'high';
   className?: string;
 }
@@ -111,6 +111,26 @@ const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> 
           return `hsl(${180 + Math.sin(time * 0.03) * 140}, 85%, 70%)`;
         case 'quantum-holographic-advanced':
           return `hsl(${260 + Math.sin(time * 0.05) * 220}, 98%, 85%)`;
+        case 'quantum-matrix':
+          return `hsl(${120 + Math.sin(time * 0.04) * 100}, 85%, 65%)`;
+        case 'neural-cyberpunk':
+          return `hsl(${320 + Math.sin(time * 0.06) * 140}, 90%, 70%)`;
+        case 'holographic-quantum':
+          return `hsl(${200 + Math.sin(time * 0.035) * 160}, 95%, 75%)`;
+        case 'quantum-neural-advanced':
+          return `hsl(${250 + Math.sin(time * 0.045) * 180}, 92%, 80%)`;
+        case 'cyberpunk-holographic':
+          return `hsl(${340 + Math.sin(time * 0.055) * 120}, 95%, 70%)`;
+        case 'quantum-space':
+          return `hsl(${220 + Math.sin(time * 0.065) * 200}, 88%, 75%)`;
+        case 'ai-futuristic':
+          return `hsl(${180 + Math.sin(time * 0.075) * 240}, 90%, 80%)`;
+        case 'quantum-entanglement':
+          return `hsl(${280 + Math.sin(time * 0.085) * 160}, 95%, 85%)`;
+        case 'holographic-matrix':
+          return `hsl(${140 + Math.sin(time * 0.095) * 180}, 92%, 70%)`;
+        case 'neural-quantum-cyberpunk':
+          return `hsl(${300 + Math.sin(time * 0.105) * 220}, 98%, 90%)`;
         default:
           return `hsl(${200 + Math.sin(time * 0.01) * 60}, 70%, 60%)`;
       }
