@@ -69,4 +69,11 @@ export type ServiceVariant =
   | 'quantum-security'
   | 'quantum-ai-interface'
   | 'ai-autonomous-vehicles'
-  | 'quantum-iot-revolutionary';
+  | 'quantum-iot-revolutionary'
+  | 'space-futuristic'
+  | 'consulting-futuristic'
+  | 'api-futuristic'
+  | 'integration-futuristic'
+  | 'monitoring-futuristic'
+  | 'backup-futuristic'
+  | 'analytics-futuristic';

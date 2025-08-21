@@ -27,6 +27,9 @@ import { innovative2025Services } from '../data/innovative-2025-services';
 import { emergingTech2025Services } from '../data/emerging-tech-2025-services';
 import { revolutionary2025Services } from '../data/revolutionary-2025-services';
 import { nextGenInnovations2025 } from '../data/next-gen-innovations-2025';
+import { revolutionary2025Innovations } from '../data/revolutionary-2025-innovations';
+import { emergingTech2025Innovations } from '../data/emerging-tech-2025-innovations';
+import { enterpriseIT2025Services } from '../data/enterprise-it-2025-services';
 
 export default function HomePage() {
   const contactInfo = {
@@ -56,7 +59,10 @@ export default function HomePage() {
     ...innovative2025Services,
     ...emergingTech2025Services,
     ...revolutionary2025Services,
-    ...nextGenInnovations2025
+    ...nextGenInnovations2025,
+    ...revolutionary2025Innovations,
+    ...emergingTech2025Innovations,
+    ...enterpriseIT2025Services
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);
@@ -64,11 +70,14 @@ export default function HomePage() {
   // Service statistics
   const serviceStats = {
     totalServices: allServices.length,
-    aiServices: nextGenerationAIServices.length + innovativeAIServices.length + realMarketServices.filter(s => s.category.includes('AI')).length + revolutionary2025Services.filter(s => s.category.includes('AI')).length + nextGenInnovations2025.filter(s => s.category.includes('AI')).length,
-    emergingTech: emergingTechnologyServices.length + emergingTech2025Services.length,
-    itSolutions: comprehensiveITSolutions.length + enterpriseITServices.length,
+    aiServices: nextGenerationAIServices.length + innovativeAIServices.length + realMarketServices.filter(s => s.category.includes('AI')).length + revolutionary2025Services.filter(s => s.category.includes('AI')).length + nextGenInnovations2025.filter(s => s.category.includes('AI')).length + revolutionary2025Innovations.filter(s => s.category.includes('AI')).length + emergingTech2025Innovations.filter(s => s.category.includes('AI')).length,
+    emergingTech: emergingTechnologyServices.length + emergingTech2025Services.length + emergingTech2025Innovations.length,
+    itSolutions: comprehensiveITSolutions.length + enterpriseITServices.length + enterpriseIT2025Services.length,
     microSaas: enhancedRealMicroSaasServices.length + innovativeMicroSaasServices.length,
-    revolutionaryServices: revolutionary2025Services.length + nextGenInnovations2025.length
+    revolutionaryServices: revolutionary2025Services.length + nextGenInnovations2025.length + revolutionary2025Innovations.length,
+    quantumServices: quantumSpaceServices.length + revolutionary2025Innovations.filter(s => s.category.includes('Quantum')).length + emergingTech2025Innovations.filter(s => s.category.includes('Quantum')).length,
+    blockchainServices: emergingTech2025Innovations.filter(s => s.category.includes('Blockchain')).length,
+    spaceTech: emergingTech2025Innovations.filter(s => s.category.includes('Space')).length
   };
 
   return (
@@ -144,10 +153,35 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
-                className="text-lg md:text-xl text-gray-400 mb-12 max-w-4xl mx-auto leading-relaxed"
+                className="text-lg md:text-xl text-gray-400 mb-8 max-w-4xl mx-auto leading-relaxed"
               >
-                <span className="text-cyan-300 font-semibold">1000+</span> cutting-edge services delivering <span className="text-green-400 font-bold">1000% ROI</span>. From AI consciousness simulation to quantum space mining, we're building the future.
+                <span className="text-cyan-300 font-semibold">{serviceStats.totalServices}+</span> cutting-edge services delivering <span className="text-green-400 font-bold">1000% ROI</span>. From AI consciousness simulation to quantum space mining, we're building the future.
               </motion.p>
+              
+              {/* Service Statistics Grid */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.55 }}
+                className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 max-w-4xl mx-auto"
+              >
+                <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                  <div className="text-2xl font-bold text-cyan-400">{serviceStats.aiServices}+</div>
+                  <div className="text-sm text-gray-300">AI Services</div>
+                </div>
+                <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                  <div className="text-2xl font-bold text-purple-400">{serviceStats.quantumServices}+</div>
+                  <div className="text-sm text-gray-300">Quantum Solutions</div>
+                </div>
+                <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                  <div className="text-2xl font-bold text-green-400">{serviceStats.itSolutions}+</div>
+                  <div className="text-sm text-gray-300">IT Solutions</div>
+                </div>
+                <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                  <div className="text-2xl font-bold text-pink-400">{serviceStats.emergingTech}+</div>
+                  <div className="text-sm text-gray-300">Emerging Tech</div>
+                </div>
+              </motion.div>
               
               {/* Enhanced CTA Buttons */}
               <motion.div 
@@ -168,7 +202,7 @@ export default function HomePage() {
                   >
                     <span className="flex items-center">
                       <Rocket className="mr-3 w-6 h-6" />
-                      Explore 1000+ Services
+                      Explore {serviceStats.totalServices}+ Services
                       <ArrowRight className="ml-3 w-5 h-5" />
                     </span>
                   </Button>
@@ -229,6 +263,200 @@ export default function HomePage() {
                   </motion.div>
                 ))}
               </motion.div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Latest Innovations Showcase */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 via-transparent to-cyan-900/20"></div>
+          <div className="max-w-7xl mx-auto relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
+                  2025 Revolutionary Innovations
+                </span>
+              </h2>
+              <p className="text-gray-300 text-xl max-w-3xl mx-auto leading-relaxed">
+                Experience the future with our latest AI, quantum, and emerging technology breakthroughs
+              </p>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* AI Business Intelligence */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.02, y: -5 }}
+                className="group p-6 bg-gradient-to-br from-blue-900/40 to-indigo-900/40 border border-blue-700/50 rounded-2xl hover:border-blue-500/60 hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 relative overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative z-10">
+                  <div className="text-4xl mb-4">📊</div>
+                  <h3 className="text-xl font-bold text-white mb-3">AI Business Intelligence Suite</h3>
+                  <p className="text-gray-300 text-sm mb-4">Transform data into actionable business insights with AI-powered analytics and predictive modeling.</p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-2xl font-bold text-blue-400">$299</span>
+                    <span className="text-gray-400 text-sm">/month</span>
+                  </div>
+                  <div className="mt-4">
+                    <Button href="/ai-business-intelligence" variant="primary" size="sm" className="w-full">
+                      Learn More
+                    </Button>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Quantum Cybersecurity */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.02, y: -5 }}
+                className="group p-6 bg-gradient-to-br from-purple-900/40 to-pink-900/40 border border-purple-700/50 rounded-2xl hover:border-purple-500/60 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 relative overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative z-10">
+                  <div className="text-4xl mb-4">🔒</div>
+                  <h3 className="text-xl font-bold text-white mb-3">Quantum Cybersecurity Platform</h3>
+                  <p className="text-gray-300 text-sm mb-4">Next-generation security powered by quantum computing for unbreakable encryption.</p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-2xl font-bold text-purple-400">$599</span>
+                    <span className="text-gray-400 text-sm">/month</span>
+                  </div>
+                  <div className="mt-4">
+                    <Button href="/quantum-cybersecurity" variant="primary" size="sm" className="w-full">
+                      Learn More
+                    </Button>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Blockchain Infrastructure */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.02, y: -5 }}
+                className="group p-6 bg-gradient-to-br from-emerald-900/40 to-teal-900/40 border border-emerald-700/50 rounded-2xl hover:border-emerald-500/60 hover:shadow-2xl hover:shadow-emerald-500/20 transition-all duration-300 relative overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative z-10">
+                  <div className="text-4xl mb-4">⛓️</div>
+                  <h3 className="text-xl font-bold text-white mb-3">Blockchain Infrastructure Platform</h3>
+                  <p className="text-gray-300 text-sm mb-4">Enterprise-grade blockchain infrastructure and development for Web3 applications.</p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-2xl font-bold text-emerald-400">$499</span>
+                    <span className="text-gray-400 text-sm">/month</span>
+                  </div>
+                  <div className="mt-4">
+                    <Button href="/blockchain-infrastructure" variant="primary" size="sm" className="w-full">
+                      Learn More
+                    </Button>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Space Technology */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.02, y: -5 }}
+                className="group p-6 bg-gradient-to-br from-indigo-900/40 to-purple-900/40 border border-indigo-700/50 rounded-2xl hover:border-indigo-500/60 hover:shadow-2xl hover:shadow-indigo-500/20 transition-all duration-300 relative overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative z-10">
+                  <div className="text-4xl mb-4">🚀</div>
+                  <h3 className="text-xl font-bold text-white mb-3">Space Technology Platform</h3>
+                  <p className="text-gray-300 text-sm mb-4">Revolutionary space technology solutions for satellite management and space analytics.</p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-2xl font-bold text-indigo-400">$899</span>
+                    <span className="text-gray-400 text-sm">/month</span>
+                  </div>
+                  <div className="mt-4">
+                    <Button href="/space-technology" variant="primary" size="sm" className="w-full">
+                      Learn More
+                    </Button>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Metaverse Development */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.02, y: -5 }}
+                className="group p-6 bg-gradient-to-br from-pink-900/40 to-rose-900/40 border border-pink-700/50 rounded-2xl hover:border-pink-500/60 hover:shadow-2xl hover:shadow-pink-500/20 transition-all duration-300 relative overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-pink-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative z-10">
+                  <div className="text-4xl mb-4">🌍</div>
+                  <h3 className="text-xl font-bold text-white mb-3">Metaverse Development Platform</h3>
+                  <p className="text-gray-300 text-sm mb-4">Build the future of digital experiences with immersive 3D worlds and VR/AR.</p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-2xl font-bold text-pink-400">$299</span>
+                    <span className="text-gray-400 text-sm">/month</span>
+                  </div>
+                  <div className="mt-4">
+                    <Button href="/metaverse-development" variant="primary" size="sm" className="w-full">
+                      Learn More
+                    </Button>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Enterprise IT Services */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.02, y: -5 }}
+                className="group p-6 bg-gradient-to-br from-gray-800/40 to-slate-900/40 border border-gray-700/50 rounded-2xl hover:border-gray-500/60 hover:shadow-2xl hover:shadow-gray-500/20 transition-all duration-300 relative overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-gray-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative z-10">
+                  <div className="text-4xl mb-4">🏢</div>
+                  <h3 className="text-xl font-bold text-white mb-3">Enterprise IT Solutions</h3>
+                  <p className="text-gray-300 text-sm mb-4">Comprehensive enterprise solutions including cloud migration, cybersecurity, and DevOps.</p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-2xl font-bold text-gray-400">From $599</span>
+                    <span className="text-gray-400 text-sm">/month</span>
+                  </div>
+                  <div className="mt-4">
+                    <Button href="/enterprise-it" variant="primary" size="sm" className="w-full">
+                      Learn More
+                    </Button>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.7 }}
+              viewport={{ once: true }}
+              className="text-center mt-12"
+            >
+              <Button href="/services" variant="secondary" size="lg" className="group">
+                View All {serviceStats.totalServices}+ Services
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
             </motion.div>
           </div>
         </section>
@@ -631,6 +859,94 @@ export default function HomePage() {
                   Customer satisfaction: <span className="text-cyan-400 font-semibold">98.7%</span>
                 </div>
               </motion.div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Contact Information Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-gray-900/50 to-gray-800/50">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                  Get Started Today
+                </span>
+              </h2>
+              <p className="text-gray-300 text-xl max-w-3xl mx-auto leading-relaxed">
+                Ready to transform your business with cutting-edge technology? Contact our experts for a free consultation.
+              </p>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
+                className="text-center p-8 bg-gradient-to-br from-cyan-900/40 to-blue-900/40 border border-cyan-700/50 rounded-2xl hover:border-cyan-500/60 hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300"
+              >
+                <div className="text-4xl mb-4">📱</div>
+                <h3 className="text-xl font-bold text-white mb-3">Phone</h3>
+                <p className="text-cyan-400 text-lg font-semibold mb-2">+1 302 464 0950</p>
+                <p className="text-gray-300 text-sm">Available 24/7 for urgent inquiries</p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="text-center p-8 bg-gradient-to-br from-purple-900/40 to-pink-900/40 border border-purple-700/50 rounded-2xl hover:border-purple-500/60 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300"
+              >
+                <div className="text-4xl mb-4">✉️</div>
+                <h3 className="text-xl font-bold text-white mb-3">Email</h3>
+                <p className="text-purple-400 text-lg font-semibold mb-2">kleber@ziontechgroup.com</p>
+                <p className="text-gray-300 text-sm">Response within 2 hours</p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="text-center p-8 bg-gradient-to-br from-green-900/40 to-emerald-900/40 border border-green-700/50 rounded-2xl hover:border-green-500/60 hover:shadow-2xl hover:shadow-green-500/20 transition-all duration-300"
+              >
+                <div className="text-4xl mb-4">📍</div>
+                <h3 className="text-xl font-bold text-white mb-3">Address</h3>
+                <p className="text-green-400 text-lg font-semibold mb-2">364 E Main St STE 1008</p>
+                <p className="text-gray-300 text-sm">Middletown DE 19709</p>
+              </motion.div>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="text-center mt-12"
+            >
+              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 max-w-2xl mx-auto">
+                <h3 className="text-2xl font-bold text-white mb-4">Ready to Get Started?</h3>
+                <p className="text-gray-300 mb-6">
+                  Join thousands of businesses already transforming their operations with our cutting-edge solutions.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button href="/contact" variant="primary" size="lg" className="group">
+                    <Phone className="mr-2 h-5 w-5" />
+                    Free Consultation
+                  </Button>
+                  <Button href="/services" variant="secondary" size="lg" className="group">
+                    <ArrowRight className="mr-2 h-5 w-5" />
+                    Explore Services
+                  </Button>
+                </div>
+              </div>
             </motion.div>
           </div>
         </section>
