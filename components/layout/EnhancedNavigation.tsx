@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Menu, X, ChevronDown, Search, Phone, Mail, MapPin,
-  Brain, Rocket, Dna, Globe, Shield, Wifi, Package,
-  Bot, Car, Building2, DollarSign, Monitor, Users
+  Menu, X, ChevronDown, 
+  Brain, Rocket, Zap, Globe, 
+  Shield, Users, Star, Cpu
 } from 'lucide-react';
-import Link from 'next/link';
 
 const EnhancedNavigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,116 +23,22 @@ const EnhancedNavigation: React.FC = () => {
 
   const navigationItems = [
     {
-      name: 'Home',
-      href: '/',
-      icon: null
-    },
-    {
       name: 'Services',
-      href: '#',
-      icon: null,
+      href: '/services',
+      icon: <Cpu className="w-4 h-4" />,
       dropdown: [
-        {
-          name: 'Quantum AI & Neuroscience',
-          href: '/quantum-ai-brain-computer-interface',
-          icon: Brain,
-          description: 'Direct neural interface with quantum AI'
-        },
-        {
-          name: 'Space Technology',
-          href: '/space-technology',
-          icon: Rocket,
-          description: 'Complete space mission management'
-        },
-        {
-          name: 'Biotech AI',
-          href: '/biotech-ai',
-          icon: Dna,
-          description: 'AI-powered drug discovery platform'
-        },
-        {
-          name: 'Metaverse AI',
-          href: '/metaverse-ai-development-platform',
-          icon: Globe,
-          description: 'AI-powered metaverse creation'
-        },
-        {
-          name: 'Quantum Finance',
-          href: '/quantum-financial-trading-platform',
-          icon: DollarSign,
-          description: 'Quantum AI-powered trading'
-        },
-        {
-          name: 'Quantum Cybersecurity',
-          href: '/quantum-cybersecurity-platform',
-          icon: Shield,
-          description: 'Quantum-resistant security'
-        },
-        {
-          name: 'Quantum IoT',
-          href: '/quantum-iot-platform',
-          icon: Wifi,
-          description: 'Quantum-secured IoT platform'
-        },
-        {
-          name: 'Quantum Logistics',
-          href: '/quantum-logistics-platform',
-          icon: Package,
-          description: 'AI-optimized logistics'
-        },
-        {
-          name: 'Quantum Robotics',
-          href: '/quantum-robotics-platform',
-          icon: Bot,
-          description: 'AI-powered robotics'
-        },
-        {
-          name: 'Autonomous Vehicles',
-          href: '/autonomous-vehicle-ai-platform',
-          icon: Car,
-          description: 'AI-powered autonomous driving'
-        },
-        {
-          name: 'Autonomous Manufacturing',
-          href: '/autonomous-manufacturing-platform',
-          icon: Building2,
-          description: 'AI-powered manufacturing'
-        },
-        {
-          name: 'AI Services',
-          href: '/ai-services',
-          icon: Brain,
-          description: 'LLM, RAG, MLOps solutions'
-        },
-        {
-          name: 'IT Services',
-          href: '/it-services',
-          icon: Monitor,
-          description: 'Cloud, DevOps, SRE'
-        },
-        {
-          name: 'HR & Legal AI',
-          href: '/ai-hr-recruitment-platform',
-          icon: Users,
-          description: 'AI-powered HR and legal'
-        }
+        { name: 'AI & Machine Learning', href: '/services?category=ai-ml', icon: <Brain className="w-4 h-4" /> },
+        { name: 'Quantum Computing', href: '/services?category=quantum', icon: <Zap className="w-4 h-4" /> },
+        { name: 'Space Technology', href: '/services?category=space', icon: <Rocket className="w-4 h-4" /> },
+        { name: 'Emerging Tech', href: '/services?category=emerging', icon: <Star className="w-4 h-4" /> },
+        { name: 'IT Solutions', href: '/services?category=it', icon: <Shield className="w-4 h-4" /> },
+        { name: 'All Services', href: '/services', icon: <Globe className="w-4 h-4" /> }
       ]
     },
-    {
-      name: 'Innovative Services',
-      href: '/innovative-services-showcase',
-      icon: null
-    },
-    {
-      name: 'About',
-      href: '/about',
-      icon: null
-    },
-    {
-      name: 'Contact',
-      href: '/contact',
-      icon: null
-    }
+    { name: 'Solutions', href: '/solutions', icon: <Star className="w-4 h-4" /> },
+    { name: 'About', href: '/about', icon: <Users className="w-4 h-4" /> },
+    { name: 'Resources', href: '/resources', icon: <Brain className="w-4 h-4" /> },
+    { name: 'Contact', href: '/contact', icon: <Globe className="w-4 h-4" /> }
   ];
 
   const contactInfo = {
@@ -142,123 +48,110 @@ const EnhancedNavigation: React.FC = () => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled 
-        ? 'bg-gray-900/95 backdrop-blur-xl border-b border-gray-700/50 shadow-2xl' 
-        : 'bg-transparent'
-    }`}>
+    <motion.nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-black/90 backdrop-blur-xl border-b border-purple-500/30' 
+          : 'bg-transparent'
+      }`}
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="flex justify-between items-center h-16 lg:h-20">
           {/* Logo */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            className="flex-shrink-0"
-          >
-            <Link href="/" className="flex items-center space-x-3">
-              <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-cyan-400 via-purple-400 to-pink-400 rounded-xl flex items-center justify-center">
-                <span className="text-white font-bold text-lg lg:text-xl">Z</span>
-              </div>
-              <div className="hidden sm:block">
-                <div className="text-white font-bold text-xl lg:text-2xl">Zion Tech Group</div>
-                <div className="text-cyan-400 text-xs lg:text-sm">Revolutionary Innovation</div>
-              </div>
-            </Link>
-          </motion.div>
+          <Link href="/" className="flex items-center space-x-3 group">
+            <motion.div
+              className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-xl flex items-center justify-center"
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              transition={{ duration: 0.2 }}
+            >
+              <span className="text-white font-bold text-lg lg:text-xl">Z</span>
+            </motion.div>
+            <div className="hidden sm:block">
+              <h1 className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+                Zion Tech Group
+              </h1>
+              <p className="text-xs text-gray-400">Revolutionary Technology Solutions</p>
+            </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
-            {navigationItems.map((item, index) => (
-              <motion.div
-                key={item.name}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative"
-                onMouseEnter={() => setActiveDropdown(item.name)}
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
+            {navigationItems.map((item) => (
+              <div key={item.name} className="relative group">
                 {item.dropdown ? (
-                  <div className="relative">
-                    <button className="flex items-center space-x-1 text-gray-300 hover:text-white transition-colors duration-200 py-2">
+                  <div
+                    className="flex items-center space-x-1 cursor-pointer text-gray-300 hover:text-white transition-colors duration-200"
+                    onMouseEnter={() => setActiveDropdown(item.name)}
+                    onMouseLeave={() => setActiveDropdown(null)}
+                  >
+                    <span className="flex items-center space-x-2">
+                      {item.icon}
                       <span>{item.name}</span>
-                      <ChevronDown className="w-4 h-4" />
-                    </button>
-                    
-                    <AnimatePresence>
-                      {activeDropdown === item.name && (
-                        <motion.div
-                          initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                          animate={{ opacity: 1, y: 0, scale: 1 }}
-                          exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                          transition={{ duration: 0.2 }}
-                          className="absolute top-full left-0 mt-2 w-80 bg-gray-900/95 backdrop-blur-xl border border-gray-700/50 rounded-2xl shadow-2xl overflow-hidden"
-                        >
-                          <div className="p-4">
-                            <div className="grid grid-cols-1 gap-2">
-                              {item.dropdown.map((dropdownItem) => {
-                                const Icon = dropdownItem.icon;
-                                return (
-                                  <Link
-                                    key={dropdownItem.name}
-                                    href={dropdownItem.href}
-                                    className="flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-800/50 transition-all duration-200 group"
-                                  >
-                                    {Icon && (
-                                      <Icon className="w-5 h-5 text-cyan-400 mt-0.5 flex-shrink-0 group-hover:text-purple-400 transition-colors" />
-                                    )}
-                                    <div>
-                                      <div className="text-white font-medium group-hover:text-cyan-400 transition-colors">
-                                        {dropdownItem.name}
-                                      </div>
-                                      <div className="text-gray-400 text-sm">
-                                        {dropdownItem.description}
-                                      </div>
-                                    </div>
-                                  </Link>
-                                );
-                              })}
-                            </div>
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
+                    </span>
+                    <ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" />
                   </div>
                 ) : (
                   <Link
                     href={item.href}
-                    className="text-gray-300 hover:text-white transition-colors duration-200 py-2"
+                    className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors duration-200"
                   >
-                    {item.name}
+                    {item.icon}
+                    <span>{item.name}</span>
                   </Link>
                 )}
-              </motion.div>
+
+                {/* Dropdown Menu */}
+                {item.dropdown && activeDropdown === item.name && (
+                  <motion.div
+                    className="absolute top-full left-0 mt-2 w-64 bg-black/95 backdrop-blur-xl border border-purple-500/30 rounded-xl shadow-2xl"
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <div className="p-4 space-y-2">
+                      {item.dropdown.map((dropdownItem) => (
+                        <Link
+                          key={dropdownItem.name}
+                          href={dropdownItem.href}
+                          className="flex items-center space-x-3 p-3 rounded-lg text-gray-300 hover:text-white hover:bg-purple-500/20 transition-all duration-200"
+                        >
+                          {dropdownItem.icon}
+                          <span>{dropdownItem.name}</span>
+                        </Link>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </div>
             ))}
-          </div>
 
-          {/* Contact Info - Desktop */}
-          <div className="hidden lg:flex items-center space-x-6">
-            <div className="flex items-center space-x-2 text-cyan-400">
-              <Phone className="w-4 h-4" />
-              <span className="text-sm font-medium">{contactInfo.mobile}</span>
-            </div>
-            <Link
-              href="/contact"
-              className="bg-gradient-to-r from-cyan-600 to-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:from-cyan-700 hover:to-blue-700 transition-all duration-300"
+            {/* Contact Button */}
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              Get Started
-            </Link>
+              <Link
+                href="/contact"
+                className="bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold hover:from-cyan-600 hover:to-purple-700 transition-all duration-200 shadow-lg hover:shadow-purple-500/25"
+              >
+                Get Started
+              </Link>
+            </motion.div>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile Menu Button */}
           <div className="lg:hidden">
-            <button
+            <motion.button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-300 hover:text-white transition-colors duration-200 p-2"
+              className="text-gray-300 hover:text-white transition-colors duration-200"
+              whileTap={{ scale: 0.95 }}
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+            </motion.button>
           </div>
         </div>
       </div>
@@ -267,84 +160,100 @@ const EnhancedNavigation: React.FC = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            className="lg:hidden bg-black/95 backdrop-blur-xl border-t border-purple-500/30"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-gray-900/95 backdrop-blur-xl border-t border-gray-700/50"
           >
             <div className="px-4 py-6 space-y-4">
               {navigationItems.map((item) => (
                 <div key={item.name}>
                   {item.dropdown ? (
                     <div>
-                      <div className="text-gray-400 text-sm font-medium mb-2">{item.name}</div>
-                      <div className="pl-4 space-y-2">
-                        {item.dropdown.slice(0, 6).map((dropdownItem) => {
-                          const Icon = dropdownItem.icon;
-                          return (
+                      <button
+                        onClick={() => setActiveDropdown(activeDropdown === item.name ? null : item.name)}
+                        className="flex items-center justify-between w-full text-left text-gray-300 hover:text-white transition-colors duration-200 p-3 rounded-lg hover:bg-purple-500/20"
+                      >
+                        <span className="flex items-center space-x-2">
+                          {item.icon}
+                          <span>{item.name}</span>
+                        </span>
+                        <ChevronDown 
+                          className={`w-4 h-4 transition-transform duration-200 ${
+                            activeDropdown === item.name ? 'rotate-180' : ''
+                          }`} 
+                        />
+                      </button>
+                      
+                      {activeDropdown === item.name && (
+                        <motion.div
+                          className="ml-6 mt-2 space-y-2"
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          exit={{ opacity: 0, x: -20 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          {item.dropdown.map((dropdownItem) => (
                             <Link
                               key={dropdownItem.name}
                               href={dropdownItem.href}
-                              className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors duration-200 py-1"
+                              className="flex items-center space-x-3 p-3 rounded-lg text-gray-400 hover:text-white hover:bg-purple-500/20 transition-all duration-200"
                               onClick={() => setIsOpen(false)}
                             >
-                              {Icon && <Icon className="w-4 h-4 text-cyan-400" />}
-                              <span className="text-sm">{dropdownItem.name}</span>
+                              {dropdownItem.icon}
+                              <span>{dropdownItem.name}</span>
                             </Link>
-                          );
-                        })}
-                        <Link
-                          href="/innovative-services-showcase"
-                          className="text-cyan-400 hover:text-cyan-300 text-sm font-medium transition-colors duration-200"
-                          onClick={() => setIsOpen(false)}
-                        >
-                          View All Services →
-                        </Link>
-                      </div>
+                          ))}
+                        </motion.div>
+                      )}
                     </div>
                   ) : (
                     <Link
                       href={item.href}
-                      className="block text-gray-300 hover:text-white transition-colors duration-200 py-2"
+                      className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors duration-200 p-3 rounded-lg hover:bg-purple-500/20"
                       onClick={() => setIsOpen(false)}
                     >
-                      {item.name}
+                      {item.icon}
+                      <span>{item.name}</span>
                     </Link>
                   )}
                 </div>
               ))}
-              
-              {/* Mobile Contact Info */}
-              <div className="pt-4 border-t border-gray-700/50">
-                <div className="space-y-3">
-                  <div className="flex items-center space-x-2 text-cyan-400">
-                    <Phone className="w-4 h-4" />
-                    <span className="text-sm">{contactInfo.mobile}</span>
-                  </div>
-                  <div className="flex items-center space-x-2 text-purple-400">
-                    <Mail className="w-4 h-4" />
-                    <span className="text-sm">{contactInfo.email}</span>
-                  </div>
-                  <div className="flex items-center space-x-2 text-green-400">
-                    <MapPin className="w-4 h-4" />
-                    <span className="text-sm text-xs">{contactInfo.address}</span>
-                  </div>
-                </div>
-                
+
+              {/* Mobile Contact Button */}
+              <div className="pt-4">
                 <Link
                   href="/contact"
-                  className="mt-4 block w-full bg-gradient-to-r from-cyan-600 to-blue-600 text-white text-center py-3 rounded-lg font-semibold hover:from-cyan-700 hover:to-blue-700 transition-all duration-300"
+                  className="block w-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold text-center hover:from-cyan-600 hover:to-purple-700 transition-all duration-200"
                   onClick={() => setIsOpen(false)}
                 >
                   Get Started
                 </Link>
               </div>
+
+              {/* Mobile Contact Info */}
+              <div className="pt-6 border-t border-purple-500/30">
+                <div className="space-y-3 text-sm text-gray-400">
+                  <div className="flex items-center space-x-2">
+                    <span className="text-cyan-400">📱</span>
+                    <span>{contactInfo.mobile}</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <span className="text-purple-400">✉️</span>
+                    <span>{contactInfo.email}</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <span className="text-pink-400">📍</span>
+                    <span>{contactInfo.address}</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </motion.nav>
   );
 };
 

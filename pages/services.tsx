@@ -7,12 +7,18 @@ import {
   Monitor, Users, Cpu, Zap, Star, TrendingUp
 } from 'lucide-react';
 import Button from '../components/ui/Button';
-import UltraFuturisticServiceCard from '../components/ui/UltraFuturisticServiceCard';
+import EnhancedServiceCard from '../components/ui/EnhancedServiceCard';
+import EnhancedNavigation from '../components/layout/EnhancedNavigation';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { advancedAIServices } from '../data/advanced-ai-services';
 import { quantumAdvancedServices } from '../data/quantum-advanced-services';
 import { emergingTechServices } from '../data/emerging-tech-services';
 import { spaceTechServices } from '../data/space-tech-services';
+import { innovativeAIServices } from '../data/innovative-ai-services';
+import { quantumInnovationServices } from '../data/quantum-innovation-services';
+import { spaceInnovationServices } from '../data/space-innovation-services';
+import { emergingInnovationServices } from '../data/emerging-innovation-services';
+import { itInnovationServices } from '../data/it-innovation-services';
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -25,7 +31,12 @@ export default function ServicesPage() {
     ...advancedAIServices,
     ...quantumAdvancedServices,
     ...emergingTechServices,
-    ...spaceTechServices
+    ...spaceTechServices,
+    ...innovativeAIServices,
+    ...quantumInnovationServices,
+    ...spaceInnovationServices,
+    ...emergingInnovationServices,
+    ...itInnovationServices
   ];
 
   // Categories for filtering
@@ -80,20 +91,21 @@ export default function ServicesPage() {
 
   return (
     <div className="min-h-screen bg-black text-white">
+      <EnhancedNavigation />
       <Head>
-        <title>500+ Revolutionary Technology Services - Zion Tech Group</title>
-        <meta name="description" content="Explore 500+ revolutionary AI, quantum computing, space technology, and emerging tech services. Transform your business with cutting-edge solutions. Contact: +1 302 464 0950" />
+        <title>800+ Revolutionary Technology Services - Zion Tech Group</title>
+        <meta name="description" content="Explore 800+ revolutionary AI, quantum computing, space technology, IT innovation, and emerging tech services. Transform your business with cutting-edge solutions. Contact: +1 302 464 0950" />
         <meta name="keywords" content="AI services, quantum computing, space technology, micro SaaS, technology solutions, Zion Tech Group" />
         <meta name="author" content="Zion Tech Group" />
-        <meta property="og:title" content="500+ Revolutionary Technology Services - Zion Tech Group" />
-        <meta property="og:description" content="Explore 500+ revolutionary AI, quantum computing, and space technology services." />
+        <meta property="og:title" content="800+ Revolutionary Technology Services - Zion Tech Group" />
+        <meta property="og:description" content="Explore 800+ revolutionary AI, quantum computing, space technology, and IT innovation services." />
         <meta property="og:url" content="https://ziontechgroup.com/services" />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://ziontechgroup.com/services" />
       </Head>
 
       {/* Hero Section */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-900/20 via-blue-900/20 to-cyan-900/20">
+      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-900/20 via-blue-900/20 to-cyan-900/20">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -222,14 +234,11 @@ export default function ServicesPage() {
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {filteredServices.map((service, index) => (
-                  <motion.div
+                  <EnhancedServiceCard
                     key={service.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.05 }}
-                  >
-                    <UltraFuturisticServiceCard service={service} />
-                  </motion.div>
+                    service={service}
+                    index={index}
+                  />
                 ))}
               </div>
             </>

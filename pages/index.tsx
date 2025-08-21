@@ -7,10 +7,11 @@ import {
   ShieldCheck, Globe, Target, Users, Award
 } from 'lucide-react';
 import Button from '../components/ui/Button';
-import AdvancedFuturisticBackground from '../components/ui/AdvancedFuturisticBackground';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 import UltraFuturisticServiceCard from '../components/ui/UltraFuturisticServiceCard';
 import ServiceAds from '../components/sections/ServiceAds';
 import Card from '../components/ui/Card';
+import EnhancedNavigation from '../components/layout/EnhancedNavigation';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
@@ -20,15 +21,20 @@ import { advancedAIServices } from '../data/advanced-ai-services';
 import { quantumAdvancedServices } from '../data/quantum-advanced-services';
 import { emergingTechServices } from '../data/emerging-tech-services';
 import { spaceTechServices } from '../data/space-tech-services';
+import { innovativeAIServices } from '../data/innovative-ai-services';
+import { quantumInnovationServices } from '../data/quantum-innovation-services';
+import { spaceInnovationServices } from '../data/space-innovation-services';
+import { emergingInnovationServices } from '../data/emerging-innovation-services';
+import { itInnovationServices } from '../data/it-innovation-services';
 
 export default function HomePage() {
   const heroStats = [
-    { value: '500+', label: 'Revolutionary Micro SaaS Services', color: 'text-cyan-400', icon: <Cpu className="w-6 h-6" /> },
+    { value: '800+', label: 'Revolutionary Micro SaaS Services', color: 'text-cyan-400', icon: <Cpu className="w-6 h-6" /> },
     { value: '99.99%', label: 'Uptime Guarantee', color: 'text-fuchsia-400', icon: <ShieldCheck className="w-6 h-6" /> },
     { value: '30+', label: 'Day Free Trials', color: 'text-blue-400', icon: <Clock className="w-6 h-6" /> },
     { value: '24/7', label: 'AI Support', color: 'text-green-400', icon: <Brain className="w-6 h-6" /> },
-    { value: '$75B+', label: 'Combined Market Value', color: 'text-yellow-400', icon: <TrendingUp className="w-6 h-6" /> },
-    { value: '1000%+', label: 'Average ROI', color: 'text-purple-400', icon: <DollarSign className="w-6 h-6" /> },
+    { value: '$100B+', label: 'Combined Market Value', color: 'text-yellow-400', icon: <TrendingUp className="w-6 h-6" /> },
+    { value: '1200%+', label: 'Average ROI', color: 'text-purple-400', icon: <DollarSign className="w-6 h-6" /> },
   ];
 
   const contactInfo = {
@@ -140,19 +146,25 @@ export default function HomePage() {
 
   // Combine all services for display
   const allServices = [
-    ...enhancedRealMicroSaasServices.slice(0, 6),
-    ...advancedAIServices.slice(0, 4),
-    ...quantumAdvancedServices.slice(0, 4),
-    ...emergingTechServices.slice(0, 4),
-    ...spaceTechServices.slice(0, 4)
+    ...enhancedRealMicroSaasServices.slice(0, 8),
+    ...advancedAIServices.slice(0, 6),
+    ...quantumAdvancedServices.slice(0, 6),
+    ...emergingTechServices.slice(0, 6),
+    ...spaceTechServices.slice(0, 6),
+    ...innovativeAIServices.slice(0, 6),
+    ...quantumInnovationServices.slice(0, 5),
+    ...spaceInnovationServices.slice(0, 5),
+    ...emergingInnovationServices.slice(0, 5),
+    ...itInnovationServices.slice(0, 6)
   ];
 
   return (
-    <AdvancedFuturisticBackground variant="quantum" intensity={1.2}>
+    <UltraAdvancedFuturisticBackground variant="fusion" intensity={1.5}>
       <div className="min-h-screen bg-black/50 text-white overflow-hidden">
+        <EnhancedNavigation />
         <Head>
           <title>Zion Tech Group - Revolutionary AI, Quantum & Space Technology Solutions</title>
-          <meta name="description" content="Leading provider of revolutionary AI, quantum computing, and space technology solutions. 500+ micro SaaS services with 1000%+ ROI guarantee. Contact: +1 302 464 0950" />
+          <meta name="description" content="Leading provider of revolutionary AI, quantum computing, space technology, and IT innovation solutions. 800+ micro SaaS services with 1200%+ ROI guarantee. Contact: +1 302 464 0950" />
           <meta name="keywords" content="AI, quantum computing, space technology, micro SaaS, technology solutions, Zion Tech Group" />
           <meta name="author" content="Zion Tech Group" />
           <meta property="og:title" content="Zion Tech Group - Revolutionary Technology Solutions" />
@@ -174,8 +186,8 @@ export default function HomePage() {
                 Revolutionary Technology Solutions
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
-                Leading the future with 500+ revolutionary AI, quantum computing, and space technology solutions. 
-                Achieve breakthrough results with our cutting-edge micro SaaS services.
+                Leading the future with 800+ revolutionary AI, quantum computing, space technology, and IT innovation solutions. 
+                Achieve breakthrough results with our cutting-edge micro SaaS services and comprehensive technology portfolio.
               </p>
               
               {/* Contact Information Banner */}
@@ -445,6 +457,6 @@ export default function HomePage() {
           </div>
         </section>
       </div>
-    </AdvancedFuturisticBackground>
+    </UltraAdvancedFuturisticBackground>
   );
 }
