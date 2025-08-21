@@ -26,8 +26,15 @@ const QuantumHolographicCard: React.FC<QuantumHolographicCardProps> = ({
   const [isPressed, setIsPressed] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isClient) return;
+
     const handleMouseMove = (e: MouseEvent) => {
       if (cardRef.current && interactive) {
         const rect = cardRef.current.getBoundingClientRect();
@@ -38,16 +45,16 @@ const QuantumHolographicCard: React.FC<QuantumHolographicCardProps> = ({
       }
     };
 
-    if (interactive) {
+    if (typeof window !== 'undefined') {
       window.addEventListener('mousemove', handleMouseMove);
     }
 
     return () => {
-      if (interactive) {
+      if (typeof window !== 'undefined') {
         window.removeEventListener('mousemove', handleMouseMove);
       }
     };
-  }, [interactive]);
+  }, [interactive, isClient]);
 
   const getVariantStyles = () => {
     switch (variant) {

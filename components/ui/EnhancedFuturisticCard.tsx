@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Zap, Shield, TrendingUp, Star, Clock, Users, Target, Award } from 'lucide-react';
 
 interface EnhancedFuturisticCardProps {
   children: React.ReactNode;
@@ -28,10 +29,15 @@ const EnhancedFuturisticCard: React.FC<EnhancedFuturisticCardProps> = ({
   const [isFocused, setIsFocused] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [isClient, setIsClient] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-  // Particle system for enhanced effects
   useEffect(() => {
-    if (!particleEffect || !canvasRef.current) return;
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isClient || !canvasRef.current) return;
 
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
@@ -50,15 +56,19 @@ const EnhancedFuturisticCard: React.FC<EnhancedFuturisticCardProps> = ({
     }> = [];
 
     const resizeCanvas = () => {
-      if (cardRef.current) {
+      if (typeof window !== 'undefined' && cardRef.current) {
         const rect = cardRef.current.getBoundingClientRect();
-        canvas.width = rect.width;
-        canvas.height = rect.height;
+        if (rect) {
+          canvas.width = rect.width;
+          canvas.height = rect.height;
+        }
       }
     };
 
     resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', resizeCanvas);
+    }
 
     // Initialize particles
     const particleCount = intensity === 'low' ? 20 : intensity === 'medium' ? 40 : 80;
@@ -119,10 +129,12 @@ const EnhancedFuturisticCard: React.FC<EnhancedFuturisticCardProps> = ({
     animate();
 
     return () => {
-      window.removeEventListener('resize', resizeCanvas);
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('resize', resizeCanvas);
+      }
       cancelAnimationFrame(animationFrameId);
     };
-  }, [particleEffect, intensity, theme]);
+  }, [particleEffect, intensity, theme, isClient]);
 
   const getThemeColor = (theme: string): string => {
     const colors = {

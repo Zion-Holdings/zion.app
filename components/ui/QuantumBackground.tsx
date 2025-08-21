@@ -1,22 +1,39 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 interface QuantumBackgroundProps {
+  children: React.ReactNode;
   className?: string;
-  children?: React.ReactNode;
 }
 
-export default function QuantumBackground({ className = '', children }: QuantumBackgroundProps) {
+const QuantumBackground: React.FC<QuantumBackgroundProps> = ({
+  children,
+  className = ''
+}) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
+    setIsClient(true);
+  }, []);
 
+  useEffect(() => {
+    if (!isClient || !canvasRef.current) return;
+
+    const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    const resizeCanvas = () => {
+      if (typeof window !== 'undefined') {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+    };
+
+    resizeCanvas();
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', resizeCanvas);
+    }
 
     // Quantum particle system
     const particles: Particle[] = [];
@@ -190,19 +207,13 @@ export default function QuantumBackground({ className = '', children }: QuantumB
 
     animate();
 
-    // Handle resize
-    const handleResize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-
-    window.addEventListener('resize', handleResize);
-
     return () => {
       cancelAnimationFrame(animationId);
-      window.removeEventListener('resize', handleResize);
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('resize', resizeCanvas);
+      }
     };
-  }, []);
+  }, [isClient]);
 
   return (
     <div className={`relative overflow-hidden ${className}`}>
@@ -215,3 +226,5 @@ export default function QuantumBackground({ className = '', children }: QuantumB
     </div>
   );
 }
+
+export default QuantumBackground;

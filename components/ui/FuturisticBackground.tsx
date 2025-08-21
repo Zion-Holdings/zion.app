@@ -1,17 +1,25 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 interface FuturisticBackgroundProps {
   children: React.ReactNode;
   className?: string;
 }
 
-export default function FuturisticBackground({ children, className = '' }: FuturisticBackgroundProps) {
+const FuturisticBackground: React.FC<FuturisticBackgroundProps> = ({
+  children,
+  className = ''
+}) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
+    setIsClient(true);
+  }, []);
 
+  useEffect(() => {
+    if (!isClient || !canvasRef.current) return;
+
+    const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
@@ -19,8 +27,10 @@ export default function FuturisticBackground({ children, className = '' }: Futur
     let time = 0;
 
     const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      if (typeof window !== 'undefined') {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
     };
 
     const draw = () => {
@@ -104,14 +114,18 @@ export default function FuturisticBackground({ children, className = '' }: Futur
     };
 
     resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', resizeCanvas);
+    }
     draw();
 
     return () => {
-      window.removeEventListener('resize', resizeCanvas);
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('resize', resizeCanvas);
+      }
       cancelAnimationFrame(animationFrameId);
     };
-  }, []);
+  }, [isClient]);
 
   return (
     <div className={`relative overflow-hidden ${className}`}>
@@ -126,3 +140,5 @@ export default function FuturisticBackground({ children, className = '' }: Futur
     </div>
   );
 }
+
+export default FuturisticBackground;
