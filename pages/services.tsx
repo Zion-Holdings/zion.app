@@ -7,10 +7,15 @@ import {
   ArrowRight, Check, Palette, Heart, Truck, GraduationCap
 } from 'lucide-react';
 import Layout from '../components/layout/Layout';
+import UltraFuturisticServiceCardV2 from '../components/ui/UltraFuturisticServiceCardV2';
 import { realMicroSaasServices2025 } from '../data/2025-real-micro-saas-services';
 import { innovativeAIServices2025 } from '../data/2025-innovative-ai-services';
 import { innovativeITServices2025 } from '../data/2025-innovative-it-services';
 import { emergingTechServices2025 } from '../data/2025-emerging-tech-services';
+import { innovativeMicroSaasServicesV2 } from '../data/2025-innovative-micro-saas-v2';
+import { innovativeAIServicesV2 } from '../data/2025-innovative-ai-services-v2';
+import { innovativeITServicesV2 } from '../data/2025-innovative-it-services-v2';
+import { emergingTechServicesV2 } from '../data/2025-emerging-tech-services-v2';
 
 
 
@@ -18,7 +23,11 @@ const allServices = [
   ...realMicroSaasServices2025,
   ...innovativeAIServices2025,
   ...innovativeITServices2025,
-  ...emergingTechServices2025
+  ...emergingTechServices2025,
+  ...innovativeMicroSaasServicesV2,
+  ...innovativeAIServicesV2,
+  ...innovativeITServicesV2,
+  ...emergingTechServicesV2
 ];
 
 const categories = [
@@ -325,74 +334,13 @@ export default function Services() {
               </h2>
 
               {viewMode === 'grid' ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {sortedServices.map((service, index) => (
-                    <motion.div
+                    <UltraFuturisticServiceCardV2
                       key={service.id}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.8, delay: 1 + index * 0.05 }}
-                      className="bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-gray-600/50 transition-all duration-300 hover:transform hover:scale-105 group"
-                    >
-                      {/* Service Header */}
-                      <div className="flex items-start justify-between mb-4">
-                        <div className="flex-1">
-                          <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-200">
-                            {service.name}
-                          </h3>
-                          <p className="text-sm text-gray-400">{service.tagline}</p>
-                        </div>
-                        {service.popular && (
-                          <span className="px-2 py-1 text-xs bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-full">
-                            Popular
-                          </span>
-                        )}
-                      </div>
-
-                      {/* Price */}
-                      <div className="mb-4">
-                        <div className="text-2xl font-bold text-white">${service.price.monthly}</div>
-                        <div className="text-sm text-gray-400">/month • {service.price.trialDays}-day trial</div>
-                      </div>
-
-                      {/* Features */}
-                      <div className="mb-4">
-                        <div className="text-sm text-gray-400 mb-2">Key Features:</div>
-                        <ul className="space-y-1">
-                          {service.features.slice(0, 3).map((feature, idx) => (
-                            <li key={idx} className="text-xs text-gray-300 flex items-center">
-                              <Check className="w-3 h-3 text-green-400 mr-2 flex-shrink-0" />
-                              {feature}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* Stats */}
-                      <div className="grid grid-cols-3 gap-2 mb-4 text-center text-xs">
-                        <div className="bg-gray-800/30 rounded-lg p-2">
-                          <div className="text-cyan-400 font-semibold">{service.rating}/5</div>
-                          <div className="text-gray-400">Rating</div>
-                        </div>
-                        <div className="bg-gray-800/30 rounded-lg p-2">
-                          <div className="text-purple-400 font-semibold">{service.customers}+</div>
-                          <div className="text-gray-400">Customers</div>
-                        </div>
-                        <div className="bg-gray-800/30 rounded-lg p-2">
-                          <div className="text-green-400 font-semibold">{service.price.setupTime}</div>
-                          <div className="text-gray-400">Setup</div>
-                        </div>
-                      </div>
-
-                      {/* CTA */}
-                      <a
-                        href={service.link}
-                        className="block w-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white py-2 px-4 rounded-lg text-center text-sm font-medium hover:from-cyan-600 hover:to-purple-700 transition-all duration-200 transform hover:scale-105"
-                      >
-                        Learn More
-                        <ArrowRight className="w-4 h-4 inline ml-2" />
-                      </a>
-                    </motion.div>
+                      service={service}
+                      index={index}
+                    />
                   ))}
                 </div>
               ) : (
