@@ -10,6 +10,7 @@ import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowc
 import Enhanced2026ServicesShowcase from '../components/sections/Enhanced2026ServicesShowcase';
 import UltraAdvancedHero2026 from '../components/sections/UltraAdvancedHero2026';
 import Revolutionary2026ServicesShowcase from '../components/sections/Revolutionary2026ServicesShowcase';
+import Revolutionary2026ServicesShowcaseNew from '../components/sections/Revolutionary2026ServicesShowcase';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
@@ -44,6 +45,10 @@ import { emergingTech2026ServicesV2 } from '../data/emerging-tech-2026-services-
 import { enterpriseIT2026ServicesV2 } from '../data/enterprise-it-2026-services-v2';
 import { revolutionary2026Innovations } from '../data/revolutionary-2026-innovations';
 import { nextGenAI2026Services } from '../data/next-gen-ai-2026-services';
+import { revolutionary2026AIServices } from '../data/revolutionary-2026-ai-services';
+import { revolutionary2026ITServices } from '../data/revolutionary-2026-it-services';
+import { revolutionary2026EmergingTechServices } from '../data/revolutionary-2026-emerging-tech';
+import { revolutionary2026MicroSaasServices } from '../data/revolutionary-2026-micro-saas';
 
 export default function HomePage() {
   const contactInfo = {
@@ -87,7 +92,11 @@ export default function HomePage() {
     ...emergingTech2026ServicesV2,
     ...enterpriseIT2026ServicesV2,
     ...revolutionary2026Innovations,
-    ...nextGenAI2026Services
+    ...nextGenAI2026Services,
+    ...revolutionary2026AIServices,
+    ...revolutionary2026ITServices,
+    ...revolutionary2026EmergingTechServices,
+    ...revolutionary2026MicroSaasServices
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);
@@ -95,11 +104,11 @@ export default function HomePage() {
   // Service statistics
   const serviceStats = {
     totalServices: allServices.length,
-    aiServices: nextGenerationAIServices.length + innovativeAIServices.length + realMarketServices.filter(s => s.category.includes('AI')).length + revolutionary2025Services.filter(s => s.category.includes('AI')).length + nextGenInnovations2025.filter(s => s.category.includes('AI')).length + innovative2026Services.filter(s => s.category.includes('AI')).length + emergingTech2026Services.filter(s => s.category.includes('AI')).length + innovative2026MicroSaasServices.filter(s => s.category.includes('AI')).length + innovative2026MicroSaasServicesV2.filter(s => s.category.includes('AI')).length + emergingTech2026ServicesV2.filter(s => s.category.includes('AI')).length + enterpriseIT2026ServicesV2.filter(s => s.category.includes('AI')).length,
-    emergingTech: emergingTechnologyServices.length + emergingTechServices2025.length + emergingTech2026Services.length + emergingTech2026ServicesNew.length + emergingTech2026ServicesV2.length,
-    itSolutions: comprehensiveITSolutions.length + enterpriseITServices.length + enterpriseIT2026Services.length + enterpriseIT2026ServicesNew.length + enterpriseIT2026ServicesV2.length,
-    microSaas: enhancedRealMicroSaasServices.length + innovativeMicroSaasServices.length + innovative2026Services.filter(s => s.category.includes('SaaS')).length + innovative2026MicroSaasServices.length + innovative2026MicroSaasServicesV2.length,
-    revolutionaryServices: revolutionary2025Services.length + nextGenInnovations2025.length + innovative2026Services.length + emergingTech2026Services.length + enterpriseIT2026Services.length + innovative2026MicroSaasServices.length + innovative2026MicroSaasServicesV2.length + emergingTech2026ServicesV2.length + enterpriseIT2026ServicesV2.length,
+    aiServices: nextGenerationAIServices.length + innovativeAIServices.length + realMarketServices.filter(s => s.category.includes('AI')).length + revolutionary2025Services.filter(s => s.category.includes('AI')).length + nextGenInnovations2025.filter(s => s.category.includes('AI')).length + innovative2026Services.filter(s => s.category.includes('AI')).length + emergingTech2026Services.filter(s => s.category.includes('AI')).length + innovative2026MicroSaasServices.filter(s => s.category.includes('AI')).length + innovative2026MicroSaasServicesV2.filter(s => s.category.includes('AI')).length + emergingTech2026ServicesV2.filter(s => s.category.includes('AI')).length + enterpriseIT2026ServicesV2.filter(s => s.category.includes('AI')).length + revolutionary2026AIServices.length,
+    emergingTech: emergingTechnologyServices.length + emergingTechServices2025.length + emergingTech2026Services.length + emergingTech2026ServicesNew.length + emergingTech2026ServicesV2.length + revolutionary2026EmergingTechServices.length,
+    itSolutions: comprehensiveITSolutions.length + enterpriseITServices.length + enterpriseIT2026Services.length + enterpriseIT2026ServicesNew.length + enterpriseIT2026ServicesV2.length + revolutionary2026ITServices.length,
+          microSaas: enhancedRealMicroSaasServices.length + innovativeMicroSaasServices.length + innovative2026Services.filter(s => s.category.includes('SaaS')).length + innovative2026MicroSaasServices.length + innovative2026MicroSaasServicesV2.length + revolutionary2026MicroSaasServices.length,
+      revolutionaryServices: revolutionary2025Services.length + nextGenInnovations2025.length + innovative2026Services.length + emergingTech2026Services.length + enterpriseIT2026Services.length + innovative2026MicroSaasServices.length + innovative2026MicroSaasServicesV2.length + emergingTech2026ServicesV2.length + enterpriseIT2026ServicesV2.length + revolutionary2026AIServices.length + revolutionary2026ITServices.length + revolutionary2026EmergingTechServices.length + revolutionary2026MicroSaasServices.length,
     quantumServices: quantumSpaceServices.length + quantumAIServices2025.filter(s => s.category.includes('Quantum')).length,
     blockchainServices: enterpriseIT2026Services.filter(s => s.category.includes('Blockchain')).length,
     spaceTech: quantumSpaceServices.filter(s => s.category.includes('Space')).length

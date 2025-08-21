@@ -1,22 +1,20 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Brain, Zap, Shield, Rocket, Sparkles, Star, TrendingUp, Globe, Cpu, Lock, Cloud, Atom, Microscope, Satellite, DollarSign, Users, Target, Layers } from 'lucide-react';
-import Link from 'next/link';
-import { revolutionary2026Innovations } from '../../data/revolutionary-2026-innovations';
-import { nextGenAI2026Services } from '../../data/next-gen-ai-2026-services';
+import { ArrowRight, Star, TrendingUp, Zap, Brain, Shield, Globe, Rocket } from 'lucide-react';
+import { revolutionary2026AIServices } from '../../data/revolutionary-2026-ai-services';
+import { revolutionary2026ITServices } from '../../data/revolutionary-2026-it-services';
+import { revolutionary2026EmergingTechServices } from '../../data/revolutionary-2026-emerging-tech';
+import { revolutionary2026MicroSaasServices } from '../../data/revolutionary-2026-micro-saas';
 
-const Revolutionary2026ServicesShowcase = () => {
-  // Combine all revolutionary services
-  const allRevolutionaryServices = [...revolutionary2026Innovations, ...nextGenAI2026Services];
-
-  const categories = [
-    { name: 'AI & Consciousness', count: '2+', icon: Brain, color: 'from-purple-500 to-pink-500' },
-    { name: 'Quantum Technology', count: '4+', icon: Atom, color: 'from-blue-500 to-cyan-500' },
-    { name: 'Space & Innovation', count: '3+', icon: Rocket, color: 'from-yellow-500 to-orange-500' },
-    { name: 'Healthcare AI', count: '2+', icon: Shield, color: 'from-green-500 to-emerald-500' },
-    { name: 'Financial Tech', count: '2+', icon: DollarSign, color: 'from-emerald-500 to-teal-500' },
-    { name: 'Manufacturing AI', count: '2+', icon: Cpu, color: 'from-gray-500 to-slate-500' }
+export default function Revolutionary2026ServicesShowcase() {
+  const allRevolutionaryServices = [
+    ...revolutionary2026AIServices,
+    ...revolutionary2026ITServices,
+    ...revolutionary2026EmergingTechServices,
+    ...revolutionary2026MicroSaasServices
   ];
+
+  const featuredServices = allRevolutionaryServices.filter(service => service.popular).slice(0, 8);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -35,18 +33,19 @@ const Revolutionary2026ServicesShowcase = () => {
       y: 0,
       scale: 1,
       transition: {
-        duration: 0.6,
-        ease: "easeOut" as const
+        duration: 0.5,
+        ease: "easeOut"
       }
     }
   };
 
-  const hoverVariants = {
-    hover: {
-      y: -10,
-      scale: 1.02,
+  const statsVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
       transition: {
-        duration: 0.3,
+        duration: 0.6,
         ease: "easeOut"
       }
     }
@@ -54,180 +53,142 @@ const Revolutionary2026ServicesShowcase = () => {
 
   return (
     <section className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      {/* Advanced Background Effects */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/20 to-cyan-900/20"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-900/10 via-transparent to-cyan-900/10"></div>
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.1),transparent_50%)]"></div>
-        <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_80%,rgba(120,119,198,0.1),transparent_50%)]"></div>
+      {/* Futuristic Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(56,189,248,0.1),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(168,85,247,0.1),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(236,72,153,0.1),transparent_50%)]"></div>
       </div>
-      
+
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Section Header */}
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-600/20 to-cyan-600/20 border border-purple-500/30 rounded-full px-6 py-3 mb-6"
-          >
-            <Sparkles className="w-5 h-5 text-purple-400" />
-            <span className="text-purple-300 font-medium">2026 Revolutionary Innovations</span>
-          </motion.div>
-          
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-8 leading-tight">
+          <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
             <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-              The Future of Technology
+              2026 Revolutionary Services
             </span>
-            <br />
-            <span className="text-white">is Here Today</span>
           </h2>
-          
-          <p className="text-gray-300 text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed">
-            Experience groundbreaking AI, quantum computing, and emerging technology solutions that will transform industries and redefine what's possible.
+          <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+            Experience the future with our cutting-edge AI, quantum computing, and emerging technology services designed to transform your business
           </p>
         </motion.div>
 
-        {/* Service Categories */}
+        {/* Service Statistics */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-16"
+          className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20"
         >
-          {categories.map((category, index) => (
-            <motion.div
-              key={category.name}
-              variants={itemVariants}
-              className="group cursor-pointer"
-            >
-              <div className="relative bg-black/40 backdrop-blur-xl border border-purple-500/20 rounded-2xl p-6 text-center hover:border-purple-500/40 transition-all duration-300">
-                <div className={`w-16 h-16 mx-auto mb-4 bg-gradient-to-br ${category.color} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                  <category.icon className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-white font-semibold mb-2">{category.name}</h3>
-                <p className="text-purple-300 text-sm font-medium">{category.count} Services</p>
-              </div>
-            </motion.div>
-          ))}
+          <motion.div variants={statsVariants} className="text-center group">
+            <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+              <Brain className="w-10 h-10 text-white" />
+            </div>
+            <h3 className="text-3xl font-bold text-white mb-2">{revolutionary2026AIServices.length}+</h3>
+            <p className="text-cyan-300 font-medium">AI Services</p>
+          </motion.div>
+
+          <motion.div variants={statsVariants} className="text-center group">
+            <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+              <Shield className="w-10 h-10 text-white" />
+            </div>
+            <h3 className="text-3xl font-bold text-white mb-2">{revolutionary2026ITServices.length}+</h3>
+            <p className="text-purple-300 font-medium">IT Solutions</p>
+          </motion.div>
+
+          <motion.div variants={statsVariants} className="text-center group">
+            <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+              <Globe className="w-10 h-10 text-white" />
+            </div>
+            <h3 className="text-3xl font-bold text-white mb-2">{revolutionary2026EmergingTechServices.length}+</h3>
+            <p className="text-green-300 font-medium">Emerging Tech</p>
+          </motion.div>
+
+          <motion.div variants={statsVariants} className="text-center group">
+            <div className="w-20 h-20 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+              <Rocket className="w-10 h-10 text-white" />
+            </div>
+            <h3 className="text-3xl font-bold text-white mb-2">{revolutionary2026MicroSaasServices.length}+</h3>
+            <p className="text-yellow-300 font-medium">Micro SAAS</p>
+          </motion.div>
         </motion.div>
 
-        {/* Revolutionary Services Grid */}
+        {/* Featured Services Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20"
         >
-          {allRevolutionaryServices.slice(0, 9).map((service, index) => (
+          {featuredServices.map((service, index) => (
             <motion.div
               key={service.id}
               variants={itemVariants}
-              whileHover="hover"
               className="group relative"
             >
               {/* Glow Effect */}
-              <div className={`absolute inset-0 bg-gradient-to-r ${service.color} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-20 group-hover:opacity-30`}></div>
+              <div className={`absolute inset-0 bg-gradient-to-r ${service.color} opacity-20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500`}></div>
               
               {/* Service Card */}
-              <div className="relative bg-black/50 backdrop-blur-xl border border-purple-500/20 rounded-2xl p-8 hover:border-purple-500/40 transition-all duration-300 h-full">
-                {/* Service Header */}
-                <div className="flex items-start justify-between mb-6">
-                  <div className="flex items-center space-x-4">
-                    <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center`}>
-                      <span className="text-3xl">{service.icon}</span>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-white mb-2 leading-tight">{service.name}</h3>
-                      <p className="text-gray-400 text-sm">{service.category}</p>
-                    </div>
+              <div className="relative bg-black/40 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-6 hover:border-cyan-500/40 transition-all duration-300 h-full">
+                {/* Service Icon and Header */}
+                <div className="flex items-center space-x-3 mb-4">
+                  <div className={`w-12 h-12 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center`}>
+                    <span className="text-2xl">{service.icon}</span>
                   </div>
-                  {service.popular && (
-                    <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-                      POPULAR
-                    </div>
-                  )}
+                  <div>
+                    <h3 className="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors duration-300">
+                      {service.name}
+                    </h3>
+                    <p className="text-gray-400 text-sm">{service.category}</p>
+                  </div>
                 </div>
 
-                {/* Service Description */}
-                <p className="text-gray-300 mb-6 leading-relaxed">
+                {/* Description */}
+                <p className="text-gray-300 text-sm mb-4 leading-relaxed line-clamp-3">
                   {service.description}
                 </p>
 
                 {/* Key Features */}
-                <div className="mb-6">
-                  <h4 className="text-white font-semibold mb-3">Key Features:</h4>
-                  <div className="grid grid-cols-1 gap-2">
-                    {service.features.slice(0, 4).map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
-                        <span className="text-gray-300 text-sm">{feature}</span>
-                      </div>
+                <div className="mb-4">
+                  <ul className="space-y-1">
+                    {service.features.slice(0, 2).map((feature, idx) => (
+                      <li key={idx} className="flex items-center text-gray-400 text-xs">
+                        <Star className="w-3 h-3 text-cyan-400 mr-2 flex-shrink-0" />
+                        {feature}
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 </div>
 
-                {/* Service Stats */}
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-purple-400">{service.price}</div>
-                    <div className="text-gray-400 text-sm">{service.period}</div>
+                {/* Price and Action */}
+                <div className="flex items-center justify-between mt-auto">
+                  <div>
+                    <span className="text-2xl font-bold text-cyan-400">{service.price}</span>
+                    <span className="text-gray-400 text-sm">{service.period}</span>
                   </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-cyan-400">{service.customers}</div>
-                    <div className="text-gray-400 text-sm">Customers</div>
-                  </div>
-                </div>
-
-                {/* Market Position */}
-                <div className="mb-6 p-4 bg-purple-900/20 rounded-xl border border-purple-500/20">
-                  <h4 className="text-white font-semibold mb-2">Market Position</h4>
-                  <p className="text-gray-300 text-sm leading-relaxed">
-                    {service.marketPosition}
-                  </p>
-                </div>
-
-                {/* ROI and Growth */}
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div className="text-center p-3 bg-green-900/20 rounded-xl border border-green-500/20">
-                    <div className="text-lg font-bold text-green-400">ROI</div>
-                    <div className="text-gray-300 text-sm">{service.roi.split(' ')[0]}</div>
-                  </div>
-                  <div className="text-center p-3 bg-blue-900/20 rounded-xl border border-blue-500/20">
-                    <div className="text-lg font-bold text-blue-400">Growth</div>
-                    <div className="text-gray-300 text-sm">{service.growthRate}</div>
-                  </div>
-                </div>
-
-                {/* Action Button */}
-                <div className="flex items-center justify-between">
-                  <Link 
+                  <a
                     href={service.link}
-                    className="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors font-medium"
+                    className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors text-sm font-medium group-hover:translate-x-1 transition-transform duration-200"
                   >
-                    Learn More <ArrowRight className="w-4 h-4 ml-2" />
-                  </Link>
-                  <div className="flex items-center space-x-2">
-                    <div className="flex items-center space-x-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star 
-                          key={i} 
-                          className={`w-4 h-4 ${i < Math.floor(service.rating) ? 'text-yellow-400 fill-current' : 'text-gray-600'}`} 
-                        />
-                      ))}
-                    </div>
-                    <span className="text-gray-400 text-sm">({service.reviews})</span>
-                  </div>
+                    Learn More <ArrowRight className="w-4 h-4 ml-1" />
+                  </a>
                 </div>
+
+                {/* Popular Badge */}
+                {service.popular && (
+                  <div className="absolute top-4 right-4">
+                    <div className="inline-flex items-center gap-1 px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-black text-xs font-semibold rounded-full">
+                      <Star className="w-3 h-3" />
+                      Popular
+                    </div>
+                  </div>
+                )}
               </div>
             </motion.div>
           ))}
@@ -237,38 +198,33 @@ const Revolutionary2026ServicesShowcase = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="text-center mt-20"
+          transition={{ duration: 0.8 }}
+          className="text-center"
         >
-          <div className="bg-gradient-to-r from-purple-600/20 to-cyan-600/20 border border-purple-500/30 rounded-3xl p-12">
-            <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Transform Your Business?
-            </h3>
-            <p className="text-gray-300 text-xl mb-8 max-w-3xl mx-auto">
-              Join the revolution and be among the first to experience the future of technology. 
-              Our cutting-edge solutions are designed to give you a competitive advantage in the digital age.
+          <div className="bg-gradient-to-r from-cyan-900/20 via-purple-900/20 to-pink-900/20 border border-cyan-500/20 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold text-white mb-4">Ready to Transform Your Business?</h3>
+            <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+              Join thousands of businesses already leveraging our revolutionary 2026 services to achieve unprecedented growth and innovation.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-              <Link 
-                href="/contact"
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-bold rounded-2xl hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 transform hover:scale-105"
+              <a
+                href="/services/"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-xl hover:shadow-cyan-500/40 transition-all duration-200"
               >
-                Get Started Today
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Link>
-              <Link 
-                href="/revolutionary-2025-services-showcase"
-                className="inline-flex items-center px-8 py-4 border border-purple-500/50 text-purple-300 font-bold rounded-2xl hover:border-purple-500 hover:bg-purple-500/10 transition-all duration-300"
-              >
+                <Rocket className="w-5 h-5 mr-2" />
                 View All Services
-              </Link>
+              </a>
+              <a
+                href="/contact/"
+                className="inline-flex items-center px-8 py-4 border-2 border-cyan-500/50 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-500/10 transition-all duration-200"
+              >
+                <Shield className="w-5 h-5 mr-2" />
+                Get Started
+              </a>
             </div>
           </div>
         </motion.div>
       </div>
     </section>
   );
-};
-
-export default Revolutionary2026ServicesShowcase;
+}
