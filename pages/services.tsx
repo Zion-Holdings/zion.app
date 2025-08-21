@@ -6,13 +6,14 @@ import {
   Wifi, Package, Bot, Car, Building2, DollarSign, 
   Monitor, Users, Cpu, Zap, Star, TrendingUp
 } from 'lucide-react';
-import Button from '../components/ui/Button';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 import UltraFuturisticServiceCard from '../components/ui/UltraFuturisticServiceCard';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
-import { advancedAIServices } from '../data/advanced-ai-services';
-import { quantumAdvancedServices } from '../data/quantum-advanced-services';
+import { innovativeMicroSaasServices } from '../data/innovative-micro-saas-services';
+import { extraServices } from '../data/extra-services';
+import { additionalEnhancedServices } from '../data/additional-real-services';
 import { emergingTechServices } from '../data/emerging-tech-services';
-import { spaceTechServices } from '../data/space-tech-services';
+import { nextGenAIServices } from '../data/next-gen-ai-services';
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -22,10 +23,11 @@ export default function ServicesPage() {
   // Combine all services
   const allServices = [
     ...enhancedRealMicroSaasServices,
-    ...advancedAIServices,
-    ...quantumAdvancedServices,
+    ...innovativeMicroSaasServices,
+    ...extraServices,
+    ...additionalEnhancedServices,
     ...emergingTechServices,
-    ...spaceTechServices
+    ...nextGenAIServices
   ];
 
   // Categories for filtering
@@ -79,63 +81,52 @@ export default function ServicesPage() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white">
-      <Head>
-        <title>500+ Revolutionary Technology Services - Zion Tech Group</title>
-        <meta name="description" content="Explore 500+ revolutionary AI, quantum computing, space technology, and emerging tech services. Transform your business with cutting-edge solutions. Contact: +1 302 464 0950" />
-        <meta name="keywords" content="AI services, quantum computing, space technology, micro SaaS, technology solutions, Zion Tech Group" />
-        <meta name="author" content="Zion Tech Group" />
-        <meta property="og:title" content="500+ Revolutionary Technology Services - Zion Tech Group" />
-        <meta property="og:description" content="Explore 500+ revolutionary AI, quantum computing, and space technology services." />
-        <meta property="og:url" content="https://ziontechgroup.com/services" />
-        <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://ziontechgroup.com/services" />
-      </Head>
+    <UltraAdvancedFuturisticBackground intensity={1.5} variant="quantum-holographic">
+      <div className="min-h-screen">
+        <Head>
+          <title>Services - Zion Tech Group | 500+ Revolutionary Micro SaaS Solutions</title>
+          <meta name="description" content="Explore 500+ revolutionary micro SaaS services including quantum AI, space technology, biotech, cybersecurity, and more. Transform your business today." />
+          <meta name="keywords" content="micro SaaS services, AI solutions, quantum computing, space technology, biotech AI, cybersecurity, autonomous systems, quantum internet security, neural interfaces" />
+          <meta property="og:title" content="Services - Zion Tech Group | 500+ Services" />
+          <meta property="og:description" content="500+ revolutionary micro SaaS services and solutions" />
+          <meta property="og:url" content="https://ziontechgroup.com/services" />
+          <meta property="og:type" content="website" />
+          <link rel="canonical" href="https://ziontechgroup.com/services" />
+        </Head>
 
-      {/* Hero Section */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-900/20 via-blue-900/20 to-cyan-900/20">
-        <div className="max-w-7xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-6">
-              500+ Revolutionary Services
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
-              Discover our comprehensive portfolio of cutting-edge AI, quantum computing, space technology, and emerging tech solutions.
-            </p>
-            
-            {/* Contact Information Banner */}
-            <div className="bg-gradient-to-r from-purple-900/50 to-blue-900/50 backdrop-blur-lg rounded-2xl p-6 mb-8 border border-purple-500/30 max-w-4xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="flex items-center justify-center space-x-3">
-                  <div className="w-10 h-10 bg-cyan-500/20 rounded-full flex items-center justify-center">
-                    <TrendingUp className="w-5 h-5 text-cyan-400" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-400">Total Services</p>
-                    <p className="text-2xl font-bold text-white">{allServices.length}+</p>
-                  </div>
-                </div>
-                <div className="flex items-center justify-center space-x-3">
-                  <div className="w-10 h-10 bg-purple-500/20 rounded-full flex items-center justify-center">
-                    <Star className="w-5 h-5 text-purple-400" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-400">Categories</p>
-                    <p className="text-2xl font-bold text-white">{categories.length}</p>
-                  </div>
-                </div>
-                <div className="flex items-center justify-center space-x-3">
-                  <div className="w-10 h-10 bg-pink-500/20 rounded-full flex items-center justify-center">
-                    <Users className="w-5 h-5 text-pink-400" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-400">Happy Customers</p>
-                    <p className="text-2xl font-bold text-white">10K+</p>
-                  </div>
+        {/* Header Section */}
+        <section className="relative py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+            >
+              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                  500+ Revolutionary
+                </span>
+                <br />
+                <span className="text-white">Micro SaaS Services</span>
+              </h1>
+              
+              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
+                Discover cutting-edge solutions in quantum AI, space technology, biotech, cybersecurity, 
+                autonomous systems, quantum internet security, and neural interfaces. Transform your business with unprecedented capabilities.
+              </p>
+
+              {/* Search Bar */}
+              <div className="max-w-2xl mx-auto mb-8">
+                <div className="relative">
+                  <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                  <input
+                    type="text"
+                    placeholder="Search services by name, category, or description..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="w-full pl-12 pr-4 py-4 bg-black/50 border border-cyan-500/30 rounded-full text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300"
+                  />
+>>>>>>> cursor/enhance-app-with-new-services-and-futuristic-design-bc5f
                 </div>
               </div>
             </div>
@@ -284,21 +275,74 @@ export default function ServicesPage() {
                 variant="primary"
                 className="text-lg px-8 py-4"
               >
-                Contact Our Team
-                <TrendingUp className="ml-2 w-5 h-5" />
-              </Button>
-              <Button 
-                href="/pricing" 
-                variant="secondary"
-                className="text-lg px-8 py-4"
-              >
-                View Pricing
-                <Star className="ml-2 w-5 h-5" />
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-    </div>
+                <div className="text-6xl mb-4">🔍</div>
+                <h3 className="text-2xl font-bold text-white mb-4">No services found</h3>
+                <p className="text-gray-400 mb-6">
+                  Try adjusting your search terms or category filters
+                </p>
+                <button
+                  onClick={() => {
+                    setSearchTerm('');
+                    setSelectedCategory('all');
+                  }}
+                  className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold py-3 px-6 rounded-full transition-all duration-300"
+                >
+                  Clear Filters
+                </button>
+              </motion.div>
+            )}
+          </div>
+        </section>
+
+        {/* Contact CTA */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-cyan-500/10 to-purple-500/10">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Ready to Get Started?
+              </h2>
+              <p className="text-xl text-gray-300 mb-8">
+                Contact our team to discuss your specific needs and get personalized recommendations
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="/contact"
+                  className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
+                >
+                  Contact Our Team
+                </a>
+                <a
+                  href="mailto:kleber@ziontechgroup.com"
+                  className="border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black font-bold py-4 px-8 rounded-full text-lg transition-all duration-300"
+                >
+                  Send Email
+                </a>
+              </div>
+
+              <div className="mt-8 p-6 bg-black/30 rounded-2xl border border-white/10">
+                <h3 className="text-xl font-semibold text-white mb-4">Contact Information</h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                  <div className="text-center">
+                    <div className="text-cyan-400 font-semibold">Phone</div>
+                    <div className="text-gray-400 font-semibold">Email</div>
+                    <div className="text-gray-300">kleber@ziontechgroup.com</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-pink-400 font-semibold">Address</div>
+                    <div className="text-gray-300">364 E Main St STE 1008<br />Middletown DE 19709</div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      </div>
+    </UltraAdvancedFuturisticBackground>
   );
 }
