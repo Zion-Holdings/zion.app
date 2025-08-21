@@ -69,6 +69,33 @@ export default function ServicesAdvertisingPage() {
         { name: 'Netlify', href: 'https://www.netlify.com/pricing/' }
       ],
       note: 'SMB budgets: $200–$10,000/mo.'
+    },
+    {
+      title: 'EDR/XDR & MDR',
+      links: [
+        { name: 'CrowdStrike', href: 'https://www.crowdstrike.com/pricing/' },
+        { name: 'Microsoft Defender', href: 'https://www.microsoft.com/security/business/microsoft-defender-pricing' },
+        { name: 'Arctic Wolf MDR', href: 'https://arcticwolf.com/platform/managed-detection-response/' }
+      ],
+      note: 'EDR/XDR from $5–$25/endpoint; MDR from $2k–$10k+/mo.'
+    },
+    {
+      title: 'MDM/Device Management',
+      links: [
+        { name: 'Microsoft Intune', href: 'https://www.microsoft.com/en-us/microsoft-365/compare-microsoft-intune-plans' },
+        { name: 'Jamf', href: 'https://www.jamf.com/pricing/' },
+        { name: 'Kandji', href: 'https://www.kandji.io/pricing' }
+      ],
+      note: 'Typical: $2–$8/device/mo depending on platform and features.'
+    },
+    {
+      title: 'Observability & Logging',
+      links: [
+        { name: 'Datadog', href: 'https://www.datadoghq.com/pricing/' },
+        { name: 'Grafana Cloud', href: 'https://grafana.com/pricing/' },
+        { name: 'New Relic', href: 'https://newrelic.com/pricing' }
+      ],
+      note: 'SMB: $100–$2,000/mo based on ingest and hosts.'
     }
   ];
 
