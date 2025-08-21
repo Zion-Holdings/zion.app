@@ -3,9 +3,9 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shield, Mail, MapPin, Rocket } from 'lucide-react';
 import Button from '../components/ui/Button';
-import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import EnhancedQuantumMatrixBackground from '../components/ui/EnhancedQuantumMatrixBackground';
 import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
-import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
+import EnhancedFuturisticServiceCard from '../components/ui/EnhancedFuturisticServiceCard';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
@@ -30,6 +30,8 @@ import { nextGenInnovations2025 } from '../data/next-gen-innovations-2025';
 import { innovative2026Services } from '../data/innovative-2026-services';
 import { emergingTech2026Services } from '../data/emerging-tech-2026-services';
 import { enterpriseIT2026Services } from '../data/enterprise-it-2026-services';
+import { innovative2026MicroSaasServices } from '../data/innovative-2026-micro-saas-services';
+import { emergingTech2026Services as emergingTech2026ServicesNew } from '../data/emerging-tech-2026-services';
 
 export default function HomePage() {
   const contactInfo = {
@@ -62,10 +64,23 @@ export default function HomePage() {
     ...nextGenInnovations2025,
     ...innovative2026Services,
     ...emergingTech2026Services,
-    ...enterpriseIT2026Services
+    ...enterpriseIT2026Services,
+    ...innovative2026MicroSaasServices,
+    ...emergingTech2026ServicesNew
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);
+
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
 
   // Service statistics
   const serviceStats = {
@@ -78,13 +93,16 @@ export default function HomePage() {
   };
 
   return (
-    <UltraAdvancedFuturisticBackground 
+    <EnhancedQuantumMatrixBackground 
       intensity="extreme" 
       colorScheme="quantum-fusion"
-      particleCount={500}
-      animationSpeed={2.0}
+      particleCount={800}
+      animationSpeed={2.5}
       enableHolographic={true}
       enableQuantumEffects={true}
+      enableMatrixRain={true}
+      enableParticleSwarm={true}
+      enableQuantumEntanglement={true}
     >
       <div className="min-h-screen">
         <Head>
@@ -566,12 +584,59 @@ export default function HomePage() {
         </section>
 
         {/* Enhanced Service Showcase */}
-        <EnhancedServiceShowcase 
-          services={allServices}
-          title="Revolutionary AI, Quantum & IT Services"
-          subtitle="Discover 1000+ cutting-edge solutions that will transform your business with unprecedented ROI and innovation"
-          maxServices={24}
-        />
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Revolutionary <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Services</span>
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Discover our comprehensive portfolio of cutting-edge services designed to transform your business
+              </p>
+            </motion.div>
+
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            >
+              {allServices.slice(0, 9).map((service, index) => (
+                <EnhancedFuturisticServiceCard
+                  key={service.id}
+                  service={service}
+                  index={index}
+                  contactInfo={contactInfo}
+                />
+              ))}
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="text-center mt-12"
+            >
+              <Button
+                href="/2026-innovative-services-showcase"
+                variant="primary"
+                size="lg"
+                className="group"
+              >
+                View All Services
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </motion.div>
+          </div>
+        </section>
 
         {/* Featured Offers */}
         <section className="py-16 px-4 sm:px-6 lg:px-8">
@@ -844,6 +909,6 @@ export default function HomePage() {
           </div>
         </section>
       </div>
-    </UltraAdvancedFuturisticBackground>
+    </EnhancedQuantumMatrixBackground>
   );
 }
