@@ -17,9 +17,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 				colorScheme="quantum"
 				particleCount={300}
 				animationSpeed={1.5}
-				enableGlitch={true}
-				enableHologram={true}
-				enableQuantum={true}
 				enableHolographic={true}
 				enableQuantumEffects={true}
 			>
