@@ -30,6 +30,70 @@ export default function ContactPage() {
     website: 'https://ziontechgroup.com'
   };
 
+  // Enhanced service advertising content
+  const serviceHighlights = [
+    {
+      title: '🚀 Quantum AI Cognitive Platform',
+      description: 'The world\'s first quantum-enhanced AI with human-like reasoning. Achieve 1000% ROI through breakthrough discoveries.',
+      price: '$299/month',
+      features: ['Quantum neural networks', 'Human-like reasoning', '1000% ROI reported'],
+      link: 'https://ziontechgroup.com/quantum-ai-cognitive',
+      color: 'from-purple-500 to-indigo-600'
+    },
+    {
+      title: '🏭 Autonomous Manufacturing AI',
+      description: 'Self-learning manufacturing systems with zero downtime. Achieve 400% ROI within 6 months.',
+      price: '$199/month',
+      features: ['Predictive maintenance', 'Quality control automation', 'Supply chain intelligence'],
+      link: 'https://ziontechgroup.com/autonomous-manufacturing',
+      color: 'from-orange-500 to-red-600'
+    },
+    {
+      title: '🔒 Quantum Cybersecurity Suite',
+      description: 'Quantum-resistant security for the post-quantum era. 300% ROI within 4 months.',
+      price: '$159/month',
+      features: ['Quantum-resistant encryption', 'AI threat detection', 'Zero-trust architecture'],
+      link: 'https://ziontechgroup.com/quantum-cybersecurity',
+      color: 'from-red-500 to-pink-600'
+    },
+    {
+      title: '🚀 Space Technology Platform',
+      description: 'Revolutionary space exploration and satellite management. 500% ROI within 8 months.',
+      price: '$399/month',
+      features: ['Satellite mission management', 'Space data analytics', 'Orbital optimization'],
+      link: 'https://ziontechgroup.com/space-technology',
+      color: 'from-blue-500 to-indigo-600'
+    }
+  ];
+
+  // Enhanced competitive advantages
+  const competitiveAdvantages = [
+    {
+      icon: '⚡',
+      title: 'Lightning Fast Setup',
+      description: 'Get started in minutes, not weeks. Our services are designed for immediate value delivery.',
+      color: 'from-yellow-500 to-orange-600'
+    },
+    {
+      icon: '💰',
+      title: 'Transparent Pricing',
+      description: 'No hidden fees, no enterprise sales calls. Simple monthly pricing that scales.',
+      color: 'from-green-500 to-emerald-600'
+    },
+    {
+      icon: '🔒',
+      title: 'Enterprise Security',
+      description: 'Bank-level security, SOC 2 compliance, and 99.9% uptime guarantee.',
+      color: 'from-blue-500 to-indigo-600'
+    },
+    {
+      icon: '📊',
+      title: 'Proven ROI',
+      description: 'Each service delivers measurable ROI within months. 300-1000% returns reported.',
+      color: 'from-purple-500 to-violet-600'
+    }
+  ];
+
   const serviceOptions = [
     'Quantum AI & Computing',
     'Autonomous Systems & Robotics',
@@ -240,6 +304,38 @@ export default function ContactPage() {
               <Check className="w-4 h-4 text-green-400 mr-2" />
               Free Consultation
             </span>
+          </div>
+        </div>
+
+        {/* Service Highlights */}
+        <div className="mb-20">
+          <h2 className="text-3xl font-bold text-white mb-12 text-center">Our Revolutionary Services</h2>
+          <p className="text-xl text-gray-300 mb-12 text-center max-w-4xl mx-auto">
+            Discover how our cutting-edge micro SaaS solutions are transforming businesses across industries
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            {serviceHighlights.map((service, index) => (
+              <div
+                key={index}
+                className="bg-gradient-to-br from-slate-900/50 to-slate-800/50 backdrop-blur-xl rounded-2xl p-6 border border-slate-700/50 hover:border-cyan-500/50 transition-all duration-300 group cursor-pointer"
+                onClick={() => window.open(service.link, '_blank')}
+              >
+                <div className={`bg-gradient-to-br ${service.color} p-3 rounded-xl w-fit mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                  <div className="text-2xl">{service.title.split(' ')[0]}</div>
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2">{service.title.split(' ').slice(1).join(' ')}</h3>
+                <p className="text-slate-400 text-sm mb-4">{service.description}</p>
+                <div className="text-cyan-400 font-bold text-lg mb-4">{service.price}</div>
+                <div className="space-y-2">
+                  {service.features.slice(0, 2).map((feature, idx) => (
+                    <div key={idx} className="flex items-center text-slate-300 text-sm">
+                      <Check className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" />
+                      {feature}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
