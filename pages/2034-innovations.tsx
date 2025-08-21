@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
-import UltraFuturisticNavigation2033 from '../components/layout/UltraFuturisticNavigation2033';
+import UltraFuturisticNavigation2032 from '../components/layout/UltraFuturisticNavigation2032';
 import UltraFuturisticFooter2034 from '../components/layout/UltraFuturisticFooter2034';
 
 const contactInfo = {
@@ -35,7 +35,7 @@ export default function Innovations2034Page() {
       </Head>
 
       <div className="min-h-screen bg-black">
-        <UltraFuturisticNavigation2033 />
+        <UltraFuturisticNavigation2032 />
         
         {/* Hero Section */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">

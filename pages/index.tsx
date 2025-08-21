@@ -1,13 +1,19 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shield, Mail, MapPin, Rocket, Brain, Sparkles, Atom, Dna, Users } from 'lucide-react';
+import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shield, Mail, MapPin, Rocket, Brain, Sparkles, Atom, Dna, Users, Target } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { realMicroSaasServices2025 } from '../data/2025-real-micro-saas-services';
 import { innovativeAIServices2025 } from '../data/2025-innovative-ai-services';
 import { innovativeITServices2025 } from '../data/2025-innovative-it-services';
 import { emergingTechServices2025 } from '../data/2025-emerging-tech-services';
+
+// Import advanced 2025 services
+import { advancedMicroSaasServices2025 } from '../data/2025-advanced-micro-saas-services';
+import { advancedAIServices2025 } from '../data/2025-advanced-ai-services';
+import { advancedITServices2025 } from '../data/2025-advanced-it-services';
+import { advancedEmergingTechServices2025 } from '../data/2025-advanced-emerging-tech-services';
 
 const contactInfo = {
   mobile: '+1 302 464 0950',
@@ -285,6 +291,136 @@ export default function HomePage() {
               className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white font-bold text-lg rounded-2xl transition-all duration-300 transform hover:scale-105"
             >
               View All Services <ArrowRight className="w-5 h-5 ml-2" />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Advanced Services Showcase */}
+      <section className="py-20 bg-gradient-to-r from-black via-slate-900 to-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Advanced 2025 Technology Solutions
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Discover our latest cutting-edge services that are revolutionizing industries and transforming businesses worldwide.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {/* Advanced AI Services */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="p-8 bg-gradient-to-br from-violet-500/10 to-purple-600/10 border border-violet-500/20 rounded-2xl hover:border-violet-500/40 transition-all duration-300 group"
+            >
+              <div className="w-16 h-16 bg-gradient-to-r from-violet-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6">
+                <Brain className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">Advanced AI Solutions</h3>
+              <p className="text-gray-400 mb-6">
+                Business Intelligence AI Pro, Customer Analytics AI, Financial Risk AI, and more revolutionary AI platforms.
+              </p>
+              <div className="space-y-2 mb-6">
+                {advancedAIServices2025.slice(0, 3).map((service) => (
+                  <div key={service.id} className="flex items-center space-x-2 text-sm">
+                    <div className="w-2 h-2 bg-violet-400 rounded-full"></div>
+                    <span className="text-gray-300">{service.name}</span>
+                  </div>
+                ))}
+              </div>
+              <Link
+                href="/ai-services"
+                className="inline-flex items-center text-violet-400 hover:text-violet-300 transition-colors duration-200"
+              >
+                Explore AI Services <ArrowRight className="w-4 h-4 ml-2" />
+              </Link>
+            </motion.div>
+
+            {/* Advanced IT Services */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="p-8 bg-gradient-to-br from-blue-500/10 to-cyan-600/10 border border-blue-500/20 rounded-2xl hover:border-blue-500/40 transition-all duration-300 group"
+            >
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center mb-6">
+                <Shield className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">Advanced IT Infrastructure</h3>
+              <p className="text-gray-400 mb-6">
+                Quantum Cloud Infrastructure, Edge Computing AI, Zero Trust Security, and next-generation enterprise solutions.
+              </p>
+              <div className="space-y-2 mb-6">
+                {advancedITServices2025.slice(0, 3).map((service) => (
+                  <div key={service.id} className="flex items-center space-x-2 text-sm">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                    <span className="text-gray-300">{service.name}</span>
+                  </div>
+                ))}
+              </div>
+              <Link
+                href="/enterprise-it"
+                className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors duration-200"
+              >
+                Explore IT Services <ArrowRight className="w-4 h-4 ml-2" />
+              </Link>
+            </motion.div>
+
+            {/* Advanced Micro SAAS */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="p-8 bg-gradient-to-br from-green-500/10 to-emerald-600/10 border border-green-500/20 rounded-2xl hover:border-green-500/40 transition-all duration-300 group"
+            >
+              <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6">
+                <Target className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">Advanced Micro SAAS</h3>
+              <p className="text-gray-400 mb-6">
+                Customer Success AI Pro, Smart Inventory AI, HR Compliance Pro, and intelligent business automation platforms.
+              </p>
+              <div className="space-y-2 mb-6">
+                {advancedMicroSaasServices2025.slice(0, 3).map((service) => (
+                  <div key={service.id} className="flex items-center space-x-2 text-sm">
+                    <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                    <span className="text-gray-300">{service.name}</span>
+                  </div>
+                ))}
+              </div>
+              <Link
+                href="/micro-saas"
+                className="inline-flex items-center text-green-400 hover:text-green-300 transition-colors duration-200"
+              >
+                Explore Micro SAAS <ArrowRight className="w-4 h-4 ml-2" />
+              </Link>
+            </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <Link
+              href="/services"
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white font-bold text-lg rounded-2xl transition-all duration-300 transform hover:scale-105"
+            >
+              View All Advanced Services <ArrowRight className="w-5 h-5 ml-2" />
             </Link>
           </motion.div>
         </div>
