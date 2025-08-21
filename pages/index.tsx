@@ -227,7 +227,7 @@ export default function HomePage() {
   ];
 
   return (
-    <UltraFuturisticBackground variant="quantum" intensity="high" className="min-h-screen">
+    <UltraFuturisticBackground variant="quantum" className="min-h-screen">
       <Head>
         <title>Zion Tech Group - Revolutionary Micro SaaS Services & AI Solutions</title>
         <meta name="description" content="Discover 500+ revolutionary micro SaaS services including quantum AI, autonomous systems, biomedical research, and emerging technologies. 99.99% uptime, 30-day free trials." />

@@ -148,7 +148,7 @@ export default function ServicesPage() {
   ];
 
   return (
-    <UltraFuturisticBackground variant="holographic" intensity="medium" className="min-h-screen">
+    <UltraFuturisticBackground variant="holographic" className="min-h-screen">
       <Head>
         <title>Micro SaaS Services - Zion Tech Group | 500+ Revolutionary Solutions</title>
         <meta name="description" content="Explore 500+ revolutionary micro SaaS services including quantum AI, autonomous systems, biomedical research, cybersecurity, and emerging technologies. Starting from $49/month." />
