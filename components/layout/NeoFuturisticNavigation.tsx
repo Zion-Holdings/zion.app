@@ -65,8 +65,8 @@ const NeoFuturisticNavigation: React.FC = () => {
   };
 
   const handleClickOutside = (event: MouseEvent) => {
-    const target = event.target as Element;
-    if (!target.closest('.dropdown-container')) {
+    const target = event.target as any;
+    if (target && typeof target.closest === 'function' && !target.closest('.dropdown-container')) {
       setActiveDropdown(null);
     }
   };
