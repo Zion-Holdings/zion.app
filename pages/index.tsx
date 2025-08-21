@@ -10,7 +10,7 @@ import {
   ChevronRight, Play, Star as StarIcon, Check as CheckIcon, ArrowRight as ArrowRightIcon,
   Brain as BrainIcon, Factory as FactoryIcon, Shield as ShieldIcon, FlaskConical as FlaskIcon,
   DollarSign as DollarIcon, Rocket as RocketIcon, Globe as GlobeIcon, Zap as ZapIcon,
-  Link as LinkIcon, Building2 as Building2Icon
+  Link as LinkIcon, Building2 as Building2Icon, Users as UsersIcon
 } from 'lucide-react';
 import Button from '../components/ui/Button';
 import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
@@ -100,12 +100,12 @@ export default function HomePage() {
       description: 'AI-powered space exploration and satellite management platform. Enables autonomous space missions with real-time decision making.',
       icon: <RocketIcon className="w-8 h-8" />,
       price: '$1,899/month',
-      category: 'Aerospace & Space Technology',
+      category: 'Space Technology',
       variant: 'quantum-space',
       link: 'https://ziontechgroup.com/ai-space-exploration',
-      features: ['Satellite management', 'Mission planning', 'Autonomous navigation', 'Real-time analytics'],
+      features: ['Satellite management', 'Mission planning', 'Real-time monitoring', 'Autonomous navigation'],
       marketSize: '$1.8B market',
-      growthRate: '280% annual growth'
+      growthRate: '400% annual growth'
     }
   ];
 
@@ -226,358 +226,363 @@ export default function HomePage() {
     },
   ];
 
-  return (
-    <UltraFuturisticBackground variant="quantum" intensity="high" className="min-h-screen">
-      <Head>
-        <title>Zion Tech Group - Revolutionary Micro SaaS Services & AI Solutions</title>
-        <meta name="description" content="Discover 500+ revolutionary micro SaaS services including quantum AI, autonomous systems, biomedical research, and emerging technologies. 99.99% uptime, 30-day free trials." />
-        <meta name="keywords" content="micro SaaS, quantum AI, autonomous systems, biomedical AI, cybersecurity, blockchain, IoT, edge computing, metaverse, VR AR" />
-        <meta property="og:title" content="Zion Tech Group - Revolutionary Micro SaaS Services" />
-        <meta property="og:description" content="500+ cutting-edge micro SaaS services with quantum AI and autonomous systems" />
-        <meta property="og:url" content="https://ziontechgroup.com" />
-        <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://ziontechgroup.com" />
-      </Head>
+  // Enhanced contact section with prominent display
+  const enhancedContactSection = (
+    <div className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 border border-purple-500/30 rounded-2xl p-8 backdrop-blur-xl">
+      <div className="text-center mb-8">
+        <h3 className="text-3xl font-bold text-white mb-4">Ready to Transform Your Business?</h3>
+        <p className="text-xl text-purple-200 mb-6">Get in touch with our experts and start your journey to the future</p>
+      </div>
+      
+      <div className="grid md:grid-cols-3 gap-6 mb-8">
+        <div className="text-center p-4 bg-purple-900/30 rounded-xl border border-purple-400/30">
+          <Phone className="w-8 h-8 text-purple-400 mx-auto mb-3" />
+          <h4 className="text-lg font-semibold text-white mb-2">Call Us</h4>
+          <p className="text-purple-200 text-lg font-mono">{contactInfo.mobile}</p>
+        </div>
+        
+        <div className="text-center p-4 bg-purple-900/30 rounded-xl border border-purple-400/30">
+          <Mail className="w-8 h-8 text-purple-400 mx-auto mb-3" />
+          <h4 className="text-lg font-semibold text-white mb-2">Email Us</h4>
+          <p className="text-purple-200 text-lg font-mono">{contactInfo.email}</p>
+        </div>
+        
+        <div className="text-center p-4 bg-purple-900/30 rounded-xl border border-purple-400/30">
+          <MapPin className="w-8 h-8 text-purple-400 mx-auto mb-3" />
+          <h4 className="text-lg font-semibold text-white mb-2">Visit Us</h4>
+          <p className="text-purple-200 text-sm font-mono">{contactInfo.address}</p>
+        </div>
+      </div>
+      
+      <div className="text-center">
+        <Button 
+          href="/contact" 
+          variant="primary" 
+          size="lg"
+          className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 text-lg font-semibold"
+        >
+          Start Your Free Trial Today
+        </Button>
+        <p className="text-purple-300 mt-4 text-sm">30-day free trial • No credit card required • Cancel anytime</p>
+      </div>
+    </div>
+  );
 
-      {/* Hero Section */}
-      <section className="relative z-10 pt-20 pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+  // Enhanced service showcase section
+  const enhancedServiceShowcase = (
+    <section className="py-20">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-5xl font-bold text-white mb-6">
+            Revolutionary Micro SAAS Solutions
+          </h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Discover our cutting-edge micro SAAS services that are transforming industries and driving innovation across the globe
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8 mb-16">
+          {revolutionaryServices.map((service, index) => (
+            <motion.div
+              key={service.name}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+            >
+              <UltraFuturisticCard
+                variant={service.variant as any}
+                className="h-full group hover:scale-105 transition-transform duration-300"
+              >
+                <div className="p-6 h-full flex flex-col">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="p-3 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl border border-purple-400/30">
+                      {service.icon}
+                    </div>
+                    <span className="text-2xl font-bold text-purple-400">{service.price}</span>
+                  </div>
+                  
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-300 transition-colors">
+                    {service.name}
+                  </h3>
+                  
+                  <p className="text-gray-300 mb-4 flex-grow">
+                    {service.description}
+                  </p>
+                  
+                  <div className="space-y-2 mb-4">
+                    {service.features.slice(0, 3).map((feature, idx) => (
+                      <div key={idx} className="flex items-center text-sm text-gray-400">
+                        <Check className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" />
+                        {feature}
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <div className="mt-auto">
+                    <div className="flex items-center justify-between text-sm text-gray-400 mb-3">
+                      <span>{service.marketSize}</span>
+                      <span>{service.growthRate}</span>
+                    </div>
+                    
+                    <Button
+                      href={service.link}
+                      variant="secondary"
+                      size="sm"
+                      className="w-full bg-gradient-to-r from-purple-600/20 to-pink-600/20 hover:from-purple-600/30 hover:to-pink-600/30 border-purple-500/50 text-purple-300 hover:text-white"
+                    >
+                      Learn More
+                      <ArrowRightIcon className="w-4 h-4 ml-2" />
+                    </Button>
+                  </div>
+                </div>
+              </UltraFuturisticCard>
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="text-center">
+          <Button
+            href="/services"
+            variant="primary"
+            size="lg"
+            className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 text-lg font-semibold"
           >
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-              <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
-                Revolutionary
-              </span>
-              <br />
-              <span className="text-white">Micro SaaS Services</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
-              Discover 500+ cutting-edge micro SaaS solutions powered by quantum AI, autonomous systems, 
-              and emerging technologies. Transform your business with industry-leading innovation.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Button 
-                href="/services" 
-                variant="primary" 
-                size="lg"
-                className="text-lg px-8 py-4"
-              >
-                Explore Services
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-              <Button 
-                href="/contact" 
-                variant="secondary" 
-                size="lg"
-                className="text-lg px-8 py-4"
-              >
-                Get Started
-                <Rocket className="ml-2 w-5 h-5" />
-              </Button>
-            </div>
-          </motion.div>
-
-          {/* Hero Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 max-w-5xl mx-auto">
-            {heroStats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="text-center"
-              >
-                <div className={`text-3xl md:text-4xl font-bold ${stat.color} mb-2`}>
-                  {stat.value}
-                </div>
-                <div className="text-sm text-gray-400">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
+            View All 500+ Services
+            <ArrowRightIcon className="w-5 h-5 ml-2" />
+          </Button>
         </div>
-      </section>
+      </div>
+    </section>
+  );
 
-      {/* Revolutionary Services Section */}
-      <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Revolutionary <span className="bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">AI & Quantum</span> Services
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              First-to-market solutions that combine cutting-edge AI, quantum computing, and autonomous systems 
-              to deliver unprecedented business value and competitive advantage.
-            </p>
+  // Enhanced stats section
+  const enhancedStatsSection = (
+    <section className="py-20 bg-gradient-to-r from-slate-900/50 via-purple-900/30 to-slate-900/50">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+          {heroStats.map((stat, index) => (
+            <motion.div
+              key={stat.label}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="text-center"
+            >
+              <div className="text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                {stat.value}
+              </div>
+              <div className="text-gray-400 text-sm md:text-base">
+                {stat.label}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+
+  return (
+    <UltraFuturisticBackground variant="quantum-entanglement" intensity="high">
+      <div className="min-h-screen">
+        <Head>
+          <title>Zion Tech Group | Revolutionary Micro SAAS Solutions & AI Services</title>
+          <meta name="description" content="Discover 500+ revolutionary micro SAAS services, AI solutions, and quantum computing platforms. Transform your business with cutting-edge technology from Zion Tech Group." />
+          <meta name="keywords" content="micro SAAS, AI services, quantum computing, cybersecurity, automation, cloud solutions, Zion Tech Group" />
+          <meta property="og:title" content="Zion Tech Group | Revolutionary Micro SAAS Solutions" />
+          <meta property="og:description" content="500+ revolutionary micro SAAS services and AI solutions transforming businesses worldwide." />
+          <meta property="og:url" content="https://ziontechgroup.com" />
+          <meta property="og:type" content="website" />
+          <link rel="canonical" href="https://ziontechgroup.com" />
+        </Head>
+
+        {/* Hero Section */}
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 opacity-90"></div>
+          
+          <div className="relative z-10 container mx-auto px-4 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                The Future of
+                <span className="block bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
+                  Micro SAAS
+                </span>
+                is Here
+              </h1>
+              
+              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
+                Discover 500+ revolutionary micro SAAS services powered by AI, quantum computing, and cutting-edge technology. 
+                Transform your business with solutions that were once science fiction.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+                <Button
+                  href="/services"
+                  variant="primary"
+                  size="lg"
+                  className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 text-xl font-semibold"
+                >
+                  Explore Services
+                  <ArrowRightIcon className="w-6 h-6 ml-2" />
+                </Button>
+                
+                <Button
+                  href="/contact"
+                  variant="secondary"
+                  size="lg"
+                  className="border-purple-500/50 text-purple-300 hover:text-white hover:bg-purple-500/20 px-8 py-4 text-xl font-semibold"
+                >
+                  Start Free Trial
+                  <Play className="w-6 h-6 ml-2" />
+                </Button>
+              </div>
+            </motion.div>
           </div>
+        </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {revolutionaryServices.map((service, index) => (
+        {/* Enhanced Stats Section */}
+        {enhancedStatsSection}
+
+        {/* Enhanced Service Showcase */}
+        {enhancedServiceShowcase}
+
+        {/* Enhanced Contact Section */}
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            {enhancedContactSection}
+          </div>
+        </section>
+
+        {/* Why Choose Zion Tech Group */}
+        <section className="py-20 bg-gradient-to-r from-slate-900/50 via-purple-900/30 to-slate-900/50">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-white mb-6">
+                Why Choose Zion Tech Group?
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                We're not just another tech company. We're the pioneers of the future, delivering solutions that redefine what's possible.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <motion.div
-                key={service.name}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
+                className="text-center p-6"
               >
-                <UltraFuturisticCard
-                  variant={service.variant as any}
-                  className="h-full"
-                  hoverEffect={true}
-                  animated={true}
-                >
-                  <div className="flex items-center mb-4">
-                    <div className="text-3xl mr-3">{service.icon}</div>
-                    <div>
-                      <h3 className="text-xl font-bold text-white">{service.name}</h3>
-                      <p className="text-sm text-gray-400">{service.category}</p>
-                    </div>
-                  </div>
-                  
-                  <p className="text-gray-300 mb-4">{service.description}</p>
-                  
-                  <div className="mb-4">
-                    <div className="text-2xl font-bold text-white mb-2">{service.price}</div>
-                    <div className="flex items-center text-sm text-gray-400 mb-2">
-                      <TrendingUp className="w-4 h-4 mr-2" />
-                      {service.growthRate}
-                    </div>
-                    <div className="text-sm text-gray-400">
-                      <BarChart3 className="w-4 h-4 inline mr-2" />
-                      {service.marketSize}
-                    </div>
-                  </div>
-
-                  <div className="mb-4">
-                    <h4 className="text-sm font-semibold text-white mb-2">Key Features:</h4>
-                    <ul className="space-y-1">
-                      {service.features.slice(0, 3).map((feature, idx) => (
-                        <li key={idx} className="text-sm text-gray-400 flex items-center">
-                          <Check className="w-3 h-3 text-green-400 mr-2" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <Button
-                    href={service.link}
-                    variant="primary"
-                    className="w-full"
-                  >
-                    Learn More
-                    <ExternalLink className="ml-2 w-4 h-4" />
-                  </Button>
-                </UltraFuturisticCard>
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-purple-400/30">
+                  <RocketIcon className="w-8 h-8 text-purple-400" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">First-to-Market Solutions</h3>
+                <p className="text-gray-300">
+                  We're the first to bring quantum computing, autonomous AI, and revolutionary cybersecurity to the market.
+                </p>
               </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Emerging Tech Services Section */}
-      <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8 bg-black/20">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Emerging <span className="bg-gradient-to-r from-green-400 to-blue-600 bg-clip-text text-transparent">Technology</span> Platforms
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Stay ahead of the curve with our cutting-edge platforms for metaverse development, 
-              blockchain DeFi, IoT smart cities, and edge computing.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {emergingTechServices.map((service, index) => (
               <motion.div
-                key={service.name}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <UltraFuturisticCard
-                  variant={service.variant as any}
-                  className="h-full"
-                  hoverEffect={true}
-                  animated={true}
-                >
-                  <div className="flex items-center mb-4">
-                    <div className="text-3xl mr-3">{service.icon}</div>
-                    <div>
-                      <h3 className="text-xl font-bold text-white">{service.name}</h3>
-                      <p className="text-sm text-gray-400">{service.category}</p>
-                    </div>
-                  </div>
-                  
-                  <p className="text-gray-300 mb-4">{service.description}</p>
-                  
-                  <div className="mb-4">
-                    <div className="text-2xl font-bold text-white mb-2">{service.price}</div>
-                    <div className="flex items-center text-sm text-gray-400 mb-2">
-                      <TrendingUp className="w-4 h-4 mr-2" />
-                      {service.growthRate}
-                    </div>
-                    <div className="text-sm text-gray-400">
-                      <BarChart3 className="w-4 h-4 inline mr-2" />
-                      {service.marketSize}
-                    </div>
-                  </div>
-
-                  <Button
-                    href={service.link}
-                    variant="primary"
-                    className="w-full"
-                  >
-                    Explore Platform
-                    <ArrowRight className="ml-2 w-4 h-4" />
-                  </Button>
-                </UltraFuturisticCard>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Market Insights Section */}
-      <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Market <span className="bg-gradient-to-r from-yellow-400 to-orange-600 bg-clip-text text-transparent">Insights</span> & Growth
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Our services target the fastest-growing markets in technology, 
-              with average annual growth rates exceeding 200%.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {marketInsights.map((insight, index) => (
-              <motion.div
-                key={insight.label}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <UltraFuturisticCard
-                  variant="default"
-                  className="text-center h-full"
-                  hoverEffect={true}
-                >
-                  <div className="text-4xl font-bold text-white mb-4">{insight.metric}</div>
-                  <div className="text-xl font-semibold text-white mb-2">{insight.label}</div>
-                  <div className="text-gray-400 mb-4">{insight.description}</div>
-                  <div className="text-cyan-400">{insight.icon}</div>
-                </UltraFuturisticCard>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Platform Features Section */}
-      <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8 bg-black/20">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Why Choose <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">Zion Tech Group</span>
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Unmatched innovation, reliability, and value in the micro SaaS industry.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {platformFeatures.map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
                 viewport={{ once: true }}
+                className="text-center p-6"
               >
-                <UltraFuturisticCard
-                  variant="default"
-                  className="h-full"
-                  hoverEffect={true}
-                >
-                  <div className={`w-16 h-16 rounded-xl ${feature.color} flex items-center justify-center mb-6`}>
-                    {feature.icon}
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-4">{feature.title}</h3>
-                  <p className="text-gray-300">{feature.description}</p>
-                </UltraFuturisticCard>
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-purple-400/30">
+                  <ShieldIcon className="w-8 h-8 text-purple-400" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">99.99% Uptime Guarantee</h3>
+                <p className="text-gray-300">
+                  Our enterprise-grade infrastructure ensures your business never stops, with guaranteed uptime and reliability.
+                </p>
               </motion.div>
-            ))}
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="text-center p-6"
+              >
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-purple-400/30">
+                  <UsersIcon className="w-8 h-8 text-purple-400" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">24/7 AI Support</h3>
+                <p className="text-gray-300">
+                  Get instant support from our advanced AI systems, available around the clock to help you succeed.
+                </p>
+              </motion.div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Contact Section */}
-      <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <UltraFuturisticCard variant="quantum" className="p-12">
-            <h2 className="text-4xl font-bold text-white mb-6">
-              Ready to Transform Your Business?
-            </h2>
-            <p className="text-xl text-gray-300 mb-8">
-              Join thousands of companies already leveraging our revolutionary micro SaaS services 
-              to achieve unprecedented growth and innovation.
-            </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 text-left">
-              <div className="flex items-center">
-                <Phone className="w-5 h-5 text-cyan-400 mr-3" />
-                <div>
-                  <div className="text-white font-semibold">Phone</div>
-                  <div className="text-gray-400">{contactInfo.mobile}</div>
+        {/* Call to Action */}
+        <section className="py-20">
+          <div className="container mx-auto px-4 text-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="max-w-4xl mx-auto"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Ready to Transform Your Business?
+              </h2>
+              <p className="text-xl text-gray-300 mb-8">
+                Join thousands of businesses already using our revolutionary micro SAAS solutions. 
+                Start your 30-day free trial today and experience the future of technology.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Button
+                  href="/contact"
+                  variant="primary"
+                  size="lg"
+                  className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 text-xl font-semibold"
+                >
+                  Start Free Trial
+                  <ArrowRightIcon className="w-6 h-6 ml-2" />
+                </Button>
+                
+                <Button
+                  href="/services"
+                  variant="secondary"
+                  size="lg"
+                  className="border-purple-500/50 text-purple-300 hover:text-white hover:bg-purple-500/20 px-8 py-4 text-xl font-semibold"
+                >
+                  View All Services
+                  <ExternalLink className="w-6 h-6 ml-2" />
+                </Button>
+              </div>
+              
+              <div className="mt-8 text-center">
+                <p className="text-purple-300 text-lg font-semibold mb-2">Contact Information</p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center text-sm text-gray-400">
+                  <span className="flex items-center">
+                    <Phone className="w-4 h-4 mr-2" />
+                    {contactInfo.mobile}
+                  </span>
+                  <span className="flex items-center">
+                    <Mail className="w-4 h-4 mr-2" />
+                    {contactInfo.email}
+                  </span>
+                  <span className="flex items-center">
+                    <MapPin className="w-4 h-4 mr-2" />
+                    {contactInfo.address}
+                  </span>
                 </div>
               </div>
-              <div className="flex items-center">
-                <Mail className="w-5 h-5 text-cyan-400 mr-3" />
-                <div>
-                  <div className="text-white font-semibold">Email</div>
-                  <div className="text-gray-400">{contactInfo.email}</div>
-                </div>
-              </div>
-              <div className="flex items-center">
-                <MapPin className="w-5 h-5 text-cyan-400 mr-3" />
-                <div>
-                  <div className="text-white font-semibold">Address</div>
-                  <div className="text-gray-400">{contactInfo.address}</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                href="/contact" 
-                variant="primary" 
-                size="lg"
-                className="text-lg px-8 py-4"
-              >
-                Get Started Today
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-              <Button 
-                href="/services" 
-                variant="secondary" 
-                size="lg"
-                className="text-lg px-8 py-4"
-              >
-                View All Services
-                <ChevronRight className="ml-2 w-5 h-5" />
-              </Button>
-            </div>
-          </UltraFuturisticCard>
-        </div>
-      </section>
+            </motion.div>
+          </div>
+        </section>
+      </div>
     </UltraFuturisticBackground>
   );
 }
