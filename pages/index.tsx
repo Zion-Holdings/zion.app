@@ -3,8 +3,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shield, Mail, MapPin, Rocket } from 'lucide-react';
 import Button from '../components/ui/Button';
-import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
-import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
+import UltraAdvancedFuturisticBackgroundV2 from '../components/ui/UltraAdvancedFuturisticBackgroundV2';
+import UltraAdvancedNavigationV2 from '../components/layout/UltraAdvancedNavigationV2';
 import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
@@ -32,6 +32,8 @@ import { revolutionary2025Services } from '../data/revolutionary-2025-services';
 import { nextGenInnovations2025 } from '../data/next-gen-innovations-2025';
 import { innovative2025MicroSaasServices } from '../data/innovative-2025-micro-saas';
 import { emergingTech2025Services as newEmergingTech2025Services } from '../data/emerging-tech-2025-services';
+import { revolutionary2025MicroSaasServices } from '../data/revolutionary-2025-micro-saas';
+import { autonomousSpaceTech2025Services } from '../data/autonomous-space-tech-2025';
 
 export default function HomePage() {
   const contactInfo = {
@@ -66,7 +68,9 @@ export default function HomePage() {
     ...revolutionary2025Services,
     ...nextGenInnovations2025,
     ...innovative2025MicroSaasServices,
-    ...newEmergingTech2025Services
+    ...newEmergingTech2025Services,
+    ...revolutionary2025MicroSaasServices,
+    ...autonomousSpaceTech2025Services
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);
@@ -74,19 +78,21 @@ export default function HomePage() {
   // Service statistics
   const serviceStats = {
     totalServices: allServices.length,
-    aiServices: nextGenerationAIServices.length + innovativeAIServices.length + realMarketServices.filter(s => s.category.includes('AI')).length + revolutionary2025Services.filter(s => s.category.includes('AI')).length + nextGenInnovations2025.filter(s => s.category.includes('AI')).length,
-    emergingTech: emergingTechnologyServices.length + emergingTech2025Services.length,
+    aiServices: nextGenerationAIServices.length + innovativeAIServices.length + realMarketServices.filter(s => s.category.includes('AI')).length + revolutionary2025Services.filter(s => s.category.includes('AI')).length + nextGenInnovations2025.filter(s => s.category.includes('AI')).length + revolutionary2025MicroSaasServices.filter(s => s.category.includes('AI')).length + autonomousSpaceTech2025Services.filter(s => s.category.includes('AI')).length,
+    emergingTech: emergingTechnologyServices.length + emergingTech2025Services.length + revolutionary2025MicroSaasServices.filter(s => s.category.includes('Emerging')).length + autonomousSpaceTech2025Services.filter(s => s.category.includes('Emerging')).length,
     itSolutions: comprehensiveITSolutions.length + enterpriseITServices.length,
-    microSaas: enhancedRealMicroSaasServices.length + innovativeMicroSaasServices.length,
-    revolutionaryServices: revolutionary2025Services.length + nextGenInnovations2025.length
+    microSaas: enhancedRealMicroSaasServices.length + innovativeMicroSaasServices.length + revolutionary2025MicroSaasServices.length,
+    revolutionaryServices: revolutionary2025Services.length + nextGenInnovations2025.length + revolutionary2025MicroSaasServices.length + autonomousSpaceTech2025Services.length,
+    autonomousSystems: autonomousSpaceTech2025Services.filter(s => s.category.includes('Autonomous')).length,
+    quantumServices: quantumSpaceServices.length + quantumAIServices2025.length + revolutionary2025MicroSaasServices.filter(s => s.category.includes('Quantum')).length
   };
 
   return (
-    <UltraAdvancedFuturisticBackground 
+    <UltraAdvancedFuturisticBackgroundV2 
       intensity="extreme" 
-      colorScheme="quantum"
-      particleCount={400}
-      animationSpeed={2.0}
+      colorScheme="hybrid"
+      particleCount={500}
+      animationSpeed={2.5}
       enableGlitch={true}
       enableHologram={true}
       enableQuantum={true}
@@ -108,7 +114,7 @@ export default function HomePage() {
         </Head>
 
         {/* Ultra Advanced Navigation */}
-        <UltraAdvancedNavigation />
+        <UltraAdvancedNavigationV2 />
 
         {/* Hero Section */}
         <section className="relative z-10 pt-32 pb-16 px-4 sm:px-6 lg:px-8">
@@ -579,6 +585,150 @@ export default function HomePage() {
           showFilters={true}
         />
 
+        {/* Revolutionary 2025 Services Showcase */}
+        <section className="py-20 px-4">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Revolutionary 2025 Services
+              </h2>
+              <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                Experience the future with our cutting-edge AI, quantum computing, and autonomous systems that are reshaping industries and unlocking unprecedented possibilities.
+              </p>
+            </motion.div>
+
+            {/* Featured Revolutionary Services */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+              {revolutionary2025MicroSaasServices.slice(0, 6).map((service, index) => (
+                <motion.div
+                  key={service.id}
+                  initial={{ opacity: 0, y: 50, scale: 0.9 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -10, scale: 1.02 }}
+                  className="group"
+                >
+                  <div className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl p-6 h-full hover:border-white/20 transition-all duration-300">
+                    <div className="text-4xl mb-4">{service.icon}</div>
+                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r from-white to-gray-300 transition-all duration-300">
+                      {service.name}
+                    </h3>
+                    <p className="text-gray-300 text-sm mb-4">{service.tagline}</p>
+                    <div className="flex items-baseline gap-2 mb-4">
+                      <span className="text-2xl font-bold text-white">{service.price}</span>
+                      <span className="text-gray-400">{service.period}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-gray-400 mb-4">
+                      <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                      <span>{service.rating}/5 ({service.reviews})</span>
+                    </div>
+                    <a
+                      href={service.link}
+                      className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white font-semibold py-2 px-4 rounded-lg text-sm transition-all duration-300"
+                    >
+                      Learn More
+                      <ArrowRight className="w-4 h-4" />
+                    </a>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* View All Button */}
+            <div className="text-center">
+              <motion.a
+                href="/revolutionary-2025-services"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center gap-3 bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white font-bold py-4 px-8 rounded-xl text-lg transition-all duration-300 shadow-2xl hover:shadow-purple-500/25"
+              >
+                <Rocket className="w-6 h-6" />
+                Explore All Revolutionary Services
+                <ArrowRight className="w-5 h-5" />
+              </motion.a>
+            </div>
+          </div>
+        </section>
+
+        {/* Autonomous Systems Showcase */}
+        <section className="py-20 px-4 bg-gradient-to-r from-black/60 to-black/40">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 bg-gradient-to-r from-green-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+                Autonomous Systems & Space Tech
+              </h2>
+              <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                Discover our autonomous systems that are revolutionizing industries and space technology that's pushing the boundaries of human exploration.
+              </p>
+            </motion.div>
+
+            {/* Featured Autonomous Services */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+              {autonomousSpaceTech2025Services.slice(0, 6).map((service, index) => (
+                <motion.div
+                  key={service.id}
+                  initial={{ opacity: 0, y: 50, scale: 0.9 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -10, scale: 1.02 }}
+                  className="group"
+                >
+                  <div className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl p-6 h-full hover:border-white/20 transition-all duration-300">
+                    <div className="text-4xl mb-4">{service.icon}</div>
+                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r from-white to-gray-300 transition-all duration-300">
+                      {service.name}
+                    </h3>
+                    <p className="text-gray-300 text-sm mb-4">{service.tagline}</p>
+                    <div className="flex items-baseline gap-2 mb-4">
+                      <span className="text-2xl font-bold text-white">{service.price}</span>
+                      <span className="text-gray-400">{service.period}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-gray-400 mb-4">
+                      <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                      <span>{service.rating}/5 ({service.reviews})</span>
+                    </div>
+                    <a
+                      href={service.link}
+                      className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-semibold py-2 px-6 rounded-lg text-sm transition-all duration-300"
+                    >
+                      Learn More
+                      <ArrowRight className="w-4 h-4" />
+                    </a>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* View All Button */}
+            <div className="text-center">
+              <motion.a
+                href="/autonomous-space-tech"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-right gap-3 bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white font-bold py-4 px-8 rounded-xl text-lg transition-all duration-300 shadow-2xl hover:shadow-green-500/25"
+              >
+                <Rocket className="w-6 h-6" />
+                Explore All Autonomous Systems
+                <ArrowRight className="w-5 h-5" />
+              </motion.a>
+            </div>
+          </div>
+        </section>
+
         {/* Featured Offers */}
         <section className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
@@ -850,10 +1000,6 @@ export default function HomePage() {
           </div>
         </section>
       </div>
-<<<<<<< HEAD
-            </UltraAdvancedFuturisticBackground>
-=======
-    </UltraAdvancedFuturisticBackground>
->>>>>>> main
+    </UltraAdvancedFuturisticBackgroundV2>
   );
 }
