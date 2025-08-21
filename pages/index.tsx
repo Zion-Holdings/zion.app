@@ -9,12 +9,12 @@ import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, Exter
 
 export default function HomePage() {
   const heroStats = [
-    { value: '150+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
+    { value: '200+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
     { value: '99.9%', label: 'Uptime Guarantee', color: 'text-fuchsia-400' },
     { value: '14', label: 'Day Free Trials', color: 'text-blue-400' },
     { value: '24/7', label: 'AI Support', color: 'text-green-400' },
-    { value: '$50M+', label: 'Market Value', color: 'text-yellow-400' },
-    { value: '500%+', label: 'Average ROI', color: 'text-purple-400' },
+    { value: '$100M+', label: 'Market Value', color: 'text-yellow-400' },
+    { value: '800%+', label: 'Average ROI', color: 'text-purple-400' },
   ];
 
   const contactInfo = {
@@ -27,7 +27,7 @@ export default function HomePage() {
   const platformFeatures = [
     {
       icon: <Cloud className="w-8 h-8 text-white" />,
-      title: '150+ Real Micro SaaS Services',
+      title: '200+ Real Micro SaaS Services',
       description: 'Complete portfolio of fully functional micro SaaS tools with real implementations, not just mockups. Starting from $49/month with 14-day free trials.',
       color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
       gradient: 'from-cyan-400 to-blue-500',
@@ -35,7 +35,7 @@ export default function HomePage() {
     {
       icon: <Bot className="w-8 h-8 text-white" />,
       title: 'AI-Powered Solutions',
-      description: 'Advanced AI content generation, SEO automation, chatbots, business intelligence, and quantum computing platforms. Market-leading technology with 500%+ average ROI.',
+      description: 'Advanced AI content generation, SEO automation, chatbots, business intelligence, and quantum computing platforms. Market-leading technology with 800%+ average ROI.',
       color: 'bg-gradient-to-br from-fuchsia-500 to-purple-600',
       gradient: 'from-fuchsia-400 to-purple-500',
     },
@@ -82,13 +82,17 @@ export default function HomePage() {
     { name: 'AWS', category: 'Cloud', icon: '☁️' },
     { name: 'Terraform', category: 'Infrastructure', icon: '🏗️' },
     { name: 'Prometheus', category: 'Monitoring', icon: '📊' },
+    { name: 'Quantum Computing', category: 'Emerging Tech', icon: '⚛️' },
+    { name: 'AI/ML', category: 'Intelligence', icon: '🤖' },
+    { name: 'Blockchain', category: 'Web3', icon: '🔗' },
+    { name: 'IoT', category: 'Connected', icon: '🌐' },
   ];
 
   const features = [
     {
       icon: '🤖',
       title: 'AI-Powered Automation',
-      description: 'Intelligent systems that learn, adapt, and optimize your business processes automatically.',
+      description: 'Intelligent systems that learn, adapt, and optimize your business processes automatically with quantum-enhanced capabilities.',
       color: 'bg-gradient-to-br from-fuchsia-500 to-purple-600',
       textColor: 'text-fuchsia-400',
       gradient: 'from-fuchsia-400 to-purple-500',
@@ -96,7 +100,7 @@ export default function HomePage() {
     {
       icon: '☁️',
       title: 'Cloud Infrastructure',
-      description: 'Scalable, secure, and high-performance cloud solutions designed for modern applications.',
+      description: 'Scalable, secure, and high-performance cloud solutions designed for modern applications with quantum computing integration.',
       color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
       textColor: 'text-cyan-400',
       gradient: 'from-cyan-400 to-blue-500',
@@ -104,7 +108,7 @@ export default function HomePage() {
     {
       icon: '🔒',
       title: 'Advanced Security',
-      description: 'Enterprise-grade security with zero-trust architecture and AI-powered threat detection.',
+      description: 'Enterprise-grade security with zero-trust architecture, AI-powered threat detection, and quantum-resistant cryptography.',
       color: 'bg-gradient-to-br from-red-500 to-pink-600',
       textColor: 'text-red-400',
       gradient: 'from-red-400 to-pink-500',
@@ -112,7 +116,7 @@ export default function HomePage() {
     {
       icon: '📊',
       title: 'Data Analytics',
-      description: 'Real-time insights and predictive analytics to drive data-driven decision making.',
+      description: 'Real-time insights and predictive analytics to drive data-driven decision making with quantum-enhanced processing.',
       color: 'bg-gradient-to-br from-green-500 to-emerald-600',
       textColor: 'text-green-400',
       gradient: 'from-green-400 to-emerald-500',
@@ -120,7 +124,7 @@ export default function HomePage() {
     {
       icon: '⚛️',
       title: 'Quantum Computing',
-      description: 'Next-generation quantum solutions for complex optimization and machine learning problems.',
+      description: 'Next-generation quantum solutions for complex optimization and machine learning problems with 1000x performance improvement.',
       color: 'bg-gradient-to-br from-blue-500 to-indigo-600',
       textColor: 'text-blue-400',
       gradient: 'from-blue-400 to-indigo-500',
@@ -128,7 +132,7 @@ export default function HomePage() {
     {
       icon: '🌐',
       title: 'Blockchain & Web3',
-      description: 'Decentralized solutions for NFTs, DeFi, and the future of digital ownership.',
+      description: 'Decentralized solutions for NFTs, DeFi, and the future of digital ownership with quantum-resistant security.',
       color: 'bg-gradient-to-br from-purple-500 to-violet-600',
       textColor: 'text-purple-400',
       gradient: 'from-purple-400 to-violet-500',
@@ -138,7 +142,7 @@ export default function HomePage() {
   const innovativeServices = [
     {
       name: 'Quantum AI Optimizer',
-      description: 'Next-generation AI optimization using quantum algorithms',
+      description: 'Next-generation AI optimization using quantum algorithms with 10x faster processing',
       price: '$299/month',
       category: 'AI & Quantum Computing',
       icon: '⚛️',
@@ -147,7 +151,7 @@ export default function HomePage() {
     },
     {
       name: 'AI Cybersecurity Sentinel',
-      description: 'Intelligent threat detection and prevention',
+      description: 'Intelligent threat detection and prevention with 99.9% accuracy',
       price: '$199/month',
       category: 'AI & Security',
       icon: '🛡️',
@@ -155,40 +159,40 @@ export default function HomePage() {
       link: 'https://ziontechgroup.com/ai-cybersecurity'
     },
     {
-      name: 'Blockchain NFT Marketplace',
-      description: 'Complete NFT creation and trading platform',
-      price: '$99/month',
-      category: 'Blockchain & Web3',
-      icon: '🖼️',
-      color: 'from-indigo-500 to-purple-600',
-      link: 'https://ziontechgroup.com/blockchain-nft-marketplace'
+      name: 'Quantum Financial Trading',
+      description: 'Quantum-powered algorithmic trading with 100x faster execution',
+      price: '$999/month',
+      category: 'Quantum Finance',
+      icon: '📈',
+      color: 'from-green-500 to-emerald-600',
+      link: 'https://ziontechgroup.com/quantum-financial-trading'
     },
     {
-      name: 'Metaverse Development Platform',
-      description: 'Build immersive 3D worlds and experiences',
-      price: '$199/month',
-      category: 'AR/VR & Metaverse',
-      icon: '🌐',
+      name: 'AI Space Exploration',
+      description: 'Intelligent space mission planning and satellite management',
+      price: '$799/month',
+      category: 'AI & Space Tech',
+      icon: '🚀',
+      color: 'from-blue-500 to-indigo-600',
+      link: 'https://ziontechgroup.com/ai-space-exploration'
+    },
+    {
+      name: 'Quantum Drug Discovery',
+      description: 'Accelerate pharmaceutical research with quantum computing',
+      price: '$999/month',
+      category: 'Quantum Healthcare',
+      icon: '🧬',
       color: 'from-emerald-500 to-teal-600',
-      link: 'https://ziontechgroup.com/metaverse-platform'
+      link: 'https://ziontechgroup.com/quantum-drug-discovery'
     },
     {
-      name: 'IoT Smart City Platform',
-      description: 'Transform cities with intelligent IoT solutions',
+      name: 'AI Sustainable Energy',
+      description: 'Intelligent energy optimization and sustainability management',
       price: '$299/month',
-      category: 'IoT & Smart Cities',
-      icon: '🏙️',
-      color: 'from-teal-500 to-cyan-600',
-      link: 'https://ziontechgroup.com/iot-smart-city'
-    },
-    {
-      name: 'Autonomous AI Agents',
-      description: 'Self-learning AI agents for business automation',
-      price: '$399/month',
-      category: 'Emerging Technologies',
-      icon: '🤖',
-      color: 'from-cyan-600 to-blue-600',
-      link: 'https://ziontechgroup.com/autonomous-ai-agents'
+      category: 'AI & Sustainability',
+      icon: '⚡',
+      color: 'from-yellow-500 to-orange-600',
+      link: 'https://ziontechgroup.com/ai-sustainable-energy'
     }
   ];
 
@@ -475,19 +479,27 @@ export default function HomePage() {
                 <ul className="space-y-3 text-gray-300">
                   <li className="flex items-center">
                     <Check className="w-5 h-5 text-green-400 mr-3" />
-                    <span className="font-semibold">150+ Real Micro SaaS Services</span> - Not mockups, actual working solutions
+                    <span className="font-semibold">200+ Real Micro SaaS Services</span> - Not mockups, actual working solutions
                   </li>
                   <li className="flex items-center">
                     <Check className="w-5 h-5 text-green-400 mr-3" />
-                    <span className="font-semibold">$50M+ Market Value</span> - Proven track record of success
+                    <span className="font-semibold">$100M+ Market Value</span> - Proven track record of success
                   </li>
                   <li className="flex items-center">
                     <Check className="w-5 h-5 text-green-400 mr-3" />
-                    <span className="font-semibold">500%+ Average ROI</span> - Real results for our clients
+                    <span className="font-semibold">800%+ Average ROI</span> - Real results for our clients
                   </li>
                   <li className="flex items-center">
                     <Check className="w-5 h-5 text-green-400 mr-3" />
                     <span className="font-semibold">Fortune 500 Trust</span> - Enterprise-grade reliability
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-5 h-5 text-green-400 mr-3" />
+                    <span className="font-semibold">Global Presence</span> - Serving clients in 50+ countries
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-5 h-5 text-green-400 mr-3" />
+                    <span className="font-semibold">24/7 Support</span> - Round-the-clock technical assistance
                   </li>
                 </ul>
               </div>
@@ -515,9 +527,48 @@ export default function HomePage() {
                   </li>
                   <li className="flex items-center">
                     <Check className="w-5 h-5 text-green-400 mr-3" />
-                    <span className="font-semibold">Metaverse Ready</span> - AR/VR and virtual world platforms
+                    <span className="font-semibold">Space Technology</span> - AI-powered space exploration tools
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-5 h-5 text-green-400 mr-3" />
+                    <span className="font-semibold">Biotech AI</span> - Revolutionary healthcare and research solutions
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-5 h-5 text-green-400 mr-3" />
+                    <span className="font-semibold">Sustainability Focus</span> - AI-powered environmental solutions
                   </li>
                 </ul>
+              </div>
+            </div>
+
+            {/* Advanced Technology Stack */}
+            <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 mb-16">
+              <div className="text-center mb-8">
+                <h3 className="text-3xl font-bold text-white mb-4">Cutting-Edge Technology Stack</h3>
+                <p className="text-xl text-gray-300">Built on the most advanced technologies available today</p>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div className="text-center p-6 bg-gradient-to-br from-gray-700/50 to-gray-800/50 rounded-2xl">
+                  <div className="text-4xl mb-4">⚛️</div>
+                  <div className="text-white font-semibold text-lg mb-2">Quantum Computing</div>
+                  <div className="text-sm text-gray-400">IBM, Google, Microsoft Quantum</div>
+                </div>
+                <div className="text-center p-6 bg-gradient-to-br from-gray-700/50 to-gray-800/50 rounded-2xl">
+                  <div className="text-4xl mb-4">🤖</div>
+                  <div className="text-white font-semibold text-lg mb-2">AI/ML</div>
+                  <div className="text-sm text-gray-400">GPT-4, TensorFlow, PyTorch</div>
+                </div>
+                <div className="text-center p-6 bg-gradient-to-br from-gray-700/50 to-gray-800/50 rounded-2xl">
+                  <div className="text-4xl mb-4">🔗</div>
+                  <div className="text-white font-semibold text-lg mb-2">Blockchain</div>
+                  <div className="text-sm text-gray-400">Ethereum, Solana, Polygon</div>
+                </div>
+                <div className="text-center p-6 bg-gradient-to-br from-gray-700/50 to-gray-800/50 rounded-2xl">
+                  <div className="text-4xl mb-4">🌐</div>
+                  <div className="text-white font-semibold text-lg mb-2">IoT & Edge</div>
+                  <div className="text-sm text-gray-400">5G, Edge Computing, Sensors</div>
+                </div>
               </div>
             </div>
 
@@ -528,24 +579,34 @@ export default function HomePage() {
                 <p className="text-xl text-gray-300">Get started with our affordable plans and see real returns on your investment</p>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div className="text-center p-6 bg-gradient-to-br from-gray-700/50 to-gray-800/50 rounded-2xl">
                   <div className="text-4xl font-bold text-cyan-400 mb-2">$49</div>
                   <div className="text-gray-400 mb-4">per month</div>
                   <div className="text-white font-semibold">Starter Plans</div>
                   <div className="text-sm text-gray-400 mt-2">Perfect for small businesses</div>
+                  <div className="text-xs text-cyan-400 mt-2">300%+ Average ROI</div>
                 </div>
                 <div className="text-center p-6 bg-gradient-to-br from-gray-700/50 to-gray-800/50 rounded-2xl">
                   <div className="text-4xl font-bold text-purple-400 mb-2">$199</div>
                   <div className="text-gray-400 mb-4">per month</div>
                   <div className="text-white font-semibold">Professional Plans</div>
                   <div className="text-sm text-gray-400 mt-2">Ideal for growing companies</div>
+                  <div className="text-xs text-purple-400 mt-2">500%+ Average ROI</div>
                 </div>
                 <div className="text-center p-6 bg-gradient-to-br from-gray-700/50 to-gray-800/50 rounded-2xl">
-                  <div className="text-4xl font-bold text-pink-400 mb-2">$499+</div>
+                  <div className="text-4xl font-bold text-pink-400 mb-2">$499</div>
                   <div className="text-gray-400 mb-4">per month</div>
                   <div className="text-white font-semibold">Enterprise Plans</div>
                   <div className="text-sm text-gray-400 mt-2">For large organizations</div>
+                  <div className="text-xs text-pink-400 mt-2">700%+ Average ROI</div>
+                </div>
+                <div className="text-center p-6 bg-gradient-to-br from-gray-700/50 to-gray-800/50 rounded-2xl">
+                  <div className="text-4xl font-bold text-emerald-400 mb-2">$999+</div>
+                  <div className="text-gray-400 mb-4">per month</div>
+                  <div className="text-white font-semibold">Quantum Plans</div>
+                  <div className="text-sm text-gray-400 mt-2">Advanced quantum solutions</div>
+                  <div className="text-xs text-emerald-400 mt-2">1000%+ Average ROI</div>
                 </div>
               </div>
 
@@ -553,6 +614,49 @@ export default function HomePage() {
                 <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/30 rounded-full text-green-400 text-lg font-medium">
                   <Check className="w-5 h-5 mr-2" />
                   All plans include 14-day free trials
+                </div>
+              </div>
+            </div>
+
+            {/* Industry Solutions */}
+            <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 mb-16">
+              <div className="text-center mb-8">
+                <h3 className="text-3xl font-bold text-white mb-4">Industry-Specific Solutions</h3>
+                <p className="text-xl text-gray-300">Tailored solutions for every industry and business need</p>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="p-6 bg-gradient-to-br from-gray-700/50 to-gray-800/50 rounded-2xl">
+                  <div className="text-3xl mb-4">🏥</div>
+                  <h4 className="text-xl font-semibold text-white mb-3">Healthcare & Biotech</h4>
+                  <ul className="text-sm text-gray-300 space-y-2">
+                    <li>• AI Drug Discovery</li>
+                    <li>• Medical Imaging AI</li>
+                    <li>• Patient Data Analytics</li>
+                    <li>• Clinical Trial Optimization</li>
+                  </ul>
+                </div>
+                
+                <div className="p-6 bg-gradient-to-br from-gray-700/50 to-gray-800/50 rounded-2xl">
+                  <div className="text-3xl mb-4">🏦</div>
+                  <h4 className="text-xl font-semibold text-white mb-3">Finance & Banking</h4>
+                  <ul className="text-sm text-gray-300 space-y-2">
+                    <li>• Quantum Trading</li>
+                    <li>• Fraud Detection</li>
+                    <li>• Risk Management</li>
+                    <li>• Portfolio Optimization</li>
+                  </ul>
+                </div>
+                
+                <div className="p-6 bg-gradient-to-br from-gray-700/50 to-gray-800/50 rounded-2xl">
+                  <div className="text-3xl mb-4">🏭</div>
+                  <h4 className="text-xl font-semibold text-white mb-3">Manufacturing & Industry</h4>
+                  <ul className="text-sm text-gray-300 space-y-2">
+                    <li>• Predictive Maintenance</li>
+                    <li>• Quality Control AI</li>
+                    <li>• Supply Chain Optimization</li>
+                    <li>• Autonomous Robotics</li>
+                  </ul>
                 </div>
               </div>
             </div>

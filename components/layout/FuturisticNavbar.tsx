@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, Zap, Globe, Bot, Cloud, Shield } from 'lucide-react';
+import { Menu, X, Zap, Globe, Bot, Cloud, Shield, Brain, Atom } from 'lucide-react';
 
 export default function FuturisticNavbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,6 +19,8 @@ export default function FuturisticNavbar() {
     { name: 'Home', href: '/', icon: <Zap className="w-4 h-4" /> },
     { name: 'Services', href: '/services', icon: <Cloud className="w-4 h-4" /> },
     { name: 'Micro SaaS', href: '/micro-saas', icon: <Bot className="w-4 h-4" /> },
+    { name: 'AI Solutions', href: '/ai-solutions', icon: <Brain className="w-4 h-4" /> },
+    { name: 'Quantum Tech', href: '/quantum-tech', icon: <Atom className="w-4 h-4" /> },
     { name: 'Pricing', href: '/pricing', icon: <Globe className="w-4 h-4" /> },
     { name: 'About', href: '/about', icon: <Shield className="w-4 h-4" /> },
     { name: 'Contact', href: '/contact', icon: <Zap className="w-4 h-4" /> },
