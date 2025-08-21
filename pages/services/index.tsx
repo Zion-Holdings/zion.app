@@ -11,6 +11,7 @@ import { curatedMarketServices } from '../../data/curated-market-services';
 import { realMarketServices } from '../../data/real-market-services';
 import { new2025Services } from '../../data/new-2025-services';
 import { marketValidatedServices } from '../../data/market-validated-services';
+import { moreRealServices2025 } from '../../data/more-real-services-2025';
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -33,7 +34,8 @@ export default function ServicesIndexPage() {
       curatedMarketServices as any[],
       realMarketServices as any[],
       new2025Services as any[],
-      marketValidatedServices as any[]
+      marketValidatedServices as any[],
+      moreRealServices2025 as any[]
     );
   const byCategory: Record<string, any[]> = {};
   for (const c of categories) byCategory[c] = [];
