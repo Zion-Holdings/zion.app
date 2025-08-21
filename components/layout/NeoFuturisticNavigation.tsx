@@ -161,22 +161,22 @@ export default function NeoFuturisticNavigation() {
       link: '/about'
     },
     {
-      name: 'Our Mission',
-      description: 'Transform businesses with revolutionary technology',
-      icon: <Target className="w-5 h-5" />,
-      link: '/mission'
-    },
-    {
-      name: 'Leadership Team',
-      description: 'Meet our visionary leaders',
-      icon: <Users className="w-5 h-5" />,
-      link: '/team'
-    },
-    {
       name: 'Careers',
       description: 'Join our revolutionary team',
       icon: <Star className="w-5 h-5" />,
       link: '/careers'
+    },
+    {
+      name: 'News & Updates',
+      description: 'Latest announcements and releases',
+      icon: <TrendingUp className="w-5 h-5" />,
+      link: '/news'
+    },
+    {
+      name: 'Contact',
+      description: 'Talk to our team 24/7',
+      icon: <Phone className="w-5 h-5" />,
+      link: '/contact'
     }
   ];
 
@@ -186,12 +186,6 @@ export default function NeoFuturisticNavigation() {
       description: 'Comprehensive service guides',
       icon: <BookOpen className="w-5 h-5" />,
       link: '/docs'
-    },
-    {
-      name: 'API Reference',
-      description: 'Developer documentation',
-      icon: <Code className="w-5 h-5" />,
-      link: '/api'
     },
     {
       name: 'Blog & Insights',
@@ -204,6 +198,12 @@ export default function NeoFuturisticNavigation() {
       description: 'Success stories from clients',
       icon: <ChartBar className="w-5 h-5" />,
       link: '/case-studies'
+    },
+    {
+      name: 'Resources',
+      description: 'Guides, templates, and tools',
+      icon: <Search className="w-5 h-5" />,
+      link: '/resources'
     }
   ];
 
@@ -289,6 +289,20 @@ export default function NeoFuturisticNavigation() {
                 </div>
               )}
             </div>
+
+            {/* Direct Links */}
+            <Link
+              href="/micro-saas"
+              className="text-gray-300 hover:text-white transition-colors duration-300 py-2"
+            >
+              Micro SaaS
+            </Link>
+            <Link
+              href="/pricing"
+              className="text-gray-300 hover:text-white transition-colors duration-300 py-2"
+            >
+              Pricing
+            </Link>
 
             {/* Company Dropdown */}
             <div className="relative group">
