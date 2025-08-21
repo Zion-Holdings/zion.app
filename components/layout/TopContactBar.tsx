@@ -1,254 +1,153 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Phone, Mail, MapPin, Globe, 
-  Clock, ChevronDown, ChevronUp,
-  MessageCircle, Calendar, Star
-} from 'lucide-react';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Phone, Mail, MapPin, Clock, Star, Award, TrendingUp, Users } from 'lucide-react';
 
 const contactInfo = {
   mobile: '+1 302 464 0950',
   email: 'kleber@ziontechgroup.com',
   address: '364 E Main St STE 1008 Middletown DE 19709',
-  website: 'https://ziontechgroup.com',
-  hours: 'Mon-Fri: 9AM-6PM EST',
-  rating: '4.9/5 (200+ Reviews)'
+  website: 'https://ziontechgroup.com'
 };
 
-const quickActions = [
-  { name: 'Get Quote', href: '/quote', icon: <MessageCircle className="w-4 h-4" /> },
-  { name: 'Book Demo', href: '/demo', icon: <Calendar className="w-4 h-4" /> },
-  { name: 'Live Chat', href: '/chat', icon: <MessageCircle className="w-4 h-4" /> }
+const companyStats = [
+  { icon: Star, value: '500+', label: 'Services Delivered' },
+  { icon: Users, value: '1000+', label: 'Happy Clients' },
+  { icon: TrendingUp, value: '99.9%', label: 'Uptime Guarantee' },
+  { icon: Award, value: '25+', label: 'Industry Awards' }
 ];
 
 export default function TopContactBar() {
-  const [isExpanded, setIsExpanded] = useState(false);
-
   return (
-    <div className="relative z-40">
-      {/* Main Contact Bar */}
-      <div className="bg-gradient-to-r from-gray-900 via-black to-gray-900 border-b border-cyan-500/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-12">
-            {/* Left Side - Contact Info */}
-            <div className="hidden md:flex items-center space-x-6 text-sm">
-              {/* Phone */}
-              <div className="flex items-center space-x-2 text-gray-300 hover:text-cyan-400 transition-colors duration-200 group">
-                <Phone className="w-4 h-4 text-cyan-400 group-hover:scale-110 transition-transform duration-200" />
-                <a href={`tel:${contactInfo.mobile}`} className="hover:text-cyan-400 transition-colors duration-200">
-                  {contactInfo.mobile}
-                </a>
-              </div>
+    <div className="relative bg-gradient-to-r from-cyan-900/20 via-blue-900/20 to-purple-900/20 border-b border-cyan-500/30 backdrop-blur-sm">
+      {/* Animated Background */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(6,182,212,0.1),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_50%,rgba(139,92,246,0.1),transparent_50%)]"></div>
+      </div>
 
-              {/* Email */}
-              <div className="flex items-center space-x-2 text-gray-300 hover:text-cyan-400 transition-colors duration-200 group">
-                <Mail className="w-4 h-4 text-cyan-400 group-hover:scale-110 transition-transform duration-200" />
-                <a href={`mailto:${contactInfo.email}`} className="hover:text-cyan-400 transition-colors duration-200">
-                  {contactInfo.email}
-                </a>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row items-center justify-between py-3 space-y-2 lg:space-y-0">
+          {/* Contact Information */}
+          <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6 text-sm">
+            {/* Phone */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="flex items-center space-x-2 text-cyan-300 hover:text-cyan-200 transition-colors duration-200 group"
+            >
+              <div className="p-1.5 bg-cyan-500/20 rounded-lg group-hover:bg-cyan-500/30 transition-all duration-200">
+                <Phone className="w-3.5 h-3.5" />
               </div>
+              <a href={`tel:${contactInfo.mobile}`} className="font-medium hover:underline">
+                {contactInfo.mobile}
+              </a>
+            </motion.div>
 
-              {/* Address */}
-              <div className="flex items-center space-x-2 text-gray-300 hover:text-cyan-400 transition-colors duration-200 group">
-                <MapPin className="w-4 h-4 text-cyan-400 group-hover:scale-110 transition-transform duration-200" />
-                <span className="hover:text-cyan-400 transition-colors duration-200">
-                  {contactInfo.address}
-                </span>
+            {/* Email */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="flex items-center space-x-2 text-cyan-300 hover:text-cyan-200 transition-colors duration-200 group"
+            >
+              <div className="p-1.5 bg-cyan-500/20 rounded-lg group-hover:bg-cyan-500/30 transition-all duration-200">
+                <Mail className="w-3.5 h-3.5" />
               </div>
+              <a href={`mailto:${contactInfo.email}`} className="font-medium hover:underline">
+                {contactInfo.email}
+              </a>
+            </motion.div>
 
-              {/* Website */}
-              <div className="flex items-center space-x-2 text-gray-300 hover:text-cyan-400 transition-colors duration-200 group">
-                <Globe className="w-4 h-4 text-cyan-400 group-hover:scale-110 transition-transform duration-200" />
-                <a href={contactInfo.website} target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors duration-200">
-                  {contactInfo.website.replace('https://', '')}
-                </a>
+            {/* Address */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="flex items-center space-x-2 text-cyan-300 hover:text-cyan-200 transition-colors duration-200 group"
+            >
+              <div className="p-1.5 bg-cyan-500/20 rounded-lg group-hover:bg-cyan-500/30 transition-all duration-200">
+                <MapPin className="w-3.5 h-3.5" />
               </div>
-            </div>
+              <span className="font-medium">{contactInfo.address}</span>
+            </motion.div>
 
-            {/* Center - Business Hours & Rating */}
-            <div className="hidden lg:flex items-center space-x-6 text-sm">
-              {/* Business Hours */}
-              <div className="flex items-center space-x-2 text-gray-300">
-                <Clock className="w-4 h-4 text-cyan-400" />
-                <span>{contactInfo.hours}</span>
+            {/* Business Hours */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="flex items-center space-x-2 text-cyan-300 hover:text-cyan-200 transition-colors duration-200 group"
+            >
+              <div className="p-1.5 bg-cyan-500/20 rounded-lg group-hover:bg-cyan-500/30 transition-all duration-200">
+                <Clock className="w-3.5 h-3.5" />
               </div>
-
-              {/* Rating */}
-              <div className="flex items-center space-x-2 text-gray-300">
-                <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                <span>{contactInfo.rating}</span>
-              </div>
-            </div>
-
-            {/* Right Side - Quick Actions & Expand Button */}
-            <div className="flex items-center space-x-4">
-              {/* Quick Actions */}
-              <div className="hidden sm:flex items-center space-x-2">
-                {quickActions.map((action) => (
-                  <a
-                    key={action.name}
-                    href={action.href}
-                    className="flex items-center space-x-2 px-3 py-1.5 text-xs text-gray-300 hover:text-white bg-gray-800/50 hover:bg-cyan-500/20 border border-gray-700/50 hover:border-cyan-500/50 rounded-lg transition-all duration-200 hover:scale-105"
-                  >
-                    {action.icon}
-                    <span>{action.name}</span>
-                  </a>
-                ))}
-              </div>
-
-              {/* Expand/Collapse Button */}
-              <button
-                onClick={() => setIsExpanded(!isExpanded)}
-                className="flex items-center space-x-1 px-3 py-1.5 text-xs text-gray-300 hover:text-white bg-gray-800/50 hover:bg-cyan-500/20 border border-gray-700/50 hover:border-cyan-500/50 rounded-lg transition-all duration-200 hover:scale-105"
-              >
-                <span>More Info</span>
-                {isExpanded ? (
-                  <ChevronUp className="w-4 h-4" />
-                ) : (
-                  <ChevronDown className="w-4 h-4" />
-                )}
-              </button>
-            </div>
+              <span className="font-medium">24/7 Support</span>
+            </motion.div>
           </div>
+
+          {/* Company Stats */}
+          <div className="hidden lg:flex items-center space-x-6">
+            {companyStats.map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
+                className="flex items-center space-x-2 text-xs"
+              >
+                <div className="p-1 bg-cyan-500/20 rounded-md">
+                  <stat.icon className="w-3 h-3 text-cyan-400" />
+                </div>
+                <div className="text-right">
+                  <div className="font-bold text-cyan-300">{stat.value}</div>
+                  <div className="text-gray-400">{stat.label}</div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* CTA Button */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="flex items-center space-x-2"
+          >
+            <a
+              href="/contact"
+              className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-sm font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40"
+            >
+              Get Started Today
+              <TrendingUp className="w-4 h-4 ml-2" />
+            </a>
+          </motion.div>
         </div>
       </div>
 
-      {/* Expanded Information Panel */}
-      <AnimatePresence>
-        {isExpanded && (
+      {/* Floating Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(8)].map((_, i) => (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="bg-gray-900/95 backdrop-blur-md border-b border-cyan-500/30 overflow-hidden"
-          >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {/* Contact Details */}
-                <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-white flex items-center space-x-2">
-                    <Phone className="w-5 h-5 text-cyan-400" />
-                    <span>Contact Details</span>
-                  </h3>
-                  <div className="space-y-3">
-                    <div className="flex items-center space-x-3 text-gray-300">
-                      <Phone className="w-4 h-4 text-cyan-400" />
-                      <a href={`tel:${contactInfo.mobile}`} className="hover:text-cyan-400 transition-colors duration-200">
-                        {contactInfo.mobile}
-                      </a>
-                    </div>
-                    <div className="flex items-center space-x-3 text-gray-300">
-                      <Mail className="w-4 h-4 text-cyan-400" />
-                      <a href={`mailto:${contactInfo.email}`} className="hover:text-cyan-400 transition-colors duration-200">
-                        {contactInfo.email}
-                      </a>
-                    </div>
-                    <div className="flex items-start space-x-3 text-gray-300">
-                      <MapPin className="w-4 h-4 text-cyan-400 mt-1" />
-                      <span className="text-sm">{contactInfo.address}</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Business Information */}
-                <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-white flex items-center space-x-2">
-                    <Clock className="w-5 h-5 text-cyan-400" />
-                    <span>Business Info</span>
-                  </h3>
-                  <div className="space-y-3">
-                    <div className="flex items-center space-x-3 text-gray-300">
-                      <Clock className="w-4 h-4 text-cyan-400" />
-                      <span>{contactInfo.hours}</span>
-                    </div>
-                    <div className="flex items-center space-x-3 text-gray-300">
-                      <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                      <span>{contactInfo.rating}</span>
-                    </div>
-                    <div className="flex items-center space-x-3 text-gray-300">
-                      <Globe className="w-4 h-4 text-cyan-400" />
-                      <a href={contactInfo.website} target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors duration-200">
-                        Visit Website
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Quick Actions */}
-                <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-white flex items-center space-x-2">
-                    <MessageCircle className="w-5 h-5 text-cyan-400" />
-                    <span>Quick Actions</span>
-                  </h3>
-                  <div className="space-y-3">
-                    {quickActions.map((action) => (
-                      <a
-                        key={action.name}
-                        href={action.href}
-                        className="flex items-center space-x-3 p-3 text-gray-300 hover:text-white bg-gray-800/30 hover:bg-cyan-500/20 border border-gray-700/30 hover:border-cyan-500/50 rounded-lg transition-all duration-200 hover:scale-105 group"
-                      >
-                        <div className="text-cyan-400 group-hover:scale-110 transition-transform duration-200">
-                          {action.icon}
-                        </div>
-                        <span className="font-medium">{action.name}</span>
-                      </a>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Company Highlights */}
-                <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-white flex items-center space-x-2">
-                    <Star className="w-5 h-5 text-cyan-400" />
-                    <span>Why Choose Us</span>
-                  </h3>
-                  <div className="space-y-3">
-                    <div className="p-3 bg-gradient-to-r from-cyan-500/10 to-blue-600/10 border border-cyan-500/30 rounded-lg">
-                      <div className="text-sm font-medium text-white mb-1">15+ Years Experience</div>
-                      <div className="text-xs text-gray-400">Industry expertise and proven track record</div>
-                    </div>
-                    <div className="p-3 bg-gradient-to-r from-purple-500/10 to-pink-600/10 border border-purple-500/30 rounded-lg">
-                      <div className="text-sm font-medium text-white mb-1">500+ Services Delivered</div>
-                      <div className="text-xs text-gray-400">Successful implementations worldwide</div>
-                    </div>
-                    <div className="p-3 bg-gradient-to-r from-green-500/10 to-emerald-600/10 border border-green-500/30 rounded-lg">
-                      <div className="text-sm font-medium text-white mb-1">24/7 Support</div>
-                      <div className="text-xs text-gray-400">Round-the-clock technical assistance</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Call to Action */}
-              <div className="mt-6 pt-6 border-t border-cyan-500/30">
-                <div className="text-center">
-                  <h3 className="text-lg font-semibold text-white mb-3">
-                    Ready to Transform Your Business?
-                  </h3>
-                  <p className="text-gray-400 mb-4 max-w-2xl mx-auto">
-                    Get in touch with our team of experts to discuss how our cutting-edge technology solutions can drive your business forward.
-                  </p>
-                  <div className="flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-4">
-                    <a
-                      href="/contact"
-                      className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/25"
-                    >
-                      Get Started Today
-                    </a>
-                    <a
-                      href="/comprehensive-services-showcase-2025"
-                      className="px-6 py-3 text-cyan-400 hover:text-white border border-cyan-500/50 hover:border-cyan-400 rounded-lg transition-all duration-300 hover:bg-cyan-500/10"
-                    >
-                      View All Services
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            key={i}
+            className="absolute w-1 h-1 bg-cyan-400/30 rounded-full"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 3}s`
+            }}
+            animate={{
+              y: [0, -20, 0],
+              opacity: [0.3, 0.7, 0.3],
+            }}
+            transition={{
+              duration: 3 + Math.random() * 2,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+        ))}
+      </div>
     </div>
   );
 }

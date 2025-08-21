@@ -7,7 +7,8 @@ import {
   Zap,
   Target, Atom,
   BookOpen,
-  Truck, DollarSign, BarChart3, Globe, Users, X, Phone, Mail, MapPin, ArrowRight
+  Truck, DollarSign, BarChart3, Globe, Users, X, Phone, Mail, MapPin, ArrowRight,
+  Star, Sparkles, Cpu, Lock, Cloud, BarChart3 as BarChart3Icon, Settings, Eye, Award, Clock, Heart, Lightbulb
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -17,7 +18,7 @@ interface NavigationItem {
   description?: string;
   children?: NavigationItem[];
   badge?: string;
-  title?: string; // Added for dropdown titles
+  title?: string;
 }
 
 const contactInfo = {
@@ -71,12 +72,12 @@ const navigationItems: NavigationItem[] = [
       { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing', description: 'Quantum-biological hybrid processing' },
       { name: 'Brain-Computer Interface', href: '/brain-computer-interface', description: 'Neural interface technology' },
       { name: 'Quantum Energy Platform', href: '/quantum-energy-platform', description: 'Fusion power simulation' },
-      { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai', description: 'Self-driving AI systems' },
+      { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai-platform', description: 'Self-driving AI systems' },
       { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery', description: 'Materials science acceleration' },
       { name: 'Quantum Robotics', href: '/quantum-robotics', description: 'Quantum-enhanced robotics' },
-      { name: 'Quantum Internet Security', href: '/quantum-internet-security', description: 'Unbreakable encryption' },
+      { name: 'Quantum Internet Security', href: '/quantum-internet-security-platform', description: 'Unbreakable encryption' },
       { name: 'Quantum Logistics', href: '/quantum-logistics-optimization', description: 'Route optimization' },
-      { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity-platform', description: 'Next-gen security' }
+      { name: 'Quantum Metaverse', href: '/quantum-metaverse', description: 'Virtual reality enhancement' }
     ]
   },
   {
@@ -101,83 +102,58 @@ const navigationItems: NavigationItem[] = [
     name: 'Micro SAAS',
     href: '/micro-saas',
     icon: <Rocket className="w-5 h-5" />,
-    description: 'Innovative business solutions',
+    description: 'Innovative business solutions for modern enterprises',
     children: [
-      { name: 'AI Autonomous Content Factory', href: '/ai-autonomous-content-factory', description: 'Automated content creation' },
-      { name: 'Quantum CRM Intelligence', href: '/quantum-crm-intelligence', description: 'AI-powered customer insights' },
-      { name: 'AI Autonomous Decision Engine', href: '/ai-autonomous-decision-engine', description: 'Smart business decisions' },
-      { name: 'AI Creativity Studio Pro', href: '/ai-creativity-studio-pro', description: 'AI-powered design tools' },
-      { name: 'Quantum Financial Trading', href: '/quantum-financial-trading', description: 'Advanced trading platform' },
-      { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics', description: 'Medical AI solutions' },
-      { name: 'Quantum Cybersecurity Platform', href: '/quantum-cybersecurity-platform', description: 'Unbreakable security' },
-      { name: 'AI Education Platform', href: '/ai-education-platform', description: 'Personalized learning' },
-      { name: 'Quantum Energy Platform', href: '/quantum-energy-platform', description: 'Energy optimization' }
+      { name: 'AI Content Automation', href: '/ai-content-automation-platform', description: 'Intelligent content creation and management' },
+      { name: 'CRM Intelligence Platform', href: '/crm-intelligence-platform', description: 'AI-powered customer relationship management' },
+      { name: 'Decision Engine Platform', href: '/decision-engine-platform', description: 'Intelligent business decision-making' },
+      { name: 'E-commerce Optimization', href: '/ecommerce-optimization-platform', description: 'AI-powered e-commerce optimization' },
+      { name: 'Financial Analytics Platform', href: '/financial-analytics-platform', description: 'Intelligent financial analysis' },
+      { name: 'HR Automation Platform', href: '/hr-automation-platform', description: 'AI-powered human resources automation' },
+      { name: 'Supply Chain Optimization', href: '/supply-chain-optimization-platform', description: 'Intelligent supply chain management' },
+      { name: 'Customer Service Automation', href: '/customer-service-automation-platform', description: 'AI-powered customer support' },
+      { name: 'Project Management Intelligence', href: '/project-management-intelligence-platform', description: 'Intelligent project management' }
     ]
   },
   {
-    name: 'Solutions',
-    href: '/solutions',
-    icon: <Target className="w-5 h-5" />,
-    description: 'Industry-specific solutions',
+    name: 'Pricing & Plans',
+    href: '/pricing',
+    icon: <DollarSign className="w-5 h-5" />,
+    description: 'Transparent pricing for all services',
     children: [
-      { name: 'Healthcare Solutions', href: '/healthcare-solutions', description: 'Medical technology innovations' },
-      { name: 'Financial Services', href: '/financial-solutions', description: 'Fintech and banking solutions' },
-      { name: 'Manufacturing', href: '/manufacturing-solutions', description: 'Industry 4.0 automation' },
-      { name: 'Retail & E-commerce', href: '/retail-solutions', description: 'Digital commerce platforms' },
-      { name: 'Education Technology', href: '/education-solutions', description: 'Learning management systems' },
-      { name: 'Government & Defense', href: '/government-solutions', description: 'Public sector technology' },
-      { name: 'Energy & Utilities', href: '/energy-solutions', description: 'Smart grid and sustainability' },
-      { name: 'Transportation & Logistics', href: '/transportation-solutions', description: 'Supply chain optimization' }
-    ]
-  },
-  {
-    name: 'Company',
-    href: '/about',
-    icon: <Users className="w-5 h-5" />,
-    description: 'About Zion Tech Group',
-    children: [
-      { name: 'About Us', href: '/about', description: 'Our mission and vision' },
-      { name: 'Leadership Team', href: '/leadership', description: 'Meet our executives' },
-      { name: 'Careers', href: '/careers', description: 'Join our team' },
-      { name: 'News & Updates', href: '/news', description: 'Latest company news' },
-      { name: 'Case Studies', href: '/case-studies', description: 'Success stories' },
-      { name: 'Partners', href: '/partners', description: 'Strategic partnerships' },
-      { name: 'Investors', href: '/investors', description: 'Investment information' }
+      { name: '2025 Revolutionary Pricing', href: '/revolutionary-2025-pricing', description: 'Latest pricing for 2025' },
+      { name: '2026 Enhanced Pricing', href: '/revolutionary-2026-pricing', description: 'Advanced pricing for 2026' },
+      { name: '2027 Services Pricing', href: '/revolutionary-2027-pricing', description: 'Future-focused pricing' },
+      { name: '2028 Ultimate Pricing', href: '/revolutionary-2028-pricing', description: 'Ultimate service pricing' },
+      { name: 'Market Pricing Analysis', href: '/market-pricing', description: 'Competitive market analysis' }
     ]
   },
   {
     name: 'Resources',
     href: '/resources',
     icon: <BookOpen className="w-5 h-5" />,
-    description: 'Knowledge and support',
+    description: 'Knowledge base and learning resources',
     children: [
-      { name: 'Documentation', href: '/docs', description: 'Technical guides' },
-      { name: 'API Reference', href: '/api-docs', description: 'Developer documentation' },
-      { name: 'Blog', href: '/blog', description: 'Industry insights' },
-      { name: 'Whitepapers', href: '/whitepapers', description: 'Research and analysis' },
-      { name: 'Webinars', href: '/webinars', description: 'Educational sessions' },
-      { name: 'Training', href: '/training', description: 'Skill development' },
-      { name: 'Support Center', href: '/support', description: 'Help and assistance' }
+      { name: 'Documentation', href: '/docs', description: 'Technical documentation' },
+      { name: 'Case Studies', href: '/case-studies', description: 'Success stories and implementations' },
+      { name: 'Blog & News', href: '/blog', description: 'Latest insights and updates' },
+      { name: 'Research Reports', href: '/reports', description: 'Industry research and analysis' },
+      { name: 'Support Center', href: '/support', description: 'Technical support and help' }
+    ]
+  },
+  {
+    name: 'About Us',
+    href: '/about',
+    icon: <Users className="w-5 h-5" />,
+    description: 'Learn about Zion Tech Group',
+    children: [
+      { name: 'Company Overview', href: '/about', description: 'About Zion Tech Group' },
+      { name: 'Our Mission', href: '/about#mission', description: 'Company mission and vision' },
+      { name: 'Leadership Team', href: '/about#team', description: 'Meet our leadership' },
+      { name: 'Careers', href: '/careers', description: 'Join our team' },
+      { name: 'Contact Information', href: '/contact', description: 'Get in touch with us' }
     ]
   }
-];
-
-const companyInfo = [
-  { name: 'About Us', href: '/about', description: 'Learn about our mission and vision' },
-  { name: 'Careers', href: '/careers', description: 'Join our innovative team' },
-  { name: 'News & Updates', href: '/news', description: 'Latest company news and updates' },
-  { name: 'Case Studies', href: '/case-studies', description: 'Success stories and implementations' },
-  { name: 'Resources', href: '/resources', description: 'Whitepapers, guides, and tools' },
-  { name: 'Blog', href: '/blog', description: 'Insights and industry trends' }
-];
-
-const supportInfo = [
-  { name: 'Contact Support', href: '/support', description: 'Get help from our team' },
-  { name: 'Documentation', href: '/docs', description: 'Technical documentation and guides' },
-  { name: 'API Reference', href: '/api-docs', description: 'Developer API documentation' },
-  { name: 'Status Page', href: '/status', description: 'Service status and uptime' },
-  { name: 'Training', href: '/training', description: 'Learn to use our platforms' },
-  { name: 'Community', href: '/community', description: 'Connect with other users' }
 ];
 
 export default function EnhancedNavigation2025() {
@@ -187,7 +163,7 @@ export default function EnhancedNavigation2025() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      setIsScrolled(window.scrollY > 20);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -198,45 +174,77 @@ export default function EnhancedNavigation2025() {
     setActiveDropdown(activeDropdown === name ? null : name);
   };
 
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Implement search functionality
-    // TODO: Add search implementation
-  };
-
   const closeDropdown = () => {
     setActiveDropdown(null);
   };
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-black/95 backdrop-blur-md border-b border-cyan-500/30' : 'bg-transparent'
+      isScrolled 
+        ? 'bg-black/90 backdrop-blur-xl border-b border-cyan-500/20 shadow-2xl shadow-cyan-500/10' 
+        : 'bg-black/80 backdrop-blur-lg'
     }`}>
+      {/* Top Contact Bar */}
+      <div className="bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border-b border-cyan-500/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-10 text-xs text-cyan-300">
+            <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-2">
+                <Phone className="w-3 h-3" />
+                <span>{contactInfo.mobile}</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Mail className="w-3 h-3" />
+                <span>{contactInfo.email}</span>
+              </div>
+            </div>
+            <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-2">
+                <MapPin className="w-3 h-3" />
+                <span>{contactInfo.address}</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Globe className="w-3 h-3" />
+                <span>{contactInfo.website}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Navigation */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3 group">
-            <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <Zap className="w-6 h-6 text-white" />
-            </div>
-            <div>
-              <div className="text-xl font-bold text-white">Zion Tech Group</div>
-              <div className="text-xs text-cyan-400">Revolutionary Technology</div>
-            </div>
-          </Link>
+          <div className="flex items-center">
+            <Link href="/" className="flex items-center space-x-3 group">
+              <div className="relative">
+                <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-cyan-500/25 group-hover:shadow-cyan-500/40 transition-all duration-300">
+                  <Zap className="w-6 h-6 text-white" />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                  Zion Tech Group
+                </span>
+                <span className="text-xs text-gray-400">Revolutionary Technology Solutions</span>
+              </div>
+            </Link>
+          </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-1">
             {navigationItems.map((item) => (
               <div key={item.name} className="relative group">
                 <button
                   onClick={() => toggleDropdown(item.name)}
-                  className="flex items-center space-x-2 px-4 py-2 text-gray-300 hover:text-white transition-colors duration-200 group-hover:text-cyan-400"
+                  className="flex items-center space-x-2 px-4 py-3 text-gray-300 hover:text-white hover:bg-gradient-to-r hover:from-cyan-500/10 hover:to-blue-500/10 rounded-lg transition-all duration-200 group-hover:scale-105"
                 >
                   {item.icon}
-                  <span>{item.name}</span>
+                  <span className="font-medium">{item.name}</span>
                   {item.badge && (
-                    <span className="px-2 py-1 text-xs bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full">
+                    <span className="px-2 py-1 text-xs font-medium bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full">
                       {item.badge}
                     </span>
                   )}
@@ -249,32 +257,30 @@ export default function EnhancedNavigation2025() {
                 <AnimatePresence>
                   {activeDropdown === item.name && (
                     <motion.div
-                      initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                      initial={{ opacity: 0, y: -10, scale: 0.95 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                      exit={{ opacity: 0, y: -10, scale: 0.95 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute top-full left-0 mt-2 w-96 bg-gray-900/95 backdrop-blur-md border border-cyan-500/30 rounded-2xl shadow-2xl shadow-cyan-500/20 overflow-hidden"
-                      onMouseLeave={closeDropdown}
+                      className="absolute top-full left-0 mt-2 w-80 bg-black/95 backdrop-blur-xl border border-cyan-500/20 rounded-xl shadow-2xl shadow-cyan-500/20 overflow-hidden"
                     >
-                      <div className="p-6">
-                        <div className="mb-4">
-                          <h3 className="text-lg font-semibold text-white mb-2">{item.title || item.name}</h3>
+                      <div className="p-4">
+                        <div className="mb-3">
+                          <h3 className="text-lg font-semibold text-white mb-1">{item.title || item.name}</h3>
                           <p className="text-sm text-gray-400">{item.description}</p>
                         </div>
-                        <div className="grid grid-cols-1 gap-2">
+                        <div className="space-y-1">
                           {item.children?.map((child) => (
                             <Link
                               key={child.name}
                               href={child.href}
-                              className="flex items-center justify-between p-3 rounded-lg hover:bg-gray-800/50 transition-colors duration-200 group"
+                              onClick={closeDropdown}
+                              className="flex items-center justify-between p-3 text-gray-300 hover:text-white hover:bg-gradient-to-r hover:from-cyan-500/10 hover:to-blue-500/10 rounded-lg transition-all duration-200 group"
                             >
                               <div>
-                                <div className="font-medium text-white group-hover:text-cyan-400 transition-colors duration-200">
-                                  {child.name}
-                                </div>
-                                <div className="text-sm text-gray-400">{child.description}</div>
+                                <div className="font-medium text-sm">{child.name}</div>
+                                <div className="text-xs text-gray-500">{child.description}</div>
                               </div>
-                              <ArrowRight className="w-4 h-4 text-gray-500 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all duration-200" />
+                              <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                             </Link>
                           ))}
                         </div>
@@ -284,128 +290,31 @@ export default function EnhancedNavigation2025() {
                 </AnimatePresence>
               </div>
             ))}
-
-            {/* Company & Support Dropdowns */}
-            <div className="relative group">
-              <button
-                onClick={() => toggleDropdown('company')}
-                className="flex items-center space-x-2 px-4 py-2 text-gray-300 hover:text-white transition-colors duration-200 group-hover:text-cyan-400"
-              >
-                <span>Company</span>
-                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
-                  activeDropdown === 'company' ? 'rotate-180' : ''
-                }`} />
-              </button>
-
-              <AnimatePresence>
-                {activeDropdown === 'company' && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 mt-2 w-80 bg-gray-900/95 backdrop-blur-md border border-cyan-500/30 rounded-2xl shadow-2xl shadow-cyan-500/20 overflow-hidden"
-                    onMouseLeave={closeDropdown}
-                  >
-                    <div className="p-6">
-                      <h3 className="text-lg font-semibold text-white mb-4">Company</h3>
-                      <div className="space-y-2">
-                        {companyInfo.map((item) => (
-                          <Link
-                            key={item.name}
-                            href={item.href}
-                            className="block p-3 rounded-lg hover:bg-gray-800/50 transition-colors duration-200 group"
-                          >
-                            <div className="font-medium text-white group-hover:text-cyan-400 transition-colors duration-200">
-                              {item.name}
-                            </div>
-                            <div className="text-sm text-gray-400">{item.description}</div>
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-
-            <div className="relative group">
-              <button
-                onClick={() => toggleDropdown('support')}
-                className="flex items-center space-x-2 px-4 py-2 text-gray-300 hover:text-white transition-colors duration-200 group-hover:text-cyan-400"
-              >
-                <span>Support</span>
-                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
-                  activeDropdown === 'support' ? 'rotate-180' : ''
-                }`} />
-              </button>
-
-              <AnimatePresence>
-                {activeDropdown === 'support' && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 mt-2 w-80 bg-gray-900/95 backdrop-blur-md border border-cyan-500/30 rounded-2xl shadow-2xl shadow-cyan-500/20 overflow-hidden"
-                    onMouseLeave={closeDropdown}
-                  >
-                    <div className="p-6">
-                      <h3 className="text-lg font-semibold text-white mb-4">Support</h3>
-                      <div className="space-y-2">
-                        {supportInfo.map((item) => (
-                          <Link
-                            key={item.name}
-                            href={item.href}
-                            className="block p-3 rounded-lg hover:bg-gray-800/50 transition-colors duration-200 group"
-                          >
-                            <div className="font-medium text-white group-hover:text-cyan-400 transition-colors duration-200">
-                              {item.name}
-                            </div>
-                            <div className="text-sm text-gray-400">{item.description}</div>
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
           </div>
 
-          {/* Right Side - Contact & CTA */}
+          {/* CTA Button */}
           <div className="hidden lg:flex items-center space-x-4">
-            {/* Contact Information */}
-            <div className="flex items-center space-x-4 text-sm text-gray-300">
-              <div className="flex items-center space-x-2 hover:text-cyan-400 transition-colors duration-200">
-                <Phone className="w-4 h-4" />
-                <span>{contactInfo.mobile}</span>
-              </div>
-              <div className="flex items-center space-x-2 hover:text-cyan-400 transition-colors duration-200">
-                <Mail className="w-4 h-4" />
-                <span>{contactInfo.email}</span>
-              </div>
-            </div>
-
-            {/* CTA Button */}
-            <Link href="/contact">
-              <button className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/25">
-                Get Started
-              </button>
+            <Link
+              href="/contact"
+              className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 hover:scale-105 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40"
+            >
+              Get Started
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-gray-300 hover:text-white transition-colors duration-200"
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="lg:hidden">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors duration-200"
+            >
+              <Menu className="w-6 h-6" />
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Navigation */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -413,49 +322,33 @@ export default function EnhancedNavigation2025() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-black/95 backdrop-blur-md border-t border-cyan-500/30"
+            className="lg:hidden bg-black/95 backdrop-blur-xl border-t border-cyan-500/20"
           >
             <div className="px-4 py-6 space-y-4">
-              {/* Mobile Contact Info */}
-              <div className="p-4 bg-gray-900/50 rounded-lg border border-cyan-500/30">
-                <div className="space-y-3">
-                  <div className="flex items-center space-x-3 text-cyan-400">
-                    <Phone className="w-4 h-4" />
-                    <span className="text-white">{contactInfo.mobile}</span>
-                  </div>
-                  <div className="flex items-center space-x-3 text-cyan-400">
-                    <Mail className="w-4 h-4" />
-                    <span className="text-white">{contactInfo.email}</span>
-                  </div>
-                  <div className="flex items-center space-x-3 text-cyan-400">
-                    <MapPin className="w-4 h-4" />
-                    <span className="text-white text-sm">{contactInfo.address}</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Mobile Navigation Items */}
               {navigationItems.map((item) => (
                 <div key={item.name} className="space-y-2">
                   <Link
                     href={item.href}
-                    className="block px-4 py-3 text-white font-medium hover:text-cyan-400 transition-colors duration-200"
+                    className="flex items-center justify-between p-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors duration-200"
                     onClick={() => setIsOpen(false)}
                   >
-                    {item.name}
+                    <div className="flex items-center space-x-3">
+                      {item.icon}
+                      <span className="font-medium">{item.name}</span>
+                    </div>
                     {item.badge && (
-                      <span className="ml-2 px-2 py-1 text-xs bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full">
+                      <span className="px-2 py-1 text-xs font-medium bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full">
                         {item.badge}
                       </span>
                     )}
                   </Link>
                   {item.children && (
-                    <div className="pl-4 space-y-1">
+                    <div className="ml-8 space-y-1">
                       {item.children.slice(0, 3).map((child) => (
                         <Link
                           key={child.name}
                           href={child.href}
-                          className="block px-4 py-2 text-sm text-gray-400 hover:text-cyan-400 transition-colors duration-200"
+                          className="block p-2 text-sm text-gray-400 hover:text-white hover:bg-gray-800 rounded transition-colors duration-200"
                           onClick={() => setIsOpen(false)}
                         >
                           {child.name}
@@ -464,29 +357,39 @@ export default function EnhancedNavigation2025() {
                       {item.children.length > 3 && (
                         <Link
                           href={item.href}
-                          className="block px-4 py-2 text-sm text-cyan-400 hover:text-cyan-300 transition-colors duration-200"
+                          className="block p-2 text-sm text-cyan-400 hover:text-cyan-300 transition-colors duration-200"
                           onClick={() => setIsOpen(false)}
                         >
-                          View all {item.name} services →
+                          View all {item.children.length} services →
                         </Link>
                       )}
                     </div>
                   )}
                 </div>
               ))}
-
+              
               {/* Mobile CTA */}
-              <div className="pt-4">
-                <Link href="/contact">
-                  <button className="w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:scale-105 transition-all duration-300">
-                    Get Started Today
-                  </button>
+              <div className="pt-4 border-t border-gray-700">
+                <Link
+                  href="/contact"
+                  className="block w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium text-center rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-200"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Get Started
                 </Link>
               </div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Click outside to close dropdown */}
+      {activeDropdown && (
+        <div
+          className="fixed inset-0 z-40"
+          onClick={closeDropdown}
+        />
+      )}
     </nav>
   );
 }
