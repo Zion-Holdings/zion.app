@@ -4,12 +4,12 @@ import Hero from '../components/sections/Hero';
 import Features from '../components/sections/Features';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
-import EnhancedFuturisticBackground from '../components/ui/EnhancedFuturisticBackground';
+import QuantumNeuralBackground from '../components/ui/QuantumNeuralBackground';
 import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, ExternalLink, Star, Users, Globe, Lock, Rocket, Cpu, Database, TrendingUp, Clock, Target, Building, Award, DollarSign, ChartBar, Code, BookOpen, Activity, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, Settings, BookOpen as BookOpenIcon, Activity as ActivityIcon, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Sparkles, Atom, Brain, Eye, Shield as ShieldIcon, Zap as ZapIcon, Globe as GlobeIcon, Cpu as CpuIcon, Cloud as CloudIcon, Bot as BotIcon, Lock as LockIcon, BarChart3 as BarChart3Icon, TrendingUp as TrendingUpIcon, Users as UsersIcon, Award as AwardIcon, Star as StarIcon, Check as CheckIcon, ArrowRight as ArrowRightIcon, ExternalLink as ExternalLinkIcon, Phone as PhoneIcon, Mail as MailIcon, MapPin as MapPinIcon } from 'lucide-react';
 
 export default function HomePage() {
   const heroStats = [
-    { value: '75+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
+    { value: '85+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
     { value: '99.9%', label: 'Uptime Guarantee', color: 'text-fuchsia-400' },
     { value: '14', label: 'Day Free Trials', color: 'text-blue-400' },
     { value: '24/7', label: 'AI Support', color: 'text-green-400' },
@@ -26,7 +26,7 @@ export default function HomePage() {
     {
       icon: <Cloud className="w-8 h-8 text-white" />,
       title: 'Real Micro SaaS Services',
-      description: '75+ fully functional micro SaaS tools with real implementations, not just mockups.',
+      description: '85+ fully functional micro SaaS tools with real implementations, not just mockups.',
       color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
       gradient: 'from-cyan-400 to-blue-500',
     },
@@ -191,7 +191,7 @@ export default function HomePage() {
   ];
 
   return (
-    <EnhancedFuturisticBackground variant="neural" intensity="high">
+    <QuantumNeuralBackground variant="quantum" intensity="high">
       <div className="min-h-screen">
         <Head>
           <title>Zion Tech Group - Revolutionary AI, Quantum Computing & Emerging Technology Solutions</title>
@@ -521,6 +521,6 @@ export default function HomePage() {
           </div>
         </section>
       </div>
-    </EnhancedFuturisticBackground>
+    </QuantumNeuralBackground>
   );
 }

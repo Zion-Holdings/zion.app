@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Code, BookOpen, Activity, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Filter, Grid, List, ChevronDown, ChevronUp, Sparkles } from 'lucide-react';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
-import EnhancedFuturisticBackground from '../components/ui/EnhancedFuturisticBackground';
+import QuantumNeuralBackground from '../components/ui/QuantumNeuralBackground';
 import { expandedMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices, getServicesByPriceRange } from '../data/expanded-micro-saas-services';
 
 export default function ServicesPage() {
@@ -77,11 +77,11 @@ export default function ServicesPage() {
   const popularServices = getPopularServices();
 
   return (
-    <EnhancedFuturisticBackground variant="neural" intensity="medium">
+    <QuantumNeuralBackground variant="holographic" intensity="high">
       <div className="min-h-screen">
         <Head>
           <title>Complete Services Portfolio | Zion Tech Group - AI, Cloud, Security & More</title>
-          <meta name="description" content="Explore our complete portfolio of 75+ micro SaaS services. AI solutions, cloud infrastructure, cybersecurity, data analytics, IoT, blockchain, and emerging technologies." />
+          <meta name="description" content="Explore our complete portfolio of 85+ micro SaaS services. AI solutions, cloud infrastructure, cybersecurity, data analytics, IoT, blockchain, and emerging technologies." />
           <meta name="keywords" content="AI services, cloud solutions, cybersecurity, data analytics, IoT platform, blockchain, quantum computing, AR/VR, micro SaaS, business automation" />
           <meta name="author" content="Zion Tech Group" />
           <meta property="og:title" content="Complete Services Portfolio | Zion Tech Group" />
@@ -558,6 +558,6 @@ export default function ServicesPage() {
           </div>
         </section>
       </div>
-    </EnhancedFuturisticBackground>
+    </QuantumNeuralBackground>
   );
 }

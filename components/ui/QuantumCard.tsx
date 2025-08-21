@@ -4,26 +4,82 @@ import { motion, AnimatePresence } from 'framer-motion';
 interface QuantumCardProps {
   children: React.ReactNode;
   className?: string;
-  variant?: 'default' | 'quantum' | 'neural' | 'holographic';
+  variant?: 'quantum' | 'neural' | 'holographic' | 'cyberpunk';
+  intensity?: 'low' | 'medium' | 'high';
   interactive?: boolean;
   glow?: boolean;
   border?: boolean;
-  size?: 'sm' | 'md' | 'lg';
+  shadow?: boolean;
 }
 
-export default function QuantumCard({
+const QuantumCard: React.FC<QuantumCardProps> = ({
   children,
   className = '',
-  variant = 'default',
+  variant = 'quantum',
+  intensity = 'medium',
   interactive = true,
   glow = true,
   border = true,
-  size = 'md'
-}: QuantumCardProps) {
+  shadow = true
+}) => {
   const [isHovered, setIsHovered] = useState(false);
-  const [isFocused, setIsFocused] = useState(false);
+  const [isPressed, setIsPressed] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  const variants = {
+    quantum: {
+      colors: {
+        primary: '#00ffff',
+        secondary: '#ff00ff',
+        accent: '#ffff00',
+        background: 'rgba(0, 0, 0, 0.8)',
+        border: 'rgba(0, 255, 255, 0.3)',
+        glow: 'rgba(0, 255, 255, 0.2)'
+      },
+      gradient: 'linear-gradient(135deg, #00ffff, #ff00ff, #ffff00)'
+    },
+    neural: {
+      colors: {
+        primary: '#ff6b6b',
+        secondary: '#4ecdc4',
+        accent: '#45b7d1',
+        background: 'rgba(26, 26, 46, 0.9)',
+        border: 'rgba(255, 107, 107, 0.3)',
+        glow: 'rgba(255, 107, 107, 0.2)'
+      },
+      gradient: 'linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1)'
+    },
+    holographic: {
+      colors: {
+        primary: '#ff9ff3',
+        secondary: '#54a0ff',
+        accent: '#5f27cd',
+        background: 'rgba(45, 27, 105, 0.9)',
+        border: 'rgba(255, 159, 243, 0.3)',
+        glow: 'rgba(255, 159, 243, 0.2)'
+      },
+      gradient: 'linear-gradient(135deg, #ff9ff3, #54a0ff, #5f27cd)'
+    },
+    cyberpunk: {
+      colors: {
+        primary: '#ff006e',
+        secondary: '#8338ec',
+        accent: '#3a86ff',
+        background: 'rgba(30, 30, 30, 0.9)',
+        border: 'rgba(255, 0, 110, 0.3)',
+        glow: 'rgba(255, 0, 110, 0.2)'
+      },
+      gradient: 'linear-gradient(135deg, #ff006e, #8338ec, #3a86ff)'
+    }
+  };
+
+  const currentVariant = variants[variant];
+  const intensityMultiplier = {
+    low: 0.5,
+    medium: 1,
+    high: 2
+  };
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -38,231 +94,213 @@ export default function QuantumCard({
 
     if (interactive) {
       document.addEventListener('mousemove', handleMouseMove);
-      return () => document.removeEventListener('mousemove', handleMouseMove);
     }
+
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+    };
   }, [interactive]);
 
-  const sizeClasses = {
-    sm: 'p-4',
-    md: 'p-6',
-    lg: 'p-8'
-  };
-
-  const variantStyles = {
-    default: {
-      background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1))',
-      borderColor: 'rgba(59, 130, 246, 0.3)',
-      glowColor: 'rgba(59, 130, 246, 0.5)'
+  const cardVariants = {
+    initial: {
+      scale: 1,
+      rotateX: 0,
+      rotateY: 0,
+      boxShadow: shadow ? `0 0 20px ${currentVariant.colors.glow}` : 'none'
     },
-    quantum: {
-      background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(59, 130, 246, 0.1))',
-      borderColor: 'rgba(16, 185, 129, 0.4)',
-      glowColor: 'rgba(16, 185, 129, 0.6)'
+    hover: {
+      scale: 1.02,
+      rotateX: interactive ? 5 : 0,
+      rotateY: interactive ? 5 : 0,
+      boxShadow: shadow ? `0 0 40px ${currentVariant.colors.glow}` : 'none',
+      transition: {
+        duration: 0.3,
+        ease: "easeOut" as const
+      }
     },
-    neural: {
-      background: 'linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(147, 51, 234, 0.1))',
-      borderColor: 'rgba(239, 68, 68, 0.4)',
-      glowColor: 'rgba(239, 68, 68, 0.6)'
-    },
-    holographic: {
-      background: 'linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(236, 72, 153, 0.1))',
-      borderColor: 'rgba(168, 85, 247, 0.4)',
-      glowColor: 'rgba(168, 85, 247, 0.6)'
+    pressed: {
+      scale: 0.98,
+      transition: {
+        duration: 0.1
+      }
     }
   };
 
-  const currentStyle = variantStyles[variant];
+  const glowVariants = {
+    initial: { opacity: 0, scale: 0.8 },
+    hover: { 
+      opacity: glow ? 1 : 0, 
+      scale: 1.2,
+      transition: {
+        duration: 0.3,
+        ease: "easeOut" as const
+      }
+    }
+  };
+
+  const borderVariants = {
+    initial: { opacity: 0 },
+    hover: { 
+      opacity: border ? 1 : 0,
+      transition: {
+        duration: 0.3,
+        ease: "easeOut" as const
+      }
+    }
+  };
 
   return (
     <motion.div
       ref={cardRef}
-      className={`relative overflow-hidden rounded-2xl backdrop-blur-xl transition-all duration-500 ${sizeClasses[size]} ${className}`}
-      style={{
-        background: currentStyle.background,
-        border: border ? `1px solid ${currentStyle.borderColor}` : 'none',
-        boxShadow: glow && isHovered 
-          ? `0 0 40px ${currentStyle.glowColor}, 0 0 80px ${currentStyle.glowColor}40`
-          : '0 4px 20px rgba(0, 0, 0, 0.1)'
-      }}
+      className={`relative overflow-hidden rounded-xl backdrop-blur-sm ${className}`}
+      variants={cardVariants}
+      initial="initial"
+      animate={isPressed ? "pressed" : isHovered ? "hover" : "initial"}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
-      onFocus={() => setIsFocused(true)}
-      onBlur={() => setIsFocused(false)}
-      whileHover={interactive ? { scale: 1.02, y: -5 } : {}}
-      whileTap={interactive ? { scale: 0.98 } : {}}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      onTap={() => setIsPressed(false)}
+      style={{
+        background: currentVariant.colors.background,
+        transformStyle: 'preserve-3d',
+        perspective: '1000px'
+      }}
     >
-      {/* Quantum particle effect */}
+      {/* Animated border */}
+      <AnimatePresence>
+        {border && (
+          <motion.div
+            className="absolute inset-0 rounded-xl"
+            variants={borderVariants}
+            style={{
+              background: currentVariant.gradient,
+              padding: '2px'
+            }}
+          >
+            <div 
+              className="w-full h-full rounded-xl"
+              style={{ background: currentVariant.colors.background }}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Glow effect */}
+      <AnimatePresence>
+        {glow && (
+          <motion.div
+            className="absolute inset-0 rounded-xl pointer-events-none"
+            variants={glowVariants}
+            style={{
+              background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, ${currentVariant.colors.glow} 0%, transparent 50%)`,
+              filter: 'blur(20px)'
+            }}
+          />
+        )}
+      </AnimatePresence>
+
+      {/* Quantum particles overlay */}
       {variant === 'quantum' && (
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute inset-0 opacity-20">
-            {Array.from({ length: 20 }).map((_, i) => (
-              <motion.div
-                key={i}
-                className="absolute w-1 h-1 bg-cyan-400 rounded-full"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`
-                }}
-                animate={{
-                  scale: [0, 1, 0],
-                  opacity: [0, 1, 0],
-                  x: [0, (Math.random() - 0.5) * 100],
-                  y: [0, (Math.random() - 0.5) * 100]
-                }}
-                transition={{
-                  duration: 3 + Math.random() * 2,
-                  repeat: Infinity,
-                  delay: Math.random() * 2
-                }}
-              />
-            ))}
-          </div>
+        <div className="absolute inset-0 pointer-events-none">
+          {[...Array(5)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-1 h-1 rounded-full"
+              style={{
+                background: currentVariant.colors.primary,
+                left: `${20 + i * 15}%`,
+                top: `${30 + i * 10}%`
+              }}
+              animate={{
+                scale: [1, 1.5, 1],
+                opacity: [0.3, 1, 0.3],
+                y: [0, -10, 0]
+              }}
+              transition={{
+                duration: 2 + i * 0.5,
+                repeat: Infinity,
+                ease: 'easeInOut'
+              }}
+            />
+          ))}
         </div>
       )}
 
-      {/* Neural network effect */}
+      {/* Neural network overlay */}
       {variant === 'neural' && (
-        <div className="absolute inset-0 overflow-hidden">
-          <svg className="absolute inset-0 w-full h-full opacity-20">
-            <defs>
-              <linearGradient id="neuralGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#ef4444" />
-                <stop offset="100%" stopColor="#9333ea" />
-              </linearGradient>
-            </defs>
-            {Array.from({ length: 8 }).map((_, i) => (
-              <motion.circle
-                key={i}
-                cx={20 + (i * 80)}
-                cy={20 + (i * 40)}
-                r="2"
-                fill="url(#neuralGradient)"
-                animate={{
-                  r: [2, 4, 2],
-                  opacity: [0.3, 1, 0.3]
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  delay: i * 0.2
-                }}
-              />
-            ))}
-            {Array.from({ length: 6 }).map((_, i) => (
-              <motion.line
-                key={`line-${i}`}
-                x1={20 + (i * 80)}
-                y1={20 + (i * 40)}
-                x2={100 + (i * 80)}
-                y2={60 + (i * 40)}
-                stroke="url(#neuralGradient)"
-                strokeWidth="1"
-                opacity="0.5"
-                animate={{
-                  opacity: [0.2, 0.8, 0.2]
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  delay: i * 0.3
-                }}
-              />
-            ))}
+        <div className="absolute inset-0 pointer-events-none">
+          <svg className="w-full h-full" viewBox="0 0 100 100">
+            <motion.path
+              d="M20,30 Q50,10 80,30 Q50,50 20,70 Q50,90 80,70"
+              stroke={currentVariant.colors.primary}
+              strokeWidth="0.5"
+              fill="none"
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={{ 
+                pathLength: isHovered ? 1 : 0, 
+                opacity: isHovered ? 0.6 : 0 
+              }}
+              transition={{ duration: 1, ease: 'easeInOut' }}
+            />
           </svg>
         </div>
       )}
 
-      {/* Holographic effect */}
+      {/* Holographic scan lines */}
       {variant === 'holographic' && (
-        <div className="absolute inset-0 overflow-hidden">
-          <motion.div
-            className="absolute inset-0 opacity-30"
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          {[...Array(20)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-full h-px"
+              style={{
+                background: currentVariant.colors.primary,
+                top: `${i * 5}%`,
+                opacity: 0.3
+              }}
+              animate={{
+                x: ['-100%', '100%']
+              }}
+              transition={{
+                duration: 3 + i * 0.1,
+                repeat: Infinity,
+                ease: 'linear'
+              }}
+            />
+          ))}
+        </div>
+      )}
+
+      {/* Cyberpunk grid */}
+      {variant === 'cyberpunk' && (
+        <div className="absolute inset-0 pointer-events-none">
+          <div 
+            className="w-full h-full"
             style={{
-              background: `linear-gradient(45deg, 
-                transparent 30%, 
-                rgba(168, 85, 247, 0.3) 50%, 
-                transparent 70%
-              )`,
-              backgroundSize: '200% 200%'
-            }}
-            animate={{
-              backgroundPosition: ['0% 0%', '100% 100%']
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: "linear"
+              backgroundImage: `
+                linear-gradient(rgba(255, 0, 110, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 0, 110, 0.1) 1px, transparent 1px)
+              `,
+              backgroundSize: '20px 20px'
             }}
           />
         </div>
       )}
 
-      {/* Interactive tilt effect */}
-      {interactive && (
-        <motion.div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, 
-              ${currentStyle.glowColor}20 0%, 
-              transparent 50%)`
-          }}
-          animate={{
-            opacity: isHovered ? 1 : 0
-          }}
-          transition={{ duration: 0.3 }}
-        />
-      )}
-
       {/* Content */}
-      <div className="relative z-10">
+      <div className="relative z-10 p-6">
         {children}
       </div>
 
-      {/* Animated border */}
-      {border && (
-        <motion.div
-          className="absolute inset-0 rounded-2xl"
-          style={{
-            background: `linear-gradient(45deg, 
-              ${currentStyle.borderColor}, 
-              transparent, 
-              ${currentStyle.glowColor}, 
-              transparent, 
-              ${currentStyle.borderColor}
-            )`,
-            backgroundSize: '400% 400%'
-          }}
-          animate={{
-            backgroundPosition: ['0% 0%', '100% 100%']
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        />
-      )}
-
-      {/* Focus ring */}
-      <AnimatePresence>
-        {isFocused && (
-          <motion.div
-            className="absolute inset-0 rounded-2xl ring-2 ring-offset-2 ring-offset-black"
-            style={{ 
-              boxShadow: `0 0 0 2px ${currentStyle.glowColor}`,
-              outline: `2px solid ${currentStyle.glowColor}`,
-              outlineOffset: '2px'
-            }}
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ duration: 0.2 }}
-          />
-        )}
-      </AnimatePresence>
+      {/* Intensity indicator */}
+      <div 
+        className="absolute top-2 right-2 w-2 h-2 rounded-full"
+        style={{
+          background: currentVariant.colors.primary,
+          opacity: intensityMultiplier[intensity] * 0.5 + 0.5
+        }}
+      />
     </motion.div>
   );
-}
+};
+
+export default QuantumCard;
