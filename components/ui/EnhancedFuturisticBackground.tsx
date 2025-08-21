@@ -23,6 +23,9 @@ const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> 
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
+    // Check if we're in a browser environment
+    if (typeof window === 'undefined') return;
+
     // Set canvas size
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
@@ -59,29 +62,29 @@ const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> 
 
     // Create particles based on variant
     const createParticles = () => {
-      const particleCount = intensity === 'high' ? 600 : intensity === 'medium' ? 350 : 180;
+      const particleCount = intensity === 'high' ? 800 : intensity === 'medium' ? 500 : 250;
       
       for (let i = 0; i < particleCount; i++) {
         particles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          vx: (Math.random() - 0.5) * 6,
-          vy: (Math.random() - 0.5) * 6,
-          size: Math.random() * 8 + 3,
-          life: Math.random() * 120,
-          maxLife: 120,
+          vx: (Math.random() - 0.5) * 8,
+          vy: (Math.random() - 0.5) * 8,
+          size: Math.random() * 12 + 4,
+          life: Math.random() * 150,
+          maxLife: 150,
           color: getParticleColor(variant),
           type: variant,
           rotation: Math.random() * Math.PI * 2,
-          rotationSpeed: (Math.random() - 0.5) * 0.2,
+          rotationSpeed: (Math.random() - 0.5) * 0.3,
           pulse: Math.random() * Math.PI * 2,
-          pulseSpeed: Math.random() * 0.1 + 0.05,
+          pulseSpeed: Math.random() * 0.15 + 0.08,
           quantumState: Math.random() * Math.PI * 2,
-          holographicLayer: Math.random() * 4,
-          neuralConnection: Math.random() * 6,
+          holographicLayer: Math.random() * 6,
+          neuralConnection: Math.random() * 8,
           cyberpunkGlow: Math.random() * Math.PI * 2,
           quantumEntanglement: Math.random() * Math.PI * 2,
-          holographicDepth: Math.random() * 5,
+          holographicDepth: Math.random() * 8,
           neuralSynapse: Math.random() * Math.PI * 2
         });
       }
@@ -90,27 +93,27 @@ const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> 
     const getParticleColor = (variant: string): string => {
       switch (variant) {
         case 'neural':
-          return `hsl(${200 + Math.sin(time * 0.01) * 60}, 70%, 60%)`;
+          return `hsl(${200 + Math.sin(time * 0.01) * 60}, 80%, 70%)`;
         case 'quantum':
-          return `hsl(${280 + Math.sin(time * 0.02) * 80}, 80%, 70%)`;
+          return `hsl(${280 + Math.sin(time * 0.02) * 100}, 90%, 80%)`;
         case 'holographic':
-          return `hsl(${160 + Math.sin(time * 0.015) * 100}, 90%, 65%)`;
+          return `hsl(${160 + Math.sin(time * 0.015) * 120}, 95%, 75%)`;
         case 'cyberpunk':
-          return `hsl(${0 + Math.sin(time * 0.03) * 60}, 100%, 60%)`;
+          return `hsl(${0 + Math.sin(time * 0.03) * 80}, 100%, 70%)`;
         case 'quantum-advanced':
-          return `hsl(${280 + Math.sin(time * 0.03) * 120}, 90%, 75%)`;
+          return `hsl(${300 + Math.sin(time * 0.025) * 120}, 95%, 85%)`;
         case 'holographic-advanced':
-          return `hsl(${160 + Math.sin(time * 0.025) * 150}, 95%, 70%)`;
+          return `hsl(${180 + Math.sin(time * 0.02) * 140}, 100%, 80%)`;
         case 'quantum-holographic':
-          return `hsl(${220 + Math.sin(time * 0.04) * 180}, 95%, 80%)`;
+          return `hsl(${240 + Math.sin(time * 0.018) * 160}, 90%, 75%)`;
         case 'neural-quantum':
-          return `hsl(${240 + Math.sin(time * 0.035) * 200}, 90%, 70%)`;
+          return `hsl(${220 + Math.sin(time * 0.015) * 100}, 85%, 70%)`;
         case 'quantum-cyberpunk':
-          return `hsl(${300 + Math.sin(time * 0.045) * 160}, 95%, 75%)`;
+          return `hsl(${320 + Math.sin(time * 0.035) * 140}, 100%, 75%)`;
         case 'holographic-neural':
-          return `hsl(${180 + Math.sin(time * 0.03) * 140}, 85%, 70%)`;
+          return `hsl(${140 + Math.sin(time * 0.012) * 120}, 90%, 70%)`;
         case 'quantum-holographic-advanced':
-          return `hsl(${260 + Math.sin(time * 0.05) * 220}, 98%, 85%)`;
+          return `hsl(${260 + Math.sin(time * 0.022) * 180}, 95%, 80%)`;
         default:
           return `hsl(${200 + Math.sin(time * 0.01) * 60}, 70%, 60%)`;
       }
@@ -142,7 +145,7 @@ const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> 
           }
           break;
           
-        case 'quantum-holographic-advanced':
+        case 'quantum-holographic-advanced': {
           // Advanced holographic effect
           const layers = 3;
           for (let i = 0; i < layers; i++) {
@@ -154,6 +157,7 @@ const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> 
             ctx.strokeRect(-layerSize/2, -layerSize/2, layerSize, layerSize);
           }
           break;
+        }
           
         case 'holographic-neural':
           // Neural network visualization
@@ -222,13 +226,13 @@ const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> 
       });
 
       // Add new particles to maintain count
-      if (particles.length < (intensity === 'high' ? 600 : intensity === 'medium' ? 350 : 180)) {
+      if (particles.length < (intensity === 'high' ? 800 : intensity === 'medium' ? 500 : 250)) {
         createParticles();
       }
 
       // Draw quantum entanglement lines
       if (variant.includes('quantum')) {
-        ctx.strokeStyle = `hsla(${280 + Math.sin(time * 0.02) * 80}, 80%, 70%, 0.3)`;
+        ctx.strokeStyle = `hsla(${280 + Math.sin(time * 0.02) * 100}, 90%, 80%, 0.3)`;
         ctx.lineWidth = 1;
         for (let i = 0; i < particles.length; i += 3) {
           if (i + 1 < particles.length) {
@@ -242,18 +246,17 @@ const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> 
 
       // Draw neural network connections
       if (variant.includes('neural')) {
-        ctx.strokeStyle = `hsla(${200 + Math.sin(time * 0.01) * 60}, 70%, 60%, 0.2)`;
+        ctx.strokeStyle = `hsla(${200 + Math.sin(time * 0.01) * 60}, 80%, 70%, 0.2)`;
         ctx.lineWidth = 0.5;
         for (let i = 0; i < particles.length; i += 2) {
           if (i + 1 < particles.length) {
-            const distance = Math.sqrt(
-              Math.pow(particles[i].x - particles[i + 1].x, 2) +
-              Math.pow(particles[i].y - particles[i + 1].y, 2)
-            );
+            const p1 = particles[i];
+            const p2 = particles[i + 1];
+            const distance = Math.sqrt((p1.x - p2.x) ** 2 + (p1.y - p2.y) ** 2);
             if (distance < 100) {
               ctx.beginPath();
-              ctx.moveTo(particles[i].x, particles[i].y);
-              ctx.lineTo(particles[i + 1].x, particles[i + 1].y);
+              ctx.moveTo(p1.x, p1.y);
+              ctx.lineTo(p2.x, p2.y);
               ctx.stroke();
             }
           }
@@ -262,7 +265,7 @@ const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> 
 
       // Draw holographic grid
       if (variant.includes('holographic')) {
-        ctx.strokeStyle = `hsla(${160 + Math.sin(time * 0.015) * 100}, 90%, 65%, 0.1)`;
+        ctx.strokeStyle = `hsla(${160 + Math.sin(time * 0.015) * 120}, 95%, 75%, 0.1)`;
         ctx.lineWidth = 0.5;
         const gridSize = 50;
         for (let x = 0; x < canvas.width; x += gridSize) {
@@ -279,17 +282,25 @@ const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> 
         }
       }
 
-      animationRef.current = requestAnimationFrame(animate);
+      // Continue animation
+      if (typeof requestAnimationFrame !== 'undefined') {
+        animationRef.current = requestAnimationFrame(animate);
+      }
     };
 
-    createParticles();
-    animate();
+    // Start animation
+    if (typeof requestAnimationFrame !== 'undefined') {
+      animationRef.current = requestAnimationFrame(animate);
+    }
 
+    // Cleanup function
     return () => {
-      if (animationRef.current) {
+      if (typeof cancelAnimationFrame !== 'undefined' && animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
-      window.removeEventListener('resize', resizeCanvas);
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('resize', resizeCanvas);
+      }
     };
   }, [variant, intensity]);
 
