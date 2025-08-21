@@ -9,6 +9,7 @@ import { innovativeAIServices } from '../../data/innovative-ai-services';
 import { quantumSpaceServices } from '../../data/quantum-space-services';
 import { enterpriseITServices } from '../../data/enterprise-it-services';
 import { enhancedRealMicroSaasServices } from '../../data/enhanced-real-micro-saas-services';
+import { marketValidatedServices } from '../../data/market-validated-services';
 
 interface ServiceShowcaseProps {
   className?: string;
@@ -30,7 +31,8 @@ const EnhancedServiceShowcase: React.FC<ServiceShowcaseProps> = ({
     ...innovativeAIServices,
     ...quantumSpaceServices,
     ...enterpriseITServices,
-    ...enhancedRealMicroSaasServices
+    ...enhancedRealMicroSaasServices,
+    ...marketValidatedServices
   ];
 
   const categories = [

@@ -50,14 +50,15 @@ const companyLinks = [
   { name: 'News', href: '/news' },
   { name: 'Case Studies', href: '/case-studies' },
   { name: 'Blog', href: '/blog' },
-  { name: 'Resources', href: '/resources' }
+  { name: 'Resources', href: '/resources' },
+  { name: 'Market Pricing', href: '/market-pricing' }
 ];
 
 const supportLinks = [
   { name: 'Contact Support', href: '/contact' },
   { name: 'Documentation', href: '/docs' },
-  { name: 'API Reference', href: '/api' },
-  { name: 'Status Page', href: '/status' },
+  { name: 'API Reference', href: '/api-documentation-generator' },
+  { name: 'Status Page', href: '/status-pages-slo' },
   { name: 'Security', href: '/security' },
   { name: 'Privacy Policy', href: '/privacy' }
 ];

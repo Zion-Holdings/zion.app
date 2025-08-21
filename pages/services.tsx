@@ -16,6 +16,7 @@ import { professionalServices } from '../data/professional-services';
 import { nextGenerationAIServices } from '../data/next-generation-ai-services';
 import { cuttingEdgeITServices } from '../data/cutting-edge-it-services';
 import { innovativeMicroSaasV2Services } from '../data/innovative-micro-saas-v2';
+import { marketValidatedServices } from '../data/market-validated-services';
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -31,7 +32,8 @@ export default function ServicesPage() {
     ...professionalServices,
     ...nextGenerationAIServices,
     ...cuttingEdgeITServices,
-    ...innovativeMicroSaasV2Services
+    ...innovativeMicroSaasV2Services,
+    ...marketValidatedServices
   ];
 
   const categories = [
