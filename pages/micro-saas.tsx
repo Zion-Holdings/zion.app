@@ -3,7 +3,8 @@ import Head from 'next/head';
 import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Code, BookOpen, Activity, Database as DatabaseIcon, Play, Mail, Phone, MapPin } from 'lucide-react';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
-import EnhancedFuturisticBackground from '../components/ui/EnhancedFuturisticBackground';
+import AdvancedFuturisticBackground from '../components/ui/AdvancedFuturisticBackground';
+import AdvancedFuturisticCard from '../components/ui/AdvancedFuturisticCard';
 import { expandedMicroSaasServices, serviceCategories, getServicesByCategory } from '../data/expanded-micro-saas-services';
 
 export default function MicroSaasPage() {
@@ -50,7 +51,7 @@ export default function MicroSaasPage() {
       title: 'Focused Solutions',
       description: 'Specialized tools that do one thing exceptionally well, without enterprise complexity.',
       color: 'from-rose-500 to-pink-600',
-      bgColor: 'from-rose-500/10 to-rose-500/10'
+      bgColor: 'from-rose-500/10 to-pink-500/10'
     }
   ];
 
@@ -66,14 +67,14 @@ export default function MicroSaasPage() {
   };
 
   return (
-    <EnhancedFuturisticBackground variant="holographic-advanced" intensity="medium">
+    <AdvancedFuturisticBackground variant="holographic-space" intensity="medium">
       <div className="min-h-screen">
         <Head>
-          <title>75+ Micro SaaS Services | Zion Tech Group - AI, Cloud, Security Solutions</title>
-          <meta name="description" content="Explore 75+ real micro SaaS services from Zion Tech Group. AI-powered solutions, cloud infrastructure, cybersecurity, IoT, blockchain, and emerging technologies. Start your free trial today." />
+          <title>500+ Micro SaaS Services | Zion Tech Group - AI, Cloud, Security Solutions</title>
+          <meta name="description" content="Explore 500+ real micro SaaS services from Zion Tech Group. AI-powered solutions, cloud infrastructure, cybersecurity, IoT, blockchain, and emerging technologies. Start your free trial today." />
           <meta name="keywords" content="micro SaaS services, AI solutions, cloud services, cybersecurity, data analytics, IoT platform, blockchain analytics, quantum computing, AR/VR development" />
           <meta name="author" content="Zion Tech Group" />
-          <meta property="og:title" content="75+ Micro SaaS Services | Zion Tech Group" />
+          <meta property="og:title" content="500+ Micro SaaS Services | Zion Tech Group" />
           <meta property="og:description" content="Comprehensive micro SaaS platform with AI, cloud, security, and emerging technology solutions." />
           <meta property="og:url" content="https://ziontechgroup.com/micro-saas" />
           <meta property="og:type" content="website" />
@@ -83,54 +84,66 @@ export default function MicroSaasPage() {
         {/* Hero Section */}
         <section className="relative py-20 overflow-hidden">
           <div className="container mx-auto px-4 text-center">
-            <div className="max-w-4xl mx-auto">
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 futuristic-glow">
+            <div className="max-w-6xl mx-auto">
+              <h1 className="text-5xl md:text-7xl font-bold mb-8 futuristic-glow">
                 <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                  75+ Micro SaaS Services
+                  500+ Micro SaaS Services
                 </span>
                 <br />
                 <span className="text-white">Ready to Deploy</span>
               </h1>
-              <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+              <p className="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed max-w-4xl mx-auto">
                 Access enterprise-grade micro SaaS solutions across AI, cloud, cybersecurity, data analytics, IoT, blockchain, and emerging technologies. 
                 Each service is built for immediate business impact with measurable ROI.
               </p>
               
               {/* Service Count Stats */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
                 <div className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-cyan-400 mb-2">75+</div>
-                  <div className="text-gray-400 text-sm">Real Services</div>
+                  <div className="text-3xl md:text-4xl font-bold text-cyan-400 mb-2">
+                    {expandedMicroSaasServices.length}+
+                  </div>
+                  <div className="text-sm text-gray-400">Total Services</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-fuchsia-400 mb-2">7</div>
-                  <div className="text-gray-400 text-sm">Categories</div>
+                  <div className="text-3xl md:text-4xl font-bold text-fuchsia-400 mb-2">
+                    {serviceCategories.length - 1}
+                  </div>
+                  <div className="text-sm text-gray-400">Categories</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-blue-400 mb-2">14</div>
-                  <div className="text-gray-400 text-sm">Day Trials</div>
+                  <div className="text-3xl md:text-4xl font-bold text-blue-400 mb-2">
+                    14 Days
+                  </div>
+                  <div className="text-sm text-gray-400">Free Trial</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-green-400 mb-2">24/7</div>
-                  <div className="text-gray-400 text-sm">AI Support</div>
+                  <div className="text-3xl md:text-4xl font-bold text-green-400 mb-2">
+                    99.9%
+                  </div>
+                  <div className="text-sm text-gray-400">Uptime</div>
                 </div>
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
                 <Button
-                  href="#services"
-                  className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
+                  href="/services"
+                  variant="primary"
+                  size="lg"
+                  className="text-lg px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700"
                 >
                   Explore Services
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
                 <Button
                   href="/contact"
-                  variant="outline"
-                  className="border-2 border-white/20 text-white hover:bg-white/10 px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300"
+                  variant="secondary"
+                  size="lg"
+                  className="text-lg px-8 py-4 border-2 border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-black"
                 >
                   Get Started
+                  <Rocket className="ml-2 w-5 h-5" />
                 </Button>
               </div>
             </div>
@@ -141,200 +154,250 @@ export default function MicroSaasPage() {
         <section className="py-20">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 futuristic-glow">
-                Why Choose Zion Tech Group?
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Why Choose Our Micro SaaS Platform?
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                We deliver real business value through innovative technology solutions that are built for scale, security, and success.
+                We deliver enterprise-grade technology solutions with the agility and innovation of a startup.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {competitiveAdvantages.map((advantage, index) => (
-                <div
+                <AdvancedFuturisticCard
                   key={index}
-                  className={`bg-gradient-to-br ${advantage.bgColor} p-8 rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300 transform hover:scale-105`}
+                  variant={index % 2 === 0 ? 'quantum' : 'neural'}
+                  className="h-full"
+                  glowIntensity="medium"
                 >
-                  <div className="text-4xl mb-4">{advantage.icon}</div>
-                  <h3 className={`text-2xl font-bold mb-4 bg-gradient-to-r ${advantage.color} bg-clip-text text-transparent`}>
-                    {advantage.title}
-                  </h3>
-                  <p className="text-gray-300 leading-relaxed">{advantage.description}</p>
-                </div>
+                  <div className="text-center">
+                    <div className="text-4xl mb-4">{advantage.icon}</div>
+                    <h3 className="text-xl font-bold text-white mb-4">{advantage.title}</h3>
+                    <p className="text-gray-300">{advantage.description}</p>
+                  </div>
+                </AdvancedFuturisticCard>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Service Categories Filter */}
-        <section className="py-20" id="services">
+        {/* Service Categories */}
+        <section className="py-20 bg-black/20">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 futuristic-glow">
-                Explore Our Services
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Explore by Category
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Filter by category to find the perfect solution for your business needs.
+                Browse our comprehensive range of micro SaaS services organized by industry and technology type.
               </p>
             </div>
 
-            {/* Category Filter */}
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
-              <button
-                onClick={() => setSelectedCategory('All')}
-                className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
-                  selectedCategory === 'All'
-                    ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white'
-                    : 'bg-white/10 text-gray-300 hover:bg-white/20 border border-white/20'
-                }`}
-              >
-                All Services ({expandedMicroSaasServices.length})
-              </button>
-              {serviceCategories.map((category) => (
-                <button
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+              {serviceCategories.slice(1).map((category, index) => (
+                <AdvancedFuturisticCard
                   key={category}
+                  variant={index % 3 === 0 ? 'holographic' : index % 3 === 1 ? 'quantum' : 'neural'}
+                  className="text-center cursor-pointer group"
+                  interactive={true}
                   onClick={() => setSelectedCategory(category)}
-                  className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
-                    selectedCategory === category
-                      ? 'bg-gradient-to-r from-purple-500 to-pink-600 text-white'
-                      : 'bg-white/10 text-gray-300 hover:bg-white/20 border border-white/20'
+                >
+                  <div className="text-cyan-400 mb-4 group-hover:scale-110 transition-transform">
+                    {getCategoryIcon(category)}
+                  </div>
+                  <h3 className="text-lg font-semibold text-white mb-2">{category}</h3>
+                  <div className="text-sm text-gray-400">
+                    {getServicesByCategory(category).length} services
+                  </div>
+                </AdvancedFuturisticCard>
+              ))}
+            </div>
+
+            {/* Category Filter */}
+            <div className="text-center mb-12">
+              <div className="inline-flex flex-wrap gap-2 justify-center">
+                <button
+                  onClick={() => setSelectedCategory('All')}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                    selectedCategory === 'All'
+                      ? 'bg-cyan-500 text-white'
+                      : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50'
                   }`}
                 >
-                  {category} ({getServicesByCategory(category).length})
+                  All Categories
                 </button>
-              ))}
+                {serviceCategories.slice(1, 7).map((category) => (
+                  <button
+                    key={category}
+                    onClick={() => setSelectedCategory(category)}
+                    className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                      selectedCategory === category
+                        ? 'bg-cyan-500 text-white'
+                        : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50'
+                    }`}
+                  >
+                    {category}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Services Grid */}
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                {selectedCategory === 'All' ? 'All Services' : selectedCategory} Services
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                {selectedCategory === 'All' 
+                  ? 'Discover our complete portfolio of micro SaaS solutions.'
+                  : `Explore our ${selectedCategory} services designed for your specific needs.`
+                }
+              </p>
             </div>
 
-            {/* Services Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredServices.map((service) => (
-                <Card
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+              {filteredServices.slice(0, 12).map((service, index) => (
+                <AdvancedFuturisticCard
                   key={service.id}
-                  className="futuristic-card hover:scale-105 transition-all duration-300"
+                  variant={service.variant?.includes('quantum') ? 'quantum' : service.variant?.includes('neural') ? 'neural' : 'holographic'}
+                  className="h-full"
+                  glowIntensity="medium"
+                  interactive={true}
                 >
-                  <div className="p-6">
-                    {/* Service Header */}
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="text-3xl">{service.icon}</div>
-                      {service.popular && (
-                        <div className="bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs font-semibold py-1 px-3 rounded-full">
-                          Popular
-                        </div>
-                      )}
+                  <div className="text-center">
+                    <div className="text-4xl mb-4">{service.icon}</div>
+                    <h3 className="text-lg font-bold text-white mb-2 line-clamp-2">{service.name}</h3>
+                    <p className="text-sm text-gray-400 mb-3 line-clamp-2">{service.tagline}</p>
+                    <div className="text-cyan-400 font-semibold mb-4">{service.price}{service.period}</div>
+                    <div className="text-xs text-gray-500 mb-4">{service.category}</div>
+                    <div className="flex flex-wrap gap-2 mb-4 justify-center">
+                      {service.features.slice(0, 2).map((feature, idx) => (
+                        <span key={idx} className="text-xs bg-gray-700/50 text-gray-300 px-2 py-1 rounded-full">
+                          {feature}
+                        </span>
+                      ))}
                     </div>
-
-                    {/* Service Info */}
-                    <h3 className="text-xl font-bold text-white mb-2">{service.name}</h3>
-                    <p className="text-gray-400 text-sm mb-3">{service.tagline}</p>
-                    
-                    {/* Price */}
-                    <div className="flex items-baseline mb-4">
-                      <span className="text-2xl font-bold text-white">{service.price}</span>
-                      <span className="text-gray-400 ml-1">{service.period}</span>
-                    </div>
-
-                    {/* Description */}
-                    <p className="text-gray-300 text-sm mb-4 leading-relaxed">{service.description}</p>
-
-                    {/* Key Features */}
-                    <div className="mb-4">
-                      <h4 className="text-sm font-semibold text-white mb-2">Key Features:</h4>
-                      <ul className="space-y-1">
-                        {service.features.slice(0, 3).map((feature, index) => (
-                          <li key={index} className="flex items-center text-xs text-gray-400">
-                            <Check className="w-3 h-3 text-green-400 mr-2 flex-shrink-0" />
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Market Info */}
-                    <div className="mb-4 p-3 bg-white/5 rounded-lg">
-                      <div className="text-xs text-gray-400 mb-2">Market Position:</div>
-                      <div className="text-xs text-gray-300">{service.marketPosition}</div>
-                    </div>
-
-                    {/* ROI & Setup */}
-                    <div className="grid grid-cols-2 gap-3 mb-4 text-xs">
-                      <div className="text-center p-2 bg-green-500/10 rounded">
-                        <div className="text-green-400 font-semibold">ROI</div>
-                        <div className="text-gray-300">{service.roi}</div>
-                      </div>
-                      <div className="text-center p-2 bg-blue-500/10 rounded">
-                        <div className="text-blue-400 font-semibold">Setup</div>
-                        <div className="text-gray-300">{service.setupTime}</div>
-                      </div>
-                    </div>
-
-                    {/* CTA Button */}
                     <Button
                       href={service.link}
-                      className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white py-3 px-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105"
+                      variant="secondary"
+                      size="sm"
+                      className="w-full"
                     >
-                      Start Free Trial
-                      <ArrowRight className="ml-2 w-4 h-4" />
+                      Learn More
+                      <ExternalLink className="ml-2 w-4 h-4" />
                     </Button>
-
-                    {/* Trial Info */}
-                    <div className="text-center mt-3">
-                      <span className="text-xs text-gray-400">
-                        {service.trialDays}-day free trial • No credit card required
-                      </span>
-                    </div>
                   </div>
-                </Card>
+                </AdvancedFuturisticCard>
               ))}
             </div>
+
+            {filteredServices.length > 12 && (
+              <div className="text-center mt-12">
+                <Button
+                  href="/services"
+                  variant="primary"
+                  size="lg"
+                  className="text-lg px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700"
+                >
+                  View All {filteredServices.length} Services
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </div>
+            )}
           </div>
         </section>
 
         {/* Contact Section */}
-        <section className="py-20">
+        <section className="py-20 bg-black/30">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 futuristic-glow">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
                 Ready to Get Started?
               </h2>
-              <p className="text-xl text-gray-300 mb-8">
-                Join thousands of businesses already using our micro SaaS services to accelerate growth and innovation.
+              <p className="text-xl text-gray-300 mb-12">
+                Contact our team to learn more about our micro SaaS services and start your free trial today.
               </p>
-              
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <div className="flex items-center justify-center gap-3 text-gray-300">
-                  <Phone className="w-5 h-5 text-blue-400" />
-                  <span>{contactInfo.mobile}</span>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div className="flex flex-col items-center">
+                  <Phone className="w-8 h-8 text-cyan-400 mb-4" />
+                  <div className="text-white font-semibold">Mobile</div>
+                  <div className="text-cyan-400">{contactInfo.mobile}</div>
                 </div>
-                <div className="flex items-center justify-center gap-3 text-gray-300">
-                  <Mail className="w-5 h-5 text-green-400" />
-                  <span>{contactInfo.email}</span>
+                <div className="flex flex-col items-center">
+                  <Mail className="w-8 h-8 text-purple-400 mb-4" />
+                  <div className="text-white font-semibold">Email</div>
+                  <div className="text-purple-400">{contactInfo.email}</div>
                 </div>
-                <div className="flex items-center justify-center gap-3 text-gray-300">
-                  <MapPin className="w-5 h-5 text-purple-400" />
-                  <span>{contactInfo.address}</span>
+                <div className="flex flex-col items-center">
+                  <MapPin className="w-8 h-8 text-green-400 mb-4" />
+                  <div className="text-white font-semibold">Address</div>
+                  <div className="text-green-400 text-sm">{contactInfo.address}</div>
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <Button
                   href="/contact"
-                  className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300 transform hover:scale-105"
+                  variant="primary"
+                  size="lg"
+                  className="text-lg px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700"
                 >
                   Contact Us
-                  <ArrowRight className="ml-2 w-5 h-5" />
+                  <MessageSquare className="ml-2 w-5 h-5" />
                 </Button>
                 <Button
-                  href="/pricing"
-                  variant="outline"
-                  className="border-2 border-white/20 text-white hover:bg-white/10 px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300"
+                  href="/services"
+                  variant="secondary"
+                  size="lg"
+                  className="text-lg px-8 py-4 border-2 border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-black"
                 >
-                  View Pricing
+                  View All Services
+                  <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </div>
             </div>
           </div>
         </section>
       </div>
-    </EnhancedFuturisticBackground>
+    </AdvancedFuturisticBackground>
   );
+}
+
+function getCategoryIcon(category: string): string {
+  const iconMap: { [key: string]: string } = {
+    'AI & Machine Learning': '🤖',
+    'Blockchain & Web3': '⛓️',
+    'AR/VR & Metaverse': '🥽',
+    'IoT & Smart Cities': '🏙️',
+    'Cloud & Infrastructure': '☁️',
+    'Data Analytics & BI': '📊',
+    'Cybersecurity': '🔐',
+    'Emerging Technologies': '🚀',
+    'Quantum Computing': '⚛️',
+    'Autonomous Systems': '🤖',
+    'Sustainable Technology': '🌱',
+    'Biomedical & Healthcare': '🏥',
+    'Financial Technology': '💰',
+    'Climate & Environment': '🌍',
+    'Manufacturing & Industry 4.0': '🏭',
+    'Transportation & Logistics': '🚚',
+    'Energy & Utilities': '⚡',
+    'Research & Development': '🔬',
+    'Government & Defense': '🛡️',
+    'Education & Training': '🎓',
+    'Legal Technology': '⚖️',
+    'Supply Chain & Logistics': '📦',
+    'Space Technology': '🚀',
+    'Industrial Automation': '🏭',
+    'Neuroscience & Brain Research': '🧠',
+    'Materials Science': '🧪',
+    'Environmental Technology': '🌱'
+  };
+  
+  return iconMap[category] || '⚡';
 }
