@@ -8,6 +8,7 @@ import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigatio
 import EnhancedNavigation2026 from '../components/layout/EnhancedNavigation2026';
 import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
 import Enhanced2026ServicesShowcase from '../components/sections/Enhanced2026ServicesShowcase';
+import Enhanced2026ServiceShowcase from '../components/sections/Enhanced2026ServiceShowcase';
 import EnhancedHero2026 from '../components/sections/EnhancedHero2026';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
@@ -37,6 +38,8 @@ import { innovative2026Services } from '../data/innovative-2026-services';
 import { emergingTech2026Services } from '../data/emerging-tech-2026-services';
 import { enterpriseIT2026Services } from '../data/enterprise-it-2026-services';
 import { innovative2026MicroSaasServices } from '../data/innovative-2026-micro-saas';
+import { innovative2026AIServices } from '../data/innovative-2026-ai-services';
+import { innovative2026ITInfrastructureServices } from '../data/innovative-2026-it-infrastructure';
 import { emergingTech2026Services as emergingTech2026ServicesNew } from '../data/emerging-tech-2026-services';
 import { enterpriseIT2026Services as enterpriseIT2026ServicesNew } from '../data/enterprise-it-2026-services';
 
@@ -76,6 +79,8 @@ export default function HomePage() {
     ...emergingTech2026Services,
     ...enterpriseIT2026Services,
     ...innovative2026MicroSaasServices,
+    ...innovative2026AIServices,
+    ...innovative2026ITInfrastructureServices,
     ...emergingTech2026ServicesNew,
     ...enterpriseIT2026ServicesNew
   ];
@@ -95,9 +100,9 @@ export default function HomePage() {
   return (
     <UltraAdvancedFuturisticBackground 
       intensity="extreme" 
-      colorScheme="quantum-fusion"
-      particleCount={400}
-      animationSpeed={2.0}
+      colorScheme="quantum-holographic"
+      particleCount={500}
+      animationSpeed={2.5}
       enableHolographic={true}
       enableQuantumEffects={true}
     >
@@ -651,6 +656,9 @@ export default function HomePage() {
         
         {/* 2026 Services Showcase */}
         <Enhanced2026ServicesShowcase />
+        
+        {/* New 2026 Service Showcase */}
+        <Enhanced2026ServiceShowcase />
 
         {/* Featured Offers */}
         <section className="py-16 px-4 sm:px-6 lg:px-8">
