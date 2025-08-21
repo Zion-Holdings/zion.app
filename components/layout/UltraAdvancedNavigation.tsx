@@ -36,28 +36,28 @@ const UltraAdvancedNavigation: React.FC = () => {
       dropdown: [
         {
           name: 'AI Agent Orchestrator',
-          href: '/ai-agent-orchestrator',
+          href: '/ai-agents',
           icon: Bot,
           description: 'Multi-agent workflow automation',
           price: '$2,999/month'
         },
         {
           name: 'AI Cybersecurity',
-          href: '/ai-cybersecurity',
+          href: '/security',
           icon: Shield,
           description: 'AI-powered threat detection',
           price: '$4,999/month'
         },
         {
           name: 'AI Healthcare Analytics',
-          href: '/ai-healthcare-analytics',
+          href: '/ai-data-analytics',
           icon: Dna,
           description: 'Patient outcome prediction',
           price: '$3,999/month'
         },
         {
           name: 'AI Supply Chain',
-          href: '/ai-supply-chain',
+          href: '/quantum-logistics',
           icon: Package,
           description: 'End-to-end optimization',
           price: '$2,499/month'
@@ -79,21 +79,21 @@ const UltraAdvancedNavigation: React.FC = () => {
       dropdown: [
         {
           name: 'Quantum AI Supercomputer',
-          href: '/quantum-ai-supercomputer',
+          href: '/quantum-ai-cognitive',
           icon: Cpu,
           description: 'Enterprise quantum computing',
           price: '$15,999/month'
         },
         {
           name: 'Quantum Internet Security',
-          href: '/quantum-internet-security',
+          href: '/quantum-internet-security-platform',
           icon: Lock,
           description: 'Future-proof encryption',
           price: '$8,999/month'
         },
         {
           name: 'Quantum Drug Discovery',
-          href: '/quantum-drug-discovery',
+          href: '/biotech-ai',
           icon: Dna,
           description: 'Accelerated drug development',
           price: '$12,999/month'
@@ -122,14 +122,14 @@ const UltraAdvancedNavigation: React.FC = () => {
       dropdown: [
         {
           name: 'Space Mission Control',
-          href: '/space-mission-control',
+          href: '/space-technology',
           icon: Rocket,
           description: 'Complete mission management',
           price: '$25,999/month'
         },
         {
           name: 'Space Debris Cleanup',
-          href: '/space-debris-cleanup',
+          href: '/space-technology',
           icon: Package,
           description: 'AI-powered debris removal',
           price: '$35,999/month'
@@ -144,49 +144,49 @@ const UltraAdvancedNavigation: React.FC = () => {
       dropdown: [
         {
           name: 'Cloud Migration',
-          href: '/enterprise-cloud-migration',
+          href: '/cloud-platform',
           icon: Cloud,
           description: 'Zero-downtime migration',
           price: '$8,999/month'
         },
         {
           name: 'DevOps Automation',
-          href: '/enterprise-devops',
+          href: '/automation',
           icon: Code,
           description: 'AI-powered automation',
           price: '$5,999/month'
         },
         {
           name: 'Data Analytics',
-          href: '/enterprise-data-analytics',
+          href: '/ai-data-analytics',
           icon: Database,
           description: 'AI-powered insights',
           price: '$6,999/month'
         },
         {
           name: 'Security Operations',
-          href: '/enterprise-soc',
+          href: '/security',
           icon: Shield,
           description: '24/7 security monitoring',
           price: '$12,999/month'
         },
         {
           name: 'API Management',
-          href: '/enterprise-api-management',
+          href: '/api-observability',
           icon: Code,
           description: 'Complete lifecycle management',
           price: '$4,999/month'
         },
         {
           name: 'Digital Transformation',
-          href: '/enterprise-digital-transformation',
+          href: '/solutions',
           icon: Zap,
           description: 'AI-powered transformation',
           price: '$15,999/month'
         },
         {
           name: 'IoT Management',
-          href: '/enterprise-iot',
+          href: '/it-asset-discovery-agent',
           icon: Wifi,
           description: 'AI-powered device management',
           price: '$7,999/month'
