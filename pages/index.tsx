@@ -104,10 +104,10 @@ export default function HomePage() {
             className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
           >
             <Link
-              href="/services"
+              href="/innovative-2025-services-showcase"
               className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white font-bold text-lg rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/25"
             >
-              Explore Services
+              Explore Innovative 2025 Services
             </Link>
             <Link
               href="/contact"

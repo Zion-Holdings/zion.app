@@ -6,7 +6,8 @@ import {
   Brain, Cpu, Rocket, Shield, 
   Zap, Globe, Star, Users,
   Target, Microscope, Atom, Database,
-  Lock, Cloud, BarChart3, Settings
+  Lock, Cloud, BarChart3, Settings,
+  Sparkles
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -95,16 +96,16 @@ const navigationItems: NavigationItem[] = [
     description: 'Innovative business solutions',
     badge: 'Popular',
     children: [
+      { name: 'AI Content Intelligence Suite', href: '/ai-content-intelligence-suite', description: 'AI-powered content creation' },
+      { name: 'Autonomous Customer Service AI', href: '/autonomous-customer-service-ai', description: 'Self-learning support platform' },
+      { name: 'AI-Powered DevOps Automation', href: '/ai-devops-automation', description: 'Intelligent DevOps platform' },
+      { name: 'Autonomous Business Intelligence', href: '/autonomous-business-intelligence', description: 'Self-driving analytics' },
       { name: 'AI Content Factory Pro', href: '/ai-content-factory', description: 'Automated content generation' },
       { name: 'Quantum CRM Suite', href: '/quantum-crm', description: 'Next-gen customer management' },
       { name: 'CyberShield Pro', href: '/cyber-shield-pro', description: 'Comprehensive cybersecurity' },
       { name: 'DataVault Hub', href: '/data-vault-hub', description: 'Enterprise data management' },
       { name: 'DevOps Automation Studio', href: '/devops-automation-studio', description: 'End-to-end DevOps' },
-      { name: 'FinTech AI Platform', href: '/fintech-ai-platform', description: 'AI-powered financial services' },
-      { name: 'Healthcare AI Suite', href: '/healthcare-ai-suite', description: 'Medical technology solutions' },
-      { name: 'IoT Ecosystem Platform', href: '/iot-ecosystem-platform', description: 'Internet of Things management' },
-      { name: 'Metaverse Development Studio', href: '/metaverse-development-studio', description: 'Virtual world creation' },
-      { name: 'Quantum Logistics Optimizer', href: '/quantum-logistics-optimizer', description: 'Supply chain optimization' }
+      { name: 'FinTech AI Platform', href: '/fintech-ai-platform', description: 'AI-powered financial services' }
     ]
   },
   {
@@ -118,6 +119,24 @@ const navigationItems: NavigationItem[] = [
       { name: 'Autonomous Vehicle AI Platform', href: '/autonomous-vehicle-ai-platform', description: 'Self-driving systems' },
       { name: 'Enterprise AI Operations Center', href: '/enterprise-ai-operations-center', description: 'AI operations management' },
       { name: 'Blockchain Infrastructure Platform', href: '/blockchain-infrastructure-platform', description: 'Blockchain development' }
+    ]
+  },
+  {
+    name: 'Innovative 2025',
+    href: '/innovative-2025-services-showcase',
+    icon: <Sparkles className="w-5 h-5" />,
+    description: 'Latest innovative services showcase',
+    badge: 'New',
+    children: [
+      { name: 'AI Content Intelligence Suite', href: '/ai-content-intelligence-suite', description: 'AI-powered content creation' },
+      { name: 'Quantum Cyber Defense Platform', href: '/quantum-cyber-defense-platform', description: 'Quantum-enhanced cybersecurity' },
+      { name: 'Autonomous Business Intelligence', href: '/autonomous-business-intelligence', description: 'Self-driving analytics' },
+      { name: 'Edge Computing Orchestrator', href: '/edge-computing-orchestrator', description: 'Intelligent edge management' },
+      { name: 'Blockchain Identity Management', href: '/blockchain-identity-management', description: 'Decentralized identity' },
+      { name: 'AI-Powered DevOps Automation', href: '/ai-devops-automation', description: 'Intelligent DevOps' },
+      { name: 'Quantum Machine Learning', href: '/quantum-machine-learning', description: 'Quantum-enhanced ML' },
+      { name: 'Autonomous Customer Service AI', href: '/autonomous-customer-service-ai', description: 'Self-learning support' },
+      { name: 'Space Technology Analytics', href: '/space-technology-analytics', description: 'Space mission analytics' }
     ]
   }
 ];

@@ -91,7 +91,7 @@ export default function InnovativeServicesShowcase() {
 
   return (
     <UltraAdvancedFuturisticBackground 
-  intensity="extreme" 
+        intensity="high" 
   colorScheme="quantum-fusion"
   particleCount={500}
   animationSpeed={2.0}
