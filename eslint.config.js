@@ -1,4 +1,6 @@
 import js from '@eslint/js';
+import typescript from '@typescript-eslint/eslint-plugin';
+import typescriptParser from '@typescript-eslint/parser';
 
 export default [
   js.configs.recommended,
@@ -7,6 +9,14 @@ export default [
     languageOptions: {
       ecmaVersion: 2020,
       sourceType: 'module',
+      parser: typescriptParser,
+      parserOptions: {
+        ecmaVersion: 2020,
+        sourceType: 'module',
+        ecmaFeatures: {
+          jsx: true
+        }
+      },
       globals: {
         process: 'readonly',
         console: 'readonly',
@@ -20,9 +30,14 @@ export default [
         clearInterval: 'readonly'
       }
     },
+    plugins: {
+      '@typescript-eslint': typescript
+    },
     rules: {
-      'no-unused-vars': 'warn',
-      'no-console': 'warn'
+      'no-unused-vars': 'off',
+      '@typescript-eslint/no-unused-vars': 'warn',
+      'no-console': 'warn',
+      '@typescript-eslint/no-explicit-any': 'warn'
     }
   },
   {
@@ -39,13 +54,7 @@ export default [
       'public/reports/**',
       'netlify/',
       'ecosystem*.cjs',
-      '**/*.cjs',
-      '**/*.tsx',
-      '**/*.ts',
-      '**/*.jsx',
-      'components/',
-      'pages/',
-      'services/'
+      '**/*.cjs'
     ]
   }
 ];
