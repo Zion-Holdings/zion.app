@@ -74,6 +74,9 @@ import { futuristic2028Services } from '../data/2028-futuristic-innovations';
 import { emergingTech2028Services } from '../data/2028-emerging-tech-services';
 import { cuttingEdge2029Services } from '../data/2029-cutting-edge-innovations';
 import { spaceColonization2029Services } from '../data/2029-space-colonization-services';
+import { advancedAI2029Services } from '../data/2029-advanced-ai-services';
+import { cybersecurityBlockchain2029Services } from '../data/2029-cybersecurity-blockchain-services';
+import { iotEdgeComputing2029Services } from '../data/2029-iot-edge-computing-services';
 
 export default function HomePage() {
   const contactInfo = {
@@ -98,6 +101,10 @@ export default function HomePage() {
     ...emergingTechnologyServices,
     ...emergingTechServices2025,
     ...comprehensiveITSolutions,
+    ...cuttingEdge2029Services,
+    ...advancedAI2029Services,
+    ...cybersecurityBlockchain2029Services,
+    ...iotEdgeComputing2029Services,
     ...realMarketServices,
     ...serviceExpansions2025,
     ...realOperationalServices,

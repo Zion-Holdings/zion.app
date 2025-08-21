@@ -12,7 +12,7 @@ export interface SpaceColonization2029Service {
   textColor: string;
   link: string;
   marketPosition: string;
-  targetAudience: string;
+  targetAudience: string[];
   trialDays: number;
   setupTime: string;
   category: string;
@@ -68,7 +68,7 @@ export const spaceColonization2029Services: SpaceColonization2029Service[] = [
     textColor: 'text-red-400',
     link: 'https://ziontechgroup.com/mars-colonization-automation',
     marketPosition: 'First Mars colonization automation platform. 7-year technology advantage.',
-    targetAudience: 'Space agencies, Private space companies, Government agencies, Research institutions, Investment firms',
+    targetAudience: ['Space agencies', 'Private space companies', 'Government agencies', 'Research institutions', 'Investment firms'],
     trialDays: 120,
     setupTime: '16 weeks',
     category: 'Space Colonization',
@@ -121,7 +121,7 @@ export const spaceColonization2029Services: SpaceColonization2029Service[] = [
     textColor: 'text-blue-400',
     link: 'https://ziontechgroup.com/interplanetary-communication',
     marketPosition: 'First interplanetary communication network. 5-year technology advantage.',
-    targetAudience: 'Space agencies, Telecommunications companies, Government agencies, Research institutions, Private space companies',
+    targetAudience: ['Space agencies', 'Telecommunications companies', 'Government agencies', 'Research institutions', 'Private space companies'],
     trialDays: 90,
     setupTime: '12 weeks',
     category: 'Space Communication',
@@ -174,7 +174,7 @@ export const spaceColonization2029Services: SpaceColonization2029Service[] = [
     textColor: 'text-yellow-400',
     link: 'https://ziontechgroup.com/space-mining-automation',
     marketPosition: 'First space mining automation platform. 6-year technology advantage.',
-    targetAudience: 'Mining companies, Space agencies, Private space companies, Investment firms, Resource companies',
+    targetAudience: ['Mining companies', 'Space agencies', 'Private space companies', 'Investment firms', 'Resource companies'],
     trialDays: 90,
     setupTime: '14 weeks',
     category: 'Space Mining',
@@ -227,7 +227,7 @@ export const spaceColonization2029Services: SpaceColonization2029Service[] = [
     textColor: 'text-green-400',
     link: 'https://ziontechgroup.com/space-habitat-design',
     marketPosition: 'Advanced space habitat design platform. 3-year technology advantage.',
-    targetAudience: 'Space agencies, Architecture firms, Engineering companies, Research institutions, Private space companies',
+    targetAudience: ['Space agencies', 'Architecture firms', 'Engineering companies', 'Research institutions', 'Private space companies'],
     trialDays: 60,
     setupTime: '8 weeks',
     category: 'Space Architecture',
@@ -280,7 +280,7 @@ export const spaceColonization2029Services: SpaceColonization2029Service[] = [
     textColor: 'text-yellow-300',
     link: 'https://ziontechgroup.com/space-energy-harvesting',
     marketPosition: 'First space energy harvesting platform. 4-year technology advantage.',
-    targetAudience: 'Energy companies, Space agencies, Government agencies, Research institutions, Investment firms',
+    targetAudience: ['Energy companies', 'Space agencies', 'Government agencies', 'Research institutions', 'Investment firms'],
     trialDays: 75,
     setupTime: '10 weeks',
     category: 'Space Energy',

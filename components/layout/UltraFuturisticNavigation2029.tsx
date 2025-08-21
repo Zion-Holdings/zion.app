@@ -29,7 +29,8 @@ const serviceCategories = [
     services: [
       { name: 'AI Consciousness Simulation Platform', href: '/ai-consciousness-simulation-platform', description: 'Simulate human consciousness in AI systems', price: '$12,999/month' },
       { name: 'Autonomous AI Corporation Platform', href: '/autonomous-ai-corporation-platform', description: 'AI systems that run entire corporations', price: '$45,999/month' },
-      { name: 'AI Reality Augmentation Platform', href: '/ai-reality-augmentation-platform', description: 'Real-time AI reality enhancement', price: '$18,999/month' }
+      { name: 'AI Emotional Intelligence Platform', href: '/ai-emotional-intelligence-platform', description: 'AI that understands human emotions', price: '$8,999/month' },
+      { name: 'AI Creative Content Studio', href: '/ai-creative-content-studio', description: 'Generate unlimited creative content', price: '$3,999/month' }
     ]
   },
   {
@@ -51,6 +52,29 @@ const serviceCategories = [
       { name: 'Mars Colonization Automation Platform', href: '/mars-colonization-automation-platform', description: 'Automate Mars colonization process', price: '$99,999/month' },
       { name: 'Interplanetary Communication Network', href: '/interplanetary-communication-network', description: 'Real-time solar system communication', price: '$75,999/month' },
       { name: 'Space Mining Automation Platform', href: '/space-mining-automation-platform', description: 'Automate asteroid and lunar mining', price: '$65,999/month' }
+    ]
+  },
+  {
+    title: '🔐 2029 Cybersecurity & Blockchain',
+    icon: Shield,
+    color: 'from-indigo-600 to-purple-600',
+    description: 'Advanced security and decentralized solutions',
+    services: [
+      { name: 'Quantum Encryption Platform', href: '/quantum-encryption-platform', description: 'Unbreakable quantum encryption', price: '$22,999/month' },
+      { name: 'Decentralized Identity Management', href: '/decentralized-identity-management', description: 'Self-sovereign blockchain identity', price: '$7,999/month' },
+      { name: 'AI Threat Intelligence Platform', href: '/ai-threat-intelligence-platform', description: 'Predictive cybersecurity with AI', price: '$14,999/month' },
+      { name: 'DeFi Yield Optimization Platform', href: '/defi-yield-optimization-platform', description: 'Maximize DeFi returns with AI', price: '$5,999/month' }
+    ]
+  },
+  {
+    title: '🏙️ 2029 IoT & Edge Computing',
+    icon: Globe,
+    color: 'from-green-600 to-teal-600',
+    description: 'Smart infrastructure and edge intelligence',
+    services: [
+      { name: 'Smart City Infrastructure Platform', href: '/smart-city-infrastructure-platform', description: 'Complete smart city management', price: '$45,999/month' },
+      { name: 'Industrial IoT Automation Platform', href: '/industrial-iot-automation-platform', description: 'Industrial automation with IoT', price: '$28,999/month' },
+      { name: 'Edge AI Computing Platform', href: '/edge-ai-computing-platform', description: 'AI computing at the edge', price: '$19,999/month' }
     ]
   },
   {
