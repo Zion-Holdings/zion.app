@@ -50,6 +50,78 @@ export default function HomePage() {
       }
     },
     {
+      title: '📞 AI Phone Agent & IVR',
+      description: 'Natural voice AI that answers, routes, and resolves calls with CRM context and human handoff.',
+      price: 'Starting at $249/month',
+      features: ['ASR/TTS', 'Smart routing', 'PII redaction', 'Analytics'],
+      link: 'https://ziontechgroup.com/ai-phone-agent',
+      color: 'from-cyan-600 to-blue-700',
+      marketData: 'Conversational AI market $9.3B, 25% CAGR',
+      competitors: 'Replicant, PolyAI',
+      savings: 'Cut handle time 25–40%',
+      contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709' }
+    },
+    {
+      title: '🛡️ LLM Gateway & Token Shield',
+      description: 'Multi-vendor routing, quotas, caching, safety filters, and cost controls for AI at scale.',
+      price: 'Starting at $129/month',
+      features: ['Unified API', 'Failover', 'Quotas', 'Caching'],
+      link: 'https://ziontechgroup.com/llm-gateway',
+      color: 'from-purple-600 to-indigo-700',
+      marketData: 'AI platform tooling $5B+, fast growth',
+      competitors: 'Helicone, Porter',
+      savings: 'Reduce spend 15–35%',
+      contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709' }
+    },
+    {
+      title: '🧭 Data Pipeline Observability',
+      description: 'Lineage, SLAs, and anomaly detection across ETL/ELT with dashboards and alerts.',
+      price: 'Starting at $159/month',
+      features: ['Lineage', 'SLA alerts', 'Drift detection', 'OTel traces'],
+      link: 'https://ziontechgroup.com/data-pipeline-observability',
+      color: 'from-emerald-600 to-teal-700',
+      marketData: 'Data quality/observability $3B',
+      competitors: 'Monte Carlo, Databand',
+      savings: 'Cut data downtime 40%',
+      contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709' }
+    },
+    {
+      title: '🚨 Incident Copilot for SRE',
+      description: 'LLM-powered triage, timelines, and auto-runbooks in Slack/Teams with postmortems.',
+      price: 'Starting at $139/month',
+      features: ['Summaries', 'Actions', 'Timeline', 'Postmortems'],
+      link: 'https://ziontechgroup.com/incident-copilot',
+      color: 'from-rose-600 to-red-700',
+      marketData: 'Observability/incident mgmt $10B+',
+      competitors: 'Rootly, FireHydrant',
+      savings: 'Reduce MTTR 25–45%',
+      contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709' }
+    },
+    {
+      title: '🧪 AI Code Review & Security',
+      description: 'PR reviews with style, performance, and security flags plus suggested diffs.',
+      price: 'Starting at $99/month',
+      features: ['Style checks', 'Perf risks', 'OWASP lint', 'Suggested diffs'],
+      link: 'https://ziontechgroup.com/ai-code-review',
+      color: 'from-violet-600 to-purple-700',
+      marketData: 'Developer tooling $4B',
+      competitors: 'CodeQL, Snyk Code',
+      savings: 'Reduce defects 20–40%',
+      contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709' }
+    },
+    {
+      title: '☁️ Cloud Landing Zone Builder',
+      description: 'Secure multi-account foundations with guardrails, IAM, network, and FinOps via GitOps.',
+      price: 'Starting at $349/month',
+      features: ['Org setup', 'Policy packs', 'Audit logging', 'FinOps budgets'],
+      link: 'https://ziontechgroup.com/cloud-landing-zone',
+      color: 'from-blue-600 to-indigo-700',
+      marketData: 'Cloud services $150B+',
+      competitors: 'DoiT, Aviatrix',
+      savings: 'Save 4–8 weeks of setup',
+      contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709' }
+    },
+    {
       title: '🤖 AI Assistant Pro',
       description: 'Deploy a secure, branded AI copilot for support and operations. Slash tickets 30-50% with guardrails, RAG, and analytics.',
       price: 'Starting at $149/month',
