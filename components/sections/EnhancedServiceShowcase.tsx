@@ -76,6 +76,29 @@ const categoryColors: { [key: string]: string } = {
   'Data Center': 'from-gray-500 to-slate-600'
 };
 
+const categoryIcons: { [key: string]: React.ComponentType<any> } = {
+  'AI': Brain,
+  'Quantum': Cpu,
+  'Cybersecurity': Shield,
+  'Cloud': Cloud,
+  'Blockchain': Database,
+  'IoT': Globe,
+  'Space': Rocket,
+  'Biotech': Brain,
+  'Metaverse': Globe,
+  'Autonomous': Zap,
+  'DevOps': Zap,
+  'Analytics': TrendingUp,
+  'Infrastructure': Database,
+  'Identity': Lock,
+  'Backup': Database,
+  'Network': Globe,
+  'API': Database,
+  'Migration': Cloud,
+  'Zero Trust': Shield,
+  'Data Center': Database
+};
+
 export default function EnhancedServiceShowcase({
   services,
   title = "Revolutionary AI, Quantum & IT Services",

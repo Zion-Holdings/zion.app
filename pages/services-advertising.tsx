@@ -75,7 +75,7 @@ export default function ServicesAdvertisingPage() {
   return (
     <UltraAdvancedFuturisticBackground 
       intensity="high" 
-      colorScheme="quantum"
+      colorScheme="quantum-fusion"
       particleCount={300}
       animationSpeed={1.5}
       

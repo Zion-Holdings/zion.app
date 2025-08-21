@@ -95,7 +95,7 @@ export default function HomePage() {
   return (
     <UltraAdvancedFuturisticBackground 
       intensity="extreme" 
-      colorScheme="quantum"
+      colorScheme="quantum-fusion"
       particleCount={400}
       animationSpeed={2.0}
       enableHolographic={true}
