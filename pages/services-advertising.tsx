@@ -75,12 +75,11 @@ export default function ServicesAdvertisingPage() {
   return (
     <UltraAdvancedFuturisticBackground 
       intensity="high" 
-      colorScheme="quantum"
+      colorScheme="quantum-fusion"
       particleCount={300}
       animationSpeed={1.5}
-      
-      
-      
+      enableHolographic={true}
+      enableQuantumEffects={true}
     >
       <Head>
         <title>AI, IT and Micro SaaS Services Advertising | Zion Tech Group</title>

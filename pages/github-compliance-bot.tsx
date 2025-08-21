@@ -6,12 +6,11 @@ export default function GitHubComplianceBotPage() {
   return (
     <UltraAdvancedFuturisticBackground 
   intensity="high" 
-  colorScheme="quantum"
+  colorScheme="quantum-fusion"
   particleCount={300}
   animationSpeed={1.5}
-  
-  
-  
+  enableHolographic={true}
+  enableQuantumEffects={true}
 >
       <Head>
         <title>GitHub Compliance Bot | Zion Tech Group</title>

@@ -76,6 +76,29 @@ const categoryColors: { [key: string]: string } = {
   'Data Center': 'from-gray-500 to-slate-600'
 };
 
+const categoryIcons: { [key: string]: any } = {
+  'AI': Brain,
+  'Quantum': Zap,
+  'Cybersecurity': Shield,
+  'Cloud': Cloud,
+  'Blockchain': Lock,
+  'IoT': Cpu,
+  'Space': Rocket,
+  'Biotech': Database,
+  'Metaverse': Globe,
+  'Autonomous': Brain,
+  'DevOps': Zap,
+  'Analytics': TrendingUp,
+  'Infrastructure': Cloud,
+  'Identity': Shield,
+  'Backup': Database,
+  'Network': Cloud,
+  'API': Zap,
+  'Migration': Cloud,
+  'Zero Trust': Shield,
+  'Data Center': Database
+};
+
 export default function EnhancedServiceShowcase({
   services,
   title = "Revolutionary AI, Quantum & IT Services",

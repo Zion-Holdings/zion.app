@@ -30,7 +30,7 @@ export default function AIAssistantPage() {
   return (
     <UltraAdvancedFuturisticBackground 
       intensity="high" 
-      colorScheme="quantum"
+      colorScheme="quantum-fusion"
       particleCount={300}
       animationSpeed={1.5}
       enableHolographic={true}

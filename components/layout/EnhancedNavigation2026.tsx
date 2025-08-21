@@ -6,7 +6,7 @@ import {
   Brain, Cpu, Shield, Zap, Star, Users, TrendingUp,
   Globe, Database, Cloud, Lock, Palette, Target,
   Layers, Sparkles, Atom, Microscope, Satellite,
-  Search, Bell, User, Settings, LogOut
+  Search, Bell, User, Settings, LogOut, SparklesIcon
 } from 'lucide-react';
 
 const contactInfo = {
@@ -114,36 +114,71 @@ const EnhancedNavigation2026 = () => {
     setActiveDropdown(activeDropdown === category ? null : category);
   };
 
-  const closeDropdowns = () => {
+  const closeDropdown = () => {
     setActiveDropdown(null);
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled 
-        ? 'bg-slate-900/95 backdrop-blur-xl border-b border-slate-700/50 shadow-2xl' 
-        : 'bg-transparent'
-    }`}>
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-black/80 backdrop-blur-xl border-b border-cyan-500/20 shadow-2xl shadow-cyan-500/10' 
+          : 'bg-transparent'
+      }`}
+    >
+      {/* Top Contact Bar */}
+      <div className="bg-gradient-to-r from-cyan-900/90 via-purple-900/90 to-pink-900/90 border-b border-cyan-500/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between py-2 text-sm">
+            <div className="flex items-center space-x-6 text-cyan-300">
+              <div className="flex items-center space-x-2">
+                <Phone className="w-4 h-4" />
+                <span>{contactInfo.mobile}</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Mail className="w-4 h-4" />
+                <span>{contactInfo.email}</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <MapPin className="w-4 h-4" />
+                <span>{contactInfo.address}</span>
+              </div>
+            </div>
+            <div className="flex items-center space-x-4">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="flex items-center space-x-2 text-cyan-300 hover:text-cyan-200 transition-colors"
+              >
+                <SparklesIcon className="w-4 h-4" />
+                <span className="font-semibold">2026 Revolutionary Services</span>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Navigation */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="flex items-center"
+            whileHover={{ scale: 1.05 }}
+            className="flex items-center space-x-3"
           >
-            <Link href="/" className="flex items-center space-x-3 group">
-              <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <Rocket className="w-6 h-6 text-white" />
+            <div className="relative">
+              <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-xl flex items-center justify-center shadow-lg shadow-cyan-500/25">
+                <Rocket className="w-7 h-7 text-white" />
               </div>
-              <div className="hidden sm:block">
-                <div className="text-xl font-bold text-white group-hover:text-purple-300 transition-colors">
-                  Zion Tech Group
-                </div>
-                <div className="text-xs text-gray-400">2026 Innovation</div>
-              </div>
-            </Link>
+              <div className="absolute -inset-1 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-xl blur opacity-25"></div>
+            </div>
+            <div>
+              <h1 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                Zion Tech Group
+              </h1>
+              <p className="text-xs text-cyan-300 font-medium">Revolutionary 2026</p>
+            </div>
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -151,54 +186,52 @@ const EnhancedNavigation2026 = () => {
             {/* Service Categories */}
             {serviceCategories.map((category) => (
               <div key={category.title} className="relative group">
-                <button
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
                   onClick={() => toggleDropdown(category.title)}
-                  className="flex items-center space-x-2 px-4 py-2 text-gray-300 hover:text-white transition-colors duration-200 rounded-lg hover:bg-slate-800/50"
+                  className="flex items-center space-x-2 px-4 py-2 rounded-lg text-white hover:text-cyan-300 transition-colors duration-200 group-hover:bg-white/10"
                 >
-                  <category.icon className="w-4 h-4" />
-                  <span className="font-medium">{category.title.split(' ')[0]}</span>
+                  <category.icon className="w-5 h-5" />
+                  <span className="font-medium">{category.title}</span>
                   <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
                     activeDropdown === category.title ? 'rotate-180' : ''
                   }`} />
-                </button>
+                </motion.button>
 
                 {/* Dropdown Menu */}
                 <AnimatePresence>
                   {activeDropdown === category.title && (
                     <motion.div
-                      initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                      initial={{ opacity: 0, y: -10, scale: 0.95 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                      exit={{ opacity: 0, y: -10, scale: 0.95 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute top-full left-0 mt-2 w-80 bg-slate-900/95 backdrop-blur-xl border border-slate-700/50 rounded-2xl shadow-2xl overflow-hidden"
+                      className="absolute top-full left-0 mt-2 w-80 bg-black/95 backdrop-blur-xl border border-cyan-500/20 rounded-xl shadow-2xl shadow-cyan-500/20 overflow-hidden"
                     >
                       <div className="p-4">
-                        <div className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium text-white mb-4 bg-gradient-to-r ${category.color}`}>
-                          <category.icon className="w-4 h-4 mr-2" />
-                          {category.title}
-                        </div>
+                        <h3 className="text-lg font-semibold text-white mb-3 flex items-center space-x-2">
+                          <category.icon className="w-5 h-5" />
+                          <span>{category.title}</span>
+                        </h3>
                         <div className="space-y-3">
                           {category.services.map((service) => (
-                            <Link
+                            <motion.div
                               key={service.name}
-                              href={service.href}
-                              onClick={closeDropdowns}
-                              className="block p-3 rounded-xl hover:bg-slate-800/50 transition-colors duration-200 group"
+                              whileHover={{ scale: 1.02, x: 5 }}
+                              className="p-3 rounded-lg hover:bg-white/5 transition-colors duration-200 cursor-pointer"
                             >
-                              <div className="flex items-start justify-between">
-                                <div className="flex-1">
-                                  <h4 className="text-white font-medium group-hover:text-purple-300 transition-colors">
-                                    {service.name}
-                                  </h4>
-                                  <p className="text-gray-400 text-sm mt-1 line-clamp-2">
-                                    {service.description}
-                                  </p>
+                              <Link href={service.href} onClick={closeDropdown}>
+                                <div className="flex items-start justify-between">
+                                  <div className="flex-1">
+                                    <h4 className="text-white font-medium text-sm">{service.name}</h4>
+                                    <p className="text-gray-400 text-xs mt-1">{service.description}</p>
+                                  </div>
+                                  <div className="text-right">
+                                    <span className="text-cyan-400 font-semibold text-sm">{service.price}</span>
+                                  </div>
                                 </div>
-                                <div className="text-purple-400 font-semibold text-sm ml-3">
-                                  {service.price}
-                                </div>
-                              </div>
-                            </Link>
+                              </Link>
+                            </motion.div>
                           ))}
                         </div>
                       </div>
@@ -210,61 +243,56 @@ const EnhancedNavigation2026 = () => {
 
             {/* Company Links */}
             {companyLinks.map((link) => (
-              <Link
+              <motion.div
                 key={link.name}
-                href={link.href}
-                className="text-gray-300 hover:text-white transition-colors duration-200 font-medium"
+                whileHover={{ scale: 1.05 }}
               >
-                {link.name}
-              </Link>
+                <Link
+                  href={link.href}
+                  className="text-white hover:text-cyan-300 transition-colors duration-200 font-medium"
+                >
+                  {link.name}
+                </Link>
+              </motion.div>
             ))}
           </div>
 
           {/* Right Side Actions */}
           <div className="hidden lg:flex items-center space-x-4">
             {/* Search */}
-            <div className="relative">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="relative"
+            >
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
               <input
                 type="text"
                 placeholder="Search services..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-64 pl-10 pr-4 py-2 bg-slate-800/50 border border-slate-700/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all duration-200"
+                className="w-64 pl-10 pr-4 py-2 bg-white/10 border border-cyan-500/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-transparent"
               />
-            </div>
-
-            {/* Notifications */}
-            <button className="p-2 text-gray-400 hover:text-white hover:bg-slate-800/50 rounded-xl transition-all duration-200">
-              <Bell className="w-5 h-5" />
-            </button>
-
-            {/* User Menu */}
-            <div className="relative group">
-              <button className="flex items-center space-x-2 p-2 text-gray-400 hover:text-white hover:bg-slate-800/50 rounded-xl transition-all duration-200">
-                <User className="w-5 h-5" />
-              </button>
-            </div>
+            </motion.div>
 
             {/* Contact Button */}
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-2 rounded-xl font-medium transition-all duration-200 shadow-lg hover:shadow-purple-500/25"
+              className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-lg shadow-lg shadow-cyan-500/25 hover:shadow-xl hover:shadow-cyan-500/40 transition-all duration-200"
             >
-              Contact Us
+              Get Started
             </motion.button>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="lg:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="p-2 text-gray-400 hover:text-white hover:bg-slate-800/50 rounded-xl transition-all duration-200"
-            >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-          </div>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => setIsOpen(!isOpen)}
+            className="lg:hidden p-2 rounded-lg text-white hover:bg-white/10 transition-colors duration-200"
+          >
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </motion.button>
         </div>
       </div>
 
@@ -276,7 +304,7 @@ const EnhancedNavigation2026 = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-slate-900/95 backdrop-blur-xl border-t border-slate-700/50"
+            className="lg:hidden bg-black/95 backdrop-blur-xl border-t border-cyan-500/20"
           >
             <div className="px-4 py-6 space-y-6">
               {/* Mobile Search */}
@@ -287,74 +315,69 @@ const EnhancedNavigation2026 = () => {
                   placeholder="Search services..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 bg-slate-800/50 border border-slate-700/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500/50"
+                  className="w-full pl-10 pr-4 py-3 bg-white/10 border border-cyan-500/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-transparent"
                 />
               </div>
 
               {/* Mobile Service Categories */}
-              {serviceCategories.map((category) => (
-                <div key={category.title} className="space-y-3">
-                  <h3 className={`text-lg font-semibold text-white px-3 py-2 rounded-lg bg-gradient-to-r ${category.color}`}>
-                    {category.title}
-                  </h3>
-                  <div className="space-y-2 pl-4">
-                    {category.services.slice(0, 3).map((service) => (
-                      <Link
-                        key={service.name}
-                        href={service.href}
-                        onClick={() => setIsOpen(false)}
-                        className="block p-3 rounded-lg hover:bg-slate-800/50 transition-colors duration-200"
-                      >
-                        <div className="text-white font-medium">{service.name}</div>
-                        <div className="text-gray-400 text-sm">{service.description}</div>
-                        <div className="text-purple-400 font-semibold text-sm mt-1">{service.price}</div>
-                      </Link>
-                    ))}
+              <div className="space-y-4">
+                {serviceCategories.map((category) => (
+                  <div key={category.title} className="border-b border-cyan-500/20 pb-4">
+                    <h3 className="text-lg font-semibold text-white mb-3 flex items-center space-x-2">
+                      <category.icon className="w-5 h-5" />
+                      <span>{category.title}</span>
+                    </h3>
+                    <div className="space-y-2 ml-6">
+                      {category.services.slice(0, 2).map((service) => (
+                        <Link
+                          key={service.name}
+                          href={service.href}
+                          onClick={() => setIsOpen(false)}
+                          className="block text-gray-300 hover:text-cyan-300 transition-colors duration-200"
+                        >
+                          {service.name}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
 
               {/* Mobile Company Links */}
               <div className="space-y-3">
-                <h3 className="text-lg font-semibold text-white px-3 py-2 rounded-lg bg-gradient-to-r from-gray-600 to-gray-700">
-                  Company
-                </h3>
-                <div className="space-y-2 pl-4">
-                  {companyLinks.map((link) => (
-                    <Link
-                      key={link.name}
-                      href={link.href}
-                      onClick={() => setIsOpen(false)}
-                      className="block p-3 text-gray-300 hover:text-white transition-colors duration-200 rounded-lg hover:bg-slate-800/50"
-                    >
-                      {link.name}
-                    </Link>
-                  ))}
-                </div>
+                {companyLinks.map((link) => (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className="block text-white hover:text-cyan-300 transition-colors duration-200 font-medium"
+                  >
+                    {link.name}
+                  </Link>
+                ))}
               </div>
 
-              {/* Mobile Contact Info */}
-              <div className="pt-6 border-t border-slate-700/50">
-                <div className="space-y-3">
-                  <div className="flex items-center space-x-3 text-gray-300">
-                    <Phone className="w-4 h-4" />
-                    <span>{contactInfo.mobile}</span>
-                  </div>
-                  <div className="flex items-center space-x-3 text-gray-300">
-                    <Mail className="w-4 h-4" />
-                    <span>{contactInfo.email}</span>
-                  </div>
-                  <div className="flex items-center space-x-3 text-gray-300">
-                    <MapPin className="w-4 h-4" />
-                    <span className="text-sm">{contactInfo.address}</span>
-                  </div>
-                </div>
-              </div>
+              {/* Mobile Contact Button */}
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-lg shadow-lg shadow-cyan-500/25"
+              >
+                Get Started
+              </motion.button>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+
+      {/* Click outside to close dropdown */}
+      {activeDropdown && (
+        <div
+          className="fixed inset-0 z-40"
+          onClick={closeDropdown}
+        />
+      )}
+    </motion.nav>
   );
 };
 

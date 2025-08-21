@@ -92,12 +92,11 @@ export default function InnovativeServicesShowcase() {
   return (
     <UltraAdvancedFuturisticBackground 
   intensity="extreme" 
-  colorScheme="quantum"
+  colorScheme="quantum-fusion"
   particleCount={500}
   animationSpeed={2.0}
-  
-  
-  
+  enableHolographic={true}
+  enableQuantumEffects={true}
 >
       <div className="min-h-screen">
         <Head>
