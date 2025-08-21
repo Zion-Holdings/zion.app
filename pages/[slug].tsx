@@ -204,17 +204,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const services = collectAllServices();
   const candidateSlugs = new Set<string>();
 
-  for (const s of services) {
-    const fromLink = extractRootSlugFromLink((s as any).link);
-    if (fromLink) {
-      candidateSlugs.add(fromLink);
-    } else if (s.id) {
-      candidateSlugs.add(normalizeSlug(s.id));
-    } else if (s.name) {
-      candidateSlugs.add(normalizeSlug(s.name));
-    }
-  }
-
   // Exclude any slugs that already have an explicit top-level page or folder under /pages
   const pagesDir = path.join(process.cwd(), 'pages');
   const existingRoutes = new Set<string>();
@@ -236,6 +225,17 @@ export const getStaticPaths: GetStaticPaths = async () => {
       if (match) {
         existingRoutes.add(match[1]);
       }
+    }
+  }
+
+  for (const s of services) {
+    const fromLink = extractRootSlugFromLink((s as any).link);
+    if (fromLink) {
+      candidateSlugs.add(fromLink);
+    } else if (s.id) {
+      candidateSlugs.add(normalizeSlug(s.id));
+    } else if (s.name) {
+      candidateSlugs.add(normalizeSlug(s.name));
     }
   }
 
