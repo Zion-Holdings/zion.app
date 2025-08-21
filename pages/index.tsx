@@ -81,6 +81,10 @@ import { emergingTechBreakthroughServices2029 } from '../data/2029-emerging-tech
 import { practicalBusinessSolutionServices2029 } from '../data/2029-practical-business-solutions';
 import { innovativeMicroSaasServices2029V2 } from '../data/2029-innovative-micro-saas-v2';
 import { emergingTechBreakthroughServices2029V2 } from '../data/2029-emerging-tech-breakthroughs-v2';
+import { innovative2030MicroSaasServices } from '../data/2030-innovative-micro-saas-services';
+import { innovative2030ITServices } from '../data/2030-innovative-it-services';
+import { innovative2030AIServices } from '../data/2030-innovative-ai-services';
+import { emergingTech2030Services } from '../data/2030-emerging-tech-services';
 
 export default function HomePage() {
   const contactInfo = {
@@ -98,6 +102,10 @@ export default function HomePage() {
     ...extraServices,
     ...additionalEnhancedServices,
     ...innovativeAIServices,
+    ...innovative2030MicroSaasServices,
+    ...innovative2030ITServices,
+    ...innovative2030AIServices,
+    ...emergingTech2030Services,
     ...quantumSpaceServices,
     ...quantumAIServices2025,
     ...enterpriseITServices,

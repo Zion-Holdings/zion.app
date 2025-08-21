@@ -46,6 +46,10 @@ import { practicalMicroSaas2027 } from '../data/2027-practical-micro-saas';
 import { revolutionary2027AIServices } from '../data/revolutionary-2027-ai-services';
 import { revolutionary2027ITServices } from '../data/revolutionary-2027-it-services';
 import { revolutionary2027MicroSaasServices } from '../data/revolutionary-2027-micro-saas';
+import { innovative2030MicroSaasServices } from '../data/2030-innovative-micro-saas-services';
+import { innovative2030ITServices } from '../data/2030-innovative-it-services';
+import { innovative2030AIServices } from '../data/2030-innovative-ai-services';
+import { emergingTech2030Services } from '../data/2030-emerging-tech-services';
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -96,7 +100,11 @@ export default function ServicesPage() {
     ...practicalMicroSaas2027,
     ...revolutionary2027AIServices,
     ...revolutionary2027ITServices,
-    ...revolutionary2027MicroSaasServices
+    ...revolutionary2027MicroSaasServices,
+    ...innovative2030MicroSaasServices,
+    ...innovative2030ITServices,
+    ...innovative2030AIServices,
+    ...emergingTech2030Services
   ];
 
   // Dynamic category counts mapped to the same filter logic below

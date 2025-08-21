@@ -15,6 +15,10 @@ import { enterpriseIT2026ServicesV2 } from '../data/enterprise-it-2026-services-
 import { revolutionary2026MicroSaasServices } from '../data/revolutionary-2026-micro-saas-services';
 import { revolutionary2026ITServices } from '../data/revolutionary-2026-it-services';
 import { revolutionary2026AIServices } from '../data/revolutionary-2026-ai-services';
+import { innovative2030MicroSaasServices } from '../data/2030-innovative-micro-saas-services';
+import { innovative2030ITServices } from '../data/2030-innovative-it-services';
+import { innovative2030AIServices } from '../data/2030-innovative-ai-services';
+import { emergingTech2030Services } from '../data/2030-emerging-tech-services';
 
 export default function PricingPage() {
   const [billingCycle, setBillingCycle] = useState<'monthly' | 'yearly'>('monthly');
@@ -40,7 +44,11 @@ export default function PricingPage() {
     ...enterpriseIT2026ServicesV2,
     ...revolutionary2026MicroSaasServices,
     ...revolutionary2026ITServices,
-    ...revolutionary2026AIServices
+    ...revolutionary2026AIServices,
+    ...innovative2030MicroSaasServices,
+    ...innovative2030ITServices,
+    ...innovative2030AIServices,
+    ...emergingTech2030Services
   ];
 
   // Enhanced service categories with pricing
