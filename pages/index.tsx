@@ -44,6 +44,9 @@ import { emergingTech2026ServicesV2 } from '../data/emerging-tech-2026-services-
 import { enterpriseIT2026ServicesV2 } from '../data/enterprise-it-2026-services-v2';
 import { revolutionary2026Innovations } from '../data/revolutionary-2026-innovations';
 import { nextGenAI2026Services } from '../data/next-gen-ai-2026-services';
+import { aiAutonomousServices2026 } from '../data/2026-ai-autonomous-services';
+import { quantumSpaceTechServices2026 } from '../data/2026-quantum-space-tech-services';
+import { metaverseDigitalRealityServices2026 } from '../data/2026-metaverse-digital-reality-services';
 
 export default function HomePage() {
   const contactInfo = {
@@ -87,7 +90,10 @@ export default function HomePage() {
     ...emergingTech2026ServicesV2,
     ...enterpriseIT2026ServicesV2,
     ...revolutionary2026Innovations,
-    ...nextGenAI2026Services
+    ...nextGenAI2026Services,
+    ...aiAutonomousServices2026,
+    ...quantumSpaceTechServices2026,
+    ...metaverseDigitalRealityServices2026
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);
@@ -95,14 +101,15 @@ export default function HomePage() {
   // Service statistics
   const serviceStats = {
     totalServices: allServices.length,
-    aiServices: nextGenerationAIServices.length + innovativeAIServices.length + realMarketServices.filter(s => s.category.includes('AI')).length + revolutionary2025Services.filter(s => s.category.includes('AI')).length + nextGenInnovations2025.filter(s => s.category.includes('AI')).length + innovative2026Services.filter(s => s.category.includes('AI')).length + emergingTech2026Services.filter(s => s.category.includes('AI')).length + innovative2026MicroSaasServices.filter(s => s.category.includes('AI')).length + innovative2026MicroSaasServicesV2.filter(s => s.category.includes('AI')).length + emergingTech2026ServicesV2.filter(s => s.category.includes('AI')).length + enterpriseIT2026ServicesV2.filter(s => s.category.includes('AI')).length,
+    aiServices: nextGenerationAIServices.length + innovativeAIServices.length + realMarketServices.filter(s => s.category.includes('AI')).length + revolutionary2025Services.filter(s => s.category.includes('AI')).length + nextGenInnovations2025.filter(s => s.category.includes('AI')).length + innovative2026Services.filter(s => s.category.includes('AI')).length + emergingTech2026Services.filter(s => s.category.includes('AI')).length + innovative2026MicroSaasServices.filter(s => s.category.includes('AI')).length + innovative2026MicroSaasServicesV2.filter(s => s.category.includes('AI')).length + emergingTech2026ServicesV2.filter(s => s.category.includes('AI')).length + enterpriseIT2026ServicesV2.filter(s => s.category.includes('AI')).length + aiAutonomousServices2026.length,
     emergingTech: emergingTechnologyServices.length + emergingTechServices2025.length + emergingTech2026Services.length + emergingTech2026ServicesNew.length + emergingTech2026ServicesV2.length,
     itSolutions: comprehensiveITSolutions.length + enterpriseITServices.length + enterpriseIT2026Services.length + enterpriseIT2026ServicesNew.length + enterpriseIT2026ServicesV2.length,
     microSaas: enhancedRealMicroSaasServices.length + innovativeMicroSaasServices.length + innovative2026Services.filter(s => s.category.includes('SaaS')).length + innovative2026MicroSaasServices.length + innovative2026MicroSaasServicesV2.length,
-    revolutionaryServices: revolutionary2025Services.length + nextGenInnovations2025.length + innovative2026Services.length + emergingTech2026Services.length + enterpriseIT2026Services.length + innovative2026MicroSaasServices.length + innovative2026MicroSaasServicesV2.length + emergingTech2026ServicesV2.length + enterpriseIT2026ServicesV2.length,
-    quantumServices: quantumSpaceServices.length + quantumAIServices2025.filter(s => s.category.includes('Quantum')).length,
+    revolutionaryServices: revolutionary2025Services.length + nextGenInnovations2025.length + innovative2026Services.length + emergingTech2026Services.length + enterpriseIT2026Services.length + innovative2026MicroSaasServices.length + innovative2026MicroSaasServicesV2.length + emergingTech2026ServicesV2.length + enterpriseIT2026ServicesV2.length + aiAutonomousServices2026.length + quantumSpaceTechServices2026.length + metaverseDigitalRealityServices2026.length,
+    quantumServices: quantumSpaceServices.length + quantumAIServices2025.filter(s => s.category.includes('Quantum')).length + quantumSpaceTechServices2026.length,
     blockchainServices: enterpriseIT2026Services.filter(s => s.category.includes('Blockchain')).length,
-    spaceTech: quantumSpaceServices.filter(s => s.category.includes('Space')).length
+    spaceTech: quantumSpaceServices.filter(s => s.category.includes('Space')).length + quantumSpaceTechServices2026.length,
+    metaverseServices: metaverseDigitalRealityServices2026.length
   };
 
   return (
