@@ -75,6 +75,9 @@ import { futuristicAIServices2029 } from '../data/2029-futuristic-ai-services';
 import { emergingTechServices2029 } from '../data/2029-emerging-tech-services';
 import { enterpriseITServices2029 } from '../data/2029-enterprise-it-services';
 import { innovativeMicroSaasServices2029 } from '../data/2029-innovative-micro-saas';
+import { aiAutonomousEcosystemServices2029 } from '../data/2029-ai-autonomous-ecosystem';
+import { emergingTechBreakthroughServices2029 } from '../data/2029-emerging-tech-breakthroughs';
+import { practicalBusinessSolutionServices2029 } from '../data/2029-practical-business-solutions';
 
 export default function HomePage() {
   const contactInfo = {
@@ -146,7 +149,10 @@ export default function HomePage() {
     ...futuristicAIServices2029,
     ...emergingTechServices2029,
     ...enterpriseITServices2029,
-    ...innovativeMicroSaasServices2029
+    ...innovativeMicroSaasServices2029,
+    ...aiAutonomousEcosystemServices2029,
+    ...emergingTechBreakthroughServices2029,
+    ...practicalBusinessSolutionServices2029
   ];
 
   // Get unique services by ID to avoid duplicates
