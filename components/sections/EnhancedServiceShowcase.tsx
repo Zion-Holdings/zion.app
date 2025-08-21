@@ -228,7 +228,11 @@ const EnhancedServiceShowcase: React.FC<ServiceShowcaseProps> = ({
                 <div className="flex items-center justify-between mb-6 text-sm">
                   <div className="flex items-center space-x-1 text-green-400">
                     <TrendingUp className="w-4 h-4" />
-                    <span>{service.roi.split(' ')[0]} ROI</span>
+                    <span>{(() => {
+                      const roi = (service as any).roi || '';
+                      const match = roi.match(/\b\d+\s*%|\b\d{2,4}x|\b\d+–\d+%/i);
+                      return match ? `${match[0]} ROI` : 'Proven ROI';
+                    })()}</span>
                   </div>
                   <div className="flex items-center space-x-1 text-blue-400">
                     <Clock className="w-4 h-4" />
