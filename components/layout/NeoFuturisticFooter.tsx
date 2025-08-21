@@ -106,29 +106,23 @@ export default function NeoFuturisticFooter() {
 
   const companyLinks = [
     { name: 'About Us', href: '/about' },
-    { name: 'Our Mission', href: '/mission' },
-    { name: 'Leadership Team', href: '/team' },
     { name: 'Careers', href: '/careers' },
     { name: 'News & Updates', href: '/news' },
-    { name: 'Press Kit', href: '/press' }
+    { name: 'Contact', href: '/contact' }
   ];
 
   const resourceLinks = [
     { name: 'Documentation', href: '/docs' },
-    { name: 'API Reference', href: '/api' },
     { name: 'Blog & Insights', href: '/blog' },
     { name: 'Case Studies', href: '/case-studies' },
     { name: 'Support Center', href: '/support' },
-    { name: 'Community Forum', href: '/community' }
+    { name: 'Resources', href: '/resources' }
   ];
 
   const legalLinks = [
     { name: 'Privacy Policy', href: '/privacy' },
     { name: 'Terms of Service', href: '/terms' },
-    { name: 'Cookie Policy', href: '/cookies' },
-    { name: 'GDPR Compliance', href: '/gdpr' },
-    { name: 'Security', href: '/security' },
-    { name: 'Compliance', href: '/compliance' }
+    { name: 'Cookie Policy', href: '/cookies' }
   ];
 
   const socialLinks = [
