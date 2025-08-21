@@ -1,5 +1,5 @@
 import React from 'react';
-import FuturisticNavbar from './FuturisticNavbar';
+import QuantumHolographicNavbar from './QuantumHolographicNavbar';
 import FuturisticFooter from './FuturisticFooter';
 
 interface LayoutProps {
@@ -9,7 +9,7 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="min-h-screen bg-black text-white">
-      <FuturisticNavbar />
+      <QuantumHolographicNavbar />
       <main className="pt-24 lg:pt-28">
         {children}
       </main>
