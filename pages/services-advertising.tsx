@@ -126,9 +126,9 @@ export default function ServicesAdvertisingPage() {
                 { name: 'AI Multimodal Fusion', price: '$2,499/mo', href: '/ai-multimodal-fusion-platform' },
                 { name: 'Zero Trust Architecture', price: '$4,999/mo', href: '/zero-trust-network-architecture' },
                 { name: 'Edge Orchestration', price: '$3,499/mo', href: '/edge-computing-orchestration' },
-                { name: 'Feature Flags & Experimentation', price: '$299/mo', href: '/services/feature-flags-experimentation-starter' },
-                { name: 'On-Call Automation & ROI', price: '$399/mo', href: '/services/oncall-automation-roi-pack' },
-                { name: 'Email Warmup & Deliverability Ops', price: '$249/mo', href: '/services/email-warmup-deliverability-ops' }
+                { name: 'Feature Flags & Experimentation', price: '$299/mo', href: '/services/feature-flags-edge' },
+                { name: 'On-Call Automation & ROI', price: '$399/mo', href: '/incident-automation-suite' },
+                { name: 'Email Warmup & Deliverability Ops', price: '$249/mo', href: '/email-deliverability-monitor' }
               ].map((o) => (
                 <a key={o.name} href={o.href} className="block p-6 rounded-2xl bg-black/40 border border-gray-700/60 hover:border-cyan-500/40">
                   <div className="text-sm text-gray-400 mb-1">From</div>

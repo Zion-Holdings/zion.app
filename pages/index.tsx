@@ -25,6 +25,7 @@ import { serviceExpansions2025 } from '../data/service-expansions-2025';
 import { verifiedRealServices2025Batch2 } from '../data/verified-real-services-2025-batch2';
 import { realOperationalServices } from '../data/real-operational-services';
 import { newOperationalServices2025 } from '../data/new-operational-services-2025';
+import { realAdditions2025Q3 } from '../data/real-additions-2025-q3';
 
 export default function HomePage() {
   const contactInfo = {
@@ -50,7 +51,8 @@ export default function HomePage() {
     ...serviceExpansions2025,
     ...realOperationalServices,
     ...newOperationalServices2025,
-    ...verifiedRealServices2025Batch2
+    ...verifiedRealServices2025Batch2,
+    ...realAdditions2025Q3
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);
