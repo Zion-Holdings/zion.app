@@ -9,7 +9,8 @@ import {
   Users, FileText, HelpCircle, Settings,
   TrendingUp, Award, CheckCircle, Clock,
   Globe as GlobeIcon, Cpu, Database, Lock,
-  Target, BookOpen, Heart, Lightbulb
+  Target, BookOpen, Heart, Lightbulb,
+  Sparkles, ArrowUpRight, ChevronRight
 } from 'lucide-react';
 
 const contactInfo = {
@@ -24,7 +25,7 @@ const serviceCategories = [
     title: 'AI & Consciousness',
     icon: <Brain className="w-5 h-5 text-cyan-400" />,
     services: [
-      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution' },
+      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029' },
       { name: 'AI Autonomous Ecosystem', href: '/ai-autonomous-ecosystem' },
       { name: 'AI Ethics & Governance', href: '/ai-ethics-governance' },
       { name: 'AI Creativity Studio', href: '/ai-creativity-studio' },
@@ -99,67 +100,76 @@ const supportLinks = [
   { name: 'Contact Support', href: '/support', description: 'Get help from our team' },
   { name: 'Documentation', href: '/docs', description: 'Technical guides' },
   { name: 'API Reference', href: '/api-docs', description: 'Developer documentation' },
-  { name: 'Training', href: '/training', description: 'Skill development programs' },
-  { name: 'Webinars', href: '/webinars', description: 'Educational sessions' },
-  { name: 'Community Forum', href: '/community', description: 'Connect with users' }
+  { name: 'Status Page', href: '/status', description: 'Service status' },
+  { name: 'Training', href: '/training', description: 'Learn our platforms' },
+  { name: 'Community', href: '/community', description: 'User community' }
 ];
 
 const resourceLinks = [
-  { name: 'Blog', href: '/blog', description: 'Industry insights and updates' },
+  { name: 'Blog', href: '/blog', description: 'Industry insights' },
   { name: 'Whitepapers', href: '/whitepapers', description: 'Research and analysis' },
-  { name: 'Case Studies', href: '/case-studies', description: 'Success stories' },
-  { name: 'Webinars', href: '/webinars', description: 'Educational content' },
-  { name: 'Training Materials', href: '/training', description: 'Learning resources' },
-  { name: 'Research Papers', href: '/research', description: 'Academic publications' }
+  { name: 'Webinars', href: '/webinars', description: 'Educational sessions' },
+  { name: 'Events', href: '/events', description: 'Upcoming events' },
+  { name: 'Research', href: '/research', description: 'Technology research' },
+  { name: 'Publications', href: '/publications', description: 'Company publications' }
 ];
 
-const solutionLinks = [
-  { name: 'Healthcare Solutions', href: '/healthcare-solutions', description: 'Medical technology innovations' },
-  { name: 'Financial Services', href: '/financial-solutions', description: 'Fintech and banking solutions' },
-  { name: 'Manufacturing', href: '/manufacturing-solutions', description: 'Industry 4.0 automation' },
-  { name: 'Retail & E-commerce', href: '/retail-solutions', description: 'Digital commerce platforms' },
-  { name: 'Education Technology', href: '/education-solutions', description: 'Learning management systems' },
-  { name: 'Government & Defense', href: '/government-solutions', description: 'Public sector technology' },
-  { name: 'Energy & Utilities', href: '/energy-solutions', description: 'Smart grid and sustainability' },
-  { name: 'Transportation & Logistics', href: '/transportation-solutions', description: 'Supply chain optimization' }
+const legalLinks = [
+  { name: 'Privacy Policy', href: '/privacy', description: 'Data protection' },
+  { name: 'Terms of Service', href: '/terms', description: 'Service terms' },
+  { name: 'Cookie Policy', href: '/cookies', description: 'Cookie usage' },
+  { name: 'Security', href: '/security', description: 'Security measures' },
+  { name: 'Compliance', href: '/compliance', description: 'Regulatory compliance' }
 ];
 
 const socialLinks = [
-  { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: Twitter },
-  { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: Linkedin },
-  { name: 'Facebook', href: 'https://facebook.com/ziontechgroup', icon: Facebook },
-  { name: 'Instagram', href: 'https://instagram.com/ziontechgroup', icon: Instagram },
-  { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: Youtube },
-  { name: 'GitHub', href: 'https://github.com/ziontechgroup', icon: Github }
+  { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: <Linkedin className="w-5 h-5" />, color: 'hover:text-blue-400' },
+  { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: <Twitter className="w-5 h-5" />, color: 'hover:text-blue-400' },
+  { name: 'Facebook', href: 'https://facebook.com/ziontechgroup', icon: <Facebook className="w-5 h-5" />, color: 'hover:text-blue-600' },
+  { name: 'Instagram', href: 'https://instagram.com/ziontechgroup', icon: <Instagram className="w-5 h-5" />, color: 'hover:text-pink-400' },
+  { name: 'YouTube', href: 'https://youtube.com/ziontechgroup', icon: <Youtube className="w-5 h-5" />, color: 'hover:text-red-400' },
+  { name: 'GitHub', href: 'https://github.com/ziontechgroup', icon: <Github className="w-5 h-5" />, color: 'hover:text-gray-400' }
 ];
 
-const quickStats = [
-  { number: '500+', label: 'Services Delivered', icon: Star },
-  { number: '1000+', label: 'Happy Clients', icon: Users },
-  { number: '99.9%', label: 'Uptime Guarantee', icon: Shield },
-  { number: '24/7', label: 'Expert Support', icon: Clock }
+const quickActions = [
+  { name: 'Get Started', href: '/contact', icon: <Rocket className="w-4 h-4" />, color: 'from-cyan-500 to-blue-600' },
+  { name: 'View Pricing', href: '/pricing', icon: <DollarSign className="w-4 h-4" />, color: 'from-purple-500 to-pink-600' },
+  { name: 'Book Demo', href: '/demo', icon: <Settings className="w-4 h-4" />, color: 'from-green-500 to-emerald-600' },
+  { name: 'Support', href: '/support', icon: <HelpCircle className="w-4 h-4" />, color: 'from-orange-500 to-red-600' }
 ];
 
 export default function UltraFuturisticFooter2034() {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <footer className="bg-gradient-to-b from-gray-900 to-black text-white relative overflow-hidden">
-      {/* Animated Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.1),transparent_50%)]"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(120,119,198,0.1),transparent_50%)]"></div>
-      
+    <footer className="relative bg-gradient-to-b from-gray-900 via-black to-black border-t border-gray-800/50 overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.05),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(120,119,198,0.05),transparent_50%)]"></div>
+      </div>
+
       <div className="relative z-10">
         {/* Main Footer Content */}
-        <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           {/* Top Section */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
             {/* Company Info */}
             <div className="space-y-6">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center">
-                  <Zap className="w-6 h-6 text-white" />
-                </div>
+              <div className="flex items-center space-x-3">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  className="relative"
+                >
+                  <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg">
+                    <Sparkles className="w-8 h-8 text-white" />
+                  </div>
+                  <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-2xl blur opacity-25"></div>
+                </motion.div>
                 <div>
-                  <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                  <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
                     Zion Tech Group
                   </h3>
                   <p className="text-sm text-gray-400">Revolutionary Technology Solutions</p>
@@ -167,181 +177,217 @@ export default function UltraFuturisticFooter2034() {
               </div>
               
               <p className="text-gray-300 leading-relaxed max-w-md">
-                Leading provider of cutting-edge AI, quantum computing, and emerging technology solutions. 
-                Transform your business with our innovative services and stay ahead of the competition.
+                Leading the future with cutting-edge AI, quantum computing, and emerging technologies that transform businesses and accelerate innovation worldwide.
               </p>
-              
-              {/* Quick Stats */}
-              <div className="grid grid-cols-2 gap-4">
-                {quickStats.map((stat, index) => (
-                  <div key={index} className="text-center p-3 bg-gray-800/50 rounded-lg border border-gray-700/50">
-                    <div className="flex items-center justify-center mb-2 text-cyan-400">
-                      <stat.icon className="w-4 h-4" />
-                    </div>
-                    <div className="text-lg font-bold text-white">{stat.number}</div>
-                    <div className="text-xs text-gray-400">{stat.label}</div>
-                  </div>
+
+              {/* Contact Info */}
+              <div className="space-y-3">
+                <div className="flex items-center space-x-3 text-gray-300 hover:text-cyan-400 transition-colors">
+                  <Phone className="w-4 h-4" />
+                  <a href={`tel:${contactInfo.mobile}`}>{contactInfo.mobile}</a>
+                </div>
+                <div className="flex items-center space-x-3 text-gray-300 hover:text-cyan-400 transition-colors">
+                  <Mail className="w-4 h-4" />
+                  <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
+                </div>
+                <div className="flex items-center space-x-3 text-gray-300 hover:text-cyan-400 transition-colors">
+                  <MapPin className="w-4 h-4" />
+                  <span>{contactInfo.address}</span>
+                </div>
+              </div>
+
+              {/* Social Links */}
+              <div className="flex space-x-4">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`p-2 bg-gray-800/50 hover:bg-gray-700/50 rounded-lg text-gray-400 transition-all duration-300 ${social.color}`}
+                  >
+                    {social.icon}
+                  </a>
                 ))}
               </div>
             </div>
-            
-            {/* Contact Information */}
+
+            {/* Quick Actions */}
             <div className="space-y-6">
-              <h4 className="text-xl font-semibold text-white">Get In Touch</h4>
-              <div className="space-y-4">
-                <div className="flex items-center gap-3 text-gray-300">
-                  <Phone className="w-5 h-5 text-cyan-400" />
-                  <span>{contactInfo.mobile}</span>
-                </div>
-                <div className="flex items-center gap-3 text-gray-300">
-                  <Mail className="w-5 h-5 text-cyan-400" />
-                  <span>{contactInfo.email}</span>
-                </div>
-                <div className="flex items-center gap-3 text-gray-300">
-                  <MapPin className="w-5 h-5 text-cyan-400" />
-                  <span>{contactInfo.address}</span>
-                </div>
-                <div className="flex items-center gap-3 text-gray-300">
-                  <Globe className="w-5 h-5 text-cyan-400" />
-                  <span>{contactInfo.website}</span>
-                </div>
-              </div>
-              
-              {/* Social Links */}
-              <div className="flex gap-4">
-                {socialLinks.map((social, index) => (
-                  <Link key={index} href={social.href} target="_blank" rel="noopener noreferrer">
-                    <motion.div
-                      whileHover={{ scale: 1.1, y: -2 }}
-                      className="w-10 h-10 bg-gray-800/50 border border-gray-700/50 rounded-lg flex items-center justify-center text-gray-400 hover:text-cyan-400 hover:border-cyan-500/50 transition-all duration-300"
+              <h4 className="text-lg font-semibold text-white">Quick Actions</h4>
+              <div className="grid grid-cols-2 gap-3">
+                {quickActions.map((action) => (
+                  <Link key={action.name} href={action.href}>
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className={`bg-gradient-to-r ${action.color} text-white px-4 py-3 rounded-xl text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 w-full flex items-center justify-center gap-2`}
                     >
-                      <social.icon className="w-5 h-5" />
-                    </motion.div>
+                      {action.icon}
+                      {action.name}
+                    </motion.button>
                   </Link>
                 ))}
               </div>
+
+              {/* Newsletter Signup */}
+              <div className="bg-gray-800/30 rounded-xl p-6 border border-gray-700/50">
+                <h5 className="text-white font-semibold mb-3">Stay Updated</h5>
+                <p className="text-gray-400 text-sm mb-4">Get the latest insights on emerging technologies and AI breakthroughs.</p>
+                <div className="flex space-x-2">
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    className="flex-1 px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 transition-colors"
+                  />
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-medium hover:from-cyan-600 hover:to-blue-700 transition-all duration-300"
+                  >
+                    Subscribe
+                  </motion.button>
+                </div>
+              </div>
             </div>
           </div>
-          
+
           {/* Service Categories */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            {serviceCategories.map((category, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="space-y-4"
-              >
-                <div className="flex items-center gap-2">
+            {serviceCategories.map((category) => (
+              <div key={category.title} className="space-y-4">
+                <div className="flex items-center space-x-2">
                   {category.icon}
                   <h4 className="text-lg font-semibold text-white">{category.title}</h4>
                 </div>
-                <div className="space-y-2">
-                  {category.services.slice(0, 6).map((service, serviceIndex) => (
-                    <Link key={serviceIndex} href={service.href}>
-                      <div className="text-sm text-gray-400 hover:text-cyan-400 transition-colors duration-300 flex items-center gap-2 group">
-                        <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" />
+                <ul className="space-y-2">
+                  {category.services.slice(0, 6).map((service) => (
+                    <li key={service.name}>
+                      <Link
+                        href={service.href}
+                        className="text-gray-400 hover:text-cyan-400 transition-colors text-sm hover:translate-x-1 transform transition-transform duration-200 flex items-center gap-2"
+                      >
+                        <ChevronRight className="w-3 h-3" />
                         {service.name}
-                      </div>
-                    </Link>
+                      </Link>
+                    </li>
                   ))}
-                </div>
-              </motion.div>
+                  {category.services.length > 6 && (
+                    <li>
+                      <Link
+                        href={`/${category.title.toLowerCase().replace(/\s+/g, '-')}`}
+                        className="text-cyan-400 hover:text-cyan-300 transition-colors text-sm font-medium flex items-center gap-2"
+                      >
+                        View all {category.services.length} services
+                        <ArrowUpRight className="w-3 h-3" />
+                      </Link>
+                    </li>
+                  )}
+                </ul>
+              </div>
             ))}
           </div>
-          
+
           {/* Additional Links */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            {/* Company Links */}
+            {/* Company */}
             <div className="space-y-4">
-              <h4 className="text-lg font-semibold text-white flex items-center gap-2">
-                <Users className="w-5 h-5 text-cyan-400" />
-                Company
-              </h4>
-              <div className="space-y-2">
-                {companyLinks.map((link, index) => (
-                  <Link key={index} href={link.href}>
-                    <div className="text-sm text-gray-400 hover:text-cyan-400 transition-colors duration-300">
+              <h4 className="text-lg font-semibold text-white">Company</h4>
+              <ul className="space-y-2">
+                {companyLinks.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      href={link.href}
+                      className="text-gray-400 hover:text-cyan-400 transition-colors text-sm"
+                    >
                       {link.name}
-                    </div>
-                  </Link>
+                    </Link>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
-            
-            {/* Support Links */}
+
+            {/* Support */}
             <div className="space-y-4">
-              <h4 className="text-lg font-semibold text-white flex items-center gap-2">
-                <HelpCircle className="w-5 h-5 text-cyan-400" />
-                Support
-              </h4>
-              <div className="space-y-2">
-                {supportLinks.map((link, index) => (
-                  <Link key={index} href={link.href}>
-                    <div className="text-sm text-gray-400 hover:text-cyan-400 transition-colors duration-300">
+              <h4 className="text-lg font-semibold text-white">Support</h4>
+              <ul className="space-y-2">
+                {supportLinks.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      href={link.href}
+                      className="text-gray-400 hover:text-cyan-400 transition-colors text-sm"
+                    >
                       {link.name}
-                    </div>
-                  </Link>
+                    </Link>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
-            
+
             {/* Resources */}
             <div className="space-y-4">
-              <h4 className="text-lg font-semibold text-white flex items-center gap-2">
-                <BookOpen className="w-5 h-5 text-cyan-400" />
-                Resources
-              </h4>
-              <div className="space-y-2">
-                {resourceLinks.map((link, index) => (
-                  <Link key={index} href={link.href}>
-                    <div className="text-sm text-gray-400 hover:text-cyan-400 transition-colors duration-300">
+              <h4 className="text-lg font-semibold text-white">Resources</h4>
+              <ul className="space-y-2">
+                {resourceLinks.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      href={link.href}
+                      className="text-gray-400 hover:text-cyan-400 transition-colors text-sm"
+                    >
                       {link.name}
-                    </div>
-                  </Link>
+                    </Link>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
-            
-            {/* Solutions */}
+
+            {/* Legal */}
             <div className="space-y-4">
-              <h4 className="text-lg font-semibold text-white flex items-center gap-2">
-                <Target className="w-5 h-5 text-cyan-400" />
-                Solutions
-              </h4>
-              <div className="space-y-2">
-                {solutionLinks.slice(0, 6).map((link, index) => (
-                  <Link key={index} href={link.href}>
-                    <div className="text-sm text-gray-400 hover:text-cyan-400 transition-colors duration-300">
+              <h4 className="text-lg font-semibold text-white">Legal</h4>
+              <ul className="space-y-2">
+                {legalLinks.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      href={link.href}
+                      className="text-gray-400 hover:text-cyan-400 transition-colors text-sm"
+                    >
                       {link.name}
-                    </div>
-                  </Link>
+                    </Link>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           </div>
         </div>
-        
+
         {/* Bottom Section */}
         <div className="border-t border-gray-800/50">
-          <div className="max-w-7xl mx-auto px-6 py-8">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <div className="text-sm text-gray-400">
-                © 2025 Zion Tech Group. All rights reserved. | 
-                <Link href="/privacy" className="hover:text-cyan-400 transition-colors duration-300 ml-2">
-                  Privacy Policy
-                </Link> | 
-                <Link href="/terms" className="hover:text-cyan-400 transition-colors duration-300 ml-2">
-                  Terms of Service
-                </Link>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+              {/* Copyright */}
+              <div className="text-gray-400 text-sm">
+                <p>&copy; 2025 Zion Tech Group. All rights reserved.</p>
+                <p className="mt-1">Revolutionizing technology, one breakthrough at a time.</p>
               </div>
-              
-              <div className="flex items-center gap-2 text-sm text-gray-400">
-                <span>Made with</span>
-                <Heart className="w-4 h-4 text-red-400" />
-                <span>by Zion Tech Group</span>
+
+              {/* Bottom Links */}
+              <div className="flex items-center space-x-6 text-sm">
+                <Link href="/sitemap" className="text-gray-400 hover:text-cyan-400 transition-colors">
+                  Sitemap
+                </Link>
+                <Link href="/accessibility" className="text-gray-400 hover:text-cyan-400 transition-colors">
+                  Accessibility
+                </Link>
+                <Link href="/sustainability" className="text-gray-400 hover:text-cyan-400 transition-colors">
+                  Sustainability
+                </Link>
+                <button
+                  onClick={scrollToTop}
+                  className="text-gray-400 hover:text-cyan-400 transition-colors flex items-center gap-2"
+                >
+                  Back to Top
+                  <ArrowUpRight className="w-4 h-4" />
+                </button>
               </div>
             </div>
           </div>
