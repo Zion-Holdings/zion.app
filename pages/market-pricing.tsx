@@ -179,6 +179,26 @@ export default function MarketPricingPage() {
               </ul>
               <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $100–$1,500/month depending on MAUs and features.</div>
             </div>
+
+            <div className="bg-black/30 rounded-2xl border border-pink-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Feature Flags & Experimentation</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>LaunchDarkly pricing: <a className="text-cyan-400 underline" href={`https://launchdarkly.com/pricing/`} target="_blank" rel="noopener noreferrer">launchdarkly.com/pricing</a></li>
+                <li>GrowthBook pricing: <a className="text-cyan-400 underline" href={`https://www.growthbook.io/pricing`} target="_blank" rel="noopener noreferrer">growthbook.io/pricing</a></li>
+                <li>Vercel Edge Config: <a className="text-cyan-400 underline" href={`https://vercel.com/docs/storage/edge-config/overview`} target="_blank" rel="noopener noreferrer">vercel.com/docs/storage/edge-config</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $50–$800/month based on flags, MAUs, and environments.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-rose-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Synthetic Data & Privacy</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Gretel pricing: <a className="text-cyan-400 underline" href={`https://gretel.ai/pricing`} target="_blank" rel="noopener noreferrer">gretel.ai/pricing</a></li>
+                <li>Mostly AI pricing: <a className="text-cyan-400 underline" href={`https://mostly.ai/pricing`} target="_blank" rel="noopener noreferrer">mostly.ai/pricing</a></li>
+                <li>OpenAI pricing (for generation): <a className="text-cyan-400 underline" href={`https://openai.com/api/pricing`} target="_blank" rel="noopener noreferrer">openai.com/api/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $100–$1,500/month depending on data volume and controls.</div>
+            </div>
           </div>
 
           <div className="space-y-6">

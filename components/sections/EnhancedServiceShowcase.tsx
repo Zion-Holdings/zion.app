@@ -14,6 +14,7 @@ import { emergingTechnologyServices } from '../../data/emerging-technology-servi
 import { comprehensiveITSolutions } from '../../data/comprehensive-it-solutions';
 import { marketValidatedServices } from '../../data/market-validated-services';
 import { newRealInnovations } from '../../data/new-real-innovations';
+import { additionalMarketServices2025 } from '../../data/additional-market-services-2025';
 
 interface ServiceShowcaseProps {
   className?: string;
@@ -40,7 +41,8 @@ const EnhancedServiceShowcase: React.FC<ServiceShowcaseProps> = ({
     ...emergingTechnologyServices,
     ...comprehensiveITSolutions,
     ...marketValidatedServices,
-    ...newRealInnovations
+    ...newRealInnovations,
+    ...additionalMarketServices2025
   ];
 
   const categories = [
@@ -53,19 +55,26 @@ const EnhancedServiceShowcase: React.FC<ServiceShowcaseProps> = ({
     { id: 'emerging', name: 'Emerging Tech', icon: '🌟', count: emergingTechnologyServices.length }
   ];
 
-  const filteredServices = allServices.filter(service => {
-    const matchesCategory = selectedCategory === 'all' || 
-      (selectedCategory === 'ai' && (innovativeAIServices.includes(service) || nextGenerationAIServices.includes(service))) ||
-      (selectedCategory === 'quantum' && service.name.toLowerCase().includes('quantum')) ||
-      (selectedCategory === 'space' && service.name.toLowerCase().includes('space')) ||
-      (selectedCategory === 'enterprise' && (enterpriseITServices.includes(service) || comprehensiveITSolutions.includes(service))) ||
-      (selectedCategory === 'saas' && enhancedRealMicroSaasServices.includes(service)) ||
-      (selectedCategory === 'emerging' && emergingTechnologyServices.includes(service));
-    
-    const matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         service.category.toLowerCase().includes(searchTerm.toLowerCase());
-    
+  const filteredServices = allServices.filter((service: any) => {
+    const categoryLower = (service.category || '').toLowerCase();
+    const nameLower = (service.name || '').toLowerCase();
+
+    const matchesCategory =
+      selectedCategory === 'all' ||
+      (selectedCategory === 'ai' && (categoryLower.includes('ai') || categoryLower.includes('machine learning'))) ||
+      (selectedCategory === 'quantum' && (categoryLower.includes('quantum') || nameLower.includes('quantum'))) ||
+      (selectedCategory === 'space' && (categoryLower.includes('space') || nameLower.includes('space'))) ||
+      (selectedCategory === 'enterprise' && (categoryLower.includes('enterprise') || categoryLower.includes('it') || categoryLower.includes('cloud') || categoryLower.includes('security'))) ||
+      (selectedCategory === 'saas' && categoryLower.includes('micro saas')) ||
+      (selectedCategory === 'emerging' && categoryLower.includes('emerging'));
+
+    const searchLower = searchTerm.toLowerCase();
+    const matchesSearch =
+      nameLower.includes(searchLower) ||
+      (service.description || '').toLowerCase().includes(searchLower) ||
+      categoryLower.includes(searchLower) ||
+      (service.tagline ? service.tagline.toLowerCase().includes(searchLower) : false);
+
     return matchesCategory && matchesSearch;
   });
 

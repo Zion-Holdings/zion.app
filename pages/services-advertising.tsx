@@ -2,7 +2,6 @@ import React from 'react';
 import Head from 'next/head';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 import Button from '../components/ui/Button';
-import { ArrowRight, CheckCircle, DollarSign, ExternalLink, Phone, Mail, MapPin, Star, TrendingUp } from 'lucide-react';
 
 export default function ServicesAdvertisingPage() {
   const contact = {
@@ -46,10 +45,10 @@ export default function ServicesAdvertisingPage() {
             <p className="text-gray-300 text-lg">AI platforms, enterprise IT solutions, and real micro SaaS accelerators.</p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button href="/contact" className="px-8 py-4 bg-gradient-to-r from-cyan-600 to-blue-700 text-white">
-                Talk to Sales <ArrowRight className="w-5 h-5 ml-2" />
+                Talk to Sales
               </Button>
               <Button href="/market-pricing" variant="outline" className="px-8 py-4 border border-gray-600 text-gray-200">
-                View Market Pricing <ExternalLink className="w-5 h-5 ml-2" />
+                View Market Pricing
               </Button>
             </div>
           </header>
@@ -60,7 +59,7 @@ export default function ServicesAdvertisingPage() {
               {benefits.map((b) => (
                 <div key={b} className="p-6 rounded-2xl bg-black/40 border border-gray-700/60">
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-emerald-400 mt-1" />
+                    <svg className="w-5 h-5 text-emerald-400 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
                     <p className="text-gray-200">{b}</p>
                   </div>
                 </div>
@@ -78,6 +77,26 @@ export default function ServicesAdvertisingPage() {
                 { name: 'SOC 2 Evidence Automation', price: '$499/mo', href: '/soc2-evidence-automation' },
                 { name: 'Vector Search Starter', price: '$249/mo', href: '/vector-search-starter' },
                 { name: 'TLS Certificate Monitor', price: '$49/mo', href: '/tls-certificate-monitor' }
+              ].map((o) => (
+                <a key={o.name} href={o.href} className="block p-6 rounded-2xl bg-black/40 border border-gray-700/60 hover:border-cyan-500/40">
+                  <div className="text-sm text-gray-400 mb-1">From</div>
+                  <div className="text-2xl font-bold text-white">{o.price}</div>
+                  <div className="text-gray-200 mt-2">{o.name}</div>
+                </a>
+              ))}
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">New 2025 Launches</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { name: 'Feature Flags at the Edge', price: '$199/mo', href: '/feature-flags-edge' },
+                { name: 'RAG Observability & Evals', price: '$299/mo', href: '/ai-evals' },
+                { name: 'Synthetic Data Studio', price: '$349/mo', href: '/services' },
+                { name: 'Kubernetes Cost Guardrails', price: '$279/mo', href: '/services' },
+                { name: 'API Security Posture', price: '$329/mo', href: '/services' },
+                { name: 'Browser Performance Insights', price: '$149/mo', href: '/browser-performance-monitor' }
               ].map((o) => (
                 <a key={o.name} href={o.href} className="block p-6 rounded-2xl bg-black/40 border border-gray-700/60 hover:border-cyan-500/40">
                   <div className="text-sm text-gray-400 mb-1">From</div>
@@ -127,18 +146,36 @@ export default function ServicesAdvertisingPage() {
           </section>
 
           <section>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Average SMB Pricing Summary</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="p-6 rounded-2xl bg-black/40 border border-cyan-500/30">
+                <div className="text-white font-semibold mb-2">AI Platforms & Observability</div>
+                <div className="text-slate-300 text-sm">$100–$2,000/month depending on model choice and QPS.</div>
+              </div>
+              <div className="p-6 rounded-2xl bg-black/40 border border-purple-500/30">
+                <div className="text-white font-semibold mb-2">Security & Compliance</div>
+                <div className="text-slate-300 text-sm">$200–$5,000/month based on assets and controls.</div>
+              </div>
+              <div className="p-6 rounded-2xl bg-black/40 border border-emerald-500/30">
+                <div className="text-white font-semibold mb-2">Cloud & K8s Cost</div>
+                <div className="text-slate-300 text-sm">$200–$2,000/month depending on clusters and spend.</div>
+              </div>
+            </div>
+          </section>
+
+          <section>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Contact Us</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <a href={`tel:${contact.mobile.replace(/[^+\d]/g, '')}`} className="p-6 rounded-2xl bg-black/40 border border-gray-700/60 hover:border-cyan-500/40 flex items-center gap-3">
-                <Phone className="w-5 h-5 text-cyan-400" />
+                <span className="text-cyan-400">📱</span>
                 <span className="text-gray-200">{contact.mobile}</span>
               </a>
               <a href={`mailto:${contact.email}`} className="p-6 rounded-2xl bg-black/40 border border-gray-700/60 hover:border-purple-500/40 flex items-center gap-3">
-                <Mail className="w-5 h-5 text-purple-400" />
+                <span className="text-purple-400">✉️</span>
                 <span className="text-gray-200">{contact.email}</span>
               </a>
               <a href={`https://maps.google.com/?q=${encodeURIComponent(contact.address)}`} target="_blank" rel="noopener noreferrer" className="p-6 rounded-2xl bg-black/40 border border-gray-700/60 hover:border-emerald-500/40 flex items-center gap-3">
-                <MapPin className="w-5 h-5 text-emerald-400" />
+                <span className="text-emerald-400">📍</span>
                 <span className="text-gray-200 text-sm">{contact.address}</span>
               </a>
             </div>
@@ -148,3 +185,4 @@ export default function ServicesAdvertisingPage() {
     </UltraAdvancedFuturisticBackground>
   );
 }
+
