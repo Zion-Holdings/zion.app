@@ -79,6 +79,10 @@ import { innovativeMicroSaasServices2029 } from '../data/2029-innovative-micro-s
 import { innovativeMicroSaasServices2029V2 } from '../data/2029-innovative-micro-saas-v2';
 import { innovativeITServices2029V2 } from '../data/2029-innovative-it-services-v2';
 import { innovativeAIServices2029V2 } from '../data/2029-innovative-ai-services-v2';
+import { cuttingEdgeInnovations2029V2 } from '../data/2029-cutting-edge-innovations-v2';
+import { futuristicAIServices2030 } from '../data/2030-futuristic-ai-services';
+import { innovativeMicroSaas2030 } from '../data/2030-innovative-micro-saas';
+import { enterpriseITServices2030 } from '../data/2030-enterprise-it-services';
 
 export default function HomePage() {
   const contactInfo = {
@@ -155,7 +159,11 @@ export default function HomePage() {
     ...innovativeMicroSaasServices2029V2,
     ...innovativeITServices2029V2,
     ...innovativeAIServices2029V2,
-    ...enterpriseIT2029Services
+    ...enterpriseIT2029Services,
+    ...cuttingEdgeInnovations2029V2,
+    ...futuristicAIServices2030,
+    ...innovativeMicroSaas2030,
+    ...enterpriseITServices2030
   ];
 
   // Get unique services by ID to avoid duplicates
