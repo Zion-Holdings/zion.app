@@ -46,6 +46,15 @@ const pricingRanges = [
   { id: 'enterprise', name: 'Enterprise ($1000+)', min: 1000, max: Infinity }
 ];
 
+// Helper function to extract numeric price from price string
+const extractPrice = (priceString: string): number => {
+  const match = priceString.match(/\$([\d,]+)/);
+  if (match) {
+    return parseInt(match[1].replace(/,/g, ''), 10);
+  }
+  return 0;
+};
+
 export default function ComprehensiveServicesShowcase2025() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedPricing, setSelectedPricing] = useState('all');
@@ -54,12 +63,13 @@ export default function ComprehensiveServicesShowcase2025() {
 
   const filteredServices = allServices.filter(service => {
     const matchesCategory = selectedCategory === 'all' || service.category === selectedCategory;
+    const servicePrice = extractPrice(service.price);
     const matchesPricing = selectedPricing === 'all' || 
-      (service.pricing.starter.price >= pricingRanges.find(p => p.id === selectedPricing)?.min! &&
-       service.pricing.starter.price <= pricingRanges.find(p => p.id === selectedPricing)?.max!);
+      (servicePrice >= pricingRanges.find(p => p.id === selectedPricing)?.min! &&
+       servicePrice <= pricingRanges.find(p => p.id === selectedPricing)?.max!);
     const matchesSearch = service.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
                          service.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         service.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
+                         service.tagline.toLowerCase().includes(searchQuery.toLowerCase());
     
     return matchesCategory && matchesPricing && matchesSearch;
   });
@@ -69,7 +79,7 @@ export default function ComprehensiveServicesShowcase2025() {
       case 'name':
         return a.name.localeCompare(b.name);
       case 'price':
-        return a.pricing.starter.price - b.pricing.starter.price;
+        return extractPrice(a.price) - extractPrice(b.price);
       case 'category':
         return a.category.localeCompare(b.category);
       default:
@@ -147,199 +157,144 @@ export default function ComprehensiveServicesShowcase2025() {
       {/* Filters Section */}
       <section className="py-12 bg-gray-900 border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row gap-6 items-start lg:items-center justify-between">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+            {/* Category Filter */}
+            <div className="relative">
+              <select
+                value={selectedCategory}
+                onChange={(e) => setSelectedCategory(e.target.value)}
+                className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+              >
+                {categories.map((category) => (
+                  <option key={category.id} value={category.id}>
+                    {category.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* Pricing Filter */}
+            <div className="relative">
+              <select
+                value={selectedPricing}
+                onChange={(e) => setSelectedPricing(e.target.value)}
+                className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+              >
+                {pricingRanges.map((range) => (
+                  <option key={range.id} value={range.id}>
+                    {range.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+
             {/* Search */}
-            <div className="relative flex-1 max-w-md">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
               <input
                 type="text"
                 placeholder="Search services..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 bg-gray-800 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                className="w-full pl-10 pr-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
               />
             </div>
 
-            {/* Category Filter */}
-            <div className="flex flex-wrap gap-3">
-              {categories.map((category) => (
-                <button
-                  key={category.id}
-                  onClick={() => setSelectedCategory(category.id)}
-                  className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
-                    selectedCategory === category.id
-                      ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg'
-                      : 'bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white'
-                  }`}
-                >
-                  <span className="flex items-center gap-2">
-                    <category.icon className="w-4 h-4" />
-                    {category.name}
-                  </span>
-                </button>
-              ))}
-            </div>
-
-            {/* Pricing Filter */}
-            <div className="flex flex-wrap gap-3">
-              {pricingRanges.map((range) => (
-                <button
-                  key={range.id}
-                  onClick={() => setSelectedPricing(range.id)}
-                  className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
-                    selectedPricing === range.id
-                      ? 'bg-gradient-to-r from-purple-500 to-pink-600 text-white shadow-lg'
-                      : 'bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white'
-                  }`}
-                >
-                  {range.name}
-                </button>
-              ))}
-            </div>
-
             {/* Sort */}
-            <select
-              value={sortBy}
-              onChange={(e) => setSortBy(e.target.value)}
-              className="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-500"
-            >
-              <option value="name">Sort by Name</option>
-              <option value="price">Sort by Price</option>
-              <option value="category">Sort by Category</option>
-            </select>
+            <div className="relative">
+              <select
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value)}
+                className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+              >
+                <option value="name">Sort by Name</option>
+                <option value="price">Sort by Price</option>
+                <option value="category">Sort by Category</option>
+              </select>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 bg-black">
+      <section className="py-16 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-8">
-            <h2 className="text-2xl font-bold text-white mb-2">
-              Showing {sortedServices.length} of {allServices.length} Services
-            </h2>
-            <p className="text-gray-400">
-              {selectedCategory !== 'all' && `Category: ${selectedCategory}`}
-              {selectedPricing !== 'all' && ` • Price Range: ${pricingRanges.find(p => p.id === selectedPricing)?.name}`}
-              {searchQuery && ` • Search: "${searchQuery}"`}
-            </p>
-          </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {sortedServices.map((service, index) => (
               <motion.div
                 key={service.id}
                 initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="group"
               >
-                <div className="relative p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/10 h-full">
-                  {/* Category Badge */}
-                  <div className="absolute top-4 right-4">
-                    <div className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r ${getCategoryColor(service.category)} text-white`}>
-                      <Globe className="w-3 h-3" />
-                      {service.category}
-                    </div>
-                  </div>
-
-                  {/* Service Icon */}
-                  <div className="mb-6">
-                    <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-r ${getCategoryColor(service.category)} group-hover:scale-110 transition-transform duration-300`}>
-                      {React.createElement(getCategoryIcon(service.category), { className: "w-8 h-8 text-white" })}
-                    </div>
-                  </div>
-
-                  {/* Service Info */}
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300 line-clamp-2">
-                    {service.name}
-                  </h3>
-                  <p className="text-gray-300 text-sm mb-4 leading-relaxed line-clamp-3">
-                    {service.description}
-                  </p>
-
-                  {/* Pricing */}
-                  <div className="mb-4">
-                    <div className="text-2xl font-bold text-cyan-400">
-                      ${service.pricing.starter.price}
-                      <span className="text-sm text-gray-400 font-normal">/month</span>
-                    </div>
-                    <div className="text-xs text-gray-500">Starting from</div>
-                  </div>
-
-                  {/* Features Preview */}
-                  <div className="mb-6">
-                    <div className="text-sm text-gray-400 mb-2">Key Features:</div>
-                    <div className="space-y-1">
-                      {service.features.slice(0, 3).map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-center gap-2 text-xs text-gray-300">
-                          <CheckCircle className="w-3 h-3 text-cyan-400 flex-shrink-0" />
-                          <span className="line-clamp-1">{feature}</span>
-                        </div>
-                      ))}
-                      {service.features.length > 3 && (
-                        <div className="text-xs text-gray-500">
-                          +{service.features.length - 3} more features
-                        </div>
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Tags */}
-                  <div className="mb-6">
-                    <div className="flex flex-wrap gap-1">
-                      {service.tags.slice(0, 3).map((tag, tagIndex) => (
-                        <span
-                          key={tagIndex}
-                          className="px-2 py-1 bg-gray-800 text-gray-300 text-xs rounded-md"
-                        >
-                          {tag}
+                <Link href={service.link}>
+                  <div className="relative p-6 bg-gradient-to-br from-gray-900 to-black rounded-2xl border border-gray-800 hover:border-cyan-500/50 transition-all duration-300 hover:scale-105 group-hover:shadow-2xl group-hover:shadow-cyan-500/20 h-full">
+                    {/* Popular Badge */}
+                    {service.popular && (
+                      <div className="absolute -top-3 -right-3">
+                        <span className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                          Popular
                         </span>
+                      </div>
+                    )}
+
+                    {/* Service Icon */}
+                    <div className="text-4xl mb-4">{service.icon}</div>
+
+                    {/* Service Info */}
+                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
+                      {service.name}
+                    </h3>
+                    <p className="text-gray-400 text-sm mb-3">{service.tagline}</p>
+                    
+                    {/* Price */}
+                    <div className="flex items-center mb-4">
+                      <span className="text-2xl font-bold text-cyan-400">{service.price}</span>
+                      <span className="text-gray-400 ml-1">{service.period}</span>
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-gray-300 text-sm mb-4 line-clamp-3">
+                      {service.description}
+                    </p>
+
+                    {/* Features */}
+                    <div className="space-y-2 mb-4">
+                      {service.features.slice(0, 3).map((feature, featureIndex) => (
+                        <div key={featureIndex} className="flex items-center text-sm">
+                          <CheckCircle className="w-4 h-4 text-cyan-400 mr-2 flex-shrink-0" />
+                          <span className="text-gray-300 truncate">{feature}</span>
+                        </div>
                       ))}
                     </div>
-                  </div>
 
-                  {/* Market Info */}
-                  <div className="mb-6 text-xs text-gray-400">
-                    <div className="flex justify-between items-center mb-2">
-                      <span>Market Size:</span>
-                      <span className="text-cyan-400 font-medium">{service.marketSize}</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span>Target Audience:</span>
-                      <span className="text-gray-300">{service.targetAudience.split(',')[0]}...</span>
-                    </div>
-                  </div>
-
-                  {/* CTA Button */}
-                  <Link href={`/services/${service.id}`}>
-                    <button className="w-full py-3 px-6 bg-gradient-to-r from-gray-700 to-gray-800 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 hover:scale-105 hover:shadow-lg group">
-                      <span className="flex items-center justify-center gap-2">
-                        Learn More
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                    {/* Category Badge */}
+                    <div className="flex items-center justify-between">
+                      <span className={`px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r ${getCategoryColor(service.category)} text-white`}>
+                        {service.category}
                       </span>
-                    </button>
-                  </Link>
-                </div>
+                      <ArrowRight className="w-5 h-5 text-cyan-400 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                </Link>
               </motion.div>
             ))}
           </div>
 
+          {/* No Results */}
           {sortedServices.length === 0 && (
-            <div className="text-center py-20">
+            <div className="text-center py-16">
               <div className="text-6xl mb-4">🔍</div>
-              <h3 className="text-2xl font-bold text-white mb-2">No services found</h3>
-              <p className="text-gray-400 mb-6">
-                Try adjusting your filters or search query to find what you're looking for.
-              </p>
+              <h3 className="text-2xl font-bold text-white mb-2">No Services Found</h3>
+              <p className="text-gray-400 mb-6">Try adjusting your filters or search terms.</p>
               <button
                 onClick={() => {
                   setSelectedCategory('all');
                   setSelectedPricing('all');
                   setSearchQuery('');
                 }}
-                className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300"
+                className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:scale-105 transition-all duration-300"
               >
                 Clear All Filters
               </button>
@@ -348,59 +303,35 @@ export default function ComprehensiveServicesShowcase2025() {
         </div>
       </section>
 
-      {/* Contact CTA */}
-      <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-cyan-900/20 via-purple-900/20 to-pink-900/20">
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to Transform Your{' '}
-              <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                Business?
-              </span>
+            <h2 className="text-4xl font-bold text-white mb-6">
+              Ready to Transform Your Business?
             </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Connect with our team of experts and discover how our revolutionary technology solutions can drive your business forward.
+            <p className="text-xl text-gray-300 mb-8">
+              Get started with our revolutionary technology solutions today and experience 
+              unprecedented growth and efficiency.
             </p>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-              <div className="text-center group">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <Phone className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-2">Call Us</h3>
-                <p className="text-cyan-400 font-medium">{contactInfo.mobile}</p>
-              </div>
-
-              <div className="text-center group">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-purple-500 to-pink-600 mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <Mail className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-2">Email Us</h3>
-                <p className="text-purple-400 font-medium">{contactInfo.email}</p>
-              </div>
-
-              <div className="text-center group">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-green-500 to-teal-600 mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <MapPin className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-2">Visit Us</h3>
-                <p className="text-green-400 font-medium text-sm leading-tight">{contactInfo.address}</p>
-              </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/contact">
+                <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:scale-105 transition-all duration-300">
+                  Contact Us Today
+                </button>
+              </Link>
+              <Link href="/pricing">
+                <button className="px-8 py-4 border-2 border-cyan-500 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-500 hover:text-white transition-all duration-300">
+                  View Pricing
+                </button>
+              </Link>
             </div>
-
-            <Link href="/contact">
-              <button className="group px-10 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-full text-lg transition-all duration-300 hover:from-cyan-600 hover:to-blue-700 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25">
-                <span className="flex items-center gap-2">
-                  Get Started Today
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                </span>
-              </button>
-            </Link>
           </motion.div>
         </div>
       </section>
