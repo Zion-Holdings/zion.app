@@ -6,8 +6,8 @@ import Button from '../components/ui/Button';
 import UltraFuturisticBackground2030 from '../components/ui/UltraFuturisticBackground2030';
 import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
 import UltraAdvancedNavigation2026 from '../components/layout/UltraAdvancedNavigation2026';
-import UltraFuturisticNavigation2033 from '../components/layout/UltraFuturisticNavigation2033';
-import UltraFuturisticFooter2033 from '../components/layout/UltraFuturisticFooter2033';
+import UltraFuturisticNavigation2034 from '../components/layout/UltraFuturisticNavigation2034';
+import UltraFuturisticFooter2034 from '../components/layout/UltraFuturisticFooter2034';
 import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
 import Enhanced2026ServicesShowcase from '../components/sections/Enhanced2026ServicesShowcase';
 import Revolutionary2026ServiceShowcase from '../components/sections/Revolutionary2026ServiceShowcase';
@@ -92,6 +92,8 @@ import { researchDevelopmentServices2031 } from '../data/2031-research-developme
 import { spaceMetaverseServices2031 } from '../data/2031-space-metaverse-services';
 import { futuristicInnovations2032 } from '../data/2032-futuristic-innovations';
 import { enterpriseInnovations2032 } from '../data/2032-enterprise-innovations';
+import { cuttingEdgeInnovations2029V2 } from '../data/2029-cutting-edge-innovations-v2';
+import { futuristicInnovations2030 } from '../data/2030-futuristic-innovations';
 
 export default function HomePage() {
   const contactInfo = {
@@ -178,7 +180,10 @@ export default function HomePage() {
     ...spaceMetaverseServices2031,
     // Add new 2032 services
     ...futuristicInnovations2032,
-    ...enterpriseInnovations2032
+    ...enterpriseInnovations2032,
+    // Add new 2029 and 2030 services
+    ...cuttingEdgeInnovations2029V2,
+    ...futuristicInnovations2030
   ];
 
   // Calculate total services count
@@ -207,7 +212,7 @@ export default function HomePage() {
 
       <UltraFuturisticBackground2030>
         {/* Ultra Advanced Navigation */}
-        <UltraFuturisticNavigation2033 />
+        <UltraFuturisticNavigation2034 />
 
         {/* Ultra Futuristic Hero Section 2033 */}
         <UltraFuturisticHero2033 />
@@ -558,8 +563,8 @@ export default function HomePage() {
       </main>
 
       {/* Enhanced Footer */}
-              <UltraFuturisticFooter2033 />
-    </UltraFuturisticBackground2030>
+              <UltraFuturisticFooter2034 />
+    </UltraFuturisticBackground2034 />
   </>
   );
 }
