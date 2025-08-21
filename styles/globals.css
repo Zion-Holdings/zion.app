@@ -87,6 +87,26 @@ body {
   letter-spacing: 0.025em;
 }
 
+/* Accessibility: improved focus outlines */
+:focus-visible {
+  outline: 2px dashed rgba(34, 211, 238, 0.9);
+  outline-offset: 2px;
+}
+
+/* Improve contrast for text over translucent panels */
+.bg-black\/30, .bg-gray-800\/50, .bg-gray-700\/50 {
+  backdrop-filter: saturate(1.1) blur(6px);
+}
+
+/* Prefer-reduced-motion respect */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* Enhanced Background Patterns */
 body::before {
   content: '';

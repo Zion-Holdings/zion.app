@@ -1,5 +1,4 @@
-import React from 'react';
-import Head from 'next/head';
+import NextHead from 'next/head';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 
@@ -54,13 +53,14 @@ export default function AboutPage() {
 
   return (
     <>
-      <Head>
+      <NextHead>
         <title>About Zion Tech Group | Autonomous Innovation Hub</title>
         <meta name="description" content="Learn about Zion Tech Group's mission to revolutionize technology through autonomous innovation and AI-powered solutions." />
         <meta property="og:title" content="About Zion Tech Group" />
         <meta property="og:description" content="Learn about Zion Tech Group's mission and vision." />
         <meta name="twitter:card" content="summary_large_image" />
-      </Head>
+        <link rel="canonical" href="https://ziontechgroup.com/about" />
+      </NextHead>
 
       {/* Hero Section */}
       <section className="relative section-padding bg-gradient-cursor overflow-hidden">

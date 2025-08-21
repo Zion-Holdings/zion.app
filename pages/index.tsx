@@ -17,6 +17,7 @@ import { innovativeAIServices } from '../data/innovative-ai-services';
 import { quantumSpaceServices } from '../data/quantum-space-services';
 import { enterpriseITServices } from '../data/enterprise-it-services';
 import { professionalServices } from '../data/professional-services';
+import { added2025Services } from '../data/added-2025-services';
 
 export default function HomePage() {
   const contactInfo = {
@@ -34,7 +35,8 @@ export default function HomePage() {
     ...additionalEnhancedServices,
     ...innovativeAIServices,
     ...quantumSpaceServices,
-    ...enterpriseITServices
+    ...enterpriseITServices,
+    ...added2025Services
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);

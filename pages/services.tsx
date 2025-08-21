@@ -14,6 +14,7 @@ import { enterpriseITServices } from '../data/enterprise-it-services';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { additionalEnhancedServices } from '../data/additional-real-services';
 import { newRealServices } from '../data/new-real-services';
+import { added2025Services } from '../data/added-2025-services';
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -27,7 +28,8 @@ export default function ServicesPage() {
     ...enterpriseITServices,
     ...enhancedRealMicroSaasServices,
     ...additionalEnhancedServices,
-    ...newRealServices
+    ...newRealServices,
+    ...added2025Services
   ];
 
   const categories = [

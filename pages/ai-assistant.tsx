@@ -1,196 +1,60 @@
-import React from 'react';
-import Head from 'next/head';
-import { Bot, Zap, Brain, Code, MessageSquare, Sparkles, ArrowRight } from 'lucide-react';
+import NextHead from 'next/head';
+import { Phone, Mail, MapPin, Check, MessageSquare } from 'lucide-react';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 import Button from '../components/ui/Button';
+import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 
 export default function AIAssistantPage() {
-  const features = [
-    {
-      icon: <Brain className="w-8 h-8 text-white" />,
-      title: 'Intelligent Code Completion',
-      description: 'AI-powered suggestions that understand your coding style and project context'
-    },
-    {
-      icon: <Code className="w-8 h-8 text-white" />,
-      title: 'Smart Refactoring',
-      description: 'Automated code improvements and optimization suggestions'
-    },
-    {
-      icon: <MessageSquare className="w-8 h-8 text-white" />,
-      title: 'Natural Language Queries',
-      description: 'Ask questions about your code in plain English'
-    },
-    {
-      icon: <Sparkles className="w-8 h-8 text-white" />,
-      title: 'Context-Aware Assistance',
-      description: 'AI that understands your entire codebase and project structure'
-    }
-  ];
+  const service = enhancedRealMicroSaasServices.find(s => (s.link || '').endsWith('/ai-assistant'));
 
-  const benefits = [
-    'Increase coding speed by 3x',
-    'Reduce bugs and errors by 60%',
-    'Learn new technologies faster',
-    'Maintain consistent code quality',
-    'Focus on creative problem-solving',
-    'Collaborate more effectively with teams'
-  ];
+  const contactInfo = {
+    mobile: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com',
+    address: '364 E Main St STE 1008 Middletown DE 19709'
+  };
 
   return (
-    <>
-      <Head>
-        <title>AI Code Assistant - Zion Tech Group</title>
-        <meta name="description" content="Revolutionary AI-powered code assistant that understands your codebase and helps you write better code faster." />
-      </Head>
-
-      <div className="min-h-screen bg-black">
-        {/* Hero Section */}
-        <section className="pt-32 pb-20 relative overflow-hidden">
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(59,130,246,0.08),transparent_50%)]" />
-          </div>
-          
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <div className="mb-8">
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
-                <Bot className="w-4 h-4 mr-2" />
-                AI-Powered Development
-              </div>
-            </div>
-            
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight">
-              AI Code Assistant
+    <UltraAdvancedFuturisticBackground>
+      <NextHead>
+        <title>{service?.name || 'AI Assistant Pro'} - Zion Tech Group</title>
+        <meta name="description" content={service?.description || 'Secure, branded AI copilot with RAG, human handoff, and analytics.'} />
+        <link rel="canonical" href="https://ziontechgroup.com/ai-assistant" />
+      </NextHead>
+      <div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-10">
+            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent flex items-center justify-center gap-3">
+              <MessageSquare className="w-10 h-10" />{service?.name || 'AI Assistant Pro'}
             </h1>
-            <p className="text-xl sm:text-2xl text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed">
-              Revolutionary AI-powered code assistant that understands your codebase and helps you write better code faster.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button
-                href="/contact"
-                size="lg"
-                className="shadow-2xl shadow-blue-500/25"
-              >
-                Try AI Assistant
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-              <Button
-                href="/contact"
-                variant="outline"
-                size="lg"
-                className="border-white/20 hover:border-white/40"
-              >
-                Watch Demo
-              </Button>
-            </div>
+            <p className="mt-4 text-xl text-slate-300 max-w-3xl mx-auto">{service?.tagline || 'Secure, branded copilots that cut support tickets 30–50%.'}</p>
           </div>
-        </section>
-
-        {/* Features Section */}
-        <section className="py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-20">
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-                Powerful AI Features
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Experience the future of coding with our advanced AI capabilities
-              </p>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
+            <div className="lg:col-span-2 bg-black/30 rounded-2xl border border-cyan-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-4">Capabilities</h2>
+              <p className="text-slate-300 mb-6">{service?.description || 'Deploy a production-grade AI assistant with RAG over your docs, multi-channel integrations, human handoff, analytics, and guardrails.'}</p>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                {(service?.features?.slice(0, 12) || ['RAG over your docs', 'Slack/Teams channels', 'Human handoff', 'Conversation analytics', 'Guardrails & policy', 'Live dashboards']).map((feat, i) => (
+                  <li key={i} className="flex items-start space-x-3 text-slate-200"><Check className="w-5 h-5 text-cyan-400 mt-0.5" /><span>{feat}</span></li>
+                ))}
+              </ul>
             </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {features.map((feature, index) => (
-                <div
-                  key={index}
-                  className="p-8 bg-gray-900/50 rounded-2xl border border-gray-800 hover:border-blue-500/30 hover:bg-gray-900/80 transition-all duration-300"
-                >
-                  <div className="w-16 h-16 mb-6 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
-                    {feature.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-4">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-400 leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Benefits Section */}
-        <section className="py-24 bg-gray-900">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <div>
-                <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">
-                  Transform Your Development Experience
-                </h2>
-                <div className="space-y-6">
-                  {benefits.map((benefit, index) => (
-                    <div key={index} className="flex items-start">
-                      <div className="w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center mr-4 mt-1">
-                        <div className="w-2 h-2 bg-blue-500 rounded-full" />
-                      </div>
-                      <span className="text-gray-300 text-lg">{benefit}</span>
-                    </div>
-                  ))}
+            <div className="bg-black/30 rounded-2xl border border-cyan-500/30 p-6 h-fit">
+              <div className="flex items-end justify-between mb-3">
+                <div>
+                  <div className="text-3xl font-bold text-white">{service?.price || 'Starting at $149'}<span className="text-slate-400 text-base">{service?.period || '/month'}</span></div>
+                  {service?.trialDays && <div className="text-slate-400">{service.trialDays}-day free trial • Setup: {service.setupTime}</div>}
                 </div>
               </div>
-              
-              <div className="relative">
-                <div className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-3xl p-8 border border-blue-500/20">
-                  <div className="text-center">
-                    <Bot className="w-24 h-24 mx-auto mb-6 text-blue-400" />
-                    <h3 className="text-2xl font-bold text-white mb-4">
-                      AI-Powered Insights
-                    </h3>
-                    <p className="text-gray-300 mb-6">
-                      Get intelligent suggestions and real-time assistance as you code
-                    </p>
-                    <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/20 text-blue-400 text-sm">
-                      <Zap className="w-4 h-4 mr-2" />
-                      Real-time assistance
-                    </div>
-                  </div>
-                </div>
+              <Button href="/contact" variant="quantum" size="lg" className="w-full">Get a Demo</Button>
+              <div className="mt-6 space-y-3 text-sm text-slate-300">
+                <div className="flex items-center space-x-2"><Phone className="w-4 h-4 text-cyan-400" /><span>{contactInfo.mobile}</span></div>
+                <div className="flex items-center space-x-2"><Mail className="w-4 h-4 text-purple-400" /><span>{contactInfo.email}</span></div>
+                <div className="flex items-center space-x-2"><MapPin className="w-4 h-4 text-green-400" /><span className="text-xs">{contactInfo.address}</span></div>
               </div>
             </div>
           </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-24 bg-gradient-to-r from-blue-600 to-blue-700">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-              Ready to Code Smarter?
-            </h2>
-            <p className="text-xl text-blue-100 mb-8">
-              Join thousands of developers already using AI to write better code
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                href="/contact"
-                variant="secondary"
-                size="lg"
-                className="bg-white text-blue-600 hover:bg-gray-100"
-              >
-                Start Free Trial
-              </Button>
-              <Button
-                href="/contact"
-                variant="outline"
-                size="lg"
-                className="border-white text-white hover:bg-white hover:text-blue-600"
-              >
-                Schedule Demo
-              </Button>
-            </div>
-          </div>
-        </section>
+        </div>
       </div>
-    </>
+    </UltraAdvancedFuturisticBackground>
   );
 }
