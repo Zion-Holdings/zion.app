@@ -55,6 +55,8 @@ const ServiceAds: React.FC<ServiceAdsProps> = ({ items, heading = 'Featured Serv
                 <div className="flex space-x-3">
                   <Button
                     href={item.link}
+                    target={item.link?.startsWith('http') ? '_blank' : undefined}
+                    rel={item.link?.startsWith('http') ? 'noopener noreferrer' : undefined}
                     className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white py-3 px-4 rounded-lg font-semibold transition-all duration-300"
                   >
                     <ExternalLink className="w-4 h-4 mr-2" /> Learn More
@@ -69,9 +71,35 @@ const ServiceAds: React.FC<ServiceAdsProps> = ({ items, heading = 'Featured Serv
                 </div>
 
                 <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
-                  <div className="flex items-center justify-center gap-2 text-cyan-400"><Phone className="w-4 h-4" /><span>{item.contactInfo.mobile}</span></div>
-                  <div className="flex items-center justify-center gap-2 text-purple-400"><Mail className="w-4 h-4" /><span>{item.contactInfo.email}</span></div>
-                  <div className="flex items-center justify-center gap-2 text-green-400"><MapPin className="w-4 h-4" /><span className="text-xs">{item.contactInfo.address}</span></div>
+                  <div className="flex items-center justify-center gap-2 text-cyan-400">
+                    <Phone className="w-4 h-4" />
+                    <a
+                      href={`tel:${item.contactInfo.mobile.replace(/[^+\\\d]/g, '')}`}
+                      className="hover:text-white"
+                    >
+                      {item.contactInfo.mobile}
+                    </a>
+                  </div>
+                  <div className="flex items-center justify-center gap-2 text-purple-400">
+                    <Mail className="w-4 h-4" />
+                    <a
+                      href={`mailto:${item.contactInfo.email}`}
+                      className="hover:text-white"
+                    >
+                      {item.contactInfo.email}
+                    </a>
+                  </div>
+                  <div className="flex items-center justify-center gap-2 text-green-400">
+                    <MapPin className="w-4 h-4" />
+                    <a
+                      href={`https://maps.google.com/?q=${encodeURIComponent(item.contactInfo.address)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs hover:text-white"
+                    >
+                      {item.contactInfo.address}
+                    </a>
+                  </div>
                 </div>
               </div>
             </Card>

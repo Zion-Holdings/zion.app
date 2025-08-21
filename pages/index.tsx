@@ -9,6 +9,7 @@ import {
 import Button from '../components/ui/Button';
 import UltraFuturisticMatrixBackground from '../components/ui/UltraFuturisticMatrixBackground';
 import UltraFuturisticServiceCard from '../components/ui/UltraFuturisticServiceCard';
+import ServiceAds from '../components/sections/ServiceAds';
 import Card from '../components/ui/Card';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
@@ -321,6 +322,19 @@ export default function HomePage() {
         <meta name="twitter:description" content="Transform your business with 200+ revolutionary micro SaaS services." />
         <meta name="twitter:image" content="https://ziontechgroup.com/og-image.jpg" />
       </Head>
+      {/* Reusable Service Ads Strip */}
+      <ServiceAds
+        heading="Featured Micro SaaS & AI Services"
+        subheading="Transparent pricing, real capabilities, fast onboarding."
+        items={serviceHighlights.slice(0, 8).map((h) => ({
+          title: h.title,
+          description: h.description,
+          price: h.price,
+          features: h.features,
+          link: h.link,
+          contactInfo: h.contactInfo || contactInfo
+        }))}
+      />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4">
@@ -406,11 +420,11 @@ export default function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
               <div className="flex flex-col items-center space-y-2">
                 <Phone className="w-5 h-5 text-cyan-400" />
-                <a href={`tel:${contactInfo.mobile.replace(/[\s-]/g,'')}`} className="text-sm text-cyan-400 hover:underline">{contactInfo.mobile}</a>
+                <span className="text-sm text-gray-300">{contactInfo.mobile}</span>
               </div>
               <div className="flex flex-col items-center space-y-2">
                 <Mail className="w-5 h-5 text-cyan-400" />
-                <a href={`mailto:${contactInfo.email}`} className="text-sm text-cyan-400 hover:underline">{contactInfo.email}</a>
+                <span className="text-sm text-gray-300">{contactInfo.email}</span>
               </div>
               <div className="flex flex-col items-center space-y-2">
                 <MapPin className="w-5 h-5 text-cyan-400" />
@@ -546,11 +560,11 @@ export default function HomePage() {
                           <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                             <div className="flex items-center gap-2 text-gray-300">
                               <Phone className="w-4 h-4 text-cyan-400" />
-                              <a href={`tel:${highlight.contactInfo.mobile.replace(/[\s-]/g,'')}`} className="text-cyan-400 hover:underline">{highlight.contactInfo.mobile}</a>
+                              <span>{highlight.contactInfo.mobile}</span>
                             </div>
                             <div className="flex items-center gap-2 text-gray-300">
                               <Mail className="w-4 h-4 text-purple-400" />
-                              <a href={`mailto:${highlight.contactInfo.email}`} className="text-cyan-400 hover:underline">{highlight.contactInfo.email}</a>
+                              <span>{highlight.contactInfo.email}</span>
                             </div>
                           </div>
                         )}
@@ -572,18 +586,11 @@ export default function HomePage() {
                       >
                         Contact
                       </Button>
-                      <Button
-                        href={`tel:${contactInfo.mobile.replace(/[\s-]/g,'')}`}
-                        variant="outline"
-                        className="px-4 py-3 border border-cyan-600 text-cyan-400 rounded-lg hover:bg-cyan-600 hover:text-white transition-all duration-300"
-                      >
-                        Call Now
-                      </Button>
                     </div>
                     {highlight.contactInfo && (
                       <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
-                        <div className="flex items-center justify-center gap-2 text-cyan-400"><Phone className="w-4 h-4" /><a href={`tel:${highlight.contactInfo.mobile.replace(/[\s-]/g,'')}`} className="hover:underline">{highlight.contactInfo.mobile}</a></div>
-                        <div className="flex items-center justify-center gap-2 text-purple-400"><Mail className="w-4 h-4" /><a href={`mailto:${highlight.contactInfo.email}`} className="hover:underline">{highlight.contactInfo.email}</a></div>
+                        <div className="flex items-center justify-center gap-2 text-cyan-400"><Phone className="w-4 h-4" /><span>{highlight.contactInfo.mobile}</span></div>
+                        <div className="flex items-center justify-center gap-2 text-purple-400"><Mail className="w-4 h-4" /><span>{highlight.contactInfo.email}</span></div>
                         <div className="flex items-center justify-center gap-2 text-green-400"><MapPin className="w-4 h-4" /><span className="text-xs">{highlight.contactInfo.address}</span></div>
                       </div>
                     )}
@@ -622,14 +629,14 @@ export default function HomePage() {
                   <Phone className="w-8 h-8 text-cyan-400" />
                   <div>
                     <div className="text-sm text-gray-400">Phone</div>
-                    <a href={`tel:${contactInfo.mobile.replace(/[\s-]/g,'')}`} className="text-white font-semibold hover:underline text-cyan-400">{contactInfo.mobile}</a>
+                    <div className="text-white font-semibold">{contactInfo.mobile}</div>
                   </div>
                 </div>
                 <div className="flex flex-col items-center space-y-3">
                   <Mail className="w-8 h-8 text-cyan-400" />
                   <div>
                     <div className="text-sm text-gray-400">Email</div>
-                    <a href={`mailto:${contactInfo.email}`} className="text-white font-semibold hover:underline text-cyan-400">{contactInfo.email}</a>
+                    <div className="text-white font-semibold">{contactInfo.email}</div>
                   </div>
                 </div>
                 <div className="flex flex-col items-center space-y-3">
