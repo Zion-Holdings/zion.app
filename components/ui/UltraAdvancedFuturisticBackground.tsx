@@ -78,7 +78,20 @@ const UltraAdvancedFuturisticBackground: React.FC<UltraAdvancedFuturisticBackgro
       }
     };
 
+    let isPaused = false;
+
+    const onVisibilityChange = () => {
+      isPaused = document.hidden;
+      if (!isPaused && !animationRef.current) {
+        animationRef.current = requestAnimationFrame(drawParticles);
+      }
+    };
+
     const drawParticles = () => {
+      if (isPaused) {
+        animationRef.current = undefined;
+        return;
+      }
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
       // Create gradient background
@@ -263,9 +276,11 @@ const UltraAdvancedFuturisticBackground: React.FC<UltraAdvancedFuturisticBackgro
     drawParticles();
 
     window.addEventListener('resize', resizeCanvas);
+    document.addEventListener('visibilitychange', onVisibilityChange);
 
     return () => {
       window.removeEventListener('resize', resizeCanvas);
+      document.removeEventListener('visibilitychange', onVisibilityChange);
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
