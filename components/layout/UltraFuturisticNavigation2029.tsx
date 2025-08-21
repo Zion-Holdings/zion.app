@@ -98,6 +98,7 @@ const serviceCategories = [
 const mainNavigation = [
   { name: 'Home', href: '/', icon: Home },
   { name: 'Services', href: '/services', icon: Briefcase },
+  { name: '2029 Innovations', href: '/2029-innovative-services-showcase', icon: Sparkles },
   { name: 'AI Solutions', href: '/ai-solutions', icon: Brain },
   { name: 'Quantum Tech', href: '/quantum-tech', icon: Atom },
   { name: 'Enterprise IT', href: '/enterprise-it', icon: Cpu },
@@ -105,6 +106,7 @@ const mainNavigation = [
   { name: 'Micro SAAS', href: '/micro-saas', icon: Target },
   { name: 'Research', href: '/research', icon: Microscope },
   { name: 'Pricing', href: '/pricing', icon: DollarSign },
+  { name: '2029 Pricing', href: '/2029-comprehensive-pricing', icon: DollarSign },
   { name: 'Contact', href: '/contact', icon: MessageCircle }
 ];
 
