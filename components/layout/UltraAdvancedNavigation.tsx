@@ -36,7 +36,7 @@ const UltraAdvancedNavigation: React.FC = () => {
       dropdown: [
         {
           name: 'AI Agent Orchestrator',
-          href: '/ai-agents',
+          href: '/ai-assistant',
           icon: Bot,
           description: 'Multi-agent workflow automation',
           price: '$2,999/month'
