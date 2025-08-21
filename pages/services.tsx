@@ -23,6 +23,7 @@ import { marketValidatedServices } from '../data/market-validated-services';
 import { emergingTechnologyServices } from '../data/emerging-technology-services';
 import { comprehensiveITSolutions } from '../data/comprehensive-it-solutions';
 import { curatedMarketServices } from '../data/curated-market-services';
+import { verifiedRealServices } from '../data/verified-real-services';
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -45,7 +46,8 @@ export default function ServicesPage() {
     ...marketValidatedServices,
     ...emergingTechnologyServices,
     ...comprehensiveITSolutions,
-    ...curatedMarketServices
+    ...curatedMarketServices,
+    ...verifiedRealServices
   ];
 
   // Dynamic category counts mapped to the same filter logic below

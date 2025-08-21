@@ -87,7 +87,7 @@ body {
   letter-spacing: 0.025em;
 }
 
-/* Enhanced Background Patterns */
+/* Slightly increase visibility of animated layers */
 body::before {
   content: '';
   position: fixed;
@@ -108,6 +108,7 @@ body::before {
   pointer-events: none;
   z-index: -1;
   animation: backgroundFloat 30s ease-in-out infinite;
+  opacity: 0.9;
 }
 
 /* Quantum Particle Effects */
@@ -127,6 +128,7 @@ body::after {
   pointer-events: none;
   z-index: -1;
   animation: quantumPulse 25s ease-in-out infinite reverse;
+  opacity: 0.85;
 }
 
 /* Enhanced Background Animations */
@@ -649,6 +651,15 @@ body::after {
   .cyberpunk-elements {
     background-size: 100px 100px;
   }
+}
+
+/* Improve contrast on small screens */
+@media (max-width: 640px) {
+  .text-gray-300 { color: rgba(229, 231, 235, 0.92); }
+  .text-gray-400 { color: rgba(209, 213, 219, 0.88); }
+  .bg-gray-800\/40 { background-color: rgba(31, 41, 55, 0.6); }
+  .bg-gray-900\/60 { background-color: rgba(17, 24, 39, 0.75); }
+  .border-gray-700 { border-color: rgba(55, 65, 81, 0.9); }
 }
 
 /* Enhanced Accessibility */

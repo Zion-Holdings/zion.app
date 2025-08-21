@@ -20,6 +20,7 @@ import { professionalServices } from '../data/professional-services';
 import { nextGenerationAIServices } from '../data/next-generation-ai-services';
 import { emergingTechnologyServices } from '../data/emerging-technology-services';
 import { comprehensiveITSolutions } from '../data/comprehensive-it-solutions';
+import { verifiedRealServices } from '../data/verified-real-services';
 
 export default function HomePage() {
   const contactInfo = {
@@ -220,6 +221,35 @@ export default function HomePage() {
                   <div className="flex gap-3">
                     <Button href={svc.link || '/contact'} variant="primary">Learn More</Button>
                     <Button href="/contact" variant="secondary">Talk to Expert</Button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Verified Services */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="mb-8 text-center">
+              <h2 className="text-4xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-500 bg-clip-text text-transparent">Verified Services</h2>
+              <p className="text-gray-300 mt-2">Real, market-aligned offerings with transparent pricing and live references</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {verifiedRealServices.slice(0, 6).map((svc) => (
+                <div key={svc.id} className="bg-gray-900/60 backdrop-blur-xl rounded-2xl p-6 border border-cyan-500/20 hover:border-cyan-400/40 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/20">
+                  <div className="text-3xl mb-3">{svc.icon || '✅'}</div>
+                  <h3 className="text-xl font-bold text-white mb-2">{svc.name}</h3>
+                  <p className="text-gray-300 text-sm mb-3">{svc.tagline}</p>
+                  <div className="text-cyan-300 font-bold mb-2">{(svc as any).price}{(svc as any).period}</div>
+                  <ul className="text-gray-400 text-sm space-y-1 mb-4 list-disc list-inside">
+                    {svc.features.slice(0, 3).map((f, i) => (
+                      <li key={i}>{f}</li>
+                    ))}
+                  </ul>
+                  <div className="flex gap-3">
+                    <Button href={(svc as any).link || '/services'} variant="primary">Learn More</Button>
+                    <Button href="/contact" variant="secondary">Get Started</Button>
                   </div>
                 </div>
               ))}

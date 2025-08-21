@@ -148,6 +148,7 @@ export default function MarketPricingPage() {
                 <li>SendGrid pricing: <a className="text-cyan-400 underline" href={`https://sendgrid.com/pricing/`} target="_blank" rel="noopener noreferrer">sendgrid.com/pricing</a></li>
                 <li>Postmark pricing: <a className="text-cyan-400 underline" href={`https://postmarkapp.com/pricing`} target="_blank" rel="noopener noreferrer">postmarkapp.com/pricing</a></li>
                 <li>Mailgun pricing: <a className="text-cyan-400 underline" href={`https://www.mailgun.com/pricing/`} target="_blank" rel="noopener noreferrer">mailgun.com/pricing</a></li>
+                <li>Google Postmaster Tools: <a className="text-cyan-400 underline" href={`https://postmaster.google.com`} target="_blank" rel="noopener noreferrer">postmaster.google.com</a></li>
               </ul>
               <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $15–$500/month depending on volume and region.</div>
             </div>
@@ -158,6 +159,7 @@ export default function MarketPricingPage() {
                 <li>Pinecone pricing: <a className="text-cyan-400 underline" href={`https://www.pinecone.io/pricing/`} target="_blank" rel="noopener noreferrer">pinecone.io/pricing</a></li>
                 <li>Weaviate Cloud: <a className="text-cyan-400 underline" href={`https://console.weaviate.cloud/pricing`} target="_blank" rel="noopener noreferrer">weaviate.cloud/pricing</a></li>
                 <li>Qdrant Cloud: <a className="text-cyan-400 underline" href={`https://qdrant.tech/pricing/`} target="_blank" rel="noopener noreferrer">qdrant.tech/pricing</a></li>
+                <li>Elastic Cloud: <a className="text-cyan-400 underline" href={`https://www.elastic.co/pricing`} target="_blank" rel="noopener noreferrer">elastic.co/pricing</a></li>
               </ul>
               <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $20–$500/month depending on dimensions and QPS.</div>
             </div>
@@ -168,6 +170,7 @@ export default function MarketPricingPage() {
                 <li>GitHub Actions: <a className="text-cyan-400 underline" href={`https://github.com/pricing`} target="_blank" rel="noopener noreferrer">github.com/pricing</a></li>
                 <li>CircleCI pricing: <a className="text-cyan-400 underline" href={`https://circleci.com/pricing/`} target="_blank" rel="noopener noreferrer">circleci.com/pricing</a></li>
                 <li>Render pricing: <a className="text-cyan-400 underline" href={`https://render.com/pricing`} target="_blank" rel="noopener noreferrer">render.com/pricing</a></li>
+                <li>Netlify plans: <a className="text-cyan-400 underline" href={`https://www.netlify.com/pricing/`} target="_blank" rel="noopener noreferrer">netlify.com/pricing</a></li>
               </ul>
               <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $0–$500/month for moderate pipelines and environments.</div>
             </div>

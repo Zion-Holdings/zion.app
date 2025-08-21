@@ -64,10 +64,10 @@ const supportLinks = [
 ];
 
 const socialLinks = [
-  { name: 'Twitter', href: '#', icon: Twitter },
-  { name: 'LinkedIn', href: '#', icon: Linkedin },
-  { name: 'Facebook', href: '#', icon: Facebook },
-  { name: 'Instagram', href: '#', icon: Instagram }
+  { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: Twitter },
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/company/zion-tech-group', icon: Linkedin },
+  { name: 'Facebook', href: 'https://www.facebook.com/ziontechgroup', icon: Facebook },
+  { name: 'Instagram', href: 'https://www.instagram.com/ziontechgroup', icon: Instagram }
 ];
 
 export default function EnhancedFooter() {
