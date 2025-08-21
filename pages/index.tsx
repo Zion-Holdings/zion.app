@@ -6,15 +6,15 @@ import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import EnhancedFuturisticBackground from '../components/ui/EnhancedFuturisticBackground';
 import EnhancedFuturisticCard from '../components/ui/EnhancedFuturisticCard';
-import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, ExternalLink, Star, Users, Globe, Lock, Rocket, Cpu, Database, TrendingUp, Clock, Target, Building, Award, DollarSign, ChartBar, Code, BookOpen, Activity, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, Settings, BookOpen as BookOpenIcon, Activity as ActivityIcon, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Sparkles, Atom, Brain, Eye, Shield as ShieldIcon, Zap as ZapIcon, Globe as GlobeIcon, Cpu as CpuIcon, Cloud as CloudIcon, Bot as BotIcon, Lock as LockIcon, BarChart3 as BarChart3Icon, TrendingUp as TrendingUpIcon, Users as UsersIcon, Award as AwardIcon, Star as StarIcon, Check as CheckIcon, ArrowRight as ArrowRightIcon, ExternalLink as ExternalLinkIcon, Phone as PhoneIcon, Mail as MailIcon, MapPin as MapPinIcon, Trophy, FlaskConical, Dna, Car, Leaf, Factory, Truck, Microscope, GraduationCap, ShieldCheck } from 'lucide-react';
+import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, ExternalLink, Star, Users, Globe, Lock, Rocket, Cpu, Database, TrendingUp, Clock, Target, Building, Award, DollarSign, ChartBar, Code, BookOpen, Activity, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, Settings, BookOpen as BookOpenIcon, Activity as ActivityIcon, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Sparkles, Atom, Brain, Eye, Shield as ShieldIcon, Zap as ZapIcon, Globe as GlobeIcon, Cpu as CpuIcon, Cloud as CloudIcon, Bot as BotIcon, Lock as LockIcon, BarChart3 as BarChart3Icon, TrendingUp as TrendingUpIcon, Users as UsersIcon, Award as AwardIcon, Star as StarIcon, Check as CheckIcon, ArrowRight as ArrowRightIcon, ExternalLink as ExternalLinkIcon, Phone as PhoneIcon, Mail as MailIcon, MapPin as MapPinIcon, Trophy, FlaskConical, Dna, Car, Leaf, Factory, Truck, Microscope, GraduationCap, ShieldCheck, Eye as EyeIcon, Zap as ZapIcon2, Globe as GlobeIcon2, Cpu as CpuIcon2, Bot as BotIcon2, Lock as LockIcon2, BarChart3 as BarChart3Icon2, TrendingUp as TrendingUpIcon2, Users as UsersIcon2, Award as AwardIcon2, Star as StarIcon2, Check as CheckIcon2, ArrowRight as ArrowRightIcon2, ExternalLink as ExternalLinkIcon2, Phone as PhoneIcon2, Mail as MailIcon2, MapPin as MapPinIcon2 } from 'lucide-react';
 
 export default function HomePage() {
   const heroStats = [
-    { value: '250+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
+    { value: '300+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
     { value: '99.9%', label: 'Uptime Guarantee', color: 'text-fuchsia-400' },
     { value: '14', label: 'Day Free Trials', color: 'text-blue-400' },
     { value: '24/7', label: 'AI Support', color: 'text-green-400' },
-    { value: '$150M+', label: 'Market Value', color: 'text-yellow-400' },
+    { value: '$200M+', label: 'Market Value', color: 'text-yellow-400' },
     { value: '800%+', label: 'Average ROI', color: 'text-purple-400' },
   ];
 
@@ -28,7 +28,7 @@ export default function HomePage() {
   const platformFeatures = [
     {
       icon: <Cloud className="w-8 h-8 text-white" />,
-      title: '250+ Real Micro SaaS Services',
+      title: '300+ Real Micro SaaS Services',
       description: 'Complete portfolio of fully functional micro SaaS tools with real implementations, not just mockups. Starting from $49/month with 14-day free trials.',
       color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
       gradient: 'from-cyan-400 to-blue-500',
@@ -136,8 +136,6 @@ export default function HomePage() {
     },
   ];
 
-
-
   const marketInsights = [
     {
       metric: '$2.8B',
@@ -199,28 +197,75 @@ export default function HomePage() {
       icon: '🧬',
       price: '$899/month',
       category: 'Biomedical & Healthcare',
-      variant: 'neural-quantum',
+      variant: 'biomedical',
       link: 'https://ziontechgroup.com/biomedical-ai-research'
     },
     {
-      name: 'Climate AI Prediction Engine',
-      description: 'Predicting climate patterns and extreme weather events with unprecedented accuracy using quantum AI.',
-      icon: '🌍',
-      price: '$699/month',
-      category: 'Climate & Environment',
-      variant: 'quantum-holographic',
-      link: 'https://ziontechgroup.com/climate-ai-prediction'
-    },
-    {
-      name: 'Quantum Financial Trading Platform',
-      description: 'Quantum-powered algorithmic trading with real-time market analysis and predictive modeling.',
+      name: 'Quantum Finance AI',
+      description: 'Revolutionary quantum AI platform for high-frequency trading, risk assessment, and portfolio optimization.',
       icon: '💰',
       price: '$1,999/month',
       category: 'Financial Technology',
-      variant: 'quantum-cyberpunk',
-      link: 'https://ziontechgroup.com/quantum-financial-trading'
+      variant: 'finance-quantum',
+      link: 'https://ziontechgroup.com/quantum-finance-ai'
+    },
+    {
+      name: 'Autonomous Vehicle AI',
+      description: 'Advanced AI platform for autonomous vehicles featuring real-time object detection and safety systems.',
+      icon: '🚗',
+      price: '$3,499/month',
+      category: 'Autonomous Systems',
+      variant: 'autonomous-vehicle',
+      link: 'https://ziontechgroup.com/autonomous-vehicle-ai'
     }
   ];
+
+  const contactSection = (
+    <div className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 rounded-3xl p-8 border border-purple-500/20">
+      <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-cyan-500/10 animate-pulse"></div>
+      <div className="relative z-10">
+        <h3 className="text-2xl font-bold text-white mb-6 text-center">
+          <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+            Ready to Transform Your Business?
+          </span>
+        </h3>
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="text-center p-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20">
+            <PhoneIcon className="w-8 h-8 text-purple-400 mx-auto mb-3" />
+            <h4 className="font-semibold text-white mb-2">Call Us</h4>
+            <a href={`tel:${contactInfo.mobile}`} className="text-purple-300 hover:text-purple-200 transition-colors">
+              {contactInfo.mobile}
+            </a>
+          </div>
+          <div className="text-center p-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20">
+            <MailIcon className="w-8 h-8 text-cyan-400 mx-auto mb-3" />
+            <h4 className="font-semibold text-white mb-2">Email Us</h4>
+            <a href={`mailto:${contactInfo.email}`} className="text-cyan-300 hover:text-cyan-200 transition-colors">
+              {contactInfo.email}
+            </a>
+          </div>
+          <div className="text-center p-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20">
+            <MapPinIcon className="w-8 h-8 text-green-400 mx-auto mb-3" />
+            <h4 className="font-semibold text-white mb-2">Visit Us</h4>
+            <p className="text-green-300 text-sm">
+              {contactInfo.address}
+            </p>
+          </div>
+        </div>
+        <div className="text-center mt-6">
+          <a 
+            href={contactInfo.website} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 to-cyan-500 text-white font-semibold rounded-full hover:from-purple-600 hover:to-cyan-600 transition-all duration-300 transform hover:scale-105"
+          >
+            Visit Our Website
+            <ExternalLink className="w-4 h-4" />
+          </a>
+        </div>
+      </div>
+    </div>
+  );
 
   return (
     <EnhancedFuturisticBackground variant="quantum-holographic-advanced" intensity="high">
@@ -465,11 +510,26 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* Contact Information Section */}
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                Get in Touch
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Ready to revolutionize your business? Contact our team of experts today.
+              </p>
+            </div>
+            {contactSection}
+          </div>
+        </section>
+
         {/* Call to Action */}
         <section className="py-20">
           <div className="container mx-auto px-4 text-center">
             <EnhancedFuturisticCard
-              variant="quantum-holographic"
+              variant="quantum-holographic-advanced"
               intensity="high"
               className="max-w-4xl mx-auto"
             >
