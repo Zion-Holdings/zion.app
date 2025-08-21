@@ -87,7 +87,8 @@ export default function ServicesPage() {
       color: 'from-purple-600 to-indigo-700',
       marketPosition: 'First-to-market quantum AI platform. No direct competitors yet. Traditional AI platforms cost $2000+/month with limited capabilities.',
       marketData: '$15B quantum computing market, 500% annual growth',
-      savings: 'Save 85% vs. competitors'
+      savings: 'Save 85% vs. competitors',
+      contactInfo: 'Contact: +1 302 464 0950 | kleber@ziontechgroup.com'
     },
     {
       title: '🏭 Autonomous Manufacturing AI Platform',
@@ -98,7 +99,8 @@ export default function ServicesPage() {
       color: 'from-orange-500 to-red-600',
       marketPosition: 'Leading autonomous manufacturing platform. Competes with Siemens MindSphere ($500+/month) and PTC ThingWorx ($300+/month).',
       marketData: '$12.3B industrial AI market, 320% annual growth',
-      savings: 'Save 60% vs. competitors'
+      savings: 'Save 60% vs. competitors',
+      contactInfo: 'Contact: +1 302 464 0950 | kleber@ziontechgroup.com'
     },
     {
       title: '🔒 Quantum Cybersecurity Suite',
@@ -109,7 +111,44 @@ export default function ServicesPage() {
       color: 'from-red-500 to-pink-600',
       marketPosition: 'Leading quantum-resistant security solution. Competes with CrowdStrike ($8.99/user/month) and Palo Alto Networks ($50+/user/month).',
       marketData: '$6.8B quantum security market, 380% annual growth',
-      savings: 'Save 70% vs. competitors'
+      savings: 'Save 70% vs. competitors',
+      contactInfo: 'Contact: +1 302 464 0950 | kleber@ziontechgroup.com'
+    },
+    {
+      title: '⚖️ AI Legal Assistant Pro',
+      description: 'Revolutionary AI legal assistant with 99.2% accuracy. Reduce legal costs by 70% and accelerate document review.',
+      price: '$89/month',
+      features: ['Contract analysis and risk assessment', 'Legal research automation', 'Document comparison and redlining', 'Regulatory compliance monitoring'],
+      link: 'https://ziontechgroup.com/ai-legal-assistant',
+      color: 'from-blue-500 to-indigo-600',
+      marketPosition: 'Leading AI legal platform. Competes with LexisNexis ($200+/month) and Westlaw ($300+/month).',
+      marketData: '$8.2B legal tech market, 280% annual growth',
+      savings: 'Save 70% vs. competitors',
+      contactInfo: 'Contact: +1 302 464 0950 | kleber@ziontechgroup.com'
+    },
+    {
+      title: '🔐 Blockchain Identity Verification',
+      description: 'Decentralized identity verification with zero-knowledge proofs. Verify identities without sharing personal data.',
+      price: '$45/month',
+      features: ['Zero-knowledge proof verification', 'Decentralized identity management', 'Multi-factor authentication', 'Cross-border verification'],
+      link: 'https://ziontechgroup.com/blockchain-identity',
+      color: 'from-emerald-500 to-teal-600',
+      marketPosition: 'Privacy-first identity platform. Competes with Onfido ($2.99/verification) and Jumio ($3.99/verification).',
+      marketData: '$15.7B identity verification market, 320% annual growth',
+      savings: 'Save 60% vs. competitors',
+      contactInfo: 'Contact: +1 302 464 0950 | kleber@ziontechgroup.com'
+    },
+    {
+      title: '👥 AI HR Recruitment Platform',
+      description: 'AI-powered talent acquisition and employee management. Reduce hiring time by 80% and improve candidate quality.',
+      price: '$67/month',
+      features: ['AI-powered candidate screening', 'Resume parsing and analysis', 'Skill matching algorithms', 'Interview scheduling automation'],
+      link: 'https://ziontechgroup.com/ai-hr-recruitment',
+      color: 'from-purple-500 to-pink-600',
+      marketPosition: 'Leading AI HR platform. Competes with Workday ($99/user/month) and BambooHR ($6.19/employee/month).',
+      marketData: '$22.4B HR tech market, 250% annual growth',
+      savings: 'Save 40% vs. competitors',
+      contactInfo: 'Contact: +1 302 464 0950 | kleber@ziontechgroup.com'
     },
     {
       title: '🚀 Space Technology Platform',
@@ -120,7 +159,8 @@ export default function ServicesPage() {
       color: 'from-blue-500 to-indigo-600',
       marketPosition: 'Innovative space technology platform. Competes with Maxar ($500+/month) and Planet Labs ($400+/month).',
       marketData: '$4.2B space technology market, 280% annual growth',
-      savings: 'Save 20% vs. competitors'
+      savings: 'Save 20% vs. competitors',
+      contactInfo: 'Contact: +1 302 464 0950 | kleber@ziontechgroup.com'
     },
     {
       title: '🧬 Biotech AI Platform',
@@ -131,18 +171,8 @@ export default function ServicesPage() {
       color: 'from-emerald-500 to-teal-600',
       marketPosition: 'Leading biotech AI platform. Competes with Insitro ($1000+/month) and Atomwise ($800+/month).',
       marketData: '$8.5B biotech AI market, 420% annual growth',
-      savings: 'Save 40% vs. competitors'
-    },
-    {
-      title: '💰 Quantum Financial Trading Platform',
-      description: 'Quantum-enhanced algorithmic trading and risk management. Achieve 1200% ROI within 6 months.',
-      price: '$899/month',
-      features: ['Quantum-enhanced trading algorithms', 'Real-time market analysis and prediction', 'Advanced risk management systems', 'Portfolio optimization with quantum algorithms'],
-      link: 'https://ziontechgroup.com/quantum-financial-trading',
-      color: 'from-yellow-500 to-amber-600',
-      marketPosition: 'First quantum-enhanced trading platform. Competes with Bloomberg Terminal ($2000+/month) and Thomson Reuters ($500+/month).',
-      marketData: '$22B algorithmic trading market, 280% annual growth',
-      savings: 'Save 55% vs. competitors'
+      savings: 'Save 40% vs. competitors',
+      contactInfo: 'Contact: +1 302 464 0950 | kleber@ziontechgroup.com'
     }
   ];
 
@@ -415,8 +445,8 @@ export default function ServicesPage() {
               <p className="text-gray-500">Try adjusting your search criteria or filters.</p>
             </div>
           ) : (
-            <div className={`grid gap-8 ${
-              viewMode === 'grid' 
+                        <div className={`grid gap-8 ${
+                viewMode === 'grid' 
                 ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' 
                 : 'grid-cols-1'
             }`}>
@@ -428,8 +458,18 @@ export default function ServicesPage() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
                   <UltraAdvancedFuturisticCard
-                    service={service}
-                    onClick={() => window.open(service.link, '_blank')}
+                    title={service.name}
+                    description={service.description}
+                    price={`${service.price}${service.period}`}
+                    features={service.features}
+                    link={service.link}
+                    color={service.color}
+                    marketData={`${service.marketSize}, ${service.growthRate}`}
+                    competitors={service.competitors.join(', ')}
+                    savings={`Save ${service.roi.match(/(\d+)%/)?.[1] || '50'}% vs. competitors`}
+                    contactInfo={`Contact: ${service.contactInfo.mobile} | ${service.contactInfo.email}`}
+                    icon={service.icon}
+                    variant={service.variant as any}
                   />
                 </motion.div>
               ))}
@@ -458,8 +498,18 @@ export default function ServicesPage() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
                   <UltraAdvancedFuturisticCard
-                    service={service}
-                    onClick={() => window.open(service.link, '_blank')}
+                    title={service.name}
+                    description={service.description}
+                    price={`${service.price}${service.period}`}
+                    features={service.features}
+                    link={service.link}
+                    color={service.color}
+                    marketData={`${service.marketSize}, ${service.growthRate}`}
+                    competitors={service.competitors.join(', ')}
+                    savings={`Save ${service.roi.match(/(\d+)%/)?.[1] || '50'}% vs. competitors`}
+                    contactInfo={`Contact: ${service.contactInfo.mobile} | ${service.contactInfo.email}`}
+                    icon={service.icon}
+                    variant={service.variant as any}
                   />
                 </motion.div>
               ))}

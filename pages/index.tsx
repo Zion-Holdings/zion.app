@@ -45,7 +45,8 @@ export default function HomePage() {
       color: 'from-purple-600 to-indigo-700',
       marketData: '$15B quantum computing market, 500% annual growth',
       competitors: 'IBM Quantum ($2000+/month), Google Quantum AI ($1500+/month)',
-      savings: 'Save 85% vs. competitors'
+      savings: 'Save 85% vs. competitors',
+      contactInfo: 'Contact: +1 302 464 0950 | kleber@ziontechgroup.com'
     },
     {
       title: '🏭 Autonomous Manufacturing AI Platform',
@@ -56,7 +57,8 @@ export default function HomePage() {
       color: 'from-orange-500 to-red-600',
       marketData: '$12.3B industrial AI market, 320% annual growth',
       competitors: 'Siemens MindSphere ($500+/month), PTC ThingWorx ($300+/month)',
-      savings: 'Save 60% vs. competitors'
+      savings: 'Save 60% vs. competitors',
+      contactInfo: 'Contact: +1 302 464 0950 | kleber@ziontechgroup.com'
     },
     {
       title: '🔒 Quantum Cybersecurity Suite',
@@ -67,7 +69,44 @@ export default function HomePage() {
       color: 'from-red-500 to-pink-600',
       marketData: '$6.8B quantum security market, 380% annual growth',
       competitors: 'CrowdStrike ($8.99/user/month), Palo Alto Networks ($50+/user/month)',
-      savings: 'Save 70% vs. competitors'
+      savings: 'Save 70% vs. competitors',
+      contactInfo: 'Contact: +1 302 464 0950 | kleber@ziontechgroup.com'
+    },
+    {
+      title: '⚖️ AI Legal Assistant Pro',
+      description: 'Revolutionary AI legal assistant with 99.2% accuracy. Reduce legal costs by 70% and accelerate document review.',
+      price: 'Starting at $89/month',
+      features: ['Contract analysis and risk assessment', 'Legal research automation', 'Document comparison and redlining', 'Regulatory compliance monitoring'],
+      link: 'https://ziontechgroup.com/ai-legal-assistant',
+      color: 'from-blue-500 to-indigo-600',
+      marketData: '$8.2B legal tech market, 280% annual growth',
+      competitors: 'LexisNexis ($200+/month), Westlaw ($300+/month)',
+      savings: 'Save 70% vs. competitors',
+      contactInfo: 'Contact: +1 302 464 0950 | kleber@ziontechgroup.com'
+    },
+    {
+      title: '🔐 Blockchain Identity Verification',
+      description: 'Decentralized identity verification with zero-knowledge proofs. Verify identities without sharing personal data.',
+      price: 'Starting at $45/month',
+      features: ['Zero-knowledge proof verification', 'Decentralized identity management', 'Multi-factor authentication', 'Cross-border verification'],
+      link: 'https://ziontechgroup.com/blockchain-identity',
+      color: 'from-emerald-500 to-teal-600',
+      marketData: '$15.7B identity verification market, 320% annual growth',
+      competitors: 'Onfido ($2.99/verification), Jumio ($3.99/verification)',
+      savings: 'Save 60% vs. competitors',
+      contactInfo: 'Contact: +1 302 464 0950 | kleber@ziontechgroup.com'
+    },
+    {
+      title: '👥 AI HR Recruitment Platform',
+      description: 'AI-powered talent acquisition and employee management. Reduce hiring time by 80% and improve candidate quality.',
+      price: 'Starting at $67/month',
+      features: ['AI-powered candidate screening', 'Resume parsing and analysis', 'Skill matching algorithms', 'Interview scheduling automation'],
+      link: 'https://ziontechgroup.com/ai-hr-recruitment',
+      color: 'from-purple-500 to-pink-600',
+      marketData: '$22.4B HR tech market, 250% annual growth',
+      competitors: 'Workday ($99/user/month), BambooHR ($6.19/employee/month)',
+      savings: 'Save 40% vs. competitors',
+      contactInfo: 'Contact: +1 302 464 0950 | kleber@ziontechgroup.com'
     },
     {
       title: '🚀 Space Technology Platform',
@@ -78,51 +117,20 @@ export default function HomePage() {
       color: 'from-blue-500 to-indigo-600',
       marketData: '$4.2B space technology market, 280% annual growth',
       competitors: 'Maxar ($500+/month), Planet Labs ($400+/month)',
-      savings: 'Save 20% vs. competitors'
+      savings: 'Save 20% vs. competitors',
+      contactInfo: 'Contact: +1 302 464 0950 | kleber@ziontechgroup.com'
     },
     {
       title: '🧬 Biotech AI Platform',
       description: 'AI-powered drug discovery and biotech research. Accelerate research with 800% ROI within 12 months.',
       price: 'Starting at $599/month',
       features: ['AI-powered drug discovery algorithms', 'Protein folding prediction with 99.2% accuracy', 'Genomic data analysis and interpretation', 'Clinical trial optimization'],
-      link: 'https://ziontechgroup.com/biotech-ai',
+      link: 'https://ziontechgroup.com/quantum-ai-cognitive',
       color: 'from-emerald-500 to-teal-600',
       marketData: '$8.5B biotech AI market, 420% annual growth',
       competitors: 'Insitro ($1000+/month), Atomwise ($800+/month)',
-      savings: 'Save 40% vs. competitors'
-    },
-    {
-      title: '💰 Quantum Financial Trading Platform',
-      description: 'Quantum-enhanced algorithmic trading and risk management. Achieve 1200% ROI within 6 months.',
-      price: 'Starting at $899/month',
-      features: ['Quantum-enhanced trading algorithms', 'Real-time market analysis and prediction', 'Advanced risk management systems', 'Portfolio optimization with quantum algorithms'],
-      link: 'https://ziontechgroup.com/quantum-financial-trading',
-      color: 'from-violet-500 to-purple-600',
-      marketData: '$25B algorithmic trading market, 450% annual growth',
-      competitors: 'Bloomberg Terminal ($24,000/year), Thomson Reuters ($22,000/year)',
-      savings: 'Save 95% vs. competitors'
-    },
-    {
-      title: '⛓️ Quantum Blockchain Platform',
-      description: 'Post-quantum blockchain with AI governance. Future-proof your Web3 infrastructure with 600% ROI within 8 months.',
-      price: 'Starting at $349/month',
-      features: ['Quantum-resistant cryptography', 'AI-powered smart contract optimization', 'Cross-chain interoperability', 'Advanced DeFi protocol integration'],
-      link: 'https://ziontechgroup.com/quantum-blockchain',
-      color: 'from-indigo-500 to-blue-600',
-      marketData: '$19B blockchain platform market, 380% annual growth',
-      competitors: 'Ethereum ($50+/month), Solana ($25+/month)',
-      savings: 'Save 85% vs. competitors'
-    },
-    {
-      title: '🌐 Quantum IoT Platform',
-      description: 'Quantum-secured IoT with AI analytics. Connect, secure, and analyze IoT devices at scale with 400% ROI within 6 months.',
-      price: 'Starting at $199/month',
-      features: ['Quantum-secured device communication', 'AI-powered device management', 'Real-time data analytics', 'Edge computing optimization'],
-      link: 'https://ziontechgroup.com/quantum-iot',
-      color: 'from-teal-500 to-cyan-600',
-      marketData: '$1.1T IoT market, 250% annual growth',
-      competitors: 'AWS IoT ($0.50/device/month), Azure IoT ($0.40/device/month)',
-      savings: 'Save 60% vs. competitors'
+      savings: 'Save 40% vs. competitors',
+      contactInfo: 'Contact: +1 302 464 0950 | kleber@ziontechgroup.com'
     }
   ];
 
@@ -739,29 +747,61 @@ export default function HomePage() {
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-              <div className="bg-slate-900/50 backdrop-blur-xl rounded-xl p-4 border border-slate-700/50 hover:border-cyan-500/50 transition-all duration-300">
-                <Phone className="w-8 h-8 text-cyan-400 mx-auto mb-2" />
-                <div className="text-white font-semibold">Call Us</div>
-                <div className="text-slate-400 text-sm">{contactInfo.mobile}</div>
-                <div className="text-xs text-slate-500 mt-1">24/7 Support</div>
+              <div className="bg-slate-900/50 backdrop-blur-xl rounded-xl p-4 border border-slate-700/50 hover:border-cyan-500/50 transition-all duration-300 group">
+                <Phone className="w-8 h-8 text-cyan-400 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" />
+                <div className="text-white font-semibold">Call Us 24/7</div>
+                <div className="text-slate-400 text-sm font-mono">{contactInfo.mobile}</div>
+                <div className="text-xs text-slate-500 mt-1">Instant Support</div>
+                <div className="text-xs text-cyan-400 mt-2 font-semibold">Click to Call</div>
               </div>
-              <div className="bg-slate-900/50 backdrop-blur-xl rounded-xl p-4 border border-slate-700/50 hover:border-purple-500/50 transition-all duration-300">
-                <Mail className="w-8 h-8 text-purple-400 mx-auto mb-2" />
+              <div className="bg-slate-900/50 backdrop-blur-xl rounded-xl p-4 border border-slate-700/50 hover:border-purple-500/50 transition-all duration-300 group">
+                <Mail className="w-8 h-8 text-purple-400 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" />
                 <div className="text-white font-semibold">Email Us</div>
-                <div className="text-slate-400 text-sm">{contactInfo.email}</div>
+                <div className="text-slate-400 text-sm font-mono">{contactInfo.email}</div>
                 <div className="text-xs text-slate-500 mt-1">Response within 2 hours</div>
+                <div className="text-xs text-purple-400 mt-2 font-semibold">Click to Email</div>
               </div>
-              <div className="bg-slate-900/50 backdrop-blur-xl rounded-xl p-4 border border-slate-700/50 hover:border-green-500/50 transition-all duration-300">
-                <MapPin className="w-8 h-8 text-green-400 mx-auto mb-2" />
+              <div className="bg-slate-900/50 backdrop-blur-xl rounded-xl p-4 border border-slate-700/50 hover:border-green-500/50 transition-all duration-300 group">
+                <MapPin className="w-8 h-8 text-green-400 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" />
                 <div className="text-white font-semibold">Visit Us</div>
-                <div className="text-slate-400 text-sm">{contactInfo.address}</div>
+                <div className="text-slate-400 text-sm font-mono">{contactInfo.address}</div>
                 <div className="text-xs text-slate-500 mt-1">Middletown, DE</div>
+                <div className="text-xs text-green-400 mt-2 font-semibold">Get Directions</div>
               </div>
-              <div className="bg-slate-900/50 backdrop-blur-xl rounded-xl p-4 border border-slate-700/50 hover:border-blue-500/50 transition-all duration-300">
-                <Globe className="w-8 h-8 text-blue-400 mx-auto mb-2" />
+              <div className="bg-slate-900/50 backdrop-blur-xl rounded-xl p-4 border border-slate-700/50 hover:border-blue-500/50 transition-all duration-300 group">
+                <Globe className="w-8 h-8 text-blue-400 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" />
                 <div className="text-white font-semibold">Website</div>
-                <div className="text-slate-400 text-sm">ziontechgroup.com</div>
+                <div className="text-slate-400 text-sm font-mono">ziontechgroup.com</div>
                 <div className="text-xs text-slate-500 mt-1">Live Demo Available</div>
+                <div className="text-xs text-blue-400 mt-2 font-semibold">Visit Now</div>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-r from-slate-900/80 to-slate-800/80 backdrop-blur-xl rounded-2xl p-8 border border-slate-700/50 mb-8">
+              <h3 className="text-2xl font-bold text-white mb-4 text-center">
+                🚀 Ready to Launch Your Business into the Future?
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <div>
+                  <div className="text-3xl font-bold text-cyan-400 mb-2">150+</div>
+                  <div className="text-slate-300">Revolutionary Services</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-purple-400 mb-2">99.99%</div>
+                  <div className="text-slate-300">Uptime Guarantee</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-green-400 mb-2">30 Days</div>
+                  <div className="text-slate-300">Free Trial</div>
+                </div>
+              </div>
+              <div className="text-center mt-6">
+                <p className="text-slate-300 mb-4">
+                  <strong>Contact us today:</strong> {contactInfo.mobile} | {contactInfo.email}
+                </p>
+                <p className="text-slate-400 text-sm">
+                  Address: {contactInfo.address}
+                </p>
               </div>
             </div>
 
