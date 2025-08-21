@@ -16,6 +16,7 @@ import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFut
 import EnhancedFuturisticCard from '../components/ui/EnhancedFuturisticCard';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices, getServicesByCategory, getPopularServices, serviceCategories } from '../data/enhanced-real-micro-saas-services';
+import EnhancedServicesShowcase from '../components/sections/EnhancedServicesShowcase';
 
 export default function HomePage() {
   const heroStats = [
@@ -160,7 +161,7 @@ export default function HomePage() {
   ];
 
   return (
-    <UltraAdvancedFuturisticBackground variant="quantum">
+    <UltraAdvancedFuturisticBackground variant="quantum" intensity="high">
       <Head>
         <title>Zion Tech Group - Revolutionary Micro SaaS Services & AI Solutions</title>
         <meta name="description" content="Discover 150+ revolutionary micro SaaS services powered by quantum computing, AI, and cutting-edge technology. Transform your business with our innovative solutions." />
@@ -280,54 +281,13 @@ export default function HomePage() {
       </section>
 
       {/* Featured Services */}
-      <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              <span className="text-gradient-purple">Featured</span> Services
-            </h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Experience our most revolutionary micro SaaS services that are transforming industries worldwide
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {revolutionaryServices.map((service, index) => (
-              <motion.div
-                key={service.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <EnhancedFuturisticCard service={service} />
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-            className="text-center mt-12"
-          >
-            <Button
-              href="/micro-saas"
-              className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-4 text-lg font-semibold rounded-xl"
-            >
-              View All Services
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
-          </motion.div>
-        </div>
-      </section>
+      <EnhancedServicesShowcase 
+        services={revolutionaryServices}
+        title="Featured Services"
+        subtitle="Experience our most revolutionary micro SaaS services that are transforming industries worldwide"
+        showFilters={false}
+        maxServices={8}
+      />
 
       {/* Service Categories */}
       <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8">

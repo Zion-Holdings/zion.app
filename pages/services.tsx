@@ -131,7 +131,7 @@ export default function ServicesPage() {
   ];
 
   return (
-    <UltraAdvancedFuturisticBackground>
+          <UltraAdvancedFuturisticBackground variant="holographic" intensity="medium">
       <Head>
         <title>Revolutionary Micro SAAS Services - Zion Tech Group</title>
         <meta name="description" content="Discover our cutting-edge micro SAAS services including quantum AI, autonomous manufacturing, cybersecurity, and more. Transform your business with next-generation technology." />
