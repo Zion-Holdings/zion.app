@@ -7,7 +7,7 @@ import UltraFuturisticMatrixBackground from '../components/ui/UltraFuturisticMat
 import UltraFuturisticServiceCard from '../components/ui/UltraFuturisticServiceCard';
 import Card from '../components/ui/Card';
 import { motion } from 'framer-motion';
-import { enhancedRealMicroSaasServices, serviceCategories, getServicesByCategory } from '../data/enhanced-real-micro-saas-services';
+import { enhancedRealMicroSaasServices, serviceCategories, getServicesByCategory, getServicesByPriceRange } from '../data/enhanced-real-micro-saas-services';
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -47,36 +47,25 @@ export default function ServicesPage() {
     { value: 'category', label: 'Category' }
   ];
 
-  // Unified filtering handled below with useMemo
-  const contactInfo = {
-    mobile: '+1 302 464 0950',
-    email: 'kleber@ziontechgroup.com',
-    address: '364 E Main St STE 1008 Middletown DE 19709',
-    website: 'https://ziontechgroup.com'
-  };
-
-  // Filter and sort services
+  // Unified filter and sort (memoized)
   const filteredServices = useMemo(() => {
-    let filtered = [...enhancedRealMicroSaasServices];
+    let filtered = enhancedRealMicroSaasServices.slice();
 
-    // Apply category filter
+    // Category filter
     if (selectedCategory && selectedCategory !== 'All') {
       filtered = getServicesByCategory(selectedCategory);
     }
 
-    // Apply price range filter
+    // Price range filter
     if (priceRange !== 'All') {
-      const [minPart, maxPart] = priceRange.split('-');
-      const min = parseInt(minPart);
-      const max = maxPart === '+' ? Number.POSITIVE_INFINITY : parseInt(maxPart);
-      filtered = filtered.filter(service => {
-        const price = parseFloat(service.price.replace('$', '').replace(',', ''));
-        return price >= min && price <= max;
-      });
+      const [minStr, maxStr] = priceRange.split('-');
+      const min = parseInt(minStr || '0', 10);
+      const max = maxStr === '+' ? Number.POSITIVE_INFINITY : parseInt(maxStr || `${Number.POSITIVE_INFINITY}`, 10);
+      filtered = getServicesByPriceRange(min, isFinite(max) ? max : Number.MAX_SAFE_INTEGER);
     }
 
-    // Apply search filter
-    const query = (searchTerm || searchQuery).trim().toLowerCase();
+    // Search filter
+    const query = (searchTerm || '').toLowerCase().trim();
     if (query) {
       filtered = filtered.filter(service =>
         service.name.toLowerCase().includes(query) ||
@@ -86,33 +75,35 @@ export default function ServicesPage() {
       );
     }
 
-    // Apply sorting
-    filtered = [...filtered].sort((a, b) => {
+    // Sort
+    filtered.sort((a, b) => {
       switch (sortBy) {
-        case 'price': {
-          const priceA = parseFloat(a.price.replace('$', '').replace(',', ''));
-          const priceB = parseFloat(b.price.replace('$', '').replace(',', ''));
-          return priceA - priceB;
-        }
+        case 'price':
+          return parseFloat(a.price.replace('$', '').replace(',', '')) - parseFloat(b.price.replace('$', '').replace(',', ''));
         case 'rating':
           return b.rating - a.rating;
         case 'roi': {
-          const roiA = parseFloat((a.roi.match(/(\d+\.?\d*)%/)?.[1] || '0'));
-          const roiB = parseFloat((b.roi.match(/(\d+\.?\d*)%/)?.[1] || '0'));
-          return roiB - roiA;
+          const aMatch = a.roi.match(/(\d+)%/);
+          const bMatch = b.roi.match(/(\d+)%/);
+          const aRoi = aMatch ? parseInt(aMatch[1], 10) : 0;
+          const bRoi = bMatch ? parseInt(bMatch[1], 10) : 0;
+          return bRoi - aRoi;
         }
-        case 'popularity':
-          return (b.popular ? 1 : 0) - (a.popular ? 1 : 0);
-        case 'category':
-          return a.category.localeCompare(b.category);
-        case 'name':
         default:
           return a.name.localeCompare(b.name);
       }
     });
 
     return filtered;
-  }, [enhancedRealMicroSaasServices, selectedCategory, priceRange, searchTerm, searchQuery, sortBy]);
+  }, [enhancedRealMicroSaasServices, selectedCategory, priceRange, searchTerm, sortBy]);
+  const contactInfo = {
+    mobile: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com'
+  };
+
+  // note: removed duplicate memo above; single memoized filteredServices is used
 
   const heroStats = [
     { value: '200+', label: 'Revolutionary Services', color: 'text-cyan-400', icon: <Cpu className="w-6 h-6" /> },
@@ -375,7 +366,7 @@ export default function ServicesPage() {
                           
                           <div className="flex space-x-2">
                             <Button
-                              href={`/services/${service.id}`}
+                              href={service.link || `/micro-saas#${service.id}`}
                               className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white rounded-lg font-semibold transition-all duration-300"
                             >
                               <ArrowRight className="w-4 h-4 mr-2" />
