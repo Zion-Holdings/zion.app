@@ -17,7 +17,7 @@ const contactInfo = {
 
 const serviceCategories = [
   {
-    title: 'Revolutionary 2025 AI',
+    title: 'Revolutionary 2026 AI',
     icon: Brain,
     services: [
       { name: 'AI Consciousness Simulator', href: '/ai-consciousness-simulator', description: 'Simulate human-like consciousness in AI systems', price: '$2,999/month' },
@@ -75,11 +75,53 @@ const serviceCategories = [
       { name: 'Photonic Computing', href: '/photonic-computing-platform', description: 'Light-speed computing with photonic processors', price: '$1,999/month' },
       { name: 'Holographic Display', href: '/holographic-display-platform', description: 'Next-generation 3D holographic visualization', price: '$699/month' }
     ]
+  },
+  {
+    title: 'Autonomous Systems',
+    icon: Target,
+    services: [
+      { name: 'Autonomous Supply Chain', href: '/autonomous-supply-chain-optimization', description: 'AI-powered supply chain management and optimization', price: '$399/month' },
+      { name: 'Autonomous Manufacturing AI', href: '/autonomous-manufacturing-ai', description: 'AI-powered manufacturing automation and optimization', price: '$599/month' },
+      { name: 'Swarm Robotics Platform', href: '/swarm-robotics-platform', description: 'Coordinated multi-robot systems for complex tasks', price: '$899/month' },
+      { name: 'Quantum Space Mining', href: '/quantum-space-mining-platform', description: 'Revolutionary space resource exploration and mining', price: '$1,299/month' }
+    ]
+  },
+  {
+    title: 'Revolutionary IT Infrastructure',
+    icon: Shield,
+    services: [
+      { name: 'Zero Trust Network Architecture', href: '/zero-trust-network-architecture', description: 'Next-generation security with zero trust principles', price: '$5,999/month' },
+      { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration', description: 'Intelligent edge computing management and optimization', price: '$3,999/month' },
+      { name: '5G Private Network Solutions', href: '/5g-private-network-solutions', description: 'Enterprise-grade 5G private networks', price: '$7,999/month' },
+      { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure', description: 'Quantum computing in the cloud for everyone', price: '$2,999/month' }
+    ]
+  },
+  {
+    title: 'Revolutionary Micro SaaS',
+    icon: Zap,
+    services: [
+      { name: 'AI Brand Personality Generator', href: '/ai-brand-personality-generator', description: 'Create unique brand personalities with AI', price: '$299/month' },
+      { name: 'Virtual Event Hologram Platform', href: '/virtual-event-hologram-platform', description: 'Create immersive holographic virtual events', price: '$799/month' },
+      { name: 'AI Meeting Transcriber Pro', href: '/ai-meeting-transcriber-pro', description: 'Advanced AI-powered meeting transcription and insights', price: '$199/month' },
+      { name: 'AI Mental Health Companion', href: '/ai-mental-health-companion', description: 'AI-powered mental health support and wellness', price: '$149/month' }
+    ]
+  },
+  {
+    title: 'Revolutionary 2026 Services',
+    icon: Rocket,
+    services: [
+      { name: 'AI Quantum Financial Analytics', href: '/ai-quantum-financial-analytics', description: 'Quantum-powered AI for next-generation financial insights', price: '$1,299/month' },
+      { name: 'Neural Interface Development', href: '/neural-interface-development-platform', description: 'Build next-generation brain-computer interfaces with AI', price: '$2,999/month' },
+      { name: 'Quantum-Secure Cloud Storage', href: '/quantum-secure-cloud-storage', description: 'Future-proof storage with quantum-resistant encryption', price: '$199/month' },
+      { name: 'Zero Trust Network Architecture 2.0', href: '/zero-trust-network-architecture-2', description: 'Next-generation zero trust security with AI and quantum encryption', price: '$4,999/month' }
+    ]
+  }
   }
 ];
 
 const companyLinks = [
   { name: 'About Us', href: '/about' },
+  { name: 'Revolutionary 2026', href: '/revolutionary-2026-services' },
   { name: '2026 Services', href: '/2026-services-showcase' },
   { name: 'All Services', href: '/services' },
   { name: 'Pricing', href: '/pricing' },
