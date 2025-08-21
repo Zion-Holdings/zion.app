@@ -74,16 +74,7 @@ export default function Revolutionary2025ServicesShowcase() {
   };
 
   return (
-    <UltraQuantumHolographicBackground 
-      intensity="extreme" 
-      colorScheme="quantum-field"
-      particleCount={800}
-      animationSpeed={2.5}
-      enableHolographic={true}
-      enableQuantumEffects={true}
-      enableNeuralNetwork={true}
-      enableCosmicWaves={true}
-    >
+    <UltraQuantumHolographicBackground intensity={2.0}>
       <div className="min-h-screen">
         <Head>
           <title>Revolutionary 2025 Services Showcase - Zion Tech Group | Cutting-Edge AI & IT Solutions</title>

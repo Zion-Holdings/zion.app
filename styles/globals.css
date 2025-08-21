@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom radial gradients for futuristic backgrounds */
+.bg-radial-gradient-1 {
+  background: radial-gradient(circle at 20% 20%, rgba(6, 182, 212, 0.1) 0%, transparent 50%);
+}
+
+.bg-radial-gradient-2 {
+  background: radial-gradient(circle at 80% 30%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+}
+
+.bg-radial-gradient-3 {
+  background: radial-gradient(circle at 30% 80%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+}
+
 /* Enhanced Futuristic Global Styles */
 :root {
   --neon-cyan: #00ffff;

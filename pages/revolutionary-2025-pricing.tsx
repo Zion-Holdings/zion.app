@@ -141,16 +141,7 @@ export default function Revolutionary2025Pricing() {
   };
 
   return (
-    <UltraQuantumHolographicBackground 
-      intensity="extreme" 
-      colorScheme="quantum-field"
-      particleCount={600}
-      animationSpeed={2.0}
-      enableHolographic={true}
-      enableQuantumEffects={true}
-      enableNeuralNetwork={true}
-      enableCosmicWaves={true}
-    >
+    <UltraQuantumHolographicBackground intensity={2.0}>
       <div className="min-h-screen">
         <Head>
           <title>Revolutionary 2025 Pricing - Zion Tech Group | Competitive AI & IT Solutions</title>
