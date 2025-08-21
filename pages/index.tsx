@@ -6,7 +6,7 @@ import Button from '../components/ui/Button';
 import UltraFuturisticBackground2030 from '../components/ui/UltraFuturisticBackground2030';
 import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
 import UltraAdvancedNavigation2026 from '../components/layout/UltraAdvancedNavigation2026';
-import UltraFuturisticNavigation2030 from '../components/layout/UltraFuturisticNavigation2030';
+import UltraFuturisticNavigation2031 from '../components/layout/UltraFuturisticNavigation2031';
 import UltraFuturisticFooter2030 from '../components/layout/UltraFuturisticFooter2030';
 import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
 import Enhanced2026ServicesShowcase from '../components/sections/Enhanced2026ServicesShowcase';
@@ -76,11 +76,9 @@ import { futuristicAIServices2029 } from '../data/2029-futuristic-ai-services';
 import { emergingTech2029Services } from '../data/2029-emerging-tech-services';
 import { enterpriseIT2029Services } from '../data/2029-enterprise-it-services';
 import { innovativeMicroSaasServices2029 } from '../data/2029-innovative-micro-saas';
-import { aiAutonomousEcosystemServices2029 } from '../data/2029-ai-autonomous-ecosystem';
-import { emergingTechBreakthroughServices2029 } from '../data/2029-emerging-tech-breakthroughs';
-import { practicalBusinessSolutionServices2029 } from '../data/2029-practical-business-solutions';
 import { innovativeMicroSaasServices2029V2 } from '../data/2029-innovative-micro-saas-v2';
-import { emergingTechBreakthroughServices2029V2 } from '../data/2029-emerging-tech-breakthroughs-v2';
+import { innovativeITServices2029V2 } from '../data/2029-innovative-it-services-v2';
+import { innovativeAIServices2029V2 } from '../data/2029-innovative-ai-services-v2';
 
 export default function HomePage() {
   const contactInfo = {
@@ -156,7 +154,8 @@ export default function HomePage() {
     ...enterpriseIT2029Services,
     ...innovativeMicroSaasServices2029,
     ...innovativeMicroSaasServices2029V2,
-    ...emergingTechBreakthroughServices2029V2,
+    ...innovativeITServices2029V2,
+    ...innovativeAIServices2029V2,
     ...enterpriseIT2029Services
   ];
 
@@ -236,7 +235,7 @@ export default function HomePage() {
 
       <UltraFuturisticBackground2030>
         {/* Ultra Advanced Navigation */}
-        <UltraFuturisticNavigation2030 />
+        <UltraFuturisticNavigation2031 />
 
         {/* Ultra Futuristic Hero Section 2030 */}
         <UltraFuturisticHero2030 />
@@ -244,14 +243,10 @@ export default function HomePage() {
         {/* Revolutionary 2027 Hero Section */}
         <Revolutionary2027Hero />
 
-                    {/* Ultra Futuristic 2029 Service Showcase */}
-                    {/* Temporarily commented out due to type mismatch */}
-                    {/* <UltraFuturisticServiceShowcase2029 services={[
-                      ...futuristicAIServices2029,
-                      ...emergingTechServices2029,
-                      ...enterpriseITServices2029,
-                      ...innovativeMicroSaasServices2029
-                    ]} /> */}
+        {/* Ultra Futuristic 2029 Service Showcase */}
+        <UltraFuturisticServiceShowcase2029 services={[
+          ...futuristicAIServices2029
+        ]} />
 
         {/* Revolutionary 2027 Services Showcase */}
         <Revolutionary2027ServicesShowcase />
