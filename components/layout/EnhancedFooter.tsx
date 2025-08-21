@@ -2,9 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { 
   Star, Mail, Phone, MapPin, 
-  Twitter, Linkedin, Github, Globe,
-  ArrowRight, Shield, Zap, Rocket,
-  Brain, Atom, Users, Settings, DollarSign,
+  Linkedin, Github,
+  Shield, Zap, Rocket,
+  Brain, Atom, Users, DollarSign,
   Microscope, Network, Palette, BarChart3, ShieldCheck,
   Instagram, Youtube
 } from 'lucide-react';

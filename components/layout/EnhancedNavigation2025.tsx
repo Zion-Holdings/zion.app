@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Menu, ChevronDown, Search, 
+  Menu, ChevronDown,
   Brain, Rocket, Shield, 
-  Zap, Star,
+  Zap,
   Target, Atom,
-  Palette, BookOpen, GraduationCap, Heart,
+  BookOpen,
   Truck, DollarSign, BarChart3, Globe, Users, X, Phone, Mail, MapPin, ArrowRight
 } from 'lucide-react';
 
