@@ -15,6 +15,10 @@ import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
 import { additionalEnhancedServices } from '../data/additional-real-services';
+import RevolutionaryFuturisticBackground from '../components/ui/RevolutionaryFuturisticBackground';
+import RevolutionaryHero from '../components/sections/RevolutionaryHero';
+import RevolutionaryServicesShowcase from '../components/sections/RevolutionaryServicesShowcase';
+import { revolutionaryMicroSaasServices } from '../data/revolutionary-micro-saas-services';
 
 export default function HomePage() {
   const heroStats = [
