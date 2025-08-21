@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import Card from '../components/ui/Card';
+
 
 export default function CookiesPage() {
   return (
@@ -31,14 +31,14 @@ export default function CookiesPage() {
       <section className="py-24 bg-gradient-to-b from-cursor-dark to-cursor-darker">
         <div className="container-cursor">
           <div className="max-w-4xl mx-auto space-y-12">
-            <Card className="hover:border-cursor-blue/30">
+            <div className="hover:border-cursor-blue/30 p-6 bg-black/40 border border-gray-700/50 rounded-lg backdrop-blur-sm">
               <h2 className="text-3xl font-bold mb-6 text-cursor-blue">What Are Cookies?</h2>
               <p className="text-gray-300 leading-relaxed mb-4">
                 Cookies are small text files that are placed on your device when you visit our website. They help us provide you with a better experience by remembering your preferences and analyzing how you use our site.
               </p>
-            </Card>
+            </div>
 
-            <Card className="hover:border-cursor-blue/30">
+            <div className="hover:border-cursor-blue/30 p-6 bg-black/40 border border-gray-700/50 rounded-lg backdrop-blur-sm">
               <h2 className="text-3xl font-bold mb-6 text-cursor-blue">How We Use Cookies</h2>
               <p className="text-gray-300 leading-relaxed mb-4">
                 We use cookies for several purposes:
@@ -49,9 +49,9 @@ export default function CookiesPage() {
                 <li>• Preference cookies to remember your settings</li>
                 <li>• Security cookies to protect against fraud</li>
               </ul>
-            </Card>
+            </div>
 
-            <Card className="hover:border-cursor-blue/30">
+            <div className="hover:border-cursor-blue/30 p-6 bg-black/40 border border-gray-700/50 rounded-lg backdrop-blur-sm">
               <h2 className="text-3xl font-bold mb-6 text-cursor-blue">Types of Cookies We Use</h2>
               <div className="space-y-4">
                 <div>
@@ -73,9 +73,9 @@ export default function CookiesPage() {
                   </p>
                 </div>
               </div>
-            </Card>
+            </div>
 
-            <Card className="hover:border-cursor-blue/30">
+            <div className="hover:border-cursor-blue/30 p-6 bg-black/40 border border-gray-700/50 rounded-lg backdrop-blur-sm">
               <h2 className="text-3xl font-bold mb-6 text-cursor-blue">Managing Your Cookie Preferences</h2>
               <p className="text-gray-300 leading-relaxed mb-4">
                 You can control and manage cookies in several ways:
@@ -85,9 +85,9 @@ export default function CookiesPage() {
                 <li>• Cookie consent management tools</li>
                 <li>• Third-party opt-out mechanisms</li>
               </ul>
-            </Card>
+            </div>
 
-            <Card className="hover:border-cursor-blue/30">
+            <div className="hover:border-cursor-blue/30 p-6 bg-black/40 border border-gray-700/50 rounded-lg backdrop-blur-sm">
               <h2 className="text-3xl font-bold mb-6 text-cursor-blue">Third-Party Cookies</h2>
               <p className="text-gray-300 leading-relaxed mb-4">
                 Some cookies on our site are set by third-party services that we use, such as analytics providers and social media platforms.
@@ -95,21 +95,21 @@ export default function CookiesPage() {
               <p className="text-gray-400 leading-relaxed">
                 These third parties have their own privacy policies and cookie practices.
               </p>
-            </Card>
+            </div>
 
-            <Card className="hover:border-cursor-blue/30">
+            <div className="hover:border-cursor-blue/30 p-6 bg-black/40 border border-gray-700/50 rounded-lg backdrop-blur-sm">
               <h2 className="text-3xl font-bold mb-6 text-cursor-blue">Updates to This Policy</h2>
               <p className="text-gray-300 leading-relaxed">
                 We may update this Cookie Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons.
               </p>
-            </Card>
+            </div>
 
-            <Card className="hover:border-cursor-blue/30">
+            <div className="hover:border-cursor-blue/30 p-6 bg-black/40 border border-gray-700/50 rounded-lg backdrop-blur-sm">
               <h2 className="text-3xl font-bold mb-6 text-cursor-blue">Contact Us</h2>
               <p className="text-gray-300 leading-relaxed">
                 If you have any questions about our use of cookies, please contact us through our website or email us directly.
               </p>
-            </Card>
+            </div>
           </div>
         </div>
       </section>

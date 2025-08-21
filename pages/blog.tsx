@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
-import Card from '../components/ui/Card';
-import Button from '../components/ui/Button';
+
+
 
 export default function BlogPage() {
   const blogPosts = [
@@ -106,9 +106,7 @@ export default function BlogPage() {
           <div className="flex flex-wrap justify-center gap-4">
             {categories.map((category) => (
               <button
-                key={category}
-                className="px-6 py-3 rounded-full bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white transition-all duration-200 border border-gray-700 hover:border-blue-500"
-              >
+                key={category} className="px-6 py-3 rounded-full bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white transition-all duration-200 border border-gray-700 hover:border-blue-500">
                 {category}
               </button>
             ))}
@@ -126,7 +124,7 @@ export default function BlogPage() {
               </span>
             </div>
             
-            <Card className="p-12 group hover:border-blue-400/30">
+            <div className="p-12 group hover:border-blue-400/30 p-6 bg-black/40 border border-gray-700/50 rounded-lg backdrop-blur-sm">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div className="text-center lg:text-left">
                   <span className={`inline-block px-3 py-1 bg-gray-800 text-sm rounded-full mb-4 ${post.color}`}>
@@ -154,13 +152,10 @@ export default function BlogPage() {
                     </div>
                   </div>
                   
-                  <Button
-                    href="/blog/ai-automation-trends-2025"
-                    size="lg"
-                    className="group-hover:scale-105 transition-transform duration-200"
-                  >
+                  <a
+                    href="/blog/ai-automation-trends-2025" className="group-hover:scale-105 transition-transform duration-200">
                     Read Full Article
-                  </Button>
+                  </a>
                 </div>
                 
                 <div className="text-center">
@@ -169,7 +164,7 @@ export default function BlogPage() {
                   </div>
                 </div>
               </div>
-            </Card>
+            </div>
           </div>
         </section>
       ))}
@@ -188,9 +183,8 @@ export default function BlogPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.filter(post => !post.featured).map((post, index) => (
-              <Card
-                key={index}
-                className="group hover:border-blue-400/30 overflow-hidden"
+              <div
+                key={index} className="group hover:border-blue-400/30 overflow-hidden p-6 bg-black/40 border border-gray-700/50 rounded-lg backdrop-blur-sm"
                 style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
               >
                 <div className="text-6xl mb-6 text-center group-hover:scale-110 transition-transform duration-300">
@@ -224,15 +218,11 @@ export default function BlogPage() {
                   </div>
                 </div>
 
-                <Button
-                  href="/blog/ai-automation-trends-2025"
-                  variant="outline"
-                  size="sm"
-                  className="w-full"
-                >
+                <a
+                  href="/blog/ai-automation-trends-2025" className="w-full px-6 py-3 bg-gradient-to-r from-cyan-600 to-blue-700 hover:from-cyan-700 hover:to-blue-800 text-white font-semibold rounded-lg transition-all duration-200">
                   Read Article
-                </Button>
-              </Card>
+                </a>
+              </div>
             ))}
           </div>
         </div>
@@ -241,7 +231,7 @@ export default function BlogPage() {
       {/* Newsletter Signup */}
       <section className="py-20 bg-gray-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Card className="p-12">
+          <div className="p-12 p-6 bg-black/40 border border-gray-700/50 rounded-lg backdrop-blur-sm">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
               Stay Updated
             </h2>
@@ -252,22 +242,18 @@ export default function BlogPage() {
             <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input
                 type="email"
-                placeholder="Enter your email address"
-                className="flex-1 px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                placeholder="Enter your email address" className="flex-1 px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
-              <Button
-                type="submit"
-                size="md"
-                className="whitespace-nowrap"
-              >
+              <button
+                type="submit" className="whitespace-nowrap px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors">
                 Subscribe
-              </Button>
+              </button>
             </form>
             
             <p className="text-gray-500 text-sm mt-4">
               No spam, unsubscribe at any time. We respect your privacy.
             </p>
-          </Card>
+          </div>
         </div>
       </section>
 
@@ -281,22 +267,14 @@ export default function BlogPage() {
                          Let&apos;s discuss how our AI-powered solutions can drive innovation and growth.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              href="/contact"
-              variant="secondary"
-              size="lg"
-              className="bg-white text-blue-600 hover:bg-gray-100"
-            >
+            <a
+              href="/contact" className="bg-white text-blue-600 hover:bg-gray-100">
               Get Started
-            </Button>
-            <Button
-              href="/services"
-              variant="outline"
-              size="lg"
-              className="border-white text-white hover:bg-white hover:text-blue-600"
-            >
+            </a>
+            <a
+              href="/services" className="border-white text-white hover:bg-white hover:text-blue-600">
               Explore Services
-            </Button>
+            </a>
           </div>
         </div>
       </section>

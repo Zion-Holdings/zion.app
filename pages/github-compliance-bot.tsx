@@ -1,17 +1,10 @@
 import React from 'react';
 import Head from 'next/head';
-import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import Layout from '../components/layout/Layout';
 
 export default function GitHubComplianceBotPage() {
   return (
-    <UltraAdvancedFuturisticBackground 
-  intensity="high" 
-  colorScheme="quantum-fusion"
-  particleCount={300}
-  animationSpeed={1.5}
-  enableHolographic={true}
-  enableQuantumEffects={true}
->
+    <Layout>
       <Head>
         <title>GitHub Compliance Bot | Zion Tech Group</title>
         <meta name="description" content="Automated GitHub compliance checks for SOC 2, ISO 27001, secrets scanning, and repo hygiene with reports and alerts." />
@@ -32,7 +25,7 @@ export default function GitHubComplianceBotPage() {
           </div>
         </div>
       </div>
-    </UltraAdvancedFuturisticBackground>
+    </Layout>
   );
 }
 

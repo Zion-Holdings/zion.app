@@ -1,8 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
 import { Phone, Mail, MapPin, Check } from 'lucide-react';
-import Button from '../components/ui/Button';
-import Card from '../components/ui/Card';
+
+
 import QuantumHolographicMatrixBackground from '../components/ui/QuantumHolographicMatrixBackground';
 import ServiceAds from '../components/sections/ServiceAds';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
@@ -58,9 +58,9 @@ export default function MicroSaasPage() {
             Transform your business with ready-to-run micro SaaS and AI offerings. Predictable pricing, fast setup, and measurable ROI.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-6 text-center">
-            <div className="flex items-center gap-2 text-cyan-400"><Phone className="w-5 h-5" /><span>{contactInfo.mobile}</span></div>
-            <div className="flex items-center gap-2 text-purple-400"><Mail className="w-5 h-5" /><span>{contactInfo.email}</span></div>
-            <div className="flex items-center gap-2 text-green-400"><MapPin className="w-5 h-5" /><span className="text-sm">{contactInfo.address}</span></div>
+            <div className="flex items-center gap-2 text-cyan-400 w-5 h-5"><Phone /><span>{contactInfo.mobile}</span></div>
+            <div className="flex items-center gap-2 text-purple-400 w-5 h-5"><Mail /><span>{contactInfo.email}</span></div>
+            <div className="flex items-center gap-2 text-green-400 w-5 h-5 text-sm"><MapPin /><span >{contactInfo.address}</span></div>
           </div>
         </div>
       </section>
@@ -72,23 +72,23 @@ export default function MicroSaasPage() {
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Popular Real Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {topRealServices.map((s) => (
-              <Card key={s.id} className="p-6 bg-black/40 border border-gray-700/50">
+              <div key={s.id} className="p-6 bg-black/40 border border-gray-700/50 p-6 bg-black/40 border border-gray-700/50 rounded-lg backdrop-blur-sm">
                 <div className="text-sm text-gray-400 mb-1">{s.category}</div>
                 <h3 className="text-xl font-semibold text-white mb-2">{s.name}</h3>
                 <p className="text-gray-300 mb-4 line-clamp-3">{s.description}</p>
                 <ul className="space-y-2 text-gray-300 mb-4">
                   {(s.features || []).slice(0, 4).map((f) => (
-                    <li key={f} className="flex items-start gap-2"><Check className="w-4 h-4 text-emerald-400 mt-0.5" />{f}</li>
+                    <li key={f} className="flex items-start gap-2 w-4 h-4 text-emerald-400 mt-0.5"><Check />{f}</li>
                   ))}
                 </ul>
                 <div className="flex items-center justify-between mt-auto">
-                  <div className="text-2xl font-bold text-white">{s.price}<span className="text-base text-gray-400">{s.period}</span></div>
+                  <div className="text-2xl font-bold text-white text-base text-gray-400">{s.price}<span >{s.period}</span></div>
                   <div className="flex gap-2">
-                    <Button href={s.link} className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white">Learn More</Button>
-                    <Button href="/contact" variant="outline" className="border border-gray-600 text-gray-200">Contact</Button>
+                    <a href={s.link} className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white">Learn More</a>
+                    <a href="/contact" className="border border-gray-600 text-gray-200">Contact</a>
                   </div>
                 </div>
-              </Card>
+              </div>
             ))}
           </div>
         </div>

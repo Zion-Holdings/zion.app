@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import Card from '../components/ui/Card';
-import Button from '../components/ui/Button';
+
+
 
 export default function AboutPage() {
   const values = [
@@ -83,7 +83,7 @@ export default function AboutPage() {
       <section className="section-padding bg-gradient-cursor-accent">
         <div className="container-cursor">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
-            <Card className="card-hover group border-gradient-blue hover:border-cyan-400/40 hover:shadow-2xl hover:shadow-cyan-400/20">
+            <div className="card-hover group border-gradient-blue hover:border-cyan-400/40 hover:shadow-2xl hover:shadow-cyan-400/20 p-6 bg-black/40 border border-gray-700/50 rounded-lg backdrop-blur-sm">
               <h2 className="text-3xl font-bold mb-6 text-cyan-400">Our Mission</h2>
               <p className="text-lg text-gray-300 mb-4 leading-relaxed">
                 To create a world where technology operates autonomously, continuously improving and innovating without human intervention.
@@ -91,8 +91,8 @@ export default function AboutPage() {
               <p className="text-gray-400 leading-relaxed">
                 We believe in the power of AI to solve complex problems, automate routine tasks, and unlock new possibilities for humanity.
               </p>
-            </Card>
-            <Card className="card-hover group border-gradient-purple hover:border-fuchsia-400/40 hover:shadow-2xl hover:shadow-fuchsia-400/20">
+            </div>
+            <div className="card-hover group border-gradient-purple hover:border-fuchsia-400/40 hover:shadow-2xl hover:shadow-fuchsia-400/20 p-6 bg-black/40 border border-gray-700/50 rounded-lg backdrop-blur-sm">
               <h2 className="text-3xl font-bold mb-6 text-fuchsia-400">Our Vision</h2>
               <p className="text-lg text-gray-300 mb-4 leading-relaxed">
                 To be the leading force in autonomous technology, creating systems that think, learn, and evolve independently.
@@ -100,7 +100,7 @@ export default function AboutPage() {
               <p className="text-gray-400 leading-relaxed">
                 We envision a future where AI and automation work seamlessly together to enhance human capabilities and drive progress.
               </p>
-            </Card>
+            </div>
           </div>
         </div>
       </section>
@@ -115,7 +115,7 @@ export default function AboutPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {values.map((value, index) => (
-              <Card key={index} className="card-hover text-center group border-gradient-blue" style={{ animationDelay: `${index * 0.1}s` }}>
+              <div key={index} className="card-hover text-center group border-gradient-blue p-6 bg-black/40 border border-gray-700/50 rounded-lg backdrop-blur-sm" style={{ animationDelay: `${index * 0.1}s` }}>
                 <div className="relative">
                   <div className={`w-16 h-16 mx-auto mb-6 rounded-2xl flex items-center justify-center text-2xl bg-gradient-to-br ${value.gradient} shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                     {value.icon}
@@ -123,7 +123,7 @@ export default function AboutPage() {
                 </div>
                 <h3 className={`text-2xl font-bold mb-4 ${value.color}`}>{value.title}</h3>
                 <p className="text-gray-400 leading-relaxed">{value.description}</p>
-              </Card>
+              </div>
             ))}
           </div>
         </div>
@@ -139,7 +139,7 @@ export default function AboutPage() {
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {services.map((service, index) => (
-              <Card key={index} className="card-hover group border-gradient-blue" style={{ animationDelay: `${index * 0.1}s` }}>
+              <div key={index} className="card-hover group border-gradient-blue p-6 bg-black/40 border border-gray-700/50 rounded-lg backdrop-blur-sm" style={{ animationDelay: `${index * 0.1}s` }}>
                 <div className="flex items-start space-x-6">
                   <div className="relative">
                     <div className={`w-16 h-16 rounded-2xl flex items-center justify-center text-2xl bg-gradient-to-br ${service.gradient} shadow-lg group-hover:scale-110 transition-transform duration-300`}>
@@ -151,7 +151,7 @@ export default function AboutPage() {
                     <p className="text-gray-400 leading-relaxed">{service.description}</p>
                   </div>
                 </div>
-              </Card>
+              </div>
             ))}
           </div>
         </div>
@@ -178,8 +178,8 @@ export default function AboutPage() {
             Let&apos;s work together to build the next generation of autonomous technology and shape the future of innovation.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button href="/contact" size="lg" className="bg-white text-cursor-blue hover:bg-gray-100 shadow-2xl hover-glow">Get in Touch</Button>
-            <Button href="/services" variant="outline" size="lg" className="border-white text-white hover:bg:white hover:text-cursor-blue shadow-2xl">Explore Services</Button>
+            <a href="/contact" className="bg-white text-cursor-blue hover:bg-gray-100 shadow-2xl hover-glow px-6 py-3 rounded-lg font-medium">Get in Touch</a>
+            <a href="/services" className="border-white text-white hover:bg-white hover:text-cursor-blue shadow-2xl px-6 py-3 rounded-lg font-medium border">Explore Services</a>
           </div>
         </div>
       </section>

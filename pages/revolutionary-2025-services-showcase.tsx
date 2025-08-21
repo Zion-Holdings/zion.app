@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
 import { Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Code, BookOpen, Activity, Play, Mail, Phone, MapPin, Filter, Grid, List, ChevronDown, ChevronUp, Sparkles, FlaskConical, Dna, Car, Leaf, Factory, Truck, Microscope, GraduationCap, ShieldCheck, Brain, Atom, Globe2, Bot, ChevronRight, Crown, Infinity, Zap as ZapIcon, Shield as ShieldIcon, Users as UsersIcon, Globe as GlobeIcon, Cpu as CpuIcon, Database as DatabaseIcon, Cloud as CloudIcon, Smartphone as SmartphoneIcon, Palette as PaletteIcon, Search as SearchIcon, MessageSquare as MessageSquareIcon, FileText as FileTextIcon, Calendar as CalendarIcon, CreditCard as CreditCardIcon, BarChart3 as BarChart3Icon, Settings as SettingsIcon, Code as CodeIcon, BookOpen as BookIcon, Activity as ActivityIcon, Database as DatabaseIcon2, Play as PlayIcon, Mail as MailIcon, Phone as PhoneIcon, MapPin as MapPinIcon, Filter as FilterIcon, Grid as GridIcon, List as ListIcon, ChevronDown as ChevronDownIcon, ChevronUp as ChevronUpIcon, Sparkles as SparklesIcon, FlaskConical as FlaskConicalIcon, Dna as DnaIcon, Car as CarIcon, Leaf as LeafIcon, Factory as FactoryIcon, Truck as TruckIcon, Microscope as MicroscopeIcon, GraduationCap as GraduationCapIcon, ShieldCheck as ShieldCheckIcon, Brain as BrainIcon, Atom as AtomIcon, Globe2 as Globe2Icon, Bot as BotIcon, ChevronRight as ChevronRightIcon, Eye, Heart, Share2, Download, Bookmark, ThumbsUp, MessageCircle, Share, Users as UsersIcon2, Target as TargetIcon, Zap as ZapIcon2 } from 'lucide-react';
-import Button from '../components/ui/Button';
+
 import UltraQuantumHolographicBackground from '../components/ui/UltraQuantumHolographicBackground';
 import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
 import { revolutionaryAI2025Services } from '../data/revolutionary-2025-ai-services';
@@ -112,9 +112,7 @@ export default function Revolutionary2025ServicesShowcase() {
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 0.1 }}
-                  className="bg-gradient-to-br from-blue-600/20 to-purple-600/20 backdrop-blur-sm rounded-2xl p-6 border border-blue-500/30"
-                >
+                  transition={{ duration: 0.6, delay: 0.1 }} className="bg-gradient-to-br from-blue-600/20 to-purple-600/20 backdrop-blur-sm rounded-2xl p-6 border border-blue-500/30">
                   <div className="text-3xl font-bold text-blue-400">{stats.totalServices}</div>
                   <div className="text-sm text-gray-400">Revolutionary Services</div>
                 </motion.div>
@@ -122,9 +120,7 @@ export default function Revolutionary2025ServicesShowcase() {
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                  className="bg-gradient-to-br from-green-600/20 to-emerald-600/20 backdrop-blur-sm rounded-2xl p-6 border border-green-500/30"
-                >
+                  transition={{ duration: 0.6, delay: 0.2 }} className="bg-gradient-to-br from-green-600/20 to-emerald-600/20 backdrop-blur-sm rounded-2xl p-6 border border-green-500/30">
                   <div className="text-3xl font-bold text-green-400">{stats.totalCustomers.toLocaleString()}+</div>
                   <div className="text-sm text-gray-400">Active Customers</div>
                 </motion.div>
@@ -132,9 +128,7 @@ export default function Revolutionary2025ServicesShowcase() {
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 0.3 }}
-                  className="bg-gradient-to-br from-purple-600/20 to-pink-600/20 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/30"
-                >
+                  transition={{ duration: 0.6, delay: 0.3 }} className="bg-gradient-to-br from-purple-600/20 to-pink-600/20 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/30">
                   <div className="text-3xl font-bold text-purple-400">{stats.averageRating}</div>
                   <div className="text-sm text-gray-400">Average Rating</div>
                 </motion.div>
@@ -142,31 +136,21 @@ export default function Revolutionary2025ServicesShowcase() {
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                  className="bg-gradient-to-br from-orange-600/20 to-red-600/20 backdrop-blur-sm rounded-2xl p-6 border border-orange-500/30"
-                >
+                  transition={{ duration: 0.6, delay: 0.4 }} className="bg-gradient-to-br from-orange-600/20 to-red-600/20 backdrop-blur-sm rounded-2xl p-6 border border-orange-500/30">
                   <div className="text-3xl font-bold text-orange-400">${(stats.totalRevenue / 1000000).toFixed(1)}M+</div>
                   <div className="text-sm text-gray-400">Revenue Generated</div>
                 </motion.div>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button
-                  variant="primary"
-                  size="lg"
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
-                >
+                <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
                   <Phone className="w-5 h-5 mr-2" />
                   Contact Us: {contactInfo.mobile}
-                </Button>
-                <Button
-                  variant="secondary"
-                  size="lg"
-                  className="border-blue-500 text-blue-400 hover:bg-blue-500/20"
-                >
+                </button>
+                <button className="border-blue-500 text-blue-400 hover:bg-blue-500/20">
                   <Mail className="w-5 h-5 mr-2" />
                   {contactInfo.email}
-                </Button>
+                </button>
               </div>
             </motion.div>
           </div>
@@ -205,9 +189,7 @@ export default function Revolutionary2025ServicesShowcase() {
                   <span className="text-gray-400 text-sm">Sort by:</span>
                   <select
                     value={sortBy}
-                    onChange={(e) => setSortBy(e.target.value as any)}
-                    className="bg-gray-800 border border-gray-600 rounded-lg px-3 py-2 text-gray-300 text-sm focus:outline-none focus:border-blue-500"
-                  >
+                    onChange={(e) => setSortBy(e.target.value as any)} className="bg-gray-800 border border-gray-600 rounded-lg px-3 py-2 text-gray-300 text-sm focus:outline-none focus:border-blue-500">
                     <option value="popularity">Popularity</option>
                     <option value="rating">Rating</option>
                     <option value="price">Price</option>
@@ -338,21 +320,13 @@ export default function Revolutionary2025ServicesShowcase() {
 
                   {/* Actions */}
                   <div className="flex items-center gap-3">
-                    <Button
-                      variant="primary"
-                      size="sm"
-                      className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
-                    >
+                    <button className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
                       <ExternalLink className="w-4 h-4 mr-2" />
                       Learn More
-                    </Button>
-                    <Button
-                      variant="secondary"
-                      size="sm"
-                      className="border-blue-500 text-blue-400 hover:bg-blue-500/20"
-                    >
+                    </button>
+                    <button className="border-blue-500 text-blue-400 hover:bg-blue-500/20">
                       <Phone className="w-4 h-4" />
-                    </Button>
+                    </button>
                   </div>
 
                   {/* Hover Effects */}
@@ -401,22 +375,14 @@ export default function Revolutionary2025ServicesShowcase() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button
-                  variant="primary"
-                  size="lg"
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
-                >
+                <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
                   <Rocket className="w-5 h-5 mr-2" />
                   Start Your Transformation
-                </Button>
-                <Button
-                  variant="secondary"
-                  size="lg"
-                  className="border-blue-500 text-blue-400 hover:bg-blue-500/20"
-                >
+                </button>
+                <button className="border-blue-500 text-blue-400 hover:bg-blue-500/20">
                   <BookOpen className="w-5 h-5 mr-2" />
                   Download Brochure
-                </Button>
+                </button>
               </div>
             </motion.div>
           </div>

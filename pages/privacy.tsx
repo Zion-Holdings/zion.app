@@ -1,9 +1,9 @@
 import Head from 'next/head';
-import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import Layout from '../components/layout/Layout';
 
 export default function PrivacyPolicyPage() {
   return (
-    <UltraAdvancedFuturisticBackground>
+    <Layout>
       <Head>
         <title>Privacy Policy | Zion Tech Group</title>
         <meta name="description" content="Zion Tech Group Privacy Policy: data collection, usage, security, and contact details." />
@@ -37,13 +37,13 @@ export default function PrivacyPolicyPage() {
             <p>Depending on your jurisdiction, you may request access, correction, deletion, or restriction of your data. Contact us to exercise rights.</p>
             <h2 className="text-2xl font-semibold text-white">Contact</h2>
             <p>
-              Email: <a className="text-cyan-300 underline" href="mailto:kleber@ziontechgroup.com">kleber@ziontechgroup.com</a> · Phone: <a className="text-cyan-300 underline" href="tel:+13024640950">+1 302 464 0950</a><br/>
+              Email: <a  href="mailto:kleber@ziontechgroup.com" className="text-cyan-300 underline text-cyan-300 underline">kleber@ziontechgroup.com</a> · Phone: <a  href="tel:+13024640950">+1 302 464 0950</a><br/>
               Address: 364 E Main St STE 1008, Middletown, DE 19709
             </p>
           </section>
         </div>
       </div>
-    </UltraAdvancedFuturisticBackground>
+    </Layout>
   );
 }
 

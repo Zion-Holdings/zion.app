@@ -1,12 +1,12 @@
 import React from 'react';
 import Head from 'next/head';
-import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
-import Button from '../components/ui/Button';
-import Card from '../components/ui/Card';
+import Layout from '../components/layout/Layout';
+
+
 
 export default function BiotechAIResearchPlatformPage() {
   return (
-    <UltraAdvancedFuturisticBackground>
+    <Layout>
       <Head>
         <title>Biotech AI Research Platform | Zion Tech Group</title>
         <meta name="description" content="Advanced AI platform for biotechnology research—drug discovery, genetic analysis, and trial optimization." />
@@ -19,22 +19,22 @@ export default function BiotechAIResearchPlatformPage() {
             <p className="mt-4 text-slate-300">Accelerate discovery with intelligent automation across analysis and experimentation.</p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <Card className="lg:col-span-2 p-6 bg-black/40 border border-gray-700/50">
+            <div className="lg:col-span-2 p-6 bg-black/40 border border-gray-700/50 p-6 bg-black/40 border border-gray-700/50 rounded-lg backdrop-blur-sm">
               <h2 className="text-white text-xl font-semibold mb-3">Overview</h2>
               <p className="text-slate-300">Drug discovery automation, sequence analysis, structure prediction, trial optimization, and compliance workflows with auditability.</p>
-            </Card>
-            <Card className="p-6 bg-black/40 border border-gray-700/50">
-              <div className="text-3xl font-bold text-white">Starting at $12,999<span className="text-base font-medium text-gray-400">/month</span></div>
+            </div>
+            <div className="p-6 bg-black/40 border border-gray-700/50 p-6 bg-black/40 border border-gray-700/50 rounded-lg backdrop-blur-sm">
+              <div className="text-3xl font-bold text-white text-base font-medium text-gray-400">Starting at $12,999<span >/month</span></div>
               <div className="text-sm text-gray-400 mt-2">Trial: 30 days • Setup: 1–2 weeks</div>
               <div className="mt-6 flex gap-3">
-                <Button href="/contact" className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 text-white">Contact Sales</Button>
-                <Button href="/services" variant="outline" className="flex-1 border border-gray-600 text-gray-200">Explore Services</Button>
+                <a href="/contact" className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 text-white">Contact Sales</a>
+                <a href="/services" className="flex-1 border border-gray-600 text-gray-200">Explore Services</a>
               </div>
-            </Card>
+            </div>
           </div>
         </div>
       </div>
-    </UltraAdvancedFuturisticBackground>
+    </Layout>
   );
 }
 

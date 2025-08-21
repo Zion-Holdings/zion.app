@@ -1,10 +1,10 @@
 import React from 'react';
 import Head from 'next/head';
-import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import Layout from '../components/layout/Layout';
 
 export default function IncidentPostmortemGeneratorPage() {
   return (
-    <UltraAdvancedFuturisticBackground>
+    <Layout>
       <Head>
         <title>Incident Postmortem Generator | Zion Tech Group</title>
         <meta name="description" content="AI-assisted incident RCA with timeline, impact, stakeholder comms, templates, and reviewer workflows." />
@@ -25,7 +25,7 @@ export default function IncidentPostmortemGeneratorPage() {
           </div>
         </div>
       </div>
-    </UltraAdvancedFuturisticBackground>
+    </Layout>
   );
 }
 

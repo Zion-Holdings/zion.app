@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import Head from 'next/head';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Star, TrendingUp, Zap, Shield, Brain, Atom, Rocket, ArrowRight, CheckCircle, Users, DollarSign, Clock, Search, Filter, Grid, List, ChevronDown, ChevronUp, Sparkles, FlaskConical, Dna, Car, Leaf, Factory, Truck, Microscope, GraduationCap, ShieldCheck, Globe2, Bot, ChevronRight, Crown, Phone, Mail, MapPin } from 'lucide-react';
-import Button from '../components/ui/Button';
-import UltraAdvancedFuturisticBackground2026 from '../components/ui/UltraAdvancedFuturisticBackground2026';
+
+import Layout from '../components/layout/Layout';
 import { revolutionary2026MicroSaasServices } from '../data/revolutionary-2026-micro-saas-services';
 import { revolutionary2026ITServices } from '../data/revolutionary-2026-it-services';
 import { revolutionary2026AIServices } from '../data/revolutionary-2026-ai-services';
@@ -95,7 +95,7 @@ export default function Revolutionary2026ServicesPage() {
   };
 
   return (
-    <UltraAdvancedFuturisticBackground2026>
+    <Layout>
       <Head>
         <title>Revolutionary 2026 Services - Zion Tech Group</title>
         <meta name="description" content="Experience the future of technology with our cutting-edge micro SAAS, IT, and AI services. Built for tomorrow, available today." />
@@ -118,9 +118,7 @@ export default function Revolutionary2026ServicesPage() {
             >
               <motion.div
                 animate={{ rotate: [0, 5, -5, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="inline-block mb-8"
-              >
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }} className="inline-block mb-8">
                 <div className="w-24 h-24 mx-auto bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 rounded-full flex items-center justify-center">
                   <Rocket className="w-12 h-12 text-white" />
                 </div>
@@ -153,9 +151,7 @@ export default function Revolutionary2026ServicesPage() {
                 <motion.a
                   href={`tel:${contactInfo.mobile}`}
                   whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-xl hover:shadow-cyan-500/40 transition-all duration-200"
-                >
+                  whileTap={{ scale: 0.95 }} className="flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-xl hover:shadow-cyan-500/40 transition-all duration-200">
                   <Phone className="w-5 h-5" />
                   <span>Call {contactInfo.mobile}</span>
                 </motion.a>
@@ -163,9 +159,7 @@ export default function Revolutionary2026ServicesPage() {
                 <motion.a
                   href={`mailto:${contactInfo.email}`}
                   whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="flex items-center space-x-2 px-8 py-4 border-2 border-cyan-500/50 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-500/10 transition-all duration-200"
-                >
+                  whileTap={{ scale: 0.95 }} className="flex items-center space-x-2 px-8 py-4 border-2 border-cyan-500/50 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-500/10 transition-all duration-200">
                   <Mail className="w-5 h-5" />
                   <span>Email Us</span>
                 </motion.a>
@@ -186,8 +180,7 @@ export default function Revolutionary2026ServicesPage() {
                     type="text"
                     placeholder="Search services..."
                     value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500/50 focus:ring-2 focus:ring-cyan-500/25"
+                    onChange={(e) => setSearchTerm(e.target.value)} className="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500/50 focus:ring-2 focus:ring-cyan-500/25"
                   />
                 </div>
 
@@ -195,9 +188,7 @@ export default function Revolutionary2026ServicesPage() {
                 <div className="relative">
                   <select
                     value={selectedCategory}
-                    onChange={(e) => setSelectedCategory(e.target.value)}
-                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white focus:outline-none focus:border-cyan-500/50 focus:ring-2 focus:ring-cyan-500/25 appearance-none"
-                  >
+                    onChange={(e) => setSelectedCategory(e.target.value)} className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white focus:outline-none focus:border-cyan-500/50 focus:ring-2 focus:ring-cyan-500/25 appearance-none">
                     {categories.map((category) => (
                       <option key={category.id} value={category.id}>
                         {category.name} ({category.count})
@@ -211,9 +202,7 @@ export default function Revolutionary2026ServicesPage() {
                 <div className="relative">
                   <select
                     value={selectedPriceRange}
-                    onChange={(e) => setSelectedPriceRange(e.target.value)}
-                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white focus:outline-none focus:border-cyan-500/50 focus:ring-2 focus:ring-cyan-500/25 appearance-none"
-                  >
+                    onChange={(e) => setSelectedPriceRange(e.target.value)} className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white focus:outline-none focus:border-cyan-500/50 focus:ring-2 focus:ring-cyan-500/25 appearance-none">
                     {priceRanges.map((range) => (
                       <option key={range.id} value={range.id}>
                         {range.name}
@@ -227,9 +216,7 @@ export default function Revolutionary2026ServicesPage() {
                 <div className="relative">
                   <select
                     value={sortBy}
-                    onChange={(e) => setSortBy(e.target.value)}
-                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white focus:outline-none focus:border-cyan-500/50 focus:ring-2 focus:ring-cyan-500/25 appearance-none"
-                  >
+                    onChange={(e) => setSortBy(e.target.value)} className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white focus:outline-none focus:border-cyan-500/50 focus:ring-2 focus:ring-cyan-500/25 appearance-none">
                     {sortOptions.map((option) => (
                       <option key={option.id} value={option.id}>
                         {option.name}
@@ -373,9 +360,7 @@ export default function Revolutionary2026ServicesPage() {
                           {/* CTA Button */}
                           <motion.button
                             whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="w-full bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 group-hover:shadow-lg group-hover:shadow-cyan-500/25"
-                          >
+                            whileTap={{ scale: 0.95 }} className="w-full bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 group-hover:shadow-lg group-hover:shadow-cyan-500/25">
                             Learn More
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                           </motion.button>
@@ -399,9 +384,7 @@ export default function Revolutionary2026ServicesPage() {
                             </div>
                             <motion.button
                               whileHover={{ scale: 1.05 }}
-                              whileTap={{ scale: 0.95 }}
-                              className="bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-lg text-sm"
-                            >
+                              whileTap={{ scale: 0.95 }} className="bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-lg text-sm">
                               Learn More
                             </motion.button>
                           </div>
@@ -437,9 +420,7 @@ export default function Revolutionary2026ServicesPage() {
                 <motion.a
                   href={`tel:${contactInfo.mobile}`}
                   whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-xl hover:shadow-cyan-500/40 transition-all duration-200"
-                >
+                  whileTap={{ scale: 0.95 }} className="flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-xl hover:shadow-cyan-500/40 transition-all duration-200">
                   <Phone className="w-5 h-5" />
                   <span>Call {contactInfo.mobile}</span>
                 </motion.a>
@@ -447,9 +428,7 @@ export default function Revolutionary2026ServicesPage() {
                 <motion.a
                   href={`mailto:${contactInfo.email}`}
                   whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="flex items-center space-x-2 px-8 py-4 border-2 border-cyan-500/50 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-500/10 transition-all duration-200"
-                >
+                  whileTap={{ scale: 0.95 }} className="flex items-center space-x-2 px-8 py-4 border-2 border-cyan-500/50 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-500/10 transition-all duration-200">
                   <Mail className="w-5 h-5" />
                   <span>Email Us</span>
                 </motion.a>
@@ -475,6 +454,6 @@ export default function Revolutionary2026ServicesPage() {
           </div>
         </section>
       </div>
-    </UltraAdvancedFuturisticBackground2026>
+    </Layout>
   );
 }

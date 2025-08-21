@@ -155,16 +155,12 @@ export default function ServicesShowcase2027() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/contact"
-                className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25 flex items-center justify-center space-x-2"
-              >
+                href="/contact" className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25 flex items-center justify-center space-x-2">
                 <Rocket className="w-5 h-5" />
                 <span>Get Started</span>
               </Link>
               <Link
-                href="/pricing"
-                className="px-8 py-4 border border-cyan-500/50 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-500/10 transition-all duration-300 flex items-center justify-center space-x-2"
-              >
+                href="/pricing" className="px-8 py-4 border border-cyan-500/50 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-500/10 transition-all duration-300 flex items-center justify-center space-x-2">
                 <DollarSign className="w-5 h-5" />
                 <span>View Pricing</span>
               </Link>
@@ -185,8 +181,7 @@ export default function ServicesShowcase2027() {
                   type="text"
                   placeholder="Search services..."
                   value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-12 pr-4 py-3 bg-black/60 border border-cyan-500/30 rounded-xl text-white placeholder-cyan-300 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/20"
+                  onChange={(e) => setSearchTerm(e.target.value)} className="w-full pl-12 pr-4 py-3 bg-black/60 border border-cyan-500/30 rounded-xl text-white placeholder-cyan-300 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/20"
                 />
               </div>
             </div>
@@ -198,9 +193,7 @@ export default function ServicesShowcase2027() {
                 <label className="block text-cyan-400 font-medium mb-2">Category</label>
                 <select
                   value={selectedCategory}
-                  onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="w-full px-4 py-3 bg-black/60 border border-cyan-500/30 rounded-xl text-white focus:outline-none focus:border-cyan-400"
-                >
+                  onChange={(e) => setSelectedCategory(e.target.value)} className="w-full px-4 py-3 bg-black/60 border border-cyan-500/30 rounded-xl text-white focus:outline-none focus:border-cyan-400">
                   {categories.map((category) => (
                     <option key={category.id} value={category.id}>
                       {category.icon} {category.name} ({category.count})
@@ -214,9 +207,7 @@ export default function ServicesShowcase2027() {
                 <label className="block text-cyan-400 font-medium mb-2">Price Range</label>
                 <select
                   value={selectedPriceRange}
-                  onChange={(e) => setSelectedPriceRange(e.target.value)}
-                  className="w-full px-4 py-3 bg-black/60 border border-cyan-500/30 rounded-xl text-white focus:outline-none focus:border-cyan-400"
-                >
+                  onChange={(e) => setSelectedPriceRange(e.target.value)} className="w-full px-4 py-3 bg-black/60 border border-cyan-500/30 rounded-xl text-white focus:outline-none focus:border-cyan-400">
                   {priceRanges.map((range) => (
                     <option key={range.id} value={range.id}>
                       {range.name} ({range.count})
@@ -230,9 +221,7 @@ export default function ServicesShowcase2027() {
                 <label className="block text-cyan-400 font-medium mb-2">Sort By</label>
                 <select
                   value={sortBy}
-                  onChange={(e) => setSortBy(e.target.value)}
-                  className="w-full px-4 py-3 bg-black/60 border border-cyan-500/30 rounded-xl text-white focus:outline-none focus:border-cyan-400"
-                >
+                  onChange={(e) => setSortBy(e.target.value)} className="w-full px-4 py-3 bg-black/60 border border-cyan-500/30 rounded-xl text-white focus:outline-none focus:border-cyan-400">
                   <option value="name">Name</option>
                   <option value="price">Price</option>
                   <option value="rating">Rating</option>
@@ -255,9 +244,7 @@ export default function ServicesShowcase2027() {
                   initial={{ opacity: 0, y: 30, scale: 0.9 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  exit={{ opacity: 0, y: -30, scale: 0.9 }}
-                  className="group"
-                >
+                  exit={{ opacity: 0, y: -30, scale: 0.9 }} className="group">
                   <div className="bg-black/40 backdrop-blur-xl border border-cyan-500/30 rounded-2xl p-6 h-full hover:border-cyan-400/50 transition-all duration-300 transform hover:scale-105 shadow-2xl shadow-cyan-500/20">
                     {/* Service Header */}
                     <div className="flex items-start justify-between mb-4">
@@ -322,15 +309,11 @@ export default function ServicesShowcase2027() {
                     {/* Actions */}
                     <div className="flex space-x-3">
                       <Link
-                        href={service.link}
-                        className="flex-1 px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 text-center text-sm"
-                      >
+                        href={service.link} className="flex-1 px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 text-center text-sm">
                         Learn More
                       </Link>
                       <Link
-                        href="/contact"
-                        className="px-4 py-2 border border-cyan-500/50 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-500/10 transition-all duration-300 text-sm"
-                      >
+                        href="/contact" className="px-4 py-2 border border-cyan-500/50 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-500/10 transition-all duration-300 text-sm">
                         Contact
                       </Link>
                     </div>
@@ -351,9 +334,7 @@ export default function ServicesShowcase2027() {
           {sortedServices.length === 0 && (
             <motion.div
               initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-center py-20"
-            >
+              animate={{ opacity: 1 }} className="text-center py-20">
               <div className="text-6xl mb-4">🔍</div>
               <h3 className="text-2xl font-bold text-white mb-2">No services found</h3>
               <p className="text-cyan-300 mb-6">Try adjusting your search criteria or browse all services.</p>
@@ -362,9 +343,7 @@ export default function ServicesShowcase2027() {
                   setSearchTerm('');
                   setSelectedCategory('all');
                   setSelectedPriceRange('all');
-                }}
-                className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-purple-700 transition-all duration-300"
-              >
+                }} className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-purple-700 transition-all duration-300">
                 Clear Filters
               </button>
             </motion.div>
@@ -400,15 +379,11 @@ export default function ServicesShowcase2027() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/contact"
-                className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25"
-              >
+                href="/contact" className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25">
                 Get Started Today
               </Link>
               <Link
-                href="/pricing"
-                className="px-8 py-4 border border-cyan-500/50 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-500/10 transition-all duration-300"
-              >
+                href="/pricing" className="px-8 py-4 border border-cyan-500/50 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-500/10 transition-all duration-300">
                 View Pricing Plans
               </Link>
             </div>

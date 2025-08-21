@@ -1,10 +1,10 @@
 import React from 'react';
 import Head from 'next/head';
-import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import Layout from '../components/layout/Layout';
 
 export default function EmailDmarcAnalyzerPage() {
   return (
-    <UltraAdvancedFuturisticBackground>
+    <Layout>
       <Head>
         <title>Email DMARC Analyzer | Zion Tech Group</title>
         <meta name="description" content="Monitor DMARC aggregate reports, SPF/DKIM posture, domain reputation hints, and deliverability scorecards." />
@@ -25,7 +25,7 @@ export default function EmailDmarcAnalyzerPage() {
           </div>
         </div>
       </div>
-    </UltraAdvancedFuturisticBackground>
+    </Layout>
   );
 }
 

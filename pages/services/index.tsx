@@ -78,7 +78,7 @@ export default function ServicesIndexPage() {
   };
 
   return (
-    <UltraFuturisticBackground variant="quantum" intensity="high">
+    <UltraFuturisticBackground  intensity="high">
       <Head>
         <title>Services | Zion Tech Group</title>
         <meta name="description" content="Browse 350+ real micro SaaS, IT, and AI services with transparent pricing and fast onboarding." />
@@ -88,7 +88,7 @@ export default function ServicesIndexPage() {
       <div className="container mx-auto px-4 py-16 space-y-12 text-white">
         <div className="text-center">
           <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">All Services</h1>
-          <p className="text-gray-300 text-lg">Productized solutions across AI, cloud, DevOps, observability, and more. Average market prices linked in <a href="/market-pricing" className="text-cyan-400 underline">Market Pricing</a>. Contact: +1 302 464 0950 • kleber@ziontechgroup.com.</p>
+          <p className="text-gray-300 text-lg text-cyan-400 underline">Productized solutions across AI, cloud, DevOps, observability, and more. Average market prices linked in <a href="/market-pricing" >Market Pricing</a>. Contact: +1 302 464 0950 • kleber@ziontechgroup.com.</p>
         </div>
 
         {categories.map((cat) => (
@@ -98,16 +98,16 @@ export default function ServicesIndexPage() {
               {byCategory[cat].slice(0, 12).map((s) => {
                 const slug = s.link ? (() => { try { const u = new URL(s.link); const p = u.pathname.replace(/^\/+|\/+$/g, ''); return p.startsWith('services/') ? p.substring('services/'.length) : toSlug(s.id || s.name || ''); } catch { return toSlug(s.id || s.name || ''); } })() : toSlug(s.id || s.name || '');
                 return (
-                  <Card key={s.id || s.name} className="p-6 bg-black/50 border border-gray-700/60 hover:border-cyan-500/50 transition-colors shadow-lg/10">
+                  <div key={s.id || s.name} className="p-6 bg-black/50 border border-gray-700/60 hover:border-cyan-500/50 transition-colors shadow-lg/10 p-6 bg-black/40 border border-gray-700/50 rounded-lg backdrop-blur-sm">
                     <div className="text-sm text-gray-400 mb-1">{s.category || 'Service'}</div>
                     <h3 className="text-white text-xl font-semibold mb-2">{s.name}</h3>
                     <p className="text-gray-300/90 line-clamp-3 mb-3">{s.tagline || s.description}</p>
-                    <div className="text-gray-100 font-bold mb-4">{s.price}<span className="text-sm text-gray-400 font-medium">{s.period}</span></div>
+                    <div className="text-gray-100 font-bold mb-4 text-sm text-gray-400 font-medium">{s.price}<span >{s.period}</span></div>
                     <div className="flex gap-3">
                       <Link href={`/services/${slug}`} className="px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium shadow-glow hover:shadow-glow-lg">View</Link>
                       <Link href={s.link || `/services/${slug}`} className="px-4 py-2 rounded-lg border border-gray-600 text-gray-200 hover:border-cyan-500/70">Learn</Link>
                     </div>
-                  </Card>
+                  </div>
                 );
               })}
             </div>

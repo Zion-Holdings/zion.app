@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
-import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
-import Button from '../components/ui/Button';
+import Layout from '../components/layout/Layout';
+
 import { Server, CheckCircle, Database, Cloud } from 'lucide-react';
 
 export default function EnterpriseITPage() {
@@ -20,7 +20,7 @@ export default function EnterpriseITPage() {
   ];
 
   return (
-    <UltraAdvancedFuturisticBackground>
+    <Layout>
       <Head>
         <title>Enterprise IT | Zion Tech Group</title>
         <meta name="description" content="Cloud, DevOps, data platforms, and SRE with cost, performance, and reliability in focus." />
@@ -35,8 +35,8 @@ export default function EnterpriseITPage() {
             <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-4">Enterprise IT</h1>
             <p className="text-gray-300 text-lg max-w-3xl mx-auto">Ship secure, reliable platforms with measurable business outcomes.</p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button href="/contact" className="px-8 py-4">Get a Roadmap</Button>
-              <Button href="/market-pricing" variant="outline" className="px-8 py-4">See Market Pricing</Button>
+              <a href="/contact" className="px-8 py-4">Get a Roadmap</a>
+              <a href="/market-pricing" className="px-8 py-4">See Market Pricing</a>
             </div>
           </header>
 
@@ -65,6 +65,6 @@ export default function EnterpriseITPage() {
           </section>
         </div>
       </div>
-    </UltraAdvancedFuturisticBackground>
+    </Layout>
   );
 }

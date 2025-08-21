@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
-import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
-import Button from '../components/ui/Button';
+import Layout from '../components/layout/Layout';
+
 import { Bot, CheckCircle, Zap, Shield, Network, Workflow, DollarSign, ExternalLink, Phone, Mail, MapPin } from 'lucide-react';
 
 export default function AIAssistantPage() {
@@ -28,14 +28,7 @@ export default function AIAssistantPage() {
   ];
 
   return (
-    <UltraAdvancedFuturisticBackground 
-      intensity="high" 
-      colorScheme="quantum-fusion"
-      particleCount={300}
-      animationSpeed={1.5}
-      enableHolographic={true}
-      enableQuantumEffects={true}
-    >
+    <Layout>
       <Head>
         <title>AI Agent Orchestrator | Zion Tech Group</title>
         <meta name="description" content="Production-ready AI agent orchestration with guardrails, observability, and human-in-the-loop. Ship reliable assistants fast." />
@@ -52,8 +45,8 @@ export default function AIAssistantPage() {
             <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-4">AI Agent Orchestrator</h1>
             <p className="text-gray-300 text-lg max-w-3xl mx-auto">Design, evaluate, and operate reliable AI assistants with enterprise guardrails, HITL, and full observability.</p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button href="/contact" className="px-8 py-4 bg-gradient-to-r from-cyan-600 to-blue-700 text-white">Talk to Sales</Button>
-              <Button href="/market-pricing" variant="outline" className="px-8 py-4 border border-gray-600 text-gray-200">See Market Pricing</Button>
+              <a href="/contact" className="px-8 py-4 bg-gradient-to-r from-cyan-600 to-blue-700 text-white">Talk to Sales</a>
+              <a href="/market-pricing" className="px-8 py-4 border border-gray-600 text-gray-200 hover:border-cyan-500 hover:text-cyan-400 transition-colors">See Market Pricing</a>
             </div>
           </header>
 
@@ -62,7 +55,7 @@ export default function AIAssistantPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[{icon: <Zap className="w-5 h-5" />, title: 'Ship Faster', desc: 'Blueprints and evals help you move from idea to production quickly.'}, {icon: <Shield className="w-5 h-5" />, title: 'Trust & Safety', desc: 'Guardrails, redaction, and HITL ensure compliant outcomes.'}, {icon: <Workflow className="w-5 h-5" />, title: 'Operate Reliably', desc: 'Full telemetry and cost controls to prevent surprises.'}].map((i) => (
                 <div key={i.title} className="p-6 rounded-2xl bg-black/40 border border-gray-700/60">
-                  <div className="flex items-center gap-3 text-cyan-300 mb-2">{i.icon}<span className="font-semibold">{i.title}</span></div>
+                  <div className="flex items-center gap-3 text-cyan-300 mb-2 font-semibold">{i.icon}<span >{i.title}</span></div>
                   <p className="text-gray-300 text-sm">{i.desc}</p>
                 </div>
               ))}
@@ -89,13 +82,18 @@ export default function AIAssistantPage() {
               {plans.map((p) => (
                 <div key={p.name} className="p-6 rounded-2xl bg-black/40 border border-gray-700/60">
                   <div className="text-gray-400 text-sm mb-1">{p.name}</div>
-                  <div className="text-3xl font-bold text-white">{p.price}<span className="text-base text-gray-400">{p.period}</span></div>
+                  <div className="text-3xl font-bold text-white text-base text-gray-400">{p.price}<span >{p.period}</span></div>
                   <ul className="mt-4 space-y-2 text-gray-300 text-sm">
-                    {p.includes.map((i) => <li key={i} className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-emerald-400 mt-0.5" />{i}</li>)}
+                    {p.includes.map((i) => (
+                      <li key={i} className="flex items-start gap-2 w-4 h-4 text-emerald-400 mt-0.5">
+                        <CheckCircle />
+                        {i}
+                      </li>
+                    ))}
                   </ul>
                   <div className="mt-6 flex gap-3">
-                    <Button href="/contact" className="flex-1">Contact Sales</Button>
-                    <Button href="/services" variant="outline" className="flex-1">Explore More</Button>
+                    <a href="/contact" className="flex-1">Contact Sales</a>
+                    <a href="/services" className="flex-1 border border-gray-600 text-gray-200 hover:border-cyan-500 hover:text-cyan-400 transition-colors">Explore More</a>
                   </div>
                 </div>
               ))}
@@ -122,6 +120,6 @@ export default function AIAssistantPage() {
           </section>
         </div>
       </div>
-    </UltraAdvancedFuturisticBackground>
+    </Layout>
   );
 }

@@ -1,10 +1,10 @@
 import React from 'react';
 import Head from 'next/head';
-import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import Layout from '../components/layout/Layout';
 
 export default function SsoUserLifecycleAutomationPage() {
   return (
-    <UltraAdvancedFuturisticBackground>
+    <Layout>
       <Head>
         <title>SSO User Lifecycle Automation | Zion Tech Group</title>
         <meta name="description" content="Automate Joiner/Mover/Leaver across SSO/SCIM apps with approvals, logging, and policies." />
@@ -25,7 +25,7 @@ export default function SsoUserLifecycleAutomationPage() {
           </div>
         </div>
       </div>
-    </UltraAdvancedFuturisticBackground>
+    </Layout>
   );
 }
 

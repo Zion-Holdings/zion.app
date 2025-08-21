@@ -1,8 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
 import { Shield, Lock, ShieldAlert, Check, Phone, Mail, MapPin, ExternalLink, Zap, Rocket } from 'lucide-react';
-import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
-import Button from '../components/ui/Button';
+import Layout from '../components/layout/Layout';
+
 
 export default function SecurityPage() {
   const contactInfo = {
@@ -26,7 +26,7 @@ export default function SecurityPage() {
   ];
 
   return (
-    <UltraAdvancedFuturisticBackground>
+    <Layout>
       <Head>
         <title>Security | Zion Tech Group</title>
         <meta name="description" content="Quantum-ready cybersecurity, zero-trust, and AI-driven threat detection. Practical blueprints, managed services, and compliance enablement." />
@@ -57,7 +57,7 @@ export default function SecurityPage() {
                 <div className="text-cyan-400 font-semibold mb-4">{p.price}</div>
                 <ul className="space-y-2 text-gray-300 text-sm">
                   {p.items.map((i) => (
-                    <li key={i} className="flex items-start gap-2"><Check className="w-4 h-4 mt-0.5 text-emerald-400" /> <span>{i}</span></li>
+                    <li key={i} className="flex items-start gap-2 w-4 h-4 mt-0.5 text-emerald-400"><Check /> <span>{i}</span></li>
                   ))}
                 </ul>
               </div>
@@ -67,17 +67,17 @@ export default function SecurityPage() {
 
         <div className="max-w-3xl mx-auto bg-black/20 backdrop-blur-xl rounded-2xl p-6 border border-cyan-500/30">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm mb-4">
-            <div className="flex items-center justify-center gap-2 text-cyan-400"><Phone className="w-4 h-4" /><span>{contactInfo.mobile}</span></div>
-            <div className="flex items-center justify-center gap-2 text-purple-400"><Mail className="w-4 h-4" /><span>{contactInfo.email}</span></div>
-            <div className="flex items-center justify-center gap-2 text-green-400"><MapPin className="w-4 h-4" /><span className="text-xs">{contactInfo.address}</span></div>
+            <div className="flex items-center justify-center gap-2 text-cyan-400 w-4 h-4"><Phone /><span>{contactInfo.mobile}</span></div>
+            <div className="flex items-center justify-center gap-2 text-purple-400 w-4 h-4"><Mail /><span>{contactInfo.email}</span></div>
+            <div className="flex items-center justify-center gap-2 text-green-400 w-4 h-4 text-xs"><MapPin /><span >{contactInfo.address}</span></div>
           </div>
           <div className="flex items-center justify-center gap-4">
-            <Button href="/contact" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl">Talk to Security</Button>
-            <a href="https://ziontechgroup.com/quantum-cybersecurity" className="text-cyan-400 hover:text-white inline-flex items-center gap-2"><ExternalLink className="w-4 h-4" /> Learn more</a>
+            <a href="/contact" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl">Talk to Security</a>
+            <a href="https://ziontechgroup.com/quantum-cybersecurity" className="text-cyan-400 hover:text-white inline-flex items-center gap-2 w-4 h-4"><ExternalLink /> Learn more</a>
           </div>
         </div>
       </div>
-    </UltraAdvancedFuturisticBackground>
+    </Layout>
   );
 }
 

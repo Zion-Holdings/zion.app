@@ -150,9 +150,7 @@ export default function Revolutionary2028Pricing() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="space-y-8"
-          >
+            transition={{ duration: 0.8 }} className="space-y-8">
             <div className="inline-flex items-center space-x-2 bg-purple-900/30 border border-purple-500/30 rounded-full px-6 py-3 text-purple-300 text-sm">
               <Sparkles className="w-4 h-4" />
               <span>2028 Revolutionary Pricing</span>
@@ -201,9 +199,7 @@ export default function Revolutionary2028Pricing() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
+            viewport={{ once: true }} className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Choose Your <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Innovation Path</span>
             </h2>
@@ -219,9 +215,7 @@ export default function Revolutionary2028Pricing() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="relative group"
-              >
+                viewport={{ once: true }} className="relative group">
                 {tier.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                     <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
@@ -274,9 +268,7 @@ export default function Revolutionary2028Pricing() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
+            viewport={{ once: true }} className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Service <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Pricing</span>
             </h2>
@@ -291,9 +283,7 @@ export default function Revolutionary2028Pricing() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: categoryIndex * 0.2 }}
-              viewport={{ once: true }}
-              className="mb-16"
-            >
+              viewport={{ once: true }} className="mb-16">
               <div className="text-center mb-8">
                 <h3 className="text-3xl font-bold text-white mb-4">{category.title}</h3>
                 <div className={`w-24 h-1 bg-gradient-to-r ${category.color} mx-auto rounded-full`}></div>
@@ -306,9 +296,7 @@ export default function Revolutionary2028Pricing() {
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6, delay: serviceIndex * 0.1 }}
-                    viewport={{ once: true }}
-                    className="group"
-                  >
+                    viewport={{ once: true }} className="group">
                     <div className="p-6 rounded-xl bg-black/40 backdrop-blur-xl border border-purple-500/30 hover:border-purple-500/50 transition-all duration-300 h-full">
                       <div className="flex items-start justify-between mb-4">
                         <div className="flex items-center space-x-3">
@@ -350,9 +338,7 @@ export default function Revolutionary2028Pricing() {
                           <div>Growth: {service.growthRate}</div>
                         </div>
                         <Link
-                          href={service.link}
-                          className="px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg text-sm hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
-                        >
+                          href={service.link} className="px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg text-sm hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105">
                           Learn More
                         </Link>
                       </div>
@@ -372,9 +358,7 @@ export default function Revolutionary2028Pricing() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
+            viewport={{ once: true }} className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Why Choose <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Zion Tech Group?</span>
             </h2>
@@ -388,9 +372,7 @@ export default function Revolutionary2028Pricing() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="text-center p-8 rounded-2xl bg-purple-900/20 border border-purple-500/30"
-            >
+              viewport={{ once: true }} className="text-center p-8 rounded-2xl bg-purple-900/20 border border-purple-500/30">
               <Rocket className="w-16 h-16 text-purple-400 mx-auto mb-6" />
               <h3 className="text-2xl font-bold text-white mb-4">First-to-Market</h3>
               <p className="text-purple-200 mb-6">
@@ -404,9 +386,7 @@ export default function Revolutionary2028Pricing() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="text-center p-8 rounded-2xl bg-blue-900/20 border border-blue-500/30"
-            >
+              viewport={{ once: true }} className="text-center p-8 rounded-2xl bg-blue-900/20 border border-blue-500/30">
               <Zap className="w-16 h-16 text-blue-400 mx-auto mb-6" />
               <h3 className="text-2xl font-bold text-white mb-4">Proven ROI</h3>
               <p className="text-blue-200 mb-6">
@@ -420,9 +400,7 @@ export default function Revolutionary2028Pricing() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              viewport={{ once: true }}
-              className="text-center p-8 rounded-2xl bg-green-900/20 border border-green-500/30"
-            >
+              viewport={{ once: true }} className="text-center p-8 rounded-2xl bg-green-900/20 border border-green-500/30">
               <Shield className="w-16 h-16 text-green-400 mx-auto mb-6" />
               <h3 className="text-2xl font-bold text-white mb-4">Enterprise Security</h3>
               <p className="text-green-200 mb-6">
@@ -442,9 +420,7 @@ export default function Revolutionary2028Pricing() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="space-y-8"
-          >
+            viewport={{ once: true }} className="space-y-8">
             <h2 className="text-4xl md:text-5xl font-bold text-white">
               Ready to Start Your <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Innovation Journey?</span>
             </h2>
@@ -454,15 +430,11 @@ export default function Revolutionary2028Pricing() {
 
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
               <Link
-                href="/contact"
-                className="px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-xl font-semibold text-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-purple-500/25"
-              >
+                href="/contact" className="px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-xl font-semibold text-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-purple-500/25">
                 Get Started Today
               </Link>
               <Link
-                href="/2028-services-showcase"
-                className="px-8 py-4 border-2 border-purple-500/30 text-purple-300 rounded-xl font-semibold text-lg hover:bg-purple-500/10 hover:border-purple-500/50 transition-all duration-300"
-              >
+                href="/2028-services-showcase" className="px-8 py-4 border-2 border-purple-500/30 text-purple-300 rounded-xl font-semibold text-lg hover:bg-purple-500/10 hover:border-purple-500/50 transition-all duration-300">
                 View All Services
               </Link>
             </div>

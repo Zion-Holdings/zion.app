@@ -3,8 +3,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Star, Users, TrendingUp, DollarSign, Clock, CheckCircle, ArrowRight, Rocket, Brain, Atom, Sparkles, Shield, Zap, Globe, Cpu, Database, Cloud, Smartphone, Palette, Search as SearchIcon, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Code, BookOpen, Activity, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Filter, Grid, List, ChevronDown, ChevronUp, Sparkles as SparklesIcon, FlaskConical, Dna, Car, Leaf, Factory, Truck, Microscope, GraduationCap, ShieldCheck, Brain as BrainIcon, Atom as AtomIcon, Globe2, Bot, ChevronRight, Crown, Infinity, Zap as ZapIcon2, Shield as ShieldIcon, Users as UsersIcon, Globe as GlobeIcon, Cpu as CpuIcon, Database as DatabaseIcon2, Cloud as CloudIcon, Smartphone as SmartphoneIcon, Palette as PaletteIcon, Search as SearchIcon2, MessageSquare as MessageSquareIcon, FileText as FileTextIcon, Calendar as CalendarIcon, CreditCard as CreditCardIcon, BarChart3 as BarChart3Icon, Settings as SettingsIcon, Zap as ZapIcon3, Code as CodeIcon, BookOpen as CodeIcon2, Activity as ActivityIcon, Database as DatabaseIcon3, Play as PlayIcon, Mail as MailIcon, Phone as PhoneIcon, MapPin as MapPinIcon, Filter as FilterIcon, Grid as GridIcon, List as ListIcon, ChevronDown as ChevronDownIcon, ChevronUp as ChevronUpIcon, Sparkles as SparklesIcon2, FlaskConical as FlaskConicalIcon, Dna as DnaIcon, Car as CarIcon, Leaf as LeafIcon, Factory as FactoryIcon, Truck as TruckIcon, Microscope as MicroscopeIcon, GraduationCap as GraduationCapIcon, ShieldCheck as ShieldCheckIcon, Brain as BrainIcon2, Atom as AtomIcon2, Globe2 as Globe2Icon, Bot as BotIcon, ChevronRight as ChevronRightIcon } from 'lucide-react';
-import Button from '../components/ui/Button';
-import Card from '../components/ui/Card';
+
+
 import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
 import UltraFuturisticCard from '../components/ui/UltraFuturisticCard';
 import { innovative2026MicroSaasServicesV2 } from '../data/innovative-2026-micro-saas-v2';
@@ -148,7 +148,7 @@ export default function Services2026ShowcasePage() {
   return (
     <UltraFuturisticBackground 
       intensity="high" 
-      variant="quantum"
+      
     >
       <div className="min-h-screen">
         <Head>
@@ -205,8 +205,7 @@ export default function Services2026ShowcasePage() {
                   type="text"
                   placeholder="Search 2026 services..."
                   value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full bg-gray-800/50 border border-gray-600/50 rounded-xl pl-12 pr-4 py-4 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  onChange={(e) => setSearchTerm(e.target.value)} className="w-full bg-gray-800/50 border border-gray-600/50 rounded-xl pl-12 pr-4 py-4 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                 />
               </div>
 
@@ -217,9 +216,7 @@ export default function Services2026ShowcasePage() {
                   <label className="block text-sm font-medium text-gray-300 mb-2">Category</label>
                   <select
                     value={selectedCategory}
-                    onChange={(e) => setSelectedCategory(e.target.value)}
-                    className="w-full bg-gray-800/50 border border-gray-600/50 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                  >
+                    onChange={(e) => setSelectedCategory(e.target.value)} className="w-full bg-gray-800/50 border border-gray-600/50 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
                     {categories.map((category) => (
                       <option key={category.id} value={category.id}>
                         {category.name} ({category.count})
@@ -233,9 +230,7 @@ export default function Services2026ShowcasePage() {
                   <label className="block text-sm font-medium text-gray-300 mb-2">Price Range</label>
                   <select
                     value={selectedPriceRange}
-                    onChange={(e) => setSelectedPriceRange(e.target.value)}
-                    className="w-full bg-gray-800/50 border border-gray-600/50 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                  >
+                    onChange={(e) => setSelectedPriceRange(e.target.value)} className="w-full bg-gray-800/50 border border-gray-600/50 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
                     {priceRanges.map((range) => (
                       <option key={range.id} value={range.id}>
                         {range.name}
@@ -249,9 +244,7 @@ export default function Services2026ShowcasePage() {
                   <label className="block text-sm font-medium text-gray-300 mb-2">Sort By</label>
                   <select
                     value={sortBy}
-                    onChange={(e) => setSortBy(e.target.value)}
-                    className="w-full bg-gray-800/50 border border-gray-600/50 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                  >
+                    onChange={(e) => setSortBy(e.target.value)} className="w-full bg-gray-800/50 border border-gray-600/50 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
                     {sortOptions.map((option) => (
                       <option key={option.id} value={option.id}>
                         {option.name}
@@ -280,21 +273,17 @@ export default function Services2026ShowcasePage() {
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  className="text-center py-20"
-                >
+                  exit={{ opacity: 0 }} className="text-center py-20">
                   <div className="text-gray-400 text-xl mb-4">No services found matching your criteria</div>
-                  <Button
+                  <button
                     onClick={() => {
                       setSearchTerm('');
                       setSelectedCategory('all');
                       setSelectedPriceRange('all');
                       setSortBy('name');
-                    }}
-                    variant="secondary"
-                  >
+                    }} className="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-6 py-3 rounded-xl hover:from-gray-500 hover:to-gray-600 transition-all duration-200">
                     Clear Filters
-                  </Button>
+                  </button>
                 </motion.div>
               ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -306,10 +295,7 @@ export default function Services2026ShowcasePage() {
                       exit={{ opacity: 0, y: -20 }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                     >
-                      <UltraFuturisticCard
-                        variant={mapServiceVariantToCardVariant(service.variant)}
-                        className="h-full group hover:scale-105 transition-transform duration-300"
-                      >
+                      <UltraFuturisticCard className="h-full group hover:scale-105 transition-transform duration-300">
                         <div className="p-6 h-full flex flex-col">
                           {/* Service Header */}
                           <div className="flex items-start justify-between mb-4">
@@ -376,13 +362,10 @@ export default function Services2026ShowcasePage() {
                           {/* CTA */}
                           <div className="mt-auto">
                             <Link href={service.link}>
-                              <Button
-                                variant="primary"
-                                className="w-full group-hover:scale-105 transition-transform"
-                              >
+                              <button className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-6 py-3 rounded-lg font-medium group-hover:scale-105 transition-transform hover:from-cyan-600 hover:to-blue-700">
                                 Learn More
                                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                              </Button>
+                              </button>
                             </Link>
                           </div>
                         </div>
@@ -412,16 +395,16 @@ export default function Services2026ShowcasePage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/contact">
-                  <Button variant="primary" size="lg">
+                  <button className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-6 py-3 rounded-lg text-lg font-medium hover:from-cyan-600 hover:to-blue-700 transition-all duration-200">
                     <Phone className="w-5 h-5 mr-2" />
                     Contact Us
-                  </Button>
+                  </button>
                 </Link>
                 <Link href="/pricing">
-                  <Button variant="secondary" size="lg">
+                  <button className="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-6 py-3 rounded-lg text-lg font-medium hover:from-gray-500 hover:to-gray-600 transition-all duration-200">
                     <DollarSign className="w-5 h-5 mr-2" />
                     View Pricing
-                  </Button>
+                  </button>
                 </Link>
               </div>
               <div className="mt-8 text-gray-400">

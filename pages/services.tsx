@@ -168,9 +168,7 @@ export default function Services() {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-20"
-            >
+              transition={{ duration: 0.8 }} className="text-center mb-20">
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
                   Our Services
@@ -186,20 +184,17 @@ export default function Services() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="mb-12"
-            >
+              transition={{ duration: 0.8, delay: 0.2 }} className="mb-12">
               <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6">
                 <div className="flex flex-col lg:flex-row gap-4 items-center">
                   {/* Search */}
-                  <div className="relative flex-1 w-full lg:w-auto">
+                  <div className="relative flex-1 w-full lg:w-auto px-6 py-3 bg-gradient-to-r from-cyan-600 to-blue-700 hover:from-cyan-700 hover:to-blue-800 text-white font-semibold rounded-lg transition-all duration-200">
                     <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                     <input
                       type="text"
                       placeholder="Search services..."
                       value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                      className="w-full lg:w-96 pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50"
+                      onChange={(e) => setSearchQuery(e.target.value)} className="w-full lg:w-96 pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50"
                     />
                   </div>
 
@@ -207,9 +202,7 @@ export default function Services() {
                   <div className="flex items-center space-x-4">
                     <select
                       value={selectedCategory}
-                      onChange={(e) => setSelectedCategory(e.target.value)}
-                      className="px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50"
-                    >
+                      onChange={(e) => setSelectedCategory(e.target.value)} className="px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50">
                       <option value="all">All Categories</option>
                       {categories.map((category) => (
                         <option key={category.id} value={category.id}>
@@ -221,9 +214,7 @@ export default function Services() {
                     {/* Sort */}
                     <select
                       value={sortBy}
-                      onChange={(e) => setSortBy(e.target.value)}
-                      className="px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50"
-                    >
+                      onChange={(e) => setSortBy(e.target.value)} className="px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50">
                       {sortOptions.map((option) => (
                         <option key={option.value} value={option.value}>
                           {option.label}
@@ -264,9 +255,7 @@ export default function Services() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="mb-16"
-            >
+              transition={{ duration: 0.8, delay: 0.4 }} className="mb-16">
               <h2 className="text-3xl font-bold text-center mb-12">
                 <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
                   Service Categories
@@ -281,8 +270,7 @@ export default function Services() {
                       key={category.id}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.8, delay: 0.6 + index * 0.1 }}
-                      className="bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-gray-600/50 transition-all duration-300 cursor-pointer group"
+                      transition={{ duration: 0.8, delay: 0.6 + index * 0.1 }} className="bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-gray-600/50 transition-all duration-300 cursor-pointer group"
                       onClick={() => setSelectedCategory(category.id)}
                     >
                       <div className={`w-16 h-16 bg-gradient-to-r ${category.color} rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
@@ -331,9 +319,7 @@ export default function Services() {
                       key={service.id}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.8, delay: 1 + index * 0.05 }}
-                      className="bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-gray-600/50 transition-all duration-300 hover:transform hover:scale-105 group"
-                    >
+                      transition={{ duration: 0.8, delay: 1 + index * 0.05 }} className="bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-gray-600/50 transition-all duration-300 hover:transform hover:scale-105 group">
                       {/* Service Header */}
                       <div className="flex items-start justify-between mb-4">
                         <div className="flex-1">
@@ -386,9 +372,7 @@ export default function Services() {
 
                       {/* CTA */}
                       <a
-                        href={service.link}
-                        className="block w-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white py-2 px-4 rounded-lg text-center text-sm font-medium hover:from-cyan-600 hover:to-purple-700 transition-all duration-200 transform hover:scale-105"
-                      >
+                        href={service.link} className="block w-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white py-2 px-4 rounded-lg text-center text-sm font-medium hover:from-cyan-600 hover:to-purple-700 transition-all duration-200 transform hover:scale-105">
                         Learn More
                         <ArrowRight className="w-4 h-4 inline ml-2" />
                       </a>
@@ -402,9 +386,7 @@ export default function Services() {
                       key={service.id}
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.8, delay: 1 + index * 0.05 }}
-                      className="bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-gray-600/50 transition-all duration-300"
-                    >
+                      transition={{ duration: 0.8, delay: 1 + index * 0.05 }} className="bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-gray-600/50 transition-all duration-300">
                       <div className="flex flex-col lg:flex-row gap-6">
                         {/* Service Info */}
                         <div className="flex-1">
@@ -448,9 +430,7 @@ export default function Services() {
                           </div>
                           
                           <a
-                            href={service.link}
-                            className="block w-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white py-2 px-4 rounded-lg text-center text-sm font-medium hover:from-cyan-600 hover:to-purple-700 transition-all duration-200"
-                          >
+                            href={service.link} className="block w-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white py-2 px-4 rounded-lg text-center text-sm font-medium hover:from-cyan-600 hover:to-purple-700 transition-all duration-200">
                             Learn More
                             <ArrowRight className="w-4 h-4 inline ml-2" />
                           </a>
@@ -466,9 +446,7 @@ export default function Services() {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.2 }}
-              className="text-center mt-20"
-            >
+              transition={{ duration: 0.8, delay: 1.2 }} className="text-center mt-20">
               <div className="bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-cyan-500/20 rounded-3xl p-12">
                 <h2 className="text-4xl font-bold text-white mb-6">
                   Ready to Get Started?
@@ -478,15 +456,11 @@ export default function Services() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a
-                    href="/contact"
-                    className="bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-200 transform hover:scale-105"
-                  >
+                    href="/contact" className="bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-200 transform hover:scale-105">
                     Get Started Today
                   </a>
                   <a
-                    href="/pricing"
-                    className="border border-gray-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:border-gray-500 hover:bg-gray-800/50 transition-all duration-200"
-                  >
+                    href="/pricing" className="border border-gray-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:border-gray-500 hover:bg-gray-800/50 transition-all duration-200">
                     View Pricing
                   </a>
                 </div>

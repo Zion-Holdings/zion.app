@@ -2,8 +2,8 @@ import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shield, Mail, MapPin, Rocket, BarChart3, Brain, Database, Users, Target, TrendingUp as TrendingUpIcon } from 'lucide-react';
-import Button from '../components/ui/Button';
-import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+
+import Layout from '../components/layout/Layout';
 import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
 import { motion } from 'framer-motion';
 
@@ -56,14 +56,7 @@ export default function AIBusinessIntelligencePage() {
   ];
 
   return (
-    <UltraAdvancedFuturisticBackground 
-      intensity="extreme" 
-      colorScheme="quantum-fusion"
-      particleCount={500}
-      animationSpeed={2.0}
-      enableHolographic={true}
-      enableQuantumEffects={true}
-    >
+    <Layout>
       <div className="min-h-screen">
         <Head>
           <title>AI Business Intelligence Suite - Zion Tech Group | Transform Data into Insights</title>
@@ -86,9 +79,7 @@ export default function AIBusinessIntelligencePage() {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="relative z-10"
-            >
+              transition={{ duration: 0.8 }} className="relative z-10">
               <div className="text-6xl mb-6">📊</div>
               <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
                 <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
@@ -100,24 +91,16 @@ export default function AIBusinessIntelligencePage() {
                 Get real-time analytics, predictive insights, and automated reporting.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Button
-                  href="/contact"
-                  variant="primary"
-                  size="lg"
-                  className="group"
-                >
+                <a
+                  href="/contact" className="group">
                   Start Free Trial
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-                <Button
-                  href="#pricing"
-                  variant="secondary"
-                  size="lg"
-                  className="group"
-                >
+                </a>
+                <a
+                  href="#pricing" className="group">
                   View Pricing
                   <DollarSign className="ml-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-                </Button>
+                </a>
               </div>
             </motion.div>
           </div>
@@ -130,9 +113,7 @@ export default function AIBusinessIntelligencePage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
+              viewport={{ once: true }} className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 <span className="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
                   Powerful Features
@@ -151,9 +132,7 @@ export default function AIBusinessIntelligencePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  whileHover={{ scale: 1.02, y: -5 }}
-                  className="group p-6 bg-gradient-to-br from-blue-900/40 to-indigo-900/40 border border-blue-700/50 rounded-2xl hover:border-blue-500/60 hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300"
-                >
+                  whileHover={{ scale: 1.02, y: -5 }} className="group p-6 bg-gradient-to-br from-blue-900/40 to-indigo-900/40 border border-blue-700/50 rounded-2xl hover:border-blue-500/60 hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300">
                   <div className="flex items-center mb-4">
                     <CheckCircle className="w-6 h-6 text-blue-400 mr-3" />
                     <h3 className="text-lg font-semibold text-white">{feature}</h3>
@@ -171,9 +150,7 @@ export default function AIBusinessIntelligencePage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
+              viewport={{ once: true }} className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
                   Use Cases
@@ -192,9 +169,7 @@ export default function AIBusinessIntelligencePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  whileHover={{ scale: 1.02, y: -5 }}
-                  className="group p-6 bg-gradient-to-br from-indigo-900/40 to-purple-900/40 border border-indigo-700/50 rounded-2xl hover:border-indigo-500/60 hover:shadow-2xl hover:shadow-indigo-500/20 transition-all duration-300"
-                >
+                  whileHover={{ scale: 1.02, y: -5 }} className="group p-6 bg-gradient-to-br from-indigo-900/40 to-purple-900/40 border border-indigo-700/50 rounded-2xl hover:border-indigo-500/60 hover:shadow-2xl hover:shadow-indigo-500/20 transition-all duration-300">
                   <div className="text-4xl mb-4">🎯</div>
                   <h3 className="text-xl font-bold text-white mb-3">{useCase}</h3>
                   <p className="text-gray-300 text-sm">
@@ -213,9 +188,7 @@ export default function AIBusinessIntelligencePage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
+              viewport={{ once: true }} className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
                   Simple Pricing
@@ -231,9 +204,7 @@ export default function AIBusinessIntelligencePage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="bg-gradient-to-br from-blue-900/40 to-indigo-900/40 border border-blue-700/50 rounded-3xl p-8 relative overflow-hidden"
-              >
+                viewport={{ once: true }} className="bg-gradient-to-br from-blue-900/40 to-indigo-900/40 border border-blue-700/50 rounded-3xl p-8 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10 text-center">
                   <div className="text-6xl mb-6">🚀</div>
@@ -271,14 +242,14 @@ export default function AIBusinessIntelligencePage() {
                   </div>
                   
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Button href="/contact" variant="primary" size="lg" className="group">
+                    <a href="/contact" className="group">
                       <Phone className="mr-2 h-5 w-5" />
                       Start Free Trial
-                    </Button>
-                    <Button href="/contact" variant="secondary" size="lg" className="group">
+                    </a>
+                    <a href="/contact" className="group">
                       <Mail className="mr-2 h-5 w-5" />
                       Contact Sales
-                    </Button>
+                    </a>
                   </div>
                   
                   <p className="text-gray-400 text-sm mt-4">
@@ -297,9 +268,7 @@ export default function AIBusinessIntelligencePage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
+              viewport={{ once: true }} className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                   Technology & Integrations
@@ -355,9 +324,7 @@ export default function AIBusinessIntelligencePage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
+              viewport={{ once: true }} className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
                   Market Position
@@ -373,9 +340,7 @@ export default function AIBusinessIntelligencePage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="bg-gradient-to-br from-yellow-900/40 to-orange-900/40 border border-yellow-700/50 rounded-3xl p-8"
-              >
+                viewport={{ once: true }} className="bg-gradient-to-br from-yellow-900/40 to-orange-900/40 border border-yellow-700/50 rounded-3xl p-8">
                 <div className="text-center mb-8">
                   <div className="text-6xl mb-4">⚡</div>
                   <h3 className="text-2xl font-bold text-white mb-4">Competitive Analysis</h3>
@@ -431,9 +396,7 @@ export default function AIBusinessIntelligencePage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
+              viewport={{ once: true }} className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
                   Ready to Get Started?
@@ -449,9 +412,7 @@ export default function AIBusinessIntelligencePage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="bg-gradient-to-br from-cyan-900/40 to-blue-900/40 border border-cyan-700/50 rounded-3xl p-8 text-center"
-              >
+                viewport={{ once: true }} className="bg-gradient-to-br from-cyan-900/40 to-blue-900/40 border border-cyan-700/50 rounded-3xl p-8 text-center">
                 <div className="text-6xl mb-6">🚀</div>
                 <h3 className="text-2xl font-bold text-white mb-4">Start Your Free Trial</h3>
                 <p className="text-gray-300 mb-8">
@@ -459,14 +420,14 @@ export default function AIBusinessIntelligencePage() {
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                  <Button href="/contact" variant="primary" size="lg" className="group">
+                  <a href="/contact" className="group">
                     <Phone className="mr-2 h-5 w-5" />
                     Free Consultation
-                  </Button>
-                  <Button href="/contact" variant="secondary" size="lg" className="group">
+                  </a>
+                  <a href="/contact" className="group">
                     <Mail className="mr-2 h-5 w-5" />
                     Contact Sales
-                  </Button>
+                  </a>
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
@@ -488,6 +449,6 @@ export default function AIBusinessIntelligencePage() {
           </div>
         </section>
       </div>
-    </UltraAdvancedFuturisticBackground>
+    </Layout>
   );
 }

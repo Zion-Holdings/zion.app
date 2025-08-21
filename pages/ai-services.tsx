@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import Layout from '../components/layout/Layout';
 import { innovativeAIServices } from '../data/innovative-ai-services';
 import { nextGenerationAIServices } from '../data/next-generation-ai-services';
 import { marketValidatedServices } from '../data/market-validated-services';
@@ -21,14 +21,7 @@ export default function AIServicesPage() {
   ];
 
   return (
-    <UltraAdvancedFuturisticBackground 
-      intensity="high" 
-      colorScheme="quantum-fusion"
-      particleCount={300}
-      animationSpeed={1.5}
-      enableHolographic={true}
-      enableQuantumEffects={true}
-    >
+    <Layout>
       <Head>
         <title>AI Services | Zion Tech Group</title>
         <meta name="description" content="Explore production-ready AI services: agents, guardrails, RAG, observability, governance, and more." />
@@ -53,7 +46,7 @@ export default function AIServicesPage() {
                 </div>
                 <div className="text-xl font-semibold text-white mb-1">{svc.name}</div>
                 <div className="text-sm text-gray-400 mb-3">{svc.tagline || svc.description}</div>
-                <div className="text-2xl font-bold text-cyan-400">{(svc as any).price}<span className="text-base text-gray-400">{(svc as any).period || ''}</span></div>
+                <div className="text-2xl font-bold text-cyan-400 text-base text-gray-400">{(svc as any).price}<span >{(svc as any).period || ''}</span></div>
                 <div className="mt-3 text-sm text-gray-300">
                   <div className="text-gray-400 mb-1">Key Features</div>
                   <ul className="space-y-1">
@@ -73,6 +66,6 @@ export default function AIServicesPage() {
           </div>
         </div>
       </div>
-    </UltraAdvancedFuturisticBackground>
+    </Layout>
   );
 }

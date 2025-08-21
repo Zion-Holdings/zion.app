@@ -104,9 +104,7 @@ export default function ServicesShowcase2028() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="mb-8"
-          >
+            transition={{ duration: 0.8 }} className="mb-8">
             <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 rounded-full px-6 py-3 mb-6">
               <Rocket className="w-5 h-5 text-cyan-400" />
               <span className="text-cyan-400 font-mono text-sm">2028 Future Technology</span>
@@ -128,18 +126,14 @@ export default function ServicesShowcase2028() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <motion.button
                 whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-2xl shadow-cyan-500/50 hover:shadow-cyan-500/70 transition-all duration-300 border border-cyan-400/50 hover:border-cyan-300 flex items-center space-x-2"
-              >
+                whileTap={{ scale: 0.95 }} className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-2xl shadow-cyan-500/50 hover:shadow-cyan-500/70 transition-all duration-300 border border-cyan-400/50 hover:border-cyan-300 flex items-center space-x-2">
                 <span>Explore Services</span>
                 <ArrowRight className="w-5 h-5" />
               </motion.button>
               
               <motion.button
                 whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="border border-cyan-500/50 text-cyan-400 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-cyan-500/10 transition-all duration-300 flex items-center space-x-2"
-              >
+                whileTap={{ scale: 0.95 }} className="border border-cyan-500/50 text-cyan-400 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-cyan-500/10 transition-all duration-300 flex items-center space-x-2">
                 <span>Contact Us</span>
                 <Phone className="w-5 h-5" />
               </motion.button>
@@ -150,9 +144,7 @@ export default function ServicesShowcase2028() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16"
-          >
+            transition={{ duration: 0.8, delay: 0.2 }} className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
             {[
               { icon: Rocket, value: '50+', label: 'Cutting-Edge Services' },
               { icon: Brain, value: '25+', label: 'AI Solutions' },
@@ -163,9 +155,7 @@ export default function ServicesShowcase2028() {
                 key={stat.label}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                className="text-center"
-              >
+                transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }} className="text-center">
                 <div className="w-16 h-16 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <stat.icon className="w-8 h-8 text-cyan-400" />
                 </div>
@@ -184,17 +174,14 @@ export default function ServicesShowcase2028() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="mb-12"
-          >
+            transition={{ duration: 0.5 }} className="mb-12">
             <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
               <div className="relative flex-1 max-w-md">
                 <input
                   type="text"
                   placeholder="Search services..."
                   value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full px-4 py-3 bg-black/50 border border-cyan-500/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500/50 focus:ring-2 focus:ring-cyan-500/20"
+                  onChange={(e) => setSearchTerm(e.target.value)} className="w-full px-4 py-3 bg-black/50 border border-cyan-500/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500/50 focus:ring-2 focus:ring-cyan-500/20"
                 />
                 <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
               </div>
@@ -223,15 +210,11 @@ export default function ServicesShowcase2028() {
           <motion.div
             variants={containerVariants}
             initial="hidden"
-            animate="visible"
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          >
+            animate="visible" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredServices.map((service, index) => (
               <motion.div
                 key={service.id}
-                variants={itemVariants}
-                className="group relative bg-gradient-to-br from-gray-900/80 to-black/80 border border-cyan-500/30 rounded-2xl p-6 hover:border-cyan-500/50 hover:bg-gray-900/90 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/20"
-              >
+                variants={itemVariants} className="group relative bg-gradient-to-br from-gray-900/80 to-black/80 border border-cyan-500/30 rounded-2xl p-6 hover:border-cyan-500/50 hover:bg-gray-900/90 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/20">
                 {/* Service Header */}
                 <div className="mb-6">
                   <div className="flex items-start justify-between mb-4">
@@ -257,9 +240,7 @@ export default function ServicesShowcase2028() {
                 <div className="flex flex-wrap gap-2 mb-6">
                   {service.category.slice(0, 3).map((cat) => (
                     <span
-                      key={cat}
-                      className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-xs text-cyan-400"
-                    >
+                      key={cat} className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-xs text-cyan-400">
                       {cat}
                     </span>
                   ))}
@@ -318,16 +299,12 @@ export default function ServicesShowcase2028() {
                 {/* Action Buttons */}
                 <div className="flex gap-3">
                   <Link
-                    href={service.contact.website}
-                    className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-center py-3 px-4 rounded-xl font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 border border-cyan-400/50 hover:border-cyan-300"
-                  >
+                    href={service.contact.website} className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-center py-3 px-4 rounded-xl font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 border border-cyan-400/50 hover:border-cyan-300">
                     Learn More
                   </Link>
                   
                   <Link
-                    href={`/contact?service=${service.id}`}
-                    className="px-4 py-3 border border-cyan-500/50 text-cyan-400 rounded-xl hover:bg-cyan-500/10 transition-all duration-300"
-                  >
+                    href={`/contact?service=${service.id}`} className="px-4 py-3 border border-cyan-500/50 text-cyan-400 rounded-xl hover:bg-cyan-500/10 transition-all duration-300">
                     Contact
                   </Link>
                 </div>
@@ -342,9 +319,7 @@ export default function ServicesShowcase2028() {
           {filteredServices.length === 0 && (
             <motion.div
               initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-center py-20"
-            >
+              animate={{ opacity: 1 }} className="text-center py-20">
               <div className="w-24 h-24 bg-gray-800/50 border border-gray-700 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Search className="w-12 h-12 text-gray-400" />
               </div>
@@ -354,9 +329,7 @@ export default function ServicesShowcase2028() {
                 onClick={() => {
                   setSearchTerm('');
                   setSelectedCategory('all');
-                }}
-                className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300"
-              >
+                }} className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300">
                 Clear Filters
               </button>
             </motion.div>
@@ -388,17 +361,13 @@ export default function ServicesShowcase2028() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <motion.button
                 whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-2xl shadow-cyan-500/50 hover:shadow-cyan-500/70 transition-all duration-300 border border-cyan-400/50 hover:border-cyan-300"
-              >
+                whileTap={{ scale: 0.95 }} className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-2xl shadow-cyan-500/50 hover:shadow-cyan-500/70 transition-all duration-300 border border-cyan-400/50 hover:border-cyan-300">
                 Get Started Today
               </motion.button>
               
               <motion.button
                 whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="border border-cyan-500/50 text-cyan-400 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-cyan-500/10 transition-all duration-300"
-              >
+                whileTap={{ scale: 0.95 }} className="border border-cyan-500/50 text-cyan-400 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-cyan-500/10 transition-all duration-300">
                 Schedule a Demo
               </motion.button>
             </div>

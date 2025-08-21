@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
-import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
-import Button from '../components/ui/Button';
+import Layout from '../components/layout/Layout';
+
 import { Rocket, Network, Boxes, CheckCircle } from 'lucide-react';
 
 export default function EmergingTechPage() {
@@ -20,7 +20,7 @@ export default function EmergingTechPage() {
   ];
 
   return (
-    <UltraAdvancedFuturisticBackground>
+    <Layout>
       <Head>
         <title>Emerging Tech | Zion Tech Group</title>
         <meta name="description" content="Blockchain, IoT/edge, 5G, and metaverse initiatives with secure, scalable architectures." />
@@ -35,8 +35,8 @@ export default function EmergingTechPage() {
             <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-4">Emerging Technology</h1>
             <p className="text-gray-300 text-lg max-w-3xl mx-auto">Accelerate innovation responsibly across blockchain, IoT/edge, 5G, and spatial computing.</p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button href="/contact" className="px-8 py-4">Start a Pilot</Button>
-              <Button href="/market-pricing" variant="outline" className="px-8 py-4">See Market Pricing</Button>
+              <a href="/contact" className="px-8 py-4">Start a Pilot</a>
+              <a href="/market-pricing" className="px-8 py-4">See Market Pricing</a>
             </div>
           </header>
 
@@ -65,6 +65,6 @@ export default function EmergingTechPage() {
           </section>
         </div>
       </div>
-    </UltraAdvancedFuturisticBackground>
+    </Layout>
   );
 }

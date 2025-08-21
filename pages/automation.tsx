@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import { RefreshCw, Zap, Bot, Workflow, ArrowRight, Check, BarChart3 } from 'lucide-react';
-import Button from '../components/ui/Button';
+
 
 export default function AutomationPage() {
   const features = [
@@ -67,22 +67,15 @@ export default function AutomationPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button
-                href="/contact"
-                size="lg"
-                className="shadow-2xl shadow-blue-500/25"
-              >
+              <a
+                href="/contact" className="shadow-2xl shadow-blue-500/25">
                 Start Automating
                 <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-              <Button
-                href="/contact"
-                variant="outline"
-                size="lg"
-                className="border-white/20 hover:border-white/40"
-              >
+              </a>
+              <a
+                href="/contact" className="border-white/20 hover:border-white/40">
                 View Demo
-              </Button>
+              </a>
             </div>
           </div>
         </section>
@@ -102,9 +95,7 @@ export default function AutomationPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {features.map((feature, index) => (
                 <div
-                  key={index}
-                  className="p-8 bg-gray-900/50 rounded-2xl border border-gray-800 hover:border-blue-500/30 hover:bg-gray-900/80 transition-all duration-300"
-                >
+                  key={index} className="p-8 bg-gray-900/50 rounded-2xl border border-gray-800 hover:border-blue-500/30 hover:bg-gray-900/80 transition-all duration-300">
                   <div className="w-16 h-16 mb-6 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
                     {feature.icon}
                   </div>
@@ -171,22 +162,14 @@ export default function AutomationPage() {
               Start automating your business processes today
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                href="/contact"
-                variant="secondary"
-                size="lg"
-                className="bg-white text-blue-600 hover:bg-gray-100"
-              >
+              <a
+                href="/contact" className="bg-white text-blue-600 hover:bg-gray-100">
                 Start Free Trial
-              </Button>
-              <Button
-                href="/contact"
-                variant="outline"
-                size="lg"
-                className="border-white text-white hover:bg-white hover:text-blue-600"
-              >
+              </a>
+              <a
+                href="/contact" className="border-white text-white hover:bg-white hover:text-blue-600">
                 Schedule Demo
-              </Button>
+              </a>
             </div>
           </div>
         </section>

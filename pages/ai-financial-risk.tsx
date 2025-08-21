@@ -1,11 +1,11 @@
 import React from 'react';
 import Head from 'next/head';
 import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
-import Button from '../components/ui/Button';
+
 
 export default function AIFinancialRiskPage() {
   return (
-    <UltraFuturisticBackground variant="neural" intensity="high">
+    <UltraFuturisticBackground  intensity="high">
       <Head>
         <title>AI Financial Risk Analytics | Zion Tech Group</title>
         <meta name="description" content="Scenario stress-tests, risk scoring with explainability, drift monitoring and governance for lending and trading models." />
@@ -37,11 +37,11 @@ export default function AIFinancialRiskPage() {
             <div className="space-y-6">
               <div className="bg-black/40 border border-emerald-500/30 rounded-2xl p-6">
                 <div className="text-sm text-slate-400 mb-1">Pricing</div>
-                <div className="text-3xl font-bold text-white">$299<span className="text-base font-medium text-slate-400">/month</span></div>
+                <div className="text-3xl font-bold text-white text-base font-medium text-slate-400">$299<span >/month</span></div>
                 <div className="text-sm text-slate-400 mt-2">Trial: 14 days • Setup: 1 week</div>
                 <div className="mt-6 flex gap-3">
-                  <Button href="/contact" className="flex-1 bg-gradient-to-r from-emerald-500 to-cyan-600 text-white">Contact Sales</Button>
-                  <Button href="/market-pricing" variant="outline" className="flex-1 border border-slate-600 text-slate-200">See Market Pricing</Button>
+                  <a href="/contact" className="flex-1 bg-gradient-to-r from-emerald-500 to-cyan-600 text-white">Contact Sales</a>
+                  <a href="/market-pricing" className="flex-1 border border-slate-600 text-slate-200">See Market Pricing</a>
                 </div>
               </div>
               <div className="bg-black/40 border border-emerald-500/30 rounded-2xl p-6">

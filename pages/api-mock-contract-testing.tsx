@@ -1,9 +1,9 @@
 import React from 'react';
 import Head from 'next/head';
 import { FlaskConical, ShieldCheck, FileCode, GitBranch, Phone, Mail, MapPin, Check } from 'lucide-react';
-import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import Layout from '../components/layout/Layout';
 import ServiceAds from '../components/sections/ServiceAds';
-import Button from '../components/ui/Button';
+
 
 export default function ApiMockContractTestingPage() {
   const contactInfo = {
@@ -36,7 +36,7 @@ export default function ApiMockContractTestingPage() {
   ];
 
   return (
-    <UltraAdvancedFuturisticBackground>
+    <Layout>
       <Head>
         <title>API Mock & Contract Testing | Zion Tech Group</title>
         <meta name="description" content="OpenAPI/GraphQL mock servers, contract tests in CI, and deployment gates with snapshot diffs and approvals." />
@@ -57,7 +57,7 @@ export default function ApiMockContractTestingPage() {
                 <div className="text-cyan-400 font-semibold mb-4">{t.price}</div>
                 <ul className="space-y-2 text-gray-300 text-sm">
                   {t.items.map((i) => (
-                    <li key={i} className="flex items-start gap-2"><Check className="w-4 h-4 mt-0.5 text-emerald-400" /> <span>{i}</span></li>
+                    <li key={i} className="flex items-start gap-2 w-4 h-4 mt-0.5 text-emerald-400"><Check /> <span>{i}</span></li>
                   ))}
                 </ul>
               </div>
@@ -66,17 +66,17 @@ export default function ApiMockContractTestingPage() {
 
           <div className="mt-8 max-w-3xl mx-auto bg-black/20 backdrop-blur-xl rounded-2xl p-6 border border-cyan-500/30">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm mb-4">
-              <div className="flex items-center justify-center gap-2 text-cyan-400"><Phone className="w-4 h-4" /><span>{contactInfo.mobile}</span></div>
-              <div className="flex items-center justify-center gap-2 text-purple-400"><Mail className="w-4 h-4" /><span>{contactInfo.email}</span></div>
-              <div className="flex items-center justify-center gap-2 text-green-400"><MapPin className="w-4 h-4" /><span className="text-xs">{contactInfo.address}</span></div>
+              <div className="flex items-center justify-center gap-2 text-cyan-400 w-4 h-4"><Phone /><span>{contactInfo.mobile}</span></div>
+              <div className="flex items-center justify-center gap-2 text-purple-400 w-4 h-4"><Mail /><span>{contactInfo.email}</span></div>
+              <div className="flex items-center justify-center gap-2 text-green-400 w-4 h-4 text-xs"><MapPin /><span >{contactInfo.address}</span></div>
             </div>
             <div className="text-center">
-              <Button href="/contact" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl">Book a Demo</Button>
+              <a href="/contact" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl">Book a Demo</a>
             </div>
           </div>
         </div>
       </div>
-    </UltraAdvancedFuturisticBackground>
+    </Layout>
   );
 }
 

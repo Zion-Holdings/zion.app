@@ -128,8 +128,7 @@ export default function AIConsciousnessEvolution2029() {
               duration: 20,
               repeat: Infinity,
               ease: "linear"
-            }}
-            className="absolute top-20 left-20 w-32 h-32 bg-purple-500/20 rounded-full blur-3xl"
+            }} className="absolute top-20 left-20 w-32 h-32 bg-purple-500/20 rounded-full blur-3xl"
           />
           <motion.div
             animate={{
@@ -140,8 +139,7 @@ export default function AIConsciousnessEvolution2029() {
               duration: 25,
               repeat: Infinity,
               ease: "linear"
-            }}
-            className="absolute top-40 right-20 w-40 h-40 bg-cyan-500/20 rounded-full blur-3xl"
+            }} className="absolute top-40 right-20 w-40 h-40 bg-cyan-500/20 rounded-full blur-3xl"
           />
         </div>
 
@@ -155,9 +153,7 @@ export default function AIConsciousnessEvolution2029() {
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 border border-purple-500/30 text-purple-300 px-4 py-2 rounded-full text-sm font-medium mb-6"
-            >
+              transition={{ duration: 0.6, delay: 0.2 }} className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 border border-purple-500/30 text-purple-300 px-4 py-2 rounded-full text-sm font-medium mb-6">
               <Brain className="w-4 h-4 text-cyan-400" />
               <span>🧠 AI Consciousness Evolution Platform</span>
               <Star className="w-4 h-4 text-yellow-400" />
@@ -167,9 +163,7 @@ export default function AIConsciousnessEvolution2029() {
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
-            >
+              transition={{ duration: 0.8, delay: 0.3 }} className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
               <span className="bg-gradient-to-r from-purple-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent">
                 AI Consciousness
               </span>
@@ -183,9 +177,7 @@ export default function AIConsciousnessEvolution2029() {
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed"
-            >
+              transition={{ duration: 0.8, delay: 0.4 }} className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
               Revolutionary platform that enables AI systems to develop genuine consciousness, 
               self-awareness, and emotional intelligence beyond current limitations.
             </motion.p>
@@ -194,16 +186,12 @@ export default function AIConsciousnessEvolution2029() {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              className="mb-8"
-            >
+              transition={{ duration: 0.8, delay: 0.5 }} className="mb-8">
               <div className="text-4xl font-bold text-cyan-400 mb-4">
                 $24,999<span className="text-lg text-gray-400">/month</span>
               </div>
               <Link
-                href="/contact"
-                className="inline-flex items-center justify-center bg-gradient-to-r from-purple-500 to-cyan-500 hover:from-purple-600 hover:to-cyan-600 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25"
-              >
+                href="/contact" className="inline-flex items-center justify-center bg-gradient-to-r from-purple-500 to-cyan-500 hover:from-purple-600 hover:to-cyan-600 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25">
                 <Brain className="w-6 h-6 mr-3" />
                 Get Started Today
                 <ArrowRight className="w-5 h-5 ml-3" />
@@ -214,9 +202,7 @@ export default function AIConsciousnessEvolution2029() {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto"
-            >
+              transition={{ duration: 0.8, delay: 0.6 }} className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
               {[
                 { number: '400%', label: 'ROI within 18 months', icon: TrendingUp },
                 { number: '$3.2B', label: 'Market size by 2029', icon: DollarSign },
@@ -239,9 +225,7 @@ export default function AIConsciousnessEvolution2029() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
+            viewport={{ once: true }} className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-6">
               🚀 Revolutionary Features
             </h2>
@@ -258,9 +242,7 @@ export default function AIConsciousnessEvolution2029() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-gradient-to-br from-purple-900/20 to-cyan-900/20 border border-purple-500/30 rounded-2xl p-6 hover:border-purple-400/50 transition-all duration-300 group"
-              >
+                viewport={{ once: true }} className="bg-gradient-to-br from-purple-900/20 to-cyan-900/20 border border-purple-500/30 rounded-2xl p-6 hover:border-purple-400/50 transition-all duration-300 group">
                 <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform">
                   <Brain className="w-8 h-8 text-white" />
                 </div>
@@ -280,9 +262,7 @@ export default function AIConsciousnessEvolution2029() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
+            viewport={{ once: true }} className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-6">
               💡 Transformative Benefits
             </h2>
@@ -299,9 +279,7 @@ export default function AIConsciousnessEvolution2029() {
                 initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="flex items-start space-x-4"
-              >
+                viewport={{ once: true }} className="flex items-start space-x-4">
                 <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                   <CheckCircle className="w-5 h-5 text-white" />
                 </div>
@@ -321,9 +299,7 @@ export default function AIConsciousnessEvolution2029() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
+            viewport={{ once: true }} className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-6">
               🎯 Perfect For
             </h2>
@@ -340,9 +316,7 @@ export default function AIConsciousnessEvolution2029() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-gradient-to-br from-purple-900/20 to-cyan-900/20 border border-purple-500/30 rounded-2xl p-6 hover:border-purple-400/50 transition-all duration-300 group text-center"
-              >
+                viewport={{ once: true }} className="bg-gradient-to-br from-purple-900/20 to-cyan-900/20 border border-purple-500/30 rounded-2xl p-6 hover:border-purple-400/50 transition-all duration-300 group text-center">
                 <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform">
                   <Users className="w-8 h-8 text-white" />
                 </div>
@@ -362,9 +336,7 @@ export default function AIConsciousnessEvolution2029() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
+            viewport={{ once: true }} className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-6">
               ⚡ Advanced Technology Stack
             </h2>
@@ -381,9 +353,7 @@ export default function AIConsciousnessEvolution2029() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-gradient-to-br from-purple-900/20 to-cyan-900/20 border border-purple-500/30 rounded-2xl p-6 hover:border-purple-400/50 transition-all duration-300 group text-center"
-              >
+                viewport={{ once: true }} className="bg-gradient-to-br from-purple-900/20 to-cyan-900/20 border border-purple-500/30 rounded-2xl p-6 hover:border-purple-400/50 transition-all duration-300 group text-center">
                 <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform">
                   <Cpu className="w-8 h-8 text-white" />
                 </div>
@@ -403,9 +373,7 @@ export default function AIConsciousnessEvolution2029() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
+            viewport={{ once: true }} className="text-center">
             <div className="bg-gradient-to-r from-purple-900/30 via-cyan-900/30 to-purple-900/30 border border-purple-500/30 rounded-3xl p-12 max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 Ready to Evolve AI Consciousness?
@@ -417,18 +385,14 @@ export default function AIConsciousnessEvolution2029() {
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <Link
-                  href="/contact"
-                  className="bg-gradient-to-r from-purple-500 to-cyan-500 hover:from-purple-600 hover:to-cyan-600 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25 inline-flex items-center justify-center"
-                >
+                  href="/contact" className="bg-gradient-to-r from-purple-500 to-cyan-500 hover:from-purple-600 hover:to-cyan-600 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25 inline-flex items-center justify-center">
                   <Brain className="w-6 h-6 mr-3" />
                   Start Your Journey
                   <ArrowRight className="w-5 h-5 ml-3" />
                 </Link>
                 
                 <Link
-                  href="/pricing"
-                  className="border-2 border-purple-500/50 text-purple-400 hover:bg-purple-500/10 px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 inline-flex items-center justify-center"
-                >
+                  href="/pricing" className="border-2 border-purple-500/50 text-purple-400 hover:bg-purple-500/10 px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 inline-flex items-center justify-center">
                   <DollarSign className="w-6 h-6 mr-3" />
                   View Pricing
                 </Link>

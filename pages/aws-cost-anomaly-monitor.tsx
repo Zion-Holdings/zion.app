@@ -1,10 +1,10 @@
 import React from 'react';
 import Head from 'next/head';
-import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import Layout from '../components/layout/Layout';
 
 export default function AwsCostAnomalyMonitorPage() {
   return (
-    <UltraAdvancedFuturisticBackground>
+    <Layout>
       <Head>
         <title>AWS Cost Anomaly Monitor | Zion Tech Group</title>
         <meta name="description" content="Real-time AWS cost anomaly alerts with Slack notifications, budgets, and remediation playbooks." />
@@ -25,7 +25,7 @@ export default function AwsCostAnomalyMonitorPage() {
           </div>
         </div>
       </div>
-    </UltraAdvancedFuturisticBackground>
+    </Layout>
   );
 }
 

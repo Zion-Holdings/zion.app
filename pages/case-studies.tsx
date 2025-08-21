@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
-import Card from '../components/ui/Card';
-import Button from '../components/ui/Button';
+
+
 
 export default function CaseStudiesPage() {
   const caseStudies = [
@@ -130,9 +130,7 @@ export default function CaseStudiesPage() {
           <div className="flex flex-wrap justify-center gap-4">
             {industries.map((industry) => (
               <button
-                key={industry}
-                className="px-6 py-3 rounded-full bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white transition-all duration-200 border border-gray-700 hover:border-blue-500"
-              >
+                key={industry} className="px-6 py-3 rounded-full bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white transition-all duration-200 border border-gray-700 hover:border-blue-500">
                 {industry}
               </button>
             ))}
@@ -145,9 +143,8 @@ export default function CaseStudiesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {caseStudies.map((study, index) => (
-              <Card
-                key={index}
-                className="group hover:border-blue-400/30 overflow-hidden"
+              <div
+                key={index} className="group hover:border-blue-400/30 overflow-hidden p-6 bg-black/40 border border-gray-700/50 rounded-lg backdrop-blur-sm"
                 style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
               >
                 <div className="text-6xl mb-6 text-center group-hover:scale-110 transition-transform duration-300">
@@ -187,24 +184,18 @@ export default function CaseStudiesPage() {
                   <div className="flex flex-wrap gap-2">
                     {study.technologies.map((tech, techIndex) => (
                       <span
-                        key={techIndex}
-                        className="px-2 py-1 bg-gray-800 text-gray-300 text-xs rounded"
-                      >
+                        key={techIndex} className="px-2 py-1 bg-gray-800 text-gray-300 text-xs rounded">
                         {tech}
                       </span>
                     ))}
                   </div>
                 </div>
 
-                <Button
-                  href="/contact"
-                  variant="outline"
-                  size="sm"
-                  className="w-full"
-                >
+                <a
+                  href="/contact" className="w-full px-6 py-3 bg-gradient-to-r from-cyan-600 to-blue-700 hover:from-cyan-700 hover:to-blue-800 text-white font-semibold rounded-lg transition-all duration-200">
                   View Full Case Study
-                </Button>
-              </Card>
+                </a>
+              </div>
             ))}
           </div>
         </div>
@@ -229,9 +220,8 @@ export default function CaseStudiesPage() {
               { number: '40%', label: 'Average Efficiency Gain', color: 'text-green-400' },
               { number: '24/7', label: 'Support Availability', color: 'text-blue-400' },
             ].map((metric, index) => (
-              <Card
-                key={index}
-                className="text-center group hover:border-blue-400/30"
+              <div
+                key={index} className="text-center group hover:border-blue-400/30 p-6 bg-black/40 border border-gray-700/50 rounded-lg backdrop-blur-sm"
                 style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
               >
                 <div className={`text-4xl md:text-5xl font-bold mb-2 ${metric.color}`}>
@@ -240,7 +230,7 @@ export default function CaseStudiesPage() {
                 <div className="text-gray-400 text-sm md:text-base">
                   {metric.label}
                 </div>
-              </Card>
+              </div>
             ))}
           </div>
         </div>
@@ -279,9 +269,8 @@ export default function CaseStudiesPage() {
                 company: "FinFlow Capital"
               }
             ].map((testimonial, index) => (
-              <Card
-                key={index}
-                className="p-8 group hover:border-blue-400/30"
+              <div
+                key={index} className="p-8 group hover:border-blue-400/30 p-6 bg-black/40 border border-gray-700/50 rounded-lg backdrop-blur-sm"
                 style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
               >
                 <div className="text-4xl text-blue-400 mb-4">&quot;</div>
@@ -298,7 +287,7 @@ export default function CaseStudiesPage() {
                     <div className="text-gray-500 text-sm">{testimonial.company}</div>
                   </div>
                 </div>
-              </Card>
+              </div>
             ))}
           </div>
         </div>
@@ -314,22 +303,14 @@ export default function CaseStudiesPage() {
                          Let&apos;s discuss how we can transform your business with AI-powered solutions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              href="/contact"
-              variant="secondary"
-              size="lg"
-              className="bg-white text-blue-600 hover:bg-gray-100"
-            >
+            <a
+              href="/contact" className="bg-white text-blue-600 hover:bg-gray-100">
               Start Your Project
-            </Button>
-            <Button
-              href="/services"
-              variant="outline"
-              size="lg"
-              className="border-white text-white hover:bg-white hover:text-blue-600"
-            >
+            </a>
+            <a
+              href="/services" className="border-white text-white hover:bg-white hover:text-blue-600">
               Explore Services
-            </Button>
+            </a>
           </div>
         </div>
       </section>

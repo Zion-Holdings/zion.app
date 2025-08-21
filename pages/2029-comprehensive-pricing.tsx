@@ -149,9 +149,7 @@ export default function ComprehensivePricing2029() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
+            viewport={{ once: true }} className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-6">
               Service Pricing
             </h2>
@@ -168,9 +166,7 @@ export default function ComprehensivePricing2029() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="relative group"
-              >
+                viewport={{ once: true }} className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 to-blue-600/10 rounded-2xl blur-xl group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative bg-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 hover:border-gray-500 transition-all duration-500 h-full">
                   {/* Service Header */}
@@ -198,9 +194,7 @@ export default function ComprehensivePricing2029() {
                   <div className="flex flex-wrap gap-2 mb-6 justify-center">
                     {service.category.slice(0, 3).map((cat, catIndex) => (
                       <span
-                        key={catIndex}
-                        className="px-3 py-1 bg-gray-800 text-gray-300 text-sm rounded-full border border-gray-600"
-                      >
+                        key={catIndex} className="px-3 py-1 bg-gray-800 text-gray-300 text-sm rounded-full border border-gray-600">
                         {cat}
                       </span>
                     ))}
@@ -247,15 +241,11 @@ export default function ComprehensivePricing2029() {
                   {/* CTA Buttons */}
                   <div className="flex gap-3">
                     <Link
-                      href={`/services/${service.id}`}
-                      className="flex-1 inline-flex items-center justify-center px-4 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 text-sm"
-                    >
+                      href={`/services/${service.id}`} className="flex-1 inline-flex items-center justify-center px-4 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 text-sm">
                       Learn More
                     </Link>
                     <Link
-                      href="/contact"
-                      className="flex-1 inline-flex items-center justify-center px-4 py-3 border border-purple-500 text-purple-400 font-semibold rounded-lg hover:bg-purple-500 hover:text-white transition-all duration-300 text-sm"
-                    >
+                      href="/contact" className="flex-1 inline-flex items-center justify-center px-4 py-3 border border-purple-500 text-purple-400 font-semibold rounded-lg hover:bg-purple-500 hover:text-white transition-all duration-300 text-sm">
                       Get Started
                     </Link>
                   </div>
@@ -294,9 +284,7 @@ export default function ComprehensivePricing2029() {
                 </p>
                 <div className="text-2xl font-bold text-purple-400 mb-4">Custom Pricing</div>
                 <Link
-                  href="/contact"
-                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300"
-                >
+                  href="/contact" className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300">
                   Contact Sales
                 </Link>
               </div>
@@ -311,9 +299,7 @@ export default function ComprehensivePricing2029() {
                 </p>
                 <div className="text-2xl font-bold text-purple-400 mb-4">Custom Pricing</div>
                 <Link
-                  href="/contact"
-                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300"
-                >
+                  href="/contact" className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300">
                   Contact Sales
                 </Link>
               </div>
@@ -328,9 +314,7 @@ export default function ComprehensivePricing2029() {
                 </p>
                 <div className="text-2xl font-bold text-purple-400 mb-4">Custom Pricing</div>
                 <Link
-                  href="/contact"
-                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300"
-                >
+                  href="/contact" className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300">
                   Contact Sales
                 </Link>
               </div>
@@ -377,9 +361,7 @@ export default function ComprehensivePricing2029() {
                 whileTap={{ scale: 0.95 }}
               >
                 <Link
-                  href="/contact"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-full hover:from-purple-700 hover:to-blue-700 transition-all duration-300 text-lg"
-                >
+                  href="/contact" className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-full hover:from-purple-700 hover:to-blue-700 transition-all duration-300 text-lg">
                   Contact Us Now
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
@@ -389,9 +371,7 @@ export default function ComprehensivePricing2029() {
                 whileTap={{ scale: 0.95 }}
               >
                 <Link
-                  href="/2029-innovative-services-showcase"
-                  className="inline-flex items-center px-8 py-4 border-2 border-purple-500 text-purple-400 font-semibold rounded-full hover:bg-purple-500 hover:text-white transition-all duration-300 text-lg"
-                >
+                  href="/2029-innovative-services-showcase" className="inline-flex items-center px-8 py-4 border-2 border-purple-500 text-purple-400 font-semibold rounded-full hover:bg-purple-500 hover:text-white transition-all duration-300 text-lg">
                   View All Services
                 </Link>
               </motion.div>

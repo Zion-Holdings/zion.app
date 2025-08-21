@@ -1,10 +1,10 @@
 import React from 'react';
 import Head from 'next/head';
-import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import Layout from '../components/layout/Layout';
 
 export default function CloudflareWorkersEdgeConfigPage() {
   return (
-    <UltraAdvancedFuturisticBackground>
+    <Layout>
       <Head>
         <title>Cloudflare Workers Edge Config Manager | Zion Tech Group</title>
         <meta name="description" content="Safe, versioned edge configuration for Cloudflare Workers/KV with previews, rollbacks, and audit logs." />
@@ -25,7 +25,7 @@ export default function CloudflareWorkersEdgeConfigPage() {
           </div>
         </div>
       </div>
-    </UltraAdvancedFuturisticBackground>
+    </Layout>
   );
 }
 

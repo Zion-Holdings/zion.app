@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
-import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
-import Button from '../components/ui/Button';
+import Layout from '../components/layout/Layout';
+
 import { Atom, CheckCircle, Shield, Sparkles } from 'lucide-react';
 
 export default function QuantumServicesPage() {
@@ -19,7 +19,7 @@ export default function QuantumServicesPage() {
   ];
 
   return (
-    <UltraAdvancedFuturisticBackground>
+    <Layout>
       <Head>
         <title>Quantum Services | Zion Tech Group</title>
         <meta name="description" content="Quantum computing strategy, hybrid pipelines, and quantum-safe security initiatives." />
@@ -34,8 +34,8 @@ export default function QuantumServicesPage() {
             <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-4">Quantum Services</h1>
             <p className="text-gray-300 text-lg max-w-3xl mx-auto">Pragmatic, vendor-neutral guidance on quantum opportunities and post-quantum security.</p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button href="/contact" className="px-8 py-4">Talk to Experts</Button>
-              <Button href="/market-pricing" variant="outline" className="px-8 py-4">See Market Pricing</Button>
+              <a href="/contact" className="px-8 py-4">Talk to Experts</a>
+              <a href="/market-pricing" className="px-8 py-4">See Market Pricing</a>
             </div>
           </header>
 
@@ -56,7 +56,7 @@ export default function QuantumServicesPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {solutions.map((s) => (
                 <a key={s.name} href={s.href} className="p-6 rounded-2xl bg-black/40 border border-gray-700/60 hover:border-cyan-500/40 transition-colors">
-                  <div className="flex items-center gap-3 text-cyan-300 mb-2"><Sparkles className="w-5 h-5" /><span className="font-semibold">{s.name}</span></div>
+                  <div className="flex items-center gap-3 text-cyan-300 mb-2 w-5 h-5 font-semibold"><Sparkles /><span >{s.name}</span></div>
                   <p className="text-gray-300 text-sm">Learn more</p>
                 </a>
               ))}
@@ -71,6 +71,6 @@ export default function QuantumServicesPage() {
           </section>
         </div>
       </div>
-    </UltraAdvancedFuturisticBackground>
+    </Layout>
   );
 }

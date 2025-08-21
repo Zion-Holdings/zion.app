@@ -1,10 +1,10 @@
 import React from 'react';
 import Head from 'next/head';
-import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import Layout from '../components/layout/Layout';
 
 export default function KubernetesRbacAuditorPage() {
   return (
-    <UltraAdvancedFuturisticBackground>
+    <Layout>
       <Head>
         <title>Kubernetes RBAC Auditor | Zion Tech Group</title>
         <meta name="description" content="Detect over-permissive Kubernetes roles and unused bindings with least-privilege recommendations." />
@@ -25,7 +25,7 @@ export default function KubernetesRbacAuditorPage() {
           </div>
         </div>
       </div>
-    </UltraAdvancedFuturisticBackground>
+    </Layout>
   );
 }
 

@@ -3,8 +3,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Star, Users, TrendingUp, DollarSign, Clock, CheckCircle, ArrowRight, Rocket, Brain, Atom, Sparkles, Shield, Zap, Globe, Cpu, Database, Cloud, Smartphone, Palette, Search as SearchIcon, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Code, BookOpen, Activity, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Filter, Grid, List, ChevronDown, ChevronUp, Sparkles as SparklesIcon, FlaskConical, Dna, Car, Leaf, Factory, Truck, Microscope, GraduationCap, ShieldCheck, Brain as BrainIcon, Atom as AtomIcon, Globe2, Bot, ChevronRight, Crown, Infinity, Zap as ZapIcon2, Shield as ShieldIcon, Users as UsersIcon, Globe as GlobeIcon, Cpu as CpuIcon, Database as DatabaseIcon2, Cloud as CloudIcon, Smartphone as SmartphoneIcon, Palette as PaletteIcon, Search as SearchIcon2, MessageSquare as MessageSquareIcon, FileText as MessageSquareIcon2, Calendar as CalendarIcon, CreditCard as CreditCardIcon, BarChart3 as BarChart3Icon, Settings as SettingsIcon, Zap as ZapIcon3, Code as CodeIcon, BookOpen as CodeIcon2, Activity as ActivityIcon, Database as DatabaseIcon3, Play as PlayIcon, Mail as MailIcon, Phone as PhoneIcon, MapPin as MapPinIcon, Filter as FilterIcon, Grid as GridIcon, List as ListIcon, ChevronDown as ChevronDownIcon, ChevronUp as ChevronUpIcon, Sparkles as SparklesIcon2, FlaskConical as FlaskConicalIcon, Dna as DnaIcon, Car as CarIcon, Leaf as LeafIcon, Factory as FactoryIcon, Truck as TruckIcon, Microscope as MicroscopeIcon, GraduationCap as GraduationCapIcon, ShieldCheck as ShieldCheckIcon, Brain as BrainIcon2, Atom as AtomIcon2, Globe2 as Globe2Icon, Bot as BotIcon, ChevronRight as ChevronRightIcon } from 'lucide-react';
-import Button from '../components/ui/Button';
-import Card from '../components/ui/Card';
+
+
 import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
 import UltraFuturisticCard from '../components/ui/UltraFuturisticCard';
 import { innovative2026MicroSaasServicesV2 } from '../data/innovative-2026-micro-saas-v2';
@@ -179,7 +179,7 @@ export default function Services2026ShowcaseEnhancedPage() {
   };
 
   return (
-    <UltraFuturisticBackground variant="quantum" intensity="high">
+    <UltraFuturisticBackground  intensity="high">
       <div className="min-h-screen">
         <Head>
           <title>Enhanced 2026 Services Showcase - Zion Tech Group</title>
@@ -225,9 +225,7 @@ export default function Services2026ShowcaseEnhancedPage() {
                     key={key}
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, delay: key.length * 0.1 }}
-                    className="bg-gradient-to-r from-gray-800/50 to-gray-700/50 backdrop-blur-sm rounded-xl p-4 border border-gray-600/30"
-                  >
+                    transition={{ duration: 0.5, delay: key.length * 0.1 }} className="bg-gradient-to-r from-gray-800/50 to-gray-700/50 backdrop-blur-sm rounded-xl p-4 border border-gray-600/30">
                     <div className="text-3xl font-bold text-cyan-400">{value}</div>
                     <div className="text-sm text-gray-400 capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</div>
                   </motion.div>
@@ -267,8 +265,7 @@ export default function Services2026ShowcaseEnhancedPage() {
                   type="text"
                   placeholder="Search for services, technologies, or use cases..."
                   value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full bg-gray-800/50 border border-gray-600/30 rounded-xl pl-12 pr-4 py-4 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                  onChange={(e) => setSearchTerm(e.target.value)} className="w-full bg-gray-800/50 border border-gray-600/30 rounded-xl pl-12 pr-4 py-4 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
                 />
               </div>
 
@@ -279,9 +276,7 @@ export default function Services2026ShowcaseEnhancedPage() {
                   <label className="block text-sm font-medium text-gray-300 mb-2">Category</label>
                   <select
                     value={selectedCategory}
-                    onChange={(e) => setSelectedCategory(e.target.value)}
-                    className="w-full bg-gray-800/50 border border-gray-600/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500"
-                  >
+                    onChange={(e) => setSelectedCategory(e.target.value)} className="w-full bg-gray-800/50 border border-gray-600/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500">
                     {categories.map((category) => (
                       <option key={category.id} value={category.id}>
                         {category.name} ({category.count})
@@ -295,9 +290,7 @@ export default function Services2026ShowcaseEnhancedPage() {
                   <label className="block text-sm font-medium text-gray-300 mb-2">Price Range</label>
                   <select
                     value={selectedPriceRange}
-                    onChange={(e) => setSelectedPriceRange(e.target.value)}
-                    className="w-full bg-gray-800/50 border border-gray-600/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500"
-                  >
+                    onChange={(e) => setSelectedPriceRange(e.target.value)} className="w-full bg-gray-800/50 border border-gray-600/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500">
                     {priceRanges.map((range) => (
                       <option key={range.id} value={range.id}>
                         {range.name}
@@ -311,9 +304,7 @@ export default function Services2026ShowcaseEnhancedPage() {
                   <label className="block text-sm font-medium text-gray-300 mb-2">Sort By</label>
                   <select
                     value={sortBy}
-                    onChange={(e) => setSortBy(e.target.value)}
-                    className="w-full bg-gray-800/50 border border-gray-600/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500"
-                  >
+                    onChange={(e) => setSortBy(e.target.value)} className="w-full bg-gray-800/50 border border-gray-600/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500">
                     {sortOptions.map((option) => (
                       <option key={option.id} value={option.id}>
                         {option.name}
@@ -365,9 +356,7 @@ export default function Services2026ShowcaseEnhancedPage() {
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  className="text-center py-20"
-                >
+                  exit={{ opacity: 0 }} className="text-center py-20">
                   <div className="text-6xl mb-4">🔍</div>
                   <h3 className="text-2xl font-semibold text-gray-300 mb-2">No services found</h3>
                   <p className="text-gray-400">Try adjusting your search criteria or filters</p>
@@ -383,10 +372,7 @@ export default function Services2026ShowcaseEnhancedPage() {
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                       className={viewMode === 'grid' ? '' : 'bg-gradient-to-r from-gray-800/50 to-gray-700/50 backdrop-blur-sm rounded-xl p-6 border border-gray-600/30'}
                     >
-                      <UltraFuturisticCard
-                        variant={mapServiceVariantToCardVariant(service.variant)}
-                        className="h-full"
-                      >
+                      <UltraFuturisticCard className="h-full">
                         <div className="p-6">
                           {/* Service Header */}
                           <div className="flex items-start justify-between mb-4">
@@ -457,22 +443,17 @@ export default function Services2026ShowcaseEnhancedPage() {
 
                           {/* Action Buttons */}
                           <div className="flex space-x-2">
-                            <Button
-                              variant="quantum"
-                              size="sm"
-                              className="flex-1"
+                            <button className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-3 py-2 rounded-lg text-sm font-medium hover:from-cyan-600 hover:to-blue-700 transition-all duration-200"
                               onClick={() => window.open(service.link, '_blank')}
                             >
                               Learn More
                               <ArrowRight className="w-4 h-4 ml-1" />
-                            </Button>
-                            <Button
-                              variant="futuristic"
-                              size="sm"
+                            </button>
+                            <button className="bg-gradient-to-r from-purple-500 to-pink-600 text-white px-3 py-2 rounded-lg text-sm font-medium hover:from-purple-600 hover:to-pink-700 transition-all duration-200"
                               onClick={() => window.open(`mailto:${contactInfo.email}?subject=Inquiry about ${service.name}`)}
                             >
                               Contact
-                            </Button>
+                            </button>
                           </div>
                         </div>
                       </UltraFuturisticCard>
@@ -491,9 +472,7 @@ export default function Services2026ShowcaseEnhancedPage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="bg-gradient-to-r from-cyan-900/50 via-purple-900/50 to-pink-900/50 backdrop-blur-sm rounded-2xl p-8 border border-cyan-500/30"
-            >
+              viewport={{ once: true }} className="bg-gradient-to-r from-cyan-900/50 via-purple-900/50 to-pink-900/50 backdrop-blur-sm rounded-2xl p-8 border border-cyan-500/30">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 Ready to Transform Your Business?
               </h2>
@@ -501,22 +480,18 @@ export default function Services2026ShowcaseEnhancedPage() {
                 Join thousands of businesses already using our innovative services to gain competitive advantages and achieve remarkable ROI.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button
-                  variant="quantum"
-                  size="lg"
+                <button className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-6 py-3 rounded-lg text-lg font-medium hover:from-cyan-600 hover:to-blue-700 transition-all duration-200"
                   onClick={() => window.open(`mailto:${contactInfo.email}?subject=Business Transformation Consultation`, '_blank')}
                 >
                   <Mail className="w-5 h-5 mr-2" />
                   Schedule Consultation
-                </Button>
-                <Button
-                  variant="futuristic"
-                  size="lg"
+                </button>
+                <button className="bg-gradient-to-r from-purple-500 to-pink-600 text-white px-6 py-3 rounded-lg text-lg font-medium hover:from-purple-600 hover:to-pink-700 transition-all duration-200"
                   onClick={() => window.open(`tel:${contactInfo.mobile}`, '_blank')}
                 >
                   <Phone className="w-5 h-5 mr-2" />
                   Call Now
-                </Button>
+                </button>
               </div>
               <div className="mt-8 text-sm text-gray-400">
                 <p>Contact: {contactInfo.mobile} | {contactInfo.email}</p>

@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
-import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
-import Button from '../components/ui/Button';
+import Layout from '../components/layout/Layout';
+
 import { Smartphone, CheckCircle, ExternalLink, Shield } from 'lucide-react';
 
 export default function MDMPage() {
@@ -26,7 +26,7 @@ export default function MDMPage() {
   ];
 
   return (
-    <UltraAdvancedFuturisticBackground>
+    <Layout>
       <Head>
         <title>Mobile Device Management (MDM) | Zion Tech Group</title>
         <meta name="description" content="Modern MDM with zero-touch enrollment, compliance policies, app management, and identity integration." />
@@ -41,8 +41,8 @@ export default function MDMPage() {
             <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-4">Mobile Device Management (MDM)</h1>
             <p className="text-gray-300 text-lg max-w-3xl mx-auto">Secure, compliant device fleets across iOS, Android, macOS, and Windows.</p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button href="/contact" className="px-8 py-4">Talk to an Engineer</Button>
-              <Button href="/market-pricing" variant="outline" className="px-8 py-4">Market Pricing</Button>
+              <a href="/contact" className="px-8 py-4">Talk to an Engineer</a>
+              <a href="/market-pricing" className="px-8 py-4">Market Pricing</a>
             </div>
           </header>
 
@@ -92,6 +92,6 @@ export default function MDMPage() {
           </section>
         </div>
       </div>
-    </UltraAdvancedFuturisticBackground>
+    </Layout>
   );
 }

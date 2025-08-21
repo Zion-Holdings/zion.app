@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
-import Card from '../components/ui/Card';
-import Button from '../components/ui/Button';
+
+
 import Link from 'next/link';
 
 export default function ResourcesPage() {
@@ -142,9 +142,7 @@ export default function ResourcesPage() {
           <div className="flex flex-wrap justify-center gap-4">
             {categories.map((category) => (
               <button
-                key={category}
-                className="px-6 py-3 rounded-full bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white transition-all duration-200 border border-gray-700 hover:border-blue-500"
-              >
+                key={category} className="px-6 py-3 rounded-full bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white transition-all duration-200 border border-gray-700 hover:border-blue-500">
                 {category}
               </button>
             ))}
@@ -166,9 +164,8 @@ export default function ResourcesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {resources.map((resource, index) => (
-              <Card
-                key={index}
-                className="group hover:border-blue-400/30 overflow-hidden"
+              <div
+                key={index} className="group hover:border-blue-400/30 overflow-hidden p-6 bg-black/40 border border-gray-700/50 rounded-lg backdrop-blur-sm"
                 style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
               >
                 <div className="text-6xl mb-6 text-center group-hover:scale-110 transition-transform duration-300">
@@ -193,14 +190,11 @@ export default function ResourcesPage() {
                   <span>{resource.format}</span>
                 </div>
 
-                <Button
-                  href={resource.downloadUrl}
-                  size="sm"
-                  className="w-full"
-                >
+                <a
+                  href={resource.downloadUrl} className="w-full px-6 py-3 bg-gradient-to-r from-cyan-600 to-blue-700 hover:from-cyan-700 hover:to-blue-800 text-white font-semibold rounded-lg transition-all duration-200">
                   Download Resource
-                </Button>
-              </Card>
+                </a>
+              </div>
             ))}
           </div>
         </div>
@@ -220,9 +214,8 @@ export default function ResourcesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {tools.map((tool, index) => (
-              <Card
-                key={index}
-                className="text-center group hover:border-blue-400/30"
+              <div
+                key={index} className="text-center group hover:border-blue-400/30 p-6 bg-black/40 border border-gray-700/50 rounded-lg backdrop-blur-sm"
                 style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
               >
                 <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -240,15 +233,11 @@ export default function ResourcesPage() {
                   {tool.category}
                 </span>
                 
-                <Button
-                  href={tool.url}
-                  variant="outline"
-                  size="sm"
-                  className="w-full"
-                >
+                <a
+                  href={tool.url} className="w-full px-6 py-3 bg-gradient-to-r from-cyan-600 to-blue-700 hover:from-cyan-700 hover:to-blue-800 text-white font-semibold rounded-lg transition-all duration-200">
                   Launch Tool
-                </Button>
-              </Card>
+                </a>
+              </div>
             ))}
           </div>
         </div>
@@ -287,9 +276,8 @@ export default function ResourcesPage() {
                 category: 'Intermediate'
               }
             ].map((video, index) => (
-              <Card
-                key={index}
-                className="group hover:border-blue-400/30 overflow-hidden"
+              <div
+                key={index} className="group hover:border-blue-400/30 overflow-hidden p-6 bg-black/40 border border-gray-700/50 rounded-lg backdrop-blur-sm"
                 style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
               >
                 <div className="relative">
@@ -309,16 +297,12 @@ export default function ResourcesPage() {
                     {video.title}
                   </h3>
                   
-                  <Button
-                    href="/resources"
-                    variant="outline"
-                    size="sm"
-                    className="w-full"
-                  >
+                  <a
+                    href="/resources" className="w-full px-6 py-3 bg-gradient-to-r from-cyan-600 to-blue-700 hover:from-cyan-700 hover:to-blue-800 text-white font-semibold rounded-lg transition-all duration-200">
                     Watch Tutorial
-                  </Button>
+                  </a>
                 </div>
-              </Card>
+              </div>
             ))}
           </div>
         </div>
@@ -327,7 +311,7 @@ export default function ResourcesPage() {
       {/* Community & Support */}
       <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Card className="p-12">
+          <div className="p-12 p-6 bg-black/40 border border-gray-700/50 rounded-lg backdrop-blur-sm">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
               Join Our Community
             </h2>
@@ -350,22 +334,19 @@ export default function ResourcesPage() {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                href="/contact"
-                size="lg"
-                className="group-hover:scale-105 transition-transform duration-200"
-              >
+              <a
+                href="/contact" className="group-hover:scale-105 transition-transform duration-200">
                 Join Discord
-              </Button>
-              <Button
+              </a>
+              <a
                 href="/contact"
-                variant="outline"
-                size="lg"
+                
+                
               >
                 Contact Support
-              </Button>
+              </a>
             </div>
-          </Card>
+          </div>
         </div>
       </section>
 
@@ -379,22 +360,14 @@ export default function ResourcesPage() {
                          Can&apos;t find what you&apos;re looking for? Our experts are here to help you succeed.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              href="/contact"
-              variant="secondary"
-              size="lg"
-              className="bg-white text-blue-600 hover:bg-gray-100"
-            >
+            <a
+              href="/contact" className="bg-white text-blue-600 hover:bg-gray-100">
               Get Expert Help
-            </Button>
-            <Button
-              href="/services"
-              variant="outline"
-              size="lg"
-              className="border-white text-white hover:bg-white hover:text-blue-600"
-            >
+            </a>
+            <a
+              href="/services" className="border-white text-white hover:bg-white hover:text-blue-600">
               Explore Services
-            </Button>
+            </a>
           </div>
         </div>
       </section>

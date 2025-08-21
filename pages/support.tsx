@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
-import Card from '../components/ui/Card';
-import Button from '../components/ui/Button';
+
+
 
 export default function SupportPage() {
   const supportCategories = [
@@ -92,11 +92,10 @@ export default function SupportPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {supportCategories.map((category, index) => (
-              <Card
-                key={index}
-                className="text-center group hover:border-cursor-blue/40 hover:shadow-2xl hover:shadow-cursor-blue/20"
+              <div
+                key={index} className="text-center group hover:border-cursor-blue/40 hover:shadow-2xl hover:shadow-cursor-blue/20 p-6 bg-black/40 border border-gray-700/50 rounded-lg backdrop-blur-sm"
                 style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
-              >
+               >
                 <div className={`text-4xl mb-6 ${category.color}`}>
                   {category.icon}
                 </div>
@@ -106,15 +105,11 @@ export default function SupportPage() {
                 <p className="text-gray-400 leading-relaxed mb-6">
                   {category.description}
                 </p>
-                <Button
-                  href={category.href}
-                  variant="outline"
-                  size="sm"
-                  className="w-full"
-                >
+                <a
+                  href={category.href} className="w-full px-6 py-3 bg-gradient-to-r from-cyan-600 to-blue-700 hover:from-cyan-700 hover:to-blue-800 text-white font-semibold rounded-lg transition-all duration-200">
                   Learn More
-                </Button>
-              </Card>
+                </a>
+              </div>
             ))}
           </div>
         </div>
@@ -134,18 +129,17 @@ export default function SupportPage() {
 
           <div className="max-w-4xl mx-auto space-y-6">
             {faqs.map((faq, index) => (
-              <Card
-                key={index}
-                className="hover:border-cursor-blue/30"
+              <div
+                key={index} className="hover:border-cursor-blue/30 p-6 bg-black/40 border border-gray-700/50 rounded-lg backdrop-blur-sm"
                 style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
-              >
+               >
                 <h3 className="text-xl font-bold mb-4 text-white">
                   {faq.question}
                 </h3>
                 <p className="text-gray-400 leading-relaxed">
                   {faq.answer}
                 </p>
-              </Card>
+              </div>
             ))}
           </div>
         </div>
@@ -161,22 +155,14 @@ export default function SupportPage() {
             Our support team is here to help you succeed. Get in touch with us today.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button
-              href="/contact"
-              variant="secondary"
-              size="lg"
-              className="bg-white text-cursor-blue hover:bg-gray-100 shadow-2xl"
-            >
+            <a
+              href="/contact" className="bg-white text-cursor-blue hover:bg-gray-100 shadow-2xl">
               Contact Support
-            </Button>
-            <Button
-              href="/resources"
-              variant="outline"
-              size="lg"
-              className="border-gray-600 text-gray-200"
-            >
+            </a>
+            <a
+              href="/resources" className="border-gray-600 text-gray-200">
               Documentation
-            </Button>
+            </a>
           </div>
         </div>
       </section>

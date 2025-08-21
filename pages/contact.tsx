@@ -116,9 +116,7 @@ export default function Contact() {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-20"
-            >
+              transition={{ duration: 0.8 }} className="text-center mb-20">
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
                   Get In Touch
@@ -134,17 +132,13 @@ export default function Contact() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20"
-            >
+              transition={{ duration: 0.8, delay: 0.2 }} className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
               {stats.map((stat, index) => (
                 <motion.div
                   key={stat.label}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.4 + index * 0.1 }}
-                  className="text-center"
-                >
+                  transition={{ duration: 0.8, delay: 0.4 + index * 0.1 }} className="text-center">
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-2xl mb-4">
                     {stat.icon}
                   </div>
@@ -159,17 +153,13 @@ export default function Contact() {
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                className="bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8"
-              >
+                transition={{ duration: 0.8, delay: 0.6 }} className="bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8">
                 <h2 className="text-2xl font-bold text-white mb-6">Send us a Message</h2>
                 
                 {isSubmitted ? (
                   <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    className="text-center py-12"
-                  >
+                    animate={{ opacity: 1, scale: 1 }} className="text-center py-12">
                     <CheckCircle className="w-16 h-16 text-green-400 mx-auto mb-4" />
                     <h3 className="text-xl font-bold text-white mb-2">Message Sent Successfully!</h3>
                     <p className="text-gray-400">We'll get back to you within 24 hours.</p>
@@ -187,8 +177,7 @@ export default function Contact() {
                           name="name"
                           required
                           value={formData.name}
-                          onChange={handleInputChange}
-                          className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 transition-all duration-200"
+                          onChange={handleInputChange} className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 transition-all duration-200"
                           placeholder="Enter your full name"
                         />
                       </div>
@@ -203,8 +192,7 @@ export default function Contact() {
                           name="email"
                           required
                           value={formData.email}
-                          onChange={handleInputChange}
-                          className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 transition-all duration-200"
+                          onChange={handleInputChange} className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 transition-all duration-200"
                           placeholder="Enter your email"
                         />
                       </div>
@@ -220,8 +208,7 @@ export default function Contact() {
                           id="company"
                           name="company"
                           value={formData.company}
-                          onChange={handleInputChange}
-                          className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 transition-all duration-200"
+                          onChange={handleInputChange} className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 transition-all duration-200"
                           placeholder="Enter company name"
                         />
                       </div>
@@ -235,8 +222,7 @@ export default function Contact() {
                           id="phone"
                           name="phone"
                           value={formData.phone}
-                          onChange={handleInputChange}
-                          className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 transition-all duration-200"
+                          onChange={handleInputChange} className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 transition-all duration-200"
                           placeholder="Enter phone number"
                         />
                       </div>
@@ -250,9 +236,7 @@ export default function Contact() {
                         id="service"
                         name="service"
                         value={formData.service}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 transition-all duration-200"
-                      >
+                        onChange={handleInputChange} className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 transition-all duration-200">
                         <option value="">Select a service</option>
                         <option value="ai-consciousness">AI & Consciousness</option>
                         <option value="quantum-emerging">Quantum & Emerging Tech</option>
@@ -277,17 +261,14 @@ export default function Contact() {
                         required
                         rows={5}
                         value={formData.message}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 transition-all duration-200 resize-none"
+                        onChange={handleInputChange} className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 transition-all duration-200 resize-none"
                         placeholder="Tell us about your project or inquiry..."
                       />
                     </div>
 
                     <button
                       type="submit"
-                      disabled={isSubmitting}
-                      className="w-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white py-3 px-6 rounded-lg font-semibold hover:from-cyan-600 hover:to-purple-700 transition-all duration-200 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
-                    >
+                      disabled={isSubmitting} className="w-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white py-3 px-6 rounded-lg font-semibold hover:from-cyan-600 hover:to-purple-700 transition-all duration-200 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none">
                       {isSubmitting ? (
                         <span className="flex items-center justify-center">
                           <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
@@ -308,9 +289,7 @@ export default function Contact() {
               <motion.div
                 initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.8 }}
-                className="space-y-8"
-              >
+                transition={{ duration: 0.8, delay: 0.8 }} className="space-y-8">
                 {/* Direct Contact */}
                 <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8">
                   <h2 className="text-2xl font-bold text-white mb-6">Contact Information</h2>
@@ -323,9 +302,7 @@ export default function Contact() {
                       <div>
                         <h3 className="text-lg font-semibold text-white mb-1">Phone</h3>
                         <a 
-                          href={`tel:${contactInfo.phone.replace(/\s+/g, '')}`}
-                          className="text-cyan-400 hover:text-cyan-300 transition-colors duration-200"
-                        >
+                          href={`tel:${contactInfo.phone.replace(/\s+/g, '')}`} className="text-cyan-400 hover:text-cyan-300 transition-colors duration-200">
                           {contactInfo.phone}
                         </a>
                         <p className="text-sm text-gray-400 mt-1">Available during business hours</p>
@@ -339,9 +316,7 @@ export default function Contact() {
                       <div>
                         <h3 className="text-lg font-semibold text-white mb-1">Email</h3>
                         <a 
-                          href={`mailto:${contactInfo.email}`}
-                          className="text-purple-400 hover:text-purple-300 transition-colors duration-200"
-                        >
+                          href={`mailto:${contactInfo.email}`} className="text-purple-400 hover:text-purple-300 transition-colors duration-200">
                           {contactInfo.email}
                         </a>
                         <p className="text-sm text-gray-400 mt-1">We respond within 24 hours</p>
@@ -379,9 +354,7 @@ export default function Contact() {
                         <a 
                           href={contactInfo.website}
                           target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-indigo-400 hover:text-indigo-300 transition-colors duration-200"
-                        >
+                          rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-300 transition-colors duration-200">
                           {contactInfo.website}
                         </a>
                         <p className="text-sm text-gray-400 mt-1">Explore our services online</p>
@@ -415,9 +388,7 @@ export default function Contact() {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.0 }}
-              className="text-center mt-20"
-            >
+              transition={{ duration: 0.8, delay: 1.0 }} className="text-center mt-20">
               <div className="bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-cyan-500/20 rounded-3xl p-12">
                 <h2 className="text-4xl font-bold text-white mb-6">
                   Ready to Get Started?
@@ -428,15 +399,11 @@ export default function Contact() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a
-                    href="tel:+13024640950"
-                    className="bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-200 transform hover:scale-105"
-                  >
+                    href="tel:+13024640950" className="bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-200 transform hover:scale-105">
                     Call Now
                   </a>
                   <a
-                    href={`mailto:${contactInfo.email}`}
-                    className="border border-gray-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:border-gray-500 hover:bg-gray-800/50 transition-all duration-200"
-                  >
+                    href={`mailto:${contactInfo.email}`} className="border border-gray-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:border-gray-500 hover:bg-gray-800/50 transition-all duration-200">
                     Send Email
                   </a>
                 </div>
