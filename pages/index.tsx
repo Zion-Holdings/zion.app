@@ -6,10 +6,12 @@ import Button from '../components/ui/Button';
 import UltraQuantumHolographicBackground from '../components/ui/UltraQuantumHolographicBackground';
 import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
 import UltraAdvancedNavigation2026 from '../components/layout/UltraAdvancedNavigation2026';
+import UltraAdvancedNavigation2026V4 from '../components/layout/UltraAdvancedNavigation2026V4';
 import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
 import Enhanced2026ServicesShowcase from '../components/sections/Enhanced2026ServicesShowcase';
 import Revolutionary2026ServiceShowcase from '../components/sections/Revolutionary2026ServiceShowcase';
 import EnhancedHero2026 from '../components/sections/EnhancedHero2026';
+import EnhancedHero2026V4 from '../components/sections/EnhancedHero2026V4';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
@@ -51,6 +53,9 @@ import { innovative2026AIServicesV3 } from '../data/innovative-2026-ai-services-
 import { emergingTech2026ServicesV3 } from '../data/emerging-tech-2026-services-v3';
 import { enterpriseIT2026ServicesV3 } from '../data/enterprise-it-2026-services-v3';
 import { ultimate2026Services } from '../data/ultimate-2026-services';
+import { innovative2026MicroSaasV4Services } from '../data/innovative-2026-micro-saas-v4';
+import { emergingTech2026ServicesV4 } from '../data/emerging-tech-2026-services-v4';
+import { enterpriseIT2026ServicesV4 } from '../data/enterprise-it-2026-services-v4';
 
 export default function HomePage() {
   const contactInfo = {
@@ -101,7 +106,10 @@ export default function HomePage() {
     ...innovative2026AIServicesV3,
     ...emergingTech2026ServicesV3,
     ...enterpriseIT2026ServicesV3,
-    ...ultimate2026Services
+    ...ultimate2026Services,
+    ...innovative2026MicroSaasV4Services,
+    ...emergingTech2026ServicesV4,
+    ...enterpriseIT2026ServicesV4
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);
@@ -147,10 +155,10 @@ export default function HomePage() {
         </Head>
 
         {/* Ultra Advanced Navigation */}
-        <UltraAdvancedNavigation2026 />
+        <UltraAdvancedNavigation2026V4 />
 
         {/* Enhanced Hero Section 2026 */}
-        <EnhancedHero2026 />
+        <EnhancedHero2026V4 />
 
         {/* Revolutionary 2026 Services Showcase */}
         <Revolutionary2026ServiceShowcase />
