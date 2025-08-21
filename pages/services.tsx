@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
-import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Code, BookOpen, Activity, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Filter, Grid, List, ChevronDown, ChevronUp, Sparkles, FlaskConical, Dna, Car, Leaf, Factory, Truck, Microscope, GraduationCap, ShieldCheck, Brain, Atom, Globe2, Bot, ChevronRight } from 'lucide-react';
+import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Code, BookOpen, Activity, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Filter, Grid, List, ChevronDown, ChevronUp, Sparkles, FlaskConical, Dna, Car, Leaf, Factory, Truck, Microscope, GraduationCap, ShieldCheck, Brain, Atom, Globe2, Bot, ChevronRight, LinkIcon, Building2 } from 'lucide-react';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
 import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
@@ -132,6 +132,36 @@ export default function ServicesPage() {
       description: 'AI-powered personalized learning and education platforms',
       icon: <GraduationCap className="w-6 h-6" />,
       count: enhancedRealMicroSaasServices.filter(s => s.category === 'Education Technology').length
+    },
+    {
+      name: 'Metaverse & VR/AR',
+      description: 'Complete metaverse development with VR/AR integration',
+      icon: <Globe2 className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Metaverse & VR/AR').length
+    },
+    {
+      name: 'Blockchain & DeFi',
+      description: 'Decentralized finance with smart contracts and yield farming',
+      icon: <LinkIcon className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Blockchain & DeFi').length
+    },
+    {
+      name: 'IoT & Smart Cities',
+      description: 'Intelligent IoT platform for smart city management',
+      icon: <Building2 className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'IoT & Smart Cities').length
+    },
+    {
+      name: 'Edge Computing',
+      description: 'Distributed edge computing for ultra-low latency applications',
+      icon: <Zap className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Edge Computing').length
+    },
+    {
+      name: 'Climate Technology',
+      description: 'Advanced AI platform for climate modeling and prediction',
+      icon: <Globe className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Climate Technology').length
     },
     {
       name: 'Content Creation & Marketing',
