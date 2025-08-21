@@ -204,15 +204,36 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const services = collectAllServices();
   const candidateSlugs = new Set<string>();
 
+  // Discover top-level pages that already exist to avoid conflicts with [slug]
+  const pagesDir = path.join(process.cwd(), 'pages');
+  let reservedTopLevelSlugs = new Set<string>();
+  try {
+    const entries = fs.readdirSync(pagesDir, { withFileTypes: true });
+    for (const entry of entries) {
+      if (entry.isFile() && entry.name.endsWith('.tsx')) {
+        const base = entry.name.replace(/\.tsx$/, '');
+        if (
+          base !== 'index' &&
+          base !== '_app' &&
+          base !== '_document' &&
+          base !== '[slug]' &&
+          !base.startsWith('_') &&
+          !base.startsWith('[')
+        ) {
+          reservedTopLevelSlugs.add(base);
+        }
+      }
+    }
+  } catch {
+    reservedTopLevelSlugs = new Set<string>();
+  }
+
   for (const s of services) {
     const fromLink = extractRootSlugFromLink((s as any).link);
-    if (fromLink) {
-      candidateSlugs.add(fromLink);
-    } else if (s.id) {
-      candidateSlugs.add(normalizeSlug(s.id));
-    } else if (s.name) {
-      candidateSlugs.add(normalizeSlug(s.name));
-    }
+    const slugCandidate = fromLink || (s.id ? normalizeSlug(s.id) : (s.name ? normalizeSlug(s.name) : ''));
+    if (!slugCandidate) continue;
+    if (reservedTopLevelSlugs.has(slugCandidate)) continue; // skip conflicts
+    candidateSlugs.add(slugCandidate);
   }
 
   return {

@@ -331,6 +331,36 @@ export default function MarketPricingPage() {
               </ul>
               <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $0–$300/month per team depending on usage.</div>
             </div>
+
+            <div className="bg-black/30 rounded-2xl border border-blue-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Feature Flags & Experimentation</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>LaunchDarkly: <a className="text-cyan-400 underline" href={`https://launchdarkly.com/pricing`} target="_blank" rel="noopener noreferrer">launchdarkly.com/pricing</a></li>
+                <li>GrowthBook: <a className="text-cyan-400 underline" href={`https://www.growthbook.io/pricing`} target="_blank" rel="noopener noreferrer">growthbook.io/pricing</a></li>
+                <li>Optimizely: <a className="text-cyan-400 underline" href={`https://www.optimizely.com/pricing/`} target="_blank" rel="noopener noreferrer">optimizely.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $50–$1,500/month depending on MAUs and flags.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-green-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">A/B Testing & CRO</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>VWO pricing: <a className="text-cyan-400 underline" href={`https://vwo.com/plans/`} target="_blank" rel="noopener noreferrer">vwo.com/plans</a></li>
+                <li>Convert: <a className="text-cyan-400 underline" href={`https://www.convert.com/pricing/`} target="_blank" rel="noopener noreferrer">convert.com/pricing</a></li>
+                <li>Optimizely Web: <a className="text-cyan-400 underline" href={`https://www.optimizely.com/pricing/`} target="_blank" rel="noopener noreferrer">optimizely.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $49–$499/month based on visitors and experiments.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-red-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Incident Management & On-Call</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>PagerDuty pricing: <a className="text-cyan-400 underline" href={`https://www.pagerduty.com/pricing/`} target="_blank" rel="noopener noreferrer">pagerduty.com/pricing</a></li>
+                <li>Opsgenie pricing: <a className="text-cyan-400 underline" href={`https://www.atlassian.com/software/opsgenie/pricing`} target="_blank" rel="noopener noreferrer">atlassian.com/software/opsgenie/pricing</a></li>
+                <li>FireHydrant pricing: <a className="text-cyan-400 underline" href={`https://www.firehydrant.com/pricing/`} target="_blank" rel="noopener noreferrer">firehydrant.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $10–$500/month per responder depending on features.</div>
+            </div>
           </div>
         </div>
       </div>
