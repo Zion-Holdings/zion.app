@@ -153,10 +153,10 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
           >
-            <Link href="/services">
+            <Link href="/cutting-edge-services-showcase-2025">
               <button className="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-full text-lg transition-all duration-300 hover:from-cyan-600 hover:to-blue-700 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25">
                 <span className="flex items-center gap-2">
-                  Explore Services
+                  Explore Cutting-Edge Services
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </span>
               </button>

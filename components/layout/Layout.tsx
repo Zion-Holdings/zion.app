@@ -16,12 +16,14 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 		<div className="min-h-screen bg-black text-white">
 			<a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:bg-black/80 focus:text-white focus:border focus:border-cyan-500 focus:rounded px-3 py-2 z-[100]">Skip to content</a>
 			<UltraAdvancedFuturisticBackground 
-				intensity="high" 
-				colorScheme="quantum-fusion"
-				particleCount={300}
-				animationSpeed={1.5}
+				intensity="extreme" 
+				colorScheme="ai-consciousness"
+				particleCount={500}
+				animationSpeed={2.0}
 				enableHolographic={true}
 				enableQuantumEffects={true}
+				enableNeuralNetwork={true}
+				enableSpaceEffects={true}
 			>
 				<TopContactBar />
 				<EnhancedNavigation2025 onMenuClick={() => setSidebarOpen(true)} />
