@@ -95,9 +95,9 @@ export default function InnovativeServicesShowcase() {
   colorScheme="quantum"
   particleCount={500}
   animationSpeed={2.0}
-  enableGlitch={true}
-  enableHologram={true}
-  enableQuantum={true}
+  
+  
+  
 >
       <div className="min-h-screen">
         <Head>

@@ -20,9 +20,9 @@ export default function QuantumAICognitivePage() {
       colorScheme="holographic"
       particleCount={300}
       animationSpeed={1.5}
-      enableGlitch={true}
-      enableHologram={true}
-      enableQuantum={true}
+      
+      
+      
     >
       <Head>
         <title>{service.name} - Zion Tech Group</title>

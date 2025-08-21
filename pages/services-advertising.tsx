@@ -78,9 +78,9 @@ export default function ServicesAdvertisingPage() {
       colorScheme="quantum"
       particleCount={300}
       animationSpeed={1.5}
-      enableGlitch={true}
-      enableHologram={true}
-      enableQuantum={true}
+      
+      
+      
     >
       <Head>
         <title>AI, IT and Micro SaaS Services Advertising | Zion Tech Group</title>
