@@ -1,261 +1,469 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Star, Users, TrendingUp, Clock, ArrowRight, 
-  ExternalLink, Check, ChevronDown, ChevronUp,
-  Mail, Phone, MapPin, Globe, ShieldCheck
-} from 'lucide-react';
-import Button from './Button';
-import { EnhancedRealMicroSaasService } from '../../data/enhanced-real-micro-saas-services';
+import { ArrowRight, ExternalLink, Star, TrendingUp, Users, Zap, Shield, Clock, Phone } from 'lucide-react';
 
 interface UltraFuturisticServiceCardProps {
-  service: EnhancedRealMicroSaasService;
+  service: {
+    id: string;
+    name: string;
+    tagline: string;
+    price: string;
+    period: string;
+    description: string;
+    features: string[];
+    popular: boolean;
+    icon: string;
+    color: string;
+    textColor: string;
+    link: string;
+    marketPosition: string;
+    targetAudience: string;
+    trialDays: number;
+    setupTime: string;
+    category: string;
+    realService: boolean;
+    technology: string[];
+    integrations: string[];
+    useCases: string[];
+    roi: string;
+    competitors: string[];
+    marketSize: string;
+    growthRate: string;
+    variant: string;
+    contactInfo: {
+      mobile: string;
+      email: string;
+      address: string;
+      website: string;
+    };
+    realImplementation: boolean;
+    implementationDetails: string;
+    launchDate: string;
+    customers: number;
+    rating: number;
+    reviews: number;
+  };
+  className?: string;
 }
 
-export default function UltraFuturisticServiceCard({ service }: UltraFuturisticServiceCardProps) {
+const UltraFuturisticServiceCard: React.FC<UltraFuturisticServiceCardProps> = ({
+  service,
+  className = ''
+}) => {
+  const [isHovered, setIsHovered] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
+  const [activeTab, setActiveTab] = useState<'overview' | 'features' | 'market' | 'contact'>('overview');
+  const cardRef = useRef<HTMLDivElement>(null);
+  const glowRef = useRef<HTMLDivElement>(null);
 
-  const contactInfo = {
-    mobile: '+1 302 464 0950',
-    email: 'kleber@ziontechgroup.com',
-    address: '364 E Main St STE 1008 Middletown DE 19709',
-    website: 'https://ziontechgroup.com'
+  // Enhanced glow effect on hover
+  useEffect(() => {
+    if (isHovered && glowRef.current) {
+      const card = cardRef.current;
+      if (card) {
+        const rect = card.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        
+        glowRef.current.style.left = `${centerX}px`;
+        glowRef.current.style.top = `${centerY}px`;
+      }
+    }
+  }, [isHovered]);
+
+  const getGradientColors = (variant: string) => {
+    switch (variant) {
+      case 'quantum':
+        return 'from-cyan-500 via-blue-500 to-purple-600';
+      case 'holographic':
+        return 'from-purple-500 via-pink-500 to-rose-600';
+      case 'matrix':
+        return 'from-green-500 via-emerald-500 to-teal-600';
+      case 'neural':
+        return 'from-yellow-500 via-orange-500 to-red-600';
+      case 'cyberpunk':
+        return 'from-pink-500 via-purple-500 to-cyan-600';
+      default:
+        return 'from-blue-500 via-purple-500 to-pink-600';
+    }
   };
 
-  return (
-    <motion.div
-      className="relative group"
-      whileHover={{ y: -5 }}
-      transition={{ duration: 0.3 }}
-    >
-      {/* Holographic Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-black/95 to-gray-900/90 rounded-2xl border border-gray-700/50 backdrop-blur-xl overflow-hidden">
-        {/* Animated Border */}
-        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-        
-        {/* Quantum Particles */}
-        <div className="absolute inset-0 overflow-hidden">
-          {[...Array(8)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-1 h-1 bg-cyan-400 rounded-full"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`
-              }}
-              animate={{
-                scale: [0, 1, 0],
-                opacity: [0, 0.8, 0],
-                x: [0, (Math.random() - 0.5) * 50],
-                y: [0, (Math.random() - 0.5) * 50]
-              }}
-              transition={{
-                duration: Math.random() * 3 + 2,
-                repeat: Infinity,
-                delay: Math.random() * 2,
-                ease: "easeInOut"
-              }}
-            />
-          ))}
-        </div>
-      </div>
+  const getGlowColor = (variant: string) => {
+    switch (variant) {
+      case 'quantum':
+        return 'rgba(0, 255, 255, 0.3)';
+      case 'holographic':
+        return 'rgba(139, 92, 246, 0.3)';
+      case 'matrix':
+        return 'rgba(16, 185, 129, 0.3)';
+      case 'neural':
+        return 'rgba(245, 158, 11, 0.3)';
+      case 'cyberpunk':
+        return 'rgba(236, 73, 153, 0.3)';
+      default:
+        return 'rgba(59, 130, 246, 0.3)';
+    }
+  };
 
-      {/* Content */}
-      <div className="relative z-10 p-6">
-        {/* Header */}
-        <div className="mb-4">
-          <div className="flex items-center justify-between mb-3">
+  const tabs = [
+    { id: 'overview', label: 'Overview', icon: Zap },
+    { id: 'features', label: 'Features', icon: Shield },
+    { id: 'market', label: 'Market', icon: TrendingUp },
+    { id: 'contact', label: 'Contact', icon: Users }
+  ];
+
+  return (
+    <div className={`relative group ${className}`}>
+      {/* Enhanced glow effect */}
+      <div
+        ref={glowRef}
+        className="absolute w-96 h-96 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none blur-3xl"
+        style={{
+          background: `radial-gradient(circle, ${getGlowColor(service.variant)} 0%, transparent 70%)`,
+          transform: 'translate(-50%, -50%)',
+          zIndex: -1
+        }}
+      />
+
+      <motion.div
+        ref={cardRef}
+        className={`relative overflow-hidden rounded-2xl border border-gray-800/50 bg-gradient-to-br from-gray-900/90 via-gray-800/80 to-gray-900/90 backdrop-blur-xl shadow-2xl transition-all duration-500 ${
+          isHovered ? 'scale-105 shadow-cyan-500/20' : 'scale-100'
+        }`}
+        onHoverStart={() => setIsHovered(true)}
+        onHoverEnd={() => setIsHovered(false)}
+        whileHover={{ y: -8 }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+      >
+        {/* Animated border gradient */}
+        <div className="absolute inset-0 rounded-2xl p-[1px] bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900" />
+        </div>
+
+        {/* Header section */}
+        <div className="relative p-6">
+          {/* Popular badge */}
+          {service.popular && (
+            <motion.div
+              className="absolute -top-2 -right-2 bg-gradient-to-r from-yellow-400 to-orange-500 text-black text-xs font-bold px-3 py-1 rounded-full shadow-lg"
+              initial={{ scale: 0, rotate: -180 }}
+              animate={{ scale: 1, rotate: 0 }}
+              transition={{ delay: 0.3, type: 'spring', stiffness: 200 }}
+            >
+              POPULAR
+            </motion.div>
+          )}
+
+          {/* Service icon and title */}
+          <div className="flex items-start space-x-4 mb-4">
+            <motion.div
+              className={`text-4xl p-3 rounded-xl bg-gradient-to-br ${getGradientColors(service.variant)} shadow-lg`}
+              whileHover={{ rotate: 360, scale: 1.1 }}
+              transition={{ duration: 0.6, ease: 'easeInOut' }}
+            >
+              {service.icon}
+            </motion.div>
+            
+            <div className="flex-1">
+              <motion.h3
+                className="text-xl font-bold text-white mb-2"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.1 }}
+              >
+                {service.name}
+              </motion.h3>
+              <motion.p
+                className="text-gray-300 text-sm leading-relaxed"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.2 }}
+              >
+                {service.tagline}
+              </motion.p>
+            </div>
+          </div>
+
+          {/* Price and trial info */}
+          <motion.div
+            className="flex items-center justify-between mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+          >
+            <div>
+              <span className="text-3xl font-bold text-white">{service.price}</span>
+              <span className="text-gray-400">{service.period}</span>
+            </div>
+            <div className="text-right">
+              <div className="text-sm text-gray-400">Free Trial</div>
+              <div className="text-lg font-semibold text-green-400">{service.trialDays} days</div>
+            </div>
+          </motion.div>
+
+          {/* Rating and customers */}
+          <motion.div
+            className="flex items-center justify-between mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+          >
             <div className="flex items-center space-x-2">
-              <span className="px-3 py-1 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-xs font-semibold rounded-full">
-                {service.category}
-              </span>
-              <span className="px-3 py-1 bg-gray-700 text-gray-300 text-xs font-semibold rounded-full">
-                {service.variant}
+              <div className="flex items-center">
+                {[...Array(5)].map((_, i) => (
+                  <Star
+                    key={i}
+                    className={`w-4 h-4 ${
+                      i < Math.floor(service.rating) ? 'text-yellow-400 fill-current' : 'text-gray-600'
+                    }`}
+                  />
+                ))}
+              </div>
+              <span className="text-sm text-gray-400 ml-2">
+                {service.rating} ({service.reviews} reviews)
               </span>
             </div>
+            <div className="text-right">
+              <div className="text-sm text-gray-400">Customers</div>
+              <div className="text-lg font-semibold text-blue-400">{service.customers.toLocaleString()}+</div>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Tab navigation */}
+        <div className="px-6">
+          <div className="flex space-x-1 bg-gray-800/50 rounded-lg p-1">
+            {tabs.map((tab) => {
+              const Icon = tab.icon;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id as any)}
+                  className={`flex-1 flex items-center justify-center space-x-2 px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                    activeTab === tab.id
+                      ? 'bg-gradient-to-r from-cyan-500 to-purple-500 text-white shadow-lg'
+                      : 'text-gray-400 hover:text-white hover:bg-gray-700/50'
+                  }`}
+                >
+                  <Icon className="w-4 h-4" />
+                  <span>{tab.label}</span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Tab content */}
+        <div className="p-6">
+          <AnimatePresence mode="wait">
+            {activeTab === 'overview' && (
+              <motion.div
+                key="overview"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
+                className="space-y-4"
+              >
+                <p className="text-gray-300 leading-relaxed">{service.description}</p>
+                
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="bg-gray-800/50 rounded-lg p-3">
+                    <div className="text-xs text-gray-400 mb-1">Setup Time</div>
+                    <div className="text-sm text-white font-medium">{service.setupTime}</div>
+                  </div>
+                  <div className="bg-gray-800/50 rounded-lg p-3">
+                    <div className="text-xs text-gray-400 mb-1">Category</div>
+                    <div className="text-sm text-white font-medium">{service.category}</div>
+                  </div>
+                </div>
+
+                <div className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 rounded-lg p-4 border border-blue-500/20">
+                  <div className="text-sm text-blue-400 mb-2">ROI Promise</div>
+                  <div className="text-white font-medium">{service.roi}</div>
+                </div>
+              </motion.div>
+            )}
+
+            {activeTab === 'features' && (
+              <motion.div
+                key="features"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
+                className="space-y-3"
+              >
+                {service.features.map((feature, index) => (
+                  <motion.div
+                    key={index}
+                    className="flex items-center space-x-3 bg-gray-800/30 rounded-lg p-3"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full flex-shrink-0" />
+                    <span className="text-gray-300 text-sm">{feature}</span>
+                  </motion.div>
+                ))}
+              </motion.div>
+            )}
+
+            {activeTab === 'market' && (
+              <motion.div
+                key="market"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
+                className="space-y-4"
+              >
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="bg-gray-800/50 rounded-lg p-3">
+                    <div className="text-xs text-gray-400 mb-1">Market Size</div>
+                    <div className="text-sm text-white font-medium">{service.marketSize}</div>
+                  </div>
+                  <div className="bg-gray-800/50 rounded-lg p-3">
+                    <div className="text-xs text-gray-400 mb-1">Growth Rate</div>
+                    <div className="text-sm text-green-400 font-medium">{service.growthRate}</div>
+                  </div>
+                </div>
+
+                <div className="bg-gray-800/50 rounded-lg p-3">
+                  <div className="text-xs text-gray-400 mb-2">Competitors</div>
+                  <div className="text-sm text-gray-300">{service.competitors.join(', ')}</div>
+                </div>
+
+                <div className="bg-gray-800/50 rounded-lg p-3">
+                  <div className="text-xs text-gray-400 mb-2">Target Audience</div>
+                  <div className="text-sm text-gray-300">{service.targetAudience}</div>
+                </div>
+              </motion.div>
+            )}
+
+            {activeTab === 'contact' && (
+              <motion.div
+                key="contact"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
+                className="space-y-4"
+              >
+                <div className="space-y-3">
+                  <div className="flex items-center space-x-3">
+                    <Phone className="w-4 h-4 text-cyan-400" />
+                    <span className="text-gray-300 text-sm">{service.contactInfo.mobile}</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Users className="w-4 h-4 text-purple-400" />
+                    <span className="text-gray-300 text-sm">{service.contactInfo.email}</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Shield className="w-4 h-4 text-green-400" />
+                    <span className="text-gray-300 text-sm">{service.contactInfo.address}</span>
+                  </div>
+                </div>
+
+                <div className="bg-gradient-to-r from-green-900/20 to-blue-900/20 rounded-lg p-4 border border-green-500/20">
+                  <div className="text-sm text-green-400 mb-2">Ready to Transform?</div>
+                  <div className="text-white text-sm">Contact us today to start your journey into the future of technology.</div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+
+        {/* Action buttons */}
+        <div className="p-6 pt-0">
+          <div className="flex space-x-3">
             <motion.button
-              onClick={() => setIsExpanded(!isExpanded)}
-              className="p-1 text-gray-400 hover:text-white transition-colors"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
+              className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 shadow-lg hover:shadow-cyan-500/25 flex items-center justify-center space-x-2"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => window.open(service.link, '_blank')}
             >
-              {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+              <span>Get Started</span>
+              <ArrowRight className="w-4 h-4" />
+            </motion.button>
+            
+            <motion.button
+              className="px-4 py-3 border border-gray-600 hover:border-cyan-500 text-gray-300 hover:text-cyan-400 rounded-lg transition-all duration-200 flex items-center justify-center"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setIsExpanded(!isExpanded)}
+            >
+              <span className="text-sm">{isExpanded ? 'Less' : 'More'}</span>
             </motion.button>
           </div>
-          
-          <h3 className="text-xl font-bold text-white mb-2">{service.name}</h3>
-          <p className="text-gray-300 text-sm leading-relaxed">{service.description}</p>
         </div>
 
-        {/* Price and Quick Stats */}
-        <div className="mb-4">
-          <div className="text-3xl font-bold text-white mb-3">
-            {service.price}
-            <span className="text-sm text-gray-400 font-normal">{service.period}</span>
-          </div>
-          
-          <div className="grid grid-cols-2 gap-3 text-sm">
-            <div className="flex items-center space-x-2 text-gray-400">
-              <Users className="w-4 h-4 text-blue-400" />
-              <span>{service.customers}+ users</span>
-            </div>
-            <div className="flex items-center space-x-2 text-gray-400">
-              <Star className="w-4 h-4 text-yellow-400" />
-              <span>{service.rating}/5.0</span>
-            </div>
-            <div className="flex items-center space-x-2 text-gray-400">
-              <TrendingUp className="w-4 h-4 text-green-400" />
-              <span>ROI</span>
-            </div>
-            <div className="flex items-center space-x-2 text-gray-400">
-              <Clock className="w-4 h-4 text-purple-400" />
-              <span>{service.trialDays} days trial</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Key Features */}
-        <div className="mb-4">
-          <h4 className="text-sm font-semibold text-cyan-400 mb-2">Key Features:</h4>
-          <div className="space-y-1">
-            {service.features.slice(0, 3).map((feature, index) => (
-              <div key={index} className="flex items-center space-x-2 text-xs text-gray-300">
-                <Check className="w-3 h-3 text-green-400 flex-shrink-0" />
-                <span>{feature}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Contact Information */}
-        <div className="mb-4 p-3 bg-gray-800/50 rounded-lg border border-gray-700/50">
-          <h4 className="text-xs font-semibold text-cyan-400 mb-2">Contact Information:</h4>
-          <div className="grid grid-cols-1 gap-2 text-xs text-gray-300">
-            <div className="flex items-center space-x-2">
-              <Phone className="w-3 h-3 text-cyan-400" />
-              <span>{service.contactInfo.mobile}</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Mail className="w-3 h-3 text-cyan-400" />
-              <span>{service.contactInfo.email}</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <MapPin className="w-3 h-3 text-cyan-400" />
-              <span className="text-xs">{service.contactInfo.address}</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Action Buttons */}
-        <div className="flex space-x-2">
-          <Button
-            href={service.link || `/services/${service.id}`}
-            className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white py-2 px-3 rounded-lg text-sm font-semibold transition-all duration-300"
-          >
-            <ArrowRight className="w-3 h-3 mr-1" />
-            Details
-          </Button>
-          <Button
-            href="/contact"
-            variant="outline"
-            className="px-3 py-2 border border-gray-600 text-gray-300 rounded-lg hover:border-cyan-500 hover:text-cyan-400 transition-all duration-300 text-sm"
-          >
-            Contact
-          </Button>
-        </div>
-
-        {/* Expandable Section */}
+        {/* Expandable details */}
         <AnimatePresence>
           {isExpanded && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-              className="mt-4 pt-4 border-top border-gray-700/50"
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: 'auto', opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+              className="overflow-hidden border-t border-gray-800"
             >
-              {/* Technology Stack */}
-              <div className="mb-4">
-                <h4 className="text-sm font-semibold text-cyan-400 mb-2">Technology Stack:</h4>
-                <div className="flex flex-wrap gap-2">
-                  {service.technology.map((tech, index) => (
-                    <span
-                      key={index}
-                      className="px-2 py-1 bg-gray-800 text-gray-300 text-xs rounded-md border border-gray-700"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Use Cases */}
-              <div className="mb-4">
-                <h4 className="text-sm font-semibold text-cyan-400 mb-2">Use Cases:</h4>
-                <div className="space-y-1">
-                  {service.useCases.map((useCase, index) => (
-                    <div key={index} className="flex items-center space-x-2 text-xs text-gray-300">
-                      <Check className="w-3 h-3 text-green-400 flex-shrink-0" />
-                      <span>{useCase}</span>
+              <div className="p-6 space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <h4 className="text-sm font-semibold text-gray-400 mb-2">Technology Stack</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {service.technology.map((tech, index) => (
+                        <span
+                          key={index}
+                          className="px-2 py-1 bg-gray-800 text-cyan-400 text-xs rounded-md"
+                        >
+                          {tech}
+                        </span>
+                      ))}
                     </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Compliance & Security */}
-              <div className="mb-2">
-                <h4 className="text-sm font-semibold text-cyan-400 mb-2">Assurance:</h4>
-                <div className="flex items-center space-x-2 text-xs text-gray-300">
-                  <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                  <span>99.99% uptime SLA • SOC 2-ready controls • Privacy-first</span>
-                </div>
-              </div>
-
-              {/* Market Position */}
-              <div className="mb-4">
-                <h4 className="text-sm font-semibold text-cyan-400 mb-2">Market Position:</h4>
-                <div className="p-3 bg-gray-800/50 rounded-lg border border-gray-700/50">
-                  <p className="text-xs text-gray-300 mb-2">{service.marketPosition}</p>
-                  <div className="grid grid-cols-1 gap-2 text-xs">
-                    <div className="flex justify-between">
-                      <span className="text-gray-400">Market Size:</span>
-                      <span className="text-blue-400">{service.marketSize}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-400">Growth Rate:</span>
-                      <span className="text-green-400">{service.growthRate}</span>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-semibold text-gray-400 mb-2">Integrations</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {service.integrations.slice(0, 5).map((integration, index) => (
+                        <span
+                          key={index}
+                          className="px-2 py-1 bg-gray-800 text-purple-400 text-xs rounded-md"
+                        >
+                          {integration}
+                        </span>
+                      ))}
                     </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Competitive Advantages */}
-              <div className="mb-4">
-                <h4 className="text-sm font-semibold text-cyan-400 mb-2">Competitive Advantages:</h4>
-                <div className="space-y-1">
-                  {service.competitors.map((competitor, index) => (
-                    <div key={index} className="flex items-center space-x-2 text-xs text-gray-300">
-                      <Check className="w-3 h-3 text-green-400 flex-shrink-0" />
-                      <span>Competes with {competitor}</span>
-                    </div>
-                  ))}
+                <div>
+                  <h4 className="text-sm font-semibold text-gray-400 mb-2">Use Cases</h4>
+                  <div className="grid grid-cols-2 gap-2">
+                    {service.useCases.map((useCase, index) => (
+                      <div key={index} className="flex items-center space-x-2">
+                        <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
+                        <span className="text-gray-300 text-sm">{useCase}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
 
-              {/* Learn More Button */}
-              <div className="text-center">
-                <Button
-                  href={service.link || `/services/${service.id}`}
-                  className="w-full bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white py-2 px-4 rounded-lg text-sm font-semibold transition-all duration-300"
-                >
-                  <ExternalLink className="w-3 h-3 mr-2" />
-                  Learn More & Get Started
-                </Button>
+                <div className="bg-gray-800/30 rounded-lg p-4">
+                  <h4 className="text-sm font-semibold text-gray-400 mb-2">Implementation Details</h4>
+                  <p className="text-gray-300 text-sm">{service.implementationDetails}</p>
+                </div>
               </div>
             </motion.div>
           )}
         </AnimatePresence>
-      </div>
-    </motion.div>
+      </motion.div>
+    </div>
   );
-}
+};
+
+export default UltraFuturisticServiceCard;

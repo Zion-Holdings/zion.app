@@ -23,7 +23,7 @@ export default function DomainDNSMonitorPage() {
   ];
 
   return (
-    <QuantumHolographicMatrixBackground intensity="high">
+    		<QuantumHolographicMatrixBackground intensity={1.5}>
       <Head>
         <title>Domain & DNS Health Monitor | Zion Tech Group</title>
         <meta name="description" content="Track domain expiry, DNS provider health, NS/DS drift, DNSSEC, and MX/SPF/DMARC correctness. Catch misconfigurations before outages." />
