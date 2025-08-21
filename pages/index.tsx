@@ -1,10 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
-import { 
-  Clock, DollarSign, TrendingUp, Brain, 
-  Mail, Phone, MapPin, 
-  ArrowRight, Rocket, Star, Users, Shield, Zap
-} from 'lucide-react';
+import Link from 'next/link';
+import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shield, Mail, MapPin, Rocket } from 'lucide-react';
 import Button from '../components/ui/Button';
 import EnhancedFuturisticBackground from '../components/ui/EnhancedFuturisticBackground';
 import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
@@ -25,6 +22,8 @@ import { serviceExpansions2025 } from '../data/service-expansions-2025';
 import { verifiedRealServices2025Batch2 } from '../data/verified-real-services-2025-batch2';
 import { realOperationalServices } from '../data/real-operational-services';
 import { newOperationalServices2025 } from '../data/new-operational-services-2025';
+import { innovative2025Services } from '../data/innovative-2025-services';
+import { emergingTech2025Services } from '../data/emerging-tech-2025-services';
 
 export default function HomePage() {
   const contactInfo = {
@@ -50,7 +49,9 @@ export default function HomePage() {
     ...serviceExpansions2025,
     ...realOperationalServices,
     ...newOperationalServices2025,
-    ...verifiedRealServices2025Batch2
+    ...verifiedRealServices2025Batch2,
+    ...innovative2025Services,
+    ...emergingTech2025Services
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);

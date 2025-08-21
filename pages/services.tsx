@@ -1,13 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import Head from 'next/head';
-import { motion, AnimatePresence, Variants } from 'framer-motion';
-import { 
-  Search, Filter, Star, Users, TrendingUp, 
-  DollarSign, Clock, CheckCircle, ArrowRight,
-  Brain, Rocket, Dna, Globe, Shield, Wifi, 
-  Package, Bot, Car, Building2, Monitor, Cpu, 
-  Zap, Atom, Database, Cloud, Lock, Code
-} from 'lucide-react';
+import Link from 'next/link';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Search, Star, Users, TrendingUp, DollarSign, Clock, CheckCircle, ArrowRight } from 'lucide-react';
 import { innovativeAIServices } from '../data/innovative-ai-services';
 import { quantumSpaceServices } from '../data/quantum-space-services';
 import { enterpriseITServices } from '../data/enterprise-it-services';
@@ -29,6 +24,8 @@ import { newRealInnovations } from '../data/new-real-innovations';
 import { serviceExpansions2025 } from '../data/service-expansions-2025';
 import { newOperationalServices2025 } from '../data/new-operational-services-2025';
 import { verifiedRealServices2025Batch2 } from '../data/verified-real-services-2025-batch2';
+import { innovative2025Services } from '../data/innovative-2025-services';
+import { emergingTech2025Services } from '../data/emerging-tech-2025-services';
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -57,12 +54,14 @@ export default function ServicesPage() {
     ...newRealInnovations,
     ...serviceExpansions2025,
     ...newOperationalServices2025,
-    ...verifiedRealServices2025Batch2
+    ...verifiedRealServices2025Batch2,
+    ...innovative2025Services,
+    ...emergingTech2025Services
   ];
 
   // Dynamic category counts mapped to the same filter logic below
   const aiCount = allServices.filter(service => (service.category?.includes('AI') || service.category?.includes('Machine Learning'))).length;
-  const quantumCount = allServices.filter(service => (service.category?.includes('Quantum') || service.category?.includes('Space'))).length;
+  const quantumCount = allServices.filter(service => (service.category?.includes('Quantum') || service.category.includes('Space'))).length;
   const enterpriseCount = allServices.filter(service => (service.category?.includes('Enterprise') || service.category?.includes('IT'))).length;
   const microSaasCount = allServices.filter(service => (service.category?.includes('Micro SaaS'))).length;
 
