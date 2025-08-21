@@ -35,6 +35,16 @@
   --holographic-resonance: 0 0 800px rgba(139, 92, 246, 0.04);
   --neural-resonance: 0 0 700px rgba(16, 185, 129, 0.03);
   --cyberpunk-resonance: 0 0 900px rgba(236, 73, 153, 0.04);
+  
+  /* 2026 Enhanced Variables */
+  --quantum-fusion: 0 0 1000px rgba(0, 255, 255, 0.02);
+  --holographic-fusion: 0 0 1200px rgba(139, 92, 246, 0.03);
+  --neural-fusion: 0 0 1100px rgba(16, 185, 129, 0.025);
+  --cyberpunk-fusion: 0 0 1300px rgba(236, 73, 153, 0.03);
+  --quantum-singularity: 0 0 2000px rgba(0, 255, 255, 0.015);
+  --holographic-singularity: 0 0 2500px rgba(139, 92, 246, 0.02);
+  --neural-singularity: 0 0 2200px rgba(16, 185, 129, 0.018);
+  --cyberpunk-singularity: 0 0 2800px rgba(236, 73, 153, 0.02);
 }
 
 /* Enhanced Scrollbar */
@@ -74,6 +84,88 @@
   background: rgba(0, 255, 255, 0.5);
   color: white;
   text-shadow: 0 0 15px rgba(0, 255, 255, 0.9);
+}
+
+/* Enhanced Futuristic Animations */
+@keyframes quantum-pulse {
+  0%, 100% { 
+    box-shadow: var(--quantum-glow), var(--quantum-field);
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: var(--quantum-aura), var(--quantum-resonance);
+    transform: scale(1.02);
+  }
+}
+
+@keyframes holographic-float {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg);
+    box-shadow: var(--holographic-glow), var(--holographic-matrix);
+  }
+  25% { 
+    transform: translateY(-10px) rotate(1deg);
+    box-shadow: var(--holographic-aura), var(--holographic-resonance);
+  }
+  50% { 
+    transform: translateY(-5px) rotate(0deg);
+    box-shadow: var(--holographic-shadow), var(--holographic-wave);
+  }
+  75% { 
+    transform: translateY(-15px) rotate(-1deg);
+    box-shadow: var(--holographic-fusion), var(--holographic-singularity);
+  }
+}
+
+@keyframes neural-flow {
+  0% { 
+    background-position: 0% 50%;
+    box-shadow: var(--neural-pulse), var(--neural-network);
+  }
+  50% { 
+    background-position: 100% 50%;
+    box-shadow: var(--neural-aura), var(--neural-resonance);
+  }
+  100% { 
+    background-position: 0% 50%;
+    box-shadow: var(--neural-fusion), var(--neural-singularity);
+  }
+}
+
+@keyframes cyberpunk-shift {
+  0%, 100% { 
+    transform: skewX(0deg);
+    box-shadow: var(--cyberpunk-glow), var(--cyberpunk-shadow);
+  }
+  25% { 
+    transform: skewX(1deg);
+    box-shadow: var(--cyberpunk-pulse), var(--cyberpunk-aura);
+  }
+  50% { 
+    transform: skewX(0deg);
+    box-shadow: var(--cyberpunk-matrix), var(--cyberpunk-wave);
+  }
+  75% { 
+    transform: skewX(-1deg);
+    box-shadow: var(--cyberpunk-fusion), var(--cyberpunk-singularity);
+  }
+}
+
+/* Enhanced Hover Effects */
+.quantum-hover:hover {
+  animation: quantum-pulse 2s ease-in-out infinite;
+}
+
+.holographic-hover:hover {
+  animation: holographic-float 3s ease-in-out infinite;
+}
+
+.neural-hover:hover {
+  animation: neural-flow 4s ease-in-out infinite;
+}
+
+.cyberpunk-hover:hover {
+  animation: cyberpunk-shift 2.5s ease-in-out infinite;
 }
 
 /* Enhanced Body Styles */

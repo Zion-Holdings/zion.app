@@ -39,6 +39,9 @@ import { enterpriseIT2026Services } from '../data/enterprise-it-2026-services';
 import { innovative2026MicroSaasServices } from '../data/innovative-2026-micro-saas';
 import { emergingTech2026Services as emergingTech2026ServicesNew } from '../data/emerging-tech-2026-services';
 import { enterpriseIT2026Services as enterpriseIT2026ServicesNew } from '../data/enterprise-it-2026-services';
+import { nextGenAIServices2026 } from '../data/next-gen-ai-services-2026';
+import { revolutionaryITInfrastructure2026 } from '../data/revolutionary-it-infrastructure-2026';
+import { innovativeMicroSaas2026 } from '../data/innovative-micro-saas-2026';
 
 export default function HomePage() {
   const contactInfo = {
@@ -77,7 +80,10 @@ export default function HomePage() {
     ...enterpriseIT2026Services,
     ...innovative2026MicroSaasServices,
     ...emergingTech2026ServicesNew,
-    ...enterpriseIT2026ServicesNew
+    ...enterpriseIT2026ServicesNew,
+    ...nextGenAIServices2026,
+    ...revolutionaryITInfrastructure2026,
+    ...innovativeMicroSaas2026
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);
@@ -85,11 +91,11 @@ export default function HomePage() {
   // Service statistics
   const serviceStats = {
     totalServices: allServices.length,
-    aiServices: nextGenerationAIServices.length + innovativeAIServices.length + realMarketServices.filter(s => s.category.includes('AI')).length + revolutionary2025Services.filter(s => s.category.includes('AI')).length + nextGenInnovations2025.filter(s => s.category.includes('AI')).length + innovative2026Services.filter(s => s.category.includes('AI')).length + emergingTech2026Services.filter(s => s.category.includes('AI')).length,
+    aiServices: nextGenerationAIServices.length + innovativeAIServices.length + realMarketServices.filter(s => s.category.includes('AI')).length + revolutionary2025Services.filter(s => s.category.includes('AI')).length + nextGenInnovations2025.filter(s => s.category.includes('AI')).length + innovative2026Services.filter(s => s.category.includes('AI')).length + emergingTech2026Services.filter(s => s.category.includes('AI')).length + nextGenAIServices2026.length,
     emergingTech: emergingTechnologyServices.length + emergingTech2025Services.length + emergingTech2026Services.length,
-    itSolutions: comprehensiveITSolutions.length + enterpriseITServices.length + enterpriseIT2026Services.length,
-    microSaas: enhancedRealMicroSaasServices.length + innovativeMicroSaasServices.length + innovative2026Services.filter(s => s.category.includes('SaaS')).length,
-    revolutionaryServices: revolutionary2025Services.length + nextGenInnovations2025.length + innovative2026Services.length + emergingTech2026Services.length
+    itSolutions: comprehensiveITSolutions.length + enterpriseITServices.length + enterpriseIT2026Services.length + revolutionaryITInfrastructure2026.length,
+    microSaas: enhancedRealMicroSaasServices.length + innovativeMicroSaasServices.length + innovative2026Services.filter(s => s.category.includes('SaaS')).length + innovativeMicroSaas2026.length,
+    revolutionaryServices: revolutionary2025Services.length + nextGenInnovations2025.length + innovative2026Services.length + emergingTech2026Services.length + nextGenAIServices2026.length + revolutionaryITInfrastructure2026.length
   };
 
   return (
