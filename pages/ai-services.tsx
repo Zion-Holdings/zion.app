@@ -21,7 +21,15 @@ export default function AIServicesPage() {
   ];
 
   return (
-    <UltraAdvancedFuturisticBackground variant="quantum-holographic" intensity={0.9}>
+    <UltraAdvancedFuturisticBackground 
+      intensity="high" 
+      colorScheme="quantum"
+      particleCount={300}
+      animationSpeed={1.5}
+      enableGlitch={true}
+      enableHologram={true}
+      enableQuantum={true}
+    >
       <Head>
         <title>AI Services | Zion Tech Group</title>
         <meta name="description" content="Explore production-ready AI services: agents, guardrails, RAG, observability, governance, and more." />

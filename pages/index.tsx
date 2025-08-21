@@ -6,19 +6,22 @@ import {
   ArrowRight, Rocket, Star, Users, Shield, Zap
 } from 'lucide-react';
 import Button from '../components/ui/Button';
-import EnhancedFuturisticBackground from '../components/ui/EnhancedFuturisticBackground';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
 import { additionalEnhancedServices } from '../data/additional-real-services';
 import { innovativeMicroSaasServices } from '../data/innovative-micro-saas-services';
+import { innovativeMicroSaasServicesV3 } from '../data/innovative-micro-saas-v3';
 import { innovativeAIServices } from '../data/innovative-ai-services';
 import { quantumSpaceServices } from '../data/quantum-space-services';
+import { quantumAIServices2025 } from '../data/quantum-ai-services-2025';
 import { enterpriseITServices } from '../data/enterprise-it-services';
 import { professionalServices } from '../data/professional-services';
 import { nextGenerationAIServices } from '../data/next-generation-ai-services';
 import { emergingTechnologyServices } from '../data/emerging-technology-services';
+import { emergingTechServices2025 } from '../data/emerging-tech-services-2025';
 import { comprehensiveITSolutions } from '../data/comprehensive-it-solutions';
 import { realMarketServices } from '../data/real-market-services';
 import { serviceExpansions2025 } from '../data/service-expansions-2025';
@@ -37,13 +40,16 @@ export default function HomePage() {
   const allServices = [
     ...enhancedRealMicroSaasServices,
     ...innovativeMicroSaasServices,
+    ...innovativeMicroSaasServicesV3,
     ...extraServices,
     ...additionalEnhancedServices,
     ...innovativeAIServices,
     ...quantumSpaceServices,
+    ...quantumAIServices2025,
     ...enterpriseITServices,
     ...nextGenerationAIServices,
     ...emergingTechnologyServices,
+    ...emergingTechServices2025,
     ...comprehensiveITSolutions,
     ...realMarketServices,
     ...serviceExpansions2025,
@@ -63,12 +69,15 @@ export default function HomePage() {
   };
 
   return (
-    <EnhancedFuturisticBackground 
-      intensity="high" 
-      colorScheme="quantum"
-      particleCount={200}
-      animationSpeed={1.2}
-    >
+            <UltraAdvancedFuturisticBackground 
+          intensity="extreme" 
+          colorScheme="quantum"
+          particleCount={400}
+          animationSpeed={2.0}
+          enableGlitch={true}
+          enableHologram={true}
+          enableQuantum={true}
+        >
       <div className="min-h-screen">
         <Head>
           <title>Zion Tech Group - Revolutionary AI, Quantum & IT Services | 800+ Solutions</title>
@@ -384,6 +393,6 @@ export default function HomePage() {
           </div>
         </section>
       </div>
-    </EnhancedFuturisticBackground>
+            </UltraAdvancedFuturisticBackground>
   );
 }

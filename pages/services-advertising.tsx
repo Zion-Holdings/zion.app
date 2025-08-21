@@ -73,7 +73,15 @@ export default function ServicesAdvertisingPage() {
   ];
 
   return (
-    <UltraAdvancedFuturisticBackground variant="quantum-holographic" intensity={0.9}>
+    <UltraAdvancedFuturisticBackground 
+      intensity="high" 
+      colorScheme="quantum"
+      particleCount={300}
+      animationSpeed={1.5}
+      enableGlitch={true}
+      enableHologram={true}
+      enableQuantum={true}
+    >
       <Head>
         <title>AI, IT and Micro SaaS Services Advertising | Zion Tech Group</title>
         <meta name="description" content="Explore our AI, IT, and micro SaaS services with features, capabilities, benefits, pricing references, and easy contact options." />

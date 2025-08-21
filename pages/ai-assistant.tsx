@@ -28,7 +28,15 @@ export default function AIAssistantPage() {
   ];
 
   return (
-    <UltraAdvancedFuturisticBackground variant="quantum-holographic" intensity={0.95}>
+    <UltraAdvancedFuturisticBackground 
+      intensity="high" 
+      colorScheme="quantum"
+      particleCount={300}
+      animationSpeed={1.5}
+      enableGlitch={true}
+      enableHologram={true}
+      enableQuantum={true}
+    >
       <Head>
         <title>AI Agent Orchestrator | Zion Tech Group</title>
         <meta name="description" content="Production-ready AI agent orchestration with guardrails, observability, and human-in-the-loop. Ship reliable assistants fast." />

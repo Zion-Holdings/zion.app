@@ -90,7 +90,15 @@ export default function InnovativeServicesShowcase() {
   ];
 
   return (
-    <UltraAdvancedFuturisticBackground intensity={1.8} variant="quantum-holographic">
+    <UltraAdvancedFuturisticBackground 
+  intensity="extreme" 
+  colorScheme="quantum"
+  particleCount={500}
+  animationSpeed={2.0}
+  enableGlitch={true}
+  enableHologram={true}
+  enableQuantum={true}
+>
       <div className="min-h-screen">
         <Head>
           <title>Innovative Services Showcase - Zion Tech Group | Cutting-Edge Technology</title>

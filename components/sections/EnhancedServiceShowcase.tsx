@@ -6,11 +6,14 @@ import {
   CheckCircle, Clock, DollarSign, Target
 } from 'lucide-react';
 import { innovativeAIServices } from '../../data/innovative-ai-services';
+import { innovativeMicroSaasServicesV3 } from '../../data/innovative-micro-saas-v3';
 import { quantumSpaceServices } from '../../data/quantum-space-services';
+import { quantumAIServices2025 } from '../../data/quantum-ai-services-2025';
 import { enterpriseITServices } from '../../data/enterprise-it-services';
 import { enhancedRealMicroSaasServices } from '../../data/enhanced-real-micro-saas-services';
 import { nextGenerationAIServices } from '../../data/next-generation-ai-services';
 import { emergingTechnologyServices } from '../../data/emerging-technology-services';
+import { emergingTechServices2025 } from '../../data/emerging-tech-services-2025';
 import { comprehensiveITSolutions } from '../../data/comprehensive-it-solutions';
 import { marketValidatedServices } from '../../data/market-validated-services';
 import { newRealInnovations } from '../../data/new-real-innovations';
@@ -37,11 +40,14 @@ const EnhancedServiceShowcase: React.FC<ServiceShowcaseProps> = ({
 
   const allServices = [
     ...innovativeAIServices,
+    ...innovativeMicroSaasServicesV3,
     ...quantumSpaceServices,
+    ...quantumAIServices2025,
     ...enterpriseITServices,
     ...enhancedRealMicroSaasServices,
     ...nextGenerationAIServices,
     ...emergingTechnologyServices,
+    ...emergingTechServices2025,
     ...comprehensiveITSolutions,
     ...marketValidatedServices,
     ...newRealInnovations,
