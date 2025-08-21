@@ -6,7 +6,7 @@ import UltraFuturisticBackground2029 from '../components/backgrounds/UltraFuturi
 import UltraFuturisticNavigation2029 from '../components/layout/UltraFuturisticNavigation2029';
 import UltraFuturisticFooter2029 from '../components/layout/UltraFuturisticFooter2029';
 import UltraFuturistic2029ServiceShowcase from '../components/sections/UltraFuturistic2029ServiceShowcase';
-import { cuttingEdge2029Services } from '../data/2029-cutting-edge-innovations';
+import { cuttingEdgeInnovations2029 } from '../data/2029-cutting-edge-innovations';
 import { spaceColonization2029Services } from '../data/2029-space-colonization-services';
 
 export default function UltraFuturistic2029InnovationsPage() {
@@ -17,7 +17,7 @@ export default function UltraFuturistic2029InnovationsPage() {
     website: 'https://ziontechgroup.com'
   };
 
-  const all2029Services = [...cuttingEdge2029Services, ...spaceColonization2029Services];
+  const all2029Services = [...cuttingEdgeInnovations2029, ...spaceColonization2029Services];
 
   return (
     <>
@@ -32,7 +32,7 @@ export default function UltraFuturistic2029InnovationsPage() {
         <link rel="canonical" href="https://ziontechgroup.com/2029-ultra-futuristic-innovations" />
       </Head>
 
-      <UltraFuturisticBackground2029 intensity="high">
+      <UltraFuturisticBackground2029>
         {/* Navigation */}
         <UltraFuturisticNavigation2029 />
 
@@ -118,14 +118,14 @@ export default function UltraFuturistic2029InnovationsPage() {
                   description: 'Revolutionary AI systems with human-like consciousness and reasoning capabilities',
                   icon: Brain,
                   color: 'from-purple-600 to-pink-600',
-                  services: cuttingEdge2029Services.filter(s => s.category.includes('Consciousness') || s.category.includes('Business'))
+                  services: cuttingEdgeInnovations2029.filter(s => s.category.includes('Consciousness') || s.category.includes('Business'))
                 },
                 {
                   title: '⚛️ Quantum & Neuroscience',
                   description: 'Quantum computing meets brain-computer interfaces for unprecedented capabilities',
                   icon: Atom,
                   color: 'from-indigo-600 to-purple-600',
-                  services: cuttingEdge2029Services.filter(s => s.category.includes('Neuroscience') || s.category.includes('Time'))
+                  services: cuttingEdgeInnovations2029.filter(s => s.category.includes('Neuroscience') || s.category.includes('Time'))
                 },
                 {
                   title: '🚀 Space Colonization & Mining',
@@ -146,14 +146,14 @@ export default function UltraFuturistic2029InnovationsPage() {
                   description: 'Real-time AI-powered reality enhancement and content generation',
                   icon: Eye,
                   color: 'from-orange-600 to-red-600',
-                  services: cuttingEdge2029Services.filter(s => s.category.includes('Augmented Reality'))
+                  services: cuttingEdgeInnovations2029.filter(s => s.category.includes('Augmented Reality'))
                 },
                 {
                   title: '⏰ Quantum Time Manipulation',
                   description: 'Quantum-based time perception manipulation and optimization',
                   icon: Timer,
                   color: 'from-green-600 to-emerald-600',
-                  services: cuttingEdge2029Services.filter(s => s.category.includes('Time'))
+                  services: cuttingEdgeInnovations2029.filter(s => s.category.includes('Time'))
                 }
               ].map((category, index) => (
                 <motion.div
