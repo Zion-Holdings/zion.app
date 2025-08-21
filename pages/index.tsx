@@ -20,6 +20,7 @@ import { professionalServices } from '../data/professional-services';
 import { nextGenerationAIServices } from '../data/next-generation-ai-services';
 import { emergingTechnologyServices } from '../data/emerging-technology-services';
 import { comprehensiveITSolutions } from '../data/comprehensive-it-solutions';
+import { realMarketServices } from '../data/real-market-services';
 
 export default function HomePage() {
   const contactInfo = {
@@ -40,7 +41,8 @@ export default function HomePage() {
     ...enterpriseITServices,
     ...nextGenerationAIServices,
     ...emergingTechnologyServices,
-    ...comprehensiveITSolutions
+    ...comprehensiveITSolutions,
+    ...realMarketServices
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);
@@ -48,9 +50,9 @@ export default function HomePage() {
   // Service statistics
   const serviceStats = {
     totalServices: allServices.length,
-    aiServices: nextGenerationAIServices.length + innovativeAIServices.length,
+    aiServices: nextGenerationAIServices.length + innovativeAIServices.length + realMarketServices.filter(s => s.category.includes('AI')).length,
     emergingTech: emergingTechnologyServices.length,
-    itSolutions: comprehensiveITSolutions.length,
+    itSolutions: comprehensiveITSolutions.length + enterpriseITServices.length,
     microSaas: enhancedRealMicroSaasServices.length + innovativeMicroSaasServices.length
   };
 

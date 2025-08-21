@@ -50,7 +50,9 @@ const companyLinks = [
   { name: 'News', href: '/news' },
   { name: 'Case Studies', href: '/case-studies' },
   { name: 'Blog', href: '/blog' },
-  { name: 'Resources', href: '/resources' }
+  { name: 'Resources', href: '/resources' },
+  { name: 'Services Advertising', href: '/services-advertising' },
+  { name: 'Market Pricing', href: '/market-pricing' }
 ];
 
 const supportLinks = [

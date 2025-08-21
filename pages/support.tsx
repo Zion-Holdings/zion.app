@@ -9,7 +9,7 @@ export default function SupportPage() {
       icon: '📚',
       title: 'Documentation',
       description: 'Comprehensive guides and API references for all our services.',
-      href: '/docs',
+      href: '/resources',
       color: 'text-blue-400',
     },
     {
@@ -170,12 +170,12 @@ export default function SupportPage() {
               Contact Support
             </Button>
             <Button
-              href="/docs"
+              href="/resources"
               variant="outline"
               size="lg"
-              className="border-white text-white hover:bg-white hover:text-cursor-blue shadow-2xl"
+              className="border-gray-600 text-gray-200"
             >
-              View Documentation
+              Documentation
             </Button>
           </div>
         </div>

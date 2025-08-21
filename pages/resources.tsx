@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
+import Link from 'next/link';
 
 export default function ResourcesPage() {
   const resources = [
@@ -309,7 +310,7 @@ export default function ResourcesPage() {
                   </h3>
                   
                   <Button
-                    href="/docs"
+                    href="/resources"
                     variant="outline"
                     size="sm"
                     className="w-full"

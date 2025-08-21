@@ -17,6 +17,7 @@ import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-
 import { innovativeAIServices } from '../data/innovative-ai-services';
 import { quantumSpaceServices } from '../data/quantum-space-services';
 import { enterpriseITServices } from '../data/enterprise-it-services';
+import { realMarketServices } from '../data/real-market-services';
 
 export default function EnhancedServicesShowcase() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -39,7 +40,8 @@ export default function EnhancedServicesShowcase() {
     ...enhancedRealMicroSaasServices,
     ...innovativeAIServices,
     ...quantumSpaceServices,
-    ...enterpriseITServices
+    ...enterpriseITServices,
+    ...realMarketServices
   ];
 
   const categories = [

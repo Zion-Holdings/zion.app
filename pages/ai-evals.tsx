@@ -32,7 +32,7 @@ export default function AIEvalsPage() {
 					<p className="text-xl text-gray-300">Benchmark models and prompts with real metrics and safety checks. Ship reliable AI faster.</p>
 					<div className="mt-6 flex justify-center gap-3">
 						<Button href="/contact" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl"><Rocket className="w-4 h-4 mr-2" />Get a Demo</Button>
-						<Button href="/docs" variant="outline" className="border-gray-600 text-gray-200">Read Docs</Button>
+						<Button href="/resources" variant="outline" className="border-gray-600 text-gray-200">Read Docs</Button>
 					</div>
 				</div>
 

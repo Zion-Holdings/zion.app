@@ -51,6 +51,16 @@ const navigationItems: NavigationItem[] = [
         name: 'Micro SaaS',
         href: '/micro-saas',
         description: 'Innovative SaaS solutions'
+      },
+      {
+        name: 'Services Advertising',
+        href: '/services-advertising',
+        description: 'Features, benefits, pricing references'
+      },
+      {
+        name: 'Market Pricing',
+        href: '/market-pricing',
+        description: 'Benchmark vendor pricing'
       }
     ]
   },
