@@ -4,7 +4,7 @@ import {
   Menu, X, ChevronDown, Search, Phone, Mail, MapPin,
   Brain, Rocket, Dna, Globe, Shield, Wifi, Package,
   Bot, Car, Building2, DollarSign, Monitor, Users,
-  Cpu, Zap, Atom, Database, Cloud, Lock, Code
+  Cpu, Zap, Atom, Database, Cloud, Lock, Code, ChartBar
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -64,7 +64,7 @@ const UltraAdvancedNavigation: React.FC = () => {
         },
         {
           name: 'AI Financial Risk',
-          href: '/ai-financial-risk',
+          href: '/ai-data-analytics',
           icon: DollarSign,
           description: 'Advanced risk management',
           price: '$5,999/month'
@@ -198,6 +198,16 @@ const UltraAdvancedNavigation: React.FC = () => {
       href: '/services',
       icon: Monitor,
       description: '300+ micro SaaS services'
+    },
+    {
+      name: 'Pricing',
+      href: '/pricing',
+      icon: DollarSign
+    },
+    {
+      name: 'Market Pricing',
+      href: '/market-pricing',
+      icon: ChartBar
     },
     {
       name: 'About',
