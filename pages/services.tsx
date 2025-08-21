@@ -9,6 +9,7 @@ import Card from '../components/ui/Card';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices, serviceCategories } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
+import { additionalEnhancedServices } from '../data/additional-real-services';
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -29,7 +30,7 @@ export default function ServicesPage() {
   }, [router.query.category, router.query.cat]);
 
   const allServices = useMemo(() => {
-    return enhancedRealMicroSaasServices.concat(extraServices);
+    return enhancedRealMicroSaasServices.concat(extraServices, additionalEnhancedServices);
   }, []);
 
   const filteredServices = useMemo(() => {
