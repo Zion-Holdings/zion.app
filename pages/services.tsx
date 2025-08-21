@@ -7,12 +7,14 @@ import {
   Brain, Rocket, Dna, DollarSign, Lock, Globe, 
   Wifi, Truck, Gamepad2, Bot, Factory, Car
 } from 'lucide-react';
-import QuantumHolographicMatrixBackground from '../components/ui/QuantumHolographicMatrixBackground';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 import UltraFuturisticServiceCard from '../components/ui/UltraFuturisticServiceCard';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { innovativeMicroSaasServices } from '../data/innovative-micro-saas-services';
 import { extraServices } from '../data/extra-services';
 import { additionalEnhancedServices } from '../data/additional-real-services';
+import { emergingTechServices } from '../data/emerging-tech-services';
+import { nextGenAIServices } from '../data/next-gen-ai-services';
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -25,7 +27,9 @@ export default function ServicesPage() {
     ...enhancedRealMicroSaasServices,
     ...innovativeMicroSaasServices,
     ...extraServices,
-    ...additionalEnhancedServices
+    ...additionalEnhancedServices,
+    ...emergingTechServices,
+    ...nextGenAIServices
   ];
 
   // Categories with icons
@@ -107,14 +111,14 @@ export default function ServicesPage() {
   };
 
   return (
-    <QuantumHolographicMatrixBackground intensity={1.0} variant="quantum">
+    <UltraAdvancedFuturisticBackground intensity={1.5} variant="quantum-holographic">
       <div className="min-h-screen">
         <Head>
-          <title>Services - Zion Tech Group | Revolutionary Micro SaaS Solutions</title>
-          <meta name="description" content="Explore 300+ revolutionary micro SaaS services including quantum AI, space technology, biotech, cybersecurity, and more. Transform your business today." />
-          <meta name="keywords" content="micro SaaS services, AI solutions, quantum computing, space technology, biotech AI, cybersecurity, autonomous systems" />
-          <meta property="og:title" content="Services - Zion Tech Group" />
-          <meta property="og:description" content="300+ revolutionary micro SaaS services and solutions" />
+          <title>Services - Zion Tech Group | 500+ Revolutionary Micro SaaS Solutions</title>
+          <meta name="description" content="Explore 500+ revolutionary micro SaaS services including quantum AI, space technology, biotech, cybersecurity, and more. Transform your business today." />
+          <meta name="keywords" content="micro SaaS services, AI solutions, quantum computing, space technology, biotech AI, cybersecurity, autonomous systems, quantum internet security, neural interfaces" />
+          <meta property="og:title" content="Services - Zion Tech Group | 500+ Services" />
+          <meta property="og:description" content="500+ revolutionary micro SaaS services and solutions" />
           <meta property="og:url" content="https://ziontechgroup.com/services" />
           <meta property="og:type" content="website" />
           <link rel="canonical" href="https://ziontechgroup.com/services" />
@@ -130,7 +134,7 @@ export default function ServicesPage() {
             >
               <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
                 <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                  300+ Revolutionary
+                  500+ Revolutionary
                 </span>
                 <br />
                 <span className="text-white">Micro SaaS Services</span>
@@ -138,7 +142,7 @@ export default function ServicesPage() {
               
               <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
                 Discover cutting-edge solutions in quantum AI, space technology, biotech, cybersecurity, 
-                and autonomous systems. Transform your business with unprecedented capabilities.
+                autonomous systems, quantum internet security, and neural interfaces. Transform your business with unprecedented capabilities.
               </p>
 
               {/* Search Bar */}
@@ -353,6 +357,6 @@ export default function ServicesPage() {
           </div>
         </section>
       </div>
-    </QuantumHolographicMatrixBackground>
+    </UltraAdvancedFuturisticBackground>
   );
 }
