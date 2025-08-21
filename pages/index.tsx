@@ -8,9 +8,10 @@ import EnhancedFuturisticBackground from '../components/ui/EnhancedFuturisticBac
 import EnhancedFuturisticCard from '../components/ui/EnhancedFuturisticCard';
 import QuantumHolographicBackground from '../components/ui/QuantumHolographicBackground';
 import QuantumHolographicCard from '../components/ui/QuantumHolographicCard';
+import EnhancedServicesShowcase from '../components/sections/EnhancedServicesShowcase';
 import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, ExternalLink, Star, Users, Globe, Lock, Rocket, Cpu, Database, TrendingUp, Clock, Target, Building, Award, DollarSign, ChartBar, Code, BookOpen, Activity, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, Settings, BookOpen as BookOpenIcon, Activity as ActivityIcon, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Sparkles, Atom, Brain, Eye, Shield as ShieldIcon, Zap as ZapIcon, Globe as GlobeIcon, Cpu as CpuIcon, Cloud as CloudIcon, Bot as BotIcon, Lock as LockIcon, BarChart3 as BarChart3Icon, TrendingUp as TrendingUpIcon, Users as UsersIcon, Award as AwardIcon, Star as StarIcon, Check as CheckIcon, ArrowRight as ArrowRightIcon, ExternalLink as ExternalLinkIcon, Phone as PhoneIcon, Mail as MailIcon, MapPin as MapPinIcon, Trophy, FlaskConical, Dna, Car, Leaf, Factory, Truck, Microscope, GraduationCap, ShieldCheck, ChevronRight, ChevronDown, Menu, X, ArrowUpRight, Sparkle, Zap as ZapIcon2, Brain as BrainIcon, Cpu as CpuIcon2, Database as DatabaseIcon2, Globe as GlobeIcon2, Shield as ShieldIcon2, Users as UsersIcon2, TrendingUp as TrendingUpIcon2, Award as AwardIcon2, Star as StarIcon2, Check as CheckIcon2, ArrowRight as ArrowRightIcon2, ExternalLink as ExternalLinkIcon2, Phone as PhoneIcon2, Mail as MailIcon2, MapPin as MapPinIcon2 } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { enhancedMicroSaasServices } from '../data/enhanced-micro-saas-services';
+import { realMicroSaasServices } from '../data/real-micro-saas-services-enhanced';
 
 export default function HomePage() {
   const heroStats = [
@@ -203,7 +204,7 @@ export default function HomePage() {
     }
   ];
 
-  const innovativeServices = enhancedMicroSaasServices.slice(0, 6);
+  const innovativeServices = realMicroSaasServices.slice(0, 6);
 
   const testimonials = [
     {
@@ -433,6 +434,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Enhanced Services Showcase */}
+      <EnhancedServicesShowcase />
 
       {/* Technology Stack Section */}
       <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
