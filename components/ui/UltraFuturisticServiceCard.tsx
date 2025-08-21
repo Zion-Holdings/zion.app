@@ -6,11 +6,51 @@ import {
   Mail, Phone, MapPin, Globe, ShieldCheck
 } from 'lucide-react';
 import Button from './Button';
-import { EnhancedRealMicroSaasService } from '../../data/enhanced-real-micro-saas-services';
 
-interface UltraFuturisticServiceCardProps {
-  service: EnhancedRealMicroSaasService;
+interface ContactInfo {
+  mobile: string;
+  email: string;
+  address: string;
+  website: string;
 }
+
+interface ServiceShape {
+  id: string;
+  name: string;
+  tagline: string;
+  price: string;
+  period: string;
+  description: string;
+  features: string[];
+  popular: boolean;
+  icon: string;
+  color: string;
+  textColor: string;
+  link: string;
+  marketPosition: string;
+  targetAudience: string;
+  trialDays: number;
+  setupTime: string;
+  category: string;
+  realService: boolean;
+  technology: string[];
+  integrations: string[];
+  useCases: string[];
+  roi: string;
+  competitors: string[];
+  marketSize: string;
+  growthRate: string;
+  variant: string;
+  contactInfo: ContactInfo;
+  realImplementation: boolean;
+  implementationDetails: string;
+  launchDate: string;
+  customers: number;
+  rating: number;
+  reviews: number;
+}
+
+interface UltraFuturisticServiceCardProps { service: ServiceShape; }
 
 export default function UltraFuturisticServiceCard({ service }: UltraFuturisticServiceCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);

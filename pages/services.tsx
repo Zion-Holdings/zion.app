@@ -8,6 +8,7 @@ import UltraFuturisticServiceCard from '../components/ui/UltraFuturisticServiceC
 import Card from '../components/ui/Card';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices, serviceCategories } from '../data/enhanced-real-micro-saas-services';
+import { additionalServices } from '../data/additional-services';
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -27,8 +28,12 @@ export default function ServicesPage() {
     }
   }, [router.query.category, router.query.cat]);
 
+  const allServices = useMemo(() => (
+    [...enhancedRealMicroSaasServices, ...additionalServices]
+  ), []);
+
   const filteredServices = useMemo(() => {
-    let filtered = enhancedRealMicroSaasServices.slice();
+    let filtered = allServices.slice();
 
     if (selectedCategory) {
       filtered = filtered.filter(s => s.category === selectedCategory);
@@ -63,7 +68,7 @@ export default function ServicesPage() {
     });
 
     return filtered;
-  }, [searchTerm, selectedCategory, sortBy]);
+  }, [searchTerm, selectedCategory, sortBy, allServices]);
 
   const contactInfo = {
     mobile: '+1 302 464 0950',
@@ -170,7 +175,7 @@ export default function ServicesPage() {
       {/* Results */}
       <section className="py-10 px-4">
         <div className="container mx-auto">
-          <div className="mb-6 text-gray-300">Showing <span className="text-white font-semibold">{filteredServices.length}</span> of <span className="text-white font-semibold">{enhancedRealMicroSaasServices.length}</span> services</div>
+          <div className="mb-6 text-gray-300">Showing <span className="text-white font-semibold">{filteredServices.length}</span> of <span className="text-white font-semibold">{allServices.length}</span> services</div>
 
           {viewMode === 'grid' ? (
             <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">

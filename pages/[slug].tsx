@@ -6,6 +6,7 @@ import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
 import { Check, Mail, MapPin, Phone, ExternalLink } from 'lucide-react';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
+import { additionalServices } from '../data/additional-services';
 
 export default function ServiceFallbackPage() {
   const router = useRouter();
@@ -13,7 +14,8 @@ export default function ServiceFallbackPage() {
 
   const service = useMemo(() => {
     if (!slug) return undefined;
-    const byLink = enhancedRealMicroSaasServices.find(s => {
+    const all = [...enhancedRealMicroSaasServices, ...additionalServices];
+    const byLink = all.find(s => {
       try {
         const url = new URL(s.link);
         return url.pathname.replace(/^\/+|\/+$/g, '') === slug.replace(/^\/+|\/+$/g, '');
@@ -24,7 +26,7 @@ export default function ServiceFallbackPage() {
     if (byLink) return byLink;
 
     const normalized = slug.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-    return enhancedRealMicroSaasServices.find(s => {
+    return all.find(s => {
       const idMatch = (s.id || '').toLowerCase().replace(/[^a-z0-9]+/g, '-') === normalized;
       const nameMatch = (s.name || '').toLowerCase().replace(/[^a-z0-9]+/g, '-') === normalized;
       return idMatch || nameMatch;
