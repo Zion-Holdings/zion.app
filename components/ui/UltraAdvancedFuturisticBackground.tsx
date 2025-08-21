@@ -2,20 +2,16 @@ import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 
 interface UltraAdvancedFuturisticBackgroundProps {
-  variant?: 'quantum-entanglement' | 'holographic-advanced' | 'cyberpunk-holographic' | 'neural-quantum' | 'quantum-matrix' | 'quantum-space' | 'holographic-matrix' | 'neural-quantum-cyberpunk' | 'quantum-holographic-advanced' | 'ai-futuristic' | 'neural-cyberpunk';
-  intensity?: 'low' | 'medium' | 'high' | 'extreme';
   children: React.ReactNode;
-  className?: string;
+  variant?: 'default' | 'quantum' | 'holographic' | 'cyberpunk' | 'neural' | 'quantum-holographic' | 'quantum-advanced' | 'holographic-advanced' | 'neural-quantum' | 'quantum-cyberpunk' | 'holographic-neural' | 'quantum-holographic-advanced' | 'quantum-matrix' | 'neural-cyberpunk' | 'holographic-quantum' | 'quantum-neural-advanced' | 'cyberpunk-holographic' | 'quantum-space' | 'ai-futuristic' | 'quantum-entanglement' | 'holographic-matrix' | 'neural-quantum-cyberpunk';
 }
 
-const UltraAdvancedFuturisticBackground: React.FC<UltraAdvancedFuturisticBackgroundProps> = ({
-  variant = 'quantum-entanglement',
-  intensity = 'medium',
-  children,
-  className = ''
+const UltraAdvancedFuturisticBackground: React.FC<UltraAdvancedFuturisticBackgroundProps> = ({ 
+  children, 
+  variant = 'quantum-holographic-advanced' 
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const animationRef = useRef<number | undefined>(undefined);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -24,455 +20,224 @@ const UltraAdvancedFuturisticBackground: React.FC<UltraAdvancedFuturisticBackgro
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    let animationFrameId: number;
-    let particles: Particle[] = [];
-    let holographicGrid: GridPoint[] = [];
-    let quantumWaves: Wave[] = [];
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
-    // Set canvas size
-    const resizeCanvas = () => {
-      if (containerRef.current) {
-        const rect = containerRef.current.getBoundingClientRect();
-        canvas.width = rect.width;
-        canvas.height = rect.height;
-      }
-    };
-
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-
-    // Particle class
-    class Particle {
+    // Quantum particle system
+    const particles: Array<{
       x: number;
       y: number;
       vx: number;
       vy: number;
       size: number;
       color: string;
-      alpha: number;
       life: number;
       maxLife: number;
+      type: 'quantum' | 'holographic' | 'neural' | 'cyberpunk';
+    }> = [];
 
-      constructor(x: number, y: number) {
-        this.x = x;
-        this.y = y;
-        this.vx = (Math.random() - 0.5) * 2;
-        this.vy = (Math.random() - 0.5) * 2;
-        this.size = Math.random() * 3 + 1;
-        this.color = getRandomColor();
-        this.alpha = 1;
-        this.life = 0;
-        this.maxLife = Math.random() * 100 + 50;
-      }
+    // Create initial particles
+    const createParticle = (x: number, y: number, type: 'quantum' | 'holographic' | 'neural' | 'cyberpunk') => {
+      const colors = {
+        quantum: ['#00ffff', '#0080ff', '#8000ff', '#ff0080'],
+        holographic: ['#ff00ff', '#00ff00', '#ffff00', '#00ffff'],
+        neural: ['#ff8000', '#8000ff', '#00ff80', '#ff0080'],
+        cyberpunk: ['#ff0040', '#40ff00', '#0040ff', '#ff8000']
+      };
 
-      update() {
-        this.x += this.vx;
-        this.y += this.vy;
-        this.life++;
-        this.alpha = 1 - (this.life / this.maxLife);
-        
-        if (this.life > this.maxLife) {
-          this.life = 0;
-          this.x = Math.random() * canvas.width;
-          this.y = Math.random() * canvas.height;
-          this.alpha = 1;
-        }
-      }
+      return {
+        x,
+        y,
+        vx: (Math.random() - 0.5) * 2,
+        vy: (Math.random() - 0.5) * 2,
+        size: Math.random() * 3 + 1,
+        color: colors[type][Math.floor(Math.random() * colors[type].length)],
+        life: 1,
+        maxLife: Math.random() * 100 + 50,
+        type
+      };
+    };
 
-      draw() {
-        ctx.save();
-        ctx.globalAlpha = this.alpha;
-        ctx.fillStyle = this.color;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.restore();
-      }
-    }
-
-    // Grid point class
-    class GridPoint {
-      x: number;
-      y: number;
-      size: number;
-      alpha: number;
-      pulse: number;
-
-      constructor(x: number, y: number) {
-        this.x = x;
-        this.y = y;
-        this.size = Math.random() * 2 + 1;
-        this.alpha = Math.random() * 0.5 + 0.2;
-        this.pulse = Math.random() * Math.PI * 2;
-      }
-
-      update() {
-        this.pulse += 0.02;
-        this.alpha = 0.2 + Math.sin(this.pulse) * 0.3;
-      }
-
-      draw() {
-        ctx.save();
-        ctx.globalAlpha = this.alpha;
-        ctx.fillStyle = '#00ffff';
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.restore();
-      }
-    }
-
-    // Wave class
-    class Wave {
-      x: number;
-      y: number;
-      radius: number;
-      maxRadius: number;
-      speed: number;
-      alpha: number;
-      color: string;
-
-      constructor(x: number, y: number) {
-        this.x = x;
-        this.y = y;
-        this.radius = 0;
-        this.maxRadius = Math.random() * 200 + 100;
-        this.speed = Math.random() * 2 + 1;
-        this.alpha = 1;
-        this.color = getRandomColor();
-      }
-
-      update() {
-        this.radius += this.speed;
-        this.alpha = 1 - (this.radius / this.maxRadius);
-        
-        if (this.radius > this.maxRadius) {
-          this.radius = 0;
-          this.alpha = 1;
-        }
-      }
-
-      draw() {
-        ctx.save();
-        ctx.globalAlpha = this.alpha;
-        ctx.strokeStyle = this.color;
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.stroke();
-        ctx.restore();
-      }
-    }
-
-    // Helper functions
-    function getRandomColor(): string {
-      const colors = [
-        '#00ffff', '#ff00ff', '#ffff00', '#00ff00', '#ff0080',
-        '#8000ff', '#ff8000', '#00ff80', '#ff0080', '#80ff00'
-      ];
-      return colors[Math.floor(Math.random() * colors.length)];
-    }
-
-    function createHolographicGrid() {
-      holographicGrid = [];
-      const gridSize = 50;
-      for (let x = 0; x < canvas.width; x += gridSize) {
-        for (let y = 0; y < canvas.height; y += gridSize) {
-          if (Math.random() > 0.7) {
-            holographicGrid.push(new GridPoint(x, y));
-          }
-        }
-      }
-    }
-
-    function createQuantumWaves() {
-      quantumWaves = [];
-      for (let i = 0; i < 5; i++) {
-        quantumWaves.push(new Wave(
-          Math.random() * canvas.width,
-          Math.random() * canvas.height
-        ));
-      }
-    }
-
-    // Initialize
-    for (let i = 0; i < 100; i++) {
-      particles.push(new Particle(
+    // Initialize particles
+    for (let i = 0; i < 200; i++) {
+      particles.push(createParticle(
         Math.random() * canvas.width,
-        Math.random() * canvas.height
+        Math.random() * canvas.height,
+        ['quantum', 'holographic', 'neural', 'cyberpunk'][Math.floor(Math.random() * 4)] as any
       ));
     }
-    createHolographicGrid();
-    createQuantumWaves();
 
     // Animation loop
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      // Draw background gradient
-      const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-      gradient.addColorStop(0, '#0a0a0a');
-      gradient.addColorStop(0.5, '#1a1a2e');
-      gradient.addColorStop(1, '#16213e');
-      ctx.fillStyle = gradient;
+    const animate = () => {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       // Update and draw particles
-      particles.forEach(particle => {
-        particle.update();
-        particle.draw();
+      particles.forEach((particle, index) => {
+        particle.x += particle.vx;
+        particle.y += particle.vy;
+        particle.life--;
+
+        // Wrap around edges
+        if (particle.x < 0) particle.x = canvas.width;
+        if (particle.x > canvas.width) particle.x = 0;
+        if (particle.y < 0) particle.y = canvas.height;
+        if (particle.y > canvas.height) particle.y = 0;
+
+        // Draw particle
+        if (particle.life > 0) {
+          const alpha = particle.life / particle.maxLife;
+          ctx.globalAlpha = alpha;
+          ctx.fillStyle = particle.color;
+          ctx.beginPath();
+          ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+          ctx.fill();
+
+          // Add glow effect
+          ctx.shadowColor = particle.color;
+          ctx.shadowBlur = 10;
+          ctx.fill();
+          ctx.shadowBlur = 0;
+        } else {
+          // Replace dead particle
+          particles[index] = createParticle(
+            Math.random() * canvas.width,
+            Math.random() * canvas.height,
+            ['quantum', 'holographic', 'neural', 'cyberpunk'][Math.floor(Math.random() * 4)] as any
+          );
+        }
       });
 
-      // Update and draw holographic grid
-      holographicGrid.forEach(point => {
-        point.update();
-        point.draw();
-      });
-
-      // Update and draw quantum waves
-      quantumWaves.forEach(wave => {
-        wave.update();
-        wave.draw();
-      });
-
-      // Draw variant-specific effects
-      drawVariantEffects();
-
-      animationFrameId = requestAnimationFrame(animate);
-    }
-
-    function drawVariantEffects() {
-      switch (variant) {
-        case 'quantum-entanglement':
-          drawQuantumEntanglement();
-          break;
-        case 'holographic-advanced':
-          drawHolographicAdvanced();
-          break;
-        case 'cyberpunk-holographic':
-          drawCyberpunkHolographic();
-          break;
-        case 'neural-quantum':
-          drawNeuralQuantum();
-          break;
-        case 'quantum-matrix':
-          drawQuantumMatrix();
-          break;
-        case 'quantum-space':
-          drawQuantumSpace();
-          break;
-        case 'holographic-matrix':
-          drawHolographicMatrix();
-          break;
-        case 'neural-quantum-cyberpunk':
-          drawNeuralQuantumCyberpunk();
-          break;
-        case 'quantum-holographic-advanced':
-          drawQuantumHolographicAdvanced();
-          break;
-        case 'ai-futuristic':
-          drawAIFuturistic();
-          break;
-        case 'neural-cyberpunk':
-          drawNeuralCyberpunk();
-          break;
-        default:
-          drawQuantumEntanglement();
-      }
-    }
-
-    function drawQuantumEntanglement() {
       // Draw quantum entanglement lines
-      ctx.strokeStyle = '#00ffff';
+      ctx.strokeStyle = 'rgba(0, 255, 255, 0.3)';
       ctx.lineWidth = 1;
-      ctx.globalAlpha = 0.3;
-      
       for (let i = 0; i < particles.length; i += 2) {
-        if (particles[i] && particles[i + 1]) {
+        if (particles[i] && particles[i + 1] && particles[i].life > 0 && particles[i + 1].life > 0) {
+          const distance = Math.sqrt(
+            Math.pow(particles[i].x - particles[i + 1].x, 2) + 
+            Math.pow(particles[i].y - particles[i + 1].y, 2)
+          );
+          if (distance < 100) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[i + 1].x, particles[i + 1].y);
+            ctx.stroke();
+          }
+        }
+      }
+
+      // Draw holographic grid
+      ctx.strokeStyle = 'rgba(139, 92, 246, 0.2)';
+      ctx.lineWidth = 0.5;
+      const gridSize = 50;
+      for (let x = 0; x < canvas.width; x += gridSize) {
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, canvas.height);
+        ctx.stroke();
+      }
+      for (let y = 0; y < canvas.height; y += gridSize) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(canvas.width, y);
+        ctx.stroke();
+      }
+
+      // Draw neural network connections
+      ctx.strokeStyle = 'rgba(16, 185, 129, 0.3)';
+      ctx.lineWidth = 1;
+      for (let i = 0; i < particles.length; i += 3) {
+        if (particles[i] && particles[i + 1] && particles[i + 2] && 
+            particles[i].life > 0 && particles[i + 1].life > 0 && particles[i + 2].life > 0) {
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[i + 1].x, particles[i + 1].y);
+          ctx.lineTo(particles[i + 2].x, particles[i + 2].y);
+          ctx.closePath();
           ctx.stroke();
         }
       }
-      ctx.globalAlpha = 1;
-    }
 
-    function drawHolographicAdvanced() {
-      // Draw advanced holographic patterns
-      ctx.strokeStyle = '#ff00ff';
-      ctx.lineWidth = 2;
-      ctx.globalAlpha = 0.4;
-      
-      for (let i = 0; i < holographicGrid.length; i++) {
-        const point = holographicGrid[i];
-        ctx.beginPath();
-        ctx.moveTo(point.x, point.y);
-        ctx.lineTo(point.x + Math.sin(Date.now() * 0.001 + i) * 20, 
-                   point.y + Math.cos(Date.now() * 0.001 + i) * 20);
-        ctx.stroke();
-      }
-      ctx.globalAlpha = 1;
-    }
+      animationRef.current = requestAnimationFrame(animate);
+    };
 
-    function drawCyberpunkHolographic() {
-      // Draw cyberpunk-style holographic effects
-      ctx.strokeStyle = '#ffff00';
-      ctx.lineWidth = 1;
-      ctx.globalAlpha = 0.5;
-      
-      holographicGrid.forEach((point, i) => {
-        const time = Date.now() * 0.001;
-        const x = point.x + Math.sin(time + i) * 30;
-        const y = point.y + Math.cos(time + i) * 30;
-        
-        ctx.beginPath();
-        ctx.moveTo(point.x, point.y);
-        ctx.lineTo(x, y);
-        ctx.stroke();
-      });
-      ctx.globalAlpha = 1;
-    }
-
-    function drawNeuralQuantum() {
-      // Draw neural network connections
-      ctx.strokeStyle = '#00ff80';
-      ctx.lineWidth = 1;
-      ctx.globalAlpha = 0.4;
-      
-      particles.forEach((particle, i) => {
-        if (i % 3 === 0) {
-          const nextParticle = particles[(i + 1) % particles.length];
-          ctx.beginPath();
-          ctx.moveTo(particle.x, particle.y);
-          ctx.lineTo(nextParticle.x, nextParticle.y);
-          ctx.stroke();
-        }
-      });
-      ctx.globalAlpha = 1;
-    }
-
-    function drawQuantumMatrix() {
-      // Draw matrix-style digital rain
-      ctx.fillStyle = '#00ff00';
-      ctx.font = '12px monospace';
-      ctx.globalAlpha = 0.3;
-      
-      for (let i = 0; i < 20; i++) {
-        const x = (i * 50) % canvas.width;
-        const y = (Date.now() * 0.1 + i * 20) % canvas.height;
-        ctx.fillText('01', x, y);
-      }
-      ctx.globalAlpha = 1;
-    }
-
-    function drawQuantumSpace() {
-      // Draw space-like quantum effects
-      ctx.strokeStyle = '#8000ff';
-      ctx.lineWidth = 2;
-      ctx.globalAlpha = 0.6;
-      
-      quantumWaves.forEach(wave => {
-        ctx.beginPath();
-        ctx.arc(wave.x, wave.y, wave.radius * 0.5, 0, Math.PI * 2);
-        ctx.stroke();
-      });
-      ctx.globalAlpha = 1;
-    }
-
-    function drawHolographicMatrix() {
-      // Draw holographic matrix patterns
-      ctx.strokeStyle = '#ff0080';
-      ctx.lineWidth = 1;
-      ctx.globalAlpha = 0.4;
-      
-      for (let i = 0; i < canvas.width; i += 40) {
-        for (let j = 0; j < canvas.height; j += 40) {
-          const time = Date.now() * 0.001;
-          const offset = Math.sin(time + i * 0.1) * 20;
-          
-          ctx.beginPath();
-          ctx.moveTo(i, j);
-          ctx.lineTo(i + offset, j + offset);
-          ctx.stroke();
-        }
-      }
-      ctx.globalAlpha = 1;
-    }
-
-    function drawNeuralQuantumCyberpunk() {
-      // Draw combined neural-quantum-cyberpunk effects
-      drawNeuralQuantum();
-      drawCyberpunkHolographic();
-      drawQuantumEntanglement();
-    }
-
-    function drawQuantumHolographicAdvanced() {
-      // Draw advanced quantum-holographic effects
-      drawQuantumEntanglement();
-      drawHolographicAdvanced();
-      drawQuantumSpace();
-    }
-
-    function drawAIFuturistic() {
-      // Draw AI futuristic patterns
-      ctx.strokeStyle = '#80ff00';
-      ctx.lineWidth = 2;
-      ctx.globalAlpha = 0.5;
-      
-      particles.forEach((particle, i) => {
-        const time = Date.now() * 0.001;
-        const radius = Math.sin(time + i) * 30 + 50;
-        
-        ctx.beginPath();
-        ctx.arc(particle.x, particle.y, radius, 0, Math.PI * 2);
-        ctx.stroke();
-      });
-      ctx.globalAlpha = 1;
-    }
-
-    function drawNeuralCyberpunk() {
-      // Draw neural-cyberpunk effects
-      drawNeuralQuantum();
-      drawCyberpunkHolographic();
-    }
-
-    // Start animation
     animate();
 
-    // Cleanup
-    return () => {
-      window.removeEventListener('resize', resizeCanvas);
-      cancelAnimationFrame(animationFrameId);
+    // Handle resize
+    const handleResize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
     };
-  }, [variant, intensity]);
 
-  const intensityMultiplier = {
-    low: 0.5,
-    medium: 1,
-    high: 1.5,
-    extreme: 2
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [variant]);
+
+  const backgroundVariants = {
+    quantum: 'from-cyan-500 via-blue-600 to-purple-700',
+    holographic: 'from-purple-500 via-pink-600 to-rose-700',
+    cyberpunk: 'from-red-500 via-orange-600 to-yellow-700',
+    neural: 'from-green-500 via-emerald-600 to-teal-700',
+    'quantum-holographic': 'from-cyan-500 via-purple-600 to-pink-700',
+    'quantum-advanced': 'from-cyan-500 via-blue-600 to-indigo-700',
+    'holographic-advanced': 'from-purple-500 via-violet-600 to-indigo-700',
+    'neural-quantum': 'from-green-500 via-cyan-600 to-blue-700',
+    'quantum-cyberpunk': 'from-cyan-500 via-red-600 to-orange-700',
+    'holographic-neural': 'from-purple-500 via-green-600 to-cyan-700',
+    'quantum-holographic-advanced': 'from-cyan-500 via-purple-600 to-pink-700',
+    'quantum-matrix': 'from-cyan-500 via-green-600 to-blue-700',
+    'neural-cyberpunk': 'from-green-500 via-red-600 to-orange-700',
+    'holographic-quantum': 'from-purple-500 via-cyan-600 to-blue-700',
+    'quantum-neural-advanced': 'from-cyan-500 via-green-600 to-emerald-700',
+    'cyberpunk-holographic': 'from-red-500 via-purple-600 to-pink-700',
+    'quantum-space': 'from-cyan-500 via-blue-600 to-indigo-700',
+    'ai-futuristic': 'from-purple-500 via-cyan-600 to-green-700',
+    'quantum-entanglement': 'from-cyan-500 via-violet-600 to-purple-700',
+    'holographic-matrix': 'from-purple-500 via-green-600 to-cyan-700',
+    'neural-quantum-cyberpunk': 'from-green-500 via-cyan-600 to-red-700'
   };
 
   return (
-    <div ref={containerRef} className={`relative min-h-screen overflow-hidden ${className}`}>
+    <div className="relative min-h-screen overflow-hidden">
+      {/* Enhanced Canvas Background */}
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 w-full h-full"
-        style={{
-          filter: `blur(${intensityMultiplier[intensity] * 0.5}px)`,
-          opacity: 0.8 + (intensityMultiplier[intensity] * 0.1)
-        }}
+        className="fixed inset-0 w-full h-full pointer-events-none z-0"
+        style={{ background: 'radial-gradient(ellipse at center, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.95) 100%)' }}
       />
       
-      {/* Additional animated layers */}
-      <div className="absolute inset-0 pointer-events-none">
-        {/* Floating geometric shapes */}
+      {/* Quantum Energy Field */}
+      <div className="fixed inset-0 z-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-cyan-500/5 to-purple-500/5 animate-pulse" />
+        <div className="absolute inset-0 bg-gradient-to-tl from-transparent via-pink-500/5 to-blue-500/5 animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-green-500/5 to-yellow-500/5 animate-pulse" style={{ animationDelay: '2s' }} />
+      </div>
+
+      {/* Holographic Grid Overlay */}
+      <div className="fixed inset-0 z-0">
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(139,92,246,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(139,92,246,0.1)_1px,transparent_1px)] bg-[size:50px_50px] animate-pulse" />
+      </div>
+
+      {/* Neural Network Patterns */}
+      <div className="fixed inset-0 z-0">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(16,185,129,0.1)_0%,transparent_50%)] animate-pulse" style={{ animationDelay: '0.5s' }} />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(236,73,153,0.1)_0%,transparent_50%)] animate-pulse" style={{ animationDelay: '1.5s' }} />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_40%_40%,rgba(0,255,255,0.1)_0%,transparent_50%)] animate-pulse" style={{ animationDelay: '2.5s' }} />
+      </div>
+
+      {/* Quantum Entanglement Effects */}
+      <div className="fixed inset-0 z-0">
         <motion.div
-          className="absolute top-20 left-20 w-32 h-32 border border-cyan-400 opacity-20"
+          className="absolute top-1/4 left-1/4 w-32 h-32 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full opacity-20"
           animate={{
-            rotate: [0, 360],
             scale: [1, 1.2, 1],
+            rotate: [0, 180, 360],
             opacity: [0.2, 0.4, 0.2]
           }}
           transition={{
@@ -481,28 +246,41 @@ const UltraAdvancedFuturisticBackground: React.FC<UltraAdvancedFuturisticBackgro
             ease: "easeInOut"
           }}
         />
-        
         <motion.div
-          className="absolute top-40 right-32 w-24 h-24 border border-purple-400 opacity-20"
+          className="absolute top-3/4 right-1/4 w-24 h-24 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full opacity-20"
           animate={{
-            rotate: [360, 0],
-            scale: [1.2, 1, 1.2],
+            scale: [1, 1.3, 1],
+            rotate: [360, 180, 0],
             opacity: [0.2, 0.5, 0.2]
           }}
           transition={{
-            duration: 6,
+            duration: 10,
             repeat: Infinity,
             ease: "easeInOut"
           }}
         />
-
-        {/* Energy orbs */}
         <motion.div
-          className="absolute bottom-32 left-1/4 w-16 h-16 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full opacity-30"
+          className="absolute bottom-1/4 left-1/2 w-20 h-20 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full opacity-20"
           animate={{
-            y: [0, -20, 0],
-            scale: [1, 1.3, 1],
-            opacity: [0.3, 0.6, 0.3]
+            scale: [1, 1.4, 1],
+            rotate: [0, 360, 0],
+            opacity: [0.2, 0.6, 0.2]
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+      </div>
+
+      {/* Cyberpunk Energy Lines */}
+      <div className="fixed inset-0 z-0">
+        <motion.div
+          className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent"
+          animate={{
+            opacity: [0, 1, 0],
+            scaleX: [0, 1, 0]
           }}
           transition={{
             duration: 4,
@@ -510,38 +288,72 @@ const UltraAdvancedFuturisticBackground: React.FC<UltraAdvancedFuturisticBackgro
             ease: "easeInOut"
           }}
         />
-
         <motion.div
-          className="absolute bottom-20 right-1/3 w-20 h-20 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full opacity-30"
+          className="absolute top-0 right-0 w-1 h-full bg-gradient-to-b from-transparent via-orange-500 to-transparent"
           animate={{
-            y: [0, -30, 0],
-            scale: [1.3, 1, 1.3],
-            opacity: [0.3, 0.7, 0.3]
+            opacity: [0, 1, 0],
+            scaleY: [0, 1, 0]
           }}
           transition={{
-            duration: 5,
+            duration: 6,
             repeat: Infinity,
             ease: "easeInOut"
           }}
         />
-
-        {/* Scanning lines */}
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-400/10 to-transparent"
-          animate={{
-            y: [-100, '100vh']
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        />
       </div>
 
-      {/* Content */}
+      {/* Content Layer */}
       <div className="relative z-10">
         {children}
+      </div>
+
+      {/* Quantum Particle Trails */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        {[...Array(20)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1 h-1 bg-cyan-400 rounded-full"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`
+            }}
+            animate={{
+              y: [0, -100, -200],
+              opacity: [0, 1, 0],
+              scale: [0, 1, 0]
+            }}
+            transition={{
+              duration: Math.random() * 3 + 2,
+              repeat: Infinity,
+              delay: Math.random() * 2,
+              ease: "easeOut"
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Holographic Data Streams */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        {[...Array(5)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-2 h-20 bg-gradient-to-b from-purple-400 to-transparent rounded-full"
+            style={{
+              left: `${20 + i * 15}%`,
+              top: '-20px'
+            }}
+            animate={{
+              y: [0, (typeof window !== 'undefined' ? window.innerHeight : 800) + 20],
+              opacity: [0, 0.8, 0]
+            }}
+            transition={{
+              duration: 8 + i * 2,
+              repeat: Infinity,
+              delay: i * 1.5,
+              ease: "linear"
+            }}
+          />
+        ))}
       </div>
     </div>
   );
