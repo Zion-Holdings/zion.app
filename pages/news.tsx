@@ -195,7 +195,7 @@ const NewsPage: React.FC = () => {
                     </div>
                   </div>
                   <a
-                    href="#"
+                    href="/blog"
                     className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 inline-flex items-center space-x-2"
                   >
                     <span>Read Full Article</span>
@@ -281,7 +281,7 @@ const NewsPage: React.FC = () => {
                       <span>{article.author}</span>
                     </span>
                     <a
-                      href="#"
+                      href="/blog"
                       className="text-cyan-400 hover:text-cyan-300 transition-colors duration-200 inline-flex items-center space-x-1"
                     >
                       <span>Read More</span>
