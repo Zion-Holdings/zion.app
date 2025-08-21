@@ -14,6 +14,7 @@ import { enterpriseITServices } from '../data/enterprise-it-services';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { additionalEnhancedServices } from '../data/additional-real-services';
 import { newRealServices } from '../data/new-real-services';
+import { marketValidatedServices } from '../data/market-validated-services';
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -27,7 +28,8 @@ export default function ServicesPage() {
     ...enterpriseITServices,
     ...enhancedRealMicroSaasServices,
     ...additionalEnhancedServices,
-    ...newRealServices
+    ...newRealServices,
+    ...marketValidatedServices
   ];
 
   const categories = [
@@ -261,7 +263,7 @@ export default function ServicesPage() {
                   <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/20 h-full">
                     {/* Service Icon */}
                     <div className="text-4xl mb-4">
-                      {service.icon || '🚀'}
+                      {((service as any).icon) || '🚀'}
                     </div>
 
                     {/* Service Name */}

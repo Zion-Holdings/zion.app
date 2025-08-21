@@ -53,6 +53,35 @@ export default function HomePage() {
           <meta property="og:url" content="https://ziontechgroup.com" />
           <meta property="og:type" content="website" />
           <link rel="canonical" href="https://ziontechgroup.com" />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: 'Zion Tech Group',
+              url: 'https://ziontechgroup.com',
+              telephone: '+1 302 464 0950',
+              email: 'kleber@ziontechgroup.com',
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress: '364 E Main St STE 1008',
+                addressLocality: 'Middletown',
+                addressRegion: 'DE',
+                postalCode: '19709',
+                addressCountry: 'US'
+              },
+              sameAs: [
+                'https://www.linkedin.com/company/zion-tech-group',
+                'https://twitter.com/ziontechgroup'
+              ],
+              contactPoint: [{
+                '@type': 'ContactPoint',
+                telephone: '+1 302 464 0950',
+                contactType: 'sales',
+                areaServed: 'US'
+              }]
+            }) }}
+          />
         </Head>
 
         {/* Hero Section */}
