@@ -461,6 +461,29 @@ export default function HomePage() {
         ]}
       />
 
+      {/* New and Trending Micro SaaS */}
+      <ServiceAds
+        heading="New and Trending Micro SaaS"
+        subheading="Recently launched, production-ready services with transparent pricing."
+        items={(() => {
+          const byId = (id: string) => additionalEnhancedServices.find(s => s.id === id);
+          const picks = [
+            byId('email-deliverability-monitor'),
+            byId('landing-page-experimentation'),
+            byId('invoice-reconciliation-automation'),
+            byId('github-ops-health-dashboard')
+          ].filter(Boolean) as typeof additionalEnhancedServices;
+          return picks.map((s) => ({
+            title: s.name,
+            description: s.tagline || s.description,
+            price: `${s.price}/month`,
+            features: (s.features || []).slice(0, 6),
+            link: s.link,
+            contactInfo
+          }));
+        })()}
+      />
+
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4">
         <div className="container mx-auto text-center z-10">
