@@ -12,6 +12,8 @@ import { innovativeAIServices } from '../data/innovative-ai-services';
 import { quantumSpaceServices } from '../data/quantum-space-services';
 import { enterpriseITServices } from '../data/enterprise-it-services';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
+import { additionalEnhancedServices } from '../data/additional-real-services';
+import { newRealServices } from '../data/new-real-services';
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -23,7 +25,9 @@ export default function ServicesPage() {
     ...innovativeAIServices,
     ...quantumSpaceServices,
     ...enterpriseITServices,
-    ...enhancedRealMicroSaasServices
+    ...enhancedRealMicroSaasServices,
+    ...additionalEnhancedServices,
+    ...newRealServices
   ];
 
   const categories = [
@@ -52,6 +56,16 @@ export default function ServicesPage() {
 
   // Filter and sort services
   const filteredServices = React.useMemo(() => {
+    const parsePriceToNumber = (price: any): number => {
+      if (typeof price === 'number') return price;
+      if (typeof price === 'string') {
+        const match = price.replace(/[^0-9.]/g, '');
+        const parsed = parseFloat(match || '0');
+        return isNaN(parsed) ? 0 : parsed;
+      }
+      return 0;
+    };
+
     let filtered = allServices.filter(service => {
       const matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -64,11 +78,12 @@ export default function ServicesPage() {
                              (selectedCategory === 'enterprise' && (service.category.includes('Enterprise') || service.category.includes('IT'))) ||
                              (selectedCategory === 'micro-saas' && service.category.includes('Micro SaaS'));
       
+      const numericPrice = parsePriceToNumber((service as any).price);
       const matchesPrice = selectedPriceRange === 'all' ||
-                          (selectedPriceRange === 'low' && service.price < 1000) ||
-                          (selectedPriceRange === 'medium' && service.price >= 1000 && service.price < 5000) ||
-                          (selectedPriceRange === 'high' && service.price >= 5000 && service.price < 20000) ||
-                          (selectedPriceRange === 'premium' && service.price >= 20000);
+                          (selectedPriceRange === 'low' && numericPrice < 1000) ||
+                          (selectedPriceRange === 'medium' && numericPrice >= 1000 && numericPrice < 5000) ||
+                          (selectedPriceRange === 'high' && numericPrice >= 5000 && numericPrice < 20000) ||
+                          (selectedPriceRange === 'premium' && numericPrice >= 20000);
       
       return matchesSearch && matchesCategory && matchesPrice;
     });
@@ -79,16 +94,19 @@ export default function ServicesPage() {
         filtered.sort((a, b) => a.name.localeCompare(b.name));
         break;
       case 'price-low':
-        filtered.sort((a, b) => a.price - b.price);
+        filtered.sort((a, b) => parsePriceToNumber((a as any).price) - parsePriceToNumber((b as any).price));
         break;
       case 'price-high':
-        filtered.sort((a, b) => b.price - a.price);
+        filtered.sort((a, b) => parsePriceToNumber((b as any).price) - parsePriceToNumber((a as any).price));
         break;
       case 'rating':
         filtered.sort((a, b) => (b.rating || 0) - (a.rating || 0));
         break;
       case 'customers':
-        filtered.sort((a, b) => (b.customerCount || 0) - (a.customerCount || 0));
+        filtered.sort((a, b) => {
+          const getCustomers = (s: any) => (s.customerCount ?? s.customers ?? 0) as number;
+          return getCustomers(b) - getCustomers(a);
+        });
         break;
       default:
         break;
@@ -259,7 +277,7 @@ export default function ServicesPage() {
                     {/* Price */}
                     <div className="mb-4">
                       <div className="text-2xl font-bold text-cyan-400">
-                        ${service.price.toLocaleString()}/month
+                        {typeof (service as any).price === 'number' ? `$${(service as any).price.toLocaleString()}/month` : `${(service as any).price}${(service as any).period ? '' : ''}`}
                       </div>
                       <div className="text-sm text-gray-400">
                         Starting price
@@ -289,17 +307,17 @@ export default function ServicesPage() {
                       </div>
                       <div className="text-center">
                         <div className="text-cyan-400 font-semibold">
-                          {service.customerCount || 'N/A'}
+                          {((service as any).customerCount ?? (service as any).customers ?? 'N/A')}
                         </div>
                         <div className="text-gray-400">Customers</div>
                       </div>
                     </div>
 
                     {/* CTA Button */}
-                    <button className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+                    <a href={(service as any).link || '/services'} className="w-full inline-flex items-center justify-center bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
                       Learn More
                       <ArrowRight className="inline-block ml-2 w-4 h-4" />
-                    </button>
+                    </a>
                   </div>
                 </motion.div>
               ))}

@@ -8,6 +8,10 @@ import { Check, Mail, MapPin, Phone, ExternalLink } from 'lucide-react';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
 import { additionalEnhancedServices } from '../data/additional-real-services';
+import { innovativeAIServices } from '../data/innovative-ai-services';
+import { quantumSpaceServices } from '../data/quantum-space-services';
+import { enterpriseITServices } from '../data/enterprise-it-services';
+import { newRealServices } from '../data/new-real-services';
 
 export default function ServiceFallbackPage() {
   const router = useRouter();
@@ -15,7 +19,15 @@ export default function ServiceFallbackPage() {
 
   const service = useMemo(() => {
     if (!slug) return undefined;
-    const all = enhancedRealMicroSaasServices.concat(extraServices, additionalEnhancedServices);
+    const all = enhancedRealMicroSaasServices
+      .concat(
+        extraServices,
+        additionalEnhancedServices,
+        innovativeAIServices,
+        quantumSpaceServices,
+        enterpriseITServices,
+        newRealServices
+      );
     const byLink = all.find(s => {
       try {
         const url = new URL(s.link);
