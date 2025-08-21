@@ -73,6 +73,12 @@ export default function QuantumHolographicNavbar() {
       description: 'Transparent Plans'
     },
     { 
+      name: 'Blog', 
+      href: '/blog', 
+      icon: <Sparkles className="w-4 h-4" />,
+      description: 'Insights & guides'
+    },
+    { 
       name: 'About', 
       href: '/about', 
       icon: <Shield className="w-4 h-4" />,
