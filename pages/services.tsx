@@ -4,7 +4,6 @@ import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, Trend
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
-import UltraAdvancedFuturisticCard from '../components/ui/UltraAdvancedFuturisticCard';
 import { enhancedRealMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices, getServicesByPriceRange } from '../data/enhanced-real-micro-saas-services';
 import { motion } from 'framer-motion';
 
@@ -87,7 +86,12 @@ export default function ServicesPage() {
       color: 'from-purple-600 to-indigo-700',
       marketPosition: 'First-to-market quantum AI platform. No direct competitors yet. Traditional AI platforms cost $2000+/month with limited capabilities.',
       marketData: '$15B quantum computing market, 500% annual growth',
-      savings: 'Save 85% vs. competitors'
+      savings: 'Save 85% vs. competitors',
+      contactInfo: {
+        mobile: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
     },
     {
       title: '🏭 Autonomous Manufacturing AI Platform',
@@ -98,7 +102,12 @@ export default function ServicesPage() {
       color: 'from-orange-500 to-red-600',
       marketPosition: 'Leading autonomous manufacturing platform. Competes with Siemens MindSphere ($500+/month) and PTC ThingWorx ($300+/month).',
       marketData: '$12.3B industrial AI market, 320% annual growth',
-      savings: 'Save 60% vs. competitors'
+      savings: 'Save 60% vs. competitors',
+      contactInfo: {
+        mobile: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
     },
     {
       title: '🔒 Quantum Cybersecurity Suite',
@@ -107,9 +116,14 @@ export default function ServicesPage() {
       features: ['Quantum-resistant encryption algorithms', 'AI-powered threat detection and response', 'Zero-trust architecture implementation', 'Real-time security monitoring'],
       link: 'https://ziontechgroup.com/quantum-cybersecurity',
       color: 'from-red-500 to-pink-600',
-      marketPosition: 'Leading quantum-resistant security solution. Competes with CrowdStrike ($8.99/user/month) and Palo Alto Networks ($50+/user/month).',
+      marketPosition: 'Advanced quantum-resistant cybersecurity platform. Competes with CrowdStrike ($8.99/user/month) and Palo Alto Networks ($50+/user/month).',
       marketData: '$6.8B quantum security market, 380% annual growth',
-      savings: 'Save 70% vs. competitors'
+      savings: 'Save 70% vs. competitors',
+      contactInfo: {
+        mobile: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
     },
     {
       title: '🚀 Space Technology Platform',
@@ -120,7 +134,12 @@ export default function ServicesPage() {
       color: 'from-blue-500 to-indigo-600',
       marketPosition: 'Innovative space technology platform. Competes with Maxar ($500+/month) and Planet Labs ($400+/month).',
       marketData: '$4.2B space technology market, 280% annual growth',
-      savings: 'Save 20% vs. competitors'
+      savings: 'Save 20% vs. competitors',
+      contactInfo: {
+        mobile: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
     },
     {
       title: '🧬 Biotech AI Platform',
@@ -129,9 +148,14 @@ export default function ServicesPage() {
       features: ['AI-powered drug discovery algorithms', 'Protein folding prediction with 99.2% accuracy', 'Genomic data analysis and interpretation', 'Clinical trial optimization'],
       link: 'https://ziontechgroup.com/biotech-ai',
       color: 'from-emerald-500 to-teal-600',
-      marketPosition: 'Leading biotech AI platform. Competes with Insitro ($1000+/month) and Atomwise ($800+/month).',
+      marketPosition: 'Advanced biotech AI platform. Competes with Insitro ($1000+/month) and Atomwise ($800+/month).',
       marketData: '$8.5B biotech AI market, 420% annual growth',
-      savings: 'Save 40% vs. competitors'
+      savings: 'Save 40% vs. competitors',
+      contactInfo: {
+        mobile: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
     },
     {
       title: '💰 Quantum Financial Trading Platform',
@@ -139,10 +163,15 @@ export default function ServicesPage() {
       price: '$899/month',
       features: ['Quantum-enhanced trading algorithms', 'Real-time market analysis and prediction', 'Advanced risk management systems', 'Portfolio optimization with quantum algorithms'],
       link: 'https://ziontechgroup.com/quantum-financial-trading',
-      color: 'from-yellow-500 to-amber-600',
-      marketPosition: 'First quantum-enhanced trading platform. Competes with Bloomberg Terminal ($2000+/month) and Thomson Reuters ($500+/month).',
-      marketData: '$22B algorithmic trading market, 280% annual growth',
-      savings: 'Save 55% vs. competitors'
+      color: 'from-violet-500 to-purple-600',
+      marketPosition: 'Advanced quantum trading platform. Competes with Bloomberg Terminal ($24,000/year) and Thomson Reuters ($22,000/year).',
+      marketData: '$25B algorithmic trading market, 450% annual growth',
+      savings: 'Save 95% vs. competitors',
+      contactInfo: {
+        mobile: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
     }
   ];
 
@@ -427,10 +456,90 @@ export default function ServicesPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
-                  <UltraAdvancedFuturisticCard
-                    service={service}
-                    onClick={() => window.open(service.link, '_blank')}
-                  />
+                  <Card
+                    variant="futuristic"
+                    size="lg"
+                    className="h-full"
+                  >
+                    <div className="p-6">
+                      <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-cyan-400 transition-colors duration-300">
+                        {service.name}
+                      </h3>
+                      <p className="text-gray-300 mb-4 text-lg">
+                        {service.description}
+                      </p>
+                      
+                      {/* Enhanced Price and ROI Display */}
+                      <div className="bg-black/30 rounded-lg p-4 mb-4 border border-gray-700">
+                        <div className="flex justify-between items-center mb-2">
+                          <span className="text-2xl font-bold text-cyan-400">{service.price}{service.period}</span>
+                          <span className="text-sm text-green-400 bg-green-900/20 px-2 py-1 rounded">
+                            {service.roi}
+                          </span>
+                        </div>
+                        <div className="text-sm text-gray-400">
+                          <div className="flex items-center gap-2 mb-1">
+                            <TrendingUp className="w-4 h-4 text-green-400" />
+                            <span>{service.marketSize}, {service.growthRate}</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <Shield className="w-4 h-4 text-blue-400" />
+                            <span>{service.marketPosition}</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Enhanced Features List */}
+                      <div className="mb-6">
+                        <h4 className="text-lg font-semibold text-white mb-3">Key Features:</h4>
+                        <ul className="space-y-2">
+                          {service.features.map((feature, featureIndex) => (
+                            <li key={featureIndex} className="flex items-start gap-3">
+                              <Check className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                              <span className="text-gray-300">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Enhanced Contact Information */}
+                      <div className="bg-gradient-to-r from-gray-900/50 to-gray-800/50 rounded-lg p-4 mb-4 border border-gray-600">
+                        <h4 className="text-sm font-semibold text-cyan-400 mb-2">Contact Information:</h4>
+                        <div className="grid grid-cols-1 gap-2 text-xs text-gray-300">
+                          <div className="flex items-center gap-2">
+                            <Phone className="w-3 h-3 text-cyan-400" />
+                            <span>{service.contactInfo.mobile}</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <Mail className="w-3 h-3 text-purple-400" />
+                            <span>{service.contactInfo.email}</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <MapPin className="w-3 h-3 text-pink-400" />
+                            <span>{service.contactInfo.address}</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Enhanced CTA Buttons */}
+                      <div className="flex flex-col sm:flex-row gap-3">
+                        <Button
+                          href={service.link}
+                          variant="quantum"
+                          className="flex-1 justify-center"
+                        >
+                          Learn More
+                        </Button>
+                        <Button
+                          href="#contact"
+                          variant="futuristic"
+                          className="flex-1 justify-center"
+                        >
+                          Get Started
+                        </Button>
+                      </div>
+                    </div>
+                  </Card>
                 </motion.div>
               ))}
             </div>
@@ -457,15 +566,216 @@ export default function ServicesPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
-                  <UltraAdvancedFuturisticCard
-                    service={service}
-                    onClick={() => window.open(service.link, '_blank')}
-                  />
+                  <Card
+                    variant="futuristic"
+                    size="lg"
+                    className="h-full"
+                  >
+                    <div className="p-6">
+                      <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-cyan-400 transition-colors duration-300">
+                        {service.name}
+                      </h3>
+                      <p className="text-gray-300 mb-4 text-lg">
+                        {service.description}
+                      </p>
+                      
+                      {/* Enhanced Price and ROI Display */}
+                      <div className="bg-black/30 rounded-lg p-4 mb-4 border border-gray-700">
+                        <div className="flex justify-between items-center mb-2">
+                          <span className="text-2xl font-bold text-cyan-400">{service.price}{service.period}</span>
+                          <span className="text-sm text-green-400 bg-green-900/20 px-2 py-1 rounded">
+                            {service.roi}
+                          </span>
+                        </div>
+                        <div className="text-sm text-gray-400">
+                          <div className="flex items-center gap-2 mb-1">
+                            <TrendingUp className="w-4 h-4 text-green-400" />
+                            <span>{service.marketSize}, {service.growthRate}</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <Shield className="w-4 h-4 text-blue-400" />
+                            <span>{service.marketPosition}</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Enhanced Features List */}
+                      <div className="mb-6">
+                        <h4 className="text-lg font-semibold text-white mb-3">Key Features:</h4>
+                        <ul className="space-y-2">
+                          {service.features.map((feature, featureIndex) => (
+                            <li key={featureIndex} className="flex items-start gap-3">
+                              <Check className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                              <span className="text-gray-300">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Enhanced Contact Information */}
+                      <div className="bg-gradient-to-r from-gray-900/50 to-gray-800/50 rounded-lg p-4 mb-4 border border-gray-600">
+                        <h4 className="text-sm font-semibold text-cyan-400 mb-2">Contact Information:</h4>
+                        <div className="grid grid-cols-1 gap-2 text-xs text-gray-300">
+                          <div className="flex items-center gap-2">
+                            <Phone className="w-3 h-3 text-cyan-400" />
+                            <span>{service.contactInfo.mobile}</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <Mail className="w-3 h-3 text-purple-400" />
+                            <span>{service.contactInfo.email}</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <MapPin className="w-3 h-3 text-pink-400" />
+                            <span>{service.contactInfo.address}</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Enhanced CTA Buttons */}
+                      <div className="flex flex-col sm:flex-row gap-3">
+                        <Button
+                          href={service.link}
+                          variant="quantum"
+                          className="flex-1 justify-center"
+                        >
+                          Learn More
+                        </Button>
+                        <Button
+                          href="#contact"
+                          variant="futuristic"
+                          className="flex-1 justify-center"
+                        >
+                          Get Started
+                        </Button>
+                      </div>
+                    </div>
+                  </Card>
                 </motion.div>
               ))}
             </div>
           </motion.div>
         )}
+
+        {/* Enhanced Service Highlights Section */}
+        <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+                <span className="quantum-text">Revolutionary</span>{' '}
+                <span className="holographic-text">Services</span>{' '}
+                <span className="cyberpunk-text">Showcase</span>
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Experience the future of technology with our cutting-edge micro SAAS services. 
+                Each service is designed to deliver exceptional ROI and transform your business.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {serviceHighlights.map((service, index) => (
+                <motion.div
+                  key={service.title}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="group"
+                >
+                  <Card
+                    variant="futuristic"
+                    size="lg"
+                    className="h-full"
+                  >
+                    <div className="p-6">
+                      <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-cyan-400 transition-colors duration-300">
+                        {service.title}
+                      </h3>
+                      <p className="text-gray-300 mb-4 text-lg">
+                        {service.description}
+                      </p>
+                      
+                      {/* Enhanced Price and ROI Display */}
+                      <div className="bg-black/30 rounded-lg p-4 mb-4 border border-gray-700">
+                        <div className="flex justify-between items-center mb-2">
+                          <span className="text-2xl font-bold text-cyan-400">{service.price}</span>
+                          <span className="text-sm text-green-400 bg-green-900/20 px-2 py-1 rounded">
+                            {service.savings}
+                          </span>
+                        </div>
+                        <div className="text-sm text-gray-400">
+                          <div className="flex items-center gap-2 mb-1">
+                            <TrendingUp className="w-4 h-4 text-green-400" />
+                            <span>{service.marketData}</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <Shield className="w-4 h-4 text-blue-400" />
+                            <span>{service.marketPosition}</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Enhanced Features List */}
+                      <div className="mb-6">
+                        <h4 className="text-lg font-semibold text-white mb-3">Key Features:</h4>
+                        <ul className="space-y-2">
+                          {service.features.map((feature, featureIndex) => (
+                            <li key={featureIndex} className="flex items-start gap-3">
+                              <Check className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                              <span className="text-gray-300">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Enhanced Contact Information */}
+                      <div className="bg-gradient-to-r from-gray-900/50 to-gray-800/50 rounded-lg p-4 mb-4 border border-gray-600">
+                        <h4 className="text-sm font-semibold text-cyan-400 mb-2">Contact Information:</h4>
+                        <div className="grid grid-cols-1 gap-2 text-xs text-gray-300">
+                          <div className="flex items-center gap-2">
+                            <Phone className="w-3 h-3 text-cyan-400" />
+                            <span>{service.contactInfo.mobile}</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <Mail className="w-3 h-3 text-purple-400" />
+                            <span>{service.contactInfo.email}</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <MapPin className="w-3 h-3 text-pink-400" />
+                            <span>{service.contactInfo.address}</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Enhanced CTA Buttons */}
+                      <div className="flex flex-col sm:flex-row gap-3">
+                        <Button
+                          href={service.link}
+                          variant="quantum"
+                          className="flex-1 justify-center"
+                        >
+                          Learn More
+                        </Button>
+                        <Button
+                          href="#contact"
+                          variant="futuristic"
+                          className="flex-1 justify-center"
+                        >
+                          Get Started
+                        </Button>
+                      </div>
+                    </div>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* CTA Section */}
         <motion.div 
