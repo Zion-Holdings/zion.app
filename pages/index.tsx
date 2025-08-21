@@ -155,8 +155,8 @@ export default function HomePage() {
     ...emergingTech2029Services,
     ...enterpriseIT2029Services,
     ...innovativeMicroSaasServices2029,
-    ...innovative2029MicroSaasServices,
-    ...emergingTech2029Services,
+    ...innovativeMicroSaasServices2029V2,
+    ...emergingTechBreakthroughServices2029V2,
     ...enterpriseIT2029Services
   ];
 
@@ -176,7 +176,7 @@ export default function HomePage() {
   }, {} as Record<string, any[]>);
 
   return (
-    <UltraFuturisticBackground2029>
+    <>
       <Head>
         <title>Zion Tech Group - 2029 Revolutionary Technology Services | AI, Quantum Computing, Space Tech</title>
         <meta name="description" content="Leading provider of revolutionary 2029 technology services including AI consciousness, quantum computing, space mining, and advanced biotechnology. Transform your business with cutting-edge solutions." />
@@ -234,7 +234,7 @@ export default function HomePage() {
         />
       </Head>
 
-              <UltraFuturisticBackground2030>
+      <UltraFuturisticBackground2030>
         {/* Ultra Advanced Navigation */}
         <UltraFuturisticNavigation2030 />
 
@@ -461,10 +461,9 @@ export default function HomePage() {
             </motion.div>
           </div>
         </section>
-              </UltraFuturisticBackground2030>
-      
       {/* Footer */}
-              <UltraFuturisticFooter2030 />
-    </>
+      <UltraFuturisticFooter2030 />
+    </UltraFuturisticBackground2030>
+  </>
   );
 }
