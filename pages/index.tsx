@@ -153,64 +153,88 @@ export default function HomePage() {
 
   const innovativeServices = [
     {
+      id: 'quantum-ai-neural-optimizer',
       name: 'Quantum AI Neural Optimizer',
+      tagline: 'Revolutionary quantum-enhanced neural network optimization',
       description: 'Revolutionary quantum-enhanced neural network optimization with 1000x faster training and 99.99% accuracy.',
       icon: '⚛️🧠',
-      price: '$2,999/month',
+      price: '$2,999',
+      period: '/month',
       category: 'Quantum AI & Machine Learning',
       variant: 'quantum-advanced',
       link: 'https://ziontechgroup.com/quantum-ai-neural-optimizer',
-      innovation: 'Breakthrough'
+      innovation: 'Breakthrough',
+      popular: true
     },
     {
+      id: 'ai-cybersecurity-quantum-sentinel',
       name: 'AI Cybersecurity Quantum Sentinel',
+      tagline: 'Next-generation AI-powered threat detection',
       description: 'Next-generation AI-powered threat detection with quantum security and 99.99% threat detection accuracy.',
       icon: '🛡️🤖',
-      price: '$1,499/month',
+      price: '$1,499',
+      period: '/month',
       category: 'AI Cybersecurity',
       variant: 'holographic-advanced',
       link: 'https://ziontechgroup.com/ai-cybersecurity-quantum-sentinel',
-      innovation: 'Advanced'
+      innovation: 'Advanced',
+      popular: false
     },
     {
+      id: 'quantum-blockchain-platform',
       name: 'Quantum Blockchain Platform',
+      tagline: 'Quantum-secured blockchain with infinite scalability',
       description: 'Quantum-secured blockchain with infinite scalability and lightning-fast transactions for the future of DeFi.',
       icon: '🔗⚛️',
-      price: '$1,999/month',
+      price: '$1,999',
+      period: '/month',
       category: 'Blockchain & Web3',
       variant: 'holographic-advanced',
       link: 'https://ziontechgroup.com/quantum-blockchain-platform',
-      innovation: 'Breakthrough'
+      innovation: 'Breakthrough',
+      popular: true
     },
     {
+      id: 'ai-content-quantum-factory',
       name: 'AI Content Quantum Factory',
+      tagline: 'Quantum-powered content creation at infinite scale',
       description: 'Quantum-powered content creation at infinite scale with SEO optimization and brand voice customization.',
       icon: '📝⚛️',
-      price: '$799/month',
+      price: '$799',
+      period: '/month',
       category: 'AI Content & Marketing',
       variant: 'quantum-advanced',
       link: 'https://ziontechgroup.com/ai-content-quantum-factory',
-      innovation: 'Advanced'
+      innovation: 'Advanced',
+      popular: false
     },
     {
+      id: 'quantum-computing-cloud',
       name: 'Quantum Computing Cloud',
+      tagline: 'Enterprise quantum computing as a service',
       description: 'Enterprise quantum computing as a service with real quantum processors and quantum algorithms.',
       icon: '⚛️☁️',
-      price: '$4,999/month',
+      price: '$4,999',
+      period: '/month',
       category: 'Quantum Computing',
       variant: 'holographic-advanced',
       link: 'https://ziontechgroup.com/quantum-computing-cloud',
-      innovation: 'Breakthrough'
+      innovation: 'Breakthrough',
+      popular: true
     },
     {
+      id: 'ai-healthcare-quantum-diagnostics',
       name: 'AI Healthcare Quantum Diagnostics',
+      tagline: 'Quantum AI-powered medical diagnosis',
       description: 'Quantum AI-powered medical diagnosis and drug discovery with 99.9% accuracy and personalized medicine.',
       icon: '🏥⚛️',
-      price: '$3,999/month',
+      price: '$3,999',
+      period: '/month',
       category: 'AI Healthcare & Biotechnology',
       variant: 'quantum-advanced',
       link: 'https://ziontechgroup.com/ai-healthcare-quantum-diagnostics',
-      innovation: 'Breakthrough'
+      innovation: 'Breakthrough',
+      popular: false
     }
   ];
 
@@ -268,7 +292,8 @@ export default function HomePage() {
                   <nav className="hidden md:flex space-x-6">
                     <a href="/" className="text-white hover:text-cyan-400 transition-colors">Home</a>
                     <a href="/services" className="text-white hover:text-cyan-400 transition-colors">Services</a>
-                    <a href="/innovative-services" className="text-white hover:text-cyan-400 transition-colors">Innovative Services</a>
+                    <a href="/revolutionary-services" className="text-white hover:text-purple-400 transition-colors">Revolutionary</a>
+                    <a href="/innovative-services" className="text-white hover:text-cyan-400 transition-colors">Innovative</a>
                     <a href="/about" className="text-white hover:text-cyan-400 transition-colors">About</a>
                     <a href="/contact" className="text-white hover:text-cyan-400 transition-colors">Contact</a>
                   </nav>
@@ -347,6 +372,10 @@ export default function HomePage() {
                   <Rocket className="w-5 h-5 mr-2" />
                   Explore Services
                   <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+                <Button href="/revolutionary-services" variant="outline" size="lg" className="border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-black">
+                  <Sparkles className="w-5 h-5 mr-2" />
+                  Revolutionary Services
                 </Button>
                 <Button href="/innovative-services" variant="outline" size="lg" className="border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black">
                   <Sparkles className="w-5 h-5 mr-2" />
@@ -609,7 +638,7 @@ export default function HomePage() {
           {/* Call to Action */}
           <section className="py-20 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
-              <EnhancedFuturisticCard variant="quantum-holographic" className="text-center p-12">
+              <EnhancedFuturisticCard variant="quantum" className="text-center p-12">
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -886,7 +915,7 @@ export default function HomePage() {
 
               <div className="text-center mt-12">
                 <EnhancedFuturisticCard
-                  variant="quantum-holographic"
+                  variant="quantum"
                   intensity="low"
                   className="max-w-2xl mx-auto"
                 >
@@ -934,7 +963,7 @@ export default function HomePage() {
           <section className="py-20">
             <div className="container mx-auto px-4 text-center">
               <EnhancedFuturisticCard
-                variant="quantum-holographic"
+                variant="quantum"
                 intensity="high"
                 className="max-w-4xl mx-auto"
               >
