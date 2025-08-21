@@ -6,6 +6,7 @@ import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
 import { Check, Mail, MapPin, Phone, ExternalLink } from 'lucide-react';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
+import { additionalServices } from '../data/additional-services';
 
 export default function ServiceFallbackPage() {
   const router = useRouter();
@@ -13,7 +14,8 @@ export default function ServiceFallbackPage() {
 
   const service = useMemo(() => {
     if (!slug) return undefined;
-    const byLink = enhancedRealMicroSaasServices.find(s => {
+    const all = [...enhancedRealMicroSaasServices, ...additionalServices];
+    const byLink = all.find(s => {
       try {
         const url = new URL(s.link);
         return url.pathname.replace(/^\/+|\/+$/g, '') === slug.replace(/^\/+|\/+$/g, '');
@@ -24,7 +26,7 @@ export default function ServiceFallbackPage() {
     if (byLink) return byLink;
 
     const normalized = slug.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-    return enhancedRealMicroSaasServices.find(s => {
+    return all.find(s => {
       const idMatch = (s.id || '').toLowerCase().replace(/[^a-z0-9]+/g, '-') === normalized;
       const nameMatch = (s.name || '').toLowerCase().replace(/[^a-z0-9]+/g, '-') === normalized;
       return idMatch || nameMatch;
@@ -104,9 +106,9 @@ export default function ServiceFallbackPage() {
             <Card className="p-6 bg-black/40 border border-gray-700/50">
               <h3 className="text-white font-semibold mb-3">Contact</h3>
               <div className="space-y-3 text-sm">
-                <div className="flex items-center gap-2 text-cyan-400"><Phone className="w-4 h-4" /><span>{contactInfo.mobile}</span></div>
-                <div className="flex items-center gap-2 text-purple-400"><Mail className="w-4 h-4" /><span>{contactInfo.email}</span></div>
-                <div className="flex items-center gap-2 text-green-400"><MapPin className="w-4 h-4" /><span className="text-xs">{contactInfo.address}</span></div>
+                <div className="flex items-center gap-2 text-cyan-400"><Phone className="w-4 h-4" /><a href={`tel:${contactInfo.mobile.replace(/[^+\\d]/g, '')}`} className="hover:underline">{contactInfo.mobile}</a></div>
+                <div className="flex items-center gap-2 text-purple-400"><Mail className="w-4 h-4" /><a href={`mailto:${contactInfo.email}`} className="hover:underline">{contactInfo.email}</a></div>
+                <div className="flex items-center gap-2 text-green-400"><MapPin className="w-4 h-4" /><a href={`https://maps.google.com/?q=${encodeURIComponent(contactInfo.address)}`} target="_blank" rel="noopener noreferrer" className="text-xs hover:underline">{contactInfo.address}</a></div>
               </div>
             </Card>
           </div>

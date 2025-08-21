@@ -369,6 +369,36 @@ export default function NeoFuturisticNavigation() {
               Pricing
             </Link>
             <Link
+              href="/api-observability-starter"
+              className="text-gray-300 hover:text-white transition-colors duration-300 py-2"
+            >
+              API Observability
+            </Link>
+            <Link
+              href="/sso-in-a-box"
+              className="text-gray-300 hover:text-white transition-colors duration-300 py-2"
+            >
+              SSO-in-a-Box
+            </Link>
+            <Link
+              href="/vector-search-starter"
+              className="text-gray-300 hover:text-white transition-colors duration-300 py-2"
+            >
+              Vector Search
+            </Link>
+            <Link
+              href="/ci-cd-security-hardening"
+              className="text-gray-300 hover:text-white transition-colors duration-300 py-2"
+            >
+              CI/CD Hardening
+            </Link>
+            <Link
+              href="/managed-postgres-ha"
+              className="text-gray-300 hover:text-white transition-colors duration-300 py-2"
+            >
+              Managed Postgres
+            </Link>
+            <Link
               href="/ai-evals"
               className="text-gray-300 hover:text-white transition-colors duration-300 py-2"
             >
@@ -397,6 +427,34 @@ export default function NeoFuturisticNavigation() {
               className="text-gray-300 hover:text-white transition-colors duration-300 py-2"
             >
               Solutions
+            </Link>
+
+            <Link
+              href="/api-observability"
+              className="text-gray-300 hover:text-white transition-colors duration-300 py-2"
+            >
+              API Observability
+            </Link>
+
+            <Link
+              href="/incident-automation-suite"
+              className="text-gray-300 hover:text-white transition-colors duration-300 py-2"
+            >
+              Incident Automation
+            </Link>
+
+            <Link
+              href="/data-pipeline-health"
+              className="text-gray-300 hover:text-white transition-colors duration-300 py-2"
+            >
+              Data Pipeline Health
+            </Link>
+
+            <Link
+              href="/ai-code-review-copilot"
+              className="text-gray-300 hover:text-white transition-colors duration-300 py-2"
+            >
+              AI Code Review
             </Link>
             <Link
               href="/resources"

@@ -1,6 +1,4 @@
-import { EnhancedRealMicroSaasService } from './enhanced-real-micro-saas-services';
-
-export const additionalServices: EnhancedRealMicroSaasService[] = [
+export const additionalServices = [
   {
     id: 'email-deliverability-monitor',
     name: 'Email Deliverability Monitor',

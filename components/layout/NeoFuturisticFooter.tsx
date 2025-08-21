@@ -170,19 +170,19 @@ export default function NeoFuturisticFooter() {
             <div className="space-y-3 mb-6">
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-cyan-400" />
-                <span className="text-gray-300">{contactInfo.mobile}</span>
+                <a href={`tel:${contactInfo.mobile.replace(/[^+\d]/g, '')}`} className="text-gray-300 hover:text-white">{contactInfo.mobile}</a>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-purple-400" />
-                <span className="text-gray-300">{contactInfo.email}</span>
+                <a href={`mailto:${contactInfo.email}`} className="text-gray-300 hover:text-white">{contactInfo.email}</a>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5 text-green-400" />
-                <span className="text-gray-300 text-sm">{contactInfo.address}</span>
+                <a href={`https://maps.google.com/?q=${encodeURIComponent(contactInfo.address)}`} target="_blank" rel="noopener noreferrer" className="text-gray-300 text-sm hover:text-white">{contactInfo.address}</a>
               </div>
               <div className="flex items-center space-x-3">
                 <Globe className="w-5 h-5 text-blue-400" />
-                <span className="text-gray-300">{contactInfo.website}</span>
+                <a href={contactInfo.website} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white">{contactInfo.website}</a>
               </div>
             </div>
 

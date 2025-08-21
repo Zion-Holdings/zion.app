@@ -115,9 +115,9 @@ export default function ServicesPage() {
           {/* Contact quick */}
           <div className="mt-8 bg-gray-900/50 border border-gray-700/50 rounded-2xl p-6 max-w-2xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
-              <div className="flex flex-col items-center gap-2"><Phone className="w-5 h-5 text-cyan-400" /><span className="text-sm text-gray-300">{contactInfo.mobile}</span></div>
-              <div className="flex flex-col items-center gap-2"><Mail className="w-5 h-5 text-cyan-400" /><span className="text-sm text-gray-300">{contactInfo.email}</span></div>
-              <div className="flex flex-col items-center gap-2"><MapPin className="w-5 h-5 text-cyan-400" /><span className="text-sm text-gray-300">{contactInfo.address}</span></div>
+              <div className="flex flex-col items-center gap-2"><Phone className="w-5 h-5 text-cyan-400" /><a href={`tel:${contactInfo.mobile.replace(/[^+\\d]/g, '')}`} className="text-sm text-gray-300 hover:text-white">{contactInfo.mobile}</a></div>
+              <div className="flex flex-col items-center gap-2"><Mail className="w-5 h-5 text-cyan-400" /><a href={`mailto:${contactInfo.email}`} className="text-sm text-gray-300 hover:text-white">{contactInfo.email}</a></div>
+              <div className="flex flex-col items-center gap-2"><MapPin className="w-5 h-5 text-cyan-400" /><a href={`https://maps.google.com/?q=${encodeURIComponent(contactInfo.address)}`} target="_blank" rel="noopener noreferrer" className="text-sm text-gray-300 hover:text-white">{contactInfo.address}</a></div>
             </div>
           </div>
         </div>
@@ -239,9 +239,9 @@ export default function ServicesPage() {
           <p className="text-gray-300 text-lg mb-8">Talk to our experts to design your roadmap. Transparent pricing, measurable outcomes.</p>
           <div className="bg-gray-900/50 border border-gray-700/50 rounded-2xl p-8 mb-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="flex flex-col items-center gap-2"><Phone className="w-6 h-6 text-cyan-400" /><div className="text-white font-semibold">{contactInfo.mobile}</div></div>
-              <div className="flex flex-col items-center gap-2"><Mail className="w-6 h-6 text-cyan-400" /><div className="text-white font-semibold">{contactInfo.email}</div></div>
-              <div className="flex flex-col items-center gap-2"><MapPin className="w-6 h-6 text-cyan-400" /><div className="text-white font-semibold text-sm">{contactInfo.address}</div></div>
+              <div className="flex flex-col items-center gap-2"><Phone className="w-6 h-6 text-cyan-400" /><a href={`tel:${contactInfo.mobile.replace(/[^+\\d]/g, '')}`} className="text-white font-semibold hover:text-cyan-300">{contactInfo.mobile}</a></div>
+              <div className="flex flex-col items-center gap-2"><Mail className="w-6 h-6 text-cyan-400" /><a href={`mailto:${contactInfo.email}`} className="text-white font-semibold hover:text-cyan-300">{contactInfo.email}</a></div>
+              <div className="flex flex-col items-center gap-2"><MapPin className="w-6 h-6 text-cyan-400" /><a href={`https://maps.google.com/?q=${encodeURIComponent(contactInfo.address)}`} target="_blank" rel="noopener noreferrer" className="text-white font-semibold text-sm hover:text-cyan-300">{contactInfo.address}</a></div>
             </div>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
