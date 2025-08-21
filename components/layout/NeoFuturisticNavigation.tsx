@@ -96,7 +96,8 @@ export default function NeoFuturisticNavigation() {
       services: [
         { name: 'Quantum AI Platform', description: 'AI-powered quantum computing', price: '$299/month' },
         { name: 'Quantum Optimization', description: 'Quantum algorithms for complex problems', price: '$199/month' },
-        { name: 'Quantum Simulation', description: 'Advanced quantum simulations', price: '$399/month' }
+        { name: 'Quantum Simulation', description: 'Advanced quantum simulations', price: '$399/month' },
+        { name: 'Quantum Logistics', description: 'Supply chain optimization with quantum AI', price: '$399/month' }
       ]
     },
     {
@@ -106,6 +107,7 @@ export default function NeoFuturisticNavigation() {
       color: 'from-blue-500 to-cyan-500',
       services: [
         { name: 'AI Content Generator', description: 'Professional AI content creation', price: '$49/month' },
+        { name: 'Lead Enrichment API', description: 'Firmographics and tech stack enrichment', price: '$39/month' },
         { name: 'AI Analytics Platform', description: 'Advanced business intelligence', price: '$99/month' },
         { name: 'AI Automation Suite', description: 'Complete business automation', price: '$149/month' }
       ]
@@ -117,7 +119,8 @@ export default function NeoFuturisticNavigation() {
       color: 'from-red-500 to-orange-500',
       services: [
         { name: 'Quantum Cybersecurity', description: 'Post-quantum era security', price: '$159/month' },
-        { name: 'AI Threat Detection', description: 'Intelligent security monitoring', price: '$89/month' },
+        { name: 'Security Headers Monitor', description: 'CSP/TLS/HSTS and posture grading', price: '$19/month' },
+        { name: 'Accessibility Auditor', description: 'WCAG 2.2 AA CI audits', price: '$39/month' },
         { name: 'Zero-Trust Platform', description: 'Advanced access control', price: '$129/month' }
       ]
     },
@@ -140,7 +143,8 @@ export default function NeoFuturisticNavigation() {
       services: [
         { name: 'Quantum IoT Platform', description: 'Quantum-secured IoT solutions', price: '$199/month' },
         { name: 'Smart City Suite', description: 'Complete urban intelligence', price: '$299/month' },
-        { name: 'Industrial IoT', description: 'Manufacturing automation', price: '$249/month' }
+        { name: 'Industrial IoT', description: 'Manufacturing automation', price: '$249/month' },
+        { name: 'Synthetic Transactions', description: 'No‑code recorder and geo runners', price: '$45/month' }
       ]
     },
     {
@@ -184,7 +188,8 @@ export default function NeoFuturisticNavigation() {
       services: [
         { name: 'Quantum Trading', description: 'Quantum-enhanced algorithmic trading', price: '$899/month' },
         { name: 'AI Risk Management', description: 'Intelligent financial risk analysis', price: '$399/month' },
-        { name: 'Blockchain Finance', description: 'DeFi and blockchain solutions', price: '$199/month' }
+        { name: 'Blockchain Finance', description: 'DeFi and blockchain solutions', price: '$199/month' },
+        { name: 'Email Deliverability', description: 'DMARC/SPF/DKIM + seed tests', price: '$25/month' }
       ]
     },
     {
@@ -196,6 +201,17 @@ export default function NeoFuturisticNavigation() {
         { name: 'Biotech AI', description: 'AI-powered drug discovery', price: '$599/month' },
         { name: 'Healthcare Analytics', description: 'Medical data intelligence', price: '$299/month' },
         { name: 'Genomic AI', description: 'Advanced genetic analysis', price: '$399/month' }
+      ]
+    },
+    {
+      name: 'DevOps & Monitoring',
+      description: 'Uptime, logs, synthetics, and observability',
+      icon: <Activity className="w-5 h-5" />,
+      color: 'from-cyan-500 to-blue-500',
+      services: [
+        { name: 'Uptime & Status', description: 'Global checks and status pages', price: '$29/month' },
+        { name: 'Log Centralization', description: 'Search, dashboards, and alerts', price: '$59/month' },
+        { name: 'Synthetic Transactions', description: 'Record and monitor key flows', price: '$45/month' }
       ]
     }
   ];

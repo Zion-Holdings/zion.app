@@ -166,6 +166,20 @@ export default function HomePage() {
     }
   ];
 
+  // Practical IT and DevOps services (with direct links)
+  const practicalServices = [
+    { name: 'Uptime & Status Monitor', price: '$29/mo', link: 'https://ziontechgroup.com/services/uptime-status-monitor' },
+    { name: 'Accessibility Auditor (CI/CD)', price: '$39/mo', link: 'https://ziontechgroup.com/services/accessibility-auditor' },
+    { name: 'Email Deliverability Monitor', price: '$25/mo', link: 'https://ziontechgroup.com/services/email-deliverability-monitor' },
+    { name: 'SOC2/GDPR Compliance Tracker', price: '$149/mo', link: 'https://ziontechgroup.com/services/soc2-gdpr-compliance-tracker' },
+    { name: 'Postgres Backup & DR', price: '$49/mo', link: 'https://ziontechgroup.com/services/postgres-backup-dr' },
+    { name: 'Log Centralization & Alerting', price: '$59/mo', link: 'https://ziontechgroup.com/services/log-centralization' },
+    { name: 'Synthetic Transaction Monitor', price: '$45/mo', link: 'https://ziontechgroup.com/services/synthetic-transaction-monitor' },
+    { name: 'Lead Enrichment API', price: '$39/mo', link: 'https://ziontechgroup.com/services/lead-enrichment-api' },
+    { name: 'Media Optimizer CDN', price: '$19/mo', link: 'https://ziontechgroup.com/services/media-optimizer-cdn' },
+    { name: 'Security Headers & TLS Monitor', price: '$19/mo', link: 'https://ziontechgroup.com/services/security-headers-monitor' }
+  ];
+
   // New revolutionary services showcase
   const revolutionaryServices = [
     {
@@ -494,6 +508,31 @@ export default function HomePage() {
               </div>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Practical IT/DevOps/AI Services */}
+      <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-10"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Practical IT, DevOps & AI Services</h2>
+            <p className="text-slate-300">Production-ready micro SaaS tools with transparent pricing and instant setup</p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+            {practicalServices.map((svc) => (
+              <a key={svc.name} href={svc.link} className="group block rounded-xl border border-slate-700/60 bg-black/40 p-4 hover:border-cyan-500/60 transition-colors">
+                <div className="text-white font-semibold mb-1 group-hover:text-cyan-400">{svc.name}</div>
+                <div className="text-slate-400 text-sm">{svc.price}</div>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
