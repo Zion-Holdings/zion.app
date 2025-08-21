@@ -1,8 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
-import UltraFuturisticNavigation2034 from '../components/layout/UltraFuturisticNavigation2034';
-import UltraFuturisticServiceShowcase2034 from '../components/sections/UltraFuturisticServiceShowcase2034';
+import UltraFuturisticNavigation2033 from '../components/layout/UltraFuturisticNavigation2033';
 import UltraFuturisticFooter2034 from '../components/layout/UltraFuturisticFooter2034';
 
 const contactInfo = {
@@ -36,7 +35,7 @@ export default function Innovations2034Page() {
       </Head>
 
       <div className="min-h-screen bg-black">
-        <UltraFuturisticNavigation2034 />
+        <UltraFuturisticNavigation2033 />
         
         {/* Hero Section */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
@@ -254,7 +253,7 @@ export default function Innovations2034Page() {
         </section>
 
         {/* Services Showcase */}
-        <UltraFuturisticServiceShowcase2034 />
+
 
         {/* Why Choose Zion Tech Group */}
         <section className="py-20 bg-gradient-to-b from-gray-900 to-black">

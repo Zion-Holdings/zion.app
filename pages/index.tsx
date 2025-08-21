@@ -3,10 +3,9 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shield, Mail, MapPin, Rocket, Brain, Sparkles, Atom, Dna, Target, Microscope } from 'lucide-react';
 import Button from '../components/ui/Button';
-import UltraFuturisticBackground2034 from '../components/ui/UltraFuturisticBackground2034';
-import UltraFuturisticNavigation2034 from '../components/layout/UltraFuturisticNavigation2034';
+import UltraFuturisticBackground2032 from '../components/ui/UltraFuturisticBackground2032';
+import UltraFuturisticNavigation2033 from '../components/layout/UltraFuturisticNavigation2033';
 import UltraFuturisticFooter2034 from '../components/layout/UltraFuturisticFooter2034';
-import UltraFuturisticServiceShowcase2034 from '../components/sections/UltraFuturisticServiceShowcase2034';
 import { motion } from 'framer-motion';
 import { ultimateFuturisticServices2034 } from '../data/2034-ultimate-futuristic-services';
 // Import new 2034 services from remote
@@ -66,17 +65,8 @@ export default function HomePage() {
         <link rel="canonical" href="https://ziontechgroup.com" />
       </Head>
 
-      <UltraFuturisticBackground2034 
-        intensity="high" 
-        colorScheme="quantum-fusion"
-        particleCount={600}
-        animationSpeed={2.0}
-        enableHolographic={true}
-        enableQuantumEffects={true}
-        enableNeonEffects={true}
-        enableSpaceEffects={true}
-      >
-        <UltraFuturisticNavigation2034 />
+      <UltraFuturisticBackground2032>
+        <UltraFuturisticNavigation2033 />
         
         {/* Hero Section */}
         <section className="relative min-h-screen flex items-center justify-center pt-32">
@@ -203,7 +193,7 @@ export default function HomePage() {
         </section>
 
         {/* Services Showcase */}
-        <UltraFuturisticServiceShowcase2034 />
+        
 
         {/* Why Choose Us Section */}
         <section className="py-20 relative">
@@ -346,7 +336,7 @@ export default function HomePage() {
         </section>
 
         <UltraFuturisticFooter2034 />
-      </UltraFuturisticBackground2034>
+              </UltraFuturisticBackground2032>
     </>
   );
 }
