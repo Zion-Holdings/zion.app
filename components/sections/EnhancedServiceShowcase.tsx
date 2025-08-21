@@ -45,7 +45,7 @@ interface Service {
 }
 
 interface EnhancedServiceShowcaseProps {
-  services: Service[];
+  services: any[];
   title?: string;
   subtitle?: string;
   maxServices?: number;
@@ -110,11 +110,22 @@ export default function EnhancedServiceShowcase({
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
 
   // Get unique categories
-  const categories = ['All', ...Array.from(new Set(services.map(s => s.category.split('&')[0].trim())))];
+  const categories = ['All', ...Array.from(new Set(services.map(s => {
+    if (typeof s.category === 'string') {
+      return s.category.split('&')[0].trim();
+    }
+    return 'Other';
+  })))];
   
   // Filter and sort services
   const filteredServices = services
-    .filter(service => selectedCategory === 'All' || service.category.includes(selectedCategory))
+    .filter(service => {
+      if (selectedCategory === 'All') return true;
+      if (typeof service.category === 'string') {
+        return service.category.includes(selectedCategory);
+      }
+      return false;
+    })
     .sort((a, b) => {
       switch (sortBy) {
         case 'popular':

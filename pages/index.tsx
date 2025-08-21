@@ -74,6 +74,8 @@ import { futuristic2028Services } from '../data/2028-futuristic-innovations';
 import { emergingTech2028Services } from '../data/2028-emerging-tech-services';
 import { cuttingEdge2029Services } from '../data/2029-cutting-edge-innovations';
 import { spaceColonization2029Services } from '../data/2029-space-colonization-services';
+import { aiQuantum2029Services } from '../data/2029-ai-quantum-innovations';
+import { businessIT2029Services } from '../data/2029-business-it-innovations';
 
 export default function HomePage() {
   const contactInfo = {
@@ -111,6 +113,8 @@ export default function HomePage() {
     ...emergingTech2028Services,
     ...cuttingEdge2029Services,
     ...spaceColonization2029Services,
+    ...aiQuantum2029Services,
+    ...businessIT2029Services,
     ...innovative2026Services,
     ...emergingTech2026Services,
     ...enterpriseIT2026Services,

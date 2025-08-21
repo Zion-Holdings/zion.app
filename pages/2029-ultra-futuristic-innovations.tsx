@@ -216,8 +216,8 @@ export default function UltraFuturistic2029InnovationsPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               {[
-                { label: 'Revolutionary Services', value: all2029Services.filter(s => s.innovationLevel === 'Revolutionary').length, icon: Rocket, color: 'from-purple-500 to-pink-500' },
-                { label: 'Patent Pending', value: all2029Services.filter(s => s.patentStatus === 'Patent Pending').length, icon: Shield, color: 'from-blue-500 to-cyan-500' },
+                { label: 'Revolutionary Services', value: all2029Services.filter(s => (s as any).innovationLevel === 'Revolutionary').length, icon: Rocket, color: 'from-purple-500 to-pink-500' },
+                { label: 'Patent Pending', value: all2029Services.filter(s => (s as any).patentStatus === 'Patent Pending').length, icon: Shield, color: 'from-blue-500 to-cyan-500' },
                 { label: 'Total Customers', value: all2029Services.reduce((sum, s) => sum + s.customers, 0), icon: Star, color: 'from-yellow-500 to-orange-500' },
                 { label: 'Average Rating', value: (all2029Services.reduce((sum, s) => sum + s.rating, 0) / all2029Services.length).toFixed(1), icon: TrendingUp, color: 'from-green-500 to-teal-500' }
               ].map((stat, index) => (

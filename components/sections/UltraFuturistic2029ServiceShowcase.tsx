@@ -41,16 +41,58 @@ interface Service {
   customers: number;
   rating: number;
   reviews: number;
-  innovationLevel: 'Revolutionary' | 'Breakthrough' | 'Advanced' | 'Emerging';
-  patentStatus: 'Patented' | 'Patent Pending' | 'Trade Secret' | 'Open Source';
+  innovationLevel?: 'Revolutionary' | 'Breakthrough' | 'Advanced' | 'Emerging';
+  patentStatus?: 'Patented' | 'Patent Pending' | 'Trade Secret' | 'Open Source';
   aiCapabilities?: string[];
   spaceCapabilities?: string[];
-  marketDisruption: string;
+  marketDisruption?: string;
   variant: string;
 }
 
+// Union type to accept both Service and new service types
+type AnyService = Service | {
+  id: string;
+  name: string;
+  tagline: string;
+  price: string;
+  period: string;
+  description: string;
+  features: string[];
+  popular: boolean;
+  icon: string;
+  color: string;
+  textColor: string;
+  link: string;
+  marketPosition: string;
+  targetAudience: string;
+  trialDays: number;
+  setupTime: string;
+  category: string;
+  realService: boolean;
+  technology: string[];
+  integrations: string[];
+  useCases: string[];
+  roi: string;
+  competitors: string[];
+  marketSize: string;
+  growthRate: string;
+  variant: string;
+  contactInfo: {
+    mobile: string;
+    email: string;
+    address: string;
+    website: string;
+  };
+  realImplementation: boolean;
+  implementationDetails: string;
+  launchDate: string;
+  customers: number;
+  rating: number;
+  reviews: number;
+};
+
 interface UltraFuturistic2029ServiceShowcaseProps {
-  services: Service[];
+  services: AnyService[];
   title?: string;
   subtitle?: string;
   maxServices?: number;
@@ -99,7 +141,9 @@ const UltraFuturistic2029ServiceShowcase: React.FC<UltraFuturistic2029ServiceSho
       switch (sortBy) {
         case 'innovation':
           const innovationOrder = { 'Revolutionary': 4, 'Breakthrough': 3, 'Advanced': 2, 'Emerging': 1 };
-          return (innovationOrder[b.innovationLevel] || 0) - (innovationOrder[a.innovationLevel] || 0);
+          const aLevel = (a as any).innovationLevel || 'Advanced';
+          const bLevel = (b as any).innovationLevel || 'Advanced';
+          return (innovationOrder[bLevel] || 0) - (innovationOrder[aLevel] || 0);
         case 'price':
           return parseFloat(a.price.replace(/[^0-9.]/g, '')) - parseFloat(b.price.replace(/[^0-9.]/g, ''));
         case 'rating':
@@ -271,8 +315,8 @@ const UltraFuturistic2029ServiceShowcase: React.FC<UltraFuturistic2029ServiceSho
         >
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
-              { label: 'Revolutionary Services', value: services.filter(s => s.innovationLevel === 'Revolutionary').length, icon: Rocket, color: 'from-purple-500 to-pink-500' },
-              { label: 'Patent Pending', value: services.filter(s => s.patentStatus === 'Patent Pending').length, icon: Shield, color: 'from-blue-500 to-cyan-500' },
+              { label: 'Revolutionary Services', value: services.filter(s => (s as any).innovationLevel === 'Revolutionary').length, icon: Rocket, color: 'from-purple-500 to-pink-500' },
+              { label: 'Patent Pending', value: services.filter(s => (s as any).patentStatus === 'Patent Pending').length, icon: Shield, color: 'from-blue-500 to-cyan-500' },
               { label: 'Total Customers', value: services.reduce((sum, s) => sum + s.customers, 0), icon: Star, color: 'from-yellow-500 to-orange-500' },
               { label: 'Average Rating', value: (services.reduce((sum, s) => sum + s.rating, 0) / services.length).toFixed(1), icon: TrendingUp, color: 'from-green-500 to-teal-500' }
             ].map((stat, index) => (
