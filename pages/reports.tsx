@@ -19,7 +19,7 @@ import {
   Clock,
   Award
 } from 'lucide-react';
-import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 
 const ReportsPage: React.FC = () => {
   const reports = [
@@ -135,7 +135,7 @@ const ReportsPage: React.FC = () => {
   };
 
   return (
-    <UltraFuturisticBackground variant="quantum">
+    <UltraAdvancedFuturisticBackground>
       <div className="min-h-screen">
         <Head>
           <title>Research Reports - Zion Tech Group | Industry Analysis & Technology Insights</title>
@@ -399,7 +399,7 @@ const ReportsPage: React.FC = () => {
           </div>
         </section>
       </div>
-    </UltraFuturisticBackground>
+    </UltraAdvancedFuturisticBackground>
   );
 };
 

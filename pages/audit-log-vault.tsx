@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
 import { FileText, Check, Phone, Mail, MapPin, ExternalLink, ShieldCheck } from 'lucide-react';
@@ -23,7 +23,7 @@ export default function AuditLogVaultPage() {
   ];
 
   return (
-    <UltraFuturisticBackground variant="quantum" intensity="high">
+    <UltraAdvancedFuturisticBackground>
       <Head>
         <title>Audit Log Vault | Zion Tech Group</title>
         <meta name="description" content="Immutable, indexed, long-term audit trails for compliance and forensics with search, exports and cryptographic attestations." />
@@ -67,7 +67,7 @@ export default function AuditLogVaultPage() {
           </div>
         </div>
       </div>
-    </UltraFuturisticBackground>
+    </UltraAdvancedFuturisticBackground>
   );
 }
 

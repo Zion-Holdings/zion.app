@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import UltraFuturisticBackground from '../../components/ui/UltraFuturisticBackground';
+import UltraAdvancedFuturisticBackground from '../../components/ui/UltraAdvancedFuturisticBackground';
 import Button from '../../components/ui/Button';
 import Card from '../../components/ui/Card';
 import { Check, Mail, MapPin, Phone, ExternalLink } from 'lucide-react';
@@ -85,7 +85,7 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
 
 export default function ServiceDetailPage({ service }: { service: Service }) {
 	return (
-		<UltraFuturisticBackground variant="quantum" intensity="high">
+		    <UltraAdvancedFuturisticBackground>
 			<Head>
 				<title>{service.name} | Zion Tech Group</title>
 				<meta name="description" content={service.tagline || service.description} />
@@ -141,8 +141,8 @@ export default function ServiceDetailPage({ service }: { service: Service }) {
 						</Card>
 					</div>
 				</div>
-			</div>
-		</UltraFuturisticBackground>
-	);
+			      </div>
+    </UltraAdvancedFuturisticBackground>
+  );
 }
 

@@ -21,7 +21,7 @@ import {
   Award,
   Rocket
 } from 'lucide-react';
-import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 import { expandedMicroSaasServices } from '../data/expanded-micro-saas-services';
 
 const SolutionsPage: React.FC = () => {
@@ -76,7 +76,7 @@ const SolutionsPage: React.FC = () => {
   ];
 
   return (
-    <UltraFuturisticBackground variant="quantum">
+    <UltraAdvancedFuturisticBackground>
       <div className="min-h-screen">
         <Head>
           <title>Solutions - Zion Tech Group | Revolutionary AI, Quantum Computing & Emerging Technology Solutions</title>
@@ -219,7 +219,7 @@ const SolutionsPage: React.FC = () => {
           </div>
         </section>
       </div>
-    </UltraFuturisticBackground>
+    </UltraAdvancedFuturisticBackground>
   );
 };
 

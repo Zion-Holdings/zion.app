@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import UltraFuturisticBackground from '../../components/ui/UltraFuturisticBackground';
+import UltraAdvancedFuturisticBackground from '../../components/ui/UltraAdvancedFuturisticBackground';
 import Card from '../../components/ui/Card';
 import Link from 'next/link';
 import { enhancedRealMicroSaasServices } from '../../data/enhanced-real-micro-saas-services';
@@ -29,7 +29,7 @@ export default function ServicesIndexPage() {
   }
 
   return (
-    <UltraFuturisticBackground variant="quantum" intensity="high">
+    <UltraAdvancedFuturisticBackground>
       <Head>
         <title>Services | Zion Tech Group</title>
         <meta name="description" content="Browse 350+ real micro SaaS, IT, and AI services with transparent pricing and fast onboarding." />
@@ -65,7 +65,7 @@ export default function ServicesIndexPage() {
           </section>
         ))}
       </div>
-    </UltraFuturisticBackground>
+    </UltraAdvancedFuturisticBackground>
   );
 }
 

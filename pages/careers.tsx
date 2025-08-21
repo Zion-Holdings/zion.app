@@ -19,7 +19,7 @@ import {
   Shield,
   Sparkles
 } from 'lucide-react';
-import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 
 const CareersPage: React.FC = () => {
   const benefits = [
@@ -82,7 +82,7 @@ const CareersPage: React.FC = () => {
   ];
 
   return (
-    <UltraFuturisticBackground variant="quantum">
+    <UltraAdvancedFuturisticBackground>
       <div className="min-h-screen">
         <Head>
           <title>Careers - Zion Tech Group | Join Our Revolutionary Technology Team</title>
@@ -310,7 +310,7 @@ const CareersPage: React.FC = () => {
           </div>
         </section>
       </div>
-    </UltraFuturisticBackground>
+    </UltraAdvancedFuturisticBackground>
   );
 };
 

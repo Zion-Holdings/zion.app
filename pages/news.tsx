@@ -16,7 +16,7 @@ import {
   Atom,
   Zap
 } from 'lucide-react';
-import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 
 const NewsPage: React.FC = () => {
   const newsArticles = [
@@ -108,7 +108,7 @@ const NewsPage: React.FC = () => {
   };
 
   return (
-    <UltraFuturisticBackground variant="quantum">
+    <UltraAdvancedFuturisticBackground>
       <div className="min-h-screen">
         <Head>
           <title>News & Updates - Zion Tech Group | Latest Technology Insights & Company Updates</title>
@@ -324,7 +324,7 @@ const NewsPage: React.FC = () => {
           </div>
         </section>
       </div>
-    </UltraFuturisticBackground>
+    </UltraAdvancedFuturisticBackground>
   );
 };
 

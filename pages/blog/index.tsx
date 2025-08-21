@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import UltraFuturisticBackground from '../../components/ui/UltraFuturisticBackground';
+import UltraAdvancedFuturisticBackground from '../../components/ui/UltraAdvancedFuturisticBackground';
 import Card from '../../components/ui/Card';
 
 const posts = [
@@ -15,7 +15,7 @@ const posts = [
 
 export default function BlogIndexPage() {
   return (
-    <UltraFuturisticBackground variant="quantum" intensity="medium">
+    <UltraAdvancedFuturisticBackground>
       <Head>
         <title>Blog | Zion Tech Group</title>
         <meta name="description" content="Insights on AI, cloud, automation, and platform engineering." />
@@ -40,7 +40,7 @@ export default function BlogIndexPage() {
           ))}
         </div>
       </div>
-    </UltraFuturisticBackground>
+    </UltraAdvancedFuturisticBackground>
   );
 }
 
