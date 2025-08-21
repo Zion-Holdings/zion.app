@@ -77,7 +77,10 @@ export default function ServicesAdvertisingPage() {
                 { name: 'Cloud Cost Optimizer', price: '$399/mo', href: '/cloud-cost-optimizer' },
                 { name: 'SOC 2 Evidence Automation', price: '$499/mo', href: '/soc2-evidence-automation' },
                 { name: 'Vector Search Starter', price: '$249/mo', href: '/vector-search-starter' },
-                { name: 'TLS Certificate Monitor', price: '$49/mo', href: '/tls-certificate-monitor' }
+                { name: 'TLS Certificate Monitor', price: '$49/mo', href: '/tls-certificate-monitor' },
+                { name: 'AI Multimodal Fusion', price: '$2,499/mo', href: '/ai-multimodal-fusion-platform' },
+                { name: 'Zero Trust Architecture', price: '$4,999/mo', href: '/zero-trust-network-architecture' },
+                { name: 'Edge Orchestration', price: '$3,499/mo', href: '/edge-computing-orchestration' }
               ].map((o) => (
                 <a key={o.name} href={o.href} className="block p-6 rounded-2xl bg-black/40 border border-gray-700/60 hover:border-cyan-500/40">
                   <div className="text-sm text-gray-400 mb-1">From</div>

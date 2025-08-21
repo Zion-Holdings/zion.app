@@ -141,6 +141,14 @@ export default function ServicesPage() {
     return filtered;
   }, [allServices, searchTerm, selectedCategory, selectedPriceRange, sortBy]);
 
+  React.useEffect(() => {
+    const hash = typeof window !== 'undefined' ? window.location.hash.replace('#', '') : '';
+    if (hash === 'ai') setSelectedCategory('ai');
+    else if (hash === 'quantum') setSelectedCategory('quantum');
+    else if (hash === 'enterprise' || hash === 'it') setSelectedCategory('enterprise');
+    else if (hash === 'micro-saas') setSelectedCategory('micro-saas');
+  }, []);
+
   return (
     <div className="min-h-screen bg-gray-900">
       <Head>

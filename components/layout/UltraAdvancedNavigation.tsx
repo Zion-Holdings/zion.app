@@ -200,6 +200,12 @@ const UltraAdvancedNavigation: React.FC = () => {
       description: '300+ micro SaaS services'
     },
     {
+      name: 'Pricing',
+      href: '/pricing',
+      icon: DollarSign,
+      description: 'Transparent, market-aligned pricing'
+    },
+    {
       name: 'About',
       href: '/about',
       icon: null

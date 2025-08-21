@@ -206,7 +206,7 @@ export default function EnhancedFooter() {
               <h4 className="text-lg font-semibold text-white mb-4">Our Impact</h4>
               <div className="grid grid-cols-2 gap-4">
                 <div className="text-center p-4 bg-gray-800/50 rounded-lg border border-gray-700/50">
-                  <div className="text-2xl font-bold text-cyan-400">600+</div>
+                  <div className="text-2xl font-bold text-cyan-400">800+</div>
                   <div className="text-xs text-gray-400">Services</div>
                 </div>
                 <div className="text-center p-4 bg-gray-800/50 rounded-lg border border-gray-700/50">

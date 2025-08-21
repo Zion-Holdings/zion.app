@@ -166,6 +166,21 @@ body::after {
   }
 }
 
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  body::before,
+  body::after,
+  .quantum-grid,
+  .holographic-matrix,
+  .neural-network,
+  .cyberpunk-elements,
+  .quantum-ripple,
+  .holographic-wave,
+  .cyberpunk-pulse {
+    animation: none !important;
+  }
+}
+
 /* Enhanced Quantum Grid */
 .quantum-grid {
   position: fixed;
