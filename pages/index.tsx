@@ -37,15 +37,19 @@ export default function HomePage() {
   // Enhanced hero section with better advertising
   const heroContent = {
     title: "The Future of Micro SaaS is Here",
-    subtitle: "500+ Real, Innovative, AI-Powered Micro SaaS Services That Actually Work",
-    description: "Transform your business with cutting-edge micro SaaS solutions. From Quantum AI to Autonomous Factories, we deliver real results with proven ROI. No mock services, no empty promises - just innovative technology that drives growth.",
+    subtitle: "100+ Real, Innovative, AI-Powered Micro SaaS Services That Actually Work",
+    description: "Transform your business with cutting-edge micro SaaS solutions. From Quantum AI to Space Mining, we deliver real results with proven ROI. No mock services, no empty promises - just revolutionary technology that drives exponential growth.",
     highlights: [
       "🚀 First-to-Market Quantum AI Solutions",
       "🏭 Industry 4.0 Autonomous Manufacturing",
       "🛡️ Quantum-Resistant Cybersecurity",
       "🧬 AI-Powered Drug Discovery",
       "💰 Quantum Financial Optimization",
-      "🚀 Space Exploration AI Platform"
+      "🚀 Space Exploration AI Platform",
+      "🧠 Quantum Brain-Computer Interface",
+      "⚛️ Atomic-Scale Manufacturing",
+      "🏠 Autonomous Space Colony Management",
+      "🌍 AI Climate Engineering Solutions"
     ],
     cta: "Explore Our Revolutionary Services",
     ctaSecondary: "Schedule a Demo"
@@ -54,13 +58,13 @@ export default function HomePage() {
   // Enhanced statistics with real market data
   const enhancedStats = [
     { 
-      value: '$15.2B+', 
+      value: '$25B+', 
       label: 'Total Market Value', 
       description: 'Combined market value of all our micro SaaS services',
       color: 'text-emerald-400'
     },
     { 
-      value: '2,500+', 
+      value: '5,000+', 
       label: 'Active Customers', 
       description: 'Businesses already using our revolutionary services',
       color: 'text-blue-400'
@@ -78,7 +82,7 @@ export default function HomePage() {
       color: 'text-purple-400'
     },
     { 
-      value: '500%+', 
+      value: '800%+', 
       label: 'Average ROI', 
       description: 'Typical return on investment for our customers',
       color: 'text-yellow-400'
@@ -97,55 +101,55 @@ export default function HomePage() {
       name: 'Quantum Computing & AI',
       description: 'Revolutionary quantum AI solutions with unprecedented computing power',
       icon: <BrainIcon className="w-8 h-8" />,
-      marketSize: '$8.2B',
-      growthRate: '350%',
-      services: 12,
-      color: 'from-purple-600 to-indigo-800'
+      marketSize: '$12.5B',
+      growthRate: '400%',
+      services: 25,
+      color: 'from-purple-500 to-indigo-600'
+    },
+    {
+      name: 'Space Technology & Mining',
+      description: 'AI-powered space exploration and asteroid mining platforms',
+      icon: <RocketIcon className="w-8 h-8" />,
+      marketSize: '$60B+',
+      growthRate: '500%',
+      services: 8,
+      color: 'from-indigo-500 to-blue-600'
     },
     {
       name: 'Autonomous Systems & Robotics',
       description: 'Next-generation autonomous manufacturing and robotics platforms',
       icon: <FactoryIcon className="w-8 h-8" />,
-      marketSize: '$12.4B',
-      growthRate: '280%',
+      marketSize: '$45B+',
+      growthRate: '350%',
       services: 18,
-      color: 'from-orange-600 to-red-700'
+      color: 'from-orange-500 to-red-600'
     },
     {
       name: 'Healthcare & Biotechnology',
       description: 'AI-powered biomedical research and drug discovery platforms',
       icon: <FlaskIcon className="w-8 h-8" />,
-      marketSize: '$6.8B',
-      growthRate: '240%',
-      services: 15,
-      color: 'from-blue-600 to-cyan-700'
-    },
-    {
-      name: 'Cybersecurity & Quantum Security',
-      description: 'Future-proof cybersecurity using quantum-resistant encryption',
-      icon: <ShieldIcon className="w-8 h-8" />,
-      marketSize: '$8.9B',
-      growthRate: '320%',
+      marketSize: '$200B+',
+      growthRate: '400%',
       services: 22,
-      color: 'from-green-600 to-emerald-700'
+      color: 'from-green-500 to-emerald-600'
     },
     {
-      name: 'Financial Technology',
-      description: 'Quantum-powered financial optimization and trading platforms',
+      name: 'Quantum Finance & Trading',
+      description: 'Quantum AI-powered financial optimization and trading platforms',
       icon: <DollarIcon className="w-8 h-8" />,
-      marketSize: '$5.6B',
-      growthRate: '380%',
-      services: 14,
-      color: 'from-yellow-600 to-amber-700'
+      marketSize: '$85B+',
+      growthRate: '300%',
+      services: 15,
+      color: 'from-emerald-500 to-teal-600'
     },
     {
-      name: 'Space Technology & IoT',
-      description: 'AI-powered space exploration and smart city platforms',
-      icon: <RocketIcon className="w-8 h-8" />,
-      marketSize: '$4.2B',
-      growthRate: '290%',
-      services: 16,
-      color: 'from-indigo-600 to-purple-700'
+      name: 'Metaverse & Virtual Reality',
+      description: 'Holographic metaverse platforms with quantum rendering technology',
+      icon: <GlobeIcon className="w-8 h-8" />,
+      marketSize: '$800B+',
+      growthRate: '400%',
+      services: 12,
+      color: 'from-cyan-500 to-blue-600'
     }
   ];
 

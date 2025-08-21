@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useMemo } from 'react';
 
 interface UltraFuturisticBackgroundProps {
   children: React.ReactNode;
@@ -13,6 +13,125 @@ const UltraFuturisticBackground: React.FC<UltraFuturisticBackgroundProps> = ({
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number | null>(null);
+
+  // Color palettes for different effects
+  const quantumColors = ['#00ffff', '#8b5cf6', '#ec4899', '#10b981', '#3b82f6', '#f59e0b'];
+  const neuralColors = ['#10b981', '#059669', '#047857', '#065f46', '#064e3b'];
+
+  // Enhanced quantum particle system
+  const quantumParticles = useMemo(() => {
+    if (typeof window === 'undefined') return [];
+    
+    const particles = [];
+    for (let i = 0; i < 50; i++) {
+      particles.push({
+        id: i,
+        x: Math.random() * window.innerWidth,
+        y: Math.random() * window.innerHeight,
+        size: Math.random() * 3 + 1,
+        speedX: (Math.random() - 0.5) * 2,
+        speedY: (Math.random() - 0.5) * 2,
+        color: quantumColors[Math.floor(Math.random() * quantumColors.length)],
+        opacity: Math.random() * 0.8 + 0.2,
+        phase: Math.random() * Math.PI * 2
+      });
+    }
+    return particles;
+  }, []);
+
+  // Enhanced holographic grid
+  const holographicGrid = useMemo(() => {
+    if (typeof window === 'undefined') return [];
+    
+    const gridLines = [];
+    const spacing = 80;
+    const opacity = 0.1;
+    
+    for (let i = 0; i <= window.innerWidth / spacing; i++) {
+      gridLines.push({
+        id: `v${i}`,
+        x: i * spacing,
+        y: 0,
+        width: 1,
+        height: window.innerHeight,
+        opacity: opacity * (1 + Math.sin(i * 0.1) * 0.3)
+      });
+    }
+    
+    for (let i = 0; i <= window.innerHeight / spacing; i++) {
+      gridLines.push({
+        id: `h${i}`,
+        x: 0,
+        y: i * spacing,
+        width: window.innerWidth,
+        height: 1,
+        opacity: opacity * (1 + Math.cos(i * 0.1) * 0.3)
+      });
+    }
+    
+    return gridLines;
+  }, []);
+
+  // Enhanced neural network visualization
+  const neuralNodes = useMemo(() => {
+    if (typeof window === 'undefined') return { nodes: [], connections: [] };
+    
+    const nodes = [];
+    const connections = [];
+    
+    for (let i = 0; i < 20; i++) {
+      nodes.push({
+        id: i,
+        x: Math.random() * window.innerWidth,
+        y: Math.random() * window.innerHeight,
+        size: Math.random() * 4 + 2,
+        color: neuralColors[Math.floor(Math.random() * neuralColors.length)],
+        pulse: Math.random() * Math.PI * 2
+      });
+    }
+    
+    // Create connections between nearby nodes
+    nodes.forEach((node, i) => {
+      nodes.slice(i + 1).forEach((otherNode, j) => {
+        const distance = Math.sqrt(
+          Math.pow(node.x - otherNode.x, 2) + Math.pow(node.y - otherNode.y, 2)
+        );
+        if (distance < 200) {
+          connections.push({
+            id: `${i}-${j}`,
+            from: node,
+            to: otherNode,
+            opacity: 1 - (distance / 200),
+            pulse: Math.random() * Math.PI * 2
+          });
+        }
+      });
+    });
+    
+    return { nodes, connections };
+  }, []);
+
+  // Enhanced quantum entanglement effect
+  const quantumEntanglement = useMemo(() => {
+    if (typeof window === 'undefined') return [];
+    
+    const pairs = [];
+    for (let i = 0; i < 8; i++) {
+      const x1 = Math.random() * window.innerWidth;
+      const y1 = Math.random() * window.innerHeight;
+      const x2 = x1 + (Math.random() - 0.5) * 300;
+      const y2 = y1 + (Math.random() - 0.5) * 300;
+      
+      pairs.push({
+        id: i,
+        x1, y1, x2, y2,
+        color: quantumColors[Math.floor(Math.random() * quantumColors.length)],
+        phase: Math.random() * Math.PI * 2,
+        intensity: Math.random() * 0.8 + 0.2
+      });
+    }
+    return pairs;
+  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -187,9 +306,115 @@ const UltraFuturisticBackground: React.FC<UltraFuturisticBackgroundProps> = ({
 
     // Animation loop
     const animate = () => {
+      const time = Date.now();
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
-      // Update and draw particles
+      // Update and draw enhanced quantum particles
+      quantumParticles.forEach(particle => {
+        ctx.save();
+        const pulse = Math.sin(time * 0.001 + particle.phase) * 0.3 + 0.7;
+        ctx.globalAlpha = particle.opacity * pulse;
+        ctx.fillStyle = particle.color;
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, particle.size * pulse, 0, Math.PI * 2);
+        ctx.fill();
+        
+        // Enhanced quantum glow effect
+        ctx.shadowColor = particle.color;
+        ctx.shadowBlur = 15 * pulse;
+        ctx.fill();
+        
+        // Add quantum trail effect
+        ctx.globalAlpha = particle.opacity * 0.3;
+        ctx.beginPath();
+        ctx.arc(particle.x - particle.speedX * 5, particle.y - particle.speedY * 5, particle.size * 0.5, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+        
+        // Update particle position with quantum fluctuations
+        particle.x += particle.speedX + Math.sin(time * 0.002 + particle.phase) * 0.5;
+        particle.y += particle.speedY + Math.cos(time * 0.002 + particle.phase) * 0.5;
+        
+        // Wrap particles around screen
+        if (particle.x < 0) particle.x = canvas.width;
+        if (particle.x > canvas.width) particle.x = 0;
+        if (particle.y < 0) particle.y = canvas.height;
+        if (particle.y > canvas.height) particle.y = 0;
+      });
+
+      // Draw holographic grid
+      holographicGrid.forEach(line => {
+        ctx.save();
+        const pulse = Math.sin(time * 0.0005 + line.id.charCodeAt(0)) * 0.2 + 0.8;
+        ctx.globalAlpha = line.opacity * pulse;
+        ctx.strokeStyle = `rgba(0, 255, 255, ${line.opacity * pulse})`;
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(line.x, line.y);
+        ctx.lineTo(line.x + line.width, line.y + line.height);
+        ctx.stroke();
+        ctx.restore();
+      });
+
+      // Draw neural network
+      neuralNodes.connections.forEach(connection => {
+        ctx.save();
+        const pulse = Math.sin(time * 0.001 + connection.pulse) * 0.3 + 0.7;
+        ctx.globalAlpha = connection.opacity * pulse;
+        ctx.strokeStyle = `rgba(16, 185, 129, ${connection.opacity * pulse})`;
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(connection.from.x, connection.from.y);
+        ctx.lineTo(connection.to.x, connection.to.y);
+        ctx.stroke();
+        ctx.restore();
+      });
+
+      neuralNodes.nodes.forEach(node => {
+        ctx.save();
+        const pulse = Math.sin(time * 0.001 + node.pulse) * 0.3 + 0.7;
+        ctx.globalAlpha = pulse;
+        ctx.fillStyle = node.color;
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, node.size * pulse, 0, Math.PI * 2);
+        ctx.fill();
+        
+        // Add neural glow effect
+        ctx.shadowColor = node.color;
+        ctx.shadowBlur = 10 * pulse;
+        ctx.fill();
+        ctx.restore();
+      });
+
+      // Draw quantum entanglement
+      quantumEntanglement.forEach(pair => {
+        ctx.save();
+        const pulse = Math.sin(time * 0.0008 + pair.phase) * 0.4 + 0.6;
+        ctx.globalAlpha = pair.intensity * pulse;
+        ctx.strokeStyle = pair.color;
+        ctx.lineWidth = 3;
+        ctx.setLineDash([10, 10]);
+        ctx.lineDashOffset = time * 0.01;
+        
+        // Draw entanglement line
+        ctx.beginPath();
+        ctx.moveTo(pair.x1, pair.y1);
+        ctx.lineTo(pair.x2, pair.y2);
+        ctx.stroke();
+        
+        // Draw entanglement nodes
+        ctx.setLineDash([]);
+        ctx.fillStyle = pair.color;
+        ctx.beginPath();
+        ctx.arc(pair.x1, pair.y1, 4 * pulse, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(pair.x2, pair.y2, 4 * pulse, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      });
+
+      // Update and draw original particles
       particles.forEach((particle, index) => {
         // Update position
         particle.x += particle.vx;

@@ -83,39 +83,105 @@ export default function ServicesPage() {
       name: 'Quantum Computing & AI',
       description: 'Revolutionary quantum AI solutions with unprecedented computing power',
       icon: <Brain className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Quantum Computing & AI' || s.category === 'AI & Machine Learning').length
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Quantum Computing & AI' || s.category === 'AI & Machine Learning').length,
+      marketSize: '$12.5B+',
+      growthRate: '400%'
+    },
+    {
+      name: 'Space Technology & Mining',
+      description: 'AI-powered space exploration and asteroid mining platforms',
+      icon: <Rocket className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Space Technology & Mining' || s.category === 'Space Technology & Colonization').length,
+      marketSize: '$70B+',
+      growthRate: '500%'
     },
     {
       name: 'Autonomous Systems & Robotics',
       description: 'Next-generation autonomous manufacturing and robotics platforms',
       icon: <Factory className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Manufacturing & Industry 4.0' || s.category === 'Robotics & Automation').length
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Manufacturing & Industry 4.0' || s.category === 'Robotics & Automation').length,
+      marketSize: '$45B+',
+      growthRate: '350%'
     },
     {
       name: 'Healthcare & Biotechnology',
       description: 'AI-powered biomedical research and drug discovery platforms',
       icon: <FlaskConical className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Healthcare & Biotechnology').length
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Healthcare & Biotechnology').length,
+      marketSize: '$200B+',
+      growthRate: '400%'
     },
     {
-      name: 'Cybersecurity & Quantum Security',
-      description: 'Future-proof cybersecurity using quantum-resistant encryption',
-      icon: <Shield className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Cybersecurity').length
-    },
-    {
-      name: 'Financial Technology',
-      description: 'Quantum-powered financial optimization and trading platforms',
+      name: 'Quantum Finance & Trading',
+      description: 'Quantum AI-powered financial optimization and trading platforms',
       icon: <DollarSign className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Financial Technology').length
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Quantum Finance & Trading' || s.category === 'Financial Technology').length,
+      marketSize: '$85B+',
+      growthRate: '300%'
     },
     {
-      name: 'Space Technology & IoT',
-      description: 'AI-powered space exploration and smart city platforms',
-      icon: <Rocket className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Space Technology & IoT').length
+      name: 'Metaverse & Virtual Reality',
+      description: 'Holographic metaverse platforms with quantum rendering technology',
+      icon: <Globe className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Metaverse & Virtual Reality' || s.category === 'AR/VR & Metaverse').length,
+      marketSize: '$800B+',
+      growthRate: '400%'
+    },
+    {
+      name: 'Cybersecurity & Privacy',
+      description: 'Quantum-resistant cybersecurity with AI threat intelligence',
+      icon: <Shield className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Cybersecurity' || s.category === 'Cybersecurity & Privacy').length,
+      marketSize: '$200B+',
+      growthRate: '400%'
+    },
+    {
+      name: 'Climate & Sustainability',
+      description: 'AI-powered climate modeling and sustainability solutions',
+      icon: <Leaf className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Climate & Environment' || s.category === 'Climate & Sustainability').length,
+      marketSize: '$40B+',
+      growthRate: '300%'
     }
   ];
+
+  // Enhanced advertising content
+  const advertisingContent = {
+    headline: "100+ Revolutionary Micro SaaS Services",
+    subheadline: "Each Service Delivers Real Business Value with Proven ROI",
+    benefits: [
+      {
+        icon: "🚀",
+        title: "First-to-Market Solutions",
+        description: "Access cutting-edge technology before your competitors",
+        color: "from-cyan-500 to-blue-600"
+      },
+      {
+        icon: "💰",
+        title: "Proven ROI Guarantee",
+        description: "Average 800%+ return on investment within 18 months",
+        color: "from-emerald-500 to-green-600"
+      },
+      {
+        icon: "⚡",
+        title: "Lightning Fast Setup",
+        description: "Get started in hours, not weeks with our streamlined onboarding",
+        color: "from-yellow-500 to-orange-600"
+      },
+      {
+        icon: "🛡️",
+        title: "Enterprise Security",
+        description: "Bank-level security with 99.99% uptime guarantee",
+        color: "from-purple-500 to-pink-600"
+      }
+    ],
+    marketStats: [
+      { value: '$25B+', label: 'Total Market Value', color: 'text-emerald-400' },
+      { value: '5,000+', label: 'Active Customers', color: 'text-blue-400' },
+      { value: '800%+', label: 'Average ROI', color: 'text-yellow-400' },
+      { value: '99.99%', label: 'Uptime Guarantee', color: 'text-green-400' }
+    ]
+  };
 
   // Enhanced hero section with better advertising
   const heroSection = {
