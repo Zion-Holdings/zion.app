@@ -83,7 +83,7 @@ export default function ServicesPage() {
       name: 'Quantum Computing & AI',
       description: 'Revolutionary quantum AI solutions with unprecedented computing power',
       icon: <Brain className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Quantum Computing' || s.category === 'AI & Machine Learning').length
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Quantum Computing & AI' || s.category === 'AI & Machine Learning').length
     },
     {
       name: 'Autonomous Systems & Robotics',
@@ -95,7 +95,7 @@ export default function ServicesPage() {
       name: 'Healthcare & Biotechnology',
       description: 'AI-powered biomedical research and drug discovery platforms',
       icon: <FlaskConical className="w-6 h-6" />,
-      category: 'Healthcare & Biotechnology'
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Healthcare & Biotechnology').length
     },
     {
       name: 'Cybersecurity & Defense',
@@ -110,34 +110,40 @@ export default function ServicesPage() {
       count: enhancedRealMicroSaasServices.filter(s => s.category === 'Financial Technology').length
     },
     {
-      name: 'Space & Aerospace',
+      name: 'Space Technology',
       description: 'AI-powered space exploration and satellite management',
       icon: <Rocket className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Aerospace & Space Technology').length
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Space Technology').length
     },
     {
-      name: 'Metaverse & VR/AR',
-      description: 'Immersive virtual worlds and augmented reality experiences',
-      icon: <Globe className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Metaverse & VR/AR').length
+      name: 'Logistics & Supply Chain',
+      description: 'Autonomous logistics and supply chain optimization',
+      icon: <Truck className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Logistics & Supply Chain').length
     },
     {
-      name: 'Blockchain & DeFi',
-      description: 'Decentralized finance and smart contract platforms',
-      icon: <Code className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Blockchain & DeFi').length
-    },
-    {
-      name: 'IoT & Smart Cities',
-      description: 'Intelligent IoT platforms for smart city management',
-      icon: <Building className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category === 'IoT & Smart Cities').length
-    },
-    {
-      name: 'Edge Computing',
-      description: 'Ultra-low latency edge computing networks',
+      name: 'Energy & Sustainability',
+      description: 'Quantum energy optimization and renewable energy management',
       icon: <Zap className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Edge Computing').length
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Energy & Sustainability').length
+    },
+    {
+      name: 'Education Technology',
+      description: 'AI-powered personalized learning and education platforms',
+      icon: <GraduationCap className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Education Technology').length
+    },
+    {
+      name: 'Content Creation & Marketing',
+      description: 'AI-powered content generation and marketing automation',
+      icon: <FileText className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'AI & Content Creation').length
+    },
+    {
+      name: 'Customer Service & Sales',
+      description: 'Intelligent customer service and sales automation',
+      icon: <Users className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'AI & Customer Service' || s.category === 'AI & Sales Automation').length
     }
   ];
 

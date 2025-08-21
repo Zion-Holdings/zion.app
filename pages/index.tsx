@@ -257,6 +257,8 @@ export default function HomePage() {
             <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
               Discover 500+ cutting-edge micro SaaS solutions powered by quantum AI, autonomous systems, 
               and emerging technologies. Transform your business with industry-leading innovation.
+              <br />
+              <span className="text-cyan-400 font-semibold">Starting from $49/month • 30-day free trials • 99.99% uptime guarantee</span>
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -443,6 +445,203 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Featured Services Showcase */}
+      <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Featured <span className="bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent">Revolutionary Services</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Explore our most innovative and high-impact micro SaaS solutions with proven market success.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {revolutionaryServices.slice(0, 6).map((service, index) => (
+              <motion.div
+                key={service.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <UltraFuturisticCard
+                  variant={service.variant as any}
+                  className="h-full"
+                  hoverEffect={true}
+                  animated={true}
+                >
+                  <div className="flex items-center mb-4">
+                    <div className="text-3xl mr-3">{service.icon}</div>
+                    <div>
+                      <h3 className="text-xl font-bold text-white">{service.name}</h3>
+                      <p className="text-sm text-gray-400">{service.category}</p>
+                    </div>
+                  </div>
+                  
+                  <p className="text-gray-300 mb-4 text-sm">{service.description}</p>
+                  
+                  <div className="mb-4">
+                    <div className="text-2xl font-bold text-white mb-2">{service.price}</div>
+                    <div className="flex items-center text-sm text-gray-400 mb-2">
+                      <TrendingUp className="w-4 h-4 mr-2" />
+                      {service.growthRate}
+                    </div>
+                    <div className="text-sm text-gray-400">
+                      <BarChart3 className="w-4 h-4 inline mr-2" />
+                      {service.marketSize}
+                    </div>
+                  </div>
+
+                  <div className="mb-4">
+                    <div className="text-sm text-gray-400 mb-2">
+                      <strong className="text-white">Key Features:</strong>
+                    </div>
+                    <ul className="text-xs text-gray-400 space-y-1">
+                      {service.features.slice(0, 3).map((feature, idx) => (
+                        <li key={idx} className="flex items-center">
+                          <Check className="w-3 h-3 mr-2 text-green-400" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <Button
+                    href={service.link}
+                    variant="primary"
+                    className="w-full"
+                  >
+                    Explore Platform
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
+                </UltraFuturisticCard>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Button 
+              href="/services" 
+              variant="secondary" 
+              size="lg"
+              className="text-lg px-8 py-4"
+            >
+              View All 500+ Services
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing & Value Proposition */}
+      <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8 bg-black/20">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Competitive <span className="bg-gradient-to-r from-green-400 to-emerald-600 bg-clip-text text-transparent">Pricing</span> & Value
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Access revolutionary technology at accessible prices with flexible plans and guaranteed ROI.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <UltraFuturisticCard variant="default" className="text-center p-8">
+              <div className="text-4xl font-bold text-white mb-4">Starter</div>
+              <div className="text-6xl font-bold text-cyan-400 mb-2">$49</div>
+              <div className="text-gray-400 mb-6">/month</div>
+              <ul className="text-left text-gray-300 mb-8 space-y-3">
+                <li className="flex items-center">
+                  <Check className="w-5 h-5 text-green-400 mr-3" />
+                  Basic AI Services
+                </li>
+                <li className="flex items-center">
+                  <Check className="w-5 h-5 text-green-400 mr-3" />
+                  30-Day Free Trial
+                </li>
+                <li className="flex items-center">
+                  <Check className="w-5 h-5 text-green-400 mr-3" />
+                  Email Support
+                </li>
+                <li className="flex items-center">
+                  <Check className="w-5 h-5 text-green-400 mr-3" />
+                  Standard Features
+                </li>
+              </ul>
+              <Button href="/contact" variant="primary" className="w-full">
+                Start Free Trial
+              </Button>
+            </UltraFuturisticCard>
+
+            <UltraFuturisticCard variant="holographic" className="text-center p-8 border-2 border-cyan-500">
+              <div className="text-4xl font-bold text-white mb-4">Professional</div>
+              <div className="text-6xl font-bold text-cyan-400 mb-2">$199</div>
+              <div className="text-gray-400 mb-6">/month</div>
+              <ul className="text-left text-gray-300 mb-8 space-y-3">
+                <li className="flex items-center">
+                  <Check className="w-5 h-5 text-green-400 mr-3" />
+                  Advanced AI Services
+                </li>
+                <li className="flex items-center">
+                  <Check className="w-5 h-5 text-green-400 mr-3" />
+                  Quantum Computing
+                </li>
+                <li className="flex items-center">
+                  <Check className="w-5 h-5 text-green-400 mr-3" />
+                  Priority Support
+                </li>
+                <li className="flex items-center">
+                  <Check className="w-5 h-5 text-green-400 mr-3" />
+                  Custom Integrations
+                </li>
+              </ul>
+              <Button href="/contact" variant="primary" className="w-full">
+                Get Started
+              </Button>
+            </UltraFuturisticCard>
+
+            <UltraFuturisticCard variant="quantum" className="text-center p-8">
+              <div className="text-4xl font-bold text-white mb-4">Enterprise</div>
+              <div className="text-6xl font-bold text-cyan-400 mb-2">$999</div>
+              <div className="text-gray-400 mb-6">/month</div>
+              <ul className="text-left text-gray-300 mb-8 space-y-3">
+                <li className="flex items-center">
+                  <Check className="w-5 h-5 text-green-400 mr-3" />
+                  Full Service Suite
+                </li>
+                <li className="flex items-center">
+                  <Check className="w-5 h-5 text-green-400 mr-3" />
+                  Custom Development
+                </li>
+                <li className="flex items-center">
+                  <Check className="w-5 h-5 text-green-400 mr-3" />
+                  24/7 Dedicated Support
+                </li>
+                <li className="flex items-center">
+                  <Check className="w-5 h-5 text-green-400 mr-3" />
+                  SLA Guarantees
+                </li>
+              </ul>
+              <Button href="/contact" variant="primary" className="w-full">
+                Contact Sales
+              </Button>
+            </UltraFuturisticCard>
+          </div>
+
+          <div className="text-center">
+            <p className="text-gray-400 mb-6">
+              All plans include 30-day free trials • 99.99% uptime guarantee • 24/7 support
+            </p>
+            <Button href="/pricing" variant="secondary" size="lg">
+              View Detailed Pricing
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Market Insights Section */}
       <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -537,6 +736,7 @@ export default function HomePage() {
                 <div>
                   <div className="text-white font-semibold">Phone</div>
                   <div className="text-gray-400">{contactInfo.mobile}</div>
+                  <div className="text-xs text-gray-500">Available 24/7</div>
                 </div>
               </div>
               <div className="flex items-center">
@@ -544,6 +744,7 @@ export default function HomePage() {
                 <div>
                   <div className="text-white font-semibold">Email</div>
                   <div className="text-gray-400">{contactInfo.email}</div>
+                  <div className="text-xs text-gray-500">Response within 2 hours</div>
                 </div>
               </div>
               <div className="flex items-center">
@@ -551,6 +752,37 @@ export default function HomePage() {
                 <div>
                   <div className="text-white font-semibold">Address</div>
                   <div className="text-gray-400">{contactInfo.address}</div>
+                  <div className="text-xs text-gray-500">Global headquarters</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-black/30 rounded-lg p-6 mb-8">
+              <h3 className="text-xl font-bold text-white mb-4">Why Choose Zion Tech Group?</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-300">
+                <div className="flex items-center">
+                  <Check className="w-4 h-4 text-green-400 mr-2" />
+                  500+ Revolutionary Micro SaaS Services
+                </div>
+                <div className="flex items-center">
+                  <Check className="w-4 h-4 text-green-400 mr-2" />
+                  99.99% Uptime Guarantee
+                </div>
+                <div className="flex items-center">
+                  <Check className="w-4 h-4 text-green-400 mr-2" />
+                  30-Day Free Trials
+                </div>
+                <div className="flex items-center">
+                  <Check className="w-4 h-4 text-green-400 mr-2" />
+                  24/7 AI Support
+                </div>
+                <div className="flex items-center">
+                  <Check className="w-4 h-4 text-green-400 mr-2" />
+                  Starting from $49/month
+                </div>
+                <div className="flex items-center">
+                  <Check className="w-4 h-4 text-green-400 mr-2" />
+                  2500%+ Average ROI
                 </div>
               </div>
             </div>
