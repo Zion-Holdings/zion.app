@@ -93,6 +93,9 @@ import { spaceMetaverseServices2031 } from '../data/2031-space-metaverse-service
 import { futuristicInnovations2032 } from '../data/2032-futuristic-innovations';
 import { enterpriseInnovations2032 } from '../data/2032-enterprise-innovations';
 import { healthcareInnovations2032 } from '../data/2032-healthcare-innovations';
+// Import new 2034 services
+import { cuttingEdge2034Services } from '../data/2034-cutting-edge-innovations';
+import { emergingTech2034Services } from '../data/2034-emerging-tech-breakthroughs';
 
 // Type adapter function to convert different service types to the expected Service interface
 function adaptServiceToEnhancedShowcase(service: any) {
@@ -150,7 +153,6 @@ function adaptServiceToEnhancedShowcase(service: any) {
   };
 }
 
-
 export default function HomePage() {
   const contactInfo = {
     mobile: '+1 302 464 0950',
@@ -175,6 +177,9 @@ export default function HomePage() {
     ...emergingTechnologyServices,
     ...emergingTechServices2025,
     ...comprehensiveITSolutions,
+    // Add new 2034 cutting-edge services
+    ...cuttingEdge2034Services,
+    ...emergingTech2034Services,
     ...realMarketServices,
     ...serviceExpansions2025,
     ...verifiedRealServices2025Batch2,
