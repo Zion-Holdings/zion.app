@@ -204,6 +204,40 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* Market Benchmarks */}
+      <section className="py-6 px-4">
+        <div className="container mx-auto">
+          <Card className="bg-gray-900/60 border border-gray-700/50">
+            <div className="p-6 grid grid-cols-1 md:grid-cols-4 gap-6 text-sm text-gray-300">
+              <div>
+                <div className="text-white font-semibold mb-1">Average SMB Pricing</div>
+                <div>AI Phone Agent: $249/mo</div>
+                <div>LLM Gateway: $129/mo</div>
+                <div>API Observability: $129/mo</div>
+              </div>
+              <div>
+                <div className="text-white font-semibold mb-1">Platform Engineering</div>
+                <div>Cloud Landing Zone: $349/mo</div>
+                <div>SSO-in-a-Box: $159/mo</div>
+                <div>Managed Postgres HA: $199/mo</div>
+              </div>
+              <div>
+                <div className="text-white font-semibold mb-1">Data & Analytics</div>
+                <div>DB Performance Monitor: $79/mo</div>
+                <div>Data Observability: $159/mo</div>
+                <div>API Docs Generator: $49/mo</div>
+              </div>
+              <div>
+                <div className="text-white font-semibold mb-1">Contact</div>
+                <div className="flex items-center gap-2"><Phone className="w-4 h-4 text-cyan-400" /> {contactInfo.mobile}</div>
+                <div className="flex items-center gap-2"><Mail className="w-4 h-4 text-purple-400" /> {contactInfo.email}</div>
+                <div className="flex items-start gap-2"><MapPin className="w-4 h-4 text-emerald-400 mt-0.5" /> <span className="text-xs">{contactInfo.address}</span></div>
+              </div>
+            </div>
+          </Card>
+        </div>
+      </section>
+
       {/* Results */}
       <section className="py-10 px-4">
         <div className="container mx-auto">

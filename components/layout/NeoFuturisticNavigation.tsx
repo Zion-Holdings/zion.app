@@ -266,6 +266,22 @@ export default function NeoFuturisticNavigation() {
         ? 'bg-black/80 backdrop-blur-md border-b border-gray-700/50' 
         : 'bg-transparent'
     }`}>
+      {/* Top contact ribbon */}
+      <div className="hidden md:block border-b border-gray-800/60 bg-black/60">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex items-center justify-center gap-6 py-2 text-xs text-gray-300">
+            <a href={`tel:${contactInfo.mobile.replace(/[^+\d]/g, '')}`} className="hover:text-white transition-colors flex items-center gap-2">
+              <Phone className="w-4 h-4 text-cyan-400" /> {contactInfo.mobile}
+            </a>
+            <a href={`mailto:${contactInfo.email}`} className="hover:text-white transition-colors flex items-center gap-2">
+              <Mail className="w-4 h-4 text-purple-400" /> {contactInfo.email}
+            </a>
+            <a href={`https://maps.google.com/?q=${encodeURIComponent(contactInfo.address)}`} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2">
+              <MapPin className="w-4 h-4 text-emerald-400" /> <span className="truncate max-w-[320px]">{contactInfo.address}</span>
+            </a>
+          </div>
+        </div>
+      </div>
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
