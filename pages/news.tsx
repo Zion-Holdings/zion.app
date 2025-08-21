@@ -108,7 +108,7 @@ const NewsPage: React.FC = () => {
   };
 
   return (
-    <UltraFuturisticBackground variant="quantum">
+    <UltraFuturisticBackground>
       <div className="min-h-screen">
         <Head>
           <title>News & Updates - Zion Tech Group | Latest Technology Insights & Company Updates</title>

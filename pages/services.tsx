@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Code, BookOpen, Activity, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Filter, Grid, List, ChevronDown, ChevronUp, Sparkles, FlaskConical, Dna, Car, Leaf, Factory, Truck, Microscope, GraduationCap, ShieldCheck, Brain, Atom, Globe2, Bot, ChevronRight } from 'lucide-react';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
-import EnhancedFuturisticBackground from '../components/ui/EnhancedFuturisticBackground';
-import EnhancedFuturisticCard from '../components/ui/EnhancedFuturisticCard';
-import QuantumHolographicBackground from '../components/ui/QuantumHolographicBackground';
-import QuantumHolographicCard from '../components/ui/QuantumHolographicCard';
+import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
+import UltraFuturisticCard from '../components/ui/UltraFuturisticCard';
 import { enhancedRealMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices, getServicesByPriceRange } from '../data/enhanced-real-micro-saas-services';
 
 export default function ServicesPage() {
@@ -99,453 +98,352 @@ export default function ServicesPage() {
     }
   };
 
-  const popularServices = getPopularServices();
-
-  // Enhanced service categories with better descriptions
-  const enhancedCategories = [
-    {
-      name: 'Quantum Computing',
-      description: 'Revolutionary quantum computing solutions with AI integration',
-      icon: <Atom className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category.includes('Quantum')).length
-    },
-    {
-      name: 'AI & Machine Learning',
-      description: 'Advanced AI and machine learning platforms',
-      icon: <Brain className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category.includes('AI') || s.category.includes('Machine Learning')).length
-    },
-    {
-      name: 'Cybersecurity',
-      description: 'Next-generation security with quantum-resistant encryption',
-      icon: <Shield className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category.includes('Cybersecurity') || s.category.includes('Security')).length
-    },
-    {
-      name: 'Biomedical & Healthcare',
-      description: 'AI-powered healthcare and biomedical research',
-      icon: <Dna className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category.includes('Biomedical') || s.category.includes('Healthcare')).length
-    },
-    {
-      name: 'Financial Technology',
-      description: 'Quantum-powered financial optimization and trading',
-      icon: <DollarSign className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category.includes('Financial') || s.category.includes('Finance')).length
-    },
-    {
-      name: 'Content & Marketing',
-      description: 'AI-powered content creation and marketing automation',
-      icon: <FileText className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category.includes('Content') || s.category.includes('Marketing')).length
-    },
-    {
-      name: 'Data Analytics & BI',
-      description: 'Quantum-powered data analytics and business intelligence',
-      icon: <BarChart3 className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category.includes('Data Analytics') || s.category.includes('BI')).length
-    },
-    {
-      name: 'Customer Service & Support',
-      description: 'Autonomous AI-powered customer service solutions',
-      icon: <MessageSquare className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category.includes('Customer Service') || s.category.includes('Support')).length
-    },
-    {
-      name: 'Supply Chain & Logistics',
-      description: 'Quantum-optimized supply chain and logistics management',
-      icon: <Truck className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category.includes('Supply Chain') || s.category.includes('Logistics')).length
-    },
-    {
-      name: 'Human Resources',
-      description: 'AI-powered HR automation and management',
-      icon: <Users className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category.includes('Human Resources') || s.category.includes('HR')).length
-    },
-    {
-      name: 'Legal Technology',
-      description: 'AI-powered legal research and automation',
-      icon: <ShieldCheck className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category.includes('Legal') || s.category.includes('Law')).length
-    },
-    {
-      name: 'Sales & Marketing',
-      description: 'AI-powered sales automation and optimization',
-      icon: <TrendingUp className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category.includes('Sales') || s.category.includes('Marketing')).length
-    },
-    {
-      name: 'Blockchain & Web3',
-      description: 'Quantum-secured blockchain and DeFi platforms',
-      icon: <Database className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category.includes('Blockchain') || s.category.includes('Web3')).length
-    },
-    {
-      name: 'IoT & Edge Computing',
-      description: 'AI-powered IoT management and edge computing',
-      icon: <Cpu className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category.includes('IoT') || s.category.includes('Edge Computing')).length
-    },
-    {
-      name: 'Cloud & Infrastructure',
-      description: 'Quantum-optimized cloud and infrastructure management',
-      icon: <Cloud className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category.includes('Cloud') || s.category.includes('Infrastructure')).length
-    },
-    {
-      name: 'Video & Media',
-      description: 'AI-powered video production and media automation',
-      icon: <Play className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category.includes('Video') || s.category.includes('Media')).length
-    },
-    {
-      name: 'SEO & Digital Marketing',
-      description: 'Quantum-powered SEO optimization and digital marketing',
-      icon: <Search className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category.includes('SEO') || s.category.includes('Digital Marketing')).length
-    }
-  ];
-
   return (
-    <>
+    <UltraFuturisticBackground>
       <Head>
-        <title>500+ Revolutionary Real Micro SaaS Services | Zion Tech Group</title>
-        <meta name="description" content="Transform your business with Zion Tech Group's cutting-edge micro SaaS services. AI, Quantum Computing, Autonomous Systems, and more. 21-day free trials." />
-        <meta name="keywords" content="micro SaaS, AI services, quantum computing, autonomous systems, business automation, Zion Tech Group" />
-        <meta property="og:title" content="500+ Revolutionary Real Micro SaaS Services | Zion Tech Group" />
-        <meta property="og:description" content="Transform your business with cutting-edge AI, quantum computing, and autonomous systems. 21-day free trials available." />
-        <meta property="og:type" content="website" />
+        <title>500+ Revolutionary Micro SAAS Services | Zion Tech Group</title>
+        <meta name="description" content="Discover 500+ cutting-edge micro SAAS services powered by quantum AI, autonomous systems, and revolutionary technology. Transform your business today." />
+        <meta name="keywords" content="micro SAAS services, AI solutions, quantum computing, autonomous systems, business automation, cybersecurity, fintech" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="500+ Revolutionary Micro SAAS Services | Zion Tech Group" />
+        <meta property="og:description" content="Discover 500+ cutting-edge micro SAAS services powered by quantum AI and autonomous systems" />
         <meta property="og:url" content="https://ziontechgroup.com/services" />
-        <meta property="og:image" content="https://ziontechgroup.com/og-image.jpg" />
+        <meta property="og:type" content="website" />
+        
+        {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="500+ Revolutionary Real Micro SaaS Services | Zion Tech Group" />
-        <meta name="twitter:description" content="Transform your business with cutting-edge AI, quantum computing, and autonomous systems." />
-        <meta name="twitter:image" content="https://ziontechgroup.com/og-image.jpg" />
-        <link rel="canonical" href="https://ziontechgroup.com/services" />
+        <meta name="twitter:title" content="500+ Revolutionary Micro SAAS Services | Zion Tech Group" />
+        <meta name="twitter:description" content="Discover 500+ cutting-edge micro SAAS services powered by quantum AI and autonomous systems" />
       </Head>
 
-      <EnhancedFuturisticBackground>
-        <div className="min-h-screen py-20">
-          {/* Hero Section */}
-          <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-6">
-              {advertisingContent.headline}
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
-              {advertisingContent.subheadline}
-            </p>
-            
-            {/* Benefits Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8 max-w-6xl mx-auto">
-              {advertisingContent.benefits.map((benefit, index) => (
-                <div key={index} className="bg-black/20 backdrop-blur-sm rounded-lg p-4 border border-gray-700">
-                  <p className="text-sm text-gray-300">{benefit}</p>
-                </div>
-              ))}
-            </div>
+      {/* Hero Section */}
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto text-center">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+            <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+              500+ Revolutionary
+            </span>
+            <br />
+            <span className="text-white">Micro SAAS Services</span>
+          </h1>
+          
+          <p className="text-xl sm:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
+            Transform your business with cutting-edge AI, quantum computing, autonomous systems, and revolutionary technology
+          </p>
 
-            {/* Contact CTA */}
-            <div className="bg-gradient-to-r from-purple-900/50 to-blue-900/50 backdrop-blur-sm rounded-2xl p-8 border border-purple-500/30 max-w-4xl mx-auto">
-              <p className="text-lg text-gray-300 mb-6">{advertisingContent.contactCTA}</p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-                <div className="flex items-center justify-center space-x-2">
-                  <Phone className="w-4 h-4 text-cyan-400" />
-                  <span className="text-gray-300">{advertisingContent.contactDetails.mobile}</span>
+          {/* Key Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 max-w-4xl mx-auto">
+            {[
+              { number: '500+', label: 'Services', icon: Rocket, color: 'text-cyan-400' },
+              { number: '21', label: 'Day Trials', icon: Clock, color: 'text-purple-400' },
+              { number: '99.9%', label: 'Uptime', icon: Shield, color: 'text-green-400' },
+              { number: '24/7', label: 'Support', icon: Users, color: 'text-pink-400' }
+            ].map((stat, index) => (
+              <div key={stat.label} className="text-center">
+                <div className={`w-12 h-12 mx-auto mb-3 rounded-xl bg-gradient-to-br from-slate-800 to-slate-700 flex items-center justify-center`}>
+                  <stat.icon className={`w-6 h-6 ${stat.color}`} />
                 </div>
-                <div className="flex items-center justify-center space-x-2">
-                  <Mail className="w-4 h-4 text-cyan-400" />
-                  <span className="text-gray-300">{advertisingContent.contactDetails.email}</span>
-                </div>
-                <div className="flex items-center justify-center space-x-2">
-                  <MapPin className="w-4 h-4 text-cyan-400" />
-                  <span className="text-gray-300">{advertisingContent.contactDetails.address}</span>
-                </div>
+                <div className={`text-2xl font-bold ${stat.color} mb-1`}>{stat.number}</div>
+                <div className="text-gray-400 text-sm">{stat.label}</div>
               </div>
-            </div>
+            ))}
           </div>
 
-          {/* Filters and Search */}
-          <div className="max-w-7xl mx-auto px-4 mb-12">
-            <div className="bg-black/20 backdrop-blur-sm rounded-2xl p-6 border border-gray-700">
-              <div className="flex flex-col lg:flex-row gap-6 items-center">
-                {/* Search */}
-                <div className="flex-1 w-full lg:w-auto">
-                  <div className="relative">
-                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                    <input
-                      type="text"
-                      placeholder="Search services..."
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                      className="w-full pl-10 pr-4 py-3 bg-gray-900/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
-                    />
-                  </div>
-                </div>
-
-                {/* Category Filter */}
-                <div className="w-full lg:w-auto">
-                  <select
-                    value={selectedCategory}
-                    onChange={(e) => setSelectedCategory(e.target.value)}
-                    className="px-4 py-3 bg-gray-900/50 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
-                  >
-                    {serviceCategories.map((category) => (
-                      <option key={category} value={category}>
-                        {category}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                {/* Price Range Filter */}
-                <div className="w-full lg:w-auto">
-                  <select
-                    value={priceRange}
-                    onChange={(e) => setPriceRange(e.target.value)}
-                    className="px-4 py-3 bg-gray-900/50 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
-                  >
-                    {priceRanges.map((range) => (
-                      <option key={range.value} value={range.value}>
-                        {range.label}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                {/* Sort Options */}
-                <div className="w-full lg:w-auto">
-                  <select
-                    value={sortBy}
-                    onChange={(e) => setSortBy(e.target.value)}
-                    className="px-4 py-3 bg-gray-900/50 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
-                  >
-                    {sortOptions.map((option) => (
-                      <option key={option.value} value={option.value}>
-                        {option.label}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                {/* View Mode Toggle */}
-                <div className="flex bg-gray-900/50 rounded-lg border border-gray-600">
-                  <button
-                    onClick={() => setViewMode('grid')}
-                    className={`px-4 py-3 rounded-l-lg transition-colors ${
-                      viewMode === 'grid' ? 'bg-cyan-600 text-white' : 'text-gray-400 hover:text-white'
-                    }`}
-                  >
-                    <Grid className="w-5 h-5" />
-                  </button>
-                  <button
-                    onClick={() => setViewMode('list')}
-                    className={`px-4 py-3 rounded-r-lg transition-colors ${
-                      viewMode === 'list' ? 'bg-cyan-600 text-white' : 'text-gray-400 hover:text-white'
-                    }`}
-                  >
-                    <List className="w-5 h-5" />
-                  </button>
-                </div>
+          {/* Contact Info */}
+          <div className="bg-gradient-to-r from-slate-800/50 to-slate-900/50 rounded-2xl p-6 backdrop-blur-sm border border-slate-700/50 max-w-2xl mx-auto mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+              <div>
+                <Phone className="w-5 h-5 text-cyan-400 mx-auto mb-2" />
+                <div className="text-sm text-gray-400">Mobile</div>
+                <div className="text-cyan-400 font-medium">{contactInfo.mobile}</div>
               </div>
-            </div>
-          </div>
-
-          {/* Service Categories Grid */}
-          <div className="max-w-7xl mx-auto px-4 mb-16">
-            <h2 className="text-3xl font-bold text-center mb-12 text-white">
-              Explore Our Service Categories
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {enhancedCategories.map((category, index) => (
-                <div
-                  key={category.name}
-                  className="bg-black/20 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 hover:transform hover:scale-105 cursor-pointer"
-                  onClick={() => setSelectedCategory(category.name)}
-                >
-                  <div className="flex items-center space-x-3 mb-4">
-                    <div className="text-cyan-400">
-                      {category.icon}
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-white">{category.name}</h3>
-                      <p className="text-sm text-gray-400">{category.count} services</p>
-                    </div>
-                  </div>
-                  <p className="text-gray-300 text-sm">{category.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Popular Services */}
-          <div className="max-w-7xl mx-auto px-4 mb-16">
-            <h2 className="text-3xl font-bold text-center mb-12 text-white">
-              Most Popular Services
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {popularServices.slice(0, 6).map((service) => (
-                <QuantumHolographicCard key={service.id} className="h-full">
-                  <div className="p-6">
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="text-4xl">{service.icon}</span>
-                      {service.popular && (
-                        <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-3 py-1 rounded-full text-xs font-semibold">
-                          Popular
-                        </div>
-                      )}
-                    </div>
-                    <h3 className="text-xl font-bold text-white mb-2">{service.name}</h3>
-                    <p className="text-gray-300 text-sm mb-4 line-clamp-3">{service.description}</p>
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="text-2xl font-bold text-cyan-400">{service.price}</span>
-                      <span className="text-gray-400 text-sm">{service.period}</span>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-400">{service.category}</span>
-                      <Button
-                        variant="quantum"
-                        size="sm"
-                        onClick={() => window.open(service.link, '_blank')}
-                      >
-                        Learn More
-                        <ArrowRight className="w-4 h-4 ml-2" />
-                      </Button>
-                    </div>
-                  </div>
-                </QuantumHolographicCard>
-              ))}
-            </div>
-          </div>
-
-          {/* All Services */}
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="flex items-center justify-between mb-8">
-              <h2 className="text-3xl font-bold text-white">
-                All Services ({filteredServices.length})
-              </h2>
-              <div className="text-gray-400">
-                Showing {filteredServices.length} of {enhancedRealMicroSaasServices.length} services
+              <div>
+                <Mail className="w-5 h-5 text-purple-400 mx-auto mb-2" />
+                <div className="text-sm text-gray-400">Email</div>
+                <div className="text-purple-400 font-medium">{contactInfo.email}</div>
               </div>
-            </div>
-
-            {viewMode === 'grid' ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {filteredServices.map((service) => (
-                  <EnhancedFuturisticCard key={service.id} className="h-full">
-                    <div className="p-6">
-                      <div className="flex items-center justify-between mb-4">
-                        <span className="text-4xl">{service.icon}</span>
-                        {service.popular && (
-                          <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-3 py-1 rounded-full text-xs font-semibold">
-                            Popular
-                          </div>
-                        )}
-                      </div>
-                      <h3 className="text-xl font-bold text-white mb-2">{service.name}</h3>
-                      <p className="text-gray-300 text-sm mb-4 line-clamp-3">{service.description}</p>
-                      <div className="flex items-center justify-between mb-4">
-                        <span className="text-2xl font-bold text-cyan-400">{service.price}</span>
-                        <span className="text-gray-400 text-sm">{service.period}</span>
-                      </div>
-                      <div className="flex items-center justify-between mb-4">
-                        <span className="text-sm text-gray-400">{service.category}</span>
-                        <span className="text-sm text-green-400">{service.trialDays} day trial</span>
-                      </div>
-                      <div className="flex items-center justify-between">
-                        <span className="text-sm text-gray-400">{service.setupTime} setup</span>
-                        <Button
-                          variant="quantum"
-                          size="sm"
-                          onClick={() => window.open(service.link, '_blank')}
-                        >
-                          Learn More
-                          <ArrowRight className="w-4 h-4 ml-2" />
-                        </Button>
-                      </div>
-                    </div>
-                  </EnhancedFuturisticCard>
-                ))}
+              <div>
+                <MapPin className="w-5 h-5 text-green-400 mx-auto mb-2" />
+                <div className="text-sm text-gray-400">Address</div>
+                <div className="text-green-400 font-medium text-xs">{contactInfo.address}</div>
               </div>
-            ) : (
-              <div className="space-y-4">
-                {filteredServices.map((service) => (
-                  <div key={service.id} className="bg-black/20 backdrop-blur-sm rounded-xl p-6 border border-gray-700">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-4">
-                        <span className="text-3xl">{service.icon}</span>
-                        <div>
-                          <h3 className="text-xl font-bold text-white">{service.name}</h3>
-                          <p className="text-gray-300 text-sm">{service.description}</p>
-                          <div className="flex items-center space-x-4 mt-2">
-                            <span className="text-sm text-gray-400">{service.category}</span>
-                            <span className="text-sm text-green-400">{service.trialDays} day trial</span>
-                            <span className="text-sm text-gray-400">{service.setupTime} setup</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="flex items-center space-x-4">
-                        <span className="text-2xl font-bold text-cyan-400">{service.price}</span>
-                        <Button
-                          variant="quantum"
-                          size="sm"
-                          onClick={() => window.open(service.link, '_blank')}
-                        >
-                          Learn More
-                          <ArrowRight className="w-4 h-4 ml-2" />
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-
-          {/* Contact Section */}
-          <div className="max-w-4xl mx-auto mt-20 text-center">
-            <div className="bg-gradient-to-r from-purple-900/50 to-blue-900/50 backdrop-blur-sm rounded-2xl p-8 border border-purple-500/30">
-              <h2 className="text-3xl font-bold text-white mb-6">
-                Ready to Transform Your Business?
-              </h2>
-              <p className="text-lg text-gray-300 mb-8">
-                Contact our expert team today for a personalized consultation and demo of our revolutionary micro SaaS services.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <div className="flex items-center justify-center space-x-3">
-                  <Phone className="w-6 h-6 text-cyan-400" />
-                  <div>
-                    <p className="text-white font-semibold">Phone</p>
-                    <p className="text-gray-300">{contactInfo.mobile}</p>
-                  </div>
-                </div>
-                <div className="flex items-center justify-center space-x-3">
-                  <Mail className="w-6 h-6 text-cyan-400" />
-                  <div>
-                    <p className="text-white font-semibold">Email</p>
-                    <p className="text-gray-300">{contactInfo.email}</p>
-                  </div>
-                </div>
-                <div className="flex items-center justify-center space-x-3">
-                  <MapPin className="w-6 h-6 text-cyan-400" />
-                  <div>
-                    <p className="text-white font-semibold">Address</p>
-                    <p className="text-gray-300">{contactInfo.address}</p>
-                  </div>
-                </div>
-              </div>
-              <Button
-                variant="quantum"
-                size="lg"
-                onClick={() => window.open(`mailto:${contactInfo.email}`, '_blank')}
-              >
-                Get Started Today
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
             </div>
           </div>
         </div>
-      </EnhancedFuturisticBackground>
-    </>
+      </section>
+
+      {/* Filters and Search Section */}
+      <section className="py-8 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-slate-900/50 to-slate-800/50">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
+            {/* Search */}
+            <div className="relative flex-1 max-w-md">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+              <input
+                type="text"
+                placeholder="Search services..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full pl-10 pr-4 py-3 bg-slate-800/50 border border-slate-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent backdrop-blur-sm"
+              />
+            </div>
+
+            {/* Category Filter */}
+            <div className="flex flex-wrap gap-3">
+              {serviceCategories.slice(0, 8).map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setSelectedCategory(category)}
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                    selectedCategory === category
+                      ? 'bg-cyan-500 text-white shadow-lg shadow-cyan-500/25'
+                      : 'bg-slate-800/50 text-gray-300 hover:bg-slate-700/50 border border-slate-700'
+                  }`}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
+
+            {/* View Mode Toggle */}
+            <div className="flex items-center gap-2 bg-slate-800/50 rounded-lg p-1 border border-slate-700">
+              <button
+                onClick={() => setViewMode('grid')}
+                className={`p-2 rounded-md transition-all duration-300 ${
+                  viewMode === 'grid'
+                    ? 'bg-cyan-500 text-white'
+                    : 'text-gray-400 hover:text-white'
+                }`}
+              >
+                <Grid className="w-5 h-5" />
+              </button>
+              <button
+                onClick={() => setViewMode('list')}
+                className={`p-2 rounded-md transition-all duration-300 ${
+                  viewMode === 'list'
+                    ? 'bg-cyan-500 text-white'
+                    : 'text-gray-400 hover:text-white'
+                }`}
+              >
+                <List className="w-5 h-5" />
+              </button>
+            </div>
+          </div>
+
+          {/* Advanced Filters */}
+          <div className="mt-6 flex flex-wrap gap-4 items-center justify-center">
+            <div className="flex items-center gap-2">
+              <span className="text-gray-400 text-sm">Price Range:</span>
+              <select
+                value={priceRange}
+                onChange={(e) => setPriceRange(e.target.value)}
+                className="px-3 py-2 bg-slate-800/50 border border-slate-700 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500"
+              >
+                {priceRanges.map((range) => (
+                  <option key={range.value} value={range.value}>
+                    {range.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <span className="text-gray-400 text-sm">Sort By:</span>
+              <select
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value)}
+                className="px-3 py-2 bg-slate-800/50 border border-slate-700 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500"
+              >
+                {sortOptions.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Grid */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          {/* Results Count */}
+          <div className="flex items-center justify-between mb-8">
+            <p className="text-gray-400">
+              Showing <span className="text-white font-semibold">{filteredServices.length}</span> of {enhancedRealMicroSaasServices.length} services
+            </p>
+            <p className="text-gray-400">
+              Category: <span className="text-cyan-400 font-semibold">{selectedCategory}</span>
+            </p>
+          </div>
+
+          {/* Services Grid */}
+          <div className={`grid gap-6 ${
+            viewMode === 'grid' 
+              ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' 
+              : 'grid-cols-1'
+          }`}>
+            {filteredServices.map((service, index) => (
+              <UltraFuturisticCard
+                key={service.id}
+                variant={index % 4 === 0 ? 'quantum' : index % 4 === 1 ? 'holographic' : index % 4 === 2 ? 'neural' : 'cyberpunk'}
+                className="h-full"
+                delay={index % 20}
+              >
+                <div className="p-6">
+                  {/* Header */}
+                  <div className="flex items-start justify-between mb-4">
+                    <span className="text-4xl">{service.icon}</span>
+                    <div className="text-right">
+                      {service.popular && (
+                        <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-2 py-1 rounded-full text-xs font-bold mb-2">
+                          Popular
+                        </div>
+                      )}
+                      <div className="text-2xl font-bold text-white">{service.price}</div>
+                      <div className="text-sm text-gray-400">{service.period}</div>
+                    </div>
+                  </div>
+
+                  {/* Service Info */}
+                  <h3 className="text-xl font-bold text-white mb-3 line-clamp-2">{service.name}</h3>
+                  <p className="text-gray-300 text-sm mb-4 line-clamp-3">{service.tagline}</p>
+                  
+                  {/* Category and Trial */}
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-xs text-cyan-400 bg-cyan-400/10 px-3 py-1 rounded-full border border-cyan-400/20">
+                      {service.category}
+                    </span>
+                    <span className="text-xs text-green-400 bg-green-400/10 px-3 py-1 rounded-full border border-green-400/20">
+                      {service.trialDays} day trial
+                    </span>
+                  </div>
+
+                  {/* Features Preview */}
+                  <div className="mb-4">
+                    <p className="text-xs text-gray-400 mb-2">Key Features:</p>
+                    <div className="space-y-1">
+                      {service.features.slice(0, 3).map((feature, idx) => (
+                        <div key={idx} className="flex items-center text-xs text-gray-300">
+                          <Check className="w-3 h-3 text-green-400 mr-2 flex-shrink-0" />
+                          <span className="line-clamp-1">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Market Position */}
+                  <div className="mb-4 p-3 bg-slate-800/30 rounded-lg border border-slate-700/50">
+                    <p className="text-xs text-gray-400 mb-1">Market Position:</p>
+                    <p className="text-xs text-cyan-300 line-clamp-2">{service.marketPosition}</p>
+                  </div>
+
+                  {/* ROI and Setup */}
+                  <div className="grid grid-cols-2 gap-3 mb-6">
+                    <div className="text-center p-2 bg-slate-800/30 rounded-lg border border-slate-700/50">
+                      <p className="text-xs text-gray-400">ROI</p>
+                      <p className="text-xs text-green-400 font-semibold">{service.roi}</p>
+                    </div>
+                    <div className="text-center p-2 bg-slate-800/30 rounded-lg border border-slate-700/50">
+                      <p className="text-xs text-gray-400">Setup</p>
+                      <p className="text-xs text-blue-400 font-semibold">{service.setupTime}</p>
+                    </div>
+                  </div>
+
+                  {/* CTA Button */}
+                  <div className="flex gap-2">
+                    <Link href={service.link} className="flex-1">
+                      <Button className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white py-3 text-sm rounded-lg transition-all duration-300">
+                        Learn More
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </Button>
+                    </Link>
+                    <Link href="/contact">
+                      <Button 
+                        variant="outline"
+                        className="border-2 border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white px-4 py-3 text-sm rounded-lg transition-all duration-300"
+                      >
+                        Contact
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </UltraFuturisticCard>
+            ))}
+          </div>
+
+          {/* No Results */}
+          {filteredServices.length === 0 && (
+            <div className="text-center py-16">
+              <Search className="w-16 h-16 text-gray-500 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-gray-400 mb-2">No services found</h3>
+              <p className="text-gray-500 mb-6">Try adjusting your search criteria or filters</p>
+              <Button 
+                onClick={() => {
+                  setSearchQuery('');
+                  setSelectedCategory('All');
+                  setPriceRange('All');
+                }}
+                className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-6 py-3 rounded-lg"
+              >
+                Clear Filters
+              </Button>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-900/50 via-purple-900/20 to-slate-900/50">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+            Ready to <span className="text-cyan-400">Transform</span> Your Business?
+          </h2>
+          <p className="text-xl text-gray-300 mb-8">
+            Join thousands of forward-thinking companies already leveraging our revolutionary micro SAAS services
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/contact">
+              <Button className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300 transform hover:scale-105">
+                Get Started Today
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </Link>
+            <Link href="/pricing">
+              <Button 
+                variant="outline"
+                className="border-2 border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300 transform hover:scale-105"
+              >
+                View Pricing
+                <DollarSign className="ml-2 w-5 h-5" />
+              </Button>
+            </Link>
+          </div>
+
+          {/* Contact Info */}
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="text-center">
+              <Phone className="w-8 h-8 mx-auto mb-3 text-cyan-400" />
+              <p className="text-white font-semibold">Call Us</p>
+              <p className="text-gray-400">{contactInfo.mobile}</p>
+            </div>
+            <div className="text-center">
+              <Mail className="w-8 h-8 mx-auto mb-3 text-purple-400" />
+              <p className="text-white font-semibold">Email Us</p>
+              <p className="text-gray-400">{contactInfo.email}</p>
+            </div>
+            <div className="text-center">
+              <MapPin className="w-8 h-8 mx-auto mb-3 text-green-400" />
+              <p className="text-white font-semibold">Visit Us</p>
+              <p className="text-gray-400">{contactInfo.address}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </UltraFuturisticBackground>
   );
 }

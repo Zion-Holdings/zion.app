@@ -135,7 +135,7 @@ const ReportsPage: React.FC = () => {
   };
 
   return (
-    <UltraFuturisticBackground variant="quantum">
+    <UltraFuturisticBackground>
       <div className="min-h-screen">
         <Head>
           <title>Research Reports - Zion Tech Group | Industry Analysis & Technology Insights</title>
