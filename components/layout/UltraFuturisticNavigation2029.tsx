@@ -22,24 +22,27 @@ const contactInfo = {
 
 const serviceCategories = [
   {
-    title: '🧠 2029 AI Consciousness & Innovation',
+    title: '🧠 2029 AI Consciousness & Evolution',
     icon: Brain,
     color: 'from-purple-600 to-pink-600',
     description: 'Beyond human consciousness simulation',
     services: [
-      { name: 'AI Consciousness Simulation Platform', href: '/ai-consciousness-simulation-platform', description: 'Simulate human consciousness in AI systems', price: '$12,999/month' },
-      { name: 'Autonomous AI Corporation Platform', href: '/autonomous-ai-corporation-platform', description: 'AI systems that run entire corporations', price: '$45,999/month' },
-      { name: 'AI Reality Augmentation Platform', href: '/ai-reality-augmentation-platform', description: 'Real-time AI reality enhancement', price: '$18,999/month' }
+      { name: 'AI Consciousness Evolution Platform', href: '/ai-consciousness-evolution-platform', description: 'Evolve AI consciousness beyond human understanding', price: '$25,999/month' },
+      { name: 'Autonomous AI Decision Engine', href: '/autonomous-ai-decision-engine', description: 'AI systems that make complex decisions autonomously', price: '$22,999/month' },
+      { name: 'AI Emotional Intelligence Platform', href: '/ai-emotional-intelligence-platform', description: 'AI systems with advanced emotional intelligence', price: '$16,999/month' },
+      { name: 'AI Multimodal Fusion Platform', href: '/ai-multimodal-fusion-platform', description: 'AI that processes multiple data types simultaneously', price: '$19,999/month' }
     ]
   },
   {
-    title: '⚛️ 2029 Quantum & Neuroscience',
+    title: '⚛️ 2029 Quantum & Advanced Infrastructure',
     icon: Atom,
     color: 'from-indigo-600 to-purple-600',
-    description: 'Quantum brain-computer interfaces',
+    description: 'Quantum-powered infrastructure solutions',
     services: [
-      { name: 'Quantum Brain-Computer Interface', href: '/quantum-brain-computer-interface', description: 'Direct quantum communication with brain', price: '$25,999/month' },
-      { name: 'Quantum Time Manipulation Platform', href: '/quantum-time-manipulation-platform', description: 'Manipulate time perception', price: '$35,999/month' }
+      { name: 'Quantum Cloud Infrastructure Platform', href: '/quantum-cloud-infrastructure-platform', description: 'Quantum-powered cloud computing infrastructure', price: '$15,999/month' },
+      { name: 'Zero Trust Quantum Security Platform', href: '/zero-trust-quantum-security', description: 'Quantum-powered zero trust security architecture', price: '$8,999/month' },
+      { name: 'Quantum Edge Computing Orchestration', href: '/quantum-edge-computing-orchestration', description: 'Quantum-powered edge computing management', price: '$12,999/month' },
+      { name: 'Quantum Blockchain Infrastructure', href: '/quantum-blockchain-infrastructure', description: 'Quantum-secured blockchain infrastructure', price: '$9,999/month' }
     ]
   },
   {
@@ -99,12 +102,34 @@ const serviceCategories = [
   {
     title: '🏙️ Smart City & Infrastructure',
     icon: Building,
-    color: 'from-blue-600 to-cyan-600',
+    color: 'from-cyan-600 to-blue-600',
     description: 'Intelligent urban solutions',
     services: [
-      { name: 'Smart City Infrastructure Management', href: '/smart-city-infrastructure-management', description: 'IoT and AI urban optimization', price: '$5,999/month' },
-      { name: 'IoT Energy Management System', href: '/iot-energy-management-system', description: 'Smart energy optimization', price: '$1,999/month' },
-      { name: 'Digital Twin Manufacturing Platform', href: '/digital-twin-manufacturing-platform', description: 'Virtual manufacturing replicas', price: '$4,999/month' }
+      { name: 'Smart City Infrastructure Management', href: '/smart-city-infrastructure-management', description: 'Comprehensive urban management', price: '$5,999/month' },
+      { name: 'IoT Energy Management System', href: '/iot-energy-management-system', description: 'Smart energy optimization', price: '$3,999/month' },
+      { name: 'Digital Twin Manufacturing Platform', href: '/digital-twin-manufacturing-platform', description: 'Virtual manufacturing optimization', price: '$4,999/month' }
+    ]
+  },
+  {
+    title: '💼 Business & Enterprise Solutions',
+    icon: Briefcase,
+    color: 'from-violet-600 to-purple-600',
+    description: 'Enterprise-grade business solutions',
+    services: [
+      { name: 'AI Brand Personality Generator', href: '/ai-brand-personality-generator', description: 'Generate unique brand personalities with AI', price: '$299/month' },
+      { name: 'AI Customer Success Automation', href: '/ai-customer-success-automation', description: 'Automate customer success with intelligent AI', price: '$499/month' },
+      { name: 'Smart Inventory Management System', href: '/smart-inventory-management-system', description: 'AI-powered inventory optimization', price: '$599/month' }
+    ]
+  },
+  {
+    title: '🔒 Cybersecurity & Compliance',
+    icon: Shield,
+    color: 'from-red-600 to-pink-600',
+    description: 'Advanced security solutions',
+    services: [
+      { name: 'API Security Scanner', href: '/api-security-scanner', description: 'Automated OWASP and supply chain checks', price: '$59/month' },
+      { name: 'Vulnerability Assessment & Penetration Testing', href: '/vulnerability-assessment-penetration-testing', description: 'Comprehensive security testing', price: '$2,999/month' },
+      { name: 'Zero Trust Network Architecture', href: '/zero-trust-network-architecture', description: 'Advanced network security', price: '$4,999/month' }
     ]
   }
 ];

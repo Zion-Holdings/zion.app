@@ -3,7 +3,12 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shield, Mail, MapPin, Rocket, Brain, Sparkles } from 'lucide-react';
 import Button from '../components/ui/Button';
-import UltraFuturisticBackground2029 from '../components/backgrounds/UltraFuturisticBackground2029';
+import dynamic from 'next/dynamic';
+
+const UltraFuturisticBackground2029 = dynamic(
+  () => import('../components/backgrounds/UltraFuturisticBackground2029'),
+  { ssr: false }
+);
 import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
 import UltraAdvancedNavigation2026 from '../components/layout/UltraAdvancedNavigation2026';
 import UltraFuturisticNavigation2028 from '../components/layout/UltraFuturisticNavigation2028';
@@ -74,6 +79,9 @@ import { futuristic2028Services } from '../data/2028-futuristic-innovations';
 import { emergingTech2028Services } from '../data/2028-emerging-tech-services';
 import { cuttingEdge2029Services } from '../data/2029-cutting-edge-innovations';
 import { spaceColonization2029Services } from '../data/2029-space-colonization-services';
+import { innovativeITServices2029 } from '../data/innovative-it-services-2029';
+import { innovativeAIServices2029 } from '../data/innovative-ai-services-2029';
+import { innovativeMicroSaas2029 } from '../data/innovative-micro-saas-2029';
 
 export default function HomePage() {
   const contactInfo = {
@@ -111,6 +119,9 @@ export default function HomePage() {
     ...emergingTech2028Services,
     ...cuttingEdge2029Services,
     ...spaceColonization2029Services,
+    ...innovativeITServices2029,
+    ...innovativeAIServices2029,
+    ...innovativeMicroSaas2029,
     ...innovative2026Services,
     ...emergingTech2026Services,
     ...enterpriseIT2026Services,
@@ -141,15 +152,51 @@ export default function HomePage() {
     ...revolutionary2027MicroSaasServices,
     ...cuttingEdge2028MicroSaas,
     ...practicalBusinessSolutions2028
-  ];
+  ].filter(service => 
+    // Only include services that have the required properties for the Service interface
+    service && 
+    typeof service === 'object' &&
+    'id' in service &&
+    'name' in service &&
+    'tagline' in service &&
+    'price' in service &&
+    'period' in service &&
+    'description' in service &&
+    'features' in service &&
+    'popular' in service &&
+    'icon' in service &&
+    'color' in service &&
+    'textColor' in service &&
+    'link' in service &&
+    'marketPosition' in service &&
+    'targetAudience' in service &&
+    'trialDays' in service &&
+    'setupTime' in service &&
+    'category' in service &&
+    'realService' in service &&
+    'technology' in service &&
+    'integrations' in service &&
+    'useCases' in service &&
+    'roi' in service &&
+    'competitors' in service &&
+    'marketSize' in service &&
+    'growthRate' in service &&
+    'contactInfo' in service &&
+    'realImplementation' in service &&
+    'implementationDetails' in service &&
+    'launchDate' in service &&
+    'customers' in service &&
+    'rating' in service &&
+    'reviews' in service
+  ) as any[];
 
   const featuredOffers = professionalServices.slice(0, 3);
 
   // Service statistics
   const serviceStats = {
     totalServices: allServices.length,
-    aiServices: nextGenerationAIServices.length + innovativeAIServices.length + realMarketServices.filter(s => s.category.includes('AI')).length + revolutionary2025Services.filter(s => s.category.includes('AI')).length + nextGenInnovations2025.filter(s => s.category.includes('AI')).length + innovative2026Services.filter(s => s.category.includes('AI')).length + emergingTech2026Services.filter(s => s.category.includes('AI')).length + innovative2026MicroSaasServices.filter(s => s.category.includes('AI')).length + innovative2026MicroSaasServicesV2.filter(s => s.category.includes('AI')).length + emergingTech2026ServicesV2.filter(s => s.category.includes('AI')).length + enterpriseIT2026ServicesV2.filter(s => s.category.includes('AI')).length + revolutionary2026AIServices.length + revolutionary2027Services.filter(s => s.category.includes('AI')).length + emergingTech2027Services.filter(s => s.category.includes('AI')).length,
-    quantumServices: quantumSpaceServices.length + quantumAIServices2025.length + revolutionary2027Services.filter(s => s.category.includes('Quantum')).length,
+    aiServices: nextGenerationAIServices.length + innovativeAIServices.length + innovativeAIServices2029.length + realMarketServices.filter(s => s.category.includes('AI')).length + revolutionary2025Services.filter(s => s.category.includes('AI')).length + nextGenInnovations2025.filter(s => s.category.includes('AI')).length + innovative2026Services.filter(s => s.category.includes('AI')).length + emergingTech2026Services.filter(s => s.category.includes('AI')).length + innovative2026MicroSaasServices.filter(s => s.category.includes('AI')).length + innovative2026MicroSaasServicesV2.filter(s => s.category.includes('AI')).length + emergingTech2026ServicesV2.filter(s => s.category.includes('AI')).length + enterpriseIT2026ServicesV2.filter(s => s.category.includes('AI')).length + revolutionary2026AIServices.length + revolutionary2027Services.filter(s => s.category.includes('AI')).length + emergingTech2027Services.filter(s => s.category.includes('AI')).length,
+    quantumServices: quantumSpaceServices.length + quantumAIServices2025.length + innovativeITServices2029.filter(s => s.category.includes('Quantum')).length + revolutionary2027Services.filter(s => s.category.includes('Quantum')).length,
     spaceServices: quantumSpaceServices.length + revolutionary2027Services.filter(s => s.category.includes('Space')).length,
     biotechServices: revolutionary2027Services.filter(s => s.category.includes('Biotech')).length + emergingTech2027Services.filter(s => s.category.includes('Biotech')).length
   };
@@ -211,7 +258,7 @@ export default function HomePage() {
         />
       </Head>
 
-      <UltraFuturisticBackground2029 intensity="high">
+      <UltraFuturisticBackground2029>
         {/* Navigation */}
         <UltraFuturisticNavigation2029 />
 

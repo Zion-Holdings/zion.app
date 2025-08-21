@@ -29,7 +29,7 @@ interface Service {
   competitors: string[];
   marketSize: string;
   growthRate: string;
-  variant: string;
+  variant?: string;
   contactInfo: {
     mobile: string;
     email: string;
