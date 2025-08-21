@@ -28,6 +28,7 @@ import { cuttingEdgeITServices } from '../data/cutting-edge-it-services';
 import { nextGenAIServices } from '../data/next-gen-ai-services';
 import { industryRealServices } from '../data/industry-real-services';
 import { professionalServices } from '../data/professional-services';
+import { realVerifiedServices } from '../data/real-verified-services';
 
 export default function ServiceFallbackPage() {
   const router = useRouter();
@@ -179,7 +180,8 @@ function collectAllServices(): Svc[] {
       comprehensiveITSolutions as Svc[],
       marketValidatedServices as Svc[],
       newRealInnovations as Svc[],
-      realMarketServices as Svc[]
+      realMarketServices as Svc[],
+      realVerifiedServices as unknown as Svc[]
     );
 }
 
@@ -204,6 +206,21 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const services = collectAllServices();
   const candidateSlugs = new Set<string>();
 
+  // Gather existing root-level page slugs to avoid conflicts
+  const pagesDir = path.join(process.cwd(), 'pages');
+  const staticSlugs = new Set<string>();
+  try {
+    const entries = fs.readdirSync(pagesDir, { withFileTypes: true });
+    for (const entry of entries) {
+      if (entry.isFile() && /\.tsx?$/.test(entry.name)) {
+        const base = entry.name.replace(/\.(tsx|ts|jsx|js)$/i, '');
+        if (base !== 'index' && base !== '[slug]' && !base.startsWith('_')) {
+          staticSlugs.add(base.toLowerCase());
+        }
+      }
+    }
+  } catch {}
+
   for (const s of services) {
     const fromLink = extractRootSlugFromLink((s as any).link);
     if (fromLink) {
@@ -215,8 +232,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
     }
   }
 
+  // Exclude any slug that conflicts with an existing root page file
+  const uniqueNonConflicting = Array.from(candidateSlugs).filter((slug) => !staticSlugs.has(slug));
+
   return {
-    paths: Array.from(candidateSlugs).map((slug) => ({ params: { slug } })),
+    paths: uniqueNonConflicting.map((slug) => ({ params: { slug } })),
     fallback: true
   };
 };

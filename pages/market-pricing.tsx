@@ -12,6 +12,24 @@ export default function MarketPricingPage() {
       </Head>
       <div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto space-y-8">
+          <div className="bg-black/30 rounded-2xl border border-sky-500/30 p-6">
+            <h2 className="text-2xl font-semibold mb-2">Status Pages & Incident Comms</h2>
+            <ul className="list-disc list-inside text-slate-300 space-y-1">
+              <li>Statuspage: <a className="text-cyan-400 underline" href={`https://www.atlassian.com/software/statuspage/pricing`} target="_blank" rel="noopener noreferrer">atlassian.com/software/statuspage/pricing</a></li>
+              <li>Freshstatus: <a className="text-cyan-400 underline" href={`https://freshstatus.io/pricing`} target="_blank" rel="noopener noreferrer">freshstatus.io/pricing</a></li>
+              <li>Better Uptime: <a className="text-cyan-400 underline" href={`https://betterstack.com/better-uptime/pricing`} target="_blank" rel="noopener noreferrer">betterstack.com/better-uptime/pricing</a></li>
+            </ul>
+            <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $0–$300/month depending on incidents and subscribers.</div>
+          </div>
+
+          <div className="bg-black/30 rounded-2xl border border-indigo-500/30 p-6">
+            <h2 className="text-2xl font-semibold mb-2">DNS Monitoring & Hygiene</h2>
+            <ul className="list-disc list-inside text-slate-300 space-y-1">
+              <li>DNS Spy (archived reference): <a className="text-cyan-400 underline" href={`https://dnsspy.io`} target="_blank" rel="noopener noreferrer">dnsspy.io</a></li>
+              <li>Better Uptime DNS monitors: <a className="text-cyan-400 underline" href={`https://betterstack.com/better-uptime`} target="_blank" rel="noopener noreferrer">betterstack.com/better-uptime</a></li>
+            </ul>
+            <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $10–$100/month depending on domains and checks.</div>
+          </div>
           <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Market Pricing & References</h1>
           <p className="text-slate-300">Below are easy-to-verify vendor references and typical pricing ranges to help you benchmark our offerings.</p>
 

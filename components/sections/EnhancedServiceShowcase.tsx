@@ -16,6 +16,7 @@ import { marketValidatedServices } from '../../data/market-validated-services';
 import { newRealInnovations } from '../../data/new-real-innovations';
 import { realMarketServices } from '../../data/real-market-services';
 import { realOperationalServices } from '../../data/real-operational-services';
+import { realVerifiedServices } from '../../data/real-verified-services';
 
 interface ServiceShowcaseProps {
   className?: string;
@@ -44,7 +45,8 @@ const EnhancedServiceShowcase: React.FC<ServiceShowcaseProps> = ({
     ...marketValidatedServices,
     ...newRealInnovations,
     ...realMarketServices,
-    ...realOperationalServices
+    ...realOperationalServices,
+    ...realVerifiedServices
   ];
 
   const categories = [
@@ -58,18 +60,23 @@ const EnhancedServiceShowcase: React.FC<ServiceShowcaseProps> = ({
   ];
 
   const filteredServices = allServices.filter(service => {
-    const matchesCategory = selectedCategory === 'all' || 
-      (selectedCategory === 'ai' && (innovativeAIServices.includes(service) || nextGenerationAIServices.includes(service))) ||
-      (selectedCategory === 'quantum' && service.name.toLowerCase().includes('quantum')) ||
-      (selectedCategory === 'space' && service.name.toLowerCase().includes('space')) ||
-      (selectedCategory === 'enterprise' && (enterpriseITServices.includes(service) || comprehensiveITSolutions.includes(service))) ||
-      (selectedCategory === 'saas' && enhancedRealMicroSaasServices.includes(service)) ||
-      (selectedCategory === 'emerging' && emergingTechnologyServices.includes(service));
-    
-    const matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         service.category.toLowerCase().includes(searchTerm.toLowerCase());
-    
+    const categoryValue = (service.category || '').toLowerCase();
+    const nameValue = (service.name || '').toLowerCase();
+
+    const matchesCategory =
+      selectedCategory === 'all' ||
+      (selectedCategory === 'ai' && (categoryValue.includes('ai') || categoryValue.includes('machine learning'))) ||
+      (selectedCategory === 'quantum' && (nameValue.includes('quantum') || categoryValue.includes('quantum'))) ||
+      (selectedCategory === 'space' && (nameValue.includes('space') || categoryValue.includes('space'))) ||
+      (selectedCategory === 'enterprise' && (categoryValue.includes('enterprise') || categoryValue.includes('it') || categoryValue.includes('cloud') || categoryValue.includes('security'))) ||
+      (selectedCategory === 'saas' && categoryValue.includes('micro saas')) ||
+      (selectedCategory === 'emerging' && categoryValue.includes('emerging'));
+
+    const matchesSearch =
+      nameValue.includes(searchTerm.toLowerCase()) ||
+      (service.description || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
+      categoryValue.includes(searchTerm.toLowerCase());
+
     return matchesCategory && matchesSearch;
   });
 

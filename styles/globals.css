@@ -653,18 +653,22 @@ body::after {
 @media (max-width: 768px) {
   .quantum-grid {
     background-size: 25px 25px;
+    opacity: 0.35;
   }
   
   .holographic-matrix {
     background-size: 50px 50px;
+    opacity: 0.30;
   }
   
   .neural-network {
     background-size: 75px 75px;
+    opacity: 0.28;
   }
   
   .cyberpunk-elements {
     background-size: 100px 100px;
+    opacity: 0.26;
   }
 }
 
