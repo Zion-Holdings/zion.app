@@ -12,6 +12,7 @@ import { innovativeAIServices } from '../data/innovative-ai-services';
 import { quantumSpaceServices } from '../data/quantum-space-services';
 import { enterpriseITServices } from '../data/enterprise-it-services';
 import { newRealServices } from '../data/new-real-services';
+import { marketReadyServices } from '../data/market-ready-services';
 
 export default function ServiceFallbackPage() {
   const router = useRouter();
@@ -26,7 +27,8 @@ export default function ServiceFallbackPage() {
         innovativeAIServices,
         quantumSpaceServices,
         enterpriseITServices,
-        newRealServices
+        newRealServices,
+        marketReadyServices
       );
     const byLink = all.find(s => {
       try {
