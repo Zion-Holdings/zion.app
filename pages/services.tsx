@@ -16,6 +16,7 @@ import { professionalServices } from '../data/professional-services';
 import { nextGenerationAIServices } from '../data/next-generation-ai-services';
 import { emergingTechnologyServices } from '../data/emerging-technology-services';
 import { comprehensiveITSolutions } from '../data/comprehensive-it-solutions';
+import { curatedMarketServices } from '../data/curated-market-services';
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -31,7 +32,8 @@ export default function ServicesPage() {
     ...professionalServices,
     ...nextGenerationAIServices,
     ...emergingTechnologyServices,
-    ...comprehensiveITSolutions
+    ...comprehensiveITSolutions,
+    ...curatedMarketServices
   ];
 
   const categories = [

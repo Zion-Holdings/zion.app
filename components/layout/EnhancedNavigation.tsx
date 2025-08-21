@@ -66,12 +66,18 @@ const navigationItems: NavigationItem[] = [
     icon: <DollarSign className="w-4 h-4" />,
     description: 'Transparent pricing plans'
   },
-  {
-    name: 'Resources',
-    href: '/resources',
-    icon: <Globe className="w-4 h-4" />,
-    description: 'Knowledge and tools'
-  },
+        {
+        name: 'Resources',
+        href: '/resources',
+        icon: <Globe className="w-4 h-4" />,
+        description: 'Knowledge and tools'
+      },
+      {
+        name: 'Market Pricing',
+        href: '/market-pricing',
+        icon: <DollarSign className="w-4 h-4" />,
+        description: 'Vendor references and price benchmarks'
+      },
   {
     name: 'Contact',
     href: '/contact',
