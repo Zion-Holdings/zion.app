@@ -6,6 +6,8 @@ import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import EnhancedFuturisticBackground from '../components/ui/EnhancedFuturisticBackground';
 import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, ExternalLink, Star, Users, Globe, Lock, Rocket, Cpu, Database, TrendingUp, Clock, Target, Building, Award, DollarSign, ChartBar, Code, BookOpen, Activity, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, Settings, BookOpen as BookOpenIcon, Activity as ActivityIcon, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Sparkles, Atom, Brain, Eye, Shield as ShieldIcon, Zap as ZapIcon, Globe as GlobeIcon, Cpu as CpuIcon, Cloud as CloudIcon, Bot as BotIcon, Lock as LockIcon, BarChart3 as BarChart3Icon, TrendingUp as TrendingUpIcon, Users as UsersIcon, Award as AwardIcon, Star as StarIcon, Check as CheckIcon, ArrowRight as ArrowRightIcon, ExternalLink as ExternalLinkIcon, Phone as PhoneIcon, Mail as MailIcon, MapPin as MapPinIcon, Trophy, Wifi, Satellite, Cpu as CpuIcon2, Database as DatabaseIcon2, Globe as GlobeIcon2, Bot as BotIcon2, Shield as ShieldIcon2, Zap as ZapIcon2, BarChart3 as BarChart3Icon2, TrendingUp as TrendingUpIcon2, Users as UsersIcon2, Award as AwardIcon2, Star as StarIcon2, Check as CheckIcon2, ArrowRight as ArrowRightIcon2, ExternalLink as ExternalLinkIcon2, Phone as PhoneIcon2, Mail as MailIcon2, MapPin as MapPinIcon2 } from 'lucide-react';
+import { motion } from 'framer-motion';
+import QuantumCard from '../components/ui/QuantumCard';
 
 export default function HomePage() {
   const heroStats = [
@@ -73,6 +75,46 @@ export default function HomePage() {
       gradient: 'from-teal-400 to-cyan-500',
       features: ['Pay-as-you-grow', 'Volume Discounts', 'Enterprise Plans', 'ROI Calculator', 'Free Trials']
     },
+  ];
+
+  // Add new cutting-edge services showcase
+  const cuttingEdgeServices = [
+    {
+      name: 'Quantum Blockchain Oracle',
+      description: 'Quantum-secured blockchain data verification with 100% tamper-proof guarantees',
+      price: '$399/month',
+      icon: '🔗',
+      color: 'from-purple-500 to-indigo-600',
+      link: 'https://ziontechgroup.com/quantum-blockchain-oracle',
+      features: ['Quantum-resistant cryptography', 'Multi-chain compatibility', 'Zero-knowledge proofs']
+    },
+    {
+      name: 'Synthetic Biology Platform',
+      description: 'AI-powered genetic engineering and bio-design with FDA compliance',
+      price: '$599/month',
+      icon: '🧬',
+      color: 'from-green-500 to-emerald-600',
+      link: 'https://ziontechgroup.com/synthetic-biology',
+      features: ['CRISPR gene editing', 'Bio-manufacturing optimization', 'Regulatory compliance']
+    },
+    {
+      name: 'Neuromorphic Computing Cloud',
+      description: 'Brain-inspired computing infrastructure with 1000x energy efficiency',
+      price: '$799/month',
+      icon: '🧠',
+      color: 'from-pink-500 to-rose-600',
+      link: 'https://ziontechgroup.com/neuromorphic-computing',
+      features: ['Brain-inspired neural networks', 'Ultra-low power consumption', 'Edge computing optimization']
+    },
+    {
+      name: 'Quantum Internet Gateway',
+      description: 'Quantum-secured global communication network with military-grade security',
+      price: '$1299/month',
+      icon: '🌐',
+      color: 'from-blue-500 to-cyan-600',
+      link: 'https://ziontechgroup.com/quantum-internet',
+      features: ['Quantum key distribution', 'Entanglement-based communication', 'Government-grade security']
+    }
   ];
 
   const technologyStack = [
@@ -637,63 +679,190 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Final CTA */}
-        <section className="py-20 relative">
-          <div className="container mx-auto px-4">
-            <div className="bg-gradient-to-r from-cyan-900/50 to-blue-900/50 backdrop-blur-sm border border-cyan-500/30 rounded-3xl p-12 text-center">
-              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-                Ready to Transform Your Business?
-              </h2>
-              <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                Join thousands of successful businesses that have already discovered the power of Zion Tech Group's micro SaaS services.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                <Button 
-                  href="/services" 
-                  variant="primary" 
-                  size="lg"
-                  className="group"
+        {/* New Cutting-Edge Services Section */}
+        <section className="relative py-20 overflow-hidden">
+          <EnhancedFuturisticBackground variant="quantum-holographic" intensity="high">
+            <div className="container mx-auto px-4">
+              <div className="text-center mb-16">
+                <motion.h2 
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8 }}
+                  className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-6"
                 >
-                  Start Free Trial
-                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                </Button>
-                <Button 
-                  href="/contact" 
-                  variant="secondary" 
-                  size="lg"
+                  Cutting-Edge Innovation
+                </motion.h2>
+                <motion.p 
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="text-xl text-gray-300 max-w-3xl mx-auto"
                 >
-                  Schedule Demo
-                </Button>
+                  Experience the future of technology with our revolutionary quantum computing, synthetic biology, and neuromorphic computing solutions.
+                </motion.p>
               </div>
 
-              {/* Contact Info */}
-              <div className="bg-black/30 rounded-2xl p-6 max-w-2xl mx-auto">
-                <h3 className="text-xl font-bold text-white mb-4">Get in Touch</h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
-                  <div className="flex flex-col items-center">
-                    <Phone className="w-5 h-5 text-blue-400 mb-2" />
-                    <span className="text-sm text-gray-400">Phone</span>
-                    <a href={`tel:${contactInfo.mobile}`} className="text-white font-medium hover:text-blue-400 transition-colors">
-                      {contactInfo.mobile}
-                    </a>
-                  </div>
-                  <div className="flex flex-col items-center">
-                    <Mail className="w-5 h-5 text-green-400 mb-2" />
-                    <span className="text-sm text-gray-400">Email</span>
-                    <a href={`mailto:${contactInfo.email}`} className="text-white font-medium hover:text-green-400 transition-colors">
-                      {contactInfo.email}
-                    </a>
-                  </div>
-                  <div className="flex flex-col items-center">
-                    <MapPin className="w-5 h-5 text-purple-400 mb-2" />
-                    <span className="text-sm text-gray-400">Address</span>
-                    <span className="text-white font-medium text-sm">
-                      {contactInfo.address}
-                    </span>
-                  </div>
-                </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {cuttingEdgeServices.map((service, index) => (
+                  <motion.div
+                    key={service.name}
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: index * 0.1 }}
+                    whileHover={{ y: -10, scale: 1.05 }}
+                    className="group"
+                  >
+                    <QuantumCard variant="quantum" intensity="high" className="h-full">
+                      <div className="text-center">
+                        <div className={`text-4xl mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                          {service.icon}
+                        </div>
+                        <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">
+                          {service.name}
+                        </h3>
+                        <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+                          {service.description}
+                        </p>
+                        <div className="text-2xl font-bold text-cyan-400 mb-4">
+                          {service.price}
+                        </div>
+                        <div className="space-y-2 mb-6">
+                          {service.features.map((feature, idx) => (
+                            <div key={idx} className="flex items-center text-sm text-gray-400">
+                              <Check className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" />
+                              {feature}
+                            </div>
+                          ))}
+                        </div>
+                        <Button
+                          href={service.link}
+                          variant="primary"
+                          size="lg"
+                          className="w-full group-hover:scale-105 transition-transform duration-300"
+                        >
+                          Learn More
+                          <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                        </Button>
+                      </div>
+                    </QuantumCard>
+                  </motion.div>
+                ))}
               </div>
+            </div>
+          </EnhancedFuturisticBackground>
+        </section>
+
+        {/* Enhanced Contact Section */}
+        <section className="relative py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <motion.h2 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="text-5xl md:text-6xl font-bold text-white mb-6"
+              >
+                Ready to Transform Your Business?
+              </motion.h2>
+              <motion.p 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-xl text-gray-300 max-w-3xl mx-auto"
+              >
+                Join thousands of businesses already leveraging our cutting-edge micro SaaS solutions. Start your 21-day free trial today.
+              </motion.p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                <QuantumCard variant="holographic" className="p-8">
+                  <h3 className="text-3xl font-bold text-white mb-6">Get in Touch</h3>
+                  <div className="space-y-6">
+                    <div className="flex items-center space-x-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+                        <Phone className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <p className="text-gray-300 text-sm">Phone</p>
+                        <p className="text-white font-semibold">{contactInfo.mobile}</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center space-x-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-600 rounded-full flex items-center justify-center">
+                        <Mail className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <p className="text-gray-300 text-sm">Email</p>
+                        <p className="text-white font-semibold">{contactInfo.email}</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center space-x-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center">
+                        <MapPin className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <p className="text-gray-300 text-sm">Address</p>
+                        <p className="text-white font-semibold">{contactInfo.address}</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center space-x-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-600 rounded-full flex items-center justify-center">
+                        <Globe className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <p className="text-gray-300 text-sm">Website</p>
+                        <p className="text-white font-semibold">{contactInfo.website}</p>
+                      </div>
+                    </div>
+                  </div>
+                </QuantumCard>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                <QuantumCard variant="quantum" className="p-8">
+                  <h3 className="text-3xl font-bold text-white mb-6">Start Your Free Trial</h3>
+                  <p className="text-gray-300 mb-6">
+                    Experience the power of our micro SaaS solutions with a 21-day free trial. No credit card required, instant setup.
+                  </p>
+                  <div className="space-y-4">
+                    <Button
+                      href="/services"
+                      variant="primary"
+                      size="lg"
+                      className="w-full"
+                    >
+                      Browse All Services
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                    <Button
+                      href="/contact"
+                      variant="secondary"
+                      size="lg"
+                      className="w-full"
+                    >
+                      Contact Sales Team
+                      <MessageSquare className="w-4 h-4 ml-2" />
+                    </Button>
+                  </div>
+                  <div className="mt-6 p-4 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-lg border border-cyan-500/20">
+                    <p className="text-sm text-cyan-400 text-center">
+                      🚀 <strong>Limited Time:</strong> Get 50% off your first 3 months when you start today!
+                    </p>
+                  </div>
+                </QuantumCard>
+              </motion.div>
             </div>
           </div>
         </section>

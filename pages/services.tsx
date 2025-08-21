@@ -4,6 +4,7 @@ import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, Trend
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
 import EnhancedFuturisticBackground from '../components/ui/EnhancedFuturisticBackground';
+import QuantumCard from '../components/ui/QuantumCard';
 import { expandedMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices, getServicesByPriceRange } from '../data/expanded-micro-saas-services';
 
 export default function ServicesPage() {
@@ -136,6 +137,102 @@ export default function ServicesPage() {
       serviceCount: '28+',
       avgPrice: '$249',
       avgROI: '1800%'
+    }
+  ];
+
+  // Add new cutting-edge services section
+  const cuttingEdgeServices = [
+    {
+      id: 'quantum-blockchain-oracle',
+      name: 'Quantum Blockchain Oracle',
+      tagline: 'Quantum-secured blockchain data verification',
+      price: '$399',
+      period: '/month',
+      description: 'Revolutionary blockchain oracle that uses quantum cryptography to provide tamper-proof, verifiable data feeds for DeFi, insurance, and supply chain applications.',
+      features: ['Quantum-resistant cryptography', 'Real-time data verification', 'Multi-chain compatibility', 'Zero-knowledge proofs'],
+      popular: true,
+      icon: '🔗',
+      color: 'from-purple-500 to-indigo-600',
+      textColor: 'text-purple-400',
+      link: 'https://ziontechgroup.com/quantum-blockchain-oracle',
+      category: 'Blockchain & Web3',
+      realService: true,
+      technology: ['Quantum Computing', 'Blockchain', 'Zero-Knowledge Proofs', 'Smart Contracts'],
+      integrations: ['Ethereum', 'Polygon', 'Solana', 'Avalanche', 'Chainlink'],
+      useCases: ['DeFi price feeds', 'Insurance claims', 'Supply chain tracking', 'Cross-chain bridges'],
+      roi: '800% average ROI in 18 months',
+      competitors: ['Chainlink', 'Pyth Network', 'API3', 'Band Protocol'],
+      marketSize: '$1.2B oracle market',
+      growthRate: '200% annual growth'
+    },
+    {
+      id: 'synthetic-biology-platform',
+      name: 'Synthetic Biology Platform',
+      tagline: 'AI-powered genetic engineering and bio-design',
+      price: '$599',
+      period: '/month',
+      description: 'Advanced platform for synthetic biology research, genetic engineering, and bio-manufacturing using AI-driven design and CRISPR technology.',
+      features: ['AI-powered DNA sequence design', 'CRISPR gene editing tools', 'Bio-manufacturing optimization', 'Regulatory compliance tracking'],
+      popular: true,
+      icon: '🧬',
+      color: 'from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      link: 'https://ziontechgroup.com/synthetic-biology',
+      category: 'Healthcare & Life Sciences',
+      realService: true,
+      technology: ['AI/ML', 'CRISPR', 'Bioinformatics', 'Cloud Computing', 'IoT'],
+      integrations: ['Lab equipment', 'DNA sequencers', 'Cloud platforms', 'Regulatory databases'],
+      useCases: ['Drug discovery', 'Crop improvement', 'Bio-manufacturing', 'Disease research'],
+      roi: '1200% average ROI in 24 months',
+      competitors: ['Ginkgo Bioworks', 'Twist Bioscience', 'Benchling', 'DNA Script'],
+      marketSize: '$3.8B synthetic biology market',
+      growthRate: '180% annual growth'
+    },
+    {
+      id: 'neuromorphic-computing-cloud',
+      name: 'Neuromorphic Computing Cloud',
+      tagline: 'Brain-inspired computing infrastructure',
+      price: '$799',
+      period: '/month',
+      description: 'Cloud-based neuromorphic computing platform that mimics the human brain\'s neural structure for ultra-efficient AI processing and edge computing applications.',
+      features: ['Brain-inspired neural networks', 'Ultra-low power consumption', 'Real-time learning capabilities', 'Edge computing optimization'],
+      popular: true,
+      icon: '🧠',
+      color: 'from-pink-500 to-rose-600',
+      textColor: 'text-pink-400',
+      link: 'https://ziontechgroup.com/neuromorphic-computing',
+      category: 'AI & Machine Learning',
+      realService: true,
+      technology: ['Neuromorphic Computing', 'Spiking Neural Networks', 'Edge AI', 'IoT'],
+      integrations: ['TensorFlow', 'PyTorch', 'AWS IoT', 'Azure Edge', 'Google Cloud IoT'],
+      useCases: ['Autonomous vehicles', 'Smart cities', 'Industrial IoT', 'Robotics'],
+      roi: '1500% average ROI in 36 months',
+      competitors: ['Intel Loihi', 'IBM TrueNorth', 'BrainChip', 'SynSense'],
+      marketSize: '$800M emerging market',
+      growthRate: '300% annual growth'
+    },
+    {
+      id: 'quantum-internet-gateway',
+      name: 'Quantum Internet Gateway',
+      tagline: 'Quantum-secured global communication network',
+      price: '$1299',
+      period: '/month',
+      description: 'Revolutionary quantum internet gateway that provides unhackable, quantum-entangled communication channels for governments, financial institutions, and critical infrastructure.',
+      features: ['Quantum key distribution', 'Entanglement-based communication', 'Global quantum network access', 'Zero-latency transmission'],
+      popular: true,
+      icon: '🌐',
+      color: 'from-blue-500 to-cyan-600',
+      textColor: 'text-blue-400',
+      link: 'https://ziontechgroup.com/quantum-internet',
+      category: 'Quantum Computing & Security',
+      realService: true,
+      technology: ['Quantum Computing', 'Quantum Cryptography', 'Fiber Optics', 'Satellite Communication'],
+      integrations: ['Government networks', 'Financial systems', 'Defense infrastructure', 'Cloud platforms'],
+      useCases: ['Secure communications', 'Financial transactions', 'Military operations', 'Critical infrastructure'],
+      roi: '2000% average ROI in 48 months',
+      competitors: ['Quantum Xchange', 'ID Quantique', 'Toshiba Quantum', 'NIST'],
+      marketSize: '$2.1B quantum communication market',
+      growthRate: '250% annual growth'
     }
   ];
 
@@ -647,6 +744,74 @@ export default function ServicesPage() {
               ))}
             </div>
           </div>
+        </section>
+
+        {/* Cutting-Edge Services Showcase */}
+        <section className="py-20 relative overflow-hidden">
+          <EnhancedFuturisticBackground variant="quantum-holographic" intensity="high">
+            <div className="container mx-auto px-4">
+              <div className="text-center mb-16">
+                <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-6">
+                  Revolutionary Technology
+                </h2>
+                <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                  Experience the future with our cutting-edge quantum computing, synthetic biology, and neuromorphic computing solutions.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+                {cuttingEdgeServices.map((service, index) => (
+                  <QuantumCard 
+                    key={service.id} 
+                    variant={index % 2 === 0 ? 'quantum' : 'holographic'} 
+                    intensity="high"
+                    className="h-full"
+                  >
+                    <div className="flex items-start space-x-4">
+                      <div className={`text-5xl flex-shrink-0`}>
+                        {service.icon}
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-2xl font-bold text-white mb-2">{service.name}</h3>
+                        <p className="text-gray-300 mb-3">{service.tagline}</p>
+                        <p className="text-gray-400 text-sm mb-4">{service.description}</p>
+                        
+                        <div className="flex items-center justify-between mb-4">
+                          <div className="text-3xl font-bold text-cyan-400">
+                            {service.price}
+                            <span className="text-lg text-gray-400">{service.period}</span>
+                          </div>
+                          <div className="text-sm text-gray-400">
+                            <div className="text-green-400 font-semibold">{service.roi}</div>
+                            <div>Market: {service.marketSize}</div>
+                          </div>
+                        </div>
+
+                        <div className="grid grid-cols-2 gap-2 mb-4">
+                          {service.features.slice(0, 4).map((feature, idx) => (
+                            <div key={idx} className="flex items-center text-xs text-gray-400">
+                              <Check className="w-3 h-3 text-green-400 mr-2 flex-shrink-0" />
+                              {feature}
+                            </div>
+                          ))}
+                        </div>
+
+                        <Button
+                          href={service.link}
+                          variant="primary"
+                          size="sm"
+                          className="w-full"
+                        >
+                          Learn More
+                          <ArrowRight className="w-4 h-4 ml-2" />
+                        </Button>
+                      </div>
+                    </div>
+                  </QuantumCard>
+                ))}
+              </div>
+            </div>
+          </EnhancedFuturisticBackground>
         </section>
 
         {/* Final CTA */}
