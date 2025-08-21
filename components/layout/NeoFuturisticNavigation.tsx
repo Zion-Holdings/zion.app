@@ -339,6 +339,18 @@ export default function NeoFuturisticNavigation() {
 
             {/* Direct Links */}
             <Link
+              href="/it-services"
+              className="text-gray-300 hover:text-white transition-colors duration-300 py-2"
+            >
+              IT Services
+            </Link>
+            <Link
+              href="/ai-services"
+              className="text-gray-300 hover:text-white transition-colors duration-300 py-2"
+            >
+              AI Services
+            </Link>
+            <Link
               href="/micro-saas"
               className="text-gray-300 hover:text-white transition-colors duration-300 py-2"
             >

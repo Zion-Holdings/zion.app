@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Code, BookOpen, Activity, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Filter, Grid, List, ChevronDown, ChevronUp, Sparkles, FlaskConical, Dna, Car, Leaf, Factory, Truck, Microscope, GraduationCap, ShieldCheck, Brain, Atom, Globe2, Bot, ChevronRight, LinkIcon, Building2 } from 'lucide-react';
 import Button from '../components/ui/Button';
-import Card from '../components/ui/Card';
-import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import QuantumHolographicCard from '../components/ui/QuantumHolographicCard';
+import QuantumMatrixBackground from '../components/ui/QuantumMatrixBackground';
 import { enhancedRealMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices, getServicesByPriceRange } from '../data/enhanced-real-micro-saas-services';
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/router';
 
 export default function ServicesPage() {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -14,6 +15,14 @@ export default function ServicesPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [sortBy, setSortBy] = useState('name');
   const [showFilters, setShowFilters] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    const queryCategory = typeof router.query.category === 'string' ? router.query.category : undefined;
+    if (queryCategory) {
+      setSelectedCategory(queryCategory);
+    }
+  }, [router.query.category]);
 
   const priceRanges = [
     { value: 'All', label: 'All Prices' },
@@ -90,7 +99,8 @@ export default function ServicesPage() {
       contactInfo: {
         mobile: '+1 302 464 0950',
         email: 'kleber@ziontechgroup.com',
-        address: '364 E Main St STE 1008 Middletown DE 19709'
+        address: '364 E Main St STE 1008 Middletown DE 19709',
+        website: 'https://ziontechgroup.com'
       }
     },
     {
@@ -106,7 +116,8 @@ export default function ServicesPage() {
       contactInfo: {
         mobile: '+1 302 464 0950',
         email: 'kleber@ziontechgroup.com',
-        address: '364 E Main St STE 1008 Middletown DE 19709'
+        address: '364 E Main St STE 1008 Middletown DE 19709',
+        website: 'https://ziontechgroup.com'
       }
     },
     {
@@ -122,7 +133,8 @@ export default function ServicesPage() {
       contactInfo: {
         mobile: '+1 302 464 0950',
         email: 'kleber@ziontechgroup.com',
-        address: '364 E Main St STE 1008 Middletown DE 19709'
+        address: '364 E Main St STE 1008 Middletown DE 19709',
+        website: 'https://ziontechgroup.com'
       }
     },
     {
@@ -138,7 +150,8 @@ export default function ServicesPage() {
       contactInfo: {
         mobile: '+1 302 464 0950',
         email: 'kleber@ziontechgroup.com',
-        address: '364 E Main St STE 1008 Middletown DE 19709'
+        address: '364 E Main St STE 1008 Middletown DE 19709',
+        website: 'https://ziontechgroup.com'
       }
     },
     {
@@ -154,7 +167,8 @@ export default function ServicesPage() {
       contactInfo: {
         mobile: '+1 302 464 0950',
         email: 'kleber@ziontechgroup.com',
-        address: '364 E Main St STE 1008 Middletown DE 19709'
+        address: '364 E Main St STE 1008 Middletown DE 19709',
+        website: 'https://ziontechgroup.com'
       }
     },
     {
@@ -170,7 +184,8 @@ export default function ServicesPage() {
       contactInfo: {
         mobile: '+1 302 464 0950',
         email: 'kleber@ziontechgroup.com',
-        address: '364 E Main St STE 1008 Middletown DE 19709'
+        address: '364 E Main St STE 1008 Middletown DE 19709',
+        website: 'https://ziontechgroup.com'
       }
     }
   ];
@@ -258,8 +273,9 @@ export default function ServicesPage() {
   ];
 
   return (
-    <UltraAdvancedFuturisticBackground>
-      <Head>
+    <div className="min-h-screen bg-black text-white">
+      <QuantumMatrixBackground>
+        <Head>
         <title>Revolutionary Micro SAAS Services - Zion Tech Group</title>
         <meta name="description" content="Discover our cutting-edge micro SAAS services including quantum AI, autonomous manufacturing, cybersecurity, and more. Transform your business with next-generation technology." />
         <meta name="keywords" content="micro SAAS, quantum AI, autonomous manufacturing, cybersecurity, blockchain, space technology, Zion Tech Group" />
@@ -456,90 +472,10 @@ export default function ServicesPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
-                  <Card
-                    variant="futuristic"
-                    size="lg"
+                  <QuantumHolographicCard
+                    service={service}
                     className="h-full"
-                  >
-                    <div className="p-6">
-                      <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-cyan-400 transition-colors duration-300">
-                        {service.name}
-                      </h3>
-                      <p className="text-gray-300 mb-4 text-lg">
-                        {service.description}
-                      </p>
-                      
-                      {/* Enhanced Price and ROI Display */}
-                      <div className="bg-black/30 rounded-lg p-4 mb-4 border border-gray-700">
-                        <div className="flex justify-between items-center mb-2">
-                          <span className="text-2xl font-bold text-cyan-400">{service.price}{service.period}</span>
-                          <span className="text-sm text-green-400 bg-green-900/20 px-2 py-1 rounded">
-                            {service.roi}
-                          </span>
-                        </div>
-                        <div className="text-sm text-gray-400">
-                          <div className="flex items-center gap-2 mb-1">
-                            <TrendingUp className="w-4 h-4 text-green-400" />
-                            <span>{service.marketSize}, {service.growthRate}</span>
-                          </div>
-                          <div className="flex items-center gap-2">
-                            <Shield className="w-4 h-4 text-blue-400" />
-                            <span>{service.marketPosition}</span>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Enhanced Features List */}
-                      <div className="mb-6">
-                        <h4 className="text-lg font-semibold text-white mb-3">Key Features:</h4>
-                        <ul className="space-y-2">
-                          {service.features.map((feature, featureIndex) => (
-                            <li key={featureIndex} className="flex items-start gap-3">
-                              <Check className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
-                              <span className="text-gray-300">{feature}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* Enhanced Contact Information */}
-                      <div className="bg-gradient-to-r from-gray-900/50 to-gray-800/50 rounded-lg p-4 mb-4 border border-gray-600">
-                        <h4 className="text-sm font-semibold text-cyan-400 mb-2">Contact Information:</h4>
-                        <div className="grid grid-cols-1 gap-2 text-xs text-gray-300">
-                          <div className="flex items-center gap-2">
-                            <Phone className="w-3 h-3 text-cyan-400" />
-                            <span>{service.contactInfo.mobile}</span>
-                          </div>
-                          <div className="flex items-center gap-2">
-                            <Mail className="w-3 h-3 text-purple-400" />
-                            <span>{service.contactInfo.email}</span>
-                          </div>
-                          <div className="flex items-center gap-2">
-                            <MapPin className="w-3 h-3 text-pink-400" />
-                            <span>{service.contactInfo.address}</span>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Enhanced CTA Buttons */}
-                      <div className="flex flex-col sm:flex-row gap-3">
-                        <Button
-                          href={service.link}
-                          variant="quantum"
-                          className="flex-1 justify-center"
-                        >
-                          Learn More
-                        </Button>
-                        <Button
-                          href="#contact"
-                          variant="futuristic"
-                          className="flex-1 justify-center"
-                        >
-                          Get Started
-                        </Button>
-                      </div>
-                    </div>
-                  </Card>
+                  />
                 </motion.div>
               ))}
             </div>
@@ -566,90 +502,10 @@ export default function ServicesPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
-                  <Card
-                    variant="futuristic"
-                    size="lg"
+                  <QuantumHolographicCard
+                    service={service}
                     className="h-full"
-                  >
-                    <div className="p-6">
-                      <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-cyan-400 transition-colors duration-300">
-                        {service.name}
-                      </h3>
-                      <p className="text-gray-300 mb-4 text-lg">
-                        {service.description}
-                      </p>
-                      
-                      {/* Enhanced Price and ROI Display */}
-                      <div className="bg-black/30 rounded-lg p-4 mb-4 border border-gray-700">
-                        <div className="flex justify-between items-center mb-2">
-                          <span className="text-2xl font-bold text-cyan-400">{service.price}{service.period}</span>
-                          <span className="text-sm text-green-400 bg-green-900/20 px-2 py-1 rounded">
-                            {service.roi}
-                          </span>
-                        </div>
-                        <div className="text-sm text-gray-400">
-                          <div className="flex items-center gap-2 mb-1">
-                            <TrendingUp className="w-4 h-4 text-green-400" />
-                            <span>{service.marketSize}, {service.growthRate}</span>
-                          </div>
-                          <div className="flex items-center gap-2">
-                            <Shield className="w-4 h-4 text-blue-400" />
-                            <span>{service.marketPosition}</span>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Enhanced Features List */}
-                      <div className="mb-6">
-                        <h4 className="text-lg font-semibold text-white mb-3">Key Features:</h4>
-                        <ul className="space-y-2">
-                          {service.features.map((feature, featureIndex) => (
-                            <li key={featureIndex} className="flex items-start gap-3">
-                              <Check className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
-                              <span className="text-gray-300">{feature}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* Enhanced Contact Information */}
-                      <div className="bg-gradient-to-r from-gray-900/50 to-gray-800/50 rounded-lg p-4 mb-4 border border-gray-600">
-                        <h4 className="text-sm font-semibold text-cyan-400 mb-2">Contact Information:</h4>
-                        <div className="grid grid-cols-1 gap-2 text-xs text-gray-300">
-                          <div className="flex items-center gap-2">
-                            <Phone className="w-3 h-3 text-cyan-400" />
-                            <span>{service.contactInfo.mobile}</span>
-                          </div>
-                          <div className="flex items-center gap-2">
-                            <Mail className="w-3 h-3 text-purple-400" />
-                            <span>{service.contactInfo.email}</span>
-                          </div>
-                          <div className="flex items-center gap-2">
-                            <MapPin className="w-3 h-3 text-pink-400" />
-                            <span>{service.contactInfo.address}</span>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Enhanced CTA Buttons */}
-                      <div className="flex flex-col sm:flex-row gap-3">
-                        <Button
-                          href={service.link}
-                          variant="quantum"
-                          className="flex-1 justify-center"
-                        >
-                          Learn More
-                        </Button>
-                        <Button
-                          href="#contact"
-                          variant="futuristic"
-                          className="flex-1 justify-center"
-                        >
-                          Get Started
-                        </Button>
-                      </div>
-                    </div>
-                  </Card>
+                  />
                 </motion.div>
               ))}
             </div>
@@ -687,90 +543,44 @@ export default function ServicesPage() {
                   viewport={{ once: true }}
                   className="group"
                 >
-                  <Card
-                    variant="futuristic"
-                    size="lg"
+                  <QuantumHolographicCard
+                    service={{
+                      id: `highlight-${index}`,
+                      name: service.title,
+                      tagline: service.description,
+                      price: service.price,
+                      period: '/month',
+                      description: service.description,
+                      features: service.features,
+                      popular: true,
+                      icon: '🚀',
+                      color: 'from-cyan-500 to-blue-600',
+                      textColor: 'text-cyan-400',
+                      link: service.link,
+                      marketPosition: service.marketPosition,
+                      targetAudience: 'Businesses looking for innovative solutions',
+                      trialDays: 30,
+                      setupTime: '1 week',
+                      category: 'Featured Services',
+                      realService: true,
+                      technology: ['AI', 'Machine Learning', 'Quantum Computing'],
+                      integrations: ['Cloud platforms', 'APIs', 'Enterprise systems'],
+                      useCases: ['Business transformation', 'Innovation', 'Competitive advantage'],
+                      roi: service.savings,
+                      competitors: ['Traditional solutions'],
+                      marketSize: service.marketData,
+                      growthRate: 'High growth',
+                      variant: 'quantum-advanced',
+                      contactInfo: service.contactInfo,
+                      realImplementation: true,
+                      implementationDetails: 'Advanced AI-powered platform',
+                      launchDate: '2024-01-01',
+                      customers: 1000,
+                      rating: 4.9,
+                      reviews: 500
+                    }}
                     className="h-full"
-                  >
-                    <div className="p-6">
-                      <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-cyan-400 transition-colors duration-300">
-                        {service.title}
-                      </h3>
-                      <p className="text-gray-300 mb-4 text-lg">
-                        {service.description}
-                      </p>
-                      
-                      {/* Enhanced Price and ROI Display */}
-                      <div className="bg-black/30 rounded-lg p-4 mb-4 border border-gray-700">
-                        <div className="flex justify-between items-center mb-2">
-                          <span className="text-2xl font-bold text-cyan-400">{service.price}</span>
-                          <span className="text-sm text-green-400 bg-green-900/20 px-2 py-1 rounded">
-                            {service.savings}
-                          </span>
-                        </div>
-                        <div className="text-sm text-gray-400">
-                          <div className="flex items-center gap-2 mb-1">
-                            <TrendingUp className="w-4 h-4 text-green-400" />
-                            <span>{service.marketData}</span>
-                          </div>
-                          <div className="flex items-center gap-2">
-                            <Shield className="w-4 h-4 text-blue-400" />
-                            <span>{service.marketPosition}</span>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Enhanced Features List */}
-                      <div className="mb-6">
-                        <h4 className="text-lg font-semibold text-white mb-3">Key Features:</h4>
-                        <ul className="space-y-2">
-                          {service.features.map((feature, featureIndex) => (
-                            <li key={featureIndex} className="flex items-start gap-3">
-                              <Check className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
-                              <span className="text-gray-300">{feature}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* Enhanced Contact Information */}
-                      <div className="bg-gradient-to-r from-gray-900/50 to-gray-800/50 rounded-lg p-4 mb-4 border border-gray-600">
-                        <h4 className="text-sm font-semibold text-cyan-400 mb-2">Contact Information:</h4>
-                        <div className="grid grid-cols-1 gap-2 text-xs text-gray-300">
-                          <div className="flex items-center gap-2">
-                            <Phone className="w-3 h-3 text-cyan-400" />
-                            <span>{service.contactInfo.mobile}</span>
-                          </div>
-                          <div className="flex items-center gap-2">
-                            <Mail className="w-3 h-3 text-purple-400" />
-                            <span>{service.contactInfo.email}</span>
-                          </div>
-                          <div className="flex items-center gap-2">
-                            <MapPin className="w-3 h-3 text-pink-400" />
-                            <span>{service.contactInfo.address}</span>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Enhanced CTA Buttons */}
-                      <div className="flex flex-col sm:flex-row gap-3">
-                        <Button
-                          href={service.link}
-                          variant="quantum"
-                          className="flex-1 justify-center"
-                        >
-                          Learn More
-                        </Button>
-                        <Button
-                          href="#contact"
-                          variant="futuristic"
-                          className="flex-1 justify-center"
-                        >
-                          Get Started
-                        </Button>
-                      </div>
-                    </div>
-                  </Card>
+                  />
                 </motion.div>
               ))}
             </div>
@@ -778,34 +588,37 @@ export default function ServicesPage() {
         </section>
 
         {/* CTA Section */}
-        <motion.div 
-          className="mt-20 text-center"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.4 }}
-        >
-          <div className="bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10 backdrop-blur-xl rounded-3xl p-12 border border-cyan-500/20">
-            <h2 className="text-4xl font-bold text-white mb-6">Ready to Transform Your Business?</h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Join thousands of companies already using our revolutionary micro SAAS services to gain competitive advantages and drive innovation.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                href="/contact"
-                className="px-8 py-4 text-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600"
-              >
-                Get Started Today
-              </Button>
-              <Button
-                href="/pricing"
-                variant="outline"
-                className="px-8 py-4 text-lg border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10"
-              >
-                View Pricing
-              </Button>
-            </div>
+        <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto text-center">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.4 }}
+            >
+              <div className="bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10 backdrop-blur-xl rounded-3xl p-12 border border-cyan-500/20">
+                <h2 className="text-4xl font-bold text-white mb-6">Ready to Transform Your Business?</h2>
+                <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                  Join thousands of companies already using our revolutionary micro SAAS services to gain competitive advantages and drive innovation.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button
+                    href="/contact"
+                    className="px-8 py-4 text-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600"
+                  >
+                    Get Started Today
+                  </Button>
+                  <Button
+                    href="/pricing"
+                    variant="outline"
+                    className="px-8 py-4 text-lg border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10"
+                  >
+                    View Pricing
+                  </Button>
+                </div>
+              </div>
+            </motion.div>
           </div>
-        </motion.div>
+        </section>
 
         {/* Contact Section */}
         <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
@@ -906,6 +719,7 @@ export default function ServicesPage() {
           </div>
         </section>
       </div>
-    </UltraAdvancedFuturisticBackground>
+      </QuantumMatrixBackground>
+    </div>
   );
 }
