@@ -6,7 +6,8 @@ import {
   Brain, Cpu, Rocket, Shield, 
   Zap, Globe, Star, Users,
   Target, Microscope, Atom, Database,
-  Lock, Cloud, BarChart3, Settings
+  Lock, Cloud, BarChart3, Settings,
+  TrendingUp, Stethoscope, GraduationCap, Leaf, Truck
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -105,6 +106,73 @@ const navigationItems: NavigationItem[] = [
       { name: 'IoT Ecosystem Platform', href: '/iot-ecosystem-platform', description: 'Internet of Things management' },
       { name: 'Metaverse Development Studio', href: '/metaverse-development-studio', description: 'Virtual world creation' },
       { name: 'Quantum Logistics Optimizer', href: '/quantum-logistics-optimizer', description: 'Supply chain optimization' }
+    ]
+  },
+  {
+    name: 'Financial Technology',
+    href: '/financial-technology',
+    icon: <TrendingUp className="w-5 h-5" />,
+    description: 'Innovative fintech and financial services',
+    badge: 'New',
+    children: [
+      { name: 'Quantum Trading Algorithm Pro', href: '/quantum-trading-algorithm', description: 'AI-powered trading algorithms' },
+      { name: 'DeFi Nexus Platform', href: '/defi-nexus-platform', description: 'Decentralized finance solutions' },
+      { name: 'AI Credit Intelligence', href: '/ai-credit-intelligence', description: 'AI-powered credit scoring' },
+      { name: 'InsurTech Pro Platform', href: '/insurtech-pro-platform', description: 'Insurance technology solutions' },
+      { name: 'RegTech Compliance Suite', href: '/regtech-compliance-suite', description: 'Regulatory compliance automation' }
+    ]
+  },
+  {
+    name: 'Healthcare & Biotech',
+    href: '/healthcare-biotech',
+    icon: <Shield className="w-5 h-5" />,
+    description: 'AI-powered healthcare solutions',
+    badge: 'Hot',
+    children: [
+      { name: 'AI Diagnostic Pro Platform', href: '/ai-diagnostic-platform', description: 'Medical AI diagnostics' },
+      { name: 'TeleMed Pro Platform', href: '/telemed-pro-platform', description: 'Telemedicine solutions' },
+      { name: 'BioTech Research Hub', href: '/biotech-research-hub', description: 'Biotechnology research platform' },
+      { name: 'Healthcare Analytics Pro', href: '/healthcare-analytics-pro', description: 'Healthcare analytics suite' },
+      { name: 'Mental Health AI Companion', href: '/mental-health-ai-companion', description: 'AI mental health support' }
+    ]
+  },
+  {
+    name: 'Education Technology',
+    href: '/education-technology',
+    icon: <Brain className="w-5 h-5" />,
+    description: 'AI-powered learning platforms',
+    children: [
+      { name: 'AI Learning Pro Platform', href: '/ai-learning-pro-platform', description: 'Personalized AI learning' },
+      { name: 'VR Education Studio', href: '/vr-education-studio', description: 'Virtual reality education' },
+      { name: 'Blockchain Credentials Pro', href: '/blockchain-credentials-pro', description: 'Secure credential verification' },
+      { name: 'AI Language Learning Pro', href: '/ai-language-learning-pro', description: 'AI language instruction' },
+      { name: 'STEM Education Hub', href: '/stem-education-hub', description: 'STEM learning platform' }
+    ]
+  },
+  {
+    name: 'Sustainability & Green Tech',
+    href: '/sustainability-green-tech',
+    icon: <Globe className="w-5 h-5" />,
+    description: 'Environmental technology solutions',
+    children: [
+      { name: 'CarbonTrack Pro Platform', href: '/carbon-track-pro-platform', description: 'Carbon footprint tracking' },
+      { name: 'Renewable Energy Optimizer Pro', href: '/renewable-energy-optimizer-pro', description: 'Energy optimization' },
+      { name: 'Smart Building Pro Platform', href: '/smart-building-pro-platform', description: 'Building automation' },
+      { name: 'Circular Economy Hub', href: '/circular-economy-hub', description: 'Circular economy platform' },
+      { name: 'Smart Water Management Pro', href: '/smart-water-management-pro', description: 'Water management system' }
+    ]
+  },
+  {
+    name: 'Logistics & Supply Chain',
+    href: '/logistics-supply-chain',
+    icon: <Rocket className="w-5 h-5" />,
+    description: 'Autonomous logistics solutions',
+    children: [
+      { name: 'Autonomous Logistics Pro', href: '/autonomous-logistics-pro', description: 'AI-powered logistics' },
+      { name: 'Supply Chain Visibility Pro', href: '/supply-chain-visibility-pro', description: 'Supply chain tracking' },
+      { name: 'Last Mile Delivery Optimizer Pro', href: '/last-mile-delivery-optimizer-pro', description: 'Delivery optimization' },
+      { name: 'Warehouse Automation Pro', href: '/warehouse-automation-pro', description: 'Warehouse automation' },
+      { name: 'Cross-Border Logistics Pro', href: '/cross-border-logistics-pro', description: 'International logistics' }
     ]
   },
   {

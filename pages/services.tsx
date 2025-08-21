@@ -14,6 +14,13 @@ import { innovativeAIServices2025 } from '../data/2025-innovative-ai-services';
 import { innovativeITServices2025 } from '../data/2025-innovative-it-services';
 import { emergingTechServices2025 } from '../data/2025-emerging-tech-services';
 
+// Import new innovative services
+import { innovativeFinancialServices2025 } from '../data/2025-innovative-financial-services';
+import { innovativeHealthcareServices2025 } from '../data/2025-innovative-healthcare-services';
+import { innovativeEducationServices2025 } from '../data/2025-innovative-education-services';
+import { innovativeSustainabilityServices2025 } from '../data/2025-innovative-sustainability-services';
+import { innovativeLogisticsServices2025 } from '../data/2025-innovative-logistics-services';
+
 // Import existing services for comprehensive coverage
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { innovativeMicroSaasServices } from '../data/innovative-micro-saas-services';
@@ -93,11 +100,56 @@ const serviceCategories: Array<{
     gradient: 'from-green-500/20 to-orange-500/20'
   },
   {
+    id: 'financial-technology',
+    title: '💰 Financial Technology',
+    description: 'Innovative fintech, DeFi, and financial services',
+    icon: TrendingUp,
+    color: 'from-green-500 to-emerald-500',
+    services: [...innovativeFinancialServices2025],
+    gradient: 'from-green-500/20 to-emerald-500/20'
+  },
+  {
+    id: 'healthcare-biotech',
+    title: '🏥 Healthcare & Biotech',
+    description: 'AI-powered healthcare and biotechnology solutions',
+    icon: Shield,
+    color: 'from-blue-500 to-indigo-500',
+    services: [...innovativeHealthcareServices2025],
+    gradient: 'from-blue-500/20 to-indigo-500/20'
+  },
+  {
+    id: 'education-technology',
+    title: '🎓 Education Technology',
+    description: 'AI-powered learning and educational innovation',
+    icon: Brain,
+    color: 'from-purple-500 to-pink-500',
+    services: [...innovativeEducationServices2025],
+    gradient: 'from-purple-500/20 to-pink-500/20'
+  },
+  {
+    id: 'sustainability-green-tech',
+    title: '🌱 Sustainability & Green Tech',
+    description: 'Environmental technology and sustainability solutions',
+    icon: Globe,
+    color: 'from-emerald-500 to-teal-500',
+    services: [...innovativeSustainabilityServices2025],
+    gradient: 'from-emerald-500/20 to-teal-500/20'
+  },
+  {
+    id: 'logistics-supply-chain',
+    title: '🚚 Logistics & Supply Chain',
+    description: 'Autonomous logistics and supply chain optimization',
+    icon: Rocket,
+    color: 'from-orange-500 to-red-500',
+    services: [...innovativeLogisticsServices2025],
+    gradient: 'from-orange-500/20 to-red-500/20'
+  },
+  {
     id: 'research-development',
     title: '🔬 Research & Development',
     description: 'Breakthrough technologies and innovations',
     icon: Microscope,
-    color: 'from-orange-500 to-red-500',
+    color: 'from-red-500 to-pink-500',
     services: [...enterpriseITServices],
     gradient: 'from-orange-500/20 to-pink-500/20'
   }
