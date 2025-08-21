@@ -21,6 +21,10 @@ export { databasePerformanceMonitorService } from './databasePerformanceMonitorS
 export { aiMarketplaceService } from './aiMarketplaceService';
 export { quantumComputingService } from './quantumComputingService';
 export { blockchainService } from './blockchainService';
+export { AIEvalService } from './aiEvalService';
+export { AIAgentOrchestratorService } from './aiAgentOrchestratorService';
+export { AIGuardrailsService } from './aiGuardrailsService';
+export { AgenticRAGService } from './agenticRAGService';
 
 // Export types
 export type {

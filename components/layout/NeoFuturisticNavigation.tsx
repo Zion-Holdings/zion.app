@@ -242,15 +242,21 @@ export default function NeoFuturisticNavigation() {
     },
     {
       name: 'Case Studies',
-      description: 'Success stories from clients',
-      icon: <ChartBar className="w-5 h-5" />,
+      description: 'Real-world success stories',
+      icon: <BarChart3 className="w-5 h-5" />,
       link: '/case-studies'
     },
     {
-      name: 'Resources',
-      description: 'Guides, templates, and tools',
-      icon: <Search className="w-5 h-5" />,
-      link: '/resources'
+      name: 'Pricing',
+      description: 'Transparent and flexible plans',
+      icon: <CreditCard className="w-5 h-5" />,
+      link: '/pricing'
+    },
+    {
+      name: 'Reports',
+      description: 'Live performance and audits',
+      icon: <Activity className="w-5 h-5" />,
+      link: '/reports'
     }
   ];
 
@@ -361,6 +367,30 @@ export default function NeoFuturisticNavigation() {
               className="text-gray-300 hover:text-white transition-colors duration-300 py-2"
             >
               Pricing
+            </Link>
+            <Link
+              href="/ai-evals"
+              className="text-gray-300 hover:text-white transition-colors duration-300 py-2"
+            >
+              AI Evals
+            </Link>
+            <Link
+              href="/agentic-rag"
+              className="text-gray-300 hover:text-white transition-colors duration-300 py-2"
+            >
+              Agentic RAG
+            </Link>
+            <Link
+              href="/ai-guardrails"
+              className="text-gray-300 hover:text-white transition-colors duration-300 py-2"
+            >
+              Guardrails
+            </Link>
+            <Link
+              href="/ai-agents"
+              className="text-gray-300 hover:text-white transition-colors duration-300 py-2"
+            >
+              Agents
             </Link>
 
             {/* Company Dropdown */}
