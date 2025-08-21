@@ -91,6 +91,7 @@ export default function UltraAdvancedNavigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -101,50 +102,48 @@ export default function UltraAdvancedNavigation() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleMenu = () => setIsOpen(!isOpen);
-  const closeMenu = () => setIsOpen(false);
-
   const toggleDropdown = (category: string) => {
     setActiveDropdown(activeDropdown === category ? null : category);
+  };
+
+  const closeMenu = () => {
+    setIsOpen(false);
+    setActiveDropdown(null);
   };
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
       isScrolled 
-        ? 'bg-gray-900/95 backdrop-blur-xl border-b border-cyan-500/30 shadow-2xl shadow-cyan-500/20' 
+        ? 'bg-gray-900/95 backdrop-blur-xl border-b border-gray-700/50 shadow-2xl' 
         : 'bg-transparent'
     }`}>
-      {/* Top Contact Bar */}
-      <div className="bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-pink-500/20 border-b border-cyan-500/30">
+      {/* Enhanced Top Contact Bar */}
+      <div className="bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-pink-500/20 border-b border-gray-700/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between py-2">
             <div className="flex items-center space-x-6 text-sm">
               <div className="flex items-center space-x-2 text-cyan-300 hover:text-cyan-200 transition-colors">
                 <Phone className="w-4 h-4" />
-                <a href={`tel:${contactInfo.mobile}`} className="hover:underline">
-                  {contactInfo.mobile}
-                </a>
+                <span className="hidden sm:inline">{contactInfo.mobile}</span>
+                <span className="sm:hidden">+1 302 464 0950</span>
               </div>
               <div className="flex items-center space-x-2 text-purple-300 hover:text-purple-200 transition-colors">
                 <Mail className="w-4 h-4" />
-                <a href={`mailto:${contactInfo.email}`} className="hover:underline">
-                  {contactInfo.email}
-                </a>
+                <span className="hidden sm:inline">{contactInfo.email}</span>
+                <span className="sm:hidden">kleber@ziontechgroup.com</span>
               </div>
-              <div className="flex items-center space-x-2 text-pink-300 hover:text-pink-200 transition-colors">
+              <div className="hidden lg:flex items-center space-x-2 text-green-300 hover:text-green-200 transition-colors">
                 <MapPin className="w-4 h-4" />
                 <span>{contactInfo.address}</span>
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <div className="flex items-center space-x-2 text-yellow-300">
-                <Star className="w-4 h-4 fill-current" />
-                <span className="font-semibold">1000+ Revolutionary Services</span>
-              </div>
-              <div className="flex items-center space-x-2 text-green-300">
-                <TrendingUp className="w-4 h-4" />
-                <span className="font-semibold">1000% ROI Guarantee</span>
-              </div>
+              <a 
+                href="/contact" 
+                className="hidden sm:inline-flex items-center px-3 py-1.5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-xs font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+              >
+                Get Started
+              </a>
             </div>
           </div>
         </div>
@@ -221,14 +220,10 @@ export default function UltraAdvancedNavigation() {
                                     <h4 className="font-medium text-white group-hover:text-cyan-300 transition-colors">
                                       {service.name}
                                     </h4>
-                                    <p className="text-sm text-gray-400 mt-1">
-                                      {service.description}
-                                    </p>
+                                    <p className="text-sm text-gray-400 mt-1">{service.description}</p>
                                   </div>
-                                  <div className="ml-3">
-                                    <span className="text-xs font-semibold text-cyan-400 bg-cyan-400/10 px-2 py-1 rounded-full">
-                                      {service.price}
-                                    </span>
+                                  <div className="ml-4 text-right">
+                                    <span className="text-xs font-semibold text-cyan-400">{service.price}</span>
                                   </div>
                                 </div>
                               </Link>
@@ -254,28 +249,26 @@ export default function UltraAdvancedNavigation() {
                 ))}
               </div>
 
-              {/* CTA Buttons */}
-              <div className="flex items-center space-x-4">
+              {/* CTA Button */}
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 <Link
                   href="/contact"
-                  className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transform hover:scale-105"
+                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40"
                 >
+                  <Rocket className="w-5 h-5 mr-2" />
                   Get Started
                 </Link>
-                <Link
-                  href="/pricing"
-                  className="px-6 py-3 border border-cyan-500/30 text-cyan-300 font-semibold rounded-xl hover:bg-cyan-500/10 transition-all duration-300"
-                >
-                  View Pricing
-                </Link>
-              </div>
+              </motion.div>
             </div>
 
             {/* Mobile Menu Button */}
             <div className="lg:hidden">
               <button
-                onClick={toggleMenu}
-                className="p-2 text-gray-300 hover:text-white transition-colors"
+                onClick={() => setIsOpen(!isOpen)}
+                className="text-gray-300 hover:text-white transition-colors duration-200"
               >
                 {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
@@ -295,66 +288,82 @@ export default function UltraAdvancedNavigation() {
             className="lg:hidden bg-gray-900/95 backdrop-blur-xl border-t border-gray-700/50"
           >
             <div className="px-4 py-6 space-y-6">
-              {serviceCategories.map((category) => (
-                <div key={category.title}>
-                  <h3 className="text-lg font-semibold text-white mb-3 flex items-center space-x-2">
-                    <category.icon className="w-5 h-5 text-cyan-400" />
-                    <span>{category.title}</span>
-                  </h3>
-                  <div className="space-y-2 ml-6">
-                    {category.services.map((service) => (
-                      <Link
-                        key={service.name}
-                        href={service.href}
-                        className="block p-3 rounded-lg hover:bg-gray-800/50 transition-colors duration-200"
-                        onClick={closeMenu}
-                      >
-                        <div className="flex items-start justify-between">
-                          <div className="flex-1">
-                            <h4 className="font-medium text-white">{service.name}</h4>
-                            <p className="text-sm text-gray-400 mt-1">
-                              {service.description}
-                            </p>
+              {/* Service Categories */}
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold text-white mb-4">Our Services</h3>
+                {serviceCategories.map((category) => (
+                  <div key={category.title} className="space-y-2">
+                    <div className="flex items-center space-x-2 text-cyan-300">
+                      <category.icon className="w-5 h-5" />
+                      <span className="font-medium">{category.title}</span>
+                    </div>
+                    <div className="ml-7 space-y-2">
+                      {category.services.map((service) => (
+                        <Link
+                          key={service.name}
+                          href={service.href}
+                          className="block p-3 rounded-lg hover:bg-gray-800/50 transition-colors duration-200"
+                          onClick={closeMenu}
+                        >
+                          <div className="flex items-start justify-between">
+                            <div className="flex-1">
+                              <h4 className="font-medium text-white">{service.name}</h4>
+                              <p className="text-sm text-gray-400 mt-1">{service.description}</p>
+                            </div>
+                            <span className="text-xs font-semibold text-cyan-400 ml-4">{service.price}</span>
                           </div>
-                          <span className="text-xs font-semibold text-cyan-400 bg-cyan-400/10 px-2 py-1 rounded-full ml-3">
-                            {service.price}
-                          </span>
-                        </div>
-                      </Link>
-                    ))}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
 
-              <div className="pt-6 border-t border-gray-700/50">
-                <div className="space-y-3">
+              {/* Company Links */}
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold text-white mb-4">Company</h3>
+                <div className="grid grid-cols-2 gap-4">
                   {companyLinks.map((link) => (
                     <Link
                       key={link.name}
                       href={link.href}
-                      className="block text-gray-300 hover:text-white transition-colors duration-200 font-medium"
+                      className="text-gray-300 hover:text-white transition-colors duration-200 font-medium"
                       onClick={closeMenu}
                     >
                       {link.name}
                     </Link>
                   ))}
                 </div>
-                <div className="mt-6 space-y-3">
-                  <Link
-                    href="/contact"
-                    className="block w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-xl text-center hover:from-cyan-600 hover:to-purple-700 transition-all duration-300"
-                    onClick={closeMenu}
-                  >
-                    Get Started
-                  </Link>
-                  <Link
-                    href="/pricing"
-                    className="block w-full px-6 py-3 border border-cyan-500/30 text-cyan-300 font-semibold rounded-xl text-center hover:bg-cyan-500/10 transition-all duration-300"
-                    onClick={closeMenu}
-                  >
-                    View Pricing
-                  </Link>
+              </div>
+
+              {/* Contact Info */}
+              <div className="space-y-4 pt-4 border-t border-gray-700/50">
+                <h3 className="text-lg font-semibold text-white mb-4">Contact Us</h3>
+                <div className="space-y-3">
+                  <div className="flex items-center space-x-3 text-gray-300">
+                    <Phone className="w-5 h-5 text-cyan-400" />
+                    <span>{contactInfo.mobile}</span>
+                  </div>
+                  <div className="flex items-center space-x-3 text-gray-300">
+                    <Mail className="w-5 h-5 text-purple-400" />
+                    <span>{contactInfo.email}</span>
+                  </div>
+                  <div className="flex items-center space-x-3 text-gray-300">
+                    <MapPin className="w-5 h-5 text-green-400" />
+                    <span className="text-sm">{contactInfo.address}</span>
+                  </div>
                 </div>
+              </div>
+
+              {/* CTA Button */}
+              <div className="pt-4">
+                <Link
+                  href="/contact"
+                  className="block w-full text-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-purple-700 transition-all duration-300"
+                  onClick={closeMenu}
+                >
+                  Get Started Today
+                </Link>
               </div>
             </div>
           </motion.div>
