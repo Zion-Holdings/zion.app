@@ -116,7 +116,6 @@ const serviceCategories = [
       { name: 'Zero Trust Network Architecture 2.0', href: '/zero-trust-network-architecture-2', description: 'Next-generation zero trust security with AI and quantum encryption', price: '$4,999/month' }
     ]
   }
-  }
 ];
 
 const companyLinks = [
