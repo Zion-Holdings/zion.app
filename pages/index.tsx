@@ -16,6 +16,9 @@ import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-
 import { extraServices } from '../data/extra-services';
 import { additionalEnhancedServices } from '../data/additional-real-services';
 import { innovativeMicroSaasServices } from '../data/innovative-micro-saas-services';
+import { innovativeAIServices } from '../data/innovative-ai-services';
+import { innovativeITServices } from '../data/innovative-it-services';
+import { innovativeMicroSaas } from '../data/innovative-micro-saas';
 
 export default function HomePage() {
   const heroStats = [
@@ -162,13 +165,13 @@ export default function HomePage() {
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
                 <motion.a
-                  href="/services"
+                  href="/innovative-services-showcase"
                   className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   <Rocket className="w-6 h-6 inline mr-2" />
-                  Explore Services
+                  Explore Innovative Services
                 </motion.a>
                 
                 <motion.a
@@ -347,6 +350,143 @@ export default function HomePage() {
                 <span>View All Services</span>
                 <ArrowRight className="w-6 h-6" />
               </motion.a>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Innovative Services Preview Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-gray-900/30 to-gray-800/30">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                  Innovative
+                </span> Services
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Experience the future of technology with our revolutionary AI, IT, and micro SaaS solutions. 
+                Each service is designed to transform your business and drive unprecedented growth.
+              </p>
+            </motion.div>
+
+            {/* Service Categories */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+              {/* AI Services */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
+                className="group cursor-pointer"
+              >
+                <div className="bg-gradient-to-br from-cyan-900/50 to-blue-900/50 p-8 rounded-2xl border border-cyan-500/30 transition-all duration-300 group-hover:scale-105 group-hover:border-cyan-400/50 group-hover:shadow-2xl group-hover:shadow-cyan-500/25">
+                  <Brain className="w-12 h-12 text-cyan-400 mx-auto mb-4" />
+                  <h3 className="text-2xl font-bold text-white mb-4 text-center">AI-Powered Services</h3>
+                  <p className="text-gray-300 text-center mb-6">
+                    Revolutionary AI solutions leveraging cutting-edge machine learning and neural networks.
+                  </p>
+                  <div className="space-y-2 text-sm text-gray-300">
+                    <div className="flex items-center">
+                      <Check className="w-4 h-4 text-cyan-400 mr-2" />
+                      Voice Cloning Studio
+                    </div>
+                    <div className="flex items-center">
+                      <Check className="w-4 h-4 text-cyan-400 mr-2" />
+                      Video Generation Platform
+                    </div>
+                    <div className="flex items-center">
+                      <Check className="w-4 h-4 text-cyan-400 mr-2" />
+                      Code Generation Copilot
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* IT Services */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="group cursor-pointer"
+              >
+                <div className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 p-8 rounded-2xl border border-purple-500/30 transition-all duration-300 group-hover:scale-105 group-hover:border-purple-400/50 group-hover:shadow-2xl group-hover:shadow-purple-500/25">
+                  <Cpu className="w-12 h-12 text-purple-400 mx-auto mb-4" />
+                  <h3 className="text-2xl font-bold text-white mb-4 text-center">Enterprise IT Solutions</h3>
+                  <p className="text-gray-300 text-center mb-6">
+                    Next-generation IT infrastructure and security solutions for modern enterprises.
+                  </p>
+                  <div className="space-y-2 text-sm text-gray-300">
+                    <div className="flex items-center">
+                      <Check className="w-4 h-4 text-purple-400 mr-2" />
+                      Zero Trust Security
+                    </div>
+                    <div className="flex items-center">
+                      <Check className="w-4 h-4 text-purple-400 mr-2" />
+                      Edge Computing Platform
+                    </div>
+                    <div className="flex items-center">
+                      <Check className="w-4 h-4 text-purple-400 mr-2" />
+                      Quantum Computing as a Service
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Micro SaaS */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="group cursor-pointer"
+              >
+                <div className="bg-gradient-to-br from-green-900/50 to-emerald-900/50 p-8 rounded-2xl border border-green-500/30 transition-all duration-300 group-hover:scale-105 group-hover:border-green-400/50 group-hover:shadow-2xl group-hover:shadow-green-500/25">
+                  <Rocket className="w-12 h-12 text-green-400 mx-auto mb-4" />
+                  <h3 className="text-2xl font-bold text-white mb-4 text-center">Micro SaaS Solutions</h3>
+                  <p className="text-gray-300 text-center mb-6">
+                    Specialized software solutions with AI-powered automation and smart workflows.
+                  </p>
+                  <div className="space-y-2 text-sm text-gray-300">
+                    <div className="flex items-center">
+                      <Check className="w-4 h-4 text-green-400 mr-2" />
+                      AI Invoice Processor
+                    </div>
+                    <div className="flex items-center">
+                      <Check className="w-4 h-4 text-green-400 mr-2" />
+                      Smart Contract Automation
+                    </div>
+                    <div className="flex items-center">
+                      <Check className="w-4 h-4 text-green-400 mr-2" />
+                      Customer Feedback Analyzer
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* CTA Button */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="text-center"
+            >
+              <a
+                href="/innovative-services-showcase"
+                className="inline-flex items-center bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25"
+              >
+                <Rocket className="w-6 h-6 mr-2" />
+                Explore All Innovative Services
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </a>
             </motion.div>
           </div>
         </section>
