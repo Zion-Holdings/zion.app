@@ -87,6 +87,11 @@ body {
   letter-spacing: 0.025em;
 }
 
+/* Prevent horizontal overflow from scale animations at the root */
+html, #__next {
+  overflow-x: hidden;
+}
+
 /* Enhanced Background Patterns */
 body::before {
   content: '';

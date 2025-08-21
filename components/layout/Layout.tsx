@@ -10,11 +10,11 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
 	return (
-		<div className="min-h-screen bg-black text-white">
+		<div className="min-h-screen bg-black text-white overflow-x-hidden">
 			<UltraAdvancedFuturisticBackground variant="quantum-holographic" intensity={0.85}>
 				<TopContactBar />
 				<UltraAdvancedNavigation />
-				<main className="pt-24 lg:pt-28">
+				<main className="pt-24 lg:pt-28 overflow-x-hidden">
 					{children}
 				</main>
 				<NeoFuturisticFooter />
