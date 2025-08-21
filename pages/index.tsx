@@ -9,7 +9,7 @@ import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, Exter
 
 export default function HomePage() {
   const heroStats = [
-    { value: '100+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
+    { value: '150+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
     { value: '99.9%', label: 'Uptime Guarantee', color: 'text-fuchsia-400' },
     { value: '14', label: 'Day Free Trials', color: 'text-blue-400' },
     { value: '24/7', label: 'AI Support', color: 'text-green-400' },
@@ -26,7 +26,7 @@ export default function HomePage() {
     {
       icon: <Cloud className="w-8 h-8 text-white" />,
       title: 'Real Micro SaaS Services',
-      description: '100+ fully functional micro SaaS tools with real implementations, not just mockups.',
+      description: '150+ fully functional micro SaaS tools with real implementations, not just mockups.',
       color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
       gradient: 'from-cyan-400 to-blue-500',
     },
@@ -101,8 +101,8 @@ export default function HomePage() {
     },
     {
       icon: '🔒',
-      title: 'Advanced Security',
-      description: 'Enterprise-grade security with zero-trust architecture and AI-powered threat detection.',
+      title: 'Cybersecurity',
+      description: 'Advanced security solutions including zero-trust architecture and AI-powered threat detection.',
       color: 'bg-gradient-to-br from-red-500 to-pink-600',
       textColor: 'text-red-400',
       gradient: 'from-red-400 to-pink-500',
@@ -110,26 +110,26 @@ export default function HomePage() {
     {
       icon: '📊',
       title: 'Data Analytics',
-      description: 'Real-time insights and predictive analytics to drive data-driven decision making.',
+      description: 'Comprehensive data analytics and business intelligence tools for informed decision-making.',
       color: 'bg-gradient-to-br from-green-500 to-emerald-600',
       textColor: 'text-green-400',
       gradient: 'from-green-400 to-emerald-500',
     },
     {
-      icon: '⚛️',
-      title: 'Quantum Computing',
-      description: 'Next-generation quantum solutions for complex optimization and machine learning problems.',
-      color: 'bg-gradient-to-br from-blue-500 to-indigo-600',
-      textColor: 'text-blue-400',
-      gradient: 'from-blue-400 to-indigo-500',
+      icon: '🚀',
+      title: 'Emerging Technologies',
+      description: 'Cutting-edge solutions in quantum computing, neuromorphic computing, and synthetic biology.',
+      color: 'bg-gradient-to-br from-violet-500 to-purple-600',
+      textColor: 'text-violet-400',
+      gradient: 'from-violet-400 to-purple-500',
     },
     {
-      icon: '🌐',
-      title: 'Blockchain & Web3',
-      description: 'Decentralized solutions for NFTs, DeFi, and the future of digital ownership.',
-      color: 'bg-gradient-to-br from-purple-500 to-violet-600',
-      textColor: 'text-purple-400',
-      gradient: 'from-purple-400 to-violet-500',
+      icon: '🏥',
+      title: 'Healthcare AI',
+      description: 'AI-powered healthcare solutions including medical imaging, drug discovery, and patient care.',
+      color: 'bg-gradient-to-br from-blue-500 to-cyan-600',
+      textColor: 'text-blue-400',
+      gradient: 'from-blue-400 to-cyan-500',
     },
   ];
 
@@ -191,7 +191,7 @@ export default function HomePage() {
   ];
 
   return (
-    <EnhancedFuturisticBackground variant="neural" intensity="high">
+    <EnhancedFuturisticBackground variant="quantum-advanced" intensity="high">
       <div className="min-h-screen">
         <Head>
           <title>Zion Tech Group - Revolutionary AI, Quantum Computing & Emerging Technology Solutions</title>
@@ -445,6 +445,106 @@ export default function HomePage() {
                   <p className="text-gray-300 leading-relaxed">{feature.description}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Information Section */}
+        <section className="py-20 bg-gradient-to-br from-gray-800/50 to-gray-900/50">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                Get in <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Touch</span>
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Ready to transform your business? Contact our team of experts today for personalized solutions and support.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+              <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 text-center transform hover:scale-105 transition-all duration-500 hover:shadow-2xl group">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
+                  <Phone className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-4">Phone Support</h3>
+                <p className="text-gray-300 mb-4">24/7 Technical Support</p>
+                <a 
+                  href={`tel:${contactInfo.mobile}`} 
+                  className="text-cyan-400 hover:text-cyan-300 transition-colors text-lg font-semibold"
+                >
+                  {contactInfo.mobile}
+                </a>
+              </div>
+
+              <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 text-center transform hover:scale-105 transition-all duration-500 hover:shadow-2xl group">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
+                  <Mail className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-4">Email Support</h3>
+                <p className="text-gray-300 mb-4">Quick Response Time</p>
+                <a 
+                  href={`mailto:${contactInfo.email}`} 
+                  className="text-purple-400 hover:text-purple-300 transition-colors text-lg font-semibold"
+                >
+                  {contactInfo.email}
+                </a>
+              </div>
+
+              <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 text-center transform hover:scale-105 transition-all duration-500 hover:shadow-2xl group">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
+                  <MapPin className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-4">Office Location</h3>
+                <p className="text-gray-300 mb-4">Visit Our Headquarters</p>
+                <p className="text-green-400 text-sm leading-relaxed">
+                  {contactInfo.address}
+                </p>
+              </div>
+
+              <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 text-center transform hover:scale-105 transition-all duration-500 hover:shadow-2xl group">
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
+                  <Globe className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-4">Website</h3>
+                <p className="text-gray-300 mb-4">Explore Our Platform</p>
+                <a 
+                  href={contactInfo.website} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-orange-400 hover:text-orange-300 transition-colors text-lg font-semibold"
+                >
+                  {contactInfo.website.replace('https://', '')}
+                </a>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 max-w-4xl mx-auto">
+                <h3 className="text-2xl font-bold text-white mb-6">Why Choose Zion Tech Group?</h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                  <div>
+                    <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                      <Check className="w-6 h-6 text-white" />
+                    </div>
+                    <h4 className="text-lg font-semibold text-white mb-2">150+ Real Services</h4>
+                    <p className="text-gray-400 text-sm">No mockups, only fully functional solutions</p>
+                  </div>
+                  <div>
+                    <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                      <Shield className="w-6 h-6 text-white" />
+                    </div>
+                    <h4 className="text-lg font-semibold text-white mb-2">Enterprise Security</h4>
+                    <p className="text-gray-400 text-sm">SOC 2 compliant with bank-level security</p>
+                  </div>
+                  <div>
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                      <Zap className="w-6 h-6 text-white" />
+                    </div>
+                    <h4 className="text-lg font-semibold text-white mb-2">Lightning Fast</h4>
+                    <p className="text-gray-400 text-sm">Get started in minutes, not days</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>

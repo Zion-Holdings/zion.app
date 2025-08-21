@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, Zap, Sparkles, ChevronDown } from 'lucide-react';
+import Button from '../ui/Button';
 
-const Header = () => {
+const Header: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isProductDropdownOpen, setIsProductDropdownOpen] = useState(false);
-  const router = useRouter();
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,140 +18,167 @@ const Header = () => {
   }, []);
 
   const navigation = [
-    { name: 'Product', href: '#', hasDropdown: true },
-    { name: 'Solutions', href: '/services' },
-    { name: 'Resources', href: '/resources' },
-    { name: 'Company', href: '/about' },
+    {
+      name: 'Services',
+      href: '/services',
+      description: '150+ Real Micro SaaS Solutions',
+      icon: <Zap className="w-5 h-5" />,
+      children: [
+        { name: 'AI & Machine Learning', href: '/services?category=AI%20%26%20Machine%20Learning' },
+        { name: 'Emerging Technology', href: '/services?category=Emerging%20Technology' },
+        { name: 'Cybersecurity', href: '/services?category=Cybersecurity' },
+        { name: 'Cloud & Infrastructure', href: '/services?category=Cloud%20%26%20Infrastructure' },
+        { name: 'Healthcare AI', href: '/services?category=Healthcare%20%26%20Life%20Sciences' },
+        { name: 'View All Services', href: '/services' }
+      ]
+    },
+    {
+      name: 'Solutions',
+      href: '/solutions',
+      description: 'Industry-Specific Solutions',
+      icon: <Sparkles className="w-5 h-5" />,
+      children: [
+        { name: 'Enterprise Solutions', href: '/solutions/enterprise' },
+        { name: 'Healthcare Solutions', href: '/solutions/healthcare' },
+        { name: 'Financial Services', href: '/solutions/financial' },
+        { name: 'Manufacturing', href: '/solutions/manufacturing' },
+        { name: 'Retail & E-commerce', href: '/solutions/retail' }
+      ]
+    },
     { name: 'Pricing', href: '/pricing' },
+    { name: 'About', href: '/about' },
+    { name: 'Contact', href: '/contact' }
   ];
 
-  const productDropdown = [
-    { name: 'AI Code Assistant', href: '/ai-assistant', description: 'Intelligent code completion and suggestions' },
-    { name: 'Cloud Platform', href: '/cloud-platform', description: 'Scalable cloud infrastructure' },
-    { name: 'Automation Hub', href: '/automation', description: 'AI-powered workflow automation' },
-    { name: 'Analytics', href: '/analytics', description: 'Real-time insights and reporting' },
-    { name: 'Micro SaaS Services', href: '/micro-saas', description: 'Specialized business solutions' },
-  ];
-
-  const isActive = (href: string) => router.pathname === href;
+  const contactInfo = {
+    mobile: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com'
+  };
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-black/80 backdrop-blur-xl border-b border-white/10'
-          : 'bg-transparent'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      isScrolled 
+        ? 'bg-gray-900/95 backdrop-blur-xl border-b border-gray-700/50 shadow-2xl' 
+        : 'bg-transparent'
+    }`}>
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
-            <div className="relative">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-2xl group-hover:shadow-blue-500/25">
-                <span className="text-white font-bold text-xl">Z</span>
-              </div>
-              <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl blur opacity-0 group-hover:opacity-75 transition-opacity duration-300 -z-10" />
+            <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <Zap className="w-6 h-6 text-white" />
             </div>
-            <span className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300">
-              Zion Tech
-            </span>
+            <div className="hidden sm:block">
+              <div className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">
+                Zion Tech Group
+              </div>
+              <div className="text-xs text-gray-400">Revolutionary Technology Solutions</div>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-1">
+          <nav className="hidden lg:flex items-center space-x-8">
             {navigation.map((item) => (
-              <div key={item.name} className="relative">
-                {item.hasDropdown ? (
-                  <div className="relative">
-                    <button
-                      onClick={() => setIsProductDropdownOpen(!isProductDropdownOpen)}
-                      className="flex items-center space-x-1 px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 rounded-lg hover:bg-white/5"
-                    >
-                      {item.name}
-                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isProductDropdownOpen ? 'rotate-180' : ''}`} />
-                    </button>
-                    
-                    {isProductDropdownOpen && (
-                      <div className="absolute top-full left-0 mt-2 w-80 bg-black/90 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl p-4">
-                        <div className="grid gap-3">
-                          {productDropdown.map((product) => (
-                            <Link
-                              key={product.name}
-                              href={product.href}
-                              className="flex flex-col p-3 rounded-lg hover:bg-white/5 transition-colors duration-200"
-                              onClick={() => setIsProductDropdownOpen(false)}
-                            >
-                              <div className="font-medium text-white mb-1">{product.name}</div>
-                              <div className="text-sm text-gray-400">{product.description}</div>
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    )}
+              <div key={item.name} className="relative group">
+                {item.children ? (
+                  <div
+                    className="flex items-center space-x-1 text-gray-300 hover:text-white transition-colors cursor-pointer py-2"
+                    onMouseEnter={() => setActiveDropdown(item.name)}
+                    onMouseLeave={() => setActiveDropdown(null)}
+                  >
+                    <span>{item.name}</span>
+                    <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform" />
                   </div>
                 ) : (
                   <Link
                     href={item.href}
-                    className={`px-4 py-2 text-sm font-medium transition-colors duration-200 rounded-lg ${
-                      isActive(item.href)
-                        ? 'text-blue-400 bg-blue-500/10'
-                        : 'text-gray-300 hover:text-white hover:bg-white/5'
-                    }`}
+                    className="text-gray-300 hover:text-white transition-colors py-2"
                   >
                     {item.name}
                   </Link>
+                )}
+
+                {/* Dropdown Menu */}
+                {item.children && activeDropdown === item.name && (
+                  <div
+                    className="absolute top-full left-0 mt-2 w-80 bg-gray-900/95 backdrop-blur-xl border border-gray-700/50 rounded-2xl shadow-2xl p-4"
+                    onMouseEnter={() => setActiveDropdown(item.name)}
+                    onMouseLeave={() => setActiveDropdown(null)}
+                  >
+                    <div className="flex items-center space-x-3 mb-4 p-3 bg-gradient-to-r from-gray-800/50 to-gray-700/50 rounded-xl">
+                      {item.icon}
+                      <div>
+                        <div className="font-semibold text-white">{item.name}</div>
+                        <div className="text-sm text-gray-400">{item.description}</div>
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      {item.children.map((child) => (
+                        <Link
+                          key={child.name}
+                          href={child.href}
+                          className="block p-3 text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-xl transition-all duration-200"
+                        >
+                          {child.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
                 )}
               </div>
             ))}
           </nav>
 
-          {/* CTA Buttons */}
-          <div className="hidden lg:flex items-center space-x-4">
-            <Link
-              href="/contact"
-              className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200"
-            >
-              Sign In
-            </Link>
-            <Link
-              href="/contact"
-              className="px-4 py-3 text-sm font-medium bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl"
-            >
+          {/* Contact Info & CTA */}
+          <div className="hidden lg:flex items-center space-x-6">
+            <div className="flex items-center space-x-4 text-sm">
+              <a
+                href={`tel:${contactInfo.mobile}`}
+                className="text-cyan-400 hover:text-cyan-300 transition-colors flex items-center"
+              >
+                <span className="hidden xl:inline">{contactInfo.mobile}</span>
+                <span className="xl:hidden">Call</span>
+              </a>
+              <a
+                href={`mailto:${contactInfo.email}`}
+                className="text-purple-400 hover:text-purple-300 transition-colors flex items-center"
+              >
+                <span className="hidden xl:inline">{contactInfo.email}</span>
+                <span className="xl:hidden">Email</span>
+              </a>
+            </div>
+            <Button href="/contact" variant="primary" size="sm">
               Get Started
-            </Link>
+            </Button>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile Menu Button */}
           <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors duration-200"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="lg:hidden p-2 text-gray-300 hover:text-white transition-colors"
           >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
-          <div className="lg:hidden">
-            <div className="px-4 pt-4 pb-6 space-y-2 bg-black/90 backdrop-blur-xl rounded-xl mt-2 border border-white/10 shadow-2xl">
+        {isMenuOpen && (
+          <div className="lg:hidden bg-gray-900/95 backdrop-blur-xl border-t border-gray-700/50">
+            <div className="py-6 space-y-4">
               {navigation.map((item) => (
                 <div key={item.name}>
-                  {item.hasDropdown ? (
+                  {item.children ? (
                     <div className="space-y-2">
-                      <div className="px-4 py-3 text-base font-medium text-white">
-                        {item.name}
-                      </div>
-                      <div className="pl-4 space-y-2">
-                        {productDropdown.map((product) => (
+                      <div className="px-4 py-2 text-gray-300 font-medium">{item.name}</div>
+                      <div className="pl-8 space-y-2">
+                        {item.children.map((child) => (
                           <Link
-                            key={product.name}
-                            href={product.href}
-                            className="block px-4 py-2 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors duration-200"
-                            onClick={() => setIsMobileMenuOpen(false)}
+                            key={child.name}
+                            href={child.href}
+                            className="block py-2 text-gray-400 hover:text-white transition-colors"
+                            onClick={() => setIsMenuOpen(false)}
                           >
-                            <div className="font-medium">{product.name}</div>
-                            <div className="text-xs text-gray-500">{product.description}</div>
+                            {child.name}
                           </Link>
                         ))}
                       </div>
@@ -160,33 +186,33 @@ const Header = () => {
                   ) : (
                     <Link
                       href={item.href}
-                      className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors duration-200 ${
-                        isActive(item.href)
-                          ? 'text-blue-400 bg-blue-500/10'
-                          : 'text-gray-300 hover:text-white hover:bg-white/5'
-                      }`}
-                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="block px-4 py-2 text-gray-300 hover:text-white transition-colors"
+                      onClick={() => setIsMenuOpen(false)}
                     >
                       {item.name}
                     </Link>
                   )}
                 </div>
               ))}
-              <div className="pt-4 border-t border-white/10 space-y-3">
-                <Link
-                  href="/contact"
-                  className="block px-4 py-3 text-base font-medium text-gray-300 hover:text-white transition-colors duration-200"
-                  onClick={() => setIsMobileMenuOpen(false)}
+              
+              {/* Mobile Contact Info */}
+              <div className="px-4 py-4 border-t border-gray-700/50 space-y-3">
+                <div className="text-sm text-gray-400">Contact Information</div>
+                <a
+                  href={`tel:${contactInfo.mobile}`}
+                  className="block text-cyan-400 hover:text-cyan-300 transition-colors"
                 >
-                  Sign In
-                </Link>
-                <Link
-                  href="/contact"
-                  className="block px-4 py-3 text-base font-medium bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200 text-center"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  {contactInfo.mobile}
+                </a>
+                <a
+                  href={`mailto:${contactInfo.email}`}
+                  className="block text-purple-400 hover:text-purple-300 transition-colors"
                 >
+                  {contactInfo.email}
+                </a>
+                <Button href="/contact" variant="primary" size="sm" className="w-full">
                   Get Started
-                </Link>
+                </Button>
               </div>
             </div>
           </div>
