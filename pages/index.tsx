@@ -38,6 +38,8 @@ import { enterpriseIT2026Services } from '../data/enterprise-it-2026-services';
 import { innovative2026MicroSaasServices } from '../data/innovative-2026-micro-saas';
 import { emergingTech2026Services as emergingTech2026ServicesNew } from '../data/emerging-tech-2026-services';
 import { enterpriseIT2026Services as enterpriseIT2026ServicesNew } from '../data/enterprise-it-2026-services';
+import { innovative2026MicroSaasServicesV2 } from '../data/innovative-2026-micro-saas-v2';
+import { emergingTech2026ServicesV2 } from '../data/emerging-tech-2026-v2';
 
 export default function HomePage() {
   const contactInfo = {
@@ -76,7 +78,9 @@ export default function HomePage() {
     ...enterpriseIT2026Services,
     ...innovative2026MicroSaasServices,
     ...emergingTech2026ServicesNew,
-    ...enterpriseIT2026ServicesNew
+    ...enterpriseIT2026ServicesNew,
+    ...innovative2026MicroSaasServicesV2,
+    ...emergingTech2026ServicesV2
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);

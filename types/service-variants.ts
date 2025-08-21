@@ -76,4 +76,8 @@ export type ServiceVariant =
   | 'integration-futuristic'
   | 'monitoring-futuristic'
   | 'backup-futuristic'
-  | 'analytics-futuristic';
+  | 'analytics-futuristic'
+  | 'emerging-tech'
+  | 'space-tech'
+  | 'autonomous-systems'
+  | 'quantum-futuristic';
