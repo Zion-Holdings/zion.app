@@ -58,6 +58,14 @@ export default function MicroSaasPage() {
     }
   ];
 
+  // Enhanced contact information
+  const contactInfo = {
+    mobile: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com'
+  };
+
   // Filter and sort services
   let filteredServices = selectedCategory === 'all' || selectedCategory === 'All'
     ? enhancedRealMicroSaasServices 
@@ -169,13 +177,6 @@ export default function MicroSaasPage() {
     }
   ];
 
-  const contactInfo = {
-    mobile: '+1 302 464 0950',
-    email: 'kleber@ziontechgroup.com',
-    address: '364 E Main St STE 1008 Middletown DE 19709',
-    website: 'https://ziontechgroup.com'
-  };
-
   return (
     <QuantumHolographicMatrixBackground intensity="high">
       <Head>
@@ -206,21 +207,45 @@ export default function MicroSaasPage() {
                 Achieve unprecedented ROI and competitive advantages.
               </p>
               
-              {/* Contact Information Banner */}
-              <div className="bg-gradient-to-r from-blue-900/50 to-purple-900/50 backdrop-blur-sm border border-blue-500/30 rounded-2xl p-6 mb-8">
-                <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-center">
-                  <div className="flex items-center gap-2">
-                    <Phone className="w-5 h-5 text-blue-400" />
-                    <span className="text-blue-400 font-semibold">+1 302 464 0950</span>
+              {/* Enhanced Contact Information Banner */}
+              <div className="bg-gradient-to-r from-blue-900/60 to-purple-900/60 backdrop-blur-md border-2 border-blue-400/40 rounded-3xl p-8 mb-8 shadow-2xl shadow-blue-500/20">
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-bold text-white mb-2">Ready to Transform Your Business?</h3>
+                  <p className="text-blue-200 text-lg">Get in touch with our AI experts today</p>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="flex flex-col items-center gap-3 p-4 bg-gradient-to-br from-blue-800/40 to-blue-700/40 rounded-2xl border border-blue-400/30 hover:border-blue-300/50 transition-all duration-300 hover:scale-105">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
+                      <Phone className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="text-center">
+                      <p className="text-blue-200 text-sm font-medium">Phone</p>
+                      <p className="text-blue-100 font-bold text-lg">{contactInfo.mobile}</p>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Mail className="w-5 h-5 text-purple-400" />
-                    <span className="text-purple-400 font-semibold">kleber@ziontechgroup.com</span>
+                  <div className="flex flex-col items-center gap-3 p-4 bg-gradient-to-br from-purple-800/40 to-purple-700/40 rounded-2xl border border-purple-400/30 hover:border-purple-300/50 transition-all duration-300 hover:scale-105">
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center">
+                      <Mail className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="text-center">
+                      <p className="text-purple-200 text-sm font-medium">Email</p>
+                      <p className="text-purple-100 font-bold text-lg">{contactInfo.email}</p>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <MapPin className="w-5 h-5 text-green-400" />
-                    <span className="text-green-400 font-semibold">364 E Main St STE 1008 Middletown DE 19709</span>
+                  <div className="flex flex-col items-center gap-3 p-4 bg-gradient-to-br from-green-800/40 to-green-700/40 rounded-2xl border border-green-400/30 hover:border-green-300/50 transition-all duration-300 hover:scale-105">
+                    <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center">
+                      <MapPin className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="text-center">
+                      <p className="text-green-200 text-sm font-medium">Address</p>
+                      <p className="text-green-100 font-bold text-lg">{contactInfo.address}</p>
+                    </div>
                   </div>
+                </div>
+                <div className="text-center mt-6">
+                  <p className="text-blue-200 text-sm">
+                    Visit our website: <a href={contactInfo.website} className="text-blue-300 hover:text-blue-200 underline font-semibold" target="_blank" rel="noopener noreferrer">{contactInfo.website}</a>
+                  </p>
                 </div>
               </div>
             </motion.div>

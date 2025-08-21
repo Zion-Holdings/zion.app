@@ -107,6 +107,54 @@ export default function HomePage() {
       marketData: '$6B climate technology market, 320% annual growth',
       competitors: 'Traditional climate models ($5000+/month), Weather services ($1000+/month), Environmental consulting ($2000+/month)',
       savings: 'Save 50% vs. competitors'
+    },
+    {
+      title: '🚀 Quantum AI Space Exploration Platform',
+      icon: '🚀',
+      description: 'Breakthrough quantum AI platform for autonomous space exploration, satellite management, and interplanetary navigation. Achieve 3000% ROI through space technology innovation.',
+      price: 'Starting at $4,999/month',
+      features: ['Quantum-enhanced space navigation', 'AI-powered satellite constellation management', 'Autonomous space mission planning', 'Real-time space debris tracking'],
+      link: 'https://ziontechgroup.com/quantum-ai-space-exploration',
+      color: 'from-purple-600 to-indigo-700',
+      marketData: '$18B space technology market, 520% annual growth',
+      competitors: 'SpaceX Starlink ($99/month), Traditional satellite services ($5000+/month), Space agencies ($10000+/month)',
+      savings: 'Save 90% vs. competitors'
+    },
+    {
+      title: '🏭 AI Autonomous Manufacturing Platform',
+      icon: '🏭',
+      description: 'Revolutionary AI-powered manufacturing platform that autonomously optimizes production, predicts maintenance, and manages quality control. Achieve 1800% ROI through complete automation.',
+      price: 'Starting at $2,199/month',
+      features: ['Autonomous production optimization', 'AI-powered predictive maintenance', 'Real-time quality control', 'Automated supply chain management'],
+      link: 'https://ziontechgroup.com/ai-autonomous-manufacturing',
+      color: 'from-orange-600 to-red-700',
+      marketData: '$22B manufacturing AI market, 350% annual growth',
+      competitors: 'Siemens Mindsphere ($500+/month), GE Predix ($400+/month), PTC ThingWorx ($300+/month)',
+      savings: 'Save 75% vs. competitors'
+    },
+    {
+      title: '🏥 Quantum AI Healthcare Diagnostics Platform',
+      icon: '🏥',
+      description: 'Breakthrough quantum AI platform for medical diagnostics that provides 99.99% accuracy in disease detection and treatment recommendations. Achieve 2500% ROI through improved healthcare outcomes.',
+      price: 'Starting at $3,299/month',
+      features: ['Quantum-enhanced medical imaging analysis', 'AI-powered disease detection', 'Predictive health analytics', 'Personalized treatment recommendations'],
+      link: 'https://ziontechgroup.com/quantum-ai-healthcare-diagnostics',
+      color: 'from-teal-600 to-cyan-700',
+      marketData: '$35B healthcare AI market, 420% annual growth',
+      competitors: 'IBM Watson Health ($2000+/month), Google Health ($1500+/month), Microsoft Healthcare ($1800+/month)',
+      savings: 'Save 60% vs. competitors'
+    },
+    {
+      title: '⚖️ AI Autonomous Legal Platform',
+      icon: '⚖️',
+      description: 'Breakthrough AI-powered legal platform that automates contract analysis, legal research, and compliance management. Achieve 1200% ROI through legal process automation.',
+      price: 'Starting at $1,299/month',
+      features: ['AI-powered contract analysis and review', 'Automated legal research', 'Compliance monitoring and reporting', 'Risk assessment automation'],
+      link: 'https://ziontechgroup.com/ai-autonomous-legal-platform',
+      color: 'from-amber-600 to-orange-700',
+      marketData: '$18B legal AI market, 320% annual growth',
+      competitors: 'LexisNexis ($200+/month), Westlaw ($200+/month), Thomson Reuters ($300+/month)',
+      savings: 'Save 80% vs. competitors'
     }
   ];
 
@@ -187,7 +235,7 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
                   href="/micro-saas"
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold rounded-xl"
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold rounded-xl transform hover:scale-105 transition-all duration-300 shadow-2xl shadow-blue-500/30"
                 >
                   Explore Services
                   <ArrowRight className="w-5 h-5 ml-2" />
@@ -195,10 +243,58 @@ export default function HomePage() {
                 <Button
                   href="https://ziontechgroup.com/contact"
                   variant="outline"
-                  className="border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black px-8 py-4 text-lg font-semibold rounded-xl"
+                  className="border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black px-8 py-4 text-lg font-semibold rounded-xl transform hover:scale-105 transition-all duration-300 shadow-2xl shadow-cyan-500/30"
                 >
                   Get Started
                 </Button>
+              </div>
+              
+              {/* Futuristic Innovation Showcase */}
+              <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="group relative"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                  <div className="relative bg-gradient-to-br from-purple-900/40 to-pink-900/40 backdrop-blur-xl border border-purple-400/30 rounded-3xl p-8 hover:border-purple-300/50 transition-all duration-500 hover:scale-105">
+                    <div className="text-6xl mb-4">🚀</div>
+                    <h3 className="text-2xl font-bold text-white mb-3">Space Technology</h3>
+                    <p className="text-purple-200 mb-4">Revolutionary quantum AI space exploration platform with autonomous navigation and satellite management.</p>
+                    <div className="text-purple-300 text-sm font-semibold">Starting at $4,999/month</div>
+                  </div>
+                </motion.div>
+                
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  className="group relative"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                  <div className="relative bg-gradient-to-br from-cyan-900/40 to-blue-900/40 backdrop-blur-xl border border-cyan-400/30 rounded-3xl p-8 hover:border-cyan-300/50 transition-all duration-500 hover:scale-105">
+                    <div className="text-6xl mb-4">🤖</div>
+                    <h3 className="text-3xl font-bold text-white mb-3">Cybernetics</h3>
+                    <p className="text-cyan-200 mb-4">Breakthrough quantum AI cybernetics platform for human-machine integration and enhancement.</p>
+                    <div className="text-cyan-300 text-sm font-semibold">Starting at $6,999/month</div>
+                  </div>
+                </motion.div>
+                
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.6 }}
+                  className="group relative"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-600/20 to-teal-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                  <div className="relative bg-gradient-to-br from-emerald-900/40 to-teal-900/40 backdrop-blur-xl border border-emerald-400/30 rounded-3xl p-8 hover:border-emerald-300/50 transition-all duration-500 hover:scale-105">
+                    <div className="text-6xl mb-4">💊</div>
+                    <h3 className="text-2xl font-bold text-white mb-3">Drug Discovery</h3>
+                    <p className="text-emerald-200 mb-4">Quantum AI platform that accelerates drug discovery by 1000x with molecular modeling.</p>
+                    <div className="text-cyan-300 text-sm font-semibold">Starting at $2,999/month</div>
+                  </div>
+                </motion.div>
               </div>
             </motion.div>
           </div>
