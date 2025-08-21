@@ -22,6 +22,7 @@ import { emergingTechnologyServices } from '../data/emerging-technology-services
 import { comprehensiveITSolutions } from '../data/comprehensive-it-solutions';
 import { realMarketServices } from '../data/real-market-services';
 import { serviceExpansions2025 } from '../data/service-expansions-2025';
+import { realOperationalServices } from '../data/real-operational-services';
 
 export default function HomePage() {
   const contactInfo = {
@@ -44,7 +45,8 @@ export default function HomePage() {
     ...emergingTechnologyServices,
     ...comprehensiveITSolutions,
     ...realMarketServices,
-    ...serviceExpansions2025
+    ...serviceExpansions2025,
+    ...realOperationalServices
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);

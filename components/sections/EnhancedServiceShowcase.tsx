@@ -14,6 +14,8 @@ import { emergingTechnologyServices } from '../../data/emerging-technology-servi
 import { comprehensiveITSolutions } from '../../data/comprehensive-it-solutions';
 import { marketValidatedServices } from '../../data/market-validated-services';
 import { newRealInnovations } from '../../data/new-real-innovations';
+import { realMarketServices } from '../../data/real-market-services';
+import { realOperationalServices } from '../../data/real-operational-services';
 
 interface ServiceShowcaseProps {
   className?: string;
@@ -40,7 +42,9 @@ const EnhancedServiceShowcase: React.FC<ServiceShowcaseProps> = ({
     ...emergingTechnologyServices,
     ...comprehensiveITSolutions,
     ...marketValidatedServices,
-    ...newRealInnovations
+    ...newRealInnovations,
+    ...realMarketServices,
+    ...realOperationalServices
   ];
 
   const categories = [
