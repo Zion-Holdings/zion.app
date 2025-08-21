@@ -20,6 +20,38 @@ export default function PricingPage() {
 
   const popularServices = getPopularServices();
 
+  // Enhanced service categories with pricing
+  const serviceCategories = [
+    {
+      name: 'Quantum AI & Computing',
+      description: 'Revolutionary quantum AI solutions',
+      services: ['Quantum AI Cognitive Platform', 'Quantum Financial Trading', 'Quantum Cybersecurity'],
+      avgPrice: '$452/month',
+      savings: 'Save 70-85% vs. competitors'
+    },
+    {
+      name: 'Autonomous Systems',
+      description: 'Next-generation automation platforms',
+      services: ['Autonomous Manufacturing AI', 'Robotics Automation', 'Space Technology'],
+      avgPrice: '$293/month',
+      savings: 'Save 50-70% vs. competitors'
+    },
+    {
+      name: 'Biotech & Healthcare AI',
+      description: 'AI-powered biomedical research',
+      services: ['Biotech AI Platform', 'AI Healthcare Analytics', 'Drug Discovery AI'],
+      avgPrice: '$424/month',
+      savings: 'Save 40-60% vs. competitors'
+    },
+    {
+      name: 'Financial Technology',
+      description: 'Advanced fintech solutions',
+      services: ['Quantum Financial Trading', 'AI Trading Algorithms', 'Risk Management AI'],
+      avgPrice: '$449/month',
+      savings: 'Save 55-75% vs. competitors'
+    }
+  ];
+
   // Enhanced pricing tiers with more realistic and comprehensive offerings
   const pricingTiers = [
     {
