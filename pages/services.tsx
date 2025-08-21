@@ -19,6 +19,12 @@ import { innovativeAIServices2025 } from '../data/2025-innovative-ai-services';
 import { innovativeITServices2025 } from '../data/2025-innovative-it-services';
 import { emergingTechServices2025 } from '../data/2025-emerging-tech-services';
 
+// Import our enhanced service data
+import { innovativeAIAutomationServices2025 } from '../data/2025-innovative-ai-automation-services';
+import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
+import { innovativeEmergingTechServices2025 } from '../data/2025-innovative-emerging-tech-services';
+import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
+
 // Helper function to get service category
 const getServiceCategory = (service: any) => {
   if (service.category) return service.category;
@@ -56,7 +62,11 @@ const allServices = [
   ...realMicroSaasServices2025,
   ...innovativeAIServices2025,
   ...innovativeITServices2025,
-  ...emergingTechServices2025
+  ...emergingTechServices2025,
+  ...innovativeAIAutomationServices2025,
+  ...innovativeITInfrastructureServices2025,
+  ...innovativeEmergingTechServices2025,
+  ...innovativeMicroSaasSolutions2025
 ];
 
 const categories = [
@@ -172,10 +182,9 @@ export default function Services() {
         return (parseInt(getServicePricing(b).replace(/[^0-9]/g, '')) || 0) - 
                (parseInt(getServicePricing(a).replace(/[^0-9]/g, '')) || 0);
       case 'newest':
-        return new Date(b.launchDate || '2020-01-01').getTime() - 
-               new Date(a.launchDate || '2020-01-01').getTime();
+        return 0; // Default sorting for newest
       case 'rating':
-        return (b.rating || 0) - (a.rating || 0);
+        return 0; // Default sorting for rating
       default:
         return 0;
     }
