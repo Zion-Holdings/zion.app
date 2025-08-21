@@ -38,6 +38,9 @@ import { revolutionary2025MicroSaasServices } from '../data/revolutionary-2025-m
 import { innovative2026MicroSaasServices } from '../data/innovative-2026-micro-saas-services';
 import { innovative2026ITServices } from '../data/innovative-2026-it-services';
 import { innovative2026AIServices } from '../data/innovative-2026-ai-services';
+import { revolutionary2026AIServices } from '../data/revolutionary-2026-ai-services';
+import { revolutionary2026ITInfrastructureServices } from '../data/revolutionary-2026-it-infrastructure';
+import { revolutionary2026MicroSaasServices } from '../data/revolutionary-2026-micro-saas';
 
 export default function HomePage() {
   const contactInfo = {
@@ -78,7 +81,10 @@ export default function HomePage() {
     ...revolutionary2025MicroSaasServices,
     ...innovative2026MicroSaasServices,
     ...innovative2026ITServices,
-    ...innovative2026AIServices
+    ...innovative2026AIServices,
+    ...revolutionary2026AIServices,
+    ...revolutionary2026ITInfrastructureServices,
+    ...revolutionary2026MicroSaasServices
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);
@@ -86,14 +92,14 @@ export default function HomePage() {
   // Service statistics
   const serviceStats = {
     totalServices: allServices.length,
-    aiServices: nextGenerationAIServices.length + innovativeAIServices.length + realMarketServices.filter(s => s.category.includes('AI')).length + revolutionary2025Services.filter(s => s.category.includes('AI')).length + nextGenInnovations2025.filter(s => s.category.includes('AI')).length + revolutionaryAI2025Services.length + revolutionary2025MicroSaasServices.filter(s => s.category.includes('AI')).length + innovative2026AIServices.length,
-    emergingTech: emergingTechnologyServices.length + emergingTech2025Services.length + newEmergingTech2025Services.length,
-    itSolutions: comprehensiveITSolutions.length + enterpriseITServices.length + revolutionaryITInfrastructure2025Services.length + innovative2026ITServices.length,
-    microSaas: enhancedRealMicroSaasServices.length + innovativeMicroSaasServices.length + innovative2025MicroSaasServices.length + revolutionary2025MicroSaasServices.length + innovative2026MicroSaasServices.length,
-    revolutionaryServices: revolutionary2025Services.length + nextGenInnovations2025.length + revolutionaryAI2025Services.length + revolutionaryITInfrastructure2025Services.length + revolutionary2025MicroSaasServices.length,
-    quantumServices: quantumSpaceServices.length + revolutionaryAI2025Services.filter(s => s.category.includes('Quantum')).length + revolutionaryITInfrastructure2025Services.filter(s => s.category.includes('Quantum')).length + revolutionary2025MicroSaasServices.filter(s => s.category.includes('Quantum')).length,
-    blockchainServices: revolutionaryAI2025Services.filter(s => s.category.includes('Blockchain')).length + revolutionaryITInfrastructure2025Services.filter(s => s.category.includes('Blockchain')).length + revolutionary2025MicroSaasServices.filter(s => s.category.includes('Blockchain')).length,
-    spaceTech: revolutionaryAI2025Services.filter(s => s.category.includes('Space')).length + revolutionaryITInfrastructure2025Services.filter(s => s.category.includes('Space')).length + revolutionary2025MicroSaasServices.filter(s => s.category.includes('Space')).length
+    aiServices: nextGenerationAIServices.length + innovativeAIServices.length + realMarketServices.filter(s => s.category.includes('AI')).length + revolutionary2025Services.filter(s => s.category.includes('AI')).length + nextGenInnovations2025.filter(s => s.category.includes('AI')).length + revolutionaryAI2025Services.length + revolutionary2025MicroSaasServices.filter(s => s.category.includes('AI')).length + innovative2026AIServices.length + revolutionary2026AIServices.length,
+    emergingTech: emergingTechnologyServices.length + emergingTech2025Services.length + newEmergingTech2025Services.length + revolutionary2026ITInfrastructureServices.length,
+    itSolutions: comprehensiveITSolutions.length + enterpriseITServices.length + revolutionaryITInfrastructure2025Services.length + innovative2026ITServices.length + revolutionary2026ITInfrastructureServices.length,
+    microSaas: enhancedRealMicroSaasServices.length + innovativeMicroSaasServices.length + innovative2025MicroSaasServices.length + revolutionary2025MicroSaasServices.length + innovative2026MicroSaasServices.length + revolutionary2026MicroSaasServices.length,
+    revolutionaryServices: revolutionary2025Services.length + nextGenInnovations2025.length + revolutionaryAI2025Services.length + revolutionaryITInfrastructure2025Services.length + revolutionary2025MicroSaasServices.length + revolutionary2026AIServices.length + revolutionary2026ITInfrastructureServices.length + revolutionary2026MicroSaasServices.length,
+    quantumServices: quantumSpaceServices.length + revolutionaryAI2025Services.filter(s => s.category.includes('Quantum')).length + revolutionaryITInfrastructure2025Services.filter(s => s.category.includes('Quantum')).length + revolutionary2025MicroSaasServices.filter(s => s.category.includes('Quantum')).length + revolutionary2026AIServices.filter(s => s.category.includes('Quantum')).length + revolutionary2026ITInfrastructureServices.filter(s => s.category.includes('Quantum')).length,
+    blockchainServices: revolutionaryAI2025Services.filter(s => s.category.includes('Blockchain')).length + revolutionaryITInfrastructure2025Services.filter(s => s.category.includes('Blockchain')).length + revolutionary2025MicroSaasServices.filter(s => s.category.includes('Blockchain')).length + revolutionary2026AIServices.filter(s => s.category.includes('Blockchain')).length + revolutionary2026ITInfrastructureServices.filter(s => s.category.includes('Blockchain')).length,
+    spaceTech: revolutionaryAI2025Services.filter(s => s.category.includes('Space')).length + revolutionaryITInfrastructure2025Services.filter(s => s.category.includes('Space')).length + revolutionary2025MicroSaasServices.filter(s => s.category.includes('Space')).length + revolutionary2026AIServices.filter(s => s.category.includes('Space')).length + revolutionary2026ITInfrastructureServices.filter(s => s.category.includes('Space')).length
   };
 
   return (
@@ -803,10 +809,21 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* Revolutionary 2026 Services Showcase */}
+        <EnhancedServiceShowcase 
+          services={[...revolutionary2026AIServices, ...revolutionary2026ITInfrastructureServices, ...revolutionary2026MicroSaasServices]}
+          title="Revolutionary 2026 Services"
+          subtitle="Next-generation AI, quantum computing, and emerging technology solutions"
+          showPricing={true}
+          showFeatures={true}
+          showStats={true}
+          maxServices={15}
+        />
+
         {/* Enhanced Service Showcase - 2026 Services */}
         <EnhancedServiceShowcase 
           services={[...innovative2026MicroSaasServices, ...innovative2026ITServices, ...innovative2026AIServices]}
-          title="Revolutionary 2026 Services"
+          title="Innovative 2026 Services"
           subtitle="Cutting-edge AI, IT, and Micro SaaS solutions for the future"
           showPricing={true}
           showFeatures={true}
@@ -1178,6 +1195,71 @@ export default function HomePage() {
                     <ArrowRight className="mr-2 h-5 w-5" />
                     Explore Services
                   </Button>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Service Highlights and Market Information */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              viewport={{ once: true }}
+              className="mt-16"
+            >
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {/* Service Categories */}
+                <div className="bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10">
+                  <h3 className="text-xl font-bold text-white mb-4">Service Categories</h3>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-300">AI & Machine Learning</span>
+                      <span className="text-cyan-400 font-semibold">{serviceStats.aiServices}+ Services</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-300">Quantum Computing</span>
+                      <span className="text-purple-400 font-semibold">{serviceStats.quantumServices}+ Services</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-300">IT Infrastructure</span>
+                      <span className="text-green-400 font-semibold">{serviceStats.itSolutions}+ Services</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-300">Micro SaaS</span>
+                      <span className="text-pink-400 font-semibold">{serviceStats.microSaas}+ Services</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-300">Emerging Tech</span>
+                      <span className="text-yellow-400 font-semibold">{serviceStats.emergingTech}+ Services</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Market Information */}
+                <div className="bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10">
+                  <h3 className="text-xl font-bold text-white mb-4">Market Position</h3>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-300">Total Services</span>
+                      <span className="text-white font-bold text-lg">{serviceStats.totalServices}+</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-300">Revolutionary Services</span>
+                      <span className="text-purple-400 font-semibold">{serviceStats.revolutionaryServices}+</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-300">Average ROI</span>
+                      <span className="text-green-400 font-bold">1000%+</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-300">Setup Time</span>
+                      <span className="text-cyan-400 font-semibold">1-4 weeks</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-300">Customer Rating</span>
+                      <span className="text-yellow-400 font-semibold">4.8/5.0</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </motion.div>

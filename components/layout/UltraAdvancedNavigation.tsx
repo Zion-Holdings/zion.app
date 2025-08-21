@@ -17,23 +17,36 @@ const contactInfo = {
 
 const serviceCategories = [
   {
-    title: 'Revolutionary 2025 AI',
+    title: 'Revolutionary 2026 AI',
     icon: Brain,
     services: [
-      { name: 'AI Consciousness Simulator', href: '/ai-consciousness-simulator', description: 'Simulate human-like consciousness in AI systems', price: '$2,999/month' },
-      { name: 'AI Quantum Hybrid Computing', href: '/ai-quantum-hybrid-computing', description: 'Hybrid AI-Quantum computing for complex problem solving', price: '$4,999/month' },
-      { name: 'AI Multimodal Fusion Platform', href: '/ai-multimodal-fusion-platform', description: 'Unified AI platform for text, image, audio, and video processing', price: '$1,999/month' },
-      { name: 'AI Autonomous Decision Engine', href: '/ai-autonomous-decision-engine', description: 'AI system that makes complex decisions autonomously', price: '$3,499/month' }
+      { name: 'AI Consciousness Simulator Pro', href: '/ai-consciousness-simulator-pro', description: 'Simulate human-like consciousness in AI systems', price: '$4,999/month' },
+      { name: 'Quantum AI Hybrid Computing', href: '/quantum-ai-hybrid-computing', description: 'Hybrid AI-Quantum computing for complex problem solving', price: '$7,999/month' },
+      { name: 'AI Multimodal Fusion Platform', href: '/ai-multimodal-fusion-platform', description: 'Unified AI platform for text, image, audio, and video processing', price: '$2,999/month' },
+      { name: 'AI Autonomous Decision Engine', href: '/ai-autonomous-decision-engine', description: 'AI system that makes complex decisions autonomously', price: '$5,999/month' },
+      { name: 'AI Emotional Intelligence Platform', href: '/ai-emotional-intelligence-platform', description: 'Advanced AI with human-like emotional understanding', price: '$3,999/month' }
     ]
   },
   {
-    title: '2026 AI Services',
-    icon: Sparkles,
+    title: 'Revolutionary 2026 IT',
+    icon: Cpu,
     services: [
-      { name: 'AI Predictive Analytics Platform', href: '/ai-predictive-analytics-platform', description: 'Predict the future with AI-powered analytics', price: '$1,299/month' },
-      { name: 'AI Natural Language Processing', href: '/ai-natural-language-processing', description: 'Understand and process human language with AI', price: '$899/month' },
-      { name: 'AI Computer Vision Platform', href: '/ai-computer-vision-platform', description: 'See and understand images with AI intelligence', price: '$1,199/month' },
-      { name: 'AI Fraud Detection System', href: '/ai-fraud-detection-system', description: 'Detect and prevent fraud with AI intelligence', price: '$1,499/month' }
+      { name: 'Neuromorphic Computing Platform', href: '/neuromorphic-computing-platform', description: 'Brain-inspired computing for next-generation AI', price: '$12,999/month' },
+      { name: 'DNA Computing Platform', href: '/dna-computing-platform', description: 'Molecular computing for complex problem solving', price: '$15,999/month' },
+      { name: 'Photonic Computing Platform', href: '/photonic-computing-platform', description: 'Light-speed computing with photonic processors', price: '$9,999/month' },
+      { name: 'Holographic Computing Platform', href: '/holographic-computing-platform', description: '3D holographic computing and visualization', price: '$6,999/month' },
+      { name: 'Quantum Internet Platform', href: '/quantum-internet-platform', description: 'Ultra-secure quantum communication network', price: '$8,999/month' }
+    ]
+  },
+  {
+    title: 'Revolutionary 2026 Micro SaaS',
+    icon: Zap,
+    services: [
+      { name: 'AI Business Intelligence Pro', href: '/ai-business-intelligence-pro', description: 'Transform data into actionable insights with AI', price: '$299/month' },
+      { name: 'AI Customer Service Automation', href: '/ai-customer-service-automation', description: 'Automate customer support with intelligent AI agents', price: '$199/month' },
+      { name: 'AI Marketing Automation Suite', href: '/ai-marketing-automation-suite', description: 'Intelligent marketing automation powered by AI', price: '$399/month' },
+      { name: 'AI Sales Intelligence Platform', href: '/ai-sales-intelligence-platform', description: 'Boost sales performance with AI-powered insights', price: '$249/month' },
+      { name: 'AI HR Recruitment Automation', href: '/ai-hr-recruitment-automation', description: 'Streamline hiring with intelligent AI automation', price: '$179/month' }
     ]
   },
   {
@@ -44,26 +57,6 @@ const serviceCategories = [
       { name: 'Quantum Financial Trading', href: '/quantum-financial-trading-platform', description: 'Quantum computing for financial market advantage', price: '$999/month' },
       { name: 'Quantum Internet Security', href: '/quantum-internet-security', description: 'Next-generation internet security with quantum technology', price: '$699/month' },
       { name: 'Quantum Internet Platform', href: '/quantum-internet-platform', description: 'Ultra-secure quantum communication network', price: '$1,599/month' }
-    ]
-  },
-  {
-    title: '2026 IT Services',
-    icon: Shield,
-    services: [
-      { name: 'Advanced Cybersecurity Suite', href: '/advanced-cybersecurity-suite', description: 'Next-generation cybersecurity protection for modern businesses', price: '$799/month' },
-      { name: 'Cloud Migration & Optimization', href: '/cloud-migration-optimization', description: 'Seamless cloud migration with intelligent optimization', price: '$1,299/month' },
-      { name: 'DevOps & CI/CD Automation', href: '/devops-cicd-automation', description: 'Accelerate software delivery with intelligent automation', price: '$599/month' },
-      { name: 'Data Analytics & Business Intelligence', href: '/data-analytics-business-intelligence', description: 'Transform data into actionable business insights', price: '$899/month' }
-    ]
-  },
-  {
-    title: '2026 Micro SaaS',
-    icon: Zap,
-    services: [
-      { name: 'AI Business Intelligence Pro', href: '/ai-business-intelligence-pro', description: 'Transform data into actionable insights with AI', price: '$299/month' },
-      { name: 'AI Customer Service Automation', href: '/ai-customer-service-automation', description: 'Automate customer support with intelligent AI agents', price: '$199/month' },
-      { name: 'AI Marketing Automation Suite', href: '/ai-marketing-automation-suite', description: 'Intelligent marketing automation powered by AI', price: '$399/month' },
-      { name: 'AI Sales Intelligence Platform', href: '/ai-sales-intelligence-platform', description: 'Boost sales performance with AI-powered insights', price: '$249/month' }
     ]
   },
   {
