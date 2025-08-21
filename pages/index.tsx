@@ -45,7 +45,8 @@ export default function HomePage() {
       color: 'from-purple-600 to-indigo-700',
       marketData: '$15B quantum computing market, 500% annual growth',
       competitors: 'IBM Quantum ($2000+/month), Google Quantum AI ($1500+/month)',
-      savings: 'Save 85% vs. competitors'
+      savings: 'Save 85% vs. competitors',
+      badge: '🚀 First to Market'
     },
     {
       title: '🏭 Autonomous Manufacturing AI Platform',
@@ -56,7 +57,8 @@ export default function HomePage() {
       color: 'from-orange-500 to-red-600',
       marketData: '$12.3B industrial AI market, 320% annual growth',
       competitors: 'Siemens MindSphere ($500+/month), PTC ThingWorx ($300+/month)',
-      savings: 'Save 60% vs. competitors'
+      savings: 'Save 60% vs. competitors',
+      badge: '⚡ Industry Leader'
     },
     {
       title: '🔒 Quantum Cybersecurity Suite',
@@ -67,7 +69,8 @@ export default function HomePage() {
       color: 'from-red-500 to-pink-600',
       marketData: '$6.8B quantum security market, 380% annual growth',
       competitors: 'CrowdStrike ($8.99/user/month), Palo Alto Networks ($50+/user/month)',
-      savings: 'Save 70% vs. competitors'
+      savings: 'Save 70% vs. competitors',
+      badge: '🛡️ Future-Proof'
     },
     {
       title: '🚀 Space Technology Platform',
@@ -78,7 +81,8 @@ export default function HomePage() {
       color: 'from-blue-500 to-indigo-600',
       marketData: '$4.2B space technology market, 280% annual growth',
       competitors: 'Maxar ($500+/month), Planet Labs ($400+/month)',
-      savings: 'Save 20% vs. competitors'
+      savings: 'Save 20% vs. competitors',
+      badge: '🌌 Space Pioneer'
     },
     {
       title: '🧬 Biotech AI Platform',
@@ -89,7 +93,8 @@ export default function HomePage() {
       color: 'from-emerald-500 to-teal-600',
       marketData: '$8.5B biotech AI market, 420% annual growth',
       competitors: 'Insitro ($1000+/month), Atomwise ($800+/month)',
-      savings: 'Save 40% vs. competitors'
+      savings: 'Save 40% vs. competitors',
+      badge: '🧪 Research Breakthrough'
     },
     {
       title: '💰 Quantum Financial Trading Platform',
@@ -100,7 +105,8 @@ export default function HomePage() {
       color: 'from-violet-500 to-purple-600',
       marketData: '$22B algorithmic trading market, 280% annual growth',
       competitors: 'Bloomberg Terminal ($2000+/month), Refinitiv ($1000+/month)',
-      savings: 'Save 55% vs. competitors'
+      savings: 'Save 55% vs. competitors',
+      badge: '💎 Quantum Edge'
     }
   ];
 
@@ -136,20 +142,35 @@ export default function HomePage() {
                 Transform your business with 500%+ ROI.
               </p>
               
-              {/* Contact Information Banner */}
-              <div className="bg-gradient-to-r from-blue-900/50 to-purple-900/50 backdrop-blur-sm border border-blue-500/30 rounded-2xl p-6 mb-8">
-                <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-center">
-                  <div className="flex items-center gap-2">
-                    <Phone className="w-5 h-5 text-blue-400" />
-                    <span className="text-blue-400 font-semibold">{contactInfo.mobile}</span>
+              {/* Enhanced Contact Information Banner */}
+              <div className="bg-gradient-to-r from-blue-900/50 to-purple-900/50 backdrop-blur-sm border border-blue-500/30 rounded-2xl p-8 mb-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                  <div className="flex flex-col items-center gap-3">
+                    <div className="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center">
+                      <Phone className="w-6 h-6 text-blue-400" />
+                    </div>
+                    <div>
+                      <div className="text-blue-400 font-semibold text-lg">{contactInfo.mobile}</div>
+                      <div className="text-gray-400 text-sm">24/7 Support</div>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Mail className="w-5 h-5 text-purple-400" />
-                    <span className="text-purple-400 font-semibold">{contactInfo.email}</span>
+                  <div className="flex flex-col items-center gap-3">
+                    <div className="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center">
+                      <Mail className="w-6 h-6 text-purple-400" />
+                    </div>
+                    <div>
+                      <div className="text-purple-400 font-semibold text-lg">{contactInfo.email}</div>
+                      <div className="text-gray-400 text-sm">Expert Consultation</div>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <MapPin className="w-5 h-5 text-green-400" />
-                    <span className="text-green-400 font-semibold">{contactInfo.address}</span>
+                  <div className="flex flex-col items-center gap-3">
+                    <div className="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center">
+                      <MapPin className="w-6 h-6 text-green-400" />
+                    </div>
+                    <div>
+                      <div className="text-green-400 font-semibold text-lg">{contactInfo.address}</div>
+                      <div className="text-gray-400 text-sm">Global Headquarters</div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -157,7 +178,7 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
                   href="/micro-saas"
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold rounded-xl"
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold rounded-xl transform hover:scale-105 transition-all duration-300 shadow-2xl shadow-blue-500/25"
                 >
                   Explore Services
                   <ArrowRight className="w-5 h-5 ml-2" />
@@ -165,7 +186,7 @@ export default function HomePage() {
                 <Button
                   href="https://ziontechgroup.com/contact"
                   variant="outline"
-                  className="border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black px-8 py-4 text-lg font-semibold rounded-xl"
+                  className="border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black px-8 py-4 text-lg font-semibold rounded-xl transform hover:scale-105 transition-all duration-300"
                 >
                   Get Started
                 </Button>
@@ -174,7 +195,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Stats Section */}
+        {/* Enhanced Stats Section */}
         <section className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
@@ -185,9 +206,9 @@ export default function HomePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 text-center hover:border-gray-600/50 transition-all duration-300"
+                  className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 text-center hover:border-gray-600/50 hover:scale-105 transition-all duration-300 group"
                 >
-                  <div className={`${stat.color} mb-2 flex justify-center`}>
+                  <div className={`${stat.color} mb-2 flex justify-center group-hover:scale-110 transition-transform duration-300`}>
                     {stat.icon}
                   </div>
                   <div className="text-2xl font-bold text-white mb-1">{stat.value}</div>
@@ -198,21 +219,21 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Service Highlights */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8">
+        {/* Enhanced Service Highlights Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="text-center mb-12"
+              className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                Revolutionary Service Highlights
+              <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent mb-6">
+                Revolutionary Services That Transform Industries
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Experience the future of business technology with our most innovative services
+                Discover our cutting-edge micro SAAS services that combine quantum computing, AI, and breakthrough technology to deliver unprecedented ROI and competitive advantages.
               </p>
             </motion.div>
 
@@ -222,55 +243,47 @@ export default function HomePage() {
                   key={index}
                   initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  transition={{ duration: 0.8, delay: index * 0.2 }}
                   viewport={{ once: true }}
-                  className="bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-gray-600/50 transition-all duration-300"
+                  className="group"
                 >
-                  <div className="flex items-start justify-between mb-4">
-                    <h3 className="text-2xl font-bold text-white">{service.title}</h3>
-                    <div className="text-3xl">{service.title.split(' ')[0]}</div>
-                  </div>
-                  
-                  <p className="text-gray-300 mb-6">{service.description}</p>
-                  
-                  <div className="space-y-4 mb-6">
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-400">Price:</span>
-                      <span className="text-2xl font-bold text-green-400">{service.price}</span>
+                  <div className={`bg-gradient-to-br ${service.color} p-8 rounded-2xl relative overflow-hidden`}>
+                    {/* Badge */}
+                    <div className="absolute top-4 right-4 bg-black/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-white">
+                      {service.badge}
                     </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-400">Market:</span>
-                      <span className="text-blue-400 font-semibold">{service.marketData}</span>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-400">Competitors:</span>
-                      <span className="text-purple-400 font-semibold">{service.competitors}</span>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-400">Savings:</span>
-                      <span className="text-yellow-400 font-semibold">{service.savings}</span>
-                    </div>
-                  </div>
+                    
+                    <div className="relative z-10">
+                      <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
+                      <p className="text-gray-100 mb-6 text-lg">{service.description}</p>
+                      
+                      <div className="bg-black/20 backdrop-blur-sm rounded-xl p-4 mb-6">
+                        <div className="flex items-center justify-between mb-3">
+                          <span className="text-2xl font-bold text-white">{service.price}</span>
+                          <span className="text-green-300 font-semibold">{service.savings}</span>
+                        </div>
+                        <div className="text-sm text-gray-200 mb-2">{service.marketData}</div>
+                        <div className="text-sm text-gray-300">{service.competitors}</div>
+                      </div>
 
-                  <div className="mb-6">
-                    <h4 className="text-white font-semibold mb-3">Key Features:</h4>
-                    <ul className="space-y-2">
-                      {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center gap-2 text-gray-300">
-                          <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                      <div className="grid grid-cols-1 gap-3 mb-6">
+                        {service.features.map((feature, featureIndex) => (
+                          <div key={featureIndex} className="flex items-center gap-3">
+                            <Check className="w-5 h-5 text-green-300 flex-shrink-0" />
+                            <span className="text-gray-100">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
 
-                  <Button
-                    href={service.link}
-                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-3 rounded-xl font-semibold"
-                  >
-                    Learn More
-                    <ExternalLink className="w-4 h-4 ml-2" />
-                  </Button>
+                      <Button
+                        href={service.link}
+                        className="w-full bg-white text-black hover:bg-gray-100 font-semibold py-3 px-6 rounded-xl transform hover:scale-105 transition-all duration-300"
+                      >
+                        Learn More & Get Started
+                        <ArrowRight className="w-5 h-5 ml-2" />
+                      </Button>
+                    </div>
+                  </div>
                 </motion.div>
               ))}
             </div>
