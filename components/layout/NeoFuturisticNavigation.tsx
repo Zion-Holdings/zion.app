@@ -47,7 +47,10 @@ import {
   BookOpen,
   Activity,
   Bot,
-  ChevronRight as ChevronRightIcon
+  ChevronRight as ChevronRightIcon,
+  Factory,
+  FlaskConical,
+  GraduationCap
 } from 'lucide-react';
 import Button from '../ui/Button';
 
@@ -86,69 +89,114 @@ export default function NeoFuturisticNavigation() {
 
   const serviceCategories = [
     {
-      name: 'Quantum Computing',
-      description: 'Revolutionary quantum computing solutions',
+      name: 'Quantum Computing & AI',
+      description: 'Revolutionary quantum AI solutions with unprecedented computing power',
       icon: <Atom className="w-5 h-5" />,
       color: 'from-purple-500 to-pink-500',
       services: [
-        { name: 'Quantum AI Platform', description: 'AI-powered quantum computing', price: '$1,299/month' },
-        { name: 'Quantum Optimization', description: 'Quantum algorithms for complex problems', price: '$899/month' },
-        { name: 'Quantum Simulation', description: 'Advanced quantum simulations', price: '$1,099/month' }
+        { name: 'Quantum AI Cognitive Platform', description: 'First commercial quantum AI platform', price: '$2,999/month', link: 'https://ziontechgroup.com/quantum-ai-platform' },
+        { name: 'Quantum Finance Platform', description: 'Quantum-powered financial optimization', price: '$1,999/month', link: 'https://ziontechgroup.com/quantum-finance' },
+        { name: 'Quantum Cybersecurity Suite', description: 'Quantum-resistant security', price: '$899/month', link: 'https://ziontechgroup.com/quantum-cybersecurity' },
+        { name: 'Quantum Energy Optimization', description: 'Quantum computing for energy efficiency', price: '$1,799/month', link: 'https://ziontechgroup.com/quantum-energy' }
       ]
     },
     {
-      name: 'AI & Machine Learning',
-      description: 'Advanced AI and ML platforms',
-      icon: <Brain className="w-5 h-5" />,
-      color: 'from-blue-500 to-cyan-500',
+      name: 'Autonomous Systems & Robotics',
+      description: 'Next-generation autonomous manufacturing and robotics platforms',
+      icon: <Factory className="w-5 h-5" />,
+      color: 'from-orange-500 to-red-500',
       services: [
-        { name: 'AI Content Creation', description: 'Automated content generation', price: '$599/month' },
-        { name: 'ML Model Training', description: 'Custom ML model development', price: '$1,199/month' },
-        { name: 'AI Analytics', description: 'Intelligent data analysis', price: '$799/month' }
+        { name: 'Autonomous Manufacturing Platform', description: 'AI-powered production automation', price: '$1,499/month', link: 'https://ziontechgroup.com/autonomous-manufacturing' },
+        { name: 'Autonomous Logistics Platform', description: 'AI-powered supply chain automation', price: '$799/month', link: 'https://ziontechgroup.com/autonomous-logistics' },
+        { name: 'Autonomous Robotics Platform', description: 'Complete autonomous robotics solution', price: '$1,299/month', link: 'https://ziontechgroup.com/autonomous-robotics' }
       ]
     },
     {
-      name: 'Cybersecurity',
-      description: 'Next-generation security solutions',
-      icon: <Shield className="w-5 h-5" />,
+      name: 'Healthcare & Biotechnology',
+      description: 'AI-powered biomedical research and drug discovery platforms',
+      icon: <FlaskConical className="w-5 h-5" />,
       color: 'from-green-500 to-emerald-500',
       services: [
-        { name: 'Quantum Security', description: 'Quantum-resistant encryption', price: '$1,599/month' },
-        { name: 'AI Threat Detection', description: 'Intelligent security monitoring', price: '$999/month' },
-        { name: 'Zero Trust Security', description: 'Advanced access control', price: '$1,299/month' }
+        { name: 'Biomedical AI Platform', description: 'AI-powered drug discovery', price: '$2,499/month', link: 'https://ziontechgroup.com/biomedical-ai' },
+        { name: 'AI Healthcare Analytics', description: 'Advanced healthcare data analysis', price: '$599/month', link: 'https://ziontechgroup.com/healthcare-analytics' },
+        { name: 'Personalized Medicine AI', description: 'AI for personalized treatment', price: '$899/month', link: 'https://ziontechgroup.com/personalized-medicine' }
       ]
     },
     {
-      name: 'Biomedical & Healthcare',
-      description: 'AI-powered healthcare solutions',
-      icon: <Brain className="w-5 h-5" />,
-      color: 'from-red-500 to-pink-500',
+      name: 'Space Technology',
+      description: 'Commercial space technology and satellite management solutions',
+      icon: <Rocket className="w-5 h-5" />,
+      color: 'from-blue-500 to-indigo-500',
       services: [
-        { name: 'Drug Discovery AI', description: 'Accelerated drug development', price: '$1,899/month' },
-        { name: 'Genomic Analysis', description: 'Advanced genetic research', price: '$1,499/month' },
-        { name: 'Clinical Trial AI', description: 'Optimized clinical research', price: '$1,299/month' }
+        { name: 'Space Technology Platform', description: 'Comprehensive space solutions', price: '$3,999/month', link: 'https://ziontechgroup.com/space-technology' },
+        { name: 'Satellite Management', description: 'AI-powered satellite operations', price: '$2,499/month', link: 'https://ziontechgroup.com/satellite-management' },
+        { name: 'Space Data Analytics', description: 'Advanced space data analysis', price: '$1,999/month', link: 'https://ziontechgroup.com/space-analytics' }
+      ]
+    },
+    {
+      name: 'Metaverse & Virtual Reality',
+      description: 'Immersive 3D experiences and virtual world development',
+      icon: <Globe className="w-5 h-5" />,
+      color: 'from-purple-500 to-violet-500',
+      services: [
+        { name: 'Metaverse Development Platform', description: 'Build immersive 3D worlds', price: '$1,299/month', link: 'https://ziontechgroup.com/metaverse-platform' },
+        { name: 'VR/AR Solutions', description: 'Complete VR/AR development', price: '$799/month', link: 'https://ziontechgroup.com/vr-ar-solutions' },
+        { name: '3D World Building', description: 'Advanced 3D environment creation', price: '$599/month', link: 'https://ziontechgroup.com/3d-world-building' }
       ]
     },
     {
       name: 'Financial Technology',
-      description: 'Quantum-powered financial solutions',
+      description: 'Quantum-powered financial optimization and trading platforms',
       icon: <DollarSign className="w-5 h-5" />,
-      color: 'from-yellow-500 to-orange-500',
+      color: 'from-yellow-500 to-amber-500',
       services: [
-        { name: 'Quantum Trading', description: 'AI-powered trading algorithms', price: '$1,999/month' },
-        { name: 'Risk Assessment', description: 'Advanced risk modeling', price: '$1,399/month' },
-        { name: 'Portfolio Optimization', description: 'Quantum portfolio management', price: '$1,599/month' }
+        { name: 'Quantum Finance Platform', description: 'Quantum-powered financial optimization', price: '$1,999/month', link: 'https://ziontechgroup.com/quantum-finance' },
+        { name: 'AI Trading Platform', description: 'Intelligent algorithmic trading', price: '$1,299/month', link: 'https://ziontechgroup.com/ai-trading' },
+        { name: 'Risk Management AI', description: 'AI-powered risk assessment', price: '$899/month', link: 'https://ziontechgroup.com/risk-management' }
       ]
     },
     {
-      name: 'Content & Marketing',
-      description: 'AI-powered marketing automation',
-      icon: <FileText className="w-5 h-5" />,
+      name: 'Cybersecurity & Privacy',
+      description: 'Quantum-resistant security for the post-quantum era',
+      icon: <Shield className="w-5 h-5" />,
+      color: 'from-red-500 to-pink-500',
+      services: [
+        { name: 'Quantum Cybersecurity Suite', description: 'Quantum-resistant security', price: '$899/month', link: 'https://ziontechgroup.com/quantum-cybersecurity' },
+        { name: 'AI Threat Detection', description: 'Advanced AI security monitoring', price: '$599/month', link: 'https://ziontechgroup.com/ai-threat-detection' },
+        { name: 'Zero-Trust Security', description: 'Complete zero-trust architecture', price: '$799/month', link: 'https://ziontechgroup.com/zero-trust-security' }
+      ]
+    },
+    {
+      name: 'Logistics & Supply Chain',
+      description: 'AI-powered supply chain automation and optimization',
+      icon: <Truck className="w-5 h-5" />,
+      color: 'from-teal-500 to-cyan-500',
+      services: [
+        { name: 'Autonomous Logistics Platform', description: 'AI-powered supply chain automation', price: '$799/month', link: 'https://ziontechgroup.com/autonomous-logistics' },
+        { name: 'Supply Chain AI', description: 'Intelligent supply chain optimization', price: '$599/month', link: 'https://ziontechgroup.com/supply-chain-ai' },
+        { name: 'Route Optimization', description: 'AI-powered route planning', price: '$399/month', link: 'https://ziontechgroup.com/route-optimization' }
+      ]
+    },
+    {
+      name: 'Energy & Sustainability',
+      description: 'Quantum computing for energy efficiency and smart grid management',
+      icon: <Zap className="w-5 h-5" />,
+      color: 'from-emerald-500 to-green-500',
+      services: [
+        { name: 'Quantum Energy Optimization', description: 'Quantum computing for energy efficiency', price: '$1,799/month', link: 'https://ziontechgroup.com/quantum-energy' },
+        { name: 'Smart Grid AI', description: 'AI-powered grid management', price: '$1,299/month', link: 'https://ziontechgroup.com/smart-grid-ai' },
+        { name: 'Renewable Energy Management', description: 'Advanced renewable energy optimization', price: '$999/month', link: 'https://ziontechgroup.com/renewable-energy' }
+      ]
+    },
+    {
+      name: 'Education & Training',
+      description: 'Learn quantum computing and AI from experts',
+      icon: <GraduationCap className="w-5 h-5" />,
       color: 'from-indigo-500 to-purple-500',
       services: [
-        { name: 'AI Content Writer', description: 'Automated content creation', price: '$499/month' },
-        { name: 'Marketing Automation', description: 'Intelligent campaign management', price: '$799/month' },
-        { name: 'SEO Optimization', description: 'AI-powered SEO tools', price: '$599/month' }
+        { name: 'Quantum Education Platform', description: 'Learn quantum computing and AI', price: '$299/month', link: 'https://ziontechgroup.com/quantum-education' },
+        { name: 'AI Learning Paths', description: 'Personalized AI education', price: '$199/month', link: 'https://ziontechgroup.com/ai-learning' },
+        { name: 'Interactive Simulators', description: 'Hands-on quantum simulations', price: '$399/month', link: 'https://ziontechgroup.com/quantum-simulators' }
       ]
     }
   ];

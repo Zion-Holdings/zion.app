@@ -77,43 +77,157 @@ export default function ServicesPage() {
 
   const popularServices = getPopularServices();
 
-  // Enhanced service categories with better descriptions
+  // Enhanced service categories with better descriptions and market positioning
   const enhancedCategories = [
     {
       name: 'Quantum Computing & AI',
       description: 'Revolutionary quantum AI solutions with unprecedented computing power',
       icon: <Brain className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Quantum Computing & AI' || s.category === 'AI & Machine Learning').length
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Quantum Computing & AI' || s.category === 'AI & Machine Learning').length,
+      marketSize: '$8.5B',
+      growthRate: '450% annually',
+      featuredServices: ['Quantum AI Cognitive Platform', 'Quantum Finance Platform', 'Quantum Cybersecurity Suite'],
+      opportunity: 'First-mover advantage in quantum computing commercialization',
+      competitors: 'IBM Quantum, Google Quantum AI, Microsoft Azure Quantum'
     },
     {
       name: 'Autonomous Systems & Robotics',
       description: 'Next-generation autonomous manufacturing and robotics platforms',
       icon: <Factory className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Manufacturing & Industry 4.0' || s.category === 'Robotics & Automation').length
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Manufacturing & Industry 4.0' || s.category === 'Robotics & Automation').length,
+      marketSize: '$12.3B',
+      growthRate: '320% annually',
+      featuredServices: ['Autonomous Manufacturing Platform', 'Autonomous Logistics Platform', 'Autonomous Robotics Platform'],
+      opportunity: 'Industry 4.0 transformation accelerating globally',
+      competitors: 'Siemens Mindsphere, PTC ThingWorx, GE Digital'
     },
     {
       name: 'Healthcare & Biotechnology',
       description: 'AI-powered biomedical research and drug discovery platforms',
       icon: <FlaskConical className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Healthcare & Biotechnology').length
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Healthcare & Biotechnology').length,
+      marketSize: '$3.2B',
+      growthRate: '200% annually',
+      featuredServices: ['Biomedical AI Platform', 'AI Healthcare Analytics', 'Personalized Medicine AI'],
+      opportunity: 'AI revolutionizing drug discovery and personalized medicine',
+      competitors: 'Insitro, Atomwise, BenevolentAI'
     },
     {
-      name: 'Cybersecurity & Quantum Security',
-      description: 'Future-proof cybersecurity using quantum-resistant encryption',
-      icon: <Shield className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Cybersecurity').length
+      name: 'Space Technology',
+      description: 'Commercial space technology and satellite management solutions',
+      icon: <Rocket className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Space Technology').length,
+      marketSize: '$4.2B',
+      growthRate: '290% annually',
+      featuredServices: ['Space Technology Platform', 'Satellite Management', 'Space Data Analytics'],
+      opportunity: 'Commercial space sector expanding rapidly',
+      competitors: 'Maxar Technologies, Planet Labs, BlackSky'
+    },
+    {
+      name: 'Metaverse & Virtual Reality',
+      description: 'Immersive 3D experiences and virtual world development',
+      icon: <Globe className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Metaverse & Virtual Reality').length,
+      marketSize: '$3.6B',
+      growthRate: '400% annual growth',
+      featuredServices: ['Metaverse Development Platform', 'VR/AR Solutions', '3D World Building'],
+      opportunity: 'Virtual experiences becoming mainstream',
+      competitors: 'Unity Technologies, Epic Games, Roblox'
     },
     {
       name: 'Financial Technology',
       description: 'Quantum-powered financial optimization and trading platforms',
       icon: <DollarSign className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Financial Technology').length
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Financial Technology').length,
+      marketSize: '$8.5B',
+      growthRate: '450% annually',
+      featuredServices: ['Quantum Finance Platform', 'AI Trading Platform', 'Risk Management AI'],
+      opportunity: 'First-mover advantage in quantum financial optimization',
+      competitors: 'Bloomberg, Refinitiv, FactSet'
     },
     {
-      name: 'Space Technology & IoT',
-      description: 'AI-powered space exploration and smart city platforms',
-      icon: <Rocket className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Space Technology & IoT').length
+      name: 'Cybersecurity & Privacy',
+      description: 'Quantum-resistant security for the post-quantum era',
+      icon: <Shield className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Cybersecurity & Privacy').length,
+      marketSize: '$6.8B',
+      growthRate: '380% annually',
+      featuredServices: ['Quantum Cybersecurity Suite', 'AI Threat Detection', 'Zero-Trust Security'],
+      opportunity: 'Post-quantum security becoming critical',
+      competitors: 'Palo Alto Networks, CrowdStrike, SentinelOne'
+    },
+    {
+      name: 'Logistics & Supply Chain',
+      description: 'AI-powered supply chain automation and optimization',
+      icon: <Truck className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Logistics & Supply Chain').length,
+      marketSize: '$15.6B',
+      growthRate: '280% annually',
+      featuredServices: ['Autonomous Logistics Platform', 'Supply Chain AI', 'Route Optimization'],
+      opportunity: 'Global supply chain optimization demand',
+      competitors: 'Flexport, Convoy, Transfix'
+    },
+    {
+      name: 'Energy & Sustainability',
+      description: 'Quantum computing for energy efficiency and smart grid management',
+      icon: <Zap className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Energy & Sustainability').length,
+      marketSize: '$7.8B',
+      growthRate: '320% annually',
+      featuredServices: ['Quantum Energy Optimization', 'Smart Grid AI', 'Renewable Energy Management'],
+      opportunity: 'Smart grid transformation and renewable energy integration',
+      competitors: 'Schneider Electric, Siemens, GE Digital'
+    },
+    {
+      name: 'Education & Training',
+      description: 'Learn quantum computing and AI from experts',
+      icon: <GraduationCap className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Education & Training').length,
+      marketSize: '$2.8B',
+      growthRate: '180% annually',
+      featuredServices: ['Quantum Education Platform', 'AI Learning Paths', 'Interactive Simulators'],
+      opportunity: 'Growing demand for quantum and AI education',
+      competitors: 'Coursera, edX, Udacity'
+    }
+  ];
+
+  // Enhanced service showcase with better advertising
+  const enhancedServiceShowcase = [
+    {
+      title: 'Revolutionary Quantum AI Platform',
+      description: 'The world\'s first commercially available quantum AI platform that combines quantum computing with advanced machine learning.',
+      price: '$2,999/month',
+      features: ['Quantum-classical hybrid algorithms', 'Real-time quantum error correction', 'Advanced quantum neural networks'],
+      marketSize: '$8.5B',
+      growthRate: '450% annually',
+      competitors: 'IBM Quantum, Google Quantum AI, Microsoft Azure Quantum',
+      ourAdvantage: 'First commercial quantum AI platform with comprehensive AI integration',
+      roi: '1000%+ ROI through breakthrough discoveries',
+      link: 'https://ziontechgroup.com/quantum-ai-platform'
+    },
+    {
+      title: 'Autonomous Manufacturing Platform',
+      description: 'Revolutionary autonomous manufacturing platform that combines AI, robotics, and IoT to create fully automated production lines.',
+      price: '$1,499/month',
+      features: ['AI-powered production optimization', 'Autonomous robotic assembly lines', 'Predictive maintenance systems'],
+      marketSize: '$12.3B',
+      growthRate: '320% annually',
+      competitors: 'Siemens Mindsphere, PTC ThingWorx, GE Digital',
+      ourAdvantage: 'Full autonomy and AI integration',
+      roi: '500% ROI within 12 months',
+      link: 'https://ziontechgroup.com/autonomous-manufacturing'
+    },
+    {
+      title: 'Quantum Cybersecurity Suite',
+      description: 'Advanced cybersecurity suite that uses quantum-resistant algorithms and AI to protect against current and future threats.',
+      price: '$899/month',
+      features: ['Quantum-resistant encryption algorithms', 'AI-powered threat detection', 'Quantum key distribution'],
+      marketSize: '$6.8B',
+      growthRate: '380% annually',
+      competitors: 'Palo Alto Networks, CrowdStrike, SentinelOne',
+      ourAdvantage: 'Quantum-resistant algorithms and AI integration',
+      roi: '400% ROI within 6 months',
+      link: 'https://ziontechgroup.com/quantum-cybersecurity'
     }
   ];
 

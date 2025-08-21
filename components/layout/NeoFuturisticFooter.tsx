@@ -63,45 +63,63 @@ export default function NeoFuturisticFooter() {
 
   const serviceCategories = [
     {
-      name: 'Quantum Computing',
-      description: 'Revolutionary quantum computing solutions',
-      icon: <Atom className="w-5 h-5" />,
+      name: 'Quantum Computing & AI',
       services: [
-        { name: 'Quantum AI Platform', href: '/services?category=quantum' },
-        { name: 'Quantum Optimization', href: '/services?category=quantum' },
-        { name: 'Quantum Simulation', href: '/services?category=quantum' }
+        { name: 'Quantum AI Cognitive Platform', link: 'https://ziontechgroup.com/quantum-ai-platform' },
+        { name: 'Quantum Finance Platform', link: 'https://ziontechgroup.com/quantum-finance' },
+        { name: 'Quantum Cybersecurity Suite', link: 'https://ziontechgroup.com/quantum-cybersecurity' },
+        { name: 'Quantum Energy Optimization', link: 'https://ziontechgroup.com/quantum-energy' }
       ]
     },
     {
-      name: 'AI & Machine Learning',
-      description: 'Advanced AI and ML platforms',
-      icon: <Brain className="w-5 h-5" />,
+      name: 'Autonomous Systems',
       services: [
-        { name: 'AI Content Creation', href: '/services?category=ai' },
-        { name: 'ML Model Training', href: '/services?category=ai' },
-        { name: 'AI Analytics', href: '/services?category=ai' }
+        { name: 'Autonomous Manufacturing Platform', link: 'https://ziontechgroup.com/autonomous-manufacturing' },
+        { name: 'Autonomous Logistics Platform', link: 'https://ziontechgroup.com/autonomous-logistics' },
+        { name: 'Autonomous Robotics Platform', link: 'https://ziontechgroup.com/autonomous-robotics' }
       ]
     },
     {
-      name: 'Cybersecurity',
-      description: 'Next-generation security solutions',
-      icon: <Shield className="w-5 h-5" />,
+      name: 'Healthcare & Biotechnology',
       services: [
-        { name: 'Quantum Security', href: '/services?category=cybersecurity' },
-        { name: 'AI Threat Detection', href: '/services?category=cybersecurity' },
-        { name: 'Zero Trust Security', href: '/services?category=cybersecurity' }
+        { name: 'Biomedical AI Platform', link: 'https://ziontechgroup.com/biomedical-ai' },
+        { name: 'AI Healthcare Analytics', link: 'https://ziontechgroup.com/healthcare-analytics' },
+        { name: 'Personalized Medicine AI', link: 'https://ziontechgroup.com/personalized-medicine' }
       ]
     },
     {
-      name: 'Biomedical & Healthcare',
-      description: 'AI-powered healthcare solutions',
-      icon: <Brain className="w-5 h-5" />,
+      name: 'Space Technology',
       services: [
-        { name: 'Drug Discovery AI', href: '/services?category=biomedical' },
-        { name: 'Genomic Analysis', href: '/services?category=biomedical' },
-        { name: 'Clinical Trial AI', href: '/services?category=biomedical' }
+        { name: 'Space Technology Platform', link: 'https://ziontechgroup.com/space-technology' },
+        { name: 'Satellite Management', link: 'https://ziontechgroup.com/satellite-management' },
+        { name: 'Space Data Analytics', link: 'https://ziontechgroup.com/space-analytics' }
+      ]
+    },
+    {
+      name: 'Metaverse & VR/AR',
+      services: [
+        { name: 'Metaverse Development Platform', link: 'https://ziontechgroup.com/metaverse-platform' },
+        { name: 'VR/AR Solutions', link: 'https://ziontechgroup.com/vr-ar-solutions' },
+        { name: '3D World Building', link: 'https://ziontechgroup.com/3d-world-building' }
+      ]
+    },
+    {
+      name: 'Financial Technology',
+      services: [
+        { name: 'Quantum Finance Platform', link: 'https://ziontechgroup.com/quantum-finance' },
+        { name: 'AI Trading Platform', link: 'https://ziontechgroup.com/ai-trading' },
+        { name: 'Risk Management AI', link: 'https://ziontechgroup.com/risk-management' }
       ]
     }
+  ];
+
+  const marketInsights = [
+    { metric: '$8.5B', label: 'Quantum Finance Market', growth: '450% annually' },
+    { metric: '$12.3B', label: 'Autonomous Manufacturing', growth: '320% annually' },
+    { metric: '$6.8B', label: 'Quantum Cybersecurity', growth: '380% annually' },
+    { metric: '$4.2B', label: 'Space Technology', growth: '290% annually' },
+    { metric: '$3.6B', label: 'Metaverse Development', growth: '400% annually' },
+    { metric: '$3.2B', label: 'Biomedical AI', growth: '200% annually' }
   ];
 
   const companyLinks = [
@@ -209,20 +227,23 @@ export default function NeoFuturisticFooter() {
                 <div key={index} className="group">
                   <div className="flex items-center space-x-3 mb-3">
                     <div className="text-cyan-400 group-hover:text-cyan-300 transition-colors">
-                      {category.icon}
+                      {/* Icon placeholder, as specific icons are not provided in the new_code */}
+                      <Atom className="w-5 h-5" /> 
                     </div>
                     <div>
                       <h4 className="text-white font-medium group-hover:text-cyan-400 transition-colors">
                         {category.name}
                       </h4>
-                      <p className="text-gray-400 text-sm">{category.description}</p>
+                      <p className="text-gray-400 text-sm">{category.name}</p>
                     </div>
                   </div>
                   <div className="ml-8 space-y-2">
                     {category.services.map((service, serviceIndex) => (
                       <Link
                         key={serviceIndex}
-                        href={service.href}
+                        href={service.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="block text-gray-400 hover:text-cyan-400 transition-colors text-sm"
                       >
                         {service.name}
