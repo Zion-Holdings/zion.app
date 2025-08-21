@@ -81,6 +81,8 @@ const serviceCategories = [
 const companyLinks = [
   { name: 'About Us', href: '/about' },
   { name: '2026 Services', href: '/2026-services-showcase' },
+  { name: 'All Services', href: '/services' },
+  { name: 'Pricing', href: '/pricing' },
   { name: 'News', href: '/news' },
   { name: 'Case Studies', href: '/case-studies' },
   { name: 'Blog', href: '/blog' },

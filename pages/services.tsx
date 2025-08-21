@@ -33,6 +33,9 @@ import { verified2025Additions } from '../data/verified-2025-additions';
 import { realServicesQ12025 } from '../data/real-services-q1-2025';
 import { realEnterpriseServices2025 } from '../data/real-enterprise-services-2025';
 import { realMarketAugmentations2025 } from '../data/real-market-augmentations-2025';
+import { innovative2026MicroSaasServicesV2 } from '../data/innovative-2026-micro-saas-v2';
+import { emergingTech2026ServicesV2 } from '../data/emerging-tech-2026-services-v2';
+import { enterpriseIT2026ServicesV2 } from '../data/enterprise-it-2026-services-v2';
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -70,7 +73,10 @@ export default function ServicesPage() {
     ...verifiedRealServices2025Batch2,
     ...innovative2025Services,
     ...emergingTech2025Services,
-    ...realMarketAugmentations2025
+    ...realMarketAugmentations2025,
+    ...innovative2026MicroSaasServicesV2,
+    ...emergingTech2026ServicesV2,
+    ...enterpriseIT2026ServicesV2
   ];
 
   // Dynamic category counts mapped to the same filter logic below
