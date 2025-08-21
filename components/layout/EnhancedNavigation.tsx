@@ -31,7 +31,7 @@ const navigationItems: NavigationItem[] = [
   },
   {
     name: 'Quantum Computing',
-    href: '/quantum-services',
+    href: '/quantum-cloud-infrastructure',
     icon: <Atom className="w-5 h-5" />,
     description: 'Quantum computing and quantum AI solutions',
     children: [
@@ -42,7 +42,7 @@ const navigationItems: NavigationItem[] = [
   },
   {
     name: 'Emerging Tech',
-    href: '/emerging-tech',
+    href: '/emerging-tech-services',
     icon: <Rocket className="w-5 h-5" />,
     description: 'Blockchain, IoT, and cutting-edge technologies',
     children: [
@@ -54,7 +54,7 @@ const navigationItems: NavigationItem[] = [
   },
   {
     name: 'Cybersecurity',
-    href: '/cybersecurity',
+    href: '/security',
     icon: <Shield className="w-5 h-5" />,
     description: 'Advanced security and compliance solutions',
     children: [
@@ -65,7 +65,7 @@ const navigationItems: NavigationItem[] = [
   },
   {
     name: 'Space Technology',
-    href: '/space-tech',
+    href: '/space-technology',
     icon: <Globe className="w-5 h-5" />,
     description: 'Space mission control and satellite operations',
     children: [
@@ -75,7 +75,7 @@ const navigationItems: NavigationItem[] = [
   },
   {
     name: 'Enterprise IT',
-    href: '/enterprise-it',
+    href: '/it-services',
     icon: <Database className="w-5 h-5" />,
     description: 'Enterprise infrastructure and solutions',
     children: [

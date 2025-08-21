@@ -89,6 +89,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Glow utilities for futuristic buttons */
+.shadow-glow {
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.35), 0 0 40px rgba(99, 102, 241, 0.25);
+}
+.hover\:shadow-glow-lg:hover {
+  box-shadow: 0 0 30px rgba(34, 211, 238, 0.5), 0 0 60px rgba(99, 102, 241, 0.35);
+}
+
 /* Enhanced Background Patterns */
 body::before {
   content: '';

@@ -24,6 +24,7 @@ import { realOperationalServices } from '../data/real-operational-services';
 import { newOperationalServices2025 } from '../data/new-operational-services-2025';
 import { innovative2025Services } from '../data/innovative-2025-services';
 import { emergingTech2025Services } from '../data/emerging-tech-2025-services';
+import { verifiedRealServices2025Batch3 } from '../data/verified-real-services-2025-batch3';
 
 export default function HomePage() {
   const contactInfo = {
@@ -50,6 +51,7 @@ export default function HomePage() {
     ...realOperationalServices,
     ...newOperationalServices2025,
     ...verifiedRealServices2025Batch2,
+    ...verifiedRealServices2025Batch3,
     ...innovative2025Services,
     ...emergingTech2025Services
   ];
