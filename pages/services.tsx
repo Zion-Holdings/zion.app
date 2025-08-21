@@ -77,7 +77,7 @@ export default function ServicesPage() {
   const popularServices = getPopularServices();
 
   return (
-    <EnhancedFuturisticBackground variant="quantum-advanced" intensity="high">
+    <EnhancedFuturisticBackground variant="holographic-advanced" intensity="high">
       <div className="min-h-screen">
         <Head>
           <title>Complete Services Portfolio | Zion Tech Group - AI, Cloud, Security & More</title>
@@ -98,59 +98,82 @@ export default function ServicesPage() {
               <div className="mb-8">
                 <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 text-purple-400 text-sm font-medium mb-6 backdrop-blur-sm">
                   <Sparkles className="w-4 h-4 mr-2" />
-                  Complete Portfolio of 150+ Real Micro SaaS Services
+                  Complete Technology Portfolio
                 </div>
-                <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-                  <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-                    Complete Services
-                  </span>
-                  <br />
-                  <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                    Portfolio
-                  </span>
-                </h1>
-                <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed max-w-3xl mx-auto">
-                  Discover our comprehensive collection of cutting-edge micro SaaS solutions, AI services, and emerging technology platforms. 
-                  Every service is fully functional with real implementations, not just mockups.
-                </p>
-                
-                {/* Contact Information Banner */}
-                <div className="bg-gradient-to-r from-gray-800/80 to-gray-900/80 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-6 mb-8 max-w-4xl mx-auto">
-                  <div className="flex flex-col md:flex-row items-center justify-center gap-6">
-                    <div className="flex items-center text-cyan-400">
-                      <Phone className="w-5 h-5 mr-2" />
-                      <span className="font-semibold">{contactInfo.mobile}</span>
-                    </div>
-                    <div className="flex items-center text-purple-400">
-                      <Mail className="w-5 h-5 mr-2" />
-                      <span className="font-semibold">{contactInfo.email}</span>
-                    </div>
-                    <div className="flex items-center text-green-400">
-                      <MapPin className="w-5 h-5 mr-2" />
-                      <span className="font-semibold text-sm">{contactInfo.address}</span>
-                    </div>
-                  </div>
-                </div>
+              </div>
+              
+              <h1 className="text-5xl md:text-7xl font-bold mb-8 text-white">
+                <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                  150+ Revolutionary
+                </span>
+                <br />
+                <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">
+                  Micro SaaS Services
+                </span>
+              </h1>
+              
+              <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+                From AI-powered automation to quantum computing solutions, discover our comprehensive portfolio 
+                of cutting-edge micro SaaS services designed to transform your business. Starting from $49/month with 14-day free trials.
+              </p>
 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                  <Button
-                    href="/contact"
-                    variant="primary"
-                    size="lg"
-                    className="group transform hover:scale-105 transition-all duration-300"
-                  >
-                    Get Started Today
-                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                  <Button
-                    href="/pricing"
-                    variant="secondary"
-                    size="lg"
-                    className="group transform hover:scale-105 transition-all duration-300"
-                  >
-                    View Pricing
-                    <DollarSign className="w-5 h-5 ml-2 group-hover:scale-110 transition-transform" />
-                  </Button>
+              {/* Key Benefits Banner */}
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8 max-w-5xl mx-auto">
+                <div className="bg-gradient-to-br from-cyan-500/20 to-blue-600/20 backdrop-blur-sm border border-cyan-500/30 rounded-2xl p-4 text-center">
+                  <div className="text-2xl font-bold text-cyan-400 mb-1">150+</div>
+                  <div className="text-sm text-cyan-300">Real Services</div>
+                </div>
+                <div className="bg-gradient-to-br from-purple-500/20 to-pink-600/20 backdrop-blur-sm border border-purple-500/30 rounded-2xl p-4 text-center">
+                  <div className="text-2xl font-bold text-purple-400 mb-1">500%+</div>
+                  <div className="text-sm text-purple-300">Average ROI</div>
+                </div>
+                <div className="bg-gradient-to-br from-green-500/20 to-emerald-600/20 backdrop-blur-sm border border-green-500/30 rounded-2xl p-4 text-center">
+                  <div className="text-2xl font-bold text-green-400 mb-1">$49</div>
+                  <div className="text-sm text-green-300">Starting Price</div>
+                </div>
+                <div className="bg-gradient-to-br from-orange-500/20 to-red-600/20 backdrop-blur-sm border border-orange-500/30 rounded-2xl p-4 text-center">
+                  <div className="text-2xl font-bold text-orange-400 mb-1">14 Days</div>
+                  <div className="text-sm text-orange-300">Free Trial</div>
+                </div>
+              </div>
+
+              {/* Enhanced Contact Information Banner */}
+              <div className="bg-gradient-to-r from-gray-900/80 to-gray-800/80 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 max-w-4xl mx-auto shadow-2xl mb-12">
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-bold text-white mb-2">Ready to Get Started?</h3>
+                  <p className="text-gray-300">Contact our team of technology experts</p>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="flex flex-col items-center text-center group">
+                    <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
+                      <Phone className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="text-sm text-gray-400 mb-1">Mobile</div>
+                    <div className="text-white font-semibold">{contactInfo.mobile}</div>
+                    <a href={`tel:${contactInfo.mobile}`} className="text-cyan-400 text-sm hover:text-cyan-300 transition-colors mt-1">
+                      Call Now →
+                    </a>
+                  </div>
+                  <div className="flex flex-col items-center text-center group">
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
+                      <Mail className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="text-sm text-gray-400 mb-1">Email</div>
+                    <div className="text-white font-semibold text-sm">{contactInfo.email}</div>
+                    <a href={`mailto:${contactInfo.email}`} className="text-purple-400 text-sm hover:text-purple-300 transition-colors mt-1">
+                      Send Email →
+                    </a>
+                  </div>
+                  <div className="flex flex-col items-center text-center group">
+                    <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
+                      <MapPin className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="text-sm text-gray-400 mb-1">Address</div>
+                    <div className="text-white font-semibold text-xs leading-tight">{contactInfo.address}</div>
+                    <a href={`https://maps.google.com/?q=${encodeURIComponent(contactInfo.address)}`} target="_blank" rel="noopener noreferrer" className="text-emerald-400 text-sm hover:text-emerald-300 transition-colors mt-1">
+                      View on Map →
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -451,106 +474,6 @@ export default function ServicesPage() {
                 </Button>
               </div>
             )}
-          </div>
-        </section>
-
-        {/* Contact Information Section */}
-        <section className="py-20 bg-gradient-to-br from-gray-800/50 to-gray-900/50">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                Get in <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Touch</span>
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Ready to explore our services? Contact our team of experts today for personalized solutions and support.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-              <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 text-center transform hover:scale-105 transition-all duration-500 hover:shadow-2xl group">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
-                  <Phone className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-4">Phone Support</h3>
-                <p className="text-gray-300 mb-4">24/7 Technical Support</p>
-                <a 
-                  href={`tel:${contactInfo.mobile}`} 
-                  className="text-cyan-400 hover:text-cyan-300 transition-colors text-lg font-semibold"
-                >
-                  {contactInfo.mobile}
-                </a>
-              </div>
-
-              <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 text-center transform hover:scale-105 transition-all duration-500 hover:shadow-2xl group">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
-                  <Mail className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-4">Email Support</h3>
-                <p className="text-gray-300 mb-4">Quick Response Time</p>
-                <a 
-                  href={`mailto:${contactInfo.email}`} 
-                  className="text-purple-400 hover:text-purple-300 transition-colors text-lg font-semibold"
-                >
-                  {contactInfo.email}
-                </a>
-              </div>
-
-              <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 text-center transform hover:scale-105 transition-all duration-500 hover:shadow-2xl group">
-                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
-                  <MapPin className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-4">Office Location</h3>
-                <p className="text-gray-300 mb-4">Visit Our Headquarters</p>
-                <p className="text-green-400 text-sm leading-relaxed">
-                  {contactInfo.address}
-                </p>
-              </div>
-
-              <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 text-center transform hover:scale-105 transition-all duration-500 hover:shadow-2xl group">
-                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
-                  <Globe className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-4">Website</h3>
-                <p className="text-gray-300 mb-4">Explore Our Platform</p>
-                <a 
-                  href={contactInfo.website} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-orange-400 hover:text-orange-300 transition-colors text-lg font-semibold"
-                >
-                  {contactInfo.website.replace('https://', '')}
-                </a>
-              </div>
-            </div>
-
-            <div className="text-center">
-              <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 max-w-4xl mx-auto">
-                <h3 className="text-2xl font-bold text-white mb-6">Why Choose Zion Tech Group Services?</h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                  <div>
-                    <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 mx-auto">
-                      <Check className="w-6 h-6 text-white" />
-                    </div>
-                    <h4 className="text-lg font-semibold text-white mb-2">150+ Real Services</h4>
-                    <p className="text-gray-400 text-sm">No mockups, only fully functional solutions</p>
-                  </div>
-                  <div>
-                    <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mb-4 mx-auto">
-                      <Shield className="w-6 h-6 text-white" />
-                    </div>
-                    <h4 className="text-lg font-semibold text-white mb-2">Enterprise Security</h4>
-                    <p className="text-gray-400 text-sm">SOC 2 compliant with bank-level security</p>
-                  </div>
-                  <div>
-                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mb-4 mx-auto">
-                      <Zap className="w-6 h-6 text-white" />
-                    </div>
-                    <h4 className="text-lg font-semibold text-white mb-2">Lightning Fast</h4>
-                    <p className="text-gray-400 text-sm">Get started in minutes, not days</p>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </section>
 
