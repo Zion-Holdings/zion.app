@@ -192,15 +192,15 @@ export default function MicroSaasPage() {
               </button>
               {serviceCategories.map((category) => (
                 <button
-                  key={category}
-                  onClick={() => setSelectedCategory(category)}
+                  key={category.name}
+                  onClick={() => setSelectedCategory(category.name)}
                   className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
-                    selectedCategory === category
+                    selectedCategory === category.name
                       ? 'bg-gradient-to-r from-purple-500 to-pink-600 text-white'
                       : 'bg-white/10 text-gray-300 hover:bg-white/20 border border-white/20'
                   }`}
                 >
-                  {category} ({getServicesByCategory(category).length})
+                  {category.name} ({getServicesByCategory(category.name).length})
                 </button>
               ))}
             </div>

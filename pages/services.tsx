@@ -98,84 +98,165 @@ export default function ServicesPage() {
               <div className="mb-8">
                 <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 text-purple-400 text-sm font-medium mb-6 backdrop-blur-sm">
                   <Sparkles className="w-4 h-4 mr-2" />
-                  Complete Technology Portfolio
+                  Revolutionary AI-Powered Solutions
+                </div>
+                <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+                    200+ Real Micro SaaS
+                  </span>
+                  <br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 to-purple-500">
+                    Services Portfolio
+                  </span>
+                </h1>
+                <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                  Discover our comprehensive portfolio of cutting-edge AI, quantum computing, blockchain, and emerging technology solutions. 
+                  Not mockups - real, working services with proven ROI.
+                </p>
+                <div className="flex flex-wrap justify-center gap-4 mb-8">
+                  <div className="flex items-center text-cyan-400">
+                    <Check className="w-5 h-5 mr-2" />
+                    <span className="text-sm">200+ Real Services</span>
+                  </div>
+                  <div className="flex items-center text-fuchsia-400">
+                    <Check className="w-5 h-5 mr-2" />
+                    <span className="text-sm">600%+ Average ROI</span>
+                  </div>
+                  <div className="flex items-center text-green-400">
+                    <Check className="w-5 h-5 mr-2" />
+                    <span className="text-sm">14-Day Free Trials</span>
+                  </div>
+                  <div className="flex items-center text-purple-400">
+                    <Check className="w-5 h-5 mr-2" />
+                    <span className="text-sm">24/7 AI Support</span>
+                  </div>
                 </div>
               </div>
               
-              <h1 className="text-5xl md:text-7xl font-bold mb-8 text-white">
-                <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                  150+ Revolutionary
-                </span>
-                <br />
-                <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">
-                  Micro SaaS Services
-                </span>
-              </h1>
-              
-              <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-                From AI-powered automation to quantum computing solutions, discover our comprehensive portfolio 
-                of cutting-edge micro SaaS services designed to transform your business. Starting from $49/month with 14-day free trials.
+              {/* Contact Information */}
+              <div className="bg-gradient-to-r from-gray-800/50 to-gray-900/50 rounded-2xl p-6 border border-gray-700/50 backdrop-blur-sm">
+                <h3 className="text-xl font-semibold text-white mb-4">Ready to Transform Your Business?</h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                  <div className="flex flex-col items-center">
+                    <Phone className="w-6 h-6 text-cyan-400 mb-2" />
+                    <span className="text-white font-semibold">{contactInfo.mobile}</span>
+                    <span className="text-gray-400 text-sm">Available 24/7</span>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <Mail className="w-6 h-6 text-purple-400 mb-2" />
+                    <span className="text-white font-semibold">{contactInfo.email}</span>
+                    <span className="text-gray-400 text-sm">Response within 2 hours</span>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <MapPin className="w-6 h-6 text-green-400 mb-2" />
+                    <span className="text-white font-semibold text-sm">{contactInfo.address}</span>
+                    <span className="text-gray-400 text-sm">Delaware, USA</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Service Categories Overview */}
+        <section className="py-16 bg-gradient-to-br from-gray-900/30 to-black/30">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-white mb-4">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 to-purple-500">
+                  Comprehensive
+                </span> Service Categories
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                From AI and machine learning to quantum computing and emerging technologies, we cover every aspect of modern business needs.
               </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {serviceCategories.map((category) => {
+                const categoryServices = getServicesByCategory(category.name);
+                const realServicesCount = categoryServices.filter(s => s.realService).length;
+                
+                return (
+                  <div key={category.name} className="group relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                    <div className="relative p-6 bg-gradient-to-br from-gray-800/80 to-gray-900/80 rounded-2xl border border-gray-700/50 backdrop-blur-sm hover:border-cyan-500/50 transition-all duration-300">
+                      <div className="text-3xl mb-4">{category.icon}</div>
+                      <h3 className="text-xl font-bold text-white mb-2">{category.name}</h3>
+                      <p className="text-gray-300 text-sm mb-4">{category.description}</p>
+                      <div className="flex items-center justify-between">
+                        <span className="text-cyan-400 font-semibold">{realServicesCount} Real Services</span>
+                        <span className="text-gray-400 text-sm">Starting from ${category.minPrice}</span>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
 
-              {/* Key Benefits Banner */}
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8 max-w-5xl mx-auto">
-                <div className="bg-gradient-to-br from-cyan-500/20 to-blue-600/20 backdrop-blur-sm border border-cyan-500/30 rounded-2xl p-4 text-center">
-                  <div className="text-2xl font-bold text-cyan-400 mb-1">150+</div>
-                  <div className="text-sm text-cyan-300">Real Services</div>
-                </div>
-                <div className="bg-gradient-to-br from-purple-500/20 to-pink-600/20 backdrop-blur-sm border border-purple-500/30 rounded-2xl p-4 text-center">
-                  <div className="text-2xl font-bold text-purple-400 mb-1">500%+</div>
-                  <div className="text-sm text-purple-300">Average ROI</div>
-                </div>
-                <div className="bg-gradient-to-br from-green-500/20 to-emerald-600/20 backdrop-blur-sm border border-green-500/30 rounded-2xl p-4 text-center">
-                  <div className="text-2xl font-bold text-green-400 mb-1">$49</div>
-                  <div className="text-sm text-green-300">Starting Price</div>
-                </div>
-                <div className="bg-gradient-to-br from-orange-500/20 to-red-600/20 backdrop-blur-sm border border-orange-500/30 rounded-2xl p-4 text-center">
-                  <div className="text-2xl font-bold text-orange-400 mb-1">14 Days</div>
-                  <div className="text-sm text-orange-300">Free Trial</div>
-                </div>
-              </div>
-
-              {/* Enhanced Contact Information Banner */}
-              <div className="bg-gradient-to-r from-gray-900/80 to-gray-800/80 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 max-w-4xl mx-auto shadow-2xl mb-12">
-                <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold text-white mb-2">Ready to Get Started?</h3>
-                  <p className="text-gray-300">Contact our team of technology experts</p>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="flex flex-col items-center text-center group">
-                    <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                      <Phone className="w-6 h-6 text-white" />
+        {/* Popular Services Showcase */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-white mb-4">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-500">
+                  Most Popular
+                </span> AI Services
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Our most sought-after solutions that are transforming industries and driving unprecedented business growth.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {popularServices.slice(0, 6).map((service) => (
+                <div key={service.id} className="group relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                  <div className="relative p-8 bg-gradient-to-br from-gray-800/80 to-gray-900/80 rounded-2xl border border-gray-700/50 backdrop-blur-sm hover:border-green-500/50 transition-all duration-300 hover:scale-105">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="text-4xl">{service.icon}</div>
+                      {service.popular && (
+                        <span className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                          Popular
+                        </span>
+                      )}
                     </div>
-                    <div className="text-sm text-gray-400 mb-1">Mobile</div>
-                    <div className="text-white font-semibold">{contactInfo.mobile}</div>
-                    <a href={`tel:${contactInfo.mobile}`} className="text-cyan-400 text-sm hover:text-cyan-300 transition-colors mt-1">
-                      Call Now →
-                    </a>
-                  </div>
-                  <div className="flex flex-col items-center text-center group">
-                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                      <Mail className="w-6 h-6 text-white" />
+                    <h3 className="text-xl font-bold text-white mb-3">{service.name}</h3>
+                    <p className="text-gray-300 mb-4">{service.description}</p>
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="text-2xl font-bold text-green-400">{service.price}</span>
+                      <span className="text-sm text-gray-400 bg-gray-700/50 px-3 py-1 rounded-full">{service.category}</span>
                     </div>
-                    <div className="text-sm text-gray-400 mb-1">Email</div>
-                    <div className="text-white font-semibold text-sm">{contactInfo.email}</div>
-                    <a href={`mailto:${contactInfo.email}`} className="text-purple-400 text-sm hover:text-purple-300 transition-colors mt-1">
-                      Send Email →
-                    </a>
-                  </div>
-                  <div className="flex flex-col items-center text-center group">
-                    <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                      <MapPin className="w-6 h-6 text-white" />
+                    <div className="space-y-2 mb-6">
+                      <div className="flex items-center text-sm text-gray-400">
+                        <Clock className="w-4 h-4 mr-2" />
+                        <span>Setup: {service.setupTime}</span>
+                      </div>
+                      <div className="flex items-center text-sm text-gray-400">
+                        <Target className="w-4 h-4 mr-2" />
+                        <span>ROI: {service.roi}</span>
+                      </div>
                     </div>
-                    <div className="text-sm text-gray-400 mb-1">Address</div>
-                    <div className="text-white font-semibold text-xs leading-tight">{contactInfo.address}</div>
-                    <a href={`https://maps.google.com/?q=${encodeURIComponent(contactInfo.address)}`} target="_blank" rel="noopener noreferrer" className="text-emerald-400 text-sm hover:text-emerald-300 transition-colors mt-1">
-                      View on Map →
+                    <a 
+                      href={service.link}
+                      className="inline-flex items-center text-green-400 hover:text-green-300 font-semibold group-hover:translate-x-2 transition-all duration-300"
+                    >
+                      Learn More <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1" />
                     </a>
                   </div>
                 </div>
-              </div>
+              ))}
+            </div>
+            
+            <div className="text-center mt-12">
+              <a 
+                href="https://ziontechgroup.com/services"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold rounded-full hover:from-green-600 hover:to-emerald-700 transition-all duration-300 transform hover:scale-105"
+              >
+                View All Popular Services <ArrowRight className="w-5 h-5 ml-2" />
+              </a>
             </div>
           </div>
         </section>
@@ -206,7 +287,7 @@ export default function ServicesPage() {
                     className="appearance-none bg-gray-900/50 border border-gray-600 rounded-xl px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent pr-10"
                   >
                     {serviceCategories.map((category) => (
-                      <option key={category} value={category}>{category}</option>
+                      <option key={category.name} value={category.name}>{category.name}</option>
                     ))}
                   </select>
                   <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
@@ -272,62 +353,6 @@ export default function ServicesPage() {
             </div>
           </div>
         </section>
-
-        {/* Popular Services Section */}
-        {popularServices.length > 0 && (
-          <section className="py-16">
-            <div className="container mx-auto px-4">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-                  <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
-                    Most Popular
-                  </span> Services
-                </h2>
-                <p className="text-lg text-gray-300">Our most requested and highly-rated solutions</p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {popularServices.slice(0, 6).map((service) => (
-                  <div
-                    key={service.id}
-                    className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 transform hover:scale-105 transition-all duration-500 hover:shadow-2xl group relative overflow-hidden"
-                  >
-                    {/* Popular Badge */}
-                    <div className="absolute top-4 right-4 bg-gradient-to-r from-yellow-400 to-orange-400 text-black text-xs font-bold px-3 py-1 rounded-full">
-                      <Star className="w-3 h-3 inline mr-1" />
-                      Popular
-                    </div>
-
-                    <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mb-6 text-3xl group-hover:scale-110 transition-transform duration-300`}>
-                      {service.icon}
-                    </div>
-                    
-                    <h3 className="text-2xl font-bold text-white mb-4">{service.name}</h3>
-                    <p className="text-gray-300 mb-4 leading-relaxed">{service.description}</p>
-                    
-                    <div className="flex items-center justify-between mb-6">
-                      <span className="text-2xl font-bold text-green-400">{service.price}{service.period}</span>
-                      <span className="text-sm text-gray-400 bg-gray-800/50 px-3 py-1 rounded-full">
-                        {service.category}
-                      </span>
-                    </div>
-
-                    <div className="flex items-center justify-between">
-                      <a
-                        href={service.link}
-                        className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors group/link"
-                      >
-                        Learn More
-                        <ArrowRight className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform" />
-                      </a>
-                      <span className="text-sm text-gray-400">{service.trialDays} day trial</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
 
         {/* All Services Section */}
         <section className="py-16">
