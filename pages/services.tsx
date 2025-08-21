@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, Star, Users, TrendingUp, DollarSign, Clock, CheckCircle, ArrowRight } from 'lucide-react';
+import { Search, Star, Users, TrendingUp, DollarSign, Clock, CheckCircle, ArrowRight, Rocket } from 'lucide-react';
 import { innovativeAIServices } from '../data/innovative-ai-services';
 import { quantumSpaceServices } from '../data/quantum-space-services';
 import { enterpriseITServices } from '../data/enterprise-it-services';
@@ -171,176 +171,280 @@ export default function ServicesPage() {
       </Head>
 
       {/* Header */}
-      <section className="pt-20 pb-16 px-4 sm:px-6 lg:px-8">
+      <section className="pt-24 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="mb-8"
+          >
+            {/* Futuristic Icon */}
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-cyan-500 via-purple-600 to-pink-500 rounded-3xl shadow-2xl mb-6 relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse"></div>
+              <Rocket className="w-10 h-10 text-white relative z-10" />
+            </div>
+          </motion.div>
+
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-6"
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-5xl md:text-7xl font-black bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-8 relative"
           >
-            All Services
+            <span className="relative">
+              All Services
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 blur-xl opacity-30 animate-pulse"></div>
+            </span>
           </motion.h1>
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto"
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed"
           >
-            Discover our complete portfolio of {allServices.length}+ revolutionary technology solutions
+            Discover our complete portfolio of <span className="text-cyan-400 font-bold">{allServices.length}+</span> revolutionary technology solutions
           </motion.p>
+
+          {/* Service Statistics */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
+          >
+            <div className="text-center p-4 bg-gradient-to-br from-gray-800/60 to-gray-900/60 border border-gray-700/50 rounded-2xl">
+              <div className="text-2xl font-bold text-cyan-400">{aiCount}</div>
+              <div className="text-gray-400 text-sm">AI Services</div>
+            </div>
+            <div className="text-center p-4 bg-gradient-to-br from-gray-800/60 to-gray-900/60 border border-gray-700/50 rounded-2xl">
+              <div className="text-2xl font-bold text-purple-400">{quantumCount}</div>
+              <div className="text-gray-400 text-sm">Quantum & Space</div>
+            </div>
+            <div className="text-center p-4 bg-gradient-to-br from-gray-800/60 to-gray-900/60 border border-gray-700/50 rounded-2xl">
+              <div className="text-2xl font-bold text-green-400">{enterpriseCount}</div>
+              <div className="text-gray-400 text-sm">Enterprise IT</div>
+            </div>
+            <div className="text-center p-4 bg-gradient-to-br from-gray-800/60 to-gray-900/60 border border-gray-700/50 rounded-2xl">
+              <div className="text-2xl font-bold text-pink-400">{microSaasCount}</div>
+              <div className="text-gray-400 text-sm">Micro SaaS</div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Filters */}
-      <section className="px-4 sm:px-6 lg:px-8 mb-12">
+      <section className="px-4 sm:px-6 lg:px-8 mb-16">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-gray-900/60 backdrop-blur-xl rounded-2xl p-6 border border-cyan-500/20 shadow-xl shadow-cyan-500/10">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-              {/* Search */}
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                <input
-                  type="text"
-                  placeholder="Search services..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 bg-gray-800/60 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
-                />
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-xl rounded-3xl p-8 border border-cyan-500/30 shadow-2xl shadow-cyan-500/20 relative overflow-hidden"
+          >
+            {/* Background Glow Effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-purple-500/5 to-pink-500/5 opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
+            
+            <div className="relative z-10">
+              <div className="text-center mb-8">
+                <h3 className="text-2xl font-bold text-white mb-2">Find Your Perfect Solution</h3>
+                <p className="text-gray-400">Use our advanced filters to discover the ideal service for your needs</p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
+                {/* Search */}
+                <div className="relative group">
+                  <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5 group-focus-within:text-cyan-400 transition-colors duration-300" />
+                  <input
+                    type="text"
+                    placeholder="Search services..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="w-full pl-12 pr-4 py-4 bg-gray-800/80 border border-gray-700/50 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500/50 transition-all duration-300 hover:border-gray-600/50"
+                  />
+                </div>
+
+                {/* Category */}
+                <div className="relative group">
+                  <select
+                    value={selectedCategory}
+                    onChange={(e) => setSelectedCategory(e.target.value)}
+                    className="w-full px-4 py-4 bg-gray-800/80 border border-gray-700/50 rounded-2xl text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500/50 transition-all duration-300 hover:border-gray-600/50 appearance-none cursor-pointer"
+                  >
+                    {categories.map((category) => (
+                      <option key={category.id} value={category.id}>
+                        {category.name} ({category.count})
+                      </option>
+                    ))}
+                  </select>
+                  <div className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </div>
+
+                {/* Price Range */}
+                <div className="relative group">
+                  <select
+                    value={selectedPriceRange}
+                    onChange={(e) => setSelectedPriceRange(e.target.value)}
+                    className="w-full px-4 py-4 bg-gray-800/80 border border-gray-700/50 rounded-2xl text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500/50 transition-all duration-300 hover:border-gray-600/50 appearance-none cursor-pointer"
+                  >
+                    {priceRanges.map((range) => (
+                      <option key={range.id} value={range.id}>
+                        {range.name}
+                      </option>
+                    ))}
+                  </select>
+                  <div className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </div>
+
+                {/* Sort */}
+                <div className="relative group">
+                  <select
+                    value={sortBy}
+                    onChange={(e) => setSortBy(e.target.value)}
+                    className="w-full px-4 py-4 bg-gray-800/80 border border-gray-700/50 rounded-2xl text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500/50 transition-all duration-300 hover:border-gray-600/50 appearance-none cursor-pointer"
+                  >
+                    {sortOptions.map((option) => (
+                      <option key={option.id} value={option.id}>
+                        {option.name}
+                      </option>
+                    ))}
+                  </select>
+                  <div className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              {/* Results Count */}
+              <div className="text-center">
+                <div className="inline-flex items-center space-x-2 px-4 py-2 bg-cyan-500/20 border border-cyan-500/30 rounded-full">
+                  <span className="text-cyan-400 font-semibold">{filteredServices.length}</span>
+                  <span className="text-gray-300">services found</span>
+                </div>
               </div>
             </div>
+          </motion.div>
 
-            {/* Filters Row */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {/* Category */}
-              <div>
-                <select
-                  value={selectedCategory}
-                  onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="w-full px-4 py-3 bg-gray-800/60 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
-                >
-                  {categories.map((category) => (
-                    <option key={category.id} value={category.id}>
-                      {category.name} ({category.count})
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              {/* Price Range */}
-              <div>
-                <select
-                  value={selectedPriceRange}
-                  onChange={(e) => setSelectedPriceRange(e.target.value)}
-                  className="w-full px-4 py-3 bg-gray-800/60 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
-                >
-                  {priceRanges.map((range) => (
-                    <option key={range.id} value={range.id}>
-                      {range.name}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              {/* Sort */}
-              <div>
-                <select
-                  value={sortBy}
-                  onChange={(e) => setSortBy(e.target.value)}
-                  className="w-full px-4 py-3 bg-gray-800/60 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
-                >
-                  {sortOptions.map((option) => (
-                    <option key={option.id} value={option.id}>
-                      {option.name}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
-          </div>
           {/* Market pricing CTA */}
-          <div className="mt-4">
-            <a href="/market-pricing" className="block w-full text-center bg-gradient-to-r from-cyan-600/30 to-purple-600/30 hover:from-cyan-600/40 hover:to-purple-600/40 text-cyan-200 border border-cyan-500/30 rounded-xl px-6 py-4 transition-all">
-              See average market prices and vendor references →
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mt-6"
+          >
+            <a 
+              href="/market-pricing" 
+              className="block w-full text-center bg-gradient-to-r from-cyan-600/30 to-purple-600/30 hover:from-cyan-600/50 hover:to-purple-600/50 text-cyan-200 border border-cyan-500/40 rounded-2xl px-8 py-6 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/20 group"
+            >
+              <div className="flex items-center justify-center space-x-3">
+                <DollarSign className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
+                <span className="text-lg font-semibold">See average market prices and vendor references</span>
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              </div>
             </a>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="px-4 sm:px-6 lg:px-8 pb-20">
+      <section className="px-4 sm:px-6 lg:px-8 pb-24">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             <AnimatePresence>
               {filteredServices.map((service, index) => (
                 <motion.div
                   key={service.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -30 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -30, scale: 0.95 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  whileHover={{ scale: 1.02, y: -5 }}
                   className="group"
                 >
-                  <div className="bg-gray-900/60 backdrop-blur-xl rounded-2xl p-6 border border-cyan-500/20 hover:border-cyan-400/40 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/20 h-full">
-                    {/* Service Icon */}
-                    <div className="text-4xl mb-4">
-                      {service.icon || '🚀'}
-                    </div>
-
-                    {/* Service Name */}
-                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
-                      {service.name}
-                    </h3>
-
-                    {/* Description */}
-                    <p className="text-gray-300 mb-4 text-sm line-clamp-3">
-                      {service.description}
-                    </p>
-
-                    {/* Price */}
-                    <div className="mb-4">
-                      <div className="text-2xl font-bold text-cyan-400">
-                        {typeof (service as any).price === 'number' ? `$${(service as any).price.toLocaleString()}/month` : `${(service as any).price}${(service as any).period ? '' : ''}`}
+                  <div className="bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-xl rounded-3xl p-8 border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/30 h-full relative overflow-hidden">
+                    {/* Background Glow Effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <div className="relative z-10">
+                      {/* Service Icon */}
+                      <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                        {service.icon || '🚀'}
                       </div>
-                      <div className="text-sm text-gray-400">
-                        Starting price
-                      </div>
-                    </div>
 
-                    {/* Features */}
-                    <div className="mb-6">
-                      <h4 className="text-sm font-semibold text-gray-300 mb-2">Key Features:</h4>
-                      <div className="space-y-1">
-                        {service.features.slice(0, 3).map((feature, idx) => (
-                          <div key={idx} className="flex items-center text-xs text-gray-400">
-                            <CheckCircle className="w-3 h-3 text-green-400 mr-2 flex-shrink-0" />
-                            {feature}
+                      {/* Service Name */}
+                      <h3 className="text-xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors duration-300 line-clamp-2">
+                        {service.name}
+                      </h3>
+
+                      {/* Description */}
+                      <p className="text-gray-300 mb-6 text-sm line-clamp-3 leading-relaxed">
+                        {service.description}
+                      </p>
+
+                      {/* Price */}
+                      <div className="mb-6 p-4 bg-gradient-to-r from-gray-800/60 to-gray-700/60 rounded-2xl border border-gray-600/30">
+                        <div className="text-2xl font-bold text-cyan-400 mb-1">
+                          {typeof (service as any).price === 'number' ? `$${(service as any).price.toLocaleString()}/month` : `${(service as any).price}${(service as any).period ? '' : ''}`}
+                        </div>
+                        <div className="text-sm text-gray-400">
+                          Starting price
+                        </div>
+                      </div>
+
+                      {/* Features */}
+                      <div className="mb-8">
+                        <h4 className="text-sm font-semibold text-gray-300 mb-3 flex items-center">
+                          <CheckCircle className="w-4 h-4 text-green-400 mr-2" />
+                          Key Features:
+                        </h4>
+                        <div className="space-y-2">
+                          {service.features.slice(0, 3).map((feature, idx) => (
+                            <div key={idx} className="flex items-center text-xs text-gray-400">
+                              <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full mr-2 flex-shrink-0"></div>
+                              <span className="line-clamp-1">{feature}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Stats */}
+                      <div className="grid grid-cols-2 gap-4 mb-8 text-sm">
+                        <div className="text-center p-3 bg-gradient-to-r from-gray-800/60 to-gray-700/60 rounded-xl border border-gray-600/30">
+                          <div className="text-cyan-400 font-bold text-lg">
+                            {service.rating || 'N/A'}
                           </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Stats */}
-                    <div className="grid grid-cols-2 gap-4 mb-6 text-sm">
-                      <div className="text-center">
-                        <div className="text-cyan-400 font-semibold">
-                          {service.rating || 'N/A'}
+                          <div className="text-gray-400 text-xs">Rating</div>
                         </div>
-                        <div className="text-gray-400">Rating</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-cyan-400 font-semibold">
-                          {((service as any).customerCount ?? (service as any).customers ?? 'N/A')}
+                        <div className="text-center p-3 bg-gradient-to-r from-gray-800/60 to-gray-700/60 rounded-xl border border-gray-600/30">
+                          <div className="text-purple-400 font-bold text-lg">
+                            {((service as any).customerCount ?? (service as any).customers ?? 'N/A')}
+                          </div>
+                          <div className="text-gray-400 text-xs">Customers</div>
                         </div>
-                        <div className="text-gray-400">Customers</div>
                       </div>
-                    </div>
 
-                    {/* CTA Button */}
-                    <a href={(service as any).link || '/services'} className="w-full inline-flex items-center justify-center bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
-                      Learn More
-                      <ArrowRight className="inline-block ml-2 w-4 h-4" />
-                    </a>
+                      {/* CTA Button */}
+                      <a 
+                        href={(service as any).link || '/services'} 
+                        className="w-full inline-flex items-center justify-center bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold py-4 px-6 rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-cyan-500/30 group-hover:shadow-2xl group-hover:shadow-cyan-500/40"
+                      >
+                        <span className="flex items-center">
+                          Learn More
+                          <ArrowRight className="inline-block ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                        </span>
+                      </a>
+                    </div>
                   </div>
                 </motion.div>
               ))}
@@ -350,13 +454,24 @@ export default function ServicesPage() {
           {/* No Results */}
           {filteredServices.length === 0 && (
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-center py-20"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-center py-24"
             >
-              <div className="text-6xl mb-4">🔍</div>
-              <h3 className="text-2xl font-bold text-white mb-2">No services found</h3>
-              <p className="text-gray-400">Try adjusting your search criteria or filters</p>
+              <div className="text-8xl mb-6">🔍</div>
+              <h3 className="text-3xl font-bold text-white mb-4">No services found</h3>
+              <p className="text-gray-400 text-lg mb-8">Try adjusting your search criteria or filters</p>
+              <button 
+                onClick={() => {
+                  setSearchTerm('');
+                  setSelectedCategory('all');
+                  setSelectedPriceRange('all');
+                }}
+                className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-3 rounded-2xl font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/30"
+              >
+                Clear All Filters
+              </button>
             </motion.div>
           )}
         </div>
