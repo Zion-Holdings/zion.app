@@ -14,6 +14,7 @@ import EnhancedFuturisticBackground from '../components/ui/EnhancedFuturisticBac
 import EnhancedFuturisticCard from '../components/ui/EnhancedFuturisticCard';
 import QuantumHolographicBackground from '../components/ui/QuantumHolographicBackground';
 import QuantumHolographicCard from '../components/ui/QuantumHolographicCard';
+import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
 
 export default function HomePage() {
   const heroStats = [
@@ -30,6 +31,22 @@ export default function HomePage() {
     email: 'kleber@ziontechgroup.com',
     address: '364 E Main St STE 1008 Middletown DE 19709',
     website: 'https://ziontechgroup.com'
+  };
+
+  const advertisingContent = {
+    headline: "Transform Your Business with Zion Tech Group's Revolutionary Micro SaaS Solutions",
+    subheadline: "500+ Cutting-Edge Services • 99.99% Uptime • 30-Day Free Trials • 2500%+ Average ROI",
+    benefits: [
+      "🚀 First-to-Market Quantum AI & Autonomous Systems",
+      "💎 Industry-Leading Technology with Patent-Pending Solutions", 
+      "🌍 Global Deployment with 24/7 AI-Powered Support",
+      "💰 Competitive Pricing Starting from $49/month",
+      "⚡ Lightning-Fast Setup in 2-8 Hours",
+      "🛡️ Enterprise-Grade Security & Compliance"
+    ],
+    marketPosition: "Zion Tech Group is the global leader in revolutionary micro SaaS services, serving Fortune 500 companies, government agencies, and innovative startups worldwide.",
+    pricing: "Our services range from $49/month for basic tools to $5,999/month for enterprise quantum computing platforms. All services include 30-day free trials and comprehensive support.",
+    contactCTA: "Ready to revolutionize your business? Contact our expert team today for a personalized consultation and demo."
   };
 
   const revolutionaryServices = [
@@ -215,7 +232,7 @@ export default function HomePage() {
   ];
 
   return (
-    <QuantumHolographicBackground variant="quantum-holographic" intensity="high">
+    <UltraFuturisticBackground variant="quantum">
       <div className="min-h-screen">
         <Head>
           <title>Zion Tech Group - Revolutionary AI, Quantum Computing & Emerging Technology Solutions</title>
@@ -357,6 +374,97 @@ export default function HomePage() {
                   </p>
                 </EnhancedFuturisticCard>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Prominent Advertising Section */}
+        <section className="py-16 bg-gradient-to-r from-purple-900/50 via-blue-900/50 to-cyan-900/50 border-y border-purple-500/20">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                {advertisingContent.headline}
+              </h2>
+              <p className="text-xl text-cyan-300 mb-8 max-w-4xl mx-auto font-medium">
+                {advertisingContent.subheadline}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+              {advertisingContent.benefits.map((benefit, index) => (
+                <div key={index} className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:border-cyan-400/50 transition-all duration-300 hover:scale-105">
+                  <div className="text-2xl mb-3">{benefit.split(' ')[0]}</div>
+                  <p className="text-white/90 text-sm leading-relaxed">
+                    {benefit.split(' ').slice(1).join(' ')}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div className="text-center mb-8">
+              <p className="text-lg text-white/80 max-w-4xl mx-auto mb-6">
+                {advertisingContent.marketPosition}
+              </p>
+              <p className="text-lg text-cyan-300 max-w-3xl mx-auto mb-8">
+                {advertisingContent.pricing}
+              </p>
+              <p className="text-xl text-white font-semibold mb-8">
+                {advertisingContent.contactCTA}
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <div className="bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl p-6 text-center min-w-[280px]">
+                <h3 className="text-xl font-bold text-white mb-3">Contact Information</h3>
+                <div className="space-y-3 text-white/90">
+                  <div className="flex items-center justify-center">
+                    <Phone className="w-5 h-5 mr-2 text-cyan-200" />
+                    <span className="font-medium">{contactInfo.mobile}</span>
+                  </div>
+                  <div className="flex items-center justify-center">
+                    <Mail className="w-5 h-5 mr-2 text-cyan-200" />
+                    <span className="font-medium">{contactInfo.email}</span>
+                  </div>
+                  <div className="flex items-center justify-center">
+                    <MapPin className="w-5 h-5 mr-2 text-cyan-200" />
+                    <span className="font-medium text-sm">{contactInfo.address}</span>
+                  </div>
+                  <div className="flex items-center justify-center">
+                    <Globe className="w-5 h-5 mr-2 text-cyan-200" />
+                    <span className="font-medium">{contactInfo.website}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-r from-purple-500 to-pink-600 rounded-xl p-6 text-center min-w-[280px]">
+                <h3 className="text-xl font-bold text-white mb-3">Why Choose Zion Tech Group?</h3>
+                <div className="space-y-3 text-white/90 text-sm">
+                  <div className="flex items-center">
+                    <Check className="w-5 h-5 mr-2 text-green-200" />
+                    <span>500+ Revolutionary Services</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Check className="w-5 h-5 mr-2 text-green-200" />
+                    <span>99.99% Uptime Guarantee</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Check className="w-5 h-5 mr-2 text-green-200" />
+                    <span>30-Day Free Trials</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Check className="w-5 h-5 mr-2 text-green-200" />
+                    <span>24/7 AI-Powered Support</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Check className="w-5 h-5 mr-2 text-green-200" />
+                    <span>2500%+ Average ROI</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Check className="w-5 h-5 mr-2 text-green-200" />
+                    <span>Enterprise-Grade Security</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -571,6 +679,6 @@ export default function HomePage() {
           </div>
         </section>
       </div>
-    </QuantumHolographicBackground>
+    </UltraFuturisticBackground>
   );
 }
