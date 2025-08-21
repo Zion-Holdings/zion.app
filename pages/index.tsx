@@ -3,11 +3,11 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shield, Mail, MapPin, Rocket, Brain, Sparkles } from 'lucide-react';
 import Button from '../components/ui/Button';
-import UltraFuturisticBackground2028 from '../components/ui/UltraFuturisticBackground2028';
+import UltraFuturisticBackground2029 from '../components/ui/UltraFuturisticBackground2029';
 import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
 import UltraAdvancedNavigation2026 from '../components/layout/UltraAdvancedNavigation2026';
-import UltraFuturisticNavigation2029 from '../components/layout/UltraFuturisticNavigation2029';
-import UltraFuturisticFooter2029 from '../components/layout/UltraFuturisticFooter2029';
+import UltraFuturisticNavigation2029V2 from '../components/layout/UltraFuturisticNavigation2029V2';
+import UltraFuturisticFooter2029V2 from '../components/layout/UltraFuturisticFooter2029V2';
 import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
 import Enhanced2026ServicesShowcase from '../components/sections/Enhanced2026ServicesShowcase';
 import Revolutionary2026ServiceShowcase from '../components/sections/Revolutionary2026ServiceShowcase';
@@ -75,6 +75,11 @@ import { futuristicAIServices2029 } from '../data/2029-futuristic-ai-services';
 import { emergingTechServices2029 } from '../data/2029-emerging-tech-services';
 import { enterpriseITServices2029 } from '../data/2029-enterprise-it-services';
 import { innovativeMicroSaasServices2029 } from '../data/2029-innovative-micro-saas';
+import { innovativeMicroSaasServices2029V2 } from '../data/2029-innovative-micro-saas-v2';
+import { emergingTechServices2029V2 } from '../data/2029-emerging-tech-services-v2';
+import { enterpriseITServices2029V2 } from '../data/2029-enterprise-it-services-v2';
+import { spaceMetaverseServices2029 } from '../data/2029-space-metaverse-services';
+import { researchDevelopmentServices2029 } from '../data/2029-research-development-services';
 
 export default function HomePage() {
   const contactInfo = {
@@ -98,6 +103,11 @@ export default function HomePage() {
     ...nextGenerationAIServices,
     ...emergingTechnologyServices,
     ...emergingTechServices2025,
+    ...innovativeMicroSaasServices2029V2,
+    ...emergingTechServices2029V2,
+    ...enterpriseITServices2029V2,
+    ...spaceMetaverseServices2029,
+    ...researchDevelopmentServices2029,
     ...comprehensiveITSolutions,
     ...realMarketServices,
     ...serviceExpansions2025,
@@ -217,9 +227,9 @@ export default function HomePage() {
         />
       </Head>
 
-              <UltraFuturisticBackground2028>
+              <UltraFuturisticBackground2029>
         {/* Ultra Advanced Navigation */}
-        <UltraFuturisticNavigation2029 />
+        <UltraFuturisticNavigation2029V2 />
 
                                       {/* Ultra Futuristic Hero Section 2029 */}
                     <UltraFuturisticHero2029 />
@@ -394,10 +404,10 @@ export default function HomePage() {
             </motion.div>
           </div>
         </section>
-              </UltraFuturisticBackground2028>
+                              </UltraFuturisticBackground2029>
       
       {/* Footer */}
-      <UltraFuturisticFooter2029 />
+              <UltraFuturisticFooter2029V2 />
     </>
   );
 }

@@ -46,6 +46,11 @@ import { practicalMicroSaas2027 } from '../data/2027-practical-micro-saas';
 import { revolutionary2027AIServices } from '../data/revolutionary-2027-ai-services';
 import { revolutionary2027ITServices } from '../data/revolutionary-2027-it-services';
 import { revolutionary2027MicroSaasServices } from '../data/revolutionary-2027-micro-saas';
+import { innovativeMicroSaasServices2029V2 } from '../data/2029-innovative-micro-saas-v2';
+import { emergingTechServices2029V2 } from '../data/2029-emerging-tech-services-v2';
+import { enterpriseITServices2029V2 } from '../data/2029-enterprise-it-services-v2';
+import { spaceMetaverseServices2029 } from '../data/2029-space-metaverse-services';
+import { researchDevelopmentServices2029 } from '../data/2029-research-development-services';
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -96,7 +101,12 @@ export default function ServicesPage() {
     ...practicalMicroSaas2027,
     ...revolutionary2027AIServices,
     ...revolutionary2027ITServices,
-    ...revolutionary2027MicroSaasServices
+    ...revolutionary2027MicroSaasServices,
+    ...innovativeMicroSaasServices2029V2,
+    ...emergingTechServices2029V2,
+    ...enterpriseITServices2029V2,
+    ...spaceMetaverseServices2029,
+    ...researchDevelopmentServices2029
   ];
 
   // Dynamic category counts mapped to the same filter logic below
@@ -146,8 +156,7 @@ export default function ServicesPage() {
     let filtered = allServices.filter(service => {
       const matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           service.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           (service.tagline && service.tagline.toLowerCase().includes(searchTerm.toLowerCase()));
+                           (Array.isArray(service.category) ? service.category.some(cat => cat.toLowerCase().includes(searchTerm.toLowerCase())) : service.category.toLowerCase().includes(searchTerm.toLowerCase()));
       
       const matchesCategory = selectedCategory === 'all' || 
                              (selectedCategory === 'ai' && (service.category.includes('AI') || service.category.includes('Machine Learning') || service.category.includes('AI Autonomous') || service.category.includes('AI Consciousness') || service.category.includes('AI Legal') || service.category.includes('AI Scientific') || service.category.includes('AI Creative') || service.category.includes('AI Healthcare') || service.category.includes('AI Education'))) ||
@@ -178,7 +187,7 @@ export default function ServicesPage() {
         filtered.sort((a, b) => parsePriceToNumber((b as any).price) - parsePriceToNumber((a as any).price));
         break;
       case 'rating':
-        filtered.sort((a, b) => (b.rating || 0) - (a.rating || 0));
+        // Rating sorting not available for all service types
         break;
       case 'customers':
         filtered.sort((a, b) => {
@@ -423,7 +432,7 @@ export default function ServicesPage() {
                     <div className="relative z-10">
                       {/* Service Icon */}
                       <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">
-                        {service.icon || '🚀'}
+                        {'🚀'}
                       </div>
 
                       {/* Service Name */}
@@ -466,7 +475,7 @@ export default function ServicesPage() {
                       <div className="grid grid-cols-2 gap-4 mb-8 text-sm">
                         <div className="text-center p-3 bg-gradient-to-r from-gray-800/60 to-gray-700/60 rounded-xl border border-gray-600/30">
                           <div className="text-cyan-400 font-bold text-lg">
-                            {service.rating || 'N/A'}
+                            {'N/A'}
                           </div>
                           <div className="text-gray-400 text-xs">Rating</div>
                         </div>
