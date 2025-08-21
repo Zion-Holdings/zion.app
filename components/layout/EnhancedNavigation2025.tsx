@@ -66,7 +66,15 @@ const navigationItems: NavigationItem[] = [
       { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics', description: 'Medical AI solutions' },
       { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence', description: 'Financial AI analytics' },
       { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform', description: 'Environmental AI solutions' },
-      { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer', description: 'Legal document analysis' }
+      { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer', description: 'Legal document analysis' },
+      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-platform', description: 'Human-AI emotional collaboration' },
+      { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant', description: 'Autonomous research AI' },
+      { name: 'AI Autonomous Code Generation', href: '/ai-autonomous-code-generation', description: 'AI that writes code' },
+      { name: 'AI Autonomous Marketing', href: '/ai-autonomous-marketing-platform', description: 'Autonomous marketing AI' },
+      { name: 'AI Autonomous Sales', href: '/ai-autonomous-sales-platform', description: 'AI that closes deals' },
+      { name: 'AI Autonomous Customer Service', href: '/ai-autonomous-customer-service', description: 'Autonomous support AI' },
+      { name: 'AI Autonomous HR', href: '/ai-autonomous-hr-platform', description: 'Autonomous HR management' },
+      { name: 'Advanced AI Automation', href: '/advanced-ai-automation-services', description: 'AI automation for development, testing, DevOps, security, and data' }
     ]
   },
   {
@@ -107,7 +115,10 @@ const navigationItems: NavigationItem[] = [
       { name: 'Quantum Networking', href: '/quantum-networking', description: 'Quantum communication protocols' },
       { name: 'Quantum Data Center', href: '/quantum-data-center', description: 'Next-gen data centers' },
       { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity', description: 'Quantum security solutions' },
-      { name: 'Quantum Cloud Migration', href: '/quantum-cloud-migration', description: 'Seamless cloud transitions' }
+      { name: 'Quantum Cloud Migration', href: '/quantum-cloud-migration', description: 'Seamless cloud transitions' },
+      { name: 'Autonomous IT Operations', href: '/autonomous-it-operations-center', description: 'Self-managing IT systems' },
+      { name: 'Autonomous Data Center', href: '/autonomous-data-center-platform', description: 'AI-managed data centers' },
+      { name: 'Advanced IT Infrastructure', href: '/advanced-it-infrastructure-services', description: 'Quantum computing, edge computing, zero-trust security, and autonomous data centers' }
     ]
   },
   {
@@ -126,11 +137,32 @@ const navigationItems: NavigationItem[] = [
       { name: 'Smart CRM Suite', href: '/smart-crm-intelligence-suite', description: 'AI-enhanced CRM' },
       { name: 'Financial Analytics', href: '/automated-financial-analytics-platform', description: 'AI financial analysis' },
       { name: 'Project Management', href: '/intelligent-project-management-suite', description: 'AI project optimization' },
-      { name: 'Business Intelligence', href: '/ai-business-intelligence', description: 'Advanced analytics' },
-      { name: 'Marketing Automation', href: '/ai-marketing-automation', description: 'Intelligent marketing' },
-      { name: 'Customer Service AI', href: '/ai-customer-service', description: 'Automated support' },
-      { name: 'HR & Recruitment', href: '/ai-hr-recruitment', description: 'AI talent management' },
-      { name: 'Legal Contract Analysis', href: '/ai-legal-contract-analyzer', description: 'Legal document review' }
+      { name: 'Business Intelligence', href: '/ai-business-intelligence-suite', description: 'Advanced analytics' },
+      { name: 'Marketing Automation', href: '/ai-autonomous-marketing-platform', description: 'Intelligent marketing' },
+      { name: 'Customer Service AI', href: '/ai-autonomous-customer-service', description: 'Automated support' },
+      { name: 'HR & Recruitment', href: '/ai-autonomous-hr-platform', description: 'AI talent management' },
+      { name: 'Legal Contract Analysis', href: '/ai-legal-contract-analyzer', description: 'Legal document review' },
+      { name: 'AI Autonomous Content Studio', href: '/ai-autonomous-content-studio', description: 'Autonomous content creation' },
+      { name: 'Quantum Financial Trading', href: '/quantum-enhanced-financial-trading', description: 'Quantum-powered trading' },
+      { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics-platform', description: 'Medical AI diagnostics' },
+      { name: 'Autonomous Manufacturing', href: '/autonomous-manufacturing-ai-platform', description: 'AI manufacturing' },
+      { name: 'Innovative Business Solutions', href: '/innovative-business-solutions', description: 'AI-powered business intelligence, marketing, sales, customer service, and HR solutions' }
+    ]
+  },
+  {
+    name: 'Space & Metaverse',
+    href: '/space-tech',
+    icon: <Rocket className="w-5 h-5" />,
+    description: 'Space technology and metaverse solutions',
+    children: [
+      { name: 'Space Mining Platform', href: '/autonomous-space-mining-platform', description: 'Asteroid mining operations' },
+      { name: 'Space Technology AI', href: '/space-technology-ai-platform', description: 'AI space solutions' },
+      { name: 'Metaverse Development', href: '/metaverse-ai-development-platform', description: 'Metaverse platforms' },
+      { name: 'Virtual Event Holograms', href: '/virtual-event-hologram-platform', description: 'Holographic events' },
+      { name: 'Space Logistics', href: '/space-logistics-platform', description: 'Space transportation' },
+      { name: 'Satellite Technology', href: '/satellite-technology-platform', description: 'Satellite solutions' },
+      { name: 'Space Research', href: '/space-research-platform', description: 'Space exploration tools' },
+      { name: 'Space Mining Analytics', href: '/space-mining-analytics', description: 'Mining data analysis' }
     ]
   },
   {

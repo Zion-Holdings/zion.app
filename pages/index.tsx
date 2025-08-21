@@ -8,6 +8,9 @@ import { innovativeRealMicroSaasServices2025 } from '../data/2025-innovative-rea
 import { innovativeAIServicesEnhanced2025 } from '../data/2025-innovative-ai-services-enhanced';
 import { innovativeITServicesEnhanced2025 } from '../data/2025-innovative-it-services-enhanced';
 import { emergingTechServicesEnhanced2025 } from '../data/2025-emerging-tech-services-enhanced';
+import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
+import { advancedITInfrastructureServices2025 } from '../data/2025-advanced-it-infrastructure-services';
+import { innovativeBusinessSolutions2025 } from '../data/2025-innovative-business-solutions';
 
 const contactInfo = {
   mobile: '+1 302 464 0950',
@@ -66,6 +69,33 @@ const serviceCategories = [
     color: 'from-teal-500 to-emerald-600',
     href: '/micro-saas',
     features: ['Content Automation', 'CRM Intelligence', 'Decision Engine']
+  },
+  {
+    title: 'Advanced AI Automation',
+    description: 'Revolutionary AI automation for development, testing, DevOps, and security',
+    services: advancedAIAutomationServices2025.slice(0, 3),
+    icon: Brain,
+    color: 'from-emerald-500 to-teal-600',
+    href: '/advanced-ai-automation-services',
+    features: ['Code Review AI', 'Testing Automation', 'DevOps Intelligence']
+  },
+  {
+    title: 'Advanced IT Infrastructure',
+    description: 'Next-generation infrastructure with quantum computing and edge computing',
+    services: advancedITInfrastructureServices2025.slice(0, 3),
+    icon: Cloud,
+    color: 'from-indigo-500 to-purple-600',
+    href: '/advanced-it-infrastructure-services',
+    features: ['Quantum Cloud', 'Edge Computing', 'Zero Trust Security']
+  },
+  {
+    title: 'Innovative Business Solutions',
+    description: 'AI-powered business intelligence, marketing, sales, and HR solutions',
+    services: innovativeBusinessSolutions2025.slice(0, 3),
+    icon: Target,
+    color: 'from-green-500 to-emerald-600',
+    href: '/innovative-business-solutions',
+    features: ['Business Intelligence', 'Marketing Automation', 'Sales Intelligence']
   }
 ];
 
@@ -189,6 +219,33 @@ const latestInnovations = [
     icon: '🏥',
     color: 'from-blue-500 to-indigo-600',
     href: '/ai-healthcare-diagnostics-platform'
+  },
+  {
+    title: 'AI Autonomous Code Review Platform',
+    description: 'Advanced AI platform that automatically reviews code, identifies vulnerabilities, and suggests optimizations.',
+    price: '$199/month',
+    category: 'AI Development Tools',
+    icon: '🔍',
+    color: 'from-emerald-500 to-teal-600',
+    href: '/advanced-ai-automation-services'
+  },
+  {
+    title: 'Quantum-Enhanced Cloud Infrastructure',
+    description: 'Revolutionary cloud infrastructure that combines classical computing with quantum processing capabilities.',
+    price: '$1,999/month',
+    category: 'Quantum Cloud Computing',
+    icon: '☁️',
+    color: 'from-indigo-500 to-purple-600',
+    href: '/advanced-it-infrastructure-services'
+  },
+  {
+    title: 'AI-Powered Business Intelligence Suite',
+    description: 'Advanced AI-powered business intelligence platform that automatically analyzes data and generates insights.',
+    price: '$399/month',
+    category: 'Business Intelligence',
+    icon: '📊',
+    color: 'from-blue-500 to-cyan-600',
+    href: '/innovative-business-solutions'
   }
 ];
 
