@@ -310,9 +310,6 @@ export default function EnhancedServiceShowcase({
             >
               <UltraFuturisticServiceCard
                 service={service}
-                viewMode={viewMode}
-                categoryIcon={categoryIcons[service.category] || Brain}
-                categoryColor={categoryColors[service.category] || 'from-gray-500 to-slate-600'}
               />
             </motion.div>
           ))}

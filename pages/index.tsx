@@ -6,8 +6,7 @@ import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigatio
 import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { innovativeMicroSaasServices } from '../data/innovative-micro-saas-services';
-import { extraServices } from '../data/extra-services';
-import { additionalEnhancedServices } from '../data/additional-enhanced-services';
+
 import { innovativeAIServices } from '../data/innovative-ai-services';
 import { quantumSpaceServices } from '../data/quantum-space-services';
 import { enterpriseITServices } from '../data/enterprise-it-services';
@@ -38,8 +37,6 @@ export default function HomePage() {
   const allServices = [
     ...enhancedRealMicroSaasServices,
     ...innovativeMicroSaasServices,
-    ...extraServices,
-    ...additionalEnhancedServices,
     ...innovativeAIServices,
     ...quantumSpaceServices,
     ...enterpriseITServices,
@@ -63,7 +60,7 @@ export default function HomePage() {
   // Service statistics
   const serviceStats = {
     totalServices: allServices.length,
-    aiServices: nextGenerationAIServices.length + innovativeAIServices.length + realMarketServices.filter(s => s.category.includes('AI')).length + revolutionary2025Services.filter(s => s.category.includes('AI')),
+    aiServices: nextGenerationAIServices.length + innovativeAIServices.length + realMarketServices.filter(s => s.category.includes('AI')).length + revolutionary2025Services.filter(s => s.category.includes('AI')).length,
     emergingTech: emergingTechnologyServices.length + emergingTech2025Services.length,
     itSolutions: comprehensiveITSolutions.length + enterpriseITServices.length,
     microSaas: enhancedRealMicroSaasServices.length + innovativeMicroSaasServices.length,
