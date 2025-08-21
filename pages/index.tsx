@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { 
   Clock, DollarSign, TrendingUp, Brain, 
   Zap, Rocket, Mail, Phone, MapPin, Sparkles, 
-  ArrowRight, ExternalLink, Check, Cpu as CpuIcon, 
+  ArrowRight, ExternalLink, Check, Cpu, 
   ShieldCheck
 } from 'lucide-react';
 import Button from '../components/ui/Button';
@@ -15,7 +15,7 @@ import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-
 
 export default function HomePage() {
   const heroStats = [
-    { value: '200+', label: 'Revolutionary Micro SaaS Services', color: 'text-cyan-400', icon: <CpuIcon className="w-6 h-6" /> },
+    { value: '200+', label: 'Revolutionary Micro SaaS Services', color: 'text-cyan-400', icon: <Cpu className="w-6 h-6" /> },
     { value: '99.99%', label: 'Uptime Guarantee', color: 'text-fuchsia-400', icon: <ShieldCheck className="w-6 h-6" /> },
     { value: '30+', label: 'Day Free Trials', color: 'text-blue-400', icon: <Clock className="w-6 h-6" /> },
     { value: '24/7', label: 'AI Support', color: 'text-green-400', icon: <Brain className="w-6 h-6" /> },
@@ -42,6 +42,70 @@ export default function HomePage() {
       marketData: '$15B quantum computing market, 500% annual growth',
       competitors: 'IBM Quantum ($2000+/month), Google Quantum AI ($1500+/month)',
       savings: 'Save 85% vs. competitors',
+      contactInfo: {
+        mobile: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
+    },
+    {
+      title: '🤖 AI Assistant Pro',
+      description: 'Deploy a secure, branded AI copilot for support and operations. Slash tickets 30-50% with guardrails, RAG, and analytics.',
+      price: 'Starting at $149/month',
+      features: ['RAG over your docs', 'Slack/Teams channels', 'Human handoff', 'Conversation analytics'],
+      link: 'https://ziontechgroup.com/ai-assistant',
+      color: 'from-cyan-600 to-blue-700',
+      marketData: '$9.3B CX AI market, 25% CAGR',
+      competitors: 'Intercom Fin ($180+/seat), Zendesk AI ($50-100/agent)',
+      savings: 'Save 40% vs. alternatives',
+      contactInfo: {
+        mobile: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
+    },
+    {
+      title: '💸 Cloud Cost Optimizer Pro',
+      description: 'Automate rightsizing, storage lifecycle, and anomaly detection across AWS, Azure, and GCP with IaC outputs.',
+      price: 'Starting at $99/month',
+      features: ['Rightsizing & schedules', 'Lifecycle policies', 'Anomaly alerts', 'K8s bin-packing insights'],
+      link: 'https://ziontechgroup.com/cloud-cost-optimizer',
+      color: 'from-emerald-600 to-teal-700',
+      marketData: '$18B cloud cost mgmt, 19% CAGR',
+      competitors: 'Zesty, CAST AI, CloudZero',
+      savings: 'Save 10-35% in 90 days',
+      contactInfo: {
+        mobile: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
+    },
+    {
+      title: '🗄️ Database Performance Monitor',
+      description: 'Proactive Postgres/MySQL insights with slow query capture, AI index suggestions, and capacity forecasting.',
+      price: 'Starting at $79/month',
+      features: ['Slow query ranking', 'AI index advice', 'Pool tuning', 'SLA/SLO dashboards'],
+      link: 'https://ziontechgroup.com/database-performance-monitor',
+      color: 'from-purple-600 to-indigo-700',
+      marketData: '$6B DB monitoring market',
+      competitors: 'Percona PMM, Datadog APM, New Relic',
+      savings: 'Cut p95 20-50% in month 1',
+      contactInfo: {
+        mobile: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
+    },
+    {
+      title: '📘 API Documentation Generator',
+      description: 'Generate beautiful, accurate API docs from OpenAPI/GraphQL/Proto with SDK snippets and changelogs.',
+      price: 'Starting at $49/month',
+      features: ['Schema parsing', 'SDK snippets', 'Changelog & versions', 'Search & themes'],
+      link: 'https://ziontechgroup.com/api-documentation-generator',
+      color: 'from-cyan-600 to-blue-700',
+      marketData: '$1.5B dev docs tooling',
+      competitors: 'ReadMe, Redocly, Stoplight',
+      savings: 'Ship docs 5x faster',
       contactInfo: {
         mobile: '+1 302 464 0950',
         email: 'kleber@ziontechgroup.com',
@@ -131,6 +195,42 @@ export default function HomePage() {
         email: 'kleber@ziontechgroup.com',
         address: '364 E Main St STE 1008 Middletown DE 19709'
       }
+    },
+    {
+      title: '🤖 AI Services (LLM, RAG, MLOps)',
+      description: 'Prototype to production AI with evals, guardrails, and observability. Fixed-price packages with clear outcomes.',
+      price: 'From $3,500/month or $6,900 fixed',
+      features: ['LLM apps and copilots', 'RAG + vector search', 'MLOps pipelines', 'Safety and governance'],
+      link: 'https://ziontechgroup.com/ai-services',
+      color: 'from-cyan-600 to-purple-700',
+      marketData: 'AI services market $71B+, rapid adoption across industries',
+      competitors: 'Boutique AI agencies ($25k+), Big 4 ($100k+)',
+      savings: 'Save 60–85% with transparent packages',
+      contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709' }
+    },
+    {
+      title: '🛠️ Modern IT Services (Cloud, DevOps, SRE)',
+      description: 'Outcome-driven platform engineering, GitOps, observability, FinOps and compliance baselines.',
+      price: 'From $2,000/month or $4,900 fixed',
+      features: ['Cloud landing zones', 'CI/CD & IaC', 'SLOs + error budgets', 'FinOps & governance'],
+      link: 'https://ziontechgroup.com/it-services',
+      color: 'from-blue-600 to-indigo-700',
+      marketData: 'Cloud ops services >$150B, ongoing efficiency demand',
+      competitors: 'Traditional MSPs ($10k+/mo), Big consultancies ($50k+)',
+      savings: 'Save 50–75% with productized engagements',
+      contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709' }
+    },
+    {
+      title: '☁️ Cloud Cost Optimizer',
+      description: 'Rightsizing, off-hours, and anomaly detection across AWS/GCP/Azure with FinOps dashboards.',
+      price: '$149/month',
+      features: ['Auto rightsizing', 'Idle cleanup', 'Spot orchestration', 'Anomaly detection'],
+      link: 'https://ziontechgroup.com/cloud-cost-optimizer',
+      color: 'from-emerald-600 to-teal-700',
+      marketData: 'FinOps software growing 25% YoY',
+      competitors: 'CloudZero, CloudHealth',
+      savings: 'Cut bills 20–45% in 90 days',
+      contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709' }
     }
   ];
 
@@ -382,6 +482,18 @@ export default function HomePage() {
                           <span className="text-yellow-400 font-semibold">Your Savings:</span>
                           <p className="text-gray-300">{highlight.savings}</p>
                         </div>
+                        {highlight.contactInfo && (
+                          <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                            <div className="flex items-center gap-2 text-gray-300">
+                              <Phone className="w-4 h-4 text-cyan-400" />
+                              <span>{highlight.contactInfo.mobile}</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-gray-300">
+                              <Mail className="w-4 h-4 text-purple-400" />
+                              <span>{highlight.contactInfo.email}</span>
+                            </div>
+                          </div>
+                        )}
                       </div>
                     </div>
                     
@@ -401,6 +513,13 @@ export default function HomePage() {
                         Contact
                       </Button>
                     </div>
+                    {highlight.contactInfo && (
+                      <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
+                        <div className="flex items-center justify-center gap-2 text-cyan-400"><Phone className="w-4 h-4" /><span>{highlight.contactInfo.mobile}</span></div>
+                        <div className="flex items-center justify-center gap-2 text-purple-400"><Mail className="w-4 h-4" /><span>{highlight.contactInfo.email}</span></div>
+                        <div className="flex items-center justify-center gap-2 text-green-400"><MapPin className="w-4 h-4" /><span className="text-xs">{highlight.contactInfo.address}</span></div>
+                      </div>
+                    )}
                   </div>
                 </Card>
               </motion.div>

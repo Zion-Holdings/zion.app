@@ -67,9 +67,9 @@ export default function NeoFuturisticFooter() {
       description: 'Revolutionary quantum computing solutions',
       icon: <Atom className="w-5 h-5" />,
       services: [
-        { name: 'Quantum AI Platform', href: '/services?category=quantum' },
-        { name: 'Quantum Optimization', href: '/services?category=quantum' },
-        { name: 'Quantum Simulation', href: '/services?category=quantum' }
+        { name: 'Quantum AI Platform', href: '/services?category=Quantum%20Computing' },
+        { name: 'Quantum Optimization', href: '/services?category=Quantum%20Computing' },
+        { name: 'Quantum Simulation', href: '/services?category=Quantum%20Computing' }
       ]
     },
     {
@@ -77,9 +77,9 @@ export default function NeoFuturisticFooter() {
       description: 'Advanced AI and ML platforms',
       icon: <Brain className="w-5 h-5" />,
       services: [
-        { name: 'AI Content Creation', href: '/services?category=ai' },
-        { name: 'ML Model Training', href: '/services?category=ai' },
-        { name: 'AI Analytics', href: '/services?category=ai' }
+        { name: 'AI Content Creation', href: '/services?category=AI%20%26%20Machine%20Learning' },
+        { name: 'ML Model Training', href: '/services?category=AI%20%26%20Machine%20Learning' },
+        { name: 'AI Analytics', href: '/services?category=Analytics%20%26%20Business%20Intelligence' }
       ]
     },
     {
@@ -87,9 +87,9 @@ export default function NeoFuturisticFooter() {
       description: 'Next-generation security solutions',
       icon: <Shield className="w-5 h-5" />,
       services: [
-        { name: 'Quantum Security', href: '/services?category=cybersecurity' },
-        { name: 'AI Threat Detection', href: '/services?category=cybersecurity' },
-        { name: 'Zero Trust Security', href: '/services?category=cybersecurity' }
+        { name: 'Quantum Security', href: '/services?category=Cybersecurity' },
+        { name: 'AI Threat Detection', href: '/services?category=Cybersecurity' },
+        { name: 'Zero Trust Security', href: '/services?category=Cybersecurity' }
       ]
     },
     {
@@ -97,9 +97,9 @@ export default function NeoFuturisticFooter() {
       description: 'AI-powered healthcare solutions',
       icon: <Brain className="w-5 h-5" />,
       services: [
-        { name: 'Drug Discovery AI', href: '/services?category=biomedical' },
-        { name: 'Genomic Analysis', href: '/services?category=biomedical' },
-        { name: 'Clinical Trial AI', href: '/services?category=biomedical' }
+        { name: 'Drug Discovery AI', href: '/services?category=Biotechnology%20%26%20Healthcare' },
+        { name: 'Genomic Analysis', href: '/services?category=Biotechnology%20%26%20Healthcare' },
+        { name: 'Clinical Trial AI', href: '/services?category=Biotechnology%20%26%20Healthcare' }
       ]
     }
   ];
