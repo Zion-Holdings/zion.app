@@ -3,11 +3,12 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shield, Mail, MapPin, Rocket, Brain, Sparkles } from 'lucide-react';
 import Button from '../components/ui/Button';
-import UltraQuantumHolographicBackground from '../components/ui/UltraQuantumHolographicBackground';
+import UltraFuturisticBackground2026 from '../components/ui/UltraFuturisticBackground2026';
 import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
 import UltraAdvancedNavigation2026 from '../components/layout/UltraAdvancedNavigation2026';
 import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
 import Enhanced2026ServicesShowcase from '../components/sections/Enhanced2026ServicesShowcase';
+import Enhanced2026ServicesShowcaseV4 from '../components/sections/Enhanced2026ServicesShowcaseV4';
 import Revolutionary2026ServiceShowcase from '../components/sections/Revolutionary2026ServiceShowcase';
 import EnhancedHero2026 from '../components/sections/EnhancedHero2026';
 import { motion } from 'framer-motion';
@@ -51,6 +52,10 @@ import { innovative2026AIServicesV3 } from '../data/innovative-2026-ai-services-
 import { emergingTech2026ServicesV3 } from '../data/emerging-tech-2026-services-v3';
 import { enterpriseIT2026ServicesV3 } from '../data/enterprise-it-2026-services-v3';
 import { ultimate2026Services } from '../data/ultimate-2026-services';
+import { innovative2026MicroSaasServicesV4 } from '../data/innovative-2026-micro-saas-v4';
+import { emergingTech2026ServicesV4 } from '../data/emerging-tech-2026-services-v4';
+import { enterpriseIT2026ServicesV4 } from '../data/enterprise-it-2026-services-v4';
+import { innovative2026AIServicesV4 } from '../data/innovative-2026-ai-services-v4';
 
 export default function HomePage() {
   const contactInfo = {
@@ -101,7 +106,11 @@ export default function HomePage() {
     ...innovative2026AIServicesV3,
     ...emergingTech2026ServicesV3,
     ...enterpriseIT2026ServicesV3,
-    ...ultimate2026Services
+    ...ultimate2026Services,
+    ...innovative2026MicroSaasServicesV4,
+    ...emergingTech2026ServicesV4,
+    ...enterpriseIT2026ServicesV4,
+    ...innovative2026AIServicesV4
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);
@@ -121,17 +130,7 @@ export default function HomePage() {
   };
 
   return (
-    <UltraQuantumHolographicBackground 
-      intensity="extreme" 
-      colorScheme="neural-network"
-      particleCount={500}
-      animationSpeed={2.5}
-      enableHolographic={true}
-      enableQuantumEffects={true}
-      enableNeuralNetwork={true}
-      enableCosmicWaves={true}
-      enableFloatingElements={true}
-    >
+    <UltraFuturisticBackground2026>
       <div className="min-h-screen">
         <Head>
           <title>Zion Tech Group - Revolutionary AI, Quantum & IT Services | 1000+ Solutions</title>
@@ -362,6 +361,18 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* New 2026 Services Showcase V4 */}
+        <Enhanced2026ServicesShowcaseV4
+          services={[
+            ...innovative2026MicroSaasServicesV4,
+            ...emergingTech2026ServicesV4,
+            ...enterpriseIT2026ServicesV4,
+            ...innovative2026AIServicesV4
+          ]}
+          title="Revolutionary 2026 Services V4"
+          subtitle="Experience the latest innovations in AI, quantum computing, and emerging technologies"
+        />
+
         {/* Contact Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
           <div className="max-w-4xl mx-auto text-center">
@@ -422,6 +433,6 @@ export default function HomePage() {
           </div>
         </section>
       </div>
-    </UltraQuantumHolographicBackground>
+    </UltraFuturisticBackground2026>
   );
 }
