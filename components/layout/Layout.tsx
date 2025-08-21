@@ -1,24 +1,24 @@
 import React from 'react';
 import NeoFuturisticNavigation from './NeoFuturisticNavigation';
 import NeoFuturisticFooter from './NeoFuturisticFooter';
-import EnhancedFuturisticBackground from '../ui/EnhancedFuturisticBackground';
+import UltraAdvancedFuturisticBackground from '../ui/UltraAdvancedFuturisticBackground';
 
 interface LayoutProps {
-  children: React.ReactNode;
+	children: React.ReactNode;
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-  return (
-    <div className="min-h-screen bg-black text-white">
-      <EnhancedFuturisticBackground variant="quantum" intensity="medium">
-        <NeoFuturisticNavigation />
-        <main className="pt-24 lg:pt-28">
-          {children}
-        </main>
-        <NeoFuturisticFooter />
-      </EnhancedFuturisticBackground>
-    </div>
-  );
+	return (
+		<div className="min-h-screen bg-black text-white">
+			<UltraAdvancedFuturisticBackground variant="quantum-holographic">
+				<NeoFuturisticNavigation />
+				<main className="pt-24 lg:pt-28">
+					{children}
+				</main>
+				<NeoFuturisticFooter />
+			</UltraAdvancedFuturisticBackground>
+		</div>
+	);
 };
 
 export default Layout;
