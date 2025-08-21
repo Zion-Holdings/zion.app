@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Code, BookOpen, Activity, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Filter, Grid, List, ChevronDown, ChevronUp, Sparkles, FlaskConical, Dna, Car, Leaf, Factory, Truck, Microscope, GraduationCap, ShieldCheck, Brain, Atom, Globe2, Bot, ChevronRight, LinkIcon, Building2 } from 'lucide-react';
+import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Code, BookOpen, Activity, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Filter, Grid, List, ChevronDown, ChevronUp, Sparkles, FlaskConical, Dna, Car, Leaf, Factory, Truck, Microscope, GraduationCap, ShieldCheck, Brain, Atom, Globe2, Bot, ChevronRight, Link as LinkIcon, Building2 } from 'lucide-react';
 import Button from '../components/ui/Button';
 import UltraFuturisticMatrixBackground from '../components/ui/UltraFuturisticMatrixBackground';
 import UltraFuturisticServiceCard from '../components/ui/UltraFuturisticServiceCard';
 import Card from '../components/ui/Card';
 import { motion } from 'framer-motion';
-import { enhancedRealMicroSaasServices, serviceCategories } from '../data/enhanced-real-micro-saas-services';
+import { enhancedRealMicroSaasServices, serviceCategories, getServicesByCategory, getServicesByPriceRange } from '../data/enhanced-real-micro-saas-services';
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -47,43 +47,55 @@ export default function ServicesPage() {
     { value: 'category', label: 'Category' }
   ];
 
-  // Filter and sort services
-  let filteredServices = enhancedRealMicroSaasServices;
+  // Unified filter and sort (memoized)
+  const filteredServices = useMemo(() => {
+    let filtered = enhancedRealMicroSaasServices.slice();
 
-  // Category filter
-  if (selectedCategory !== 'All') {
-    filteredServices = getServicesByCategory(selectedCategory);
-  }
-
-  // Price range filter
-  if (priceRange !== 'All') {
-    const [min, max] = priceRange.split('-').map(p => p === '+' ? Infinity : parseInt(p));
-    filteredServices = getServicesByPriceRange(min, max);
-  }
-
-  // Search filter
-  if (searchQuery) {
-    filteredServices = filteredServices.filter(service =>
-      service.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      service.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      service.tagline.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      service.category.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-  }
-
-  // Sort services
-  filteredServices.sort((a, b) => {
-    switch (sortBy) {
-      case 'price':
-        return parseFloat(a.price.replace('$', '').replace(',', '')) - parseFloat(b.price.replace('$', '').replace(',', ''));
-      case 'popularity':
-        return (b.popular ? 1 : 0) - (a.popular ? 1 : 0);
-      case 'category':
-        return a.category.localeCompare(b.category);
-      default:
-        return a.name.localeCompare(b.name);
+    // Category filter
+    if (selectedCategory && selectedCategory !== 'All') {
+      filtered = getServicesByCategory(selectedCategory);
     }
-  });
+
+    // Price range filter
+    if (priceRange !== 'All') {
+      const [minStr, maxStr] = priceRange.split('-');
+      const min = parseInt(minStr || '0', 10);
+      const max = maxStr === '+' ? Number.POSITIVE_INFINITY : parseInt(maxStr || `${Number.POSITIVE_INFINITY}`, 10);
+      filtered = getServicesByPriceRange(min, isFinite(max) ? max : Number.MAX_SAFE_INTEGER);
+    }
+
+    // Search filter
+    const query = (searchTerm || '').toLowerCase().trim();
+    if (query) {
+      filtered = filtered.filter(service =>
+        service.name.toLowerCase().includes(query) ||
+        service.description.toLowerCase().includes(query) ||
+        service.tagline.toLowerCase().includes(query) ||
+        service.category.toLowerCase().includes(query)
+      );
+    }
+
+    // Sort
+    filtered.sort((a, b) => {
+      switch (sortBy) {
+        case 'price':
+          return parseFloat(a.price.replace('$', '').replace(',', '')) - parseFloat(b.price.replace('$', '').replace(',', ''));
+        case 'rating':
+          return b.rating - a.rating;
+        case 'roi': {
+          const aMatch = a.roi.match(/(\d+)%/);
+          const bMatch = b.roi.match(/(\d+)%/);
+          const aRoi = aMatch ? parseInt(aMatch[1], 10) : 0;
+          const bRoi = bMatch ? parseInt(bMatch[1], 10) : 0;
+          return bRoi - aRoi;
+        }
+        default:
+          return a.name.localeCompare(b.name);
+      }
+    });
+
+    return filtered;
+  }, [enhancedRealMicroSaasServices, selectedCategory, priceRange, searchTerm, sortBy]);
 
   const contactInfo = {
     mobile: '+1 302 464 0950',
@@ -92,45 +104,10 @@ export default function ServicesPage() {
     website: 'https://ziontechgroup.com'
   };
 
-  // Filter and sort services
-  const filteredServices = useMemo(() => {
-    let filtered = enhancedRealMicroSaasServices;
-
-    // Apply category filter
-    if (selectedCategory) {
-      filtered = filtered.filter(service => 
-        service.category === selectedCategory
-      );
-    }
-
-    // Apply search filter
-    if (searchTerm) {
-      filtered = filtered.filter(service =>
-        service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        service.category.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-    }
-
-    // Apply sorting
-    filtered.sort((a, b) => {
-      switch (sortBy) {
-        case 'price':
-          return parseFloat(a.price.replace('$', '').replace(',', '')) - parseFloat(b.price.replace('$', '').replace(',', ''));
-        case 'rating':
-          return b.rating - a.rating;
-        case 'roi':
-          return parseFloat(a.roi.replace('%', '').replace(',', '')) - parseFloat(b.roi.replace('%', '').replace(',', ''));
-        default:
-          return a.name.localeCompare(b.name);
-      }
-    });
-
-    return filtered;
-  }, [searchTerm, selectedCategory, sortBy]);
+  // note: removed duplicate memo above; single memoized filteredServices is used
 
   const heroStats = [
-    { value: '200+', label: 'Revolutionary Services', color: 'text-cyan-400', icon: <CpuIcon className="w-6 h-6" /> },
+    { value: '200+', label: 'Revolutionary Services', color: 'text-cyan-400', icon: <Cpu className="w-6 h-6" /> },
     { value: '99.99%', label: 'Uptime Guarantee', color: 'text-fuchsia-400', icon: <ShieldCheck className="w-6 h-6" /> },
     { value: '30+', label: 'Day Free Trials', color: 'text-blue-400', icon: <Clock className="w-6 h-6" /> },
     { value: '800%+', label: 'Average ROI', color: 'text-green-400', icon: <TrendingUp className="w-6 h-6" /> },
@@ -293,7 +270,7 @@ export default function ServicesPage() {
                       : 'text-gray-400 hover:text-white'
                   }`}
                 >
-                  <Grid3X3 className="w-5 h-5" />
+                  <Grid className="w-5 h-5" />
                 </button>
                 <button
                   onClick={() => setViewMode('list')}
@@ -390,7 +367,7 @@ export default function ServicesPage() {
                           
                           <div className="flex space-x-2">
                             <Button
-                              href={`/services/${service.id}`}
+                              href={service.link || `/micro-saas#${service.id}`}
                               className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white rounded-lg font-semibold transition-all duration-300"
                             >
                               <ArrowRight className="w-4 h-4 mr-2" />

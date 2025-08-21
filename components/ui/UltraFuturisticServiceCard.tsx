@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Star, Users, TrendingUp, Clock, ArrowRight, 
   ExternalLink, Check, ChevronDown, ChevronUp,
-  Mail, Phone, MapPin, Globe, CpuIcon, ShieldCheck
+  Mail, Phone, MapPin, Globe, Cpu, ShieldCheck
 } from 'lucide-react';
 import Button from './Button';
 import { EnhancedRealMicroSaasService } from '../../data/enhanced-real-micro-saas-services';
@@ -149,7 +149,7 @@ export default function UltraFuturisticServiceCard({ service }: UltraFuturisticS
         {/* Action Buttons */}
         <div className="flex space-x-2">
           <Button
-            href={`/services/${service.id}`}
+            href={service.link || `/micro-saas#${service.id}`}
             className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white py-2 px-3 rounded-lg text-sm font-semibold transition-all duration-300"
           >
             <ArrowRight className="w-3 h-3 mr-1" />
@@ -257,7 +257,7 @@ export default function UltraFuturisticServiceCard({ service }: UltraFuturisticS
               {/* Learn More Button */}
               <div className="text-center">
                 <Button
-                  href={`/services/${service.id}`}
+                  href={service.link || `/micro-saas#${service.id}`}
                   className="w-full bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white py-2 px-4 rounded-lg text-sm font-semibold transition-all duration-300"
                 >
                   <ExternalLink className="w-3 h-3 mr-2" />
