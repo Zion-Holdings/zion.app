@@ -18,7 +18,7 @@ const contactInfo = {
 
 const serviceCategories = [
   {
-    title: '🚀 2027 Cutting-Edge Innovations',
+    title: '🚀 2028 Cutting-Edge Innovations',
     icon: Rocket,
     color: 'from-violet-600 to-purple-600',
     description: 'Beyond the future of technology',
@@ -30,72 +30,72 @@ const serviceCategories = [
     ]
   },
   {
-    title: '🎯 Practical Micro SAAS 2027',
+    title: '🎯 2028 Practical Micro SAAS',
     icon: Target,
     color: 'from-blue-600 to-cyan-600',
     description: 'Real business solutions for today',
     services: [
-      { name: 'AI Customer Success Automation', href: '/ai-customer-success-automation', description: 'Automate customer success with AI', price: '$299/month' },
-      { name: 'Automated Content Marketing', href: '/automated-content-marketing-suite', description: 'AI-powered content creation and distribution', price: '$199/month' },
-      { name: 'Smart Inventory Management', href: '/smart-inventory-management-system', description: 'AI inventory optimization', price: '$399/month' },
-      { name: 'Automated HR Recruitment', href: '/automated-hr-recruitment-platform', description: 'AI-powered hiring automation', price: '$249/month' }
+      { name: 'AI Customer Success Automation', href: '/ai-customer-success-automation-2028', description: 'Automate customer success with AI', price: '$299/month' },
+      { name: 'Smart Inventory Management', href: '/smart-inventory-management-2028', description: 'AI inventory optimization', price: '$399/month' },
+      { name: 'Automated HR Recruitment', href: '/automated-hr-recruitment-2028', description: 'AI-powered hiring automation', price: '$249/month' },
+      { name: 'AI Content Marketing Suite', href: '/ai-content-marketing-suite-2028', description: 'AI-powered content creation', price: '$199/month' }
     ]
   },
   {
-    title: '⚛️ Quantum & Space Tech 2027',
+    title: '⚛️ 2028 Quantum & Space Tech',
     icon: Atom,
     color: 'from-indigo-600 to-blue-600',
     description: 'Quantum computing and space exploration',
     services: [
-      { name: 'Quantum Neural Interface', href: '/quantum-neural-interface-platform', description: 'Brain-computer quantum interface', price: '$8,999/month' },
-      { name: 'Quantum Internet Security', href: '/quantum-internet-security-gateway', description: 'Unbreakable quantum encryption', price: '$3,999/month' },
-      { name: 'Space Debris Management AI', href: '/space-debris-management-ai-platform', description: 'AI space safety and management', price: '$5,999/month' },
-      { name: 'Quantum Financial Trading', href: '/quantum-financial-trading-algorithm-platform', description: 'Quantum trading algorithms', price: '$12,999/month' }
+      { name: 'Quantum Internet Security', href: '/quantum-internet-security-gateway-2028', description: 'Unbreakable quantum encryption', price: '$3,999/month' },
+      { name: 'Quantum Neural Interface', href: '/quantum-neural-interface-platform-2028', description: 'Brain-computer quantum interface', price: '$8,999/month' },
+      { name: 'Space Debris Management AI', href: '/space-debris-management-ai-2028', description: 'AI space safety and management', price: '$5,999/month' },
+      { name: 'Quantum Financial Trading', href: '/quantum-financial-trading-algorithm-platform-2028', description: 'Quantum trading algorithms', price: '$12,999/month' }
     ]
   },
   {
-    title: '🤖 AI & Machine Learning 2027',
+    title: '🤖 2028 AI & Machine Learning',
     icon: Brain,
     color: 'from-emerald-600 to-teal-600',
     description: 'Next-generation AI solutions',
     services: [
-      { name: 'AI Consciousness Simulation', href: '/ai-consciousness-simulation-platform', description: 'Simulate human consciousness', price: '$4,999/month' },
-      { name: 'Autonomous AI Agents', href: '/autonomous-ai-agents-platform-2026', description: 'Create autonomous AI agents', price: '$199/month' },
-      { name: 'AI Healthcare Companion', href: '/ai-healthcare-companion-2026', description: 'Revolutionary healthcare AI', price: '$399/month' },
-      { name: 'AI Content Creation Revolution', href: '/ai-content-creation-revolution', description: 'Unlimited AI content generation', price: '$599/month' }
+      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-platform-2028', description: 'Evolve AI beyond human limits', price: '$9,999/month' },
+      { name: 'Autonomous AI Civilization', href: '/autonomous-ai-civilization-platform-2028', description: 'Create AI civilizations', price: '$19,999/month' },
+      { name: 'AI Healthcare Companion', href: '/ai-healthcare-companion-2028', description: 'Revolutionary healthcare AI', price: '$399/month' },
+      { name: 'AI Content Creation Revolution', href: '/ai-content-creation-revolution-2028', description: 'Unlimited AI content generation', price: '$599/month' }
     ]
   },
   {
-    title: '🏢 Enterprise Solutions 2027',
+    title: '🏢 2028 Enterprise Solutions',
     icon: Shield,
     color: 'from-red-600 to-orange-600',
     description: 'Enterprise-grade solutions',
     services: [
-      { name: 'Zero Trust Architecture 2027', href: '/zero-trust-network-architecture-2026', description: 'Next-gen security architecture', price: 'Custom pricing' },
-      { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration-2026', description: 'Intelligent edge computing', price: 'Custom pricing' },
-      { name: '5G Private Networks', href: '/5g-private-network-solutions-2026', description: 'Enterprise 5G solutions', price: 'Custom pricing' },
-      { name: 'Blockchain Infrastructure', href: '/blockchain-infrastructure-platform-2026', description: 'Enterprise blockchain', price: 'Custom pricing' }
+      { name: 'Zero Trust Architecture 2028', href: '/zero-trust-network-architecture-2028', description: 'Next-gen security architecture', price: 'Custom pricing' },
+      { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration-2028', description: 'Intelligent edge computing', price: 'Custom pricing' },
+      { name: '5G Private Networks', href: '/5g-private-network-solutions-2028', description: 'Enterprise 5G solutions', price: 'Custom pricing' },
+      { name: 'Blockchain Infrastructure', href: '/blockchain-infrastructure-platform-2028', description: 'Enterprise blockchain', price: 'Custom pricing' }
     ]
   },
   {
-    title: '🌌 Metaverse & Digital Reality 2027',
+    title: '🌌 2028 Metaverse & Digital Reality',
     icon: Globe,
     color: 'from-pink-600 to-rose-600',
     description: 'Virtual and augmented reality',
     services: [
-      { name: 'Holographic Metaverse', href: '/holographic-metaverse-development-platform', description: '3D holographic experiences', price: '$2,999/month' },
-      { name: 'AI Multiverse Creation', href: '/ai-multiverse-creation-platform', description: 'Create AI-powered multiverses', price: '$29,999/month' },
-      { name: 'Virtual Event Holograms', href: '/virtual-event-hologram-platform', description: 'Holographic event platform', price: '$1,999/month' },
-      { name: 'Digital Reality Interface', href: '/digital-reality-interface-2027', description: 'Next-gen reality interface', price: '$4,999/month' }
+      { name: 'Holographic Metaverse', href: '/holographic-metaverse-development-platform-2028', description: '3D holographic experiences', price: '$2,999/month' },
+      { name: 'AI Multiverse Creation', href: '/ai-multiverse-creation-platform-2028', description: 'Create AI-powered multiverses', price: '$29,999/month' },
+      { name: 'Virtual Event Holograms', href: '/virtual-event-hologram-platform-2028', description: 'Holographic event platform', price: '$1,999/month' },
+      { name: 'Digital Reality Interface', href: '/digital-reality-interface-2028', description: 'Next-gen reality interface', price: '$4,999/month' }
     ]
   }
 ];
 
 const companyLinks = [
   { name: '🏠 Home', href: '/', icon: Home },
-  { name: '🚀 2027 Services', href: '/2027-services-showcase', icon: Rocket },
-  { name: '⭐ Ultimate 2027', href: '/ultimate-2027-services-showcase', icon: Star },
-  { name: '💰 2027 Pricing', href: '/revolutionary-2027-pricing', icon: DollarSign },
+  { name: '🚀 2028 Services', href: '/ultimate-2028-services-showcase', icon: Rocket },
+  { name: '⭐ Ultimate 2028', href: '/ultimate-2028-services-showcase', icon: Star },
+  { name: '💰 2028 Pricing', href: '/revolutionary-2028-pricing', icon: DollarSign },
   { name: '📊 Case Studies', href: '/case-studies', icon: Briefcase },
   { name: '📚 Blog & Resources', href: '/blog', icon: BookOpen },
   { name: '📈 Reports', href: '/reports', icon: TrendingUp },
