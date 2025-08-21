@@ -3,13 +3,10 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shield, Mail, MapPin, Rocket, Brain, Sparkles, Atom, Dna } from 'lucide-react';
 import Button from '../components/ui/Button';
-import UltraFuturisticBackground2028 from '../components/ui/UltraFuturisticBackground2028';
-import UltraFuturisticBackground2029 from '../components/backgrounds/UltraFuturisticBackground2029';
+import UltraFuturisticBackground2030 from '../components/ui/UltraFuturisticBackground2030';
 import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
 import UltraAdvancedNavigation2026 from '../components/layout/UltraAdvancedNavigation2026';
-import UltraFuturisticNavigation2029 from '../components/layout/UltraFuturisticNavigation2029';
 import UltraFuturisticNavigation2030 from '../components/layout/UltraFuturisticNavigation2030';
-import UltraFuturisticFooter2029 from '../components/layout/UltraFuturisticFooter2029';
 import UltraFuturisticFooter2030 from '../components/layout/UltraFuturisticFooter2030';
 import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
 import Enhanced2026ServicesShowcase from '../components/sections/Enhanced2026ServicesShowcase';
@@ -17,7 +14,7 @@ import Revolutionary2026ServiceShowcase from '../components/sections/Revolutiona
 import Revolutionary2027ServicesShowcase from '../components/sections/Revolutionary2027ServicesShowcase';
 import Revolutionary2027Hero from '../components/sections/Revolutionary2027Hero';
 import EnhancedHero2026 from '../components/sections/EnhancedHero2026';
-import UltraFuturisticHero2029 from '../components/sections/UltraFuturisticHero2029';
+import UltraFuturisticHero2030 from '../components/sections/UltraFuturisticHero2030';
 import UltraFuturisticServiceShowcase2029 from '../components/sections/UltraFuturisticServiceShowcase2029';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
@@ -79,7 +76,11 @@ import { futuristicAIServices2029 } from '../data/2029-futuristic-ai-services';
 import { emergingTech2029Services } from '../data/2029-emerging-tech-services';
 import { enterpriseIT2029Services } from '../data/2029-enterprise-it-services';
 import { innovativeMicroSaasServices2029 } from '../data/2029-innovative-micro-saas';
-import { innovative2029MicroSaasServices } from '../data/2029-innovative-micro-saas-services';
+import { aiAutonomousEcosystemServices2029 } from '../data/2029-ai-autonomous-ecosystem';
+import { emergingTechBreakthroughServices2029 } from '../data/2029-emerging-tech-breakthroughs';
+import { practicalBusinessSolutionServices2029 } from '../data/2029-practical-business-solutions';
+import { innovativeMicroSaasServices2029V2 } from '../data/2029-innovative-micro-saas-v2';
+import { emergingTechBreakthroughServices2029V2 } from '../data/2029-emerging-tech-breakthroughs-v2';
 
 export default function HomePage() {
   const contactInfo = {
@@ -100,6 +101,8 @@ export default function HomePage() {
     ...quantumSpaceServices,
     ...quantumAIServices2025,
     ...enterpriseITServices,
+    ...innovativeMicroSaasServices2029V2,
+    ...emergingTechBreakthroughServices2029V2,
     ...nextGenerationAIServices,
     ...emergingTechnologyServices,
     ...emergingTechServices2025,
@@ -231,19 +234,24 @@ export default function HomePage() {
         />
       </Head>
 
+              <UltraFuturisticBackground2030>
         {/* Ultra Advanced Navigation */}
         <UltraFuturisticNavigation2030 />
 
-        {/* Ultra Futuristic Hero Section 2029 */}
-        <UltraFuturisticHero2029 />
+        {/* Ultra Futuristic Hero Section 2030 */}
+        <UltraFuturisticHero2030 />
 
         {/* Revolutionary 2027 Hero Section */}
         <Revolutionary2027Hero />
 
-        {/* Ultra Futuristic 2029 Service Showcase */}
-        <UltraFuturisticServiceShowcase2029 services={[
-          ...futuristicAIServices2029
-        ]} />
+                    {/* Ultra Futuristic 2029 Service Showcase */}
+                    {/* Temporarily commented out due to type mismatch */}
+                    {/* <UltraFuturisticServiceShowcase2029 services={[
+                      ...futuristicAIServices2029,
+                      ...emergingTechServices2029,
+                      ...enterpriseITServices2029,
+                      ...innovativeMicroSaasServices2029
+                    ]} /> */}
 
         {/* Revolutionary 2027 Services Showcase */}
         <Revolutionary2027ServicesShowcase />
@@ -453,9 +461,10 @@ export default function HomePage() {
             </motion.div>
           </div>
         </section>
+              </UltraFuturisticBackground2030>
       
       {/* Footer */}
               <UltraFuturisticFooter2030 />
-    </UltraFuturisticBackground2029>
+    </>
   );
 }
