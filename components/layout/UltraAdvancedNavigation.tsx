@@ -151,7 +151,7 @@ const UltraAdvancedNavigation: React.FC = () => {
         },
         {
           name: 'DevOps Automation',
-          href: '/automation',
+          href: '/ci-cd-security-hardening',
           icon: Code,
           description: 'AI-powered automation',
           price: '$5,999/month'
@@ -200,6 +200,18 @@ const UltraAdvancedNavigation: React.FC = () => {
       description: '300+ micro SaaS services'
     },
     {
+      name: 'Market Pricing',
+      href: '/market-pricing',
+      icon: DollarSign,
+      description: 'Transparent references'
+    },
+    {
+      name: 'Advertising',
+      href: '/services-advertising',
+      icon: Zap,
+      description: 'Features & benefits'
+    },
+    {
       name: 'About',
       href: '/about',
       icon: null
@@ -220,8 +232,8 @@ const UltraAdvancedNavigation: React.FC = () => {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled 
-        ? 'bg-black/90 backdrop-blur-xl border-b border-gray-800/50' 
-        : 'bg-transparent'
+        ? 'bg-black/95 backdrop-blur-2xl border-b border-cyan-500/20 shadow-lg shadow-cyan-500/10' 
+        : 'bg-black/40 backdrop-blur-xl'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
@@ -279,7 +291,7 @@ const UltraAdvancedNavigation: React.FC = () => {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 10, scale: 0.95 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute top-full left-0 mt-2 w-80 bg-gray-900/95 backdrop-blur-xl border border-gray-700/50 rounded-2xl shadow-2xl shadow-black/50 overflow-hidden"
+                        className="absolute top-full left-0 mt-2 w-80 bg-gray-900/95 backdrop-blur-2xl border border-cyan-500/20 rounded-2xl shadow-2xl shadow-cyan-500/10 overflow-hidden"
                       >
                         <div className="p-4">
                           <div className="text-sm text-gray-400 mb-3">{item.description}</div>

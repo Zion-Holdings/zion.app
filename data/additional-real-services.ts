@@ -308,7 +308,7 @@ export const additionalEnhancedServices: EnhancedRealMicroSaasService[] = [
     icon: '📈',
     color: 'from-indigo-600 to-blue-700',
     textColor: 'text-indigo-400',
-    link: 'https://ziontechgroup.com/services/api-observability-starter',
+    link: 'https://ziontechgroup.com/api-observability-starter',
     marketPosition: 'Get 80% of value with 20% of setup for SMB teams.',
     targetAudience: 'SMB, startups, dev teams starting observability',
     trialDays: 14,
