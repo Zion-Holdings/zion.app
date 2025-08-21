@@ -58,7 +58,7 @@ export default function HomePage() {
       description: 'Breakthrough quantum AI-powered brain-computer interface that enables direct neural communication and control. Achieve unprecedented human-AI symbiosis with 99.9% accuracy.',
       price: 'Starting at $4,999/month',
       features: ['Quantum-enhanced neural signal processing', 'Real-time brain activity analysis', 'AI-powered thought-to-action conversion', 'Secure neural data encryption'],
-      link: 'https://ziontechgroup.com/quantum-ai-brain-computer-interface',
+      link: 'https://ziontechgroup.com/ai-brain-computer-interface',
       color: 'from-purple-600 to-pink-700',
       marketData: '$2.1B brain-computer interface market, 580% annual growth',
       competitors: 'Traditional BCI systems ($50,000+), Basic neural interfaces ($25,000+), Research-only platforms ($100,000+)',
@@ -111,6 +111,11 @@ export default function HomePage() {
       marketData: '$74.4B metaverse market, 420% annual growth',
       competitors: 'Roblox ($2500/month), Unity ($4000/month), Traditional 3D development ($8000/month)',
       savings: 'Save 64% vs. competitors'
+    },
+    {
+      title: '🚀 Space Technology Platform',
+      icon: '🚀',
+      description: 'Cutting-edge space exploration and satellite management tools. Achieve 500% ROI within 8 months through improved operations.',
       price: 'Starting at $399/month',
       features: ['Satellite mission management and planning', 'Space data analytics and visualization', 'Orbital optimization algorithms', 'Space debris tracking and avoidance'],
       link: 'https://ziontechgroup.com/space-technology',
@@ -952,15 +957,15 @@ export default function HomePage() {
                       <div className="grid grid-cols-1 gap-2 text-xs text-gray-300">
                         <div className="flex items-center gap-2">
                           <Phone className="w-3 h-3 text-cyan-400" />
-                          <span>{service.contactInfo.mobile}</span>
+                          <span>{service.contactInfo?.mobile ?? '+1 302 464 0950'}</span>
                         </div>
                         <div className="flex items-center gap-2">
                           <Mail className="w-3 h-3 text-purple-400" />
-                          <span>{service.contactInfo.email}</span>
+                          <span>{service.contactInfo?.email ?? 'kleber@ziontechgroup.com'}</span>
                         </div>
                         <div className="flex items-center gap-2">
                           <MapPin className="w-3 h-3 text-pink-400" />
-                          <span>{service.contactInfo.address}</span>
+                          <span>{service.contactInfo?.address ?? '364 E Main St STE 1008 Middletown DE 19709'}</span>
                         </div>
                       </div>
                     </div>

@@ -67,9 +67,9 @@ export default function NeoFuturisticFooter() {
       description: 'Revolutionary quantum computing solutions',
       icon: <Atom className="w-5 h-5" />,
       services: [
-        { name: 'Quantum AI Platform', href: '/services?category=quantum' },
-        { name: 'Quantum Optimization', href: '/services?category=quantum' },
-        { name: 'Quantum Simulation', href: '/services?category=quantum' }
+        { name: 'Quantum AI Platform', href: '/services?category=Quantum Computing' },
+        { name: 'Quantum Optimization', href: '/services?category=Quantum Computing' },
+        { name: 'Quantum Simulation', href: '/services?category=Quantum Computing' }
       ]
     },
     {
@@ -77,9 +77,9 @@ export default function NeoFuturisticFooter() {
       description: 'Advanced AI and ML platforms',
       icon: <Brain className="w-5 h-5" />,
       services: [
-        { name: 'AI Content Creation', href: '/services?category=ai' },
-        { name: 'ML Model Training', href: '/services?category=ai' },
-        { name: 'AI Analytics', href: '/services?category=ai' }
+        { name: 'AI Content Creation', href: '/services?category=AI & Machine Learning' },
+        { name: 'ML Model Training', href: '/services?category=AI & Machine Learning' },
+        { name: 'AI Analytics', href: '/services?category=AI & Machine Learning' }
       ]
     },
     {
@@ -87,9 +87,9 @@ export default function NeoFuturisticFooter() {
       description: 'Next-generation security solutions',
       icon: <Shield className="w-5 h-5" />,
       services: [
-        { name: 'Quantum Security', href: '/services?category=cybersecurity' },
-        { name: 'AI Threat Detection', href: '/services?category=cybersecurity' },
-        { name: 'Zero Trust Security', href: '/services?category=cybersecurity' }
+        { name: 'Quantum Security', href: '/services?category=Cybersecurity' },
+        { name: 'AI Threat Detection', href: '/services?category=Cybersecurity' },
+        { name: 'Zero Trust Security', href: '/services?category=Cybersecurity' }
       ]
     },
     {
@@ -126,12 +126,8 @@ export default function NeoFuturisticFooter() {
   ];
 
   const socialLinks = [
-    { name: 'Facebook', href: '#', icon: <Facebook className="w-5 h-5" /> },
-    { name: 'Twitter', href: '#', icon: <Twitter className="w-5 h-5" /> },
-    { name: 'LinkedIn', href: '#', icon: <Linkedin className="w-5 h-5" /> },
-    { name: 'Instagram', href: '#', icon: <Instagram className="w-5 h-5" /> },
-    { name: 'YouTube', href: '#', icon: <Youtube className="w-5 h-5" /> },
-    { name: 'GitHub', href: '#', icon: <Github className="w-5 h-5" /> }
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/company/zion-tech-group', icon: <Linkedin className="w-5 h-5" /> },
+    { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: <Github className="w-5 h-5" /> }
   ];
 
   const stats = [
