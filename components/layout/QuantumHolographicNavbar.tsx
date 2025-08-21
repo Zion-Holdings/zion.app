@@ -40,12 +40,12 @@ export default function QuantumHolographicNavbar() {
       dropdown: [
         { name: 'AI & Machine Learning', href: '/services?category=AI%20%26%20Machine%20Learning', icon: <Brain className="w-4 h-4" />, description: 'Advanced AI solutions' },
         { name: 'Quantum Computing', href: '/services?category=Quantum%20Computing', icon: <Atom className="w-4 h-4" />, description: 'Quantum-powered platforms' },
-        { name: 'Edge AI & IoT', href: '/services?category=Edge%20AI%20%26%20IoT', icon: <Cpu className="w-4 h-4" />, description: 'Intelligent edge computing' },
-        { name: 'Autonomous Systems', href: '/services?category=Autonomous%20Systems', icon: <Bot className="w-4 h-4" />, description: 'Self-learning automation' },
-        { name: 'Healthcare & Life Sciences', href: '/services?category=Healthcare%20%26%20Life%20Sciences', icon: <Eye className="w-4 h-4" />, description: 'Biomedical breakthroughs' },
+        { name: 'IoT & Smart Cities', href: '/services?category=IoT%20%26%20Smart%20Cities', icon: <Cpu className="w-4 h-4" />, description: 'Intelligent edge computing' },
+        { name: 'Robotics & Automation', href: '/services?category=Robotics%20%26%20Automation', icon: <Bot className="w-4 h-4" />, description: 'Self-learning automation' },
+        { name: 'Biotechnology & Healthcare', href: '/services?category=Biotechnology%20%26%20Healthcare', icon: <Eye className="w-4 h-4" />, description: 'Biomedical breakthroughs' },
         { name: 'Cybersecurity', href: '/services?category=Cybersecurity', icon: <Lock className="w-4 h-4" />, description: 'Quantum-safe security' },
-        { name: 'Data Analytics & BI', href: '/services?category=Data%20Analytics%20%26%20BI', icon: <BarChart3 className="w-4 h-4" />, description: 'Intelligent insights' },
-        { name: 'Emerging Technology', href: '/services?category=Emerging%20Technology', icon: <Sparkles className="w-4 h-4" />, description: 'Future innovations' }
+        { name: 'Analytics & Business Intelligence', href: '/services?category=Analytics%20%26%20Business%20Intelligence', icon: <BarChart3 className="w-4 h-4" />, description: 'Intelligent insights' },
+        { name: 'Cloud & Infrastructure', href: '/services?category=Cloud%20%26%20Infrastructure', icon: <Sparkles className="w-4 h-4" />, description: 'Future innovations' }
       ]
     },
     { 

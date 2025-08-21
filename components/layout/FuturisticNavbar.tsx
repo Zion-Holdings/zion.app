@@ -39,13 +39,13 @@ const FuturisticNavbar: React.FC = () => {
       description: '150+ Micro SaaS Solutions',
       dropdown: [
         { name: 'AI & Machine Learning', href: '/services?category=AI%20%26%20Machine%20Learning', icon: <Brain className="w-4 h-4" /> },
-        { name: 'Quantum Computing', href: '/services?category=Quantum%20Computing%20%26%20Security', icon: <Atom className="w-4 h-4" /> },
-        { name: 'Edge AI & IoT', href: '/services?category=Edge%20AI%20%26%20IoT', icon: <Cpu className="w-4 h-4" /> },
-        { name: 'Autonomous Systems', href: '/services?category=Autonomous%20Systems', icon: <Bot className="w-4 h-4" /> },
-        { name: 'Healthcare & Life Sciences', href: '/services?category=Healthcare%20%26%20Life%20Sciences', icon: <Eye className="w-4 h-4" /> },
+        { name: 'Quantum Computing', href: '/services?category=Quantum%20Computing', icon: <Atom className="w-4 h-4" /> },
+        { name: 'IoT & Smart Cities', href: '/services?category=IoT%20%26%20Smart%20Cities', icon: <Cpu className="w-4 h-4" /> },
+        { name: 'Robotics & Automation', href: '/services?category=Robotics%20%26%20Automation', icon: <Bot className="w-4 h-4" /> },
+        { name: 'Biotechnology & Healthcare', href: '/services?category=Biotechnology%20%26%20Healthcare', icon: <Eye className="w-4 h-4" /> },
         { name: 'Cybersecurity', href: '/services?category=Cybersecurity', icon: <Lock className="w-4 h-4" /> },
-        { name: 'Data Analytics & BI', href: '/services?category=Data%20Analytics%20%26%20BI', icon: <BarChart3 className="w-4 h-4" /> },
-        { name: 'Emerging Technology', href: '/services?category=Emerging%20Technology', icon: <Sparkles className="w-4 h-4" /> }
+        { name: 'Analytics & Business Intelligence', href: '/services?category=Analytics%20%26%20Business%20Intelligence', icon: <BarChart3 className="w-4 h-4" /> },
+        { name: 'Cloud & Infrastructure', href: '/services?category=Cloud%20%26%20Infrastructure', icon: <Sparkles className="w-4 h-4" /> }
       ]
     },
     { 
