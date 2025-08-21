@@ -15,6 +15,11 @@ import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-
 import { additionalEnhancedServices } from '../data/additional-real-services';
 import { newRealServices } from '../data/new-real-services';
 import { industryRealServices } from '../data/industry-real-services';
+import { professionalServices } from '../data/professional-services';
+import { nextGenerationAIServices } from '../data/next-generation-ai-services';
+import { cuttingEdgeITServices } from '../data/cutting-edge-it-services';
+import { innovativeMicroSaasV2Services } from '../data/innovative-micro-saas-v2';
+import { marketValidatedServices } from '../data/market-validated-services';
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -29,7 +34,12 @@ export default function ServicesPage() {
     ...enhancedRealMicroSaasServices,
     ...additionalEnhancedServices,
     ...newRealServices,
-    ...industryRealServices
+    ...industryRealServices,
+    ...professionalServices,
+    ...nextGenerationAIServices,
+    ...cuttingEdgeITServices,
+    ...innovativeMicroSaasV2Services,
+    ...marketValidatedServices
   ];
 
   // Dynamic category counts mapped to the same filter logic below

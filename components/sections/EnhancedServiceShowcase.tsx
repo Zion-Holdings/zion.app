@@ -12,6 +12,7 @@ import { enhancedRealMicroSaasServices } from '../../data/enhanced-real-micro-sa
 import { nextGenerationAIServices } from '../../data/next-generation-ai-services';
 import { emergingTechnologyServices } from '../../data/emerging-technology-services';
 import { comprehensiveITSolutions } from '../../data/comprehensive-it-solutions';
+import { marketValidatedServices } from '../../data/market-validated-services';
 
 interface ServiceShowcaseProps {
   className?: string;
@@ -36,7 +37,8 @@ const EnhancedServiceShowcase: React.FC<ServiceShowcaseProps> = ({
     ...enhancedRealMicroSaasServices,
     ...nextGenerationAIServices,
     ...emergingTechnologyServices,
-    ...comprehensiveITSolutions
+    ...comprehensiveITSolutions,
+    ...marketValidatedServices
   ];
 
   const categories = [
