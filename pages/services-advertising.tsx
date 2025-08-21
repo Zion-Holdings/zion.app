@@ -77,7 +77,10 @@ export default function ServicesAdvertisingPage() {
                 { name: 'Cloud Cost Optimizer', price: '$399/mo', href: '/cloud-cost-optimizer' },
                 { name: 'SOC 2 Evidence Automation', price: '$499/mo', href: '/soc2-evidence-automation' },
                 { name: 'Vector Search Starter', price: '$249/mo', href: '/vector-search-starter' },
-                { name: 'TLS Certificate Monitor', price: '$49/mo', href: '/tls-certificate-monitor' }
+                { name: 'TLS Certificate Monitor', price: '$49/mo', href: '/tls-certificate-monitor' },
+                { name: 'Affiliate Marketing Tracking Suite', price: '$149/mo', href: '/services/affiliate-marketing-tracking-suite' },
+                { name: 'SMB Website Analytics Dashboard', price: '$29/mo', href: '/services/smb-website-analytics-dashboard' },
+                { name: 'Customer Support Helpdesk Pro', price: '$79/mo', href: '/services/customer-support-helpdesk-pro' }
               ].map((o) => (
                 <a key={o.name} href={o.href} className="block p-6 rounded-2xl bg-black/40 border border-gray-700/60 hover:border-cyan-500/40">
                   <div className="text-sm text-gray-400 mb-1">From</div>
@@ -112,6 +115,39 @@ export default function ServicesAdvertisingPage() {
             </div>
             <div className="text-center mt-6">
               <Button href="/market-pricing" variant="secondary" className="px-8 py-4">Full Market Pricing</Button>
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Average Market Prices</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="p-6 rounded-2xl bg-black/40 border border-sky-500/30">
+                <h3 className="text-xl font-semibold text-white mb-3">Affiliate & Partnerships</h3>
+                <ul className="text-slate-300 space-y-1">
+                  <li>Impact.com: <a className="text-cyan-400 underline" href={`https://impact.com/pricing/`} target="_blank" rel="noopener noreferrer">impact.com/pricing</a></li>
+                  <li>PartnerStack: <a className="text-cyan-400 underline" href={`https://partnerstack.com/pricing`} target="_blank" rel="noopener noreferrer">partnerstack.com/pricing</a></li>
+                  <li>Refersion: <a className="text-cyan-400 underline" href={`https://www.refersion.com/pricing`} target="_blank" rel="noopener noreferrer">refersion.com/pricing</a></li>
+                </ul>
+                <div className="text-sm text-slate-400 mt-3">Typical: $99–$500/month + commissions.</div>
+              </div>
+              <div className="p-6 rounded-2xl bg-black/40 border border-emerald-500/30">
+                <h3 className="text-xl font-semibold text-white mb-3">Website Analytics</h3>
+                <ul className="text-slate-300 space-y-1">
+                  <li>Plausible: <a className="text-cyan-400 underline" href={`https://plausible.io/pricing`} target="_blank" rel="noopener noreferrer">plausible.io/pricing</a></li>
+                  <li>Fathom: <a className="text-cyan-400 underline" href={`https://usefathom.com/pricing`} target="_blank" rel="noopener noreferrer">usefathom.com/pricing</a></li>
+                  <li>Simple Analytics: <a className="text-cyan-400 underline" href={`https://simpleanalytics.com/pricing`} target="_blank" rel="noopener noreferrer">simpleanalytics.com/pricing</a></li>
+                </ul>
+                <div className="text-sm text-slate-400 mt-3">Typical: $9–$59/month.</div>
+              </div>
+              <div className="p-6 rounded-2xl bg-black/40 border border-pink-500/30">
+                <h3 className="text-xl font-semibold text-white mb-3">Helpdesk & Chat</h3>
+                <ul className="text-slate-300 space-y-1">
+                  <li>Zendesk: <a className="text-cyan-400 underline" href={`https://www.zendesk.com/pricing/`} target="_blank" rel="noopener noreferrer">zendesk.com/pricing</a></li>
+                  <li>Freshdesk: <a className="text-cyan-400 underline" href={`https://freshdesk.com/pricing`} target="_blank" rel="noopener noreferrer">freshdesk.com/pricing</a></li>
+                  <li>Help Scout: <a className="text-cyan-400 underline" href={`https://www.helpscout.com/pricing/`} target="_blank" rel="noopener noreferrer">helpscout.com/pricing</a></li>
+                </ul>
+                <div className="text-sm text-slate-400 mt-3">Typical: $15–$99/agent/month.</div>
+              </div>
             </div>
           </section>
 
