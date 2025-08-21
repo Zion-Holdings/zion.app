@@ -4,8 +4,9 @@ import {
   Phone, Mail, MapPin, Globe, 
   Twitter, Linkedin, Facebook, Instagram, Github, Youtube,
   ArrowRight, Rocket, Brain, Cpu, Shield,
-  Star, Users, TrendingUp, Zap
+  Star, Users, TrendingUp, Zap, Target, Microscope, Server
 } from 'lucide-react';
+import Link from 'next/link';
 
 const contactInfo = {
   mobile: '+1 302 464 0950',
@@ -16,7 +17,17 @@ const contactInfo = {
 
 const serviceCategories = [
   {
+    title: 'All Services',
+    services: [
+      { name: 'Comprehensive Services Showcase', href: '/comprehensive-services-showcase-2025' },
+      { name: 'View All Services', href: '/comprehensive-services-showcase-2025' },
+      { name: 'Service Categories', href: '/comprehensive-services-showcase-2025#categories' },
+      { name: 'Pricing Comparison', href: '/comprehensive-services-showcase-2025#pricing' }
+    ]
+  },
+  {
     title: 'AI & Consciousness',
+    icon: Brain,
     services: [
       { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029' },
       { name: 'Quantum AI Fusion', href: '/quantum-ai-fusion' },
@@ -27,6 +38,7 @@ const serviceCategories = [
   },
   {
     title: 'Quantum & Emerging Tech',
+    icon: Cpu,
     services: [
       { name: 'Space Mining Platform', href: '/space-mining-platform' },
       { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing' },
@@ -37,6 +49,7 @@ const serviceCategories = [
   },
   {
     title: 'Enterprise IT',
+    icon: Shield,
     services: [
       { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure' },
       { name: 'Edge Computing Orchestrator', href: '/edge-computing-orchestrator' },
@@ -46,13 +59,47 @@ const serviceCategories = [
     ]
   },
   {
-    title: 'Micro SAAS',
+    title: 'Advanced Micro SAAS',
+    icon: Target,
     services: [
-      { name: 'AI Content Factory Pro', href: '/ai-content-factory' },
-      { name: 'Quantum CRM Suite', href: '/quantum-crm' },
-      { name: 'CyberShield Pro', href: '/cyber-shield-pro' },
-      { name: 'DataVault Hub', href: '/data-vault-hub' },
-      { name: 'DevOps Automation Studio', href: '/devops-automation-studio' }
+      { name: 'CustomerSuccess AI Pro', href: '/customer-success-ai-pro' },
+      { name: 'QuantumSupply Chain Optimizer', href: '/quantum-supply-chain-optimizer' },
+      { name: 'BlockID Verify Pro', href: '/blockid-verify-pro' },
+      { name: 'HR Analytics AI Suite', href: '/hr-analytics-ai-suite' },
+      { name: 'QuantumRisk Financial Manager', href: '/quantum-risk-financial-manager' }
+    ]
+  },
+  {
+    title: 'Advanced AI Services',
+    icon: Brain,
+    services: [
+      { name: 'AI Consciousness Evolution Platform', href: '/ai-consciousness-evolution-platform' },
+      { name: 'Quantum AI Hybrid Computing', href: '/quantum-ai-hybrid-computing-platform' },
+      { name: 'Multimodal AI Orchestrator Pro', href: '/multimodal-ai-orchestrator-pro' },
+      { name: 'AI Autonomous Ecosystem Platform', href: '/ai-autonomous-ecosystem-platform' },
+      { name: 'AI Ethics & Governance Platform', href: '/ai-ethics-governance-platform' }
+    ]
+  },
+  {
+    title: 'Advanced IT Services',
+    icon: Server,
+    services: [
+      { name: 'Quantum Cloud Infrastructure Pro', href: '/quantum-cloud-infrastructure-platform' },
+      { name: 'Edge Computing Orchestrator Pro', href: '/edge-computing-orchestrator-platform' },
+      { name: 'Zero Trust Security Pro', href: '/zero-trust-security-platform' },
+      { name: 'Blockchain Enterprise Platform Pro', href: '/blockchain-enterprise-platform' },
+      { name: 'AI DevOps Platform Pro', href: '/ai-devops-platform' }
+    ]
+  },
+  {
+    title: 'Emerging Technologies',
+    icon: Microscope,
+    services: [
+      { name: 'Space Mining Platform Pro', href: '/space-mining-platform' },
+      { name: 'Quantum Bio-Computing Pro', href: '/quantum-bio-computing-platform' },
+      { name: 'Brain-Computer Interface Pro', href: '/brain-computer-interface-platform' },
+      { name: 'Quantum Energy Platform Pro', href: '/quantum-energy-platform' },
+      { name: 'Autonomous Vehicle AI Pro', href: '/autonomous-vehicle-ai-platform' }
     ]
   }
 ];
@@ -103,33 +150,32 @@ export default function EnhancedFooter() {
               viewport={{ once: true }}
             >
               <div className="flex items-center space-x-3 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-purple-600 rounded-xl flex items-center justify-center">
+                <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center">
                   <Rocket className="w-7 h-7 text-white" />
                 </div>
                 <div>
-                  <div className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+                  <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
                     Zion Tech Group
-                  </div>
-                  <div className="text-sm text-gray-400">Revolutionary Technology</div>
+                  </h3>
+                  <p className="text-sm text-gray-400">Future Technology Solutions</p>
                 </div>
               </div>
-              
               <p className="text-gray-300 mb-6 leading-relaxed">
-                Leading provider of revolutionary AI, quantum computing, emerging technologies, and micro SAAS solutions. 
-                Delivering cutting-edge solutions that transform businesses worldwide with our comprehensive service portfolio.
+                Leading the future with revolutionary AI consciousness, quantum computing, emerging technologies, and innovative micro SAAS solutions that transform businesses worldwide.
               </p>
               
+              {/* Contact Info */}
               <div className="space-y-3">
-                <div className="flex items-center space-x-3 text-gray-300">
-                  <Phone className="w-4 h-4 text-cyan-400" />
-                  <span className="text-sm">{contactInfo.mobile}</span>
+                <div className="flex items-center space-x-3 text-gray-300 hover:text-cyan-400 transition-colors duration-200">
+                  <Phone className="w-4 h-4" />
+                  <a href={`tel:${contactInfo.mobile}`} className="text-sm">{contactInfo.mobile}</a>
+                </div>
+                <div className="flex items-center space-x-3 text-gray-300 hover:text-cyan-400 transition-colors duration-200">
+                  <Mail className="w-4 h-4" />
+                  <a href={`mailto:${contactInfo.email}`} className="text-sm">{contactInfo.email}</a>
                 </div>
                 <div className="flex items-center space-x-3 text-gray-300">
-                  <Mail className="w-4 h-4 text-purple-400" />
-                  <span className="text-sm">{contactInfo.email}</span>
-                </div>
-                <div className="flex items-center space-x-3 text-gray-300">
-                  <MapPin className="w-4 h-4 text-green-400" />
+                  <MapPin className="w-4 h-4" />
                   <span className="text-sm">{contactInfo.address}</span>
                 </div>
               </div>
@@ -137,183 +183,163 @@ export default function EnhancedFooter() {
           </div>
 
           {/* Service Categories */}
-          {serviceCategories.map((category, index) => (
+          <div className="lg:col-span-2">
             <motion.div
-              key={category.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-lg font-semibold text-white mb-6">{category.title}</h3>
-              <ul className="space-y-3">
-                {category.services.map((service) => (
-                  <li key={service.name}>
-                    <a
-                      href={service.href}
-                      className="text-gray-400 hover:text-cyan-400 transition-colors duration-200 text-sm flex items-center group"
-                    >
-                      <ArrowRight className="w-3 h-3 mr-2 group-hover:translate-x-1 transition-transform duration-200" />
-                      {service.name}
-                    </a>
-                  </li>
+              <h4 className="text-lg font-semibold text-white mb-6">Our Services</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {serviceCategories.slice(0, 4).map((category, index) => (
+                  <div key={index} className="space-y-3">
+                    <div className="flex items-center space-x-2">
+                      <category.icon className="w-5 h-5 text-cyan-400" />
+                      <h5 className="text-sm font-medium text-white">{category.title}</h5>
+                    </div>
+                    <ul className="space-y-2">
+                      {category.services.slice(0, 3).map((service, serviceIndex) => (
+                        <li key={serviceIndex}>
+                          <Link 
+                            href={service.href}
+                            className="text-xs text-gray-400 hover:text-cyan-400 transition-colors duration-200"
+                          >
+                            {service.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </motion.div>
-          ))}
-        </div>
+          </div>
 
-        {/* Additional Links */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 pt-12 border-t border-gray-700/50">
-          {/* Company & Support Links */}
-          <div className="grid grid-cols-2 gap-8">
+          {/* Quick Links */}
+          <div className="lg:col-span-1">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <h4 className="text-lg font-semibold text-white mb-4">Company</h4>
-              <ul className="space-y-3">
-                {companyLinks.map((link) => (
-                  <li key={link.name}>
-                    <a
-                      href={link.href}
-                      className="text-gray-400 hover:text-cyan-400 transition-colors duration-200 text-sm"
-                    >
-                      {link.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              viewport={{ once: true }}
-            >
-              <h4 className="text-lg font-semibold text-white mb-4">Support</h4>
-              <ul className="space-y-3">
-                {supportLinks.map((link) => (
-                  <li key={link.name}>
-                    <a
-                      href={link.href}
-                      className="text-gray-400 hover:text-cyan-400 transition-colors duration-200 text-sm"
-                    >
-                      {link.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          </div>
-
-          {/* Stats & Social */}
-          <div className="grid grid-cols-1 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              viewport={{ once: true }}
-            >
-              <h4 className="text-lg font-semibold text-white mb-4">Our Impact</h4>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="text-center p-4 bg-gray-800/50 rounded-lg border border-gray-700/50">
-                  <div className="text-2xl font-bold text-cyan-400">40+</div>
-                  <div className="text-xs text-gray-400">Services</div>
-                </div>
-                <div className="text-center p-4 bg-gray-800/50 rounded-lg border border-gray-700/50">
-                  <div className="text-2xl font-bold text-purple-400">1000%</div>
-                  <div className="text-xs text-gray-400">ROI</div>
-                </div>
-                <div className="text-center p-4 bg-gray-800/50 rounded-lg border border-gray-700/50">
-                  <div className="text-2xl font-bold text-green-400">24/7</div>
-                  <div className="text-xs text-gray-400">Support</div>
-                </div>
-                <div className="text-center p-4 bg-gray-800/50 rounded-lg border border-gray-700/50">
-                  <div className="text-2xl font-bold text-pink-400">99.9%</div>
-                  <div className="text-xs text-gray-400">Uptime</div>
-                </div>
+              <h4 className="text-lg font-semibold text-white mb-6">Quick Links</h4>
+              
+              {/* Company Links */}
+              <div className="mb-6">
+                <h5 className="text-sm font-medium text-gray-300 mb-3">Company</h5>
+                <ul className="space-y-2">
+                  {companyLinks.slice(0, 4).map((link, index) => (
+                    <li key={index}>
+                      <Link 
+                        href={link.href}
+                        className="text-xs text-gray-400 hover:text-cyan-400 transition-colors duration-200"
+                      >
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              viewport={{ once: true }}
-            >
-              <h4 className="text-lg font-semibold text-white mb-4">Follow Us</h4>
-              <div className="flex space-x-4">
-                {socialLinks.map((social) => {
-                  const Icon = social.icon;
-                  return (
-                    <a
-                      key={social.name}
-                      href={social.href}
-                      className="w-10 h-10 bg-gray-800/50 border border-gray-700/50 rounded-lg flex items-center justify-center text-gray-400 hover:text-cyan-400 hover:border-cyan-500/50 transition-all duration-200"
-                    >
-                      <Icon className="w-5 h-5" />
-                    </a>
-                  );
-                })}
+              {/* Support Links */}
+              <div>
+                <h5 className="text-sm font-medium text-gray-300 mb-3">Support</h5>
+                <ul className="space-y-2">
+                  {supportLinks.slice(0, 4).map((link, index) => (
+                    <li key={index}>
+                      <Link 
+                        href={link.href}
+                        className="text-xs text-gray-400 hover:text-cyan-400 transition-colors duration-200"
+                      >
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </motion.div>
           </div>
         </div>
 
-        {/* Newsletter Signup */}
+        {/* Additional Service Categories */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
-          className="mt-12 pt-12 border-t border-gray-700/50"
+          className="mt-12 pt-8 border-t border-gray-700/50"
         >
-          <div className="text-center">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Stay Ahead of the Future
-            </h3>
-            <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
-              Get exclusive insights into the latest AI, quantum computing, emerging technologies, and micro SAAS innovations. 
-              Be the first to know about new services and breakthrough technologies.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
-              />
-              <button className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-200 shadow-lg hover:shadow-xl">
-                Subscribe
-              </button>
-            </div>
+          <h4 className="text-lg font-semibold text-white mb-6 text-center">Advanced Technology Services</h4>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {serviceCategories.slice(4).map((category, index) => (
+              <div key={index} className="space-y-3">
+                <div className="flex items-center space-x-2">
+                  <category.icon className="w-5 h-5 text-cyan-400" />
+                  <h5 className="text-sm font-medium text-white">{category.title}</h5>
+                </div>
+                <ul className="space-y-2">
+                  {category.services.slice(0, 3).map((service, serviceIndex) => (
+                    <li key={serviceIndex}>
+                      <Link 
+                        href={service.href}
+                        className="text-xs text-gray-400 hover:text-cyan-400 transition-colors duration-200"
+                      >
+                        {service.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </motion.div>
       </div>
 
-      {/* Bottom Bar */}
+      {/* Bottom Footer */}
       <div className="border-t border-gray-700/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-            <div className="text-gray-400 text-sm">
-              © {currentYear} Zion Tech Group. All rights reserved.
-            </div>
-            
-            <div className="flex items-center space-x-6 text-sm text-gray-400">
-              <a href="/terms" className="hover:text-cyan-400 transition-colors duration-200">
-                Terms of Service
-              </a>
-              <a href="/privacy" className="hover:text-cyan-400 transition-colors duration-200">
-                Privacy Policy
-              </a>
-              <a href="/cookies" className="hover:text-cyan-400 transition-colors duration-200">
-                Cookie Policy
-              </a>
-            </div>
+            {/* Copyright */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="text-center md:text-left"
+            >
+              <p className="text-sm text-gray-400">
+                © {currentYear} Zion Tech Group. All rights reserved. | 
+                <Link href="/privacy" className="ml-2 hover:text-cyan-400 transition-colors duration-200">
+                  Privacy Policy
+                </Link> | 
+                <Link href="/terms" className="ml-2 hover:text-cyan-400 transition-colors duration-200">
+                  Terms of Service
+                </Link>
+              </p>
+            </motion.div>
+
+            {/* Social Links */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="flex items-center space-x-4"
+            >
+              {socialLinks.map((social, index) => (
+                <a
+                  key={index}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-gray-800/50 hover:bg-cyan-500/20 border border-gray-700/50 hover:border-cyan-500/50 rounded-lg flex items-center justify-center text-gray-400 hover:text-cyan-400 transition-all duration-300 hover:scale-110"
+                >
+                  <social.icon className="w-5 h-5" />
+                </a>
+              ))}
+            </motion.div>
           </div>
         </div>
       </div>
