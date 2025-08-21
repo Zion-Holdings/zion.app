@@ -9,7 +9,7 @@ import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, Exter
 
 export default function HomePage() {
   const heroStats = [
-    { value: '75+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
+    { value: '25+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
     { value: '99.9%', label: 'Uptime Guarantee', color: 'text-fuchsia-400' },
     { value: '14', label: 'Day Free Trials', color: 'text-blue-400' },
     { value: '24/7', label: 'AI Support', color: 'text-green-400' },
@@ -26,14 +26,14 @@ export default function HomePage() {
     {
       icon: <Cloud className="w-8 h-8 text-white" />,
       title: 'Real Micro SaaS Services',
-      description: '75+ fully functional micro SaaS tools with real implementations, not just mockups.',
+      description: '25+ fully functional micro SaaS tools with real implementations, not just mockups.',
       color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
       gradient: 'from-cyan-400 to-blue-500',
     },
     {
       icon: <Bot className="w-8 h-8 text-white" />,
       title: 'AI-Powered Solutions',
-      description: 'Advanced AI content generation, SEO automation, chatbots, and business intelligence.',
+      description: 'Advanced AI content generation, cybersecurity, business intelligence, and autonomous agents.',
       color: 'bg-gradient-to-br from-fuchsia-500 to-purple-600',
       gradient: 'from-fuchsia-400 to-purple-500',
     },
@@ -210,7 +210,7 @@ export default function HomePage() {
           <div className="container mx-auto px-4 text-center">
             <div className="max-w-6xl mx-auto">
               <div className="mb-8">
-                <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 text-cyan-400 text-sm font-medium mb-6">
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 text-cyan-400 text-sm font-medium mb-6 backdrop-blur-sm">
                   <Sparkles className="w-4 h-4 mr-2" />
                   Revolutionary Technology Solutions
                 </div>
@@ -234,11 +234,11 @@ export default function HomePage() {
               {/* Hero Stats */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
                 {heroStats.map((stat, index) => (
-                  <div key={index} className="text-center">
-                    <div className={`text-3xl md:text-4xl font-bold ${stat.color} mb-2`}>
+                  <div key={index} className="text-center group">
+                    <div className={`text-3xl md:text-4xl font-bold ${stat.color} mb-2 group-hover:scale-110 transition-transform duration-300`}>
                       {stat.value}
                     </div>
-                    <div className="text-gray-400 text-sm">{stat.label}</div>
+                    <div className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors">{stat.label}</div>
                   </div>
                 ))}
               </div>
@@ -249,7 +249,7 @@ export default function HomePage() {
                   href="/services"
                   variant="primary"
                   size="lg"
-                  className="group"
+                  className="group transform hover:scale-105 transition-all duration-300"
                 >
                   Explore Services
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -258,7 +258,7 @@ export default function HomePage() {
                   href="/contact"
                   variant="secondary"
                   size="lg"
-                  className="group"
+                  className="group transform hover:scale-105 transition-all duration-300"
                 >
                   Get Started
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -266,24 +266,24 @@ export default function HomePage() {
               </div>
 
               {/* Contact Information Banner */}
-              <div className="bg-gradient-to-r from-gray-900/50 to-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 max-w-4xl mx-auto">
+              <div className="bg-gradient-to-r from-gray-900/50 to-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 max-w-4xl mx-auto hover:border-gray-600 transition-all duration-300">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="flex items-center justify-center md:justify-start">
-                    <Phone className="w-5 h-5 text-cyan-400 mr-3" />
+                  <div className="flex items-center justify-center md:justify-start group">
+                    <Phone className="w-5 h-5 text-cyan-400 mr-3 group-hover:scale-110 transition-transform" />
                     <div>
                       <div className="text-sm text-gray-400">Mobile</div>
                       <div className="text-white font-medium">{contactInfo.mobile}</div>
                     </div>
                   </div>
-                  <div className="flex items-center justify-center md:justify-start">
-                    <Mail className="w-5 h-5 text-purple-400 mr-3" />
+                  <div className="flex items-center justify-center md:justify-start group">
+                    <Mail className="w-5 h-5 text-purple-400 mr-3 group-hover:scale-110 transition-transform" />
                     <div>
                       <div className="text-sm text-gray-400">Email</div>
                       <div className="text-white font-medium">{contactInfo.email}</div>
                     </div>
                   </div>
-                  <div className="flex items-center justify-center md:justify-start">
-                    <MapPin className="w-5 h-5 text-emerald-400 mr-3" />
+                  <div className="flex items-center justify-center md:justify-start group">
+                    <MapPin className="w-5 h-5 text-emerald-400 mr-3 group-hover:scale-110 transition-transform" />
                     <div>
                       <div className="text-sm text-gray-400">Address</div>
                       <div className="text-white font-medium text-sm">{contactInfo.address}</div>
@@ -314,10 +314,10 @@ export default function HomePage() {
               {platformFeatures.map((feature, index) => (
                 <Card
                   key={index}
-                  className={`${feature.color} p-8 text-center transform hover:scale-105 transition-all duration-300 hover:shadow-2xl`}
+                  className={`${feature.color} p-8 text-center transform hover:scale-105 transition-all duration-300 hover:shadow-2xl border-0`}
                 >
                   <div className="mb-6 flex justify-center">
-                    <div className="p-4 rounded-full bg-white/10 backdrop-blur-sm">
+                    <div className="p-4 rounded-full bg-white/10 backdrop-blur-sm group-hover:scale-110 transition-transform duration-300">
                       {feature.icon}
                     </div>
                   </div>
@@ -348,10 +348,10 @@ export default function HomePage() {
               {innovativeServices.map((service, index) => (
                 <Card
                   key={index}
-                  className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 p-6 hover:border-gray-600 transition-all duration-300 hover:shadow-2xl hover:scale-105"
+                  className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 p-6 hover:border-gray-600 transition-all duration-300 hover:shadow-2xl hover:scale-105 group"
                 >
                   <div className="flex items-start justify-between mb-4">
-                    <div className={`text-3xl ${service.icon}`}></div>
+                    <div className={`text-3xl group-hover:scale-110 transition-transform duration-300`}>{service.icon}</div>
                     <div className="text-sm px-3 py-1 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-400 border border-cyan-500/30">
                       {service.category}
                     </div>
@@ -379,7 +379,7 @@ export default function HomePage() {
                 href="/services"
                 variant="primary"
                 size="lg"
-                className="group"
+                className="group transform hover:scale-105 transition-all duration-300"
               >
                 View All Services
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -407,9 +407,9 @@ export default function HomePage() {
               {technologyStack.map((tech, index) => (
                 <div
                   key={index}
-                  className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:scale-105"
+                  className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:scale-105 group cursor-pointer"
                 >
-                  <div className="text-4xl mb-3">{tech.icon}</div>
+                  <div className="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">{tech.icon}</div>
                   <div className="text-white font-semibold mb-1">{tech.name}</div>
                   <div className="text-sm text-gray-400">{tech.category}</div>
                 </div>
@@ -437,9 +437,9 @@ export default function HomePage() {
               {features.map((feature, index) => (
                 <Card
                   key={index}
-                  className={`${feature.color} p-8 text-center transform hover:scale-105 transition-all duration-300 hover:shadow-2xl`}
+                  className={`${feature.color} p-8 text-center transform hover:scale-105 transition-all duration-300 hover:shadow-2xl border-0`}
                 >
-                  <div className="text-4xl mb-6">{feature.icon}</div>
+                  <div className="text-4xl mb-6 group-hover:scale-110 transition-transform duration-300">{feature.icon}</div>
                   <h3 className={`text-2xl font-bold ${feature.textColor} mb-4`}>
                     {feature.title}
                   </h3>
@@ -469,7 +469,7 @@ export default function HomePage() {
                   href="/contact"
                   variant="primary"
                   size="lg"
-                  className="group"
+                  className="group transform hover:scale-105 transition-all duration-300"
                 >
                   Start Free Trial
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -478,7 +478,7 @@ export default function HomePage() {
                   href="/services"
                   variant="secondary"
                   size="lg"
-                  className="group"
+                  className="group transform hover:scale-105 transition-all duration-300"
                 >
                   Explore Services
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -486,21 +486,21 @@ export default function HomePage() {
               </div>
 
               {/* Final Contact Banner */}
-              <div className="bg-gradient-to-r from-cyan-900/30 to-blue-900/30 backdrop-blur-sm border border-cyan-500/30 rounded-2xl p-8">
+              <div className="bg-gradient-to-r from-cyan-900/30 to-blue-900/30 backdrop-blur-sm border border-cyan-500/30 rounded-2xl p-8 hover:border-cyan-400/50 transition-all duration-300">
                 <h3 className="text-2xl font-bold text-white mb-4">Get in Touch</h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                  <div>
-                    <Phone className="w-6 h-6 text-cyan-400 mx-auto mb-2" />
+                  <div className="group">
+                    <Phone className="w-6 h-6 text-cyan-400 mx-auto mb-2 group-hover:scale-110 transition-transform" />
                     <div className="text-sm text-gray-400">Mobile</div>
                     <div className="text-white font-medium">{contactInfo.mobile}</div>
                   </div>
-                  <div>
-                    <Mail className="w-6 h-6 text-purple-400 mx-auto mb-2" />
+                  <div className="group">
+                    <Mail className="w-6 h-6 text-purple-400 mx-auto mb-2 group-hover:scale-110 transition-transform" />
                     <div className="text-sm text-gray-400">Email</div>
                     <div className="text-white font-medium">{contactInfo.email}</div>
                   </div>
-                  <div>
-                    <MapPin className="w-6 h-6 text-emerald-400 mx-auto mb-2" />
+                  <div className="group">
+                    <MapPin className="w-6 h-6 text-emerald-400 mx-auto mb-2 group-hover:scale-110 transition-transform" />
                     <div className="text-sm text-gray-400">Address</div>
                     <div className="text-white font-medium text-sm">{contactInfo.address}</div>
                   </div>
@@ -510,7 +510,7 @@ export default function HomePage() {
                     href={contactInfo.website}
                     variant="secondary"
                     size="lg"
-                    className="group"
+                    className="group transform hover:scale-105 transition-all duration-300"
                   >
                     Visit Website
                     <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
