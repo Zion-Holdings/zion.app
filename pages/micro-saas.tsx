@@ -252,7 +252,7 @@ export default function MicroSaasPage() {
                 >
                   <option value="All">All Categories</option>
                   {serviceCategories.map((category) => (
-                    <option key={category} value={category}>{category}</option>
+                    <option key={category.name} value={category.name}>{category.name}</option>
                   ))}
                 </select>
 
