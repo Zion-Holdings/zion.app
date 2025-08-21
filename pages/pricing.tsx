@@ -1,128 +1,16 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
-import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Code, BookOpen, Activity, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Crown, Sparkles, Shield as ShieldIcon, Zap as ZapIcon2 } from 'lucide-react';
+import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Code, BookOpen, Activity, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Filter, Grid, List, ChevronDown, ChevronUp, Sparkles, FlaskConical, Dna, Car, Leaf, Factory, Truck, Microscope, GraduationCap, ShieldCheck, Brain, Atom, Globe2, Bot, CheckCircle, XCircle, Crown, Gem, Sparkle, Zap as ZapIcon2 } from 'lucide-react';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
-import EnhancedFuturisticBackground from '../components/ui/EnhancedFuturisticBackground';
-import { expandedMicroSaasServices, serviceCategories, getServicesByCategory } from '../data/expanded-micro-saas-services';
+import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
+import UltraFuturisticCard from '../components/ui/UltraFuturisticCard';
+import { enhancedRealMicroSaasServices, serviceCategories, getServicesByCategory } from '../data/enhanced-real-micro-saas-services';
+import { motion } from 'framer-motion';
 
 export default function PricingPage() {
-  const [selectedPlan, setSelectedPlan] = useState('pro');
-  const [billingCycle, setBillingCycle] = useState('monthly');
-
-  const pricingPlans = [
-    {
-      id: 'starter',
-      name: 'Starter',
-      description: 'Perfect for small businesses and startups',
-      price: billingCycle === 'monthly' ? 99 : 990,
-      period: billingCycle === 'monthly' ? '/month' : '/year',
-      savings: billingCycle === 'yearly' ? 'Save 17%' : '',
-      icon: '🚀',
-      color: 'from-blue-500 to-cyan-600',
-      bgColor: 'from-blue-500/10 to-cyan-500/10',
-      features: [
-        'Access to 20 core services',
-        'Basic AI assistance',
-        'Email support',
-        'Standard integrations',
-        '14-day free trial',
-        'Basic analytics',
-        'Community forum access',
-        'Documentation & guides'
-      ],
-      popular: false,
-      cta: 'Start Free Trial',
-      ctaLink: '/contact'
-    },
-    {
-      id: 'pro',
-      name: 'Professional',
-      description: 'Ideal for growing businesses and teams',
-      price: billingCycle === 'monthly' ? 299 : 2990,
-      period: billingCycle === 'monthly' ? '/month' : '/year',
-      savings: billingCycle === 'yearly' ? 'Save 17%' : '',
-      icon: '⭐',
-      color: 'from-purple-500 to-pink-600',
-      bgColor: 'from-purple-500/10 to-pink-500/10',
-      features: [
-        'Access to 50+ services',
-        'Advanced AI features',
-        'Priority support',
-        'Advanced integrations',
-        '30-day free trial',
-        'Advanced analytics',
-        'Team collaboration',
-        'Custom workflows',
-        'API access',
-        'White-label options'
-      ],
-      popular: true,
-      cta: 'Start Free Trial',
-      ctaLink: '/contact'
-    },
-    {
-      id: 'enterprise',
-      name: 'Enterprise',
-      description: 'For large organizations with custom needs',
-      price: billingCycle === 'monthly' ? 799 : 7990,
-      period: billingCycle === 'monthly' ? '/month' : '/year',
-      savings: billingCycle === 'yearly' ? 'Save 17%' : '',
-      icon: '👑',
-      color: 'from-amber-500 to-orange-600',
-      bgColor: 'from-amber-500/10 to-orange-500/10',
-      features: [
-        'Access to all 300+ services',
-        'Custom AI models',
-        '24/7 dedicated support',
-        'On-premise options',
-        'Custom integrations',
-        'Training & onboarding',
-        'White-label options',
-        'SLA guarantees',
-        'Custom development',
-        'Dedicated account manager'
-      ],
-      popular: false,
-      cta: 'Contact Sales',
-      ctaLink: '/contact'
-    }
-  ];
-
-  const addOnServices = [
-    {
-      name: 'Custom AI Model Development',
-      description: 'Tailored AI solutions for your specific business needs',
-      price: 'From $2,500',
-      period: '/project',
-      icon: '🧠',
-      color: 'from-purple-500 to-pink-600'
-    },
-    {
-      name: 'Quantum Computing Access',
-      description: 'Direct access to quantum computing resources',
-      price: 'From $5,000',
-      period: '/month',
-      icon: '⚛️',
-      color: 'from-indigo-500 to-purple-600'
-    },
-    {
-      name: 'Synthetic Biology Platform',
-      description: 'Advanced genetic engineering and synthetic biology tools',
-      price: 'From $3,500',
-      period: '/month',
-      icon: '🧬',
-      color: 'from-green-500 to-emerald-600'
-    },
-    {
-      name: 'Brain-Computer Interface',
-      description: 'Neural interface development and implementation',
-      price: 'From $8,000',
-      period: '/month',
-      icon: '🧠',
-      color: 'from-pink-500 to-rose-600'
-    }
-  ];
+  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [billingCycle, setBillingCycle] = useState<'monthly' | 'yearly'>('monthly');
 
   const contactInfo = {
     mobile: '+1 302 464 0950',
@@ -131,319 +19,494 @@ export default function PricingPage() {
     website: 'https://ziontechgroup.com'
   };
 
-  const features = [
-    {
-      icon: <Shield className="w-8 h-8 text-white" />,
-      title: 'Enterprise Security',
-      description: 'SOC 2 compliance, quantum-resistant encryption, and 24/7 security monitoring',
-      color: 'from-green-500 to-emerald-600'
-    },
-    {
-      icon: <Zap className="w-8 h-8 text-white" />,
-      title: 'Lightning Fast Setup',
-      description: 'Get started in minutes with automated onboarding and intuitive interfaces',
-      color: 'from-blue-500 to-cyan-600'
-    },
-    {
-      icon: <Users className="w-8 h-8 text-white" />,
-      title: '24/7 Expert Support',
-      description: 'Round-the-clock support from our team of technology experts',
-      color: 'from-purple-500 to-pink-600'
-    },
-    {
-      icon: <Globe className="w-8 h-8 text-white" />,
-      title: 'Global Infrastructure',
-      description: 'Worldwide deployment with local data centers and compliance',
-      color: 'from-orange-500 to-red-600'
-    }
-  ];
+  // Get services by category
+  const servicesToShow = selectedCategory === 'All' 
+    ? enhancedRealMicroSaasServices 
+    : getServicesByCategory(selectedCategory);
+
+  // Group services by price tier
+  const priceTiers = {
+    starter: servicesToShow.filter(service => parseFloat(service.price.replace('$', '')) <= 50),
+    professional: servicesToShow.filter(service => parseFloat(service.price.replace('$', '')) > 50 && parseFloat(service.price.replace('$', '')) <= 100),
+    enterprise: servicesToShow.filter(service => parseFloat(service.price.replace('$', '')) > 100)
+  };
+
+  const getYearlyPrice = (monthlyPrice: string) => {
+    const price = parseFloat(monthlyPrice.replace('$', ''));
+    const yearlyPrice = price * 12 * 0.8; // 20% discount for yearly
+    return `$${Math.round(yearlyPrice)}`;
+  };
+
+  const getYearlyPeriod = () => billingCycle === 'yearly' ? '/year' : '/month';
 
   return (
-    <EnhancedFuturisticBackground theme="quantum" intensity="high">
-      <div className="min-h-screen">
-        <Head>
-          <title>Transparent Pricing Plans | Zion Tech Group - Revolutionary Micro SaaS Solutions</title>
-          <meta name="description" content="Choose from our transparent pricing plans starting at $99/month. Access 300+ revolutionary micro SaaS services with enterprise-grade security and support." />
-          <meta name="keywords" content="pricing, micro SaaS pricing, AI services pricing, quantum computing pricing, Zion Tech Group pricing" />
-          <meta property="og:title" content="Transparent Pricing Plans | Zion Tech Group" />
-          <meta property="og:description" content="Choose from our transparent pricing plans starting at $99/month." />
-          <meta property="og:url" content="https://ziontechgroup.com/pricing" />
-          <link rel="canonical" href="https://ziontechgroup.com/pricing" />
-        </Head>
+    <UltraFuturisticBackground variant="quantum-holographic-advanced" className="min-h-screen">
+      <Head>
+        <title>AI-Powered Micro SaaS Pricing | Zion Tech Group - Transparent & Competitive Pricing</title>
+        <meta name="description" content="Discover transparent pricing for our AI-powered micro SaaS services. Competitive rates starting from $49/month with volume discounts and enterprise options available." />
+        <meta name="keywords" content="AI micro SaaS pricing, AI services pricing, micro SaaS cost, Zion Tech Group pricing, AI solutions pricing" />
+        <meta property="og:title" content="AI-Powered Micro SaaS Pricing | Zion Tech Group" />
+        <meta property="og:description" content="Transparent pricing for revolutionary AI-powered micro SaaS services" />
+        <meta property="og:url" content="https://ziontechgroup.com/pricing" />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://ziontechgroup.com/pricing" />
+      </Head>
 
+      <div className="relative z-10">
         {/* Hero Section */}
-        <section className="relative py-20 text-center">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              Transparent
-              <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent"> Pricing</span>
-              <br />Plans
-            </h1>
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              Choose the perfect plan for your business needs. All plans include our revolutionary technology, 
-              enterprise-grade security, and exceptional support. No hidden fees, just transparent pricing.
-            </p>
-            
-            {/* Contact Information Banner */}
-            <div className="bg-gradient-to-r from-blue-900/50 via-purple-900/50 to-cyan-900/50 border border-blue-500/30 rounded-2xl p-6 mb-8">
-              <h2 className="text-xl font-semibold text-white mb-4">Questions About Pricing?</h2>
-              <div className="flex flex-col md:flex-row justify-center items-center gap-4 text-gray-300 text-sm">
-                <div className="flex items-center gap-2">
-                  <Phone className="w-4 h-4 text-blue-400" />
-                  <span>{contactInfo.mobile}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Mail className="w-4 h-4 text-purple-400" />
-                  <span>{contactInfo.email}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4 text-cyan-400" />
-                  <span>{contactInfo.address}</span>
-                </div>
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+                Transparent Pricing
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
+                Choose the perfect AI-powered micro SaaS solution for your business. No hidden fees, simple pricing that scales with your needs.
+              </p>
+            </motion.div>
+
+            {/* Billing Toggle */}
+            <motion.div 
+              className="flex items-center justify-center gap-4 mb-8"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <span className={`text-lg ${billingCycle === 'monthly' ? 'text-white' : 'text-gray-400'}`}>
+                Monthly
+              </span>
+              <button
+                onClick={() => setBillingCycle(billingCycle === 'monthly' ? 'yearly' : 'monthly')}
+                className={`relative w-16 h-8 rounded-full transition-colors duration-300 ${
+                  billingCycle === 'yearly' ? 'bg-cyan-500' : 'bg-gray-600'
+                }`}
+              >
+                <div
+                  className={`absolute top-1 w-6 h-6 bg-white rounded-full transition-transform duration-300 ${
+                    billingCycle === 'yearly' ? 'translate-x-8' : 'translate-x-1'
+                  }`}
+                />
+              </button>
+              <span className={`text-lg ${billingCycle === 'yearly' ? 'text-white' : 'text-gray-400'}`}>
+                Yearly
+                <span className="ml-2 text-sm text-cyan-400">Save 20%</span>
+              </span>
+            </motion.div>
+
+            {/* Contact Information */}
+            <motion.div 
+              className="text-center text-gray-400"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <p className="mb-2">
+                <Phone className="inline w-4 h-4 mr-2" />
+                {contactInfo.mobile} | 
+                <Mail className="inline w-4 h-4 mx-2" />
+                {contactInfo.email}
+              </p>
+              <p className="text-sm">
+                <MapPin className="inline w-4 h-4 mr-2" />
+                {contactInfo.address}
+              </p>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Category Filter */}
+        <section className="py-8 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <UltraFuturisticCard variant="quantum-advanced" className="p-6">
+              <div className="text-center mb-6">
+                <h2 className="text-2xl font-bold text-white mb-2">Filter by Category</h2>
+                <p className="text-gray-300">Choose a specific service category or view all services</p>
               </div>
-            </div>
+              <div className="flex flex-wrap justify-center gap-3">
+                <button
+                  onClick={() => setSelectedCategory('All')}
+                  className={`px-4 py-2 rounded-lg transition-all duration-300 ${
+                    selectedCategory === 'All'
+                      ? 'bg-cyan-500 text-white'
+                      : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50'
+                  }`}
+                >
+                  All Categories
+                </button>
+                {serviceCategories.filter(cat => cat !== 'All').map((category) => (
+                  <button
+                    key={category}
+                    onClick={() => setSelectedCategory(category)}
+                    className={`px-4 py-2 rounded-lg transition-all duration-300 ${
+                      selectedCategory === category
+                        ? 'bg-cyan-500 text-white'
+                        : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50'
+                    }`}
+                  >
+                    {category}
+                  </button>
+                ))}
+              </div>
+            </UltraFuturisticCard>
           </div>
         </section>
 
-        {/* Billing Toggle */}
-        <section className="py-8 relative">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="inline-flex items-center bg-gray-900/50 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-2">
-              <button
-                onClick={() => setBillingCycle('monthly')}
-                className={`px-6 py-3 rounded-xl text-sm font-medium transition-all duration-300 ${
-                  billingCycle === 'monthly'
-                    ? 'bg-blue-500 text-white shadow-lg'
-                    : 'text-gray-400 hover:text-white'
-                }`}
+        {/* Pricing Tiers */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {/* Starter Tier */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
               >
-                Monthly Billing
-              </button>
-              <button
-                onClick={() => setBillingCycle('yearly')}
-                className={`px-6 py-3 rounded-xl text-sm font-medium transition-all duration-300 ${
-                  billingCycle === 'yearly'
-                    ? 'bg-blue-500 text-white shadow-lg'
-                    : 'text-gray-400 hover:text-white'
-                }`}
-              >
-                Yearly Billing
-                <span className="ml-2 px-2 py-1 bg-green-500 text-white text-xs rounded-full">
-                  Save 17%
-                </span>
-              </button>
-            </div>
-          </div>
-        </section>
-
-        {/* Pricing Plans */}
-        <section className="py-20 relative">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {pricingPlans.map((plan) => (
-                <Card key={plan.id} className={`group hover:scale-105 transition-transform duration-300 relative ${plan.popular ? 'ring-2 ring-purple-500' : ''}`}>
-                  {plan.popular && (
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <span className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-full text-sm font-semibold">
-                        Most Popular
-                      </span>
+                <UltraFuturisticCard variant="quantum" className="h-full relative">
+                  <div className="text-center p-8">
+                    <div className="mb-6">
+                      <div className="text-4xl mb-4">🚀</div>
+                      <h3 className="text-2xl font-bold text-white mb-2">Starter</h3>
+                      <p className="text-gray-300">Perfect for small businesses and startups</p>
                     </div>
-                  )}
-                  
-                  <div className="text-center">
-                    <div className="text-4xl mb-4">{plan.icon}</div>
-                    <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
-                    <p className="text-gray-300 mb-6">{plan.description}</p>
                     
                     <div className="mb-6">
-                      <div className="flex items-baseline justify-center">
-                        <span className="text-4xl font-bold text-white">${plan.price}</span>
-                        <span className="text-gray-400 ml-2">{plan.period}</span>
+                      <div className="text-4xl font-bold text-cyan-400 mb-2">
+                        {billingCycle === 'yearly' ? getYearlyPrice('49') : '$49'}
+                        <span className="text-lg text-gray-400">{getYearlyPeriod()}</span>
                       </div>
-                      {plan.savings && (
-                        <div className="text-green-400 text-sm font-medium mt-2">{plan.savings}</div>
-                      )}
+                      <p className="text-gray-400 text-sm">
+                        {billingCycle === 'yearly' ? 'Billed annually (Save $117)' : 'Billed monthly'}
+                      </p>
                     </div>
-                    
-                    <ul className="space-y-3 mb-8 text-left">
-                      {plan.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center text-sm text-gray-300">
-                          <Check className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                    
+
+                    <div className="mb-6">
+                      <p className="text-gray-300 mb-4">Services included:</p>
+                      <div className="space-y-2 text-left">
+                        {priceTiers.starter.slice(0, 3).map((service, index) => (
+                          <div key={index} className="flex items-center text-sm text-gray-300">
+                            <Check className="h-4 w-4 text-cyan-400 mr-2 flex-shrink-0" />
+                            <span className="truncate">{service.name}</span>
+                          </div>
+                        ))}
+                        {priceTiers.starter.length > 3 && (
+                          <div className="text-xs text-gray-500">
+                            +{priceTiers.starter.length - 3} more services
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
                     <Button 
-                      href={plan.ctaLink} 
-                      variant="primary" 
-                      className="w-full"
+                      className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white"
+                      onClick={() => window.open('/contact', '_blank')}
                     >
-                      {plan.cta}
+                      Get Started
+                      <ArrowRight className="ml-2 w-4 h-4" />
                     </Button>
                   </div>
-                </Card>
-              ))}
+                </UltraFuturisticCard>
+              </motion.div>
+
+              {/* Professional Tier */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                <UltraFuturisticCard variant="holographic-advanced" className="h-full relative">
+                  {/* Popular Badge */}
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                    <div className="bg-gradient-to-r from-fuchsia-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-semibold flex items-center">
+                      <Star className="w-4 h-4 mr-2 fill-current" />
+                      Most Popular
+                    </div>
+                  </div>
+
+                  <div className="text-center p-8">
+                    <div className="mb-6">
+                      <div className="text-4xl mb-4">💎</div>
+                      <h3 className="text-2xl font-bold text-white mb-2">Professional</h3>
+                      <p className="text-gray-300">Ideal for growing businesses and teams</p>
+                    </div>
+                    
+                    <div className="mb-6">
+                      <div className="text-4xl font-bold text-fuchsia-400 mb-2">
+                        {billingCycle === 'yearly' ? getYearlyPrice('99') : '$99'}
+                        <span className="text-lg text-gray-400">{getYearlyPeriod()}</span>
+                      </div>
+                      <p className="text-gray-400 text-sm">
+                        {billingCycle === 'yearly' ? 'Billed annually (Save $237)' : 'Billed monthly'}
+                      </p>
+                    </div>
+
+                    <div className="mb-6">
+                      <p className="text-gray-300 mb-4">Services included:</p>
+                      <div className="space-y-2 text-left">
+                        {priceTiers.professional.slice(0, 4).map((service, index) => (
+                          <div key={index} className="flex items-center text-sm text-gray-300">
+                            <Check className="h-4 w-4 text-fuchsia-400 mr-2 flex-shrink-0" />
+                            <span className="truncate">{service.name}</span>
+                          </div>
+                        ))}
+                        {priceTiers.professional.length > 4 && (
+                          <div className="text-xs text-gray-500">
+                            +{priceTiers.professional.length - 4} more services
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    <Button 
+                      className="w-full bg-gradient-to-r from-fuchsia-500 to-purple-600 hover:from-fuchsia-600 hover:to-purple-700 text-white"
+                      onClick={() => window.open('/contact', '_blank')}
+                    >
+                      Get Started
+                      <ArrowRight className="ml-2 w-4 h-4" />
+                    </Button>
+                  </div>
+                </UltraFuturisticCard>
+              </motion.div>
+
+              {/* Enterprise Tier */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                viewport={{ once: true }}
+              >
+                <UltraFuturisticCard variant="quantum-cyberpunk" className="h-full relative">
+                  <div className="text-center p-8">
+                    <div className="mb-6">
+                      <div className="text-4xl mb-4">👑</div>
+                      <h3 className="text-2xl font-bold text-white mb-2">Enterprise</h3>
+                      <p className="text-gray-300">For large organizations and complex needs</p>
+                    </div>
+                    
+                    <div className="mb-6">
+                      <div className="text-4xl font-bold text-orange-400 mb-2">
+                        Custom
+                      </div>
+                      <p className="text-gray-400 text-sm">Contact us for enterprise pricing</p>
+                    </div>
+
+                    <div className="mb-6">
+                      <p className="text-gray-300 mb-4">Services included:</p>
+                      <div className="space-y-2 text-left">
+                        {priceTiers.enterprise.slice(0, 4).map((service, index) => (
+                          <div key={index} className="flex items-center text-sm text-gray-300">
+                            <Check className="h-4 w-4 text-orange-400 mr-2 flex-shrink-0" />
+                            <span className="truncate">{service.name}</span>
+                          </div>
+                        ))}
+                        {priceTiers.enterprise.length > 4 && (
+                          <div className="text-xs text-gray-500">
+                            +{priceTiers.enterprise.length - 4} more services
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    <Button 
+                      className="w-full bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white"
+                      onClick={() => window.open('/contact', '_blank')}
+                    >
+                      Contact Sales
+                      <MessageSquare className="ml-2 w-4 h-4" />
+                    </Button>
+                  </div>
+                </UltraFuturisticCard>
+              </motion.div>
             </div>
           </div>
         </section>
 
-        {/* Add-on Services */}
-        <section className="py-20 relative">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-white mb-6">
-                Premium Add-on Services
+        {/* Individual Service Pricing */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <motion.div 
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">
+                Individual Service Pricing
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Enhance your experience with our premium add-on services designed for advanced use cases and custom requirements.
+              <p className="text-lg text-gray-300">
+                Choose specific services that fit your business needs
               </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {addOnServices.map((service, index) => (
-                <Card key={index} className="group hover:scale-105 transition-transform duration-300 text-center">
-                  <div className={`w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                    <span className="text-2xl">{service.icon}</span>
-                  </div>
-                  <h3 className="text-lg font-bold text-white mb-2">{service.name}</h3>
-                  <p className="text-gray-300 text-sm mb-4">{service.description}</p>
-                  <div className="text-xl font-bold text-blue-400 mb-4">
-                    {service.price}{service.period}
-                  </div>
-                  <Button 
-                    href="/contact" 
-                    variant="secondary" 
-                    size="sm"
-                    className="w-full"
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {servicesToShow.map((service, index) => (
+                <motion.div
+                  key={service.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <UltraFuturisticCard
+                    variant={service.variant as any}
+                    className="h-full cursor-pointer"
+                    onClick={() => window.open(service.link, '_blank')}
                   >
-                    Learn More
-                  </Button>
-                </Card>
+                    <div className="text-center p-6">
+                      <div className="text-3xl mb-3">{service.icon}</div>
+                      {service.popular && (
+                        <div className="inline-flex items-center px-2 py-1 rounded-full bg-yellow-500/20 text-yellow-400 text-xs mb-3">
+                          <Star className="w-3 h-3 mr-1 fill-current" />
+                          Popular
+                        </div>
+                      )}
+                      <h3 className="text-lg font-bold text-white mb-2">
+                        {service.name}
+                      </h3>
+                      <p className="text-gray-300 text-sm mb-3">
+                        {service.tagline}
+                      </p>
+                      <div className="text-sm text-gray-400 mb-2">{service.category}</div>
+                      <div className="text-xl font-bold text-cyan-400 mb-3">
+                        {billingCycle === 'yearly' ? getYearlyPrice(service.price) : service.price}
+                        <span className="text-sm text-gray-400">{getYearlyPeriod()}</span>
+                      </div>
+                      <div className="text-xs text-gray-500 mb-3">
+                        {service.customers.toLocaleString()} customers • {service.rating}★ ({service.reviews} reviews)
+                      </div>
+                      <div className="inline-flex items-center text-blue-400 text-sm hover:text-blue-300 transition-colors">
+                        Learn More <ArrowRight className="w-4 h-4 ml-1" />
+                      </div>
+                    </div>
+                  </UltraFuturisticCard>
+                </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Features */}
-        <section className="py-20 relative">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-white mb-6">
-                Why Choose Zion Tech Group?
+        {/* Features & Benefits */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <motion.div 
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+                What's Included
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Our platform combines cutting-edge technology with enterprise-grade reliability and support.
+              <p className="text-lg text-gray-300">
+                Every plan includes these essential features and benefits
               </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {features.map((feature, index) => (
-                <Card key={index} className="group hover:scale-105 transition-transform duration-300 text-center">
-                  <div className={`w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                    {feature.icon}
-                  </div>
-                  <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
-                  <p className="text-gray-300 text-sm">{feature.description}</p>
-                </Card>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: <Shield className="w-8 h-8 text-cyan-400" />,
+                  title: 'Enterprise Security',
+                  description: 'SOC 2 compliance, advanced encryption, and automated security monitoring'
+                },
+                {
+                  icon: <Zap className="w-8 h-8 text-fuchsia-400" />,
+                  title: '99.9% Uptime',
+                  description: 'Guaranteed reliability with automated scaling and intelligent resource management'
+                },
+                {
+                  icon: <Users className="w-8 h-8 text-green-400" />,
+                  title: '24/7 Support',
+                  description: 'Round-the-clock technical support and customer success management'
+                },
+                {
+                  icon: <Rocket className="w-8 h-8 text-orange-400" />,
+                  title: 'Quick Setup',
+                  description: 'Get started in minutes with automated onboarding and intuitive interfaces'
+                },
+                {
+                  icon: <ChartBar className="w-8 h-8 text-purple-400" />,
+                  title: 'Analytics & Insights',
+                  description: 'Comprehensive reporting and performance analytics for all services'
+                },
+                {
+                  icon: <Globe className="w-8 h-8 text-blue-400" />,
+                  title: 'Global Infrastructure',
+                  description: 'Worldwide deployment with local data centers for optimal performance'
+                }
+              ].map((feature, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <UltraFuturisticCard variant="quantum-advanced" className="h-full text-center p-6">
+                    <div className="mb-4">{feature.icon}</div>
+                    <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
+                    <p className="text-gray-300 leading-relaxed">{feature.description}</p>
+                  </UltraFuturisticCard>
+                </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* FAQ Section */}
-        <section className="py-20 relative">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-white mb-6">
-                Frequently Asked Questions
+        {/* CTA Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+                Ready to Get Started?
               </h2>
-              <p className="text-xl text-gray-300">
-                Get answers to common questions about our pricing and services.
+              <p className="text-xl text-gray-300 mb-8">
+                Choose the perfect plan for your business and start your free trial today.
               </p>
-            </div>
-            
-            <div className="space-y-6">
-              <Card className="text-left">
-                <h3 className="text-lg font-semibold text-white mb-2">What's included in the free trial?</h3>
-                <p className="text-gray-300">All plans include a free trial period where you can access the full features of your chosen plan. No credit card required to start.</p>
-              </Card>
-              
-              <Card className="text-left">
-                <h3 className="text-lg font-semibold text-white mb-2">Can I change plans anytime?</h3>
-                <p className="text-gray-300">Yes, you can upgrade, downgrade, or cancel your plan at any time. Changes take effect immediately.</p>
-              </Card>
-              
-              <Card className="text-left">
-                <h3 className="text-lg font-semibold text-white mb-2">Do you offer custom pricing for enterprise?</h3>
-                <p className="text-gray-300">Yes, we offer custom enterprise solutions with dedicated support, custom integrations, and on-premise options.</p>
-              </Card>
-              
-              <Card className="text-left">
-                <h3 className="text-lg font-semibold text-white mb-2">What payment methods do you accept?</h3>
-                <p className="text-gray-300">We accept all major credit cards, PayPal, and wire transfers for enterprise customers.</p>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* Contact CTA */}
-        <section className="py-20 relative">
-          <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-            <h2 className="text-4xl font-bold text-white mb-6">
-              Ready to Get Started?
-            </h2>
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              Join thousands of businesses already using our revolutionary micro SaaS platform. 
-              Start your free trial today and experience the future of technology.
-            </p>
-            
-            <div className="bg-gradient-to-r from-blue-900/50 via-purple-900/50 to-cyan-900/50 border border-blue-500/30 rounded-2xl p-8 mb-8">
-              <h3 className="text-2xl font-semibold text-white mb-4">Get in Touch</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                <div>
-                  <Phone className="w-8 h-8 text-blue-400 mx-auto mb-2" />
-                  <div className="text-white font-semibold">Phone</div>
-                  <div className="text-gray-300">{contactInfo.mobile}</div>
-                </div>
-                <div>
-                  <Mail className="w-8 h-8 text-purple-400 mx-auto mb-2" />
-                  <div className="text-white font-semibold">Email</div>
-                  <div className="text-gray-300">{contactInfo.email}</div>
-                </div>
-                <div>
-                  <MapPin className="w-8 h-8 text-cyan-400 mx-auto mb-2" />
-                  <div className="text-white font-semibold">Address</div>
-                  <div className="text-gray-300">{contactInfo.address}</div>
-                </div>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Button 
+                  className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-4 text-lg"
+                  onClick={() => window.open('/services', '_blank')}
+                >
+                  View All Services
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+                <Button 
+                  className="bg-gradient-to-r from-fuchsia-500 to-purple-600 hover:from-fuchsia-600 hover:to-purple-700 text-white px-8 py-4 text-lg"
+                  onClick={() => window.open('/contact', '_blank')}
+                >
+                  Contact Sales
+                  <MessageSquare className="ml-2 w-5 h-5" />
+                </Button>
               </div>
-            </div>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button 
-                href="/contact" 
-                variant="primary" 
-                size="lg"
-                className="group"
-              >
-                Start Free Trial
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button 
-                href="/services" 
-                variant="secondary" 
-                size="lg"
-              >
-                Explore Services
-              </Button>
-            </div>
-            
-            <div className="mt-8 text-gray-400">
-              <p>Questions? Contact us at {contactInfo.email} or call {contactInfo.mobile}</p>
-            </div>
+              <div className="mt-8 text-gray-400">
+                <p className="mb-2">
+                  <Phone className="inline w-4 h-4 mr-2" />
+                  {contactInfo.mobile} | 
+                  <Mail className="inline w-4 h-4 mx-2" />
+                  {contactInfo.email}
+                </p>
+                <p className="text-sm">
+                  <MapPin className="inline w-4 h-4 mr-2" />
+                  {contactInfo.address}
+                </p>
+              </div>
+            </motion.div>
           </div>
         </section>
       </div>
-    </EnhancedFuturisticBackground>
+    </UltraFuturisticBackground>
   );
 }

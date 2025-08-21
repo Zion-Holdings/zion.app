@@ -3,9 +3,9 @@ import Head from 'next/head';
 import Button from '../components/ui/Button';
 import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, ExternalLink, Star, Users, Globe, Lock, Rocket, Cpu, Database, TrendingUp, Clock, Target, Building, Award, DollarSign, ChartBar, Code, BookOpen, Activity, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, Settings, BookOpen as BookOpenIcon, Activity as ActivityIcon, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Sparkles, Atom, Brain, Eye, Shield as ShieldIcon, Zap as ZapIcon, Globe as GlobeIcon, Cpu as CpuIcon, Cloud as CloudIcon, Bot as BotIcon, Lock as LockIcon, BarChart3 as BarChart3Icon, TrendingUp as TrendingUpIcon, Users as UsersIcon, Award as AwardIcon, Star as StarIcon, Check as CheckIcon, ArrowRight as ArrowRightIcon, ExternalLink as ExternalLinkIcon, Phone as PhoneIcon, Mail as MailIcon, MapPin as MapPinIcon, Trophy, FlaskConical, Dna, Car, Leaf, Factory, Truck, Microscope, GraduationCap, ShieldCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { enhancedMicroSaasServices } from '../data/enhanced-micro-saas-services';
-import AdvancedFuturisticBackground from '../components/ui/AdvancedFuturisticBackground';
-import AdvancedFuturisticCard from '../components/ui/AdvancedFuturisticCard';
+import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
+import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
+import UltraFuturisticCard from '../components/ui/UltraFuturisticCard';
 
 export default function HomePage() {
   const heroStats = [
@@ -28,42 +28,42 @@ export default function HomePage() {
     {
       icon: <Cloud className="w-8 h-8 text-white" />,
       title: '12+ Revolutionary Micro SaaS Services',
-      description: 'Cutting-edge portfolio of fully functional micro SaaS tools with quantum computing, AI, and revolutionary technology. Starting from $299/month with 30-day free trials. All services are production-ready and deployed with enterprise-grade infrastructure.',
+      description: 'Cutting-edge portfolio of fully functional micro SaaS tools with AI, machine learning, and revolutionary technology. Starting from $49/month with 14-30 day free trials. All services are production-ready and deployed with enterprise-grade infrastructure.',
       color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
       gradient: 'from-cyan-400 to-blue-500',
     },
     {
       icon: <Bot className="w-8 h-8 text-white" />,
-      title: 'AI-Powered Quantum Solutions',
-      description: 'Advanced AI content generation, quantum AI training, biomedical research, legal contract analysis, and quantum computing platforms. Market-leading technology with 2500%+ average ROI. First-to-market quantum AI solutions.',
+      title: 'AI-Powered Intelligent Solutions',
+      description: 'Advanced AI content generation, customer service automation, sales automation, data analytics, legal contract analysis, and HR recruitment. Market-leading technology with 300-600% average ROI. First-to-market AI solutions.',
       color: 'bg-gradient-to-br from-fuchsia-500 to-purple-600',
       gradient: 'from-fuchsia-400 to-purple-500',
     },
     {
       icon: <RefreshCw className="w-8 h-8 text-white" />,
       title: 'Enterprise-Grade Reliability',
-      description: '99.9% uptime guarantee, automated scaling, and intelligent resource management. Trusted by Fortune 500 companies worldwide. SOC 2 compliant with enterprise-grade security and quantum-resistant encryption.',
+      description: '99.9% uptime guarantee, automated scaling, and intelligent resource management. Trusted by businesses worldwide. SOC 2 compliant with enterprise-grade security and advanced encryption.',
       color: 'bg-gradient-to-br from-green-500 to-emerald-600',
       gradient: 'from-green-400 to-emerald-500',
     },
     {
       icon: <Zap className="w-8 h-8 text-white" />,
       title: 'Lightning Fast Setup',
-      description: 'Get started in minutes with our intuitive interfaces and automated onboarding. No technical expertise required. Average setup time: 2-16 hours depending on service complexity. Instant deployment available.',
+      description: 'Get started in minutes with our intuitive interfaces and automated onboarding. No technical expertise required. Average setup time: 2-12 hours depending on service complexity. Instant deployment available.',
       color: 'bg-gradient-to-br from-orange-500 to-red-600',
       gradient: 'from-orange-400 to-red-500',
     },
     {
       icon: <Shield className="w-8 h-8 text-white" />,
       title: 'Bank-Level Security',
-      description: 'SOC 2 compliance, quantum-resistant encryption, and automated security monitoring. Future-proof protection against quantum threats. Military-grade security protocols with zero-trust architecture.',
+      description: 'SOC 2 compliance, advanced encryption, and automated security monitoring. Future-proof protection against threats. Military-grade security protocols with zero-trust architecture.',
       color: 'bg-gradient-to-br from-indigo-500 to-purple-600',
       gradient: 'from-indigo-400 to-purple-500',
     },
     {
       icon: <BarChart3 className="w-8 h-8 text-white" />,
       title: 'Transparent Pricing',
-      description: 'No hidden fees, simple monthly pricing that scales with your business needs. Competitive rates starting at $299/month. Volume discounts available for enterprise clients. ROI guarantee on all services.',
+      description: 'No hidden fees, simple monthly pricing that scales with your business needs. Competitive rates starting at $49/month. Volume discounts available for enterprise clients. ROI guarantee on all services.',
       color: 'bg-gradient-to-br from-teal-500 to-cyan-600',
       gradient: 'from-teal-400 to-cyan-500',
     },
@@ -87,24 +87,24 @@ export default function HomePage() {
   const features = [
     {
       icon: '🤖',
-      title: 'AI-Powered Quantum Computing',
-      description: 'Revolutionary AI systems that leverage quantum computing for unprecedented performance and capabilities.',
+      title: 'AI-Powered Content Creation',
+      description: 'Revolutionary AI systems that generate high-quality, SEO-optimized content at scale with brand voice customization.',
       color: 'bg-gradient-to-br from-fuchsia-500 to-purple-600',
       textColor: 'text-fuchsia-400',
       gradient: 'from-fuchsia-400 to-purple-500',
     },
     {
       icon: '☁️',
-      title: 'Quantum Cloud Infrastructure',
-      description: 'Scalable, secure, and high-performance quantum cloud solutions designed for modern applications.',
+      title: 'Cloud-Native Infrastructure',
+      description: 'Scalable, secure, and high-performance cloud solutions designed for modern applications and AI workloads.',
       color: 'bg-gradient-to-br from-blue-500 to-indigo-600',
       textColor: 'text-blue-400',
       gradient: 'from-blue-400 to-indigo-500',
     },
     {
       icon: '🔒',
-      title: 'Quantum-Safe Security',
-      description: 'Future-proof security with quantum-resistant encryption and advanced threat protection.',
+      title: 'Advanced Security & Compliance',
+      description: 'Future-proof security with advanced encryption and comprehensive threat protection for enterprise environments.',
       color: 'bg-gradient-to-br from-green-500 to-emerald-600',
       textColor: 'text-green-400',
       gradient: 'from-green-400 to-emerald-500',
@@ -112,39 +112,39 @@ export default function HomePage() {
     {
       icon: '📊',
       title: 'AI Analytics & Insights',
-      description: 'Intelligent data analysis and business intelligence powered by advanced AI algorithms.',
+      description: 'Intelligent data analysis and business intelligence powered by advanced AI algorithms and machine learning.',
       color: 'bg-gradient-to-br from-orange-500 to-red-600',
       textColor: 'text-orange-400',
       gradient: 'from-orange-400 to-red-500',
     },
     {
       icon: '🚀',
-      title: 'Space Technology Solutions',
-      description: 'Cutting-edge space exploration and satellite optimization platforms.',
+      title: 'Automation & Efficiency',
+      description: 'Cutting-edge automation platforms for sales, marketing, customer service, and business operations.',
       color: 'bg-gradient-to-br from-purple-500 to-pink-600',
       textColor: 'text-purple-400',
       gradient: 'from-purple-400 to-pink-500',
     },
     {
       icon: '🧬',
-      title: 'Biomedical AI Platform',
-      description: 'Revolutionary drug discovery and medical research using quantum AI technology.',
+      title: 'AI-Powered HR & Legal',
+      description: 'Revolutionary HR recruitment and legal contract analysis using advanced AI and natural language processing.',
       color: 'bg-gradient-to-br from-teal-500 to-cyan-600',
       textColor: 'text-teal-400',
       gradient: 'from-teal-400 to-cyan-500',
     },
   ];
 
-  const featuredServices = enhancedMicroSaasServices.slice(0, 6);
+  const featuredServices = enhancedRealMicroSaasServices.slice(0, 6);
 
   return (
-    <AdvancedFuturisticBackground variant="quantum" className="min-h-screen">
+    <UltraFuturisticBackground variant="quantum-holographic-advanced" className="min-h-screen">
       <Head>
-        <title>Zion Tech Group - Revolutionary Micro SaaS Services | Quantum Computing & AI Solutions</title>
-        <meta name="description" content="Experience the future of technology with Zion Tech Group's revolutionary micro SaaS services featuring quantum computing, AI, and cutting-edge innovations. Transform your business with our advanced platforms." />
-        <meta name="keywords" content="micro SaaS, quantum computing, AI services, technology solutions, Zion Tech Group, revolutionary technology" />
-        <meta property="og:title" content="Zion Tech Group - Revolutionary Micro SaaS Services" />
-        <meta property="og:description" content="Experience the future of technology with quantum computing and AI solutions" />
+        <title>Zion Tech Group - Revolutionary AI-Powered Micro SaaS Services | Next-Generation Technology Solutions</title>
+        <meta name="description" content="Experience the future of technology with Zion Tech Group's revolutionary AI-powered micro SaaS services. Transform your business with our advanced AI platforms for content creation, customer service, sales automation, and more." />
+        <meta name="keywords" content="AI micro SaaS, AI content generation, AI customer service, AI sales automation, AI data analytics, AI legal tech, AI HR tech, Zion Tech Group, revolutionary technology" />
+        <meta property="og:title" content="Zion Tech Group - Revolutionary AI-Powered Micro SaaS Services" />
+        <meta property="og:description" content="Experience the future of technology with AI-powered solutions" />
         <meta property="og:url" content="https://ziontechgroup.com" />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://ziontechgroup.com" />
@@ -160,10 +160,10 @@ export default function HomePage() {
               transition={{ duration: 0.8 }}
             >
               <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
-                Revolutionary Micro SaaS Services
+                Revolutionary AI-Powered Micro SaaS Services
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
-                Experience the future of technology with our cutting-edge micro SaaS platforms featuring quantum computing, AI, and revolutionary innovations that transform industries worldwide.
+                Experience the future of technology with our cutting-edge AI-powered micro SaaS platforms featuring intelligent automation, machine learning, and revolutionary innovations that transform industries worldwide.
               </p>
             </motion.div>
 
@@ -198,52 +198,53 @@ export default function HomePage() {
                 onClick={() => window.open('/services', '_blank')}
               >
                 Explore Services
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
               <Button 
-                variant="outline"
-                className="border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-white px-8 py-4 text-lg"
-                onClick={() => window.open(`mailto:${contactInfo.email}`, '_blank')}
+                className="bg-gradient-to-r from-fuchsia-500 to-purple-600 hover:from-fuchsia-600 hover:to-purple-700 text-white px-8 py-4 text-lg"
+                onClick={() => window.open('/pricing', '_blank')}
               >
-                Get Started
-                <Rocket className="ml-2 h-5 w-5" />
+                View Pricing
+                <DollarSign className="ml-2 w-5 h-5" />
               </Button>
             </motion.div>
 
-            {/* Contact Info */}
+            {/* Contact Information */}
             <motion.div 
-              className="text-center text-gray-400 text-sm"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
+              className="text-center text-gray-400"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <p>Ready to transform your business? Contact us today:</p>
-              <p className="mt-2">
-                <span className="text-cyan-400">Mobile:</span> {contactInfo.mobile} | 
-                <span className="text-fuchsia-400 ml-2">Email:</span> {contactInfo.email}
+              <p className="mb-2">
+                <Phone className="inline w-4 h-4 mr-2" />
+                {contactInfo.mobile} | 
+                <Mail className="inline w-4 h-4 mx-2" />
+                {contactInfo.email}
+              </p>
+              <p className="text-sm">
+                <MapPin className="inline w-4 h-4 mr-2" />
+                {contactInfo.address}
               </p>
             </motion.div>
           </div>
         </section>
 
-        {/* Platform Features */}
+        {/* Platform Features Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div 
               className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Why Choose Our{' '}
-                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                  Revolutionary Platform?
-                </span>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                Why Choose Zion Tech Group?
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                We stand apart from the competition with our commitment to delivering only the highest quality, 
-                production-ready services with proven ROI and enterprise-grade reliability.
+                Our platform combines cutting-edge AI technology with enterprise-grade reliability to deliver unprecedented value to your business.
               </p>
             </motion.div>
 
@@ -252,42 +253,47 @@ export default function HomePage() {
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
+                  viewport={{ once: true }}
                 >
-                  <AdvancedFuturisticCard
-                    variant={index % 3 === 0 ? 'quantum' : index % 3 === 1 ? 'holographic' : 'neural'}
-                    className="h-full text-center p-6"
+                  <UltraFuturisticCard
+                    variant="quantum-holographic-advanced"
+                    className="h-full"
                   >
-                    <div className={`w-16 h-16 ${feature.color} rounded-2xl flex items-center justify-center mx-auto mb-6`}>
-                      {feature.icon}
+                    <div className="text-center">
+                      <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full ${feature.color} mb-6`}>
+                        {feature.icon}
+                      </div>
+                      <h3 className="text-xl font-bold text-white mb-4">
+                        {feature.title}
+                      </h3>
+                      <p className="text-gray-300 leading-relaxed">
+                        {feature.description}
+                      </p>
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-4">{feature.title}</h3>
-                    <p className="text-gray-300 leading-relaxed">{feature.description}</p>
-                  </AdvancedFuturisticCard>
+                  </UltraFuturisticCard>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Featured Services */}
+        {/* Featured Services Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div 
               className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Featured{' '}
-                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                  Revolutionary Services
-                </span>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-fuchsia-400 to-purple-500 bg-clip-text text-transparent">
+                Featured AI-Powered Services
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Discover our most innovative and cutting-edge services that are transforming industries worldwide.
+                Discover our revolutionary micro SaaS services that leverage cutting-edge AI technology to transform your business operations.
               </p>
             </motion.div>
 
@@ -296,33 +302,42 @@ export default function HomePage() {
                 <motion.div
                   key={service.id}
                   initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
+                  viewport={{ once: true }}
                 >
-                  <AdvancedFuturisticCard
-                    variant={service.variant as any || 'quantum'}
-                    className="h-full cursor-pointer group"
+                  <UltraFuturisticCard
+                    variant={service.variant as any}
+                    className="h-full cursor-pointer"
                     onClick={() => window.open(service.link, '_blank')}
                   >
                     <div className="text-center">
                       <div className="text-4xl mb-4">{service.icon}</div>
-                      {service.popular && (
-                        <div className="inline-flex items-center px-2 py-1 rounded-full bg-yellow-500/20 text-yellow-400 text-xs mb-3">
-                          <Star className="w-3 h-3 mr-1 fill-current" />
-                          Popular
-                        </div>
-                      )}
-                      <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
+                      <h3 className="text-xl font-bold text-white mb-2">
                         {service.name}
                       </h3>
-                      <p className="text-gray-300 text-sm mb-4">{service.tagline}</p>
-                      <div className="text-sm text-gray-400 mb-2">{service.category}</div>
-                      <div className="text-lg font-bold text-cyan-400 mb-4">{service.price}{service.period}</div>
-                      <div className="inline-flex items-center text-blue-400 text-sm group-hover:text-blue-300 transition-colors">
-                        Learn More <ArrowRight className="w-4 h-4 ml-1" />
+                      <p className="text-gray-300 text-sm mb-4">
+                        {service.tagline}
+                      </p>
+                      <div className="text-2xl font-bold text-cyan-400 mb-4">
+                        {service.price}{service.period}
+                      </div>
+                      <p className="text-gray-400 text-sm mb-4 line-clamp-3">
+                        {service.description}
+                      </p>
+                      <div className="flex items-center justify-center space-x-2 mb-4">
+                        <div className="flex text-yellow-400">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} className="w-4 h-4 fill-current" />
+                          ))}
+                        </div>
+                        <span className="text-gray-400 text-sm">({service.rating})</span>
+                      </div>
+                      <div className="text-xs text-gray-500">
+                        {service.customers.toLocaleString()} customers • {service.reviews} reviews
                       </div>
                     </div>
-                  </AdvancedFuturisticCard>
+                  </UltraFuturisticCard>
                 </motion.div>
               ))}
             </div>
@@ -330,37 +345,36 @@ export default function HomePage() {
             <motion.div 
               className="text-center mt-12"
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
             >
               <Button 
-                className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-4 text-lg"
+                className="bg-gradient-to-r from-fuchsia-500 to-purple-600 hover:from-fuchsia-600 hover:to-purple-700 text-white px-8 py-4 text-lg"
                 onClick={() => window.open('/services', '_blank')}
               >
                 View All Services
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </motion.div>
           </div>
         </section>
 
-        {/* Technology Stack */}
+        {/* Technology Stack Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div 
               className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Built with{' '}
-                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                  Cutting-Edge Technology
-                </span>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">
+                Built with Cutting-Edge Technology
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Our platform leverages the latest technologies to deliver exceptional performance and reliability.
+                Our services are built on the most advanced and reliable technology stack available, ensuring scalability, security, and performance.
               </p>
             </motion.div>
 
@@ -369,40 +383,39 @@ export default function HomePage() {
                 <motion.div
                   key={tech.name}
                   initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
                 >
-                  <AdvancedFuturisticCard
-                    variant="cyberpunk"
+                  <UltraFuturisticCard
+                    variant="quantum-advanced"
                     className="text-center p-4"
                   >
-                    <div className="text-2xl mb-2">{tech.icon}</div>
-                    <div className="text-sm font-semibold text-white mb-1">{tech.name}</div>
+                    <div className="text-3xl mb-2">{tech.icon}</div>
+                    <div className="text-sm font-semibold text-white">{tech.name}</div>
                     <div className="text-xs text-gray-400">{tech.category}</div>
-                  </AdvancedFuturisticCard>
+                  </UltraFuturisticCard>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Features Grid */}
+        {/* Features Grid Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div 
               className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Revolutionary{' '}
-                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                  Features & Capabilities
-                </span>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
+                Revolutionary Features & Capabilities
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Discover the advanced features that make our platform the most innovative solution in the market.
+                Explore the advanced features that make our AI-powered services the most innovative and effective solutions in the market.
               </p>
             </motion.div>
 
@@ -411,96 +424,77 @@ export default function HomePage() {
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
+                  viewport={{ once: true }}
                 >
-                  <AdvancedFuturisticCard
-                    variant={index % 3 === 0 ? 'quantum' : index % 3 === 1 ? 'holographic' : 'neural'}
-                    className="h-full text-center p-6"
+                  <UltraFuturisticCard
+                    variant="holographic-advanced"
+                    className="h-full"
                   >
-                    <div className={`text-4xl mb-4 ${feature.gradient} bg-clip-text text-transparent`}>
-                      {feature.icon}
+                    <div className="text-center">
+                      <div className="text-4xl mb-4">{feature.icon}</div>
+                      <h3 className={`text-xl font-bold ${feature.textColor} mb-4`}>
+                        {feature.title}
+                      </h3>
+                      <p className="text-gray-300 leading-relaxed">
+                        {feature.description}
+                      </p>
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-4">{feature.title}</h3>
-                    <p className="text-gray-300 leading-relaxed">{feature.description}</p>
-                  </AdvancedFuturisticCard>
+                  </UltraFuturisticCard>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Call to Action */}
+        {/* CTA Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <AdvancedFuturisticCard variant="quantum-holographic" className="text-center p-12">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-              >
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                  Ready to Transform Your Business?
-                </h2>
-                <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                  Join the future of technology with our revolutionary micro SaaS services. Get started with a free trial and experience unprecedented ROI and innovation.
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+                Ready to Transform Your Business?
+              </h2>
+              <p className="text-xl text-gray-300 mb-8">
+                Join thousands of businesses already using our AI-powered services to achieve unprecedented growth and efficiency.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Button 
+                  className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-4 text-lg"
+                  onClick={() => window.open('/services', '_blank')}
+                >
+                  Start Free Trial
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+                <Button 
+                  className="bg-gradient-to-r from-fuchsia-500 to-purple-600 hover:from-fuchsia-600 hover:to-purple-700 text-white px-8 py-4 text-lg"
+                  onClick={() => window.open('/contact', '_blank')}
+                >
+                  Contact Sales
+                  <MessageSquare className="ml-2 w-5 h-5" />
+                </Button>
+              </div>
+              <div className="mt-8 text-gray-400">
+                <p className="mb-2">
+                  <Phone className="inline w-4 h-4 mr-2" />
+                  {contactInfo.mobile} | 
+                  <Mail className="inline w-4 h-4 mx-2" />
+                  {contactInfo.email}
                 </p>
-                
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-                  <Button 
-                    className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-4 text-lg"
-                    onClick={() => window.open('/services', '_blank')}
-                  >
-                    Start Free Trial
-                    <Rocket className="ml-2 h-5 w-5" />
-                  </Button>
-                  <Button 
-                    variant="outline"
-                    className="border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-white px-8 py-4 text-lg"
-                    onClick={() => window.open(`mailto:${contactInfo.email}`, '_blank')}
-                  >
-                    Contact Us
-                    <Mail className="ml-2 h-5 w-5" />
-                  </Button>
-                </div>
-
-                <div className="text-sm text-gray-400 mb-8">
-                  Free 30-day trial • No credit card required • Expert support included • 99.9% uptime guarantee
-                </div>
-                
-                {/* Contact Information */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                  <div className="flex flex-col items-center p-4 rounded-xl bg-gradient-to-br from-blue-500/20 to-blue-600/20 border border-blue-500/30">
-                    <Phone className="w-6 h-6 text-blue-400 mb-2" />
-                    <div className="text-sm text-gray-400">Mobile</div>
-                    <div className="text-white font-semibold">{contactInfo.mobile}</div>
-                    <div className="text-xs text-blue-400 mt-1">Available 24/7</div>
-                  </div>
-                  <div className="flex flex-col items-center p-4 rounded-xl bg-gradient-to-br from-green-500/20 to-green-600/20 border border-green-500/30">
-                    <Mail className="w-6 h-6 text-green-400 mb-2" />
-                    <div className="text-sm text-gray-400">Email</div>
-                    <div className="text-white font-semibold">{contactInfo.email}</div>
-                    <div className="text-xs text-green-400 mt-1">Response within 2 hours</div>
-                  </div>
-                  <div className="flex flex-col items-center p-4 rounded-xl bg-gradient-to-br from-purple-500/20 to-purple-600/20 border border-purple-500/30">
-                    <MapPin className="w-6 h-6 text-purple-400 mb-2" />
-                    <div className="text-sm text-gray-400">Address</div>
-                    <div className="text-white font-semibold text-sm">{contactInfo.address}</div>
-                    <div className="text-xs text-purple-400 mt-1">Global headquarters</div>
-                  </div>
-                </div>
-                
-                <div className="mt-6 text-center">
-                  <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full text-white font-semibold text-sm">
-                    <Globe className="w-4 h-4 mr-2" />
-                    Visit us at: {contactInfo.website}
-                  </div>
-                </div>
-              </motion.div>
-            </AdvancedFuturisticCard>
+                <p className="text-sm">
+                  <MapPin className="inline w-4 h-4 mr-2" />
+                  {contactInfo.address}
+                </p>
+              </div>
+            </motion.div>
           </div>
         </section>
       </div>
-    </AdvancedFuturisticBackground>
+    </UltraFuturisticBackground>
   );
 }
