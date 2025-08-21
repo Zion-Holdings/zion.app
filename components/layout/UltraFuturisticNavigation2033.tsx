@@ -64,12 +64,12 @@ const serviceCategories = [
 ];
 
 const quickLinks = [
+  { name: 'Services Overview', href: '/enhanced-services-overview', icon: Globe, color: 'from-cyan-500 to-blue-600' },
   { name: 'AI Services', href: '/ai-services', icon: Brain, color: 'from-violet-500 to-purple-600' },
   { name: 'Quantum Tech', href: '/quantum-services', icon: Atom, color: 'from-indigo-500 to-blue-600' },
   { name: 'Space Tech', href: '/space-technology', icon: Rocket, color: 'from-teal-500 to-emerald-600' },
   { name: 'Enterprise IT', href: '/enterprise-it', icon: Cpu, color: 'from-blue-500 to-cyan-600' },
-  { name: 'Micro SAAS', href: '/micro-saas', icon: Target, color: 'from-green-500 to-yellow-600' },
-  { name: 'Research & Dev', href: '/research-development', icon: Microscope, color: 'from-orange-500 to-red-600' }
+  { name: 'Micro SAAS', href: '/enhanced-micro-saas-showcase', icon: Target, color: 'from-green-500 to-yellow-600' }
 ];
 
 export default function UltraFuturisticNavigation2033() {
