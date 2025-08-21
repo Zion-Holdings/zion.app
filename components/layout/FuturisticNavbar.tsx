@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, Zap, Globe, Bot, Cloud, Shield, Sparkles, Rocket, Cpu, Database, Brain, Atom, Eye, Lock, BarChart3, Users, Target, TrendingUp, Star, Award, ZapIcon, CloudIcon, BotIcon, ShieldIcon, GlobeIcon, CpuIcon, DatabaseIcon, BrainIcon, AtomIcon, EyeIcon, LockIcon, BarChart3Icon, UsersIcon, TargetIcon, TrendingUpIcon, StarIcon, AwardIcon } from 'lucide-react';
+import { Menu, X, Zap, Globe, Bot, Cloud, Shield, Sparkles, Rocket, Cpu, Database, Brain, Atom, Eye, Lock, BarChart3, Users, Target, TrendingUp, Star, Award, ZapIcon, CloudIcon, BotIcon, ShieldIcon, GlobeIcon, CpuIcon, DatabaseIcon, BrainIcon, AtomIcon, EyeIcon, LockIcon, BarChart3Icon, UsersIcon, TargetIcon, TrendingUpIcon, StarIcon, AwardIcon, DollarSign, FlaskConical, Leaf, Factory, ShieldCheck } from 'lucide-react';
 
 export default function FuturisticNavbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,16 +27,18 @@ export default function FuturisticNavbar() {
       name: 'Services', 
       href: '/services', 
       icon: <Cloud className="w-4 h-4" />,
-      description: '150+ Micro SaaS Solutions',
+      description: '300+ Micro SaaS Solutions',
       dropdown: [
         { name: 'AI & Machine Learning', href: '/services?category=AI%20%26%20Machine%20Learning', icon: <Brain className="w-4 h-4" /> },
-        { name: 'Quantum Computing', href: '/services?category=Quantum%20Computing%20%26%20Security', icon: <Atom className="w-4 h-4" /> },
-        { name: 'Edge AI & IoT', href: '/services?category=Edge%20AI%20%26%20IoT', icon: <Cpu className="w-4 h-4" /> },
-        { name: 'Autonomous Systems', href: '/services?category=Autonomous%20Systems', icon: <Bot className="w-4 h-4" /> },
-        { name: 'Healthcare & Life Sciences', href: '/services?category=Healthcare%20%26%20Life%20Sciences', icon: <Eye className="w-4 h-4" /> },
+        { name: 'Quantum Computing', href: '/services?category=Quantum%20Computing', icon: <Atom className="w-4 h-4" /> },
+        { name: 'Financial Technology', href: '/services?category=Financial%20Technology', icon: <DollarSign className="w-4 h-4" /> },
+        { name: 'Biomedical & Healthcare', href: '/services?category=Biomedical%20%26%20Healthcare', icon: <FlaskConical className="w-4 h-4" /> },
         { name: 'Cybersecurity', href: '/services?category=Cybersecurity', icon: <Lock className="w-4 h-4" /> },
-        { name: 'Data Analytics & BI', href: '/services?category=Data%20Analytics%20%26%20BI', icon: <BarChart3 className="w-4 h-4" /> },
-        { name: 'Emerging Technology', href: '/services?category=Emerging%20Technology', icon: <Sparkles className="w-4 h-4" /> }
+        { name: 'Autonomous Systems', href: '/services?category=Autonomous%20Systems', icon: <Bot className="w-4 h-4" /> },
+        { name: 'Climate & Environment', href: '/services?category=Climate%20%26%20Environment', icon: <Leaf className="w-4 h-4" /> },
+        { name: 'Energy & Utilities', href: '/services?category=Energy%20%26%20Utilities', icon: <Zap className="w-4 h-4" /> },
+        { name: 'Manufacturing & Industry 4.0', href: '/services?category=Manufacturing%20%26%20Industry%204.0', icon: <Factory className="w-4 h-4" /> },
+        { name: 'Legal Technology', href: '/services?category=Legal%20Technology', icon: <ShieldCheck className="w-4 h-4" /> }
       ]
     },
     { 

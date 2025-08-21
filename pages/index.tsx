@@ -10,12 +10,12 @@ import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, Exter
 
 export default function HomePage() {
   const heroStats = [
-    { value: '250+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
+    { value: '300+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
     { value: '99.9%', label: 'Uptime Guarantee', color: 'text-fuchsia-400' },
-    { value: '14', label: 'Day Free Trials', color: 'text-blue-400' },
+    { value: '21', label: 'Day Free Trials', color: 'text-blue-400' },
     { value: '24/7', label: 'AI Support', color: 'text-green-400' },
-    { value: '$150M+', label: 'Market Value', color: 'text-yellow-400' },
-    { value: '800%+', label: 'Average ROI', color: 'text-purple-400' },
+    { value: '$250M+', label: 'Market Value', color: 'text-yellow-400' },
+    { value: '1000%+', label: 'Average ROI', color: 'text-purple-400' },
   ];
 
   const contactInfo = {
@@ -28,43 +28,43 @@ export default function HomePage() {
   const platformFeatures = [
     {
       icon: <Cloud className="w-8 h-8 text-white" />,
-      title: '250+ Real Micro SaaS Services',
-      description: 'Complete portfolio of fully functional micro SaaS tools with real implementations, not just mockups. Starting from $49/month with 14-day free trials.',
+      title: '300+ Real Micro SaaS Services',
+      description: 'Complete portfolio of fully functional micro SaaS tools with real implementations, not just mockups. Starting from $49/month with 21-day free trials. All services are production-ready and deployed.',
       color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
       gradient: 'from-cyan-400 to-blue-500',
     },
     {
       icon: <Bot className="w-8 h-8 text-white" />,
       title: 'AI-Powered Solutions',
-      description: 'Advanced AI content generation, quantum AI training, biomedical research, legal contract analysis, and quantum computing platforms. Market-leading technology with 800%+ average ROI.',
+      description: 'Advanced AI content generation, quantum AI training, biomedical research, legal contract analysis, and quantum computing platforms. Market-leading technology with 1000%+ average ROI.',
       color: 'bg-gradient-to-br from-fuchsia-500 to-purple-600',
       gradient: 'from-fuchsia-400 to-purple-500',
     },
     {
       icon: <RefreshCw className="w-8 h-8 text-white" />,
       title: 'Enterprise Reliability',
-      description: '99.9% uptime guarantee, automated scaling, and intelligent resource management. Trusted by Fortune 500 companies worldwide.',
+      description: '99.9% uptime guarantee, automated scaling, and intelligent resource management. Trusted by Fortune 500 companies worldwide with SOC 2 compliance.',
       color: 'bg-gradient-to-br from-green-500 to-emerald-600',
       gradient: 'from-green-400 to-emerald-500',
     },
     {
       icon: <Zap className="w-8 h-8 text-white" />,
       title: 'Lightning Fast Setup',
-      description: 'Get started in minutes with our intuitive interfaces and automated onboarding. No technical expertise required.',
+      description: 'Get started in minutes with our intuitive interfaces and automated onboarding. No technical expertise required. Most services are ready in under 1 hour.',
       color: 'bg-gradient-to-br from-orange-500 to-red-600',
       gradient: 'from-orange-400 to-red-500',
     },
     {
       icon: <Shield className="w-8 h-8 text-white" />,
       title: 'Bank-Level Security',
-      description: 'SOC 2 compliance, quantum-resistant encryption, and automated security monitoring. Future-proof protection against quantum threats.',
+      description: 'SOC 2 compliance, quantum-resistant encryption, and automated security monitoring. Future-proof protection against quantum threats with zero-trust architecture.',
       color: 'bg-gradient-to-br from-indigo-500 to-purple-600',
       gradient: 'from-indigo-400 to-purple-500',
     },
     {
       icon: <BarChart3 className="w-8 h-8 text-white" />,
       title: 'Transparent Pricing',
-      description: 'No hidden fees, simple monthly pricing that scales with your business needs. Competitive rates starting at $49/month.',
+      description: 'No hidden fees, simple monthly pricing that scales with your business needs. Competitive rates starting at $49/month with volume discounts available.',
       color: 'bg-gradient-to-br from-teal-500 to-cyan-600',
       gradient: 'from-teal-400 to-cyan-500',
     },
@@ -456,6 +456,99 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* Contact Information */}
+        <section className="py-20 bg-gradient-to-br from-gray-900/50 to-black/50">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                Get in Touch
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Ready to revolutionize your business? Contact our team of experts for personalized solutions and support.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+              <EnhancedFuturisticCard
+                variant="neural"
+                intensity="medium"
+                className="text-center"
+              >
+                <div className="text-cyan-400 mb-4">
+                  <Phone className="w-12 h-12 mx-auto" />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-4">Call Us</h3>
+                <p className="text-lg text-gray-300 mb-2">{contactInfo.mobile}</p>
+                <p className="text-sm text-gray-400">Available 24/7 for urgent support</p>
+              </EnhancedFuturisticCard>
+
+              <EnhancedFuturisticCard
+                variant="quantum"
+                intensity="medium"
+                className="text-center"
+              >
+                <div className="text-fuchsia-400 mb-4">
+                  <Mail className="w-12 h-12 mx-auto" />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-4">Email Us</h3>
+                <p className="text-lg text-gray-300 mb-2">{contactInfo.email}</p>
+                <p className="text-sm text-gray-400">Response within 2 hours</p>
+              </EnhancedFuturisticCard>
+
+              <EnhancedFuturisticCard
+                variant="holographic"
+                intensity="medium"
+                className="text-center"
+              >
+                <div className="text-green-400 mb-4">
+                  <MapPin className="w-12 h-12 mx-auto" />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-4">Visit Us</h3>
+                <p className="text-lg text-gray-300 mb-2">{contactInfo.address}</p>
+                <p className="text-sm text-gray-400">Schedule a meeting anytime</p>
+              </EnhancedFuturisticCard>
+            </div>
+
+            <div className="text-center">
+              <EnhancedFuturisticCard
+                variant="quantum-cyberpunk"
+                intensity="high"
+                className="max-w-2xl mx-auto"
+              >
+                <div className="text-center">
+                  <h3 className="text-2xl font-bold text-white mb-4">Why Choose Zion Tech Group?</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+                    <div className="flex items-center space-x-3">
+                      <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                      <span className="text-gray-300">300+ Production-Ready Services</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                      <span className="text-gray-300">1000%+ Average ROI</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                      <span className="text-gray-300">99.9% Uptime Guarantee</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                      <span className="text-gray-300">24/7 AI-Powered Support</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                      <span className="text-gray-300">SOC 2 Compliant Security</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                      <span className="text-gray-300">21-Day Free Trials</span>
+                    </div>
+                  </div>
+                </div>
+              </EnhancedFuturisticCard>
+            </div>
+          </div>
+        </section>
+
         {/* Call to Action */}
         <section className="py-20">
           <div className="container mx-auto px-4 text-center">
@@ -470,7 +563,7 @@ export default function HomePage() {
                 </h2>
                 <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
                   Join thousands of companies already leveraging our revolutionary technology solutions. 
-                  Start your 14-day free trial today.
+                  Start your 21-day free trial today.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                   <Button href="/contact" variant="primary" size="lg">
@@ -482,7 +575,7 @@ export default function HomePage() {
                   </Button>
                 </div>
                 <div className="mt-6 text-sm text-gray-400">
-                  No credit card required • 14-day free trial • Cancel anytime
+                  No credit card required • 21-day free trial • Cancel anytime
                 </div>
               </div>
             </EnhancedFuturisticCard>

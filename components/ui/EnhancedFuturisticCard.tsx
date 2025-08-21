@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 interface EnhancedFuturisticCardProps {
   children: React.ReactNode;
   className?: string;
-  variant?: 'default' | 'holographic' | 'quantum' | 'cyberpunk' | 'neural' | 'quantum-holographic';
+  variant?: 'default' | 'holographic' | 'quantum' | 'cyberpunk' | 'neural' | 'quantum-holographic' | 'quantum-cyberpunk' | 'holographic-neural' | 'quantum-advanced' | 'holographic-advanced' | 'quantum-holographic-advanced';
   intensity?: 'low' | 'medium' | 'high';
   glowColor?: string;
   interactive?: boolean;
@@ -84,6 +84,16 @@ const EnhancedFuturisticCard: React.FC<EnhancedFuturisticCardProps> = ({
           return `hsl(${200 + Math.sin(time * 0.015) * 60}, 70%, 60%)`;
         case 'quantum-holographic':
           return `hsl(${220 + Math.sin(time * 0.025) * 180}, 95%, 80%)`;
+        case 'quantum-cyberpunk':
+          return `hsl(${320 + Math.sin(time * 0.035) * 100}, 90%, 65%)`;
+        case 'holographic-neural':
+          return `hsl(${180 + Math.sin(time * 0.02) * 120}, 85%, 70%)`;
+        case 'quantum-advanced':
+          return `hsl(${300 + Math.sin(time * 0.03) * 140}, 95%, 75%)`;
+        case 'holographic-advanced':
+          return `hsl(${120 + Math.sin(time * 0.025) * 160}, 90%, 70%)`;
+        case 'quantum-holographic-advanced':
+          return `hsl(${260 + Math.sin(time * 0.04) * 200}, 98%, 85%)`;
         default:
           return `hsl(${200 + Math.sin(time * 0.01) * 60}, 70%, 60%)`;
       }

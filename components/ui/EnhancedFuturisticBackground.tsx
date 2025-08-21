@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 
 interface EnhancedFuturisticBackgroundProps {
   children: React.ReactNode;
-  variant?: 'neural' | 'quantum' | 'holographic' | 'cyberpunk' | 'quantum-advanced' | 'holographic-advanced' | 'quantum-holographic' | 'neural-quantum' | 'quantum-cyberpunk' | 'holographic-neural' | 'quantum-holographic-advanced';
+  variant?: 'neural' | 'quantum' | 'holographic' | 'cyberpunk' | 'quantum-advanced' | 'holographic-advanced' | 'quantum-holographic' | 'neural-quantum' | 'quantum-cyberpunk' | 'holographic-neural' | 'quantum-holographic-advanced' | 'quantum-financial' | 'biomedical-ai' | 'autonomous-systems' | 'quantum-materials' | 'climate-quantum' | 'energy-optimization' | 'manufacturing-intelligence';
   intensity?: 'low' | 'medium' | 'high';
   className?: string;
 }
@@ -111,6 +111,20 @@ const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> 
           return `hsl(${180 + Math.sin(time * 0.03) * 140}, 85%, 70%)`;
         case 'quantum-holographic-advanced':
           return `hsl(${260 + Math.sin(time * 0.05) * 220}, 98%, 85%)`;
+        case 'quantum-financial':
+          return `hsl(${120 + Math.sin(time * 0.03) * 60}, 90%, 65%)`;
+        case 'biomedical-ai':
+          return `hsl(${340 + Math.sin(time * 0.025) * 80}, 85%, 70%)`;
+        case 'autonomous-systems':
+          return `hsl(${60 + Math.sin(time * 0.02) * 100}, 80%, 60%)`;
+        case 'quantum-materials':
+          return `hsl(${40 + Math.sin(time * 0.035) * 120}, 95%, 75%)`;
+        case 'climate-quantum':
+          return `hsl(${180 + Math.sin(time * 0.018) * 140}, 90%, 70%)`;
+        case 'energy-optimization':
+          return `hsl(${30 + Math.sin(time * 0.032) * 90}, 100%, 65%)`;
+        case 'manufacturing-intelligence':
+          return `hsl(${200 + Math.sin(time * 0.026) * 110}, 75%, 55%)`;
         default:
           return `hsl(${200 + Math.sin(time * 0.01) * 60}, 70%, 60%)`;
       }
@@ -173,6 +187,131 @@ const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> 
             ctx.stroke();
           }
           break;
+          
+        case 'quantum-financial': {
+          // Financial data visualization
+          ctx.strokeStyle = particle.color;
+          ctx.lineWidth = 3;
+          ctx.beginPath();
+          ctx.moveTo(-size/2, 0);
+          ctx.lineTo(0, -size/2);
+          ctx.lineTo(size/2, 0);
+          ctx.lineTo(0, size/2);
+          ctx.closePath();
+          ctx.stroke();
+          
+          // Price ticker effect
+          if (Math.random() < 0.05) {
+            ctx.fillStyle = '#00ff00';
+            ctx.fillRect(-size/4, -size/4, size/2, size/2);
+          }
+          break;
+        }
+          
+        case 'biomedical-ai': {
+          // DNA helix effect
+          ctx.strokeStyle = particle.color;
+          ctx.lineWidth = 2;
+          for (let i = 0; i < 3; i++) {
+            const angle = (particle.rotation + i * Math.PI / 3) % (Math.PI * 2);
+            const x = Math.cos(angle) * size * 0.3;
+            const y = Math.sin(angle) * size * 0.3;
+            ctx.beginPath();
+            ctx.arc(x, y, size * 0.2, 0, Math.PI * 2);
+            ctx.stroke();
+          }
+          break;
+        }
+          
+        case 'autonomous-systems': {
+          // Autonomous vehicle effect
+          ctx.fillStyle = particle.color;
+          ctx.fillRect(-size/2, -size/3, size, size * 0.6);
+          ctx.fillRect(-size/3, -size/2, size * 0.6, size);
+          
+          // Sensor effect
+          if (Math.random() < 0.1) {
+            ctx.strokeStyle = '#00ffff';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.arc(0, 0, size * 1.2, 0, Math.PI * 2);
+            ctx.stroke();
+          }
+          break;
+        }
+          
+        case 'quantum-materials': {
+          // Crystal lattice effect
+          ctx.strokeStyle = particle.color;
+          ctx.lineWidth = 2;
+          for (let i = 0; i < 6; i++) {
+            const angle = (i * Math.PI) / 3;
+            const x = Math.cos(angle) * size * 0.5;
+            const y = Math.sin(angle) * size * 0.5;
+            ctx.beginPath();
+            ctx.moveTo(0, 0);
+            ctx.lineTo(x, y);
+            ctx.stroke();
+          }
+          break;
+        }
+          
+        case 'climate-quantum': {
+          // Weather pattern effect
+          ctx.strokeStyle = particle.color;
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          ctx.arc(0, 0, size * 0.8, 0, Math.PI * 2);
+          ctx.stroke();
+          
+          // Wind effect
+          if (Math.random() < 0.1) {
+            ctx.strokeStyle = '#87ceeb';
+            ctx.beginPath();
+            ctx.moveTo(-size, 0);
+            ctx.lineTo(size, 0);
+            ctx.stroke();
+          }
+          break;
+        }
+          
+        case 'energy-optimization': {
+          // Energy flow effect
+          ctx.strokeStyle = particle.color;
+          ctx.lineWidth = 3;
+          ctx.beginPath();
+          ctx.moveTo(-size/2, -size/2);
+          ctx.lineTo(size/2, size/2);
+          ctx.stroke();
+          
+          // Power surge effect
+          if (Math.random() < 0.05) {
+            ctx.strokeStyle = '#ffff00';
+            ctx.lineWidth = 5;
+            ctx.beginPath();
+            ctx.moveTo(-size, -size);
+            ctx.lineTo(size, size);
+            ctx.stroke();
+          }
+          break;
+        }
+          
+        case 'manufacturing-intelligence': {
+          // Factory automation effect
+          ctx.fillStyle = particle.color;
+          ctx.fillRect(-size/2, -size/2, size, size);
+          
+          // Production line effect
+          if (Math.random() < 0.1) {
+            ctx.strokeStyle = '#ff6b35';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(-size, 0);
+            ctx.lineTo(size, 0);
+            ctx.stroke();
+          }
+          break;
+        }
           
         default:
           // Standard particle rendering
