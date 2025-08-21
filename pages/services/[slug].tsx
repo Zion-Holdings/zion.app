@@ -12,6 +12,7 @@ import { curatedMarketServices } from '../../data/curated-market-services';
 import { new2025Services } from '../../data/new-2025-services';
 import { marketValidatedServices } from '../../data/market-validated-services';
 import { moreRealServices2025 } from '../../data/more-real-services-2025';
+import { verified2025Additions } from '../../data/verified-2025-additions';
 
 type Service = typeof enhancedRealMicroSaasServices[number];
 
@@ -29,7 +30,8 @@ function getAllServices(): Service[] {
 		.concat(curatedMarketServices as Service[])
 		.concat(new2025Services as unknown as Service[])
 		.concat(marketValidatedServices as unknown as Service[])
-		.concat(moreRealServices2025 as unknown as Service[]);
+		.concat(moreRealServices2025 as unknown as Service[])
+		.concat(verified2025Additions as unknown as Service[]);
 }
 
 function toSlug(value: string): string {

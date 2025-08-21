@@ -215,8 +215,34 @@ export const getStaticPaths: GetStaticPaths = async () => {
     }
   }
 
+  // Exclude any slugs that already have an explicit top-level page or folder under /pages
+  const pagesDir = path.join(process.cwd(), 'pages');
+  const existingRoutes = new Set<string>();
+  const entries = fs.readdirSync(pagesDir, { withFileTypes: true });
+  for (const entry of entries) {
+    // Skip private and special files
+    if (entry.name.startsWith('_')) continue;
+    if (entry.name === 'api') continue;
+    if (entry.name === 'reports') continue;
+    if (entry.name === 'services') continue;
+    if (entry.name === '[slug].tsx' || entry.name === 'index.tsx') continue;
+
+    if (entry.isDirectory()) {
+      existingRoutes.add(entry.name);
+      continue;
+    }
+    if (entry.isFile()) {
+      const match = entry.name.match(/^(.*)\.(tsx|ts|js|jsx)$/);
+      if (match) {
+        existingRoutes.add(match[1]);
+      }
+    }
+  }
+
+  const filtered = Array.from(candidateSlugs).filter((slug) => !existingRoutes.has(slug));
+
   return {
-    paths: Array.from(candidateSlugs).map((slug) => ({ params: { slug } })),
+    paths: filtered.map((slug) => ({ params: { slug } })),
     fallback: true
   };
 };

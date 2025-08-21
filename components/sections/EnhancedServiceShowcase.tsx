@@ -16,6 +16,7 @@ import { marketValidatedServices } from '../../data/market-validated-services';
 import { newRealInnovations } from '../../data/new-real-innovations';
 import { realMarketServices } from '../../data/real-market-services';
 import { realOperationalServices } from '../../data/real-operational-services';
+import { verified2025Additions } from '../../data/verified-2025-additions';
 
 interface ServiceShowcaseProps {
   className?: string;
@@ -45,6 +46,7 @@ const EnhancedServiceShowcase: React.FC<ServiceShowcaseProps> = ({
     ...newRealInnovations,
     ...realMarketServices,
     ...realOperationalServices
+    ,...verified2025Additions
   ];
 
   const categories = [

@@ -44,8 +44,8 @@ const UltraAdvancedFuturisticBackground: React.FC<UltraAdvancedFuturisticBackgro
 
     const createParticles = () => {
       particles = [];
-      const screenFactor = typeof window !== 'undefined' ? (window.innerWidth < 640 ? 0.6 : window.innerWidth < 1024 ? 0.85 : 1) : 1;
-      const particleBase = prefersReducedMotion ? 40 : 120;
+      const screenFactor = typeof window !== 'undefined' ? (window.innerWidth < 640 ? 0.5 : window.innerWidth < 1024 ? 0.8 : 1) : 1;
+      const particleBase = prefersReducedMotion ? 30 : 110;
       const particleCount = Math.floor(particleBase * intensity * screenFactor);
       
       for (let i = 0; i < particleCount; i++) {
@@ -278,6 +278,8 @@ const UltraAdvancedFuturisticBackground: React.FC<UltraAdvancedFuturisticBackgro
         ref={canvasRef}
         className="fixed inset-0 w-full h-full pointer-events-none z-0"
         style={{ filter: 'blur(0.5px)' }}
+        aria-hidden="true"
+        role="presentation"
       />
       
       {/* Enhanced overlay effects */}
