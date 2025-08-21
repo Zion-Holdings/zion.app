@@ -27,6 +27,8 @@ const UltraAdvancedNavigation: React.FC = () => {
 			{ name: 'Enterprise IT', href: '/it-services', icon: Building2, description: 'Cloud, DevOps, Security' },
 			{ name: 'Micro SaaS', href: '/micro-saas', icon: Monitor, description: 'Micro SaaS products' },
 			{ name: 'Services', href: '/services', icon: Monitor, description: 'Directory of services' },
+			{ name: 'Docs', href: '/docs', icon: Monitor, description: 'Guides & references' },
+			{ name: 'Blog', href: '/blog', icon: Monitor, description: 'Insights & trends' },
 			{ name: 'Advertising', href: '/services-advertising', icon: DollarSign, description: 'Benefits & pricing references' },
 			{ name: 'Market Pricing', href: '/market-pricing', icon: DollarSign, description: 'Vendor references' },
 			{ name: 'Pricing', href: '/pricing', icon: DollarSign, description: 'Transparent, market-aligned pricing' },

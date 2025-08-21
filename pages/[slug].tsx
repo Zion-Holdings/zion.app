@@ -28,6 +28,7 @@ import { cuttingEdgeITServices } from '../data/cutting-edge-it-services';
 import { nextGenAIServices } from '../data/next-gen-ai-services';
 import { industryRealServices } from '../data/industry-real-services';
 import { professionalServices } from '../data/professional-services';
+import { realEnterpriseServices2025 } from '../data/real-enterprise-services-2025';
 
 export default function ServiceFallbackPage() {
   const router = useRouter();
@@ -56,7 +57,8 @@ export default function ServiceFallbackPage() {
         nextGenerationAIServices as any,
         nextGenAIServices as any,
         industryRealServices as any,
-        professionalServices as any
+        professionalServices as any,
+        realEnterpriseServices2025 as any
       );
     const byLink = all.find(s => {
       try {
