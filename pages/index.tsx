@@ -70,6 +70,10 @@ import { cuttingEdge2028MicroSaas } from '../data/2028-cutting-edge-micro-saas';
 import { practicalBusinessSolutions2028 } from '../data/2028-practical-business-solutions';
 import { futuristic2028Services } from '../data/2028-futuristic-innovations';
 import { emergingTech2028Services } from '../data/2028-emerging-tech-services';
+import { futuristic2029AIServices } from '../data/2029-futuristic-ai-services';
+import { quantumSpace2029Services } from '../data/2029-quantum-space-services';
+import { biotechEmerging2029Services } from '../data/2029-biotech-emerging-services';
+import { enterpriseIT2029Services } from '../data/2029-enterprise-it-services';
 
 export default function HomePage() {
   const contactInfo = {
@@ -134,7 +138,11 @@ export default function HomePage() {
     ...revolutionary2027ITServices,
     ...revolutionary2027MicroSaasServices,
     ...cuttingEdge2028MicroSaas,
-    ...practicalBusinessSolutions2028
+    ...practicalBusinessSolutions2028,
+    ...futuristic2029AIServices,
+    ...quantumSpace2029Services,
+    ...biotechEmerging2029Services,
+    ...enterpriseIT2029Services
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);

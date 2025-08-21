@@ -145,6 +145,9 @@ const serviceCategories = [
 
 const companyLinks = [
   { name: '🏠 Home', href: '/', icon: Home },
+  { name: '🚀 2029 Futuristic', href: '/2029-futuristic-services-showcase', icon: Rocket },
+  { name: '💰 2029 Pricing', href: '/2029-futuristic-pricing', icon: DollarSign },
+  { name: '📢 2029 Advertising', href: '/2029-services-advertising', icon: TrendingUp },
   { name: '🚀 2028 Services', href: '/2028-services-showcase', icon: Rocket },
   { name: '⭐ Ultimate 2028', href: '/ultimate-2028-services-showcase', icon: Star },
   { name: '💰 2028 Pricing', href: '/revolutionary-2028-pricing', icon: DollarSign },
