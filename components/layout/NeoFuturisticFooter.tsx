@@ -289,6 +289,8 @@ export default function NeoFuturisticFooter() {
                 <a
                   key={index}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="p-2 text-gray-400 hover:text-cyan-400 hover:bg-cyan-400/10 rounded-lg transition-all duration-300"
                   aria-label={social.name}
                 >

@@ -8,7 +8,7 @@ import UltraFuturisticServiceCard from '../components/ui/UltraFuturisticServiceC
 import Card from '../components/ui/Card';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices, serviceCategories } from '../data/enhanced-real-micro-saas-services';
-import { additionalEnhancedServices } from '../data/additional-real-services';
+import { extraServices } from '../data/extra-services';
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -29,7 +29,7 @@ export default function ServicesPage() {
   }, [router.query.category, router.query.cat]);
 
   const allServices = useMemo(() => {
-    return [...enhancedRealMicroSaasServices, ...additionalEnhancedServices];
+    return enhancedRealMicroSaasServices.concat(extraServices);
   }, []);
 
   const filteredServices = useMemo(() => {
