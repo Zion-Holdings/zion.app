@@ -1,5 +1,5 @@
 import React from 'react';
-import NeoFuturisticNavigation from './NeoFuturisticNavigation';
+import QuantumHolographicNavbar from './QuantumHolographicNavbar';
 import NeoFuturisticFooter from './NeoFuturisticFooter';
 import UltraAdvancedFuturisticBackground from '../ui/UltraAdvancedFuturisticBackground';
 
@@ -11,7 +11,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 	return (
 		<div className="min-h-screen bg-black text-white">
 			<UltraAdvancedFuturisticBackground variant="quantum-holographic">
-				<NeoFuturisticNavigation />
+				<QuantumHolographicNavbar />
 				<main className="pt-24 lg:pt-28">
 					{children}
 				</main>
