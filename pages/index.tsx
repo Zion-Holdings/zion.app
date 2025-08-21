@@ -9,6 +9,12 @@ import { innovativeAIServices2025 } from '../data/2025-innovative-ai-services';
 import { innovativeITServices2025 } from '../data/2025-innovative-it-services';
 import { emergingTechServices2025 } from '../data/2025-emerging-tech-services';
 
+// Import 2026 innovative services
+import { innovativeMicroSaasServices2026 } from '../data/2026-innovative-micro-saas-services';
+import { innovativeAIServices2026 } from '../data/2026-innovative-ai-services';
+import { innovativeITServices2026 } from '../data/2026-innovative-it-services';
+import { emergingTechServices2026 } from '../data/2026-emerging-tech-services';
+
 const contactInfo = {
   mobile: '+1 302 464 0950',
   email: 'kleber@ziontechgroup.com',

@@ -14,6 +14,12 @@ import { innovativeAIServices2025 } from '../data/2025-innovative-ai-services';
 import { innovativeITServices2025 } from '../data/2025-innovative-it-services';
 import { emergingTechServices2025 } from '../data/2025-emerging-tech-services';
 
+// Import 2026 innovative services
+import { innovativeMicroSaasServices2026 } from '../data/2026-innovative-micro-saas-services';
+import { innovativeAIServices2026 } from '../data/2026-innovative-ai-services';
+import { innovativeITServices2026 } from '../data/2026-innovative-it-services';
+import { emergingTechServices2026 } from '../data/2026-emerging-tech-services';
+
 // Import existing services for comprehensive coverage
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { innovativeMicroSaasServices } from '../data/innovative-micro-saas-services';
@@ -53,7 +59,7 @@ const serviceCategories: Array<{
     description: 'Revolutionary AI consciousness and emotional intelligence platforms',
     icon: Brain,
     color: 'from-violet-500 to-purple-500',
-    services: [...innovativeAIServices2025],
+    services: [...innovativeAIServices2025, ...innovativeAIServices2026],
     gradient: 'from-violet-500/20 to-indigo-500/20'
   },
   {
@@ -62,7 +68,7 @@ const serviceCategories: Array<{
     description: 'Quantum computing, DNA computing, and beyond',
     icon: Atom,
     color: 'from-indigo-500 to-blue-500',
-    services: [...emergingTechServices2025],
+    services: [...emergingTechServices2025, ...emergingTechServices2026],
     gradient: 'from-indigo-500/20 to-cyan-500/20'
   },
   {
@@ -71,7 +77,7 @@ const serviceCategories: Array<{
     description: 'Autonomous operations and zero-trust security',
     icon: Shield,
     color: 'from-blue-500 to-cyan-500',
-    services: [...innovativeITServices2025],
+    services: [...innovativeITServices2025, ...innovativeITServices2026],
     gradient: 'from-blue-500/20 to-teal-500/20'
   },
   {
@@ -89,7 +95,7 @@ const serviceCategories: Array<{
     description: 'Innovative solutions for every business need',
     icon: Target,
     color: 'from-green-500 to-yellow-500',
-    services: [...realMicroSaasServices2025, ...enhancedRealMicroSaasServices],
+    services: [...realMicroSaasServices2025, ...enhancedRealMicroSaasServices, ...innovativeMicroSaasServices2026],
     gradient: 'from-green-500/20 to-orange-500/20'
   },
   {
