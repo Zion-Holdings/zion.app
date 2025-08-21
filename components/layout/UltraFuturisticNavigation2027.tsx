@@ -30,6 +30,18 @@ const serviceCategories = [
     ]
   },
   {
+    title: '🤖 2027 Advanced AI Automation',
+    icon: Brain,
+    color: 'from-blue-600 to-cyan-600',
+    description: 'Intelligent automation solutions',
+    services: [
+      { name: 'AI Customer Success Automation', href: '/services/ai-customer-success-automation', description: 'Automate customer success with AI', price: '$299/month' },
+      { name: 'Automated Content Marketing Suite', href: '/services/automated-content-marketing-suite', description: 'AI-powered content creation', price: '$199/month' },
+      { name: 'Smart Inventory Management', href: '/services/smart-inventory-management-system', description: 'AI inventory optimization', price: '$399/month' },
+      { name: 'AI Financial Risk Management', href: '/services/ai-financial-risk-management', description: 'Intelligent risk assessment', price: '$599/month' }
+    ]
+  },
+  {
     title: '🎯 Practical Micro SAAS 2027',
     icon: Target,
     color: 'from-blue-600 to-cyan-600',
@@ -94,6 +106,7 @@ const serviceCategories = [
 const companyLinks = [
   { name: '🏠 Home', href: '/', icon: Home },
   { name: '🚀 2027 Services', href: '/2027-services-showcase', icon: Rocket },
+  { name: '🔮 Advanced 2027', href: '/2027-advanced-services-showcase', icon: Sparkles },
   { name: '⭐ Ultimate 2027', href: '/ultimate-2027-services-showcase', icon: Star },
   { name: '💰 2027 Pricing', href: '/revolutionary-2027-pricing', icon: DollarSign },
   { name: '📊 Case Studies', href: '/case-studies', icon: Briefcase },

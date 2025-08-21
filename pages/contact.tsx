@@ -33,36 +33,36 @@ export default function ContactPage() {
   // Enhanced service advertising content
   const serviceHighlights = [
     {
-      title: '🔮 AI Multimodal Fusion Platform',
-      description: 'Unified AI processing across text, image, video, and audio. Achieve 400% ROI through comprehensive insights.',
-      price: '$2,499/month',
-      features: ['Cross-modal data fusion', 'Real-time processing', 'Enterprise security'],
-      link: 'https://ziontechgroup.com/services/ai-multimodal-fusion-platform',
-      color: 'from-purple-500 to-indigo-600'
-    },
-    {
-      title: '🛡️ Zero Trust Network Architecture',
-      description: 'Next-generation security with continuous verification. Achieve 400% ROI through reduced security incidents.',
-      price: '$4,999/month',
-      features: ['Continuous verification', 'Micro-segmentation', 'Real-time threat detection'],
-      link: 'https://ziontechgroup.com/services/zero-trust-network-architecture',
-      color: 'from-red-500 to-pink-600'
-    },
-    {
-      title: '🎭 AI Brand Personality Generator',
-      description: 'Create unique brand personalities that resonate with your audience. Achieve 250% ROI within 3 months.',
-      price: '$89/month',
-      features: ['AI-powered generation', 'Brand voice guidelines', 'Performance analytics'],
-      link: 'https://ziontechgroup.com/services/ai-brand-personality-generator',
-      color: 'from-pink-500 to-rose-600'
-    },
-    {
-      title: '⚡ Edge Computing Orchestration',
-      description: 'Intelligent edge computing management and optimization. Achieve 350% ROI within 5 months.',
-      price: '$3,499/month',
-      features: ['Distributed management', 'Real-time optimization', 'Edge-to-cloud integration'],
-      link: 'https://ziontechgroup.com/services/edge-computing-orchestration',
+      title: '🤖 AI Customer Success Automation',
+      description: 'Intelligent customer success automation with AI-powered churn prediction. Achieve 400% ROI through proactive customer management.',
+      price: '$299/month',
+      features: ['AI churn prediction', 'Automated onboarding', 'Customer health scoring'],
+      link: 'https://ziontechgroup.com/services/ai-customer-success-automation',
       color: 'from-blue-500 to-cyan-600'
+    },
+    {
+      title: '📝 Automated Content Marketing Suite',
+      description: 'AI-powered content creation and distribution across multiple channels. Achieve 300% ROI through automated content generation.',
+      price: '$199/month',
+      features: ['AI content generation', 'Multi-channel distribution', 'SEO optimization'],
+      link: 'https://ziontechgroup.com/services/automated-content-marketing-suite',
+      color: 'from-purple-500 to-pink-600'
+    },
+    {
+      title: '📦 Smart Inventory Management System',
+      description: 'AI-powered inventory optimization with demand forecasting. Achieve 500% ROI through reduced carrying costs.',
+      price: '$399/month',
+      features: ['AI demand forecasting', 'Automated reordering', 'Real-time tracking'],
+      link: 'https://ziontechgroup.com/services/smart-inventory-management-system',
+      color: 'from-green-500 to-emerald-600'
+    },
+    {
+      title: '🔐 Quantum Internet Security Gateway',
+      description: 'Unbreakable quantum encryption for the future internet. Achieve 1000% ROI through future-proof security.',
+      price: '$3,999/month',
+      features: ['Quantum key distribution', 'Unbreakable encryption', 'Real-time monitoring'],
+      link: 'https://ziontechgroup.com/services/quantum-internet-security-gateway',
+      color: 'from-indigo-500 to-blue-600'
     }
   ];
 
@@ -71,39 +71,72 @@ export default function ContactPage() {
     {
       icon: '⚡',
       title: 'Lightning Fast Setup',
-      description: 'Get started in minutes, not weeks. Our services are designed for immediate value delivery.',
+      description: 'Get started in minutes, not weeks. Our services are designed for immediate value delivery with 30-90 day free trials.',
       color: 'from-yellow-500 to-orange-600'
     },
     {
       icon: '💰',
       title: 'Transparent Pricing',
-      description: 'No hidden fees, no enterprise sales calls. Simple monthly pricing that scales.',
+      description: 'No hidden fees, no enterprise sales calls. Simple monthly pricing from $99 to $25,999 that scales with your business.',
       color: 'from-green-500 to-emerald-600'
     },
     {
       icon: '🔒',
       title: 'Enterprise Security',
-      description: 'Bank-level security, SOC 2 compliance, and 99.9% uptime guarantee.',
+      description: 'Bank-level security, SOC 2 compliance, 99.9% uptime guarantee, and quantum-resistant encryption.',
       color: 'from-blue-500 to-indigo-600'
     },
     {
       icon: '📊',
       title: 'Proven ROI',
-      description: 'Each service delivers measurable ROI within months. 300-1000% returns reported.',
+      description: 'Each service delivers measurable ROI within months. 300-1200% returns reported by our customers.',
       color: 'from-purple-500 to-violet-600'
+    },
+    {
+      icon: '🚀',
+      title: 'Cutting-Edge Technology',
+      description: 'Access to 500+ revolutionary services including AI consciousness, quantum computing, and space technology.',
+      color: 'from-pink-500 to-rose-600'
+    },
+    {
+      icon: '🌍',
+      title: 'Global Support',
+      description: '24/7 dedicated support team with expertise in AI, quantum computing, and emerging technologies.',
+      color: 'from-teal-500 to-cyan-600'
     }
   ];
 
   const serviceOptions = [
     'Quantum AI & Computing',
+    'AI Consciousness & Neural Interfaces',
     'Autonomous Systems & Robotics',
     'Healthcare & Biotechnology',
-    'Cybersecurity & Defense',
-    'Financial Technology',
-    'Space & Aerospace Technology',
-    'Custom AI Development',
-    'Enterprise Integration',
-    'Technical Consultation',
+    'Space Technology & Exploration',
+    'Metaverse & Digital Reality',
+    'Edge Computing & IoT',
+    'Blockchain & Web3',
+    'Cybersecurity & Zero Trust',
+    'AI Automation & Machine Learning',
+    'Enterprise IT Solutions',
+    'Micro SaaS Platforms',
+    'Financial Technology & Risk Management',
+    'Climate & Sustainability',
+    'Education & E-Learning',
+    'Manufacturing & Industry 4.0',
+    'Transportation & Logistics',
+    'Retail & E-commerce',
+    'Media & Entertainment',
+    'Real Estate & PropTech',
+    'Legal & Compliance',
+    'AI Customer Success Automation',
+    'Content Marketing Automation',
+    'Smart Inventory Management',
+    'HR Recruitment Automation',
+    'Quantum Internet Security',
+    'Space Debris Management',
+    'Holographic Metaverse Development',
+    '5G Private Networks',
+    'AI Multimodal Fusion',
     'Other'
   ];
 
