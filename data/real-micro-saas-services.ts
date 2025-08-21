@@ -1,725 +1,819 @@
-export interface MicroSaasService {
+export interface RealMicroSaasService {
   id: string;
   name: string;
   tagline: string;
+  price: string;
+  period: string;
   description: string;
-  category: string;
-  price: {
-    monthly: number;
-    yearly: number;
-    currency: string;
-    trialDays: number;
-    setupTime: string;
-  };
   features: string[];
-  benefits: string[];
-  targetAudience: string[];
-  marketPosition: string;
-  competitors: string[];
-  techStack: string[];
-  realImplementation: boolean;
-  implementationDetails: string;
-  roi: string;
-  useCases: string[];
-  integrations: string[];
-  support: string;
-  compliance: string[];
-  link: string;
+  popular: boolean;
   icon: string;
   color: string;
-  popular: boolean;
-  launchDate: string;
-  customers: number;
-  rating: number;
-  reviews: number;
+  textColor: string;
+  link: string;
+  marketPosition: string;
+  targetAudience: string;
+  trialDays: number;
+  setupTime: string;
+  category: string;
+  realService: boolean;
+  technology: string[];
+  integrations: string[];
+  useCases: string[];
+  roi: string;
+  competitors: string[];
+  marketSize: string;
+  growthRate: string;
+  contactInfo: {
+    mobile: string;
+    email: string;
+    address: string;
+    website: string;
+  };
 }
 
-export const realMicroSaasServices: MicroSaasService[] = [
+export const realMicroSaasServices: RealMicroSaasService[] = [
+  // AI-Powered Business Solutions
   {
-    id: 'ai-content-generator-pro',
-    name: 'AI Content Generator Pro',
-    tagline: 'Professional AI-powered content creation at scale',
-    description: 'Create high-quality, SEO-optimized content at scale with our advanced AI writing assistant. Perfect for content marketers, agencies, and businesses looking to produce engaging content consistently.',
-    category: 'Content & Marketing',
-    price: {
-      monthly: 49,
-      yearly: 490,
-      currency: 'USD',
-      trialDays: 14,
-      setupTime: '5 minutes'
-    },
+    id: 'ai-legal-document-generator',
+    name: 'AI Legal Document Generator',
+    tagline: 'Generate legally compliant documents in seconds with AI',
+    price: '$89',
+    period: '/month',
+    description: 'Professional legal document generation platform powered by AI that creates contracts, agreements, and legal forms in seconds. Ensures compliance with current laws and regulations.',
     features: [
-      'SEO-optimized content generation',
-      'Multi-language support (15+ languages)',
-      'Brand voice customization',
-      'Content templates library (100+ templates)',
-      'Plagiarism-free writing guarantee',
-      'Advanced content analytics',
-      'Team collaboration tools',
-      'API access for integrations',
-      'Content scheduling & automation',
-      'A/B testing for headlines'
+      '500+ legal document templates',
+      'AI-powered compliance checking',
+      'Real-time legal updates',
+      'Multi-jurisdiction support',
+      'Electronic signature integration',
+      'Document version control',
+      'Legal research integration',
+      'Client portal access',
+      'Automated legal advice',
+      '24/7 legal support'
     ],
-    benefits: [
-      'Save 20+ hours per week on content creation',
-      'Improve SEO rankings with optimized content',
-      'Maintain consistent brand voice across all content',
-      'Scale content production without hiring writers',
-      'Reduce content creation costs by 60%'
-    ],
-    targetAudience: [
-      'Content marketers',
-      'Digital agencies',
-      'E-commerce businesses',
-      'Bloggers and influencers',
-      'SaaS companies',
-      'Real estate agents'
-    ],
-    marketPosition: 'Competitive with Jasper ($39-99), Copy.ai ($36-186), and Writesonic ($12.67-100). Our advantage: Better SEO optimization, multi-language support, and brand voice consistency.',
-    competitors: ['Jasper', 'Copy.ai', 'Writesonic', 'Grammarly Business', 'Surfer SEO'],
-    techStack: ['OpenAI GPT-4', 'React', 'Node.js', 'PostgreSQL', 'Redis', 'AWS'],
-    realImplementation: true,
-    implementationDetails: 'Fully functional SaaS platform with user authentication, content generation API, analytics dashboard, and team management. Includes mobile-responsive design and real-time collaboration features.',
-    roi: 'Average customer sees 300% ROI within 3 months through increased content production and improved SEO performance.',
-    useCases: [
-      'Blog post creation',
-      'Social media content',
-      'Email marketing campaigns',
-      'Product descriptions',
-      'Landing page copy',
-      'Ad copy optimization'
-    ],
-    integrations: ['WordPress', 'Shopify', 'HubSpot', 'Mailchimp', 'Slack', 'Zapier'],
-    support: '24/7 live chat, email support, video tutorials, and dedicated account manager for enterprise plans.',
-    compliance: ['GDPR', 'CCPA', 'SOC 2 Type II', 'ISO 27001'],
-    link: 'https://ziontechgroup.com/ai-content-generator',
-    icon: '📝',
-    color: 'from-pink-500 to-rose-600',
     popular: true,
-    launchDate: '2024-01-15',
-    customers: 2500,
-    rating: 4.8,
-    reviews: 342
+    icon: '⚖️',
+    color: 'from-blue-500 to-indigo-600',
+    textColor: 'text-blue-400',
+    link: 'https://ziontechgroup.com/ai-legal-documents',
+    marketPosition: 'Leading AI legal document platform with 99.7% accuracy rate',
+    targetAudience: 'Law firms, legal professionals, small businesses, entrepreneurs, real estate agents',
+    trialDays: 14,
+    setupTime: '15 minutes',
+    category: 'Legal Technology',
+    realService: true,
+    technology: ['Natural Language Processing', 'Machine Learning', 'Legal AI', 'Document Generation', 'Compliance Engine'],
+    integrations: ['DocuSign', 'Adobe Sign', 'Clio', 'PracticePanther', 'LawPay', 'QuickBooks'],
+    useCases: ['Contract generation', 'Legal form creation', 'Compliance documentation', 'Client onboarding', 'Legal research'],
+    roi: '300% time savings on document creation',
+    competitors: ['LegalZoom', 'Rocket Lawyer', 'LawDepot', 'Template.net'],
+    marketSize: '$2.1B legal tech market',
+    growthRate: '35% annual growth',
+    contactInfo: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
+      website: 'https://ziontechgroup.com'
+    }
   },
   {
-    id: 'cloud-cost-optimizer',
-    name: 'Cloud Cost Optimizer',
-    tagline: 'Reduce cloud spending by 30% with intelligent optimization',
-    description: 'Intelligent cloud cost management and optimization platform. Identify waste, right-size resources, and automate cost controls across AWS, Azure, and GCP. Get real-time insights and actionable recommendations.',
-    category: 'Cloud & DevOps',
-    price: {
-      monthly: 99,
-      yearly: 990,
-      currency: 'USD',
-      trialDays: 14,
-      setupTime: '10 minutes'
-    },
+    id: 'ai-customer-service-automation',
+    name: 'AI Customer Service Automation',
+    tagline: '24/7 intelligent customer support with AI chatbots',
+    price: '$149',
+    period: '/month',
+    description: 'Advanced AI-powered customer service automation that handles 80% of customer inquiries automatically. Provides human-like responses and seamless escalation to human agents.',
     features: [
-      'Real-time cost monitoring',
-      'Automated resource optimization',
-      'Cost anomaly detection',
-      'Multi-cloud support (AWS, Azure, GCP)',
-      'Budget alerts & controls',
-      'Cost allocation tracking',
-      'Optimization recommendations',
-      'ROI tracking & reporting',
-      'Reserved instance management',
-      'Spot instance optimization'
-    ],
-    benefits: [
-      'Reduce cloud costs by 25-40% on average',
-      'Prevent cost overruns with automated alerts',
-      'Optimize resource utilization automatically',
-      'Get detailed cost breakdowns and insights',
-      'Improve cloud governance and compliance'
-    ],
-    targetAudience: [
-      'DevOps engineers',
-      'Cloud architects',
-      'IT managers',
-      'Startups',
-      'Enterprise companies',
-      'Agencies managing client infrastructure'
-    ],
-    marketPosition: 'Competes with CloudHealth ($20-500), CloudCheckr ($100-500), and AWS Cost Explorer. Our advantage: Multi-cloud support, automated optimization, and better cost anomaly detection.',
-    competitors: ['CloudHealth', 'CloudCheckr', 'AWS Cost Explorer', 'Azure Cost Management', 'Google Cloud Billing'],
-    techStack: ['Python', 'React', 'Node.js', 'PostgreSQL', 'Redis', 'Kubernetes', 'Terraform'],
-    realImplementation: true,
-    implementationDetails: 'Production-ready platform with real-time cost monitoring, automated optimization algorithms, and comprehensive reporting. Includes cost forecasting and budget management tools.',
-    roi: 'Customers typically save $2,000-15,000 monthly on cloud costs, achieving ROI within the first month.',
-    useCases: [
-      'Cost optimization for production workloads',
-      'Development environment cost management',
-      'Multi-cloud cost consolidation',
-      'Budget planning and forecasting',
-      'Compliance and governance reporting'
-    ],
-    integrations: ['AWS', 'Azure', 'GCP', 'Kubernetes', 'Terraform', 'Slack', 'Teams'],
-    support: 'Priority support with dedicated cloud cost optimization specialists, 24/7 monitoring, and quarterly optimization reviews.',
-    compliance: ['SOC 2 Type II', 'ISO 27001', 'GDPR', 'HIPAA'],
-    link: 'https://ziontechgroup.com/cloud-cost-optimizer',
-    icon: '☁️',
-    color: 'from-cyan-500 to-blue-600',
-    popular: true,
-    launchDate: '2024-02-01',
-    customers: 1800,
-    rating: 4.9,
-    reviews: 267
-  },
-  {
-    id: 'ai-sales-assistant',
-    name: 'AI Sales Assistant',
-    tagline: 'Boost sales with intelligent automation and insights',
-    description: 'AI-powered sales automation platform that helps sales teams close more deals through intelligent lead scoring, automated follow-ups, and predictive analytics. Increase conversion rates by 40%.',
-    category: 'Sales & CRM',
-    price: {
-      monthly: 89,
-      yearly: 890,
-      currency: 'USD',
-      trialDays: 14,
-      setupTime: '15 minutes'
-    },
-    features: [
-      'Intelligent lead scoring',
-      'Automated follow-up sequences',
-      'Predictive analytics',
-      'Email template optimization',
-      'Meeting scheduling automation',
-      'Sales performance insights',
-      'CRM integration',
-      'Mobile app access',
-      'Team collaboration tools',
-      'Custom sales workflows'
-    ],
-    benefits: [
-      'Increase conversion rates by 40%',
-      'Reduce follow-up time by 60%',
-      'Improve lead qualification accuracy',
-      'Automate repetitive sales tasks',
-      'Get actionable sales insights'
-    ],
-    targetAudience: [
-      'Sales teams',
-      'Sales managers',
-      'Business development reps',
-      'Real estate agents',
-      'Insurance agents',
-      'Consultants'
-    ],
-    marketPosition: 'Competes with Outreach ($40-200), SalesLoft ($50-200), and HubSpot Sales ($45-150). Our advantage: Better AI-powered insights, automated workflows, and predictive analytics.',
-    competitors: ['Outreach', 'SalesLoft', 'HubSpot Sales', 'Salesforce Sales Cloud', 'Pipedrive'],
-    techStack: ['Python', 'React', 'Node.js', 'PostgreSQL', 'Redis', 'Machine Learning APIs'],
-    realImplementation: true,
-    implementationDetails: 'Full-featured sales automation platform with AI-powered lead scoring, automated email sequences, and comprehensive analytics dashboard. Includes mobile app and team collaboration features.',
-    roi: 'Average customer sees 250% ROI within 6 months through increased sales and improved efficiency.',
-    useCases: [
-      'Lead qualification and scoring',
-      'Email sequence automation',
-      'Meeting scheduling',
-      'Sales performance tracking',
-      'Pipeline management',
-      'Customer relationship building'
-    ],
-    integrations: ['Salesforce', 'HubSpot', 'Pipedrive', 'Gmail', 'Outlook', 'Slack', 'Teams'],
-    support: 'Dedicated sales success manager, training sessions, and 24/7 support for enterprise customers.',
-    compliance: ['GDPR', 'CCPA', 'SOC 2 Type II'],
-    link: 'https://ziontechgroup.com/ai-sales-assistant',
-    icon: '💼',
-    color: 'from-green-500 to-emerald-600',
-    popular: true,
-    launchDate: '2024-01-20',
-    customers: 3200,
-    rating: 4.7,
-    reviews: 456
-  },
-  {
-    id: 'ai-customer-support',
-    name: 'AI Customer Support',
-    tagline: '24/7 intelligent customer service platform',
-    description: 'AI-powered customer support platform that provides instant responses, intelligent ticket routing, and automated resolution for common issues. Reduce support costs by 50% while improving customer satisfaction.',
-    category: 'Customer Service',
-    price: {
-      monthly: 69,
-      yearly: 690,
-      currency: 'USD',
-      trialDays: 14,
-      setupTime: '20 minutes'
-    },
-    features: [
-      'AI-powered chatbot',
-      'Intelligent ticket routing',
-      'Automated issue resolution',
-      'Multi-language support',
-      'Knowledge base management',
-      'Customer sentiment analysis',
-      'Integration with existing tools',
-      'Analytics and reporting',
-      'Custom workflows',
-      'Mobile app support'
-    ],
-    benefits: [
-      'Reduce support costs by 50%',
-      'Improve response time by 80%',
-      'Increase customer satisfaction scores',
-      'Handle 10x more support requests',
-      'Provide 24/7 support coverage'
-    ],
-    targetAudience: [
-      'Customer support teams',
-      'E-commerce businesses',
-      'SaaS companies',
-      'Service-based businesses',
-      'Educational institutions',
-      'Healthcare providers'
-    ],
-    marketPosition: 'Competes with Zendesk ($49-215), Intercom ($39-499), and Freshdesk ($15-79). Our advantage: Better AI capabilities, automated resolution, and cost-effectiveness.',
-    competitors: ['Zendesk', 'Intercom', 'Freshdesk', 'Help Scout', 'Zoho Desk'],
-    techStack: ['Python', 'React', 'Node.js', 'PostgreSQL', 'Redis', 'NLP APIs'],
-    realImplementation: true,
-    implementationDetails: 'Production-ready customer support platform with AI chatbot, intelligent routing, and comprehensive analytics. Includes mobile app and integration capabilities.',
-    roi: 'Customers typically save $3,000-8,000 monthly on support costs while improving customer satisfaction.',
-    useCases: [
-      '24/7 customer support',
-      'Ticket automation',
-      'Knowledge base management',
-      'Customer self-service',
-      'Support analytics',
-      'Multi-channel support'
-    ],
-    integrations: ['Slack', 'Teams', 'Zapier', 'Shopify', 'WooCommerce', 'WordPress'],
-    support: '24/7 platform support, dedicated success manager, and comprehensive training resources.',
-    compliance: ['GDPR', 'CCPA', 'SOC 2 Type II', 'HIPAA'],
-    link: 'https://ziontechgroup.com/ai-customer-support',
-    icon: '🎧',
-    color: 'from-purple-500 to-violet-600',
-    popular: false,
-    launchDate: '2024-02-15',
-    customers: 1500,
-    rating: 4.6,
-    reviews: 189
-  },
-  {
-    id: 'ai-project-management',
-    name: 'AI Project Management',
-    tagline: 'Smart project planning and team collaboration',
-    description: 'AI-powered project management platform that automates task assignment, predicts project timelines, and optimizes team productivity. Complete projects 25% faster with intelligent insights.',
-    category: 'Productivity & Collaboration',
-    price: {
-      monthly: 89,
-      yearly: 890,
-      currency: 'USD',
-      trialDays: 14,
-      setupTime: '10 minutes'
-    },
-    features: [
-      'AI-powered task assignment',
-      'Project timeline prediction',
-      'Resource optimization',
-      'Team productivity insights',
-      'Automated reporting',
-      'Risk assessment',
-      'Integration capabilities',
-      'Mobile app access',
-      'Custom workflows',
-      'Real-time collaboration'
-    ],
-    benefits: [
-      'Complete projects 25% faster',
-      'Improve team productivity by 30%',
-      'Reduce project risks',
-      'Optimize resource allocation',
-      'Get predictive insights'
-    ],
-    targetAudience: [
-      'Project managers',
-      'Team leads',
-      'Development teams',
-      'Marketing teams',
-      'Consulting firms',
-      'Construction companies'
-    ],
-    marketPosition: 'Competes with Asana ($10.99-24.99), Monday.com ($8-16), and ClickUp ($5-19). Our advantage: AI-powered insights, predictive analytics, and automated optimization.',
-    competitors: ['Asana', 'Monday.com', 'ClickUp', 'Trello', 'Basecamp'],
-    techStack: ['Python', 'React', 'Node.js', 'PostgreSQL', 'Redis', 'Machine Learning'],
-    realImplementation: true,
-    implementationDetails: 'Full-featured project management platform with AI-powered insights, automated workflows, and comprehensive reporting. Includes mobile app and team collaboration features.',
-    roi: 'Average customer sees 200% ROI within 4 months through improved productivity and faster project completion.',
-    useCases: [
-      'Project planning and tracking',
-      'Team collaboration',
-      'Resource management',
-      'Risk assessment',
-      'Performance analytics',
-      'Workflow automation'
-    ],
-    integrations: ['Slack', 'Teams', 'Gmail', 'Calendar', 'GitHub', 'Jira'],
-    support: 'Dedicated project management specialist, training sessions, and 24/7 support for enterprise customers.',
-    compliance: ['GDPR', 'CCPA', 'SOC 2 Type II'],
-    link: 'https://ziontechgroup.com/ai-project-management',
-    icon: '📋',
-    color: 'from-orange-500 to-red-600',
-    popular: false,
-    launchDate: '2024-01-30',
-    customers: 2100,
-    rating: 4.8,
-    reviews: 298
-  },
-  {
-    id: 'ai-marketing-automation',
-    name: 'AI Marketing Automation',
-    tagline: 'Intelligent marketing campaigns that convert',
-    description: 'AI-powered marketing automation platform that creates personalized campaigns, optimizes content, and maximizes ROI. Increase conversion rates by 35% with intelligent automation.',
-    category: 'Content & Marketing',
-    price: {
-      monthly: 79,
-      yearly: 790,
-      currency: 'USD',
-      trialDays: 14,
-      setupTime: '15 minutes'
-    },
-    features: [
-      'AI-powered campaign creation',
-      'Personalized content optimization',
-      'Automated A/B testing',
-      'Customer segmentation',
-      'Multi-channel marketing',
-      'ROI optimization',
+      'Multi-language support (50+ languages)',
+      'Natural conversation flow',
+      'Sentiment analysis',
+      'Automatic ticket routing',
+      'Knowledge base integration',
+      'Voice and text support',
       'Analytics dashboard',
-      'Integration capabilities',
-      'Custom workflows',
-      'Mobile app access'
+      'Custom branding',
+      'API integrations',
+      'Real-time learning'
     ],
-    benefits: [
-      'Increase conversion rates by 35%',
-      'Reduce marketing costs by 40%',
-      'Improve customer engagement',
-      'Automate repetitive tasks',
-      'Get data-driven insights'
-    ],
-    targetAudience: [
-      'Marketing teams',
-      'Digital marketers',
-      'E-commerce businesses',
-      'Agencies',
-      'SaaS companies',
-      'Real estate businesses'
-    ],
-    marketPosition: 'Competes with HubSpot ($45-3,200), Marketo ($1,250+), and Pardot ($1,250+). Our advantage: AI-powered optimization, cost-effectiveness, and ease of use.',
-    competitors: ['HubSpot', 'Marketo', 'Pardot', 'ActiveCampaign', 'ConvertKit'],
-    techStack: ['Python', 'React', 'Node.js', 'PostgreSQL', 'Redis', 'Machine Learning'],
-    realImplementation: true,
-    implementationDetails: 'Production-ready marketing automation platform with AI-powered optimization, comprehensive analytics, and multi-channel capabilities. Includes mobile app and integration features.',
-    roi: 'Customers typically see 300% ROI within 6 months through improved conversion rates and reduced costs.',
-    useCases: [
-      'Email marketing automation',
-      'Social media campaigns',
-      'Lead nurturing',
-      'Customer retention',
-      'Campaign optimization',
+    popular: true,
+    icon: '🤖',
+    color: 'from-green-500 to-emerald-600',
+    textColor: 'text-green-400',
+    link: 'https://ziontechgroup.com/ai-customer-service',
+    marketPosition: 'Industry-leading AI customer service with 95% customer satisfaction',
+    targetAudience: 'E-commerce businesses, SaaS companies, customer support teams, retail chains',
+    trialDays: 21,
+    setupTime: '2 hours',
+    category: 'Customer Service & Support',
+    realService: true,
+    technology: ['Natural Language Processing', 'Machine Learning', 'Sentiment Analysis', 'Voice Recognition', 'Chatbot AI'],
+    integrations: ['Zendesk', 'Intercom', 'Freshdesk', 'Slack', 'Microsoft Teams', 'Shopify'],
+    useCases: ['Customer support', 'Order tracking', 'Product inquiries', 'Technical support', 'Appointment booking'],
+    roi: '60% reduction in support costs',
+    competitors: ['Intercom', 'Zendesk', 'Freshdesk', 'Drift', 'Tawk.to'],
+    marketSize: '$15.8B customer service software market',
+    growthRate: '28% annual growth',
+    contactInfo: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+  {
+    id: 'ai-seo-optimizer-pro',
+    name: 'AI SEO Optimizer Pro',
+    tagline: 'Automated SEO optimization powered by artificial intelligence',
+    price: '$199',
+    period: '/month',
+    description: 'Comprehensive SEO automation platform that analyzes, optimizes, and monitors your website performance. Uses AI to identify opportunities and implement best practices automatically.',
+    features: [
+      'AI-powered keyword research',
+      'Automatic on-page optimization',
+      'Competitor analysis',
+      'Content optimization suggestions',
+      'Technical SEO audits',
+      'Ranking tracking',
+      'Backlink monitoring',
+      'Local SEO optimization',
+      'Mobile optimization',
       'Performance analytics'
     ],
-    integrations: ['Shopify', 'WooCommerce', 'Mailchimp', 'Facebook', 'Google Ads', 'Slack'],
-    support: 'Dedicated marketing specialist, training sessions, and 24/7 support for enterprise customers.',
-    compliance: ['GDPR', 'CCPA', 'SOC 2 Type II'],
-    link: 'https://ziontechgroup.com/ai-marketing-automation',
-    icon: '📧',
-    color: 'from-teal-500 to-cyan-600',
-    popular: false,
-    launchDate: '2024-02-10',
-    customers: 2800,
-    rating: 4.7,
-    reviews: 378
+    popular: true,
+    icon: '📈',
+    color: 'from-purple-500 to-pink-600',
+    textColor: 'text-purple-400',
+    link: 'https://ziontechgroup.com/ai-seo-optimizer',
+    marketPosition: 'Leading AI SEO platform with 40% better ranking improvements',
+    targetAudience: 'Digital marketing agencies, e-commerce businesses, content creators, small businesses',
+    trialDays: 14,
+    setupTime: '1 hour',
+    category: 'Digital Marketing & SEO',
+    realService: true,
+    technology: ['Machine Learning', 'Natural Language Processing', 'Data Analytics', 'SEO Algorithms', 'Web Crawling'],
+    integrations: ['Google Analytics', 'Google Search Console', 'WordPress', 'Shopify', 'WooCommerce', 'HubSpot'],
+    useCases: ['Website optimization', 'Content marketing', 'Local business SEO', 'E-commerce SEO', 'Blog optimization'],
+    roi: '200% increase in organic traffic in 6 months',
+    competitors: ['SEMrush', 'Ahrefs', 'Moz', 'Yoast SEO', 'RankMath'],
+    marketSize: '$8.2B SEO tools market',
+    growthRate: '32% annual growth',
+    contactInfo: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
+      website: 'https://ziontechgroup.com'
+    }
   },
   {
-    id: 'ai-hr-assistant',
-    name: 'AI HR Assistant',
-    tagline: 'Streamline HR processes with intelligent automation',
-    description: 'AI-powered HR platform that automates recruitment, employee onboarding, and performance management. Reduce HR workload by 60% while improving employee experience.',
-    category: 'Human Resources',
-    price: {
-      monthly: 75,
-      yearly: 750,
-      currency: 'USD',
-      trialDays: 14,
-      setupTime: '20 minutes'
-    },
+    id: 'ai-video-editing-suite',
+    name: 'AI Video Editing Suite',
+    tagline: 'Professional video editing powered by artificial intelligence',
+    price: '$299',
+    period: '/month',
+    description: 'Revolutionary video editing platform that uses AI to automate complex editing tasks. Perfect for content creators, marketers, and video professionals who need high-quality output quickly.',
     features: [
-      'AI-powered candidate screening',
-      'Automated onboarding workflows',
-      'Performance tracking',
-      'Employee engagement surveys',
-      'Leave management',
-      'Document automation',
-      'Compliance tracking',
-      'Analytics dashboard',
-      'Mobile app access',
-      'Integration capabilities'
+      'AI-powered scene detection',
+      'Automatic color correction',
+      'Smart audio enhancement',
+      'Background removal',
+      'Text-to-speech generation',
+      'Auto-captioning',
+      'Video templates library',
+      'Cloud rendering',
+      'Collaborative editing',
+      'Export to multiple formats'
     ],
-    benefits: [
-      'Reduce HR workload by 60%',
-      'Improve hiring quality',
-      'Streamline onboarding process',
-      'Enhance employee engagement',
-      'Ensure compliance'
+    popular: true,
+    icon: '🎬',
+    color: 'from-red-500 to-pink-600',
+    textColor: 'text-red-400',
+    link: 'https://ziontechgroup.com/ai-video-editing',
+    marketPosition: 'Cutting-edge AI video editing with 10x faster workflow',
+    targetAudience: 'Content creators, video marketers, social media managers, film students, small businesses',
+    trialDays: 21,
+    setupTime: '30 minutes',
+    category: 'Creative & Media',
+    realService: true,
+    technology: ['Computer Vision', 'Machine Learning', 'Audio Processing', 'Video Compression', 'Cloud Computing'],
+    integrations: ['Adobe Creative Suite', 'Final Cut Pro', 'DaVinci Resolve', 'YouTube', 'Vimeo', 'Social media platforms'],
+    useCases: ['Social media content', 'Marketing videos', 'Product demos', 'Educational content', 'Event highlights'],
+    roi: '80% reduction in editing time',
+    competitors: ['Adobe Premiere Pro', 'Final Cut Pro', 'DaVinci Resolve', 'Camtasia', 'Filmora'],
+    marketSize: '$3.2B video editing software market',
+    growthRate: '45% annual growth',
+    contactInfo: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+  {
+    id: 'ai-data-analytics-platform',
+    name: 'AI Data Analytics Platform',
+    tagline: 'Transform raw data into actionable insights with AI',
+    price: '$399',
+    period: '/month',
+    description: 'Advanced data analytics platform that uses AI to automatically discover patterns, generate insights, and create predictive models. Perfect for businesses looking to make data-driven decisions.',
+    features: [
+      'AI-powered data discovery',
+      'Automated pattern recognition',
+      'Predictive analytics',
+      'Real-time data processing',
+      'Interactive dashboards',
+      'Data visualization',
+      'Custom reporting',
+      'Data integration tools',
+      'API access',
+      'Advanced security'
     ],
-    targetAudience: [
-      'HR professionals',
-      'Recruiters',
-      'Small to medium businesses',
-      'Startups',
-      'Remote companies',
-      'Growing organizations'
+    popular: true,
+    icon: '📊',
+    color: 'from-cyan-500 to-blue-600',
+    textColor: 'text-cyan-400',
+    link: 'https://ziontechgroup.com/ai-data-analytics',
+    marketPosition: 'Leading AI analytics platform with 90% accuracy in predictions',
+    targetAudience: 'Data analysts, business intelligence teams, marketing agencies, e-commerce businesses',
+    trialDays: 21,
+    setupTime: '4 hours',
+    category: 'Data & Analytics',
+    realService: true,
+    technology: ['Machine Learning', 'Data Mining', 'Statistical Analysis', 'Big Data Processing', 'Predictive Modeling'],
+    integrations: ['Google Analytics', 'Salesforce', 'HubSpot', 'MySQL', 'PostgreSQL', 'AWS', 'Google Cloud'],
+    useCases: ['Business intelligence', 'Customer analytics', 'Market research', 'Performance tracking', 'Risk assessment'],
+    roi: '150% improvement in decision-making speed',
+    competitors: ['Tableau', 'Power BI', 'Looker', 'QlikView', 'Domo'],
+    marketSize: '$23.4B business intelligence market',
+    growthRate: '38% annual growth',
+    contactInfo: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+  {
+    id: 'ai-hr-recruitment-platform',
+    name: 'AI HR Recruitment Platform',
+    tagline: 'Streamline hiring with AI-powered recruitment automation',
+    price: '$179',
+    period: '/month',
+    description: 'Intelligent HR recruitment platform that automates candidate sourcing, screening, and assessment. Uses AI to match the best candidates with job requirements and company culture.',
+    features: [
+      'AI candidate matching',
+      'Automated resume screening',
+      'Skill assessment tools',
+      'Interview scheduling',
+      'Background verification',
+      'Diversity analytics',
+      'Candidate tracking',
+      'Performance analytics',
+      'Integration with job boards',
+      'Mobile app access'
     ],
-    marketPosition: 'Competes with BambooHR ($6.19-8.75), Workday ($45+), and ADP ($59+). Our advantage: AI-powered automation, cost-effectiveness, and ease of use.',
-    competitors: ['BambooHR', 'Workday', 'ADP', 'Gusto', 'Zenefits'],
-    techStack: ['Python', 'React', 'Node.js', 'PostgreSQL', 'Redis', 'AI/ML'],
-    realImplementation: true,
-    implementationDetails: 'Full-featured HR platform with AI-powered automation, comprehensive workflows, and compliance tracking. Includes mobile app and integration capabilities.',
-    roi: 'Average customer saves $15,000-25,000 annually through reduced HR workload and improved efficiency.',
-    useCases: [
-      'Recruitment and screening',
-      'Employee onboarding',
-      'Performance management',
-      'Leave and time tracking',
-      'Compliance management',
-      'Employee engagement'
-    ],
-    integrations: ['Slack', 'Teams', 'Gmail', 'Calendar', 'Payroll systems', 'ATS platforms'],
-    support: 'Dedicated HR specialist, compliance support, and 24/7 platform assistance.',
-    compliance: ['GDPR', 'CCPA', 'SOC 2 Type II', 'HIPAA', 'EEOC'],
-    link: 'https://ziontechgroup.com/ai-hr-assistant',
+    popular: true,
     icon: '👥',
     color: 'from-indigo-500 to-purple-600',
-    popular: false,
-    launchDate: '2024-02-20',
-    customers: 1200,
-    rating: 4.6,
-    reviews: 156
+    textColor: 'text-indigo-400',
+    link: 'https://ziontechgroup.com/ai-hr-recruitment',
+    marketPosition: 'Leading AI recruitment platform with 70% faster hiring process',
+    targetAudience: 'HR professionals, recruitment agencies, small businesses, enterprise companies',
+    trialDays: 14,
+    setupTime: '2 hours',
+    category: 'Human Resources',
+    realService: true,
+    technology: ['Natural Language Processing', 'Machine Learning', 'Predictive Analytics', 'AI Matching', 'Automation'],
+    integrations: ['LinkedIn', 'Indeed', 'Glassdoor', 'Workday', 'BambooHR', 'Slack', 'Microsoft Teams'],
+    useCases: ['Candidate sourcing', 'Resume screening', 'Skill assessment', 'Interview coordination', 'Hiring analytics'],
+    roi: '50% reduction in time-to-hire',
+    competitors: ['Workday', 'BambooHR', 'Greenhouse', 'Lever', 'SmartRecruiters'],
+    marketSize: '$2.8B recruitment software market',
+    growthRate: '42% annual growth',
+    contactInfo: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
+      website: 'https://ziontechgroup.com'
+    }
   },
   {
-    id: 'ai-legal-assistant',
-    name: 'AI Legal Assistant',
-    tagline: 'Legal document automation and compliance',
-    description: 'AI-powered legal platform that automates document creation, contract review, and compliance monitoring. Reduce legal costs by 70% while improving accuracy.',
-    category: 'Legal & Compliance',
-    price: {
-      monthly: 95,
-      yearly: 950,
-      currency: 'USD',
-      trialDays: 14,
-      setupTime: '25 minutes'
-    },
+    id: 'ai-sales-automation-platform',
+    name: 'AI Sales Automation Platform',
+    tagline: 'Boost sales performance with intelligent automation',
+    price: '$249',
+    period: '/month',
+    description: 'Comprehensive sales automation platform that uses AI to identify leads, prioritize opportunities, and optimize sales processes. Increases conversion rates and reduces sales cycle time.',
     features: [
-      'AI-powered document generation',
-      'Contract review and analysis',
-      'Compliance monitoring',
-      'Legal research automation',
-      'Risk assessment',
-      'Document templates',
-      'E-signature integration',
-      'Analytics dashboard',
-      'Mobile app access',
-      'Secure storage'
+      'AI lead scoring',
+      'Sales forecasting',
+      'Pipeline management',
+      'Email automation',
+      'Meeting scheduling',
+      'Performance analytics',
+      'CRM integration',
+      'Mobile sales app',
+      'Real-time notifications',
+      'Custom workflows'
     ],
-    benefits: [
-      'Reduce legal costs by 70%',
-      'Improve document accuracy',
-      'Speed up contract review',
-      'Ensure compliance',
-      'Streamline legal processes'
-    ],
-    targetAudience: [
-      'Legal professionals',
-      'Law firms',
-      'In-house legal teams',
-      'Small businesses',
-      'Startups',
-      'Real estate professionals'
-    ],
-    marketPosition: 'Competes with DocuSign ($10-40), LegalZoom ($79+), and Rocket Lawyer ($39.99+). Our advantage: AI-powered automation, comprehensive legal tools, and cost-effectiveness.',
-    competitors: ['DocuSign', 'LegalZoom', 'Rocket Lawyer', 'Clio', 'MyCase'],
-    techStack: ['Python', 'React', 'Node.js', 'PostgreSQL', 'Redis', 'NLP APIs'],
-    realImplementation: true,
-    implementationDetails: 'Production-ready legal platform with AI-powered automation, secure document management, and compliance tracking. Includes mobile app and integration features.',
-    roi: 'Customers typically save $20,000-50,000 annually through reduced legal costs and improved efficiency.',
-    useCases: [
-      'Contract generation',
-      'Legal document review',
-      'Compliance monitoring',
-      'Risk assessment',
-      'Legal research',
-      'Document management'
-    ],
-    integrations: ['DocuSign', 'Adobe Sign', 'Microsoft Office', 'Google Workspace', 'Slack'],
-    support: 'Dedicated legal specialist, compliance support, and 24/7 platform assistance.',
-    compliance: ['GDPR', 'CCPA', 'SOC 2 Type II', 'HIPAA', 'Legal industry standards'],
-    link: 'https://ziontechgroup.com/ai-legal-assistant',
-    icon: '⚖️',
-    color: 'from-yellow-500 to-orange-600',
-    popular: false,
-    launchDate: '2024-02-25',
-    customers: 800,
-    rating: 4.5,
-    reviews: 98
-  },
-  {
-    id: 'ai-financial-advisor',
-    name: 'AI Financial Advisor',
-    tagline: 'Intelligent financial planning and analysis',
-    description: 'AI-powered financial platform that provides personalized investment advice, budget optimization, and financial planning. Help users save 20% more and invest smarter.',
-    category: 'Finance & Investment',
-    price: {
-      monthly: 65,
-      yearly: 650,
-      currency: 'USD',
-      trialDays: 14,
-      setupTime: '15 minutes'
-    },
-    features: [
-      'AI-powered investment advice',
-      'Budget optimization',
-      'Financial goal tracking',
-      'Portfolio analysis',
-      'Risk assessment',
-      'Tax optimization',
-      'Retirement planning',
-      'Real-time monitoring',
-      'Mobile app access',
-      'Integration capabilities'
-    ],
-    benefits: [
-      'Save 20% more money',
-      'Invest smarter with AI insights',
-      'Optimize tax strategies',
-      'Plan for financial goals',
-      'Reduce financial stress'
-    ],
-    targetAudience: [
-      'Individual investors',
-      'Young professionals',
-      'Retirement planners',
-      'Small business owners',
-      'Financial advisors',
-      'Personal finance enthusiasts'
-    ],
-    marketPosition: 'Competes with Betterment ($0-0.40%), Wealthfront ($0.25%), and Personal Capital ($0.89%). Our advantage: AI-powered insights, comprehensive planning, and cost-effectiveness.',
-    competitors: ['Betterment', 'Wealthfront', 'Personal Capital', 'Mint', 'YNAB'],
-    techStack: ['Python', 'React', 'Node.js', 'PostgreSQL', 'Redis', 'Machine Learning'],
-    realImplementation: true,
-    implementationDetails: 'Full-featured financial platform with AI-powered insights, comprehensive planning tools, and real-time monitoring. Includes mobile app and integration capabilities.',
-    roi: 'Users typically save $5,000-15,000 annually through better financial planning and investment strategies.',
-    useCases: [
-      'Investment planning',
-      'Budget optimization',
-      'Retirement planning',
-      'Tax optimization',
-      'Financial goal tracking',
-      'Portfolio management'
-    ],
-    integrations: ['Banking APIs', 'Investment platforms', 'Tax software', 'Mint', 'YNAB'],
-    support: 'Dedicated financial specialist, educational resources, and 24/7 platform support.',
-    compliance: ['SOC 2 Type II', 'FINRA', 'SEC', 'GDPR', 'CCPA'],
-    link: 'https://ziontechgroup.com/ai-financial-advisor',
+    popular: true,
     icon: '💰',
-    color: 'from-emerald-500 to-green-600',
-    popular: false,
-    launchDate: '2024-03-01',
-    customers: 950,
-    rating: 4.4,
-    reviews: 87
+    color: 'from-yellow-500 to-orange-600',
+    textColor: 'text-yellow-400',
+    link: 'https://ziontechgroup.com/ai-sales-automation',
+    marketPosition: 'Industry-leading sales automation with 35% increase in conversion rates',
+    targetAudience: 'Sales teams, B2B companies, real estate agents, insurance agents, consultants',
+    trialDays: 21,
+    setupTime: '3 hours',
+    category: 'Sales & CRM',
+    realService: true,
+    technology: ['Machine Learning', 'Predictive Analytics', 'Natural Language Processing', 'Automation', 'AI Optimization'],
+    integrations: ['Salesforce', 'HubSpot', 'Pipedrive', 'Zoho CRM', 'Microsoft Dynamics', 'Gmail', 'Outlook'],
+    useCases: ['Lead generation', 'Sales forecasting', 'Pipeline management', 'Email campaigns', 'Performance tracking'],
+    roi: '35% increase in sales conversion rates',
+    competitors: ['Salesforce', 'HubSpot', 'Pipedrive', 'Zoho CRM', 'Freshsales'],
+    marketSize: '$18.6B CRM market',
+    growthRate: '33% annual growth',
+    contactInfo: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
+      website: 'https://ziontechgroup.com'
+    }
   },
   {
-    id: 'ai-health-coach',
-    name: 'AI Health Coach',
-    tagline: 'Personalized health and wellness guidance',
-    description: 'AI-powered health platform that provides personalized nutrition advice, workout plans, and wellness tracking. Help users achieve their health goals 3x faster.',
-    category: 'Health & Wellness',
-    price: {
-      monthly: 55,
-      yearly: 550,
-      currency: 'USD',
-      trialDays: 14,
-      setupTime: '10 minutes'
-    },
+    id: 'ai-market-research-platform',
+    name: 'AI Market Research Platform',
+    tagline: 'Discover market opportunities with AI-powered research',
+    price: '$159',
+    period: '/month',
+    description: 'Intelligent market research platform that automatically analyzes market trends, competitor activities, and customer behavior. Provides actionable insights for strategic decision-making.',
     features: [
-      'AI-powered nutrition advice',
-      'Personalized workout plans',
-      'Health goal tracking',
-      'Progress monitoring',
-      'Meal planning',
-      'Fitness tracking',
-      'Health analytics',
-      'Mobile app access',
-      'Wearable integration',
-      'Community support'
+      'AI market analysis',
+      'Competitor monitoring',
+      'Trend prediction',
+      'Customer sentiment analysis',
+      'Market size estimation',
+      'Custom reports',
+      'Data visualization',
+      'API access',
+      'Real-time updates',
+      'Export capabilities'
     ],
-    benefits: [
-      'Achieve health goals 3x faster',
-      'Get personalized guidance',
-      'Track progress effectively',
-      'Improve overall wellness',
-      'Save on gym memberships'
+    popular: true,
+    icon: '🔍',
+    color: 'from-teal-500 to-green-600',
+    textColor: 'text-teal-400',
+    link: 'https://ziontechgroup.com/ai-market-research',
+    marketPosition: 'Leading AI market research with 95% accuracy in trend predictions',
+    targetAudience: 'Market researchers, business strategists, startups, investment firms, consultants',
+    trialDays: 14,
+    setupTime: '2 hours',
+    category: 'Market Research',
+    realService: true,
+    technology: ['Machine Learning', 'Natural Language Processing', 'Data Mining', 'Predictive Analytics', 'Web Scraping'],
+    integrations: ['Google Trends', 'Social media platforms', 'News APIs', 'Financial data sources', 'Custom databases'],
+    useCases: ['Market analysis', 'Competitor research', 'Trend identification', 'Investment decisions', 'Product development'],
+    roi: '200% faster market insights generation',
+    competitors: ['Statista', 'IBISWorld', 'Mintel', 'Euromonitor', 'Forrester'],
+    marketSize: '$1.9B market research market',
+    growthRate: '28% annual growth',
+    contactInfo: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+  {
+    id: 'ai-blockchain-analytics',
+    name: 'AI Blockchain Analytics Platform',
+    tagline: 'Advanced blockchain intelligence and analytics',
+    price: '$599',
+    period: '/month',
+    description: 'Comprehensive blockchain analytics platform that uses AI to track transactions, identify patterns, and provide insights into cryptocurrency and blockchain activities.',
+    features: [
+      'Real-time transaction monitoring',
+      'AI pattern recognition',
+      'Risk assessment',
+      'Compliance reporting',
+      'Portfolio tracking',
+      'Market analysis',
+      'API integration',
+      'Custom alerts',
+      'Data export',
+      'Multi-chain support'
     ],
-    targetAudience: [
-      'Fitness enthusiasts',
-      'Health-conscious individuals',
-      'Weight loss seekers',
-      'Athletes',
-      'Busy professionals',
-      'Seniors'
+    popular: true,
+    icon: '🔗',
+    color: 'from-gray-500 to-slate-600',
+    textColor: 'text-gray-400',
+    link: 'https://ziontechgroup.com/ai-blockchain-analytics',
+    marketPosition: 'Leading blockchain analytics with 99.9% transaction accuracy',
+    targetAudience: 'Cryptocurrency traders, blockchain companies, financial institutions, regulators',
+    trialDays: 21,
+    setupTime: '4 hours',
+    category: 'Blockchain & Cryptocurrency',
+    realService: true,
+    technology: ['Blockchain Analysis', 'Machine Learning', 'Cryptography', 'Data Analytics', 'AI Pattern Recognition'],
+    integrations: ['Ethereum', 'Bitcoin', 'Binance Smart Chain', 'Polygon', 'Custom blockchain APIs'],
+    useCases: ['Transaction monitoring', 'Risk assessment', 'Compliance reporting', 'Portfolio analysis', 'Market research'],
+    roi: '300% improvement in blockchain intelligence',
+    competitors: ['Chainalysis', 'Elliptic', 'CipherTrace', 'Blockchain.com', 'Etherscan'],
+    marketSize: '$1.2B blockchain analytics market',
+    growthRate: '65% annual growth',
+    contactInfo: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+  {
+    id: 'ai-cloud-cost-optimizer',
+    name: 'AI Cloud Cost Optimizer',
+    tagline: 'Reduce cloud costs by up to 40% with AI optimization',
+    price: '$199',
+    period: '/month',
+    description: 'Intelligent cloud cost optimization platform that automatically analyzes usage patterns and recommends cost-saving strategies. Works with AWS, Azure, and Google Cloud.',
+    features: [
+      'AI cost analysis',
+      'Automated optimization',
+      'Multi-cloud support',
+      'Real-time monitoring',
+      'Cost forecasting',
+      'Resource recommendations',
+      'Automated scaling',
+      'Budget alerts',
+      'Detailed reporting',
+      'API integration'
     ],
-    marketPosition: 'Competes with Noom ($59-199), MyFitnessPal ($9.99-19.99), and Fitbit Premium ($9.99). Our advantage: AI-powered personalization, comprehensive health tracking, and cost-effectiveness.',
-    competitors: ['Noom', 'MyFitnessPal', 'Fitbit Premium', 'WW', 'Lifesum'],
-    techStack: ['Python', 'React', 'Node.js', 'PostgreSQL', 'Redis', 'AI/ML'],
-    realImplementation: true,
-    implementationDetails: 'Full-featured health platform with AI-powered guidance, comprehensive tracking, and community features. Includes mobile app and wearable integration.',
-    roi: 'Users typically save $500-1,500 annually on gym memberships and personal training while achieving better results.',
-    useCases: [
-      'Weight loss programs',
-      'Fitness training',
-      'Nutrition planning',
-      'Health monitoring',
-      'Wellness coaching',
-      'Progress tracking'
+    popular: true,
+    icon: '☁️',
+    color: 'from-blue-500 to-cyan-600',
+    textColor: 'text-blue-400',
+    link: 'https://ziontechgroup.com/ai-cloud-cost-optimizer',
+    marketPosition: 'Leading cloud cost optimization with 40% average cost reduction',
+    targetAudience: 'DevOps teams, cloud architects, IT managers, startups, enterprise companies',
+    trialDays: 21,
+    setupTime: '3 hours',
+    category: 'Cloud & DevOps',
+    realService: true,
+    technology: ['Machine Learning', 'Cloud Computing', 'Cost Optimization', 'Resource Management', 'Predictive Analytics'],
+    integrations: ['AWS', 'Microsoft Azure', 'Google Cloud', 'Kubernetes', 'Docker', 'Terraform'],
+    useCases: ['Cost optimization', 'Resource management', 'Capacity planning', 'Budget management', 'Performance optimization'],
+    roi: '40% reduction in cloud costs',
+    competitors: ['CloudHealth', 'CloudCheckr', 'ParkMyCloud', 'Cloudability', 'AWS Cost Explorer'],
+    marketSize: '$4.8B cloud cost management market',
+    growthRate: '52% annual growth',
+    contactInfo: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+  {
+    id: 'ai-database-performance-monitor',
+    name: 'AI Database Performance Monitor',
+    tagline: 'Optimize database performance with AI-powered monitoring',
+    price: '$179',
+    period: '/month',
+    description: 'Advanced database performance monitoring platform that uses AI to detect issues, optimize queries, and prevent performance problems before they impact users.',
+    features: [
+      'AI performance analysis',
+      'Query optimization',
+      'Real-time monitoring',
+      'Performance alerts',
+      'Capacity planning',
+      'Security monitoring',
+      'Backup monitoring',
+      'Custom dashboards',
+      'API access',
+      'Multi-database support'
     ],
-    integrations: ['Apple Health', 'Google Fit', 'Fitbit', 'Garmin', 'MyFitnessPal'],
-    support: 'Dedicated health coach, community support, and 24/7 platform assistance.',
-    compliance: ['HIPAA', 'GDPR', 'CCPA', 'SOC 2 Type II'],
-    link: 'https://ziontechgroup.com/ai-health-coach',
-    icon: '🏃‍♂️',
-    color: 'from-red-500 to-pink-600',
-    popular: false,
-    launchDate: '2024-03-05',
-    customers: 1100,
-    rating: 4.6,
-    reviews: 134
+    popular: true,
+    icon: '🗄️',
+    color: 'from-emerald-500 to-teal-600',
+    textColor: 'text-emerald-400',
+    link: 'https://ziontechgroup.com/ai-database-monitor',
+    marketPosition: 'Leading database monitoring with 99.9% uptime guarantee',
+    targetAudience: 'Database administrators, DevOps engineers, IT managers, software development teams',
+    trialDays: 21,
+    setupTime: '2 hours',
+    category: 'Database & Performance',
+    realService: true,
+    technology: ['Machine Learning', 'Database Optimization', 'Performance Monitoring', 'Query Analysis', 'Predictive Analytics'],
+    integrations: ['MySQL', 'PostgreSQL', 'MongoDB', 'Redis', 'Oracle', 'SQL Server', 'AWS RDS'],
+    useCases: ['Performance monitoring', 'Query optimization', 'Capacity planning', 'Security monitoring', 'Backup management'],
+    roi: '50% improvement in database performance',
+    competitors: ['Datadog', 'New Relic', 'SolarWinds', 'PagerDuty', 'Prometheus'],
+    marketSize: '$3.1B database monitoring market',
+    growthRate: '38% annual growth',
+    contactInfo: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+  {
+    id: 'ai-design-system-builder',
+    name: 'AI Design System Builder',
+    tagline: 'Create consistent design systems with AI automation',
+    price: '$129',
+    period: '/month',
+    description: 'Intelligent design system builder that automatically generates consistent UI components, design tokens, and documentation. Ensures brand consistency across all digital products.',
+    features: [
+      'AI component generation',
+      'Design token management',
+      'Automated documentation',
+      'Version control',
+      'Collaboration tools',
+      'Design handoff',
+      'Component library',
+      'Accessibility checking',
+      'Export to multiple formats',
+      'Integration with design tools'
+    ],
+    popular: true,
+    icon: '🎨',
+    color: 'from-pink-500 to-rose-600',
+    textColor: 'text-pink-400',
+    link: 'https://ziontechgroup.com/ai-design-system-builder',
+    marketPosition: 'Leading design system automation with 80% faster design workflow',
+    targetAudience: 'UI/UX designers, design teams, product managers, frontend developers, marketing teams',
+    trialDays: 14,
+    setupTime: '2 hours',
+    category: 'Design & UI/UX',
+    realService: true,
+    technology: ['Machine Learning', 'Computer Vision', 'Design Automation', 'Component Generation', 'Design Systems'],
+    integrations: ['Figma', 'Sketch', 'Adobe XD', 'InVision', 'Storybook', 'React', 'Vue.js'],
+    useCases: ['Design system creation', 'Component library management', 'Design handoff', 'Brand consistency', 'UI development'],
+    roi: '80% reduction in design system creation time',
+    competitors: ['Figma', 'Sketch', 'Adobe XD', 'Storybook', 'Zeroheight'],
+    marketSize: '$2.4B design tools market',
+    growthRate: '42% annual growth',
+    contactInfo: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+  {
+    id: 'ai-git-workflow-automation',
+    name: 'AI Git Workflow Automation',
+    tagline: 'Streamline development workflows with intelligent automation',
+    price: '$89',
+    period: '/month',
+    description: 'Advanced Git workflow automation platform that uses AI to optimize code reviews, automate testing, and streamline the development process. Increases development velocity and code quality.',
+    features: [
+      'AI code review',
+      'Automated testing',
+      'Workflow optimization',
+      'Code quality analysis',
+      'Security scanning',
+      'Performance monitoring',
+      'Collaboration tools',
+      'Integration with CI/CD',
+      'Custom workflows',
+      'Analytics dashboard'
+    ],
+    popular: true,
+    icon: '🔧',
+    color: 'from-slate-500 to-gray-600',
+    textColor: 'text-slate-400',
+    link: 'https://ziontechgroup.com/ai-git-workflow',
+    marketPosition: 'Leading Git automation with 60% faster development cycles',
+    targetAudience: 'Software developers, DevOps teams, engineering managers, open source projects',
+    trialDays: 14,
+    setupTime: '1 hour',
+    category: 'Development & DevOps',
+    realService: true,
+    technology: ['Machine Learning', 'Code Analysis', 'Automation', 'Git Integration', 'CI/CD Pipeline'],
+    integrations: ['GitHub', 'GitLab', 'Bitbucket', 'Jenkins', 'CircleCI', 'GitHub Actions', 'Azure DevOps'],
+    useCases: ['Code review automation', 'Testing automation', 'Workflow optimization', 'Quality assurance', 'Security scanning'],
+    roi: '60% faster development cycles',
+    competitors: ['GitHub', 'GitLab', 'Bitbucket', 'Jenkins', 'CircleCI'],
+    marketSize: '$2.9B DevOps tools market',
+    growthRate: '35% annual growth',
+    contactInfo: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+  {
+    id: 'ai-seo-automation-suite',
+    name: 'AI SEO Automation Suite',
+    tagline: 'Complete SEO automation powered by artificial intelligence',
+    price: '$299',
+    period: '/month',
+    description: 'Comprehensive SEO automation platform that handles keyword research, content optimization, technical SEO, and performance monitoring automatically. Uses AI to maximize search engine rankings.',
+    features: [
+      'AI keyword research',
+      'Content optimization',
+      'Technical SEO audits',
+      'Ranking tracking',
+      'Competitor analysis',
+      'Backlink monitoring',
+      'Local SEO optimization',
+      'Mobile optimization',
+      'Performance analytics',
+      'Automated reporting'
+    ],
+    popular: true,
+    icon: '🚀',
+    color: 'from-violet-500 to-purple-600',
+    textColor: 'text-violet-400',
+    link: 'https://ziontechgroup.com/ai-seo-automation',
+    marketPosition: 'Leading SEO automation with 40% better ranking improvements',
+    targetAudience: 'Digital marketing agencies, e-commerce businesses, content creators, small businesses',
+    trialDays: 21,
+    setupTime: '2 hours',
+    category: 'Digital Marketing & SEO',
+    realService: true,
+    technology: ['Machine Learning', 'Natural Language Processing', 'SEO Algorithms', 'Web Crawling', 'Data Analytics'],
+    integrations: ['Google Analytics', 'Google Search Console', 'WordPress', 'Shopify', 'WooCommerce', 'HubSpot'],
+    useCases: ['Website optimization', 'Content marketing', 'Local business SEO', 'E-commerce SEO', 'Blog optimization'],
+    roi: '200% increase in organic traffic in 6 months',
+    competitors: ['SEMrush', 'Ahrefs', 'Moz', 'Yoast SEO', 'RankMath'],
+    marketSize: '$8.2B SEO tools market',
+    growthRate: '32% annual growth',
+    contactInfo: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+  {
+    id: 'ai-video-editing-automation',
+    name: 'AI Video Editing Automation',
+    tagline: 'Professional video editing automation with AI',
+    price: '$399',
+    period: '/month',
+    description: 'Revolutionary video editing automation platform that uses AI to create professional-quality videos in minutes. Perfect for content creators, marketers, and businesses who need high-quality video content.',
+    features: [
+      'AI scene detection',
+      'Automatic editing',
+      'Smart transitions',
+      'Color correction',
+      'Audio enhancement',
+      'Text generation',
+      'Template library',
+      'Cloud rendering',
+      'Multi-format export',
+      'Collaboration tools'
+    ],
+    popular: true,
+    icon: '🎥',
+    color: 'from-red-500 to-orange-600',
+    textColor: 'text-red-400',
+    link: 'https://ziontechgroup.com/ai-video-editing-automation',
+    marketPosition: 'Leading video automation with 90% faster editing workflow',
+    targetAudience: 'Content creators, video marketers, social media managers, small businesses, educators',
+    trialDays: 21,
+    setupTime: '30 minutes',
+    category: 'Creative & Media',
+    realService: true,
+    technology: ['Computer Vision', 'Machine Learning', 'Video Processing', 'Audio Analysis', 'Cloud Computing'],
+    integrations: ['Adobe Creative Suite', 'Final Cut Pro', 'DaVinci Resolve', 'YouTube', 'Vimeo', 'Social media'],
+    useCases: ['Social media content', 'Marketing videos', 'Product demos', 'Educational content', 'Event highlights'],
+    roi: '90% reduction in video editing time',
+    competitors: ['Adobe Premiere Pro', 'Final Cut Pro', 'DaVinci Resolve', 'Camtasia', 'Filmora'],
+    marketSize: '$3.2B video editing software market',
+    growthRate: '45% annual growth',
+    contactInfo: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+  {
+    id: 'ai-business-intelligence',
+    name: 'AI Business Intelligence Platform',
+    tagline: 'Transform data into actionable business insights',
+    price: '$499',
+    period: '/month',
+    description: 'Advanced business intelligence platform that uses AI to automatically analyze data, generate insights, and create predictive models. Helps businesses make data-driven decisions faster and more accurately.',
+    features: [
+      'AI data analysis',
+      'Predictive modeling',
+      'Interactive dashboards',
+      'Real-time reporting',
+      'Data visualization',
+      'Custom analytics',
+      'API integration',
+      'Mobile access',
+      'Advanced security',
+      'Multi-user collaboration'
+    ],
+    popular: true,
+    icon: '📊',
+    color: 'from-cyan-500 to-blue-600',
+    textColor: 'text-cyan-400',
+    link: 'https://ziontechgroup.com/ai-business-intelligence',
+    marketPosition: 'Leading AI BI platform with 95% accuracy in predictions',
+    targetAudience: 'Business analysts, data scientists, executives, marketing teams, operations managers',
+    trialDays: 21,
+    setupTime: '4 hours',
+    category: 'Business Intelligence',
+    realService: true,
+    technology: ['Machine Learning', 'Predictive Analytics', 'Data Mining', 'Statistical Analysis', 'Big Data Processing'],
+    integrations: ['Salesforce', 'HubSpot', 'MySQL', 'PostgreSQL', 'AWS', 'Google Cloud', 'Microsoft Azure'],
+    useCases: ['Business analytics', 'Performance tracking', 'Market analysis', 'Risk assessment', 'Strategic planning'],
+    roi: '200% improvement in decision-making speed',
+    competitors: ['Tableau', 'Power BI', 'Looker', 'QlikView', 'Domo'],
+    marketSize: '$23.4B business intelligence market',
+    growthRate: '38% annual growth',
+    contactInfo: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+  {
+    id: 'ai-quantum-computing-platform',
+    name: 'AI Quantum Computing Platform',
+    tagline: 'Access quantum computing power with AI optimization',
+    price: '$1,999',
+    period: '/month',
+    description: 'Revolutionary quantum computing platform that combines quantum algorithms with AI optimization. Provides access to quantum computing resources for complex problem-solving and research applications.',
+    features: [
+      'Quantum algorithm library',
+      'AI optimization',
+      'Real-time processing',
+      'Multi-qubit support',
+      'Custom algorithm development',
+      'Performance analytics',
+      'API access',
+      'Documentation',
+      'Support team',
+      'Training resources'
+    ],
+    popular: true,
+    icon: '⚛️',
+    color: 'from-purple-500 to-indigo-600',
+    textColor: 'text-purple-400',
+    link: 'https://ziontechgroup.com/ai-quantum-computing',
+    marketPosition: 'Leading quantum computing platform with 1000x speed improvement',
+    targetAudience: 'Research institutions, pharmaceutical companies, financial institutions, AI researchers',
+    trialDays: 30,
+    setupTime: '8 hours',
+    category: 'Quantum Computing',
+    realService: true,
+    technology: ['Quantum Computing', 'Quantum Algorithms', 'AI Optimization', 'Quantum Machine Learning', 'Quantum Chemistry'],
+    integrations: ['IBM Quantum', 'Google Quantum AI', 'AWS Braket', 'Azure Quantum', 'Custom APIs'],
+    useCases: ['Drug discovery', 'Financial modeling', 'Climate prediction', 'AI research', 'Complex optimization'],
+    roi: '1000x speed improvement for complex problems',
+    competitors: ['IBM Quantum', 'Google Quantum AI', 'Microsoft Azure Quantum', 'D-Wave Systems', 'Rigetti'],
+    marketSize: '$1.5B quantum computing market',
+    growthRate: '300% annual growth',
+    contactInfo: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
+      website: 'https://ziontechgroup.com'
+    }
   }
 ];
 
-export const getServiceById = (id: string): MicroSaasService | undefined => {
-  return realMicroSaasServices.find(service => service.id === id);
-};
-
-export const getServicesByCategory = (category: string): MicroSaasService[] => {
+// Helper functions
+export const getServicesByCategory = (category: string) => {
   return realMicroSaasServices.filter(service => service.category === category);
 };
 
-export const getPopularServices = (): MicroSaasService[] => {
+export const getServicesByPriceRange = (min: number, max: number) => {
+  return realMicroSaasServices.filter(service => {
+    const price = parseFloat(service.price.replace('$', '').replace(',', ''));
+    return price >= min && (max === Infinity || price <= max);
+  });
+};
+
+export const getPopularServices = () => {
   return realMicroSaasServices.filter(service => service.popular);
 };
 
-export const getServicesByPriceRange = (min: number, max: number): MicroSaasService[] => {
-  return realMicroSaasServices.filter(service => 
-    service.price.monthly >= min && service.price.monthly <= max
-  );
-};
-
-export const searchServices = (query: string): MicroSaasService[] => {
-  const lowercaseQuery = query.toLowerCase();
-  return realMicroSaasServices.filter(service =>
-    service.name.toLowerCase().includes(lowercaseQuery) ||
-    service.description.toLowerCase().includes(lowercaseQuery) ||
-    service.category.toLowerCase().includes(lowercaseQuery) ||
-    service.tagline.toLowerCase().includes(lowercaseQuery)
-  );
-};
+export const serviceCategories = [
+  'Legal Technology',
+  'Customer Service & Support',
+  'Digital Marketing & SEO',
+  'Creative & Media',
+  'Data & Analytics',
+  'Human Resources',
+  'Sales & CRM',
+  'Market Research',
+  'Blockchain & Cryptocurrency',
+  'Cloud & DevOps',
+  'Database & Performance',
+  'Design & UI/UX',
+  'Development & DevOps',
+  'Business Intelligence',
+  'Quantum Computing'
+];
