@@ -74,7 +74,6 @@ export default function ServicesAdvertisingPage() {
               {[
                 { name: 'LLM Gateway & Cost Control', price: '$299/mo', href: '/llm-gateway' },
                 { name: 'API Observability Starter', price: '$149/mo', href: '/api-observability-starter' },
-                { name: 'Cloud Cost Optimizer', price: '$399/mo', href: '/cloud-cost-optimizer' },
                 { name: 'SOC 2 Evidence Automation', price: '$499/mo', href: '/soc2-evidence-automation' },
                 { name: 'Vector Search Starter', price: '$249/mo', href: '/vector-search-starter' },
                 { name: 'TLS Certificate Monitor', price: '$49/mo', href: '/tls-certificate-monitor' }
