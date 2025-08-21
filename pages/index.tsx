@@ -361,7 +361,7 @@ export default function HomePage() {
   ];
 
   return (
-    <UltraFuturisticBackground variant="quantum" className="min-h-screen">
+    <UltraFuturisticBackground variant="quantum">
       <Head>
         <title>Zion Tech Group - Revolutionary Micro SaaS Services & AI Solutions</title>
         <meta name="description" content="Discover 500+ revolutionary micro SaaS services including quantum AI, autonomous systems, biomedical research, and emerging technologies. 99.99% uptime, 30-day free trials." />
@@ -479,8 +479,8 @@ export default function HomePage() {
                 <UltraFuturisticCard
                   variant="holographic-advanced"
                   className="h-full cursor-pointer group"
-                  hoverEffect={true}
-                  animated={true}
+                  interactive={true}
+                  glowIntensity="high"
                 >
                   <div className="flex items-center mb-4">
                     <div className="text-3xl mr-3 text-cyan-400">{category.icon}</div>
@@ -562,8 +562,8 @@ export default function HomePage() {
                 <UltraFuturisticCard
                   variant={service.variant as any}
                   className="h-full"
-                  hoverEffect={true}
-                  animated={true}
+                  interactive={true}
+                  glowIntensity="high"
                 >
                   <div className="flex items-center mb-4">
                     <div className="text-3xl mr-3">{service.icon}</div>
@@ -639,8 +639,8 @@ export default function HomePage() {
                 <UltraFuturisticCard
                   variant={service.variant as any}
                   className="h-full"
-                  hoverEffect={true}
-                  animated={true}
+                  interactive={true}
+                  glowIntensity="high"
                 >
                   <div className="flex items-center mb-4">
                     <div className="text-3xl mr-3">{service.icon}</div>
@@ -703,8 +703,8 @@ export default function HomePage() {
                 <UltraFuturisticCard
                   variant={service.variant as any}
                   className="h-full"
-                  hoverEffect={true}
-                  animated={true}
+                  interactive={true}
+                  glowIntensity="high"
                 >
                   <div className="flex items-center mb-4">
                     <div className="text-3xl mr-3">{service.icon}</div>
@@ -901,7 +901,7 @@ export default function HomePage() {
                 <UltraFuturisticCard
                   variant="default"
                   className="text-center h-full"
-                  hoverEffect={true}
+                  interactive={true}
                 >
                   <div className="text-4xl font-bold text-white mb-4">{insight.metric}</div>
                   <div className="text-xl font-semibold text-white mb-2">{insight.label}</div>
@@ -938,7 +938,7 @@ export default function HomePage() {
                 <UltraFuturisticCard
                   variant="default"
                   className="h-full"
-                  hoverEffect={true}
+                  interactive={true}
                 >
                   <div className={`w-16 h-16 rounded-xl ${feature.color} flex items-center justify-center mb-6`}>
                     {feature.icon}
