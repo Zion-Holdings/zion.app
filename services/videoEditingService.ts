@@ -183,7 +183,7 @@ class VideoEditingService {
     return project;
   }
 
-  async uploadVideo(file: File, projectId: string): Promise<VideoClip> {
+  async uploadVideo(file: any, projectId: string): Promise<VideoClip> {
     const project = this.projects.find(p => p.id === projectId);
     if (!project) {
       throw new Error('Project not found');
@@ -196,12 +196,12 @@ class VideoEditingService {
 
     const clip: VideoClip = {
       id: `clip_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
-      name: file.name,
+      name: file.name || 'video.mp4',
       startTime: 0,
       endTime: duration,
       duration,
       source: 'upload',
-      url: URL.createObjectURL(file),
+      url: typeof URL !== 'undefined' ? URL.createObjectURL(file) : `blob:${Date.now()}`,
       metadata: {
         fps,
         bitrate: Math.round(bitrate),

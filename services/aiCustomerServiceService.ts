@@ -89,6 +89,10 @@ export class AICustomerServiceService {
 
   async createCustomerInquiry(inquiry: Omit<CustomerInquiry, 'id' | 'createdAt' | 'updatedAt' | 'status' | 'sentiment' | 'estimatedResolutionTime'>): Promise<CustomerInquiry> {
     try {
+      if (typeof fetch === 'undefined') {
+        throw new Error('Fetch API not available');
+      }
+      
       const response = await fetch(`${this.baseUrl}/api/customer-service/inquiries`, {
         method: 'POST',
         headers: {
@@ -121,14 +125,20 @@ export class AICustomerServiceService {
     customerId?: string;
   }): Promise<CustomerInquiry[]> {
     try {
-      const queryParams = new URLSearchParams();
+      if (typeof fetch === 'undefined') {
+        throw new Error('Fetch API not available');
+      }
+      
+      let queryString = '';
       if (filters) {
-        Object.entries(filters).forEach(([key, value]) => {
-          if (value) queryParams.append(key, value);
-        });
+        const params = Object.entries(filters)
+          .filter(([_, value]) => value)
+          .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
+          .join('&');
+        queryString = params ? `?${params}` : '';
       }
 
-      const response = await fetch(`${this.baseUrl}/api/customer-service/inquiries?${queryParams}`, {
+      const response = await fetch(`${this.baseUrl}/api/customer-service/inquiries${queryString}`, {
         headers: {
           'Authorization': `Bearer ${this.apiKey}`,
         },
@@ -152,6 +162,10 @@ export class AICustomerServiceService {
 
   async updateInquiryStatus(inquiryId: string, status: string, assignedTo?: string): Promise<CustomerInquiry> {
     try {
+      if (typeof fetch === 'undefined') {
+        throw new Error('Fetch API not available');
+      }
+      
       const response = await fetch(`${this.baseUrl}/api/customer-service/inquiries/${inquiryId}`, {
         method: 'PATCH',
         headers: {
@@ -179,6 +193,10 @@ export class AICustomerServiceService {
 
   async createSupportTicket(inquiryId: string, ticketData: Omit<SupportTicket, 'id' | 'inquiryId' | 'ticketNumber' | 'createdAt' | 'updatedAt' | 'resolutionTime'>): Promise<SupportTicket> {
     try {
+      if (typeof fetch === 'undefined') {
+        throw new Error('Fetch API not available');
+      }
+      
       const response = await fetch(`${this.baseUrl}/api/customer-service/tickets`, {
         method: 'POST',
         headers: {
@@ -207,6 +225,10 @@ export class AICustomerServiceService {
 
   async resolveTicket(ticketId: string, resolution: string, customerSatisfaction?: number): Promise<SupportTicket> {
     try {
+      if (typeof fetch === 'undefined') {
+        throw new Error('Fetch API not available');
+      }
+      
       const response = await fetch(`${this.baseUrl}/api/customer-service/tickets/${ticketId}/resolve`, {
         method: 'POST',
         headers: {
@@ -235,6 +257,10 @@ export class AICustomerServiceService {
 
   async createKnowledgeBaseArticle(article: Omit<KnowledgeBaseArticle, 'id' | 'createdAt' | 'updatedAt' | 'views' | 'helpful' | 'notHelpful' | 'lastReviewed'>): Promise<KnowledgeBaseArticle> {
     try {
+      if (typeof fetch === 'undefined') {
+        throw new Error('Fetch API not available');
+      }
+      
       const response = await fetch(`${this.baseUrl}/api/customer-service/knowledge-base`, {
         method: 'POST',
         headers: {
@@ -263,10 +289,14 @@ export class AICustomerServiceService {
 
   async searchKnowledgeBase(query: string, category?: string): Promise<KnowledgeBaseArticle[]> {
     try {
-      const queryParams = new URLSearchParams({ query });
-      if (category) queryParams.append('category', category);
+      if (typeof fetch === 'undefined') {
+        throw new Error('Fetch API not available');
+      }
+      
+      let queryString = `query=${encodeURIComponent(query)}`;
+      if (category) queryString += `&category=${encodeURIComponent(category)}`;
 
-      const response = await fetch(`${this.baseUrl}/api/customer-service/knowledge-base/search?${queryParams}`, {
+      const response = await fetch(`${this.baseUrl}/api/customer-service/knowledge-base/search?${queryString}`, {
         headers: {
           'Authorization': `Bearer ${this.apiKey}`,
         },
@@ -291,6 +321,10 @@ export class AICustomerServiceService {
 
   async getCustomerServiceMetrics(timeRange: 'day' | 'week' | 'month' = 'month'): Promise<CustomerServiceMetrics> {
     try {
+      if (typeof fetch === 'undefined') {
+        throw new Error('Fetch API not available');
+      }
+      
       const response = await fetch(`${this.baseUrl}/api/customer-service/metrics?timeRange=${timeRange}`, {
         headers: {
           'Authorization': `Bearer ${this.apiKey}`,
@@ -310,6 +344,10 @@ export class AICustomerServiceService {
 
   async autoAssignInquiries(): Promise<void> {
     try {
+      if (typeof fetch === 'undefined') {
+        throw new Error('Fetch API not available');
+      }
+      
       const response = await fetch(`${this.baseUrl}/api/customer-service/auto-assign`, {
         method: 'POST',
         headers: {
