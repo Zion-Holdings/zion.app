@@ -332,7 +332,10 @@ export default function HomePage() {
           price: h.price,
           features: h.features,
           link: h.link,
-          contactInfo: h.contactInfo || contactInfo
+          contactInfo: h.contactInfo || contactInfo,
+          marketData: (h as any).marketData,
+          competitors: (h as any).competitors,
+          savings: (h as any).savings
         }))}
       />
 

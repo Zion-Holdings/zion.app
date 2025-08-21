@@ -14,6 +14,9 @@ export interface ServiceAdItem {
     email: string;
     address: string;
   };
+  marketData?: string;
+  competitors?: string;
+  savings?: string;
 }
 
 interface ServiceAdsProps {
@@ -51,6 +54,29 @@ const ServiceAds: React.FC<ServiceAdsProps> = ({ items, heading = 'Featured Serv
                     ))}
                   </ul>
                 </div>
+
+                {(item.marketData || item.competitors || item.savings) && (
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+                    {item.marketData && (
+                      <div className="rounded-lg bg-gray-900/50 border border-gray-700/50 p-3">
+                        <div className="text-xs uppercase tracking-wider text-gray-400 mb-1">Market</div>
+                        <div className="text-sm text-gray-200">{item.marketData}</div>
+                      </div>
+                    )}
+                    {item.competitors && (
+                      <div className="rounded-lg bg-gray-900/50 border border-gray-700/50 p-3">
+                        <div className="text-xs uppercase tracking-wider text-gray-400 mb-1">Competitors</div>
+                        <div className="text-sm text-gray-200">{item.competitors}</div>
+                      </div>
+                    )}
+                    {item.savings && (
+                      <div className="rounded-lg bg-gray-900/50 border border-gray-700/50 p-3">
+                        <div className="text-xs uppercase tracking-wider text-gray-400 mb-1">Savings</div>
+                        <div className="text-sm text-gray-200">{item.savings}</div>
+                      </div>
+                    )}
+                  </div>
+                )}
 
                 <div className="flex space-x-3">
                   <Button
