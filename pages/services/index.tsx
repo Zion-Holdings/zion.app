@@ -7,6 +7,7 @@ import { enhancedRealMicroSaasServices } from '../../data/enhanced-real-micro-sa
 import { additionalEnhancedServices } from '../../data/additional-real-services';
 import { extraServices } from '../../data/extra-services';
 import { newlyAddedServices } from '../../data/newly-added-services';
+import { curatedMarketServices } from '../../data/curated-market-services';
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -21,7 +22,7 @@ const categories = [
 ];
 
 export default function ServicesIndexPage() {
-  const all = (enhancedRealMicroSaasServices as any[]).concat(extraServices as any[], additionalEnhancedServices as any[], newlyAddedServices as any[]);
+  const all = (enhancedRealMicroSaasServices as any[]).concat(extraServices as any[], additionalEnhancedServices as any[], newlyAddedServices as any[], curatedMarketServices as any[]);
   const byCategory: Record<string, any[]> = {};
   for (const c of categories) byCategory[c] = [];
   for (const s of all) {
@@ -37,10 +38,10 @@ export default function ServicesIndexPage() {
         <link rel="canonical" href="https://ziontechgroup.com/services" />
       </Head>
 
-      <div className="container mx-auto px-4 py-16 space-y-12">
+      <div className="container mx-auto px-4 py-16 space-y-12 text-white">
         <div className="text-center">
           <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">All Services</h1>
-          <p className="text-gray-300 text-lg">Productized solutions across AI, cloud, DevOps, observability, and more.</p>
+          <p className="text-gray-300 text-lg">Productized solutions across AI, cloud, DevOps, observability, and more. Average market prices linked in <a href="/market-pricing" className="text-cyan-400 underline">Market Pricing</a>. Contact: +1 302 464 0950 • kleber@ziontechgroup.com.</p>
         </div>
 
         {categories.map((cat) => (

@@ -4,7 +4,7 @@ import {
   Menu, X, ChevronDown, ChevronUp, 
   Home, Rocket, Brain, Cpu, Shield, 
   DollarSign, Phone, Mail, MapPin,
-  ExternalLink, Star, Zap, Globe, TrendingUp
+  ExternalLink, Star, Zap, Globe
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -69,8 +69,8 @@ const navigationItems: NavigationItem[] = [
   {
     name: 'Market Pricing',
     href: '/market-pricing',
-    icon: <TrendingUp className="w-4 h-4" />,
-    description: 'Vendor pricing references'
+    icon: <DollarSign className="w-4 h-4" />,
+    description: 'Vendor references and price benchmarks'
   },
   {
     name: 'Resources',
