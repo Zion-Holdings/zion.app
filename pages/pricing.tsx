@@ -6,6 +6,9 @@ import Card from '../components/ui/Card';
 import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
 import UltraFuturisticCard from '../components/ui/UltraFuturisticCard';
 import { enhancedRealMicroSaasServices, getServicesByCategory, getPopularServices } from '../data/enhanced-real-micro-saas-services';
+import { nextGenerationAIServices } from '../data/next-generation-ai-services';
+import { cuttingEdgeITServices } from '../data/cutting-edge-it-services';
+import { innovativeMicroSaasV2Services } from '../data/innovative-micro-saas-v2';
 
 export default function PricingPage() {
   const [billingCycle, setBillingCycle] = useState<'monthly' | 'yearly'>('monthly');
@@ -19,36 +22,51 @@ export default function PricingPage() {
   };
 
   const popularServices = getPopularServices();
+  
+  // Combine all services for comprehensive pricing
+  const allServices = [
+    ...enhancedRealMicroSaasServices,
+    ...nextGenerationAIServices,
+    ...cuttingEdgeITServices,
+    ...innovativeMicroSaasV2Services
+  ];
 
   // Enhanced service categories with pricing
   const serviceCategories = [
     {
-      name: 'Quantum AI & Computing',
-      description: 'Revolutionary quantum AI solutions',
-      services: ['Quantum AI Cognitive Platform', 'Quantum Financial Trading', 'Quantum Cybersecurity'],
-      avgPrice: '$452/month',
-      savings: 'Save 70-85% vs. competitors'
+      name: 'Next-Generation AI',
+      description: 'Revolutionary AI platforms',
+      services: ['AI Multimodal Fusion', 'AI Autonomous Decision Engine', 'AI Emotional Intelligence'],
+      avgPrice: '$3,199/month',
+      savings: 'Save 60-80% vs. competitors'
     },
     {
-      name: 'Autonomous Systems',
-      description: 'Next-generation automation platforms',
-      services: ['Autonomous Manufacturing AI', 'Robotics Automation', 'Space Technology'],
-      avgPrice: '$293/month',
+      name: 'Cutting-Edge IT Infrastructure',
+      description: 'Advanced infrastructure solutions',
+      services: ['Zero Trust Architecture', 'Edge Computing Orchestration', '5G Private Networks'],
+      avgPrice: '$4,999/month',
       savings: 'Save 50-70% vs. competitors'
     },
     {
-      name: 'Biotech & Healthcare AI',
-      description: 'AI-powered biomedical research',
-      services: ['Biotech AI Platform', 'AI Healthcare Analytics', 'Drug Discovery AI'],
-      avgPrice: '$424/month',
+      name: 'Innovative Micro SaaS',
+      description: 'Creative and practical SaaS tools',
+      services: ['AI Brand Personality', 'Virtual Event Holograms', 'AI Meeting Transcriber'],
+      avgPrice: '$199/month',
       savings: 'Save 40-60% vs. competitors'
     },
     {
-      name: 'Financial Technology',
-      description: 'Advanced fintech solutions',
-      services: ['Quantum Financial Trading', 'AI Trading Algorithms', 'Risk Management AI'],
-      avgPrice: '$449/month',
-      savings: 'Save 55-75% vs. competitors'
+      name: 'Quantum & Space Technology',
+      description: 'Quantum computing and space solutions',
+      services: ['Quantum AI Hybrid', 'Space Technology Platform', 'Quantum Cybersecurity'],
+      avgPrice: '$5,999/month',
+      savings: 'Save 70-85% vs. competitors'
+    },
+    {
+      name: 'Enterprise IT Services',
+      description: 'Comprehensive enterprise solutions',
+      services: ['Cloud Migration', 'DevOps Automation', 'Security Hardening'],
+      avgPrice: '$2,999/month',
+      savings: 'Save 45-65% vs. competitors'
     }
   ];
 

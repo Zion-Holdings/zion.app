@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 interface UltraFuturisticCardProps {
   children: React.ReactNode;
-  variant?: 'default' | 'holographic' | 'quantum' | 'cyberpunk' | 'neural' | 'quantum-holographic' | 'quantum-advanced' | 'holographic-advanced' | 'neural-quantum' | 'quantum-cyberpunk' | 'holographic-neural' | 'quantum-holographic-advanced' | 'quantum-matrix' | 'neural-cyberpunk' | 'holographic-quantum' | 'quantum-neural-advanced' | 'cyberpunk-holographic' | 'quantum-space' | 'ai-futuristic' | 'quantum-entanglement' | 'holographic-matrix' | 'neural-quantum-cyberpunk';
+  variant?: 'default' | 'holographic' | 'quantum' | 'cyberpunk' | 'neural' | 'quantum-holographic' | 'quantum-advanced' | 'holographic-advanced' | 'neural-quantum' | 'quantum-cyberpunk' | 'holographic-neural' | 'quantum-holographic-advanced' | 'quantum-matrix' | 'neural-cyberpunk' | 'holographic-quantum' | 'quantum-neural-advanced' | 'cyberpunk-holographic' | 'quantum-space' | 'ai-futuristic' | 'quantum-entanglement' | 'holographic-matrix' | 'neural-quantum-cyberpunk' | 'enterprise-futuristic' | 'quantum-futuristic' | 'holographic-futuristic' | 'quantum-iot' | 'quantum-logistics' | 'quantum-financial' | 'quantum-energy' | 'quantum-neural' | 'quantum-cyberpunk';
   className?: string;
   onClick?: () => void;
   interactive?: boolean;
@@ -93,6 +93,20 @@ const UltraFuturisticCard: React.FC<UltraFuturisticCardProps> = ({
         return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-purple-900/60 via-pink-900/60 to-rose-900/80 border-purple-500/30 border-pink-500/30 shadow-2xl shadow-purple-500/20 shadow-pink-500/20`;
       case 'neural-quantum-cyberpunk':
         return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-green-900/60 via-blue-900/60 via-red-900/60 to-orange-900/80 border-green-500/30 border-cyan-500/30 border-red-500/30 shadow-2xl shadow-green-500/20 shadow-cyan-500/20 shadow-red-500/20`;
+      case 'enterprise-futuristic':
+        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-gray-800/60 via-slate-700/60 to-slate-600/80 border-slate-500/30 border-gray-500/30 shadow-2xl shadow-slate-500/20 shadow-gray-500/20`;
+      case 'quantum-futuristic':
+        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-blue-900/60 via-cyan-900/60 to-teal-900/80 border-cyan-500/30 border-teal-500/30 shadow-2xl shadow-cyan-500/20 shadow-teal-500/20`;
+      case 'holographic-futuristic':
+        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-purple-900/60 via-pink-900/60 to-rose-900/80 border-purple-500/30 border-pink-500/30 shadow-2xl shadow-purple-500/20 shadow-pink-500/20`;
+      case 'quantum-iot':
+        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-blue-900/60 via-green-900/60 to-emerald-900/80 border-cyan-500/30 border-green-500/30 shadow-2xl shadow-cyan-500/20 shadow-green-500/20`;
+      case 'quantum-logistics':
+        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-blue-900/60 via-indigo-900/60 to-purple-900/80 border-cyan-500/30 border-indigo-500/30 shadow-2xl shadow-cyan-500/20 shadow-indigo-500/20`;
+      case 'quantum-financial':
+        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-blue-900/60 via-yellow-900/60 to-orange-900/80 border-cyan-500/30 border-yellow-500/30 shadow-2xl shadow-cyan-500/20 shadow-yellow-500/20`;
+      case 'quantum-energy':
+        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-blue-900/60 via-green-900/60 to-emerald-900/80 border-cyan-500/30 border-green-500/30 shadow-2xl shadow-cyan-500/20 shadow-green-500/20`;
       default:
         return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-slate-800/60 to-slate-900/80 border-slate-600/30 shadow-2xl shadow-slate-500/20`;
     }
