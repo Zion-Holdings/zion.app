@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { 
   Clock, DollarSign, TrendingUp, Brain, 
   Zap, Rocket, Mail, Phone, MapPin, Sparkles, 
-  ArrowRight, ExternalLink, Check, CpuIcon, 
+  ArrowRight, ExternalLink, Check, Cpu, 
   ShieldCheck
 } from 'lucide-react';
 import Button from '../components/ui/Button';
@@ -15,7 +15,7 @@ import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-
 
 export default function HomePage() {
   const heroStats = [
-    { value: '200+', label: 'Revolutionary Micro SaaS Services', color: 'text-cyan-400', icon: <CpuIcon className="w-6 h-6" /> },
+    { value: '200+', label: 'Revolutionary Micro SaaS Services', color: 'text-cyan-400', icon: <Cpu className="w-6 h-6" /> },
     { value: '99.99%', label: 'Uptime Guarantee', color: 'text-fuchsia-400', icon: <ShieldCheck className="w-6 h-6" /> },
     { value: '30+', label: 'Day Free Trials', color: 'text-blue-400', icon: <Clock className="w-6 h-6" /> },
     { value: '24/7', label: 'AI Support', color: 'text-green-400', icon: <Brain className="w-6 h-6" /> },
@@ -161,6 +161,17 @@ export default function HomePage() {
         <meta name="twitter:description" content="Transform your business with 200+ revolutionary micro SaaS services." />
         <meta name="twitter:image" content="https://ziontechgroup.com/og-image.jpg" />
       </Head>
+
+      {/* Sticky contact micro-bar */}
+      <div className="fixed top-20 left-0 right-0 z-40">
+        <div className="mx-auto max-w-7xl px-4">
+          <div className="rounded-xl border border-cyan-500/20 bg-black/40 backdrop-blur-md px-4 py-2 text-xs text-gray-300 hidden md:flex items-center justify-center gap-6">
+            <div className="flex items-center gap-2"><Phone className="w-4 h-4 text-cyan-400" /><span>{contactInfo.mobile}</span></div>
+            <div className="flex items-center gap-2"><Mail className="w-4 h-4 text-purple-400" /><span>{contactInfo.email}</span></div>
+            <div className="flex items-center gap-2"><MapPin className="w-4 h-4 text-green-400" /><span className="truncate">{contactInfo.address}</span></div>
+          </div>
+        </div>
+      </div>
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4">
