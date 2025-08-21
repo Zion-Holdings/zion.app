@@ -32,9 +32,11 @@ export default function UltraFuturistic2029InnovationsPage() {
         <link rel="canonical" href="https://ziontechgroup.com/2029-ultra-futuristic-innovations" />
       </Head>
 
-      <UltraFuturisticBackground2029 intensity="high">
-        {/* Navigation */}
-        <UltraFuturisticNavigation2029 />
+      {/* Futuristic Background */}
+      <UltraFuturisticBackground2029 />
+
+      {/* Navigation */}
+      <UltraFuturisticNavigation2029 />
 
         {/* Hero Section */}
         <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
@@ -275,7 +277,6 @@ export default function UltraFuturistic2029InnovationsPage() {
 
         {/* Footer */}
         <UltraFuturisticFooter2029 />
-      </UltraFuturisticBackground2029>
-    </>
-  );
-}
+      </>
+    );
+  }

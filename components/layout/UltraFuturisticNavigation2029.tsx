@@ -98,80 +98,43 @@ const serviceCategories = [
   {
     title: '🚗 Autonomous & Mobility',
     icon: Car,
-    color: 'from-red-600 via-orange-600 to-yellow-600',
-    description: 'Self-driving and mobility solutions',
+    color: 'from-orange-500 via-red-500 to-pink-500',
+    description: 'Self-driving and smart transportation',
     services: [
-      { name: 'Autonomous Vehicle AI Platform', href: '/autonomous-vehicle-ai-platform', description: 'Intelligent autonomous vehicles', price: '$3,999/month' },
-      { name: 'Autonomous Drone Delivery Network', href: '/autonomous-drone-delivery-network', description: 'AI-powered drone delivery', price: '$1,999/month' },
-      { name: 'Smart Traffic Management System', href: '/smart-traffic-management', description: 'AI traffic optimization', price: '$4,999/month' },
-      { name: 'Electric Vehicle Charging Network', href: '/ev-charging-network', description: 'Smart EV infrastructure', price: '$2,999/month' }
-    ]
-  },
-  {
-    title: '🏥 Healthcare & Medical AI',
-    icon: Heart,
-    color: 'from-pink-600 via-rose-600 to-red-600',
-    description: 'Advanced healthcare solutions',
-    services: [
-      { name: 'AI Healthcare Diagnosis Platform', href: '/ai-healthcare-diagnosis-2029', description: 'Revolutionary medical diagnosis', price: '$28,999/month' },
-      { name: 'AI Meeting Transcriber Pro', href: '/ai-meeting-transcriber-pro', description: 'Advanced meeting transcription', price: '$1,499/month' },
-      { name: 'AI Phone Agent', href: '/ai-phone-agent', description: 'Intelligent phone automation', price: '$2,999/month' },
-      { name: 'Vulnerability Assessment & Penetration Testing', href: '/vulnerability-assessment-penetration-testing', description: 'Comprehensive security testing', price: '$4,999/month' }
+      { name: 'Autonomous Vehicle Fleet Management', href: '/autonomous-vehicle-fleet-management', description: 'AI-powered fleet optimization', price: '$12,999/month' },
+      { name: 'Smart Traffic Management System', href: '/smart-traffic-management-system', description: 'Real-time traffic optimization', price: '$8,999/month' },
+      { name: 'Drone Delivery Network Platform', href: '/drone-delivery-network-platform', description: 'Autonomous delivery systems', price: '$15,999/month' },
+      { name: 'Electric Vehicle Charging Network', href: '/electric-vehicle-charging-network', description: 'Smart charging infrastructure', price: '$6,999/month' }
     ]
   },
   {
     title: '💼 Business & Enterprise Solutions',
     icon: Briefcase,
-    color: 'from-gray-600 via-slate-600 to-zinc-600',
-    description: 'Enterprise-grade solutions',
+    color: 'from-slate-600 via-gray-600 to-zinc-600',
+    description: 'Enterprise-grade business tools',
     services: [
-      { name: 'AI Customer Intelligence Platform', href: '/ai-customer-intelligence-2029', description: 'Customer behavior analysis', price: '$15,999/month' },
-      { name: 'AI Financial Advisory Platform', href: '/ai-financial-advisory-2029', description: 'Automated financial planning', price: '$22,999/month' },
-      { name: 'AI Legal Automation Platform', href: '/ai-legal-automation-2029', description: 'Legal process automation', price: '$18,999/month' },
-      { name: 'AI HR & Recruitment Platform', href: '/ai-hr-recruitment-2029', description: 'HR process automation', price: '$16,999/month' }
-    ]
-  },
-  {
-    title: '⛓️ Blockchain & Web3',
-    icon: Layers,
-    color: 'from-orange-600 via-amber-600 to-yellow-600',
-    description: 'Decentralized solutions',
-    services: [
-      { name: 'Blockchain Supply Chain Transparency', href: '/blockchain-supply-chain-transparency', description: 'End-to-end supply chain visibility', price: '$2,499/month' },
-      { name: 'Smart Contract Automation Platform', href: '/smart-contract-automation', description: 'Automated blockchain contracts', price: '$1,999/month' },
-      { name: 'DeFi Yield Optimization', href: '/defi-yield-optimization', description: 'Maximize DeFi returns', price: '$3,999/month' },
-      { name: 'NFT Marketplace Platform', href: '/nft-marketplace-platform', description: 'Complete NFT ecosystem', price: '$2,999/month' }
-    ]
-  },
-  {
-    title: '🔒 Cybersecurity & Compliance',
-    icon: Shield,
-    color: 'from-red-600 via-pink-600 to-purple-600',
-    description: 'Advanced security solutions',
-    services: [
-      { name: 'Zero Trust Network Architecture', href: '/zero-trust-network-architecture', description: 'Advanced network security', price: '$3,999/month' },
-      { name: 'Quantum Cybersecurity Firewall', href: '/quantum-cybersecurity-firewall', description: 'Unbreakable quantum encryption', price: '$4,999/month' },
-      { name: 'Incident Automation Suite', href: '/incident-automation-suite', description: 'Automated incident response', price: '$2,999/month' },
-      { name: 'SOC2 Evidence Automation', href: '/soc2-evidence-automation', description: 'Compliance automation', price: '$2,499/month' }
-    ]
-  },
-  {
-    title: '📊 Data & Analytics',
-    icon: BarChart3,
-    color: 'from-blue-600 via-indigo-600 to-purple-600',
-    description: 'Data-driven insights',
-    services: [
-      { name: 'AI Data Analytics Platform', href: '/ai-data-analytics', description: 'Advanced data analysis', price: '$2,999/month' },
-      { name: 'Data Pipeline Health Monitor', href: '/data-pipeline-health', description: 'Pipeline performance monitoring', price: '$1,999/month' },
-      { name: 'Data Quality Monitor', href: '/data-quality-monitor', description: 'Data quality assurance', price: '$1,999/month' },
-      { name: 'Vector Search Starter', href: '/vector-search-starter', description: 'AI-powered search', price: '$1,499/month' }
+      { name: 'AI Customer Service Platform', href: '/ai-customer-service-platform', description: 'Intelligent customer support', price: '$8,999/month' },
+      { name: 'Intelligent Inventory Management', href: '/intelligent-inventory-management', description: 'AI-powered inventory optimization', price: '$6,999/month' },
+      { name: 'Automated Marketing Platform', href: '/automated-marketing-platform', description: 'AI-driven marketing automation', price: '$9,999/month' },
+      { name: 'Smart HR Management Platform', href: '/smart-hr-management-platform', description: 'AI-powered HR optimization', price: '$7,999/month' }
     ]
   }
 ];
 
+const mainNavigationItems = [
+  { name: 'Home', href: '/', icon: Home },
+  { name: 'Services', href: '/services', icon: Briefcase },
+  { name: 'AI Solutions', href: '/ai-services', icon: Brain },
+  { name: 'Quantum Tech', href: '/quantum-services', icon: Atom },
+  { name: 'Enterprise IT', href: '/enterprise-it', icon: Building },
+  { name: 'Pricing', href: '/pricing', icon: DollarSign },
+  { name: 'Resources', href: '/resources', icon: BookOpen },
+  { name: 'Contact', href: '/support', icon: MessageCircle }
+];
+
 const UltraFuturisticNavigation2029: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeCategory, setActiveCategory] = useState<number | null>(null);
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -189,8 +152,8 @@ const UltraFuturisticNavigation2029: React.FC = () => {
   return (
     <>
       {/* Top Contact Bar */}
-      <div className="bg-gradient-to-r from-purple-900 via-blue-900 to-indigo-900 text-white text-sm py-2">
-        <div className="container mx-auto px-4 flex flex-wrap items-center justify-between">
+      <div className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 text-white py-2 px-4 text-sm">
+        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between">
           <div className="flex items-center space-x-6">
             <div className="flex items-center space-x-2">
               <Phone className="w-4 h-4 text-cyan-400" />
@@ -199,17 +162,22 @@ const UltraFuturisticNavigation2029: React.FC = () => {
               </span>
             </div>
             <div className="flex items-center space-x-2">
-              <Mail className="w-4 h-4 text-cyan-400" />
-              <span className="hover:text-cyan-400 transition-colors">
+              <Mail className="w-4 h-4 text-purple-400" />
+              <span className="hover:text-purple-400 transition-colors">
                 <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
               </span>
             </div>
           </div>
           <div className="flex items-center space-x-4">
-            <span className="text-cyan-400">🚀 2029 Revolutionary Technology Services</span>
             <div className="flex items-center space-x-2">
-              <Star className="w-4 h-4 text-yellow-400" />
-              <span className="text-yellow-400">Leading Innovation</span>
+              <MapPin className="w-4 h-4 text-pink-400" />
+              <span className="text-xs">{contactInfo.address}</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Globe className="w-4 h-4 text-emerald-400" />
+              <a href={contactInfo.website} className="hover:text-emerald-400 transition-colors">
+                {contactInfo.website.replace('https://', '')}
+              </a>
             </div>
           </div>
         </div>
@@ -218,191 +186,164 @@ const UltraFuturisticNavigation2029: React.FC = () => {
       {/* Main Navigation */}
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-black/90 backdrop-blur-xl border-b border-purple-500/30 shadow-2xl' 
-          : 'bg-gradient-to-r from-black/95 via-purple-900/95 to-black/95 backdrop-blur-lg'
+          ? 'bg-slate-900/95 backdrop-blur-xl border-b border-cyan-500/20 shadow-2xl shadow-cyan-500/10' 
+          : 'bg-transparent'
       }`}>
-        <div className="container mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <Link href="/" className="flex items-center space-x-3 group">
-              <div className="relative">
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
-                  <Rocket className="w-6 h-6 text-white" />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
+            <motion.div
+              className="flex items-center space-x-3"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
+              <div className="w-10 h-10 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-lg flex items-center justify-center">
+                <Zap className="w-6 h-6 text-white" />
               </div>
-              <div className="flex flex-col">
-                <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                  Zion Tech Group
-                </span>
-                <span className="text-xs text-gray-400">2029 Revolutionary Technology</span>
+              <div className="text-2xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Zion Tech Group
               </div>
-            </Link>
+            </motion.div>
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center space-x-8">
-              {serviceCategories.map((category, index) => (
-                <div key={index} className="relative group">
-                  <button
-                    className="flex items-center space-x-2 text-white hover:text-cyan-400 transition-colors duration-300 py-2 px-4 rounded-lg hover:bg-white/10"
-                    onMouseEnter={() => setActiveCategory(index)}
-                    onMouseLeave={() => setActiveCategory(null)}
+              {mainNavigationItems.map((item) => (
+                <motion.div
+                  key={item.name}
+                  className="relative group"
+                  whileHover={{ y: -2 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                >
+                  <Link
+                    href={item.href}
+                    className="flex items-center space-x-2 text-white hover:text-cyan-400 transition-colors duration-200 font-medium"
                   >
-                    <category.icon className="w-5 h-5" />
-                    <span className="font-medium">{category.title.split(' ')[0]}</span>
-                    <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
-                  </button>
-
-                  {/* Mega Menu */}
-                  <AnimatePresence>
-                    {activeCategory === index && (
-                      <motion.div
-                        initial={{ opacity: 0, y: 20, scale: 0.95 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: 20, scale: 0.95 }}
-                        transition={{ duration: 0.2 }}
-                        className="absolute top-full left-0 w-96 bg-black/95 backdrop-blur-xl border border-purple-500/30 rounded-2xl shadow-2xl p-6 z-50"
-                        onMouseEnter={() => setActiveCategory(index)}
-                        onMouseLeave={() => setActiveCategory(null)}
-                      >
-                        <div className="mb-4">
-                          <h3 className="text-xl font-bold text-white mb-2">{category.title}</h3>
-                          <p className="text-gray-400 text-sm">{category.description}</p>
-                        </div>
-                        
-                        <div className="space-y-3">
-                          {category.services.map((service, serviceIndex) => (
-                            <Link
-                              key={serviceIndex}
-                              href={service.href}
-                              className="block p-3 rounded-lg hover:bg-purple-500/10 transition-all duration-300 group"
-                            >
-                              <div className="flex items-start justify-between">
-                                <div className="flex-1">
-                                  <h4 className="font-medium text-white group-hover:text-cyan-400 transition-colors">
-                                    {service.name}
-                                  </h4>
-                                  <p className="text-sm text-gray-400 mt-1">{service.description}</p>
-                                </div>
-                                <div className="text-right">
-                                  <span className="text-sm font-bold text-cyan-400">{service.price}</span>
-                                </div>
-                              </div>
-                            </Link>
-                          ))}
-                        </div>
-
-                        <div className="mt-4 pt-4 border-t border-purple-500/30">
-                          <Link
-                            href={`/services?category=${encodeURIComponent(category.title)}`}
-                            className="inline-flex items-center space-x-2 text-cyan-400 hover:text-cyan-300 transition-colors"
-                          >
-                            <span>View All {category.title.split(' ')[0]} Services</span>
-                            <ArrowRight className="w-4 h-4" />
-                          </Link>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
+                    <item.icon className="w-4 h-4" />
+                    <span>{item.name}</span>
+                  </Link>
+                  
+                  {/* Hover indicator */}
+                  <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 transition-all duration-300 group-hover:w-full" />
+                </motion.div>
               ))}
-
-              {/* Quick Links */}
-              <div className="flex items-center space-x-4">
-                <Link
-                  href="/pricing"
-                  className="text-white hover:text-cyan-400 transition-colors duration-300 py-2 px-4 rounded-lg hover:bg-white/10"
-                >
-                  <DollarSign className="w-5 h-5 inline mr-2" />
-                  Pricing
-                </Link>
-                <Link
-                  href="/contact"
-                  className="text-white hover:text-cyan-400 transition-colors duration-300 py-2 px-4 rounded-lg hover:bg-white/10"
-                >
-                  <MessageCircle className="w-5 h-5 inline mr-2" />
-                  Contact
-                </Link>
-                <Link
-                  href="/about"
-                  className="text-white hover:text-cyan-400 transition-colors duration-300 py-2 px-4 rounded-lg hover:bg-white/10"
-                >
-                  <Users className="w-5 h-5 inline mr-2" />
-                  About
-                </Link>
-              </div>
             </div>
 
             {/* CTA Button */}
-            <div className="hidden lg:block">
+            <motion.div
+              className="hidden lg:block"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               <Link
-                href="/contact"
-                className="bg-gradient-to-r from-purple-500 to-cyan-500 hover:from-purple-600 hover:to-cyan-600 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25"
+                href="/support"
+                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-200 shadow-lg hover:shadow-xl shadow-cyan-500/25 hover:shadow-cyan-500/40"
               >
+                <MessageCircle className="w-4 h-4 mr-2" />
                 Get Started
               </Link>
-            </div>
+            </motion.div>
 
-            {/* Mobile Menu Button */}
-            <button
-              onClick={toggleMenu}
-              className="lg:hidden text-white hover:text-cyan-400 transition-colors p-2"
-            >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+            {/* Mobile menu button */}
+            <div className="lg:hidden">
+              <motion.button
+                onClick={toggleMenu}
+                className="text-white hover:text-cyan-400 transition-colors"
+                whileTap={{ scale: 0.95 }}
+              >
+                {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </motion.button>
+            </div>
           </div>
         </div>
-      </nav>
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, x: '100%' }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: '100%' }}
-            transition={{ duration: 0.3 }}
-            className="fixed top-0 right-0 h-full w-80 bg-black/95 backdrop-blur-xl border-l border-purple-500/30 z-50 overflow-y-auto"
-          >
-            <div className="p-6">
-              <div className="flex items-center justify-between mb-8">
-                <h2 className="text-xl font-bold text-white">Menu</h2>
-                <button
-                  onClick={closeMenu}
-                  className="text-white hover:text-cyan-400 transition-colors"
-                >
-                  <X className="w-6 h-6" />
-                </button>
-              </div>
-
-              <div className="space-y-6">
-                {serviceCategories.map((category, index) => (
-                  <div key={index} className="border-b border-purple-500/30 pb-4">
-                    <h3 className="text-lg font-semibold text-white mb-3">{category.title}</h3>
-                    <div className="space-y-2">
-                      {category.services.slice(0, 3).map((service, serviceIndex) => (
-                        <Link
-                          key={serviceIndex}
-                          href={service.href}
-                          onClick={closeMenu}
-                          className="block text-gray-400 hover:text-cyan-400 transition-colors text-sm"
-                        >
-                          {service.name}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-
-                <div className="pt-4">
+        {/* Mobile Navigation */}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="lg:hidden bg-slate-900/95 backdrop-blur-xl border-t border-cyan-500/20"
+            >
+              <div className="px-4 py-6 space-y-4">
+                {mainNavigationItems.map((item) => (
                   <Link
-                    href="/contact"
+                    key={item.name}
+                    href={item.href}
                     onClick={closeMenu}
-                    className="block w-full bg-gradient-to-r from-purple-500 to-cyan-500 text-white text-center py-3 rounded-xl font-medium"
+                    className="flex items-center space-x-3 text-white hover:text-cyan-400 transition-colors p-3 rounded-lg hover:bg-slate-800/50"
                   >
+                    <item.icon className="w-5 h-5" />
+                    <span className="font-medium">{item.name}</span>
+                  </Link>
+                ))}
+                
+                <div className="pt-4 border-t border-cyan-500/20">
+                  <Link
+                    href="/support"
+                    onClick={closeMenu}
+                    className="inline-flex items-center justify-center w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-200"
+                  >
+                    <MessageCircle className="w-4 h-4 mr-2" />
                     Get Started
                   </Link>
                 </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </nav>
+
+      {/* Service Categories Mega Menu */}
+      <AnimatePresence>
+        {activeCategory && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="fixed top-32 left-0 right-0 z-40 bg-slate-900/95 backdrop-blur-xl border-b border-cyan-500/20 shadow-2xl"
+            onMouseLeave={() => setActiveCategory(null)}
+          >
+            <div className="max-w-7xl mx-auto px-4 py-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+                {serviceCategories
+                  .filter(cat => cat.title.includes(activeCategory))
+                  .map((category) => (
+                    <div key={category.title} className="space-y-4">
+                      <div className="flex items-center space-x-3">
+                        <div className={`w-12 h-12 bg-gradient-to-r ${category.color} rounded-lg flex items-center justify-center`}>
+                          <category.icon className="w-6 h-6 text-white" />
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-bold text-white">{category.title}</h3>
+                          <p className="text-slate-400">{category.description}</p>
+                        </div>
+                      </div>
+                      
+                      <div className="space-y-3">
+                        {category.services.map((service) => (
+                          <Link
+                            key={service.name}
+                            href={service.href}
+                            className="block p-4 rounded-lg border border-slate-700 hover:border-cyan-500/50 hover:bg-slate-800/50 transition-all duration-200 group"
+                          >
+                            <div className="flex items-start justify-between">
+                              <div className="flex-1">
+                                <h4 className="font-semibold text-white group-hover:text-cyan-400 transition-colors">
+                                  {service.name}
+                                </h4>
+                                <p className="text-sm text-slate-400 mt-1">{service.description}</p>
+                              </div>
+                              <div className="text-right">
+                                <div className="text-lg font-bold text-cyan-400">{service.price}</div>
+                                <ArrowRight className="w-4 h-4 text-slate-500 group-hover:text-cyan-400 transition-colors mt-1" />
+                              </div>
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
               </div>
             </div>
           </motion.div>
@@ -410,7 +351,7 @@ const UltraFuturisticNavigation2029: React.FC = () => {
       </AnimatePresence>
 
       {/* Spacer for fixed navigation */}
-      <div className="h-32"></div>
+      <div className="h-20" />
     </>
   );
 };
