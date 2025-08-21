@@ -8,6 +8,10 @@ import { innovativeRealMicroSaasServices2025 } from '../data/2025-innovative-rea
 import { innovativeAIServicesEnhanced2025 } from '../data/2025-innovative-ai-services-enhanced';
 import { innovativeITServicesEnhanced2025 } from '../data/2025-innovative-it-services-enhanced';
 import { emergingTechServicesEnhanced2025 } from '../data/2025-emerging-tech-services-enhanced';
+import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
+import { advancedCybersecurityServices2025 } from '../data/2025-advanced-cybersecurity-services';
+import { advancedBlockchainWeb3Services2025 } from '../data/2025-advanced-blockchain-web3-services';
+import { advancedHealthcareBiotechServices2025 } from '../data/2025-advanced-healthcare-biotech-services';
 
 const contactInfo = {
   mobile: '+1 302 464 0950',
@@ -17,15 +21,15 @@ const contactInfo = {
 };
 
 const heroStats = [
-  { label: 'Services Delivered', value: '500+', icon: <Star className="w-5 h-5" /> },
-  { label: 'Happy Clients', value: '1000+', icon: <Users className="w-5 h-5" /> },
+  { label: 'Services Delivered', value: '800+', icon: <Star className="w-5 h-5" /> },
+  { label: 'Happy Clients', value: '1500+', icon: <Users className="w-5 h-5" /> },
   { label: 'Success Rate', value: '99.9%', icon: <Award className="w-5 h-5" /> },
-  { label: 'ROI Average', value: '300%', icon: <TrendingUp className="w-5 h-5" /> }
+  { label: 'ROI Average', value: '350%', icon: <TrendingUp className="w-5 h-5" /> }
 ];
 
 const stats = [
-  { number: '50+', label: 'Services', icon: Star, color: 'text-cyan-400' },
-  { number: '1000+', label: 'Companies Served', icon: Users, color: 'text-purple-400' },
+  { number: '80+', label: 'Services', icon: Star, color: 'text-cyan-400' },
+  { number: '1500+', label: 'Companies Served', icon: Users, color: 'text-purple-400' },
   { number: '99.9%', label: 'Uptime', icon: Shield, color: 'text-green-400' },
   { number: '24/7', label: 'Support', icon: Zap, color: 'text-pink-400' }
 ];
@@ -39,6 +43,42 @@ const serviceCategories = [
     color: 'from-violet-500 to-purple-600',
     href: '/ai-services',
     features: ['Emotional Intelligence', 'Self-Awareness', 'Consciousness Evolution']
+  },
+  {
+    title: 'AI Automation',
+    description: 'Advanced AI-powered automation for business and development',
+    services: advancedAIAutomationServices2025.slice(0, 3),
+    icon: Zap,
+    color: 'from-emerald-500 to-teal-600',
+    href: '/ai-automation-services',
+    features: ['Code Generation', 'DevOps Automation', 'Customer Support AI']
+  },
+  {
+    title: 'Cybersecurity',
+    description: 'Next-generation cybersecurity and zero trust solutions',
+    services: advancedCybersecurityServices2025.slice(0, 3),
+    icon: Lock,
+    color: 'from-red-500 to-pink-600',
+    href: '/cybersecurity-services',
+    features: ['Zero Trust Security', 'AI Threat Intelligence', 'Cloud Security']
+  },
+  {
+    title: 'Blockchain & Web3',
+    description: 'Advanced blockchain, DeFi, and Web3 infrastructure',
+    services: advancedBlockchainWeb3Services2025.slice(0, 3),
+    icon: Globe,
+    color: 'from-purple-500 to-indigo-600',
+    href: '/blockchain-web3-services',
+    features: ['DeFi Optimization', 'NFT Marketplaces', 'Cross-Chain Bridges']
+  },
+  {
+    title: 'Healthcare & Biotech',
+    description: 'AI-powered healthcare and biotechnology solutions',
+    services: advancedHealthcareBiotechServices2025.slice(0, 3),
+    icon: Heart,
+    color: 'from-green-500 to-emerald-600',
+    href: '/healthcare-biotech-services',
+    features: ['Drug Discovery', 'Precision Medicine', 'Medical Imaging AI']
   },
   {
     title: 'Quantum & Emerging Tech',
@@ -146,6 +186,42 @@ const latestInnovations = [
     href: '/ai-consciousness-evolution-2025'
   },
   {
+    title: 'AI Code Generation & Review Platform',
+    description: 'Advanced AI platform for automated code generation, review, and optimization across multiple languages.',
+    price: '$199/month',
+    category: 'AI Automation',
+    icon: '💻',
+    color: 'from-emerald-500 to-teal-600',
+    href: '/ai-code-generation-review'
+  },
+  {
+    title: 'Zero Trust Security Platform',
+    description: 'Comprehensive zero trust security with continuous verification and adaptive access controls.',
+    price: '$599/month',
+    category: 'Cybersecurity',
+    icon: '🔒',
+    color: 'from-red-500 to-pink-600',
+    href: '/zero-trust-security-platform'
+  },
+  {
+    title: 'DeFi Yield Optimization Platform',
+    description: 'Intelligent DeFi yield farming optimization across multiple protocols and chains.',
+    price: '$99/month',
+    category: 'Blockchain & Web3',
+    icon: '🌾',
+    color: 'from-green-500 to-emerald-600',
+    href: '/defi-yield-optimization'
+  },
+  {
+    title: 'AI Drug Discovery Platform',
+    description: 'AI-powered drug discovery through molecular modeling and predictive analytics.',
+    price: '$2,999/month',
+    category: 'Healthcare & Biotech',
+    icon: '🧬',
+    color: 'from-green-500 to-emerald-600',
+    href: '/ai-drug-discovery-platform'
+  },
+  {
     title: 'Space Mining Platform',
     description: 'Revolutionary asteroid mining and space resource extraction platform with advanced robotics.',
     price: '$500,000/month',
@@ -153,15 +229,6 @@ const latestInnovations = [
     icon: '🚀',
     color: 'from-purple-500 to-indigo-600',
     href: '/space-mining-platform'
-  },
-  {
-    title: 'Quantum Cloud Infrastructure',
-    description: 'Next-generation quantum-enhanced cloud computing infrastructure with unprecedented power.',
-    price: '$75,000/month',
-    category: 'Quantum Infrastructure',
-    icon: '☁️',
-    color: 'from-blue-500 to-indigo-600',
-    href: '/quantum-cloud-infrastructure-platform'
   }
 ];
 
