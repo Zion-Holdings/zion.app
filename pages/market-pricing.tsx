@@ -25,6 +25,16 @@ export default function MarketPricingPage() {
               </ul>
               <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $50–$800/month depending on test volume and team size.</div>
             </div>
+
+            <div className="bg-black/30 rounded-2xl border border-cyan-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">AI Guardrails & Safety</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>OpenAI Safety: <a className="text-cyan-400 underline" href={`https://openai.com/index/safety/`} target="_blank" rel="noopener noreferrer">openai.com/index/safety</a></li>
+                <li>Anthropic RAI: <a className="text-cyan-400 underline" href={`https://www.anthropic.com/news`} target="_blank" rel="noopener noreferrer">anthropic.com/news</a> (policy updates)</li>
+                <li>Guardrails libraries: <a className="text-cyan-400 underline" href={`https://github.com/shreyashankar/gpt-guardrails`} target="_blank" rel="noopener noreferrer">github.com/shreyashankar/gpt-guardrails</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $0–$500/month for hosted tools; internal policies recommended.</div>
+            </div>
             <div className="bg-black/30 rounded-2xl border border-cyan-500/30 p-6">
               <h2 className="text-2xl font-semibold mb-2">LLM & AI Platforms</h2>
               <ul className="list-disc list-inside text-slate-300 space-y-1">
@@ -70,6 +80,16 @@ export default function MarketPricingPage() {
               <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $200–$10,000/month depending on traffic and workloads.</div>
             </div>
 
+            <div className="bg-black/30 rounded-2xl border border-rose-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">PDF & Document Generation</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>DocRaptor pricing: <a className="text-cyan-400 underline" href={`https://docraptor.com/pricing`} target="_blank" rel="noopener noreferrer">docraptor.com/pricing</a></li>
+                <li>PDFMonkey pricing: <a className="text-cyan-400 underline" href={`https://www.pdfmonkey.io/pricing`} target="_blank" rel="noopener noreferrer">pdfmonkey.io/pricing</a></li>
+                <li>CloudConvert: <a className="text-cyan-400 underline" href={`https://cloudconvert.com/pricing`} target="_blank" rel="noopener noreferrer">cloudconvert.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $15–$200/month depending on volume and features.</div>
+            </div>
+
             <div className="bg-black/30 rounded-2xl border border-pink-500/30 p-6">
               <h2 className="text-2xl font-semibold mb-2">Contact Center & Voice AI</h2>
               <ul className="list-disc list-inside text-slate-300 space-y-1">
@@ -78,6 +98,26 @@ export default function MarketPricingPage() {
                 <li>ElevenLabs: <a className="text-cyan-400 underline" href={`https://elevenlabs.io/pricing`} target="_blank" rel="noopener noreferrer">elevenlabs.io/pricing</a></li>
               </ul>
               <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $50–$1,500/month by minutes, languages, and concurrency.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-amber-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Kubernetes & FinOps</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Kubecost pricing: <a className="text-cyan-400 underline" href={`https://www.kubecost.com/pricing`} target="_blank" rel="noopener noreferrer">kubecost.com/pricing</a></li>
+                <li>CloudZero pricing: <a className="text-cyan-400 underline" href={`https://www.cloudzero.com/pricing`} target="_blank" rel="noopener noreferrer">cloudzero.com/pricing</a></li>
+                <li>Finout pricing: <a className="text-cyan-400 underline" href={`https://www.finout.io/pricing`} target="_blank" rel="noopener noreferrer">finout.io/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $99–$2,000/month based on clusters and spend.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-emerald-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Identity & Access</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Auth0 pricing: <a className="text-cyan-400 underline" href={`https://auth0.com/pricing`} target="_blank" rel="noopener noreferrer">auth0.com/pricing</a></li>
+                <li>Okta pricing: <a className="text-cyan-400 underline" href={`https://www.okta.com/pricing/`} target="_blank" rel="noopener noreferrer">okta.com/pricing</a></li>
+                <li>Azure AD pricing: <a className="text-cyan-400 underline" href={`https://azure.microsoft.com/pricing/details/active-directory/`} target="_blank" rel="noopener noreferrer">azure.microsoft.com/pricing/details/active-directory</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $50–$1,000/month by MAUs and features.</div>
             </div>
 
             <div className="bg-black/30 rounded-2xl border border-cyan-500/30 p-6">
@@ -171,10 +211,51 @@ export default function MarketPricingPage() {
               </ul>
               <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $0–$500/month for moderate pipelines and environments.</div>
             </div>
+
+            <div className="bg-black/30 rounded-2xl border border-teal-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Observability & APM</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Datadog pricing: <a className="text-cyan-400 underline" href={`https://www.datadoghq.com/pricing/`} target="_blank" rel="noopener noreferrer">datadoghq.com/pricing</a></li>
+                <li>New Relic pricing: <a className="text-cyan-400 underline" href={`https://newrelic.com/pricing`} target="_blank" rel="noopener noreferrer">newrelic.com/pricing</a></li>
+                <li>Grafana Cloud pricing: <a className="text-cyan-400 underline" href={`https://grafana.com/products/cloud/pricing/`} target="_blank" rel="noopener noreferrer">grafana.com/products/cloud/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $0–$2,500/month depending on data retention and hosts.</div>
+            </div>
+          </div>
+
+          <div className="space-y-6">
+            <div className="bg-black/30 rounded-2xl border border-teal-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Observability & Monitoring</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Datadog pricing: <a className="text-cyan-400 underline" href={`https://www.datadoghq.com/pricing/`} target="_blank" rel="noopener noreferrer">datadoghq.com/pricing</a></li>
+                <li>New Relic pricing: <a className="text-cyan-400 underline" href={`https://newrelic.com/pricing`} target="_blank" rel="noopener noreferrer">newrelic.com/pricing</a></li>
+                <li>Grafana Cloud pricing: <a className="text-cyan-400 underline" href={`https://grafana.com/pricing/`} target="_blank" rel="noopener noreferrer">grafana.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $50–$2,000/month by host count, metrics, and retention.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-lime-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Website Performance & RUM</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>SpeedCurve pricing: <a className="text-cyan-400 underline" href={`https://www.speedcurve.com/pricing/`} target="_blank" rel="noopener noreferrer">speedcurve.com/pricing</a></li>
+                <li>Calibre pricing: <a className="text-cyan-400 underline" href={`https://calibreapp.com/pricing`} target="_blank" rel="noopener noreferrer">calibreapp.com/pricing</a></li>
+                <li>Cloudflare Web Analytics: <a className="text-cyan-400 underline" href={`https://www.cloudflare.com/web-analytics/`} target="_blank" rel="noopener noreferrer">cloudflare.com/web-analytics</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $0–$500/month depending on synthetic runs and MAUs.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-violet-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Data Labeling & Enrichment</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Scale AI: <a className="text-cyan-400 underline" href={`https://scale.com`} target="_blank" rel="noopener noreferrer">scale.com</a></li>
+                <li>Labelbox pricing: <a className="text-cyan-400 underline" href={`https://labelbox.com/pricing/`} target="_blank" rel="noopener noreferrer">labelbox.com/pricing</a></li>
+                <li>Hive data: <a className="text-cyan-400 underline" href={`https://thehive.ai`} target="_blank" rel="noopener noreferrer">thehive.ai</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $100–$5,000/month based on volume and SLAs.</div>
+            </div>
           </div>
         </div>
       </div>
     </UltraAdvancedFuturisticBackground>
   );
 }
-
