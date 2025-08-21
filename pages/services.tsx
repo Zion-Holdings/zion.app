@@ -5,20 +5,64 @@ import {
   Search, Filter, Star, CheckCircle, ArrowRight, 
   Brain, Atom, Shield, Rocket, Target, Microscope,
   Phone, Mail, MapPin, TrendingUp, Users, Award,
-  ExternalLink
+  ExternalLink, Zap, Globe, Cpu, Database, Lock, Briefcase, Code
 } from 'lucide-react';
 
-// Import new 2034 service data
+// Import existing 2034 service data
 import { ultimateFuturisticServices2034 } from '../data/2034-ultimate-futuristic-services';
 // Import new 2034 services from remote
 import { cuttingEdge2034Services } from '../data/2034-cutting-edge-innovations';
 import { emergingTech2034Services } from '../data/2034-emerging-tech-breakthroughs';
+// Import new micro SAAS and AI services
+import { innovativeMicroSaasSolutions } from '../data/2034-innovative-micro-saas-solutions';
+import { cuttingEdgeAIServices } from '../data/2034-cutting-edge-ai-services';
 
 const contactInfo = {
   mobile: '+1 302 464 0950',
   email: 'kleber@ziontechgroup.com',
   address: '364 E Main St STE 1008 Middletown DE 19709',
   website: 'https://ziontechgroup.com'
+};
+
+// Create unified services array with all services
+const allServices = [
+  ...ultimateFuturisticServices2034,
+  ...cuttingEdge2034Services,
+  ...emergingTech2034Services,
+  ...innovativeMicroSaasSolutions,
+  ...cuttingEdgeAIServices
+];
+
+// Helper function to get service pricing display
+const getServicePricing = (service: any) => {
+  if (service.pricing.monthly) {
+    return {
+      display: service.pricing.monthly,
+      yearly: service.pricing.yearly,
+      enterprise: service.pricing.enterprise
+    };
+  } else if (service.pricing.starter) {
+    return {
+      display: service.pricing.starter,
+      yearly: service.pricing.professional,
+      enterprise: service.pricing.enterprise
+    };
+  }
+  return {
+    display: 'Contact for pricing',
+    yearly: 'Contact for pricing',
+    enterprise: 'Contact for pricing'
+  };
+};
+
+// Helper function to get service features
+const getServiceFeatures = (service: any) => {
+  return service.features || [];
+};
+
+// Helper function to get service category
+const getServiceCategory = (service: any) => {
+  return service.category || 'Other';
 };
 
 const serviceCategories = [
@@ -28,7 +72,7 @@ const serviceCategories = [
     description: 'Complete portfolio of revolutionary technology solutions',
     icon: Star,
     color: 'from-cyan-500 to-purple-500',
-    services: ultimateFuturisticServices2034,
+    services: allServices,
     gradient: 'from-cyan-500/20 to-purple-500/20'
   },
   {
@@ -37,7 +81,7 @@ const serviceCategories = [
     description: 'Revolutionary AI consciousness and emotional intelligence platforms',
     icon: Brain,
     color: 'from-pink-500 to-rose-500',
-    services: ultimateFuturisticServices2034.filter(s => s.category === 'AI & Consciousness'),
+    services: allServices.filter(s => getServiceCategory(s) === 'AI & Consciousness'),
     gradient: 'from-pink-500/20 to-rose-500/20'
   },
   {
@@ -46,7 +90,7 @@ const serviceCategories = [
     description: 'Quantum computing, DNA computing, and beyond',
     icon: Atom,
     color: 'from-cyan-500 to-blue-500',
-    services: ultimateFuturisticServices2034.filter(s => s.category === 'Quantum & Emerging Tech'),
+    services: allServices.filter(s => getServiceCategory(s) === 'Quantum & Emerging Tech'),
     gradient: 'from-cyan-500/20 to-blue-500/20'
   },
   {
@@ -55,7 +99,7 @@ const serviceCategories = [
     description: 'Space mining, metaverse development, and more',
     icon: Rocket,
     color: 'from-purple-500 to-indigo-500',
-    services: ultimateFuturisticServices2034.filter(s => s.category === 'Space & Metaverse'),
+    services: allServices.filter(s => getServiceCategory(s) === 'Space & Metaverse'),
     gradient: 'from-purple-500/20 to-indigo-500/20'
   },
   {
@@ -64,7 +108,7 @@ const serviceCategories = [
     description: 'Autonomous operations and zero-trust security',
     icon: Shield,
     color: 'from-green-500 to-emerald-500',
-    services: ultimateFuturisticServices2034.filter(s => s.category === 'Enterprise IT'),
+    services: allServices.filter(s => getServiceCategory(s) === 'Enterprise IT'),
     gradient: 'from-green-500/20 to-emerald-500/20'
   },
   {
@@ -73,7 +117,7 @@ const serviceCategories = [
     description: 'Innovative solutions for every business need',
     icon: Target,
     color: 'from-yellow-500 to-orange-500',
-    services: ultimateFuturisticServices2034.filter(s => s.category === 'Micro SaaS'),
+    services: allServices.filter(s => getServiceCategory(s) === 'Micro SaaS'),
     gradient: 'from-yellow-500/20 to-orange-500/20'
   },
   {
@@ -82,8 +126,35 @@ const serviceCategories = [
     description: 'Breakthrough technologies and innovations',
     icon: Microscope,
     color: 'from-blue-500 to-cyan-500',
-    services: ultimateFuturisticServices2034.filter(s => s.category === 'Research & Development'),
+    services: allServices.filter(s => getServiceCategory(s) === 'Research & Development'),
     gradient: 'from-blue-500/20 to-cyan-500/20'
+  },
+  {
+    id: 'AI Services',
+    title: '🤖 AI Services',
+    description: 'Cutting-edge artificial intelligence solutions',
+    icon: Cpu,
+    color: 'from-indigo-500 to-purple-500',
+    services: allServices.filter(s => getServiceCategory(s) === 'AI Services'),
+    gradient: 'from-indigo-500/20 to-purple-500/20'
+  },
+  {
+    id: 'Business Solutions',
+    title: '💼 Business Solutions',
+    description: 'Comprehensive business and productivity tools',
+    icon: Briefcase,
+    color: 'from-emerald-500 to-teal-500',
+    services: allServices.filter(s => getServiceCategory(s) === 'Business Solutions'),
+    gradient: 'from-emerald-500/20 to-teal-500/20'
+  },
+  {
+    id: 'Development Tools',
+    title: '🛠️ Development Tools',
+    description: 'Developer productivity and collaboration tools',
+    icon: Code,
+    color: 'from-orange-500 to-red-500',
+    services: allServices.filter(s => getServiceCategory(s) === 'Development Tools'),
+    gradient: 'from-orange-500/20 to-red-500/20'
   }
 ];
 
@@ -100,14 +171,21 @@ export default function ServicesPage() {
       
       if (priceRange === 'all') return matchesSearch;
       
-      const monthlyPrice = parseInt(service.pricing.monthly.replace(/[^0-9]/g, ''));
+      // Handle different pricing structures
+      let priceValue = 0;
+      if (service.pricing.monthly) {
+        priceValue = parseInt(service.pricing.monthly.replace(/[^0-9]/g, ''));
+      } else if (service.pricing.starter) {
+        priceValue = parseInt(service.pricing.starter.replace(/[^0-9]/g, ''));
+      }
+      
       switch (priceRange) {
         case 'low':
-          return matchesSearch && monthlyPrice < 2000;
+          return matchesSearch && priceValue < 2000;
         case 'medium':
-          return matchesSearch && monthlyPrice >= 2000 && monthlyPrice < 4000;
+          return matchesSearch && priceValue >= 2000 && priceValue < 4000;
         case 'high':
-          return matchesSearch && monthlyPrice >= 4000;
+          return matchesSearch && priceValue >= 4000;
         default:
           return matchesSearch;
       }
@@ -127,6 +205,12 @@ export default function ServicesPage() {
         return <Target className="w-6 h-6 text-yellow-400" />;
       case 'Research & Development':
         return <Microscope className="w-6 h-6 text-blue-400" />;
+      case 'AI Services':
+        return <Cpu className="w-6 h-6 text-indigo-400" />;
+      case 'Business Solutions':
+        return <Briefcase className="w-6 h-6 text-emerald-400" />;
+      case 'Development Tools':
+        return <Code className="w-6 h-6 text-orange-400" />;
       default:
         return <Star className="w-6 h-6 text-cyan-400" />;
     }
@@ -276,12 +360,12 @@ export default function ServicesPage() {
                     whileHover={{ y: -8 }}
                     className="group relative"
                   >
-                    <div className={`relative bg-gradient-to-br ${serviceCategories.find(cat => cat.id === service.category)?.gradient || 'from-gray-500/20 to-slate-500/20'} border border-cyan-500/30 rounded-2xl p-6 h-full backdrop-blur-sm hover:border-cyan-500/50 transition-all duration-300`}>
+                    <div className={`relative bg-gradient-to-br ${serviceCategories.find(cat => cat.id === getServiceCategory(service))?.gradient || 'from-gray-500/20 to-slate-500/20'} border border-cyan-500/30 rounded-2xl p-6 h-full backdrop-blur-sm hover:border-cyan-500/50 transition-all duration-300`}>
                       {/* Category Badge */}
                       <div className="absolute top-4 right-4 flex items-center space-x-2">
-                        {getCategoryIcon(service.category)}
+                        {getCategoryIcon(getServiceCategory(service))}
                         <span className="text-xs font-medium text-cyan-300 bg-black/50 px-2 py-1 rounded-full">
-                          {service.category}
+                          {getServiceCategory(service)}
                         </span>
                       </div>
 
@@ -299,15 +383,15 @@ export default function ServicesPage() {
                       <div className="mb-6">
                         <h4 className="text-sm font-semibold text-cyan-300 mb-3">Key Features</h4>
                         <div className="space-y-2">
-                          {service.features.slice(0, 3).map((feature, idx) => (
+                          {getServiceFeatures(service).slice(0, 3).map((feature, idx) => (
                             <div key={idx} className="flex items-start space-x-2">
                               <CheckCircle className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" />
                               <span className="text-xs text-gray-300">{feature}</span>
                             </div>
                           ))}
-                          {service.features.length > 3 && (
+                          {getServiceFeatures(service).length > 3 && (
                             <div className="text-xs text-cyan-400">
-                              +{service.features.length - 3} more features
+                              +{getServiceFeatures(service).length - 3} more features
                             </div>
                           )}
                         </div>
@@ -317,10 +401,10 @@ export default function ServicesPage() {
                       <div className="mb-6">
                         <h4 className="text-sm font-semibold text-cyan-300 mb-2">Starting at</h4>
                         <div className="text-2xl font-bold text-white">
-                          {service.pricing.monthly}
+                          {getServicePricing(service).display}
                         </div>
                         <div className="text-xs text-gray-400">
-                          {service.pricing.yearly}
+                          {getServicePricing(service).yearly}
                         </div>
                       </div>
 
