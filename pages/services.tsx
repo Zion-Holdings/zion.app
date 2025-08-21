@@ -36,6 +36,8 @@ import { realMarketAugmentations2025 } from '../data/real-market-augmentations-2
 import { innovative2026MicroSaasServicesV2 } from '../data/innovative-2026-micro-saas-v2';
 import { emergingTech2026ServicesV2 } from '../data/emerging-tech-2026-services-v2';
 import { enterpriseIT2026ServicesV2 } from '../data/enterprise-it-2026-services-v2';
+import { ultimate2026Services } from '../data/ultimate-2026-services';
+import { revolutionary2026Innovations } from '../data/revolutionary-2026-innovations';
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -76,7 +78,9 @@ export default function ServicesPage() {
     ...realMarketAugmentations2025,
     ...innovative2026MicroSaasServicesV2,
     ...emergingTech2026ServicesV2,
-    ...enterpriseIT2026ServicesV2
+    ...enterpriseIT2026ServicesV2,
+    ...ultimate2026Services,
+    ...revolutionary2026Innovations
   ];
 
   // Dynamic category counts mapped to the same filter logic below
