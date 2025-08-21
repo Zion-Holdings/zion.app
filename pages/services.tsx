@@ -134,6 +134,18 @@ export default function ServicesPage() {
                 desc: 'Error budgets, burn-rate alerts and synthetic checks. OTel-native.',
                 price: 'From $89/month',
                 link: 'https://ziontechgroup.com/uptime-slo-monitor'
+              },
+              {
+                title: '🤖 AI Assistant Pro',
+                desc: 'Branded AI copilot with RAG, guardrails and analytics.',
+                price: 'From $149/month',
+                link: 'https://ziontechgroup.com/ai-assistant'
+              },
+              {
+                title: '📘 API Documentation Generator',
+                desc: 'Generate accurate API docs with SDK snippets and changelogs.',
+                price: 'From $59/month',
+                link: 'https://ziontechgroup.com/api-documentation-generator'
               }
             ].map((ad) => (
               <Card key={ad.title} className="bg-gray-900/60 border border-gray-700/50">
@@ -145,6 +157,7 @@ export default function ServicesPage() {
                     <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-gray-300">
                       <a href={`tel:${contactInfo.mobile.replace(/[^+\\d]/g, '')}`} className="flex items-center gap-2 hover:text-white"><Phone className="w-4 h-4 text-cyan-400" /> {contactInfo.mobile}</a>
                       <a href={`mailto:${contactInfo.email}`} className="flex items-center gap-2 hover:text-white"><Mail className="w-4 h-4 text-purple-400" /> {contactInfo.email}</a>
+                      <a href={`https://maps.google.com/?q=${encodeURIComponent(contactInfo.address)}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white sm:col-span-2"><MapPin className="w-4 h-4 text-green-400" /> {contactInfo.address}</a>
                     </div>
                   </div>
                   <Button href={ad.link} className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-5 py-3 rounded-lg font-semibold">View Details</Button>
