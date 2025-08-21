@@ -5,6 +5,8 @@ import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
 import EnhancedFuturisticBackground from '../components/ui/EnhancedFuturisticBackground';
 import EnhancedFuturisticCard from '../components/ui/EnhancedFuturisticCard';
+import QuantumHolographicBackground from '../components/ui/QuantumHolographicBackground';
+import QuantumHolographicCard from '../components/ui/QuantumHolographicCard';
 import { expandedMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices, getServicesByPriceRange } from '../data/expanded-micro-saas-services';
 
 export default function ServicesPage() {
@@ -141,7 +143,7 @@ export default function ServicesPage() {
   };
 
   return (
-    <EnhancedFuturisticBackground variant="neural-quantum" intensity="high">
+          <QuantumHolographicBackground variant="neural-quantum" intensity="high">
       <div className="min-h-screen">
         <Head>
           <title>Complete Services Portfolio | Zion Tech Group - AI, Cloud, Security & More</title>
@@ -552,7 +554,7 @@ export default function ServicesPage() {
                     </div>
                     <div className="flex items-center space-x-3">
                       <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
-                      <span className="text-gray-300">14-Day Free Trials</span>
+                      <span className="text-gray-300">21-Day Free Trials</span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
@@ -560,7 +562,7 @@ export default function ServicesPage() {
                     </div>
                     <div className="flex items-center space-x-3">
                       <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
-                      <span className="text-gray-300">1000%+ Average ROI</span>
+                      <span className="text-gray-300">1500%+ Average ROI</span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
@@ -568,7 +570,7 @@ export default function ServicesPage() {
                     </div>
                     <div className="flex items-center space-x-3">
                       <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
-                      <span className="text-gray-300">Enterprise Security & Compliance</span>
+                      <span className="text-gray-300">Quantum-Safe Security & Compliance</span>
                     </div>
                   </div>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -601,7 +603,7 @@ export default function ServicesPage() {
                 </h2>
                 <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
                   Contact our team to discuss your specific needs and find the perfect solution for your business. 
-                  Get a free consultation and start your 14-day trial today.
+                  Get a free consultation and start your 21-day trial today.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
                   <Button href="/contact" variant="primary" size="lg">
@@ -613,7 +615,7 @@ export default function ServicesPage() {
                   </Button>
                 </div>
                 <div className="mt-6 text-sm text-gray-400 mb-8">
-                  Free 14-day trial • No credit card required • Expert support included • 99.9% uptime guarantee
+                  Free 21-day trial • No credit card required • Expert support included • 99.99% uptime guarantee
                 </div>
                 
                 {/* Contact Information */}
@@ -649,6 +651,6 @@ export default function ServicesPage() {
           </div>
         </section>
       </div>
-    </EnhancedFuturisticBackground>
+    </QuantumHolographicBackground>
   );
 }
