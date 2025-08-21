@@ -20,6 +20,19 @@ interface NavigationItem {
 
 const navigationItems: NavigationItem[] = [
   {
+    name: 'All Services',
+    href: '/comprehensive-services-showcase-2025',
+    icon: <Globe className="w-5 h-5" />,
+    description: 'Complete portfolio of all technology services',
+    badge: 'Showcase',
+    children: [
+      { name: 'View All Services', href: '/comprehensive-services-showcase-2025', description: 'Complete services portfolio' },
+      { name: 'Service Categories', href: '/comprehensive-services-showcase-2025#categories', description: 'Browse by category' },
+      { name: 'Pricing Comparison', href: '/comprehensive-services-showcase-2025#pricing', description: 'Compare service costs' },
+      { name: 'Service Search', href: '/comprehensive-services-showcase-2025#search', description: 'Find specific services' }
+    ]
+  },
+  {
     name: 'AI & Consciousness',
     href: '/ai-services',
     icon: <Brain className="w-5 h-5" />,
