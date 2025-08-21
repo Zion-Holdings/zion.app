@@ -1,455 +1,283 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Star, Zap, Shield, TrendingUp, ArrowRight, ExternalLink, Check, Users, Clock, DollarSign } from 'lucide-react';
 
 interface QuantumHolographicCardProps {
-  children: React.ReactNode;
+  service: {
+    id: string;
+    name: string;
+    tagline: string;
+    price: string;
+    period: string;
+    description: string;
+    features: string[];
+    popular: boolean;
+    icon: string;
+    color: string;
+    textColor: string;
+    link: string;
+    marketPosition: string;
+    targetAudience: string;
+    trialDays: number;
+    setupTime: string;
+    category: string;
+    realService: boolean;
+    technology: string[];
+    integrations: string[];
+    useCases: string[];
+    roi: string;
+    competitors: string[];
+    marketSize: string;
+    growthRate: string;
+    variant: string;
+    contactInfo: {
+      mobile: string;
+      email: string;
+      address: string;
+      website: string;
+    };
+    realImplementation: boolean;
+    implementationDetails: string;
+    launchDate: string;
+    customers: number;
+    rating: number;
+    reviews: number;
+  };
   className?: string;
-  variant?: 'quantum' | 'holographic' | 'matrix' | 'neural' | 'cyberpunk';
-  intensity?: 'low' | 'medium' | 'high';
-  interactive?: boolean;
-  glowColor?: string;
-  borderColor?: string;
-  background?: 'transparent' | 'glass' | 'solid' | 'gradient';
-  size?: 'sm' | 'md' | 'lg' | 'xl';
-  elevation?: 'none' | 'low' | 'medium' | 'high' | 'extreme';
 }
 
-const QuantumHolographicCard: React.FC<QuantumHolographicCardProps> = ({
-  children,
-  className = '',
-  variant = 'quantum',
-  intensity = 'medium',
-  interactive = true,
-  glowColor,
-  borderColor,
-  background = 'glass',
-  size = 'md',
-  elevation = 'medium'
-}) => {
-  const [isHovered, setIsHovered] = useState(false);
-  const [isFocused, setIsFocused] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
-  const getVariantColors = () => {
-    switch (variant) {
-      case 'quantum':
-        return {
-          primary: '#00ffff',
-          secondary: '#8b5cf6',
-          accent: '#06b6d4',
-          glow: '#00ffff',
-          border: '#00ffff'
-        };
-      case 'holographic':
-        return {
-          primary: '#8b5cf6',
-          secondary: '#ec4899',
-          accent: '#a855f7',
-          glow: '#8b5cf6',
-          border: '#8b5cf6'
-        };
-      case 'matrix':
-        return {
-          primary: '#00ff00',
-          secondary: '#10b981',
-          accent: '#059669',
-          glow: '#00ff00',
-          border: '#00ff00'
-        };
-      case 'neural':
-        return {
-          primary: '#ff00ff',
-          secondary: '#ec4899',
-          accent: '#f97316',
-          glow: '#ff00ff',
-          border: '#ff00ff'
-        };
-      case 'cyberpunk':
-        return {
-          primary: '#f97316',
-          secondary: '#ef4444',
-          accent: '#f59e0b',
-          glow: '#f97316',
-          border: '#f97316'
-        };
-      default:
-        return {
-          primary: '#00ffff',
-          secondary: '#8b5cf6',
-          accent: '#06b6d4',
-          glow: '#00ffff',
-          border: '#00ffff'
-        };
+const QuantumHolographicCard: React.FC<QuantumHolographicCardProps> = ({ service, className = '' }) => {
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50, scale: 0.9 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut" as const
+      }
+    },
+    hover: {
+      y: -10,
+      scale: 1.02,
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut" as const
+      }
     }
   };
 
-  const getSizeClasses = () => {
-    switch (size) {
-      case 'sm':
-        return 'p-4 text-sm';
-      case 'md':
-        return 'p-6 text-base';
-      case 'lg':
-        return 'p-8 text-lg';
-      case 'xl':
-        return 'p-10 text-xl';
-      default:
-        return 'p-6 text-base';
+  const glowVariants = {
+    initial: { opacity: 0.5, scale: 1 },
+    animate: {
+      opacity: [0.5, 1, 0.5],
+      scale: [1, 1.05, 1],
+      transition: {
+        duration: 3,
+        repeat: Infinity,
+        ease: "easeInOut" as const
+      }
     }
   };
 
-  const getElevationClasses = () => {
-    switch (elevation) {
-      case 'none':
-        return '';
-      case 'low':
-        return 'shadow-lg';
-      case 'medium':
-        return 'shadow-2xl';
-      case 'high':
-        return 'shadow-[0_25px_50px_-12px_rgba(0,0,0,0.8)]';
-      case 'extreme':
-        return 'shadow-[0_50px_100px_-20px_rgba(0,0,0,0.9)]';
-      default:
-        return 'shadow-2xl';
-    }
-  };
-
-  const getBackgroundClasses = () => {
-    switch (background) {
-      case 'transparent':
-        return 'bg-transparent';
-      case 'glass':
-        return 'bg-black/20 backdrop-blur-xl border border-white/10';
-      case 'solid':
-        return 'bg-black/80';
-      case 'gradient':
-        return 'bg-gradient-to-br from-black/90 via-black/70 to-black/90';
-      default:
-        return 'bg-black/20 backdrop-blur-xl border border-white/10';
-    }
-  };
-
-  const colors = getVariantColors();
-  const finalGlowColor = glowColor || colors.glow;
-  const finalBorderColor = borderColor || colors.border;
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!interactive) return;
-    
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    
-    setMousePosition({ x, y });
-  };
-
-  const getGlowIntensity = () => {
-    switch (intensity) {
-      case 'low':
-        return '0 0 20px';
-      case 'medium':
-        return '0 0 40px';
-      case 'high':
-        return '0 0 60px';
-      default:
-        return '0 0 40px';
-    }
-  };
-
-  const getParticleCount = () => {
-    switch (intensity) {
-      case 'low':
-        return 5;
-      case 'medium':
-        return 10;
-      case 'high':
-        return 20;
-      default:
-        return 10;
-    }
+  const featureVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: (i: number) => ({
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: i * 0.1,
+        duration: 0.5,
+        ease: "easeOut" as const
+      }
+    })
   };
 
   return (
     <motion.div
-      className={`relative overflow-hidden rounded-2xl ${getSizeClasses()} ${getBackgroundClasses()} ${getElevationClasses()} ${className}`}
-      onMouseMove={handleMouseMove}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onFocus={() => setIsFocused(true)}
-      onBlur={() => setIsFocused(false)}
-      whileHover={interactive ? { scale: 1.02, y: -5 } : {}}
-      whileTap={interactive ? { scale: 0.98 } : {}}
-      transition={{
-        type: "spring",
-        stiffness: 300,
-        damping: 20
-      }}
-      style={{
-        boxShadow: isHovered || isFocused 
-          ? `${getGlowIntensity()} ${finalGlowColor}40, 0 0 80px ${finalGlowColor}20`
-          : undefined
-      }}
+      className={`relative group cursor-pointer ${className}`}
+      variants={cardVariants}
+      initial="hidden"
+      whileInView="visible"
+      whileHover="hover"
+      viewport={{ once: true, margin: "-50px" }}
     >
-      {/* Animated border */}
-      <div className="absolute inset-0 rounded-2xl overflow-hidden">
-        <motion.div
-          className="absolute inset-0"
-          style={{
-            background: `conic-gradient(from 0deg, transparent, ${finalBorderColor}, transparent, ${finalBorderColor}, transparent)`,
-            borderRadius: 'inherit'
-          }}
-          animate={{
-            rotate: [0, 360]
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        />
-        
-        <div 
-          className="absolute inset-[2px] rounded-2xl"
-          style={{
-            background: getBackgroundClasses().includes('bg-') 
-              ? getBackgroundClasses() 
-              : 'bg-black/20 backdrop-blur-xl'
-          }}
-        />
+      {/* Holographic glow effect */}
+      <motion.div
+        className="absolute inset-0 rounded-2xl bg-gradient-to-br from-cyan-400/20 via-purple-500/20 to-pink-500/20 blur-xl"
+        variants={glowVariants}
+        initial="initial"
+        animate="animate"
+      />
+      
+      {/* Main card */}
+      <div className="relative bg-gradient-to-br from-gray-900/90 via-gray-800/90 to-gray-900/90 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-6 overflow-hidden">
+        {/* Quantum particle effect background */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-4 left-4 w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
+          <div className="absolute top-8 right-6 w-1 h-1 bg-purple-400 rounded-full animate-ping" />
+          <div className="absolute bottom-6 left-8 w-1.5 h-1.5 bg-pink-400 rounded-full animate-bounce" />
+          <div className="absolute bottom-8 right-4 w-1 h-1 bg-yellow-400 rounded-full animate-pulse" />
+        </div>
+
+        {/* Header */}
+        <div className="relative z-10">
+          <div className="flex items-start justify-between mb-4">
+            <div className="flex items-center space-x-3">
+              <div className="text-4xl">{service.icon}</div>
+              <div>
+                <h3 className="text-xl font-bold text-white mb-1">{service.name}</h3>
+                <p className="text-gray-300 text-sm">{service.tagline}</p>
+              </div>
+            </div>
+            
+            {service.popular && (
+              <motion.div
+                className="flex items-center space-x-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-black px-3 py-1 rounded-full text-xs font-semibold"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Star className="w-3 h-3 fill-current" />
+                <span>Popular</span>
+              </motion.div>
+            )}
+          </div>
+
+          {/* Price and trial */}
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center space-x-2">
+              <span className="text-3xl font-bold text-white">{service.price}</span>
+              <span className="text-gray-400">{service.period}</span>
+            </div>
+            <div className="flex items-center space-x-2 text-sm text-gray-300">
+              <Clock className="w-4 h-4" />
+              <span>{service.trialDays} days free</span>
+            </div>
+          </div>
+
+          {/* Description */}
+          <p className="text-gray-300 mb-6 leading-relaxed">{service.description}</p>
+
+          {/* Key metrics */}
+          <div className="grid grid-cols-2 gap-4 mb-6">
+            <div className="bg-gray-800/50 rounded-lg p-3 border border-gray-700/50">
+              <div className="flex items-center space-x-2 text-sm text-gray-400 mb-1">
+                <Users className="w-4 h-4" />
+                <span>Customers</span>
+              </div>
+              <div className="text-xl font-bold text-white">{service.customers.toLocaleString()}+</div>
+            </div>
+            
+            <div className="bg-gray-800/50 rounded-lg p-3 border border-gray-700/50">
+              <div className="flex items-center space-x-2 text-sm text-gray-400 mb-1">
+                <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                <span>Rating</span>
+              </div>
+              <div className="text-xl font-bold text-white">{service.rating}/5.0</div>
+            </div>
+          </div>
+
+          {/* Features */}
+          <div className="mb-6">
+            <h4 className="text-white font-semibold mb-3 flex items-center space-x-2">
+              <Zap className="w-4 h-4 text-yellow-400" />
+              <span>Key Features</span>
+            </h4>
+            <div className="space-y-2">
+              {service.features.slice(0, 4).map((feature, index) => (
+                <motion.div
+                  key={index}
+                  className="flex items-center space-x-2 text-sm text-gray-300"
+                  custom={index}
+                  variants={featureVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                >
+                  <Check className="w-3 h-3 text-green-400 flex-shrink-0" />
+                  <span>{feature}</span>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* Market data */}
+          <div className="bg-gradient-to-r from-blue-900/30 to-purple-900/30 rounded-lg p-4 mb-6 border border-blue-700/30">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-sm font-semibold text-blue-300">Market Position</span>
+              <TrendingUp className="w-4 h-4 text-green-400" />
+            </div>
+            <p className="text-xs text-gray-300 leading-relaxed">{service.marketPosition}</p>
+            <div className="flex items-center justify-between mt-2 text-xs">
+              <span className="text-cyan-300">{service.marketSize}</span>
+              <span className="text-green-300">{service.growthRate} growth</span>
+            </div>
+          </div>
+
+          {/* ROI and competitors */}
+          <div className="grid grid-cols-2 gap-4 mb-6">
+            <div className="bg-green-900/20 rounded-lg p-3 border border-green-700/30">
+              <div className="text-sm font-semibold text-green-300 mb-1">ROI</div>
+              <div className="text-xs text-gray-300">{service.roi}</div>
+            </div>
+            
+            <div className="bg-orange-900/20 rounded-lg p-3 border border-orange-700/30">
+              <div className="text-sm font-semibold text-orange-300 mb-1">Competitors</div>
+              <div className="text-xs text-gray-300">
+                {service.competitors.slice(0, 2).join(', ')}
+              </div>
+            </div>
+          </div>
+
+          {/* Contact information */}
+          <div className="bg-gray-800/50 rounded-lg p-4 mb-6 border border-gray-700/50">
+            <h4 className="text-white font-semibold mb-3 flex items-center space-x-2">
+              <Shield className="w-4 h-4 text-blue-400" />
+              <span>Contact & Support</span>
+            </h4>
+            <div className="space-y-2 text-sm text-gray-300">
+              <div className="flex items-center space-x-2">
+                <span className="text-blue-400">📱</span>
+                <span>{service.contactInfo.mobile}</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-green-400">✉️</span>
+                <span>{service.contactInfo.email}</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-purple-400">📍</span>
+                <span className="text-xs">{service.contactInfo.address}</span>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA Button */}
+          <motion.a
+            href={service.link}
+            className="group relative inline-flex items-center justify-center w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            <span className="mr-2">Get Started</span>
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+            
+            {/* Button glow effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-xl blur opacity-0 group-hover:opacity-75 transition-opacity duration-300" />
+          </motion.a>
+
+          {/* Learn more link */}
+          <div className="text-center mt-4">
+            <a
+              href={service.link}
+              className="inline-flex items-center space-x-2 text-sm text-gray-400 hover:text-cyan-400 transition-colors duration-300"
+            >
+              <span>Learn more about {service.name}</span>
+              <ExternalLink className="w-3 h-3" />
+            </a>
+          </div>
+        </div>
       </div>
-
-      {/* Quantum particles */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {Array.from({ length: getParticleCount() }).map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 rounded-full"
-            style={{
-              backgroundColor: colors.primary,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`
-            }}
-            animate={{
-              scale: [0, 1, 0],
-              opacity: [0, 0.8, 0],
-              x: [0, (Math.random() - 0.5) * 100],
-              y: [0, (Math.random() - 0.5) * 100]
-            }}
-            transition={{
-              duration: 3 + Math.random() * 2,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-              ease: "easeInOut"
-            }}
-          />
-        ))}
-      </div>
-
-      {/* Holographic grid overlay */}
-      <div className="absolute inset-0 pointer-events-none">
-        <motion.div
-          className="absolute inset-0 opacity-20"
-          style={{
-            backgroundImage: `
-              linear-gradient(${finalBorderColor}20 1px, transparent 1px),
-              linear-gradient(90deg, ${finalBorderColor}20 1px, transparent 1px)
-            `,
-            backgroundSize: '20px 20px'
-          }}
-          animate={{
-            opacity: [0.1, 0.3, 0.1]
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-      </div>
-
-      {/* Interactive light effect */}
-      {interactive && (
-        <motion.div
-          className="absolute pointer-events-none rounded-full blur-3xl opacity-30"
-          style={{
-            background: `radial-gradient(circle, ${finalGlowColor}40 0%, transparent 70%)`,
-            width: 200,
-            height: 200,
-            left: mousePosition.x - 100,
-            top: mousePosition.y - 100
-          }}
-          animate={{
-            scale: isHovered ? 1.5 : 1,
-            opacity: isHovered ? 0.5 : 0.3
-          }}
-          transition={{
-            type: "spring",
-            stiffness: 300,
-            damping: 30
-          }}
-        />
-      )}
-
-      {/* Floating elements based on variant */}
-      <div className="absolute inset-0 pointer-events-none">
-        {variant === 'quantum' && (
-          <>
-            <motion.div
-              className="absolute top-4 right-4 w-3 h-3 border border-cyan-400/50 rounded-full"
-              animate={{
-                scale: [1, 1.5, 1],
-                opacity: [0.5, 1, 0.5]
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-            <motion.div
-              className="absolute bottom-4 left-4 w-2 h-2 bg-purple-400/60 rounded-full"
-              animate={{
-                y: [0, -10, 0],
-                opacity: [0.6, 1, 0.6]
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-          </>
-        )}
-
-        {variant === 'holographic' && (
-          <>
-            <motion.div
-              className="absolute top-6 left-6 w-4 h-4 border border-purple-400/40"
-              style={{ transform: 'rotate(45deg)' }}
-              animate={{
-                rotate: [45, 405],
-                scale: [1, 1.2, 1]
-              }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-            <motion.div
-              className="absolute bottom-6 right-6 w-3 h-3 bg-pink-400/50 rounded-full"
-              animate={{
-                scale: [1, 1.3, 1],
-                opacity: [0.5, 1, 0.5]
-              }}
-              transition={{
-                duration: 2.5,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-          </>
-        )}
-
-        {variant === 'matrix' && (
-          <>
-            <motion.div
-              className="absolute top-4 left-4 w-2 h-2 bg-green-400/70"
-              animate={{
-                scale: [1, 1.5, 1],
-                opacity: [0.7, 1, 0.7]
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-            <motion.div
-              className="absolute bottom-4 right-4 w-3 h-3 border border-green-400/50"
-              animate={{
-                rotate: [0, 180, 360],
-                opacity: [0.5, 1, 0.5]
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-          </>
-        )}
-
-        {variant === 'neural' && (
-          <>
-            <motion.div
-              className="absolute top-5 left-5 w-3 h-3 bg-pink-400/60 rounded-full"
-              animate={{
-                scale: [1, 1.4, 1],
-                opacity: [0.6, 1, 0.6]
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-            <motion.div
-              className="absolute bottom-5 right-5 w-2 h-2 border border-orange-400/50"
-              animate={{
-                rotate: [0, 90, 180, 270, 360],
-                opacity: [0.5, 1, 0.5]
-              }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: "linear"
-              }}
-            />
-          </>
-        )}
-
-        {variant === 'cyberpunk' && (
-          <>
-            <motion.div
-              className="absolute top-4 left-4 w-3 h-3 bg-orange-400/70"
-              animate={{
-                scale: [1, 1.3, 1],
-                opacity: [0.7, 1, 0.7]
-              }}
-              transition={{
-                duration: 1.8,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-            <motion.div
-              className="absolute bottom-4 right-4 w-2 h-2 bg-red-400/60 rounded-full"
-              animate={{
-                y: [0, -8, 0],
-                opacity: [0.6, 1, 0.6]
-              }}
-              transition={{
-                duration: 2.2,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-          </>
-        )}
-      </div>
-
-      {/* Content */}
-      <div className="relative z-10">
-        {children}
-      </div>
-
-      {/* Corner accents */}
-      <div className="absolute top-0 left-0 w-6 h-6 border-l-2 border-t-2 border-current opacity-50" />
-      <div className="absolute top-0 right-0 w-6 h-6 border-r-2 border-t-2 border-current opacity-50" />
-      <div className="absolute bottom-0 left-0 w-6 h-6 border-l-2 border-b-2 border-current opacity-50" />
-      <div className="absolute bottom-0 right-0 w-6 h-6 border-r-2 border-b-2 border-current opacity-50" />
     </motion.div>
   );
 };

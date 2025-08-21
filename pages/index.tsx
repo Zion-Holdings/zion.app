@@ -49,20 +49,16 @@ export default function HomePage() {
       }
     },
     {
-      title: '🏭 Autonomous Manufacturing AI Platform',
-      description: 'Self-learning manufacturing systems achieving zero downtime and 400% ROI within 6 months. Industry 4.0 revolution.',
-      price: 'Starting at $199/month',
-      features: ['Predictive maintenance with 99.9% accuracy', 'Real-time quality control automation', 'Supply chain intelligence and optimization', 'Energy consumption optimization'],
-      link: 'https://ziontechgroup.com/autonomous-manufacturing',
-      color: 'from-orange-500 to-red-600',
-      marketData: '$12.3B industrial AI market, 320% annual growth',
-      competitors: 'Siemens MindSphere ($500+/month), PTC ThingWorx ($300+/month)',
-      savings: 'Save 60% vs. competitors',
-      contactInfo: {
-        mobile: '+1 302 464 0950',
-        email: 'kleber@ziontechgroup.com',
-        address: '364 E Main St STE 1008 Middletown DE 19709'
-      }
+      title: '🧠 Quantum AI Brain-Computer Interface',
+      icon: '🧠',
+      description: 'Breakthrough quantum AI-powered brain-computer interface that enables direct neural communication and control. Achieve unprecedented human-AI symbiosis with 99.9% accuracy.',
+      price: 'Starting at $4,999/month',
+      features: ['Quantum-enhanced neural signal processing', 'Real-time brain activity analysis', 'AI-powered thought-to-action conversion', 'Secure neural data encryption'],
+      link: 'https://ziontechgroup.com/quantum-ai-brain-computer-interface',
+      color: 'from-purple-600 to-pink-700',
+      marketData: '$2.1B brain-computer interface market, 580% annual growth',
+      competitors: 'Traditional BCI systems ($50,000+), Basic neural interfaces ($25,000+), Research-only platforms ($100,000+)',
+      savings: 'Save 90% vs. competitors'
     },
     {
       title: '🔒 Quantum Cybersecurity Suite',
@@ -81,15 +77,40 @@ export default function HomePage() {
       }
     },
     {
-      title: '🚀 Space Technology Platform',
-      description: 'Cutting-edge space exploration and satellite management tools. Achieve 500% ROI within 8 months through improved operations.',
-      price: 'Starting at $399/month',
-      features: ['Satellite mission management and planning', 'Space data analytics and visualization', 'Orbital optimization algorithms', 'Space debris tracking and avoidance'],
-      link: 'https://ziontechgroup.com/space-technology',
-      color: 'from-blue-500 to-indigo-600',
-      marketData: '$4.2B space technology market, 280% annual growth',
-      competitors: 'Maxar ($500+/month), Planet Labs ($400+/month)',
-      savings: 'Save 20% vs. competitors',
+      title: '🔐 Quantum Internet Security Platform',
+      icon: '🔐',
+      description: 'Revolutionary quantum internet security platform that provides unbreakable encryption and quantum-safe communication protocols. Achieve 100% security with quantum-resistant algorithms.',
+      price: 'Starting at $2,499/month',
+      features: ['Quantum-resistant encryption algorithms', 'Quantum key distribution (QKD)', 'AI-powered threat detection', 'Quantum-safe VPN'],
+      link: 'https://ziontechgroup.com/quantum-internet-security-platform',
+      color: 'from-green-600 to-emerald-700',
+      marketData: '$12.8B quantum security market, 450% annual growth',
+      competitors: 'Traditional security ($5000+/month), Basic encryption ($1000/month), Legacy VPN services ($500/month)',
+      savings: 'Save 50% vs. competitors'
+    },
+    {
+      title: '🚗 Autonomous Vehicle AI Platform',
+      icon: '🚗',
+      description: 'Breakthrough AI platform that manages and coordinates autonomous vehicles with unprecedented safety and efficiency. Achieve 99.99% accident-free autonomous transportation.',
+      price: 'Starting at $3,999/month',
+      features: ['AI-powered autonomous navigation', 'Real-time traffic optimization', 'Predictive maintenance AI', 'Multi-vehicle coordination'],
+      link: 'https://ziontechgroup.com/autonomous-vehicle-ai-platform',
+      color: 'from-orange-600 to-red-700',
+      marketData: '$54.2B autonomous vehicle market, 380% annual growth',
+      competitors: 'Waymo ($10,000+/month), Tesla ($5000+/month), Traditional fleet management ($2000/month)',
+      savings: 'Save 60% vs. competitors'
+    },
+    {
+      title: '🌐 Metaverse AI Development Platform',
+      icon: '🌐',
+      description: 'Revolutionary AI platform for creating, managing, and monetizing immersive metaverse experiences. Build the future of digital interaction with AI-powered virtual worlds.',
+      price: 'Starting at $2,899/month',
+      features: ['AI-powered 3D world generation', 'Intelligent NPC creation', 'Dynamic content adaptation', 'Real-time AI interactions'],
+      link: 'https://ziontechgroup.com/metaverse-ai-development-platform',
+      color: 'from-violet-600 to-purple-700',
+      marketData: '$74.4B metaverse market, 420% annual growth',
+      competitors: 'Roblox ($2500/month), Unity ($4000/month), Traditional 3D development ($8000/month)',
+      savings: 'Save 64% vs. competitors',
       contactInfo: {
         mobile: '+1 302 464 0950',
         email: 'kleber@ziontechgroup.com',
@@ -154,7 +175,6 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-12"
           >
             {heroStats.map((stat, index) => (
               <motion.div

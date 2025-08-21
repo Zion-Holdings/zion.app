@@ -49,6 +49,18 @@ const FuturisticNavbar: React.FC = () => {
       ]
     },
     { 
+      name: 'IT Services', 
+      href: '/it-services', 
+      icon: <Globe className="w-4 h-4" />,
+      description: 'Cloud, DevOps, SRE, FinOps'
+    },
+    { 
+      name: 'AI Services', 
+      href: '/ai-services', 
+      icon: <Brain className="w-4 h-4" />,
+      description: 'LLM, RAG, MLOps'
+    },
+    { 
       name: 'Micro SaaS', 
       href: '/micro-saas', 
       icon: <Bot className="w-4 h-4" />,
