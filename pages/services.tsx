@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Code, BookOpen, Activity, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Filter, Grid, List, ChevronDown, ChevronUp, Sparkles, FlaskConical, Dna, Car, Leaf, Factory, Truck, Microscope, GraduationCap, ShieldCheck, Brain, Atom, Globe2, Bot, ChevronRight, LinkIcon, Building2 } from 'lucide-react';
+import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Code, BookOpen, Activity, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Filter, Grid, List, ChevronDown, ChevronUp, Sparkles, FlaskConical, Dna, Car, Leaf, Factory, Truck, Microscope, GraduationCap, ShieldCheck, Brain, Atom, Globe2, Bot, ChevronRight, Link as LinkIcon, Building2 } from 'lucide-react';
 import Button from '../components/ui/Button';
 import UltraFuturisticMatrixBackground from '../components/ui/UltraFuturisticMatrixBackground';
 import UltraFuturisticServiceCard from '../components/ui/UltraFuturisticServiceCard';
 import Card from '../components/ui/Card';
 import { motion } from 'framer-motion';
-import { enhancedRealMicroSaasServices, serviceCategories } from '../data/enhanced-real-micro-saas-services';
+import { enhancedRealMicroSaasServices, serviceCategories, getServicesByCategory } from '../data/enhanced-real-micro-saas-services';
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -15,7 +15,7 @@ export default function ServicesPage() {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [priceRange, setPriceRange] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
-  const [sortBy, setSortBy] = useState('name');
+  const [sortBy, setSortBy] = useState<'name' | 'price' | 'popularity' | 'category' | 'rating' | 'roi'>('name');
   const [showFilters, setShowFilters] = useState(false);
 
   const router = useRouter();
@@ -47,43 +47,7 @@ export default function ServicesPage() {
     { value: 'category', label: 'Category' }
   ];
 
-  // Filter and sort services
-  let filteredServices = enhancedRealMicroSaasServices;
-
-  // Category filter
-  if (selectedCategory !== 'All') {
-    filteredServices = getServicesByCategory(selectedCategory);
-  }
-
-  // Price range filter
-  if (priceRange !== 'All') {
-    const [min, max] = priceRange.split('-').map(p => p === '+' ? Infinity : parseInt(p));
-    filteredServices = getServicesByPriceRange(min, max);
-  }
-
-  // Search filter
-  if (searchQuery) {
-    filteredServices = filteredServices.filter(service =>
-      service.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      service.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      service.tagline.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      service.category.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-  }
-
-  // Sort services
-  filteredServices.sort((a, b) => {
-    switch (sortBy) {
-      case 'price':
-        return parseFloat(a.price.replace('$', '').replace(',', '')) - parseFloat(b.price.replace('$', '').replace(',', ''));
-      case 'popularity':
-        return (b.popular ? 1 : 0) - (a.popular ? 1 : 0);
-      case 'category':
-        return a.category.localeCompare(b.category);
-      default:
-        return a.name.localeCompare(b.name);
-    }
-  });
+  // deprecated duplicated filtering block removed; unified below with useMemo
 
   const contactInfo = {
     mobile: '+1 302 464 0950',
@@ -97,40 +61,62 @@ export default function ServicesPage() {
     let filtered = enhancedRealMicroSaasServices;
 
     // Apply category filter
-    if (selectedCategory) {
-      filtered = filtered.filter(service => 
-        service.category === selectedCategory
-      );
+    if (selectedCategory && selectedCategory !== 'All') {
+      filtered = getServicesByCategory(selectedCategory);
+    }
+
+    // Apply price range filter
+    if (priceRange !== 'All') {
+      const [minPart, maxPart] = priceRange.split('-');
+      const min = parseInt(minPart);
+      const max = maxPart === '+' ? Number.POSITIVE_INFINITY : parseInt(maxPart);
+      filtered = filtered.filter(service => {
+        const price = parseFloat(service.price.replace('$', '').replace(',', ''));
+        return price >= min && price <= max;
+      });
     }
 
     // Apply search filter
-    if (searchTerm) {
+    const query = (searchTerm || searchQuery).trim().toLowerCase();
+    if (query) {
       filtered = filtered.filter(service =>
-        service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        service.category.toLowerCase().includes(searchTerm.toLowerCase())
+        service.name.toLowerCase().includes(query) ||
+        service.description.toLowerCase().includes(query) ||
+        service.tagline.toLowerCase().includes(query) ||
+        service.category.toLowerCase().includes(query)
       );
     }
 
     // Apply sorting
-    filtered.sort((a, b) => {
+    filtered = [...filtered].sort((a, b) => {
       switch (sortBy) {
-        case 'price':
-          return parseFloat(a.price.replace('$', '').replace(',', '')) - parseFloat(b.price.replace('$', '').replace(',', ''));
+        case 'price': {
+          const priceA = parseFloat(a.price.replace('$', '').replace(',', ''));
+          const priceB = parseFloat(b.price.replace('$', '').replace(',', ''));
+          return priceA - priceB;
+        }
         case 'rating':
           return b.rating - a.rating;
-        case 'roi':
-          return parseFloat(a.roi.replace('%', '').replace(',', '')) - parseFloat(b.roi.replace('%', '').replace(',', ''));
+        case 'roi': {
+          const roiA = parseFloat((a.roi.match(/(\d+\.?\d*)%/)?.[1] || '0'));
+          const roiB = parseFloat((b.roi.match(/(\d+\.?\d*)%/)?.[1] || '0'));
+          return roiB - roiA;
+        }
+        case 'popularity':
+          return (b.popular ? 1 : 0) - (a.popular ? 1 : 0);
+        case 'category':
+          return a.category.localeCompare(b.category);
+        case 'name':
         default:
           return a.name.localeCompare(b.name);
       }
     });
 
     return filtered;
-  }, [searchTerm, selectedCategory, sortBy]);
+  }, [enhancedRealMicroSaasServices, selectedCategory, priceRange, searchTerm, searchQuery, sortBy]);
 
   const heroStats = [
-    { value: '200+', label: 'Revolutionary Services', color: 'text-cyan-400', icon: <CpuIcon className="w-6 h-6" /> },
+    { value: '200+', label: 'Revolutionary Services', color: 'text-cyan-400', icon: <Cpu className="w-6 h-6" /> },
     { value: '99.99%', label: 'Uptime Guarantee', color: 'text-fuchsia-400', icon: <ShieldCheck className="w-6 h-6" /> },
     { value: '30+', label: 'Day Free Trials', color: 'text-blue-400', icon: <Clock className="w-6 h-6" /> },
     { value: '800%+', label: 'Average ROI', color: 'text-green-400', icon: <TrendingUp className="w-6 h-6" /> },
@@ -293,7 +279,7 @@ export default function ServicesPage() {
                       : 'text-gray-400 hover:text-white'
                   }`}
                 >
-                  <Grid3X3 className="w-5 h-5" />
+                  <Grid className="w-5 h-5" />
                 </button>
                 <button
                   onClick={() => setViewMode('list')}
