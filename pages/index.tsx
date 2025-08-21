@@ -131,6 +131,54 @@ export default function HomePage() {
         email: 'kleber@ziontechgroup.com',
         address: '364 E Main St STE 1008 Middletown DE 19709'
       }
+    },
+    {
+      title: '📈 SEO Log Analyzer',
+      description: 'Detect crawl budget waste, soft 404s, and render traps from your server logs. Ship weekly SEO fixes with Jira/Linear exports.',
+      price: 'Starting at $79/month',
+      features: ['Bot detection and segmentation', 'Soft 404s and redirect chains', 'Blocked/Non-indexable assets map', 'Weekly prioritized fixes'],
+      link: 'https://ziontechgroup.com/seo-automation',
+      color: 'from-emerald-600 to-teal-700',
+      marketData: '$1.2B SEO analytics market, 22% CAGR',
+      competitors: 'Botify ($1k+/mo), OnCrawl ($690+/mo)',
+      savings: 'Save 70% vs. enterprise suites',
+      contactInfo: {
+        mobile: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
+    },
+    {
+      title: '🛡️ GDPR Cookie Auditor',
+      description: 'Automated cookie scanning, consent logging, and region-aware enforcement with Tag Manager integration.',
+      price: 'Starting at $59/month',
+      features: ['Headless scanning', 'Auto cookie inventory', 'Consent logs export', 'Pre-consent blocking'],
+      link: 'https://ziontechgroup.com/security',
+      color: 'from-indigo-600 to-blue-700',
+      marketData: '$3.2B privacy tech, 20% CAGR',
+      competitors: 'OneTrust ($1k+/mo), Cookiebot ($12-100+/mo)',
+      savings: 'Save 60%+',
+      contactInfo: {
+        mobile: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
+    },
+    {
+      title: '🧠 RAG Evaluator & Guardrails',
+      description: 'Automated evals and safety checks for LLM/RAG apps with cost/latency breakdowns and red-teaming.',
+      price: 'Starting at $129/month',
+      features: ['Groundedness and toxicity checks', 'PII detection and policies', 'Scenario replays', 'Budgeting and alerts'],
+      link: 'https://ziontechgroup.com/ai-services',
+      color: 'from-cyan-600 to-blue-700',
+      marketData: '$2.8B AI observability, 35% CAGR',
+      competitors: 'W&B, Arize, Langfuse',
+      savings: 'Lower cost, dev-first',
+      contactInfo: {
+        mobile: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
     }
   ];
 
