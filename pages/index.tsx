@@ -131,6 +131,42 @@ export default function HomePage() {
         email: 'kleber@ziontechgroup.com',
         address: '364 E Main St STE 1008 Middletown DE 19709'
       }
+    },
+    {
+      title: '🤖 AI Services (LLM, RAG, MLOps)',
+      description: 'Prototype to production AI with evals, guardrails, and observability. Fixed-price packages with clear outcomes.',
+      price: 'From $3,500/month or $6,900 fixed',
+      features: ['LLM apps and copilots', 'RAG + vector search', 'MLOps pipelines', 'Safety and governance'],
+      link: 'https://ziontechgroup.com/ai-services',
+      color: 'from-cyan-600 to-purple-700',
+      marketData: 'AI services market $71B+, rapid adoption across industries',
+      competitors: 'Boutique AI agencies ($25k+), Big 4 ($100k+)',
+      savings: 'Save 60–85% with transparent packages',
+      contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709' }
+    },
+    {
+      title: '🛠️ Modern IT Services (Cloud, DevOps, SRE)',
+      description: 'Outcome-driven platform engineering, GitOps, observability, FinOps and compliance baselines.',
+      price: 'From $2,000/month or $4,900 fixed',
+      features: ['Cloud landing zones', 'CI/CD & IaC', 'SLOs + error budgets', 'FinOps & governance'],
+      link: 'https://ziontechgroup.com/it-services',
+      color: 'from-blue-600 to-indigo-700',
+      marketData: 'Cloud ops services >$150B, ongoing efficiency demand',
+      competitors: 'Traditional MSPs ($10k+/mo), Big consultancies ($50k+)',
+      savings: 'Save 50–75% with productized engagements',
+      contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709' }
+    },
+    {
+      title: '☁️ Cloud Cost Optimizer',
+      description: 'Rightsizing, off-hours, and anomaly detection across AWS/GCP/Azure with FinOps dashboards.',
+      price: '$149/month',
+      features: ['Auto rightsizing', 'Idle cleanup', 'Spot orchestration', 'Anomaly detection'],
+      link: 'https://ziontechgroup.com/cloud-cost-optimizer',
+      color: 'from-emerald-600 to-teal-700',
+      marketData: 'FinOps software growing 25% YoY',
+      competitors: 'CloudZero, CloudHealth',
+      savings: 'Cut bills 20–45% in 90 days',
+      contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709' }
     }
   ];
 
@@ -401,6 +437,13 @@ export default function HomePage() {
                         Contact
                       </Button>
                     </div>
+                    {highlight.contactInfo && (
+                      <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
+                        <div className="flex items-center justify-center gap-2 text-cyan-400"><Phone className="w-4 h-4" /><span>{highlight.contactInfo.mobile}</span></div>
+                        <div className="flex items-center justify-center gap-2 text-purple-400"><Mail className="w-4 h-4" /><span>{highlight.contactInfo.email}</span></div>
+                        <div className="flex items-center justify-center gap-2 text-green-400"><MapPin className="w-4 h-4" /><span className="text-xs">{highlight.contactInfo.address}</span></div>
+                      </div>
+                    )}
                   </div>
                 </Card>
               </motion.div>
