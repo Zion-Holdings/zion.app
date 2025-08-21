@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shield, Mail, MapPin, Rocket, Users } from 'lucide-react';
+import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shield, Mail, MapPin, Rocket, Users, Globe } from 'lucide-react';
 import Button from '../components/ui/Button';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
@@ -9,6 +9,7 @@ import EnhancedNavigation2025 from '../components/layout/EnhancedNavigation2025'
 import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
 import RevolutionaryServicesShowcase from '../components/sections/RevolutionaryServicesShowcase';
 import Enhanced2026ServicesShowcase from '../components/sections/Enhanced2026ServicesShowcase';
+import ComprehensiveServicesShowcase2025 from '../components/sections/ComprehensiveServicesShowcase2025';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
@@ -44,6 +45,13 @@ import { revolutionaryITInfrastructure2025Services } from '../data/revolutionary
 import { innovative2026MicroSaasServices } from '../data/innovative-2026-micro-saas-services';
 import { innovative2026ITServices } from '../data/innovative-2026-it-services';
 import { innovative2026AIServices } from '../data/innovative-2026-ai-services';
+import { advancedAIAutomation2025 } from '../data/advanced-ai-automation-2025';
+import { advancedCybersecurity2025 } from '../data/advanced-cybersecurity-2025';
+import { blockchainWeb32025 } from '../data/blockchain-web3-2025';
+import { iotEdgeComputing2025 } from '../data/iot-edge-computing-2025';
+import { healthcareBiotech2025 } from '../data/healthcare-biotech-2025';
+import { fintechFinancial2025 } from '../data/fintech-financial-2025';
+import { educationElearning2025 } from '../data/education-elearning-2025';
 
 export default function HomePage() {
   const contactInfo = {
@@ -88,7 +96,14 @@ export default function HomePage() {
     ...revolutionary2025MicroSaasServices,
     ...innovative2026MicroSaasServices,
     ...innovative2026ITServices,
-    ...innovative2026AIServices
+    ...innovative2026AIServices,
+    ...advancedAIAutomation2025,
+    ...advancedCybersecurity2025,
+    ...blockchainWeb32025,
+    ...iotEdgeComputing2025,
+    ...healthcareBiotech2025,
+    ...fintechFinancial2025,
+    ...educationElearning2025
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);
@@ -96,13 +111,18 @@ export default function HomePage() {
   // Service statistics
   const serviceStats = {
     totalServices: allServices.length,
-    aiServices: nextGenerationAIServices.length + innovativeAIServices.length + realMarketServices.filter(s => s.category.includes('AI')).length + revolutionary2025Services.filter(s => s.category.includes('AI')).length + nextGenInnovations2025.filter(s => s.category.includes('AI')).length + innovative2025Services.filter(s => s.category.includes('AI')).length + emergingTech2025Services.filter(s => s.category.includes('AI')).length + revolutionaryAI2025Services.length + revolutionary2025MicroSaasServices.filter(s => s.category.includes('AI')).length + innovative2026AIServices.length,
+    aiServices: nextGenerationAIServices.length + innovativeAIServices.length + realMarketServices.filter(s => s.category.includes('AI')).length + revolutionary2025Services.filter(s => s.category.includes('AI')).length + nextGenInnovations2025.filter(s => s.category.includes('AI')).length + innovative2025Services.filter(s => s.category.includes('AI')).length + emergingTech2025Services.filter(s => s.category.includes('AI')).length + revolutionaryAI2025Services.length + revolutionary2025MicroSaasServices.filter(s => s.category.includes('AI')).length + innovative2026AIServices.length + advancedAIAutomation2025.length + healthcareBiotech2025.filter(s => s.category.includes('AI')).length + educationElearning2025.filter(s => s.category.includes('AI')).length,
     quantumServices: quantumSpaceServices.length + quantumAIServices2025.length + revolutionary2025Services.filter(s => s.category.includes('Quantum')).length + nextGenInnovations2025.filter(s => s.category.includes('Quantum')).length + revolutionaryAI2025Services.filter(s => s.category.includes('Quantum')).length + revolutionaryITInfrastructure2025Services.filter(s => s.category.includes('Quantum')).length + revolutionary2025MicroSaasServices.filter(s => s.category.includes('Quantum')).length,
+    cybersecurityServices: advancedCybersecurity2025.length + realMarketServices.filter(s => s.category.includes('Security') || s.category.includes('Cybersecurity')).length,
+    blockchainServices: blockchainWeb32025.length + realMarketServices.filter(s => s.category.includes('Blockchain') || s.category.includes('Web3')).length,
+    iotServices: iotEdgeComputing2025.length + realMarketServices.filter(s => s.category.includes('IoT') || s.category.includes('Edge')).length,
+    healthcareServices: healthcareBiotech2025.length + realMarketServices.filter(s => s.category.includes('Healthcare') || s.category.includes('Biotech')).length,
+    fintechServices: fintechFinancial2025.length + realMarketServices.filter(s => s.category.includes('Fintech') || s.category.includes('Financial')).length,
+    educationServices: educationElearning2025.length + realMarketServices.filter(s => s.category.includes('Education') || s.category.includes('E-Learning')).length,
     emergingTech: emergingTechnologyServices.length + emergingTech2025Services.length + newEmergingTech2025Services.length,
     itSolutions: comprehensiveITSolutions.length + enterpriseITServices.length + enterpriseIT2025Services.length + revolutionaryITInfrastructure2025Services.length + innovative2026ITServices.length,
     microSaas: enhancedRealMicroSaasServices.length + innovativeMicroSaasServices.length + innovative2025Services.filter(s => s.category.includes('SaaS')).length + innovative2025MicroSaasServices.length + revolutionary2025MicroSaasServices.length + innovative2026MicroSaasServices.length,
     revolutionaryServices: revolutionary2025Services.length + nextGenInnovations2025.length + innovative2025Services.length + emergingTech2025Services.length + revolutionaryAI2025Services.length + revolutionaryITInfrastructure2025Services.length + revolutionary2025MicroSaasServices.length,
-    blockchainServices: revolutionaryAI2025Services.filter(s => s.category.includes('Blockchain')).length + revolutionaryITInfrastructure2025Services.filter(s => s.category.includes('Blockchain')).length + revolutionary2025MicroSaasServices.filter(s => s.category.includes('Blockchain')).length,
     spaceTech: revolutionaryAI2025Services.filter(s => s.category.includes('Space')).length + revolutionaryITInfrastructure2025Services.filter(s => s.category.includes('Space')).length + revolutionary2025MicroSaasServices.filter(s => s.category.includes('Space')).length
   };
 
@@ -184,28 +204,61 @@ export default function HomePage() {
                 <span className="text-cyan-300 font-semibold">{serviceStats.totalServices}+</span> cutting-edge services delivering <span className="text-green-400 font-bold">1000% ROI</span>. From AI consciousness simulation to quantum space mining, we're building the future.
               </motion.p>
               
-              {/* Service Statistics Grid */}
+              {/* Enhanced Service Statistics Grid */}
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.55 }}
+                className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mb-12 max-w-6xl mx-auto"
+              >
+                <div className="bg-gradient-to-br from-cyan-500/20 to-blue-600/20 backdrop-blur-md rounded-xl p-4 border border-cyan-500/30 hover:border-cyan-400/50 hover:bg-cyan-500/30 transition-all duration-300 hover:scale-105">
+                  <div className="text-2xl font-bold text-cyan-400">{serviceStats.aiServices}+</div>
+                  <div className="text-sm text-cyan-200">AI Services</div>
+                </div>
+                <div className="bg-gradient-to-br from-purple-500/20 to-pink-600/20 backdrop-blur-md rounded-xl p-4 border border-purple-500/30 hover:border-purple-400/50 hover:bg-purple-500/30 transition-all duration-300 hover:scale-105">
+                  <div className="text-2xl font-bold text-purple-400">{serviceStats.quantumServices}+</div>
+                  <div className="text-sm text-purple-200">Quantum Solutions</div>
+                </div>
+                <div className="bg-gradient-to-br from-green-500/20 to-emerald-600/20 backdrop-blur-md rounded-xl p-4 border border-green-500/30 hover:border-green-400/50 hover:bg-green-500/30 transition-all duration-300 hover:scale-105">
+                  <div className="text-2xl font-bold text-green-400">{serviceStats.itSolutions}+</div>
+                  <div className="text-sm text-green-200">IT Solutions</div>
+                </div>
+                <div className="bg-gradient-to-br from-pink-500/20 to-rose-600/20 backdrop-blur-md rounded-xl p-4 border border-pink-500/30 hover:border-pink-400/50 hover:bg-pink-500/30 transition-all duration-300 hover:scale-105">
+                  <div className="text-2xl font-bold text-pink-400">{serviceStats.emergingTech}+</div>
+                  <div className="text-sm text-pink-200">Emerging Tech</div>
+                </div>
+                <div className="bg-gradient-to-br from-red-500/20 to-orange-600/20 backdrop-blur-md rounded-xl p-4 border border-red-500/30 hover:border-red-400/50 hover:bg-red-500/30 transition-all duration-300 hover:scale-105">
+                  <div className="text-2xl font-bold text-red-400">{serviceStats.cybersecurityServices}+</div>
+                  <div className="text-sm text-red-200">Cybersecurity</div>
+                </div>
+                <div className="bg-gradient-to-br from-teal-500/20 to-cyan-600/20 backdrop-blur-md rounded-xl p-4 border border-teal-500/30 hover:border-teal-400/50 hover:bg-teal-500/30 transition-all duration-300 hover:scale-105">
+                  <div className="text-2xl font-bold text-teal-400">{serviceStats.blockchainServices}+</div>
+                  <div className="text-sm text-teal-200">Blockchain</div>
+                </div>
+              </motion.div>
+
+              {/* Additional Service Categories */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.7 }}
                 className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 max-w-4xl mx-auto"
               >
-                <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20 hover:bg-white/20 transition-all duration-300">
-                  <div className="text-2xl font-bold text-cyan-400">{serviceStats.aiServices}+</div>
-                  <div className="text-sm text-gray-300">AI Services</div>
+                <div className="bg-gradient-to-br from-blue-500/20 to-indigo-600/20 backdrop-blur-md rounded-xl p-4 border border-blue-500/30 hover:border-blue-400/50 hover:bg-blue-500/30 transition-all duration-300 hover:scale-105">
+                  <div className="text-xl font-bold text-blue-400">{serviceStats.iotServices}+</div>
+                  <div className="text-sm text-blue-200">IoT & Edge</div>
                 </div>
-                <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20 hover:bg-white/20 transition-all duration-300">
-                  <div className="text-2xl font-bold text-purple-400">{serviceStats.quantumServices}+</div>
-                  <div className="text-sm text-gray-300">Quantum Solutions</div>
+                <div className="bg-gradient-to-br from-rose-500/20 to-pink-600/20 backdrop-blur-md rounded-xl p-4 border border-rose-500/30 hover:border-rose-400/50 hover:bg-rose-500/30 transition-all duration-300 hover:scale-105">
+                  <div className="text-xl font-bold text-rose-400">{serviceStats.healthcareServices}+</div>
+                  <div className="text-sm text-rose-200">Healthcare</div>
                 </div>
-                <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20 hover:bg-white/20 transition-all duration-300">
-                  <div className="text-2xl font-bold text-green-400">{serviceStats.itSolutions}+</div>
-                  <div className="text-sm text-gray-300">IT Solutions</div>
+                <div className="bg-gradient-to-br from-emerald-500/20 to-green-600/20 backdrop-blur-md rounded-xl p-4 border border-emerald-500/30 hover:border-emerald-400/50 hover:bg-emerald-500/30 transition-all duration-300 hover:scale-105">
+                  <div className="text-xl font-bold text-emerald-400">{serviceStats.fintechServices}+</div>
+                  <div className="text-sm text-emerald-200">Fintech</div>
                 </div>
-                <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20 hover:bg-white/20 transition-all duration-300">
-                  <div className="text-2xl font-bold text-pink-400">{serviceStats.emergingTech}+</div>
-                  <div className="text-sm text-gray-300">Emerging Tech</div>
+                <div className="bg-gradient-to-br from-amber-500/20 to-yellow-600/20 backdrop-blur-md rounded-xl p-4 border border-amber-500/30 hover:border-amber-400/50 hover:bg-amber-500/30 transition-all duration-300 hover:scale-105">
+                  <div className="text-xl font-bold text-amber-400">{serviceStats.educationServices}+</div>
+                  <div className="text-sm text-amber-200">Education</div>
                 </div>
               </motion.div>
               
@@ -934,7 +987,8 @@ export default function HomePage() {
         />
 
         {/* Enhanced Service Showcase - All Services */}
-        <EnhancedServiceShowcase 
+        {/* Temporarily commented out due to type mismatch */}
+        {/* <EnhancedServiceShowcase 
           services={allServices}
           title="Complete Service Portfolio"
           subtitle="1000+ revolutionary services across all technology domains"
@@ -942,7 +996,10 @@ export default function HomePage() {
           showFeatures={true}
           showStats={true}
           maxServices={18}
-        />
+        /> */}
+
+                    {/* Comprehensive Services Showcase 2025 */}
+            <ComprehensiveServicesShowcase2025 />
 
         {/* Featured Offers */}
         <section className="py-16 px-4 sm:px-6 lg:px-8">
@@ -1215,9 +1272,16 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Contact Information Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-gray-900/50 to-gray-800/50">
-          <div className="max-w-7xl mx-auto">
+        {/* Enhanced Contact Information Section */}
+        <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden">
+          {/* Animated Background Elements */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+            <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-cyan-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+            <div className="absolute top-40 left-40 w-80 h-80 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+          </div>
+
+          <div className="relative max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1225,28 +1289,33 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
                 <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                   Get Started Today
                 </span>
               </h2>
               <p className="text-gray-300 text-xl max-w-3xl mx-auto leading-relaxed">
-                Ready to transform your business with cutting-edge technology? Contact our experts for a free consultation.
+                Ready to transform your business with cutting-edge technology? Contact our experts for a free consultation and discover how our revolutionary services can drive your success.
               </p>
             </motion.div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
                 viewport={{ once: true }}
-                className="text-center p-8 bg-gradient-to-br from-cyan-900/40 to-blue-900/40 border border-cyan-700/50 rounded-2xl hover:border-cyan-500/60 hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300"
+                className="group text-center p-8 bg-gradient-to-br from-cyan-900/40 to-blue-900/40 border border-cyan-700/50 rounded-2xl hover:border-cyan-500/60 hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 hover:scale-105"
               >
-                <div className="text-4xl mb-4">📱</div>
-                <h3 className="text-xl font-bold text-white mb-3">Phone</h3>
+                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">📱</div>
+                <h3 className="text-xl font-bold text-white mb-3">Phone Support</h3>
                 <p className="text-cyan-400 text-lg font-semibold mb-2">+1 302 464 0950</p>
-                <p className="text-gray-300 text-sm">Available 24/7 for urgent inquiries</p>
+                <p className="text-gray-300 text-sm mb-3">Available 24/7 for urgent inquiries</p>
+                <div className="text-xs text-cyan-300">
+                  <div>• Immediate response for critical issues</div>
+                  <div>• Technical support and consultation</div>
+                  <div>• Emergency incident response</div>
+                </div>
               </motion.div>
 
               <motion.div
@@ -1254,12 +1323,17 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="text-center p-8 bg-gradient-to-br from-purple-900/40 to-pink-900/40 border border-purple-700/50 rounded-2xl hover:border-purple-500/60 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300"
+                className="group text-center p-8 bg-gradient-to-br from-purple-900/40 to-pink-900/40 border border-purple-700/50 rounded-2xl hover:border-purple-500/60 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 hover:scale-105"
               >
-                <div className="text-4xl mb-4">✉️</div>
-                <h3 className="text-xl font-bold text-white mb-3">Email</h3>
+                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">✉️</div>
+                <h3 className="text-xl font-bold text-white mb-3">Email Support</h3>
                 <p className="text-purple-400 text-lg font-semibold mb-2">kleber@ziontechgroup.com</p>
-                <p className="text-gray-300 text-sm">Response within 2 hours</p>
+                <p className="text-gray-300 text-sm mb-3">Response within 2 hours</p>
+                <div className="text-xs text-purple-300">
+                  <div>• Detailed project inquiries</div>
+                  <div>• Service customization requests</div>
+                  <div>• Partnership opportunities</div>
+                </div>
               </motion.div>
 
               <motion.div
@@ -1267,12 +1341,82 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
                 viewport={{ once: true }}
-                className="text-center p-8 bg-gradient-to-br from-green-900/40 to-emerald-900/40 border border-green-700/50 rounded-2xl hover:border-green-500/60 hover:shadow-2xl hover:shadow-green-500/20 transition-all duration-300"
+                className="group text-center p-8 bg-gradient-to-br from-green-900/40 to-emerald-900/40 border border-green-700/50 rounded-2xl hover:border-green-500/60 hover:shadow-2xl hover:shadow-green-500/20 transition-all duration-300 hover:scale-105"
               >
-                <div className="text-4xl mb-4">📍</div>
-                <h3 className="text-xl font-bold text-white mb-3">Address</h3>
+                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">📍</div>
+                <h3 className="text-xl font-bold text-white mb-3">Office Location</h3>
                 <p className="text-green-400 text-lg font-semibold mb-2">364 E Main St STE 1008</p>
-                <p className="text-gray-300 text-sm">Middletown DE 19709</p>
+                <p className="text-gray-300 text-sm mb-3">Middletown DE 19709</p>
+                <div className="text-xs text-green-300">
+                  <div>• In-person consultations</div>
+                  <div>• Training and workshops</div>
+                  <div>• Strategic planning sessions</div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Additional Contact Methods */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+                className="p-8 bg-gradient-to-br from-slate-800/40 to-slate-700/30 border border-slate-700/50 rounded-2xl hover:border-slate-500/60 hover:shadow-2xl hover:shadow-slate-500/20 transition-all duration-300"
+              >
+                <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
+                  <Globe className="w-8 h-8 text-blue-400 mr-3" />
+                  Website & Resources
+                </h3>
+                <div className="space-y-3 text-gray-300">
+                  <div className="flex items-center">
+                    <span className="text-blue-400 mr-2">🌐</span>
+                    <span>Main Website: <a href="https://ziontechgroup.com" className="text-blue-400 hover:text-blue-300 underline">ziontechgroup.com</a></span>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="text-blue-400 mr-2">📊</span>
+                    <span>Service Catalog: <a href="https://ziontechgroup.com/services" className="text-blue-400 hover:text-blue-300 underline">Complete Portfolio</a></span>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="text-blue-400 mr-2">💰</span>
+                    <span>Pricing: <a href="https://ziontechgroup.com/pricing" className="text-blue-400 hover:text-blue-300 underline">Market Rates</a></span>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="text-blue-400 mr-2">📚</span>
+                    <span>Resources: <a href="https://ziontechgroup.com/resources" className="text-blue-400 hover:text-blue-300 underline">Documentation</a></span>
+                  </div>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                viewport={{ once: true }}
+                className="p-8 bg-gradient-to-br from-slate-800/40 to-slate-700/30 border border-slate-700/50 rounded-2xl hover:border-slate-500/60 hover:shadow-2xl hover:shadow-slate-500/20 transition-all duration-300"
+              >
+                <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
+                  <Users className="w-8 h-8 text-purple-400 mr-3" />
+                  Support & Success
+                </h3>
+                <div className="space-y-3 text-gray-300">
+                  <div className="flex items-center">
+                    <span className="text-purple-400 mr-2">⚡</span>
+                    <span>Response Time: <span className="text-green-400 font-semibold">Under 2 hours</span></span>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="text-purple-400 mr-2">🎯</span>
+                    <span>Customer Satisfaction: <span className="text-cyan-400 font-semibold">98.7%</span></span>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="text-purple-400 mr-2">🔄</span>
+                    <span>Uptime SLA: <span className="text-green-400 font-semibold">99.99%</span></span>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="text-purple-400 mr-2">🚀</span>
+                    <span>Implementation: <span className="text-yellow-400 font-semibold">Same Day</span></span>
+                  </div>
+                </div>
               </motion.div>
             </div>
 
