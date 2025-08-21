@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shield, Mail, MapPin, Rocket, Brain, Sparkles, Atom, Dna } from 'lucide-react';
 import Button from '../components/ui/Button';
 import UltraFuturisticBackground2030 from '../components/ui/UltraFuturisticBackground2030';
+import UltraFuturisticBackground2032 from '../components/ui/UltraFuturisticBackground2032';
 import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
 import UltraAdvancedNavigation2026 from '../components/layout/UltraAdvancedNavigation2026';
 import UltraFuturisticNavigation2033 from '../components/layout/UltraFuturisticNavigation2033';
@@ -13,7 +14,9 @@ import Enhanced2026ServicesShowcase from '../components/sections/Enhanced2026Ser
 import Revolutionary2026ServiceShowcase from '../components/sections/Revolutionary2026ServiceShowcase';
 import Revolutionary2027ServicesShowcase from '../components/sections/Revolutionary2027ServicesShowcase';
 import Revolutionary2027Hero from '../components/sections/Revolutionary2027Hero';
+import UltraFuturisticServiceShowcase2033 from '../components/sections/UltraFuturisticServiceShowcase2033';
 import EnhancedHero2026 from '../components/sections/EnhancedHero2026';
+import UltraFuturisticHero2032 from '../components/sections/UltraFuturisticHero2032';
 import UltraFuturisticHero2033 from '../components/sections/UltraFuturisticHero2033';
 import UltraFuturisticServiceShowcase2032 from '../components/sections/UltraFuturisticServiceShowcase2032';
 import UltraFuturisticServiceShowcase2033 from '../components/sections/UltraFuturisticServiceShowcase2033';
@@ -92,6 +95,19 @@ import { researchDevelopmentServices2031 } from '../data/2031-research-developme
 import { spaceMetaverseServices2031 } from '../data/2031-space-metaverse-services';
 import { futuristicInnovations2032 } from '../data/2032-futuristic-innovations';
 import { enterpriseInnovations2032 } from '../data/2032-enterprise-innovations';
+
+// Import new 2032 services
+import { futuristicAIServices2032 } from '../data/2032-futuristic-ai-services';
+import { quantumEmergingTechServices2032 } from '../data/2032-quantum-emerging-tech-services';
+import { enterpriseITServices2032 } from '../data/2032-enterprise-it-services';
+import { spaceMetaverseTechServices2032 } from '../data/2032-space-metaverse-tech-services';
+import { innovativeMicroSaasServices2032 } from '../data/2032-innovative-micro-saas-services';
+import { researchDevelopmentServices2032 } from '../data/2032-research-development-services';
+
+// Import new 2033 services
+import { cuttingEdgeInnovations2033 } from '../data/2033-cutting-edge-innovations';
+import { innovativeMicroSaas2033 } from '../data/2033-innovative-micro-saas';
+import { enterpriseITServices2033 } from '../data/2033-enterprise-it-services';
 
 export default function HomePage() {
   const contactInfo = {
@@ -177,8 +193,12 @@ export default function HomePage() {
     ...researchDevelopmentServices2031,
     ...spaceMetaverseServices2031,
     // Add new 2032 services
-    ...futuristicInnovations2032,
-    ...enterpriseInnovations2032
+    ...futuristicAIServices2032,
+    ...quantumEmergingTechServices2032,
+    ...enterpriseITServices2032,
+    ...spaceMetaverseTechServices2032,
+    ...innovativeMicroSaasServices2032,
+    ...researchDevelopmentServices2032
   ];
 
   // Calculate total services count
@@ -188,13 +208,13 @@ export default function HomePage() {
   return (
     <>
       <Head>
-        <title>Zion Tech Group - Revolutionary AI, Quantum & Space Technology Solutions | 2029</title>
-        <meta name="description" content="Discover cutting-edge AI consciousness, quantum computing, space mining, and revolutionary technology solutions. Leading the future with 500+ innovative services. Contact: +1 302 464 0950" />
-        <meta name="keywords" content="AI consciousness, quantum computing, space mining, neuromorphic computing, DNA computing, autonomous business, edge computing, metaverse development, blockchain supply chain, AI health analytics" />
+        <title>Zion Tech Group - Revolutionary AI, Quantum & Space Technology Solutions | 2032</title>
+        <meta name="description" content="Discover cutting-edge AI consciousness, quantum computing, space mining, neuromorphic computing, and revolutionary technology solutions. Leading the future with 600+ innovative services. Contact: +1 302 464 0950" />
+        <meta name="keywords" content="AI consciousness, quantum computing, space mining, neuromorphic computing, DNA computing, photonic computing, swarm robotics, autonomous business, edge computing, metaverse development, blockchain supply chain, AI health analytics, quantum security, biotech computing" />
         <meta name="author" content="Zion Tech Group" />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Zion Tech Group - Revolutionary Technology Solutions 2029" />
-        <meta property="og:description" content="Leading the future with AI consciousness, quantum computing, space mining, and 500+ revolutionary technology solutions." />
+        <meta property="og:title" content="Zion Tech Group - Revolutionary Technology Solutions 2032" />
+        <meta property="og:description" content="Leading the future with AI consciousness, quantum computing, space mining, neuromorphic computing, and 600+ revolutionary technology solutions." />
         <meta property="og:url" content="https://ziontechgroup.com" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Zion Tech Group" />
@@ -205,10 +225,13 @@ export default function HomePage() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
 
-      <UltraFuturisticBackground2030>
+      <UltraFuturisticBackground2032>
         {/* Ultra Advanced Navigation */}
         <UltraFuturisticNavigation2033 />
 
+        {/* Ultra Futuristic Hero Section 2032 */}
+        <UltraFuturisticHero2032 />
+        
         {/* Ultra Futuristic Hero Section 2033 */}
         <UltraFuturisticHero2033 />
 
@@ -216,7 +239,7 @@ export default function HomePage() {
       <main id="main-content" className="min-h-screen bg-black text-white">
         {/* Hero Section with Enhanced Background */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-          <UltraFuturisticBackground2030>
+          <UltraFuturisticBackground2032>
             {/* Enhanced Hero Content */}
             <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
               <motion.div
@@ -233,15 +256,16 @@ export default function HomePage() {
                   <br />
                   <span className="text-neon-pink animate-cyberpunk-flicker">Solutions</span>
                   <br />
-                  <span className="text-neon-green animate-neural-wave">2029</span>
+                  <span className="text-neon-green animate-neural-wave">2032</span>
                 </h1>
 
                 {/* Enhanced Subtitle */}
                 <p className="text-xl sm:text-2xl lg:text-3xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
                   Leading the future with <span className="text-neon-cyan">AI consciousness</span>,{' '}
                   <span className="text-neon-purple">quantum computing</span>,{' '}
-                  <span className="text-neon-pink">space mining</span>, and{' '}
-                  <span className="text-neon-green">500+ revolutionary services</span>
+                  <span className="text-neon-pink">space mining</span>,{' '}
+                  <span className="text-neon-yellow">neuromorphic computing</span>, and{' '}
+                  <span className="text-neon-green">600+ revolutionary services</span>
                 </p>
 
                 {/* Ultra Futuristic 2032 Service Showcase */}
@@ -359,7 +383,7 @@ export default function HomePage() {
                 </motion.div>
               </motion.div>
             </div>
-          </UltraFuturisticBackground2030>
+          </UltraFuturisticBackground2032>
         </section>
 
         {/* Enhanced Services Showcase */}
@@ -558,8 +582,8 @@ export default function HomePage() {
       </main>
 
       {/* Enhanced Footer */}
-              <UltraFuturisticFooter2033 />
-    </UltraFuturisticBackground2030>
+      <UltraFuturisticFooter2033 />
+    </UltraFuturisticBackground2032>
   </>
   );
 }

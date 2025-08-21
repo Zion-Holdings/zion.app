@@ -97,6 +97,33 @@
   text-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
 }
 
+/* Custom Animation Classes for 2032 */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-slow-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.animate-spin-slow-reverse {
+  animation: spin-slow-reverse 25s linear infinite;
+}
+
 ::-moz-selection {
   background: linear-gradient(45deg, rgba(0, 255, 255, 0.5), rgba(139, 92, 246, 0.5));
   color: white;
