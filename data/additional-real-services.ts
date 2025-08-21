@@ -1015,8 +1015,8 @@ export const additionalEnhancedServices: EnhancedRealMicroSaasService[] = [
 		customers: 47,
 		rating: 4.4,
 		reviews: 10
-	}
-,
+	},
+
 	{
 		id: 'data-contract-governance',
 		name: 'Data Contract Governance',

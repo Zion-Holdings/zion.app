@@ -33,6 +33,18 @@ export default function QuantumHolographicNavbar() {
       description: 'Welcome to the future'
     },
     { 
+      name: 'AI Services', 
+      href: '/ai-services', 
+      icon: <Brain className="w-4 h-4" />,
+      description: 'LLM, RAG, MLOps'
+    },
+    { 
+      name: 'IT Services', 
+      href: '/it-services', 
+      icon: <Cloud className="w-4 h-4" />,
+      description: 'Cloud, DevOps, SRE'
+    },
+    { 
       name: 'Services', 
       href: '/services', 
       icon: <Cloud className="w-4 h-4" />,
@@ -53,6 +65,18 @@ export default function QuantumHolographicNavbar() {
       href: '/micro-saas', 
       icon: <Bot className="w-4 h-4" />,
       description: 'Innovative Solutions'
+    },
+    { 
+      name: 'AI Services', 
+      href: '/ai-services', 
+      icon: <Brain className="w-4 h-4" />,
+      description: 'LLM, RAG, MLOps'
+    },
+    { 
+      name: 'IT Services', 
+      href: '/it-services', 
+      icon: <Cloud className="w-4 h-4" />,
+      description: 'Cloud, DevOps, SRE'
     },
     { 
       name: 'Pricing', 
