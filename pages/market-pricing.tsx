@@ -116,6 +116,38 @@ export default function MarketPricingPage() {
               <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $100–$1,500/month depending on MAUs and features.</div>
             </div>
           </div>
+
+          <div className="space-y-6">
+            <div className="bg-black/30 rounded-2xl border border-cyan-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Email & Deliverability</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>SendGrid pricing: <a className="text-cyan-400 underline" href={`https://sendgrid.com/pricing/`} target="_blank" rel="noopener noreferrer">sendgrid.com/pricing</a></li>
+                <li>Postmark pricing: <a className="text-cyan-400 underline" href={`https://postmarkapp.com/pricing`} target="_blank" rel="noopener noreferrer">postmarkapp.com/pricing</a></li>
+                <li>Mailgun pricing: <a className="text-cyan-400 underline" href={`https://www.mailgun.com/pricing/`} target="_blank" rel="noopener noreferrer">mailgun.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $15–$500/month depending on volume and region.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-emerald-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Vector DB & Search</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Pinecone pricing: <a className="text-cyan-400 underline" href={`https://www.pinecone.io/pricing/`} target="_blank" rel="noopener noreferrer">pinecone.io/pricing</a></li>
+                <li>Weaviate Cloud: <a className="text-cyan-400 underline" href={`https://console.weaviate.cloud/pricing`} target="_blank" rel="noopener noreferrer">weaviate.cloud/pricing</a></li>
+                <li>Qdrant Cloud: <a className="text-cyan-400 underline" href={`https://qdrant.tech/pricing/`} target="_blank" rel="noopener noreferrer">qdrant.tech/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $20–$500/month depending on dimensions and QPS.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-amber-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">CI/CD & Automation</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>GitHub Actions: <a className="text-cyan-400 underline" href={`https://github.com/pricing`} target="_blank" rel="noopener noreferrer">github.com/pricing</a></li>
+                <li>CircleCI pricing: <a className="text-cyan-400 underline" href={`https://circleci.com/pricing/`} target="_blank" rel="noopener noreferrer">circleci.com/pricing</a></li>
+                <li>Render pricing: <a className="text-cyan-400 underline" href={`https://render.com/pricing`} target="_blank" rel="noopener noreferrer">render.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $0–$500/month for moderate pipelines and environments.</div>
+            </div>
+          </div>
         </div>
       </div>
     </UltraAdvancedFuturisticBackground>

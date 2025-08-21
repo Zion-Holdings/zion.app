@@ -12,10 +12,9 @@ import { innovativeAIServices } from '../data/innovative-ai-services';
 import { quantumSpaceServices } from '../data/quantum-space-services';
 import { enterpriseITServices } from '../data/enterprise-it-services';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
-import { professionalServices } from '../data/professional-services';
-import { nextGenerationAIServices } from '../data/next-generation-ai-services';
-import { emergingTechnologyServices } from '../data/emerging-technology-services';
-import { comprehensiveITSolutions } from '../data/comprehensive-it-solutions';
+import { additionalEnhancedServices } from '../data/additional-real-services';
+import { newRealServices } from '../data/new-real-services';
+import { industryRealServices } from '../data/industry-real-services';
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -28,19 +27,23 @@ export default function ServicesPage() {
     ...quantumSpaceServices,
     ...enterpriseITServices,
     ...enhancedRealMicroSaasServices,
-    ...professionalServices,
-    ...nextGenerationAIServices,
-    ...emergingTechnologyServices,
-    ...comprehensiveITSolutions
+    ...additionalEnhancedServices,
+    ...newRealServices,
+    ...industryRealServices
   ];
+
+  // Dynamic category counts mapped to the same filter logic below
+  const aiCount = allServices.filter(service => (service.category?.includes('AI') || service.category?.includes('Machine Learning'))).length;
+  const quantumCount = allServices.filter(service => (service.category?.includes('Quantum') || service.category?.includes('Space'))).length;
+  const enterpriseCount = allServices.filter(service => (service.category?.includes('Enterprise') || service.category?.includes('IT'))).length;
+  const microSaasCount = allServices.filter(service => (service.category?.includes('Micro SaaS'))).length;
 
   const categories = [
     { id: 'all', name: 'All Services', icon: '🚀', count: allServices.length },
-    { id: 'ai', name: 'AI & Machine Learning', icon: '🧠', count: innovativeAIServices.length + nextGenerationAIServices.length },
-    { id: 'quantum', name: 'Quantum & Space', icon: '⚛️', count: quantumSpaceServices.length },
-    { id: 'enterprise', name: 'Enterprise IT', icon: '🏢', count: enterpriseITServices.length + comprehensiveITSolutions.length },
-    { id: 'micro-saas', name: 'Micro SaaS', icon: '💻', count: enhancedRealMicroSaasServices.length },
-    { id: 'emerging', name: 'Emerging Tech', icon: '🌟', count: emergingTechnologyServices.length }
+    { id: 'ai', name: 'AI & Machine Learning', icon: '🧠', count: aiCount },
+    { id: 'quantum', name: 'Quantum & Space', icon: '⚛️', count: quantumCount },
+    { id: 'enterprise', name: 'Enterprise IT', icon: '🏢', count: enterpriseCount },
+    { id: 'micro-saas', name: 'Micro SaaS', icon: '💻', count: microSaasCount }
   ];
 
   const priceRanges = [
@@ -78,11 +81,10 @@ export default function ServicesPage() {
                            (service.tagline && service.tagline.toLowerCase().includes(searchTerm.toLowerCase()));
       
       const matchesCategory = selectedCategory === 'all' || 
-                             (selectedCategory === 'ai' && (service.category.includes('AI') || service.category.includes('Machine Learning') || service.category.includes('Next-Generation AI'))) ||
+                             (selectedCategory === 'ai' && (service.category.includes('AI') || service.category.includes('Machine Learning'))) ||
                              (selectedCategory === 'quantum' && (service.category.includes('Quantum') || service.category.includes('Space'))) ||
                              (selectedCategory === 'enterprise' && (service.category.includes('Enterprise') || service.category.includes('IT') || service.category.includes('Cloud') || service.category.includes('Security'))) ||
-                             (selectedCategory === 'micro-saas' && service.category.includes('Micro SaaS')) ||
-                             (selectedCategory === 'emerging' && service.category.includes('Emerging Technology'));
+                             (selectedCategory === 'micro-saas' && service.category.includes('Micro SaaS'));
       
       const numericPrice = parsePriceToNumber((service as any).price);
       const matchesPrice = selectedPriceRange === 'all' ||
@@ -121,27 +123,6 @@ export default function ServicesPage() {
     return filtered;
   }, [allServices, searchTerm, selectedCategory, selectedPriceRange, sortBy]);
 
-  const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-
-  const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5
-      }
-    }
-  };
-
   return (
     <div className="min-h-screen bg-gray-900">
       <Head>
@@ -179,31 +160,29 @@ export default function ServicesPage() {
       {/* Filters */}
       <section className="px-4 sm:px-6 lg:px-8 mb-12">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-gray-800/60 border border-gray-700 rounded-2xl p-6">
-            {/* Search */}
-            <div className="mb-6">
-              <label className="block text-sm font-medium text-gray-300 mb-2">Search Services</label>
+          <div className="bg-gray-900/60 backdrop-blur-xl rounded-2xl p-6 border border-cyan-500/20 shadow-xl shadow-cyan-500/10">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+              {/* Search */}
               <div className="relative">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                 <input
                   type="text"
-                  placeholder="Search by name, description, or category..."
+                  placeholder="Search services..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 bg-gray-700/50 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 transition-all duration-300"
+                  className="w-full pl-10 pr-4 py-3 bg-gray-800/60 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
                 />
               </div>
             </div>
 
             {/* Filters Row */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {/* Category Filter */}
+              {/* Category */}
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">Category</label>
                 <select
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 transition-all duration-300"
+                  className="w-full px-4 py-3 bg-gray-800/60 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
                 >
                   {categories.map((category) => (
                     <option key={category.id} value={category.id}>
@@ -213,13 +192,12 @@ export default function ServicesPage() {
                 </select>
               </div>
 
-              {/* Price Filter */}
+              {/* Price Range */}
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">Price Range</label>
                 <select
                   value={selectedPriceRange}
                   onChange={(e) => setSelectedPriceRange(e.target.value)}
-                  className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 transition-all duration-300"
+                  className="w-full px-4 py-3 bg-gray-800/60 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
                 >
                   {priceRanges.map((range) => (
                     <option key={range.id} value={range.id}>
@@ -229,13 +207,12 @@ export default function ServicesPage() {
                 </select>
               </div>
 
-              {/* Sort Filter */}
+              {/* Sort */}
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">Sort By</label>
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 transition-all duration-300"
+                  className="w-full px-4 py-3 bg-gray-800/60 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
                 >
                   {sortOptions.map((option) => (
                     <option key={option.id} value={option.id}>
@@ -245,13 +222,12 @@ export default function ServicesPage() {
                 </select>
               </div>
             </div>
-
-            {/* Results Count */}
-            <div className="mt-6 pt-6 border-t border-gray-700">
-              <p className="text-gray-300">
-                Showing {filteredServices.length} of {allServices.length} services
-              </p>
-            </div>
+          </div>
+          {/* Market pricing CTA */}
+          <div className="mt-4">
+            <a href="/market-pricing" className="block w-full text-center bg-gradient-to-r from-cyan-600/30 to-purple-600/30 hover:from-cyan-600/40 hover:to-purple-600/40 text-cyan-200 border border-cyan-500/30 rounded-xl px-6 py-4 transition-all">
+              See average market prices and vendor references →
+            </a>
           </div>
         </div>
       </section>
@@ -259,7 +235,85 @@ export default function ServicesPage() {
       {/* Services Grid */}
       <section className="px-4 sm:px-6 lg:px-8 pb-20">
         <div className="max-w-7xl mx-auto">
-          {filteredServices.length === 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <AnimatePresence>
+              {filteredServices.map((service, index) => (
+                <motion.div
+                  key={service.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -30 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="group"
+                >
+                  <div className="bg-gray-900/60 backdrop-blur-xl rounded-2xl p-6 border border-cyan-500/20 hover:border-cyan-400/40 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/20 h-full">
+                    {/* Service Icon */}
+                    <div className="text-4xl mb-4">
+                      {service.icon || '🚀'}
+                    </div>
+
+                    {/* Service Name */}
+                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
+                      {service.name}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-gray-300 mb-4 text-sm line-clamp-3">
+                      {service.description}
+                    </p>
+
+                    {/* Price */}
+                    <div className="mb-4">
+                      <div className="text-2xl font-bold text-cyan-400">
+                        {typeof (service as any).price === 'number' ? `$${(service as any).price.toLocaleString()}/month` : `${(service as any).price}${(service as any).period ? '' : ''}`}
+                      </div>
+                      <div className="text-sm text-gray-400">
+                        Starting price
+                      </div>
+                    </div>
+
+                    {/* Features */}
+                    <div className="mb-6">
+                      <h4 className="text-sm font-semibold text-gray-300 mb-2">Key Features:</h4>
+                      <div className="space-y-1">
+                        {service.features.slice(0, 3).map((feature, idx) => (
+                          <div key={idx} className="flex items-center text-xs text-gray-400">
+                            <CheckCircle className="w-3 h-3 text-green-400 mr-2 flex-shrink-0" />
+                            {feature}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Stats */}
+                    <div className="grid grid-cols-2 gap-4 mb-6 text-sm">
+                      <div className="text-center">
+                        <div className="text-cyan-400 font-semibold">
+                          {service.rating || 'N/A'}
+                        </div>
+                        <div className="text-gray-400">Rating</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-cyan-400 font-semibold">
+                          {((service as any).customerCount ?? (service as any).customers ?? 'N/A')}
+                        </div>
+                        <div className="text-gray-400">Customers</div>
+                      </div>
+                    </div>
+
+                    {/* CTA Button */}
+                    <a href={(service as any).link || '/services'} className="w-full inline-flex items-center justify-center bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+                      Learn More
+                      <ArrowRight className="inline-block ml-2 w-4 h-4" />
+                    </a>
+                  </div>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </div>
+
+          {/* No Results */}
+          {filteredServices.length === 0 && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -268,114 +322,6 @@ export default function ServicesPage() {
               <div className="text-6xl mb-4">🔍</div>
               <h3 className="text-2xl font-bold text-white mb-2">No services found</h3>
               <p className="text-gray-400">Try adjusting your search criteria or filters</p>
-            </motion.div>
-          ) : (
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-            >
-              {filteredServices.map((service, index) => (
-                <motion.div
-                  key={service.id}
-                  variants={itemVariants}
-                  className="group bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/20 h-full"
-                >
-                  {/* Service Header */}
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="text-4xl">{service.icon || '🚀'}</div>
-                    {service.popular && (
-                      <div className="flex items-center space-x-1 text-yellow-400 text-sm">
-                        <Star className="w-4 h-4 fill-current" />
-                        <span>Popular</span>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Service Name & Tagline */}
-                  <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-cyan-300 transition-colors">
-                    {service.name}
-                  </h3>
-                  <p className="text-gray-300 text-sm mb-4 line-clamp-2">
-                    {service.tagline}
-                  </p>
-
-                  {/* Price */}
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="text-2xl font-bold text-cyan-400">
-                      {service.price}
-                      <span className="text-gray-400 text-lg">{service.period}</span>
-                    </div>
-                    <div className="flex items-center space-x-2 text-sm text-gray-400">
-                      <Users className="w-4 h-4" />
-                      <span>{service.customers?.toLocaleString() || 'N/A'}</span>
-                    </div>
-                  </div>
-
-                  {/* Features */}
-                  <div className="mb-6">
-                    <div className="text-sm text-gray-400 mb-2">Key Features:</div>
-                    <ul className="space-y-1">
-                      {service.features.slice(0, 3).map((feature, index) => (
-                        <li key={index} className="flex items-center text-sm text-gray-300">
-                          <CheckCircle className="w-4 h-4 text-green-400 mr-2" />
-                          <span className="line-clamp-1">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Market Info */}
-                  <div className="mb-6 p-3 bg-gray-700/40 rounded-lg">
-                    <div className="text-xs text-gray-400 mb-1">Market Position</div>
-                    <div className="text-sm text-gray-300 line-clamp-2">
-                      {service.marketPosition}
-                    </div>
-                  </div>
-
-                  {/* ROI & Setup */}
-                  <div className="flex items-center justify-between mb-6 text-sm">
-                    <div className="flex items-center space-x-1 text-green-400">
-                      <TrendingUp className="w-4 h-4" />
-                      <span>{service.roi.split(' ')[0]} ROI</span>
-                    </div>
-                    <div className="flex items-center space-x-1 text-blue-400">
-                      <Clock className="w-4 h-4" />
-                      <span>{service.setupTime}</span>
-                    </div>
-                  </div>
-
-                  {/* Action Buttons */}
-                  <div className="flex gap-3">
-                    <a
-                      href={service.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-4 py-2 rounded-xl text-center text-sm font-medium hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 flex items-center justify-center"
-                    >
-                      Learn More
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </a>
-                    <a
-                      href="/contact"
-                      className="flex-1 bg-gray-700/60 text-white px-4 py-2 rounded-xl text-center text-sm font-medium hover:bg-gray-600/60 transition-all duration-300 border border-gray-600 hover:border-gray-500"
-                    >
-                      Contact Us
-                    </a>
-                  </div>
-
-                  {/* Contact Info */}
-                  <div className="mt-4 pt-4 border-t border-gray-700">
-                    <div className="text-xs text-gray-400 mb-2">Contact Information:</div>
-                    <div className="text-xs text-gray-300 space-y-1">
-                      <div>📱 {service.contactInfo?.mobile || '+1 302 464 0950'}</div>
-                      <div>✉️ {service.contactInfo?.email || 'kleber@ziontechgroup.com'}</div>
-                      <div>🌐 {service.contactInfo?.website || 'https://ziontechgroup.com'}</div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
             </motion.div>
           )}
         </div>
