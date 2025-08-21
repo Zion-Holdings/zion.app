@@ -167,6 +167,66 @@ export default function HomePage() {
       competitors: 'CloudZero, CloudHealth',
       savings: 'Cut bills 20–45% in 90 days',
       contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709' }
+    },
+    {
+      title: '📈 Uptime & SLO Monitor',
+      description: 'Error budgets, burn-rate alerts, and synthetic uptime with status pages. OTel-native.',
+      price: 'Starting at $89/month',
+      features: ['SLIs/SLOs', 'Burn-rate alerts', 'Synthetic checks', 'Status pages'],
+      link: 'https://ziontechgroup.com/uptime-slo-monitor',
+      color: 'from-cyan-600 to-blue-700',
+      marketData: 'Observability market >$30B',
+      competitors: 'Nobl9, Datadog SLO',
+      savings: 'Simpler, faster setup; SMB pricing',
+      contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709' }
+    },
+    {
+      title: '✅ SOC 2 Evidence Automation',
+      description: 'Continuously collect and map evidence to SOC 2 controls. Export auditor-ready packages.',
+      price: 'Starting at $149/month',
+      features: ['Cloud evidence', 'Attestations', 'Access reviews', 'Control mapping'],
+      link: 'https://ziontechgroup.com/soc2-evidence-automation',
+      color: 'from-emerald-600 to-teal-700',
+      marketData: 'Compliance automation ~$2B',
+      competitors: 'Drata, Vanta',
+      savings: '60–80% less audit prep time',
+      contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709' }
+    },
+    {
+      title: '🛡️ API Security Scanner',
+      description: 'OWASP API Top 10 scans with CI/CD gates and OpenAPI import. Dev-first UX.',
+      price: 'Starting at $129/month',
+      features: ['Top 10 scans', 'OpenAPI import', 'Auth flows', 'CI gates'],
+      link: 'https://ziontechgroup.com/api-security-scanner',
+      color: 'from-rose-600 to-orange-700',
+      marketData: 'API security ~$6B',
+      competitors: 'StackHawk, 42Crunch',
+      savings: 'Shift-left, fewer prod issues',
+      contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709' }
+    },
+    {
+      title: '🛡️ GDPR DSAR Automation',
+      description: 'Branded DSAR portal with identity verification, PII discovery, and export packaging.',
+      price: 'Starting at $99/month',
+      features: ['DSAR portal', 'ID verification', 'PII discovery', 'Audit exports'],
+      link: 'https://ziontechgroup.com/gdpr-dsar-automation',
+      color: 'from-blue-600 to-cyan-700',
+      marketData: 'Privacy tech ~$3B',
+      competitors: 'Transcend, OneTrust',
+      savings: '50–70% faster DSAR handling',
+      contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709' }
+    },
+    {
+      title: '🚀 Sales Copilot',
+      description: 'AI prospecting and outreach with CRM hygiene and pipeline Q&A.',
+      price: 'Starting at $59/month',
+      features: ['Email drafts', 'Call summaries', 'Prospect research', 'CRM sync'],
+      link: 'https://ziontechgroup.com/sales-copilot',
+      color: 'from-violet-600 to-purple-700',
+      marketData: 'Sales tech ~$10B',
+      competitors: 'Salesforce Einstein, HubSpot AI',
+      savings: '20–35% more meetings',
+      contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709' }
     }
   ];
 

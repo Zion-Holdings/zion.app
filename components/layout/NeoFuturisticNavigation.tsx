@@ -362,6 +362,18 @@ export default function NeoFuturisticNavigation() {
             >
               Pricing
             </Link>
+            <Link
+              href="/solutions"
+              className="text-gray-300 hover:text-white transition-colors duration-300 py-2"
+            >
+              Solutions
+            </Link>
+            <Link
+              href="/resources"
+              className="text-gray-300 hover:text-white transition-colors duration-300 py-2"
+            >
+              Resources
+            </Link>
 
             {/* Company Dropdown */}
             <div className="relative group">
