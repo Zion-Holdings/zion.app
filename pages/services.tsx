@@ -170,7 +170,7 @@ export default function ServicesPage() {
   ];
 
   return (
-    <QuantumHolographicBackground variant="quantum-holographic" intensity="high">
+    <QuantumHolographicBackground variant="quantum">
       <div className="min-h-screen">
         <Head>
           <title>Micro SaaS Services - Zion Tech Group | Revolutionary AI & Technology Solutions</title>

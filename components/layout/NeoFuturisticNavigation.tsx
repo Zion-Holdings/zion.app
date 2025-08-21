@@ -87,28 +87,57 @@ const NeoFuturisticNavigation: React.FC = () => {
       href: '/services',
       icon: <Zap className="w-4 h-4" />,
       subItems: [
-        { label: 'AI Services', href: '/services?category=ai', icon: <Brain className="w-4 h-4" /> },
+        { label: 'AI & Machine Learning', href: '/services?category=ai', icon: <Brain className="w-4 h-4" /> },
         { label: 'Quantum Computing', href: '/services?category=quantum', icon: <Atom className="w-4 h-4" /> },
-        { label: 'Cloud Solutions', href: '/services?category=cloud', icon: <Cloud className="w-4 h-4" /> },
+        { label: 'Cloud & Infrastructure', href: '/services?category=cloud', icon: <Cloud className="w-4 h-4" /> },
         { label: 'Cybersecurity', href: '/services?category=security', icon: <Shield className="w-4 h-4" /> },
-        { label: 'Data Analytics', href: '/services?category=analytics', icon: <BarChart3 className="w-4 h-4" /> },
-        { label: 'Automation', href: '/services?category=automation', icon: <Bot className="w-4 h-4" /> }
+        { label: 'Data Analytics & BI', href: '/services?category=analytics', icon: <BarChart3 className="w-4 h-4" /> },
+        { label: 'Automation & RPA', href: '/services?category=automation', icon: <Bot className="w-4 h-4" /> },
+        { label: 'Blockchain & Web3', href: '/services?category=blockchain', icon: <Database className="w-4 h-4" /> },
+        { label: 'IoT & Edge Computing', href: '/services?category=iot', icon: <Cpu className="w-4 h-4" /> },
+        { label: 'Digital Transformation', href: '/services?category=digital', icon: <TrendingUp className="w-4 h-4" /> },
+        { label: 'Enterprise Solutions', href: '/services?category=enterprise', icon: <Building className="w-4 h-4" /> }
+      ]
+    },
+    {
+      label: 'Solutions',
+      href: '/solutions',
+      icon: <Target className="w-4 h-4" />,
+      subItems: [
+        { label: 'Micro SaaS Platforms', href: '/micro-saas', icon: <Zap className="w-4 h-4" /> },
+        { label: 'AI-Powered Tools', href: '/ai-assistant', icon: <Brain className="w-4 h-4" /> },
+        { label: 'Business Intelligence', href: '/analytics', icon: <BarChart3 className="w-4 h-4" /> },
+        { label: 'Process Automation', href: '/automation', icon: <Bot className="w-4 h-4" /> },
+        { label: 'Cloud Platforms', href: '/cloud-platform', icon: <Cloud className="w-4 h-4" /> }
       ]
     },
     {
       label: 'Resources',
       href: '/resources',
-      icon: <BookOpen className="w-4 h-4" />
+      icon: <BookOpen className="w-4 h-4" />,
+      subItems: [
+        { label: 'Documentation', href: '/docs', icon: <FileText className="w-4 h-4" /> },
+        { label: 'Blog & Insights', href: '/blog', icon: <BookOpen className="w-4 h-4" /> },
+        { label: 'Case Studies', href: '/case-studies', icon: <FileText className="w-4 h-4" /> },
+        { label: 'Reports & Analytics', href: '/reports', icon: <BarChart3 className="w-4 h-4" /> },
+        { label: 'Support Center', href: '/support', icon: <MessageSquare className="w-4 h-4" /> }
+      ]
     },
     {
-      label: 'Case Studies',
-      href: '/case-studies',
-      icon: <FileText className="w-4 h-4" />
-    },
-    {
-      label: 'About',
+      label: 'Company',
       href: '/about',
-      icon: <Users className="w-4 h-4" />
+      icon: <Users className="w-4 h-4" />,
+      subItems: [
+        { label: 'About Us', href: '/about', icon: <Users className="w-4 h-4" /> },
+        { label: 'Our Team', href: '/about#team', icon: <Users className="w-4 h-4" /> },
+        { label: 'Careers', href: '/careers', icon: <Award className="w-4 h-4" /> },
+        { label: 'News & Updates', href: '/news', icon: <FileText className="w-4 h-4" /> }
+      ]
+    },
+    {
+      label: 'Pricing',
+      href: '/pricing',
+      icon: <CreditCard className="w-4 h-4" />
     },
     {
       label: 'Contact',

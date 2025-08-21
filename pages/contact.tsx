@@ -87,7 +87,7 @@ export default function ContactPage() {
   };
 
   return (
-    <QuantumHolographicBackground variant="quantum-holographic" intensity="high">
+    <QuantumHolographicBackground variant="quantum">
       <div className="min-h-screen">
         <Head>
           <title>Contact Us - Zion Tech Group | Get Started with Revolutionary Technology Solutions</title>
