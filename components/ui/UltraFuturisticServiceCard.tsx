@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Star, Users, TrendingUp, Clock, ArrowRight, 
   ExternalLink, Check, ChevronDown, ChevronUp,
-  Mail, Phone, MapPin, Globe, CpuIcon, ShieldCheck
+  Mail, Phone, MapPin, Globe, Cpu as CpuIcon, ShieldCheck
 } from 'lucide-react';
 import Button from './Button';
 import { EnhancedRealMicroSaasService } from '../../data/enhanced-real-micro-saas-services';

@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { 
   Clock, DollarSign, TrendingUp, Brain, 
   Zap, Rocket, Mail, Phone, MapPin, Sparkles, 
-  ArrowRight, ExternalLink, Check, CpuIcon, 
+  ArrowRight, ExternalLink, Check, Cpu as CpuIcon, 
   ShieldCheck
 } from 'lucide-react';
 import Button from '../components/ui/Button';

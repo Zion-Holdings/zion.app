@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Code, BookOpen, Activity, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Filter, Grid, List, ChevronDown, ChevronUp, Sparkles, FlaskConical, Dna, Car, Leaf, Factory, Truck, Microscope, GraduationCap, ShieldCheck, Brain, Atom, Globe2, Bot, ChevronRight, LinkIcon, Building2 } from 'lucide-react';
+import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu as CpuIcon, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Code, BookOpen, Activity, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Filter, Grid3X3, List, ChevronDown, ChevronUp, Sparkles, FlaskConical, Dna, Car, Leaf, Factory, Truck, Microscope, GraduationCap, ShieldCheck, Brain, Atom, Globe2, Bot, ChevronRight, LinkIcon, Building2 } from 'lucide-react';
 import Button from '../components/ui/Button';
 import UltraFuturisticMatrixBackground from '../components/ui/UltraFuturisticMatrixBackground';
 import UltraFuturisticServiceCard from '../components/ui/UltraFuturisticServiceCard';
@@ -47,44 +47,6 @@ export default function ServicesPage() {
     { value: 'category', label: 'Category' }
   ];
 
-  // Filter and sort services
-  let filteredServices = enhancedRealMicroSaasServices;
-
-  // Category filter
-  if (selectedCategory !== 'All') {
-    filteredServices = getServicesByCategory(selectedCategory);
-  }
-
-  // Price range filter
-  if (priceRange !== 'All') {
-    const [min, max] = priceRange.split('-').map(p => p === '+' ? Infinity : parseInt(p));
-    filteredServices = getServicesByPriceRange(min, max);
-  }
-
-  // Search filter
-  if (searchQuery) {
-    filteredServices = filteredServices.filter(service =>
-      service.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      service.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      service.tagline.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      service.category.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-  }
-
-  // Sort services
-  filteredServices.sort((a, b) => {
-    switch (sortBy) {
-      case 'price':
-        return parseFloat(a.price.replace('$', '').replace(',', '')) - parseFloat(b.price.replace('$', '').replace(',', ''));
-      case 'popularity':
-        return (b.popular ? 1 : 0) - (a.popular ? 1 : 0);
-      case 'category':
-        return a.category.localeCompare(b.category);
-      default:
-        return a.name.localeCompare(b.name);
-    }
-  });
-
   const contactInfo = {
     mobile: '+1 302 464 0950',
     email: 'kleber@ziontechgroup.com',
@@ -92,18 +54,14 @@ export default function ServicesPage() {
     website: 'https://ziontechgroup.com'
   };
 
-  // Filter and sort services
+  // Filtering and sorting handled in memoized computation below
   const filteredServices = useMemo(() => {
     let filtered = enhancedRealMicroSaasServices;
 
-    // Apply category filter
-    if (selectedCategory) {
-      filtered = filtered.filter(service => 
-        service.category === selectedCategory
-      );
+    if (selectedCategory && selectedCategory !== 'All') {
+      filtered = filtered.filter(service => service.category === selectedCategory);
     }
 
-    // Apply search filter
     if (searchTerm) {
       filtered = filtered.filter(service =>
         service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -112,7 +70,16 @@ export default function ServicesPage() {
       );
     }
 
-    // Apply sorting
+    if (priceRange !== 'All') {
+      const [minStr, maxStr] = priceRange.split('-');
+      const min = parseInt(minStr || '0', 10) || 0;
+      const max = maxStr === '+' ? Number.POSITIVE_INFINITY : parseInt(maxStr || '0', 10) || Number.POSITIVE_INFINITY;
+      filtered = filtered.filter(service => {
+        const price = parseFloat(service.price.replace('$', '').replace(',', ''));
+        return price >= min && price <= max;
+      });
+    }
+
     filtered.sort((a, b) => {
       switch (sortBy) {
         case 'price':
@@ -121,13 +88,15 @@ export default function ServicesPage() {
           return b.rating - a.rating;
         case 'roi':
           return parseFloat(a.roi.replace('%', '').replace(',', '')) - parseFloat(b.roi.replace('%', '').replace(',', ''));
+        case 'category':
+          return a.category.localeCompare(b.category);
         default:
           return a.name.localeCompare(b.name);
       }
     });
 
     return filtered;
-  }, [searchTerm, selectedCategory, sortBy]);
+  }, [searchTerm, selectedCategory, sortBy, priceRange]);
 
   const heroStats = [
     { value: '200+', label: 'Revolutionary Services', color: 'text-cyan-400', icon: <CpuIcon className="w-6 h-6" /> },
