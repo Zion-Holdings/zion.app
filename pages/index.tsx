@@ -125,22 +125,22 @@ export default function HomePage() {
               className="flex flex-col sm:flex-row gap-6 justify-center mb-16"
             >
               <motion.a
-                href="/services"
+                href="/comprehensive-services-showcase-2025"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold text-lg rounded-xl hover:from-cyan-600 hover:to-purple-700 transition-all duration-200 shadow-2xl shadow-cyan-500/25"
               >
-                <span>Explore Services</span>
+                <span>Explore All Services</span>
                 <ArrowRight className="w-6 h-6" />
               </motion.a>
               
               <motion.a
-                href="/contact"
+                href={`tel:${contactInfo.mobile}`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center space-x-3 px-8 py-4 bg-black/50 border-2 border-cyan-500/50 text-cyan-300 font-bold text-lg rounded-xl hover:bg-cyan-500/10 hover:border-cyan-400 transition-all duration-200"
               >
-                <span>Get Started</span>
+                <span>Call Now</span>
                 <Phone className="w-6 h-6" />
               </motion.a>
             </motion.div>
@@ -198,6 +198,135 @@ export default function HomePage() {
                   </div>
                 </motion.div>
               ))}
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Featured Services Section */}
+        <section className="py-20 relative">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Featured <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">Revolutionary Services</span>
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Discover our most innovative and transformative services that are reshaping industries and driving the future of technology.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* AI Consciousness Development Platform */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="group relative"
+              >
+                <div className="bg-black/40 backdrop-blur-sm border border-cyan-500/20 rounded-2xl p-6 h-full hover:border-cyan-400/50 transition-all duration-300 hover:transform hover:scale-105">
+                  <div className="absolute -top-3 -right-3 bg-gradient-to-r from-yellow-500 to-orange-500 text-black px-3 py-1 rounded-full text-sm font-bold flex items-center">
+                    <Star className="w-4 h-4 mr-1" />
+                    Popular
+                  </div>
+                  <div className="text-4xl mb-4">🧠🌟</div>
+                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">
+                    AI Consciousness Development Platform
+                  </h3>
+                  <p className="text-gray-300 mb-4">Develop AI systems with advanced consciousness capabilities</p>
+                  <div className="flex items-baseline mb-4">
+                    <span className="text-3xl font-bold text-white">$4,999</span>
+                    <span className="text-gray-400 ml-1">/month</span>
+                  </div>
+                  <a
+                    href="/comprehensive-services-showcase-2025?category=ai-innovations"
+                    className="inline-flex items-center justify-center w-full px-4 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-medium rounded-xl hover:from-cyan-600 hover:to-purple-700 transition-all duration-200 group-hover:shadow-2xl group-hover:shadow-cyan-500/25"
+                  >
+                    <span>Learn More</span>
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </div>
+              </motion.div>
+
+              {/* Zero-Trust Network Security Platform */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="group relative"
+              >
+                <div className="bg-black/40 backdrop-blur-sm border border-cyan-500/20 rounded-2xl p-6 h-full hover:border-cyan-400/50 transition-all duration-300 hover:transform hover:scale-105">
+                  <div className="absolute -top-3 -right-3 bg-gradient-to-r from-red-500 to-orange-500 text-white px-3 py-1 rounded-full text-sm font-bold flex items-center">
+                    <Shield className="w-4 h-4 mr-1" />
+                    Enterprise
+                  </div>
+                  <div className="text-4xl mb-4">🔒🛡️</div>
+                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">
+                    Zero-Trust Network Security Platform
+                  </h3>
+                  <p className="text-gray-300 mb-4">Next-generation network security with zero-trust architecture</p>
+                  <div className="flex items-baseline mb-4">
+                    <span className="text-3xl font-bold text-white">$2,999</span>
+                    <span className="text-gray-400 ml-1">/month</span>
+                  </div>
+                  <a
+                    href="/comprehensive-services-showcase-2025?category=it-innovations"
+                    className="inline-flex items-center justify-center w-full px-4 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-medium rounded-xl hover:from-cyan-600 hover:to-purple-700 transition-all duration-200 group-hover:shadow-2xl group-hover:shadow-cyan-500/25"
+                  >
+                    <span>Learn More</span>
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </div>
+              </motion.div>
+
+              {/* AI Customer Success Automation */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="group relative"
+              >
+                <div className="bg-black/40 backdrop-blur-sm border border-cyan-500/20 rounded-2xl p-6 h-full hover:border-cyan-400/50 transition-all duration-300 hover:transform hover:scale-105">
+                  <div className="absolute -top-3 -right-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-3 py-1 rounded-full text-sm font-bold flex items-center">
+                    <Target className="w-4 h-4 mr-1" />
+                    Micro SAAS
+                  </div>
+                  <div className="text-4xl mb-4">🤖💼</div>
+                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">
+                    AI Customer Success Automation
+                  </h3>
+                  <p className="text-gray-300 mb-4">Automate customer success with intelligent AI</p>
+                  <div className="flex items-baseline mb-4">
+                    <span className="text-3xl font-bold text-white">$299</span>
+                    <span className="text-gray-400 ml-1">/month</span>
+                  </div>
+                  <a
+                    href="/comprehensive-services-showcase-2025?category=micro-saas"
+                    className="inline-flex items-center justify-center w-full px-4 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-medium rounded-xl hover:from-cyan-600 hover:to-purple-700 transition-all duration-200 group-hover:shadow-2xl group-hover:shadow-cyan-500/25"
+                  >
+                    <span>Learn More</span>
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </div>
+              </motion.div>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="text-center mt-12"
+            >
+              <a
+                href="/comprehensive-services-showcase-2025"
+                className="inline-flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-bold text-lg rounded-xl hover:from-purple-600 hover:to-pink-700 transition-all duration-200 shadow-2xl shadow-purple-500/25"
+              >
+                <span>View All Services</span>
+                <ArrowRight className="w-6 h-6" />
+              </a>
             </motion.div>
           </div>
         </section>

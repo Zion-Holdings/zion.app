@@ -43,6 +43,16 @@ const UltraFuturisticFooter2034: React.FC = () => {
       ]
     },
     {
+      title: '🌟 All Services',
+      links: [
+        { name: 'Comprehensive Showcase', href: '/comprehensive-services-showcase-2025' },
+        { name: 'AI Innovations', href: '/comprehensive-services-showcase-2025?category=ai-innovations' },
+        { name: 'IT Innovations', href: '/comprehensive-services-showcase-2025?category=it-innovations' },
+        { name: 'Micro SAAS', href: '/comprehensive-services-showcase-2025?category=micro-saas' },
+        { name: 'Pricing', href: '/pricing' }
+      ]
+    },
+    {
       title: '📚 Resources',
       links: [
         { name: 'Documentation', href: '/docs' },

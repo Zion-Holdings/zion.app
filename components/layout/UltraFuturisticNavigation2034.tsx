@@ -81,7 +81,8 @@ const navigationItems: NavigationItem[] = [
       { name: 'AI Content Suite', href: '/services/ai-content-automation-suite', description: 'Content creation' },
       { name: 'Business Tools', href: '/services/business-tools', description: 'Productivity boosters' },
       { name: 'Marketing Automation', href: '/services/marketing-automation', description: 'Growth acceleration' },
-      { name: 'Customer Success', href: '/services/customer-success', description: 'Retention optimization' }
+      { name: 'Customer Success', href: '/services/customer-success', description: 'Retention optimization' },
+      { name: 'Comprehensive Showcase', href: '/comprehensive-services-showcase-2025', description: 'All services portfolio' }
     ]
   },
   {
@@ -95,6 +96,19 @@ const navigationItems: NavigationItem[] = [
       { name: 'Autonomous Manufacturing', href: '/services/autonomous-manufacturing', description: 'Smart factories' },
       { name: 'Emerging Tech Lab', href: '/services/emerging-tech-lab', description: 'Innovation hub' },
       { name: 'Quantum Research', href: '/services/quantum-research', description: 'Quantum breakthroughs' }
+    ]
+  },
+  {
+    name: '🌟 All Services',
+    href: '/comprehensive-services-showcase-2025',
+    icon: <Star className="w-5 h-5" />,
+    description: 'Complete services portfolio',
+    badge: 'NEW',
+    children: [
+      { name: 'Micro SAAS Services', href: '/comprehensive-services-showcase-2025?category=micro-saas', description: 'Business solutions' },
+      { name: 'IT Innovations', href: '/comprehensive-services-showcase-2025?category=it-innovations', description: 'Technology solutions' },
+      { name: 'AI Innovations', href: '/comprehensive-services-showcase-2025?category=ai-innovations', description: 'AI platforms' },
+      { name: 'Full Portfolio', href: '/comprehensive-services-showcase-2025', description: 'View all services' }
     ]
   }
 ];
