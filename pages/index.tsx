@@ -13,6 +13,8 @@ import ServiceAds from '../components/sections/ServiceAds';
 import Card from '../components/ui/Card';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
+import { extraServices } from '../data/extra-services';
+import { additionalEnhancedServices } from '../data/additional-real-services';
 
 export default function HomePage() {
   const heroStats = [
@@ -295,10 +297,9 @@ export default function HomePage() {
     }
   ];
 
-  // Get revolutionary services for showcase
-  const revolutionaryServices = enhancedRealMicroSaasServices.filter(service => 
-    service.realImplementation && service.popular
-  ).slice(0, 6);
+  // Get revolutionary services for showcase (merged datasets)
+  const all = enhancedRealMicroSaasServices.concat(extraServices, additionalEnhancedServices);
+  const revolutionaryServices = all.filter(service => service.realImplementation && service.popular).slice(0, 6);
 
   return (
     <UltraFuturisticMatrixBackground>
