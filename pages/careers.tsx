@@ -82,7 +82,7 @@ const CareersPage: React.FC = () => {
   ];
 
   return (
-    <UltraFuturisticBackground variant="quantum">
+    <UltraFuturisticBackground>
       <div className="min-h-screen">
         <Head>
           <title>Careers - Zion Tech Group | Join Our Revolutionary Technology Team</title>

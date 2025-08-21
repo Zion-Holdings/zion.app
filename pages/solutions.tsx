@@ -76,7 +76,7 @@ const SolutionsPage: React.FC = () => {
   ];
 
   return (
-    <UltraFuturisticBackground variant="quantum">
+    <UltraFuturisticBackground>
       <div className="min-h-screen">
         <Head>
           <title>Solutions - Zion Tech Group | Revolutionary AI, Quantum Computing & Emerging Technology Solutions</title>
