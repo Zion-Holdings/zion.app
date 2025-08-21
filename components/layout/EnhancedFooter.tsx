@@ -17,6 +17,15 @@ const contactInfo = {
 
 const serviceCategories = [
   {
+    title: 'All Services',
+    services: [
+      { name: 'Comprehensive Services Showcase', href: '/comprehensive-services-showcase-2025' },
+      { name: 'View All Services', href: '/comprehensive-services-showcase-2025' },
+      { name: 'Service Categories', href: '/comprehensive-services-showcase-2025#categories' },
+      { name: 'Pricing Comparison', href: '/comprehensive-services-showcase-2025#pricing' }
+    ]
+  },
+  {
     title: 'AI & Consciousness',
     icon: Brain,
     services: [
