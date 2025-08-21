@@ -5,6 +5,8 @@ import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
 import AdvancedFuturisticBackground from '../components/ui/AdvancedFuturisticBackground';
 import AdvancedFuturisticCard from '../components/ui/AdvancedFuturisticCard';
+import QuantumHolographicBackground from '../components/ui/QuantumHolographicBackground';
+import EnhancedFuturisticCard from '../components/ui/EnhancedFuturisticCard';
 import { enhancedMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices, getServicesByPriceRange } from '../data/enhanced-micro-saas-services';
 import { motion } from 'framer-motion';
 
@@ -122,18 +124,54 @@ export default function ServicesPage() {
   ];
 
   return (
-    <AdvancedFuturisticBackground variant="quantum" className="min-h-screen">
-      <Head>
-        <title>Advanced Micro SaaS Services - Zion Tech Group</title>
-        <meta name="description" content="Discover our cutting-edge micro SaaS services featuring quantum computing, AI, and revolutionary technology solutions. Transform your business with our innovative platforms." />
-        <meta name="keywords" content="micro SaaS, quantum computing, AI services, technology solutions, Zion Tech Group" />
-        <meta property="og:title" content="Advanced Micro SaaS Services - Zion Tech Group" />
-        <meta property="og:description" content="Revolutionary micro SaaS services with quantum computing and AI technology" />
-        <meta property="og:url" content="https://ziontechgroup.com/services" />
-        <meta property="og:type" content="website" />
-      </Head>
+    <QuantumHolographicBackground variant="neural-quantum" intensity="high">
+      <div className="min-h-screen">
+        {/* Navigation Section */}
+        <section className="relative py-8 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="bg-black/20 backdrop-blur-lg rounded-2xl p-6 border border-white/10">
+              <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+                <div className="flex items-center space-x-8">
+                  <a href="/" className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                    Zion Tech Group
+                  </a>
+                  <nav className="hidden md:flex space-x-6">
+                    <a href="/" className="text-white hover:text-cyan-400 transition-colors">Home</a>
+                    <a href="/services" className="text-white hover:text-cyan-400 transition-colors">Services</a>
+                    <a href="/innovative-services" className="text-white hover:text-cyan-400 transition-colors">Innovative Services</a>
+                    <a href="/about" className="text-white hover:text-cyan-400 transition-colors">About</a>
+                    <a href="/contact" className="text-white hover:text-cyan-400 transition-colors">Contact</a>
+                  </nav>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <a href={`tel:${contactInfo.mobile}`} className="flex items-center space-x-2 text-white hover:text-cyan-400 transition-colors">
+                    <Phone className="w-4 h-4" />
+                    <span className="hidden sm:inline">{contactInfo.mobile}</span>
+                  </a>
+                  <a href={`mailto:${contactInfo.email}`} className="flex items-center space-x-2 text-white hover:text-cyan-400 transition-colors">
+                    <Mail className="w-4 h-4" />
+                    <span className="hidden sm:inline">{contactInfo.email}</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
-      <div className="relative z-10">
+        <div>
+          <Head>
+            <title>Complete Services Portfolio | Zion Tech Group - AI, Cloud, Security & More</title>
+            <meta name="description" content="Explore our complete portfolio of 250+ micro SaaS services. AI solutions, cloud infrastructure, cybersecurity, data analytics, IoT, blockchain, and emerging technologies." />
+            <meta name="keywords" content="AI services, cloud solutions, cybersecurity, data analytics, IoT platform, blockchain, quantum computing, AR/VR, micro SaaS, business automation" />
+            <meta name="author" content="Zion Tech Group" />
+            <meta property="og:title" content="Complete Services Portfolio | Zion Tech Group" />
+            <meta property="og:description" content="Comprehensive technology services portfolio with AI, cloud, security, and emerging technology solutions." />
+            <meta property="og:url" content="https://ziontechgroup.com/services" />
+            <meta property="og:type" content="website" />
+            <link rel="canonical" href="https://ziontechgroup.com/services" />
+          </Head>
+
+          <div className="relative z-10">
         {/* Hero Section */}
         <section className="relative py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto text-center">
@@ -442,9 +480,184 @@ export default function ServicesPage() {
         </section>
 
         {/* Contact Information */}
-        <section id="contact-info" className="py-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <AdvancedFuturisticCard variant="neural" className="p-8">
+        <section className="py-20 bg-gradient-to-br from-gray-900/50 to-black/50">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                Expert Support & Consultation
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Our team of AI and quantum computing experts is here to help you choose the right services and implement them successfully.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
+              <EnhancedFuturisticCard
+                variant="neural"
+                intensity="medium"
+                className="text-center"
+              >
+                <div className="text-cyan-400 mb-4">
+                  <Phone className="w-8 h-8 mx-auto" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">Phone Support</h3>
+                <p className="text-lg text-cyan-400 font-mono">{contactInfo.mobile}</p>
+                <p className="text-sm text-gray-400 mt-2">Available 24/7</p>
+              </EnhancedFuturisticCard>
+
+              <EnhancedFuturisticCard
+                variant="quantum"
+                intensity="medium"
+                className="text-center"
+              >
+                <div className="text-fuchsia-400 mb-4">
+                  <Mail className="w-8 h-8 mx-auto" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">Email Consultation</h3>
+                <p className="text-lg text-fuchsia-400 font-mono break-all">{contactInfo.email}</p>
+                <p className="text-sm text-gray-400 mt-2">Response within 2 hours</p>
+              </EnhancedFuturisticCard>
+
+              <EnhancedFuturisticCard
+                variant="holographic"
+                intensity="medium"
+                className="text-center"
+              >
+                <div className="text-green-400 mb-4">
+                  <MapPin className="w-8 h-8 mx-auto" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">Headquarters</h3>
+                <p className="text-sm text-green-400 font-mono leading-relaxed">{contactInfo.address}</p>
+                <p className="text-sm text-gray-400 mt-2">Visit us anytime</p>
+              </EnhancedFuturisticCard>
+            </div>
+
+            <div className="text-center">
+              <EnhancedFuturisticCard
+                variant="quantum-holographic"
+                intensity="low"
+                className="max-w-3xl mx-auto"
+              >
+                <div className="text-center">
+                  <h3 className="text-2xl font-bold text-white mb-4">Why Choose Our Services?</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left mb-6">
+                    <div className="flex items-center space-x-3">
+                      <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                      <span className="text-gray-300">300+ Production-Ready Services</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                      <span className="text-gray-300">21-Day Free Trials</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                      <span className="text-gray-300">Expert Implementation Support</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                      <span className="text-gray-300">1500%+ Average ROI</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                      <span className="text-gray-300">24/7 Technical Support</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                      <span className="text-gray-300">Quantum-Safe Security & Compliance</span>
+                    </div>
+                  </div>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Button href="/contact" variant="primary" size="lg">
+                      Get Free Consultation
+                      <ArrowRight className="w-5 h-5 ml-2" />
+                    </Button>
+                    <Button href="tel:+13024640950" variant="secondary" size="lg">
+                      Call Now
+                      <Phone className="w-5 h-5 ml-2" />
+                    </Button>
+                  </div>
+                </div>
+              </EnhancedFuturisticCard>
+            </div>
+          </div>
+        </section>
+
+        {/* Innovative Services Promotion */}
+        <section className="py-20 bg-gradient-to-br from-gray-900/50 to-black/50">
+          <div className="container mx-auto px-4 text-center">
+            <div className="mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                Discover Our Revolutionary Services
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Explore our breakthrough micro SAAS services featuring quantum AI, autonomous systems, and cutting-edge technology.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+              <EnhancedFuturisticCard variant="quantum" intensity="high" className="h-full">
+                <div className="text-center">
+                  <div className="text-4xl mb-4">⚛️🧠</div>
+                  <h3 className="text-xl font-bold text-white mb-2">Quantum AI Neural Optimizer</h3>
+                  <p className="text-gray-300 text-sm mb-4">1000x faster neural network training with 99.99% accuracy</p>
+                  <div className="text-lg font-bold text-cyan-400 mb-2">$2,999/month</div>
+                  <div className="text-xs text-gray-400 mb-4">21-day free trial • 2000% ROI guarantee</div>
+                  <Button href="/innovative-services" variant="outline" size="sm">
+                    Learn More
+                  </Button>
+                </div>
+              </EnhancedFuturisticCard>
+
+              <EnhancedFuturisticCard variant="holographic" intensity="high" className="h-full">
+                <div className="text-center">
+                  <div className="text-4xl mb-4">🔗⚛️</div>
+                  <h3 className="text-xl font-bold text-white mb-2">Quantum Blockchain Platform</h3>
+                  <p className="text-gray-300 text-sm mb-4">Infinite scalability with quantum-secured consensus</p>
+                  <div className="text-lg font-bold text-cyan-400 mb-2">$1,999/month</div>
+                  <div className="text-xs text-gray-400 mb-4">21-day free trial • 1500% ROI guarantee</div>
+                  <Button href="/innovative-services" variant="outline" size="sm">
+                    Learn More
+                  </Button>
+                </div>
+              </EnhancedFuturisticCard>
+
+              <EnhancedFuturisticCard variant="cyberpunk" intensity="high" className="h-full">
+                <div className="text-center">
+                  <div className="text-4xl mb-4">🛡️🤖</div>
+                  <h3 className="text-xl font-bold text-white mb-2">AI Cybersecurity Quantum Sentinel</h3>
+                  <p className="text-gray-300 text-sm mb-4">99.99% threat detection with quantum-resistant encryption</p>
+                  <div className="text-lg font-bold text-cyan-400 mb-2">$1,499/month</div>
+                  <div className="text-xs text-gray-400 mb-4">14-day free trial • 800% ROI guarantee</div>
+                  <Button href="/innovative-services" variant="outline" size="sm">
+                    Learn More
+                  </Button>
+                </div>
+              </EnhancedFuturisticCard>
+            </div>
+
+            <div className="text-center">
+              <Button href="/innovative-services" variant="primary" size="lg" className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700">
+                <Sparkles className="w-5 h-5 mr-2" />
+                Explore All Innovative Services
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+              <div className="mt-6 text-sm text-gray-400">
+                <div>Contact us: {contactInfo.mobile} | {contactInfo.email}</div>
+                <div className="mt-1">Address: {contactInfo.address}</div>
+                <div className="mt-1">Website: {contactInfo.website}</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Call to Action */}
+        <section className="py-20">
+          <div className="container mx-auto px-4 text-center">
+            <EnhancedFuturisticCard
+              variant="quantum-holographic"
+              intensity="high"
+              className="max-w-4xl mx-auto"
+            >
               <div className="text-center">
                 <h2 className="text-4xl font-bold text-white mb-8">Ready to Transform Your Business?</h2>
                 <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
@@ -487,11 +700,13 @@ export default function ServicesPage() {
                   </Button>
                 </div>
               </div>
-            </AdvancedFuturisticCard>
+            </EnhancedFuturisticCard>
           </div>
         </section>
+          </div>
+        </div>
       </div>
-    </AdvancedFuturisticBackground>
+    </QuantumHolographicBackground>
   );
 }
 
