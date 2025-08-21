@@ -19,7 +19,7 @@ export default function QuantumServicesPage() {
   ];
 
   return (
-    <UltraAdvancedFuturisticBackground variant="quantum-holographic" intensity={0.95}>
+    <UltraAdvancedFuturisticBackground intensity="high" colorScheme="quantum-fusion" particleCount={300} animationSpeed={1.5} enableHolographic={true} enableQuantumEffects={true}>
       <Head>
         <title>Quantum Services | Zion Tech Group</title>
         <meta name="description" content="Quantum computing strategy, hybrid pipelines, and quantum-safe security initiatives." />
