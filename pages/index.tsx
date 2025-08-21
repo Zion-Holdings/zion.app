@@ -10,7 +10,7 @@ import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, Exter
 
 export default function HomePage() {
   const heroStats = [
-    { value: '300+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
+    { value: '100+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
     { value: '99.9%', label: 'Uptime Guarantee', color: 'text-fuchsia-400' },
     { value: '14', label: 'Day Free Trials', color: 'text-blue-400' },
     { value: '24/7', label: 'AI Support', color: 'text-green-400' },
@@ -28,7 +28,7 @@ export default function HomePage() {
   const platformFeatures = [
     {
       icon: <Cloud className="w-8 h-8 text-white" />,
-      title: '300+ Real Micro SaaS Services',
+      title: '100+ Real Micro SaaS Services',
       description: 'Complete portfolio of fully functional micro SaaS tools with real implementations, not just mockups. Starting from $49/month with 14-day free trials. All services are production-ready and deployed.',
       color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
       gradient: 'from-cyan-400 to-blue-500',
@@ -222,7 +222,7 @@ export default function HomePage() {
   ];
 
   return (
-    <EnhancedFuturisticBackground variant="quantum-holographic-advanced" intensity="high">
+    <EnhancedFuturisticBackground variant="holographic-advanced" intensity="high">
       <div className="min-h-screen">
         <Head>
           <title>Zion Tech Group - Revolutionary AI, Quantum Computing & Emerging Technology Solutions</title>
@@ -519,7 +519,7 @@ export default function HomePage() {
 
             <div className="text-center mt-12">
               <EnhancedFuturisticCard
-                variant="quantum-holographic"
+                variant="holographic-advanced"
                 intensity="low"
                 className="max-w-2xl mx-auto"
               >
@@ -567,7 +567,7 @@ export default function HomePage() {
         <section className="py-20">
           <div className="container mx-auto px-4 text-center">
             <EnhancedFuturisticCard
-              variant="quantum-holographic"
+                              variant="holographic-advanced"
               intensity="high"
               className="max-w-4xl mx-auto"
             >
