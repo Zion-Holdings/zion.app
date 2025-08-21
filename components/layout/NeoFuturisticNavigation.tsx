@@ -14,6 +14,7 @@ const NeoFuturisticNavigation: React.FC = () => {
 
   const navItems = [
     { name: 'Home', href: '/', icon: <Zap className="w-4 h-4" /> },
+    { name: 'All Services', href: '/all-services', icon: <Cloud className="w-4 h-4" /> },
     { name: 'Services', href: '/services', icon: <Cloud className="w-4 h-4" />, dropdown: [
       { name: 'AI & Machine Learning', href: '/services?category=AI%20%26%20Machine%20Learning', icon: <Brain className="w-4 h-4" /> },
       { name: 'Cloud & Infrastructure', href: '/services?category=Cloud%20%26%20Infrastructure', icon: <Cloud className="w-4 h-4" /> },
