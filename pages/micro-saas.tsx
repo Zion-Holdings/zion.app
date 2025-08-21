@@ -111,7 +111,7 @@ export default function MicroSaasPage() {
   ];
 
   return (
-    <UltraAdvancedFuturisticBackground variant="quantum-entanglement" intensity="high">
+    <UltraAdvancedFuturisticBackground>
       <div className="min-h-screen">
         <Head>
           <title>100+ Revolutionary Micro SaaS Services | Zion Tech Group - AI, Quantum, Emerging Tech</title>
