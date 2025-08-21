@@ -163,7 +163,7 @@ export const enterpriseInnovations2032: EnterpriseInnovation2032[] = [
       'Monitoring dashboard',
       '24/7 edge operations'
     ],
-    popular: true,
+    popular: false,
     icon: '🌐',
     color: 'from-teal-600 via-emerald-600 to-green-600',
     textColor: 'text-teal-400',
