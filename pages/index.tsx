@@ -398,7 +398,7 @@ export default function HomePage() {
       <ServiceAds
         heading="Featured Micro SaaS & AI Services"
         subheading="Transparent pricing, real capabilities, fast onboarding."
-        items={serviceHighlights.slice(0, 4).map((h) => ({
+        items={serviceHighlights.slice(0, 8).map((h) => ({
           title: h.title,
           description: h.description,
           price: h.price,
