@@ -17,7 +17,7 @@ interface Service {
   textColor: string;
   link: string;
   marketPosition: string;
-  targetAudience: string;
+  targetAudience: string | string[];
   trialDays: number;
   setupTime: string;
   category: string;
