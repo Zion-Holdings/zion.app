@@ -63,6 +63,25 @@ const navigationItems: NavigationItem[] = [
     ]
   },
   {
+    name: 'AI Automation',
+    href: '/ai-automation-services',
+    icon: <Zap className="w-5 h-5" />,
+    description: 'Advanced AI-powered automation solutions',
+    badge: 'Hot',
+    children: [
+      { name: 'AI Code Generation', href: '/ai-code-generation-review', description: 'Automated code generation and review' },
+      { name: 'DevOps Automation', href: '/ai-devops-automation', description: 'Intelligent DevOps workflows' },
+      { name: 'Customer Support AI', href: '/ai-customer-support-automation', description: 'AI-powered customer support' },
+      { name: 'Marketing Automation', href: '/ai-marketing-automation', description: 'Intelligent marketing automation' },
+      { name: 'Sales Intelligence', href: '/ai-sales-intelligence', description: 'AI-powered sales insights' },
+      { name: 'Business Intelligence', href: '/ai-business-intelligence-suite', description: 'Advanced analytics and insights' },
+      { name: 'Content Automation', href: '/ai-content-generation-platform', description: 'AI content creation' },
+      { name: 'Process Automation', href: '/ai-process-automation', description: 'Intelligent workflow automation' },
+      { name: 'Quality Assurance AI', href: '/ai-quality-assurance', description: 'Automated testing and QA' },
+      { name: 'Data Processing AI', href: '/ai-data-processing', description: 'Intelligent data handling' }
+    ]
+  },
+  {
     name: 'Quantum & Emerging Tech',
     href: '/quantum-services',
     icon: <Atom className="w-5 h-5" />,
@@ -82,21 +101,59 @@ const navigationItems: NavigationItem[] = [
     ]
   },
   {
+    name: 'Cybersecurity',
+    href: '/cybersecurity-services',
+    icon: <Shield className="w-5 h-5" />,
+    description: 'Next-generation cybersecurity solutions',
+    badge: 'Hot',
+    children: [
+      { name: 'Zero Trust Security', href: '/zero-trust-security-platform', description: 'Advanced zero trust implementation' },
+      { name: 'AI Threat Intelligence', href: '/ai-threat-intelligence', description: 'AI-powered threat detection' },
+      { name: 'Cloud Security Posture', href: '/cloud-security-posture', description: 'Multi-cloud security management' },
+      { name: 'DevSecOps Security', href: '/devsecops-security-platform', description: 'Security in DevOps pipelines' },
+      { name: 'IoT Security Platform', href: '/iot-security-platform', description: 'IoT device protection' },
+      { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity', description: 'Quantum security solutions' },
+      { name: 'Incident Response AI', href: '/incident-response-ai', description: 'Automated incident handling' },
+      { name: 'Compliance Automation', href: '/compliance-automation', description: 'Regulatory compliance tools' },
+      { name: 'Vulnerability Management', href: '/vulnerability-management', description: 'Automated vulnerability scanning' },
+      { name: 'Security Analytics', href: '/security-analytics', description: 'Advanced security insights' }
+    ]
+  },
+  {
     name: 'Enterprise IT',
     href: '/enterprise-it',
-    icon: <Shield className="w-5 h-5" />,
+    icon: <Cpu className="w-5 h-5" />,
     description: 'Enterprise solutions and infrastructure',
     children: [
       { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure-platform', description: 'Quantum-enhanced cloud computing' },
       { name: 'Edge Computing Orchestrator', href: '/edge-computing-orchestration', description: 'Edge processing optimization' },
-      { name: 'Zero Trust Security Platform', href: '/zero-trust-security-platform', description: 'Advanced cybersecurity' },
       { name: 'Blockchain Enterprise Platform', href: '/blockchain-infrastructure-platform', description: 'Enterprise blockchain solutions' },
       { name: 'AI-Powered DevOps', href: '/ai-powered-devops', description: 'Intelligent development automation' },
       { name: 'Quantum Networking', href: '/quantum-networking', description: 'Quantum communication protocols' },
       { name: 'Autonomous IT Operations', href: '/autonomous-it-operations-center', description: 'Self-managing IT systems' },
       { name: 'Quantum Data Center', href: '/quantum-data-center', description: 'Next-gen data centers' },
-      { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity', description: 'Quantum security solutions' },
-      { name: 'Quantum Cloud Migration', href: '/quantum-cloud-migration', description: 'Seamless cloud transitions' }
+      { name: 'Quantum Cloud Migration', href: '/quantum-cloud-migration', description: 'Seamless cloud transitions' },
+      { name: 'IT Asset Management', href: '/it-asset-management', description: 'Comprehensive asset tracking' },
+      { name: 'Infrastructure Monitoring', href: '/infrastructure-monitoring', description: 'Real-time system monitoring' }
+    ]
+  },
+  {
+    name: 'Blockchain & Web3',
+    href: '/blockchain-web3-services',
+    icon: <Globe className="w-5 h-5" />,
+    description: 'Advanced blockchain and Web3 solutions',
+    badge: 'New',
+    children: [
+      { name: 'DeFi Yield Optimization', href: '/defi-yield-optimization', description: 'Intelligent yield farming' },
+      { name: 'NFT Marketplace', href: '/nft-marketplace-management', description: 'Custom NFT platforms' },
+      { name: 'DAO Governance', href: '/dao-governance-management', description: 'Decentralized governance' },
+      { name: 'Cross-Chain Bridge', href: '/cross-chain-bridge-interoperability', description: 'Multi-chain interoperability' },
+      { name: 'Web3 Identity', href: '/web3-identity-authentication', description: 'Decentralized identity' },
+      { name: 'Smart Contract Development', href: '/smart-contract-development', description: 'Advanced contract creation' },
+      { name: 'DeFi Protocol Development', href: '/defi-protocol-development', description: 'Custom DeFi protocols' },
+      { name: 'Web3 Analytics', href: '/web3-analytics', description: 'Blockchain insights' },
+      { name: 'Token Economics', href: '/token-economics', description: 'Token design and modeling' },
+      { name: 'Regulatory Compliance', href: '/web3-compliance', description: 'Compliance automation' }
     ]
   },
   {
@@ -115,6 +172,25 @@ const navigationItems: NavigationItem[] = [
       { name: 'Customer Service AI', href: '/ai-customer-service', description: 'Automated support' },
       { name: 'HR & Recruitment', href: '/ai-hr-recruitment', description: 'AI talent management' },
       { name: 'Legal Contract Analysis', href: '/ai-legal-contract-analyzer', description: 'Legal document review' }
+    ]
+  },
+  {
+    name: 'Healthcare & Biotech',
+    href: '/healthcare-biotech-services',
+    icon: <Heart className="w-5 h-5" />,
+    description: 'AI-powered healthcare and biotechnology',
+    badge: 'New',
+    children: [
+      { name: 'AI Drug Discovery', href: '/ai-drug-discovery-platform', description: 'AI-powered drug development' },
+      { name: 'Precision Medicine', href: '/precision-medicine-genomics', description: 'Personalized healthcare' },
+      { name: 'Medical Imaging AI', href: '/ai-medical-imaging-analysis', description: 'AI image analysis' },
+      { name: 'Digital Health Platform', href: '/digital-health-telemedicine', description: 'Telemedicine solutions' },
+      { name: 'Clinical Trial Management', href: '/clinical-trial-management-optimization', description: 'Trial optimization' },
+      { name: 'Healthcare Analytics', href: '/healthcare-analytics', description: 'Health data insights' },
+      { name: 'Patient Engagement', href: '/patient-engagement-platform', description: 'Patient communication' },
+      { name: 'Medical Device AI', href: '/medical-device-ai', description: 'Smart medical devices' },
+      { name: 'Healthcare Security', href: '/healthcare-cybersecurity', description: 'Medical data protection' },
+      { name: 'Biotech Research Tools', href: '/biotech-research-tools', description: 'Research automation' }
     ]
   },
   {
