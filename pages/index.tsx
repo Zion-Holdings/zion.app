@@ -15,6 +15,7 @@ import Revolutionary2027ServicesShowcase from '../components/sections/Revolution
 import Revolutionary2027Hero from '../components/sections/Revolutionary2027Hero';
 import EnhancedHero2026 from '../components/sections/EnhancedHero2026';
 import UltraFuturisticHero2029 from '../components/sections/UltraFuturisticHero2029';
+import UltraFuturistic2029ServiceShowcase from '../components/sections/UltraFuturistic2029ServiceShowcase';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
@@ -70,7 +71,7 @@ import { cuttingEdge2028MicroSaas } from '../data/2028-cutting-edge-micro-saas';
 import { practicalBusinessSolutions2028 } from '../data/2028-practical-business-solutions';
 import { futuristic2028Services } from '../data/2028-futuristic-innovations';
 import { emergingTech2028Services } from '../data/2028-emerging-tech-services';
-import { cuttingEdgeInnovations2029 } from '../data/2029-cutting-edge-innovations';
+import { cuttingEdge2029Services } from '../data/2029-cutting-edge-innovations';
 import { emergingTechServices2029 } from '../data/2029-emerging-tech-services';
 import { practicalBusinessSolutions2029 } from '../data/2029-practical-business-solutions';
 import { ultimateMicroSaasServices } from '../data/ultimate-micro-saas-services';
@@ -109,7 +110,7 @@ export default function HomePage() {
     ...nextGenInnovations2025,
     ...futuristic2028Services,
     ...emergingTech2028Services,
-    ...cuttingEdgeInnovations2029,
+    ...cuttingEdge2029Services,
     ...emergingTechServices2029,
     ...practicalBusinessSolutions2029,
     ...innovative2026Services,
@@ -142,7 +143,7 @@ export default function HomePage() {
     ...revolutionary2027MicroSaasServices,
     ...cuttingEdge2028MicroSaas,
     ...practicalBusinessSolutions2028,
-    ...cuttingEdgeInnovations2029,
+    ...cuttingEdge2029Services,
     ...emergingTechServices2029,
     ...practicalBusinessSolutions2029
   ];
@@ -215,12 +216,14 @@ export default function HomePage() {
         />
       </Head>
 
-      <UltraFuturisticBackground2029 intensity="high">
-        {/* Navigation */}
-        <UltraFuturisticNavigation2029 />
+      {/* Background */}
+      <UltraFuturisticBackground2029 />
+      
+      {/* Navigation */}
+      <UltraFuturisticNavigation2029 />
 
-        {/* Hero Section */}
-        <UltraFuturisticHero2029 />
+      {/* Hero Section */}
+      <UltraFuturisticHero2029 />
 
         {/* Additional Content Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
@@ -297,13 +300,13 @@ export default function HomePage() {
           maxServices={12}
         />
 
-        {/* 2029 Ultra-Futuristic Service Showcase - Temporarily commented out due to type mismatch */}
-        {/* <UltraFuturistic2029ServiceShowcase
-          services={[...cuttingEdgeInnovations2029, ...emergingTechServices2029, ...practicalBusinessSolutions2029]}
+        {/* 2029 Ultra-Futuristic Service Showcase */}
+        <UltraFuturistic2029ServiceShowcase
+          services={[...cuttingEdge2029Services, ...emergingTechServices2029, ...practicalBusinessSolutions2029]}
           title="2029 Ultra-Futuristic Innovations"
           subtitle="Experience the future of technology with our revolutionary 2029 services"
           maxServices={10}
-        /> */}
+        />
 
         {/* Contact Information Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
@@ -446,7 +449,6 @@ export default function HomePage() {
             </motion.div>
           </div>
         </section>
-      </UltraFuturisticBackground2029>
       
       {/* Footer */}
       <UltraFuturisticFooter2029 />
