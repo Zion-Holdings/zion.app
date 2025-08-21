@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shield, Mail, MapPin, Rocket, Brain, Sparkles } from 'lucide-react';
+import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shield, Mail, MapPin, Rocket, Brain, Sparkles, Atom } from 'lucide-react';
 import Button from '../components/ui/Button';
 import UltraQuantumHolographicBackground from '../components/ui/UltraQuantumHolographicBackground';
 import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
@@ -45,6 +45,10 @@ import { enterpriseIT2026ServicesV2 } from '../data/enterprise-it-2026-services-
 import { revolutionary2026MicroSaasServices } from '../data/revolutionary-2026-micro-saas-services';
 import { revolutionary2026ITServices } from '../data/revolutionary-2026-it-services';
 import { revolutionary2026AIServices } from '../data/revolutionary-2026-ai-services';
+import { revolutionary2026AIAutomationServices } from '../data/revolutionary-2026-ai-automation-services';
+import { revolutionary2026EmergingTechServices } from '../data/revolutionary-2026-emerging-tech-services';
+import { revolutionary2026HealthcareBiotechServices } from '../data/revolutionary-2026-healthcare-biotech-services';
+import { revolutionary2026FintechBlockchainServices } from '../data/revolutionary-2026-fintech-blockchain-services';
 
 export default function HomePage() {
   const contactInfo = {
@@ -89,7 +93,11 @@ export default function HomePage() {
     ...enterpriseIT2026ServicesV2,
     ...revolutionary2026MicroSaasServices,
     ...revolutionary2026ITServices,
-    ...revolutionary2026AIServices
+    ...revolutionary2026AIServices,
+    ...revolutionary2026AIAutomationServices,
+    ...revolutionary2026EmergingTechServices,
+    ...revolutionary2026HealthcareBiotechServices,
+    ...revolutionary2026FintechBlockchainServices
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);
@@ -97,14 +105,16 @@ export default function HomePage() {
   // Service statistics
   const serviceStats = {
     totalServices: allServices.length,
-    aiServices: nextGenerationAIServices.length + innovativeAIServices.length + realMarketServices.filter(s => s.category.includes('AI')).length + revolutionary2025Services.filter(s => s.category.includes('AI')).length + nextGenInnovations2025.filter(s => s.category.includes('AI')).length + innovative2026Services.filter(s => s.category.includes('AI')).length + emergingTech2026Services.filter(s => s.category.includes('AI')).length + innovative2026MicroSaasServices.filter(s => s.category.includes('AI')).length + innovative2026MicroSaasServicesV2.filter(s => s.category.includes('AI')).length + emergingTech2026ServicesV2.filter(s => s.category.includes('AI')).length + enterpriseIT2026ServicesV2.filter(s => s.category.includes('AI')).length + revolutionary2026AIServices.length,
-    emergingTech: emergingTechnologyServices.length + emergingTechServices2025.length + emergingTech2026Services.length + emergingTech2026ServicesNew.length + emergingTech2026ServicesV2.length,
-    itSolutions: comprehensiveITSolutions.length + enterpriseITServices.length + enterpriseIT2026Services.length + enterpriseIT2026ServicesNew.length + enterpriseIT2026ServicesV2.length + revolutionary2026ITServices.length,
-    microSaas: enhancedRealMicroSaasServices.length + innovativeMicroSaasServices.length + innovative2026Services.filter(s => s.category.includes('SaaS')).length + innovative2026MicroSaasServices.length + innovative2026MicroSaasServicesV2.length + revolutionary2026MicroSaasServices.length,
-    revolutionaryServices: revolutionary2025Services.length + nextGenInnovations2025.length + innovative2026Services.length + emergingTech2026Services.length + enterpriseIT2026Services.length + innovative2026MicroSaasServices.length + innovative2026MicroSaasServicesV2.length + emergingTech2026ServicesV2.length + enterpriseIT2026ServicesV2.length + revolutionary2026MicroSaasServices.length + revolutionary2026ITServices.length + revolutionary2026AIServices.length,
-    quantumServices: quantumSpaceServices.length + quantumAIServices2025.filter(s => s.category.includes('Quantum')).length + revolutionary2026ITServices.filter(s => s.category.includes('Quantum')).length + revolutionary2026AIServices.filter(s => s.category.includes('Quantum')).length,
-    blockchainServices: enterpriseIT2026Services.filter(s => s.category.includes('Blockchain')).length + revolutionary2026ITServices.filter(s => s.category.includes('Blockchain')).length,
-    spaceTech: quantumSpaceServices.filter(s => s.category.includes('Space')).length
+    aiServices: nextGenerationAIServices.length + innovativeAIServices.length + realMarketServices.filter(s => s.category.includes('AI')).length + revolutionary2025Services.filter(s => s.category.includes('AI')).length + nextGenInnovations2025.filter(s => s.category.includes('AI')).length + innovative2026Services.filter(s => s.category.includes('AI')).length + emergingTech2026Services.filter(s => s.category.includes('AI')).length + innovative2026MicroSaasServices.filter(s => s.category.includes('AI')).length + innovative2026MicroSaasServicesV2.filter(s => s.category.includes('AI')).length + emergingTech2026ServicesV2.filter(s => s.category.includes('AI')).length + enterpriseIT2026ServicesV2.filter(s => s.category.includes('AI')).length + revolutionary2026AIServices.length + revolutionary2026AIAutomationServices.length + revolutionary2026HealthcareBiotechServices.filter(s => s.category.includes('AI')).length + revolutionary2026FintechBlockchainServices.filter(s => s.category.includes('AI')).length,
+          emergingTech: emergingTechnologyServices.length + emergingTechServices2025.length + emergingTech2026Services.length + emergingTech2026ServicesNew.length + emergingTech2026ServicesV2.length + revolutionary2026EmergingTechServices.length,
+      itSolutions: comprehensiveITSolutions.length + enterpriseITServices.length + enterpriseIT2026Services.length + enterpriseIT2026ServicesNew.length + enterpriseIT2026ServicesV2.length + revolutionary2026ITServices.length,
+      microSaas: enhancedRealMicroSaasServices.length + innovativeMicroSaasServices.length + innovative2026Services.filter(s => s.category.includes('SaaS')).length + innovative2026MicroSaasServices.length + innovative2026MicroSaasServicesV2.length + revolutionary2026MicroSaasServices.length,
+      healthcareBiotech: revolutionary2026HealthcareBiotechServices.length,
+      fintechBlockchain: revolutionary2026FintechBlockchainServices.length,
+          revolutionaryServices: revolutionary2025Services.length + nextGenInnovations2025.length + innovative2026Services.length + emergingTech2026Services.length + enterpriseIT2026Services.length + innovative2026MicroSaasServices.length + innovative2026MicroSaasServicesV2.length + emergingTech2026ServicesV2.length + enterpriseIT2026ServicesV2.length + revolutionary2026MicroSaasServices.length + revolutionary2026ITServices.length + revolutionary2026AIServices.length + revolutionary2026AIAutomationServices.length + revolutionary2026EmergingTechServices.length + revolutionary2026HealthcareBiotechServices.length + revolutionary2026FintechBlockchainServices.length,
+          quantumServices: quantumSpaceServices.length + quantumAIServices2025.filter(s => s.category.includes('Quantum')).length + revolutionary2026ITServices.filter(s => s.category.includes('Quantum')).length + revolutionary2026AIServices.filter(s => s.category.includes('Quantum')).length + revolutionary2026AIAutomationServices.filter(s => s.category.includes('Quantum')).length + revolutionary2026EmergingTechServices.filter(s => s.category.includes('Quantum')).length + revolutionary2026FintechBlockchainServices.filter(s => s.category.includes('Quantum')).length,
+          blockchainServices: enterpriseIT2026Services.filter(s => s.category.includes('Blockchain')).length + revolutionary2026ITServices.filter(s => s.category.includes('Blockchain')).length + revolutionary2026FintechBlockchainServices.filter(s => s.category.includes('Blockchain')).length,
+          spaceTech: quantumSpaceServices.filter(s => s.category.includes('Space')).length + revolutionary2026EmergingTechServices.filter(s => s.category.includes('Space')).length
   };
 
   return (
@@ -289,7 +299,7 @@ export default function HomePage() {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -297,11 +307,11 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 className="text-center group"
               >
-                <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <Brain className="w-10 h-10 text-white" />
+                <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <Brain className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-3xl font-bold text-white mb-2">{serviceStats.aiServices}+</h3>
-                <p className="text-cyan-300 font-medium">AI Services</p>
+                <h3 className="text-2xl font-bold text-white mb-2">{serviceStats.aiServices}+</h3>
+                <p className="text-cyan-300 font-medium text-sm">AI Services</p>
               </motion.div>
 
               <motion.div
@@ -311,11 +321,11 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 className="text-center group"
               >
-                <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <Sparkles className="w-10 h-10 text-white" />
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <Sparkles className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-3xl font-bold text-white mb-2">{serviceStats.emergingTech}+</h3>
-                <p className="text-purple-300 font-medium">Emerging Tech</p>
+                <h3 className="text-2xl font-bold text-white mb-2">{serviceStats.emergingTech}+</h3>
+                <p className="text-purple-300 font-medium text-sm">Emerging Tech</p>
               </motion.div>
 
               <motion.div
@@ -325,11 +335,11 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 className="text-center group"
               >
-                <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <Shield className="w-10 h-10 text-white" />
+                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <Shield className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-3xl font-bold text-white mb-2">{serviceStats.itSolutions}+</h3>
-                <p className="text-green-300 font-medium">IT Solutions</p>
+                <h3 className="text-2xl font-bold text-white mb-2">{serviceStats.itSolutions}+</h3>
+                <p className="text-green-300 font-medium text-sm">IT Solutions</p>
               </motion.div>
 
               <motion.div
@@ -339,11 +349,39 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 className="text-center group"
               >
-                <div className="w-20 h-20 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <Rocket className="w-10 h-10 text-white" />
+                <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <Atom className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-3xl font-bold text-white mb-2">{serviceStats.revolutionaryServices}+</h3>
-                <p className="text-yellow-300 font-medium">Revolutionary</p>
+                <h3 className="text-2xl font-bold text-white mb-2">{serviceStats.healthcareBiotech}+</h3>
+                <p className="text-teal-300 font-medium text-sm">Healthcare & Biotech</p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                viewport={{ once: true }}
+                className="text-center group"
+              >
+                <div className="w-16 h-16 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <DollarSign className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2">{serviceStats.fintechBlockchain}+</h3>
+                <p className="text-yellow-300 font-medium text-sm">Fintech & Blockchain</p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                viewport={{ once: true }}
+                className="text-center group"
+              >
+                <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <Rocket className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2">{serviceStats.revolutionaryServices}+</h3>
+                <p className="text-indigo-300 font-medium text-sm">Revolutionary</p>
               </motion.div>
             </div>
           </div>
