@@ -6,7 +6,8 @@ import {
   Rocket, Brain, Atom, Globe, Zap, Sparkles, Shield, 
   Target, Crown, Star, TrendingUp, ArrowRight,
   CheckCircle, DollarSign, Users, Clock, Award, Zap as ZapIcon,
-  Search, Phone, Mail, MapPin
+  Search, Phone, Mail, MapPin, Heart, Leaf, Car, GraduationCap, Scale,
+  Building, Factory, Camera, Video, Music, Gamepad2
 } from 'lucide-react';
 import UltraFuturisticNavigation2028 from '../components/layout/UltraFuturisticNavigation2028';
 import UltraFuturisticFooter2028 from '../components/layout/UltraFuturisticFooter2028';
