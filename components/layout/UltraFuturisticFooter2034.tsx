@@ -18,66 +18,80 @@ const contactInfo = {
 const footerSections = [
   {
     title: 'AI & Consciousness',
-    description: 'Revolutionary AI platforms with consciousness and emotional intelligence',
-    icon: Brain,
-    color: 'from-violet-500 to-purple-600',
     links: [
       { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2025' },
+      { name: 'AI Quantum Neural Network', href: '/ai-quantum-neural-network' },
+      { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant' },
+      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training' },
+      { name: 'AI Predictive Maintenance', href: '/ai-predictive-maintenance-platform' },
+      { name: 'AI Content Personalization', href: '/ai-content-personalization-engine' },
       { name: 'AI Autonomous Ecosystem', href: '/ai-autonomous-ecosystem-manager' },
-      { name: 'AI Ethics & Governance', href: '/ai-ethics-governance-framework' },
-      { name: 'AI Creativity Studio', href: '/ai-creativity-studio' },
-      { name: 'AI Education Platform', href: '/ai-education-platform' },
-      { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics' },
-      { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence' },
-      { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform' }
+      { name: 'AI Ethics & Governance', href: '/ai-ethics-governance-framework' }
     ]
   },
   {
     title: 'Quantum & Emerging Tech',
-    description: 'Breakthrough quantum computing and space technology solutions',
-    icon: Atom,
-    color: 'from-indigo-500 to-blue-600',
     links: [
-      { name: 'Space Mining Platform', href: '/space-mining-platform' },
-      { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform' },
+      { name: 'Space Resource Mining', href: '/space-resource-mining-platform' },
+      { name: 'Quantum Internet Security', href: '/quantum-internet-security-platform' },
       { name: 'Brain-Computer Interface', href: '/brain-computer-interface-platform' },
-      { name: 'Quantum Energy Platform', href: '/quantum-energy-platform' },
-      { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai-platform' },
       { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery-platform' },
-      { name: 'Quantum Robotics', href: '/quantum-robotics' },
-      { name: 'Quantum Internet Security', href: '/quantum-internet-security' }
+      { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai-platform' },
+      { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform' },
+      { name: 'Quantum Energy Platform', href: '/quantum-energy-platform' },
+      { name: 'Quantum Robotics', href: '/quantum-robotics' }
     ]
   },
   {
     title: 'Enterprise IT',
-    description: 'Advanced enterprise infrastructure and security solutions',
-    icon: Shield,
-    color: 'from-blue-500 to-cyan-600',
     links: [
-      { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure-platform' },
-      { name: 'Edge Computing Orchestrator', href: '/edge-computing-orchestration' },
-      { name: 'Zero Trust Security Platform', href: '/zero-trust-security-platform' },
-      { name: 'Blockchain Enterprise Platform', href: '/blockchain-infrastructure-platform' },
-      { name: 'AI-Powered DevOps', href: '/ai-powered-devops' },
-      { name: 'Quantum Networking', href: '/quantum-networking' },
+      { name: 'Quantum-Secure Cloud', href: '/quantum-secure-cloud-infrastructure' },
       { name: 'Autonomous IT Operations', href: '/autonomous-it-operations-center' },
-      { name: 'Quantum Data Center', href: '/quantum-data-center' }
+      { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration-platform' },
+      { name: 'Blockchain Infrastructure', href: '/blockchain-infrastructure-platform' },
+      { name: 'AI-Powered DevOps', href: '/ai-powered-devops-platform' },
+      { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure-platform' },
+      { name: 'Zero Trust Security', href: '/zero-trust-security-platform' },
+      { name: 'Quantum Networking', href: '/quantum-networking' }
     ]
   },
   {
     title: 'Micro SAAS',
-    description: 'Innovative business solutions for modern enterprises',
-    icon: Rocket,
-    color: 'from-teal-500 to-emerald-600',
     links: [
+      { name: 'AI Customer Success', href: '/ai-customer-success-platform' },
+      { name: 'Supply Chain Optimization', href: '/intelligent-supply-chain-optimization' },
+      { name: 'Financial Planning AI', href: '/ai-financial-planning-platform' },
+      { name: 'HR Analytics Platform', href: '/intelligent-hr-analytics-platform' },
+      { name: 'Sales Intelligence AI', href: '/ai-sales-intelligence-platform' },
       { name: 'AI Decision Engine', href: '/ai-powered-decision-engine' },
       { name: 'Content Automation', href: '/intelligent-content-automation-platform' },
-      { name: 'Smart CRM Suite', href: '/smart-crm-intelligence-suite' },
-      { name: 'Financial Analytics', href: '/automated-financial-analytics-platform' },
-      { name: 'Project Management', href: '/intelligent-project-management-suite' },
-      { name: 'Business Intelligence', href: '/ai-business-intelligence' },
-      { name: 'Marketing Automation', href: '/ai-marketing-automation' },
-      { name: 'Customer Service AI', href: '/ai-customer-service' }
+      { name: 'Smart CRM Suite', href: '/smart-crm-intelligence-suite' }
+    ]
+  },
+  {
+    title: 'Solutions',
+    links: [
+      { name: 'Healthcare Solutions', href: '/healthcare-solutions' },
+      { name: 'Financial Services', href: '/financial-solutions' },
+      { name: 'Manufacturing AI', href: '/manufacturing-ai-solutions' },
+      { name: 'Retail Technology', href: '/retail-technology-solutions' },
+      { name: 'Education Technology', href: '/education-technology-solutions' },
+      { name: 'Government Solutions', href: '/government-technology-solutions' },
+      { name: 'Energy & Utilities', href: '/energy-utilities-solutions' },
+      { name: 'Transportation & Logistics', href: '/transportation-logistics-solutions' }
+    ]
+  },
+  {
+    title: 'Resources',
+    links: [
+      { name: 'Documentation', href: '/docs' },
+      { name: 'API Reference', href: '/api-documentation' },
+      { name: 'Case Studies', href: '/case-studies' },
+      { name: 'Blog & News', href: '/blog' },
+      { name: 'Support Center', href: '/support' },
+      { name: 'Training & Certification', href: '/training' },
+      { name: 'Community Forum', href: '/community' },
+      { name: 'Developer Resources', href: '/developer-resources' }
     ]
   }
 ];
@@ -230,46 +244,104 @@ export default function UltraFuturisticFooter2034() {
             </div>
           </div>
 
-          {/* Service Categories */}
-          <div className="mb-16">
-            <h3 className="text-2xl font-bold text-center text-white mb-12">
-              Our Revolutionary Services
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {footerSections.map((section) => (
-                <motion.div
-                  key={section.title}
-                  whileHover={{ y: -5 }}
-                  className="group"
-                >
-                  <div className={`w-12 h-12 bg-gradient-to-r ${section.color} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                    <section.icon className="w-6 h-6 text-white" />
+          {/* Enhanced Contact Information */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-cyan-400 mb-4">Get In Touch</h3>
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3">
+                  <Phone className="w-5 h-5 text-cyan-400" />
+                  <div>
+                    <p className="text-sm text-gray-400">Mobile</p>
+                    <a href={`tel:${contactInfo.mobile}`} className="text-white hover:text-cyan-400 transition-colors">
+                      {contactInfo.mobile}
+                    </a>
                   </div>
-                  <h4 className="text-lg font-semibold text-white mb-2">{section.title}</h4>
-                  <p className="text-gray-400 text-sm mb-4">{section.description}</p>
-                  <ul className="space-y-2">
-                    {section.links.slice(0, 4).map((link) => (
-                      <li key={link.name}>
-                        <Link
-                          href={link.href}
-                          className="text-gray-400 hover:text-cyan-300 transition-colors duration-200 text-sm flex items-center group"
-                        >
-                          <ArrowRight className="w-2 h-2 mr-2 text-cyan-400 group-hover:translate-x-1 transition-transform duration-200" />
-                          {link.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                  <Link
-                    href={`/${section.title.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`}
-                    className="inline-flex items-center text-cyan-400 hover:text-cyan-300 text-sm font-medium mt-3 group"
-                  >
-                    View All Services
-                    <ArrowRight className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform duration-200" />
-                  </Link>
-                </motion.div>
-              ))}
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Mail className="w-5 h-5 text-cyan-400" />
+                  <div>
+                    <p className="text-sm text-gray-400">Email</p>
+                    <a href={`mailto:${contactInfo.email}`} className="text-white hover:text-cyan-400 transition-colors">
+                      {contactInfo.email}
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <MapPin className="w-5 h-5 text-cyan-400 mt-1" />
+                  <div>
+                    <p className="text-sm text-gray-400">Address</p>
+                    <p className="text-white">{contactInfo.address}</p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Globe className="w-5 h-5 text-cyan-400" />
+                  <div>
+                    <p className="text-sm text-gray-400">Website</p>
+                    <a href={contactInfo.website} className="text-white hover:text-cyan-400 transition-colors">
+                      {contactInfo.website}
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
+            
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-cyan-400 mb-4">Quick Links</h3>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <a href="/comprehensive-services-showcase-2025" className="block text-gray-300 hover:text-cyan-400 transition-colors">
+                    All Services
+                  </a>
+                  <a href="/pricing" className="block text-gray-300 hover:text-cyan-400 transition-colors">
+                    Pricing
+                  </a>
+                  <a href="/case-studies" className="block text-gray-300 hover:text-cyan-400 transition-colors">
+                    Case Studies
+                  </a>
+                  <a href="/blog" className="block text-gray-300 hover:text-cyan-400 transition-colors">
+                    Blog
+                  </a>
+                </div>
+                <div className="space-y-2">
+                  <a href="/about" className="block text-gray-300 hover:text-cyan-400 transition-colors">
+                    About Us
+                  </a>
+                  <a href="/careers" className="block text-gray-300 hover:text-cyan-400 transition-colors">
+                    Careers
+                  </a>
+                  <a href="/contact" className="block text-gray-300 hover:text-cyan-400 transition-colors">
+                    Contact
+                  </a>
+                  <a href="/support" className="block text-gray-300 hover:text-cyan-400 transition-colors">
+                    Support
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Enhanced Service Categories */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {footerSections.map((section, index) => (
+              <div key={index} className="space-y-4">
+                <h4 className="text-lg font-semibold text-cyan-400 border-b border-cyan-400/30 pb-2">
+                  {section.title}
+                </h4>
+                <ul className="space-y-2">
+                  {section.links.map((link, linkIndex) => (
+                    <li key={linkIndex}>
+                      <a 
+                        href={link.href}
+                        className="text-gray-300 hover:text-cyan-400 transition-colors text-sm hover:pl-2 duration-200"
+                      >
+                        {link.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
 
           {/* Solutions Section */}
