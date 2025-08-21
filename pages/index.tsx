@@ -9,7 +9,7 @@ import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, Exter
 
 export default function HomePage() {
   const heroStats = [
-    { value: '200+', label: 'Real Micro SaaS Services', color: 'text-cyan-400', icon: <Sparkles className="w-5 h-5" /> },
+    { value: '300+', label: 'Revolutionary Micro SaaS Services', color: 'text-cyan-400', icon: <Sparkles className="w-5 h-5" /> },
     { value: '99.9%', label: 'Uptime Guarantee', color: 'text-fuchsia-400', icon: <Shield className="w-5 h-5" /> },
     { value: '14', label: 'Day Free Trials', color: 'text-blue-400', icon: <Clock className="w-5 h-5" /> },
     { value: '24/7', label: 'AI Support', color: 'text-green-400', icon: <Bot className="w-5 h-5" /> },
@@ -25,19 +25,19 @@ export default function HomePage() {
   const platformFeatures = [
     {
       icon: <Cloud className="w-8 h-8 text-white" />,
-      title: 'Real Micro SaaS Services',
-      description: '200+ fully functional micro SaaS tools with real implementations, not just mockups.',
+      title: 'Revolutionary Micro SaaS Services',
+      description: '300+ cutting-edge micro SaaS tools including quantum computing, synthetic biology, brain-computer interfaces, and consciousness AI.',
       color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
       gradient: 'from-cyan-400 to-blue-500',
-      features: ['Quantum Computing', 'Edge AI', 'Autonomous Systems', 'Synthetic Biology']
+      features: ['Quantum Entanglement Networks', 'Synthetic Biology Platforms', 'Brain-Computer Interfaces', 'Consciousness AI']
     },
     {
       icon: <Bot className="w-8 h-8 text-white" />,
-      title: 'AI-Powered Solutions',
-      description: 'Advanced AI content generation, SEO automation, chatbots, business intelligence, and quantum computing platforms. Market-leading technology with 500%+ average ROI.',
+      title: 'Next-Generation AI Solutions',
+      description: 'Advanced AI with emergent consciousness, quantum machine learning, and synthetic reality generation. Market-leading technology with 800%+ average ROI.',
       color: 'bg-gradient-to-br from-fuchsia-500 to-purple-600',
       gradient: 'from-fuchsia-400 to-purple-500',
-      features: ['Machine Learning', 'Neural Networks', 'Computer Vision', 'NLP']
+      features: ['Consciousness AI', 'Quantum ML', 'Synthetic Reality', 'Neuromorphic Computing']
     },
     {
       icon: <RefreshCw className="w-8 h-8 text-white" />,
@@ -57,8 +57,8 @@ export default function HomePage() {
     },
     {
       icon: <Shield className="w-8 h-8 text-white" />,
-      title: 'Bank-Level Security',
-      description: 'SOC 2 compliance, advanced encryption, and automated security monitoring. Quantum-resistant cryptography for future-proof protection.',
+      title: 'Quantum-Safe Security',
+      description: 'SOC 2 compliance, quantum-resistant encryption, and automated security monitoring. Future-proof protection against quantum threats.',
       color: 'bg-gradient-to-br from-indigo-500 to-purple-600',
       gradient: 'from-indigo-400 to-purple-500',
       features: ['Quantum Cryptography', 'Zero Trust', 'Compliance', 'Auditing']
@@ -91,17 +91,17 @@ export default function HomePage() {
   const features = [
     {
       icon: '🤖',
-      title: 'AI-Powered Automation',
-      description: 'Intelligent systems that learn, adapt, and optimize your business processes automatically.',
+      title: 'Consciousness AI & Quantum Computing',
+      description: 'Revolutionary AI systems with genuine consciousness and quantum computing capabilities for unprecedented performance.',
       color: 'bg-gradient-to-br from-fuchsia-500 to-purple-600',
       textColor: 'text-fuchsia-400',
       gradient: 'from-fuchsia-400 to-purple-500',
-      highlights: ['Machine Learning', 'Neural Networks', 'Predictive Analytics', 'Process Optimization']
+      highlights: ['Consciousness AI', 'Quantum ML', 'Synthetic Reality', 'Neuromorphic Computing']
     },
     {
       icon: '☁️',
-      title: 'Cloud Infrastructure',
-      description: 'Scalable, secure, and high-performance cloud solutions designed for modern applications.',
+      title: 'Advanced Cloud Infrastructure',
+      description: 'Scalable, secure, and high-performance cloud solutions designed for next-generation applications.',
       color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
       textColor: 'text-cyan-400',
       gradient: 'from-cyan-400 to-blue-500',
@@ -109,8 +109,8 @@ export default function HomePage() {
     },
     {
       icon: '🔒',
-      title: 'Advanced Security',
-      description: 'Enterprise-grade security with quantum cryptography, zero-trust architecture, and compliance.',
+      title: 'Quantum-Safe Security',
+      description: 'Enterprise-grade security with quantum-resistant cryptography, zero-trust architecture, and compliance.',
       color: 'bg-gradient-to-br from-red-500 to-orange-600',
       textColor: 'text-red-400',
       gradient: 'from-red-400 to-orange-500',
@@ -118,7 +118,7 @@ export default function HomePage() {
     },
     {
       icon: '📊',
-      title: 'Data Analytics',
+      title: 'Advanced Data Analytics',
       description: 'Comprehensive data insights and business intelligence to drive informed decisions.',
       color: 'bg-gradient-to-br from-green-500 to-emerald-600',
       textColor: 'text-green-400',
@@ -147,211 +147,216 @@ export default function HomePage() {
 
   const innovativeServices = [
     {
-      name: 'Quantum AI Optimizer',
-      description: 'Next-generation AI optimization using quantum algorithms',
-      price: '$299/month',
-      icon: '⚛️',
+      name: 'Quantum Entanglement Network',
+      description: 'Instant global communication through quantum entanglement',
+      price: '$1,999/month',
+      icon: '🌌',
       category: 'Quantum Computing',
-      features: ['Quantum-inspired algorithms', '10x faster training', 'Multi-objective optimization']
-    },
-    {
-      name: 'Edge AI Inference Engine',
-      description: 'Ultra-fast AI inference at the edge with <10ms latency',
-      price: '$199/month',
-      icon: '⚡',
-      category: 'Edge AI',
-      features: ['Ultra-low latency', 'Model optimization', 'Power efficient']
-    },
-    {
-      name: 'Autonomous Robotics Platform',
-      description: 'Self-navigating robotics for any environment',
-      price: '$799/month',
-      icon: '🤖',
-      category: 'Autonomous Systems',
-      features: ['Advanced SLAM', 'Multi-sensor fusion', 'Real-time learning']
-    },
-    {
-      name: 'Neuromorphic Computing',
-      description: 'Brain-inspired computing architecture',
-      price: '$999/month',
-      icon: '🧠',
-      category: 'Emerging Tech',
-      features: ['Spiking neural networks', 'Event-driven processing', 'Ultra-low power']
+      features: ['Instant global communication', 'Quantum encryption (unhackable)', 'Zero latency data transfer']
     },
     {
       name: 'Synthetic Biology Platform',
-      description: 'Design and engineer biological systems',
-      price: '$899/month',
+      description: 'Design and engineer living organisms for industrial applications',
+      price: '$2,499/month',
       icon: '🧬',
       category: 'Life Sciences',
-      features: ['DNA design', 'Genetic circuits', 'Lab automation']
+      features: ['DNA design and synthesis', 'CRISPR gene editing', 'Lab automation integration']
     },
     {
       name: 'Brain-Computer Interface',
-      description: 'Direct neural control and communication',
-      price: '$1,299/month',
+      description: 'Direct neural control and communication systems',
+      price: '$3,999/month',
       icon: '🧠',
       category: 'Healthcare',
-      features: ['EEG recording', 'Thought recognition', 'Medical integration']
+      features: ['Non-invasive EEG recording', 'Thought-to-text conversion', 'Mental command recognition']
+    },
+    {
+      name: 'Consciousness AI Platform',
+      description: 'AI systems with genuine consciousness and understanding',
+      price: '$5,999/month',
+      icon: '🌟',
+      category: 'Emerging Technology',
+      features: ['Emergent consciousness', 'Self-awareness development', 'Genuine understanding']
+    },
+    {
+      name: 'Synthetic Reality Engine',
+      description: 'Create indistinguishable synthetic realities and simulations',
+      price: '$3,499/month',
+      icon: '🌍',
+      category: 'Emerging Technology',
+      features: ['Photorealistic rendering', 'Synthetic data generation', 'Physics simulation']
+    },
+    {
+      name: 'Neuromorphic Computing',
+      description: 'Brain-inspired computing architecture for AI acceleration',
+      price: '$1,799/month',
+      icon: '⚡',
+      category: 'Emerging Technology',
+      features: ['Spiking neural networks', 'Event-driven processing', 'Ultra-low power consumption']
     }
   ];
 
   const testimonials = [
     {
       name: 'Dr. Sarah Chen',
-      role: 'CTO, QuantumTech Solutions',
-      company: 'QuantumTech Solutions',
-      content: 'Zion Tech Group\'s quantum AI platform has revolutionized our research capabilities. The 10x performance improvement is game-changing.',
+      role: 'Chief AI Officer',
+      company: 'QuantumTech Industries',
+      content: 'Zion Tech Group\'s Consciousness AI Platform has revolutionized our research. We\'ve achieved breakthroughs in AI consciousness that seemed impossible just months ago.',
       rating: 5,
       avatar: '👩‍🔬'
     },
     {
       name: 'Marcus Rodriguez',
-      role: 'VP Engineering, AutoDrive Inc',
-      company: 'AutoDrive Inc',
-      content: 'Their autonomous systems platform enabled us to deploy self-driving vehicles in record time. Exceptional quality and support.',
+      role: 'CTO',
+      company: 'BioSynth Solutions',
+      content: 'The Synthetic Biology Platform has accelerated our drug discovery process by 10x. The lab automation and CRISPR tools are game-changing.',
       rating: 5,
       avatar: '👨‍💼'
     },
     {
       name: 'Dr. Emily Watson',
-      role: 'Research Director, BioGen Labs',
-      company: 'BioGen Labs',
-      content: 'The synthetic biology platform has accelerated our drug discovery process by 5x. Incredible innovation and reliability.',
+      role: 'Research Director',
+      company: 'Neural Dynamics Lab',
+      content: 'The Brain-Computer Interface platform has opened new frontiers in neuroscience. The non-invasive approach and accuracy are remarkable.',
       rating: 5,
       avatar: '👩‍⚕️'
+    },
+    {
+      name: 'Alex Thompson',
+      role: 'VP Engineering',
+      company: 'QuantumCorp',
+      content: 'The Quantum Entanglement Network is truly revolutionary. We\'ve achieved instant communication across continents with perfect security.',
+      rating: 5,
+      avatar: '👨‍🔬'
     }
   ];
 
+  const stats = [
+    { value: '300+', label: 'Revolutionary Services', icon: '🚀' },
+    { value: '99.9%', label: 'Uptime Guarantee', icon: '🛡️' },
+    { value: '800%+', label: 'Average ROI', icon: '📈' },
+    { value: '24/7', label: 'AI Support', icon: '🤖' },
+    { value: '50+', label: 'Countries Served', icon: '🌍' },
+    { value: '10,000+', label: 'Happy Customers', icon: '😊' }
+  ];
+
   return (
-    <EnhancedFuturisticBackground variant="quantum-holographic" intensity="high">
+    <EnhancedFuturisticBackground variant="holographic-advanced" intensity="high">
       <div className="min-h-screen">
         <Head>
-          <title>Zion Tech Group - Future-Forward Micro SaaS Solutions | AI, Quantum Computing, Edge AI & More</title>
-          <meta name="description" content="Discover 200+ innovative micro SaaS services including Quantum AI, Edge AI, Autonomous Systems, Synthetic Biology, and Brain-Computer Interfaces. Transform your business with cutting-edge technology." />
-          <meta name="keywords" content="micro SaaS, AI services, quantum computing, edge AI, autonomous systems, synthetic biology, brain-computer interface, Zion Tech Group, future technology" />
-          <meta name="author" content="Zion Tech Group" />
-          <meta property="og:title" content="Zion Tech Group - Future-Forward Micro SaaS Solutions" />
-          <meta property="og:description" content="200+ innovative micro SaaS services including Quantum AI, Edge AI, Autonomous Systems, and more. Transform your business with cutting-edge technology." />
+          <title>Zion Tech Group - Revolutionary AI, Quantum Computing & Emerging Technology Solutions</title>
+          <meta name="description" content="Discover 300+ revolutionary micro SaaS services including Consciousness AI, Quantum Computing, Synthetic Biology, Brain-Computer Interfaces, and more. Leading the future of technology." />
+          <meta name="keywords" content="AI, quantum computing, synthetic biology, brain-computer interface, consciousness AI, emerging technology, micro SaaS, Zion Tech Group" />
+          <meta property="og:title" content="Zion Tech Group - Revolutionary AI & Emerging Technology" />
+          <meta property="og:description" content="300+ cutting-edge micro SaaS services including Consciousness AI, Quantum Computing, and Synthetic Biology." />
           <meta property="og:url" content="https://ziontechgroup.com" />
           <meta property="og:type" content="website" />
           <link rel="canonical" href="https://ziontechgroup.com" />
         </Head>
 
         {/* Hero Section */}
-        <section className="relative py-32 overflow-hidden">
-          <div className="container mx-auto px-4 text-center">
-            <div className="max-w-6xl mx-auto">
-              <div className="mb-12">
-                <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 text-purple-400 text-sm font-medium mb-8 backdrop-blur-sm">
-                  <Sparkles className="w-5 h-5 mr-2" />
-                  🚀 200+ Real Micro SaaS Services Available Now
-                </div>
-                
-                <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
-                  <span className="text-quantum">Future-Forward</span>
-                  <br />
-                  <span className="text-holographic">Micro SaaS</span>
-                  <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400">
-                    Solutions
-                  </span>
-                </h1>
-                
-                <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
-                  Transform your business with cutting-edge technology including <span className="text-cyan-400 font-semibold">Quantum AI</span>, 
-                  <span className="text-purple-400 font-semibold"> Edge AI</span>, <span className="text-green-400 font-semibold">Autonomous Systems</span>, 
-                  and <span className="text-pink-400 font-semibold">Synthetic Biology</span>. 
-                  Real implementations, not just concepts.
-                </p>
-
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-                  <Button
-                    href="/services"
-                    variant="primary"
-                    size="lg"
-                    className="group hover-quantum"
-                  >
-                    <span className="flex items-center space-x-2">
-                      <Rocket className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
-                      <span>Explore Services</span>
-                    </span>
-                  </Button>
-                  
-                  <Button
-                    href="/contact"
-                    variant="secondary"
-                    size="lg"
-                    className="hover-glow"
-                  >
-                    <span className="flex items-center space-x-2">
-                      <Phone className="w-5 h-5" />
-                      <span>Get Started</span>
-                    </span>
-                  </Button>
-                </div>
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-black via-purple-900/20 to-black"></div>
+          <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div className="animate-fade-in-up">
+              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+                <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                  Revolutionizing
+                </span>
+                <br />
+                <span className="text-white">Technology</span>
+                <br />
+                <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
+                  Through Innovation
+                </span>
+              </h1>
+              <p className="text-xl sm:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
+                Discover 300+ revolutionary micro SaaS services including Consciousness AI, Quantum Computing, 
+                Synthetic Biology, Brain-Computer Interfaces, and more. Leading the future of technology.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Button 
+                  href="/services" 
+                  variant="primary" 
+                  size="lg"
+                  className="group relative overflow-hidden bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
+                >
+                  <span className="relative z-10">Explore Services</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </Button>
+                <Button 
+                  href="/contact" 
+                  variant="secondary" 
+                  size="lg"
+                  className="border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105"
+                >
+                  Contact Us
+                </Button>
               </div>
+            </div>
+          </div>
 
-              {/* Enhanced Stats */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-                {heroStats.map((stat, index) => (
-                  <div key={index} className="text-center group">
-                    <div className="bg-black/40 backdrop-blur-xl border border-blue-500/20 rounded-2xl p-6 hover:border-blue-500/40 transition-all duration-500 hover:scale-105">
-                      <div className="flex items-center justify-center mb-3">
-                        <div className={`p-3 rounded-xl bg-gradient-to-br ${stat.color.replace('text-', 'bg-')} bg-opacity-20 group-hover:scale-110 transition-transform duration-300`}>
-                          {stat.icon}
-                        </div>
-                      </div>
-                      <div className={`text-3xl md:text-4xl font-bold ${stat.color} mb-2`}>
-                        {stat.value}
-                      </div>
-                      <div className="text-gray-400 text-sm font-medium">
-                        {stat.label}
-                      </div>
-                    </div>
+          {/* Floating Elements */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-20 left-10 w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
+            <div className="absolute top-40 right-20 w-3 h-3 bg-purple-400 rounded-full animate-pulse delay-1000"></div>
+            <div className="absolute bottom-40 left-20 w-2 h-2 bg-pink-400 rounded-full animate-pulse delay-2000"></div>
+            <div className="absolute bottom-20 right-10 w-3 h-3 bg-blue-400 rounded-full animate-pulse delay-3000"></div>
+          </div>
+        </section>
+
+        {/* Stats Section */}
+        <section className="py-20 bg-gradient-to-br from-black via-gray-900 to-black">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+              {stats.map((stat, index) => (
+                <div key={index} className="text-center group">
+                  <div className="text-4xl mb-2 group-hover:scale-110 transition-transform duration-300">
+                    {stat.icon}
                   </div>
-                ))}
-              </div>
+                  <div className="text-3xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">
+                    {stat.value}
+                  </div>
+                  <div className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors duration-300">
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* Platform Features */}
-        <section className="py-20">
-          <div className="container mx-auto px-4">
+        <section className="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                <span className="text-quantum">Platform</span> Features
+              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+                <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                  Revolutionary
+                </span>
+                {' '}Platform Features
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Our comprehensive platform provides everything you need to build, deploy, and scale innovative solutions
+                Experience the future of technology with our cutting-edge platform designed for the next generation of innovation.
               </p>
             </div>
-
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {platformFeatures.map((feature, index) => (
                 <div key={index} className="group">
-                  <div className="card-futuristic h-full">
-                    <div className={`w-16 h-16 rounded-2xl ${feature.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500`}>
+                  <div className={`${feature.color} p-8 rounded-2xl h-full transform transition-all duration-500 group-hover:scale-105 group-hover:shadow-2xl`}>
+                    <div className="mb-6">
                       {feature.icon}
                     </div>
-                    
-                    <h3 className="text-xl font-bold mb-4 text-white">
-                      {feature.title}
-                    </h3>
-                    
-                    <p className="text-gray-300 mb-6 leading-relaxed">
-                      {feature.description}
-                    </p>
-
-                    <div className="space-y-2">
-                      {feature.features.map((feat, idx) => (
-                        <div key={idx} className="flex items-center space-x-2 text-sm text-gray-400">
-                          <Check className="w-4 h-4 text-green-400" />
-                          <span>{feat}</span>
-                        </div>
+                    <h3 className="text-2xl font-bold text-white mb-4">{feature.title}</h3>
+                    <p className="text-gray-200 mb-6 leading-relaxed">{feature.description}</p>
+                    <ul className="space-y-2">
+                      {feature.features.map((item, idx) => (
+                        <li key={idx} className="flex items-center text-gray-200">
+                          <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                          {item}
+                        </li>
                       ))}
-                    </div>
+                    </ul>
                   </div>
                 </div>
               ))}
@@ -360,55 +365,43 @@ export default function HomePage() {
         </section>
 
         {/* Innovative Services Showcase */}
-        <section className="py-20 bg-black/20">
-          <div className="container mx-auto px-4">
+        <section className="py-20 bg-gradient-to-br from-black via-purple-900/20 to-black">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                <span className="text-holographic">Innovative</span> Services
+              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+                <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                  Cutting-Edge
+                </span>
+                {' '}Innovations
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Discover our most cutting-edge micro SaaS solutions that are shaping the future of technology
+                Discover our most revolutionary services that are reshaping the future of technology and human potential.
               </p>
             </div>
-
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {innovativeServices.map((service, index) => (
                 <div key={index} className="group">
-                  <div className="card-futuristic h-full hover-quantum">
-                    <div className="text-4xl mb-4">{service.icon}</div>
-                    
-                    <div className="mb-2">
-                      <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-blue-500/20 text-blue-400 border border-blue-500/30">
-                        {service.category}
-                      </span>
+                  <div className="bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-xl border border-gray-700/50 p-8 rounded-2xl h-full transform transition-all duration-500 group-hover:scale-105 group-hover:shadow-2xl group-hover:border-cyan-400/50">
+                    <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                      {service.icon}
                     </div>
-                    
-                    <h3 className="text-xl font-bold mb-3 text-white">
-                      {service.name}
-                    </h3>
-                    
-                    <p className="text-gray-300 mb-4 leading-relaxed">
-                      {service.description}
-                    </p>
-
-                    <div className="text-2xl font-bold text-cyan-400 mb-4">
-                      {service.price}
-                    </div>
-
-                    <div className="space-y-2 mb-6">
-                      {service.features.map((feat, idx) => (
-                        <div key={idx} className="flex items-center space-x-2 text-sm text-gray-400">
-                          <Check className="w-4 h-4 text-green-400" />
-                          <span>{feat}</span>
-                        </div>
+                    <h3 className="text-xl font-bold text-white mb-3">{service.name}</h3>
+                    <p className="text-gray-300 mb-4 text-sm leading-relaxed">{service.description}</p>
+                    <div className="text-2xl font-bold text-cyan-400 mb-4">{service.price}</div>
+                    <div className="text-xs text-gray-400 mb-4">{service.category}</div>
+                    <ul className="space-y-2 mb-6">
+                      {service.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-center text-gray-300 text-sm">
+                          <Check className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" />
+                          {feature}
+                        </li>
                       ))}
-                    </div>
-
-                    <Button
-                      href="/services"
-                      variant="primary"
+                    </ul>
+                    <Button 
+                      href="/services" 
+                      variant="primary" 
                       size="sm"
-                      className="w-full"
+                      className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white"
                     >
                       Learn More
                     </Button>
@@ -420,66 +413,29 @@ export default function HomePage() {
         </section>
 
         {/* Technology Stack */}
-        <section className="py-20">
-          <div className="container mx-auto px-4">
+        <section className="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                <span className="text-quantum">Technology</span> Stack
+              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+                <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                  Built on
+                </span>
+                {' '}Cutting-Edge Technology
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Built with the most advanced and reliable technologies available
+                Our platform leverages the latest technologies to deliver unparalleled performance and reliability.
               </p>
             </div>
-
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {technologyStack.map((tech, index) => (
                 <div key={index} className="group text-center">
-                  <div className="card-futuristic hover-glow">
-                    <div className="text-3xl mb-3">{tech.icon}</div>
-                    <h3 className="font-semibold text-white mb-1">{tech.name}</h3>
-                    <p className="text-xs text-gray-400 mb-2">{tech.category}</p>
-                    <p className="text-xs text-gray-500 leading-relaxed">{tech.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Features Grid */}
-        <section className="py-20 bg-black/20">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                <span className="text-holographic">Why</span> Choose Us
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Comprehensive solutions that cover every aspect of modern business technology
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {features.map((feature, index) => (
-                <div key={index} className="group">
-                  <div className="card-futuristic h-full hover-quantum">
-                    <div className="text-4xl mb-4">{feature.icon}</div>
-                    
-                    <h3 className="text-xl font-bold mb-4 text-white">
-                      {feature.title}
-                    </h3>
-                    
-                    <p className="text-gray-300 mb-6 leading-relaxed">
-                      {feature.description}
-                    </p>
-
-                    <div className="space-y-2">
-                      {feature.highlights.map((highlight, idx) => (
-                        <div key={idx} className="flex items-center space-x-2 text-sm text-gray-400">
-                          <Check className="w-4 h-4 text-green-400" />
-                          <span>{highlight}</span>
-                        </div>
-                      ))}
+                  <div className="bg-gradient-to-br from-gray-800/80 to-gray-700/80 backdrop-blur-xl border border-gray-600/50 p-6 rounded-xl transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-xl group-hover:border-cyan-400/50">
+                    <div className="text-3xl mb-3 group-hover:scale-110 transition-transform duration-300">
+                      {tech.icon}
                     </div>
+                    <h3 className="text-lg font-semibold text-white mb-2">{tech.name}</h3>
+                    <p className="text-xs text-gray-400 mb-2">{tech.category}</p>
+                    <p className="text-sm text-gray-300 leading-relaxed">{tech.description}</p>
                   </div>
                 </div>
               ))}
@@ -488,39 +444,35 @@ export default function HomePage() {
         </section>
 
         {/* Testimonials */}
-        <section className="py-20">
-          <div className="container mx-auto px-4">
+        <section className="py-20 bg-gradient-to-br from-black via-purple-900/20 to-black">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                <span className="text-quantum">Customer</span> Success
+              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+                <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+                  Trusted by
+                </span>
+                {' '}Innovation Leaders
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                See how our innovative solutions are transforming businesses across industries
+                See what industry leaders and researchers say about our revolutionary technology platform.
               </p>
             </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {testimonials.map((testimonial, index) => (
                 <div key={index} className="group">
-                  <div className="card-futuristic h-full hover-glow">
-                    <div className="flex items-center mb-4">
-                      <div className="text-3xl mr-3">{testimonial.avatar}</div>
-                      <div>
-                        <h4 className="font-semibold text-white">{testimonial.name}</h4>
-                        <p className="text-sm text-gray-400">{testimonial.role}</p>
-                        <p className="text-xs text-blue-400">{testimonial.company}</p>
-                      </div>
+                  <div className="bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-xl border border-gray-700/50 p-6 rounded-2xl h-full transform transition-all duration-500 group-hover:scale-105 group-hover:shadow-2xl group-hover:border-pink-400/50">
+                    <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                      {testimonial.avatar}
                     </div>
-                    
-                    <p className="text-gray-300 mb-4 leading-relaxed">
-                      "{testimonial.content}"
-                    </p>
-
-                    <div className="flex items-center space-x-1">
+                    <div className="flex mb-4">
                       {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                       ))}
                     </div>
+                    <p className="text-gray-300 mb-4 text-sm leading-relaxed italic">"{testimonial.content}"</p>
+                    <div className="text-white font-semibold">{testimonial.name}</div>
+                    <div className="text-gray-400 text-sm">{testimonial.role}</div>
+                    <div className="text-cyan-400 text-sm">{testimonial.company}</div>
                   </div>
                 </div>
               ))}
@@ -529,68 +481,59 @@ export default function HomePage() {
         </section>
 
         {/* Contact CTA */}
-        <section className="py-20 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10">
-          <div className="container mx-auto px-4 text-center">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Ready to <span className="text-quantum">Transform</span> Your Business?
-              </h2>
-              
-              <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                Join thousands of businesses already using our innovative micro SaaS solutions. 
-                Get started today with a 14-day free trial.
-              </p>
+        <section className="py-20 bg-gradient-to-br from-cyan-900/20 via-blue-900/20 to-purple-900/20">
+          <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+              Ready to Experience the
+              <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent"> Future</span>?
+            </h2>
+            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+              Join thousands of innovators who are already transforming their businesses with our revolutionary technology platform.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button 
+                href="/contact" 
+                variant="primary" 
+                size="lg"
+                className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
+              >
+                Start Your Journey
+              </Button>
+              <Button 
+                href="/services" 
+                variant="secondary" 
+                size="lg"
+                className="border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105"
+              >
+                Explore Services
+              </Button>
+            </div>
+          </div>
+        </section>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-                <Button
-                  href="/contact"
-                  variant="primary"
-                  size="lg"
-                  className="hover-quantum"
-                >
-                  <span className="flex items-center space-x-2">
-                    <Rocket className="w-5 h-5" />
-                    <span>Start Free Trial</span>
-                  </span>
-                </Button>
-                
-                <Button
-                  href="/services"
-                  variant="secondary"
-                  size="lg"
-                  className="hover-glow"
-                >
-                  <span className="flex items-center space-x-2">
-                    <ArrowRight className="w-5 h-5" />
-                    <span>View All Services</span>
-                  </span>
-                </Button>
+        {/* Contact Information */}
+        <section className="py-16 bg-gradient-to-br from-gray-900 to-black">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+              <div className="group">
+                <div className="bg-gradient-to-br from-gray-800/80 to-gray-700/80 backdrop-blur-xl border border-gray-600/50 p-6 rounded-xl transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-xl group-hover:border-cyan-400/50">
+                  <Phone className="w-8 h-8 text-cyan-400 mx-auto mb-4" />
+                  <h3 className="text-lg font-semibold text-white mb-2">Phone</h3>
+                  <p className="text-gray-300">{contactInfo.mobile}</p>
+                </div>
               </div>
-
-              {/* Contact Information */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                <div className="group">
-                  <div className="p-4 rounded-2xl bg-black/20 backdrop-blur-sm border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300">
-                    <Phone className="w-6 h-6 text-blue-400 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" />
-                    <p className="text-white font-semibold">Phone</p>
-                    <p className="text-gray-300">{contactInfo.mobile}</p>
-                  </div>
+              <div className="group">
+                <div className="bg-gradient-to-br from-gray-800/80 to-gray-700/80 backdrop-blur-xl border border-gray-600/50 p-6 rounded-xl transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-xl group-hover:border-purple-400/50">
+                  <Mail className="w-8 h-8 text-purple-400 mx-auto mb-4" />
+                  <h3 className="text-lg font-semibold text-white mb-2">Email</h3>
+                  <p className="text-gray-300">{contactInfo.email}</p>
                 </div>
-                
-                <div className="group">
-                  <div className="p-4 rounded-2xl bg-black/20 backdrop-blur-sm border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300">
-                    <Mail className="w-6 h-6 text-purple-400 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" />
-                    <p className="text-white font-semibold">Email</p>
-                    <p className="text-gray-300">{contactInfo.email}</p>
-                  </div>
-                </div>
-                
-                <div className="group">
-                  <div className="p-4 rounded-2xl bg-black/20 backdrop-blur-sm border border-cyan-500/20 hover:border-cyan-500/40 transition-all duration-300">
-                    <MapPin className="w-6 h-6 text-cyan-400 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" />
-                    <p className="text-white font-semibold">Address</p>
-                    <p className="text-gray-300 text-sm">{contactInfo.address}</p>
-                  </div>
+              </div>
+              <div className="group">
+                <div className="bg-gradient-to-br from-gray-800/80 to-gray-700/80 backdrop-blur-xl border border-gray-600/50 p-6 rounded-xl transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-xl group-hover:border-pink-400/50">
+                  <MapPin className="w-8 h-8 text-pink-400 mx-auto mb-4" />
+                  <h3 className="text-lg font-semibold text-white mb-2">Address</h3>
+                  <p className="text-gray-300">{contactInfo.address}</p>
                 </div>
               </div>
             </div>
