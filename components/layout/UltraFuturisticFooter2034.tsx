@@ -13,77 +13,96 @@ import {
   Sparkles, ArrowUpRight, ChevronRight
 } from 'lucide-react';
 
-const contactInfo = {
-  mobile: '+1 302 464 0950',
-  email: 'kleber@ziontechgroup.com',
-  address: '364 E Main St STE 1008 Middletown DE 19709',
-  website: 'https://ziontechgroup.com'
-};
-
-const serviceCategories = [
+const footerSections = [
   {
-    title: 'AI & Consciousness',
-    icon: <Brain className="w-5 h-5 text-cyan-400" />,
-    services: [
-      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029' },
-      { name: 'AI Autonomous Ecosystem', href: '/ai-autonomous-ecosystem' },
-      { name: 'AI Ethics & Governance', href: '/ai-ethics-governance' },
-      { name: 'AI Creativity Studio', href: '/ai-creativity-studio' },
-      { name: 'AI Education Platform', href: '/ai-education-platform' },
-      { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics' },
-      { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence' },
-      { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform' },
-      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-platform' },
-      { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer' }
+    title: 'Innovative Services',
+    links: [
+      { name: 'AI & Consciousness', href: '/ai-services' },
+      { name: 'Quantum & Emerging Tech', href: '/quantum-services' },
+      { name: 'Enterprise IT', href: '/enterprise-it' },
+      { name: 'Micro SAAS', href: '/micro-saas' },
+      { name: 'Healthcare & Biotech', href: '/healthcare-biotech' },
+      { name: 'Finance & Trading', href: '/finance-trading' },
+      { name: 'Creativity & Design', href: '/creativity-design' },
+      { name: 'Transportation & Mobility', href: '/transportation-mobility' }
     ]
   },
   {
-    title: 'Quantum & Emerging Tech',
-    icon: <Atom className="w-5 h-5 text-blue-400" />,
-    services: [
-      { name: 'Space Mining Platform', href: '/space-mining-platform' },
-      { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing' },
-      { name: 'Brain-Computer Interface', href: '/brain-computer-interface' },
-      { name: 'Quantum Energy Platform', href: '/quantum-energy-platform' },
-      { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai' },
-      { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery' },
-      { name: 'Quantum Robotics', href: '/quantum-robotics' },
-      { name: 'Quantum Internet Security', href: '/quantum-internet-security' },
-      { name: 'Quantum Logistics', href: '/quantum-logistics-optimization' },
-      { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity-platform' }
-    ]
-  },
-  {
-    title: 'Enterprise IT',
-    icon: <Shield className="w-5 h-5 text-green-400" />,
-    services: [
-      { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure' },
-      { name: 'Edge Computing Orchestrator', href: '/edge-computing-orchestration' },
-      { name: 'Zero Trust Security Platform', href: '/zero-trust-network-architecture' },
-      { name: 'Blockchain Enterprise Platform', href: '/blockchain-infrastructure-platform' },
-      { name: 'AI-Powered DevOps', href: '/ai-powered-devops' },
-      { name: 'Quantum Networking', href: '/quantum-networking' },
-      { name: 'Autonomous IT Operations', href: '/autonomous-it-operations' },
-      { name: 'Quantum Data Center', href: '/quantum-data-center' },
-      { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity' },
-      { name: 'Quantum Cloud Migration', href: '/quantum-cloud-migration' }
-    ]
-  },
-  {
-    title: 'Micro SAAS',
-    icon: <Rocket className="w-5 h-5 text-purple-400" />,
-    services: [
+    title: 'Featured Solutions',
+    links: [
       { name: 'AI Autonomous Content Factory', href: '/ai-autonomous-content-factory' },
       { name: 'Quantum CRM Intelligence', href: '/quantum-crm-intelligence' },
-      { name: 'AI Autonomous Decision Engine', href: '/ai-autonomous-decision-engine' },
-      { name: 'AI Creativity Studio Pro', href: '/ai-creativity-studio-pro' },
-      { name: 'Quantum Financial Trading', href: '/quantum-financial-trading' },
+      { name: 'Autonomous Decision Engine', href: '/autonomous-decision-engine' },
+      { name: 'Quantum Logistics Optimizer', href: '/quantum-logistics-optimizer' },
+      { name: 'AI Cybersecurity Sentinel', href: '/ai-cybersecurity-sentinel' },
       { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics' },
-      { name: 'Quantum Cybersecurity Platform', href: '/quantum-cybersecurity-platform' },
-      { name: 'AI Education Platform', href: '/ai-education-platform' },
-      { name: 'Quantum Energy Platform', href: '/quantum-energy-platform' }
+      { name: 'Quantum Brain-Computer Interface', href: '/quantum-brain-computer-interface' },
+      { name: 'Metaverse AI Development', href: '/metaverse-ai-development' }
+    ]
+  },
+  {
+    title: 'Emerging Technologies',
+    links: [
+      { name: 'Quantum Computing', href: '/quantum-services' },
+      { name: 'Brain-Computer Interface', href: '/quantum-brain-computer-interface' },
+      { name: 'Autonomous Vehicles', href: '/autonomous-vehicle-ai-platform' },
+      { name: 'Swarm Robotics', href: '/swarm-robotics-intelligence' },
+      { name: 'Space Mining', href: '/quantum-space-mining' },
+      { name: 'Quantum Materials', href: '/quantum-materials-discovery' },
+      { name: 'Quantum Internet Security', href: '/quantum-internet-security' },
+      { name: 'Quantum Energy Optimization', href: '/quantum-energy-optimization' }
+    ]
+  },
+  {
+    title: 'Enterprise Solutions',
+    links: [
+      { name: 'Zero Trust Security', href: '/zero-trust-network-architecture' },
+      { name: 'Edge Computing', href: '/edge-computing-orchestration' },
+      { name: 'Blockchain Infrastructure', href: '/blockchain-infrastructure-platform' },
+      { name: 'AI-Powered DevOps', href: '/ai-powered-devops' },
+      { name: 'Infrastructure Monitoring', href: '/infrastructure-drift-detector' },
+      { name: 'Incident Automation', href: '/incident-automation-suite' },
+      { name: 'Vendor Risk Management', href: '/vendor-risk-automation' },
+      { name: 'SOC2 Compliance', href: '/soc2-evidence-automation' }
+    ]
+  },
+  {
+    title: 'Business Solutions',
+    links: [
+      { name: 'Content Automation', href: '/ai-autonomous-content-factory' },
+      { name: 'CRM Intelligence', href: '/quantum-crm-intelligence' },
+      { name: 'Decision Automation', href: '/autonomous-decision-engine' },
+      { name: 'Supply Chain Optimization', href: '/quantum-logistics-optimizer' },
+      { name: 'Financial Intelligence', href: '/ai-financial-risk' },
+      { name: 'Business Intelligence', href: '/ai-business-intelligence' },
+      { name: 'Marketing Automation', href: '/ai-marketing-automation' },
+      { name: 'Sales Automation', href: '/ai-sales-automation' }
+    ]
+  },
+  {
+    title: 'Industry Solutions',
+    links: [
+      { name: 'Healthcare AI', href: '/ai-healthcare-diagnostics' },
+      { name: 'Biotech Research', href: '/ai-biotech-research' },
+      { name: 'Financial Trading', href: '/quantum-financial-trading' },
+      { name: 'Education Technology', href: '/ai-education-personalization' },
+      { name: 'Creative AI', href: '/ai-creativity-studio' },
+      { name: 'Space Technology', href: '/space-technology-ai-platform' },
+      { name: 'Robotics & Automation', href: '/quantum-robotics-platform' },
+      { name: 'Energy Management', href: '/quantum-energy-optimization' }
     ]
   }
+];
+
+const quickLinks = [
+  { name: 'All Services Showcase', href: '/innovative-micro-saas-showcase' },
+  { name: 'Pricing Plans', href: '/pricing' },
+  { name: 'Case Studies', href: '/case-studies' },
+  { name: 'Documentation', href: '/docs' },
+  { name: 'Blog & Insights', href: '/blog' },
+  { name: 'Support Center', href: '/support' },
+  { name: 'Contact Sales', href: '/contact' },
+  { name: 'Careers', href: '/careers' }
 ];
 
 const companyLinks = [
@@ -121,6 +140,13 @@ const legalLinks = [
   { name: 'Security', href: '/security', description: 'Security measures' },
   { name: 'Compliance', href: '/compliance', description: 'Regulatory compliance' }
 ];
+
+const contactInfo = {
+  phone: '+1 302 464 0950',
+  email: 'kleber@ziontechgroup.com',
+  address: '364 E Main St STE 1008 Middletown DE 19709',
+  website: 'https://ziontechgroup.com'
+};
 
 const socialLinks = [
   { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: <Linkedin className="w-5 h-5" />, color: 'hover:text-blue-400' },
@@ -184,7 +210,7 @@ export default function UltraFuturisticFooter2034() {
               <div className="space-y-3">
                 <div className="flex items-center space-x-3 text-gray-300 hover:text-cyan-400 transition-colors">
                   <Phone className="w-4 h-4" />
-                  <a href={`tel:${contactInfo.mobile}`}>{contactInfo.mobile}</a>
+                  <a href={`tel:${contactInfo.phone}`}>{contactInfo.phone}</a>
                 </div>
                 <div className="flex items-center space-x-3 text-gray-300 hover:text-cyan-400 transition-colors">
                   <Mail className="w-4 h-4" />
@@ -254,35 +280,23 @@ export default function UltraFuturisticFooter2034() {
 
           {/* Service Categories */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            {serviceCategories.map((category) => (
-              <div key={category.title} className="space-y-4">
+            {footerSections.map((section) => (
+              <div key={section.title} className="space-y-4">
                 <div className="flex items-center space-x-2">
-                  {category.icon}
-                  <h4 className="text-lg font-semibold text-white">{category.title}</h4>
+                  <h4 className="text-lg font-semibold text-white">{section.title}</h4>
                 </div>
                 <ul className="space-y-2">
-                  {category.services.slice(0, 6).map((service) => (
-                    <li key={service.name}>
+                  {section.links.map((link) => (
+                    <li key={link.name}>
                       <Link
-                        href={service.href}
+                        href={link.href}
                         className="text-gray-400 hover:text-cyan-400 transition-colors text-sm hover:translate-x-1 transform transition-transform duration-200 flex items-center gap-2"
                       >
                         <ChevronRight className="w-3 h-3" />
-                        {service.name}
+                        {link.name}
                       </Link>
                     </li>
                   ))}
-                  {category.services.length > 6 && (
-                    <li>
-                      <Link
-                        href={`/${category.title.toLowerCase().replace(/\s+/g, '-')}`}
-                        className="text-cyan-400 hover:text-cyan-300 transition-colors text-sm font-medium flex items-center gap-2"
-                      >
-                        View all {category.services.length} services
-                        <ArrowUpRight className="w-3 h-3" />
-                      </Link>
-                    </li>
-                  )}
                 </ul>
               </div>
             ))}

@@ -34,38 +34,56 @@ const serviceCategories = [
   {
     title: 'AI & Consciousness',
     description: 'Revolutionary AI platforms with consciousness and emotional intelligence',
-    services: innovativeAIServicesEnhanced2025.slice(0, 3),
+    services: innovativeAIServicesEnhanced2025.slice(0, 4),
     icon: Brain,
     color: 'from-violet-500 to-purple-600',
     href: '/ai-services',
-    features: ['Emotional Intelligence', 'Self-Awareness', 'Consciousness Evolution']
+    features: ['Emotional Intelligence', 'Self-Awareness', 'Consciousness Evolution', 'Neural Interfaces']
   },
   {
     title: 'Quantum & Emerging Tech',
     description: 'Breakthrough quantum computing and space technology solutions',
-    services: emergingTechServicesEnhanced2025.slice(0, 3),
+    services: emergingTechServicesEnhanced2025.slice(0, 4),
     icon: Atom,
     color: 'from-indigo-500 to-blue-600',
     href: '/quantum-services',
-    features: ['Quantum Computing', 'Space Mining', 'Brain-Computer Interface']
+    features: ['Quantum Computing', 'Space Mining', 'Brain-Computer Interface', 'Quantum Robotics']
   },
   {
     title: 'Enterprise IT',
     description: 'Advanced enterprise infrastructure and security solutions',
-    services: innovativeITServicesEnhanced2025.slice(0, 3),
+    services: innovativeITServicesEnhanced2025.slice(0, 4),
     icon: Shield,
     color: 'from-blue-500 to-cyan-600',
     href: '/enterprise-it',
-    features: ['Zero Trust Security', 'Quantum Cloud', 'Autonomous Operations']
+    features: ['Zero Trust Security', 'Quantum Cloud', 'Autonomous Operations', 'Edge Computing']
   },
   {
     title: 'Micro SAAS',
     description: 'Innovative business solutions for modern enterprises',
-    services: innovativeRealMicroSaasServices2025.slice(0, 3),
+    services: innovativeRealMicroSaasServices2025.slice(0, 4),
     icon: Rocket,
     color: 'from-teal-500 to-emerald-600',
     href: '/micro-saas',
-    features: ['Content Automation', 'CRM Intelligence', 'Decision Engine']
+    features: ['Content Automation', 'CRM Intelligence', 'Decision Engine', 'Logistics Optimization']
+  },
+  {
+    title: 'Healthcare & Biotech',
+    description: 'AI-powered healthcare and biotechnology innovations',
+    services: innovativeAIServicesEnhanced2025.filter(s => s.category.includes('Healthcare') || s.category.includes('Biotech')).slice(0, 4),
+    icon: Heart,
+    color: 'from-red-500 to-pink-600',
+    href: '/healthcare-biotech',
+    features: ['Medical Diagnostics', 'Drug Discovery', 'Biotech Research', 'Neural Interfaces']
+  },
+  {
+    title: 'Finance & Trading',
+    description: 'Quantum-enhanced financial technology and trading solutions',
+    services: innovativeRealMicroSaasServices2025.filter(s => s.category.includes('Finance') || s.category.includes('Trading')).slice(0, 4),
+    icon: TrendingUp,
+    color: 'from-yellow-500 to-orange-600',
+    href: '/finance-trading',
+    features: ['Quantum Trading', 'Financial Intelligence', 'Risk Management', 'Portfolio Optimization']
   }
 ];
 
@@ -386,153 +404,202 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Featured Services Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      {/* Services Showcase Section */}
+      <section className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-purple-900/10 to-black"></div>
+        <div className="relative z-10 container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
             className="text-center mb-16"
           >
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-              Featured <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Services</span>
+              Revolutionary Technology Solutions
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Discover our most innovative and revolutionary technology solutions that are transforming industries worldwide.
+              Discover our comprehensive portfolio of cutting-edge AI, quantum computing, and emerging technology solutions designed to transform your business.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {featuredServices.map((service, index) => (
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+            {serviceCategories.map((category, index) => (
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
+                key={category.title}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ y: -10 }}
-                className="group relative"
+                className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:border-purple-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20"
               >
-                <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-6 border border-gray-700 hover:border-cyan-400 transition-all duration-300 h-full">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="text-3xl">{service.icon}</div>
-                    <span className="bg-gradient-to-r from-cyan-500 to-purple-500 text-white text-xs px-3 py-1 rounded-full font-semibold">
-                      {service.badge}
-                    </span>
+                {/* Category Header */}
+                <div className="flex items-center space-x-4 mb-6">
+                  <div className={`p-3 rounded-xl bg-gradient-to-r ${category.color}`}>
+                    <category.icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
-                    {service.name}
-                  </h3>
-                  <p className="text-gray-400 text-sm mb-4 leading-relaxed">
-                    {service.description}
-                  </p>
-                  <div className="text-cyan-400 font-semibold text-lg mb-4">
-                    {service.price}
+                  <div>
+                    <h3 className="text-2xl font-bold text-white group-hover:text-purple-400 transition-colors">
+                      {category.title}
+                    </h3>
+                    <p className="text-gray-400 text-sm">{category.description}</p>
                   </div>
-                  <Link href={service.href}>
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2"
-                    >
-                      Learn More
-                      <ArrowUpRight className="w-4 h-4" />
-                    </motion.button>
-                  </Link>
                 </div>
+
+                {/* Features */}
+                <div className="mb-6">
+                  <div className="text-sm text-gray-400 mb-3">Key Capabilities:</div>
+                  <div className="grid grid-cols-2 gap-2">
+                    {category.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-center space-x-2 text-xs text-gray-300">
+                        <CheckCircle className="w-3 h-3 text-green-400" />
+                        <span>{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Sample Services */}
+                <div className="mb-6">
+                  <div className="text-sm text-gray-400 mb-3">Featured Services:</div>
+                  <div className="space-y-2">
+                    {category.services.slice(0, 3).map((service, idx) => (
+                      <div key={idx} className="flex items-center justify-between text-sm">
+                        <span className="text-gray-300">{service.name}</span>
+                        <span className="text-purple-400 font-semibold">{service.price}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* CTA */}
+                <Link
+                  href={category.href}
+                  className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all duration-300 font-medium group-hover:scale-105"
+                >
+                  <span>Explore {category.title}</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+
+                {/* Hover Effects */}
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl" />
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               </motion.div>
             ))}
           </div>
 
+          {/* View All Services CTA */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
             viewport={{ once: true }}
             className="text-center mt-12"
           >
-            <Link href="/comprehensive-services-showcase-2025">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white px-8 py-4 rounded-full font-semibold text-lg flex items-center gap-2 mx-auto shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                View All Services
-                <ChevronRight className="w-5 h-5" />
-              </motion.button>
+            <Link
+              href="/innovative-micro-saas-showcase"
+              className="inline-flex items-center space-x-3 bg-white/10 border border-white/20 text-white px-8 py-4 rounded-xl hover:bg-white/20 transition-all duration-300 hover:scale-105"
+            >
+              <Globe className="w-6 h-6" />
+              <span className="text-lg font-semibold">View All 50+ Services</span>
+              <ArrowRight className="w-6 h-6" />
             </Link>
           </motion.div>
         </div>
       </section>
 
-      {/* Service Categories Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 to-black">
-        <div className="max-w-7xl mx-auto">
+      {/* Featured Services Grid */}
+      <section className="py-20 bg-gradient-to-br from-black via-purple-900/5 to-black">
+        <div className="container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
             className="text-center mb-16"
           >
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-              Service <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Categories</span>
+              Most Popular Services
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Explore our comprehensive range of cutting-edge technology solutions across multiple domains.
+              Our most sought-after solutions that are transforming businesses worldwide.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {serviceCategories.map((category, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5 }}
-                className="group"
-              >
-                <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-cyan-400 transition-all duration-300 h-full">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className={`p-3 rounded-xl bg-gradient-to-r ${category.color}`}>
-                      <category.icon className="w-8 h-8 text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">
-                      {category.title}
-                    </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {innovativeRealMicroSaasServices2025
+              .filter(service => service.popular)
+              .slice(0, 8)
+              .map((service, index) => (
+                <motion.div
+                  key={service.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:border-purple-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20"
+                >
+                  {/* Popular Badge */}
+                  <div className="absolute -top-3 -right-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                    Popular
                   </div>
-                  <p className="text-gray-300 mb-6 leading-relaxed">
-                    {category.description}
+
+                  {/* Service Icon */}
+                  <div className="text-4xl mb-4">{service.icon}</div>
+
+                  {/* Service Info */}
+                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">
+                    {service.name}
+                  </h3>
+                  <p className="text-gray-400 text-sm mb-4 line-clamp-2">
+                    {service.tagline}
                   </p>
-                  <div className="mb-6">
-                    <h4 className="text-white font-semibold mb-3">Key Features:</h4>
-                    <ul className="space-y-2">
-                      {category.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-center gap-2 text-gray-300">
-                          <CheckCircle className="w-4 h-4 text-cyan-400 flex-shrink-0" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
+
+                  {/* Price */}
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="text-2xl font-bold text-purple-400">
+                      {service.price}
+                      <span className="text-sm text-gray-400 font-normal">{service.period}</span>
+                    </div>
+                    <div className="flex items-center space-x-1">
+                      <Star className="w-4 h-4 text-yellow-400 fill-current" />
+                      <span className="text-sm text-gray-300">{service.rating}</span>
+                    </div>
                   </div>
-                  <Link href={category.href}>
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2"
-                    >
-                      Explore {category.title}
-                      <ArrowRight className="w-4 h-4" />
-                    </motion.button>
+
+                  {/* Category and Setup */}
+                  <div className="flex items-center justify-between text-xs text-gray-500 mb-4">
+                    <span className="bg-white/10 px-2 py-1 rounded">{service.category}</span>
+                    <span>Setup: {service.setupTime}</span>
+                  </div>
+
+                  {/* Action Button */}
+                  <Link
+                    href={service.link}
+                    className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white text-center py-2 px-4 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all duration-300 font-medium"
+                  >
+                    Learn More
                   </Link>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
           </div>
+
+          {/* View All Services CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            viewport={{ once: true }}
+            className="text-center mt-12"
+          >
+            <Link
+              href="/innovative-micro-saas-showcase"
+              className="inline-flex items-center space-x-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-xl hover:from-purple-700 hover:to-pink-700 transition-all duration-300 hover:scale-105"
+            >
+              <span className="text-lg font-semibold">Explore All Services</span>
+              <ArrowRight className="w-6 h-6" />
+            </Link>
+          </motion.div>
         </div>
       </section>
 
