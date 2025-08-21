@@ -115,6 +115,7 @@ export default function HomePage() {
     ...futuristic2028Services,
     ...emergingTech2028Services,
     ...cuttingEdgeInnovations2029,
+    ...emergingTechBreakthroughs2029V3,
     ...innovative2026Services,
     ...emergingTech2026Services,
     ...enterpriseIT2026Services,
