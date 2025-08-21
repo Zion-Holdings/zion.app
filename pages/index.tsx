@@ -16,6 +16,7 @@ import { innovativeMicroSaasServices } from '../data/innovative-micro-saas-servi
 import { innovativeAIServices } from '../data/innovative-ai-services';
 import { quantumSpaceServices } from '../data/quantum-space-services';
 import { enterpriseITServices } from '../data/enterprise-it-services';
+import { professionalServices } from '../data/professional-services';
 
 export default function HomePage() {
   const contactInfo = {
@@ -35,6 +36,8 @@ export default function HomePage() {
     ...quantumSpaceServices,
     ...enterpriseITServices
   ];
+
+  const featuredOffers = professionalServices.slice(0, 3);
 
   return (
     <UltraAdvancedFuturisticMatrixBackground intensity="high" colorScheme="quantum">
@@ -98,6 +101,34 @@ export default function HomePage() {
           subtitle="Discover the future of business with our cutting-edge solutions"
           showFilters={true}
         />
+
+        {/* Featured Offers */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="mb-8 text-center">
+              <h2 className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">Featured Offers</h2>
+              <p className="text-gray-300 mt-2">New professional services with clear pricing and fast onboarding</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {featuredOffers.map((svc) => (
+                <div key={svc.id} className="bg-gray-800/60 border border-gray-700 rounded-2xl p-6 hover:border-cyan-500/40 transition-colors">
+                  <div className="text-2xl font-semibold text-white mb-2">{svc.name}</div>
+                  <div className="text-gray-300 mb-3">{svc.tagline}</div>
+                  <div className="text-cyan-300 font-bold mb-4">{svc.price}{svc.period}</div>
+                  <ul className="text-gray-400 text-sm space-y-1 mb-6 list-disc list-inside">
+                    {svc.features.slice(0, 3).map((f, i) => (
+                      <li key={i}>{f}</li>
+                    ))}
+                  </ul>
+                  <div className="flex gap-3">
+                    <Button href={svc.link || '/contact'} variant="primary">Learn More</Button>
+                    <Button href="/contact" variant="secondary">Talk to Expert</Button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* Contact Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">

@@ -12,6 +12,7 @@ import { innovativeAIServices } from '../data/innovative-ai-services';
 import { quantumSpaceServices } from '../data/quantum-space-services';
 import { enterpriseITServices } from '../data/enterprise-it-services';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
+import { professionalServices } from '../data/professional-services';
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -23,7 +24,8 @@ export default function ServicesPage() {
     ...innovativeAIServices,
     ...quantumSpaceServices,
     ...enterpriseITServices,
-    ...enhancedRealMicroSaasServices
+    ...enhancedRealMicroSaasServices,
+    ...professionalServices
   ];
 
   const categories = [
