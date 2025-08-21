@@ -3,10 +3,6 @@ import Head from 'next/head';
 import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Code, BookOpen, Activity, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Filter, Grid, List, ChevronDown, ChevronUp, Sparkles, FlaskConical, Dna, Car, Leaf, Factory, Truck, Microscope, GraduationCap, ShieldCheck, Brain, Atom, Globe2, Bot, CheckCircle, XCircle } from 'lucide-react';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
-import EnhancedFuturisticBackground from '../components/ui/EnhancedFuturisticBackground';
-import EnhancedFuturisticCard from '../components/ui/EnhancedFuturisticCard';
-import QuantumHolographicBackground from '../components/ui/QuantumHolographicBackground';
-import QuantumHolographicCard from '../components/ui/QuantumHolographicCard';
 import AdvancedFuturisticBackground from '../components/ui/AdvancedFuturisticBackground';
 import AdvancedFuturisticCard from '../components/ui/AdvancedFuturisticCard';
 import { enhancedMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices, getServicesByPriceRange } from '../data/enhanced-micro-saas-services';
@@ -85,8 +81,8 @@ export default function ServicesPage() {
   // Featured Innovative Services
   const featuredInnovativeServices = [
     {
-      id: 'quantum-biomedical-research',
-      name: 'Quantum Biomedical Research Platform',
+      id: 'quantum-financial-modeling',
+      name: 'Quantum Financial Modeling Platform',
       tagline: 'Revolutionary drug discovery using quantum algorithms',
       price: '$899',
       period: '/month',
@@ -373,7 +369,6 @@ export default function ServicesPage() {
                           {service.popular && (
                             <div className="flex items-center bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded-full text-xs">
                               <Star className="h-3 w-3 mr-1 fill-current" />
-                              Popular
                             </div>
                           )}
                         </div>
@@ -498,4 +493,32 @@ export default function ServicesPage() {
       </div>
     </AdvancedFuturisticBackground>
   );
+}
+
+// Helper function to get theme based on service category
+function getServiceTheme(category: string): 'quantum' | 'cyberpunk' | 'neural' | 'holographic' {
+  const categoryThemes: { [key: string]: 'quantum' | 'cyberpunk' | 'neural' | 'holographic' } = {
+    'AI & Machine Learning': 'neural',
+    'Quantum Computing': 'quantum',
+    'Financial Technology': 'quantum',
+    'Healthcare & Life Sciences': 'neural',
+    'Cybersecurity': 'cyberpunk',
+    'Supply Chain & Logistics': 'quantum',
+    'Energy & Utilities': 'quantum',
+    'Manufacturing & Industry 4.0': 'cyberpunk',
+    'Legal Technology': 'neural',
+    'Education Technology': 'neural',
+    'Space Technology': 'quantum',
+    'Environmental Technology': 'quantum',
+    'Blockchain & Web3': 'cyberpunk',
+    'IoT & Smart Cities': 'holographic',
+    'Biomedical Research': 'neural',
+    'Autonomous Vehicles': 'cyberpunk',
+    'Robotics & Automation': 'cyberpunk',
+    'Data Analytics': 'holographic',
+    'Cloud Infrastructure': 'holographic',
+    'Mobile Applications': 'holographic'
+  };
+  
+  return categoryThemes[category] || 'quantum';
 }
