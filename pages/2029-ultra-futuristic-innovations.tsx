@@ -2,12 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
 import { Rocket, Brain, Atom, Globe, Zap, Sparkles, Shield, Star, TrendingUp, Eye, Timer } from 'lucide-react';
-import dynamic from 'next/dynamic';
-
-const UltraFuturisticBackground2029 = dynamic(
-  () => import('../components/backgrounds/UltraFuturisticBackground2029'),
-  { ssr: false }
-);
+import UltraFuturisticBackground2029 from '../components/backgrounds/UltraFuturisticBackground2029';
 import UltraFuturisticNavigation2029 from '../components/layout/UltraFuturisticNavigation2029';
 import UltraFuturisticFooter2029 from '../components/layout/UltraFuturisticFooter2029';
 import UltraFuturistic2029ServiceShowcase from '../components/sections/UltraFuturistic2029ServiceShowcase';
@@ -37,9 +32,11 @@ export default function UltraFuturistic2029InnovationsPage() {
         <link rel="canonical" href="https://ziontechgroup.com/2029-ultra-futuristic-innovations" />
       </Head>
 
-      <UltraFuturisticBackground2029>
-        {/* Navigation */}
-        <UltraFuturisticNavigation2029 />
+      {/* Futuristic Background */}
+      <UltraFuturisticBackground2029 />
+
+      {/* Navigation */}
+      <UltraFuturisticNavigation2029 />
 
         {/* Hero Section */}
         <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
@@ -280,7 +277,6 @@ export default function UltraFuturistic2029InnovationsPage() {
 
         {/* Footer */}
         <UltraFuturisticFooter2029 />
-      </UltraFuturisticBackground2029>
-    </>
-  );
-}
+      </>
+    );
+  }
