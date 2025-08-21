@@ -5,7 +5,7 @@ import {
   Menu, X, ChevronDown, Search, Phone, Mail, MapPin, 
   Rocket, Brain, Atom, Globe, Zap, Sparkles, Shield, 
   Microscope, DollarSign, Home, Users, Briefcase, 
-  BookOpen, Team, MessageCircle 
+  BookOpen, MessageCircle 
 } from 'lucide-react';
 
 const contactInfo = {
@@ -98,7 +98,7 @@ const companyLinks = [
   { name: '2026 Pricing', href: '/revolutionary-2026-pricing', icon: DollarSign },
   { name: 'Case Studies', href: '/case-studies', icon: Briefcase },
   { name: 'Blog & Resources', href: '/blog', icon: BookOpen },
-  { name: 'Careers', href: '/careers', icon: Team },
+  { name: 'Careers', href: '/careers', icon: Users },
   { name: 'Contact', href: '/contact', icon: MessageCircle }
 ];
 
@@ -439,3 +439,5 @@ const UltraAdvancedNavigation2026 = () => {
     </>
   );
 }
+
+export default UltraAdvancedNavigation2026;
