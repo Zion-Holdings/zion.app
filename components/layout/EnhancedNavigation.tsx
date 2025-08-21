@@ -180,7 +180,7 @@ export default function EnhancedNavigation() {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 10, scale: 0.95 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute top-full left-0 mt-2 w-80 bg-gray-800/95 backdrop-blur-md border border-gray-700 rounded-xl shadow-2xl overflow-hidden"
+                        className="absolute top-full left-0 mt-2 w-80 bg-gray-800/95 backdrop-blur-md border border-gray-700 rounded-xl shadow-2xl overflow-hidden z-[60]"
                       >
                         <div className="p-4">
                           <div className="mb-3">
@@ -255,7 +255,7 @@ export default function EnhancedNavigation() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-gray-900/95 backdrop-blur-md border-t border-gray-700/50"
+            className="lg:hidden bg-gray-900/95 backdrop-blur-md border-t border-gray-700/50 z-[60] relative"
           >
             <div className="px-4 py-6 space-y-4">
               {navigationItems.map((item) => (
