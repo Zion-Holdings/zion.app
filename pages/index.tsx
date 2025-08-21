@@ -6,14 +6,15 @@ import Button from '../components/ui/Button';
 import UltraQuantumHolographicBackground from '../components/ui/UltraQuantumHolographicBackground';
 import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
 import UltraAdvancedNavigation2026 from '../components/layout/UltraAdvancedNavigation2026';
-import UltraFuturisticNavigation2027 from '../components/layout/UltraFuturisticNavigation2027';
+import UltraFuturisticNavigation2028 from '../components/layout/UltraFuturisticNavigation2028';
+import UltraFuturisticFooter2028 from '../components/layout/UltraFuturisticFooter2028';
 import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
 import Enhanced2026ServicesShowcase from '../components/sections/Enhanced2026ServicesShowcase';
 import Revolutionary2026ServiceShowcase from '../components/sections/Revolutionary2026ServiceShowcase';
 import Revolutionary2027ServicesShowcase from '../components/sections/Revolutionary2027ServicesShowcase';
 import Revolutionary2027Hero from '../components/sections/Revolutionary2027Hero';
 import EnhancedHero2026 from '../components/sections/EnhancedHero2026';
-import UltraFuturisticHero2027 from '../components/sections/UltraFuturisticHero2027';
+import UltraFuturisticHero2028 from '../components/sections/UltraFuturisticHero2028';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
@@ -62,6 +63,8 @@ import { revolutionary2026ITServices } from '../data/revolutionary-2026-it-servi
 import { revolutionary2026AIServices } from '../data/revolutionary-2026-ai-services';
 import { revolutionary2027Services } from '../data/revolutionary-2027-services';
 import { emergingTech2027Services } from '../data/emerging-tech-2027-services';
+import { cuttingEdge2028MicroSaas } from '../data/2028-cutting-edge-micro-saas';
+import { practicalBusinessSolutions2028 } from '../data/2028-practical-business-solutions';
 
 export default function HomePage() {
   const contactInfo = {
@@ -119,7 +122,9 @@ export default function HomePage() {
     ...revolutionary2026ITServices,
     ...revolutionary2026AIServices,
     ...revolutionary2027Services,
-    ...emergingTech2027Services
+    ...emergingTech2027Services,
+    ...cuttingEdge2028MicroSaas,
+    ...practicalBusinessSolutions2028
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);
@@ -195,10 +200,10 @@ export default function HomePage() {
 
       <UltraQuantumHolographicBackground>
         {/* Ultra Advanced Navigation */}
-        <UltraFuturisticNavigation2027 />
+        <UltraFuturisticNavigation2028 />
 
-        {/* Ultra Futuristic Hero Section 2027 */}
-        <UltraFuturisticHero2027 />
+                  {/* Ultra Futuristic Hero Section 2028 */}
+          <UltraFuturisticHero2028 />
 
         {/* Revolutionary 2027 Hero Section */}
         <Revolutionary2027Hero />
@@ -363,6 +368,9 @@ export default function HomePage() {
           </div>
         </section>
       </UltraQuantumHolographicBackground>
+      
+      {/* Footer */}
+      <UltraFuturisticFooter2028 />
     </>
   );
 }
