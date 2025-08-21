@@ -20,10 +20,10 @@ const serviceCategories = [
     title: 'AI & Machine Learning',
     icon: Brain,
     services: [
-      { name: 'AI Business Intelligence Suite', href: '/ai-business-intelligence-suite', description: 'Transform data into actionable insights with AI', price: '$299/month' },
+      { name: 'AI Business Intelligence Elite', href: '/ai-business-intelligence-elite', description: 'Transform data into actionable insights with AI', price: '$299/month' },
       { name: 'AI Legal Document Automation', href: '/ai-legal-document-automation', description: 'Automate legal document creation and review', price: '$199/month' },
       { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics', description: 'Revolutionary AI-powered medical diagnostics', price: '$799/month' },
-      { name: 'AI Metaverse Development', href: '/ai-metaverse-development-platform', description: 'Create immersive metaverse experiences with AI', price: '$499/month' }
+      { name: 'AI Metaverse Development Platform', href: '/ai-metaverse-development-platform', description: 'Create immersive metaverse experiences with AI', price: '$499/month' }
     ]
   },
   {
@@ -40,10 +40,10 @@ const serviceCategories = [
     title: 'Emerging Technologies',
     icon: Sparkles,
     services: [
-      { name: 'Neuromorphic Computing', href: '/neuromorphic-computing-platform', description: 'Brain-inspired computing for next-generation AI', price: '$1,499/month' },
+      { name: 'Neuromorphic Computing Platform', href: '/neuromorphic-computing-platform', description: 'Brain-inspired computing for next-generation AI', price: '$1,499/month' },
       { name: 'DNA Computing Platform', href: '/dna-computing-platform', description: 'Molecular computing for complex problem solving', price: '$2,999/month' },
-      { name: 'Photonic Computing', href: '/photonic-computing-platform', description: 'Light-speed computing with photonic processors', price: '$1,999/month' },
-      { name: 'Holographic Display', href: '/holographic-display-platform', description: 'Next-generation 3D holographic visualization', price: '$699/month' }
+      { name: 'Photonic Computing Platform', href: '/photonic-computing-platform', description: 'Light-speed computing with photonic processors', price: '$1,999/month' },
+      { name: 'Holographic Display Platform', href: '/holographic-display-platform', description: 'Next-generation 3D holographic visualization', price: '$699/month' }
     ]
   },
   {
@@ -70,10 +70,20 @@ const serviceCategories = [
     title: 'Innovative SaaS',
     icon: Zap,
     services: [
-      { name: 'AI Autonomous Business', href: '/ai-autonomous-business-platform', description: 'Run your business with AI', price: 'Custom pricing' },
-      { name: 'AI Creative Studio', href: '/ai-creative-studio-platform', description: 'Unlimited AI-powered creativity', price: 'Custom pricing' },
+      { name: 'AI Autonomous Business Platform', href: '/ai-autonomous-business-platform', description: 'Run your business with AI', price: 'Custom pricing' },
+      { name: 'AI Creative Studio Platform', href: '/ai-creative-studio-platform', description: 'Unlimited AI-powered creativity', price: 'Custom pricing' },
       { name: 'AI Healthcare Companion', href: '/ai-healthcare-companion', description: 'Personalized healthcare AI', price: 'Custom pricing' },
       { name: 'Quantum Logistics Platform', href: '/quantum-logistics-platform', description: 'Optimize supply chains with quantum', price: 'Custom pricing' }
+    ]
+  },
+  {
+    title: 'Quantum AI Services',
+    icon: Atom,
+    services: [
+      { name: 'Quantum AI Cognitive Platform', href: '/quantum-ai-cognitive-platform', description: 'Quantum-powered cognitive computing', price: '$2,499/month' },
+      { name: 'Quantum Internet Security Platform', href: '/quantum-internet-security-platform', description: 'Unbreakable quantum encryption', price: '$1,599/month' },
+      { name: 'Quantum Financial Trading Platform', href: '/quantum-financial-trading-platform', description: 'Quantum advantage for financial markets', price: '$2,999/month' },
+      { name: 'Quantum IoT Platform', href: '/quantum-iot-platform', description: 'Quantum-enhanced IoT systems', price: '$899/month' }
     ]
   }
 ];
