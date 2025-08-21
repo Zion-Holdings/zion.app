@@ -21,6 +21,7 @@ import { nextGenerationAIServices } from '../data/next-generation-ai-services';
 import { emergingTechnologyServices } from '../data/emerging-technology-services';
 import { comprehensiveITSolutions } from '../data/comprehensive-it-solutions';
 import { realMarketServices } from '../data/real-market-services';
+import { newMarketOfferings } from '../data/new-market-offerings';
 
 export default function HomePage() {
   const contactInfo = {
@@ -42,7 +43,8 @@ export default function HomePage() {
     ...nextGenerationAIServices,
     ...emergingTechnologyServices,
     ...comprehensiveITSolutions,
-    ...realMarketServices
+    ...realMarketServices,
+    ...newMarketOfferings
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);
