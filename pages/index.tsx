@@ -16,6 +16,7 @@ import Revolutionary2027Hero from '../components/sections/Revolutionary2027Hero'
 import EnhancedHero2026 from '../components/sections/EnhancedHero2026';
 import UltraFuturisticHero2029 from '../components/sections/UltraFuturisticHero2029';
 import UltraFuturisticServiceShowcase2029 from '../components/sections/UltraFuturisticServiceShowcase2029';
+import UltraFuturisticServiceShowcase2030 from '../components/sections/UltraFuturisticServiceShowcase2030';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
@@ -75,6 +76,9 @@ import { futuristicAIServices2029 } from '../data/2029-futuristic-ai-services';
 import { emergingTechServices2029 } from '../data/2029-emerging-tech-services';
 import { enterpriseITServices2029 } from '../data/2029-enterprise-it-services';
 import { innovativeMicroSaasServices2029 } from '../data/2029-innovative-micro-saas';
+import { cuttingEdgeInnovations2029 } from '../data/2029-cutting-edge-innovations';
+import { enterpriseITServices2029 } from '../data/2029-enterprise-it-services';
+import { emergingTechServices2029 } from '../data/2029-emerging-tech-services';
 
 export default function HomePage() {
   const contactInfo = {
@@ -98,6 +102,10 @@ export default function HomePage() {
     ...nextGenerationAIServices,
     ...emergingTechnologyServices,
     ...emergingTechServices2025,
+    ...cuttingEdgeInnovations2029,
+    ...enterpriseITServices2029,
+    ...emergingTechServices2029,
+    ...innovativeMicroSaasServices2029,
     ...comprehensiveITSolutions,
     ...realMarketServices,
     ...serviceExpansions2025,
@@ -240,6 +248,9 @@ export default function HomePage() {
 
         {/* Enhanced 2026 Services Showcase */}
         <Enhanced2026ServicesShowcase />
+
+        {/* Ultra Futuristic 2030 Services Showcase */}
+        <UltraFuturisticServiceShowcase2030 />
 
         {/* Revolutionary 2026 Services Showcase */}
         <Revolutionary2026ServiceShowcase />
