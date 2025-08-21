@@ -13,6 +13,7 @@ import { nextGenerationAIServices } from '../../data/next-generation-ai-services
 import { emergingTechnologyServices } from '../../data/emerging-technology-services';
 import { comprehensiveITSolutions } from '../../data/comprehensive-it-solutions';
 import { marketValidatedServices } from '../../data/market-validated-services';
+import { newRealInnovations } from '../../data/new-real-innovations';
 
 interface ServiceShowcaseProps {
   className?: string;
@@ -38,7 +39,8 @@ const EnhancedServiceShowcase: React.FC<ServiceShowcaseProps> = ({
     ...nextGenerationAIServices,
     ...emergingTechnologyServices,
     ...comprehensiveITSolutions,
-    ...marketValidatedServices
+    ...marketValidatedServices,
+    ...newRealInnovations
   ];
 
   const categories = [

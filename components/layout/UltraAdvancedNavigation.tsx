@@ -143,15 +143,15 @@ const UltraAdvancedNavigation: React.FC = () => {
       description: 'Enterprise solutions',
       dropdown: [
         {
-          name: 'Cloud Migration',
-          href: '/cloud-platform',
+          name: 'Cloud Landing Zone',
+          href: '/cloud-landing-zone',
           icon: Cloud,
           description: 'Zero-downtime migration',
           price: '$8,999/month'
         },
         {
-          name: 'DevOps Automation',
-          href: '/automation',
+          name: 'Incident Automation Suite',
+          href: '/incident-automation-suite',
           icon: Code,
           description: 'AI-powered automation',
           price: '$5,999/month'
