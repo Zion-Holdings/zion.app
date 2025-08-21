@@ -9,6 +9,7 @@ import { extraServices } from '../../data/extra-services';
 import { newlyAddedServices } from '../../data/newly-added-services';
 import { curatedMarketServices } from '../../data/curated-market-services';
 import { realMarketServices } from '../../data/real-market-services';
+import { new2025Services } from '../../data/new-2025-services';
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -29,7 +30,8 @@ export default function ServicesIndexPage() {
       additionalEnhancedServices as any[],
       newlyAddedServices as any[],
       curatedMarketServices as any[],
-      realMarketServices as any[]
+      realMarketServices as any[],
+      new2025Services as any[]
     );
   const byCategory: Record<string, any[]> = {};
   for (const c of categories) byCategory[c] = [];

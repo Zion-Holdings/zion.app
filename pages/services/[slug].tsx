@@ -9,6 +9,7 @@ import { extraServices } from '../../data/extra-services';
 import { additionalEnhancedServices } from '../../data/additional-real-services';
 import { newlyAddedServices } from '../../data/newly-added-services';
 import { curatedMarketServices } from '../../data/curated-market-services';
+import { new2025Services } from '../../data/new-2025-services';
 
 type Service = typeof enhancedRealMicroSaasServices[number];
 
@@ -23,7 +24,8 @@ function getAllServices(): Service[] {
 	return enhancedRealMicroSaasServices
 		.concat(extraServices as Service[], additionalEnhancedServices as Service[])
 		.concat(newlyAddedServices as unknown as Service[])
-		.concat(curatedMarketServices as Service[]);
+		.concat(curatedMarketServices as Service[])
+		.concat(new2025Services as unknown as Service[]);
 }
 
 function toSlug(value: string): string {
@@ -123,6 +125,29 @@ export default function ServiceDetailPage({ service }: { service: Service }) {
 								))}
 							</ul>
 						</Card>
+
+						{/* Use Cases & Integrations */}
+						<Card className="p-6 bg-black/40 border border-gray-700/50">
+							<h3 className="text-white text-lg font-semibold mb-4">Use Cases & Integrations</h3>
+							<div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-300">
+								<div>
+									<div className="text-sm text-gray-400 mb-2">Use Cases</div>
+									<ul className="list-disc list-inside space-y-1">
+										{(service.useCases || []).slice(0, 8).map((u: string) => (
+											<li key={u}>{u}</li>
+										))}
+									</ul>
+								</div>
+								<div>
+									<div className="text-sm text-gray-400 mb-2">Integrations</div>
+									<div className="flex flex-wrap gap-2">
+										{(service.integrations || []).slice(0, 10).map((i: string) => (
+											<span key={i} className="px-2 py-1 bg-gray-800/60 border border-gray-700 rounded text-xs">{i}</span>
+										))}
+									</div>
+								</div>
+							</div>
+						</Card>
 					</div>
 
 					<div className="space-y-6">
@@ -142,6 +167,19 @@ export default function ServiceDetailPage({ service }: { service: Service }) {
 								<div className="flex items-center gap-2 text-cyan-400"><Phone className="w-4 h-4" /><a href={`tel:${contactInfo.mobile.replace(/[^+\\d]/g, '')}`} className="hover:underline">{contactInfo.mobile}</a></div>
 								<div className="flex items-center gap-2 text-purple-400"><Mail className="w-4 h-4" /><a href={`mailto:${contactInfo.email}`} className="hover:underline">{contactInfo.email}</a></div>
 								<div className="flex items-center gap-2 text-green-400"><MapPin className="w-4 h-4" /><a href={`https://maps.google.com/?q=${encodeURIComponent(contactInfo.address)}`} target="_blank" rel="noopener noreferrer" className="text-xs hover:underline">{contactInfo.address}</a></div>
+							</div>
+						</Card>
+
+						{/* Market Position & ROI */}
+						<Card className="p-6 bg-black/40 border border-gray-700/50">
+							<h3 className="text-white font-semibold mb-3">Market & ROI</h3>
+							<div className="space-y-3 text-sm text-gray-300">
+								{service.marketPosition && <p className="leading-relaxed"><span className="text-gray-400">Position:</span> {service.marketPosition}</p>}
+								{service.roi && <p className="leading-relaxed"><span className="text-gray-400">ROI:</span> {service.roi}</p>}
+								{service.competitors?.length ? (
+									<p className="leading-relaxed"><span className="text-gray-400">Competitors:</span> {service.competitors.slice(0,6).join(', ')}</p>
+								) : null}
+								<a href="/market-pricing" className="inline-block mt-2 text-cyan-300 hover:text-cyan-200">See average market prices →</a>
 							</div>
 						</Card>
 					</div>
