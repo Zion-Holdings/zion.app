@@ -11,10 +11,13 @@ import UltraFuturisticMatrixBackground from '../components/ui/UltraFuturisticMat
 import UltraFuturisticServiceCard from '../components/ui/UltraFuturisticServiceCard';
 import ServiceAds from '../components/sections/ServiceAds';
 import Card from '../components/ui/Card';
+import InnovativeServicesShowcase from '../components/sections/InnovativeServicesShowcase';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
 import { additionalEnhancedServices } from '../data/additional-real-services';
+import { innovativeMicroSaasServices } from '../data/innovative-micro-saas-services';
+import { emergingTechServices } from '../data/emerging-tech-services';
 
 export default function HomePage() {
   const heroStats = [
@@ -886,6 +889,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Innovative Services Showcase */}
+      <InnovativeServicesShowcase />
 
       {/* Contact Section */}
       <section className="py-20 px-4">

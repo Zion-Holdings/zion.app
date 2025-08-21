@@ -1,6 +1,6 @@
 import React from 'react';
-import QuantumHolographicNavbar from './QuantumHolographicNavbar';
-import NeoFuturisticFooter from './NeoFuturisticFooter';
+import EnhancedNavigation from './EnhancedNavigation';
+import EnhancedFooter from './EnhancedFooter';
 import UltraAdvancedFuturisticBackground from '../ui/UltraAdvancedFuturisticBackground';
 
 interface LayoutProps {
@@ -10,13 +10,13 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
 	return (
 		<div className="min-h-screen bg-black text-white">
-			<UltraAdvancedFuturisticBackground variant="quantum-holographic">
-				<QuantumHolographicNavbar />
-				<main className="pt-24 lg:pt-28">
-					{children}
-				</main>
-				<NeoFuturisticFooter />
-			</UltraAdvancedFuturisticBackground>
+					<UltraAdvancedFuturisticBackground variant="quantum-holographic">
+			<EnhancedNavigation />
+			<main className="pt-24 lg:pt-28">
+				{children}
+			</main>
+			<EnhancedFooter />
+		</UltraAdvancedFuturisticBackground>
 		</div>
 	);
 };
