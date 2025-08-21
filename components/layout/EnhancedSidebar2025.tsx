@@ -7,7 +7,8 @@ import {
   Brain, Atom, Shield, Rocket, DollarSign,
   Globe, Cpu, Database, Lock, Zap,
   TrendingUp, Award, CheckCircle, Clock,
-  ArrowRight, Search, Menu, X as CloseIcon
+  ArrowRight, Search, Menu, X as CloseIcon,
+  Target, BookOpen
 } from 'lucide-react';
 
 const contactInfo = {
@@ -17,53 +18,61 @@ const contactInfo = {
   website: 'https://ziontechgroup.com'
 };
 
-const serviceCategories = [
+const sidebarSections = [
   {
     title: 'AI & Consciousness',
-    icon: <Brain className="w-5 h-5 text-cyan-400" />,
-    color: 'from-cyan-500/20 to-blue-600/20',
-    services: [
-      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029', badge: 'New' },
-      { name: 'Quantum AI Fusion', href: '/quantum-ai-fusion', badge: 'Hot' },
-      { name: 'AI Autonomous Ecosystem', href: '/ai-autonomous-ecosystem' },
-      { name: 'AI Ethics & Governance', href: '/ai-ethics-governance' },
+    icon: <Brain className="w-5 h-5" />,
+    color: 'text-violet-400',
+    items: [
+      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2025', badge: 'New' },
+      { name: 'AI Quantum Neural Network', href: '/ai-quantum-neural-network', badge: 'Hot' },
+      { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant', badge: 'New' },
+      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training', badge: 'Popular' },
+      { name: 'AI Predictive Maintenance', href: '/ai-predictive-maintenance-platform', badge: 'New' },
+      { name: 'AI Content Personalization', href: '/ai-content-personalization-engine', badge: 'New' },
+      { name: 'AI Autonomous Ecosystem', href: '/ai-autonomous-ecosystem-manager' },
+      { name: 'AI Ethics & Governance', href: '/ai-ethics-governance-framework' },
       { name: 'AI Creativity Studio', href: '/ai-creativity-studio' },
       { name: 'AI Education Platform', href: '/ai-education-platform' },
       { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics' },
       { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence' },
       { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform' },
-      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-platform' }
+      { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer' }
     ]
   },
   {
     title: 'Quantum & Emerging Tech',
-    icon: <Atom className="w-5 h-5 text-blue-400" />,
-    color: 'from-blue-500/20 to-purple-600/20',
-    services: [
-      { name: 'Space Mining Platform', href: '/space-mining-platform', badge: 'Revolutionary' },
-      { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing' },
-      { name: 'Brain-Computer Interface', href: '/brain-computer-interface' },
+    icon: <Atom className="w-5 h-5" />,
+    color: 'text-indigo-400',
+    items: [
+      { name: 'Space Resource Mining', href: '/space-resource-mining-platform', badge: 'Hot' },
+      { name: 'Quantum Internet Security', href: '/quantum-internet-security-platform', badge: 'New' },
+      { name: 'Brain-Computer Interface', href: '/brain-computer-interface-platform', badge: 'New' },
+      { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery-platform', badge: 'New' },
+      { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai-platform', badge: 'New' },
+      { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform' },
       { name: 'Quantum Energy Platform', href: '/quantum-energy-platform' },
-      { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai' },
-      { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery' },
       { name: 'Quantum Robotics', href: '/quantum-robotics' },
-      { name: 'Quantum Internet Security', href: '/quantum-internet-security' },
+      { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity-platform' },
       { name: 'Quantum Logistics', href: '/quantum-logistics-optimization' },
-      { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity-platform' }
+      { name: 'Quantum Metaverse', href: '/quantum-metaverse' },
+      { name: 'Quantum IoT Platform', href: '/quantum-iot' },
+      { name: 'Quantum Financial Trading', href: '/quantum-financial-trading' }
     ]
   },
   {
     title: 'Enterprise IT',
-    icon: <Shield className="w-5 h-5 text-green-400" />,
-    color: 'from-green-500/20 to-emerald-600/20',
-    services: [
-      { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure' },
-      { name: 'Edge Computing Orchestrator', href: '/edge-computing-orchestration' },
-      { name: 'Zero Trust Security Platform', href: '/zero-trust-network-architecture' },
-      { name: 'Blockchain Enterprise Platform', href: '/blockchain-infrastructure-platform' },
-      { name: 'AI-Powered DevOps', href: '/ai-powered-devops' },
+    icon: <Shield className="w-5 h-5" />,
+    color: 'text-blue-400',
+    items: [
+      { name: 'Quantum-Secure Cloud', href: '/quantum-secure-cloud-infrastructure', badge: 'New' },
+      { name: 'Autonomous IT Operations', href: '/autonomous-it-operations-center', badge: 'New' },
+      { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration-platform', badge: 'New' },
+      { name: 'Blockchain Infrastructure', href: '/blockchain-infrastructure-platform', badge: 'New' },
+      { name: 'AI-Powered DevOps', href: '/ai-powered-devops-platform', badge: 'New' },
+      { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure-platform' },
+      { name: 'Zero Trust Security', href: '/zero-trust-security-platform' },
       { name: 'Quantum Networking', href: '/quantum-networking' },
-      { name: 'Autonomous IT Operations', href: '/autonomous-it-operations' },
       { name: 'Quantum Data Center', href: '/quantum-data-center' },
       { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity' },
       { name: 'Quantum Cloud Migration', href: '/quantum-cloud-migration' }
@@ -71,19 +80,81 @@ const serviceCategories = [
   },
   {
     title: 'Micro SAAS',
-    icon: <Rocket className="w-5 h-5 text-purple-400" />,
-    color: 'from-purple-500/20 to-pink-600/20',
-    services: [
-      { name: 'AI Content Factory Pro', href: '/ai-content-factory-pro', badge: 'Popular' },
-      { name: 'Quantum CRM Suite', href: '/quantum-crm-suite' },
-      { name: 'AI Autonomous Decision Engine', href: '/ai-autonomous-decision-engine' },
-      { name: 'AI Creativity Studio', href: '/ai-creativity-studio' },
-      { name: 'AI Education Platform', href: '/ai-education-platform' },
-      { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics' },
-      { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence' },
-      { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform' },
-      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-platform' },
-      { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer' }
+    icon: <Rocket className="w-5 h-5" />,
+    color: 'text-emerald-400',
+    items: [
+      { name: 'AI Customer Success', href: '/ai-customer-success-platform', badge: 'New' },
+      { name: 'Supply Chain Optimization', href: '/intelligent-supply-chain-optimization', badge: 'New' },
+      { name: 'Financial Planning AI', href: '/ai-financial-planning-platform', badge: 'New' },
+      { name: 'HR Analytics Platform', href: '/intelligent-hr-analytics-platform', badge: 'New' },
+      { name: 'Sales Intelligence AI', href: '/ai-sales-intelligence-platform', badge: 'New' },
+      { name: 'AI Decision Engine', href: '/ai-powered-decision-engine' },
+      { name: 'Content Automation', href: '/intelligent-content-automation-platform' },
+      { name: 'Smart CRM Suite', href: '/smart-crm-intelligence-suite' },
+      { name: 'Financial Analytics', href: '/automated-financial-analytics-platform' },
+      { name: 'Project Management', href: '/intelligent-project-management-suite' },
+      { name: 'Business Intelligence', href: '/ai-business-intelligence' },
+      { name: 'Marketing Automation', href: '/ai-marketing-automation' },
+      { name: 'Customer Service AI', href: '/ai-customer-service' },
+      { name: 'HR & Recruitment', href: '/ai-hr-recruitment' },
+      { name: 'Legal Contract Analysis', href: '/ai-legal-contract-analyzer' }
+    ]
+  },
+  {
+    title: 'Solutions',
+    icon: <Target className="w-5 h-5" />,
+    color: 'text-orange-400',
+    items: [
+      { name: 'Healthcare Solutions', href: '/healthcare-solutions' },
+      { name: 'Financial Services', href: '/financial-solutions' },
+      { name: 'Manufacturing AI', href: '/manufacturing-ai-solutions' },
+      { name: 'Retail Technology', href: '/retail-technology-solutions' },
+      { name: 'Education Technology', href: '/education-technology-solutions' },
+      { name: 'Government Solutions', href: '/government-technology-solutions' },
+      { name: 'Energy & Utilities', href: '/energy-utilities-solutions' },
+      { name: 'Transportation & Logistics', href: '/transportation-logistics-solutions' },
+      { name: 'Real Estate Technology', href: '/real-estate-technology-solutions' },
+      { name: 'Entertainment & Media', href: '/entertainment-media-solutions' },
+      { name: 'Space Technology', href: '/space-technology' },
+      { name: 'Biotech & Healthcare', href: '/biotech-ai' }
+    ]
+  },
+  {
+    title: 'Resources',
+    icon: <BookOpen className="w-5 h-5" />,
+    color: 'text-cyan-400',
+    items: [
+      { name: 'Documentation', href: '/docs' },
+      { name: 'API Reference', href: '/api-documentation' },
+      { name: 'Case Studies', href: '/case-studies' },
+      { name: 'Blog & News', href: '/blog' },
+      { name: 'Support Center', href: '/support' },
+      { name: 'Training & Certification', href: '/training' },
+      { name: 'Community Forum', href: '/community' },
+      { name: 'Developer Resources', href: '/developer-resources' },
+      { name: 'Research & Development', href: '/research-development' },
+      { name: 'White Papers', href: '/white-papers' },
+      { name: 'Performance Reports', href: '/reports' },
+      { name: 'Market Analysis', href: '/market-pricing' }
+    ]
+  },
+  {
+    title: 'Company',
+    icon: <Users className="w-5 h-5" />,
+    color: 'text-pink-400',
+    items: [
+      { name: 'About Us', href: '/about' },
+      { name: 'Leadership Team', href: '/leadership' },
+      { name: 'Careers', href: '/careers' },
+      { name: 'News & Press', href: '/news' },
+      { name: 'Partners', href: '/partners' },
+      { name: 'Investors', href: '/investors' },
+      { name: 'Contact Us', href: '/contact' },
+      { name: 'Locations', href: '/locations' },
+      { name: 'Sustainability', href: '/sustainability' },
+      { name: 'Diversity & Inclusion', href: '/diversity-inclusion' },
+      { name: 'Terms of Service', href: '/terms' },
+      { name: 'Privacy Policy', href: '/privacy' }
     ]
   }
 ];
@@ -135,9 +206,9 @@ export default function EnhancedSidebar2025({ isOpen, onClose }: EnhancedSidebar
     setExpandedCategory(expandedCategory === title ? null : title);
   };
 
-  const filteredServices = serviceCategories.flatMap(category =>
-    category.services.filter(service =>
-      service.name.toLowerCase().includes(searchQuery.toLowerCase())
+  const filteredServices = sidebarSections.flatMap(section =>
+    section.items.filter(item =>
+      item.name.toLowerCase().includes(searchQuery.toLowerCase())
     )
   );
 
@@ -275,29 +346,29 @@ export default function EnhancedSidebar2025({ isOpen, onClose }: EnhancedSidebar
                 <span>Service Categories</span>
               </h3>
               <div className="space-y-2">
-                {serviceCategories.map((category) => (
-                  <div key={category.title}>
+                {sidebarSections.map((section) => (
+                  <div key={section.title}>
                     <button
-                      onClick={() => toggleCategory(category.title)}
+                      onClick={() => toggleCategory(section.title)}
                       className="w-full flex items-center justify-between p-3 rounded-lg hover:bg-gray-800/50 transition-colors duration-200 group"
                     >
                       <div className="flex items-center space-x-3">
-                        <div className={`w-8 h-8 bg-gradient-to-r ${category.color} rounded-lg flex items-center justify-center`}>
-                          {category.icon}
+                        <div className={`w-8 h-8 bg-gradient-to-r ${section.color} rounded-lg flex items-center justify-center`}>
+                          {section.icon}
                         </div>
                         <span className="text-gray-300 group-hover:text-white transition-colors duration-200">
-                          {category.title}
+                          {section.title}
                         </span>
                       </div>
                       <ChevronRight 
                         className={`w-4 h-4 text-gray-400 transition-transform duration-200 ${
-                          expandedCategory === category.title ? 'rotate-90' : ''
+                          expandedCategory === section.title ? 'rotate-90' : ''
                         }`} 
                       />
                     </button>
                     
                     <AnimatePresence>
-                      {expandedCategory === category.title && (
+                      {expandedCategory === section.title && (
                         <motion.div
                           initial={{ opacity: 0, height: 0 }}
                           animate={{ opacity: 1, height: 'auto' }}
@@ -305,19 +376,19 @@ export default function EnhancedSidebar2025({ isOpen, onClose }: EnhancedSidebar
                           transition={{ duration: 0.2 }}
                           className="ml-8 mt-2 space-y-1"
                         >
-                          {category.services.map((service) => (
+                          {section.items.map((item) => (
                             <Link
-                              key={service.name}
-                              href={service.href}
+                              key={item.name}
+                              href={item.href}
                               onClick={onClose}
                               className="flex items-center justify-between p-2 rounded-lg hover:bg-gray-800/30 transition-colors duration-200 group"
                             >
                               <span className="text-sm text-gray-400 group-hover:text-cyan-400 transition-colors duration-200">
-                                {service.name}
+                                {item.name}
                               </span>
-                              {service.badge && (
+                              {item.badge && (
                                 <span className="px-2 py-1 text-xs bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full">
-                                  {service.badge}
+                                  {item.badge}
                                 </span>
                               )}
                             </Link>
