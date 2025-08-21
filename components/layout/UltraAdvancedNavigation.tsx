@@ -18,19 +18,19 @@ const serviceCategories = [
     title: 'AI & Machine Learning',
     icon: Brain,
     services: [
-      { name: 'AI Consciousness Simulation', href: '/ai-consciousness-simulation', description: 'Simulate human consciousness with AI' },
-      { name: 'AI Time Series Prediction', href: '/ai-time-series-prediction', description: '99.9% accurate future predictions' },
-      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-platform', description: 'Understand human emotions with AI' },
-      { name: 'AI Multimodal Fusion', href: '/ai-multimodal-fusion-platform', description: 'Unify text, image, audio, and video' }
+      { name: 'AI Consciousness Simulation Pro', href: '/ai-consciousness-simulation-pro', description: 'Simulate human consciousness with quantum precision' },
+      { name: 'AI Time Series Prediction Elite', href: '/ai-time-series-prediction-elite', description: '99.9% accurate future predictions' },
+      { name: 'AI Emotional Intelligence Platform', href: '/ai-emotional-intelligence-platform', description: 'Understand human emotions with AI' },
+      { name: 'AI Multimodal Fusion Platform', href: '/ai-multimodal-fusion-platform', description: 'Unify text, image, audio, and video' }
     ]
   },
   {
     title: 'Quantum Computing',
     icon: Cpu,
     services: [
+      { name: 'Quantum Neural Interface Platform', href: '/quantum-neural-interface-platform', description: 'Direct brain-computer communication' },
+      { name: 'Quantum Internet Security Platform', href: '/quantum-internet-security-platform', description: 'Unbreakable quantum encryption' },
       { name: 'Quantum AI Hybrid Computing', href: '/ai-quantum-hybrid-computing', description: 'AI and quantum computing combined' },
-      { name: 'Quantum Internet Infrastructure', href: '/quantum-internet-infrastructure', description: 'Ultra-secure quantum internet' },
-      { name: 'Quantum Brain Interface', href: '/quantum-ai-brain-interface', description: 'Direct brain-computer communication' },
       { name: 'Quantum Space Mining', href: '/quantum-space-mining-platform', description: 'Mine asteroids with quantum precision' }
     ]
   },
@@ -38,20 +38,30 @@ const serviceCategories = [
     title: 'Enterprise IT',
     icon: Shield,
     services: [
-      { name: 'Zero Trust Architecture', href: '/zero-trust-network-architecture', description: 'Advanced network security' },
+      { name: 'Zero Trust Network Architecture', href: '/zero-trust-network-architecture', description: 'Advanced network security' },
       { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration', description: 'Distributed computing management' },
-      { name: '5G Private Networks', href: '/5g-private-network-solutions', description: 'High-speed private networks' },
-      { name: 'Blockchain Infrastructure', href: '/blockchain-infrastructure-platform', description: 'Secure blockchain solutions' }
+      { name: '5G Private Network Solutions', href: '/5g-private-network-solutions', description: 'High-speed private networks' },
+      { name: 'Blockchain Infrastructure Platform', href: '/blockchain-infrastructure-platform', description: 'Secure blockchain solutions' }
     ]
   },
   {
     title: 'Innovative SaaS',
     icon: Zap,
     services: [
-      { name: 'AI Autonomous Business', href: '/ai-autonomous-business-platform', description: 'Run your business with AI' },
-      { name: 'AI Creative Studio', href: '/ai-creative-studio-platform', description: 'Unlimited AI-powered creativity' },
-      { name: 'AI Healthcare Companion', href: '/ai-healthcare-companion', description: 'Personalized healthcare AI' },
+      { name: 'AI Autonomous Business Platform', href: '/ai-autonomous-business-platform', description: 'Run your business with AI' },
+      { name: 'AI Creative Studio Platform', href: '/ai-creative-studio-platform', description: 'Unlimited AI-powered creativity' },
+      { name: 'AI Healthcare Companion Platform', href: '/ai-healthcare-companion-platform', description: 'Personalized healthcare AI' },
       { name: 'Quantum Logistics Platform', href: '/quantum-logistics-platform', description: 'Optimize supply chains with quantum' }
+    ]
+  },
+  {
+    title: '2026 Revolutionary Services',
+    icon: Rocket,
+    services: [
+      { name: 'View All 2026 Services', href: '/innovative-2026-services', description: 'Complete overview of revolutionary services' },
+      { name: 'AI Consciousness Simulation Pro', href: '/ai-consciousness-simulation-pro', description: 'Simulate human consciousness with quantum precision' },
+      { name: 'Quantum Neural Interface Platform', href: '/quantum-neural-interface-platform', description: 'Direct brain-computer communication' },
+      { name: 'Advanced Threat Intelligence Platform', href: '/advanced-threat-intelligence-platform', description: 'Real-time threat detection with AI' }
     ]
   }
 ];

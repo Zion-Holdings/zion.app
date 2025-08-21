@@ -256,6 +256,27 @@ export default function PricingPage() {
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
             Choose the perfect plan for your business. All plans include generous free trials and access to our revolutionary AI & quantum computing services.
           </p>
+
+          {/* New 2026 Pricing Link */}
+          <div className="mb-8 p-6 bg-gradient-to-r from-purple-800/60 to-pink-800/60 border border-purple-700/50 rounded-2xl max-w-4xl mx-auto">
+            <h3 className="text-2xl font-bold text-white mb-4">
+              🚀 New for 2026: Revolutionary Services
+            </h3>
+            <p className="text-gray-300 mb-6">
+              Experience our cutting-edge AI consciousness simulation, quantum neural interfaces, and advanced cybersecurity solutions with comprehensive pricing and detailed comparisons.
+            </p>
+            <Button 
+              href="/comprehensive-pricing-2026" 
+              variant="primary"
+              size="lg"
+              className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 shadow-2xl hover:shadow-purple-500/30"
+            >
+              <span className="flex items-center">
+                <Rocket className="mr-3 w-6 h-6" />
+                View 2026 Comprehensive Pricing
+              </span>
+            </Button>
+          </div>
           
           {/* Billing Toggle */}
           <div className="flex items-center justify-center gap-4 mb-8">
