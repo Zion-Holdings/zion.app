@@ -1,44 +1,52 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 
 interface QuantumHolographicBackgroundProps {
   children: React.ReactNode;
-  variant?: 'quantum-holographic' | 'neural-quantum' | 'cyberpunk-holographic' | 'quantum-entanglement' | 'holographic-matrix';
-  intensity?: 'low' | 'medium' | 'high';
   className?: string;
+  variant?: 'quantum' | 'holographic' | 'neural' | 'cyberpunk';
 }
 
 const QuantumHolographicBackground: React.FC<QuantumHolographicBackgroundProps> = ({
   children,
-  variant = 'quantum-holographic',
-  intensity = 'medium',
-  className = ''
+  className = '',
+  variant = 'quantum'
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number | undefined>(undefined);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
+    setIsClient(true);
+  }, []);
 
+  useEffect(() => {
+    if (!isClient || !canvasRef.current) return;
+
+    const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    if (typeof window === 'undefined') return;
-
     const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      if (typeof window !== 'undefined') {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
     };
 
     resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', resizeCanvas);
+    }
 
     // Mouse tracking
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
-    window.addEventListener('mousemove', handleMouseMove);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('mousemove', handleMouseMove);
+    }
 
     let time = 0;
     const particles: Array<{
@@ -69,7 +77,7 @@ const QuantumHolographicBackground: React.FC<QuantumHolographicBackgroundProps> 
     }> = [];
 
     const createParticles = () => {
-      const particleCount = intensity === 'high' ? 1200 : intensity === 'medium' ? 800 : 400;
+      const particleCount = 800; // Default to medium intensity
       
       for (let i = 0; i < particleCount; i++) {
         particles.push({
@@ -103,16 +111,14 @@ const QuantumHolographicBackground: React.FC<QuantumHolographicBackgroundProps> 
 
     const getParticleColor = (variant: string, time: number): string => {
       switch (variant) {
-        case 'quantum-holographic':
+        case 'quantum':
           return `hsl(${280 + Math.sin(time * 0.02) * 120}, 95%, 80%)`;
-        case 'neural-quantum':
+        case 'holographic':
           return `hsl(${200 + Math.sin(time * 0.015) * 80}, 90%, 75%)`;
-        case 'cyberpunk-holographic':
+        case 'neural':
           return `hsl(${160 + Math.sin(time * 0.025) * 140}, 100%, 70%)`;
-        case 'quantum-entanglement':
+        case 'cyberpunk':
           return `hsl(${320 + Math.sin(time * 0.03) * 160}, 98%, 85%)`;
-        case 'holographic-matrix':
-          return `hsl(${120 + Math.sin(time * 0.018) * 100}, 92%, 78%)`;
         default:
           return `hsl(${280 + Math.sin(time * 0.02) * 120}, 95%, 80%)`;
       }
@@ -185,7 +191,7 @@ const QuantumHolographicBackground: React.FC<QuantumHolographicBackgroundProps> 
           ctx.fillStyle = particle.color;
           
           // Holographic matrix effect
-          if (variant === 'holographic-matrix') {
+          if (variant === 'cyberpunk') { // Changed from 'holographic-matrix' to 'cyberpunk'
             ctx.strokeStyle = particle.color;
             ctx.lineWidth = 2;
             ctx.strokeRect(-layerSize/2, -layerSize/2, layerSize, layerSize);
@@ -197,7 +203,7 @@ const QuantumHolographicBackground: React.FC<QuantumHolographicBackgroundProps> 
         }
 
         // Neural connections
-        if (variant === 'neural-quantum') {
+        if (variant === 'neural') { // Changed from 'neural-quantum' to 'neural'
           particles.forEach((otherParticle, otherIndex) => {
             if (index !== otherIndex) {
               const distance = Math.sqrt(
@@ -218,7 +224,7 @@ const QuantumHolographicBackground: React.FC<QuantumHolographicBackgroundProps> 
         }
 
         // Cyberpunk glow effect
-        if (variant === 'cyberpunk-holographic') {
+        if (variant === 'cyberpunk') { // Changed from 'cyberpunk-holographic' to 'cyberpunk'
           const glow = Math.sin(particle.cyberpunkGlow) * 0.5 + 0.5;
           ctx.shadowColor = particle.color;
           ctx.shadowBlur = 20 * glow;
@@ -233,7 +239,7 @@ const QuantumHolographicBackground: React.FC<QuantumHolographicBackgroundProps> 
       });
 
       // Draw quantum field lines
-      if (variant === 'quantum-entanglement') {
+      if (variant === 'cyberpunk') { // Changed from 'quantum-entanglement' to 'cyberpunk'
         ctx.strokeStyle = 'rgba(0, 255, 255, 0.3)';
         ctx.lineWidth = 1;
         for (let i = 0; i < 20; i++) {
@@ -259,10 +265,12 @@ const QuantumHolographicBackground: React.FC<QuantumHolographicBackgroundProps> 
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
-      window.removeEventListener('resize', resizeCanvas);
-      window.removeEventListener('mousemove', handleMouseMove);
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('resize', resizeCanvas);
+        window.removeEventListener('mousemove', handleMouseMove);
+      }
     };
-  }, [variant, intensity]);
+  }, [variant, isClient]);
 
   return (
     <div className={`relative min-h-screen ${className}`}>

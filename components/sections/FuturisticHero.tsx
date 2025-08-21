@@ -40,23 +40,21 @@ const FuturisticHero: React.FC = () => {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Background */}
-      <AnimatedBackground 
-        particleCount={60}
-        colors={['#00ffff', '#ff00ff', '#ffff00', '#00ff00', '#ff0080']}
-        speed={1.0}
-        interactive={true}
-      />
-      
-      {/* Futuristic Background Effects */}
-      <div className="absolute inset-0 futuristic-bg">
-        <div className="absolute inset-0 cyber-grid opacity-20" />
-        <div className="absolute inset-0 data-stream-bg opacity-10" />
-      </div>
+    <AnimatedBackground 
+      particleCount={60}
+      colors={['#00ffff', '#ff00ff', '#ffff00', '#00ff00', '#ff0080']}
+      speed={1.0}
+      interactive={true}
+    >
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Futuristic Background Effects */}
+        <div className="absolute inset-0 futuristic-bg">
+          <div className="absolute inset-0 cyber-grid opacity-20" />
+          <div className="absolute inset-0 data-stream-bg opacity-10" />
+        </div>
 
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 py-20 text-center">
+        {/* Content */}
+        <div className="relative z-10 container mx-auto px-4 py-20 text-center">
         {/* Main Heading */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -212,8 +210,9 @@ const FuturisticHero: React.FC = () => {
           </motion.div>
         </div>
       </motion.div>
-    </section>
-  );
-};
+        </section>
+      </AnimatedBackground>
+    );
+  };
 
 export default FuturisticHero;

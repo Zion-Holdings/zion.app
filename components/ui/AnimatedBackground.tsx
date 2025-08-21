@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 
 interface Particle {
   x: number;
@@ -11,7 +12,9 @@ interface Particle {
 }
 
 interface AnimatedBackgroundProps {
+  children?: React.ReactNode;
   className?: string;
+  variant?: 'quantum' | 'holographic' | 'neural' | 'cyberpunk';
   particleCount?: number;
   colors?: string[];
   speed?: number;
@@ -19,35 +22,45 @@ interface AnimatedBackgroundProps {
 }
 
 export default function AnimatedBackground({
+  children,
   className = '',
+  variant = 'quantum',
   particleCount = 50,
   colors = ['#00ffff', '#ff00ff', '#ffff00', '#00ff00', '#ff0080'],
   speed = 1,
-  interactive = true,
-}: AnimatedBackgroundProps) {
+  interactive = true
+}) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const particlesRef = useRef<Particle[]>([]);
-  const animationRef = useRef<number | undefined>(undefined);
-  const mouseRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
+    setIsClient(true);
+  }, []);
 
+  useEffect(() => {
+    if (!isClient || !canvasRef.current) return;
+
+    const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
     const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      if (typeof window !== 'undefined') {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
     };
 
     resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', resizeCanvas);
+    }
 
     // Initialize particles
-    const initParticles = () => {
-      particlesRef.current = Array.from({ length: particleCount }, () => ({
+    const particles: Particle[] = [];
+    
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
         vx: (Math.random() - 0.5) * 2 * speed,
@@ -55,20 +68,19 @@ export default function AnimatedBackground({
         size: Math.random() * 3 + 1,
         opacity: Math.random() * 0.5 + 0.3,
         color: colors[Math.floor(Math.random() * colors.length)],
-      }));
-    };
-
-    initParticles();
+      });
+    }
 
     // Mouse move handler
+    const mouse = { x: 0, y: 0 };
     const handleMouseMove = (e: MouseEvent) => {
       if (interactive) {
-        mouseRef.current.x = e.clientX;
-        mouseRef.current.y = e.clientY;
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
       }
     };
 
-    if (interactive) {
+    if (interactive && typeof window !== 'undefined') {
       window.addEventListener('mousemove', handleMouseMove);
     }
 
@@ -92,7 +104,7 @@ export default function AnimatedBackground({
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       // Update and draw particles
-      particlesRef.current.forEach((particle, index) => {
+      particles.forEach((particle, index) => {
         // Update position
         particle.x += particle.vx;
         particle.y += particle.vy;
@@ -107,8 +119,8 @@ export default function AnimatedBackground({
 
         // Interactive mouse effect
         if (interactive) {
-          const dx = mouseRef.current.x - particle.x;
-          const dy = mouseRef.current.y - particle.y;
+          const dx = mouse.x - particle.x;
+          const dy = mouse.y - particle.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
           
           if (distance < 100) {
@@ -126,7 +138,7 @@ export default function AnimatedBackground({
         ctx.fill();
 
         // Draw connection lines
-        particlesRef.current.forEach((otherParticle, otherIndex) => {
+        particles.forEach((otherParticle, otherIndex) => {
           if (index !== otherIndex) {
             const dx = particle.x - otherParticle.x;
             const dy = particle.y - otherParticle.y;
@@ -135,6 +147,7 @@ export default function AnimatedBackground({
             if (distance < 150) {
               ctx.beginPath();
               ctx.moveTo(particle.x, particle.y);
+              ctx.lineTo(otherParticle.x, otherParticle.y);
               ctx.lineTo(otherParticle.x, otherParticle.y);
               ctx.strokeStyle = particle.color;
               ctx.globalAlpha = (150 - distance) / 150 * 0.3;
@@ -188,27 +201,36 @@ export default function AnimatedBackground({
         ctx.stroke();
       }
 
-      animationRef.current = requestAnimationFrame(animate);
+      requestAnimationFrame(animate);
     };
 
-    animate();
+    let animationId = requestAnimationFrame(animate);
 
     return () => {
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
+      if (animationId) {
+        cancelAnimationFrame(animationId);
       }
-      window.removeEventListener('resize', resizeCanvas);
-      if (interactive) {
-        window.removeEventListener('mousemove', handleMouseMove);
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('resize', resizeCanvas);
+        if (interactive) {
+          window.removeEventListener('mousemove', handleMouseMove);
+        }
       }
     };
-  }, [particleCount, colors, speed, interactive]);
+  }, [isClient]);
 
   return (
-    <canvas
-      ref={canvasRef}
-      className={`fixed inset-0 pointer-events-none z-0 ${className}`}
-      style={{ background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%)' }}
-    />
+    <div className={`relative min-h-screen overflow-hidden ${className}`}>
+      {isClient && (
+        <canvas
+          ref={canvasRef}
+          className="fixed inset-0 w-full h-full pointer-events-none z-0"
+          style={{ background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%)' }}
+        />
+      )}
+      <div className="relative z-10">
+        {children}
+      </div>
+    </div>
   );
-}
+};
