@@ -163,8 +163,22 @@ export default function QuantumHolographicNavbar() {
             ))}
           </div>
 
-          {/* CTA Button */}
+          {/* CTA Button + Quick Contact */}
           <div className="hidden lg:flex items-center space-x-4">
+            <a
+              href="tel:+13024640950"
+              className="px-3 py-2 rounded-full text-gray-300 hover:text-white hover:bg-white/5 transition-colors"
+              aria-label="Call us"
+            >
+              +1 302 464 0950
+            </a>
+            <a
+              href="mailto:kleber@ziontechgroup.com"
+              className="px-3 py-2 rounded-full text-gray-300 hover:text-white hover:bg-white/5 transition-colors"
+              aria-label="Email us"
+            >
+              Email
+            </a>
             <Link
               href="/contact"
               className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-full hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 shadow-lg shadow-cyan-500/25 hover:shadow-xl hover:shadow-cyan-500/40"
@@ -216,7 +230,9 @@ export default function QuantumHolographicNavbar() {
                 )}
               </div>
             ))}
-            <div className="pt-4 border-t border-cyan-500/30">
+            <div className="pt-4 border-t border-cyan-500/30 space-y-3">
+              <a href="tel:+13024640950" className="block w-full text-center px-6 py-3 rounded-full text-gray-300 hover:text-white hover:bg-white/5 transition-colors" onClick={() => setIsOpen(false)}>Call +1 302 464 0950</a>
+              <a href="mailto:kleber@ziontechgroup.com" className="block w-full text-center px-6 py-3 rounded-full text-gray-300 hover:text-white hover:bg-white/5 transition-colors" onClick={() => setIsOpen(false)}>Email Us</a>
               <Link
                 href="/contact"
                 className="block w-full text-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-full hover:from-cyan-600 hover:to-blue-700 transition-all duration-200"
