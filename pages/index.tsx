@@ -5,7 +5,10 @@ import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shie
 import Button from '../components/ui/Button';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
+import EnhancedNavigation2026 from '../components/layout/EnhancedNavigation2026';
 import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
+import Enhanced2026ServicesShowcase from '../components/sections/Enhanced2026ServicesShowcase';
+import EnhancedHero2026 from '../components/sections/EnhancedHero2026';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
@@ -30,11 +33,12 @@ import { innovative2025Services } from '../data/innovative-2025-services';
 import { emergingTech2025Services } from '../data/emerging-tech-2025-services';
 import { revolutionary2025Services } from '../data/revolutionary-2025-services';
 import { nextGenInnovations2025 } from '../data/next-gen-innovations-2025';
-import { innovative2025MicroSaasServices } from '../data/innovative-2025-micro-saas';
-import { emergingTech2025Services as newEmergingTech2025Services } from '../data/emerging-tech-2025-services';
-import { revolutionaryAI2025Services } from '../data/revolutionary-2025-ai-services';
-import { revolutionaryITInfrastructure2025Services } from '../data/revolutionary-2025-it-infrastructure';
-import { revolutionaryMicroSaas2025Services } from '../data/revolutionary-2025-micro-saas';
+import { innovative2026Services } from '../data/innovative-2026-services';
+import { emergingTech2026Services } from '../data/emerging-tech-2026-services';
+import { enterpriseIT2026Services } from '../data/enterprise-it-2026-services';
+import { innovative2026MicroSaasServices } from '../data/innovative-2026-micro-saas';
+import { emergingTech2026Services as emergingTech2026ServicesNew } from '../data/emerging-tech-2026-services';
+import { enterpriseIT2026Services as enterpriseIT2026ServicesNew } from '../data/enterprise-it-2026-services';
 
 export default function HomePage() {
   const contactInfo = {
@@ -68,11 +72,12 @@ export default function HomePage() {
     ...emergingTech2025Services,
     ...revolutionary2025Services,
     ...nextGenInnovations2025,
-    ...innovative2025MicroSaasServices,
-    ...newEmergingTech2025Services,
-    ...revolutionaryAI2025Services,
-    ...revolutionaryITInfrastructure2025Services,
-    ...revolutionaryMicroSaas2025Services
+    ...innovative2026Services,
+    ...emergingTech2026Services,
+    ...enterpriseIT2026Services,
+    ...innovative2026MicroSaasServices,
+    ...emergingTech2026ServicesNew,
+    ...enterpriseIT2026ServicesNew
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);
@@ -80,14 +85,11 @@ export default function HomePage() {
   // Service statistics
   const serviceStats = {
     totalServices: allServices.length,
-    aiServices: nextGenerationAIServices.length + innovativeAIServices.length + realMarketServices.filter(s => s.category.includes('AI')).length + revolutionary2025Services.filter(s => s.category.includes('AI')).length + nextGenInnovations2025.filter(s => s.category.includes('AI')).length + revolutionaryAI2025Services.length + revolutionaryMicroSaas2025Services.filter(s => s.category.includes('AI')).length,
-    emergingTech: emergingTechnologyServices.length + emergingTech2025Services.length + newEmergingTech2025Services.length,
-    itSolutions: comprehensiveITSolutions.length + enterpriseITServices.length + revolutionaryITInfrastructure2025Services.length,
-    microSaas: enhancedRealMicroSaasServices.length + innovativeMicroSaasServices.length + innovative2025MicroSaasServices.length + revolutionaryMicroSaas2025Services.length,
-    revolutionaryServices: revolutionary2025Services.length + nextGenInnovations2025.length + revolutionaryAI2025Services.length + revolutionaryITInfrastructure2025Services.length + revolutionaryMicroSaas2025Services.length,
-    quantumServices: quantumSpaceServices.length + revolutionaryAI2025Services.filter(s => s.category.includes('Quantum')).length + revolutionaryITInfrastructure2025Services.filter(s => s.category.includes('Quantum')).length,
-    blockchainServices: revolutionaryAI2025Services.filter(s => s.category.includes('Blockchain')).length + revolutionaryITInfrastructure2025Services.filter(s => s.category.includes('Blockchain')).length,
-    spaceTech: revolutionaryAI2025Services.filter(s => s.category.includes('Space')).length + revolutionaryITInfrastructure2025Services.filter(s => s.category.includes('Space')).length
+    aiServices: nextGenerationAIServices.length + innovativeAIServices.length + realMarketServices.filter(s => s.category.includes('AI')).length + revolutionary2025Services.filter(s => s.category.includes('AI')).length + nextGenInnovations2025.filter(s => s.category.includes('AI')).length + innovative2026Services.filter(s => s.category.includes('AI')).length + emergingTech2026Services.filter(s => s.category.includes('AI')).length,
+    emergingTech: emergingTechnologyServices.length + emergingTech2025Services.length + emergingTech2026Services.length,
+    itSolutions: comprehensiveITSolutions.length + enterpriseITServices.length + enterpriseIT2026Services.length,
+    microSaas: enhancedRealMicroSaasServices.length + innovativeMicroSaasServices.length + innovative2026Services.filter(s => s.category.includes('SaaS')).length,
+    revolutionaryServices: revolutionary2025Services.length + nextGenInnovations2025.length + innovative2026Services.length + emergingTech2026Services.length
   };
 
   return (
@@ -114,168 +116,10 @@ export default function HomePage() {
         </Head>
 
         {/* Ultra Advanced Navigation */}
-        <UltraAdvancedNavigation />
+        <EnhancedNavigation2026 />
 
-        {/* Hero Section */}
-        <section className="relative z-10 pt-32 pb-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              {/* Futuristic Logo Animation */}
-              <motion.div
-                initial={{ scale: 0.8, rotate: -5 }}
-                animate={{ scale: 1, rotate: 0 }}
-                transition={{ duration: 1, delay: 0.2 }}
-                className="mb-8"
-              >
-                <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-cyan-500 via-purple-600 to-pink-500 rounded-3xl shadow-2xl mb-6 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse"></div>
-                  <Rocket className="w-12 h-12 text-white relative z-10" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-3xl opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-              </motion.div>
-
-              <motion.h1 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="text-6xl md:text-8xl font-black bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-6 relative"
-              >
-                <span className="relative">
-                  Zion Tech Group
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 blur-xl opacity-30 animate-pulse"></div>
-                </span>
-              </motion.h1>
-
-              <motion.p 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-2xl md:text-3xl text-gray-200 mb-8 max-w-5xl mx-auto font-medium"
-              >
-                Revolutionary <span className="text-cyan-400 font-bold">AI</span>, <span className="text-purple-400 font-bold">Quantum Computing</span> & <span className="text-pink-400 font-bold">IT Services</span>
-              </motion.p>
-
-              <motion.p 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-                className="text-lg md:text-xl text-gray-400 mb-8 max-w-4xl mx-auto leading-relaxed"
-              >
-                <span className="text-cyan-300 font-semibold">{serviceStats.totalServices}+</span> cutting-edge services delivering <span className="text-green-400 font-bold">1000% ROI</span>. From AI consciousness simulation to quantum space mining, we're building the future.
-              </motion.p>
-              
-              {/* Service Statistics Grid */}
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.55 }}
-                className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 max-w-4xl mx-auto"
-              >
-                <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20 hover:bg-white/20 transition-all duration-300">
-                  <div className="text-2xl font-bold text-cyan-400">{serviceStats.aiServices}+</div>
-                  <div className="text-sm text-gray-300">AI Services</div>
-                </div>
-                <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20 hover:bg-white/20 transition-all duration-300">
-                  <div className="text-2xl font-bold text-purple-400">{serviceStats.quantumServices}+</div>
-                  <div className="text-sm text-gray-300">Quantum Solutions</div>
-                </div>
-                <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20 hover:bg-white/20 transition-all duration-300">
-                  <div className="text-2xl font-bold text-green-400">{serviceStats.itSolutions}+</div>
-                  <div className="text-sm text-gray-300">IT Solutions</div>
-                </div>
-                <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20 hover:bg-white/20 transition-all duration-300">
-                  <div className="text-2xl font-bold text-pink-400">{serviceStats.emergingTech}+</div>
-                  <div className="text-sm text-gray-300">Emerging Tech</div>
-                </div>
-              </motion.div>
-              
-              {/* Enhanced CTA Buttons */}
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                className="flex flex-col sm:flex-row gap-6 justify-center mb-16"
-              >
-                <motion.div
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <Button 
-                    href="/services" 
-                    variant="primary"
-                    className="text-lg px-10 py-5 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 shadow-2xl hover:shadow-cyan-500/25"
-                  >
-                    <span className="flex items-center">
-                      <Rocket className="mr-3 w-6 h-6" />
-                      Explore {serviceStats.totalServices}+ Services
-                      <ArrowRight className="ml-3 w-5 h-5" />
-                    </span>
-                  </Button>
-                </motion.div>
-
-                <motion.div
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{ duration: 0.2, delay: 0.1 }}
-                >
-                  <Button 
-                    href="/market-pricing" 
-                    variant="secondary"
-                    className="text-lg px-10 py-5 bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 shadow-2xl hover:shadow-purple-500/25"
-                  >
-                    <span className="flex items-center">
-                      <TrendingUp className="mr-3 w-6 h-6" />
-                      See Market Pricing
-                    </span>
-                  </Button>
-                </motion.div>
-
-                <motion.div
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{ duration: 0.2, delay: 0.2 }}
-                >
-                  <Button 
-                    href="/contact" 
-                    variant="secondary"
-                    className="text-lg px-10 py-5 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 shadow-2xl hover:shadow-green-500/25"
-                  >
-                    <span className="flex items-center">
-                      <Phone className="mr-3 w-6 h-6" />
-                      Get Started Today
-                    </span>
-                  </Button>
-                </motion.div>
-              </motion.div>
-
-              {/* Floating Tech Icons */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 0.8 }}
-                className="flex justify-center space-x-8 mb-8"
-              >
-                {['🧠', '⚛️', '🔒', '☁️', '🌐', '🚀'].map((icon, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
-                    className="text-4xl md:text-5xl animate-bounce"
-                    style={{ animationDelay: `${index * 0.2}s` }}
-                  >
-                    {icon}
-                  </motion.div>
-                ))}
-              </motion.div>
-            </motion.div>
-          </div>
-        </section>
+        {/* Enhanced Hero Section 2026 */}
+        <EnhancedHero2026 />
 
         {/* Latest Innovations Showcase */}
         <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
@@ -799,10 +643,14 @@ export default function HomePage() {
 
         {/* Enhanced Service Showcase */}
         <EnhancedServiceShowcase 
-          title="Revolutionary AI & Technology Services"
-          subtitle="Discover the future of business with our cutting-edge solutions"
-          showFilters={true}
+          services={allServices}
+          title="Revolutionary AI, Quantum & IT Services"
+          subtitle="Discover 1000+ cutting-edge solutions that will transform your business with unprecedented ROI and innovation"
+          maxServices={24}
         />
+        
+        {/* 2026 Services Showcase */}
+        <Enhanced2026ServicesShowcase />
 
         {/* Featured Offers */}
         <section className="py-16 px-4 sm:px-6 lg:px-8">

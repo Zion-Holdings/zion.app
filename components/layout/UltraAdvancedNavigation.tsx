@@ -80,8 +80,7 @@ const serviceCategories = [
 
 const companyLinks = [
   { name: 'About Us', href: '/about' },
-  { name: 'Revolutionary 2025 Services', href: '/revolutionary-2025-services-showcase' },
-  { name: 'Revolutionary 2025 Pricing', href: '/revolutionary-2025-pricing' },
+  { name: '2026 Services', href: '/2026-services-showcase' },
   { name: 'News', href: '/news' },
   { name: 'Case Studies', href: '/case-studies' },
   { name: 'Blog', href: '/blog' },
