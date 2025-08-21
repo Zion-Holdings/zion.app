@@ -51,6 +51,8 @@ import { innovative2026AIServicesV3 } from '../data/innovative-2026-ai-services-
 import { emergingTech2026ServicesV3 } from '../data/emerging-tech-2026-services-v3';
 import { enterpriseIT2026ServicesV3 } from '../data/enterprise-it-2026-services-v3';
 import { ultimate2026Services } from '../data/ultimate-2026-services';
+import { innovative2026MicroSaasV4Services } from '../data/innovative-2026-micro-saas-v4';
+import { emergingTech2026ServicesV4 } from '../data/emerging-tech-2026-services-v4';
 
 export default function HomePage() {
   const contactInfo = {
@@ -98,6 +100,8 @@ export default function HomePage() {
     ...aiAutonomousServices2026,
     ...quantumSpaceTechServices2026,
     ...metaverseDigitalRealityServices2026,
+    ...innovative2026MicroSaasV4Services,
+    ...emergingTech2026ServicesV4,
     ...innovative2026AIServicesV3,
     ...emergingTech2026ServicesV3,
     ...enterpriseIT2026ServicesV3,
