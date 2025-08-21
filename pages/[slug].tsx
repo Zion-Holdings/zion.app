@@ -220,6 +220,27 @@ function getExistingRootPageSlugs(): Set<string> {
 export const getStaticPaths: GetStaticPaths = async () => {
   const services = collectAllServices();
   const candidateSlugs = new Set<string>();
+  // Collect root-level static page slugs to prevent collisions
+  function listRootStaticPageSlugs(): Set<string> {
+    const pagesDir = path.join(process.cwd(), 'pages');
+    const slugs = new Set<string>();
+    try {
+      const entries = fs.readdirSync(pagesDir, { withFileTypes: true });
+      for (const entry of entries) {
+        if (entry.isFile()) {
+          const ext = path.extname(entry.name).toLowerCase();
+          if (['.tsx', '.ts', '.js', '.jsx'].includes(ext)) {
+            const name = path.basename(entry.name, ext);
+            if (!name.startsWith('_') && name !== 'api' && name !== 'index' && name !== '[slug]') {
+              slugs.add(name);
+            }
+          }
+        }
+      }
+    } catch {}
+    return slugs;
+  }
+  const reservedStatic = listRootStaticPageSlugs();
 
   // Exclude any slugs that already have an explicit top-level page or folder under /pages
   const pagesDir = path.join(process.cwd(), 'pages');
@@ -248,11 +269,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
   for (const s of services) {
     const fromLink = extractRootSlugFromLink((s as any).link);
     if (fromLink) {
-      candidateSlugs.add(fromLink);
+      if (!reservedStatic.has(fromLink)) candidateSlugs.add(fromLink);
     } else if (s.id) {
-      candidateSlugs.add(normalizeSlug(s.id));
+      const slug = normalizeSlug(s.id);
+      if (!reservedStatic.has(slug)) candidateSlugs.add(slug);
     } else if (s.name) {
-      candidateSlugs.add(normalizeSlug(s.name));
+      const slug = normalizeSlug(s.name);
+      if (!reservedStatic.has(slug)) candidateSlugs.add(slug);
     }
   }
 

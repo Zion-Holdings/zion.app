@@ -24,6 +24,7 @@ import { realMarketServices } from '../data/real-market-services';
 import { serviceExpansions2025 } from '../data/service-expansions-2025';
 import { realOperationalServices } from '../data/real-operational-services';
 import { newOperationalServices2025 } from '../data/new-operational-services-2025';
+import { newRealMarketAdditions } from '../data/new-real-market-additions';
 
 export default function HomePage() {
   const contactInfo = {
@@ -48,7 +49,8 @@ export default function HomePage() {
     ...realMarketServices,
     ...serviceExpansions2025,
     ...realOperationalServices,
-    ...newOperationalServices2025
+    ...newOperationalServices2025,
+    ...newRealMarketAdditions
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);

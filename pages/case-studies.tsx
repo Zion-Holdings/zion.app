@@ -1,3 +1,5 @@
+// Simplified duplicate removed; keeping the advanced CaseStudiesPage below
+
 import React from 'react';
 import Head from 'next/head';
 import Card from '../components/ui/Card';
