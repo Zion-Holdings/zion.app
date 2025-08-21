@@ -16,31 +16,36 @@ export default function MicroSaasPage() {
   const router = useRouter();
 
   useEffect(() => {
-    const queryCategory = typeof router.query.category === 'string' ? router.query.category : undefined;
-    if (queryCategory) {
-      setSelectedCategory(queryCategory);
+    const categoryFromQuery = (router.query.category as string) || (router.query.cat as string);
+    if (categoryFromQuery) {
+      try {
+        const decoded = decodeURIComponent(categoryFromQuery);
+        setSelectedCategory(decoded);
+      } catch {
+        setSelectedCategory(categoryFromQuery);
+      }
     }
-  }, [router.query.category]);
+  }, [router.query.category, router.query.cat]);
   
   const competitiveAdvantages = [
     {
-      icon: '⚡',
-      title: 'Lightning Fast Setup',
-      description: 'Get started in minutes, not weeks. Our services are designed for immediate value delivery with minimal configuration.',
+      icon: '🚀',
+      title: 'First-to-Market Innovation',
+      description: 'Be the first in your industry to adopt revolutionary AI, quantum, and neural technologies that don\'t exist elsewhere.',
       color: 'from-yellow-500 to-orange-600',
       bgColor: 'from-yellow-500/10 to-orange-500/10'
     },
     {
       icon: '💰',
-      title: 'Transparent Pricing',
-      description: 'No hidden fees, no enterprise sales calls. Simple monthly pricing that scales with your business needs.',
+      title: 'Unprecedented ROI',
+      description: 'Achieve 500%+ return on investment within months through cutting-edge automation and optimization.',
       color: 'from-green-500 to-emerald-600',
       bgColor: 'from-green-500/10 to-emerald-500/10'
     },
     {
       icon: '🔒',
-      title: 'Enterprise Security',
-      description: 'Bank-level security, SOC 2 compliance, and 99.9% uptime guarantee for all services.',
+      title: 'Quantum-Safe Security',
+      description: 'Bank-level security with quantum-resistant encryption, SOC 2 compliance, and 99.99% uptime guarantee.',
       color: 'from-blue-500 to-indigo-600',
       bgColor: 'from-blue-500/10 to-blue-500/10'
     },
@@ -53,15 +58,15 @@ export default function MicroSaasPage() {
     },
     {
       icon: '🌐',
-      title: 'Unified Platform',
-      description: 'Access all services through ziontechgroup.com with single sign-on and integrated billing.',
+      title: 'Unified AI Platform',
+      description: 'Access all revolutionary services through ziontechgroup.com with integrated AI and quantum capabilities.',
       color: 'from-teal-500 to-cyan-600',
       bgColor: 'from-teal-500/10 to-cyan-500/10'
     },
     {
-      icon: '🎯',
-      title: 'Focused Solutions',
-      description: 'Specialized tools that do one thing exceptionally well, without enterprise complexity.',
+      icon: '🧠',
+      title: 'Neural & Quantum AI',
+      description: 'Specialized AI services that combine neural networks, quantum algorithms, and autonomous systems.',
       color: 'from-rose-500 to-pink-600',
       bgColor: 'from-rose-500/10 to-rose-500/10'
     }
