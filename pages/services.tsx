@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Search, Filter, Star, CheckCircle, ArrowRight, 
   Brain, Atom, Shield, Rocket, Target, Microscope,
@@ -10,6 +10,9 @@ import {
 
 // Import new 2034 service data
 import { ultimateFuturisticServices2034 } from '../data/2034-ultimate-futuristic-services';
+// Import new 2034 services from remote
+import { cuttingEdge2034Services } from '../data/2034-cutting-edge-innovations';
+import { emergingTech2034Services } from '../data/2034-emerging-tech-breakthroughs';
 
 const contactInfo = {
   mobile: '+1 302 464 0950',

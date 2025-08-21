@@ -9,7 +9,9 @@ import UltraFuturisticFooter2034 from '../components/layout/UltraFuturisticFoote
 import UltraFuturisticServiceShowcase2034 from '../components/sections/UltraFuturisticServiceShowcase2034';
 import { motion } from 'framer-motion';
 import { ultimateFuturisticServices2034 } from '../data/2034-ultimate-futuristic-services';
-
+// Import new 2034 services from remote
+import { cuttingEdge2034Services } from '../data/2034-cutting-edge-innovations';
+import { emergingTech2034Services } from '../data/2034-emerging-tech-breakthroughs';
 
 export default function HomePage() {
   const contactInfo = {
