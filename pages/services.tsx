@@ -3,8 +3,8 @@ import Head from 'next/head';
 import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Code, BookOpen, Activity, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Filter, Grid, List, ChevronDown, ChevronUp, Sparkles } from 'lucide-react';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
-import EnhancedFuturisticBackground from '../components/ui/EnhancedFuturisticBackground';
-import { expandedMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices, getServicesByPriceRange } from '../data/expanded-micro-saas-services';
+import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
+import { enhancedMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices, getServicesByPriceRange } from '../data/enhanced-micro-saas-services';
 
 export default function ServicesPage() {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -30,7 +30,7 @@ export default function ServicesPage() {
   ];
 
   // Filter and sort services
-  let filteredServices = expandedMicroSaasServices;
+  let filteredServices = enhancedMicroSaasServices;
 
   // Category filter
   if (selectedCategory !== 'All') {
@@ -77,7 +77,7 @@ export default function ServicesPage() {
   const popularServices = getPopularServices();
 
   return (
-    <EnhancedFuturisticBackground variant="neural" intensity="medium">
+    <UltraFuturisticBackground variant="neural" intensity="high">
       <div className="min-h-screen">
         <Head>
           <title>Complete Services Portfolio | Zion Tech Group - AI, Cloud, Security & More</title>
@@ -368,7 +368,7 @@ export default function ServicesPage() {
             {/* Results Count */}
             <div className="text-center mb-8">
               <p className="text-gray-300">
-                Showing <span className="text-cyan-400 font-semibold">{filteredServices.length}</span> of {expandedMicroSaasServices.length} services
+                Showing <span className="text-cyan-400 font-semibold">{filteredServices.length}</span> of {enhancedMicroSaasServices.length} services
               </p>
             </div>
 
@@ -558,6 +558,6 @@ export default function ServicesPage() {
           </div>
         </section>
       </div>
-    </EnhancedFuturisticBackground>
+    </UltraFuturisticBackground>
   );
 }
