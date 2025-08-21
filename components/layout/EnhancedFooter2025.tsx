@@ -2,19 +2,10 @@ import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
-  Rocket, Brain, Atom, Globe, Zap, Sparkles, Shield, 
-  Microscope, DollarSign, Home, Users, Briefcase, 
-  BookOpen, MessageCircle, Star, TrendingUp, Target,
-  Phone, Mail, MapPin, ExternalLink, ArrowRight,
-  Heart, Infinity, CircuitBoard, Satellite, Dna,
-  Microchip, Telescope, Beaker, TestTube,
-  Syringe, Pill, Stethoscope, HeartPulse, Activity,
-  Lightbulb, Flame, Battery, Power,
-  Wifi, Bluetooth, Radio, Antenna, Signal,
-  Compass, Navigation, Map, Globe2,
-  Github, Twitter, Linkedin, Facebook, Instagram,
-  Youtube,
-  Building
+  Phone, Mail, MapPin, Star, ArrowRight,
+  Brain, Atom, Shield, Rocket, Target, Microscope,
+  Zap, Globe, Database, Lock, Cloud, BarChart3,
+  Twitter, Linkedin, Github, Youtube, Instagram
 } from 'lucide-react';
 
 const contactInfo = {
@@ -28,68 +19,74 @@ const serviceCategories = [
   {
     title: 'AI & Consciousness',
     icon: Brain,
-    color: 'from-violet-500 to-purple-600',
     services: [
-      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-platform' },
-      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-platform' },
-      { name: 'AI Creativity Orchestrator', href: '/ai-creativity-orchestrator' },
-      { name: 'AI Autonomous Business Manager', href: '/ai-autonomous-business-manager' }
+      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029' },
+      { name: 'Quantum AI Fusion', href: '/quantum-ai-fusion' },
+      { name: 'Multimodal AI Orchestrator', href: '/multimodal-ai-orchestrator' },
+      { name: 'AI Autonomous Ecosystem', href: '/ai-autonomous-ecosystem' },
+      { name: 'AI Ethics & Governance', href: '/ai-ethics-governance' }
     ]
   },
   {
     title: 'Quantum & Emerging Tech',
     icon: Atom,
-    color: 'from-indigo-500 to-blue-600',
     services: [
-      { name: 'Quantum Internet Security', href: '/quantum-internet-security-gateway' },
-      { name: 'Biotech DNA Computing', href: '/biotech-dna-computing-platform' },
-      { name: 'Quantum Financial Trading', href: '/quantum-financial-trading-platform' },
-      { name: 'Neuromorphic Computing', href: '/neuromorphic-computing-platform' }
+      { name: 'Space Mining Platform', href: '/space-mining-platform' },
+      { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing' },
+      { name: 'Brain-Computer Interface', href: '/brain-computer-interface' },
+      { name: 'Quantum Energy Platform', href: '/quantum-energy-platform' },
+      { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai' }
     ]
   },
   {
-    title: 'Enterprise IT Solutions',
-    icon: CircuitBoard,
-    color: 'from-blue-500 to-cyan-600',
+    title: 'Enterprise IT',
+    icon: Shield,
     services: [
-      { name: 'Autonomous DevOps Platform', href: '/autonomous-devops-platform' },
-      { name: 'Zero Trust Network Architecture', href: '/zero-trust-network-architecture' },
-      { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration' },
-      { name: 'AI-Powered IT Operations Center', href: '/ai-it-operations-center' }
+      { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure' },
+      { name: 'Edge Computing Orchestrator', href: '/edge-computing-orchestrator' },
+      { name: 'Zero Trust Security Platform', href: '/zero-trust-security-platform' },
+      { name: 'Blockchain Enterprise Platform', href: '/blockchain-enterprise-platform' },
+      { name: 'AI-Powered DevOps', href: '/ai-powered-devops' }
     ]
   },
   {
-    title: 'Space & Metaverse',
-    icon: Rocket,
-    color: 'from-teal-500 to-emerald-600',
+    title: 'Micro SAAS',
+    icon: Target,
     services: [
-      { name: 'Space Mining Automation', href: '/space-mining-automation-platform' },
-      { name: 'Metaverse Development Platform', href: '/metaverse-development-platform' },
-      { name: 'AI Predictive Health Analytics', href: '/ai-predictive-health-analytics' },
-      { name: 'Quantum-Secure Communication', href: '/quantum-secure-communication-platform' }
+      { name: 'AI Content Factory Pro', href: '/ai-content-factory' },
+      { name: 'Quantum CRM Suite', href: '/quantum-crm' },
+      { name: 'CyberShield Pro', href: '/cyber-shield-pro' },
+      { name: 'DataVault Hub', href: '/data-vault-hub' },
+      { name: 'DevOps Automation Studio', href: '/devops-automation-studio' }
     ]
   }
 ];
 
-const quickLinks = [
-  { name: 'Services', href: '/services' },
-  { name: 'Solutions', href: '/solutions' },
-  { name: 'Pricing', href: '/pricing' },
-  { name: 'Resources', href: '/resources' },
+const companyLinks = [
+  { name: 'About Us', href: '/about' },
+  { name: 'Careers', href: '/careers' },
   { name: 'News', href: '/news' },
-  { name: 'Support', href: '/support' },
-  { name: 'Contact', href: '/contact' },
-  { name: 'About', href: '/about' }
+  { name: 'Case Studies', href: '/case-studies' },
+  { name: 'Blog', href: '/blog' },
+  { name: 'Resources', href: '/resources' }
+];
+
+const legalLinks = [
+  { name: 'Privacy Policy', href: '/privacy' },
+  { name: 'Terms of Service', href: '/terms' },
+  { name: 'Cookie Policy', href: '/cookies' },
+  { name: 'GDPR Compliance', href: '/gdpr' }
 ];
 
 const socialLinks = [
-  { name: 'LinkedIn', href: 'https://www.linkedin.com/company/zion-tech-group', icon: Linkedin, color: 'hover:text-blue-600' },
-  { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: Github, color: 'hover:text-gray-400' },
-  { name: 'Instagram', href: 'https://www.instagram.com/ziontechgroup', icon: Instagram, color: 'hover:text-pink-400' },
-  { name: 'YouTube', href: 'https://www.youtube.com/@ziontechgroup', icon: Youtube, color: 'hover:text-red-400' }
+  { name: 'Twitter', href: '#', icon: Twitter, color: 'hover:text-blue-400' },
+  { name: 'LinkedIn', href: '#', icon: Linkedin, color: 'hover:text-blue-600' },
+  { name: 'GitHub', href: '#', icon: Github, color: 'hover:text-gray-400' },
+  { name: 'YouTube', href: '#', icon: Youtube, color: 'hover:text-red-400' },
+  { name: 'Instagram', href: '#', icon: Instagram, color: 'hover:text-pink-400' }
 ];
 
-const UltraFuturisticFooter2033: React.FC = () => {
+const EnhancedFooter2025: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -151,7 +148,7 @@ const UltraFuturisticFooter2033: React.FC = () => {
                 className="space-y-4"
               >
                 <div className="flex items-center space-x-3">
-                  <div className={`w-8 h-8 bg-gradient-to-r ${category.color} rounded-lg flex items-center justify-center`}>
+                  <div className="w-8 h-8 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-lg flex items-center justify-center">
                     <category.icon className="w-4 h-4 text-white" />
                   </div>
                   <h3 className="text-lg font-semibold text-white">{category.title}</h3>
@@ -174,11 +171,11 @@ const UltraFuturisticFooter2033: React.FC = () => {
 
           {/* Additional Links */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 pt-8 border-t border-gray-800/50">
-            {/* Quick Links */}
+            {/* Company Links */}
             <div>
-              <h4 className="text-white font-semibold mb-4">Quick Links</h4>
+              <h4 className="text-white font-semibold mb-4">Company</h4>
               <div className="space-y-2">
-                {quickLinks.map((link) => (
+                {companyLinks.map((link) => (
                   <Link
                     key={link.name}
                     href={link.href}
@@ -194,18 +191,15 @@ const UltraFuturisticFooter2033: React.FC = () => {
             <div>
               <h4 className="text-white font-semibold mb-4">Legal</h4>
               <div className="space-y-2">
-                <Link href="/privacy" className="block text-gray-400 hover:text-white transition-colors duration-200 text-sm">
-                  Privacy Policy
-                </Link>
-                <Link href="/terms" className="block text-gray-400 hover:text-white transition-colors duration-200 text-sm">
-                  Terms of Service
-                </Link>
-                <Link href="/cookies" className="block text-gray-400 hover:text-white transition-colors duration-200 text-sm">
-                  Cookie Policy
-                </Link>
-                <Link href="/gdpr" className="block text-gray-400 hover:text-white transition-colors duration-200 text-sm">
-                  GDPR Compliance
-                </Link>
+                {legalLinks.map((link) => (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className="block text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                  >
+                    {link.name}
+                  </Link>
+                ))}
               </div>
             </div>
 
@@ -297,4 +291,4 @@ const UltraFuturisticFooter2033: React.FC = () => {
   );
 };
 
-export default UltraFuturisticFooter2033;
+export default EnhancedFooter2025;

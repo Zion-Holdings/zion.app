@@ -16,30 +16,43 @@ const contactInfo = {
 
 const serviceCategories = [
   {
-    title: 'Next-Generation AI',
+    title: 'AI & Consciousness',
     services: [
-      { name: 'AI Multimodal Fusion', href: '/ai-multimodal-fusion-platform' },
-      { name: 'AI Autonomous Decision Engine', href: '/ai-autonomous-decision-engine' },
-      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-platform' },
-      { name: 'AI Quantum Hybrid Computing', href: '/ai-quantum-hybrid-computing' }
+      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029' },
+      { name: 'Quantum AI Fusion', href: '/quantum-ai-fusion' },
+      { name: 'Multimodal AI Orchestrator', href: '/multimodal-ai-orchestrator' },
+      { name: 'AI Autonomous Ecosystem', href: '/ai-autonomous-ecosystem' },
+      { name: 'AI Ethics & Governance', href: '/ai-ethics-governance' }
     ]
   },
   {
-    title: 'Cutting-Edge IT',
+    title: 'Quantum & Emerging Tech',
     services: [
-      { name: 'Zero Trust Architecture', href: '/zero-trust-network-architecture' },
-      { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration' },
-      { name: '5G Private Networks', href: '/5g-private-network-solutions' },
-      { name: 'Blockchain Infrastructure', href: '/blockchain-infrastructure-platform' }
+      { name: 'Space Mining Platform', href: '/space-mining-platform' },
+      { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing' },
+      { name: 'Brain-Computer Interface', href: '/brain-computer-interface' },
+      { name: 'Quantum Energy Platform', href: '/quantum-energy-platform' },
+      { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai' }
     ]
   },
   {
-    title: 'Innovative SaaS',
+    title: 'Enterprise IT',
     services: [
-      { name: 'AI Brand Personality', href: '/ai-brand-personality-generator' },
-      { name: 'Virtual Event Holograms', href: '/virtual-event-hologram-platform' },
-      { name: 'AI Meeting Transcriber', href: '/ai-meeting-transcriber-pro' },
-      { name: 'AI Mental Health Companion', href: '/ai-mental-health-companion' }
+      { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure' },
+      { name: 'Edge Computing Orchestrator', href: '/edge-computing-orchestrator' },
+      { name: 'Zero Trust Security Platform', href: '/zero-trust-security-platform' },
+      { name: 'Blockchain Enterprise Platform', href: '/blockchain-enterprise-platform' },
+      { name: 'AI-Powered DevOps', href: '/ai-powered-devops' }
+    ]
+  },
+  {
+    title: 'Micro SAAS',
+    services: [
+      { name: 'AI Content Factory Pro', href: '/ai-content-factory' },
+      { name: 'Quantum CRM Suite', href: '/quantum-crm' },
+      { name: 'CyberShield Pro', href: '/cyber-shield-pro' },
+      { name: 'DataVault Hub', href: '/data-vault-hub' },
+      { name: 'DevOps Automation Studio', href: '/devops-automation-studio' }
     ]
   }
 ];
@@ -80,7 +93,7 @@ export default function EnhancedFooter() {
     <footer className="bg-gray-900/95 backdrop-blur-md border-t border-gray-700/50">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Company Info */}
           <div className="lg:col-span-1">
             <motion.div
@@ -102,8 +115,8 @@ export default function EnhancedFooter() {
               </div>
               
               <p className="text-gray-300 mb-6 leading-relaxed">
-                Leading provider of 1000+ revolutionary AI, quantum computing, and IT services. 
-                Delivering 1000% ROI through cutting-edge solutions that transform businesses.
+                Leading provider of revolutionary AI, quantum computing, emerging technologies, and micro SAAS solutions. 
+                Delivering cutting-edge solutions that transform businesses worldwide with our comprehensive service portfolio.
               </p>
               
               <div className="space-y-3">
@@ -208,7 +221,7 @@ export default function EnhancedFooter() {
               <h4 className="text-lg font-semibold text-white mb-4">Our Impact</h4>
               <div className="grid grid-cols-2 gap-4">
                 <div className="text-center p-4 bg-gray-800/50 rounded-lg border border-gray-700/50">
-                  <div className="text-2xl font-bold text-cyan-400">800+</div>
+                  <div className="text-2xl font-bold text-cyan-400">40+</div>
                   <div className="text-xs text-gray-400">Services</div>
                 </div>
                 <div className="text-center p-4 bg-gray-800/50 rounded-lg border border-gray-700/50">
@@ -261,10 +274,10 @@ export default function EnhancedFooter() {
         >
           <div className="text-center">
             <h3 className="text-2xl font-bold text-white mb-4">
-              Stay Updated with Latest Innovations
+              Stay Ahead of the Future
             </h3>
             <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
-              Get exclusive insights into the latest AI, quantum computing, and IT innovations. 
+              Get exclusive insights into the latest AI, quantum computing, emerging technologies, and micro SAAS innovations. 
               Be the first to know about new services and breakthrough technologies.
             </p>
             

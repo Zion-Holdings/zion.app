@@ -6,8 +6,7 @@ import {
   ArrowRight, Send, CheckCircle, Star, Users, Award,
   Shield, Zap, Sparkles, Rocket, Brain, Atom
 } from 'lucide-react';
-import UltraFuturisticNavigation2033 from '../components/layout/UltraFuturisticNavigation2033';
-import UltraFuturisticFooter2033 from '../components/layout/UltraFuturisticFooter2033';
+import Layout from '../components/layout/Layout';
 
 const contactInfo = {
   mobile: '+1 302 464 0950',
@@ -82,7 +81,7 @@ const supportFeatures = [
 
 export default function ContactPage() {
   return (
-    <>
+    <Layout>
       <Head>
         <title>Contact Us - Zion Tech Group | Revolutionary Technology Solutions</title>
         <meta name="description" content="Contact Zion Tech Group for cutting-edge AI consciousness, quantum computing, space technology, and innovative micro SAAS solutions. Call +1 302 464 0950 or email kleber@ziontechgroup.com" />
@@ -95,8 +94,6 @@ export default function ContactPage() {
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://ziontechgroup.com/contact" />
       </Head>
-
-      <UltraFuturisticNavigation2033 />
 
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-black via-slate-900 to-black">
@@ -377,7 +374,6 @@ export default function ContactPage() {
         </div>
       </main>
 
-      <UltraFuturisticFooter2033 />
-    </>
+    </Layout>
   );
 }
