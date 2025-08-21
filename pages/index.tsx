@@ -3,8 +3,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shield, Mail, MapPin, Rocket, Brain, Sparkles, Atom, Dna } from 'lucide-react';
 import Button from '../components/ui/Button';
-import UltraFuturisticBackground2032 from '../components/ui/UltraFuturisticBackground2032';
-import UltraFuturisticNavigation2033 from '../components/layout/UltraFuturisticNavigation2033';
+import UltraFuturisticBackground2034 from '../components/ui/UltraFuturisticBackground2034';
+import UltraFuturisticNavigation2034 from '../components/layout/UltraFuturisticNavigation2034';
 import UltraFuturisticFooter2033 from '../components/layout/UltraFuturisticFooter2033';
 import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
 import Enhanced2026ServicesShowcase from '../components/sections/Enhanced2026ServicesShowcase';
@@ -16,6 +16,7 @@ import UltraFuturisticHero2032 from '../components/sections/UltraFuturisticHero2
 import UltraFuturisticHero2033 from '../components/sections/UltraFuturisticHero2033';
 import UltraFuturisticServiceShowcase2032 from '../components/sections/UltraFuturisticServiceShowcase2032';
 import UltraFuturisticServiceShowcase2033 from '../components/sections/UltraFuturisticServiceShowcase2033';
+import UltraFuturisticServiceShowcase2034 from '../components/sections/UltraFuturisticServiceShowcase2034';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
@@ -93,6 +94,8 @@ import { spaceMetaverseServices2031 } from '../data/2031-space-metaverse-service
 import { futuristicInnovations2032 } from '../data/2032-futuristic-innovations';
 import { enterpriseInnovations2032 } from '../data/2032-enterprise-innovations';
 import { healthcareInnovations2032 } from '../data/2032-healthcare-innovations';
+import { innovativeMicroSaasServicesV2 } from '../data/2025-innovative-micro-saas-v2';
+import { emergingTechBreakthroughServices } from '../data/2025-emerging-tech-breakthroughs';
 
 // Type adapter function to convert different service types to the expected Service interface
 function adaptServiceToEnhancedShowcase(service: any) {
@@ -234,7 +237,10 @@ export default function HomePage() {
     // Add new 2032 services
     ...futuristicInnovations2032,
     ...enterpriseInnovations2032,
-    ...healthcareInnovations2032
+    ...healthcareInnovations2032,
+    // Add new 2025 innovative services
+    ...innovativeMicroSaasServicesV2,
+    ...emergingTechBreakthroughServices
   ];
 
   // Adapt services to the expected interface
@@ -260,7 +266,7 @@ export default function HomePage() {
       </Head>
 
       {/* Navigation */}
-      <UltraFuturisticNavigation2033 />
+      <UltraFuturisticNavigation2034 />
 
       {/* Hero Section */}
       <UltraFuturisticHero2032 />
@@ -273,6 +279,9 @@ export default function HomePage() {
       
       {/* 2033 Revolutionary Services */}
       <UltraFuturisticServiceShowcase2033 />
+
+      {/* 2034 Ultra Futuristic Service Showcase */}
+      <UltraFuturisticServiceShowcase2034 />
 
       {/* Enhanced Service Showcase */}
       <EnhancedServiceShowcase services={adaptedServices} />
