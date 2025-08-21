@@ -247,7 +247,7 @@ export default function MicroSaasPage() {
   ];
 
   return (
-    <UltraAdvancedFuturisticBackground variant="holographic">
+    <UltraAdvancedFuturisticBackground theme="holographic">
       <Head>
         <title>Micro SaaS Services - Zion Tech Group | Revolutionary AI & Quantum Solutions</title>
         <meta name="description" content="Explore 150+ revolutionary micro SaaS services powered by quantum computing, AI, autonomous systems, and cutting-edge technology. Transform your business today." />
