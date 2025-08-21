@@ -19,6 +19,10 @@ import { innovativeMicroSaasServices } from '../data/innovative-micro-saas-servi
 import { emergingTechServices } from '../data/emerging-tech-services';
 import { nextGenAIServices } from '../data/next-gen-ai-services';
 import { comprehensiveITServices } from '../data/comprehensive-it-services';
+import { newInnovativeServices } from '../data/innovative-micro-saas-services';
+import { enhancedEnterpriseITServices } from '../data/enhanced-enterprise-it-services';
+import { advancedAISolutions } from '../data/advanced-ai-solutions';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 
 export default function HomePage() {
   const heroStats = [
@@ -44,7 +48,7 @@ export default function HomePage() {
       description: 'World\'s first direct neural interface with quantum AI for cognitive enhancement. Achieve breakthrough discoveries with 1000% ROI within 6 months.',
       price: 'Starting at $25,999/month',
       features: ['Direct neural signal processing', 'Quantum AI cognitive enhancement', 'Real-time memory augmentation', 'Neural pattern recognition', 'Secure quantum encryption', 'Multi-modal interface support', 'Advanced analytics dashboard', 'API for research integration', 'Compliance with medical standards', '24/7 quantum AI support'],
-      link: 'https://ziontechgroup.com/neural-quantum-brain-interface',
+      link: 'https://ziontechgroup.com/quantum-ai-brain-computer-interface',
       color: 'from-purple-600 to-indigo-700',
       marketData: '$2B BCI market, 500% annual growth',
       competitors: 'Neuralink ($10,000+/month), Kernel ($50,000+/month)',
@@ -104,15 +108,15 @@ export default function HomePage() {
       }
     },
     {
-      title: '🛡️ Cybersecurity Operations Center (SOC)',
-      description: '24/7 cybersecurity monitoring with AI-powered threat detection. Comprehensive SOC services with AI threat detection.',
-      price: 'Starting at $18,999/month',
-      features: ['24/7 threat monitoring', 'AI-powered threat detection', 'Incident response automation', 'Security analytics dashboard', 'Threat intelligence', 'Vulnerability management', 'Security compliance', 'Security awareness training', 'Penetration testing', 'Security consulting'],
-      link: 'https://ziontechgroup.com/cybersecurity-operations-center',
-      color: 'from-red-600 to-pink-700',
-      marketData: '$200B cybersecurity market, 15% annual growth',
-      competitors: 'CrowdStrike Falcon Complete ($8.99/user/month), Palo Alto Networks Cortex ($50K+)',
-      savings: 'Comprehensive SOC services vs. basic endpoint protection',
+      title: '🚗 AI-Powered Autonomous Vehicles Platform',
+      description: 'Complete autonomous vehicle AI platform with advanced computer vision, sensor fusion, and safety systems. Achieve Level 4 autonomy.',
+      price: 'Starting at $55,999/month',
+      features: ['Advanced computer vision', 'Sensor fusion algorithms', 'Safety systems integration', 'Real-time decision making', 'Path planning optimization', 'Traffic prediction', 'Weather adaptation', 'Fleet management', 'Performance analytics', '24/7 AI monitoring'],
+      link: 'https://ziontechgroup.com/ai-powered-autonomous-vehicles',
+      color: 'from-blue-600 to-indigo-700',
+      marketData: '$100B autonomous vehicle market, 30% annual growth',
+      competitors: 'Waymo ($100M+ setup), Tesla ($50M+ setup), Cruise ($75M+ setup)',
+      savings: 'Save 90%+ vs. building from scratch with complete AI platform',
       contactInfo: {
         mobile: '+1 302 464 0950',
         email: 'kleber@ziontechgroup.com',
@@ -120,47 +124,15 @@ export default function HomePage() {
       }
     },
     {
-      title: '🏭 Quantum AI Content Factory',
-      description: 'Massive-scale content generation with quantum AI creativity. Generate content 1000x faster than traditional methods.',
-      price: 'Starting at $4,999/month',
-      features: ['Quantum AI content generation', 'Multi-media content creation', 'Real-time content optimization', 'Brand voice consistency', 'SEO optimization', 'Content personalization', 'Multi-language support', 'Performance analytics', 'API for integrations', '24/7 content generation'],
-      link: 'https://ziontechgroup.com/quantum-ai-content-factory',
-      color: 'from-blue-600 to-cyan-700',
-      marketData: '$5B AI content market, 300% annual growth',
-      competitors: 'Jasper ($39-99), Copy.ai ($36-186), Writesonic ($12.67-100)',
-      savings: '1000x faster content generation with quantum AI creativity',
-      contactInfo: {
-        mobile: '+1 302 464 0950',
-        email: 'kleber@ziontechgroup.com',
-        address: '364 E Main St STE 1008 Middletown DE 19709'
-      }
-    },
-    {
-      title: '🤖 AI Autonomous Robotics Platform',
-      description: 'Next-generation autonomous robotics for industrial automation. Achieve 600% ROI through increased productivity and reduced labor costs.',
-      price: 'Starting at $1,299/month',
-      features: ['Autonomous robot navigation', 'AI-powered decision making', 'Computer vision integration', 'Adaptive learning algorithms', 'Multi-robot coordination', 'Safety monitoring system', 'Performance analytics', 'Remote operation interface', 'API for robot control', 'Compliance with safety standards'],
-      link: 'https://ziontechgroup.com/ai-autonomous-robotics',
+      title: '🧬 AI-Powered Biotech Drug Discovery',
+      description: 'AI-powered biotech drug discovery platform with molecular modeling, protein folding, and clinical trial optimization. Achieve 10x faster drug development.',
+      price: 'Starting at $85,999/month',
+      features: ['AI molecular modeling', 'Protein folding prediction', 'Drug target identification', 'Clinical trial optimization', 'Toxicity prediction', 'Drug repurposing', 'Biomarker discovery', 'Real-time analytics', 'Research collaboration tools', '24/7 AI research support'],
+      link: 'https://ziontechgroup.com/ai-powered-biotech-drug-discovery',
       color: 'from-green-600 to-emerald-700',
-      marketData: '$12.5B autonomous robotics market, 320% annual growth',
-      competitors: 'Boston Dynamics ($100K+), ABB ($50K+)',
-      savings: 'Accessible pricing and comprehensive platform',
-      contactInfo: {
-        mobile: '+1 302 464 0950',
-        email: 'kleber@ziontechgroup.com',
-        address: '364 E Main St STE 1008 Middletown DE 19709'
-      }
-    },
-    {
-      title: '🛡️ AI Cybersecurity Threat Hunting',
-      description: 'Proactive threat detection and response with AI-powered security intelligence. Save $2M annually through improved threat detection.',
-      price: 'Starting at $399/month',
-      features: ['AI-powered threat hunting', 'Real-time anomaly detection', 'Behavioral analysis', 'Threat intelligence feeds', 'Automated incident response', 'Security analytics dashboard', 'Compliance reporting', 'API for SIEM integration', 'Multi-cloud security', 'Zero-day threat detection'],
-      link: 'https://ziontechgroup.com/ai-cybersecurity-threat-hunting',
-      color: 'from-red-600 to-orange-700',
-      marketData: '$15.8B AI cybersecurity market, 250% annual growth',
-      competitors: 'Darktrace ($50K+), CrowdStrike ($100K+)',
-      savings: 'Accessible pricing and comprehensive security',
+      marketData: '$50B AI drug discovery market, 40% annual growth',
+      competitors: 'Insilico Medicine ($500K+ setup), Atomwise ($300K+ setup), BenevolentAI ($1M+ setup)',
+      savings: 'Save 80% vs. competitors with subscription model and advanced AI',
       contactInfo: {
         mobile: '+1 302 464 0950',
         email: 'kleber@ziontechgroup.com',
@@ -177,7 +149,10 @@ export default function HomePage() {
     ...additionalEnhancedServices,
     ...emergingTechServices,
     ...nextGenAIServices,
-    ...comprehensiveITServices
+    ...comprehensiveITServices,
+    ...newInnovativeServices,
+    ...enhancedEnterpriseITServices,
+    ...advancedAISolutions
   ];
 
   // Get featured services (most popular and innovative)
@@ -187,165 +162,189 @@ export default function HomePage() {
     .slice(0, 12);
 
   return (
-    <EnhancedQuantumBackground intensity={1.2} variant="quantum">
+    <UltraAdvancedFuturisticBackground variant="quantum-holographic-advanced">
       <Head>
-        <title>Zion Tech Group - Revolutionary AI, Quantum & IT Services | 500+ Solutions</title>
-        <meta name="description" content="Zion Tech Group offers 500+ revolutionary AI, quantum computing, and IT services. Achieve 1000% ROI with our cutting-edge solutions. Contact: +1 302 464 0950" />
-        <meta name="keywords" content="AI services, quantum computing, IT services, micro SaaS, cybersecurity, cloud migration, neural interface, quantum internet" />
+        <title>Zion Tech Group - Revolutionary AI, Quantum Computing & IT Solutions</title>
+        <meta name="description" content="Zion Tech Group offers cutting-edge AI services, quantum computing solutions, and comprehensive IT services. Transform your business with our innovative technology solutions." />
+        <meta name="keywords" content="AI services, quantum computing, IT solutions, cybersecurity, cloud migration, autonomous vehicles, biotech AI, metaverse creation" />
         <meta name="author" content="Zion Tech Group" />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Zion Tech Group - Revolutionary AI, Quantum & IT Services" />
-        <meta property="og:description" content="500+ cutting-edge services with 1000% ROI guarantee. Contact: +1 302 464 0950" />
-        <meta property="og:url" content="https://ziontechgroup.com" />
+        <meta property="og:title" content="Zion Tech Group - Revolutionary AI & Quantum Computing Solutions" />
+        <meta property="og:description" content="Transform your business with cutting-edge AI, quantum computing, and IT solutions. 500+ revolutionary services with 99.99% uptime guarantee." />
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ziontechgroup.com" />
+        <meta property="og:image" content="https://ziontechgroup.com/og-image.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Zion Tech Group - Revolutionary AI & Quantum Computing Solutions" />
+        <meta name="twitter:description" content="Transform your business with cutting-edge AI, quantum computing, and IT solutions." />
+        <meta name="twitter:image" content="https://ziontechgroup.com/og-image.jpg" />
         <link rel="canonical" href="https://ziontechgroup.com" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       {/* Hero Section */}
-      <section className="relative z-10 pt-20 pb-16 px-4 sm:px-6 lg:px-8">
+      <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
+          {/* Enhanced Hero Content */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="mb-12"
           >
-            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-6">
-              Zion Tech Group
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-6 leading-tight">
+              Revolutionary
+              <span className="block text-6xl sm:text-7xl lg:text-9xl bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent">
+                AI & Quantum
+              </span>
+              Technology Solutions
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
-              Revolutionary AI, Quantum Computing & IT Services
-            </p>
-            <p className="text-lg md:text-xl text-gray-400 mb-12 max-w-3xl mx-auto">
-              500+ cutting-edge services delivering 1000% ROI. From neural quantum brain interfaces to enterprise IT infrastructure.
-            </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-              <Button 
-                href="/services" 
+            <p className="text-xl sm:text-2xl lg:text-3xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
+              Transform your business with cutting-edge AI services, quantum computing solutions, and comprehensive IT services. 
+              <span className="text-cyan-400 font-semibold"> 500+ revolutionary services</span> with 
+              <span className="text-green-400 font-semibold"> 99.99% uptime guarantee</span>.
+            </p>
+
+            {/* Enhanced CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button
+                href="/services"
                 variant="primary"
-                className="text-lg px-8 py-4"
+                size="lg"
+                className="group relative overflow-hidden"
               >
-                Explore 500+ Services
-                <ArrowRight className="ml-2 w-5 h-5" />
+                <span className="relative z-10">Explore Our Services</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Button>
-              <Button 
-                href="/contact" 
+              
+              <Button
+                href="/contact"
                 variant="secondary"
-                className="text-lg px-8 py-4"
+                size="lg"
+                className="group relative overflow-hidden"
               >
-                Get Started Today
-                <Phone className="ml-2 w-5 h-5" />
+                <span className="relative z-10">Get Started Today</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Button>
             </div>
           </motion.div>
 
-          {/* Hero Stats */}
+          {/* Enhanced Hero Stats */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-16"
+            transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-6xl mx-auto"
           >
             {heroStats.map((stat, index) => (
-              <div key={index} className="text-center">
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.5 + index * 0.1, ease: "easeOut" }}
+                className="bg-black/20 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:bg-black/30 transition-all duration-300 hover:scale-105 group"
+              >
                 <div className={`${stat.color} mb-2 flex justify-center`}>
                   {stat.icon}
                 </div>
-                <div className={`${stat.color} text-2xl md:text-3xl font-bold mb-1`}>
+                <div className={`${stat.color} text-2xl lg:text-3xl font-bold mb-1 group-hover:scale-110 transition-transform duration-300`}>
                   {stat.value}
                 </div>
-                <div className="text-sm text-gray-400">
+                <div className="text-gray-400 text-sm lg:text-base leading-tight">
                   {stat.label}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </motion.div>
         </div>
       </section>
 
-      {/* Service Highlights Section */}
-      <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
+      {/* Enhanced Service Highlights Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Revolutionary Services
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+              Revolutionary Services That Transform Industries
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Cutting-edge solutions that redefine what's possible in technology
+              From quantum AI brain-computer interfaces to autonomous vehicles, our cutting-edge solutions 
+              deliver unprecedented ROI and competitive advantages.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {serviceHighlights.map((service, index) => (
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
+                key={service.title}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.2, ease: "easeOut" }}
                 viewport={{ once: true }}
+                className="group"
               >
-                <Card className={`bg-gradient-to-br ${service.color} p-8 h-full`}>
-                  <div className="flex items-start justify-between mb-4">
-                    <h3 className="text-2xl font-bold text-white mb-2">
+                <Card className="h-full bg-black/30 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-500 hover:scale-105">
+                  <div className="p-8">
+                    <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors duration-300">
                       {service.title}
                     </h3>
-                    <div className="text-3xl">{service.title.split(' ')[0]}</div>
-                  </div>
-                  
-                  <p className="text-gray-100 mb-6 text-lg">
-                    {service.description}
-                  </p>
+                    
+                    <p className="text-gray-300 mb-6 leading-relaxed">
+                      {service.description}
+                    </p>
 
-                  <div className="mb-6">
-                    <div className="text-2xl font-bold text-white mb-2">
-                      {service.price}
+                    <div className="mb-6">
+                      <div className="text-3xl font-bold text-cyan-400 mb-2">
+                        {service.price}
+                      </div>
+                      <div className="text-sm text-gray-400">
+                        {service.marketData}
+                      </div>
                     </div>
-                    <div className="text-sm text-gray-200 mb-4">
-                      {service.marketData}
-                    </div>
-                    <div className="text-sm text-gray-200 mb-2">
-                      <strong>Competitors:</strong> {service.competitors}
-                    </div>
-                    <div className="text-sm text-green-300 font-semibold">
-                      {service.savings}
-                    </div>
-                  </div>
 
-                  <div className="mb-6">
-                    <h4 className="text-lg font-semibold text-white mb-3">Key Features:</h4>
-                    <div className="grid grid-cols-1 gap-2">
-                      {service.features.slice(0, 5).map((feature, idx) => (
-                        <div key={idx} className="flex items-center text-sm text-gray-200">
-                          <Check className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" />
-                          {feature}
-                        </div>
-                      ))}
+                    <div className="mb-6">
+                      <h4 className="text-lg font-semibold text-white mb-3">Key Features:</h4>
+                      <ul className="space-y-2">
+                        {service.features.slice(0, 5).map((feature, featureIndex) => (
+                          <li key={featureIndex} className="flex items-center text-gray-300">
+                            <Check className="w-4 h-4 text-green-400 mr-3 flex-shrink-0" />
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                  </div>
 
-                  <div className="flex flex-col sm:flex-row gap-3">
-                    <Button 
-                      href={service.link}
-                      variant="primary"
-                      className="flex-1"
-                    >
-                      Learn More
-                      <ExternalLink className="ml-2 w-4 h-4" />
-                    </Button>
-                    <Button 
-                      href="/contact"
-                      variant="secondary"
-                      className="flex-1"
-                    >
-                      Get Started
-                      <ArrowRight className="ml-2 w-4 h-4" />
-                    </Button>
+                    <div className="mb-6 p-4 bg-black/20 rounded-lg">
+                      <div className="text-sm text-gray-400 mb-2">Competitive Advantage:</div>
+                      <div className="text-white font-semibold">{service.savings}</div>
+                    </div>
+
+                    <div className="flex flex-col sm:flex-row gap-3">
+                      <Button
+                        href={service.link}
+                        variant="primary"
+                        size="lg"
+                        className="flex-1 group"
+                      >
+                        Learn More
+                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                      </Button>
+                      
+                      <Button
+                        href="/contact"
+                        variant="secondary"
+                        size="lg"
+                        className="flex-1"
+                      >
+                        Get Started
+                      </Button>
+                    </div>
                   </div>
                 </Card>
               </motion.div>
@@ -512,6 +511,6 @@ export default function HomePage() {
           </div>
         </div>
       </footer>
-    </EnhancedQuantumBackground>
+    </UltraAdvancedFuturisticBackground>
   );
 }
