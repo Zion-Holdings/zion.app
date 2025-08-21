@@ -527,9 +527,6 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-            </div>
-          </div>
-        </section>
 
         {/* Contact CTA */}
         <section className="py-20 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10">

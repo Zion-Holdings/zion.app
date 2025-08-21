@@ -152,7 +152,7 @@ export default function ServicesPage() {
                   <div className="text-center">
                     <div className="text-3xl font-bold text-orange-400 mb-2">14</div>
                     <div className="text-gray-400 text-sm">Day Trial</div>
->>>>>>> cursor/enhance-app-services-and-website-with-futuristic-design-eb63
+
                   </div>
                 </div>
               </div>
