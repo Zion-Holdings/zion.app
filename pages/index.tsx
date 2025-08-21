@@ -7,8 +7,8 @@ import UltraFuturisticBackground2030 from '../components/ui/UltraFuturisticBackg
 import UltraFuturisticBackground2031 from '../components/ui/UltraFuturisticBackground2031';
 import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
 import UltraAdvancedNavigation2026 from '../components/layout/UltraAdvancedNavigation2026';
-import UltraFuturisticNavigation2031 from '../components/layout/UltraFuturisticNavigation2031';
-import UltraFuturisticFooter2030 from '../components/layout/UltraFuturisticFooter2030';
+import UltraFuturisticNavigation2032 from '../components/layout/UltraFuturisticNavigation2032';
+import UltraFuturisticFooter2032 from '../components/layout/UltraFuturisticFooter2032';
 import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
 import Enhanced2026ServicesShowcase from '../components/sections/Enhanced2026ServicesShowcase';
 import Revolutionary2026ServiceShowcase from '../components/sections/Revolutionary2026ServiceShowcase';
@@ -86,6 +86,9 @@ import { enterpriseITSolutions2030 } from '../data/2030-enterprise-it-solutions'
 import { spaceMetaverseTechServices2030 } from '../data/2030-space-metaverse-tech';
 import { innovativeMicroSaasServices2030 } from '../data/2030-innovative-micro-saas';
 import { researchDevelopmentServices2030 } from '../data/2030-research-development';
+import { futuristicInnovations2031 } from '../data/2031-futuristic-innovations';
+import { enterpriseITSolutions2031 } from '../data/2031-enterprise-it-solutions';
+import { innovativeMicroSaas2031 } from '../data/2031-innovative-micro-saas';
 
 export default function HomePage() {
   const contactInfo = {
@@ -98,6 +101,9 @@ export default function HomePage() {
   // Combine all services for comprehensive showcase
   const allServices = [
     ...enhancedRealMicroSaasServices,
+    ...futuristicInnovations2031,
+    ...enterpriseITSolutions2031,
+    ...innovativeMicroSaas2031,
     ...innovativeMicroSaasServices,
     ...innovativeMicroSaasServicesV3,
     ...extraServices,
@@ -247,7 +253,7 @@ export default function HomePage() {
 
       <UltraFuturisticBackground2030>
         {/* Ultra Advanced Navigation */}
-        <UltraFuturisticNavigation2031 />
+        <UltraFuturisticNavigation2032 />
 
         {/* Ultra Futuristic Hero Section 2030 */}
         <UltraFuturisticHero2030 />
@@ -601,7 +607,7 @@ export default function HomePage() {
           </div>
         </section>
       {/* Footer */}
-      <UltraFuturisticFooter2030 />
+      <UltraFuturisticFooter2032 />
     </UltraFuturisticBackground2030>
   </>
   );
