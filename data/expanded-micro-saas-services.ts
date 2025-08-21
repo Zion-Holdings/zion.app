@@ -236,21 +236,12 @@ export const expandedMicroSaasServices: MicroSaasService[] = [
     setupTime: '30 minutes',
     category: 'AI & Machine Learning',
     realService: true,
-<<<<<<< HEAD
     technology: ['Machine Learning', 'NLP', 'Data Analytics', 'Predictive Modeling'],
     integrations: ['Google Analytics', 'Social media platforms', 'CRM systems', 'Business intelligence tools'],
     useCases: ['Market analysis', 'Competitive intelligence', 'Trend research', 'Business planning'],
     roi: '350% average ROI in 4 months',
     competitors: ['SimilarWeb', 'SEMrush', 'Ahrefs', 'Moz'],
     marketSize: '$800M global market',
-=======
-    technology: ['Machine Learning', 'Natural Language Processing', 'Predictive Analytics', 'Data Mining'],
-    integrations: ['Salesforce', 'HubSpot', 'MySQL', 'PostgreSQL', 'MongoDB'],
-    useCases: ['Business reporting', 'Performance analytics', 'Market research', 'Financial analysis'],
-    roi: '350% average ROI in 8 months',
-    competitors: ['Tableau', 'Power BI', 'Looker', 'Qlik'],
-    marketSize: '$2.8B global market',
->>>>>>> 546ac868a2b6e06ac552325bec1c2f62810d2fa9
     growthRate: '28% annual growth'
   },
 
@@ -261,7 +252,6 @@ export const expandedMicroSaasServices: MicroSaasService[] = [
     tagline: 'Complete NFT creation and trading platform',
     price: '$99',
     period: '/month',
-<<<<<<< HEAD
     description: 'Full-featured NFT marketplace with minting, trading, and management capabilities. Support for multiple blockchains and advanced features.',
     features: [
       'Multi-blockchain support',
@@ -272,25 +262,12 @@ export const expandedMicroSaasServices: MicroSaasService[] = [
       'Analytics dashboard',
       'Mobile app support',
       'API for developers'
-=======
-    description: 'Enterprise-grade NFT marketplace with advanced features for creators, collectors, and businesses to mint, trade, and manage digital assets.',
-    features: [
-      'Multi-chain NFT minting',
-      'Smart contract automation',
-      'Royalty distribution system',
-      'Advanced trading tools',
-      'Analytics dashboard',
-      'Mobile app support',
-      'API for integrations',
-      'White-label solutions'
->>>>>>> 546ac868a2b6e06ac552325bec1c2f62810d2fa9
     ],
     popular: true,
     icon: '🖼️',
     color: 'from-indigo-500 to-purple-600',
     textColor: 'text-indigo-400',
     link: 'https://ziontechgroup.com/blockchain-nft-marketplace',
-<<<<<<< HEAD
     marketPosition: 'Comprehensive NFT platform supporting Ethereum, Polygon, and Solana',
     targetAudience: 'Artists, creators, collectors, and businesses entering the NFT space',
     trialDays: 14,
@@ -304,21 +281,6 @@ export const expandedMicroSaasServices: MicroSaasService[] = [
     competitors: ['OpenSea', 'Rarible', 'Foundation', 'SuperRare'],
     marketSize: '$1.5B global market',
     growthRate: '80% annual growth'
-=======
-    marketPosition: 'Competitive with OpenSea (2.5% fees), Rarible (2.5% fees), and Foundation (15% fees)',
-    targetAudience: 'Artists, creators, collectors, brands, and businesses',
-    trialDays: 7,
-    setupTime: '1 day',
-    category: 'Blockchain & Web3',
-    realService: true,
-    technology: ['Ethereum', 'Polygon', 'Solana', 'Smart Contracts', 'IPFS'],
-    integrations: ['MetaMask', 'WalletConnect', 'Coinbase Wallet', 'OpenSea API'],
-    useCases: ['Digital art sales', 'Collectibles trading', 'Brand marketing', 'Gaming assets'],
-    roi: '600% average ROI in 12 months',
-    competitors: ['OpenSea', 'Rarible', 'Foundation', 'Nifty Gateway'],
-    marketSize: '$1.5B global market',
-    growthRate: '200% annual growth'
->>>>>>> 546ac868a2b6e06ac552325bec1c2f62810d2fa9
   },
   {
     id: 'defi-yield-optimizer',
@@ -331,26 +293,17 @@ export const expandedMicroSaasServices: MicroSaasService[] = [
       'Multi-protocol yield farming',
       'Automated strategy execution',
       'Risk management tools',
-<<<<<<< HEAD
       'Portfolio tracking',
       'Gas optimization',
       'Real-time analytics',
       'Mobile app support',
       'API access'
-=======
-      'Real-time yield tracking',
-      'Gas optimization',
-      'Portfolio analytics',
-      'Mobile app access',
-      'API for developers'
->>>>>>> 546ac868a2b6e06ac552325bec1c2f62810d2fa9
     ],
     popular: false,
     icon: '💰',
     color: 'from-yellow-500 to-orange-600',
     textColor: 'text-yellow-400',
     link: 'https://ziontechgroup.com/defi-yield-optimizer',
-<<<<<<< HEAD
     marketPosition: 'Advanced DeFi yield optimization with risk management and automation',
     targetAudience: 'DeFi investors, yield farmers, and crypto enthusiasts',
     trialDays: 7,
@@ -402,22 +355,6 @@ export const expandedMicroSaasServices: MicroSaasService[] = [
     growthRate: '90% annual growth'
   },
 
-=======
-    marketPosition: 'Competitive with Yearn Finance (20% performance fee), Harvest Finance (30% performance fee)',
-    targetAudience: 'DeFi investors, yield farmers, crypto enthusiasts, and institutional investors',
-    trialDays: 14,
-    setupTime: '30 minutes',
-    category: 'Blockchain & Web3',
-    realService: true,
-    technology: ['Smart Contracts', 'DeFi Protocols', 'Yield Farming', 'Automated Trading'],
-    integrations: ['Uniswap', 'Compound', 'Aave', 'Curve Finance', 'MetaMask'],
-    useCases: ['Yield farming', 'Liquidity provision', 'Staking optimization', 'Portfolio management'],
-    roi: '800% average ROI in 18 months',
-    competitors: ['Yearn Finance', 'Harvest Finance', 'Pickle Finance', 'Badger DAO'],
-    marketSize: '$800M global market',
-    growthRate: '300% annual growth'
-  },
->>>>>>> 546ac868a2b6e06ac552325bec1c2f62810d2fa9
   // Metaverse & AR/VR Services
   {
     id: 'metaverse-development-platform',
@@ -425,7 +362,6 @@ export const expandedMicroSaasServices: MicroSaasService[] = [
     tagline: 'Build immersive 3D worlds and experiences',
     price: '$199',
     period: '/month',
-<<<<<<< HEAD
     description: 'Comprehensive platform for creating, deploying, and managing metaverse experiences with advanced 3D tools and blockchain integration.',
     features: [
       '3D world builder',
@@ -436,25 +372,12 @@ export const expandedMicroSaasServices: MicroSaasService[] = [
       'Analytics dashboard',
       'Mobile optimization',
       'API for developers'
-=======
-    description: 'Complete metaverse development platform for creating interactive 3D environments, virtual events, and immersive experiences.',
-    features: [
-      '3D world builder',
-      'Avatar customization system',
-      'Real-time collaboration tools',
-      'VR/AR device support',
-      'Custom scripting engine',
-      'Analytics dashboard',
-      'Multi-platform deployment',
-      'White-label solutions'
->>>>>>> 546ac868a2b6e06ac552325bec1c2f62810d2fa9
     ],
     popular: true,
     icon: '🌐',
     color: 'from-emerald-500 to-teal-600',
     textColor: 'text-emerald-400',
     link: 'https://ziontechgroup.com/metaverse-platform',
-<<<<<<< HEAD
     marketPosition: 'All-in-one metaverse development platform with blockchain and VR support',
     targetAudience: 'Game developers, brands, educators, and metaverse creators',
     trialDays: 14,
@@ -506,22 +429,6 @@ export const expandedMicroSaasServices: MicroSaasService[] = [
     growthRate: '75% annual growth'
   },
 
-=======
-    marketPosition: 'Competitive with Roblox Studio (free), Unity (free-$125/month), and Unreal Engine (5% royalty)',
-    targetAudience: 'Game developers, event organizers, educators, and businesses',
-    trialDays: 21,
-    setupTime: '2 days',
-    category: 'AR/VR & Metaverse',
-    realService: true,
-    technology: ['3D Graphics', 'WebGL', 'WebXR', 'Real-time Rendering', 'Spatial Computing'],
-    integrations: ['Oculus', 'HTC Vive', 'Microsoft HoloLens', 'Magic Leap'],
-    useCases: ['Virtual events', 'Gaming', 'Education', 'Training simulations'],
-    roi: '450% average ROI in 10 months',
-    competitors: ['Roblox', 'Unity', 'Unreal Engine', 'Decentraland'],
-    marketSize: '$1.8B global market',
-    growthRate: '180% annual growth'
-  },
->>>>>>> 546ac868a2b6e06ac552325bec1c2f62810d2fa9
   // IoT & Smart Cities Services
   {
     id: 'iot-smart-city-platform',
@@ -531,7 +438,6 @@ export const expandedMicroSaasServices: MicroSaasService[] = [
     period: '/month',
     description: 'Comprehensive IoT platform for smart city management, including traffic monitoring, energy optimization, and environmental monitoring.',
     features: [
-<<<<<<< HEAD
       'IoT device management',
       'Real-time data analytics',
       'Traffic optimization',
@@ -540,23 +446,12 @@ export const expandedMicroSaasServices: MicroSaasService[] = [
       'Predictive maintenance',
       'Mobile app support',
       'API for integrations'
-=======
-      'Real-time sensor monitoring',
-      'Traffic flow optimization',
-      'Energy consumption analytics',
-      'Environmental monitoring',
-      'Predictive maintenance',
-      'Mobile app dashboard',
-      'API for integrations',
-      'Custom IoT solutions'
->>>>>>> 546ac868a2b6e06ac552325bec1c2f62810d2fa9
     ],
     popular: true,
     icon: '🏙️',
     color: 'from-teal-500 to-cyan-600',
     textColor: 'text-teal-400',
     link: 'https://ziontechgroup.com/iot-smart-city',
-<<<<<<< HEAD
     marketPosition: 'Enterprise IoT platform for smart city infrastructure management',
     targetAudience: 'City governments, utilities, transportation agencies, and infrastructure companies',
     trialDays: 7,
@@ -614,433 +509,6 @@ export const expandedMicroSaasServices: MicroSaasService[] = [
     name: 'Cloud Cost Optimizer',
     tagline: 'Intelligent cloud cost management and optimization',
     price: '$89',
-=======
-    marketPosition: 'Enterprise IoT solution, 30% more cost-effective than traditional city management systems',
-    targetAudience: 'City governments, urban planners, utility companies, and smart city consultants',
-    trialDays: 30,
-    setupTime: '1 week',
-    category: 'IoT & Smart Cities',
-    realService: true,
-    technology: ['IoT Sensors', 'Edge Computing', 'Machine Learning', 'Cloud Computing'],
-    integrations: ['AWS IoT', 'Azure IoT', 'Google Cloud IoT', 'Cisco IoT'],
-    useCases: ['Traffic management', 'Energy optimization', 'Waste management', 'Public safety'],
-    roi: '350% average ROI in 24 months',
-    competitors: ['Cisco', 'Siemens', 'IBM', 'Huawei'],
-    marketSize: '$2.2B global market',
-    growthRate: '120% annual growth'
-  },
-  // Emerging Technologies Services
-  {
-    id: 'autonomous-ai-agents',
-    name: 'Autonomous AI Agents',
-    tagline: 'Self-learning AI agents for business automation',
-    price: '$399',
-    period: '/month',
-    description: 'Next-generation autonomous AI agents that learn, adapt, and execute complex business processes without human intervention.',
-    features: [
-      'Self-learning capabilities',
-      'Process automation',
-      'Decision-making algorithms',
-      'Natural language interaction',
-      'Multi-agent collaboration',
-      'Performance analytics',
-      'Custom agent training',
-      'Enterprise integration'
-    ],
-    popular: true,
-    icon: '🤖',
-    color: 'from-cyan-600 to-blue-600',
-    textColor: 'text-cyan-400',
-    link: 'https://ziontechgroup.com/autonomous-ai-agents',
-    marketPosition: 'Pioneering autonomous AI solution, 50% more autonomous than traditional automation tools',
-    targetAudience: 'Enterprises, process automation teams, AI researchers, and innovative businesses',
-    trialDays: 14,
-    setupTime: '1 week',
-    category: 'Emerging Technologies',
-    realService: true,
-    technology: ['Reinforcement Learning', 'Multi-Agent Systems', 'Natural Language Processing', 'Process Mining'],
-    integrations: ['RPA platforms', 'ERP systems', 'CRM systems', 'Workflow tools'],
-    useCases: ['Process automation', 'Customer service', 'Data processing', 'Decision support'],
-    roi: '700% average ROI in 18 months',
-    competitors: ['UiPath', 'Automation Anywhere', 'Blue Prism', 'Microsoft Power Automate'],
-    marketSize: '$600M emerging market',
-    growthRate: '250% annual growth'
-  },
-  {
-    id: 'quantum-cryptography-suite',
-    name: 'Quantum Cryptography Suite',
-    tagline: 'Future-proof encryption for the quantum era',
-    price: '$599',
-    period: '/month',
-    description: 'Advanced quantum-resistant cryptography solutions that protect data against both classical and quantum computing attacks.',
-    features: [
-      'Post-quantum cryptography',
-      'Quantum key distribution',
-      'Hybrid encryption systems',
-      'Real-time threat monitoring',
-      'Compliance certifications',
-      'Performance optimization',
-      'Custom implementations',
-      '24/7 support'
-    ],
-    popular: true,
-    icon: '🔐',
-    color: 'from-violet-500 to-purple-600',
-    textColor: 'text-violet-400',
-    link: 'https://ziontechgroup.com/quantum-cryptography',
-    marketPosition: 'Premium quantum-safe security solution, 100% quantum-resistant',
-    targetAudience: 'Financial institutions, government agencies, healthcare organizations, and security-conscious enterprises',
-    trialDays: 7,
-    setupTime: '2 weeks',
-    category: 'Emerging Technologies',
-    realService: true,
-    technology: ['Post-Quantum Cryptography', 'Quantum Key Distribution', 'Lattice-based Encryption', 'Hash-based Signatures'],
-    integrations: ['PKI systems', 'SSL/TLS', 'VPN solutions', 'Hardware security modules'],
-    useCases: ['Data encryption', 'Secure communications', 'Digital signatures', 'Key management'],
-    roi: '900% average ROI in 36 months',
-    competitors: ['ID Quantique', 'Qrypt', 'Post-Quantum', 'ISARA Corporation'],
-    marketSize: '$300M emerging market',
-    growthRate: '400% annual growth'
-  },
-  // Cloud & Infrastructure Services
-  {
-    id: 'edge-computing-orchestrator',
-    name: 'Edge Computing Orchestrator',
-    tagline: 'Intelligent edge computing management',
-    price: '$179',
-    period: '/month',
-    description: 'Advanced edge computing platform that optimizes application deployment, data processing, and resource management across distributed edge locations.',
-    features: [
-      'Multi-edge deployment',
-      'Intelligent load balancing',
-      'Real-time optimization',
-      'Edge analytics',
-      'Security monitoring',
-      'Performance metrics',
-      'Custom edge solutions',
-      'Global edge network'
-    ],
-    popular: true,
-    icon: '⚡',
-    color: 'from-orange-500 to-red-600',
-    textColor: 'text-orange-400',
-    link: 'https://ziontechgroup.com/edge-computing-orchestrator',
-    marketPosition: 'Competitive with AWS Greengrass ($0.16/hour), Azure IoT Edge ($0.40/hour), and Google Cloud IoT Edge',
-    targetAudience: 'IoT companies, edge computing providers, telecommunications, and cloud service providers',
-    trialDays: 21,
-    setupTime: '3 days',
-    category: 'Cloud & Infrastructure',
-    realService: true,
-    technology: ['Edge Computing', 'Container Orchestration', 'Load Balancing', 'Real-time Analytics'],
-    integrations: ['Kubernetes', 'Docker', 'AWS', 'Azure', 'Google Cloud'],
-    useCases: ['IoT applications', 'Real-time processing', 'Content delivery', 'Edge AI'],
-    roi: '400% average ROI in 12 months',
-    competitors: ['AWS Greengrass', 'Azure IoT Edge', 'Google Cloud IoT Edge', 'FogHorn'],
-    marketSize: '$1.5B global market',
-    growthRate: '140% annual growth'
-  },
-  // Data & Analytics Services
-  {
-    id: 'real-time-data-streaming',
-    name: 'Real-Time Data Streaming Platform',
-    tagline: 'Process data streams in real-time',
-    price: '$129',
-    period: '/month',
-    description: 'High-performance real-time data streaming platform for processing, analyzing, and acting on data streams with sub-millisecond latency.',
-    features: [
-      'Sub-millisecond latency',
-      'Horizontal scaling',
-      'Real-time analytics',
-      'Stream processing',
-      'Data transformation',
-      'Alert system',
-      'API endpoints',
-      'Custom connectors'
-    ],
-    popular: true,
-    icon: '🌊',
-    color: 'from-blue-500 to-indigo-600',
-    textColor: 'text-blue-400',
-    link: 'https://ziontechgroup.com/real-time-data-streaming',
-    marketPosition: 'Competitive with Apache Kafka ($0.10/hour), AWS Kinesis ($0.014/hour), and Google Cloud Pub/Sub ($0.40/GB)',
-    targetAudience: 'Data engineers, real-time analytics teams, IoT companies, and financial services',
-    trialDays: 14,
-    setupTime: '1 day',
-    category: 'Data & Analytics',
-    realService: true,
-    technology: ['Stream Processing', 'Apache Kafka', 'Real-time Analytics', 'Event Streaming'],
-    integrations: ['Apache Spark', 'Elasticsearch', 'Redis', 'PostgreSQL'],
-    useCases: ['Real-time analytics', 'IoT data processing', 'Financial trading', 'Live dashboards'],
-    roi: '350% average ROI in 9 months',
-    competitors: ['Apache Kafka', 'AWS Kinesis', 'Google Cloud Pub/Sub', 'Confluent'],
-    marketSize: '$1.8B global market',
-    growthRate: '160% annual growth'
-  },
-  // Advanced AI & Machine Learning Services
-  {
-    id: 'ai-code-review-assistant',
-    name: 'AI Code Review Assistant',
-    tagline: 'Intelligent code review and quality assurance',
-    price: '$89',
-    period: '/month',
-    description: 'AI-powered code review platform that automatically analyzes code quality, identifies bugs, suggests improvements, and ensures coding standards compliance.',
-    features: [
-      'Automated code analysis',
-      'Bug detection and prevention',
-      'Code quality scoring',
-      'Security vulnerability scanning',
-      'Performance optimization suggestions',
-      'Multi-language support',
-      'Team collaboration tools',
-      'CI/CD integration'
-    ],
-    popular: true,
-    icon: '💻',
-    color: 'from-green-500 to-teal-600',
-    textColor: 'text-green-400',
-    link: 'https://ziontechgroup.com/ai-code-review',
-    marketPosition: 'Competitive with SonarQube ($12-20/month), CodeClimate ($8-15/month), and DeepCode ($15-25/month)',
-    targetAudience: 'Software development teams, DevOps engineers, code quality managers, and development agencies',
-    trialDays: 21,
-    setupTime: '2 hours',
-    category: 'AI & Machine Learning',
-    realService: true,
-    technology: ['Machine Learning', 'Static Code Analysis', 'Natural Language Processing', 'Code Parsing'],
-    integrations: ['GitHub', 'GitLab', 'Bitbucket', 'Jenkins', 'CircleCI'],
-    useCases: ['Code review automation', 'Quality assurance', 'Security scanning', 'Performance optimization'],
-    roi: '400% average ROI in 6 months',
-    competitors: ['SonarQube', 'CodeClimate', 'DeepCode', 'Codacy'],
-    marketSize: '$800M global market',
-    growthRate: '180% annual growth'
-  },
-  {
-    id: 'ai-customer-service-automation',
-    name: 'AI Customer Service Automation',
-    tagline: 'Intelligent customer support automation',
-    price: '$159',
-    period: '/month',
-    description: 'Advanced AI-powered customer service platform that automates responses, handles complex queries, and provides 24/7 intelligent customer support.',
-    features: [
-      'Natural language understanding',
-      'Multi-channel support',
-      'Sentiment analysis',
-      'Automated ticket routing',
-      'Knowledge base management',
-      'Human handoff system',
-      'Performance analytics',
-      'Custom AI training'
-    ],
-    popular: true,
-    icon: '🎧',
-    color: 'from-purple-500 to-pink-600',
-    textColor: 'text-purple-400',
-    link: 'https://ziontechgroup.com/ai-customer-service',
-    marketPosition: 'Competitive with Intercom ($39-99/month), Zendesk ($25-99/month), and Freshdesk ($15-79/month)',
-    targetAudience: 'Customer service teams, e-commerce businesses, SaaS companies, and support organizations',
-    trialDays: 14,
-    setupTime: '1 day',
-    category: 'AI & Machine Learning',
-    realService: true,
-    technology: ['Natural Language Processing', 'Machine Learning', 'Sentiment Analysis', 'Conversational AI'],
-    integrations: ['Slack', 'Microsoft Teams', 'Zapier', 'Shopify', 'Salesforce'],
-    useCases: ['Customer support', 'FAQ automation', 'Ticket management', 'Customer engagement'],
-    roi: '450% average ROI in 8 months',
-    competitors: ['Intercom', 'Zendesk', 'Freshdesk', 'Help Scout'],
-    marketSize: '$2.5B global market',
-    growthRate: '220% annual growth'
-  },
-  // Blockchain & DeFi Services
-  {
-    id: 'defi-portfolio-manager',
-    name: 'DeFi Portfolio Manager',
-    tagline: 'Professional DeFi portfolio management',
-    price: '$129',
-    period: '/month',
-    description: 'Comprehensive DeFi portfolio management platform that tracks, analyzes, and optimizes cryptocurrency investments across multiple protocols and chains.',
-    features: [
-      'Multi-chain portfolio tracking',
-      'Real-time performance analytics',
-      'Risk assessment tools',
-      'Automated rebalancing',
-      'Tax reporting',
-      'Mobile app access',
-      'API for developers',
-      'Institutional features'
-    ],
-    popular: true,
-    icon: '📈',
-    color: 'from-emerald-500 to-green-600',
-    textColor: 'text-emerald-400',
-    link: 'https://ziontechgroup.com/defi-portfolio-manager',
-    marketPosition: 'Competitive with DeBank (free), Zapper (free), and DeFi Pulse (free with premium features)',
-    targetAudience: 'DeFi investors, crypto traders, institutional investors, and portfolio managers',
-    trialDays: 7,
-    setupTime: '30 minutes',
-    category: 'Blockchain & Web3',
-    realService: true,
-    technology: ['Blockchain', 'DeFi Protocols', 'Portfolio Analytics', 'Risk Management'],
-    integrations: ['MetaMask', 'WalletConnect', 'Uniswap', 'Compound', 'Aave'],
-    useCases: ['Portfolio tracking', 'Performance analysis', 'Risk management', 'Tax optimization'],
-    roi: '600% average ROI in 12 months',
-    competitors: ['DeBank', 'Zapper', 'DeFi Pulse', 'DeFi Saver'],
-    marketSize: '$600M global market',
-    growthRate: '280% annual growth'
-  },
-  // Quantum Computing Services
-  {
-    id: 'quantum-machine-learning-platform',
-    name: 'Quantum Machine Learning Platform',
-    tagline: 'Quantum algorithms for machine learning',
-    price: '$799',
-    period: '/month',
-    description: 'Revolutionary quantum machine learning platform that leverages quantum computing to solve complex ML problems that are intractable for classical computers.',
-    features: [
-      'Quantum ML algorithms',
-      'Hybrid classical-quantum models',
-      'Quantum feature selection',
-      'Quantum neural networks',
-      'Real quantum hardware access',
-      'Advanced simulations',
-      'Research collaboration tools',
-      'Academic licensing'
-    ],
-    popular: true,
-    icon: '🧠',
-    color: 'from-violet-500 to-purple-600',
-    textColor: 'text-violet-400',
-    link: 'https://ziontechgroup.com/quantum-machine-learning',
-    marketPosition: 'Premium quantum ML solution, 100x faster than classical ML for specific problems',
-    targetAudience: 'AI researchers, data scientists, pharmaceutical companies, and financial institutions',
-    trialDays: 7,
-    setupTime: '1 month',
-    category: 'Quantum Computing',
-    realService: true,
-    technology: ['Quantum Computing', 'Machine Learning', 'Quantum Algorithms', 'Quantum Chemistry'],
-    integrations: ['IBM Quantum', 'Google Quantum AI', 'Microsoft Azure Quantum', 'Amazon Braket'],
-    useCases: ['Drug discovery', 'Financial modeling', 'Optimization problems', 'Quantum chemistry', 'AI research'],
-    roi: '800% average ROI in 24 months',
-    competitors: ['IBM Quantum', 'Google Quantum AI', 'Microsoft Azure Quantum', 'Amazon Braket'],
-    marketSize: '$100M emerging market',
-    growthRate: '300% annual growth'
-  },
-  // AR/VR & Spatial Computing Services
-  {
-    id: 'ar-commerce-platform',
-    name: 'AR Commerce Platform',
-    tagline: 'Augmented reality shopping experiences',
-    price: '$249',
-    period: '/month',
-    description: 'Complete AR commerce platform that enables businesses to create immersive shopping experiences with virtual try-ons, 3D product visualization, and interactive shopping.',
-    features: [
-      '3D product visualization',
-      'Virtual try-on system',
-      'AR shopping cart',
-      'Mobile AR support',
-      'Analytics dashboard',
-      'Custom AR experiences',
-      'Multi-platform deployment',
-      'White-label solutions'
-    ],
-    popular: true,
-    icon: '🛍️',
-    color: 'from-pink-500 to-rose-600',
-    textColor: 'text-pink-400',
-    link: 'https://ziontechgroup.com/ar-commerce-platform',
-    marketPosition: 'Competitive with Shopify AR ($29/month), WooCommerce AR ($99/month), and custom AR development ($50K+)',
-    targetAudience: 'E-commerce businesses, retail brands, fashion companies, and online stores',
-    trialDays: 21,
-    setupTime: '1 week',
-    category: 'AR/VR & Metaverse',
-    realService: true,
-    technology: ['Augmented Reality', '3D Graphics', 'Computer Vision', 'Mobile AR', 'WebAR'],
-    integrations: ['Shopify', 'WooCommerce', 'Magento', 'BigCommerce', 'WooCommerce'],
-    useCases: ['Virtual try-ons', '3D product previews', 'Interactive shopping', 'Virtual showrooms'],
-    roi: '500% average ROI in 12 months',
-    competitors: ['Shopify AR', 'WooCommerce AR', 'Custom AR Development', 'AR Studio'],
-    marketSize: '$1.2B global market',
-    growthRate: '160% annual growth'
-  },
-  // IoT & Industrial Services
-  {
-    id: 'industrial-iot-platform',
-    name: 'Industrial IoT Platform',
-    tagline: 'Smart manufacturing and industrial automation',
-    price: '$399',
-    period: '/month',
-    description: 'Comprehensive industrial IoT platform for smart manufacturing, predictive maintenance, quality control, and industrial automation.',
-    features: [
-      'Predictive maintenance',
-      'Quality control automation',
-      'Production monitoring',
-      'Energy optimization',
-      'Safety monitoring',
-      'Real-time analytics',
-      'Custom IoT solutions',
-      'Enterprise integration'
-    ],
-    popular: true,
-    icon: '🏭',
-    color: 'from-gray-500 to-slate-600',
-    textColor: 'text-gray-400',
-    link: 'https://ziontechgroup.com/industrial-iot-platform',
-    marketPosition: 'Enterprise IIoT solution, 40% more cost-effective than traditional industrial systems',
-    targetAudience: 'Manufacturing companies, industrial facilities, automation engineers, and Industry 4.0 consultants',
-    trialDays: 30,
-    setupTime: '2 weeks',
-    category: 'IoT & Smart Cities',
-    realService: true,
-    technology: ['Industrial IoT', 'Predictive Analytics', 'Machine Learning', 'Edge Computing'],
-    integrations: ['Siemens', 'Rockwell Automation', 'Schneider Electric', 'ABB'],
-    useCases: ['Predictive maintenance', 'Quality control', 'Production optimization', 'Energy management'],
-    roi: '400% average ROI in 18 months',
-    competitors: ['Siemens MindSphere', 'Rockwell FactoryTalk', 'Schneider EcoStruxure', 'ABB Ability'],
-    marketSize: '$3.2B global market',
-    growthRate: '140% annual growth'
-  },
-  // Cybersecurity & Zero Trust Services
-  {
-    id: 'zero-trust-security-platform',
-    name: 'Zero Trust Security Platform',
-    tagline: 'Never trust, always verify security approach',
-    price: '$299',
-    period: '/month',
-    description: 'Comprehensive zero trust security platform that implements continuous verification, least privilege access, and micro-segmentation for modern enterprise security.',
-    features: [
-      'Continuous verification',
-      'Least privilege access',
-      'Micro-segmentation',
-      'Identity management',
-      'Device trust scoring',
-      'Behavioral analytics',
-      'Compliance reporting',
-      '24/7 monitoring'
-    ],
-    popular: true,
-    icon: '🔒',
-    color: 'from-red-600 to-pink-600',
-    textColor: 'text-red-400',
-    link: 'https://ziontechgroup.com/zero-trust-security',
-    marketPosition: 'Enterprise zero trust solution, 70% more secure than traditional perimeter-based security',
-    targetAudience: 'Enterprises, financial institutions, healthcare organizations, and government agencies',
-    trialDays: 21,
-    setupTime: '2 weeks',
-    category: 'Cybersecurity',
-    realService: true,
-    technology: ['Zero Trust Architecture', 'Identity Management', 'Network Segmentation', 'Behavioral Analytics'],
-    integrations: ['Active Directory', 'Okta', 'Ping Identity', 'CrowdStrike', 'Palo Alto Networks'],
-    useCases: ['Network security', 'Access control', 'Threat prevention', 'Compliance', 'Remote work security'],
-    roi: '550% average ROI in 12 months',
-    competitors: ['Palo Alto Networks', 'Cisco', 'Fortinet', 'Check Point'],
-    marketSize: '$2.8B global market',
-    growthRate: '40% annual growth'
-  },
-  // Cloud & DevOps Services
-  {
-    id: 'multi-cloud-orchestrator',
-    name: 'Multi-Cloud Orchestrator',
-    tagline: 'Unified management across all cloud platforms',
-    price: '$229',
->>>>>>> 546ac868a2b6e06ac552325bec1c2f62810d2fa9
     period: '/month',
     description: 'AI-powered cloud cost optimization platform that automatically identifies cost-saving opportunities and optimizes resource allocation.',
     features: [
@@ -1057,19 +525,11 @@ export const expandedMicroSaasServices: MicroSaasService[] = [
     icon: '☁️',
     color: 'from-blue-500 to-indigo-600',
     textColor: 'text-blue-400',
-<<<<<<< HEAD
     link: 'https://ziontechgroup.com/cloud-cost-optimizer',
     marketPosition: 'Advanced cloud cost optimization with AI-powered recommendations',
     targetAudience: 'DevOps teams, cloud architects, and IT managers',
     trialDays: 14,
     setupTime: '30 minutes',
-=======
-    link: 'https://ziontechgroup.com/multi-cloud-orchestrator',
-    marketPosition: 'Competitive with HashiCorp Terraform ($0.00056/hour), CloudHealth ($0.00056/hour), and Flexera ($0.00056/hour)',
-    targetAudience: 'DevOps teams, cloud architects, enterprises, and managed service providers',
-    trialDays: 21,
-    setupTime: '1 week',
->>>>>>> 546ac868a2b6e06ac552325bec1c2f62810d2fa9
     category: 'Cloud & Infrastructure',
     realService: true,
     technology: ['Machine Learning', 'Cloud Computing', 'Data Analytics', 'Automation'],
@@ -1080,7 +540,6 @@ export const expandedMicroSaasServices: MicroSaasService[] = [
     marketSize: '$600M global market',
     growthRate: '45% annual growth'
   },
-<<<<<<< HEAD
   {
     id: 'kubernetes-orchestrator',
     name: 'Kubernetes Orchestrator Pro',
@@ -1412,7 +871,6 @@ export const expandedMicroSaasServices: MicroSaasService[] = [
     competitors: ['Hired', 'Pymetrics', 'HireVue', 'BambooHR'],
     marketSize: '$600M global market',
     growthRate: '35% annual growth'
-
   }
 ];
 
