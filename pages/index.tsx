@@ -8,6 +8,7 @@ import { innovativeRealMicroSaasServices2025 } from '../data/2025-innovative-rea
 import { innovativeAIServicesEnhanced2025 } from '../data/2025-innovative-ai-services-enhanced';
 import { innovativeITServicesEnhanced2025 } from '../data/2025-innovative-it-services-enhanced';
 import { emergingTechServicesEnhanced2025 } from '../data/2025-emerging-tech-services-enhanced';
+import { ultimateFuturisticServices2025 } from '../data/2025-ultimate-futuristic-services';
 
 const contactInfo = {
   mobile: '+1 302 464 0950',
@@ -675,6 +676,103 @@ export default function Home() {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Ultimate Futuristic Services Section */}
+      <section className="py-20 bg-gradient-to-r from-purple-900/20 via-black to-pink-900/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+              <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Ultimate Futuristic Services
+              </span>
+            </h2>
+            <p className="text-xl text-gray-300 mb-8 max-w-4xl mx-auto">
+              Experience the cutting edge of technology with our revolutionary services that combine 
+              AI consciousness, quantum computing, space technology, and breakthrough innovations.
+            </p>
+            <Link
+              href="/ultimate-futuristic-services-showcase-2025"
+              className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold py-4 px-8 rounded-lg text-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105"
+            >
+              <span>Explore All Services</span>
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </motion.div>
+
+          {/* Featured Services Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {ultimateFuturisticServices2025.slice(0, 6).map((service, index) => (
+              <motion.div
+                key={service.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:border-purple-500/50 transition-all duration-300 hover:scale-105"
+              >
+                {/* Popular Badge */}
+                {service.popular && (
+                  <div className="absolute top-4 right-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                    Popular
+                  </div>
+                )}
+
+                {/* Service Icon */}
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-3xl mb-4">
+                  {service.icon}
+                </div>
+
+                {/* Service Content */}
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">
+                  {service.name}
+                </h3>
+                <p className="text-gray-300 text-sm mb-4">{service.description}</p>
+                
+                {/* Price */}
+                <div className="flex items-center justify-between mb-4">
+                  <div className="text-2xl font-bold text-white">{service.price}</div>
+                  <div className="text-sm text-gray-400">{service.period}</div>
+                </div>
+
+                {/* Features Preview */}
+                <div className="space-y-2 mb-6">
+                  {service.features.slice(0, 3).map((feature, idx) => (
+                    <div key={idx} className="flex items-center text-sm text-gray-300">
+                      <CheckCircle className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" />
+                      {feature}
+                    </div>
+                  ))}
+                </div>
+
+                {/* Action Button */}
+                <Link
+                  href={service.link}
+                  className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold py-3 px-6 rounded-lg text-center hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105 block"
+                >
+                  Learn More
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* View All Services CTA */}
+          <div className="text-center mt-12">
+            <Link
+              href="/ultimate-futuristic-services-showcase-2025"
+              className="inline-flex items-center space-x-2 border border-purple-500/50 text-purple-400 font-semibold py-3 px-6 rounded-lg hover:border-purple-400 hover:text-purple-300 transition-all duration-300"
+            >
+              <span>View All 15+ Revolutionary Services</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </section>
