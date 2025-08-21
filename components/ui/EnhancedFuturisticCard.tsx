@@ -1,182 +1,298 @@
-import React, { useState } from 'react';
-import { motion, HTMLMotionProps } from 'framer-motion';
+import React, { useState, useRef, useEffect } from 'react';
+import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 
 interface EnhancedFuturisticCardProps {
   children: React.ReactNode;
   className?: string;
-  variant?: 'default' | 'glow' | 'holographic' | 'neon' | 'quantum';
-  hoverEffect?: 'lift' | 'scale' | 'rotate' | 'morph';
+  variant?: 'holographic' | 'cyberpunk' | 'quantum' | 'neural' | 'matrix' | 'holographic-matrix' | 'quantum-cyberpunk';
+  intensity?: 'low' | 'medium' | 'high';
+  interactive?: boolean;
   glowColor?: string;
-  onClick?: () => void;
-  disabled?: boolean;
+  borderColor?: string;
+  background?: 'transparent' | 'glass' | 'solid' | 'gradient';
 }
 
 export default function EnhancedFuturisticCard({
   children,
   className = '',
-  variant = 'default',
-  hoverEffect = 'lift',
-  glowColor = '#3b82f6',
-  onClick,
-  disabled = false
+  variant = 'holographic',
+  intensity = 'medium',
+  interactive = true,
+  glowColor,
+  borderColor,
+  background = 'glass'
 }: EnhancedFuturisticCardProps) {
   const [isHovered, setIsHovered] = useState(false);
   const [isPressed, setIsPressed] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+  
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  
+  const rotateX = useTransform(mouseY, [-300, 300], [15, -15]);
+  const rotateY = useTransform(mouseX, [-300, 300], [-15, 15]);
+  
+  const springConfig = { damping: 20, stiffness: 300 };
+  const springRotateX = useSpring(rotateX, springConfig);
+  const springRotateY = useSpring(rotateY, springConfig);
 
-  const handleClick = () => {
-    if (!disabled && onClick) {
-      onClick();
-    }
-  };
+  const intensityMultiplier = {
+    low: 0.5,
+    medium: 1.0,
+    high: 1.5
+  }[intensity];
 
   const getVariantStyles = () => {
-    switch (variant) {
-      case 'glow':
-        return {
-          background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1))',
-          border: `1px solid ${glowColor}40`,
-          boxShadow: isHovered ? `0 0 30px ${glowColor}60` : `0 0 15px ${glowColor}30`
-        };
-      case 'holographic':
-        return {
-          background: 'linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 255, 0.1))',
-          border: '1px solid rgba(0, 255, 255, 0.3)',
-          boxShadow: isHovered ? '0 0 40px rgba(0, 255, 255, 0.4)' : '0 0 20px rgba(0, 255, 255, 0.2)'
-        };
-      case 'neon':
-        return {
-          background: 'linear-gradient(135deg, rgba(255, 0, 128, 0.1), rgba(128, 0, 255, 0.1))',
-          border: '1px solid rgba(255, 0, 128, 0.4)',
-          boxShadow: isHovered ? '0 0 35px rgba(255, 0, 128, 0.5)' : '0 0 18px rgba(255, 0, 128, 0.3)'
-        };
-      case 'quantum':
-        return {
-          background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(59, 130, 246, 0.1))',
-          border: '1px solid rgba(16, 185, 129, 0.3)',
-          boxShadow: isHovered ? '0 0 45px rgba(16, 185, 129, 0.4)' : '0 0 22px rgba(16, 185, 129, 0.2)'
-        };
-      default:
-        return {
-          background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(147, 51, 234, 0.05))',
-          border: '1px solid rgba(255, 255, 255, 0.1)',
-          boxShadow: isHovered ? '0 0 25px rgba(59, 130, 246, 0.3)' : '0 0 12px rgba(59, 130, 246, 0.15)'
-        };
-    }
-  };
-
-  const getHoverEffect = () => {
-    if (disabled) return {};
-    
-    switch (hoverEffect) {
-      case 'lift':
-        return isHovered ? { y: -8, scale: 1.02 } : { y: 0, scale: 1 };
-      case 'scale':
-        return isHovered ? { scale: 1.05 } : { scale: 1 };
-      case 'rotate':
-        return isHovered ? { rotateY: 5, rotateX: 2 } : { rotateY: 0, rotateX: 0 };
-      case 'morph':
-        return isHovered ? { 
-          borderRadius: '20px',
-          scale: 1.03,
-          rotateZ: 1
-        } : { 
-          borderRadius: '12px',
-          scale: 1,
-          rotateZ: 0
-        };
-      default:
-        return isHovered ? { y: -5, scale: 1.02 } : { y: 0, scale: 1 };
-    }
-  };
-
-  const getGlowEffect = () => {
-    if (!isHovered || disabled) return {};
-    
-    return {
-      filter: `drop-shadow(0 0 20px ${glowColor}40)`,
-      transition: 'all 0.3s ease'
+    const baseStyles = {
+      holographic: {
+        glow: 'shadow-[0_0_30px_rgba(0,255,255,0.3)]',
+        border: 'border-cyan-400/50',
+        background: 'bg-gradient-to-br from-cyan-900/20 to-blue-900/20',
+        textGlow: 'text-cyan-400',
+        accent: 'from-cyan-400 to-blue-500'
+      },
+      cyberpunk: {
+        glow: 'shadow-[0_0_30px_rgba(255,0,255,0.4)]',
+        border: 'border-pink-500/50',
+        background: 'bg-gradient-to-br from-pink-900/20 to-purple-900/20',
+        textGlow: 'text-pink-400',
+        accent: 'from-pink-400 to-purple-500'
+      },
+      quantum: {
+        glow: 'shadow-[0_0_30px_rgba(0,255,255,0.5)]',
+        border: 'border-blue-400/50',
+        background: 'bg-gradient-to-br from-blue-900/20 to-indigo-900/20',
+        textGlow: 'text-blue-400',
+        accent: 'from-blue-400 to-indigo-500'
+      },
+      neural: {
+        glow: 'shadow-[0_0_30px_rgba(0,255,0,0.3)]',
+        border: 'border-green-400/50',
+        background: 'bg-gradient-to-br from-green-900/20 to-emerald-900/20',
+        textGlow: 'text-green-400',
+        accent: 'from-green-400 to-emerald-500'
+      },
+      matrix: {
+        glow: 'shadow-[0_0_30px_rgba(0,255,0,0.4)]',
+        border: 'border-green-500/50',
+        background: 'bg-gradient-to-br from-green-900/20 to-black/40',
+        textGlow: 'text-green-400',
+        accent: 'from-green-400 to-green-600'
+      },
+      'holographic-matrix': {
+        glow: 'shadow-[0_0_30px_rgba(0,255,255,0.4)]',
+        border: 'border-cyan-400/50',
+        background: 'bg-gradient-to-br from-cyan-900/20 to-blue-900/20',
+        textGlow: 'text-cyan-400',
+        accent: 'from-cyan-400 to-blue-500'
+      },
+      'quantum-cyberpunk': {
+        glow: 'shadow-[0_0_30px_rgba(0,255,255,0.5)]',
+        border: 'border-blue-400/50',
+        background: 'bg-gradient-to-br from-blue-900/20 to-indigo-900/20',
+        textGlow: 'text-blue-400',
+        accent: 'from-blue-400 to-indigo-500'
+      }
     };
+
+    return baseStyles[variant] || baseStyles.holographic;
   };
 
-  const mergedStyles = {
-    ...getVariantStyles(),
-    ...getGlowEffect()
+  const getBackgroundStyle = () => {
+    switch (background) {
+      case 'glass':
+        return 'backdrop-blur-md bg-white/5';
+      case 'solid':
+        return 'bg-gray-900/80';
+      case 'gradient':
+        return 'bg-gradient-to-br from-gray-900/80 to-black/80';
+      default:
+        return 'backdrop-blur-md bg-white/5';
+    }
+  };
+
+  const styles = getVariantStyles();
+
+  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
+    if (!interactive || !cardRef.current) return;
+    
+    const rect = cardRef.current.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    
+    mouseX.set(event.clientX - centerX);
+    mouseY.set(event.clientY - centerY);
+  };
+
+  const handleMouseLeave = () => {
+    if (!interactive) return;
+    
+    mouseX.set(0);
+    mouseY.set(0);
+    setIsHovered(false);
+  };
+
+  const handleMouseDown = () => {
+    if (!interactive) return;
+    setIsPressed(true);
+  };
+
+  const handleMouseUp = () => {
+    if (!interactive) return;
+    setIsPressed(false);
   };
 
   return (
     <motion.div
-      className={`relative overflow-hidden rounded-xl backdrop-blur-sm transition-all duration-300 ${className}`}
-      style={mergedStyles}
-      whileHover={disabled ? {} : { scale: 1.02 }}
-      whileTap={disabled ? {} : { scale: 0.98 }}
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(false)}
-      onTapStart={() => !disabled && setIsPressed(true)}
-      onClick={handleClick}
-      animate={getHoverEffect()}
+      ref={cardRef}
+      className={`
+        relative overflow-hidden rounded-2xl border transition-all duration-300
+        ${styles.border} ${styles.background} ${getBackgroundStyle()}
+        ${interactive ? 'cursor-pointer' : ''}
+        ${className}
+      `}
+      style={{
+        transformStyle: 'preserve-3d',
+        perspective: '1000px'
+      }}
+      whileHover={interactive ? { scale: 1.02 } : {}}
+      whileTap={interactive ? { scale: 0.98 } : {}}
+      animate={{
+        scale: isPressed ? 0.98 : isHovered ? 1.02 : 1,
+      }}
       transition={{
-        type: "spring",
+        type: 'spring',
         stiffness: 300,
         damping: 20
       }}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      onMouseDown={handleMouseDown}
+      onMouseUp={handleMouseUp}
+      onMouseEnter={() => setIsHovered(true)}
     >
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/5 to-transparent" />
-        {variant === 'holographic' && (
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,255,255,0.1),transparent_50%)]" />
-        )}
-        {variant === 'quantum' && (
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(16,185,129,0.1),transparent_50%)]" />
-        )}
-      </div>
-
-      {/* Content */}
-      <div className="relative z-10 p-6">
-        {children}
-      </div>
-
-      {/* Hover Border Effect */}
-      {isHovered && !disabled && (
+      {/* 3D Transform for Interactive Cards */}
+      {interactive && (
         <motion.div
-          className="absolute inset-0 rounded-xl"
           style={{
-            background: `linear-gradient(45deg, transparent, ${glowColor}20, transparent)`,
-            border: `1px solid ${glowColor}40`
+            rotateX: springRotateX,
+            rotateY: springRotateY,
+            transformStyle: 'preserve-3d'
           }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.3 }}
-        />
+          transition={{
+            type: 'spring',
+            stiffness: 300,
+            damping: 20
+          }}
+        >
+          {/* Holographic Border Effect */}
+          <div className="absolute inset-0 rounded-2xl">
+            <div className={`
+              absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500
+              ${isHovered ? 'opacity-100' : ''}
+              ${styles.glow}
+            `} />
+            
+            {/* Animated Border Lines */}
+            <div className="absolute inset-0 rounded-2xl overflow-hidden">
+              <motion.div
+                className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-current to-transparent"
+                animate={{
+                  x: isHovered ? ['0%', '100%'] : '0%',
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: isHovered ? Infinity : 0,
+                  ease: 'linear'
+                }}
+                style={{ opacity: 0.6 }}
+              />
+              <motion.div
+                className="absolute bottom-0 right-0 w-full h-px bg-gradient-to-r from-transparent via-current to-transparent"
+                animate={{
+                  x: isHovered ? ['100%', '0%'] : '0%',
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: isHovered ? Infinity : 0,
+                  ease: 'linear'
+                }}
+                style={{ opacity: 0.6 }}
+              />
+            </div>
+          </div>
+
+          {/* Content Container */}
+          <div className="relative z-10 p-6">
+            {children}
+          </div>
+
+          {/* Interactive Hover Effects */}
+          <>
+            {/* Corner Accents */}
+            <div className="absolute top-0 left-0 w-2 h-2 bg-gradient-to-br from-current to-transparent opacity-60" />
+            <div className="absolute top-0 right-0 w-2 h-2 bg-gradient-to-bl from-current to-transparent opacity-60" />
+            <div className="absolute bottom-0 left-0 w-2 h-2 bg-gradient-to-tr from-current to-transparent opacity-60" />
+            <div className="absolute bottom-0 right-0 w-2 h-2 bg-gradient-to-tl from-current to-transparent opacity-60" />
+            
+            {/* Hover Glow */}
+            <motion.div
+              className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300"
+              style={{
+                background: `radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), ${glowColor || styles.textGlow}20, transparent 50%)`
+              }}
+              animate={{
+                opacity: isHovered ? 0.3 : 0
+              }}
+            />
+          </>
+
+          {/* Particle Effects for High Intensity */}
+          {intensity === 'high' && (
+            <div className="absolute inset-0 overflow-hidden rounded-2xl pointer-events-none">
+              {[...Array(5)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute w-1 h-1 bg-current rounded-full opacity-40"
+                  style={{
+                    left: `${20 + i * 15}%`,
+                    top: `${30 + i * 10}%`
+                  }}
+                  animate={{
+                    y: [0, -20, 0],
+                    opacity: [0.4, 0.8, 0.4],
+                    scale: [1, 1.5, 1]
+                  }}
+                  transition={{
+                    duration: 3 + i * 0.5,
+                    repeat: Infinity,
+                    ease: 'easeInOut'
+                  }}
+                />
+              ))}
+            </div>
+          )}
+        </motion.div>
       )}
 
-      {/* Press Effect */}
-      {isPressed && !disabled && (
-        <motion.div
-          className="absolute inset-0 bg-white/10 rounded-xl"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.1 }}
-        />
+      {/* Non-interactive Content */}
+      {!interactive && (
+        <>
+          {/* Holographic Border Effect */}
+          <div className="absolute inset-0 rounded-2xl">
+            <div className={`
+              absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500
+              ${isHovered ? 'opacity-100' : ''}
+              ${styles.glow}
+            `} />
+          </div>
+
+          {/* Content Container */}
+          <div className="relative z-10 p-6">
+            {children}
+          </div>
+        </>
       )}
     </motion.div>
   );
 }
-
-// Specialized card variants for easier use
-export const GlowCard = (props: Omit<EnhancedFuturisticCardProps, 'variant'>) => (
-  <EnhancedFuturisticCard {...props} variant="glow" />
-);
-
-export const HolographicCard = (props: Omit<EnhancedFuturisticCardProps, 'variant'>) => (
-  <EnhancedFuturisticCard {...props} variant="holographic" />
-);
-
-export const NeonCard = (props: Omit<EnhancedFuturisticCardProps, 'variant'>) => (
-  <EnhancedFuturisticCard {...props} variant="neon" />
-);
-
-export const QuantumCard = (props: Omit<EnhancedFuturisticCardProps, 'variant'>) => (
-  <EnhancedFuturisticCard {...props} variant="quantum" />
-);
