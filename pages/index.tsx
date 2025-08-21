@@ -8,6 +8,7 @@ import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigatio
 import EnhancedNavigation2026 from '../components/layout/EnhancedNavigation2026';
 import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
 import Enhanced2026ServicesShowcase from '../components/sections/Enhanced2026ServicesShowcase';
+import Enhanced2026ServiceShowcase from '../components/sections/Enhanced2026ServiceShowcase';
 import EnhancedHero2026 from '../components/sections/EnhancedHero2026';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
@@ -39,6 +40,8 @@ import { enterpriseIT2026Services } from '../data/enterprise-it-2026-services';
 import { innovative2026MicroSaasServices } from '../data/innovative-2026-micro-saas';
 import { emergingTech2026Services as emergingTech2026ServicesNew } from '../data/emerging-tech-2026-services';
 import { enterpriseIT2026Services as enterpriseIT2026ServicesNew } from '../data/enterprise-it-2026-services';
+import { innovative2026AIServices } from '../data/innovative-2026-ai-services';
+import { innovative2026ITInfrastructureServices } from '../data/innovative-2026-it-infrastructure';
 
 export default function HomePage() {
   const contactInfo = {
@@ -77,7 +80,9 @@ export default function HomePage() {
     ...enterpriseIT2026Services,
     ...innovative2026MicroSaasServices,
     ...emergingTech2026ServicesNew,
-    ...enterpriseIT2026ServicesNew
+    ...enterpriseIT2026ServicesNew,
+    ...innovative2026AIServices,
+    ...innovative2026ITInfrastructureServices
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);
@@ -85,19 +90,19 @@ export default function HomePage() {
   // Service statistics
   const serviceStats = {
     totalServices: allServices.length,
-    aiServices: nextGenerationAIServices.length + innovativeAIServices.length + realMarketServices.filter(s => s.category.includes('AI')).length + revolutionary2025Services.filter(s => s.category.includes('AI')).length + nextGenInnovations2025.filter(s => s.category.includes('AI')).length + innovative2026Services.filter(s => s.category.includes('AI')).length + emergingTech2026Services.filter(s => s.category.includes('AI')).length,
+    aiServices: nextGenerationAIServices.length + innovativeAIServices.length + realMarketServices.filter(s => s.category.includes('AI')).length + revolutionary2025Services.filter(s => s.category.includes('AI')).length + nextGenInnovations2025.filter(s => s.category.includes('AI')).length + innovative2026Services.filter(s => s.category.includes('AI')).length + emergingTech2026Services.filter(s => s.category.includes('AI')).length + innovative2026AIServices.length,
     emergingTech: emergingTechnologyServices.length + emergingTech2025Services.length + emergingTech2026Services.length,
-    itSolutions: comprehensiveITSolutions.length + enterpriseITServices.length + enterpriseIT2026Services.length,
-    microSaas: enhancedRealMicroSaasServices.length + innovativeMicroSaasServices.length + innovative2026Services.filter(s => s.category.includes('SaaS')).length,
-    revolutionaryServices: revolutionary2025Services.length + nextGenInnovations2025.length + innovative2026Services.length + emergingTech2026Services.length
+    itSolutions: comprehensiveITSolutions.length + enterpriseITServices.length + enterpriseIT2026Services.length + innovative2026ITInfrastructureServices.length,
+    microSaas: enhancedRealMicroSaasServices.length + innovativeMicroSaasServices.length + innovative2026Services.filter(s => s.category.includes('SaaS')).length + innovative2026MicroSaasServices.length,
+    revolutionaryServices: revolutionary2025Services.length + nextGenInnovations2025.length + innovative2026Services.length + emergingTech2026Services.length + innovative2026AIServices.length + innovative2026ITInfrastructureServices.length
   };
 
   return (
     <UltraAdvancedFuturisticBackground 
       intensity="extreme" 
-      colorScheme="quantum-fusion"
-      particleCount={400}
-      animationSpeed={2.0}
+      colorScheme="quantum-holographic"
+      particleCount={500}
+      animationSpeed={2.5}
       enableHolographic={true}
       enableQuantumEffects={true}
     >
@@ -119,7 +124,10 @@ export default function HomePage() {
         <EnhancedNavigation2026 />
 
         {/* Enhanced Hero Section 2026 */}
-        <EnhancedHero2026 />
+        <EnhancedHero2026 
+          contactInfo={contactInfo}
+          serviceStats={serviceStats}
+        />
 
         {/* Latest Innovations Showcase */}
         <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
@@ -651,6 +659,28 @@ export default function HomePage() {
         
         {/* 2026 Services Showcase */}
         <Enhanced2026ServicesShowcase />
+
+        {/* New 2026 AI Services Showcase */}
+        <Enhanced2026ServiceShowcase 
+          services={innovative2026AIServices}
+          title="AI-Powered 2026 Solutions"
+          subtitle="Intelligent automation and insights for the future"
+          showPricing={true}
+          showFeatures={true}
+          showStats={true}
+          maxServices={6}
+        />
+
+        {/* New 2026 IT Infrastructure Services Showcase */}
+        <Enhanced2026ServiceShowcase 
+          services={innovative2026ITInfrastructureServices}
+          title="Next-Generation IT Infrastructure"
+          subtitle="Quantum-safe, edge computing, and autonomous systems"
+          showPricing={true}
+          showFeatures={true}
+          showStats={true}
+          maxServices={6}
+        />
 
         {/* Featured Offers */}
         <section className="py-16 px-4 sm:px-6 lg:px-8">
