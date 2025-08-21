@@ -1,8 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
-import UltraFuturisticNavigation2033 from '../components/layout/UltraFuturisticNavigation2033';
-import UltraFuturisticFooter2034 from '../components/layout/UltraFuturisticFooter2034';
+import Layout from '../components/layout/Layout';
 
 const contactInfo = {
   mobile: '+1 302 464 0950',
@@ -34,11 +33,10 @@ export default function Innovations2034Page() {
         <meta name="twitter:description" content="Experience the future with our revolutionary 2034 micro SAAS services, IT solutions, and AI platforms." />
       </Head>
 
-      <div className="min-h-screen bg-black">
-        <UltraFuturisticNavigation2033 />
-        
-        {/* Hero Section */}
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+      <Layout>
+        <div className="min-h-screen bg-black">
+          {/* Hero Section */}
+          <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
           {/* Animated Background */}
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(0,255,255,0.15),transparent_50%)] animate-pulse"></div>
@@ -381,9 +379,8 @@ export default function Innovations2034Page() {
             </motion.div>
           </div>
         </section>
-      </div>
-
-      <UltraFuturisticFooter2034 />
+        </div>
+      </Layout>
     </>
   );
 }
