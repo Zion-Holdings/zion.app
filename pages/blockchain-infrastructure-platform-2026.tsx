@@ -3,14 +3,14 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
-  Satellite, ArrowRight, CheckCircle, Star, TrendingUp, 
-  Globe, Zap, Shield, Users, Rocket, 
-  Phone, Mail, MapPin, Brain, Sparkles
+  Link as LinkIcon, ArrowRight, CheckCircle, Star, TrendingUp, 
+  Shield, Zap, Users, Globe, Database, 
+  Phone, Mail, MapPin, Rocket, Sparkles
 } from 'lucide-react';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 import EnhancedNavigation2026 from '../components/layout/EnhancedNavigation2026';
 
-export default function SpaceTechnologyAIPlatform() {
+export default function BlockchainInfrastructurePlatform2026() {
   const contactInfo = {
     mobile: '+1 302 464 0950',
     email: 'kleber@ziontechgroup.com',
@@ -19,37 +19,37 @@ export default function SpaceTechnologyAIPlatform() {
   };
 
   const features = [
-    'AI-powered satellite operations',
-    'Autonomous space exploration',
-    'Space data analytics',
-    'Satellite constellation management',
-    'Space debris tracking',
+    'Multi-chain support (Ethereum, Polygon, Solana)',
+    'Smart contract development tools',
+    'Enterprise security & compliance',
+    'Scalable infrastructure',
+    'API access & SDKs',
     'Real-time monitoring',
-    'Predictive maintenance',
-    'Mission planning tools',
-    'API access',
+    'Custom blockchain networks',
+    'Integration marketplace',
+    '24/7 support',
     'Expert consultation'
   ];
 
   const useCases = [
-    'Satellite operations',
-    'Space exploration',
-    'Earth observation',
-    'Space debris monitoring',
-    'Mission planning',
-    'Space research'
+    'Supply chain tracking',
+    'Digital identity management',
+    'Financial transactions',
+    'Asset tokenization',
+    'Voting systems',
+    'Data integrity'
   ];
 
   const integrations = [
-    'NASA APIs', 'ESA APIs', 'Satellite ground stations', 
-    'GIS systems', 'Slack', 'Microsoft Teams', 'Custom applications'
+    'Salesforce', 'SAP', 'Oracle', 'Microsoft Dynamics', 
+    'Slack', 'Microsoft Teams', 'Zapier', 'Custom APIs'
   ];
 
   const competitors = [
-    'Maxar ($5000-50000/month)',
-    'Planet Labs ($1000-10000/month)',
-    'Airbus Defence ($10000-100000/month)',
-    'Lockheed Martin', 'Boeing', 'Northrop Grumman'
+    'Alchemy ($0-3000/month)',
+    'Infura ($0-1000/month)',
+    'QuickNode ($0-2000/month)',
+    'Chainstack', 'Blockdaemon', 'ConsenSys'
   ];
 
   return (
@@ -64,21 +64,21 @@ export default function SpaceTechnologyAIPlatform() {
     >
       <div className="min-h-screen">
         <Head>
-          <title>Space Technology AI Platform - Zion Tech Group</title>
-          <meta name="description" content="Revolutionary AI platform that combines space technology with artificial intelligence to enable autonomous space exploration, satellite operations, and space data analysis." />
-          <meta name="keywords" content="space technology, AI space exploration, satellite operations, space data analytics, autonomous space systems" />
+          <title>Blockchain Infrastructure Platform 2026 - Zion Tech Group</title>
+          <meta name="description" content="Complete blockchain infrastructure platform that enables businesses to build, deploy, and manage enterprise blockchain applications with advanced security and scalability." />
+          <meta name="keywords" content="blockchain infrastructure, enterprise blockchain, smart contracts, multi-chain, blockchain development, blockchain platform" />
           <meta name="author" content="Zion Tech Group" />
-          <meta property="og:title" content="Space Technology AI Platform - Zion Tech Group" />
-          <meta property="og:description" content="AI-powered space exploration and satellite operations" />
-          <meta property="og:url" content="https://ziontechgroup.com/space-technology-ai-platform" />
-          <link rel="canonical" href="https://ziontechgroup.com/space-technology-ai-platform" />
+          <meta property="og:title" content="Blockchain Infrastructure Platform 2026 - Zion Tech Group" />
+          <meta property="og:description" content="Enterprise-grade blockchain infrastructure for modern businesses" />
+          <meta property="og:url" content="https://ziontechgroup.com/blockchain-infrastructure-platform-2026" />
+          <link rel="canonical" href="https://ziontechgroup.com/blockchain-infrastructure-platform-2026" />
         </Head>
 
         <EnhancedNavigation2026 />
 
         {/* Hero Section */}
         <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/30 via-transparent to-indigo-900/30"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-orange-900/30 via-transparent to-yellow-900/30"></div>
           <div className="max-w-7xl mx-auto relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -86,40 +86,40 @@ export default function SpaceTechnologyAIPlatform() {
               transition={{ duration: 0.8 }}
               className="text-center mb-16"
             >
-              <div className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-blue-600/20 to-indigo-600/20 rounded-full border border-blue-500/30 mb-6">
-                <Sparkles className="w-4 h-4 text-blue-400" />
-                <span className="text-blue-300 text-sm font-medium">2026 Revolutionary Innovation</span>
+              <div className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-orange-600/20 to-yellow-600/20 rounded-full border border-orange-500/30 mb-6">
+                <Sparkles className="w-4 h-4 text-orange-400" />
+                <span className="text-orange-300 text-sm font-medium">2026 Revolutionary Innovation</span>
               </div>
               
               <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-                <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
-                  Space Technology
+                <span className="bg-gradient-to-r from-orange-400 via-yellow-400 to-red-400 bg-clip-text text-transparent">
+                  Blockchain Infrastructure
                 </span>
                 <br />
-                <span className="text-white">AI Platform</span>
+                <span className="text-white">Platform 2026</span>
               </h1>
               
               <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
-                Revolutionary AI platform that combines space technology with artificial intelligence to enable 
-                autonomous space exploration, satellite operations, and space data analysis.
+                Complete blockchain infrastructure platform that enables businesses to build, deploy, and manage 
+                enterprise blockchain applications with advanced security and scalability.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-12">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-xl shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 transition-all duration-200"
+                  className="flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-orange-600 to-yellow-600 text-white font-semibold rounded-xl shadow-lg shadow-orange-500/25 hover:shadow-xl hover:shadow-orange-500/40 transition-all duration-200"
                 >
-                  <span className="text-2xl font-bold">$3,999</span>
-                  <span>/month</span>
+                  <span className="text-2xl font-bold">Custom</span>
+                  <span>pricing</span>
                 </motion.div>
                 
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="flex items-center space-x-2 px-8 py-4 border-2 border-blue-500/50 text-blue-400 font-semibold rounded-xl hover:bg-blue-500/10 transition-all duration-200"
+                  className="flex items-center space-x-2 px-8 py-4 border-2 border-orange-500/50 text-orange-400 font-semibold rounded-xl hover:bg-orange-500/10 transition-all duration-200"
                 >
-                  <span>7-Day Free Trial</span>
+                  <span>14-Day Free Trial</span>
                   <ArrowRight className="w-5 h-5" />
                 </motion.div>
               </div>
@@ -127,15 +127,15 @@ export default function SpaceTechnologyAIPlatform() {
               <div className="flex items-center justify-center space-x-8 text-gray-400">
                 <div className="flex items-center space-x-2">
                   <CheckCircle className="w-5 h-5 text-green-400" />
-                  <span>1-month setup</span>
+                  <span>2-week setup</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Shield className="w-5 h-5 text-blue-400" />
                   <span>Enterprise security</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <Users className="w-5 h-5 text-blue-400" />
-                  <span>120+ customers</span>
+                  <Users className="w-5 h-5 text-orange-400" />
+                  <span>850+ customers</span>
                 </div>
               </div>
             </motion.div>
@@ -153,12 +153,12 @@ export default function SpaceTechnologyAIPlatform() {
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                <span className="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent">
                   Revolutionary Features
                 </span>
               </h2>
               <p className="text-gray-300 text-xl max-w-3xl mx-auto">
-                Experience the future of space technology with AI-powered operations and autonomous exploration
+                Experience the future of blockchain infrastructure with multi-chain support and enterprise-grade security
               </p>
             </motion.div>
 
@@ -172,14 +172,14 @@ export default function SpaceTechnologyAIPlatform() {
                   viewport={{ once: true }}
                   className="group relative"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-indigo-600/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-                  <div className="relative bg-black/40 backdrop-blur-xl border border-blue-500/20 rounded-2xl p-6 hover:border-blue-500/40 transition-all duration-300">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center mb-4">
-                      <Satellite className="w-6 h-6 text-white" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-orange-600/10 to-yellow-600/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                  <div className="relative bg-black/40 backdrop-blur-xl border border-orange-500/20 rounded-2xl p-6 hover:border-orange-500/40 transition-all duration-300">
+                    <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-yellow-500 rounded-xl flex items-center justify-center mb-4">
+                      <LinkIcon className="w-6 h-6 text-white" />
                     </div>
                     <h3 className="text-xl font-bold text-white mb-3">{feature}</h3>
                     <p className="text-gray-400">
-                      Advanced AI-powered {feature.toLowerCase()} for enhanced space operations and exploration.
+                      Advanced blockchain {feature.toLowerCase()} for enhanced enterprise applications and scalability.
                     </p>
                   </div>
                 </motion.div>
@@ -204,7 +204,7 @@ export default function SpaceTechnologyAIPlatform() {
                 </span>
               </h2>
               <p className="text-gray-300 text-xl max-w-3xl mx-auto">
-                Competitive pricing with superior features and AI-powered capabilities
+                Competitive pricing with superior features and multi-chain capabilities
               </p>
             </motion.div>
 
@@ -228,7 +228,7 @@ export default function SpaceTechnologyAIPlatform() {
                 <div className="p-4 bg-gradient-to-r from-green-600/20 to-emerald-600/20 rounded-xl border border-green-500/30">
                   <div className="flex items-center space-x-3">
                     <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                    <span className="text-green-300 font-semibold">Our Advantage: AI integration, comprehensive platform, affordable pricing</span>
+                    <span className="text-green-300 font-semibold">Our Advantage: Multi-chain support, enterprise features, comprehensive infrastructure</span>
                   </div>
                 </div>
               </motion.div>
@@ -242,20 +242,20 @@ export default function SpaceTechnologyAIPlatform() {
               >
                 <h3 className="text-2xl font-bold text-white mb-6">Market Statistics</h3>
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="p-6 bg-gradient-to-r from-blue-600/20 to-indigo-600/20 rounded-xl border border-blue-500/30 text-center">
-                    <div className="text-3xl font-bold text-blue-400 mb-2">$447.5B</div>
-                    <div className="text-blue-300 text-sm">Market Size</div>
+                  <div className="p-6 bg-gradient-to-r from-orange-600/20 to-yellow-600/20 rounded-xl border border-orange-500/30 text-center">
+                    <div className="text-3xl font-bold text-orange-400 mb-2">$19.9B</div>
+                    <div className="text-orange-300 text-sm">Market Size</div>
                   </div>
-                  <div className="p-6 bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-xl border border-purple-500/30 text-center">
-                    <div className="text-3xl font-bold text-purple-400 mb-2">350%</div>
-                    <div className="text-purple-300 text-sm">Annual Growth</div>
+                  <div className="p-6 bg-gradient-to-r from-blue-600/20 to-cyan-600/20 rounded-xl border border-blue-500/30 text-center">
+                    <div className="text-3xl font-bold text-blue-400 mb-2">280%</div>
+                    <div className="text-blue-300 text-sm">Annual Growth</div>
                   </div>
                   <div className="p-6 bg-gradient-to-r from-green-600/20 to-emerald-600/20 rounded-xl border border-green-500/30 text-center">
-                    <div className="text-3xl font-bold text-green-400 mb-2">800%</div>
+                    <div className="text-3xl font-bold text-green-400 mb-2">500%</div>
                     <div className="text-green-300 text-sm">Average ROI</div>
                   </div>
                   <div className="p-6 bg-gradient-to-r from-yellow-600/20 to-orange-600/20 rounded-xl border border-yellow-500/30 text-center">
-                    <div className="text-3xl font-bold text-yellow-400 mb-2">24</div>
+                    <div className="text-3xl font-bold text-yellow-400 mb-2">18</div>
                     <div className="text-yellow-300 text-sm">Months to ROI</div>
                   </div>
                 </div>
@@ -280,7 +280,7 @@ export default function SpaceTechnologyAIPlatform() {
                 </span>
               </h2>
               <p className="text-gray-300 text-xl max-w-3xl mx-auto">
-                Transform every aspect of space operations with AI-powered intelligence
+                Transform every aspect of your business with blockchain-powered solutions
               </p>
             </motion.div>
 
@@ -297,11 +297,11 @@ export default function SpaceTechnologyAIPlatform() {
                   <div className="absolute inset-0 bg-gradient-to-r from-cyan-600/10 to-blue-600/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
                   <div className="relative bg-black/40 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-6 hover:border-cyan-500/40 transition-all duration-300">
                     <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center mb-4">
-                      <Globe className="w-6 h-6 text-white" />
+                      <Database className="w-6 h-6 text-white" />
                     </div>
                     <h3 className="text-xl font-bold text-white mb-3">{useCase}</h3>
                     <p className="text-gray-400">
-                      Leverage AI-powered space technology to optimize {useCase.toLowerCase()} and drive innovation.
+                      Leverage blockchain technology to optimize {useCase.toLowerCase()} and ensure transparency.
                     </p>
                   </div>
                 </motion.div>
@@ -320,12 +320,12 @@ export default function SpaceTechnologyAIPlatform() {
               viewport={{ once: true }}
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                <span className="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
-                  Ready to Explore the Cosmos?
+                <span className="bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent">
+                  Ready to Build the Future?
                 </span>
               </h2>
               <p className="text-gray-300 text-xl mb-8 max-w-2xl mx-auto">
-                Join 120+ space companies already leveraging our Space Technology AI Platform to achieve unprecedented exploration capabilities and operational efficiency.
+                Join 850+ businesses already leveraging our Blockchain Infrastructure Platform 2026 to build secure, scalable, and innovative applications.
               </p>
               
               <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-8">
@@ -333,7 +333,7 @@ export default function SpaceTechnologyAIPlatform() {
                   href={`tel:${contactInfo.mobile}`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-xl shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 transition-all duration-200"
+                  className="flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-orange-600 to-yellow-600 text-white font-semibold rounded-xl shadow-lg shadow-orange-500/25 hover:shadow-xl hover:shadow-orange-500/40 transition-all duration-200"
                 >
                   <Phone className="w-5 h-5" />
                   <span>Call {contactInfo.mobile}</span>
@@ -343,25 +343,25 @@ export default function SpaceTechnologyAIPlatform() {
                   href={`mailto:${contactInfo.email}`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="flex items-center space-x-2 px-8 py-4 border-2 border-blue-500/50 text-blue-400 font-semibold rounded-xl hover:bg-blue-500/10 transition-all duration-200"
+                  className="flex items-center space-x-2 px-8 py-4 border-2 border-orange-500/50 text-orange-400 font-semibold rounded-xl hover:bg-orange-500/10 transition-all duration-200"
                 >
                   <Mail className="w-5 h-5" />
                   <span>Email Us</span>
                 </motion.a>
               </div>
 
-              <div className="p-6 bg-gradient-to-r from-blue-900/20 via-indigo-900/20 to-purple-900/20 rounded-2xl border border-blue-500/20">
+              <div className="p-6 bg-gradient-to-r from-orange-900/20 via-yellow-900/20 to-red-900/20 rounded-2xl border border-orange-500/20">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
                   <div>
-                    <Phone className="w-6 h-6 text-blue-400 mx-auto mb-2" />
+                    <Phone className="w-6 h-6 text-orange-400 mx-auto mb-2" />
                     <p className="text-white font-medium">{contactInfo.mobile}</p>
                   </div>
                   <div>
-                    <Mail className="w-6 h-6 text-indigo-400 mx-auto mb-2" />
+                    <Mail className="w-6 h-6 text-yellow-400 mx-auto mb-2" />
                     <p className="text-white font-medium">{contactInfo.email}</p>
                   </div>
                   <div>
-                    <MapPin className="w-6 h-6 text-purple-400 mx-auto mb-2" />
+                    <MapPin className="w-6 h-6 text-red-400 mx-auto mb-2" />
                     <p className="text-white font-medium">{contactInfo.address}</p>
                   </div>
                 </div>
@@ -373,4 +373,3 @@ export default function SpaceTechnologyAIPlatform() {
     </UltraAdvancedFuturisticBackground>
   );
 }
-
