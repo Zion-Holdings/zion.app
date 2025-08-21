@@ -17,7 +17,7 @@ const contactInfo = {
 
 const serviceCategories = [
   {
-    title: 'Revolutionary 2025 AI',
+    title: 'Revolutionary 2026 AI',
     icon: Brain,
     services: [
       { name: 'AI Consciousness Simulator', href: '/ai-consciousness-simulator', description: 'Simulate human-like consciousness in AI systems', price: '$2,999/month' },
@@ -75,11 +75,22 @@ const serviceCategories = [
       { name: 'AI Meeting Transcriber Pro', href: '/ai-meeting-transcriber-pro', description: 'Advanced AI-powered meeting transcription and insights', price: '$199/month' },
       { name: 'AI Mental Health Companion', href: '/ai-mental-health-companion', description: 'AI-powered mental health support and wellness', price: '$149/month' }
     ]
+  },
+  {
+    title: 'Revolutionary 2026 Services',
+    icon: Rocket,
+    services: [
+      { name: 'AI Quantum Financial Analytics', href: '/ai-quantum-financial-analytics', description: 'Quantum-powered AI for next-generation financial insights', price: '$1,299/month' },
+      { name: 'Neural Interface Development', href: '/neural-interface-development-platform', description: 'Build next-generation brain-computer interfaces with AI', price: '$2,999/month' },
+      { name: 'Quantum-Secure Cloud Storage', href: '/quantum-secure-cloud-storage', description: 'Future-proof storage with quantum-resistant encryption', price: '$199/month' },
+      { name: 'Zero Trust Network Architecture 2.0', href: '/zero-trust-network-architecture-2', description: 'Next-generation zero trust security with AI and quantum encryption', price: '$4,999/month' }
+    ]
   }
 ];
 
 const companyLinks = [
   { name: 'About Us', href: '/about' },
+  { name: 'Revolutionary 2026', href: '/revolutionary-2026-services' },
   { name: '2026 Services', href: '/2026-services-showcase' },
   { name: 'All Services', href: '/services' },
   { name: 'Pricing', href: '/pricing' },
