@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  X, ChevronRight, Home, Star, Users, 
-  Settings, HelpCircle, Mail, Phone, MapPin,
-  Brain, Atom, Shield, Rocket, DollarSign,
-  Globe, Cpu, Database, Lock, Zap,
-  TrendingUp, Award, CheckCircle, Clock,
-  ArrowRight, Search, Menu, X as CloseIcon
+  X, Menu, Home, Zap, Brain, Atom, Shield, Rocket,
+  ChevronDown, ChevronRight, Star, TrendingUp, 
+  Award, Users, FileText, HelpCircle, Settings,
+  Globe, Mail, Phone, MapPin, ArrowRight,
+  Cpu, Database, Lock, Heart, Palette, GraduationCap,
+  Leaf, Pill, Coins, Building2, Code, Server, ShieldCheck,
+  BarChart3, Target, Lightbulb, Eye, Sparkles, Layers
 } from 'lucide-react';
 
 const contactInfo = {
@@ -21,10 +22,10 @@ const serviceCategories = [
   {
     title: 'AI & Consciousness',
     icon: <Brain className="w-5 h-5 text-cyan-400" />,
-    color: 'from-cyan-500/20 to-blue-600/20',
+    color: 'from-cyan-500 to-blue-600',
     services: [
-      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029', badge: 'New' },
-      { name: 'Quantum AI Fusion', href: '/quantum-ai-fusion', badge: 'Hot' },
+      { name: 'AI Consciousness Evolution 2029', href: '/ai-consciousness-evolution-2029', featured: true },
+      { name: 'Quantum AI Fusion', href: '/quantum-ai-fusion', featured: true },
       { name: 'AI Autonomous Ecosystem', href: '/ai-autonomous-ecosystem' },
       { name: 'AI Ethics & Governance', href: '/ai-ethics-governance' },
       { name: 'AI Creativity Studio', href: '/ai-creativity-studio' },
@@ -38,10 +39,10 @@ const serviceCategories = [
   {
     title: 'Quantum & Emerging Tech',
     icon: <Atom className="w-5 h-5 text-blue-400" />,
-    color: 'from-blue-500/20 to-purple-600/20',
+    color: 'from-blue-500 to-indigo-600',
     services: [
-      { name: 'Space Mining Platform', href: '/space-mining-platform', badge: 'Revolutionary' },
-      { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing' },
+      { name: 'Space Mining Platform', href: '/space-mining-platform', featured: true },
+      { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing', featured: true },
       { name: 'Brain-Computer Interface', href: '/brain-computer-interface' },
       { name: 'Quantum Energy Platform', href: '/quantum-energy-platform' },
       { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai' },
@@ -55,10 +56,10 @@ const serviceCategories = [
   {
     title: 'Enterprise IT',
     icon: <Shield className="w-5 h-5 text-green-400" />,
-    color: 'from-green-500/20 to-emerald-600/20',
+    color: 'from-green-500 to-emerald-600',
     services: [
-      { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure' },
-      { name: 'Edge Computing Orchestrator', href: '/edge-computing-orchestration' },
+      { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure', featured: true },
+      { name: 'Edge Computing Orchestrator', href: '/edge-computing-orchestration', featured: true },
       { name: 'Zero Trust Security Platform', href: '/zero-trust-network-architecture' },
       { name: 'Blockchain Enterprise Platform', href: '/blockchain-infrastructure-platform' },
       { name: 'AI-Powered DevOps', href: '/ai-powered-devops' },
@@ -72,327 +73,305 @@ const serviceCategories = [
   {
     title: 'Micro SAAS',
     icon: <Rocket className="w-5 h-5 text-purple-400" />,
-    color: 'from-purple-500/20 to-pink-600/20',
+    color: 'from-purple-500 to-pink-600',
     services: [
-      { name: 'AI Content Factory Pro', href: '/ai-content-factory-pro', badge: 'Popular' },
-      { name: 'Quantum CRM Suite', href: '/quantum-crm-suite' },
-      { name: 'AI Autonomous Decision Engine', href: '/ai-autonomous-decision-engine' },
-      { name: 'AI Creativity Studio', href: '/ai-creativity-studio' },
-      { name: 'AI Education Platform', href: '/ai-education-platform' },
-      { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics' },
+      { name: 'AI Autonomous Decision Engine', href: '/ai-autonomous-decision-engine', featured: true },
+      { name: 'Quantum CRM Suite', href: '/quantum-crm-suite', featured: true },
+      { name: 'AI Content Factory Pro', href: '/ai-content-factory-pro' },
+      { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer' },
       { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence' },
+      { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics' },
       { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform' },
+      { name: 'AI Education Platform', href: '/ai-education-platform' },
       { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-platform' },
-      { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer' }
+      { name: 'AI Creativity Studio', href: '/ai-creativity-studio' }
     ]
   }
 ];
 
 const quickLinks = [
-  { name: 'Home', href: '/', icon: <Home className="w-4 h-4" /> },
-  { name: 'All Services', href: '/comprehensive-services-showcase-2025', icon: <Star className="w-4 h-4" /> },
-  { name: 'Pricing', href: '/pricing', icon: <DollarSign className="w-4 h-4" /> },
-  { name: 'About Us', href: '/about', icon: <Users className="w-4 h-4" /> },
-  { name: 'Contact', href: '/contact', icon: <Mail className="w-4 h-4" /> },
-  { name: 'Support', href: '/support', icon: <HelpCircle className="w-4 h-4" /> }
+  { name: 'Home', href: '/', icon: Home, color: 'text-blue-400' },
+  { name: 'Services', href: '/services', icon: Zap, color: 'text-cyan-400' },
+  { name: 'About', href: '/about', icon: Users, color: 'text-green-400' },
+  { name: 'Contact', href: '/contact', icon: Mail, color: 'text-purple-400' },
+  { name: 'Pricing', href: '/pricing', icon: TrendingUp, color: 'text-orange-400' },
+  { name: 'Support', href: '/support', icon: HelpCircle, color: 'text-red-400' }
 ];
 
-const companyLinks = [
-  { name: 'About Us', href: '/about', description: 'Our mission and vision' },
-  { name: 'Careers', href: '/careers', description: 'Join our team' },
-  { name: 'News & Updates', href: '/news', description: 'Latest company news' },
-  { name: 'Case Studies', href: '/case-studies', description: 'Success stories' },
-  { name: 'Resources', href: '/resources', description: 'Whitepapers and guides' },
-  { name: 'Blog', href: '/blog', description: 'Industry insights' }
+const industrySolutions = [
+  { name: 'Healthcare', href: '/healthcare-solutions', icon: Pill, color: 'text-pink-400' },
+  { name: 'Financial Services', href: '/financial-solutions', icon: Coins, color: 'text-yellow-400' },
+  { name: 'Manufacturing', href: '/manufacturing-solutions', icon: Cpu, color: 'text-blue-400' },
+  { name: 'Retail & E-commerce', href: '/retail-solutions', icon: Globe, color: 'text-green-400' },
+  { name: 'Education', href: '/education-solutions', icon: GraduationCap, color: 'text-purple-400' },
+  { name: 'Government', href: '/government-solutions', icon: Building2, color: 'text-indigo-400' }
 ];
 
-const supportLinks = [
-  { name: 'Contact Support', href: '/support', description: 'Get help from our team' },
-  { name: 'Documentation', href: '/docs', description: 'Technical guides' },
-  { name: 'API Reference', href: '/api-docs', description: 'Developer documentation' },
-  { name: 'Status Page', href: '/status', description: 'Service status' },
-  { name: 'Training', href: '/training', description: 'Learn our platforms' },
-  { name: 'Community', href: '/community', description: 'Connect with users' }
+const featuredServices = [
+  { name: 'AI Consciousness Evolution 2029', href: '/ai-consciousness-evolution-2029', category: 'AI & Consciousness' },
+  { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure', category: 'Enterprise IT' },
+  { name: 'Space Mining Platform', href: '/space-mining-platform', category: 'Emerging Tech' },
+  { name: 'AI Autonomous Decision Engine', href: '/ai-autonomous-decision-engine', category: 'Micro SAAS' }
 ];
 
-const stats = [
-  { label: 'Services Delivered', value: '500+', icon: <CheckCircle className="w-5 h-5" /> },
-  { label: 'Happy Clients', value: '200+', icon: <Users className="w-5 h-5" /> },
-  { label: 'Years Experience', value: '15+', icon: <Clock className="w-5 h-5" /> },
-  { label: 'Awards Won', value: '25+', icon: <Award className="w-5 h-5" /> }
-];
+export default function EnhancedSidebar2025() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [expandedCategories, setExpandedCategories] = useState<string[]>([]);
 
-interface EnhancedSidebar2025Props {
-  isOpen: boolean;
-  onClose: () => void;
-}
-
-export default function EnhancedSidebar2025({ isOpen, onClose }: EnhancedSidebar2025Props) {
-  const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
-  const [searchQuery, setSearchQuery] = useState('');
-
-  const toggleCategory = (title: string) => {
-    setExpandedCategory(expandedCategory === title ? null : title);
+  const toggleCategory = (categoryTitle: string) => {
+    setExpandedCategories(prev => 
+      prev.includes(categoryTitle) 
+        ? prev.filter(cat => cat !== categoryTitle)
+        : [...prev, categoryTitle]
+    );
   };
 
-  const filteredServices = serviceCategories.flatMap(category =>
-    category.services.filter(service =>
-      service.name.toLowerCase().includes(searchQuery.toLowerCase())
-    )
-  );
+  const toggleSidebar = () => setIsOpen(!isOpen);
 
   return (
-    <AnimatePresence>
-      {isOpen && (
-        <>
-          {/* Backdrop */}
+    <>
+      {/* Mobile Menu Button */}
+      <button
+        onClick={toggleSidebar}
+        className="lg:hidden fixed top-4 left-4 z-50 p-2 bg-black/80 backdrop-blur-sm border border-white/20 rounded-lg text-white hover:bg-white/10 transition-all duration-200"
+      >
+        <Menu className="w-6 h-6" />
+      </button>
+
+      {/* Overlay */}
+      <AnimatePresence>
+        {isOpen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 lg:hidden"
-            onClick={onClose}
+            onClick={toggleSidebar}
+            className="lg:hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
           />
+        )}
+      </AnimatePresence>
 
-          {/* Sidebar */}
-          <motion.div
-            initial={{ x: '-100%' }}
-            animate={{ x: 0 }}
-            exit={{ x: '-100%' }}
-            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed left-0 top-0 h-full w-80 bg-gray-900/95 backdrop-blur-md border-r border-cyan-500/30 z-50 overflow-y-auto"
-          >
-            {/* Header */}
-            <div className="p-6 border-b border-cyan-500/30">
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center">
-                    <Zap className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <div className="text-lg font-bold text-white">Zion Tech Group</div>
-                    <div className="text-xs text-cyan-400">Revolutionary Technology</div>
-                  </div>
-                </div>
-                <button
-                  onClick={onClose}
-                  className="p-2 text-gray-400 hover:text-white transition-colors duration-200"
-                >
-                  <CloseIcon className="w-5 h-5" />
-                </button>
-              </div>
-
-              {/* Search Bar */}
+      {/* Sidebar */}
+      <motion.aside
+        initial={{ x: '-100%' }}
+        animate={{ x: isOpen ? 0 : '-100%' }}
+        transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+        className={`fixed left-0 top-0 h-full w-80 bg-black/95 backdrop-blur-xl border-r border-white/10 z-50 overflow-y-auto scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent`}
+      >
+        <div className="p-6">
+          {/* Header */}
+          <div className="flex items-center justify-between mb-8">
+            <div className="flex items-center gap-3">
               <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
-                <input
-                  type="text"
-                  placeholder="Search services..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50"
-                />
+                <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center">
+                  <Zap className="w-6 h-6 text-white" />
+                </div>
+                <div className="absolute -inset-1 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl opacity-20 -z-10" />
+              </div>
+              <div>
+                <h2 className="text-xl font-bold text-white">Zion Tech</h2>
+                <p className="text-cyan-400 text-xs">Revolutionary Solutions</p>
               </div>
             </div>
+            <button
+              onClick={toggleSidebar}
+              className="lg:hidden p-2 text-gray-400 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
 
-            {/* Contact Information */}
-            <div className="p-6 border-b border-cyan-500/30">
-              <h3 className="text-lg font-semibold text-white mb-4 flex items-center space-x-2">
-                <Mail className="w-5 h-5 text-cyan-400" />
-                <span>Contact Information</span>
-              </h3>
-              <div className="space-y-3">
-                <div className="flex items-center space-x-3 text-gray-300">
-                  <Phone className="w-4 h-4 text-cyan-400" />
-                  <a href={`tel:${contactInfo.mobile}`} className="hover:text-cyan-400 transition-colors duration-200">
-                    {contactInfo.mobile}
-                  </a>
-                </div>
-                <div className="flex items-center space-x-3 text-gray-300">
-                  <Mail className="w-4 h-4 text-cyan-400" />
-                  <a href={`mailto:${contactInfo.email}`} className="hover:text-cyan-400 transition-colors duration-200">
-                    {contactInfo.email}
-                  </a>
-                </div>
-                <div className="flex items-start space-x-3 text-gray-300">
-                  <MapPin className="w-4 h-4 text-cyan-400 mt-1" />
-                  <span className="text-sm">{contactInfo.address}</span>
-                </div>
+          {/* Contact Info */}
+          <div className="mb-8 p-4 bg-gradient-to-r from-cyan-500/10 to-blue-600/10 border border-cyan-500/20 rounded-xl">
+            <h3 className="text-sm font-semibold text-white mb-3 flex items-center gap-2">
+              <Mail className="w-4 h-4 text-cyan-400" />
+              Contact Info
+            </h3>
+            <div className="space-y-2 text-xs">
+              <div className="flex items-center gap-2 text-gray-300">
+                <Phone className="w-3 h-3 text-cyan-400" />
+                <span>{contactInfo.mobile}</span>
+              </div>
+              <div className="flex items-center gap-2 text-gray-300">
+                <Mail className="w-3 h-3 text-cyan-400" />
+                <span>{contactInfo.email}</span>
+              </div>
+              <div className="flex items-center gap-2 text-gray-300">
+                <MapPin className="w-3 h-3 text-cyan-400" />
+                <span className="text-xs">{contactInfo.address}</span>
               </div>
             </div>
+          </div>
 
-            {/* Quick Stats */}
-            <div className="p-6 border-b border-cyan-500/30">
-              <h3 className="text-lg font-semibold text-white mb-4 flex items-center space-x-2">
-                <TrendingUp className="w-5 h-5 text-cyan-400" />
-                <span>Company Stats</span>
-              </h3>
-              <div className="grid grid-cols-2 gap-4">
-                {stats.map((stat, index) => (
+          {/* Quick Links */}
+          <div className="mb-8">
+            <h3 className="text-sm font-semibold text-white mb-4 flex items-center gap-2">
+              <Zap className="w-4 h-4 text-cyan-400" />
+              Quick Navigation
+            </h3>
+            <div className="grid grid-cols-2 gap-2">
+              {quickLinks.map((link) => (
+                <Link key={link.name} href={link.href}>
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="w-full p-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg text-white text-sm font-medium transition-all duration-200 flex items-center gap-2"
+                  >
+                    <link.icon className={`w-4 h-4 ${link.color}`} />
+                    {link.name}
+                  </motion.button>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Featured Services */}
+          <div className="mb-8">
+            <h3 className="text-sm font-semibold text-white mb-4 flex items-center gap-2">
+              <Star className="w-4 h-4 text-yellow-400" />
+              Featured Services
+            </h3>
+            <div className="space-y-2">
+              {featuredServices.map((service) => (
+                <Link key={service.name} href={service.href}>
                   <motion.div
-                    key={stat.label}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
-                    className="text-center p-3 bg-gray-800/30 rounded-lg border border-gray-700/30"
+                    whileHover={{ x: 5 }}
+                    className="p-3 bg-gradient-to-r from-white/5 to-white/10 border border-white/10 rounded-lg hover:border-cyan-400/50 transition-all duration-200"
                   >
-                    <div className="text-2xl font-bold text-white mb-1">{stat.value}</div>
-                    <div className="text-xs text-gray-400">{stat.label}</div>
+                    <div className="text-sm font-medium text-white mb-1">{service.name}</div>
+                    <div className="text-xs text-cyan-400">{service.category}</div>
                   </motion.div>
-                ))}
-              </div>
+                </Link>
+              ))}
             </div>
+          </div>
 
-            {/* Quick Links */}
-            <div className="p-6 border-b border-cyan-500/30">
-              <h3 className="text-lg font-semibold text-white mb-4 flex items-center space-x-2">
-                <Star className="w-5 h-5 text-cyan-400" />
-                <span>Quick Links</span>
-              </h3>
-              <div className="space-y-2">
-                {quickLinks.map((link) => (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    onClick={onClose}
-                    className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-800/50 transition-colors duration-200 group"
+          {/* Service Categories */}
+          <div className="mb-8">
+            <h3 className="text-sm font-semibold text-white mb-4 flex items-center gap-2">
+              <Layers className="w-4 h-4 text-cyan-400" />
+              All Services
+            </h3>
+            <div className="space-y-2">
+              {serviceCategories.map((category) => (
+                <div key={category.title} className="border border-white/10 rounded-lg overflow-hidden">
+                  <button
+                    onClick={() => toggleCategory(category.title)}
+                    className="w-full p-3 bg-gradient-to-r from-white/5 to-white/10 hover:from-white/10 hover:to-white/15 transition-all duration-200 flex items-center justify-between text-left"
                   >
-                    <div className="text-gray-400 group-hover:text-cyan-400 transition-colors duration-200">
-                      {link.icon}
+                    <div className="flex items-center gap-3">
+                      {category.icon}
+                      <span className="text-sm font-medium text-white">{category.title}</span>
                     </div>
-                    <span className="text-gray-300 group-hover:text-white transition-colors duration-200">
-                      {link.name}
-                    </span>
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* Service Categories */}
-            <div className="p-6 border-b border-cyan-500/30">
-              <h3 className="text-lg font-semibold text-white mb-4 flex items-center space-x-2">
-                <Rocket className="w-5 h-5 text-cyan-400" />
-                <span>Service Categories</span>
-              </h3>
-              <div className="space-y-2">
-                {serviceCategories.map((category) => (
-                  <div key={category.title}>
-                    <button
-                      onClick={() => toggleCategory(category.title)}
-                      className="w-full flex items-center justify-between p-3 rounded-lg hover:bg-gray-800/50 transition-colors duration-200 group"
-                    >
-                      <div className="flex items-center space-x-3">
-                        <div className={`w-8 h-8 bg-gradient-to-r ${category.color} rounded-lg flex items-center justify-center`}>
-                          {category.icon}
-                        </div>
-                        <span className="text-gray-300 group-hover:text-white transition-colors duration-200">
-                          {category.title}
-                        </span>
-                      </div>
-                      <ChevronRight 
-                        className={`w-4 h-4 text-gray-400 transition-transform duration-200 ${
-                          expandedCategory === category.title ? 'rotate-90' : ''
-                        }`} 
-                      />
-                    </button>
-                    
-                    <AnimatePresence>
-                      {expandedCategory === category.title && (
-                        <motion.div
-                          initial={{ opacity: 0, height: 0 }}
-                          animate={{ opacity: 1, height: 'auto' }}
-                          exit={{ opacity: 0, height: 0 }}
-                          transition={{ duration: 0.2 }}
-                          className="ml-8 mt-2 space-y-1"
-                        >
+                    {expandedCategories.includes(category.title) ? (
+                      <ChevronDown className="w-4 h-4 text-cyan-400" />
+                    ) : (
+                      <ChevronRight className="w-4 h-4 text-cyan-400" />
+                    )}
+                  </button>
+                  
+                  <AnimatePresence>
+                    {expandedCategories.includes(category.title) && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="p-3 bg-black/20 space-y-2">
                           {category.services.map((service) => (
-                            <Link
-                              key={service.name}
-                              href={service.href}
-                              onClick={onClose}
-                              className="flex items-center justify-between p-2 rounded-lg hover:bg-gray-800/30 transition-colors duration-200 group"
-                            >
-                              <span className="text-sm text-gray-400 group-hover:text-cyan-400 transition-colors duration-200">
-                                {service.name}
-                              </span>
-                              {service.badge && (
-                                <span className="px-2 py-1 text-xs bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full">
-                                  {service.badge}
+                            <Link key={service.name} href={service.href}>
+                              <motion.div
+                                whileHover={{ x: 5 }}
+                                className="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 transition-colors"
+                              >
+                                {service.featured && (
+                                  <Star className="w-3 h-3 text-yellow-400" />
+                                )}
+                                <span className={`text-xs ${service.featured ? 'text-white font-medium' : 'text-gray-300'}`}>
+                                  {service.name}
                                 </span>
-                              )}
+                              </motion.div>
                             </Link>
                           ))}
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                ))}
-              </div>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ))}
             </div>
+          </div>
 
-            {/* Company Links */}
-            <div className="p-6 border-b border-cyan-500/30">
-              <h3 className="text-lg font-semibold text-white mb-4 flex items-center space-x-2">
-                <Users className="w-5 h-5 text-cyan-400" />
-                <span>Company</span>
-              </h3>
-              <div className="space-y-2">
-                {companyLinks.map((link) => (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    onClick={onClose}
-                    className="block p-3 rounded-lg hover:bg-gray-800/50 transition-colors duration-200 group"
+          {/* Industry Solutions */}
+          <div className="mb-8">
+            <h3 className="text-sm font-semibold text-white mb-4 flex items-center gap-2">
+              <Target className="w-4 h-4 text-green-400" />
+              Industry Solutions
+            </h3>
+            <div className="grid grid-cols-2 gap-2">
+              {industrySolutions.map((solution) => (
+                <Link key={solution.name} href={solution.href}>
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="w-full p-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg text-white text-xs font-medium transition-all duration-200 flex items-center gap-2"
                   >
-                    <div className="font-medium text-gray-300 group-hover:text-white transition-colors duration-200">
-                      {link.name}
-                    </div>
-                    <div className="text-xs text-gray-500">{link.description}</div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* Support Links */}
-            <div className="p-6 border-b border-cyan-500/30">
-              <h3 className="text-lg font-semibold text-white mb-4 flex items-center space-x-2">
-                <HelpCircle className="w-5 h-5 text-cyan-400" />
-                <span>Support</span>
-              </h3>
-              <div className="space-y-2">
-                {supportLinks.map((link) => (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    onClick={onClose}
-                    className="block p-3 rounded-lg hover:bg-gray-800/50 transition-colors duration-200 group"
-                  >
-                    <div className="font-medium text-gray-300 group-hover:text-white transition-colors duration-200">
-                      {link.name}
-                    </div>
-                    <div className="text-xs text-gray-500">{link.description}</div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* CTA Section */}
-            <div className="p-6">
-              <div className="p-4 bg-gradient-to-r from-cyan-500/10 to-blue-600/10 border border-cyan-500/30 rounded-xl">
-                <h4 className="text-lg font-semibold text-white mb-3">Ready to Get Started?</h4>
-                <p className="text-gray-400 text-sm mb-4">
-                  Transform your business with cutting-edge technology solutions.
-                </p>
-                <Link href="/contact" onClick={onClose}>
-                  <button className="w-full px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:scale-105 transition-all duration-300">
-                    Contact Us Today
-                  </button>
+                    <solution.icon className={`w-3 h-3 ${solution.color}`} />
+                    {solution.name}
+                  </motion.button>
                 </Link>
-              </div>
+              ))}
             </div>
-          </motion.div>
-        </>
-      )}
-    </AnimatePresence>
+          </div>
+
+          {/* CTA Section */}
+          <div className="mb-8 p-4 bg-gradient-to-r from-cyan-500/20 to-blue-600/20 border border-cyan-500/30 rounded-xl">
+            <h3 className="text-sm font-semibold text-white mb-3 text-center">Ready to Transform?</h3>
+            <Link href="/contact">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="w-full p-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 flex items-center justify-center gap-2"
+              >
+                <ArrowRight className="w-4 h-4" />
+                Get Started
+              </motion.button>
+            </Link>
+          </div>
+
+          {/* Footer */}
+          <div className="text-center text-xs text-gray-400">
+            <p>© 2025 Zion Tech Group</p>
+            <p className="mt-1">Revolutionary Technology Solutions</p>
+          </div>
+        </div>
+
+        {/* Floating Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {[...Array(5)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-1 h-1 bg-cyan-400 rounded-full opacity-20"
+              animate={{
+                x: [0, 20, 0],
+                y: [0, -20, 0],
+                opacity: [0.2, 0.5, 0.2],
+              }}
+              transition={{
+                duration: 6 + i * 2,
+                repeat: Infinity,
+                delay: i * 0.8,
+              }}
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+              }}
+            />
+          ))}
+        </div>
+      </motion.aside>
+    </>
   );
 }

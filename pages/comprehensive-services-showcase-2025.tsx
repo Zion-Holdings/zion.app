@@ -54,12 +54,17 @@ export default function ComprehensiveServicesShowcase2025() {
 
   const filteredServices = allServices.filter(service => {
     const matchesCategory = selectedCategory === 'all' || service.category === selectedCategory;
+    
+    // Extract numeric price from string (e.g., "$1,299" -> 1299)
+    const priceValue = parseFloat(service.price.replace(/[$,]/g, ''));
     const matchesPricing = selectedPricing === 'all' || 
-      (service.pricing.starter.price >= pricingRanges.find(p => p.id === selectedPricing)?.min! &&
-       service.pricing.starter.price <= pricingRanges.find(p => p.id === selectedPricing)?.max!);
+      (priceValue >= pricingRanges.find(p => p.id === selectedPricing)?.min! &&
+       priceValue <= pricingRanges.find(p => p.id === selectedPricing)?.max!);
+    
     const matchesSearch = service.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
                          service.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         service.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
+                         service.tagline.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                         service.category.toLowerCase().includes(searchQuery.toLowerCase());
     
     return matchesCategory && matchesPricing && matchesSearch;
   });
@@ -69,7 +74,9 @@ export default function ComprehensiveServicesShowcase2025() {
       case 'name':
         return a.name.localeCompare(b.name);
       case 'price':
-        return a.pricing.starter.price - b.pricing.starter.price;
+        const priceA = parseFloat(a.price.replace(/[$,]/g, ''));
+        const priceB = parseFloat(b.price.replace(/[$,]/g, ''));
+        return priceA - priceB;
       case 'category':
         return a.category.localeCompare(b.category);
       default:
@@ -262,8 +269,8 @@ export default function ComprehensiveServicesShowcase2025() {
                   {/* Pricing */}
                   <div className="mb-4">
                     <div className="text-2xl font-bold text-cyan-400">
-                      ${service.pricing.starter.price}
-                      <span className="text-sm text-gray-400 font-normal">/month</span>
+                      {service.price}
+                      <span className="text-sm text-gray-400 font-normal">{service.period}</span>
                     </div>
                     <div className="text-xs text-gray-500">Starting from</div>
                   </div>
@@ -289,12 +296,12 @@ export default function ComprehensiveServicesShowcase2025() {
                   {/* Tags */}
                   <div className="mb-6">
                     <div className="flex flex-wrap gap-1">
-                      {service.tags.slice(0, 3).map((tag, tagIndex) => (
+                      {service.technology.slice(0, 3).map((tech, techIndex) => (
                         <span
-                          key={tagIndex}
+                          key={techIndex}
                           className="px-2 py-1 bg-gray-800 text-gray-300 text-xs rounded-md"
                         >
-                          {tag}
+                          {tech}
                         </span>
                       ))}
                     </div>

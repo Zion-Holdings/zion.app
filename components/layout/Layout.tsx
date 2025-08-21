@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import EnhancedNavigation2025 from './EnhancedNavigation2025';
 import UltraFuturisticFooter2034 from './UltraFuturisticFooter2034';
@@ -11,8 +11,6 @@ interface LayoutProps {
 }
 
 export default function Layout({ children }: LayoutProps) {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-
   return (
     <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
       {/* Futuristic Background */}
@@ -28,10 +26,7 @@ export default function Layout({ children }: LayoutProps) {
         
         {/* Sidebar and Main Content */}
         <div className="flex">
-          <EnhancedSidebar2025 
-            isOpen={sidebarOpen} 
-            onClose={() => setSidebarOpen(false)} 
-          />
+          <EnhancedSidebar2025 />
           
           <main id="main" className="flex-1 pt-24 lg:pt-28">
             {children}
