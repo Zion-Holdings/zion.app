@@ -12,6 +12,9 @@ import { innovativeAIServices } from '../data/innovative-ai-services';
 import { quantumSpaceServices } from '../data/quantum-space-services';
 import { enterpriseITServices } from '../data/enterprise-it-services';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
+import { nextGenAIServices } from '../data/next-gen-ai-services';
+import { emergingTechServices } from '../data/emerging-tech-services';
+import { enterpriseBlockchainServices } from '../data/enterprise-blockchain-services';
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -23,15 +26,20 @@ export default function ServicesPage() {
     ...innovativeAIServices,
     ...quantumSpaceServices,
     ...enterpriseITServices,
-    ...enhancedRealMicroSaasServices
+    ...enhancedRealMicroSaasServices,
+    ...nextGenAIServices,
+    ...emergingTechServices,
+    ...enterpriseBlockchainServices
   ];
 
   const categories = [
     { id: 'all', name: 'All Services', icon: '🚀', count: allServices.length },
-    { id: 'ai', name: 'AI & Machine Learning', icon: '🧠', count: innovativeAIServices.length },
+    { id: 'ai', name: 'AI & Machine Learning', icon: '🧠', count: innovativeAIServices.length + nextGenAIServices.length },
     { id: 'quantum', name: 'Quantum & Space', icon: '⚛️', count: quantumSpaceServices.length },
     { id: 'enterprise', name: 'Enterprise IT', icon: '🏢', count: enterpriseITServices.length },
-    { id: 'micro-saas', name: 'Micro SaaS', icon: '💻', count: enhancedRealMicroSaasServices.length }
+    { id: 'micro-saas', name: 'Micro SaaS', icon: '💻', count: enhancedRealMicroSaasServices.length },
+    { id: 'emerging', name: 'Emerging Tech', icon: '🌟', count: emergingTechServices.length },
+    { id: 'blockchain', name: 'Blockchain & DeFi', icon: '⛓️', count: enterpriseBlockchainServices.length }
   ];
 
   const priceRanges = [
@@ -62,7 +70,9 @@ export default function ServicesPage() {
                              (selectedCategory === 'ai' && (service.category.includes('AI') || service.category.includes('Machine Learning'))) ||
                              (selectedCategory === 'quantum' && (service.category.includes('Quantum') || service.category.includes('Space'))) ||
                              (selectedCategory === 'enterprise' && (service.category.includes('Enterprise') || service.category.includes('IT'))) ||
-                             (selectedCategory === 'micro-saas' && service.category.includes('Micro SaaS'));
+                             (selectedCategory === 'micro-saas' && service.category.includes('Micro SaaS')) ||
+                             (selectedCategory === 'emerging' && (service.category.includes('Neural') || service.category.includes('Autonomous') || service.category.includes('Space') || service.category.includes('Biotech'))) ||
+                             (selectedCategory === 'blockchain' && (service.category.includes('Blockchain') || service.category.includes('DeFi') || service.category.includes('NFT')));
       
       const matchesPrice = selectedPriceRange === 'all' ||
                           (selectedPriceRange === 'low' && parseFloat(service.price.replace(/[$,]/g, '')) < 1000) ||

@@ -6,7 +6,7 @@ import {
   ArrowRight, Rocket
 } from 'lucide-react';
 import Button from '../components/ui/Button';
-import UltraAdvancedFuturisticMatrixBackground from '../components/ui/UltraAdvancedFuturisticMatrixBackground';
+import UltraAdvancedQuantumBackground from '../components/ui/UltraAdvancedQuantumBackground';
 import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
@@ -16,6 +16,9 @@ import { innovativeMicroSaasServices } from '../data/innovative-micro-saas-servi
 import { innovativeAIServices } from '../data/innovative-ai-services';
 import { quantumSpaceServices } from '../data/quantum-space-services';
 import { enterpriseITServices } from '../data/enterprise-it-services';
+import { nextGenAIServices } from '../data/next-gen-ai-services';
+import { emergingTechServices } from '../data/emerging-tech-services';
+import { enterpriseBlockchainServices } from '../data/enterprise-blockchain-services';
 
 export default function HomePage() {
   const contactInfo = {
@@ -33,11 +36,14 @@ export default function HomePage() {
     ...additionalEnhancedServices,
     ...innovativeAIServices,
     ...quantumSpaceServices,
-    ...enterpriseITServices
+    ...enterpriseITServices,
+    ...nextGenAIServices,
+    ...emergingTechServices,
+    ...enterpriseBlockchainServices
   ];
 
   return (
-    <UltraAdvancedFuturisticMatrixBackground intensity="high" colorScheme="quantum">
+    <UltraAdvancedQuantumBackground intensity="high" colorScheme="quantum">
       <div className="min-h-screen">
         <Head>
           <title>Zion Tech Group - Revolutionary AI, Quantum & IT Services | 500+ Solutions</title>
@@ -97,6 +103,8 @@ export default function HomePage() {
           title="Revolutionary AI & Technology Services"
           subtitle="Discover the future of business with our cutting-edge solutions"
           showFilters={true}
+          services={allServices}
+          maxServices={18}
         />
 
         {/* Contact Section */}
@@ -154,6 +162,6 @@ export default function HomePage() {
           </div>
         </section>
       </div>
-    </UltraAdvancedFuturisticMatrixBackground>
+            </UltraAdvancedQuantumBackground>
   );
 }
