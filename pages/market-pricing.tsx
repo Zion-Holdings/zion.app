@@ -355,6 +355,10 @@ export default function MarketPricingPage() {
               <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $19–$1,000/month based on agents and SLAs.</div>
             </div>
           </div>
+
+          <div className="text-center text-slate-400 mt-10">
+            Need help benchmarking? <a href="/contact" className="text-cyan-400 underline">Contact us</a> — we align to transparent, vendor-verifiable pricing.
+          </div>
         </div>
       </div>
     </UltraAdvancedFuturisticBackground>
