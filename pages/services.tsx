@@ -33,6 +33,7 @@ import { verified2025Additions } from '../data/verified-2025-additions';
 import { realServicesQ12025 } from '../data/real-services-q1-2025';
 import { realEnterpriseServices2025 } from '../data/real-enterprise-services-2025';
 import { realMarketAugmentations2025 } from '../data/real-market-augmentations-2025';
+import { verified2025Batch3Services } from '../data/verified-2025-services-batch3';
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -71,6 +72,7 @@ export default function ServicesPage() {
     ...innovative2025Services,
     ...emergingTech2025Services,
     ...realMarketAugmentations2025
+    ,...verified2025Batch3Services
   ];
 
   // Dynamic category counts mapped to the same filter logic below

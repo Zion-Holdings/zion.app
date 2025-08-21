@@ -22,13 +22,13 @@ const navigationItems: NavigationItem[] = [
     icon: <Brain className="w-5 h-5" />,
     description: 'Advanced AI and machine learning solutions',
     children: [
-      { name: 'AI Agent Orchestrator', href: '/ai-assistant' },
+      { name: 'AI Agent Orchestrator', href: '/enterprise-ai-operations-center' },
       { name: 'Customer Service AI', href: '/customer-service-ai' },
-      { name: 'AI Data Analytics', href: '/ai-data-analytics' },
+      { name: 'AI Data Analytics', href: '/data-pipeline-observability' },
       { name: 'AI Guardrails', href: '/ai-guardrails' },
       { name: 'AI Code Review Copilot', href: '/ai-code-review-copilot' },
-      { name: 'AI Sales Automation', href: '/ai-sales-automation' },
-      { name: 'AI Website Personalization', href: '/ai-website-personalization' },
+      { name: 'AI Sales Automation', href: '/sales-copilot' },
+      { name: 'AI Website Personalization', href: '/feature-flags-edge' },
       { name: 'Sales Copilot', href: '/sales-copilot' }
     ]
   },

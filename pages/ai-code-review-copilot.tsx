@@ -1,55 +1,30 @@
-import React from 'react';
 import Head from 'next/head';
-import { Code, Phone, Mail, MapPin, Check, ArrowRight } from 'lucide-react';
-import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
-import Button from '../components/ui/Button';
-import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
+import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
 
-export default function AiCodeReviewCopilotPage() {
-  const service = enhancedRealMicroSaasServices.find(s => s.link.endsWith('/ai-code-review-copilot'));
-  if (!service) return null;
-
+export default function AICodeReviewCopilotPage() {
   return (
-    <UltraAdvancedFuturisticBackground>
+    <UltraFuturisticBackground variant="neural" intensity="high">
       <Head>
-        <title>{service.name} - Zion Tech Group</title>
-        <meta name="description" content={service.description} />
+        <title>AI Code Review Copilot | Zion Tech Group</title>
+        <meta name="description" content="Policy-aware AI code review with secrets scanning, SBOM risk, and actionable remediation tips integrated into your PR workflow." />
         <link rel="canonical" href="https://ziontechgroup.com/ai-code-review-copilot" />
       </Head>
       <div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-10">
-            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent flex items-center justify-center gap-3"><Code className="w-10 h-10" />{service.name}</h1>
-            <p className="mt-4 text-xl text-slate-300 max-w-3xl mx-auto">{service.tagline}</p>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
-            <div className="lg:col-span-2 bg-black/30 rounded-2xl border border-purple-500/30 p-6">
-              <h2 className="text-2xl font-semibold mb-4">Capabilities</h2>
-              <p className="text-slate-300 mb-6">{service.description}</p>
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {service.features.slice(0, 12).map((feat, i) => (
-                  <li key={i} className="flex items-start space-x-3 text-slate-200"><Check className="w-5 h-5 text-purple-400 mt-0.5" /><span>{feat}</span></li>
-                ))}
-              </ul>
-            </div>
-            <div className="bg-black/30 rounded-2xl border border-purple-500/30 p-6 h-fit">
-              <div className="flex items-end justify-between mb-3">
-                <div>
-                  <div className="text-3xl font-bold text-white">{service.price}<span className="text-slate-400 text-base">{service.period}</span></div>
-                  <div className="text-slate-400">{service.trialDays}-day free trial • Setup: {service.setupTime}</div>
-                </div>
-              </div>
-              <Button href="/contact" variant="quantum" size="lg" className="w-full">Start Trial<ArrowRight className="w-5 h-5 ml-2" /></Button>
-              <div className="mt-6 space-y-3 text-sm text-slate-300">
-                <div className="flex items-center space-x-2"><Phone className="w-4 h-4 text-cyan-400" /><span>{service.contactInfo.mobile}</span></div>
-                <div className="flex items-center space-x-2"><Mail className="w-4 h-4 text-purple-400" /><span>{service.contactInfo.email}</span></div>
-                <div className="flex items-center space-x-2"><MapPin className="w-4 h-4 text-green-400" /><span className="text-xs">{service.contactInfo.address}</span></div>
-              </div>
-            </div>
+        <div className="max-w-4xl mx-auto space-y-6">
+          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">AI Code Review Copilot</h1>
+          <p className="text-slate-300">Augment PR reviews with policy-aware checks, secret scanning, dependency risk, and AI remediation tips.</p>
+          <div className="bg-black/30 rounded-2xl border border-cyan-500/30 p-6 space-y-3">
+            <h2 className="text-2xl font-semibold">Highlights</h2>
+            <ul className="list-disc list-inside text-slate-300 space-y-1">
+              <li>Policy-aware comments aligned to your standards</li>
+              <li>Secret/key scanning, SBOM and dependency risk</li>
+              <li>CI integration with scorecards and trend dashboards</li>
+            </ul>
+            <div className="text-slate-400 text-sm">Benchmarks: see <a className="text-cyan-400 underline" href={`https://www.deepsource.com/pricing`} target="_blank" rel="noopener noreferrer">deepsource.com/pricing</a> and <a className="text-cyan-400 underline" href={`https://snyk.io/product/snyk-code/`} target="_blank" rel="noopener noreferrer">snyk.io</a>.</div>
           </div>
         </div>
       </div>
-    </UltraAdvancedFuturisticBackground>
+    </UltraFuturisticBackground>
   );
 }
 

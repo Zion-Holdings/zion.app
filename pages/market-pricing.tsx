@@ -16,6 +16,25 @@ export default function MarketPricingPage() {
           <p className="text-slate-300">Below are easy-to-verify vendor references and typical pricing ranges to help you benchmark our offerings.</p>
 
           <div className="space-y-6">
+            <div className="bg-black/30 rounded-2xl border border-emerald-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Managed IT & MSP Benchmarks</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>MSP industry reports: <a className="text-cyan-400 underline" href={`https://www.gartner.com/en/documents`} target="_blank" rel="noopener noreferrer">gartner.com/en/documents</a> (market reports)</li>
+                <li>Electric.ai overview: <a className="text-cyan-400 underline" href={`https://www.electric.ai`} target="_blank" rel="noopener noreferrer">electric.ai</a></li>
+                <li>N-able MSP pricing notes: <a className="text-cyan-400 underline" href={`https://www.n-able.com/products`} target="_blank" rel="noopener noreferrer">n-able.com/products</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $1,500–$8,000/month based on seats, SLAs, and scope.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-rose-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">SOC 2 Readiness & GRC</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Vanta services: <a className="text-cyan-400 underline" href={`https://www.vanta.com`} target="_blank" rel="noopener noreferrer">vanta.com</a></li>
+                <li>Drata services: <a className="text-cyan-400 underline" href={`https://drata.com`} target="_blank" rel="noopener noreferrer">drata.com</a></li>
+                <li>Strike Graph: <a className="text-cyan-400 underline" href={`https://www.strikegraph.com`} target="_blank" rel="noopener noreferrer">strikegraph.com</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $5,000–$25,000 per audit cycle depending on scope and automation.</div>
+            </div>
             <div className="bg-black/30 rounded-2xl border border-sky-500/30 p-6">
               <h2 className="text-2xl font-semibold mb-2">MLOps, Prompting & Evaluation</h2>
               <ul className="list-disc list-inside text-slate-300 space-y-1">
