@@ -13,6 +13,7 @@ import ServiceAds from '../components/sections/ServiceAds';
 import Card from '../components/ui/Card';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
+import { additionalEnhancedServices } from '../data/additional-real-services';
 
 export default function HomePage() {
   const heroStats = [
@@ -300,6 +301,11 @@ export default function HomePage() {
     service.realImplementation && service.popular
   ).slice(0, 6);
 
+  // New real services for advertising
+  const newRealServices = additionalEnhancedServices
+    .filter(s => s.realImplementation)
+    .slice(0, 6);
+
   return (
     <UltraFuturisticMatrixBackground>
       <Head>
@@ -432,6 +438,43 @@ export default function HomePage() {
               </div>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* New Real Services */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              <span className="bg-gradient-to-r from-fuchsia-400 to-purple-600 bg-clip-text text-transparent">
+                New
+              </span>
+              {' '}Real Services
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Freshly launched, production-ready micro SaaS, IT, and AI solutions with transparent pricing and direct links.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+            {newRealServices.map((service, index) => (
+              <motion.div
+                key={service.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <UltraFuturisticServiceCard service={service as any} />
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 

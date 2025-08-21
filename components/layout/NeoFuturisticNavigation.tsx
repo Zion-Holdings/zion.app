@@ -201,63 +201,18 @@ export default function NeoFuturisticNavigation() {
 	];
 
 	const companyInfo = [
-		{
-			name: 'About Zion Tech Group',
-			description: 'Leading the global micro SaaS revolution',
-			icon: <Rocket className="w-5 h-5" />,
-			link: '/about'
-		},
-		{
-			name: 'Careers',
-			description: 'Join our revolutionary team',
-			icon: <Star className="w-5 h-5" />,
-			link: '/careers'
-		},
-		{
-			name: 'News & Updates',
-			description: 'Latest announcements and releases',
-			icon: <TrendingUp className="w-5 h-5" />,
-			link: '/news'
-		},
-		{
-			name: 'Contact',
-			description: 'Talk to our team 24/7',
-			icon: <Phone className="w-5 h-5" />,
-			link: '/contact'
-		}
+		{ name: 'About Zion Tech Group', description: 'Leading the global micro SaaS revolution', icon: <Rocket className="w-5 h-5" />, link: '/about' },
+		{ name: 'Careers', description: 'Join our revolutionary team', icon: <Star className="w-5 h-5" />, link: '/careers' },
+		{ name: 'News & Updates', description: 'Latest announcements and releases', icon: <TrendingUp className="w-5 h-5" />, link: '/news' },
+		{ name: 'Contact', description: 'Talk to our team 24/7', icon: <Phone className="w-5 h-5" />, link: '/contact' }
 	];
 
 	const resources = [
-		{
-			name: 'Documentation',
-			description: 'Comprehensive service guides',
-			icon: <BookOpen className="w-5 h-5" />,
-			link: '/docs'
-		},
-		{
-			name: 'Blog & Insights',
-			description: 'Latest technology trends',
-			icon: <FileText className="w-5 h-5" />,
-			link: '/blog'
-		},
-		{
-			name: 'Case Studies',
-			description: 'Real-world success stories',
-			icon: <BarChart3 className="w-5 h-5" />,
-			link: '/case-studies'
-		},
-		{
-			name: 'Pricing',
-			description: 'Transparent and flexible plans',
-			icon: <CreditCard className="w-5 h-5" />,
-			link: '/pricing'
-		},
-		{
-			name: 'Reports',
-			description: 'Live performance and audits',
-			icon: <Activity className="w-5 h-5" />,
-			link: '/reports'
-		}
+		{ name: 'Documentation', description: 'Comprehensive service guides', icon: <BookOpen className="w-5 h-5" />, link: '/docs' },
+		{ name: 'Blog & Insights', description: 'Latest technology trends', icon: <FileText className="w-5 h-5" />, link: '/blog' },
+		{ name: 'Case Studies', description: 'Real-world success stories', icon: <BarChart3 className="w-5 h-5" />, link: '/case-studies' },
+		{ name: 'Pricing', description: 'Transparent and flexible plans', icon: <CreditCard className="w-5 h-5" />, link: '/pricing' },
+		{ name: 'Reports', description: 'Live performance and audits', icon: <Activity className="w-5 h-5" />, link: '/reports' }
 	];
 
 	// Popular quick links to flagship services
@@ -273,11 +228,19 @@ export default function NeoFuturisticNavigation() {
 		{ name: 'AI Market Research', href: '/ai-market-research' }
 	];
 
+	// Newly added real services quick links
+	const newServiceLinks = [
+		{ name: 'Email Deliverability Monitor', href: '/services/email-deliverability-monitor' },
+		{ name: 'Landing Page Experimentation', href: '/services/landing-page-experimentation' },
+		{ name: 'Invoice Reconciliation Automation', href: '/services/invoice-reconciliation-automation' },
+		{ name: 'GitHub Ops Health Dashboard', href: '/services/github-ops-health-dashboard' },
+		{ name: 'Error Budget Automation', href: '/services/error-budget-automation' },
+		{ name: 'LLM Usage Governance', href: '/services/llm-usage-governance' }
+	];
+
 	return (
 		<nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-			isScrolled 
-				? 'bg-black/80 backdrop-blur-md border-b border-gray-700/50' 
-				: 'bg-transparent'
+			isScrolled ? 'bg-black/80 backdrop-blur-md border-b border-gray-700/50' : 'bg-transparent'
 		}`}> 
 			{/* Scroll Progress Bar */}
 			<div className="absolute top-0 left-0 h-1 w-full bg-transparent">
@@ -317,7 +280,6 @@ export default function NeoFuturisticNavigation() {
 									activeDropdown === 'services' ? 'rotate-180' : ''
 								}`}/>
 							</button>
-							
 							{activeDropdown === 'services' && (
 								<div className="absolute top-full left-0 mt-2 w-[800px] bg-black/90 backdrop-blur-xl rounded-2xl border border-gray-700/50 shadow-2xl p-6">
 									<div className="grid grid-cols-2 gap-6">
@@ -346,7 +308,7 @@ export default function NeoFuturisticNavigation() {
 													))}
 												</div>
 											</div>
-										))}
+									))}
 									</div>
 									<div className="mt-6 pt-6 border-t border-gray-700/50">
 										<div className="flex items-center justify-between">
@@ -364,94 +326,20 @@ export default function NeoFuturisticNavigation() {
 						</div>
 
 						{/* Direct Links */}
-						<Link
-							href="/it-services"
-							className="text-gray-300 hover:text-white transition-colors duration-300 py-2"
-						>
-							IT Services
-						</Link>
-						<Link
-							href="/ai-services"
-							className="text-gray-300 hover:text-white transition-colors duration-300 py-2"
-						>
-							AI Services
-						</Link>
-						<Link
-							href="/micro-saas"
-							className="text-gray-300 hover:text-white transition-colors duration-300 py-2"
-						>
-							Micro SaaS
-						</Link>
-						<Link
-							href="/pricing"
-							className="text-gray-300 hover:text-white transition-colors duration-300 py-2"
-						>
-							Pricing
-						</Link>
-						<Link
-							href="/ai-evals"
-							className="text-gray-300 hover:text-white transition-colors duration-300 py-2"
-						>
-							AI Evals
-						</Link>
-						<Link
-							href="/agentic-rag"
-							className="text-gray-300 hover:text-white transition-colors duration-300 py-2"
-						>
-							Agentic RAG
-						</Link>
-						<Link
-							href="/ai-guardrails"
-							className="text-gray-300 hover:text-white transition-colors duration-300 py-2"
-						>
-							Guardrails
-						</Link>
-						<Link
-							href="/ai-agents"
-							className="text-gray-300 hover:text-white transition-colors duration-300 py-2"
-						>
-							Agents
-						</Link>
-						<Link
-							href="/solutions"
-							className="text-gray-300 hover:text-white transition-colors duration-300 py-2"
-						>
-							Solutions
-						</Link>
-
-						<Link
-							href="/api-observability"
-							className="text-gray-300 hover:text-white transition-colors duration-300 py-2"
-						>
-							API Observability
-						</Link>
-
-						<Link
-							href="/incident-automation-suite"
-							className="text-gray-300 hover:text-white transition-colors duration-300 py-2"
-						>
-							Incident Automation
-						</Link>
-
-						<Link
-							href="/data-pipeline-health"
-							className="text-gray-300 hover:text-white transition-colors duration-300 py-2"
-						>
-							Data Pipeline Health
-						</Link>
-
-						<Link
-							href="/ai-code-review-copilot"
-							className="text-gray-300 hover:text-white transition-colors duration-300 py-2"
-						>
-							AI Code Review
-						</Link>
-						<Link
-							href="/resources"
-							className="text-gray-300 hover:text-white transition-colors duration-300 py-2"
-						>
-							Resources
-						</Link>
+						<Link href="/it-services" className="text-gray-300 hover:text-white transition-colors duration-300 py-2">IT Services</Link>
+						<Link href="/ai-services" className="text-gray-300 hover:text-white transition-colors duration-300 py-2">AI Services</Link>
+						<Link href="/micro-saas" className="text-gray-300 hover:text-white transition-colors duration-300 py-2">Micro SaaS</Link>
+						<Link href="/pricing" className="text-gray-300 hover:text-white transition-colors duration-300 py-2">Pricing</Link>
+						<Link href="/ai-evals" className="text-gray-300 hover:text-white transition-colors duration-300 py-2">AI Evals</Link>
+						<Link href="/agentic-rag" className="text-gray-300 hover:text-white transition-colors duration-300 py-2">Agentic RAG</Link>
+						<Link href="/ai-guardrails" className="text-gray-300 hover:text-white transition-colors duration-300 py-2">Guardrails</Link>
+						<Link href="/ai-agents" className="text-gray-300 hover:text-white transition-colors duration-300 py-2">Agents</Link>
+						<Link href="/solutions" className="text-gray-300 hover:text-white transition-colors duration-300 py-2">Solutions</Link>
+						<Link href="/api-observability" className="text-gray-300 hover:text-white transition-colors duration-300 py-2">API Observability</Link>
+						<Link href="/incident-automation-suite" className="text-gray-300 hover:text-white transition-colors duration-300 py-2">Incident Automation</Link>
+						<Link href="/data-pipeline-health" className="text-gray-300 hover:text-white transition-colors duration-300 py-2">Data Pipeline Health</Link>
+						<Link href="/ai-code-review-copilot" className="text-gray-300 hover:text-white transition-colors duration-300 py-2">AI Code Review</Link>
+						<Link href="/resources" className="text-gray-300 hover:text-white transition-colors duration-300 py-2">Resources</Link>
 
 						{/* Popular Dropdown */}
 						<div className="relative group">
@@ -460,9 +348,7 @@ export default function NeoFuturisticNavigation() {
 								onClick={() => toggleDropdown('popular')}
 							>
 								<span>Popular</span>
-								<ChevronDown className={`w-4 h-4 transition-transform duration-300 ${
-									activeDropdown === 'popular' ? 'rotate-180' : ''
-								}`} />
+								<ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeDropdown === 'popular' ? 'rotate-180' : ''}`}/>
 							</button>
 							{activeDropdown === 'popular' && (
 								<div className="absolute top-full left-0 mt-2 w-80 bg-black/90 backdrop-blur-xl rounded-2xl border border-gray-700/50 shadow-2xl p-6">
@@ -478,159 +364,32 @@ export default function NeoFuturisticNavigation() {
 							)}
 						</div>
 
-						{/* Company Dropdown */}
+						{/* New Dropdown */}
 						<div className="relative group">
 							<button
 								className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors duration-300 py-2"
-								onClick={() => toggleDropdown('company')}
+								onClick={() => toggleDropdown('new')}
 							>
-								<span>Company</span>
-								<ChevronDown className={`w-4 h-4 transition-transform duration-300 ${
-									activeDropdown === 'company' ? 'rotate-180' : ''
-								}`} />
+								<span className="flex items-center gap-2">New <span className="px-2 py-0.5 text-[10px] rounded-full bg-fuchsia-600 text-white">Live</span></span>
+								<ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeDropdown === 'new' ? 'rotate-180' : ''}`}/>
 							</button>
-							
-							{activeDropdown === 'company' && (
-								<div className="absolute top-full left-0 mt-2 w-80 bg-black/90 backdrop-blur-xl rounded-2xl border border-gray-700/50 shadow-2xl p-6">
-									<div className="space-y-4">
-										{companyInfo.map((item, index) => (
-											<Link
-												key={index}
-												href={item.link}
-												className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-800/50 transition-colors group"
-												onClick={closeMobileMenu}
-											>
-												<div className="text-cyan-400 group-hover:text-cyan-300 transition-colors">
-													{item.icon}
-												</div>
-												<div>
-													<div className="text-white font-medium group-hover:text-cyan-400 transition-colors">
-														{item.name}
-													</div>
-													<div className="text-gray-400 text-sm">{item.description}</div>
-												</div>
+							{activeDropdown === 'new' && (
+								<div className="absolute top-full left-0 mt-2 w-96 bg-black/90 backdrop-blur-xl rounded-2xl border border-gray-700/50 shadow-2xl p-6">
+									<div className="space-y-2">
+										{newServiceLinks.map((item) => (
+											<Link key={item.href} href={item.href} className="flex items-center justify-between p-2 rounded-lg hover:bg-gray-800/50 transition-colors">
+												<span className="text-white text-sm">{item.name}</span>
+												<ArrowRight className="w-4 h-4 text-fuchsia-400" />
 											</Link>
 										))}
 									</div>
 								</div>
 							)}
 						</div>
-
-						{/* Resources Dropdown */}
-						<div className="relative group">
-							<button
-								className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors duration-300 py-2"
-								onClick={() => toggleDropdown('resources')}
-							>
-								<span>Resources</span>
-								<ChevronDown className={`w-4 h-4 transition-transform duration-300 ${
-									activeDropdown === 'resources' ? 'rotate-180' : ''
-								}`} />
-							</button>
-							
-							{activeDropdown === 'resources' && (
-								<div className="absolute top-full left-0 mt-2 w-80 bg-black/90 backdrop-blur-xl rounded-2xl border border-gray-700/50 shadow-2xl p-6">
-									<div className="space-y-4">
-										{resources.map((item, index) => (
-											<Link
-												key={index}
-												href={item.link}
-												className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-800/50 transition-colors group"
-												onClick={closeMobileMenu}
-											>
-												<div className="text-purple-400 group-hover:text-purple-300 transition-colors">
-													{item.icon}
-												</div>
-												<div>
-													<div className="text-white font-medium group-hover:text-purple-400 transition-colors">
-														{item.name}
-													</div>
-													<div className="text-gray-400 text-sm">{item.description}</div>
-												</div>
-											</Link>
-										))}
-									</div>
-								</div>
-							)}
-						</div>
-
-						{/* Contact Info */}
-						<div className="relative group">
-							<button
-								className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors duration-300 py-2"
-								onClick={() => toggleDropdown('contact')}
-							>
-								<span>Contact</span>
-								<ChevronDown className={`w-4 h-4 transition-transform duration-300 ${
-									activeDropdown === 'contact' ? 'rotate-180' : ''
-								}`} />
-							</button>
-							
-							{activeDropdown === 'contact' && (
-								<div className="absolute top-full right-0 mt-2 w-80 bg-black/90 backdrop-blur-xl rounded-2xl border border-gray-700/50 shadow-2xl p-6">
-									<div className="space-y-4">
-										<div className="text-center mb-4">
-											<h3 className="text-white font-semibold text-lg">Get in Touch</h3>
-											<p className="text-gray-400 text-sm">Available 24/7 for your needs</p>
-										</div>
-										
-										<div className="space-y-3">
-											<div className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-800/50 transition-colors">
-												<Phone className="w-5 h-5 text-cyan-400" />
-												<div>
-													<div className="text-white font-medium">{contactInfo.mobile}</div>
-													<div className="text-gray-400 text-sm">Mobile</div>
-												</div>
-											</div>
-											
-											<div className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-800/50 transition-colors">
-												<Mail className="w-5 h-5 text-purple-400" />
-												<div>
-													<div className="text-white font-medium">{contactInfo.email}</div>
-													<div className="text-gray-400 text-sm">Email</div>
-												</div>
-											</div>
-											
-											<div className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-800/50 transition-colors">
-												<MapPin className="w-5 h-5 text-green-400" />
-												<div>
-													<div className="text-white font-medium text-sm">{contactInfo.address}</div>
-													<div className="text-gray-400 text-sm">Address</div>
-												</div>
-											</div>
-											
-											<div className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-800/50 transition-colors">
-												<Globe className="w-5 h-5 text-blue-400" />
-												<div>
-													<div className="text-white font-medium">{contactInfo.website}</div>
-													<div className="text-gray-400 text-sm">Website</div>
-												</div>
-											</div>
-										</div>
-										
-										<div className="pt-4 border-t border-gray-700/50">
-											<Button href="/contact" variant="quantum" size="sm" className="w-full">
-												Contact Us Now
-												<ArrowRight className="w-4 h-4 ml-2" />
-											</Button>
-										</div>
-									</div>
-								</div>
-							)}
-						</div>
-
-						{/* CTA Button */}
-						<Button href="/services" variant="quantum" size="sm">
-							Get Started
-							<ArrowRight className="w-4 h-4 ml-2" />
-						</Button>
 					</div>
 
 					{/* Mobile Menu Button */}
-					<button
-						className="lg:hidden p-2 text-gray-300 hover:text-white transition-colors"
-						onClick={() => setIsOpen(!isOpen)}
-					>
+					<button className="lg:hidden p-2 text-gray-300 hover:text-white transition-colors" onClick={() => setIsOpen(!isOpen)}>
 						{isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
 					</button>
 				</div>
@@ -643,16 +402,11 @@ export default function NeoFuturisticNavigation() {
 						<div className="space-y-6">
 							{/* Services Section */}
 							<div>
-								<button
-									className="flex items-center justify-between w-full text-left text-white font-semibold mb-4"
-									onClick={() => toggleDropdown('mobile-services')}
-								>
+								<button className="flex items-center justify-between w-full text-left text-white font-semibold mb-4" onClick={() => toggleDropdown('mobile-services')}>
 									<span>Services</span>
-									<ChevronRight className={`w-5 h-5 transition-transform duration-300 ${
-										activeDropdown === 'mobile-services' ? 'rotate-90' : ''
-									}`}/>
+									<ChevronRight className={`w-5 h-5 transition-transform duration-300 ${activeDropdown === 'mobile-services' ? 'rotate-90' : ''}`}/>
 								</button>
-								
+
 								{activeDropdown === 'mobile-services' && (
 									<div className="ml-4 space-y-3">
 										{serviceCategories.map((category, index) => (
@@ -661,9 +415,7 @@ export default function NeoFuturisticNavigation() {
 												<div className="text-gray-400 text-sm mb-2">{category.description}</div>
 												<div className="space-y-1">
 													{category.services.slice(0, 2).map((service, serviceIndex) => (
-														<div key={serviceIndex} className="text-xs text-gray-500">
-															• {service.name} - {service.price}
-														</div>
+														<div key={serviceIndex} className="text-xs text-gray-500">• {service.name} - {service.price}</div>
 													))}
 												</div>
 											</div>
@@ -680,25 +432,15 @@ export default function NeoFuturisticNavigation() {
 
 							{/* Company Section */}
 							<div>
-								<button
-									className="flex items-center justify-between w-full text-left text-white font-semibold mb-4"
-									onClick={() => toggleDropdown('mobile-company')}
-								>
+								<button className="flex items-center justify-between w-full text-left text-white font-semibold mb-4" onClick={() => toggleDropdown('mobile-company')}>
 									<span>Company</span>
-									<ChevronRight className={`w-5 h-5 transition-transform duration-300 ${
-										activeDropdown === 'mobile-company' ? 'rotate-90' : ''
-									}`}/>
+									<ChevronRight className={`w-5 h-5 transition-transform duration-300 ${activeDropdown === 'mobile-company' ? 'rotate-90' : ''}`}/>
 								</button>
-								
+
 								{activeDropdown === 'mobile-company' && (
 									<div className="ml-4 space-y-3">
 										{companyInfo.map((item, index) => (
-											<Link
-												key={index}
-												href={item.link}
-												className="block text-gray-300 hover:text-white transition-colors"
-												onClick={closeMobileMenu}
-											>
+											<Link key={index} href={item.link} className="block text-gray-300 hover:text-white transition-colors" onClick={closeMobileMenu}>
 												{item.name}
 											</Link>
 										))}
@@ -708,25 +450,15 @@ export default function NeoFuturisticNavigation() {
 
 							{/* Resources Section */}
 							<div>
-								<button
-									className="flex items-center justify-between w-full text-left text-white font-semibold mb-4"
-									onClick={() => toggleDropdown('mobile-resources')}
-								>
+								<button className="flex items-center justify-between w-full text-left text-white font-semibold mb-4" onClick={() => toggleDropdown('mobile-resources')}>
 									<span>Resources</span>
-									<ChevronRight className={`w-5 h-5 transition-transform duration-300 ${
-										activeDropdown === 'mobile-resources' ? 'rotate-90' : ''
-									}`}/>
+									<ChevronRight className={`w-5 h-5 transition-transform duration-300 ${activeDropdown === 'mobile-resources' ? 'rotate-90' : ''}`}/>
 								</button>
-								
+
 								{activeDropdown === 'mobile-resources' && (
 									<div className="ml-4 space-y-3">
 										{resources.map((item, index) => (
-											<Link
-												key={index}
-												href={item.link}
-												className="block text-gray-300 hover:text-white transition-colors"
-												onClick={closeMobileMenu}
-											>
+											<Link key={index} href={item.link} className="block text-gray-300 hover:text-white transition-colors" onClick={closeMobileMenu}>
 												{item.name}
 											</Link>
 										))}
@@ -755,7 +487,7 @@ export default function NeoFuturisticNavigation() {
 										<span className="text-gray-300">{contactInfo.website}</span>
 									</div>
 								</div>
-								
+
 								<div className="mt-6 space-y-3">
 									<Button href="/services" variant="quantum" size="lg" className="w-full">
 										Explore Services
