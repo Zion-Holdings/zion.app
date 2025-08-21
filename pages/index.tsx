@@ -8,7 +8,9 @@ import UltraFuturisticBackground2029 from '../components/backgrounds/UltraFuturi
 import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
 import UltraAdvancedNavigation2026 from '../components/layout/UltraAdvancedNavigation2026';
 import UltraFuturisticNavigation2029 from '../components/layout/UltraFuturisticNavigation2029';
+import UltraFuturisticNavigation2030 from '../components/layout/UltraFuturisticNavigation2030';
 import UltraFuturisticFooter2029 from '../components/layout/UltraFuturisticFooter2029';
+import UltraFuturisticFooter2030 from '../components/layout/UltraFuturisticFooter2030';
 import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
 import Enhanced2026ServicesShowcase from '../components/sections/Enhanced2026ServicesShowcase';
 import Revolutionary2026ServiceShowcase from '../components/sections/Revolutionary2026ServiceShowcase';
@@ -74,12 +76,10 @@ import { practicalBusinessSolutions2028 } from '../data/2028-practical-business-
 import { futuristic2028Services } from '../data/2028-futuristic-innovations';
 import { emergingTech2028Services } from '../data/2028-emerging-tech-services';
 import { futuristicAIServices2029 } from '../data/2029-futuristic-ai-services';
-import { emergingTechServices2029 } from '../data/2029-emerging-tech-services';
-import { enterpriseITServices2029 } from '../data/2029-enterprise-it-services';
+import { emergingTech2029Services } from '../data/2029-emerging-tech-services';
+import { enterpriseIT2029Services } from '../data/2029-enterprise-it-services';
 import { innovativeMicroSaasServices2029 } from '../data/2029-innovative-micro-saas';
-import { aiAutonomousEcosystemServices2029 } from '../data/2029-ai-autonomous-ecosystem';
-import { emergingTechBreakthroughServices2029 } from '../data/2029-emerging-tech-breakthroughs';
-import { practicalBusinessSolutionServices2029 } from '../data/2029-practical-business-solutions';
+import { innovative2029MicroSaasServices } from '../data/2029-innovative-micro-saas-services';
 
 export default function HomePage() {
   const contactInfo = {
@@ -149,12 +149,12 @@ export default function HomePage() {
     ...emergingTech2028Services,
     ...cuttingEdgeInnovations2029,
     ...futuristicAIServices2029,
-    ...emergingTechServices2029,
-    ...enterpriseITServices2029,
+    ...emergingTech2029Services,
+    ...enterpriseIT2029Services,
     ...innovativeMicroSaasServices2029,
-    ...aiAutonomousEcosystemServices2029,
-    ...emergingTechBreakthroughServices2029,
-    ...practicalBusinessSolutionServices2029
+    ...innovative2029MicroSaasServices,
+    ...emergingTech2029Services,
+    ...enterpriseIT2029Services
   ];
 
   // Get unique services by ID to avoid duplicates
@@ -233,12 +233,41 @@ export default function HomePage() {
 
       <UltraFuturisticBackground2029>
         {/* Ultra Advanced Navigation */}
-        <UltraFuturisticNavigation2029 />
+        <UltraFuturisticNavigation2030 />
 
         {/* Ultra Futuristic Hero Section 2029 */}
         <UltraFuturisticHero2029 />
 
+<<<<<<< HEAD
         {/* Featured Services Section */}
+=======
+                            {/* Revolutionary 2027 Hero Section */}
+                    <Revolutionary2027Hero />
+
+                    {/* Ultra Futuristic 2029 Service Showcase */}
+                    <UltraFuturisticServiceShowcase2029 services={[
+                      ...futuristicAIServices2029
+                    ]} />
+
+        {/* Revolutionary 2027 Services Showcase */}
+        <Revolutionary2027ServicesShowcase />
+
+        {/* Enhanced 2026 Services Showcase */}
+        <Enhanced2026ServicesShowcase />
+
+        {/* Revolutionary 2026 Services Showcase */}
+        <Revolutionary2026ServiceShowcase />
+
+        {/* Enhanced Services Showcase */}
+        <EnhancedServiceShowcase 
+          services={allServices.filter(service => 'variant' in service).slice(0, 12)}
+          title="Enhanced Services Showcase"
+          subtitle="Discover our comprehensive range of innovative solutions"
+          maxServices={12}
+        />
+
+        {/* Contact Information Section */}
+>>>>>>> cursor/enhance-app-with-new-services-and-futuristic-design-9755
         <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/10 to-cyan-900/10"></div>
           
@@ -432,7 +461,12 @@ export default function HomePage() {
       </UltraFuturisticBackground2029>
       
       {/* Footer */}
+<<<<<<< HEAD
       <UltraFuturisticFooter2029 />
     </UltraFuturisticBackground2029>
+=======
+              <UltraFuturisticFooter2030 />
+    </>
+>>>>>>> cursor/enhance-app-with-new-services-and-futuristic-design-9755
   );
 }
