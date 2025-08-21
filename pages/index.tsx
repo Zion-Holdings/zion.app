@@ -6,16 +6,16 @@ import Button from '../components/ui/Button';
 import UltraFuturisticBackground2030 from '../components/ui/UltraFuturisticBackground2030';
 import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
 import UltraAdvancedNavigation2026 from '../components/layout/UltraAdvancedNavigation2026';
-import UltraFuturisticNavigation2031 from '../components/layout/UltraFuturisticNavigation2031';
-import UltraFuturisticFooter2030 from '../components/layout/UltraFuturisticFooter2030';
+import UltraFuturisticNavigation2032 from '../components/layout/UltraFuturisticNavigation2032';
+import UltraFuturisticFooter2032 from '../components/layout/UltraFuturisticFooter2032';
 import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
 import Enhanced2026ServicesShowcase from '../components/sections/Enhanced2026ServicesShowcase';
 import Revolutionary2026ServiceShowcase from '../components/sections/Revolutionary2026ServiceShowcase';
 import Revolutionary2027ServicesShowcase from '../components/sections/Revolutionary2027ServicesShowcase';
 import Revolutionary2027Hero from '../components/sections/Revolutionary2027Hero';
 import EnhancedHero2026 from '../components/sections/EnhancedHero2026';
-import UltraFuturisticHero2030 from '../components/sections/UltraFuturisticHero2030';
-import UltraFuturisticServiceShowcase2029 from '../components/sections/UltraFuturisticServiceShowcase2029';
+import UltraFuturisticHero2032 from '../components/sections/UltraFuturisticHero2032';
+import UltraFuturisticServiceShowcase2032 from '../components/sections/UltraFuturisticServiceShowcase2032';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
@@ -82,6 +82,13 @@ import { innovativeAIServices2029V2 } from '../data/2029-innovative-ai-services-
 // Import new 2029 services
 import { emergingTechBreakthroughs2029V3 } from '../data/2029-emerging-tech-breakthroughs-v3';
 import { aiAutonomousEcosystem2029V2 } from '../data/2029-ai-autonomous-ecosystem-v2';
+// Import new 2031 services
+import { futuristicAIServices2031 } from '../data/2031-futuristic-ai-services';
+import { quantumEmergingTechServices2031 } from '../data/2031-quantum-emerging-tech-services';
+import { enterpriseITServices2031 } from '../data/2031-enterprise-it-services';
+import { innovativeMicroSaasServices2031 } from '../data/2031-innovative-micro-saas-services';
+import { researchDevelopmentServices2031 } from '../data/2031-research-development-services';
+import { spaceMetaverseServices2031 } from '../data/2031-space-metaverse-services';
 
 export default function HomePage() {
   const contactInfo = {
@@ -158,7 +165,14 @@ export default function HomePage() {
     // Add new 2029 services
     ...cuttingEdgeInnovations2029,
     ...emergingTechBreakthroughs2029V3,
-    ...aiAutonomousEcosystem2029V2
+    ...aiAutonomousEcosystem2029V2,
+    // Add new 2031 services
+    ...futuristicAIServices2031,
+    ...quantumEmergingTechServices2031,
+    ...enterpriseITServices2031,
+    ...innovativeMicroSaasServices2031,
+    ...researchDevelopmentServices2031,
+    ...spaceMetaverseServices2031
   ];
 
   // Calculate total services count
@@ -185,13 +199,12 @@ export default function HomePage() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
 
-      {/* Skip Link for Accessibility */}
-      <a href="#main-content" className="skip-link">
-        Skip to main content
-      </a>
+      <UltraFuturisticBackground2030>
+        {/* Ultra Advanced Navigation */}
+        <UltraFuturisticNavigation2032 />
 
-      {/* Enhanced Navigation */}
-      <UltraFuturisticNavigation2031 />
+        {/* Ultra Futuristic Hero Section 2032 */}
+        <UltraFuturisticHero2032 />
 
       {/* Main Content */}
       <main id="main-content" className="min-h-screen bg-black text-white">
@@ -224,6 +237,9 @@ export default function HomePage() {
                   <span className="text-neon-pink">space mining</span>, and{' '}
                   <span className="text-neon-green">500+ revolutionary services</span>
                 </p>
+
+                {/* Ultra Futuristic 2032 Service Showcase */}
+                <UltraFuturisticServiceShowcase2032 />
 
                 {/* Enhanced Stats */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
@@ -533,7 +549,8 @@ export default function HomePage() {
       </main>
 
       {/* Enhanced Footer */}
-      <UltraFuturisticFooter2030 />
-    </>
+      <UltraFuturisticFooter2032 />
+    </UltraFuturisticBackground2030>
+  </>
   );
 }
