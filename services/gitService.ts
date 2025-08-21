@@ -42,7 +42,7 @@ class GitService {
     try {
       // In a real implementation, this would execute Git commands
       // For now, we'll return mock data
-      return '';
+      return `mock-git-${command}`;
     } catch (error) {
       console.error(`Git command failed: ${command}`, error);
       throw error;

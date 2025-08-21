@@ -6,16 +6,18 @@ import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import EnhancedFuturisticBackground from '../components/ui/EnhancedFuturisticBackground';
 import EnhancedFuturisticCard from '../components/ui/EnhancedFuturisticCard';
+import QuantumHolographicBackground from '../components/ui/QuantumHolographicBackground';
+import QuantumHolographicCard from '../components/ui/QuantumHolographicCard';
 import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, ExternalLink, Star, Users, Globe, Lock, Rocket, Cpu, Database, TrendingUp, Clock, Target, Building, Award, DollarSign, ChartBar, Code, BookOpen, Activity, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, Settings, BookOpen as BookOpenIcon, Activity as ActivityIcon, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Sparkles, Atom, Brain, Eye, Shield as ShieldIcon, Zap as ZapIcon, Globe as GlobeIcon, Cpu as CpuIcon, Cloud as CloudIcon, Bot as BotIcon, Lock as LockIcon, BarChart3 as BarChart3Icon, TrendingUp as TrendingUpIcon, Users as UsersIcon, Award as AwardIcon, Star as StarIcon, Check as CheckIcon, ArrowRight as ArrowRightIcon, ExternalLink as ExternalLinkIcon, Phone as PhoneIcon, Mail as MailIcon, MapPin as MapPinIcon, Trophy, FlaskConical, Dna, Car, Leaf, Factory, Truck, Microscope, GraduationCap, ShieldCheck } from 'lucide-react';
 
 export default function HomePage() {
   const heroStats = [
-    { value: '300+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
-    { value: '99.9%', label: 'Uptime Guarantee', color: 'text-fuchsia-400' },
-    { value: '14', label: 'Day Free Trials', color: 'text-blue-400' },
+    { value: '400+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
+    { value: '99.99%', label: 'Uptime Guarantee', color: 'text-fuchsia-400' },
+    { value: '21', label: 'Day Free Trials', color: 'text-blue-400' },
     { value: '24/7', label: 'AI Support', color: 'text-green-400' },
-    { value: '$250M+', label: 'Market Value', color: 'text-yellow-400' },
-    { value: '1000%+', label: 'Average ROI', color: 'text-purple-400' },
+    { value: '$500M+', label: 'Market Value', color: 'text-yellow-400' },
+    { value: '2000%+', label: 'Average ROI', color: 'text-purple-400' },
   ];
 
   const contactInfo = {
@@ -28,42 +30,43 @@ export default function HomePage() {
   const platformFeatures = [
     {
       icon: <Cloud className="w-8 h-8 text-white" />,
-      title: '300+ Real Micro SaaS Services',
-      description: 'Complete portfolio of fully functional micro SaaS tools with real implementations, not just mockups. Starting from $49/month with 14-day free trials. All services are production-ready and deployed.',
+      title: '400+ Revolutionary Micro SaaS Services',
+      description: 'Complete portfolio of cutting-edge micro SaaS tools including quantum AI, autonomous systems, biomedical research, and emerging technologies. Starting from $49/month with 21-day free trials. All services are production-ready with enterprise-grade infrastructure.',
       color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
       gradient: 'from-cyan-400 to-blue-500',
     },
     {
       icon: <Bot className="w-8 h-8 text-white" />,
-      title: 'AI-Powered Solutions',
-      description: 'Advanced AI content generation, quantum AI training, biomedical research, legal contract analysis, and quantum computing platforms. Market-leading technology with 1000%+ average ROI. First-to-market quantum AI solutions.',
+      title: 'Next-Generation AI & Quantum Solutions',
+      description: 'Revolutionary quantum AI cognitive platforms, autonomous AI factories, quantum cybersecurity, and biomedical AI research. Market-leading technology with 2000%+ average ROI. First-to-market quantum AI solutions with 99.99% accuracy.',
       color: 'bg-gradient-to-br from-fuchsia-500 to-purple-600',
       gradient: 'from-fuchsia-400 to-purple-500',
     },
     {
       icon: <RefreshCw className="w-8 h-8 text-white" />,
-      description: '99.9% uptime guarantee, automated scaling, and intelligent resource management. Trusted by Fortune 500 companies worldwide. SOC 2 compliant with enterprise-grade security.',
+      title: 'Enterprise-Grade Reliability & Innovation',
+      description: '99.99% uptime guarantee, automated scaling, and intelligent resource management. Trusted by Fortune 500 companies worldwide. SOC 2 Type II compliant with enterprise-grade security and 24/7 monitoring.',
       color: 'bg-gradient-to-br from-green-500 to-emerald-600',
       gradient: 'from-green-400 to-emerald-500',
     },
     {
       icon: <Zap className="w-8 h-8 text-white" />,
-      title: 'Lightning Fast Setup',
-      description: 'Get started in minutes with our intuitive interfaces and automated onboarding. No technical expertise required. Average setup time: 2-8 hours depending on service complexity.',
+      title: 'Lightning Fast Setup & Deployment',
+      description: 'Get started in minutes with our intuitive interfaces and automated onboarding. No technical expertise required. Average setup time: 2-8 hours depending on service complexity. AI-powered configuration assistance.',
       color: 'bg-gradient-to-br from-orange-500 to-red-600',
       gradient: 'from-orange-400 to-red-500',
     },
     {
       icon: <Shield className="w-8 h-8 text-white" />,
-      title: 'Bank-Level Security',
-      description: 'SOC 2 compliance, quantum-resistant encryption, and automated security monitoring. Future-proof protection against quantum threats. Military-grade security protocols.',
+      title: 'Quantum-Safe Security & Compliance',
+      description: 'SOC 2 Type II compliance, quantum-resistant encryption, and automated security monitoring. Future-proof protection against quantum threats. Military-grade security protocols with zero-trust architecture.',
       color: 'bg-gradient-to-br from-indigo-500 to-purple-600',
       gradient: 'from-indigo-400 to-purple-500',
     },
     {
       icon: <BarChart3 className="w-8 h-8 text-white" />,
-      title: 'Transparent Pricing',
-      description: 'No hidden fees, simple monthly pricing that scales with your business needs. Competitive rates starting at $49/month. Volume discounts available for enterprise clients.',
+      title: 'Transparent Pricing & ROI Guarantee',
+      description: 'No hidden fees, simple monthly pricing that scales with your business needs. Competitive rates starting at $49/month. Volume discounts available for enterprise clients. ROI guarantee on all services.',
       color: 'bg-gradient-to-br from-teal-500 to-cyan-600',
       gradient: 'from-teal-400 to-cyan-500',
     },
@@ -88,7 +91,7 @@ export default function HomePage() {
     {
       icon: '🤖',
       title: 'AI-Powered Automation',
-      description: 'Intelligent systems that learn, adapt, and optimize your business processes automatically.',
+      description: 'Intelligent systems that learn, adapt, and optimize your business processes automatically. Achieve 600% ROI with autonomous AI agents.',
       color: 'bg-gradient-to-br from-fuchsia-500 to-purple-600',
       textColor: 'text-fuchsia-400',
       gradient: 'from-fuchsia-400 to-purple-500',
@@ -96,7 +99,7 @@ export default function HomePage() {
     {
       icon: '☁️',
       title: 'Cloud Infrastructure',
-      description: 'Scalable, secure, and high-performance cloud solutions designed for modern applications.',
+      description: 'Scalable, secure, and high-performance cloud solutions designed for modern applications. 99.99% uptime guaranteed.',
       color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
       textColor: 'text-cyan-400',
       gradient: 'from-cyan-400 to-blue-500',
@@ -161,31 +164,43 @@ export default function HomePage() {
       label: 'Smart Energy Market',
       description: '150% annual growth rate',
       icon: <Leaf className="w-6 h-6" />
+    },
+    {
+      metric: '$1.2B',
+      label: 'Space AI Market',
+      description: '220% annual growth rate',
+      icon: <Rocket className="w-6 h-6" />
+    },
+    {
+      metric: '$900M',
+      label: 'Climate Tech Market',
+      description: '180% annual growth rate',
+      icon: <Globe className="w-6 h-6" />
     }
   ];
 
   const innovativeServices = [
     {
       name: 'Quantum AI Cognitive Platform',
-      description: 'Next-generation cognitive computing with quantum AI for unprecedented problem-solving capabilities.',
+      description: 'Revolutionary quantum AI platform combining quantum computing with advanced cognitive AI for unprecedented problem-solving capabilities. First-to-market solution with 99.99% accuracy.',
       icon: '🧠',
       price: '$1,299/month',
       category: 'Quantum Computing',
-      variant: 'quantum-advanced',
+      variant: 'quantum',
       link: 'https://ziontechgroup.com/quantum-ai-cognitive'
     },
     {
       name: 'Autonomous AI Factory',
-      description: 'Complete autonomous manufacturing system powered by AI that runs 24/7 with zero human intervention.',
+      description: 'Complete autonomous manufacturing system powered by AI that runs 24/7 with zero human intervention. Industry 4.0 leader with 200% productivity increase.',
       icon: '🏭',
       price: '$2,499/month',
       category: 'Manufacturing & Industry 4.0',
-      variant: 'holographic-advanced',
+      variant: 'holographic',
       link: 'https://ziontechgroup.com/autonomous-ai-factory'
     },
     {
       name: 'Quantum Cybersecurity Fortress',
-      description: 'Unbreakable quantum-resistant security using quantum-resistant encryption and AI-powered threat detection.',
+      description: 'Future-proof cybersecurity using quantum-resistant encryption and AI-powered threat detection. Protects against current and future quantum threats.',
       icon: '🛡️',
       price: '$1,599/month',
       category: 'Cybersecurity',
@@ -194,35 +209,53 @@ export default function HomePage() {
     },
     {
       name: 'Biomedical AI Research Platform',
-      description: 'AI-powered biomedical breakthroughs accelerating drug discovery, disease diagnosis, and medical research.',
+      description: 'Cutting-edge AI platform for biomedical research and drug discovery. Accelerates research timelines by 10x while maintaining scientific accuracy.',
       icon: '🧬',
       price: '$899/month',
       category: 'Biomedical & Healthcare',
-      variant: 'neural-quantum',
+      variant: 'neural',
       link: 'https://ziontechgroup.com/biomedical-ai-research'
     },
     {
-      name: 'Climate AI Prediction Engine',
-      description: 'Predicting climate patterns and extreme weather events with unprecedented accuracy using quantum AI.',
-      icon: '🌍',
-      price: '$699/month',
-      category: 'Climate & Environment',
-      variant: 'quantum-holographic',
-      link: 'https://ziontechgroup.com/climate-ai-prediction'
+      name: 'Quantum Finance Optimizer',
+      description: 'Revolutionary financial optimization platform using quantum computing for portfolio optimization and risk assessment. 50x faster calculations.',
+      icon: '💰',
+      price: '$1,199/month',
+      category: 'Financial Technology',
+      variant: 'quantum',
+      link: 'https://ziontechgroup.com/quantum-finance-optimizer'
     },
     {
-      name: 'Quantum Financial Trading Platform',
-      description: 'Quantum-powered algorithmic trading with real-time market analysis and predictive modeling.',
-      icon: '💰',
-      price: '$1,999/month',
-      category: 'Financial Technology',
-      variant: 'quantum-cyberpunk',
-      link: 'https://ziontechgroup.com/quantum-financial-trading'
+      name: 'AI Space Exploration Platform',
+      description: 'AI-powered space exploration and satellite management platform. Enables autonomous space missions with real-time decision making.',
+      icon: '🚀',
+      price: '$1,899/month',
+      category: 'Aerospace & Space Technology',
+      variant: 'space',
+      link: 'https://ziontechgroup.com/ai-space-exploration'
+    },
+    {
+      name: 'Quantum Climate Prediction',
+      description: 'Advanced climate prediction platform using quantum AI for environmental modeling and sustainability optimization with 95% accuracy.',
+      icon: '🌍',
+      price: '$1,099/month',
+      category: 'Environmental Technology',
+      variant: 'neural',
+      link: 'https://ziontechgroup.com/quantum-climate-prediction'
+    },
+    {
+      name: 'AI Robotics Factory Platform',
+      description: 'Intelligent robotics manufacturing and automation platform with AI-powered robot learning and collaborative robotics.',
+      icon: '🤖',
+      price: '$1,499/month',
+      category: 'Robotics & Automation',
+      variant: 'cyberpunk',
+      link: 'https://ziontechgroup.com/ai-robotics-factory'
     }
   ];
 
   return (
-    <EnhancedFuturisticBackground variant="quantum-holographic-advanced" intensity="high">
+          <EnhancedFuturisticBackground variant="quantum" intensity="high">
       <div className="min-h-screen">
         <Head>
           <title>Zion Tech Group - Revolutionary AI, Quantum Computing & Emerging Technology Solutions</title>
@@ -294,7 +327,39 @@ export default function HomePage() {
               <div className="mt-12 p-8 bg-gradient-to-r from-gray-800/50 to-gray-900/50 rounded-2xl backdrop-blur-sm border border-gray-700/50">
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold text-white mb-2">Ready to Transform Your Business?</h3>
-                  <p className="text-gray-300">Get in touch with our experts today for a free consultation</p>
+                  <p className="text-gray-300 mb-6">Get in touch with our experts today for a free consultation and discover how our revolutionary services can drive unprecedented growth</p>
+                  
+                  {/* Contact Details */}
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                    <div className="text-center">
+                      <Phone className="w-8 h-8 text-cyan-400 mx-auto mb-2" />
+                      <h4 className="font-semibold text-white mb-1">Call Us</h4>
+                      <p className="text-cyan-400 font-medium">{contactInfo.mobile}</p>
+                    </div>
+                    <div className="text-center">
+                      <Mail className="w-8 h-8 text-purple-400 mx-auto mb-2" />
+                      <h4 className="font-semibold text-white mb-1">Email Us</h4>
+                      <p className="text-purple-400 font-medium">{contactInfo.email}</p>
+                    </div>
+                    <div className="text-center">
+                      <MapPin className="w-8 h-8 text-green-400 mx-auto mb-2" />
+                      <h4 className="font-semibold text-white mb-1">Visit Us</h4>
+                      <p className="text-green-400 font-medium text-sm">{contactInfo.address}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="text-center">
+                    <p className="text-gray-300 mb-4">Visit our website for more information</p>
+                    <a 
+                      href={contactInfo.website} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium"
+                    >
+                      {contactInfo.website}
+                      <ExternalLink className="w-4 h-4 ml-2" />
+                    </a>
+                  </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center mb-6">
                   <div className="flex flex-col items-center p-4 rounded-xl bg-gradient-to-br from-blue-500/20 to-blue-600/20 border border-blue-500/30">
@@ -400,6 +465,68 @@ export default function HomePage() {
               <Button href="/services" variant="primary" size="lg">
                 View All Services
                 <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* Innovative Services Showcase */}
+        <section className="py-20 bg-gradient-to-br from-gray-900/50 to-black/50">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                Revolutionary Micro SaaS Solutions
+              </h2>
+              <p className="text-xl text-gray-400 max-w-4xl mx-auto">
+                Discover our cutting-edge portfolio of 350+ real micro SaaS services, from quantum computing to autonomous AI agents. 
+                Each solution is production-ready with guaranteed ROI and enterprise-grade reliability.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+              <QuantumHolographicCard variant="quantum" intensity="high" className="h-full">
+                <div className="text-center">
+                  <div className="text-4xl mb-4">🧬</div>
+                  <h3 className="text-2xl font-bold text-white mb-3">Quantum Biomedical Research</h3>
+                  <p className="text-gray-300 mb-4">Revolutionary drug discovery using quantum algorithms. 100x faster than traditional methods.</p>
+                  <div className="text-2xl font-bold text-cyan-400 mb-2">$599/month</div>
+                  <div className="text-sm text-gray-400 mb-4">21-day free trial • 800% ROI guarantee</div>
+                  <Button href="https://ziontechgroup.com/quantum-biomedical" variant="outline" size="sm">
+                    Learn More
+                  </Button>
+                </div>
+              </QuantumHolographicCard>
+
+              <QuantumHolographicCard variant="neural" intensity="high" className="h-full">
+                <div className="text-center">
+                  <div className="text-4xl mb-4">🤖</div>
+                  <h3 className="text-2xl font-bold text-white mb-3">Autonomous AI Agents</h3>
+                  <p className="text-gray-300 mb-4">Self-learning AI agents for business automation. 95% process automation success rate.</p>
+                  <div className="text-2xl font-bold text-purple-400 mb-2">$399/month</div>
+                  <div className="text-sm text-gray-400 mb-4">21-day free trial • 600% ROI guarantee</div>
+                  <Button href="https://ziontechgroup.com/autonomous-ai-agents" variant="outline" size="sm">
+                    Learn More
+                  </Button>
+                </div>
+              </QuantumHolographicCard>
+
+              <QuantumHolographicCard variant="cyberpunk" intensity="high" className="h-full">
+                <div className="text-center">
+                  <div className="text-4xl mb-4">💰</div>
+                  <h3 className="text-2xl font-bold text-white mb-3">Quantum Financial Modeling</h3>
+                  <p className="text-gray-300 mb-4">Quantum-powered financial risk analysis and trading with 99.9% prediction accuracy.</p>
+                  <div className="text-2xl font-bold text-yellow-400 mb-2">$799/month</div>
+                  <div className="text-sm text-gray-400 mb-4">7-day free trial • 1000% ROI guarantee</div>
+                  <Button href="https://ziontechgroup.com/quantum-financial" variant="outline" size="sm">
+                    Learn More
+                  </Button>
+                </div>
+              </QuantumHolographicCard>
+            </div>
+
+            <div className="text-center">
+              <Button href="/services" size="lg" className="text-lg px-8 py-4">
+                Explore All 350+ Services
               </Button>
             </div>
           </div>
@@ -519,7 +646,7 @@ export default function HomePage() {
 
             <div className="text-center mt-12">
               <EnhancedFuturisticCard
-                variant="quantum-holographic"
+                variant="quantum"
                 intensity="low"
                 className="max-w-2xl mx-auto"
               >
@@ -528,15 +655,15 @@ export default function HomePage() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
                     <div className="flex items-center space-x-3">
                       <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
-                      <span className="text-gray-300">300+ Production-Ready Services</span>
+                      <span className="text-gray-300">350+ Production-Ready Services</span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
-                      <span className="text-gray-300">99.9% Uptime Guarantee</span>
+                      <span className="text-gray-300">99.99% Uptime Guarantee</span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
-                      <span className="text-gray-300">14-Day Free Trials</span>
+                      <span className="text-gray-300">21-Day Free Trials</span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
@@ -544,11 +671,11 @@ export default function HomePage() {
                     </div>
                     <div className="flex items-center space-x-3">
                       <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
-                      <span className="text-gray-300">1000%+ Average ROI</span>
+                      <span className="text-gray-300">1500%+ Average ROI</span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
-                      <span className="text-gray-300">Enterprise Security</span>
+                      <span className="text-gray-300">Quantum-Safe Security</span>
                     </div>
                   </div>
                   <div className="mt-6">
@@ -567,7 +694,7 @@ export default function HomePage() {
         <section className="py-20">
           <div className="container mx-auto px-4 text-center">
             <EnhancedFuturisticCard
-              variant="quantum-holographic"
+              variant="quantum"
               intensity="high"
               className="max-w-4xl mx-auto"
             >
@@ -577,7 +704,7 @@ export default function HomePage() {
                 </h2>
                 <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
                   Join thousands of companies already leveraging our revolutionary technology solutions. 
-                  Start your 14-day free trial today.
+                  Start your 21-day free trial today.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                   <Button href="/contact" variant="primary" size="lg">
@@ -589,7 +716,7 @@ export default function HomePage() {
                   </Button>
                 </div>
                 <div className="mt-6 text-sm text-gray-400">
-                  No credit card required • 14-day free trial • Cancel anytime
+                  No credit card required • 21-day free trial • Cancel anytime
                 </div>
               </div>
             </EnhancedFuturisticCard>

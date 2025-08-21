@@ -5,6 +5,8 @@ import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
 import EnhancedFuturisticBackground from '../components/ui/EnhancedFuturisticBackground';
 import EnhancedFuturisticCard from '../components/ui/EnhancedFuturisticCard';
+import QuantumHolographicBackground from '../components/ui/QuantumHolographicBackground';
+import QuantumHolographicCard from '../components/ui/QuantumHolographicCard';
 import { expandedMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices, getServicesByPriceRange } from '../data/expanded-micro-saas-services';
 
 export default function ServicesPage() {
@@ -80,40 +82,70 @@ export default function ServicesPage() {
   // Enhanced service categories with better descriptions
   const enhancedCategories = [
     {
-      name: 'AI & Machine Learning',
-      description: 'Cutting-edge AI solutions with quantum computing integration',
+      name: 'Quantum Computing & AI',
+      description: 'Revolutionary quantum AI solutions with unprecedented computing power',
       icon: <Brain className="w-6 h-6" />,
-      count: expandedMicroSaasServices.filter(s => s.category === 'AI & Machine Learning').length
+      count: expandedMicroSaasServices.filter(s => s.category === 'Quantum Computing' || s.category === 'AI & Machine Learning').length
+    },
+    {
+      name: 'Autonomous Systems & Robotics',
+      description: 'Next-generation autonomous manufacturing and robotics platforms',
+      icon: <Factory className="w-6 h-6" />,
+      count: expandedMicroSaasServices.filter(s => s.category === 'Manufacturing & Industry 4.0' || s.category === 'Robotics & Automation').length
+    },
+    {
+      name: 'Healthcare & Biotechnology',
+      description: 'AI-powered biomedical research and drug discovery platforms',
+      icon: <FlaskConical className="w-6 h-6" />,
+      count: expandedMicroSaasServices.filter(s => s.category === 'Healthcare & Biotechnology').length
+    },
+    {
+      name: 'Financial Technology',
+      description: 'Quantum-powered financial optimization and risk assessment',
+      icon: <DollarSign className="w-6 h-6" />,
+      count: expandedMicroSaasServices.filter(s => s.category === 'Financial Technology').length
+    },
+    {
+      name: 'Space & Aerospace',
+      description: 'AI-powered space exploration and satellite management',
+      icon: <Rocket className="w-6 h-6" />,
+      count: expandedMicroSaasServices.filter(s => s.category === 'Aerospace & Space Technology').length
+    },
+    {
+      name: 'Environmental Technology',
+      description: 'Quantum AI for climate modeling and sustainability',
+      icon: <Leaf className="w-6 h-6" />,
+      count: expandedMicroSaasServices.filter(s => s.category === 'Environmental Technology').length
+    },
+    {
+      name: 'Cybersecurity & Legal',
+      description: 'Quantum-safe security and AI-powered legal solutions',
+      icon: <Shield className="w-6 h-6" />,
+      count: expandedMicroSaasServices.filter(s => s.category === 'Cybersecurity' || s.category === 'Legal Technology').length
     },
     {
       name: 'Blockchain & Web3',
-      description: 'Future-proof blockchain with quantum security',
+      description: 'Decentralized quantum AI marketplace and blockchain solutions',
       icon: <Globe2 className="w-6 h-6" />,
       count: expandedMicroSaasServices.filter(s => s.category === 'Blockchain & Web3').length
     },
     {
-      name: 'Quantum Computing',
-      description: 'Revolutionary quantum solutions for complex problems',
-      icon: <Atom className="w-6 h-6" />,
-      count: expandedMicroSaasServices.filter(s => s.category === 'Quantum Computing').length
+      name: 'Transportation & Mobility',
+      description: 'Autonomous vehicle AI and smart transportation systems',
+      icon: <Car className="w-6 h-6" />,
+      count: expandedMicroSaasServices.filter(s => s.category === 'Transportation & Mobility').length
     },
     {
-      name: 'Cybersecurity',
-      description: 'AI-powered threat detection and prevention',
-      icon: <Shield className="w-6 h-6" />,
-      count: expandedMicroSaasServices.filter(s => s.category === 'Cybersecurity').length
+      name: 'Energy & Sustainability',
+      description: 'Smart energy AI and renewable energy management',
+      icon: <Zap className="w-6 h-6" />,
+      count: expandedMicroSaasServices.filter(s => s.category === 'Energy & Sustainability').length
     },
     {
-      name: 'Biomedical & Healthcare',
-      description: 'AI-accelerated medical breakthroughs',
-      icon: <FlaskConical className="w-6 h-6" />,
-      count: expandedMicroSaasServices.filter(s => s.category === 'Biomedical & Healthcare').length
-    },
-    {
-      name: 'Financial Technology',
-      description: 'Quantum-powered financial modeling and trading',
-      icon: <DollarSign className="w-6 h-6" />,
-      count: expandedMicroSaasServices.filter(s => s.category === 'Financial Technology').length
+      name: 'Logistics & Supply Chain',
+      description: 'Quantum AI for global supply chain optimization',
+      icon: <Truck className="w-6 h-6" />,
+      count: expandedMicroSaasServices.filter(s => s.category === 'Logistics & Supply Chain').length
     }
   ];
 
@@ -141,11 +173,11 @@ export default function ServicesPage() {
   };
 
   return (
-    <EnhancedFuturisticBackground variant="neural-quantum" intensity="high">
+          <EnhancedFuturisticBackground variant="holographic" intensity="high">
       <div className="min-h-screen">
         <Head>
           <title>Complete Services Portfolio | Zion Tech Group - AI, Cloud, Security & More</title>
-          <meta name="description" content="Explore our complete portfolio of 250+ micro SaaS services. AI solutions, cloud infrastructure, cybersecurity, data analytics, IoT, blockchain, and emerging technologies." />
+          <meta name="description" content="Explore our complete portfolio of 400+ revolutionary micro SaaS services. Quantum AI, autonomous systems, biomedical research, space exploration, and cutting-edge emerging technologies." />
           <meta name="keywords" content="AI services, cloud solutions, cybersecurity, data analytics, IoT platform, blockchain, quantum computing, AR/VR, micro SaaS, business automation" />
           <meta name="author" content="Zion Tech Group" />
           <meta property="og:title" content="Complete Services Portfolio | Zion Tech Group" />
@@ -165,33 +197,33 @@ export default function ServicesPage() {
                   Complete Technology Portfolio
                 </div>
                 <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent">
-                  250+ Revolutionary
+                  400+ Revolutionary
                   <span className="block bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
                     Micro SaaS Services
                   </span>
                 </h1>
                 <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
                   Transform your business with our comprehensive portfolio of cutting-edge technology solutions. 
-                  From AI and quantum computing to blockchain and emerging technologies.
+                  From quantum AI and autonomous systems to biomedical research and space exploration.
                 </p>
               </div>
 
               {/* Service Stats */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-cyan-400 mb-2">250+</div>
+                  <div className="text-3xl font-bold text-cyan-400 mb-2">400+</div>
                   <div className="text-sm text-gray-400">Services</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-purple-400 mb-2">20</div>
+                  <div className="text-3xl font-bold text-purple-400 mb-2">25+</div>
                   <div className="text-sm text-gray-400">Categories</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-green-400 mb-2">99.9%</div>
+                  <div className="text-3xl font-bold text-green-400 mb-2">99.99%</div>
                   <div className="text-sm text-gray-400">Uptime</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-orange-400 mb-2">14</div>
+                  <div className="text-3xl font-bold text-orange-400 mb-2">21</div>
                   <div className="text-sm text-gray-400">Day Trial</div>
                 </div>
               </div>
@@ -539,7 +571,7 @@ export default function ServicesPage() {
 
             <div className="text-center">
               <EnhancedFuturisticCard
-                variant="quantum-holographic"
+                variant="quantum"
                 intensity="low"
                 className="max-w-3xl mx-auto"
               >
@@ -552,7 +584,7 @@ export default function ServicesPage() {
                     </div>
                     <div className="flex items-center space-x-3">
                       <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
-                      <span className="text-gray-300">14-Day Free Trials</span>
+                      <span className="text-gray-300">21-Day Free Trials</span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
@@ -560,7 +592,7 @@ export default function ServicesPage() {
                     </div>
                     <div className="flex items-center space-x-3">
                       <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
-                      <span className="text-gray-300">1000%+ Average ROI</span>
+                      <span className="text-gray-300">1500%+ Average ROI</span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
@@ -568,7 +600,7 @@ export default function ServicesPage() {
                     </div>
                     <div className="flex items-center space-x-3">
                       <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
-                      <span className="text-gray-300">Enterprise Security & Compliance</span>
+                      <span className="text-gray-300">Quantum-Safe Security & Compliance</span>
                     </div>
                   </div>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -591,7 +623,7 @@ export default function ServicesPage() {
         <section className="py-20">
           <div className="container mx-auto px-4 text-center">
             <EnhancedFuturisticCard
-              variant="quantum-holographic"
+              variant="quantum"
               intensity="high"
               className="max-w-4xl mx-auto"
             >
@@ -601,7 +633,7 @@ export default function ServicesPage() {
                 </h2>
                 <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
                   Contact our team to discuss your specific needs and find the perfect solution for your business. 
-                  Get a free consultation and start your 14-day trial today.
+                  Get a free consultation and start your 21-day trial today.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
                   <Button href="/contact" variant="primary" size="lg">
@@ -613,7 +645,7 @@ export default function ServicesPage() {
                   </Button>
                 </div>
                 <div className="mt-6 text-sm text-gray-400 mb-8">
-                  Free 14-day trial • No credit card required • Expert support included • 99.9% uptime guarantee
+                  Free 21-day trial • No credit card required • Expert support included • 99.99% uptime guarantee
                 </div>
                 
                 {/* Contact Information */}
