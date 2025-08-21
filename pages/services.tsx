@@ -13,6 +13,8 @@ import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-
 import { innovativeMicroSaasServices } from '../data/innovative-micro-saas-services';
 import { extraServices } from '../data/extra-services';
 import { additionalEnhancedServices } from '../data/additional-real-services';
+import { emergingTechServices } from '../data/emerging-tech-services';
+import { aiFuturisticServices } from '../data/ai-futuristic-services';
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -25,7 +27,9 @@ export default function ServicesPage() {
     ...enhancedRealMicroSaasServices,
     ...innovativeMicroSaasServices,
     ...extraServices,
-    ...additionalEnhancedServices
+    ...additionalEnhancedServices,
+    ...emergingTechServices,
+    ...aiFuturisticServices
   ];
 
   // Categories with icons
