@@ -26,6 +26,7 @@ import { curatedMarketServices } from '../data/curated-market-services';
 import { realMarketServices } from '../data/real-market-services';
 import { new2025Services } from '../data/new-2025-services';
 import { newRealInnovations } from '../data/new-real-innovations';
+import { additional2025RealServices } from '../data/additional-2025-real-services';
 import { serviceExpansions2025 } from '../data/service-expansions-2025';
 
 export default function ServicesPage() {
@@ -53,7 +54,8 @@ export default function ServicesPage() {
     ...realMarketServices,
     ...new2025Services,
     ...newRealInnovations,
-    ...serviceExpansions2025
+    ...serviceExpansions2025,
+    ...additional2025RealServices
   ];
 
   // Dynamic category counts mapped to the same filter logic below
@@ -148,11 +150,26 @@ export default function ServicesPage() {
   }, [allServices, searchTerm, selectedCategory, selectedPriceRange, sortBy]);
 
   React.useEffect(() => {
-    const hash = typeof window !== 'undefined' ? window.location.hash.replace('#', '') : '';
-    if (hash === 'ai') setSelectedCategory('ai');
-    else if (hash === 'quantum') setSelectedCategory('quantum');
-    else if (hash === 'enterprise' || hash === 'it') setSelectedCategory('enterprise');
-    else if (hash === 'micro-saas') setSelectedCategory('micro-saas');
+    if (typeof window === 'undefined') return;
+    const url = new URL(window.location.href);
+    const hash = url.hash.replace('#', '');
+    const qpCategory = url.searchParams.get('category');
+    const qpSearch = url.searchParams.get('search');
+
+    if (qpCategory) {
+      const normalized = qpCategory.toLowerCase();
+      if (normalized.includes('ai')) setSelectedCategory('ai');
+      else if (normalized.includes('quantum') || normalized.includes('space')) setSelectedCategory('quantum');
+      else if (normalized.includes('enterprise') || normalized.includes('it')) setSelectedCategory('enterprise');
+      else if (normalized.includes('micro')) setSelectedCategory('micro-saas');
+    } else if (hash) {
+      if (hash === 'ai') setSelectedCategory('ai');
+      else if (hash === 'quantum') setSelectedCategory('quantum');
+      else if (hash === 'enterprise' || hash === 'it') setSelectedCategory('enterprise');
+      else if (hash === 'micro-saas') setSelectedCategory('micro-saas');
+    }
+
+    if (qpSearch) setSearchTerm(qpSearch);
   }, []);
 
   return (
