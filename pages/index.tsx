@@ -7,14 +7,19 @@ import {
   ShieldCheck
 } from 'lucide-react';
 import Button from '../components/ui/Button';
-import UltraFuturisticMatrixBackground from '../components/ui/UltraFuturisticMatrixBackground';
+
 import UltraFuturisticServiceCard from '../components/ui/UltraFuturisticServiceCard';
+import UltraAdvancedQuantumBackground from '../components/ui/UltraAdvancedQuantumBackground';
+import UltraAdvancedServiceCard from '../components/ui/UltraAdvancedServiceCard';
 import ServiceAds from '../components/sections/ServiceAds';
+import InnovativeServicesShowcase from '../components/sections/InnovativeServicesShowcase';
+import EnhancedNavigation from '../components/layout/EnhancedNavigation';
 import Card from '../components/ui/Card';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
 import { additionalEnhancedServices } from '../data/additional-real-services';
+import { innovativeMicroSaasServices } from '../data/innovative-micro-saas-services';
 
 export default function HomePage() {
   const heroStats = [
@@ -350,7 +355,7 @@ export default function HomePage() {
   const revolutionaryServices = all.filter(service => service.realImplementation && service.popular).slice(0, 6);
 
   return (
-    <UltraFuturisticMatrixBackground>
+    <UltraAdvancedQuantumBackground>
       <Head>
         <title>Zion Tech Group - Revolutionary AI & Quantum Computing Solutions</title>
         <meta name="description" content="Transform your business with 200+ revolutionary micro SaaS services. Quantum AI, autonomous systems, and cutting-edge technology solutions with 800%+ average ROI." />
@@ -371,6 +376,9 @@ export default function HomePage() {
         <meta name="twitter:description" content="Transform your business with 200+ revolutionary micro SaaS services." />
         <meta name="twitter:image" content="https://ziontechgroup.com/og-image.jpg" />
       </Head>
+      
+      <EnhancedNavigation />
+      
       {/* Reusable Service Ads Strip */}
       <ServiceAds
         heading="Featured Micro SaaS & AI Services"
@@ -776,116 +784,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Service Highlights Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Market-Leading
-              {' '}<span className="bg-gradient-to-r from-green-400 to-emerald-600 bg-clip-text text-transparent">Solutions</span>
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Our services outperform competitors in every category, delivering superior value, 
-              advanced technology, and exceptional ROI.
-            </p>
-          </motion.div>
-
-          {/* Service Highlights Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {serviceHighlights.map((highlight, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="h-full bg-gradient-to-br from-gray-900/80 to-black/90 border border-gray-700/50 backdrop-blur-xl">
-                  <div className="p-8 space-y-6">
-                    <h3 className="text-2xl font-bold text-white mb-4">{highlight.title}</h3>
-                    <p className="text-gray-300 leading-relaxed">{highlight.description}</p>
-                    
-                    <div className="text-3xl font-bold text-white">
-                      {highlight.price}
-                    </div>
-                    
-                    <div className="space-y-3">
-                      <h4 className="text-lg font-semibold text-cyan-400">Key Features:</h4>
-                      <ul className="space-y-2">
-                        {highlight.features.map((feature, featureIndex) => (
-                          <li key={featureIndex} className="flex items-center space-x-2 text-gray-300">
-                            <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
-                            <span>{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    
-                    <div className="bg-gray-800/50 rounded-lg p-4 border border-gray-700/50">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                        <div>
-                          <span className="text-cyan-400 font-semibold">Market Data:</span>
-                          <p className="text-gray-300">{highlight.marketData}</p>
-                        </div>
-                        <div>
-                          <span className="text-green-400 font-semibold">Competitors:</span>
-                          <p className="text-gray-300">{highlight.competitors}</p>
-                        </div>
-                        <div className="md:col-span-2">
-                          <span className="text-yellow-400 font-semibold">Your Savings:</span>
-                          <p className="text-gray-300">{highlight.savings}</p>
-                        </div>
-                        {highlight.contactInfo && (
-                          <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                            <div className="flex items-center gap-2 text-gray-300">
-                              <Phone className="w-4 h-4 text-cyan-400" />
-                              <span>{highlight.contactInfo.mobile}</span>
-                            </div>
-                            <div className="flex items-center gap-2 text-gray-300">
-                              <Mail className="w-4 h-4 text-purple-400" />
-                              <span>{highlight.contactInfo.email}</span>
-                            </div>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                    
-                    <div className="flex space-x-3">
-                      <Button
-                        href={highlight.link}
-                        className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white py-3 px-4 rounded-lg font-semibold transition-all duration-300"
-                      >
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        Learn More
-                      </Button>
-                      <Button
-                        href="/contact"
-                        variant="outline"
-                        className="px-4 py-3 border border-gray-600 text-gray-300 rounded-lg hover:border-cyan-500 hover:text-cyan-400 transition-all duration-300"
-                      >
-                        Contact
-                      </Button>
-                    </div>
-                    {highlight.contactInfo && (
-                      <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
-                        <div className="flex items-center justify-center gap-2 text-cyan-400"><Phone className="w-4 h-4" /><span>{highlight.contactInfo.mobile}</span></div>
-                        <div className="flex items-center justify-center gap-2 text-purple-400"><Mail className="w-4 h-4" /><span>{highlight.contactInfo.email}</span></div>
-                        <div className="flex items-center justify-center gap-2 text-green-400"><MapPin className="w-4 h-4" /><span className="text-xs">{highlight.contactInfo.address}</span></div>
-                      </div>
-                    )}
-                  </div>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Innovative Services Showcase */}
+      <InnovativeServicesShowcase />
 
       {/* Contact Section */}
       <section className="py-20 px-4">
@@ -954,6 +854,6 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-    </UltraFuturisticMatrixBackground>
+    </UltraAdvancedQuantumBackground>
   );
 }
