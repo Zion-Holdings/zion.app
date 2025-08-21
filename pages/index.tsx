@@ -34,99 +34,123 @@ export default function HomePage() {
 
   const revolutionaryServices = [
     {
-      name: 'Quantum AI Cognitive Platform',
-      description: 'Revolutionary quantum AI platform combining quantum computing with advanced cognitive AI for unprecedented problem-solving capabilities. First-to-market solution with 99.99% accuracy.',
-      icon: '🧠',
-      price: '$1,299/month',
-      category: 'Quantum Computing',
+      name: 'AI Content Factory Pro',
+      description: 'Advanced AI-powered content creation platform that generates blog posts, social media content, marketing copy, and technical documentation. Features GPT-4 integration and SEO optimization.',
+      icon: '✍️',
+      price: '$299/month',
+      category: 'AI & Content Creation',
       variant: 'quantum',
-      link: 'https://ziontechgroup.com/quantum-ai-cognitive',
-      features: ['Quantum-enhanced neural networks', 'Cognitive reasoning engine', 'Multi-dimensional problem solving', 'Real-time quantum AI processing']
+      link: 'https://ziontechgroup.com/ai-content-factory-pro',
+      features: ['GPT-4 powered content generation', 'SEO-optimized content creation', 'Brand voice customization', 'Multi-language support']
     },
     {
-      name: 'Autonomous AI Factory',
-      description: 'Complete autonomous manufacturing system powered by AI that runs 24/7 with zero human intervention. Industry 4.0 leader with 200% productivity increase.',
-      icon: '🏭',
-      price: '$2,499/month',
-      category: 'Manufacturing & Industry 4.0',
+      name: 'Blockchain NFT Marketplace',
+      description: 'Complete white-label NFT marketplace solution with smart contracts, wallet integration, and advanced trading features. Supports multiple blockchains and includes royalty management.',
+      icon: '🖼️',
+      price: '$799/month',
+      category: 'Blockchain & Web3',
       variant: 'holographic',
-      link: 'https://ziontechgroup.com/autonomous-ai-factory',
-      features: ['Fully autonomous operation', 'AI-powered quality control', 'Predictive maintenance', 'Real-time optimization']
+      link: 'https://ziontechgroup.com/blockchain-nft-marketplace',
+      features: ['Multi-blockchain support', 'Smart contract deployment', 'Wallet integration', 'Royalty management system']
     },
     {
-      name: 'Quantum Cybersecurity Fortress',
-      description: 'Future-proof cybersecurity using quantum-resistant encryption and AI-powered threat detection. Protects against current and future quantum threats.',
-      icon: '🛡️',
-      price: '$1,599/month',
-      category: 'Cybersecurity',
+      name: 'AI Video Editing Suite',
+      description: 'Revolutionary AI-powered video editing platform that automatically edits, enhances, and optimizes videos. Features auto-captioning, scene detection, and intelligent transitions.',
+      icon: '🎬',
+      price: '$199/month',
+      category: 'AI & Media',
       variant: 'cyberpunk',
-      link: 'https://ziontechgroup.com/quantum-cybersecurity',
-      features: ['Quantum-resistant encryption', 'AI threat detection', 'Zero-trust architecture', '24/7 monitoring']
+      link: 'https://ziontechgroup.com/ai-video-editing-suite',
+      features: ['AI-powered auto-editing', 'Automatic scene detection', 'Smart caption generation', 'Background music selection']
     },
     {
-      name: 'Biomedical AI Research Platform',
-      description: 'Cutting-edge AI platform for biomedical research and drug discovery. Accelerates research timelines by 10x while maintaining scientific accuracy.',
-      icon: '🧬',
-      price: '$899/month',
-      category: 'Biomedical & Healthcare',
+      name: 'Quantum Cryptography Platform',
+      description: 'Advanced quantum-resistant cryptography platform that protects data against current and future quantum threats. Features post-quantum algorithms and quantum key distribution.',
+      icon: '🔐',
+      price: '$1,599/month',
+      category: 'Cybersecurity & Quantum',
       variant: 'neural',
-      link: 'https://ziontechgroup.com/biomedical-ai-research',
-      features: ['Drug discovery acceleration', 'Genomic analysis', 'Clinical trial optimization', 'Research automation']
+      link: 'https://ziontechgroup.com/quantum-cryptography-platform',
+      features: ['Post-quantum cryptography algorithms', 'Quantum key distribution (QKD)', 'Hybrid encryption systems', 'Real-time threat detection']
     },
     {
-      name: 'Quantum Finance Optimizer',
-      description: 'Revolutionary financial optimization platform using quantum computing for portfolio optimization and risk assessment. 50x faster calculations.',
-      icon: '💰',
-      price: '$1,199/month',
-      category: 'Financial Technology',
+      name: 'Autonomous Logistics Platform',
+      description: 'Intelligent logistics platform that optimizes supply chains, predicts demand, and automates warehouse operations. Features autonomous vehicles, drone delivery, and predictive analytics.',
+      icon: '🚚',
+      price: '$1,299/month',
+      category: 'Logistics & Supply Chain',
       variant: 'quantum',
-      link: 'https://ziontechgroup.com/quantum-finance-optimizer',
-      features: ['Portfolio optimization', 'Risk assessment', 'Real-time trading', 'Quantum algorithms']
+      link: 'https://ziontechgroup.com/autonomous-logistics-platform',
+      features: ['AI demand forecasting', 'Autonomous vehicle management', 'Drone delivery optimization', 'Warehouse automation']
     },
     {
-      name: 'AI Space Exploration Platform',
-      description: 'AI-powered space exploration and satellite management platform. Enables autonomous space missions with real-time decision making.',
-      icon: '🚀',
-      price: '$1,899/month',
-      category: 'Aerospace & Space Technology',
+      name: 'AI Healthcare Diagnostics',
+      description: 'Revolutionary AI-powered medical diagnostics platform that analyzes medical images, predicts diseases, and assists healthcare professionals. FDA-approved and HIPAA-compliant.',
+      icon: '🏥',
+      price: '$899/month',
+      category: 'Healthcare & AI',
       variant: 'space',
-      link: 'https://ziontechgroup.com/ai-space-exploration',
-      features: ['Satellite management', 'Mission planning', 'Autonomous navigation', 'Real-time analytics']
+      link: 'https://ziontechgroup.com/ai-healthcare-diagnostics',
+      features: ['Medical image analysis', 'Disease prediction algorithms', 'HIPAA compliance', 'FDA-approved diagnostics']
     }
   ];
 
   const emergingTechServices = [
     {
+      name: 'DeFi Yield Optimizer',
+      description: 'Intelligent DeFi yield optimization platform that automatically finds the best yield farming opportunities across multiple protocols. Features risk assessment and automated rebalancing.',
+      icon: '💰',
+      price: '$399/month',
+      category: 'DeFi & Cryptocurrency',
+      link: 'https://ziontechgroup.com/defi-yield-optimizer'
+    },
+    {
+      name: 'Quantum Financial Modeling',
+      description: 'Advanced quantum computing platform for financial modeling, risk assessment, and portfolio optimization. Processes complex financial calculations 1000x faster than traditional methods.',
+      icon: '📊',
+      price: '$1,899/month',
+      category: 'Financial Technology',
+      link: 'https://ziontechgroup.com/quantum-financial-modeling'
+    },
+    {
+      name: 'AI Climate Prediction Platform',
+      description: 'Advanced AI platform that predicts climate patterns, extreme weather events, and environmental changes. Uses satellite data, IoT sensors, and machine learning for accurate forecasting.',
+      icon: '🌍',
+      price: '$699/month',
+      category: 'Climate Tech & AI',
+      link: 'https://ziontechgroup.com/ai-climate-prediction'
+    },
+    {
+      name: 'Autonomous Energy Management',
+      description: 'Intelligent energy management platform that optimizes power consumption, manages renewable energy sources, and automates grid operations. Reduces energy costs by up to 40%.',
+      icon: '⚡',
+      price: '$1,099/month',
+      category: 'Energy & Sustainability',
+      link: 'https://ziontechgroup.com/autonomous-energy-management'
+    },
+    {
+      name: 'Quantum Drug Discovery Platform',
+      description: 'Revolutionary quantum computing platform for drug discovery and molecular modeling. Accelerates research timelines by 100x while maintaining scientific accuracy and compliance.',
+      icon: '🧪',
+      price: '$2,299/month',
+      category: 'Biotechnology & Quantum',
+      link: 'https://ziontechgroup.com/quantum-drug-discovery'
+    },
+    {
       name: 'Metaverse Development Studio',
-      description: 'Complete metaverse development platform with VR/AR integration, 3D modeling, and immersive experiences.',
+      description: 'Complete metaverse development platform with VR/AR integration, 3D modeling, and immersive experiences. Features real-time collaboration, AI-powered content generation, and cross-platform deployment.',
       icon: '🌐',
       price: '$799/month',
       category: 'Metaverse & VR/AR',
-      link: 'https://ziontechgroup.com/metaverse-studio'
-    },
-    {
-      name: 'Blockchain DeFi Platform',
-      description: 'Decentralized finance platform with smart contracts, yield farming, and cross-chain interoperability.',
-      icon: '⛓️',
-      price: '$599/month',
-      category: 'Blockchain & DeFi',
-      link: 'https://ziontechgroup.com/blockchain-defi'
+      link: 'https://ziontechgroup.com/metaverse-development-studio'
     },
     {
       name: 'IoT Smart City Platform',
-      description: 'Intelligent IoT platform for smart city management, traffic optimization, and environmental monitoring.',
+      description: 'Comprehensive IoT platform for smart city management, traffic optimization, and environmental monitoring. Features real-time data collection, AI analytics, and automated city services.',
       icon: '🏙️',
       price: '$1,099/month',
       category: 'IoT & Smart Cities',
-      link: 'https://ziontechgroup.com/iot-smart-city'
-    },
-    {
-      name: 'Edge Computing Network',
-      description: 'Distributed edge computing platform for ultra-low latency applications and real-time data processing.',
-      icon: '⚡',
-      price: '$699/month',
-      category: 'Edge Computing',
-      link: 'https://ziontechgroup.com/edge-computing'
+      link: 'https://ziontechgroup.com/iot-smart-city-platform'
     }
   ];
 
