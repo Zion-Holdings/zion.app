@@ -10,7 +10,7 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
 	return (
 		<div className="min-h-screen bg-black text-white">
-			<UltraAdvancedFuturisticBackground variant="quantum-holographic">
+			<UltraAdvancedFuturisticBackground variant="neural-quantum-cyberpunk" intensity="high">
 				<QuantumHolographicNavbar />
 				<main className="pt-24 lg:pt-28">
 					{children}

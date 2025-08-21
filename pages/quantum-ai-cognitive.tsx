@@ -15,11 +15,11 @@ export default function QuantumAICognitivePage() {
   const contactInfo = service.contactInfo;
 
   return (
-    <UltraAdvancedFuturisticBackground variant="holographic">
+    <UltraAdvancedFuturisticBackground variant="quantum-holographic">
       <Head>
         <title>{service.name} - Zion Tech Group</title>
         <meta name="description" content={service.description} />
-        <link rel="canonical" href="https://ziontechgroup.com/quantum-ai-cognitive" />
+        <link rel="canonical" href={service.link} />
       </Head>
 
       <div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8">

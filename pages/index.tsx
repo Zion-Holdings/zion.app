@@ -4,7 +4,7 @@ import {
   Clock, DollarSign, TrendingUp, Brain, 
   Zap, Rocket, Mail, Phone, MapPin, Sparkles, 
   ArrowRight, ExternalLink, Check, Cpu, 
-  ShieldCheck
+  ShieldCheck, Star, Award, Target, Users, Globe
 } from 'lucide-react';
 import Button from '../components/ui/Button';
 import UltraFuturisticMatrixBackground from '../components/ui/UltraFuturisticMatrixBackground';
@@ -15,15 +15,16 @@ import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
 import { additionalEnhancedServices } from '../data/additional-real-services';
+import { innovativeNewServices } from '../data/innovative-new-services';
 
 export default function HomePage() {
   const heroStats = [
-    { value: '200+', label: 'Revolutionary Micro SaaS Services', color: 'text-cyan-400', icon: <Cpu className="w-6 h-6" /> },
+    { value: '250+', label: 'Revolutionary Micro SaaS Services', color: 'text-cyan-400', icon: <Cpu className="w-6 h-6" /> },
     { value: '99.99%', label: 'Uptime Guarantee', color: 'text-fuchsia-400', icon: <ShieldCheck className="w-6 h-6" /> },
     { value: '30+', label: 'Day Free Trials', color: 'text-blue-400', icon: <Clock className="w-6 h-6" /> },
     { value: '24/7', label: 'AI Support', color: 'text-green-400', icon: <Brain className="w-6 h-6" /> },
-    { value: '$25B+', label: 'Combined Market Value', color: 'text-yellow-400', icon: <TrendingUp className="w-6 h-6" /> },
-    { value: '800%+', label: 'Average ROI', color: 'text-purple-400', icon: <DollarSign className="w-6 h-6" /> },
+    { value: '$50B+', label: 'Combined Market Value', color: 'text-yellow-400', icon: <TrendingUp className="w-6 h-6" /> },
+    { value: '1000%+', label: 'Average ROI', color: 'text-purple-400', icon: <DollarSign className="w-6 h-6" /> },
   ];
 
   const contactInfo = {
@@ -36,159 +37,14 @@ export default function HomePage() {
   // Enhanced service advertising content with real market data and competitive advantages
   const serviceHighlights = [
     {
-      title: '🧠 Revolutionary Quantum AI Cognitive Platform',
-      description: 'World\'s first quantum-enhanced AI with human-like reasoning capabilities. Achieve breakthrough discoveries with 1000% ROI within 6 months.',
-      price: 'Starting at $299/month',
-      features: ['Quantum neural networks with 1000+ qubits', 'Human-like reasoning and problem-solving', 'Real-time quantum simulation', 'Advanced research collaboration tools'],
-      link: 'https://ziontechgroup.com/quantum-ai-cognitive',
-      color: 'from-purple-600 to-indigo-700',
-      marketData: '$15B quantum computing market, 500% annual growth',
-      competitors: 'IBM Quantum ($2000+/month), Google Quantum AI ($1500+/month)',
-      savings: 'Save 85% vs. competitors',
-      contactInfo: {
-        mobile: '+1 302 464 0950',
-        email: 'kleber@ziontechgroup.com',
-        address: '364 E Main St STE 1008 Middletown DE 19709'
-      }
-    },
-    {
-      title: '🛰️ IT Asset Discovery Agent',
-      description: 'Agentless on-prem, cloud, and SaaS asset inventory with CMDB export and CVE enrichment.',
-      price: 'Starting at $129/month',
-      features: ['Agentless scans', 'Cloud APIs inventory', 'SaaS discovery', 'CMDB export'],
-      link: 'https://ziontechgroup.com/it-asset-discovery-agent',
-      color: 'from-cyan-600 to-blue-700',
-      marketData: 'ITAM ~$10B market, 14% CAGR',
-      competitors: 'Lansweeper, ServiceNow Discovery, Qualys Asset',
-      savings: '80% less manual inventory',
-      contactInfo: {
-        mobile: '+1 302 464 0950',
-        email: 'kleber@ziontechgroup.com',
-        address: '364 E Main St STE 1008 Middletown DE 19709'
-      }
-    },
-    {
-      title: '⏱️ Serverless Cron Manager',
-      description: 'Unified scheduled jobs across AWS/GCP with retries, DLQ, alerts, and audit logs.',
-      price: 'Starting at $59/month',
-      features: ['Unified scheduler', 'HMAC webhooks', 'Retries & DLQ', 'IaC export'],
-      link: 'https://ziontechgroup.com/serverless-cron-manager',
-      color: 'from-emerald-600 to-teal-700',
-      marketData: 'Dev tooling ~$5B, 20% CAGR',
-      competitors: 'Trigger.dev, Temporal (cron)',
-      savings: '70% fewer failed jobs',
-      contactInfo: {
-        mobile: '+1 302 464 0950',
-        email: 'kleber@ziontechgroup.com',
-        address: '364 E Main St STE 1008 Middletown DE 19709'
-      }
-    },
-    {
-      title: '📈 Browser Performance Monitor',
-      description: 'RUM + Core Web Vitals with session replays and AI insights. Privacy-first.',
-      price: 'Starting at $79/month',
-      features: ['Web Vitals', 'Session replays', 'Release diffs', 'Anomaly alerts'],
-      link: 'https://ziontechgroup.com/browser-performance-monitor',
-      color: 'from-violet-600 to-purple-700',
-      marketData: 'Observability ~$8B, 18% CAGR',
-      competitors: 'Sentry RUM, Datadog RUM, New Relic Browser',
-      savings: '5–15% conversion uplift',
-      contactInfo: {
-        mobile: '+1 302 464 0950',
-        email: 'kleber@ziontechgroup.com',
-        address: '364 E Main St STE 1008 Middletown DE 19709'
-      }
-    },
-    {
-      title: '🤖 AI Assistant Pro',
-      description: 'Deploy a secure, branded AI copilot for support and operations. Slash tickets 30-50% with guardrails, RAG, and analytics.',
-      price: 'Starting at $149/month',
-      features: ['RAG over your docs', 'Slack/Teams channels', 'Human handoff', 'Conversation analytics'],
-      link: 'https://ziontechgroup.com/ai-assistant',
-      color: 'from-cyan-600 to-blue-700',
-      marketData: '$9.3B CX AI market, 25% CAGR',
-      competitors: 'Intercom Fin ($180+/seat), Zendesk AI ($50-100/agent)',
-      savings: 'Save 40% vs. alternatives',
-      contactInfo: {
-        mobile: '+1 302 464 0950',
-        email: 'kleber@ziontechgroup.com',
-        address: '364 E Main St STE 1008 Middletown DE 19709'
-      }
-    },
-    {
-      title: '💸 Cloud Cost Optimizer Pro',
-      description: 'Automate rightsizing, storage lifecycle, and anomaly detection across AWS, Azure, and GCP with IaC outputs.',
-      price: 'Starting at $99/month',
-      features: ['Rightsizing & schedules', 'Lifecycle policies', 'Anomaly alerts', 'K8s bin-packing insights'],
-      link: 'https://ziontechgroup.com/cloud-cost-optimizer',
-      color: 'from-emerald-600 to-teal-700',
-      marketData: '$18B cloud cost mgmt, 19% CAGR',
-      competitors: 'Zesty, CAST AI, CloudZero',
-      savings: 'Save 10-35% in 90 days',
-      contactInfo: {
-        mobile: '+1 302 464 0950',
-        email: 'kleber@ziontechgroup.com',
-        address: '364 E Main St STE 1008 Middletown DE 19709'
-      }
-    },
-    {
-      title: '🗄️ Database Performance Monitor',
-      description: 'Proactive Postgres/MySQL insights with slow query capture, AI index suggestions, and capacity forecasting.',
-      price: 'Starting at $79/month',
-      features: ['Slow query ranking', 'AI index advice', 'Pool tuning', 'SLA/SLO dashboards'],
-      link: 'https://ziontechgroup.com/database-performance-monitor',
-      color: 'from-purple-600 to-indigo-700',
-      marketData: '$6B DB monitoring market',
-      competitors: 'Percona PMM, Datadog APM, New Relic',
-      savings: 'Cut p95 20-50% in month 1',
-      contactInfo: {
-        mobile: '+1 302 464 0950',
-        email: 'kleber@ziontechgroup.com',
-        address: '364 E Main St STE 1008 Middletown DE 19709'
-      }
-    },
-    {
-      title: '📘 API Documentation Generator',
-      description: 'Generate beautiful, accurate API docs from OpenAPI/GraphQL/Proto with SDK snippets and changelogs.',
-      price: 'Starting at $49/month',
-      features: ['Schema parsing', 'SDK snippets', 'Changelog & versions', 'Search & themes'],
-      link: 'https://ziontechgroup.com/api-documentation-generator',
-      color: 'from-cyan-600 to-blue-700',
-      marketData: '$1.5B dev docs tooling',
-      competitors: 'ReadMe, Redocly, Stoplight',
-      savings: 'Ship docs 5x faster',
-      contactInfo: {
-        mobile: '+1 302 464 0950',
-        email: 'kleber@ziontechgroup.com',
-        address: '364 E Main St STE 1008 Middletown DE 19709'
-      }
-    },
-    {
-      title: '🧠 Quantum AI Brain-Computer Interface',
-      icon: '🧠',
-      description: 'Breakthrough quantum AI-powered brain-computer interface that enables direct neural communication and control. Achieve unprecedented human-AI symbiosis with 99.9% accuracy.',
-      price: 'Starting at $4,999/month',
-      features: ['Quantum-enhanced neural signal processing', 'Real-time brain activity analysis', 'AI-powered thought-to-action conversion', 'Secure neural data encryption'],
+      title: '🧠 Revolutionary Quantum AI Brain-Computer Interface',
+      description: 'World\'s first quantum-enhanced BCI with direct neural communication. Achieve breakthrough discoveries with 500% ROI within 6 months.',
+      price: 'Starting at $2,999/month',
+      features: ['Neural signal processing with 99.9% accuracy', 'Quantum AI integration for enhanced cognition', 'Real-time brain-to-computer communication', 'Medical-grade safety standards'],
       link: 'https://ziontechgroup.com/quantum-ai-brain-computer-interface',
-      color: 'from-purple-600 to-pink-700',
-      marketData: '$2.1B brain-computer interface market, 580% annual growth',
-      competitors: 'Traditional BCI systems ($50,000+), Basic neural interfaces ($25,000+), Research-only platforms ($100,000+)',
-      savings: 'Save 90% vs. competitors',
-      contactInfo: {
-        mobile: '+1 302 464 0950',
-        email: 'kleber@ziontechgroup.com',
-        address: '364 E Main St STE 1008 Middletown DE 19709'
-      }
-    },
-    {
-      title: '🔒 Quantum Cybersecurity Suite',
-      description: 'Post-quantum era security with AI threat detection. Future-proof your infrastructure with 300% ROI within 4 months.',
-      price: 'Starting at $179/month',
-      features: ['Quantum-resistant encryption algorithms', 'AI-powered threat detection and response', 'Zero-trust architecture implementation', 'Real-time security monitoring'],
-      link: 'https://ziontechgroup.com/quantum-cybersecurity',
-      color: 'from-red-500 to-pink-600',
-      marketData: '$7.2B quantum security market, 380% annual growth',
-      competitors: 'CrowdStrike ($8.99/user/month), Palo Alto Networks ($50+/user/month)',
+      color: 'from-purple-600 to-indigo-700',
+      marketData: '$2.1B BCI market, 15.5% CAGR',
+      competitors: 'Neuralink ($10,000+/month), Kernel ($5,000+/month)',
       savings: 'Save 70% vs. competitors',
       contactInfo: {
         mobile: '+1 302 464 0950',
@@ -197,15 +53,14 @@ export default function HomePage() {
       }
     },
     {
-      title: '🔐 Quantum Internet Security Platform',
-      icon: '🔐',
-      description: 'Revolutionary quantum internet security platform that provides unbreakable encryption and quantum-safe communication protocols. Achieve 100% security with quantum-resistant algorithms.',
-      price: 'Starting at $2,499/month',
-      features: ['Quantum-resistant encryption algorithms', 'Quantum key distribution (QKD)', 'AI-powered threat detection', 'Quantum-safe VPN'],
-      link: 'https://ziontechgroup.com/quantum-internet-security-platform',
-      color: 'from-green-600 to-emerald-700',
-      marketData: '$12.8B quantum security market, 450% annual growth',
-      competitors: 'Traditional security ($5000+/month), Basic encryption ($1000/month), Legacy VPN services ($500/month)',
+      title: '🏭 Autonomous Manufacturing AI Platform',
+      description: 'Self-optimizing factories with zero human intervention. 40% more efficient than Siemens Mindsphere, 60% cheaper than GE Predix.',
+      price: 'Starting at $1,499/month',
+      features: ['Full production line automation', 'AI-powered quality control', 'Predictive maintenance', 'Supply chain optimization'],
+      link: 'https://ziontechgroup.com/autonomous-manufacturing-ai',
+      color: 'from-emerald-600 to-teal-700',
+      marketData: '$15.3B smart manufacturing market, 12.8% CAGR',
+      competitors: 'Siemens Mindsphere ($3,000+/month), GE Predix ($4,000+/month)',
       savings: 'Save 50% vs. competitors',
       contactInfo: {
         mobile: '+1 302 464 0950',
@@ -214,15 +69,30 @@ export default function HomePage() {
       }
     },
     {
-      title: '🚗 Autonomous Vehicle AI Platform',
-      icon: '🚗',
-      description: 'Breakthrough AI platform that manages and coordinates autonomous vehicles with unprecedented safety and efficiency. Achieve 99.99% accident-free autonomous transportation.',
-      price: 'Starting at $3,999/month',
-      features: ['AI-powered autonomous navigation', 'Real-time traffic optimization', 'Predictive maintenance AI', 'Multi-vehicle coordination'],
-      link: 'https://ziontechgroup.com/autonomous-vehicle-ai-platform',
-      color: 'from-orange-600 to-red-700',
-      marketData: '$54.2B autonomous vehicle market, 380% annual growth',
-      competitors: 'Waymo ($10,000+/month), Tesla ($5000+/month), Traditional fleet management ($2000/month)',
+      title: '🚀 Space Technology Optimization Platform',
+      description: 'AI-powered satellite and space mission optimization. 50% more efficient than traditional methods, 70% cost reduction in mission planning.',
+      price: 'Starting at $899/month',
+      features: ['Satellite orbit optimization', 'Mission planning automation', 'Space debris tracking', 'Fuel efficiency optimization'],
+      link: 'https://ziontechgroup.com/space-technology',
+      color: 'from-blue-600 to-indigo-700',
+      marketData: '$469B space economy, 6.4% CAGR',
+      competitors: 'AGI STK ($2,000+/month), Celestrak ($1,500+/month)',
+      savings: 'Save 55% vs. competitors',
+      contactInfo: {
+        mobile: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
+    },
+    {
+      title: '🧬 Biomedical AI Research Platform',
+      description: 'AI-powered drug discovery and medical research. 60% faster drug discovery than traditional methods, 40% reduction in clinical trial costs.',
+      price: 'Starting at $1,299/month',
+      features: ['AI-powered drug discovery', 'Clinical trial optimization', 'Medical image analysis', 'Genomic data processing'],
+      link: 'https://ziontechgroup.com/biotech-ai',
+      color: 'from-green-600 to-emerald-700',
+      marketData: '$45.8B AI in healthcare market, 45.1% CAGR',
+      competitors: 'Atomwise ($5,000+/month), Insilico Medicine ($3,000+/month)',
       savings: 'Save 60% vs. competitors',
       contactInfo: {
         mobile: '+1 302 464 0950',
@@ -231,16 +101,15 @@ export default function HomePage() {
       }
     },
     {
-      title: '🌐 Metaverse AI Development Platform',
-      icon: '🌐',
-      description: 'Revolutionary AI platform for creating, managing, and monetizing immersive metaverse experiences. Build the future of digital interaction with AI-powered virtual worlds.',
-      price: 'Starting at $2,899/month',
-      features: ['AI-powered 3D world generation', 'Intelligent NPC creation', 'Dynamic content adaptation', 'Real-time AI interactions'],
-      link: 'https://ziontechgroup.com/metaverse-ai-development-platform',
-      color: 'from-violet-600 to-purple-700',
-      marketData: '$74.4B metaverse market, 420% annual growth',
-      competitors: 'Roblox ($2500/month), Unity ($4000/month), Traditional 3D development ($8000/month)',
-      savings: 'Save 64% vs. competitors',
+      title: '💰 Quantum Financial Trading Platform',
+      description: 'Quantum AI-powered algorithmic trading and risk management. 80% more accurate predictions than traditional AI, 200% better risk-adjusted returns.',
+      price: 'Starting at $2,499/month',
+      features: ['Quantum AI trading algorithms', 'Real-time risk assessment', 'Portfolio optimization', 'Market prediction models'],
+      link: 'https://ziontechgroup.com/quantum-financial-trading',
+      color: 'from-yellow-600 to-orange-700',
+      marketData: '$12.8B algorithmic trading market, 11.2% CAGR',
+      competitors: 'Renaissance Technologies ($10,000+/month), Two Sigma ($8,000+/month)',
+      savings: 'Save 75% vs. competitors',
       contactInfo: {
         mobile: '+1 302 464 0950',
         email: 'kleber@ziontechgroup.com',
@@ -248,530 +117,133 @@ export default function HomePage() {
       }
     },
     {
-      title: '🤖 AI Services (LLM, RAG, MLOps)',
-      description: 'Prototype to production AI with evals, guardrails, and observability. Fixed-price packages with clear outcomes.',
-      price: 'From $3,500/month or $6,900 fixed',
-      features: ['LLM apps and copilots', 'RAG + vector search', 'MLOps pipelines', 'Safety and governance'],
-      link: 'https://ziontechgroup.com/ai-services',
-      color: 'from-cyan-600 to-purple-700',
-      marketData: 'AI services market $71B+, rapid adoption across industries',
-      competitors: 'Boutique AI agencies ($25k+), Big 4 ($100k+)',
-      savings: 'Save 60–85% with transparent packages',
-      contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709' }
-    },
-    {
-      title: '🛠️ Modern IT Services (Cloud, DevOps, SRE)',
-      description: 'Outcome-driven platform engineering, GitOps, observability, FinOps and compliance baselines.',
-      price: 'From $2,000/month or $4,900 fixed',
-      features: ['Cloud landing zones', 'CI/CD & IaC', 'SLOs + error budgets', 'FinOps & governance'],
-      link: 'https://ziontechgroup.com/it-services',
-      color: 'from-blue-600 to-indigo-700',
-      marketData: 'Cloud ops services >$150B, ongoing efficiency demand',
-      competitors: 'Traditional MSPs ($10k+/mo), Big consultancies ($50k+)',
-      savings: 'Save 50–75% with productized engagements',
-      contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709' }
-    },
-    {
-      title: '☁️ Cloud Cost Optimizer',
-      description: 'Rightsizing, off-hours, and anomaly detection across AWS/GCP/Azure with FinOps dashboards.',
-      price: '$149/month',
-      features: ['Auto rightsizing', 'Idle cleanup', 'Spot orchestration', 'Anomaly detection'],
-      link: 'https://ziontechgroup.com/cloud-cost-optimizer',
-      color: 'from-emerald-600 to-teal-700',
-      marketData: 'FinOps software growing 25% YoY',
-      competitors: 'CloudZero, CloudHealth',
-      savings: 'Cut bills 20–45% in 90 days',
-      contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709' }
-    },
-    {
-      title: '📈 Uptime & SLO Monitor',
-      description: 'Error budgets, burn-rate alerts, and synthetic uptime with status pages. OTel-native.',
-      price: 'Starting at $89/month',
-      features: ['SLIs/SLOs', 'Burn-rate alerts', 'Synthetic checks', 'Status pages'],
-      link: 'https://ziontechgroup.com/uptime-slo-monitor',
-      color: 'from-cyan-600 to-blue-700',
-      marketData: 'Observability market >$30B',
-      competitors: 'Nobl9, Datadog SLO',
-      savings: 'Simpler, faster setup; SMB pricing',
-      contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709' }
-    },
-    {
-      title: '✅ SOC 2 Evidence Automation',
-      description: 'Continuously collect and map evidence to SOC 2 controls. Export auditor-ready packages.',
-      price: 'Starting at $149/month',
-      features: ['Cloud evidence', 'Attestations', 'Access reviews', 'Control mapping'],
-      link: 'https://ziontechgroup.com/soc2-evidence-automation',
-      color: 'from-emerald-600 to-teal-700',
-      marketData: 'Compliance automation ~$2B',
-      competitors: 'Drata, Vanta',
-      savings: '60–80% less audit prep time',
-      contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709' }
-    },
-    {
-      title: '🛡️ API Security Scanner',
-      description: 'OWASP API Top 10 scans with CI/CD gates and OpenAPI import. Dev-first UX.',
-      price: 'Starting at $129/month',
-      features: ['Top 10 scans', 'OpenAPI import', 'Auth flows', 'CI gates'],
-      link: 'https://ziontechgroup.com/api-security-scanner',
-      color: 'from-rose-600 to-orange-700',
-      marketData: 'API security ~$6B',
-      competitors: 'StackHawk, 42Crunch',
-      savings: 'Shift-left, fewer prod issues',
-      contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709' }
-    },
-    {
-      title: '🛡️ GDPR DSAR Automation',
-      description: 'Branded DSAR portal with identity verification, PII discovery, and export packaging.',
-      price: 'Starting at $99/month',
-      features: ['DSAR portal', 'ID verification', 'PII discovery', 'Audit exports'],
-      link: 'https://ziontechgroup.com/gdpr-dsar-automation',
-      color: 'from-blue-600 to-cyan-700',
-      marketData: 'Privacy tech ~$3B',
-      competitors: 'Transcend, OneTrust',
-      savings: '50–70% faster DSAR handling',
-      contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709' }
-    },
-    {
-      title: '🚀 Sales Copilot',
-      description: 'AI prospecting and outreach with CRM hygiene and pipeline Q&A.',
-      price: 'Starting at $59/month',
-      features: ['Email drafts', 'Call summaries', 'Prospect research', 'CRM sync'],
-      link: 'https://ziontechgroup.com/sales-copilot',
-      color: 'from-violet-600 to-purple-700',
-      marketData: 'Sales tech ~$10B',
-      competitors: 'Salesforce Einstein, HubSpot AI',
-      savings: '20–35% more meetings',
-      contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709' }
+      title: '🌐 Metaverse AI Development Platform',
+      description: 'AI-powered metaverse creation and management. 70% faster development than traditional methods, 50% better user engagement.',
+      price: 'Starting at $799/month',
+      features: ['AI-powered world generation', 'Virtual character creation', 'Real-time optimization', 'Multi-user synchronization'],
+      link: 'https://ziontechgroup.com/metaverse-ai-development-platform',
+      color: 'from-pink-600 to-rose-700',
+      marketData: '$74.4B metaverse market, 37.7% CAGR',
+      competitors: 'Roblox Studio ($1,200+/month), Unity Pro ($1,800+/month)',
+      savings: 'Save 45% vs. competitors',
+      contactInfo: {
+        mobile: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
     }
   ];
 
-  // Get revolutionary services for showcase (merged datasets)
-  const all = enhancedRealMicroSaasServices.concat(extraServices, additionalEnhancedServices);
-  const revolutionaryServices = all.filter(service => service.realImplementation && service.popular).slice(0, 6);
+  // Combine all services for display
+  const allServices = [...enhancedRealMicroSaasServices, ...extraServices, ...additionalEnhancedServices, ...innovativeNewServices];
+  const featuredServices = allServices.filter(s => s.popular).slice(0, 8);
 
   return (
     <UltraFuturisticMatrixBackground>
       <Head>
-        <title>Zion Tech Group - Revolutionary AI & Quantum Computing Solutions</title>
-        <meta name="description" content="Transform your business with 200+ revolutionary micro SaaS services. Quantum AI, autonomous systems, and cutting-edge technology solutions with 800%+ average ROI." />
-        <meta name="keywords" content="AI, quantum computing, micro SaaS, autonomous systems, space technology, cybersecurity, manufacturing AI" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content="Zion Tech Group - Revolutionary AI & Quantum Computing Solutions" />
-        <meta property="og:description" content="Transform your business with 200+ revolutionary micro SaaS services. Quantum AI, autonomous systems, and cutting-edge technology solutions." />
-        <meta property="og:type" content="website" />
+        <title>Zion Tech Group | Revolutionary Micro SaaS, IT & AI Solutions | 250+ Services</title>
+        <meta name="description" content="Discover 250+ revolutionary micro SaaS, IT services and AI solutions delivering 1000%+ ROI. Quantum AI, autonomous systems, space technology, and more. Free trials available." />
+        <meta name="keywords" content="micro SaaS, AI services, IT services, quantum computing, autonomous systems, space technology, biotechnology, cybersecurity, metaverse, IoT" />
+        <link rel="canonical" href="https://ziontechgroup.com" />
+        <meta property="og:title" content="Zion Tech Group | Revolutionary Micro SaaS, IT & AI Solutions" />
+        <meta property="og:description" content="250+ revolutionary micro SaaS, IT services and AI solutions delivering 1000%+ ROI. Free trials available." />
         <meta property="og:url" content="https://ziontechgroup.com" />
-        <meta property="og:image" content="https://ziontechgroup.com/og-image.jpg" />
-        
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Zion Tech Group - Revolutionary AI & Quantum Computing Solutions" />
-        <meta name="twitter:description" content="Transform your business with 200+ revolutionary micro SaaS services." />
-        <meta name="twitter:image" content="https://ziontechgroup.com/og-image.jpg" />
+        <meta property="og:type" content="website" />
       </Head>
-      {/* Reusable Service Ads Strip */}
-      <ServiceAds
-        heading="Featured Micro SaaS & AI Services"
-        subheading="Transparent pricing, real capabilities, fast onboarding."
-        items={[
-          // New high-demand, real services
-          {
-            title: '🧪 Synthetic Data Generator',
-            description: 'Privacy-safe synthetic tabular/time-series/text for analytics, testing and ML.',
-            price: '$119/month',
-            features: ['Differential privacy', 'PII masking', 'Utility/drift reports', 'SDKs & REST'],
-            link: 'https://ziontechgroup.com/services/synthetic-data-generator',
-            contactInfo
-          },
-          {
-            title: '📥 Email Parsing & Routing API',
-            description: 'Inbound email to structured JSON events with attachments, replays and DLQ.',
-            price: '$39/month',
-            features: ['Signature stripping', 'Attachment handling', 'Webhook retries', 'Inspector'],
-            link: 'https://ziontechgroup.com/services/email-parsing-routing-api',
-            contactInfo
-          },
-          {
-            title: '☸️ Kubernetes Cost Analyzer',
-            description: 'Allocation by namespace/team, rightsizing, and bin‑packing recommendations.',
-            price: '$99/month',
-            features: ['Requests/limits advisor', 'Idle detection', 'Bin‑packing', 'Chargeback'],
-            link: 'https://ziontechgroup.com/services/kubernetes-cost-analyzer',
-            contactInfo
-          },
-          {
-            title: '🧭 Browser Automation Cloud',
-            description: 'Hosted Playwright jobs with queues, screenshots/video, proxies and stealth.',
-            price: '$59/month',
-            features: ['Retries & DLQ', 'Scheduler', 'Proxy pools', 'Webhook callbacks'],
-            link: 'https://ziontechgroup.com/services/browser-automation-cloud',
-            contactInfo
-          },
-          {
-            title: '📮 Email Deliverability Monitor',
-            description: 'DMARC/SPF/DKIM checks, seed-list tests and blocklist monitoring with weekly scorecards.',
-            price: '$59/month',
-            features: ['DMARC/SPF/DKIM validation', 'Seed inbox placement tests', 'Blocklist monitoring', 'Alerts and reports'],
-            link: 'https://ziontechgroup.com/email-deliverability-monitor',
-            contactInfo
-          },
-          {
-            title: '📄 PDF Render & Fill API',
-            description: 'Reliable HTML-to-PDF, form filling, merge and watermark with developer-first APIs.',
-            price: '$39/month',
-            features: ['HTML/URL to PDF', 'AcroForms fill', 'Templates and variables', 'Webhooks and async jobs'],
-            link: 'https://ziontechgroup.com/pdf-render-api',
-            contactInfo
-          },
-          {
-            title: '🔒 TLS/SSL Certificate Monitor',
-            description: 'Expiry, chain trust, OCSP, HSTS and weak cipher checks with proactive alerts.',
-            price: '$39/month',
-            features: ['Expiry lead-time alerts', 'OCSP and chain checks', 'HSTS/weak cipher detection', 'Slack/Email/PagerDuty alerts'],
-            link: 'https://ziontechgroup.com/tls-certificate-monitor',
-            contactInfo
-          },
-          {
-            title: '🌐 Domain & DNS Health Monitor',
-            description: 'Domains, DNSSEC, NS/DS drift, and MX/SPF/DMARC validation to prevent outages.',
-            price: '$49/month',
-            features: ['Registrar expiry', 'NS/DS drift', 'DNSSEC validity', 'MX/SPF/DMARC health'],
-            link: 'https://ziontechgroup.com/domain-dns-monitor',
-            contactInfo
-          },
-          {
-            title: '🏗️ Infrastructure Drift Detector',
-            description: 'Continuously detect and remediate IaC drift across AWS/Azure/GCP with PR-based fixes.',
-            price: '$129/month',
-            features: ['Cloud inventory', 'OPA policy drift rules', 'Auto PRs', 'Slack approvals'],
-            link: 'https://ziontechgroup.com/infrastructure-drift-detector',
-            contactInfo
-          },
-          {
-            title: '⏰ Cron & Jobs Scheduler',
-            description: 'Reliable scheduled jobs with retries, idempotency and regional runners plus alerts.',
-            price: '$29/month',
-            features: ['CRON & human syntax', 'Retries & DLQs', 'Webhooks & SDKs', 'SLOs and alerts'],
-            link: 'https://ziontechgroup.com/cron-job-scheduler',
-            contactInfo
-          },
-          {
-            title: '🔁 Webhook Relay & Replay',
-            description: 'Capture, buffer, retry and replay webhooks with signing, filtering and DLQs.',
-            price: '$39/month',
-            features: ['Replay with timestamps', 'HMAC signing/verification', 'Filters & routing', 'Dead-letter queues'],
-            link: 'https://ziontechgroup.com/webhook-relay-replay',
-            contactInfo
-          },
-          {
-            title: '📈 Uptime & SLO Monitor',
-            description: 'Synthetic checks, SLO error budgets and status pages powered by OpenTelemetry.',
-            price: '$49/month',
-            features: ['Global synthetic probes', 'SLO targets & budgets', 'Incident timelines', 'Status page hosting'],
-            link: 'https://ziontechgroup.com/uptime-slo-monitor',
-            contactInfo
-          },
-          {
-            title: '📄 Status Pages + SLOs',
-            description: 'Public/private status pages with metrics, incidents, RCA and subscriber alerts.',
-            price: '$29/month',
-            features: ['Branded pages', 'Incident templates', 'Subscriber web/email/SMS', 'SLO visualizations'],
-            link: 'https://ziontechgroup.com/status-pages-slo',
-            contactInfo
-          },
-          {
-            title: '🎯 Synthetic Monitor Recorder',
-            description: 'Record browser journeys, run synthetic tests and alert on regressions.',
-            price: '$59/month',
-            features: ['Recorder extension', 'Playwright runner', 'Screenshots & videos', 'Threshold-based alerts'],
-            link: 'https://ziontechgroup.com/synthetic-monitor-recorder',
-            contactInfo
-          },
-          {
-            title: '🔎 Vector Search Starter',
-            description: 'Embed pipelines and similarity search with API and UI widgets in days.',
-            price: '$79/month',
-            features: ['Embeddings ingestion', 'Hybrid lexical+vector', 'Multi-tenant namespaces', 'Typed SDKs'],
-            link: 'https://ziontechgroup.com/vector-search-starter',
-            contactInfo
-          },
-          // Existing curated highlights
-          ...serviceHighlights.slice(0, 8).map((h) => ({
-            title: h.title,
-            description: h.description,
-            price: h.price,
-            features: h.features,
-            link: h.link,
-            contactInfo: h.contactInfo || contactInfo
-          }))
-        ]}
-      />
-
-      {/* IT Services & Platform Engineering Ads Strip */}
-      <ServiceAds
-        heading="Enterprise IT & Platform Engineering"
-        subheading="Cloud landing zones, SSO, databases, observability — ready in days."
-        items={[
-          {
-            title: '☁️ Cloud Landing Zone Builder',
-            description: 'Secure multi-account AWS/Azure/GCP foundations with guardrails, IAM, networking, and FinOps via GitOps.',
-            price: 'Starting at $349/month',
-            features: ['Org setup & SCPs', 'VPC & network baselines', 'Audit logging', 'Budgets & anomaly alerts', 'GitOps workflows', 'Multi-env blueprints'],
-            link: 'https://ziontechgroup.com/cloud-landing-zone',
-            contactInfo
-          },
-          {
-            title: '🔐 SSO-in-a-Box',
-            description: 'Enterprise SSO rollout with SAML/OIDC, SCIM provisioning, MFA policies, and audit trails.',
-            price: 'Starting at $159/month',
-            features: ['SAML/OIDC', 'SCIM provisioning', 'MFA & risk policies', 'App catalog', 'Audit logs', 'Just-in-time user sync'],
-            link: 'https://ziontechgroup.com/sso-in-a-box',
-            contactInfo
-          },
-          {
-            title: '🗄️ Managed Postgres HA',
-            description: 'Hands-on Postgres performance tuning, high availability, and disaster recovery playbooks.',
-            price: 'Starting at $199/month',
-            features: ['Patroni/PGPool patterns', 'Index & vacuum guidance', 'Query tracing', 'HA/DR runbooks', 'Backups & PITR', 'Capacity planning'],
-            link: 'https://ziontechgroup.com/managed-postgres-ha',
-            contactInfo
-          },
-          {
-            title: '📊 API Observability Starter (OTel)',
-            description: 'OpenTelemetry-based traces, metrics, and logs with dashboards, alerts, and SLOs.',
-            price: 'Starting at $129/month',
-            features: ['OTel collectors', 'Service maps', 'SLO alerting', 'Latency budgets', 'Drill-down traces', 'Error analytics'],
-            link: 'https://ziontechgroup.com/api-observability-starter',
-            contactInfo
-          }
-        ]}
-      />
-
-      {/* AI Agents & Copilots */}
-      <ServiceAds
-        heading="AI Agents & Copilots"
-        subheading="Deploy production-ready AI to code, sell, support, and analyze."
-        items={[
-          {
-            title: '🧑‍💻 AI Code Review Copilot',
-            description: 'Blend static analysis with LLM reasoning for actionable reviews and secure PRs.',
-            price: 'Starting at $99/month',
-            features: ['OWASP/SAST checks', 'Performance hints', 'Style & convention rules', 'Risk scoring & PR comments'],
-            link: 'https://ziontechgroup.com/ai-code-review-copilot',
-            contactInfo
-          },
-          {
-            title: '🤝 AI Sales Automation',
-            description: 'Prospect enrichment, personalized outreach, call summaries and CRM updates automatically.',
-            price: 'Starting at $149/month',
-            features: ['ICP matching', 'Sequenced outreach', 'Meeting notes & action items', 'CRM sync'],
-            link: 'https://ziontechgroup.com/ai-sales-automation',
-            contactInfo
-          },
-          {
-            title: '🎧 AI Customer Service',
-            description: '24/7 support with RAG over your docs, secure guardrails, and human handoff.',
-            price: 'Starting at $149/month',
-            features: ['Omnichannel chat', 'RAG + guardrails', 'Workflow automations', 'Analytics & CSAT'],
-            link: 'https://ziontechgroup.com/ai-customer-service',
-            contactInfo
-          },
-          {
-            title: '📊 AI Data Analytics',
-            description: 'Ask questions in plain English and get trusted KPIs, narratives, and charts.',
-            price: 'Starting at $129/month',
-            features: ['Semantic layer', 'Governed queries', 'Narrative insights', 'Slack & email reports'],
-            link: 'https://ziontechgroup.com/ai-data-analytics',
-            contactInfo
-          }
-        ]}
-      />
-
-      {/* New in 2025: Real Services */}
-      <ServiceAds
-        heading="New in 2025 — Real, Production-Ready Services"
-        subheading="Governed AI, zero‑ETL analytics, and data contracts with transparent pricing."
-        items={[
-          {
-            title: '📜 Data Contract Governance',
-            description: 'Schema‑first contracts with CI validation, runtime enforcement, lineage and SLA alerts.',
-            price: '$129/month',
-            features: ['Contract registry', 'CI validators', 'Runtime checks', 'Lineage & impact', 'SLA alerts', 'dbt/Snowflake export'],
-            link: 'https://ziontechgroup.com/services/data-contract-governance',
-            contactInfo
-          },
-          {
-            title: '🔄 Zero‑ETL Warehouse Sync',
-            description: 'CDC sync from Postgres/MySQL to Snowflake/BigQuery with schema evolution and PII masking.',
-            price: '$99/month',
-            features: ['CDC ingestion', 'Schema evolution', 'PII masking', 'Backfills & retries', 'Debezium compatible', 'DLQs & monitoring'],
-            link: 'https://ziontechgroup.com/services/zero-etl-warehouse-sync',
-            contactInfo
-          },
-          {
-            title: '🧠 AI‑Governed RAG Platform',
-            description: 'Policy‑driven RAG with eval harnesses, content approvals, prompt registry and drift monitoring.',
-            price: '$149/month',
-            features: ['Guardrails & policies', 'E2E evals', 'Content approvals', 'Prompt registry', 'Drift monitoring', 'RBAC & audits'],
-            link: 'https://ziontechgroup.com/services/ai-governed-rag-platform',
-            contactInfo
-          }
-        ]}
-      />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-4">
-        <div className="container mx-auto text-center z-10">
-          {/* Main Heading */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+      <section className="relative py-20 px-4 overflow-hidden">
+        <div className="container mx-auto text-center relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }} 
+            animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.8 }}
             className="mb-8"
           >
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
-                Revolutionary
+            <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6 leading-tight">
+              The Future of
+              <span className="block text-7xl md:text-9xl bg-gradient-to-r from-fuchsia-400 via-pink-500 to-rose-600 bg-clip-text text-transparent">
+                Technology
               </span>
-              <br />
-              <span className="text-white">Technology Solutions</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              Transform your business with 200+ cutting-edge micro SaaS services powered by quantum AI, 
-              autonomous systems, and breakthrough technology. Achieve 800%+ ROI with our revolutionary solutions.
+            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
+              Discover <span className="text-cyan-400 font-semibold">250+ revolutionary micro SaaS services</span> powered by quantum AI, 
+              autonomous systems, and cutting-edge technology. Achieve <span className="text-fuchsia-400 font-semibold">1000%+ ROI</span> 
+              with our innovative solutions.
             </p>
           </motion.div>
 
           {/* Hero Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }} 
+            animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.8, delay: 0.2 }}
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-12"
           >
             {heroStats.map((stat, index) => (
               <motion.div
-                key={index}
-                className="text-center p-4 rounded-xl bg-gray-900/50 backdrop-blur-sm border border-gray-700/50"
-                whileHover={{ scale: 1.05, y: -5 }}
-                transition={{ duration: 0.3 }}
+                key={stat.label}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                className="bg-gradient-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-4 hover:border-cyan-500/50 transition-all duration-300 hover:scale-105"
               >
                 <div className={`${stat.color} mb-2 flex justify-center`}>
                   {stat.icon}
                 </div>
-                <div className="text-2xl md:text-3xl font-bold text-white mb-1">
-                  {stat.value}
-                </div>
-                <div className="text-xs text-gray-400 leading-tight">
-                  {stat.label}
-                </div>
+                <div className="text-2xl md:text-3xl font-bold text-white mb-1">{stat.value}</div>
+                <div className="text-sm text-gray-400 text-center">{stat.label}</div>
               </motion.div>
             ))}
           </motion.div>
 
           {/* CTA Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }} 
+            animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.8, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
           >
-            <Button
-              href="/services"
-              className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300"
+            <Button 
+              href="/services" 
+              variant="quantum" 
+              size="xl"
+              className="group bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-4 text-xl font-bold rounded-2xl shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
             >
-              <Rocket className="w-5 h-5 mr-2" />
-              Explore Services
+              Explore 250+ Services
+              <ArrowRight className="w-6 h-6 ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button
-              href="/contact"
-              variant="outline"
-              className="border-2 border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-white px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300"
+            <Button 
+              href="/contact" 
+              variant="outline" 
+              size="xl"
+              className="border-2 border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-white px-8 py-4 text-xl font-bold rounded-2xl transition-all duration-300"
             >
-              <Mail className="w-5 h-5 mr-2" />
-              Get Started
+              Start Free Trial
             </Button>
           </motion.div>
 
           {/* Contact Information */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }} 
+            animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 max-w-2xl mx-auto"
+            className="bg-gradient-to-r from-gray-900/50 to-gray-800/30 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-6 max-w-4xl mx-auto"
           >
-            <h3 className="text-xl font-semibold text-white mb-4 text-center">Ready to Transform Your Business?</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
-              <div className="flex flex-col items-center space-y-2">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="flex items-center justify-center space-x-3">
                 <Phone className="w-5 h-5 text-cyan-400" />
-                <span className="text-sm text-gray-300">{contactInfo.mobile}</span>
+                <span className="text-gray-300">{contactInfo.mobile}</span>
               </div>
-              <div className="flex flex-col items-center space-y-2">
-                <Mail className="w-5 h-5 text-cyan-400" />
-                <span className="text-sm text-gray-300">{contactInfo.email}</span>
+              <div className="flex items-center justify-center space-x-3">
+                <Mail className="w-5 h-5 text-fuchsia-400" />
+                <span className="text-gray-300">{contactInfo.email}</span>
               </div>
-              <div className="flex flex-col items-center space-y-2">
-                <MapPin className="w-5 h-5 text-cyan-400" />
-                <span className="text-sm text-gray-300">{contactInfo.address}</span>
+              <div className="flex items-center justify-center space-x-3">
+                <MapPin className="w-5 h-5 text-green-400" />
+                <span className="text-gray-300 text-center">{contactInfo.address}</span>
               </div>
             </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Revolutionary Services Showcase */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              <span className="bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent">
-                Revolutionary
-              </span>
-              {' '}Services
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Experience the future of technology with our cutting-edge micro SaaS solutions. 
-              Each service is designed to deliver immediate value and exponential ROI.
-            </p>
-          </motion.div>
-
-          {/* Services Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
-            {revolutionaryServices.map((service, index) => (
-              <motion.div
-                key={service.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <UltraFuturisticServiceCard service={service} />
-              </motion.div>
-            ))}
-          </div>
-
-          {/* View All Services CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-            className="text-center mt-16"
-          >
-            <Button
-              href="/services"
-              className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-2xl hover:shadow-purple-500/25 transition-all duration-300"
-            >
-              <Sparkles className="w-5 h-5 mr-2" />
-              View All 200+ Services
-            </Button>
           </motion.div>
         </div>
       </section>
@@ -779,177 +251,287 @@ export default function HomePage() {
       {/* Service Highlights Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }} 
+            animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Market-Leading
-              {' '}<span className="bg-gradient-to-r from-green-400 to-emerald-600 bg-clip-text text-transparent">Solutions</span>
+            <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent mb-6">
+              Revolutionary Services
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Our services outperform competitors in every category, delivering superior value, 
-              advanced technology, and exceptional ROI.
+              Experience the future with our cutting-edge micro SaaS solutions. Each service is designed to deliver 
+              exceptional value and measurable ROI for your business.
             </p>
           </motion.div>
 
-          {/* Service Highlights Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {serviceHighlights.map((highlight, index) => (
+            {serviceHighlights.map((service, index) => (
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                key={service.title}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
+                className="bg-gradient-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 hover:border-cyan-500/50 transition-all duration-500 hover:scale-105 group"
               >
-                <Card className="h-full bg-gradient-to-br from-gray-900/80 to-black/90 border border-gray-700/50 backdrop-blur-xl">
-                  <div className="p-8 space-y-6">
-                    <h3 className="text-2xl font-bold text-white mb-4">{highlight.title}</h3>
-                    <p className="text-gray-300 leading-relaxed">{highlight.description}</p>
-                    
-                    <div className="text-3xl font-bold text-white">
-                      {highlight.price}
-                    </div>
-                    
-                    <div className="space-y-3">
-                      <h4 className="text-lg font-semibold text-cyan-400">Key Features:</h4>
-                      <ul className="space-y-2">
-                        {highlight.features.map((feature, featureIndex) => (
-                          <li key={featureIndex} className="flex items-center space-x-2 text-gray-300">
-                            <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
-                            <span>{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    
-                    <div className="bg-gray-800/50 rounded-lg p-4 border border-gray-700/50">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                        <div>
-                          <span className="text-cyan-400 font-semibold">Market Data:</span>
-                          <p className="text-gray-300">{highlight.marketData}</p>
-                        </div>
-                        <div>
-                          <span className="text-green-400 font-semibold">Competitors:</span>
-                          <p className="text-gray-300">{highlight.competitors}</p>
-                        </div>
-                        <div className="md:col-span-2">
-                          <span className="text-yellow-400 font-semibold">Your Savings:</span>
-                          <p className="text-gray-300">{highlight.savings}</p>
-                        </div>
-                        {highlight.contactInfo && (
-                          <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                            <div className="flex items-center gap-2 text-gray-300">
-                              <Phone className="w-4 h-4 text-cyan-400" />
-                              <span>{highlight.contactInfo.mobile}</span>
-                            </div>
-                            <div className="flex items-center gap-2 text-gray-300">
-                              <Mail className="w-4 h-4 text-purple-400" />
-                              <span>{highlight.contactInfo.email}</span>
-                            </div>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                    
-                    <div className="flex space-x-3">
-                      <Button
-                        href={highlight.link}
-                        className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white py-3 px-4 rounded-lg font-semibold transition-all duration-300"
-                      >
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        Learn More
-                      </Button>
-                      <Button
-                        href="/contact"
-                        variant="outline"
-                        className="px-4 py-3 border border-gray-600 text-gray-300 rounded-lg hover:border-cyan-500 hover:text-cyan-400 transition-all duration-300"
-                      >
-                        Contact
-                      </Button>
-                    </div>
-                    {highlight.contactInfo && (
-                      <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
-                        <div className="flex items-center justify-center gap-2 text-cyan-400"><Phone className="w-4 h-4" /><span>{highlight.contactInfo.mobile}</span></div>
-                        <div className="flex items-center justify-center gap-2 text-purple-400"><Mail className="w-4 h-4" /><span>{highlight.contactInfo.email}</span></div>
-                        <div className="flex items-center justify-center gap-2 text-green-400"><MapPin className="w-4 h-4" /><span className="text-xs">{highlight.contactInfo.address}</span></div>
-                      </div>
-                    )}
+                <div className="mb-6">
+                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-300 mb-6 leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
+
+                <div className="mb-6">
+                  <div className="text-3xl font-bold text-cyan-400 mb-2">{service.price}</div>
+                  <div className="text-sm text-gray-400 mb-4">{service.marketData}</div>
+                  <div className="text-sm text-fuchsia-400 mb-2">
+                    <strong>Competitors:</strong> {service.competitors}
                   </div>
-                </Card>
+                  <div className="text-sm text-green-400 mb-4">
+                    <strong>Savings:</strong> {service.savings}
+                  </div>
+                </div>
+
+                <div className="mb-6">
+                  <h4 className="text-lg font-semibold text-white mb-3">Key Features:</h4>
+                  <ul className="space-y-2">
+                    {service.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-center text-gray-300">
+                        <Check className="w-4 h-4 text-green-400 mr-3 flex-shrink-0" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button 
+                    href={service.link} 
+                    variant="quantum" 
+                    size="lg"
+                    className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700"
+                  >
+                    Learn More
+                    <ExternalLink className="w-4 h-4 ml-2" />
+                  </Button>
+                  <Button 
+                    href="/contact" 
+                    variant="outline" 
+                    size="lg"
+                    className="flex-1 border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-white"
+                  >
+                    Contact Sales
+                  </Button>
+                </div>
+
+                {/* Contact Info */}
+                <div className="mt-6 pt-6 border-t border-gray-700/50">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm text-gray-400">
+                    <div className="flex items-center space-x-2">
+                      <Phone className="w-4 h-4 text-cyan-400" />
+                      <span>{service.contactInfo.mobile}</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Mail className="w-4 h-4 text-fuchsia-400" />
+                      <span>{service.contactInfo.email}</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <MapPin className="w-4 h-4 text-green-400" />
+                      <span className="text-xs">{service.contactInfo.address}</span>
+                    </div>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* Featured Services Grid */}
       <section className="py-20 px-4">
-        <div className="container mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+        <div className="container mx-auto">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }} 
+            animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="max-w-4xl mx-auto"
+            className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to
-              {' '}<span className="bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent">Transform</span>
-              {' '}Your Business?
+            <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-6">
+              Featured Solutions
             </h2>
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              Join thousands of businesses already achieving exponential growth with our revolutionary technology solutions. 
-              Get started today with a free consultation and discover how we can accelerate your success.
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Explore our most popular and innovative services that are transforming industries worldwide.
             </p>
-            
-            <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 mb-8">
-              <h3 className="text-2xl font-semibold text-white mb-6">Contact Information</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="flex flex-col items-center space-y-3">
-                  <Phone className="w-8 h-8 text-cyan-400" />
-                  <div>
-                    <div className="text-sm text-gray-400">Phone</div>
-                    <div className="text-white font-semibold">{contactInfo.mobile}</div>
-                  </div>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {featuredServices.map((service, index) => (
+              <motion.div
+                key={service.id}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <UltraFuturisticServiceCard service={service} />
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-center mt-12"
+          >
+            <Button 
+              href="/services" 
+              variant="quantum" 
+              size="xl"
+              className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white px-8 py-4 text-xl font-bold rounded-2xl shadow-2xl shadow-purple-500/25 hover:shadow-purple-500/40 transition-all duration-300"
+            >
+              View All 250+ Services
+              <ArrowRight className="w-6 h-6 ml-2" />
+            </Button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent mb-6">
+              Why Choose Zion Tech Group?
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              We're not just another tech company. We're the pioneers of the future, delivering solutions that 
+              others can only dream of.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                icon: <Brain className="w-12 h-12" />,
+                title: 'Quantum AI Innovation',
+                description: 'First-to-market quantum AI solutions with proven results and breakthrough capabilities.',
+                color: 'from-purple-500 to-indigo-600'
+              },
+              {
+                icon: <ShieldCheck className="w-12 h-12" />,
+                title: 'Enterprise Security',
+                description: 'Military-grade security with quantum-resistant encryption and zero-trust architecture.',
+                color: 'from-green-500 to-emerald-600'
+              },
+              {
+                icon: <Rocket className="w-12 h-12" />,
+                title: 'Rapid Implementation',
+                description: 'Get up and running in days, not months. Our solutions are production-ready from day one.',
+                color: 'from-blue-500 to-cyan-600'
+              },
+              {
+                icon: <TrendingUp className="w-12 h-12" />,
+                title: 'Proven ROI',
+                description: 'Our customers consistently achieve 300-1000% ROI within 6-12 months of implementation.',
+                color: 'from-yellow-500 to-orange-600'
+              },
+              {
+                icon: <Users className="w-12 h-12" />,
+                title: 'Expert Support',
+                description: '24/7 AI-powered support with human experts available for complex implementations.',
+                color: 'from-pink-500 to-rose-600'
+              },
+              {
+                icon: <Globe className="w-12 h-12" />,
+                title: 'Global Reach',
+                description: 'Serving customers worldwide with localized support and multi-language capabilities.',
+                color: 'from-indigo-500 to-purple-600'
+              }
+            ].map((feature, index) => (
+              <motion.div
+                key={feature.title}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-gradient-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-8 hover:border-cyan-500/50 transition-all duration-500 hover:scale-105 group"
+              >
+                <div className={`${feature.color} text-white p-4 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300 flex justify-center`}>
+                  {feature.icon}
                 </div>
-                <div className="flex flex-col items-center space-y-3">
-                  <Mail className="w-8 h-8 text-cyan-400" />
-                  <div>
-                    <div className="text-sm text-gray-400">Email</div>
-                    <div className="text-white font-semibold">{contactInfo.email}</div>
-                  </div>
+                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-300 leading-relaxed">
+                  {feature.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.8 }}
+            className="text-center"
+          >
+            <div className="bg-gradient-to-r from-cyan-900/30 via-blue-900/30 to-purple-900/30 backdrop-blur-xl border border-cyan-500/30 rounded-3xl p-12">
+              <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-6">
+                Ready to Transform Your Business?
+              </h2>
+              <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                Join thousands of companies already achieving breakthrough results with our revolutionary 
+                micro SaaS solutions. Start your free trial today and experience the future of technology.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+                <Button 
+                  href="/contact" 
+                  variant="quantum" 
+                  size="xl"
+                  className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-4 text-xl font-bold rounded-2xl shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
+                >
+                  Start Free Trial
+                  <Rocket className="w-6 h-6 ml-2" />
+                </Button>
+                <Button 
+                  href="/services" 
+                  variant="outline" 
+                  size="xl"
+                  className="border-2 border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-white px-8 py-4 text-xl font-bold rounded-2xl transition-all duration-300"
+                >
+                  Explore Services
+                  <ArrowRight className="w-6 h-6 ml-2" />
+                </Button>
+              </div>
+
+              {/* Contact Information */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <div className="flex flex-col items-center space-y-2">
+                  <Phone className="w-6 h-6 text-cyan-400" />
+                  <span className="text-gray-300 font-semibold">{contactInfo.mobile}</span>
                 </div>
-                <div className="flex flex-col items-center space-y-3">
-                  <MapPin className="w-8 h-8 text-cyan-400" />
-                  <div>
-                    <div className="text-sm text-gray-400">Address</div>
-                    <div className="text-white font-semibold text-sm">{contactInfo.address}</div>
-                  </div>
+                <div className="flex flex-col items-center space-y-2">
+                  <Mail className="w-6 h-6 text-fuchsia-400" />
+                  <span className="text-gray-300 font-semibold">{contactInfo.email}</span>
+                </div>
+                <div className="flex flex-col items-center space-y-2">
+                  <MapPin className="w-6 h-6 text-green-400" />
+                  <span className="text-gray-300 font-semibold text-sm">{contactInfo.address}</span>
                 </div>
               </div>
-            </div>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                href="/contact"
-                className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300"
-              >
-                <Mail className="w-5 h-5 mr-2" />
-                Start Free Consultation
-              </Button>
-              <Button
-                href="/services"
-                variant="outline"
-                className="border-2 border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-white px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300"
-              >
-                <Rocket className="w-5 h-5 mr-2" />
-                Explore Services
-              </Button>
             </div>
           </motion.div>
         </div>
