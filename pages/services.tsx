@@ -100,6 +100,52 @@ export default function ServicesPage() {
     'Education & Training': <GraduationCap className="w-6 h-6" />
   };
 
+  const contactSection = (
+    <div className="relative z-10 bg-black/50 backdrop-blur-xl rounded-3xl border border-white/20 p-8 mb-12">
+      <div className="text-center mb-8">
+        <h2 className="text-4xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">
+          Get Started Today
+        </h2>
+        <p className="text-xl text-gray-300 mb-6">
+          Ready to transform your business with our cutting-edge micro SaaS solutions?
+        </p>
+      </div>
+      
+      <div className="grid md:grid-cols-3 gap-6 mb-8">
+        <div className="text-center p-6 bg-gradient-to-br from-cyan-500/20 to-blue-600/20 rounded-2xl border border-cyan-500/30">
+          <Phone className="w-8 h-8 text-cyan-400 mx-auto mb-3" />
+          <h3 className="text-lg font-semibold text-white mb-2">Call Us</h3>
+          <p className="text-cyan-400 font-mono">{contactInfo.mobile}</p>
+        </div>
+        <div className="text-center p-6 bg-gradient-to-br from-purple-500/20 to-pink-600/20 rounded-2xl border border-purple-500/30">
+          <Mail className="w-8 h-8 text-purple-400 mx-auto mb-3" />
+          <h3 className="text-lg font-semibold text-white mb-2">Email Us</h3>
+          <p className="text-purple-400 font-mono">{contactInfo.email}</p>
+        </div>
+        <div className="text-center p-6 bg-gradient-to-br from-green-500/20 to-emerald-600/20 rounded-2xl border border-green-500/30">
+          <MapPin className="w-8 h-8 text-green-400 mx-auto mb-3" />
+          <h3 className="text-lg font-semibold text-white mb-2">Visit Us</h3>
+          <p className="text-green-400 text-sm">{contactInfo.address}</p>
+        </div>
+      </div>
+
+      <div className="text-center">
+        <Button 
+          href="https://ziontechgroup.com/contact"
+          variant="primary"
+          size="lg"
+          className="bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold rounded-2xl shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300 transform hover:scale-105"
+        >
+          <Sparkles className="w-5 h-5 mr-2" />
+          Start Your Free Trial Today
+        </Button>
+        <p className="text-gray-400 mt-4 text-sm">
+          No credit card required • 14-day free trial • Cancel anytime
+        </p>
+      </div>
+    </div>
+  );
+
   return (
     <EnhancedFuturisticBackground variant="neural-quantum" intensity="high">
       <div className="min-h-screen">
@@ -260,6 +306,13 @@ export default function ServicesPage() {
                 );
               })}
             </div>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            {contactSection}
           </div>
         </section>
 
