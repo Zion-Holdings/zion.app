@@ -118,6 +118,43 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* Featured Service Ads */}
+      <section className="py-6 px-4">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {[
+              {
+                title: '💸 Cloud Cost Optimizer Pro',
+                desc: 'Rightsizing, off-hours and anomaly detection with IaC outputs.',
+                price: '$149/month',
+                link: 'https://ziontechgroup.com/cloud-cost-optimizer'
+              },
+              {
+                title: '📈 Uptime & SLO Monitor',
+                desc: 'Error budgets, burn-rate alerts and synthetic checks. OTel-native.',
+                price: 'From $89/month',
+                link: 'https://ziontechgroup.com/uptime-slo-monitor'
+              }
+            ].map((ad) => (
+              <Card key={ad.title} className="bg-gray-900/60 border border-gray-700/50">
+                <div className="p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                  <div>
+                    <h3 className="text-xl font-bold text-white">{ad.title}</h3>
+                    <p className="text-gray-300">{ad.desc}</p>
+                    <div className="text-cyan-400 font-semibold mt-2">{ad.price}</div>
+                    <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-gray-300">
+                      <a href={`tel:${contactInfo.mobile.replace(/[^+\\d]/g, '')}`} className="flex items-center gap-2 hover:text-white"><Phone className="w-4 h-4 text-cyan-400" /> {contactInfo.mobile}</a>
+                      <a href={`mailto:${contactInfo.email}`} className="flex items-center gap-2 hover:text-white"><Mail className="w-4 h-4 text-purple-400" /> {contactInfo.email}</a>
+                    </div>
+                  </div>
+                  <Button href={ad.link} className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-5 py-3 rounded-lg font-semibold">View Details</Button>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Controls */}
       <section className="py-6 px-4">
         <div className="container mx-auto">
