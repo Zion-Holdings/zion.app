@@ -154,7 +154,8 @@ export default function ServicesPage() {
   };
 
   return (
-    <UltraFuturisticBackground variant="holographic" className="min-h-screen">
+    <UltraFuturisticBackground variant="holographic">
+      <div className="min-h-screen">
       <Head>
         <title>Micro SaaS Services - Zion Tech Group | 500+ Revolutionary Solutions</title>
         <meta name="description" content="Explore 500+ revolutionary micro SaaS services including quantum AI, autonomous systems, biomedical research, cybersecurity, and emerging technologies. Starting from $49/month." />
@@ -389,8 +390,6 @@ export default function ServicesPage() {
                   key={service.id}
                   variant={service.variant as any}
                   className="h-full"
-                  hoverEffect={true}
-                  animated={true}
                 >
                   <div className="flex items-center mb-4">
                     <div className="text-3xl mr-3">{service.icon}</div>
@@ -455,8 +454,6 @@ export default function ServicesPage() {
                   key={service.id}
                   variant={service.variant as any}
                   className="p-6"
-                  hoverEffect={true}
-                  animated={true}
                 >
                   <div className="flex flex-col lg:flex-row gap-6">
                     <div className="flex items-center lg:w-1/4">
@@ -614,6 +611,7 @@ export default function ServicesPage() {
           </UltraFuturisticCard>
         </div>
       </section>
+      </div>
     </UltraFuturisticBackground>
   );
 }
