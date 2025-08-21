@@ -55,11 +55,11 @@ export default function ComprehensiveServicesShowcase2025() {
   const filteredServices = allServices.filter(service => {
     const matchesCategory = selectedCategory === 'all' || service.category === selectedCategory;
     const matchesPricing = selectedPricing === 'all' || 
-      (service.pricing.starter.price >= pricingRanges.find(p => p.id === selectedPricing)?.min! &&
-       service.pricing.starter.price <= pricingRanges.find(p => p.id === selectedPricing)?.max!);
+      (parseFloat(service.price.replace('$', '').replace(',', '')) >= pricingRanges.find(p => p.id === selectedPricing)?.min! &&
+       parseFloat(service.price.replace('$', '').replace(',', '')) <= pricingRanges.find(p => p.id === selectedPricing)?.max!);
     const matchesSearch = service.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
                          service.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         service.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
+                         service.features.some(feature => feature.toLowerCase().includes(searchQuery.toLowerCase()));
     
     return matchesCategory && matchesPricing && matchesSearch;
   });
@@ -69,7 +69,7 @@ export default function ComprehensiveServicesShowcase2025() {
       case 'name':
         return a.name.localeCompare(b.name);
       case 'price':
-        return a.pricing.starter.price - b.pricing.starter.price;
+        return parseFloat(a.price.replace('$', '').replace(',', '')) - parseFloat(b.price.replace('$', '').replace(',', ''));
       case 'category':
         return a.category.localeCompare(b.category);
       default:
@@ -262,7 +262,7 @@ export default function ComprehensiveServicesShowcase2025() {
                   {/* Pricing */}
                   <div className="mb-4">
                     <div className="text-2xl font-bold text-cyan-400">
-                      ${service.pricing.starter.price}
+                      ${service.price}
                       <span className="text-sm text-gray-400 font-normal">/month</span>
                     </div>
                     <div className="text-xs text-gray-500">Starting from</div>
@@ -289,12 +289,12 @@ export default function ComprehensiveServicesShowcase2025() {
                   {/* Tags */}
                   <div className="mb-6">
                     <div className="flex flex-wrap gap-1">
-                      {service.tags.slice(0, 3).map((tag, tagIndex) => (
+                      {service.features.slice(0, 3).map((feature, featureIndex) => (
                         <span
-                          key={tagIndex}
+                          key={featureIndex}
                           className="px-2 py-1 bg-gray-800 text-gray-300 text-xs rounded-md"
                         >
-                          {tag}
+                          {feature}
                         </span>
                       ))}
                     </div>

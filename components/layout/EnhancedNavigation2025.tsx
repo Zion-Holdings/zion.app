@@ -8,10 +8,11 @@ import {
   Target, Microscope, Atom, Database,
   Lock, Cloud, BarChart3, Settings,
   Eye, Code, Palette, Layers,
-  Network, Server, ShieldCheck, ZapIcon,
+  Network, Server, ShieldCheck,
   GlobeIcon, StarIcon, TrendingUpIcon, UsersIcon,
   CheckCircleIcon, ArrowRightIcon, CpuIcon,
-  DollarSign, Phone, ArrowRight, Mail, MapPin, Dna
+  DollarSign, Phone, ArrowRight, Mail, MapPin, Dna,
+  Sparkles, Target as TargetIcon, Shield as ShieldIcon, BookOpen
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -52,8 +53,7 @@ const navigationItems: NavigationItem[] = [
     description: 'Revolutionary AI consciousness and emotional intelligence',
     badge: 'New',
     children: [
-      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029', description: 'Emotional intelligence and self-awareness' },
-      { name: 'Quantum AI Fusion', href: '/quantum-ai-fusion', description: 'Quantum-AI hybrid computing' },
+      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution', description: 'Emotional intelligence and self-awareness' },
       { name: 'AI Autonomous Ecosystem', href: '/ai-autonomous-ecosystem', description: 'Self-managing AI systems' },
       { name: 'AI Ethics & Governance', href: '/ai-ethics-governance', description: 'Ethical AI frameworks' },
       { name: 'AI Creativity Studio', href: '/ai-creativity-studio', description: 'AI-powered creative content' },
@@ -61,7 +61,8 @@ const navigationItems: NavigationItem[] = [
       { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics', description: 'Medical AI solutions' },
       { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence', description: 'Financial AI analytics' },
       { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform', description: 'Environmental AI solutions' },
-      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-platform', description: 'Human-AI emotional collaboration' }
+      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-platform', description: 'Human-AI emotional collaboration' },
+      { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer', description: 'Legal document analysis' }
     ]
   },
   {
@@ -98,7 +99,7 @@ const navigationItems: NavigationItem[] = [
       { name: 'Autonomous IT Operations', href: '/autonomous-it-operations', description: 'Self-managing IT systems' },
       { name: 'Quantum Data Center', href: '/quantum-data-center', description: 'Next-gen data centers' },
       { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity', description: 'Quantum security solutions' },
-      { name: 'Quantum Cloud Migration', href: '/quantum-cloud-migration', description: 'Intelligent migration platform' }
+      { name: 'Quantum Cloud Migration', href: '/quantum-cloud-migration', description: 'Seamless cloud transitions' }
     ]
   },
   {
@@ -106,70 +107,62 @@ const navigationItems: NavigationItem[] = [
     href: '/micro-saas',
     icon: <Rocket className="w-5 h-5" />,
     description: 'Innovative business solutions',
-    badge: 'Popular',
     children: [
-      { name: 'AI Content Factory Pro', href: '/ai-content-factory-pro', description: 'Enterprise AI content generation' },
-      { name: 'Quantum CRM Suite', href: '/quantum-crm-suite', description: 'Next-gen customer relationship management' },
-      { name: 'AI Autonomous Decision Engine', href: '/ai-autonomous-decision-engine', description: 'Autonomous business decisions' },
-      { name: 'AI Creativity Studio', href: '/ai-creativity-studio', description: 'AI-powered creative content' },
-      { name: 'AI Education Platform', href: '/ai-education-platform', description: 'Personalized learning with AI' },
-      { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics', description: 'Medical AI diagnostics' },
-      { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence', description: 'Financial AI analytics' },
-      { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform', description: 'Environmental AI monitoring' },
-      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-platform', description: 'Human-AI emotional collaboration' },
-      { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer', description: 'Legal document analysis' }
+      { name: 'AI Autonomous Content Factory', href: '/ai-autonomous-content-factory', description: 'Automated content creation' },
+      { name: 'Quantum CRM Intelligence', href: '/quantum-crm-intelligence', description: 'AI-powered customer insights' },
+      { name: 'AI Autonomous Decision Engine', href: '/ai-autonomous-decision-engine', description: 'Smart business decisions' },
+      { name: 'AI Creativity Studio Pro', href: '/ai-creativity-studio-pro', description: 'AI-powered design tools' },
+      { name: 'Quantum Financial Trading', href: '/quantum-financial-trading', description: 'Advanced trading platform' },
+      { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics', description: 'Medical AI solutions' },
+      { name: 'Quantum Cybersecurity Platform', href: '/quantum-cybersecurity-platform', description: 'Unbreakable security' },
+      { name: 'AI Education Platform', href: '/ai-education-platform', description: 'Personalized learning' },
+      { name: 'Quantum Energy Platform', href: '/quantum-energy-platform', description: 'Energy optimization' }
     ]
   },
   {
-    name: 'Space & Metaverse',
-    href: '/space-technology',
-    icon: <Rocket className="w-5 h-5" />,
-    description: 'Space exploration and virtual worlds',
+    name: 'Solutions',
+    href: '/solutions',
+    icon: <Target className="w-5 h-5" />,
+    description: 'Industry-specific solutions',
     children: [
-      { name: 'Space Mining Platform', href: '/space-mining-platform', description: 'Asteroid mining and space resources' },
-      { name: 'Space Technology AI Platform', href: '/space-technology-ai-platform', description: 'AI-powered space exploration' },
-      { name: 'Metaverse AI Development', href: '/metaverse-ai-development-platform', description: 'AI-powered virtual worlds' },
-      { name: 'Virtual Event Hologram Platform', href: '/virtual-event-hologram-platform', description: 'Holographic event technology' },
-      { name: 'Space Colonization Services', href: '/space-colonization-services', description: 'Interplanetary settlement solutions' }
+      { name: 'Healthcare Solutions', href: '/healthcare-solutions', description: 'Medical technology innovations' },
+      { name: 'Financial Services', href: '/financial-solutions', description: 'Fintech and banking solutions' },
+      { name: 'Manufacturing', href: '/manufacturing-solutions', description: 'Industry 4.0 automation' },
+      { name: 'Retail & E-commerce', href: '/retail-solutions', description: 'Digital commerce platforms' },
+      { name: 'Education Technology', href: '/education-solutions', description: 'Learning management systems' },
+      { name: 'Government & Defense', href: '/government-solutions', description: 'Public sector technology' },
+      { name: 'Energy & Utilities', href: '/energy-solutions', description: 'Smart grid and sustainability' },
+      { name: 'Transportation & Logistics', href: '/transportation-solutions', description: 'Supply chain optimization' }
     ]
   },
   {
-    name: 'Healthcare & Biotech',
-    href: '/healthcare-biotech',
-    icon: <Dna className="w-5 h-5" />,
-    description: 'Advanced healthcare and biotechnology',
+    name: 'Company',
+    href: '/about',
+    icon: <Users className="w-5 h-5" />,
+    description: 'About Zion Tech Group',
     children: [
-      { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics', description: 'Medical AI diagnostics' },
-      { name: 'Quantum Healthcare Diagnostics', href: '/quantum-healthcare-diagnostics', description: 'Quantum-powered medical analysis' },
-      { name: 'Biotech AI Research Platform', href: '/biotech-ai-research-platform', description: 'AI-powered biotech research' },
-      { name: 'AI Mental Health Companion', href: '/ai-mental-health-companion', description: 'AI mental health support' },
-      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-platform', description: 'Human-AI emotional collaboration' }
+      { name: 'About Us', href: '/about', description: 'Our mission and vision' },
+      { name: 'Leadership Team', href: '/leadership', description: 'Meet our executives' },
+      { name: 'Careers', href: '/careers', description: 'Join our team' },
+      { name: 'News & Updates', href: '/news', description: 'Latest company news' },
+      { name: 'Case Studies', href: '/case-studies', description: 'Success stories' },
+      { name: 'Partners', href: '/partners', description: 'Strategic partnerships' },
+      { name: 'Investors', href: '/investors', description: 'Investment information' }
     ]
   },
   {
-    name: 'Financial Technology',
-    href: '/fintech',
-    icon: <DollarSign className="w-5 h-5" />,
-    description: 'Advanced financial technology solutions',
+    name: 'Resources',
+    href: '/resources',
+    icon: <BookOpen className="w-5 h-5" />,
+    description: 'Knowledge and support',
     children: [
-      { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence', description: 'Financial AI analytics' },
-      { name: 'Quantum Financial Trading', href: '/quantum-financial-trading-platform', description: 'Quantum-powered trading' },
-      { name: 'AI Financial Risk Management', href: '/ai-financial-risk', description: 'AI-powered risk assessment' },
-      { name: 'Quantum Financial Analytics', href: '/quantum-financial-analytics', description: 'Quantum financial modeling' },
-      { name: 'AI Sales Automation', href: '/ai-sales-automation', description: 'Intelligent sales automation' }
-    ]
-  },
-  {
-    name: 'Sustainability & Green Tech',
-    href: '/sustainability',
-    icon: <Globe className="w-5 h-5" />,
-    description: 'Environmental and sustainability solutions',
-    children: [
-      { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform', description: 'Environmental AI monitoring' },
-      { name: 'Quantum Energy Platform', href: '/quantum-energy-platform', description: 'Quantum energy optimization' },
-      { name: 'Green Supply Chain Optimization', href: '/green-supply-chain-optimization', description: 'Sustainable logistics' },
-      { name: 'Carbon Footprint Tracking', href: '/carbon-footprint-tracking', description: 'Environmental impact monitoring' },
-      { name: 'Renewable Energy Integration', href: '/renewable-energy-integration', description: 'Clean energy solutions' }
+      { name: 'Documentation', href: '/docs', description: 'Technical guides' },
+      { name: 'API Reference', href: '/api-docs', description: 'Developer documentation' },
+      { name: 'Blog', href: '/blog', description: 'Industry insights' },
+      { name: 'Whitepapers', href: '/whitepapers', description: 'Research and analysis' },
+      { name: 'Webinars', href: '/webinars', description: 'Educational sessions' },
+      { name: 'Training', href: '/training', description: 'Skill development' },
+      { name: 'Support Center', href: '/support', description: 'Help and assistance' }
     ]
   }
 ];

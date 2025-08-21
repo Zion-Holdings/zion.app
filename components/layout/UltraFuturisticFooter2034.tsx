@@ -8,7 +8,8 @@ import {
   Shield, Rocket, Brain, Atom, DollarSign,
   Users, FileText, HelpCircle, Settings,
   TrendingUp, Award, CheckCircle, Clock,
-  Globe as GlobeIcon, Cpu, Database, Lock
+  Globe as GlobeIcon, Cpu, Database, Lock,
+  Target, BookOpen, Heart, Lightbulb
 } from 'lucide-react';
 
 const contactInfo = {
@@ -23,8 +24,7 @@ const serviceCategories = [
     title: 'AI & Consciousness',
     icon: <Brain className="w-5 h-5 text-cyan-400" />,
     services: [
-      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029' },
-      { name: 'Quantum AI Fusion', href: '/quantum-ai-fusion' },
+      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution' },
       { name: 'AI Autonomous Ecosystem', href: '/ai-autonomous-ecosystem' },
       { name: 'AI Ethics & Governance', href: '/ai-ethics-governance' },
       { name: 'AI Creativity Studio', href: '/ai-creativity-studio' },
@@ -32,7 +32,8 @@ const serviceCategories = [
       { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics' },
       { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence' },
       { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform' },
-      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-platform' }
+      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-platform' },
+      { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer' }
     ]
   },
   {
@@ -71,302 +72,280 @@ const serviceCategories = [
     title: 'Micro SAAS',
     icon: <Rocket className="w-5 h-5 text-purple-400" />,
     services: [
-      { name: 'AI Content Factory Pro', href: '/ai-content-factory-pro' },
-      { name: 'Quantum CRM Suite', href: '/quantum-crm-suite' },
+      { name: 'AI Autonomous Content Factory', href: '/ai-autonomous-content-factory' },
+      { name: 'Quantum CRM Intelligence', href: '/quantum-crm-intelligence' },
       { name: 'AI Autonomous Decision Engine', href: '/ai-autonomous-decision-engine' },
-      { name: 'AI Creativity Studio', href: '/ai-creativity-studio' },
-      { name: 'AI Education Platform', href: '/ai-education-platform' },
+      { name: 'AI Creativity Studio Pro', href: '/ai-creativity-studio-pro' },
+      { name: 'Quantum Financial Trading', href: '/quantum-financial-trading' },
       { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics' },
-      { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence' },
-      { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform' },
-      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-platform' },
-      { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer' }
+      { name: 'Quantum Cybersecurity Platform', href: '/quantum-cybersecurity-platform' },
+      { name: 'AI Education Platform', href: '/ai-education-platform' },
+      { name: 'Quantum Energy Platform', href: '/quantum-energy-platform' }
     ]
   }
 ];
 
 const companyLinks = [
   { name: 'About Us', href: '/about', description: 'Our mission and vision' },
+  { name: 'Leadership Team', href: '/leadership', description: 'Meet our executives' },
   { name: 'Careers', href: '/careers', description: 'Join our team' },
   { name: 'News & Updates', href: '/news', description: 'Latest company news' },
   { name: 'Case Studies', href: '/case-studies', description: 'Success stories' },
-  { name: 'Resources', href: '/resources', description: 'Whitepapers and guides' },
-  { name: 'Blog', href: '/blog', description: 'Industry insights' }
+  { name: 'Partners', href: '/partners', description: 'Strategic partnerships' },
+  { name: 'Investors', href: '/investors', description: 'Investment information' }
 ];
 
 const supportLinks = [
   { name: 'Contact Support', href: '/support', description: 'Get help from our team' },
   { name: 'Documentation', href: '/docs', description: 'Technical guides' },
   { name: 'API Reference', href: '/api-docs', description: 'Developer documentation' },
-  { name: 'Status Page', href: '/status', description: 'Service status' },
-  { name: 'Training', href: '/training', description: 'Learn our platforms' },
-  { name: 'Community', href: '/community', description: 'Connect with users' }
+  { name: 'Training', href: '/training', description: 'Skill development programs' },
+  { name: 'Webinars', href: '/webinars', description: 'Educational sessions' },
+  { name: 'Community Forum', href: '/community', description: 'Connect with users' }
+];
+
+const resourceLinks = [
+  { name: 'Blog', href: '/blog', description: 'Industry insights and updates' },
+  { name: 'Whitepapers', href: '/whitepapers', description: 'Research and analysis' },
+  { name: 'Case Studies', href: '/case-studies', description: 'Success stories' },
+  { name: 'Webinars', href: '/webinars', description: 'Educational content' },
+  { name: 'Training Materials', href: '/training', description: 'Learning resources' },
+  { name: 'Research Papers', href: '/research', description: 'Academic publications' }
+];
+
+const solutionLinks = [
+  { name: 'Healthcare Solutions', href: '/healthcare-solutions', description: 'Medical technology innovations' },
+  { name: 'Financial Services', href: '/financial-solutions', description: 'Fintech and banking solutions' },
+  { name: 'Manufacturing', href: '/manufacturing-solutions', description: 'Industry 4.0 automation' },
+  { name: 'Retail & E-commerce', href: '/retail-solutions', description: 'Digital commerce platforms' },
+  { name: 'Education Technology', href: '/education-solutions', description: 'Learning management systems' },
+  { name: 'Government & Defense', href: '/government-solutions', description: 'Public sector technology' },
+  { name: 'Energy & Utilities', href: '/energy-solutions', description: 'Smart grid and sustainability' },
+  { name: 'Transportation & Logistics', href: '/transportation-solutions', description: 'Supply chain optimization' }
 ];
 
 const socialLinks = [
-  { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: <Twitter className="w-5 h-5" /> },
-  { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: <Linkedin className="w-5 h-5" /> },
-  { name: 'Facebook', href: 'https://facebook.com/ziontechgroup', icon: <Facebook className="w-5 h-5" /> },
-  { name: 'Instagram', href: 'https://instagram.com/ziontechgroup', icon: <Instagram className="w-5 h-5" /> },
-  { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: <Youtube className="w-5 h-5" /> },
-  { name: 'GitHub', href: 'https://github.com/ziontechgroup', icon: <Github className="w-5 h-5" /> }
+  { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: Twitter },
+  { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: Linkedin },
+  { name: 'Facebook', href: 'https://facebook.com/ziontechgroup', icon: Facebook },
+  { name: 'Instagram', href: 'https://instagram.com/ziontechgroup', icon: Instagram },
+  { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: Youtube },
+  { name: 'GitHub', href: 'https://github.com/ziontechgroup', icon: Github }
 ];
 
-const stats = [
-  { label: 'Services Delivered', value: '500+', icon: <CheckCircle className="w-6 h-6" /> },
-  { label: 'Happy Clients', value: '200+', icon: <Users className="w-6 h-6" /> },
-  { label: 'Years Experience', value: '15+', icon: <Clock className="w-6 h-6" /> },
-  { label: 'Awards Won', value: '25+', icon: <Award className="w-6 h-6" /> }
+const quickStats = [
+  { number: '500+', label: 'Services Delivered', icon: Star },
+  { number: '1000+', label: 'Happy Clients', icon: Users },
+  { number: '99.9%', label: 'Uptime Guarantee', icon: Shield },
+  { number: '24/7', label: 'Expert Support', icon: Clock }
 ];
 
 export default function UltraFuturisticFooter2034() {
   return (
-    <footer className="relative bg-black text-white overflow-hidden">
+    <footer className="bg-gradient-to-b from-gray-900 to-black text-white relative overflow-hidden">
       {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-900 via-black to-black">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(6,182,212,0.1),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(59,130,246,0.1),transparent_50%)]"></div>
-      </div>
-
-      {/* Stats Section */}
-      <div className="relative z-10 py-16 border-b border-cyan-500/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-              Trusted by Industry Leaders
-            </h2>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-              Delivering cutting-edge technology solutions with proven results and exceptional customer satisfaction.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center group"
-              >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-cyan-500/20 to-blue-600/20 rounded-2xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <div className="text-cyan-400 group-hover:text-cyan-300 transition-colors duration-300">
-                    {stat.icon}
-                  </div>
-                </div>
-                <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
-                <div className="text-gray-400">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Main Footer Content */}
-      <div className="relative z-10 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-6 gap-12">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.1),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(120,119,198,0.1),transparent_50%)]"></div>
+      
+      <div className="relative z-10">
+        {/* Main Footer Content */}
+        <div className="max-w-7xl mx-auto px-6 py-16">
+          {/* Top Section */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
             {/* Company Info */}
-            <div className="lg:col-span-2">
-              <div className="flex items-center space-x-3 mb-6">
+            <div className="space-y-6">
+              <div className="flex items-center gap-3">
                 <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center">
-                  <Zap className="w-7 h-7 text-white" />
+                  <Zap className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-white">Zion Tech Group</div>
-                  <div className="text-sm text-cyan-400">Revolutionary Technology</div>
+                  <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                    Zion Tech Group
+                  </h3>
+                  <p className="text-sm text-gray-400">Revolutionary Technology Solutions</p>
                 </div>
               </div>
               
-              <p className="text-gray-400 mb-6 max-w-md">
-                Pioneering the future with cutting-edge AI, quantum computing, and emerging technologies. 
-                We transform businesses through innovative solutions that drive growth and competitive advantage.
+              <p className="text-gray-300 leading-relaxed max-w-md">
+                Leading provider of cutting-edge AI, quantum computing, and emerging technology solutions. 
+                Transform your business with our innovative services and stay ahead of the competition.
               </p>
-
-              {/* Contact Information */}
-              <div className="space-y-4 mb-6">
-                <div className="flex items-center space-x-3 text-gray-300 hover:text-cyan-400 transition-colors duration-200">
-                  <Phone className="w-4 h-4 text-cyan-400" />
-                  <a href={`tel:${contactInfo.mobile}`} className="hover:text-cyan-400 transition-colors duration-200">
-                    {contactInfo.mobile}
-                  </a>
-                </div>
-                <div className="flex items-center space-x-3 text-gray-300 hover:text-cyan-400 transition-colors duration-200">
-                  <Mail className="w-4 h-4 text-cyan-400" />
-                  <a href={`mailto:${contactInfo.email}`} className="hover:text-cyan-400 transition-colors duration-200">
-                    {contactInfo.email}
-                  </a>
-                </div>
-                <div className="flex items-start space-x-3 text-gray-300">
-                  <MapPin className="w-4 h-4 text-cyan-400 mt-1" />
-                  <span className="text-sm">{contactInfo.address}</span>
-                </div>
-                <div className="flex items-center space-x-3 text-gray-300 hover:text-cyan-400 transition-colors duration-200">
-                  <Globe className="w-4 h-4 text-cyan-400" />
-                  <a href={contactInfo.website} className="hover:text-cyan-400 transition-colors duration-200">
-                    {contactInfo.website}
-                  </a>
-                </div>
-              </div>
-
-              {/* Social Links */}
-              <div className="flex space-x-4">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.name}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 bg-gray-800/50 hover:bg-cyan-500/20 border border-gray-700/50 hover:border-cyan-500/50 rounded-lg flex items-center justify-center text-gray-400 hover:text-cyan-400 transition-all duration-300 hover:scale-110"
-                  >
-                    {social.icon}
-                  </a>
+              
+              {/* Quick Stats */}
+              <div className="grid grid-cols-2 gap-4">
+                {quickStats.map((stat, index) => (
+                  <div key={index} className="text-center p-3 bg-gray-800/50 rounded-lg border border-gray-700/50">
+                    <div className="flex items-center justify-center mb-2 text-cyan-400">
+                      <stat.icon className="w-4 h-4" />
+                    </div>
+                    <div className="text-lg font-bold text-white">{stat.number}</div>
+                    <div className="text-xs text-gray-400">{stat.label}</div>
+                  </div>
                 ))}
               </div>
             </div>
-
-            {/* Service Categories */}
-            {serviceCategories.map((category, index) => (
-              <div key={category.title}>
-                <div className="flex items-center space-x-2 mb-6">
-                  {category.icon}
-                  <h3 className="text-lg font-semibold text-white">{category.title}</h3>
+            
+            {/* Contact Information */}
+            <div className="space-y-6">
+              <h4 className="text-xl font-semibold text-white">Get In Touch</h4>
+              <div className="space-y-4">
+                <div className="flex items-center gap-3 text-gray-300">
+                  <Phone className="w-5 h-5 text-cyan-400" />
+                  <span>{contactInfo.mobile}</span>
                 </div>
-                <ul className="space-y-3">
-                  {category.services.slice(0, 6).map((service) => (
-                    <li key={service.name}>
-                      <Link
-                        href={service.href}
-                        className="text-gray-400 hover:text-cyan-400 transition-colors duration-200 text-sm hover:translate-x-1 inline-block"
-                      >
-                        {service.name}
-                      </Link>
-                    </li>
-                  ))}
-                  {category.services.length > 6 && (
-                    <li>
-                      <Link
-                        href={`/comprehensive-services-showcase-2025#${category.title.toLowerCase().replace(/\s+/g, '-')}`}
-                        className="text-cyan-400 hover:text-cyan-300 transition-colors duration-200 text-sm font-medium inline-flex items-center group"
-                      >
-                        View All {category.title} Services
-                        <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-200" />
-                      </Link>
-                    </li>
-                  )}
-                </ul>
-              </div>
-            ))}
-
-            {/* Company & Support */}
-            <div className="lg:col-span-2">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {/* Company Links */}
-                <div>
-                  <h3 className="text-lg font-semibold text-white mb-6 flex items-center space-x-2">
-                    <Users className="w-5 h-5 text-cyan-400" />
-                    <span>Company</span>
-                  </h3>
-                  <ul className="space-y-3">
-                    {companyLinks.map((link) => (
-                      <li key={link.name}>
-                        <Link
-                          href={link.href}
-                          className="text-gray-400 hover:text-cyan-400 transition-colors duration-200 text-sm hover:translate-x-1 inline-block"
-                        >
-                          {link.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
+                <div className="flex items-center gap-3 text-gray-300">
+                  <Mail className="w-5 h-5 text-cyan-400" />
+                  <span>{contactInfo.email}</span>
                 </div>
-
-                {/* Support Links */}
-                <div>
-                  <h3 className="text-lg font-semibold text-white mb-6 flex items-center space-x-2">
-                    <HelpCircle className="w-5 h-5 text-cyan-400" />
-                    <span>Support</span>
-                  </h3>
-                  <ul className="space-y-3">
-                    {supportLinks.map((link) => (
-                      <li key={link.name}>
-                        <Link
-                          href={link.href}
-                          className="text-gray-400 hover:text-cyan-400 transition-colors duration-200 text-sm hover:translate-x-1 inline-block"
-                        >
-                          {link.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
+                <div className="flex items-center gap-3 text-gray-300">
+                  <MapPin className="w-5 h-5 text-cyan-400" />
+                  <span>{contactInfo.address}</span>
+                </div>
+                <div className="flex items-center gap-3 text-gray-300">
+                  <Globe className="w-5 h-5 text-cyan-400" />
+                  <span>{contactInfo.website}</span>
                 </div>
               </div>
-
-              {/* Newsletter Signup */}
-              <div className="mt-8 p-6 bg-gradient-to-r from-cyan-500/10 to-blue-600/10 border border-cyan-500/30 rounded-2xl">
-                <h4 className="text-lg font-semibold text-white mb-3">Stay Updated</h4>
-                <p className="text-gray-400 text-sm mb-4">
-                  Get the latest insights on AI, quantum computing, and emerging technologies.
-                </p>
-                <div className="flex space-x-2">
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="flex-1 px-4 py-2 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50"
-                  />
-                  <button className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg hover:scale-105 transition-all duration-300">
-                    Subscribe
-                  </button>
-                </div>
+              
+              {/* Social Links */}
+              <div className="flex gap-4">
+                {socialLinks.map((social, index) => (
+                  <Link key={index} href={social.href} target="_blank" rel="noopener noreferrer">
+                    <motion.div
+                      whileHover={{ scale: 1.1, y: -2 }}
+                      className="w-10 h-10 bg-gray-800/50 border border-gray-700/50 rounded-lg flex items-center justify-center text-gray-400 hover:text-cyan-400 hover:border-cyan-500/50 transition-all duration-300"
+                    >
+                      <social.icon className="w-5 h-5" />
+                    </motion.div>
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* Bottom Bar */}
-      <div className="relative z-10 py-8 border-t border-cyan-500/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-            <div className="text-gray-400 text-sm">
-              © 2024 Zion Tech Group. All rights reserved. | 
-              <Link href="/privacy" className="hover:text-cyan-400 transition-colors duration-200 ml-2">
-                Privacy Policy
-              </Link> | 
-              <Link href="/terms" className="hover:text-cyan-400 transition-colors duration-200 ml-2">
-                Terms of Service
-              </Link>
+          
+          {/* Service Categories */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            {serviceCategories.map((category, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="space-y-4"
+              >
+                <div className="flex items-center gap-2">
+                  {category.icon}
+                  <h4 className="text-lg font-semibold text-white">{category.title}</h4>
+                </div>
+                <div className="space-y-2">
+                  {category.services.slice(0, 6).map((service, serviceIndex) => (
+                    <Link key={serviceIndex} href={service.href}>
+                      <div className="text-sm text-gray-400 hover:text-cyan-400 transition-colors duration-300 flex items-center gap-2 group">
+                        <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" />
+                        {service.name}
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+          
+          {/* Additional Links */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            {/* Company Links */}
+            <div className="space-y-4">
+              <h4 className="text-lg font-semibold text-white flex items-center gap-2">
+                <Users className="w-5 h-5 text-cyan-400" />
+                Company
+              </h4>
+              <div className="space-y-2">
+                {companyLinks.map((link, index) => (
+                  <Link key={index} href={link.href}>
+                    <div className="text-sm text-gray-400 hover:text-cyan-400 transition-colors duration-300">
+                      {link.name}
+                    </div>
+                  </Link>
+                ))}
+              </div>
             </div>
             
-            <div className="flex items-center space-x-6 text-sm text-gray-400">
-              <div className="flex items-center space-x-2">
-                <Shield className="w-4 h-4 text-green-400" />
-                <span>ISO 27001 Certified</span>
+            {/* Support Links */}
+            <div className="space-y-4">
+              <h4 className="text-lg font-semibold text-white flex items-center gap-2">
+                <HelpCircle className="w-5 h-5 text-cyan-400" />
+                Support
+              </h4>
+              <div className="space-y-2">
+                {supportLinks.map((link, index) => (
+                  <Link key={index} href={link.href}>
+                    <div className="text-sm text-gray-400 hover:text-cyan-400 transition-colors duration-300">
+                      {link.name}
+                    </div>
+                  </Link>
+                ))}
               </div>
-              <div className="flex items-center space-x-2">
-                <CheckCircle className="w-4 h-4 text-blue-400" />
-                <span>SOC 2 Type II</span>
+            </div>
+            
+            {/* Resources */}
+            <div className="space-y-4">
+              <h4 className="text-lg font-semibold text-white flex items-center gap-2">
+                <BookOpen className="w-5 h-5 text-cyan-400" />
+                Resources
+              </h4>
+              <div className="space-y-2">
+                {resourceLinks.map((link, index) => (
+                  <Link key={index} href={link.href}>
+                    <div className="text-sm text-gray-400 hover:text-cyan-400 transition-colors duration-300">
+                      {link.name}
+                    </div>
+                  </Link>
+                ))}
               </div>
-              <div className="flex items-center space-x-2">
-                <Star className="w-4 h-4 text-yellow-400" />
-                <span>5-Star Rated</span>
+            </div>
+            
+            {/* Solutions */}
+            <div className="space-y-4">
+              <h4 className="text-lg font-semibold text-white flex items-center gap-2">
+                <Target className="w-5 h-5 text-cyan-400" />
+                Solutions
+              </h4>
+              <div className="space-y-2">
+                {solutionLinks.slice(0, 6).map((link, index) => (
+                  <Link key={index} href={link.href}>
+                    <div className="text-sm text-gray-400 hover:text-cyan-400 transition-colors duration-300">
+                      {link.name}
+                    </div>
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Floating CTA */}
-      <div className="fixed bottom-6 right-6 z-50">
-        <Link href="/contact">
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-full shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
-          >
-            Get Started Today
-          </motion.button>
-        </Link>
+        
+        {/* Bottom Section */}
+        <div className="border-t border-gray-800/50">
+          <div className="max-w-7xl mx-auto px-6 py-8">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <div className="text-sm text-gray-400">
+                © 2025 Zion Tech Group. All rights reserved. | 
+                <Link href="/privacy" className="hover:text-cyan-400 transition-colors duration-300 ml-2">
+                  Privacy Policy
+                </Link> | 
+                <Link href="/terms" className="hover:text-cyan-400 transition-colors duration-300 ml-2">
+                  Terms of Service
+                </Link>
+              </div>
+              
+              <div className="flex items-center gap-2 text-sm text-gray-400">
+                <span>Made with</span>
+                <Heart className="w-4 h-4 text-red-400" />
+                <span>by Zion Tech Group</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
   );
