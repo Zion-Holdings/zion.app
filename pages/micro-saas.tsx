@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
-import { Shield, Clock, DollarSign, TrendingUp, Brain, Rocket, ArrowRight, ExternalLink, Search, Filter, Grid, List, Phone, Mail, MapPin } from 'lucide-react';
+import { Shield, Clock, DollarSign, TrendingUp, Brain, Rocket, ArrowRight, ExternalLink, Search, Filter, Grid, List, Phone, Mail, MapPin, Star } from 'lucide-react';
 import Button from '../components/ui/Button';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 import UltraAdvancedFuturisticCard from '../components/ui/UltraAdvancedFuturisticCard';
@@ -128,76 +128,162 @@ export default function MicroSaasPage() {
         {/* Hero Section */}
         <section className="relative py-20 overflow-hidden">
           <div className="container mx-auto px-4 text-center">
-            <div className="max-w-5xl mx-auto">
+            <div className="max-w-6xl mx-auto">
               <motion.h1 
-                className="text-6xl md:text-8xl font-bold mb-6 futuristic-glow"
+                className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                  100+ Revolutionary
-                </span>
-                <br />
-                <span className="text-white">Micro SaaS Services</span>
+                Revolutionary Micro SaaS Services
               </motion.h1>
               
               <motion.p 
-                className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed"
+                className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed max-w-4xl mx-auto"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                Access the future of business technology with our revolutionary micro SaaS platform. 
-                From quantum AI to autonomous manufacturing, each service represents a breakthrough in its field.
+                Discover 100+ cutting-edge micro SaaS solutions that are transforming industries. 
+                From Quantum AI to Autonomous Manufacturing, experience the future of business technology.
               </motion.p>
-              
-              {/* Service Count Stats */}
+
+              {/* Search and Filter Bar */}
               <motion.div 
-                className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-12"
+                className="max-w-4xl mx-auto mb-12"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                {stats.map((stat, index) => (
-                  <div key={index} className="text-center">
-                    <div className="flex items-center justify-center mb-2 text-cyan-400">
-                      {stat.icon}
-                    </div>
-                    <div className="text-2xl font-bold text-white mb-1">{stat.value}</div>
-                    <div className="text-sm text-gray-400">{stat.label}</div>
-                  </div>
-                ))}
+                <div className="relative">
+                  <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                  <input
+                    type="text"
+                    placeholder="Search revolutionary services..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="w-full pl-12 pr-4 py-4 bg-gray-900/80 border border-gray-700/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500/50 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300 backdrop-blur-sm"
+                  />
+                </div>
               </motion.div>
 
-              {/* CTA Buttons */}
+              {/* Category Filter */}
               <motion.div 
-                className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+                className="flex flex-wrap justify-center gap-3 mb-8"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                <Button
-                  href="#services"
-                  variant="primary"
-                  size="lg"
-                  className="group"
+                {serviceCategories.slice(0, 12).map((category) => (
+                  <button
+                    key={category.name}
+                    onClick={() => setSelectedCategory(category.name)}
+                    className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${
+                      selectedCategory === category.name
+                        ? 'bg-gradient-to-r from-cyan-500 to-purple-500 text-white shadow-lg shadow-cyan-500/25'
+                        : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 hover:text-white border border-gray-700/50 hover:border-cyan-500/50'
+                    }`}
+                  >
+                    {category.icon} {category.name}
+                  </button>
+                ))}
+              </motion.div>
+
+              {/* View Mode and Sort Controls */}
+              <motion.div 
+                className="flex flex-wrap items-center justify-center gap-4 mb-8"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+              >
+                <div className="flex items-center space-x-2 bg-gray-800/50 rounded-lg p-1 border border-gray-700/50">
+                  <button
+                    onClick={() => setViewMode('grid')}
+                    className={`p-2 rounded-md transition-all duration-300 ${
+                      viewMode === 'grid' ? 'bg-cyan-500 text-white' : 'text-gray-400 hover:text-white'
+                    }`}
+                  >
+                    <Grid className="w-5 h-5" />
+                  </button>
+                  <button
+                    onClick={() => setViewMode('list')}
+                    className={`p-2 rounded-md transition-all duration-300 ${
+                      viewMode === 'list' ? 'bg-cyan-500 text-white' : 'text-gray-400 hover:text-white'
+                    }`}
+                  >
+                    <List className="w-5 h-5" />
+                  </button>
+                </div>
+
+                <select
+                  value={sortBy}
+                  onChange={(e) => setSortBy(e.target.value as any)}
+                  className="px-4 py-2 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white focus:outline-none focus:border-cyan-500/50 transition-all duration-300"
                 >
-                  Explore Services
-                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                </Button>
-                
-                <Button
-                  href={contactInfo.website}
-                  variant="secondary"
-                  size="lg"
-                  className="group"
-                >
-                  Contact Sales
-                  <ExternalLink className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                </Button>
+                  <option value="innovation">Sort by Innovation</option>
+                  <option value="rating">Sort by Rating</option>
+                  <option value="price">Sort by Price</option>
+                  <option value="name">Sort by Name</option>
+                </select>
               </motion.div>
             </div>
+          </div>
+        </section>
+
+        {/* Services Grid */}
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            <motion.div 
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                {filteredServices.length} Revolutionary Services Found
+              </h2>
+              <p className="text-lg text-gray-300">
+                {selectedCategory !== 'All' ? `Showing ${selectedCategory} services` : 'Showing all revolutionary services'}
+              </p>
+            </motion.div>
+
+            {viewMode === 'grid' ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {filteredServices.map((service, index) => (
+                  <motion.div
+                    key={service.id}
+                    className="group relative"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                  >
+                    <UltraAdvancedFuturisticCard
+                      service={service}
+                      className="h-full group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </motion.div>
+                ))}
+              </div>
+            ) : (
+              <div className="space-y-6">
+                {filteredServices.map((service, index) => (
+                  <motion.div
+                    key={service.id}
+                    className="group relative"
+                    initial={{ opacity: 0, x: -30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                  >
+                    <UltraAdvancedFuturisticCard
+                      service={service}
+                      className="group-hover:scale-102 transition-transform duration-500"
+                    />
+                  </motion.div>
+                ))}
+              </div>
+            )}
           </div>
         </section>
 
@@ -267,127 +353,6 @@ export default function MicroSaasPage() {
                 </motion.div>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* Services Section */}
-        <section id="services" className="py-16">
-          <div className="container mx-auto px-4">
-            <motion.div 
-              className="text-center mb-12"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="text-4xl font-bold text-white mb-4">All Services</h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Explore our complete portfolio of revolutionary micro SaaS solutions
-              </p>
-            </motion.div>
-
-            {/* Filters and Search */}
-            <motion.div 
-              className="mb-8 space-y-4"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="flex flex-col lg:flex-row gap-4 items-center justify-between">
-                {/* Search */}
-                <div className="relative flex-1 max-w-md">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                  <input
-                    type="text"
-                    placeholder="Search services..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500/50 focus:ring-2 focus:ring-cyan-500/20"
-                  />
-                </div>
-
-                {/* Category Filter */}
-                <div className="flex items-center space-x-2">
-                  <Filter className="w-5 h-5 text-gray-400" />
-                  <select
-                    value={selectedCategory}
-                    onChange={(e) => setSelectedCategory(e.target.value)}
-                    className="px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-xl text-white focus:outline-none focus:border-cyan-500/50"
-                  >
-                    <option value="all">All Categories</option>
-                    {serviceCategories.map((category) => (
-                      <option key={category.name} value={category.name}>{category.name}</option>
-                    ))}
-                  </select>
-                </div>
-
-                {/* Sort */}
-                <select
-                  value={sortBy}
-                  onChange={(e) => setSortBy(e.target.value as any)}
-                  className="px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-xl text-white focus:outline-none focus:border-cyan-500/50"
-                >
-                  <option value="innovation">Sort by Innovation</option>
-                  <option value="rating">Sort by Rating</option>
-                  <option value="price">Sort by Price</option>
-                  <option value="name">Sort by Name</option>
-                </select>
-
-                {/* View Mode */}
-                <div className="flex items-center space-x-2 bg-gray-800/50 rounded-xl p-1">
-                  <button
-                    onClick={() => setViewMode('grid')}
-                    className={`p-2 rounded-lg transition-colors ${viewMode === 'grid' ? 'bg-cyan-500/20 text-cyan-400' : 'text-gray-400 hover:text-white'}`}
-                  >
-                    <Grid className="w-5 h-5" />
-                  </button>
-                  <button
-                    onClick={() => setViewMode('list')}
-                    className={`p-2 rounded-lg transition-colors ${viewMode === 'list' ? 'bg-cyan-500/20 text-cyan-400' : 'text-gray-400 hover:text-white'}`}
-                  >
-                    <List className="w-5 h-5" />
-                  </button>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Services Grid */}
-            <motion.div 
-              className={`grid gap-8 ${
-                viewMode === 'grid' 
-                  ? 'grid-cols-1 lg:grid-cols-2 xl:grid-cols-3' 
-                  : 'grid-cols-1'
-              }`}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6 }}
-            >
-              {filteredServices.map((service, index) => (
-                <motion.div
-                  key={service.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                >
-                  <UltraAdvancedFuturisticCard service={service} />
-                </motion.div>
-              ))}
-            </motion.div>
-
-            {filteredServices.length === 0 && (
-              <motion.div 
-                className="text-center py-12"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.6 }}
-              >
-                <div className="text-6xl mb-4">🔍</div>
-                <h3 className="text-2xl font-semibold text-white mb-2">No services found</h3>
-                <p className="text-gray-400">Try adjusting your search or filter criteria</p>
-              </motion.div>
-            )}
           </div>
         </section>
 

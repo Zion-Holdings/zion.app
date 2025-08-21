@@ -1,6 +1,6 @@
 import React from 'react';
-import NeoFuturisticNavigation from './NeoFuturisticNavigation';
-import NeoFuturisticFooter from './NeoFuturisticFooter';
+import Navigation from './Navigation';
+import Footer from './Footer';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -9,11 +9,11 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="min-h-screen bg-black text-white">
-      <NeoFuturisticNavigation />
-      <main className="pt-24 lg:pt-28">
+      <Navigation />
+      <main className="pt-20">
         {children}
       </main>
-      <NeoFuturisticFooter />
+      <Footer />
     </div>
   );
 };

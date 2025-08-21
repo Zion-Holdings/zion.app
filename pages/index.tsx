@@ -150,14 +150,21 @@ export default function HomePage() {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               {heroStats.map((stat, index) => (
-                <div key={index} className="text-center">
+                <motion.div 
+                  key={index} 
+                  className="text-center p-4 rounded-xl bg-gradient-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-sm border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300 hover:scale-105"
+                  whileHover={{ y: -5 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.4 + index * 0.1 }}
+                >
                   <div className={`text-3xl md:text-4xl font-bold ${stat.color} mb-2`}>
                     {stat.value}
                   </div>
                   <div className="text-sm text-gray-300 font-medium">
                     {stat.label}
                   </div>
-                </div>
+                </motion.div>
               ))}
             </motion.div>
 
@@ -171,19 +178,21 @@ export default function HomePage() {
                 href="/micro-saas" 
                 variant="primary" 
                 size="lg"
-                className="text-lg px-8 py-4"
+                className="text-lg px-8 py-4 group relative overflow-hidden"
               >
-                Explore Revolutionary Services
-                <ArrowRight className="ml-2 w-5 h-5" />
+                <span className="relative z-10">Explore Revolutionary Services</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <ArrowRight className="ml-2 w-5 h-5 relative z-10" />
               </Button>
               <Button 
                 href="#contact" 
                 variant="secondary" 
                 size="lg"
-                className="text-lg px-8 py-4"
+                className="text-lg px-8 py-4 group relative overflow-hidden"
               >
-                Schedule a Demo
-                <Rocket className="ml-2 w-5 h-5" />
+                <span className="relative z-10">Schedule a Demo</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <Rocket className="ml-2 w-5 h-5 relative z-10" />
               </Button>
             </motion.div>
           </div>
@@ -198,59 +207,53 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 futuristic-glow">
-              Explore Our <span className="bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">Service Categories</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+              Revolutionary Service Categories
             </h2>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto">
-              Discover 100+ revolutionary micro SaaS services across cutting-edge categories. Each category represents 
-              billions in market value with explosive growth potential.
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Explore our cutting-edge micro SaaS solutions across the most innovative technology domains
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {serviceCategories.map((category, index) => (
+            {serviceCategories.slice(0, 9).map((category, index) => (
               <motion.div
                 key={category.name}
-                initial={{ opacity: 0, y: 20 }}
+                className="group relative"
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <div className="p-8 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 backdrop-blur-xl hover:border-cyan-500/50 transition-all duration-300">
-                  <div className="text-6xl mb-6 text-center">{category.icon}</div>
-                  <h3 className="text-2xl font-bold text-white mb-4 text-center">{category.name}</h3>
-                  <p className="text-gray-300 mb-6 text-center leading-relaxed">{category.description}</p>
+                <div className="relative p-8 rounded-2xl bg-gradient-to-br from-gray-900/80 to-gray-800/60 backdrop-blur-xl border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-500 hover:scale-105 group-hover:shadow-2xl group-hover:shadow-cyan-500/20">
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-purple-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   
-                  <div className="space-y-3 mb-6">
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm text-gray-400">Market Size:</span>
-                      <span className="text-lg font-bold text-emerald-400">{category.marketSize}</span>
+                  <div className="relative z-10">
+                    <div className="text-4xl mb-4">{category.icon}</div>
+                    <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-cyan-400 transition-colors duration-300">
+                      {category.name}
+                    </h3>
+                    <p className="text-gray-300 mb-4 leading-relaxed">
+                      {category.description}
+                    </p>
+                    
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="text-sm text-gray-400">
+                        <span className="text-cyan-400 font-semibold">{category.marketSize}</span> market
+                      </div>
+                      <div className="text-sm text-gray-400">
+                        <span className="text-purple-400 font-semibold">{category.growthRate}</span> growth
+                      </div>
                     </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm text-gray-400">Growth Rate:</span>
-                      <span className="text-lg font-bold text-cyan-400">{category.growthRate}</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm text-gray-400">Services:</span>
-                      <span className="text-lg font-bold text-purple-400">{category.serviceCount}</span>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center justify-between">
-                    <Button
-                      href={`/micro-saas?category=${category.name.toLowerCase().replace(/\s+/g, '-')}`}
-                      variant="secondary"
-                      size="sm"
-                      className="group-hover:bg-cyan-500 transition-colors"
-                    >
-                      Explore Services
-                      <ArrowRight className="ml-2 w-4 h-4" />
-                    </Button>
-                    <div className="text-right">
-                      <div className="text-xs text-gray-400">Starting from</div>
-                      <div className="text-lg font-bold text-white">$49/month</div>
+                    
+                    <div className="flex items-center justify-between">
+                      <div className="text-sm text-gray-400">
+                        {category.serviceCount} services
+                      </div>
+                      <div className="w-8 h-8 rounded-full bg-gradient-to-r from-cyan-500 to-purple-500 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <ChevronRight className="w-4 h-4 text-white" />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -260,7 +263,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Revolutionary Services Section */}
+      {/* Featured Revolutionary Services */}
       <section className="py-20">
         <div className="container mx-auto px-4">
           <motion.div 
@@ -268,26 +271,29 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 futuristic-glow">
-              🚀 Revolutionary Services
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              Featured Revolutionary Services
             </h2>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto">
-              First-to-market solutions that are reshaping entire industries and creating new possibilities
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Experience the future with our most innovative and disruptive micro SaaS solutions
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {revolutionaryServices.map((service, index) => (
+            {revolutionaryServices.slice(0, 4).map((service, index) => (
               <motion.div
                 key={service.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                className="group relative"
+                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
               >
-                <UltraAdvancedFuturisticCard service={service} />
+                <UltraAdvancedFuturisticCard
+                  service={service}
+                  className="h-full group-hover:scale-105 transition-transform duration-500"
+                />
               </motion.div>
             ))}
           </div>

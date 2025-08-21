@@ -14,6 +14,9 @@
   --quantum-glow: 0 0 20px rgba(0, 255, 255, 0.5);
   --holographic-glow: 0 0 30px rgba(139, 92, 246, 0.6);
   --cyberpunk-glow: 0 0 25px rgba(236, 73, 153, 0.7);
+  --quantum-shadow: 0 0 40px rgba(0, 255, 255, 0.3);
+  --holographic-shadow: 0 0 50px rgba(139, 92, 246, 0.4);
+  --cyberpunk-shadow: 0 0 45px rgba(236, 73, 153, 0.5);
 }
 
 /* Enhanced Scrollbar */
@@ -98,70 +101,54 @@ body::before {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  background-size: 300% 300%;
-  animation: rainbowFlow 3s ease-in-out infinite;
 }
 
-@keyframes rainbowFlow {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+/* Enhanced Futuristic Glow Effects */
+.futuristic-glow {
+  text-shadow: 
+    0 0 10px currentColor,
+    0 0 20px currentColor,
+    0 0 30px currentColor,
+    0 0 40px currentColor;
 }
 
-/* Enhanced Glow Effects */
-.glow-cyan {
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+.quantum-glow {
+  box-shadow: 
+    0 0 20px rgba(0, 255, 255, 0.3),
+    0 0 40px rgba(0, 255, 255, 0.2),
+    0 0 60px rgba(0, 255, 255, 0.1);
 }
 
-.glow-purple {
-  box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+.holographic-glow {
+  box-shadow: 
+    0 0 20px rgba(139, 92, 246, 0.4),
+    0 0 40px rgba(139, 92, 246, 0.3),
+    0 0 60px rgba(139, 92, 246, 0.2);
 }
 
-.glow-pink {
-  box-shadow: 0 0 20px rgba(236, 73, 153, 0.5);
-}
-
-.glow-green {
-  box-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
-}
-
-.glow-yellow {
-  box-shadow: 0 0 20px rgba(245, 158, 11, 0.5);
-}
-
-.glow-red {
-  box-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
+.cyberpunk-glow {
+  box-shadow: 
+    0 0 20px rgba(236, 73, 153, 0.5),
+    0 0 40px rgba(236, 73, 153, 0.4),
+    0 0 60px rgba(236, 73, 153, 0.3);
 }
 
 /* Enhanced Hover Effects */
-.hover-glow-cyan:hover {
-  box-shadow: 0 0 30px rgba(0, 255, 255, 0.7);
-  transform: translateY(-2px);
-  transition: all 0.3s ease;
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.hover-glow-purple:hover {
-  box-shadow: 0 0 30px rgba(139, 92, 246, 0.7);
-  transform: translateY(-2px);
-  transition: all 0.3s ease;
+.hover-lift:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(0, 255, 255, 0.2);
 }
 
-.hover-glow-pink:hover {
-  box-shadow: 0 0 30px rgba(236, 73, 153, 0.7);
-  transform: translateY(-2px);
-  transition: all 0.3s ease;
-}
-
-/* Enhanced Button Styles */
+/* Enhanced Button Animations */
 .btn-futuristic {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-blue));
-  border: none;
-  color: white;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
   transition: all 0.3s ease;
 }
 
@@ -173,146 +160,165 @@ body::before {
   width: 100%;
   height: 100%;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s;
+  transition: left 0.5s ease;
 }
 
 .btn-futuristic:hover::before {
   left: 100%;
 }
 
-.btn-futuristic:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0, 255, 255, 0.4);
+/* Enhanced Card Animations */
+.card-hover {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Enhanced Card Styles */
-.card-futuristic {
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(0, 255, 255, 0.2);
-  border-radius: 16px;
-  padding: 24px;
-  transition: all 0.3s ease;
+.card-hover:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(0, 255, 255, 0.3);
 }
 
-.card-futuristic:hover {
-  border-color: rgba(0, 255, 255, 0.5);
-  box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
-  transform: translateY(-5px);
+/* Enhanced Loading Animations */
+@keyframes quantumPulse {
+  0%, 100% { 
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
 }
 
-/* Enhanced Input Styles */
-.input-futuristic {
-  background: rgba(0, 0, 0, 0.4);
-  border: 2px solid rgba(0, 255, 255, 0.3);
-  border-radius: 8px;
-  padding: 12px 16px;
-  color: white;
-  transition: all 0.3s ease;
+.quantum-pulse {
+  animation: quantumPulse 2s ease-in-out infinite;
 }
 
-.input-futuristic:focus {
-  outline: none;
-  border-color: var(--neon-cyan);
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+@keyframes holographicFloat {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% { 
+    transform: translateY(-10px) rotate(2deg);
+  }
+  66% { 
+    transform: translateY(10px) rotate(-2deg);
+  }
 }
 
-.input-futuristic::placeholder {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-/* Enhanced Animation Classes */
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-.animate-pulse-slow {
-  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-.animate-bounce-slow {
-  animation: bounce 2s infinite;
-}
-
-.animate-spin-slow {
-  animation: spin 8s linear infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
-}
-
-/* Enhanced Grid Patterns */
-.grid-pattern {
-  background-image: 
-    linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
-  background-size: 20px 20px;
-  animation: gridMove 20s linear infinite;
-}
-
-@keyframes gridMove {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(20px, 20px); }
+.holographic-float {
+  animation: holographicFloat 4s ease-in-out infinite;
 }
 
 /* Enhanced Particle Effects */
 .particle {
   position: absolute;
-  width: 4px;
-  height: 4px;
+  width: 2px;
+  height: 2px;
   background: var(--neon-cyan);
   border-radius: 50%;
-  animation: particleFloat 8s ease-in-out infinite;
+  animation: particleFloat 6s linear infinite;
 }
 
 @keyframes particleFloat {
-  0%, 100% { 
-    transform: translateY(0px) scale(1);
-    opacity: 0.8;
+  0% {
+    transform: translateY(100vh) translateX(0);
+    opacity: 0;
   }
-  50% { 
-    transform: translateY(-100px) scale(1.5);
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) translateX(100px);
+    opacity: 0;
+  }
+}
+
+/* Enhanced Grid Animations */
+.grid-animate {
+  animation: gridPulse 3s ease-in-out infinite;
+}
+
+@keyframes gridPulse {
+  0%, 100% { 
     opacity: 0.3;
   }
+  50% { 
+    opacity: 0.8;
+  }
 }
 
-/* Enhanced Loading Spinner */
-.spinner-futuristic {
-  width: 40px;
-  height: 40px;
-  border: 4px solid rgba(0, 255, 255, 0.1);
-  border-left: 4px solid var(--neon-cyan);
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
+/* Enhanced Text Animations */
+.text-reveal {
+  overflow: hidden;
+  animation: textReveal 1.5s ease-out forwards;
 }
 
-/* Enhanced Typography */
-.font-futuristic {
-  font-family: 'Orbitron', 'Inter', sans-serif;
-  letter-spacing: 0.05em;
+@keyframes textReveal {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
-.text-shadow-glow {
-  text-shadow: 0 0 10px currentColor;
+/* Enhanced Border Animations */
+.border-animate {
+  position: relative;
+}
+
+.border-animate::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid transparent;
+  border-radius: inherit;
+  background: linear-gradient(45deg, var(--neon-cyan), var(--neon-purple), var(--neon-pink)) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  animation: borderRotate 3s linear infinite;
+}
+
+@keyframes borderRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Enhanced Focus States */
+.focus-futuristic:focus {
+  outline: none;
+  box-shadow: 
+    0 0 0 3px rgba(0, 255, 255, 0.3),
+    0 0 20px rgba(0, 255, 255, 0.2);
+  transform: scale(1.02);
 }
 
 /* Enhanced Responsive Design */
 @media (max-width: 768px) {
-  .card-futuristic {
-    padding: 16px;
-    border-radius: 12px;
+  .futuristic-glow {
+    text-shadow: 
+      0 0 5px currentColor,
+      0 0 10px currentColor,
+      0 0 15px currentColor;
   }
   
-  .btn-futuristic {
-    padding: 10px 20px;
-    font-size: 14px;
-  }
-  
-  .input-futuristic {
-    padding: 10px 14px;
-    font-size: 14px;
+  .quantum-glow,
+  .holographic-glow,
+  .cyberpunk-glow {
+    box-shadow: 
+      0 0 10px rgba(0, 255, 255, 0.2),
+      0 0 20px rgba(0, 255, 255, 0.1);
   }
 }
 
@@ -325,23 +331,37 @@ body::before {
   }
 }
 
-/* Enhanced Focus States for Accessibility */
-.btn-futuristic:focus,
-.input-futuristic:focus,
-.card-futuristic:focus {
-  outline: 2px solid var(--neon-cyan);
-  outline-offset: 2px;
+/* Enhanced Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Enhanced Performance Optimizations */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
 }
 
 /* Enhanced Print Styles */
 @media print {
-  .card-futuristic,
-  .btn-futuristic {
+  .futuristic-glow,
+  .quantum-glow,
+  .holographic-glow,
+  .cyberpunk-glow {
     box-shadow: none;
-    border: 1px solid #ccc;
+    text-shadow: none;
   }
   
-  body::before {
+  .particle {
     display: none;
   }
 }
