@@ -15,6 +15,14 @@ import { innovativeMicroSaasServices2032 } from '../data/2032-innovative-micro-s
 import { researchDevelopmentServices2032 } from '../data/2032-research-development-services';
 import { enterpriseITServices2032 } from '../data/2032-enterprise-it-services';
 
+// Import all the new 2033 service data
+import { innovativeMicroSaasServices2033 } from '../data/2033-innovative-micro-saas-v2';
+import { innovativeAIServices2033 } from '../data/2033-innovative-ai-services-v2';
+import { quantumEmergingTechServices2033 } from '../data/2033-quantum-emerging-tech-services-v2';
+import { spaceMetaverseServices2033 } from '../data/2033-space-metaverse-services-v2';
+import { researchDevelopmentServices2033 } from '../data/2033-research-development-services-v2';
+import { enterpriseITServices2033 } from '../data/2033-enterprise-it-services-v2';
+
 // Import existing services for comprehensive coverage
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { innovativeMicroSaasServices } from '../data/innovative-micro-saas-services';
@@ -35,7 +43,7 @@ const serviceCategories = [
     description: 'Revolutionary AI consciousness and emotional intelligence platforms',
     icon: Brain,
     color: 'from-violet-500 to-purple-500',
-    services: futuristicAIServices2032,
+    services: [...futuristicAIServices2032, ...innovativeAIServices2033],
     gradient: 'from-violet-500/20 to-indigo-500/20'
   },
   {
@@ -44,7 +52,7 @@ const serviceCategories = [
     description: 'Quantum computing, DNA computing, and beyond',
     icon: Atom,
     color: 'from-indigo-500 to-blue-500',
-    services: quantumEmergingTechServices2032,
+    services: [...quantumEmergingTechServices2032, ...quantumEmergingTechServices2033],
     gradient: 'from-indigo-500/20 to-cyan-500/20'
   },
   {
@@ -53,7 +61,7 @@ const serviceCategories = [
     description: 'Autonomous operations and zero-trust security',
     icon: Shield,
     color: 'from-blue-500 to-cyan-500',
-    services: enterpriseITServices2032,
+    services: [...enterpriseITServices2032, ...enterpriseITServices2033],
     gradient: 'from-blue-500/20 to-teal-500/20'
   },
   {
@@ -62,7 +70,7 @@ const serviceCategories = [
     description: 'Space mining, metaverse development, and more',
     icon: Rocket,
     color: 'from-teal-500 to-emerald-500',
-    services: spaceMetaverseServices2032,
+    services: [...spaceMetaverseServices2032, ...spaceMetaverseServices2033],
     gradient: 'from-teal-500/20 to-green-500/20'
   },
   {
@@ -71,7 +79,7 @@ const serviceCategories = [
     description: 'Innovative solutions for every business need',
     icon: Target,
     color: 'from-green-500 to-yellow-500',
-    services: innovativeMicroSaasServices2032,
+    services: [...innovativeMicroSaasServices2032, ...innovativeMicroSaasServices2033],
     gradient: 'from-green-500/20 to-orange-500/20'
   },
   {
@@ -80,7 +88,7 @@ const serviceCategories = [
     description: 'Breakthrough technologies and innovations',
     icon: Microscope,
     color: 'from-orange-500 to-red-500',
-    services: researchDevelopmentServices2032,
+    services: [...researchDevelopmentServices2032, ...researchDevelopmentServices2033],
     gradient: 'from-orange-500/20 to-pink-500/20'
   }
 ];
@@ -103,10 +111,21 @@ export default function ServicesPage() {
     
     const matchesCategory = selectedCategory === 'all' || service.category === selectedCategory;
     
+    // Helper function to get service price for filtering
+    const getServicePrice = (service: any) => {
+      if (service.price) {
+        return parseFloat(service.price.replace(/[^0-9.]/g, ''));
+      } else if (service.pricing && service.pricing.monthly) {
+        return parseFloat(service.pricing.monthly.replace(/[^0-9.]/g, ''));
+      }
+      return 0;
+    };
+
+    const servicePrice = getServicePrice(service);
     const matchesPrice = priceRange === 'all' || 
-                        (priceRange === 'low' && parseFloat(service.price.replace(/[^0-9.]/g, '')) < 1000) ||
-                        (priceRange === 'medium' && parseFloat(service.price.replace(/[^0-9.]/g, '')) >= 1000 && parseFloat(service.price.replace(/[^0-9.]/g, '')) < 10000) ||
-                        (priceRange === 'high' && parseFloat(service.price.replace(/[^0-9.]/g, '')) >= 10000);
+                        (priceRange === 'low' && servicePrice < 1000) ||
+                        (priceRange === 'medium' && servicePrice >= 1000 && servicePrice < 10000) ||
+                        (priceRange === 'high' && servicePrice >= 10000);
     
     return matchesSearch && matchesCategory && matchesPrice;
   });
@@ -271,18 +290,18 @@ export default function ServicesPage() {
                 >
                   <div className="relative bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 h-full transform transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 hover:border-purple-500/50">
                     {/* Popular Badge */}
-                    {service.popular && (
+                    {('popular' in service && service.popular) || ('pricing' in service && service.pricing && service.pricing.monthly) ? (
                       <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                        <div className="inline-flex items-center gap-1 px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-black text-xs font-semibold rounded-full">
+                        <div className="inline-flex items-center gap-1 px-3 py-3 bg-gradient-to-r from-yellow-500 to-orange-500 text-black text-xs font-semibold rounded-full">
                           <Star className="w-3 h-3" />
-                          Popular
+                          {'popular' in service && service.popular ? 'Popular' : 'Featured'}
                         </div>
                       </div>
-                    )}
+                    ) : null}
 
                     {/* Service Icon */}
-                    <div className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center mb-6 transform transition-transform duration-300 group-hover:scale-110`}>
-                      <span className="text-2xl">{service.icon}</span>
+                    <div className={`w-16 h-16 bg-gradient-to-r ${'color' in service ? service.color : 'from-purple-500 to-blue-500'} rounded-2xl flex items-center justify-center mb-6 transform transition-transform duration-300 group-hover:scale-110`}>
+                      <span className="text-2xl">{'icon' in service ? service.icon : '🚀'}</span>
                     </div>
 
                     {/* Service Content */}
@@ -311,15 +330,21 @@ export default function ServicesPage() {
                       {/* Service Stats */}
                       <div className="grid grid-cols-3 gap-4 pt-4 text-center">
                         <div>
-                          <div className="text-lg font-bold text-cyan-400">{service.customers}</div>
+                          <div className="text-lg font-bold text-cyan-400">
+                            {'customers' in service ? service.customers : '1000+'}
+                          </div>
                           <div className="text-xs text-gray-500">Customers</div>
                         </div>
                         <div>
-                          <div className="text-lg font-bold text-purple-400">{service.rating}</div>
+                          <div className="text-lg font-bold text-purple-400">
+                            {'rating' in service ? service.rating : '5.0'}
+                          </div>
                           <div className="text-xs text-gray-500">Rating</div>
                         </div>
                         <div>
-                          <div className="text-lg font-bold text-pink-400">{service.reviews}</div>
+                          <div className="text-lg font-bold text-pink-400">
+                            {'reviews' in service ? service.reviews : '4.9'}
+                          </div>
                           <div className="text-xs text-gray-500">Reviews</div>
                         </div>
                       </div>
@@ -327,9 +352,11 @@ export default function ServicesPage() {
                       {/* Price and CTA */}
                       <div className="pt-4 border-t border-gray-700/50">
                         <div className="flex justify-between items-center">
-                          <div className="text-3xl font-bold text-white">{service.price}</div>
+                          <div className="text-3xl font-bold text-white">
+                          {'price' in service ? service.price : (service.pricing ? service.pricing.monthly : 'Contact Us')}
+                        </div>
                                                      <a
-                             href={service.link}
+                                                           href={'link' in service ? service.link : `/services/${service.id}`}
                              className="inline-flex items-center space-x-2 text-purple-400 hover:text-cyan-400 transition-colors group/btn"
                            >
                             <span>Learn More</span>
