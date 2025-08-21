@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shield, Mail, MapPin, Rocket, Brain, Sparkles, Atom, Dna } from 'lucide-react';
 import Button from '../components/ui/Button';
 import UltraFuturisticBackground2032 from '../components/ui/UltraFuturisticBackground2032';
-import UltraFuturisticNavigation2033 from '../components/layout/UltraFuturisticNavigation2033';
-import UltraFuturisticFooter2033 from '../components/layout/UltraFuturisticFooter2033';
+import UltraFuturisticNavigation2034 from '../components/layout/UltraFuturisticNavigation2034';
+import UltraFuturisticFooter2034 from '../components/layout/UltraFuturisticFooter2034';
 import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
 import Enhanced2026ServicesShowcase from '../components/sections/Enhanced2026ServicesShowcase';
 import Revolutionary2026ServiceShowcase from '../components/sections/Revolutionary2026ServiceShowcase';
@@ -93,6 +93,8 @@ import { spaceMetaverseServices2031 } from '../data/2031-space-metaverse-service
 import { futuristicInnovations2032 } from '../data/2032-futuristic-innovations';
 import { enterpriseInnovations2032 } from '../data/2032-enterprise-innovations';
 import { healthcareInnovations2032 } from '../data/2032-healthcare-innovations';
+import { cuttingEdgeInnovations2034 } from '../data/2034-cutting-edge-innovations';
+import { enterpriseInnovations2034 } from '../data/2034-enterprise-innovations';
 
 // Type adapter function to convert different service types to the expected Service interface
 function adaptServiceToEnhancedShowcase(service: any) {
@@ -260,7 +262,7 @@ export default function HomePage() {
       </Head>
 
       {/* Navigation */}
-      <UltraFuturisticNavigation2033 />
+              <UltraFuturisticNavigation2034 />
 
       {/* Hero Section */}
       <UltraFuturisticHero2032 />
