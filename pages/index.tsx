@@ -378,6 +378,38 @@ export default function HomePage() {
         items={[
           // New high-demand, real services
           {
+            title: '🧪 Synthetic Data Generator',
+            description: 'Privacy-safe synthetic tabular/time-series/text for analytics, testing and ML.',
+            price: '$119/month',
+            features: ['Differential privacy', 'PII masking', 'Utility/drift reports', 'SDKs & REST'],
+            link: 'https://ziontechgroup.com/services/synthetic-data-generator',
+            contactInfo
+          },
+          {
+            title: '📥 Email Parsing & Routing API',
+            description: 'Inbound email to structured JSON events with attachments, replays and DLQ.',
+            price: '$39/month',
+            features: ['Signature stripping', 'Attachment handling', 'Webhook retries', 'Inspector'],
+            link: 'https://ziontechgroup.com/services/email-parsing-routing-api',
+            contactInfo
+          },
+          {
+            title: '☸️ Kubernetes Cost Analyzer',
+            description: 'Allocation by namespace/team, rightsizing, and bin‑packing recommendations.',
+            price: '$99/month',
+            features: ['Requests/limits advisor', 'Idle detection', 'Bin‑packing', 'Chargeback'],
+            link: 'https://ziontechgroup.com/services/kubernetes-cost-analyzer',
+            contactInfo
+          },
+          {
+            title: '🧭 Browser Automation Cloud',
+            description: 'Hosted Playwright jobs with queues, screenshots/video, proxies and stealth.',
+            price: '$59/month',
+            features: ['Retries & DLQ', 'Scheduler', 'Proxy pools', 'Webhook callbacks'],
+            link: 'https://ziontechgroup.com/services/browser-automation-cloud',
+            contactInfo
+          },
+          {
             title: '📮 Email Deliverability Monitor',
             description: 'DMARC/SPF/DKIM checks, seed-list tests and blocklist monitoring with weekly scorecards.',
             price: '$59/month',
