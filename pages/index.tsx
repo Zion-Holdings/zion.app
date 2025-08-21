@@ -32,40 +32,40 @@ const stats = [
 
 const serviceCategories = [
   {
-    title: 'AI & Consciousness',
-    description: 'Revolutionary AI platforms with consciousness and emotional intelligence',
+    title: 'AI & Automation',
+    description: 'Revolutionary AI platforms with autonomous business processing and intelligence',
     services: innovativeAIServicesEnhanced2025.slice(0, 3),
     icon: Brain,
     color: 'from-violet-500 to-purple-600',
-    href: '/ai-services',
-    features: ['Emotional Intelligence', 'Self-Awareness', 'Consciousness Evolution']
+    href: '/ai-automation-services',
+    features: ['Autonomous Business Processing', 'Predictive Analytics', 'Customer Success AI']
   },
   {
-    title: 'Quantum & Emerging Tech',
-    description: 'Breakthrough quantum computing and space technology solutions',
+    title: 'Cybersecurity & Quantum',
+    description: 'Quantum-powered security solutions with unbreakable encryption',
     services: emergingTechServicesEnhanced2025.slice(0, 3),
-    icon: Atom,
-    color: 'from-indigo-500 to-blue-600',
-    href: '/quantum-services',
-    features: ['Quantum Computing', 'Space Mining', 'Brain-Computer Interface']
-  },
-  {
-    title: 'Enterprise IT',
-    description: 'Advanced enterprise infrastructure and security solutions',
-    services: innovativeITServicesEnhanced2025.slice(0, 3),
     icon: Shield,
-    color: 'from-blue-500 to-cyan-600',
-    href: '/enterprise-it',
-    features: ['Zero Trust Security', 'Quantum Cloud', 'Autonomous Operations']
+    color: 'from-red-500 to-pink-600',
+    href: '/cybersecurity-quantum-services',
+    features: ['Quantum Encryption', 'Zero Trust Security', 'Autonomous Threat Hunting']
   },
   {
-    title: 'Micro SAAS',
-    description: 'Innovative business solutions for modern enterprises',
+    title: 'Fintech & Blockchain',
+    description: 'Next-generation financial technology with quantum computing',
+    services: innovativeITServicesEnhanced2025.slice(0, 3),
+    icon: DollarSign,
+    color: 'from-green-500 to-emerald-600',
+    href: '/fintech-blockchain-services',
+    features: ['Quantum Trading', 'AI Wealth Management', 'Blockchain Finance']
+  },
+  {
+    title: 'Healthcare & Biotech',
+    description: 'Breakthrough medical technology with AI and quantum computing',
     services: innovativeRealMicroSaasServices2025.slice(0, 3),
-    icon: Rocket,
-    color: 'from-teal-500 to-emerald-600',
-    href: '/micro-saas',
-    features: ['Content Automation', 'CRM Intelligence', 'Decision Engine']
+    icon: Dna,
+    color: 'from-blue-500 to-cyan-600',
+    href: '/healthcare-biotech-services',
+    features: ['AI Medical Diagnostics', 'Quantum Drug Discovery', 'Genomic Analysis']
   }
 ];
 
@@ -238,9 +238,9 @@ export default function Home() {
                 Get Started Today
               </button>
             </Link>
-            <Link href="/comprehensive-services-showcase-2025">
+            <Link href="/2026-ultimate-services-showcase">
               <button className="px-8 py-4 border-2 border-cyan-500/50 text-cyan-300 font-semibold text-lg rounded-xl hover:bg-cyan-500/10 hover:border-cyan-400 transition-all duration-300">
-                Explore Services
+                Explore 2026 Services
               </button>
             </Link>
           </motion.div>

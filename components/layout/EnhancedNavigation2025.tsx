@@ -8,7 +8,8 @@ import {
   Target, Atom,
   BookOpen,
   Truck, DollarSign, BarChart3, Globe, Users, X, Phone, Mail, MapPin, ArrowRight,
-  Star, Sparkles, Cpu, Lock, Cloud, BarChart3 as BarChart3Icon, Settings, Eye, Award, Clock, Heart, Lightbulb
+  Star, Sparkles, Cpu, Lock, Cloud, BarChart3 as BarChart3Icon, Settings, Eye, Award, Clock, Heart, Lightbulb,
+  Dna
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -31,79 +32,93 @@ const contactInfo = {
 const navigationItems: NavigationItem[] = [
   {
     name: 'All Services',
-    href: '/comprehensive-services-showcase-2025',
+    href: '/2026-ultimate-services-showcase',
     icon: <Globe className="w-5 h-5" />,
     description: 'Complete portfolio of all technology services',
-    badge: 'Showcase',
+    badge: 'New 2026',
     children: [
+      { name: '2026 Ultimate Services Showcase', href: '/2026-ultimate-services-showcase', description: 'Complete 2026 services portfolio' },
       { name: 'View All Services', href: '/comprehensive-services-showcase-2025', description: 'Complete services portfolio' },
-      { name: 'Service Categories', href: '/comprehensive-services-showcase-2025#categories', description: 'Browse by category' },
-      { name: 'Pricing Comparison', href: '/comprehensive-services-showcase-2025#pricing', description: 'Compare service costs' },
-      { name: 'Service Search', href: '/comprehensive-services-showcase-2025#search', description: 'Find specific services' },
+      { name: 'Service Categories', href: '/2026-ultimate-services-showcase#categories', description: 'Browse by category' },
+      { name: 'Pricing Comparison', href: '/2026-ultimate-services-showcase#pricing', description: 'Compare service costs' },
+      { name: 'Service Search', href: '/2026-ultimate-services-showcase#search', description: 'Find specific services' },
       { name: 'Latest Innovations', href: '/revolutionary-2025-services-showcase', description: 'Cutting-edge solutions' }
     ]
   },
   {
-    name: 'AI & Consciousness',
-    href: '/ai-services',
+    name: 'AI & Automation',
+    href: '/ai-automation-services',
     icon: <Brain className="w-5 h-5" />,
-    description: 'Revolutionary AI consciousness and emotional intelligence',
+    description: 'Revolutionary AI automation and autonomous business processing',
     badge: 'New',
     children: [
+      { name: 'AI Autonomous Business Processor', href: '/ai-autonomous-business-processor', description: 'Fully autonomous business process optimization' },
+      { name: 'AI Predictive Enterprise Analytics', href: '/ai-predictive-enterprise-analytics', description: '99.7% accurate business predictions' },
+      { name: 'AI Autonomous Customer Success', href: '/ai-autonomous-customer-success', description: 'Automated customer retention and satisfaction' },
+      { name: 'AI Autonomous Marketing Orchestrator', href: '/ai-autonomous-marketing-orchestrator', description: 'Cross-channel marketing coordination' },
+      { name: 'AI Autonomous Sales Intelligence', href: '/ai-autonomous-sales-intelligence', description: 'Automated lead qualification and nurturing' },
+      { name: 'AI Autonomous Content Factory', href: '/ai-autonomous-content-factory', description: 'Zero-intervention content creation' },
       { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2025', description: 'Emotional intelligence and self-awareness' },
       { name: 'AI Autonomous Ecosystem', href: '/ai-autonomous-ecosystem-manager', description: 'Self-managing AI systems' },
       { name: 'AI Ethics & Governance', href: '/ai-ethics-governance-framework', description: 'Ethical AI frameworks' },
-      { name: 'AI Creativity Studio', href: '/ai-creativity-studio', description: 'AI-powered creative content' },
-      { name: 'AI Education Platform', href: '/ai-education-platform', description: 'Personalized AI learning' },
-      { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics', description: 'Medical AI solutions' },
-      { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence', description: 'Financial AI analytics' },
-      { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform', description: 'Environmental AI solutions' },
-      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-platform', description: 'Human-AI emotional collaboration' },
       { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer', description: 'Legal document analysis' }
     ]
   },
   {
-    name: 'Quantum & Emerging Tech',
-    href: '/quantum-services',
-    icon: <Atom className="w-5 h-5" />,
-    description: 'Quantum computing and breakthrough technologies',
+    name: 'Cybersecurity & Quantum',
+    href: '/cybersecurity-quantum-services',
+    icon: <Shield className="w-5 h-5" />,
+    description: 'Quantum-powered security and unbreakable encryption',
     badge: 'Hot',
     children: [
+      { name: 'Quantum Encryption Platform', href: '/quantum-encryption-platform', description: 'Unbreakable quantum encryption' },
+      { name: 'AI Autonomous Threat Hunter', href: '/ai-autonomous-threat-hunter', description: '24/7 autonomous threat detection' },
+      { name: 'Quantum Zero Trust Security', href: '/quantum-zero-trust-security', description: 'Impenetrable security architecture' },
+      { name: 'AI Autonomous Vulnerability Scanner', href: '/ai-autonomous-vulnerability-scanner', description: 'Automatic vulnerability discovery' },
+      { name: 'Quantum Secure Communication', href: '/quantum-secure-communication', description: 'Unhackable communication channels' },
       { name: 'Space Mining Platform', href: '/space-mining-platform', description: 'Asteroid mining and space resources' },
       { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform', description: 'Quantum-biological hybrid processing' },
       { name: 'Brain-Computer Interface', href: '/brain-computer-interface-platform', description: 'Neural interface technology' },
       { name: 'Quantum Energy Platform', href: '/quantum-energy-platform', description: 'Fusion power simulation' },
-      { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai-platform', description: 'Self-driving AI systems' },
-      { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery-platform', description: 'Materials science acceleration' },
-      { name: 'Quantum Robotics', href: '/quantum-robotics', description: 'Quantum-enhanced robotics' },
-      { name: 'Quantum Internet Security', href: '/quantum-internet-security', description: 'Unbreakable encryption' },
-      { name: 'Quantum Logistics', href: '/quantum-logistics-optimization', description: 'Route optimization' },
       { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity-platform', description: 'Next-gen security' }
     ]
   },
   {
-    name: 'Enterprise IT',
-    href: '/enterprise-it',
-    icon: <Shield className="w-5 h-5" />,
-    description: 'Enterprise solutions and infrastructure',
+    name: 'Fintech & Blockchain',
+    href: '/fintech-blockchain-services',
+    icon: <DollarSign className="w-5 h-5" />,
+    description: 'Next-generation financial technology and blockchain solutions',
     children: [
+      { name: 'Quantum Financial Trading Platform', href: '/quantum-financial-trading-platform', description: 'Revolutionary quantum trading' },
+      { name: 'AI Autonomous Wealth Management', href: '/ai-autonomous-wealth-management', description: 'Fully autonomous investment management' },
+      { name: 'Quantum Blockchain Finance', href: '/quantum-blockchain-finance', description: 'Quantum-secured DeFi platform' },
+      { name: 'AI Autonomous Insurance Platform', href: '/ai-autonomous-insurance-platform', description: 'Intelligent insurance automation' },
+      { name: 'Quantum Payment Processing', href: '/quantum-payment-processing', description: 'Zero-fraud payment processing' },
       { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure-platform', description: 'Quantum-enhanced cloud computing' },
       { name: 'Edge Computing Orchestrator', href: '/edge-computing-orchestration', description: 'Edge processing optimization' },
-      { name: 'Zero Trust Security Platform', href: '/zero-trust-security-platform', description: 'Advanced cybersecurity' },
       { name: 'Blockchain Enterprise Platform', href: '/blockchain-infrastructure-platform', description: 'Enterprise blockchain solutions' },
       { name: 'AI-Powered DevOps', href: '/ai-powered-devops', description: 'Intelligent development automation' },
-      { name: 'Quantum Networking', href: '/quantum-networking', description: 'Quantum communication protocols' },
-      { name: 'Autonomous IT Operations', href: '/autonomous-it-operations-center', description: 'Self-managing IT systems' },
-      { name: 'Quantum Data Center', href: '/quantum-data-center', description: 'Next-gen data centers' },
-      { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity', description: 'Quantum security solutions' },
-      { name: 'Quantum Cloud Migration', href: '/quantum-cloud-migration', description: 'Seamless cloud transitions' }
+      { name: 'Quantum Networking', href: '/quantum-networking', description: 'Quantum communication protocols' }
+    ]
+  },
+  {
+    name: 'Healthcare & Biotech',
+    href: '/healthcare-biotech-services',
+    icon: <Dna className="w-5 h-5" />,
+    description: 'Breakthrough medical technology and biotech solutions',
+    children: [
+      { name: 'AI Autonomous Medical Diagnostics', href: '/ai-autonomous-medical-diagnostics', description: '99.9% accurate medical diagnostics' },
+      { name: 'Quantum Drug Discovery Platform', href: '/quantum-drug-discovery-platform', description: '1000x faster drug discovery' },
+      { name: 'AI Autonomous Patient Care', href: '/ai-autonomous-patient-care', description: '24/7 autonomous patient monitoring' },
+      { name: 'Quantum Genomic Analysis', href: '/quantum-genomic-analysis', description: 'Revolutionary genomic analysis' },
+      { name: 'AI Autonomous Clinical Trials', href: '/ai-autonomous-clinical-trials', description: 'Intelligent clinical trial optimization' }
     ]
   },
   {
     name: 'Micro SAAS',
     href: '/micro-saas',
     icon: <Rocket className="w-5 h-5" />,
-    description: 'Innovative business solutions',
+    description: 'Innovative business solutions and automation',
     children: [
       { name: 'AI Decision Engine', href: '/ai-powered-decision-engine', description: 'Intelligent decision making' },
       { name: 'Content Automation', href: '/intelligent-content-automation-platform', description: 'AI content creation' },
