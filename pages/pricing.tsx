@@ -1,35 +1,45 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
-import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Code, BookOpen, Activity, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Crown, Sparkles, Shield as ShieldIcon, Zap as ZapIcon2 } from 'lucide-react';
+import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Code, BookOpen, Activity, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Crown, Sparkles, Shield as ShieldIcon, Zap as ZapIcon2, Sparkle, ChevronRight, Award as AwardIcon, Users as UsersIcon, Globe as GlobeIcon, Lock as LockIcon, Zap as ZapIcon3, Brain, Factory, FlaskConical, Rocket as RocketIcon, Truck, MessageSquare as MessageSquareIcon } from 'lucide-react';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
 import EnhancedFuturisticBackground from '../components/ui/EnhancedFuturisticBackground';
-import { expandedMicroSaasServices, serviceCategories, getServicesByCategory } from '../data/expanded-micro-saas-services';
+import QuantumHolographicBackground from '../components/ui/QuantumHolographicBackground';
+import { enhancedMicroSaasServices, serviceCategories, getServicesByCategory } from '../data/enhanced-micro-saas-services';
 
 export default function PricingPage() {
   const [selectedPlan, setSelectedPlan] = useState('pro');
   const [billingCycle, setBillingCycle] = useState('monthly');
+
+  const contactInfo = {
+    mobile: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com'
+  };
 
   const pricingPlans = [
     {
       id: 'starter',
       name: 'Starter',
       description: 'Perfect for small businesses and startups',
-      price: billingCycle === 'monthly' ? 99 : 990,
+      price: billingCycle === 'monthly' ? 49 : 490,
       period: billingCycle === 'monthly' ? '/month' : '/year',
       savings: billingCycle === 'yearly' ? 'Save 17%' : '',
       icon: '🚀',
       color: 'from-blue-500 to-cyan-600',
       bgColor: 'from-blue-500/10 to-cyan-500/10',
       features: [
-        'Access to 20 core services',
+        'Access to 50+ core services',
         'Basic AI assistance',
         'Email support',
         'Standard integrations',
-        '14-day free trial',
+        '21-day free trial',
         'Basic analytics',
         'Community forum access',
-        'Documentation & guides'
+        'Documentation & guides',
+        'Mobile app access',
+        'Basic automation workflows'
       ],
       popular: false,
       cta: 'Start Free Trial',
@@ -39,23 +49,25 @@ export default function PricingPage() {
       id: 'pro',
       name: 'Professional',
       description: 'Ideal for growing businesses and teams',
-      price: billingCycle === 'monthly' ? 299 : 2990,
+      price: billingCycle === 'monthly' ? 199 : 1990,
       period: billingCycle === 'monthly' ? '/month' : '/year',
       savings: billingCycle === 'yearly' ? 'Save 17%' : '',
       icon: '⭐',
       color: 'from-purple-500 to-pink-600',
       bgColor: 'from-purple-500/10 to-pink-500/10',
       features: [
-        'Access to 50+ services',
+        'Access to 200+ services',
         'Advanced AI features',
         'Priority support',
         'Advanced integrations',
-        '30-day free trial',
+        '21-day free trial',
         'Advanced analytics',
         'Team collaboration',
         'Custom workflows',
         'API access',
-        'White-label options'
+        'White-label options',
+        'Advanced automation',
+        'Custom AI training'
       ],
       popular: true,
       cta: 'Start Free Trial',
@@ -65,14 +77,14 @@ export default function PricingPage() {
       id: 'enterprise',
       name: 'Enterprise',
       description: 'For large organizations with custom needs',
-      price: billingCycle === 'monthly' ? 799 : 7990,
+      price: billingCycle === 'monthly' ? 499 : 4990,
       period: billingCycle === 'monthly' ? '/month' : '/year',
       savings: billingCycle === 'yearly' ? 'Save 17%' : '',
       icon: '👑',
       color: 'from-amber-500 to-orange-600',
       bgColor: 'from-amber-500/10 to-orange-500/10',
       features: [
-        'Access to all 300+ services',
+        'Access to all 400+ services',
         'Custom AI models',
         '24/7 dedicated support',
         'On-premise options',
@@ -81,7 +93,9 @@ export default function PricingPage() {
         'White-label options',
         'SLA guarantees',
         'Custom development',
-        'Dedicated account manager'
+        'Dedicated account manager',
+        'Quantum computing access',
+        'Advanced security features'
       ],
       popular: false,
       cta: 'Contact Sales',
@@ -93,43 +107,40 @@ export default function PricingPage() {
     {
       name: 'Custom AI Model Development',
       description: 'Tailored AI solutions for your specific business needs',
-      price: 'From $2,500',
+      price: 'From $1,999',
       period: '/project',
       icon: '🧠',
-      color: 'from-purple-500 to-pink-600'
+      color: 'from-purple-500 to-pink-600',
+      features: ['Custom training data', 'Model optimization', 'API integration', 'Performance monitoring']
     },
     {
       name: 'Quantum Computing Access',
       description: 'Direct access to quantum computing resources',
-      price: 'From $5,000',
+      price: 'From $2,999',
       period: '/month',
       icon: '⚛️',
-      color: 'from-indigo-500 to-purple-600'
+      color: 'from-indigo-500 to-purple-600',
+      features: ['Quantum algorithm optimization', 'Real-time quantum processing', 'Expert consultation', 'Performance analytics']
     },
     {
       name: 'Synthetic Biology Platform',
       description: 'Advanced genetic engineering and synthetic biology tools',
-      price: 'From $3,500',
+      price: 'From $2,499',
       period: '/month',
       icon: '🧬',
-      color: 'from-green-500 to-emerald-600'
+      color: 'from-green-500 to-emerald-600',
+      features: ['CRISPR gene editing', 'DNA synthesis', 'Protein engineering', 'Bioinformatics analysis']
     },
     {
       name: 'Brain-Computer Interface',
       description: 'Neural interface development and implementation',
-      price: 'From $8,000',
+      price: 'From $4,999',
       period: '/month',
       icon: '🧠',
-      color: 'from-pink-500 to-rose-600'
+      color: 'from-pink-500 to-rose-600',
+      features: ['Neural signal processing', 'BCI hardware integration', 'Machine learning algorithms', 'Real-time feedback systems']
     }
   ];
-
-  const contactInfo = {
-    mobile: '+1 302 464 0950',
-    email: 'kleber@ziontechgroup.com',
-    address: '364 E Main St STE 1008 Middletown DE 19709',
-    website: 'https://ziontechgroup.com'
-  };
 
   const features = [
     {
@@ -163,11 +174,13 @@ export default function PricingPage() {
       <div className="min-h-screen">
         <Head>
           <title>Transparent Pricing Plans | Zion Tech Group - Revolutionary Micro SaaS Solutions</title>
-          <meta name="description" content="Choose from our transparent pricing plans starting at $99/month. Access 300+ revolutionary micro SaaS services with enterprise-grade security and support." />
+          <meta name="description" content="Choose from our transparent pricing plans starting at $49/month. Access 400+ revolutionary micro SaaS services with enterprise-grade security and support." />
           <meta name="keywords" content="pricing, micro SaaS pricing, AI services pricing, quantum computing pricing, Zion Tech Group pricing" />
+          <meta name="author" content="Zion Tech Group" />
           <meta property="og:title" content="Transparent Pricing Plans | Zion Tech Group" />
-          <meta property="og:description" content="Choose from our transparent pricing plans starting at $99/month." />
+          <meta property="og:description" content="Choose from our transparent pricing plans starting at $49/month." />
           <meta property="og:url" content="https://ziontechgroup.com/pricing" />
+          <meta property="og:type" content="website" />
           <link rel="canonical" href="https://ziontechgroup.com/pricing" />
         </Head>
 
@@ -181,10 +194,32 @@ export default function PricingPage() {
             </h1>
             <p className="text-xl text-gray-300 mb-8 leading-relaxed">
               Choose the perfect plan for your business needs. All plans include our revolutionary technology, 
-              enterprise-grade security, and exceptional support. No hidden fees, just transparent pricing.
+              enterprise-grade security, and exceptional support. Starting at just $49/month with 21-day free trials. 
+              No hidden fees, just transparent pricing.
             </p>
             
             {/* Contact Information Banner */}
+            <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-2xl p-6 border border-cyan-500/20 max-w-2xl mx-auto mb-8">
+              <h3 className="text-xl font-semibold mb-4 text-cyan-400">Need Help Choosing?</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                <div className="flex items-center justify-center">
+                  <Phone className="w-4 h-4 mr-2 text-cyan-400" />
+                  <a href={`tel:${contactInfo.mobile}`} className="hover:text-cyan-400 transition-colors">
+                    {contactInfo.mobile}
+                  </a>
+                </div>
+                <div className="flex items-center justify-center">
+                  <Mail className="w-4 h-4 mr-2 text-cyan-400" />
+                  <a href={`mailto:${contactInfo.email}`} className="hover:text-cyan-400 transition-colors">
+                    {contactInfo.email}
+                  </a>
+                </div>
+                <div className="flex items-center justify-center">
+                  <MapPin className="w-4 h-4 mr-2 text-cyan-400" />
+                  <span>{contactInfo.address}</span>
+                </div>
+              </div>
+            </div>
             <div className="bg-gradient-to-r from-blue-900/50 via-purple-900/50 to-cyan-900/50 border border-blue-500/30 rounded-2xl p-6 mb-8">
               <h2 className="text-xl font-semibold text-white mb-4">Questions About Pricing?</h2>
               <div className="flex flex-col md:flex-row justify-center items-center gap-4 text-gray-300 text-sm">
@@ -311,13 +346,27 @@ export default function PricingPage() {
                   <div className="text-xl font-bold text-blue-400 mb-4">
                     {service.price}{service.period}
                   </div>
+                  
+                  {/* Features List */}
+                  {service.features && (
+                    <ul className="space-y-2 mb-6 text-left">
+                      {service.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-center text-xs text-gray-400">
+                          <Check className="w-3 h-3 text-green-400 mr-2 flex-shrink-0" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  
                   <Button 
-                    href="/contact" 
+                    href={`mailto:${contactInfo.email}?subject=Inquiry about ${service.name}`}
                     variant="secondary" 
                     size="sm"
-                    className="w-full"
+                    className="w-full group"
                   >
-                    Learn More
+                    Contact Sales
+                    <Mail className="w-4 h-4 ml-2 group-hover:scale-110 transition-transform" />
                   </Button>
                 </Card>
               ))}
