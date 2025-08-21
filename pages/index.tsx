@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { 
   Clock, DollarSign, TrendingUp, Brain, 
   Zap, Rocket, Mail, Phone, MapPin, Sparkles, 
-  ArrowRight, ExternalLink, Check, CpuIcon, 
+  ArrowRight, ExternalLink, Check, Cpu, 
   ShieldCheck
 } from 'lucide-react';
 import Button from '../components/ui/Button';
@@ -15,7 +15,7 @@ import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-
 
 export default function HomePage() {
   const heroStats = [
-    { value: '200+', label: 'Revolutionary Micro SaaS Services', color: 'text-cyan-400', icon: <CpuIcon className="w-6 h-6" /> },
+    { value: '200+', label: 'Revolutionary Micro SaaS Services', color: 'text-cyan-400', icon: <Cpu className="w-6 h-6" /> },
     { value: '99.99%', label: 'Uptime Guarantee', color: 'text-fuchsia-400', icon: <ShieldCheck className="w-6 h-6" /> },
     { value: '30+', label: 'Day Free Trials', color: 'text-blue-400', icon: <Clock className="w-6 h-6" /> },
     { value: '24/7', label: 'AI Support', color: 'text-green-400', icon: <Brain className="w-6 h-6" /> },

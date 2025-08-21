@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Star, Users, TrendingUp, Clock, ArrowRight, 
   ExternalLink, Check, ChevronDown, ChevronUp,
-  Mail, Phone, MapPin, Globe, CpuIcon, ShieldCheck
+  Mail, Phone, MapPin, Globe, ShieldCheck
 } from 'lucide-react';
 import Button from './Button';
 import { EnhancedRealMicroSaasService } from '../../data/enhanced-real-micro-saas-services';
@@ -149,7 +149,7 @@ export default function UltraFuturisticServiceCard({ service }: UltraFuturisticS
         {/* Action Buttons */}
         <div className="flex space-x-2">
           <Button
-            href={`/services/${service.id}`}
+            href={service.link}
             className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white py-2 px-3 rounded-lg text-sm font-semibold transition-all duration-300"
           >
             <ArrowRight className="w-3 h-3 mr-1" />
@@ -172,7 +172,7 @@ export default function UltraFuturisticServiceCard({ service }: UltraFuturisticS
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="mt-4 pt-4 border-t border-gray-700/50"
+              className="mt-4 pt-4 border-top border-gray-700/50"
             >
               {/* Technology Stack */}
               <div className="mb-4">
@@ -202,67 +202,13 @@ export default function UltraFuturisticServiceCard({ service }: UltraFuturisticS
                 </div>
               </div>
 
-              {/* ROI Information */}
-              <div className="mb-4">
-                <h4 className="text-sm font-semibold text-cyan-400 mb-2">ROI Information:</h4>
-                <div className="p-3 bg-gray-800/50 rounded-lg border border-gray-700/50">
-                  <div className="grid grid-cols-1 gap-2 text-xs">
-                    <div className="flex justify-between">
-                      <span className="text-gray-400">ROI Details:</span>
-                      <span className="text-green-400 font-semibold">{service.roi}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-400">Setup Time:</span>
-                      <span className="text-cyan-400">{service.setupTime}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-400">Customers:</span>
-                      <span className="text-yellow-400">{service.customers}+</span>
-                    </div>
-                  </div>
+              {/* Compliance & Security */}
+              <div className="mb-2">
+                <h4 className="text-sm font-semibold text-cyan-400 mb-2">Assurance:</h4>
+                <div className="flex items-center space-x-2 text-xs text-gray-300">
+                  <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                  <span>99.99% uptime SLA • SOC 2-ready controls • Privacy-first</span>
                 </div>
-              </div>
-
-              {/* Market Position */}
-              <div className="mb-4">
-                <h4 className="text-sm font-semibold text-cyan-400 mb-2">Market Position:</h4>
-                <div className="p-3 bg-gray-800/50 rounded-lg border border-gray-700/50">
-                  <p className="text-xs text-gray-300 mb-2">{service.marketPosition}</p>
-                  <div className="grid grid-cols-1 gap-2 text-xs">
-                    <div className="flex justify-between">
-                      <span className="text-gray-400">Market Size:</span>
-                      <span className="text-blue-400">{service.marketSize}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-400">Growth Rate:</span>
-                      <span className="text-green-400">{service.growthRate}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Competitive Advantages */}
-              <div className="mb-4">
-                <h4 className="text-sm font-semibold text-cyan-400 mb-2">Competitive Advantages:</h4>
-                <div className="space-y-1">
-                  {service.competitors.map((competitor, index) => (
-                    <div key={index} className="flex items-center space-x-2 text-xs text-gray-300">
-                      <Check className="w-3 h-3 text-green-400 flex-shrink-0" />
-                      <span>Competes with {competitor}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Learn More Button */}
-              <div className="text-center">
-                <Button
-                  href={`/services/${service.id}`}
-                  className="w-full bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white py-2 px-4 rounded-lg text-sm font-semibold transition-all duration-300"
-                >
-                  <ExternalLink className="w-3 h-3 mr-2" />
-                  Learn More & Get Started
-                </Button>
               </div>
             </motion.div>
           )}
