@@ -12,6 +12,7 @@ const navLinks: { name: string; href: string }[] = [
   { name: 'AI Services', href: '/ai-services' },
   { name: 'IT Services', href: '/it-services' },
   { name: 'Resources', href: '/resources' },
+  { name: 'Blog', href: '/blog' },
   { name: 'Contact', href: '/contact' }
 ];
 

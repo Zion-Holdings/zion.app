@@ -317,6 +317,8 @@ export default function HomePage() {
         <meta property="og:url" content="https://ziontechgroup.com" />
         <meta property="og:image" content="https://ziontechgroup.com/og-image.jpg" />
         
+        <link rel="canonical" href="https://ziontechgroup.com" />
+        
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Zion Tech Group - Revolutionary AI & Quantum Computing Solutions" />
@@ -375,6 +377,84 @@ export default function HomePage() {
             price: 'Starting at $129/month',
             features: ['OTel collectors', 'Service maps', 'SLO alerting', 'Latency budgets', 'Drill-down traces', 'Error analytics'],
             link: 'https://ziontechgroup.com/api-observability-starter',
+            contactInfo
+          }
+        ]}
+      />
+
+      <ServiceAds
+        heading="Security & Compliance Automation"
+        subheading="Posture management, audits, and privacy workflows made simple."
+        items={[
+          {
+            title: '✅ SOC 2 Evidence Automation',
+            description: 'Continuously collect and map evidence to SOC 2 controls. Export auditor-ready packages.',
+            price: 'Starting at $149/month',
+            features: ['Cloud evidence', 'Attestations', 'Access reviews', 'Control mapping'],
+            link: 'https://ziontechgroup.com/soc2-evidence-automation',
+            contactInfo
+          },
+          {
+            title: '🛡️ API Security Scanner',
+            description: 'OWASP API Top 10 scans with CI/CD gates and OpenAPI import. Dev-first UX.',
+            price: 'Starting at $129/month',
+            features: ['Top 10 scans', 'OpenAPI import', 'Auth flows', 'CI gates'],
+            link: 'https://ziontechgroup.com/api-security-scanner',
+            contactInfo
+          },
+          {
+            title: '🛡️ GDPR DSAR Automation',
+            description: 'Branded DSAR portal with identity verification, PII discovery, and export packaging.',
+            price: 'Starting at $99/month',
+            features: ['DSAR portal', 'ID verification', 'PII discovery', 'Audit exports'],
+            link: 'https://ziontechgroup.com/gdpr-dsar-automation',
+            contactInfo
+          },
+          {
+            title: '📈 Status Pages & SLO Monitor',
+            description: 'Public status pages, SLIs/SLOs, burn-rate alerts, and synthetic uptime.',
+            price: 'Starting at $89/month',
+            features: ['SLIs/SLOs', 'Burn-rate alerts', 'Synthetic checks', 'Status pages'],
+            link: 'https://ziontechgroup.com/status-pages-slo',
+            contactInfo
+          }
+        ]}
+      />
+
+      <ServiceAds
+        heading="AI Automation & Assistants"
+        subheading="Deploy practical AI copilots with governance and analytics."
+        items={[
+          {
+            title: '📞 AI Phone Agent',
+            description: 'Voice agent for bookings, support, and reminders with human handoff.',
+            price: 'Starting at $249/month',
+            features: ['Natural conversations', 'Calendar + CRM', 'Handoff rules', 'Call analytics'],
+            link: 'https://ziontechgroup.com/ai-phone-agent',
+            contactInfo
+          },
+          {
+            title: '🧠 AI Code Review',
+            description: 'Static + AI review with actionable suggestions and repo PR comments.',
+            price: 'Starting at $129/month',
+            features: ['PR comments', 'Security hints', 'Style guides', 'Quality gates'],
+            link: 'https://ziontechgroup.com/ai-code-review',
+            contactInfo
+          },
+          {
+            title: '📈 AI SEO Optimization',
+            description: 'Content briefs, internal links, and schema recommendations with impact tracking.',
+            price: 'Starting at $99/month',
+            features: ['Keyword briefs', 'Linking suggestions', 'Schema JSON-LD', 'Impact reports'],
+            link: 'https://ziontechgroup.com/ai-seo-optimization',
+            contactInfo
+          },
+          {
+            title: '🎯 AI Website Personalization',
+            description: 'Segmented CTAs, banner tests, and content swaps driven by user intent.',
+            price: 'Starting at $119/month',
+            features: ['Audience rules', 'Variant testing', 'Analytics', 'No-code widgets'],
+            link: 'https://ziontechgroup.com/ai-website-personalization',
             contactInfo
           }
         ]}
