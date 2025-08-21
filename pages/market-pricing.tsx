@@ -16,6 +16,15 @@ export default function MarketPricingPage() {
           <p className="text-slate-300">Below are easy-to-verify vendor references and typical pricing ranges to help you benchmark our offerings.</p>
 
           <div className="space-y-6">
+            <div className="bg-black/30 rounded-2xl border border-teal-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Feature Flags & Experimentation</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>LaunchDarkly: <a className="text-cyan-400 underline" href={`https://launchdarkly.com/pricing/`} target="_blank" rel="noopener noreferrer">launchdarkly.com/pricing</a></li>
+                <li>GrowthBook: <a className="text-cyan-400 underline" href={`https://www.growthbook.io/pricing`} target="_blank" rel="noopener noreferrer">growthbook.io/pricing</a></li>
+                <li>Statsig: <a className="text-cyan-400 underline" href={`https://www.statsig.com/pricing`} target="_blank" rel="noopener noreferrer">statsig.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $50–$500/month depending on MAUs and experiment volume.</div>
+            </div>
             <div className="bg-black/30 rounded-2xl border border-sky-500/30 p-6">
               <h2 className="text-2xl font-semibold mb-2">MLOps, Prompting & Evaluation</h2>
               <ul className="list-disc list-inside text-slate-300 space-y-1">
@@ -170,6 +179,15 @@ export default function MarketPricingPage() {
                 <li>Render pricing: <a className="text-cyan-400 underline" href={`https://render.com/pricing`} target="_blank" rel="noopener noreferrer">render.com/pricing</a></li>
               </ul>
               <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $0–$500/month for moderate pipelines and environments.</div>
+            </div>
+            <div className="bg-black/30 rounded-2xl border border-lime-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Web Performance Monitoring</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>SpeedCurve: <a className="text-cyan-400 underline" href={`https://speedcurve.com/pricing/`} target="_blank" rel="noopener noreferrer">speedcurve.com/pricing</a></li>
+                <li>Calibre: <a className="text-cyan-400 underline" href={`https://calibreapp.com/pricing`} target="_blank" rel="noopener noreferrer">calibreapp.com/pricing</a></li>
+                <li>Google Lighthouse CI: <a className="text-cyan-400 underline" href={`https://github.com/GoogleChrome/lighthouse-ci`} target="_blank" rel="noopener noreferrer">github.com/GoogleChrome/lighthouse-ci</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $20–$400/month for synthetic + RUM; OSS possible.</div>
             </div>
           </div>
         </div>
