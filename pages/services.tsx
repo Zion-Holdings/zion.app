@@ -360,7 +360,7 @@ export default function ServicesPage() {
                         
                         <div className="flex flex-col items-end space-y-3">
                           <div className="text-right">
-                            <div className="text-3xl font-bold text-white">${service.price}</div>
+                            <div className="text-3xl font-bold text-white">{service.price}</div>
                             <div className="text-gray-400 text-sm">per month</div>
                           </div>
                           
