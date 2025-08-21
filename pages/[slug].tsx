@@ -191,13 +191,30 @@ function extractRootSlugFromLink(link?: string): string | null {
   if (!link) return null;
   try {
     const url = new URL(link);
-    const path = url.pathname.replace(/^\/+|\/+$/g, '');
-    // Accept root-level slugs like "/ai-energy-management"; ignore nested like "services/..."
-    if (path && !path.includes('/')) return path;
+    const p = url.pathname.replace(/^\/+|\/+$/g, '');
+    if (p && !p.includes('/')) return p;
     return null;
   } catch {
     return null;
   }
+}
+
+function getExistingRootPageSlugs(): Set<string> {
+  const pagesDir = path.join(process.cwd(), 'pages');
+  const entries = fs.readdirSync(pagesDir, { withFileTypes: true });
+  const slugs = new Set<string>();
+  for (const entry of entries) {
+    if (entry.isFile()) {
+      const m = entry.name.match(/^(?!_|\[).+\.(tsx|ts|jsx|js)$/);
+      if (m) {
+        const base = entry.name.replace(/\.(tsx|ts|jsx|js)$/, '');
+        if (base !== 'index' && base !== '404' && base !== '500') {
+          slugs.add(base);
+        }
+      }
+    }
+  }
+  return slugs;
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -215,8 +232,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
     }
   }
 
+  const existingRootPages = getExistingRootPageSlugs();
+  const filtered = Array.from(candidateSlugs).filter((slug) => !existingRootPages.has(slug));
+
   return {
-    paths: Array.from(candidateSlugs).map((slug) => ({ params: { slug } })),
+    paths: filtered.map((slug) => ({ params: { slug } })),
     fallback: true
   };
 };
