@@ -22,6 +22,7 @@ import { emergingTechnologyServices } from '../data/emerging-technology-services
 import { comprehensiveITSolutions } from '../data/comprehensive-it-solutions';
 import { realMarketServices } from '../data/real-market-services';
 import { serviceExpansions2025 } from '../data/service-expansions-2025';
+import { verifiedRealServices2025Batch2 } from '../data/verified-real-services-2025-batch2';
 import { realOperationalServices } from '../data/real-operational-services';
 import { newOperationalServices2025 } from '../data/new-operational-services-2025';
 
@@ -48,7 +49,8 @@ export default function HomePage() {
     ...realMarketServices,
     ...serviceExpansions2025,
     ...realOperationalServices,
-    ...newOperationalServices2025
+    ...newOperationalServices2025,
+    ...verifiedRealServices2025Batch2
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);

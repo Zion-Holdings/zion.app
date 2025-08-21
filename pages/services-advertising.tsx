@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 import Button from '../components/ui/Button';
-import { ArrowRight, CheckCircle, DollarSign, ExternalLink, Phone, Mail, MapPin, Star, TrendingUp } from 'lucide-react';
+import { ArrowRight, CheckCircle, ExternalLink, Phone, Mail, MapPin } from 'lucide-react';
 
 export default function ServicesAdvertisingPage() {
   const contact = {
@@ -18,7 +18,9 @@ export default function ServicesAdvertisingPage() {
     'Fast onboarding with templates and playbooks',
     'Enterprise-grade security and compliance',
     '24/7 support with SLAs',
-    'Proven architectures and reference implementations'
+    'Proven architectures and reference implementations',
+    'Vendor-agnostic choices to fit budget and scale',
+    'Outcome-based roadmaps and success criteria'
   ];
 
   const anchors = [
@@ -123,7 +125,10 @@ export default function ServicesAdvertisingPage() {
                 { name: 'TLS Certificate Monitor', price: '$49/mo', href: '/tls-certificate-monitor' },
                 { name: 'AI Multimodal Fusion', price: '$2,499/mo', href: '/ai-multimodal-fusion-platform' },
                 { name: 'Zero Trust Architecture', price: '$4,999/mo', href: '/zero-trust-network-architecture' },
-                { name: 'Edge Orchestration', price: '$3,499/mo', href: '/edge-computing-orchestration' }
+                { name: 'Edge Orchestration', price: '$3,499/mo', href: '/edge-computing-orchestration' },
+                { name: 'Feature Flags & Experimentation', price: '$299/mo', href: '/services/feature-flags-experimentation-starter' },
+                { name: 'On-Call Automation & ROI', price: '$399/mo', href: '/services/oncall-automation-roi-pack' },
+                { name: 'Email Warmup & Deliverability Ops', price: '$249/mo', href: '/services/email-warmup-deliverability-ops' }
               ].map((o) => (
                 <a key={o.name} href={o.href} className="block p-6 rounded-2xl bg-black/40 border border-gray-700/60 hover:border-cyan-500/40">
                   <div className="text-sm text-gray-400 mb-1">From</div>
@@ -131,6 +136,28 @@ export default function ServicesAdvertisingPage() {
                   <div className="text-gray-200 mt-2">{o.name}</div>
                 </a>
               ))}
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Capabilities</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="p-6 rounded-2xl bg-black/40 border border-gray-700/60">
+                <h3 className="text-xl font-semibold text-white mb-3">AI & Data</h3>
+                <ul className="list-disc list-inside text-slate-300 space-y-1">
+                  <li>LLM gateways, guardrails, evaluation suites</li>
+                  <li>RAG platforms, embeddings, vector DB tuning</li>
+                  <li>Privacy-by-design, PII redaction, governance</li>
+                </ul>
+              </div>
+              <div className="p-6 rounded-2xl bg-black/40 border border-gray-700/60">
+                <h3 className="text-xl font-semibold text-white mb-3">Cloud & Platform</h3>
+                <ul className="list-disc list-inside text-slate-300 space-y-1">
+                  <li>FinOps savings, rightsizing, budgets and alerts</li>
+                  <li>API security, WAF, schema, and auth hardening</li>
+                  <li>Observability, SLOs, on-call automation</li>
+                </ul>
+              </div>
             </div>
           </section>
 

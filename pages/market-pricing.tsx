@@ -222,23 +222,13 @@ export default function MarketPricingPage() {
               <ul className="list-disc list-inside text-slate-300 space-y-1">
                 <li>Datadog pricing: <a className="text-cyan-400 underline" href={`https://www.datadoghq.com/pricing/`} target="_blank" rel="noopener noreferrer">datadoghq.com/pricing</a></li>
                 <li>New Relic pricing: <a className="text-cyan-400 underline" href={`https://newrelic.com/pricing`} target="_blank" rel="noopener noreferrer">newrelic.com/pricing</a></li>
-                <li>Grafana Cloud pricing: <a className="text-cyan-400 underline" href={`https://grafana.com/products/cloud/pricing/`} target="_blank" rel="noopener noreferrer">grafana.com/products/cloud/pricing</a></li>
-              </ul>
-              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $0–$2,500/month depending on data retention and hosts.</div>
-            </div>
-          </div>
-
-          <div className="space-y-6">
-            <div className="bg-black/30 rounded-2xl border border-teal-500/30 p-6">
-              <h2 className="text-2xl font-semibold mb-2">Observability & Monitoring</h2>
-              <ul className="list-disc list-inside text-slate-300 space-y-1">
-                <li>Datadog pricing: <a className="text-cyan-400 underline" href={`https://www.datadoghq.com/pricing/`} target="_blank" rel="noopener noreferrer">datadoghq.com/pricing</a></li>
-                <li>New Relic pricing: <a className="text-cyan-400 underline" href={`https://newrelic.com/pricing`} target="_blank" rel="noopener noreferrer">newrelic.com/pricing</a></li>
                 <li>Grafana Cloud pricing: <a className="text-cyan-400 underline" href={`https://grafana.com/pricing/`} target="_blank" rel="noopener noreferrer">grafana.com/pricing</a></li>
               </ul>
               <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $50–$2,000/month by host count, metrics, and retention.</div>
             </div>
+          </div>
 
+          <div className="space-y-6">
             <div className="bg-black/30 rounded-2xl border border-lime-500/30 p-6">
               <h2 className="text-2xl font-semibold mb-2">Website Performance & RUM</h2>
               <ul className="list-disc list-inside text-slate-300 space-y-1">
