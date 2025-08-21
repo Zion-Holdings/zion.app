@@ -29,6 +29,49 @@ export default function ServicesAdvertisingPage() {
     { title: 'Quality & Monitoring', href: '/services#quality' }
   ];
 
+  const pricingRefs = [
+    {
+      title: 'AI Platforms',
+      links: [
+        { name: 'OpenAI', href: 'https://openai.com/api/pricing' },
+        { name: 'Anthropic', href: 'https://www.anthropic.com/pricing' },
+        { name: 'Langfuse', href: 'https://langfuse.com/pricing' },
+        { name: 'Groq', href: 'https://wow.groq.com/pricing' },
+        { name: 'OpenRouter', href: 'https://openrouter.ai/models' }
+      ],
+      note: 'SMB budgets: $100–$2,000/mo.'
+    },
+    {
+      title: 'Security & Compliance',
+      links: [
+        { name: 'Wiz', href: 'https://www.wiz.io/pricing' },
+        { name: 'Prisma Cloud', href: 'https://www.paloaltonetworks.com/prisma/cloud/pricing' },
+        { name: 'HashiCorp Vault', href: 'https://www.hashicorp.com/products/vault/pricing' },
+        { name: 'Cloudflare Zero Trust', href: 'https://www.cloudflare.com/products/zero-trust/pricing/' }
+      ],
+      note: 'SMB budgets: $200–$5,000/mo.'
+    },
+    {
+      title: 'Vector & Search',
+      links: [
+        { name: 'Pinecone', href: 'https://www.pinecone.io/pricing/' },
+        { name: 'Weaviate', href: 'https://weaviate.io/pricing' },
+        { name: 'Qdrant', href: 'https://qdrant.tech/pricing/' }
+      ],
+      note: 'SMB budgets: $50–$1,000/mo.'
+    },
+    {
+      title: 'Cloud & Edge',
+      links: [
+        { name: 'AWS Calculator', href: 'https://calculator.aws' },
+        { name: 'Azure', href: 'https://azure.microsoft.com/pricing' },
+        { name: 'Cloudflare', href: 'https://www.cloudflare.com/plans/' },
+        { name: 'Netlify', href: 'https://www.netlify.com/pricing/' }
+      ],
+      note: 'SMB budgets: $200–$10,000/mo.'
+    }
+  ];
+
   return (
     <UltraAdvancedFuturisticBackground variant="quantum-holographic" intensity={0.9}>
       <Head>
@@ -94,24 +137,17 @@ export default function ServicesAdvertisingPage() {
           <section>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Benchmark With Market Pricing</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="p-6 rounded-2xl bg-black/40 border border-cyan-500/30">
-                <h3 className="text-xl font-semibold text-white mb-3">AI Platforms</h3>
-                <ul className="text-slate-300 space-y-1">
-                  <li>OpenAI: <a className="text-cyan-400 underline" href={`https://openai.com/api/pricing`} target="_blank" rel="noopener noreferrer">openai.com/api/pricing</a></li>
-                  <li>Anthropic: <a className="text-cyan-400 underline" href={`https://www.anthropic.com/pricing`} target="_blank" rel="noopener noreferrer">anthropic.com/pricing</a></li>
-                  <li>Langfuse: <a className="text-cyan-400 underline" href={`https://langfuse.com/pricing`} target="_blank" rel="noopener noreferrer">langfuse.com/pricing</a></li>
-                </ul>
-                <div className="text-sm text-slate-400 mt-3">SMB budgets: $100–$2,000/mo.</div>
-              </div>
-              <div className="p-6 rounded-2xl bg-black/40 border border-purple-500/30">
-                <h3 className="text-xl font-semibold text-white mb-3">Security & Compliance</h3>
-                <ul className="text-slate-300 space-y-1">
-                  <li>Wiz: <a className="text-cyan-400 underline" href={`https://www.wiz.io/pricing`} target="_blank" rel="noopener noreferrer">wiz.io/pricing</a></li>
-                  <li>Prisma Cloud: <a className="text-cyan-400 underline" href={`https://www.paloaltonetworks.com/prisma/cloud/pricing`} target="_blank" rel="noopener noreferrer">paloaltonetworks.com/prisma/cloud/pricing</a></li>
-                  <li>HashiCorp Vault: <a className="text-cyan-400 underline" href={`https://www.hashicorp.com/products/vault/pricing`} target="_blank" rel="noopener noreferrer">hashicorp.com/products/vault/pricing</a></li>
-                </ul>
-                <div className="text-sm text-slate-400 mt-3">SMB budgets: $200–$5,000/mo.</div>
-              </div>
+              {pricingRefs.map((group) => (
+                <div key={group.title} className="p-6 rounded-2xl bg-black/40 border border-cyan-500/30">
+                  <h3 className="text-xl font-semibold text-white mb-3">{group.title}</h3>
+                  <ul className="text-slate-300 space-y-1">
+                    {group.links.map((l) => (
+                      <li key={l.href}><a className="text-cyan-400 underline" href={l.href} target="_blank" rel="noopener noreferrer">{l.name}: {new URL(l.href).hostname + new URL(l.href).pathname}</a></li>
+                    ))}
+                  </ul>
+                  <div className="text-sm text-slate-400 mt-3">{group.note}</div>
+                </div>
+              ))}
             </div>
             <div className="text-center mt-6">
               <Button href="/market-pricing" variant="secondary" className="px-8 py-4">Full Market Pricing</Button>
