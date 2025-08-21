@@ -25,7 +25,8 @@ const serviceCategories = [
       { name: 'AI Consciousness Simulation', href: '/ai-consciousness-simulation-platform', description: 'Simulate human consciousness', price: '$4,999/month' },
       { name: 'Autonomous AI Agents', href: '/autonomous-ai-agents-platform-2026', description: 'Create autonomous AI agents', price: '$199/month' },
       { name: 'AI Healthcare Companion', href: '/ai-healthcare-companion-2026', description: 'Revolutionary healthcare AI', price: '$399/month' },
-      { name: 'AI Content Creation Revolution', href: '/ai-content-creation-revolution', description: 'Unlimited AI content generation', price: '$599/month' }
+      { name: 'AI Content Creation Revolution', href: '/ai-content-creation-revolution', description: 'Unlimited AI content generation', price: '$599/month' },
+      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-platform', description: 'AI that understands emotions', price: '$799/month' }
     ]
   },
   {
@@ -94,6 +95,7 @@ const companyLinks = [
   { name: 'Home', href: '/', icon: Home },
   { name: 'About Us', href: '/about', icon: Users },
   { name: '2026 Services', href: '/2026-services-showcase', icon: Rocket },
+  { name: 'Revolutionary V4', href: '/revolutionary-2026-services-showcase-v4', icon: Sparkles },
   { name: 'Ultimate 2026', href: '/ultimate-2026-services-showcase', icon: Sparkles },
   { name: '2026 Pricing', href: '/revolutionary-2026-pricing', icon: DollarSign },
   { name: 'Case Studies', href: '/case-studies', icon: Briefcase },
