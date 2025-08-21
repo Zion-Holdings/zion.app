@@ -116,6 +116,7 @@ export default function NeoFuturisticFooter() {
     { name: 'Blog & Insights', href: '/blog' },
     { name: 'Case Studies', href: '/case-studies' },
     { name: 'Support Center', href: '/support' },
+    { name: 'Market Pricing', href: '/market-pricing' },
     { name: 'Resources', href: '/resources' }
   ];
 
