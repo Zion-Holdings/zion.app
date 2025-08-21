@@ -259,3 +259,5 @@ const FuturisticNavbar: React.FC = () => {
     </nav>
   );
 }
+
+export default FuturisticNavbar;

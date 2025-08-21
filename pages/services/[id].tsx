@@ -6,11 +6,16 @@ import UltraAdvancedFuturisticBackground from '../../components/ui/UltraAdvanced
 import Button from '../../components/ui/Button';
 import { enhancedRealMicroSaasServices } from '../../data/enhanced-real-micro-saas-services';
 import { additionalEnhancedServices } from '../../data/additional-real-services';
+import { extraServices } from '../../data/extra-services';
 
 export default function ServiceDetailPage() {
   const router = useRouter();
   const { id } = router.query as { id?: string };
-  const allServices = React.useMemo(() => [...enhancedRealMicroSaasServices, ...additionalEnhancedServices], []);
+  const allServices = React.useMemo(() => [
+    ...enhancedRealMicroSaasServices,
+    ...additionalEnhancedServices,
+    ...extraServices
+  ], []);
   const service = allServices.find(s => s.id === id);
 
   if (!service) return null;
