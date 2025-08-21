@@ -72,15 +72,15 @@ export default function HomePage() {
       }
     },
     {
-      title: '🏢 Enterprise IT Infrastructure Management',
-      description: 'Complete enterprise IT infrastructure with 99.99% uptime guarantee. Modern technology stack with AI operations and competitive pricing.',
-      price: 'Starting at $25,999/month',
-      features: ['Network infrastructure management', 'Server and storage management', 'Security monitoring and management', '24/7 infrastructure monitoring', 'Performance optimization', 'Disaster recovery planning', 'Compliance management', 'IT asset management', 'Help desk support', 'Strategic IT consulting'],
-      link: 'https://ziontechgroup.com/enterprise-it-infrastructure',
-      color: 'from-gray-600 to-blue-700',
-      marketData: '$1.2T IT services market, 8% annual growth',
-      competitors: 'IBM Global Services ($100K+), Accenture ($150K+), Deloitte ($200K+)',
-      savings: 'Save 75% vs. traditional consulting with modern technology stack',
+      title: '🏭 Autonomous AI Factory Platform',
+      description: 'Revolutionary autonomous AI factory platform that operates manufacturing facilities without human intervention. Achieves 24/7 production with 99.99% efficiency.',
+      price: 'Starting at $55,999/month',
+      features: ['Fully autonomous manufacturing', 'AI-powered quality control', 'Predictive maintenance automation', 'Smart inventory management', 'Real-time production optimization', 'AI-driven supply chain management', 'Automated quality assurance', 'Predictive analytics dashboard', 'Energy optimization', '24/7 autonomous operations'],
+      link: 'https://ziontechgroup.com/autonomous-ai-factory',
+      color: 'from-orange-600 to-red-700',
+      marketData: '$12T manufacturing market, AI segment growing 350% annually',
+      competitors: 'Traditional manufacturing automation',
+      savings: 'First-to-market autonomous AI factory with 400% ROI guarantee',
       contactInfo: {
         mobile: '+1 302 464 0950',
         email: 'kleber@ziontechgroup.com',
@@ -88,15 +88,15 @@ export default function HomePage() {
       }
     },
     {
-      title: '☁️ Cloud Migration & Optimization Service',
-      description: 'Seamless cloud migration with 50% cost reduction guarantee. Fixed pricing vs. hourly consulting rates.',
-      price: 'Starting at $15,999/month',
-      features: ['Cloud migration planning', 'Workload assessment', 'Cost optimization', 'Performance optimization', 'Security migration', 'Data migration', 'Application modernization', 'Cloud governance', 'Training and support', 'Post-migration optimization'],
-      link: 'https://ziontechgroup.com/cloud-migration-optimization',
-      color: 'from-blue-600 to-cyan-700',
-      marketData: '$400B cloud services market, 20% annual growth',
-      competitors: 'AWS Professional Services ($200/hour), Microsoft Consulting ($250/hour), Google Cloud ($180/hour)',
-      savings: 'Fixed pricing vs. hourly rates, guaranteed 50% cost reduction',
+      title: '🧬 AI Biotech Drug Discovery Platform',
+      description: 'Breakthrough AI platform that accelerates drug discovery by 1000x through quantum computing and machine learning. Perfect for pharmaceutical companies.',
+      price: 'Starting at $125,999/month',
+      features: ['AI-powered drug molecule design', 'Quantum computing drug simulation', 'Predictive drug efficacy modeling', 'Automated clinical trial design', 'Real-time drug development tracking', 'AI-driven target identification', 'Quantum molecular dynamics', 'Advanced biotech analytics', 'Regulatory compliance automation', '24/7 AI drug discovery operations'],
+      link: 'https://ziontechgroup.com/ai-biotech-drug-discovery',
+      color: 'from-green-600 to-blue-700',
+      marketData: '$1.5T pharmaceutical market, AI segment growing 600% annually',
+      competitors: 'Traditional drug discovery methods',
+      savings: '1000x faster drug discovery with 1000% ROI guarantee',
       contactInfo: {
         mobile: '+1 302 464 0950',
         email: 'kleber@ziontechgroup.com',
@@ -104,15 +104,15 @@ export default function HomePage() {
       }
     },
     {
-      title: '🛡️ Cybersecurity Operations Center (SOC)',
-      description: '24/7 cybersecurity monitoring with AI-powered threat detection. Comprehensive SOC services with AI threat detection.',
-      price: 'Starting at $18,999/month',
-      features: ['24/7 threat monitoring', 'AI-powered threat detection', 'Incident response automation', 'Security analytics dashboard', 'Threat intelligence', 'Vulnerability management', 'Security compliance', 'Security awareness training', 'Penetration testing', 'Security consulting'],
-      link: 'https://ziontechgroup.com/cybersecurity-operations-center',
-      color: 'from-red-600 to-pink-700',
-      marketData: '$200B cybersecurity market, 15% annual growth',
-      competitors: 'CrowdStrike Falcon Complete ($8.99/user/month), Palo Alto Networks Cortex ($50K+)',
-      savings: 'Comprehensive SOC services vs. basic endpoint protection',
+      title: '🛰️ Quantum Space Communications Network',
+      description: 'World\'s first quantum-secured space communication network for unhackable communication between Earth, satellites, and space stations.',
+      price: 'Starting at $75,999/month',
+      features: ['Quantum-secured space communication', 'Satellite quantum key distribution', 'Interplanetary communication protocols', 'Quantum encryption for space data', 'Real-time space communication monitoring', 'Quantum-secured satellite networks', 'Space debris tracking and avoidance', 'Quantum communication ground stations', 'Advanced space analytics dashboard', '24/7 quantum space operations center'],
+      link: 'https://ziontechgroup.com/quantum-space-communications',
+      color: 'from-indigo-600 to-purple-700',
+      marketData: '$350B space market, quantum segment growing 500% annually',
+      competitors: 'Traditional space communication systems',
+      savings: 'First-to-market quantum space security with 600% ROI guarantee',
       contactInfo: {
         mobile: '+1 302 464 0950',
         email: 'kleber@ziontechgroup.com',
@@ -120,47 +120,15 @@ export default function HomePage() {
       }
     },
     {
-      title: '🏭 Quantum AI Content Factory',
-      description: 'Massive-scale content generation with quantum AI creativity. Generate content 1000x faster than traditional methods.',
-      price: 'Starting at $4,999/month',
-      features: ['Quantum AI content generation', 'Multi-media content creation', 'Real-time content optimization', 'Brand voice consistency', 'SEO optimization', 'Content personalization', 'Multi-language support', 'Performance analytics', 'API for integrations', '24/7 content generation'],
-      link: 'https://ziontechgroup.com/quantum-ai-content-factory',
-      color: 'from-blue-600 to-cyan-700',
-      marketData: '$5B AI content market, 300% annual growth',
-      competitors: 'Jasper ($39-99), Copy.ai ($36-186), Writesonic ($12.67-100)',
-      savings: '1000x faster content generation with quantum AI creativity',
-      contactInfo: {
-        mobile: '+1 302 464 0950',
-        email: 'kleber@ziontechgroup.com',
-        address: '364 E Main St STE 1008 Middletown DE 19709'
-      }
-    },
-    {
-      title: '🤖 AI Autonomous Robotics Platform',
-      description: 'Next-generation autonomous robotics for industrial automation. Achieve 600% ROI through increased productivity and reduced labor costs.',
-      price: 'Starting at $1,299/month',
-      features: ['Autonomous robot navigation', 'AI-powered decision making', 'Computer vision integration', 'Adaptive learning algorithms', 'Multi-robot coordination', 'Safety monitoring system', 'Performance analytics', 'Remote operation interface', 'API for robot control', 'Compliance with safety standards'],
-      link: 'https://ziontechgroup.com/ai-autonomous-robotics',
-      color: 'from-green-600 to-emerald-700',
-      marketData: '$12.5B autonomous robotics market, 320% annual growth',
-      competitors: 'Boston Dynamics ($100K+), ABB ($50K+)',
-      savings: 'Accessible pricing and comprehensive platform',
-      contactInfo: {
-        mobile: '+1 302 464 0950',
-        email: 'kleber@ziontechgroup.com',
-        address: '364 E Main St STE 1008 Middletown DE 19709'
-      }
-    },
-    {
-      title: '🛡️ AI Cybersecurity Threat Hunting',
-      description: 'Proactive threat detection and response with AI-powered security intelligence. Save $2M annually through improved threat detection.',
-      price: 'Starting at $399/month',
-      features: ['AI-powered threat hunting', 'Real-time anomaly detection', 'Behavioral analysis', 'Threat intelligence feeds', 'Automated incident response', 'Security analytics dashboard', 'Compliance reporting', 'API for SIEM integration', 'Multi-cloud security', 'Zero-day threat detection'],
-      link: 'https://ziontechgroup.com/ai-cybersecurity-threat-hunting',
-      color: 'from-red-600 to-orange-700',
-      marketData: '$15.8B AI cybersecurity market, 250% annual growth',
-      competitors: 'Darktrace ($50K+), CrowdStrike ($100K+)',
-      savings: 'Accessible pricing and comprehensive security',
+      title: '☁️ Quantum Cloud Infrastructure',
+      description: 'Next-generation quantum-powered cloud infrastructure with unprecedented performance, security, and scalability for quantum-grade computing.',
+      price: 'Starting at $45,999/month',
+      features: ['Quantum computing resources', 'Quantum-secured networking', 'Quantum encryption at rest and in transit', 'Quantum load balancing', 'Quantum database optimization', 'Quantum machine learning acceleration', 'Quantum blockchain integration', 'Quantum IoT platform', 'Quantum analytics engine', '24/7 quantum operations center'],
+      link: 'https://ziontechgroup.com/quantum-cloud-infrastructure',
+      color: 'from-blue-600 to-indigo-700',
+      marketData: '$400B cloud market, quantum segment growing 400% annually',
+      competitors: 'AWS, Azure, Google Cloud (lack quantum capabilities)',
+      savings: 'First-to-market quantum cloud with 300% ROI guarantee',
       contactInfo: {
         mobile: '+1 302 464 0950',
         email: 'kleber@ziontechgroup.com',
@@ -187,18 +155,25 @@ export default function HomePage() {
     .slice(0, 12);
 
   return (
-    <EnhancedQuantumBackground intensity={1.2} variant="quantum">
+    <div className="min-h-screen bg-black text-white relative overflow-hidden">
+      {/* Enhanced Background Effects */}
+      <div className="quantum-matrix-grid"></div>
+      <div className="holographic-rings"></div>
+      <div className="neural-network-pattern"></div>
+      <div className="cyberpunk-grid"></div>
+      <div className="quantum-field-effect"></div>
+      
       <Head>
-        <title>Zion Tech Group - Revolutionary AI, Quantum & IT Services | 500+ Solutions</title>
-        <meta name="description" content="Zion Tech Group offers 500+ revolutionary AI, quantum computing, and IT services. Achieve 1000% ROI with our cutting-edge solutions. Contact: +1 302 464 0950" />
-        <meta name="keywords" content="AI services, quantum computing, IT services, micro SaaS, cybersecurity, cloud migration, neural interface, quantum internet" />
-        <meta name="author" content="Zion Tech Group" />
-        <meta name="robots" content="index, follow" />
+        <title>Zion Tech Group - Revolutionary AI, Quantum & IT Services</title>
+        <meta name="description" content="Leading provider of revolutionary AI, quantum computing, and IT services. 500+ innovative solutions with 99.99% uptime guarantee and 1000% ROI." />
+        <meta name="keywords" content="AI services, quantum computing, IT services, micro SAAS, cybersecurity, cloud infrastructure, neural interface, space technology, biotech" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
         <meta property="og:title" content="Zion Tech Group - Revolutionary AI, Quantum & IT Services" />
-        <meta property="og:description" content="500+ cutting-edge services with 1000% ROI guarantee. Contact: +1 302 464 0950" />
-        <meta property="og:url" content="https://ziontechgroup.com" />
+        <meta property="og:description" content="Leading provider of revolutionary AI, quantum computing, and IT services with 500+ innovative solutions." />
         <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://ziontechgroup.com" />
+        <meta property="og:url" content="https://ziontechgroup.com" />
+        <meta property="og:image" content="https://ziontechgroup.com/og-image.jpg" />
       </Head>
 
       {/* Hero Section */}
@@ -512,6 +487,6 @@ export default function HomePage() {
           </div>
         </div>
       </footer>
-    </EnhancedQuantumBackground>
+    </div>
   );
 }

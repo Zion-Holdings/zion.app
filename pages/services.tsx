@@ -117,40 +117,54 @@ export default function ServicesPage() {
   };
 
   return (
-    <EnhancedQuantumBackground intensity={1.0} variant="holographic">
+    <div className="min-h-screen bg-black text-white relative overflow-hidden">
+      {/* Enhanced Background Effects */}
+      <div className="quantum-matrix-grid"></div>
+      <div className="holographic-rings"></div>
+      <div className="neural-network-pattern"></div>
+      <div className="cyberpunk-grid"></div>
+      <div className="quantum-field-effect"></div>
+      
       <Head>
-        <title>500+ Revolutionary Services - Zion Tech Group | AI, Quantum & IT Solutions</title>
-        <meta name="description" content="Explore 500+ revolutionary AI, quantum computing, and IT services. From neural interfaces to enterprise solutions. Contact: +1 302 464 0950" />
-        <meta name="keywords" content="AI services, quantum computing, IT services, micro SaaS, cybersecurity, cloud migration, neural interface" />
-        <meta name="author" content="Zion Tech Group" />
-        <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="500+ Revolutionary Services - Zion Tech Group" />
-        <meta property="og:description" content="Explore cutting-edge AI, quantum, and IT services. Contact: +1 302 464 0950" />
-        <meta property="og:url" content="https://ziontechgroup.com/services" />
+        <title>Services - Zion Tech Group | 500+ Revolutionary AI, Quantum & IT Solutions</title>
+        <meta name="description" content="Explore our comprehensive portfolio of 500+ revolutionary AI, quantum computing, and IT services. From neural interfaces to quantum cybersecurity." />
+        <meta name="keywords" content="AI services, quantum computing, IT services, micro SAAS, cybersecurity, cloud infrastructure, neural interface, space technology, biotech" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta property="og:title" content="Services - Zion Tech Group | 500+ Revolutionary Solutions" />
+        <meta property="og:description" content="Explore our comprehensive portfolio of revolutionary AI, quantum computing, and IT services." />
         <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://ziontechgroup.com/services" />
+        <meta property="og:url" content="https://ziontechgroup.com/services" />
+        <meta property="og:image" content="https://ziontechgroup.com/og-image.jpg" />
       </Head>
 
-      {/* Header */}
-      <section className="relative z-10 pt-20 pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-6">
-              500+ Revolutionary Services
+      {/* Enhanced Header */}
+      <header className="relative z-10 bg-black/80 backdrop-blur-xl border-b border-cyan-500/20">
+        <div className="container mx-auto px-4 py-6">
+          <div className="text-center">
+            <h1 className="quantum-text text-5xl md:text-6xl font-bold mb-4">
+              Revolutionary Services & Solutions
             </h1>
-            <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-              Discover cutting-edge AI, quantum computing, and IT solutions that redefine what's possible
+            <p className="holographic-text text-xl md:text-2xl mb-6 max-w-4xl mx-auto">
+              Discover our comprehensive portfolio of 500+ cutting-edge AI, quantum computing, and IT services
             </p>
-            <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-              From neural quantum brain interfaces to enterprise IT infrastructure, we offer the most advanced technology solutions available
-            </p>
-          </motion.div>
+            <div className="flex flex-wrap justify-center gap-4 text-sm">
+              <span className="px-4 py-2 bg-cyan-500/20 border border-cyan-500/40 rounded-full text-cyan-400">
+                {allServices.length}+ Services
+              </span>
+              <span className="px-4 py-2 bg-purple-500/20 border border-purple-500/40 rounded-full text-purple-400">
+                99.99% Uptime
+              </span>
+              <span className="px-4 py-2 bg-green-500/20 border border-green-500/40 rounded-full text-green-400">
+                1000% ROI Guarantee
+              </span>
+              <span className="px-4 py-2 bg-pink-500/20 border border-pink-500/40 rounded-full text-pink-400">
+                24/7 AI Support
+              </span>
+            </div>
+          </div>
         </div>
-      </section>
+      </header>
 
       {/* Search and Filters */}
       <section className="relative z-10 py-8 px-4 sm:px-6 lg:px-8">
@@ -336,6 +350,6 @@ export default function ServicesPage() {
           </motion.div>
         </div>
       </section>
-    </EnhancedQuantumBackground>
+    </div>
   );
 }

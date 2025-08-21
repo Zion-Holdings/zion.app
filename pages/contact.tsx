@@ -254,27 +254,51 @@ export default function ContactPage() {
   ];
 
   return (
-    <UltraFuturisticBackground variant="neural" intensity="medium">
+    <div className="min-h-screen bg-black text-white relative overflow-hidden">
+      {/* Enhanced Background Effects */}
+      <div className="quantum-matrix-grid"></div>
+      <div className="holographic-rings"></div>
+      <div className="neural-network-pattern"></div>
+      <div className="cyberpunk-grid"></div>
+      <div className="quantum-field-effect"></div>
+      
       <Head>
-        <title>Contact Us - Zion Tech Group | Get Expert AI & Quantum Computing Support</title>
-        <meta name="description" content="Contact Zion Tech Group for expert AI & quantum computing support. Available 24/7 via phone, email, or visit our Delaware headquarters. Get started with your revolutionary tech project today." />
-        <meta name="keywords" content="contact, AI support, quantum computing support, tech consultation, Zion Tech Group contact" />
-        <meta name="author" content="Zion Tech Group" />
-        <meta name="robots" content="index, follow" />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content="Contact Us - Zion Tech Group | Get Expert AI & Quantum Computing Support" />
-        <meta property="og:description" content="Contact Zion Tech Group for expert AI & quantum computing support. Available 24/7 via phone, email, or visit our Delaware headquarters." />
+        <title>Contact Us - Zion Tech Group | Revolutionary AI, Quantum & IT Services</title>
+        <meta name="description" content="Contact Zion Tech Group for revolutionary AI, quantum computing, and IT services. Get in touch for consultations, demos, and partnership opportunities." />
+        <meta name="keywords" content="contact, AI services, quantum computing, IT services, consultation, partnership, Zion Tech Group" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta property="og:title" content="Contact Us - Zion Tech Group" />
+        <meta property="og:description" content="Contact Zion Tech Group for revolutionary AI, quantum computing, and IT services." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://ziontechgroup.com/contact" />
         <meta property="og:image" content="https://ziontechgroup.com/og-image.jpg" />
-        
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Contact Us - Zion Tech Group | Get Expert AI & Quantum Computing Support" />
-        <meta name="twitter:description" content="Contact Zion Tech Group for expert AI & quantum computing support. Available 24/7 via phone, email, or visit our Delaware headquarters." />
-        <meta name="twitter:image" content="https://ziontechgroup.com/og-image.jpg" />
       </Head>
+
+      {/* Enhanced Header */}
+      <header className="relative z-10 bg-black/80 backdrop-blur-xl border-b border-green-500/20">
+        <div className="container mx-auto px-4 py-8">
+          <div className="text-center">
+            <h1 className="neural-text text-5xl md:text-6xl font-bold mb-6">
+              Get In Touch
+            </h1>
+            <p className="quantum-text text-xl md:text-2xl mb-8 max-w-4xl mx-auto">
+              Ready to revolutionize your business with cutting-edge AI, quantum computing, and IT solutions?
+            </p>
+            <div className="flex flex-wrap justify-center gap-6 text-sm">
+              <span className="px-6 py-3 bg-green-500/20 border border-green-500/40 rounded-full text-green-400 font-semibold">
+                📞 +1 302 464 0950
+              </span>
+              <span className="px-6 py-3 bg-cyan-500/20 border border-cyan-500/40 rounded-full text-cyan-400 font-semibold">
+                ✉️ kleber@ziontechgroup.com
+              </span>
+              <span className="px-6 py-3 bg-purple-500/20 border border-purple-500/40 rounded-full text-purple-400 font-semibold">
+                🌐 ziontechgroup.com
+              </span>
+            </div>
+          </div>
+        </div>
+      </header>
 
       <div className="container mx-auto px-4 py-12">
         {/* Hero Section */}
@@ -745,6 +769,6 @@ export default function ContactPage() {
           </UltraFuturisticCard>
         </div>
       </div>
-    </UltraFuturisticBackground>
+    </div>
   );
 }

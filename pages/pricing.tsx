@@ -207,27 +207,54 @@ export default function PricingPage() {
   ];
 
   return (
-    <UltraFuturisticBackground variant="quantum" intensity="high">
+    <div className="min-h-screen bg-black text-white relative overflow-hidden">
+      {/* Enhanced Background Effects */}
+      <div className="quantum-matrix-grid"></div>
+      <div className="holographic-rings"></div>
+      <div className="neural-network-pattern"></div>
+      <div className="cyberpunk-grid"></div>
+      <div className="quantum-field-effect"></div>
+      
       <Head>
-        <title>Pricing - Zion Tech Group | Transparent Pricing for Revolutionary AI & Quantum Services</title>
-        <meta name="description" content="Transparent pricing for 500+ revolutionary micro SaaS services. Choose from Starter ($49/month), Professional ($149/month), or Enterprise ($499/month) plans with generous free trials." />
-        <meta name="keywords" content="pricing, micro SaaS pricing, AI services pricing, quantum computing pricing, enterprise pricing" />
-        <meta name="author" content="Zion Tech Group" />
-        <meta name="robots" content="index, follow" />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content="Pricing - Zion Tech Group | Transparent Pricing for Revolutionary AI & Quantum Services" />
-        <meta property="og:description" content="Transparent pricing for 500+ revolutionary micro SaaS services. Choose from Starter ($49/month), Professional ($149/month), or Enterprise ($499/month) plans." />
+        <title>Pricing - Zion Tech Group | Revolutionary AI, Quantum & IT Services</title>
+        <meta name="description" content="Transparent pricing for our revolutionary AI, quantum computing, and IT services. Competitive rates with guaranteed ROI and flexible payment options." />
+        <meta name="keywords" content="pricing, AI services pricing, quantum computing pricing, IT services pricing, ROI guarantee, Zion Tech Group" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta property="og:title" content="Pricing - Zion Tech Group" />
+        <meta property="og:description" content="Transparent pricing for our revolutionary AI, quantum computing, and IT services." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://ziontechgroup.com/pricing" />
         <meta property="og:image" content="https://ziontechgroup.com/og-image.jpg" />
-        
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Pricing - Zion Tech Group | Transparent Pricing for Revolutionary AI & Quantum Services" />
-        <meta name="twitter:description" content="Transparent pricing for 500+ revolutionary micro SaaS services. Choose from Starter ($49/month), Professional ($149/month), or Enterprise ($499/month) plans." />
-        <meta name="twitter:image" content="https://ziontechgroup.com/og-image.jpg" />
       </Head>
+
+      {/* Enhanced Header */}
+      <header className="relative z-10 bg-black/80 backdrop-blur-xl border-b border-yellow-500/20">
+        <div className="container mx-auto px-4 py-8">
+          <div className="text-center">
+            <h1 className="cyberpunk-text text-5xl md:text-6xl font-bold mb-6">
+              Transparent Pricing
+            </h1>
+            <p className="holographic-text text-xl md:text-2xl mb-8 max-w-4xl mx-auto">
+              Competitive pricing for revolutionary AI, quantum computing, and IT services with guaranteed ROI
+            </p>
+            <div className="flex flex-wrap justify-center gap-6 text-sm">
+              <span className="px-6 py-3 bg-yellow-500/20 border border-yellow-500/40 rounded-full text-yellow-400 font-semibold">
+                💰 Competitive Rates
+              </span>
+              <span className="px-6 py-3 bg-green-500/20 border border-green-500/40 rounded-full text-green-400 font-semibold">
+                📈 ROI Guarantee
+              </span>
+              <span className="px-6 py-3 bg-purple-500/20 border border-purple-500/40 rounded-full text-purple-400 font-semibold">
+                🔄 Flexible Plans
+              </span>
+              <span className="px-6 py-3 bg-cyan-500/20 border border-cyan-500/40 rounded-full text-cyan-400 font-semibold">
+                🎯 Custom Solutions
+              </span>
+            </div>
+          </div>
+        </div>
+      </header>
 
       <div className="container mx-auto px-4 py-12">
         {/* Hero Section */}
@@ -526,6 +553,6 @@ export default function PricingPage() {
           </UltraFuturisticCard>
         </div>
       </div>
-    </UltraFuturisticBackground>
+    </div>
   );
 }
