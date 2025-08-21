@@ -7,6 +7,16 @@ export default function Document() {
         <link rel="icon" href="/favicon.ico" />
         <meta name="theme-color" content="#0a0a0a" />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <meta property="og:site_name" content="Zion Tech Group" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ziontechgroup.com" />
+        <meta property="og:title" content="Zion Tech Group — Revolutionary Micro SaaS, AI and IT Services" />
+        <meta property="og:description" content="Hundreds of real, productized services across AI, Cloud, Security, Observability and more. Transparent pricing and fast onboarding." />
+        <meta property="og:image" content="https://ziontechgroup.com/og.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Zion Tech Group — Revolutionary Micro SaaS, AI and IT Services" />
+        <meta name="twitter:description" content="Hundreds of real, productized services across AI, Cloud, Security, Observability and more." />
+        <meta name="twitter:image" content="https://ziontechgroup.com/og.png" />
         <script defer data-domain="ziontechgroup.com" src="https://plausible.io/js/script.js"></script>
         <script
           type="application/ld+json"

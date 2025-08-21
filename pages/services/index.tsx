@@ -46,15 +46,22 @@ export default function ServicesIndexPage() {
     'AI & Data': 'AI & Data',
     'AI & Machine Learning': 'AI & Data',
     'GenAI': 'AI & Data',
+    'Data': 'AI & Data',
     'Cloud & FinOps': 'Cloud & FinOps',
     'Cloud & Data': 'Cloud & FinOps',
+    'Cloud & Infrastructure': 'Cloud & FinOps',
     'Platform Engineering': 'Cloud & FinOps',
     'Observability': 'Observability',
     'Observability & Telemetry': 'Observability',
     'Quality & Monitoring': 'Quality & Monitoring',
     'Security & Reliability': 'Quality & Monitoring',
     'Security & Compliance': 'Quality & Monitoring',
+    'Security': 'Quality & Monitoring',
+    'Compliance': 'Quality & Monitoring',
+    'Operations': 'Quality & Monitoring',
+    'Reliability': 'Quality & Monitoring',
     'Developer Tools': 'Developer Tools',
+    'Developer Experience': 'Developer Tools',
     'Growth & Marketing': 'Developer Tools'
   };
   for (const s of all) {

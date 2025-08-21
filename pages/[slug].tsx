@@ -215,8 +215,16 @@ export const getStaticPaths: GetStaticPaths = async () => {
     }
   }
 
+  // Exclude any slug that already has an explicit top-level page under /pages/*.tsx
+  const fs = await import('fs');
+  const path = await import('path');
+  const pagesDir = path.join(process.cwd(), 'pages');
+  const topLevelFiles = fs.readdirSync(pagesDir).filter((f: string) => f.endsWith('.tsx'));
+  const explicitSlugs = new Set(topLevelFiles.map((f: string) => f.replace(/\.tsx$/, '')));
+  const filtered = Array.from(candidateSlugs).filter((slug) => !explicitSlugs.has(slug));
+
   return {
-    paths: Array.from(candidateSlugs).map((slug) => ({ params: { slug } })),
+    paths: filtered.map((slug) => ({ params: { slug } })),
     fallback: true
   };
 };
