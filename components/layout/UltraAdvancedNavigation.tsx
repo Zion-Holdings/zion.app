@@ -28,9 +28,9 @@ const UltraAdvancedNavigation: React.FC = () => {
 			{ name: 'Services', href: '/services', icon: Monitor, description: 'Directory of services' },
 			{ name: 'Advertising', href: '/services-advertising', icon: DollarSign, description: 'Benefits & pricing references' },
 			{ name: 'Market Pricing', href: '/market-pricing', icon: DollarSign, description: 'Vendor references' },
+			{ name: 'Pricing', href: '/pricing', icon: DollarSign, description: 'Transparent, market-aligned pricing' },
 			{ name: 'Contact', href: '/contact' }
 		];
-
 	return (
 		<nav
 			className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -59,6 +59,7 @@ const UltraAdvancedNavigation: React.FC = () => {
 							</div>
 						</Link>
 					</motion.div>
+>>>>>>> origin/main
 
 					{/* Desktop nav */}
 					<div className="hidden lg:flex items-center space-x-6">
