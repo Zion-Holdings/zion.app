@@ -3,8 +3,9 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shield, Mail, MapPin, Rocket } from 'lucide-react';
 import Button from '../components/ui/Button';
-import EnhancedFuturisticBackground from '../components/ui/EnhancedFuturisticBackground';
-import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
+import UltraQuantumHolographicBackground from '../components/ui/UltraQuantumHolographicBackground';
+import UltraInnovativeServiceShowcase from '../components/sections/UltraInnovativeServiceShowcase';
+import UltraFuturisticHero from '../components/sections/UltraFuturisticHero';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
@@ -66,11 +67,11 @@ export default function HomePage() {
   };
 
   return (
-    <EnhancedFuturisticBackground 
-      intensity="high" 
+    <UltraQuantumHolographicBackground 
+      intensity="ultra" 
       colorScheme="quantum"
-      particleCount={200}
-      animationSpeed={1.2}
+      particleCount={400}
+      animationSpeed={1.8}
     >
       <div className="min-h-screen">
         <Head>
@@ -86,141 +87,8 @@ export default function HomePage() {
           <link rel="canonical" href="https://ziontechgroup.com" />
         </Head>
 
-        {/* Hero Section */}
-        <section className="relative z-10 pt-20 pb-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              {/* Futuristic Logo Animation */}
-              <motion.div
-                initial={{ scale: 0.8, rotate: -5 }}
-                animate={{ scale: 1, rotate: 0 }}
-                transition={{ duration: 1, delay: 0.2 }}
-                className="mb-8"
-              >
-                <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-cyan-500 via-purple-600 to-pink-500 rounded-3xl shadow-2xl mb-6 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse"></div>
-                  <Rocket className="w-12 h-12 text-white relative z-10" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-3xl opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-              </motion.div>
-
-              <motion.h1 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="text-6xl md:text-8xl font-black bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-6 relative"
-              >
-                <span className="relative">
-                  Zion Tech Group
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 blur-xl opacity-30 animate-pulse"></div>
-                </span>
-              </motion.h1>
-
-              <motion.p 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-2xl md:text-3xl text-gray-200 mb-8 max-w-5xl mx-auto font-medium"
-              >
-                Revolutionary <span className="text-cyan-400 font-bold">AI</span>, <span className="text-purple-400 font-bold">Quantum Computing</span> & <span className="text-pink-400 font-bold">IT Services</span>
-              </motion.p>
-
-              <motion.p 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-                className="text-lg md:text-xl text-gray-400 mb-12 max-w-4xl mx-auto leading-relaxed"
-              >
-                <span className="text-cyan-300 font-semibold">800+</span> cutting-edge services delivering <span className="text-green-400 font-bold">1000% ROI</span>. From neural quantum brain interfaces to enterprise IT infrastructure.
-              </motion.p>
-              
-              {/* Enhanced CTA Buttons */}
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                className="flex flex-col sm:flex-row gap-6 justify-center mb-16"
-              >
-                <motion.div
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <Button 
-                    href="/services" 
-                    variant="primary"
-                    className="text-lg px-10 py-5 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 shadow-2xl hover:shadow-cyan-500/25"
-                  >
-                    <span className="flex items-center">
-                      <Rocket className="mr-3 w-6 h-6" />
-                      Explore 800+ Services
-                      <ArrowRight className="ml-3 w-5 h-5" />
-                    </span>
-                  </Button>
-                </motion.div>
-
-                <motion.div
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{ duration: 0.2, delay: 0.1 }}
-                >
-                  <Button 
-                    href="/market-pricing" 
-                    variant="secondary"
-                    className="text-lg px-10 py-5 bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 shadow-2xl hover:shadow-purple-500/25"
-                  >
-                    <span className="flex items-center">
-                      <TrendingUp className="mr-3 w-6 h-6" />
-                      See Market Pricing
-                    </span>
-                  </Button>
-                </motion.div>
-
-                <motion.div
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{ duration: 0.2, delay: 0.2 }}
-                >
-                  <Button 
-                    href="/contact" 
-                    variant="secondary"
-                    className="text-lg px-10 py-5 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 shadow-2xl hover:shadow-green-500/25"
-                  >
-                    <span className="flex items-center">
-                      <Phone className="mr-3 w-6 h-6" />
-                      Get Started Today
-                    </span>
-                  </Button>
-                </motion.div>
-              </motion.div>
-
-              {/* Floating Tech Icons */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 0.8 }}
-                className="flex justify-center space-x-8 mb-8"
-              >
-                {['🧠', '⚛️', '🔒', '☁️', '🌐', '🚀'].map((icon, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
-                    className="text-4xl md:text-5xl animate-bounce"
-                    style={{ animationDelay: `${index * 0.2}s` }}
-                  >
-                    {icon}
-                  </motion.div>
-                ))}
-              </motion.div>
-            </motion.div>
-          </div>
-        </section>
+        {/* Ultra Futuristic Hero Section */}
+        <UltraFuturisticHero className="pt-20 pb-16" />
 
         {/* Service Statistics */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
@@ -346,11 +214,10 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Enhanced Service Showcase */}
-        <EnhancedServiceShowcase 
-          title="Revolutionary AI & Technology Services"
-          subtitle="Discover the future of business with our cutting-edge solutions"
-          showFilters={true}
+        {/* Ultra Innovative Service Showcase */}
+        <UltraInnovativeServiceShowcase 
+          maxServices={6}
+          className="py-24"
         />
 
         {/* Featured Offers */}
@@ -624,6 +491,6 @@ export default function HomePage() {
           </div>
         </section>
       </div>
-    </EnhancedFuturisticBackground>
+    </UltraQuantumHolographicBackground>
   );
 }
