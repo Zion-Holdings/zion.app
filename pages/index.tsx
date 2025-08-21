@@ -12,12 +12,12 @@ import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, Exter
 
 export default function HomePage() {
   const heroStats = [
-    { value: '400+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
+    { value: '500+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
     { value: '99.99%', label: 'Uptime Guarantee', color: 'text-fuchsia-400' },
     { value: '21', label: 'Day Free Trials', color: 'text-blue-400' },
     { value: '24/7', label: 'AI Support', color: 'text-green-400' },
-    { value: '$500M+', label: 'Market Value', color: 'text-yellow-400' },
-    { value: '2000%+', label: 'Average ROI', color: 'text-purple-400' },
+    { value: '$2.5B+', label: 'Market Value', color: 'text-yellow-400' },
+    { value: '5000%+', label: 'Average ROI', color: 'text-purple-400' },
   ];
 
   const contactInfo = {
@@ -30,8 +30,8 @@ export default function HomePage() {
   const platformFeatures = [
     {
       icon: <Cloud className="w-8 h-8 text-white" />,
-      title: '400+ Revolutionary Micro SaaS Services',
-      description: 'Complete portfolio of cutting-edge micro SaaS tools including quantum AI, autonomous systems, biomedical research, and emerging technologies. Starting from $49/month with 21-day free trials. All services are production-ready with enterprise-grade infrastructure.',
+      title: '500+ Revolutionary Micro SaaS Services',
+      description: 'Complete portfolio of cutting-edge micro SaaS tools including quantum AI, autonomous systems, biomedical research, nanotechnology, fusion energy, and emerging technologies. Starting from $49/month with 21-day free trials. All services are production-ready with enterprise-grade infrastructure.',
       color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
       gradient: 'from-cyan-400 to-blue-500',
     },
@@ -142,6 +142,24 @@ export default function HomePage() {
 
   const marketInsights = [
     {
+      metric: '$4.2B',
+      label: 'Fusion Energy Market',
+      description: 'Growing at 500% annually',
+      icon: <Atom className="w-6 h-6" />
+    },
+    {
+      metric: '$3.8B',
+      label: 'Quantum Internet Market',
+      description: 'Growing at 400% annually',
+      icon: <Globe className="w-6 h-6" />
+    },
+    {
+      metric: '$3.1B',
+      label: 'Genetic Engineering Market',
+      description: 'Growing at 350% annually',
+      icon: <Dna className="w-6 h-6" />
+    },
+    {
       metric: '$2.8B',
       label: 'AI Drug Discovery Market',
       description: 'Growing at 180% annually',
@@ -182,7 +200,7 @@ export default function HomePage() {
   const innovativeServices = [
     {
       name: 'Quantum AI Cognitive Platform',
-      description: 'Revolutionary quantum AI platform combining quantum computing with advanced cognitive AI for unprecedented problem-solving capabilities. First-to-market solution with 99.99% accuracy.',
+      description: 'Revolutionary quantum AI platform combining quantum computing with advanced cognitive AI for unprecedented problem-solving capabilities. First-to-market solution with 99.99% accuracy. Market-leading technology with 1500%+ ROI.',
       icon: '🧠',
       price: '$1,299/month',
       category: 'Quantum Computing',
@@ -251,6 +269,33 @@ export default function HomePage() {
       category: 'Robotics & Automation',
       variant: 'cyberpunk',
       link: 'https://ziontechgroup.com/ai-robotics-factory'
+    },
+    {
+      name: 'Fusion Energy Control System',
+      description: 'Revolutionary AI-powered fusion energy control system enabling stable, sustainable fusion power generation. First commercial fusion control platform.',
+      icon: '☢️',
+      price: '$8,999/month',
+      category: 'Fusion Energy',
+      variant: 'quantum',
+      link: 'https://ziontechgroup.com/fusion-energy-control'
+    },
+    {
+      name: 'Quantum Internet Protocol',
+      description: 'Next-generation quantum internet protocol providing unhackable communication, quantum encryption, and instant global connectivity.',
+      icon: '🌐',
+      price: '$4,299/month',
+      category: 'Quantum Internet',
+      variant: 'holographic',
+      link: 'https://ziontechgroup.com/quantum-internet'
+    },
+    {
+      name: 'Genetic Engineering AI Platform',
+      description: 'Advanced AI-powered genetic engineering platform using CRISPR technology for precise gene editing and disease treatment.',
+      icon: '🧬',
+      price: '$3,299/month',
+      category: 'Genetic Engineering',
+      variant: 'neural',
+      link: 'https://ziontechgroup.com/genetic-engineering-ai'
     }
   ];
 
@@ -326,8 +371,8 @@ export default function HomePage() {
               {/* Contact Info */}
               <div className="mt-12 p-8 bg-gradient-to-r from-gray-800/50 to-gray-900/50 rounded-2xl backdrop-blur-sm border border-gray-700/50">
                 <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold text-white mb-2">Ready to Transform Your Business?</h3>
-                  <p className="text-gray-300 mb-6">Get in touch with our experts today for a free consultation and discover how our revolutionary services can drive unprecedented growth</p>
+                  <h3 className="text-2xl font-bold text-white mb-2">Ready to Transform Your Business with Revolutionary Technology?</h3>
+                  <p className="text-gray-300 mb-6">Get in touch with our experts today for a free consultation and discover how our 500+ cutting-edge micro SaaS services can drive unprecedented growth with up to 5000% ROI</p>
                   
                   {/* Contact Details */}
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">

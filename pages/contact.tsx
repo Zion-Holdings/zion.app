@@ -87,17 +87,22 @@ export default function ContactPage() {
     {
       icon: <Star className="w-5 h-5" />,
       title: 'Expert Team',
-      description: 'Certified professionals with 10+ years of experience'
+      description: 'Certified professionals with 10+ years of experience in cutting-edge technologies'
     },
     {
       icon: <Zap className="w-5 h-5" />,
       title: 'Fast Response',
-      description: 'Average response time under 2 hours'
+      description: 'Average response time under 2 hours with 24/7 availability'
     },
     {
       icon: <Shield className="w-5 h-5" />,
       title: 'Secure & Reliable',
-      description: 'Enterprise-grade security and 99.9% uptime'
+      description: 'Enterprise-grade security and 99.99% uptime guarantee'
+    },
+    {
+      icon: <Users className="w-5 h-5" />,
+      title: '500+ Services',
+      description: 'Access to revolutionary micro SaaS services with up to 5000% ROI'
     },
     {
       icon: <Users className="w-5 h-5" />,

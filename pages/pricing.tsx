@@ -92,35 +92,35 @@ export default function PricingPage() {
   const addOnServices = [
     {
       name: 'Custom AI Model Development',
-      description: 'Tailored AI solutions for your specific business needs',
+      description: 'Tailored AI solutions for your specific business needs with 1500%+ ROI guarantee',
       price: 'From $2,500',
       period: '/project',
       icon: '🧠',
       color: 'from-purple-500 to-pink-600'
     },
     {
-      name: 'Quantum Computing Access',
-      description: 'Direct access to quantum computing resources',
+      name: 'Quantum Computing Solutions',
+      description: 'Revolutionary quantum computing services for complex problem solving',
       price: 'From $5,000',
       period: '/month',
       icon: '⚛️',
-      color: 'from-indigo-500 to-purple-600'
+      color: 'from-blue-500 to-indigo-600'
     },
     {
-      name: 'Synthetic Biology Platform',
-      description: 'Advanced genetic engineering and synthetic biology tools',
-      price: 'From $3,500',
+      name: 'Fusion Energy Implementation',
+      description: 'AI-powered fusion energy control systems for sustainable power generation',
+      price: 'From $15,000',
       period: '/month',
-      icon: '🧬',
-      color: 'from-green-500 to-emerald-600'
+      icon: '☢️',
+      color: 'from-orange-500 to-red-600'
     },
     {
-      name: 'Brain-Computer Interface',
-      description: 'Neural interface development and implementation',
+      name: 'Genetic Engineering Platform',
+      description: 'Advanced CRISPR technology and genetic research platforms',
       price: 'From $8,000',
       period: '/month',
-      icon: '🧠',
-      color: 'from-pink-500 to-rose-600'
+      icon: '🧬',
+      color: 'from-emerald-500 to-teal-600'
     }
   ];
 

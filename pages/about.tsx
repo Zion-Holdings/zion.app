@@ -46,11 +46,18 @@ export default function AboutPage() {
   ];
 
   const achievements = [
-    { number: '227+', label: 'Active Automations', color: 'text-cyan-400' },
-    { number: '2960+', label: 'Dynamic Pages', color: 'text-fuchsia-400' },
+    { number: '500+', label: 'Micro SaaS Services', color: 'text-cyan-400' },
+    { number: '5000%+', label: 'Average ROI', color: 'text-fuchsia-400' },
     { number: '99.99%', label: 'Uptime Guarantee', color: 'text-green-400' },
-    { number: '12', label: 'Core Components', color: 'text-blue-400' },
+    { number: '21', label: 'Day Free Trials', color: 'text-blue-400' },
   ];
+
+  const contactInfo = {
+    mobile: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com'
+  };
 
   return (
     <>
@@ -245,6 +252,50 @@ export default function AboutPage() {
             </Button>
           </div>
         </div>
+
+        {/* Contact Section */}
+        <section className="section-padding bg-gradient-cursor-accent">
+          <div className="container-cursor">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold mb-6 text-white">Ready to Transform Your Business?</h2>
+              <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                Get in touch with our experts today for a free consultation and discover how our 500+ revolutionary micro SaaS services can drive unprecedented growth
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+              <Card className="text-center p-8 bg-gradient-to-br from-blue-500/20 to-blue-600/20 border border-blue-500/30">
+                <div className="text-4xl mb-4">📞</div>
+                <h3 className="text-2xl font-bold text-white mb-2">Call Us</h3>
+                <p className="text-blue-400 font-semibold text-lg">{contactInfo.mobile}</p>
+                <p className="text-gray-400 text-sm mt-2">Available 24/7 for urgent inquiries</p>
+              </Card>
+              
+              <Card className="text-center p-8 bg-gradient-to-br from-green-500/20 to-green-600/20 border border-green-500/30">
+                <div className="text-4xl mb-4">✉️</div>
+                <h3 className="text-2xl font-bold text-white mb-2">Email Us</h3>
+                <p className="text-green-400 font-semibold text-lg">{contactInfo.email}</p>
+                <p className="text-gray-400 text-sm mt-2">Response within 2 hours guaranteed</p>
+              </Card>
+              
+              <Card className="text-center p-8 bg-gradient-to-br from-purple-500/20 to-purple-600/20 border border-purple-500/30">
+                <div className="text-4xl mb-4">📍</div>
+                <h3 className="text-2xl font-bold text-white mb-2">Visit Us</h3>
+                <p className="text-purple-400 font-semibold text-sm">{contactInfo.address}</p>
+                <p className="text-gray-400 text-sm mt-2">Global headquarters and innovation center</p>
+              </Card>
+            </div>
+
+            <div className="text-center">
+              <div className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full text-white font-semibold text-lg mb-6">
+                🌐 Visit our website: {contactInfo.website}
+              </div>
+              <p className="text-gray-400 text-lg">
+                Start your 21-day free trial today and experience the future of technology
+              </p>
+            </div>
+          </div>
+        </section>
       </section>
     </>
   );

@@ -79,7 +79,7 @@ export default function ServicesPage() {
 
   const popularServices = getPopularServices();
 
-  // Enhanced service categories with better descriptions
+  // Enhanced service categories with better descriptions and market data
   const enhancedCategories = [
     {
       name: 'Quantum Computing & AI',
