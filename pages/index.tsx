@@ -100,7 +100,6 @@ export default function HomePage() {
     ...quantumAIServices2025,
     ...enterpriseITServices,
     ...innovativeMicroSaasServices2029V2,
-    ...emergingTechBreakthroughServices2029V2,
     ...nextGenerationAIServices,
     ...emergingTechnologyServices,
     ...emergingTechServices2025,
