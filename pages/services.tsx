@@ -100,54 +100,75 @@ export default function ServicesPage() {
                   <Sparkles className="w-4 h-4 mr-2" />
                   Revolutionary Technology Portfolio
                 </div>
-                <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
                   <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                    200+ Real Micro SaaS
+                    250+ Real Micro SaaS Services
                   </span>
-                  <br />
-                  <span className="text-white">Services</span>
                 </h1>
                 <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
-                  Discover our comprehensive portfolio of cutting-edge micro SaaS solutions. From AI-powered platforms to quantum computing services, we're reshaping the future of business technology.
+                  Discover our comprehensive portfolio of cutting-edge micro SaaS solutions. From AI-powered platforms to quantum computing services, 
+                  we deliver real, functional tools that drive business growth and innovation.
                 </p>
-                
-                <div className="flex flex-wrap justify-center gap-6 mb-8">
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-cyan-400">200+</div>
-                    <div className="text-gray-400 text-sm">Real Services</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-fuchsia-400">800%+</div>
-                    <div className="text-gray-400 text-sm">Average ROI</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-green-400">99.9%</div>
-                    <div className="text-gray-400 text-sm">Uptime</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-yellow-400">14 Days</div>
-                    <div className="text-gray-400 text-sm">Free Trial</div>
+
+                {/* Contact Information Banner */}
+                <div className="bg-gradient-to-r from-purple-900/50 to-pink-900/50 border border-purple-500/30 rounded-2xl p-6 mb-8 backdrop-blur-sm">
+                  <div className="grid md:grid-cols-3 gap-6 text-center">
+                    <div className="flex flex-col items-center">
+                      <Phone className="w-6 h-6 text-purple-400 mb-2" />
+                      <span className="text-sm text-gray-300">Mobile</span>
+                      <span className="text-lg font-semibold text-white">{contactInfo.mobile}</span>
+                    </div>
+                    <div className="flex flex-col items-center">
+                      <Mail className="w-6 h-6 text-purple-400 mb-2" />
+                      <span className="text-sm text-gray-300">Email</span>
+                      <span className="text-lg font-semibold text-white">{contactInfo.email}</span>
+                    </div>
+                    <div className="flex flex-col items-center">
+                      <MapPin className="w-6 h-6 text-purple-400 mb-2" />
+                      <span className="text-sm text-gray-300">Address</span>
+                      <span className="text-sm font-semibold text-white">{contactInfo.address}</span>
+                    </div>
                   </div>
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button
-                    href="/contact"
-                    variant="primary"
+                {/* Key Statistics */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-cyan-400 mb-2">250+</div>
+                    <div className="text-sm text-gray-300">Real Services</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-purple-400 mb-2">800%+</div>
+                    <div className="text-sm text-gray-300">Average ROI</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-green-400 mb-2">99.9%</div>
+                    <div className="text-sm text-gray-300">Uptime</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-orange-400 mb-2">14 Days</div>
+                    <div className="text-sm text-gray-300">Free Trial</div>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap justify-center gap-4">
+                  <Button 
+                    href="/contact" 
+                    variant="primary" 
                     size="lg"
-                    className="group transform hover:scale-105 transition-all duration-300"
+                    className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600"
                   >
-                    Get Free Consultation
-                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                    <MessageSquare className="w-5 h-5 mr-2" />
+                    Contact Sales Team
                   </Button>
-                  <Button
-                    href="#services"
-                    variant="secondary"
+                  <Button 
+                    href="/pricing" 
+                    variant="secondary" 
                     size="lg"
-                    className="group transform hover:scale-105 transition-all duration-300"
+                    className="border-purple-500/30 text-purple-400 hover:bg-purple-500/20"
                   >
-                    Explore Services
-                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                    <DollarSign className="w-5 h-5 mr-2" />
+                    View Pricing
                   </Button>
                 </div>
               </div>
@@ -155,95 +176,88 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        {/* Filters and Search Section */}
-        <section className="py-12 bg-gradient-to-br from-gray-900/50 to-gray-800/50">
+        {/* Enhanced Filters Section */}
+        <section className="py-12 bg-gradient-to-r from-gray-900/50 to-gray-800/50 border-y border-gray-700/50">
           <div className="container mx-auto px-4">
-            <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-6">
-              {/* Search Bar */}
-              <div className="relative mb-6">
-                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                <input
-                  type="text"
-                  placeholder="Search services..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-12 pr-4 py-3 bg-gray-900/50 border border-gray-600 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
-                />
+            <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
+              <div className="flex flex-wrap gap-4">
+                <div className="relative">
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                  <input
+                    type="text"
+                    placeholder="Search services..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="pl-10 pr-4 py-2 bg-gray-800/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/20"
+                  />
+                </div>
+                
+                <select
+                  value={selectedCategory}
+                  onChange={(e) => setSelectedCategory(e.target.value)}
+                  className="px-4 py-2 bg-gray-800/50 border border-gray-600/50 rounded-lg text-white focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/20"
+                >
+                  <option value="All">All Categories</option>
+                  {serviceCategories.map(category => (
+                    <option key={category} value={category}>{category}</option>
+                  ))}
+                </select>
+
+                <select
+                  value={priceRange}
+                  onChange={(e) => setPriceRange(e.target.value)}
+                  className="px-4 py-2 bg-gray-800/50 border border-gray-600/50 rounded-lg text-white focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/20"
+                >
+                  {priceRanges.map(range => (
+                    <option key={range.value} value={range.value}>{range.label}</option>
+                  ))}
+                </select>
+
+                <select
+                  value={sortBy}
+                  onChange={(e) => setSortBy(e.target.value)}
+                  className="px-4 py-2 bg-gray-800/50 border border-gray-600/50 rounded-lg text-white focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/20"
+                >
+                  {sortOptions.map(option => (
+                    <option key={option.value} value={option.value}>{option.label}</option>
+                  ))}
+                </select>
               </div>
 
-              {/* Filters Row */}
-              <div className="flex flex-wrap items-center gap-4 mb-6">
-                {/* Category Filter */}
-                <div className="relative">
-                  <select
-                    value={selectedCategory}
-                    onChange={(e) => setSelectedCategory(e.target.value)}
-                    className="appearance-none bg-gray-900/50 border border-gray-600 rounded-xl px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent pr-10"
-                  >
-                    {serviceCategories.map((category) => (
-                      <option key={category} value={category}>{category}</option>
-                    ))}
-                  </select>
-                  <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
-                </div>
-
-                {/* Price Range Filter */}
-                <div className="relative">
-                  <select
-                    value={priceRange}
-                    onChange={(e) => setPriceRange(e.target.value)}
-                    className="appearance-none bg-gray-900/50 border border-gray-600 rounded-xl px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent pr-10"
-                  >
-                    {priceRanges.map((range) => (
-                      <option key={range.value} value={range.value}>{range.label}</option>
-                    ))}
-                  </select>
-                  <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
-                </div>
-
-                {/* Sort Options */}
-                <div className="relative">
-                  <select
-                    value={sortBy}
-                    onChange={(e) => setSortBy(e.target.value)}
-                    className="appearance-none bg-gray-900/50 border border-gray-600 rounded-xl px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent pr-10"
-                  >
-                    {sortOptions.map((option) => (
-                      <option key={option.value} value={option.value}>{option.label}</option>
-                    ))}
-                  </select>
-                  <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
-                </div>
-
-                {/* View Mode Toggle */}
-                <div className="flex bg-gray-900/50 border border-gray-600 rounded-xl p-1">
-                  <button
-                    onClick={() => setViewMode('grid')}
-                    className={`px-3 py-2 rounded-lg transition-all duration-200 ${
-                      viewMode === 'grid' 
-                        ? 'bg-cyan-500 text-white' 
-                        : 'text-gray-400 hover:text-white'
-                    }`}
-                  >
-                    <Grid className="w-4 h-4" />
-                  </button>
-                  <button
-                    onClick={() => setViewMode('list')}
-                    className={`px-3 py-2 rounded-lg transition-all duration-200 ${
-                      viewMode === 'list' 
-                        ? 'bg-cyan-500 text-white' 
-                        : 'text-gray-400 hover:text-white'
-                    }`}
-                  >
-                    <List className="w-4 h-4" />
-                  </button>
-                </div>
-
-                {/* Results Count */}
-                <div className="ml-auto text-gray-400 text-sm">
-                  {filteredServices.length} services found
-                </div>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => setViewMode('grid')}
+                  className={`p-2 rounded-lg transition-colors ${
+                    viewMode === 'grid' 
+                      ? 'bg-purple-500/20 text-purple-400 border border-purple-500/30' 
+                      : 'text-gray-400 hover:text-white hover:bg-gray-700/50'
+                  }`}
+                >
+                  <Grid className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={() => setViewMode('list')}
+                  className={`p-2 rounded-lg transition-colors ${
+                    viewMode === 'list' 
+                      ? 'bg-purple-500/20 text-purple-400 border border-purple-500/30' 
+                      : 'text-gray-400 hover:text-white hover:bg-gray-700/50'
+                  }`}
+                >
+                  <List className="w-5 h-5" />
+                </button>
               </div>
+            </div>
+
+            {/* Results Summary */}
+            <div className="mt-6 text-center">
+              <p className="text-gray-300">
+                Showing <span className="text-purple-400 font-semibold">{filteredServices.length}</span> of <span className="text-purple-400 font-semibold">{expandedMicroSaasServices.length}</span> services
+              </p>
+              {searchQuery && (
+                <p className="text-sm text-gray-400 mt-2">
+                  Search results for: <span className="text-purple-400">"{searchQuery}"</span>
+                </p>
+              )}
             </div>
           </div>
         </section>
@@ -371,60 +385,84 @@ export default function ServicesPage() {
         </section>
 
         {/* Popular Services Section */}
-        {popularServices.length > 0 && (
-          <section className="py-16">
-            <div className="container mx-auto px-4">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-                  <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
-                    Most Popular
-                  </span> Services
-                </h2>
-                <p className="text-lg text-gray-300">Our most requested and highly-rated solutions</p>
-              </div>
+        <section className="py-16 bg-gradient-to-br from-purple-900/20 to-pink-900/20">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Most Popular Services
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Our top-performing services trusted by thousands of businesses worldwide
+              </p>
+            </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {popularServices.slice(0, 6).map((service) => (
-                  <div
-                    key={service.id}
-                    className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 transform hover:scale-105 transition-all duration-500 hover:shadow-2xl group relative overflow-hidden"
-                  >
-                    {/* Popular Badge */}
-                    <div className="absolute top-4 right-4 bg-gradient-to-r from-yellow-400 to-orange-400 text-black text-xs font-bold px-3 py-1 rounded-full">
-                      <Star className="w-3 h-3 inline mr-1" />
-                      Popular
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+              {popularServices.slice(0, 6).map((service) => (
+                <Card key={service.id} className="group hover:scale-105 transition-all duration-300">
+                  <div className="p-6">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="text-3xl">{service.icon}</div>
+                      {service.popular && (
+                        <div className="flex items-center gap-1 text-yellow-400">
+                          <Star className="w-4 h-4 fill-current" />
+                          <span className="text-sm font-medium">Popular</span>
+                        </div>
+                      )}
                     </div>
-
-                    <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mb-6 text-3xl group-hover:scale-110 transition-transform duration-300`}>
-                      {service.icon}
-                    </div>
-                    
-                    <h3 className="text-2xl font-bold text-white mb-4">{service.name}</h3>
-                    <p className="text-gray-300 mb-4 leading-relaxed">{service.description}</p>
-                    
-                    <div className="flex items-center justify-between mb-6">
-                      <span className="text-2xl font-bold text-green-400">{service.price}{service.period}</span>
-                      <span className="text-sm text-gray-400 bg-gray-800/50 px-3 py-1 rounded-full">
+                    <h3 className="text-xl font-bold text-white mb-2">{service.name}</h3>
+                    <p className="text-gray-300 text-sm mb-4">{service.tagline}</p>
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="text-2xl font-bold text-green-400">{service.price}</span>
+                      <span className="text-sm text-gray-400 bg-gray-800/50 px-2 py-1 rounded-full">
                         {service.category}
                       </span>
                     </div>
-
-                    <div className="flex items-center justify-between">
-                      <a
-                        href={service.link}
-                        className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors group/link"
-                      >
-                        Learn More
-                        <ArrowRight className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform" />
-                      </a>
-                      <span className="text-sm text-gray-400">{service.trialDays} day trial</span>
+                    <div className="flex items-center justify-between text-sm text-gray-400 mb-4">
+                      <span>⚡ {service.setupTime}</span>
+                      <span>🎯 {service.trialDays} day trial</span>
                     </div>
+                    <Button 
+                      href={service.link} 
+                      variant="secondary" 
+                      size="sm"
+                      className="w-full border-purple-500/30 text-purple-400 hover:bg-purple-500/20"
+                    >
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      Learn More
+                    </Button>
                   </div>
-                ))}
+                </Card>
+              ))}
+            </div>
+
+            {/* Call to Action */}
+            <div className="text-center">
+              <p className="text-lg text-gray-300 mb-6">
+                Ready to explore our complete portfolio of 250+ services?
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button 
+                  href="/contact" 
+                  variant="primary" 
+                  size="lg"
+                  className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600"
+                >
+                  <MessageSquare className="w-5 h-5 mr-2" />
+                  Contact Sales Team
+                </Button>
+                <Button 
+                  href="/pricing" 
+                  variant="secondary" 
+                  size="lg"
+                  className="border-purple-500/30 text-purple-400 hover:bg-purple-500/20"
+                >
+                  <DollarSign className="w-5 h-5 mr-2" />
+                  View Pricing Plans
+                </Button>
               </div>
             </div>
-          </section>
-        )}
+          </div>
+        </section>
 
         {/* All Services Section */}
         <section className="py-16">

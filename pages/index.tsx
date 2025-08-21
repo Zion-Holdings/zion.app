@@ -5,11 +5,11 @@ import Features from '../components/sections/Features';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import EnhancedFuturisticBackground from '../components/ui/EnhancedFuturisticBackground';
-import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, ExternalLink, Star, Users, Globe, Lock, Rocket, Cpu, Database, TrendingUp, Clock, Target, Building, Award, DollarSign, ChartBar, Code, BookOpen, Activity, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, Settings, BookOpen as BookOpenIcon, Activity as ActivityIcon, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Sparkles, Atom, Brain, Eye, Shield as ShieldIcon, Zap as ZapIcon, Globe as GlobeIcon, Cpu as CpuIcon, Cloud as CloudIcon, Bot as BotIcon, Lock as LockIcon, BarChart3 as BarChart3Icon, TrendingUp as TrendingUpIcon, Users as UsersIcon, Award as AwardIcon, Star as StarIcon, Check as CheckIcon, ArrowRight as ArrowRightIcon, ExternalLink as ExternalLinkIcon, Phone as PhoneIcon, Mail as MailIcon, MapPin as MapPinIcon, Trophy } from 'lucide-react';
+import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, ExternalLink, Star, Users, Globe, Lock, Rocket, Cpu, Database, TrendingUp, Clock, Target, Building, Award, DollarSign, ChartBar, Code, BookOpen, Activity, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, Settings, BookOpen as BookOpenIcon, Activity as ActivityIcon, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Sparkles, Atom, Brain, Eye, Shield as ShieldIcon, Zap as ZapIcon, Globe as GlobeIcon, Cpu as CpuIcon, Cloud as CloudIcon, Bot as BotIcon, Lock as LockIcon, BarChart3 as BarChart3Icon, TrendingUp as TrendingUpIcon, Users as UsersIcon, Award as AwardIcon, Star as StarIcon, Check as CheckIcon, ArrowRight as ArrowRightIcon, ExternalLink as ExternalLinkIcon, Phone as PhoneIcon, Mail as MailIcon, MapPin as MapPinIcon, Trophy, DollarSign as DollarSignIcon, MessageSquare as MessageSquareIcon } from 'lucide-react';
 
 export default function HomePage() {
   const heroStats = [
-    { value: '200+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
+    { value: '250+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
     { value: '99.9%', label: 'Uptime Guarantee', color: 'text-fuchsia-400' },
     { value: '14', label: 'Day Free Trials', color: 'text-blue-400' },
     { value: '24/7', label: 'AI Support', color: 'text-green-400' },
@@ -27,7 +27,7 @@ export default function HomePage() {
   const platformFeatures = [
     {
       icon: <Cloud className="w-8 h-8 text-white" />,
-      title: '200+ Real Micro SaaS Services',
+      title: '250+ Real Micro SaaS Services',
       description: 'Complete portfolio of fully functional micro SaaS tools with real implementations, not just mockups. Starting from $49/month with 14-day free trials.',
       color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
       gradient: 'from-cyan-400 to-blue-500',
@@ -193,7 +193,7 @@ export default function HomePage() {
   ];
 
   return (
-    <EnhancedFuturisticBackground variant="quantum-holographic" intensity="high">
+    <EnhancedFuturisticBackground variant="neural-quantum" intensity="high">
       <div className="min-h-screen">
         <Head>
           <title>Zion Tech Group - Revolutionary AI, Quantum Computing & Emerging Technology Solutions</title>
@@ -339,56 +339,199 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Innovative Services Showcase */}
-        <section className="py-20 bg-gradient-to-br from-gray-900/50 to-gray-800/50">
+        {/* Enhanced Services Showcase */}
+        <section className="relative py-20 overflow-hidden">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                Revolutionary <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Services</span>
+              <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-6">
+                250+ Real Micro SaaS Services
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Explore our cutting-edge micro SaaS solutions that are reshaping industries and driving innovation.
+              <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-8">
+                Discover our comprehensive portfolio of cutting-edge micro SaaS solutions. From AI-powered platforms to quantum computing services, 
+                we deliver real, functional tools that drive business growth and innovation.
               </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {innovativeServices.map((service, index) => (
-                <div
-                  key={index}
-                  className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 transform hover:scale-105 transition-all duration-500 hover:shadow-2xl group"
-                >
-                  <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mb-6 text-3xl group-hover:scale-110 transition-transform duration-300`}>
-                    {service.icon}
+              
+              {/* Contact Information Banner */}
+              <div className="bg-gradient-to-r from-purple-900/50 to-pink-900/50 border border-purple-500/30 rounded-2xl p-6 mb-8 backdrop-blur-sm">
+                <div className="grid md:grid-cols-3 gap-6 text-center">
+                  <div className="flex flex-col items-center">
+                    <Phone className="w-6 h-6 text-purple-400 mb-2" />
+                    <span className="text-sm text-gray-300">Mobile</span>
+                    <span className="text-lg font-semibold text-white">{contactInfo.mobile}</span>
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-4">{service.name}</h3>
-                  <p className="text-gray-300 mb-4 leading-relaxed">{service.description}</p>
-                  <div className="flex items-center justify-between mb-6">
-                    <span className="text-2xl font-bold text-green-400">{service.price}</span>
-                    <span className="text-sm text-gray-400 bg-gray-800/50 px-3 py-1 rounded-full">
-                      {service.category}
-                    </span>
+                  <div className="flex flex-col items-center">
+                    <Mail className="w-6 h-6 text-purple-400 mb-2" />
+                    <span className="text-sm text-gray-300">Email</span>
+                    <span className="text-lg font-semibold text-white">{contactInfo.email}</span>
                   </div>
-                  <a
-                    href={service.link}
-                    className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors group/link"
-                  >
-                    Learn More
-                    <ArrowRight className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform" />
-                  </a>
+                  <div className="flex flex-col items-center">
+                    <MapPin className="w-6 h-6 text-purple-400 mb-2" />
+                    <span className="text-sm text-gray-300">Address</span>
+                    <span className="text-sm font-semibold text-white">{contactInfo.address}</span>
+                  </div>
                 </div>
-              ))}
+              </div>
+
+              <div className="flex flex-wrap justify-center gap-4 mb-8">
+                <Button 
+                  href="/services" 
+                  variant="primary" 
+                  size="lg"
+                  className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600"
+                >
+                  <ExternalLink className="w-5 h-5 mr-2" />
+                  Explore All Services
+                </Button>
+                <Button 
+                  href="/pricing" 
+                  variant="secondary" 
+                  size="lg"
+                  className="border-purple-500/30 text-purple-400 hover:bg-purple-500/20"
+                >
+                  <DollarSign className="w-5 h-5 mr-2" />
+                  View Pricing
+                </Button>
+              </div>
             </div>
 
-            <div className="text-center mt-12">
-              <Button
-                href="/services"
-                variant="primary"
-                size="lg"
-                className="group transform hover:scale-105 transition-all duration-300"
-              >
-                View All Services
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
+            {/* Featured Service Categories */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+              <Card className="bg-gradient-to-br from-cyan-900/50 to-blue-900/50 border-cyan-500/30 hover:border-cyan-400/60 transition-all duration-300">
+                <div className="text-center p-6">
+                  <div className="text-4xl mb-4">🤖</div>
+                  <h3 className="text-xl font-bold text-cyan-400 mb-3">AI & Machine Learning</h3>
+                  <p className="text-gray-300 mb-4">50+ AI-powered services including content generation, legal analysis, biomedical research, and quantum AI training.</p>
+                  <div className="text-cyan-400 font-semibold">Starting at $149/month</div>
+                </div>
+              </Card>
+
+              <Card className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 border-purple-500/30 hover:border-purple-400/60 transition-all duration-300">
+                <div className="text-center p-6">
+                  <div className="text-4xl mb-4">⚛️</div>
+                  <h3 className="text-xl font-bold text-purple-400 mb-3">Quantum Computing</h3>
+                  <p className="text-gray-300 mb-4">40+ quantum-enhanced services for cybersecurity, financial modeling, supply chain optimization, and space analytics.</p>
+                  <div className="text-purple-400 font-semibold">Starting at $399/month</div>
+                </div>
+              </Card>
+
+              <Card className="bg-gradient-to-br from-green-900/50 to-emerald-900/50 border-green-500/30 hover:border-green-400/60 transition-all duration-300">
+                <div className="text-center p-6">
+                  <div className="text-4xl mb-4">🔗</div>
+                  <h3 className="text-xl font-bold text-green-400 mb-3">Blockchain & Web3</h3>
+                  <p className="text-gray-300 mb-4">30+ blockchain services including quantum-secured oracles, DeFi platforms, and decentralized marketplaces.</p>
+                  <div className="text-green-400 font-semibold">Starting at $199/month</div>
+                </div>
+              </Card>
+
+              <Card className="bg-gradient-to-br from-orange-900/50 to-red-900/50 border-orange-500/30 hover:border-orange-400/60 transition-all duration-300">
+                <div className="text-center p-6">
+                  <div className="text-4xl mb-4">🛡️</div>
+                  <h3 className="text-xl font-bold text-orange-400 mb-3">Cybersecurity</h3>
+                  <p className="text-gray-300 mb-4">25+ security services featuring quantum-resistant encryption, AI threat detection, and post-quantum cryptography.</p>
+                  <div className="text-orange-400 font-semibold">Starting at $299/month</div>
+                </div>
+              </Card>
+
+              <Card className="bg-gradient-to-br from-indigo-900/50 to-purple-900/50 border-indigo-500/30 hover:border-indigo-400/60 transition-all duration-300">
+                <div className="text-center p-6">
+                  <div className="text-4xl mb-4">🌐</div>
+                  <h3 className="text-xl font-bold text-indigo-400 mb-3">IoT & Edge Computing</h3>
+                  <p className="text-gray-300 mb-4">35+ IoT services for smart cities, industrial automation, healthcare monitoring, and quantum-secured device management.</p>
+                  <div className="text-indigo-400 font-semibold">Starting at $249/month</div>
+                </div>
+              </Card>
+
+              <Card className="bg-gradient-to-br from-teal-900/50 to-cyan-900/50 border-teal-500/30 hover:border-teal-400/60 transition-all duration-300">
+                <div className="text-center p-6">
+                  <div className="text-4xl mb-4">🚀</div>
+                  <h3 className="text-xl font-bold text-teal-400 mb-3">Emerging Technologies</h3>
+                  <p className="text-gray-300 mb-4">30+ cutting-edge services including space analytics, neural interfaces, synthetic biology, and autonomous systems.</p>
+                  <div className="text-teal-400 font-semibold">Starting at $399/month</div>
+                </div>
+              </Card>
+            </div>
+
+            {/* Market Position & ROI Section */}
+            <div className="bg-gradient-to-r from-purple-900/30 to-pink-900/30 border border-purple-500/20 rounded-3xl p-8 mb-16">
+              <div className="text-center mb-8">
+                <h3 className="text-3xl font-bold text-white mb-4">Market-Leading Performance</h3>
+                <p className="text-xl text-gray-300">Our services deliver exceptional ROI and competitive advantages in rapidly growing markets.</p>
+              </div>
+              
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-cyan-400 mb-2">800%+</div>
+                  <div className="text-gray-300">Average ROI</div>
+                  <div className="text-sm text-gray-400">in 12-24 months</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-purple-400 mb-2">$100M+</div>
+                  <div className="text-gray-300">Market Value</div>
+                  <div className="text-sm text-gray-400">across all services</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-green-400 mb-2">99.9%</div>
+                  <div className="text-gray-300">Uptime Guarantee</div>
+                  <div className="text-sm text-gray-400">enterprise reliability</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-orange-400 mb-2">14 Days</div>
+                  <div className="text-gray-300">Free Trial</div>
+                  <div className="text-sm text-gray-400">risk-free testing</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Call to Action */}
+            <div className="text-center">
+              <h3 className="text-2xl font-bold text-white mb-6">Ready to Transform Your Business?</h3>
+              <p className="text-lg text-gray-300 mb-8 max-w-3xl mx-auto">
+                Join thousands of businesses already leveraging our cutting-edge micro SaaS services. 
+                Start your free trial today and experience the future of business technology.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Button 
+                  href="/contact" 
+                  variant="primary" 
+                  size="lg"
+                  className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 w-full sm:w-auto"
+                >
+                  <MessageSquare className="w-5 h-5 mr-2" />
+                  Contact Sales Team
+                </Button>
+                <Button 
+                  href="/services" 
+                  variant="secondary" 
+                  size="lg"
+                  className="border-purple-500/30 text-purple-400 hover:bg-purple-500/20 w-full sm:w-auto"
+                >
+                  <ArrowRight className="w-5 h-5 mr-2" />
+                  Browse All Services
+                </Button>
+              </div>
+
+              {/* Contact Details */}
+              <div className="mt-12 p-6 bg-gradient-to-r from-gray-900/50 to-gray-800/50 border border-gray-700/50 rounded-2xl">
+                <h4 className="text-xl font-semibold text-white mb-4">Get in Touch</h4>
+                <div className="grid md:grid-cols-3 gap-6 text-center">
+                  <div>
+                    <Phone className="w-5 h-5 text-purple-400 mx-auto mb-2" />
+                    <div className="text-sm text-gray-400">Call Us</div>
+                    <div className="text-white font-medium">{contactInfo.mobile}</div>
+                  </div>
+                  <div>
+                    <Mail className="w-5 h-5 text-purple-400 mx-auto mb-2" />
+                    <div className="text-sm text-gray-400">Email Us</div>
+                    <div className="text-white font-medium">{contactInfo.email}</div>
+                  </div>
+                  <div>
+                    <MapPin className="w-5 h-5 text-purple-400 mx-auto mb-2" />
+                    <div className="text-sm text-gray-400">Visit Us</div>
+                    <div className="text-white font-medium text-sm">{contactInfo.address}</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>

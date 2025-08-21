@@ -182,7 +182,7 @@ export default function PricingPage() {
   ];
 
   return (
-    <EnhancedFuturisticBackground variant="quantum" intensity="medium">
+    <EnhancedFuturisticBackground variant="quantum-particles" intensity="medium">
       <div className="min-h-screen">
         <Head>
           <title>Pricing Plans | Zion Tech Group - Transparent Pricing for 75+ Services</title>
