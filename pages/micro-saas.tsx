@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import { Shield, Clock, DollarSign, TrendingUp, Brain, Rocket, ArrowRight, ExternalLink, Search, Filter, Grid, List, Phone, Mail, MapPin, Star, Check, Sparkles, Atom, Cpu, Globe, FlaskConical } from 'lucide-react';
 import Button from '../components/ui/Button';
@@ -6,12 +6,26 @@ import QuantumHolographicMatrixBackground from '../components/ui/QuantumHolograp
 import EnhancedFuturisticCard from '../components/ui/EnhancedFuturisticCard';
 import { enhancedRealMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices } from '../data/enhanced-real-micro-saas-services';
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/router';
 
 export default function MicroSaasPage() {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [sortBy, setSortBy] = useState<'name' | 'price' | 'rating' | 'innovation'>('innovation');
   const [searchQuery, setSearchQuery] = useState('');
+  const router = useRouter();
+
+  useEffect(() => {
+    const categoryFromQuery = (router.query.category as string) || (router.query.cat as string);
+    if (categoryFromQuery) {
+      try {
+        const decoded = decodeURIComponent(categoryFromQuery);
+        setSelectedCategory(decoded);
+      } catch {
+        setSelectedCategory(categoryFromQuery);
+      }
+    }
+  }, [router.query.category, router.query.cat]);
   
   const competitiveAdvantages = [
     {
