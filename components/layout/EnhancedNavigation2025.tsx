@@ -4,10 +4,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Menu, ChevronDown, Search, 
   Brain, Rocket, Shield, 
-  Zap, Globe, Star, Users,
-  Target, Atom, BarChart3, Settings,
+  Zap, Star,
+  Target, Atom,
   Palette, BookOpen, GraduationCap, Heart,
-  Truck, DollarSign
+  Truck, DollarSign, BarChart3
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -188,7 +188,7 @@ export default function EnhancedNavigation2025({ onMenuClick }: EnhancedNavigati
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     // Implement search functionality
-    console.log('Searching for:', searchQuery);
+    // TODO: Add search implementation
   };
 
   return (

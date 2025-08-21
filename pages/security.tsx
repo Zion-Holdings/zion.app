@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import { Shield, Lock, ShieldAlert, Check, Phone, Mail, MapPin, ExternalLink, Zap, Rocket } from 'lucide-react';
+import { Shield, Lock, ShieldAlert, Check, Phone, Mail, MapPin, ExternalLink } from 'lucide-react';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 import Button from '../components/ui/Button';
 

@@ -2,9 +2,7 @@ import React, { useState, useMemo } from 'react';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
 import { 
-  Search, Filter, Star, Users, TrendingUp, 
-  Brain, Atom, Cpu, Shield, Database, Cloud,
-  ArrowRight, CheckCircle, Zap, Sparkles
+  Search, Star, CheckCircle, Sparkles, Brain, Shield, Cpu, Database, Cloud, TrendingUp, Users, ArrowRight, Zap
 } from 'lucide-react';
 import { realMicroSaasServices2024 } from '../data/2024-real-micro-saas-services';
 import { innovativeITServices2024 } from '../data/2024-innovative-it-services';

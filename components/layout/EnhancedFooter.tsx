@@ -5,8 +5,7 @@ import {
   Star, Mail, Phone, MapPin, 
   Twitter, Linkedin, Github, Globe,
   ArrowRight, Shield, Zap, Rocket,
-  Brain, Atom, Target,
-  Users, BookOpen, BarChart3, Settings
+  Brain, Atom, Users, Settings
 } from 'lucide-react';
 
 const footerSections = [

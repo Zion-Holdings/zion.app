@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
-import { ArrowRight, Star, TrendingUp, Clock, Users, Zap, Shield, Brain, Rocket, Atom, Globe, Target, Microscope, Phone, Mail, MapPin } from 'lucide-react';
+import { ArrowRight, Star, Clock, Users, Phone, Mail, MapPin, Brain, Atom, Globe, Rocket, Target, Microscope, TrendingUp, Zap, Shield } from 'lucide-react';
 import UltraFuturisticBackground2031 from '../../components/ui/UltraFuturisticBackground2031';
 import UltraFuturisticNavigation2031 from '../../components/layout/UltraFuturisticNavigation2031';
 import UltraFuturisticFooter2030 from '../../components/layout/UltraFuturisticFooter2030';
@@ -20,14 +20,7 @@ export default function FuturisticServices2030Page() {
     website: 'https://ziontechgroup.com'
   };
 
-  const all2030Services = [
-    ...futuristicAIServices2030,
-    ...quantumEmergingTechServices2030,
-    ...enterpriseITSolutions2030,
-    ...spaceMetaverseTechServices2030,
-    ...innovativeMicroSaasServices2030,
-    ...researchDevelopmentServices2030
-  ];
+
 
   const serviceCategories = [
     {

@@ -7,8 +7,7 @@ interface UltraFuturisticBackground2034Props {
 }
 
 const UltraFuturisticBackground2034: React.FC<UltraFuturisticBackground2034Props> = ({
-  intensity = 1,
-  theme = 'quantum'
+  intensity = 1
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number | undefined>(undefined);
@@ -29,6 +28,8 @@ const UltraFuturisticBackground2034: React.FC<UltraFuturisticBackground2034Props
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
+    type ParticleType = 'quantum' | 'neural' | 'holographic';
+    
     // Particle system
     const particles: Array<{
       x: number;
@@ -38,7 +39,7 @@ const UltraFuturisticBackground2034: React.FC<UltraFuturisticBackground2034Props
       size: number;
       life: number;
       maxLife: number;
-      type: 'quantum' | 'neural' | 'holographic';
+      type: ParticleType;
     }> = [];
 
     // Quantum entanglement lines
@@ -70,7 +71,7 @@ const UltraFuturisticBackground2034: React.FC<UltraFuturisticBackground2034Props
           size: Math.random() * 3 + 1,
           life: Math.random() * 100,
           maxLife: 100,
-          type: ['quantum', 'neural', 'holographic'][Math.floor(Math.random() * 3)] as any
+          type: ['quantum', 'neural', 'holographic'][Math.floor(Math.random() * 3)] as ParticleType
         });
       }
     };
@@ -235,7 +236,7 @@ const UltraFuturisticBackground2034: React.FC<UltraFuturisticBackground2034Props
           size: Math.random() * 3 + 1,
           life: 100,
           maxLife: 100,
-          type: ['quantum', 'neural', 'holographic'][Math.floor(Math.random() * 3)] as any
+          type: ['quantum', 'neural', 'holographic'][Math.floor(Math.random() * 3)] as ParticleType
         });
       }
 

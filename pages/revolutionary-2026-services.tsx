@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Star, TrendingUp, Zap, Shield, Brain, Atom, Rocket, ArrowRight, CheckCircle, Users, DollarSign, Clock, Search, Filter, Grid, List, ChevronDown, ChevronUp, Sparkles, FlaskConical, Dna, Car, Leaf, Factory, Truck, Microscope, GraduationCap, ShieldCheck, Globe2, Bot, ChevronRight, Crown, Phone, Mail, MapPin } from 'lucide-react';
+import { Star, Rocket, ArrowRight, CheckCircle, Search, Grid, List, ChevronDown, Phone, Mail, MapPin } from 'lucide-react';
 import Button from '../components/ui/Button';
 import UltraAdvancedFuturisticBackground2026 from '../components/ui/UltraAdvancedFuturisticBackground2026';
 import { revolutionary2026MicroSaasServices } from '../data/revolutionary-2026-micro-saas-services';

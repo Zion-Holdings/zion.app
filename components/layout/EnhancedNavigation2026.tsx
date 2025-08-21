@@ -3,10 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { 
   Menu, X, ChevronDown, Rocket, Phone, Mail, MapPin,
-  Brain, Cpu, Shield, Zap, Star, Users, TrendingUp,
-  Globe, Database, Cloud, Lock, Palette, Target,
-  Layers, Sparkles, Atom, Microscope, Satellite,
-  Search, Bell, User, Settings, LogOut, SparklesIcon
+  Brain, Shield, Star,
+  Target,
+  Sparkles, Atom, Satellite, Search
 } from 'lucide-react';
 
 const contactInfo = {
@@ -153,7 +152,7 @@ const EnhancedNavigation2026 = () => {
                 whileHover={{ scale: 1.05 }}
                 className="flex items-center space-x-2 text-cyan-300 hover:text-cyan-200 transition-colors"
               >
-                <SparklesIcon className="w-4 h-4" />
+                <Sparkles className="w-4 h-4" />
                 <span className="font-semibold">2026 Revolutionary Services</span>
               </motion.div>
             </div>

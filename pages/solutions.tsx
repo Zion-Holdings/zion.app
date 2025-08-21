@@ -7,18 +7,11 @@ import {
   BarChart3, 
   Bot, 
   Cloud, 
-  Shield, 
-  Atom, 
-  Database, 
-  Cpu, 
-  TrendingUp,
-  Building,
   ArrowRight,
   CheckCircle,
   Star,
   Users,
   Globe,
-  Award,
   Rocket
 } from 'lucide-react';
 import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';

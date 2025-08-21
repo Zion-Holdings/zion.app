@@ -3,11 +3,9 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
-  CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, 
-  DollarSign, Shield, Mail, MapPin, Rocket, Brain, Sparkles,
-  Globe, Atom, Heart, Leaf, Car, GraduationCap, Scale,
-  Building, Factory, Camera, Video, Music, Gamepad2,
-  Crown, Target, Users, Clock, Award, Globe2
+  CheckCircle, ArrowRight, Star, Phone, Zap, 
+  DollarSign, Shield, Mail, MapPin, Rocket, Sparkles,
+  Crown, Target, Award
 } from 'lucide-react';
 import UltraFuturisticNavigation2028 from '../components/layout/UltraFuturisticNavigation2028';
 import UltraFuturisticFooter2028 from '../components/layout/UltraFuturisticFooter2028';

@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 import Button from '../components/ui/Button';
-import { ArrowRight, CheckCircle, DollarSign, ExternalLink, Phone, Mail, MapPin, Star, TrendingUp } from 'lucide-react';
+import { ArrowRight, CheckCircle, ExternalLink, Phone, Mail, MapPin } from 'lucide-react';
 
 export default function ServicesAdvertisingPage() {
   const contact = {

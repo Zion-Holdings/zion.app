@@ -30,22 +30,22 @@ const categories = [
 ];
 
 export default function ServicesIndexPage() {
-  const all = (enhancedRealMicroSaasServices as any[])
+  const all = (enhancedRealMicroSaasServices as unknown[])
     .concat(
-      extraServices as any[],
-      additionalEnhancedServices as any[],
-      newlyAddedServices as any[],
-      curatedMarketServices as any[],
-      realMarketServices as any[],
-      new2025Services as any[],
-      marketValidatedServices as any[],
-      moreRealServices2025 as any[],
-      realOperationalServices as any[],
-      verified2025Additions as any[],
-      realServicesQ12025 as any[],
-      realEnterpriseServices2025 as any[]
+      extraServices as unknown[],
+      additionalEnhancedServices as unknown[],
+      newlyAddedServices as unknown[],
+      curatedMarketServices as unknown[],
+      realMarketServices as unknown[],
+      new2025Services as unknown[],
+      marketValidatedServices as unknown[],
+      moreRealServices2025 as unknown[],
+      realOperationalServices as unknown[],
+      verified2025Additions as unknown[],
+      realServicesQ12025 as unknown[],
+      realEnterpriseServices2025 as unknown[]
     );
-  const byCategory: Record<string, any[]> = {};
+  const byCategory: Record<string, unknown[]> = {};
   for (const c of categories) byCategory[c] = [];
   // Normalize various category labels into our main buckets
   const categoryAliases: Record<string, string> = {
@@ -64,7 +64,8 @@ export default function ServicesIndexPage() {
     'Growth & Marketing': 'Developer Tools'
   };
   for (const s of all) {
-    const rawCat = (s.category || '').trim();
+    const service = s as { category?: string };
+    const rawCat = (service.category || '').trim();
     const mapped = categoryAliases[rawCat] || (categories.includes(rawCat) ? rawCat : 'Developer Tools');
     byCategory[mapped].push(s);
   }
@@ -96,16 +97,17 @@ export default function ServicesIndexPage() {
             <h2 className="text-2xl md:text-3xl font-semibold text-white mb-4">{cat}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {byCategory[cat].slice(0, 12).map((s) => {
-                const slug = s.link ? (() => { try { const u = new URL(s.link); const p = u.pathname.replace(/^\/+|\/+$/g, ''); return p.startsWith('services/') ? p.substring('services/'.length) : toSlug(s.id || s.name || ''); } catch { return toSlug(s.id || s.name || ''); } })() : toSlug(s.id || s.name || '');
+                const service = s as { id?: string; name?: string; link?: string; category?: string; tagline?: string; description?: string; price?: string; period?: string };
+                const slug = service.link ? (() => { try { const u = new URL(service.link); const p = u.pathname.replace(/^\/+|\/+$/g, ''); return p.startsWith('services/') ? p.substring('services/'.length) : toSlug(service.id || service.name || ''); } catch { return toSlug(service.id || service.name || ''); } })() : toSlug(service.id || service.name || '');
                 return (
-                  <Card key={s.id || s.name} className="p-6 bg-black/50 border border-gray-700/60 hover:border-cyan-500/50 transition-colors shadow-lg/10">
-                    <div className="text-sm text-gray-400 mb-1">{s.category || 'Service'}</div>
-                    <h3 className="text-white text-xl font-semibold mb-2">{s.name}</h3>
-                    <p className="text-gray-300/90 line-clamp-3 mb-3">{s.tagline || s.description}</p>
-                    <div className="text-gray-100 font-bold mb-4">{s.price}<span className="text-sm text-gray-400 font-medium">{s.period}</span></div>
+                  <Card key={service.id || service.name} className="p-6 bg-black/50 border border-gray-700/60 hover:border-cyan-500/50 transition-colors shadow-lg/10">
+                    <div className="text-sm text-gray-400 mb-1">{service.category || 'Service'}</div>
+                    <h3 className="text-white text-xl font-semibold mb-2">{service.name}</h3>
+                    <p className="text-gray-300/90 line-clamp-3 mb-3">{service.tagline || service.description}</p>
+                    <div className="text-gray-100 font-bold mb-4">{service.price}<span className="text-sm text-gray-400 font-medium">{service.period}</span></div>
                     <div className="flex gap-3">
                       <Link href={`/services/${slug}`} className="px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium shadow-glow hover:shadow-glow-lg">View</Link>
-                      <Link href={s.link || `/services/${slug}`} className="px-4 py-2 rounded-lg border border-gray-600 text-gray-200 hover:border-cyan-500/70">Learn</Link>
+                      <Link href={service.link || `/services/${slug}`} className="px-4 py-2 rounded-lg border border-gray-600 text-gray-200 hover:border-cyan-500/70">Learn</Link>
                     </div>
                   </Card>
                 );

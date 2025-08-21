@@ -2,22 +2,18 @@ import React from 'react';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
 import { 
-  FileText, 
-  Download, 
-  Calendar, 
-  User, 
-  Tag, 
-  ArrowRight, 
   TrendingUp,
-  BarChart3,
   Brain,
   Atom,
   Globe,
   Shield,
   Zap,
+  FileText,
+  Download,
   Eye,
-  Clock,
-  Award
+  Calendar,
+  User,
+  ArrowRight
 } from 'lucide-react';
 import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
 

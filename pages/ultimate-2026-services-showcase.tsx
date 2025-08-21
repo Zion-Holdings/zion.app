@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import {
   Search, Star, DollarSign, CheckCircle,
   ArrowRight, Rocket, Phone, Mail, MapPin, Grid, List,
-  ChevronDown, Sparkles
+  ChevronDown
 } from 'lucide-react';
 import { ultimate2026Services } from '../data/ultimate-2026-services';
 import { revolutionary2026Innovations } from '../data/revolutionary-2026-innovations';

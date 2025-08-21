@@ -52,7 +52,8 @@ const ChangesTab = () => {
           status: repoStatus
         });
       } catch (error) {
-        console.error('Failed to fetch Git data:', error);
+        // Handle error silently or implement proper error handling
+        console.warn('Failed to fetch Git data:', error);
       } finally {
         setIsLoading(false);
       }
@@ -90,7 +91,8 @@ const ChangesTab = () => {
       const newStatus = await gitService.getStatus();
       setGitStatus(newStatus);
     } catch (error) {
-      console.error('Failed to stage file:', error);
+      // Handle error silently or implement proper error handling
+      console.warn('Failed to stage file:', error);
     }
   };
 
@@ -101,7 +103,8 @@ const ChangesTab = () => {
       const newStatus = await gitService.getStatus();
       setGitStatus(newStatus);
     } catch (error) {
-      console.error('Failed to unstage file:', error);
+      // Handle error silently or implement proper error handling
+      console.warn('Failed to unstage file:', error);
     }
   };
 
@@ -121,7 +124,8 @@ const ChangesTab = () => {
       setGitStatus(newStatus);
       setCommitHistory(newCommits);
     } catch (error) {
-      console.error('Failed to commit changes:', error);
+      // Handle error silently or implement proper error handling
+      console.warn('Failed to commit changes:', error);
     }
   };
 
@@ -132,7 +136,8 @@ const ChangesTab = () => {
       const newStatus = await gitService.getStatus();
       setGitStatus(newStatus);
     } catch (error) {
-      console.error('Failed to push changes:', error);
+      // Handle error silently or implement proper error handling
+      console.warn('Failed to push changes:', error);
     }
   };
 
@@ -147,7 +152,8 @@ const ChangesTab = () => {
       setGitStatus(newStatus);
       setBranches(newBranches);
     } catch (error) {
-      console.error('Failed to pull changes:', error);
+      // Handle error silently or implement proper error handling
+      console.warn('Failed to pull changes:', error);
     }
   };
 
