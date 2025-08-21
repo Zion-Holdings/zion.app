@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shield, Mail, MapPin, Rocket, Brain, Sparkles, Atom, Dna } from 'lucide-react';
 import Button from '../components/ui/Button';
 import UltraFuturisticBackground2030 from '../components/ui/UltraFuturisticBackground2030';
+import UltraFuturisticBackground2031 from '../components/ui/UltraFuturisticBackground2031';
 import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
 import UltraAdvancedNavigation2026 from '../components/layout/UltraAdvancedNavigation2026';
 import UltraFuturisticNavigation2032 from '../components/layout/UltraFuturisticNavigation2032';
@@ -149,6 +150,7 @@ function adaptServiceToEnhancedShowcase(service: any) {
   };
 }
 
+
 export default function HomePage() {
   const contactInfo = {
     mobile: '+1 302 464 0950',
@@ -232,6 +234,7 @@ export default function HomePage() {
     // Add our comprehensive 2032 services
     ...futuristicInnovations2032,
     ...enterpriseInnovations2032
+
   ];
 
   // Adapt services to the expected interface
