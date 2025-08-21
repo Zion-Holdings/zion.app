@@ -2,9 +2,9 @@ import React from 'react';
 import Head from 'next/head';
 import Hero from '../components/sections/Hero';
 import Features from '../components/sections/Features';
-import Card from '../components/ui/Card';
+import UltraFuturisticCard from '../components/ui/UltraFuturisticCard';
 import Button from '../components/ui/Button';
-import EnhancedFuturisticBackground from '../components/ui/EnhancedFuturisticBackground';
+import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
 import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, ExternalLink, Star, Users, Globe, Lock, Rocket, Cpu, Database, TrendingUp, Clock, Target, Building, Award, DollarSign, ChartBar, Code, BookOpen, Activity, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, Settings, BookOpen as BookOpenIcon, Activity as ActivityIcon, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Sparkles, Atom, Brain, Eye, Shield as ShieldIcon, Zap as ZapIcon, Globe as GlobeIcon, Cpu as CpuIcon, Cloud as CloudIcon, Bot as BotIcon, Lock as LockIcon, BarChart3 as BarChart3Icon, TrendingUp as TrendingUpIcon, Users as UsersIcon, Award as AwardIcon, Star as StarIcon, Check as CheckIcon, ArrowRight as ArrowRightIcon, ExternalLink as ExternalLinkIcon, Phone as PhoneIcon, Mail as MailIcon, MapPin as MapPinIcon } from 'lucide-react';
 
 export default function HomePage() {
@@ -137,20 +137,22 @@ export default function HomePage() {
     {
       name: 'Quantum AI Optimizer',
       description: 'Next-generation AI optimization using quantum algorithms',
-      price: '$299/month',
+      price: '$499/month',
       category: 'AI & Quantum Computing',
       icon: '⚛️',
       color: 'from-cyan-500 to-blue-600',
-      link: 'https://ziontechgroup.com/quantum-ai-optimizer'
+      link: 'https://ziontechgroup.com/quantum-ai-optimizer',
+      contactInfo: contactInfo
     },
     {
       name: 'AI Cybersecurity Sentinel',
       description: 'Intelligent threat detection and prevention',
-      price: '$199/month',
+      price: '$299/month',
       category: 'AI & Security',
       icon: '🛡️',
       color: 'from-red-500 to-orange-600',
-      link: 'https://ziontechgroup.com/ai-cybersecurity'
+      link: 'https://ziontechgroup.com/ai-cybersecurity-sentinel',
+      contactInfo: contactInfo
     },
     {
       name: 'Blockchain NFT Marketplace',
@@ -159,7 +161,8 @@ export default function HomePage() {
       category: 'Blockchain & Web3',
       icon: '🖼️',
       color: 'from-indigo-500 to-purple-600',
-      link: 'https://ziontechgroup.com/blockchain-nft-marketplace'
+      link: 'https://ziontechgroup.com/blockchain-nft-marketplace',
+      contactInfo: contactInfo
     },
     {
       name: 'Metaverse Development Platform',
@@ -168,7 +171,8 @@ export default function HomePage() {
       category: 'AR/VR & Metaverse',
       icon: '🌐',
       color: 'from-emerald-500 to-teal-600',
-      link: 'https://ziontechgroup.com/metaverse-platform'
+      link: 'https://ziontechgroup.com/metaverse-development-platform',
+      contactInfo: contactInfo
     },
     {
       name: 'IoT Smart City Platform',
@@ -177,7 +181,8 @@ export default function HomePage() {
       category: 'IoT & Smart Cities',
       icon: '🏙️',
       color: 'from-teal-500 to-cyan-600',
-      link: 'https://ziontechgroup.com/iot-smart-city'
+      link: 'https://ziontechgroup.com/iot-smart-city-platform',
+      contactInfo: contactInfo
     },
     {
       name: 'Autonomous AI Agents',
@@ -186,12 +191,13 @@ export default function HomePage() {
       category: 'Emerging Technologies',
       icon: '🤖',
       color: 'from-cyan-600 to-blue-600',
-      link: 'https://ziontechgroup.com/autonomous-ai-agents'
+      link: 'https://ziontechgroup.com/autonomous-ai-agents',
+      contactInfo: contactInfo
     }
   ];
 
   return (
-    <EnhancedFuturisticBackground variant="neural" intensity="high">
+    <UltraFuturisticBackground variant="neural" intensity="extreme">
       <div className="min-h-screen">
         <Head>
           <title>Zion Tech Group - Revolutionary AI, Quantum Computing & Emerging Technology Solutions</title>
@@ -312,8 +318,11 @@ export default function HomePage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {platformFeatures.map((feature, index) => (
-                <Card
+                <UltraFuturisticCard
                   key={index}
+                  variant={index % 3 === 0 ? 'holographic' : index % 3 === 1 ? 'quantum' : 'cyberpunk'}
+                  intensity="high"
+                  delay={index}
                   className={`${feature.color} p-8 text-center transform hover:scale-105 transition-all duration-300 hover:shadow-2xl`}
                 >
                   <div className="mb-6 flex justify-center">
@@ -323,7 +332,7 @@ export default function HomePage() {
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-4">{feature.title}</h3>
                   <p className="text-gray-200 leading-relaxed">{feature.description}</p>
-                </Card>
+                </UltraFuturisticCard>
               ))}
             </div>
           </div>
@@ -346,8 +355,11 @@ export default function HomePage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {innovativeServices.map((service, index) => (
-                <Card
+                <UltraFuturisticCard
                   key={index}
+                  variant={index % 3 === 0 ? 'holographic' : index % 3 === 1 ? 'quantum' : 'cyberpunk'}
+                  intensity="high"
+                  delay={index}
                   className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 p-6 hover:border-gray-600 transition-all duration-300 hover:shadow-2xl hover:scale-105"
                 >
                   <div className="flex items-start justify-between mb-4">
@@ -370,7 +382,7 @@ export default function HomePage() {
                       <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </div>
-                </Card>
+                </UltraFuturisticCard>
               ))}
             </div>
 
@@ -435,8 +447,11 @@ export default function HomePage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {features.map((feature, index) => (
-                <Card
+                <UltraFuturisticCard
                   key={index}
+                  variant={index % 3 === 0 ? 'holographic' : index % 3 === 1 ? 'quantum' : 'cyberpunk'}
+                  intensity="high"
+                  delay={index}
                   className={`${feature.color} p-8 text-center transform hover:scale-105 transition-all duration-300 hover:shadow-2xl`}
                 >
                   <div className="text-4xl mb-6">{feature.icon}</div>
@@ -444,7 +459,7 @@ export default function HomePage() {
                     {feature.title}
                   </h3>
                   <p className="text-gray-200 leading-relaxed">{feature.description}</p>
-                </Card>
+                </UltraFuturisticCard>
               ))}
             </div>
           </div>
@@ -521,6 +536,6 @@ export default function HomePage() {
           </div>
         </section>
       </div>
-    </EnhancedFuturisticBackground>
+    </UltraFuturisticBackground>
   );
 }
