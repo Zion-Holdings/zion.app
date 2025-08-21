@@ -326,7 +326,32 @@ export default function HomePage() {
       <ServiceAds
         heading="Featured Micro SaaS & AI Services"
         subheading="Transparent pricing, real capabilities, fast onboarding."
-        items={serviceHighlights.slice(0, 4).map((h) => ({
+        items={[
+          ...serviceHighlights.slice(0, 2).map((h) => ({
+            title: h.title,
+            description: h.description,
+            price: h.price,
+            features: h.features,
+            link: h.link,
+            contactInfo: h.contactInfo || contactInfo
+          })),
+          {
+            title: '🔁 Webhook Relay & Replay',
+            description: 'Catch, transform, route and safely replay webhooks with retries, DLQ and audit logs.',
+            price: 'Starting at $59/month',
+            features: ['Signature validation', 'Replay with idempotency', 'Fan-out routing', 'Audit logs'],
+            link: 'https://ziontechgroup.com/webhook-relay-replay',
+            contactInfo
+          },
+          {
+            title: '🗂️ Prompt & Policy Registry',
+            description: 'Versioned prompts with approvals, policies, AB tests and eval dashboards for safe AI iteration.',
+            price: 'Starting at $79/month',
+            features: ['Versioning', 'Approvals', 'Canaries & AB', 'Evals & dashboards'],
+            link: 'https://ziontechgroup.com/prompt-policy-registry',
+            contactInfo
+          }
+        ].map((h) => ({
           title: h.title,
           description: h.description,
           price: h.price,
