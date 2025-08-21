@@ -23,6 +23,7 @@ import { comprehensiveITSolutions } from '../data/comprehensive-it-solutions';
 import { realMarketServices } from '../data/real-market-services';
 import { serviceExpansions2025 } from '../data/service-expansions-2025';
 import { realOperationalServices } from '../data/real-operational-services';
+import { verified2025Additions } from '../data/verified-2025-additions';
 
 export default function HomePage() {
   const contactInfo = {
@@ -46,7 +47,8 @@ export default function HomePage() {
     ...comprehensiveITSolutions,
     ...realMarketServices,
     ...serviceExpansions2025,
-    ...realOperationalServices
+    ...realOperationalServices,
+    ...verified2025Additions
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);

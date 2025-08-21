@@ -332,6 +332,39 @@ export default function MarketPricingPage() {
               <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $0–$300/month per team depending on usage.</div>
             </div>
           </div>
+
+          {/* New categories with verified links */}
+          <div className="space-y-6">
+            <div className="bg-black/30 rounded-2xl border border-indigo-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Affiliate & Partnerships</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Refersion pricing: <a className="text-cyan-400 underline" href={`https://www.refersion.com/pricing`} target="_blank" rel="noopener noreferrer">refersion.com/pricing</a></li>
+                <li>LeadDyno pricing: <a className="text-cyan-400 underline" href={`https://www.leaddyno.com/pricing`} target="_blank" rel="noopener noreferrer">leaddyno.com/pricing</a></li>
+                <li>PartnerStack pricing: <a className="text-cyan-400 underline" href={`https://partnerstack.com/pricing`} target="_blank" rel="noopener noreferrer">partnerstack.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $49–$500/month by affiliates and orders.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-rose-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Returns & Post‑Purchase</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Loop Returns: <a className="text-cyan-400 underline" href={`https://www.loopreturns.com/pricing`} target="_blank" rel="noopener noreferrer">loopreturns.com/pricing</a></li>
+                <li>Returnly: <a className="text-cyan-400 underline" href={`https://returnly.com/`} target="_blank" rel="noopener noreferrer">returnly.com</a></li>
+                <li>AfterShip Returns: <a className="text-cyan-400 underline" href={`https://www.aftership.com/returns-center/pricing`} target="_blank" rel="noopener noreferrer">aftership.com/returns-center/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $29–$299/month by orders and features.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-emerald-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Helpdesk & ITSM</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Freshdesk pricing: <a className="text-cyan-400 underline" href={`https://freshdesk.com/pricing`} target="_blank" rel="noopener noreferrer">freshdesk.com/pricing</a></li>
+                <li>Zendesk pricing: <a className="text-cyan-400 underline" href={`https://www.zendesk.com/pricing/`} target="_blank" rel="noopener noreferrer">zendesk.com/pricing</a></li>
+                <li>Jira Service Management: <a className="text-cyan-400 underline" href={`https://www.atlassian.com/software/jira/service-management/pricing`} target="_blank" rel="noopener noreferrer">atlassian.com/.../pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $19–$1,000/month based on agents and SLAs.</div>
+            </div>
+          </div>
         </div>
       </div>
     </UltraAdvancedFuturisticBackground>

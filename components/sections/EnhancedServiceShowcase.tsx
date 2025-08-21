@@ -17,6 +17,7 @@ import { newRealInnovations } from '../../data/new-real-innovations';
 import { realMarketServices } from '../../data/real-market-services';
 import { realOperationalServices } from '../../data/real-operational-services';
 import { professionalServices } from '../../data/professional-services';
+import { verified2025Additions } from '../../data/verified-2025-additions';
 
 interface ServiceShowcaseProps {
   className?: string;
@@ -46,7 +47,8 @@ const EnhancedServiceShowcase: React.FC<ServiceShowcaseProps> = ({
     ...newRealInnovations,
     ...realMarketServices,
     ...realOperationalServices,
-    ...professionalServices
+    ...professionalServices,
+    ...verified2025Additions
   ];
 
   // Derived counts to better reflect all datasets
