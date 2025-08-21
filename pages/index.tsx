@@ -6,16 +6,18 @@ import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import EnhancedFuturisticBackground from '../components/ui/EnhancedFuturisticBackground';
 import EnhancedFuturisticCard from '../components/ui/EnhancedFuturisticCard';
+import QuantumHolographicBackground from '../components/ui/QuantumHolographicBackground';
+import QuantumHolographicCard from '../components/ui/QuantumHolographicCard';
 import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, ExternalLink, Star, Users, Globe, Lock, Rocket, Cpu, Database, TrendingUp, Clock, Target, Building, Award, DollarSign, ChartBar, Code, BookOpen, Activity, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, Settings, BookOpen as BookOpenIcon, Activity as ActivityIcon, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Sparkles, Atom, Brain, Eye, Shield as ShieldIcon, Zap as ZapIcon, Globe as GlobeIcon, Cpu as CpuIcon, Cloud as CloudIcon, Bot as BotIcon, Lock as LockIcon, BarChart3 as BarChart3Icon, TrendingUp as TrendingUpIcon, Users as UsersIcon, Award as AwardIcon, Star as StarIcon, Check as CheckIcon, ArrowRight as ArrowRightIcon, ExternalLink as ExternalLinkIcon, Phone as PhoneIcon, Mail as MailIcon, MapPin as MapPinIcon, Trophy, FlaskConical, Dna, Car, Leaf, Factory, Truck, Microscope, GraduationCap, ShieldCheck } from 'lucide-react';
 
 export default function HomePage() {
   const heroStats = [
-    { value: '300+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
-    { value: '99.9%', label: 'Uptime Guarantee', color: 'text-fuchsia-400' },
-    { value: '14', label: 'Day Free Trials', color: 'text-blue-400' },
+    { value: '350+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
+    { value: '99.99%', label: 'Uptime Guarantee', color: 'text-fuchsia-400' },
+    { value: '21', label: 'Day Free Trials', color: 'text-blue-400' },
     { value: '24/7', label: 'AI Support', color: 'text-green-400' },
-    { value: '$250M+', label: 'Market Value', color: 'text-yellow-400' },
-    { value: '1000%+', label: 'Average ROI', color: 'text-purple-400' },
+    { value: '$500M+', label: 'Market Value', color: 'text-yellow-400' },
+    { value: '1500%+', label: 'Average ROI', color: 'text-purple-400' },
   ];
 
   const contactInfo = {
@@ -28,15 +30,15 @@ export default function HomePage() {
   const platformFeatures = [
     {
       icon: <Cloud className="w-8 h-8 text-white" />,
-      title: '300+ Real Micro SaaS Services',
-      description: 'Complete portfolio of fully functional micro SaaS tools with real implementations, not just mockups. Starting from $49/month with 14-day free trials. All services are production-ready and deployed.',
+      title: '350+ Real Micro SaaS Services',
+      description: 'Complete portfolio of fully functional micro SaaS tools with real implementations, not just mockups. Starting from $49/month with 21-day free trials. All services are production-ready and deployed.',
       color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
       gradient: 'from-cyan-400 to-blue-500',
     },
     {
       icon: <Bot className="w-8 h-8 text-white" />,
       title: 'AI-Powered Solutions',
-      description: 'Advanced AI content generation, quantum AI training, biomedical research, legal contract analysis, and quantum computing platforms. Market-leading technology with 1000%+ average ROI. First-to-market quantum AI solutions.',
+      description: 'Advanced AI content generation, quantum AI training, biomedical research, legal contract analysis, and quantum computing platforms. Market-leading technology with 1500%+ average ROI. First-to-market quantum AI solutions.',
       color: 'bg-gradient-to-br from-fuchsia-500 to-purple-600',
       gradient: 'from-fuchsia-400 to-purple-500',
     },
@@ -82,6 +84,64 @@ export default function HomePage() {
     { name: 'AWS', category: 'Cloud', icon: '☁️' },
     { name: 'Terraform', category: 'Infrastructure', icon: '🏗️' },
     { name: 'Prometheus', category: 'Monitoring', icon: '📊' },
+  ];
+
+  // Innovative Services Showcase
+  const innovativeServices = [
+    {
+      icon: '🧬',
+      title: 'Quantum Biomedical Research',
+      description: 'Revolutionary drug discovery using quantum algorithms. 100x faster than traditional methods.',
+      price: '$599/month',
+      category: 'Healthcare & Life Sciences',
+      variant: 'holographic' as const,
+      link: 'https://ziontechgroup.com/quantum-biomedical'
+    },
+    {
+      icon: '🚗',
+      title: 'AI Autonomous Vehicles',
+      description: 'Next-generation self-driving technology with 99.99% safety rating.',
+      price: '$899/month',
+      category: 'Autonomous Systems',
+      variant: 'cyberpunk' as const,
+      link: 'https://ziontechgroup.com/ai-autonomous-vehicles'
+    },
+    {
+      icon: '📈',
+      title: 'Quantum Financial Trading',
+      description: 'Quantum-powered algorithmic trading with 50x faster execution.',
+      price: '$799/month',
+      category: 'Financial Technology',
+      variant: 'quantum' as const,
+      link: 'https://ziontechgroup.com/quantum-financial-trading'
+    },
+    {
+      icon: '🚀',
+      title: 'AI Space Exploration',
+      description: 'Intelligent space mission planning trusted by NASA and SpaceX partners.',
+      price: '$1299/month',
+      category: 'Space Technology',
+      variant: 'space-time' as const,
+      link: 'https://ziontechgroup.com/ai-space-exploration'
+    },
+    {
+      icon: '🌍',
+      title: 'Quantum Climate Modeling',
+      description: 'Precise climate prediction using quantum computing. 100x more accurate.',
+      price: '$699/month',
+      category: 'Environmental Technology',
+      variant: 'holographic' as const,
+      link: 'https://ziontechgroup.com/quantum-climate-modeling'
+    },
+    {
+      icon: '🧠',
+      title: 'AI Neural Interface',
+      description: 'Brain-computer interface for the future with breakthrough accuracy.',
+      price: '$1599/month',
+      category: 'Neural Technology',
+      variant: 'neural' as const,
+      link: 'https://ziontechgroup.com/ai-neural-interface'
+    }
   ];
 
   const features = [
@@ -164,62 +224,7 @@ export default function HomePage() {
     }
   ];
 
-  const innovativeServices = [
-    {
-      name: 'Quantum AI Cognitive Platform',
-      description: 'Next-generation cognitive computing with quantum AI for unprecedented problem-solving capabilities.',
-      icon: '🧠',
-      price: '$1,299/month',
-      category: 'Quantum Computing',
-      variant: 'quantum-advanced',
-      link: 'https://ziontechgroup.com/quantum-ai-cognitive'
-    },
-    {
-      name: 'Autonomous AI Factory',
-      description: 'Complete autonomous manufacturing system powered by AI that runs 24/7 with zero human intervention.',
-      icon: '🏭',
-      price: '$2,499/month',
-      category: 'Manufacturing & Industry 4.0',
-      variant: 'holographic-advanced',
-      link: 'https://ziontechgroup.com/autonomous-ai-factory'
-    },
-    {
-      name: 'Quantum Cybersecurity Fortress',
-      description: 'Unbreakable quantum-resistant security using quantum-resistant encryption and AI-powered threat detection.',
-      icon: '🛡️',
-      price: '$1,599/month',
-      category: 'Cybersecurity',
-      variant: 'cyberpunk',
-      link: 'https://ziontechgroup.com/quantum-cybersecurity'
-    },
-    {
-      name: 'Biomedical AI Research Platform',
-      description: 'AI-powered biomedical breakthroughs accelerating drug discovery, disease diagnosis, and medical research.',
-      icon: '🧬',
-      price: '$899/month',
-      category: 'Biomedical & Healthcare',
-      variant: 'neural-quantum',
-      link: 'https://ziontechgroup.com/biomedical-ai-research'
-    },
-    {
-      name: 'Climate AI Prediction Engine',
-      description: 'Predicting climate patterns and extreme weather events with unprecedented accuracy using quantum AI.',
-      icon: '🌍',
-      price: '$699/month',
-      category: 'Climate & Environment',
-      variant: 'quantum-holographic',
-      link: 'https://ziontechgroup.com/climate-ai-prediction'
-    },
-    {
-      name: 'Quantum Financial Trading Platform',
-      description: 'Quantum-powered algorithmic trading with real-time market analysis and predictive modeling.',
-      icon: '💰',
-      price: '$1,999/month',
-      category: 'Financial Technology',
-      variant: 'quantum-cyberpunk',
-      link: 'https://ziontechgroup.com/quantum-financial-trading'
-    }
-  ];
+
 
   return (
     <EnhancedFuturisticBackground variant="quantum-holographic-advanced" intensity="high">
@@ -384,7 +389,7 @@ export default function HomePage() {
                 >
                   <div className="text-center">
                     <div className="text-4xl mb-4">{service.icon}</div>
-                    <h3 className="text-xl font-bold text-white mb-2">{service.name}</h3>
+                    <h3 className="text-xl font-bold text-white mb-2">{service.title}</h3>
                     <p className="text-gray-300 text-sm mb-4">{service.description}</p>
                     <div className="text-sm text-gray-400 mb-2">{service.category}</div>
                     <div className="text-lg font-bold text-cyan-400 mb-4">{service.price}</div>
@@ -431,6 +436,89 @@ export default function HomePage() {
                   <div className="text-sm text-gray-400">{insight.description}</div>
                 </EnhancedFuturisticCard>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Innovative Services Showcase */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Revolutionary{' '}
+                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                  AI & Quantum Services
+                </span>
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Experience the future with our cutting-edge AI and quantum computing solutions that are transforming industries worldwide.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {innovativeServices.map((service, index) => (
+                <QuantumHolographicCard
+                  key={index}
+                  variant={service.variant}
+                  intensity="high"
+                  className="h-full"
+                  onClick={() => window.open(service.link, '_blank')}
+                >
+                  <div className="text-center">
+                    <div className="text-4xl mb-4">{service.icon}</div>
+                    <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
+                    <p className="text-gray-300 mb-4 leading-relaxed">{service.description}</p>
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="text-2xl font-bold text-cyan-400">{service.price}</span>
+                      <span className="text-sm text-gray-400 bg-gray-800 px-3 py-1 rounded-full">
+                        {service.category}
+                      </span>
+                    </div>
+                    <div className="flex items-center justify-center text-cyan-400 hover:text-cyan-300 transition-colors">
+                      <span className="text-sm font-semibold">Learn More</span>
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </div>
+                  </div>
+                </QuantumHolographicCard>
+              ))}
+            </div>
+
+            <div className="text-center mt-12">
+              <QuantumHolographicCard
+                variant="quantum"
+                intensity="medium"
+                className="max-w-4xl mx-auto"
+              >
+                <div className="text-center p-8">
+                  <h3 className="text-3xl font-bold text-white mb-6">
+                    Ready to Experience the Future?
+                  </h3>
+                  <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                    Join thousands of companies already leveraging our revolutionary AI and quantum technologies. 
+                    Start your free trial today and see the difference.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Button
+                      variant="primary"
+                      size="lg"
+                      className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700"
+                      onClick={() => window.open('/services', '_self')}
+                    >
+                      Explore All Services
+                      <ArrowRight className="w-5 h-5 ml-2" />
+                    </Button>
+                    <Button
+                      variant="secondary"
+                      size="lg"
+                      className="border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-white"
+                      onClick={() => window.open('/contact', '_self')}
+                    >
+                      Get Started Today
+                      <Rocket className="w-5 h-5 ml-2" />
+                    </Button>
+                  </div>
+                </div>
+              </QuantumHolographicCard>
             </div>
           </div>
         </section>

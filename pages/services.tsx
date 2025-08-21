@@ -5,6 +5,8 @@ import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
 import EnhancedFuturisticBackground from '../components/ui/EnhancedFuturisticBackground';
 import EnhancedFuturisticCard from '../components/ui/EnhancedFuturisticCard';
+import QuantumHolographicBackground from '../components/ui/QuantumHolographicBackground';
+import QuantumHolographicCard from '../components/ui/QuantumHolographicCard';
 import { expandedMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices, getServicesByPriceRange } from '../data/expanded-micro-saas-services';
 
 export default function ServicesPage() {
@@ -76,6 +78,62 @@ export default function ServicesPage() {
   };
 
   const popularServices = getPopularServices();
+
+  // Featured Innovative Services
+  const featuredInnovativeServices = [
+    {
+      id: 'quantum-biomedical-research',
+      name: 'Quantum Biomedical Research Platform',
+      tagline: 'Revolutionary drug discovery using quantum algorithms',
+      price: '$599',
+      period: '/month',
+      description: 'Advanced quantum computing platform for pharmaceutical research, enabling 100x faster drug discovery and molecular simulation.',
+      icon: '🧬',
+      category: 'Healthcare & Life Sciences',
+      variant: 'holographic' as const,
+      link: 'https://ziontechgroup.com/quantum-biomedical',
+      features: ['Quantum molecular dynamics', 'AI drug screening', 'Protein analysis', 'Clinical optimization']
+    },
+    {
+      id: 'ai-autonomous-vehicles',
+      name: 'AI Autonomous Vehicle Platform',
+      tagline: 'Next-generation self-driving technology',
+      price: '$899',
+      period: '/month',
+      description: 'Comprehensive autonomous vehicle platform with advanced AI, computer vision, and safety systems.',
+      icon: '🚗',
+      category: 'Autonomous Systems',
+      variant: 'cyberpunk' as const,
+      link: 'https://ziontechgroup.com/ai-autonomous-vehicles',
+      features: ['Computer vision', 'Safety systems', 'Fleet management', 'Predictive maintenance']
+    },
+    {
+      id: 'quantum-financial-trading',
+      name: 'Quantum Financial Trading System',
+      tagline: 'Quantum-powered algorithmic trading',
+      price: '$799',
+      period: '/month',
+      description: 'Revolutionary quantum computing platform for high-frequency trading and portfolio optimization.',
+      icon: '📈',
+      category: 'Financial Technology',
+      variant: 'quantum' as const,
+      link: 'https://ziontechgroup.com/quantum-financial-trading',
+      features: ['Portfolio optimization', 'Risk assessment', 'High-frequency trading', 'Market analysis']
+    },
+    {
+      id: 'ai-space-exploration',
+      name: 'AI Space Exploration Platform',
+      tagline: 'Intelligent space mission planning and control',
+      price: '$1299',
+      period: '/month',
+      description: 'Advanced AI platform for space mission planning, satellite operations, and interplanetary exploration.',
+      icon: '🚀',
+      category: 'Space Technology',
+      variant: 'space-time' as const,
+      link: 'https://ziontechgroup.com/ai-space-exploration',
+      features: ['Mission planning', 'Satellite management', 'Space debris tracking', 'Resource optimization']
+    }
+  ];
 
   // Enhanced service categories with better descriptions
   const enhancedCategories = [
@@ -258,6 +316,95 @@ export default function ServicesPage() {
                   </div>
                 </EnhancedFuturisticCard>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Featured Innovative Services */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Revolutionary{' '}
+                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                  AI & Quantum Services
+                </span>
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Experience the cutting-edge of technology with our most innovative and revolutionary services that are transforming industries worldwide.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+              {featuredInnovativeServices.map((service, index) => (
+                <QuantumHolographicCard
+                  key={index}
+                  variant={service.variant}
+                  intensity="high"
+                  className="h-full"
+                  onClick={() => window.open(service.link, '_blank')}
+                >
+                  <div className="p-6">
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="text-4xl">{service.icon}</div>
+                      <div className="text-right">
+                        <div className="text-2xl font-bold text-cyan-400">{service.price}</div>
+                        <div className="text-sm text-gray-400">{service.period}</div>
+                      </div>
+                    </div>
+                    <h3 className="text-2xl font-bold text-white mb-2">{service.name}</h3>
+                    <p className="text-gray-300 mb-4 leading-relaxed">{service.description}</p>
+                    <div className="mb-4">
+                      <span className="text-sm text-gray-400 bg-gray-800 px-3 py-1 rounded-full">
+                        {service.category}
+                      </span>
+                    </div>
+                    <div className="grid grid-cols-2 gap-2 mb-4">
+                      {service.features.map((feature, idx) => (
+                        <div key={idx} className="flex items-center text-sm text-gray-300">
+                          <Check className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" />
+                          {feature}
+                        </div>
+                      ))}
+                    </div>
+                    <div className="flex items-center justify-center text-cyan-400 hover:text-cyan-300 transition-colors cursor-pointer">
+                      <span className="text-sm font-semibold">Learn More & Get Started</span>
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </div>
+                  </div>
+                </QuantumHolographicCard>
+              ))}
+            </div>
+
+            <div className="text-center">
+              <QuantumHolographicCard
+                variant="quantum"
+                intensity="medium"
+                className="max-w-4xl mx-auto"
+              >
+                <div className="text-center p-8">
+                  <h3 className="text-3xl font-bold text-white mb-6">
+                    Why Choose Our Revolutionary Services?
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+                    <div className="text-center">
+                      <div className="text-4xl mb-3">⚡</div>
+                      <h4 className="text-xl font-semibold text-white mb-2">100x Faster</h4>
+                      <p className="text-gray-300">Quantum computing delivers unprecedented speed and performance</p>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-4xl mb-3">🔒</div>
+                      <h4 className="text-xl font-semibold text-white mb-2">99.99% Secure</h4>
+                      <p className="text-gray-300">Military-grade security with quantum-resistant encryption</p>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-4xl mb-3">🚀</div>
+                      <h4 className="text-xl font-semibold text-white mb-2">Future-Ready</h4>
+                      <p className="text-gray-300">Built for tomorrow's challenges with cutting-edge AI</p>
+                    </div>
+                  </div>
+                </div>
+              </QuantumHolographicCard>
             </div>
           </div>
         </section>
