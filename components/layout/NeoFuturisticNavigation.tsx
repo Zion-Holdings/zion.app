@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { Menu, X, Zap, Brain, Cloud, Shield, Rocket, Atom, Bot, Globe, BarChart3, Phone, Mail, MapPin } from 'lucide-react';
+import { Menu, X, Zap, Brain, Cloud, Shield, Rocket, Atom, Bot, Globe, BarChart3, Phone, Mail, MapPin, DollarSign } from 'lucide-react';
 
 const NeoFuturisticNavigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,6 +25,7 @@ const NeoFuturisticNavigation: React.FC = () => {
     { name: 'AI Services', href: '/ai-services', icon: <Brain className="w-4 h-4" /> },
     { name: 'Micro SaaS', href: '/micro-saas', icon: <Bot className="w-4 h-4" /> },
     { name: 'Pricing', href: '/pricing', icon: <BarChart3 className="w-4 h-4" /> },
+    { name: 'Market Pricing', href: '/market-pricing', icon: <DollarSign className="w-4 h-4" /> },
     { name: 'About', href: '/about', icon: <Shield className="w-4 h-4" /> },
     { name: 'Contact', href: '/contact', icon: <Rocket className="w-4 h-4" /> },
   ];
