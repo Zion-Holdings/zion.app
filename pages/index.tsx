@@ -214,7 +214,7 @@ export default function HomePage() {
 
         {/* Enhanced Services Showcase */}
         <EnhancedServiceShowcase 
-          services={allServices.slice(0, 12)}
+          services={allServices.filter(service => 'variant' in service).slice(0, 12)}
           title="Enhanced Services Showcase"
           subtitle="Discover our comprehensive range of innovative solutions"
           maxServices={12}
