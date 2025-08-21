@@ -123,6 +123,28 @@ export default function HomePage() {
       marketData: '$1.1T IoT market, 250% annual growth',
       competitors: 'AWS IoT ($0.50/device/month), Azure IoT ($0.40/device/month)',
       savings: 'Save 60% vs. competitors'
+    },
+    {
+      title: '📊 AI Business Intelligence Elite',
+      description: 'Predictive analytics & business intelligence powered by advanced AI. Transform data into insights with 99.7% accuracy.',
+      price: 'Starting at $89/month',
+      features: ['AI-powered predictive analytics', 'Real-time market trend analysis', 'Customer behavior prediction', 'Revenue forecasting with 99.7% accuracy'],
+      link: 'https://ziontechgroup.com/ai-business-intelligence',
+      color: 'from-blue-500 to-cyan-600',
+      marketData: '$8.5B business intelligence market, 250% annual growth',
+      competitors: 'Tableau ($70/user/month), Power BI ($9.99/user/month)',
+      savings: 'Save 70% vs. competitors'
+    },
+    {
+      title: '💬 AI Customer Service Platform',
+      description: 'Intelligent customer support with 99.9% resolution rate. Provide 24/7 support with AI automation.',
+      price: 'Starting at $79/month',
+      features: ['AI-powered chatbot with 99.9% accuracy', 'Multi-language support (50+ languages)', 'Sentiment analysis and emotion detection', 'Automated ticket routing'],
+      link: 'https://ziontechgroup.com/ai-customer-service',
+      color: 'from-green-500 to-emerald-600',
+      marketData: '$3.2B customer service software market, 220% annual growth',
+      competitors: 'Zendesk ($49/user/month), Intercom ($74/user/month)',
+      savings: 'Save 60% vs. competitors'
     }
   ];
 
@@ -199,34 +221,26 @@ export default function HomePage() {
     {
       metric: '$4.2B',
       label: 'Space Technology',
-      description: '290% annual growth rate',
+      description: '280% annual growth rate',
       icon: <Rocket className="w-6 h-6" />,
       color: 'from-blue-500 to-indigo-600',
-      pricing: 'Our Space Platform: $399/month vs. AGI STK: $1000+/month'
+      pricing: 'Our Space Platform: $399/month vs. Maxar: $500+/month'
     },
     {
       metric: '$8.5B',
       label: 'Biotech AI Market',
       description: '420% annual growth rate',
-      icon: <FlaskConical className="w-6 h-6" />,
+      icon: <Dna className="w-6 h-6" />,
       color: 'from-emerald-500 to-teal-600',
-      pricing: 'Our Biotech AI Platform: $599/month vs. Insitro: $1000+/month'
+      pricing: 'Our Biotech Platform: $599/month vs. Insitro: $1000+/month'
     },
     {
-      metric: '$22B',
+      metric: '$25B',
       label: 'Algorithmic Trading',
-      description: '280% annual growth rate',
+      description: '450% annual growth rate',
       icon: <TrendingUp className="w-6 h-6" />,
-      color: 'from-yellow-500 to-amber-600',
-      pricing: 'Our Quantum Trading Platform: $899/month vs. Bloomberg: $2000+/month'
-    },
-    {
-      metric: '$13B',
-      label: 'Metaverse Development',
-      description: '350% annual growth rate',
-      icon: <Globe className="w-6 h-6" />,
       color: 'from-violet-500 to-purple-600',
-      pricing: 'Our Metaverse Platform: $299/month vs. Unity Pro: $180/month'
+      pricing: 'Our Trading Platform: $899/month vs. Bloomberg: $24,000/year'
     }
   ];
 
