@@ -12,16 +12,23 @@ function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 }
 
-const categories = [
+const defaultCategories = [
   'AI & Data',
   'Developer Tools',
   'Cloud & FinOps',
   'Observability',
   'Quality & Monitoring',
+  'Security',
+  'Analytics & BI',
+  'AI & Machine Learning',
+  'AI Safety & Governance',
+  'AI Quality & Observability'
 ];
 
 export default function ServicesIndexPage() {
   const all = (enhancedRealMicroSaasServices as any[]).concat(extraServices as any[], additionalEnhancedServices as any[], newlyAddedServices as any[]);
+  const discoveredCategories = Array.from(new Set(all.map((s) => s.category).filter(Boolean)));
+  const categories = Array.from(new Set([...defaultCategories, ...discoveredCategories]));
   const byCategory: Record<string, any[]> = {};
   for (const c of categories) byCategory[c] = [];
   for (const s of all) {
@@ -57,7 +64,7 @@ export default function ServicesIndexPage() {
                     <div className="text-gray-200 font-bold mb-4">{s.price}<span className="text-sm text-gray-400 font-medium">{s.period}</span></div>
                     <div className="flex gap-3">
                       <Link href={`/services/${slug}`} className="px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium">View</Link>
-                      <Link href={s.link || `/services/${slug}`} className="px-4 py-2 rounded-lg border border-gray-600 text-gray-300 hover:border-cyan-500">Learn</Link>
+                      <Link href={s.link || `/services/${slug}`} className="px-4 py-2 rounded-lg border border-gray-600 text-gray-200 hover:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/50">Learn</Link>
                     </div>
                   </Card>
                 );
