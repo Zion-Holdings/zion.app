@@ -77,6 +77,46 @@ export default function ServicesPage() {
 
   const popularServices = getPopularServices();
 
+  // Enhanced service categories with better descriptions
+  const enhancedCategories = [
+    {
+      name: 'AI & Machine Learning',
+      description: 'Cutting-edge AI solutions with quantum computing integration',
+      icon: <Brain className="w-6 h-6" />,
+      count: expandedMicroSaasServices.filter(s => s.category === 'AI & Machine Learning').length
+    },
+    {
+      name: 'Blockchain & Web3',
+      description: 'Future-proof blockchain with quantum security',
+      icon: <Globe2 className="w-6 h-6" />,
+      count: expandedMicroSaasServices.filter(s => s.category === 'Blockchain & Web3').length
+    },
+    {
+      name: 'Quantum Computing',
+      description: 'Revolutionary quantum solutions for complex problems',
+      icon: <Atom className="w-6 h-6" />,
+      count: expandedMicroSaasServices.filter(s => s.category === 'Quantum Computing').length
+    },
+    {
+      name: 'Cybersecurity',
+      description: 'AI-powered threat detection and prevention',
+      icon: <Shield className="w-6 h-6" />,
+      count: expandedMicroSaasServices.filter(s => s.category === 'Cybersecurity').length
+    },
+    {
+      name: 'Biomedical & Healthcare',
+      description: 'AI-accelerated medical breakthroughs',
+      icon: <FlaskConical className="w-6 h-6" />,
+      count: expandedMicroSaasServices.filter(s => s.category === 'Biomedical & Healthcare').length
+    },
+    {
+      name: 'Financial Technology',
+      description: 'Quantum-powered financial modeling and trading',
+      icon: <DollarSign className="w-6 h-6" />,
+      count: expandedMicroSaasServices.filter(s => s.category === 'Financial Technology').length
+    }
+  ];
+
   const categoryIcons: { [key: string]: React.ReactNode } = {
     'AI & Machine Learning': <Brain className="w-6 h-6" />,
     'Blockchain & Web3': <Globe2 className="w-6 h-6" />,
@@ -235,30 +275,26 @@ export default function ServicesPage() {
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {serviceCategories.filter(cat => cat !== 'All').map((category, index) => {
-                const categoryServices = getServicesByCategory(category);
-                const icon = categoryIcons[category] || <Settings className="w-6 h-6" />;
-                
-                return (
-                  <EnhancedFuturisticCard
-                    key={category}
-                    variant={index % 4 === 0 ? 'holographic' : index % 4 === 1 ? 'quantum' : index % 4 === 2 ? 'neural' : 'cyberpunk'}
-                    intensity="medium"
-                    className="text-center cursor-pointer group"
-                    interactive={true}
-                    onClick={() => setSelectedCategory(category)}
-                  >
-                    <div className="text-cyan-400 mb-4 group-hover:scale-110 transition-transform">
-                      {icon}
-                    </div>
-                    <h3 className="text-lg font-semibold text-white mb-2">{category}</h3>
-                    <div className="text-sm text-gray-400 mb-3">{categoryServices.length} services</div>
-                    <div className="inline-flex items-center text-blue-400 text-sm group-hover:text-blue-300 transition-colors">
-                      View Services <ArrowRight className="w-4 h-4 ml-1" />
-                    </div>
-                  </EnhancedFuturisticCard>
-                );
-              })}
+              {enhancedCategories.map((category, index) => (
+                <EnhancedFuturisticCard
+                  key={category.name}
+                  variant={index % 4 === 0 ? 'holographic' : index % 4 === 1 ? 'quantum' : index % 4 === 2 ? 'neural' : 'cyberpunk'}
+                  intensity="medium"
+                  className="text-center cursor-pointer group"
+                  interactive={true}
+                  onClick={() => setSelectedCategory(category.name)}
+                >
+                  <div className="text-cyan-400 mb-4 group-hover:scale-110 transition-transform">
+                    {category.icon}
+                  </div>
+                  <h3 className="text-lg font-semibold text-white mb-2">{category.name}</h3>
+                  <p className="text-sm text-gray-400 mb-3">{category.description}</p>
+                  <div className="text-sm text-gray-400 mb-3">{category.count} services</div>
+                  <div className="inline-flex items-center text-blue-400 text-sm group-hover:text-blue-300 transition-colors">
+                    View Services <ArrowRight className="w-4 h-4 ml-1" />
+                  </div>
+                </EnhancedFuturisticCard>
+              ))}
             </div>
           </div>
         </section>
@@ -290,8 +326,8 @@ export default function ServicesPage() {
                       onChange={(e) => setSelectedCategory(e.target.value)}
                       className="px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-transparent"
                     >
-                      {serviceCategories.map((category) => (
-                        <option key={category} value={category}>{category}</option>
+                      {enhancedCategories.map((category) => (
+                        <option key={category.name} value={category.name}>{category.name}</option>
                       ))}
                     </select>
 
@@ -444,6 +480,109 @@ export default function ServicesPage() {
                   </Button>
                 </div>
               )}
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Information */}
+        <section className="py-20 bg-gradient-to-br from-gray-900/50 to-black/50">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                Expert Support & Consultation
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Our team of AI and quantum computing experts is here to help you choose the right services and implement them successfully.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
+              <EnhancedFuturisticCard
+                variant="neural"
+                intensity="medium"
+                className="text-center"
+              >
+                <div className="text-cyan-400 mb-4">
+                  <Phone className="w-8 h-8 mx-auto" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">Phone Support</h3>
+                <p className="text-lg text-cyan-400 font-mono">{contactInfo.mobile}</p>
+                <p className="text-sm text-gray-400 mt-2">Available 24/7</p>
+              </EnhancedFuturisticCard>
+
+              <EnhancedFuturisticCard
+                variant="quantum"
+                intensity="medium"
+                className="text-center"
+              >
+                <div className="text-fuchsia-400 mb-4">
+                  <Mail className="w-8 h-8 mx-auto" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">Email Consultation</h3>
+                <p className="text-lg text-fuchsia-400 font-mono break-all">{contactInfo.email}</p>
+                <p className="text-sm text-gray-400 mt-2">Response within 2 hours</p>
+              </EnhancedFuturisticCard>
+
+              <EnhancedFuturisticCard
+                variant="holographic"
+                intensity="medium"
+                className="text-center"
+              >
+                <div className="text-green-400 mb-4">
+                  <MapPin className="w-8 h-8 mx-auto" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">Headquarters</h3>
+                <p className="text-sm text-green-400 font-mono leading-relaxed">{contactInfo.address}</p>
+                <p className="text-sm text-gray-400 mt-2">Visit us anytime</p>
+              </EnhancedFuturisticCard>
+            </div>
+
+            <div className="text-center">
+              <EnhancedFuturisticCard
+                variant="quantum-holographic"
+                intensity="low"
+                className="max-w-3xl mx-auto"
+              >
+                <div className="text-center">
+                  <h3 className="text-2xl font-bold text-white mb-4">Why Choose Our Services?</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left mb-6">
+                    <div className="flex items-center space-x-3">
+                      <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                      <span className="text-gray-300">300+ Production-Ready Services</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                      <span className="text-gray-300">14-Day Free Trials</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                      <span className="text-gray-300">Expert Implementation Support</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                      <span className="text-gray-300">1000%+ Average ROI</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                      <span className="text-gray-300">24/7 Technical Support</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                      <span className="text-gray-300">Enterprise Security & Compliance</span>
+                    </div>
+                  </div>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Button href="/contact" variant="primary" size="lg">
+                      Get Free Consultation
+                      <ArrowRight className="w-5 h-5 ml-2" />
+                    </Button>
+                    <Button href="tel:+13024640950" variant="secondary" size="lg">
+                      Call Now
+                      <Phone className="w-5 h-5 ml-2" />
+                    </Button>
+                  </div>
+                </div>
+              </EnhancedFuturisticCard>
             </div>
           </div>
         </section>
