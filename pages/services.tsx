@@ -524,7 +524,7 @@ export default function ServicesPage() {
                       {/* Enhanced CTA Buttons */}
                       <div className="flex flex-col sm:flex-row gap-3">
                         <Button
-                          href={service.link}
+                          href={`/${new URL(service.link).pathname.split('/').filter(Boolean).pop()}`}
                           variant="quantum"
                           className="flex-1 justify-center"
                         >
@@ -634,7 +634,7 @@ export default function ServicesPage() {
                       {/* Enhanced CTA Buttons */}
                       <div className="flex flex-col sm:flex-row gap-3">
                         <Button
-                          href={service.link}
+                          href={`/${new URL(service.link).pathname.split('/').filter(Boolean).pop()}`}
                           variant="quantum"
                           className="flex-1 justify-center"
                         >
@@ -755,7 +755,7 @@ export default function ServicesPage() {
                       {/* Enhanced CTA Buttons */}
                       <div className="flex flex-col sm:flex-row gap-3">
                         <Button
-                          href={service.link}
+                          href={`/${new URL(service.link).pathname.split('/').filter(Boolean).pop()}`}
                           variant="quantum"
                           className="flex-1 justify-center"
                         >

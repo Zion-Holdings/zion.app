@@ -181,7 +181,7 @@ const UltraAdvancedFuturisticBackground: React.FC<UltraAdvancedFuturisticBackgro
             ctx.stroke();
             break;
 
-          case 'holographic':
+          case 'holographic': {
             // Holographic particle with geometric shapes
             ctx.strokeStyle = particle.color;
             ctx.lineWidth = 2;
@@ -194,6 +194,7 @@ const UltraAdvancedFuturisticBackground: React.FC<UltraAdvancedFuturisticBackgro
             ctx.closePath();
             ctx.stroke();
             break;
+          }
 
           case 'neural':
             // Neural network particle
@@ -211,7 +212,7 @@ const UltraAdvancedFuturisticBackground: React.FC<UltraAdvancedFuturisticBackgro
             ctx.stroke();
             break;
 
-          case 'cyberpunk':
+          case 'cyberpunk': {
             // Cyberpunk particle with angular design
             ctx.strokeStyle = particle.color;
             ctx.lineWidth = 1.5;
@@ -224,6 +225,7 @@ const UltraAdvancedFuturisticBackground: React.FC<UltraAdvancedFuturisticBackgro
             ctx.closePath();
             ctx.stroke();
             break;
+          }
         }
 
         ctx.restore();
