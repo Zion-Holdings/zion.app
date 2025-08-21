@@ -92,6 +92,9 @@ import { researchDevelopmentServices2031 } from '../data/2031-research-developme
 import { spaceMetaverseServices2031 } from '../data/2031-space-metaverse-services';
 import { futuristicInnovations2032 } from '../data/2032-futuristic-innovations';
 import { enterpriseInnovations2032 } from '../data/2032-enterprise-innovations';
+// Import new 2034 services
+import { cuttingEdge2034Services } from '../data/2034-cutting-edge-innovations';
+import { emergingTech2034Services } from '../data/2034-emerging-tech-breakthroughs';
 
 export default function HomePage() {
   const contactInfo = {
@@ -117,6 +120,9 @@ export default function HomePage() {
     ...emergingTechnologyServices,
     ...emergingTechServices2025,
     ...comprehensiveITSolutions,
+    // Add new 2034 cutting-edge services
+    ...cuttingEdge2034Services,
+    ...emergingTech2034Services,
     ...realMarketServices,
     ...serviceExpansions2025,
     ...verifiedRealServices2025Batch2,
