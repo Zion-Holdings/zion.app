@@ -69,10 +69,11 @@ export default function ServicesPage() {
         return (b.popular ? 1 : 0) - (a.popular ? 1 : 0);
       case 'category':
         return a.category.localeCompare(b.category);
-      case 'roi':
+      case 'roi': {
         const aRoi = parseFloat(a.roi.match(/\d+/)?.[0] || '0');
         const bRoi = parseFloat(b.roi.match(/\d+/)?.[0] || '0');
         return bRoi - aRoi;
+      }
       default:
         return a.name.localeCompare(b.name);
     }
