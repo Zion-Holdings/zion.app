@@ -27,6 +27,7 @@ import { innovative2025Services } from '../data/innovative-2025-services';
 import { emergingTech2025Services } from '../data/emerging-tech-2025-services';
 import { revolutionary2025Services } from '../data/revolutionary-2025-services';
 import { nextGenInnovations2025 } from '../data/next-gen-innovations-2025';
+import { newRealServices2025 } from '../data/new-real-services-2025';
 
 export default function HomePage() {
   const contactInfo = {
@@ -56,7 +57,8 @@ export default function HomePage() {
     ...innovative2025Services,
     ...emergingTech2025Services,
     ...revolutionary2025Services,
-    ...nextGenInnovations2025
+    ...nextGenInnovations2025,
+    ...newRealServices2025
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);

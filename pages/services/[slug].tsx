@@ -17,6 +17,7 @@ import { realServicesQ12025 } from '../../data/real-services-q1-2025';
 import { realEnterpriseServices2025 } from '../../data/real-enterprise-services-2025';
 import { verifiedRealServices2025Batch2 } from '../../data/verified-real-services-2025-batch2';
 import { realMarketAugmentations2025 } from '../../data/real-market-augmentations-2025';
+import { newRealServices2025 } from '../../data/new-real-services-2025';
 
 type Service = typeof enhancedRealMicroSaasServices[number];
 
@@ -39,7 +40,8 @@ function getAllServices(): Service[] {
 		.concat(realServicesQ12025 as unknown as Service[])
 		.concat(realEnterpriseServices2025 as unknown as Service[])
 		.concat(verifiedRealServices2025Batch2 as unknown as Service[])
-		.concat(realMarketAugmentations2025 as unknown as Service[]);
+		.concat(realMarketAugmentations2025 as unknown as Service[])
+		.concat(newRealServices2025 as unknown as Service[]);
 }
 
 function toSlug(value: string): string {
@@ -198,7 +200,7 @@ export default function ServiceDetailPage({ service }: { service: Service }) {
 							<div className="text-sm text-gray-400 mt-2">Trial: {service.trialDays || 14} days • Setup: {service.setupTime || 'Fast'} • Competitors: {(service.competitors || []).slice(0,3).join(', ')}</div>
 							<div className="mt-6 flex gap-3">
 								<Button href="/contact" className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 text-white">Contact Sales</Button>
-								<Button href={service.link} variant="outline" className="flex-1 border border-gray-600 text-gray-200"><ExternalLink className="w-4 h-4 mr-2" /> Learn More</Button>
+								<Button href={service.link || `/services/${(service.id || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`} variant="outline" className="flex-1 border border-gray-600 text-gray-200"><ExternalLink className="w-4 h-4 mr-2" /> Learn More</Button>
 							</div>
 						</Card>
 

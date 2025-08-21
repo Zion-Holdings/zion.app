@@ -3,6 +3,7 @@ import EnhancedNavigation from './EnhancedNavigation';
 import EnhancedFooter from './EnhancedFooter';
 import UltraAdvancedFuturisticBackground from '../ui/UltraAdvancedFuturisticBackground';
 import TopContactBar from './TopContactBar';
+import NeoFuturisticFooter from './NeoFuturisticFooter';
 
 interface LayoutProps {
 	children: React.ReactNode;
@@ -18,7 +19,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 				<main id="main" className="pt-24 lg:pt-28">
 					{children}
 				</main>
-				<EnhancedFooter />
+				<NeoFuturisticFooter />
 			</UltraAdvancedFuturisticBackground>
 		</div>
 	);
