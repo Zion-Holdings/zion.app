@@ -560,11 +560,11 @@ export default function HomePage() {
                           <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                             <div className="flex items-center gap-2 text-gray-300">
                               <Phone className="w-4 h-4 text-cyan-400" />
-                              <span>{highlight.contactInfo.mobile}</span>
+                              <a href={`tel:${highlight.contactInfo.mobile.replace(/[^+\\d]/g, '')}`} className="hover:text-white">{highlight.contactInfo.mobile}</a>
                             </div>
                             <div className="flex items-center gap-2 text-gray-300">
                               <Mail className="w-4 h-4 text-purple-400" />
-                              <span>{highlight.contactInfo.email}</span>
+                              <a href={`mailto:${highlight.contactInfo.email}`} className="hover:text-white">{highlight.contactInfo.email}</a>
                             </div>
                           </div>
                         )}
@@ -589,9 +589,9 @@ export default function HomePage() {
                     </div>
                     {highlight.contactInfo && (
                       <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
-                        <div className="flex items-center justify-center gap-2 text-cyan-400"><Phone className="w-4 h-4" /><span>{highlight.contactInfo.mobile}</span></div>
-                        <div className="flex items-center justify-center gap-2 text-purple-400"><Mail className="w-4 h-4" /><span>{highlight.contactInfo.email}</span></div>
-                        <div className="flex items-center justify-center gap-2 text-green-400"><MapPin className="w-4 h-4" /><span className="text-xs">{highlight.contactInfo.address}</span></div>
+                        <div className="flex items-center justify-center gap-2 text-cyan-400"><Phone className="w-4 h-4" /><a href={`tel:${highlight.contactInfo.mobile.replace(/[^+\\d]/g, '')}`} className="hover:text-white">{highlight.contactInfo.mobile}</a></div>
+                        <div className="flex items-center justify-center gap-2 text-purple-400"><Mail className="w-4 h-4" /><a href={`mailto:${highlight.contactInfo.email}`} className="hover:text-white">{highlight.contactInfo.email}</a></div>
+                        <div className="flex items-center justify-center gap-2 text-green-400"><MapPin className="w-4 h-4" /><a href={`https://maps.google.com/?q=${encodeURIComponent(highlight.contactInfo.address)}`} target="_blank" rel="noopener noreferrer" className="text-xs hover:text-white">{highlight.contactInfo.address}</a></div>
                       </div>
                     )}
                   </div>
