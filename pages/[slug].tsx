@@ -203,6 +203,20 @@ function extractRootSlugFromLink(link?: string): string | null {
 export const getStaticPaths: GetStaticPaths = async () => {
   const services = collectAllServices();
   const candidateSlugs = new Set<string>();
+  // Collect existing static page slugs at the root of /pages to avoid conflicts
+  const pagesDir = path.join(process.cwd(), 'pages');
+  const staticPageSlugs = new Set<string>();
+  try {
+    const files = fs.readdirSync(pagesDir, { withFileTypes: true });
+    for (const entry of files) {
+      if (entry.isFile() && entry.name.endsWith('.tsx')) {
+        const base = entry.name.replace(/\.tsx$/, '');
+        if (!['_app', '_document', 'index', '[slug]'].includes(base)) {
+          staticPageSlugs.add(base);
+        }
+      }
+    }
+  } catch {}
 
   for (const s of services) {
     const fromLink = extractRootSlugFromLink((s as any).link);
@@ -215,8 +229,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
     }
   }
 
+  // Exclude any slugs that already have a static page
+  const filtered = Array.from(candidateSlugs).filter((slug) => !staticPageSlugs.has(slug));
+
   return {
-    paths: Array.from(candidateSlugs).map((slug) => ({ params: { slug } })),
+    paths: filtered.map((slug) => ({ params: { slug } })),
     fallback: true
   };
 };
