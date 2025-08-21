@@ -47,30 +47,66 @@ export default function HomePage() {
     contactCTA: "Ready to revolutionize your business? Contact our expert team today for a personalized consultation and demo."
   };
 
-  const platformFeatures = [
+  const featuredServices = [
     {
-      title: 'Quantum AI Platform',
-      description: 'Revolutionary quantum computing platform with AI capabilities for complex problem solving',
-      icon: <Brain className="w-8 h-8 text-cyan-400" />,
-      gradient: 'from-cyan-500 to-blue-600',
-      features: ['Quantum processing', 'AI integration', 'Real-time optimization'],
-      link: '/services/quantum-ai'
+      title: 'Quantum AI Research Platform',
+      description: 'Access cutting-edge quantum computing resources for AI research, drug discovery, and complex optimization problems.',
+      icon: <Cpu className="w-8 h-8 text-cyan-400" />,
+      variant: 'quantum' as const,
+      price: '$2,999/month',
+      features: ['Quantum processing units', 'AI integration', 'Research collaboration'],
+      link: '/services/quantum-ai-research',
+      popular: true
     },
     {
-      title: 'Autonomous Systems',
-      description: 'Self-managing AI systems that operate 24/7 with zero human intervention',
-      icon: <Bot className="w-8 h-8 text-purple-400" />,
-      gradient: 'from-purple-500 to-pink-600',
-      features: ['24/7 operation', 'Self-healing', 'Predictive maintenance'],
-      link: '/services/autonomous-systems'
+      title: 'Autonomous Manufacturing System',
+      description: 'Revolutionary autonomous manufacturing that operates 24/7 with AI-powered quality control and optimization.',
+      icon: <Factory className="w-8 h-8 text-green-400" />,
+      variant: 'neural' as const,
+      price: '$1,499/month',
+      features: ['24/7 operation', 'AI quality control', 'Predictive maintenance'],
+      link: '/services/autonomous-manufacturing',
+      popular: true
     },
     {
-      title: 'Biomedical AI',
-      description: 'Cutting-edge AI solutions for healthcare and biomedical research',
-      icon: <Dna className="w-8 h-8 text-green-400" />,
-      gradient: 'from-green-500 to-emerald-600',
+      title: 'Biomedical AI Platform',
+      description: 'Advanced AI platform for drug discovery, genomic analysis, and clinical research acceleration.',
+      icon: <Dna className="w-8 h-8 text-blue-400" />,
+      variant: 'holographic' as const,
+      price: '$899/month',
       features: ['Drug discovery', 'Genomic analysis', 'Clinical optimization'],
-      link: '/services/biomedical-ai'
+      link: '/services/biomedical-ai',
+      popular: true
+    },
+    {
+      title: 'Blockchain Enterprise Platform',
+      description: 'Enterprise-grade blockchain solutions with smart contracts and cross-chain interoperability.',
+      icon: <Globe2 className="w-8 h-8 text-orange-400" />,
+      variant: 'cyberpunk' as const,
+      price: '$399/month',
+      features: ['Multi-chain support', 'Smart contracts', 'Enterprise security'],
+      link: '/services/blockchain-enterprise',
+      popular: false
+    },
+    {
+      title: 'Quantum Cybersecurity Suite',
+      description: 'Quantum-resistant security for the post-quantum era with AI-powered threat detection.',
+      icon: <Shield className="w-8 h-8 text-red-400" />,
+      variant: 'quantum-holographic' as const,
+      price: '$599/month',
+      features: ['Quantum-resistant encryption', 'AI threat detection', 'Zero-trust'],
+      link: '/services/quantum-cybersecurity',
+      popular: false
+    },
+    {
+      title: 'Autonomous Logistics Platform',
+      description: 'AI-powered logistics optimization with autonomous delivery vehicles and route optimization.',
+      icon: <Truck className="w-8 h-8 text-yellow-400" />,
+      variant: 'neural' as const,
+      price: '$799/month',
+      features: ['Autonomous delivery', 'AI optimization', 'Real-time tracking'],
+      link: '/services/autonomous-logistics',
+      popular: false
     }
   ];
 
@@ -141,7 +177,7 @@ export default function HomePage() {
       </Head>
 
       {/* Ultra Futuristic Background */}
-      <UltraFuturisticBackground>
+      <UltraFuturisticBackground variant="quantum-holographic">
         <div className="min-h-screen">
           {/* Hero Section */}
           <section className="relative py-20 overflow-hidden">
@@ -168,12 +204,18 @@ export default function HomePage() {
                 {/* Hero Stats */}
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-12">
                   {heroStats.map((stat, index) => (
-                    <div key={index} className="text-center">
+                    <motion.div 
+                      key={index} 
+                      className="text-center"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                    >
                       <div className={`text-2xl md:text-3xl font-bold ${stat.color} mb-2`}>
                         {stat.value}
                       </div>
                       <div className="text-sm text-gray-400">{stat.label}</div>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
 
@@ -198,41 +240,24 @@ export default function HomePage() {
                 </div>
 
                 {/* Contact Info */}
-                <div className="mt-12 p-8 bg-gradient-to-r from-gray-800/50 to-gray-900/50 rounded-2xl backdrop-blur-sm border border-gray-700/50">
-                  <div className="text-center mb-6">
-                    <h3 className="text-2xl font-bold text-white mb-2">Ready to Transform Your Business?</h3>
-                    <p className="text-gray-300 mb-6">Get in touch with our experts today for a free consultation and discover how our revolutionary services can drive unprecedented growth</p>
-                    
-                    {/* Contact Details */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                      <div className="text-center">
-                        <Phone className="w-8 h-8 text-cyan-400 mx-auto mb-2" />
-                        <h4 className="font-semibold text-white mb-1">Call Us</h4>
-                        <p className="text-cyan-400 font-medium">{contactInfo.mobile}</p>
-                      </div>
-                      <div className="text-center">
-                        <Mail className="w-8 h-8 text-purple-400 mx-auto mb-2" />
-                        <h4 className="font-semibold text-white mb-1">Email Us</h4>
-                        <p className="text-purple-400 font-medium">{contactInfo.email}</p>
-                      </div>
-                      <div className="text-center">
-                        <MapPin className="w-8 h-8 text-green-400 mx-auto mb-2" />
-                        <h4 className="font-semibold text-white mb-1">Visit Us</h4>
-                        <p className="text-green-400 font-medium text-sm">{contactInfo.address}</p>
-                      </div>
-                    </div>
-                    
-                    <div className="text-center">
-                      <p className="text-gray-300 mb-4">Visit our website for more information</p>
-                      <a 
-                        href={contactInfo.website} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium"
-                      >
-                        {contactInfo.website}
-                        <ExternalLink className="w-4 h-4 ml-2" />
+                <div className="bg-black/20 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+                  <h3 className="text-lg font-semibold text-white mb-4">Contact Zion Tech Group</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                    <div className="flex items-center gap-2 text-gray-300">
+                      <Phone className="w-4 h-4 text-cyan-400" />
+                      <a href={`tel:${contactInfo.mobile}`} className="hover:text-white transition-colors">
+                        {contactInfo.mobile}
                       </a>
+                    </div>
+                    <div className="flex items-center gap-2 text-gray-300">
+                      <Mail className="w-4 h-4 text-purple-400" />
+                      <a href={`mailto:${contactInfo.email}`} className="hover:text-white transition-colors">
+                        {contactInfo.email}
+                      </a>
+                    </div>
+                    <div className="flex items-center gap-2 text-gray-300">
+                      <MapPin className="w-4 h-4 text-green-400" />
+                      <span>{contactInfo.address}</span>
                     </div>
                   </div>
                 </div>
@@ -240,157 +265,173 @@ export default function HomePage() {
             </div>
           </section>
 
-          {/* Platform Features Section */}
+          {/* Featured Services Section */}
           <section className="py-20">
             <div className="container mx-auto px-4">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                className="text-center mb-16"
-              >
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
-                  Revolutionary Platform Features
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                  Featured Revolutionary Services
                 </h2>
                 <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                  Experience the future of technology with our cutting-edge platform capabilities
+                  Experience the future with our most advanced micro SaaS solutions
                 </p>
-              </motion.div>
+              </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {platformFeatures.map((feature, index) => (
+                {featuredServices.map((service, index) => (
                   <motion.div
                     key={index}
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: index * 0.1 }}
+                    transition={{ delay: index * 0.1 }}
                     viewport={{ once: true }}
                   >
                     <UltraFuturisticCard
-                      title={feature.title}
-                      description={feature.description}
-                      icon={feature.icon}
-                      color="from-cyan-500 to-blue-600"
-                      textColor="text-cyan-400"
-                      gradient={feature.gradient}
-                      features={feature.features}
-                      link={feature.link}
-                      variant="quantum"
-                      className="h-full cursor-pointer"
-                    />
+                      variant={service.variant}
+                      className="h-full"
+                      glowIntensity="high"
+                      animationSpeed="normal"
+                    >
+                      <div className="flex items-start justify-between mb-4">
+                        <div className="flex items-center gap-3">
+                          <div className="p-3 rounded-xl bg-white/10 backdrop-blur-sm">
+                            {service.icon}
+                          </div>
+                          <div>
+                            <h3 className="text-xl font-bold text-white mb-1">{service.title}</h3>
+                            <div className="text-lg font-bold text-cyan-400">{service.price}</div>
+                          </div>
+                        </div>
+                        {service.popular && (
+                          <div className="px-3 py-1 bg-gradient-to-r from-yellow-400 to-orange-500 text-black text-sm font-bold rounded-full">
+                            <Star className="w-4 h-4 inline mr-1" />
+                            Popular
+                          </div>
+                        )}
+                      </div>
+
+                      <p className="text-gray-300 mb-4 leading-relaxed">{service.description}</p>
+
+                      <div className="mb-4">
+                        <div className="grid grid-cols-1 gap-2">
+                          {service.features.map((feature, featureIndex) => (
+                            <div key={featureIndex} className="flex items-center gap-2 text-gray-300 text-sm">
+                              <div className="w-2 h-2 rounded-full bg-cyan-400" />
+                              {feature}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      <Button
+                        href={service.link}
+                        variant="primary"
+                        size="sm"
+                        className="w-full"
+                      >
+                        Learn More
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </Button>
+                    </UltraFuturisticCard>
                   </motion.div>
                 ))}
+              </div>
+
+              <div className="text-center mt-12">
+                <Button
+                  href="/services"
+                  variant="secondary"
+                  size="lg"
+                >
+                  View All 500+ Services
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
               </div>
             </div>
           </section>
 
-          {/* Prominent Advertising Section */}
-          <section className="py-16 bg-gradient-to-r from-purple-900/50 via-blue-900/50 to-cyan-900/50 border-y border-purple-500/20">
+          {/* Market Position Section */}
+          <section className="py-20 bg-black/20">
             <div className="container mx-auto px-4">
-              <div className="text-center mb-12">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                  {advertisingContent.headline}
+              <div className="max-w-4xl mx-auto text-center">
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
+                  Industry Leadership & Market Position
                 </h2>
-                <p className="text-xl text-cyan-300 mb-8 max-w-4xl mx-auto font-medium">
-                  {advertisingContent.subheadline}
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-                {advertisingContent.benefits.map((benefit, index) => (
-                  <div key={index} className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:border-cyan-400/50 transition-all duration-300 hover:scale-105">
-                    <div className="text-2xl mb-3">{benefit.split(' ')[0]}</div>
-                    <p className="text-white/90 text-sm leading-relaxed">
-                      {benefit.split(' ').slice(1).join(' ')}
-                    </p>
-                  </div>
-                ))}
-              </div>
-
-              <div className="text-center mb-8">
-                <p className="text-lg text-gray-300 mb-6 max-w-4xl mx-auto">
+                <p className="text-xl text-gray-300 mb-12 leading-relaxed">
                   {advertisingContent.marketPosition}
                 </p>
-                <p className="text-lg text-cyan-300 mb-6 max-w-4xl mx-auto">
-                  {advertisingContent.pricing}
-                </p>
-                <p className="text-lg text-white mb-8 max-w-4xl mx-auto">
-                  {advertisingContent.contactCTA}
-                </p>
-              </div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                viewport={{ once: true }}
-                className="text-center mt-12"
-              >
-                <Button
-                  href="https://ziontechgroup.com/services"
-                  variant="secondary"
-                  size="lg"
-                  className="group"
-                >
-                  View All 500+ Services
-                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </motion.div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                  {marketInsights.map((insight, index) => (
+                    <motion.div
+                      key={index}
+                      className="text-center"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                    >
+                      <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-500/30 mb-4">
+                        <div className="text-cyan-400">
+                          {insight.icon}
+                        </div>
+                      </div>
+                      <div className="text-3xl font-bold text-white mb-2">{insight.metric}</div>
+                      <div className="text-lg font-semibold text-cyan-400 mb-2">{insight.label}</div>
+                      <div className="text-gray-400">{insight.description}</div>
+                    </motion.div>
+                  ))}
+                </div>
+
+                <div className="bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-cyan-500/20 rounded-2xl p-8 backdrop-blur-sm">
+                  <h3 className="text-2xl font-bold text-white mb-4">Competitive Advantages</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+                    {advertisingContent.benefits.map((benefit, index) => (
+                      <div key={index} className="flex items-center gap-3 text-gray-300">
+                        <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                        <span>{benefit}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
 
           {/* Testimonials Section */}
-          <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-7xl mx-auto">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                className="text-center mb-16"
-              >
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-yellow-100 bg-clip-text text-transparent">
-                  What Our Clients Say
+          <section className="py-20">
+            <div className="container mx-auto px-4">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                  Client Success Stories
                 </h2>
                 <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                  Join thousands of satisfied clients who have transformed their businesses 
-                  with our revolutionary micro SaaS services.
+                  See how leading companies are transforming their operations with our technology
                 </p>
-              </motion.div>
+              </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {testimonials.map((testimonial, index) => (
                   <motion.div
                     key={index}
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: index * 0.1 }}
+                    transition={{ delay: index * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    <UltraFuturisticCard
-                      title={testimonial.name}
-                      description={`"${testimonial.content}"`}
-                      icon={<div className="text-4xl">{testimonial.avatar}</div>}
-                      color="from-purple-500 to-pink-600"
-                      textColor="text-purple-400"
-                      gradient="from-purple-500 to-pink-600"
-                      variant="holographic"
-                      className="h-full"
-                    >
-                      <div className="space-y-3">
-                        <div className="flex items-center justify-between text-sm">
-                          <span className="text-gray-400">Role:</span>
-                          <span className="text-cyan-400">{testimonial.role}</span>
-                        </div>
-                        <div className="flex items-center justify-between text-sm">
-                          <span className="text-gray-400">Company:</span>
-                          <span className="text-white">{testimonial.company}</span>
-                        </div>
-                        <div className="flex items-center justify-center">
+                    <UltraFuturisticCard variant="holographic" className="h-full">
+                      <div className="text-center">
+                        <div className="text-4xl mb-4">{testimonial.avatar}</div>
+                        <div className="flex justify-center mb-4">
                           {[...Array(testimonial.rating)].map((_, i) => (
-                            <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                            <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                           ))}
+                        </div>
+                        <p className="text-gray-300 mb-4 italic">"{testimonial.content}"</p>
+                        <div>
+                          <div className="font-semibold text-white">{testimonial.name}</div>
+                          <div className="text-cyan-400">{testimonial.role}</div>
+                          <div className="text-gray-400 text-sm">{testimonial.company}</div>
                         </div>
                       </div>
                     </UltraFuturisticCard>
@@ -400,111 +441,54 @@ export default function HomePage() {
             </div>
           </section>
 
-          {/* Market Insights Section */}
-          <section className="py-20 bg-gradient-to-r from-gray-900/50 to-black/50">
-            <div className="container mx-auto px-4">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                className="text-center mb-16"
-              >
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                  Market-Leading Performance
-                </h2>
-                <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                  Our revolutionary micro SaaS services deliver unprecedented results and ROI
-                </p>
-              </motion.div>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {marketInsights.map((insight, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="text-center group hover:scale-105 transition-transform duration-300"
-                  >
-                    <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50">
-                      <div className="text-blue-400 mb-3 flex justify-center">
-                        {insight.icon}
-                      </div>
-                      <div className="text-3xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
-                        {insight.metric}
-                      </div>
-                      <h3 className="text-lg font-semibold text-gray-200 mb-2">
-                        {insight.label}
-                      </h3>
-                      <p className="text-green-400 text-sm font-medium">
-                        {insight.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* Final CTA Section */}
-          <section className="py-20">
+          {/* CTA Section */}
+          <section className="py-20 bg-gradient-to-r from-cyan-500/10 to-purple-500/10">
             <div className="container mx-auto px-4 text-center">
-              <div className="max-w-4xl mx-auto">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                  Ready to Shape the Future?
+              <div className="max-w-3xl mx-auto">
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                  Ready to Transform Your Business?
                 </h2>
-                <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-                  Join thousands of forward-thinking companies already transforming their business with Zion Tech Group's revolutionary solutions.
+                <p className="text-xl text-gray-300 mb-8">
+                  {advertisingContent.contactCTA}
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
                   <Button
-                    href="/services"
+                    href="/contact"
                     variant="primary"
                     size="lg"
-                    className="group"
                   >
-                    View All Services
-                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                    Get Free Consultation
+                    <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
                   <Button
-                    href="/contact"
+                    href={`tel:${contactInfo.mobile}`}
                     variant="secondary"
                     size="lg"
                   >
-                    Schedule Consultation
+                    <Phone className="w-5 h-5 mr-2" />
+                    Call Now
                   </Button>
                 </div>
 
-                {/* Final Contact Info */}
-                <div className="bg-gradient-to-r from-gray-800/50 to-gray-900/50 rounded-2xl p-8 backdrop-blur-sm border border-gray-700/50">
-                  <h3 className="text-2xl font-bold text-white mb-4">Get in Touch Today</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div className="text-center">
-                      <Phone className="w-6 h-6 text-cyan-400 mx-auto mb-2" />
-                      <div className="text-sm text-gray-400">Mobile</div>
-                      <div className="text-white font-semibold">{contactInfo.mobile}</div>
-                      <div className="text-xs text-cyan-400 mt-1">Available 24/7</div>
+                <div className="bg-black/20 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+                  <h3 className="text-lg font-semibold text-white mb-4">Contact Information</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                    <div className="flex items-center justify-center gap-2 text-gray-300">
+                      <Phone className="w-4 h-4 text-cyan-400" />
+                      <a href={`tel:${contactInfo.mobile}`} className="hover:text-white transition-colors">
+                        {contactInfo.mobile}
+                      </a>
                     </div>
-                    <div className="text-center">
-                      <Mail className="w-6 h-6 text-green-400 mx-auto mb-2" />
-                      <div className="text-sm text-gray-400">Email</div>
-                      <div className="text-white font-semibold">{contactInfo.email}</div>
-                      <div className="text-xs text-green-400 mt-1">Response within 2 hours</div>
+                    <div className="flex items-center justify-center gap-2 text-gray-300">
+                      <Mail className="w-4 h-4 text-purple-400" />
+                      <a href={`mailto:${contactInfo.email}`} className="hover:text-white transition-colors">
+                        {contactInfo.email}
+                      </a>
                     </div>
-                    <div className="text-center">
-                      <MapPin className="w-6 h-6 text-purple-400 mx-auto mb-2" />
-                      <div className="text-sm text-gray-400">Address</div>
-                      <div className="text-white font-semibold text-sm">{contactInfo.address}</div>
-                      <div className="text-xs text-purple-400 mt-1">Global headquarters</div>
-                    </div>
-                  </div>
-                  <div className="text-center mt-6">
-                    <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full text-white font-semibold text-sm">
-                      <Globe className="w-4 h-4 mr-2" />
-                      Visit us at: {contactInfo.website}
+                    <div className="flex items-center justify-center gap-2 text-gray-300">
+                      <MapPin className="w-4 h-4 text-green-400" />
+                      <span>{contactInfo.address}</span>
                     </div>
                   </div>
                 </div>
