@@ -90,14 +90,14 @@ export default function FuturisticNavbar() {
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500 via-purple-600 to-cyan-500 rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-500" />
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500 via-purple-600 to-cyan-500 rounded-2xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500" />
             </div>
-            <div className="flex flex-col">
-              <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent">
-                Zion Tech Group
-              </span>
-              <span className="text-xs text-gray-400 font-medium tracking-wider">
-                FUTURE-FORWARD SOLUTIONS
-              </span>
-            </div>
+                    <div className="flex flex-col">
+          <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent">
+            Zion Tech Group
+          </span>
+          <span className="text-xs text-gray-400 font-medium tracking-wider">
+            REVOLUTIONARY AI & QUANTUM SOLUTIONS
+          </span>
+        </div>
           </Link>
 
           {/* Desktop Navigation */}

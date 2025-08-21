@@ -95,8 +95,9 @@ const Footer: React.FC = () => {
               </div>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              Leading provider of 200+ real micro SaaS services, AI solutions, and emerging technology platforms. 
-              Transform your business with cutting-edge innovation.
+              Revolutionary AI & quantum computing solutions transforming industries worldwide. 
+              350+ real micro SaaS services with 1500%+ average ROI. 
+              Trusted by Fortune 500 companies and government agencies.
             </p>
             
             {/* Contact Information */}
