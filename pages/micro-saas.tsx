@@ -38,7 +38,7 @@ export default function MicroSaasPage() {
     .slice(0, 12);
 
   return (
-    <QuantumHolographicMatrixBackground intensity="high">
+            <QuantumHolographicMatrixBackground>
       <Head>
         <title>Micro SAAS Services - Zion Tech Group | Revolutionary AI & Technology Solutions</title>
         <meta name="description" content="Discover 150+ revolutionary micro SAAS services powered by AI and modern cloud. Transparent pricing and fast onboarding." />

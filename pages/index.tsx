@@ -4,7 +4,7 @@ import {
   Clock, DollarSign, TrendingUp, Brain, 
   Zap, Rocket, Mail, Phone, MapPin, Sparkles, 
   ArrowRight, ExternalLink, Check, Cpu, 
-  ShieldCheck
+  ShieldCheck, Star
 } from 'lucide-react';
 import Button from '../components/ui/Button';
 import UltraFuturisticMatrixBackground from '../components/ui/UltraFuturisticMatrixBackground';
@@ -12,9 +12,12 @@ import UltraFuturisticServiceCard from '../components/ui/UltraFuturisticServiceC
 import ServiceAds from '../components/sections/ServiceAds';
 import Card from '../components/ui/Card';
 import { motion } from 'framer-motion';
+import EnhancedNavigation from '../components/layout/EnhancedNavigation';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
 import { additionalEnhancedServices } from '../data/additional-real-services';
+import { innovativeMicroSaasServices } from '../data/innovative-micro-saas-services';
+import { emergingTechServices } from '../data/emerging-tech-services';
 
 export default function HomePage() {
   const heroStats = [
@@ -36,15 +39,15 @@ export default function HomePage() {
   // Enhanced service advertising content with real market data and competitive advantages
   const serviceHighlights = [
     {
-      title: '🧠 Revolutionary Quantum AI Cognitive Platform',
-      description: 'World\'s first quantum-enhanced AI with human-like reasoning capabilities. Achieve breakthrough discoveries with 1000% ROI within 6 months.',
-      price: 'Starting at $299/month',
-      features: ['Quantum neural networks with 1000+ qubits', 'Human-like reasoning and problem-solving', 'Real-time quantum simulation', 'Advanced research collaboration tools'],
-      link: 'https://ziontechgroup.com/quantum-ai-cognitive',
-      color: 'from-purple-600 to-indigo-700',
-      marketData: '$15B quantum computing market, 500% annual growth',
-      competitors: 'IBM Quantum ($2000+/month), Google Quantum AI ($1500+/month)',
-      savings: 'Save 85% vs. competitors',
+      title: '🧠 Revolutionary Quantum AI Brain-Computer Interface',
+      description: 'Direct neural interface with quantum AI for unprecedented cognitive enhancement. Achieve breakthrough discoveries with 500% ROI within 6 months.',
+      price: 'Starting at $2,999/month',
+      features: ['Quantum neural signal processing', 'Real-time brain activity monitoring', 'AI-powered cognitive enhancement', 'Secure quantum encryption'],
+      link: 'https://ziontechgroup.com/quantum-ai-brain-computer-interface',
+      color: 'from-purple-600 via-pink-600 to-cyan-600',
+      marketData: '$1.5B BCI market, 300% annual growth',
+      competitors: 'Neuralink ($10,000+/month), Kernel ($50,000+/month)',
+      savings: 'Save 90% vs. competitors',
       contactInfo: {
         mobile: '+1 302 464 0950',
         email: 'kleber@ziontechgroup.com',
@@ -350,8 +353,10 @@ export default function HomePage() {
   const revolutionaryServices = all.filter(service => service.realImplementation && service.popular).slice(0, 6);
 
   return (
-    <UltraFuturisticMatrixBackground>
-      <Head>
+    <>
+      <EnhancedNavigation />
+      <UltraFuturisticMatrixBackground>
+        <Head>
         <title>Zion Tech Group - Revolutionary AI & Quantum Computing Solutions</title>
         <meta name="description" content="Transform your business with 200+ revolutionary micro SaaS services. Quantum AI, autonomous systems, and cutting-edge technology solutions with 800%+ average ROI." />
         <meta name="keywords" content="AI, quantum computing, micro SaaS, autonomous systems, space technology, cybersecurity, manufacturing AI" />
@@ -622,7 +627,7 @@ export default function HomePage() {
       />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-4">
+      <section className="relative min-h-screen flex items-center justify-center px-4 pt-20 lg:pt-24">
         <div className="container mx-auto text-center z-10">
           {/* Main Heading */}
           <motion.div
@@ -887,6 +892,126 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Innovative Services Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-6">
+              Revolutionary Innovation Services
+            </h2>
+            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto">
+              Experience the future with our cutting-edge quantum AI, autonomous systems, and breakthrough technology services
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[...innovativeMicroSaasServices, ...emergingTechServices].slice(0, 6).map((service, index) => (
+              <motion.div
+                key={service.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group"
+              >
+                <div className="bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-sm rounded-2xl p-8 border border-gray-600/30 hover:border-purple-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20 h-full">
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="text-4xl">{service.icon}</div>
+                    {service.popular && (
+                      <span className="bg-gradient-to-r from-purple-600 to-pink-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                        Popular
+                      </span>
+                    )}
+                  </div>
+
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">
+                    {service.name}
+                  </h3>
+                  
+                  <p className="text-gray-300 text-sm mb-4 line-clamp-3">
+                    {service.description}
+                  </p>
+
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="text-2xl font-bold text-purple-400">
+                      {service.price}
+                      <span className="text-sm text-gray-400">{service.period}</span>
+                    </div>
+                    <div className="flex items-center space-x-1">
+                      <Star className="w-4 h-4 text-yellow-400 fill-current" />
+                      <span className="text-sm text-gray-300">{service.rating}</span>
+                      <span className="text-xs text-gray-500">({service.reviews})</span>
+                    </div>
+                  </div>
+
+                  <div className="space-y-2 mb-6">
+                    {service.features.slice(0, 3).map((feature, idx) => (
+                      <div key={idx} className="flex items-center space-x-2">
+                        <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
+                        <span className="text-xs text-gray-300">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="space-y-3 mb-6">
+                    <div className="text-xs">
+                      <span className="text-gray-400">Market Size:</span>
+                      <span className="text-green-400 ml-2">{service.marketSize}</span>
+                    </div>
+                    <div className="text-xs">
+                      <span className="text-gray-400">Growth Rate:</span>
+                      <span className="text-blue-400 ml-2">{service.growthRate}</span>
+                    </div>
+                    <div className="text-xs">
+                      <span className="text-gray-400">ROI:</span>
+                      <span className="text-purple-400 ml-2">{service.roi}</span>
+                    </div>
+                  </div>
+
+                  <div className="flex space-x-3">
+                    <a
+                      href={service.link}
+                      className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 text-white text-center py-3 px-4 rounded-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-300 flex items-center justify-center space-x-2"
+                    >
+                      <span>Learn More</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </a>
+                    <a
+                      href={`tel:${contactInfo.mobile}`}
+                      className="bg-gray-700 hover:bg-gray-600 text-white p-3 rounded-lg transition-colors duration-300"
+                    >
+                      <Phone className="w-4 h-4" />
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="text-center mt-12"
+          >
+            <a
+              href="/innovative-services-showcase"
+              className="inline-flex items-center space-x-2 bg-gradient-to-r from-cyan-600 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-cyan-700 hover:to-blue-700 transition-all duration-300 text-lg"
+            >
+              <span>View All Innovative Services</span>
+              <ArrowRight className="w-5 h-5" />
+            </a>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto text-center">
@@ -954,6 +1079,7 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-    </UltraFuturisticMatrixBackground>
+      </UltraFuturisticMatrixBackground>
+    </>
   );
 }
