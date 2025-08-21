@@ -40,7 +40,10 @@ const navigationItems: NavigationItem[] = [
       { name: 'Service Categories', href: '/comprehensive-services-showcase-2025#categories', description: 'Browse by category' },
       { name: 'Pricing Comparison', href: '/comprehensive-services-showcase-2025#pricing', description: 'Compare service costs' },
       { name: 'Service Search', href: '/comprehensive-services-showcase-2025#search', description: 'Find specific services' },
-      { name: 'Latest Innovations', href: '/revolutionary-2025-services-showcase', description: 'Cutting-edge solutions' }
+      { name: 'Latest Innovations', href: '/revolutionary-2025-services-showcase', description: 'Cutting-edge solutions' },
+      { name: '2026 Services', href: '/revolutionary-2026-services', description: 'Next generation solutions' },
+      { name: '2027 Services', href: '/revolutionary-2027-services-showcase', description: 'Future technology' },
+      { name: 'Ultimate 2026', href: '/ultimate-2026-services-showcase', description: 'Premium solutions' }
     ]
   },
   {
@@ -55,11 +58,17 @@ const navigationItems: NavigationItem[] = [
       { name: 'AI Ethics & Governance', href: '/ai-ethics-governance-framework', description: 'Ethical AI frameworks' },
       { name: 'AI Creativity Studio', href: '/ai-creativity-studio', description: 'AI-powered creative content' },
       { name: 'AI Education Platform', href: '/ai-education-platform', description: 'Personalized AI learning' },
-      { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics', description: 'Medical AI solutions' },
+      { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics-platform', description: 'Medical AI solutions' },
       { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence', description: 'Financial AI analytics' },
       { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform', description: 'Environmental AI solutions' },
       { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-platform', description: 'Human-AI emotional collaboration' },
-      { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer', description: 'Legal document analysis' }
+      { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer', description: 'Legal document analysis' },
+      { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant', description: 'Autonomous research AI' },
+      { name: 'AI Autonomous Code Generation', href: '/ai-autonomous-code-generation', description: 'AI that writes code' },
+      { name: 'AI Autonomous Marketing', href: '/ai-autonomous-marketing-platform', description: 'Autonomous marketing AI' },
+      { name: 'AI Autonomous Sales', href: '/ai-autonomous-sales-platform', description: 'AI that closes deals' },
+      { name: 'AI Autonomous Customer Service', href: '/ai-autonomous-customer-service', description: 'Autonomous support AI' },
+      { name: 'AI Autonomous HR', href: '/ai-autonomous-hr-platform', description: 'Autonomous HR management' }
     ]
   },
   {
@@ -69,16 +78,19 @@ const navigationItems: NavigationItem[] = [
     description: 'Quantum computing and breakthrough technologies',
     badge: 'Hot',
     children: [
-      { name: 'Space Mining Platform', href: '/space-mining-platform', description: 'Asteroid mining and space resources' },
+      { name: 'Space Mining Platform', href: '/autonomous-space-mining-platform', description: 'Asteroid mining and space resources' },
       { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform', description: 'Quantum-biological hybrid processing' },
       { name: 'Brain-Computer Interface', href: '/brain-computer-interface-platform', description: 'Neural interface technology' },
       { name: 'Quantum Energy Platform', href: '/quantum-energy-platform', description: 'Fusion power simulation' },
       { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai-platform', description: 'Self-driving AI systems' },
       { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery-platform', description: 'Materials science acceleration' },
-      { name: 'Quantum Robotics', href: '/quantum-robotics', description: 'Quantum-enhanced robotics' },
-      { name: 'Quantum Internet Security', href: '/quantum-internet-security', description: 'Unbreakable encryption' },
-      { name: 'Quantum Logistics', href: '/quantum-logistics-optimization', description: 'Route optimization' },
-      { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity-platform', description: 'Next-gen security' }
+      { name: 'Quantum Robotics', href: '/quantum-robotics-platform', description: 'Quantum-enhanced robotics' },
+      { name: 'Quantum Internet Security', href: '/quantum-internet-security-platform', description: 'Unbreakable encryption' },
+      { name: 'Quantum Logistics', href: '/quantum-logistics-optimization-platform', description: 'Route optimization' },
+      { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity-platform', description: 'Next-gen security' },
+      { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure-platform', description: 'Quantum-enhanced cloud' },
+      { name: 'Quantum Networking', href: '/quantum-networking-platform', description: 'Quantum communication' },
+      { name: 'Quantum Computing Simulator', href: '/ai-quantum-computing-simulator', description: 'AI-powered quantum simulation' }
     ]
   },
   {
@@ -88,15 +100,15 @@ const navigationItems: NavigationItem[] = [
     description: 'Enterprise solutions and infrastructure',
     children: [
       { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure-platform', description: 'Quantum-enhanced cloud computing' },
-      { name: 'Edge Computing Orchestrator', href: '/edge-computing-orchestration', description: 'Edge processing optimization' },
+      { name: 'Edge Computing Orchestrator', href: '/edge-computing-orchestration-platform', description: 'Edge processing optimization' },
       { name: 'Zero Trust Security Platform', href: '/zero-trust-security-platform', description: 'Advanced cybersecurity' },
       { name: 'Blockchain Enterprise Platform', href: '/blockchain-infrastructure-platform', description: 'Enterprise blockchain solutions' },
-      { name: 'AI-Powered DevOps', href: '/ai-powered-devops', description: 'Intelligent development automation' },
-      { name: 'Quantum Networking', href: '/quantum-networking', description: 'Quantum communication protocols' },
+      { name: 'AI-Powered DevOps', href: '/ai-powered-devops-platform', description: 'Intelligent development automation' },
       { name: 'Autonomous IT Operations', href: '/autonomous-it-operations-center', description: 'Self-managing IT systems' },
-      { name: 'Quantum Data Center', href: '/quantum-data-center', description: 'Next-gen data centers' },
-      { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity', description: 'Quantum security solutions' },
-      { name: 'Quantum Cloud Migration', href: '/quantum-cloud-migration', description: 'Seamless cloud transitions' }
+      { name: 'Autonomous Data Center', href: '/autonomous-data-center-platform', description: 'AI-managed data centers' },
+      { name: 'Quantum Cloud Migration', href: '/quantum-cloud-migration-platform', description: 'Seamless cloud transitions' },
+      { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity-platform', description: 'Quantum security solutions' },
+      { name: 'Quantum Networking', href: '/quantum-networking-platform', description: 'Quantum communication protocols' }
     ]
   },
   {
@@ -110,11 +122,31 @@ const navigationItems: NavigationItem[] = [
       { name: 'Smart CRM Suite', href: '/smart-crm-intelligence-suite', description: 'AI-enhanced CRM' },
       { name: 'Financial Analytics', href: '/automated-financial-analytics-platform', description: 'AI financial analysis' },
       { name: 'Project Management', href: '/intelligent-project-management-suite', description: 'AI project optimization' },
-      { name: 'Business Intelligence', href: '/ai-business-intelligence', description: 'Advanced analytics' },
-      { name: 'Marketing Automation', href: '/ai-marketing-automation', description: 'Intelligent marketing' },
-      { name: 'Customer Service AI', href: '/ai-customer-service', description: 'Automated support' },
-      { name: 'HR & Recruitment', href: '/ai-hr-recruitment', description: 'AI talent management' },
-      { name: 'Legal Contract Analysis', href: '/ai-legal-contract-analyzer', description: 'Legal document review' }
+      { name: 'Business Intelligence', href: '/ai-business-intelligence-suite', description: 'Advanced analytics' },
+      { name: 'Marketing Automation', href: '/ai-autonomous-marketing-platform', description: 'Intelligent marketing' },
+      { name: 'Customer Service AI', href: '/ai-autonomous-customer-service', description: 'Automated support' },
+      { name: 'HR & Recruitment', href: '/ai-autonomous-hr-platform', description: 'AI talent management' },
+      { name: 'Legal Contract Analysis', href: '/ai-legal-contract-analyzer', description: 'Legal document review' },
+      { name: 'AI Autonomous Content Studio', href: '/ai-autonomous-content-studio', description: 'Autonomous content creation' },
+      { name: 'Quantum Financial Trading', href: '/quantum-enhanced-financial-trading', description: 'Quantum-powered trading' },
+      { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics-platform', description: 'Medical AI diagnostics' },
+      { name: 'Autonomous Manufacturing', href: '/autonomous-manufacturing-ai-platform', description: 'AI manufacturing' }
+    ]
+  },
+  {
+    name: 'Space & Metaverse',
+    href: '/space-tech',
+    icon: <Rocket className="w-5 h-5" />,
+    description: 'Space technology and metaverse solutions',
+    children: [
+      { name: 'Space Mining Platform', href: '/autonomous-space-mining-platform', description: 'Asteroid mining operations' },
+      { name: 'Space Technology AI', href: '/space-technology-ai-platform', description: 'AI space solutions' },
+      { name: 'Metaverse Development', href: '/metaverse-ai-development-platform', description: 'Metaverse platforms' },
+      { name: 'Virtual Event Holograms', href: '/virtual-event-hologram-platform', description: 'Holographic events' },
+      { name: 'Space Logistics', href: '/space-logistics-platform', description: 'Space transportation' },
+      { name: 'Satellite Technology', href: '/satellite-technology-platform', description: 'Satellite solutions' },
+      { name: 'Space Research', href: '/space-research-platform', description: 'Space exploration tools' },
+      { name: 'Space Mining Analytics', href: '/space-mining-analytics', description: 'Mining data analysis' }
     ]
   },
   {
@@ -132,7 +164,11 @@ const navigationItems: NavigationItem[] = [
       { name: 'Energy & Utilities', href: '/energy-utilities-solutions', description: 'Smart energy solutions' },
       { name: 'Transportation & Logistics', href: '/transportation-logistics-solutions', description: 'Smart mobility' },
       { name: 'Real Estate Technology', href: '/real-estate-technology-solutions', description: 'PropTech solutions' },
-      { name: 'Entertainment & Media', href: '/entertainment-media-solutions', description: 'Digital media solutions' }
+      { name: 'Entertainment & Media', href: '/entertainment-media-solutions', description: 'Digital media solutions' },
+      { name: 'Biotech & Pharma', href: '/biotech-pharma-solutions', description: 'Life sciences technology' },
+      { name: 'Aerospace & Defense', href: '/aerospace-defense-solutions', description: 'Defense technology' },
+      { name: 'Quantum Solutions', href: '/quantum-solutions', description: 'Quantum technology applications' },
+      { name: 'AI Solutions', href: '/ai-solutions', description: 'AI technology applications' }
     ]
   },
   {
@@ -150,7 +186,11 @@ const navigationItems: NavigationItem[] = [
       { name: 'Community Forum', href: '/community', description: 'User community' },
       { name: 'Developer Resources', href: '/developer-resources', description: 'Developer tools' },
       { name: 'Research & Development', href: '/research-development', description: 'R&D initiatives' },
-      { name: 'White Papers', href: '/white-papers', description: 'Technical insights' }
+      { name: 'White Papers', href: '/white-papers', description: 'Technical insights' },
+      { name: 'Market Research', href: '/market-research', description: 'Industry analysis' },
+      { name: 'Technology Trends', href: '/technology-trends', description: 'Future technology insights' },
+      { name: 'Innovation Lab', href: '/innovation-lab', description: 'Experimental projects' },
+      { name: 'Patent Library', href: '/patent-library', description: 'Intellectual property' }
     ]
   },
   {
@@ -168,7 +208,11 @@ const navigationItems: NavigationItem[] = [
       { name: 'Contact Us', href: '/contact', description: 'Get in touch' },
       { name: 'Locations', href: '/locations', description: 'Global presence' },
       { name: 'Sustainability', href: '/sustainability', description: 'Environmental commitment' },
-      { name: 'Diversity & Inclusion', href: '/diversity-inclusion', description: 'Our values' }
+      { name: 'Diversity & Inclusion', href: '/diversity-inclusion', description: 'Our values' },
+      { name: 'Research & Innovation', href: '/research-innovation', description: 'R&D initiatives' },
+      { name: 'Technology Roadmap', href: '/technology-roadmap', description: 'Future technology plans' },
+      { name: 'Corporate Social Responsibility', href: '/csr', description: 'Social impact initiatives' },
+      { name: 'Investor Relations', href: '/investor-relations', description: 'Financial information' }
     ]
   }
 ];
