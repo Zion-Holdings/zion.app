@@ -142,7 +142,7 @@ const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> 
           }
           break;
           
-        case 'quantum-holographic-advanced':
+        case 'quantum-holographic-advanced': {
           // Advanced holographic effect
           const layers = 3;
           for (let i = 0; i < layers; i++) {
@@ -154,6 +154,7 @@ const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> 
             ctx.strokeRect(-layerSize/2, -layerSize/2, layerSize, layerSize);
           }
           break;
+        }
           
         case 'holographic-neural':
           // Neural network visualization
