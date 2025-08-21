@@ -62,7 +62,12 @@ export default function HomePage() {
       color: 'from-purple-600 to-pink-700',
       marketData: '$2.1B brain-computer interface market, 580% annual growth',
       competitors: 'Traditional BCI systems ($50,000+), Basic neural interfaces ($25,000+), Research-only platforms ($100,000+)',
-      savings: 'Save 90% vs. competitors'
+      savings: 'Save 90% vs. competitors',
+      contactInfo: {
+        mobile: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
     },
     {
       title: '👁️ Holographic AI Communication Platform',
@@ -74,7 +79,12 @@ export default function HomePage() {
       color: 'from-blue-600 to-cyan-700',
       marketData: '$8.7B holographic display market, 320% annual growth',
       competitors: 'Microsoft HoloLens ($3,500), Magic Leap ($2,300), Traditional video conferencing ($50/month)',
-      savings: 'Save 45% vs. competitors'
+      savings: 'Save 45% vs. competitors',
+      contactInfo: {
+        mobile: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
     },
     {
       title: '🔐 Quantum Internet Security Platform',
@@ -86,7 +96,12 @@ export default function HomePage() {
       color: 'from-green-600 to-emerald-700',
       marketData: '$12.8B quantum security market, 450% annual growth',
       competitors: 'Traditional security ($5000+/month), Basic encryption ($1000/month), Legacy VPN services ($500/month)',
-      savings: 'Save 50% vs. competitors'
+      savings: 'Save 50% vs. competitors',
+      contactInfo: {
+        mobile: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
     },
     {
       title: '🚗 Autonomous Vehicle AI Platform',
@@ -98,7 +113,12 @@ export default function HomePage() {
       color: 'from-orange-600 to-red-700',
       marketData: '$54.2B autonomous vehicle market, 380% annual growth',
       competitors: 'Waymo ($10,000+/month), Tesla ($5000+/month), Traditional fleet management ($2000/month)',
-      savings: 'Save 60% vs. competitors'
+      savings: 'Save 60% vs. competitors',
+      contactInfo: {
+        mobile: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
     },
     {
       title: '🌐 Metaverse AI Development Platform',
@@ -110,7 +130,16 @@ export default function HomePage() {
       color: 'from-violet-600 to-purple-700',
       marketData: '$74.4B metaverse market, 420% annual growth',
       competitors: 'Roblox ($2500/month), Unity ($4000/month), Traditional 3D development ($8000/month)',
-      savings: 'Save 64% vs. competitors'
+      savings: 'Save 64% vs. competitors',
+      contactInfo: {
+        mobile: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
+    },
+    {
+      title: '🚀 Space Technology Platform',
+      description: 'Cutting-edge space exploration and satellite management tools. Achieve 500% ROI within 8 months through improved operations.',
       price: 'Starting at $399/month',
       features: ['Satellite mission management and planning', 'Space data analytics and visualization', 'Orbital optimization algorithms', 'Space debris tracking and avoidance'],
       link: 'https://ziontechgroup.com/space-technology',
