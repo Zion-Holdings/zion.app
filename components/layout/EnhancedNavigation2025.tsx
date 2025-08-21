@@ -8,7 +8,7 @@ import {
   Target, Atom,
   BookOpen,
   Truck, DollarSign, BarChart3, Globe, Users, X, Phone, Mail, MapPin, ArrowRight,
-  Star, Sparkles, Cpu, Lock, Cloud, BarChart3 as BarChart3Icon, Settings, Eye, Award, Clock, Heart, Lightbulb
+  Star, Sparkles, Cpu, Lock, Cloud, BarChart3 as BarChart3Icon, Settings, Eye, Award, Clock, Heart, Lightbulb, Search, Menu as MenuIcon
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -177,6 +177,7 @@ export default function EnhancedNavigation2025() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -195,73 +196,71 @@ export default function EnhancedNavigation2025() {
     setActiveDropdown(null);
   };
 
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      window.location.href = `/comprehensive-services-showcase-2025?search=${encodeURIComponent(searchQuery)}`;
+    }
+  };
+
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled 
-        ? 'bg-black/95 backdrop-blur-xl border-b border-cyan-500/20 shadow-2xl shadow-cyan-500/10' 
-        : 'bg-black/80 backdrop-blur-lg'
+        ? 'bg-black/90 backdrop-blur-md border-b border-gray-800/50' 
+        : 'bg-transparent'
     }`}>
       {/* Top Contact Bar */}
-      <div className="bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border-b border-cyan-500/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-10 text-xs text-cyan-300">
-            <div className="flex items-center space-x-4">
+      <div className="bg-gradient-to-r from-cyan-900/20 to-blue-900/20 border-b border-cyan-500/20">
+        <div className="max-w-7xl mx-auto px-4 py-2">
+          <div className="flex items-center justify-between text-sm">
+            <div className="flex items-center space-x-6 text-cyan-300">
               <div className="flex items-center space-x-2">
-                <Phone className="w-3 h-3" />
+                <Phone className="w-4 h-4" />
                 <span>{contactInfo.mobile}</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Mail className="w-3 h-3" />
+                <Mail className="w-4 h-4" />
                 <span>{contactInfo.email}</span>
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <div className="flex items-center space-x-2">
-                <MapPin className="w-3 h-3" />
-                <span>{contactInfo.address}</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Globe className="w-3 h-3" />
-                <span>{contactInfo.website}</span>
-              </div>
+              <Link href="/pricing" className="text-cyan-300 hover:text-white transition-colors">
+                Pricing
+              </Link>
+              <Link href="/contact" className="text-cyan-300 hover:text-white transition-colors">
+                Contact
+              </Link>
             </div>
           </div>
         </div>
       </div>
 
       {/* Main Navigation */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center">
-            <Link href="/" className="flex items-center space-x-2 group">
-              <div className="relative">
-                <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Zap className="w-6 h-6 text-white" />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                  Zion Tech Group
-                </span>
-                <span className="text-xs text-cyan-300">Future Technology Solutions</span>
-              </div>
-            </Link>
-          </div>
+          <Link href="/" className="flex items-center space-x-3 group">
+            <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <Zap className="w-6 h-6 text-white" />
+            </div>
+            <div>
+              <div className="text-xl font-bold text-white">Zion Tech Group</div>
+              <div className="text-xs text-cyan-400">Future Technology Solutions</div>
+            </div>
+          </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-1">
+          <div className="hidden lg:flex items-center space-x-8">
             {navigationItems.map((item) => (
               <div key={item.name} className="relative group">
                 <button
                   onClick={() => toggleDropdown(item.name)}
-                  className="flex items-center space-x-2 px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200 group-hover:bg-gradient-to-r group-hover:from-cyan-500/20 group-hover:to-blue-500/20"
+                  className="flex items-center space-x-2 px-4 py-2 text-gray-300 hover:text-white transition-colors duration-200 rounded-lg hover:bg-gray-800/50"
                 >
                   {item.icon}
-                  <span>{item.name}</span>
+                  <span className="font-medium">{item.name}</span>
                   {item.badge && (
-                    <span className="px-2 py-1 text-xs font-medium bg-gradient-to-r from-pink-500 to-rose-600 text-white rounded-full">
+                    <span className="px-2 py-1 text-xs bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full">
                       {item.badge}
                     </span>
                   )}
@@ -274,16 +273,16 @@ export default function EnhancedNavigation2025() {
                 <AnimatePresence>
                   {activeDropdown === item.name && (
                     <motion.div
-                      initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                      initial={{ opacity: 0, y: 10, scale: 0.95 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                      exit={{ opacity: 0, y: 10, scale: 0.95 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute top-full left-0 mt-2 w-80 bg-black/95 backdrop-blur-xl border border-cyan-500/20 rounded-xl shadow-2xl shadow-cyan-500/20 overflow-hidden"
+                      className="absolute top-full left-0 mt-2 w-80 bg-gray-900/95 backdrop-blur-md border border-gray-700 rounded-xl shadow-2xl overflow-hidden"
                     >
                       <div className="p-4">
-                        <div className="mb-3">
-                          <h3 className="text-lg font-semibold text-white mb-1">{item.title || item.name}</h3>
-                          <p className="text-sm text-cyan-300">{item.description}</p>
+                        <div className="mb-4">
+                          <h3 className="text-lg font-semibold text-white mb-2">{item.title || item.name}</h3>
+                          <p className="text-sm text-gray-400">{item.description}</p>
                         </div>
                         <div className="space-y-1">
                           {item.children?.map((child) => (
@@ -291,18 +290,16 @@ export default function EnhancedNavigation2025() {
                               key={child.name}
                               href={child.href}
                               onClick={closeDropdown}
-                              className="flex items-center space-x-3 p-3 rounded-lg hover:bg-white/10 transition-all duration-200 group"
+                              className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-800/50 transition-colors duration-200 group"
                             >
-                              <div className="w-2 h-2 bg-cyan-400 rounded-full group-hover:scale-150 transition-transform duration-200"></div>
+                              <div className="w-2 h-2 bg-cyan-400 rounded-full group-hover:scale-150 transition-transform duration-200" />
                               <div className="flex-1">
-                                <div className="text-sm font-medium text-white group-hover:text-cyan-300 transition-colors duration-200">
+                                <div className="text-white font-medium group-hover:text-cyan-400 transition-colors">
                                   {child.name}
                                 </div>
-                                <div className="text-xs text-gray-400 group-hover:text-cyan-200 transition-colors duration-200">
-                                  {child.description}
-                                </div>
+                                <div className="text-sm text-gray-400">{child.description}</div>
                               </div>
-                              <ArrowRight className="w-4 h-4 text-gray-500 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all duration-200" />
+                              <ArrowRight className="w-4 h-4 text-gray-500 group-hover:text-cyan-400 transition-colors" />
                             </Link>
                           ))}
                         </div>
@@ -314,35 +311,39 @@ export default function EnhancedNavigation2025() {
             ))}
           </div>
 
-          {/* CTA Buttons */}
-          <div className="hidden lg:flex items-center space-x-3">
-            <Link
-              href="/contact"
-              className="px-4 py-2 text-sm font-medium text-cyan-300 hover:text-white border border-cyan-500/50 hover:border-cyan-400 rounded-lg hover:bg-gradient-to-r hover:from-cyan-500/20 hover:to-blue-500/20 transition-all duration-200"
-            >
-              Get Started
-            </Link>
-            <Link
-              href="/pricing"
-              className="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 rounded-lg shadow-lg shadow-cyan-500/25 hover:shadow-xl hover:shadow-cyan-500/40 transition-all duration-200"
-            >
-              View Pricing
+          {/* Search and CTA */}
+          <div className="hidden lg:flex items-center space-x-4">
+            {/* Search */}
+            <form onSubmit={handleSearch} className="relative">
+              <input
+                type="text"
+                placeholder="Search services..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-64 px-4 py-2 pl-10 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+              />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+            </form>
+
+            {/* CTA Button */}
+            <Link href="/contact">
+              <button className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 hover:scale-105 shadow-lg shadow-cyan-500/25">
+                Get Started
+              </button>
             </Link>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="lg:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="p-2 text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200"
-            >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-          </div>
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="lg:hidden p-2 text-gray-300 hover:text-white transition-colors"
+          >
+            <MenuIcon className="w-6 h-6" />
+          </button>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -350,34 +351,49 @@ export default function EnhancedNavigation2025() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-black/95 backdrop-blur-xl border-t border-cyan-500/20"
+            className="lg:hidden bg-gray-900/95 backdrop-blur-md border-t border-gray-700 overflow-hidden"
           >
             <div className="px-4 py-6 space-y-4">
+              {/* Mobile Search */}
+              <form onSubmit={handleSearch} className="relative">
+                <input
+                  type="text"
+                  placeholder="Search services..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full px-4 py-3 pl-10 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                />
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+              </form>
+
+              {/* Mobile Navigation Items */}
               {navigationItems.map((item) => (
                 <div key={item.name} className="space-y-2">
                   <Link
                     href={item.href}
-                    className="flex items-center justify-between p-3 text-base font-medium text-white hover:bg-white/10 rounded-lg transition-all duration-200"
                     onClick={() => setIsOpen(false)}
+                    className="flex items-center justify-between p-3 text-white hover:bg-gray-800/50 rounded-lg transition-colors"
                   >
                     <div className="flex items-center space-x-3">
                       {item.icon}
-                      <span>{item.name}</span>
+                      <span className="font-medium">{item.name}</span>
                     </div>
                     {item.badge && (
-                      <span className="px-2 py-1 text-xs font-medium bg-gradient-to-r from-pink-500 to-rose-600 text-white rounded-full">
+                      <span className="px-2 py-1 text-xs bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full">
                         {item.badge}
                       </span>
                     )}
                   </Link>
+                  
+                  {/* Mobile Submenu */}
                   {item.children && (
                     <div className="ml-6 space-y-1">
                       {item.children.slice(0, 3).map((child) => (
                         <Link
                           key={child.name}
                           href={child.href}
-                          className="block p-2 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded transition-all duration-200"
                           onClick={() => setIsOpen(false)}
+                          className="block p-2 text-gray-300 hover:text-white transition-colors text-sm"
                         >
                           {child.name}
                         </Link>
@@ -385,8 +401,8 @@ export default function EnhancedNavigation2025() {
                       {item.children.length > 3 && (
                         <Link
                           href={item.href}
-                          className="block p-2 text-sm text-cyan-400 hover:text-cyan-300 transition-colors duration-200"
                           onClick={() => setIsOpen(false)}
+                          className="block p-2 text-cyan-400 hover:text-cyan-300 transition-colors text-sm font-medium"
                         >
                           View all {item.children.length} services →
                         </Link>
@@ -395,22 +411,13 @@ export default function EnhancedNavigation2025() {
                   )}
                 </div>
               ))}
-              
+
               {/* Mobile CTA */}
-              <div className="pt-4 space-y-3">
-                <Link
-                  href="/contact"
-                  className="block w-full px-4 py-3 text-center text-sm font-medium text-cyan-300 border border-cyan-500/50 rounded-lg hover:bg-gradient-to-r hover:from-cyan-500/20 hover:to-blue-500/20 transition-all duration-200"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Get Started
-                </Link>
-                <Link
-                  href="/pricing"
-                  className="block w-full px-4 py-3 text-center text-sm font-medium text-white bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg shadow-lg shadow-cyan-500/25 transition-all duration-200"
-                  onClick={() => setIsOpen(false)}
-                >
-                  View Pricing
+              <div className="pt-4 border-t border-gray-700">
+                <Link href="/contact">
+                  <button className="w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300">
+                    Get Started
+                  </button>
                 </Link>
               </div>
             </div>
