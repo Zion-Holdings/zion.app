@@ -4,7 +4,9 @@ import {
   Star, Mail, Phone, MapPin, 
   Twitter, Linkedin, Github, Globe,
   ArrowRight, Shield, Zap, Rocket,
-  Brain, Atom, Users, Settings
+  Brain, Atom, Users, Settings, DollarSign,
+  Microscope, Network, Palette, BarChart3, ShieldCheck,
+  Instagram, Youtube
 } from 'lucide-react';
 import Link from 'next/link';
 

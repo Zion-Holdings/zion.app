@@ -7,7 +7,7 @@ import {
   Zap, Star,
   Target, Atom,
   Palette, BookOpen, GraduationCap, Heart,
-  Truck, DollarSign, BarChart3
+  Truck, DollarSign, BarChart3, Globe, Users, X, Phone, Mail, MapPin, ArrowRight
 } from 'lucide-react';
 
 interface NavigationItem {
