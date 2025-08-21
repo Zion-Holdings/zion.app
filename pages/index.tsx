@@ -9,7 +9,7 @@ import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, Exter
 
 export default function HomePage() {
   const heroStats = [
-    { value: '75+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
+    { value: '100+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
     { value: '99.9%', label: 'Uptime Guarantee', color: 'text-fuchsia-400' },
     { value: '14', label: 'Day Free Trials', color: 'text-blue-400' },
     { value: '24/7', label: 'AI Support', color: 'text-green-400' },
@@ -26,7 +26,7 @@ export default function HomePage() {
     {
       icon: <Cloud className="w-8 h-8 text-white" />,
       title: 'Real Micro SaaS Services',
-      description: '75+ fully functional micro SaaS tools with real implementations, not just mockups.',
+      description: '100+ fully functional micro SaaS tools with real implementations, not just mockups.',
       color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
       gradient: 'from-cyan-400 to-blue-500',
     },
@@ -210,7 +210,7 @@ export default function HomePage() {
           <div className="container mx-auto px-4 text-center">
             <div className="max-w-6xl mx-auto">
               <div className="mb-8">
-                <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 text-cyan-400 text-sm font-medium mb-6">
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 text-cyan-400 text-sm font-medium mb-6 backdrop-blur-sm">
                   <Sparkles className="w-4 h-4 mr-2" />
                   Revolutionary Technology Solutions
                 </div>
@@ -234,8 +234,8 @@ export default function HomePage() {
               {/* Hero Stats */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
                 {heroStats.map((stat, index) => (
-                  <div key={index} className="text-center">
-                    <div className={`text-3xl md:text-4xl font-bold ${stat.color} mb-2`}>
+                  <div key={index} className="text-center group">
+                    <div className={`text-3xl md:text-4xl font-bold ${stat.color} mb-2 transition-all duration-300 group-hover:scale-110`}>
                       {stat.value}
                     </div>
                     <div className="text-gray-400 text-sm">{stat.label}</div>
@@ -249,7 +249,7 @@ export default function HomePage() {
                   href="/services"
                   variant="primary"
                   size="lg"
-                  className="group"
+                  className="group transform hover:scale-105 transition-all duration-300"
                 >
                   Explore Services
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -258,36 +258,49 @@ export default function HomePage() {
                   href="/contact"
                   variant="secondary"
                   size="lg"
-                  className="group"
+                  className="group transform hover:scale-105 transition-all duration-300"
                 >
                   Get Started
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </div>
 
-              {/* Contact Information Banner */}
-              <div className="bg-gradient-to-r from-gray-900/50 to-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 max-w-4xl mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="flex items-center justify-center md:justify-start">
-                    <Phone className="w-5 h-5 text-cyan-400 mr-3" />
-                    <div>
-                      <div className="text-sm text-gray-400">Mobile</div>
-                      <div className="text-white font-medium">{contactInfo.mobile}</div>
+              {/* Enhanced Contact Information Banner */}
+              <div className="bg-gradient-to-r from-gray-900/80 to-gray-800/80 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 max-w-5xl mx-auto shadow-2xl">
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-bold text-white mb-2">Ready to Transform Your Business?</h3>
+                  <p className="text-gray-300">Get in touch with our team of technology experts</p>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  <div className="flex flex-col items-center text-center group">
+                    <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                      <Phone className="w-8 h-8 text-white" />
                     </div>
+                    <div className="text-sm text-gray-400 mb-2">Mobile</div>
+                    <div className="text-white font-semibold text-lg">{contactInfo.mobile}</div>
+                    <a href={`tel:${contactInfo.mobile}`} className="text-cyan-400 text-sm hover:text-cyan-300 transition-colors mt-2">
+                      Call Now →
+                    </a>
                   </div>
-                  <div className="flex items-center justify-center md:justify-start">
-                    <Mail className="w-5 h-5 text-purple-400 mr-3" />
-                    <div>
-                      <div className="text-sm text-gray-400">Email</div>
-                      <div className="text-white font-medium">{contactInfo.email}</div>
+                  <div className="flex flex-col items-center text-center group">
+                    <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                      <Mail className="w-8 h-8 text-white" />
                     </div>
+                    <div className="text-sm text-gray-400 mb-2">Email</div>
+                    <div className="text-white font-semibold text-lg">{contactInfo.email}</div>
+                    <a href={`mailto:${contactInfo.email}`} className="text-purple-400 text-sm hover:text-purple-300 transition-colors mt-2">
+                      Send Email →
+                    </a>
                   </div>
-                  <div className="flex items-center justify-center md:justify-start">
-                    <MapPin className="w-5 h-5 text-emerald-400 mr-3" />
-                    <div>
-                      <div className="text-sm text-gray-400">Address</div>
-                      <div className="text-white font-medium text-sm">{contactInfo.address}</div>
+                  <div className="flex flex-col items-center text-center group">
+                    <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                      <MapPin className="w-8 h-8 text-white" />
                     </div>
+                    <div className="text-sm text-gray-400 mb-2">Address</div>
+                    <div className="text-white font-semibold text-sm leading-tight">{contactInfo.address}</div>
+                    <a href={`https://maps.google.com/?q=${encodeURIComponent(contactInfo.address)}`} target="_blank" rel="noopener noreferrer" className="text-emerald-400 text-sm hover:text-emerald-300 transition-colors mt-2">
+                      View on Map →
+                    </a>
                   </div>
                 </div>
               </div>
@@ -299,31 +312,26 @@ export default function HomePage() {
         <section className="py-20">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-6xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-                  Why Choose Zion Tech Group?
-                </span>
+              <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                Why Choose <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Zion Tech Group</span>?
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                We're not just another tech company. We're the pioneers of tomorrow's technology, 
-                delivering real solutions that transform businesses and drive innovation.
+                We combine cutting-edge technology with enterprise-grade reliability to deliver solutions that transform businesses.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {platformFeatures.map((feature, index) => (
-                <Card
+                <div
                   key={index}
-                  className={`${feature.color} p-8 text-center transform hover:scale-105 transition-all duration-300 hover:shadow-2xl`}
+                  className={`${feature.color} rounded-3xl p-8 text-white transform hover:scale-105 transition-all duration-500 hover:shadow-2xl`}
                 >
-                  <div className="mb-6 flex justify-center">
-                    <div className="p-4 rounded-full bg-white/10 backdrop-blur-sm">
-                      {feature.icon}
-                    </div>
+                  <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6 backdrop-blur-sm">
+                    {feature.icon}
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-4">{feature.title}</h3>
-                  <p className="text-gray-200 leading-relaxed">{feature.description}</p>
-                </Card>
+                  <h3 className="text-2xl font-bold mb-4">{feature.title}</h3>
+                  <p className="text-gray-100 leading-relaxed">{feature.description}</p>
+                </div>
               ))}
             </div>
           </div>
@@ -333,44 +341,39 @@ export default function HomePage() {
         <section className="py-20 bg-gradient-to-br from-gray-900/50 to-gray-800/50">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-6xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                  Revolutionary Services
-                </span>
+              <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                Revolutionary <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Services</span>
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Discover our cutting-edge micro SaaS services that are reshaping industries 
-                and defining the future of technology.
+                Explore our cutting-edge micro SaaS solutions that are reshaping industries and driving innovation.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {innovativeServices.map((service, index) => (
-                <Card
+                <div
                   key={index}
-                  className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 p-6 hover:border-gray-600 transition-all duration-300 hover:shadow-2xl hover:scale-105"
+                  className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 transform hover:scale-105 transition-all duration-500 hover:shadow-2xl group"
                 >
-                  <div className="flex items-start justify-between mb-4">
-                    <div className={`text-3xl ${service.icon}`}></div>
-                    <div className="text-sm px-3 py-1 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-400 border border-cyan-500/30">
+                  <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mb-6 text-3xl group-hover:scale-110 transition-transform duration-300`}>
+                    {service.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-4">{service.name}</h3>
+                  <p className="text-gray-300 mb-4 leading-relaxed">{service.description}</p>
+                  <div className="flex items-center justify-between mb-6">
+                    <span className="text-2xl font-bold text-green-400">{service.price}</span>
+                    <span className="text-sm text-gray-400 bg-gray-800/50 px-3 py-1 rounded-full">
                       {service.category}
-                    </div>
+                    </span>
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">{service.name}</h3>
-                  <p className="text-gray-300 text-sm mb-4 leading-relaxed">{service.description}</p>
-                  <div className="flex items-center justify-between">
-                    <div className="text-2xl font-bold text-cyan-400">{service.price}</div>
-                    <Button
-                      href={service.link}
-                      variant="primary"
-                      size="sm"
-                      className="group"
-                    >
-                      Learn More
-                      <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                  </div>
-                </Card>
+                  <a
+                    href={service.link}
+                    className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors group/link"
+                  >
+                    Learn More
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform" />
+                  </a>
+                </div>
               ))}
             </div>
 
@@ -379,7 +382,7 @@ export default function HomePage() {
                 href="/services"
                 variant="primary"
                 size="lg"
-                className="group"
+                className="group transform hover:scale-105 transition-all duration-300"
               >
                 View All Services
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -392,14 +395,11 @@ export default function HomePage() {
         <section className="py-20">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-6xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
-                  Built with Modern Technology
-                </span>
+              <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                Built with <span className="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">Modern Tech</span>
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Our platform is built on cutting-edge technologies that ensure scalability, 
-                security, and performance for enterprise-grade applications.
+                Our services are built on cutting-edge technologies that ensure scalability, security, and performance.
               </p>
             </div>
 
@@ -407,11 +407,13 @@ export default function HomePage() {
               {technologyStack.map((tech, index) => (
                 <div
                   key={index}
-                  className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:scale-105"
+                  className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/30 rounded-2xl p-6 text-center transform hover:scale-105 transition-all duration-300 hover:shadow-xl group"
                 >
-                  <div className="text-4xl mb-3">{tech.icon}</div>
-                  <div className="text-white font-semibold mb-1">{tech.name}</div>
-                  <div className="text-sm text-gray-400">{tech.category}</div>
+                  <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                    {tech.icon}
+                  </div>
+                  <h3 className="text-lg font-semibold text-white mb-2">{tech.name}</h3>
+                  <p className="text-sm text-gray-400">{tech.category}</p>
                 </div>
               ))}
             </div>
@@ -422,46 +424,40 @@ export default function HomePage() {
         <section className="py-20 bg-gradient-to-br from-gray-900/50 to-gray-800/50">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-6xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-pink-400 to-rose-400 bg-clip-text text-transparent">
-                  Comprehensive Solutions
-                </span>
+              <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                Powerful <span className="bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">Features</span>
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                From AI automation to quantum computing, we provide end-to-end solutions 
-                that address the most complex business challenges.
+                Discover the advanced capabilities that make our solutions stand out in the market.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {features.map((feature, index) => (
-                <Card
+                <div
                   key={index}
-                  className={`${feature.color} p-8 text-center transform hover:scale-105 transition-all duration-300 hover:shadow-2xl`}
+                  className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 transform hover:scale-105 transition-all duration-500 hover:shadow-2xl group"
                 >
-                  <div className="text-4xl mb-6">{feature.icon}</div>
-                  <h3 className={`text-2xl font-bold ${feature.textColor} mb-4`}>
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-200 leading-relaxed">{feature.description}</p>
-                </Card>
+                  <div className={`w-16 h-16 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center mb-6 text-3xl group-hover:scale-110 transition-transform duration-300`}>
+                    {feature.icon}
+                  </div>
+                  <h3 className={`text-2xl font-bold ${feature.textColor} mb-4`}>{feature.title}</h3>
+                  <p className="text-gray-300 leading-relaxed">{feature.description}</p>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Call to Action Section */}
+        {/* Final CTA Section */}
         <section className="py-20">
           <div className="container mx-auto px-4 text-center">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-4xl md:text-6xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                  Ready to Transform Your Business?
-                </span>
+              <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                Ready to <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Transform</span> Your Business?
               </h2>
               <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                Join thousands of businesses that have already revolutionized their operations 
-                with Zion Tech Group's cutting-edge solutions. Start your transformation today.
+                Join thousands of businesses that have already revolutionized their operations with our cutting-edge solutions.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
@@ -469,52 +465,33 @@ export default function HomePage() {
                   href="/contact"
                   variant="primary"
                   size="lg"
-                  className="group"
+                  className="group transform hover:scale-105 transition-all duration-300"
                 >
-                  Start Free Trial
-                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  Start Your Journey
+                  <Rocket className="w-5 h-5 ml-2 group-hover:translate-y-[-2px] transition-transform" />
                 </Button>
                 <Button
                   href="/services"
                   variant="secondary"
                   size="lg"
-                  className="group"
+                  className="group transform hover:scale-105 transition-all duration-300"
                 >
-                  Explore Services
+                  Explore Solutions
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </div>
 
-              {/* Final Contact Banner */}
-              <div className="bg-gradient-to-r from-cyan-900/30 to-blue-900/30 backdrop-blur-sm border border-cyan-500/30 rounded-2xl p-8">
-                <h3 className="text-2xl font-bold text-white mb-4">Get in Touch</h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                  <div>
-                    <Phone className="w-6 h-6 text-cyan-400 mx-auto mb-2" />
-                    <div className="text-sm text-gray-400">Mobile</div>
-                    <div className="text-white font-medium">{contactInfo.mobile}</div>
-                  </div>
-                  <div>
-                    <Mail className="w-6 h-6 text-purple-400 mx-auto mb-2" />
-                    <div className="text-sm text-gray-400">Email</div>
-                    <div className="text-white font-medium">{contactInfo.email}</div>
-                  </div>
-                  <div>
-                    <MapPin className="w-6 h-6 text-emerald-400 mx-auto mb-2" />
-                    <div className="text-sm text-gray-400">Address</div>
-                    <div className="text-white font-medium text-sm">{contactInfo.address}</div>
-                  </div>
-                </div>
-                <div className="mt-6 text-center">
-                  <Button
-                    href={contactInfo.website}
-                    variant="secondary"
-                    size="lg"
-                    className="group"
-                  >
-                    Visit Website
-                    <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                  </Button>
+              <div className="text-center">
+                <p className="text-gray-400 mb-4">Need immediate assistance?</p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center text-sm">
+                  <a href={`tel:${contactInfo.mobile}`} className="text-cyan-400 hover:text-cyan-300 transition-colors flex items-center">
+                    <Phone className="w-4 h-4 mr-2" />
+                    {contactInfo.mobile}
+                  </a>
+                  <a href={`mailto:${contactInfo.email}`} className="text-purple-400 hover:text-purple-300 transition-colors flex items-center">
+                    <Mail className="w-4 h-4 mr-2" />
+                    {contactInfo.email}
+                  </a>
                 </div>
               </div>
             </div>
