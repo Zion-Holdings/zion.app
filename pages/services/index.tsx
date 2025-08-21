@@ -8,6 +8,7 @@ import { additionalEnhancedServices } from '../../data/additional-real-services'
 import { extraServices } from '../../data/extra-services';
 import { newlyAddedServices } from '../../data/newly-added-services';
 import { curatedMarketServices } from '../../data/curated-market-services';
+import { realMarketServices } from '../../data/real-market-services';
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -22,13 +23,28 @@ const categories = [
 ];
 
 export default function ServicesIndexPage() {
-  const all = (enhancedRealMicroSaasServices as any[]).concat(extraServices as any[], additionalEnhancedServices as any[], newlyAddedServices as any[], curatedMarketServices as any[]);
+  const all = (enhancedRealMicroSaasServices as any[])
+    .concat(
+      extraServices as any[],
+      additionalEnhancedServices as any[],
+      newlyAddedServices as any[],
+      curatedMarketServices as any[],
+      realMarketServices as any[]
+    );
   const byCategory: Record<string, any[]> = {};
   for (const c of categories) byCategory[c] = [];
   for (const s of all) {
     const cat = s.category && categories.includes(s.category) ? s.category : 'Developer Tools';
     byCategory[cat].push(s);
   }
+
+  const anchorMap: Record<string, string> = {
+    'AI & Data': 'ai',
+    'Developer Tools': 'developer-tools',
+    'Cloud & FinOps': 'cloud',
+    'Observability': 'observability',
+    'Quality & Monitoring': 'quality',
+  };
 
   return (
     <UltraFuturisticBackground variant="quantum" intensity="high">
@@ -45,7 +61,7 @@ export default function ServicesIndexPage() {
         </div>
 
         {categories.map((cat) => (
-          <section key={cat}>
+          <section key={cat} id={anchorMap[cat] || toSlug(cat)}>
             <h2 className="text-2xl md:text-3xl font-semibold text-white mb-4">{cat}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {byCategory[cat].slice(0, 12).map((s) => {
