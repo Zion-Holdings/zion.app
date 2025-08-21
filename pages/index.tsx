@@ -7,7 +7,9 @@ import UltraFuturisticBackground2028 from '../components/ui/UltraFuturisticBackg
 import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
 import UltraAdvancedNavigation2026 from '../components/layout/UltraAdvancedNavigation2026';
 import UltraFuturisticNavigation2029 from '../components/layout/UltraFuturisticNavigation2029';
+import UltraFuturisticNavigation2030 from '../components/layout/UltraFuturisticNavigation2030';
 import UltraFuturisticFooter2029 from '../components/layout/UltraFuturisticFooter2029';
+import UltraFuturisticFooter2030 from '../components/layout/UltraFuturisticFooter2030';
 import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
 import Enhanced2026ServicesShowcase from '../components/sections/Enhanced2026ServicesShowcase';
 import Revolutionary2026ServiceShowcase from '../components/sections/Revolutionary2026ServiceShowcase';
@@ -72,9 +74,10 @@ import { practicalBusinessSolutions2028 } from '../data/2028-practical-business-
 import { futuristic2028Services } from '../data/2028-futuristic-innovations';
 import { emergingTech2028Services } from '../data/2028-emerging-tech-services';
 import { futuristicAIServices2029 } from '../data/2029-futuristic-ai-services';
-import { emergingTechServices2029 } from '../data/2029-emerging-tech-services';
-import { enterpriseITServices2029 } from '../data/2029-enterprise-it-services';
+import { emergingTech2029Services } from '../data/2029-emerging-tech-services';
+import { enterpriseIT2029Services } from '../data/2029-enterprise-it-services';
 import { innovativeMicroSaasServices2029 } from '../data/2029-innovative-micro-saas';
+import { innovative2029MicroSaasServices } from '../data/2029-innovative-micro-saas-services';
 
 export default function HomePage() {
   const contactInfo = {
@@ -141,9 +144,12 @@ export default function HomePage() {
     ...cuttingEdge2028MicroSaas,
     ...practicalBusinessSolutions2028,
     ...futuristicAIServices2029,
-    ...emergingTechServices2029,
-    ...enterpriseITServices2029,
-    ...innovativeMicroSaasServices2029
+    ...emergingTech2029Services,
+    ...enterpriseIT2029Services,
+    ...innovativeMicroSaasServices2029,
+    ...innovative2029MicroSaasServices,
+    ...emergingTech2029Services,
+    ...enterpriseIT2029Services
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);
@@ -219,7 +225,7 @@ export default function HomePage() {
 
               <UltraFuturisticBackground2028>
         {/* Ultra Advanced Navigation */}
-        <UltraFuturisticNavigation2029 />
+        <UltraFuturisticNavigation2030 />
 
                                       {/* Ultra Futuristic Hero Section 2029 */}
                     <UltraFuturisticHero2029 />
@@ -229,10 +235,7 @@ export default function HomePage() {
 
                     {/* Ultra Futuristic 2029 Service Showcase */}
                     <UltraFuturisticServiceShowcase2029 services={[
-                      ...futuristicAIServices2029,
-                      ...emergingTechServices2029,
-                      ...enterpriseITServices2029,
-                      ...innovativeMicroSaasServices2029
+                      ...futuristicAIServices2029
                     ]} />
 
         {/* Revolutionary 2027 Services Showcase */}
@@ -397,7 +400,7 @@ export default function HomePage() {
               </UltraFuturisticBackground2028>
       
       {/* Footer */}
-      <UltraFuturisticFooter2029 />
+              <UltraFuturisticFooter2030 />
     </>
   );
 }
