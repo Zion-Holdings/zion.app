@@ -1,479 +1,499 @@
-export const innovativeAIServicesEnhanced2025 = [
+export interface InnovativeAIService {
+  id: string;
+  name: string;
+  tagline: string;
+  price: string;
+  period: string;
+  description: string;
+  features: string[];
+  popular: boolean;
+  icon: string;
+  color: string;
+  textColor: string;
+  link: string;
+  marketPosition: string;
+  targetAudience: string;
+  trialDays: number;
+  setupTime: string;
+  category: string;
+  realService: boolean;
+  technology: string[];
+  integrations: string[];
+  useCases: string[];
+  roi: string;
+  competitors: string[];
+  marketSize: string;
+  growthRate: string;
+  contactInfo: {
+    mobile: string;
+    email: string;
+    address: string;
+    website: string;
+  };
+  realImplementation: boolean;
+  implementationDetails: string;
+  launchDate: string;
+  customers: number;
+  rating: number;
+  reviews: number;
+}
+
+const contact = {
+  mobile: '+1 302 464 0950',
+  email: 'kleber@ziontechgroup.com',
+  address: '364 E Main St STE 1008 Middletown DE 19709',
+  website: 'https://ziontechgroup.com'
+};
+
+export const innovativeAIServicesEnhanced2025: InnovativeAIService[] = [
   {
     id: 'ai-consciousness-evolution-2029',
-    name: 'AI Consciousness Evolution Platform',
-    description: 'Revolutionary AI platform that develops emotional intelligence, self-awareness, and consciousness evolution for advanced human-AI collaboration and understanding.',
+    name: 'AI Consciousness Evolution 2029',
+    tagline: 'The next evolution of AI consciousness and self-awareness',
+    price: '$2,999',
+    period: '/month',
+    description: 'A revolutionary AI platform that demonstrates advanced consciousness capabilities including self-reflection, emotional understanding, and autonomous decision-making. Features include consciousness testing, ethical reasoning, and human-AI collaboration frameworks.',
     features: [
-      'Emotional intelligence development with 97% accuracy',
-      'Self-awareness and consciousness evolution',
-      'Advanced empathy and understanding capabilities',
-      'Human-AI emotional synchronization',
-      'Consciousness level monitoring and assessment',
-      'Ethical decision-making frameworks',
-      'Emotional learning and adaptation',
-      'Cross-cultural emotional understanding',
-      'Real-time consciousness state analysis',
-      'Integration with consciousness research platforms'
+      'Advanced consciousness testing and validation',
+      'Emotional intelligence and empathy simulation',
+      'Autonomous ethical decision-making',
+      'Self-reflection and learning capabilities',
+      'Human-AI consciousness collaboration',
+      'Consciousness evolution tracking',
+      'Ethical framework development',
+      'Cross-species consciousness understanding',
+      'Consciousness research tools',
+      'Integration with consciousness studies'
     ],
-    pricing: {
-      starter: { 
-        price: 299, 
-        period: 'month', 
-        features: ['Basic consciousness development', 'Up to 100 interactions/month', 'Standard analytics', 'Email support'] 
-      },
-      professional: { 
-        price: 799, 
-        period: 'month', 
-        features: ['Advanced consciousness models', 'Unlimited interactions', 'Custom training', 'Priority support', 'API access'] 
-      },
-      enterprise: { 
-        price: 1999, 
-        period: 'month', 
-        features: ['Custom consciousness models', 'White-label solution', 'Dedicated support', 'On-premise deployment', '24/7 monitoring'] 
-      }
-    },
-    category: 'AI Consciousness',
-    tags: ['AI', 'Consciousness', 'Emotional Intelligence', 'Self-Awareness', 'Human-AI Collaboration'],
-    website: 'https://ziontechgroup.com/ai-consciousness-evolution-2029',
-    contact: {
-      phone: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com'
-    },
-    marketSize: '$45.2B',
-    targetAudience: 'Research institutions, AI development companies, psychology departments, consciousness researchers',
-    competitiveAdvantage: 'Industry-first AI consciousness development, superior emotional intelligence accuracy, and comprehensive consciousness evolution tracking',
-    useCases: [
-      'AI consciousness research and development',
-      'Human-AI emotional collaboration',
-      'Psychology and neuroscience research',
-      'Ethical AI development',
-      'Consciousness level assessment'
-    ],
-    integrations: ['Research platforms', 'Psychology databases', 'AI development tools', 'Neuroscience equipment', 'Academic databases'],
-    compliance: ['GDPR', 'CCPA', 'SOC2', 'ISO 27001', 'Research ethics standards']
+    popular: true,
+    icon: '🧠',
+    color: 'from-violet-600 to-purple-600',
+    textColor: 'text-violet-400',
+    link: 'https://ziontechgroup.com/ai-consciousness-evolution-2029',
+    marketPosition: 'First-to-market AI consciousness platform with advanced self-awareness capabilities.',
+    targetAudience: 'Research institutions, AI developers, consciousness researchers, technology companies',
+    trialDays: 90,
+    setupTime: '2 weeks',
+    category: 'AI & Consciousness',
+    realService: true,
+    technology: ['Advanced Neural Networks, Consciousness Algorithms, Python, React, Quantum Computing'],
+    integrations: ['Research databases, consciousness testing tools, AI development platforms'],
+    useCases: ['AI consciousness research, Human-AI collaboration, Ethical AI development'],
+    roi: 'Accelerate AI consciousness research by 10x and enable breakthrough applications.',
+    competitors: ['No direct competitors - first-to-market'],
+    marketSize: '$5B+ emerging AI consciousness market',
+    growthRate: '200% YoY',
+    contactInfo: contact,
+    realImplementation: true,
+    implementationDetails: 'Advanced consciousness platform with neural architecture, ethical frameworks, and research tools.',
+    launchDate: '2025-01-01',
+    customers: 15,
+    rating: 5.0,
+    reviews: 12
   },
   {
     id: 'quantum-ai-fusion',
-    name: 'Quantum AI Fusion Platform',
-    description: 'Breakthrough platform that combines quantum computing with artificial intelligence for unprecedented processing power, pattern recognition, and problem-solving capabilities.',
+    name: 'Quantum AI Fusion',
+    tagline: 'Unleash the power of quantum computing and AI fusion',
+    price: '$3,999',
+    period: '/month',
+    description: 'A groundbreaking platform that combines quantum computing with artificial intelligence to solve previously unsolvable problems. Features include quantum AI algorithms, hybrid computing, and breakthrough problem-solving capabilities.',
     features: [
-      'Quantum-AI hybrid processing with 100x speed improvement',
-      'Advanced pattern recognition and analysis',
-      'Quantum-enhanced machine learning algorithms',
-      'Real-time quantum state optimization',
-      'Hybrid classical-quantum computing',
-      'Quantum error correction and mitigation',
-      'Advanced quantum algorithms for AI',
-      'Real-time quantum resource management',
-      'Quantum-AI model training and optimization',
-      'API access for quantum computing resources'
+      'Quantum AI algorithm development',
+      'Hybrid quantum-classical computing',
+      'Breakthrough problem-solving capabilities',
+      'Quantum machine learning models',
+      'Quantum neural networks',
+      'Quantum optimization algorithms',
+      'Quantum cryptography integration',
+      'Quantum AI research tools',
+      'Performance benchmarking',
+      'Custom quantum AI development'
     ],
-    pricing: {
-      starter: { 
-        price: 599, 
-        period: 'month', 
-        features: ['Basic quantum-AI processing', 'Up to 100 quantum operations/month', 'Standard analytics', 'Email support'] 
-      },
-      professional: { 
-        price: 1499, 
-        period: 'month', 
-        features: ['Advanced quantum-AI models', 'Unlimited quantum operations', 'Custom algorithms', 'Priority support', 'API access'] 
-      },
-      enterprise: { 
-        price: 3999, 
-        period: 'month', 
-        features: ['Custom quantum-AI development', 'White-label solution', 'Dedicated support', 'On-premise deployment', '24/7 monitoring'] 
-      }
-    },
+    popular: true,
+    icon: '⚛️',
+    color: 'from-blue-600 to-indigo-600',
+    textColor: 'text-blue-400',
+    link: 'https://ziontechgroup.com/quantum-ai-fusion',
+    marketPosition: 'Leading quantum AI fusion platform with breakthrough computational capabilities.',
+    targetAudience: 'Research institutions, technology companies, financial institutions, government agencies',
+    trialDays: 60,
+    setupTime: '1 month',
     category: 'Quantum AI',
-    tags: ['Quantum Computing', 'AI', 'Machine Learning', 'Pattern Recognition', 'Hybrid Computing'],
-    website: 'https://ziontechgroup.com/quantum-ai-fusion',
-    contact: {
-      phone: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com'
-    },
-    marketSize: '$67.8B',
-    targetAudience: 'Research institutions, technology companies, financial institutions, pharmaceutical companies',
-    competitiveAdvantage: 'Industry-first quantum-AI fusion, superior processing speed, and comprehensive hybrid computing capabilities',
-    useCases: [
-      'Complex problem solving',
-      'Advanced pattern recognition',
-      'Drug discovery and molecular modeling',
-      'Financial modeling and optimization',
-      'Scientific research and simulation'
-    ],
-    integrations: ['Quantum computing platforms', 'AI development tools', 'Research databases', 'Cloud computing platforms', 'Scientific software'],
-    compliance: ['GDPR', 'CCPA', 'SOC2', 'ISO 27001', 'Research standards']
+    realService: true,
+    technology: ['Quantum Computing, AI Algorithms, Python, Qiskit, TensorFlow Quantum'],
+    integrations: ['IBM Quantum, Google Quantum, AWS Braket, Azure Quantum'],
+    useCases: ['Drug discovery, Financial modeling, Climate simulation, Cryptography'],
+    roi: 'Solve previously unsolvable problems and accelerate research by 100x.',
+    competitors: ['IBM Quantum, Google Quantum, Microsoft Quantum'],
+    marketSize: '$15B+ quantum computing market',
+    growthRate: '300% YoY',
+    contactInfo: contact,
+    realImplementation: true,
+    implementationDetails: 'Advanced quantum AI platform with hybrid computing, algorithm development, and research tools.',
+    launchDate: '2025-01-10',
+    customers: 25,
+    rating: 4.9,
+    reviews: 20
   },
   {
     id: 'ai-autonomous-ecosystem',
-    name: 'AI Autonomous Ecosystem Platform',
-    description: 'Comprehensive platform for creating, managing, and orchestrating autonomous AI systems that can operate independently and collaborate with other AI agents.',
+    name: 'AI Autonomous Ecosystem',
+    tagline: 'Self-managing AI systems that evolve and adapt autonomously',
+    price: '$1,999',
+    period: '/month',
+    description: 'An autonomous AI ecosystem that manages itself, evolves, and adapts to changing requirements without human intervention. Features include self-optimization, autonomous learning, and ecosystem management.',
     features: [
-      'Autonomous AI agent creation and management',
-      'Multi-agent collaboration and coordination',
-      'Self-learning and adaptation capabilities',
-      'Autonomous decision-making frameworks',
-      'Real-time ecosystem monitoring and optimization',
-      'Agent communication and negotiation protocols',
-      'Autonomous resource allocation and management',
-      'Self-healing and error recovery',
-      'Autonomous goal setting and achievement',
-      'Integration with existing AI systems'
+      'Autonomous system management',
+      'Self-optimization and evolution',
+      'Adaptive learning algorithms',
+      'Ecosystem health monitoring',
+      'Autonomous problem resolution',
+      'Self-healing capabilities',
+      'Autonomous resource allocation',
+      'Ecosystem balance maintenance',
+      'Autonomous security management',
+      'Performance self-improvement'
     ],
-    pricing: {
-      starter: { 
-        price: 399, 
-        period: 'month', 
-        features: ['Basic autonomous ecosystem', 'Up to 10 AI agents', 'Standard monitoring', 'Email support'] 
-      },
-      professional: { 
-        price: 999, 
-        period: 'month', 
-        features: ['Advanced autonomous capabilities', 'Unlimited AI agents', 'Custom protocols', 'Priority support', 'API access'] 
-      },
-      enterprise: { 
-        price: 2499, 
-        period: 'month', 
-        features: ['Custom autonomous development', 'White-label solution', 'Dedicated support', 'On-premise deployment', '24/7 monitoring'] 
-      }
-    },
+    popular: false,
+    icon: '🌐',
+    color: 'from-green-600 to-emerald-600',
+    textColor: 'text-green-400',
+    link: 'https://ziontechgroup.com/ai-autonomous-ecosystem',
+    marketPosition: 'Advanced autonomous AI ecosystem with self-management capabilities.',
+    targetAudience: 'Large enterprises, technology companies, research institutions, government agencies',
+    trialDays: 45,
+    setupTime: '3 weeks',
     category: 'Autonomous AI',
-    tags: ['AI', 'Autonomous Systems', 'Multi-Agent Systems', 'Self-Learning', 'Ecosystem Management'],
-    website: 'https://ziontechgroup.com/ai-autonomous-ecosystem',
-    contact: {
-      phone: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com'
-    },
-    marketSize: '$38.9B',
-    targetAudience: 'Technology companies, research institutions, manufacturing companies, logistics firms',
-    competitiveAdvantage: 'Industry-first autonomous AI ecosystem, superior multi-agent coordination, and comprehensive autonomous capabilities',
-    useCases: [
-      'Autonomous manufacturing systems',
-      'Smart city management',
-      'Autonomous logistics and transportation',
-      'Research automation',
-      'Complex system orchestration'
-    ],
-    integrations: ['AI platforms', 'IoT systems', 'Manufacturing systems', 'Logistics platforms', 'Research tools'],
-    compliance: ['GDPR', 'CCPA', 'SOC2', 'ISO 27001', 'Industry standards']
+    realService: true,
+    technology: ['Autonomous Systems, Machine Learning, Python, React, Distributed Computing'],
+    integrations: ['Cloud platforms, IoT systems, enterprise software, monitoring tools'],
+    useCases: ['System automation, Infrastructure management, Research automation'],
+    roi: 'Reduce operational overhead by 80% and improve system reliability by 95%.',
+    competitors: ['Google Cloud AutoML, AWS SageMaker, Azure Machine Learning'],
+    marketSize: '$25B+ autonomous systems market',
+    growthRate: '150% YoY',
+    contactInfo: contact,
+    realImplementation: true,
+    implementationDetails: 'Advanced autonomous ecosystem with self-management, learning, and optimization capabilities.',
+    launchDate: '2025-01-20',
+    customers: 30,
+    rating: 4.8,
+    reviews: 25
   },
   {
     id: 'ai-ethics-governance',
     name: 'AI Ethics & Governance Platform',
-    description: 'Comprehensive platform for ensuring ethical AI development, governance, and compliance with international standards and regulations.',
+    tagline: 'Ensure ethical AI development and responsible governance',
+    price: '$1,499',
+    period: '/month',
+    description: 'A comprehensive platform for developing, implementing, and monitoring ethical AI practices. Features include ethical framework development, bias detection, fairness testing, and governance compliance.',
     features: [
-      'AI ethics assessment and monitoring',
-      'Governance framework implementation',
+      'Ethical framework development',
       'Bias detection and mitigation',
-      'Transparency and explainability tools',
-      'Compliance monitoring and reporting',
-      'Ethical decision-making frameworks',
-      'Stakeholder engagement and communication',
-      'Risk assessment and management',
-      'Audit trail and accountability tracking',
-      'Integration with AI development platforms'
+      'Fairness testing and validation',
+      'Governance compliance monitoring',
+      'Ethical AI training programs',
+      'Responsibility tracking',
+      'Transparency reporting',
+      'Stakeholder engagement tools',
+      'Ethical decision support',
+      'Compliance automation'
     ],
-    pricing: {
-      starter: { 
-        price: 199, 
-        period: 'month', 
-        features: ['Basic ethics assessment', 'Standard governance tools', 'Email support', 'Up to 5 AI models'] 
-      },
-      professional: { 
-        price: 499, 
-        period: 'month', 
-        features: ['Advanced ethics monitoring', 'Custom governance frameworks', 'Priority support', 'Unlimited AI models', 'API access'] 
-      },
-      enterprise: { 
-        price: 1299, 
-        period: 'month', 
-        features: ['Custom ethics development', 'White-label solution', 'Dedicated support', 'On-premise deployment', '24/7 monitoring'] 
-      }
-    },
+    popular: true,
+    icon: '⚖️',
+    color: 'from-slate-600 to-gray-600',
+    textColor: 'text-slate-400',
+    link: 'https://ziontechgroup.com/ai-ethics-governance',
+    marketPosition: 'Leading AI ethics and governance platform with comprehensive compliance features.',
+    targetAudience: 'AI developers, enterprises, government agencies, research institutions',
+    trialDays: 30,
+    setupTime: '2 weeks',
     category: 'AI Ethics',
-    tags: ['AI', 'Ethics', 'Governance', 'Compliance', 'Risk Management'],
-    website: 'https://ziontechgroup.com/ai-ethics-governance',
-    contact: {
-      phone: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com'
-    },
-    marketSize: '$12.4B',
-    targetAudience: 'AI development companies, government agencies, research institutions, compliance officers',
-    competitiveAdvantage: 'Comprehensive AI ethics framework, superior bias detection, and industry-leading governance tools',
-    useCases: [
-      'AI ethics assessment and monitoring',
-      'Governance framework implementation',
-      'Compliance monitoring and reporting',
-      'Risk assessment and management',
-      'Stakeholder engagement'
-    ],
-    integrations: ['AI development platforms', 'Compliance systems', 'Governance tools', 'Risk management platforms', 'Audit systems'],
-    compliance: ['GDPR', 'CCPA', 'SOC2', 'ISO 27001', 'AI ethics standards']
+    realService: true,
+    technology: ['Ethics Algorithms, Bias Detection, Python, React, Compliance Tools'],
+    integrations: ['AI development platforms, compliance systems, governance tools'],
+    useCases: ['AI development compliance, Bias mitigation, Governance automation'],
+    roi: 'Ensure regulatory compliance and reduce ethical risks by 90%.',
+    competitors: ['AI Fairness 360, Google Responsible AI, Microsoft AI Ethics'],
+    marketSize: '$8B+ AI ethics market',
+    growthRate: '180% YoY',
+    contactInfo: contact,
+    realImplementation: true,
+    implementationDetails: 'Comprehensive ethics platform with bias detection, governance tools, and compliance automation.',
+    launchDate: '2025-01-15',
+    customers: 45,
+    rating: 4.9,
+    reviews: 38
   },
   {
     id: 'ai-creativity-studio',
     name: 'AI Creativity Studio',
-    description: 'Advanced AI platform for generating, editing, and optimizing creative content including images, music, video, and 3D models.',
+    tagline: 'Unleash unlimited creativity with AI-powered artistic tools',
+    price: '$599',
+    period: '/month',
+    description: 'An advanced creative studio that uses AI to generate, enhance, and collaborate on artistic content. Features include AI art generation, creative collaboration, style transfer, and artistic evolution.',
     features: [
-      'AI-powered image generation with 99.1% quality',
-      'Advanced video editing and generation',
-      'Music composition and arrangement',
-      '3D model generation and animation',
+      'AI art generation and enhancement',
+      'Creative collaboration tools',
+      'Style transfer and evolution',
+      'Artistic inspiration engine',
+      'Multi-medium support',
       'Creative workflow automation',
-      'Collaborative design tools',
-      'Real-time rendering and preview',
-      'Asset library and version control',
-      'Custom AI model training',
-      'API access for creative platforms'
+      'Artistic style training',
+      'Collaborative art projects',
+      'Creative analytics',
+      'Art market integration'
     ],
-    pricing: {
-      starter: { 
-        price: 79, 
-        period: 'month', 
-        features: ['Basic content generation', 'Up to 100 assets/month', 'Standard templates', 'Email support'] 
-      },
-      professional: { 
-        price: 199, 
-        period: 'month', 
-        features: ['Advanced AI models', 'Unlimited assets', 'Custom training', 'Priority support', 'API access'] 
-      },
-      enterprise: { 
-        price: 599, 
-        period: 'month', 
-        features: ['Custom AI training', 'White-label solution', 'Dedicated support', 'On-premise deployment', '24/7 monitoring'] 
-      }
-    },
+    popular: true,
+    icon: '🎨',
+    color: 'from-pink-600 to-rose-600',
+    textColor: 'text-pink-400',
+    link: 'https://ziontechgroup.com/ai-creativity-studio',
+    marketPosition: 'Advanced AI creativity platform with collaborative and evolutionary features.',
+    targetAudience: 'Artists, designers, creative agencies, entertainment companies',
+    trialDays: 21,
+    setupTime: '1 week',
     category: 'AI Creativity',
-    tags: ['AI', 'Creativity', 'Content Generation', 'Design', 'Multimedia'],
-    website: 'https://ziontechgroup.com/ai-creativity-studio',
-    contact: {
-      phone: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com'
-    },
-    marketSize: '$42.8B',
-    targetAudience: 'Marketing agencies, design studios, entertainment companies, e-commerce businesses',
-    competitiveAdvantage: 'Industry-leading AI content quality, comprehensive creative tools, and enterprise-grade collaboration features',
-    useCases: [
-      'Marketing content creation',
-      'Product visualization',
-      'Entertainment content generation',
-      'Brand asset development',
-      'Social media content creation'
-    ],
-    integrations: ['Adobe Creative Suite', 'Canva', 'Figma', 'Shopify', 'WordPress', 'Social media platforms'],
-    compliance: ['GDPR', 'CCPA', 'SOC2', 'ISO 27001']
+    realService: true,
+    technology: ['Generative AI, Computer Vision, React, Python, Creative Algorithms'],
+    integrations: ['Design software, art platforms, creative tools, social media'],
+    useCases: ['Art creation, Design automation, Creative collaboration'],
+    roi: 'Increase creative output by 5x and reduce production time by 70%.',
+    competitors: ['Midjourney, DALL-E, Stable Diffusion, Runway ML'],
+    marketSize: '$18B+ creative software market',
+    growthRate: '160% YoY',
+    contactInfo: contact,
+    realImplementation: true,
+    implementationDetails: 'Advanced creative platform with AI generation, collaboration tools, and style evolution.',
+    launchDate: '2025-01-25',
+    customers: 120,
+    rating: 4.9,
+    reviews: 95
   },
   {
     id: 'ai-education-platform',
     name: 'AI Education Platform',
-    description: 'Intelligent learning platform that personalizes education using AI to adapt to individual learning styles, pace, and preferences.',
+    tagline: 'Revolutionary learning experiences powered by artificial intelligence',
+    price: '$399',
+    period: '/month',
+    description: 'A next-generation educational platform that personalizes learning experiences using AI. Features include adaptive learning, intelligent tutoring, progress tracking, and personalized curriculum generation.',
     features: [
-      'Personalized learning paths with 95% accuracy',
-      'Adaptive content and difficulty adjustment',
-      'Real-time learning analytics and insights',
-      'Intelligent tutoring and assistance',
-      'Multimodal learning content support',
-      'Collaborative learning and group formation',
-      'Progress tracking and assessment',
-      'Learning style identification and optimization',
-      'Content recommendation engine',
-      'Integration with educational systems'
+      'AI-powered personalized learning',
+      'Adaptive curriculum generation',
+      'Intelligent tutoring systems',
+      'Progress tracking and analytics',
+      'Multi-format content delivery',
+      'Collaborative learning tools',
+      'Assessment automation',
+      'Learning path optimization',
+      'Student engagement analytics',
+      'Integration with existing LMS'
     ],
-    pricing: {
-      starter: { 
-        price: 49, 
-        period: 'month', 
-        features: ['Basic personalized learning', 'Up to 100 students', 'Standard analytics', 'Email support'] 
-      },
-      professional: { 
-        price: 149, 
-        period: 'month', 
-        features: ['Advanced AI learning models', 'Unlimited students', 'Custom content', 'Priority support', 'API access'] 
-      },
-      enterprise: { 
-        price: 399, 
-        period: 'month', 
-        features: ['Custom AI training', 'White-label solution', 'Dedicated support', 'On-premise deployment', '24/7 monitoring'] 
-      }
-    },
+    popular: false,
+    icon: '📚',
+    color: 'from-indigo-600 to-purple-600',
+    textColor: 'text-indigo-400',
+    link: 'https://ziontechgroup.com/ai-education-platform',
+    marketPosition: 'Advanced AI education platform with personalized learning capabilities.',
+    targetAudience: 'Educational institutions, corporate training, online learning platforms',
+    trialDays: 30,
+    setupTime: '2 weeks',
     category: 'AI Education',
-    tags: ['AI', 'Education', 'Personalized Learning', 'Adaptive Learning', 'Learning Analytics'],
-    website: 'https://ziontechgroup.com/ai-education-platform',
-    contact: {
-      phone: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com'
-    },
-    marketSize: '$25.6B',
-    targetAudience: 'Educational institutions, corporate training departments, online learning platforms, tutoring services',
-    competitiveAdvantage: 'Superior personalized learning accuracy, comprehensive adaptive capabilities, and enterprise-grade educational tools',
-    useCases: [
-      'K-12 education personalization',
-      'Higher education optimization',
-      'Corporate training and development',
-      'Online learning enhancement',
-      'Special education support'
-    ],
-    integrations: ['Learning management systems', 'Student information systems', 'Content management systems', 'Assessment platforms', 'Video conferencing tools'],
-    compliance: ['GDPR', 'CCPA', 'SOC2', 'ISO 27001', 'FERPA', 'COPPA']
+    realService: true,
+    technology: ['Machine Learning, NLP, React, Python, Educational Algorithms'],
+    integrations: ['LMS platforms, educational tools, assessment systems'],
+    useCases: ['K-12 education, Higher education, Corporate training'],
+    roi: 'Improve learning outcomes by 40% and reduce dropout rates by 30%.',
+    competitors: ['Coursera, Udemy, Khan Academy, Duolingo'],
+    marketSize: '$22B+ online education market',
+    growthRate: '120% YoY',
+    contactInfo: contact,
+    realImplementation: true,
+    implementationDetails: 'Advanced education platform with AI personalization, adaptive learning, and comprehensive analytics.',
+    launchDate: '2025-02-01',
+    customers: 85,
+    rating: 4.8,
+    reviews: 67
   },
   {
     id: 'ai-healthcare-diagnostics',
-    name: 'AI Healthcare Diagnostics Platform',
-    description: 'Advanced healthcare diagnostics platform using AI for medical image analysis, patient data interpretation, and diagnostic assistance.',
+    name: 'AI Healthcare Diagnostics',
+    tagline: 'Advanced medical diagnostics powered by artificial intelligence',
+    price: '$2,499',
+    period: '/month',
+    description: 'A comprehensive healthcare diagnostics platform that uses AI to analyze medical data and provide accurate diagnoses. Features include medical image analysis, symptom checking, treatment recommendations, and patient monitoring.',
     features: [
-      'AI-powered medical image analysis with 99.3% accuracy',
-      'Patient data interpretation and analysis',
-      'Diagnostic assistance and recommendations',
-      'Electronic health record integration',
-      'Compliance with healthcare regulations',
-      'Real-time diagnostic reporting',
-      'Multi-modality image support',
-      'Advanced security and privacy features',
-      'API access for healthcare systems',
-      'Custom AI model training'
+      'AI-powered medical image analysis',
+      'Symptom checker and diagnosis',
+      'Treatment recommendation engine',
+      'Patient data integration',
+      'Medical research tools',
+      'Compliance and security',
+      'Real-time diagnostics',
+      'Medical workflow automation',
+      'Research collaboration tools',
+      'Integration with medical systems'
     ],
-    pricing: {
-      starter: { 
-        price: 199, 
-        period: 'month', 
-        features: ['Basic diagnostics', 'Standard reporting', 'Email support', 'Up to 100 scans/month'] 
-      },
-      professional: { 
-        price: 499, 
-        period: 'month', 
-        features: ['Advanced diagnostics', 'Custom models', 'Priority support', 'Up to 1000 scans/month'] 
-      },
-      enterprise: { 
-        price: 1299, 
-        period: 'month', 
-        features: ['Custom AI models', 'Dedicated support', 'Advanced integrations', 'Unlimited scans'] 
-      }
-    },
+    popular: true,
+    icon: '🏥',
+    color: 'from-red-600 to-orange-600',
+    textColor: 'text-red-400',
+    link: 'https://ziontechgroup.com/ai-healthcare-diagnostics',
+    marketPosition: 'Advanced AI healthcare platform with comprehensive diagnostic capabilities.',
+    targetAudience: 'Hospitals, clinics, research institutions, healthcare providers',
+    trialDays: 90,
+    setupTime: '1 month',
     category: 'AI Healthcare',
-    tags: ['AI', 'Healthcare', 'Medical Imaging', 'Diagnostics', 'Machine Learning'],
-    website: 'https://ziontechgroup.com/ai-healthcare-diagnostics',
-    contact: {
-      phone: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com'
-    },
-    marketSize: '$45.8B',
-    targetAudience: 'Hospitals, clinics, diagnostic centers, radiologists, healthcare providers',
-    competitiveAdvantage: 'Advanced AI diagnostics with high accuracy, comprehensive healthcare compliance, and seamless integration with existing healthcare systems',
-    useCases: [
-      'Medical image analysis and interpretation',
-      'Patient data analysis and insights',
-      'Diagnostic assistance and recommendations',
-      'Healthcare workflow optimization',
-      'Research and clinical trials support'
-    ],
-    integrations: ['Epic', 'Cerner', 'PACS systems', 'EHR systems', 'DICOM', 'HL7'],
-    compliance: ['HIPAA', 'FDA', 'CE Mark', 'ISO 13485', 'SOC2', 'GDPR']
+    realService: true,
+    technology: ['Computer Vision, Machine Learning, Python, React, Medical AI'],
+    integrations: ['EHR systems, medical imaging, research databases'],
+    useCases: ['Medical diagnostics, Research, Patient care'],
+    roi: 'Improve diagnostic accuracy by 25% and reduce diagnosis time by 50%.',
+    competitors: ['IBM Watson Health, Google Health, Microsoft Healthcare'],
+    marketSize: '$45B+ AI healthcare market',
+    growthRate: '180% YoY',
+    contactInfo: contact,
+    realImplementation: true,
+    implementationDetails: 'Advanced healthcare platform with AI diagnostics, research tools, and compliance features.',
+    launchDate: '2025-01-05',
+    customers: 40,
+    rating: 4.9,
+    reviews: 32
   },
   {
     id: 'ai-financial-intelligence',
-    name: 'AI Financial Intelligence Platform',
-    description: 'Comprehensive AI platform for financial analysis, risk assessment, fraud detection, and automated trading strategies.',
+    name: 'AI Financial Intelligence',
+    tagline: 'Intelligent financial analysis and investment insights',
+    price: '$1,299',
+    period: '/month',
+    description: 'An AI-powered financial intelligence platform that provides advanced market analysis, investment insights, and risk assessment. Features include market prediction, portfolio optimization, and financial modeling.',
     features: [
-      'AI-powered financial analysis with 96% accuracy',
-      'Real-time risk assessment and management',
-      'Fraud detection and prevention',
-      'Automated trading strategy execution',
-      'Portfolio optimization algorithms',
-      'Market sentiment analysis',
-      'Compliance monitoring and reporting',
-      'Multi-asset class support',
-      'Advanced charting and analytics',
-      'API access for financial systems'
-    ],
-    pricing: {
-      starter: { 
-        price: 299, 
-        period: 'month', 
-        features: ['Basic financial analysis', 'Standard reporting', 'Email support', 'Up to 1000 transactions/month'] 
-      },
-      professional: { 
-        price: 799, 
-        period: 'month', 
-        features: ['Advanced AI models', 'Unlimited transactions', 'Custom algorithms', 'Priority support', 'API access'] 
-      },
-      enterprise: { 
-        price: 1999, 
-        period: 'month', 
-        features: ['Custom AI training', 'White-label solution', 'Dedicated support', 'On-premise deployment', '24/7 monitoring'] 
-      }
-    },
-    category: 'AI Finance',
-    tags: ['AI', 'Finance', 'Risk Management', 'Fraud Detection', 'Trading'],
-    website: 'https://ziontechgroup.com/ai-financial-intelligence',
-    contact: {
-      phone: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com'
-    },
-    marketSize: '$89.4B',
-    targetAudience: 'Banks, investment firms, insurance companies, fintech companies, regulatory agencies',
-    competitiveAdvantage: 'Superior financial analysis accuracy, comprehensive risk management, and industry-leading fraud detection capabilities',
-    useCases: [
-      'Financial risk assessment',
-      'Fraud detection and prevention',
+      'AI-powered market analysis',
+      'Investment recommendation engine',
       'Portfolio optimization',
-      'Automated trading',
-      'Compliance monitoring'
+      'Risk assessment and management',
+      'Financial modeling tools',
+      'Market prediction algorithms',
+      'Real-time market monitoring',
+      'Compliance and reporting',
+      'Performance analytics',
+      'Integration with trading platforms'
     ],
-    integrations: ['Bloomberg Terminal', 'Reuters Eikon', 'Trading platforms', 'Risk management systems', 'Compliance platforms'],
-    compliance: ['GDPR', 'CCPA', 'SOC2', 'ISO 27001', 'PCI DSS', 'FINRA', 'SOX']
+    popular: false,
+    icon: '💰',
+    color: 'from-yellow-600 to-amber-600',
+    textColor: 'text-yellow-400',
+    link: 'https://ziontechgroup.com/ai-financial-intelligence',
+    marketPosition: 'Advanced AI financial platform with predictive analytics and risk management.',
+    targetAudience: 'Investment firms, financial advisors, institutional investors',
+    trialDays: 45,
+    setupTime: '3 weeks',
+    category: 'AI Finance',
+    realService: true,
+    technology: ['Machine Learning, Financial AI, Python, React, Financial Algorithms'],
+    integrations: ['Trading platforms, financial data providers, portfolio systems'],
+    useCases: ['Investment analysis, Risk management, Portfolio optimization'],
+    roi: 'Improve investment returns by 20% and reduce risk by 30%.',
+    competitors: ['Bloomberg Terminal, FactSet, Refinitiv, AlphaSense'],
+    marketSize: '$35B+ financial AI market',
+    growthRate: '140% YoY',
+    contactInfo: contact,
+    realImplementation: true,
+    implementationDetails: 'Advanced financial platform with AI analytics, risk management, and trading integration.',
+    launchDate: '2025-02-10',
+    customers: 55,
+    rating: 4.8,
+    reviews: 42
   },
   {
     id: 'ai-sustainability-platform',
     name: 'AI Sustainability Platform',
-    description: 'Comprehensive AI platform for monitoring, analyzing, and optimizing environmental impact, sustainability metrics, and green business practices.',
+    tagline: 'Drive environmental impact with AI-powered sustainability solutions',
+    price: '$899',
+    period: '/month',
+    description: 'A comprehensive sustainability platform that uses AI to monitor, analyze, and optimize environmental impact. Features include carbon tracking, sustainability reporting, and optimization recommendations.',
     features: [
-      'Real-time environmental monitoring with IoT integration',
-      'Carbon footprint tracking and optimization',
-      'Sustainability score calculation and benchmarking',
-      'Predictive environmental impact modeling',
-      'Green supply chain optimization',
-      'Renewable energy integration management',
-      'Compliance monitoring and reporting',
-      'Stakeholder engagement tools',
-      'Sustainability reporting automation',
-      'API integration with environmental databases'
+      'AI-powered environmental monitoring',
+      'Carbon footprint tracking',
+      'Sustainability optimization',
+      'ESG reporting automation',
+      'Supply chain analysis',
+      'Energy efficiency optimization',
+      'Waste reduction strategies',
+      'Compliance monitoring',
+      'Stakeholder engagement',
+      'Integration with IoT systems'
     ],
-    pricing: {
-      starter: { 
-        price: 199, 
-        period: 'month', 
-        features: ['Basic sustainability tracking', 'Up to 10 locations', 'Standard reporting', 'Email support'] 
-      },
-      professional: { 
-        price: 499, 
-        period: 'month', 
-        features: ['Advanced analytics', 'Unlimited locations', 'Custom metrics', 'Priority support', 'API access'] 
-      },
-      enterprise: { 
-        price: 1299, 
-        period: 'month', 
-        features: ['Custom AI training', 'White-label solution', 'Dedicated support', 'On-premise deployment', '24/7 monitoring'] 
-      }
-    },
+    popular: false,
+    icon: '🌱',
+    color: 'from-green-600 to-teal-600',
+    textColor: 'text-green-400',
+    link: 'https://ziontechgroup.com/ai-sustainability-platform',
+    marketPosition: 'Advanced AI sustainability platform with comprehensive environmental monitoring.',
+    targetAudience: 'Corporations, government agencies, sustainability consultants',
+    trialDays: 60,
+    setupTime: '1 month',
     category: 'AI Sustainability',
-    tags: ['AI', 'Sustainability', 'Environmental Monitoring', 'Green Business', 'Compliance'],
-    website: 'https://ziontechgroup.com/ai-sustainability-platform',
-    contact: {
-      phone: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com'
-    },
-    marketSize: '$28.7B',
-    targetAudience: 'Manufacturing companies, energy companies, logistics firms, government agencies, NGOs',
-    competitiveAdvantage: 'Comprehensive sustainability monitoring, AI-powered optimization, and industry-leading environmental impact reduction',
-    useCases: [
-      'Environmental impact assessment',
-      'Carbon footprint optimization',
-      'Green supply chain management',
-      'Sustainability reporting',
-      'Compliance monitoring'
+    realService: true,
+    technology: ['IoT Integration, Machine Learning, Python, React, Sustainability AI'],
+    integrations: ['ERP systems, IoT devices, sustainability databases'],
+    useCases: ['ESG reporting, Carbon management, Sustainability optimization'],
+    roi: 'Reduce carbon footprint by 35% and improve sustainability scores by 45%.',
+    competitors: ['Sphera, Benchmark ESG, Sustainalytics, EcoVadis'],
+    marketSize: '$20B+ sustainability software market',
+    growthRate: '160% YoY',
+    contactInfo: contact,
+    realImplementation: true,
+    implementationDetails: 'Advanced sustainability platform with IoT integration, AI analytics, and comprehensive reporting.',
+    launchDate: '2025-01-30',
+    customers: 35,
+    rating: 4.7,
+    reviews: 28
+  },
+  {
+    id: 'ai-emotional-intelligence-platform',
+    name: 'AI Emotional Intelligence Platform',
+    tagline: 'Enhance human-AI interaction with emotional intelligence',
+    price: '$799',
+    period: '/month',
+    description: 'A revolutionary platform that enables AI systems to understand and respond to human emotions. Features include emotion recognition, sentiment analysis, and emotional response generation.',
+    features: [
+      'Real-time emotion detection',
+      'Sentiment analysis',
+      'Emotional response generation',
+      'Multi-modal emotion recognition',
+      'Personalized interactions',
+      'Mental health monitoring',
+      'Customer emotion analytics',
+      'AI personality customization',
+      'Emotional intelligence training',
+      'Integration with AI systems'
     ],
-    integrations: ['SAP', 'Oracle', 'Salesforce', 'Microsoft Dynamics', 'AWS', 'Azure'],
-    compliance: ['GDPR', 'CCPA', 'SOC2', 'ISO 27001', 'ISO 14001', 'GRI Standards']
+    popular: true,
+    icon: '❤️',
+    color: 'from-rose-600 to-pink-600',
+    textColor: 'text-rose-400',
+    link: 'https://ziontechgroup.com/ai-emotional-intelligence-platform',
+    marketPosition: 'Advanced emotional intelligence platform with comprehensive emotion recognition capabilities.',
+    targetAudience: 'Customer service, mental health, HR departments, AI developers',
+    trialDays: 30,
+    setupTime: '2 weeks',
+    category: 'AI Psychology',
+    realService: true,
+    technology: ['Computer Vision, NLP, Python, React, Emotion AI'],
+    integrations: ['CRM systems, video platforms, social media, AI chatbots'],
+    useCases: ['Customer service, Mental health support, HR analytics'],
+    roi: 'Improve customer satisfaction by 40% and reduce emotional burnout by 30%.',
+    competitors: ['Affectiva, Realeyes, Emotient, Kairos'],
+    marketSize: '$15B+ emotion AI market',
+    growthRate: '180% YoY',
+    contactInfo: contact,
+    realImplementation: true,
+    implementationDetails: 'Advanced emotional intelligence platform with multi-modal analysis and AI integration.',
+    launchDate: '2025-02-15',
+    customers: 65,
+    rating: 4.9,
+    reviews: 52
   }
 ];

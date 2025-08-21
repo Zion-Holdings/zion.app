@@ -8,7 +8,7 @@ import {
 } from 'lucide-react';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 import UltraFuturisticCard from '../components/ui/UltraFuturisticCard';
-import { emergingTechServices } from '../data/emerging-tech-services';
+import { emergingTechServicesEnhanced2025 } from '../data/emerging-tech-services';
 import { nextGenAIServices } from '../data/next-gen-ai-services';
 
 export default function InnovativeServicesShowcase() {
@@ -248,7 +248,7 @@ export default function InnovativeServicesShowcase() {
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {emergingTechServices.slice(0, 6).map((service, index) => (
+                              {emergingTechServicesEnhanced2025.slice(0, 6).map((service, index) => (
                 <motion.div
                   key={service.id}
                   initial={{ opacity: 0, y: 50 }}
