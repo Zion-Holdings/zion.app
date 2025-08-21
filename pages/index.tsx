@@ -409,6 +409,30 @@ export default function HomePage() {
             link: 'https://ziontechgroup.com/cron-job-scheduler',
             contactInfo
           },
+          {
+            title: '🛰️ Cloud Asset Inventory',
+            description: 'Unified multi-cloud asset graph with tags, owners, relationships and cost metadata.',
+            price: '$129/month',
+            features: ['AWS/Azure/GCP discovery', 'Resource graph', 'Owner and tag coverage', 'Cost and usage enrichment'],
+            link: 'https://ziontechgroup.com/services/cloud-asset-inventory',
+            contactInfo
+          },
+          {
+            title: '🛡️ Terraform Drift Guard',
+            description: 'Detect and auto-remediate cloud drift with OPA policies and remediation PRs.',
+            price: '$139/month',
+            features: ['State vs live diffs', 'OPA guardrails', 'Auto PRs', 'Slack/Jira approvals'],
+            link: 'https://ziontechgroup.com/services/terraform-drift-guard',
+            contactInfo
+          },
+          {
+            title: '✅ Email Verification API',
+            description: 'Real-time validation via SMTP handshake, role/disposable detection and risk scoring.',
+            price: '$39/month',
+            features: ['SMTP checks', 'Disposable detection', 'Risk scoring', 'Bulk async API'],
+            link: 'https://ziontechgroup.com/services/email-verification-api',
+            contactInfo
+          },
           // Existing curated highlights
           ...serviceHighlights.slice(0, 8).map((h) => ({
             title: h.title,

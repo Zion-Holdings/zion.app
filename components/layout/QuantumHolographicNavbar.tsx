@@ -32,6 +32,18 @@ export default function QuantumHolographicNavbar() {
       icon: <Zap className="w-4 h-4" />,
       description: 'Welcome to the future'
     },
+    {
+      name: 'AI Services',
+      href: '/ai-services',
+      icon: <Brain className="w-4 h-4" />,
+      description: 'LLM, RAG, MLOps packages'
+    },
+    {
+      name: 'IT Services',
+      href: '/it-services',
+      icon: <Cloud className="w-4 h-4" />,
+      description: 'Cloud, SRE, security'
+    },
     { 
       name: 'Services', 
       href: '/services', 
