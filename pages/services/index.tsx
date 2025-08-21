@@ -30,6 +30,14 @@ export default function ServicesIndexPage() {
     byCategory[cat].push(s);
   }
 
+  const anchorMap: Record<string, string> = {
+    'AI & Data': 'ai',
+    'Developer Tools': 'developer-tools',
+    'Cloud & FinOps': 'cloud',
+    'Observability': 'observability',
+    'Quality & Monitoring': 'quality',
+  };
+
   return (
     <UltraFuturisticBackground variant="quantum" intensity="high">
       <Head>
@@ -45,7 +53,7 @@ export default function ServicesIndexPage() {
         </div>
 
         {categories.map((cat) => (
-          <section key={cat}>
+          <section key={cat} id={anchorMap[cat] || toSlug(cat)}>
             <h2 className="text-2xl md:text-3xl font-semibold text-white mb-4">{cat}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {byCategory[cat].slice(0, 12).map((s) => {
