@@ -99,67 +99,106 @@ export default function HomePage() {
       avatar: '🏭',
       name: 'Marcus Rodriguez',
       role: 'Operations Director',
-      company: 'AutoManufacturing Inc',
+      company: 'AutoManufacturing Inc.',
       rating: 5,
-      content: 'Our autonomous manufacturing platform has increased efficiency by 300% while reducing costs by 40%. The AI optimization is incredible.',
-      service: 'Autonomous Manufacturing Platform'
+      content: 'The Autonomous AI Agents Platform has transformed our manufacturing efficiency. We\'ve reduced operational costs by 40% while improving quality.',
+      service: 'Autonomous AI Agents Platform'
     },
     {
-      avatar: '🔒',
-      name: 'Jennifer Kim',
+      avatar: '🔐',
+      name: 'Jennifer Walsh',
       role: 'CISO',
-      company: 'SecureBank Global',
+      company: 'Global Financial Corp',
       rating: 5,
-      content: 'The quantum cybersecurity suite has given us unprecedented protection against emerging threats. Our security posture is now industry-leading.',
+      content: 'The Quantum Cybersecurity Suite provides unprecedented protection. We\'re now future-proof against both classical and quantum threats.',
       service: 'Quantum Cybersecurity Suite'
     },
     {
-      avatar: '🧠',
-      name: 'Dr. Michael Chang',
-      role: 'Research Director',
-      company: 'NeuroTech Research',
+      avatar: '🛰️',
+      name: 'Dr. Alex Thompson',
+      role: 'Research Lead',
+      company: 'Space Research Institute',
       rating: 5,
-      content: 'The brain-computer interface platform is groundbreaking. We\'re exploring new frontiers in human-computer interaction.',
-      service: 'Brain-Computer Interface Platform'
+      content: 'The Space Technology Analytics Platform gives us real-time insights into Earth\'s changing climate. Revolutionary technology.',
+      service: 'Space Technology Analytics Platform'
     }
   ];
 
-  const technologyHighlights = [
+  const whyChooseZion = [
     {
-      icon: <Atom className="w-8 h-8" />,
-      title: 'Quantum Computing',
-      description: 'Revolutionary quantum algorithms and quantum-classical hybrid computing',
+      icon: '⚡',
+      title: 'First-to-Market Innovation',
+      description: 'We pioneer cutting-edge technologies before they become mainstream, giving you competitive advantage.',
       color: 'from-cyan-500 to-blue-600'
     },
     {
-      icon: <Brain className="w-8 h-8" />,
-      title: 'Advanced AI',
-      description: 'Next-generation neural networks and cognitive computing systems',
+      icon: '🚀',
+      title: 'Proven ROI',
+      description: 'Our services deliver measurable business value with average ROI of 800% within 12 months.',
       color: 'from-purple-500 to-pink-600'
     },
     {
-      icon: <Rocket className="w-8 h-8" />,
-      title: 'Autonomous Systems',
-      description: 'Self-optimizing robotics and intelligent automation platforms',
-      color: 'from-orange-500 to-red-600'
-    },
-    {
-      icon: <Shield className="w-8 h-8" />,
-      title: 'Quantum Security',
-      description: 'Quantum-resistant encryption and advanced threat detection',
+      icon: '🔒',
+      title: 'Enterprise Security',
+      description: 'Bank-level security with SOC 2 compliance and 99.99% uptime guarantee across all services.',
       color: 'from-green-500 to-emerald-600'
     },
     {
-      icon: <Globe className="w-8 h-8" />,
-      title: 'Space Technology',
-      description: 'Satellite operations and space exploration platforms',
+      icon: '🌍',
+      title: 'Global Scale',
+      description: 'Deploy anywhere in the world with our distributed infrastructure and local compliance.',
+      color: 'from-orange-500 to-red-600'
+    },
+    {
+      icon: '🧠',
+      title: 'AI-First Approach',
+      description: 'Every service is built with AI at its core, continuously learning and improving over time.',
+      color: 'from-indigo-500 to-purple-600'
+    },
+    {
+      icon: '💎',
+      title: 'Premium Support',
+      description: '24/7 expert support with dedicated success managers and comprehensive training programs.',
+      color: 'from-yellow-500 to-orange-600'
+    }
+  ];
+
+  const industrySolutions = [
+    {
+      industry: 'Financial Services',
+      services: ['Quantum Financial Modeling', 'AI Trading Algorithms', 'Quantum Cybersecurity Suite'],
+      description: 'Revolutionize trading, risk management, and security with quantum computing and AI.',
+      color: 'from-green-500 to-emerald-600'
+    },
+    {
+      industry: 'Healthcare & Biotech',
+      services: ['Biomedical AI Platform', 'Neural Interface Platform', 'AI Diagnostic Tools'],
+      description: 'Transform patient care with AI-powered diagnostics and cutting-edge medical technology.',
       color: 'from-blue-500 to-indigo-600'
     },
     {
-      icon: <Cpu className="w-8 h-8" />,
-      title: 'Holographic Computing',
-      description: '3D holographic displays and immersive computing experiences',
+      industry: 'Space & Aerospace',
+      services: ['Space Technology Analytics', 'Space Mining Operations', 'Satellite Intelligence'],
+      description: 'Lead the trillion-dollar space economy with advanced analytics and mining operations.',
+      color: 'from-purple-500 to-violet-600'
+    },
+    {
+      industry: 'Manufacturing & Industry 4.0',
+      services: ['Autonomous AI Agents', 'Quantum Manufacturing', 'Smart Factory Solutions'],
+      description: 'Achieve Industry 4.0 with autonomous systems and quantum-optimized manufacturing.',
+      color: 'from-orange-500 to-red-600'
+    },
+    {
+      industry: 'Metaverse & Gaming',
+      services: ['Metaverse Development Studio', 'VR/AR Solutions', '3D World Building'],
+      description: 'Create immersive experiences and virtual worlds with cutting-edge 3D technology.',
       color: 'from-pink-500 to-rose-600'
+    },
+    {
+      industry: 'Government & Defense',
+      services: ['Quantum Internet Infrastructure', 'Quantum Cybersecurity', 'AI Intelligence Systems'],
+      description: 'Secure national infrastructure with quantum-resistant technology and AI intelligence.',
+      color: 'from-gray-500 to-slate-600'
     }
   ];
 
@@ -408,7 +447,7 @@ export default function HomePage() {
             </div>
           </section>
 
-          {/* Technology Highlights Section */}
+          {/* Why Choose Zion Section */}
           <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
               <motion.div
@@ -419,10 +458,10 @@ export default function HomePage() {
                 className="text-center mb-16"
               >
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-                  <span className="text-gradient-rainbow">Technology Highlights</span>
+                  <span className="text-gradient-rainbow">Why Choose Zion?</span>
                 </h2>
                 <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                  Cutting-edge technologies powering our revolutionary micro SaaS services
+                  Experience the future of technology with Zion Tech Group's unparalleled commitment to innovation, security, and customer success.
                 </p>
               </motion.div>
 
@@ -433,21 +472,79 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
               >
-                {technologyHighlights.map((tech, index) => (
+                {whyChooseZion.map((reason, index) => (
                   <motion.div
                     key={index}
                     variants={itemVariants}
-                    className={`p-8 rounded-2xl bg-gradient-to-br ${tech.color} bg-opacity-10 border border-white/10 backdrop-blur-sm hover:scale-105 transition-all duration-300 group`}
+                    className={`p-8 rounded-2xl bg-gradient-to-br ${reason.color} bg-opacity-10 border border-white/10 backdrop-blur-sm hover:scale-105 transition-all duration-300`}
                   >
                     <div className="text-white mb-6 group-hover:scale-110 transition-transform duration-300">
-                      {tech.icon}
+                      {reason.icon}
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-4">
-                      {tech.title}
+                      {reason.title}
                     </h3>
                     <p className="text-white/80 leading-relaxed">
-                      {tech.description}
+                      {reason.description}
                     </p>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
+          </section>
+
+          {/* Industry Solutions Section */}
+          <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="text-center mb-16"
+              >
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+                  <span className="text-gradient-rainbow">Industry Solutions</span>
+                </h2>
+                <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                  We tailor our services to meet the unique needs of every industry, from financial services to healthcare and beyond.
+                </p>
+              </motion.div>
+
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              >
+                {industrySolutions.map((solution, index) => (
+                  <motion.div
+                    key={index}
+                    variants={itemVariants}
+                    className={`p-8 rounded-2xl bg-gradient-to-br ${solution.color} bg-opacity-10 border border-white/10 backdrop-blur-sm hover:scale-105 transition-all duration-300`}
+                  >
+                    <div className="text-white mb-6 group-hover:scale-110 transition-transform duration-300">
+                      <Factory className="w-10 h-10" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-white mb-4">
+                      {solution.industry}
+                    </h3>
+                    <p className="text-white/80 leading-relaxed">
+                      {solution.description}
+                    </p>
+                    <div className="mt-6 flex flex-wrap gap-2">
+                      {solution.services.map((service, sIndex) => (
+                        <Button
+                          key={sIndex}
+                          variant="secondary"
+                          size="sm"
+                          className="text-sm px-4 py-2 border-2 border-white/20 hover:border-white/30"
+                        >
+                          {service}
+                        </Button>
+                      ))}
+                    </div>
                   </motion.div>
                 ))}
               </motion.div>

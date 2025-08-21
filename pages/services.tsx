@@ -99,53 +99,115 @@ export default function ServicesPage() {
       color: 'from-indigo-500 to-purple-600'
     },
     {
-      name: 'Autonomous Systems & Robotics',
-      description: 'Next-generation autonomous manufacturing and robotics platforms',
-      icon: <Factory className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Manufacturing & Industry 4.0' || s.category === 'Robotics & Automation' || s.category === 'Autonomous Systems & Robotics').length,
-      color: 'from-orange-500 to-red-600'
+      name: 'AI & Machine Learning',
+      description: 'Advanced AI solutions that transform business operations',
+      icon: <Cpu className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'AI & Machine Learning' || s.category === 'AI & Content Creation').length,
+      color: 'from-emerald-500 to-teal-600'
     },
     {
-      name: 'Healthcare & Biotechnology',
-      description: 'AI-powered biomedical research and drug discovery platforms',
+      name: 'Space Technology',
+      description: 'Satellite intelligence and space resource management',
+      icon: <Rocket className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Space Technology').length,
+      color: 'from-blue-500 to-indigo-600'
+    },
+    {
+      name: 'Metaverse & VR/AR',
+      description: 'Immersive 3D worlds and virtual experiences',
+      icon: <Globe className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Metaverse & VR/AR' || s.category === 'Metaverse & Virtual Reality').length,
+      color: 'from-purple-500 to-violet-600'
+    },
+    {
+      name: 'Biomedical AI',
+      description: 'AI-powered medical diagnostics and research',
       icon: <FlaskConical className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Healthcare & Biotechnology').length,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Biomedical AI').length,
       color: 'from-green-500 to-emerald-600'
     },
     {
-      name: 'Cybersecurity & Defense',
-      description: 'Quantum-resistant security and advanced threat protection',
+      name: 'Neural Technology',
+      description: 'Brain-computer interfaces and neural systems',
+      icon: <Dna className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Neural Technology').length,
+      color: 'from-pink-500 to-rose-600'
+    },
+    {
+      name: 'Cybersecurity',
+      description: 'Quantum-resistant security and threat protection',
       icon: <Shield className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Cybersecurity & Defense').length,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Cybersecurity' || s.category === 'Quantum Cybersecurity').length,
       color: 'from-red-500 to-pink-600'
     },
     {
       name: 'Financial Technology',
-      description: 'Quantum finance and AI-powered financial solutions',
+      description: 'Quantum financial modeling and trading algorithms',
       icon: <DollarSign className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Financial Technology').length,
-      color: 'from-yellow-500 to-amber-600'
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Financial Technology' || s.category === 'Quantum Finance & Trading').length,
+      color: 'from-yellow-500 to-orange-600'
+    }
+  ];
+
+  const serviceHighlights = [
+    {
+      title: 'Quantum Advantage',
+      description: 'Our quantum computing services provide 10-100x speedup for complex calculations, giving you unprecedented competitive advantage.',
+      icon: <Atom className="w-8 h-8" />,
+      color: 'from-cyan-500 to-blue-600'
     },
     {
-      name: 'Space & Aerospace',
-      description: 'Satellite operations and space exploration technology',
-      icon: <Rocket className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Space & Aerospace Technology').length,
+      title: 'AI-First Innovation',
+      description: 'Every service is built with AI at its core, continuously learning and improving to deliver better results over time.',
+      icon: <Brain className="w-8 h-8" />,
+      color: 'from-purple-500 to-pink-600'
+    },
+    {
+      title: 'Proven ROI',
+      description: 'Our customers see an average ROI of 800% within 12 months, with some achieving 1000%+ returns.',
+      icon: <TrendingUp className="w-8 h-8" />,
+      color: 'from-green-500 to-emerald-600'
+    },
+    {
+      title: 'Enterprise Security',
+      description: 'Bank-level security with SOC 2 compliance, 99.99% uptime guarantee, and quantum-resistant encryption.',
+      icon: <Shield className="w-8 h-8" />,
+      color: 'from-orange-500 to-red-600'
+    }
+  ];
+
+  const pricingTiers = [
+    {
+      name: 'Starter',
+      price: '$49',
+      period: '/month',
+      description: 'Perfect for small businesses and startups',
+      features: ['Basic AI features', 'Standard support', 'Core integrations', 'Basic analytics'],
       color: 'from-blue-500 to-indigo-600'
     },
     {
-      name: 'Metaverse & Virtual Reality',
-      description: 'Immersive digital experiences and virtual worlds',
-      icon: <Globe className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Metaverse & Virtual Reality').length,
-      color: 'from-purple-500 to-violet-600'
+      name: 'Professional',
+      price: '$199',
+      period: '/month',
+      description: 'Ideal for growing businesses and teams',
+      features: ['Advanced AI capabilities', 'Priority support', 'Full integrations', 'Advanced analytics', 'Team collaboration'],
+      color: 'from-purple-500 to-pink-600'
     },
     {
-      name: 'Emerging Technologies',
-      description: 'Cutting-edge innovations like brain-computer interfaces',
-      icon: <Atom className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Emerging Technologies').length,
-      color: 'from-cyan-500 to-teal-600'
+      name: 'Enterprise',
+      price: '$599',
+      period: '/month',
+      description: 'For large organizations and enterprises',
+      features: ['Full AI suite', '24/7 dedicated support', 'Custom integrations', 'Enterprise analytics', 'Advanced security', 'Custom training'],
+      color: 'from-emerald-500 to-teal-600'
+    },
+    {
+      name: 'Quantum',
+      price: '$1,999',
+      period: '/month',
+      description: 'Cutting-edge quantum computing solutions',
+      features: ['Quantum algorithms', 'Quantum security', 'AI optimization', 'Custom development', 'Dedicated infrastructure', 'White-label options'],
+      color: 'from-cyan-500 to-blue-600'
     }
   ];
 
@@ -258,6 +320,52 @@ export default function ServicesPage() {
                 </div>
                 <div className="text-sm text-gray-400">Categories</div>
               </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Service Highlights */}
+        <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+                <span className="text-gradient-rainbow">Why Choose Zion Tech Group?</span>
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Experience the future of technology with our unparalleled commitment to innovation, security, and customer success
+              </p>
+            </motion.div>
+
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="grid grid-cols-1 md:grid-cols-2 gap-8"
+            >
+              {serviceHighlights.map((highlight, index) => (
+                <motion.div
+                  key={index}
+                  variants={itemVariants}
+                  className={`p-8 rounded-2xl bg-gradient-to-br ${highlight.color} bg-opacity-10 border border-white/10 backdrop-blur-sm hover:scale-105 transition-all duration-300`}
+                >
+                  <div className="text-white mb-6">
+                    {highlight.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-4">
+                    {highlight.title}
+                  </h3>
+                  <p className="text-white/80 leading-relaxed">
+                    {highlight.description}
+                  </p>
+                </motion.div>
+              ))}
             </motion.div>
           </div>
         </section>
@@ -555,6 +663,67 @@ export default function ServicesPage() {
                 ))}
               </motion.div>
             )}
+          </div>
+        </section>
+
+        {/* Pricing Tiers */}
+        <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+                <span className="text-gradient-rainbow">Transparent Pricing</span>
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Choose the perfect plan for your business needs with our flexible, scalable pricing options
+              </p>
+            </motion.div>
+
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            >
+              {pricingTiers.map((tier, index) => (
+                <motion.div
+                  key={index}
+                  variants={itemVariants}
+                  className={`p-8 rounded-2xl bg-gradient-to-br ${tier.color} bg-opacity-10 border border-white/10 backdrop-blur-sm hover:scale-105 transition-all duration-300`}
+                >
+                  <div className="text-center mb-6">
+                    <h3 className="text-2xl font-bold text-white mb-2">{tier.name}</h3>
+                    <div className="text-4xl font-bold text-white mb-1">
+                      {tier.price}
+                      <span className="text-lg text-white/60">{tier.period}</span>
+                    </div>
+                    <p className="text-white/80">{tier.description}</p>
+                  </div>
+                  <ul className="space-y-3 mb-8">
+                    {tier.features.map((feature, fIndex) => (
+                      <li key={fIndex} className="flex items-center text-white/80">
+                        <Check className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <Button
+                    href="/contact"
+                    variant="primary"
+                    size="lg"
+                    className="w-full bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700"
+                  >
+                    Get Started
+                  </Button>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
         </section>
 
