@@ -29,6 +29,9 @@ import { revolutionary2025Services } from '../data/revolutionary-2025-services';
 import { nextGenInnovations2025 } from '../data/next-gen-innovations-2025';
 import { innovative2025MicroSaasServices } from '../data/innovative-2025-micro-saas';
 import { emergingTech2025Services as newEmergingTech2025Services } from '../data/emerging-tech-2025-services';
+import { revolutionaryAI2025Services } from '../data/revolutionary-2025-ai-services';
+import { revolutionaryITInfrastructure2025Services } from '../data/revolutionary-2025-it-infrastructure';
+import { revolutionaryMicroSaas2025Services } from '../data/revolutionary-2025-micro-saas';
 
 export default function HomePage() {
   const contactInfo = {
@@ -60,7 +63,10 @@ export default function HomePage() {
     ...revolutionary2025Services,
     ...nextGenInnovations2025,
     ...innovative2025MicroSaasServices,
-    ...newEmergingTech2025Services
+    ...newEmergingTech2025Services,
+    ...revolutionaryAI2025Services,
+    ...revolutionaryITInfrastructure2025Services,
+    ...revolutionaryMicroSaas2025Services
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);
@@ -68,11 +74,11 @@ export default function HomePage() {
   // Service statistics
   const serviceStats = {
     totalServices: allServices.length,
-    aiServices: nextGenerationAIServices.length + innovativeAIServices.length + realMarketServices.filter(s => s.category.includes('AI')).length + revolutionary2025Services.filter(s => s.category.includes('AI')).length + nextGenInnovations2025.filter(s => s.category.includes('AI')).length,
+    aiServices: nextGenerationAIServices.length + innovativeAIServices.length + realMarketServices.filter(s => s.category.includes('AI')).length + revolutionary2025Services.filter(s => s.category.includes('AI')).length + nextGenInnovations2025.filter(s => s.category.includes('AI')).length + revolutionaryAI2025Services.length,
     emergingTech: emergingTechnologyServices.length + emergingTech2025Services.length,
-    itSolutions: comprehensiveITSolutions.length + enterpriseITServices.length,
-    microSaas: enhancedRealMicroSaasServices.length + innovativeMicroSaasServices.length,
-    revolutionaryServices: revolutionary2025Services.length + nextGenInnovations2025.length
+    itSolutions: comprehensiveITSolutions.length + enterpriseITServices.length + revolutionaryITInfrastructure2025Services.length,
+    microSaas: enhancedRealMicroSaasServices.length + innovativeMicroSaasServices.length + revolutionaryMicroSaas2025Services.length,
+    revolutionaryServices: revolutionary2025Services.length + nextGenInnovations2025.length + revolutionaryAI2025Services.length + revolutionaryITInfrastructure2025Services.length + revolutionaryMicroSaas2025Services.length
   };
 
   return (
