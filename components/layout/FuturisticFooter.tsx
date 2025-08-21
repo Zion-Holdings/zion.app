@@ -31,8 +31,8 @@ export default function FuturisticFooter() {
   ];
 
   const socialLinks = [
-    { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: '💼' },
-    { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: '🐦' },
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/company/zion-tech-group', icon: '💼' },
+    { name: 'X', href: 'https://x.com/ziontechgroup', icon: '🐦' },
     { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: '💻' },
   ];
 
