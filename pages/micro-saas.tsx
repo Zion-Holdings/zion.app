@@ -16,11 +16,16 @@ export default function MicroSaasPage() {
   const router = useRouter();
 
   useEffect(() => {
-    const queryCategory = typeof router.query.category === 'string' ? router.query.category : undefined;
-    if (queryCategory) {
-      setSelectedCategory(queryCategory);
+    const categoryFromQuery = (router.query.category as string) || (router.query.cat as string);
+    if (categoryFromQuery) {
+      try {
+        const decoded = decodeURIComponent(categoryFromQuery);
+        setSelectedCategory(decoded);
+      } catch {
+        setSelectedCategory(categoryFromQuery);
+      }
     }
-  }, [router.query.category]);
+  }, [router.query.category, router.query.cat]);
   
   const competitiveAdvantages = [
     {

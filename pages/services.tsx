@@ -1,10 +1,7 @@
-import React, { useState, useMemo } from 'react';
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
-import { 
-  Search, Filter, Grid3X3, List, Star, Users, TrendingUp, 
-  DollarSign, Clock, ArrowRight, ExternalLink, Check, 
-  Mail, Phone, MapPin, Sparkles, CpuIcon, ShieldCheck
-} from 'lucide-react';
+import { useRouter } from 'next/router';
+import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Code, BookOpen, Activity, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Filter, Grid, List, ChevronDown, ChevronUp, Sparkles, FlaskConical, Dna, Car, Leaf, Factory, Truck, Microscope, GraduationCap, ShieldCheck, Brain, Atom, Globe2, Bot, ChevronRight, LinkIcon, Building2 } from 'lucide-react';
 import Button from '../components/ui/Button';
 import UltraFuturisticMatrixBackground from '../components/ui/UltraFuturisticMatrixBackground';
 import UltraFuturisticServiceCard from '../components/ui/UltraFuturisticServiceCard';
@@ -16,7 +13,77 @@ export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
-  const [sortBy, setSortBy] = useState<'name' | 'price' | 'rating' | 'roi'>('name');
+  const [priceRange, setPriceRange] = useState('All');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [sortBy, setSortBy] = useState('name');
+  const [showFilters, setShowFilters] = useState(false);
+
+  const router = useRouter();
+
+  useEffect(() => {
+    const categoryFromQuery = (router.query.category as string) || (router.query.cat as string);
+    if (categoryFromQuery) {
+      try {
+        const decoded = decodeURIComponent(categoryFromQuery);
+        setSelectedCategory(decoded);
+      } catch {
+        setSelectedCategory(categoryFromQuery);
+      }
+    }
+  }, [router.query.category, router.query.cat]);
+
+  const priceRanges = [
+    { value: 'All', label: 'All Prices' },
+    { value: '0-50', label: '$0 - $50' },
+    { value: '51-100', label: '$51 - $100' },
+    { value: '101-200', label: '$101 - $200' },
+    { value: '201+', label: '$201+' }
+  ];
+
+  const sortOptions = [
+    { value: 'name', label: 'Name A-Z' },
+    { value: 'price', label: 'Price Low-High' },
+    { value: 'popularity', label: 'Most Popular' },
+    { value: 'category', label: 'Category' }
+  ];
+
+  // Filter and sort services
+  let filteredServices = enhancedRealMicroSaasServices;
+
+  // Category filter
+  if (selectedCategory !== 'All') {
+    filteredServices = getServicesByCategory(selectedCategory);
+  }
+
+  // Price range filter
+  if (priceRange !== 'All') {
+    const [min, max] = priceRange.split('-').map(p => p === '+' ? Infinity : parseInt(p));
+    filteredServices = getServicesByPriceRange(min, max);
+  }
+
+  // Search filter
+  if (searchQuery) {
+    filteredServices = filteredServices.filter(service =>
+      service.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      service.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      service.tagline.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      service.category.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  }
+
+  // Sort services
+  filteredServices.sort((a, b) => {
+    switch (sortBy) {
+      case 'price':
+        return parseFloat(a.price.replace('$', '').replace(',', '')) - parseFloat(b.price.replace('$', '').replace(',', ''));
+      case 'popularity':
+        return (b.popular ? 1 : 0) - (a.popular ? 1 : 0);
+      case 'category':
+        return a.category.localeCompare(b.category);
+      default:
+        return a.name.localeCompare(b.name);
+    }
+  });
 
   const contactInfo = {
     mobile: '+1 302 464 0950',

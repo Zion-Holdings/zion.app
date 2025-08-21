@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import { Phone, Mail, MapPin, Check, ArrowRight, Globe, Star } from 'lucide-react';
+import { Phone, Mail, MapPin, Check, ArrowRight, Cpu, Star } from 'lucide-react';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 import Button from '../components/ui/Button';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
@@ -19,14 +19,12 @@ export default function QuantumIoTPage() {
       <div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
-            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-teal-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent flex items-center justify-center gap-3">
-              <Globe className="w-10 h-10" />{service.name}
-            </h1>
+            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-teal-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent flex items-center justify-center gap-3"><Cpu className="w-10 h-10" />{service.name}</h1>
             <p className="mt-4 text-xl text-slate-300 max-w-3xl mx-auto">{service.tagline}</p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
             <div className="lg:col-span-2 bg-black/30 rounded-2xl border border-teal-500/30 p-6">
-              <h2 className="text-2xl font-semibold mb-4">What you get</h2>
+              <h2 className="text-2xl font-semibold mb-4">Platform capabilities</h2>
               <p className="text-slate-300 mb-6">{service.description}</p>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {service.features.slice(0, 12).map((feat, i) => (
@@ -42,7 +40,7 @@ export default function QuantumIoTPage() {
                 </div>
                 <div className="flex items-center text-yellow-400"><Star className="w-4 h-4 mr-1" />{service.rating.toFixed(1)}</div>
               </div>
-              <Button href="/contact" variant="quantum" size="lg" className="w-full">Start Free Trial<ArrowRight className="w-5 h-5 ml-2" /></Button>
+              <Button href="/contact" variant="quantum" size="lg" className="w-full">Request Demo<ArrowRight className="w-5 h-5 ml-2" /></Button>
               <div className="mt-6 space-y-3 text-sm text-slate-300">
                 <div className="flex items-center space-x-2"><Phone className="w-4 h-4 text-cyan-400" /><span>{service.contactInfo.mobile}</span></div>
                 <div className="flex items-center space-x-2"><Mail className="w-4 h-4 text-purple-400" /><span>{service.contactInfo.email}</span></div>
