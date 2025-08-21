@@ -76,7 +76,8 @@ const mainNavigation = [
   { name: 'Enterprise IT', href: '/enterprise-it', icon: Cpu },
   { name: 'Space Tech', href: '/space-tech', icon: Rocket },
   { name: 'Micro SAAS', href: '/micro-saas', icon: Target },
-  { name: 'Pricing', href: '/pricing', icon: Star },
+  { name: 'Innovations', href: '/innovations', icon: Sparkles },
+  { name: 'About', href: '/about', icon: Users },
   { name: 'Contact', href: '/contact', icon: MessageCircle }
 ];
 

@@ -14,6 +14,7 @@ import Revolutionary2027Hero from '../components/sections/Revolutionary2027Hero'
 import EnhancedHero2026 from '../components/sections/EnhancedHero2026';
 import UltraFuturisticHero2029 from '../components/sections/UltraFuturisticHero2029';
 import UltraFuturisticServiceShowcase2029 from '../components/sections/UltraFuturisticServiceShowcase2029';
+import ComprehensiveServicesShowcase2029 from '../components/sections/ComprehensiveServicesShowcase2029';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
@@ -78,6 +79,10 @@ import { emergingTechBreakthroughServices2029 } from '../data/2029-emerging-tech
 import { practicalBusinessSolutionServices2029 } from '../data/2029-practical-business-solutions';
 import { cuttingEdge2029Services } from '../data/2029-cutting-edge-innovations-v2';
 import { practicalBusinessSolutions2029 } from '../data/2029-practical-business-solutions-v2';
+import { innovativeMicroSaasServices2029V2 } from '../data/2029-innovative-micro-saas-v2';
+import { aiBreakthroughServices2029 } from '../data/2029-ai-breakthrough-services';
+import { spaceTechBreakthroughServices2029 } from '../data/2029-space-tech-breakthroughs';
+import { enterpriseITBreakthroughServices2029 } from '../data/2029-enterprise-it-breakthroughs';
 
 export default function HomePage() {
   const contactInfo = {
@@ -151,7 +156,11 @@ export default function HomePage() {
     ...emergingTechBreakthroughServices2029,
     ...practicalBusinessSolutionServices2029,
     ...cuttingEdge2029Services,
-    ...practicalBusinessSolutions2029
+    ...practicalBusinessSolutions2029,
+    ...innovativeMicroSaasServices2029V2,
+    ...aiBreakthroughServices2029,
+    ...spaceTechBreakthroughServices2029,
+    ...enterpriseITBreakthroughServices2029
   ];
 
   // Get popular services for hero section
@@ -461,6 +470,9 @@ export default function HomePage() {
 
         {/* Enhanced Service Showcase */}
         <UltraFuturisticServiceShowcase2029 services={allServices} />
+
+        {/* Comprehensive Services Showcase 2029 */}
+        <ComprehensiveServicesShowcase2029 />
 
         {/* Contact CTA Section */}
         <section className="py-20">
