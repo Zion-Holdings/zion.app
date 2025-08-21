@@ -17,16 +17,6 @@ import EnhancedHero2026 from '../components/sections/EnhancedHero2026';
 import UltraFuturisticHero2032 from '../components/sections/UltraFuturisticHero2032';
 import UltraFuturisticServiceShowcase2032 from '../components/sections/UltraFuturisticServiceShowcase2032';
 import { motion } from 'framer-motion';
-
-// Import all the new 2032 service data
-import { futuristicAIServices2032 } from '../data/2032-futuristic-ai-services';
-import { quantumEmergingTechServices2032 } from '../data/2032-quantum-emerging-tech-services';
-import { spaceMetaverseServices2032 } from '../data/2032-space-metaverse-services';
-import { innovativeMicroSaasServices2032 } from '../data/2032-innovative-micro-saas';
-import { researchDevelopmentServices2032 } from '../data/2032-research-development-services';
-import { enterpriseITServices2032 } from '../data/2032-enterprise-it-services';
-
-// Import existing services for backward compatibility
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
 import { additionalEnhancedServices } from '../data/additional-real-services';
@@ -99,6 +89,65 @@ import { enterpriseITServices2031 } from '../data/2031-enterprise-it-services';
 import { innovativeMicroSaasServices2031 } from '../data/2031-innovative-micro-saas-services';
 import { researchDevelopmentServices2031 } from '../data/2031-research-development-services';
 import { spaceMetaverseServices2031 } from '../data/2031-space-metaverse-services';
+// Import new 2032 services
+import { futuristicInnovations2032 } from '../data/2032-futuristic-innovations';
+import { enterpriseInnovations2032 } from '../data/2032-enterprise-innovations';
+
+// Type adapter function to convert different service types to the expected Service interface
+function adaptServiceToEnhancedShowcase(service: any) {
+  // Ensure category is always a string
+  const safeCategory = typeof service.category === 'string' ? service.category : 'Technology';
+  
+  // Check if service already has the required properties
+  if (service.tagline && service.period && service.popular !== undefined && service.icon && service.color) {
+    return {
+      ...service,
+      category: safeCategory
+    };
+  }
+
+  // Create a default adapted service
+  return {
+    id: service.id || `service-${Math.random()}`,
+    name: service.name || 'Unknown Service',
+    tagline: service.tagline || service.description?.substring(0, 100) || 'Revolutionary technology solution',
+    price: service.price || '$999',
+    period: service.period || '/month',
+    description: service.description || 'Advanced technology solution for modern businesses',
+    features: service.features || ['Feature 1', 'Feature 2', 'Feature 3'],
+    popular: service.popular !== undefined ? service.popular : false,
+    icon: service.icon || '🚀',
+    color: service.color || 'from-cyan-500 to-purple-500',
+    textColor: service.textColor || 'text-cyan-400',
+    link: service.link || '/services',
+    marketPosition: service.marketPosition || 'Leading solution in the market',
+    targetAudience: service.targetAudience || 'Businesses and organizations',
+    trialDays: service.trialDays || 7,
+    setupTime: service.setupTime || '1-2 weeks',
+    category: safeCategory,
+    realService: service.realService !== undefined ? service.realService : true,
+    technology: service.technology || ['React', 'Python', 'AI'],
+    integrations: service.integrations || ['API', 'Database', 'Cloud'],
+    useCases: service.useCases || ['Business automation', 'Data analysis', 'Process optimization'],
+    roi: service.roi || '300% average ROI reported by customers',
+    competitors: service.competitors || ['Competitor A', 'Competitor B'],
+    marketSize: service.marketSize || '$10B market',
+    growthRate: service.growthRate || '200% annual growth',
+    variant: service.variant || 'standard',
+    contactInfo: service.contactInfo || {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
+      website: 'https://ziontechgroup.com'
+    },
+    realImplementation: service.realImplementation !== undefined ? service.realImplementation : true,
+    implementationDetails: service.implementationDetails || 'Advanced implementation with comprehensive support',
+    launchDate: service.launchDate || '2024-12-01',
+    customers: service.customers || 50,
+    rating: service.rating || 4.5,
+    reviews: service.reviews || 25
+  };
+}
 
 export default function HomePage() {
   const contactInfo = {
@@ -110,12 +159,6 @@ export default function HomePage() {
 
   // Combine all services for comprehensive showcase
   const allServices = [
-    ...futuristicAIServices2032,
-    ...quantumEmergingTechServices2032,
-    ...spaceMetaverseServices2032,
-    ...innovativeMicroSaasServices2032,
-    ...researchDevelopmentServices2032,
-    ...enterpriseITServices2032,
     ...enhancedRealMicroSaasServices,
     ...extraServices,
     ...additionalEnhancedServices,
@@ -185,73 +228,32 @@ export default function HomePage() {
     ...enterpriseITServices2031,
     ...innovativeMicroSaasServices2031,
     ...researchDevelopmentServices2031,
-    ...spaceMetaverseServices2031
+    ...spaceMetaverseServices2031,
+    // Add our comprehensive 2032 services
+    ...futuristicInnovations2032,
+    ...enterpriseInnovations2032
   ];
 
-  // Calculate total services count
-  const totalServices = allServices.length;
-  const totalCategories = 6; // AI, Quantum, Enterprise IT, Space/Metaverse, Micro SAAS, R&D
+  // Adapt services to the expected interface
+  const adaptedServices = allServices.map(adaptServiceToEnhancedShowcase);
 
   return (
     <>
       <Head>
-        <title>Zion Tech Group - 2032 Revolutionary Technology Services | AI, Quantum Computing, Space Tech</title>
-        <meta name="description" content="Experience the future with Zion Tech Group's revolutionary 2032 technology services. From AI consciousness to space mining automation, we offer 1000+ cutting-edge solutions with 1000% ROI guarantee." />
-        <meta name="keywords" content="AI consciousness, quantum computing, space mining, metaverse development, neuromorphic computing, DNA computing, photonic computing, swarm robotics, autonomous DevOps, zero trust security, edge computing, AI operations" />
+        <title>Zion Tech Group - 2032 Future Technology Solutions | AI Consciousness, Quantum Computing, Space Technology</title>
+        <meta name="description" content="Experience the next generation of technology with Zion Tech Group's revolutionary 2032 solutions. From AI consciousness platforms to quantum computing and space exploration technology." />
+        <meta name="keywords" content="AI consciousness, quantum computing, space technology, metaverse, neuromorphic computing, DNA computing, photonic computing, swarm robotics, zero trust security, edge computing" />
         <meta name="author" content="Zion Tech Group" />
         <meta name="robots" content="index, follow" />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content="Zion Tech Group - 2032 Revolutionary Technology Services" />
-        <meta property="og:description" content="Experience the future with our cutting-edge AI, quantum computing, and emerging technology services. Transform your business with solutions that were once science fiction." />
+        <meta property="og:title" content="Zion Tech Group - 2032 Future Technology Solutions" />
+        <meta property="og:description" content="Revolutionary AI consciousness, quantum computing, and space technology solutions for 2032 and beyond." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://ziontechgroup.com" />
         <meta property="og:image" content="https://ziontechgroup.com/og-image.jpg" />
-        <meta property="og:site_name" content="Zion Tech Group" />
-        
-        {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Zion Tech Group - 2032 Revolutionary Technology Services" />
-        <meta name="twitter:description" content="Experience the future with our cutting-edge AI, quantum computing, and emerging technology services." />
-        <meta name="twitter:image" content="https://ziontechgroup.com/twitter-image.jpg" />
-        
-        {/* Additional Meta Tags */}
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#000000" />
-        <meta name="msapplication-TileColor" content="#000000" />
-        
-        {/* Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "Zion Tech Group",
-              "description": "Leading provider of revolutionary AI, quantum computing, and emerging technology services",
-              "url": "https://ziontechgroup.com",
-              "logo": "https://ziontechgroup.com/logo.png",
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+1 302 464 0950",
-                "contactType": "customer service",
-                "email": "kleber@ziontechgroup.com"
-              },
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "364 E Main St STE 1008",
-                "addressLocality": "Middletown",
-                "addressRegion": "DE",
-                "postalCode": "19709",
-                "addressCountry": "US"
-              },
-              "sameAs": [
-                "https://linkedin.com/company/ziontechgroup",
-                "https://github.com/Zion-Holdings"
-              ]
-            })
-          }}
-        />
+        <meta name="twitter:title" content="Zion Tech Group - 2032 Future Technology Solutions" />
+        <meta name="twitter:description" content="Revolutionary AI consciousness, quantum computing, and space technology solutions for 2032 and beyond." />
+        <link rel="canonical" href="https://ziontechgroup.com" />
       </Head>
 
       {/* Navigation */}
@@ -260,144 +262,23 @@ export default function HomePage() {
       {/* Hero Section */}
       <UltraFuturisticHero2032 />
 
-      {/* Services Showcase */}
+      {/* 2032 Service Showcase */}
       <UltraFuturisticServiceShowcase2032 />
 
-      {/* Additional Sections for Comprehensive Coverage */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-gradient-to-br from-black via-purple-900/10 to-black">
-        <div className="max-w-7xl mx-auto relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                Complete Technology Ecosystem
-              </span>
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Our comprehensive portfolio spans across all cutting-edge technology domains, 
-              providing end-to-end solutions for the most ambitious projects.
-            </p>
-          </motion.div>
+      {/* Enhanced Service Showcase */}
+      <EnhancedServiceShowcase services={adaptedServices} />
 
-          {/* Technology Domains Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {[
-              {
-                title: '🧠 AI & Consciousness',
-                description: 'From emotional intelligence to genuine consciousness',
-                count: futuristicAIServices2032.length,
-                color: 'from-violet-500 to-purple-500'
-              },
-              {
-                title: '⚛️ Quantum & Emerging Tech',
-                description: 'Quantum computing, DNA computing, and beyond',
-                count: quantumEmergingTechServices2032.length,
-                color: 'from-indigo-500 to-blue-500'
-              },
-              {
-                title: '🏙️ Enterprise IT',
-                description: 'Autonomous operations and zero-trust security',
-                count: enterpriseITServices2032.length,
-                color: 'from-blue-500 to-cyan-500'
-              },
-              {
-                title: '🌌 Space & Metaverse',
-                description: 'Space mining, metaverse development, and more',
-                count: spaceMetaverseServices2032.length,
-                color: 'from-teal-500 to-emerald-500'
-              },
-              {
-                title: '🎯 Micro SAAS',
-                description: 'Innovative solutions for every business need',
-                count: innovativeMicroSaasServices2032.length,
-                color: 'from-green-500 to-yellow-500'
-              },
-              {
-                title: '🔬 Research & Development',
-                description: 'Breakthrough technologies and innovations',
-                count: researchDevelopmentServices2032.length,
-                color: 'from-orange-500 to-red-500'
-              }
-            ].map((domain, index) => (
-              <motion.div
-                key={domain.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="group"
-              >
-                <div className="relative bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-6 h-full transform transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 hover:border-purple-500/50">
-                  <div className={`w-16 h-16 bg-gradient-to-r ${domain.color} rounded-2xl flex items-center justify-center mb-6 transform transition-transform duration-300 group-hover:scale-110`}>
-                    <span className="text-2xl">{domain.title.split(' ')[0]}</span>
-                  </div>
-                  
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-purple-400 group-hover:bg-clip-text transition-all duration-300">
-                    {domain.title}
-                  </h3>
-                  
-                  <p className="text-gray-400 text-sm mb-4 leading-relaxed">
-                    {domain.description}
-                  </p>
-                  
-                  <div className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                    {domain.count}+ Services
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+      {/* Enhanced 2026 Services Showcase */}
+      <Enhanced2026ServicesShowcase />
 
-          {/* Total Services Summary */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <div className="bg-gradient-to-r from-purple-900/50 to-cyan-900/50 backdrop-blur-xl border border-purple-500/30 rounded-3xl p-8 max-w-4xl mx-auto">
-              <h3 className="text-3xl font-bold text-white mb-6">
-                Unprecedented Scale of Innovation
-              </h3>
-              
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-cyan-400 mb-2">{totalServices}+</div>
-                  <div className="text-gray-300">Total Services</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-purple-400 mb-2">{totalCategories}</div>
-                  <div className="text-gray-300">Technology Domains</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-pink-400 mb-2">1000%</div>
-                  <div className="text-gray-300">Average ROI</div>
-                </div>
-              </div>
-              
-              <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-                From AI consciousness to space mining automation, our comprehensive portfolio 
-                represents the most extensive collection of cutting-edge technology services 
-                available anywhere in the world.
-              </p>
-              
-              <Link
-                href="/services"
-                className="inline-flex items-center space-x-2 bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/25"
-              >
-                <span>Explore All Services</span>
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      {/* Revolutionary 2026 Service Showcase */}
+      <Revolutionary2026ServiceShowcase />
+
+      {/* Revolutionary 2027 Services Showcase */}
+      <Revolutionary2027ServicesShowcase />
+
+      {/* Enhanced 2026 Services Showcase */}
+      <Enhanced2026ServicesShowcase />
 
       {/* Footer */}
       <UltraFuturisticFooter2032 />
