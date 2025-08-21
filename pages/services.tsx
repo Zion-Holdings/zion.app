@@ -129,7 +129,7 @@ export default function ServicesPage() {
     },
     {
       name: 'Cybersecurity & Defense',
-      description: 'Quantum-resistant security and AI-powered threat detection',
+      description: 'Quantum-resistant cybersecurity and advanced threat protection',
       icon: <Shield className="w-6 h-6" />,
       count: enhancedMicroSaasServices.filter(s => s.category === 'Cybersecurity').length
     },
