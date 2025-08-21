@@ -20,6 +20,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 				enableGlitch={true}
 				enableHologram={true}
 				enableQuantum={true}
+				enableHolographic={true}
+				enableQuantumEffects={true}
 			>
 				<TopContactBar />
 				<EnhancedNavigation />

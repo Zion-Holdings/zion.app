@@ -60,6 +60,8 @@ const supportLinks = [
   { name: 'Documentation', href: '/docs' },
   { name: 'API Reference', href: '/api-documentation-generator' },
   { name: 'Status Page', href: '/status-pages-slo' },
+  { name: 'VAPT Services', href: '/vulnerability-assessment-penetration-testing' },
+  { name: 'Mobile Device Management (MDM)', href: '/mobile-device-management' },
   { name: 'Security', href: '/security' },
   { name: 'Privacy Policy', href: '/privacy' }
 ];
@@ -100,7 +102,7 @@ export default function EnhancedFooter() {
               </div>
               
               <p className="text-gray-300 mb-6 leading-relaxed">
-                Leading provider of 600+ revolutionary AI, quantum computing, and IT services. 
+                Leading provider of 1000+ revolutionary AI, quantum computing, and IT services. 
                 Delivering 1000% ROI through cutting-edge solutions that transform businesses.
               </p>
               
