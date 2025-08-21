@@ -7,6 +7,7 @@ export default function Document() {
         <link rel="icon" href="/favicon.ico" />
         <meta name="theme-color" content="#0a0a0a" />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <script defer data-domain="ziontechgroup.com" src="https://plausible.io/js/script.js"></script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
