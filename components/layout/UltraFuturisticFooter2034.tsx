@@ -9,7 +9,7 @@ import {
   Users, FileText, HelpCircle, Settings,
   TrendingUp, Award, CheckCircle, Clock,
   Globe as GlobeIcon, Cpu, Database, Lock,
-  BookOpen, Building, Target, Sparkles, Eye
+  Target, BookOpen, Heart, Lightbulb
 } from 'lucide-react';
 
 const contactInfo = {
@@ -24,8 +24,7 @@ const serviceCategories = [
     title: 'AI & Consciousness',
     icon: <Brain className="w-5 h-5 text-cyan-400" />,
     services: [
-      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029' },
-      { name: 'Quantum AI Fusion', href: '/quantum-ai-fusion' },
+      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution' },
       { name: 'AI Autonomous Ecosystem', href: '/ai-autonomous-ecosystem' },
       { name: 'AI Ethics & Governance', href: '/ai-ethics-governance' },
       { name: 'AI Creativity Studio', href: '/ai-creativity-studio' },
@@ -33,7 +32,8 @@ const serviceCategories = [
       { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics' },
       { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence' },
       { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform' },
-      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-platform' }
+      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-platform' },
+      { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer' }
     ]
   },
   {
@@ -76,279 +76,272 @@ const serviceCategories = [
       { name: 'Quantum CRM Intelligence', href: '/quantum-crm-intelligence' },
       { name: 'AI Autonomous Decision Engine', href: '/ai-autonomous-decision-engine' },
       { name: 'AI Creativity Studio Pro', href: '/ai-creativity-studio-pro' },
-      { name: 'AI Education Platform', href: '/ai-education-platform' },
+      { name: 'Quantum Financial Trading', href: '/quantum-financial-trading' },
       { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics' },
-      { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence' },
-      { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform' },
-      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-platform' },
-      { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer' }
+      { name: 'Quantum Cybersecurity Platform', href: '/quantum-cybersecurity-platform' },
+      { name: 'AI Education Platform', href: '/ai-education-platform' },
+      { name: 'Quantum Energy Platform', href: '/quantum-energy-platform' }
     ]
   }
 ];
 
 const companyLinks = [
   { name: 'About Us', href: '/about', description: 'Our mission and vision' },
+  { name: 'Leadership Team', href: '/leadership', description: 'Meet our executives' },
   { name: 'Careers', href: '/careers', description: 'Join our team' },
   { name: 'News & Updates', href: '/news', description: 'Latest company news' },
   { name: 'Case Studies', href: '/case-studies', description: 'Success stories' },
-  { name: 'Resources', href: '/resources', description: 'Whitepapers and guides' },
-  { name: 'Blog', href: '/blog', description: 'Industry insights' }
+  { name: 'Partners', href: '/partners', description: 'Strategic partnerships' },
+  { name: 'Investors', href: '/investors', description: 'Investment information' }
 ];
 
 const supportLinks = [
   { name: 'Contact Support', href: '/support', description: 'Get help from our team' },
   { name: 'Documentation', href: '/docs', description: 'Technical guides' },
   { name: 'API Reference', href: '/api-docs', description: 'Developer documentation' },
-  { name: 'Status Page', href: '/status', description: 'Service status' },
-  { name: 'Training', href: '/training', description: 'Learn our platforms' },
-  { name: 'Community', href: '/community', description: 'Connect with users' }
-];
-
-const solutionLinks = [
-  { name: 'AI Solutions', href: '/ai-solutions', description: 'Custom AI implementations' },
-  { name: 'Quantum Solutions', href: '/quantum-solutions', description: 'Quantum computing applications' },
-  { name: 'Cybersecurity Solutions', href: '/cybersecurity-solutions', description: 'Advanced security' },
-  { name: 'Cloud Solutions', href: '/cloud-solutions', description: 'Cloud infrastructure' },
-  { name: 'Digital Transformation', href: '/digital-transformation', description: 'Business modernization' },
-  { name: 'Consulting Services', href: '/consulting', description: 'Expert guidance' }
+  { name: 'Training', href: '/training', description: 'Skill development programs' },
+  { name: 'Webinars', href: '/webinars', description: 'Educational sessions' },
+  { name: 'Community Forum', href: '/community', description: 'Connect with users' }
 ];
 
 const resourceLinks = [
-  { name: 'Whitepapers', href: '/whitepapers', description: 'In-depth research' },
-  { name: 'Webinars', href: '/webinars', description: 'Live learning sessions' },
-  { name: 'Video Tutorials', href: '/tutorials', description: 'Step-by-step guides' },
-  { name: 'Developer Tools', href: '/dev-tools', description: 'Development resources' },
-  { name: 'Research Papers', href: '/research', description: 'Academic publications' },
-  { name: 'Industry Reports', href: '/reports', description: 'Market analysis' }
+  { name: 'Blog', href: '/blog', description: 'Industry insights and updates' },
+  { name: 'Whitepapers', href: '/whitepapers', description: 'Research and analysis' },
+  { name: 'Case Studies', href: '/case-studies', description: 'Success stories' },
+  { name: 'Webinars', href: '/webinars', description: 'Educational content' },
+  { name: 'Training Materials', href: '/training', description: 'Learning resources' },
+  { name: 'Research Papers', href: '/research', description: 'Academic publications' }
+];
+
+const solutionLinks = [
+  { name: 'Healthcare Solutions', href: '/healthcare-solutions', description: 'Medical technology innovations' },
+  { name: 'Financial Services', href: '/financial-solutions', description: 'Fintech and banking solutions' },
+  { name: 'Manufacturing', href: '/manufacturing-solutions', description: 'Industry 4.0 automation' },
+  { name: 'Retail & E-commerce', href: '/retail-solutions', description: 'Digital commerce platforms' },
+  { name: 'Education Technology', href: '/education-solutions', description: 'Learning management systems' },
+  { name: 'Government & Defense', href: '/government-solutions', description: 'Public sector technology' },
+  { name: 'Energy & Utilities', href: '/energy-solutions', description: 'Smart grid and sustainability' },
+  { name: 'Transportation & Logistics', href: '/transportation-solutions', description: 'Supply chain optimization' }
 ];
 
 const socialLinks = [
-  { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: Twitter, color: 'text-blue-400 hover:text-blue-300' },
-  { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: Linkedin, color: 'text-blue-600 hover:text-blue-500' },
-  { name: 'Facebook', href: 'https://facebook.com/ziontechgroup', icon: Facebook, color: 'text-blue-700 hover:text-blue-600' },
-  { name: 'Instagram', href: 'https://instagram.com/ziontechgroup', icon: Instagram, color: 'text-pink-500 hover:text-pink-400' },
-  { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: Youtube, color: 'text-red-500 hover:text-red-400' },
-  { name: 'GitHub', href: 'https://github.com/ziontechgroup', icon: Github, color: 'text-gray-400 hover:text-gray-300' }
+  { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: Twitter },
+  { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: Linkedin },
+  { name: 'Facebook', href: 'https://facebook.com/ziontechgroup', icon: Facebook },
+  { name: 'Instagram', href: 'https://instagram.com/ziontechgroup', icon: Instagram },
+  { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: Youtube },
+  { name: 'GitHub', href: 'https://github.com/ziontechgroup', icon: Github }
 ];
 
-const quickActions = [
-  { name: 'Get Started', href: '/contact', icon: ArrowRight, color: 'from-cyan-500 to-blue-600' },
-  { name: 'View Pricing', href: '/pricing', icon: DollarSign, color: 'from-purple-500 to-pink-600' },
-  { name: 'Book Demo', href: '/demo', icon: Eye, color: 'from-green-500 to-emerald-600' },
-  { name: 'Support', href: '/support', icon: HelpCircle, color: 'from-orange-500 to-red-600' }
+const quickStats = [
+  { number: '500+', label: 'Services Delivered', icon: Star },
+  { number: '1000+', label: 'Happy Clients', icon: Users },
+  { number: '99.9%', label: 'Uptime Guarantee', icon: Shield },
+  { number: '24/7', label: 'Expert Support', icon: Clock }
 ];
 
 export default function UltraFuturisticFooter2034() {
   return (
-    <footer className="bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white relative overflow-hidden">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute top-40 right-32 w-24 h-24 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute bottom-32 left-32 w-28 h-28 bg-gradient-to-r from-green-500/10 to-cyan-500/10 rounded-full blur-3xl animate-pulse delay-500"></div>
-      </div>
-
+    <footer className="bg-gradient-to-b from-gray-900 to-black text-white relative overflow-hidden">
+      {/* Animated Background */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.1),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(120,119,198,0.1),transparent_50%)]"></div>
+      
       <div className="relative z-10">
         {/* Main Footer Content */}
-        <div className="container mx-auto px-4 py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-6 gap-12">
+        <div className="max-w-7xl mx-auto px-6 py-16">
+          {/* Top Section */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
             {/* Company Info */}
-            <div className="xl:col-span-2">
-              <div className="flex items-center space-x-3 mb-6">
-                <div className="relative">
-                  <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center">
-                    <Zap className="w-7 h-7 text-white" />
-                  </div>
-                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full animate-pulse"></div>
+            <div className="space-y-6">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center">
+                  <Zap className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <div className="text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                  <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                     Zion Tech Group
-                  </div>
-                  <div className="text-sm text-gray-400">Future Technology Solutions</div>
+                  </h3>
+                  <p className="text-sm text-gray-400">Revolutionary Technology Solutions</p>
                 </div>
               </div>
               
-              <p className="text-gray-300 mb-6 leading-relaxed">
-                Leading the future with revolutionary AI consciousness, quantum computing, and emerging technology solutions that transform businesses and advance humanity.
+              <p className="text-gray-300 leading-relaxed max-w-md">
+                Leading provider of cutting-edge AI, quantum computing, and emerging technology solutions. 
+                Transform your business with our innovative services and stay ahead of the competition.
               </p>
-
-              {/* Contact Info */}
-              <div className="space-y-3 mb-8">
-                <div className="flex items-center space-x-3 text-gray-300 hover:text-cyan-400 transition-colors">
-                  <Phone className="w-4 h-4 text-cyan-400" />
+              
+              {/* Quick Stats */}
+              <div className="grid grid-cols-2 gap-4">
+                {quickStats.map((stat, index) => (
+                  <div key={index} className="text-center p-3 bg-gray-800/50 rounded-lg border border-gray-700/50">
+                    <div className="flex items-center justify-center mb-2 text-cyan-400">
+                      <stat.icon className="w-4 h-4" />
+                    </div>
+                    <div className="text-lg font-bold text-white">{stat.number}</div>
+                    <div className="text-xs text-gray-400">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            {/* Contact Information */}
+            <div className="space-y-6">
+              <h4 className="text-xl font-semibold text-white">Get In Touch</h4>
+              <div className="space-y-4">
+                <div className="flex items-center gap-3 text-gray-300">
+                  <Phone className="w-5 h-5 text-cyan-400" />
                   <span>{contactInfo.mobile}</span>
                 </div>
-                <div className="flex items-center space-x-3 text-gray-300 hover:text-purple-400 transition-colors">
-                  <Mail className="w-4 h-4 text-purple-400" />
+                <div className="flex items-center gap-3 text-gray-300">
+                  <Mail className="w-5 h-5 text-cyan-400" />
                   <span>{contactInfo.email}</span>
                 </div>
-                <div className="flex items-center space-x-3 text-gray-300 hover:text-green-400 transition-colors">
-                  <MapPin className="w-4 h-4 text-green-400" />
-                  <span className="text-sm">{contactInfo.address}</span>
+                <div className="flex items-center gap-3 text-gray-300">
+                  <MapPin className="w-5 h-5 text-cyan-400" />
+                  <span>{contactInfo.address}</span>
                 </div>
-                <div className="flex items-center space-x-3 text-gray-300 hover:text-blue-400 transition-colors">
-                  <Globe className="w-4 h-4 text-blue-400" />
-                  <a href={contactInfo.website} className="hover:underline">{contactInfo.website}</a>
+                <div className="flex items-center gap-3 text-gray-300">
+                  <Globe className="w-5 h-5 text-cyan-400" />
+                  <span>{contactInfo.website}</span>
                 </div>
               </div>
-
+              
               {/* Social Links */}
-              <div className="flex space-x-4">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.name}
-                    href={social.href}
-                    className={`p-2 rounded-lg bg-gray-800/50 hover:bg-gray-700/50 transition-all duration-200 ${social.color}`}
-                    aria-label={social.name}
-                  >
-                    <social.icon className="w-5 h-5" />
-                  </a>
+              <div className="flex gap-4">
+                {socialLinks.map((social, index) => (
+                  <Link key={index} href={social.href} target="_blank" rel="noopener noreferrer">
+                    <motion.div
+                      whileHover={{ scale: 1.1, y: -2 }}
+                      className="w-10 h-10 bg-gray-800/50 border border-gray-700/50 rounded-lg flex items-center justify-center text-gray-400 hover:text-cyan-400 hover:border-cyan-500/50 transition-all duration-300"
+                    >
+                      <social.icon className="w-5 h-5" />
+                    </motion.div>
+                  </Link>
                 ))}
               </div>
             </div>
-
-            {/* Service Categories */}
-            {serviceCategories.map((category) => (
-              <div key={category.title}>
-                <div className="flex items-center space-x-2 mb-4">
+          </div>
+          
+          {/* Service Categories */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            {serviceCategories.map((category, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="space-y-4"
+              >
+                <div className="flex items-center gap-2">
                   {category.icon}
-                  <h3 className="text-lg font-semibold text-white">{category.title}</h3>
+                  <h4 className="text-lg font-semibold text-white">{category.title}</h4>
                 </div>
-                <ul className="space-y-2">
-                  {category.services.map((service) => (
-                    <li key={service.name}>
-                      <Link
-                        href={service.href}
-                        className="text-gray-400 hover:text-cyan-400 transition-colors duration-200 text-sm hover:translate-x-1 transform inline-block"
-                      >
+                <div className="space-y-2">
+                  {category.services.slice(0, 6).map((service, serviceIndex) => (
+                    <Link key={serviceIndex} href={service.href}>
+                      <div className="text-sm text-gray-400 hover:text-cyan-400 transition-colors duration-300 flex items-center gap-2 group">
+                        <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" />
                         {service.name}
-                      </Link>
-                    </li>
+                      </div>
+                    </Link>
                   ))}
-                </ul>
-              </div>
+                </div>
+              </motion.div>
             ))}
-
-            {/* Company & Support */}
-            <div>
-              <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
-                <Building className="w-5 h-5 text-purple-400 mr-2" />
+          </div>
+          
+          {/* Additional Links */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            {/* Company Links */}
+            <div className="space-y-4">
+              <h4 className="text-lg font-semibold text-white flex items-center gap-2">
+                <Users className="w-5 h-5 text-cyan-400" />
                 Company
-              </h3>
-              <ul className="space-y-2">
-                {companyLinks.map((link) => (
-                  <li key={link.name}>
-                    <Link
-                      href={link.href}
-                      className="text-gray-400 hover:text-purple-400 transition-colors duration-200 text-sm hover:translate-x-1 transform inline-block"
-                    >
+              </h4>
+              <div className="space-y-2">
+                {companyLinks.map((link, index) => (
+                  <Link key={index} href={link.href}>
+                    <div className="text-sm text-gray-400 hover:text-cyan-400 transition-colors duration-300">
                       {link.name}
-                    </Link>
-                  </li>
+                    </div>
+                  </Link>
                 ))}
-              </ul>
+              </div>
             </div>
-
-            {/* Solutions & Resources */}
-            <div>
-              <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
-                <Target className="w-5 h-5 text-green-400 mr-2" />
-                Solutions
-              </h3>
-              <ul className="space-y-2 mb-6">
-                {solutionLinks.map((link) => (
-                  <li key={link.name}>
-                    <Link
-                      href={link.href}
-                      className="text-gray-400 hover:text-green-400 transition-colors duration-200 text-sm hover:translate-x-1 transform inline-block"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-
-              <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
-                <BookOpen className="w-5 h-5 text-blue-400 mr-2" />
-                Resources
-              </h3>
-              <ul className="space-y-2">
-                {resourceLinks.map((link) => (
-                  <li key={link.name}>
-                    <Link
-                      href={link.href}
-                      className="text-gray-400 hover:text-blue-400 transition-colors duration-200 text-sm hover:translate-x-1 transform inline-block"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Support & Quick Actions */}
-            <div>
-              <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
-                <HelpCircle className="w-5 h-5 text-orange-400 mr-2" />
+            
+            {/* Support Links */}
+            <div className="space-y-4">
+              <h4 className="text-lg font-semibold text-white flex items-center gap-2">
+                <HelpCircle className="w-5 h-5 text-cyan-400" />
                 Support
-              </h3>
-              <ul className="space-y-2 mb-6">
-                {supportLinks.map((link) => (
-                  <li key={link.name}>
-                    <Link
-                      href={link.href}
-                      className="text-gray-400 hover:text-orange-400 transition-colors duration-200 text-sm hover:translate-x-1 transform inline-block"
-                    >
+              </h4>
+              <div className="space-y-2">
+                {supportLinks.map((link, index) => (
+                  <Link key={index} href={link.href}>
+                    <div className="text-sm text-gray-400 hover:text-cyan-400 transition-colors duration-300">
                       {link.name}
-                    </Link>
-                  </li>
+                    </div>
+                  </Link>
                 ))}
-              </ul>
-
-              <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
-                <Sparkles className="w-5 h-5 text-pink-400 mr-2" />
-                Quick Actions
-              </h3>
-              <div className="space-y-3">
-                {quickActions.map((action) => (
-                  <Link
-                    key={action.name}
-                    href={action.href}
-                    className={`block w-full px-4 py-2 bg-gradient-to-r ${action.color} text-white text-center rounded-lg font-medium hover:scale-105 transition-all duration-200 text-sm`}
-                  >
-                    {action.name}
+              </div>
+            </div>
+            
+            {/* Resources */}
+            <div className="space-y-4">
+              <h4 className="text-lg font-semibold text-white flex items-center gap-2">
+                <BookOpen className="w-5 h-5 text-cyan-400" />
+                Resources
+              </h4>
+              <div className="space-y-2">
+                {resourceLinks.map((link, index) => (
+                  <Link key={index} href={link.href}>
+                    <div className="text-sm text-gray-400 hover:text-cyan-400 transition-colors duration-300">
+                      {link.name}
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+            
+            {/* Solutions */}
+            <div className="space-y-4">
+              <h4 className="text-lg font-semibold text-white flex items-center gap-2">
+                <Target className="w-5 h-5 text-cyan-400" />
+                Solutions
+              </h4>
+              <div className="space-y-2">
+                {solutionLinks.slice(0, 6).map((link, index) => (
+                  <Link key={index} href={link.href}>
+                    <div className="text-sm text-gray-400 hover:text-cyan-400 transition-colors duration-300">
+                      {link.name}
+                    </div>
                   </Link>
                 ))}
               </div>
             </div>
           </div>
         </div>
-
+        
         {/* Bottom Section */}
         <div className="border-t border-gray-800/50">
-          <div className="container mx-auto px-4 py-8">
-            <div className="flex flex-col lg:flex-row items-center justify-between space-y-4 lg:space-y-0">
-              <div className="flex items-center space-x-6 text-sm text-gray-400">
-                <span>&copy; 2025 Zion Tech Group. All rights reserved.</span>
-                <Link href="/privacy" className="hover:text-cyan-400 transition-colors">Privacy Policy</Link>
-                <Link href="/terms" className="hover:text-cyan-400 transition-colors">Terms of Service</Link>
-                <Link href="/cookies" className="hover:text-cyan-400 transition-colors">Cookie Policy</Link>
+          <div className="max-w-7xl mx-auto px-6 py-8">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <div className="text-sm text-gray-400">
+                © 2025 Zion Tech Group. All rights reserved. | 
+                <Link href="/privacy" className="hover:text-cyan-400 transition-colors duration-300 ml-2">
+                  Privacy Policy
+                </Link> | 
+                <Link href="/terms" className="hover:text-cyan-400 transition-colors duration-300 ml-2">
+                  Terms of Service
+                </Link>
               </div>
               
-              <div className="flex items-center space-x-4 text-sm text-gray-400">
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="w-4 h-4 text-green-400" />
-                  <span>99.9% Uptime</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Shield className="w-4 h-4 text-blue-400" />
-                  <span>SOC 2 Certified</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Award className="w-4 h-4 text-yellow-400" />
-                  <span>ISO 27001</span>
-                </div>
+              <div className="flex items-center gap-2 text-sm text-gray-400">
+                <span>Made with</span>
+                <Heart className="w-4 h-4 text-red-400" />
+                <span>by Zion Tech Group</span>
               </div>
             </div>
           </div>
