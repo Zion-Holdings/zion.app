@@ -119,32 +119,37 @@ export default function HomePage() {
     ...enterpriseIT2026ServicesNew,
     ...innovative2026MicroSaasServicesV2,
     ...emergingTech2026ServicesV2,
-    ...enterpriseIT2026ServicesV2,
+    ...enterpriseIT2026ServicesNew,
     ...revolutionary2026Innovations,
     ...nextGenAI2026Services,
     ...aiAutonomousServices2026,
     ...quantumSpaceTechServices2026,
     ...metaverseDigitalRealityServices2026,
     ...innovative2026AIServicesV3,
-    ...emergingTech2026ServicesV3,
-    ...enterpriseIT2026ServicesV3,
-    ...ultimate2026Services,
-    ...cuttingEdge2027Innovations,
-    ...practicalMicroSaas2027,
-    ...revolutionary2026MicroSaasServices,
-    ...revolutionary2026ITServices,
-    ...revolutionary2026AIServices,
-    ...revolutionary2027Services,
-    ...emergingTech2027Services,
-    ...revolutionary2027AIServices,
-    ...revolutionary2027ITServices,
-    ...revolutionary2027MicroSaasServices,
-    ...cuttingEdge2028MicroSaas,
-    ...practicalBusinessSolutions2028,
-    ...cuttingEdgeInnovations2029,
-    ...emergingTechServices2029,
-    ...practicalBusinessSolutions2029
+            ...emergingTech2026ServicesV3,
+            ...enterpriseIT2026ServicesV3,
+            ...ultimate2026Services,
+            ...cuttingEdge2027Innovations,
+            ...practicalMicroSaas2027,
+            ...revolutionary2026MicroSaasServices,
+            ...revolutionary2026ITServices,
+            ...revolutionary2026AIServices,
+            ...revolutionary2027Services,
+            ...emergingTech2027Services,
+            ...revolutionary2027AIServices,
+            ...revolutionary2027ITServices,
+            ...revolutionary2027MicroSaasServices,
+            ...cuttingEdge2028MicroSaas,
+            ...practicalBusinessSolutions2028,
+            ...cuttingEdgeInnovations2029,
+            ...emergingTechServices2029,
+            ...practicalBusinessSolutions2029
   ];
+
+  // Get new 2029 services for enhanced showcase
+  const cuttingEdge2029Services = cuttingEdgeInnovations2029;
+  const emergingTech2029Services = emergingTechServices2029;
+  const practicalBusiness2029Services = practicalBusinessSolutions2029;
 
   const featuredOffers = professionalServices.slice(0, 3);
 
@@ -214,41 +219,12 @@ export default function HomePage() {
         />
       </Head>
 
-<<<<<<< HEAD
-      <UltraFuturisticBackground2029 intensity="high">
+      <UltraFuturisticBackground2029>
         {/* Navigation */}
         <UltraFuturisticNavigation2029 />
 
         {/* Hero Section */}
-        <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-          <div className="max-w-7xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="mb-8"
-            >
-              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-                <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                  2029 Ultra-Futuristic
-                </span>
-                <br />
-                <span className="text-white">Technology Services</span>
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Experience the future of technology with our revolutionary 2029 services. 
-                From AI consciousness simulation to Mars colonization automation, 
-                we're building tomorrow's solutions today.
-              </p>
-            </motion.div>
-=======
-              <UltraFuturisticBackground2028>
-        {/* Ultra Advanced Navigation */}
-        <UltraFuturisticNavigation2029 />
-
-                                      {/* Ultra Futuristic Hero Section 2029 */}
-            <UltraFuturisticHero2029 />
->>>>>>> cursor/enhance-app-with-new-services-and-futuristic-design-7c71
+        <UltraFuturisticHero2029 />
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -319,15 +295,30 @@ export default function HomePage() {
           services={allServices}
           title="Comprehensive Technology Services"
           subtitle="Explore our complete portfolio of innovative solutions"
-          maxServices={12}
         />
 
-        {/* 2029 Ultra-Futuristic Service Showcase */}
-        <UltraFuturistic2029ServiceShowcase
-          services={[...cuttingEdge2029Services, ...spaceColonization2029Services]}
-          title="2029 Ultra-Futuristic Innovations"
-          subtitle="Experience the future of technology with our revolutionary 2029 services"
-          maxServices={10}
+        {/* 2029 Cutting Edge Innovations */}
+        <EnhancedServiceShowcase
+          services={cuttingEdge2029Services}
+          title="🚀 2029 Cutting-Edge Innovations"
+          subtitle="Beyond the future of technology - Revolutionary AI consciousness, quantum time manipulation, and autonomous AI civilizations"
+          showStats={false}
+        />
+
+        {/* 2029 Emerging Technology Services */}
+        <EnhancedServiceShowcase
+          services={emergingTech2029Services}
+          title="⚛️ 2029 Emerging Technology Services"
+          subtitle="Quantum biotech synthesis, autonomous space mining, and quantum internet protocols"
+          showStats={false}
+        />
+
+        {/* 2029 Practical Business Solutions */}
+        <EnhancedServiceShowcase
+          services={practicalBusiness2029Services}
+          title="💼 2029 Practical Business Solutions"
+          subtitle="AI-powered automation for customer success, content marketing, inventory management, and sales optimization"
+          showStats={false}
         />
 
         {/* Contact Information Section */}
