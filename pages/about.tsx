@@ -1,4 +1,6 @@
+import React from 'react';
 import Head from 'next/head';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 
@@ -52,7 +54,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <>
+    <UltraAdvancedFuturisticBackground>
       <Head>
         <title>About Zion Tech Group | Autonomous Innovation Hub</title>
         <meta name="description" content="Learn about Zion Tech Group's mission to revolutionize technology through autonomous innovation and AI-powered solutions." />
@@ -183,6 +185,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-    </>
+    </UltraAdvancedFuturisticBackground>
   );
 }

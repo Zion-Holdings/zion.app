@@ -1,10 +1,33 @@
-import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import { nextGenerationAIServices } from '../data/next-generation-ai-services';
+import { innovativeAIServices } from '../data/innovative-ai-services';
 import Button from '../components/ui/Button';
-import { Brain, CheckCircle, Zap, Shield, Workflow, Rocket } from 'lucide-react';
+import { Brain, CheckCircle, Shield, Rocket } from 'lucide-react';
 
 export default function AIServicesPage() {
+  const curated = [
+    'ai-assistant',
+    'ai-data-analytics',
+    'ai-guardrails',
+    'ai-code-review-copilot',
+    'ai-sales-automation',
+    'ai-website-personalization'
+  ];
+
+  const items = [...nextGenerationAIServices, ...innovativeAIServices]
+    .filter((s: any) => s && typeof s.link === 'string')
+    .filter((s: any) => {
+      try {
+        const u = new URL(s.link);
+        const slug = u.pathname.replace(/^\/+|\/+$/g, '');
+        return curated.includes(slug);
+      } catch {
+        return false;
+      }
+    });
+
   const features = [
     'Agentic RAG, tool-use, and memory orchestration',
     'Guardrails, PII redaction, policy enforcement, HITL',
@@ -18,14 +41,13 @@ export default function AIServicesPage() {
     { name: 'Customer Service AI', href: '/customer-service-ai' },
     { name: 'AI Sales Copilot', href: '/sales-copilot' },
     { name: 'AI Data Analytics', href: '/ai-data-analytics' },
-    { name: 'AI Eval Service', href: '/ai-eval' },
   ];
 
   return (
     <UltraAdvancedFuturisticBackground variant="quantum-holographic" intensity={0.95}>
       <Head>
-        <title>AI Services | Zion Tech Group</title>
-        <meta name="description" content="Production-grade AI services: agents, guardrails, evaluation, observability, and secure deployments." />
+        <title>AI Services - Zion Tech Group</title>
+        <meta name="description" content="AI assistants, analytics, guardrails, code review, and sales automation." />
         <link rel="canonical" href="https://ziontechgroup.com/ai-services" />
       </Head>
       <div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8">
@@ -63,6 +85,23 @@ export default function AIServicesPage() {
                   <p className="text-gray-300 text-sm">Learn more</p>
                 </a>
               ))}
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Featured Offerings</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {items.map((s: any) => {
+                const u = new URL(s.link);
+                const slug = u.pathname.replace(/^\/+|\/+$/g, '');
+                return (
+                  <Link key={s.id || s.name} href={`/${slug}`} className="block bg-black/30 rounded-2xl border border-cyan-500/30 p-6 hover:border-cyan-400/60 transition-colors">
+                    <div className="text-xl font-semibold text-white mb-2">{s.name}</div>
+                    {s.tagline && <div className="text-slate-300 mb-3">{s.tagline}</div>}
+                    {s.price && <div className="text-cyan-300">{s.price}{s.period || ''}</div>}
+                  </Link>
+                );
+              })}
             </div>
           </section>
 

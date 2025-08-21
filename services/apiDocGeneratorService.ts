@@ -137,7 +137,7 @@ export interface DocumentationConfig {
   };
 }
 
-class APIDocGeneratorService {
+export class APIDocGeneratorService {
   private supportedFrameworks = [
     'express', 'fastify', 'koa', 'hapi', 'django', 'flask', 'fastapi', 'spring', 'aspnet', 'laravel'
   ];

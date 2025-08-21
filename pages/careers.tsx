@@ -87,6 +87,7 @@ const CareersPage: React.FC = () => {
         <Head>
           <title>Careers - Zion Tech Group | Join Our Revolutionary Technology Team</title>
           <meta name="description" content="Join Zion Tech Group's team of innovators. Explore career opportunities in AI, quantum computing, and emerging technologies. Remote work, competitive benefits, and cutting-edge projects." />
+          <link rel="canonical" href="https://ziontechgroup.com/careers" />
         </Head>
 
         {/* Hero Section */}

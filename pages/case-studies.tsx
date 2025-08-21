@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 
@@ -100,13 +101,14 @@ export default function CaseStudiesPage() {
   const industries = ['All', 'E-commerce', 'Healthcare', 'Fintech', 'Manufacturing', 'Education', 'Logistics'];
 
   return (
-    <>
+    <UltraAdvancedFuturisticBackground>
       <Head>
         <title>Case Studies | Zion Tech Group - Success Stories</title>
         <meta name="description" content="Explore real-world success stories and case studies showcasing how Zion Tech Group has transformed businesses with AI-powered solutions." />
         <meta property="og:title" content="Case Studies | Zion Tech Group" />
         <meta property="og:description" content="Real-world success stories and transformations." />
         <meta name="twitter:card" content="summary_large_image" />
+        <link rel="canonical" href="https://ziontechgroup.com/case-studies" />
       </Head>
 
       {/* Hero Section */}
@@ -250,7 +252,7 @@ export default function CaseStudiesPage() {
       <section className="py-20 bg-gray-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to_gray-300 bg-clip-text text-transparent">
               What Our Clients Say
             </h2>
             <p className="text-xl text-gray-400">
@@ -306,12 +308,12 @@ export default function CaseStudiesPage() {
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx_auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Ready to Create Your Success Story?
           </h2>
           <p className="text-xl text-blue-100 mb-8">
-                         Let&apos;s discuss how we can transform your business with AI-powered solutions.
+            Let&apos;s discuss how we can transform your business with AI-powered solutions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
@@ -333,6 +335,6 @@ export default function CaseStudiesPage() {
           </div>
         </div>
       </section>
-    </>
+    </UltraAdvancedFuturisticBackground>
   );
 }
