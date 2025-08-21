@@ -7,12 +7,16 @@ import {
   Brain, Rocket, Dna, DollarSign, Lock, Globe, 
   Wifi, Truck, Gamepad2, Bot, Factory, Car
 } from 'lucide-react';
-import QuantumHolographicMatrixBackground from '../components/ui/QuantumHolographicMatrixBackground';
+import UltraAdvancedQuantumMatrixBackground from '../components/ui/UltraAdvancedQuantumMatrixBackground';
 import UltraFuturisticServiceCard from '../components/ui/UltraFuturisticServiceCard';
+import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { innovativeMicroSaasServices } from '../data/innovative-micro-saas-services';
 import { extraServices } from '../data/extra-services';
 import { additionalEnhancedServices } from '../data/additional-real-services';
+import { nextGenerationAIServices } from '../data/next-generation-ai-services';
+import { innovativeITServices } from '../data/innovative-it-services';
+import { innovativeAIServices } from '../data/innovative-ai-services';
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -25,7 +29,10 @@ export default function ServicesPage() {
     ...enhancedRealMicroSaasServices,
     ...innovativeMicroSaasServices,
     ...extraServices,
-    ...additionalEnhancedServices
+    ...additionalEnhancedServices,
+    ...nextGenerationAIServices,
+    ...innovativeITServices,
+    ...innovativeAIServices
   ];
 
   // Categories with icons
@@ -107,8 +114,9 @@ export default function ServicesPage() {
   };
 
   return (
-    <QuantumHolographicMatrixBackground intensity={1.0} variant="quantum">
+    <UltraAdvancedQuantumMatrixBackground intensity={1.5} variant="quantum-holographic">
       <div className="min-h-screen">
+        <UltraAdvancedNavigation />
         <Head>
           <title>Services - Zion Tech Group | Revolutionary Micro SaaS Solutions</title>
           <meta name="description" content="Explore 300+ revolutionary micro SaaS services including quantum AI, space technology, biotech, cybersecurity, and more. Transform your business today." />
@@ -121,7 +129,7 @@ export default function ServicesPage() {
         </Head>
 
         {/* Header Section */}
-        <section className="relative py-20 px-4 sm:px-6 lg:px-8">
+        <section className="relative py-20 px-4 sm:px-6 lg:px-8 mt-20">
           <div className="max-w-7xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
@@ -353,6 +361,6 @@ export default function ServicesPage() {
           </div>
         </section>
       </div>
-    </QuantumHolographicMatrixBackground>
+    </UltraAdvancedQuantumMatrixBackground>
   );
 }
