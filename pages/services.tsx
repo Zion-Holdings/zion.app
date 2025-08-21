@@ -65,10 +65,10 @@ export default function ServicesPage() {
                              (selectedCategory === 'micro-saas' && service.category.includes('Micro SaaS'));
       
       const matchesPrice = selectedPriceRange === 'all' ||
-                          (selectedPriceRange === 'low' && service.price < 1000) ||
-                          (selectedPriceRange === 'medium' && service.price >= 1000 && service.price < 5000) ||
-                          (selectedPriceRange === 'high' && service.price >= 5000 && service.price < 20000) ||
-                          (selectedPriceRange === 'premium' && service.price >= 20000);
+                          (selectedPriceRange === 'low' && parseFloat(service.price.replace(/[$,]/g, '')) < 1000) ||
+                          (selectedPriceRange === 'medium' && parseFloat(service.price.replace(/[$,]/g, '')) >= 1000 && parseFloat(service.price.replace(/[$,]/g, '')) < 5000) ||
+                          (selectedPriceRange === 'high' && parseFloat(service.price.replace(/[$,]/g, '')) >= 5000 && parseFloat(service.price.replace(/[$,]/g, '')) < 20000) ||
+                          (selectedPriceRange === 'premium' && parseFloat(service.price.replace(/[$,]/g, '')) >= 20000);
       
       return matchesSearch && matchesCategory && matchesPrice;
     });
@@ -79,16 +79,16 @@ export default function ServicesPage() {
         filtered.sort((a, b) => a.name.localeCompare(b.name));
         break;
       case 'price-low':
-        filtered.sort((a, b) => a.price - b.price);
+        filtered.sort((a, b) => parseFloat(a.price.replace(/[$,]/g, '')) - parseFloat(b.price.replace(/[$,]/g, '')));
         break;
       case 'price-high':
-        filtered.sort((a, b) => b.price - a.price);
+        filtered.sort((a, b) => parseFloat(b.price.replace(/[$,]/g, '')) - parseFloat(a.price.replace(/[$,]/g, '')));
         break;
       case 'rating':
         filtered.sort((a, b) => (b.rating || 0) - (a.rating || 0));
         break;
       case 'customers':
-        filtered.sort((a, b) => (b.customerCount || 0) - (a.customerCount || 0));
+        filtered.sort((a, b) => (b.customers || 0) - (a.customers || 0));
         break;
       default:
         break;
@@ -289,7 +289,7 @@ export default function ServicesPage() {
                       </div>
                       <div className="text-center">
                         <div className="text-cyan-400 font-semibold">
-                          {service.customerCount || 'N/A'}
+                          {service.customers || 'N/A'}
                         </div>
                         <div className="text-gray-400">Customers</div>
                       </div>
