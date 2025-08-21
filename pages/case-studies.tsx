@@ -1,5 +1,4 @@
-import React from 'react';
-import Head from 'next/head';
+import PageHead from 'next/head';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 
@@ -101,13 +100,13 @@ export default function CaseStudiesPage() {
 
   return (
     <>
-      <Head>
+      <PageHead>
         <title>Case Studies | Zion Tech Group - Success Stories</title>
         <meta name="description" content="Explore real-world success stories and case studies showcasing how Zion Tech Group has transformed businesses with AI-powered solutions." />
         <meta property="og:title" content="Case Studies | Zion Tech Group" />
         <meta property="og:description" content="Real-world success stories and transformations." />
         <meta name="twitter:card" content="summary_large_image" />
-      </Head>
+      </PageHead>
 
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-black via-gray-900 to-black overflow-hidden">

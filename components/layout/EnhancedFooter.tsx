@@ -100,7 +100,7 @@ export default function EnhancedFooter() {
               </div>
               
               <p className="text-gray-300 mb-6 leading-relaxed">
-                Leading provider of 600+ revolutionary AI, quantum computing, and IT services. 
+                Leading provider of 800+ revolutionary AI, quantum computing, and IT services. 
                 Delivering 1000% ROI through cutting-edge solutions that transform businesses.
               </p>
               

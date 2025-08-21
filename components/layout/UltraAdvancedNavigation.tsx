@@ -60,7 +60,6 @@ const UltraAdvancedNavigation: React.FC = () => {
 							</div>
 						</Link>
 					</motion.div>
->>>>>>> origin/main
 
 					{/* Desktop nav */}
 					<div className="hidden lg:flex items-center space-x-6">
