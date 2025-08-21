@@ -76,7 +76,24 @@ const navigationItems: NavigationItem[] = [
     name: 'Resources',
     href: '/resources',
     icon: <Globe className="w-4 h-4" />,
-    description: 'Knowledge and tools'
+    description: 'Knowledge and tools',
+    children: [
+      {
+        name: 'Resources Hub',
+        href: '/resources',
+        description: 'Guides, templates, and technical docs'
+      },
+      {
+        name: 'Market Pricing',
+        href: '/market-pricing',
+        description: 'Average market prices with vendor links'
+      },
+      {
+        name: 'Docs',
+        href: '/docs',
+        description: 'Product documentation and APIs'
+      }
+    ]
   },
   {
     name: 'Contact',
