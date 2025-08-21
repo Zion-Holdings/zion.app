@@ -1,9 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
-import { Cloud, Cpu, Server, Database, Settings, Shield, Phone, Mail, MapPin, Check } from 'lucide-react';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 import Button from '../components/ui/Button';
-import ServiceAds from '../components/sections/ServiceAds';
 
 export default function ITServicesPage() {
   const contactInfo = {
@@ -13,109 +11,76 @@ export default function ITServicesPage() {
     website: 'https://ziontechgroup.com'
   };
 
-  const offerings = [
-    { icon: <Cloud className="w-6 h-6 text-cyan-400" />, title: 'Cloud Platform Engineering', desc: 'Landing zones, multi-account architectures, and secure-by-default foundations on AWS, Azure, and GCP.' },
-    { icon: <Cpu className="w-6 h-6 text-purple-400" />, title: 'DevOps & Platform Ops', desc: 'CI/CD, IaC (Terraform/Pulumi), GitOps (ArgoCD/Flux), golden images, internal platforms.' },
-    { icon: <Server className="w-6 h-6 text-amber-400" />, title: 'SRE & Reliability', desc: 'SLOs/SLIs, error budgets, incident response, chaos testing, capacity planning and autoscaling.' },
-    { icon: <Database className="w-6 h-6 text-emerald-400" />, title: 'Data & Observability', desc: 'ELK/Opensearch, Prometheus/Grafana, OpenTelemetry, cost-aware logging and tracing.' },
-    { icon: <Settings className="w-6 h-6 text-rose-400" />, title: 'FinOps & Cost Optimization', desc: 'Rightsizing, savings plans, K8s bin-packing, storage lifecycle, multi-cloud egress control.' },
-    { icon: <Shield className="w-6 h-6 text-blue-400" />, title: 'Governance & Compliance', desc: 'SOC 2, ISO 27001, HIPAA baselines, policy-as-code with OPA/Conftest and drift detection.' },
-  ];
-
-  const packages = [
-    { name: 'Kickstart', price: '$4,900 fixed', items: ['Cloud baseline review', 'CI/CD quickstart', 'Observability lite', 'Cost 30-day plan'] },
-    { name: 'Scale', price: '$9,900 fixed', items: ['Secure landing zone', 'GitOps platform', 'SLOs + alerts', 'FinOps automation'] },
-    { name: 'Managed', price: 'From $2,000/month', items: ['Ops on-call 24/7', 'Release & env mgmt', 'Weekly tune-ups', 'Monthly executive report'] },
-  ];
-
-  const featuredITAds = [
-    {
-      title: '💸 Cloud Cost Optimizer Pro',
-      description: 'Rightsizing, storage lifecycle, anomaly detection and K8s bin-packing insights.',
-      price: 'Starting at $99/month',
-      features: ['Rightsizing & schedules', 'Lifecycle policies', 'Anomaly alerts', 'IaC outputs'],
-      link: 'https://ziontechgroup.com/cloud-cost-optimizer',
-      contactInfo
-    },
-    {
-      title: '🗄️ Database Performance Monitor',
-      description: 'Slow query capture, AI index suggestions, capacity forecasting for Postgres/MySQL.',
-      price: 'Starting at $79/month',
-      features: ['Slow query ranking', 'AI index advice', 'Pool tuning', 'SLA/SLO dashboards'],
-      link: 'https://ziontechgroup.com/database-performance-monitor',
-      contactInfo
-    },
-    {
-      title: '🔐 API Security Scanner',
-      description: 'Automated OpenAPI/GraphQL scanning, auth/Z checks, and dependency audit.',
-      price: 'Starting at $59/month',
-      features: ['Auth/Z misconfig checks', 'OWASP top-10 tests', 'CI gate', 'Fix guidance'],
-      link: 'https://ziontechgroup.com/api-security-scanner',
-      contactInfo
-    },
-    {
-      title: '📈 API Observability & SLA Guard',
-      description: 'OpenTelemetry-based tracing, error budgets, and SLO enforcement for services.',
-      price: 'Starting at $69/month',
-      features: ['OTel traces/metrics/logs', 'SLOs & error budgets', 'Alerting', 'Dashboards'],
-      link: 'https://ziontechgroup.com/api-observability',
-      contactInfo
-    }
-  ];
-
   return (
     <UltraAdvancedFuturisticBackground>
       <Head>
-        <title>IT Services | Zion Tech Group</title>
-        <meta name="description" content="Cloud engineering, DevOps, SRE, FinOps, and governance delivered with measurable outcomes and transparent pricing." />
+        <title>Enterprise IT Services | Cloud, Security, SSO, Monitoring</title>
+        <meta name="description" content="Managed IT, SSO/SCIM, SOC2 readiness, TLS monitoring, SLO/uptime, and cost optimization delivered as productized services." />
         <link rel="canonical" href="https://ziontechgroup.com/it-services" />
       </Head>
 
-      <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
-        <ServiceAds heading="Featured IT Services" subheading="Production-grade solutions with clear pricing." items={featuredITAds} />
-        <div className="text-center max-w-4xl mx-auto mb-12">
-          <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-6">Modern IT Services</h1>
-          <p className="text-xl text-gray-300">Outcome-driven cloud, platform, and reliability engineering to accelerate delivery and reduce costs.</p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {offerings.map((o) => (
-            <div key={o.title} className="bg-black/30 border border-gray-700/50 rounded-2xl p-6">
-              <div className="mb-4">{o.icon}</div>
-              <h3 className="text-white font-semibold mb-2">{o.title}</h3>
-              <p className="text-gray-400 text-sm">{o.desc}</p>
+      <div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto space-y-10">
+          <header className="text-center space-y-4">
+            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+              Enterprise IT Services
+            </h1>
+            <p className="text-slate-300 text-lg max-w-3xl mx-auto">
+              Outcome-focused IT with clear SLAs. Implement SSO, SOC 2 evidence, TLS and domain monitoring,
+              and uptime/SLO status pages with fast onboarding.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Button href="/services" variant="primary">Browse All Services</Button>
+              <Button href="/market-pricing" variant="secondary">See Market Pricing</Button>
+              <Button href="/contact" variant="secondary">Contact Sales</Button>
             </div>
-          ))}
-        </div>
+            <div className="text-sm text-slate-400">
+              Contact: <a className="underline text-cyan-300" href="tel:+13024640950">{contactInfo.mobile}</a> •
+              <a className="underline text-purple-300 ml-1" href="mailto:kleber@ziontechgroup.com">{contactInfo.email}</a>
+            </div>
+          </header>
 
-        <div className="max-w-6xl mx-auto mb-20">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {packages.map((p) => (
-              <div key={p.name} className="bg-black/30 border border-gray-700/50 rounded-2xl p-6">
-                <h3 className="text-2xl font-bold text-white mb-2">{p.name}</h3>
-                <div className="text-cyan-400 font-semibold mb-4">{p.price}</div>
-                <ul className="space-y-2 text-gray-300 text-sm">
-                  {p.items.map((i) => (
-                    <li key={i} className="flex items-start gap-2"><Check className="w-4 h-4 mt-0.5 text-emerald-400" /> <span>{i}</span></li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
+          <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-black/30 rounded-2xl border border-emerald-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">SSO/SCIM-in-a-Box</h2>
+              <p className="text-slate-300 mb-3">Enterprise sign-on and provisioning with Okta/Entra/WorkOS adapters.</p>
+              <ul className="list-disc list-inside text-slate-300 space-y-1 text-sm">
+                <li>SSO + SCIM adapters</li>
+                <li>Audit logging and admin UX</li>
+                <li>Playbooks for app teams</li>
+              </ul>
+            </div>
+            <div className="bg-black/30 rounded-2xl border border-cyan-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">SOC 2 Readiness</h2>
+              <p className="text-slate-300 mb-3">Policy kits, evidence workflows and gap analysis to accelerate audits.</p>
+              <ul className="list-disc list-inside text-slate-300 space-y-1 text-sm">
+                <li>Controls mapping</li>
+                <li>Automated evidence capture</li>
+                <li>Audit timelines</li>
+              </ul>
+            </div>
+            <div className="bg-black/30 rounded-2xl border border-blue-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Monitoring & SLOs</h2>
+              <p className="text-slate-300 mb-3">TLS, domains/DNS, uptime and SLO status pages with alerts.</p>
+              <ul className="list-disc list-inside text-slate-300 space-y-1 text-sm">
+                <li>TLS and DNS monitoring</li>
+                <li>Public status pages</li>
+                <li>PagerDuty/Slack integration</li>
+              </ul>
+            </div>
+          </section>
 
-        <div className="max-w-3xl mx-auto bg-black/20 backdrop-blur-xl rounded-2xl p-6 border border-cyan-500/30">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm mb-4">
-            <div className="flex items-center justify-center gap-2 text-cyan-400"><Phone className="w-4 h-4" /><span>{contactInfo.mobile}</span></div>
-            <div className="flex items-center justify-center gap-2 text-purple-400"><Mail className="w-4 h-4" /><span>{contactInfo.email}</span></div>
-            <div className="flex items-center justify-center gap-2 text-green-400"><MapPin className="w-4 h-4" /><span className="text-xs">{contactInfo.address}</span></div>
-          </div>
-          <div className="text-center">
-            <Button href="/contact" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl">Discuss Your Roadmap</Button>
-          </div>
+          <section className="space-y-3">
+            <h2 className="text-3xl font-bold">Pricing References</h2>
+            <ul className="list-disc list-inside text-slate-300 space-y-1">
+              <li>Auth0/Okta/WorkOS SSO: <a className="text-cyan-300 underline" href={`https://workos.com/pricing`} target="_blank" rel="noopener noreferrer">workos.com/pricing</a></li>
+              <li>Cloud security (Wiz/Prisma): <a className="text-cyan-300 underline" href={`https://www.wiz.io/pricing`} target="_blank" rel="noopener noreferrer">wiz.io/pricing</a></li>
+              <li>Cloudflare Zero Trust: <a className="text-cyan-300 underline" href={`https://www.cloudflare.com/products/zero-trust/pricing/`} target="_blank" rel="noopener noreferrer">cloudflare.com/zero-trust/pricing</a></li>
+            </ul>
+            <div className="text-sm text-slate-400">Typical SMB budgets: $200–$5,000/month depending on seats and scope.</div>
+          </section>
         </div>
       </div>
     </UltraAdvancedFuturisticBackground>
   );
 }
-
