@@ -10,11 +10,13 @@ import Button from '../components/ui/Button';
 import UltraFuturisticMatrixBackground from '../components/ui/UltraFuturisticMatrixBackground';
 import UltraFuturisticServiceCard from '../components/ui/UltraFuturisticServiceCard';
 import ServiceAds from '../components/sections/ServiceAds';
+import RevolutionaryServices from '../components/sections/RevolutionaryServices';
 import Card from '../components/ui/Card';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
 import { additionalEnhancedServices } from '../data/additional-real-services';
+import { revolutionaryMicroSaasServices } from '../data/revolutionary-micro-saas-services';
 
 export default function HomePage() {
   const heroStats = [
@@ -371,6 +373,9 @@ export default function HomePage() {
         <meta name="twitter:description" content="Transform your business with 200+ revolutionary micro SaaS services." />
         <meta name="twitter:image" content="https://ziontechgroup.com/og-image.jpg" />
       </Head>
+      {/* Revolutionary Services Section */}
+      <RevolutionaryServices />
+
       {/* Reusable Service Ads Strip */}
       <ServiceAds
         heading="Featured Micro SaaS & AI Services"
