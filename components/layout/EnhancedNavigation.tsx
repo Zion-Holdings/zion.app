@@ -22,66 +22,72 @@ const navigationItems: NavigationItem[] = [
     icon: <Brain className="w-5 h-5" />,
     description: 'Advanced AI and machine learning solutions',
     children: [
-      { name: 'AI Business Intelligence', href: '/ai-business-intelligence-platform' },
-      { name: 'AI Cybersecurity Suite', href: '/ai-cybersecurity-suite' },
-      { name: 'AI Legal Analysis', href: '/ai-legal-document-analysis' },
-      { name: 'AI Healthcare Analytics', href: '/ai-healthcare-analytics' },
-      { name: 'AI Supply Chain', href: '/ai-supply-chain-optimization' }
+      { name: 'AI Agent Orchestrator', href: '/ai-assistant' },
+      { name: 'Customer Service AI', href: '/customer-service-ai' },
+      { name: 'AI Data Analytics', href: '/ai-data-analytics' },
+      { name: 'AI Guardrails', href: '/ai-guardrails' },
+      { name: 'AI Code Review Copilot', href: '/ai-code-review-copilot' },
+      { name: 'AI Sales Automation', href: '/ai-sales-automation' },
+      { name: 'AI Website Personalization', href: '/ai-website-personalization' },
+      { name: 'Sales Copilot', href: '/sales-copilot' }
     ]
   },
   {
     name: 'Quantum Computing',
-    href: '/quantum-services',
+    href: '/services#quantum',
     icon: <Atom className="w-5 h-5" />,
     description: 'Quantum computing and quantum AI solutions',
     children: [
-      { name: 'Quantum AI Drug Discovery', href: '/quantum-ai-drug-discovery' },
       { name: 'Quantum Internet Security', href: '/quantum-internet-security-platform' },
-      { name: 'Quantum AI Supercomputer', href: '/quantum-ai-supercomputer' }
+      { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure' },
+      { name: 'Quantum AI Cognitive', href: '/quantum-ai-cognitive' },
+      { name: 'Quantum Financial Trading', href: '/quantum-financial-trading-platform' }
     ]
   },
   {
     name: 'Emerging Tech',
-    href: '/emerging-tech',
+    href: '/services',
     icon: <Rocket className="w-5 h-5" />,
     description: 'Blockchain, IoT, and cutting-edge technologies',
     children: [
       { name: 'Blockchain Infrastructure', href: '/blockchain-infrastructure-platform' },
-      { name: 'IoT Edge Computing', href: '/iot-edge-computing-orchestration' },
+      { name: 'IoT Edge Computing', href: '/edge-computing-orchestration' },
       { name: '5G Private Networks', href: '/5g-private-network-solutions' },
       { name: 'Metaverse AI Platform', href: '/metaverse-ai-development-platform' }
     ]
   },
   {
     name: 'Cybersecurity',
-    href: '/cybersecurity',
+    href: '/security',
     icon: <Shield className="w-5 h-5" />,
     description: 'Advanced security and compliance solutions',
     children: [
       { name: 'Zero Trust Architecture', href: '/zero-trust-network-architecture' },
-      { name: 'AI Cybersecurity Suite', href: '/ai-cybersecurity-suite' },
+      { name: 'API Security Scanner', href: '/api-security-scanner' },
       { name: 'Quantum Internet Security', href: '/quantum-internet-security-platform' }
     ]
   },
   {
     name: 'Space Technology',
-    href: '/space-tech',
+    href: '/space-technology',
     icon: <Globe className="w-5 h-5" />,
     description: 'Space mission control and satellite operations',
     children: [
-      { name: 'Space Mission Control', href: '/space-mission-control' },
-      { name: 'Satellite Operations', href: '/satellite-operations' }
+      { name: 'Space Technology Overview', href: '/space-technology' },
+      { name: 'Space Technology AI Platform', href: '/space-technology-ai-platform' }
     ]
   },
   {
     name: 'Enterprise IT',
-    href: '/enterprise-it',
+    href: '/it-services',
     icon: <Database className="w-5 h-5" />,
     description: 'Enterprise infrastructure and solutions',
     children: [
-      { name: 'Cloud Migration', href: '/cloud-migration' },
-      { name: 'DevOps Automation', href: '/devops-automation' },
-      { name: 'Data Analytics', href: '/data-analytics' }
+      { name: 'Cloud Landing Zone', href: '/cloud-landing-zone' },
+      { name: 'Cloud Platform', href: '/cloud-platform' },
+      { name: 'Cloud Cost Optimizer', href: '/cloud-cost-optimizer' },
+      { name: 'Data Pipeline Observability', href: '/data-pipeline-observability' },
+      { name: 'IT Services', href: '/it-services' }
     ]
   }
 ];

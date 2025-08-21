@@ -25,6 +25,8 @@ import { realOperationalServices } from '../data/real-operational-services';
 import { newOperationalServices2025 } from '../data/new-operational-services-2025';
 import { innovative2025Services } from '../data/innovative-2025-services';
 import { emergingTech2025Services } from '../data/emerging-tech-2025-services';
+import { revolutionary2025Services } from '../data/revolutionary-2025-services';
+import { nextGenInnovations2025 } from '../data/next-gen-innovations-2025';
 
 export default function HomePage() {
   const contactInfo = {
@@ -52,7 +54,9 @@ export default function HomePage() {
     ...newOperationalServices2025,
     ...verifiedRealServices2025Batch2,
     ...innovative2025Services,
-    ...emergingTech2025Services
+    ...emergingTech2025Services,
+    ...revolutionary2025Services,
+    ...nextGenInnovations2025
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);
@@ -60,10 +64,11 @@ export default function HomePage() {
   // Service statistics
   const serviceStats = {
     totalServices: allServices.length,
-    aiServices: nextGenerationAIServices.length + innovativeAIServices.length + realMarketServices.filter(s => s.category.includes('AI')).length,
-    emergingTech: emergingTechnologyServices.length,
+    aiServices: nextGenerationAIServices.length + innovativeAIServices.length + realMarketServices.filter(s => s.category.includes('AI')).length + revolutionary2025Services.filter(s => s.category.includes('AI')).length + nextGenInnovations2025.filter(s => s.category.includes('AI')).length,
+    emergingTech: emergingTechnologyServices.length + emergingTech2025Services.length,
     itSolutions: comprehensiveITSolutions.length + enterpriseITServices.length,
-    microSaas: enhancedRealMicroSaasServices.length + innovativeMicroSaasServices.length
+    microSaas: enhancedRealMicroSaasServices.length + innovativeMicroSaasServices.length,
+    revolutionaryServices: revolutionary2025Services.length + nextGenInnovations2025.length
   };
 
   return (
@@ -75,13 +80,13 @@ export default function HomePage() {
     >
       <div className="min-h-screen">
         <Head>
-          <title>Zion Tech Group - Revolutionary AI, Quantum & IT Services | 800+ Solutions</title>
-          <meta name="description" content="Zion Tech Group offers 800+ revolutionary AI, quantum computing, and IT services. Achieve 1000% ROI with our cutting-edge solutions. Contact: +1 302 464 0950" />
-          <meta name="keywords" content="AI services, quantum computing, IT services, micro SaaS, cybersecurity, cloud migration, neural interface, quantum internet, blockchain, metaverse, IoT, edge computing" />
+          <title>Zion Tech Group - Revolutionary AI, Quantum & IT Services | 1000+ Solutions</title>
+          <meta name="description" content="Zion Tech Group offers 1000+ revolutionary AI, quantum computing, and IT services. Achieve 1000% ROI with our cutting-edge solutions. Contact: +1 302 464 0950" />
+          <meta name="keywords" content="AI services, quantum computing, IT services, micro SaaS, cybersecurity, cloud migration, neural interface, quantum internet, blockchain, metaverse, IoT, edge computing, consciousness simulation, quantum brain interface" />
           <meta name="author" content="Zion Tech Group" />
           <meta name="robots" content="index, follow" />
           <meta property="og:title" content="Zion Tech Group - Revolutionary AI, Quantum & IT Services" />
-          <meta property="og:description" content="800+ cutting-edge services with 1000% ROI guarantee. Contact: +1 302 464 0950" />
+          <meta property="og:description" content="1000+ cutting-edge services with 1000% ROI guarantee. Contact: +1 302 464 0950" />
           <meta property="og:url" content="https://ziontechgroup.com" />
           <meta property="og:type" content="website" />
           <link rel="canonical" href="https://ziontechgroup.com" />
