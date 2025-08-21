@@ -12,12 +12,14 @@ import { realMicroSaasServices2025 } from '../data/2025-real-micro-saas-services
 import { innovativeAIServices2025 } from '../data/2025-innovative-ai-services';
 import { innovativeITServices2025 } from '../data/2025-innovative-it-services';
 import { emergingTechServices2025 } from '../data/2025-emerging-tech-services';
+import { additionalRealServices2025 } from '../data/2025-additional-real-services';
+import { innovativeAIServices2025 as newInnovativeAIServices } from '../data/2025-innovative-ai-it-services';
 
 const heroStats = [
-  { label: 'Services Delivered', value: '500+', icon: <Star className="w-5 h-5" /> },
-  { label: 'Happy Clients', value: '1000+', icon: <Users className="w-5 h-5" /> },
+  { label: 'Revolutionary Services', value: '800+', icon: <Star className="w-5 h-5" /> },
+  { label: 'Happy Clients', value: '1500+', icon: <Users className="w-5 h-5" /> },
   { label: 'Success Rate', value: '99.9%', icon: <Award className="w-5 h-5" /> },
-  { label: 'ROI Average', value: '300%', icon: <TrendingUp className="w-5 h-5" /> }
+  { label: 'ROI Average', value: '400%', icon: <TrendingUp className="w-5 h-5" /> }
 ];
 
 const serviceCategories = [
@@ -26,7 +28,7 @@ const serviceCategories = [
     icon: <Brain className="w-8 h-8" />,
     color: 'from-cyan-500 to-blue-500',
     description: 'Revolutionary AI consciousness and emotional intelligence',
-    services: innovativeAIServices2025.slice(0, 3),
+    services: [...innovativeAIServices2025, ...newInnovativeAIServices.filter(s => s.category.includes('AI'))].slice(0, 3),
     link: '/services#ai-consciousness'
   },
   {
@@ -34,7 +36,7 @@ const serviceCategories = [
     icon: <Atom className="w-8 h-8" />,
     color: 'from-purple-500 to-pink-500',
     description: 'Quantum computing and breakthrough technologies',
-    services: emergingTechServices2025.slice(0, 3),
+    services: [...emergingTechServices2025, ...newInnovativeAIServices.filter(s => s.category.includes('Quantum'))].slice(0, 3),
     link: '/services#quantum-emerging'
   },
   {
@@ -42,7 +44,7 @@ const serviceCategories = [
     icon: <Shield className="w-8 h-8" />,
     color: 'from-green-500 to-emerald-500',
     description: 'Enterprise solutions and infrastructure',
-    services: innovativeITServices2025.slice(0, 3),
+    services: [...innovativeITServices2025, ...additionalRealServices2025.filter(s => s.category.includes('Enterprise') || s.category.includes('DevOps'))].slice(0, 3),
     link: '/services#enterprise-it'
   },
   {
@@ -50,8 +52,24 @@ const serviceCategories = [
     icon: <Target className="w-8 h-8" />,
     color: 'from-orange-500 to-red-500',
     description: 'Innovative business solutions',
-    services: realMicroSaasServices2025.slice(0, 3),
+    services: [...realMicroSaasServices2025, ...additionalRealServices2025.filter(s => s.category.includes('Sales') || s.category.includes('Customer'))].slice(0, 3),
     link: '/services#micro-saas'
+  },
+  {
+    name: 'Financial Technology',
+    icon: <TrendingUp className="w-8 h-8" />,
+    color: 'from-green-500 to-emerald-600',
+    description: 'Quantum and AI-powered financial solutions',
+    services: additionalRealServices2025.filter(s => s.category.includes('Financial')).slice(0, 3),
+    link: '/services#financial-technology'
+  },
+  {
+    name: 'Cybersecurity',
+    icon: <Shield className="w-8 h-8" />,
+    color: 'from-red-500 to-pink-600',
+    description: 'Quantum-resistant security solutions',
+    services: additionalRealServices2025.filter(s => s.category.includes('Cybersecurity')).slice(0, 3),
+    link: '/services#cybersecurity'
   }
 ];
 

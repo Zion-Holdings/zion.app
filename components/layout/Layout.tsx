@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import EnhancedNavigation2025 from './EnhancedNavigation2025';
-import EnhancedFooter from './EnhancedFooter';
+import UltraFuturisticNavigation2035 from './UltraFuturisticNavigation2035';
+import UltraFuturisticFooter2035 from './UltraFuturisticFooter2035';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraAdvancedFuturisticBackground from '../ui/UltraAdvancedFuturisticBackground';
 import TopContactBar from './TopContactBar';
@@ -24,14 +24,14 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 				enableQuantumEffects={true}
 			>
 				<TopContactBar />
-				<EnhancedNavigation2025 onMenuClick={() => setSidebarOpen(true)} />
+				<UltraFuturisticNavigation2035 onMenuClick={() => setSidebarOpen(true)} />
 				<div className="flex">
 					<EnhancedSidebar2025 isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 					<main id="main" className="flex-1 pt-24 lg:pt-28">
 						{children}
 					</main>
 				</div>
-				<EnhancedFooter />
+				<UltraFuturisticFooter2035 />
 			</UltraAdvancedFuturisticBackground>
 		</div>
 	);
