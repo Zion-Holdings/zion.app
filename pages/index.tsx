@@ -7,10 +7,11 @@ import {
   ShieldCheck, Globe, Target, Users, Award, Rocket
 } from 'lucide-react';
 import Button from '../components/ui/Button';
-import EnhancedQuantumBackground from '../components/ui/EnhancedQuantumBackground';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 import UltraFuturisticServiceCard from '../components/ui/UltraFuturisticServiceCard';
 import ServiceAds from '../components/sections/ServiceAds';
 import Card from '../components/ui/Card';
+import UltraFuturisticNavigation from '../components/layout/UltraFuturisticNavigation';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
@@ -19,6 +20,8 @@ import { innovativeMicroSaasServices } from '../data/innovative-micro-saas-servi
 import { emergingTechServices } from '../data/emerging-tech-services';
 import { nextGenAIServices } from '../data/next-gen-ai-services';
 import { comprehensiveITServices } from '../data/comprehensive-it-services';
+import { nextGenerationAIServices } from '../data/next-generation-ai-services';
+import { advancedCybersecurityServices } from '../data/advanced-cybersecurity-services';
 
 export default function HomePage() {
   const heroStats = [
@@ -177,7 +180,9 @@ export default function HomePage() {
     ...additionalEnhancedServices,
     ...emergingTechServices,
     ...nextGenAIServices,
-    ...comprehensiveITServices
+    ...comprehensiveITServices,
+    ...nextGenerationAIServices,
+    ...advancedCybersecurityServices
   ];
 
   // Get featured services (most popular and innovative)
@@ -187,8 +192,10 @@ export default function HomePage() {
     .slice(0, 12);
 
   return (
-    <EnhancedQuantumBackground intensity={1.2} variant="quantum">
-      <Head>
+    <>
+      <UltraFuturisticNavigation />
+      <UltraAdvancedFuturisticBackground intensity={1.5} variant="fusion">
+        <Head>
         <title>Zion Tech Group - Revolutionary AI, Quantum & IT Services | 500+ Solutions</title>
         <meta name="description" content="Zion Tech Group offers 500+ revolutionary AI, quantum computing, and IT services. Achieve 1000% ROI with our cutting-edge solutions. Contact: +1 302 464 0950" />
         <meta name="keywords" content="AI services, quantum computing, IT services, micro SaaS, cybersecurity, cloud migration, neural interface, quantum internet" />
@@ -512,6 +519,7 @@ export default function HomePage() {
           </div>
         </div>
       </footer>
-    </EnhancedQuantumBackground>
-  );
-}
+        </UltraAdvancedFuturisticBackground>
+      </>
+    );
+  }
