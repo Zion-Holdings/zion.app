@@ -47,10 +47,8 @@ export default function ServicesShowcase2027() {
         return a.name.localeCompare(b.name);
       case 'price':
         return parseInt(a.price.replace(/[^0-9]/g, '')) - parseInt(b.price.replace(/[^0-9]/g, ''));
-      case 'rating':
-        return b.rating - a.rating;
-      case 'popularity':
-        return b.customers - a.customers;
+      case 'roi':
+        return parseInt(a.roi.replace(/[^0-9]/g, '')) - parseInt(b.roi.replace(/[^0-9]/g, ''));
       default:
         return 0;
     }
@@ -235,8 +233,7 @@ export default function ServicesShowcase2027() {
                 >
                   <option value="name">Name</option>
                   <option value="price">Price</option>
-                  <option value="rating">Rating</option>
-                  <option value="popularity">Popularity</option>
+                  <option value="roi">ROI</option>
                 </select>
               </div>
             </div>
@@ -261,12 +258,7 @@ export default function ServicesShowcase2027() {
                   <div className="bg-black/40 backdrop-blur-xl border border-cyan-500/30 rounded-2xl p-6 h-full hover:border-cyan-400/50 transition-all duration-300 transform hover:scale-105 shadow-2xl shadow-cyan-500/20">
                     {/* Service Header */}
                     <div className="flex items-start justify-between mb-4">
-                      <div className="text-4xl">{service.icon}</div>
-                      {service.popular && (
-                        <div className="bg-gradient-to-r from-pink-500 to-purple-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
-                          Popular
-                        </div>
-                      )}
+                      <div className="text-4xl">🚀</div>
                     </div>
 
                     {/* Service Info */}
@@ -281,7 +273,6 @@ export default function ServicesShowcase2027() {
                     <div className="mb-4">
                       <div className="text-2xl font-bold text-white">
                         {service.price}
-                        <span className="text-cyan-400 text-lg">{service.period}</span>
                       </div>
                     </div>
 
@@ -303,20 +294,10 @@ export default function ServicesShowcase2027() {
                       </div>
                     </div>
 
-                    {/* Stats */}
-                    <div className="grid grid-cols-3 gap-4 mb-6 text-center">
-                      <div>
-                        <div className="text-cyan-400 font-semibold">{service.rating}★</div>
-                        <div className="text-gray-400 text-xs">Rating</div>
-                      </div>
-                      <div>
-                        <div className="text-purple-400 font-semibold">{service.customers}+</div>
-                        <div className="text-gray-400 text-xs">Customers</div>
-                      </div>
-                      <div>
-                        <div className="text-pink-400 font-semibold">{service.trialDays}d</div>
-                        <div className="text-gray-400 text-xs">Trial</div>
-                      </div>
+                    {/* ROI */}
+                    <div className="mb-6 text-center">
+                      <div className="text-green-400 font-semibold text-lg">ROI: {service.roi}</div>
+                      <div className="text-gray-400 text-xs">Return on Investment</div>
                     </div>
 
                     {/* Actions */}

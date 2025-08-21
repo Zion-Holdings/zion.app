@@ -7,10 +7,12 @@ import UltraQuantumHolographicBackground from '../components/ui/UltraQuantumHolo
 import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
 import UltraAdvancedNavigation2026 from '../components/layout/UltraAdvancedNavigation2026';
 import UltraFuturisticNavigation2027 from '../components/layout/UltraFuturisticNavigation2027';
+import EnhancedFooter from '../components/layout/EnhancedFooter';
 import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
 import Enhanced2026ServicesShowcase from '../components/sections/Enhanced2026ServicesShowcase';
 import Revolutionary2026ServiceShowcase from '../components/sections/Revolutionary2026ServiceShowcase';
 import Revolutionary2027ServicesShowcase from '../components/sections/Revolutionary2027ServicesShowcase';
+import Enhanced2027ServicesShowcase from '../components/sections/Enhanced2027ServicesShowcase';
 import Revolutionary2027Hero from '../components/sections/Revolutionary2027Hero';
 import EnhancedHero2026 from '../components/sections/EnhancedHero2026';
 import UltraFuturisticHero2027 from '../components/sections/UltraFuturisticHero2027';
@@ -220,6 +222,9 @@ export default function HomePage() {
           maxServices={12}
         />
 
+        {/* Enhanced 2027 Services Showcase */}
+        <Enhanced2027ServicesShowcase />
+
         {/* Contact Information Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/10 to-cyan-900/10"></div>
@@ -363,6 +368,9 @@ export default function HomePage() {
           </div>
         </section>
       </UltraQuantumHolographicBackground>
+      
+      {/* Enhanced Footer */}
+      <EnhancedFooter />
     </>
   );
 }
