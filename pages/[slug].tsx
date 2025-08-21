@@ -13,6 +13,15 @@ import { quantumSpaceServices } from '../data/quantum-space-services';
 import { enterpriseITServices } from '../data/enterprise-it-services';
 import { newRealServices } from '../data/new-real-services';
 import { marketReadyServices } from '../data/market-ready-services';
+import { realMarketServices } from '../data/real-market-services';
+import { new2025Services } from '../data/new-2025-services';
+import { newRealInnovations } from '../data/new-real-innovations';
+import { curatedMarketServices } from '../data/curated-market-services';
+import { cuttingEdgeITServices } from '../data/cutting-edge-it-services';
+import { nextGenerationAIServices } from '../data/next-generation-ai-services';
+import { nextGenAIServices } from '../data/next-gen-ai-services';
+import { industryRealServices } from '../data/industry-real-services';
+import { professionalServices } from '../data/professional-services';
 
 export default function ServiceFallbackPage() {
   const router = useRouter();
@@ -20,15 +29,25 @@ export default function ServiceFallbackPage() {
 
   const service = useMemo(() => {
     if (!slug) return undefined;
-    const all = enhancedRealMicroSaasServices
+    const all: any[] = ([] as any[])
       .concat(
-        extraServices,
-        additionalEnhancedServices,
-        innovativeAIServices,
-        quantumSpaceServices,
-        enterpriseITServices,
-        newRealServices,
-        marketReadyServices
+        enhancedRealMicroSaasServices as any,
+        extraServices as any,
+        additionalEnhancedServices as any,
+        innovativeAIServices as any,
+        quantumSpaceServices as any,
+        enterpriseITServices as any,
+        newRealServices as any,
+        marketReadyServices as any,
+        realMarketServices as any,
+        new2025Services as any,
+        newRealInnovations as any,
+        curatedMarketServices as any,
+        cuttingEdgeITServices as any,
+        nextGenerationAIServices as any,
+        nextGenAIServices as any,
+        industryRealServices as any,
+        professionalServices as any
       );
     const byLink = all.find(s => {
       try {

@@ -43,6 +43,7 @@ export default function MarketPricingPage() {
                 <li>Langfuse (observability) pricing: <a className="text-cyan-400 underline" href={`https://langfuse.com/pricing`} target="_blank" rel="noopener noreferrer">langfuse.com/pricing</a> (community + paid tiers)</li>
                 <li>OpenRouter model pricing: <a className="text-cyan-400 underline" href={`https://openrouter.ai/models`} target="_blank" rel="noopener noreferrer">openrouter.ai/models</a></li>
                 <li>Vercel AI SDK pricing notes: <a className="text-cyan-400 underline" href={`https://vercel.com/pricing`} target="_blank" rel="noopener noreferrer">vercel.com/pricing</a> (edge/function costs)</li>
+                <li>Groq API pricing: <a className="text-cyan-400 underline" href={`https://wow.groq.com/pricing`} target="_blank" rel="noopener noreferrer">wow.groq.com/pricing</a></li>
               </ul>
               <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $100–$2,000/month depending on traffic and model choice.</div>
             </div>
@@ -65,6 +66,7 @@ export default function MarketPricingPage() {
                 <li>BigQuery pricing: <a className="text-cyan-400 underline" href={`https://cloud.google.com/bigquery/pricing`} target="_blank" rel="noopener noreferrer">cloud.google.com/bigquery/pricing</a></li>
                 <li>Databricks: <a className="text-cyan-400 underline" href={`https://www.databricks.com/product/pricing`} target="_blank" rel="noopener noreferrer">databricks.com/product/pricing</a></li>
                 <li>dbt Cloud: <a className="text-cyan-400 underline" href={`https://www.getdbt.com/pricing/`} target="_blank" rel="noopener noreferrer">getdbt.com/pricing</a></li>
+                <li>ClickHouse Cloud: <a className="text-cyan-400 underline" href={`https://clickhouse.com/pricing`} target="_blank" rel="noopener noreferrer">clickhouse.com/pricing</a></li>
               </ul>
               <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $100–$3,000/month depending on storage, queries, and concurrency.</div>
             </div>
@@ -86,6 +88,7 @@ export default function MarketPricingPage() {
                 <li>DocRaptor pricing: <a className="text-cyan-400 underline" href={`https://docraptor.com/pricing`} target="_blank" rel="noopener noreferrer">docraptor.com/pricing</a></li>
                 <li>PDFMonkey pricing: <a className="text-cyan-400 underline" href={`https://www.pdfmonkey.io/pricing`} target="_blank" rel="noopener noreferrer">pdfmonkey.io/pricing</a></li>
                 <li>CloudConvert: <a className="text-cyan-400 underline" href={`https://cloudconvert.com/pricing`} target="_blank" rel="noopener noreferrer">cloudconvert.com/pricing</a></li>
+                <li>Gotenberg (self-hosted): <a className="text-cyan-400 underline" href={`https://gotenberg.dev`} target="_blank" rel="noopener noreferrer">gotenberg.dev</a></li>
               </ul>
               <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $15–$200/month depending on volume and features.</div>
             </div>
@@ -106,6 +109,8 @@ export default function MarketPricingPage() {
                 <li>Google Postmaster Tools: <a className="text-cyan-400 underline" href={`https://postmaster.google.com`} target="_blank" rel="noopener noreferrer">postmaster.google.com</a></li>
                 <li>Mailgun pricing: <a className="text-cyan-400 underline" href={`https://www.mailgun.com/pricing/`} target="_blank" rel="noopener noreferrer">mailgun.com/pricing</a></li>
                 <li>SendGrid pricing: <a className="text-cyan-400 underline" href={`https://sendgrid.com/pricing/`} target="_blank" rel="noopener noreferrer">sendgrid.com/pricing</a></li>
+                <li>Postmark pricing: <a className="text-cyan-400 underline" href={`https://postmarkapp.com/pricing`} target="_blank" rel="noopener noreferrer">postmarkapp.com/pricing</a></li>
+                <li>Folderly: <a className="text-cyan-400 underline" href={`https://folderly.com`} target="_blank" rel="noopener noreferrer">folderly.com</a></li>
               </ul>
               <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $50–$300/month for warmup and monitoring; ESP fees separate.</div>
             </div>
