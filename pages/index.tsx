@@ -52,6 +52,54 @@ export default function HomePage() {
       }
     },
     {
+      title: '🛰️ IT Asset Discovery Agent',
+      description: 'Agentless on-prem, cloud, and SaaS asset inventory with CMDB export and CVE enrichment.',
+      price: 'Starting at $129/month',
+      features: ['Agentless scans', 'Cloud APIs inventory', 'SaaS discovery', 'CMDB export'],
+      link: 'https://ziontechgroup.com/it-asset-discovery-agent',
+      color: 'from-cyan-600 to-blue-700',
+      marketData: 'ITAM ~$10B market, 14% CAGR',
+      competitors: 'Lansweeper, ServiceNow Discovery, Qualys Asset',
+      savings: '80% less manual inventory',
+      contactInfo: {
+        mobile: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
+    },
+    {
+      title: '⏱️ Serverless Cron Manager',
+      description: 'Unified scheduled jobs across AWS/GCP with retries, DLQ, alerts, and audit logs.',
+      price: 'Starting at $59/month',
+      features: ['Unified scheduler', 'HMAC webhooks', 'Retries & DLQ', 'IaC export'],
+      link: 'https://ziontechgroup.com/serverless-cron-manager',
+      color: 'from-emerald-600 to-teal-700',
+      marketData: 'Dev tooling ~$5B, 20% CAGR',
+      competitors: 'Trigger.dev, Temporal (cron)',
+      savings: '70% fewer failed jobs',
+      contactInfo: {
+        mobile: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
+    },
+    {
+      title: '📈 Browser Performance Monitor',
+      description: 'RUM + Core Web Vitals with session replays and AI insights. Privacy-first.',
+      price: 'Starting at $79/month',
+      features: ['Web Vitals', 'Session replays', 'Release diffs', 'Anomaly alerts'],
+      link: 'https://ziontechgroup.com/browser-performance-monitor',
+      color: 'from-violet-600 to-purple-700',
+      marketData: 'Observability ~$8B, 18% CAGR',
+      competitors: 'Sentry RUM, Datadog RUM, New Relic Browser',
+      savings: '5–15% conversion uplift',
+      contactInfo: {
+        mobile: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
+    },
+    {
       title: '🤖 AI Assistant Pro',
       description: 'Deploy a secure, branded AI copilot for support and operations. Slash tickets 30-50% with guardrails, RAG, and analytics.',
       price: 'Starting at $149/month',
