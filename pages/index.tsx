@@ -6,10 +6,11 @@ import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import EnhancedFuturisticBackground from '../components/ui/EnhancedFuturisticBackground';
 import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, ExternalLink, Star, Users, Globe, Lock, Rocket, Cpu, Database, TrendingUp, Clock, Target, Building, Award, DollarSign, ChartBar, Code, BookOpen, Activity, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, Settings, BookOpen as BookOpenIcon, Activity as ActivityIcon, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Sparkles, Atom, Brain, Eye, Shield as ShieldIcon, Zap as ZapIcon, Globe as GlobeIcon, Cpu as CpuIcon, Cloud as CloudIcon, Bot as BotIcon, Lock as LockIcon, BarChart3 as BarChart3Icon, TrendingUp as TrendingUpIcon, Users as UsersIcon, Award as AwardIcon, Star as StarIcon, Check as CheckIcon, ArrowRight as ArrowRightIcon, ExternalLink as ExternalLinkIcon, Phone as PhoneIcon, Mail as MailIcon, MapPin as MapPinIcon } from 'lucide-react';
+import Link from 'next/link';
 
 export default function HomePage() {
   const heroStats = [
-    { value: '75+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
+    { value: '100+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
     { value: '99.9%', label: 'Uptime Guarantee', color: 'text-fuchsia-400' },
     { value: '14', label: 'Day Free Trials', color: 'text-blue-400' },
     { value: '24/7', label: 'AI Support', color: 'text-green-400' },
@@ -25,15 +26,15 @@ export default function HomePage() {
   const platformFeatures = [
     {
       icon: <Cloud className="w-8 h-8 text-white" />,
-      title: 'Real Micro SaaS Services',
-      description: '75+ fully functional micro SaaS tools with real implementations, not just mockups.',
+      title: '100+ Real Micro SaaS Services',
+      description: 'Comprehensive portfolio of fully functional micro SaaS tools with real implementations, not just mockups.',
       color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
       gradient: 'from-cyan-400 to-blue-500',
     },
     {
       icon: <Bot className="w-8 h-8 text-white" />,
-      title: 'AI-Powered Solutions',
-      description: 'Advanced AI content generation, SEO automation, chatbots, and business intelligence.',
+      title: 'Advanced AI-Powered Solutions',
+      description: 'Cutting-edge AI content generation, quantum computing, cybersecurity, and business intelligence.',
       color: 'bg-gradient-to-br from-fuchsia-500 to-purple-600',
       gradient: 'from-fuchsia-400 to-purple-500',
     },
@@ -80,6 +81,10 @@ export default function HomePage() {
     { name: 'AWS', category: 'Cloud', icon: '☁️' },
     { name: 'Terraform', category: 'Infrastructure', icon: '🏗️' },
     { name: 'Prometheus', category: 'Monitoring', icon: '📊' },
+    { name: 'Quantum Computing', category: 'Emerging Tech', icon: '⚛️' },
+    { name: 'AI/ML', category: 'Intelligence', icon: '🧠' },
+    { name: 'Blockchain', category: 'Web3', icon: '🔗' },
+    { name: 'Edge Computing', category: 'Infrastructure', icon: '⚡' },
   ];
 
   const features = [
@@ -101,16 +106,16 @@ export default function HomePage() {
     },
     {
       icon: '🔒',
-      title: 'Advanced Security',
-      description: 'Enterprise-grade security with zero-trust architecture and AI-powered threat detection.',
-      color: 'bg-gradient-to-br from-red-500 to-pink-600',
+      title: 'Cybersecurity',
+      description: 'Advanced security solutions including zero-trust architecture and quantum-safe encryption.',
+      color: 'bg-gradient-to-br from-red-500 to-orange-600',
       textColor: 'text-red-400',
-      gradient: 'from-red-400 to-pink-500',
+      gradient: 'from-red-400 to-orange-500',
     },
     {
       icon: '📊',
       title: 'Data Analytics',
-      description: 'Real-time insights and predictive analytics to drive data-driven decision making.',
+      description: 'Real-time analytics and business intelligence powered by AI and machine learning.',
       color: 'bg-gradient-to-br from-green-500 to-emerald-600',
       textColor: 'text-green-400',
       gradient: 'from-green-400 to-emerald-500',
@@ -118,76 +123,103 @@ export default function HomePage() {
     {
       icon: '⚛️',
       title: 'Quantum Computing',
-      description: 'Next-generation quantum solutions for complex optimization and machine learning problems.',
-      color: 'bg-gradient-to-br from-blue-500 to-indigo-600',
-      textColor: 'text-blue-400',
-      gradient: 'from-blue-400 to-indigo-500',
+      description: 'Next-generation quantum solutions for optimization, cryptography, and scientific computing.',
+      color: 'bg-gradient-to-br from-violet-500 to-purple-600',
+      textColor: 'text-violet-400',
+      gradient: 'from-violet-400 to-purple-500',
     },
     {
       icon: '🌐',
+      title: 'Metaverse & AR/VR',
+      description: 'Immersive 3D experiences and virtual reality solutions for modern businesses.',
+      color: 'bg-gradient-to-br from-emerald-500 to-teal-600',
+      textColor: 'text-emerald-400',
+      gradient: 'from-emerald-400 to-teal-500',
+    },
+    {
+      icon: '🔗',
       title: 'Blockchain & Web3',
-      description: 'Decentralized solutions for NFTs, DeFi, and the future of digital ownership.',
-      color: 'bg-gradient-to-br from-purple-500 to-violet-600',
-      textColor: 'text-purple-400',
-      gradient: 'from-purple-400 to-violet-500',
+      description: 'Decentralized solutions including DeFi, NFTs, and smart contract platforms.',
+      color: 'bg-gradient-to-br from-indigo-500 to-blue-600',
+      textColor: 'text-indigo-400',
+      gradient: 'from-indigo-400 to-blue-500',
+    },
+    {
+      icon: '⚡',
+      title: 'Edge Computing',
+      description: 'High-performance edge solutions for IoT, 5G, and real-time applications.',
+      color: 'bg-gradient-to-br from-orange-500 to-red-600',
+      textColor: 'text-orange-400',
+      gradient: 'from-orange-400 to-red-500',
     },
   ];
 
   const innovativeServices = [
     {
-      name: 'Quantum AI Optimizer',
-      description: 'Next-generation AI optimization using quantum algorithms',
-      price: '$299/month',
-      category: 'AI & Quantum Computing',
       icon: '⚛️',
-      color: 'from-cyan-500 to-blue-600',
-      link: 'https://ziontechgroup.com/quantum-ai-optimizer'
+      title: 'Quantum Machine Learning',
+      description: 'Revolutionary quantum algorithms for machine learning with exponential speedup.',
+      price: 'From $599/month',
+      category: 'Quantum Computing',
+      color: 'from-violet-500 to-purple-600',
+      link: '/services#quantum'
     },
     {
-      name: 'AI Cybersecurity Sentinel',
-      description: 'Intelligent threat detection and prevention',
-      price: '$199/month',
-      category: 'AI & Security',
-      icon: '🛡️',
+      icon: '🧠',
+      title: 'AI Healthcare Diagnostics',
+      description: 'Advanced medical image analysis and diagnostic assistance powered by AI.',
+      price: 'From $399/month',
+      category: 'AI & Machine Learning',
+      color: 'from-green-500 to-emerald-600',
+      link: '/services#ai'
+    },
+    {
+      icon: '🔒',
+      title: 'Quantum Cybersecurity',
+      description: 'Future-proof security with quantum-safe encryption and threat detection.',
+      price: 'From $449/month',
+      category: 'Cybersecurity',
       color: 'from-red-500 to-orange-600',
-      link: 'https://ziontechgroup.com/ai-cybersecurity'
+      link: '/services#security'
     },
     {
-      name: 'Blockchain NFT Marketplace',
-      description: 'Complete NFT creation and trading platform',
-      price: '$99/month',
-      category: 'Blockchain & Web3',
-      icon: '🖼️',
-      color: 'from-indigo-500 to-purple-600',
-      link: 'https://ziontechgroup.com/blockchain-nft-marketplace'
-    },
-    {
-      name: 'Metaverse Development Platform',
-      description: 'Build immersive 3D worlds and experiences',
-      price: '$199/month',
-      category: 'AR/VR & Metaverse',
       icon: '🌐',
-      color: 'from-emerald-500 to-teal-600',
-      link: 'https://ziontechgroup.com/metaverse-platform'
+      title: 'Metaverse Commerce',
+      description: '3D shopping experiences and virtual retail solutions for the metaverse.',
+      price: 'From $249/month',
+      category: 'AR/VR & Metaverse',
+      color: 'from-purple-500 to-pink-600',
+      link: '/services#metaverse'
     },
     {
-      name: 'IoT Smart City Platform',
-      description: 'Transform cities with intelligent IoT solutions',
-      price: '$299/month',
-      category: 'IoT & Smart Cities',
-      icon: '🏙️',
-      color: 'from-teal-500 to-cyan-600',
-      link: 'https://ziontechgroup.com/iot-smart-city'
+      icon: '⚡',
+      title: 'Edge AI Inference',
+      description: 'High-performance AI inference engine for edge devices and IoT applications.',
+      price: 'From $129/month',
+      category: 'Edge Computing & 5G',
+      color: 'from-blue-500 to-indigo-600',
+      link: '/services#edge'
     },
     {
-      name: 'Autonomous AI Agents',
-      description: 'Self-learning AI agents for business automation',
-      price: '$399/month',
-      category: 'Emerging Technologies',
-      icon: '🤖',
-      color: 'from-cyan-600 to-blue-600',
-      link: 'https://ziontechgroup.com/autonomous-ai-agents'
+      icon: '🚗',
+      title: 'Autonomous Vehicles',
+      description: 'AI-powered fleet management and autonomous vehicle optimization platform.',
+      price: 'From $599/month',
+      category: 'AI & Machine Learning',
+      color: 'from-cyan-500 to-blue-600',
+      link: '/services#ai'
     }
+  ];
+
+  const serviceCategories = [
+    { name: 'AI & Machine Learning', count: 25, icon: '🤖', color: 'from-fuchsia-500 to-purple-600' },
+    { name: 'Quantum Computing', count: 12, icon: '⚛️', color: 'from-violet-500 to-purple-600' },
+    { name: 'Cybersecurity', count: 18, icon: '🔒', color: 'from-red-500 to-orange-600' },
+    { name: 'Cloud & Infrastructure', count: 15, icon: '☁️', color: 'from-cyan-500 to-blue-600' },
+    { name: 'Data Analytics & BI', count: 12, icon: '📊', color: 'from-green-500 to-emerald-600' },
+    { name: 'Blockchain & Web3', count: 8, icon: '🔗', color: 'from-indigo-500 to-blue-600' },
+    { name: 'AR/VR & Metaverse', count: 6, icon: '🌐', color: 'from-emerald-500 to-teal-600' },
+    { name: 'Edge Computing & 5G', count: 4, icon: '⚡', color: 'from-orange-500 to-red-600' }
   ];
 
   return (
@@ -356,7 +388,7 @@ export default function HomePage() {
                       {service.category}
                     </div>
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">{service.name}</h3>
+                  <h3 className="text-xl font-bold text-white mb-2">{service.title}</h3>
                   <p className="text-gray-300 text-sm mb-4 leading-relaxed">{service.description}</p>
                   <div className="flex items-center justify-between">
                     <div className="text-2xl font-bold text-cyan-400">{service.price}</div>
@@ -384,6 +416,46 @@ export default function HomePage() {
                 View All Services
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* Service Categories Overview */}
+        <section className="py-20 bg-gradient-to-br from-gray-900/50 to-black/50">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+                  Complete Service Portfolio
+                </span>
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Explore our comprehensive portfolio of 100+ micro SaaS services across 8 major technology categories.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {serviceCategories.map((category, index) => (
+                <Card key={index} className="group hover:scale-105 transition-all duration-300 cursor-pointer">
+                  <div className="p-6 text-center">
+                    <div className={`text-5xl mb-4 bg-gradient-to-r ${category.color} bg-clip-text text-transparent`}>
+                      {category.icon}
+                    </div>
+                    <h3 className="text-lg font-bold text-white mb-2">{category.name}</h3>
+                    <div className="text-3xl font-bold text-cyan-400 mb-3">{category.count}+</div>
+                    <p className="text-sm text-gray-400">Services Available</p>
+                  </div>
+                </Card>
+              ))}
+            </div>
+            
+            <div className="text-center mt-12">
+              <Link href="/services">
+                <Button size="lg" className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700">
+                  View All Services
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+              </Link>
             </div>
           </div>
         </section>

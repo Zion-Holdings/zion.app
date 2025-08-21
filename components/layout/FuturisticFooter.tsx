@@ -22,12 +22,14 @@ export default function FuturisticFooter() {
   ];
 
   const serviceCategories = [
-    { name: 'AI & Machine Learning', href: '/services#ai' },
-    { name: 'Cloud Infrastructure', href: '/services#cloud' },
-    { name: 'Security & Compliance', href: '/services#security' },
-    { name: 'Data Analytics', href: '/services#analytics' },
-    { name: 'DevOps & CI/CD', href: '/services#devops' },
-    { name: 'E-commerce Solutions', href: '/services#ecommerce' },
+    { name: 'AI & Machine Learning', href: '/services#ai', count: 25 },
+    { name: 'Quantum Computing', href: '/services#quantum', count: 12 },
+    { name: 'Cybersecurity', href: '/services#security', count: 18 },
+    { name: 'Cloud & Infrastructure', href: '/services#cloud', count: 15 },
+    { name: 'Data Analytics & BI', href: '/services#analytics', count: 12 },
+    { name: 'Blockchain & Web3', href: '/services#blockchain', count: 8 },
+    { name: 'AR/VR & Metaverse', href: '/services#metaverse', count: 6 },
+    { name: 'Edge Computing & 5G', href: '/services#edge', count: 4 }
   ];
 
   const socialLinks = [
@@ -99,63 +101,68 @@ export default function FuturisticFooter() {
           {/* Services */}
           <div>
             <h3 className="text-lg font-semibold text-white mb-6 flex items-center">
-              <Cloud className="w-5 h-5 text-green-400 mr-2" />
-              Services
+              <ArrowRight className="w-5 h-5 text-blue-400 mr-2" />
+              Service Categories
             </h3>
             <ul className="space-y-3">
-              {serviceCategories.map((service) => (
-                <li key={service.name}>
+              {serviceCategories.map((category) => (
+                <li key={category.name}>
                   <Link
-                    href={service.href}
-                    className="text-gray-400 hover:text-white transition-colors duration-200 hover:translate-x-1 inline-block"
+                    href={category.href}
+                    className="text-gray-400 hover:text-white transition-colors duration-200 hover:translate-x-1 inline-block group"
                   >
-                    {service.name}
+                    <span className="flex items-center justify-between">
+                      <span>{category.name}</span>
+                      <span className="text-xs bg-blue-500/20 text-blue-400 px-2 py-1 rounded-full group-hover:bg-blue-500/30 transition-colors">
+                        {category.count}+
+                      </span>
+                    </span>
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Contact Information */}
           <div>
             <h3 className="text-lg font-semibold text-white mb-6 flex items-center">
-              <Shield className="w-5 h-5 text-purple-400 mr-2" />
-              Contact Us
+              <ArrowRight className="w-5 h-5 text-green-400 mr-2" />
+              Contact Information
             </h3>
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
-                <Phone className="w-5 h-5 text-blue-400 mt-1 flex-shrink-0" />
+                <Phone className="w-5 h-5 text-green-400 mt-1 flex-shrink-0" />
                 <div>
-                  <p className="text-white font-medium">Phone</p>
-                  <a 
-                    href={`tel:${contactInfo.mobile}`}
-                    className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
-                  >
-                    {contactInfo.mobile}
-                  </a>
+                  <div className="text-sm text-gray-400">Mobile</div>
+                  <div className="text-white font-medium">{contactInfo.mobile}</div>
                 </div>
               </div>
-              
               <div className="flex items-start space-x-3">
-                <Mail className="w-5 h-5 text-green-400 mt-1 flex-shrink-0" />
+                <Mail className="w-5 h-5 text-blue-400 mt-1 flex-shrink-0" />
                 <div>
-                  <p className="text-white font-medium">Email</p>
-                  <a 
-                    href={`mailto:${contactInfo.email}`}
-                    className="text-gray-400 hover:text-green-400 transition-colors duration-200"
-                  >
-                    {contactInfo.email}
-                  </a>
+                  <div className="text-sm text-gray-400">Email</div>
+                  <div className="text-white font-medium">{contactInfo.email}</div>
                 </div>
               </div>
-              
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-purple-400 mt-1 flex-shrink-0" />
                 <div>
-                  <p className="text-white font-medium">Address</p>
-                  <p className="text-gray-400 text-sm">
-                    {contactInfo.address}
-                  </p>
+                  <div className="text-sm text-gray-400">Address</div>
+                  <div className="text-white font-medium text-sm">{contactInfo.address}</div>
+                </div>
+              </div>
+              <div className="flex items-start space-x-3">
+                <Globe className="w-5 h-5 text-cyan-400 mt-1 flex-shrink-0" />
+                <div>
+                  <div className="text-sm text-gray-400">Website</div>
+                  <a 
+                    href={contactInfo.website} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-white font-medium hover:text-cyan-400 transition-colors"
+                  >
+                    {contactInfo.website.replace('https://', '')}
+                  </a>
                 </div>
               </div>
             </div>

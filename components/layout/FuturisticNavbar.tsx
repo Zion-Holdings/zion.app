@@ -17,12 +17,28 @@ export default function FuturisticNavbar() {
 
   const navItems = [
     { name: 'Home', href: '/', icon: <Zap className="w-4 h-4" /> },
-    { name: 'Services', href: '/services', icon: <Cloud className="w-4 h-4" /> },
+    { 
+      name: 'Services', 
+      href: '/services', 
+      icon: <Cloud className="w-4 h-4" />,
+      submenu: [
+        { name: 'AI & Machine Learning', href: '/services#ai', icon: '🤖' },
+        { name: 'Quantum Computing', href: '/services#quantum', icon: '⚛️' },
+        { name: 'Cybersecurity', href: '/services#security', icon: '🔒' },
+        { name: 'Cloud & Infrastructure', href: '/services#cloud', icon: '☁️' },
+        { name: 'Data Analytics & BI', href: '/services#analytics', icon: '📊' },
+        { name: 'Blockchain & Web3', href: '/services#blockchain', icon: '🔗' },
+        { name: 'AR/VR & Metaverse', href: '/services#metaverse', icon: '🌐' },
+        { name: 'Edge Computing & 5G', href: '/services#edge', icon: '⚡' }
+      ]
+    },
     { name: 'Micro SaaS', href: '/micro-saas', icon: <Bot className="w-4 h-4" /> },
     { name: 'Pricing', href: '/pricing', icon: <Globe className="w-4 h-4" /> },
     { name: 'About', href: '/about', icon: <Shield className="w-4 h-4" /> },
     { name: 'Contact', href: '/contact', icon: <Zap className="w-4 h-4" /> },
   ];
+
+  const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -48,19 +64,42 @@ export default function FuturisticNavbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors duration-200 group relative"
-              >
-                <span className="group-hover:scale-110 transition-transform duration-200">
-                  {item.icon}
-                </span>
-                <span className="relative">
-                  {item.name}
-                  <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-300" />
-                </span>
-              </Link>
+              <div key={item.name} className="relative group">
+                <Link
+                  href={item.href}
+                  className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors duration-200 group relative"
+                  onMouseEnter={() => item.submenu && setActiveSubmenu(item.name)}
+                  onMouseLeave={() => setActiveSubmenu(null)}
+                >
+                  <span className="group-hover:scale-110 transition-transform duration-200">
+                    {item.icon}
+                  </span>
+                  <span className="relative">
+                    {item.name}
+                    <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-300" />
+                  </span>
+                </Link>
+                
+                {/* Submenu */}
+                {item.submenu && activeSubmenu === item.name && (
+                  <div className="absolute top-full left-0 mt-2 w-64 bg-black/95 backdrop-blur-md border border-blue-500/20 rounded-xl shadow-2xl shadow-blue-500/10 z-50">
+                    <div className="p-4">
+                      {item.submenu.map((subitem, index) => (
+                        <Link
+                          key={index}
+                          href={subitem.href}
+                          className="flex items-center space-x-3 px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200 group"
+                        >
+                          <span className="text-lg">{subitem.icon}</span>
+                          <span className="group-hover:translate-x-1 transition-transform duration-200">
+                            {subitem.name}
+                          </span>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
             ))}
           </div>
 
