@@ -219,6 +219,7 @@ module.exports = {
         'neural-network': 'neuralNetwork 10s linear infinite',
         'plasma-flow': 'plasmaFlow 5s ease-in-out infinite',
         'cyber-grid': 'cyberGrid 15s linear infinite',
+        'spin-slow': 'spin 8s linear infinite',
       },
       keyframes: {
         fadeIn: {
