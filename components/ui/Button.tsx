@@ -2,7 +2,7 @@ import React from 'react';
 import { cn } from '../../utils/cn';
 
 interface BaseButtonProps {
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'accent' | 'futuristic';
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'accent' | 'futuristic' | 'quantum';
   size?: 'sm' | 'md' | 'lg' | 'xl';
   icon?: React.ReactNode;
   iconPosition?: 'left' | 'right';
@@ -98,6 +98,17 @@ const Button: React.FC<ButtonComponentProps> = ({
       'hover:from-purple-500 hover:via-blue-500 hover:to-cyan-500',
       'text-white shadow-lg hover:shadow-2xl',
       'border border-purple-400/30',
+      'backdrop-blur-md',
+      'relative overflow-hidden',
+      'before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent',
+      'before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700',
+      glow && 'neon-glow text-cyan-400'
+    ),
+    quantum: cn(
+      'bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600',
+      'hover:from-cyan-400 hover:via-blue-500 hover:to-purple-500',
+      'text-white shadow-lg hover:shadow-2xl',
+      'border border-cyan-400/30',
       'backdrop-blur-md',
       'relative overflow-hidden',
       'before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent',
