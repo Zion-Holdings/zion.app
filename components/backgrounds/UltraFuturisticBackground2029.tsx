@@ -1,7 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 
-const UltraFuturisticBackground2029: React.FC = () => {
+interface UltraFuturisticBackground2029Props {
+  children: React.ReactNode;
+}
+
+const UltraFuturisticBackground2029: React.FC<UltraFuturisticBackground2029Props> = ({ children }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -338,6 +342,9 @@ const UltraFuturisticBackground2029: React.FC = () => {
           }}
         />
       </div>
+      
+      {/* Render children */}
+      {children}
     </div>
   );
 };

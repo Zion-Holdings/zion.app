@@ -33,7 +33,8 @@ export default function UltraFuturistic2029InnovationsPage() {
       </Head>
 
       {/* Futuristic Background */}
-      <UltraFuturisticBackground2029 />
+      <UltraFuturisticBackground2029>
+        <div>
 
       {/* Navigation */}
       <UltraFuturisticNavigation2029 />
@@ -277,6 +278,8 @@ export default function UltraFuturistic2029InnovationsPage() {
 
         {/* Footer */}
         <UltraFuturisticFooter2029 />
+        </div>
+      </UltraFuturisticBackground2029>
       </>
     );
   }
