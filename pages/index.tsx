@@ -16,35 +16,11 @@ const contactInfo = {
   website: 'https://ziontechgroup.com'
 };
 
-const heroFeatures = [
-  {
-    icon: Brain,
-    title: 'AI & Consciousness',
-    description: 'Revolutionary AI consciousness and emotional intelligence platforms',
-    color: 'from-violet-500 to-purple-600',
-    gradient: 'bg-gradient-to-r from-violet-500 to-purple-600'
-  },
-  {
-    icon: Atom,
-    title: 'Quantum & Emerging Tech',
-    description: 'Next-generation quantum computing and space technology solutions',
-    color: 'from-indigo-500 to-blue-600',
-    gradient: 'bg-gradient-to-r from-indigo-500 to-blue-600'
-  },
-  {
-    icon: Shield,
-    title: 'Enterprise IT',
-    description: 'Cutting-edge enterprise infrastructure and security solutions',
-    color: 'from-blue-500 to-cyan-600',
-    gradient: 'bg-gradient-to-r from-blue-500 to-cyan-600'
-  },
-  {
-    icon: Rocket,
-    title: 'Micro SAAS',
-    description: 'Innovative micro SAAS solutions for modern businesses',
-    color: 'from-teal-500 to-emerald-600',
-    gradient: 'bg-gradient-to-r from-teal-500 to-emerald-600'
-  }
+const heroStats = [
+  { label: 'Services Delivered', value: '500+', icon: <Star className="w-5 h-5" /> },
+  { label: 'Happy Clients', value: '1000+', icon: <Users className="w-5 h-5" /> },
+  { label: 'Success Rate', value: '99.9%', icon: <Award className="w-5 h-5" /> },
+  { label: 'ROI Average', value: '300%', icon: <TrendingUp className="w-5 h-5" /> }
 ];
 
 const stats = [
@@ -89,19 +65,52 @@ const serviceCategories = [
   }
 ];
 
-export default function HomePage() {
+const heroFeatures = [
+  {
+    title: 'Cutting-Edge Technology',
+    description: 'Access to the latest AI, quantum computing, and emerging technologies that give you a competitive edge.',
+    icon: Zap,
+    gradient: 'bg-gradient-to-r from-cyan-500 to-blue-600'
+  },
+  {
+    title: 'Rapid Implementation',
+    description: 'Get up and running in under 24 hours with our streamlined setup process and expert guidance.',
+    icon: Rocket,
+    gradient: 'bg-gradient-to-r from-purple-500 to-pink-600'
+  },
+  {
+    title: 'Global Infrastructure',
+    description: 'Enterprise-grade infrastructure available in 150+ countries worldwide with 99.9% uptime guarantee.',
+    icon: Globe,
+    gradient: 'bg-gradient-to-r from-green-500 to-emerald-600'
+  },
+  {
+    title: '24/7 Expert Support',
+    description: 'Round-the-clock technical support and monitoring for all services with dedicated account managers.',
+    icon: Shield,
+    gradient: 'bg-gradient-to-r from-orange-500 to-red-600'
+  },
+  {
+    title: 'AI-Powered Automation',
+    description: 'Intelligent automation that reduces manual work by 80% and increases operational efficiency.',
+    icon: Brain,
+    gradient: 'bg-gradient-to-r from-indigo-500 to-purple-600'
+  },
+  {
+    title: 'Future-Proof Solutions',
+    description: 'Built with scalability in mind, ensuring your solutions grow with your business needs.',
+    icon: Sparkles,
+    gradient: 'bg-gradient-to-r from-yellow-500 to-orange-600'
+  }
+];
+
+export default function Home() {
   return (
-    <Layout>
+    <>
       <Head>
-        <title>Zion Tech Group | Revolutionary AI, Quantum Computing & Emerging Technology Solutions</title>
-        <meta name="description" content="Leading provider of revolutionary AI consciousness, quantum computing, space technology, and innovative micro SAAS solutions. Transform your business with cutting-edge technology." />
-        <meta name="keywords" content="AI consciousness, quantum computing, space technology, micro SAAS, enterprise IT, emerging technology, Zion Tech Group" />
-        <meta name="author" content="Zion Tech Group" />
-        <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Zion Tech Group - Revolutionary Technology Solutions" />
-        <meta property="og:description" content="Leading provider of revolutionary AI, quantum computing, and emerging technology solutions." />
-        <meta property="og:url" content="https://ziontechgroup.com" />
-        <meta property="og:type" content="website" />
+        <title>Zion Tech Group | Future Technology Solutions</title>
+        <meta name="description" content="Leading provider of cutting-edge AI, quantum computing, emerging technology, and micro SAAS solutions. Transform your business with revolutionary technology." />
+        <meta name="keywords" content="AI services, quantum computing, emerging technology, micro SAAS, enterprise solutions, space technology, metaverse development" />
         <link rel="canonical" href="https://ziontechgroup.com" />
       </Head>
 
@@ -412,6 +421,6 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-    </Layout>
+    </>
   );
 }
