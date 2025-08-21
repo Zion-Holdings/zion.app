@@ -77,7 +77,7 @@ export default function ServicesPage() {
   const popularServices = getPopularServices();
 
   return (
-    <EnhancedFuturisticBackground variant="holographic-advanced" intensity="high">
+    <EnhancedFuturisticBackground variant="neural-quantum" intensity="high">
       <div className="min-h-screen">
         <Head>
           <title>Complete Services Portfolio | Zion Tech Group - AI, Cloud, Security & More</title>
@@ -98,82 +98,57 @@ export default function ServicesPage() {
               <div className="mb-8">
                 <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 text-purple-400 text-sm font-medium mb-6 backdrop-blur-sm">
                   <Sparkles className="w-4 h-4 mr-2" />
-                  Complete Technology Portfolio
+                  Revolutionary Technology Portfolio
                 </div>
-              </div>
-              
-              <h1 className="text-5xl md:text-7xl font-bold mb-8 text-white">
-                <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                  150+ Revolutionary
-                </span>
-                <br />
-                <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">
-                  Micro SaaS Services
-                </span>
-              </h1>
-              
-              <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-                From AI-powered automation to quantum computing solutions, discover our comprehensive portfolio 
-                of cutting-edge micro SaaS services designed to transform your business. Starting from $49/month with 14-day free trials.
-              </p>
+                <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                  <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                    200+ Real Micro SaaS
+                  </span>
+                  <br />
+                  <span className="text-white">Services</span>
+                </h1>
+                <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+                  Discover our comprehensive portfolio of cutting-edge micro SaaS solutions. From AI-powered platforms to quantum computing services, we're reshaping the future of business technology.
+                </p>
+                
+                <div className="flex flex-wrap justify-center gap-6 mb-8">
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-cyan-400">200+</div>
+                    <div className="text-gray-400 text-sm">Real Services</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-fuchsia-400">800%+</div>
+                    <div className="text-gray-400 text-sm">Average ROI</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-green-400">99.9%</div>
+                    <div className="text-gray-400 text-sm">Uptime</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-yellow-400">14 Days</div>
+                    <div className="text-gray-400 text-sm">Free Trial</div>
+                  </div>
+                </div>
 
-              {/* Key Benefits Banner */}
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8 max-w-5xl mx-auto">
-                <div className="bg-gradient-to-br from-cyan-500/20 to-blue-600/20 backdrop-blur-sm border border-cyan-500/30 rounded-2xl p-4 text-center">
-                  <div className="text-2xl font-bold text-cyan-400 mb-1">150+</div>
-                  <div className="text-sm text-cyan-300">Real Services</div>
-                </div>
-                <div className="bg-gradient-to-br from-purple-500/20 to-pink-600/20 backdrop-blur-sm border border-purple-500/30 rounded-2xl p-4 text-center">
-                  <div className="text-2xl font-bold text-purple-400 mb-1">500%+</div>
-                  <div className="text-sm text-purple-300">Average ROI</div>
-                </div>
-                <div className="bg-gradient-to-br from-green-500/20 to-emerald-600/20 backdrop-blur-sm border border-green-500/30 rounded-2xl p-4 text-center">
-                  <div className="text-2xl font-bold text-green-400 mb-1">$49</div>
-                  <div className="text-sm text-green-300">Starting Price</div>
-                </div>
-                <div className="bg-gradient-to-br from-orange-500/20 to-red-600/20 backdrop-blur-sm border border-orange-500/30 rounded-2xl p-4 text-center">
-                  <div className="text-2xl font-bold text-orange-400 mb-1">14 Days</div>
-                  <div className="text-sm text-orange-300">Free Trial</div>
-                </div>
-              </div>
-
-              {/* Enhanced Contact Information Banner */}
-              <div className="bg-gradient-to-r from-gray-900/80 to-gray-800/80 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 max-w-4xl mx-auto shadow-2xl mb-12">
-                <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold text-white mb-2">Ready to Get Started?</h3>
-                  <p className="text-gray-300">Contact our team of technology experts</p>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="flex flex-col items-center text-center group">
-                    <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                      <Phone className="w-6 h-6 text-white" />
-                    </div>
-                    <div className="text-sm text-gray-400 mb-1">Mobile</div>
-                    <div className="text-white font-semibold">{contactInfo.mobile}</div>
-                    <a href={`tel:${contactInfo.mobile}`} className="text-cyan-400 text-sm hover:text-cyan-300 transition-colors mt-1">
-                      Call Now →
-                    </a>
-                  </div>
-                  <div className="flex flex-col items-center text-center group">
-                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                      <Mail className="w-6 h-6 text-white" />
-                    </div>
-                    <div className="text-sm text-gray-400 mb-1">Email</div>
-                    <div className="text-white font-semibold text-sm">{contactInfo.email}</div>
-                    <a href={`mailto:${contactInfo.email}`} className="text-purple-400 text-sm hover:text-purple-300 transition-colors mt-1">
-                      Send Email →
-                    </a>
-                  </div>
-                  <div className="flex flex-col items-center text-center group">
-                    <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                      <MapPin className="w-6 h-6 text-white" />
-                    </div>
-                    <div className="text-sm text-gray-400 mb-1">Address</div>
-                    <div className="text-white font-semibold text-xs leading-tight">{contactInfo.address}</div>
-                    <a href={`https://maps.google.com/?q=${encodeURIComponent(contactInfo.address)}`} target="_blank" rel="noopener noreferrer" className="text-emerald-400 text-sm hover:text-emerald-300 transition-colors mt-1">
-                      View on Map →
-                    </a>
-                  </div>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button
+                    href="/contact"
+                    variant="primary"
+                    size="lg"
+                    className="group transform hover:scale-105 transition-all duration-300"
+                  >
+                    Get Free Consultation
+                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                  <Button
+                    href="#services"
+                    variant="secondary"
+                    size="lg"
+                    className="group transform hover:scale-105 transition-all duration-300"
+                  >
+                    Explore Services
+                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
                 </div>
               </div>
             </div>
@@ -268,6 +243,128 @@ export default function ServicesPage() {
                 <div className="ml-auto text-gray-400 text-sm">
                   {filteredServices.length} services found
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Innovative Services Showcase */}
+        <section className="py-16 bg-gradient-to-br from-gray-900/50 to-gray-800/50">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+                <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                  Revolutionary
+                </span> Technology
+              </h2>
+              <p className="text-lg text-gray-300">Discover our industry-leading innovations that are reshaping the future</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: '⚛️',
+                  title: 'Quantum AI Training Platform',
+                  description: '100x faster AI model training using quantum computing',
+                  price: '$899/month',
+                  category: 'Emerging Technologies',
+                  color: 'from-purple-500 to-violet-600',
+                  link: 'https://ziontechgroup.com/quantum-ai-training-platform',
+                  badge: 'First to Market'
+                },
+                {
+                  icon: '🧬',
+                  title: 'AI Biomedical Research Platform',
+                  description: '10x faster drug discovery with AI-powered research',
+                  price: '$799/month',
+                  category: 'AI & Machine Learning',
+                  color: 'from-pink-500 to-rose-600',
+                  link: 'https://ziontechgroup.com/ai-biomedical-research',
+                  badge: 'Industry Pioneer'
+                },
+                {
+                  icon: '🔐',
+                  title: 'Quantum Cryptography Platform',
+                  description: 'Future-proof quantum-resistant encryption',
+                  price: '$499/month',
+                  category: 'Emerging Technologies',
+                  color: 'from-emerald-500 to-teal-600',
+                  link: 'https://ziontechgroup.com/quantum-cryptography',
+                  badge: 'Quantum Safe'
+                },
+                {
+                  icon: '⚖️',
+                  title: 'AI Legal Contract Analyzer',
+                  description: '95% accuracy in legal contract risk detection',
+                  price: '$299/month',
+                  category: 'AI & Machine Learning',
+                  color: 'from-indigo-500 to-purple-600',
+                  link: 'https://ziontechgroup.com/ai-legal-contract-analyzer',
+                  badge: '95% Accuracy'
+                },
+                {
+                  icon: '💰',
+                  title: 'Quantum Financial Modeling',
+                  description: '100x faster financial calculations',
+                  price: '$599/month',
+                  category: 'Emerging Technologies',
+                  color: 'from-yellow-500 to-orange-600',
+                  link: 'https://ziontechgroup.com/quantum-financial-modeling',
+                  badge: '100x Faster'
+                },
+                {
+                  icon: '🌍',
+                  title: 'AI Climate Prediction Engine',
+                  description: '95% accuracy in extreme weather prediction',
+                  price: '$399/month',
+                  category: 'AI & Machine Learning',
+                  color: 'from-green-500 to-emerald-600',
+                  link: 'https://ziontechgroup.com/ai-climate-prediction',
+                  badge: '95% Accuracy'
+                }
+              ].map((service, index) => (
+                <div
+                  key={index}
+                  className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 transform hover:scale-105 transition-all duration-500 hover:shadow-2xl group relative overflow-hidden"
+                >
+                  {/* Innovation Badge */}
+                  <div className="absolute top-4 right-4 bg-gradient-to-r from-purple-400 to-pink-400 text-white text-xs font-bold px-3 py-1 rounded-full">
+                    <Sparkles className="w-3 h-3 inline mr-1" />
+                    {service.badge}
+                  </div>
+
+                  <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mb-6 text-3xl group-hover:scale-110 transition-transform duration-300`}>
+                    {service.icon}
+                  </div>
+                  
+                  <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
+                  <p className="text-gray-300 mb-4 leading-relaxed">{service.description}</p>
+                  
+                  <div className="flex items-center justify-between mb-6">
+                    <span className="text-2xl font-bold text-green-400">{service.price}</span>
+                    <span className="text-sm text-gray-400 bg-gray-800/50 px-3 py-1 rounded-full">
+                      {service.category}
+                    </span>
+                  </div>
+
+                  <div className="flex items-center justify-between">
+                    <a
+                      href={service.link}
+                      className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors group/link"
+                    >
+                      Learn More
+                      <ArrowRight className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform" />
+                    </a>
+                    <span className="text-sm text-gray-400">14 day trial</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="text-center mt-12">
+              <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 rounded-full text-purple-400 text-lg font-medium">
+                <Sparkles className="w-5 h-5 mr-2" />
+                Industry-leading innovation with 800%+ average ROI
               </div>
             </div>
           </div>
