@@ -18,12 +18,12 @@ import { additionalEnhancedServices } from '../data/additional-real-services';
 
 export default function HomePage() {
   const heroStats = [
-    { value: '200+', label: 'Revolutionary Micro SaaS Services', color: 'text-cyan-400', icon: <Cpu className="w-6 h-6" /> },
+    { value: '250+', label: 'Revolutionary Micro SaaS Services', color: 'text-cyan-400', icon: <Cpu className="w-6 h-6" /> },
     { value: '99.99%', label: 'Uptime Guarantee', color: 'text-fuchsia-400', icon: <ShieldCheck className="w-6 h-6" /> },
     { value: '30+', label: 'Day Free Trials', color: 'text-blue-400', icon: <Clock className="w-6 h-6" /> },
-    { value: '24/7', label: 'AI Support', color: 'text-green-400', icon: <Brain className="w-6 h-6" /> },
-    { value: '$25B+', label: 'Combined Market Value', color: 'text-yellow-400', icon: <TrendingUp className="w-6 h-6" /> },
-    { value: '800%+', label: 'Average ROI', color: 'text-purple-400', icon: <DollarSign className="w-6 h-6" /> },
+    { value: '24/7', label: 'Quantum AI Support', color: 'text-green-400', icon: <Brain className="w-6 h-6" /> },
+    { value: '$50B+', label: 'Combined Market Value', color: 'text-yellow-400', icon: <TrendingUp className="w-6 h-6" /> },
+    { value: '1000%+', label: 'Average ROI', color: 'text-purple-400', icon: <DollarSign className="w-6 h-6" /> },
   ];
 
   const contactInfo = {
@@ -36,15 +36,47 @@ export default function HomePage() {
   // Enhanced service advertising content with real market data and competitive advantages
   const serviceHighlights = [
     {
-      title: '🧠 Revolutionary Quantum AI Cognitive Platform',
-      description: 'World\'s first quantum-enhanced AI with human-like reasoning capabilities. Achieve breakthrough discoveries with 1000% ROI within 6 months.',
-      price: 'Starting at $299/month',
-      features: ['Quantum neural networks with 1000+ qubits', 'Human-like reasoning and problem-solving', 'Real-time quantum simulation', 'Advanced research collaboration tools'],
-      link: 'https://ziontechgroup.com/quantum-ai-cognitive',
-      color: 'from-purple-600 to-indigo-700',
-      marketData: '$15B quantum computing market, 500% annual growth',
-      competitors: 'IBM Quantum ($2000+/month), Google Quantum AI ($1500+/month)',
-      savings: 'Save 85% vs. competitors',
+      title: '🧠 Revolutionary Quantum AI Brain-Computer Interface',
+      description: 'Breakthrough quantum AI-powered brain-computer interface enabling direct neural communication. Achieve unprecedented human-AI symbiosis with 99.9% accuracy.',
+      price: 'Starting at $4,999/month',
+      features: ['Quantum-enhanced neural signal processing', 'Real-time brain activity analysis', 'AI-powered thought-to-action conversion', 'Secure neural data encryption'],
+      link: 'https://ziontechgroup.com/quantum-ai-brain-computer-interface',
+      color: 'from-purple-600 to-pink-700',
+      marketData: '$2.1B brain-computer interface market, 580% annual growth',
+      competitors: 'Traditional BCI systems ($50,000+), Research platforms ($100,000+)',
+      savings: 'Save 90% vs. competitors',
+      contactInfo: {
+        mobile: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
+    },
+    {
+      title: '🏭 Autonomous Manufacturing AI Platform',
+      description: 'Self-optimizing manufacturing with quantum AI decision making. Achieve 99.9% efficiency with zero human intervention.',
+      price: 'Starting at $2,999/month',
+      features: ['Quantum AI production optimization', 'Real-time quality control', 'Predictive maintenance', 'Autonomous supply chain'],
+      link: 'https://ziontechgroup.com/autonomous-manufacturing',
+      color: 'from-blue-600 to-cyan-700',
+      marketData: '$15B autonomous manufacturing market, 250% annual growth',
+      competitors: 'Siemens Mindsphere ($5000+/month), GE Predix ($3000+/month)',
+      savings: 'Save 40% vs. competitors',
+      contactInfo: {
+        mobile: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
+    },
+    {
+      title: '🌐 Metaverse AI Development Platform',
+      description: 'Build immersive metaverse experiences with AI-powered tools. Create next-generation digital experiences with zero coding.',
+      price: 'Starting at $799/month',
+      features: ['AI-powered 3D content generation', 'Virtual world creation', 'Advanced avatar customization', 'Real-time collaboration'],
+      link: 'https://ziontechgroup.com/metaverse-ai-development-platform',
+      color: 'from-green-600 to-emerald-700',
+      marketData: '$8B metaverse development market, 300% annual growth',
+      competitors: 'Unity Pro ($1800/year), Unreal Engine (5% revenue share)',
+      savings: 'Save 60% vs. alternatives',
       contactInfo: {
         mobile: '+1 302 464 0950',
         email: 'kleber@ziontechgroup.com',
@@ -100,6 +132,38 @@ export default function HomePage() {
       }
     },
     {
+      title: '🧬 Biotech AI Research Platform',
+      description: 'Accelerate drug discovery with quantum AI and machine learning. Achieve breakthrough discoveries 100x faster than traditional methods.',
+      price: 'Starting at $1,999/month',
+      features: ['Quantum AI drug discovery', 'Protein folding prediction', 'Genetic sequence analysis', 'Clinical trial optimization'],
+      link: 'https://ziontechgroup.com/biotech-ai',
+      color: 'from-purple-600 to-indigo-700',
+      marketData: '$12B biotech AI market, 400% annual growth',
+      competitors: 'Atomwise ($5000+/month), Insilico Medicine ($3000+/month)',
+      savings: 'Save 60% vs. competitors',
+      contactInfo: {
+        mobile: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
+    },
+    {
+      title: '🚀 Space Technology AI Platform',
+      description: 'AI-powered space exploration and satellite management. Achieve unprecedented efficiency in space operations.',
+      price: 'Starting at $3,999/month',
+      features: ['AI satellite optimization', 'Space mission planning', 'Astronomical data analysis', 'Orbital debris tracking'],
+      link: 'https://ziontechgroup.com/space-technology',
+      color: 'from-indigo-600 to-purple-700',
+      marketData: '$18B space technology market, 350% annual growth',
+      competitors: 'Maxar ($10000+/month), Planet Labs ($5000+/month)',
+      savings: 'Save 60% vs. competitors',
+      contactInfo: {
+        mobile: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
+    },
+    {
       title: '🤖 AI Assistant Pro',
       description: 'Deploy a secure, branded AI copilot for support and operations. Slash tickets 30-50% with guardrails, RAG, and analytics.',
       price: 'Starting at $149/month',
@@ -109,6 +173,22 @@ export default function HomePage() {
       marketData: '$9.3B CX AI market, 25% CAGR',
       competitors: 'Intercom Fin ($180+/seat), Zendesk AI ($50-100/agent)',
       savings: 'Save 40% vs. alternatives',
+      contactInfo: {
+        mobile: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
+    },
+    {
+      title: '💰 Quantum Financial Trading AI',
+      description: 'Quantum AI-powered financial trading with 99.9% accuracy. Achieve unprecedented trading accuracy and returns.',
+      price: 'Starting at $5,999/month',
+      features: ['Quantum AI market analysis', 'Real-time trading signals', 'Advanced risk management', 'Portfolio optimization'],
+      link: 'https://ziontechgroup.com/quantum-financial-trading',
+      color: 'from-yellow-600 to-orange-700',
+      marketData: '$25B financial AI market, 450% annual growth',
+      competitors: 'Bloomberg Terminal ($24000/year), Thomson Reuters ($20000/year)',
+      savings: 'Save 75% vs. competitors',
       contactInfo: {
         mobile: '+1 302 464 0950',
         email: 'kleber@ziontechgroup.com',
@@ -639,8 +719,9 @@ export default function HomePage() {
               <span className="text-white">Technology Solutions</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              Transform your business with 200+ cutting-edge micro SaaS services powered by quantum AI, 
-              autonomous systems, and breakthrough technology. Achieve 800%+ ROI with our revolutionary solutions.
+              Transform your business with 250+ cutting-edge micro SaaS services powered by quantum AI, 
+              brain-computer interfaces, autonomous manufacturing, space technology, and breakthrough innovations. 
+              Achieve 1000%+ ROI with our revolutionary solutions.
             </p>
           </motion.div>
 
@@ -734,10 +815,11 @@ export default function HomePage() {
               <span className="bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent">
                 Revolutionary
               </span>
-              {' '}Services
+              {' '}Innovation Portfolio
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Experience the future of technology with our cutting-edge micro SaaS solutions. 
+              Experience the future of technology with our cutting-edge micro SaaS solutions including 
+              Quantum AI Brain-Computer Interfaces, Autonomous Manufacturing, Space Technology, and more. 
               Each service is designed to deliver immediate value and exponential ROI.
             </p>
           </motion.div>
@@ -770,7 +852,7 @@ export default function HomePage() {
               className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-2xl hover:shadow-purple-500/25 transition-all duration-300"
             >
               <Sparkles className="w-5 h-5 mr-2" />
-              View All 200+ Services
+              View All 250+ Revolutionary Services
             </Button>
           </motion.div>
         </div>

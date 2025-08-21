@@ -86,7 +86,10 @@ body::before {
     radial-gradient(circle at 60% 60%, rgba(16, 185, 129, 0.15) 0%, transparent 50%),
     radial-gradient(circle at 90% 10%, rgba(245, 158, 11, 0.15) 0%, transparent 50%),
     radial-gradient(circle at 10% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 70% 70%, rgba(168, 85, 247, 0.1) 0%, transparent 50%);
+    radial-gradient(circle at 70% 70%, rgba(168, 85, 247, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 30% 90%, rgba(236, 72, 153, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 85% 60%, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 15% 30%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
   pointer-events: none;
   z-index: -1;
   animation: backgroundFloat 25s ease-in-out infinite;
@@ -172,7 +175,11 @@ body::after {
   background: 
     radial-gradient(circle at 25% 25%, rgba(16, 185, 129, 0.2) 0%, transparent 50%),
     radial-gradient(circle at 75% 75%, rgba(16, 185, 129, 0.2) 0%, transparent 50%),
-    radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+    radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 10% 10%, rgba(16, 185, 129, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 90% 90%, rgba(16, 185, 129, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 30% 70%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 70% 30%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
   pointer-events: none;
   z-index: -1;
   animation: neuralPulse 15s ease-in-out infinite;
@@ -344,6 +351,79 @@ body::after {
   50% { filter: brightness(1.1) saturate(1.2); }
 }
 
+/* Advanced Futuristic Animations */
+@keyframes quantumPulse {
+  0%, 100% { 
+    transform: scale(1) rotate(0deg);
+    filter: hue-rotate(0deg);
+  }
+  25% { 
+    transform: scale(1.05) rotate(90deg);
+    filter: hue-rotate(90deg);
+  }
+  50% { 
+    transform: scale(1.1) rotate(180deg);
+    filter: hue-rotate(180deg);
+  }
+  75% { 
+    transform: scale(1.05) rotate(270deg);
+    filter: hue-rotate(270deg);
+  }
+}
+
+@keyframes holographicFlow {
+  0% { 
+    background-position: 0% 0%;
+    filter: hue-rotate(0deg) brightness(1);
+  }
+  50% { 
+    background-position: 100% 100%;
+    filter: hue-rotate(180deg) brightness(1.2);
+  }
+  100% { 
+    background-position: 0% 0%;
+    filter: hue-rotate(360deg) brightness(1);
+  }
+}
+
+@keyframes neuralWave {
+  0%, 100% { 
+    transform: translateX(0) scale(1);
+    opacity: 0.8;
+  }
+  25% { 
+    transform: translateX(20px) scale(1.1);
+    opacity: 1;
+  }
+  50% { 
+    transform: translateX(0) scale(1.2);
+    opacity: 0.9;
+  }
+  75% { 
+    transform: translateX(-20px) scale(1.1);
+    opacity: 1;
+  }
+}
+
+@keyframes quantumEntanglement {
+  0%, 100% { 
+    transform: translateY(0) scale(1);
+    filter: hue-rotate(0deg);
+  }
+  25% { 
+    transform: translateY(-10px) scale(1.1);
+    filter: hue-rotate(90deg);
+  }
+  50% { 
+    transform: translateY(-20px) scale(1.2);
+    filter: hue-rotate(180deg);
+  }
+  75% { 
+    transform: translateY(-10px) scale(1.1);
+    filter: hue-rotate(270deg);
+  }
+}
+
 /* Enhanced Button Effects */
 .quantum-button {
   position: relative;
@@ -356,6 +436,46 @@ body::after {
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: var(--quantum-glow);
+}
+
+/* Advanced Futuristic Effect Classes */
+.quantum-pulse {
+  animation: quantumPulse 4s ease-in-out infinite;
+}
+
+.holographic-flow {
+  animation: holographicFlow 6s ease-in-out infinite;
+}
+
+.neural-wave {
+  animation: neuralWave 5s ease-in-out infinite;
+}
+
+.quantum-entanglement {
+  animation: quantumEntanglement 7s ease-in-out infinite;
+}
+
+.futuristic-glow {
+  box-shadow: 
+    0 0 20px rgba(0, 255, 255, 0.5),
+    0 0 40px rgba(139, 92, 246, 0.3),
+    0 0 60px rgba(236, 73, 153, 0.2);
+}
+
+.cyberpunk-border {
+  border: 2px solid transparent;
+  background: linear-gradient(45deg, #00ffff, #8b5cf6, #ec4899) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+}
+
+.neural-network-bg {
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.05) 0%, transparent 50%);
+  animation: neuralPulse 8s ease-in-out infinite;
 }
 
 .quantum-button::before {

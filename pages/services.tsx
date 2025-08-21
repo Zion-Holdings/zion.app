@@ -79,10 +79,10 @@ export default function ServicesPage() {
   };
 
   const heroStats = [
-    { value: '200+', label: 'Revolutionary Services', icon: <ShieldCheck className="w-6 h-6 text-cyan-400" /> },
+    { value: '250+', label: 'Revolutionary Services', icon: <ShieldCheck className="w-6 h-6 text-cyan-400" /> },
     { value: '99.99%', label: 'Uptime Guarantee', icon: <ShieldCheck className="w-6 h-6 text-fuchsia-400" /> },
     { value: '30+', label: 'Day Free Trials', icon: <Clock className="w-6 h-6 text-blue-400" /> },
-    { value: '800%+', label: 'Average ROI', icon: <TrendingUp className="w-6 h-6 text-green-400" /> }
+    { value: '1000%+', label: 'Average ROI', icon: <TrendingUp className="w-6 h-6 text-green-400" /> }
   ];
 
   return (
@@ -97,7 +97,7 @@ export default function ServicesPage() {
       <section className="relative py-20 px-4">
         <div className="container mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-4">All Services</h1>
+            <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-4">Revolutionary Innovation Portfolio</h1>
             <p className="text-gray-300 text-lg max-w-3xl mx-auto">
               Real, production-grade micro SaaS products, IT services, and AI solutions. Built for impact, secured for scale.
             </p>
