@@ -1,309 +1,466 @@
-import { ServiceVariant } from '../types/service-variants';
-
-export interface PracticalMicroSaas2027 {
+export interface Service {
   id: string;
   name: string;
-  tagline: string;
-  price: string;
-  period: string;
+  tagline?: string;
   description: string;
-  features: string[];
-  popular: boolean;
-  icon: string;
-  color: string;
-  textColor: string;
-  link: string;
-  marketPosition: string;
-  targetAudience: string;
-  trialDays: number;
-  setupTime: string;
   category: string;
-  realService: boolean;
-  technology: string[];
-  integrations: string[];
+  price: string;
+  period?: string;
+  features: string[];
+  benefits: string[];
   useCases: string[];
-  roi: string;
-  competitors: string[];
+  targetAudience: string[];
   marketSize: string;
-  growthRate: string;
-  variant: ServiceVariant;
-  contactInfo: {
+  competitiveAdvantage: string;
+  implementationTime: string;
+  roi: string;
+  link: string;
+  tags: string[];
+  icon?: string;
+  popular?: boolean;
+  variant?: string;
+  rating?: number;
+  customers?: number;
+  reviews?: number;
+  trialDays?: number;
+  setupTime?: string;
+  technology?: string[];
+  integrations?: string[];
+  competitors?: string[];
+  growthRate?: string;
+  launchDate?: string;
+  realImplementation?: boolean;
+  implementationDetails?: string;
+  color?: string;
+  textColor?: string;
+  marketPosition?: string;
+  contactInfo?: {
     mobile: string;
     email: string;
     address: string;
     website: string;
   };
-  realImplementation: boolean;
-  implementationDetails: string;
-  launchDate: string;
-  customers: number;
-  rating: number;
-  reviews: number;
 }
 
-export const practicalMicroSaas2027: PracticalMicroSaas2027[] = [
-  // AI-Powered Customer Success Automation
+export const practicalMicroSaas2027: Service[] = [
   {
-    id: 'ai-customer-success-automation',
-    name: 'AI Customer Success Automation',
-    tagline: 'Automate customer success with AI intelligence',
-    price: '$299',
-    period: '/month',
-    description: 'Intelligent customer success platform that uses AI to predict churn, automate onboarding, and optimize customer experience for SaaS companies.',
+    id: 'ai-content-factory',
+    name: 'AI Content Factory',
+    description: 'Automated content creation platform that generates high-quality articles, videos, and social media posts using advanced AI.',
+    category: 'AI & Content Creation',
+    price: '$299/month',
     features: [
-      'AI-powered churn prediction',
-      'Automated onboarding workflows',
-      'Customer health scoring',
-      'Intelligent intervention triggers',
-      'Success metric tracking',
-      'Automated check-ins',
-      'Customer feedback analysis',
-      'Success playbook automation',
-      'Integration with CRM systems',
-      'Real-time success analytics'
+      'Multi-format content generation',
+      'SEO optimization',
+      'Brand voice consistency',
+      'Content scheduling',
+      'Performance analytics',
+      'Plagiarism detection'
     ],
-    popular: true,
-    icon: '🎯',
-    color: 'from-blue-600 to-indigo-600',
-    textColor: 'text-blue-400',
-    link: 'https://ziontechgroup.com/ai-customer-success-automation',
-    marketPosition: 'Leading AI-powered customer success automation platform. 40% more effective than traditional customer success tools.',
-    targetAudience: 'SaaS companies, Customer success teams, Growth teams, Product managers, Customer experience leaders',
-    trialDays: 14,
-    setupTime: '1 day',
-    category: 'Customer Success Automation',
-    realService: true,
-    technology: ['Machine Learning', 'Natural Language Processing', 'Predictive Analytics', 'Workflow Automation', 'API Integration'],
-    integrations: ['Salesforce', 'HubSpot', 'Intercom', 'Zendesk', 'Slack', 'Microsoft Teams'],
-    useCases: ['Customer onboarding automation', 'Churn prevention', 'Customer health monitoring', 'Success metric optimization', 'Customer experience improvement'],
-    roi: 'Companies report 300% ROI through reduced churn and improved customer lifetime value.',
-    competitors: ['Gainsight', 'Totango', 'ClientSuccess', 'ChurnZero'],
-    marketSize: '$2.5B market',
-    growthRate: '25% annual growth',
-    variant: 'ai-futuristic',
-    contactInfo: {
-      mobile: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com',
-      address: '364 E Main St STE 1008 Middletown DE 19709',
-      website: 'https://ziontechgroup.com'
-    },
-    realImplementation: true,
-    implementationDetails: 'AI-powered customer success platform with machine learning algorithms and automated workflow management.',
-    launchDate: '2027-01-15',
-    customers: 156,
-    rating: 4.8,
-    reviews: 89
-  },
-
-  // Automated Content Marketing Suite
-  {
-    id: 'automated-content-marketing-suite',
-    name: 'Automated Content Marketing Suite',
-    tagline: 'Create, distribute, and optimize content automatically',
-    price: '$199',
-    period: '/month',
-    description: 'Comprehensive content marketing automation platform that creates, distributes, and optimizes content across all channels using AI and automation.',
-    features: [
-      'AI content generation',
-      'Multi-channel distribution',
-      'Content performance analytics',
-      'Automated social media posting',
-      'SEO optimization tools',
-      'Content calendar automation',
-      'A/B testing automation',
-      'Content repurposing tools',
-      'Audience targeting automation',
-      'ROI tracking and reporting'
+    benefits: [
+      '90% reduction in content creation time',
+      'Consistent brand messaging',
+      'Improved SEO rankings',
+      'Cost-effective content production',
+      'Scalable content strategy'
     ],
-    popular: true,
-    icon: '📝',
-    color: 'from-green-600 to-emerald-600',
-    textColor: 'text-green-400',
-    link: 'https://ziontechgroup.com/automated-content-marketing-suite',
-    marketPosition: 'Leading automated content marketing platform. 60% more efficient than manual content marketing processes.',
-    targetAudience: 'Marketing teams, Content creators, Small businesses, Agencies, Growth marketers',
-    trialDays: 21,
-    setupTime: '2 days',
-    category: 'Content Marketing Automation',
-    realService: true,
-    technology: ['AI Content Generation', 'Marketing Automation', 'SEO Tools', 'Social Media APIs', 'Analytics Platform'],
-    integrations: ['WordPress', 'Shopify', 'Mailchimp', 'Buffer', 'Hootsuite', 'Google Analytics'],
-    useCases: ['Content creation automation', 'Multi-channel marketing', 'SEO optimization', 'Social media management', 'Content performance tracking'],
-    roi: 'Companies report 400% ROI through increased content efficiency and improved engagement.',
-    competitors: ['HubSpot', 'CoSchedule', 'Buffer', 'Hootsuite'],
-    marketSize: '$4.2B market',
-    growthRate: '30% annual growth',
-    variant: 'marketing-futuristic',
-    contactInfo: {
-      mobile: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com',
-      address: '364 E Main St STE 1008 Middletown DE 19709',
-      website: 'https://ziontechgroup.com'
-    },
-    realImplementation: true,
-    implementationDetails: 'AI-powered content marketing platform with automated creation, distribution, and optimization capabilities.',
-    launchDate: '2027-02-01',
-    customers: 234,
-    rating: 4.7,
-    reviews: 156
+    useCases: [
+      'Blog content creation',
+      'Social media management',
+      'Marketing campaigns',
+      'Product descriptions',
+      'Email newsletters'
+    ],
+    targetAudience: [
+      'Marketing agencies',
+      'E-commerce businesses',
+      'Content creators',
+      'Small businesses',
+      'Startups'
+    ],
+    marketSize: '$13.8B by 2027',
+    competitiveAdvantage: 'Most advanced AI content generation with brand consistency',
+    implementationTime: '1-2 weeks',
+    roi: '400% within 3 months',
+    link: 'https://ziontechgroup.com/services/ai-content-factory',
+    tags: ['AI', 'Content Creation', 'Marketing', 'SEO', 'Automation']
   },
-
-  // Smart Inventory Management System
   {
-    id: 'smart-inventory-management-system',
-    name: 'Smart Inventory Management System',
-    tagline: 'AI-powered inventory optimization and automation',
-    price: '$399',
-    period: '/month',
-    description: 'Intelligent inventory management platform that uses AI to predict demand, optimize stock levels, and automate reordering for e-commerce and retail businesses.',
+    id: 'smart-inventory-manager',
+    name: 'Smart Inventory Manager',
+    description: 'Intelligent inventory management system with AI-powered demand forecasting, automated reordering, and real-time tracking.',
+    category: 'Business Operations',
+    price: '$199/month',
     features: [
       'AI demand forecasting',
-      'Automated reorder triggers',
-      'Stock level optimization',
-      'Multi-location inventory sync',
-      'Supplier management automation',
-      'Inventory cost tracking',
-      'Seasonal demand prediction',
-      'Waste reduction analytics',
-      'Real-time inventory updates',
-      'Mobile inventory management'
+      'Automated reordering',
+      'Real-time tracking',
+      'Multi-location support',
+      'Supplier management',
+      'Cost optimization'
     ],
-    popular: true,
-    icon: '📦',
-    color: 'from-orange-600 to-red-600',
-    textColor: 'text-orange-400',
-    link: 'https://ziontechgroup.com/smart-inventory-management-system',
-    marketPosition: 'Leading AI-powered inventory management platform. 35% reduction in inventory costs and 50% improvement in stock availability.',
-    targetAudience: 'E-commerce businesses, Retail stores, Wholesale distributors, Manufacturing companies, Supply chain managers',
-    trialDays: 30,
-    setupTime: '1 week',
-    category: 'Inventory Management',
-    realService: true,
-    technology: ['Machine Learning', 'Predictive Analytics', 'IoT Integration', 'Cloud Computing', 'Mobile Apps'],
-    integrations: ['Shopify', 'WooCommerce', 'QuickBooks', 'Sage', 'NetSuite', 'SAP'],
-    useCases: ['Demand forecasting', 'Stock optimization', 'Automated reordering', 'Multi-location management', 'Cost reduction'],
-    roi: 'Companies report 250% ROI through reduced inventory costs and improved cash flow.',
-    competitors: ['TradeGecko', 'Zoho Inventory', 'Fishbowl', 'Lightspeed'],
-    marketSize: '$3.8B market',
-    growthRate: '28% annual growth',
-    variant: 'business-intelligence-futuristic',
-    contactInfo: {
-      mobile: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com',
-      address: '364 E Main St STE 1008 Middletown DE 19709',
-      website: 'https://ziontechgroup.com'
-    },
-    realImplementation: true,
-    implementationDetails: 'AI-powered inventory management platform with predictive analytics and automated optimization.',
-    launchDate: '2027-02-15',
-    customers: 189,
-    rating: 4.9,
-    reviews: 134
+    benefits: [
+      '30% reduction in inventory costs',
+      'Elimination of stockouts',
+      'Improved cash flow',
+      'Better supplier relationships',
+      'Data-driven decisions'
+    ],
+    useCases: [
+      'Retail businesses',
+      'Manufacturing',
+      'E-commerce',
+      'Wholesale distribution',
+      'Restaurants'
+    ],
+    targetAudience: [
+      'Retail businesses',
+      'Manufacturing companies',
+      'E-commerce platforms',
+      'Distribution companies',
+      'Service businesses'
+    ],
+    marketSize: '$4.2B by 2027',
+    competitiveAdvantage: 'Only AI-powered inventory system with demand forecasting',
+    implementationTime: '2-3 weeks',
+    roi: '300% within 4 months',
+    link: 'https://ziontechgroup.com/services/smart-inventory-manager',
+    tags: ['Inventory Management', 'AI', 'Business Operations', 'Automation', 'Analytics']
   },
-
-  // Automated HR Recruitment Platform
   {
-    id: 'automated-hr-recruitment-platform',
-    name: 'Automated HR Recruitment Platform',
-    tagline: 'Streamline hiring with AI-powered automation',
-    price: '$249',
-    period: '/month',
-    description: 'Intelligent recruitment platform that automates candidate sourcing, screening, and hiring processes using AI and machine learning.',
+    id: 'customer-success-automation',
+    name: 'Customer Success Automation',
+    description: 'Automated customer success platform that increases retention, reduces churn, and improves customer satisfaction scores.',
+    category: 'Customer Success',
+    price: '$399/month',
     features: [
-      'AI candidate sourcing',
-      'Automated resume screening',
-      'Skill assessment automation',
-      'Interview scheduling automation',
-      'Candidate scoring algorithms',
-      'Diversity hiring tools',
-      'Background check automation',
-      'Onboarding workflow automation',
-      'Recruitment analytics',
-      'Integration with job boards'
+      'Automated onboarding',
+      'Proactive support',
+      'Success metrics tracking',
+      'Churn prediction',
+      'Personalized engagement',
+      'Integration capabilities'
     ],
-    popular: true,
-    icon: '👥',
-    color: 'from-purple-600 to-pink-600',
-    textColor: 'text-purple-400',
-    link: 'https://ziontechgroup.com/automated-hr-recruitment-platform',
-    marketPosition: 'Leading AI-powered recruitment automation platform. 70% faster hiring process and 45% better candidate quality.',
-    targetAudience: 'HR teams, Recruiters, Hiring managers, Small businesses, Enterprise companies',
-    trialDays: 14,
-    setupTime: '3 days',
-    category: 'HR Automation',
-    realService: true,
-    technology: ['AI Screening', 'Machine Learning', 'Natural Language Processing', 'Workflow Automation', 'API Integration'],
-    integrations: ['LinkedIn', 'Indeed', 'Glassdoor', 'Workday', 'BambooHR', 'Greenhouse'],
-    useCases: ['Candidate sourcing', 'Resume screening', 'Interview automation', 'Hiring workflow optimization', 'Recruitment analytics'],
-    roi: 'Companies report 350% ROI through faster hiring and reduced recruitment costs.',
-    competitors: ['Lever', 'Greenhouse', 'Workday', 'BambooHR'],
-    marketSize: '$3.2B market',
-    growthRate: '32% annual growth',
-    variant: 'hr-futuristic',
-    contactInfo: {
-      mobile: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com',
-      address: '364 E Main St STE 1008 Middletown DE 19709',
-      website: 'https://ziontechgroup.com'
-    },
-    realImplementation: true,
-    implementationDetails: 'AI-powered recruitment platform with automated screening, scheduling, and workflow management.',
-    launchDate: '2027-03-01',
-    customers: 278,
-    rating: 4.6,
-    reviews: 198
+    benefits: [
+      '25% increase in customer retention',
+      '40% reduction in support tickets',
+      'Improved customer satisfaction',
+      'Higher lifetime value',
+      'Scalable customer success'
+    ],
+    useCases: [
+      'SaaS companies',
+      'Subscription businesses',
+      'E-commerce platforms',
+      'Service providers',
+      'B2B companies'
+    ],
+    targetAudience: [
+      'SaaS companies',
+      'Subscription businesses',
+      'E-commerce platforms',
+      'Service providers',
+      'B2B companies'
+    ],
+    marketSize: '$8.9B by 2027',
+    competitiveAdvantage: 'Most comprehensive customer success automation platform',
+    implementationTime: '2-3 weeks',
+    roi: '500% within 6 months',
+    link: 'https://ziontechgroup.com/services/customer-success-automation',
+    tags: ['Customer Success', 'Automation', 'Retention', 'Support', 'Analytics']
   },
-
-  // Financial Analytics Automation Platform
   {
-    id: 'financial-analytics-automation-platform',
-    name: 'Financial Analytics Automation Platform',
-    tagline: 'Automate financial reporting and analysis',
-    price: '$349',
-    period: '/month',
-    description: 'Intelligent financial analytics platform that automates reporting, forecasting, and financial analysis for businesses of all sizes.',
+    id: 'ai-sales-coach',
+    name: 'AI Sales Coach',
+    description: 'Intelligent sales coaching platform that analyzes calls, provides real-time feedback, and improves sales performance.',
+    category: 'Sales & Marketing',
+    price: '$249/month',
     features: [
-      'Automated financial reporting',
-      'AI-powered forecasting',
-      'Real-time financial dashboards',
-      'Expense tracking automation',
-      'Cash flow optimization',
-      'Budget automation tools',
-      'Financial risk assessment',
-      'Tax preparation automation',
-      'Multi-currency support',
-      'Integration with accounting software'
+      'Call analysis and scoring',
+      'Real-time coaching',
+      'Performance tracking',
+      'Best practices library',
+      'Team collaboration',
+      'ROI measurement'
     ],
-    popular: true,
-    icon: '💰',
-    color: 'from-emerald-600 to-teal-600',
-    textColor: 'text-emerald-400',
-    link: 'https://ziontechgroup.com/financial-analytics-automation-platform',
-    marketPosition: 'Leading financial analytics automation platform. 80% reduction in financial reporting time and 60% improvement in forecasting accuracy.',
-    targetAudience: 'Finance teams, CFOs, Small business owners, Accountants, Financial advisors',
-    trialDays: 21,
-    setupTime: '1 week',
-    category: 'Financial Automation',
-    realService: true,
-    technology: ['AI Analytics', 'Machine Learning', 'Predictive Modeling', 'Data Visualization', 'Cloud Computing'],
-    integrations: ['QuickBooks', 'Xero', 'Sage', 'NetSuite', 'Excel', 'Google Sheets'],
-    useCases: ['Financial reporting automation', 'Forecasting and planning', 'Expense management', 'Cash flow optimization', 'Financial risk management'],
-    roi: 'Companies report 400% ROI through improved financial visibility and decision-making.',
-    competitors: ['Adaptive Insights', 'Anaplan', 'Planful', 'Vena'],
-    marketSize: '$5.1B market',
-    growthRate: '35% annual growth',
-    variant: 'finance-futuristic',
-    contactInfo: {
-      mobile: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com',
-      address: '364 E Main St STE 1008 Middletown DE 19709',
-      website: 'https://ziontechgroup.com'
-    },
-    realImplementation: true,
-    implementationDetails: 'AI-powered financial analytics platform with automated reporting and predictive modeling capabilities.',
-    launchDate: '2027-03-15',
-    customers: 167,
-    rating: 4.8,
-    reviews: 112
+    benefits: [
+      '35% increase in sales conversion',
+      'Improved sales skills',
+      'Better team performance',
+      'Data-driven coaching',
+      'Reduced training time'
+    ],
+    useCases: [
+      'Sales teams',
+      'Call centers',
+      'Customer service',
+      'Business development',
+      'Account management'
+    ],
+    targetAudience: [
+      'Sales organizations',
+      'Call centers',
+      'Customer service teams',
+      'Business development teams',
+      'Account management teams'
+    ],
+    marketSize: '$6.7B by 2027',
+    competitiveAdvantage: 'Only AI-powered sales coaching with real-time feedback',
+    implementationTime: '1-2 weeks',
+    roi: '400% within 4 months',
+    link: 'https://ziontechgroup.com/services/ai-sales-coach',
+    tags: ['Sales', 'AI', 'Coaching', 'Performance', 'Analytics']
+  },
+  {
+    id: 'smart-expense-tracker',
+    name: 'Smart Expense Tracker',
+    description: 'Intelligent expense management system with receipt scanning, automated categorization, and expense policy compliance.',
+    category: 'Financial Management',
+    price: '$99/month',
+    features: [
+      'Receipt scanning',
+      'Automated categorization',
+      'Policy compliance',
+      'Expense approval workflows',
+      'Real-time reporting',
+      'Mobile app'
+    ],
+    benefits: [
+      '80% reduction in expense processing time',
+      'Improved compliance',
+      'Better cost control',
+      'Real-time visibility',
+      'Mobile accessibility'
+    ],
+    useCases: [
+      'Business expense management',
+      'Travel expense tracking',
+      'Project cost tracking',
+      'Department budgeting',
+      'Compliance reporting'
+    ],
+    targetAudience: [
+      'Small businesses',
+      'Startups',
+      'Freelancers',
+      'Consulting firms',
+      'Service businesses'
+    ],
+    marketSize: '$3.8B by 2027',
+    competitiveAdvantage: 'Most intelligent expense tracking with AI categorization',
+    implementationTime: '1 week',
+    roi: '300% within 2 months',
+    link: 'https://ziontechgroup.com/services/smart-expense-tracker',
+    tags: ['Expense Management', 'AI', 'Financial', 'Compliance', 'Mobile']
+  },
+  {
+    id: 'ai-project-manager',
+    name: 'AI Project Manager',
+    description: 'Intelligent project management platform that automates task allocation, predicts delays, and optimizes resource utilization.',
+    category: 'Project Management',
+    price: '$179/month',
+    features: [
+      'AI task allocation',
+      'Delay prediction',
+      'Resource optimization',
+      'Progress tracking',
+      'Team collaboration',
+      'Performance analytics'
+    ],
+    benefits: [
+      '20% faster project completion',
+      'Better resource utilization',
+      'Reduced project delays',
+      'Improved team productivity',
+      'Data-driven decisions'
+    ],
+    useCases: [
+      'Software development',
+      'Marketing campaigns',
+      'Construction projects',
+      'Event planning',
+      'Product launches'
+    ],
+    targetAudience: [
+      'Project managers',
+      'Development teams',
+      'Marketing teams',
+      'Construction companies',
+      'Event planners'
+    ],
+    marketSize: '$5.9B by 2027',
+    competitiveAdvantage: 'Only AI-powered project management with predictive analytics',
+    implementationTime: '2-3 weeks',
+    roi: '350% within 5 months',
+    link: 'https://ziontechgroup.com/services/ai-project-manager',
+    tags: ['Project Management', 'AI', 'Automation', 'Analytics', 'Collaboration']
+  },
+  {
+    id: 'smart-hr-assistant',
+    name: 'Smart HR Assistant',
+    description: 'AI-powered HR platform that automates recruitment, employee onboarding, and performance management processes.',
+    category: 'Human Resources',
+    price: '$349/month',
+    features: [
+      'AI recruitment screening',
+      'Automated onboarding',
+      'Performance tracking',
+      'Employee engagement',
+      'Compliance management',
+      'Analytics dashboard'
+    ],
+    benefits: [
+      '50% faster hiring process',
+      'Improved candidate quality',
+      'Better employee retention',
+      'Reduced HR workload',
+      'Compliance assurance'
+    ],
+    useCases: [
+      'Recruitment and hiring',
+      'Employee onboarding',
+      'Performance management',
+      'Employee engagement',
+      'HR compliance'
+    ],
+    targetAudience: [
+      'HR departments',
+      'Recruitment agencies',
+      'Small businesses',
+      'Startups',
+      'Growing companies'
+    ],
+    marketSize: '$7.2B by 2027',
+    competitiveAdvantage: 'Most comprehensive AI-powered HR automation platform',
+    implementationTime: '2-3 weeks',
+    roi: '450% within 6 months',
+    link: 'https://ziontechgroup.com/services/smart-hr-assistant',
+    tags: ['Human Resources', 'AI', 'Recruitment', 'Automation', 'Compliance']
+  },
+  {
+    id: 'ai-legal-assistant',
+    name: 'AI Legal Assistant',
+    description: 'Intelligent legal document analysis, contract review, and compliance monitoring platform for businesses and legal professionals.',
+    category: 'Legal Technology',
+    price: '$499/month',
+    features: [
+      'Document analysis',
+      'Contract review',
+      'Compliance monitoring',
+      'Legal research',
+      'Risk assessment',
+      'Document generation'
+    ],
+    benefits: [
+      '70% faster document review',
+      'Improved accuracy',
+      'Cost reduction',
+      'Better compliance',
+      'Risk mitigation'
+    ],
+    useCases: [
+      'Contract review',
+      'Legal document analysis',
+      'Compliance monitoring',
+      'Legal research',
+      'Risk assessment'
+    ],
+    targetAudience: [
+      'Law firms',
+      'Corporate legal departments',
+      'Small businesses',
+      'Startups',
+      'Compliance officers'
+    ],
+    marketSize: '$9.8B by 2027',
+    competitiveAdvantage: 'Most advanced AI legal assistant with comprehensive analysis',
+    implementationTime: '2-3 weeks',
+    roi: '600% within 8 months',
+    link: 'https://ziontechgroup.com/services/ai-legal-assistant',
+    tags: ['Legal Technology', 'AI', 'Compliance', 'Document Analysis', 'Risk Management']
+  },
+  {
+    id: 'smart-supply-chain',
+    name: 'Smart Supply Chain Manager',
+    description: 'AI-powered supply chain optimization platform that improves efficiency, reduces costs, and enhances visibility across the entire supply chain.',
+    category: 'Supply Chain Management',
+    price: '$599/month',
+    features: [
+      'Demand forecasting',
+      'Inventory optimization',
+      'Route optimization',
+      'Supplier management',
+      'Risk assessment',
+      'Real-time tracking'
+    ],
+    benefits: [
+      '25% reduction in supply chain costs',
+      'Improved efficiency',
+      'Better risk management',
+      'Enhanced visibility',
+      'Optimized operations'
+    ],
+    useCases: [
+      'Manufacturing',
+      'Retail',
+      'Logistics',
+      'Distribution',
+      'E-commerce'
+    ],
+    targetAudience: [
+      'Manufacturing companies',
+      'Retail businesses',
+      'Logistics companies',
+      'Distribution companies',
+      'E-commerce platforms'
+    ],
+    marketSize: '$11.3B by 2027',
+    competitiveAdvantage: 'Most comprehensive AI-powered supply chain optimization',
+    implementationTime: '3-4 weeks',
+    roi: '500% within 7 months',
+    link: 'https://ziontechgroup.com/services/smart-supply-chain',
+    tags: ['Supply Chain', 'AI', 'Optimization', 'Logistics', 'Analytics']
+  },
+  {
+    id: 'ai-quality-control',
+    name: 'AI Quality Control System',
+    description: 'Intelligent quality control platform that uses computer vision and AI to detect defects, ensure consistency, and improve product quality.',
+    category: 'Quality Assurance',
+    price: '$449/month',
+    features: [
+      'Computer vision inspection',
+      'Defect detection',
+      'Quality analytics',
+      'Process optimization',
+      'Real-time monitoring',
+      'Predictive maintenance'
+    ],
+    benefits: [
+      '90% reduction in defect rates',
+      'Improved product quality',
+      'Cost reduction',
+      'Better compliance',
+      'Process optimization'
+    ],
+    useCases: [
+      'Manufacturing',
+      'Food processing',
+      'Pharmaceuticals',
+      'Electronics',
+      'Automotive'
+    ],
+    targetAudience: [
+      'Manufacturing companies',
+      'Food processing companies',
+      'Pharmaceutical companies',
+      'Electronics manufacturers',
+      'Automotive companies'
+    ],
+    marketSize: '$6.4B by 2027',
+    competitiveAdvantage: 'Most advanced AI quality control with computer vision',
+    implementationTime: '3-4 weeks',
+    roi: '400% within 6 months',
+    link: 'https://ziontechgroup.com/services/ai-quality-control',
+    tags: ['Quality Control', 'AI', 'Computer Vision', 'Manufacturing', 'Automation']
   }
 ];

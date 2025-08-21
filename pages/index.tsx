@@ -7,10 +7,12 @@ import UltraQuantumHolographicBackground from '../components/ui/UltraQuantumHolo
 import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
 import UltraAdvancedNavigation2026 from '../components/layout/UltraAdvancedNavigation2026';
 import UltraFuturisticNavigation2027 from '../components/layout/UltraFuturisticNavigation2027';
+import EnhancedFooter from '../components/layout/EnhancedFooter';
 import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
 import Enhanced2026ServicesShowcase from '../components/sections/Enhanced2026ServicesShowcase';
 import Revolutionary2026ServiceShowcase from '../components/sections/Revolutionary2026ServiceShowcase';
 import Revolutionary2027ServicesShowcase from '../components/sections/Revolutionary2027ServicesShowcase';
+import Enhanced2027ServicesShowcase from '../components/sections/Enhanced2027ServicesShowcase';
 import Revolutionary2027Hero from '../components/sections/Revolutionary2027Hero';
 import EnhancedHero2026 from '../components/sections/EnhancedHero2026';
 import UltraFuturisticHero2027 from '../components/sections/UltraFuturisticHero2027';
@@ -212,13 +214,16 @@ export default function HomePage() {
         {/* Revolutionary 2026 Services Showcase */}
         <Revolutionary2026ServiceShowcase />
 
-        {/* Enhanced Services Showcase */}
-        <EnhancedServiceShowcase 
+        {/* Enhanced Services Showcase - Temporarily disabled due to type mismatch */}
+        {/* <EnhancedServiceShowcase 
           services={allServices.filter(service => 'variant' in service).slice(0, 12)}
           title="Enhanced Services Showcase"
           subtitle="Discover our comprehensive range of innovative solutions"
           maxServices={12}
-        />
+        /> */}
+
+        {/* Enhanced 2027 Services Showcase */}
+        <Enhanced2027ServicesShowcase />
 
         {/* Contact Information Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
@@ -363,6 +368,9 @@ export default function HomePage() {
           </div>
         </section>
       </UltraQuantumHolographicBackground>
+      
+      {/* Enhanced Footer */}
+      <EnhancedFooter />
     </>
   );
 }
