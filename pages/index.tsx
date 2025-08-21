@@ -6,15 +6,15 @@ import Button from '../components/ui/Button';
 import UltraFuturisticBackground2028 from '../components/ui/UltraFuturisticBackground2028';
 import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
 import UltraAdvancedNavigation2026 from '../components/layout/UltraAdvancedNavigation2026';
-import UltraFuturisticNavigation2028 from '../components/layout/UltraFuturisticNavigation2028';
-import UltraFuturisticFooter2028 from '../components/layout/UltraFuturisticFooter2028';
+import UltraFuturisticNavigation2029 from '../components/layout/UltraFuturisticNavigation2029';
+import UltraFuturisticFooter2029 from '../components/layout/UltraFuturisticFooter2029';
 import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
 import Enhanced2026ServicesShowcase from '../components/sections/Enhanced2026ServicesShowcase';
 import Revolutionary2026ServiceShowcase from '../components/sections/Revolutionary2026ServiceShowcase';
 import Revolutionary2027ServicesShowcase from '../components/sections/Revolutionary2027ServicesShowcase';
 import Revolutionary2027Hero from '../components/sections/Revolutionary2027Hero';
 import EnhancedHero2026 from '../components/sections/EnhancedHero2026';
-import UltraFuturisticHero2028 from '../components/sections/UltraFuturisticHero2028';
+import UltraFuturisticHero2029 from '../components/sections/UltraFuturisticHero2029';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
@@ -70,6 +70,9 @@ import { cuttingEdge2028MicroSaas } from '../data/2028-cutting-edge-micro-saas';
 import { practicalBusinessSolutions2028 } from '../data/2028-practical-business-solutions';
 import { futuristic2028Services } from '../data/2028-futuristic-innovations';
 import { emergingTech2028Services } from '../data/2028-emerging-tech-services';
+import { cuttingEdgeInnovations2029 } from '../data/2029-cutting-edge-innovations';
+import { emergingTechServices2029 } from '../data/2029-emerging-tech-services';
+import { practicalBusinessSolutions2029 } from '../data/2029-practical-business-solutions';
 
 export default function HomePage() {
   const contactInfo = {
@@ -134,7 +137,10 @@ export default function HomePage() {
     ...revolutionary2027ITServices,
     ...revolutionary2027MicroSaasServices,
     ...cuttingEdge2028MicroSaas,
-    ...practicalBusinessSolutions2028
+    ...practicalBusinessSolutions2028,
+    ...cuttingEdgeInnovations2029,
+    ...emergingTechServices2029,
+    ...practicalBusinessSolutions2029
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);
@@ -210,10 +216,10 @@ export default function HomePage() {
 
               <UltraFuturisticBackground2028>
         {/* Ultra Advanced Navigation */}
-        <UltraFuturisticNavigation2028 />
+        <UltraFuturisticNavigation2029 />
 
-                  {/* Ultra Futuristic Hero Section 2028 */}
-          <UltraFuturisticHero2028 />
+                                      {/* Ultra Futuristic Hero Section 2029 */}
+            <UltraFuturisticHero2029 />
 
         {/* Revolutionary 2027 Hero Section */}
         <Revolutionary2027Hero />
@@ -380,7 +386,7 @@ export default function HomePage() {
               </UltraFuturisticBackground2028>
       
       {/* Footer */}
-      <UltraFuturisticFooter2028 />
+      <UltraFuturisticFooter2029 />
     </>
   );
 }
