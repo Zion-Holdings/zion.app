@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-export interface UltraFuturisticCardProps {
+interface UltraFuturisticCardProps {
   children: React.ReactNode;
+  variant?: 'default' | 'holographic' | 'quantum' | 'cyberpunk' | 'neural' | 'quantum-holographic' | 'quantum-advanced' | 'holographic-advanced' | 'neural-quantum' | 'quantum-cyberpunk' | 'holographic-neural' | 'quantum-holographic-advanced' | 'quantum-matrix' | 'neural-cyberpunk' | 'holographic-quantum' | 'quantum-neural-advanced' | 'cyberpunk-holographic' | 'quantum-space' | 'ai-futuristic' | 'quantum-entanglement' | 'holographic-matrix' | 'neural-quantum-cyberpunk';
   className?: string;
   onClick?: () => void;
-  variant?: 'default' | 'holographic' | 'quantum' | 'cyberpunk' | 'neural' | 'quantum-holographic' | 'quantum-advanced' | 'holographic-advanced' | 'neural-quantum' | 'quantum-cyberpunk' | 'holographic-neural' | 'quantum-holographic-advanced' | 'quantum-matrix' | 'neural-cyberpunk' | 'holographic-quantum' | 'quantum-neural-advanced' | 'cyberpunk-holographic' | 'quantum-space' | 'ai-futuristic' | 'quantum-entanglement' | 'holographic-matrix' | 'neural-quantum-cyberpunk';
-  hoverEffect?: boolean;
+  interactive?: boolean;
   glowIntensity?: 'low' | 'medium' | 'high';
-  animated?: boolean;
+  animationSpeed?: 'slow' | 'normal' | 'fast';
 }
 
 const UltraFuturisticCard: React.FC<UltraFuturisticCardProps> = ({
@@ -16,484 +16,336 @@ const UltraFuturisticCard: React.FC<UltraFuturisticCardProps> = ({
   variant = 'default',
   className = '',
   onClick,
-  hoverEffect = true,
+  interactive = false,
   glowIntensity = 'medium',
-  animated = true
+  animationSpeed = 'normal'
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-  // Get variant-specific styles
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (cardRef.current) {
+        const rect = cardRef.current.getBoundingClientRect();
+        setMousePosition({
+          x: e.clientX - rect.left,
+          y: e.clientY - rect.top
+        });
+      }
+    };
+
+    if (interactive) {
+      document.addEventListener('mousemove', handleMouseMove);
+    }
+
+    return () => {
+      if (interactive) {
+        document.removeEventListener('mousemove', handleMouseMove);
+      }
+    };
+  }, [interactive]);
+
   const getVariantStyles = () => {
+    const baseStyles = 'relative overflow-hidden rounded-2xl border backdrop-blur-xl transition-all duration-500';
+    
     switch (variant) {
       case 'quantum':
-        return {
-          bg: 'bg-gradient-to-br from-slate-900 via-blue-900 to-cyan-900',
-          border: 'border border-cyan-500/30',
-          glow: 'shadow-[0_0_30px_rgba(6,182,212,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(6,182,212,0.5)]',
-          accent: 'from-cyan-400 to-blue-500'
-        };
-      case 'quantum-advanced':
-        return {
-          bg: 'bg-gradient-to-br from-slate-900 via-cyan-900 via-blue-900 to-indigo-900',
-          border: 'border border-cyan-500/30',
-          glow: 'shadow-[0_0_30px_rgba(6,182,212,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(6,182,212,0.5)]',
-          accent: 'from-cyan-400 via-blue-400 to-indigo-400'
-        };
+        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-blue-900/60 to-cyan-900/80 border-cyan-500/30 shadow-2xl shadow-cyan-500/20`;
       case 'holographic':
-        return {
-          bg: 'bg-gradient-to-br from-slate-900 via-purple-900 to-pink-900',
-          border: 'border border-pink-500/30',
-          glow: 'shadow-[0_0_30px_rgba(236,72,153,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(236,72,153,0.5)]',
-          accent: 'from-pink-400 to-purple-500'
-        };
-      case 'holographic-advanced':
-        return {
-          bg: 'bg-gradient-to-br from-slate-900 via-purple-900 via-pink-900 to-rose-900',
-          border: 'border border-purple-500/30',
-          glow: 'shadow-[0_0_30px_rgba(168,85,247,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(168,85,247,0.5)]',
-          accent: 'from-purple-400 via-pink-400 to-rose-400'
-        };
+        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-purple-900/60 to-pink-900/80 border-purple-500/30 shadow-2xl shadow-purple-500/20`;
       case 'cyberpunk':
-        return {
-          bg: 'bg-gradient-to-br from-slate-900 via-red-900 to-orange-900',
-          border: 'border border-red-500/30',
-          glow: 'shadow-[0_0_30px_rgba(239,68,68,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(239,68,68,0.5)]',
-          accent: 'from-red-400 to-orange-500'
-        };
+        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-red-900/60 to-orange-900/80 border-red-500/30 shadow-2xl shadow-red-500/20`;
       case 'neural':
-        return {
-          bg: 'bg-gradient-to-br from-slate-900 via-green-900 to-emerald-900',
-          border: 'border border-emerald-500/30',
-          glow: 'shadow-[0_0_30px_rgba(16,185,129,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(16,185,129,0.5)]',
-          accent: 'from-emerald-400 to-green-500'
-        };
+        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-green-900/60 to-emerald-900/80 border-green-500/30 shadow-2xl shadow-green-500/20`;
       case 'quantum-holographic':
-        return {
-          bg: 'bg-gradient-to-br from-slate-900 via-cyan-900 via-purple-900 to-pink-900',
-          border: 'border border-cyan-500/30',
-          glow: 'shadow-[0_0_30px_rgba(6,182,212,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(6,182,212,0.5)]',
-          accent: 'from-cyan-400 via-purple-400 to-pink-400'
-        };
-      case 'quantum-holographic-advanced':
-        return {
-          bg: 'bg-gradient-to-br from-slate-900 via-cyan-900 via-purple-900 to-pink-900',
-          border: 'border border-cyan-500/30',
-          glow: 'shadow-[0_0_30px_rgba(6,182,212,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(6,182,212,0.5)]',
-          accent: 'from-cyan-400 via-purple-400 to-pink-400'
-        };
+        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-blue-900/60 via-purple-900/60 to-pink-900/80 border-cyan-500/30 border-purple-500/30 shadow-2xl shadow-cyan-500/20 shadow-purple-500/20`;
+      case 'quantum-advanced':
+        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-indigo-900/60 via-blue-900/60 to-cyan-900/80 border-cyan-500/30 border-blue-500/30 shadow-2xl shadow-cyan-500/20 shadow-blue-500/20`;
+      case 'holographic-advanced':
+        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-violet-900/60 via-purple-900/60 to-pink-900/80 border-purple-500/30 border-pink-500/30 shadow-2xl shadow-purple-500/20 shadow-pink-500/20`;
       case 'neural-quantum':
-        return {
-          bg: 'bg-gradient-to-br from-slate-900 via-emerald-900 via-green-900 to-cyan-900',
-          border: 'border border-emerald-500/30',
-          glow: 'shadow-[0_0_30px_rgba(16,185,129,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(16,185,129,0.5)]',
-          accent: 'from-emerald-400 via-green-400 to-cyan-400'
-        };
+        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-green-900/60 via-blue-900/60 to-cyan-900/80 border-green-500/30 border-cyan-500/30 shadow-2xl shadow-green-500/20 shadow-cyan-500/20`;
       case 'quantum-cyberpunk':
-        return {
-          bg: 'bg-gradient-to-br from-slate-900 via-cyan-900 via-blue-900 to-red-900',
-          border: 'border border-cyan-500/30',
-          glow: 'shadow-[0_0_30px_rgba(6,182,212,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(6,182,212,0.5)]',
-          accent: 'from-cyan-400 via-blue-400 to-red-400'
-        };
+        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-blue-900/60 via-red-900/60 to-orange-900/80 border-cyan-500/30 border-red-500/30 shadow-2xl shadow-cyan-500/20 shadow-red-500/20`;
       case 'holographic-neural':
-        return {
-          bg: 'bg-gradient-to-br from-slate-900 via-purple-900 via-pink-900 to-emerald-900',
-          border: 'border border-purple-500/30',
-          glow: 'shadow-[0_0_30px_rgba(168,85,247,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(168,85,247,0.5)]',
-          accent: 'from-purple-400 via-pink-400 to-emerald-400'
-        };
-      case 'quantum-neural-advanced':
-        return {
-          bg: 'bg-gradient-to-br from-slate-900 via-cyan-900 via-blue-900 to-emerald-900',
-          border: 'border border-cyan-500/30',
-          glow: 'shadow-[0_0_30px_rgba(6,182,212,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(6,182,212,0.5)]',
-          accent: 'from-cyan-400 via-blue-400 to-emerald-400'
-        };
-      case 'cyberpunk-holographic':
-        return {
-          bg: 'bg-gradient-to-br from-slate-900 via-red-900 via-pink-900 to-purple-900',
-          border: 'border border-red-500/30',
-          glow: 'shadow-[0_0_30px_rgba(239,68,68,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(239,68,68,0.5)]',
-          accent: 'from-red-400 via-pink-400 to-purple-400'
-        };
-      case 'quantum-space':
-        return {
-          bg: 'bg-gradient-to-br from-slate-900 via-cyan-900 via-indigo-900 to-blue-900',
-          border: 'border border-cyan-500/30',
-          glow: 'shadow-[0_0_30px_rgba(6,182,212,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(6,182,212,0.5)]',
-          accent: 'from-cyan-400 via-indigo-400 to-blue-400'
-        };
-      case 'ai-futuristic':
-        return {
-          bg: 'bg-gradient-to-br from-slate-900 via-blue-900 via-indigo-900 to-purple-900',
-          border: 'border border-blue-500/30',
-          glow: 'shadow-[0_0_30px_rgba(59,130,246,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(59,130,246,0.5)]',
-          accent: 'from-blue-400 via-indigo-400 to-purple-400'
-        };
-      case 'quantum-entanglement':
-        return {
-          bg: 'bg-gradient-to-br from-slate-900 via-violet-900 to-purple-900',
-          border: 'border border-violet-500/30',
-          glow: 'shadow-[0_0_30px_rgba(139,92,246,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(139,92,246,0.5)]',
-          accent: 'from-violet-400 to-purple-500'
-        };
-      case 'holographic-matrix':
-        return {
-          bg: 'bg-gradient-to-br from-slate-900 via-teal-900 to-cyan-900',
-          border: 'border border-teal-500/30',
-          glow: 'shadow-[0_0_30px_rgba(20,184,166,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(20,184,166,0.5)]',
-          accent: 'from-teal-400 to-cyan-500'
-        };
-      case 'neural-quantum-cyberpunk':
-        return {
-          bg: 'bg-gradient-to-br from-slate-900 via-emerald-900 via-purple-900 to-red-900',
-          border: 'border border-emerald-500/30',
-          glow: 'shadow-[0_0_30px_rgba(16,185,129,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(16,185,129,0.5)]',
-          accent: 'from-emerald-400 via-purple-400 to-red-400'
-        };
+        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-purple-900/60 via-green-900/60 to-emerald-900/80 border-purple-500/30 border-green-500/30 shadow-2xl shadow-purple-500/20 shadow-green-500/20`;
+      case 'quantum-holographic-advanced':
+        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-blue-900/60 via-purple-900/60 via-pink-900/60 to-cyan-900/80 border-cyan-500/30 border-purple-500/30 border-pink-500/30 shadow-2xl shadow-cyan-500/20 shadow-purple-500/20 shadow-pink-500/20`;
       case 'quantum-matrix':
-        return {
-          bg: 'bg-gradient-to-br from-slate-900 via-green-900 to-emerald-900',
-          border: 'border border-green-500/30',
-          glow: 'shadow-[0_0_30px_rgba(34,197,94,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(34,197,94,0.5)]',
-          accent: 'from-green-400 to-emerald-500'
-        };
+        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-green-900/60 via-blue-900/60 to-cyan-900/80 border-green-500/30 border-cyan-500/30 shadow-2xl shadow-green-500/20 shadow-cyan-500/20`;
       case 'neural-cyberpunk':
-        return {
-          bg: 'bg-gradient-to-br from-slate-900 via-emerald-900 via-green-900 to-red-900',
-          border: 'border border-emerald-500/30',
-          glow: 'shadow-[0_0_30px_rgba(16,185,129,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(16,185,129,0.5)]',
-          accent: 'from-emerald-400 via-green-400 to-red-400'
-        };
+        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-green-900/60 via-red-900/60 to-orange-900/80 border-green-500/30 border-red-500/30 shadow-2xl shadow-green-500/20 shadow-red-500/20`;
       case 'holographic-quantum':
-        return {
-          bg: 'bg-gradient-to-br from-slate-900 via-purple-900 via-pink-900 to-cyan-900',
-          border: 'border border-purple-500/30',
-          glow: 'shadow-[0_0_30px_rgba(168,85,247,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(168,85,247,0.5)]',
-          accent: 'from-purple-400 via-pink-400 to-cyan-400'
-        };
+        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-purple-900/60 via-blue-900/60 to-cyan-900/80 border-purple-500/30 border-cyan-500/30 shadow-2xl shadow-purple-500/20 shadow-cyan-500/20`;
+      case 'quantum-neural-advanced':
+        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-blue-900/60 via-green-900/60 via-emerald-900/60 to-cyan-900/80 border-cyan-500/30 border-green-500/30 border-emerald-500/30 shadow-2xl shadow-cyan-500/20 shadow-green-500/20 shadow-emerald-500/20`;
+      case 'cyberpunk-holographic':
+        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-red-900/60 via-purple-900/60 to-pink-900/80 border-red-500/30 border-purple-500/30 shadow-2xl shadow-red-500/20 shadow-purple-500/20`;
+      case 'quantum-space':
+        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-blue-900/60 via-indigo-900/60 to-purple-900/80 border-cyan-500/30 border-indigo-500/30 shadow-2xl shadow-cyan-500/20 shadow-indigo-500/20`;
+      case 'ai-futuristic':
+        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-violet-900/60 via-blue-900/60 to-cyan-900/80 border-violet-500/30 border-cyan-500/30 shadow-2xl shadow-violet-500/20 shadow-cyan-500/20`;
+      case 'quantum-entanglement':
+        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-blue-900/60 via-cyan-900/60 to-teal-900/80 border-cyan-500/30 border-teal-500/30 shadow-2xl shadow-cyan-500/20 shadow-teal-500/20`;
+      case 'holographic-matrix':
+        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-purple-900/60 via-pink-900/60 to-rose-900/80 border-purple-500/30 border-pink-500/30 shadow-2xl shadow-purple-500/20 shadow-pink-500/20`;
+      case 'neural-quantum-cyberpunk':
+        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-green-900/60 via-blue-900/60 via-red-900/60 to-orange-900/80 border-green-500/30 border-cyan-500/30 border-red-500/30 shadow-2xl shadow-green-500/20 shadow-cyan-500/20 shadow-red-500/20`;
       default:
-        return {
-          bg: 'bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900',
-          border: 'border border-slate-600/30',
-          glow: 'shadow-[0_0_30px_rgba(148,163,184,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(148,163,184,0.5)]',
-          accent: 'from-slate-400 to-slate-500'
-        };
+        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-slate-800/60 to-slate-900/80 border-slate-600/30 shadow-2xl shadow-slate-500/20`;
     }
   };
 
-  const styles = getVariantStyles();
-
-  // Get glow intensity
   const getGlowIntensity = () => {
     switch (glowIntensity) {
       case 'low':
-        return 'shadow-[0_0_20px_rgba(148,163,184,0.2)]';
+        return 'shadow-lg';
+      case 'medium':
+        return 'shadow-2xl';
       case 'high':
-        return 'shadow-[0_0_40px_rgba(148,163,184,0.6)]';
+        return 'shadow-2xl shadow-[0_0_50px_rgba(0,255,255,0.3)]';
       default:
-        return styles.glow;
+        return 'shadow-2xl';
     }
   };
 
-  // Canvas animation for advanced effects
-  useEffect(() => {
-    if (!animated || !canvasRef.current) return;
-
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    let animationFrameId: number;
-    let time = 0;
-
-    const resizeCanvas = () => {
-      if (cardRef.current) {
-        const rect = cardRef.current.getBoundingClientRect();
-        canvas.width = rect.width;
-        canvas.height = rect.height;
-      }
-    };
-
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-
-    const animate = () => {
-      time += 0.02;
-      
-      // Clear canvas
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
-      // Draw variant-specific effects
-      switch (variant) {
-        case 'quantum':
-          drawQuantumEffects(ctx, canvas, time);
-          break;
-        case 'holographic':
-          drawHolographicEffects(ctx, canvas, time);
-          break;
-        case 'cyberpunk':
-          drawCyberpunkEffects(ctx, canvas, time);
-          break;
-        case 'neural':
-          drawNeuralEffects(ctx, canvas, time);
-          break;
-        case 'quantum-entanglement':
-          drawQuantumEntanglementEffects(ctx, canvas, time);
-          break;
-        case 'holographic-matrix':
-          drawHolographicMatrixEffects(ctx, canvas, time);
-          break;
-        case 'neural-quantum-cyberpunk':
-          drawNeuralQuantumCyberpunkEffects(ctx, canvas, time);
-          break;
-      }
-      
-      animationFrameId = requestAnimationFrame(animate);
-    };
-
-    animate();
-
-    return () => {
-      window.removeEventListener('resize', resizeCanvas);
-      cancelAnimationFrame(animationFrameId);
-    };
-  }, [variant, animated]);
-
-  // Effect drawing functions
-  const drawQuantumEffects = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement, time: number) => {
-    // Quantum particles
-    for (let i = 0; i < 5; i++) {
-      const x = Math.sin(time + i) * canvas.width * 0.3 + canvas.width * 0.5;
-      const y = Math.cos(time + i * 0.7) * canvas.height * 0.3 + canvas.height * 0.5;
-      
-      ctx.beginPath();
-      ctx.arc(x, y, 3 + Math.sin(time * 2 + i) * 2, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(6, 182, 212, ${0.6 + Math.sin(time + i) * 0.4})`;
-      ctx.fill();
+  const getAnimationSpeed = () => {
+    switch (animationSpeed) {
+      case 'slow':
+        return 2;
+      case 'normal':
+        return 1;
+      case 'fast':
+        return 0.5;
+      default:
+        return 1;
     }
   };
 
-  const drawHolographicEffects = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement, time: number) => {
-    // Holographic grid
-    ctx.strokeStyle = `rgba(236, 72, 153, ${0.3 + Math.sin(time) * 0.2})`;
-    ctx.lineWidth = 1;
-    
-    for (let i = 0; i < canvas.width; i += 30) {
-      ctx.beginPath();
-      ctx.moveTo(i, 0);
-      ctx.lineTo(i, canvas.height);
-      ctx.stroke();
-    }
-    
-    for (let i = 0; i < canvas.height; i += 30) {
-      ctx.beginPath();
-      ctx.moveTo(0, i);
-      ctx.lineTo(canvas.width, i);
-      ctx.stroke();
-    }
-  };
-
-  const drawCyberpunkEffects = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement, time: number) => {
-    // Scanning lines
-    const y = (time * 100) % canvas.height;
-    ctx.strokeStyle = 'rgba(239, 68, 68, 0.8)';
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    ctx.moveTo(0, y);
-    ctx.lineTo(canvas.width, y);
-    ctx.stroke();
-  };
-
-  const drawNeuralEffects = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement, time: number) => {
-    // Neural connections
-    for (let i = 0; i < 3; i++) {
-      const x1 = Math.sin(time + i) * canvas.width * 0.3 + canvas.width * 0.3;
-      const y1 = Math.cos(time + i * 0.5) * canvas.height * 0.3 + canvas.height * 0.3;
-      const x2 = Math.sin(time + i + 1) * canvas.width * 0.3 + canvas.width * 0.7;
-      const y2 = Math.cos(time + i * 0.5 + 1) * canvas.height * 0.3 + canvas.height * 0.7;
-      
-      ctx.beginPath();
-      ctx.moveTo(x1, y1);
-      ctx.lineTo(x2, y2);
-      ctx.strokeStyle = `rgba(16, 185, 129, ${0.4 + Math.sin(time + i) * 0.3})`;
-      ctx.lineWidth = 1;
-      ctx.stroke();
-    }
-  };
-
-  const drawSpaceEffects = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement, time: number) => {
-    // Stars
-    for (let i = 0; i < 20; i++) {
-      const x = (i * 50 + time * 20) % canvas.width;
-      const y = (i * 30 + time * 15) % canvas.height;
-      const size = Math.sin(time + i) * 2 + 1;
-      
-      ctx.beginPath();
-      ctx.arc(x, y, size, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(255, 255, 255, ${0.8 + Math.sin(time + i) * 0.2})`;
-      ctx.fill();
-    }
-  };
-
-  const drawQuantumEntanglementEffects = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement, time: number) => {
-    // Entangled particles
-    for (let i = 0; i < 4; i++) {
-      const x1 = Math.sin(time + i) * canvas.width * 0.2 + canvas.width * 0.3;
-      const y1 = Math.cos(time + i * 0.7) * canvas.height * 0.2 + canvas.height * 0.3;
-      const x2 = Math.sin(time + i + Math.PI) * canvas.width * 0.2 + canvas.width * 0.7;
-      const y2 = Math.cos(time + i * 0.7 + Math.PI) * canvas.height * 0.2 + canvas.height * 0.7;
-      
-      // Draw particles
-      ctx.beginPath();
-      ctx.arc(x1, y1, 3, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(139, 92, 246, 0.8)`;
-      ctx.fill();
-      
-      ctx.beginPath();
-      ctx.arc(x2, y2, 3, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(139, 92, 246, 0.8)`;
-      ctx.fill();
-      
-      // Draw connection
-      ctx.beginPath();
-      ctx.moveTo(x1, y1);
-      ctx.lineTo(x2, y2);
-      ctx.strokeStyle = `rgba(139, 92, 246, ${0.3 + Math.sin(time * 2) * 0.2})`;
-      ctx.lineWidth = 1;
-      ctx.stroke();
-    }
-  };
-
-  const drawHolographicMatrixEffects = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement, time: number) => {
-    // Matrix-style grid
-    ctx.strokeStyle = `rgba(20, 184, 166, ${0.4 + Math.sin(time) * 0.2})`;
-    ctx.lineWidth = 1;
-    
-    for (let i = 0; i < canvas.width; i += 20) {
-      ctx.beginPath();
-      ctx.moveTo(i, 0);
-      ctx.lineTo(i, canvas.height);
-      ctx.stroke();
-    }
-    
-    for (let i = 0; i < canvas.height; i += 20) {
-      ctx.beginPath();
-      ctx.moveTo(0, i);
-      ctx.lineTo(canvas.width, i);
-      ctx.stroke();
-    }
-    
-    // Floating elements
-    for (let i = 0; i < 3; i++) {
-      const x = Math.sin(time + i) * canvas.width * 0.3 + canvas.width * 0.5;
-      const y = Math.cos(time + i * 0.5) * canvas.height * 0.3 + canvas.height * 0.5;
-      
-      ctx.beginPath();
-      ctx.rect(x - 15, y - 15, 30, 30);
-      ctx.strokeStyle = `rgba(20, 184, 166, ${0.6 + Math.sin(time * 3 + i) * 0.4})`;
-      ctx.lineWidth = 2;
-      ctx.stroke();
+  const getVariantEffects = () => {
+    switch (variant) {
+      case 'quantum':
+        return (
+          <>
+            {/* Quantum field lines */}
+            <div className="absolute inset-0 opacity-20">
+              {[...Array(5)].map((_, i) => (
+                <div
+                  key={i}
+                  className="absolute w-full h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent"
+                  style={{
+                    top: `${20 + i * 15}%`,
+                    animation: `quantumWave ${3 + i}s ease-in-out infinite`,
+                    animationDelay: `${i * 0.5}s`
+                  }}
+                />
+              ))}
+            </div>
+            {/* Quantum particles */}
+            <div className="absolute inset-0">
+              {[...Array(8)].map((_, i) => (
+                <div
+                  key={i}
+                  className="absolute w-2 h-2 bg-cyan-400 rounded-full animate-pulse"
+                  style={{
+                    left: `${10 + i * 10}%`,
+                    top: `${15 + i * 8}%`,
+                    animationDelay: `${i * 0.3}s`,
+                    animationDuration: `${2 + i * 0.5}s`
+                  }}
+                />
+              ))}
+            </div>
+          </>
+        );
+      case 'holographic':
+        return (
+          <>
+            {/* Holographic grid */}
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute inset-0" style={{
+                backgroundImage: `
+                  linear-gradient(rgba(138, 43, 226, 0.3) 1px, transparent 1px),
+                  linear-gradient(90deg, rgba(138, 43, 226, 0.3) 1px, transparent 1px)
+                `,
+                backgroundSize: '20px 20px'
+              }} />
+            </div>
+            {/* Holographic scan lines */}
+            <div className="absolute inset-0 opacity-30">
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-400/20 to-transparent animate-pulse" />
+            </div>
+          </>
+        );
+      case 'cyberpunk':
+        return (
+          <>
+            {/* Cyberpunk matrix rain */}
+            <div className="absolute inset-0 opacity-20">
+              {[...Array(10)].map((_, i) => (
+                <div
+                  key={i}
+                  className="absolute text-green-400 text-xs font-mono animate-pulse"
+                  style={{
+                    left: `${5 + i * 8}%`,
+                    top: `${10 + i * 5}%`,
+                    animationDelay: `${i * 0.2}s`,
+                    animationDuration: `${1.5 + i * 0.3}s`
+                  }}
+                >
+                  01
+                </div>
+              ))}
+            </div>
+            {/* Cyberpunk energy waves */}
+            <div className="absolute inset-0 opacity-30">
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-red-500/20 to-transparent animate-pulse" />
+            </div>
+          </>
+        );
+      case 'neural':
+        return (
+          <>
+            {/* Neural connections */}
+            <div className="absolute inset-0 opacity-20">
+              {[...Array(6)].map((_, i) => (
+                <div
+                  key={i}
+                  className="absolute w-16 h-16 border border-green-400/30 rounded-full animate-spin"
+                  style={{
+                    left: `${15 + i * 12}%`,
+                    top: `${20 + i * 10}%`,
+                    animationDuration: `${10 + i * 2}s`,
+                    animationDirection: i % 2 === 0 ? 'normal' : 'reverse'
+                  }}
+                />
+              ))}
+            </div>
+            {/* Neural pulses */}
+            <div className="absolute inset-0 opacity-40">
+              <div className="absolute inset-0 bg-gradient-to-br from-transparent via-green-400/10 to-transparent animate-pulse" />
+            </div>
+          </>
+        );
+      default:
+        return null;
     }
   };
 
-  const drawNeuralQuantumCyberpunkEffects = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement, time: number) => {
-    // Combined effects
-    drawNeuralEffects(ctx, canvas, time);
-    drawQuantumEffects(ctx, canvas, time);
-    drawCyberpunkEffects(ctx, canvas, time);
+  const cardVariants = {
+    initial: { 
+      scale: 1,
+      rotateX: 0,
+      rotateY: 0,
+      y: 0
+    },
+    hover: { 
+      scale: 1.02,
+      rotateX: interactive ? 5 : 0,
+      rotateY: interactive ? 5 : 0,
+      y: -5
+    },
+    focus: { 
+      scale: 1.01,
+      rotateX: 0,
+      rotateY: 0,
+      y: -2
+    }
+  };
+
+  const glowVariants = {
+    initial: { opacity: 0, scale: 0.8 },
+    hover: { opacity: 1, scale: 1.2 },
+    focus: { opacity: 0.8, scale: 1.1 }
   };
 
   return (
     <motion.div
       ref={cardRef}
-      className={`
-        relative overflow-hidden rounded-2xl backdrop-blur-sm
-        ${styles.bg} ${styles.border} ${getGlowIntensity()}
-        ${hoverEffect ? styles.hoverGlow : ''}
-        transition-all duration-500 ease-out
-        ${className}
-      `}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      className={`${getVariantStyles()} ${getGlowIntensity()} ${className}`}
+      variants={cardVariants}
+      initial="initial"
+      whileHover={interactive ? "hover" : "initial"}
+      whileFocus={interactive ? "focus" : "initial"}
+      animate={isFocused ? "focus" : "initial"}
+      onHoverStart={() => setIsHovered(true)}
+      onHoverEnd={() => setIsHovered(false)}
       onFocus={() => setIsFocused(true)}
       onBlur={() => setIsFocused(false)}
       onClick={onClick}
-      whileHover={hoverEffect ? { scale: 1.02, y: -5 } : {}}
-      whileTap={{ scale: 0.98 }}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      style={{
+        transformStyle: 'preserve-3d',
+        perspective: '1000px'
+      }}
+      transition={{
+        duration: 0.3 * getAnimationSpeed(),
+        ease: "easeOut"
+      }}
     >
-      {/* Animated canvas background */}
-      {animated && (
-        <canvas
-          ref={canvasRef}
-          className="absolute inset-0 w-full h-full pointer-events-none opacity-30"
-        />
-      )}
-
-      {/* Holographic overlay */}
-      <AnimatePresence>
-        {isHovered && (
-          <motion.div
-            className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+      {/* Background effects */}
+      {getVariantEffects()}
+      
+      {/* Interactive mouse tracking effect */}
+      {interactive && isHovered && (
+        <motion.div
+          className="absolute inset-0 pointer-events-none"
+          initial="initial"
+          animate="hover"
+          variants={glowVariants}
+          transition={{ duration: 0.2 }}
+        >
+          <div
+            className="absolute w-32 h-32 bg-gradient-to-r from-cyan-400/20 to-purple-400/20 rounded-full blur-xl"
+            style={{
+              left: mousePosition.x - 64,
+              top: mousePosition.y - 64,
+              transform: 'translateZ(0)'
+            }}
           />
-        )}
-      </AnimatePresence>
-
-      {/* Glowing border effect */}
-      <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500" />
-
+        </motion.div>
+      )}
+      
+      {/* Border glow effect */}
+      <div className="absolute inset-0 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500">
+        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-400/20 via-purple-400/20 to-pink-400/20 blur-sm" />
+      </div>
+      
       {/* Content */}
       <div className="relative z-10 p-6">
         {children}
       </div>
-
+      
       {/* Corner accents */}
-      <div className="absolute top-0 left-0 w-8 h-8 border-l-2 border-t-2 border-gradient-to-br from-transparent to-white/20 rounded-tl-2xl" />
-      <div className="absolute top-0 right-0 w-8 h-8 border-r-2 border-t-2 border-gradient-to-bl from-transparent to-white/20 rounded-tr-2xl" />
-      <div className="absolute bottom-0 left-0 w-8 h-8 border-l-2 border-b-2 border-gradient-to-tr from-transparent to-white/20 rounded-bl-2xl" />
-      <div className="absolute bottom-0 right-0 w-8 h-8 border-r-2 border-b-2 border-gradient-to-tl from-transparent to-white/20 rounded-br-2xl" />
-
-      {/* Focus indicator */}
-      {isFocused && (
-        <motion.div
-          className="absolute inset-0 rounded-2xl ring-2 ring-white/50 ring-offset-2 ring-offset-slate-900"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-        />
-      )}
+      <div className="absolute top-0 left-0 w-8 h-8 border-l-2 border-t-2 border-cyan-400/50 rounded-tl-2xl" />
+      <div className="absolute top-0 right-0 w-8 h-8 border-r-2 border-t-2 border-purple-400/50 rounded-tr-2xl" />
+      <div className="absolute bottom-0 left-0 w-8 h-8 border-l-2 border-b-2 border-green-400/50 rounded-bl-2xl" />
+      <div className="absolute bottom-0 right-0 w-8 h-8 border-r-2 border-b-2 border-pink-400/50 rounded-br-2xl" />
+      
+      {/* CSS animations */}
+      <style jsx>{`
+        @keyframes quantumWave {
+          0%, 100% { transform: translateX(-100%); opacity: 0; }
+          50% { transform: translateX(100%); opacity: 1; }
+        }
+        
+        @keyframes holographicScan {
+          0% { transform: translateY(-100%); opacity: 0; }
+          50% { opacity: 1; }
+          100% { transform: translateY(100%); opacity: 0; }
+        }
+        
+        @keyframes cyberpunkMatrix {
+          0% { transform: translateY(-100%); opacity: 0; }
+          100% { transform: translateY(100%); opacity: 1; }
+        }
+        
+        @keyframes neuralPulse {
+          0%, 100% { transform: scale(1); opacity: 0.5; }
+          50% { transform: scale(1.1); opacity: 1; }
+        }
+      `}</style>
     </motion.div>
   );
 };
