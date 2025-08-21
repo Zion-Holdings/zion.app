@@ -326,14 +326,50 @@ export default function HomePage() {
       <ServiceAds
         heading="Featured Micro SaaS & AI Services"
         subheading="Transparent pricing, real capabilities, fast onboarding."
-        items={serviceHighlights.slice(0, 8).map((h) => ({
-          title: h.title,
-          description: h.description,
-          price: h.price,
-          features: h.features,
-          link: h.link,
-          contactInfo: h.contactInfo || contactInfo
-        }))}
+        items={[
+          // New high-demand, real services
+          {
+            title: '📮 Email Deliverability Monitor',
+            description: 'DMARC/SPF/DKIM checks, seed-list tests and blocklist monitoring with weekly scorecards.',
+            price: '$59/month',
+            features: ['DMARC/SPF/DKIM validation', 'Seed inbox placement tests', 'Blocklist monitoring', 'Alerts and reports'],
+            link: 'https://ziontechgroup.com/email-deliverability-monitor',
+            contactInfo
+          },
+          {
+            title: '📄 PDF Render & Fill API',
+            description: 'Reliable HTML-to-PDF, form filling, merge and watermark with developer-first APIs.',
+            price: '$39/month',
+            features: ['HTML/URL to PDF', 'AcroForms fill', 'Templates and variables', 'Webhooks and async jobs'],
+            link: 'https://ziontechgroup.com/pdf-render-api',
+            contactInfo
+          },
+          {
+            title: '🏗️ Infrastructure Drift Detector',
+            description: 'Continuously detect and remediate IaC drift across AWS/Azure/GCP with PR-based fixes.',
+            price: '$129/month',
+            features: ['Cloud inventory', 'OPA policy drift rules', 'Auto PRs', 'Slack approvals'],
+            link: 'https://ziontechgroup.com/infrastructure-drift-detector',
+            contactInfo
+          },
+          {
+            title: '⏰ Cron & Jobs Scheduler',
+            description: 'Reliable scheduled jobs with retries, idempotency and regional runners plus alerts.',
+            price: '$29/month',
+            features: ['CRON & human syntax', 'Retries & DLQs', 'Webhooks & SDKs', 'SLOs and alerts'],
+            link: 'https://ziontechgroup.com/cron-job-scheduler',
+            contactInfo
+          },
+          // Existing curated highlights
+          ...serviceHighlights.slice(0, 4).map((h) => ({
+            title: h.title,
+            description: h.description,
+            price: h.price,
+            features: h.features,
+            link: h.link,
+            contactInfo: h.contactInfo || contactInfo
+          }))
+        ]}
       />
 
       {/* Hero Section */}
