@@ -4,13 +4,16 @@ import { motion } from 'framer-motion';
 import { 
   Search, Grid, List,
   Brain, Atom, Shield, Target, Rocket,
-  ArrowRight, Check, Palette, Heart, Truck, GraduationCap
+  ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
+  Users, DollarSign, Settings, TrendingUp, BarChart3, ChevronDown
 } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 import { realMicroSaasServices2025 } from '../data/2025-real-micro-saas-services';
 import { innovativeAIServices2025 } from '../data/2025-innovative-ai-services';
 import { innovativeITServices2025 } from '../data/2025-innovative-it-services';
 import { emergingTechServices2025 } from '../data/2025-emerging-tech-services';
+import { additionalRealServices2025 } from '../data/2025-additional-real-services';
+import { innovativeAIServices2025 as newInnovativeAIServices } from '../data/2025-innovative-ai-it-services';
 
 
 
@@ -18,7 +21,9 @@ const allServices = [
   ...realMicroSaasServices2025,
   ...innovativeAIServices2025,
   ...innovativeITServices2025,
-  ...emergingTechServices2025
+  ...emergingTechServices2025,
+  ...additionalRealServices2025,
+  ...newInnovativeAIServices
 ];
 
 const categories = [
@@ -84,6 +89,48 @@ const categories = [
     icon: <GraduationCap className="w-6 h-6" />,
     color: 'from-yellow-500 to-orange-500',
     description: 'Learning and research platforms'
+  },
+  {
+    id: 'customer-success',
+    name: 'Customer Success',
+    icon: <Users className="w-6 h-6" />,
+    color: 'from-blue-500 to-indigo-600',
+    description: 'AI-powered customer success and retention'
+  },
+  {
+    id: 'financial-technology',
+    name: 'Financial Technology',
+    icon: <DollarSign className="w-6 h-6" />,
+    color: 'from-green-500 to-emerald-600',
+    description: 'Quantum and AI-powered financial solutions'
+  },
+  {
+    id: 'devops-infrastructure',
+    name: 'DevOps & Infrastructure',
+    icon: <Settings className="w-6 h-6" />,
+    color: 'from-purple-500 to-pink-600',
+    description: 'AI-powered DevOps and infrastructure automation'
+  },
+  {
+    id: 'cybersecurity',
+    name: 'Cybersecurity',
+    icon: <Shield className="w-6 h-6" />,
+    color: 'from-red-500 to-pink-600',
+    description: 'Quantum-resistant security solutions'
+  },
+  {
+    id: 'sales-marketing',
+    name: 'Sales & Marketing',
+    icon: <TrendingUp className="w-6 h-6" />,
+    color: 'from-orange-500 to-red-600',
+    description: 'AI-powered sales and marketing automation'
+  },
+  {
+    id: 'data-analytics',
+    name: 'Data & Analytics',
+    icon: <BarChart3 className="w-6 h-6" />,
+    color: 'from-indigo-500 to-purple-600',
+    description: 'Quantum-powered data analytics and insights'
   }
 ];
 
@@ -157,94 +204,157 @@ export default function Services() {
 
       <Layout>
         <div className="min-h-screen bg-black text-white relative overflow-hidden">
-          {/* Background Effects */}
+          {/* Enhanced Futuristic Background Effects */}
           <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(56,189,248,0.1),transparent_50%)]"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(168,85,247,0.1),transparent_50%)]"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(56,189,248,0.15),transparent_50%)]"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(168,85,247,0.15),transparent_50%)]"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(16,185,129,0.1),transparent_50%)]"></div>
+          
+          {/* Animated Quantum Particles */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-cyan-400 rounded-full animate-pulse opacity-60"></div>
+            <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-purple-400 rounded-full animate-ping opacity-40"></div>
+            <div className="absolute top-1/2 left-3/4 w-1.5 h-1.5 bg-green-400 rounded-full animate-bounce opacity-50"></div>
+            <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-pink-400 rounded-full animate-pulse opacity-30"></div>
+          </div>
 
           {/* Main Content */}
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
-            {/* Header */}
+            {/* Enhanced Header */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               className="text-center mb-20"
             >
-              <h1 className="text-5xl md:text-6xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1, delay: 0.2 }}
+                className="mb-6"
+              >
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-500/30 text-cyan-300 text-sm font-medium mb-4">
+                  <span className="w-2 h-2 bg-cyan-400 rounded-full mr-2 animate-pulse"></span>
+                  {allServices.length}+ Revolutionary Services Available
+                </div>
+              </motion.div>
+              
+              <h1 className="text-5xl md:text-7xl font-bold mb-6">
+                <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                   Our Services
                 </span>
               </h1>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              
+              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
                 Discover our comprehensive suite of cutting-edge AI, quantum computing, emerging technology, 
                 and micro SAAS services designed to transform your business and drive innovation.
               </p>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="flex flex-wrap justify-center gap-6 text-sm text-gray-400"
+              >
+                <div className="flex items-center">
+                  <div className="w-2 h-2 bg-green-400 rounded-full mr-2"></div>
+                  AI & Consciousness
+                </div>
+                <div className="flex items-center">
+                  <div className="w-2 h-2 bg-purple-400 rounded-full mr-2"></div>
+                  Quantum Computing
+                </div>
+                <div className="flex items-center">
+                  <div className="w-2 h-2 bg-blue-400 rounded-full mr-2"></div>
+                  Enterprise IT
+                </div>
+                <div className="flex items-center">
+                  <div className="w-2 h-2 bg-pink-400 rounded-full mr-2"></div>
+                  Micro SAAS
+                </div>
+              </motion.div>
             </motion.div>
 
-            {/* Search and Filters */}
+            {/* Enhanced Search and Filters */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="mb-12"
             >
-              <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6">
-                <div className="flex flex-col lg:flex-row gap-4 items-center">
-                  {/* Search */}
+              <div className="bg-gray-900/60 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 shadow-2xl shadow-cyan-500/10">
+                <div className="flex flex-col lg:flex-row gap-6 items-center">
+                  {/* Enhanced Search */}
                   <div className="relative flex-1 w-full lg:w-auto">
-                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                    <input
-                      type="text"
-                      placeholder="Search services..."
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                      className="w-full lg:w-96 pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50"
-                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-2xl blur-xl"></div>
+                    <div className="relative">
+                      <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-cyan-400 w-6 h-6" />
+                      <input
+                        type="text"
+                        placeholder="Search our revolutionary services..."
+                        value={searchQuery}
+                                              onChange={(e) => setSearchQuery(e.target.value)}
+                        className="w-full lg:w-96 pl-12 pr-4 py-4 bg-gray-800/50 border border-gray-700/50 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 transition-all duration-300 hover:border-cyan-500/30"
+                      />
+                    </div>
                   </div>
 
-                  {/* Category Filter */}
+                  {/* Enhanced Category Filter */}
                   <div className="flex items-center space-x-4">
-                    <select
-                      value={selectedCategory}
-                      onChange={(e) => setSelectedCategory(e.target.value)}
-                      className="px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50"
-                    >
-                      <option value="all">All Categories</option>
-                      {categories.map((category) => (
-                        <option key={category.id} value={category.id}>
-                          {category.name}
-                        </option>
-                      ))}
-                    </select>
+                    <div className="relative">
+                      <select
+                        value={selectedCategory}
+                        onChange={(e) => setSelectedCategory(e.target.value)}
+                        className="px-6 py-4 bg-gray-800/50 border border-gray-700/50 rounded-2xl text-white focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 transition-all duration-300 hover:border-cyan-500/30 appearance-none pr-10"
+                      >
+                        <option value="all">All Categories</option>
+                        {categories.map((category) => (
+                          <option key={category.id} value={category.id}>
+                            {category.name}
+                          </option>
+                        ))}
+                      </select>
+                      <div className="absolute right-3 top-1/2 transform -translate-y-1/2 text-cyan-400 pointer-events-none">
+                        <ChevronDown className="w-5 h-5" />
+                      </div>
+                    </div>
 
-                    {/* Sort */}
-                    <select
-                      value={sortBy}
-                      onChange={(e) => setSortBy(e.target.value)}
-                      className="px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50"
-                    >
-                      {sortOptions.map((option) => (
-                        <option key={option.value} value={option.value}>
-                          {option.label}
-                        </option>
-                      ))}
-                    </select>
+                    {/* Enhanced Sort */}
+                    <div className="relative">
+                      <select
+                        value={sortBy}
+                        onChange={(e) => setSortBy(e.target.value)}
+                        className="px-6 py-4 bg-gray-800/50 border border-gray-700/50 rounded-2xl text-white focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 transition-all duration-300 hover:border-cyan-500/30 appearance-none pr-10"
+                      >
+                        {sortOptions.map((option) => (
+                          <option key={option.value} value={option.value}>
+                            {option.label}
+                          </option>
+                        ))}
+                      </select>
+                      <div className="absolute right-3 top-1/2 transform -translate-y-1/2 text-cyan-400 pointer-events-none">
+                        <ChevronDown className="w-5 h-5" />
+                      </div>
+                    </div>
 
-                    {/* View Mode */}
-                    <div className="flex items-center space-x-2 bg-gray-800/50 rounded-xl p-1">
+                    {/* Enhanced View Mode */}
+                    <div className="flex items-center space-x-2 bg-gray-800/50 rounded-2xl p-1.5 border border-gray-700/50">
                       <button
                         onClick={() => setViewMode('grid')}
-                        className={`p-2 rounded-lg transition-colors duration-200 ${
-                          viewMode === 'grid' ? 'bg-cyan-500/20 text-cyan-400' : 'text-gray-400 hover:text-white'
+                        className={`p-3 rounded-xl transition-all duration-300 ${
+                          viewMode === 'grid' 
+                            ? 'bg-gradient-to-r from-cyan-500 to-purple-500 text-white shadow-lg shadow-cyan-500/25' 
+                            : 'text-gray-400 hover:text-white hover:bg-gray-700/50'
                         }`}
                       >
                         <Grid className="w-5 h-5" />
                       </button>
                       <button
                         onClick={() => setViewMode('list')}
-                        className={`p-2 rounded-lg transition-colors duration-200 ${
-                          viewMode === 'list' ? 'bg-cyan-500/20 text-cyan-400' : 'text-gray-400 hover:text-white'
+                        className={`p-3 rounded-xl transition-all duration-300 ${
+                          viewMode === 'list' 
+                            ? 'bg-gradient-to-r from-cyan-500 to-purple-500 text-white shadow-lg shadow-cyan-500/25' 
+                            : 'text-gray-400 hover:text-white hover:bg-gray-700/50'
                         }`}
                       >
                         <List className="w-5 h-5" />
@@ -253,25 +363,34 @@ export default function Services() {
                   </div>
                 </div>
 
-                {/* Results Count */}
-                <div className="mt-4 text-sm text-gray-400">
-                  Showing {filteredServices.length} of {allServices.length} services
+                {/* Enhanced Results Count */}
+                <div className="mt-6 text-center">
+                  <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-500/30">
+                    <span className="text-cyan-300 font-medium">
+                      Showing {filteredServices.length} of {allServices.length} revolutionary services
+                    </span>
+                  </div>
                 </div>
               </div>
             </motion.div>
 
-            {/* Category Overview */}
+            {/* Enhanced Category Overview */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="mb-16"
+              className="mb-20"
             >
-              <h2 className="text-3xl font-bold text-center mb-12">
-                <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                  Service Categories
-                </span>
-              </h2>
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                  <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                    Service Categories
+                  </span>
+                </h2>
+                <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+                  Explore our comprehensive range of cutting-edge services across multiple domains
+                </p>
+              </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {categories.map((category, index) => {
@@ -282,28 +401,34 @@ export default function Services() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.8, delay: 0.6 + index * 0.1 }}
-                      className="bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-gray-600/50 transition-all duration-300 cursor-pointer group"
+                      className="bg-gray-900/60 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 hover:border-cyan-500/30 hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-500 cursor-pointer group"
                       onClick={() => setSelectedCategory(category.id)}
                     >
-                      <div className={`w-16 h-16 bg-gradient-to-r ${category.color} rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                      <div className={`w-20 h-20 bg-gradient-to-r ${category.color} rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                         {category.icon}
                       </div>
                       
-                      <h3 className="text-xl font-bold text-white mb-2">{category.name}</h3>
-                      <p className="text-gray-400 text-sm mb-4">{category.description}</p>
+                      <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors duration-300">{category.name}</h3>
+                      <p className="text-gray-300 text-base mb-6 leading-relaxed">{category.description}</p>
                       
-                      <div className="grid grid-cols-3 gap-4 text-center">
-                        <div>
-                          <div className="text-2xl font-bold text-cyan-400">{stats.count}</div>
-                          <div className="text-xs text-gray-400">Services</div>
+                      <div className="grid grid-cols-3 gap-6 text-center">
+                        <div className="group-hover:scale-105 transition-transform duration-300">
+                          <div className="text-3xl font-bold text-cyan-400">{stats.count}</div>
+                          <div className="text-sm text-gray-400">Services</div>
                         </div>
-                        <div>
-                          <div className="text-2xl font-bold text-purple-400">${stats.avgPrice}</div>
-                          <div className="text-xs text-gray-400">Avg Price</div>
+                        <div className="group-hover:scale-105 transition-transform duration-300">
+                          <div className="text-3xl font-bold text-purple-400">${stats.avgPrice}</div>
+                          <div className="text-sm text-gray-400">Avg Price</div>
                         </div>
-                        <div>
-                          <div className="text-2xl font-bold text-green-400">{stats.avgRating}</div>
-                          <div className="text-xs text-gray-400">Rating</div>
+                        <div className="group-hover:scale-105 transition-transform duration-300">
+                          <div className="text-3xl font-bold text-green-400">{stats.avgRating}</div>
+                          <div className="text-sm text-gray-400">Rating</div>
+                        </div>
+                      </div>
+                      
+                      <div className="mt-6 pt-6 border-t border-gray-700/50">
+                        <div className="text-cyan-400 text-sm font-medium group-hover:text-cyan-300 transition-colors duration-300">
+                          Click to explore →
                         </div>
                       </div>
                     </motion.div>
@@ -325,73 +450,86 @@ export default function Services() {
               </h2>
 
               {viewMode === 'grid' ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {sortedServices.map((service, index) => (
                     <motion.div
                       key={service.id}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.8, delay: 1 + index * 0.05 }}
-                      className="bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-gray-600/50 transition-all duration-300 hover:transform hover:scale-105 group"
+                      className="bg-gray-900/60 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 hover:border-cyan-500/30 hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-500 hover:transform hover:scale-105 group relative overflow-hidden"
                     >
-                      {/* Service Header */}
-                      <div className="flex items-start justify-between mb-4">
-                        <div className="flex-1">
-                          <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-200">
-                            {service.name}
-                          </h3>
-                          <p className="text-sm text-gray-400">{service.tagline}</p>
+                      {/* Animated Background */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-cyan-500/10 to-transparent rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
+                      {/* Enhanced Service Header */}
+                      <div className="relative z-10">
+                        <div className="flex items-start justify-between mb-6">
+                          <div className="flex-1">
+                            <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">
+                              {service.name}
+                            </h3>
+                            <p className="text-base text-gray-300 leading-relaxed">{service.tagline}</p>
+                          </div>
+                          {service.popular && (
+                            <span className="px-3 py-1.5 text-sm bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-full shadow-lg shadow-pink-500/25">
+                              ⭐ Popular
+                            </span>
+                          )}
                         </div>
-                        {service.popular && (
-                          <span className="px-2 py-1 text-xs bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-full">
-                            Popular
-                          </span>
-                        )}
+                        
+                        {/* Service Icon */}
+                        <div className="text-4xl mb-4">{service.icon}</div>
                       </div>
 
-                      {/* Price */}
-                      <div className="mb-4">
-                        <div className="text-2xl font-bold text-white">${service.price.monthly}</div>
-                        <div className="text-sm text-gray-400">/month • {service.price.trialDays}-day trial</div>
+                      {/* Enhanced Price */}
+                      <div className="mb-6 relative z-10">
+                        <div className="bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-500/30 rounded-2xl p-4">
+                          <div className="text-3xl font-bold text-white mb-1">${service.price.monthly}</div>
+                          <div className="text-sm text-gray-300">/month</div>
+                          <div className="text-xs text-cyan-400 font-medium mt-1">{service.price.trialDays}-day free trial</div>
+                        </div>
                       </div>
 
-                      {/* Features */}
-                      <div className="mb-4">
-                        <div className="text-sm text-gray-400 mb-2">Key Features:</div>
-                        <ul className="space-y-1">
+                      {/* Enhanced Features */}
+                      <div className="mb-6 relative z-10">
+                        <div className="text-sm text-cyan-400 font-medium mb-3">✨ Key Features</div>
+                        <ul className="space-y-2">
                           {service.features.slice(0, 3).map((feature, idx) => (
-                            <li key={idx} className="text-xs text-gray-300 flex items-center">
-                              <Check className="w-3 h-3 text-green-400 mr-2 flex-shrink-0" />
+                            <li key={idx} className="text-sm text-gray-300 flex items-center group-hover:text-white transition-colors duration-300">
+                              <Check className="w-4 h-4 text-green-400 mr-3 flex-shrink-0" />
                               {feature}
                             </li>
                           ))}
                         </ul>
                       </div>
 
-                      {/* Stats */}
-                      <div className="grid grid-cols-3 gap-2 mb-4 text-center text-xs">
-                        <div className="bg-gray-800/30 rounded-lg p-2">
-                          <div className="text-cyan-400 font-semibold">{service.rating}/5</div>
-                          <div className="text-gray-400">Rating</div>
+                      {/* Enhanced Stats */}
+                      <div className="grid grid-cols-3 gap-3 mb-6 text-center relative z-10">
+                        <div className="bg-gray-800/50 rounded-xl p-3 border border-gray-700/50 group-hover:border-cyan-500/30 transition-colors duration-300">
+                          <div className="text-cyan-400 font-bold text-lg">{service.rating}/5</div>
+                          <div className="text-gray-300 text-xs">Rating</div>
                         </div>
-                        <div className="bg-gray-800/30 rounded-lg p-2">
-                          <div className="text-purple-400 font-semibold">{service.customers}+</div>
-                          <div className="text-gray-400">Customers</div>
+                        <div className="bg-gray-800/50 rounded-xl p-3 border border-gray-700/50 group-hover:border-purple-500/30 transition-colors duration-300">
+                          <div className="text-purple-400 font-bold text-lg">{service.customers}+</div>
+                          <div className="text-gray-300 text-xs">Customers</div>
                         </div>
-                        <div className="bg-gray-800/30 rounded-lg p-2">
-                          <div className="text-green-400 font-semibold">{service.price.setupTime}</div>
-                          <div className="text-gray-400">Setup</div>
+                        <div className="bg-gray-800/50 rounded-xl p-3 border border-gray-700/50 group-hover:border-green-500/30 transition-colors duration-300">
+                          <div className="text-green-400 font-bold text-lg">{service.price.setupTime}</div>
+                          <div className="text-gray-300 text-xs">Setup</div>
                         </div>
                       </div>
 
-                      {/* CTA */}
-                      <a
-                        href={service.link}
-                        className="block w-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white py-2 px-4 rounded-lg text-center text-sm font-medium hover:from-cyan-600 hover:to-purple-700 transition-all duration-200 transform hover:scale-105"
-                      >
-                        Learn More
-                        <ArrowRight className="w-4 h-4 inline ml-2" />
-                      </a>
+                      {/* Enhanced CTA */}
+                      <div className="relative z-10">
+                        <a
+                          href={service.link}
+                          className="block w-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white py-4 px-6 rounded-2xl text-center font-semibold text-base hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25 group-hover:shadow-xl group-hover:shadow-cyan-500/40"
+                        >
+                          Explore Service
+                          <ArrowRight className="w-5 h-5 inline ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                        </a>
+                      </div>
                     </motion.div>
                   ))}
                 </div>
@@ -462,33 +600,63 @@ export default function Services() {
               )}
             </motion.div>
 
-            {/* CTA Section */}
+            {/* Enhanced CTA Section */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.2 }}
-              className="text-center mt-20"
+              className="text-center mt-24"
             >
-              <div className="bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-cyan-500/20 rounded-3xl p-12">
-                <h2 className="text-4xl font-bold text-white mb-6">
-                  Ready to Get Started?
-                </h2>
-                <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                  Choose from our comprehensive suite of services and start transforming your business today.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a
-                    href="/contact"
-                    className="bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-200 transform hover:scale-105"
+              <div className="relative overflow-hidden bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10 border border-cyan-500/20 rounded-3xl p-16 shadow-2xl shadow-cyan-500/10">
+                {/* Animated Background Elements */}
+                <div className="absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-cyan-500/20 to-transparent rounded-full blur-3xl"></div>
+                <div className="absolute bottom-0 right-0 w-64 h-64 bg-gradient-to-br from-purple-500/20 to-transparent rounded-full blur-3xl"></div>
+                
+                <div className="relative z-10">
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 1, delay: 1.4 }}
+                    className="mb-8"
                   >
-                    Get Started Today
-                  </a>
-                  <a
-                    href="/pricing"
-                    className="border border-gray-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:border-gray-500 hover:bg-gray-800/50 transition-all duration-200"
-                  >
-                    View Pricing
-                  </a>
+                    <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-500/30 text-cyan-300 text-sm font-medium mb-6">
+                      <span className="w-2 h-2 bg-cyan-400 rounded-full mr-2 animate-pulse"></span>
+                      Transform Your Business Today
+                    </div>
+                  </motion.div>
+                  
+                  <h2 className="text-5xl md:text-6xl font-bold text-white mb-8">
+                    <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                      Ready to Get Started?
+                    </span>
+                  </h2>
+                  
+                  <p className="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
+                    Choose from our comprehensive suite of revolutionary services and start transforming your business today with cutting-edge AI, quantum computing, and emerging technologies.
+                  </p>
+                  
+                  <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                    <motion.a
+                      href="/contact"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-10 py-5 rounded-2xl font-bold text-xl hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-500/40"
+                    >
+                      🚀 Get Started Today
+                    </motion.a>
+                    <motion.a
+                      href="/pricing"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="border-2 border-cyan-500/50 text-white px-10 py-5 rounded-2xl font-bold text-xl hover:border-cyan-400 hover:bg-cyan-500/10 transition-all duration-300 backdrop-blur-sm"
+                    >
+                      💰 View Pricing
+                    </motion.a>
+                  </div>
+                  
+                  <div className="mt-10 text-sm text-gray-400">
+                    <p>Need help choosing? <a href="/contact" className="text-cyan-400 hover:text-cyan-300 underline">Contact our experts</a> for personalized guidance.</p>
+                  </div>
                 </div>
               </div>
             </motion.div>
