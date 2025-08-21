@@ -103,6 +103,14 @@ export default function HomePage() {
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
                 <Button 
+                  href="/market-pricing" 
+                  variant="secondary"
+                  className="text-lg px-8 py-4"
+                >
+                  See Market Pricing
+                  <TrendingUp className="ml-2 w-5 h-5" />
+                </Button>
+                <Button 
                   href="/contact" 
                   variant="secondary"
                   className="text-lg px-8 py-4"

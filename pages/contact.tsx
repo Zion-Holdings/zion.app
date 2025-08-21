@@ -37,7 +37,7 @@ export default function ContactPage() {
       description: 'Unified AI processing across text, image, video, and audio. Achieve 400% ROI through comprehensive insights.',
       price: '$2,499/month',
       features: ['Cross-modal data fusion', 'Real-time processing', 'Enterprise security'],
-      link: 'https://ziontechgroup.com/ai-multimodal-fusion-platform',
+      link: 'https://ziontechgroup.com/services/ai-multimodal-fusion-platform',
       color: 'from-purple-500 to-indigo-600'
     },
     {
@@ -45,7 +45,7 @@ export default function ContactPage() {
       description: 'Next-generation security with continuous verification. Achieve 400% ROI through reduced security incidents.',
       price: '$4,999/month',
       features: ['Continuous verification', 'Micro-segmentation', 'Real-time threat detection'],
-      link: 'https://ziontechgroup.com/zero-trust-network-architecture',
+      link: 'https://ziontechgroup.com/services/zero-trust-network-architecture',
       color: 'from-red-500 to-pink-600'
     },
     {
@@ -53,7 +53,7 @@ export default function ContactPage() {
       description: 'Create unique brand personalities that resonate with your audience. Achieve 250% ROI within 3 months.',
       price: '$89/month',
       features: ['AI-powered generation', 'Brand voice guidelines', 'Performance analytics'],
-      link: 'https://ziontechgroup.com/ai-brand-personality-generator',
+      link: 'https://ziontechgroup.com/services/ai-brand-personality-generator',
       color: 'from-pink-500 to-rose-600'
     },
     {
@@ -61,7 +61,7 @@ export default function ContactPage() {
       description: 'Intelligent edge computing management and optimization. Achieve 350% ROI within 5 months.',
       price: '$3,499/month',
       features: ['Distributed management', 'Real-time optimization', 'Edge-to-cloud integration'],
-      link: 'https://ziontechgroup.com/edge-computing-orchestration',
+      link: 'https://ziontechgroup.com/services/edge-computing-orchestration',
       color: 'from-blue-500 to-cyan-600'
     }
   ];
