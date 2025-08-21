@@ -7,12 +7,15 @@ import {
   Brain, Rocket, Dna, DollarSign, Lock, Globe, 
   Wifi, Truck, Gamepad2, Bot, Factory, Car
 } from 'lucide-react';
-import QuantumHolographicMatrixBackground from '../components/ui/QuantumHolographicMatrixBackground';
-import UltraFuturisticServiceCard from '../components/ui/UltraFuturisticServiceCard';
+import EnhancedFuturisticBackground from '../components/ui/EnhancedFuturisticBackground';
+import EnhancedServiceCard from '../components/ui/EnhancedServiceCard';
+import EnhancedNavigation from '../components/layout/EnhancedNavigation';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { innovativeMicroSaasServices } from '../data/innovative-micro-saas-services';
 import { extraServices } from '../data/extra-services';
 import { additionalEnhancedServices } from '../data/additional-real-services';
+import { nextGenInnovativeServices } from '../data/next-gen-innovative-services';
+import { enterpriseAIServices } from '../data/enterprise-ai-services';
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -25,7 +28,9 @@ export default function ServicesPage() {
     ...enhancedRealMicroSaasServices,
     ...innovativeMicroSaasServices,
     ...extraServices,
-    ...additionalEnhancedServices
+    ...additionalEnhancedServices,
+    ...nextGenInnovativeServices,
+    ...enterpriseAIServices
   ];
 
   // Categories with icons
@@ -107,8 +112,9 @@ export default function ServicesPage() {
   };
 
   return (
-    <QuantumHolographicMatrixBackground intensity={1.0} variant="quantum">
-      <div className="min-h-screen">
+    <EnhancedFuturisticBackground intensity={1.3} variant="neural">
+      <EnhancedNavigation />
+      <div className="min-h-screen pt-16">
         <Head>
           <title>Services - Zion Tech Group | Revolutionary Micro SaaS Solutions</title>
           <meta name="description" content="Explore 300+ revolutionary micro SaaS services including quantum AI, space technology, biotech, cybersecurity, and more. Transform your business today." />
@@ -269,7 +275,7 @@ export default function ServicesPage() {
                   variants={itemVariants}
                   className={viewMode === 'list' ? 'w-full' : ''}
                 >
-                  <UltraFuturisticServiceCard service={service} />
+                  <EnhancedServiceCard service={service} />
                 </motion.div>
               ))}
             </motion.div>
@@ -353,6 +359,6 @@ export default function ServicesPage() {
           </div>
         </section>
       </div>
-    </QuantumHolographicMatrixBackground>
+    </EnhancedFuturisticBackground>
   );
 }
