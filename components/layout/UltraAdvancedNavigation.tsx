@@ -17,13 +17,13 @@ const contactInfo = {
 
 const serviceCategories = [
   {
-    title: 'AI & Machine Learning',
+    title: 'Revolutionary 2025 AI',
     icon: Brain,
     services: [
-      { name: 'AI Business Intelligence Suite', href: '/ai-business-intelligence-suite', description: 'Transform data into actionable insights with AI', price: '$299/month' },
-      { name: 'AI Legal Document Automation', href: '/ai-legal-document-automation', description: 'Automate legal document creation and review', price: '$199/month' },
-      { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics', description: 'Revolutionary AI-powered medical diagnostics', price: '$799/month' },
-      { name: 'AI Metaverse Development', href: '/ai-metaverse-development-platform', description: 'Create immersive metaverse experiences with AI', price: '$499/month' }
+      { name: 'AI Consciousness Simulator', href: '/ai-consciousness-simulator', description: 'Simulate human-like consciousness in AI systems', price: '$2,999/month' },
+      { name: 'AI Quantum Hybrid Computing', href: '/ai-quantum-hybrid-computing', description: 'Hybrid AI-Quantum computing for complex problem solving', price: '$4,999/month' },
+      { name: 'AI Multimodal Fusion Platform', href: '/ai-multimodal-fusion-platform', description: 'Unified AI platform for text, image, audio, and video processing', price: '$1,999/month' },
+      { name: 'AI Autonomous Decision Engine', href: '/ai-autonomous-decision-engine', description: 'AI system that makes complex decisions autonomously', price: '$3,499/month' }
     ]
   },
   {
@@ -57,30 +57,31 @@ const serviceCategories = [
     ]
   },
   {
-    title: 'Enterprise IT',
+    title: 'Revolutionary IT Infrastructure',
     icon: Shield,
     services: [
-      { name: 'Zero Trust Architecture', href: '/zero-trust-network-architecture', description: 'Advanced network security', price: 'Custom pricing' },
-      { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration', description: 'Distributed computing management', price: 'Custom pricing' },
-      { name: '5G Private Networks', href: '/5g-private-network-solutions', description: 'High-speed private networks', price: 'Custom pricing' },
-      { name: 'Blockchain Infrastructure', href: '/blockchain-infrastructure-platform', description: 'Secure blockchain solutions', price: 'Custom pricing' }
+      { name: 'Zero Trust Network Architecture', href: '/zero-trust-network-architecture', description: 'Next-generation security with zero trust principles', price: '$5,999/month' },
+      { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration', description: 'Intelligent edge computing management and optimization', price: '$3,999/month' },
+      { name: '5G Private Network Solutions', href: '/5g-private-network-solutions', description: 'Enterprise-grade 5G private networks', price: '$7,999/month' },
+      { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure', description: 'Quantum computing in the cloud for everyone', price: '$2,999/month' }
     ]
   },
   {
-    title: 'Innovative SaaS',
+    title: 'Revolutionary Micro SaaS',
     icon: Zap,
     services: [
-      { name: 'AI Autonomous Business', href: '/ai-autonomous-business-platform', description: 'Run your business with AI', price: 'Custom pricing' },
-      { name: 'AI Creative Studio', href: '/ai-creative-studio-platform', description: 'Unlimited AI-powered creativity', price: 'Custom pricing' },
-      { name: 'AI Healthcare Companion', href: '/ai-healthcare-companion', description: 'Personalized healthcare AI', price: 'Custom pricing' },
-      { name: 'Quantum Logistics Platform', href: '/quantum-logistics-platform', description: 'Optimize supply chains with quantum', price: 'Custom pricing' }
+      { name: 'AI Brand Personality Generator', href: '/ai-brand-personality-generator', description: 'Create unique brand personalities with AI', price: '$299/month' },
+      { name: 'Virtual Event Hologram Platform', href: '/virtual-event-hologram-platform', description: 'Create immersive holographic virtual events', price: '$799/month' },
+      { name: 'AI Meeting Transcriber Pro', href: '/ai-meeting-transcriber-pro', description: 'Advanced AI-powered meeting transcription and insights', price: '$199/month' },
+      { name: 'AI Mental Health Companion', href: '/ai-mental-health-companion', description: 'AI-powered mental health support and wellness', price: '$149/month' }
     ]
   }
 ];
 
 const companyLinks = [
   { name: 'About Us', href: '/about' },
-  { name: 'Careers', href: '/careers' },
+  { name: 'Revolutionary 2025 Services', href: '/revolutionary-2025-services-showcase' },
+  { name: 'Revolutionary 2025 Pricing', href: '/revolutionary-2025-pricing' },
   { name: 'News', href: '/news' },
   { name: 'Case Studies', href: '/case-studies' },
   { name: 'Blog', href: '/blog' },
