@@ -17,6 +17,9 @@ import { innovativeAIServices } from '../data/innovative-ai-services';
 import { quantumSpaceServices } from '../data/quantum-space-services';
 import { enterpriseITServices } from '../data/enterprise-it-services';
 import { professionalServices } from '../data/professional-services';
+import { nextGenerationAIServices } from '../data/next-generation-ai-services';
+import { cuttingEdgeITServices } from '../data/cutting-edge-it-services';
+import { innovativeMicroSaasV2Services } from '../data/innovative-micro-saas-v2';
 
 export default function HomePage() {
   const contactInfo = {
@@ -34,7 +37,10 @@ export default function HomePage() {
     ...additionalEnhancedServices,
     ...innovativeAIServices,
     ...quantumSpaceServices,
-    ...enterpriseITServices
+    ...enterpriseITServices,
+    ...nextGenerationAIServices,
+    ...cuttingEdgeITServices,
+    ...innovativeMicroSaasV2Services
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);
@@ -70,17 +76,25 @@ export default function HomePage() {
                 Revolutionary AI, Quantum Computing & IT Services
               </p>
               <p className="text-lg md:text-xl text-gray-400 mb-12 max-w-3xl mx-auto">
-                500+ cutting-edge services delivering 1000% ROI. From neural quantum brain interfaces to enterprise IT infrastructure.
+                600+ cutting-edge services delivering 1000% ROI. From neural quantum brain interfaces to enterprise IT infrastructure.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
                 <Button 
-                  href="/services" 
+                  href="/enhanced-services-showcase" 
                   variant="primary"
                   className="text-lg px-8 py-4"
                 >
-                  Explore 500+ Services
+                  Explore 600+ Services
                   <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+                <Button 
+                  href="/services" 
+                  variant="secondary"
+                  className="text-lg px-8 py-4"
+                >
+                  View All Services
+                  <Rocket className="ml-2 w-5 h-5" />
                 </Button>
                 <Button 
                   href="/contact" 

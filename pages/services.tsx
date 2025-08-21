@@ -13,6 +13,9 @@ import { quantumSpaceServices } from '../data/quantum-space-services';
 import { enterpriseITServices } from '../data/enterprise-it-services';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { professionalServices } from '../data/professional-services';
+import { nextGenerationAIServices } from '../data/next-generation-ai-services';
+import { cuttingEdgeITServices } from '../data/cutting-edge-it-services';
+import { innovativeMicroSaasV2Services } from '../data/innovative-micro-saas-v2';
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -25,15 +28,21 @@ export default function ServicesPage() {
     ...quantumSpaceServices,
     ...enterpriseITServices,
     ...enhancedRealMicroSaasServices,
-    ...professionalServices
+    ...professionalServices,
+    ...nextGenerationAIServices,
+    ...cuttingEdgeITServices,
+    ...innovativeMicroSaasV2Services
   ];
 
   const categories = [
     { id: 'all', name: 'All Services', icon: '🚀', count: allServices.length },
-    { id: 'ai', name: 'AI & Machine Learning', icon: '🧠', count: innovativeAIServices.length },
+    { id: 'ai', name: 'AI & Machine Learning', icon: '🧠', count: innovativeAIServices.length + nextGenerationAIServices.length },
     { id: 'quantum', name: 'Quantum & Space', icon: '⚛️', count: quantumSpaceServices.length },
-    { id: 'enterprise', name: 'Enterprise IT', icon: '🏢', count: enterpriseITServices.length },
-    { id: 'micro-saas', name: 'Micro SaaS', icon: '💻', count: enhancedRealMicroSaasServices.length }
+    { id: 'enterprise', name: 'Enterprise IT', icon: '🏢', count: enterpriseITServices.length + cuttingEdgeITServices.length },
+    { id: 'micro-saas', name: 'Micro SaaS', icon: '💻', count: enhancedRealMicroSaasServices.length + innovativeMicroSaasV2Services.length },
+    { id: 'next-gen-ai', name: 'Next-Gen AI', icon: '🔮', count: nextGenerationAIServices.length },
+    { id: 'cutting-edge-it', name: 'Cutting-Edge IT', icon: '⚡', count: cuttingEdgeITServices.length },
+    { id: 'innovative-saas', name: 'Innovative SaaS', icon: '💎', count: innovativeMicroSaasV2Services.length }
   ];
 
   const priceRanges = [
@@ -64,7 +73,10 @@ export default function ServicesPage() {
                              (selectedCategory === 'ai' && (service.category.includes('AI') || service.category.includes('Machine Learning'))) ||
                              (selectedCategory === 'quantum' && (service.category.includes('Quantum') || service.category.includes('Space'))) ||
                              (selectedCategory === 'enterprise' && (service.category.includes('Enterprise') || service.category.includes('IT'))) ||
-                             (selectedCategory === 'micro-saas' && service.category.includes('Micro SaaS'));
+                             (selectedCategory === 'micro-saas' && service.category.includes('Micro SaaS')) ||
+                             (selectedCategory === 'next-gen-ai' && nextGenerationAIServices.includes(service)) ||
+                             (selectedCategory === 'cutting-edge-it' && cuttingEdgeITServices.includes(service)) ||
+                             (selectedCategory === 'innovative-saas' && innovativeMicroSaasV2Services.includes(service));
       
       const matchesPrice = selectedPriceRange === 'all' ||
                           (selectedPriceRange === 'low' && parseFloat(service.price.replace(/[$,]/g, '')) < 1000) ||
