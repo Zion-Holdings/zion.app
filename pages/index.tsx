@@ -7,18 +7,19 @@ import {
   ShieldCheck, Globe, Target, Users, Award, Rocket
 } from 'lucide-react';
 import Button from '../components/ui/Button';
-import EnhancedQuantumBackground from '../components/ui/EnhancedQuantumBackground';
+import UltraAdvancedFuturisticMatrixBackground from '../components/ui/UltraAdvancedFuturisticMatrixBackground';
 import UltraFuturisticServiceCard from '../components/ui/UltraFuturisticServiceCard';
 import ServiceAds from '../components/sections/ServiceAds';
+import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
 import Card from '../components/ui/Card';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
 import { additionalEnhancedServices } from '../data/additional-real-services';
 import { innovativeMicroSaasServices } from '../data/innovative-micro-saas-services';
-import { emergingTechServices } from '../data/emerging-tech-services';
-import { nextGenAIServices } from '../data/next-gen-ai-services';
-import { comprehensiveITServices } from '../data/comprehensive-it-services';
+import { innovativeAIServices } from '../data/innovative-ai-services';
+import { quantumSpaceServices } from '../data/quantum-space-services';
+import { enterpriseITServices } from '../data/enterprise-it-services';
 
 export default function HomePage() {
   const heroStats = [
@@ -175,9 +176,9 @@ export default function HomePage() {
     ...innovativeMicroSaasServices,
     ...extraServices,
     ...additionalEnhancedServices,
-    ...emergingTechServices,
-    ...nextGenAIServices,
-    ...comprehensiveITServices
+    ...innovativeAIServices,
+    ...quantumSpaceServices,
+    ...enterpriseITServices
   ];
 
   // Get featured services (most popular and innovative)
@@ -187,331 +188,123 @@ export default function HomePage() {
     .slice(0, 12);
 
   return (
-    <EnhancedQuantumBackground intensity={1.2} variant="quantum">
-      <Head>
-        <title>Zion Tech Group - Revolutionary AI, Quantum & IT Services | 500+ Solutions</title>
-        <meta name="description" content="Zion Tech Group offers 500+ revolutionary AI, quantum computing, and IT services. Achieve 1000% ROI with our cutting-edge solutions. Contact: +1 302 464 0950" />
-        <meta name="keywords" content="AI services, quantum computing, IT services, micro SaaS, cybersecurity, cloud migration, neural interface, quantum internet" />
-        <meta name="author" content="Zion Tech Group" />
-        <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Zion Tech Group - Revolutionary AI, Quantum & IT Services" />
-        <meta property="og:description" content="500+ cutting-edge services with 1000% ROI guarantee. Contact: +1 302 464 0950" />
-        <meta property="og:url" content="https://ziontechgroup.com" />
-        <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://ziontechgroup.com" />
-      </Head>
+    <UltraAdvancedFuturisticMatrixBackground intensity="high" colorScheme="quantum">
+      <div className="min-h-screen">
+        <Head>
+          <title>Zion Tech Group - Revolutionary AI, Quantum & IT Services | 500+ Solutions</title>
+          <meta name="description" content="Zion Tech Group offers 500+ revolutionary AI, quantum computing, and IT services. Achieve 1000% ROI with our cutting-edge solutions. Contact: +1 302 464 0950" />
+          <meta name="keywords" content="AI services, quantum computing, IT services, micro SaaS, cybersecurity, cloud migration, neural interface, quantum internet" />
+          <meta name="author" content="Zion Tech Group" />
+          <meta name="robots" content="index, follow" />
+          <meta property="og:title" content="Zion Tech Group - Revolutionary AI, Quantum & IT Services" />
+          <meta property="og:description" content="500+ cutting-edge services with 1000% ROI guarantee. Contact: +1 302 464 0950" />
+          <meta property="og:url" content="https://ziontechgroup.com" />
+          <meta property="og:type" content="website" />
+          <link rel="canonical" href="https://ziontechgroup.com" />
+        </Head>
 
-      {/* Hero Section */}
-      <section className="relative z-10 pt-20 pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-6">
-              Zion Tech Group
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
-              Revolutionary AI, Quantum Computing & IT Services
-            </p>
-            <p className="text-lg md:text-xl text-gray-400 mb-12 max-w-3xl mx-auto">
-              500+ cutting-edge services delivering 1000% ROI. From neural quantum brain interfaces to enterprise IT infrastructure.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-              <Button 
-                href="/services" 
-                variant="primary"
-                className="text-lg px-8 py-4"
-              >
-                Explore 500+ Services
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-              <Button 
-                href="/contact" 
-                variant="secondary"
-                className="text-lg px-8 py-4"
-              >
-                Get Started Today
-                <Phone className="ml-2 w-5 h-5" />
-              </Button>
-            </div>
-          </motion.div>
-
-          {/* Hero Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-16"
-          >
-            {heroStats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className={`${stat.color} mb-2 flex justify-center`}>
-                  {stat.icon}
-                </div>
-                <div className={`${stat.color} text-2xl md:text-3xl font-bold mb-1`}>
-                  {stat.value}
-                </div>
-                <div className="text-sm text-gray-400">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Service Highlights Section */}
-      <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Revolutionary Services
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Cutting-edge solutions that redefine what's possible in technology
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-            {serviceHighlights.map((service, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className={`bg-gradient-to-br ${service.color} p-8 h-full`}>
-                  <div className="flex items-start justify-between mb-4">
-                    <h3 className="text-2xl font-bold text-white mb-2">
-                      {service.title}
-                    </h3>
-                    <div className="text-3xl">{service.title.split(' ')[0]}</div>
-                  </div>
-                  
-                  <p className="text-gray-100 mb-6 text-lg">
-                    {service.description}
-                  </p>
-
-                  <div className="mb-6">
-                    <div className="text-2xl font-bold text-white mb-2">
-                      {service.price}
-                    </div>
-                    <div className="text-sm text-gray-200 mb-4">
-                      {service.marketData}
-                    </div>
-                    <div className="text-sm text-gray-200 mb-2">
-                      <strong>Competitors:</strong> {service.competitors}
-                    </div>
-                    <div className="text-sm text-green-300 font-semibold">
-                      {service.savings}
-                    </div>
-                  </div>
-
-                  <div className="mb-6">
-                    <h4 className="text-lg font-semibold text-white mb-3">Key Features:</h4>
-                    <div className="grid grid-cols-1 gap-2">
-                      {service.features.slice(0, 5).map((feature, idx) => (
-                        <div key={idx} className="flex items-center text-sm text-gray-200">
-                          <Check className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" />
-                          {feature}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col sm:flex-row gap-3">
-                    <Button 
-                      href={service.link}
-                      variant="primary"
-                      className="flex-1"
-                    >
-                      Learn More
-                      <ExternalLink className="ml-2 w-4 h-4" />
-                    </Button>
-                    <Button 
-                      href="/contact"
-                      variant="secondary"
-                      className="flex-1"
-                    >
-                      Get Started
-                      <ArrowRight className="ml-2 w-4 h-4" />
-                    </Button>
-                  </div>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Services Grid */}
-      <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Featured Services
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Our most popular and innovative solutions
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {featuredServices.map((service, index) => (
-              <motion.div
-                key={service.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <UltraFuturisticServiceCard service={service} />
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            viewport={{ once: true }}
-            className="text-center mt-12"
-          >
-            <Button 
-              href="/services" 
-              variant="primary"
-              size="lg"
-              className="text-lg px-8 py-4"
+        {/* Hero Section */}
+        <section className="relative z-10 pt-20 pb-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
             >
-              View All 500+ Services
-              <ArrowRight className="ml-2 w-6 h-6" />
-            </Button>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to Transform Your Business?
-            </h2>
-            <p className="text-xl text-gray-300 mb-8">
-              Join thousands of companies achieving breakthrough results with our revolutionary services
-            </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              <div className="flex items-center justify-center space-x-3">
-                <Phone className="w-6 h-6 text-cyan-400" />
-                <span className="text-lg">{contactInfo.mobile}</span>
-              </div>
-              <div className="flex items-center justify-center space-x-3">
-                <Mail className="w-6 h-6 text-purple-400" />
-                <span className="text-lg">{contactInfo.email}</span>
-              </div>
-              <div className="flex items-center justify-center space-x-3">
-                <MapPin className="w-6 h-6 text-green-400" />
-                <span className="text-lg">{contactInfo.address}</span>
-              </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                href="/contact" 
-                variant="primary"
-                size="lg"
-                className="text-lg px-8 py-4"
-              >
-                Start Your Transformation
-                <Rocket className="ml-2 w-6 h-6" />
-              </Button>
-              <Button 
-                href="/pricing" 
-                variant="secondary"
-                size="lg"
-                className="text-lg px-8 py-4"
-              >
-                View Pricing
-                <DollarSign className="ml-2 w-6 h-6" />
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="relative z-10 bg-gray-900/50 backdrop-blur-sm border-t border-gray-800 py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <h3 className="text-xl font-bold text-white mb-4">Zion Tech Group</h3>
-              <p className="text-gray-400 mb-4">
+              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-6">
+                Zion Tech Group
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
                 Revolutionary AI, Quantum Computing & IT Services
               </p>
-              <div className="flex space-x-4">
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <Globe className="w-5 h-5" />
-                </a>
+              <p className="text-lg md:text-xl text-gray-400 mb-12 max-w-3xl mx-auto">
+                500+ cutting-edge services delivering 1000% ROI. From neural quantum brain interfaces to enterprise IT infrastructure.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+                <Button 
+                  href="/services" 
+                  variant="primary"
+                  className="text-lg px-8 py-4"
+                >
+                  Explore 500+ Services
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+                <Button 
+                  href="/contact" 
+                  variant="secondary"
+                  className="text-lg px-8 py-4"
+                >
+                  Get Started Today
+                  <Phone className="ml-2 w-5 h-5" />
+                </Button>
               </div>
-            </div>
-            
-            <div>
-              <h4 className="text-lg font-semibold text-white mb-4">Services</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="/ai-services" className="hover:text-white transition-colors">AI Services</a></li>
-                <li><a href="/quantum-services" className="hover:text-white transition-colors">Quantum Computing</a></li>
-                <li><a href="/it-services" className="hover:text-white transition-colors">IT Services</a></li>
-                <li><a href="/micro-saas" className="hover:text-white transition-colors">Micro SaaS</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="text-lg font-semibold text-white mb-4">Company</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="/about" className="hover:text-white transition-colors">About</a></li>
-                <li><a href="/careers" className="hover:text-white transition-colors">Careers</a></li>
-                <li><a href="/news" className="hover:text-white transition-colors">News</a></li>
-                <li><a href="/contact" className="hover:text-white transition-colors">Contact</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="text-lg font-semibold text-white mb-4">Contact</h4>
-              <div className="space-y-2 text-gray-400">
-                <p>{contactInfo.mobile}</p>
-                <p>{contactInfo.email}</p>
-                <p className="text-sm">{contactInfo.address}</p>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Enhanced Service Showcase */}
+        <EnhancedServiceShowcase 
+          title="Revolutionary AI & Technology Services"
+          subtitle="Discover the future of business with our cutting-edge solutions"
+          showFilters={true}
+        />
+
+        {/* Contact Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Ready to Transform Your Business?
+              </h2>
+              <p className="text-xl text-gray-300 mb-8">
+                Join thousands of companies achieving breakthrough results with our revolutionary services
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div className="flex items-center justify-center space-x-3">
+                  <Phone className="w-6 h-6 text-cyan-400" />
+                  <span className="text-lg">{contactInfo.mobile}</span>
+                </div>
+                <div className="flex items-center justify-center space-x-3">
+                  <Mail className="w-6 h-6 text-purple-400" />
+                  <span className="text-lg">{contactInfo.email}</span>
+                </div>
+                <div className="flex items-center justify-center space-x-3">
+                  <MapPin className="w-6 h-6 text-green-400" />
+                  <span className="text-lg">{contactInfo.address}</span>
+                </div>
               </div>
-            </div>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button 
+                  href="/contact" 
+                  variant="primary"
+                  size="lg"
+                  className="text-lg px-8 py-4"
+                >
+                  Start Your Transformation
+                  <Rocket className="ml-2 w-6 h-6" />
+                </Button>
+                <Button 
+                  href="/pricing" 
+                  variant="secondary"
+                  size="lg"
+                  className="text-lg px-8 py-4"
+                >
+                  View Pricing
+                  <DollarSign className="ml-2 w-6 h-6" />
+                </Button>
+              </div>
+            </motion.div>
           </div>
-          
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 Zion Tech Group. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
-    </EnhancedQuantumBackground>
+        </section>
+      </div>
+    </UltraAdvancedFuturisticMatrixBackground>
   );
 }

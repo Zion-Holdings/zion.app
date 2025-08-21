@@ -1,3 +1,5 @@
+import { ServiceVariant } from '../types/service-variants';
+
 export interface EnhancedRealMicroSaasService {
   id: string;
   name: string;
@@ -24,7 +26,7 @@ export interface EnhancedRealMicroSaasService {
   competitors: string[];
   marketSize: string;
   growthRate: string;
-  variant: 'default' | 'holographic' | 'quantum' | 'cyberpunk' | 'neural' | 'quantum-holographic' | 'quantum-advanced' | 'holographic-advanced' | 'neural-quantum' | 'quantum-cyberpunk' | 'holographic-neural' | 'quantum-holographic-advanced' | 'quantum-matrix' | 'neural-cyberpunk' | 'holographic-quantum' | 'quantum-neural-advanced' | 'cyberpunk-holographic' | 'quantum-space' | 'ai-futuristic' | 'quantum-entanglement' | 'holographic-matrix' | 'neural-quantum-cyberpunk';
+  variant: ServiceVariant;
   contactInfo: {
     mobile: string;
     email: string;
