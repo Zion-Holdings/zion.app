@@ -34,8 +34,11 @@ import { realServicesQ12025 } from '../data/real-services-q1-2025';
 import { realEnterpriseServices2025 } from '../data/real-enterprise-services-2025';
 import { realMarketAugmentations2025 } from '../data/real-market-augmentations-2025';
 import { innovative2026MicroSaasServicesV2 } from '../data/innovative-2026-micro-saas-v2';
+import { innovative2026MicroSaasServicesV4 } from '../data/innovative-2026-micro-saas-v4';
 import { emergingTech2026ServicesV2 } from '../data/emerging-tech-2026-services-v2';
+import { emergingTech2026ServicesV4 } from '../data/emerging-tech-2026-services-v4';
 import { enterpriseIT2026ServicesV2 } from '../data/enterprise-it-2026-services-v2';
+import { enterpriseIT2026ServicesV4 } from '../data/enterprise-it-2026-services-v4';
 import { aiAutonomousServices2026 } from '../data/2026-ai-autonomous-services';
 import { quantumSpaceTechServices2026 } from '../data/2026-quantum-space-tech-services';
 import { metaverseDigitalRealityServices2026 } from '../data/2026-metaverse-digital-reality-services';
@@ -80,8 +83,11 @@ export default function ServicesPage() {
     ...emergingTech2025Services,
     ...realMarketAugmentations2025,
     ...innovative2026MicroSaasServicesV2,
+    ...innovative2026MicroSaasServicesV4,
     ...emergingTech2026ServicesV2,
+    ...emergingTech2026ServicesV4,
     ...enterpriseIT2026ServicesV2,
+    ...enterpriseIT2026ServicesV4,
     ...aiAutonomousServices2026,
     ...quantumSpaceTechServices2026,
     ...metaverseDigitalRealityServices2026,
