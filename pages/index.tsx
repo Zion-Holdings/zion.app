@@ -7,7 +7,7 @@ import {
   ShieldCheck, Globe, Target, Users, Award
 } from 'lucide-react';
 import Button from '../components/ui/Button';
-import AdvancedFuturisticBackground from '../components/ui/AdvancedFuturisticBackground';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 import UltraFuturisticServiceCard from '../components/ui/UltraFuturisticServiceCard';
 import ServiceAds from '../components/sections/ServiceAds';
 import Card from '../components/ui/Card';
@@ -20,15 +20,18 @@ import { advancedAIServices } from '../data/advanced-ai-services';
 import { quantumAdvancedServices } from '../data/quantum-advanced-services';
 import { emergingTechServices } from '../data/emerging-tech-services';
 import { spaceTechServices } from '../data/space-tech-services';
+import { innovativeAIServices } from '../data/innovative-ai-services';
+import { emergingTechAdvancedServices } from '../data/emerging-tech-advanced-services';
+import { itInfrastructureServices } from '../data/it-infrastructure-services';
 
 export default function HomePage() {
   const heroStats = [
-    { value: '500+', label: 'Revolutionary Micro SaaS Services', color: 'text-cyan-400', icon: <Cpu className="w-6 h-6" /> },
+    { value: '600+', label: 'Revolutionary Technology Services', color: 'text-cyan-400', icon: <Cpu className="w-6 h-6" /> },
     { value: '99.99%', label: 'Uptime Guarantee', color: 'text-fuchsia-400', icon: <ShieldCheck className="w-6 h-6" /> },
     { value: '30+', label: 'Day Free Trials', color: 'text-blue-400', icon: <Clock className="w-6 h-6" /> },
     { value: '24/7', label: 'AI Support', color: 'text-green-400', icon: <Brain className="w-6 h-6" /> },
-    { value: '$75B+', label: 'Combined Market Value', color: 'text-yellow-400', icon: <TrendingUp className="w-6 h-6" /> },
-    { value: '1000%+', label: 'Average ROI', color: 'text-purple-400', icon: <DollarSign className="w-6 h-6" /> },
+    { value: '$85B+', label: 'Combined Market Value', color: 'text-yellow-400', icon: <TrendingUp className="w-6 h-6" /> },
+    { value: '1200%+', label: 'Average ROI', color: 'text-purple-400', icon: <DollarSign className="w-6 h-6" /> },
   ];
 
   const contactInfo = {
@@ -140,15 +143,18 @@ export default function HomePage() {
 
   // Combine all services for display
   const allServices = [
-    ...enhancedRealMicroSaasServices.slice(0, 6),
-    ...advancedAIServices.slice(0, 4),
-    ...quantumAdvancedServices.slice(0, 4),
-    ...emergingTechServices.slice(0, 4),
-    ...spaceTechServices.slice(0, 4)
+    ...enhancedRealMicroSaasServices.slice(0, 8),
+    ...advancedAIServices.slice(0, 6),
+    ...quantumAdvancedServices.slice(0, 6),
+    ...emergingTechServices.slice(0, 6),
+    ...spaceTechServices.slice(0, 6),
+    ...innovativeAIServices.slice(0, 6),
+    ...emergingTechAdvancedServices.slice(0, 6),
+    ...itInfrastructureServices.slice(0, 6)
   ];
 
   return (
-    <AdvancedFuturisticBackground variant="quantum" intensity={1.2}>
+    <UltraAdvancedFuturisticBackground variant="quantum-advanced" intensity={1.5}>
       <div className="min-h-screen bg-black/50 text-white overflow-hidden">
         <Head>
           <title>Zion Tech Group - Revolutionary AI, Quantum & Space Technology Solutions</title>
@@ -170,12 +176,12 @@ export default function HomePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-6">
+              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-6 animate-pulse">
                 Revolutionary Technology Solutions
               </h1>
-              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
-                Leading the future with 500+ revolutionary AI, quantum computing, and space technology solutions. 
-                Achieve breakthrough results with our cutting-edge micro SaaS services.
+              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
+                Leading the future with <span className="text-cyan-400 font-semibold">600+ revolutionary AI, quantum computing, space technology, and IT infrastructure solutions</span>. 
+                Achieve breakthrough results with our cutting-edge micro SaaS services and transform your business with next-generation technology.
               </p>
               
               {/* Contact Information Banner */}
@@ -262,11 +268,12 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
                 Revolutionary Service Highlights
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Discover our most innovative and high-impact technology solutions that are transforming industries worldwide.
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                Discover our most innovative and high-impact technology solutions that are transforming industries worldwide. 
+                From AI-powered healthcare to quantum computing and space technology.
               </p>
             </motion.div>
 
@@ -353,11 +360,11 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
                 Explore Our Complete Service Portfolio
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                From AI and quantum computing to space technology and emerging tech - discover 500+ revolutionary solutions.
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                From AI and quantum computing to space technology, IT infrastructure, and emerging tech - discover <span className="text-cyan-400 font-semibold">600+ revolutionary solutions</span>.
               </p>
             </motion.div>
 
@@ -381,7 +388,7 @@ export default function HomePage() {
                 variant="primary"
                 className="text-lg px-8 py-4"
               >
-                View All 500+ Services
+                View All 600+ Services
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </div>
@@ -445,6 +452,6 @@ export default function HomePage() {
           </div>
         </section>
       </div>
-    </AdvancedFuturisticBackground>
+    </UltraAdvancedFuturisticBackground>
   );
 }

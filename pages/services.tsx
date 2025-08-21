@@ -13,6 +13,9 @@ import { advancedAIServices } from '../data/advanced-ai-services';
 import { quantumAdvancedServices } from '../data/quantum-advanced-services';
 import { emergingTechServices } from '../data/emerging-tech-services';
 import { spaceTechServices } from '../data/space-tech-services';
+import { innovativeAIServices } from '../data/innovative-ai-services';
+import { emergingTechAdvancedServices } from '../data/emerging-tech-advanced-services';
+import { itInfrastructureServices } from '../data/it-infrastructure-services';
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -25,7 +28,10 @@ export default function ServicesPage() {
     ...advancedAIServices,
     ...quantumAdvancedServices,
     ...emergingTechServices,
-    ...spaceTechServices
+    ...spaceTechServices,
+    ...innovativeAIServices,
+    ...emergingTechAdvancedServices,
+    ...itInfrastructureServices
   ];
 
   // Categories for filtering
@@ -35,6 +41,7 @@ export default function ServicesPage() {
     { id: 'quantum', name: 'Quantum Computing', icon: <Zap className="w-5 h-5" />, count: allServices.filter(s => s.category.includes('Quantum')).length },
     { id: 'space', name: 'Space Technology', icon: <Rocket className="w-5 h-5" />, count: allServices.filter(s => s.category.includes('Space')).length },
     { id: 'emerging', name: 'Emerging Tech', icon: <Star className="w-5 h-5" />, count: allServices.filter(s => s.category.includes('Emerging')).length },
+    { id: 'infrastructure', name: 'IT Infrastructure', icon: <Building2 className="w-5 h-5" />, count: allServices.filter(s => s.category.includes('Infrastructure') || s.category.includes('DevOps')).length },
     { id: 'cybersecurity', name: 'Cybersecurity', icon: <Shield className="w-5 h-5" />, count: allServices.filter(s => s.category.includes('Security') || s.category.includes('Cybersecurity')).length },
     { id: 'robotics', name: 'Robotics & Automation', icon: <Bot className="w-5 h-5" />, count: allServices.filter(s => s.category.includes('Robotics') || s.category.includes('Automation')).length },
     { id: 'biotech', name: 'Biotech & Healthcare', icon: <Dna className="w-5 h-5" />, count: allServices.filter(s => s.category.includes('Biotech') || s.category.includes('Healthcare')).length },
@@ -81,12 +88,12 @@ export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-black text-white">
       <Head>
-        <title>500+ Revolutionary Technology Services - Zion Tech Group</title>
-        <meta name="description" content="Explore 500+ revolutionary AI, quantum computing, space technology, and emerging tech services. Transform your business with cutting-edge solutions. Contact: +1 302 464 0950" />
+        <title>600+ Revolutionary Technology Services - Zion Tech Group</title>
+        <meta name="description" content="Explore 600+ revolutionary AI, quantum computing, space technology, IT infrastructure, and emerging tech services. Transform your business with cutting-edge solutions. Contact: +1 302 464 0950" />
         <meta name="keywords" content="AI services, quantum computing, space technology, micro SaaS, technology solutions, Zion Tech Group" />
         <meta name="author" content="Zion Tech Group" />
-        <meta property="og:title" content="500+ Revolutionary Technology Services - Zion Tech Group" />
-        <meta property="og:description" content="Explore 500+ revolutionary AI, quantum computing, and space technology services." />
+        <meta property="og:title" content="600+ Revolutionary Technology Services - Zion Tech Group" />
+        <meta property="og:description" content="Explore 600+ revolutionary AI, quantum computing, space technology, and IT infrastructure services." />
         <meta property="og:url" content="https://ziontechgroup.com/services" />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://ziontechgroup.com/services" />

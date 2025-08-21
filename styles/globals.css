@@ -69,6 +69,16 @@ body {
   color: white;
   overflow-x: hidden;
   position: relative;
+  animation: bodyGlow 10s ease-in-out infinite;
+}
+
+@keyframes bodyGlow {
+  0%, 100% { 
+    box-shadow: 0 0 50px rgba(0, 255, 255, 0.1) inset;
+  }
+  50% { 
+    box-shadow: 0 0 100px rgba(139, 92, 246, 0.2) inset;
+  }
 }
 
 /* Enhanced Background Patterns */
@@ -89,7 +99,7 @@ body::before {
     radial-gradient(circle at 70% 70%, rgba(168, 85, 247, 0.1) 0%, transparent 50%);
   pointer-events: none;
   z-index: -1;
-  animation: backgroundFloat 25s ease-in-out infinite;
+  animation: backgroundFloat 20s ease-in-out infinite;
 }
 
 /* Quantum Particle Effects */
@@ -239,10 +249,18 @@ body::after {
 
 /* Enhanced Animations */
 @keyframes backgroundFloat {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  25% { transform: translateY(-10px) rotate(1deg); }
-  50% { transform: translateY(-5px) rotate(-1deg); }
-  75% { transform: translateY(-15px) rotate(0.5deg); }
+  0%, 100% { 
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  25% { 
+    transform: translate(-20px, -20px) rotate(1deg) scale(1.02);
+  }
+  50% { 
+    transform: translate(20px, -10px) rotate(-1deg) scale(0.98);
+  }
+  75% { 
+    transform: translate(-10px, 20px) rotate(0.5deg) scale(1.01);
+  }
 }
 
 @keyframes particleFloat {
@@ -287,6 +305,69 @@ body::after {
   75% { opacity: 0.2; transform: scale(1.05); }
 }
 
+/* Enhanced Quantum Particle Effects */
+@keyframes quantumPulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    opacity: 0.7;
+    transform: scale(1.2) rotate(90deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5) rotate(180deg);
+  }
+  75% {
+    opacity: 0.7;
+    transform: scale(1.2) rotate(270deg);
+  }
+}
+
+@keyframes holographicShift {
+  0%, 100% {
+    filter: hue-rotate(0deg) brightness(1);
+  }
+  33% {
+    filter: hue-rotate(120deg) brightness(1.2);
+  }
+  66% {
+    filter: hue-rotate(240deg) brightness(0.8);
+  }
+}
+
+@keyframes neuralFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes quantumEntanglement {
+  0%, 100% {
+    opacity: 0.1;
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    opacity: 0.4;
+    transform: scale(1.1) rotate(90deg);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.3) rotate(180deg);
+  }
+  75% {
+    opacity: 0.4;
+    transform: scale(1.1) rotate(270deg);
+  }
+}
+
 /* Enhanced Text Effects */
 .quantum-text {
   background: linear-gradient(45deg, var(--neon-cyan), var(--neon-purple), var(--neon-pink));
@@ -295,6 +376,77 @@ body::after {
   background-clip: text;
   text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
   animation: quantumTextGlow 3s ease-in-out infinite;
+}
+
+/* Enhanced Futuristic Utility Classes */
+.futuristic-glow {
+  box-shadow: 
+    0 0 20px rgba(0, 255, 255, 0.3),
+    0 0 40px rgba(0, 255, 255, 0.2),
+    0 0 60px rgba(0, 255, 255, 0.1);
+}
+
+.holographic-glow {
+  box-shadow: 
+    0 0 20px rgba(139, 92, 246, 0.3),
+    0 0 40px rgba(139, 92, 246, 0.2),
+    0 0 60px rgba(139, 92, 246, 0.1);
+}
+
+.cyberpunk-glow {
+  box-shadow: 
+    0 0 20px rgba(236, 73, 153, 0.3),
+    0 0 40px rgba(236, 73, 153, 0.2),
+    0 0 60px rgba(236, 73, 153, 0.1);
+}
+
+.neural-glow {
+  box-shadow: 
+    0 0 20px rgba(16, 185, 129, 0.3),
+    0 0 40px rgba(16, 185, 129, 0.2),
+    0 0 60px rgba(16, 185, 129, 0.1);
+}
+
+/* Enhanced Animation Classes */
+.animate-quantum {
+  animation: quantumPulse 4s ease-in-out infinite;
+}
+
+.animate-holographic {
+  animation: holographicShift 6s ease-in-out infinite;
+}
+
+.animate-neural {
+  animation: neuralFlow 8s ease-in-out infinite;
+}
+
+.animate-entanglement {
+  animation: quantumEntanglement 5s ease-in-out infinite;
+}
+
+/* Enhanced Hover Effects */
+.hover-quantum:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+.hover-holographic:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
+  transition: all 0.3s ease;
+}
+
+.hover-cyberpunk:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(236, 73, 153, 0.5);
+  transition: all 0.3s ease;
+}
+
+.hover-neural:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(16, 185, 129, 0.5);
+  transition: all 0.3s ease;
 }
 
 .holographic-text {
