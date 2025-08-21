@@ -308,7 +308,7 @@ export default function ComprehensiveServicesShowcase2025() {
                     </div>
                     <div className="flex justify-between items-center">
                       <span>Target Audience:</span>
-                      <span className="text-gray-300">{service.targetAudience.split(',')[0]}...</span>
+                      <span className="text-gray-300">{service.targetAudience[0]}...</span>
                     </div>
                   </div>
 
