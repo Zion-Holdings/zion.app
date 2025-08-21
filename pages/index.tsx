@@ -62,6 +62,9 @@ import { revolutionary2026ITServices } from '../data/revolutionary-2026-it-servi
 import { revolutionary2026AIServices } from '../data/revolutionary-2026-ai-services';
 import { revolutionary2027Services } from '../data/revolutionary-2027-services';
 import { emergingTech2027Services } from '../data/emerging-tech-2027-services';
+import { revolutionary2027AIServices } from '../data/revolutionary-2027-ai-services';
+import { revolutionary2027ITServices } from '../data/revolutionary-2027-it-services';
+import { revolutionary2027MicroSaasServices } from '../data/revolutionary-2027-micro-saas';
 
 export default function HomePage() {
   const contactInfo = {
@@ -119,7 +122,10 @@ export default function HomePage() {
     ...revolutionary2026ITServices,
     ...revolutionary2026AIServices,
     ...revolutionary2027Services,
-    ...emergingTech2027Services
+    ...emergingTech2027Services,
+    ...revolutionary2027AIServices,
+    ...revolutionary2027ITServices,
+    ...revolutionary2027MicroSaasServices
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);

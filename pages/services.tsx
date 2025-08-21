@@ -43,6 +43,9 @@ import { ultimate2026Services } from '../data/ultimate-2026-services';
 import { revolutionary2026Innovations } from '../data/revolutionary-2026-innovations';
 import { cuttingEdge2027Innovations } from '../data/2027-cutting-edge-innovations';
 import { practicalMicroSaas2027 } from '../data/2027-practical-micro-saas';
+import { revolutionary2027AIServices } from '../data/revolutionary-2027-ai-services';
+import { revolutionary2027ITServices } from '../data/revolutionary-2027-it-services';
+import { revolutionary2027MicroSaasServices } from '../data/revolutionary-2027-micro-saas';
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -90,7 +93,10 @@ export default function ServicesPage() {
     ...ultimate2026Services,
     ...revolutionary2026Innovations,
     ...cuttingEdge2027Innovations,
-    ...practicalMicroSaas2027
+    ...practicalMicroSaas2027,
+    ...revolutionary2027AIServices,
+    ...revolutionary2027ITServices,
+    ...revolutionary2027MicroSaasServices
   ];
 
   // Dynamic category counts mapped to the same filter logic below
