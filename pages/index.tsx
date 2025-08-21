@@ -7,15 +7,17 @@ import UltraFuturisticBackground2030 from '../components/ui/UltraFuturisticBackg
 import UltraFuturisticBackground2032 from '../components/ui/UltraFuturisticBackground2032';
 import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
 import UltraAdvancedNavigation2026 from '../components/layout/UltraAdvancedNavigation2026';
-import UltraFuturisticNavigation2032 from '../components/layout/UltraFuturisticNavigation2032';
-import UltraFuturisticFooter2032 from '../components/layout/UltraFuturisticFooter2032';
+import UltraFuturisticNavigation2033 from '../components/layout/UltraFuturisticNavigation2033';
+import UltraFuturisticFooter2033 from '../components/layout/UltraFuturisticFooter2033';
 import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
 import Enhanced2026ServicesShowcase from '../components/sections/Enhanced2026ServicesShowcase';
 import Revolutionary2026ServiceShowcase from '../components/sections/Revolutionary2026ServiceShowcase';
 import Revolutionary2027ServicesShowcase from '../components/sections/Revolutionary2027ServicesShowcase';
 import Revolutionary2027Hero from '../components/sections/Revolutionary2027Hero';
+import UltraFuturisticServiceShowcase2033 from '../components/sections/UltraFuturisticServiceShowcase2033';
 import EnhancedHero2026 from '../components/sections/EnhancedHero2026';
 import UltraFuturisticHero2032 from '../components/sections/UltraFuturisticHero2032';
+import UltraFuturisticHero2033 from '../components/sections/UltraFuturisticHero2033';
 import UltraFuturisticServiceShowcase2032 from '../components/sections/UltraFuturisticServiceShowcase2032';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
@@ -98,6 +100,11 @@ import { enterpriseITServices2032 } from '../data/2032-enterprise-it-services';
 import { spaceMetaverseTechServices2032 } from '../data/2032-space-metaverse-tech-services';
 import { innovativeMicroSaasServices2032 } from '../data/2032-innovative-micro-saas-services';
 import { researchDevelopmentServices2032 } from '../data/2032-research-development-services';
+
+// Import new 2033 services
+import { cuttingEdgeInnovations2033 } from '../data/2033-cutting-edge-innovations';
+import { innovativeMicroSaas2033 } from '../data/2033-innovative-micro-saas';
+import { enterpriseITServices2033 } from '../data/2033-enterprise-it-services';
 
 export default function HomePage() {
   const contactInfo = {
@@ -217,10 +224,13 @@ export default function HomePage() {
 
       <UltraFuturisticBackground2032>
         {/* Ultra Advanced Navigation */}
-        <UltraFuturisticNavigation2032 />
+        <UltraFuturisticNavigation2033 />
 
-        {/* Ultra Futuristic Hero Section 2032 */}
-        <UltraFuturisticHero2032 />
+                  {/* Ultra Futuristic Hero Section 2032 */}
+          <UltraFuturisticHero2032 />
+          
+          {/* Ultra Futuristic Hero Section 2033 */}
+          <UltraFuturisticHero2033 />
 
       {/* Main Content */}
       <main id="main-content" className="min-h-screen bg-black text-white">
@@ -257,6 +267,9 @@ export default function HomePage() {
 
                 {/* Ultra Futuristic 2032 Service Showcase */}
                 <UltraFuturisticServiceShowcase2032 />
+                
+                {/* Ultra Futuristic 2033 Service Showcase */}
+                <UltraFuturisticServiceShowcase2033 />
 
                 {/* Enhanced Stats */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
@@ -566,7 +579,7 @@ export default function HomePage() {
       </main>
 
       {/* Enhanced Footer */}
-      <UltraFuturisticFooter2032 />
+      <UltraFuturisticFooter2033 />
     </UltraFuturisticBackground2032>
   </>
   );
