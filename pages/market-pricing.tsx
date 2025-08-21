@@ -172,6 +172,38 @@ export default function MarketPricingPage() {
               <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $0–$500/month for moderate pipelines and environments.</div>
             </div>
           </div>
+
+          <div className="space-y-6">
+            <div className="bg-black/30 rounded-2xl border border-teal-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Observability & Monitoring</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Datadog pricing: <a className="text-cyan-400 underline" href={`https://www.datadoghq.com/pricing/`} target="_blank" rel="noopener noreferrer">datadoghq.com/pricing</a></li>
+                <li>New Relic pricing: <a className="text-cyan-400 underline" href={`https://newrelic.com/pricing`} target="_blank" rel="noopener noreferrer">newrelic.com/pricing</a></li>
+                <li>Grafana Cloud pricing: <a className="text-cyan-400 underline" href={`https://grafana.com/pricing/`} target="_blank" rel="noopener noreferrer">grafana.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $50–$2,000/month by host count, metrics, and retention.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-lime-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Website Performance & RUM</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>SpeedCurve pricing: <a className="text-cyan-400 underline" href={`https://www.speedcurve.com/pricing/`} target="_blank" rel="noopener noreferrer">speedcurve.com/pricing</a></li>
+                <li>Calibre pricing: <a className="text-cyan-400 underline" href={`https://calibreapp.com/pricing`} target="_blank" rel="noopener noreferrer">calibreapp.com/pricing</a></li>
+                <li>Cloudflare Web Analytics: <a className="text-cyan-400 underline" href={`https://www.cloudflare.com/web-analytics/`} target="_blank" rel="noopener noreferrer">cloudflare.com/web-analytics</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $0–$500/month depending on synthetic runs and MAUs.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-violet-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Data Labeling & Enrichment</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Scale AI: <a className="text-cyan-400 underline" href={`https://scale.com`} target="_blank" rel="noopener noreferrer">scale.com</a></li>
+                <li>Labelbox pricing: <a className="text-cyan-400 underline" href={`https://labelbox.com/pricing/`} target="_blank" rel="noopener noreferrer">labelbox.com/pricing</a></li>
+                <li>Hive data: <a className="text-cyan-400 underline" href={`https://thehive.ai`} target="_blank" rel="noopener noreferrer">thehive.ai</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $100–$5,000/month based on volume and SLAs.</div>
+            </div>
+          </div>
         </div>
       </div>
     </UltraAdvancedFuturisticBackground>
