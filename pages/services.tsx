@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
-import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Code, BookOpen, Activity, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Filter, Grid, List, ChevronDown, ChevronUp } from 'lucide-react';
+import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Code, BookOpen, Activity, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Filter, Grid, List, ChevronDown, ChevronUp, Sparkles } from 'lucide-react';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
 import EnhancedFuturisticBackground from '../components/ui/EnhancedFuturisticBackground';
@@ -95,54 +95,70 @@ export default function ServicesPage() {
         <section className="relative py-20 overflow-hidden">
           <div className="container mx-auto px-4 text-center">
             <div className="max-w-4xl mx-auto">
+              <div className="mb-8">
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 text-purple-400 text-sm font-medium mb-6">
+                  <Sparkles className="w-4 h-4 mr-2" />
+                  Revolutionary Micro SaaS Services
+                </div>
+              </div>
+              
               <h1 className="text-5xl md:text-7xl font-bold mb-6 futuristic-glow">
                 <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                   Complete Services Portfolio
                 </span>
-                <br />
-                <span className="text-white">75+ Solutions for Every Business Need</span>
               </h1>
-              <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
-                From AI-powered automation to cutting-edge emerging technologies, discover the complete range of solutions 
-                that can transform your business operations and drive innovation.
-              </p>
               
-              {/* Service Overview Stats */}
+              <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
+                Discover our comprehensive portfolio of 75+ cutting-edge micro SaaS services. 
+                From AI and quantum computing to blockchain and emerging technologies, 
+                we provide real solutions that transform businesses and drive innovation.
+              </p>
+
+              {/* Service Stats */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
                 <div className="text-center">
                   <div className="text-3xl md:text-4xl font-bold text-cyan-400 mb-2">75+</div>
-                  <div className="text-gray-400 text-sm">Total Services</div>
+                  <div className="text-gray-400 text-sm">Real Services</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-fuchsia-400 mb-2">7</div>
+                  <div className="text-3xl md:text-4xl font-bold text-purple-400 mb-2">10</div>
                   <div className="text-gray-400 text-sm">Categories</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-blue-400 mb-2">24/7</div>
-                  <div className="text-gray-400 text-sm">AI Support</div>
+                  <div className="text-3xl md:text-4xl font-bold text-emerald-400 mb-2">14</div>
+                  <div className="text-gray-400 text-sm">Day Trials</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-green-400 mb-2">99.9%</div>
+                  <div className="text-3xl md:text-4xl font-bold text-pink-400 mb-2">99.9%</div>
                   <div className="text-gray-400 text-sm">Uptime</div>
                 </div>
               </div>
 
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-                <Button
-                  href="#services"
-                  className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
-                >
-                  Explore All Services
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-                <Button
-                  href="/contact"
-                  variant="outline"
-                  className="border-2 border-white/20 text-white hover:bg-white/10 px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300"
-                >
-                  Get Custom Quote
-                </Button>
+              {/* Contact Information Banner */}
+              <div className="bg-gradient-to-r from-gray-900/50 to-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 max-w-4xl mx-auto mb-12">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="flex items-center justify-center md:justify-start">
+                    <Phone className="w-5 h-5 text-cyan-400 mr-3" />
+                    <div>
+                      <div className="text-sm text-gray-400">Mobile</div>
+                      <div className="text-white font-medium">{contactInfo.mobile}</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-center md:justify-start">
+                    <Mail className="w-5 h-5 text-purple-400 mr-3" />
+                    <div>
+                      <div className="text-sm text-gray-400">Email</div>
+                      <div className="text-white font-medium">{contactInfo.email}</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-center md:justify-start">
+                    <MapPin className="w-5 h-5 text-emerald-400 mr-3" />
+                    <div>
+                      <div className="text-sm text-gray-400">Address</div>
+                      <div className="text-white font-medium text-sm">{contactInfo.address}</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
