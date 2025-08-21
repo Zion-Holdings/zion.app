@@ -13,9 +13,9 @@ import {
 } from 'lucide-react';
 import Button from '../components/ui/Button';
 import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
-import UltraAdvancedFuturisticCard from '../components/ui/UltraAdvancedFuturisticCard';
-import { enhancedRealMicroSaasServices, getServicesByCategory, getPopularServices, serviceCategories } from '../data/enhanced-real-micro-saas-services';
+import EnhancedFuturisticCard from '../components/ui/EnhancedFuturisticCard';
 import { motion } from 'framer-motion';
+import { enhancedRealMicroSaasServices, getServicesByCategory, getPopularServices, serviceCategories } from '../data/enhanced-real-micro-saas-services';
 
 export default function HomePage() {
   const heroStats = [
@@ -24,7 +24,7 @@ export default function HomePage() {
     { value: '30+', label: 'Day Free Trials', color: 'text-blue-400', icon: <Clock className="w-6 h-6" /> },
     { value: '24/7', label: 'AI Support', color: 'text-green-400', icon: <Brain className="w-6 h-6" /> },
     { value: '$15B+', label: 'Combined Market Value', color: 'text-yellow-400', icon: <TrendingUp className="w-6 h-6" /> },
-    { value: '500%+', label: 'Average ROI', color: 'text-purple-400', icon: <Trophy className="w-6 h-6" /> },
+    { value: '500%+', label: 'Average ROI', color: 'text-purple-400', icon: <DollarSign className="w-6 h-6" /> },
   ];
 
   const contactInfo = {
@@ -36,8 +36,8 @@ export default function HomePage() {
 
   // Get featured services from the enhanced data
   const revolutionaryServices = enhancedRealMicroSaasServices
-    .filter(service => service.category.includes('Quantum') || service.category.includes('Autonomous'))
-    .slice(0, 6);
+    .filter(service => service.realImplementation && service.popular)
+    .slice(0, 8);
 
   const marketInsights = [
     {
@@ -114,30 +114,34 @@ export default function HomePage() {
     }
   ];
 
-  const innovationHighlights = [
+  const innovationCategories = [
     {
-      icon: <BrainCircuit className="w-8 h-8" />,
-      title: 'Quantum AI Revolution',
-      description: 'First-to-market quantum AI platforms with unprecedented cognitive capabilities',
-      color: 'from-purple-600 to-indigo-700'
+      title: 'Quantum Computing',
+      description: 'Revolutionary quantum solutions for complex problems',
+      icon: <Atom className="w-8 h-8" />,
+      color: 'from-purple-600 to-indigo-700',
+      services: ['Quantum AI Cognitive Platform', 'Quantum Financial Trading', 'Quantum Cybersecurity Fortress']
     },
     {
-      icon: <Network className="w-8 h-8" />,
       title: 'Autonomous Systems',
-      description: 'Complete autonomous manufacturing and logistics with zero human intervention',
-      color: 'from-orange-600 to-red-700'
+      description: 'Self-optimizing AI that runs 24/7',
+      icon: <Brain className="w-8 h-8" />,
+      color: 'from-orange-600 to-red-700',
+      services: ['Autonomous Manufacturing AI', 'Autonomous Logistics AI', 'Autonomous Robotics Platform']
     },
     {
-      icon: <Satellite className="w-8 h-8" />,
       title: 'Space Technology',
-      description: 'Advanced satellite management and space data analytics platforms',
-      color: 'from-blue-600 to-indigo-700'
+      description: 'Next-generation space exploration and management',
+      icon: <Rocket className="w-8 h-8" />,
+      color: 'from-blue-600 to-indigo-700',
+      services: ['Space Technology Platform', 'AI Space Exploration Platform', 'Satellite Management']
     },
     {
-      icon: <ShieldAlert className="w-8 h-8" />,
-      title: 'Quantum Security',
-      description: 'Future-proof cybersecurity using quantum-resistant encryption',
-      color: 'from-red-600 to-pink-700'
+      title: 'Metaverse & VR/AR',
+      description: 'Immersive digital experiences and virtual worlds',
+      icon: <Globe className="w-8 h-8" />,
+      color: 'from-purple-600 to-pink-700',
+      services: ['Metaverse Development Platform', 'VR/AR Development Studio', '3D World Builder']
     }
   ];
 
@@ -159,11 +163,11 @@ export default function HomePage() {
       <section className="relative py-20 overflow-hidden">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-6xl mx-auto">
-            <motion.div
+            <motion.div 
               className="mb-8"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1 }}
+              transition={{ duration: 0.8 }}
             >
               <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-500/30 mb-6">
                 <Sparkles className="w-5 h-5 text-cyan-400 mr-2" />
@@ -208,18 +212,16 @@ export default function HomePage() {
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <div className="bg-gradient-to-br from-gray-900/50 to-gray-800/30 rounded-xl p-4 border border-gray-700/50 group-hover:border-cyan-500/50 transition-all duration-300">
-                    <div className="flex justify-center mb-2">
-                      <div className={`${stat.color}`}>
-                        {stat.icon}
-                      </div>
+                  <div className="flex justify-center mb-3">
+                    <div className="p-3 rounded-full bg-gradient-to-r from-gray-800/50 to-gray-900/50 border border-gray-700/50 group-hover:border-cyan-500/50 transition-all duration-300">
+                      {stat.icon}
                     </div>
-                    <div className={`text-2xl md:text-3xl font-bold ${stat.color} mb-1`}>
-                      {stat.value}
-                    </div>
-                    <div className="text-sm text-gray-300 font-medium">
-                      {stat.label}
-                    </div>
+                  </div>
+                  <div className={`text-3xl md:text-4xl font-bold ${stat.color} mb-2`}>
+                    {stat.value}
+                  </div>
+                  <div className="text-sm text-gray-300 font-medium">
+                    {stat.label}
                   </div>
                 </motion.div>
               ))}
@@ -254,7 +256,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Innovation Highlights */}
+      {/* Innovation Categories */}
       <section className="py-20">
         <div className="container mx-auto px-4">
           <motion.div 
@@ -263,17 +265,18 @@ export default function HomePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-              Revolutionary Technology
+            <h2 className="text-4xl md:text-6xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                Innovation Categories
+              </span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              We're not just building software - we're creating the future. Our platforms combine cutting-edge technologies 
-              to solve problems that were previously impossible.
+              Discover our revolutionary services across cutting-edge technology domains
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {innovationHighlights.map((highlight, index) => (
+            {innovationCategories.map((category, index) => (
               <motion.div
                 key={index}
                 className="group"
@@ -282,12 +285,22 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <div className="bg-gradient-to-br from-gray-900/50 to-gray-800/30 rounded-2xl p-6 border border-gray-700/50 group-hover:border-cyan-500/50 transition-all duration-300 h-full">
-                  <div className={`inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-r ${highlight.color} mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    {highlight.icon}
+                <div className={`p-8 rounded-2xl bg-gradient-to-br ${category.color} bg-opacity-10 border border-gray-700/50 group-hover:border-cyan-500/50 transition-all duration-300 h-full`}>
+                  <div className="flex justify-center mb-6">
+                    <div className={`p-4 rounded-full bg-gradient-to-r ${category.color} bg-opacity-20`}>
+                      {category.icon}
+                    </div>
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{highlight.title}</h3>
-                  <p className="text-gray-300 leading-relaxed">{highlight.description}</p>
+                  <h3 className="text-2xl font-bold text-white mb-4 text-center">{category.title}</h3>
+                  <p className="text-gray-300 text-center mb-6">{category.description}</p>
+                  <ul className="space-y-2">
+                    {category.services.map((service, serviceIndex) => (
+                      <li key={serviceIndex} className="flex items-center text-sm text-gray-400">
+                        <Check className="w-4 h-4 text-cyan-400 mr-2 flex-shrink-0" />
+                        {service}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </motion.div>
             ))}
@@ -304,53 +317,13 @@ export default function HomePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Revolutionary Service Categories
+            <h2 className="text-4xl md:text-6xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Revolutionary Services
+              </span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              From Quantum Computing to Autonomous Systems, explore our comprehensive portfolio of cutting-edge micro SaaS solutions.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {serviceCategories.slice(1, 13).map((category, index) => (
-              <motion.div
-                key={index}
-                className="group"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <div className="bg-gradient-to-br from-gray-900/50 to-gray-800/30 rounded-2xl p-6 border border-gray-700/50 group-hover:border-purple-500/50 transition-all duration-300 h-full cursor-pointer group-hover:scale-105">
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-xl font-bold text-white">{category}</h3>
-                    <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-purple-400 transition-colors" />
-                  </div>
-                  <p className="text-gray-300 text-sm leading-relaxed">
-                    Explore our revolutionary {category.toLowerCase()} services with cutting-edge technology and proven ROI.
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Revolutionary Services */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
-              Featured Revolutionary Services
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Discover our most innovative and game-changing micro SaaS solutions that are transforming industries worldwide.
+              Explore our cutting-edge micro SaaS solutions that are transforming industries
             </p>
           </motion.div>
 
@@ -363,27 +336,64 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <div className="bg-gradient-to-br from-gray-900/50 to-gray-800/30 rounded-2xl p-6 border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300 h-full group hover:scale-105">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="text-4xl">{service.icon}</div>
-                    <div className="text-right">
-                      <div className="text-2xl font-bold text-white">{service.price}</div>
-                      <div className="text-sm text-gray-400">{service.period}</div>
+                <EnhancedFuturisticCard
+                  variant={service.variant as any}
+                  className="h-full"
+                  intensity="high"
+                >
+                  <div className="text-center p-6">
+                    <div className="text-4xl mb-4">{service.icon}</div>
+                    <h3 className="text-xl font-bold text-white mb-2">{service.name}</h3>
+                    <p className="text-gray-300 text-sm mb-4">{service.tagline}</p>
+                    <div className="flex items-center justify-center mb-4">
+                      <span className="text-2xl font-bold text-cyan-400">{service.price}</span>
+                      <span className="text-gray-400 ml-1">{service.period}</span>
                     </div>
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-2">{service.name}</h3>
-                  <p className="text-gray-300 text-sm mb-4 leading-relaxed">{service.description}</p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs text-gray-400 bg-gray-800 px-2 py-1 rounded">{service.category}</span>
-                    <Button href={service.link} variant="secondary" size="sm">
+                    <div className="flex items-center justify-center mb-4">
+                      <div className="flex items-center">
+                        {[...Array(5)].map((_, i) => (
+                          <Star
+                            key={i}
+                            className={`w-4 h-4 ${
+                              i < Math.floor(service.rating) ? 'text-yellow-400 fill-current' : 'text-gray-600'
+                            }`}
+                          />
+                        ))}
+                      </div>
+                      <span className="text-gray-400 text-sm ml-2">({service.reviews})</span>
+                    </div>
+                    <div className="text-sm text-gray-400 mb-4">{service.category}</div>
+                    <Button
+                      href={service.link}
+                      variant="secondary"
+                      size="sm"
+                      className="w-full"
+                    >
                       Learn More
-                      <ArrowRight className="ml-1 w-4 h-4" />
+                      <ArrowRight className="ml-2 w-4 h-4" />
                     </Button>
                   </div>
-                </div>
+                </EnhancedFuturisticCard>
               </motion.div>
             ))}
           </div>
+
+          <motion.div 
+            className="text-center mt-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <Button 
+              href="/micro-saas" 
+              variant="primary" 
+              size="lg"
+              className="text-lg px-8 py-4"
+            >
+              View All Services
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+          </motion.div>
         </div>
       </section>
 
@@ -396,11 +406,13 @@ export default function HomePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
-              Market Insights & Growth
+            <h2 className="text-4xl md:text-6xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+                Market Insights
+              </span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Our services operate in the fastest-growing technology markets with unprecedented growth rates and market opportunities.
+              Discover the explosive growth potential in emerging technology markets
             </p>
           </motion.div>
 
@@ -414,13 +426,17 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <div className="bg-gradient-to-br from-gray-900/50 to-gray-800/30 rounded-2xl p-6 border border-gray-700/50 group-hover:border-yellow-500/50 transition-all duration-300 h-full">
-                  <div className={`inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-r ${insight.color} mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    {insight.icon}
+                <div className={`p-8 rounded-2xl bg-gradient-to-br ${insight.color} bg-opacity-10 border border-gray-700/50 group-hover:border-cyan-500/50 transition-all duration-300 h-full`}>
+                  <div className="flex justify-center mb-6">
+                    <div className={`p-4 rounded-full bg-gradient-to-r ${insight.color} bg-opacity-20`}>
+                      {insight.icon}
+                    </div>
                   </div>
-                  <div className="text-3xl font-bold text-white mb-2">{insight.metric}</div>
-                  <h3 className="text-xl font-bold text-white mb-2">{insight.label}</h3>
-                  <p className="text-gray-300 leading-relaxed">{insight.description}</p>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-white mb-2">{insight.metric}</div>
+                    <h3 className="text-xl font-bold text-white mb-2">{insight.label}</h3>
+                    <p className="text-gray-300">{insight.description}</p>
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -437,15 +453,17 @@ export default function HomePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-pink-400 to-rose-400 bg-clip-text text-transparent">
-              Customer Success Stories
+            <h2 className="text-4xl md:text-6xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
+                Customer Success Stories
+              </span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              See how our revolutionary services are transforming businesses and delivering unprecedented ROI.
+              See how our revolutionary services are transforming businesses worldwide
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={index}
@@ -455,22 +473,20 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <div className="bg-gradient-to-br from-gray-900/50 to-gray-800/30 rounded-2xl p-6 border border-gray-700/50 group-hover:border-pink-500/50 transition-all duration-300 h-full">
-                  <div className="flex items-center mb-4">
-                    <div className="text-3xl mr-3">{testimonial.avatar}</div>
-                    <div>
-                      <div className="font-bold text-white">{testimonial.name}</div>
-                      <div className="text-sm text-gray-400">{testimonial.role} at {testimonial.company}</div>
+                <div className="p-8 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 group-hover:border-cyan-500/50 transition-all duration-300 h-full">
+                  <div className="text-center mb-6">
+                    <div className="text-4xl mb-4">{testimonial.avatar}</div>
+                    <div className="flex justify-center mb-2">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                      ))}
                     </div>
                   </div>
-                  <div className="flex items-center mb-3">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-gray-300 mb-4 leading-relaxed">"{testimonial.content}"</p>
-                  <div className="text-sm text-pink-400 font-medium">
-                    Service: {testimonial.service}
+                  <blockquote className="text-gray-300 mb-6 italic">"{testimonial.content}"</blockquote>
+                  <div className="text-center">
+                    <div className="font-bold text-white">{testimonial.name}</div>
+                    <div className="text-gray-400 text-sm">{testimonial.role}, {testimonial.company}</div>
+                    <div className="text-cyan-400 text-sm mt-2">{testimonial.service}</div>
                   </div>
                 </div>
               </motion.div>
@@ -488,75 +504,101 @@ export default function HomePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-              Ready to Transform Your Business?
+            <h2 className="text-4xl md:text-6xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-pink-400 to-rose-400 bg-clip-text text-transparent">
+                Get Started Today
+              </span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Contact us today to learn how our revolutionary micro SaaS services can accelerate your growth and deliver unprecedented ROI.
+              Ready to transform your business with revolutionary technology? Contact us now.
             </p>
           </motion.div>
 
           <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <motion.div
-                className="text-center group"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
               >
-                <div className="bg-gradient-to-br from-gray-900/50 to-gray-800/30 rounded-2xl p-6 border border-gray-700/50 group-hover:border-cyan-500/50 transition-all duration-300">
-                  <Phone className="w-12 h-12 text-cyan-400 mx-auto mb-4" />
-                  <h3 className="text-xl font-bold text-white mb-2">Phone</h3>
-                  <p className="text-cyan-400 font-medium">{contactInfo.mobile}</p>
+                <div className="p-8 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50">
+                  <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
+                  <div className="space-y-4">
+                    <div className="flex items-center">
+                      <Phone className="w-5 h-5 text-cyan-400 mr-3" />
+                      <div>
+                        <div className="text-white font-medium">Mobile</div>
+                        <div className="text-gray-300">{contactInfo.mobile}</div>
+                      </div>
+                    </div>
+                    <div className="flex items-center">
+                      <Mail className="w-5 h-5 text-cyan-400 mr-3" />
+                      <div>
+                        <div className="text-white font-medium">Email</div>
+                        <div className="text-gray-300">{contactInfo.email}</div>
+                      </div>
+                    </div>
+                    <div className="flex items-center">
+                      <MapPin className="w-5 h-5 text-cyan-400 mr-3" />
+                      <div>
+                        <div className="text-white font-medium">Address</div>
+                        <div className="text-gray-300">{contactInfo.address}</div>
+                      </div>
+                    </div>
+                    <div className="flex items-center">
+                      <Globe className="w-5 h-5 text-cyan-400 mr-3" />
+                      <div>
+                        <div className="text-white font-medium">Website</div>
+                        <div className="text-gray-300">{contactInfo.website}</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
 
               <motion.div
-                className="text-center group"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
               >
-                <div className="bg-gradient-to-br from-gray-900/50 to-gray-800/30 rounded-2xl p-6 border border-gray-700/50 group-hover:border-purple-500/50 transition-all duration-300">
-                  <Mail className="w-12 h-12 text-purple-400 mx-auto mb-4" />
-                  <h3 className="text-xl font-bold text-white mb-2">Email</h3>
-                  <p className="text-purple-400 font-medium">{contactInfo.email}</p>
-                </div>
-              </motion.div>
-
-              <motion.div
-                className="text-center group"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-              >
-                <div className="bg-gradient-to-br from-gray-900/50 to-gray-800/30 rounded-2xl p-6 border border-gray-700/50 group-hover:border-pink-500/50 transition-all duration-300">
-                  <MapPin className="w-12 h-12 text-pink-400 mx-auto mb-4" />
-                  <h3 className="text-xl font-bold text-white mb-2">Address</h3>
-                  <p className="text-pink-400 font-medium text-sm">{contactInfo.address}</p>
+                <div className="p-8 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50">
+                  <h3 className="text-2xl font-bold text-white mb-6">Why Choose Zion Tech Group?</h3>
+                  <div className="space-y-4">
+                    <div className="flex items-start">
+                      <Check className="w-5 h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                      <div className="text-gray-300">150+ revolutionary micro SaaS services</div>
+                    </div>
+                    <div className="flex items-start">
+                      <Check className="w-5 h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                      <div className="text-gray-300">Real implementations, not mock services</div>
+                    </div>
+                    <div className="flex items-start">
+                      <Check className="w-5 h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                      <div className="text-gray-300">Proven ROI with 500%+ average returns</div>
+                    </div>
+                    <div className="flex items-start">
+                      <Check className="w-5 h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                      <div className="text-gray-300">30+ day free trials on all services</div>
+                    </div>
+                    <div className="flex items-start">
+                      <Check className="w-5 h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                      <div className="text-gray-300">24/7 AI-powered support</div>
+                    </div>
+                  </div>
+                  <div className="mt-6">
+                    <Button 
+                      href="/micro-saas" 
+                      variant="primary" 
+                      size="lg"
+                      className="w-full"
+                    >
+                      Explore All Services
+                      <ArrowRight className="ml-2 w-5 h-5" />
+                    </Button>
+                  </div>
                 </div>
               </motion.div>
             </div>
-
-            <motion.div 
-              className="text-center"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-            >
-              <Button 
-                href="/contact" 
-                variant="primary" 
-                size="lg"
-                className="text-lg px-8 py-4"
-              >
-                Schedule a Consultation
-                <Rocket className="ml-2 w-5 h-5" />
-              </Button>
-            </motion.div>
           </div>
         </div>
       </section>
