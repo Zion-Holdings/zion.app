@@ -49,6 +49,70 @@ export default function HomePage() {
       }
     },
     {
+      title: '🤖 AI Assistant Pro',
+      description: 'Deploy a secure, branded AI copilot for support and operations. Slash tickets 30-50% with guardrails, RAG, and analytics.',
+      price: 'Starting at $149/month',
+      features: ['RAG over your docs', 'Slack/Teams channels', 'Human handoff', 'Conversation analytics'],
+      link: 'https://ziontechgroup.com/ai-assistant',
+      color: 'from-cyan-600 to-blue-700',
+      marketData: '$9.3B CX AI market, 25% CAGR',
+      competitors: 'Intercom Fin ($180+/seat), Zendesk AI ($50-100/agent)',
+      savings: 'Save 40% vs. alternatives',
+      contactInfo: {
+        mobile: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
+    },
+    {
+      title: '💸 Cloud Cost Optimizer Pro',
+      description: 'Automate rightsizing, storage lifecycle, and anomaly detection across AWS, Azure, and GCP with IaC outputs.',
+      price: 'Starting at $99/month',
+      features: ['Rightsizing & schedules', 'Lifecycle policies', 'Anomaly alerts', 'K8s bin-packing insights'],
+      link: 'https://ziontechgroup.com/cloud-cost-optimizer',
+      color: 'from-emerald-600 to-teal-700',
+      marketData: '$18B cloud cost mgmt, 19% CAGR',
+      competitors: 'Zesty, CAST AI, CloudZero',
+      savings: 'Save 10-35% in 90 days',
+      contactInfo: {
+        mobile: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
+    },
+    {
+      title: '🗄️ Database Performance Monitor',
+      description: 'Proactive Postgres/MySQL insights with slow query capture, AI index suggestions, and capacity forecasting.',
+      price: 'Starting at $79/month',
+      features: ['Slow query ranking', 'AI index advice', 'Pool tuning', 'SLA/SLO dashboards'],
+      link: 'https://ziontechgroup.com/database-performance-monitor',
+      color: 'from-purple-600 to-indigo-700',
+      marketData: '$6B DB monitoring market',
+      competitors: 'Percona PMM, Datadog APM, New Relic',
+      savings: 'Cut p95 20-50% in month 1',
+      contactInfo: {
+        mobile: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
+    },
+    {
+      title: '📘 API Documentation Generator',
+      description: 'Generate beautiful, accurate API docs from OpenAPI/GraphQL/Proto with SDK snippets and changelogs.',
+      price: 'Starting at $49/month',
+      features: ['Schema parsing', 'SDK snippets', 'Changelog & versions', 'Search & themes'],
+      link: 'https://ziontechgroup.com/api-documentation-generator',
+      color: 'from-cyan-600 to-blue-700',
+      marketData: '$1.5B dev docs tooling',
+      competitors: 'ReadMe, Redocly, Stoplight',
+      savings: 'Ship docs 5x faster',
+      contactInfo: {
+        mobile: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
+    },
+    {
       title: '🧠 Quantum AI Brain-Computer Interface',
       icon: '🧠',
       description: 'Breakthrough quantum AI-powered brain-computer interface that enables direct neural communication and control. Achieve unprecedented human-AI symbiosis with 99.9% accuracy.',
@@ -418,6 +482,18 @@ export default function HomePage() {
                           <span className="text-yellow-400 font-semibold">Your Savings:</span>
                           <p className="text-gray-300">{highlight.savings}</p>
                         </div>
+                        {highlight.contactInfo && (
+                          <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                            <div className="flex items-center gap-2 text-gray-300">
+                              <Phone className="w-4 h-4 text-cyan-400" />
+                              <span>{highlight.contactInfo.mobile}</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-gray-300">
+                              <Mail className="w-4 h-4 text-purple-400" />
+                              <span>{highlight.contactInfo.email}</span>
+                            </div>
+                          </div>
+                        )}
                       </div>
                     </div>
                     

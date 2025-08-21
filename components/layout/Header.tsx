@@ -34,9 +34,10 @@ const Header: React.FC = () => {
       children: [
         { name: 'AI & Machine Learning', href: '/services?category=AI%20%26%20Machine%20Learning' },
         { name: 'Blockchain & Web3', href: '/services?category=Blockchain%20%26%20Web3' },
-        { name: 'AR/VR & Metaverse', href: '/services?category=AR%2FVR%20%26%20Metaverse' },
+        { name: 'Metaverse & VR/AR', href: '/services?category=Metaverse%20%26%20VR%2FAR' },
         { name: 'IoT & Smart Cities', href: '/services?category=IoT%20%26%20Smart%20Cities' },
         { name: 'Quantum Computing', href: '/services?category=Quantum%20Computing' },
+        { name: 'Cloud & Infrastructure', href: '/services?category=Cloud%20%26%20Infrastructure' },
         { name: 'View All Services', href: '/services' }
       ]
     },
