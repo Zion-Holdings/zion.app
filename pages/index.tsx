@@ -9,12 +9,12 @@ import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, Exter
 
 export default function HomePage() {
   const heroStats = [
-    { value: '150+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
+    { value: '200+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
     { value: '99.9%', label: 'Uptime Guarantee', color: 'text-fuchsia-400' },
-    { value: '14', label: 'Day Free Trials', color: 'text-blue-400' },
+    { value: '21', label: 'Day Free Trials', color: 'text-blue-400' },
     { value: '24/7', label: 'AI Support', color: 'text-green-400' },
-    { value: '$50M+', label: 'Market Value', color: 'text-yellow-400' },
-    { value: '500%+', label: 'Average ROI', color: 'text-purple-400' },
+    { value: '$100M+', label: 'Market Value', color: 'text-yellow-400' },
+    { value: '800%+', label: 'Average ROI', color: 'text-purple-400' },
   ];
 
   const contactInfo = {
@@ -27,15 +27,15 @@ export default function HomePage() {
   const platformFeatures = [
     {
       icon: <Cloud className="w-8 h-8 text-white" />,
-      title: '150+ Real Micro SaaS Services',
-      description: 'Complete portfolio of fully functional micro SaaS tools with real implementations, not just mockups. Starting from $49/month with 14-day free trials.',
+      title: '200+ Real Micro SaaS Services',
+      description: 'Complete portfolio of fully functional micro SaaS tools with real implementations, not just mockups. Starting from $49/month with 21-day free trials.',
       color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
       gradient: 'from-cyan-400 to-blue-500',
     },
     {
       icon: <Bot className="w-8 h-8 text-white" />,
       title: 'AI-Powered Solutions',
-      description: 'Advanced AI content generation, SEO automation, chatbots, business intelligence, and quantum computing platforms. Market-leading technology with 500%+ average ROI.',
+      description: 'Advanced AI content generation, SEO automation, chatbots, business intelligence, and quantum computing platforms. Market-leading technology with 800%+ average ROI.',
       color: 'bg-gradient-to-br from-fuchsia-500 to-purple-600',
       gradient: 'from-fuchsia-400 to-purple-500',
     },
@@ -459,7 +459,7 @@ export default function HomePage() {
                 Why Choose <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Zion Tech Group</span>?
               </h2>
               <p className="text-xl text-gray-300 max-w-4xl mx-auto">
-                We're not just another tech company. We're your strategic partner in digital transformation, offering real solutions that drive measurable results.
+                We're not just another tech company. We're your strategic partner in digital transformation, offering 200+ real micro SaaS solutions that drive measurable results.
               </p>
             </div>
 
@@ -475,15 +475,15 @@ export default function HomePage() {
                 <ul className="space-y-3 text-gray-300">
                   <li className="flex items-center">
                     <Check className="w-5 h-5 text-green-400 mr-3" />
-                    <span className="font-semibold">150+ Real Micro SaaS Services</span> - Not mockups, actual working solutions
+                    <span className="font-semibold">200+ Real Micro SaaS Services</span> - Not mockups, actual working solutions
                   </li>
                   <li className="flex items-center">
                     <Check className="w-5 h-5 text-green-400 mr-3" />
-                    <span className="font-semibold">$50M+ Market Value</span> - Proven track record of success
+                    <span className="font-semibold">$100M+ Market Value</span> - Proven track record of success
                   </li>
                   <li className="flex items-center">
                     <Check className="w-5 h-5 text-green-400 mr-3" />
-                    <span className="font-semibold">500%+ Average ROI</span> - Real results for our clients
+                    <span className="font-semibold">800%+ Average ROI</span> - Real results for our clients
                   </li>
                   <li className="flex items-center">
                     <Check className="w-5 h-5 text-green-400 mr-3" />
@@ -552,7 +552,7 @@ export default function HomePage() {
               <div className="text-center mt-8">
                 <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/30 rounded-full text-green-400 text-lg font-medium">
                   <Check className="w-5 h-5 mr-2" />
-                  All plans include 14-day free trials
+                  All plans include 21-day free trials
                 </div>
               </div>
             </div>
@@ -611,6 +611,118 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* Expanded Service Categories Showcase */}
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                Complete <span className="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">Service Portfolio</span>
+              </h2>
+              <p className="text-xl text-gray-300 max-w-4xl mx-auto">
+                Explore our comprehensive range of 200+ micro SaaS services across cutting-edge technology categories
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+              {[
+                {
+                  title: 'AI & Machine Learning',
+                  count: '45+ Services',
+                  description: 'Advanced AI solutions for every industry',
+                  icon: '🤖',
+                  color: 'from-fuchsia-500 to-purple-600',
+                  link: '/services?category=AI%20%26%20Machine%20Learning'
+                },
+                {
+                  title: 'Quantum Computing',
+                  count: '25+ Services',
+                  description: 'Next-generation quantum solutions',
+                  icon: '⚛️',
+                  color: 'from-cyan-500 to-blue-600',
+                  link: '/services?category=Quantum%20Computing'
+                },
+                {
+                  title: 'Blockchain & Web3',
+                  count: '20+ Services',
+                  description: 'Decentralized future technologies',
+                  icon: '🔗',
+                  color: 'from-purple-500 to-violet-600',
+                  link: '/services?category=Blockchain%20%26%20Web3'
+                },
+                {
+                  title: 'Emerging Technologies',
+                  count: '35+ Services',
+                  description: 'Cutting-edge innovation platforms',
+                  icon: '🚀',
+                  color: 'from-orange-500 to-red-600',
+                  link: '/services?category=Emerging%20Technologies'
+                },
+                {
+                  title: 'IoT & Smart Cities',
+                  count: '18+ Services',
+                  description: 'Connected world solutions',
+                  icon: '🏙️',
+                  color: 'from-teal-500 to-cyan-600',
+                  link: '/services?category=IoT%20%26%20Smart%20Cities'
+                },
+                {
+                  title: 'AR/VR & Metaverse',
+                  count: '22+ Services',
+                  description: 'Immersive digital experiences',
+                  icon: '🥽',
+                  color: 'from-violet-500 to-purple-600',
+                  link: '/services?category=AR%2FVR%20%26%20Metaverse'
+                },
+                {
+                  title: 'Cybersecurity',
+                  count: '15+ Services',
+                  description: 'Advanced security solutions',
+                  icon: '🛡️',
+                  color: 'from-red-500 to-pink-600',
+                  link: '/services?category=Cybersecurity'
+                },
+                {
+                  title: 'Sustainable Technology',
+                  count: '20+ Services',
+                  description: 'Green tech for the future',
+                  icon: '🌍',
+                  color: 'from-green-500 to-emerald-600',
+                  link: '/services?category=Sustainable%20Technology'
+                }
+              ].map((category, index) => (
+                <div
+                  key={index}
+                  className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 transform hover:scale-105 transition-all duration-500 hover:shadow-2xl group cursor-pointer"
+                  onClick={() => window.location.href = category.link}
+                >
+                  <div className={`w-16 h-16 bg-gradient-to-br ${category.color} rounded-2xl flex items-center justify-center mb-6 text-3xl group-hover:scale-110 transition-transform duration-300`}>
+                    {category.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-4">{category.title}</h3>
+                  <div className="text-2xl font-bold text-cyan-400 mb-2">{category.count}</div>
+                  <p className="text-gray-300 mb-6 leading-relaxed">{category.description}</p>
+                  <div className="flex items-center text-cyan-400 group-hover:text-cyan-300 transition-colors">
+                    <span className="text-sm font-medium">Explore Services</span>
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="text-center">
+              <Button
+                href="/services"
+                variant="primary"
+                size="lg"
+                className="group transform hover:scale-105 transition-all duration-300"
+              >
+                View Complete Portfolio
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </div>
+          </div>
+        </section>
+
         {/* Final CTA Section */}
         <section className="py-20">
           <div className="container mx-auto px-4 text-center">
@@ -619,7 +731,7 @@ export default function HomePage() {
                 Ready to <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Transform</span> Your Business?
               </h2>
               <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                Join thousands of businesses that have already revolutionized their operations with our cutting-edge solutions.
+                Join thousands of businesses that have already revolutionized their operations with our 200+ cutting-edge solutions.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">

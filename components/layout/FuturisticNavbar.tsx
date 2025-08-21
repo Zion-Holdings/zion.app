@@ -18,9 +18,9 @@ export default function FuturisticNavbar() {
   const navItems = [
     { name: 'Home', href: '/', icon: <Zap className="w-4 h-4" /> },
     { name: 'Services', href: '/services', icon: <Cloud className="w-4 h-4" /> },
-    { name: 'Micro SaaS', href: '/micro-saas', icon: <Bot className="w-4 h-4" /> },
-    { name: 'Pricing', href: '/pricing', icon: <Globe className="w-4 h-4" /> },
-    { name: 'About', href: '/about', icon: <Shield className="w-4 h-4" /> },
+    { name: 'AI & Quantum', href: '/services?category=AI%20%26%20Machine%20Learning', icon: <Bot className="w-4 h-4" /> },
+    { name: 'Blockchain', href: '/services?category=Blockchain%20%26%20Web3', icon: <Globe className="w-4 h-4" /> },
+    { name: 'Pricing', href: '/pricing', icon: <Shield className="w-4 h-4" /> },
     { name: 'Contact', href: '/contact', icon: <Zap className="w-4 h-4" /> },
   ];
 
