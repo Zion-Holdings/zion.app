@@ -145,6 +145,38 @@ export default function ServicesPage() {
   return (
           <QuantumHolographicBackground variant="neural-quantum" intensity="high">
       <div className="min-h-screen">
+        {/* Navigation Section */}
+        <section className="relative py-8 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="bg-black/20 backdrop-blur-lg rounded-2xl p-6 border border-white/10">
+              <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+                <div className="flex items-center space-x-8">
+                  <a href="/" className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                    Zion Tech Group
+                  </a>
+                  <nav className="hidden md:flex space-x-6">
+                    <a href="/" className="text-white hover:text-cyan-400 transition-colors">Home</a>
+                    <a href="/services" className="text-white hover:text-cyan-400 transition-colors">Services</a>
+                    <a href="/innovative-services" className="text-white hover:text-cyan-400 transition-colors">Innovative Services</a>
+                    <a href="/about" className="text-white hover:text-cyan-400 transition-colors">About</a>
+                    <a href="/contact" className="text-white hover:text-cyan-400 transition-colors">Contact</a>
+                  </nav>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <a href={`tel:${contactInfo.mobile}`} className="flex items-center space-x-2 text-white hover:text-cyan-400 transition-colors">
+                    <Phone className="w-4 h-4" />
+                    <span className="hidden sm:inline">{contactInfo.mobile}</span>
+                  </a>
+                  <a href={`mailto:${contactInfo.email}`} className="flex items-center space-x-2 text-white hover:text-cyan-400 transition-colors">
+                    <Mail className="w-4 h-4" />
+                    <span className="hidden sm:inline">{contactInfo.email}</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <Head>
           <title>Complete Services Portfolio | Zion Tech Group - AI, Cloud, Security & More</title>
           <meta name="description" content="Explore our complete portfolio of 250+ micro SaaS services. AI solutions, cloud infrastructure, cybersecurity, data analytics, IoT, blockchain, and emerging technologies." />
@@ -585,6 +617,74 @@ export default function ServicesPage() {
                   </div>
                 </div>
               </EnhancedFuturisticCard>
+            </div>
+          </div>
+        </section>
+
+        {/* Innovative Services Promotion */}
+        <section className="py-20 bg-gradient-to-br from-gray-900/50 to-black/50">
+          <div className="container mx-auto px-4 text-center">
+            <div className="mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                Discover Our Revolutionary Services
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Explore our breakthrough micro SAAS services featuring quantum AI, autonomous systems, and cutting-edge technology.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+              <EnhancedFuturisticCard variant="quantum" intensity="high" className="h-full">
+                <div className="text-center">
+                  <div className="text-4xl mb-4">⚛️🧠</div>
+                  <h3 className="text-xl font-bold text-white mb-2">Quantum AI Neural Optimizer</h3>
+                  <p className="text-gray-300 text-sm mb-4">1000x faster neural network training with 99.99% accuracy</p>
+                  <div className="text-lg font-bold text-cyan-400 mb-2">$2,999/month</div>
+                  <div className="text-xs text-gray-400 mb-4">21-day free trial • 2000% ROI guarantee</div>
+                  <Button href="/innovative-services" variant="outline" size="sm">
+                    Learn More
+                  </Button>
+                </div>
+              </EnhancedFuturisticCard>
+
+              <EnhancedFuturisticCard variant="holographic" intensity="high" className="h-full">
+                <div className="text-center">
+                  <div className="text-4xl mb-4">🔗⚛️</div>
+                  <h3 className="text-xl font-bold text-white mb-2">Quantum Blockchain Platform</h3>
+                  <p className="text-gray-300 text-sm mb-4">Infinite scalability with quantum-secured consensus</p>
+                  <div className="text-lg font-bold text-cyan-400 mb-2">$1,999/month</div>
+                  <div className="text-xs text-gray-400 mb-4">21-day free trial • 1500% ROI guarantee</div>
+                  <Button href="/innovative-services" variant="outline" size="sm">
+                    Learn More
+                  </Button>
+                </div>
+              </EnhancedFuturisticCard>
+
+              <EnhancedFuturisticCard variant="cyberpunk" intensity="high" className="h-full">
+                <div className="text-center">
+                  <div className="text-4xl mb-4">🛡️🤖</div>
+                  <h3 className="text-xl font-bold text-white mb-2">AI Cybersecurity Quantum Sentinel</h3>
+                  <p className="text-gray-300 text-sm mb-4">99.99% threat detection with quantum-resistant encryption</p>
+                  <div className="text-lg font-bold text-cyan-400 mb-2">$1,499/month</div>
+                  <div className="text-xs text-gray-400 mb-4">14-day free trial • 800% ROI guarantee</div>
+                  <Button href="/innovative-services" variant="outline" size="sm">
+                    Learn More
+                  </Button>
+                </div>
+              </EnhancedFuturisticCard>
+            </div>
+
+            <div className="text-center">
+              <Button href="/innovative-services" variant="primary" size="lg" className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700">
+                <Sparkles className="w-5 h-5 mr-2" />
+                Explore All Innovative Services
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+              <div className="mt-6 text-sm text-gray-400">
+                <div>Contact us: {contactInfo.mobile} | {contactInfo.email}</div>
+                <div className="mt-1">Address: {contactInfo.address}</div>
+                <div className="mt-1">Website: {contactInfo.website}</div>
+              </div>
             </div>
           </div>
         </section>

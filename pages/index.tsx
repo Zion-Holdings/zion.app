@@ -169,64 +169,102 @@ export default function HomePage() {
 
   const innovativeServices = [
     {
-      name: 'Quantum AI Cognitive Platform',
-      description: 'Next-generation cognitive computing with quantum AI for unprecedented problem-solving capabilities.',
-      icon: '🧠',
-      price: '$1,299/month',
-      category: 'Quantum Computing',
+      name: 'Quantum AI Neural Optimizer',
+      description: 'Revolutionary quantum-enhanced neural network optimization with 1000x faster training and 99.99% accuracy.',
+      icon: '⚛️🧠',
+      price: '$2,999/month',
+      category: 'Quantum AI & Machine Learning',
       variant: 'quantum-advanced',
-      link: 'https://ziontechgroup.com/quantum-ai-cognitive'
+      link: 'https://ziontechgroup.com/quantum-ai-neural-optimizer',
+      innovation: 'Breakthrough'
     },
     {
-      name: 'Autonomous AI Factory',
-      description: 'Complete autonomous manufacturing system powered by AI that runs 24/7 with zero human intervention.',
-      icon: '🏭',
-      price: '$2,499/month',
-      category: 'Manufacturing & Industry 4.0',
-      variant: 'holographic-advanced',
-      link: 'https://ziontechgroup.com/autonomous-ai-factory'
-    },
-    {
-      name: 'Quantum Cybersecurity Fortress',
-      description: 'Unbreakable quantum-resistant security using quantum-resistant encryption and AI-powered threat detection.',
-      icon: '🛡️',
-      price: '$1,599/month',
-      category: 'Cybersecurity',
+      name: 'AI Cybersecurity Quantum Sentinel',
+      description: 'Next-generation AI-powered threat detection with quantum security and 99.99% threat detection accuracy.',
+      icon: '🛡️🤖',
+      price: '$1,499/month',
+      category: 'AI Cybersecurity',
       variant: 'cyberpunk',
-      link: 'https://ziontechgroup.com/quantum-cybersecurity'
+      link: 'https://ziontechgroup.com/ai-cybersecurity-quantum-sentinel',
+      innovation: 'Advanced'
     },
     {
-      name: 'Biomedical AI Research Platform',
-      description: 'AI-powered biomedical breakthroughs accelerating drug discovery, disease diagnosis, and medical research.',
-      icon: '🧬',
-      price: '$899/month',
-      category: 'Biomedical & Healthcare',
-      variant: 'neural-quantum',
-      link: 'https://ziontechgroup.com/biomedical-ai-research'
-    },
-    {
-      name: 'Climate AI Prediction Engine',
-      description: 'Predicting climate patterns and extreme weather events with unprecedented accuracy using quantum AI.',
-      icon: '🌍',
-      price: '$699/month',
-      category: 'Climate & Environment',
-      variant: 'quantum-holographic',
-      link: 'https://ziontechgroup.com/climate-ai-prediction'
-    },
-    {
-      name: 'Quantum Financial Trading Platform',
-      description: 'Quantum-powered algorithmic trading with real-time market analysis and predictive modeling.',
-      icon: '💰',
+      name: 'Quantum Blockchain Platform',
+      description: 'Quantum-secured blockchain with infinite scalability and lightning-fast transactions for the future of DeFi.',
+      icon: '🔗⚛️',
       price: '$1,999/month',
-      category: 'Financial Technology',
-      variant: 'quantum-cyberpunk',
-      link: 'https://ziontechgroup.com/quantum-financial-trading'
+      category: 'Blockchain & Web3',
+      variant: 'holographic-advanced',
+      link: 'https://ziontechgroup.com/quantum-blockchain-platform',
+      innovation: 'Breakthrough'
+    },
+    {
+      name: 'AI Content Quantum Factory',
+      description: 'Quantum-powered content creation at infinite scale with SEO optimization and brand voice customization.',
+      icon: '📝⚛️',
+      price: '$799/month',
+      category: 'AI Content & Marketing',
+      variant: 'quantum-advanced',
+      link: 'https://ziontechgroup.com/ai-content-quantum-factory',
+      innovation: 'Advanced'
+    },
+    {
+      name: 'Quantum Computing Cloud',
+      description: 'Enterprise quantum computing as a service with real quantum processors and quantum algorithms.',
+      icon: '⚛️☁️',
+      price: '$4,999/month',
+      category: 'Quantum Computing',
+      variant: 'holographic-advanced',
+      link: 'https://ziontechgroup.com/quantum-computing-cloud',
+      innovation: 'Breakthrough'
+    },
+    {
+      name: 'AI Healthcare Quantum Diagnostics',
+      description: 'Quantum AI-powered medical diagnosis and drug discovery with 99.9% accuracy and personalized medicine.',
+      icon: '🏥⚛️',
+      price: '$3,999/month',
+      category: 'AI Healthcare & Biotechnology',
+      variant: 'quantum-advanced',
+      link: 'https://ziontechgroup.com/ai-healthcare-quantum-diagnostics',
+      innovation: 'Breakthrough'
     }
   ];
 
   return (
           <QuantumHolographicBackground variant="quantum-holographic" intensity="high">
       <div className="min-h-screen">
+        {/* Navigation Section */}
+        <section className="relative py-8 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="bg-black/20 backdrop-blur-lg rounded-2xl p-6 border border-white/10">
+              <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+                <div className="flex items-center space-x-8">
+                  <a href="/" className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                    Zion Tech Group
+                  </a>
+                  <nav className="hidden md:flex space-x-6">
+                    <a href="/" className="text-white hover:text-cyan-400 transition-colors">Home</a>
+                    <a href="/services" className="text-white hover:text-cyan-400 transition-colors">Services</a>
+                    <a href="/innovative-services" className="text-white hover:text-cyan-400 transition-colors">Innovative Services</a>
+                    <a href="/about" className="text-white hover:text-cyan-400 transition-colors">About</a>
+                    <a href="/contact" className="text-white hover:text-cyan-400 transition-colors">Contact</a>
+                  </nav>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <a href={`tel:${contactInfo.mobile}`} className="flex items-center space-x-2 text-white hover:text-cyan-400 transition-colors">
+                    <Phone className="w-4 h-4" />
+                    <span className="hidden sm:inline">{contactInfo.mobile}</span>
+                  </a>
+                  <a href={`mailto:${contactInfo.email}`} className="flex items-center space-x-2 text-white hover:text-cyan-400 transition-colors">
+                    <Mail className="w-4 h-4" />
+                    <span className="hidden sm:inline">{contactInfo.email}</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <Head>
           <title>Zion Tech Group - Revolutionary AI, Quantum Computing & Emerging Technology Solutions</title>
           <meta name="description" content="Transform your business with Zion Tech Group's cutting-edge micro SaaS services. AI, quantum computing, blockchain, metaverse, and emerging technology solutions with 99.9% uptime guarantee." />
@@ -391,6 +429,13 @@ export default function HomePage() {
                     <p className="text-gray-300 text-sm mb-4">{service.description}</p>
                     <div className="text-sm text-gray-400 mb-2">{service.category}</div>
                     <div className="text-lg font-bold text-cyan-400 mb-4">{service.price}</div>
+                    {/* Innovation Level Badge */}
+                    <div className="mb-4">
+                      <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-purple-500 to-pink-500 text-white">
+                        <Sparkles className="w-3 h-3 mr-1" />
+                        {service.innovation}
+                      </div>
+                    </div>
                     <div className="inline-flex items-center text-blue-400 text-sm group-hover:text-blue-300 transition-colors">
                       Learn More <ArrowRight className="w-4 h-4 ml-1" />
                     </div>
@@ -400,10 +445,21 @@ export default function HomePage() {
             </div>
 
             <div className="text-center mt-12">
-              <Button href="/services" variant="primary" size="lg">
-                View All Services
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Button href="/services" variant="primary" size="lg">
+                  View All Services
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+                <Button href="/innovative-services" variant="secondary" size="lg" className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700">
+                  Explore Innovative Services
+                  <Sparkles className="w-5 h-5 ml-2" />
+                </Button>
+              </div>
+              <div className="mt-6 text-sm text-gray-400">
+                <div>Contact us: {contactInfo.mobile} | {contactInfo.email}</div>
+                <div className="mt-1">Address: {contactInfo.address}</div>
+                <div className="mt-1">Website: {contactInfo.website}</div>
+              </div>
             </div>
           </div>
         </section>
