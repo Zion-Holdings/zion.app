@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shield, Mail, MapPin, Rocket, Brain, Sparkles, Atom, Dna, Users, Globe, Cpu, Target, Microscope, Lock, Cloud, BarChart3, Settings, Eye, Award, Clock, Heart, Lightbulb, Target as TargetIcon, Zap as ZapIcon, Shield as ShieldIcon, Globe as GlobeIcon } from 'lucide-react';
+import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, Shield, Mail, MapPin, Rocket, Brain, Users, Globe, Award } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { innovativeRealMicroSaasServices2025 } from '../data/2025-innovative-real-micro-saas-services';
@@ -23,12 +23,7 @@ const heroStats = [
   { label: 'ROI Average', value: '300%', icon: <TrendingUp className="w-5 h-5" /> }
 ];
 
-const stats = [
-  { number: '50+', label: 'Services', icon: Star, color: 'text-cyan-400' },
-  { number: '1000+', label: 'Companies Served', icon: Users, color: 'text-purple-400' },
-  { number: '99.9%', label: 'Uptime', icon: Shield, color: 'text-green-400' },
-  { number: '24/7', label: 'Support', icon: Zap, color: 'text-pink-400' }
-];
+
 
 const serviceCategories = [
   {
@@ -139,7 +134,7 @@ const latestInnovations = [
   {
     title: 'AI Consciousness Evolution Platform',
     description: 'Breakthrough platform enabling AI systems to develop genuine consciousness and emotional intelligence.',
-    price: '$50,000/month',
+    price: '$2,999/month',
     category: 'AI & Consciousness',
     icon: '🧠',
     color: 'from-violet-500 to-purple-600',
@@ -157,13 +152,61 @@ const latestInnovations = [
   {
     title: 'Quantum Cloud Infrastructure',
     description: 'Next-generation quantum-enhanced cloud computing infrastructure with unprecedented power.',
-    price: '$75,000/month',
+    price: '$2,999/month',
     category: 'Quantum Infrastructure',
     icon: '☁️',
     color: 'from-blue-500 to-indigo-600',
     href: '/quantum-cloud-infrastructure-platform'
+  },
+  {
+    title: 'AI Multimodal Fusion Platform',
+    description: 'Unified AI processing across text, image, audio, and video with 95% accuracy.',
+    price: '$1,999/month',
+    category: 'AI Multimodal',
+    icon: '🔗',
+    color: 'from-indigo-500 to-purple-600',
+    href: '/ai-multimodal-fusion-platform'
+  },
+  {
+    title: 'Brain-Computer Interface Platform',
+    description: 'Revolutionary neural interface technology for human-AI collaboration.',
+    price: '$25,000/month',
+    category: 'Neural Technology',
+    icon: '🧠',
+    color: 'from-pink-500 to-rose-600',
+    href: '/brain-computer-interface-platform'
+  },
+  {
+    title: 'Zero Trust Security Platform',
+    description: 'Advanced zero trust architecture reducing security breaches by 95%.',
+    price: '$1,499/month',
+    category: 'Cybersecurity',
+    icon: '🔒',
+    color: 'from-red-500 to-pink-600',
+    href: '/zero-trust-security-platform'
   }
 ];
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5
+    }
+  }
+};
 
 export default function Home() {
   return (
@@ -397,68 +440,68 @@ export default function Home() {
       </section>
 
       {/* Latest Innovations Section */}
-      <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <motion.div 
             className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Latest Innovations
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+              Latest Innovations 2025
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Discover our newest breakthrough technologies that are reshaping industries and creating new possibilities 
-              for businesses worldwide.
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Discover our breakthrough technologies that are reshaping industries and creating new possibilities.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             {latestInnovations.map((innovation, index) => (
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                className="group"
+                key={innovation.title}
+                variants={itemVariants}
+                className="group relative bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/20"
               >
-                <div className="bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-2xl p-6 hover:border-cyan-500/50 transition-all duration-300 hover:transform hover:scale-105">
-                  <div className={`w-12 h-12 ${innovation.color} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                    <span className="text-2xl">{innovation.icon}</span>
-                  </div>
-                  <div className="mb-2">
-                    <span className="px-2 py-1 bg-cyan-500/10 text-cyan-300 text-xs rounded-full border border-cyan-500/20">
-                      {innovation.category}
-                    </span>
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-3">{innovation.title}</h3>
-                  <p className="text-gray-300 text-sm mb-4 leading-relaxed">{innovation.description}</p>
-                  <div className="text-cyan-400 font-semibold mb-4">{innovation.price}</div>
-                  <Link href={innovation.href}>
-                    <button className="w-full py-2 border border-cyan-500/50 text-cyan-300 text-sm rounded-lg hover:bg-cyan-500/10 hover:border-cyan-400 transition-all duration-300">
-                      Learn More
-                    </button>
-                  </Link>
+                <div className="text-4xl mb-4">{innovation.icon}</div>
+                
+                <div className="mb-4">
+                  <span className={`inline-block px-3 py-1 bg-gradient-to-r ${innovation.color} text-white text-xs font-semibold rounded-full`}>
+                    {innovation.category}
+                  </span>
                 </div>
+                
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
+                  {innovation.title}
+                </h3>
+                
+                <p className="text-gray-400 text-sm mb-4 leading-relaxed">
+                  {innovation.description}
+                </p>
+                
+                <div className="flex items-center justify-between mb-6">
+                  <div className="text-2xl font-bold text-cyan-400">
+                    {innovation.price}
+                  </div>
+                  <div className="text-sm text-gray-500">Starting from</div>
+                </div>
+                
+                <Link
+                  href={innovation.href}
+                  className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 group-hover:shadow-lg group-hover:shadow-cyan-500/25"
+                >
+                  Explore Innovation
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
               </motion.div>
             ))}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-            className="text-center mt-12"
-          >
-            <Link href="/comprehensive-services-showcase-2025">
-              <button className="px-8 py-4 border-2 border-cyan-500/50 text-cyan-300 font-semibold text-lg rounded-xl hover:bg-cyan-500/10 hover:border-cyan-400 transition-all duration-300">
-                View All Services
-              </button>
-            </Link>
           </motion.div>
         </div>
       </section>

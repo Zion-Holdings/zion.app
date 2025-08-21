@@ -59,7 +59,23 @@ const navigationItems: NavigationItem[] = [
       { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence', description: 'Financial AI analytics' },
       { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform', description: 'Environmental AI solutions' },
       { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-platform', description: 'Human-AI emotional collaboration' },
-      { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer', description: 'Legal document analysis' }
+      { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer', description: 'Legal document analysis' },
+      { name: 'AI Sales Automation', href: '/ai-sales-automation-platform', description: 'Intelligent sales process automation' },
+      { name: 'AI Customer Service', href: '/ai-customer-service-platform', description: '24/7 automated support' },
+      { name: 'AI HR & Recruitment', href: '/ai-hr-recruitment-platform', description: 'Intelligent talent acquisition' },
+      { name: 'AI Marketing Automation', href: '/ai-marketing-automation-platform', description: 'Campaign optimization' },
+      { name: 'AI Project Management', href: '/ai-project-management-suite', description: 'Intelligent project planning' },
+      { name: 'AI Financial Analytics', href: '/ai-financial-analytics-platform', description: 'Financial forecasting' },
+      { name: 'AI SEO Optimization', href: '/ai-seo-optimization-platform', description: 'Search engine optimization' },
+      { name: 'AI Video Editing', href: '/ai-video-editing-platform', description: 'Automated video editing' },
+      { name: 'AI Website Personalization', href: '/ai-website-personalization-platform', description: 'Dynamic content adaptation' },
+      { name: 'AI Multimodal Fusion', href: '/ai-multimodal-fusion-platform', description: 'Unified AI processing' },
+      { name: 'AI Quantum Hybrid', href: '/ai-quantum-hybrid-computing', description: 'Quantum-enhanced AI' },
+      { name: 'AI Mental Health Companion', href: '/ai-mental-health-companion', description: 'Emotional support AI' },
+      { name: 'AI Phone Agent', href: '/ai-phone-agent', description: 'Voice AI for calls' },
+      { name: 'AI Meeting Transcriber', href: '/ai-meeting-transcriber-pro', description: 'Meeting transcription' },
+      { name: 'AI IoT Platform', href: '/ai-iot-platform', description: 'Intelligent IoT management' },
+      { name: 'AI Market Research', href: '/ai-market-research', description: 'Competitive intelligence' }
     ]
   },
   {
@@ -75,10 +91,21 @@ const navigationItems: NavigationItem[] = [
       { name: 'Quantum Energy Platform', href: '/quantum-energy-platform', description: 'Fusion power simulation' },
       { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai-platform', description: 'Self-driving AI systems' },
       { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery-platform', description: 'Materials science acceleration' },
-      { name: 'Quantum Robotics', href: '/quantum-robotics', description: 'Quantum-enhanced robotics' },
+      { name: 'Quantum Robotics', href: '/quantum-robotics-platform', description: 'Quantum-enhanced robotics' },
       { name: 'Quantum Internet Security', href: '/quantum-internet-security', description: 'Unbreakable encryption' },
       { name: 'Quantum Logistics', href: '/quantum-logistics-optimization', description: 'Route optimization' },
-      { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity-platform', description: 'Next-gen security' }
+      { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity-platform', description: 'Next-gen security' },
+      { name: 'Metaverse AI Development', href: '/metaverse-ai-development-platform', description: 'Intelligent virtual worlds' },
+      { name: 'Quantum Machine Learning', href: '/quantum-machine-learning-platform', description: 'Quantum ML algorithms' },
+      { name: 'Quantum Neural Networks', href: '/quantum-neural-networks', description: 'Quantum AI processing' },
+      { name: 'Quantum Cryptography', href: '/quantum-cryptography-platform', description: 'Unbreakable security' },
+      { name: 'Quantum Sensors', href: '/quantum-sensors-platform', description: 'Ultra-sensitive detection' },
+      { name: 'Quantum Communication', href: '/quantum-communication-platform', description: 'Secure quantum networks' },
+      { name: 'Quantum Simulation', href: '/quantum-simulation-platform', description: 'Complex system modeling' },
+      { name: 'Quantum Optimization', href: '/quantum-optimization-platform', description: 'Advanced problem solving' },
+      { name: 'Quantum Chemistry', href: '/quantum-chemistry-platform', description: 'Molecular simulation' },
+      { name: 'Quantum Finance', href: '/quantum-finance-platform', description: 'Financial modeling' },
+      { name: 'Quantum Biology', href: '/quantum-biology-platform', description: 'Biological quantum effects' }
     ]
   },
   {
@@ -96,7 +123,17 @@ const navigationItems: NavigationItem[] = [
       { name: 'Autonomous IT Operations', href: '/autonomous-it-operations-center', description: 'Self-managing IT systems' },
       { name: 'Quantum Data Center', href: '/quantum-data-center', description: 'Next-gen data centers' },
       { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity', description: 'Quantum security solutions' },
-      { name: 'Quantum Cloud Migration', href: '/quantum-cloud-migration', description: 'Seamless cloud transitions' }
+      { name: 'Quantum Cloud Migration', href: '/quantum-cloud-migration', description: 'Seamless cloud transitions' },
+      { name: 'Quantum Security Platform', href: '/quantum-security-platform', description: 'Quantum encryption' },
+      { name: 'Quantum Compliance', href: '/quantum-compliance-platform', description: 'Regulatory compliance' },
+      { name: 'Quantum Monitoring', href: '/quantum-monitoring-platform', description: 'Advanced system monitoring' },
+      { name: 'Quantum Backup', href: '/quantum-backup-platform', description: 'Secure data backup' },
+      { name: 'Quantum Recovery', href: '/quantum-recovery-platform', description: 'Disaster recovery' },
+      { name: 'Quantum Analytics', href: '/quantum-analytics-platform', description: 'Advanced data analytics' },
+      { name: 'Quantum Integration', href: '/quantum-integration-platform', description: 'System integration' },
+      { name: 'Quantum Automation', href: '/quantum-automation-platform', description: 'Intelligent automation' },
+      { name: 'Quantum Governance', href: '/quantum-governance-platform', description: 'IT governance' },
+      { name: 'Quantum Risk Management', href: '/quantum-risk-management', description: 'Risk assessment' }
     ]
   },
   {
@@ -114,7 +151,18 @@ const navigationItems: NavigationItem[] = [
       { name: 'Marketing Automation', href: '/ai-marketing-automation', description: 'Intelligent marketing' },
       { name: 'Customer Service AI', href: '/ai-customer-service', description: 'Automated support' },
       { name: 'HR & Recruitment', href: '/ai-hr-recruitment', description: 'AI talent management' },
-      { name: 'Legal Contract Analysis', href: '/ai-legal-contract-analyzer', description: 'Legal document review' }
+      { name: 'Legal Contract Analysis', href: '/ai-legal-contract-analyzer', description: 'Legal document review' },
+      { name: 'Sales Automation', href: '/ai-sales-automation-platform', description: 'Sales process automation' },
+      { name: 'Customer Service Platform', href: '/ai-customer-service-platform', description: '24/7 support automation' },
+      { name: 'HR & Recruitment Platform', href: '/ai-hr-recruitment-platform', description: 'Talent acquisition' },
+      { name: 'Marketing Automation Platform', href: '/ai-marketing-automation-platform', description: 'Campaign optimization' },
+      { name: 'Project Management Suite', href: '/ai-project-management-suite', description: 'Project automation' },
+      { name: 'Financial Analytics Platform', href: '/ai-financial-analytics-platform', description: 'Financial insights' },
+      { name: 'SEO Optimization Platform', href: '/ai-seo-optimization-platform', description: 'Search optimization' },
+      { name: 'Video Editing Platform', href: '/ai-video-editing-platform', description: 'Automated editing' },
+      { name: 'Website Personalization', href: '/ai-website-personalization-platform', description: 'Dynamic content' },
+      { name: 'Business Intelligence Suite', href: '/ai-business-intelligence-suite', description: 'Data insights' },
+      { name: 'Content Generation Platform', href: '/ai-content-generation-platform', description: 'AI content creation' }
     ]
   },
   {
