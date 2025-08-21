@@ -10,6 +10,7 @@ import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices, serviceCategories } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
 import { additionalEnhancedServices } from '../data/additional-real-services';
+import { innovativeNewServices } from '../data/innovative-new-services';
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -241,6 +242,108 @@ export default function ServicesPage() {
               </div>
             </div>
           </Card>
+        </div>
+      </section>
+
+      {/* Innovative Services Section */}
+      <section className="py-16 px-4">
+        <div className="container mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
+              🚀 Revolutionary Innovative Services
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Experience the future of technology with our cutting-edge quantum AI, neural interfaces, and revolutionary solutions.
+            </p>
+          </motion.div>
+          
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+              {innovativeNewServices.slice(0, 3).map((service, index) => (
+                <motion.div
+                  key={service.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <Card className="h-full bg-gradient-to-br from-gray-900/80 to-black/90 border border-gray-700/50 backdrop-blur-xl">
+                    <div className="p-6 space-y-4">
+                      <div className="flex items-center space-x-3 mb-3">
+                        <div className="text-3xl">{service.icon}</div>
+                        <div>
+                          <h3 className="text-lg font-bold text-white">{service.name}</h3>
+                          <p className="text-sm text-gray-400">{service.tagline}</p>
+                        </div>
+                      </div>
+                      
+                      <p className="text-gray-300 text-sm leading-relaxed">{service.description}</p>
+                      
+                      <div className="text-xl font-bold text-white">
+                        {service.price}<span className="text-gray-400 text-sm">{service.period}</span>
+                      </div>
+                      
+                      <div className="space-y-2">
+                        <h4 className="text-sm font-semibold text-cyan-400">Key Features:</h4>
+                        <ul className="space-y-1">
+                          {service.features.slice(0, 3).map((feature, featureIndex) => (
+                            <li key={featureIndex} className="flex items-center space-x-2 text-xs text-gray-300">
+                              <Check className="w-3 h-3 text-green-400 flex-shrink-0" />
+                              <span>{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      
+                      <div className="bg-gray-800/50 rounded-lg p-3 border border-gray-700/50">
+                        <div className="grid grid-cols-1 gap-2 text-xs">
+                          <div>
+                            <span className="text-cyan-400 font-semibold">Market:</span>
+                            <p className="text-gray-300">{service.marketSize}</p>
+                          </div>
+                          <div>
+                            <span className="text-green-400 font-semibold">ROI:</span>
+                            <p className="text-gray-300">{service.roi}</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="flex space-x-2">
+                        <Button
+                          href={service.link}
+                          className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white py-2 px-3 rounded-lg text-sm font-semibold transition-all duration-300"
+                        >
+                          <span>Learn More</span>
+                          <ArrowRight className="w-4 h-4 ml-1" />
+                        </Button>
+                        <Button
+                          href="/contact"
+                          variant="outline"
+                          className="px-3 py-2 border border-gray-600 text-gray-300 rounded-lg text-sm hover:border-cyan-500 hover:text-cyan-400 transition-all duration-300"
+                        >
+                          Contact
+                        </Button>
+                      </div>
+                    </div>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          
+          <div className="text-center">
+            <Button
+              href="/innovative-services"
+              className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-2xl hover:shadow-purple-500/25 transition-all duration-300"
+            >
+              <span>View All Innovative Services</span>
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+          </div>
         </div>
       </section>
 

@@ -15,6 +15,7 @@ import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
 import { additionalEnhancedServices } from '../data/additional-real-services';
+import { innovativeNewServices } from '../data/innovative-new-services';
 
 export default function HomePage() {
   const heroStats = [
@@ -771,6 +772,119 @@ export default function HomePage() {
             >
               <Sparkles className="w-5 h-5 mr-2" />
               View All 200+ Services
+            </Button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Innovative Services Section */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              🚀 <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">Revolutionary Innovative Services</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-4xl mx-auto">
+              Experience the future of technology with our cutting-edge quantum AI, neural interfaces, and revolutionary micro SaaS solutions. 
+              Each service delivers unprecedented ROI and competitive advantages.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            {innovativeNewServices.slice(0, 6).map((service, index) => (
+              <motion.div
+                key={service.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Card className="h-full bg-gradient-to-br from-gray-900/80 to-black/90 border border-gray-700/50 backdrop-blur-xl">
+                  <div className="p-8 space-y-6">
+                    <div className="flex items-center space-x-3 mb-4">
+                      <div className="text-4xl">{service.icon}</div>
+                      <div>
+                        <h3 className="text-xl font-bold text-white">{service.name}</h3>
+                        <p className="text-sm text-gray-400">{service.tagline}</p>
+                      </div>
+                    </div>
+                    
+                    <p className="text-gray-300 leading-relaxed">{service.description}</p>
+                    
+                    <div className="text-2xl font-bold text-white">
+                      {service.price}<span className="text-gray-400 text-lg">{service.period}</span>
+                    </div>
+                    
+                    <div className="space-y-3">
+                      <h4 className="text-lg font-semibold text-cyan-400">Key Features:</h4>
+                      <ul className="space-y-2">
+                        {service.features.slice(0, 4).map((feature, featureIndex) => (
+                          <li key={featureIndex} className="flex items-center space-x-2 text-gray-300">
+                            <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
+                            <span>{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    <div className="bg-gray-800/50 rounded-lg p-4 border border-gray-700/50">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                        <div>
+                          <span className="text-cyan-400 font-semibold">Market Size:</span>
+                          <p className="text-gray-300">{service.marketSize}</p>
+                        </div>
+                        <div>
+                          <span className="text-green-400 font-semibold">Growth Rate:</span>
+                          <p className="text-gray-300">{service.growthRate}</p>
+                        </div>
+                        <div className="md:col-span-2">
+                          <span className="text-yellow-400 font-semibold">ROI:</span>
+                          <p className="text-gray-300">{service.roi}</p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="flex space-x-3">
+                      <Button
+                        href={service.link}
+                        className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white py-3 px-4 rounded-lg font-semibold transition-all duration-300"
+                      >
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Learn More
+                      </Button>
+                      <Button
+                        href="/contact"
+                        variant="outline"
+                        className="px-4 py-3 border border-gray-600 text-gray-300 rounded-lg hover:border-cyan-500 hover:text-cyan-400 transition-all duration-300"
+                      >
+                        Contact
+                      </Button>
+                    </div>
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <Button
+              href="/innovative-services"
+              className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-2xl hover:shadow-purple-500/25 transition-all duration-300"
+            >
+              <Sparkles className="w-5 h-5 mr-2" />
+              View All Innovative Services
             </Button>
           </motion.div>
         </div>
