@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { Brain, Cpu, Database, Network, Rocket, Phone, Mail, MapPin, Check, FlaskConical } from 'lucide-react';
 import QuantumHolographicMatrixBackground from '../components/ui/QuantumHolographicMatrixBackground';
 import Button from '../components/ui/Button';
+import ServiceAds from '../components/sections/ServiceAds';
 
 export default function AIServicesPage() {
   const contactInfo = {
@@ -25,6 +26,41 @@ export default function AIServicesPage() {
     { name: 'Managed AI', price: 'From $3,500/month', items: ['SLA-backed ops', 'Drift monitoring', 'A/B and feedback loops', 'Quarterly roadmap review'] },
   ];
 
+  const featuredAIAds = [
+    {
+      title: '🤖 AI Assistant Pro',
+      description: 'Secure, branded copilot with RAG, handoff, and analytics to cut support tickets 30-50%.',
+      price: 'Starting at $149/month',
+      features: ['RAG over your docs', 'Slack/Teams channels', 'Human handoff', 'Conversation analytics'],
+      link: 'https://ziontechgroup.com/ai-assistant',
+      contactInfo
+    },
+    {
+      title: '🧪 AI Evals & Observability',
+      description: 'Ship reliable LLM features with regression testing, red-teaming, and live metrics.',
+      price: 'Starting at $99/month',
+      features: ['Dataset/version mgmt', 'Guardrail checks', 'Latency/cost KPIs', 'Prompt diffing'],
+      link: 'https://ziontechgroup.com/ai-evals',
+      contactInfo
+    },
+    {
+      title: '🔗 Agentic RAG Platform',
+      description: 'Production RAG with hybrid search, chunking strategies, and agentic tools.',
+      price: 'Starting at $179/month',
+      features: ['Hybrid vector+BM25', 'Chunking + citations', 'Toolformer-style agents', 'Eval suite'],
+      link: 'https://ziontechgroup.com/agentic-rag',
+      contactInfo
+    },
+    {
+      title: '🛡️ AI Guardrails Suite',
+      description: 'Policy enforcement, jailbreak detection, PII/PHI controls, and audit trails.',
+      price: 'Starting at $199/month',
+      features: ['Prompt/output policy engine', 'Jailbreak detection', 'PII/PHI redaction', 'Audit logs & alerts'],
+      link: 'https://ziontechgroup.com/ai-guardrails',
+      contactInfo
+    }
+  ];
+
   return (
     <QuantumHolographicMatrixBackground intensity="high">
       <Head>
@@ -34,6 +70,7 @@ export default function AIServicesPage() {
       </Head>
 
       <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
+        <ServiceAds heading="Featured AI Services" subheading="Production-ready offerings with transparent pricing." items={featuredAIAds} />
         <div className="text-center max-w-4xl mx-auto mb-12">
           <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-6">AI Services</h1>
           <p className="text-xl text-gray-300">From prototype to production, we build AI systems that are safe, observable, and cost-efficient.</p>
