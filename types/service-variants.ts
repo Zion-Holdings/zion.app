@@ -47,4 +47,6 @@ export type ServiceVariant =
   | 'digital-twin-futuristic'
   | '5g-futuristic'
   | 'biometric-futuristic'
-  | 'autonomous-futuristic';
+  | 'autonomous-futuristic'
+  | 'enterprise-futuristic'
+  | 'holographic-futuristic';

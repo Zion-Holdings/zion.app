@@ -42,7 +42,8 @@ const UltraAdvancedFuturisticBackground: React.FC<UltraAdvancedFuturisticBackgro
 
     const createParticles = () => {
       particles = [];
-      const particleCount = Math.floor(100 * intensity);
+      const screenFactor = typeof window !== 'undefined' ? (window.innerWidth < 640 ? 0.6 : window.innerWidth < 1024 ? 0.85 : 1) : 1;
+      const particleCount = Math.floor(120 * intensity * screenFactor);
       
       for (let i = 0; i < particleCount; i++) {
         const type = ['quantum', 'holographic', 'neural', 'cyberpunk'][Math.floor(Math.random() * 4)] as any;

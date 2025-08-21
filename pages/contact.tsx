@@ -33,36 +33,36 @@ export default function ContactPage() {
   // Enhanced service advertising content
   const serviceHighlights = [
     {
-      title: '🚀 Quantum AI Cognitive Platform',
-      description: 'The world\'s first quantum-enhanced AI with human-like reasoning. Achieve 1000% ROI through breakthrough discoveries.',
-      price: '$299/month',
-      features: ['Quantum neural networks', 'Human-like reasoning', '1000% ROI reported'],
-      link: 'https://ziontechgroup.com/quantum-ai-cognitive',
+      title: '🔮 AI Multimodal Fusion Platform',
+      description: 'Unified AI processing across text, image, video, and audio. Achieve 400% ROI through comprehensive insights.',
+      price: '$2,499/month',
+      features: ['Cross-modal data fusion', 'Real-time processing', 'Enterprise security'],
+      link: 'https://ziontechgroup.com/ai-multimodal-fusion-platform',
       color: 'from-purple-500 to-indigo-600'
     },
     {
-      title: '🏭 Autonomous Manufacturing AI',
-      description: 'Self-learning manufacturing systems with zero downtime. Achieve 400% ROI within 6 months.',
-      price: '$199/month',
-      features: ['Predictive maintenance', 'Quality control automation', 'Supply chain intelligence'],
-      link: 'https://ziontechgroup.com/autonomous-manufacturing',
-      color: 'from-orange-500 to-red-600'
-    },
-    {
-      title: '🔒 Quantum Cybersecurity Suite',
-      description: 'Quantum-resistant security for the post-quantum era. 300% ROI within 4 months.',
-      price: '$159/month',
-      features: ['Quantum-resistant encryption', 'AI threat detection', 'Zero-trust architecture'],
-      link: 'https://ziontechgroup.com/quantum-cybersecurity',
+      title: '🛡️ Zero Trust Network Architecture',
+      description: 'Next-generation security with continuous verification. Achieve 400% ROI through reduced security incidents.',
+      price: '$4,999/month',
+      features: ['Continuous verification', 'Micro-segmentation', 'Real-time threat detection'],
+      link: 'https://ziontechgroup.com/zero-trust-network-architecture',
       color: 'from-red-500 to-pink-600'
     },
     {
-      title: '🚀 Space Technology Platform',
-      description: 'Revolutionary space exploration and satellite management. 500% ROI within 8 months.',
-      price: '$399/month',
-      features: ['Satellite mission management', 'Space data analytics', 'Orbital optimization'],
-      link: 'https://ziontechgroup.com/space-technology',
-      color: 'from-blue-500 to-indigo-600'
+      title: '🎭 AI Brand Personality Generator',
+      description: 'Create unique brand personalities that resonate with your audience. Achieve 250% ROI within 3 months.',
+      price: '$89/month',
+      features: ['AI-powered generation', 'Brand voice guidelines', 'Performance analytics'],
+      link: 'https://ziontechgroup.com/ai-brand-personality-generator',
+      color: 'from-pink-500 to-rose-600'
+    },
+    {
+      title: '⚡ Edge Computing Orchestration',
+      description: 'Intelligent edge computing management and optimization. Achieve 350% ROI within 5 months.',
+      price: '$3,499/month',
+      features: ['Distributed management', 'Real-time optimization', 'Edge-to-cloud integration'],
+      link: 'https://ziontechgroup.com/edge-computing-orchestration',
+      color: 'from-blue-500 to-cyan-600'
     }
   ];
 
