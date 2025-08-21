@@ -5,7 +5,8 @@ import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
 import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
 import UltraFuturisticCard from '../components/ui/UltraFuturisticCard';
-import { enhancedRealMicroSaasServices, getServicesByCategory, getPopularServices } from '../data/enhanced-real-micro-saas-services';
+import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
+import { additionalServices } from '../data/additional-services';
 
 export default function PricingPage() {
   const [billingCycle, setBillingCycle] = useState<'monthly' | 'yearly'>('monthly');
@@ -18,7 +19,10 @@ export default function PricingPage() {
     website: 'https://ziontechgroup.com'
   };
 
-  const popularServices = getPopularServices();
+  const popularServices = React.useMemo(() => {
+    const all = [...enhancedRealMicroSaasServices, ...additionalServices];
+    return all.filter(s => s.realImplementation).slice(0, 12);
+  }, []);
 
   // Enhanced service categories with pricing
   const serviceCategories = [

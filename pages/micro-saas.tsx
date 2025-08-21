@@ -4,7 +4,8 @@ import { Shield, Clock, DollarSign, TrendingUp, Brain, Rocket, ArrowRight, Exter
 import Button from '../components/ui/Button';
 import QuantumHolographicMatrixBackground from '../components/ui/QuantumHolographicMatrixBackground';
 import EnhancedFuturisticCard from '../components/ui/EnhancedFuturisticCard';
-import { enhancedRealMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices } from '../data/enhanced-real-micro-saas-services';
+import { enhancedRealMicroSaasServices, serviceCategories } from '../data/enhanced-real-micro-saas-services';
+import { additionalServices } from '../data/additional-services';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 
@@ -73,9 +74,13 @@ export default function MicroSaasPage() {
   ];
 
   // Filter and sort services
+  const allServices = React.useMemo(() => (
+    [...enhancedRealMicroSaasServices, ...additionalServices]
+  ), []);
+
   let filteredServices = selectedCategory === 'all' || selectedCategory === 'All'
-    ? enhancedRealMicroSaasServices 
-    : getServicesByCategory(selectedCategory);
+    ? allServices
+    : allServices.filter(s => s.category === selectedCategory);
 
   // Apply search filter
   if (searchQuery) {
@@ -109,7 +114,7 @@ export default function MicroSaasPage() {
     }
   });
 
-  const revolutionaryServices = enhancedRealMicroSaasServices.filter(service => 
+  const revolutionaryServices = allServices.filter(service => 
     service.realImplementation && service.popular
   );
 
