@@ -24,6 +24,8 @@ import { realMarketServices } from '../data/real-market-services';
 import { serviceExpansions2025 } from '../data/service-expansions-2025';
 import { realOperationalServices } from '../data/real-operational-services';
 import { newOperationalServices2025 } from '../data/new-operational-services-2025';
+import { revolutionary2025Services } from '../data/revolutionary-2025-services';
+import { nextGenInnovations2025 } from '../data/next-gen-innovations-2025';
 
 export default function HomePage() {
   const contactInfo = {
@@ -48,7 +50,9 @@ export default function HomePage() {
     ...realMarketServices,
     ...serviceExpansions2025,
     ...realOperationalServices,
-    ...newOperationalServices2025
+    ...newOperationalServices2025,
+    ...revolutionary2025Services,
+    ...nextGenInnovations2025
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);
@@ -71,13 +75,13 @@ export default function HomePage() {
     >
       <div className="min-h-screen">
         <Head>
-          <title>Zion Tech Group - Revolutionary AI, Quantum & IT Services | 800+ Solutions</title>
-          <meta name="description" content="Zion Tech Group offers 800+ revolutionary AI, quantum computing, and IT services. Achieve 1000% ROI with our cutting-edge solutions. Contact: +1 302 464 0950" />
-          <meta name="keywords" content="AI services, quantum computing, IT services, micro SaaS, cybersecurity, cloud migration, neural interface, quantum internet, blockchain, metaverse, IoT, edge computing" />
+          <title>Zion Tech Group - Revolutionary AI, Quantum & IT Services | 1000+ Solutions</title>
+          <meta name="description" content="Zion Tech Group offers 1000+ revolutionary AI, quantum computing, and IT services. Achieve 1000% ROI with our cutting-edge solutions. Contact: +1 302 464 0950" />
+          <meta name="keywords" content="AI services, quantum computing, IT services, micro SaaS, cybersecurity, cloud migration, neural interface, quantum internet, blockchain, metaverse, IoT, edge computing, AI consciousness, quantum bioinformatics" />
           <meta name="author" content="Zion Tech Group" />
           <meta name="robots" content="index, follow" />
           <meta property="og:title" content="Zion Tech Group - Revolutionary AI, Quantum & IT Services" />
-          <meta property="og:description" content="800+ cutting-edge services with 1000% ROI guarantee. Contact: +1 302 464 0950" />
+          <meta property="og:description" content="1000+ cutting-edge revolutionary services with 1000% ROI guarantee. Contact: +1 302 464 0950" />
           <meta property="og:url" content="https://ziontechgroup.com" />
           <meta property="og:type" content="website" />
           <link rel="canonical" href="https://ziontechgroup.com" />
@@ -98,24 +102,24 @@ export default function HomePage() {
                 Revolutionary AI, Quantum Computing & IT Services
               </p>
               <p className="text-lg md:text-xl text-gray-400 mb-12 max-w-3xl mx-auto">
-                800+ cutting-edge services delivering 1000% ROI. From neural quantum brain interfaces to enterprise IT infrastructure.
+                1000+ cutting-edge revolutionary services delivering 1000% ROI. From AI consciousness simulation to quantum bioinformatics and beyond.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
                 <Button 
-                  href="/services" 
+                  href="/revolutionary-services-showcase" 
                   variant="primary"
                   className="text-lg px-8 py-4"
                 >
-                  Explore 800+ Services
+                  Explore 1000+ Revolutionary Services
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
                 <Button 
-                  href="/market-pricing" 
+                  href="/services" 
                   variant="secondary"
                   className="text-lg px-8 py-4"
                 >
-                  See Market Pricing
+                  View All Services
                   <TrendingUp className="ml-2 w-5 h-5" />
                 </Button>
                 <Button 
