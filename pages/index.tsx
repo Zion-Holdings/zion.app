@@ -324,16 +324,68 @@ export default function HomePage() {
       </Head>
       {/* Reusable Service Ads Strip */}
       <ServiceAds
-        heading="Featured Micro SaaS & AI Services"
-        subheading="Transparent pricing, real capabilities, fast onboarding."
-        items={serviceHighlights.slice(0, 12).map((h) => ({
-          title: h.title,
-          description: h.description,
-          price: h.price,
-          features: h.features,
-          link: h.link,
-          contactInfo: h.contactInfo || contactInfo
-        }))}
+        heading="Featured Micro SaaS, IT and AI Services"
+        subheading="Transparent pricing, real capabilities, and fast onboarding."
+        items={[
+          // Keep a few existing top services
+          ...serviceHighlights.slice(1, 4).map((h) => ({
+            title: h.title,
+            description: h.description,
+            price: h.price,
+            features: h.features,
+            link: h.link,
+            contactInfo: h.contactInfo || contactInfo
+          })),
+          // New realistic services
+          {
+            title: '🔑 IAM Access Review Automation',
+            description: 'Automate quarterly access reviews and manager attestations across Okta/Azure AD/Google. Export signed evidence for SOC 2/ISO.',
+            price: '$2/user/month',
+            features: ['Okta/Azure AD connectors', 'Manager attestations', 'SoD checks', 'Audit exports'],
+            link: 'https://ziontechgroup.com/iam-access-review',
+            contactInfo
+          },
+          {
+            title: '🎣 Security Awareness & Phishing',
+            description: 'Automated phishing campaigns with micro‑learning and risk score tracking. Mapped to NIST/ISO controls.',
+            price: '$2.50/user/month',
+            features: ['Template library', 'Adaptive difficulty', 'Risk heatmaps', 'SCIM/SSO'],
+            link: 'https://ziontechgroup.com/security-awareness-phishing',
+            contactInfo
+          },
+          {
+            title: '📱 MDM Mobile Device Management',
+            description: 'Baseline policies, OS patching, app catalogs and lost device protections for macOS/Windows/iOS/Android.',
+            price: '$3/device/month',
+            features: ['Zero‑touch enrollment', 'Patch orchestration', 'Disk encryption', 'Self‑service portal'],
+            link: 'https://ziontechgroup.com/mdm-mobile-device-management',
+            contactInfo
+          },
+          {
+            title: '🛡️ Backup & DR Orchestrator',
+            description: 'Policy‑driven backups across clouds and DBs with DR runbooks and quarterly tests and evidence.',
+            price: '$199/month',
+            features: ['RPO/RTO policies', 'DR runbooks', 'Quarterly tests', 'Anomaly detection'],
+            link: 'https://ziontechgroup.com/backup-dr-orchestrator',
+            contactInfo
+          },
+          {
+            title: '♿ WCAG Accessibility Scanner',
+            description: 'Automated accessibility scanning with CI gates, remediation tips and standardized reports.',
+            price: '$49/month',
+            features: ['WCAG 2.2 AA rules', 'Crawl SPAs', 'CI quality gates', 'PDF/JSON exports'],
+            link: 'https://ziontechgroup.com/wcag-accessibility-scanner',
+            contactInfo
+          },
+          {
+            title: '⚙️ Performance Optimization SRE',
+            description: 'Fixed‑scope engagement to diagnose and improve latency, throughput, and cost with dashboards and a 90‑day plan.',
+            price: '$3,900/fixed',
+            features: ['SLOs and baselines', 'DB/API tuning', 'Web Vitals', 'Load tests'],
+            link: 'https://ziontechgroup.com/performance-optimization-sre',
+            contactInfo
+          }
+        ]}
       />
 
       {/* Hero Section */}
