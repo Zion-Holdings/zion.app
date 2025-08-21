@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Menu, X, ChevronDown, Search, 
-  Brain, Cpu, Rocket, Shield, 
+  Menu, ChevronDown, Search, 
+  Brain, Rocket, Shield, 
   Zap, Globe, Star, Users,
-  Target, Microscope, Atom, Database,
-  Lock, Cloud, BarChart3, Settings
+  Target, Atom, BarChart3, Settings,
+  Palette, BookOpen, GraduationCap, Heart,
+  Truck, DollarSign
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -31,11 +32,9 @@ const navigationItems: NavigationItem[] = [
       { name: 'Multimodal AI Orchestrator', href: '/multimodal-ai-orchestrator', description: 'Cross-modal AI integration' },
       { name: 'AI Autonomous Ecosystem', href: '/ai-autonomous-ecosystem', description: 'Self-managing AI systems' },
       { name: 'AI Ethics & Governance', href: '/ai-ethics-governance', description: 'Ethical AI frameworks' },
-      { name: 'AI Creativity Studio', href: '/ai-creativity-studio', description: 'AI-powered creative content' },
-      { name: 'AI Education Platform', href: '/ai-education-platform', description: 'Personalized AI learning' },
-      { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics', description: 'Medical AI solutions' },
-      { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence', description: 'Financial AI analytics' },
-      { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform', description: 'Environmental AI solutions' }
+      { name: 'AI Content Generator Pro', href: '/ai-content-generator', description: 'Professional AI content creation' },
+      { name: 'AI Meeting Transcriber', href: '/ai-meeting-transcriber', description: 'AI-powered meeting transcription' },
+      { name: 'AI Brand Personality', href: '/ai-brand-personality-generator', description: 'Consistent brand voice with AI' }
     ]
   },
   {
@@ -50,10 +49,9 @@ const navigationItems: NavigationItem[] = [
       { name: 'Brain-Computer Interface', href: '/brain-computer-interface', description: 'Neural interface technology' },
       { name: 'Quantum Energy Platform', href: '/quantum-energy-platform', description: 'Fusion power simulation' },
       { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai', description: 'Self-driving AI systems' },
-      { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery', description: 'Materials science acceleration' },
-      { name: 'Quantum Robotics', href: '/quantum-robotics', description: 'Quantum-enhanced robotics' },
-      { name: 'Quantum Internet Security', href: '/quantum-internet-security', description: 'Unbreakable encryption' },
-      { name: 'Quantum Logistics', href: '/quantum-logistics-optimization', description: 'Route optimization' }
+      { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure', description: 'Quantum-enhanced cloud computing' },
+      { name: 'Edge Computing Orchestrator', href: '/edge-computing-orchestrator', description: 'Edge processing optimization' },
+      { name: 'Zero Trust Security Platform', href: '/zero-trust-security-platform', description: 'Advanced cybersecurity' }
     ]
   },
   {
@@ -62,16 +60,14 @@ const navigationItems: NavigationItem[] = [
     icon: <Shield className="w-5 h-5" />,
     description: 'Enterprise solutions and infrastructure',
     children: [
-      { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure', description: 'Quantum-enhanced cloud computing' },
-      { name: 'Edge Computing Orchestrator', href: '/edge-computing-orchestrator', description: 'Edge processing optimization' },
-      { name: 'Zero Trust Security Platform', href: '/zero-trust-security-platform', description: 'Advanced cybersecurity' },
       { name: 'Blockchain Enterprise Platform', href: '/blockchain-enterprise-platform', description: 'Enterprise blockchain solutions' },
       { name: 'AI-Powered DevOps', href: '/ai-powered-devops', description: 'Intelligent development automation' },
       { name: 'Quantum Networking', href: '/quantum-networking', description: 'Quantum communication protocols' },
       { name: 'Autonomous IT Operations', href: '/autonomous-it-operations', description: 'Self-managing IT systems' },
       { name: 'Quantum Data Center', href: '/quantum-data-center', description: 'Next-gen data centers' },
       { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity', description: 'Quantum security solutions' },
-      { name: 'Quantum Cloud Migration', href: '/quantum-cloud-migration', description: 'Intelligent migration platform' }
+      { name: 'Quantum Cloud Migration', href: '/quantum-cloud-migration', description: 'Intelligent migration platform' },
+      { name: '5G Private Network Solutions', href: '/5g-private-network-solutions', description: 'Advanced 5G infrastructure' }
     ]
   },
   {
@@ -95,130 +91,172 @@ const navigationItems: NavigationItem[] = [
     description: 'Innovative business solutions',
     badge: 'Popular',
     children: [
-      { name: 'AI Content Factory Pro', href: '/ai-content-factory', description: 'Automated content generation' },
+      { name: 'AI Content Generator Pro', href: '/ai-content-generator', description: 'Automated content generation' },
       { name: 'Quantum CRM Suite', href: '/quantum-crm', description: 'Next-gen customer management' },
       { name: 'CyberShield Pro', href: '/cyber-shield-pro', description: 'Comprehensive cybersecurity' },
-      { name: 'DataVault Hub', href: '/data-vault-hub', description: 'Enterprise data management' },
-      { name: 'DevOps Automation Studio', href: '/devops-automation-studio', description: 'End-to-end DevOps' },
-      { name: 'FinTech AI Platform', href: '/fintech-ai-platform', description: 'AI-powered financial services' },
-      { name: 'Healthcare AI Suite', href: '/healthcare-ai-suite', description: 'Medical technology solutions' },
-      { name: 'IoT Ecosystem Platform', href: '/iot-ecosystem-platform', description: 'Internet of Things management' },
-      { name: 'Metaverse Development Studio', href: '/metaverse-development-studio', description: 'Virtual world creation' },
-      { name: 'Quantum Logistics Optimizer', href: '/quantum-logistics-optimizer', description: 'Supply chain optimization' }
+      { name: 'DataVault Hub', href: '/data-vault-hub', description: 'Secure data management' },
+      { name: 'DevOps Automation Studio', href: '/devops-automation-studio', description: 'Development automation' },
+      { name: 'AI Meeting Transcriber Pro', href: '/ai-meeting-transcriber', description: 'Meeting transcription' },
+      { name: 'Virtual Event Hologram Platform', href: '/virtual-event-hologram-platform', description: 'Holographic events' },
+      { name: 'AI Brand Personality Generator', href: '/ai-brand-personality-generator', description: 'Brand voice development' },
+      { name: 'Quantum Logistics Optimization', href: '/quantum-logistics-optimization', description: 'Supply chain optimization' }
     ]
   },
   {
-    name: 'Research & Development',
-    href: '/research-development',
-    icon: <Microscope className="w-5 h-5" />,
-    description: 'Breakthrough technologies and innovations',
+    name: 'Creative & Media',
+    href: '/creative-services',
+    icon: <Palette className="w-5 h-5" />,
+    description: 'AI-powered creative solutions',
     children: [
-      { name: 'Biotech AI Research Platform', href: '/biotech-ai-research-platform', description: 'Biological AI research' },
-      { name: 'Autonomous Manufacturing', href: '/autonomous-manufacturing', description: 'Self-managing production' },
-      { name: 'Autonomous Vehicle AI Platform', href: '/autonomous-vehicle-ai-platform', description: 'Self-driving systems' },
-      { name: 'Enterprise AI Operations Center', href: '/enterprise-ai-operations-center', description: 'AI operations management' },
-      { name: 'Blockchain Infrastructure Platform', href: '/blockchain-infrastructure-platform', description: 'Blockchain development' }
+      { name: 'AI Video Editing', href: '/ai-video-editing', description: 'Automated video production' },
+      { name: 'AI Art Generation', href: '/ai-art-generation', description: 'AI-powered artwork' },
+      { name: 'AI Music Composition', href: '/ai-music-composition', description: 'Automated music creation' },
+      { name: 'AI Content Studio', href: '/ai-content-studio', description: 'Creative content generation' },
+      { name: 'Virtual Event Platform', href: '/virtual-event-hologram-platform', description: 'Immersive events' }
+    ]
+  },
+  {
+    name: 'Healthcare & Biotech',
+    href: '/healthcare-services',
+    icon: <Heart className="w-5 h-5" />,
+    description: 'Advanced healthcare solutions',
+    children: [
+      { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics', description: 'Medical AI solutions' },
+      { name: 'Biotech AI Research Platform', href: '/biotech-ai-research-platform', description: 'Biotechnology research' },
+      { name: 'Brain-Computer Interface', href: '/brain-computer-interface', description: 'Neural technology' },
+      { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing', description: 'Quantum biology' },
+      { name: 'AI Mental Health Companion', href: '/ai-mental-health-companion', description: 'Mental health support' }
+    ]
+  },
+  {
+    name: 'Transportation & Logistics',
+    href: '/transportation-services',
+    icon: <Truck className="w-5 h-5" />,
+    description: 'Smart transportation solutions',
+    children: [
+      { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai', description: 'Self-driving technology' },
+      { name: 'Quantum Logistics Optimization', href: '/quantum-logistics-optimization', description: 'Supply chain optimization' },
+      { name: 'Edge Computing Orchestrator', href: '/edge-computing-orchestrator', description: 'Edge processing' },
+      { name: 'Smart City Infrastructure', href: '/smart-city-infrastructure', description: 'Urban technology' },
+      { name: 'Fleet Management AI', href: '/fleet-management-ai', description: 'Intelligent fleet operations' }
+    ]
+  },
+  {
+    name: 'Education & Research',
+    href: '/education-services',
+    icon: <GraduationCap className="w-5 h-5" />,
+    description: 'Learning and research platforms',
+    children: [
+      { name: 'AI Education Platform', href: '/ai-education-platform', description: 'Personalized learning' },
+      { name: 'Research Automation', href: '/research-automation', description: 'Automated research tools' },
+      { name: 'Quantum Research Tools', href: '/quantum-research-tools', description: 'Quantum computing research' },
+      { name: 'Space Research Platform', href: '/space-research-platform', description: 'Space exploration tools' },
+      { name: 'AI Research Assistant', href: '/ai-research-assistant', description: 'Research automation' }
     ]
   }
 ];
 
+const quickLinks = [
+  { name: 'Pricing', href: '/pricing', icon: <DollarSign className="w-4 h-4" /> },
+  { name: 'Case Studies', href: '/case-studies', icon: <BarChart3 className="w-4 h-4" /> },
+  { name: 'Documentation', href: '/docs', icon: <BookOpen className="w-4 h-4" /> },
+  { name: 'Support', href: '/support', icon: <Zap className="w-4 h-4" /> }
+];
+
 interface EnhancedNavigation2025Props {
-  onMenuClick?: () => void;
+  onMenuClick: () => void;
 }
 
-const EnhancedNavigation2025: React.FC<EnhancedNavigation2025Props> = ({ onMenuClick }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+export default function EnhancedNavigation2025({ onMenuClick }: EnhancedNavigation2025Props) {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      setIsScrolled(window.scrollY > 20);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleDropdown = (name: string) => {
-    setActiveDropdown(activeDropdown === name ? null : name);
+  const handleDropdownToggle = (itemName: string) => {
+    setActiveDropdown(activeDropdown === itemName ? null : itemName);
   };
 
-  const closeAllDropdowns = () => {
-    setActiveDropdown(null);
-    setIsOpen(false);
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Implement search functionality
+    console.log('Searching for:', searchQuery);
   };
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled 
-        ? 'bg-black/90 backdrop-blur-xl border-b border-gray-800/50' 
+        ? 'bg-black/95 backdrop-blur-md border-b border-gray-800/50' 
         : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3 group" onClick={closeAllDropdowns}>
-            <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <Star className="w-6 h-6 text-white" />
-            </div>
-            <div className="hidden sm:block">
-              <div className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                Zion Tech Group
+          <div className="flex-shrink-0">
+            <Link href="/" className="flex items-center space-x-2">
+              <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-lg flex items-center justify-center">
+                <Star className="w-6 h-6 text-white" />
               </div>
-              <div className="text-xs text-gray-400">Future Technology Solutions</div>
-            </div>
-          </Link>
+              <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                Zion Tech Group
+              </span>
+            </Link>
+          </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex lg:items-center lg:space-x-8">
             {navigationItems.map((item) => (
               <div key={item.name} className="relative group">
                 <button
-                  onClick={() => toggleDropdown(item.name)}
-                  className="flex items-center space-x-2 px-4 py-2 text-gray-300 hover:text-white transition-colors duration-200 rounded-lg hover:bg-gray-800/50"
+                  onClick={() => handleDropdownToggle(item.name)}
+                  className="flex items-center space-x-1 px-3 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 group"
                 >
                   {item.icon}
                   <span>{item.name}</span>
                   {item.badge && (
-                    <span className="px-2 py-1 text-xs bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-full">
+                    <span className="ml-2 px-2 py-1 text-xs font-medium bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-full">
                       {item.badge}
                     </span>
                   )}
-                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
-                    activeDropdown === item.name ? 'rotate-180' : ''
-                  }`} />
+                  <ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" />
                 </button>
 
                 {/* Dropdown Menu */}
                 <AnimatePresence>
                   {activeDropdown === item.name && (
                     <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
+                      initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: 10, scale: 0.95 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute top-full left-0 mt-2 w-80 bg-gray-900/95 backdrop-blur-xl border border-gray-800 rounded-2xl shadow-2xl shadow-black/50 overflow-hidden"
+                      className="absolute left-0 mt-2 w-80 bg-gray-900/95 backdrop-blur-md border border-gray-700/50 rounded-xl shadow-2xl overflow-hidden"
                     >
                       <div className="p-4">
-                        <div className="mb-4">
-                          <h3 className="text-lg font-semibold text-white mb-2">{item.name}</h3>
+                        <div className="mb-3">
+                          <h3 className="text-lg font-semibold text-white mb-1">{item.name}</h3>
                           <p className="text-sm text-gray-400">{item.description}</p>
                         </div>
-                        <div className="space-y-2">
+                        <div className="space-y-1">
                           {item.children?.map((child) => (
                             <Link
                               key={child.name}
                               href={child.href}
-                              onClick={closeAllDropdowns}
-                              className="block p-3 rounded-xl hover:bg-gray-800/50 transition-colors duration-200 group"
+                              className="flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-800/50 transition-colors duration-200 group"
                             >
-                              <div className="font-medium text-white group-hover:text-cyan-400 transition-colors duration-200">
-                                {child.name}
-                              </div>
-                              <div className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors duration-200">
-                                {child.description}
+                              <div className="w-2 h-2 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                              <div className="flex-1 min-w-0">
+                                <p className="text-sm font-medium text-white group-hover:text-cyan-400 transition-colors duration-200">
+                                  {child.name}
+                                </p>
+                                <p className="text-xs text-gray-500 mt-1">{child.description}</p>
                               </div>
                             </Link>
                           ))}
@@ -231,126 +269,59 @@ const EnhancedNavigation2025: React.FC<EnhancedNavigation2025Props> = ({ onMenuC
             ))}
           </div>
 
-          {/* Right Side Actions */}
-          <div className="hidden lg:flex items-center space-x-4">
+          {/* Right Side */}
+          <div className="hidden lg:flex lg:items-center lg:space-x-4">
             {/* Search */}
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+            <form onSubmit={handleSearch} className="relative">
               <input
                 type="text"
                 placeholder="Search services..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-64 pl-10 pr-4 py-2 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                className="w-64 px-4 py-2 bg-gray-800/50 border border-gray-700/50 rounded-lg text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 transition-all duration-200"
               />
+              <button
+                type="submit"
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 p-1 text-gray-400 hover:text-white transition-colors duration-200"
+              >
+                <Search className="w-4 h-4" />
+              </button>
+            </form>
+
+            {/* Quick Links */}
+            <div className="flex items-center space-x-2">
+              {quickLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className="p-2 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-lg transition-all duration-200"
+                  title={link.name}
+                >
+                  {link.icon}
+                </Link>
+              ))}
             </div>
 
-            {/* Contact Button */}
+            {/* CTA Button */}
             <Link
               href="/contact"
-              className="bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white px-6 py-2 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105"
+              className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-purple-600 text-white text-sm font-medium rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-200 transform hover:scale-105"
             >
-              Contact Us
+              Get Started
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={onMenuClick || (() => setIsOpen(!isOpen))}
-            className="lg:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800/50 transition-colors duration-200"
-          >
-            <Menu className="w-6 h-6" />
-          </button>
+          <div className="lg:hidden">
+            <button
+              onClick={onMenuClick}
+              className="p-2 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-lg transition-colors duration-200"
+            >
+              <Menu className="w-6 h-6" />
+            </button>
+          </div>
         </div>
       </div>
-
-      {/* Mobile Navigation */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="lg:hidden bg-gray-900/95 backdrop-blur-xl border-t border-gray-800/50 overflow-hidden"
-          >
-            <div className="px-4 py-6 space-y-4">
-              {/* Mobile Search */}
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-                <input
-                  type="text"
-                  placeholder="Search services..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
-                />
-              </div>
-
-              {/* Mobile Navigation Items */}
-              {navigationItems.map((item) => (
-                <div key={item.name} className="space-y-2">
-                  <button
-                    onClick={() => toggleDropdown(item.name)}
-                    className="flex items-center justify-between w-full p-3 text-left text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-xl transition-colors duration-200"
-                  >
-                    <div className="flex items-center space-x-3">
-                      {item.icon}
-                      <span>{item.name}</span>
-                      {item.badge && (
-                        <span className="px-2 py-1 text-xs bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-full">
-                          {item.badge}
-                        </span>
-                      )}
-                    </div>
-                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
-                      activeDropdown === item.name ? 'rotate-180' : ''
-                    }`} />
-                  </button>
-
-                  {/* Mobile Dropdown */}
-                  <AnimatePresence>
-                    {activeDropdown === item.name && (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.2 }}
-                        className="ml-6 space-y-2"
-                      >
-                        {item.children?.map((child) => (
-                          <Link
-                            key={child.name}
-                            href={child.href}
-                            onClick={closeAllDropdowns}
-                            className="block p-3 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-xl transition-colors duration-200"
-                          >
-                            <div className="font-medium">{child.name}</div>
-                            <div className="text-sm text-gray-500">{child.description}</div>
-                          </Link>
-                        ))}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              ))}
-
-              {/* Mobile Contact Button */}
-              <div className="pt-4">
-                <Link
-                  href="/contact"
-                  onClick={closeAllDropdowns}
-                  className="block w-full bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white px-6 py-3 rounded-xl font-semibold text-center transition-all duration-300"
-                >
-                  Contact Us
-                </Link>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </nav>
   );
-};
-
-export default EnhancedNavigation2025;
+}
