@@ -25,7 +25,7 @@ export default function ServicesAdvertisingPage() {
     { title: 'AI & Data', href: '/services#ai' },
     { title: 'Cloud & FinOps', href: '/services#cloud' },
     { title: 'Observability', href: '/services#observability' },
-    { title: 'Security & Compliance', href: '/services#security' },
+    { title: 'Developer Tools', href: '/services#developer-tools' },
     { title: 'Quality & Monitoring', href: '/services#quality' }
   ];
 
