@@ -9,7 +9,6 @@ import {
 import Button from '../components/ui/Button';
 import UltraFuturisticMatrixBackground from '../components/ui/UltraFuturisticMatrixBackground';
 import UltraFuturisticServiceCard from '../components/ui/UltraFuturisticServiceCard';
-import ServiceAds from '../components/sections/ServiceAds';
 import Card from '../components/ui/Card';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
@@ -48,78 +47,6 @@ export default function HomePage() {
         email: 'kleber@ziontechgroup.com',
         address: '364 E Main St STE 1008 Middletown DE 19709'
       }
-    },
-    {
-      title: '📞 AI Phone Agent & IVR',
-      description: 'Natural voice AI that answers, routes, and resolves calls with CRM context and human handoff.',
-      price: 'Starting at $249/month',
-      features: ['ASR/TTS', 'Smart routing', 'PII redaction', 'Analytics'],
-      link: 'https://ziontechgroup.com/ai-phone-agent',
-      color: 'from-cyan-600 to-blue-700',
-      marketData: 'Conversational AI market $9.3B, 25% CAGR',
-      competitors: 'Replicant, PolyAI',
-      savings: 'Cut handle time 25–40%',
-      contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709' }
-    },
-    {
-      title: '🛡️ LLM Gateway & Token Shield',
-      description: 'Multi-vendor routing, quotas, caching, safety filters, and cost controls for AI at scale.',
-      price: 'Starting at $129/month',
-      features: ['Unified API', 'Failover', 'Quotas', 'Caching'],
-      link: 'https://ziontechgroup.com/llm-gateway',
-      color: 'from-purple-600 to-indigo-700',
-      marketData: 'AI platform tooling $5B+, fast growth',
-      competitors: 'Helicone, Porter',
-      savings: 'Reduce spend 15–35%',
-      contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709' }
-    },
-    {
-      title: '🧭 Data Pipeline Observability',
-      description: 'Lineage, SLAs, and anomaly detection across ETL/ELT with dashboards and alerts.',
-      price: 'Starting at $159/month',
-      features: ['Lineage', 'SLA alerts', 'Drift detection', 'OTel traces'],
-      link: 'https://ziontechgroup.com/data-pipeline-observability',
-      color: 'from-emerald-600 to-teal-700',
-      marketData: 'Data quality/observability $3B',
-      competitors: 'Monte Carlo, Databand',
-      savings: 'Cut data downtime 40%',
-      contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709' }
-    },
-    {
-      title: '🚨 Incident Copilot for SRE',
-      description: 'LLM-powered triage, timelines, and auto-runbooks in Slack/Teams with postmortems.',
-      price: 'Starting at $139/month',
-      features: ['Summaries', 'Actions', 'Timeline', 'Postmortems'],
-      link: 'https://ziontechgroup.com/incident-copilot',
-      color: 'from-rose-600 to-red-700',
-      marketData: 'Observability/incident mgmt $10B+',
-      competitors: 'Rootly, FireHydrant',
-      savings: 'Reduce MTTR 25–45%',
-      contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709' }
-    },
-    {
-      title: '🧪 AI Code Review & Security',
-      description: 'PR reviews with style, performance, and security flags plus suggested diffs.',
-      price: 'Starting at $99/month',
-      features: ['Style checks', 'Perf risks', 'OWASP lint', 'Suggested diffs'],
-      link: 'https://ziontechgroup.com/ai-code-review',
-      color: 'from-violet-600 to-purple-700',
-      marketData: 'Developer tooling $4B',
-      competitors: 'CodeQL, Snyk Code',
-      savings: 'Reduce defects 20–40%',
-      contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709' }
-    },
-    {
-      title: '☁️ Cloud Landing Zone Builder',
-      description: 'Secure multi-account foundations with guardrails, IAM, network, and FinOps via GitOps.',
-      price: 'Starting at $349/month',
-      features: ['Org setup', 'Policy packs', 'Audit logging', 'FinOps budgets'],
-      link: 'https://ziontechgroup.com/cloud-landing-zone',
-      color: 'from-blue-600 to-indigo-700',
-      marketData: 'Cloud services $150B+',
-      competitors: 'DoiT, Aviatrix',
-      savings: 'Save 4–8 weeks of setup',
-      contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709' }
     },
     {
       title: '🤖 AI Assistant Pro',
@@ -394,19 +321,6 @@ export default function HomePage() {
         <meta name="twitter:description" content="Transform your business with 200+ revolutionary micro SaaS services." />
         <meta name="twitter:image" content="https://ziontechgroup.com/og-image.jpg" />
       </Head>
-      {/* Reusable Service Ads Strip */}
-      <ServiceAds
-        heading="Featured Micro SaaS & AI Services"
-        subheading="Transparent pricing, real capabilities, fast onboarding."
-        items={serviceHighlights.slice(0, 4).map((h) => ({
-          title: h.title,
-          description: h.description,
-          price: h.price,
-          features: h.features,
-          link: h.link,
-          contactInfo: h.contactInfo || contactInfo
-        }))}
-      />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4">
@@ -492,11 +406,11 @@ export default function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
               <div className="flex flex-col items-center space-y-2">
                 <Phone className="w-5 h-5 text-cyan-400" />
-                <span className="text-sm text-gray-300">{contactInfo.mobile}</span>
+                <a href={`tel:${contactInfo.mobile.replace(/[\s-]/g,'')}`} className="text-sm text-cyan-400 hover:underline">{contactInfo.mobile}</a>
               </div>
               <div className="flex flex-col items-center space-y-2">
                 <Mail className="w-5 h-5 text-cyan-400" />
-                <span className="text-sm text-gray-300">{contactInfo.email}</span>
+                <a href={`mailto:${contactInfo.email}`} className="text-sm text-cyan-400 hover:underline">{contactInfo.email}</a>
               </div>
               <div className="flex flex-col items-center space-y-2">
                 <MapPin className="w-5 h-5 text-cyan-400" />
@@ -632,11 +546,11 @@ export default function HomePage() {
                           <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                             <div className="flex items-center gap-2 text-gray-300">
                               <Phone className="w-4 h-4 text-cyan-400" />
-                              <a href={`tel:${highlight.contactInfo.mobile.replace(/[^+\\d]/g, '')}`} className="hover:text-white">{highlight.contactInfo.mobile}</a>
+                              <a href={`tel:${highlight.contactInfo.mobile.replace(/[\s-]/g,'')}`} className="text-cyan-400 hover:underline">{highlight.contactInfo.mobile}</a>
                             </div>
                             <div className="flex items-center gap-2 text-gray-300">
                               <Mail className="w-4 h-4 text-purple-400" />
-                              <a href={`mailto:${highlight.contactInfo.email}`} className="hover:text-white">{highlight.contactInfo.email}</a>
+                              <a href={`mailto:${highlight.contactInfo.email}`} className="text-cyan-400 hover:underline">{highlight.contactInfo.email}</a>
                             </div>
                           </div>
                         )}
@@ -658,12 +572,19 @@ export default function HomePage() {
                       >
                         Contact
                       </Button>
+                      <Button
+                        href={`tel:${contactInfo.mobile.replace(/[\s-]/g,'')}`}
+                        variant="outline"
+                        className="px-4 py-3 border border-cyan-600 text-cyan-400 rounded-lg hover:bg-cyan-600 hover:text-white transition-all duration-300"
+                      >
+                        Call Now
+                      </Button>
                     </div>
                     {highlight.contactInfo && (
                       <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
-                        <div className="flex items-center justify-center gap-2 text-cyan-400"><Phone className="w-4 h-4" /><a href={`tel:${highlight.contactInfo.mobile.replace(/[^+\\d]/g, '')}`} className="hover:text-white">{highlight.contactInfo.mobile}</a></div>
-                        <div className="flex items-center justify-center gap-2 text-purple-400"><Mail className="w-4 h-4" /><a href={`mailto:${highlight.contactInfo.email}`} className="hover:text-white">{highlight.contactInfo.email}</a></div>
-                        <div className="flex items-center justify-center gap-2 text-green-400"><MapPin className="w-4 h-4" /><a href={`https://maps.google.com/?q=${encodeURIComponent(highlight.contactInfo.address)}`} target="_blank" rel="noopener noreferrer" className="text-xs hover:text-white">{highlight.contactInfo.address}</a></div>
+                        <div className="flex items-center justify-center gap-2 text-cyan-400"><Phone className="w-4 h-4" /><a href={`tel:${highlight.contactInfo.mobile.replace(/[\s-]/g,'')}`} className="hover:underline">{highlight.contactInfo.mobile}</a></div>
+                        <div className="flex items-center justify-center gap-2 text-purple-400"><Mail className="w-4 h-4" /><a href={`mailto:${highlight.contactInfo.email}`} className="hover:underline">{highlight.contactInfo.email}</a></div>
+                        <div className="flex items-center justify-center gap-2 text-green-400"><MapPin className="w-4 h-4" /><span className="text-xs">{highlight.contactInfo.address}</span></div>
                       </div>
                     )}
                   </div>
@@ -701,14 +622,14 @@ export default function HomePage() {
                   <Phone className="w-8 h-8 text-cyan-400" />
                   <div>
                     <div className="text-sm text-gray-400">Phone</div>
-                    <div className="text-white font-semibold">{contactInfo.mobile}</div>
+                    <a href={`tel:${contactInfo.mobile.replace(/[\s-]/g,'')}`} className="text-white font-semibold hover:underline text-cyan-400">{contactInfo.mobile}</a>
                   </div>
                 </div>
                 <div className="flex flex-col items-center space-y-3">
                   <Mail className="w-8 h-8 text-cyan-400" />
                   <div>
                     <div className="text-sm text-gray-400">Email</div>
-                    <div className="text-white font-semibold">{contactInfo.email}</div>
+                    <a href={`mailto:${contactInfo.email}`} className="text-white font-semibold hover:underline text-cyan-400">{contactInfo.email}</a>
                   </div>
                 </div>
                 <div className="flex flex-col items-center space-y-3">
