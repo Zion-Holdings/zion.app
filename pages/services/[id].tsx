@@ -5,11 +5,13 @@ import { Phone, Mail, MapPin, Check, ArrowRight, Star } from 'lucide-react';
 import UltraAdvancedFuturisticBackground from '../../components/ui/UltraAdvancedFuturisticBackground';
 import Button from '../../components/ui/Button';
 import { enhancedRealMicroSaasServices } from '../../data/enhanced-real-micro-saas-services';
+import { additionalEnhancedServices } from '../../data/additional-real-services';
 
 export default function ServiceDetailPage() {
   const router = useRouter();
   const { id } = router.query as { id?: string };
-  const service = enhancedRealMicroSaasServices.find(s => s.id === id);
+  const allServices = React.useMemo(() => [...enhancedRealMicroSaasServices, ...additionalEnhancedServices], []);
+  const service = allServices.find(s => s.id === id);
 
   if (!service) return null;
 

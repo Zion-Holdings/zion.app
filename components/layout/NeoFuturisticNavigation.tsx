@@ -279,6 +279,13 @@ export default function NeoFuturisticNavigation() {
 				? 'bg-black/80 backdrop-blur-md border-b border-gray-700/50' 
 				: 'bg-transparent'
 		}`}> 
+			{/* Scroll Progress Bar */}
+			<div className="absolute top-0 left-0 h-1 w-full bg-transparent">
+				<div
+					className="h-full bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600"
+					style={{ width: `${(typeof window !== 'undefined' && document.body.scrollHeight > 0) ? (Math.min(100, (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100)) : 0}%` }}
+				/>
+			</div>
 			<div className="max-w-7xl mx-auto px-4">
 				<div className="flex items-center justify-between h-20">
 					{/* Logo */}

@@ -74,7 +74,7 @@ const ServiceAds: React.FC<ServiceAdsProps> = ({ items, heading = 'Featured Serv
                   <div className="flex items-center justify-center gap-2 text-cyan-400">
                     <Phone className="w-4 h-4" />
                     <a
-                      href={`tel:${item.contactInfo.mobile.replace(/[^+\\\d]/g, '')}`}
+                      href={`tel:${item.contactInfo.mobile.replace(/[^+\d]/g, '')}`}
                       className="hover:text-white"
                     >
                       {item.contactInfo.mobile}

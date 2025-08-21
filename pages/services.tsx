@@ -8,6 +8,7 @@ import UltraFuturisticServiceCard from '../components/ui/UltraFuturisticServiceC
 import Card from '../components/ui/Card';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices, serviceCategories } from '../data/enhanced-real-micro-saas-services';
+import { additionalEnhancedServices } from '../data/additional-real-services';
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -27,8 +28,12 @@ export default function ServicesPage() {
     }
   }, [router.query.category, router.query.cat]);
 
+  const allServices = useMemo(() => {
+    return [...enhancedRealMicroSaasServices, ...additionalEnhancedServices];
+  }, []);
+
   const filteredServices = useMemo(() => {
-    let filtered = enhancedRealMicroSaasServices.slice();
+    let filtered = allServices.slice();
 
     if (selectedCategory) {
       filtered = filtered.filter(s => s.category === selectedCategory);
@@ -63,7 +68,7 @@ export default function ServicesPage() {
     });
 
     return filtered;
-  }, [searchTerm, selectedCategory, sortBy]);
+  }, [searchTerm, selectedCategory, sortBy, allServices]);
 
   const contactInfo = {
     mobile: '+1 302 464 0950',
@@ -110,7 +115,7 @@ export default function ServicesPage() {
           {/* Contact quick */}
           <div className="mt-8 bg-gray-900/50 border border-gray-700/50 rounded-2xl p-6 max-w-2xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
-              <div className="flex flex-col items-center gap-2"><Phone className="w-5 h-5 text-cyan-400" /><a href={`tel:${contactInfo.mobile.replace(/[^+\\d]/g, '')}`} className="text-sm text-gray-300 hover:text-white">{contactInfo.mobile}</a></div>
+              <div className="flex flex-col items-center gap-2"><Phone className="w-5 h-5 text-cyan-400" /><a href={`tel:${contactInfo.mobile.replace(/[^+\d]/g, '')}`} className="text-sm text-gray-300 hover:text-white">{contactInfo.mobile}</a></div>
               <div className="flex flex-col items-center gap-2"><Mail className="w-5 h-5 text-cyan-400" /><a href={`mailto:${contactInfo.email}`} className="text-sm text-gray-300 hover:text-white">{contactInfo.email}</a></div>
               <div className="flex flex-col items-center gap-2"><MapPin className="w-5 h-5 text-cyan-400" /><a href={`https://maps.google.com/?q=${encodeURIComponent(contactInfo.address)}`} target="_blank" rel="noopener noreferrer" className="text-sm text-gray-300 hover:text-white">{contactInfo.address}</a></div>
             </div>
@@ -207,7 +212,7 @@ export default function ServicesPage() {
       {/* Results */}
       <section className="py-10 px-4">
         <div className="container mx-auto">
-          <div className="mb-6 text-gray-300">Showing <span className="text-white font-semibold">{filteredServices.length}</span> of <span className="text-white font-semibold">{enhancedRealMicroSaasServices.length}</span> services</div>
+          <div className="mb-6 text-gray-300">Showing <span className="text-white font-semibold">{filteredServices.length}</span> of <span className="text-white font-semibold">{allServices.length}</span> services</div>
 
           {viewMode === 'grid' ? (
             <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
