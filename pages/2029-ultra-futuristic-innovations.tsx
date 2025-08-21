@@ -6,8 +6,8 @@ import UltraFuturisticBackground2029 from '../components/backgrounds/UltraFuturi
 import UltraFuturisticNavigation2029 from '../components/layout/UltraFuturisticNavigation2029';
 import UltraFuturisticFooter2029 from '../components/layout/UltraFuturisticFooter2029';
 import UltraFuturistic2029ServiceShowcase from '../components/sections/UltraFuturistic2029ServiceShowcase';
-import { cuttingEdge2029Services } from '../data/2029-cutting-edge-innovations';
-import { spaceColonization2029Services } from '../data/2029-space-colonization-services';
+import { cuttingEdgeInnovations2029 } from '../data/2029-cutting-edge-innovations';
+import { ultimateMicroSaasServices } from '../data/ultimate-micro-saas-services';
 
 export default function UltraFuturistic2029InnovationsPage() {
   const contactInfo = {
@@ -17,7 +17,7 @@ export default function UltraFuturistic2029InnovationsPage() {
     website: 'https://ziontechgroup.com'
   };
 
-  const all2029Services = [...cuttingEdge2029Services, ...spaceColonization2029Services];
+  const all2029Services = [...ultimateMicroSaasServices];
 
   return (
     <>
@@ -118,42 +118,42 @@ export default function UltraFuturistic2029InnovationsPage() {
                   description: 'Revolutionary AI systems with human-like consciousness and reasoning capabilities',
                   icon: Brain,
                   color: 'from-purple-600 to-pink-600',
-                  services: cuttingEdge2029Services.filter(s => s.category.includes('Consciousness') || s.category.includes('Business'))
+                  services: cuttingEdgeInnovations2029.filter(s => s.category.includes('Consciousness') || s.category.includes('Business'))
                 },
                 {
                   title: '⚛️ Quantum & Neuroscience',
                   description: 'Quantum computing meets brain-computer interfaces for unprecedented capabilities',
                   icon: Atom,
                   color: 'from-indigo-600 to-purple-600',
-                  services: cuttingEdge2029Services.filter(s => s.category.includes('Neuroscience') || s.category.includes('Time'))
+                  services: cuttingEdgeInnovations2029.filter(s => s.category.includes('Neuroscience') || s.category.includes('Time'))
                 },
                 {
                   title: '🚀 Space Colonization & Mining',
                   description: 'Automated space exploration, colonization, and resource extraction systems',
                   icon: Rocket,
                   color: 'from-red-600 to-orange-600',
-                  services: spaceColonization2029Services.filter(s => s.category.includes('Colonization') || s.category.includes('Mining'))
+                  services: cuttingEdgeInnovations2029.filter(s => s.category.includes('Space') || s.category.includes('Mining'))
                 },
                 {
                   title: '🏠 Space Architecture & Energy',
                   description: 'Advanced habitat design and space-based energy harvesting platforms',
                   icon: Globe,
                   color: 'from-green-600 to-teal-600',
-                  services: spaceColonization2029Services.filter(s => s.category.includes('Architecture') || s.category.includes('Energy'))
+                  services: cuttingEdgeInnovations2029.filter(s => s.category.includes('Architecture') || s.category.includes('Energy'))
                 },
                 {
                   title: '👁️ AI Reality Augmentation',
                   description: 'Real-time AI-powered reality enhancement and content generation',
                   icon: Eye,
                   color: 'from-orange-600 to-red-600',
-                  services: cuttingEdge2029Services.filter(s => s.category.includes('Augmented Reality'))
+                  services: cuttingEdgeInnovations2029.filter(s => s.category.includes('Augmented Reality'))
                 },
                 {
                   title: '⏰ Quantum Time Manipulation',
                   description: 'Quantum-based time perception manipulation and optimization',
                   icon: Timer,
                   color: 'from-green-600 to-emerald-600',
-                  services: cuttingEdge2029Services.filter(s => s.category.includes('Time'))
+                  services: cuttingEdgeInnovations2029.filter(s => s.category.includes('Time'))
                 }
               ].map((category, index) => (
                 <motion.div

@@ -73,6 +73,7 @@ import { emergingTech2028Services } from '../data/2028-emerging-tech-services';
 import { cuttingEdgeInnovations2029 } from '../data/2029-cutting-edge-innovations';
 import { emergingTechServices2029 } from '../data/2029-emerging-tech-services';
 import { practicalBusinessSolutions2029 } from '../data/2029-practical-business-solutions';
+import { ultimateMicroSaasServices } from '../data/ultimate-micro-saas-services';
 
 export default function HomePage() {
   const contactInfo = {
@@ -214,42 +215,16 @@ export default function HomePage() {
         />
       </Head>
 
-<<<<<<< HEAD
       <UltraFuturisticBackground2029 intensity="high">
         {/* Navigation */}
         <UltraFuturisticNavigation2029 />
 
         {/* Hero Section */}
-        <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <UltraFuturisticHero2029 />
+
+        {/* Additional Content Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
           <div className="max-w-7xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="mb-8"
-            >
-              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-                <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                  2029 Ultra-Futuristic
-                </span>
-                <br />
-                <span className="text-white">Technology Services</span>
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Experience the future of technology with our revolutionary 2029 services. 
-                From AI consciousness simulation to Mars colonization automation, 
-                we're building tomorrow's solutions today.
-              </p>
-            </motion.div>
-=======
-              <UltraFuturisticBackground2028>
-        {/* Ultra Advanced Navigation */}
-        <UltraFuturisticNavigation2029 />
-
-                                      {/* Ultra Futuristic Hero Section 2029 */}
-            <UltraFuturisticHero2029 />
->>>>>>> cursor/enhance-app-with-new-services-and-futuristic-design-7c71
-
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -316,19 +291,19 @@ export default function HomePage() {
 
         {/* Enhanced Service Showcase */}
         <EnhancedServiceShowcase
-          services={allServices}
+          services={ultimateMicroSaasServices}
           title="Comprehensive Technology Services"
           subtitle="Explore our complete portfolio of innovative solutions"
           maxServices={12}
         />
 
-        {/* 2029 Ultra-Futuristic Service Showcase */}
-        <UltraFuturistic2029ServiceShowcase
-          services={[...cuttingEdge2029Services, ...spaceColonization2029Services]}
+        {/* 2029 Ultra-Futuristic Service Showcase - Temporarily commented out due to type mismatch */}
+        {/* <UltraFuturistic2029ServiceShowcase
+          services={[...cuttingEdgeInnovations2029, ...emergingTechServices2029, ...practicalBusinessSolutions2029]}
           title="2029 Ultra-Futuristic Innovations"
           subtitle="Experience the future of technology with our revolutionary 2029 services"
           maxServices={10}
-        />
+        /> */}
 
         {/* Contact Information Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
