@@ -2,52 +2,9 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, Star, TrendingUp, Zap, Brain, Cpu, Shield, Rocket, Globe, Database, Lock, Cloud, Eye, Timer, Sparkles } from 'lucide-react';
 import UltraFuturisticServiceCard from '../ui/UltraFuturisticServiceCard';
+import { CuttingEdge2029Service } from '../../data/2029-cutting-edge-innovations';
 
-interface Service {
-  id: string;
-  name: string;
-  tagline: string;
-  price: string;
-  period: string;
-  description: string;
-  features: string[];
-  popular: boolean;
-  icon: string;
-  color: string;
-  textColor: string;
-  link: string;
-  marketPosition: string;
-  targetAudience: string;
-  trialDays: number;
-  setupTime: string;
-  category: string;
-  realService: boolean;
-  technology: string[];
-  integrations: string[];
-  useCases: string[];
-  roi: string;
-  competitors: string[];
-  marketSize: string;
-  growthRate: string;
-  contactInfo: {
-    mobile: string;
-    email: string;
-    address: string;
-    website: string;
-  };
-  realImplementation: boolean;
-  implementationDetails: string;
-  launchDate: string;
-  customers: number;
-  rating: number;
-  reviews: number;
-  innovationLevel: 'Revolutionary' | 'Breakthrough' | 'Advanced' | 'Emerging';
-  patentStatus: 'Patented' | 'Patent Pending' | 'Trade Secret' | 'Open Source';
-  aiCapabilities?: string[];
-  spaceCapabilities?: string[];
-  marketDisruption: string;
-  variant: string;
-}
+type Service = CuttingEdge2029Service | any;
 
 interface UltraFuturistic2029ServiceShowcaseProps {
   services: Service[];
@@ -98,8 +55,11 @@ const UltraFuturistic2029ServiceShowcase: React.FC<UltraFuturistic2029ServiceSho
     .sort((a, b) => {
       switch (sortBy) {
         case 'innovation':
+          // Default to 'Advanced' if innovationLevel is not available
+          const aLevel = (a as any).innovationLevel || 'Advanced';
+          const bLevel = (b as any).innovationLevel || 'Advanced';
           const innovationOrder = { 'Revolutionary': 4, 'Breakthrough': 3, 'Advanced': 2, 'Emerging': 1 };
-          return (innovationOrder[b.innovationLevel] || 0) - (innovationOrder[a.innovationLevel] || 0);
+          return (innovationOrder[bLevel] || 0) - (innovationOrder[aLevel] || 0);
         case 'price':
           return parseFloat(a.price.replace(/[^0-9.]/g, '')) - parseFloat(b.price.replace(/[^0-9.]/g, ''));
         case 'rating':
