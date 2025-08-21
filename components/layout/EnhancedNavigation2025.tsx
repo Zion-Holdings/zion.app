@@ -49,7 +49,7 @@ const navigationItems: NavigationItem[] = [
       { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing', description: 'Quantum-biological hybrid processing' },
       { name: 'Brain-Computer Interface', href: '/brain-computer-interface', description: 'Neural interface technology' },
       { name: 'Quantum Energy Platform', href: '/quantum-energy-platform', description: 'Fusion power simulation' },
-      { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai', description: 'Self-driving AI systems' },
+      { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai-platform', description: 'Self-driving AI systems' },
       { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery', description: 'Materials science acceleration' },
       { name: 'Quantum Robotics', href: '/quantum-robotics', description: 'Quantum-enhanced robotics' },
       { name: 'Quantum Internet Security', href: '/quantum-internet-security', description: 'Unbreakable encryption' },
@@ -95,8 +95,8 @@ const navigationItems: NavigationItem[] = [
     description: 'Innovative business solutions',
     badge: 'Popular',
     children: [
-      { name: 'AI Content Factory Pro', href: '/ai-content-factory', description: 'Automated content generation' },
-      { name: 'Quantum CRM Suite', href: '/quantum-crm', description: 'Next-gen customer management' },
+      { name: 'AI Business Intelligence Suite', href: '/ai-business-intelligence-suite', description: 'AI-powered business insights' },
+      { name: 'AI Content Factory Pro', href: '/ai-content-factory-pro', description: 'Automated content generation' },
       { name: 'CyberShield Pro', href: '/cyber-shield-pro', description: 'Comprehensive cybersecurity' },
       { name: 'DataVault Hub', href: '/data-vault-hub', description: 'Enterprise data management' },
       { name: 'DevOps Automation Studio', href: '/devops-automation-studio', description: 'End-to-end DevOps' },
@@ -118,6 +118,20 @@ const navigationItems: NavigationItem[] = [
       { name: 'Autonomous Vehicle AI Platform', href: '/autonomous-vehicle-ai-platform', description: 'Self-driving systems' },
       { name: 'Enterprise AI Operations Center', href: '/enterprise-ai-operations-center', description: 'AI operations management' },
       { name: 'Blockchain Infrastructure Platform', href: '/blockchain-infrastructure-platform', description: 'Blockchain development' }
+    ]
+  },
+  {
+    name: 'Services Showcase',
+    href: '/innovative-services-showcase-2025',
+    icon: <Star className="w-5 h-5" />,
+    description: 'Complete portfolio of innovative services',
+    badge: 'New',
+    children: [
+      { name: 'All Services Overview', href: '/innovative-services-showcase-2025', description: 'Complete service portfolio' },
+      { name: 'AI Services', href: '/ai-services', description: 'Artificial intelligence solutions' },
+      { name: 'Quantum Services', href: '/quantum-services', description: 'Quantum computing solutions' },
+      { name: 'IT Services', href: '/enterprise-it', description: 'Enterprise IT solutions' },
+      { name: 'Micro SAAS', href: '/micro-saas', description: 'Business automation solutions' }
     ]
   }
 ];
@@ -198,8 +212,7 @@ const EnhancedNavigation2025: React.FC<EnhancedNavigation2025Props> = ({ onMenuC
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
-                      transition={{ duration: 0.2 }}
-                      className="absolute top-full left-0 mt-2 w-80 bg-gray-900/95 backdrop-blur-xl border border-gray-800 rounded-2xl shadow-2xl shadow-black/50 overflow-hidden"
+                      className="absolute top-full left-0 mt-2 w-80 bg-gray-900/95 backdrop-blur-xl border border-gray-800 rounded-2xl shadow-2xl overflow-hidden"
                     >
                       <div className="p-4">
                         <div className="mb-4">
@@ -212,13 +225,14 @@ const EnhancedNavigation2025: React.FC<EnhancedNavigation2025Props> = ({ onMenuC
                               key={child.name}
                               href={child.href}
                               onClick={closeAllDropdowns}
-                              className="block p-3 rounded-xl hover:bg-gray-800/50 transition-colors duration-200 group"
+                              className="flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-800/50 transition-colors duration-200 group"
                             >
-                              <div className="font-medium text-white group-hover:text-cyan-400 transition-colors duration-200">
-                                {child.name}
-                              </div>
-                              <div className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors duration-200">
-                                {child.description}
+                              <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0"></div>
+                              <div className="flex-1">
+                                <div className="text-white font-medium group-hover:text-cyan-400 transition-colors duration-200">
+                                  {child.name}
+                                </div>
+                                <div className="text-sm text-gray-400">{child.description}</div>
                               </div>
                             </Link>
                           ))}
@@ -235,114 +249,111 @@ const EnhancedNavigation2025: React.FC<EnhancedNavigation2025Props> = ({ onMenuC
           <div className="hidden lg:flex items-center space-x-4">
             {/* Search */}
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
               <input
                 type="text"
                 placeholder="Search services..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-64 pl-10 pr-4 py-2 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                className="w-64 pl-10 pr-4 py-2 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent text-sm"
               />
             </div>
 
-            {/* Contact Button */}
+            {/* CTA Button */}
             <Link
               href="/contact"
-              className="bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white px-6 py-2 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105"
+              className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
             >
-              Contact Us
+              Get Started
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            onClick={onMenuClick || (() => setIsOpen(!isOpen))}
-            className="lg:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800/50 transition-colors duration-200"
+            onClick={() => setIsOpen(!isOpen)}
+            className="lg:hidden p-2 text-gray-300 hover:text-white transition-colors duration-200"
           >
-            <Menu className="w-6 h-6" />
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="lg:hidden bg-gray-900/95 backdrop-blur-xl border-t border-gray-800/50 overflow-hidden"
+            className="lg:hidden bg-gray-900/95 backdrop-blur-xl border-t border-gray-800"
           >
             <div className="px-4 py-6 space-y-4">
               {/* Mobile Search */}
               <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
                 <input
                   type="text"
                   placeholder="Search services..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                  className="w-full pl-10 pr-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
                 />
               </div>
 
               {/* Mobile Navigation Items */}
               {navigationItems.map((item) => (
                 <div key={item.name} className="space-y-2">
-                  <button
-                    onClick={() => toggleDropdown(item.name)}
-                    className="flex items-center justify-between w-full p-3 text-left text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-xl transition-colors duration-200"
+                  <Link
+                    href={item.href}
+                    onClick={closeAllDropdowns}
+                    className="flex items-center justify-between p-3 text-white hover:bg-gray-800/50 rounded-lg transition-colors duration-200"
                   >
                     <div className="flex items-center space-x-3">
                       {item.icon}
-                      <span>{item.name}</span>
-                      {item.badge && (
-                        <span className="px-2 py-1 text-xs bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-full">
-                          {item.badge}
-                        </span>
+                      <span className="font-medium">{item.name}</span>
+                    </div>
+                    {item.badge && (
+                      <span className="px-2 py-1 text-xs bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-full">
+                        {item.badge}
+                      </span>
+                    )}
+                  </Link>
+                  
+                  {/* Mobile Submenu */}
+                  {item.children && (
+                    <div className="ml-6 space-y-1">
+                      {item.children.slice(0, 3).map((child) => (
+                        <Link
+                          key={child.name}
+                          href={child.href}
+                          onClick={closeAllDropdowns}
+                          className="block p-2 text-gray-300 hover:text-white hover:bg-gray-800/50 rounded transition-colors duration-200 text-sm"
+                        >
+                          {child.name}
+                        </Link>
+                      ))}
+                      {item.children.length > 3 && (
+                        <Link
+                          href={item.href}
+                          onClick={closeAllDropdowns}
+                          className="block p-2 text-cyan-400 hover:text-cyan-300 text-sm font-medium"
+                        >
+                          View all {item.children.length} services →
+                        </Link>
                       )}
                     </div>
-                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
-                      activeDropdown === item.name ? 'rotate-180' : ''
-                    }`} />
-                  </button>
-
-                  {/* Mobile Dropdown */}
-                  <AnimatePresence>
-                    {activeDropdown === item.name && (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.2 }}
-                        className="ml-6 space-y-2"
-                      >
-                        {item.children?.map((child) => (
-                          <Link
-                            key={child.name}
-                            href={child.href}
-                            onClick={closeAllDropdowns}
-                            className="block p-3 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-xl transition-colors duration-200"
-                          >
-                            <div className="font-medium">{child.name}</div>
-                            <div className="text-sm text-gray-500">{child.description}</div>
-                          </Link>
-                        ))}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                  )}
                 </div>
               ))}
 
-              {/* Mobile Contact Button */}
-              <div className="pt-4">
+              {/* Mobile CTA */}
+              <div className="pt-4 border-t border-gray-800">
                 <Link
                   href="/contact"
                   onClick={closeAllDropdowns}
-                  className="block w-full bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white px-6 py-3 rounded-xl font-semibold text-center transition-all duration-300"
+                  className="block w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white font-semibold rounded-lg transition-all duration-300 text-center"
                 >
-                  Contact Us
+                  Get Started Today
                 </Link>
               </div>
             </div>
