@@ -3,6 +3,8 @@ import Head from 'next/head';
 import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Code, BookOpen, Activity, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Filter, Grid, List, ChevronDown, ChevronUp, Sparkles, FlaskConical, Dna, Car, Leaf, Factory, Truck, Microscope, GraduationCap, ShieldCheck, Brain, Atom, Globe2, Bot, ChevronRight, Sparkle, ArrowUpRight, Eye, Heart, Share2, Bookmark, Download, Upload, RefreshCw, Target as TargetIcon, TrendingUp as TrendingUpIcon, Users as UsersIcon, Award as AwardIcon, Star as StarIcon, Check as CheckIcon, ArrowRight as ArrowRightIcon, ExternalLink as ExternalLinkIcon, Phone as PhoneIcon, Mail as MailIcon, MapPin as MapPinIcon } from 'lucide-react';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
+import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
+import UltraFuturisticCard from '../components/ui/UltraFuturisticCard';
 import EnhancedFuturisticBackground from '../components/ui/EnhancedFuturisticBackground';
 import AdvancedFuturisticCard from '../components/ui/AdvancedFuturisticCard';
 import QuantumHolographicBackground from '../components/ui/QuantumHolographicBackground';
@@ -169,7 +171,7 @@ export default function ServicesPage() {
       </Head>
 
       {/* Enhanced Futuristic Background */}
-      <QuantumHolographicBackground>
+      <UltraFuturisticBackground>
         <div className="min-h-screen">
 
       {/* Hero Section */}
@@ -442,54 +444,21 @@ export default function ServicesPage() {
                   transition={{ duration: 0.8, delay: index * 0.05 }}
                   viewport={{ once: true }}
                 >
-                  <EnhancedFuturisticCard className="h-full p-6 hover:scale-105 transition-transform duration-300">
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="text-3xl">{service.icon}</div>
-                      <div className="flex items-center gap-2">
-                        {service.popular && (
-                          <div className="px-2 py-1 rounded-full bg-gradient-to-r from-yellow-500 to-orange-500 text-xs font-semibold text-white">
-                            Popular
-                          </div>
-                        )}
-                        <div className="text-xs text-gray-400 bg-white/10 px-2 py-1 rounded">
-                          {service.category}
-                        </div>
-                      </div>
-                    </div>
-
-                    <h3 className="text-xl font-bold mb-3 text-white">
-                      {service.name}
-                    </h3>
-                    
-                    <p className="text-gray-300 mb-4 leading-relaxed">
-                      {service.tagline}
-                    </p>
-
-                    <div className="space-y-3 mb-6">
-                      {service.features.slice(0, 3).map((feature, idx) => (
-                        <div key={idx} className="flex items-center text-sm text-gray-400">
-                          <Check className="w-4 h-4 mr-2 text-cyan-400 flex-shrink-0" />
-                          <span className="line-clamp-1">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-
-                    <div className="flex items-center justify-between mb-6">
-                      <div>
-                        <div className="text-2xl font-bold text-cyan-400">
-                          {service.price}
-                          <span className="text-sm text-gray-400">{service.period}</span>
-                        </div>
-                        <div className="text-sm text-gray-400">
-                          {service.trialDays} days free trial
-                        </div>
-                      </div>
-                      <div className="text-right">
-                        <div className="text-sm text-gray-400">Setup Time</div>
-                        <div className="text-sm text-white">{service.setupTime}</div>
-                      </div>
-                    </div>
-
+                  <UltraFuturisticCard
+                    title={service.name}
+                    description={service.tagline}
+                    icon={<div className="text-3xl">{service.icon}</div>}
+                    color={service.color}
+                    textColor={service.textColor}
+                    gradient={service.color}
+                    features={service.features}
+                    link={service.link}
+                    popular={service.popular}
+                    price={service.price}
+                    period={service.period}
+                    variant={service.variant || 'default'}
+                    className="h-full"
+                  >
                     <div className="space-y-3 mb-6">
                       <div className="flex items-center justify-between text-sm">
                         <span className="text-gray-400">ROI:</span>
@@ -503,29 +472,28 @@ export default function ServicesPage() {
                         <span className="text-gray-400">Growth Rate:</span>
                         <span className="text-purple-400">{service.growthRate}</span>
                       </div>
+                      <div className="flex items-center justify-between text-sm">
+                        <span className="text-gray-400">Setup Time:</span>
+                        <span className="text-white">{service.setupTime}</span>
+                      </div>
+                      <div className="flex items-center justify-between text-sm">
+                        <span className="text-gray-400">Trial:</span>
+                        <span className="text-cyan-400">{service.trialDays} days free</span>
+                      </div>
                     </div>
 
                     <div className="flex gap-2">
                       <Button
-                        href={service.link}
-                        variant="primary"
-                        size="sm"
-                        className="flex-1 group"
-                      >
-                        Learn More
-                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                      </Button>
-                      <Button
                         href={`mailto:${contactInfo.email}?subject=Inquiry about ${service.name}`}
                         variant="secondary"
                         size="sm"
-                        className="group"
+                        className="group flex-1"
                       >
                         Contact Sales
                         <Mail className="w-4 h-4 ml-2 group-hover:scale-110 transition-transform" />
                       </Button>
                     </div>
-                  </EnhancedFuturisticCard>
+                  </UltraFuturisticCard>
                 </motion.div>
               ))}
             </div>
@@ -665,7 +633,7 @@ export default function ServicesPage() {
         </div>
       </section>
         </div>
-      </QuantumHolographicBackground>
+      </UltraFuturisticBackground>
     </div>
   );
 }

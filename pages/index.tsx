@@ -4,6 +4,8 @@ import Hero from '../components/sections/Hero';
 import Features from '../components/sections/Features';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
+import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
+import UltraFuturisticCard from '../components/ui/UltraFuturisticCard';
 import EnhancedFuturisticBackground from '../components/ui/EnhancedFuturisticBackground';
 import EnhancedFuturisticCard from '../components/ui/EnhancedFuturisticCard';
 import QuantumHolographicBackground from '../components/ui/QuantumHolographicBackground';
@@ -268,8 +270,8 @@ export default function HomePage() {
         <link rel="canonical" href="https://ziontechgroup.com" />
       </Head>
 
-      {/* Enhanced Futuristic Background */}
-      <QuantumHolographicBackground>
+      {/* Ultra Futuristic Background */}
+      <UltraFuturisticBackground>
         <div className="min-h-screen">
 
       {/* Hero Section */}
@@ -403,31 +405,18 @@ export default function HomePage() {
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <EnhancedFuturisticCard
-                  className="h-full p-6 hover:scale-105 transition-transform duration-300 cursor-pointer"
-                >
-                  <div className={`w-16 h-16 rounded-2xl ${feature.color} flex items-center justify-center mb-6`}>
-                    {feature.icon}
-                  </div>
-                  <h3 className="text-xl font-bold mb-4 text-white">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-300 mb-6 leading-relaxed">
-                    {feature.description}
-                  </p>
-                  <div className="space-y-2 mb-6">
-                    {feature.features.map((feat, idx) => (
-                      <div key={idx} className="flex items-center text-sm text-gray-400">
-                        <Check className="w-4 h-4 mr-2 text-cyan-400" />
-                        {feat}
-                      </div>
-                    ))}
-                  </div>
-                  <div className="flex items-center text-cyan-400 hover:text-cyan-300 transition-colors cursor-pointer">
-                    Learn More
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </div>
-                </EnhancedFuturisticCard>
+                <UltraFuturisticCard
+                  title={feature.title}
+                  description={feature.description}
+                  icon={feature.icon}
+                  color="from-cyan-500 to-blue-600"
+                  textColor="text-cyan-400"
+                  gradient={feature.gradient}
+                  features={feature.features}
+                  link={feature.link}
+                  variant="quantum"
+                  className="h-full cursor-pointer"
+                />
               </motion.div>
             ))}
           </div>
@@ -645,24 +634,32 @@ export default function HomePage() {
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <EnhancedFuturisticCard className="h-full p-6">
-                  <div className="flex items-center mb-4">
-                    <div className="text-4xl mr-4">{testimonial.avatar}</div>
-                    <div>
-                      <div className="font-semibold text-white">{testimonial.name}</div>
-                      <div className="text-sm text-cyan-400">{testimonial.role}</div>
-                      <div className="text-xs text-gray-400">{testimonial.company}</div>
+                <UltraFuturisticCard
+                  title={testimonial.name}
+                  description={`"${testimonial.content}"`}
+                  icon={<div className="text-4xl">{testimonial.avatar}</div>}
+                  color="from-purple-500 to-pink-600"
+                  textColor="text-purple-400"
+                  gradient="from-purple-500 to-pink-600"
+                  variant="holographic"
+                  className="h-full"
+                >
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="text-gray-400">Role:</span>
+                      <span className="text-cyan-400">{testimonial.role}</span>
+                    </div>
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="text-gray-400">Company:</span>
+                      <span className="text-white">{testimonial.company}</span>
+                    </div>
+                    <div className="flex items-center justify-center">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                      ))}
                     </div>
                   </div>
-                  <div className="flex mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-gray-300 leading-relaxed">
-                    "{testimonial.content}"
-                  </p>
-                </EnhancedFuturisticCard>
+                </UltraFuturisticCard>
               </motion.div>
             ))}
           </div>
@@ -790,7 +787,7 @@ export default function HomePage() {
         </div>
       </section>
         </div>
-      </QuantumHolographicBackground>
+      </UltraFuturisticBackground>
     </div>
   );
 }
