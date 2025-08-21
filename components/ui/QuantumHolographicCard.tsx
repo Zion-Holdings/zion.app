@@ -1,15 +1,17 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface QuantumHolographicCardProps {
   children: React.ReactNode;
   className?: string;
-  variant?: 'quantum' | 'holographic' | 'neural' | 'cyberpunk' | 'entanglement';
+  variant?: 'quantum' | 'holographic' | 'matrix' | 'neural' | 'cyberpunk';
   intensity?: 'low' | 'medium' | 'high';
   interactive?: boolean;
-  glow?: boolean;
-  floating?: boolean;
-  onClick?: () => void;
+  glowColor?: string;
+  borderColor?: string;
+  background?: 'transparent' | 'glass' | 'solid' | 'gradient';
+  size?: 'sm' | 'md' | 'lg' | 'xl';
+  elevation?: 'none' | 'low' | 'medium' | 'high' | 'extreme';
 }
 
 const QuantumHolographicCard: React.FC<QuantumHolographicCardProps> = ({
@@ -18,286 +20,436 @@ const QuantumHolographicCard: React.FC<QuantumHolographicCardProps> = ({
   variant = 'quantum',
   intensity = 'medium',
   interactive = true,
-  glow = true,
-  floating = true,
-  onClick
+  glowColor,
+  borderColor,
+  background = 'glass',
+  size = 'md',
+  elevation = 'medium'
 }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const [isPressed, setIsPressed] = useState(false);
-  const cardRef = useRef<HTMLDivElement>(null);
+  const [isFocused, setIsFocused] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isClient, setIsClient] = useState(false);
 
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  useEffect(() => {
-    if (!isClient) return;
-
-    const handleMouseMove = (e: MouseEvent) => {
-      if (cardRef.current && interactive) {
-        const rect = cardRef.current.getBoundingClientRect();
-        setMousePosition({
-          x: e.clientX - rect.left,
-          y: e.clientY - rect.top
-        });
-      }
-    };
-
-    if (typeof window !== 'undefined') {
-      window.addEventListener('mousemove', handleMouseMove);
-    }
-
-    return () => {
-      if (typeof window !== 'undefined') {
-        window.removeEventListener('mousemove', handleMouseMove);
-      }
-    };
-  }, [interactive, isClient]);
-
-  const getVariantStyles = () => {
+  const getVariantColors = () => {
     switch (variant) {
       case 'quantum':
         return {
-          bg: 'bg-gradient-to-br from-cyan-500/20 via-blue-600/20 to-purple-700/20',
-          border: 'border-cyan-500/30',
-          glow: 'shadow-cyan-500/20',
-          accent: 'from-cyan-400 to-blue-500'
+          primary: '#00ffff',
+          secondary: '#8b5cf6',
+          accent: '#06b6d4',
+          glow: '#00ffff',
+          border: '#00ffff'
         };
       case 'holographic':
         return {
-          bg: 'bg-gradient-to-br from-emerald-500/20 via-teal-600/20 to-cyan-700/20',
-          border: 'border-emerald-500/30',
-          glow: 'shadow-emerald-500/20',
-          accent: 'from-emerald-400 to-teal-500'
+          primary: '#8b5cf6',
+          secondary: '#ec4899',
+          accent: '#a855f7',
+          glow: '#8b5cf6',
+          border: '#8b5cf6'
+        };
+      case 'matrix':
+        return {
+          primary: '#00ff00',
+          secondary: '#10b981',
+          accent: '#059669',
+          glow: '#00ff00',
+          border: '#00ff00'
         };
       case 'neural':
         return {
-          bg: 'bg-gradient-to-br from-purple-500/20 via-indigo-600/20 to-blue-700/20',
-          border: 'border-purple-500/30',
-          glow: 'shadow-purple-500/20',
-          accent: 'from-purple-400 to-indigo-500'
+          primary: '#ff00ff',
+          secondary: '#ec4899',
+          accent: '#f97316',
+          glow: '#ff00ff',
+          border: '#ff00ff'
         };
       case 'cyberpunk':
         return {
-          bg: 'bg-gradient-to-br from-pink-500/20 via-red-600/20 to-orange-700/20',
-          border: 'border-pink-500/30',
-          glow: 'shadow-pink-500/20',
-          accent: 'from-pink-400 to-red-500'
-        };
-      case 'entanglement':
-        return {
-          bg: 'bg-gradient-to-br from-yellow-500/20 via-orange-600/20 to-red-700/20',
-          border: 'border-yellow-500/30',
-          glow: 'shadow-yellow-500/20',
-          accent: 'from-yellow-400 to-orange-500'
+          primary: '#f97316',
+          secondary: '#ef4444',
+          accent: '#f59e0b',
+          glow: '#f97316',
+          border: '#f97316'
         };
       default:
         return {
-          bg: 'bg-gradient-to-br from-cyan-500/20 via-blue-600/20 to-purple-700/20',
-          border: 'border-cyan-500/30',
-          glow: 'shadow-cyan-500/20',
-          accent: 'from-cyan-400 to-blue-500'
+          primary: '#00ffff',
+          secondary: '#8b5cf6',
+          accent: '#06b6d4',
+          glow: '#00ffff',
+          border: '#00ffff'
         };
     }
   };
 
-  const getIntensityStyles = () => {
-    switch (intensity) {
-      case 'high':
-        return {
-          backdrop: 'backdrop-blur-2xl',
-          borderWidth: 'border-2',
-          shadow: 'shadow-2xl'
-        };
-      case 'medium':
-        return {
-          backdrop: 'backdrop-blur-xl',
-          borderWidth: 'border',
-          shadow: 'shadow-xl'
-        };
+  const getSizeClasses = () => {
+    switch (size) {
+      case 'sm':
+        return 'p-4 text-sm';
+      case 'md':
+        return 'p-6 text-base';
+      case 'lg':
+        return 'p-8 text-lg';
+      case 'xl':
+        return 'p-10 text-xl';
+      default:
+        return 'p-6 text-base';
+    }
+  };
+
+  const getElevationClasses = () => {
+    switch (elevation) {
+      case 'none':
+        return '';
       case 'low':
-        return {
-          backdrop: 'backdrop-blur-lg',
-          borderWidth: 'border',
-          shadow: 'shadow-lg'
-        };
+        return 'shadow-lg';
+      case 'medium':
+        return 'shadow-2xl';
+      case 'high':
+        return 'shadow-[0_25px_50px_-12px_rgba(0,0,0,0.8)]';
+      case 'extreme':
+        return 'shadow-[0_50px_100px_-20px_rgba(0,0,0,0.9)]';
       default:
-        return {
-          backdrop: 'backdrop-blur-xl',
-          borderWidth: 'border',
-          shadow: 'shadow-xl'
-        };
+        return 'shadow-2xl';
     }
   };
 
-  const styles = getVariantStyles();
-  const intensityStyles = getIntensityStyles();
-
-  const cardVariants = {
-    initial: { 
-      scale: 1,
-      rotateX: 0,
-      rotateY: 0,
-      y: floating ? 0 : 0
-    },
-    hover: { 
-      scale: 1.02,
-      rotateX: interactive ? 5 : 0,
-      rotateY: interactive ? 5 : 0,
-      y: floating ? -8 : 0
-    },
-    pressed: { 
-      scale: 0.98,
-      rotateX: 0,
-      rotateY: 0,
-      y: floating ? -4 : 0
+  const getBackgroundClasses = () => {
+    switch (background) {
+      case 'transparent':
+        return 'bg-transparent';
+      case 'glass':
+        return 'bg-black/20 backdrop-blur-xl border border-white/10';
+      case 'solid':
+        return 'bg-black/80';
+      case 'gradient':
+        return 'bg-gradient-to-br from-black/90 via-black/70 to-black/90';
+      default:
+        return 'bg-black/20 backdrop-blur-xl border border-white/10';
     }
   };
 
-  const floatingAnimation = floating ? {
-    animate: {
-      y: [0, -10, 0],
-      transition: {
-        duration: 3,
-        repeat: Infinity,
-        ease: "easeInOut" as const
-      }
+  const colors = getVariantColors();
+  const finalGlowColor = glowColor || colors.glow;
+  const finalBorderColor = borderColor || colors.border;
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!interactive) return;
+    
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    setMousePosition({ x, y });
+  };
+
+  const getGlowIntensity = () => {
+    switch (intensity) {
+      case 'low':
+        return '0 0 20px';
+      case 'medium':
+        return '0 0 40px';
+      case 'high':
+        return '0 0 60px';
+      default:
+        return '0 0 40px';
     }
-  } : {};
+  };
+
+  const getParticleCount = () => {
+    switch (intensity) {
+      case 'low':
+        return 5;
+      case 'medium':
+        return 10;
+      case 'high':
+        return 20;
+      default:
+        return 10;
+    }
+  };
 
   return (
     <motion.div
-      ref={cardRef}
-      className={`relative group cursor-pointer ${className}`}
-      variants={cardVariants}
-      initial="initial"
-      whileHover={interactive ? "hover" : "initial"}
-      whileTap={interactive ? "pressed" : "initial"}
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(false)}
-      onTapStart={() => setIsPressed(true)}
-      onTap={() => setIsPressed(false)}
-      onClick={onClick}
-      {...floatingAnimation}
+      className={`relative overflow-hidden rounded-2xl ${getSizeClasses()} ${getBackgroundClasses()} ${getElevationClasses()} ${className}`}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      onFocus={() => setIsFocused(true)}
+      onBlur={() => setIsFocused(false)}
+      whileHover={interactive ? { scale: 1.02, y: -5 } : {}}
+      whileTap={interactive ? { scale: 0.98 } : {}}
+      transition={{
+        type: "spring",
+        stiffness: 300,
+        damping: 20
+      }}
+      style={{
+        boxShadow: isHovered || isFocused 
+          ? `${getGlowIntensity()} ${finalGlowColor}40, 0 0 80px ${finalGlowColor}20`
+          : undefined
+      }}
     >
-      {/* Quantum field effect */}
-      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      
-      {/* Main card */}
-      <motion.div
-        className={`
-          relative rounded-2xl p-6 
-          ${styles.bg} 
-          ${styles.border} 
-          ${intensityStyles.backdrop}
-          ${intensityStyles.borderWidth}
-          ${intensityStyles.shadow}
-          ${glow ? styles.glow : ''}
-          transition-all duration-500 ease-out
-          group-hover:shadow-2xl group-hover:shadow-cyan-500/30
-        `}
-        style={{
-          transformStyle: 'preserve-3d',
-          perspective: '1000px'
-        }}
-      >
-        {/* Holographic overlay */}
-        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/5 via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      {/* Animated border */}
+      <div className="absolute inset-0 rounded-2xl overflow-hidden">
+        <motion.div
+          className="absolute inset-0"
+          style={{
+            background: `conic-gradient(from 0deg, transparent, ${finalBorderColor}, transparent, ${finalBorderColor}, transparent)`,
+            borderRadius: 'inherit'
+          }}
+          animate={{
+            rotate: [0, 360]
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        />
         
-        {/* Quantum particles effect */}
-        <div className="absolute inset-0 rounded-2xl overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-          
-          {/* Animated quantum dots */}
-          {Array.from({ length: 6 }).map((_, i) => (
+        <div 
+          className="absolute inset-[2px] rounded-2xl"
+          style={{
+            background: getBackgroundClasses().includes('bg-') 
+              ? getBackgroundClasses() 
+              : 'bg-black/20 backdrop-blur-xl'
+          }}
+        />
+      </div>
+
+      {/* Quantum particles */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {Array.from({ length: getParticleCount() }).map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1 h-1 rounded-full"
+            style={{
+              backgroundColor: colors.primary,
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`
+            }}
+            animate={{
+              scale: [0, 1, 0],
+              opacity: [0, 0.8, 0],
+              x: [0, (Math.random() - 0.5) * 100],
+              y: [0, (Math.random() - 0.5) * 100]
+            }}
+            transition={{
+              duration: 3 + Math.random() * 2,
+              repeat: Infinity,
+              delay: Math.random() * 2,
+              ease: "easeInOut"
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Holographic grid overlay */}
+      <div className="absolute inset-0 pointer-events-none">
+        <motion.div
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage: `
+              linear-gradient(${finalBorderColor}20 1px, transparent 1px),
+              linear-gradient(90deg, ${finalBorderColor}20 1px, transparent 1px)
+            `,
+            backgroundSize: '20px 20px'
+          }}
+          animate={{
+            opacity: [0.1, 0.3, 0.1]
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+      </div>
+
+      {/* Interactive light effect */}
+      {interactive && (
+        <motion.div
+          className="absolute pointer-events-none rounded-full blur-3xl opacity-30"
+          style={{
+            background: `radial-gradient(circle, ${finalGlowColor}40 0%, transparent 70%)`,
+            width: 200,
+            height: 200,
+            left: mousePosition.x - 100,
+            top: mousePosition.y - 100
+          }}
+          animate={{
+            scale: isHovered ? 1.5 : 1,
+            opacity: isHovered ? 0.5 : 0.3
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 300,
+            damping: 30
+          }}
+        />
+      )}
+
+      {/* Floating elements based on variant */}
+      <div className="absolute inset-0 pointer-events-none">
+        {variant === 'quantum' && (
+          <>
             <motion.div
-              key={i}
-              className="absolute w-1 h-1 bg-cyan-400 rounded-full"
-              style={{
-                left: `${20 + i * 15}%`,
-                top: `${30 + i * 10}%`,
-              }}
+              className="absolute top-4 right-4 w-3 h-3 border border-cyan-400/50 rounded-full"
               animate={{
                 scale: [1, 1.5, 1],
-                opacity: [0.3, 1, 0.3],
+                opacity: [0.5, 1, 0.5]
               }}
               transition={{
-                duration: 2 + i * 0.5,
+                duration: 2,
                 repeat: Infinity,
-                delay: i * 0.3,
                 ease: "easeInOut"
               }}
             />
-          ))}
-        </div>
+            <motion.div
+              className="absolute bottom-4 left-4 w-2 h-2 bg-purple-400/60 rounded-full"
+              animate={{
+                y: [0, -10, 0],
+                opacity: [0.6, 1, 0.6]
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+          </>
+        )}
 
-        {/* Neural network connections */}
+        {variant === 'holographic' && (
+          <>
+            <motion.div
+              className="absolute top-6 left-6 w-4 h-4 border border-purple-400/40"
+              style={{ transform: 'rotate(45deg)' }}
+              animate={{
+                rotate: [45, 405],
+                scale: [1, 1.2, 1]
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+            <motion.div
+              className="absolute bottom-6 right-6 w-3 h-3 bg-pink-400/50 rounded-full"
+              animate={{
+                scale: [1, 1.3, 1],
+                opacity: [0.5, 1, 0.5]
+              }}
+              transition={{
+                duration: 2.5,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+          </>
+        )}
+
+        {variant === 'matrix' && (
+          <>
+            <motion.div
+              className="absolute top-4 left-4 w-2 h-2 bg-green-400/70"
+              animate={{
+                scale: [1, 1.5, 1],
+                opacity: [0.7, 1, 0.7]
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+            <motion.div
+              className="absolute bottom-4 right-4 w-3 h-3 border border-green-400/50"
+              animate={{
+                rotate: [0, 180, 360],
+                opacity: [0.5, 1, 0.5]
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+          </>
+        )}
+
         {variant === 'neural' && (
-          <div className="absolute inset-0 rounded-2xl overflow-hidden">
-            <svg className="w-full h-full absolute inset-0" style={{ zIndex: 1 }}>
-              <defs>
-                <linearGradient id="neuralGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="rgba(147, 51, 234, 0.3)" />
-                  <stop offset="100%" stopColor="rgba(79, 70, 229, 0.3)" />
-                </linearGradient>
-              </defs>
-              <motion.path
-                d="M 50 50 Q 100 25 150 50 T 250 50"
-                stroke="url(#neuralGradient)"
-                strokeWidth="1"
-                fill="none"
-                initial={{ pathLength: 0, opacity: 0 }}
-                animate={{ pathLength: 1, opacity: 1 }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              />
-            </svg>
-          </div>
+          <>
+            <motion.div
+              className="absolute top-5 left-5 w-3 h-3 bg-pink-400/60 rounded-full"
+              animate={{
+                scale: [1, 1.4, 1],
+                opacity: [0.6, 1, 0.6]
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+            <motion.div
+              className="absolute bottom-5 right-5 w-2 h-2 border border-orange-400/50"
+              animate={{
+                rotate: [0, 90, 180, 270, 360],
+                opacity: [0.5, 1, 0.5]
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+            />
+          </>
         )}
 
-        {/* Cyberpunk grid effect */}
         {variant === 'cyberpunk' && (
-          <div className="absolute inset-0 rounded-2xl overflow-hidden">
-            <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent_50%,rgba(236,72,153,0.1)_50%),linear-gradient(0deg,transparent_50%,rgba(236,72,153,0.1)_50%)] bg-[length:20px_20px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-          </div>
+          <>
+            <motion.div
+              className="absolute top-4 left-4 w-3 h-3 bg-orange-400/70"
+              animate={{
+                scale: [1, 1.3, 1],
+                opacity: [0.7, 1, 0.7]
+              }}
+              transition={{
+                duration: 1.8,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+            <motion.div
+              className="absolute bottom-4 right-4 w-2 h-2 bg-red-400/60 rounded-full"
+              animate={{
+                y: [0, -8, 0],
+                opacity: [0.6, 1, 0.6]
+              }}
+              transition={{
+                duration: 2.2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+          </>
         )}
+      </div>
 
-        {/* Content */}
-        <div className="relative z-10">
-          {children}
-        </div>
+      {/* Content */}
+      <div className="relative z-10">
+        {children}
+      </div>
 
-        {/* Interactive 3D effect */}
-        {interactive && (
-          <motion.div
-            className="absolute inset-0 rounded-2xl bg-gradient-to-br from-cyan-500/20 via-transparent to-purple-500/20"
-            style={{
-              transform: `perspective(1000px) rotateX(${(mousePosition.y - 150) * 0.01}deg) rotateY(${(mousePosition.x - 200) * 0.01}deg)`,
-              transformStyle: 'preserve-3d'
-            }}
-            transition={{ duration: 0.1 }}
-          />
-        )}
-      </motion.div>
-
-      {/* Glow effect */}
-      {glow && (
-        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-cyan-500/20 via-blue-600/20 to-purple-700/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
-      )}
-
-      {/* Quantum entanglement effect */}
-      <AnimatePresence>
-        {isHovered && (
-          <motion.div
-            className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 opacity-20 blur-sm"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 0.2, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.8 }}
-            transition={{ duration: 0.3 }}
-          />
-        )}
-      </AnimatePresence>
+      {/* Corner accents */}
+      <div className="absolute top-0 left-0 w-6 h-6 border-l-2 border-t-2 border-current opacity-50" />
+      <div className="absolute top-0 right-0 w-6 h-6 border-r-2 border-t-2 border-current opacity-50" />
+      <div className="absolute bottom-0 left-0 w-6 h-6 border-l-2 border-b-2 border-current opacity-50" />
+      <div className="absolute bottom-0 right-0 w-6 h-6 border-r-2 border-b-2 border-current opacity-50" />
     </motion.div>
   );
 };
