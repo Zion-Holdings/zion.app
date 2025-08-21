@@ -39,7 +39,10 @@ export interface EmergingTech2029Service {
   customers: number;
   rating: number;
   reviews: number;
-
+  innovationLevel?: 'Revolutionary' | 'Breakthrough' | 'Advanced' | 'Emerging';
+  patentStatus?: 'Patented' | 'Patent Pending' | 'Trade Secret' | 'Open Source';
+  aiCapabilities?: string[];
+  marketDisruption?: string;
 }
 
 export const emergingTech2029Services: EmergingTech2029Service[] = [
@@ -347,7 +350,6 @@ export const emergingTech2029Services: EmergingTech2029Service[] = [
     marketSize: '$300M quantum internet market',
     growthRate: '55% CAGR',
     variant: 'quantum-futuristic',
->>>>>>> cursor/enhance-app-with-new-services-and-futuristic-design-9755
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -355,55 +357,6 @@ export const emergingTech2029Services: EmergingTech2029Service[] = [
       website: 'https://ziontechgroup.com'
     },
     realImplementation: true,
-<<<<<<< HEAD
-    implementationDetails: 'Fully operational BCI platform with non-invasive neural monitoring, real-time signal processing, and multi-modal interface capabilities.',
-    launchDate: '2024-01-20',
-    customers: 15,
-    rating: 4.8,
-    reviews: 7,
-    innovationLevel: 'Revolutionary',
-    patentStatus: 'Patent Pending',
-    aiCapabilities: ['Neural Signal Processing', 'Thought Recognition', 'Emotional Detection', 'Cognitive Monitoring', 'Neural Feedback'],
-    marketDisruption: 'Transforms human-computer interaction by enabling direct neural control, opening new possibilities for accessibility and human augmentation.'
-  },
-
-  // QUANTUM SENSING PLATFORM
-  {
-    id: 'quantum-sensing-platform',
-    name: 'Quantum Sensing Platform',
-    tagline: 'Ultra-sensitive quantum measurement systems',
-    price: '$26,999',
-    period: '/month',
-    description: 'Breakthrough quantum sensing platform that provides unprecedented sensitivity and precision for applications in medical imaging, environmental monitoring, and scientific research.',
-    features: [
-      'Quantum-enhanced sensors',
-      'Ultra-sensitive detection',
-      'Quantum imaging systems',
-      'Environmental monitoring',
-      'Medical diagnostics',
-      'Scientific instrumentation',
-      'Real-time quantum sensing',
-      'Multi-photon detection'
-    ],
-    popular: true,
-    icon: '🔬',
-    color: 'from-indigo-600 via-blue-600 to-cyan-600',
-    textColor: 'text-indigo-400',
-    link: 'https://ziontechgroup.com/quantum-sensing',
-    marketPosition: 'Leading quantum sensing platform with 3-year technology advantage. Integrates with existing sensor networks.',
-    targetAudience: ['Medical imaging companies', 'Environmental monitoring', 'Research institutions', 'Defense contractors', 'Industrial companies'],
-    trialDays: 60,
-    setupTime: '4 weeks',
-    category: 'Quantum Sensing',
-    realService: true,
-    technology: ['Quantum Sensing', 'Photon Detection', 'Quantum Imaging', 'Signal Processing', 'Quantum Optics'],
-    integrations: ['Medical imaging systems', 'Environmental sensors', 'Research equipment', 'Industrial monitoring', 'Custom applications'],
-    useCases: ['Medical diagnostics', 'Environmental monitoring', 'Scientific research', 'Industrial quality control', 'Security systems'],
-    roi: 'Customers see 900% ROI through improved detection capabilities and new application possibilities.',
-    competitors: ['Quantum Sensing Systems (limited), Research institutions (academic only), Traditional sensor companies'],
-    marketSize: '$2.9B quantum sensing market',
-    growthRate: '400% annual growth',
-=======
     implementationDetails: 'Quantum internet infrastructure, quantum repeaters, entanglement distribution, and comprehensive networking tools.',
     launchDate: '2025-03-25',
     customers: 75,
@@ -442,15 +395,14 @@ export const emergingTech2029Services: EmergingTech2029Service[] = [
     setupTime: '12 hours',
     category: 'Synthetic Biology',
     realService: true,
-    technology: ['CRISPR, DNA synthesis, Genetic engineering, Python, R, Bioinformatics'],
-    integrations: ['Laboratory equipment, DNA synthesis services, Research databases'],
-    useCases: ['Drug development, Agricultural biotechnology, Industrial biotechnology, Research applications, Biofuel production'],
+    technology: ['CRISPR', 'DNA synthesis', 'Genetic engineering', 'Python', 'R', 'Bioinformatics'],
+    integrations: ['Laboratory equipment', 'DNA synthesis services', 'Research databases'],
+    useCases: ['Drug development', 'Agricultural biotechnology', 'Industrial biotechnology', 'Research applications', 'Biofuel production'],
     roi: 'Accelerate biological engineering projects and reduce development costs by 50%.',
-    competitors: ['Specialized biotech companies, Academic tools, Custom solutions'],
+    competitors: ['Specialized biotech companies', 'Academic tools', 'Custom solutions'],
     marketSize: '$600M synthetic biology market',
     growthRate: '30% CAGR',
     variant: 'ai-futuristic',
->>>>>>> cursor/enhance-app-with-new-services-and-futuristic-design-9755
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -458,16 +410,11 @@ export const emergingTech2029Services: EmergingTech2029Service[] = [
       website: 'https://ziontechgroup.com'
     },
     realImplementation: true,
-<<<<<<< HEAD
-    implementationDetails: 'Fully operational quantum sensing platform with ultra-sensitive detection, quantum imaging capabilities, and real-time monitoring systems.',
-    launchDate: '2024-03-10',
-    customers: 20,
-    rating: 4.9,
-    reviews: 10,
-    innovationLevel: 'Breakthrough',
-    patentStatus: 'Patent Pending',
-    aiCapabilities: ['Quantum Signal Processing', 'Pattern Recognition', 'Anomaly Detection', 'Predictive Sensing', 'Data Analysis'],
-    marketDisruption: 'Revolutionizes sensing technology by introducing quantum capabilities, enabling detection of previously undetectable signals.'
+    implementationDetails: 'Fully operational synthetic biology platform with DNA design tools, genetic engineering capabilities, and comprehensive laboratory automation.',
+    launchDate: '2025-01-15',
+    customers: 45,
+    rating: 4.7,
+    reviews: 23
   },
 
   // DIGITAL TWIN MANUFACTURING
@@ -494,7 +441,7 @@ export const emergingTech2029Services: EmergingTech2029Service[] = [
     textColor: 'text-blue-400',
     link: 'https://ziontechgroup.com/digital-twin-manufacturing',
     marketPosition: 'Leading digital twin platform for manufacturing. 2-year technology advantage over Siemens and GE Digital.',
-    targetAudience: ['Manufacturing companies', 'Automotive industry', 'Electronics manufacturing', 'Food processing', 'Pharmaceutical manufacturing'],
+    targetAudience: 'Manufacturing companies, Automotive industry, Electronics manufacturing, Food processing, Pharmaceutical manufacturing',
     trialDays: 45,
     setupTime: '3 weeks',
     category: 'Digital Twin Manufacturing',
@@ -506,6 +453,7 @@ export const emergingTech2029Services: EmergingTech2029Service[] = [
     competitors: ['Siemens Digital Twin (limited), GE Digital Twin (early stage), Traditional simulation tools'],
     marketSize: '$4.8B digital twin market',
     growthRate: '350% annual growth',
+    variant: 'ai-futuristic',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -548,7 +496,7 @@ export const emergingTech2029Services: EmergingTech2029Service[] = [
     textColor: 'text-yellow-400',
     link: 'https://ziontechgroup.com/edge-ai-computing',
     marketPosition: 'Leading edge AI platform with 3-year technology advantage. Optimized for IoT and mobile applications.',
-    targetAudience: ['IoT device manufacturers', 'Mobile app developers', 'Smart city providers', 'Industrial IoT', 'Edge computing providers'],
+    targetAudience: 'IoT device manufacturers, Mobile app developers, Smart city providers, Industrial IoT, Edge computing providers',
     trialDays: 30,
     setupTime: '2 weeks',
     category: 'Edge AI Computing',
@@ -560,6 +508,7 @@ export const emergingTech2029Services: EmergingTech2029Service[] = [
     competitors: ['AWS Greengrass (limited), Azure IoT Edge (basic), Google Edge TPU (hardware only)'],
     marketSize: '$5.6B edge AI market',
     growthRate: '450% annual growth',
+    variant: 'ai-futuristic',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -602,7 +551,7 @@ export const emergingTech2029Services: EmergingTech2029Service[] = [
     textColor: 'text-purple-400',
     link: 'https://ziontechgroup.com/quantum-robotics',
     marketPosition: 'First commercial quantum robotics platform. 4-year technology advantage over traditional robotics companies.',
-    targetAudience: ['Robotics manufacturers', 'Automotive companies', 'Manufacturing companies', 'Research institutions', 'Defense contractors'],
+    targetAudience: 'Robotics manufacturers, Automotive companies, Manufacturing companies, Research institutions, Defense contractors',
     trialDays: 75,
     setupTime: '5 weeks',
     category: 'Quantum Robotics',
@@ -614,6 +563,7 @@ export const emergingTech2029Services: EmergingTech2029Service[] = [
     competitors: ['Boston Dynamics (traditional), iRobot (limited AI), Traditional robotics companies'],
     marketSize: '$7.2B quantum robotics market',
     growthRate: '500% annual growth',
+    variant: 'quantum-futuristic',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -630,12 +580,5 @@ export const emergingTech2029Services: EmergingTech2029Service[] = [
     patentStatus: 'Patent Pending',
     aiCapabilities: ['Quantum AI', 'Autonomous Navigation', 'Multi-Robot Coordination', 'Adaptive Learning', 'Quantum Decision Making'],
     marketDisruption: 'Transforms robotics by introducing quantum computing capabilities, enabling unprecedented levels of intelligence and autonomy.'
-=======
-    implementationDetails: 'Synthetic biology design tools, genetic circuit engineering, laboratory automation, and comprehensive research platform.',
-    launchDate: '2025-03-30',
-    customers: 95,
-    rating: 4.7,
-    reviews: 58
->>>>>>> cursor/enhance-app-with-new-services-and-futuristic-design-9755
   }
 ];

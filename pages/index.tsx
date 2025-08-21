@@ -18,7 +18,9 @@ import Revolutionary2027ServicesShowcase from '../components/sections/Revolution
 import Revolutionary2027Hero from '../components/sections/Revolutionary2027Hero';
 import EnhancedHero2026 from '../components/sections/EnhancedHero2026';
 import UltraFuturisticHero2029 from '../components/sections/UltraFuturisticHero2029';
+import UltraFuturisticHero2030 from '../components/sections/UltraFuturisticHero2030';
 import UltraFuturisticServiceShowcase2029 from '../components/sections/UltraFuturisticServiceShowcase2029';
+import UltraFuturisticServiceShowcase2030 from '../components/sections/UltraFuturisticServiceShowcase2030';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
@@ -80,6 +82,7 @@ import { emergingTech2029Services } from '../data/2029-emerging-tech-services';
 import { enterpriseIT2029Services } from '../data/2029-enterprise-it-services';
 import { innovativeMicroSaasServices2029 } from '../data/2029-innovative-micro-saas';
 import { innovative2029MicroSaasServices } from '../data/2029-innovative-micro-saas-services';
+import { innovative2030Services } from '../data/2030-innovative-services';
 
 export default function HomePage() {
   const contactInfo = {
@@ -153,6 +156,7 @@ export default function HomePage() {
     ...enterpriseIT2029Services,
     ...innovativeMicroSaasServices2029,
     ...innovative2029MicroSaasServices,
+    ...innovative2030Services,
     ...emergingTech2029Services,
     ...enterpriseIT2029Services
   ];
@@ -231,23 +235,25 @@ export default function HomePage() {
         />
       </Head>
 
-      <UltraFuturisticBackground2029>
         {/* Ultra Advanced Navigation */}
         <UltraFuturisticNavigation2030 />
 
         {/* Ultra Futuristic Hero Section 2029 */}
         <UltraFuturisticHero2029 />
 
-<<<<<<< HEAD
-        {/* Featured Services Section */}
-=======
-                            {/* Revolutionary 2027 Hero Section */}
-                    <Revolutionary2027Hero />
+        {/* Ultra Futuristic Hero Section 2030 */}
+        <UltraFuturisticHero2030 />
 
-                    {/* Ultra Futuristic 2029 Service Showcase */}
-                    <UltraFuturisticServiceShowcase2029 services={[
-                      ...futuristicAIServices2029
-                    ]} />
+        {/* Revolutionary 2027 Hero Section */}
+        <Revolutionary2027Hero />
+
+        {/* Ultra Futuristic 2029 Service Showcase */}
+        <UltraFuturisticServiceShowcase2029 services={[
+          ...futuristicAIServices2029
+        ]} />
+
+        {/* Ultra Futuristic 2030 Service Showcase */}
+        <UltraFuturisticServiceShowcase2030 />
 
         {/* Revolutionary 2027 Services Showcase */}
         <Revolutionary2027ServicesShowcase />
@@ -267,7 +273,6 @@ export default function HomePage() {
         />
 
         {/* Contact Information Section */}
->>>>>>> cursor/enhance-app-with-new-services-and-futuristic-design-9755
         <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/10 to-cyan-900/10"></div>
           
@@ -458,15 +463,8 @@ export default function HomePage() {
             </motion.div>
           </div>
         </section>
+        {/* Footer */}
+        <UltraFuturisticFooter2030 />
       </UltraFuturisticBackground2029>
-      
-      {/* Footer */}
-<<<<<<< HEAD
-      <UltraFuturisticFooter2029 />
-    </UltraFuturisticBackground2029>
-=======
-              <UltraFuturisticFooter2030 />
-    </>
->>>>>>> cursor/enhance-app-with-new-services-and-futuristic-design-9755
   );
 }
