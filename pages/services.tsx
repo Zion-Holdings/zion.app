@@ -41,6 +41,8 @@ import { quantumSpaceTechServices2026 } from '../data/2026-quantum-space-tech-se
 import { metaverseDigitalRealityServices2026 } from '../data/2026-metaverse-digital-reality-services';
 import { ultimate2026Services } from '../data/ultimate-2026-services';
 import { revolutionary2026Innovations } from '../data/revolutionary-2026-innovations';
+import { revolutionary2026MicroSaasV2 } from '../data/revolutionary-2026-micro-saas-v2';
+import { ultimate2026AIServicesV2 } from '../data/ultimate-2026-ai-services-v2';
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -86,7 +88,9 @@ export default function ServicesPage() {
     ...quantumSpaceTechServices2026,
     ...metaverseDigitalRealityServices2026,
     ...ultimate2026Services,
-    ...revolutionary2026Innovations
+    ...revolutionary2026Innovations,
+    ...revolutionary2026MicroSaasV2,
+    ...ultimate2026AIServicesV2
   ];
 
   // Dynamic category counts mapped to the same filter logic below
@@ -136,15 +140,22 @@ export default function ServicesPage() {
     let filtered = allServices.filter(service => {
       const matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           service.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           (service.tagline && service.tagline.toLowerCase().includes(searchTerm.toLowerCase()));
+                           (Array.isArray(service.category) 
+                             ? service.category.some(cat => cat.toLowerCase().includes(searchTerm.toLowerCase()))
+                             : service.category.toLowerCase().includes(searchTerm.toLowerCase()));
       
+      const categoryCheck = (categories: string | string[], searchTerms: string[]) => {
+        return Array.isArray(categories) 
+          ? categories.some(cat => searchTerms.some(term => cat.includes(term)))
+          : searchTerms.some(term => categories.includes(term));
+      };
+
       const matchesCategory = selectedCategory === 'all' || 
-                             (selectedCategory === 'ai' && (service.category.includes('AI') || service.category.includes('Machine Learning') || service.category.includes('AI Autonomous') || service.category.includes('AI Consciousness') || service.category.includes('AI Legal') || service.category.includes('AI Scientific') || service.category.includes('AI Creative') || service.category.includes('AI Healthcare') || service.category.includes('AI Education'))) ||
-                             (selectedCategory === 'quantum' && (service.category.includes('Quantum') || service.category.includes('Space') || service.category.includes('Quantum Space'))) ||
-                             (selectedCategory === 'enterprise' && (service.category.includes('Enterprise') || service.category.includes('IT') || service.category.includes('Cloud') || service.category.includes('Security'))) ||
-                             (selectedCategory === 'micro-saas' && service.category.includes('Micro SaaS')) ||
-                             (selectedCategory === 'metaverse' && (service.category.includes('Metaverse') || service.category.includes('Digital Reality') || service.category.includes('Consciousness Interface') || service.category.includes('Holographic')));
+                             (selectedCategory === 'ai' && categoryCheck(service.category, ['AI', 'Machine Learning', 'AI Autonomous', 'AI Consciousness', 'AI Legal', 'AI Scientific', 'AI Creative', 'AI Healthcare', 'AI Education'])) ||
+                             (selectedCategory === 'quantum' && categoryCheck(service.category, ['Quantum', 'Space', 'Quantum Space'])) ||
+                             (selectedCategory === 'enterprise' && categoryCheck(service.category, ['Enterprise', 'IT', 'Cloud', 'Security'])) ||
+                             (selectedCategory === 'micro-saas' && categoryCheck(service.category, ['Micro SaaS'])) ||
+                             (selectedCategory === 'metaverse' && categoryCheck(service.category, ['Metaverse', 'Digital Reality', 'Consciousness Interface', 'Holographic']));
       
       const numericPrice = parsePriceToNumber((service as any).price);
       const matchesPrice = selectedPriceRange === 'all' ||
@@ -168,7 +179,7 @@ export default function ServicesPage() {
         filtered.sort((a, b) => parsePriceToNumber((b as any).price) - parsePriceToNumber((a as any).price));
         break;
       case 'rating':
-        filtered.sort((a, b) => (b.rating || 0) - (a.rating || 0));
+        filtered.sort((a, b) => ((b as any).rating || 0) - ((a as any).rating || 0));
         break;
       case 'customers':
         filtered.sort((a, b) => {
@@ -413,7 +424,7 @@ export default function ServicesPage() {
                     <div className="relative z-10">
                       {/* Service Icon */}
                       <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">
-                        {service.icon || '🚀'}
+                        {(service as any).icon || '🚀'}
                       </div>
 
                       {/* Service Name */}
@@ -456,7 +467,7 @@ export default function ServicesPage() {
                       <div className="grid grid-cols-2 gap-4 mb-8 text-sm">
                         <div className="text-center p-3 bg-gradient-to-r from-gray-800/60 to-gray-700/60 rounded-xl border border-gray-600/30">
                           <div className="text-cyan-400 font-bold text-lg">
-                            {service.rating || 'N/A'}
+                            {(service as any).rating || 'N/A'}
                           </div>
                           <div className="text-gray-400 text-xs">Rating</div>
                         </div>
