@@ -60,7 +60,12 @@ export default function QuantumHolographicNavbar() {
         { name: 'Cloud & Infrastructure', href: '/services?category=Cloud%20%26%20Infrastructure', icon: <Sparkles className="w-4 h-4" />, description: 'Future innovations' }
       ]
     },
-    { name: 'Micro SaaS', href: '/micro-saas', icon: <Bot className="w-4 h-4" />, description: 'Innovative Solutions' },
+    { 
+      name: 'Micro SaaS', 
+      href: '/micro-saas', 
+      icon: <Bot className="w-4 h-4" />,
+      description: 'Innovative Solutions'
+    },
     { 
       name: 'Pricing', 
       href: '/pricing', 
