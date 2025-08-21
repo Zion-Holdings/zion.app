@@ -21,28 +21,28 @@ const Header: React.FC = () => {
     {
       name: 'Services',
       href: '/services',
-      description: '150+ Real Micro SaaS Solutions',
+      description: '200+ Real Micro SaaS Solutions',
       icon: <Zap className="w-5 h-5" />,
       children: [
         { name: 'AI & Machine Learning', href: '/services?category=AI%20%26%20Machine%20Learning' },
-        { name: 'Emerging Technology', href: '/services?category=Emerging%20Technology' },
-        { name: 'Cybersecurity', href: '/services?category=Cybersecurity' },
-        { name: 'Cloud & Infrastructure', href: '/services?category=Cloud%20%26%20Infrastructure' },
-        { name: 'Healthcare AI', href: '/services?category=Healthcare%20%26%20Life%20Sciences' },
+        { name: 'Blockchain & Web3', href: '/services?category=Blockchain%20%26%20Web3' },
+        { name: 'AR/VR & Metaverse', href: '/services?category=AR%2FVR%20%26%20Metaverse' },
+        { name: 'IoT & Smart Cities', href: '/services?category=IoT%20%26%20Smart%20Cities' },
+        { name: 'Quantum Computing', href: '/services?category=Quantum%20Computing' },
         { name: 'View All Services', href: '/services' }
       ]
     },
     {
       name: 'Solutions',
-      href: '/solutions',
+      href: '/case-studies',
       description: 'Industry-Specific Solutions',
       icon: <Sparkles className="w-5 h-5" />,
       children: [
-        { name: 'Enterprise Solutions', href: '/solutions/enterprise' },
-        { name: 'Healthcare Solutions', href: '/solutions/healthcare' },
-        { name: 'Financial Services', href: '/solutions/financial' },
-        { name: 'Manufacturing', href: '/solutions/manufacturing' },
-        { name: 'Retail & E-commerce', href: '/solutions/retail' }
+        { name: 'Case Studies', href: '/case-studies' },
+        { name: 'Cloud Platform', href: '/cloud-platform' },
+        { name: 'AI Assistant', href: '/ai-assistant' },
+        { name: 'Analytics', href: '/analytics' },
+        { name: 'Automation', href: '/automation' }
       ]
     },
     { name: 'Pricing', href: '/pricing' },

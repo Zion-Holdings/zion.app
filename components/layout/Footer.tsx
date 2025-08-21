@@ -27,46 +27,46 @@ const Footer: React.FC = () => {
 
   const services = [
     { name: 'AI & Machine Learning', href: '/services?category=AI%20%26%20Machine%20Learning' },
-    { name: 'Emerging Technology', href: '/services?category=Emerging%20Technology' },
-    { name: 'Cybersecurity', href: '/services?category=Cybersecurity' },
-    { name: 'Cloud & Infrastructure', href: '/services?category=Cloud%20%26%20Infrastructure' },
-    { name: 'Healthcare AI', href: '/services?category=Healthcare%20%26%20Life%20Sciences' },
-    { name: 'Edge AI & IoT', href: '/services?category=Edge%20AI%20%26%20IoT' },
+    { name: 'Blockchain & Web3', href: '/services?category=Blockchain%20%26%20Web3' },
+    { name: 'AR/VR & Metaverse', href: '/services?category=AR%2FVR%20%26%20Metaverse' },
+    { name: 'IoT & Smart Cities', href: '/services?category=IoT%20%26%20Smart%20Cities' },
+    { name: 'Quantum Computing', href: '/services?category=Quantum%20Computing' },
     { name: 'Autonomous Systems', href: '/services?category=Autonomous%20Systems' },
-    { name: 'Data & Analytics', href: '/services?category=Data%20%26%20Analytics' }
+    { name: 'Data Analytics & BI', href: '/services?category=Data%20Analytics%20%26%20BI' },
+    { name: 'View All Services', href: '/services' }
   ];
 
   const solutions = [
-    { name: 'Enterprise Solutions', href: '/solutions/enterprise' },
-    { name: 'Healthcare Solutions', href: '/solutions/healthcare' },
-    { name: 'Financial Services', href: '/solutions/financial' },
-    { name: 'Manufacturing', href: '/solutions/manufacturing' },
-    { name: 'Retail & E-commerce', href: '/solutions/retail' },
-    { name: 'Smart Cities', href: '/solutions/smart-cities' },
-    { name: 'Education', href: '/solutions/education' },
-    { name: 'Government', href: '/solutions/government' }
+    { name: 'Case Studies', href: '/case-studies' },
+    { name: 'Cloud Platform', href: '/cloud-platform' },
+    { name: 'AI Assistant', href: '/ai-assistant' },
+    { name: 'Analytics', href: '/analytics' },
+    { name: 'Automation', href: '/automation' },
+    { name: 'Micro SaaS', href: '/micro-saas' },
+    { name: 'Resources', href: '/resources' },
+    { name: 'Support', href: '/support' }
   ];
 
   const company = [
     { name: 'About Us', href: '/about' },
-    { name: 'Our Team', href: '/about#team' },
-    { name: 'Careers', href: '/careers' },
-    { name: 'Press', href: '/press' },
     { name: 'Blog', href: '/blog' },
     { name: 'Case Studies', href: '/case-studies' },
-    { name: 'Partners', href: '/partners' },
-    { name: 'Contact', href: '/contact' }
+    { name: 'Contact', href: '/contact' },
+    { name: 'Pricing', href: '/pricing' },
+    { name: 'Privacy', href: '/privacy' },
+    { name: 'Terms', href: '/terms' },
+    { name: 'Cookies', href: '/cookies' }
   ];
 
   const resources = [
     { name: 'Documentation', href: '/docs' },
-    { name: 'API Reference', href: '/api' },
-    { name: 'Developer Tools', href: '/developer-tools' },
-    { name: 'SDKs & Libraries', href: '/sdks' },
-    { name: 'Tutorials', href: '/tutorials' },
-    { name: 'Webinars', href: '/webinars' },
+    { name: 'Resources', href: '/resources' },
     { name: 'Support Center', href: '/support' },
-    { name: 'Community', href: '/community' }
+    { name: 'Blog', href: '/blog' },
+    { name: 'Case Studies', href: '/case-studies' },
+    { name: 'Contact', href: '/contact' },
+    { name: 'Pricing', href: '/pricing' },
+    { name: 'About', href: '/about' }
   ];
 
   const socialLinks = [
@@ -95,7 +95,7 @@ const Footer: React.FC = () => {
               </div>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              Leading provider of 150+ real micro SaaS services, AI solutions, and emerging technology platforms. 
+              Leading provider of 200+ real micro SaaS services, AI solutions, and emerging technology platforms. 
               Transform your business with cutting-edge innovation.
             </p>
             
