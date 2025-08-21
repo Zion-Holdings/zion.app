@@ -361,6 +361,46 @@ export default function HomePage() {
             link: 'https://ziontechgroup.com/cron-job-scheduler',
             contactInfo
           },
+          {
+            title: '🔁 Webhook Relay & Replay',
+            description: 'Capture, buffer, retry and replay webhooks with signing, filtering and DLQs.',
+            price: '$39/month',
+            features: ['Replay with timestamps', 'HMAC signing/verification', 'Filters & routing', 'Dead-letter queues'],
+            link: 'https://ziontechgroup.com/webhook-relay-replay',
+            contactInfo
+          },
+          {
+            title: '📈 Uptime & SLO Monitor',
+            description: 'Synthetic checks, SLO error budgets and status pages powered by OpenTelemetry.',
+            price: '$49/month',
+            features: ['Global synthetic probes', 'SLO targets & budgets', 'Incident timelines', 'Status page hosting'],
+            link: 'https://ziontechgroup.com/uptime-slo-monitor',
+            contactInfo
+          },
+          {
+            title: '📄 Status Pages + SLOs',
+            description: 'Public/private status pages with metrics, incidents, RCA and subscriber alerts.',
+            price: '$29/month',
+            features: ['Branded pages', 'Incident templates', 'Subscriber web/email/SMS', 'SLO visualizations'],
+            link: 'https://ziontechgroup.com/status-pages-slo',
+            contactInfo
+          },
+          {
+            title: '🎯 Synthetic Monitor Recorder',
+            description: 'Record browser journeys, run synthetic tests and alert on regressions.',
+            price: '$59/month',
+            features: ['Recorder extension', 'Playwright runner', 'Screenshots & videos', 'Threshold-based alerts'],
+            link: 'https://ziontechgroup.com/synthetic-monitor-recorder',
+            contactInfo
+          },
+          {
+            title: '🔎 Vector Search Starter',
+            description: 'Embed pipelines and similarity search with API and UI widgets in days.',
+            price: '$79/month',
+            features: ['Embeddings ingestion', 'Hybrid lexical+vector', 'Multi-tenant namespaces', 'Typed SDKs'],
+            link: 'https://ziontechgroup.com/vector-search-starter',
+            contactInfo
+          },
           // Existing curated highlights
           ...serviceHighlights.slice(0, 8).map((h) => ({
             title: h.title,
@@ -408,6 +448,46 @@ export default function HomePage() {
             price: 'Starting at $129/month',
             features: ['OTel collectors', 'Service maps', 'SLO alerting', 'Latency budgets', 'Drill-down traces', 'Error analytics'],
             link: 'https://ziontechgroup.com/api-observability-starter',
+            contactInfo
+          }
+        ]}
+      />
+
+      {/* AI Agents & Copilots */}
+      <ServiceAds
+        heading="AI Agents & Copilots"
+        subheading="Deploy production-ready AI to code, sell, support, and analyze."
+        items={[
+          {
+            title: '🧑‍💻 AI Code Review Copilot',
+            description: 'Blend static analysis with LLM reasoning for actionable reviews and secure PRs.',
+            price: 'Starting at $99/month',
+            features: ['OWASP/SAST checks', 'Performance hints', 'Style & convention rules', 'Risk scoring & PR comments'],
+            link: 'https://ziontechgroup.com/ai-code-review-copilot',
+            contactInfo
+          },
+          {
+            title: '🤝 AI Sales Automation',
+            description: 'Prospect enrichment, personalized outreach, call summaries and CRM updates automatically.',
+            price: 'Starting at $149/month',
+            features: ['ICP matching', 'Sequenced outreach', 'Meeting notes & action items', 'CRM sync'],
+            link: 'https://ziontechgroup.com/ai-sales-automation',
+            contactInfo
+          },
+          {
+            title: '🎧 AI Customer Service',
+            description: '24/7 support with RAG over your docs, secure guardrails, and human handoff.',
+            price: 'Starting at $149/month',
+            features: ['Omnichannel chat', 'RAG + guardrails', 'Workflow automations', 'Analytics & CSAT'],
+            link: 'https://ziontechgroup.com/ai-customer-service',
+            contactInfo
+          },
+          {
+            title: '📊 AI Data Analytics',
+            description: 'Ask questions in plain English and get trusted KPIs, narratives, and charts.',
+            price: 'Starting at $129/month',
+            features: ['Semantic layer', 'Governed queries', 'Narrative insights', 'Slack & email reports'],
+            link: 'https://ziontechgroup.com/ai-data-analytics',
             contactInfo
           }
         ]}
