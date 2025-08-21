@@ -9,6 +9,7 @@ import {
 import Button from '../components/ui/Button';
 import UltraFuturisticMatrixBackground from '../components/ui/UltraFuturisticMatrixBackground';
 import UltraFuturisticServiceCard from '../components/ui/UltraFuturisticServiceCard';
+import ServiceAds from '../components/sections/ServiceAds';
 import Card from '../components/ui/Card';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
@@ -321,6 +322,19 @@ export default function HomePage() {
         <meta name="twitter:description" content="Transform your business with 200+ revolutionary micro SaaS services." />
         <meta name="twitter:image" content="https://ziontechgroup.com/og-image.jpg" />
       </Head>
+      {/* Reusable Service Ads Strip */}
+      <ServiceAds
+        heading="Featured Micro SaaS & AI Services"
+        subheading="Transparent pricing, real capabilities, fast onboarding."
+        items={serviceHighlights.slice(0, 4).map((h) => ({
+          title: h.title,
+          description: h.description,
+          price: h.price,
+          features: h.features,
+          link: h.link,
+          contactInfo: h.contactInfo || contactInfo
+        }))}
+      />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4">

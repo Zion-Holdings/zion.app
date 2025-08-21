@@ -398,6 +398,34 @@ export default function NeoFuturisticNavigation() {
             >
               Solutions
             </Link>
+
+            <Link
+              href="/api-observability"
+              className="text-gray-300 hover:text-white transition-colors duration-300 py-2"
+            >
+              API Observability
+            </Link>
+
+            <Link
+              href="/incident-automation-suite"
+              className="text-gray-300 hover:text-white transition-colors duration-300 py-2"
+            >
+              Incident Automation
+            </Link>
+
+            <Link
+              href="/data-pipeline-health"
+              className="text-gray-300 hover:text-white transition-colors duration-300 py-2"
+            >
+              Data Pipeline Health
+            </Link>
+
+            <Link
+              href="/ai-code-review-copilot"
+              className="text-gray-300 hover:text-white transition-colors duration-300 py-2"
+            >
+              AI Code Review
+            </Link>
             <Link
               href="/resources"
               className="text-gray-300 hover:text-white transition-colors duration-300 py-2"
