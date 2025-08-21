@@ -159,7 +159,7 @@ export default function PricingPage() {
   ];
 
   return (
-    <EnhancedFuturisticBackground variant="temporal" intensity="high">
+    <EnhancedFuturisticBackground variant="quantum-holographic" intensity="high">
       <div className="min-h-screen">
         <Head>
           <title>Transparent Pricing Plans | Zion Tech Group - Revolutionary Micro SaaS Solutions</title>
