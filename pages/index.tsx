@@ -336,6 +336,46 @@ export default function HomePage() {
         }))}
       />
 
+      {/* IT Services & Platform Engineering Ads Strip */}
+      <ServiceAds
+        heading="Enterprise IT & Platform Engineering"
+        subheading="Cloud landing zones, SSO, databases, observability — ready in days."
+        items={[
+          {
+            title: '☁️ Cloud Landing Zone Builder',
+            description: 'Secure multi-account AWS/Azure/GCP foundations with guardrails, IAM, networking, and FinOps via GitOps.',
+            price: 'Starting at $349/month',
+            features: ['Org setup & SCPs', 'VPC & network baselines', 'Audit logging', 'Budgets & anomaly alerts', 'GitOps workflows', 'Multi-env blueprints'],
+            link: 'https://ziontechgroup.com/cloud-landing-zone',
+            contactInfo
+          },
+          {
+            title: '🔐 SSO-in-a-Box',
+            description: 'Enterprise SSO rollout with SAML/OIDC, SCIM provisioning, MFA policies, and audit trails.',
+            price: 'Starting at $159/month',
+            features: ['SAML/OIDC', 'SCIM provisioning', 'MFA & risk policies', 'App catalog', 'Audit logs', 'Just-in-time user sync'],
+            link: 'https://ziontechgroup.com/sso-in-a-box',
+            contactInfo
+          },
+          {
+            title: '🗄️ Managed Postgres HA',
+            description: 'Hands-on Postgres performance tuning, high availability, and disaster recovery playbooks.',
+            price: 'Starting at $199/month',
+            features: ['Patroni/PGPool patterns', 'Index & vacuum guidance', 'Query tracing', 'HA/DR runbooks', 'Backups & PITR', 'Capacity planning'],
+            link: 'https://ziontechgroup.com/managed-postgres-ha',
+            contactInfo
+          },
+          {
+            title: '📊 API Observability Starter (OTel)',
+            description: 'OpenTelemetry-based traces, metrics, and logs with dashboards, alerts, and SLOs.',
+            price: 'Starting at $129/month',
+            features: ['OTel collectors', 'Service maps', 'SLO alerting', 'Latency budgets', 'Drill-down traces', 'Error analytics'],
+            link: 'https://ziontechgroup.com/api-observability-starter',
+            contactInfo
+          }
+        ]}
+      />
+
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4">
         <div className="container mx-auto text-center z-10">
