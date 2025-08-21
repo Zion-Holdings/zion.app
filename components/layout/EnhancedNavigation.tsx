@@ -22,9 +22,9 @@ const navigationItems: NavigationItem[] = [
     icon: <Brain className="w-5 h-5" />,
     description: 'Advanced AI and machine learning solutions',
     children: [
-      { name: 'AI Agent Orchestrator', href: '/ai-assistant' },
-      { name: 'Customer Service AI', href: '/customer-service-ai' },
-      { name: 'AI Data Analytics', href: '/ai-data-analytics' },
+      { name: 'AI Agent Orchestrator', href: '/ai-agent-orchestrator' },
+      { name: 'AI Phone Agent', href: '/ai-phone-agent' },
+      { name: 'AI Market Research', href: '/ai-market-research' },
       { name: 'Sales Copilot', href: '/sales-copilot' }
     ]
   },
@@ -46,7 +46,7 @@ const navigationItems: NavigationItem[] = [
     description: 'Blockchain, IoT, and cutting-edge technologies',
     children: [
       { name: 'Blockchain Infrastructure', href: '/blockchain-infrastructure-platform' },
-      { name: 'IoT Edge Computing', href: '/iot-edge-computing-orchestration' },
+      { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration' },
       { name: '5G Private Networks', href: '/5g-private-network-solutions' },
       { name: 'Metaverse AI Platform', href: '/metaverse-ai-development-platform' }
     ]
@@ -58,7 +58,7 @@ const navigationItems: NavigationItem[] = [
     description: 'Advanced security and compliance solutions',
     children: [
       { name: 'Zero Trust Architecture', href: '/zero-trust-network-architecture' },
-      { name: 'AI Cybersecurity Suite', href: '/ai-cybersecurity-suite' },
+      { name: 'AI Cybersecurity Platform', href: '/ai-cybersecurity' },
       { name: 'Quantum Internet Security', href: '/quantum-internet-security-platform' }
     ]
   },
@@ -77,9 +77,9 @@ const navigationItems: NavigationItem[] = [
     icon: <Database className="w-5 h-5" />,
     description: 'Enterprise infrastructure and solutions',
     children: [
-      { name: 'Cloud Landing Zone', href: '/cloud-landing-zone' },
-      { name: 'Cloud Cost Optimizer', href: '/cloud-cost-optimizer' },
-      { name: 'Data Pipeline Observability', href: '/data-pipeline-observability' }
+      { name: 'Managed Postgres HA', href: '/managed-postgres-ha' },
+      { name: 'Status Pages & SLO', href: '/status-pages-slo' },
+      { name: 'API Observability', href: '/api-observability' }
     ]
   }
 ];

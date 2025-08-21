@@ -12,3 +12,28 @@
 
 [[plugins]]
   package = "netlify-plugin-cloudinary"
+
+[[redirects]]
+  from = "/quantum-internet-security-platform"
+  to = "/quantum-internet-security"
+  status = 301
+
+[[redirects]]
+  from = "/ai-legal-contract-analyzer"
+  to = "/ai-legal-analysis"
+  status = 301
+
+[[redirects]]
+  from = "/ai-cybersecurity-suite"
+  to = "/ai-cybersecurity"
+  status = 301
+
+[[redirects]]
+  from = "/iot-edge-computing-orchestration"
+  to = "/edge-computing-orchestration"
+  status = 301
+
+[[redirects]]
+  from = "/ai-agents"
+  to = "/ai-services"
+  status = 301
