@@ -541,6 +541,38 @@ export default function HomePage() {
         ]}
       />
 
+      {/* New in 2025: Real Services */}
+      <ServiceAds
+        heading="New in 2025 — Real, Production-Ready Services"
+        subheading="Governed AI, zero‑ETL analytics, and data contracts with transparent pricing."
+        items={[
+          {
+            title: '📜 Data Contract Governance',
+            description: 'Schema‑first contracts with CI validation, runtime enforcement, lineage and SLA alerts.',
+            price: '$129/month',
+            features: ['Contract registry', 'CI validators', 'Runtime checks', 'Lineage & impact', 'SLA alerts', 'dbt/Snowflake export'],
+            link: 'https://ziontechgroup.com/services/data-contract-governance',
+            contactInfo
+          },
+          {
+            title: '🔄 Zero‑ETL Warehouse Sync',
+            description: 'CDC sync from Postgres/MySQL to Snowflake/BigQuery with schema evolution and PII masking.',
+            price: '$99/month',
+            features: ['CDC ingestion', 'Schema evolution', 'PII masking', 'Backfills & retries', 'Debezium compatible', 'DLQs & monitoring'],
+            link: 'https://ziontechgroup.com/services/zero-etl-warehouse-sync',
+            contactInfo
+          },
+          {
+            title: '🧠 AI‑Governed RAG Platform',
+            description: 'Policy‑driven RAG with eval harnesses, content approvals, prompt registry and drift monitoring.',
+            price: '$149/month',
+            features: ['Guardrails & policies', 'E2E evals', 'Content approvals', 'Prompt registry', 'Drift monitoring', 'RBAC & audits'],
+            link: 'https://ziontechgroup.com/services/ai-governed-rag-platform',
+            contactInfo
+          }
+        ]}
+      />
+
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4">
         <div className="container mx-auto text-center z-10">
