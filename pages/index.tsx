@@ -33,7 +33,7 @@ export default function HomePage() {
     {
       icon: <Bot className="w-8 h-8 text-white" />,
       title: 'AI-Powered Solutions',
-      description: 'Advanced AI content generation, SEO automation, chatbots, and business intelligence.',
+      description: 'Advanced AI content generation, cybersecurity, business intelligence, and autonomous agents.',
       color: 'bg-gradient-to-br from-fuchsia-500 to-purple-600',
       gradient: 'from-fuchsia-400 to-purple-500',
     },
@@ -235,10 +235,14 @@ export default function HomePage() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
                 {heroStats.map((stat, index) => (
                   <div key={index} className="text-center group">
+<<<<<<< HEAD
                     <div className={`text-3xl md:text-4xl font-bold ${stat.color} mb-2 transition-all duration-300 group-hover:scale-110`}>
+=======
+                    <div className={`text-3xl md:text-4xl font-bold ${stat.color} mb-2 group-hover:scale-110 transition-transform duration-300`}>
+>>>>>>> 546ac868a2b6e06ac552325bec1c2f62810d2fa9
                       {stat.value}
                     </div>
-                    <div className="text-gray-400 text-sm">{stat.label}</div>
+                    <div className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors">{stat.label}</div>
                   </div>
                 ))}
               </div>
@@ -265,6 +269,7 @@ export default function HomePage() {
                 </Button>
               </div>
 
+<<<<<<< HEAD
               {/* Enhanced Contact Information Banner */}
               <div className="bg-gradient-to-r from-gray-900/80 to-gray-800/80 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 max-w-5xl mx-auto shadow-2xl">
                 <div className="text-center mb-6">
@@ -275,6 +280,16 @@ export default function HomePage() {
                   <div className="flex flex-col items-center text-center group">
                     <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                       <Phone className="w-8 h-8 text-white" />
+=======
+              {/* Contact Information Banner */}
+              <div className="bg-gradient-to-r from-gray-900/50 to-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 max-w-4xl mx-auto hover:border-gray-600 transition-all duration-300">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="flex items-center justify-center md:justify-start group">
+                    <Phone className="w-5 h-5 text-cyan-400 mr-3 group-hover:scale-110 transition-transform" />
+                    <div>
+                      <div className="text-sm text-gray-400">Mobile</div>
+                      <div className="text-white font-medium">{contactInfo.mobile}</div>
+>>>>>>> 546ac868a2b6e06ac552325bec1c2f62810d2fa9
                     </div>
                     <div className="text-sm text-gray-400 mb-2">Mobile</div>
                     <div className="text-white font-semibold text-lg">{contactInfo.mobile}</div>
@@ -282,9 +297,17 @@ export default function HomePage() {
                       Call Now →
                     </a>
                   </div>
+<<<<<<< HEAD
                   <div className="flex flex-col items-center text-center group">
                     <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                       <Mail className="w-8 h-8 text-white" />
+=======
+                  <div className="flex items-center justify-center md:justify-start group">
+                    <Mail className="w-5 h-5 text-purple-400 mr-3 group-hover:scale-110 transition-transform" />
+                    <div>
+                      <div className="text-sm text-gray-400">Email</div>
+                      <div className="text-white font-medium">{contactInfo.email}</div>
+>>>>>>> 546ac868a2b6e06ac552325bec1c2f62810d2fa9
                     </div>
                     <div className="text-sm text-gray-400 mb-2">Email</div>
                     <div className="text-white font-semibold text-lg">{contactInfo.email}</div>
@@ -292,9 +315,17 @@ export default function HomePage() {
                       Send Email →
                     </a>
                   </div>
+<<<<<<< HEAD
                   <div className="flex flex-col items-center text-center group">
                     <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                       <MapPin className="w-8 h-8 text-white" />
+=======
+                  <div className="flex items-center justify-center md:justify-start group">
+                    <MapPin className="w-5 h-5 text-emerald-400 mr-3 group-hover:scale-110 transition-transform" />
+                    <div>
+                      <div className="text-sm text-gray-400">Address</div>
+                      <div className="text-white font-medium text-sm">{contactInfo.address}</div>
+>>>>>>> 546ac868a2b6e06ac552325bec1c2f62810d2fa9
                     </div>
                     <div className="text-sm text-gray-400 mb-2">Address</div>
                     <div className="text-white font-semibold text-sm leading-tight">{contactInfo.address}</div>
@@ -324,10 +355,19 @@ export default function HomePage() {
               {platformFeatures.map((feature, index) => (
                 <div
                   key={index}
+<<<<<<< HEAD
                   className={`${feature.color} rounded-3xl p-8 text-white transform hover:scale-105 transition-all duration-500 hover:shadow-2xl`}
                 >
                   <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6 backdrop-blur-sm">
                     {feature.icon}
+=======
+                  className={`${feature.color} p-8 text-center transform hover:scale-105 transition-all duration-300 hover:shadow-2xl border-0`}
+                >
+                  <div className="mb-6 flex justify-center">
+                    <div className="p-4 rounded-full bg-white/10 backdrop-blur-sm group-hover:scale-110 transition-transform duration-300">
+                      {feature.icon}
+                    </div>
+>>>>>>> 546ac868a2b6e06ac552325bec1c2f62810d2fa9
                   </div>
                   <h3 className="text-2xl font-bold mb-4">{feature.title}</h3>
                   <p className="text-gray-100 leading-relaxed">{feature.description}</p>
@@ -353,6 +393,7 @@ export default function HomePage() {
               {innovativeServices.map((service, index) => (
                 <div
                   key={index}
+<<<<<<< HEAD
                   className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 transform hover:scale-105 transition-all duration-500 hover:shadow-2xl group"
                 >
                   <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mb-6 text-3xl group-hover:scale-110 transition-transform duration-300`}>
@@ -363,6 +404,13 @@ export default function HomePage() {
                   <div className="flex items-center justify-between mb-6">
                     <span className="text-2xl font-bold text-green-400">{service.price}</span>
                     <span className="text-sm text-gray-400 bg-gray-800/50 px-3 py-1 rounded-full">
+=======
+                  className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 p-6 hover:border-gray-600 transition-all duration-300 hover:shadow-2xl hover:scale-105 group"
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <div className={`text-3xl group-hover:scale-110 transition-transform duration-300`}>{service.icon}</div>
+                    <div className="text-sm px-3 py-1 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-400 border border-cyan-500/30">
+>>>>>>> 546ac868a2b6e06ac552325bec1c2f62810d2fa9
                       {service.category}
                     </span>
                   </div>
@@ -407,6 +455,7 @@ export default function HomePage() {
               {technologyStack.map((tech, index) => (
                 <div
                   key={index}
+<<<<<<< HEAD
                   className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/30 rounded-2xl p-6 text-center transform hover:scale-105 transition-all duration-300 hover:shadow-xl group"
                 >
                   <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -414,6 +463,13 @@ export default function HomePage() {
                   </div>
                   <h3 className="text-lg font-semibold text-white mb-2">{tech.name}</h3>
                   <p className="text-sm text-gray-400">{tech.category}</p>
+=======
+                  className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:scale-105 group cursor-pointer"
+                >
+                  <div className="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">{tech.icon}</div>
+                  <div className="text-white font-semibold mb-1">{tech.name}</div>
+                  <div className="text-sm text-gray-400">{tech.category}</div>
+>>>>>>> 546ac868a2b6e06ac552325bec1c2f62810d2fa9
                 </div>
               ))}
             </div>
@@ -436,6 +492,7 @@ export default function HomePage() {
               {features.map((feature, index) => (
                 <div
                   key={index}
+<<<<<<< HEAD
                   className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 transform hover:scale-105 transition-all duration-500 hover:shadow-2xl group"
                 >
                   <div className={`w-16 h-16 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center mb-6 text-3xl group-hover:scale-110 transition-transform duration-300`}>
@@ -444,6 +501,16 @@ export default function HomePage() {
                   <h3 className={`text-2xl font-bold ${feature.textColor} mb-4`}>{feature.title}</h3>
                   <p className="text-gray-300 leading-relaxed">{feature.description}</p>
                 </div>
+=======
+                  className={`${feature.color} p-8 text-center transform hover:scale-105 transition-all duration-300 hover:shadow-2xl border-0`}
+                >
+                  <div className="text-4xl mb-6 group-hover:scale-110 transition-transform duration-300">{feature.icon}</div>
+                  <h3 className={`text-2xl font-bold ${feature.textColor} mb-4`}>
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-200 leading-relaxed">{feature.description}</p>
+                </Card>
+>>>>>>> 546ac868a2b6e06ac552325bec1c2f62810d2fa9
               ))}
             </div>
           </div>
@@ -481,6 +548,7 @@ export default function HomePage() {
                 </Button>
               </div>
 
+<<<<<<< HEAD
               <div className="text-center">
                 <p className="text-gray-400 mb-4">Need immediate assistance?</p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center text-sm">
@@ -492,6 +560,38 @@ export default function HomePage() {
                     <Mail className="w-4 h-4 mr-2" />
                     {contactInfo.email}
                   </a>
+=======
+              {/* Final Contact Banner */}
+              <div className="bg-gradient-to-r from-cyan-900/30 to-blue-900/30 backdrop-blur-sm border border-cyan-500/30 rounded-2xl p-8 hover:border-cyan-400/50 transition-all duration-300">
+                <h3 className="text-2xl font-bold text-white mb-4">Get in Touch</h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                  <div className="group">
+                    <Phone className="w-6 h-6 text-cyan-400 mx-auto mb-2 group-hover:scale-110 transition-transform" />
+                    <div className="text-sm text-gray-400">Mobile</div>
+                    <div className="text-white font-medium">{contactInfo.mobile}</div>
+                  </div>
+                  <div className="group">
+                    <Mail className="w-6 h-6 text-purple-400 mx-auto mb-2 group-hover:scale-110 transition-transform" />
+                    <div className="text-sm text-gray-400">Email</div>
+                    <div className="text-white font-medium">{contactInfo.email}</div>
+                  </div>
+                  <div className="group">
+                    <MapPin className="w-6 h-6 text-emerald-400 mx-auto mb-2 group-hover:scale-110 transition-transform" />
+                    <div className="text-sm text-gray-400">Address</div>
+                    <div className="text-white font-medium text-sm">{contactInfo.address}</div>
+                  </div>
+                </div>
+                <div className="mt-6 text-center">
+                  <Button
+                    href={contactInfo.website}
+                    variant="secondary"
+                    size="lg"
+                    className="group transform hover:scale-105 transition-all duration-300"
+                  >
+                    Visit Website
+                    <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+>>>>>>> 546ac868a2b6e06ac552325bec1c2f62810d2fa9
                 </div>
               </div>
             </div>
