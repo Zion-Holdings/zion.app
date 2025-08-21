@@ -6,9 +6,12 @@ import Button from '../components/ui/Button';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
 import EnhancedNavigation2026 from '../components/layout/EnhancedNavigation2026';
+import EnhancedNavigation2026V2 from '../components/layout/EnhancedNavigation2026V2';
 import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
 import Enhanced2026ServicesShowcase from '../components/sections/Enhanced2026ServicesShowcase';
+import Enhanced2026ServicesShowcaseV2 from '../components/sections/Enhanced2026ServicesShowcaseV2';
 import EnhancedHero2026 from '../components/sections/EnhancedHero2026';
+import EnhancedHero2026V2 from '../components/sections/EnhancedHero2026V2';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
@@ -38,6 +41,8 @@ import { enterpriseIT2026Services } from '../data/enterprise-it-2026-services';
 import { innovative2026MicroSaasServices } from '../data/innovative-2026-micro-saas';
 import { emergingTech2026Services as emergingTech2026ServicesNew } from '../data/emerging-tech-2026-services';
 import { enterpriseIT2026Services as enterpriseIT2026ServicesNew } from '../data/enterprise-it-2026-services';
+import { innovative2026MicroSaasServicesV2 } from '../data/innovative-2026-micro-saas-v2';
+import { emergingTech2026V2Services } from '../data/emerging-tech-2026-v2-services';
 
 export default function HomePage() {
   const contactInfo = {
@@ -76,7 +81,9 @@ export default function HomePage() {
     ...enterpriseIT2026Services,
     ...innovative2026MicroSaasServices,
     ...emergingTech2026ServicesNew,
-    ...enterpriseIT2026ServicesNew
+    ...enterpriseIT2026ServicesNew,
+    ...innovative2026MicroSaasServicesV2,
+    ...emergingTech2026V2Services
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);
@@ -119,131 +126,13 @@ export default function HomePage() {
         </Head>
 
         {/* Ultra Advanced Navigation */}
-        <EnhancedNavigation2026 />
+        <EnhancedNavigation2026V2 />
 
         {/* Enhanced Hero Section 2026 */}
-        <EnhancedHero2026 />
+        <EnhancedHero2026V2 />
 
         {/* Latest Innovations Showcase */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 via-transparent to-cyan-900/20"></div>
-          <div className="max-w-7xl mx-auto relative z-10">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
-                  2026 Revolutionary Innovations
-                </span>
-              </h2>
-              <p className="text-gray-300 text-xl max-w-3xl mx-auto leading-relaxed">
-                Experience the future with our latest AI, quantum, and emerging technology breakthroughs
-              </p>
-            </motion.div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* AI Business Intelligence */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8, y: 20 }}
-                whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                viewport={{ once: true }}
-                className="group relative"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-                <div className="relative bg-black/40 backdrop-blur-xl border border-purple-500/20 rounded-2xl p-6 hover:border-purple-500/40 transition-all duration-300">
-                  <div className="flex items-center space-x-3 mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
-                      <Brain className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-white">AI Business Intelligence Elite 2026</h3>
-                      <p className="text-purple-300 text-sm">Next-generation analytics</p>
-                    </div>
-                  </div>
-                  <p className="text-gray-300 mb-4">
-                    Transform your business data into actionable intelligence with our advanced AI-powered analytics platform.
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-2xl font-bold text-purple-400">$299</span>
-                    <span className="text-gray-400">/month</span>
-                  </div>
-                  <Link href="/ai-business-intelligence-elite-2026" className="mt-4 inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors">
-                    Learn More <ArrowRight className="w-4 h-4 ml-2" />
-                  </Link>
-                </div>
-              </motion.div>
-
-              {/* Autonomous AI Agents */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8, y: 20 }}
-                whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="group relative"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-cyan-600/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-                <div className="relative bg-black/40 backdrop-blur-xl border border-blue-500/20 rounded-2xl p-6 hover:border-blue-500/40 transition-all duration-300">
-                  <div className="flex items-center space-x-3 mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center">
-                      <Zap className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-white">Autonomous AI Agents Platform 2026</h3>
-                      <p className="text-blue-300 text-sm">Business automation</p>
-                    </div>
-                  </div>
-                  <p className="text-gray-300 mb-4">
-                    Build, deploy, and manage autonomous AI agents that can handle complex business tasks without human intervention.
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-2xl font-bold text-blue-400">$199</span>
-                    <span className="text-gray-400">/month</span>
-                  </div>
-                  <Link href="/autonomous-ai-agents-platform-2026" className="mt-4 inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors">
-                    Learn More <ArrowRight className="w-4 h-4 ml-2" />
-                  </Link>
-                </div>
-              </motion.div>
-
-              {/* Quantum Cybersecurity */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8, y: 20 }}
-                whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                viewport={{ once: true }}
-                className="group relative"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-red-600/20 to-orange-600/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-                <div className="relative bg-black/40 backdrop-blur-xl border border-red-500/20 rounded-2xl p-6 hover:border-red-500/40 transition-all duration-300">
-                  <div className="flex items-center space-x-3 mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-orange-500 rounded-xl flex items-center justify-center">
-                      <Shield className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-white">Quantum Cybersecurity Suite 2026</h3>
-                      <p className="text-red-300 text-sm">Future-proof security</p>
-                    </div>
-                  </div>
-                  <p className="text-gray-300 mb-4">
-                    Next-generation cybersecurity platform that uses quantum-resistant algorithms to protect against current and future cyber threats.
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-2xl font-bold text-red-400">$599</span>
-                    <span className="text-gray-400">/month</span>
-                  </div>
-                  <Link href="/quantum-cybersecurity-suite-2026" className="mt-4 inline-flex items-center text-red-400 hover:text-red-300 transition-colors">
-                    Learn More <ArrowRight className="w-4 h-4 ml-2" />
-                  </Link>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
+        <Enhanced2026ServicesShowcaseV2 />
 
         {/* Enhanced Service Showcase */}
         <Enhanced2026ServicesShowcase />
