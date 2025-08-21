@@ -5,6 +5,8 @@ import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFut
 import Button from '../components/ui/Button';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 
+ 
+
 export default function CloudCostOptimizerPage() {
   const service = enhancedRealMicroSaasServices.find(s => s.link.endsWith('/cloud-cost-optimizer'));
   if (!service) return null;
@@ -53,4 +55,3 @@ export default function CloudCostOptimizerPage() {
     </UltraAdvancedFuturisticBackground>
   );
 }
-
