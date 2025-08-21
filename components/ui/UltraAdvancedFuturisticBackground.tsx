@@ -24,6 +24,8 @@ const UltraAdvancedFuturisticBackground: React.FC<UltraAdvancedFuturisticBackgro
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
+    const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     let particles: Array<{
       x: number;
       y: number;
@@ -43,7 +45,8 @@ const UltraAdvancedFuturisticBackground: React.FC<UltraAdvancedFuturisticBackgro
     const createParticles = () => {
       particles = [];
       const screenFactor = typeof window !== 'undefined' ? (window.innerWidth < 640 ? 0.6 : window.innerWidth < 1024 ? 0.85 : 1) : 1;
-      const particleCount = Math.floor(120 * intensity * screenFactor);
+      const particleBase = prefersReducedMotion ? 40 : 120;
+      const particleCount = Math.floor(particleBase * intensity * screenFactor);
       
       for (let i = 0; i < particleCount; i++) {
         const type = ['quantum', 'holographic', 'neural', 'cyberpunk'][Math.floor(Math.random() * 4)] as any;
@@ -80,29 +83,29 @@ const UltraAdvancedFuturisticBackground: React.FC<UltraAdvancedFuturisticBackgro
       
       // Create gradient background
       const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-      gradient.addColorStop(0, 'rgba(15, 23, 42, 0.8)');
-      gradient.addColorStop(0.5, 'rgba(30, 58, 138, 0.6)');
-      gradient.addColorStop(1, 'rgba(88, 28, 135, 0.8)');
+      gradient.addColorStop(0, 'rgba(2, 6, 23, 0.95)');
+      gradient.addColorStop(0.5, 'rgba(17, 24, 39, 0.9)');
+      gradient.addColorStop(1, 'rgba(24, 24, 27, 0.95)');
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       // Draw quantum field lines
-      if (variant.includes('quantum')) {
+      if (!prefersReducedMotion && variant.includes('quantum')) {
         drawQuantumFieldLines(ctx);
       }
 
       // Draw holographic grid
-      if (variant.includes('holographic')) {
+      if (!prefersReducedMotion && variant.includes('holographic')) {
         drawHolographicGrid(ctx);
       }
 
       // Draw neural connections
-      if (variant.includes('neural')) {
+      if (!prefersReducedMotion && variant.includes('neural')) {
         drawNeuralConnections(ctx);
       }
 
       // Draw cyberpunk elements
-      if (variant.includes('cyberpunk')) {
+      if (!prefersReducedMotion && variant.includes('cyberpunk')) {
         drawCyberpunkElements(ctx);
       }
 
@@ -138,7 +141,9 @@ const UltraAdvancedFuturisticBackground: React.FC<UltraAdvancedFuturisticBackgro
       });
 
       // Draw connections between nearby particles
-      drawParticleConnections(ctx);
+      if (!prefersReducedMotion) {
+        drawParticleConnections(ctx);
+      }
 
       animationRef.current = requestAnimationFrame(drawParticles);
     };
