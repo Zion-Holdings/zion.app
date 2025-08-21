@@ -83,11 +83,20 @@ export default function MicroSaasPage() {
       case 'rating':
         return b.rating - a.rating;
       case 'innovation': {
-        // Sort by realImplementation first, then by popularity
+        // Sort by realImplementation first, then by innovation level
         if (a.realImplementation && !b.realImplementation) return -1;
         if (!a.realImplementation && b.realImplementation) return 1;
+        
+        // Sort by innovation level (quantum services first)
+        const aInnovation = a.variant.includes('quantum') ? 3 : a.variant.includes('holographic') ? 2 : 1;
+        const bInnovation = b.variant.includes('quantum') ? 3 : b.variant.includes('holographic') ? 2 : 1;
+        
+        if (aInnovation !== bInnovation) return bInnovation - aInnovation;
+        
+        // Then by popularity
         if (a.popular && !b.popular) return -1;
         if (!a.popular && b.popular) return 1;
+        
         return 0;
       }
       default:
@@ -98,6 +107,12 @@ export default function MicroSaasPage() {
   const revolutionaryServices = enhancedRealMicroSaasServices.filter(service => 
     service.realImplementation && service.popular
   );
+
+  // Enhanced category display with counts
+  const getCategoryCount = (categoryName: string) => {
+    if (categoryName === 'All') return enhancedRealMicroSaasServices.length;
+    return getServicesByCategory(categoryName).length;
+  };
 
   // Enhanced service highlights with market data
   const enhancedServiceHighlights = [
@@ -412,54 +427,63 @@ export default function MicroSaasPage() {
                 />
               </div>
 
-              {/* Category Filter */}
-              <div className="flex items-center space-x-4">
-                <select
-                  value={selectedCategory}
-                  onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="px-4 py-2 bg-slate-800/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-cyan-500"
-                >
-                  <option value="All">All Categories</option>
+              {/* Enhanced Category Filter */}
+              <div className="mb-8">
+                <div className="flex flex-wrap gap-3 justify-center">
                   {serviceCategories.map((category) => (
-                    <option key={category} value={category}>{category}</option>
+                    <button
+                      key={category.name}
+                      onClick={() => setSelectedCategory(category.name)}
+                      className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                        selectedCategory === category.name
+                          ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg shadow-cyan-500/25'
+                          : 'bg-slate-800/50 text-slate-300 hover:bg-slate-700/50 hover:text-white border border-slate-600/50'
+                      }`}
+                    >
+                      <span className="mr-2">{category.icon}</span>
+                      {category.name}
+                      <span className="ml-2 px-2 py-1 bg-slate-700/50 rounded-full text-xs">
+                        {getCategoryCount(category.name)}
+                      </span>
+                    </button>
                   ))}
-                </select>
-
-                {/* Sort Options */}
-                <select
-                  value={sortBy}
-                  onChange={(e) => setSortBy(e.target.value as any)}
-                  className="px-4 py-2 bg-slate-800/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-cyan-500"
-                >
-                  <option value="innovation">Most Innovative</option>
-                  <option value="rating">Highest Rated</option>
-                  <option value="price">Price: Low to High</option>
-                  <option value="name">Name A-Z</option>
-                </select>
-
-                {/* View Mode */}
-                <div className="flex items-center space-x-2">
-                  <button
-                    onClick={() => setViewMode('grid')}
-                    className={`p-2 rounded-lg transition-colors ${
-                      viewMode === 'grid' 
-                        ? 'bg-cyan-500 text-white' 
-                        : 'bg-slate-800/50 text-slate-400 hover:text-white'
-                    }`}
-                  >
-                    <Grid className="w-5 h-5" />
-                  </button>
-                  <button
-                    onClick={() => setViewMode('list')}
-                    className={`p-2 rounded-lg transition-colors ${
-                      viewMode === 'list' 
-                        ? 'bg-cyan-500 text-white' 
-                        : 'bg-slate-800/50 text-slate-400 hover:text-white'
-                    }`}
-                  >
-                    <List className="w-5 h-5" />
-                  </button>
                 </div>
+              </div>
+
+              {/* Sort Options */}
+              <select
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value as any)}
+                className="px-4 py-2 bg-slate-800/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-cyan-500"
+              >
+                <option value="innovation">Most Innovative</option>
+                <option value="rating">Highest Rated</option>
+                <option value="price">Price: Low to High</option>
+                <option value="name">Name A-Z</option>
+              </select>
+
+              {/* View Mode */}
+              <div className="flex items-center space-x-2">
+                <button
+                  onClick={() => setViewMode('grid')}
+                  className={`p-2 rounded-lg transition-colors ${
+                    viewMode === 'grid' 
+                      ? 'bg-cyan-500 text-white' 
+                      : 'bg-slate-800/50 text-slate-400 hover:text-white'
+                  }`}
+                >
+                  <Grid className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={() => setViewMode('list')}
+                  className={`p-2 rounded-lg transition-colors ${
+                    viewMode === 'list' 
+                      ? 'bg-cyan-500 text-white' 
+                      : 'bg-slate-800/50 text-slate-400 hover:text-white'
+                  }`}
+                >
+                  <List className="w-5 h-5" />
+                </button>
               </div>
             </div>
           </div>

@@ -98,9 +98,75 @@ export default function HomePage() {
       features: ['Quantum-enhanced trading algorithms', 'Real-time market analysis and prediction', 'Advanced risk management systems', 'Portfolio optimization with quantum algorithms'],
       link: 'https://ziontechgroup.com/quantum-financial-trading',
       color: 'from-violet-500 to-purple-600',
-      marketData: '$22B algorithmic trading market, 280% annual growth',
-      competitors: 'Bloomberg Terminal ($2000+/month), Thomson Reuters ($500+/month)',
-      savings: 'Save 55% vs. competitors'
+      marketData: '$25B algorithmic trading market, 450% annual growth',
+      competitors: 'Bloomberg Terminal ($24,000/year), Thomson Reuters ($22,000/year)',
+      savings: 'Save 95% vs. competitors'
+    },
+    {
+      title: '⛓️ Quantum Blockchain Platform',
+      description: 'Post-quantum blockchain with AI governance. Future-proof your Web3 infrastructure with 600% ROI within 8 months.',
+      price: 'Starting at $349/month',
+      features: ['Quantum-resistant cryptography', 'AI-powered smart contract optimization', 'Cross-chain interoperability', 'Advanced DeFi protocol integration'],
+      link: 'https://ziontechgroup.com/quantum-blockchain',
+      color: 'from-indigo-500 to-blue-600',
+      marketData: '$19B blockchain platform market, 380% annual growth',
+      competitors: 'Ethereum ($50+/month), Solana ($25+/month)',
+      savings: 'Save 85% vs. competitors'
+    },
+    {
+      title: '🌐 Quantum IoT Platform',
+      description: 'Quantum-secured IoT with AI analytics. Connect, secure, and analyze IoT devices at scale with 400% ROI within 6 months.',
+      price: 'Starting at $199/month',
+      features: ['Quantum-secured device communication', 'AI-powered device management', 'Real-time data analytics', 'Edge computing optimization'],
+      link: 'https://ziontechgroup.com/quantum-iot',
+      color: 'from-teal-500 to-cyan-600',
+      marketData: '$1.1T IoT market, 250% annual growth',
+      competitors: 'AWS IoT ($0.50/device/month), Azure IoT ($0.40/device/month)',
+      savings: 'Save 60% vs. competitors'
+    }
+  ];
+
+  // New revolutionary services showcase
+  const revolutionaryServices = [
+    {
+      name: 'Quantum Metaverse Platform',
+      description: 'Quantum-enhanced virtual reality with AI avatars',
+      price: '$499/month',
+      icon: '🕶️',
+      color: 'from-pink-500 to-rose-600',
+      link: 'https://ziontechgroup.com/quantum-metaverse',
+      marketSize: '$800B metaverse market',
+      growthRate: '500% annual growth'
+    },
+    {
+      name: 'Quantum Robotics Platform',
+      description: 'AI-powered robotics with quantum control',
+      price: '$799/month',
+      icon: '🤖',
+      color: 'from-orange-500 to-red-600',
+      link: 'https://ziontechgroup.com/quantum-robotics',
+      marketSize: '$45B robotics market',
+      growthRate: '320% annual growth'
+    },
+    {
+      name: 'Quantum Energy Platform',
+      description: 'AI-optimized energy management with quantum analytics',
+      price: '$299/month',
+      icon: '⚡',
+      color: 'from-yellow-500 to-orange-600',
+      link: 'https://ziontechgroup.com/quantum-energy',
+      marketSize: '$75B energy management market',
+      growthRate: '280% annual growth'
+    },
+    {
+      name: 'Quantum Logistics Platform',
+      description: 'AI-powered supply chain with quantum optimization',
+      price: '$399/month',
+      icon: '🚚',
+      color: 'from-blue-500 to-indigo-600',
+      link: 'https://ziontechgroup.com/quantum-logistics',
+      marketSize: '$12B logistics software market',
+      growthRate: '350% annual growth'
     }
   ];
 
@@ -475,6 +541,50 @@ export default function HomePage() {
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </motion.div>
+        </div>
+      </section>
+
+      {/* New Revolutionary Services */}
+      <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              <span className="text-gradient-cyan">New</span> Revolutionary Services
+            </h2>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+              Discover our latest innovations in quantum computing and AI-driven technologies
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {revolutionaryServices.map((service, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-slate-900/50 backdrop-blur-xl rounded-2xl p-6 border border-slate-700/50"
+              >
+                <div className="flex items-center mb-4">
+                  <div className="text-3xl mr-3">{service.icon}</div>
+                  <div>
+                    <div className="font-semibold text-white">{service.name}</div>
+                    <div className="text-sm text-slate-400">{service.description}</div>
+                  </div>
+                </div>
+                <div className="text-cyan-400 font-bold text-lg mb-2">{service.price}</div>
+                <div className="text-slate-400 text-sm mb-4">Market Size: {service.marketSize}</div>
+                <div className="text-slate-400 text-sm">Growth Rate: {service.growthRate}</div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 

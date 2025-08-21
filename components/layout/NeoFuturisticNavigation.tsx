@@ -47,7 +47,10 @@ import {
   BookOpen,
   Activity,
   Bot,
-  ChevronRight as ChevronRightIcon
+  ChevronRight as ChevronRightIcon,
+  Eye,
+  FlaskConical,
+  Link as LinkIcon
 } from 'lucide-react';
 import Button from '../ui/Button';
 
@@ -91,64 +94,108 @@ export default function NeoFuturisticNavigation() {
       icon: <Atom className="w-5 h-5" />,
       color: 'from-purple-500 to-pink-500',
       services: [
-        { name: 'Quantum AI Platform', description: 'AI-powered quantum computing', price: '$1,299/month' },
-        { name: 'Quantum Optimization', description: 'Quantum algorithms for complex problems', price: '$899/month' },
-        { name: 'Quantum Simulation', description: 'Advanced quantum simulations', price: '$1,099/month' }
+        { name: 'Quantum AI Platform', description: 'AI-powered quantum computing', price: '$299/month' },
+        { name: 'Quantum Optimization', description: 'Quantum algorithms for complex problems', price: '$199/month' },
+        { name: 'Quantum Simulation', description: 'Advanced quantum simulations', price: '$399/month' }
       ]
     },
     {
       name: 'AI & Machine Learning',
-      description: 'Advanced AI and ML platforms',
+      description: 'Advanced artificial intelligence and ML platforms',
       icon: <Brain className="w-5 h-5" />,
       color: 'from-blue-500 to-cyan-500',
       services: [
-        { name: 'AI Content Creation', description: 'Automated content generation', price: '$599/month' },
-        { name: 'ML Model Training', description: 'Custom ML model development', price: '$1,199/month' },
-        { name: 'AI Analytics', description: 'Intelligent data analysis', price: '$799/month' }
+        { name: 'AI Content Generator', description: 'Professional AI content creation', price: '$49/month' },
+        { name: 'AI Analytics Platform', description: 'Advanced business intelligence', price: '$99/month' },
+        { name: 'AI Automation Suite', description: 'Complete business automation', price: '$149/month' }
       ]
     },
     {
       name: 'Cybersecurity',
       description: 'Next-generation security solutions',
       icon: <Shield className="w-5 h-5" />,
-      color: 'from-green-500 to-emerald-500',
+      color: 'from-red-500 to-orange-500',
       services: [
-        { name: 'Quantum Security', description: 'Quantum-resistant encryption', price: '$1,599/month' },
-        { name: 'AI Threat Detection', description: 'Intelligent security monitoring', price: '$999/month' },
-        { name: 'Zero Trust Security', description: 'Advanced access control', price: '$1,299/month' }
+        { name: 'Quantum Cybersecurity', description: 'Post-quantum era security', price: '$159/month' },
+        { name: 'AI Threat Detection', description: 'Intelligent security monitoring', price: '$89/month' },
+        { name: 'Zero-Trust Platform', description: 'Advanced access control', price: '$129/month' }
       ]
     },
     {
-      name: 'Biomedical & Healthcare',
-      description: 'AI-powered healthcare solutions',
-      icon: <Brain className="w-5 h-5" />,
-      color: 'from-red-500 to-pink-500',
+      name: 'Blockchain & Web3',
+      description: 'Future-proof blockchain and decentralized solutions',
+      icon: <LinkIcon className="w-5 h-5" />,
+      color: 'from-indigo-500 to-purple-500',
       services: [
-        { name: 'Drug Discovery AI', description: 'Accelerated drug development', price: '$1,899/month' },
-        { name: 'Genomic Analysis', description: 'Advanced genetic research', price: '$1,499/month' },
-        { name: 'Clinical Trial AI', description: 'Optimized clinical research', price: '$1,299/month' }
+        { name: 'Quantum Blockchain', description: 'Post-quantum blockchain platform', price: '$349/month' },
+        { name: 'DeFi Protocol Suite', description: 'Complete DeFi solutions', price: '$199/month' },
+        { name: 'NFT Marketplace', description: 'AI-curated NFT platform', price: '$99/month' }
+      ]
+    },
+    {
+      name: 'IoT & Smart Cities',
+      description: 'Connected devices and intelligent infrastructure',
+      icon: <Globe className="w-5 h-5" />,
+      color: 'from-teal-500 to-green-500',
+      services: [
+        { name: 'Quantum IoT Platform', description: 'Quantum-secured IoT solutions', price: '$199/month' },
+        { name: 'Smart City Suite', description: 'Complete urban intelligence', price: '$299/month' },
+        { name: 'Industrial IoT', description: 'Manufacturing automation', price: '$249/month' }
+      ]
+    },
+    {
+      name: 'Metaverse & VR/AR',
+      description: 'Immersive digital experiences and virtual worlds',
+      icon: <Eye className="w-5 h-5" />,
+      color: 'from-pink-500 to-rose-500',
+      services: [
+        { name: 'Quantum Metaverse', description: 'Quantum-enhanced virtual reality', price: '$499/month' },
+        { name: 'VR Development', description: 'Complete VR platform', price: '$299/month' },
+        { name: 'AR Solutions', description: 'Augmented reality platform', price: '$199/month' }
+      ]
+    },
+    {
+      name: 'Robotics & Automation',
+      description: 'Intelligent automation and robotic systems',
+      icon: <Cpu className="w-5 h-5" />,
+      color: 'from-orange-500 to-red-500',
+      services: [
+        { name: 'Quantum Robotics', description: 'AI-powered robotics platform', price: '$799/month' },
+        { name: 'Manufacturing AI', description: 'Autonomous manufacturing', price: '$199/month' },
+        { name: 'Service Robotics', description: 'Intelligent service automation', price: '$349/month' }
+      ]
+    },
+    {
+      name: 'Energy & Sustainability',
+      description: 'Green technology and energy optimization',
+      icon: <Zap className="w-5 h-5" />,
+      color: 'from-yellow-500 to-orange-500',
+      services: [
+        { name: 'Quantum Energy', description: 'AI-optimized energy management', price: '$299/month' },
+        { name: 'Smart Grid', description: 'Intelligent energy distribution', price: '$199/month' },
+        { name: 'Sustainability AI', description: 'Environmental impact optimization', price: '$149/month' }
       ]
     },
     {
       name: 'Financial Technology',
-      description: 'Quantum-powered financial solutions',
+      description: 'Innovative fintech and trading solutions',
       icon: <DollarSign className="w-5 h-5" />,
-      color: 'from-yellow-500 to-orange-500',
+      color: 'from-violet-500 to-purple-500',
       services: [
-        { name: 'Quantum Trading', description: 'AI-powered trading algorithms', price: '$1,999/month' },
-        { name: 'Risk Assessment', description: 'Advanced risk modeling', price: '$1,399/month' },
-        { name: 'Portfolio Optimization', description: 'Quantum portfolio management', price: '$1,599/month' }
+        { name: 'Quantum Trading', description: 'Quantum-enhanced algorithmic trading', price: '$899/month' },
+        { name: 'AI Risk Management', description: 'Intelligent financial risk analysis', price: '$399/month' },
+        { name: 'Blockchain Finance', description: 'DeFi and blockchain solutions', price: '$199/month' }
       ]
     },
     {
-      name: 'Content & Marketing',
-      description: 'AI-powered marketing automation',
-      icon: <FileText className="w-5 h-5" />,
-      color: 'from-indigo-500 to-purple-500',
+      name: 'Biotechnology & Healthcare',
+      description: 'AI-powered healthcare and biotech solutions',
+      icon: <FlaskConical className="w-5 h-5" />,
+      color: 'from-emerald-500 to-teal-500',
       services: [
-        { name: 'AI Content Writer', description: 'Automated content creation', price: '$499/month' },
-        { name: 'Marketing Automation', description: 'Intelligent campaign management', price: '$799/month' },
-        { name: 'SEO Optimization', description: 'AI-powered SEO tools', price: '$599/month' }
+        { name: 'Biotech AI', description: 'AI-powered drug discovery', price: '$599/month' },
+        { name: 'Healthcare Analytics', description: 'Medical data intelligence', price: '$299/month' },
+        { name: 'Genomic AI', description: 'Advanced genetic analysis', price: '$399/month' }
       ]
     }
   ];
