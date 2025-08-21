@@ -15,7 +15,7 @@ import Button from '../components/ui/Button';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 import EnhancedFuturisticCard from '../components/ui/EnhancedFuturisticCard';
 import { motion } from 'framer-motion';
-import { enhancedRealMicroSaasServices, getServicesByCategory, getPopularServices, serviceCategories } from '../data/enhanced-real-micro-saas-services';
+import { ultimateEnhancedServices, getServicesByCategory, getPopularServices, serviceCategories } from '../data/ultimate-enhanced-services';
 
 export default function HomePage() {
   const heroStats = [
@@ -35,7 +35,7 @@ export default function HomePage() {
   };
 
   // Get featured services from the enhanced data
-  const revolutionaryServices = enhancedRealMicroSaasServices
+  const revolutionaryServices = ultimateEnhancedServices
     .filter(service => service.realImplementation && service.popular)
     .slice(0, 8);
 
@@ -119,48 +119,48 @@ export default function HomePage() {
       name: 'Quantum Computing & AI',
       description: 'Revolutionary quantum AI solutions',
       icon: <Brain className="w-8 h-8" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category.includes('Quantum') || s.category.includes('AI')).length,
+      count: ultimateEnhancedServices.filter(s => s.category.includes('Quantum') || s.category.includes('AI')).length,
       color: 'from-indigo-500 to-purple-600'
     },
     {
       name: 'Autonomous Systems',
       description: 'Next-generation automation',
       icon: <Factory className="w-8 h-8" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category.includes('Manufacturing') || s.category.includes('Autonomous')).length,
+      count: ultimateEnhancedServices.filter(s => s.category.includes('Manufacturing') || s.category.includes('Autonomous')).length,
       color: 'from-orange-500 to-red-600'
     },
     {
       name: 'Space Technology',
       description: 'Satellite and space operations',
       icon: <Rocket className="w-8 h-8" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category.includes('Space')).length,
+      count: ultimateEnhancedServices.filter(s => s.category.includes('Space')).length,
       color: 'from-blue-500 to-indigo-600'
     },
     {
       name: 'Metaverse & VR',
       description: 'Immersive digital experiences',
       icon: <Globe className="w-8 h-8" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category.includes('Metaverse')).length,
+      count: ultimateEnhancedServices.filter(s => s.category.includes('Metaverse')).length,
       color: 'from-purple-500 to-violet-600'
     },
     {
       name: 'Biomedical AI',
       description: 'Healthcare and biotechnology',
       icon: <FlaskConical className="w-8 h-8" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category.includes('Healthcare') || s.category.includes('Biomedical')).length,
+      count: ultimateEnhancedServices.filter(s => s.category.includes('Healthcare') || s.category.includes('Biomedical')).length,
       color: 'from-green-500 to-emerald-600'
     },
     {
       name: 'Quantum Finance',
       description: 'Financial modeling and trading',
       icon: <DollarSign className="w-8 h-8" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category.includes('Finance')).length,
+      count: ultimateEnhancedServices.filter(s => s.category.includes('Finance')).length,
       color: 'from-emerald-500 to-teal-600'
     }
   ];
 
   return (
-    <UltraAdvancedFuturisticBackground variant="quantum">
+    <UltraAdvancedFuturisticBackground>
       <Head>
         <title>Zion Tech Group - Revolutionary Micro SaaS Services & AI Solutions</title>
         <meta name="description" content="Discover 150+ revolutionary micro SaaS services powered by quantum computing, AI, and cutting-edge technology. Transform your business with our innovative solutions." />
@@ -415,6 +415,127 @@ export default function HomePage() {
                 </div>
                 <p className="text-slate-300 mb-3">{testimonial.content}</p>
                 <div className="text-sm text-cyan-400 font-medium">{testimonial.service}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Technology Stack Section */}
+      <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              <span className="text-gradient-purple">Cutting-Edge</span> Technology Stack
+            </h2>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+              Built on the latest technologies and frameworks for maximum performance and scalability
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+            {[
+              { name: 'Quantum Computing', icon: '⚛️', color: 'from-cyan-500 to-blue-500' },
+              { name: 'AI/ML', icon: '🧠', color: 'from-purple-500 to-pink-500' },
+              { name: 'Blockchain', icon: '🔗', color: 'from-green-500 to-emerald-500' },
+              { name: 'IoT', icon: '🌐', color: 'from-blue-500 to-indigo-500' },
+              { name: 'VR/AR', icon: '🥽', color: 'from-orange-500 to-red-500' },
+              { name: 'Edge Computing', icon: '⚡', color: 'from-yellow-500 to-orange-500' }
+            ].map((tech, index) => (
+              <motion.div
+                key={tech.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-slate-900/50 backdrop-blur-xl rounded-xl p-4 border border-slate-700/50 text-center hover:border-cyan-500/50 transition-all duration-300"
+              >
+                <div className={`bg-gradient-to-br ${tech.color} p-3 rounded-lg w-fit mx-auto mb-3 text-2xl`}>
+                  {tech.icon}
+                </div>
+                <h3 className="text-sm font-semibold text-white">{tech.name}</h3>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Why <span className="text-gradient-cyan">Choose</span> Zion Tech Group?
+            </h2>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+              We're not just another tech company - we're your innovation partner
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                icon: '🚀',
+                title: 'Innovation First',
+                description: 'We stay ahead of the curve with cutting-edge technologies and forward-thinking solutions.',
+                color: 'from-cyan-500 to-blue-500'
+              },
+              {
+                icon: '💎',
+                title: 'Quality Assured',
+                description: 'Every service undergoes rigorous testing and quality assurance processes.',
+                color: 'from-purple-500 to-pink-500'
+              },
+              {
+                icon: '🌍',
+                title: 'Global Reach',
+                description: 'Serving clients worldwide with localized solutions and 24/7 support.',
+                color: 'from-green-500 to-emerald-500'
+              },
+              {
+                icon: '⚡',
+                title: 'Lightning Fast',
+                description: 'Get started in minutes with our streamlined onboarding process.',
+                color: 'from-orange-500 to-red-500'
+              },
+              {
+                icon: '🔒',
+                title: 'Enterprise Security',
+                description: 'Bank-level security and compliance for peace of mind.',
+                color: 'from-blue-500 to-indigo-500'
+              },
+              {
+                icon: '📈',
+                title: 'Proven Results',
+                description: 'Track record of delivering measurable ROI and business transformation.',
+                color: 'from-yellow-500 to-orange-500'
+              }
+            ].map((feature, index) => (
+              <motion.div
+                key={feature.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-slate-900/50 backdrop-blur-xl rounded-xl p-6 border border-slate-700/50 hover:border-cyan-500/50 transition-all duration-300"
+              >
+                <div className={`bg-gradient-to-br ${feature.color} p-3 rounded-lg w-fit mb-4 text-2xl`}>
+                  {feature.icon}
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
+                <p className="text-slate-400">{feature.description}</p>
               </motion.div>
             ))}
           </div>
