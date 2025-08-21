@@ -37,70 +37,76 @@ export default function HomePage() {
   // Enhanced service advertising content with real market data and competitive advantages
   const serviceHighlights = [
     {
-      title: '🧠 Revolutionary Quantum AI Cognitive Platform',
-      description: 'World\'s first quantum-enhanced AI with human-like reasoning capabilities. Achieve breakthrough discoveries with 1000% ROI within 6 months.',
-      price: 'Starting at $299/month',
-      features: ['Quantum neural networks with 1000+ qubits', 'Human-like reasoning and problem-solving', 'Real-time quantum simulation', 'Advanced research collaboration tools'],
-      link: 'https://ziontechgroup.com/quantum-ai-cognitive',
-      color: 'from-purple-600 to-indigo-700',
-      marketData: '$15B quantum computing market, 500% annual growth',
-      competitors: 'IBM Quantum ($2000+/month), Google Quantum AI ($1500+/month)',
-      savings: 'Save 85% vs. competitors'
+      title: '🤖 AI Autonomous Enterprise Platform',
+      icon: '🤖',
+      description: 'Revolutionary autonomous enterprise platform that manages all business operations without human intervention. Achieve 2000% ROI through complete automation and optimization.',
+      price: 'Starting at $1,299/month',
+      features: ['Autonomous decision-making AI with 99.9% accuracy', 'Self-healing infrastructure and systems', 'Predictive business intelligence and forecasting', 'Automated resource allocation and optimization'],
+      link: 'https://ziontechgroup.com/ai-autonomous-enterprise',
+      color: 'from-indigo-600 to-purple-700',
+      marketData: '$45B enterprise software market, 280% annual growth',
+      competitors: 'SAP S/4HANA ($5000+/month), Oracle ERP Cloud ($4000+/month), Microsoft Dynamics 365 ($3000+/month)',
+      savings: 'Save 75% vs. competitors'
     },
     {
-      title: '🏭 Autonomous Manufacturing AI Platform',
-      description: 'Self-learning manufacturing systems achieving zero downtime and 400% ROI within 6 months. Industry 4.0 revolution.',
-      price: 'Starting at $199/month',
-      features: ['Predictive maintenance with 99.9% accuracy', 'Real-time quality control automation', 'Supply chain intelligence and optimization', 'Energy consumption optimization'],
-      link: 'https://ziontechgroup.com/autonomous-manufacturing',
-      color: 'from-orange-500 to-red-600',
-      marketData: '$12.3B industrial AI market, 320% annual growth',
-      competitors: 'Siemens MindSphere ($500+/month), PTC ThingWorx ($300+/month)',
-      savings: 'Save 60% vs. competitors'
+      title: '💊 Quantum AI Drug Discovery Platform',
+      icon: '💊',
+      description: 'Breakthrough quantum AI platform that accelerates drug discovery by 1000x. Achieve pharmaceutical breakthroughs in weeks, not years.',
+      price: 'Starting at $2,999/month',
+      features: ['Quantum-enhanced molecular modeling', 'AI-powered drug target identification', 'Predictive toxicity and efficacy analysis', 'Real-time clinical trial optimization'],
+      link: 'https://ziontechgroup.com/quantum-ai-drug-discovery',
+      color: 'from-emerald-600 to-teal-700',
+      marketData: '$12B AI drug discovery market, 450% annual growth',
+      competitors: 'Insitro ($2000+/month), Atomwise ($1500+/month), BenevolentAI ($3000+/month)',
+      savings: 'Save 50% vs. competitors'
     },
     {
-      title: '🔒 Quantum Cybersecurity Suite',
-      description: 'Post-quantum era security with AI threat detection. Future-proof your infrastructure with 300% ROI within 4 months.',
-      price: 'Starting at $159/month',
-      features: ['Quantum-resistant encryption algorithms', 'AI-powered threat detection and response', 'Zero-trust architecture implementation', 'Real-time security monitoring'],
-      link: 'https://ziontechgroup.com/quantum-cybersecurity',
-      color: 'from-red-500 to-pink-600',
-      marketData: '$6.8B quantum security market, 380% annual growth',
-      competitors: 'CrowdStrike ($8.99/user/month), Palo Alto Networks ($50+/user/month)',
+      title: '🛡️ AI Cybersecurity Command Center',
+      icon: '🛡️',
+      description: 'Revolutionary AI-powered cybersecurity platform that autonomously prevents, detects, and responds to threats in real-time. Achieve 99.99% security with zero false positives.',
+      price: 'Starting at $899/month',
+      features: ['AI-powered threat detection with 99.99% accuracy', 'Autonomous threat response and mitigation', 'Predictive security analytics', 'Zero-trust architecture implementation'],
+      link: 'https://ziontechgroup.com/ai-cybersecurity-command-center',
+      color: 'from-red-600 to-pink-700',
+      marketData: '$8.5B AI cybersecurity market, 320% annual growth',
+      competitors: 'CrowdStrike ($8.99/user/month), Palo Alto Networks ($50+/user/month), SentinelOne ($8.99/user/month)',
+      savings: 'Save 80% vs. competitors'
+    },
+    {
+      title: '💰 Quantum Financial AI Platform',
+      icon: '💰',
+      description: 'Revolutionary quantum-enhanced financial AI platform that delivers unprecedented trading performance and risk management. Achieve 2000% ROI through quantum algorithms.',
+      price: 'Starting at $3,999/month',
+      features: ['Quantum-enhanced trading algorithms', 'AI-powered market prediction', 'Real-time risk management', 'Portfolio optimization with quantum algorithms'],
+      link: 'https://ziontechgroup.com/quantum-financial-ai-platform',
+      color: 'from-violet-600 to-purple-700',
+      marketData: '$28B financial AI market, 380% annual growth',
+      competitors: 'Bloomberg Terminal ($2000+/month), Refinitiv ($1000+/month), FactSet ($1000+/month)',
+      savings: 'Save 100% vs. competitors'
+    },
+    {
+      title: '🚚 AI Autonomous Supply Chain Platform',
+      icon: '🚚',
+      description: 'Revolutionary AI-powered supply chain platform that autonomously optimizes, predicts, and manages all supply chain operations. Achieve 1000% ROI through complete automation.',
+      price: 'Starting at $1,599/month',
+      features: ['Autonomous supply chain optimization', 'AI-powered demand forecasting', 'Real-time inventory management', 'Automated supplier management'],
+      link: 'https://ziontechgroup.com/ai-autonomous-supply-chain',
+      color: 'from-blue-600 to-indigo-700',
+      marketData: '$15B supply chain AI market, 280% annual growth',
+      competitors: 'SAP Ariba ($500+/month), Oracle Supply Chain ($400+/month), JDA Software ($300+/month)',
       savings: 'Save 70% vs. competitors'
     },
     {
-      title: '🚀 Space Technology Platform',
-      description: 'Cutting-edge space exploration and satellite management tools. Achieve 500% ROI within 8 months through improved operations.',
-      price: 'Starting at $399/month',
-      features: ['Satellite mission management and planning', 'Space data analytics and visualization', 'Orbital optimization algorithms', 'Space debris tracking and avoidance'],
-      link: 'https://ziontechgroup.com/space-technology',
-      color: 'from-blue-500 to-indigo-600',
-      marketData: '$4.2B space technology market, 280% annual growth',
-      competitors: 'Maxar ($500+/month), Planet Labs ($400+/month)',
-      savings: 'Save 20% vs. competitors'
-    },
-    {
-      title: '🧬 Biotech AI Platform',
-      description: 'AI-powered drug discovery and biotech research. Accelerate research with 800% ROI within 12 months.',
-      price: 'Starting at $599/month',
-      features: ['AI-powered drug discovery algorithms', 'Protein folding prediction with 99.2% accuracy', 'Genomic data analysis and interpretation', 'Clinical trial optimization'],
-      link: 'https://ziontechgroup.com/biotech-ai',
-      color: 'from-emerald-500 to-teal-600',
-      marketData: '$8.5B biotech AI market, 420% annual growth',
-      competitors: 'Insitro ($1000+/month), Atomwise ($800+/month)',
-      savings: 'Save 40% vs. competitors'
-    },
-    {
-      title: '💰 Quantum Financial Trading Platform',
-      description: 'Quantum-enhanced algorithmic trading and risk management. Achieve 1200% ROI within 6 months.',
-      price: 'Starting at $899/month',
-      features: ['Quantum-enhanced trading algorithms', 'Real-time market analysis and prediction', 'Advanced risk management systems', 'Portfolio optimization with quantum algorithms'],
-      link: 'https://ziontechgroup.com/quantum-financial-trading',
-      color: 'from-violet-500 to-purple-600',
-      marketData: '$22B algorithmic trading market, 280% annual growth',
-      competitors: 'Bloomberg Terminal ($2000+/month), Refinitiv ($1000+/month)',
-      savings: 'Save 55% vs. competitors'
+      title: '🌍 Quantum AI Climate Prediction Platform',
+      icon: '🌍',
+      description: 'Breakthrough quantum AI platform that predicts climate patterns with unprecedented accuracy. Achieve 1500% ROI through improved climate insights and planning.',
+      price: 'Starting at $2,499/month',
+      features: ['Quantum-enhanced climate modeling', 'AI-powered weather prediction', 'Long-term climate forecasting', 'Extreme event prediction'],
+      link: 'https://ziontechgroup.com/quantum-ai-climate-prediction',
+      color: 'from-green-600 to-emerald-700',
+      marketData: '$6B climate technology market, 320% annual growth',
+      competitors: 'Traditional climate models ($5000+/month), Weather services ($1000+/month), Environmental consulting ($2000+/month)',
+      savings: 'Save 50% vs. competitors'
     }
   ];
 
@@ -136,21 +142,45 @@ export default function HomePage() {
                 Transform your business with 500%+ ROI.
               </p>
               
-              {/* Contact Information Banner */}
-              <div className="bg-gradient-to-r from-blue-900/50 to-purple-900/50 backdrop-blur-sm border border-blue-500/30 rounded-2xl p-6 mb-8">
-                <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-center">
-                  <div className="flex items-center gap-2">
-                    <Phone className="w-5 h-5 text-blue-400" />
-                    <span className="text-blue-400 font-semibold">{contactInfo.mobile}</span>
+              {/* Enhanced Contact Information Banner */}
+              <div className="bg-gradient-to-r from-blue-900/60 to-purple-900/60 backdrop-blur-md border-2 border-blue-400/40 rounded-3xl p-8 mb-8 shadow-2xl shadow-blue-500/20">
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-bold text-white mb-2">Ready to Transform Your Business?</h3>
+                  <p className="text-blue-200 text-lg">Get in touch with our AI experts today</p>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="flex flex-col items-center gap-3 p-4 bg-gradient-to-br from-blue-800/40 to-blue-700/40 rounded-2xl border border-blue-400/30 hover:border-blue-300/50 transition-all duration-300 hover:scale-105">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
+                      <Phone className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="text-center">
+                      <p className="text-blue-200 text-sm font-medium">Phone</p>
+                      <p className="text-blue-100 font-bold text-lg">{contactInfo.mobile}</p>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Mail className="w-5 h-5 text-purple-400" />
-                    <span className="text-purple-400 font-semibold">{contactInfo.email}</span>
+                  <div className="flex flex-col items-center gap-3 p-4 bg-gradient-to-br from-purple-800/40 to-purple-700/40 rounded-2xl border border-purple-400/30 hover:border-purple-300/50 transition-all duration-300 hover:scale-105">
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center">
+                      <Mail className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="text-center">
+                      <p className="text-purple-200 text-sm font-medium">Email</p>
+                      <p className="text-purple-100 font-bold text-lg">{contactInfo.email}</p>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <MapPin className="w-5 h-5 text-green-400" />
-                    <span className="text-green-400 font-semibold">{contactInfo.address}</span>
+                  <div className="flex flex-col items-center gap-3 p-4 bg-gradient-to-br from-green-800/40 to-green-700/40 rounded-2xl border border-green-400/30 hover:border-green-300/50 transition-all duration-300 hover:scale-105">
+                    <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center">
+                      <MapPin className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="text-center">
+                      <p className="text-green-200 text-sm font-medium">Address</p>
+                      <p className="text-green-100 font-bold text-lg">{contactInfo.address}</p>
+                    </div>
                   </div>
+                </div>
+                <div className="text-center mt-6">
+                  <p className="text-blue-200 text-sm">
+                    Visit our website: <a href={contactInfo.website} className="text-blue-300 hover:text-blue-200 underline font-semibold" target="_blank" rel="noopener noreferrer">{contactInfo.website}</a>
+                  </p>
                 </div>
               </div>
 
@@ -174,9 +204,24 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Stats Section */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8">
+        {/* Enhanced Stats Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-900/50 to-black/50">
           <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-6">
+                Zion Tech Group by the Numbers
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Our revolutionary services are delivering unprecedented results across industries worldwide
+              </p>
+            </motion.div>
+
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
               {heroStats.map((stat, index) => (
                 <motion.div
@@ -185,34 +230,70 @@ export default function HomePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 text-center hover:border-gray-600/50 transition-all duration-300"
+                  className="group relative"
                 >
-                  <div className={`${stat.color} mb-2 flex justify-center`}>
-                    {stat.icon}
+                  <div className="bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-md border border-gray-700/50 rounded-3xl p-6 text-center hover:border-gray-600/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20">
+                    <div className={`${stat.color} mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300`}>
+                      {stat.icon}
+                    </div>
+                    <div className="text-3xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-purple-500 group-hover:bg-clip-text transition-all duration-300">
+                      {stat.value}
+                    </div>
+                    <div className="text-sm text-gray-300 group-hover:text-gray-200 transition-colors duration-300">
+                      {stat.label}
+                    </div>
                   </div>
-                  <div className="text-2xl font-bold text-white mb-1">{stat.value}</div>
-                  <div className="text-sm text-gray-300">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              viewport={{ once: true }}
+              className="text-center mt-16"
+            >
+              <div className="bg-gradient-to-r from-blue-900/40 to-purple-900/40 backdrop-blur-sm border border-blue-500/30 rounded-2xl p-8">
+                <h3 className="text-2xl font-bold text-white mb-4">Why Choose Zion Tech Group?</h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                  <div className="p-4">
+                    <div className="text-3xl mb-2">🚀</div>
+                    <h4 className="text-white font-semibold mb-2">First-to-Market</h4>
+                    <p className="text-gray-300 text-sm">Pioneering revolutionary AI and quantum technologies</p>
+                  </div>
+                  <div className="p-4">
+                    <div className="text-3xl mb-2">💰</div>
+                    <h4 className="text-white font-semibold mb-2">Unprecedented ROI</h4>
+                    <p className="text-gray-300 text-sm">Average 500%+ return on investment within months</p>
+                  </div>
+                  <div className="p-4">
+                    <div className="text-3xl mb-2">🔒</div>
+                    <h4 className="text-white font-semibold mb-2">Enterprise Security</h4>
+                    <p className="text-gray-300 text-sm">Bank-level security with 99.99% uptime guarantee</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </section>
 
-        {/* Service Highlights */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8">
+        {/* Enhanced Service Highlights Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="text-center mb-12"
+              className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                Revolutionary Service Highlights
+              <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-6">
+                Revolutionary AI & Quantum Services
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Experience the future of business technology with our most innovative services
+                Discover our cutting-edge micro SAAS services that are transforming industries worldwide. 
+                Each service delivers unprecedented ROI and competitive advantages.
               </p>
             </motion.div>
 
@@ -220,82 +301,127 @@ export default function HomePage() {
               {serviceHighlights.map((service, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-gray-600/50 transition-all duration-300"
+                  className="group relative"
                 >
-                  <div className="flex items-start justify-between mb-4">
-                    <h3 className="text-2xl font-bold text-white">{service.title}</h3>
-                    <div className="text-3xl">{service.title.split(' ')[0]}</div>
-                  </div>
-                  
-                  <p className="text-gray-300 mb-6">{service.description}</p>
-                  
-                  <div className="space-y-4 mb-6">
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-400">Price:</span>
-                      <span className="text-2xl font-bold text-green-400">{service.price}</span>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-400">Market:</span>
-                      <span className="text-blue-400 font-semibold">{service.marketData}</span>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-400">Competitors:</span>
-                      <span className="text-purple-400 font-semibold">{service.competitors}</span>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-400">Savings:</span>
-                      <span className="text-yellow-400 font-semibold">{service.savings}</span>
-                    </div>
-                  </div>
+                  <div className={`bg-gradient-to-br ${service.color} p-1 rounded-3xl hover:scale-105 transition-all duration-500`}>
+                    <div className="bg-gray-900/90 backdrop-blur-sm rounded-3xl p-8 h-full">
+                      <div className="flex items-start justify-between mb-6">
+                        <div className="text-4xl">{service.icon}</div>
+                        <div className="text-right">
+                          <div className="text-2xl font-bold text-white mb-1">{service.price}</div>
+                          <div className="text-sm text-gray-300">per month</div>
+                        </div>
+                      </div>
+                      
+                      <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
+                      <p className="text-gray-300 mb-6 leading-relaxed">{service.description}</p>
+                      
+                      <div className="mb-6">
+                        <h4 className="text-white font-semibold mb-3">Key Features:</h4>
+                        <ul className="space-y-2">
+                          {service.features.map((feature, featureIndex) => (
+                            <li key={featureIndex} className="flex items-center gap-2 text-gray-300">
+                              <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
+                              <span className="text-sm">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
 
-                  <div className="mb-6">
-                    <h4 className="text-white font-semibold mb-3">Key Features:</h4>
-                    <ul className="space-y-2">
-                      {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center gap-2 text-gray-300">
-                          <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-sm">
+                        <div className="bg-gray-800/50 rounded-lg p-3">
+                          <div className="text-gray-400 font-medium">Market Size</div>
+                          <div className="text-white font-semibold">{service.marketData}</div>
+                        </div>
+                        <div className="bg-gray-800/50 rounded-lg p-3">
+                          <div className="text-gray-400 font-medium">Savings vs Competitors</div>
+                          <div className="text-green-400 font-semibold">{service.savings}</div>
+                        </div>
+                      </div>
 
-                  <Button
-                    href={service.link}
-                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-3 rounded-xl font-semibold"
-                  >
-                    Learn More
-                    <ExternalLink className="w-4 h-4 ml-2" />
-                  </Button>
+                      <div className="mb-6">
+                        <h4 className="text-white font-semibold mb-2">Competitors:</h4>
+                        <p className="text-gray-300 text-sm">{service.competitors}</p>
+                      </div>
+
+                      <div className="flex flex-col sm:flex-row gap-3">
+                        <Button
+                          href={service.link}
+                          className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 font-semibold rounded-xl transition-all duration-300 hover:scale-105"
+                        >
+                          Learn More
+                          <ArrowRight className="w-4 h-4 ml-2" />
+                        </Button>
+                        <Button
+                          href="https://ziontechgroup.com/contact"
+                          variant="outline"
+                          className="flex-1 border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black px-6 py-3 font-semibold rounded-xl transition-all duration-300 hover:scale-105"
+                        >
+                          Get Quote
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
                 </motion.div>
               ))}
             </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              viewport={{ once: true }}
+              className="text-center mt-16"
+            >
+              <div className="bg-gradient-to-r from-blue-900/40 to-purple-900/40 backdrop-blur-sm border border-blue-500/30 rounded-2xl p-8">
+                <h3 className="text-3xl font-bold text-white mb-4">Ready to Get Started?</h3>
+                <p className="text-xl text-gray-300 mb-6">
+                  Join thousands of businesses already transforming their operations with our AI services
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button
+                    href="/micro-saas"
+                    className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300 hover:scale-105"
+                  >
+                    Explore All Services
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </Button>
+                  <Button
+                    href="https://ziontechgroup.com/contact"
+                    variant="outline"
+                    className="border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300 hover:scale-105"
+                  >
+                    Schedule Demo
+                  </Button>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </section>
 
-        {/* Popular Services Grid */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8">
+        {/* Enhanced Popular Services Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="text-center mb-12"
+              className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                Popular Services
+              <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-6">
+                Most Popular Revolutionary Services
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Our most requested and highly-rated micro SAAS solutions
+                Discover our most sought-after AI and quantum services that are transforming businesses worldwide
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {popularServices.map((service, index) => (
                 <motion.div
                   key={service.id}
@@ -303,11 +429,64 @@ export default function HomePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
+                  className="group relative"
                 >
-                  <EnhancedFuturisticCard
-                    service={service}
-                    className="h-full"
-                  />
+                  <div className={`bg-gradient-to-br ${service.color} p-1 rounded-3xl hover:scale-105 transition-all duration-500`}>
+                    <div className="bg-gray-900/90 backdrop-blur-sm rounded-3xl p-6 h-full">
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="text-3xl">{service.icon}</div>
+                        {service.popular && (
+                          <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-black text-xs font-bold px-3 py-1 rounded-full">
+                            POPULAR
+                          </div>
+                        )}
+                      </div>
+                      
+                      <h3 className="text-xl font-bold text-white mb-3">{service.name}</h3>
+                      <p className="text-gray-300 text-sm mb-4 leading-relaxed">{service.tagline}</p>
+                      
+                      <div className="mb-4">
+                        <div className="text-2xl font-bold text-white mb-1">{service.price}</div>
+                        <div className="text-sm text-gray-400">{service.period}</div>
+                      </div>
+
+                      <div className="mb-4">
+                        <h4 className="text-white font-semibold mb-2 text-sm">Key Features:</h4>
+                        <ul className="space-y-1">
+                          {service.features.slice(0, 3).map((feature, featureIndex) => (
+                            <li key={featureIndex} className="flex items-center gap-2 text-gray-300 text-xs">
+                              <Check className="w-3 h-3 text-green-400 flex-shrink-0" />
+                              <span>{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <div className="mb-4">
+                        <div className="bg-gray-800/50 rounded-lg p-3 text-center">
+                          <div className="text-gray-400 text-xs font-medium">ROI</div>
+                          <div className="text-green-400 font-bold text-sm">{service.roi}</div>
+                        </div>
+                      </div>
+
+                      <div className="flex flex-col gap-2">
+                        <Button
+                          href={service.link}
+                          className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-2 font-semibold rounded-xl text-sm transition-all duration-300 hover:scale-105"
+                        >
+                          Learn More
+                          <ArrowRight className="w-3 h-3 ml-2" />
+                        </Button>
+                        <Button
+                          href="https://ziontechgroup.com/contact"
+                          variant="outline"
+                          className="w-full border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black py-2 font-semibold rounded-xl text-sm transition-all duration-300 hover:scale-105"
+                        >
+                          Get Started
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -315,17 +494,32 @@ export default function HomePage() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
               viewport={{ once: true }}
-              className="text-center mt-12"
+              className="text-center mt-16"
             >
-              <Button
-                href="/micro-saas"
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold rounded-xl"
-              >
-                View All Services
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
+              <div className="bg-gradient-to-r from-green-900/40 to-emerald-900/40 backdrop-blur-sm border border-green-500/30 rounded-2xl p-8">
+                <h3 className="text-3xl font-bold text-white mb-4">Ready to Transform Your Business?</h3>
+                <p className="text-xl text-gray-300 mb-6">
+                  Join the AI revolution and achieve unprecedented growth with our revolutionary services
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button
+                    href="/micro-saas"
+                    className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300 hover:scale-105"
+                  >
+                    View All Services
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </Button>
+                  <Button
+                    href="https://ziontechgroup.com/contact"
+                    variant="outline"
+                    className="border-2 border-green-400 text-green-400 hover:bg-green-400 hover:text-black px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300 hover:scale-105"
+                  >
+                    Contact Sales
+                  </Button>
+                </div>
+              </div>
             </motion.div>
           </div>
         </section>
