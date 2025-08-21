@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { 
   Clock, DollarSign, TrendingUp, Brain, 
   Mail, Phone, MapPin, 
-  ArrowRight, Rocket
+  ArrowRight, Rocket, Star, Users, Zap
 } from 'lucide-react';
 import Button from '../components/ui/Button';
 import UltraAdvancedFuturisticMatrixBackground from '../components/ui/UltraAdvancedFuturisticMatrixBackground';
@@ -17,6 +17,9 @@ import { innovativeAIServices } from '../data/innovative-ai-services';
 import { quantumSpaceServices } from '../data/quantum-space-services';
 import { enterpriseITServices } from '../data/enterprise-it-services';
 import { professionalServices } from '../data/professional-services';
+import { nextGenAIServices } from '../data/next-gen-ai-services';
+import { nextGenITServices } from '../data/next-gen-it-services';
+import { innovativeMicroSaasV2 } from '../data/innovative-micro-saas-v2';
 
 export default function HomePage() {
   const contactInfo = {
@@ -34,22 +37,26 @@ export default function HomePage() {
     ...additionalEnhancedServices,
     ...innovativeAIServices,
     ...quantumSpaceServices,
-    ...enterpriseITServices
+    ...enterpriseITServices,
+    ...nextGenAIServices,
+    ...nextGenITServices,
+    ...innovativeMicroSaasV2
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);
+  const newServices = [...nextGenAIServices, ...nextGenITServices, ...innovativeMicroSaasV2].slice(0, 6);
 
   return (
     <UltraAdvancedFuturisticMatrixBackground intensity="high" colorScheme="quantum">
       <div className="min-h-screen">
         <Head>
-          <title>Zion Tech Group - Revolutionary AI, Quantum & IT Services | 500+ Solutions</title>
-          <meta name="description" content="Zion Tech Group offers 500+ revolutionary AI, quantum computing, and IT services. Achieve 1000% ROI with our cutting-edge solutions. Contact: +1 302 464 0950" />
-          <meta name="keywords" content="AI services, quantum computing, IT services, micro SaaS, cybersecurity, cloud migration, neural interface, quantum internet" />
+          <title>Zion Tech Group - Revolutionary AI, Quantum & IT Services | 600+ Solutions</title>
+          <meta name="description" content="Zion Tech Group offers 600+ revolutionary AI, quantum computing, and IT services. Achieve 1000% ROI with our cutting-edge solutions. Contact: +1 302 464 0950" />
+          <meta name="keywords" content="AI services, quantum computing, IT services, micro SaaS, cybersecurity, cloud migration, neural interface, quantum internet, next-gen AI, edge computing" />
           <meta name="author" content="Zion Tech Group" />
           <meta name="robots" content="index, follow" />
           <meta property="og:title" content="Zion Tech Group - Revolutionary AI, Quantum & IT Services" />
-          <meta property="og:description" content="500+ cutting-edge services with 1000% ROI guarantee. Contact: +1 302 464 0950" />
+          <meta property="og:description" content="600+ cutting-edge services with 1000% ROI guarantee. Contact: +1 302 464 0950" />
           <meta property="og:url" content="https://ziontechgroup.com" />
           <meta property="og:type" content="website" />
           <link rel="canonical" href="https://ziontechgroup.com" />
@@ -70,7 +77,7 @@ export default function HomePage() {
                 Revolutionary AI, Quantum Computing & IT Services
               </p>
               <p className="text-lg md:text-xl text-gray-400 mb-12 max-w-3xl mx-auto">
-                500+ cutting-edge services delivering 1000% ROI. From neural quantum brain interfaces to enterprise IT infrastructure.
+                600+ cutting-edge services delivering 1000% ROI. From neural quantum brain interfaces to enterprise IT infrastructure.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
@@ -79,7 +86,7 @@ export default function HomePage() {
                   variant="primary"
                   className="text-lg px-8 py-4"
                 >
-                  Explore 500+ Services
+                  Explore 600+ Services
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
                 <Button 
@@ -92,6 +99,88 @@ export default function HomePage() {
                 </Button>
               </div>
             </motion.div>
+          </div>
+        </section>
+
+        {/* New Services Showcase */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="mb-12 text-center">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <h2 className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent mb-4">
+                  Latest Innovation Services
+                </h2>
+                <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+                  Discover our newest AI, IT, and micro-SaaS solutions designed for the future
+                </p>
+              </motion.div>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {newServices.map((service, index) => (
+                <motion.div
+                  key={service.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="group"
+                >
+                  <div className="bg-gray-800/60 border border-gray-700 rounded-2xl p-6 hover:border-cyan-500/40 transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="text-3xl">{service.icon}</div>
+                      {service.popular && (
+                        <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-black text-xs font-bold px-2 py-1 rounded-full">
+                          POPULAR
+                        </div>
+                      )}
+                    </div>
+                    
+                    <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-cyan-400 transition-colors">
+                      {service.name}
+                    </h3>
+                    
+                    <p className="text-gray-300 text-sm mb-4 line-clamp-2">
+                      {service.description}
+                    </p>
+                    
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="text-cyan-300 font-bold text-lg">
+                        {service.price}{service.period}
+                      </div>
+                      <div className="flex items-center text-yellow-400">
+                        <Star className="w-4 h-4 fill-current" />
+                        <span className="ml-1 text-sm">{service.rating}</span>
+                      </div>
+                    </div>
+                    
+                    <div className="flex gap-2">
+                      <Button 
+                        href={service.link} 
+                        variant="primary" 
+                        size="sm"
+                        className="flex-1"
+                      >
+                        Learn More
+                      </Button>
+                      <Button 
+                        href="/contact" 
+                        variant="secondary" 
+                        size="sm"
+                        className="flex-1"
+                      >
+                        Get Started
+                      </Button>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -126,6 +215,65 @@ export default function HomePage() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Stats Section */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="space-y-2"
+              >
+                <div className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                  600+
+                </div>
+                <div className="text-gray-300">Services Available</div>
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
+                className="space-y-2"
+              >
+                <div className="text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+                  1000%
+                </div>
+                <div className="text-gray-300">ROI Guarantee</div>
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="space-y-2"
+              >
+                <div className="text-4xl font-bold bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">
+                  24/7
+                </div>
+                <div className="text-gray-300">Support Available</div>
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="space-y-2"
+              >
+                <div className="text-4xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+                  5min
+                </div>
+                <div className="text-gray-300">Setup Time</div>
+              </motion.div>
             </div>
           </div>
         </section>

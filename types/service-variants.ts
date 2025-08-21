@@ -28,4 +28,14 @@ export type ServiceVariant =
   | 'quantum-neural'
   | 'quantum-cyberpunk'
   | 'neural-quantum-cyberpunk'
-  | 'quantum-energy';
+  | 'quantum-energy'
+  | 'business-futuristic'
+  | 'blockchain-futuristic'
+  | 'customer-success-futuristic'
+  | 'automation-futuristic'
+  | 'finance-futuristic'
+  | 'cybersecurity-futuristic'
+  | 'infrastructure-futuristic'
+  | 'devops-futuristic'
+  | 'networking-futuristic'
+  | 'quantum-futuristic';
