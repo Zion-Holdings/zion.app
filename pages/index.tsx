@@ -125,13 +125,23 @@ export default function HomePage() {
               className="flex flex-col sm:flex-row gap-6 justify-center mb-16"
             >
               <motion.a
-                href="/services"
+                href="/innovative-services-showcase-2034"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold text-lg rounded-xl hover:from-cyan-600 hover:to-purple-700 transition-all duration-200 shadow-2xl shadow-cyan-500/25"
               >
-                <span>Explore Services</span>
+                <span>Explore Innovative Services</span>
                 <ArrowRight className="w-6 h-6" />
+              </motion.a>
+              
+              <motion.a
+                href="/services"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center space-x-3 px-8 py-4 bg-black/50 border-2 border-cyan-500/50 text-cyan-300 font-bold text-lg rounded-xl hover:bg-cyan-500/10 hover:border-cyan-400 transition-all duration-200"
+              >
+                <span>All Services</span>
+                <Star className="w-6 h-6" />
               </motion.a>
               
               <motion.a

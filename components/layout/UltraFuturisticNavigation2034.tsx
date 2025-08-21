@@ -78,6 +78,8 @@ const navigationItems: NavigationItem[] = [
     description: 'Ready-to-use business solutions',
     badge: 'READY',
     children: [
+      { name: 'Innovative Services Showcase', href: '/innovative-services-showcase-2034', description: 'Complete portfolio' },
+      { name: 'Innovative Pricing', href: '/innovative-pricing-2034', description: 'Transparent pricing' },
       { name: 'AI Content Suite', href: '/services/ai-content-automation-suite', description: 'Content creation' },
       { name: 'Business Tools', href: '/services/business-tools', description: 'Productivity boosters' },
       { name: 'Marketing Automation', href: '/services/marketing-automation', description: 'Growth acceleration' },

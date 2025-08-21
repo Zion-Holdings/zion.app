@@ -13,6 +13,10 @@ import { ultimateFuturisticServices2034 } from '../data/2034-ultimate-futuristic
 // Import new 2034 services from remote
 import { cuttingEdge2034Services } from '../data/2034-cutting-edge-innovations';
 import { emergingTech2034Services } from '../data/2034-emerging-tech-breakthroughs';
+// Import new innovative services
+import { innovativeMicroSaasSolutions } from '../data/2034-innovative-micro-saas-solutions';
+import { innovativeITSolutions } from '../data/2034-innovative-it-solutions';
+import { innovativeAISolutions } from '../data/2034-innovative-ai-solutions';
 
 const contactInfo = {
   mobile: '+1 302 464 0950',
@@ -28,7 +32,12 @@ const serviceCategories = [
     description: 'Complete portfolio of revolutionary technology solutions',
     icon: Star,
     color: 'from-cyan-500 to-purple-500',
-    services: ultimateFuturisticServices2034,
+    services: [
+      ...ultimateFuturisticServices2034,
+      ...innovativeMicroSaasSolutions,
+      ...innovativeITSolutions,
+      ...innovativeAISolutions
+    ],
     gradient: 'from-cyan-500/20 to-purple-500/20'
   },
   {
@@ -37,7 +46,10 @@ const serviceCategories = [
     description: 'Revolutionary AI consciousness and emotional intelligence platforms',
     icon: Brain,
     color: 'from-pink-500 to-rose-500',
-    services: ultimateFuturisticServices2034.filter(s => s.category === 'AI & Consciousness'),
+    services: [
+      ...ultimateFuturisticServices2034.filter(s => s.category === 'AI & Consciousness'),
+      ...innovativeAISolutions
+    ],
     gradient: 'from-pink-500/20 to-rose-500/20'
   },
   {
@@ -64,7 +76,10 @@ const serviceCategories = [
     description: 'Autonomous operations and zero-trust security',
     icon: Shield,
     color: 'from-green-500 to-emerald-500',
-    services: ultimateFuturisticServices2034.filter(s => s.category === 'Enterprise IT'),
+    services: [
+      ...ultimateFuturisticServices2034.filter(s => s.category === 'Enterprise IT'),
+      ...innovativeITSolutions
+    ],
     gradient: 'from-green-500/20 to-emerald-500/20'
   },
   {
@@ -73,7 +88,10 @@ const serviceCategories = [
     description: 'Innovative solutions for every business need',
     icon: Target,
     color: 'from-yellow-500 to-orange-500',
-    services: ultimateFuturisticServices2034.filter(s => s.category === 'Micro SaaS'),
+    services: [
+      ...ultimateFuturisticServices2034.filter(s => s.category === 'Micro SaaS'),
+      ...innovativeMicroSaasSolutions
+    ],
     gradient: 'from-yellow-500/20 to-orange-500/20'
   },
   {
