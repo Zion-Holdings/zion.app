@@ -39,6 +39,8 @@ import { enterpriseIT2026ServicesV2 } from '../data/enterprise-it-2026-services-
 import { aiAutonomousServices2026 } from '../data/2026-ai-autonomous-services';
 import { quantumSpaceTechServices2026 } from '../data/2026-quantum-space-tech-services';
 import { metaverseDigitalRealityServices2026 } from '../data/2026-metaverse-digital-reality-services';
+import { ultimate2026Services } from '../data/ultimate-2026-services';
+import { revolutionary2026Innovations } from '../data/revolutionary-2026-innovations';
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -82,7 +84,9 @@ export default function ServicesPage() {
     ...enterpriseIT2026ServicesV2,
     ...aiAutonomousServices2026,
     ...quantumSpaceTechServices2026,
-    ...metaverseDigitalRealityServices2026
+    ...metaverseDigitalRealityServices2026,
+    ...ultimate2026Services,
+    ...revolutionary2026Innovations
   ];
 
   // Dynamic category counts mapped to the same filter logic below

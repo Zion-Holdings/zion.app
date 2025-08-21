@@ -50,6 +50,7 @@ import { metaverseDigitalRealityServices2026 } from '../data/2026-metaverse-digi
 import { innovative2026AIServicesV3 } from '../data/innovative-2026-ai-services-v3';
 import { emergingTech2026ServicesV3 } from '../data/emerging-tech-2026-services-v3';
 import { enterpriseIT2026ServicesV3 } from '../data/enterprise-it-2026-services-v3';
+import { ultimate2026Services } from '../data/ultimate-2026-services';
 
 export default function HomePage() {
   const contactInfo = {
@@ -99,7 +100,8 @@ export default function HomePage() {
     ...metaverseDigitalRealityServices2026,
     ...innovative2026AIServicesV3,
     ...emergingTech2026ServicesV3,
-    ...enterpriseIT2026ServicesV3
+    ...enterpriseIT2026ServicesV3,
+    ...ultimate2026Services
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);
