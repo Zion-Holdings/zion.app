@@ -18,7 +18,7 @@ const contactInfo = {
 const serviceCategories = [
   {
     name: 'AI & Consciousness',
-    icon: <Brain className="w-5 h-5" />,
+    icon: Brain,
     color: 'from-violet-500 to-purple-600',
     services: [
       { name: 'AI Content Factory Pro', href: '/ai-content-factory-pro' },
@@ -29,7 +29,7 @@ const serviceCategories = [
   },
   {
     name: 'Financial Technology',
-    icon: <DollarSign className="w-5 h-5" />,
+    icon: DollarSign,
     color: 'from-green-500 to-emerald-600',
     services: [
       { name: 'Neural Finance AI', href: '/neural-finance-ai' },
@@ -40,7 +40,7 @@ const serviceCategories = [
   },
   {
     name: 'Healthcare & Biotech',
-    icon: <Microscope className="w-5 h-5" />,
+    icon: Microscope,
     color: 'from-red-500 to-pink-600',
     services: [
       { name: 'AI Healthcare Diagnostics Pro', href: '/ai-healthcare-diagnostics-pro' },
@@ -51,7 +51,7 @@ const serviceCategories = [
   },
   {
     name: 'Education & Learning',
-    icon: <Users className="w-5 h-5" />,
+    icon: Users,
     color: 'from-yellow-500 to-orange-600',
     services: [
       { name: 'AI Education Platform Pro', href: '/ai-education-platform-pro' },
@@ -60,7 +60,7 @@ const serviceCategories = [
   },
   {
     name: 'Energy & Sustainability',
-    icon: <Zap className="w-5 h-5" />,
+    icon: Zap,
     color: 'from-orange-500 to-red-600',
     services: [
       { name: 'Quantum Energy Optimization', href: '/quantum-energy-optimization' },
@@ -69,7 +69,7 @@ const serviceCategories = [
   },
   {
     name: 'Robotics & Automation',
-    icon: <Rocket className="w-5 h-5" />,
+    icon: Rocket,
     color: 'from-pink-500 to-purple-600',
     services: [
       { name: 'AI Autonomous Robotics Platform', href: '/ai-autonomous-robotics-platform' },
@@ -78,7 +78,7 @@ const serviceCategories = [
   },
   {
     name: 'Supply Chain & Logistics',
-    icon: <Network className="w-5 h-5" />,
+    icon: Network,
     color: 'from-indigo-500 to-blue-600',
     services: [
       { name: 'Quantum Supply Chain Optimizer', href: '/quantum-supply-chain-optimizer' },
@@ -87,7 +87,7 @@ const serviceCategories = [
   },
   {
     name: 'Quantum & Emerging Tech',
-    icon: <Atom className="w-5 h-5" />,
+    icon: Atom,
     color: 'from-indigo-500 to-blue-600',
     services: [
       { name: 'Quantum Cybersecurity Platform', href: '/quantum-cybersecurity-platform' },
@@ -98,7 +98,7 @@ const serviceCategories = [
   },
   {
     name: 'Enterprise IT',
-    icon: <Shield className="w-5 h-5" />,
+    icon: Shield,
     color: 'from-blue-500 to-cyan-600',
     services: [
       { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure' },
@@ -109,7 +109,7 @@ const serviceCategories = [
   },
   {
     name: 'Space & Metaverse',
-    icon: <Star className="w-5 h-5" />,
+    icon: Star,
     color: 'from-purple-500 to-pink-600',
     services: [
       { name: 'Space Technology AI Platform', href: '/space-technology-ai-platform' },
@@ -120,7 +120,7 @@ const serviceCategories = [
   },
   {
     name: 'Content & Marketing',
-    icon: <Palette className="w-5 h-5" />,
+    icon: Palette,
     color: 'from-pink-500 to-rose-600',
     services: [
       { name: 'AI Creativity Studio', href: '/ai-creativity-studio' },
@@ -129,7 +129,7 @@ const serviceCategories = [
   },
   {
     name: 'Sales & CRM',
-    icon: <BarChart3 className="w-5 h-5" />,
+    icon: BarChart3,
     color: 'from-emerald-500 to-teal-600',
     services: [
       { name: 'AI Sales Automation', href: '/ai-sales-automation' },
@@ -138,7 +138,7 @@ const serviceCategories = [
   },
   {
     name: 'Cybersecurity',
-    icon: <ShieldCheck className="w-5 h-5" />,
+    icon: ShieldCheck,
     color: 'from-red-500 to-orange-600',
     services: [
       { name: 'Zero Trust Security Platform', href: '/zero-trust-network-architecture' },
@@ -238,7 +238,9 @@ export default function EnhancedFooter() {
                 {serviceCategories.slice(0, 4).map((category, index) => (
                   <div key={index} className="space-y-3">
                     <div className="flex items-center space-x-2">
-                      <category.icon className="w-5 h-5 text-cyan-400" />
+                      <div className={`p-2 rounded-lg bg-gradient-to-r ${category.color} text-white`}>
+                        <category.icon className="w-5 h-5" />
+                      </div>
                       <h5 className="text-sm font-medium text-white">{category.name}</h5>
                     </div>
                     <ul className="space-y-2">
@@ -319,7 +321,9 @@ export default function EnhancedFooter() {
             {serviceCategories.slice(4).map((category, index) => (
               <div key={index} className="space-y-3">
                 <div className="flex items-center space-x-2">
-                  <category.icon className="w-5 h-5 text-cyan-400" />
+                  <div className={`p-2 rounded-lg bg-gradient-to-r ${category.color} text-white`}>
+                    <category.icon className="w-5 h-5" />
+                  </div>
                   <h5 className="text-sm font-medium text-white">{category.name}</h5>
                 </div>
                 <ul className="space-y-2">
