@@ -3,12 +3,13 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shield, Mail, MapPin, Rocket, Brain, Sparkles } from 'lucide-react';
 import Button from '../components/ui/Button';
-import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import UltraQuantumHolographicBackground from '../components/ui/UltraQuantumHolographicBackground';
 import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
-import EnhancedNavigation2026 from '../components/layout/EnhancedNavigation2026';
+import UltraAdvancedNavigation2026 from '../components/layout/UltraAdvancedNavigation2026';
 import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
 import Enhanced2026ServicesShowcase from '../components/sections/Enhanced2026ServicesShowcase';
-import EnhancedHero2026 from '../components/sections/EnhancedHero2026';
+import UltraAdvancedHero2026 from '../components/sections/UltraAdvancedHero2026';
+import Revolutionary2026ServicesShowcase from '../components/sections/Revolutionary2026ServicesShowcase';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
@@ -41,6 +42,8 @@ import { enterpriseIT2026Services as enterpriseIT2026ServicesNew } from '../data
 import { innovative2026MicroSaasServicesV2 } from '../data/innovative-2026-micro-saas-v2';
 import { emergingTech2026ServicesV2 } from '../data/emerging-tech-2026-services-v2';
 import { enterpriseIT2026ServicesV2 } from '../data/enterprise-it-2026-services-v2';
+import { revolutionary2026Innovations } from '../data/revolutionary-2026-innovations';
+import { nextGenAI2026Services } from '../data/next-gen-ai-2026-services';
 
 export default function HomePage() {
   const contactInfo = {
@@ -82,7 +85,9 @@ export default function HomePage() {
     ...enterpriseIT2026ServicesNew,
     ...innovative2026MicroSaasServicesV2,
     ...emergingTech2026ServicesV2,
-    ...enterpriseIT2026ServicesV2
+    ...enterpriseIT2026ServicesV2,
+    ...revolutionary2026Innovations,
+    ...nextGenAI2026Services
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);
@@ -101,7 +106,7 @@ export default function HomePage() {
   };
 
   return (
-    <UltraAdvancedFuturisticBackground 
+    <UltraQuantumHolographicBackground 
       intensity="extreme" 
       colorScheme="neural-network"
       particleCount={500}
@@ -109,6 +114,8 @@ export default function HomePage() {
       enableHolographic={true}
       enableQuantumEffects={true}
       enableNeuralNetwork={true}
+      enableCosmicWaves={true}
+      enableFloatingElements={true}
     >
       <div className="min-h-screen">
         <Head>
@@ -125,10 +132,13 @@ export default function HomePage() {
         </Head>
 
         {/* Ultra Advanced Navigation */}
-        <EnhancedNavigation2026 />
+        <UltraAdvancedNavigation2026 />
 
         {/* Enhanced Hero Section 2026 */}
-        <EnhancedHero2026 />
+        <UltraAdvancedHero2026 />
+
+        {/* Revolutionary 2026 Services Showcase */}
+        <Revolutionary2026ServicesShowcase />
 
         {/* Latest Innovations Showcase */}
         <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
@@ -394,6 +404,6 @@ export default function HomePage() {
           </div>
         </section>
       </div>
-    </UltraAdvancedFuturisticBackground>
+    </UltraQuantumHolographicBackground>
   );
 }

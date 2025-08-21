@@ -76,13 +76,13 @@ export default function Revolutionary2025ServicesShowcase() {
   return (
     <UltraQuantumHolographicBackground 
       intensity="extreme" 
-      colorScheme="quantum-fusion"
+      colorScheme="quantum-field"
       particleCount={800}
       animationSpeed={2.5}
       enableHolographic={true}
       enableQuantumEffects={true}
-      enableNeuralNetworks={true}
-      enableSpaceTime={true}
+      enableNeuralNetwork={true}
+      enableCosmicWaves={true}
     >
       <div className="min-h-screen">
         <Head>
