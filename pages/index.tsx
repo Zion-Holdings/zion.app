@@ -7,15 +7,19 @@ import {
   ShieldCheck, Globe, Target, Users, Award
 } from 'lucide-react';
 import Button from '../components/ui/Button';
-import QuantumHolographicMatrixBackground from '../components/ui/QuantumHolographicMatrixBackground';
+import UltraAdvancedFuturisticMatrixBackground from '../components/ui/UltraAdvancedFuturisticMatrixBackground';
 import UltraFuturisticServiceCard from '../components/ui/UltraFuturisticServiceCard';
 import ServiceAds from '../components/sections/ServiceAds';
+import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
 import Card from '../components/ui/Card';
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
 import { additionalEnhancedServices } from '../data/additional-real-services';
 import { innovativeMicroSaasServices } from '../data/innovative-micro-saas-services';
+import { innovativeAIServices } from '../data/innovative-ai-services';
+import { quantumSpaceServices } from '../data/quantum-space-services';
+import { enterpriseITServices } from '../data/enterprise-it-services';
 
 export default function HomePage() {
   const heroStats = [
@@ -126,7 +130,7 @@ export default function HomePage() {
   };
 
   return (
-    <QuantumHolographicMatrixBackground intensity={1.2} variant="quantum">
+    <UltraAdvancedFuturisticMatrixBackground intensity="high" colorScheme="quantum">
       <div className="min-h-screen">
         <Head>
           <title>Zion Tech Group - Revolutionary Micro SaaS Services & AI Solutions</title>
@@ -351,6 +355,13 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* Enhanced Service Showcase */}
+        <EnhancedServiceShowcase 
+          title="Revolutionary AI & Technology Services"
+          subtitle="Discover the future of business with our cutting-edge solutions"
+          showFilters={true}
+        />
+
         {/* Contact Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
@@ -403,6 +414,6 @@ export default function HomePage() {
           </div>
         </section>
       </div>
-    </QuantumHolographicMatrixBackground>
+    </UltraAdvancedFuturisticMatrixBackground>
   );
 }
