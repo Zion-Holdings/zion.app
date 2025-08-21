@@ -6,8 +6,8 @@ import Button from '../components/ui/Button';
 import UltraFuturisticBackground2030 from '../components/ui/UltraFuturisticBackground2030';
 import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
 import UltraAdvancedNavigation2026 from '../components/layout/UltraAdvancedNavigation2026';
-import UltraFuturisticNavigation2032 from '../components/layout/UltraFuturisticNavigation2032';
-import UltraFuturisticFooter2032 from '../components/layout/UltraFuturisticFooter2032';
+import UltraFuturisticNavigation2033 from '../components/layout/UltraFuturisticNavigation2033';
+import UltraFuturisticFooter2033 from '../components/layout/UltraFuturisticFooter2033';
 import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
 import Enhanced2026ServicesShowcase from '../components/sections/Enhanced2026ServicesShowcase';
 import Revolutionary2026ServiceShowcase from '../components/sections/Revolutionary2026ServiceShowcase';
@@ -100,6 +100,14 @@ import { innovativeMicroSaasServices2031 } from '../data/2031-innovative-micro-s
 import { researchDevelopmentServices2031 } from '../data/2031-research-development-services';
 import { spaceMetaverseServices2031 } from '../data/2031-space-metaverse-services';
 
+// Import new 2033 services
+import { innovativeMicroSaasServices2033 } from '../data/2033-innovative-micro-saas-v2';
+import { innovativeAIServices2033 } from '../data/2033-innovative-ai-services-v2';
+import { quantumEmergingTechServices2033 } from '../data/2033-quantum-emerging-tech-services-v2';
+import { spaceMetaverseServices2033 } from '../data/2033-space-metaverse-services-v2';
+import { researchDevelopmentServices2033 } from '../data/2033-research-development-services-v2';
+import { enterpriseITServices2033 } from '../data/2033-enterprise-it-services-v2';
+
 export default function HomePage() {
   const contactInfo = {
     mobile: '+1 302 464 0950',
@@ -116,6 +124,12 @@ export default function HomePage() {
     ...innovativeMicroSaasServices2032,
     ...researchDevelopmentServices2032,
     ...enterpriseITServices2032,
+    ...innovativeMicroSaasServices2033,
+    ...innovativeAIServices2033,
+    ...quantumEmergingTechServices2033,
+    ...spaceMetaverseServices2033,
+    ...researchDevelopmentServices2033,
+    ...enterpriseITServices2033,
     ...enhancedRealMicroSaasServices,
     ...extraServices,
     ...additionalEnhancedServices,
@@ -255,7 +269,7 @@ export default function HomePage() {
       </Head>
 
       {/* Navigation */}
-      <UltraFuturisticNavigation2032 />
+              <UltraFuturisticNavigation2033 />
 
       {/* Hero Section */}
       <UltraFuturisticHero2032 />
@@ -400,7 +414,7 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <UltraFuturisticFooter2032 />
+              <UltraFuturisticFooter2033 />
     </>
   );
 }
