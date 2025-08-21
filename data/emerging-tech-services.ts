@@ -131,7 +131,7 @@ export const emergingTechServices: EmergingTechService[] = [
     competitors: ['Traditional drug discovery', 'Basic AI platforms', 'Manual research methods'],
     marketSize: '$150B AI in healthcare market',
     growthRate: '250% annual growth in quantum biotech',
-    variant: 'quantum-biotech-advanced',
+    variant: 'quantum-advanced',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -184,7 +184,7 @@ export const emergingTechServices: EmergingTechService[] = [
     competitors: ['Traditional trading systems', 'Basic AI platforms', 'Manual trading'],
     marketSize: '$15T algorithmic trading market',
     growthRate: '150% annual growth in quantum trading',
-    variant: 'quantum-financial-advanced',
+    variant: 'quantum-advanced',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -237,7 +237,7 @@ export const emergingTechServices: EmergingTechService[] = [
     competitors: ['Traditional IoT security', 'Basic encryption', 'Manual security monitoring'],
     marketSize: '$50B IoT security market',
     growthRate: '200% annual growth in quantum IoT',
-    variant: 'quantum-iot-advanced',
+    variant: 'quantum-advanced',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -290,7 +290,7 @@ export const emergingTechServices: EmergingTechService[] = [
     competitors: ['Traditional logistics platforms', 'Basic optimization tools', 'Manual planning'],
     marketSize: '$200B logistics optimization market',
     growthRate: '180% annual growth in AI logistics',
-    variant: 'quantum-logistics-advanced',
+    variant: 'quantum-holographic-advanced',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -343,7 +343,7 @@ export const emergingTechServices: EmergingTechService[] = [
     competitors: ['Traditional VR platforms', 'Basic metaverse tools', 'Gaming engines'],
     marketSize: '$800B metaverse market',
     growthRate: '400% annual growth',
-    variant: 'quantum-metaverse-advanced',
+    variant: 'quantum-holographic-advanced',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -396,7 +396,7 @@ export const emergingTechServices: EmergingTechService[] = [
     competitors: ['Tesla Autopilot', 'Waymo', 'Cruise', 'Traditional ADAS systems'],
     marketSize: '$2T autonomous vehicle market',
     growthRate: '300% annual growth',
-    variant: 'quantum-autonomous-advanced',
+    variant: 'quantum-advanced',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -449,7 +449,7 @@ export const emergingTechServices: EmergingTechService[] = [
     competitors: ['Traditional energy management', 'Basic monitoring systems', 'Manual optimization'],
     marketSize: '$100B energy management market',
     growthRate: '200% annual growth in AI energy',
-    variant: 'quantum-energy-advanced',
+    variant: 'quantum-neural-advanced',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -502,7 +502,7 @@ export const emergingTechServices: EmergingTechService[] = [
     competitors: ['Traditional robotics', 'Basic automation', 'Manual processes'],
     marketSize: '$150B robotics market',
     growthRate: '250% annual growth in AI robotics',
-    variant: 'quantum-robotics-advanced',
+    variant: 'quantum-holographic-advanced',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
