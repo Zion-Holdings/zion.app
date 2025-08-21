@@ -25,6 +25,11 @@ import { revolutionary2025Services } from '../data/revolutionary-2025-services';
 import { nextGenInnovations2025 } from '../data/next-gen-innovations-2025';
 import { innovative2025Batch3Services } from '../data/innovative-2025-batch3';
 
+// New 2026 Services
+import { revolutionary2026Services } from '../data/revolutionary-2026-services';
+import { emergingTech2026Services } from '../data/emerging-tech-2026-services';
+import { comprehensiveIT2026Services } from '../data/comprehensive-it-2026-services';
+
 export default function HomePage() {
   const contactInfo = {
     mobile: '+1 302 464 0950',
@@ -52,7 +57,11 @@ export default function HomePage() {
     ...emergingTech2025Services,
     ...revolutionary2025Services,
     ...nextGenInnovations2025,
-    ...innovative2025Batch3Services
+    ...innovative2025Batch3Services,
+    // New 2026 Services
+    ...revolutionary2026Services,
+    ...emergingTech2026Services,
+    ...comprehensiveIT2026Services
   ];
 
   const featuredOffers = professionalServices.slice(0, 3);
@@ -60,11 +69,11 @@ export default function HomePage() {
   // Service statistics
   const serviceStats = {
     totalServices: allServices.length,
-    aiServices: nextGenerationAIServices.length + innovativeAIServices.length + realMarketServices.filter(s => s.category.includes('AI')).length + revolutionary2025Services.filter(s => s.category.includes('AI')).length,
-    emergingTech: emergingTechnologyServices.length + emergingTech2025Services.length,
-    itSolutions: comprehensiveITSolutions.length + enterpriseITServices.length,
+    aiServices: nextGenerationAIServices.length + innovativeAIServices.length + realMarketServices.filter(s => s.category.includes('AI')).length + revolutionary2025Services.filter(s => s.category.includes('AI')).length + revolutionary2026Services.filter(s => s.category.includes('AI')).length + emergingTech2026Services.filter(s => s.category.includes('AI')).length,
+    emergingTech: emergingTechnologyServices.length + emergingTech2025Services.length + emergingTech2026Services.length,
+    itSolutions: comprehensiveITSolutions.length + enterpriseITServices.length + comprehensiveIT2026Services.length,
     microSaas: enhancedRealMicroSaasServices.length + innovativeMicroSaasServices.length,
-    revolutionaryServices: revolutionary2025Services.length + nextGenInnovations2025.length
+    revolutionaryServices: revolutionary2025Services.length + nextGenInnovations2025.length + revolutionary2026Services.length
   };
 
   return (
@@ -78,13 +87,13 @@ export default function HomePage() {
     >
       <div className="min-h-screen">
         <Head>
-          <title>Zion Tech Group - Revolutionary AI, Quantum & IT Services | 1000+ Solutions</title>
-          <meta name="description" content="Zion Tech Group offers 1000+ revolutionary AI, quantum computing, and IT services. Achieve 1000% ROI with our cutting-edge solutions. Contact: +1 302 464 0950" />
-          <meta name="keywords" content="AI services, quantum computing, IT services, micro SaaS, cybersecurity, cloud migration, neural interface, quantum internet, blockchain, metaverse, IoT, edge computing, consciousness simulation, quantum brain interface" />
+          <title>Zion Tech Group - Revolutionary AI, Quantum & IT Services | 1500+ Solutions</title>
+          <meta name="description" content="Zion Tech Group offers 1500+ revolutionary AI, quantum computing, and IT services. Achieve 1000% ROI with our cutting-edge solutions. Contact: +1 302 464 0950" />
+          <meta name="keywords" content="AI services, quantum computing, IT services, micro SaaS, cybersecurity, cloud migration, neural interface, quantum internet, blockchain, metaverse, IoT, edge computing, consciousness simulation, quantum brain interface, neuromorphic computing, DNA computing, photonic computing, holographic display, swarm robotics, zero trust architecture, edge computing, 5G networks" />
           <meta name="author" content="Zion Tech Group" />
           <meta name="robots" content="index, follow" />
           <meta property="og:title" content="Zion Tech Group - Revolutionary AI, Quantum & IT Services" />
-          <meta property="og:description" content="1000+ cutting-edge services with 1000% ROI guarantee. Contact: +1 302 464 0950" />
+          <meta property="og:description" content="1500+ cutting-edge services with 1000% ROI guarantee. Contact: +1 302 464 0950" />
           <meta property="og:url" content="https://ziontechgroup.com" />
           <meta property="og:type" content="website" />
           <link rel="canonical" href="https://ziontechgroup.com" />
@@ -137,7 +146,7 @@ export default function HomePage() {
               >
                 Revolutionary AI, Quantum Computing & IT Services
                 <br />
-                <span className="text-cyan-400 font-semibold">1000+ Cutting-Edge Solutions</span> with 
+                <span className="text-cyan-400 font-semibold">1500+ Cutting-Edge Solutions</span> with 
                 <span className="text-purple-400 font-semibold"> 1000% ROI Guarantee</span>
               </motion.p>
 
@@ -198,8 +207,8 @@ export default function HomePage() {
         <EnhancedServiceShowcase
           services={allServices}
           title="Revolutionary AI, Quantum & IT Services"
-          subtitle="Discover 1000+ cutting-edge solutions that deliver 1000% ROI through breakthrough technology"
-          maxServices={12}
+          subtitle="Discover 1500+ cutting-edge solutions that deliver 1000% ROI through breakthrough technology"
+          maxServices={15}
         />
 
         {/* Contact Information Section */}
@@ -214,7 +223,7 @@ export default function HomePage() {
             >
               <h2 className="text-3xl font-bold text-white mb-6">Ready to Transform Your Business?</h2>
               <p className="text-xl text-gray-300 mb-8">
-                Join thousands of companies already leveraging our revolutionary AI and quantum solutions
+                Join thousands of companies already leveraging our revolutionary AI, quantum, and IT solutions
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
