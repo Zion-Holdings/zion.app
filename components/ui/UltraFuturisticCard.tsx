@@ -1,499 +1,341 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowRight, ExternalLink, Star } from 'lucide-react';
 
-export interface UltraFuturisticCardProps {
-  children: React.ReactNode;
+interface UltraFuturisticCardProps {
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+  color: string;
+  textColor: string;
+  gradient: string;
+  features?: string[];
+  link?: string;
+  popular?: boolean;
+  price?: string;
+  period?: string;
+  variant?: string;
   className?: string;
-  onClick?: () => void;
-  variant?: 'default' | 'holographic' | 'quantum' | 'cyberpunk' | 'neural' | 'quantum-holographic' | 'quantum-advanced' | 'holographic-advanced' | 'neural-quantum' | 'quantum-cyberpunk' | 'holographic-neural' | 'quantum-holographic-advanced' | 'quantum-matrix' | 'neural-cyberpunk' | 'holographic-quantum' | 'quantum-neural-advanced' | 'cyberpunk-holographic' | 'quantum-space' | 'ai-futuristic' | 'quantum-entanglement' | 'holographic-matrix' | 'neural-quantum-cyberpunk';
-  hoverEffect?: boolean;
-  glowIntensity?: 'low' | 'medium' | 'high';
-  animated?: boolean;
+  children?: React.ReactNode;
 }
 
 const UltraFuturisticCard: React.FC<UltraFuturisticCardProps> = ({
-  children,
+  title,
+  description,
+  icon,
+  color,
+  textColor,
+  gradient,
+  features = [],
+  link,
+  popular = false,
+  price,
+  period,
   variant = 'default',
   className = '',
-  onClick,
-  hoverEffect = true,
-  glowIntensity = 'medium',
-  animated = true
+  children
 }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const [isFocused, setIsFocused] = useState(false);
-  const cardRef = useRef<HTMLDivElement>(null);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [isExpanded, setIsExpanded] = useState(false);
 
-  // Get variant-specific styles
+  const cardVariants = {
+    initial: { 
+      scale: 1, 
+      rotateY: 0,
+      boxShadow: "0 0 0 rgba(0, 0, 0, 0)"
+    },
+    hover: { 
+      scale: 1.02, 
+      rotateY: 2,
+      boxShadow: "0 20px 40px rgba(0, 0, 0, 0.3)"
+    },
+    tap: { 
+      scale: 0.98 
+    }
+  };
+
+  const holographicVariants = {
+    initial: { opacity: 0, scale: 0.8 },
+    animate: { 
+      opacity: [0, 1, 0], 
+      scale: [0.8, 1.2, 0.8],
+      transition: {
+        duration: 3,
+        repeat: Infinity,
+        ease: "easeInOut" as const
+      }
+    }
+  };
+
+  const quantumVariants = {
+    initial: { opacity: 0, rotate: 0 },
+    animate: { 
+      opacity: [0, 1, 0], 
+      rotate: [0, 360],
+      transition: {
+        duration: 4,
+        repeat: Infinity,
+        ease: "linear" as const
+      }
+    }
+  };
+
+  const neuralVariants = {
+    initial: { opacity: 0, scale: 0.5 },
+    animate: { 
+      opacity: [0, 1, 0], 
+      scale: [0.5, 1.5, 0.5],
+      transition: {
+        duration: 5,
+        repeat: Infinity,
+        ease: "easeInOut" as const
+      }
+    }
+  };
+
   const getVariantStyles = () => {
     switch (variant) {
       case 'quantum':
         return {
-          bg: 'bg-gradient-to-br from-slate-900 via-blue-900 to-cyan-900',
-          border: 'border border-cyan-500/30',
-          glow: 'shadow-[0_0_30px_rgba(6,182,212,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(6,182,212,0.5)]',
-          accent: 'from-cyan-400 to-blue-500'
-        };
-      case 'quantum-advanced':
-        return {
-          bg: 'bg-gradient-to-br from-slate-900 via-cyan-900 via-blue-900 to-indigo-900',
-          border: 'border border-cyan-500/30',
-          glow: 'shadow-[0_0_30px_rgba(6,182,212,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(6,182,212,0.5)]',
-          accent: 'from-cyan-400 via-blue-400 to-indigo-400'
+          background: `linear-gradient(135deg, ${gradient})`,
+          border: `2px solid ${color}`,
+          boxShadow: `0 0 30px ${color}40`
         };
       case 'holographic':
         return {
-          bg: 'bg-gradient-to-br from-slate-900 via-purple-900 to-pink-900',
-          border: 'border border-pink-500/30',
-          glow: 'shadow-[0_0_30px_rgba(236,72,153,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(236,72,153,0.5)]',
-          accent: 'from-pink-400 to-purple-500'
-        };
-      case 'holographic-advanced':
-        return {
-          bg: 'bg-gradient-to-br from-slate-900 via-purple-900 via-pink-900 to-rose-900',
-          border: 'border border-purple-500/30',
-          glow: 'shadow-[0_0_30px_rgba(168,85,247,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(168,85,247,0.5)]',
-          accent: 'from-purple-400 via-pink-400 to-rose-400'
-        };
-      case 'cyberpunk':
-        return {
-          bg: 'bg-gradient-to-br from-slate-900 via-red-900 to-orange-900',
-          border: 'border border-red-500/30',
-          glow: 'shadow-[0_0_30px_rgba(239,68,68,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(239,68,68,0.5)]',
-          accent: 'from-red-400 to-orange-500'
+          background: `linear-gradient(135deg, ${gradient})`,
+          border: `1px solid ${color}60`,
+          backdropFilter: 'blur(10px)',
+          boxShadow: `0 0 40px ${color}30`
         };
       case 'neural':
         return {
-          bg: 'bg-gradient-to-br from-slate-900 via-green-900 to-emerald-900',
-          border: 'border border-emerald-500/30',
-          glow: 'shadow-[0_0_30px_rgba(16,185,129,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(16,185,129,0.5)]',
-          accent: 'from-emerald-400 to-green-500'
-        };
-      case 'quantum-holographic':
-        return {
-          bg: 'bg-gradient-to-br from-slate-900 via-cyan-900 via-purple-900 to-pink-900',
-          border: 'border border-cyan-500/30',
-          glow: 'shadow-[0_0_30px_rgba(6,182,212,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(6,182,212,0.5)]',
-          accent: 'from-cyan-400 via-purple-400 to-pink-400'
-        };
-      case 'quantum-holographic-advanced':
-        return {
-          bg: 'bg-gradient-to-br from-slate-900 via-cyan-900 via-purple-900 to-pink-900',
-          border: 'border border-cyan-500/30',
-          glow: 'shadow-[0_0_30px_rgba(6,182,212,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(6,182,212,0.5)]',
-          accent: 'from-cyan-400 via-purple-400 to-pink-400'
-        };
-      case 'neural-quantum':
-        return {
-          bg: 'bg-gradient-to-br from-slate-900 via-emerald-900 via-green-900 to-cyan-900',
-          border: 'border border-emerald-500/30',
-          glow: 'shadow-[0_0_30px_rgba(16,185,129,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(16,185,129,0.5)]',
-          accent: 'from-emerald-400 via-green-400 to-cyan-400'
-        };
-      case 'quantum-cyberpunk':
-        return {
-          bg: 'bg-gradient-to-br from-slate-900 via-cyan-900 via-blue-900 to-red-900',
-          border: 'border border-cyan-500/30',
-          glow: 'shadow-[0_0_30px_rgba(6,182,212,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(6,182,212,0.5)]',
-          accent: 'from-cyan-400 via-blue-400 to-red-400'
-        };
-      case 'holographic-neural':
-        return {
-          bg: 'bg-gradient-to-br from-slate-900 via-purple-900 via-pink-900 to-emerald-900',
-          border: 'border border-purple-500/30',
-          glow: 'shadow-[0_0_30px_rgba(168,85,247,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(168,85,247,0.5)]',
-          accent: 'from-purple-400 via-pink-400 to-emerald-400'
-        };
-      case 'quantum-neural-advanced':
-        return {
-          bg: 'bg-gradient-to-br from-slate-900 via-cyan-900 via-blue-900 to-emerald-900',
-          border: 'border border-cyan-500/30',
-          glow: 'shadow-[0_0_30px_rgba(6,182,212,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(6,182,212,0.5)]',
-          accent: 'from-cyan-400 via-blue-400 to-emerald-400'
-        };
-      case 'cyberpunk-holographic':
-        return {
-          bg: 'bg-gradient-to-br from-slate-900 via-red-900 via-pink-900 to-purple-900',
-          border: 'border border-red-500/30',
-          glow: 'shadow-[0_0_30px_rgba(239,68,68,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(239,68,68,0.5)]',
-          accent: 'from-red-400 via-pink-400 to-purple-400'
-        };
-      case 'quantum-space':
-        return {
-          bg: 'bg-gradient-to-br from-slate-900 via-cyan-900 via-indigo-900 to-blue-900',
-          border: 'border border-cyan-500/30',
-          glow: 'shadow-[0_0_30px_rgba(6,182,212,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(6,182,212,0.5)]',
-          accent: 'from-cyan-400 via-indigo-400 to-blue-400'
-        };
-      case 'ai-futuristic':
-        return {
-          bg: 'bg-gradient-to-br from-slate-900 via-blue-900 via-indigo-900 to-purple-900',
-          border: 'border border-blue-500/30',
-          glow: 'shadow-[0_0_30px_rgba(59,130,246,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(59,130,246,0.5)]',
-          accent: 'from-blue-400 via-indigo-400 to-purple-400'
-        };
-      case 'quantum-entanglement':
-        return {
-          bg: 'bg-gradient-to-br from-slate-900 via-violet-900 to-purple-900',
-          border: 'border border-violet-500/30',
-          glow: 'shadow-[0_0_30px_rgba(139,92,246,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(139,92,246,0.5)]',
-          accent: 'from-violet-400 to-purple-500'
-        };
-      case 'holographic-matrix':
-        return {
-          bg: 'bg-gradient-to-br from-slate-900 via-teal-900 to-cyan-900',
-          border: 'border border-teal-500/30',
-          glow: 'shadow-[0_0_30px_rgba(20,184,166,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(20,184,166,0.5)]',
-          accent: 'from-teal-400 to-cyan-500'
-        };
-      case 'neural-quantum-cyberpunk':
-        return {
-          bg: 'bg-gradient-to-br from-slate-900 via-emerald-900 via-purple-900 to-red-900',
-          border: 'border border-emerald-500/30',
-          glow: 'shadow-[0_0_30px_rgba(16,185,129,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(16,185,129,0.5)]',
-          accent: 'from-emerald-400 via-purple-400 to-red-400'
-        };
-      case 'quantum-matrix':
-        return {
-          bg: 'bg-gradient-to-br from-slate-900 via-green-900 to-emerald-900',
-          border: 'border border-green-500/30',
-          glow: 'shadow-[0_0_30px_rgba(34,197,94,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(34,197,94,0.5)]',
-          accent: 'from-green-400 to-emerald-500'
-        };
-      case 'neural-cyberpunk':
-        return {
-          bg: 'bg-gradient-to-br from-slate-900 via-emerald-900 via-green-900 to-red-900',
-          border: 'border border-emerald-500/30',
-          glow: 'shadow-[0_0_30px_rgba(16,185,129,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(16,185,129,0.5)]',
-          accent: 'from-emerald-400 via-green-400 to-red-400'
-        };
-      case 'holographic-quantum':
-        return {
-          bg: 'bg-gradient-to-br from-slate-900 via-purple-900 via-pink-900 to-cyan-900',
-          border: 'border border-purple-500/30',
-          glow: 'shadow-[0_0_30px_rgba(168,85,247,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(168,85,247,0.5)]',
-          accent: 'from-purple-400 via-pink-400 to-cyan-400'
+          background: `linear-gradient(135deg, ${gradient})`,
+          border: `2px solid ${color}`,
+          boxShadow: `0 0 50px ${color}50`
         };
       default:
         return {
-          bg: 'bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900',
-          border: 'border border-slate-600/30',
-          glow: 'shadow-[0_0_30px_rgba(148,163,184,0.3)]',
-          hoverGlow: 'hover:shadow-[0_0_50px_rgba(148,163,184,0.5)]',
-          accent: 'from-slate-400 to-slate-500'
+          background: `linear-gradient(135deg, ${gradient})`,
+          border: `1px solid ${color}40`
         };
     }
-  };
-
-  const styles = getVariantStyles();
-
-  // Get glow intensity
-  const getGlowIntensity = () => {
-    switch (glowIntensity) {
-      case 'low':
-        return 'shadow-[0_0_20px_rgba(148,163,184,0.2)]';
-      case 'high':
-        return 'shadow-[0_0_40px_rgba(148,163,184,0.6)]';
-      default:
-        return styles.glow;
-    }
-  };
-
-  // Canvas animation for advanced effects
-  useEffect(() => {
-    if (!animated || !canvasRef.current) return;
-
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    let animationFrameId: number;
-    let time = 0;
-
-    const resizeCanvas = () => {
-      if (cardRef.current) {
-        const rect = cardRef.current.getBoundingClientRect();
-        canvas.width = rect.width;
-        canvas.height = rect.height;
-      }
-    };
-
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-
-    const animate = () => {
-      time += 0.02;
-      
-      // Clear canvas
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
-      // Draw variant-specific effects
-      switch (variant) {
-        case 'quantum':
-          drawQuantumEffects(ctx, canvas, time);
-          break;
-        case 'holographic':
-          drawHolographicEffects(ctx, canvas, time);
-          break;
-        case 'cyberpunk':
-          drawCyberpunkEffects(ctx, canvas, time);
-          break;
-        case 'neural':
-          drawNeuralEffects(ctx, canvas, time);
-          break;
-        case 'quantum-entanglement':
-          drawQuantumEntanglementEffects(ctx, canvas, time);
-          break;
-        case 'holographic-matrix':
-          drawHolographicMatrixEffects(ctx, canvas, time);
-          break;
-        case 'neural-quantum-cyberpunk':
-          drawNeuralQuantumCyberpunkEffects(ctx, canvas, time);
-          break;
-      }
-      
-      animationFrameId = requestAnimationFrame(animate);
-    };
-
-    animate();
-
-    return () => {
-      window.removeEventListener('resize', resizeCanvas);
-      cancelAnimationFrame(animationFrameId);
-    };
-  }, [variant, animated]);
-
-  // Effect drawing functions
-  const drawQuantumEffects = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement, time: number) => {
-    // Quantum particles
-    for (let i = 0; i < 5; i++) {
-      const x = Math.sin(time + i) * canvas.width * 0.3 + canvas.width * 0.5;
-      const y = Math.cos(time + i * 0.7) * canvas.height * 0.3 + canvas.height * 0.5;
-      
-      ctx.beginPath();
-      ctx.arc(x, y, 3 + Math.sin(time * 2 + i) * 2, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(6, 182, 212, ${0.6 + Math.sin(time + i) * 0.4})`;
-      ctx.fill();
-    }
-  };
-
-  const drawHolographicEffects = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement, time: number) => {
-    // Holographic grid
-    ctx.strokeStyle = `rgba(236, 72, 153, ${0.3 + Math.sin(time) * 0.2})`;
-    ctx.lineWidth = 1;
-    
-    for (let i = 0; i < canvas.width; i += 30) {
-      ctx.beginPath();
-      ctx.moveTo(i, 0);
-      ctx.lineTo(i, canvas.height);
-      ctx.stroke();
-    }
-    
-    for (let i = 0; i < canvas.height; i += 30) {
-      ctx.beginPath();
-      ctx.moveTo(0, i);
-      ctx.lineTo(canvas.width, i);
-      ctx.stroke();
-    }
-  };
-
-  const drawCyberpunkEffects = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement, time: number) => {
-    // Scanning lines
-    const y = (time * 100) % canvas.height;
-    ctx.strokeStyle = 'rgba(239, 68, 68, 0.8)';
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    ctx.moveTo(0, y);
-    ctx.lineTo(canvas.width, y);
-    ctx.stroke();
-  };
-
-  const drawNeuralEffects = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement, time: number) => {
-    // Neural connections
-    for (let i = 0; i < 3; i++) {
-      const x1 = Math.sin(time + i) * canvas.width * 0.3 + canvas.width * 0.3;
-      const y1 = Math.cos(time + i * 0.5) * canvas.height * 0.3 + canvas.height * 0.3;
-      const x2 = Math.sin(time + i + 1) * canvas.width * 0.3 + canvas.width * 0.7;
-      const y2 = Math.cos(time + i * 0.5 + 1) * canvas.height * 0.3 + canvas.height * 0.7;
-      
-      ctx.beginPath();
-      ctx.moveTo(x1, y1);
-      ctx.lineTo(x2, y2);
-      ctx.strokeStyle = `rgba(16, 185, 129, ${0.4 + Math.sin(time + i) * 0.3})`;
-      ctx.lineWidth = 1;
-      ctx.stroke();
-    }
-  };
-
-  const drawSpaceEffects = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement, time: number) => {
-    // Stars
-    for (let i = 0; i < 20; i++) {
-      const x = (i * 50 + time * 20) % canvas.width;
-      const y = (i * 30 + time * 15) % canvas.height;
-      const size = Math.sin(time + i) * 2 + 1;
-      
-      ctx.beginPath();
-      ctx.arc(x, y, size, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(255, 255, 255, ${0.8 + Math.sin(time + i) * 0.2})`;
-      ctx.fill();
-    }
-  };
-
-  const drawQuantumEntanglementEffects = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement, time: number) => {
-    // Entangled particles
-    for (let i = 0; i < 4; i++) {
-      const x1 = Math.sin(time + i) * canvas.width * 0.2 + canvas.width * 0.3;
-      const y1 = Math.cos(time + i * 0.7) * canvas.height * 0.2 + canvas.height * 0.3;
-      const x2 = Math.sin(time + i + Math.PI) * canvas.width * 0.2 + canvas.width * 0.7;
-      const y2 = Math.cos(time + i * 0.7 + Math.PI) * canvas.height * 0.2 + canvas.height * 0.7;
-      
-      // Draw particles
-      ctx.beginPath();
-      ctx.arc(x1, y1, 3, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(139, 92, 246, 0.8)`;
-      ctx.fill();
-      
-      ctx.beginPath();
-      ctx.arc(x2, y2, 3, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(139, 92, 246, 0.8)`;
-      ctx.fill();
-      
-      // Draw connection
-      ctx.beginPath();
-      ctx.moveTo(x1, y1);
-      ctx.lineTo(x2, y2);
-      ctx.strokeStyle = `rgba(139, 92, 246, ${0.3 + Math.sin(time * 2) * 0.2})`;
-      ctx.lineWidth = 1;
-      ctx.stroke();
-    }
-  };
-
-  const drawHolographicMatrixEffects = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement, time: number) => {
-    // Matrix-style grid
-    ctx.strokeStyle = `rgba(20, 184, 166, ${0.4 + Math.sin(time) * 0.2})`;
-    ctx.lineWidth = 1;
-    
-    for (let i = 0; i < canvas.width; i += 20) {
-      ctx.beginPath();
-      ctx.moveTo(i, 0);
-      ctx.lineTo(i, canvas.height);
-      ctx.stroke();
-    }
-    
-    for (let i = 0; i < canvas.height; i += 20) {
-      ctx.beginPath();
-      ctx.moveTo(0, i);
-      ctx.lineTo(canvas.width, i);
-      ctx.stroke();
-    }
-    
-    // Floating elements
-    for (let i = 0; i < 3; i++) {
-      const x = Math.sin(time + i) * canvas.width * 0.3 + canvas.width * 0.5;
-      const y = Math.cos(time + i * 0.5) * canvas.height * 0.3 + canvas.height * 0.5;
-      
-      ctx.beginPath();
-      ctx.rect(x - 15, y - 15, 30, 30);
-      ctx.strokeStyle = `rgba(20, 184, 166, ${0.6 + Math.sin(time * 3 + i) * 0.4})`;
-      ctx.lineWidth = 2;
-      ctx.stroke();
-    }
-  };
-
-  const drawNeuralQuantumCyberpunkEffects = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement, time: number) => {
-    // Combined effects
-    drawNeuralEffects(ctx, canvas, time);
-    drawQuantumEffects(ctx, canvas, time);
-    drawCyberpunkEffects(ctx, canvas, time);
   };
 
   return (
     <motion.div
-      ref={cardRef}
-      className={`
-        relative overflow-hidden rounded-2xl backdrop-blur-sm
-        ${styles.bg} ${styles.border} ${getGlowIntensity()}
-        ${hoverEffect ? styles.hoverGlow : ''}
-        transition-all duration-500 ease-out
-        ${className}
-      `}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onFocus={() => setIsFocused(true)}
-      onBlur={() => setIsFocused(false)}
-      onClick={onClick}
-      whileHover={hoverEffect ? { scale: 1.02, y: -5 } : {}}
-      whileTap={{ scale: 0.98 }}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      className={`relative group cursor-pointer ${className}`}
+      variants={cardVariants}
+      initial="initial"
+      whileHover="hover"
+      whileTap="tap"
+      onHoverStart={() => setIsHovered(true)}
+      onHoverEnd={() => setIsHovered(false)}
+      onClick={() => setIsExpanded(!isExpanded)}
+      style={getVariantStyles()}
     >
-      {/* Animated canvas background */}
-      {animated && (
-        <canvas
-          ref={canvasRef}
-          className="absolute inset-0 w-full h-full pointer-events-none opacity-30"
-        />
-      )}
-
-      {/* Holographic overlay */}
+      {/* Holographic Overlay */}
       <AnimatePresence>
         {isHovered && (
           <motion.div
-            className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            className="absolute inset-0 rounded-2xl"
+            variants={holographicVariants}
+            initial="initial"
+            animate="animate"
+            style={{
+              background: `linear-gradient(45deg, ${color}20, transparent, ${color}20)`,
+              pointerEvents: 'none'
+            }}
           />
         )}
       </AnimatePresence>
 
-      {/* Glowing border effect */}
-      <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500" />
-
-      {/* Content */}
-      <div className="relative z-10 p-6">
-        {children}
+      {/* Quantum Energy Field */}
+      <div className="absolute inset-0 rounded-2xl overflow-hidden">
+        <motion.div
+          className="absolute inset-0"
+          animate={{
+            background: [
+              `radial-gradient(circle at 20% 20%, ${color}10 0%, transparent 50%)`,
+              `radial-gradient(circle at 80% 80%, ${color}10 0%, transparent 50%)`,
+              `radial-gradient(circle at 20% 20%, ${color}10 0%, transparent 50%)`
+            ]
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
       </div>
 
-      {/* Corner accents */}
-      <div className="absolute top-0 left-0 w-8 h-8 border-l-2 border-t-2 border-gradient-to-br from-transparent to-white/20 rounded-tl-2xl" />
-      <div className="absolute top-0 right-0 w-8 h-8 border-r-2 border-t-2 border-gradient-to-bl from-transparent to-white/20 rounded-tr-2xl" />
-      <div className="absolute bottom-0 left-0 w-8 h-8 border-l-2 border-b-2 border-gradient-to-tr from-transparent to-white/20 rounded-bl-2xl" />
-      <div className="absolute bottom-0 right-0 w-8 h-8 border-r-2 border-b-2 border-gradient-to-tl from-transparent to-white/20 rounded-br-2xl" />
+      {/* Neural Network Pattern */}
+      <div className="absolute inset-0 rounded-2xl overflow-hidden opacity-20">
+        <svg className="w-full h-full">
+          <motion.path
+            d="M 0 50 Q 100 0 200 50 T 400 50"
+            stroke={color}
+            strokeWidth="1"
+            fill="none"
+            animate={{
+              pathLength: [0, 1, 0],
+              opacity: [0, 1, 0]
+            }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+          <motion.path
+            d="M 0 150 Q 100 100 200 150 T 400 150"
+            stroke={color}
+            strokeWidth="1"
+            fill="none"
+            animate={{
+              pathLength: [0, 1, 0],
+              opacity: [0, 1, 0]
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 2
+            }}
+          />
+        </svg>
+      </div>
 
-      {/* Focus indicator */}
-      {isFocused && (
+      {/* Popular Badge */}
+      {popular && (
         <motion.div
-          className="absolute inset-0 rounded-2xl ring-2 ring-white/50 ring-offset-2 ring-offset-slate-900"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-        />
+          className="absolute -top-3 -right-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-3 py-1 rounded-full text-sm font-bold shadow-lg"
+          initial={{ scale: 0, rotate: -180 }}
+          animate={{ scale: 1, rotate: 0 }}
+          transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+        >
+          <Star className="w-4 h-4 inline mr-1" />
+          Popular
+        </motion.div>
       )}
+
+      {/* Card Content */}
+      <div className="relative z-10 p-6">
+        {/* Header */}
+        <div className="flex items-start justify-between mb-4">
+          <div className="flex items-center gap-3">
+            <motion.div
+              className="p-3 rounded-xl"
+              style={{ backgroundColor: `${color}20` }}
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              {icon}
+            </motion.div>
+            <div>
+              <h3 className={`text-xl font-bold ${textColor} mb-1`}>{title}</h3>
+              {price && (
+                <div className="flex items-baseline gap-1">
+                  <span className="text-2xl font-bold text-white">{price}</span>
+                  <span className="text-gray-400">{period}</span>
+                </div>
+              )}
+            </div>
+          </div>
+          {link && (
+            <motion.div
+              className="p-2 rounded-lg"
+              style={{ backgroundColor: `${color}20` }}
+              whileHover={{ scale: 1.1 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <ExternalLink className="w-5 h-5 text-white" />
+            </motion.div>
+          )}
+        </div>
+
+        {/* Description */}
+        <p className="text-gray-300 mb-4 leading-relaxed">{description}</p>
+
+        {/* Features */}
+        {features.length > 0 && (
+          <div className="mb-4">
+            <div className="grid grid-cols-1 gap-2">
+              {features.slice(0, isExpanded ? features.length : 3).map((feature, index) => (
+                <motion.div
+                  key={index}
+                  className="flex items-center gap-2 text-gray-300 text-sm"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <div className={`w-2 h-2 rounded-full ${color}`} />
+                  {feature}
+                </motion.div>
+              ))}
+            </div>
+            {features.length > 3 && (
+              <motion.button
+                className="mt-3 text-sm text-blue-400 hover:text-blue-300 transition-colors"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsExpanded(!isExpanded);
+                }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {isExpanded ? 'Show Less' : `Show ${features.length - 3} More`}
+              </motion.button>
+            )}
+          </div>
+        )}
+
+        {/* Action Button */}
+        {link && (
+          <motion.button
+            className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-6 rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 active:scale-95"
+            whileHover={{ y: -2 }}
+            whileTap={{ y: 0 }}
+          >
+            <span className="flex items-center justify-center gap-2">
+              Get Started
+              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+            </span>
+          </motion.button>
+        )}
+
+        {/* Children Content */}
+        {children && (
+          <div className="mt-4 pt-4 border-t border-white/10">
+            {children}
+          </div>
+        )}
+      </div>
+
+      {/* Floating Particles */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-2xl">
+        {[...Array(5)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1 h-1 bg-white rounded-full"
+            style={{
+              left: `${20 + i * 15}%`,
+              top: `${30 + i * 10}%`
+            }}
+            animate={{
+              y: [0, -20, 0],
+              opacity: [0, 1, 0],
+              scale: [0, 1, 0]
+            }}
+            transition={{
+              duration: 3 + i,
+              repeat: Infinity,
+              delay: i * 0.5,
+              ease: "easeInOut"
+            }}
+          />
+        ))}
+      </div>
     </motion.div>
   );
 };
