@@ -154,7 +154,7 @@ export default function HomePage() {
       name: 'Quantum AI Cognitive Platform',
       description: 'Revolutionary quantum AI platform combining quantum computing with advanced cognitive AI for unprecedented problem-solving capabilities. First-to-market solution with 99.99% accuracy.',
       icon: <BrainIcon className="w-8 h-8" />,
-      price: '$1,299/month',
+      price: '$2,499/month',
       category: 'Quantum Computing & AI',
       variant: 'quantum-entanglement',
       link: 'https://ziontechgroup.com/quantum-ai-cognitive',
@@ -166,7 +166,7 @@ export default function HomePage() {
       name: 'Autonomous AI Factory',
       description: 'Complete autonomous manufacturing system powered by AI that runs 24/7 with zero human intervention. Industry 4.0 leader with 200% productivity increase.',
       icon: <FactoryIcon className="w-8 h-8" />,
-      price: '$2,499/month',
+      price: '$4,999/month',
       category: 'Manufacturing & Industry 4.0',
       variant: 'holographic-advanced',
       link: 'https://ziontechgroup.com/autonomous-ai-factory',
@@ -178,7 +178,7 @@ export default function HomePage() {
       name: 'Quantum Cybersecurity Fortress',
       description: 'Future-proof cybersecurity using quantum-resistant encryption and AI-powered threat detection. Protects against current and future quantum threats.',
       icon: <ShieldIcon className="w-8 h-8" />,
-      price: '$1,599/month',
+      price: '$1,999/month',
       category: 'Cybersecurity',
       variant: 'cyberpunk-holographic',
       link: 'https://ziontechgroup.com/quantum-cybersecurity',
@@ -190,39 +190,58 @@ export default function HomePage() {
       name: 'Biomedical AI Research Platform',
       description: 'Cutting-edge AI platform for biomedical research and drug discovery. Accelerates research timelines by 10x while maintaining scientific accuracy.',
       icon: <FlaskIcon className="w-8 h-8" />,
-      price: '$899/month',
+      price: '$1,299/month',
       category: 'Healthcare & Biotechnology',
       variant: 'neural-quantum',
       link: 'https://ziontechgroup.com/biomedical-ai-research',
       features: ['Drug discovery acceleration', 'Genomic analysis', 'Clinical trial optimization', 'Research automation'],
       marketSize: '$3.2B market',
       growthRate: '200% annual growth'
-    },
-    {
-      name: 'Quantum Finance Optimizer',
-      description: 'Revolutionary financial optimization platform using quantum computing for portfolio optimization and risk assessment. 50x faster calculations.',
-      icon: <DollarIcon className="w-8 h-8" />,
-      price: '$1,199/month',
-      category: 'Financial Technology',
-      variant: 'quantum-matrix',
-      link: 'https://ziontechgroup.com/quantum-finance-optimizer',
-      features: ['Portfolio optimization', 'Risk assessment', 'Real-time trading', 'Quantum algorithms'],
-      marketSize: '$2.1B market',
-      growthRate: '350% annual growth'
-    },
-    {
-      name: 'AI Space Exploration Platform',
-      description: 'AI-powered space exploration and satellite management platform. Enables autonomous space missions with real-time decision making.',
-      icon: <RocketIcon className="w-8 h-8" />,
-      price: '$1,899/month',
-      category: 'Aerospace & Space Technology',
-      variant: 'quantum-space',
-      link: 'https://ziontechgroup.com/ai-space-exploration',
-      features: ['Satellite management', 'Mission planning', 'Autonomous navigation', 'Real-time analytics'],
-      marketSize: '$1.8B market',
-      growthRate: '280% annual growth'
     }
   ];
+
+  // Enhanced contact section with better advertising
+  const enhancedContactSection = {
+    title: "Ready to Transform Your Business?",
+    subtitle: "Join 2,500+ companies already using our revolutionary micro SaaS services",
+    description: "Our team of experts is ready to help you implement the perfect solution for your business needs. Get started with a free consultation and see the difference our technology can make.",
+    benefits: [
+      "🎯 Personalized Solution Design",
+      "🚀 Rapid Implementation (1-6 weeks)",
+      "💡 Expert Technical Support",
+      "📊 Proven ROI Guarantee",
+      "🔄 Continuous Innovation Updates",
+      "🌍 Global 24/7 Support"
+    ],
+    cta: "Start Your Free Consultation",
+    ctaSecondary: "View Case Studies"
+  };
+
+  // Enhanced pricing transparency
+  const pricingTransparency = {
+    title: "Transparent Pricing, Proven Value",
+    subtitle: "No hidden fees, no surprises - just clear pricing and exceptional ROI",
+    pricingTiers: [
+      {
+        name: "Starter",
+        price: "$49-199",
+        description: "Perfect for small businesses and startups",
+        features: ["Core functionality", "Standard support", "30-day free trial", "Basic integrations"]
+      },
+      {
+        name: "Professional",
+        price: "$199-999",
+        description: "Ideal for growing businesses and teams",
+        features: ["Advanced features", "Priority support", "Custom integrations", "Analytics dashboard"]
+      },
+      {
+        name: "Enterprise",
+        price: "$999-4,999",
+        description: "Built for large organizations and complex needs",
+        features: ["Full feature set", "24/7 dedicated support", "Custom development", "White-label options"]
+      }
+    ]
+  };
 
   const emergingTechServices = [
     {
@@ -935,92 +954,154 @@ export default function HomePage() {
 
       {/* Contact Section */}
       <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-6xl mx-auto">
           <UltraFuturisticCard variant="quantum" className="p-12">
-            <h2 className="text-4xl font-bold text-white mb-6">
-              Ready to Transform Your Business?
-            </h2>
-            <p className="text-xl text-gray-300 mb-8">
-              Join thousands of companies already leveraging our revolutionary micro SaaS services 
-              to achieve unprecedented growth and innovation.
-            </p>
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Ready to Transform Your Business?
+              </h2>
+              <p className="text-xl text-gray-300 mb-4">
+                Join <span className="text-cyan-400 font-bold">2,500+ companies</span> already leveraging our revolutionary micro SaaS services 
+                to achieve unprecedented growth and innovation.
+              </p>
+              <p className="text-lg text-gray-400">
+                Our team of experts is ready to help you implement the perfect solution for your business needs.
+              </p>
+            </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 text-left">
-              <div className="flex items-center">
-                <Phone className="w-5 h-5 text-cyan-400 mr-3" />
-                <div>
-                  <div className="text-white font-semibold">Phone</div>
-                  <div className="text-gray-400">{contactInfo.mobile}</div>
-                  <div className="text-xs text-gray-500">Available 24/7</div>
+            {/* Enhanced Contact Information */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+              <div className="text-center p-6 bg-black/20 rounded-lg border border-cyan-500/30">
+                <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Phone className="w-8 h-8 text-white" />
                 </div>
+                <div className="text-white font-bold text-lg mb-2">Phone Support</div>
+                <div className="text-cyan-400 font-semibold text-xl mb-2">{contactInfo.mobile}</div>
+                <div className="text-gray-400 text-sm">Available 24/7</div>
+                <div className="text-green-400 text-xs mt-2">✓ Instant Response</div>
               </div>
-              <div className="flex items-center">
-                <Mail className="w-5 h-5 text-cyan-400 mr-3" />
-                <div>
-                  <div className="text-white font-semibold">Email</div>
-                  <div className="text-gray-400">{contactInfo.email}</div>
-                  <div className="text-xs text-gray-500">Response within 2 hours</div>
+              
+              <div className="text-center p-6 bg-black/20 rounded-lg border border-purple-500/30">
+                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Mail className="w-8 h-8 text-white" />
                 </div>
+                <div className="text-white font-bold text-lg mb-2">Email Support</div>
+                <div className="text-purple-400 font-semibold text-lg mb-2">{contactInfo.email}</div>
+                <div className="text-gray-400 text-sm">Response within 2 hours</div>
+                <div className="text-green-400 text-xs mt-2">✓ Expert Team</div>
               </div>
-              <div className="flex items-center">
-                <MapPin className="w-5 h-5 text-cyan-400 mr-3" />
-                <div>
-                  <div className="text-white font-semibold">Address</div>
-                  <div className="text-gray-400">{contactInfo.address}</div>
-                  <div className="text-xs text-gray-500">Global headquarters</div>
+              
+              <div className="text-center p-6 bg-black/20 rounded-lg border border-green-500/30">
+                <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <MapPin className="w-8 h-8 text-white" />
+                </div>
+                <div className="text-white font-bold text-lg mb-2">Global Headquarters</div>
+                <div className="text-green-400 font-semibold text-sm mb-2">{contactInfo.address}</div>
+                <div className="text-gray-400 text-sm">Strategic location</div>
+                <div className="text-green-400 text-xs mt-2">✓ Worldwide Support</div>
+              </div>
+            </div>
+
+            {/* Enhanced Benefits Section */}
+            <div className="bg-gradient-to-r from-black/40 to-black/20 rounded-lg p-8 mb-12 border border-cyan-500/20">
+              <h3 className="text-2xl font-bold text-white mb-6 text-center">
+                Why Choose Zion Tech Group?
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="flex items-start">
+                  <div className="w-8 h-8 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full flex items-center justify-center mr-3 mt-1">
+                    <Check className="w-4 h-4 text-white" />
+                  </div>
+                  <div>
+                    <div className="text-white font-semibold">500+ Revolutionary Services</div>
+                    <div className="text-gray-400 text-sm">Cutting-edge micro SaaS solutions</div>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center mr-3 mt-1">
+                    <Check className="w-4 h-4 text-white" />
+                  </div>
+                  <div>
+                    <div className="text-white font-semibold">99.99% Uptime Guarantee</div>
+                    <div className="text-gray-400 text-sm">Enterprise-grade reliability</div>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center mr-3 mt-1">
+                    <Check className="w-4 h-4 text-white" />
+                  </div>
+                  <div>
+                    <div className="text-white font-semibold">30-Day Free Trials</div>
+                    <div className="text-gray-400 text-sm">Risk-free testing</div>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-8 h-8 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-full flex items-center justify-center mr-3 mt-1">
+                    <Check className="w-4 h-4 text-white" />
+                  </div>
+                  <div>
+                    <div className="text-white font-semibold">24/7 AI Support</div>
+                    <div className="text-gray-400 text-sm">Round-the-clock assistance</div>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-8 h-8 bg-gradient-to-r from-red-500 to-pink-600 rounded-full flex items-center justify-center mr-3 mt-1">
+                    <Check className="w-4 h-4 text-white" />
+                  </div>
+                  <div>
+                    <div className="text-white font-semibold">Starting from $49/month</div>
+                    <div className="text-gray-400 text-sm">Affordable innovation</div>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-8 h-8 bg-gradient-to-r from-emerald-500 to-green-600 rounded-full flex items-center justify-center mr-3 mt-1">
+                    <Check className="w-4 h-4 text-white" />
+                  </div>
+                  <div>
+                    <div className="text-white font-semibold">2500%+ Average ROI</div>
+                    <div className="text-gray-400 text-sm">Proven results</div>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div className="bg-black/30 rounded-lg p-6 mb-8">
-              <h3 className="text-xl font-bold text-white mb-4">Why Choose Zion Tech Group?</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-300">
-                <div className="flex items-center">
-                  <Check className="w-4 h-4 text-green-400 mr-2" />
-                  500+ Revolutionary Micro SaaS Services
-                </div>
-                <div className="flex items-center">
-                  <Check className="w-4 h-4 text-green-400 mr-2" />
-                  99.99% Uptime Guarantee
-                </div>
-                <div className="flex items-center">
-                  <Check className="w-4 h-4 text-green-400 mr-2" />
-                  30-Day Free Trials
-                </div>
-                <div className="flex items-center">
-                  <Check className="w-4 h-4 text-green-400 mr-2" />
-                  24/7 AI Support
-                </div>
-                <div className="flex items-center">
-                  <Check className="w-4 h-4 text-green-400 mr-2" />
-                  Starting from $49/month
-                </div>
-                <div className="flex items-center">
-                  <Check className="w-4 h-4 text-green-400 mr-2" />
-                  2500%+ Average ROI
-                </div>
+            {/* Enhanced CTA Section */}
+            <div className="text-center">
+              <div className="mb-6">
+                <p className="text-lg text-gray-300 mb-4">
+                  Get started with a <span className="text-cyan-400 font-bold">free consultation</span> and see the difference our technology can make.
+                </p>
+                <p className="text-sm text-gray-400">
+                  No commitment required • Expert guidance • Custom solution design
+                </p>
               </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                href="/contact" 
-                variant="primary" 
-                size="lg"
-                className="text-lg px-8 py-4"
-              >
-                Get Started Today
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-              <Button 
-                href="/services" 
-                variant="secondary" 
-                size="lg"
-                className="text-lg px-8 py-4"
-              >
-                View All Services
-                <ChevronRight className="ml-2 w-5 h-5" />
-              </Button>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button 
+                  href="/contact" 
+                  variant="primary" 
+                  size="lg"
+                  className="text-lg px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700"
+                >
+                  Start Free Consultation
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+                <Button 
+                  href="/services" 
+                  variant="secondary" 
+                  size="lg"
+                  className="text-lg px-8 py-4 border-2 border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-white"
+                >
+                  Explore All Services
+                  <ChevronRight className="ml-2 w-5 h-5" />
+                </Button>
+              </div>
+              
+              <div className="mt-6 text-center">
+                <p className="text-sm text-gray-400">
+                  🚀 <span className="text-cyan-400">500+ Services</span> • 💰 <span className="text-green-400">Free Trials</span> • 🌍 <span className="text-purple-400">Global Support</span>
+                </p>
+              </div>
             </div>
           </UltraFuturisticCard>
         </div>

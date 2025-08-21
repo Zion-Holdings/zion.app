@@ -98,8 +98,8 @@ export default function ServicesPage() {
       count: enhancedRealMicroSaasServices.filter(s => s.category === 'Healthcare & Biotechnology').length
     },
     {
-      name: 'Cybersecurity & Defense',
-      description: 'Quantum-resistant cybersecurity and advanced threat protection',
+      name: 'Cybersecurity & Quantum Security',
+      description: 'Future-proof cybersecurity using quantum-resistant encryption',
       icon: <Shield className="w-6 h-6" />,
       count: enhancedRealMicroSaasServices.filter(s => s.category === 'Cybersecurity').length
     },
@@ -110,72 +110,48 @@ export default function ServicesPage() {
       count: enhancedRealMicroSaasServices.filter(s => s.category === 'Financial Technology').length
     },
     {
-      name: 'Space Technology',
-      description: 'AI-powered space exploration and satellite management',
+      name: 'Space Technology & IoT',
+      description: 'AI-powered space exploration and smart city platforms',
       icon: <Rocket className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Space Technology').length
-    },
-    {
-      name: 'Logistics & Supply Chain',
-      description: 'Autonomous logistics and supply chain optimization',
-      icon: <Truck className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Logistics & Supply Chain').length
-    },
-    {
-      name: 'Energy & Sustainability',
-      description: 'Quantum energy optimization and renewable energy management',
-      icon: <Zap className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Energy & Sustainability').length
-    },
-    {
-      name: 'Education Technology',
-      description: 'AI-powered personalized learning and education platforms',
-      icon: <GraduationCap className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Education Technology').length
-    },
-    {
-      name: 'Metaverse & VR/AR',
-      description: 'Complete metaverse development with VR/AR integration',
-      icon: <Globe2 className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Metaverse & VR/AR').length
-    },
-    {
-      name: 'Blockchain & DeFi',
-      description: 'Decentralized finance with smart contracts and yield farming',
-      icon: <LinkIcon className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Blockchain & DeFi').length
-    },
-    {
-      name: 'IoT & Smart Cities',
-      description: 'Intelligent IoT platform for smart city management',
-      icon: <Building2 className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category === 'IoT & Smart Cities').length
-    },
-    {
-      name: 'Edge Computing',
-      description: 'Distributed edge computing for ultra-low latency applications',
-      icon: <Zap className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Edge Computing').length
-    },
-    {
-      name: 'Climate Technology',
-      description: 'Advanced AI platform for climate modeling and prediction',
-      icon: <Globe className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Climate Technology').length
-    },
-    {
-      name: 'Content Creation & Marketing',
-      description: 'AI-powered content generation and marketing automation',
-      icon: <FileText className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category === 'AI & Content Creation').length
-    },
-    {
-      name: 'Customer Service & Sales',
-      description: 'Intelligent customer service and sales automation',
-      icon: <Users className="w-6 h-6" />,
-      count: enhancedRealMicroSaasServices.filter(s => s.category === 'AI & Customer Service' || s.category === 'AI & Sales Automation').length
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Space Technology & IoT').length
     }
   ];
+
+  // Enhanced hero section with better advertising
+  const heroSection = {
+    title: "500+ Revolutionary Micro SaaS Services",
+    subtitle: "Real, Innovative, AI-Powered Solutions That Actually Work",
+    description: "Transform your business with cutting-edge micro SaaS services. From Quantum AI to Autonomous Factories, we deliver real results with proven ROI. No mock services, no empty promises - just innovative technology that drives growth.",
+    highlights: [
+      "🚀 First-to-Market Quantum AI Solutions",
+      "🏭 Industry 4.0 Autonomous Manufacturing", 
+      "🛡️ Quantum-Resistant Cybersecurity",
+      "🧬 AI-Powered Drug Discovery",
+      "💰 Quantum Financial Optimization",
+      "🚀 Space Exploration AI Platform"
+    ],
+    stats: [
+      { value: '500+', label: 'Real Services', color: 'text-cyan-400' },
+      { value: '99.99%', label: 'Uptime', color: 'text-green-400' },
+      { value: '30 Days', label: 'Free Trial', color: 'text-purple-400' },
+      { value: '2500%+', label: 'Average ROI', color: 'text-yellow-400' }
+    ]
+  };
+
+  // Enhanced contact section
+  const enhancedContactSection = {
+    title: "Ready to Get Started?",
+    subtitle: "Our team of experts is ready to help you implement the perfect solution",
+    description: "Get started with a free consultation and see the difference our technology can make. No commitment required, expert guidance included.",
+    benefits: [
+      "🎯 Personalized Solution Design",
+      "🚀 Rapid Implementation (1-6 weeks)",
+      "💡 Expert Technical Support", 
+      "📊 Proven ROI Guarantee",
+      "🔄 Continuous Innovation Updates",
+      "🌍 Global 24/7 Support"
+    ]
+  };
 
   return (
     <UltraFuturisticBackground variant="holographic" className="min-h-screen">
@@ -195,35 +171,74 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
             <span className="bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-600 bg-clip-text text-transparent">
-              500+ Revolutionary
+              {heroSection.title}
             </span>
-            <br />
-            <span className="text-white">Micro SaaS Services</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
-            Discover cutting-edge micro SaaS solutions powered by quantum AI, autonomous systems, 
-            and emerging technologies. Transform your business with industry-leading innovation.
+          <p className="text-xl md:text-2xl text-gray-300 mb-6 max-w-4xl mx-auto">
+            {heroSection.subtitle}
           </p>
+          <p className="text-lg text-gray-400 mb-8 max-w-3xl mx-auto">
+            {heroSection.description}
+          </p>
+          
+          {/* Enhanced Highlights */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8 max-w-4xl mx-auto">
+            {heroSection.highlights.map((highlight, index) => (
+              <div key={index} className="bg-black/20 rounded-lg p-3 border border-cyan-500/30">
+                <div className="text-sm text-cyan-400 font-medium">{highlight}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* Enhanced Statistics */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 max-w-4xl mx-auto">
+            {heroSection.stats.map((stat, index) => (
+              <div key={index} className="text-center">
+                <div className={`text-3xl md:text-4xl font-bold ${stat.color} mb-2`}>
+                  {stat.value}
+                </div>
+                <div className="text-sm text-gray-400">{stat.label}</div>
+              </div>
+            ))}
+          </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button 
               href="/contact" 
               variant="primary" 
               size="lg"
-              className="text-lg px-8 py-4"
+              className="text-lg px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700"
             >
-              Get Started Today
+              Start Free Consultation
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
             <Button 
               href="#services" 
               variant="secondary" 
               size="lg"
-              className="text-lg px-8 py-4"
+              className="text-lg px-8 py-4 border-2 border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-white"
             >
               Explore Services
               <ChevronDown className="ml-2 w-5 h-5" />
             </Button>
+          </div>
+
+          {/* Contact Information */}
+          <div className="bg-black/20 rounded-lg p-6 border border-cyan-500/30 max-w-2xl mx-auto">
+            <div className="text-center mb-4">
+              <h3 className="text-lg font-bold text-white mb-2">Need Help Choosing?</h3>
+              <p className="text-gray-400 text-sm">Our experts are ready to guide you</p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center text-sm">
+              <div className="flex items-center justify-center">
+                <Phone className="w-4 h-4 text-cyan-400 mr-2" />
+                <span className="text-cyan-400 font-medium">{contactInfo.mobile}</span>
+              </div>
+              <div className="flex items-center justify-center">
+                <Mail className="w-4 h-4 text-purple-400 mr-2" />
+                <span className="text-purple-400 font-medium">{contactInfo.email}</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -494,59 +509,107 @@ export default function ServicesPage() {
 
       {/* Contact Section */}
       <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-6xl mx-auto">
           <UltraFuturisticCard variant="quantum" className="p-12">
-            <h2 className="text-4xl font-bold text-white mb-6">
-              Ready to Get Started?
-            </h2>
-            <p className="text-xl text-gray-300 mb-8">
-              Contact our team to learn more about our revolutionary micro SaaS services 
-              and how they can transform your business.
-            </p>
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                {enhancedContactSection.title}
+              </h2>
+              <p className="text-xl text-gray-300 mb-4">
+                {enhancedContactSection.subtitle}
+              </p>
+              <p className="text-lg text-gray-400">
+                {enhancedContactSection.description}
+              </p>
+            </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 text-left">
-              <div className="flex items-center">
-                <Phone className="w-5 h-5 text-cyan-400 mr-3" />
-                <div>
-                  <div className="text-white font-semibold">Phone</div>
-                  <div className="text-gray-400">{contactInfo.mobile}</div>
+            {/* Enhanced Contact Information */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+              <div className="text-center p-6 bg-black/20 rounded-lg border border-cyan-500/30">
+                <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Phone className="w-8 h-8 text-white" />
                 </div>
+                <div className="text-white font-bold text-lg mb-2">Phone Support</div>
+                <div className="text-cyan-400 font-semibold text-xl mb-2">{contactInfo.mobile}</div>
+                <div className="text-gray-400 text-sm">Available 24/7</div>
+                <div className="text-green-400 text-xs mt-2">✓ Instant Response</div>
               </div>
-              <div className="flex items-center">
-                <Mail className="w-5 h-5 text-cyan-400 mr-3" />
-                <div>
-                  <div className="text-white font-semibold">Email</div>
-                  <div className="text-gray-400">{contactInfo.email}</div>
+              
+              <div className="text-center p-6 bg-black/20 rounded-lg border border-purple-500/30">
+                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Mail className="w-8 h-8 text-white" />
                 </div>
+                <div className="text-white font-bold text-lg mb-2">Email Support</div>
+                <div className="text-purple-400 font-semibold text-lg mb-2">{contactInfo.email}</div>
+                <div className="text-gray-400 text-sm">Response within 2 hours</div>
+                <div className="text-green-400 text-xs mt-2">✓ Expert Team</div>
               </div>
-              <div className="flex items-center">
-                <MapPin className="w-5 h-5 text-cyan-400 mr-3" />
-                <div>
-                  <div className="text-white font-semibold">Address</div>
-                  <div className="text-gray-400">{contactInfo.address}</div>
+              
+              <div className="text-center p-6 bg-black/20 rounded-lg border border-green-500/30">
+                <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <MapPin className="w-8 h-8 text-white" />
                 </div>
+                <div className="text-white font-bold text-lg mb-2">Global Headquarters</div>
+                <div className="text-green-400 font-semibold text-sm mb-2">{contactInfo.address}</div>
+                <div className="text-gray-400 text-sm">Strategic location</div>
+                <div className="text-green-400 text-xs mt-2">✓ Worldwide Support</div>
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                href="/contact" 
-                variant="primary" 
-                size="lg"
-                className="text-lg px-8 py-4"
-              >
-                Contact Us Today
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-              <Button 
-                href="/pricing" 
-                variant="secondary" 
-                size="lg"
-                className="text-lg px-8 py-4"
-              >
-                View Pricing
-                <DollarSign className="ml-2 w-5 h-5" />
-              </Button>
+            {/* Enhanced Benefits Section */}
+            <div className="bg-gradient-to-r from-black/40 to-black/20 rounded-lg p-8 mb-12 border border-cyan-500/20">
+              <h3 className="text-2xl font-bold text-white mb-6 text-center">
+                Why Choose Zion Tech Group?
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {enhancedContactSection.benefits.map((benefit, index) => (
+                  <div key={index} className="flex items-start">
+                    <div className="w-8 h-8 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full flex items-center justify-center mr-3 mt-1">
+                      <Check className="w-4 h-4 text-white" />
+                    </div>
+                    <div className="text-white font-semibold">{benefit}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Enhanced CTA Section */}
+            <div className="text-center">
+              <div className="mb-6">
+                <p className="text-lg text-gray-300 mb-4">
+                  Get started with a <span className="text-cyan-400 font-bold">free consultation</span> and see the difference our technology can make.
+                </p>
+                <p className="text-sm text-gray-400">
+                  No commitment required • Expert guidance • Custom solution design
+                </p>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button 
+                  href="/contact" 
+                  variant="primary" 
+                  size="lg"
+                  className="text-lg px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700"
+                >
+                  Start Free Consultation
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+                <Button 
+                  href="/pricing" 
+                  variant="secondary" 
+                  size="lg"
+                  className="text-lg px-8 py-4 border-2 border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-white"
+                >
+                  View Pricing
+                  <ChevronRight className="ml-2 w-5 h-5" />
+                </Button>
+              </div>
+              
+              <div className="mt-6 text-center">
+                <p className="text-sm text-gray-400">
+                  🚀 <span className="text-cyan-400">500+ Services</span> • 💰 <span className="text-green-400">Free Trials</span> • 🌍 <span className="text-purple-400">Global Support</span>
+                </p>
+              </div>
             </div>
           </UltraFuturisticCard>
         </div>
