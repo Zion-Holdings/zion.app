@@ -4,7 +4,7 @@ import {
   Phone, Mail, MapPin, Globe, 
   Twitter, Linkedin, Facebook, Instagram, Github, Youtube,
   ArrowRight, Rocket, Brain, Cpu, Shield,
-  Star, Users, TrendingUp, Zap, Target, Microscope, Server
+  Star, Users, TrendingUp, Zap, Target, Microscope, Server, DollarSign, Network, Atom, Palette, BarChart3, ShieldCheck
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -17,89 +17,132 @@ const contactInfo = {
 
 const serviceCategories = [
   {
-    title: 'All Services',
+    name: 'AI & Consciousness',
+    icon: <Brain className="w-5 h-5" />,
+    color: 'from-violet-500 to-purple-600',
     services: [
-      { name: 'Comprehensive Services Showcase', href: '/comprehensive-services-showcase-2025' },
-      { name: 'View All Services', href: '/comprehensive-services-showcase-2025' },
-      { name: 'Service Categories', href: '/comprehensive-services-showcase-2025#categories' },
-      { name: 'Pricing Comparison', href: '/comprehensive-services-showcase-2025#pricing' }
-    ]
-  },
-  {
-    title: 'AI & Consciousness',
-    icon: Brain,
-    services: [
+      { name: 'AI Content Factory Pro', href: '/ai-content-factory-pro' },
+      { name: 'AI Autonomous Decision Engine', href: '/ai-autonomous-decision-engine' },
       { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029' },
-      { name: 'Quantum AI Fusion', href: '/quantum-ai-fusion' },
-      { name: 'Multimodal AI Orchestrator', href: '/multimodal-ai-orchestrator' },
-      { name: 'AI Autonomous Ecosystem', href: '/ai-autonomous-ecosystem' },
-      { name: 'AI Ethics & Governance', href: '/ai-ethics-governance' }
+      { name: 'Quantum AI Fusion', href: '/quantum-ai-fusion' }
     ]
   },
   {
-    title: 'Quantum & Emerging Tech',
-    icon: Cpu,
+    name: 'Financial Technology',
+    icon: <DollarSign className="w-5 h-5" />,
+    color: 'from-green-500 to-emerald-600',
     services: [
+      { name: 'Neural Finance AI', href: '/neural-finance-ai' },
+      { name: 'Quantum CRM Suite', href: '/quantum-crm-suite' },
+      { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence' },
+      { name: 'Quantum Risk Financial Manager', href: '/quantum-risk-financial-manager' }
+    ]
+  },
+  {
+    name: 'Healthcare & Biotech',
+    icon: <Microscope className="w-5 h-5" />,
+    color: 'from-red-500 to-pink-600',
+    services: [
+      { name: 'AI Healthcare Diagnostics Pro', href: '/ai-healthcare-diagnostics-pro' },
+      { name: 'Biotech AI Research Platform', href: '/biotech-ai-research-platform' },
+      { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics' },
+      { name: 'Biotech AI', href: '/biotech-ai' }
+    ]
+  },
+  {
+    name: 'Education & Learning',
+    icon: <Users className="w-5 h-5" />,
+    color: 'from-yellow-500 to-orange-600',
+    services: [
+      { name: 'AI Education Platform Pro', href: '/ai-education-platform-pro' },
+      { name: 'AI Education Platform', href: '/ai-education-platform' }
+    ]
+  },
+  {
+    name: 'Energy & Sustainability',
+    icon: <Zap className="w-5 h-5" />,
+    color: 'from-orange-500 to-red-600',
+    services: [
+      { name: 'Quantum Energy Optimization', href: '/quantum-energy-optimization' },
+      { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform' }
+    ]
+  },
+  {
+    name: 'Robotics & Automation',
+    icon: <Rocket className="w-5 h-5" />,
+    color: 'from-pink-500 to-purple-600',
+    services: [
+      { name: 'AI Autonomous Robotics Platform', href: '/ai-autonomous-robotics-platform' },
+      { name: 'Industrial Automation AI', href: '/industrial-automation-ai' }
+    ]
+  },
+  {
+    name: 'Supply Chain & Logistics',
+    icon: <Network className="w-5 h-5" />,
+    color: 'from-indigo-500 to-blue-600',
+    services: [
+      { name: 'Quantum Supply Chain Optimizer', href: '/quantum-supply-chain-optimizer' },
+      { name: 'AI Logistics Platform', href: '/ai-logistics-platform' }
+    ]
+  },
+  {
+    name: 'Quantum & Emerging Tech',
+    icon: <Atom className="w-5 h-5" />,
+    color: 'from-indigo-500 to-blue-600',
+    services: [
+      { name: 'Quantum Cybersecurity Platform', href: '/quantum-cybersecurity-platform' },
       { name: 'Space Mining Platform', href: '/space-mining-platform' },
       { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing' },
-      { name: 'Brain-Computer Interface', href: '/brain-computer-interface' },
-      { name: 'Quantum Energy Platform', href: '/quantum-energy-platform' },
-      { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai' }
+      { name: 'Brain-Computer Interface', href: '/brain-computer-interface' }
     ]
   },
   {
-    title: 'Enterprise IT',
-    icon: Shield,
+    name: 'Enterprise IT',
+    icon: <Shield className="w-5 h-5" />,
+    color: 'from-blue-500 to-cyan-600',
     services: [
       { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure' },
-      { name: 'Edge Computing Orchestrator', href: '/edge-computing-orchestrator' },
-      { name: 'Zero Trust Security Platform', href: '/zero-trust-security-platform' },
-      { name: 'Blockchain Enterprise Platform', href: '/blockchain-enterprise-platform' },
-      { name: 'AI-Powered DevOps', href: '/ai-powered-devops' }
+      { name: 'Edge Computing Orchestrator', href: '/edge-computing-orchestration' },
+      { name: 'Zero Trust Security Platform', href: '/zero-trust-network-architecture' },
+      { name: 'Blockchain Enterprise Platform', href: '/blockchain-infrastructure-platform' }
     ]
   },
   {
-    title: 'Advanced Micro SAAS',
-    icon: Target,
+    name: 'Space & Metaverse',
+    icon: <Star className="w-5 h-5" />,
+    color: 'from-purple-500 to-pink-600',
     services: [
-      { name: 'CustomerSuccess AI Pro', href: '/customer-success-ai-pro' },
-      { name: 'QuantumSupply Chain Optimizer', href: '/quantum-supply-chain-optimizer' },
-      { name: 'BlockID Verify Pro', href: '/blockid-verify-pro' },
-      { name: 'HR Analytics AI Suite', href: '/hr-analytics-ai-suite' },
-      { name: 'QuantumRisk Financial Manager', href: '/quantum-risk-financial-manager' }
+      { name: 'Space Technology AI Platform', href: '/space-technology-ai-platform' },
+      { name: 'Metaverse Development Studio Pro', href: '/metaverse-development-studio-pro' },
+      { name: 'Virtual Event Hologram Platform', href: '/virtual-event-hologram-platform' },
+      { name: 'Space Colonization Services', href: '/space-colonization-services' }
     ]
   },
   {
-    title: 'Advanced AI Services',
-    icon: Brain,
+    name: 'Content & Marketing',
+    icon: <Palette className="w-5 h-5" />,
+    color: 'from-pink-500 to-rose-600',
     services: [
-      { name: 'AI Consciousness Evolution Platform', href: '/ai-consciousness-evolution-platform' },
-      { name: 'Quantum AI Hybrid Computing', href: '/quantum-ai-hybrid-computing-platform' },
-      { name: 'Multimodal AI Orchestrator Pro', href: '/multimodal-ai-orchestrator-pro' },
-      { name: 'AI Autonomous Ecosystem Platform', href: '/ai-autonomous-ecosystem-platform' },
-      { name: 'AI Ethics & Governance Platform', href: '/ai-ethics-governance-platform' }
+      { name: 'AI Creativity Studio', href: '/ai-creativity-studio' },
+      { name: 'Marketing AI Platform', href: '/marketing-ai-platform' }
     ]
   },
   {
-    title: 'Advanced IT Services',
-    icon: Server,
+    name: 'Sales & CRM',
+    icon: <BarChart3 className="w-5 h-5" />,
+    color: 'from-emerald-500 to-teal-600',
     services: [
-      { name: 'Quantum Cloud Infrastructure Pro', href: '/quantum-cloud-infrastructure-platform' },
-      { name: 'Edge Computing Orchestrator Pro', href: '/edge-computing-orchestrator-platform' },
-      { name: 'Zero Trust Security Pro', href: '/zero-trust-security-platform' },
-      { name: 'Blockchain Enterprise Platform Pro', href: '/blockchain-enterprise-platform' },
-      { name: 'AI DevOps Platform Pro', href: '/ai-devops-platform' }
+      { name: 'AI Sales Automation', href: '/ai-sales-automation' },
+      { name: 'Customer Intelligence Platform', href: '/customer-intelligence-platform' }
     ]
   },
   {
-    title: 'Emerging Technologies',
-    icon: Microscope,
+    name: 'Cybersecurity',
+    icon: <ShieldCheck className="w-5 h-5" />,
+    color: 'from-red-500 to-orange-600',
     services: [
-      { name: 'Space Mining Platform Pro', href: '/space-mining-platform' },
-      { name: 'Quantum Bio-Computing Pro', href: '/quantum-bio-computing-platform' },
-      { name: 'Brain-Computer Interface Pro', href: '/brain-computer-interface-platform' },
-      { name: 'Quantum Energy Platform Pro', href: '/quantum-energy-platform' },
-      { name: 'Autonomous Vehicle AI Pro', href: '/autonomous-vehicle-ai-platform' }
+      { name: 'Zero Trust Security Platform', href: '/zero-trust-network-architecture' },
+      { name: 'AI Threat Detection', href: '/ai-threat-detection' }
     ]
   }
 ];
@@ -196,7 +239,7 @@ export default function EnhancedFooter() {
                   <div key={index} className="space-y-3">
                     <div className="flex items-center space-x-2">
                       <category.icon className="w-5 h-5 text-cyan-400" />
-                      <h5 className="text-sm font-medium text-white">{category.title}</h5>
+                      <h5 className="text-sm font-medium text-white">{category.name}</h5>
                     </div>
                     <ul className="space-y-2">
                       {category.services.slice(0, 3).map((service, serviceIndex) => (
@@ -277,7 +320,7 @@ export default function EnhancedFooter() {
               <div key={index} className="space-y-3">
                 <div className="flex items-center space-x-2">
                   <category.icon className="w-5 h-5 text-cyan-400" />
-                  <h5 className="text-sm font-medium text-white">{category.title}</h5>
+                  <h5 className="text-sm font-medium text-white">{category.name}</h5>
                 </div>
                 <ul className="space-y-2">
                   {category.services.slice(0, 3).map((service, serviceIndex) => (
