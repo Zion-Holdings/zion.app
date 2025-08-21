@@ -6,8 +6,9 @@ import {
   Wifi, Package, Bot, Car, Building2, DollarSign, 
   Monitor, Users, Cpu, Zap, Star, TrendingUp, Grid, Lock, Truck, Gamepad2, Factory, List, ArrowRight
 } from 'lucide-react';
-import EnhancedQuantumBackground from '../components/ui/EnhancedQuantumBackground';
+import UltraAdvancedFuturisticBackgroundV2 from '../components/ui/UltraAdvancedFuturisticBackgroundV2';
 import UltraFuturisticServiceCard from '../components/ui/UltraFuturisticServiceCard';
+import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { innovativeMicroSaasServices } from '../data/innovative-micro-saas-services';
 import { extraServices } from '../data/extra-services';
@@ -15,6 +16,8 @@ import { additionalEnhancedServices } from '../data/additional-real-services';
 import { emergingTechServices } from '../data/emerging-tech-services';
 import { nextGenAIServices } from '../data/next-gen-ai-services';
 import { comprehensiveITServices } from '../data/comprehensive-it-services';
+import { advancedITServices } from '../data/advanced-it-services';
+import { innovativeMicroSaasV2 } from '../data/innovative-micro-saas-v2';
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -30,7 +33,9 @@ export default function ServicesPage() {
     ...additionalEnhancedServices,
     ...emergingTechServices,
     ...nextGenAIServices,
-    ...comprehensiveITServices
+    ...comprehensiveITServices,
+    ...advancedITServices,
+    ...innovativeMicroSaasV2
   ];
 
   // Enhanced categories with icons and better organization
@@ -117,10 +122,11 @@ export default function ServicesPage() {
   };
 
   return (
-    <EnhancedQuantumBackground intensity={1.0} variant="holographic">
+    <UltraAdvancedFuturisticBackgroundV2>
+      <UltraAdvancedNavigation />
       <Head>
-        <title>500+ Revolutionary Services - Zion Tech Group | AI, Quantum & IT Solutions</title>
-        <meta name="description" content="Explore 500+ revolutionary AI, quantum computing, and IT services. From neural interfaces to enterprise solutions. Contact: +1 302 464 0950" />
+        <title>600+ Revolutionary Services - Zion Tech Group | AI, Quantum & IT Solutions</title>
+        <meta name="description" content="Explore 600+ revolutionary AI, quantum computing, and IT services. From neural interfaces to enterprise solutions. Contact: +1 302 464 0950" />
         <meta name="keywords" content="AI services, quantum computing, IT services, micro SaaS, cybersecurity, cloud migration, neural interface" />
         <meta name="author" content="Zion Tech Group" />
         <meta name="robots" content="index, follow" />
@@ -140,7 +146,7 @@ export default function ServicesPage() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-6">
-              500+ Revolutionary Services
+              600+ Revolutionary Services
             </h1>
             <p className="text-lg text-gray-400 max-w-3xl mx-auto">
               Discover cutting-edge AI, quantum computing, and IT solutions that redefine what's possible
@@ -336,6 +342,6 @@ export default function ServicesPage() {
           </motion.div>
         </div>
       </section>
-    </EnhancedQuantumBackground>
+    </UltraAdvancedFuturisticBackgroundV2>
   );
 }
