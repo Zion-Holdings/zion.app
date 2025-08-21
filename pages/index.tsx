@@ -231,23 +231,19 @@ export default function HomePage() {
         />
       </Head>
 
-      <UltraFuturisticBackground2029>
         {/* Ultra Advanced Navigation */}
         <UltraFuturisticNavigation2030 />
 
         {/* Ultra Futuristic Hero Section 2029 */}
         <UltraFuturisticHero2029 />
 
-<<<<<<< HEAD
-        {/* Featured Services Section */}
-=======
-                            {/* Revolutionary 2027 Hero Section */}
-                    <Revolutionary2027Hero />
+        {/* Revolutionary 2027 Hero Section */}
+        <Revolutionary2027Hero />
 
-                    {/* Ultra Futuristic 2029 Service Showcase */}
-                    <UltraFuturisticServiceShowcase2029 services={[
-                      ...futuristicAIServices2029
-                    ]} />
+        {/* Ultra Futuristic 2029 Service Showcase */}
+        <UltraFuturisticServiceShowcase2029 services={[
+          ...futuristicAIServices2029
+        ]} />
 
         {/* Revolutionary 2027 Services Showcase */}
         <Revolutionary2027ServicesShowcase />
@@ -267,7 +263,6 @@ export default function HomePage() {
         />
 
         {/* Contact Information Section */}
->>>>>>> cursor/enhance-app-with-new-services-and-futuristic-design-9755
         <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/10 to-cyan-900/10"></div>
           
@@ -458,15 +453,9 @@ export default function HomePage() {
             </motion.div>
           </div>
         </section>
-      </UltraFuturisticBackground2029>
       
       {/* Footer */}
-<<<<<<< HEAD
-      <UltraFuturisticFooter2029 />
-    </UltraFuturisticBackground2029>
-=======
               <UltraFuturisticFooter2030 />
-    </>
->>>>>>> cursor/enhance-app-with-new-services-and-futuristic-design-9755
+    </UltraFuturisticBackground2029>
   );
 }
