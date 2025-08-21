@@ -8,9 +8,7 @@ import {
   Target, Microscope, Atom, Database,
   Lock, Cloud, BarChart3, Settings,
   Eye, Code, Palette, Layers,
-  Network, Server, ShieldCheck, ZapIcon,
-  GlobeIcon, StarIcon, TrendingUpIcon, UsersIcon,
-  CheckCircleIcon, ArrowRightIcon, CpuIcon,
+  Network, Server, ShieldCheck,
   DollarSign, Phone, ArrowRight
 } from 'lucide-react';
 
