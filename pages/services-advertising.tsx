@@ -87,6 +87,49 @@ export default function ServicesAdvertisingPage() {
     }
   ];
 
+  const extraRefs = [
+    {
+      title: 'Helpdesk & ITSM',
+      links: [
+        { name: 'Zendesk', href: 'https://www.zendesk.com/pricing/' },
+        { name: 'Freshdesk', href: 'https://freshdesk.com/pricing' }
+      ],
+      note: 'Per-agent pricing: $19–$99/agent/mo typical.'
+    },
+    {
+      title: 'E-commerce Returns',
+      links: [
+        { name: 'Loop Returns', href: 'https://www.loopreturns.com/pricing' },
+        { name: 'Returnly', href: 'https://www.affirmsolutions.com/platform/returns' }
+      ],
+      note: 'SMB plans: $50–$300/mo typical.'
+    },
+    {
+      title: 'Sales Engagement',
+      links: [
+        { name: 'Reply.io', href: 'https://reply.io/pricing' },
+        { name: 'Mixmax', href: 'https://mixmax.com/pricing' }
+      ],
+      note: 'Seats from $29–$99/mo typical.'
+    },
+    {
+      title: 'Transcription & Media',
+      links: [
+        { name: 'Rev', href: 'https://www.rev.com/pricing' },
+        { name: 'Descript', href: 'https://www.descript.com/pricing' }
+      ],
+      note: 'Per minute or per-seat pricing; $12–$30/seat/mo common.'
+    },
+    {
+      title: 'SMB Web Analytics',
+      links: [
+        { name: 'Plausible', href: 'https://plausible.io/#pricing' },
+        { name: 'Fathom Analytics', href: 'https://usefathom.com/pricing' }
+      ],
+      note: '$9–$50/mo typical for low-to-mid traffic.'
+    }
+  ];
+
   return (
     <UltraAdvancedFuturisticBackground 
       intensity="high" 
@@ -252,6 +295,23 @@ export default function ServicesAdvertisingPage() {
           </section>
 
           <section>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Additional Market References</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {extraRefs.map((group) => (
+                <div key={group.title} className="p-6 rounded-2xl bg-black/40 border border-purple-500/30">
+                  <h3 className="text-xl font-semibold text-white mb-3">{group.title}</h3>
+                  <ul className="text-slate-300 space-y-1">
+                    {group.links.map((l) => (
+                      <li key={l.href}><a className="text-purple-300 underline" href={l.href} target="_blank" rel="noopener noreferrer">{l.name}: {new URL(l.href).hostname + new URL(l.href).pathname}</a></li>
+                    ))}
+                  </ul>
+                  <div className="text-sm text-slate-400 mt-3">{group.note}</div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Explore by Category</h2>
             <div className="flex flex-wrap items-center justify-center gap-3">
               {anchors.map((a) => (
@@ -283,6 +343,11 @@ export default function ServicesAdvertisingPage() {
                 { name: 'Customer Feedback Intelligence', price: '$149/mo', href: '/services/customer-feedback-intelligence' },
                 { name: 'LLM Eval & Regression Lab', price: '$199/mo', href: '/services/llm-eval-and-regression-lab' },
                 { name: 'AI Marketing Content Studio', price: '$119/mo', href: '/services/ai-marketing-content-studio' },
+                { name: 'E-commerce Return Management SaaS', price: '$79/mo', href: '/services/ecommerce-returns-manager' },
+                { name: 'Automated Email Follow-up Service', price: '$39/mo', href: '/services/automated-email-followups' },
+                { name: 'Podcast Episode Transcription AI', price: '$19/mo', href: '/services/podcast-transcription-ai' },
+                { name: 'Micro CRM for Local Businesses', price: '$15/mo', href: '/services/micro-crm-local-business' },
+                { name: 'IT Helpdesk for MSPs', price: '$39/agent/mo', href: '/services/it-helpdesk-msp' }
               ].map((o) => (
                 <a key={o.name} href={o.href} className="block p-6 rounded-2xl bg-black/40 border border-gray-700/60 hover:border-cyan-500/40">
                   <div className="text-sm text-gray-400 mb-1">From</div>
