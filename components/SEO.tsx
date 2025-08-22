@@ -39,7 +39,8 @@ export default function SEO({ title, description, canonical, ogImage, image, noI
 	const imageUrl = /^(https?:)?\/\//.test(requestedImage)
 		? requestedImage
 		: baseUrl.replace(/\/$/, '') + (requestedImage.startsWith('/') ? requestedImage : `/${requestedImage}`);
-	const isNoIndex = (noIndex ?? false) || (noindex ?? false);
+	const envNoIndex = process.env.NEXT_PUBLIC_NOINDEX === 'true';
+	const isNoIndex = envNoIndex || (noIndex ?? false) || (noindex ?? false);
 	const robotsContent = `${isNoIndex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}`;
 	const imageAlt = 'Zion Tech Group - Revolutionary Technology Solutions';
 
