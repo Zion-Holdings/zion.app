@@ -69,6 +69,42 @@ export default function ServicesAdvertisingPage() {
         { name: 'Netlify', href: 'https://www.netlify.com/pricing/' }
       ],
       note: 'SMB budgets: $200–$10,000/mo.'
+    },
+    {
+      title: 'Product Analytics',
+      links: [
+        { name: 'Mixpanel', href: 'https://mixpanel.com/pricing/' },
+        { name: 'Amplitude', href: 'https://amplitude.com/pricing' },
+        { name: 'PostHog', href: 'https://posthog.com/pricing' }
+      ],
+      note: 'SMB budgets: $0–$1,500/mo.'
+    },
+    {
+      title: 'Incident & On‑Call',
+      links: [
+        { name: 'PagerDuty', href: 'https://www.pagerduty.com/pricing/' },
+        { name: 'Opsgenie', href: 'https://www.atlassian.com/software/opsgenie/pricing' },
+        { name: 'Better Stack', href: 'https://betterstack.com/status/pricing' }
+      ],
+      note: 'SMB budgets: $10–$1,000/mo.'
+    },
+    {
+      title: 'Email & Deliverability',
+      links: [
+        { name: 'SendGrid', href: 'https://sendgrid.com/pricing/' },
+        { name: 'Mailgun', href: 'https://www.mailgun.com/pricing/' },
+        { name: 'Postmark', href: 'https://postmarkapp.com/pricing' }
+      ],
+      note: 'SMB budgets: $15–$500/mo.'
+    },
+    {
+      title: 'Observability & APM',
+      links: [
+        { name: 'Datadog', href: 'https://www.datadoghq.com/pricing/' },
+        { name: 'New Relic', href: 'https://newrelic.com/pricing' },
+        { name: 'Grafana Cloud', href: 'https://grafana.com/pricing/' }
+      ],
+      note: 'SMB budgets: $50–$2,000/mo.'
     }
   ];
 
@@ -235,6 +271,26 @@ export default function ServicesAdvertisingPage() {
                 <MapPin className="w-5 h-5 text-emerald-400" />
                 <span className="text-gray-200 text-sm">{contact.address}</span>
               </a>
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">More Featured Solutions</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { name: 'Email Deliverability Monitor', price: '$149/mo', href: '/email-deliverability-monitor' },
+                { name: 'API Security Scanner', price: '$799/mo', href: '/api-security-scanner' },
+                { name: 'Domain & DNS Monitor', price: '$89/mo', href: '/domain-dns-monitor' },
+                { name: 'Uptime & SLO Monitor', price: '$99/mo', href: '/uptime-slo-monitor' },
+                { name: 'PDF Render API', price: '$49/mo', href: '/pdf-render-api' },
+                { name: 'Database Performance Monitor', price: '$299/mo', href: '/database-performance-monitor' }
+              ].map((o) => (
+                <a key={o.name} href={o.href} className="block p-6 rounded-2xl bg-black/40 border border-gray-700/60 hover:border-cyan-500/40">
+                  <div className="text-sm text-gray-400 mb-1">From</div>
+                  <div className="text-2xl font-bold text-white">{o.price}</div>
+                  <div className="text-gray-200 mt-2">{o.name}</div>
+                </a>
+              ))}
             </div>
           </section>
         </div>
