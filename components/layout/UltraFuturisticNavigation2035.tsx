@@ -80,7 +80,8 @@ const navigationItems: NavigationItem[] = [
       { name: 'SEO Automation Suite', href: '/seo-automation-suite', description: 'Technical SEO automation' },
       { name: 'IT Asset Discovery Agent', href: '/it-asset-discovery-agent', description: 'Agentless discovery' },
       { name: 'Managed Postgres HA', href: '/managed-postgres-ha', description: 'HA Postgres ops' },
-      { name: 'Micro SAAS', href: '/micro-saas', description: 'Business tools and automation' }
+      { name: 'Micro SAAS', href: '/micro-saas', description: 'Business tools and automation' },
+      { name: 'New 2034 Services', href: '/services?sort=newest', description: 'Latest additions' }
     ]
   },
   {
