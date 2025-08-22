@@ -51,7 +51,9 @@ const navigationItems: NavigationItem[] = [
       { name: 'Blog', href: '/blog', description: 'Insights and updates' },
       { name: 'Case Studies', href: '/case-studies', description: 'Proven results' },
       { name: 'Developer', href: '/developer', description: 'Docs and SDKs' },
-      { name: 'Services Advertising', href: '/services-advertising', description: 'Features, benefits and market pricing links' }
+      { name: 'Services Advertising', href: '/services-advertising', description: 'Features, benefits and market pricing links' },
+      { name: 'AI Knowledge Graph Studio', href: '/services/ai-knowledge-graph-studio', description: 'Semantic search & lineage' },
+      { name: 'LLM Guarded API Gateway', href: '/services/llm-guarded-api-gateway', description: 'Safety and policies for LLM apps' }
     ]
   },
   {
@@ -220,7 +222,9 @@ const navigationItems: NavigationItem[] = [
       { name: 'Blog', href: '/blog', description: 'Insights and updates' },
       { name: 'Case Studies', href: '/case-studies', description: 'Proven results' },
       { name: 'Resources Hub', href: '/resources', description: 'Docs, SDKs, guides' },
-      { name: 'Services Advertising', href: '/services-advertising', description: 'Features, benefits and market pricing links' }
+      { name: 'Services Advertising', href: '/services-advertising', description: 'Features, benefits and market pricing links' },
+      { name: 'Serverless Lakehouse Starter', href: '/services/serverless-lakehouse-starter', description: 'ELT + dbt + dashboards' },
+      { name: 'Data Contracts Hub', href: '/services/data-contracts-hub', description: 'Schema diffs & CI gates' }
     ]
   }
 ];
