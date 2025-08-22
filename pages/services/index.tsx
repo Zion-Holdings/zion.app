@@ -16,6 +16,7 @@ import { realOperationalServices } from '../../data/real-operational-services';
 import { verified2025Additions } from '../../data/verified-2025-additions';
 import { realServicesQ12025 } from '../../data/real-services-q1-2025'
 import { realEnterpriseServices2025 } from '../../data/real-enterprise-services-2025';
+import { additionalLiveServices2025 } from '../../data/additional-live-services-2025';
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -43,7 +44,8 @@ export default function ServicesIndexPage() {
       realOperationalServices as unknown[],
       verified2025Additions as unknown[],
       realServicesQ12025 as unknown[],
-      realEnterpriseServices2025 as unknown[]
+      realEnterpriseServices2025 as unknown[],
+      additionalLiveServices2025 as unknown[]
     );
   const byCategory: Record<string, unknown[]> = {};
   for (const c of categories) byCategory[c] = [];
