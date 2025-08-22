@@ -1,6 +1,7 @@
 import React from 'react';
 import SEO from '../components/SEO';
-import Homepage2025 from '../components/Homepage2025';
+import dynamic from 'next/dynamic';
+const Homepage2025 = dynamic(() => import('../components/Homepage2025'), { ssr: false });
 
 export default function IndexPage() {
   return (
