@@ -250,6 +250,60 @@ export default function ServicesAdvertisingPage() {
 						<li>References: {ext('https://www.surferseo.com/pricing/')}, {ext('https://www.semrush.com/prices/')}</li>
 					</ul>
 				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">API Contract Testing Suite</h2>
+					<p className="text-slate-300">Automated OpenAPI/GraphQL contract tests with CI gates, schema diffs, and rollback guidance.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $20–$100/mo</li>
+						<li>References: {ext('https://www.postman.com/pricing/')}, {ext('https://www.optic.dev/')}, {ext('https://stoplight.io/')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Data Quality & ETL Monitor</h2>
+					<p className="text-slate-300">Freshness SLAs, schema drift detection, and anomaly alerts for your warehouse and lakes.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $100–$500/mo</li>
+						<li>References: {ext('https://www.montecarlodata.com/')}, {ext('https://www.bigeye.com/pricing')}, {ext('https://soda.io/')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Cloud Cost Optimization Accelerator</h2>
+					<p className="text-slate-300">Rightsizing, SP/RI planning, and anomaly alerts with actionable FinOps guardrails.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $99–$500/mo</li>
+						<li>References: {ext('https://www.kubecost.com/pricing')}, {ext('https://www.cloudzero.com/pricing')}, {ext('https://www.finout.io/pricing')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Backup & DR Runbook Hub</h2>
+					<p className="text-slate-300">Automated backup policies, restore rehearsal, and audit-ready evidence.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $50–$200/mo</li>
+						<li>References: {ext('https://velero.io/')}, {ext('https://aws.amazon.com/backup/')}, {ext('https://www.veeam.com/')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">PII Data Vault & Tokenization</h2>
+					<p className="text-slate-300">Vault PII and tokenize sensitive fields with KMS-backed encryption and audit logs.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $200–$800/mo</li>
+						<li>References: {ext('https://www.skyflow.com/pricing')}, {ext('https://www.verygoodsecurity.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Edge Feature Flag Proxy</h2>
+					<p className="text-slate-300">Serve flags from the edge with geo targeting, kill switches, and provider compatibility.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $30–$150/mo</li>
+						<li>References: {ext('https://launchdarkly.com/pricing/')}, {ext('https://www.flagsmith.com/pricing')}, {ext('https://www.split.io/pricing/')}</li>
+					</ul>
+				</section>
 			</div>
 		</div>
 	);
