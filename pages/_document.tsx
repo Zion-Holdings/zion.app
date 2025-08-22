@@ -9,8 +9,6 @@ class MyDocument extends Document {
 					<link rel="manifest" href="/site.webmanifest" />
 					<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 					<meta name="theme-color" content="#000000" />
-					<meta name="viewport" content="width=device-width, initial-scale=1" />
-					<link rel="canonical" href="https://ziontechgroup.com/" />
 				</Head>
 				<body>
 					<Main />

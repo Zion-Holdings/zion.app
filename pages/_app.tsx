@@ -28,12 +28,12 @@ export default function App({ Component, pageProps }: AppProps) {
 	return (
 		<SEOContext.Provider value={{ renderedRef }}>
 			<Analytics />
-			<DefaultSEO />
 			<div className={inter.className}>
 				<Layout>
 					<Component {...pageProps} />
 				</Layout>
 			</div>
+			<DefaultSEO />
 		</SEOContext.Provider>
 	);
 }
