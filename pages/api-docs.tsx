@@ -11,7 +11,7 @@ export default function ApiDocsPage() {
       </Head>
       <div className="container mx-auto px-4 py-16 text-gray-200">
         <h1 className="text-4xl md:text-6xl font-bold mb-4">API Docs</h1>
-        <p className="text-gray-300">See <a href="/api-documentation" className="text-cyan-400 underline">API Documentation</a> for the full reference.</p>
+        <p className="text-gray-300">See <a href="/api-docs" className="text-cyan-400 underline">API Documentation</a> for the full reference.</p>
       </div>
     </>
   );

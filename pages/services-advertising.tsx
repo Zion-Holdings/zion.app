@@ -210,6 +210,59 @@ export default function ServicesAdvertisingPage() {
           </section>
 
           <section>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Average Market Price Ranges</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[ 
+                { title: 'AI Evaluations & Prompting', range: '$50–$800/mo', links: [
+                  { name: 'Weights & Biases', href: 'https://wandb.ai/site/pricing' },
+                  { name: 'Humanloop', href: 'https://humanloop.com/pricing' },
+                  { name: 'Promptfoo', href: 'https://www.promptfoo.dev/pricing' }
+                ]},
+                { title: 'LLM Platforms', range: '$100–$2,000/mo', links: [
+                  { name: 'OpenAI', href: 'https://openai.com/api/pricing' },
+                  { name: 'Anthropic', href: 'https://www.anthropic.com/pricing' },
+                  { name: 'OpenRouter', href: 'https://openrouter.ai/models' }
+                ]},
+                { title: 'Observability/APM', range: '$50–$2,000/mo', links: [
+                  { name: 'Datadog', href: 'https://www.datadoghq.com/pricing/' },
+                  { name: 'New Relic', href: 'https://newrelic.com/pricing' },
+                  { name: 'Grafana Cloud', href: 'https://grafana.com/pricing/' }
+                ]},
+                { title: 'Security & Compliance', range: '$200–$5,000/mo', links: [
+                  { name: 'Wiz', href: 'https://www.wiz.io/pricing' },
+                  { name: 'Prisma Cloud', href: 'https://www.paloaltonetworks.com/prisma/cloud/pricing' },
+                  { name: 'Vault', href: 'https://www.hashicorp.com/products/vault/pricing' }
+                ]},
+                { title: 'Vector DB & Retrieval', range: '$20–$1,000/mo', links: [
+                  { name: 'Pinecone', href: 'https://www.pinecone.io/pricing/' },
+                  { name: 'Weaviate', href: 'https://weaviate.io/pricing' },
+                  { name: 'Qdrant', href: 'https://qdrant.tech/pricing/' }
+                ]},
+                { title: 'Email Deliverability', range: '$50–$300/mo', links: [
+                  { name: 'Mailgun', href: 'https://www.mailgun.com/pricing/' },
+                  { name: 'SendGrid', href: 'https://sendgrid.com/pricing/' },
+                  { name: 'Postmark', href: 'https://postmarkapp.com/pricing' }
+                ]}
+              ].map((group) => (
+                <div key={group.title} className="p-6 rounded-2xl bg-black/40 border border-gray-700/60">
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="text-xl font-semibold text-white">{group.title}</h3>
+                    <span className="text-sm text-gray-300">{group.range}</span>
+                  </div>
+                  <ul className="text-slate-300 space-y-1">
+                    {group.links.map((l) => (
+                      <li key={l.href}><a className="text-cyan-400 underline" href={l.href} target="_blank" rel="noopener noreferrer">{l.name}</a></li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+            <div className="text-center mt-6">
+              <Button href="/market-pricing" className="px-8 py-4 bg-gradient-to-r from-cyan-600 to-blue-700 text-white">More Market References</Button>
+            </div>
+          </section>
+
+          <section>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Explore by Category</h2>
             <div className="flex flex-wrap items-center justify-center gap-3">
               {anchors.map((a) => (
