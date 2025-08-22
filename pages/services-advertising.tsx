@@ -17,6 +17,11 @@ export default function ServicesAdvertisingPage() {
 					<a href="tel:+13024640950" className="px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white">Call +1 302 464 0950</a>
 					<a href="mailto:kleber@ziontechgroup.com" className="px-4 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-600 text-white">Email kleber@ziontechgroup.com</a>
 					<a href="/pricing" className="px-4 py-2 rounded-lg border border-cyan-500/40 text-cyan-300">View Pricing</a>
+					<div className="text-slate-400 text-sm">
+						<span className="block md:inline">Address: 364 E Main St STE 1008 Middletown DE 19709</span>
+						<span className="hidden md:inline mx-2">·</span>
+						<a className="text-cyan-400 underline" href="https://ziontechgroup.com" target="_blank" rel="noopener noreferrer">ziontechgroup.com</a>
+					</div>
 				</div>
 
 				<section id="ai-evaluation-orchestrator" className="space-y-6">
@@ -577,6 +582,132 @@ export default function ServicesAdvertisingPage() {
 					</ul>
 				</section>
 
+				{/* New 2029 Q3 diversified additions */}
+				<section id="ai-revenue-forecasting-copilot" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">AI Revenue Forecasting Copilot</h2>
+					<p className="text-slate-300">Unified forecasts from CRM, product analytics, and traffic with scenario planning.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $99–$500/mo</li>
+						<li>References: {ext('https://www.hubspot.com/pricing/sales')}, {ext('https://www.salesforce.com/editions-pricing/sales-cloud/')}</li>
+					</ul>
+				</section>
+
+				<section id="customer-data-platform-lite" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Customer Data Platform (CDP) Lite</h2>
+					<p className="text-slate-300">Unify events into profiles with traits and audiences, privacy-safe.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $49–$300/mo</li>
+						<li>References: {ext('https://segment.com/pricing')}, {ext('https://www.rudderstack.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section id="data-quality-observability" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Data Quality & Observability</h2>
+					<p className="text-slate-300">Freshness, volume, schema, lineage monitors with on-call alerts.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $199–$1,000/mo</li>
+						<li>References: {ext('https://www.datadoghq.com/pricing/')}, {ext('https://www.soda.io/pricing')}</li>
+					</ul>
+				</section>
+
+				<section id="feature-store-starter" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Feature Store Starter</h2>
+					<p className="text-slate-300">Low-latency online features, batch backfills, and governance.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $99–$700/mo</li>
+						<li>References: {ext('https://feast.dev')}, {ext('https://www.tecton.ai')}</li>
+					</ul>
+				</section>
+
+				<section id="edge-ab-testing" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Edge A/B & Personalization</h2>
+					<p className="text-slate-300">Fast experiments and targeting at the edge with geo/device rules.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $20–$200/mo</li>
+						<li>References: {ext('https://vercel.com/pricing')}, {ext('https://www.cloudflare.com/plans/')}</li>
+					</ul>
+				</section>
+
+				<section id="reverse-etl-starter" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Reverse ETL Starter</h2>
+					<p className="text-slate-300">Sync warehouse audiences and metrics to CRMs and ad platforms.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $99–$1,000/mo</li>
+						<li>References: {ext('https://hightouch.com/pricing')}, {ext('https://www.getcensus.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section id="consent-preference-center" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Consent & Preference Center</h2>
+					<p className="text-slate-300">Manage consent, email/SMS preferences, and DSARs with audit logs.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $49–$500/mo</li>
+						<li>References: {ext('https://transcend.io/product/')}, {ext('https://www.skyflow.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section id="vendor-risk-dashboard" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Vendor Risk Dashboard</h2>
+					<p className="text-slate-300">Automated questionnaires, evidence, and risk scoring across vendors.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $79–$800/mo</li>
+						<li>References: {ext('https://drata.com/pricing')}, {ext('https://www.vanta.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section id="soc2-evidence-vault" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">SOC 2 Evidence Vault</h2>
+					<p className="text-slate-300">Collect and attest evidence automatically across systems for audits.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $99–$1,000/mo</li>
+						<li>References: {ext('https://drata.com/pricing')}, {ext('https://www.vanta.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section id="ai-knowledge-base-search" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">AI Knowledge Base Search</h2>
+					<p className="text-slate-300">Semantic search with answer synthesis and citations for docs and support.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $39–$500/mo</li>
+						<li>References: {ext('https://www.pinecone.io/pricing/')}, {ext('https://weaviate.io/pricing')}</li>
+					</ul>
+				</section>
+
+				<section id="engineering-productivity-insights" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Engineering Productivity Insights</h2>
+					<p className="text-slate-300">DORA metrics, PR analytics, and flaky test detection with actions.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $149–$1,000/mo</li>
+						<li>References: {ext('https://www.datadoghq.com/pricing/')}, {ext('https://linear.app/pricing')}</li>
+					</ul>
+				</section>
+
+				<section id="it-asset-discovery-agent" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">IT Asset Discovery Agent</h2>
+					<p className="text-slate-300">Continuous discovery of devices, software, and shadow IT with enrichment.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $49–$400/mo</li>
+						<li>References: {ext('https://www.lansweeper.com/pricing/')}, {ext('https://www.atera.com/pricing/')}</li>
+					</ul>
+				</section>
+
+				<section id="incident-autocomplete-copilot" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Incident Autocomplete Copilot</h2>
+					<p className="text-slate-300">Draft incident updates, status posts, and postmortem timelines.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $39–$500/mo</li>
+						<li>References: {ext('https://www.pagerduty.com/pricing/')}, {ext('https://www.atlassian.com/software/statuspage/pricing')}</li>
+					</ul>
+				</section>
+
+				<section id="voice-ivr-studio" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Voice IVR Studio</h2>
+					<p className="text-slate-300">Drag-and-drop IVR flows with speech-to-intent and analytics.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $29–$500/mo + usage</li>
+						<li>References: {ext('https://www.twilio.com/pricing')}, {ext('https://www.vonage.com/communications-apis/pricing')}</li>
+					</ul>
+				</section>
 				{/* Contact CTA */}
 				<div className="flex flex-col md:flex-row items-center gap-4 p-4 rounded-xl bg-black/30 border border-gray-800">
 					<a href="tel:+13024640950" className="px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white">Call +1 302 464 0950</a>

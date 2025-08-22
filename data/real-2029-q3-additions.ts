@@ -1,175 +1,238 @@
-import { EnhancedRealMicroSaasService } from './enhanced-real-micro-saas-services';
-
-const contact = {
-	mobile: '+1 302 464 0950',
-	email: 'kleber@ziontechgroup.com',
-	address: '364 E Main St STE 1008 Middletown DE 19709',
-	website: 'https://ziontechgroup.com'
+export type BasicService = {
+	id: string;
+	name: string;
+	description: string;
+	category: string;
+	pricing?: { starter?: string; monthly?: number };
+	features: string[];
+	link?: string;
+	launchDate?: string;
+	rating?: number;
 };
 
-export const real2029Q3Additions: EnhancedRealMicroSaasService[] = [
+export const real2029Q3Additions: BasicService[] = [
 	{
-		id: 'ai-synthetic-data-studio',
-		name: 'AI Synthetic Data Studio',
-		tagline: 'Generate privacy-safe datasets with controllable distributions',
-		price: '$199',
-		period: '/month',
-		description: 'Create high-quality synthetic datasets for training and testing without exposing PII. Balance class distributions, inject edge cases, and evaluate fidelity and privacy leakage.',
+		id: 'ai-revenue-forecasting-copilot',
+		name: 'AI Revenue Forecasting Copilot',
+		description: 'Unified forecasts using pipeline, product analytics, web traffic, and macro trends with scenario planning.',
+		category: 'AI Services',
+		pricing: { starter: '$99/mo' },
 		features: [
-			'Conditional data generation with constraints',
-			'PII/PHI redaction and differential privacy modes',
-			'Coverage metrics and fidelity scores',
-			'Drift testing and leakage evaluation',
-			'SDKs for Python/TypeScript and batch pipelines'
+			'Scenario planning (best/base/worst)',
+			'CRM + billing + web analytics connectors',
+			'Cohort and seasonality modeling',
+			'Executive-ready forecast reports'
 		],
-		popular: true,
-		icon: '🧪',
-		color: 'from-purple-600 to-indigo-700',
-		textColor: 'text-purple-300',
-		link: 'https://ziontechgroup.com/services/ai-synthetic-data-studio',
-		marketPosition: 'Alternative to Gretel.ai and MostlyAI for SMBs with simpler governance.',
-		targetAudience: 'Data science and ML engineering teams',
-		trialDays: 14,
-		setupTime: '1-2 days',
-		category: 'AI & Data',
-		realService: true,
-		technology: ['Next.js, Python, PyTorch, Postgres, Redis'],
-		integrations: ['Snowflake, BigQuery, S3, dbt'],
-		useCases: ['Training data augmentation', 'Edge case synthesis', 'Anonymized analytics'],
-		roi: 'Reduce data acquisition time/cost by 60–80%.',
-		competitors: ['Gretel.ai', 'MostlyAI'],
-		marketSize: '$3B+ synthetic data tooling',
-		growthRate: '35% CAGR',
-		variant: 'ai-futuristic',
-		contactInfo: contact,
-		realImplementation: true,
-		implementationDetails: 'Tabular generation with CTGAN/TVAE options, privacy budget controls, and CI hooks.',
-		launchDate: '2029-08-01',
-		customers: 32,
-		rating: 4.7,
-		reviews: 18
+		link: '/services-advertising#ai-revenue-forecasting-copilot',
+		launchDate: '2025-09-01',
+		rating: 4.7
 	},
 	{
-		id: 'zero-trust-sso-mesh',
-		name: 'Zero-Trust SSO Mesh',
-		tagline: 'Unify SSO/OIDC with device posture and risk-based access',
-		price: '$299',
-		period: '/month',
-		description: 'A lightweight identity fabric that layers device trust, geo risk, and behavior analytics on top of your IdP. Enforce least privilege with continuous verification.',
+		id: 'customer-data-platform-lite',
+		name: 'Customer Data Platform (CDP) Lite',
+		description: 'Unify web, product, and CRM events into privacy-safe profiles with traits and audiences.',
+		category: 'Micro SAAS',
+		pricing: { starter: '$49/mo' },
 		features: [
-			'Risk-based policies (geo, device, IP reputation)',
-			'Device posture checks (OS version, disk encryption)',
-			'Session revocation and step-up MFA',
-			'Audit trails and SIEM exports',
-			'Adapters for Okta/Auth0/Entra/Keycloak'
+			'Identity resolution & stitching',
+			'Audience builder & syncs',
+			'Consent-aware tracking',
+			'Warehouse-native schemas'
 		],
-		popular: true,
-		icon: '🛡️',
-		color: 'from-emerald-600 to-teal-700',
-		textColor: 'text-emerald-300',
-		link: 'https://ziontechgroup.com/services/zero-trust-sso-mesh',
-		marketPosition: 'Complements IdPs with posture/risk signals; lighter than full ZTNA suites.',
-		targetAudience: 'SaaS and enterprise IT teams',
-		trialDays: 14,
-		setupTime: '3-5 days',
-		category: 'Quality & Monitoring',
-		realService: true,
-		technology: ['Next.js, Workers, WebAuthn, OpenPolicyAgent'],
-		integrations: ['Okta, Auth0, Entra ID, Keycloak, Cloudflare'],
-		useCases: ['Partner access', 'Production admin access', 'Contractor access'],
-		roi: 'Reduce account takeover risk; accelerate enterprise security reviews.',
-		competitors: ['Cloudflare Zero Trust', 'Zscaler ZPA'],
-		marketSize: '$10B+ ZTNA/Identity',
-		growthRate: '20% YoY',
-		variant: 'security-futuristic',
-		contactInfo: contact,
-		realImplementation: true,
-		implementationDetails: 'Policy engine with Rego, device posture collectors, IdP adapters, and SIEM sinks.',
-		launchDate: '2029-08-03',
-		customers: 21,
-		rating: 4.6,
-		reviews: 12
+		link: '/services-advertising#customer-data-platform-lite',
+		launchDate: '2025-09-01',
+		rating: 4.6
 	},
 	{
-		id: 'etl-reliability-copilot',
-		name: 'ETL Reliability Copilot',
-		tagline: 'Detect data pipeline failures before they impact dashboards',
-		price: '$149',
-		period: '/month',
-		description: 'Forecasted freshness breaches, schema drift detection, and row-level anomaly alerts for warehouses and lakes with actionable playbooks.',
+		id: 'data-quality-observability',
+		name: 'Data Quality & Observability',
+		description: 'Freshness, volume, schema, and lineage monitors with on-call alerts for critical pipelines.',
+		category: 'Data & Analytics',
+		pricing: { starter: '$199/mo' },
 		features: [
-			'Freshness SLOs and breach forecasts',
-			'Schema drift detection and PR diffs',
-			'Row-count and distribution anomalies',
-			'Owner routing and on-call schedules',
-			'Integrations with dbt/Airflow alerts'
+			'Freshness and anomaly SLAs',
+			'Schema drift detection',
+			'Column-level lineage',
+			'PagerDuty/Slack alerting'
 		],
-		popular: false,
-		icon: '📊',
-		color: 'from-cyan-600 to-blue-700',
-		textColor: 'text-cyan-300',
-		link: 'https://ziontechgroup.com/services/etl-reliability-copilot',
-		marketPosition: 'Practical alternative to heavy data observability suites for SMBs.',
-		targetAudience: 'Data engineering and analytics teams',
-		trialDays: 7,
-		setupTime: '1 day',
-		category: 'Observability',
-		realService: true,
-		technology: ['Next.js, dbt, OpenTelemetry, ClickHouse'],
-		integrations: ['dbt, Airflow, Prefect, Dagster, Slack'],
-		useCases: ['Warehouse SLAs', 'Daily KPI reliability', 'Reverse ETL guards'],
-		roi: 'Cut dashboard downtime; prevent bad decisions from stale data.',
-		competitors: ['Monte Carlo', 'Bigeye', 'Soda'],
-		marketSize: '$2B data observability',
-		growthRate: '22% YoY',
-		variant: 'analytics-futuristic',
-		contactInfo: contact,
-		realImplementation: true,
-		implementationDetails: 'Collectors, anomaly models, SLO calculators, and incident runbooks.',
-		launchDate: '2029-08-10',
-		customers: 18,
-		rating: 4.6,
-		reviews: 10
+		link: '/services-advertising#data-quality-observability',
+		launchDate: '2025-09-01',
+		rating: 4.6
 	},
 	{
-		id: 'edge-personalization-kit',
-		name: 'Edge Personalization Kit',
-		tagline: 'Geo, device, and audience-targeted content at CDN edge',
-		price: '$79',
-		period: '/month',
-		description: 'Serve personalized experiences with low-latency edge middleware and privacy-first audience segments. No client cookies required.',
+		id: 'feature-store-starter',
+		name: 'Feature Store Starter',
+		description: 'Low-latency online features, batch backfills, and governance for production ML.',
+		category: 'AI Services',
+		pricing: { starter: '$99/mo' },
 		features: [
-			'Geo/device/audience rules',
-			'Fallbacks and safe defaults',
-			'A/B and holdout experiments',
-			'Cache key strategies and debug overlays',
-			'SDKs for frameworks and CDNs'
+			'Online/offline store sync',
+			'Backfills and point-in-time joins',
+			'Feature ownership and lineage',
+			'AB-tests & offline validation'
 		],
-		popular: false,
-		icon: '⚡',
-		color: 'from-amber-600 to-yellow-700',
-		textColor: 'text-amber-300',
-		link: 'https://ziontechgroup.com/services/edge-personalization-kit',
-		marketPosition: 'Simpler than full-featured CDPs; deploy in hours on existing CDN.',
-		targetAudience: 'Product growth and web platform teams',
-		trialDays: 7,
-		setupTime: '2-4 hours',
-		category: 'Developer Tools',
-		realService: true,
-		technology: ['Next.js, Edge Runtime, KV, CDNs'],
-		integrations: ['Vercel, Cloudflare, Netlify', 'Segment, RudderStack'],
-		useCases: ['Landing page variants', 'Geo banners', 'Feature visibility'],
-		roi: 'Improved conversion and engagement with minimal footprint.',
-		competitors: ['Mutiny', 'Optimizely (edge)'],
-		marketSize: '$1.5B personalization tooling',
-		growthRate: '18% YoY',
-		variant: 'edge-futuristic',
-		contactInfo: contact,
-		realImplementation: true,
-		implementationDetails: 'Edge middleware templates, rule engine, preview UIs, and analytics.',
-		launchDate: '2029-08-12',
-		customers: 15,
-		rating: 4.5,
-		reviews: 9
+		link: '/services-advertising#feature-store-starter',
+		launchDate: '2025-09-01',
+		rating: 4.5
+	},
+	{
+		id: 'edge-ab-testing',
+		name: 'Edge A/B & Personalization',
+		description: 'Ultra-fast experiments and audience targeting at the edge with geo and device rules.',
+		category: 'Micro SAAS',
+		pricing: { starter: '$20/mo' },
+		features: [
+			'Percentage rollouts & canaries',
+			'Geo/device targeting',
+			'Holdout groups & guardrails',
+			'Automatic fallback at edge'
+		],
+		link: '/services-advertising#edge-ab-testing',
+		launchDate: '2025-09-01',
+		rating: 4.6
+	},
+	{
+		id: 'reverse-etl-starter',
+		name: 'Reverse ETL Starter',
+		description: 'Sync warehouse audiences and metrics into CRMs, ad platforms, and support tools.',
+		category: 'Data & Analytics',
+		pricing: { starter: '$99/mo' },
+		features: [
+			'Incremental syncs with CDC',
+			'Mapping & transformations',
+			'Automatic backfills',
+			'Failure retries & logs'
+		],
+		link: '/services-advertising#reverse-etl-starter',
+		launchDate: '2025-09-01',
+		rating: 4.6
+	},
+	{
+		id: 'consent-preference-center',
+		name: 'Consent & Preference Center',
+		description: 'Centralize user consent, email/SMS preferences, and DSAR workflows with audit logs.',
+		category: 'Security & Compliance',
+		pricing: { starter: '$49/mo' },
+		features: [
+			'Granular consent categories',
+			'DSAR intake & exports',
+			'Audit-ready logs',
+			'API & webhooks'
+		],
+		link: '/services-advertising#consent-preference-center',
+		launchDate: '2025-09-01',
+		rating: 4.5
+	},
+	{
+		id: 'vendor-risk-dashboard',
+		name: 'Vendor Risk Dashboard',
+		description: 'Automated questionnaires, evidence collection, and risk scoring across your SaaS vendors.',
+		category: 'Security & Compliance',
+		pricing: { starter: '$79/mo' },
+		features: [
+			'Questionnaires & reminders',
+			'Policy & artifact library',
+			'Risk scoring & reports',
+			'Integrations with Jira & Slack'
+		],
+		link: '/services-advertising#vendor-risk-dashboard',
+		launchDate: '2025-09-01',
+		rating: 4.5
+	},
+	{
+		id: 'soc2-evidence-vault',
+		name: 'SOC 2 Evidence Vault',
+		description: 'Collect, version, and attest evidence automatically across systems for audits.',
+		category: 'Security & Compliance',
+		pricing: { starter: '$99/mo' },
+		features: [
+			'Controls mapping',
+			'Automated evidence pulls',
+			'Attestations & reviewers',
+			'Export to auditors'
+		],
+		link: '/services-advertising#soc2-evidence-vault',
+		launchDate: '2025-09-01',
+		rating: 4.6
+	},
+	{
+		id: 'ai-knowledge-base-search',
+		name: 'AI Knowledge Base Search',
+		description: 'Multi-source semantic search with answer synthesis and citations for docs and support.',
+		category: 'AI Services',
+		pricing: { starter: '$39/mo' },
+		features: [
+			'Chunking & embeddings',
+			'Hallucination guardrails',
+			'Source citations',
+			'Analytics & feedback loop'
+		],
+		link: '/services-advertising#ai-knowledge-base-search',
+		launchDate: '2025-09-01',
+		rating: 4.7
+	},
+	{
+		id: 'engineering-productivity-insights',
+		name: 'Engineering Productivity Insights',
+		description: 'DORA metrics, PR cycle analytics, and flaky test detection with action items.',
+		category: 'Developer Experience',
+		pricing: { starter: '$149/mo' },
+		features: [
+			'DORA & SPACE metrics',
+			'PR review time and idle alerts',
+			'Flaky test radar',
+			'Weekly engineering reports'
+		],
+		link: '/services-advertising#engineering-productivity-insights',
+		launchDate: '2025-09-01',
+		rating: 4.5
+	},
+	{
+		id: 'it-asset-discovery-agent',
+		name: 'IT Asset Discovery Agent',
+		description: 'Continuous discovery of devices, software, and shadow IT with enrichment.',
+		category: 'Enterprise IT',
+		pricing: { starter: '$49/mo' },
+		features: [
+			'Agent & agentless discovery',
+			'Vuln & exposure tags',
+			'Normalized inventory',
+			'Export & API access'
+		],
+		link: '/services-advertising#it-asset-discovery-agent',
+		launchDate: '2025-09-01',
+		rating: 4.5
+	},
+	{
+		id: 'incident-autocomplete-copilot',
+		name: 'Incident Autocomplete Copilot',
+		description: 'Drafts incident updates, status posts, and postmortem timelines with source links.',
+		category: 'SRE & Operations',
+		pricing: { starter: '$39/mo' },
+		features: [
+			'Incident comms templates',
+			'Status page suggestions',
+			'Postmortem timeline drafts',
+			'Slack & ticketing integrations'
+		],
+		link: '/services-advertising#incident-autocomplete-copilot',
+		launchDate: '2025-09-01',
+		rating: 4.6
+	},
+	{
+		id: 'voice-ivr-studio',
+		name: 'Voice IVR Studio',
+		description: 'Drag-and-drop IVR flows, speech-to-intent, and analytics for support and sales.',
+		category: 'Contact Center',
+		pricing: { starter: '$29/mo' },
+		features: [
+			'Visual flow builder',
+			'TTS/STT with multi-language',
+			'Warm transfers & fallbacks',
+			'Segment & CRM syncs'
+		],
+		link: '/services-advertising#voice-ivr-studio',
+		launchDate: '2025-09-01',
+		rating: 4.5
 	}
 ];
