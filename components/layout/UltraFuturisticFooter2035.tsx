@@ -34,7 +34,11 @@ const footerSections = [
       { name: 'AI Evaluation Orchestrator', href: '/ai-evaluation-orchestrator', featured: true },
               { name: 'SEO Automation Suite', href: '/seo-automation-suite' },
               { name: 'IT Asset Discovery Agent', href: '/it-asset-discovery-agent' },
-              { name: 'Managed Postgres HA', href: '/managed-postgres-ha' }
+              { name: 'Managed Postgres HA', href: '/managed-postgres-ha' },
+              { name: 'DORA Metrics Dashboard', href: '/dora-metrics-dashboard' },
+              { name: 'Kubernetes Cost Guardrails', href: '/kubernetes-cost-guardrails' },
+              { name: 'OpenTelemetry Quickstart', href: '/opentelemetry-quickstart' },
+              { name: 'API Usage Billing Meter', href: '/api-usage-billing-meter' }
     ]
   },
   {

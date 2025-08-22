@@ -516,6 +516,96 @@ export default function ServicesAdvertisingPage() {
 						<li>References: {ext('https://www.descript.com/pricing')}, {ext('https://otter.ai/pricing')}</li>
 					</ul>
 				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">DORA Metrics Dashboard</h2>
+					<p className="text-slate-300">Engineering performance analytics: deployment frequency, lead time, MTTR, change failure rate.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $50–$200/mo</li>
+						<li>References: {ext('https://docs.github.com/en/repositories/viewing-activity-and-data-for-your-repository/understanding-repository-metrics')}, {ext('https://about.gitlab.com/solutions/dora/')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Kubernetes Cost Guardrails</h2>
+					<p className="text-slate-300">Budgets and policies for K8s spend with alerts, right-sizing, and chargebacks.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $100–$400/mo</li>
+						<li>References: {ext('https://www.kubecost.com/pricing/')}, {ext('https://cloudzero.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Website Performance Budget Enforcer</h2>
+					<p className="text-slate-300">Keep Lighthouse and Core Web Vitals budgets enforced in CI with PR annotations.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $20–$100/mo</li>
+						<li>References: {ext('https://github.com/GoogleChrome/lighthouse-ci')}, {ext('https://web.dev/vitals/')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Consent & Cookie Manager</h2>
+					<p className="text-slate-300">GDPR/CCPA consent banners, preference centers, and consent logs export.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $10–$50/mo</li>
+						<li>References: {ext('https://www.cookieyes.com/pricing/')}, {ext('https://www.cookiebot.com/en/pricing/')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">OpenTelemetry Quickstart</h2>
+					<p className="text-slate-300">Traces, metrics, and logs with vendor-agnostic collectors and dashboards.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $50–$300/mo</li>
+						<li>References: {ext('https://opentelemetry.io/')}, {ext('https://grafana.com/pricing/')}, {ext('https://www.honeycomb.io/pricing')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">API Usage Billing Meter</h2>
+					<p className="text-slate-300">Per-unit metering with idempotent events and Stripe Billing integration.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $30–$150/mo</li>
+						<li>References: {ext('https://stripe.com/billing/pricing')}, {ext('https://www.paddle.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Data Quality Monitor</h2>
+					<p className="text-slate-300">Freshness SLAs, anomaly detection, expectations, and lineage-aware root cause.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $100–$500/mo</li>
+						<li>References: {ext('https://www.getdbt.com/pricing/')}, {ext('https://www.snowflake.com/pricing/')}, {ext('https://www.montecarlodata.com/pricing/')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">SaaS Contract Renewal Tracker</h2>
+					<p className="text-slate-300">Centralize contracts, reminders, approvals, and spend summaries.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $10–$60/mo</li>
+						<li>References: {ext('https://contractbook.com/pricing')}, {ext('https://ironcladapp.com/pricing/')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Incident Communications Hub</h2>
+					<p className="text-slate-300">Stakeholder routing, message templates, timelines, and postmortems.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $30–$150/mo</li>
+						<li>References: {ext('https://www.incident.io/pricing')}, {ext('https://www.rootly.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Edge Redirect Manager</h2>
+					<p className="text-slate-300">Manage redirects and rewrites safely with bulk import and audit trail.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $10–$40/mo</li>
+						<li>References: {ext('https://vercel.com/pricing')}, {ext('https://www.cloudflare.com/plans/')}, {ext('https://www.netlify.com/pricing/')}</li>
+					</ul>
+				</section>
 			</div>
 		</div>
 	);
