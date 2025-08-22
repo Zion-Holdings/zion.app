@@ -11,8 +11,11 @@ export default function UltraFuturisticBackground2035() {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth * (window.devicePixelRatio || 1);
+    canvas.height = window.innerHeight * (window.devicePixelRatio || 1);
+    if (ctx) {
+      ctx.scale(window.devicePixelRatio || 1, window.devicePixelRatio || 1);
+    }
 
     let animationFrameId: number;
     let particles: Array<{
@@ -28,14 +31,16 @@ export default function UltraFuturisticBackground2035() {
     // Initialize particles
     const initParticles = () => {
       particles = [];
-      for (let i = 0; i < 100; i++) {
+      const isSmallScreen = window.innerWidth < 768;
+      const particleCount = isSmallScreen ? 40 : 100;
+      for (let i = 0; i < particleCount; i++) {
         particles.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          vx: (Math.random() - 0.5) * 0.5,
-          vy: (Math.random() - 0.5) * 0.5,
-          size: Math.random() * 2 + 1,
-          opacity: Math.random() * 0.5 + 0.1,
+          x: Math.random() * canvas.width / (window.devicePixelRatio || 1),
+          y: Math.random() * canvas.height / (window.devicePixelRatio || 1),
+          vx: (Math.random() - 0.5) * 0.4,
+          vy: (Math.random() - 0.5) * 0.4,
+          size: Math.random() * (isSmallScreen ? 1.5 : 2) + 0.8,
+          opacity: Math.random() * 0.4 + 0.1,
           color: ['#8b5cf6', '#06b6d4', '#ec4899', '#10b981'][Math.floor(Math.random() * 4)]
         });
       }
@@ -50,10 +55,10 @@ export default function UltraFuturisticBackground2035() {
         particle.y += particle.vy;
 
         // Wrap around edges
-        if (particle.x < 0) particle.x = canvas.width;
-        if (particle.x > canvas.width) particle.x = 0;
-        if (particle.y < 0) particle.y = canvas.height;
-        if (particle.y > canvas.height) particle.y = 0;
+        if (particle.x < 0) particle.x = canvas.width / (window.devicePixelRatio || 1);
+        if (particle.x > canvas.width / (window.devicePixelRatio || 1)) particle.x = 0;
+        if (particle.y < 0) particle.y = canvas.height / (window.devicePixelRatio || 1);
+        if (particle.y > canvas.height / (window.devicePixelRatio || 1)) particle.y = 0;
 
         // Draw particle
         ctx.beginPath();
@@ -63,18 +68,19 @@ export default function UltraFuturisticBackground2035() {
         ctx.fill();
 
         // Draw connections
+        const maxDistance = window.innerWidth < 768 ? 100 : 150;
         particles.forEach((otherParticle, otherIndex) => {
           if (index !== otherIndex) {
             const dx = particle.x - otherParticle.x;
             const dy = particle.y - otherParticle.y;
             const distance = Math.sqrt(dx * dx + dy * dy);
 
-            if (distance < 150) {
+            if (distance < maxDistance) {
               ctx.beginPath();
               ctx.moveTo(particle.x, particle.y);
               ctx.lineTo(otherParticle.x, otherParticle.y);
               ctx.strokeStyle = particle.color;
-              ctx.globalAlpha = (150 - distance) / 150 * 0.1;
+              ctx.globalAlpha = (maxDistance - distance) / maxDistance * 0.1;
               ctx.lineWidth = 1;
               ctx.stroke();
             }
@@ -89,8 +95,12 @@ export default function UltraFuturisticBackground2035() {
     updateParticles();
 
     const handleResize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      canvas.width = window.innerWidth * (window.devicePixelRatio || 1);
+      canvas.height = window.innerHeight * (window.devicePixelRatio || 1);
+      if (ctx) {
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+        ctx.scale(window.devicePixelRatio || 1, window.devicePixelRatio || 1);
+      }
       initParticles();
     };
 

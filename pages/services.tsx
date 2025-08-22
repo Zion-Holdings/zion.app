@@ -18,6 +18,7 @@ import { realMicroSaasServices2025 } from '../data/2025-real-micro-saas-services
 import { innovativeAIServices2025 } from '../data/2025-innovative-ai-services';
 import { innovativeITServices2025 } from '../data/2025-innovative-it-services';
 import { emergingTechServices2025 } from '../data/2025-emerging-tech-services';
+import { newRealServices2026 } from '../data/2025-2026-new-real-services';
 
 // Helper function to get service category
 const getServiceCategory = (service: any) => {
@@ -56,7 +57,8 @@ const allServices = [
   ...realMicroSaasServices2025,
   ...innovativeAIServices2025,
   ...innovativeITServices2025,
-  ...emergingTechServices2025
+  ...emergingTechServices2025,
+  ...newRealServices2026
 ];
 
 const categories = [
