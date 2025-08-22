@@ -19,7 +19,7 @@ import { innovativeRealMicroSaasServices2025 as innovativeServices } from '../da
 import { innovativeAIServicesEnhanced2025 } from '../data/2025-innovative-ai-services-enhanced';
 import { innovativeITServicesEnhanced2025 } from '../data/2025-innovative-it-services-enhanced';
 import { emergingTechServicesEnhanced2025 } from '../data/2025-emerging-tech-services-enhanced';
-import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
+import { advancedAIAutomationServices } from '../data/2025-advanced-ai-automation-services';
 import { advancedITInfrastructureServices2025 } from '../data/2025-advanced-it-infrastructure-services';
 import { innovativeBusinessSolutions2025 } from '../data/2025-innovative-business-solutions';
 import { ultimateInnovativeServices2025 } from '../data/2025-ultimate-innovative-services';
@@ -47,7 +47,7 @@ const ComprehensiveServicesShowcase2025: React.FC = () => {
     ...innovativeAIServicesEnhanced2025,
     ...innovativeITServicesEnhanced2025,
     ...emergingTechServicesEnhanced2025,
-    ...advancedAIAutomationServices2025,
+    ...advancedAIAutomationServices,
     ...advancedITInfrastructureServices2025,
     ...innovativeBusinessSolutions2025
   ];
