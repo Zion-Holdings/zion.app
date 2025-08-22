@@ -481,3 +481,13 @@ h1, h2, h3, h4, h5, h6 {
 /* Improve link contrast on dark bg */
 .prose a { color: #67e8f9; }
 .prose a:hover { color: #a5f3fc; }
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
