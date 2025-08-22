@@ -24,7 +24,7 @@ const footerSections = [
     icon: <Star className="w-5 h-5 text-yellow-400" />,
     links: [
       { name: 'AI Customer Success Platform', href: '/services/ai-customer-success-platform', featured: true },
-      { name: 'Supply Chain Optimization', href: '/intelligent-supply-chain-optimization', featured: true },
+      { name: 'Supply Chain Optimization', href: '/services/intelligent-supply-chain-optimization', featured: true },
       { name: 'AI Financial Planning', href: '/services/ai-financial-planning-platform', featured: true },
       { name: 'AI Sales Intelligence', href: '/services/ai-sales-intelligence-platform', featured: true },
       { name: 'HR Analytics Platform', href: '/services/intelligent-hr-analytics-platform' },
