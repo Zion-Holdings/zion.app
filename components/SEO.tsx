@@ -53,6 +53,32 @@ export default function SEO({ title, description, canonical, ogImage, image, noI
 		}
 	}, [seoCtx]);
 
+	// Default JSON-LD if none provided
+	const defaultJsonLd = [
+		{
+			"@context": "https://schema.org",
+			"@type": "Organization",
+			"name": "Zion Tech Group",
+			"url": baseUrl,
+			"logo": `${baseUrl.replace(/\/$/, '')}/favicon.svg`,
+			"sameAs": [
+				"https://www.linkedin.com/company/zion-technologies",
+				"https://twitter.com/ziontechgroup"
+			]
+		},
+		{
+			"@context": "https://schema.org",
+			"@type": "WebSite",
+			"url": baseUrl,
+			"name": "Zion Tech Group",
+			"potentialAction": {
+				"@type": "SearchAction",
+				"target": `${baseUrl.replace(/\/$/, '')}/search?q={search_term_string}`,
+				"query-input": "required name=search_term_string"
+			}
+		}
+	];
+
 	return (
 		<Head>
 			<title>{pageTitle}</title>
@@ -74,8 +100,8 @@ export default function SEO({ title, description, canonical, ogImage, image, noI
 			<meta name="twitter:description" content={pageDescription} />
 			<meta name="twitter:image" content={imageUrl} />
 			<meta name="twitter:image:alt" content={imageAlt} />
-			{jsonLd ? (
-				<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+			{(jsonLd || defaultJsonLd) ? (
+				<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd || defaultJsonLd) }} />
 			) : null}
 		</Head>
 	);
