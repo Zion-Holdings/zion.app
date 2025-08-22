@@ -223,7 +223,22 @@ const navigationItems: NavigationItem[] = [
       { name: 'Blog & News', href: '/blog', description: 'Latest insights' },
       { name: 'Support Center', href: '/support', description: 'Help and support' },
       { name: 'Training', href: '/training', description: 'Learning resources' },
-      { name: 'Community', href: '/community', description: 'User community' }
+      { name: 'Community', href: '/community', description: 'User community' },
+      { name: 'Market Pricing', href: '/market-pricing', description: 'Average market prices & links' }
+    ]
+  },
+  {
+    name: 'Company',
+    href: '/about',
+    icon: <Users className="w-5 h-5" />,
+    description: 'About Zion Tech Group',
+    children: [
+      { name: 'About Us', href: '/about', description: 'Mission and vision' },
+      { name: 'Leadership', href: '/leadership', description: 'Leadership team' },
+      { name: 'Careers', href: '/careers', description: 'Open roles' },
+      { name: 'Partners', href: '/partners', description: 'Partnerships' },
+      { name: 'Diversity & Inclusion', href: '/diversity-inclusion', description: 'Our commitment' },
+      { name: 'Locations', href: '/locations', description: 'Where we are' }
     ]
   }
 ];

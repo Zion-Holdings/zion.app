@@ -141,6 +141,43 @@ export default function ServicesAdvertisingPage() {
 					</ul>
 				</section>
 
+				{/* Expansion: new verified sections */}
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">AI Meeting Notes & CRM Sync</h2>
+					<p className="text-slate-300">Transcription, action items, and CRM/Jira sync with governance.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $20–$120/mo</li>
+						<li>References: {ext('https://www.zoom.com/en/ai-companion/')}, {ext('https://www.descript.com/pricing')}, {ext('https://otter.ai/pricing')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Email Deliverability & DMARC</h2>
+					<p className="text-slate-300">DMARC/SPF/DKIM checks, inbox placement tests, and blocklist alerts.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $20–$150/mo</li>
+						<li>References: {ext('https://postmaster.google.com/')}, {ext('https://www.mailgun.com/pricing/')}, {ext('https://postmarkapp.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Synthetic Data Generator</h2>
+					<p className="text-slate-300">Privacy-safe synthetic datasets with utility/drift reports for analytics and ML.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $79–$299/mo</li>
+						<li>References: {ext('https://mostly.ai/pricing')}, {ext('https://gretel.ai/pricing')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">PDF Render API</h2>
+					<p className="text-slate-300">Reliable HTML→PDF with assets, templates, and async callbacks.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $15–$99/mo</li>
+						<li>References: {ext('https://docraptor.com/pricing')}, {ext('https://www.pdfmonkey.io/pricing')}</li>
+					</ul>
+				</section>
+
 				<section className="space-y-6">
 					<h2 className="text-2xl font-semibold text-white">Employee Scheduling Suite</h2>
 					<p className="text-slate-300">Shift planning with availability, time-off, swap requests, and notifications.</p>
