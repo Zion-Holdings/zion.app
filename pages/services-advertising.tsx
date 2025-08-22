@@ -180,6 +180,49 @@ export default function ServicesAdvertisingPage() {
 				
 				<div className="pt-4 text-slate-400 text-sm">See also: <a className="text-cyan-400 underline" href="/market-pricing">Market Pricing</a> for a broader list of benchmarks and links.</div>
 
+				{/* Latest Real Additions (concise) */}
+				<section id="latest-real-additions" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Latest Real Additions</h2>
+					<ul className="list-disc list-inside text-slate-300 space-y-2">
+						<li>
+							<strong className="text-white">Postgres Index Advisor Pro</strong> — $79/mo. Auto index insights, PR rollouts. Learn: <a className="text-cyan-400 underline" href="/services/postgres-index-advisor-pro">/services/postgres-index-advisor-pro</a>. Benchmarks: {ext('https://www.postgresql.org/docs/current/auto-explain.html')}{', '}{ext('https://pganalyze.com/blog/postgres-index-tuning')}
+						</li>
+						<li>
+							<strong className="text-white">S3 Lifecycle Optimizer</strong> — $59/mo. Smart storage class moves. Learn: <a className="text-cyan-400 underline" href="/services/s3-lifecycle-optimizer">/services/s3-lifecycle-optimizer</a>. References: {ext('https://aws.amazon.com/s3/pricing/')}{', '}{ext('https://aws.amazon.com/s3/storage-classes/')}
+						</li>
+						<li>
+							<strong className="text-white">Synthetic Journey Monitor</strong> — $39/mo. Record/replay + SLO alerts. Learn: <a className="text-cyan-400 underline" href="/services/synthetic-journey-monitor">/services/synthetic-journey-monitor</a>. References: {ext('https://playwright.dev')}{', '}{ext('https://www.checklyhq.com/pricing/')}
+						</li>
+						<li>
+							<strong className="text-white">Feature Flag Auditor</strong> — $29/mo. Hygiene checks + PRs. Learn: <a className="text-cyan-400 underline" href="/services/feature-flag-auditor">/services/feature-flag-auditor</a>. References: {ext('https://launchdarkly.com/pricing/')}{', '}{ext('https://www.flagsmith.com/pricing')}
+						</li>
+						<li>
+							<strong className="text-white">SOC 2 Evidence Collector</strong> — $99/mo. Continuous evidence bundles. Learn: <a className="text-cyan-400 underline" href="/services/soc2-evidence-collector">/services/soc2-evidence-collector</a>. References: {ext('https://trust.servicenow.com/compliance/soc2/')}{', '}{ext('https://www.aicpa.org/resources/article/soc-2-faqs')}
+						</li>
+						<li>
+							<strong className="text-white">IAM Permission Analyzer</strong> — $79/mo. Least privilege guidance. Learn: <a className="text-cyan-400 underline" href="/services/iam-permission-analyzer">/services/iam-permission-analyzer</a>. References: {ext('https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html')}{', '}{ext('https://cloud.google.com/iam/docs')}
+						</li>
+						<li>
+							<strong className="text-white">GitOps Drift Auto-Remediator</strong> — $69/mo. Detect drift, open PRs. Learn: <a className="text-cyan-400 underline" href="/services/gitops-drift-auto-remediator">/services/gitops-drift-auto-remediator</a>. References: {ext('https://www.openpolicyagent.org/')}{', '}{ext('https://argo-cd.readthedocs.io/en/stable/')}
+						</li>
+						<li>
+							<strong className="text-white">AI Meeting‑to‑Ticket Copilot</strong> — $25/user/mo. Action items → Jira/GitHub. Learn: <a className="text-cyan-400 underline" href="/services/ai-meeting-to-ticket">/services/ai-meeting-to-ticket</a>. References: {ext('https://workspace.google.com/pricing')}{', '}{ext('https://www.atlassian.com/software/jira/pricing')}
+						</li>
+						<li>
+							<strong className="text-white">Email Warmup & Reputation Monitor</strong> — $39/mo. Sender reputation & inbox tests. Learn: <a className="text-cyan-400 underline" href="/services/email-warmup-monitor">/services/email-warmup-monitor</a>. References: {ext('https://postmaster.google.com')}{', '}{ext('https://sendgrid.com/pricing/')}
+						</li>
+						<li>
+							<strong className="text-white">PII Discovery Scanner</strong> — $89/mo. Detect, redact, export evidence. Learn: <a className="text-cyan-400 underline" href="/services/pii-discovery-scanner">/services/pii-discovery-scanner</a>. References: {ext('https://cloud.google.com/dlp/pricing')}{', '}{ext('https://aws.amazon.com/macie/pricing/')}
+						</li>
+						<li>
+							<strong className="text-white">API Breaking Change Watcher</strong> — $49/mo. Schema diff + CI gates. Learn: <a className="text-cyan-400 underline" href="/services/api-breaking-change-watcher">/services/api-breaking-change-watcher</a>. References: {ext('https://www.openapis.org/')}{', '}{ext('https://graphql.org/learn/best-practices/')}
+						</li>
+						<li>
+							<strong className="text-white">Data Warehouse Cost Optimizer</strong> — $99/mo. Right-size warehouses. Learn: <a className="text-cyan-400 underline" href="/services/warehouse-cost-optimizer">/services/warehouse-cost-optimizer</a>. References: {ext('https://www.snowflake.com/en/pricing/')}{', '}{ext('https://cloud.google.com/bigquery/pricing')}
+						</li>
+					</ul>
+				</section>
+
 				<section id="ai-email-responder" className="space-y-6">
 					<h2 className="text-2xl font-semibold text-white">AI Email Responder</h2>
 					<p className="text-slate-300">Autonomous replies, prioritization, and sentiment analysis integrated with your CRM.</p>
