@@ -110,8 +110,13 @@ export default function SEO({ title, description, canonical, ogImage, image, noI
 			<meta name="description" content={pageDescription} />
 			<meta name="robots" content={robotsContent} />
 			<link rel="canonical" href={canonicalUrl} />
+			{/* Hreflang alternates for single-language site */}
+			<link rel="alternate" hrefLang="en" href={canonicalUrl} />
+			<link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
 			{/* Optional sitemap link for crawlers */}
 			<link rel="sitemap" type="application/xml" href={`${baseUrl.replace(/\/$/, '')}/sitemap.xml`} />
+			{/* Disable automatic telephone number detection on iOS */}
+			<meta name="format-detection" content="telephone=no" />
 			<meta property="og:title" content={pageTitle} />
 			<meta property="og:description" content={pageDescription} />
 			<meta property="og:url" content={canonicalUrl} />
@@ -123,6 +128,8 @@ export default function SEO({ title, description, canonical, ogImage, image, noI
 			<meta property="og:image:width" content="1200" />
 			<meta property="og:image:height" content="630" />
 			{imageType ? <meta property="og:image:type" content={imageType} /> : null}
+			{/* Secure URL for Open Graph image */}
+			<meta property="og:image:secure_url" content={imageUrl.startsWith('http:') ? imageUrl.replace(/^http:/, 'https:') : imageUrl} />
 			<meta name="twitter:card" content="summary_large_image" />
 			<meta name="twitter:title" content={pageTitle} />
 			<meta name="twitter:description" content={pageDescription} />

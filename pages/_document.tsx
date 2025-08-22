@@ -14,6 +14,7 @@ class MyDocument extends Document {
 					<meta charSet="utf-8" />
 					<meta name="theme-color" content="#000000" />
 					<meta name="color-scheme" content="dark light" />
+					<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 					<link rel="preconnect" href="https://plausible.io" crossOrigin="anonymous" />
 					<link rel="dns-prefetch" href="//plausible.io" />
 					<link rel="preload" as="image" href="/og-image.svg" imageSrcSet={`${siteUrl.replace(/\/$/, '')}/og-image.svg`} />
