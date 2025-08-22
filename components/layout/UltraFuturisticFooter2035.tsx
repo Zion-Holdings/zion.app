@@ -34,7 +34,10 @@ const footerSections = [
       { name: 'AI Evaluation Orchestrator', href: '/ai-evaluation-orchestrator', featured: true },
       { name: 'SEO Automation Suite', href: '/seo-automation-suite' },
       { name: 'IT Asset Discovery Agent', href: '/it-asset-discovery-agent' },
-      { name: 'Managed Postgres HA', href: '/managed-postgres-ha' }
+      { name: 'Managed Postgres HA', href: '/managed-postgres-ha' },
+      { name: 'Affiliate Tracking Hub', href: '/services/affiliate-tracking-hub' },
+      { name: 'IT Helpdesk Suite', href: '/services/it-helpdesk-suite' },
+      { name: 'Edge Personalization Engine', href: '/services/edge-personalization-engine' }
     ]
   },
   {
