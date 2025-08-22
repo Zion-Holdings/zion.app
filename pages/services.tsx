@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Head from 'next/head';
+import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import { 
   Search, Grid, List,
@@ -249,21 +249,7 @@ export default function Services() {
 
   return (
     <>
-      <Head>
-        <title>Services | Zion Tech Group - Enterprise IT, AI, Micro SAAS Solutions</title>
-        <meta name="description" content="Discover our comprehensive portfolio of enterprise IT solutions, AI services, and innovative micro SAAS platforms. Transform your business with cutting-edge technology." />
-        <meta name="keywords" content="enterprise IT solutions, AI services, micro SAAS, cybersecurity, cloud services, DevOps, data analytics" />
-        <meta name="author" content="Zion Tech Group" />
-        <meta name="robots" content="index, follow" />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content="Services | Zion Tech Group" />
-        <meta property="og:description" content="Comprehensive portfolio of enterprise IT, AI, and micro SAAS solutions." />
-        <meta property="og:url" content="https://ziontechgroup.com/services" />
-        <meta property="og:type" content="website" />
-        
-        <link rel="canonical" href="https://ziontechgroup.com/services" />
-      </Head>
+      <SEO title="Services | Zion Tech Group - Enterprise IT, AI, Micro SAAS Solutions" description="Discover our comprehensive portfolio of enterprise IT solutions, AI services, and innovative micro SAAS platforms. Transform your business with cutting-edge technology." canonical="https://ziontechgroup.com/services/" />
 
       <div className="min-h-screen bg-black text-white pt-24">
         {/* Hero Section */}

@@ -1,17 +1,11 @@
 import React from 'react';
-import Head from 'next/head';
+import SEO from '../components/SEO';
 import Card from '../components/ui/Card';
 
 export default function TermsPage() {
   return (
     <>
-      <Head>
-        <title>Terms of Service | Zion Tech Group</title>
-        <meta name="description" content="Terms of Service for Zion Tech Group - Learn about our service terms and conditions." />
-        <meta property="og:title" content="Terms of Service | Zion Tech Group" />
-        <meta property="og:description" content="Terms of Service for Zion Tech Group." />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Head>
+      <SEO title="Terms of Service | Zion Tech Group" description="Terms of Service for Zion Tech Group - Learn about our service terms and conditions." canonical="https://ziontechgroup.com/terms/" />
 
       {/* Hero Section */}
       <section className="relative py-24 bg-gradient-to-br from-cursor-darker via-cursor-dark to-cursor-darker overflow-hidden">
