@@ -121,14 +121,10 @@ const footerSections = [
     description: 'Documentation, support, and learning',
     icon: <BookOpen className="w-5 h-5 text-cyan-400" />,
     links: [
-      { name: 'Documentation', href: '/docs' },
-      { name: 'API Reference', href: '/docs' },
+      { name: 'Blog', href: '/blog' },
       { name: 'Case Studies', href: '/case-studies' },
-      { name: 'Blog & News', href: '/blog' },
       { name: 'Support Center', href: '/support' },
-      { name: 'Developer Portal', href: '/developer' },
       { name: 'Training & Certification', href: '/training' },
-      { name: 'Community Forum', href: '/community' },
       { name: 'Market Pricing', href: '/market-pricing' },
       { name: 'Services Advertising', href: '/services-advertising' }
     ]
@@ -207,18 +203,14 @@ const UltraFuturisticFooter2035: React.FC = () => {
                 </p>
 
                 {/* Contact Info */}
-                <div className="space-y-3">
-                  <a href={`tel:${contactInfo.mobile}`} className="flex items-center gap-3 text-gray-300 hover:text-cyan-400 transition-colors duration-200">
-                    <Phone className="w-4 h-4" />
-                    <span>{contactInfo.mobile}</span>
-                  </a>
-                  <a href={`mailto:${contactInfo.email}`} className="flex items-center gap-3 text-gray-300 hover:text-purple-400 transition-colors duration-200">
-                    <Mail className="w-4 h-4" />
-                    <span>{contactInfo.email}</span>
-                  </a>
-                  <div className="flex items-center gap-3 text-gray-300">
-                    <MapPin className="w-4 h-4" />
-                    <span className="text-sm">{contactInfo.address}</span>
+                <div className="space-y-3 text-sm">
+                  <a href={`tel:${contactInfo.mobile}`} className="flex items-center gap-2 text-cyan-300 hover:text-cyan-200"><Phone className="w-4 h-4" /> {contactInfo.mobile}</a>
+                  <a href={`mailto:${contactInfo.email}`} className="flex items-center gap-2 text-purple-300 hover:text-purple-200"><Mail className="w-4 h-4" /> {contactInfo.email}</a>
+                  <div className="flex items-start gap-2 text-pink-300"><MapPin className="w-4 h-4" /> <span className="text-xs">{contactInfo.address}</span></div>
+                  <div className="pt-2">
+                    <Link href="/market-pricing" className="inline-flex items-center gap-2 text-cyan-300 hover:text-white"><BarChart3 className="w-4 h-4" /> Market Pricing</Link>
+                    <span className="mx-2 text-gray-600">|</span>
+                    <Link href="/services-advertising" className="inline-flex items-center gap-2 text-cyan-300 hover:text-white"><Sparkles className="w-4 h-4" /> Services Advertising</Link>
                   </div>
                 </div>
 

@@ -225,8 +225,8 @@ export default function ServicesAdvertisingPage() {
 				</section>
 
 				<section id="it-helpdesk-suite" className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">IT Helpdesk Suite</h2>
-					<p className="text-slate-300">Ticketing, SLAs, KB, and self-service portal for IT teams and MSPs.</p>
+					<h2 className="text-2xl font-semibold text-white">IT Helpdesk & Knowledge Base</h2>
+					<p className="text-slate-300">Ticketing, SLAs, self‑service portal, and knowledge base for IT teams/MSPs.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $30–$70/agent/mo</li>
 						<li>References: {ext('https://www.zendesk.com/pricing/')}, {ext('https://www.freshworks.com/freshdesk/pricing/')}</li>
@@ -234,10 +234,10 @@ export default function ServicesAdvertisingPage() {
 				</section>
 
 				<section id="ecommerce-returns-center" className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">E‑commerce Returns Center</h2>
-					<p className="text-slate-300">Self-service returns, labels, and exchanges with analytics.</p>
+					<h2 className="text-2xl font-semibold text-white">E‑commerce Return Management</h2>
+					<p className="text-slate-300">Automate return requests, label generation, RMA approvals, and refunds with analytics.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $30–$60/mo</li>
+						<li>Typical SMB budget: $30–$100/mo</li>
 						<li>References: {ext('https://www.loopreturns.com/pricing/')}, {ext('https://www.returnsgo.com/pricing')}</li>
 					</ul>
 				</section>
@@ -253,7 +253,7 @@ export default function ServicesAdvertisingPage() {
 
 				<section className="space-y-6">
 					<h2 className="text-2xl font-semibold text-white">API Contract Testing Suite</h2>
-					<p className="text-slate-300">Automated OpenAPI/GraphQL contract tests with CI gates, schema diffs, and rollback guidance.</p>
+					<p className="text-slate-300">Automated OpenAPI/GraphQL contract tests with schema diffs and CI gates.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $20–$100/mo</li>
 						<li>References: {ext('https://www.postman.com/pricing/')}, {ext('https://www.optic.dev/')}, {ext('https://stoplight.io/')}</li>
@@ -302,6 +302,33 @@ export default function ServicesAdvertisingPage() {
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $30–$150/mo</li>
 						<li>References: {ext('https://launchdarkly.com/pricing/')}, {ext('https://www.flagsmith.com/pricing')}, {ext('https://www.split.io/pricing/')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Freelancer Portfolio Builder</h2>
+					<p className="text-slate-300">Beautiful portfolios with niche templates, custom domains, analytics, and lead capture.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB/freelancer budget: $8–$29/mo</li>
+						<li>References: {ext('https://carrd.co/pricing')}, {ext('https://www.wix.com/pricing')}, {ext('https://www.squarespace.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Automated Internal Linking (SEO)</h2>
+					<p className="text-slate-300">AI suggests and inserts contextual internal links to improve crawlability and UX.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $20–$80/mo</li>
+						<li>References: {ext('https://www.semrush.com/prices/')}, {ext('https://ahrefs.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Podcast Transcription & Chapters</h2>
+					<p className="text-slate-300">Accurate transcripts, smart chapters, show notes, and blog drafts from episodes.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB/creator budget: $10–$60/mo + usage</li>
+						<li>References: {ext('https://www.descript.com/pricing')}, {ext('https://otter.ai/pricing')}</li>
 					</ul>
 				</section>
 			</div>

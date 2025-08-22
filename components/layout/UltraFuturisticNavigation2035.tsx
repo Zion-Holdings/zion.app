@@ -72,15 +72,15 @@ const navigationItems: NavigationItem[] = [
     description: 'Browse by category',
     badge: 'New',
     children: [
-      { name: 'AI & Consciousness', href: '/services#ai-consciousness', description: 'AI, data, ML services' },
-      { name: 'Enterprise IT', href: '/services#enterprise-it', description: 'Cloud, cost, platform' },
-      { name: 'Quantum & Emerging', href: '/services#quantum-emerging', description: 'Monitoring & telemetry' },
-      { name: 'Micro SAAS', href: '/services#micro-saas', description: 'Business tools and automation' },
-      { name: 'Education & Research', href: '/services#education-research', description: 'Learning and R&D' },
-      { name: 'AI Evaluation Orchestrator', href: '/ai-evaluation-orchestrator', description: 'Automated LLM evals' },
+      { name: 'AI & Data', href: '/services#ai', description: 'AI, data, ML services' },
+      { name: 'Cloud & FinOps', href: '/services#cloud', description: 'Cloud, cost, platform' },
+      { name: 'Observability', href: '/services#observability', description: 'Monitoring & telemetry' },
+      { name: 'Developer Tools', href: '/services#developer-tools', description: 'Developer productivity' },
+      { name: 'Training & Education', href: '/training', description: 'Learning and R&D' },
       { name: 'SEO Automation Suite', href: '/seo-automation-suite', description: 'Technical SEO automation' },
       { name: 'IT Asset Discovery Agent', href: '/it-asset-discovery-agent', description: 'Agentless discovery' },
-      { name: 'Managed Postgres HA', href: '/managed-postgres-ha', description: 'HA Postgres ops' }
+      { name: 'Managed Postgres HA', href: '/managed-postgres-ha', description: 'HA Postgres ops' },
+      { name: 'Micro SAAS', href: '/micro-saas', description: 'Business tools and automation' }
     ]
   },
   {
@@ -215,15 +215,12 @@ const navigationItems: NavigationItem[] = [
     name: 'Resources',
     href: '/resources',
     icon: <BookOpen className="w-5 h-5" />,
-    description: 'Documentation, support, and learning resources',
+    description: 'Guides, reports and tools',
     children: [
-      { name: 'Documentation', href: '/docs', description: 'Technical documentation' },
-      { name: 'API Reference', href: '/api-documentation', description: 'API documentation' },
-      { name: 'Case Studies', href: '/case-studies', description: 'Success stories' },
-      { name: 'Blog & News', href: '/blog', description: 'Latest insights' },
-      { name: 'Support Center', href: '/support', description: 'Help and support' },
-      { name: 'Training', href: '/training', description: 'Learning resources' },
-      { name: 'Community', href: '/community', description: 'User community' }
+      { name: 'Blog', href: '/blog', description: 'Insights and updates' },
+      { name: 'Case Studies', href: '/case-studies', description: 'Proven results' },
+      { name: 'Resources Hub', href: '/resources', description: 'Docs, SDKs, guides' },
+      { name: 'Services Advertising', href: '/services-advertising', description: 'Features, benefits and market pricing links' }
     ]
   }
 ];
@@ -231,12 +228,12 @@ const navigationItems: NavigationItem[] = [
 const quickActions = [
   { name: 'Get Started', href: '/contact', icon: <ArrowRight className="w-4 h-4" />, primary: true },
   { name: 'Get a Quote', href: '/quote', icon: <DollarSign className="w-4 h-4" /> },
-  { name: 'Book Demo', href: '/demo', icon: <Video className="w-4 h-4" /> },
+  { name: 'Book Demo', href: '/contact', icon: <Video className="w-4 h-4" /> },
   { name: 'Live Chat', href: '/chat', icon: <MessageCircle className="w-4 h-4" /> },
   { name: 'View Pricing', href: '/pricing', icon: <DollarSign className="w-4 h-4" /> },
   { name: 'Market Pricing', href: '/market-pricing', icon: <BarChart3 className="w-4 h-4" /> },
   { name: 'Services Advertising', href: '/services-advertising', icon: <Sparkles className="w-4 h-4" /> },
-  { name: 'Documentation', href: '/docs', icon: <BookOpen className="w-4 h-4" /> },
+  { name: 'Resources', href: '/resources', icon: <BookOpen className="w-4 h-4" /> },
   { name: 'Support', href: '/support', icon: <HelpCircle className="w-4 h-4" /> }
 ];
 
