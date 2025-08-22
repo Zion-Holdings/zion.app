@@ -1,7 +1,10 @@
 import React from 'react';
-import Head from 'next/head';
-import UltraAdvancedHeroSection2025 from '../components/sections/UltraAdvancedHeroSection2025';
+import SEOOptimizer from '../components/ui/SEOOptimizer';
+import EnhancedNavigation from '../components/layout/EnhancedNavigation';
+import EnhancedHeroSection2025 from '../components/sections/EnhancedHeroSection2025';
 import UltraAdvancedServicesShowcase2025 from '../components/sections/UltraAdvancedServicesShowcase2025';
+import EnhancedFooter from '../components/layout/EnhancedFooter';
+import PerformanceMonitor from '../components/ui/PerformanceMonitor';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { 
@@ -120,16 +123,23 @@ const featuredServices = [
 const Home: React.FC = () => {
   return (
     <>
-      <Head>
-        <title>Zion Tech Group - Revolutionary Technology Solutions | AI, Quantum Computing, Micro SAAS</title>
-        <meta name="description" content="Transform your business with Zion Tech Group's revolutionary AI, quantum computing, and micro SAAS solutions. Leading-edge technology for unprecedented growth." />
-        <meta name="keywords" content="AI, quantum computing, micro SAAS, technology solutions, business transformation, Zion Tech Group" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="canonical" href="https://ziontechgroup.com" />
-      </Head>
+      <SEOOptimizer
+        title="Revolutionary AI & Quantum Computing Solutions"
+        description="Transform your business with Zion Tech Group's revolutionary AI, quantum computing, and micro SAAS solutions. Leading-edge technology for unprecedented growth."
+        keywords={[
+          'AI', 'quantum computing', 'micro SAAS', 'technology solutions', 
+          'business transformation', 'Zion Tech Group', 'machine learning',
+          'deep learning', 'neural networks', 'quantum algorithms'
+        ]}
+        type="website"
+        canonicalUrl="https://ziontechgroup.com"
+      />
+
+      {/* Enhanced Navigation */}
+      <EnhancedNavigation />
 
       {/* Hero Section */}
-        <UltraAdvancedHeroSection2025 />
+      <EnhancedHeroSection2025 />
 
         {/* Why Choose Us Section */}
         <section className="py-20 bg-gradient-to-b from-black to-gray-900">
@@ -379,8 +389,14 @@ const Home: React.FC = () => {
             </motion.div>
           </div>
         </section>
-    </>
-  );
-};
+
+        {/* Enhanced Footer */}
+        <EnhancedFooter />
+
+        {/* Performance Monitor */}
+        <PerformanceMonitor />
+      </>
+    );
+  };
 
 export default Home;
