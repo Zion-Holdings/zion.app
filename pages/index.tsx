@@ -238,7 +238,7 @@ export default function Home() {
                 <p className="text-gray-300 mb-6">{service.description}</p>
                 
                 <div className="space-y-3 mb-6">
-                  {service.keyFeatures.slice(0, 3).map((feature, idx) => (
+                  {service.features.slice(0, 3).map((feature, idx) => (
                     <div key={idx} className="flex items-center">
                       <CheckCircle className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
                       <span className="text-gray-300 text-sm">{feature}</span>
