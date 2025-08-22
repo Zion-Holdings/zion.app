@@ -33,9 +33,6 @@ const Header: React.FC = () => {
       icon: <Zap className="w-5 h-5" />,
       children: [
         { name: 'All Services', href: '/services' },
-        { name: 'Industry Solutions', href: '/solutions' },
-        { name: 'Cloud Platform', href: '/cloud-platform' },
-        { name: 'AI Assistant', href: '/ai-assistant' },
         { name: 'Status Pages & SLO', href: '/status-pages-slo' }
       ]
     },
@@ -45,13 +42,10 @@ const Header: React.FC = () => {
       description: 'Industry-Specific Solutions',
       icon: <Sparkles className="w-5 h-5" />,
       children: [
-        { name: 'Case Studies', href: '/case-studies' },
-        { name: 'Cloud Platform', href: '/cloud-platform' },
-        { name: 'AI Assistant', href: '/ai-assistant' },
-        { name: 'Analytics', href: '/analytics' },
-        { name: 'Automation', href: '/automation' }
+        { name: 'Case Studies', href: '/case-studies' }
       ]
     },
+    { name: 'Market Pricing', href: '/market-pricing' },
     { name: 'Pricing', href: '/pricing' },
     { name: 'Resources', href: '/resources' },
     { name: 'Contact', href: '/contact' }
