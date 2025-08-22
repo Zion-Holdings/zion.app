@@ -295,6 +295,9 @@ const UltraFuturisticFooter2035: React.FC = () => {
                 <Link href="/cookies" className="hover:text-white transition-colors duration-200">
                   Cookie Policy
                 </Link>
+                <Link href="/sitemap.xml" className="hover:text-white transition-colors duration-200">
+                  Sitemap
+                </Link>
               </div>
 
               <button

@@ -223,7 +223,8 @@ const navigationItems: NavigationItem[] = [
       { name: 'Blog & News', href: '/blog', description: 'Latest insights' },
       { name: 'Support Center', href: '/support', description: 'Help and support' },
       { name: 'Training', href: '/training', description: 'Learning resources' },
-      { name: 'Community', href: '/community', description: 'User community' }
+      { name: 'Community', href: '/community', description: 'User community' },
+      { name: 'Sitemap', href: '/sitemap.xml', description: 'All site URLs' }
     ]
   }
 ];
