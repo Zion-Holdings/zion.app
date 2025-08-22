@@ -1,31 +1,33 @@
 import React from 'react';
-import Head from 'next/head';
+import SEO from '../components/SEO';
 
 export default function ContactPage() {
 	return (
-		<div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8">
-			<Head>
-				<title>Contact | Zion Tech Group</title>
-				<link rel="canonical" href="https://ziontechgroup.com/contact" />
-				<meta name="description" content="Contact Zion Tech Group: +1 302 464 0950, kleber@ziontechgroup.com, 364 E Main St STE 1008 Middletown DE 19709" />
-			</Head>
-			<div className="max-w-4xl mx-auto space-y-8">
-				<h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Get in touch</h1>
-				<div className="grid md:grid-cols-2 gap-6">
-					<div className="bg-black/30 rounded-2xl border border-cyan-500/30 p-6 space-y-3">
-						<div className="text-slate-300">Phone</div>
-						<a className="text-cyan-400 underline" href="tel:+13024640950">+1 302 464 0950</a>
-					</div>
-					<div className="bg-black/30 rounded-2xl border border-purple-500/30 p-6 space-y-3">
-						<div className="text-slate-300">Email</div>
-						<a className="text-cyan-400 underline" href="mailto:kleber@ziontechgroup.com">kleber@ziontechgroup.com</a>
-					</div>
-					<div className="bg-black/30 rounded-2xl border border-pink-500/30 p-6 md:col-span-2 space-y-3">
-						<div className="text-slate-300">Address</div>
-						<div className="text-slate-200">364 E Main St STE 1008 Middletown DE 19709</div>
-					</div>
+		<>
+			<SEO title="Contact Zion Tech Group" description="Get in touch with Zion Tech Group for services, partnerships, and support." canonical="https://ziontechgroup.com/contact" />
+			<section className="relative pt-28 pb-16 md:pt-36 md:pb-24">
+				<div className="container mx-auto px-4 max-w-3xl">
+					<h1 className="text-3xl md:text-5xl font-extrabold tracking-tight">Contact Us</h1>
+					<p className="mt-4 text-gray-300">We'd love to hear from you. Send us a message and we'll get back soon.</p>
+					<form className="mt-10 grid gap-4" action="mailto:hello@ziontechgroup.com" method="post" encType="text/plain">
+						<label className="block">
+							<span className="block mb-2">Your Name</span>
+							<input type="text" name="name" required className="w-full rounded-md bg-white/5 border border-white/20 px-4 py-2" />
+						</label>
+						<label className="block">
+							<span className="block mb-2">Email</span>
+							<input type="email" name="email" required className="w-full rounded-md bg-white/5 border border-white/20 px-4 py-2" />
+						</label>
+						<label className="block">
+							<span className="block mb-2">Message</span>
+							<textarea name="message" rows={5} required className="w-full rounded-md bg-white/5 border border-white/20 px-4 py-2" />
+						</label>
+						<div>
+							<button type="submit" className="inline-flex items-center justify-center px-6 py-3 rounded-md bg-white text-black font-semibold hover:bg-gray-200 transition-colors">Send</button>
+						</div>
+					</form>
 				</div>
-			</div>
-		</div>
+			</section>
+		</>
 	);
 }

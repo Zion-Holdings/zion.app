@@ -72,7 +72,7 @@ export default function SEO({ title, description, canonical, ogImage, image, noI
 		? 'image/svg+xml'
 		: undefined;
 
-	// Default JSON-LD if none provided
+	// Default JSON-LD if none provided (removed SearchAction because no /search route exists)
 	const defaultJsonLd = [
 		{
 			"@context": "https://schema.org",
@@ -89,12 +89,7 @@ export default function SEO({ title, description, canonical, ogImage, image, noI
 			"@context": "https://schema.org",
 			"@type": "WebSite",
 			"url": baseUrl,
-			"name": "Zion Tech Group",
-			"potentialAction": {
-				"@type": "SearchAction",
-				"target": `${baseUrl.replace(/\/$/, '')}/search?q={search_term_string}`,
-				"query-input": "required name=search_term_string"
-			}
+			"name": "Zion Tech Group"
 		}
 	];
 
