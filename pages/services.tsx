@@ -9,16 +9,24 @@ import {
 } from 'lucide-react';
 
 // Import our new service data
-import { enterpriseITSolutions } from '../data/2034-enterprise-it-solutions';
-import { innovativeMicroSaasSolutions } from '../data/2034-innovative-micro-saas-solutions';
-import { cuttingEdgeAIServices } from '../data/2034-cutting-edge-ai-services';
+// import { enterpriseITSolutions } from '../data/2034-enterprise-it-solutions';
+// import { innovativeMicroSaasSolutions } from '../data/2034-innovative-micro-saas-solutions';
+// import { cuttingEdgeAIServices } from '../data/2034-cutting-edge-ai-services';
 
 // Import existing service data
-import { realMicroSaasServices2025 } from '../data/2025-real-micro-saas-services';
-import { innovativeAIServices2025 } from '../data/2025-innovative-ai-services';
-import { innovativeITServices2025 } from '../data/2025-innovative-it-services';
-import { emergingTechServices2025 } from '../data/2025-emerging-tech-services';
-import { newRealServices2026 } from '../data/2025-2026-new-real-services';
+// import { realMicroSaasServices2025 } from '../data/2025-real-micro-saas-services';
+// import { innovativeAIServices2025 } from '../data/2025-innovative-ai-services';
+// import { innovativeITServices2025 } from '../data/2025-innovative-it-services';
+// import { emergingTechServices2025 } from '../data/2025-emerging-tech-services';
+// import { newRealServices2026 } from '../data/2025-2026-new-real-services';
+import { enterpriseITServices } from '../data/enterprise-it-services';
+import { innovativeMicroSaasServices } from '../data/innovative-micro-saas-services';
+import { innovativeAIServices } from '../data/innovative-ai-services';
+import { emergingTechServices } from '../data/emerging-tech-services';
+import { newRealServices } from '../data/new-real-services';
+import { realMarketServices } from '../data/real-market-services';
+import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
+import { realAdditions2025Q3 } from '../data/2025-q3-real-additions';
 
 // Helper function to get service category
 const getServiceCategory = (service: any) => {
@@ -51,14 +59,14 @@ const getServiceDescription = (service: any) => {
 
 // Create unified services array
 const allServices = [
-  ...enterpriseITSolutions,
-  ...innovativeMicroSaasSolutions,
-  ...cuttingEdgeAIServices,
-  ...realMicroSaasServices2025,
-  ...innovativeAIServices2025,
-  ...innovativeITServices2025,
-  ...emergingTechServices2025,
-  ...newRealServices2026
+	...enterpriseITServices,
+	...innovativeMicroSaasServices,
+	...innovativeAIServices,
+	...emergingTechServices,
+	...newRealServices,
+	...realMarketServices,
+	...enhancedRealMicroSaasServices,
+	...realAdditions2025Q3
 ];
 
 const categories = [
