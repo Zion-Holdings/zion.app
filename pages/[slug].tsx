@@ -31,6 +31,7 @@ import { professionalServices } from '../data/professional-services';
 import { realEnterpriseServices2025 } from '../data/real-enterprise-services-2025';
 import { augmentedServicesBatch3 } from '../data/real-augmented-services-2025-batch3';
 import { real2025Q3Additions } from '../data/real-2025-q3-additions';
+import { realQ4Services2025 } from '../data/real-2025-q4-additions';
 
 export default function ServiceFallbackPage() {
   const router = useRouter();
@@ -62,7 +63,8 @@ export default function ServiceFallbackPage() {
         professionalServices as any,
         realEnterpriseServices2025 as any,
         augmentedServicesBatch3 as any,
-        real2025Q3Additions as any
+        real2025Q3Additions as any,
+        realQ4Services2025 as any
       );
     const byLink = all.find(s => {
       try {
@@ -180,13 +182,22 @@ function collectAllServices(): Svc[] {
       enterpriseITServices as Svc[],
       newRealServices as Svc[],
       marketReadyServices as Svc[],
-      nextGenerationAIServices as Svc[],
+      realMarketServices as Svc[],
+      new2025Services as Svc[],
+      newRealInnovations as Svc[],
       emergingTechnologyServices as Svc[],
       comprehensiveITSolutions as Svc[],
       marketValidatedServices as Svc[],
-      newRealInnovations as Svc[],
-      realMarketServices as Svc[],
-      augmentedServicesBatch3 as Svc[]
+      curatedMarketServices as Svc[],
+      cuttingEdgeITServices as Svc[],
+      nextGenerationAIServices as Svc[],
+      nextGenAIServices as Svc[],
+      industryRealServices as Svc[],
+      professionalServices as Svc[],
+      realEnterpriseServices2025 as Svc[],
+      augmentedServicesBatch3 as Svc[],
+      real2025Q3Additions as Svc[],
+      realQ4Services2025 as Svc[]
     );
 }
 
