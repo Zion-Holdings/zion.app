@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 import UltraFuturisticNavigation2035 from './UltraFuturisticNavigation2035';
 import UltraFuturisticFooter2035 from './UltraFuturisticFooter2035';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';

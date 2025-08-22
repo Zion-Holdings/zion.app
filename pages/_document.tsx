@@ -9,6 +9,7 @@ export default class MyDocument extends Document {
 					<meta name="color-scheme" content="dark light" />
 					<meta name="format-detection" content="telephone=no" />
 					<link rel="preconnect" href="https://plausible.io" crossOrigin="anonymous" />
+					<link rel="dns-prefetch" href="//plausible.io" />
 					<link rel="manifest" href="/site.webmanifest" />
 					<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 				</Head>
