@@ -74,12 +74,12 @@ const companyLinks = [
   { name: 'Case Studies', href: '/case-studies', icon: Briefcase },
   { name: 'Blog', href: '/blog', icon: BookOpen },
   { name: 'News', href: '/news', icon: Star },
-  { name: 'Press', href: '/press', icon: MessageCircle }
+  { name: 'Press', href: '/news', icon: MessageCircle }
 ];
 
 const resourceLinks = [
   { name: 'Documentation', href: '/docs', icon: BookOpen },
-  { name: 'API Reference', href: '/api', icon: Cpu },
+  { name: 'API Reference', href: '/api-documentation', icon: Cpu },
   { name: 'Training', href: '/training', icon: GraduationCap },
   { name: 'Support', href: '/support', icon: ShieldCheck },
   { name: 'Community', href: '/community', icon: Users },

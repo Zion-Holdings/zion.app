@@ -73,13 +73,13 @@ const quickLinks = [
 
 const resources = [
   { name: 'Documentation', href: '/docs' },
-  { name: 'API Reference', href: '/api' },
+  { name: 'API Reference', href: '/api-documentation' },
   { name: 'Case Studies', href: '/case-studies' },
   { name: 'White Papers', href: '/white-papers' },
   { name: 'Blog', href: '/blog' },
   { name: 'News', href: '/news' },
-  { name: 'Events', href: '/events' },
-  { name: 'Webinars', href: '/webinars' }
+  { name: 'Events', href: '/news' },
+  { name: 'Webinars', href: '/news' }
 ];
 
 const company = [

@@ -59,7 +59,7 @@ const sidebarSections = [
       { name: 'Quantum Logistics', href: '/quantum-logistics-optimization' },
       { name: 'Quantum Metaverse', href: '/quantum-metaverse' },
       { name: 'Quantum IoT Platform', href: '/quantum-iot' },
-      { name: 'Quantum Financial Trading', href: '/quantum-financial-trading' }
+      { name: 'Quantum Financial Trading', href: '/quantum-financial-trading-platform' }
     ]
   },
   {
@@ -134,7 +134,7 @@ const sidebarSections = [
       { name: 'Support Center', href: '/support' },
       { name: 'Training & Certification', href: '/training' },
       { name: 'Community Forum', href: '/community' },
-      { name: 'Developer Resources', href: '/developer-resources' },
+      { name: 'Developer Resources', href: '/developer' },
       { name: 'Research & Development', href: '/research-development' },
       { name: 'White Papers', href: '/white-papers' },
       { name: 'Performance Reports', href: '/reports' },
@@ -165,7 +165,7 @@ const sidebarSections = [
 
 const quickLinks = [
   { name: 'Home', href: '/', icon: <Home className="w-4 h-4" /> },
-  { name: 'All Services', href: '/comprehensive-services-showcase-2025', icon: <Star className="w-4 h-4" /> },
+  { name: 'All Services', href: '/services', icon: <Star className="w-4 h-4" /> },
   { name: 'Pricing', href: '/pricing', icon: <DollarSign className="w-4 h-4" /> },
   { name: 'Market Pricing', href: '/market-pricing', icon: <DollarSign className="w-4 h-4" /> },
   { name: 'Services Advertising', href: '/services-advertising', icon: <BookOpen className="w-4 h-4" /> },

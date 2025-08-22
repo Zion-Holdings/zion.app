@@ -86,7 +86,7 @@ const quickLinks = [
 const companyInfo = [
   { name: 'About Us', href: '/about' },
   { name: 'Careers', href: '/careers' },
-  { name: 'Press', href: '/press' },
+  { name: 'Press', href: '/news' },
   { name: 'Partners', href: '/partners' },
   { name: 'Support', href: '/support' },
   { name: 'Status', href: '/status' }

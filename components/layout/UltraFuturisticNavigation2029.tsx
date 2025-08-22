@@ -64,7 +64,7 @@ const serviceCategories = [
     description: 'Space exploration and digital reality',
     services: [
       { name: 'Space Resource Mining', href: '/space-resource-mining-platform', description: 'Automated asteroid mining', price: '$45,999/month' },
-      { name: 'Metaverse Digital Reality Platform', href: '/metaverse-digital-reality-platform', description: 'Immersive virtual worlds', price: '$8,999/month' },
+      { name: 'Metaverse Digital Reality Platform', href: '/metaverse-ai-development-platform', description: 'Immersive virtual worlds', price: '$8,999/month' },
       { name: 'AI Predictive Health Analytics', href: '/services/ai-predictive-health-analytics-2029', description: 'Predictive health outcomes', price: '$7,999/month' },
       { name: 'AI Autonomous Business Manager', href: '/services/ai-autonomous-business-manager-2029', description: 'Fully autonomous business operations', price: '$12,999/month' }
     ]
@@ -87,10 +87,10 @@ const serviceCategories = [
     color: 'from-orange-600 via-red-600 to-pink-600',
     description: 'Breakthrough research solutions',
     services: [
-      { name: 'Advanced Research Automation', href: '/advanced-research-automation', description: 'Automated research workflows', price: '$4,999/month' },
-      { name: 'Quantum Research Platform', href: '/quantum-research-platform', description: 'Quantum computing research', price: '$8,999/month' },
-      { name: 'AI Research Assistant', href: '/ai-research-assistant', description: 'Intelligent research support', price: '$2,999/month' },
-      { name: 'Biotech Research Suite', href: '/biotech-research-suite', description: 'Comprehensive biotech tools', price: '$6,999/month' }
+      { name: 'Advanced Research Automation', href: '/research-development', description: 'Automated research workflows', price: '$4,999/month' },
+      { name: 'Quantum Research Platform', href: '/quantum-services', description: 'Quantum computing research', price: '$8,999/month' },
+      { name: 'AI Research Assistant', href: '/ai-autonomous-research-assistant', description: 'Intelligent research support', price: '$2,999/month' },
+      { name: 'Biotech Research Suite', href: '/biotech-ai-research-platform', description: 'Comprehensive biotech tools', price: '$6,999/month' }
     ]
   }
 ];
