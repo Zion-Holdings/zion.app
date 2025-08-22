@@ -29,6 +29,8 @@ import { nextGenAIServices } from '../data/next-gen-ai-services';
 import { industryRealServices } from '../data/industry-real-services';
 import { professionalServices } from '../data/professional-services';
 import { realEnterpriseServices2025 } from '../data/real-enterprise-services-2025';
+import { real2025Q2Additions } from '../data/real-2025-q2-additions';
+import { real2025Q3Additions } from '../data/real-2025-q3-additions';
 
 export default function ServiceFallbackPage() {
   const router = useRouter();
@@ -58,7 +60,9 @@ export default function ServiceFallbackPage() {
         nextGenAIServices as any,
         industryRealServices as any,
         professionalServices as any,
-        realEnterpriseServices2025 as any
+        realEnterpriseServices2025 as any,
+        real2025Q2Additions as any,
+        real2025Q3Additions as any
       );
     const byLink = all.find(s => {
       try {

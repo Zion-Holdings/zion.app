@@ -40,7 +40,7 @@ const footerSections = [
     links: [
       { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2025' },
       { name: 'AI Quantum Neural Network', href: '/ai-quantum-neural-network' },
-      { name: 'AI Autonomous Business Operations', href: '/ai-autonomous-business-operations' },
+      { name: 'AI Autonomous Business Operations', href: '/enterprise-ai-operations-center' },
       { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant' },
       { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training' },
       { name: 'AI Predictive Maintenance', href: '/ai-predictive-maintenance-platform' },

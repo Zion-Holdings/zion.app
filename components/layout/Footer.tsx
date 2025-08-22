@@ -54,6 +54,9 @@ const Footer: React.FC = () => {
     { name: 'Case Studies', href: '/case-studies' },
     { name: 'Contact', href: '/contact' },
     { name: 'Pricing', href: '/pricing' },
+    { name: 'Get Quote', href: '/quote' },
+    { name: 'Book Demo', href: '/demo' },
+    { name: 'Live Chat', href: '/chat' },
     { name: 'Privacy', href: '/privacy' },
     { name: 'Terms', href: '/terms' },
     { name: 'Cookies', href: '/cookies' }

@@ -60,7 +60,10 @@ const navigationItems: NavigationItem[] = [
     description: 'Talk to our team',
     featured: true,
     children: [
-      { name: 'Contact Sales', href: '/contact', description: 'Get a quote' },
+      { name: 'Contact Sales', href: '/contact', description: 'Talk to sales' },
+      { name: 'Get Quote', href: '/quote', description: 'Fast pricing & scope' },
+      { name: 'Book Demo', href: '/demo', description: 'See it live' },
+      { name: 'Live Chat', href: '/chat', description: 'Quick questions' },
       { name: 'Support', href: '/support', description: 'Help center' }
     ]
   },
@@ -117,7 +120,7 @@ const navigationItems: NavigationItem[] = [
       { name: 'AI HR Analytics', href: '/intelligent-hr-analytics-platform', description: 'Transform HR with AI insights' },
       { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2025', description: 'Emotional intelligence and self-awareness' },
       { name: 'AI Quantum Neural Network', href: '/ai-quantum-neural-network', description: 'Hybrid AI-Quantum computing platform' },
-      { name: 'AI Autonomous Business Operations', href: '/ai-autonomous-business-operations', description: 'Fully autonomous business management' },
+      { name: 'AI Autonomous Business Operations', href: '/enterprise-ai-operations-center', description: 'Fully autonomous business management' },
       { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant', description: 'Self-directed AI research' },
       { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training', description: 'EQ training platform' },
       { name: 'AI Predictive Maintenance', href: '/ai-predictive-maintenance-platform', description: 'Equipment failure prediction' },
