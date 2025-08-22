@@ -33,7 +33,6 @@ export default function SEO({ title, description, canonical, ogImage, image, noI
 	// Derive canonical from baseUrl + path, ensure single slash and trailing slash
 	const rawDerived = baseUrl.replace(/\/$/, '') + (pagePath.startsWith('/') ? pagePath : `/${pagePath}`);
 	const normalizedCanonical = rawDerived.endsWith('/') ? rawDerived : `${rawDerived}/`;
-	const canonicalUrl = canonical || normalizedCanonical;
 	// Prefer explicit image, then ogImage, then default; resolve to absolute URL
 	const requestedImage = image || ogImage || DEFAULTS.image;
 	const imageUrl = /^(https?:)?\/\//.test(requestedImage)
@@ -43,6 +42,16 @@ export default function SEO({ title, description, canonical, ogImage, image, noI
 	const isNoIndex = envNoIndex || (noIndex ?? false) || (noindex ?? false);
 	const robotsContent = `${isNoIndex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}`;
 	const imageAlt = 'Zion Tech Group - Revolutionary Technology Solutions';
+
+	// Normalize provided canonical (if any) to an absolute URL with trailing slash
+	function toAbsoluteUrl(urlOrPath: string): string {
+		if (/^(https?:)?\/\//.test(urlOrPath)) return urlOrPath;
+		return baseUrl.replace(/\/$/, '') + (urlOrPath.startsWith('/') ? urlOrPath : `/${urlOrPath}`);
+	}
+	function withTrailingSlash(u: string): string {
+		return u.endsWith('/') ? u : `${u}/`;
+	}
+	const canonicalUrl = withTrailingSlash(canonical ? toAbsoluteUrl(canonical) : normalizedCanonical);
 
 	const seoCtx = useSEOContext();
 	const markedRef = useRef(false);
