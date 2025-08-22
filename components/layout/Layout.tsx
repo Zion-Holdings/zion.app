@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import UltraFuturisticNavigation2035 from './UltraFuturisticNavigation2035';
-import UltraFuturisticFooter2035 from './UltraFuturisticFooter2035';
-import EnhancedSidebar2025 from './EnhancedSidebar2025';
-import UltraAdvancedFuturisticBackground from './UltraAdvancedFuturisticBackground';
+import UltraFuturisticNavigation2036 from './UltraFuturisticNavigation2036';
+import UltraFuturisticFooter2036 from './UltraFuturisticFooter2036';
+import UltraFuturisticSidebar2036 from './UltraFuturisticSidebar2036';
+import UltraAdvancedFuturisticBackground2036 from '../backgrounds/UltraAdvancedFuturisticBackground2036';
 import TopContactBar from './TopContactBar';
 
 interface LayoutProps {
   children: React.ReactNode;
 }
 
-export default function Layout({ children }: LayoutProps) {
+export default function Layout({ children }: React.PropsWithChildren<LayoutProps>) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
       {/* Futuristic Background */}
-      <UltraAdvancedFuturisticBackground />
+      <UltraAdvancedFuturisticBackground2036 />
       
       {/* Layout Structure */}
       <div className="relative z-10">
@@ -24,11 +24,11 @@ export default function Layout({ children }: LayoutProps) {
         <TopContactBar />
         
         {/* Navigation */}
-        <UltraFuturisticNavigation2035 />
+        <UltraFuturisticNavigation2036 />
         
         {/* Sidebar and Main Content */}
         <div className="flex">
-          <EnhancedSidebar2025 
+          <UltraFuturisticSidebar2036 
             isOpen={sidebarOpen} 
             onClose={() => setSidebarOpen(false)} 
           />
@@ -39,7 +39,7 @@ export default function Layout({ children }: LayoutProps) {
         </div>
         
         {/* Footer */}
-        <UltraFuturisticFooter2035 />
+        <UltraFuturisticFooter2036 />
       </div>
     </div>
   );
