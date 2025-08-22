@@ -42,7 +42,7 @@ const footerSections = [
     description: 'Revolutionary AI platforms and solutions',
     icon: <Brain className="w-5 h-5 text-cyan-400" />,
     links: [
-      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2025' },
+      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2025/' },
       { name: 'AI Quantum Neural Network', href: '/ai-quantum-neural-network' },
       { name: 'AI Autonomous Business Operations', href: '/ai-autonomous-business-operations' },
       { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant' },
@@ -66,7 +66,7 @@ const footerSections = [
       { name: 'Brain-Computer Interface', href: '/brain-computer-interface-platform' },
       { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery-platform' },
       { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai-platform' },
-      { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform' },
+      { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform/' },
       { name: 'Quantum Energy Platform', href: '/quantum-energy-platform' },
       { name: 'Quantum Robotics', href: '/quantum-robotics' }
     ]

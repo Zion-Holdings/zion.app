@@ -19,7 +19,7 @@ const footerSections = [
   {
     title: 'AI & Consciousness',
     links: [
-      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2025' },
+      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2025/' },
       { name: 'AI Quantum Neural Network', href: '/ai-quantum-neural-network' },
       { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant' },
       { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training' },
@@ -37,7 +37,7 @@ const footerSections = [
       { name: 'Brain-Computer Interface', href: '/brain-computer-interface-platform' },
       { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery-platform' },
       { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai-platform' },
-      { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform' },
+      { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform/' },
       { name: 'Quantum Energy Platform', href: '/quantum-energy-platform' },
       { name: 'Quantum Robotics', href: '/quantum-robotics' }
     ]

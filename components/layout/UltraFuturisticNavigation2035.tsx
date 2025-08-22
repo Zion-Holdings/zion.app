@@ -120,7 +120,7 @@ const navigationItems: NavigationItem[] = [
       { name: 'AI Decision Engine', href: '/services/ai-powered-decision-engine', description: 'AI-powered business decisions' },
       { name: 'AI Content Automation', href: '/services/intelligent-content-automation-platform', description: 'Automate content creation' },
       { name: 'AI HR Analytics', href: '/services/ai-hr-analytics-platform', description: 'Transform HR with AI insights' },
-      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2025', description: 'Emotional intelligence and self-awareness' },
+      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2025/', description: 'Emotional intelligence and self-awareness' },
       { name: 'AI Quantum Neural Network', href: '/ai-quantum-neural-network', description: 'Hybrid AI-Quantum computing platform' },
       { name: 'AI Autonomous Business Operations', href: '/ai-autonomous-business-operations', description: 'Fully autonomous business management' },
       { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant', description: 'Self-directed AI research' },
@@ -166,7 +166,7 @@ const navigationItems: NavigationItem[] = [
       { name: 'Brain-Computer Interface', href: '/brain-computer-interface-platform', description: 'Neural interface technology' },
       { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery-platform', description: 'Materials science acceleration' },
       { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai-platform', description: 'Self-driving AI systems' },
-      { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform', description: 'Quantum-biological hybrid processing' },
+      { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform/', description: 'Quantum-biological hybrid processing' },
       { name: 'Quantum Energy Platform', href: '/quantum-energy-platform', description: 'Fusion power simulation' },
       { name: 'Quantum Robotics', href: '/quantum-robotics', description: 'Quantum-enhanced robotics' },
       { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity-platform', description: 'Next-gen security' },
@@ -221,7 +221,7 @@ const navigationItems: NavigationItem[] = [
       { name: 'API Reference', href: '/api-documentation', description: 'API documentation' },
       { name: 'Case Studies', href: '/case-studies', description: 'Success stories' },
       { name: 'Blog & News', href: '/blog', description: 'Latest insights' },
-      { name: 'Support Center', href: '/support', description: 'Help and support' },
+      { name: 'Support Center', href: '/support/', description: 'Help and support' },
       { name: 'Training', href: '/training', description: 'Learning resources' },
       { name: 'Community', href: '/community', description: 'User community' }
     ]
@@ -229,7 +229,7 @@ const navigationItems: NavigationItem[] = [
 ];
 
 const quickActions = [
-  { name: 'Get Started', href: '/contact', icon: <ArrowRight className="w-4 h-4" />, primary: true },
+        { name: 'Get Started', href: '/contact/', icon: <ArrowRight className="w-4 h-4" />, primary: true },
   { name: 'Get a Quote', href: '/quote', icon: <DollarSign className="w-4 h-4" /> },
   { name: 'Book Demo', href: '/demo', icon: <Video className="w-4 h-4" /> },
   { name: 'Live Chat', href: '/chat', icon: <MessageCircle className="w-4 h-4" /> },

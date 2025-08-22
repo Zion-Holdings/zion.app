@@ -24,7 +24,7 @@ const sidebarSections = [
     icon: <Brain className="w-5 h-5" />,
     color: 'text-violet-400',
     items: [
-      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2025', badge: 'New' },
+      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2025/', badge: 'New' },
       { name: 'AI Quantum Neural Network', href: '/ai-quantum-neural-network', badge: 'Hot' },
       { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant', badge: 'New' },
       { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training', badge: 'Popular' },
@@ -50,7 +50,7 @@ const sidebarSections = [
       { name: 'Brain-Computer Interface', href: '/brain-computer-interface-platform', badge: 'New' },
       { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery-platform', badge: 'New' },
       { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai-platform', badge: 'New' },
-      { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform' },
+      { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform/' },
       { name: 'Quantum Energy Platform', href: '/quantum-energy-platform' },
       { name: 'Quantum Robotics', href: '/quantum-robotics' },
       { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity-platform' },

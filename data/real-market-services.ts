@@ -1202,7 +1202,7 @@ export const realMarketServices: RealMarketService[] = [
     icon: '💾',
     color: 'from-cyan-600 to-blue-700',
     textColor: 'text-cyan-300',
-    link: 'https://ziontechgroup.com/services/backup-policy-auditor',
+    link: 'https://ziontechgroup.com/services/backup-policy-auditor/',
     marketPosition: 'Brings reliability SRE rigor to backups; complements cloud-native backup tools.',
     targetAudience: 'SREs, platform and data teams',
     trialDays: 14,
