@@ -1,19 +1,14 @@
 import React from 'react';
-import Head from 'next/head';
+import SEO from '../components/SEO';
 
 export default function BlogPage() {
-	return (
-		<>
-			<Head>
-				<title>Blog | Zion Tech Group</title>
-				<link rel="canonical" href="https://ziontechgroup.com/blog" />
-			</Head>
-			<section className="relative py-16 lg:py-24">
-				<div className="container mx-auto px-4">
-					<h1 className="text-3xl md:text-5xl font-extrabold text-white mb-6">Blog</h1>
-					<p className="text-gray-300">Insights, updates, and case studies coming soon.</p>
-				</div>
-			</section>
-		</>
-	);
+  return (
+    <div className="min-h-[60vh] px-6 py-24">
+      <SEO title="Blog | Zion Tech Group" description="Insights and updates" />
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-4xl font-bold text-white mb-4">Blog</h1>
+        <p className="text-gray-300">Articles are coming soon. In the meantime, explore our resources and services.</p>
+      </div>
+    </div>
+  );
 }
