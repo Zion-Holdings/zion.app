@@ -1,14 +1,8 @@
 [
   "ai-autonomous-marketing-platform",
-  "automated-financial-analytics-platform",
-  "entertainment-media-solutions",
   "industry-solutions",
-  "intelligent-project-management-suite",
-  "leadership",
-  "real-estate-technology-solutions",
   "services/ai-knowledge-graph-studio",
   "services/data-contracts-hub",
   "services/llm-guarded-api-gateway",
-  "services/serverless-lakehouse-starter",
-  "transportation-logistics-solutions"
+  "services/serverless-lakehouse-starter"
 ]

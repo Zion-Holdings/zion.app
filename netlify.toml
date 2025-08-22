@@ -40,3 +40,128 @@
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
     X-DNS-Prefetch-Control = "on"
     Content-Security-Policy = "default-src 'self'; object-src 'none'; upgrade-insecure-requests; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://plausible.io; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+
+[[redirects]]
+  from = "/ai-solutions"
+  to = "/services"
+  status = 301
+
+[[redirects]]
+  from = "/quantum-tech"
+  to = "/quantum-cloud-infrastructure"
+  status = 301
+
+[[redirects]]
+  from = "/research"
+  to = "/research-development"
+  status = 301
+
+[[redirects]]
+  from = "/api"
+  to = "/api-documentation"
+  status = 301
+
+[[redirects]]
+  from = "/events"
+  to = "/news"
+  status = 301
+
+[[redirects]]
+  from = "/team"
+  to = "/about"
+  status = 301
+
+[[redirects]]
+  from = "/press"
+  to = "/news"
+  status = 301
+
+[[redirects]]
+  from = "/legal"
+  to = "/terms"
+  status = 301
+
+[[redirects]]
+  from = "/rag-evaluation-lab"
+  to = "/ai-evals"
+  status = 301
+
+[[redirects]]
+  from = "/browser-automation-cloud"
+  to = "/agentic-rag"
+  status = 301
+
+[[redirects]]
+  from = "/soc2-compliance-automation"
+  to = "/privacy-request-portal"
+  status = 301
+
+[[redirects]]
+  from = "/secrets-rotation-automation"
+  to = "/tls-certificate-monitor"
+  status = 301
+
+[[redirects]]
+  from = "/api-performance-testing"
+  to = "/api-observability-starter"
+  status = 301
+
+[[redirects]]
+  from = "/ai-creativity-orchestrator"
+  to = "/intelligent-content-automation-platform"
+  status = 301
+
+[[redirects]]
+  from = "/ai-dream-interpreter-platform"
+  to = "/ai-emotional-intelligence-training"
+  status = 301
+
+[[redirects]]
+  from = "/quantum-internet-security-gateway"
+  to = "/quantum-internet-security-platform"
+  status = 301
+
+[[redirects]]
+  from = "/ai-consciousness-evolution-platform"
+  to = "/ai-consciousness-evolution-2029"
+  status = 301
+
+[[redirects]]
+  from = "/space-mining-automation-platform"
+  to = "/space-resource-mining-platform"
+  status = 301
+
+[[redirects]]
+  from = "/metaverse-digital-reality-platform"
+  to = "/metaverse-ai-development-platform"
+  status = 301
+
+[[redirects]]
+  from = "/ai-predictive-health-analytics"
+  to = "/healthcare-solutions"
+  status = 301
+
+[[redirects]]
+  from = "/ai-autonomous-business-manager"
+  to = "/ai-autonomous-ecosystem-manager"
+  status = 301
+
+[[redirects]]
+  from = "/autonomous-devops-platform"
+  to = "/ai-powered-devops-platform"
+  status = 301
+
+[[redirects]]
+  from = "/ai-powered-enterprise-security"
+  to = "/ai-powered-cybersecurity"
+  status = 301
+
+[[redirects]]
+  from = "/og-image.jpg"
+  to = "/og-image.svg"
+  status = 302
+
+[[redirects]]
+  from = "/twitter-image.jpg"
+  to = "/og-image.svg"
+  status = 302
