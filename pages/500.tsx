@@ -1,20 +1,18 @@
 import React from 'react';
-import Link from 'next/link';
 import SEO from '../components/SEO';
+import Layout from '../components/layout/Layout';
 
 export default function ServerErrorPage() {
 	return (
-		<>
-			<SEO title="Server Error — Zion Tech Group" description="An unexpected error occurred on the server." />
-			<section className="min-h-[60vh] flex items-center justify-center text-center px-4">
-				<div className="max-w-2xl">
-					<h1 className="text-4xl md:text-6xl font-extrabold">500 — Server error</h1>
-					<p className="mt-6 text-gray-300">Sorry, something went wrong. Please try again later.</p>
-					<div className="mt-8">
-						<Link href="/" className="inline-flex items-center justify-center px-6 py-3 rounded-md bg-white text-black font-semibold hover:bg-gray-200 transition-colors">Go back home</Link>
-					</div>
+		<Layout>
+			<SEO title="Server Error | Zion Tech Group" description="An unexpected error occurred. Please try again later." noindex />
+			<main className="min-h-screen flex items-center justify-center bg-black text-white px-4 py-24">
+				<div className="text-center max-w-2xl">
+					<h1 className="text-5xl font-bold mb-4">500</h1>
+					<p className="text-gray-300 mb-8">An unexpected error occurred. Please try again later.</p>
+					<a href="/" className="inline-flex items-center px-6 py-3 rounded-lg bg-cyan-600 hover:bg-cyan-500 transition-colors">Go home</a>
 				</div>
-			</section>
-		</>
+			</main>
+		</Layout>
 	);
 }
