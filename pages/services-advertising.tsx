@@ -35,13 +35,15 @@ export default function ServicesAdvertisingPage() {
       links: [
         { name: 'OpenAI', href: 'https://openai.com/api/pricing' },
         { name: 'Anthropic', href: 'https://www.anthropic.com/pricing' },
+        { name: 'Google Vertex AI', href: 'https://cloud.google.com/vertex-ai/pricing' },
+        { name: 'Azure OpenAI', href: 'https://azure.microsoft.com/pricing/details/cognitive-services/openai-service/' },
         { name: 'Langfuse', href: 'https://langfuse.com/pricing' },
         { name: 'Groq', href: 'https://wow.groq.com/pricing' },
         { name: 'OpenRouter', href: 'https://openrouter.ai/models' },
         { name: 'Weights & Biases', href: 'https://wandb.ai/site/pricing' },
         { name: 'Humanloop', href: 'https://humanloop.com/pricing' }
       ],
-      note: 'SMB budgets: $100–$2,000/mo.'
+      note: 'SMB budgets: $100–$2,000/mo. Enterprise: $5k–$100k+/mo depending on volume and models.'
     },
     {
       title: 'Security & Compliance',
@@ -50,9 +52,10 @@ export default function ServicesAdvertisingPage() {
         { name: 'Prisma Cloud', href: 'https://www.paloaltonetworks.com/prisma/cloud/pricing' },
         { name: 'HashiCorp Vault', href: 'https://www.hashicorp.com/products/vault/pricing' },
         { name: 'Cloudflare Zero Trust', href: 'https://www.cloudflare.com/products/zero-trust/pricing/' },
-        { name: 'Snyk', href: 'https://snyk.io/plans/' }
+        { name: 'Snyk', href: 'https://snyk.io/plans/' },
+        { name: 'Okta', href: 'https://www.okta.com/pricing/' }
       ],
-      note: 'SMB budgets: $200–$5,000/mo.'
+      note: 'SMB budgets: $200–$5,000/mo. Enterprise: $10k–$250k/yr+ for broader suites.'
     },
     {
       title: 'Vector & Search',
@@ -60,20 +63,22 @@ export default function ServicesAdvertisingPage() {
         { name: 'Pinecone', href: 'https://www.pinecone.io/pricing/' },
         { name: 'Weaviate', href: 'https://weaviate.io/pricing' },
         { name: 'Qdrant', href: 'https://qdrant.tech/pricing/' },
-        { name: 'Elasticsearch Serverless', href: 'https://www.elastic.co/pricing/' }
+        { name: 'Elasticsearch Serverless', href: 'https://www.elastic.co/pricing/' },
+        { name: 'Milvus', href: 'https://zilliz.com/pricing' }
       ],
-      note: 'SMB budgets: $50–$1,000/mo.'
+      note: 'SMB budgets: $50–$1,000/mo. Enterprise: $2k–$50k+/mo depending on throughput/latency.'
     },
     {
       title: 'Cloud & Edge',
       links: [
         { name: 'AWS Calculator', href: 'https://calculator.aws' },
         { name: 'Azure', href: 'https://azure.microsoft.com/pricing' },
+        { name: 'Google Cloud', href: 'https://cloud.google.com/pricing' },
         { name: 'Cloudflare', href: 'https://www.cloudflare.com/plans/' },
         { name: 'Netlify', href: 'https://www.netlify.com/pricing/' },
         { name: 'Vercel', href: 'https://vercel.com/pricing' }
       ],
-      note: 'SMB budgets: $200–$10,000/mo.'
+      note: 'SMB budgets: $200–$10,000/mo. Enterprise: $20k–$1M+/mo at scale.'
     },
     {
       title: 'Observability & SRE',
@@ -81,9 +86,10 @@ export default function ServicesAdvertisingPage() {
         { name: 'Datadog', href: 'https://www.datadoghq.com/pricing/' },
         { name: 'New Relic', href: 'https://newrelic.com/pricing' },
         { name: 'Grafana Cloud', href: 'https://grafana.com/products/cloud/pricing/' },
-        { name: 'PagerDuty', href: 'https://www.pagerduty.com/pricing/' }
+        { name: 'Honeycomb', href: 'https://www.honeycomb.io/pricing' },
+        { name: 'Sentry', href: 'https://sentry.io/pricing/' }
       ],
-      note: 'SMB budgets: $100–$3,000/mo.'
+      note: 'SMB budgets: $100–$2,500/mo. Enterprise: $5k–$200k/yr depending on volume and retention.'
     }
   ];
 
