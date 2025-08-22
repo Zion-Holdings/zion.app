@@ -1,11 +1,11 @@
-import React from 'react';
-import SiteLayout from '../components/layout/Layout';
-import '../styles/globals.css';
+import type { AppProps } from 'next/app'
+import Layout from '../components/layout/Layout'
+import '../styles/globals.css'
 
-export default function App({ Component, pageProps }: any) {
-	return (
-		<SiteLayout>
-			<Component {...pageProps} />
-		</SiteLayout>
-	);
+export default function App({ Component, pageProps }: AppProps) {
+  return (
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  )
 }
