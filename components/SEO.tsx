@@ -84,6 +84,7 @@ export default function SEO({ title, description, canonical, ogImage, image, noI
 				"https://www.linkedin.com/company/zion-tech-group",
 				"https://github.com/Zion-Holdings",
 				"https://www.instagram.com/ziontechgroup",
+				"https://twitter.com/ziontechgroup",
 				"https://www.youtube.com/@ziontechgroup"
 			]
 		},
