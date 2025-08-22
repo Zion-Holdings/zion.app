@@ -263,6 +263,47 @@ export default function ServicesAdvertisingPage() {
           </section>
 
           <section>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Newest Additions</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { name: 'API Security Posture Monitor', price: '$299/mo', href: '/services/api-security-posture-monitor' },
+                { name: 'Edge Cron Orchestrator', price: '$59/mo', href: '/services/edge-cron-orchestrator' },
+                { name: 'SaaS Billing Anomaly Guard', price: '$119/mo', href: '/services/saas-billing-anomaly-guard' },
+                { name: 'ML Feature Store Starter', price: '$149/mo', href: '/services/ml-feature-store-starter' },
+                { name: 'AI Sales Playbook Generator', price: '$99/mo', href: '/services/ai-sales-playbook-generator' },
+                { name: 'Customer Journey Analytics Starter', price: '$79/mo', href: '/services/customer-journey-analytics-starter' },
+                { name: 'Incident Postmortem AI Scribe', price: '$39/mo', href: '/services/incident-postmortem-ai-scribe' },
+                { name: 'SLO Burn Rate Coach', price: '$49/mo', href: '/services/slo-burn-rate-coach' },
+                { name: 'API Changelog & SDK Publisher', price: '$59/mo', href: '/services/api-changelog-sdk-publisher' },
+                { name: 'Browser Performance Optimizer', price: '$69/mo', href: '/services/browser-performance-optimizer' },
+                { name: 'Secret Rotation Orchestrator', price: '$129/mo', href: '/services/secret-rotation-orchestrator' },
+                { name: 'Managed Feature Flags @ Edge', price: '$79/mo', href: '/services/managed-feature-flags-edge' },
+                { name: 'AI Governance & Control Center', price: '$399/mo', href: '/services/ai-governance-control-center' },
+                { name: 'Cloud Cost Governance Suite', price: '$499/mo', href: '/services/cloud-cost-governance-suite' },
+                { name: 'Customer Feedback Intelligence', price: '$149/mo', href: '/services/customer-feedback-intelligence' },
+                { name: 'LLM Eval & Regression Lab', price: '$199/mo', href: '/services/llm-eval-and-regression-lab' },
+                { name: 'AI Marketing Content Studio', price: '$119/mo', href: '/services/ai-marketing-content-studio' },
+              ].map((o) => (
+                <a key={o.name} href={o.href} className="block p-6 rounded-2xl bg-black/40 border border-gray-700/60 hover:border-cyan-500/40">
+                  <div className="text-sm text-gray-400 mb-1">From</div>
+                  <div className="text-2xl font-bold text-white">{o.price}</div>
+                  <div className="text-gray-200 mt-2">{o.name}</div>
+                </a>
+              ))}
+            </div>
+          </section>
+
+          <section>
+            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button href="/contact" className="px-8 py-4 bg-gradient-to-r from-emerald-600 to-cyan-700 text-white">
+                Get a Custom Quote <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+              <a href="tel:+13024640950" className="text-gray-300 hover:text-white">Call: +1 302 464 0950</a>
+              <a href="mailto:kleber@ziontechgroup.com" className="text-gray-300 hover:text-white">Email: kleber@ziontechgroup.com</a>
+            </div>
+          </section>
+
+          <section>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Contact Us</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <a href={`tel:${contact.mobile.replace(/[^+\d]/g, '')}`} className="p-6 rounded-2xl bg-black/40 border border-gray-700/60 hover:border-cyan-500/40 flex items-center gap-3">
