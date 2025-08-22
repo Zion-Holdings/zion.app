@@ -5,6 +5,8 @@
 
 [build.environment]
   NODE_VERSION = "22.18.0"
+  NEXT_PUBLIC_SITE_URL = "https://ziontechgroup.com"
+  NEXT_PUBLIC_PLAUSIBLE_DOMAIN = "ziontechgroup.com"
 
 # [[plugins]]
 #   package = "@netlify/plugin-nextjs"

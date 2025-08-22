@@ -1,16 +1,16 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
-class MyDocument extends Document {
+export default class MyDocument extends Document {
 	render() {
 		return (
 			<Html lang="en">
 				<Head>
-					<link rel="preconnect" href="https://plausible.io" />
+					<meta name="theme-color" content="#0a0a0a" />
+					<meta name="color-scheme" content="dark light" />
+					<meta name="format-detection" content="telephone=no" />
+					<link rel="preconnect" href="https://plausible.io" crossOrigin="anonymous" />
 					<link rel="manifest" href="/site.webmanifest" />
 					<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-					<meta name="theme-color" content="#000000" />
-					<meta name="viewport" content="width=device-width, initial-scale=1" />
-					<link rel="canonical" href="https://ziontechgroup.com/" />
 				</Head>
 				<body>
 					<Main />
@@ -20,5 +20,3 @@ class MyDocument extends Document {
 		);
 	}
 }
-
-export default MyDocument;
