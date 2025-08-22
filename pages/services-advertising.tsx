@@ -1217,6 +1217,8 @@ export default function ServicesAdvertisingPage() {
 					<div><a className="text-cyan-400 underline" href="/services/policy-drift-compliance-monitor">Learn more</a></div>
 				</section>
 
+				<div><a className="text-cyan-400 underline" href="/services/policy-drift-compliance-monitor">Learn more</a></div>
+
 				<section id="diversified-expansions-2026" className="space-y-8">
 					<h2 className="text-2xl font-semibold text-white">New Diversified Additions</h2>
 					<section id="license-key-usage-metering" className="space-y-2">
@@ -1338,6 +1340,96 @@ export default function ServicesAdvertisingPage() {
 						</ul>
 						<div><a className="text-cyan-400 underline" href="/services/email-dmarc-monitor">Learn more</a></div>
 					</section>
+				</section>
+
+				<section id="observability-slo-blueprint" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Observability SLO Blueprint</h2>
+					<p className="text-slate-300">Error budget policies, burn‑rate alerts, and GitOps policy PRs with dashboards.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $49–$299/mo</li>
+						<li>References: {ext('https://www.datadoghq.com/pricing/')}, {ext('https://grafana.com/pricing/')}, {ext('https://opentelemetry.io/')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/observability-slo-blueprint">Learn more</a></div>
+				</section>
+
+				<section id="api-schema-diff-registry" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">API Schema Diff & Registry</h2>
+					<p className="text-slate-300">OpenAPI registry, breaking‑change detection, CI gates, and docs/SDK hooks.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $20–$150/mo</li>
+						<li>References: {ext('https://swagger.io/tools/swaggerhub/pricing/')}, {ext('https://stoplight.io/pricing')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/api-schema-diff-registry">Learn more</a></div>
+				</section>
+
+				<section id="edge-personalization-flags" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Edge Personalization Flags</h2>
+					<p className="text-slate-300">Audience/geo/device targeting at the edge with gradual rollouts and fallbacks.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $29–$199/mo</li>
+						<li>References: {ext('https://vercel.com/pricing')}, {ext('https://www.cloudflare.com/plans/')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/edge-personalization-flags">Learn more</a></div>
+				</section>
+
+				<section id="status-slo-hub" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Status Pages & SLO Hub</h2>
+					<p className="text-slate-300">Branded status pages, incident comms, and error budget tracking.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $20–$150/mo</li>
+						<li>References: {ext('https://www.atlassian.com/software/statuspage/pricing')}, {ext('https://www.checklyhq.com/pricing/')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/status-slo-hub">Learn more</a></div>
+				</section>
+
+				<section id="email-reputation-warmup-monitor" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Email Warmup & Reputation Monitor</h2>
+					<p className="text-slate-300">Inbox placement tests, domain health, and automated warmup sequences.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $20–$99/mo</li>
+						<li>References: {ext('https://postmaster.google.com')}, {ext('https://sendgrid.com/pricing/')}, {ext('https://www.mailgun.com/pricing/')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/email-reputation-warmup-monitor">Learn more</a></div>
+				</section>
+
+				<section id="github-secrets-scanner-plus" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">GitHub Secrets Scanner Plus</h2>
+					<p className="text-slate-300">High‑signal detection, CI blocking, rotation playbooks, and repo quarantine.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $20–$200/mo</li>
+						<li>References: {ext('https://docs.github.com/code-security/secret-scanning')}, {ext('https://github.com/features/security')}, {ext('https://github.com/trufflesecurity/trufflehog')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/github-secrets-scanner-plus">Learn more</a></div>
+				</section>
+
+				<section id="ai-meeting-to-ticket" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">AI Meeting‑to‑Ticket Copilot</h2>
+					<p className="text-slate-300">Transcribe, summarize, extract action items, and open tickets automatically.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $10–$50/user/mo</li>
+						<li>References: {ext('https://workspace.google.com/pricing')}, {ext('https://www.atlassian.com/software/jira/pricing')}, {ext('https://github.com/pricing')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/ai-meeting-to-ticket">Learn more</a></div>
+				</section>
+
+				<section id="gdpr-dsar-portal-lite" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">GDPR DSAR Portal Lite</h2>
+					<p className="text-slate-300">Branded DSAR workflows, identity verification, redaction, and exports.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $59–$299/mo</li>
+						<li>References: {ext('https://www.osano.com/pricing')}, {ext('https://www.transcend.io/platform')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/gdpr-dsar-portal-lite">Learn more</a></div>
+				</section>
+
+				<section id="api-breaking-change-watcher" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">API Breaking Change Watcher</h2>
+					<p className="text-slate-300">Schema diffs in CI, PR annotations, release notes, and migration guides.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $20–$100/mo</li>
+						<li>References: {ext('https://www.openapis.org/')}, {ext('https://stoplight.io/pricing')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/api-breaking-change-watcher">Learn more</a></div>
 				</section>
 
 				{/* Contact CTA */}
