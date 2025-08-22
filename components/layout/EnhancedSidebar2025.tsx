@@ -183,7 +183,7 @@ const companyLinks = [
 const supportLinks = [
   { name: 'Contact Support', href: '/support', description: 'Get help from our team' },
   { name: 'Documentation', href: '/docs', description: 'Technical guides' },
-  { name: 'API Reference', href: '/api-docs', description: 'Developer documentation' },
+  { name: 'API Reference', href: '/api-documentation', description: 'Developer documentation' },
   { name: 'Status Page', href: '/status', description: 'Service status' },
   { name: 'Training', href: '/training', description: 'Learn our platforms' },
   { name: 'Community', href: '/community', description: 'Connect with users' }

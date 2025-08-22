@@ -147,7 +147,14 @@ const navigationItems: NavigationItem[] = [
       { name: 'Sales Intelligence Platform', href: '/ai-sales-intelligence-platform', description: 'AI-powered sales automation' },
       { name: 'CRM Intelligence Suite', href: '/smart-crm-intelligence-suite', description: 'Transform your CRM with AI' },
       { name: 'Content Automation Platform', href: '/intelligent-content-automation-platform', description: 'AI-powered content management' },
-      { name: 'Decision Engine', href: '/ai-powered-decision-engine', description: 'AI-powered business decisions' }
+      { name: 'Decision Engine', href: '/ai-powered-decision-engine', description: 'AI-powered business decisions' },
+      { name: 'Helpdesk & Support', href: '/helpdesk-automation', description: 'AI helpdesk, ticketing, KB, and chat' },
+      { name: 'Learning Management (LMS)', href: '/lms-platform', description: 'Adaptive training and certifications' },
+      { name: 'E‑commerce Returns', href: '/ecommerce-returns-management', description: 'Automated returns, labels, and RMAs' },
+      { name: 'SEO Content Optimizer', href: '/seo-content-optimizer', description: 'On-page AI scoring and fixes' },
+      { name: 'Keyword Research Engine', href: '/keyword-research-engine', description: 'Low-competition keywords discovery' },
+      { name: 'Privacy Analytics Suite', href: '/analytics-suite', description: 'Cookie-less, privacy-friendly analytics' },
+      { name: 'Invoice Studio', href: '/invoice-studio', description: 'Instant branded invoices and payments' }
     ]
   },
   {

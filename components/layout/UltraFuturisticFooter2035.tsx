@@ -32,9 +32,16 @@ const footerSections = [
       { name: 'Content Automation', href: '/intelligent-content-automation-platform' },
       { name: 'CRM Intelligence Suite', href: '/smart-crm-intelligence-suite' },
       { name: 'AI Evaluation Orchestrator', href: '/ai-evaluation-orchestrator', featured: true },
-              { name: 'SEO Automation Suite', href: '/seo-automation-suite' },
-              { name: 'IT Asset Discovery Agent', href: '/it-asset-discovery-agent' },
-              { name: 'Managed Postgres HA', href: '/managed-postgres-ha' }
+      { name: 'SEO Automation Suite', href: '/seo-automation-suite' },
+      { name: 'Helpdesk & Support', href: '/helpdesk-automation' },
+      { name: 'Learning Management (LMS)', href: '/lms-platform' },
+      { name: 'E‑commerce Returns', href: '/ecommerce-returns-management' },
+      { name: 'SEO Content Optimizer', href: '/seo-content-optimizer' },
+      { name: 'Keyword Research Engine', href: '/keyword-research-engine' },
+      { name: 'Privacy Analytics Suite', href: '/analytics-suite' },
+      { name: 'Invoice Studio', href: '/invoice-studio' },
+      { name: 'IT Asset Discovery Agent', href: '/it-asset-discovery-agent' },
+      { name: 'Managed Postgres HA', href: '/managed-postgres-ha' }
     ]
   },
   {
