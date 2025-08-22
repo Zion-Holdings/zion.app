@@ -45,6 +45,23 @@ function listPageRoutes() {
 	return Array.from(routes);
 }
 
+function normalizeDataRoute(p) {
+	// Ensure trailing slash
+	if (!p.endsWith('/')) p += '/';
+	// If data link points to a root page that actually exists under /services/*, prefer the services route
+	// Known mappings for legacy links
+	const map = new Map([
+		['/ai-customer-success-platform/', '/services/ai-customer-success-platform/'],
+		['/intelligent-supply-chain-optimization/', '/services/intelligent-supply-chain-optimization/'],
+		['/ai-financial-planning-platform/', '/services/ai-financial-planning-platform/'],
+		['/ai-sales-intelligence-platform/', '/services/ai-sales-intelligence-platform/'],
+		['/ai-powered-decision-engine/', '/services/ai-powered-decision-engine/'],
+		['/intelligent-content-automation-platform/', '/services/intelligent-content-automation-platform/'],
+		['/smart-crm-intelligence-suite/', '/services/smart-crm-intelligence-suite/']
+	]);
+	return map.get(p) || p;
+}
+
 function listServiceLinksFromData() {
 	const dataDir = path.join(process.cwd(), 'data');
 	if (!fs.existsSync(dataDir)) return [];
@@ -56,14 +73,14 @@ function listServiceLinksFromData() {
 		try {
 			const content = fs.readFileSync(full, 'utf8');
 			// Find link: 'https://ziontechgroup.com/...' or "..."
-			const re = /link\s*:\s*['"](https?:\/\/[^'"\s]+)['"]/g;
+			const re = /link\s*:\s*['\"](https?:\/\/[^'\"\s]+)['\"]/g;
 			let match;
 			while ((match = re.exec(content))) {
 				try {
 					const url = new URL(match[1]);
 					if (url.hostname.endsWith('ziontechgroup.com')) {
 						let p = url.pathname;
-						if (!p.endsWith('/')) p += '/';
+						p = normalizeDataRoute(p);
 						links.add(p);
 					}
 				} catch {}

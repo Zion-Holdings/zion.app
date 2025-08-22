@@ -38,3 +38,45 @@
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
     X-DNS-Prefetch-Control = "on"
     Content-Security-Policy = "default-src 'self'; object-src 'none'; upgrade-insecure-requests; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://plausible.io; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+
+[[redirects]]
+  from = "/services/ai-customer-success-platform"
+  to = "/ai-customer-success-platform/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/intelligent-supply-chain-optimization"
+  to = "/intelligent-supply-chain-optimization/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/ai-financial-planning-platform"
+  to = "/ai-financial-planning-platform/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/ai-sales-intelligence-platform"
+  to = "/ai-sales-intelligence-platform/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/ai-powered-decision-engine"
+  to = "/ai-powered-decision-engine/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/intelligent-content-automation-platform"
+  to = "/intelligent-content-automation-platform/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/smart-crm-intelligence-suite"
+  to = "/smart-crm-intelligence-suite/"
+  status = 301
+  force = true

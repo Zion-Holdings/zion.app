@@ -67,8 +67,8 @@ export default function SEO({ title, description, canonical, ogImage, image, noI
 			"url": baseUrl,
 			"logo": `${baseUrl.replace(/\/$/, '')}/favicon.svg`,
 			"sameAs": [
-				"https://www.linkedin.com/company/zion-technologies",
-				"https://twitter.com/ziontechgroup"
+				"https://www.linkedin.com/company/zion-tech-group",
+				"https://x.com/ziontechgroup"
 			]
 		},
 		{

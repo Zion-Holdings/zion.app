@@ -74,9 +74,8 @@ const companyLinks = [
 ];
 
 const socialLinks = [
-  { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: Linkedin },
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/company/zion-tech-group', icon: Linkedin },
   { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: Github },
-  { name: 'Instagram', href: 'https://instagram.com/ziontechgroup', icon: Instagram },
   { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: Youtube }
 ];
 
