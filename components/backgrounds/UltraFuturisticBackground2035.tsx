@@ -8,6 +8,8 @@ export default function UltraFuturisticBackground2035() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
@@ -32,15 +34,15 @@ export default function UltraFuturisticBackground2035() {
     const initParticles = () => {
       particles = [];
       const isSmallScreen = window.innerWidth < 768;
-      const particleCount = isSmallScreen ? 40 : 100;
+      const particleCount = prefersReducedMotion ? 12 : (isSmallScreen ? 40 : 100);
       for (let i = 0; i < particleCount; i++) {
         particles.push({
           x: Math.random() * canvas.width / (window.devicePixelRatio || 1),
           y: Math.random() * canvas.height / (window.devicePixelRatio || 1),
-          vx: (Math.random() - 0.5) * 0.4,
-          vy: (Math.random() - 0.5) * 0.4,
+          vx: prefersReducedMotion ? 0 : (Math.random() - 0.5) * 0.4,
+          vy: prefersReducedMotion ? 0 : (Math.random() - 0.5) * 0.4,
           size: Math.random() * (isSmallScreen ? 1.5 : 2) + 0.8,
-          opacity: Math.random() * 0.4 + 0.1,
+          opacity: Math.random() * 0.35 + 0.08,
           color: ['#8b5cf6', '#06b6d4', '#ec4899', '#10b981'][Math.floor(Math.random() * 4)]
         });
       }
@@ -68,27 +70,31 @@ export default function UltraFuturisticBackground2035() {
         ctx.fill();
 
         // Draw connections
-        const maxDistance = window.innerWidth < 768 ? 100 : 150;
-        particles.forEach((otherParticle, otherIndex) => {
-          if (index !== otherIndex) {
-            const dx = particle.x - otherParticle.x;
-            const dy = particle.y - otherParticle.y;
-            const distance = Math.sqrt(dx * dx + dy * dy);
+        const maxDistance = prefersReducedMotion ? 0 : (window.innerWidth < 768 ? 90 : 140);
+        if (maxDistance > 0) {
+          particles.forEach((otherParticle, otherIndex) => {
+            if (index !== otherIndex) {
+              const dx = particle.x - otherParticle.x;
+              const dy = particle.y - otherParticle.y;
+              const distance = Math.sqrt(dx * dx + dy * dy);
 
-            if (distance < maxDistance) {
-              ctx.beginPath();
-              ctx.moveTo(particle.x, particle.y);
-              ctx.lineTo(otherParticle.x, otherParticle.y);
-              ctx.strokeStyle = particle.color;
-              ctx.globalAlpha = (maxDistance - distance) / maxDistance * 0.1;
-              ctx.lineWidth = 1;
-              ctx.stroke();
+              if (distance < maxDistance) {
+                ctx.beginPath();
+                ctx.moveTo(particle.x, particle.y);
+                ctx.lineTo(otherParticle.x, otherParticle.y);
+                ctx.strokeStyle = particle.color;
+                ctx.globalAlpha = (maxDistance - distance) / maxDistance * 0.08;
+                ctx.lineWidth = 1;
+                ctx.stroke();
+              }
             }
-          }
-        });
+          });
+        }
       });
 
-      animationFrameId = requestAnimationFrame(updateParticles);
+      if (!prefersReducedMotion) {
+        animationFrameId = requestAnimationFrame(updateParticles);
+      }
     };
 
     initParticles();
@@ -120,18 +126,18 @@ export default function UltraFuturisticBackground2035() {
       <canvas
         ref={canvasRef}
         className="fixed inset-0 w-full h-full pointer-events-none z-0"
-        style={{ background: 'radial-gradient(ellipse at center, rgba(139,92,246,0.05) 0%, rgba(0,0,0,0) 70%)' }}
+        style={{ background: 'radial-gradient(ellipse at center, rgba(139,92,246,0.04) 0%, rgba(0,0,0,0) 70%)' }}
       />
 
       {/* Animated Background Elements */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
         {/* Floating Geometric Shapes */}
         <motion.div
-          className="absolute top-20 left-20 w-32 h-32 border border-purple-500/20 rounded-full"
+          className="absolute top-20 left-20 w-32 h-32 border border-purple-500/15 rounded-full"
           animate={{
-            scale: [1, 1.2, 1],
+            scale: [1, 1.15, 1],
             rotate: [0, 180, 360],
-            opacity: [0.3, 0.6, 0.3]
+            opacity: [0.22, 0.45, 0.22]
           }}
           transition={{
             duration: 8,
