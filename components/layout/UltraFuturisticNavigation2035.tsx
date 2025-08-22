@@ -83,6 +83,12 @@ const navigationItems: NavigationItem[] = [
       { name: 'IT Asset Discovery Agent', href: '/it-asset-discovery-agent', description: 'Agentless discovery' },
       { name: 'Managed Postgres HA', href: '/managed-postgres-ha', description: 'HA Postgres ops' },
       { name: 'Micro SAAS', href: '/micro-saas', description: 'Business tools and automation' },
+      { name: 'AI Contract Risk Analyzer', href: '/services/ai-contract-risk-analyzer', description: 'Clause risk scoring & redlines', featured: true },
+      { name: 'FinOps RI/SP Optimizer', href: '/services/finops-ri-sp-optimizer', description: 'Savings plans recommendations' },
+      { name: 'Kubernetes SLO Auto‑Tuner', href: '/services/k8s-slo-auto-tuner', description: 'SLO discovery & PRs' },
+      { name: 'Vendor Security Questionnaire AI', href: '/services/vendor-security-questionnaire-ai', description: 'Auto‑fill SIG/CAIQ with citations' },
+      { name: 'Invoice Reconciliation Copilot', href: '/services/invoice-reconciliation-copilot', description: '3‑way match with anomaly detection' },
+      { name: 'Policy Drift & Compliance Monitor', href: '/services/policy-drift-compliance-monitor', description: 'Detect drift and auto‑PR fixes' },
       { name: 'New 2034 Services', href: '/services?sort=newest', description: 'Latest additions' }
     ]
   },

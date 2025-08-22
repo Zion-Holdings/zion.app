@@ -6,6 +6,7 @@ export default class MyDocument extends Document {
 			<Html lang="en">
 				<Head>
 					<meta name="theme-color" content="#0a0a0a" />
+					<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 					<meta name="color-scheme" content="dark light" />
 					<meta name="format-detection" content="telephone=no" />
 					<link rel="preconnect" href="https://plausible.io" crossOrigin="anonymous" />

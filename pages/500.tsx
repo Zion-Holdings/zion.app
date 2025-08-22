@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import SEO from '../components/SEO';
 
-export default function ErrorPage() {
+export default function ServerErrorPage() {
 	return (
 		<>
 			<SEO title="Server Error — Zion Tech Group" description="Something went wrong. Please try again or contact support." />

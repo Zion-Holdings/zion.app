@@ -372,6 +372,68 @@ export default function MarketPricingPage() {
             </div>
           </div>
 
+          <div className="space-y-6">
+            <div className="bg-black/30 rounded-2xl border border-teal-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">API Observability & Debugging</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Treblle pricing: <a className="text-cyan-400 underline" href={`https://treblle.com/pricing`} target="_blank" rel="noopener noreferrer">treblle.com/pricing</a></li>
+                <li>OpenTelemetry docs: <a className="text-cyan-400 underline" href={`https://opentelemetry.io/docs/`} target="_blank" rel="noopener noreferrer">opentelemetry.io/docs</a></li>
+                <li>Datadog APM: <a className="text-cyan-400 underline" href={`https://www.datadoghq.com/product/apm/`} target="_blank" rel="noopener noreferrer">datadoghq.com/product/apm</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $30–$500/month depending on requests and retention.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-emerald-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Cloud Cost Anomalies & FinOps</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>CloudZero pricing: <a className="text-cyan-400 underline" href={`https://www.cloudzero.com/pricing`} target="_blank" rel="noopener noreferrer">cloudzero.com/pricing</a></li>
+                <li>Finout pricing: <a className="text-cyan-400 underline" href={`https://www.finout.io/pricing`} target="_blank" rel="noopener noreferrer">finout.io/pricing</a></li>
+                <li>Kubecost pricing: <a className="text-cyan-400 underline" href={`https://www.kubecost.com/pricing`} target="_blank" rel="noopener noreferrer">kubecost.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $99–$2,000/month by cloud size and K8s clusters.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-cyan-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Data Quality & Observability</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Monte Carlo: <a className="text-cyan-400 underline" href={`https://www.montecarlodata.com`} target="_blank" rel="noopener noreferrer">montecarlodata.com</a></li>
+                <li>Databand (IBM): <a className="text-cyan-400 underline" href={`https://www.ibm.com/products/databand`} target="_blank" rel="noopener noreferrer">ibm.com/products/databand</a></li>
+                <li>dbt tests: <a className="text-cyan-400 underline" href={`https://docs.getdbt.com/docs/build/tests`} target="_blank" rel="noopener noreferrer">docs.getdbt.com/docs/build/tests</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $100–$1,500/month plus warehouse costs.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-pink-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Feature Flags & Edge</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>LaunchDarkly: <a className="text-cyan-400 underline" href={`https://launchdarkly.com/pricing/`} target="_blank" rel="noopener noreferrer">launchdarkly.com/pricing</a></li>
+                <li>Flagsmith: <a className="text-cyan-400 underline" href={`https://www.flagsmith.com/pricing`} target="_blank" rel="noopener noreferrer">flagsmith.com/pricing</a></li>
+                <li>Cloudflare Workers: <a className="text-cyan-400 underline" href={`https://workers.cloudflare.com/`} target="_blank" rel="noopener noreferrer">workers.cloudflare.com</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $50–$800/month by MAUs and edge traffic.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-slate-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Privacy & DSAR</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Transcend: <a className="text-cyan-400 underline" href={`https://www.transcend.io/platform`} target="_blank" rel="noopener noreferrer">transcend.io/platform</a></li>
+                <li>OneTrust (privacy): <a className="text-cyan-400 underline" href={`https://www.onetrust.com/products/privacy-management/`} target="_blank" rel="noopener noreferrer">onetrust.com/products/privacy-management</a></li>
+                <li>Skyflow: <a className="text-cyan-400 underline" href={`https://www.skyflow.com/pricing`} target="_blank" rel="noopener noreferrer">skyflow.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $100–$2,000/month depending on data sources.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-amber-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Edge Security & WAF</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Cloudflare plans: <a className="text-cyan-400 underline" href={`https://www.cloudflare.com/plans/`} target="_blank" rel="noopener noreferrer">cloudflare.com/plans</a></li>
+                <li>Fastly: <a className="text-cyan-400 underline" href={`https://www.fastly.com/pricing`} target="_blank" rel="noopener noreferrer">fastly.com/pricing</a></li>
+                <li>OWASP Top 10 (API): <a className="text-cyan-400 underline" href={`https://owasp.org/www-project-api-security/`} target="_blank" rel="noopener noreferrer">owasp.org/www-project-api-security</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $100–$2,000/month by traffic and protections.</div>
+            </div>
+          </div>
+
           <div className="text-center text-slate-400 mt-10">
             Need help benchmarking? <a href="/contact" className="text-cyan-400 underline">Contact us</a> — we align to transparent, vendor-verifiable pricing.
           </div>
