@@ -69,7 +69,13 @@ export default function FuturisticServices2030Page() {
 
   return (
     <>
-      <SEO title="2030 Futuristic Technology Services | Zion Tech Group - Revolutionary AI, Quantum, Space Tech" description="Experience the future with our revolutionary 2030 technology services. From AI consciousness to space mining, quantum computing to metaverse development - we're building tomorrow's solutions today." canonical="https://ziontechgroup.com/services/2030-futuristic-services/" jsonLd={{"@context":"https://schema.org","@type":"Service","name":"2030 Futuristic Technology Services","description":"Revolutionary 2030 technology services including AI consciousness, quantum computing, space mining, and advanced biotechnology","provider":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"url":"https://ziontechgroup.com/services/2030-futuristic-services","contactPoint":{"@type":"ContactPoint","telephone":"+1-302-464-0950","contactType":"customer service","email":"kleber@ziontechgroup.com"}}} />
+      <SEO 
+        title="2030 Futuristic Technology Services | Zion Tech Group - Revolutionary AI, Quantum, Space Tech" 
+        description="Experience the future with our revolutionary 2030 technology services. From AI consciousness to space mining, quantum computing to metaverse development - we're building tomorrow's solutions today." 
+        canonical="https://ziontechgroup.com/services/2030-futuristic-services/"
+        section="2030 Futuristic Services"
+        tags={['AI Consciousness', 'Quantum Computing', 'Space Mining', 'Metaverse Development', 'Biotechnology']}
+      />
 
       <UltraFuturisticBackground2031>
         {/* Ultra Advanced Navigation */}
@@ -146,7 +152,7 @@ export default function FuturisticServices2030Page() {
         </section>
 
         {/* Services by Category */}
-        {serviceCategories.map((category, categoryIndex) => (
+        {serviceCategories.map((category) => (
           <section key={category.title} className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-900/10 to-gray-800/10"></div>
             

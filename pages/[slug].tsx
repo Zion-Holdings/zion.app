@@ -17,7 +17,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 	try {
 		const content = fs.readFileSync(dataPath, 'utf8');
 		slugs = JSON.parse(content);
-	} catch (_) {
+	} catch {
 		slugs = [];
 	}
 
@@ -46,30 +46,19 @@ export const getStaticProps: GetStaticProps<PageProps> = async ({ params }) => {
 	};
 };
 
-export default function GeneratedPlaceholderPage({ title, slug, description }: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function DynamicPage({ title, slug, description }: PageProps) {
 	const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ziontechgroup.com';
 	const canonical = `${baseUrl.replace(/\/$/, '')}/${slug}/`;
-	const breadcrumbJsonLd = {
-		"@context": "https://schema.org",
-		"@type": "BreadcrumbList",
-		"itemListElement": [
-			{
-				"@type": "ListItem",
-				"position": 1,
-				"name": "Home",
-				"item": baseUrl
-			},
-			{
-				"@type": "ListItem",
-				"position": 2,
-				"name": title,
-				"item": canonical
-			}
-		]
-	};
+	
 	return (
 		<>
-			<SEO title={`${title} | Zion Tech Group`} description={description} canonical={canonical} jsonLd={breadcrumbJsonLd} />
+			<SEO 
+				title={`${title} | Zion Tech Group`} 
+				description={description} 
+				canonical={canonical}
+				section={title}
+				tags={[title, 'Services', 'Technology']}
+			/>
 			<div className="container mx-auto px-4 py-16">
 				<nav className="text-sm text-gray-400 mb-6">
 					<Link href="/" className="hover:text-white">Home</Link>
