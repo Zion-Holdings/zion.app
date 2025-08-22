@@ -1,25 +1,18 @@
 import React from 'react';
-import ServiceLanding from '../components/sections/ServiceLanding';
+import Head from 'next/head';
 
-export default function QuantumBioComputingPlatform() {
+export default function QuantumBioComputingPlatformPage() {
 	return (
-		<ServiceLanding
-			title="Quantum Bio-Computing Platform"
-			description="Hybrid quantum-biological computation research platform for simulation, optimization, and discovery. Explore bio-inspired algorithms with quantum acceleration."
-			subtitle="Quantum-biological hybrid processing"
-			pricePerMonthUSD={7999}
-			implementationWeeks="4-8 weeks"
-			roiNote="Accelerate R&D cycles and expand the search space for discovery"
-			features={[
-				"Quantum-assisted biological simulations",
-				"Bio-inspired optimization algorithms",
-				"Pipeline templates and notebooks",
-				"Observability and experiment tracking",
-				"Security, governance, and audit logs",
-				"Deployable reference architectures"
-			]}
-			industries={["Biotech", "Healthcare", "Materials", "Pharma"]}
-			canonical="https://ziontechgroup.com/quantum-bio-computing-platform"
-		/>
+		<>
+			<Head>
+				<title>Quantum Bio-Computing Platform | Zion Tech Group</title>
+				<meta name="description" content="Hybrid quantum-biological computing research and platform services." />
+				<link rel="canonical" href="https://ziontechgroup.com/quantum-bio-computing-platform" />
+			</Head>
+			<div className="container mx-auto px-4 py-16 text-gray-200">
+				<h1 className="text-4xl md:text-6xl font-bold mb-4">Quantum Bio-Computing Platform</h1>
+				<p className="text-gray-300 max-w-3xl">Exploration services and advisory for quantum-biological hybrid computing.</p>
+			</div>
+		</>
 	);
 }

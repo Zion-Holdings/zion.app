@@ -24,7 +24,7 @@ const sidebarSections = [
     icon: <Brain className="w-5 h-5" />,
     color: 'text-violet-400',
     items: [
-      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2025', badge: 'New' },
+      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029', badge: 'New' },
       { name: 'AI Quantum Neural Network', href: '/ai-quantum-neural-network', badge: 'Hot' },
       { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant', badge: 'New' },
       { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training', badge: 'Popular' },

@@ -43,24 +43,6 @@ const navigationItems: NavigationItem[] = [
     ]
   },
   {
-    name: 'Company',
-    href: '/about',
-    icon: <Users className="w-5 h-5" />,
-    description: 'Learn about Zion Tech Group',
-    children: [
-      { name: 'About Us', href: '/about', description: 'Our mission and vision' },
-      { name: 'Leadership', href: '/leadership', description: 'Meet the team' },
-      { name: 'Careers', href: '/careers', description: 'Join our team' },
-      { name: 'News & Press', href: '/news', description: 'Latest company news' },
-      { name: 'Partners', href: '/partners', description: 'Our partner ecosystem' },
-      { name: 'Investors', href: '/investors', description: 'Investor relations' },
-      { name: 'Locations', href: '/locations', description: 'Where to find us' },
-      { name: 'Sustainability', href: '/sustainability', description: 'ESG and impact' },
-      { name: 'Diversity & Inclusion', href: '/diversity-inclusion', description: 'Our commitments' },
-      { name: 'Contact', href: '/contact', description: 'Talk to our team' }
-    ]
-  },
-  {
     name: 'Resources',
     href: '/resources',
     icon: <BookOpen className="w-5 h-5" />,
@@ -90,15 +72,15 @@ const navigationItems: NavigationItem[] = [
     description: 'Browse by category',
     badge: 'New',
     children: [
-      { name: 'AI & Consciousness', href: '/services#ai-consciousness', description: 'AI, data, ML services' },
-      { name: 'Enterprise IT', href: '/services#enterprise-it', description: 'Cloud, cost, platform' },
-      { name: 'Quantum & Emerging', href: '/services#quantum-emerging', description: 'Monitoring & telemetry' },
-      { name: 'Micro SAAS', href: '/services#micro-saas', description: 'Business tools and automation' },
-      { name: 'Education & Research', href: '/services#education-research', description: 'Learning and R&D' },
-      { name: 'AI Evaluation Orchestrator', href: '/services/ai-evaluation-orchestrator', description: 'Automated LLM evals' },
+      { name: 'AI & Data', href: '/services#ai-consciousness', description: 'AI, data, ML services' },
+      { name: 'Cloud & FinOps', href: '/services#enterprise-it', description: 'Cloud, cost, platform' },
+      { name: 'Observability', href: '/services#enterprise-it', description: 'Monitoring & telemetry' },
+      { name: 'Developer Tools', href: '/services#enterprise-it', description: 'Developer productivity' },
+      { name: 'Training & Education', href: '/training', description: 'Learning and R&D' },
       { name: 'SEO Automation Suite', href: '/seo-automation-suite', description: 'Technical SEO automation' },
-      { name: 'IT Asset Discovery Agent', href: '/services/it-asset-discovery-agent', description: 'Agentless discovery' },
-      { name: 'Managed Postgres HA', href: '/services/managed-postgres-ha', description: 'HA Postgres ops' }
+      { name: 'IT Asset Discovery Agent', href: '/it-asset-discovery-agent', description: 'Agentless discovery' },
+      { name: 'Managed Postgres HA', href: '/managed-postgres-ha', description: 'HA Postgres ops' },
+      { name: 'Micro SAAS', href: '/micro-saas', description: 'Business tools and automation' }
     ]
   },
   {
@@ -112,9 +94,9 @@ const navigationItems: NavigationItem[] = [
       { name: 'View All Services', href: '/comprehensive-services-showcase-2025', description: 'Complete services portfolio' },
       { name: 'Ultimate 2035 Futuristic', href: '/ultimate-2035-futuristic-services-showcase', description: 'Revolutionary future technology', featured: true },
       { name: 'Ultimate 2025 Micro SAAS', href: '/ultimate-2025-micro-saas-showcase', description: 'Latest innovative services', featured: true },
-      { name: 'Service Categories', href: '/comprehensive-services-showcase-2025#categories', description: 'Browse by category' },
-      { name: 'Pricing Comparison', href: '/comprehensive-services-showcase-2025#pricing', description: 'Compare service costs' },
-      { name: 'Service Search', href: '/comprehensive-services-showcase-2025#search', description: 'Find specific services' },
+      { name: 'Service Categories', href: '/comprehensive-services-showcase-2025', description: 'Browse by category' },
+      { name: 'Pricing Comparison', href: '/comprehensive-services-showcase-2025', description: 'Compare service costs' },
+      { name: 'Service Search', href: '/comprehensive-services-showcase-2025', description: 'Find specific services' },
       { name: 'Market Pricing', href: '/market-pricing', description: 'Average market prices & references' },
       { name: 'Latest Innovations', href: '/revolutionary-2025-services-showcase', description: 'Cutting-edge solutions' },
       { name: '2026 Services', href: '/revolutionary-2026-services', description: 'Next generation solutions' },
@@ -138,7 +120,7 @@ const navigationItems: NavigationItem[] = [
       { name: 'AI Decision Engine', href: '/ai-powered-decision-engine', description: 'AI-powered business decisions' },
       { name: 'AI Content Automation', href: '/intelligent-content-automation-platform', description: 'Automate content creation' },
       { name: 'AI HR Analytics', href: '/ai-hr-analytics-platform', description: 'Transform HR with AI insights' },
-      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2025', description: 'Emotional intelligence and self-awareness' },
+      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029', description: 'Emotional intelligence and self-awareness' },
       { name: 'AI Quantum Neural Network', href: '/ai-quantum-neural-network', description: 'Hybrid AI-Quantum computing platform' },
       { name: 'AI Autonomous Business Operations', href: '/ai-autonomous-business-operations', description: 'Fully autonomous business management' },
       { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant', description: 'Self-directed AI research' },
@@ -191,7 +173,7 @@ const navigationItems: NavigationItem[] = [
       { name: 'Quantum Logistics', href: '/quantum-logistics-optimization', description: 'Route optimization' },
       { name: 'Quantum Metaverse', href: '/quantum-metaverse', description: 'Quantum-enhanced virtual worlds' },
       { name: 'Quantum IoT Platform', href: '/quantum-iot', description: 'Quantum-secured IoT' },
-      { name: 'AI-Powered Space Technology', href: '/space-technology-ai-platform', description: 'Revolutionary space AI' }
+      { name: 'AI-Powered Space Technology', href: '/ai-powered-space-technology', description: 'Revolutionary space AI' }
     ]
   },
   {
@@ -224,24 +206,21 @@ const navigationItems: NavigationItem[] = [
       { name: 'Manufacturing AI', href: '/manufacturing-ai-solutions', description: 'Smart manufacturing' },
       { name: 'Retail Technology', href: '/retail-technology-solutions', description: 'Digital retail transformation' },
       { name: 'Education Technology', href: '/training', description: 'AI-powered learning' },
-      { name: 'Government Solutions', href: '/government-technology-solutions', description: 'Public sector innovation' },
+      { name: 'Government Solutions', href: '/enterprise-solutions-showcase', description: 'Public sector innovation' },
       { name: 'Energy & Utilities', href: '/quantum-energy', description: 'Sustainable energy tech' },
-      { name: 'Biotech AI Research', href: '/biotech-ai-research-platform', description: 'AI-driven biotech' }
+      { name: 'Biotech AI Research', href: '/biotech-ai', description: 'AI-driven biotech' }
     ]
   },
   {
     name: 'Resources',
     href: '/resources',
     icon: <BookOpen className="w-5 h-5" />,
-    description: 'Documentation, support, and learning resources',
+    description: 'Guides, reports and tools',
     children: [
-      { name: 'Documentation', href: '/docs', description: 'Technical documentation' },
-      { name: 'API Reference', href: '/api-documentation', description: 'API documentation' },
-      { name: 'Case Studies', href: '/case-studies', description: 'Success stories' },
-      { name: 'Blog & News', href: '/blog', description: 'Latest insights' },
-      { name: 'Support Center', href: '/support', description: 'Help and support' },
-      { name: 'Training', href: '/training', description: 'Learning resources' },
-      { name: 'Community', href: '/community', description: 'User community' }
+      { name: 'Blog', href: '/blog', description: 'Insights and updates' },
+      { name: 'Case Studies', href: '/case-studies', description: 'Proven results' },
+      { name: 'Resources Hub', href: '/resources', description: 'Docs, SDKs, guides' },
+      { name: 'Services Advertising', href: '/services-advertising', description: 'Features, benefits and market pricing links' }
     ]
   }
 ];
@@ -249,12 +228,12 @@ const navigationItems: NavigationItem[] = [
 const quickActions = [
   { name: 'Get Started', href: '/contact', icon: <ArrowRight className="w-4 h-4" />, primary: true },
   { name: 'Get a Quote', href: '/quote', icon: <DollarSign className="w-4 h-4" /> },
-  { name: 'Book Demo', href: '/demo', icon: <Video className="w-4 h-4" /> },
+  { name: 'Book Demo', href: '/contact', icon: <Video className="w-4 h-4" /> },
   { name: 'Live Chat', href: '/chat', icon: <MessageCircle className="w-4 h-4" /> },
   { name: 'View Pricing', href: '/pricing', icon: <DollarSign className="w-4 h-4" /> },
   { name: 'Market Pricing', href: '/market-pricing', icon: <BarChart3 className="w-4 h-4" /> },
   { name: 'Services Advertising', href: '/services-advertising', icon: <Sparkles className="w-4 h-4" /> },
-  { name: 'Documentation', href: '/docs', icon: <BookOpen className="w-4 h-4" /> },
+  { name: 'Resources', href: '/resources', icon: <BookOpen className="w-4 h-4" /> },
   { name: 'Support', href: '/support', icon: <HelpCircle className="w-4 h-4" /> }
 ];
 
