@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import UltraAdvancedHeroSection2025 from '../components/sections/UltraAdvancedHeroSection2025';
 // Lazy-load the heavy services section for better initial performance
 import dynamic from 'next/dynamic';
@@ -122,6 +122,22 @@ const featuredServices = [
 ];
 
 const Home: React.FC = () => {
+  useEffect(() => {
+    const idle = (cb: () => void) => {
+      // @ts-ignore
+      const ric = typeof window !== 'undefined' && window.requestIdleCallback;
+      if (ric) {
+        // @ts-ignore
+        ric(cb, { timeout: 2000 });
+      } else {
+        setTimeout(cb, 1200);
+      }
+    };
+    idle(() => {
+      import('../components/sections/UltraAdvancedServicesShowcase2025');
+    });
+  }, []);
+
   return (
     <>
       <SEO 
@@ -222,13 +238,12 @@ const Home: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl lg:text-6xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-green-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
                 Industry Solutions
               </span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Tailored AI and quantum solutions for every industry, designed to solve your most complex challenges 
-              and drive unprecedented growth and efficiency.
+              Solutions tailored for your industry with measurable outcomes.
             </p>
           </motion.div>
 
@@ -239,22 +254,22 @@ const Home: React.FC = () => {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-gradient-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-gray-600/50 transition-all duration-300 group"
+                viewport={{ once: true }}
+                className="p-6 rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 hover:border-gray-500 transition-colors"
               >
-                <div className={`w-16 h-16 bg-gradient-to-r ${industry.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <div className="text-white">{industry.icon}</div>
+                <div className={`w-16 h-16 bg-gradient-to-r ${industry.color} rounded-xl flex items-center justify-center mb-6`}>
+                  {industry.icon}
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4">{industry.name}</h3>
-                <p className="text-gray-300 mb-6 leading-relaxed">{industry.description}</p>
-                
-                <div className="space-y-3">
-                  {industry.services.map((service, serviceIndex) => (
-                    <div key={serviceIndex} className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-cyan-400 flex-shrink-0" />
-                      <span className="text-sm text-gray-300">{service}</span>
-                    </div>
+                <h3 className="text-2xl font-bold mb-2">{industry.name}</h3>
+                <p className="text-gray-300 mb-4">{industry.description}</p>
+                <ul className="space-y-2 text-gray-400">
+                  {industry.services.map(service => (
+                    <li key={service} className="flex items-center gap-2">
+                      <CheckCircle className="w-5 h-5 text-green-400" />
+                      <span>{service}</span>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </motion.div>
             ))}
           </div>
