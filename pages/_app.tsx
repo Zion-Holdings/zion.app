@@ -4,6 +4,7 @@ import '../styles/globals.css';
 import { SEOContext } from '../components/SEOContext';
 import DefaultSEO from '../components/DefaultSEO';
 import Analytics from '../components/Analytics';
+import Layout from '../components/layout/Layout';
 
 export default function App({ Component, pageProps }: AppProps) {
 	const renderedRef = useRef(false);
@@ -11,7 +12,9 @@ export default function App({ Component, pageProps }: AppProps) {
 		<SEOContext.Provider value={{ renderedRef }}>
 			<DefaultSEO />
 			<Analytics />
-			<Component {...pageProps} />
+			<Layout>
+				<Component {...pageProps} />
+			</Layout>
 		</SEOContext.Provider>
 	);
 }
