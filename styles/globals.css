@@ -12,6 +12,9 @@
   --primary-orange: #f97316;
   --primary-red: #ef4444;
   --primary-yellow: #eab308;
+  --text-high-contrast: rgba(255,255,255,0.95);
+  --text-medium-contrast: rgba(255,255,255,0.75);
+  --text-low-contrast: rgba(255,255,255,0.6);
   
   --gradient-cyan-purple: linear-gradient(135deg, #00d4ff 0%, #8b5cf6 100%);
   --gradient-purple-pink: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
