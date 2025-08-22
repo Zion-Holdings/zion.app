@@ -83,7 +83,12 @@ const navigationItems: NavigationItem[] = [
       { name: 'IT Asset Discovery Agent', href: '/it-asset-discovery-agent', description: 'Agentless discovery' },
       { name: 'Managed Postgres HA', href: '/managed-postgres-ha', description: 'HA Postgres ops' },
       { name: 'Micro SAAS', href: '/micro-saas', description: 'Business tools and automation' },
-      { name: 'New 2034 Services', href: '/services?sort=newest', description: 'Latest additions' }
+      { name: 'New 2034 Services', href: '/services?sort=newest', description: 'Latest additions' },
+      { name: 'RAG Evaluation Lab', href: '/rag-evaluation-lab', description: 'Measure RAG quality & cost' },
+      { name: 'SOC 2 Compliance Automation', href: '/soc2-compliance-automation', description: 'Automate evidence & controls' },
+      { name: 'Browser Automation Cloud', href: '/browser-automation-cloud', description: 'Scale headless browser flows' },
+      { name: 'Secrets Rotation Automation', href: '/secrets-rotation-automation', description: 'Policy-driven key rotation' },
+      { name: 'API Performance Testing', href: '/api-performance-testing', description: 'Load/soak tests with CI gates' }
     ]
   },
   {
