@@ -1,14 +1,10 @@
-import Head from 'next/head';
+import SEO from '../components/SEO';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 
 export default function PrivacyPolicyPage() {
   return (
     <UltraAdvancedFuturisticBackground>
-      <Head>
-        <title>Privacy Policy | Zion Tech Group</title>
-        <meta name="description" content="Zion Tech Group Privacy Policy: data collection, usage, security, and contact details." />
-        <link rel="canonical" href="https://ziontechgroup.com/privacy" />
-      </Head>
+      <SEO title="Privacy Policy | Zion Tech Group" description="Zion Tech Group Privacy Policy: data collection, usage, security, and contact details." canonical="https://ziontechgroup.com/privacy/" />
       <div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8 text-white">
         <div className="max-w-3xl mx-auto space-y-6">
           <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Privacy Policy</h1>
