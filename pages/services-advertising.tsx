@@ -84,6 +84,23 @@ export default function ServicesAdvertisingPage() {
         { name: 'PagerDuty', href: 'https://www.pagerduty.com/pricing/' }
       ],
       note: 'SMB budgets: $100–$3,000/mo.'
+    },
+    {
+      title: 'Email & Outreach',
+      links: [
+        { name: 'Mailgun', href: 'https://www.mailgun.com/pricing/' },
+        { name: 'SendGrid', href: 'https://sendgrid.com/pricing/' },
+        { name: 'Postmark', href: 'https://postmarkapp.com/pricing' }
+      ],
+      note: 'Transactional + outreach: $10–$500/mo.'
+    },
+    {
+      title: 'E‑commerce & Returns',
+      links: [
+        { name: 'Shopify', href: 'https://www.shopify.com/pricing' },
+        { name: 'Loop Returns', href: 'https://www.loopreturns.com/pricing' }
+      ],
+      note: 'SMB stores: $39–$1,000/mo.'
     }
   ];
 
@@ -263,20 +280,13 @@ export default function ServicesAdvertisingPage() {
           </section>
 
           <section>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Contact Us</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <a href={`tel:${contact.mobile.replace(/[^+\d]/g, '')}`} className="p-6 rounded-2xl bg-black/40 border border-gray-700/60 hover:border-cyan-500/40 flex items-center gap-3">
-                <Phone className="w-5 h-5 text-cyan-400" />
-                <span className="text-gray-200">{contact.mobile}</span>
-              </a>
-              <a href={`mailto:${contact.email}`} className="p-6 rounded-2xl bg-black/40 border border-gray-700/60 hover:border-purple-500/40 flex items-center gap-3">
-                <Mail className="w-5 h-5 text-purple-400" />
-                <span className="text-gray-200">{contact.email}</span>
-              </a>
-              <a href={`https://maps.google.com/?q=${encodeURIComponent(contact.address)}`} target="_blank" rel="noopener noreferrer" className="p-6 rounded-2xl bg-black/40 border border-gray-700/60 hover:border-emerald-500/40 flex items-center gap-3">
-                <MapPin className="w-5 h-5 text-emerald-400" />
-                <span className="text-gray-200 text-sm">{contact.address}</span>
-              </a>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Contact</h2>
+            <div className="max-w-2xl mx-auto p-6 rounded-2xl bg-black/40 border border-gray-700/60">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-gray-300">
+                <a href={`tel:${contact.mobile}`} className="flex items-center gap-2 hover:text-cyan-400"><Phone className="w-4 h-4" /> {contact.mobile}</a>
+                <a href={`mailto:${contact.email}`} className="flex items-center gap-2 hover:text-purple-400"><Mail className="w-4 h-4" /> {contact.email}</a>
+                <div className="flex items-center gap-2"><MapPin className="w-4 h-4 text-emerald-400" /><span className="text-sm">{contact.address}</span></div>
+              </div>
             </div>
           </section>
         </div>

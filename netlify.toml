@@ -30,3 +30,27 @@
     X-Frame-Options = "DENY"
     Permissions-Policy = "geolocation=(), microphone=(), camera=()"
     Strict-Transport-Security = "max-age=31536000"
+
+[[redirects]]
+  from = "/edge-computing-orchestration"
+  to = "/edge-computing-orchestration-platform"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/quantum-secure-cloud"
+  to = "/quantum-secure-cloud-infrastructure"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/managed-postgres-ha"
+  to = "/services/managed-postgres-ha"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/it-asset-discovery-agent"
+  to = "/services/it-asset-discovery-agent"
+  status = 301
+  force = true

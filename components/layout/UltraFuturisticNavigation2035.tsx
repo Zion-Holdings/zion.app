@@ -33,6 +33,23 @@ const contactInfo = {
 
 const navigationItems: NavigationItem[] = [
   {
+    name: 'Home',
+    href: '/',
+    icon: <Globe className="w-5 h-5" />,
+    description: 'Back to homepage'
+  },
+  {
+    name: 'Services',
+    href: '/services',
+    icon: <Grid className="w-5 h-5" />,
+    description: 'Browse all categories',
+    children: [
+      { name: 'All Services', href: '/services', description: 'Entire catalog' },
+      { name: 'Market Pricing', href: '/market-pricing', description: 'Average market prices' },
+      { name: 'Advertising', href: '/services-advertising', description: 'Features and benefits' }
+    ]
+  },
+  {
     name: 'Pricing',
     href: '/pricing',
     icon: <DollarSign className="w-5 h-5" />,
@@ -63,47 +80,6 @@ const navigationItems: NavigationItem[] = [
     children: [
       { name: 'Contact Sales', href: '/contact', description: 'Get a quote' },
       { name: 'Support', href: '/support', description: 'Help center' }
-    ]
-  },
-  {
-    name: 'Services',
-    href: '/services',
-    icon: <Grid className="w-5 h-5" />,
-    description: 'Browse by category',
-    badge: 'New',
-    children: [
-      { name: 'AI & Data', href: '/services#ai', description: 'AI, data, ML services' },
-      { name: 'Developer Tools', href: '/services#developer-tools', description: 'Dev productivity & tooling' },
-      { name: 'Cloud & FinOps', href: '/services#cloud', description: 'Cloud, cost, platform' },
-      { name: 'Observability', href: '/services#observability', description: 'Monitoring & telemetry' },
-      { name: 'Quality & Monitoring', href: '/services#quality', description: 'QA, testing, reliability' },
-      { name: 'AI Evaluation Orchestrator', href: '/services/ai-evaluation-orchestrator', description: 'Automated LLM evals' },
-      { name: 'SEO Automation Suite', href: '/services/seo-automation-suite', description: 'Technical SEO automation' },
-      { name: 'IT Asset Discovery Agent', href: '/services/it-asset-discovery-agent', description: 'Agentless discovery' },
-      { name: 'Managed Postgres HA', href: '/services/managed-postgres-ha', description: 'HA Postgres ops' }
-    ]
-  },
-  {
-    name: 'All Services',
-    href: '/comprehensive-services-showcase-2025',
-    icon: <Globe className="w-5 h-5" />,
-    description: 'Complete portfolio of all technology services',
-    badge: 'Showcase',
-    featured: true,
-    children: [
-      { name: 'View All Services', href: '/comprehensive-services-showcase-2025', description: 'Complete services portfolio' },
-      { name: 'Ultimate 2035 Futuristic', href: '/ultimate-2035-futuristic-services-showcase', description: 'Revolutionary future technology', featured: true },
-      { name: 'Ultimate 2025 Micro SAAS', href: '/ultimate-2025-micro-saas-showcase', description: 'Latest innovative services', featured: true },
-      { name: 'Service Categories', href: '/comprehensive-services-showcase-2025#categories', description: 'Browse by category' },
-      { name: 'Pricing Comparison', href: '/comprehensive-services-showcase-2025#pricing', description: 'Compare service costs' },
-      { name: 'Service Search', href: '/comprehensive-services-showcase-2025#search', description: 'Find specific services' },
-      { name: 'Market Pricing', href: '/market-pricing', description: 'Average market prices & references' },
-      { name: 'Latest Innovations', href: '/revolutionary-2025-services-showcase', description: 'Cutting-edge solutions' },
-      { name: '2026 Services', href: '/revolutionary-2026-services', description: 'Next generation solutions' },
-      { name: '2027 Services', href: '/revolutionary-2027-services-showcase', description: 'Future-ready services' },
-      { name: 'Ultimate 2026', href: '/ultimate-2026-services-showcase', description: 'Premium service collection' },
-      { name: 'Enterprise Solutions', href: '/enterprise-solutions-showcase', description: 'Enterprise-grade solutions' },
-      { name: 'Innovative Business Solutions', href: '/innovative-business-solutions', description: 'Business transformation services' }
     ]
   },
   {

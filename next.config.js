@@ -7,6 +7,14 @@ const nextConfig = {
 	},
 	eslint: {
 		ignoreDuringBuilds: true
+	},
+	rewrites: async () => {
+		return [
+			{ source: '/edge-computing-orchestration', destination: '/edge-computing-orchestration-platform' },
+			{ source: '/quantum-secure-cloud', destination: '/quantum-secure-cloud-infrastructure' },
+			{ source: '/managed-postgres-ha', destination: '/services/managed-postgres-ha' },
+			{ source: '/it-asset-discovery-agent', destination: '/services/it-asset-discovery-agent' }
+		];
 	}
 };
 
