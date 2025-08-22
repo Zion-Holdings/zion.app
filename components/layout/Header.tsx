@@ -54,7 +54,9 @@ const Header: React.FC = () => {
         { name: 'Automation', href: '/automation' }
       ]
     },
+    { name: 'Market Pricing', href: '/market-pricing' },
     { name: 'Pricing', href: '/pricing' },
+    { name: 'Blog', href: '/blog' },
     { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact' }
   ];
