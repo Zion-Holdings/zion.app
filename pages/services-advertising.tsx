@@ -471,6 +471,15 @@ export default function ServicesAdvertisingPage() {
 						<li>References: {ext('https://launchdarkly.com/pricing/')}, {ext('https://www.flagsmith.com/pricing')}, {ext('https://www.split.io/pricing/')}</li>
 					</ul>
 				</section>
+
+				<section id="it-asset-discovery-agent" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">IT Asset Discovery Agent</h2>
+					<p className="text-slate-300">Agentless discovery of cloud, endpoints, and SaaS via APIs with drift alerts and CMDB export.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $50–$150/mo</li>
+						<li>References: {ext('https://aws.amazon.com/systems-manager/pricing/')}, {ext('https://www.okta.com/pricing/')}, {ext('https://workspace.google.com/pricing')}</li>
+					</ul>
+				</section>
 			</div>
 		</div>
 	);
