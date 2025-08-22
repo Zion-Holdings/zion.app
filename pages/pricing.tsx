@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Head from 'next/head';
+import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import { Check, Zap, Shield, Rocket, Brain, Atom, Target } from 'lucide-react';
 import Layout from '../components/layout/Layout';
@@ -125,12 +125,7 @@ export default function Pricing() {
 
   return (
     <>
-      <Head>
-        <title>Pricing - Zion Tech Group | Future Technology Solutions</title>
-        <meta name="description" content="Transparent pricing for our cutting-edge AI, quantum computing, and emerging technology services. Choose the perfect plan for your business needs." />
-        <meta name="keywords" content="pricing, AI services, quantum computing, emerging technology, micro SAAS, enterprise solutions" />
-        <link rel="canonical" href="https://ziontechgroup.com/pricing" />
-      </Head>
+      <SEO title="Pricing - Zion Tech Group | Future Technology Solutions" description="Transparent pricing for our cutting-edge AI, quantum computing, and emerging technology services. Choose the perfect plan for your business needs." canonical="https://ziontechgroup.com/pricing/" />
 
       <Layout>
         <div className="min-h-screen bg-black text-white relative overflow-hidden">

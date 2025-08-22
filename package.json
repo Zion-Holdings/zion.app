@@ -372,7 +372,8 @@
     "master:stop-all": "node automation/master-automation-launcher.cjs stop-all",
     "master:health": "node automation/master-automation-launcher.cjs health",
     "master:status": "node automation/master-automation-launcher.cjs status",
-    "master:report": "node automation/master-automation-launcher.cjs report"
+    "master:report": "node automation/master-automation-launcher.cjs report",
+    "seo:health": "node scripts/seo-health-check.cjs"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
