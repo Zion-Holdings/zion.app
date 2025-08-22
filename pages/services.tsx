@@ -14,11 +14,15 @@ import { innovativeMicroSaasSolutions } from '../data/2034-innovative-micro-saas
 import { cuttingEdgeAIServices } from '../data/2034-cutting-edge-ai-services';
 
 // Import existing service data
-import { realMicroSaasServices2025 } from '../data/2025-real-micro-saas-services';
-import { innovativeAIServices2025 } from '../data/2025-innovative-ai-services';
-import { innovativeITServices2025 } from '../data/2025-innovative-it-services';
-import { emergingTechServices2025 } from '../data/2025-emerging-tech-services';
-import { newRealServices2026 } from '../data/2025-2026-new-real-services';
+import { realMicroSaasServices } from '../data/real-micro-saas-services';
+import { innovativeAIServices } from '../data/innovative-ai-services';
+import { enterpriseITServices } from '../data/enterprise-it-services';
+import { emergingTechServices } from '../data/emerging-tech-services';
+import { newRealServices } from '../data/new-real-services';
+import { realOperationalServices } from '../data/real-operational-services';
+import { marketReadyServices } from '../data/market-ready-services';
+import { marketValidatedServices } from '../data/market-validated-services';
+import { industryRealServices } from '../data/industry-real-services';
 
 // Helper function to get service category
 const getServiceCategory = (service: any) => {
@@ -54,11 +58,15 @@ const allServices = [
   ...enterpriseITSolutions,
   ...innovativeMicroSaasSolutions,
   ...cuttingEdgeAIServices,
-  ...realMicroSaasServices2025,
-  ...innovativeAIServices2025,
-  ...innovativeITServices2025,
-  ...emergingTechServices2025,
-  ...newRealServices2026
+  ...realMicroSaasServices,
+  ...innovativeAIServices,
+  ...enterpriseITServices,
+  ...emergingTechServices,
+  ...newRealServices,
+  ...realOperationalServices,
+  ...marketReadyServices,
+  ...marketValidatedServices,
+  ...industryRealServices
 ];
 
 const categories = [
@@ -148,6 +156,8 @@ export default function Services() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [sortBy, setSortBy] = useState('name');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+  const [currentPage, setCurrentPage] = useState(1);
+  const pageSize = 18;
 
   // Filter services based on search and category
   const filteredServices = allServices.filter(service => {
@@ -182,6 +192,19 @@ export default function Services() {
         return 0;
     }
   });
+
+  // Pagination helpers
+  const totalPages = Math.max(1, Math.ceil(sortedServices.length / pageSize));
+  const currentPageClamped = Math.min(currentPage, totalPages);
+  const paginatedServices = sortedServices.slice(
+    (currentPageClamped - 1) * pageSize,
+    currentPageClamped * pageSize
+  );
+
+  // Reset to first page when filters/sort change
+  React.useEffect(() => {
+    setCurrentPage(1);
+  }, [searchQuery, selectedCategory, sortBy]);
 
   const getCategoryIcon = (category: string) => {
     switch (category.toLowerCase()) {
@@ -369,7 +392,7 @@ export default function Services() {
         {/* Services Grid/List */}
         <section className="py-20 relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            {sortedServices.length > 0 ? (
+            {paginatedServices.length > 0 ? (<>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -379,7 +402,7 @@ export default function Services() {
                   : "space-y-6"
                 }
               >
-                {sortedServices.map((service, index) => (
+                {paginatedServices.map((service, index) => (
                   <motion.div
                     key={service.id}
                     initial={{ opacity: 0, y: 20 }}
@@ -438,7 +461,7 @@ export default function Services() {
                       {/* Action Button */}
                       <div className="flex flex-col space-y-3">
                         <motion.a
-                          href={`/services/${service.id}`}
+                          href={(service as any).link || `/services/${service.id}`}
                           whileHover={{ scale: 1.02 }}
                           whileTap={{ scale: 0.98 }}
                           className="flex items-center justify-center space-x-2 px-4 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 shadow-lg shadow-cyan-500/25"
@@ -454,7 +477,42 @@ export default function Services() {
                   </motion.div>
                 ))}
               </motion.div>
-            ) : (
+              {/* Pagination Controls */}
+              {totalPages > 1 && (
+                <div className="mt-12 flex items-center justify-center gap-2 flex-wrap">
+                  <button
+                    onClick={() => setCurrentPage(Math.max(1, currentPageClamped - 1))}
+                    className="px-4 py-2 rounded-lg border border-blue-500/40 text-blue-300 hover:border-blue-400 disabled:opacity-40"
+                    disabled={currentPageClamped === 1}
+                  >
+                    Previous
+                  </button>
+                  {Array.from({ length: totalPages }).slice(0, 7).map((_, idx) => {
+                    const page = idx + 1;
+                    return (
+                      <button
+                        key={page}
+                        onClick={() => setCurrentPage(page)}
+                        className={`px-3 py-2 rounded-lg border ${
+                          page === currentPageClamped
+                            ? 'bg-blue-600/30 border-blue-400 text-white'
+                            : 'border-blue-500/30 text-blue-200 hover:border-blue-400'
+                        }`}
+                      >
+                        {page}
+                      </button>
+                    );
+                  })}
+                  <button
+                    onClick={() => setCurrentPage(Math.min(totalPages, currentPageClamped + 1))}
+                    className="px-4 py-2 rounded-lg border border-blue-500/40 text-blue-300 hover:border-blue-400 disabled:opacity-40"
+                    disabled={currentPageClamped === totalPages}
+                  >
+                    Next
+                  </button>
+                </div>
+              )}
+            </>) : (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
