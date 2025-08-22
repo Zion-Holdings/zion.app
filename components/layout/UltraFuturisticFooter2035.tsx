@@ -34,7 +34,12 @@ const footerSections = [
       { name: 'AI Evaluation Orchestrator', href: '/ai-evaluation-orchestrator', featured: true },
       { name: 'SEO Automation Suite', href: '/seo-automation-suite' },
       { name: 'IT Asset Discovery Agent', href: '/it-asset-discovery-agent' },
-      { name: 'Managed Postgres HA', href: '/managed-postgres-ha' }
+      { name: 'Managed Postgres HA', href: '/managed-postgres-ha' },
+      // Newly added
+      { name: 'RAG Evaluation Lab', href: '/services/rag-evaluation-lab', featured: true },
+      { name: 'Browser Automation Cloud', href: '/services/browser-automation-cloud' },
+      { name: 'Secrets Rotation Automation', href: '/services/secrets-rotation-automation' },
+      { name: 'API Performance Testing', href: '/services/api-performance-testing' }
     ]
   },
   {

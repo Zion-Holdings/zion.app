@@ -39,6 +39,7 @@ import { real2029Q1Additions } from '../../data/real-2029-q1-additions';
 import { realMarketServices } from '../../data/real-market-services';
 import { real2029Q2Additions } from '../../data/real-2029-q2-additions';
 import { real2029Q3Additions } from '../../data/real-2029-q3-additions';
+import { newServices2026 } from '../../data/2026-new-services';
 import { enterpriseITSolutions } from '../../data/2034-enterprise-it-solutions';
 import { innovativeMicroSaasSolutions } from '../../data/2034-innovative-micro-saas-solutions';
 import { cuttingEdgeAIServices } from '../../data/2034-cutting-edge-ai-services';
@@ -86,6 +87,7 @@ function getAllServices(): Service[] {
 		.concat(realMarketServices as unknown as Service[])
 		.concat(real2029Q2Additions as unknown as Service[])
 		.concat(real2029Q3Additions as unknown as Service[])
+		.concat(newServices2026 as unknown as Service[])
 		.concat(enterpriseITSolutions as unknown as Service[])
 		.concat(innovativeMicroSaasSolutions as unknown as Service[])
 		.concat(cuttingEdgeAIServices as unknown as Service[]);
