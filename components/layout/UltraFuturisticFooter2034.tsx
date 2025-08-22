@@ -69,6 +69,36 @@ const footerSections = [
     ]
   },
   {
+    title: 'Cutting Edge AI',
+    links: [
+      { name: 'AI Code Review & Security', href: '/ai-code-review-security' },
+      { name: 'AI DevOps Automation', href: '/ai-devops-automation' },
+      { name: 'AI Testing Automation', href: '/ai-testing-automation' },
+      { name: 'AI Data Pipeline Management', href: '/ai-data-pipeline-management' },
+      { name: 'AI Customer Service Automation', href: '/ai-customer-service-automation' }
+    ]
+  },
+  {
+    title: 'Enhanced Business Solutions',
+    links: [
+      { name: 'AI Marketing Automation', href: '/ai-marketing-automation' },
+      { name: 'AI Sales Intelligence', href: '/ai-sales-intelligence' },
+      { name: 'AI HR Management', href: '/ai-hr-management' },
+      { name: 'AI Financial Analytics', href: '/ai-financial-analytics' },
+      { name: 'AI Supply Chain Optimization', href: '/ai-supply-chain-optimization' }
+    ]
+  },
+  {
+    title: 'Emerging Technology',
+    links: [
+      { name: 'Quantum Computing as a Service', href: '/quantum-computing-service' },
+      { name: 'Blockchain Infrastructure', href: '/blockchain-infrastructure' },
+      { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration' },
+      { name: 'Metaverse Development', href: '/metaverse-development' },
+      { name: 'Space Technology Platform', href: '/space-technology-platform' }
+    ]
+  },
+  {
     title: 'Solutions',
     links: [
       { name: 'Healthcare Solutions', href: '/healthcare-solutions' },

@@ -11,6 +11,9 @@ import { emergingTechServicesEnhanced2025 } from '../data/2025-emerging-tech-ser
 import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
 import { advancedITInfrastructureServices2025 } from '../data/2025-advanced-it-infrastructure-services';
 import { innovativeBusinessSolutions2025 } from '../data/2025-innovative-business-solutions';
+import { cuttingEdgeAIServices2025 } from '../data/2025-cutting-edge-ai-services';
+import { innovativeBusinessSolutionsEnhanced2025 } from '../data/2025-innovative-business-solutions-enhanced';
+import { emergingTechnologyServicesEnhanced2025 } from '../data/2025-emerging-technology-services-enhanced';
 
 const contactInfo = {
   mobile: '+1 302 464 0950',
@@ -96,6 +99,33 @@ const serviceCategories = [
     color: 'from-green-500 to-emerald-600',
     href: '/innovative-business-solutions',
     features: ['Business Intelligence', 'Marketing Automation', 'Sales Intelligence']
+  },
+  {
+    title: 'Cutting Edge AI Services',
+    description: 'Latest AI innovations and breakthrough technologies',
+    services: cuttingEdgeAIServices2025.slice(0, 3),
+    icon: Brain,
+    color: 'from-pink-500 to-rose-600',
+    href: '/cutting-edge-ai-services',
+    features: ['Code Review AI', 'DevOps Automation', 'Testing Intelligence']
+  },
+  {
+    title: 'Enhanced Business Solutions',
+    description: 'Advanced AI-powered business automation and intelligence',
+    services: innovativeBusinessSolutionsEnhanced2025.slice(0, 3),
+    icon: Target,
+    color: 'from-orange-500 to-red-600',
+    href: '/enhanced-business-solutions',
+    features: ['Marketing AI', 'Sales Intelligence', 'HR Automation']
+  },
+  {
+    title: 'Emerging Technology Services',
+    description: 'Cutting-edge quantum, blockchain, and space technology solutions',
+    services: emergingTechnologyServicesEnhanced2025.slice(0, 3),
+    icon: Atom,
+    color: 'from-violet-500 to-purple-600',
+    href: '/emerging-technology-services',
+    features: ['Quantum Computing', 'Blockchain Infrastructure', 'Space Technology']
   }
 ];
 

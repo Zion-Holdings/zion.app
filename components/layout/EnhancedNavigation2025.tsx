@@ -31,15 +31,17 @@ const contactInfo = {
 const navigationItems: NavigationItem[] = [
   {
     name: 'All Services',
-    href: '/comprehensive-services-showcase-2025',
+    href: '/comprehensive-services-showcase-2025-enhanced',
     icon: <Globe className="w-5 h-5" />,
     description: 'Complete portfolio of all technology services',
-    badge: 'Showcase',
+    badge: 'Enhanced',
     children: [
-      { name: 'View All Services', href: '/comprehensive-services-showcase-2025', description: 'Complete services portfolio' },
-      { name: 'Service Categories', href: '/comprehensive-services-showcase-2025#categories', description: 'Browse by category' },
-      { name: 'Pricing Comparison', href: '/comprehensive-services-showcase-2025#pricing', description: 'Compare service costs' },
-      { name: 'Service Search', href: '/comprehensive-services-showcase-2025#search', description: 'Find specific services' },
+      { name: 'Enhanced Services Showcase', href: '/comprehensive-services-showcase-2025-enhanced', description: 'Complete enhanced services portfolio' },
+      { name: 'Original Showcase', href: '/comprehensive-services-showcase-2025', description: 'Original services portfolio' },
+      { name: 'Service Categories', href: '/comprehensive-services-showcase-2025-enhanced#categories', description: 'Browse by category' },
+      { name: 'Pricing Comparison', href: '/comprehensive-services-showcase-2025-enhanced#pricing', description: 'Compare service costs' },
+      { name: 'Service Search', href: '/comprehensive-services-showcase-2025-enhanced#search', description: 'Find specific services' },
+      { name: 'Enhanced Pricing', href: '/enhanced-pricing-2025', description: 'Comprehensive pricing and market comparisons' },
       { name: 'Latest Innovations', href: '/revolutionary-2025-services-showcase', description: 'Cutting-edge solutions' },
       { name: '2026 Services', href: '/revolutionary-2026-services', description: 'Next generation solutions' },
       { name: '2027 Services', href: '/revolutionary-2027-services-showcase', description: 'Future-ready services' },
@@ -74,7 +76,50 @@ const navigationItems: NavigationItem[] = [
       { name: 'AI Autonomous Sales', href: '/ai-autonomous-sales-platform', description: 'AI that closes deals' },
       { name: 'AI Autonomous Customer Service', href: '/ai-autonomous-customer-service', description: 'Autonomous support AI' },
       { name: 'AI Autonomous HR', href: '/ai-autonomous-hr-platform', description: 'Autonomous HR management' },
-      { name: 'Advanced AI Automation', href: '/advanced-ai-automation-services', description: 'AI automation for development, testing, DevOps, security, and data' }
+      { name: 'Advanced AI Automation', href: '/advanced-ai-automation-services', description: 'AI automation for development, testing, DevOps, security, and data' },
+      { name: 'Cutting Edge AI Services', href: '/cutting-edge-ai-services', description: 'Latest AI innovations and breakthroughs' }
+    ]
+  },
+  {
+    name: 'Cutting Edge AI',
+    href: '/cutting-edge-ai-services',
+    icon: <Brain className="w-5 h-5" />,
+    description: 'Latest AI innovations and breakthrough technologies',
+    badge: 'New',
+    children: [
+      { name: 'AI Code Review & Security', href: '/ai-code-review-security', description: 'Automated code review with AI security analysis' },
+      { name: 'AI DevOps Automation', href: '/ai-devops-automation', description: 'Intelligent DevOps automation with predictive analytics' },
+      { name: 'AI Testing Automation', href: '/ai-testing-automation', description: 'Intelligent test automation with self-healing capabilities' },
+      { name: 'AI Data Pipeline Management', href: '/ai-data-pipeline-management', description: 'Intelligent data pipeline orchestration and monitoring' },
+      { name: 'AI Customer Service Automation', href: '/ai-customer-service-automation', description: 'Intelligent customer service with emotional intelligence' }
+    ]
+  },
+  {
+    name: 'Enhanced Business Solutions',
+    href: '/enhanced-business-solutions',
+    icon: <Target className="w-5 h-5" />,
+    description: 'AI-powered business intelligence and automation solutions',
+    badge: 'Enhanced',
+    children: [
+      { name: 'AI Marketing Automation', href: '/ai-marketing-automation', description: 'Intelligent marketing automation with predictive analytics' },
+      { name: 'AI Sales Intelligence', href: '/ai-sales-intelligence', description: 'Intelligent sales insights and automation' },
+      { name: 'AI HR Management', href: '/ai-hr-management', description: 'Intelligent HR automation and people analytics' },
+      { name: 'AI Financial Analytics', href: '/ai-financial-analytics', description: 'Intelligent financial insights and automation' },
+      { name: 'AI Supply Chain Optimization', href: '/ai-supply-chain-optimization', description: 'Intelligent supply chain management and optimization' }
+    ]
+  },
+  {
+    name: 'Emerging Technology',
+    href: '/emerging-technology-services',
+    icon: <Atom className="w-5 h-5" />,
+    description: 'Cutting-edge emerging technology solutions',
+    badge: 'Hot',
+    children: [
+      { name: 'Quantum Computing as a Service', href: '/quantum-computing-service', description: 'Access to quantum computing power through the cloud' },
+      { name: 'Blockchain Infrastructure', href: '/blockchain-infrastructure', description: 'Enterprise blockchain infrastructure and development tools' },
+      { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration', description: 'Intelligent edge computing management and optimization' },
+      { name: 'Metaverse Development', href: '/metaverse-development', description: 'Complete metaverse development and deployment solution' },
+      { name: 'Space Technology Platform', href: '/space-technology-platform', description: 'Advanced space technology solutions and satellite management' }
     ]
   },
   {
