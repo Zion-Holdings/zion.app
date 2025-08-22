@@ -1,7 +1,11 @@
 import React from 'react';
 import Head from 'next/head';
 import UltraAdvancedHeroSection2025 from '../components/sections/UltraAdvancedHeroSection2025';
-import UltraAdvancedServicesShowcase2025 from '../components/sections/UltraAdvancedServicesShowcase2025';
+import dynamic from 'next/dynamic';
+const UltraAdvancedServicesShowcase2025 = dynamic(
+  () => import('../components/sections/UltraAdvancedServicesShowcase2025'),
+  { ssr: false, loading: () => <section className="py-20 text-center text-gray-400">Loading services…</section> }
+);
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { 
@@ -124,7 +128,6 @@ const Home: React.FC = () => {
         <title>Zion Tech Group - Revolutionary Technology Solutions | AI, Quantum Computing, Micro SAAS</title>
         <meta name="description" content="Transform your business with Zion Tech Group's revolutionary AI, quantum computing, and micro SAAS solutions. Leading-edge technology for unprecedented growth." />
         <meta name="keywords" content="AI, quantum computing, micro SAAS, technology solutions, business transformation, Zion Tech Group" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href="https://ziontechgroup.com" />
       </Head>
 

@@ -11,6 +11,8 @@ export default class MyDocument extends Document {
 					<link rel="icon" href="/favicon.ico" />
 					<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 					<link rel="dns-prefetch" href="//fonts.gstatic.com" />
+					<link rel="preconnect" href="https://plausible.io" crossOrigin="anonymous" />
+					<link rel="dns-prefetch" href="//plausible.io" />
 					<meta name="format-detection" content="telephone=no" />
 					<script defer data-domain="ziontechgroup.com" src="https://plausible.io/js/script.js"></script>
 					<script
