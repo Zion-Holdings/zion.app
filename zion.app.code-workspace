@@ -1,0 +1,26 @@
+{
+  "folders": [
+    {
+      "name": "zion.app",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "git.enabled": true,
+    "git.autorefresh": true,
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+    "git.showPushSuccessNotification": true,
+    "git.showProgress": true,
+    "git.autoStash": true,
+    "git.autoRepositoryDetection": true
+  },
+  "extensions": {
+    "recommendations": [
+      "ms-vscode.vscode-git",
+      "ms-vscode.vscode-git-graph",
+      "eamodio.gitlens"
+    ]
+  }
+}

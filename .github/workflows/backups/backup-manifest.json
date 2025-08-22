@@ -1,0 +1,25 @@
+{
+  "timestamp": "2025-08-19T17:46:38.961Z",
+  "totalWorkflows": 2,
+  "backupResults": [
+    {
+      "workflow": "marketing-sync.yml",
+      "status": "backed_up",
+      "size": 1140,
+      "lastModified": "2025-08-19T16:01:59.118Z",
+      "backupPath": "/workspace/.github/workflows/backups/marketing-sync.yml.2025-08-19T17-46-38-959Z.backup"
+    },
+    {
+      "workflow": "sync-health.yml",
+      "status": "backed_up",
+      "size": 1065,
+      "lastModified": "2025-08-19T16:01:59.118Z",
+      "backupPath": "/workspace/.github/workflows/backups/sync-health.yml.2025-08-19T17-46-38-960Z.backup"
+    }
+  ],
+  "summary": {
+    "successful": 2,
+    "failed": 0,
+    "notFound": 0
+  }
+}

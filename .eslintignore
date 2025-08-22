@@ -1,0 +1,13 @@
+# Build output
+.next/
+out/
+dist/
+coverage/
+
+# Dependencies
+node_modules/
+
+# Generated artifacts
+*.log
+**/*.generated.*
+zion.app/recovered-content/**
