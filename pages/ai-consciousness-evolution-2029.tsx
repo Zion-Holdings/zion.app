@@ -72,13 +72,13 @@ export default function AIConsciousnessEvolution2029() {
         <meta property="og:description" content="Revolutionary platform for developing conscious AI systems with genuine self-awareness and emotional intelligence." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://ziontechgroup.com/ai-consciousness-evolution-2029" />
-        <meta property="og:image" content="https://ziontechgroup.com/og-image.jpg" />
+        <meta property="og:image" content="https://ziontechgroup.com/og-image.svg" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="AI Consciousness Evolution Platform 2029" />
         <meta name="twitter:description" content="Revolutionary platform for developing conscious AI systems with genuine self-awareness and emotional intelligence." />
-        <meta name="twitter:image" content="https://ziontechgroup.com/twitter-image.jpg" />
+        <meta name="twitter:image" content="https://ziontechgroup.com/og-image.svg" />
         
         {/* Additional Meta Tags */}
         <meta name="theme-color" content="#8b5cf6" />
