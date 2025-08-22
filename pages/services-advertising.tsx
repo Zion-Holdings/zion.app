@@ -1368,6 +1368,86 @@ export default function ServicesAdvertisingPage() {
 					</ul>
 					<div className="text-slate-400 text-sm">Full catalog: <a className="text-cyan-400 underline" href="/services">/services</a> • Market pricing benchmarks: <a className="text-cyan-400 underline" href="/market-pricing">/market-pricing</a></div>
 				</section>
+
+				<section id="gitops-policy-auditor" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">GitOps Policy Auditor</h2>
+					<p className="text-slate-300">OPA/Rego policy packs with CI annotations, auto-fix PRs, and exceptions to prevent misconfigurations.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $20–$150/mo</li>
+						<li>References: {ext('https://www.openpolicyagent.org/')}, {ext('https://www.conftest.dev/')}, {ext('https://argo-cd.readthedocs.io/en/stable/')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/gitops-policy-auditor">Learn more</a></div>
+				</section>
+
+				<section id="multicloud-failover-orchestrator" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Multi-Cloud Failover Orchestrator</h2>
+					<p className="text-slate-300">Automated DNS/edge failover with health checks, chaos drills, and runbooks to reduce downtime minutes.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $100–$500/mo</li>
+						<li>References: {ext('https://www.cloudflare.com/load-balancing/')}, {ext('https://aws.amazon.com/route53/features/#Health_Checking')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/multicloud-failover-orchestrator">Learn more</a></div>
+				</section>
+
+				<section id="incident-communication-hub" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Incident Communication Hub</h2>
+					<p className="text-slate-300">Templates, stakeholder groups, and multi-channel updates to keep customers informed during incidents.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $20–$100/mo</li>
+						<li>References: {ext('https://www.atlassian.com/software/statuspage/pricing')}, {ext('https://www.twilio.com/pricing')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/incident-communication-hub">Learn more</a></div>
+				</section>
+
+				<section id="saas-backup-vault" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">SaaS Backup Vault</h2>
+					<p className="text-slate-300">Automated backups for Google Workspace, Microsoft 365, and Slack with retention, legal hold, and restore.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $49–$299/mo</li>
+						<li>References: {ext('https://workspace.google.com/pricing')}, {ext('https://www.microsoft.com/microsoft-365/business')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/saas-backup-vault">Learn more</a></div>
+				</section>
+
+				<section id="customer-data-platform-lite" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Customer Data Platform Lite</h2>
+					<p className="text-slate-300">Identity stitching, computed traits, and reverse ETL syncs — a slim CDP for SMBs.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $49–$199/mo</li>
+						<li>References: {ext('https://segment.com/pricing/')}, {ext('https://www.rudderstack.com/pricing/')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/customer-data-platform-lite">Learn more</a></div>
+				</section>
+
+				<section id="ai-contract-risk-analyzer" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">AI Contract Risk Analyzer</h2>
+					<p className="text-slate-300">Policy-pack clause checks, risk scoring, and suggested redlines with exportable reports.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $59–$299/mo</li>
+						<li>References: {ext('https://www.ironcladapp.com/ai/')}, {ext('https://www.evisort.com/')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/ai-contract-risk-analyzer">Learn more</a></div>
+				</section>
+
+				<section id="shopify-speed-optimizer" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Shopify Speed Optimizer</h2>
+					<p className="text-slate-300">Improve CWV with safe theme defers/inlines, optimized images, and app impact insights.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $29–$149/mo</li>
+						<li>References: {ext('https://pagespeed.web.dev/')}, {ext('https://shopify.dev/docs/performance/best-practices')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/shopify-speed-optimizer">Learn more</a></div>
+				</section>
+
+				<section id="whatsapp-automation-studio" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">WhatsApp Automation Studio</h2>
+					<p className="text-slate-300">Approved templates, flows, and broadcasts for support and commerce on WhatsApp.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $29–$199/mo</li>
+						<li>References: {ext('https://developers.facebook.com/docs/whatsapp/pricing/')}, {ext('https://www.twilio.com/whatsapp/pricing')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/whatsapp-automation-studio">Learn more</a></div>
+				</section>
 			</div>
 		</div>
 	);
