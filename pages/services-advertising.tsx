@@ -1640,6 +1640,17 @@ export default function ServicesAdvertisingPage() {
 						<li>References: {ext('https://trustcenter.transcend.io/')}, {ext('https://vanta.com/pricing')}, {ext('https://drata.com/pricing')}</li>
 					</ul>
 				</section>
+
+				<section id="service-expansions-2036" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">New 2036 Service Expansions</h2>
+					<ul className="list-disc list-inside text-slate-300 space-y-2">
+						<li><strong className="text-white">API Latency & SLO Tracker Pro</strong> — $59/mo. <a className="text-cyan-400 underline" href="/services/api-latency-slo-tracker-pro">Learn more</a>. References: {ext('https://opentelemetry.io/')}, {ext('https://grafana.com/')}</li>
+						<li><strong className="text-white">Cloud SQL Spend Optimizer</strong> — $79/mo. <a className="text-cyan-400 underline" href="/services/cloud-sql-spend-optimizer">Learn more</a>. References: {ext('https://cloud.google.com/sql/pricing')}, {ext('https://aws.amazon.com/rds/pricing/')}, {ext('https://azure.microsoft.com/pricing')}</li>
+						<li><strong className="text-white">AI Contract Reviewer</strong> — $69/mo. <a className="text-cyan-400 underline" href="/services/ai-contract-reviewer">Learn more</a>. References: {ext('https://openai.com/api/pricing')}, {ext('https://www.anthropic.com/pricing')}</li>
+						<li><strong className="text-white">ETL Incident Copilot</strong> — $45/mo. <a className="text-cyan-400 underline" href="/services/etl-incident-copilot">Learn more</a>. References: {ext('https://airflow.apache.org/')}, {ext('https://www.getdbt.com/')}</li>
+					</ul>
+					<div className="text-slate-400 text-sm">Contact: <a className="text-cyan-400 underline" href="tel:+13024640950">+1 302 464 0950</a> · <a className="text-cyan-400 underline" href="mailto:kleber@ziontechgroup.com">kleber@ziontechgroup.com</a> · <a className="text-cyan-400 underline" href="https://ziontechgroup.com" target="_blank" rel="noopener noreferrer">ziontechgroup.com</a></div>
+				</section>
 			</div>
 		</div>
 	);
