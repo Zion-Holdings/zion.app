@@ -4,6 +4,7 @@ import '../styles/globals.css';
 import { SEOContext } from '../components/SEOContext';
 import DefaultSEO from '../components/DefaultSEO';
 import Analytics from '../components/Analytics';
+import Layout from '../components/layout/Layout';
 
 export default function App({ Component, pageProps }: AppProps) {
 	const renderedRef = useRef(false);
@@ -13,9 +14,11 @@ export default function App({ Component, pageProps }: AppProps) {
 			<DefaultSEO />
 			<Analytics />
 			<a href="#main-content" className="skip-link">Skip to content</a>
-			<main id="main-content">
-				<Component {...pageProps} />
-			</main>
+			<Layout>
+				<main id="main-content">
+					<Component {...pageProps} />
+				</main>
+			</Layout>
 		</SEOContext.Provider>
 	);
 }

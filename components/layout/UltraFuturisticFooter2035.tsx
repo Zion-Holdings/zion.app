@@ -116,8 +116,8 @@ const footerSections = [
       { name: 'Manufacturing AI', href: '/manufacturing-ai-solutions' },
       { name: 'Retail Technology', href: '/retail-technology-solutions' },
       { name: 'Education Technology', href: '/education-technology-solutions' },
-      { name: 'Government Solutions', href: '/government-technology-solutions' },
-      { name: 'Energy & Utilities', href: '/energy-utilities-solutions' },
+      { name: 'Government Solutions', href: '/enterprise-solutions-showcase' },
+      { name: 'Energy & Utilities', href: '/quantum-energy' },
       { name: 'Biotech AI Research', href: '/biotech-ai-research-platform' }
     ]
   },
@@ -137,11 +137,11 @@ const footerSections = [
 ];
 
 const socialLinks = [
-  { name: 'Twitter', href: '/social/twitter', icon: <Twitter className="w-5 h-5" /> },
-  { name: 'LinkedIn', href: '/social/linkedin', icon: <Linkedin className="w-5 h-5" /> },
+  { name: 'Twitter', href: 'https://x.com/ziontechgroup', icon: <Twitter className="w-5 h-5" /> },
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/company/zion-tech-group', icon: <Linkedin className="w-5 h-5" /> },
   { name: 'Facebook', href: 'https://facebook.com/ziontechgroup', icon: <Facebook className="w-5 h-5" /> },
-  { name: 'Instagram', href: 'https://instagram.com/ziontechgroup', icon: <Instagram className="w-5 h-5" /> },
-  { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: <Youtube className="w-5 h-5" /> },
+  { name: 'Instagram', href: 'https://www.instagram.com/ziontechgroup', icon: <Instagram className="w-5 h-5" /> },
+  { name: 'YouTube', href: 'https://www.youtube.com/@ziontechgroup', icon: <Youtube className="w-5 h-5" /> },
   { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: <Github className="w-5 h-5" /> }
 ];
 
