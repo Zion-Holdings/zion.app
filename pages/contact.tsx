@@ -1,96 +1,52 @@
-import React, { useState } from 'react';
+import React from 'react';
 import SEO from '../components/SEO';
+import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
+
+const contact = {
+  mobile: '+1 302 464 0950',
+  email: 'kleber@ziontechgroup.com',
+  address: '364 E Main St STE 1008 Middletown DE 19709'
+};
 
 export default function ContactPage() {
-	const [status, setStatus] = useState<'idle' | 'submitting' | 'error'>('idle');
+  return (
+    <UltraFuturisticBackground variant="quantum" intensity="high">
+      <SEO title="Contact | Zion Tech Group" description="Get in touch for quotes, demos, and technical guidance." canonical="https://ziontechgroup.com/contact/" />
+      <div className="container mx-auto px-4 py-16 text-white">
+        <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-6">Contact Us</h1>
+        <p className="text-gray-300 mb-8">We usually respond within one business day. For urgent requests, please call.</p>
 
-	const pageTitle = 'Contact Zion Tech Group — Talk to Our Team';
-	const pageDescription = 'Get in touch with Zion Tech Group for demos, pricing, or partnership inquiries.';
-
-	return (
-		<>
-			<SEO title={pageTitle} description={pageDescription} canonical="/contact" />
-			<section className="relative pt-28 pb-16 md:pt-36 md:pb-24">
-				<div className="container mx-auto px-4 max-w-3xl">
-					<h1 className="text-3xl md:text-5xl font-extrabold tracking-tight gradient-text-cyan-purple">Contact Us</h1>
-					<p className="mt-4 text-gray-300">We typically respond within one business day.</p>
-
-					<form
-						name="contact"
-						method="POST"
-						data-netlify="true"
-						data-netlify-honeypot="bot-field"
-						action="/thank-you/"
-						className="mt-10 grid grid-cols-1 gap-6 p-6 rounded-lg bg-white/5 backdrop-blur animated-border"
-						onSubmit={() => setStatus('submitting')}
-					>
-						<input type="hidden" name="form-name" value="contact" />
-						<p className="hidden">
-							<label>
-								Don’t fill this out: <input name="bot-field" />
-							</label>
-						</p>
-
-						<div>
-							<label htmlFor="name" className="block text-sm font-medium text-gray-200">Full name</label>
-							<input
-								id="name"
-								name="name"
-								type="text"
-								required
-								className="mt-2 w-full rounded-md bg-black/40 border border-white/10 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500"
-								placeholder="Ada Lovelace"
-							/>
-						</div>
-
-						<div>
-							<label htmlFor="email" className="block text-sm font-medium text-gray-200">Work email</label>
-							<input
-								id="email"
-								name="email"
-								type="email"
-								required
-								className="mt-2 w-full rounded-md bg-black/40 border border-white/10 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500"
-								placeholder="you@company.com"
-							/>
-						</div>
-
-						<div>
-							<label htmlFor="company" className="block text-sm font-medium text-gray-200">Company</label>
-							<input
-								id="company"
-								name="company"
-								type="text"
-								className="mt-2 w-full rounded-md bg-black/40 border border-white/10 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500"
-								placeholder="Zion Tech Group"
-							/>
-						</div>
-
-						<div>
-							<label htmlFor="message" className="block text-sm font-medium text-gray-200">How can we help?</label>
-							<textarea
-								id="message"
-								name="message"
-								rows={6}
-								required
-								className="mt-2 w-full rounded-md bg-black/40 border border-white/10 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500"
-								placeholder="Tell us about your goals, timelines, and constraints."
-							/>
-						</div>
-
-						<div className="flex items-center justify-between gap-4">
-							<p className="text-xs text-gray-400">By submitting, you agree to our <a href="/privacy/" className="text-cyan-400 underline">Privacy Policy</a>.</p>
-							<button
-								type="submit"
-								disabled={status === 'submitting'}
-								className="inline-flex items-center justify-center px-6 py-3 rounded-md bg-white text-black font-semibold hover:bg-gray-200 transition-colors disabled:opacity-60"
-							>
-								{status === 'submitting' ? 'Sending…' : 'Send message'}
-							</button>
-						</div>
-					</form>
-				</div>
-			</section>
-		</>
-	);
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="md:col-span-2 space-y-6">
+            <div className="p-6 bg-black/40 border border-gray-700/60 rounded-xl">
+              <h2 className="text-xl font-semibold mb-3">Request a Quote or Demo</h2>
+              <form className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <input className="px-4 py-2 bg-gray-900 border border-gray-700 rounded-lg" placeholder="Name" />
+                  <input className="px-4 py-2 bg-gray-900 border border-gray-700 rounded-lg" placeholder="Email" />
+                </div>
+                <input className="w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-lg" placeholder="Company" />
+                <textarea className="w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-lg h-32" placeholder="How can we help?" />
+                <button type="submit" className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg">Send</button>
+              </form>
+            </div>
+          </div>
+          <div className="space-y-4">
+            <div className="p-6 bg-black/40 border border-gray-700/60 rounded-xl">
+              <h3 className="font-semibold mb-2">Contact Details</h3>
+              <div className="text-gray-300 space-y-2">
+                <div>Mobile: <a href={`tel:${contact.mobile}`} className="text-cyan-300">{contact.mobile}</a></div>
+                <div>Email: <a href={`mailto:${contact.email}`} className="text-cyan-300">{contact.email}</a></div>
+                <div className="text-sm">Address: {contact.address}</div>
+              </div>
+            </div>
+            <div className="p-6 bg-black/40 border border-gray-700/60 rounded-xl">
+              <h3 className="font-semibold mb-2">Sales</h3>
+              <p className="text-gray-300 text-sm">For pricing and bundles, see <a href="/pricing" className="text-cyan-300">Pricing</a> and <a href="/market-pricing" className="text-cyan-300">Market Pricing</a>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </UltraFuturisticBackground>
+  );
 }

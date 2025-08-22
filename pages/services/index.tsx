@@ -42,6 +42,7 @@ import { real2031MicroSaasAdditions } from '../../data/real-2031-micro-saas-addi
 import { real2031ITServicesAdditions } from '../../data/real-2031-it-services-additions';
 import { real2031AIServicesAdditions } from '../../data/real-2031-ai-services-additions';
 import { real2030Q2Additions } from '../../data/real-2030-q2-additions';
+import { real2025Q4AugmentedBatch } from '../../data/real-2025-q4-augmented-batch';
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -80,6 +81,7 @@ export default function ServicesIndexPage() {
       realServicesQ32025 as unknown[],
       realQ4Services2025 as unknown[],
       real2025Q4Additions as unknown[],
+      real2025Q4AugmentedBatch as unknown[],
       real2026Q1Additions as unknown[],
       added2026Q2Services as unknown[],
       real2026Q3Additions as unknown[],
