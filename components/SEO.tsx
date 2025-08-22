@@ -17,17 +17,17 @@ const DEFAULTS = {
 export default function SEO({ title, description, canonical }: SEOProps) {
   const pageTitle = title || DEFAULTS.title;
   const pageDescription = description || DEFAULTS.description;
-  const canonicalUrl = canonical || DEFAULTS.url;
+  const canonicalUrl = canonical;
 
   return (
     <Head>
       <title>{pageTitle}</title>
       <meta name="description" content={pageDescription} />
       <meta name="robots" content="index,follow" />
-      <link rel="canonical" href={canonicalUrl} />
+      {canonicalUrl ? <link rel="canonical" href={canonicalUrl} /> : null}
       <meta property="og:title" content={pageTitle} />
       <meta property="og:description" content={pageDescription} />
-      <meta property="og:url" content={canonicalUrl} />
+      <meta property="og:url" content={canonicalUrl || DEFAULTS.url} />
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="Zion Tech Group" />
       <meta property="og:locale" content="en_US" />
