@@ -128,7 +128,6 @@ const Home: React.FC = () => {
         title="Zion Tech Group | AI, Quantum & Micro SAAS Solutions"
         description="Revolutionary AI, quantum computing, and micro SAAS solutions that drive growth. Explore our platforms, industry solutions, and micro SaaS offerings."
         canonical="https://ziontechgroup.com/"
-        ogImage="https://ziontechgroup.com/og-image.png"
         jsonLd={[
           {
             "@context": "https://schema.org",
