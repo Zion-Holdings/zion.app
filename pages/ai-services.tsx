@@ -20,6 +20,9 @@ export default function AIServicesLanding() {
 					<a className="p-6 rounded-2xl bg-black/50 border border-gray-700/60 hover:border-cyan-500/50" href="/ai-content-personalization-engine">AI Content Personalization</a>
 					<a className="p-6 rounded-2xl bg-black/50 border border-gray-700/60 hover:border-cyan-500/50" href="/ai-powered-decision-engine">AI Decision Engine</a>
 					<a className="p-6 rounded-2xl bg-black/50 border border-gray-700/60 hover:border-cyan-500/50" href="/ai-autonomous-business-operations">AI Autonomous Business Operations</a>
+					<a className="p-6 rounded-2xl bg-black/50 border border-gray-700/60 hover:border-cyan-500/50" href="/services/ai-support-triage-router">AI Support Triage Router</a>
+					<a className="p-6 rounded-2xl bg-black/50 border border-gray-700/60 hover:border-cyan-500/50" href="/services/ai-code-review-assistant-pro">AI Code Review Assistant Pro</a>
+					<a className="p-6 rounded-2xl bg-black/50 border border-gray-700/60 hover:border-cyan-500/50" href="/services/ai-revenue-forecasting-copilot">AI Revenue Forecasting Copilot</a>
 				</div>
 			</div>
 		</UltraFuturisticBackground>
