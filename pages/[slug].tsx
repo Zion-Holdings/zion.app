@@ -29,6 +29,7 @@ import { nextGenAIServices } from '../data/next-gen-ai-services';
 import { industryRealServices } from '../data/industry-real-services';
 import { professionalServices } from '../data/professional-services';
 import { realEnterpriseServices2025 } from '../data/real-enterprise-services-2025';
+import { augmentedServicesBatch3 } from '../data/real-augmented-services-2025-batch3';
 
 export default function ServiceFallbackPage() {
   const router = useRouter();
@@ -58,7 +59,8 @@ export default function ServiceFallbackPage() {
         nextGenAIServices as any,
         industryRealServices as any,
         professionalServices as any,
-        realEnterpriseServices2025 as any
+        realEnterpriseServices2025 as any,
+        augmentedServicesBatch3 as any
       );
     const byLink = all.find(s => {
       try {
@@ -181,7 +183,8 @@ function collectAllServices(): Svc[] {
       comprehensiveITSolutions as Svc[],
       marketValidatedServices as Svc[],
       newRealInnovations as Svc[],
-      realMarketServices as Svc[]
+      realMarketServices as Svc[],
+      augmentedServicesBatch3 as Svc[]
     );
 }
 
