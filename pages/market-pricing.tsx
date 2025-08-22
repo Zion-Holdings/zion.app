@@ -354,11 +354,10 @@ export default function MarketPricingPage() {
             <div className="bg-black/30 rounded-2xl border border-rose-500/30 p-6">
               <h2 className="text-2xl font-semibold mb-2">Returns & Logistics</h2>
               <ul className="list-disc list-inside text-slate-300 space-y-1">
-                <li>Loop Returns: <a className="text-cyan-400 underline" href={`https://www.loopreturns.com/pricing/`} target="_blank" rel="noopener noreferrer">loopreturns.com/pricing</a></li>
-                <li>Happy Returns: <a className="text-cyan-400 underline" href={`https://www.happyreturns.com/`} target="_blank" rel="noopener noreferrer">happyreturns.com</a></li>
-                <li>Shippo: <a className="text-cyan-400 underline" href={`https://goshippo.com/pricing/`} target="_blank" rel="noopener noreferrer">goshippo.com/pricing</a></li>
+                <li>Loop Returns pricing: <a className="text-cyan-400 underline" href={`https://www.loopreturns.com/pricing`} target="_blank" rel="noopener noreferrer">loopreturns.com/pricing</a></li>
+                <li>AfterShip Returns: <a className="text-cyan-400 underline" href={`https://www.aftership.com/returns-center/pricing`} target="_blank" rel="noopener noreferrer">aftership.com/returns-center/pricing</a></li>
               </ul>
-              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $50–$400/month plus label costs.</div>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $29–$299/month depending on orders and policies.</div>
             </div>
 
             <div className="bg-black/30 rounded-2xl border border-emerald-500/30 p-6">
