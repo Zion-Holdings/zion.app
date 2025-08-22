@@ -1,168 +1,285 @@
 import React from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { useSEOContext } from './SEOContext';
 
 interface SEOProps {
-	title?: string;
-	description?: string;
-	canonical?: string;
-	ogImage?: string;
-	image?: string;
-	noIndex?: boolean;
-	noindex?: boolean;
-	nofollow?: boolean;
-	jsonLd?: Record<string, any> | Record<string, any>[];
-	// Optional Twitter metadata overrides
-	twitterSite?: string;
-	twitterCreator?: string;
+  title?: string;
+  description?: string;
+  keywords?: string;
+  image?: string;
+  url?: string;
+  type?: string;
+  publishedTime?: string;
+  modifiedTime?: string;
+  author?: string;
+  section?: string;
+  tags?: string[];
+  noindex?: boolean;
+  nofollow?: boolean;
+  canonical?: string;
 }
 
-const DEFAULTS = {
-	title: 'Zion Tech Group - Revolutionary Technology Solutions | AI, Quantum Computing, Micro SAAS',
-	description:
-		"Transform your business with Zion Tech Group's revolutionary AI, quantum computing, and micro SAAS solutions. Leading-edge technology for unprecedented growth.",
-	url: 'https://ziontechgroup.com',
-	image: 'https://ziontechgroup.com/og-image.svg'
+const SEO: React.FC<SEOProps> = ({
+  title = 'Zion Tech Group – Future of Technology | AI, Quantum Computing & Emerging Tech',
+  description = 'Transform your business with Zion Tech Group\'s revolutionary AI services, quantum cybersecurity, and cutting-edge emerging technologies. Leading the future of technology innovation.',
+  keywords = 'AI services, quantum computing, cybersecurity, emerging technologies, micro SAAS, automation, Zion Tech Group, technology innovation, business transformation',
+  image = 'https://ziontechgroup.com/og-image.jpg',
+  url,
+  type = 'website',
+  publishedTime,
+  modifiedTime,
+  author = 'Zion Tech Group',
+  section = 'Technology',
+  tags = ['AI', 'Technology', 'Innovation', 'Cybersecurity', 'Quantum Computing'],
+  noindex = false,
+  nofollow = false,
+  canonical
+}) => {
+  const router = useRouter();
+  const currentUrl = url || `https://ziontechgroup.com${router.asPath}`;
+  const canonicalUrl = canonical || currentUrl;
+
+  // Enhanced structured data for better SEO
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Zion Tech Group',
+    url: 'https://ziontechgroup.com',
+    logo: 'https://ziontechgroup.com/logo.png',
+    description: 'Revolutionary technology solutions that transform businesses and industries through innovation, AI, and emerging technologies.',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '364 E Main St STE 1008',
+      addressLocality: 'Middletown',
+      addressRegion: 'DE',
+      postalCode: '19709',
+      addressCountry: 'US'
+    },
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+1-302-464-0950',
+      contactType: 'customer service',
+      availableLanguage: 'English',
+      areaServed: 'Worldwide'
+    },
+    sameAs: [
+      'https://linkedin.com/company/ziontechgroup',
+      'https://twitter.com/ziontechgroup',
+      'https://github.com/ziontechgroup'
+    ],
+    founder: {
+      '@type': 'Person',
+      name: 'Kleber',
+      email: 'kleber@ziontechgroup.com'
+    },
+    foundingDate: '2024',
+    industry: 'Technology',
+    serviceType: [
+      'AI Services',
+      'Quantum Cybersecurity',
+      'Micro SAAS Solutions',
+      'IT Infrastructure',
+      'Emerging Technologies'
+    ]
+  };
+
+  // Service-specific structured data
+  const serviceStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: title,
+    description: description,
+    provider: {
+      '@type': 'Organization',
+      name: 'Zion Tech Group'
+    },
+    areaServed: 'Worldwide',
+    serviceType: section,
+    category: 'Technology Services'
+  };
+
+  return (
+    <Head>
+      {/* Basic Meta Tags */}
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <meta name="keywords" content={keywords} />
+      <meta name="author" content={author} />
+      <meta name="robots" content={`${noindex ? 'noindex' : 'index'}, ${nofollow ? 'nofollow' : 'follow'}`} />
+      
+      {/* Canonical URL */}
+      <link rel="canonical" href={canonicalUrl} />
+      
+      {/* Open Graph Meta Tags */}
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:image" content={image} />
+      <meta property="og:url" content={currentUrl} />
+      <meta property="og:type" content={type} />
+      <meta property="og:site_name" content="Zion Tech Group" />
+      <meta property="og:locale" content="en_US" />
+      
+      {/* Twitter Card Meta Tags */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={image} />
+      <meta name="twitter:site" content="@ziontechgroup" />
+      <meta name="twitter:creator" content="@ziontechgroup" />
+      
+      {/* Additional Meta Tags for Better SEO */}
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      <meta name="theme-color" content="#0891b2" />
+      <meta name="msapplication-TileColor" content="#0891b2" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+      <meta name="apple-mobile-web-app-title" content="Zion Tech Group" />
+      
+      {/* Language and Region */}
+      <meta httpEquiv="Content-Language" content="en" />
+      <meta name="language" content="English" />
+      <meta name="geo.region" content="US-DE" />
+      <meta name="geo.placename" content="Middletown, Delaware" />
+      
+      {/* Business Information */}
+      <meta name="business:contact_data:street_address" content="364 E Main St STE 1008" />
+      <meta name="business:contact_data:locality" content="Middletown" />
+      <meta name="business:contact_data:region" content="DE" />
+      <meta name="business:contact_data:postal_code" content="19709" />
+      <meta name="business:contact_data:country_name" content="United States" />
+      <meta name="business:contact_data:phone_number" content="+1-302-464-0950" />
+      <meta name="business:contact_data:email" content="kleber@ziontechgroup.com" />
+      
+      {/* Service-specific meta tags */}
+      {section && <meta name="article:section" content={section} />}
+      {publishedTime && <meta name="article:published_time" content={publishedTime} />}
+      {modifiedTime && <meta name="article:modified_time" content={modifiedTime} />}
+      {tags && tags.map((tag, index) => (
+        <meta key={index} name="article:tag" content={tag} />
+      ))}
+      
+      {/* Preconnect to external domains for performance */}
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      <link rel="preconnect" href="https://www.google-analytics.com" />
+      
+      {/* DNS Prefetch for performance */}
+      <link rel="dns-prefetch" href="//www.google-analytics.com" />
+      <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+      
+      {/* Favicon and App Icons */}
+      <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+      <link rel="manifest" href="/site.webmanifest" />
+      
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData)
+        }}
+      />
+      
+      {/* Service-specific structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(serviceStructuredData)
+        }}
+      />
+      
+      {/* Additional structured data for breadcrumbs */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Home',
+                item: 'https://ziontechgroup.com'
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: section || 'Services',
+                item: currentUrl
+              }
+            ]
+          })
+        }}
+      />
+      
+      {/* Performance and Security Headers */}
+      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="format-detection" content="telephone=no" />
+      <meta name="format-detection" content="date=no" />
+      <meta name="format-detection" content="address=no" />
+      <meta name="format-detection" content="email=no" />
+      
+      {/* Security Headers */}
+      <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
+      <meta httpEquiv="X-Frame-Options" content="DENY" />
+      <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
+      <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+      
+      {/* Verification Tags */}
+      <meta name="google-site-verification" content="your-verification-code" />
+      <meta name="msvalidate.01" content="your-verification-code" />
+      <meta name="yandex-verification" content="your-verification-code" />
+      
+      {/* Additional SEO Meta Tags */}
+      <meta name="revisit-after" content="7 days" />
+      <meta name="rating" content="General" />
+      <meta name="distribution" content="Global" />
+      <meta name="coverage" content="Worldwide" />
+      <meta name="target" content="all" />
+      <meta name="HandheldFriendly" content="true" />
+      <meta name="MobileOptimized" content="width" />
+      
+      {/* Social Media Verification */}
+      <meta name="twitter:site" content="@ziontechgroup" />
+      <meta name="twitter:creator" content="@ziontechgroup" />
+      <meta property="fb:app_id" content="your-facebook-app-id" />
+      <meta property="fb:pages" content="your-facebook-page-id" />
+      
+      {/* Local Business Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'LocalBusiness',
+            name: 'Zion Tech Group',
+            image: 'https://ziontechgroup.com/office.jpg',
+            address: {
+              '@type': 'PostalAddress',
+              streetAddress: '364 E Main St STE 1008',
+              addressLocality: 'Middletown',
+              addressRegion: 'DE',
+              postalCode: '19709',
+              addressCountry: 'US'
+            },
+            geo: {
+              '@type': 'GeoCoordinates',
+              latitude: '39.4496',
+              longitude: '-75.7163'
+            },
+            url: 'https://ziontechgroup.com',
+            telephone: '+1-302-464-0950',
+            openingHours: 'Mo-Su 00:00-23:59',
+            priceRange: '$$',
+            description: 'Revolutionary technology solutions for businesses worldwide.'
+          })
+        }}
+      />
+    </Head>
+  );
 };
 
-export default function SEO({ title, description, canonical, ogImage, image, noIndex, noindex, nofollow, jsonLd, twitterSite, twitterCreator }: SEOProps) {
-	const router = useRouter();
-	const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || DEFAULTS.url;
-	const pageTitle = title || DEFAULTS.title;
-	const pageDescription = description || DEFAULTS.description;
-	const pagePath = typeof router?.asPath === 'string' ? router.asPath : '/';
-	// Derive canonical from baseUrl + path, ensure single slash and trailing slash
-	const rawDerived = baseUrl.replace(/\/$/, '') + (pagePath.startsWith('/') ? pagePath : `/${pagePath}`);
-	const normalizedCanonical = rawDerived.endsWith('/') ? rawDerived : `${rawDerived}/`;
-	// Prefer explicit image, then ogImage, then default; resolve to absolute URL
-	const requestedImage = image || ogImage || DEFAULTS.image;
-	const imageUrl = /^(https?:)?\/\//.test(requestedImage)
-		? requestedImage
-		: baseUrl.replace(/\/$/, '') + (requestedImage.startsWith('/') ? requestedImage : `/${requestedImage}`);
-	const envNoIndex = process.env.NEXT_PUBLIC_NOINDEX === 'true';
-	const isNoIndex = envNoIndex || (noIndex ?? false) || (noindex ?? false);
-	const robotsContent = `${isNoIndex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}`;
-	const imageAlt = 'Zion Tech Group - Revolutionary Technology Solutions';
-
-	// Normalize provided canonical (if any) to an absolute URL with trailing slash
-	function toAbsoluteUrl(urlOrPath: string): string {
-		if (/^(https?:)?\/\//.test(urlOrPath)) return urlOrPath;
-		return baseUrl.replace(/\/$/, '') + (urlOrPath.startsWith('/') ? urlOrPath : `/${urlOrPath}`);
-	}
-	function withTrailingSlash(u: string): string {
-		return u.endsWith('/') ? u : `${u}/`;
-	}
-	const canonicalUrl = withTrailingSlash(canonical ? toAbsoluteUrl(canonical) : normalizedCanonical);
-
-	// Mark SEO rendered synchronously to avoid duplicate default + page-level SEO
-	const seoCtx = useSEOContext();
-	if (seoCtx && !seoCtx.renderedRef.current) {
-		seoCtx.renderedRef.current = true;
-	}
-
-	// Determine image MIME type for social meta tags
-	const lowerImageUrl = imageUrl.toLowerCase();
-	const imageType = lowerImageUrl.endsWith('.png')
-		? 'image/png'
-		: lowerImageUrl.endsWith('.jpg') || lowerImageUrl.endsWith('.jpeg')
-		? 'image/jpeg'
-		: lowerImageUrl.endsWith('.webp')
-		? 'image/webp'
-		: lowerImageUrl.endsWith('.gif')
-		? 'image/gif'
-		: lowerImageUrl.endsWith('.svg')
-		? 'image/svg+xml'
-		: undefined;
-
-	// Default JSON-LD if none provided (removed SearchAction because no /search route exists)
-	const defaultJsonLd = [
-		{
-			"@context": "https://schema.org",
-			"@type": "Organization",
-			"name": "Zion Tech Group",
-			"url": baseUrl,
-			"logo": `${baseUrl.replace(/\/$/, '')}/favicon.svg`,
-			"sameAs": [
-				"https://www.linkedin.com/company/zion-tech-group",
-				"https://github.com/Zion-Holdings",
-				"https://www.instagram.com/ziontechgroup",
-				"https://www.youtube.com/@ziontechgroup"
-			],
-			"contactPoint": [
-				{
-					"@type": "ContactPoint",
-					"telephone": "+1-302-464-0950",
-					"contactType": "customer support",
-					"email": "kleber@ziontechgroup.com",
-					"areaServed": "US"
-				}
-			],
-			"address": {
-				"@type": "PostalAddress",
-				"streetAddress": "364 E Main St STE 1008",
-				"addressLocality": "Middletown",
-				"addressRegion": "DE",
-				"postalCode": "19709",
-				"addressCountry": "US"
-			}
-		},
-		{
-			"@context": "https://schema.org",
-			"@type": "WebSite",
-			"url": baseUrl,
-			"name": "Zion Tech Group"
-		}
-	];
-
-	// Merge default JSON-LD with any provided jsonLd entries
-	const mergedJsonLd = Array.isArray(jsonLd)
-		? [...defaultJsonLd, ...jsonLd]
-		: jsonLd
-		? [...defaultJsonLd, jsonLd]
-		: defaultJsonLd;
-
-	// Derive Twitter meta from env if not provided
-	const envTwitterSite = process.env.NEXT_PUBLIC_TWITTER_SITE;
-	const envTwitterCreator = process.env.NEXT_PUBLIC_TWITTER_CREATOR;
-	const finalTwitterSite = twitterSite || envTwitterSite;
-	const finalTwitterCreator = twitterCreator || envTwitterCreator;
-
-	return (
-		<Head>
-			<title>{pageTitle}</title>
-			<meta name="description" content={pageDescription} />
-			<meta name="robots" content={robotsContent} />
-			{/* Bot-specific directives for richer previews */}
-			<meta name="googlebot" content={`${robotsContent},max-snippet:-1,max-image-preview:large,max-video-preview:-1`} />
-			<meta name="bingbot" content={`${robotsContent},max-snippet:-1,max-image-preview:large,max-video-preview:-1`} />
-			<link rel="canonical" href={canonicalUrl} />
-			<link rel="alternate" hrefLang="en" href={canonicalUrl} />
-			<link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
-			{/* Optional sitemap link for crawlers */}
-			<link rel="sitemap" type="application/xml" href={`${baseUrl.replace(/\/$/, '')}/sitemap.xml`} />
-			<meta property="og:title" content={pageTitle} />
-			<meta property="og:description" content={pageDescription} />
-			<meta property="og:url" content={canonicalUrl} />
-			<meta property="og:type" content="website" />
-			<meta property="og:site_name" content="Zion Tech Group" />
-			<meta property="og:locale" content="en_US" />
-			<meta property="og:image" content={imageUrl} />
-			<meta property="og:image:alt" content={imageAlt} />
-			<meta property="og:image:width" content="1200" />
-			<meta property="og:image:height" content="630" />
-			{imageType ? <meta property="og:image:type" content={imageType} /> : null}
-			<meta name="twitter:card" content="summary_large_image" />
-			<meta name="twitter:title" content={pageTitle} />
-			<meta name="twitter:description" content={pageDescription} />
-			<meta name="twitter:image" content={imageUrl} />
-			<meta name="twitter:image:alt" content={imageAlt} />
-			{imageType ? <meta name="twitter:image:type" content={imageType} /> : null}
-			{finalTwitterSite ? <meta name="twitter:site" content={finalTwitterSite} /> : null}
-			{finalTwitterCreator ? <meta name="twitter:creator" content={finalTwitterCreator} /> : null}
-			{mergedJsonLd ? (
-				<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(mergedJsonLd) }} />
-			) : null}
-		</Head>
-	);
-}
+export default SEO;
