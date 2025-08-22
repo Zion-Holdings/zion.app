@@ -40,3 +40,29 @@
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
     X-DNS-Prefetch-Control = "on"
     Content-Security-Policy = "default-src 'self'; object-src 'none'; upgrade-insecure-requests; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://plausible.io; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+
+# Redirects for root-level slugs to services equivalents
+[[redirects]]
+  from = "/rag-evaluation-lab"
+  to = "/services/rag-evaluation-lab"
+  status = 301
+
+[[redirects]]
+  from = "/soc2-compliance-automation"
+  to = "/services/soc2-compliance-automation"
+  status = 301
+
+[[redirects]]
+  from = "/browser-automation-cloud"
+  to = "/services/browser-automation-cloud"
+  status = 301
+
+[[redirects]]
+  from = "/secrets-rotation-automation"
+  to = "/services/secrets-rotation-automation"
+  status = 301
+
+[[redirects]]
+  from = "/api-performance-testing"
+  to = "/services/api-performance-testing"
+  status = 301
