@@ -16,6 +16,7 @@ import { real2025Q4AugmentedBatch } from '../data/real-2025-q4-augmented-batch';
 import { real2029Q3Additions } from '../data/real-2029-q3-additions';
 import { validatedServices2025Q4 } from '../data/real-validated-2025-q4-additions';
 import { real2035Q2Additions } from '../data/real-2035-q2-additions';
+import { real2036ServiceExpansions } from '../data/real-2036-service-expansions';
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -74,7 +75,8 @@ const allServices = [
   ...real2025Q4AugmentedBatch,
   ...real2029Q3Additions,
   ...validatedServices2025Q4,
-  ...real2035Q2Additions
+  ...real2035Q2Additions,
+  ...real2036ServiceExpansions
 ];
 
 const categories = [
