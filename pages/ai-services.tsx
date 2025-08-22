@@ -1,30 +1,34 @@
 import React from 'react';
-import Head from 'next/head';
-import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
+import SEO from '../components/SEO';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import Link from 'next/link';
 
-export default function AIServicesLanding() {
-	return (
-		<UltraFuturisticBackground variant="quantum" intensity="high">
-			<Head>
-				<title>AI Services | Zion Tech Group</title>
-				<meta name="description" content="Explore our AI platforms and solutions including evals, guardrails, agents, and personalization." />
-				<link rel="canonical" href="https://ziontechgroup.com/ai-services" />
-			</Head>
-			<div className="container mx-auto px-4 py-24 space-y-6 text-white">
-				<h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">AI Services</h1>
-				<p className="text-gray-300 max-w-3xl">Production-ready AI services: evals, safety guardrails, RAG agents, personalization, and analytics. Average pricing in Market Pricing. Contact: +1 302 464 0950 • kleber@ziontechgroup.com.</p>
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-					<a className="p-6 rounded-2xl bg-black/50 border border-gray-700/60 hover:border-cyan-500/50" href="/services/ai-evaluation-orchestrator">AI Evaluation Orchestrator</a>
-					<a className="p-6 rounded-2xl bg-black/50 border border-gray-700/60 hover:border-cyan-500/50" href="/ai-guardrails">AI Guardrails Suite</a>
-					<a className="p-6 rounded-2xl bg-black/50 border border-gray-700/60 hover:border-cyan-500/50" href="/agentic-rag">Agentic RAG Platform</a>
-					<a className="p-6 rounded-2xl bg-black/50 border border-gray-700/60 hover:border-cyan-500/50" href="/ai-content-personalization-engine">AI Content Personalization</a>
-					<a className="p-6 rounded-2xl bg-black/50 border border-gray-700/60 hover:border-cyan-500/50" href="/ai-powered-decision-engine">AI Decision Engine</a>
-					<a className="p-6 rounded-2xl bg-black/50 border border-gray-700/60 hover:border-cyan-500/50" href="/ai-autonomous-business-operations">AI Autonomous Business Operations</a>
-					<a className="p-6 rounded-2xl bg-black/50 border border-gray-700/60 hover:border-cyan-500/50" href="/services/ai-support-triage-router">AI Support Triage Router</a>
-					<a className="p-6 rounded-2xl bg-black/50 border border-gray-700/60 hover:border-cyan-500/50" href="/services/ai-code-review-assistant-pro">AI Code Review Assistant Pro</a>
-					<a className="p-6 rounded-2xl bg-black/50 border border-gray-700/60 hover:border-cyan-500/50" href="/services/ai-revenue-forecasting-copilot">AI Revenue Forecasting Copilot</a>
-				</div>
-			</div>
-		</UltraFuturisticBackground>
-	);
+export default function AIServicesPage() {
+  return (
+    <UltraAdvancedFuturisticBackground>
+      <SEO title="AI Services | Zion Tech Group" description="LLM apps, RAG, evaluation, guardrails, and automation with transparent pricing." canonical="https://ziontechgroup.com/ai-services/" />
+      <div className="container mx-auto px-4 py-24 text-white">
+        <div className="max-w-5xl mx-auto space-y-8">
+          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">AI Services</h1>
+          <p className="text-gray-300 text-lg">Productized AI solutions: evaluation labs, safety & guardrails, chatbots, agents, search/RAG, and automation. See <Link className="text-cyan-400 underline" href="/market-pricing">Market Pricing</Link> for typical vendor benchmarks.</p>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { title: 'RAG & Vector Search', href: '/vector-search-starter' },
+              { title: 'AI Evaluation Lab', href: '/rag-evaluation-lab' },
+              { title: 'AI Guardrails', href: '/ai-powered-cybersecurity' },
+              { title: 'AI Content Generator', href: '/intelligent-content-automation-platform' },
+              { title: 'AI Customer Service', href: '/ai-customer-service' },
+              { title: 'AI Sales Intelligence', href: '/ai-sales-automation' },
+            ].map((c) => (
+              <Link key={c.href} href={c.href} className="p-6 rounded-2xl bg-black/40 border border-white/10 hover:border-cyan-500/40 transition-colors">
+                <div className="text-xl font-semibold">{c.title}</div>
+                <div className="text-sm text-gray-400 mt-2">Implementation‑ready with pricing and SLAs.</div>
+              </Link>
+            ))}
+          </div>
+          <div className="text-sm text-gray-400">Questions? <Link className="text-cyan-400 underline" href="/contact">Contact us</Link>.</div>
+        </div>
+      </div>
+    </UltraAdvancedFuturisticBackground>
+  );
 }

@@ -1,24 +1,23 @@
 import React from 'react';
-import Head from 'next/head';
+import SEO from '../components/SEO';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 
 export default function CookiesPage() {
-	return (
-		<>
-			<Head>
-				<title>Cookie Policy | Zion Tech Group</title>
-				<meta name="description" content="Cookie usage policy for Zion Tech Group." />
-				<link rel="canonical" href="https://ziontechgroup.com/cookies/" />
-			</Head>
-			<div className="container mx-auto px-4 py-16 text-gray-200">
-				<h1 className="text-4xl md:text-6xl font-bold mb-4">Cookie Policy</h1>
-				<p className="text-gray-300 mb-6">We use cookies to enhance your experience, analyze site traffic, and personalize content. By using our site, you consent to cookies in accordance with this policy.</p>
-				<ul className="list-disc pl-6 space-y-2 text-gray-300">
-					<li>Essential cookies for site functionality.</li>
-					<li>Analytics cookies to understand usage and improve performance.</li>
-					<li>Preference cookies to remember your settings.</li>
-				</ul>
-				<p className="text-gray-300 mt-6">Questions? Email <a className="text-cyan-400 underline" href="mailto:kleber@ziontechgroup.com">kleber@ziontechgroup.com</a>.</p>
-			</div>
-		</>
-	);
+  return (
+    <UltraAdvancedFuturisticBackground>
+      <SEO title="Cookie Policy | Zion Tech Group" description="Information about cookies used by Zion Tech Group." canonical="https://ziontechgroup.com/cookies/" />
+      <div className="container mx-auto px-4 py-24 text-white">
+        <div className="max-w-3xl mx-auto space-y-6">
+          <h1 className="text-4xl md:text-5xl font-bold">Cookie Policy</h1>
+          <p className="text-gray-300">We use minimal, privacy‑respecting analytics. Some third‑party embeds may set cookies. You can block non‑essential cookies via your browser.</p>
+          <ul className="list-disc list-inside text-gray-300 space-y-1">
+            <li>Purpose: performance and security</li>
+            <li>Retention: session or short‑term</li>
+            <li>Opt‑out: browser settings and extensions</li>
+          </ul>
+          <p className="text-gray-400 text-sm">Questions? <a className="text-cyan-400" href="mailto:kleber@ziontechgroup.com">kleber@ziontechgroup.com</a></p>
+        </div>
+      </div>
+    </UltraAdvancedFuturisticBackground>
+  );
 }
