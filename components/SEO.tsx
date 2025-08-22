@@ -88,7 +88,24 @@ export default function SEO({ title, description, canonical, ogImage, image, noI
 				"https://github.com/Zion-Holdings",
 				"https://www.instagram.com/ziontechgroup",
 				"https://www.youtube.com/@ziontechgroup"
-			]
+			],
+			"contactPoint": [
+				{
+					"@type": "ContactPoint",
+					"telephone": "+1-302-464-0950",
+					"contactType": "customer support",
+					"email": "kleber@ziontechgroup.com",
+					"areaServed": "US"
+				}
+			],
+			"address": {
+				"@type": "PostalAddress",
+				"streetAddress": "364 E Main St STE 1008",
+				"addressLocality": "Middletown",
+				"addressRegion": "DE",
+				"postalCode": "19709",
+				"addressCountry": "US"
+			}
 		},
 		{
 			"@context": "https://schema.org",
@@ -116,6 +133,9 @@ export default function SEO({ title, description, canonical, ogImage, image, noI
 			<title>{pageTitle}</title>
 			<meta name="description" content={pageDescription} />
 			<meta name="robots" content={robotsContent} />
+			{/* Bot-specific directives for richer previews */}
+			<meta name="googlebot" content={`${robotsContent},max-snippet:-1,max-image-preview:large,max-video-preview:-1`} />
+			<meta name="bingbot" content={`${robotsContent},max-snippet:-1,max-image-preview:large,max-video-preview:-1`} />
 			<link rel="canonical" href={canonicalUrl} />
 			<link rel="alternate" hrefLang="en" href={canonicalUrl} />
 			<link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
