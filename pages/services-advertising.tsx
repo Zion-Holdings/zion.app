@@ -35,6 +35,8 @@ export default function ServicesAdvertisingPage() {
       links: [
         { name: 'OpenAI', href: 'https://openai.com/api/pricing' },
         { name: 'Anthropic', href: 'https://www.anthropic.com/pricing' },
+        { name: 'Cohere', href: 'https://cohere.com/pricing' },
+        { name: 'Google AI Studio', href: 'https://aistudio.google.com/app/apikey' },
         { name: 'Langfuse', href: 'https://langfuse.com/pricing' },
         { name: 'Groq', href: 'https://wow.groq.com/pricing' },
         { name: 'OpenRouter', href: 'https://openrouter.ai/models' },
@@ -50,7 +52,8 @@ export default function ServicesAdvertisingPage() {
         { name: 'Prisma Cloud', href: 'https://www.paloaltonetworks.com/prisma/cloud/pricing' },
         { name: 'HashiCorp Vault', href: 'https://www.hashicorp.com/products/vault/pricing' },
         { name: 'Cloudflare Zero Trust', href: 'https://www.cloudflare.com/products/zero-trust/pricing/' },
-        { name: 'Snyk', href: 'https://snyk.io/plans/' }
+        { name: 'Snyk', href: 'https://snyk.io/plans/' },
+        { name: 'Okta Workforce Identity', href: 'https://www.okta.com/pricing/' }
       ],
       note: 'SMB budgets: $200–$5,000/mo.'
     },
@@ -60,7 +63,8 @@ export default function ServicesAdvertisingPage() {
         { name: 'Pinecone', href: 'https://www.pinecone.io/pricing/' },
         { name: 'Weaviate', href: 'https://weaviate.io/pricing' },
         { name: 'Qdrant', href: 'https://qdrant.tech/pricing/' },
-        { name: 'Elasticsearch Serverless', href: 'https://www.elastic.co/pricing/' }
+        { name: 'Elasticsearch Serverless', href: 'https://www.elastic.co/pricing/' },
+        { name: 'OpenSearch Serverless', href: 'https://aws.amazon.com/opensearch-service/pricing/' }
       ],
       note: 'SMB budgets: $50–$1,000/mo.'
     },
@@ -69,6 +73,7 @@ export default function ServicesAdvertisingPage() {
       links: [
         { name: 'AWS Calculator', href: 'https://calculator.aws' },
         { name: 'Azure', href: 'https://azure.microsoft.com/pricing' },
+        { name: 'Google Cloud', href: 'https://cloud.google.com/pricing' },
         { name: 'Cloudflare', href: 'https://www.cloudflare.com/plans/' },
         { name: 'Netlify', href: 'https://www.netlify.com/pricing/' },
         { name: 'Vercel', href: 'https://vercel.com/pricing' }
@@ -81,7 +86,9 @@ export default function ServicesAdvertisingPage() {
         { name: 'Datadog', href: 'https://www.datadoghq.com/pricing/' },
         { name: 'New Relic', href: 'https://newrelic.com/pricing' },
         { name: 'Grafana Cloud', href: 'https://grafana.com/products/cloud/pricing/' },
-        { name: 'PagerDuty', href: 'https://www.pagerduty.com/pricing/' }
+        { name: 'PagerDuty', href: 'https://www.pagerduty.com/pricing/' },
+        { name: 'Sentry', href: 'https://sentry.io/pricing/' },
+        { name: 'LaunchDarkly', href: 'https://launchdarkly.com/pricing/' }
       ],
       note: 'SMB budgets: $100–$3,000/mo.'
     }
