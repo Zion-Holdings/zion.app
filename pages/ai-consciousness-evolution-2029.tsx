@@ -81,9 +81,8 @@ export default function AIConsciousnessEvolution2029() {
         <meta name="twitter:image" content="https://ziontechgroup.com/twitter-image.jpg" />
         
         {/* Additional Meta Tags */}
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#8b5cf6" />
-        <link rel="canonical" href="https://ziontechgroup.com/ai-consciousness-evolution-2029" />
+        <link rel="canonical" href="https://ziontechgroup.com/ai-consciousness-evolution-2029/" />
         
         {/* Structured Data */}
         <script

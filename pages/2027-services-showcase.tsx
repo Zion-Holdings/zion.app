@@ -90,8 +90,7 @@ export default function ServicesShowcase2027() {
         <title>2027 Services Showcase - Zion Tech Group | Cutting-Edge Innovations & Micro SAAS</title>
         <meta name="description" content="Explore Zion Tech Group's revolutionary 2027 services showcase featuring cutting-edge AI consciousness evolution, quantum computing, autonomous AI civilizations, and practical micro SAAS solutions for businesses." />
         <meta name="keywords" content="2027 services, AI consciousness evolution, quantum computing, autonomous AI civilizations, micro SAAS, business automation, Zion Tech Group" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="canonical" href="https://ziontechgroup.com/2027-services-showcase" />
+        <link rel="canonical" href="https://ziontechgroup.com/2027-services-showcase/" />
         
         {/* Open Graph */}
         <meta property="og:title" content="2027 Services Showcase - Zion Tech Group" />
