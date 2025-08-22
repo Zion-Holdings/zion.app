@@ -58,6 +58,20 @@ export default function SEO({ title, description, canonical, ogImage, image, noI
 		seoCtx.renderedRef.current = true;
 	}
 
+	// Determine image MIME type for social meta tags
+	const lowerImageUrl = imageUrl.toLowerCase();
+	const imageType = lowerImageUrl.endsWith('.png')
+		? 'image/png'
+		: lowerImageUrl.endsWith('.jpg') || lowerImageUrl.endsWith('.jpeg')
+		? 'image/jpeg'
+		: lowerImageUrl.endsWith('.webp')
+		? 'image/webp'
+		: lowerImageUrl.endsWith('.gif')
+		? 'image/gif'
+		: lowerImageUrl.endsWith('.svg')
+		? 'image/svg+xml'
+		: undefined;
+
 	// Default JSON-LD if none provided
 	const defaultJsonLd = [
 		{
@@ -100,11 +114,13 @@ export default function SEO({ title, description, canonical, ogImage, image, noI
 			<meta property="og:image:alt" content={imageAlt} />
 			<meta property="og:image:width" content="1200" />
 			<meta property="og:image:height" content="630" />
+			{imageType ? <meta property="og:image:type" content={imageType} /> : null}
 			<meta name="twitter:card" content="summary_large_image" />
 			<meta name="twitter:title" content={pageTitle} />
 			<meta name="twitter:description" content={pageDescription} />
 			<meta name="twitter:image" content={imageUrl} />
 			<meta name="twitter:image:alt" content={imageAlt} />
+			{imageType ? <meta name="twitter:image:type" content={imageType} /> : null}
 			{(jsonLd || defaultJsonLd) ? (
 				<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd || defaultJsonLd) }} />
 			) : null}

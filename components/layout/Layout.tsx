@@ -35,7 +35,7 @@ export default function Layout({ children }: LayoutProps) {
             onClose={() => setSidebarOpen(false)} 
           />
           
-          <main id="main" className="flex-1 pt-24 lg:pt-28">
+          <main id="main" role="main" className="flex-1 pt-24 lg:pt-28">
             {children}
           </main>
         </div>
