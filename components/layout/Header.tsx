@@ -38,7 +38,11 @@ const Header: React.FC = () => {
         { name: 'IoT & Smart Cities', href: '/services?category=IoT%20%26%20Smart%20Cities' },
         { name: 'Quantum Computing', href: '/services?category=Quantum%20Computing' },
         { name: 'Cloud & Infrastructure', href: '/services?category=Cloud%20%26%20Infrastructure' },
-        { name: 'View All Services', href: '/services' }
+        { name: 'View All Services', href: '/services' },
+        { name: 'AI Synthetic Data Studio', href: '/services/ai-synthetic-data-studio' },
+        { name: 'Zero-Trust SSO Mesh', href: '/services/zero-trust-sso-mesh' },
+        { name: 'ETL Reliability Copilot', href: '/services/etl-reliability-copilot' },
+        { name: 'Edge Personalization Kit', href: '/services/edge-personalization-kit' }
       ]
     },
     {

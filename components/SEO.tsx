@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { useRef, useEffect } from 'react';
 import { useSEOContext } from './SEOContext';
 
 interface SEOProps {
@@ -33,7 +32,6 @@ export default function SEO({ title, description, canonical, ogImage, image, noI
 	// Derive canonical from baseUrl + path, ensure single slash and trailing slash
 	const rawDerived = baseUrl.replace(/\/$/, '') + (pagePath.startsWith('/') ? pagePath : `/${pagePath}`);
 	const normalizedCanonical = rawDerived.endsWith('/') ? rawDerived : `${rawDerived}/`;
-	const canonicalUrl = canonical || normalizedCanonical;
 	// Prefer explicit image, then ogImage, then default; resolve to absolute URL
 	const requestedImage = image || ogImage || DEFAULTS.image;
 	const imageUrl = /^(https?:)?\/\//.test(requestedImage)
@@ -44,16 +42,37 @@ export default function SEO({ title, description, canonical, ogImage, image, noI
 	const robotsContent = `${isNoIndex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}`;
 	const imageAlt = 'Zion Tech Group - Revolutionary Technology Solutions';
 
-	const seoCtx = useSEOContext();
-	const markedRef = useRef(false);
-	useEffect(() => {
-		if (seoCtx && !markedRef.current) {
-			seoCtx.renderedRef.current = true;
-			markedRef.current = true;
-		}
-	}, [seoCtx]);
+	// Normalize provided canonical (if any) to an absolute URL with trailing slash
+	function toAbsoluteUrl(urlOrPath: string): string {
+		if (/^(https?:)?\/\//.test(urlOrPath)) return urlOrPath;
+		return baseUrl.replace(/\/$/, '') + (urlOrPath.startsWith('/') ? urlOrPath : `/${urlOrPath}`);
+	}
+	function withTrailingSlash(u: string): string {
+		return u.endsWith('/') ? u : `${u}/`;
+	}
+	const canonicalUrl = withTrailingSlash(canonical ? toAbsoluteUrl(canonical) : normalizedCanonical);
 
-	// Default JSON-LD if none provided
+	// Mark SEO rendered synchronously to avoid duplicate default + page-level SEO
+	const seoCtx = useSEOContext();
+	if (seoCtx && !seoCtx.renderedRef.current) {
+		seoCtx.renderedRef.current = true;
+	}
+
+	// Determine image MIME type for social meta tags
+	const lowerImageUrl = imageUrl.toLowerCase();
+	const imageType = lowerImageUrl.endsWith('.png')
+		? 'image/png'
+		: lowerImageUrl.endsWith('.jpg') || lowerImageUrl.endsWith('.jpeg')
+		? 'image/jpeg'
+		: lowerImageUrl.endsWith('.webp')
+		? 'image/webp'
+		: lowerImageUrl.endsWith('.gif')
+		? 'image/gif'
+		: lowerImageUrl.endsWith('.svg')
+		? 'image/svg+xml'
+		: undefined;
+
+	// Default JSON-LD if none provided (removed SearchAction because no /search route exists)
 	const defaultJsonLd = [
 		{
 			"@context": "https://schema.org",
@@ -62,20 +81,17 @@ export default function SEO({ title, description, canonical, ogImage, image, noI
 			"url": baseUrl,
 			"logo": `${baseUrl.replace(/\/$/, '')}/favicon.svg`,
 			"sameAs": [
-				"https://www.linkedin.com/company/zion-technologies",
-				"https://twitter.com/ziontechgroup"
+				"https://www.linkedin.com/company/zion-tech-group",
+				"https://github.com/Zion-Holdings",
+				"https://www.instagram.com/ziontechgroup",
+				"https://www.youtube.com/@ziontechgroup"
 			]
 		},
 		{
 			"@context": "https://schema.org",
 			"@type": "WebSite",
 			"url": baseUrl,
-			"name": "Zion Tech Group",
-			"potentialAction": {
-				"@type": "SearchAction",
-				"target": `${baseUrl.replace(/\/$/, '')}/search?q={search_term_string}`,
-				"query-input": "required name=search_term_string"
-			}
+			"name": "Zion Tech Group"
 		}
 	];
 
@@ -95,11 +111,13 @@ export default function SEO({ title, description, canonical, ogImage, image, noI
 			<meta property="og:image:alt" content={imageAlt} />
 			<meta property="og:image:width" content="1200" />
 			<meta property="og:image:height" content="630" />
+			{imageType ? <meta property="og:image:type" content={imageType} /> : null}
 			<meta name="twitter:card" content="summary_large_image" />
 			<meta name="twitter:title" content={pageTitle} />
 			<meta name="twitter:description" content={pageDescription} />
 			<meta name="twitter:image" content={imageUrl} />
 			<meta name="twitter:image:alt" content={imageAlt} />
+			{imageType ? <meta name="twitter:image:type" content={imageType} /> : null}
 			{(jsonLd || defaultJsonLd) ? (
 				<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd || defaultJsonLd) }} />
 			) : null}

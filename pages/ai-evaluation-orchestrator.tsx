@@ -1,26 +1,18 @@
 import React from 'react';
-import ServiceLanding from '../components/sections/ServiceLanding';
+import Head from 'next/head';
 
-export default function AiEvaluationOrchestrator() {
+export default function AIEvaluationOrchestratorPage() {
 	return (
-		<ServiceLanding
-			title="AI Evaluation Orchestrator"
-			description="Automate large-scale LLM evaluations with regression testing, dataset versioning, guardrails, and cost tracking. Integrates with OpenAI, Anthropic, and open-source models."
-			subtitle="Automated LLM evals and guardrails at scale"
-			pricePerMonthUSD={199}
-			implementationWeeks="1-2 days"
-			roiNote="Reduce model regressions by 60% and evaluation time by 80%"
-			features={[
-				"Scenario-based evaluation suites",
-				"Golden datasets, metrics, and thresholds",
-				"Prompt sensitivity and jailbreak testing",
-				"Guardrails and PII/safety checks",
-				"CI/CD integration and regression dashboards",
-				"Cost tracking per run/model/vendor",
-				"Supports OpenAI, Anthropic, Groq, OpenRouter"
-			]}
-			industries={["Product Engineering", "QA & SRE", "Data Science"]}
-			canonical="https://ziontechgroup.com/ai-evaluation-orchestrator"
-		/>
+		<>
+			<Head>
+				<title>AI Evaluation Orchestrator | Zion Tech Group</title>
+				<meta name="description" content="Automate AI model evaluations with reproducible datasets and metrics." />
+				<link rel="canonical" href="https://ziontechgroup.com/ai-evaluation-orchestrator" />
+			</Head>
+			<div className="container mx-auto px-4 py-16 text-gray-200">
+				<h1 className="text-4xl md:text-6xl font-bold mb-4">AI Evaluation Orchestrator</h1>
+				<p className="text-gray-300 max-w-3xl">Benchmark and monitor AI models at scale. Contact sales at <a className="text-cyan-400 underline" href="mailto:kleber@ziontechgroup.com">kleber@ziontechgroup.com</a> or call +1 302 464 0950.</p>
+			</div>
+		</>
 	);
 }

@@ -1,13 +1,12 @@
 import React from 'react';
 import Head from 'next/head';
-import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 
 export default function AIAutonomousBusinessOperationsPage() {
 	return (
-		<UltraAdvancedFuturisticBackground>
+		<>
 			<Head>
 				<title>AI Autonomous Business Operations | Zion Tech Group</title>
-				<meta name="description" content="Autonomously orchestrate finance, HR, IT, and operations with agentic AI. Reduce manual work, cut costs, and boost reliability." />
+				<meta name="description" content="End-to-end autonomous business operations orchestrated by AI agents." />
 				<link rel="canonical" href="https://ziontechgroup.com/ai-autonomous-business-operations" />
 			</Head>
 			<div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8">
@@ -71,6 +70,6 @@ export default function AIAutonomousBusinessOperationsPage() {
 					</section>
 				</div>
 			</div>
-		</UltraAdvancedFuturisticBackground>
+		</>
 	);
 }
