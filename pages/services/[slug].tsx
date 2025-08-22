@@ -53,6 +53,7 @@ import { emergingTechBreakthroughServices2029 } from '../../data/2029-emerging-t
 import { practicalBusinessSolutionServices2029 } from '../../data/2029-practical-business-solutions';
 import { professionalServices } from '../../data/professional-services';
 import { real2032ServiceExpansions } from '../../data/real-2032-service-expansions';
+import { real2026Q4ExpansionsV2 } from '../../data/real-2026-q4-expansions-v2';
 
 type Service = typeof enhancedRealMicroSaasServices[number];
 
@@ -108,7 +109,8 @@ function getAllServices(): Service[] {
 		.concat(emergingTechBreakthroughServices2029 as unknown as Service[])
 		.concat(practicalBusinessSolutionServices2029 as unknown as Service[])
 		.concat(professionalServices as unknown as Service[])
-		.concat(real2032ServiceExpansions as unknown as Service[]);
+		.concat(real2032ServiceExpansions as unknown as Service[])
+		.concat(real2026Q4ExpansionsV2 as unknown as Service[]);
 }
 
 function toSlug(value: string): string {

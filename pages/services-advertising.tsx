@@ -1368,6 +1368,42 @@ export default function ServicesAdvertisingPage() {
 					</ul>
 					<div className="text-slate-400 text-sm">Full catalog: <a className="text-cyan-400 underline" href="/services">/services</a> • Market pricing benchmarks: <a className="text-cyan-400 underline" href="/market-pricing">/market-pricing</a></div>
 				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Browser Automation Cloud</h2>
+					<p className="text-slate-300">Hosted Playwright/Puppeteer runners with recorder, retries, proxy pools, schedules, and analytics. Export to CI or agent scripts.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $50–$300/mo</li>
+						<li>References: {ext('https://playwright.dev/')}, {ext('https://pptr.dev/')}, {ext('https://www.checklyhq.com/pricing/')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Status Pages & SLO Monitor</h2>
+					<p className="text-slate-300">Public status pages, incident comms, and SLO/error budget analytics with burn rate alerts and synthetic checks.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $20–$150/mo</li>
+						<li>References: {ext('https://www.atlassian.com/software/statuspage/pricing')}, {ext('https://sre.google/sre-book/service-level-objectives/')}, {ext('https://www.checklyhq.com/pricing/')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">AI Customer Journey Analytics</h2>
+					<p className="text-slate-300">Unify product events, tickets, chats, and CRM; AI summarizes friction points and recommends experiments with funnels and cohorts.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $100–$600/mo</li>
+						<li>References: {ext('https://mixpanel.com/pricing/')}, {ext('https://amplitude.com/pricing')}, {ext('https://snowflake.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">SOC 2 Evidence Automation</h2>
+					<p className="text-slate-300">Continuously collect and package control evidence from cloud, CI, and ticketing—export-ready for auditors.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $300–$1,500/mo</li>
+						<li>References: {ext('https://trustcenter.transcend.io/')}, {ext('https://vanta.com/pricing')}, {ext('https://drata.com/pricing')}</li>
+					</ul>
+				</section>
 			</div>
 		</div>
 	);
