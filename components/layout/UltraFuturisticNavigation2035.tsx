@@ -142,7 +142,14 @@ const navigationItems: NavigationItem[] = [
       { name: 'Sales Intelligence Platform', href: '/ai-sales-intelligence-platform', description: 'AI-powered sales automation' },
       { name: 'CRM Intelligence Suite', href: '/smart-crm-intelligence-suite', description: 'Transform your CRM with AI' },
       { name: 'Content Automation Platform', href: '/intelligent-content-automation-platform', description: 'AI-powered content management' },
-      { name: 'Decision Engine', href: '/ai-powered-decision-engine', description: 'AI-powered business decisions' }
+      { name: 'Decision Engine', href: '/ai-powered-decision-engine', description: 'AI-powered business decisions' },
+      // Added practical services
+      { name: 'Affiliate Program Manager', href: '/services/affiliate-program-manager', description: 'Attribution, coupons, fraud prevention' },
+      { name: 'Email Follow-up Automation', href: '/services/email-follow-up-automation', description: 'Sequences, AI first-lines, CRM sync' },
+      { name: 'Podcast Transcription Studio', href: '/services/podcast-transcription-studio', description: 'Transcripts, notes, SEO drafts' },
+      { name: 'Freelancer Portfolio Builder', href: '/services/freelancer-portfolio-builder', description: 'AI case studies, templates, forms' },
+      { name: 'Cookie Consent Manager', href: '/services/cookie-consent-manager', description: 'Scanner, banner, policy updates' },
+      { name: 'SMB Website Analytics', href: '/services/smb-website-analytics', description: 'Funnels, attribution, no cookies' }
     ]
   },
   {

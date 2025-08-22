@@ -356,6 +356,69 @@ export default function MarketPricingPage() {
             </div>
           </div>
 
+          {/* Practical services pricing references */}
+          <div className="space-y-6">
+            <div className="bg-black/30 rounded-2xl border border-emerald-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Affiliate & Referral Platforms</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Refersion: <a className="text-cyan-400 underline" href={`https://www.refersion.com/pricing`} target="_blank" rel="noopener noreferrer">refersion.com/pricing</a></li>
+                <li>Impact.com: <a className="text-cyan-400 underline" href={`https://impact.com/pricing/`} target="_blank" rel="noopener noreferrer">impact.com/pricing</a></li>
+                <li>PartnerStack: <a className="text-cyan-400 underline" href={`https://partnerstack.com/pricing`} target="_blank" rel="noopener noreferrer">partnerstack.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $99–$500/month plus commission.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-blue-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Email Outreach & Sequences</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Mailshake: <a className="text-cyan-400 underline" href={`https://mailshake.com/pricing/`} target="_blank" rel="noopener noreferrer">mailshake.com/pricing</a></li>
+                <li>Lemlist: <a className="text-cyan-400 underline" href={`https://lemlist.com/pricing`} target="_blank" rel="noopener noreferrer">lemlist.com/pricing</a></li>
+                <li>Reply.io: <a className="text-cyan-400 underline" href={`https://reply.io/pricing/`} target="_blank" rel="noopener noreferrer">reply.io/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $40–$150/user/month.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-purple-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Transcription & Repurposing</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Rev.com: <a className="text-cyan-400 underline" href={`https://www.rev.com/pricing`} target="_blank" rel="noopener noreferrer">rev.com/pricing</a></li>
+                <li>Descript: <a className="text-cyan-400 underline" href={`https://www.descript.com/pricing`} target="_blank" rel="noopener noreferrer">descript.com/pricing</a></li>
+                <li>Otter.ai: <a className="text-cyan-400 underline" href={`https://otter.ai/pricing`} target="_blank" rel="noopener noreferrer">otter.ai/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $10–$60/user/month plus usage.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-amber-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Website Builders & Portfolios</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Wix: <a className="text-cyan-400 underline" href={`https://www.wix.com/upgrade/website`} target="_blank" rel="noopener noreferrer">wix.com/upgrade/website</a></li>
+                <li>Carrd: <a className="text-cyan-400 underline" href={`https://carrd.co/pricing`} target="_blank" rel="noopener noreferrer">carrd.co/pricing</a></li>
+                <li>Webflow: <a className="text-cyan-400 underline" href={`https://webflow.com/pricing`} target="_blank" rel="noopener noreferrer">webflow.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $9–$40/month.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-rose-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Cookie Consent & CMP</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>CookieYes: <a className="text-cyan-400 underline" href={`https://www.cookieyes.com/pricing/`} target="_blank" rel="noopener noreferrer">cookieyes.com/pricing</a></li>
+                <li>OneTrust: <a className="text-cyan-400 underline" href={`https://www.onetrust.com/platform/cookie-consent/`} target="_blank" rel="noopener noreferrer">onetrust.com/platform/cookie-consent</a></li>
+                <li>Termly: <a className="text-cyan-400 underline" href={`https://termly.io/products/cookie-consent-manager/`} target="_blank" rel="noopener noreferrer">termly.io/products/cookie-consent-manager</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $10–$60/month.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-sky-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Privacy-first Analytics</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Plausible: <a className="text-cyan-400 underline" href={`https://plausible.io/#pricing`} target="_blank" rel="noopener noreferrer">plausible.io/pricing</a></li>
+                <li>Fathom: <a className="text-cyan-400 underline" href={`https://usefathom.com/pricing`} target="_blank" rel="noopener noreferrer">usefathom.com/pricing</a></li>
+                <li>Simple Analytics: <a className="text-cyan-400 underline" href={`https://simpleanalytics.com/pricing`} target="_blank" rel="noopener noreferrer">simpleanalytics.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $9–$39/month.</div>
+            </div>
+          </div>
+
           <div className="text-center text-slate-400 mt-10">
             Need help benchmarking? <a href="/contact" className="text-cyan-400 underline">Contact us</a> — we align to transparent, vendor-verifiable pricing.
           </div>

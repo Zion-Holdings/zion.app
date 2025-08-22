@@ -166,6 +166,26 @@ export default function ServicesAdvertisingPage() {
           </section>
 
           <section>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Practical Micro SaaS Additions</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { name: 'Affiliate Program Manager', price: '$99/mo', href: '/services/affiliate-program-manager' },
+                { name: 'Email Follow-up Automation', price: '$49/mo', href: '/services/email-follow-up-automation' },
+                { name: 'Podcast Transcription Studio', price: '$29/mo', href: '/services/podcast-transcription-studio' },
+                { name: 'Freelancer Portfolio Builder', price: '$9/mo', href: '/services/freelancer-portfolio-builder' },
+                { name: 'Cookie Consent Manager', price: '$10/mo', href: '/services/cookie-consent-manager' },
+                { name: 'SMB Website Analytics', price: '$14/mo', href: '/services/smb-website-analytics' }
+              ].map((o) => (
+                <a key={o.name} href={o.href} className="block p-6 rounded-2xl bg-black/40 border border-gray-700/60 hover:border-cyan-500/40">
+                  <div className="text-sm text-gray-400 mb-1">From</div>
+                  <div className="text-2xl font-bold text-white">{o.price}</div>
+                  <div className="text-gray-200 mt-2">{o.name}</div>
+                </a>
+              ))}
+            </div>
+          </section>
+
+          <section>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Benchmark With Market Pricing</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {pricingRefs.map((group) => (

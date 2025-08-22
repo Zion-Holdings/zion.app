@@ -97,7 +97,14 @@ const sidebarSections = [
       { name: 'Marketing Automation', href: '/ai-marketing-automation' },
       { name: 'Customer Service AI', href: '/ai-customer-service' },
       { name: 'HR & Recruitment', href: '/ai-hr-recruitment' },
-      { name: 'Legal Contract Analysis', href: '/ai-legal-contract-analyzer' }
+      { name: 'Legal Contract Analysis', href: '/ai-legal-contract-analyzer' },
+      // Added practical services
+      { name: 'Affiliate Program Manager', href: '/services/affiliate-program-manager' },
+      { name: 'Email Follow-up Automation', href: '/services/email-follow-up-automation' },
+      { name: 'Podcast Transcription Studio', href: '/services/podcast-transcription-studio' },
+      { name: 'Freelancer Portfolio Builder', href: '/services/freelancer-portfolio-builder' },
+      { name: 'Cookie Consent Manager', href: '/services/cookie-consent-manager' },
+      { name: 'SMB Website Analytics', href: '/services/smb-website-analytics' }
     ]
   },
   {

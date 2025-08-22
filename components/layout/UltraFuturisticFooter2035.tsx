@@ -30,7 +30,14 @@ const footerSections = [
       { name: 'HR Analytics Platform', href: '/services/intelligent-hr-analytics-platform' },
       { name: 'AI Decision Engine', href: '/services/ai-powered-decision-engine' },
       { name: 'Content Automation', href: '/services/intelligent-content-automation-platform' },
-      { name: 'CRM Intelligence Suite', href: '/services/smart-crm-intelligence-suite' }
+      { name: 'CRM Intelligence Suite', href: '/services/smart-crm-intelligence-suite' },
+      // Added practical services
+      { name: 'Affiliate Program Manager', href: '/services/affiliate-program-manager', featured: true },
+      { name: 'Email Follow-up Automation', href: '/services/email-follow-up-automation' },
+      { name: 'Podcast Transcription Studio', href: '/services/podcast-transcription-studio' },
+      { name: 'Freelancer Portfolio Builder', href: '/services/freelancer-portfolio-builder' },
+      { name: 'Cookie Consent Manager', href: '/services/cookie-consent-manager' },
+      { name: 'SMB Website Analytics', href: '/services/smb-website-analytics' }
     ]
   },
   {
