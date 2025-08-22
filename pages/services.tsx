@@ -12,6 +12,7 @@ import {
 import { enterpriseITSolutions } from '../data/2034-enterprise-it-solutions';
 import { innovativeMicroSaasSolutions } from '../data/2034-innovative-micro-saas-solutions';
 import { cuttingEdgeAIServices } from '../data/2034-cutting-edge-ai-services';
+import { real2026Q2Services } from '../data/real-2026-q2-services';
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -58,6 +59,7 @@ const allServices = [
   ...enterpriseITSolutions,
   ...innovativeMicroSaasSolutions,
   ...cuttingEdgeAIServices,
+  ...real2026Q2Services,
   ...realMicroSaasServices,
   ...innovativeAIServices,
   ...enterpriseITServices,
@@ -120,25 +122,25 @@ const categories = [
     description: 'AI-powered creative solutions'
   },
   {
-    id: 'healthcare-biotech',
-    name: 'Healthcare & Biotech',
+    id: 'healthcare',
+    name: 'Healthcare & Life Sciences',
     icon: <Heart className="w-6 h-6" />,
-    color: 'from-red-500 to-pink-500',
-    description: 'Advanced healthcare solutions'
-  },
-  {
-    id: 'transportation-logistics',
-    name: 'Transportation & Logistics',
-    icon: <Truck className="w-6 h-6" />,
     color: 'from-blue-500 to-cyan-500',
-    description: 'Smart transportation solutions'
+    description: 'Healthcare and biotech solutions'
   },
   {
-    id: 'education-research',
-    name: 'Education & Research',
+    id: 'logistics',
+    name: 'Logistics & Supply Chain',
+    icon: <Truck className="w-6 h-6" />,
+    color: 'from-green-500 to-emerald-500',
+    description: 'Supply chain, logistics, and automation'
+  },
+  {
+    id: 'education',
+    name: 'Education & Training',
     icon: <GraduationCap className="w-6 h-6" />,
-    color: 'from-yellow-500 to-orange-500',
-    description: 'Learning and research platforms'
+    color: 'from-yellow-500 to-amber-500',
+    description: 'Education platforms and training'
   }
 ];
 
