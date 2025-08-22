@@ -124,8 +124,19 @@ const Home: React.FC = () => {
         <title>Zion Tech Group - Revolutionary Technology Solutions | AI, Quantum Computing, Micro SAAS</title>
         <meta name="description" content="Transform your business with Zion Tech Group's revolutionary AI, quantum computing, and micro SAAS solutions. Leading-edge technology for unprecedented growth." />
         <meta name="keywords" content="AI, quantum computing, micro SAAS, technology solutions, business transformation, Zion Tech Group" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href="https://ziontechgroup.com" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Zion Tech Group" />
+        <meta property="og:title" content="Zion Tech Group - Revolutionary Technology Solutions" />
+        <meta property="og:description" content="Transform your business with revolutionary AI, quantum computing, and micro SAAS solutions." />
+        <meta property="og:url" content="https://ziontechgroup.com/" />
+        <meta property="og:image" content="https://ziontechgroup.com/logo.png" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Zion Tech Group - Revolutionary Technology Solutions" />
+        <meta name="twitter:description" content="Transform your business with revolutionary AI, quantum computing, and micro SAAS solutions." />
+        <meta name="twitter:image" content="https://ziontechgroup.com/logo.png" />
       </Head>
 
       {/* Hero Section */}
