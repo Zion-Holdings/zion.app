@@ -178,6 +178,78 @@ export default function ServicesAdvertisingPage() {
 				</section>
 				
 				<div className="pt-4 text-slate-400 text-sm">See also: <a className="text-cyan-400 underline" href="/market-pricing">Market Pricing</a> for a broader list of benchmarks and links.</div>
+
+				<section id="ai-email-responder" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">AI Email Responder</h2>
+					<p className="text-slate-300">Autonomous replies, prioritization, and sentiment analysis integrated with your CRM.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $20–$50/user/mo</li>
+						<li>References: {ext('https://workspace.google.com/pricing')}, {ext('https://www.microsoft.com/microsoft-365/business/compare-all-microsoft-365-business-products')}</li>
+					</ul>
+				</section>
+
+				<section id="mobile-first-survey-tool" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Mobile-first Survey Tool</h2>
+					<p className="text-slate-300">Adaptive surveys with conditional logic and real-time dashboards.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $30–$70/mo</li>
+						<li>References: {ext('https://www.typeform.com/pricing/')}, {ext('https://www.surveymonkey.com/pricing/')}</li>
+					</ul>
+				</section>
+
+				<section id="event-management-dashboard" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Event Management Dashboard</h2>
+					<p className="text-slate-300">Ticketing, registration, scheduling, and post-event insights.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $50–$100/mo (+ fees per ticket)</li>
+						<li>References: {ext('https://www.eventbrite.com/organizer/pricing/')}, {ext('https://ti.to/pricing')}</li>
+					</ul>
+				</section>
+
+				<section id="affiliate-tracking-hub" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Affiliate Tracking Hub</h2>
+					<p className="text-slate-300">Cross-device attribution, fraud prevention, and automated payouts.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $40–$80/mo</li>
+						<li>References: {ext('https://partnerstack.com/')}, {ext('https://impact.com/pricing/')}</li>
+					</ul>
+				</section>
+
+				<section id="smb-website-analytics" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">SMB Website Analytics</h2>
+					<p className="text-slate-300">Privacy-first dashboards with goals, funnels, and UTM insights.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $9–$50/mo</li>
+						<li>References: {ext('https://plausible.io/pricing')}, {ext('https://usefathom.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section id="it-helpdesk-suite" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">IT Helpdesk Suite</h2>
+					<p className="text-slate-300">Ticketing, SLAs, KB, and self-service portal for IT teams and MSPs.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $30–$70/agent/mo</li>
+						<li>References: {ext('https://www.zendesk.com/pricing/')}, {ext('https://www.freshworks.com/freshdesk/pricing/')}</li>
+					</ul>
+				</section>
+
+				<section id="ecommerce-returns-center" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">E‑commerce Returns Center</h2>
+					<p className="text-slate-300">Self-service returns, labels, and exchanges with analytics.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $30–$60/mo</li>
+						<li>References: {ext('https://www.loopreturns.com/pricing/')}, {ext('https://www.returnsgo.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section id="ai-seo-optimizer" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">AI SEO Content Optimizer</h2>
+					<p className="text-slate-300">AI guidance for keywords, structure, and readability with brief exports.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $30–$100/mo</li>
+						<li>References: {ext('https://www.surferseo.com/pricing/')}, {ext('https://www.semrush.com/prices/')}</li>
+					</ul>
+				</section>
 			</div>
 		</div>
 	);
