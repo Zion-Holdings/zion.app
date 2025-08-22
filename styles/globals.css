@@ -406,3 +406,30 @@ h1, h2, h3, h4, h5, h6 {
     color: black;
   }
 }
+
+/* Neon glow utilities */
+.glow {
+	text-shadow: 0 0 12px rgba(34, 211, 238, 0.55), 0 0 24px rgba(139, 92, 246, 0.35);
+}
+.shadow-glow {
+	box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.25), 0 8px 30px rgba(56, 189, 248, 0.25);
+}
+.shadow-glow-lg {
+	box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.35), 0 12px 50px rgba(99, 102, 241, 0.35);
+}
+
+/* Improve focus visibility */
+:focus-visible {
+	outline: 2px solid rgba(34, 211, 238, 0.8);
+	outline-offset: 2px;
+}
+
+/* Responsive typography clamps */
+.h1, h1 { font-size: clamp(2rem, 4vw + 1rem, 3.75rem); }
+.h2, h2 { font-size: clamp(1.5rem, 3vw + 0.5rem, 2.5rem); }
+.h3, h3 { font-size: clamp(1.25rem, 2vw + 0.5rem, 2rem); }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
