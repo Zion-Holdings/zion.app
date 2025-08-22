@@ -4,9 +4,12 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="theme-color" content="#0a0a0a" />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <meta name="theme-color" content="#0a0a0a" />
+        <link rel="icon" href="/favicon.ico" />
+        {/* Preconnect for analytics */}
+        <link rel="dns-prefetch" href="//plausible.io" />
+        <link rel="preconnect" href="https://plausible.io" crossOrigin="anonymous" />
         <script defer data-domain="ziontechgroup.com" src="https://plausible.io/js/script.js"></script>
         <script
           type="application/ld+json"

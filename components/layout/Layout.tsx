@@ -15,6 +15,10 @@ export default function Layout({ children }: LayoutProps) {
 
   return (
     <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
+      {/* Accessible Skip Link */}
+      <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 bg-white text-black px-4 py-2 rounded">
+        Skip to content
+      </a>
       {/* Futuristic Background */}
       <UltraFuturisticBackground2035 />
       
