@@ -231,21 +231,22 @@ export default function PricingEnhanced2026Page() {
           <title>Enhanced 2026 Pricing - Zion Tech Group</title>
           <meta name="description" content="Discover our comprehensive 2026 pricing for innovative AI, quantum computing, and enterprise IT services. Achieve remarkable ROI with our cutting-edge solutions." />
           <meta name="keywords" content="2026 pricing, AI services pricing, quantum computing pricing, enterprise IT pricing, micro SaaS pricing, ROI guarantee" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" href="/favicon.svg" />
           
           {/* Open Graph */}
           <meta property="og:title" content="Enhanced 2026 Pricing - Zion Tech Group" />
           <meta property="og:description" content="Discover our comprehensive 2026 pricing for innovative AI, quantum computing, and enterprise IT services." />
           <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://ziontechgroup.com/pricing-enhanced-2026" />
-          <meta property="og:image" content="https://ziontechgroup.com/og-image.jpg" />
+          <meta property="og:url" content="https://ziontechgroup.com/pricing-enhanced-2026/" />
+          <meta property="og:image" content="https://ziontechgroup.com/og-image.svg" />
+          <meta property="og:image:type" content="image/svg+xml" />
           
           {/* Twitter */}
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content="Enhanced 2026 Pricing - Zion Tech Group" />
           <meta name="twitter:description" content="Discover our comprehensive 2026 pricing for innovative AI, quantum computing, and enterprise IT services." />
-          <meta name="twitter:image" content="https://ziontechgroup.com/og-image.jpg" />
+          <meta name="twitter:image" content="https://ziontechgroup.com/og-image.svg" />
+          <meta name="twitter:image:type" content="image/svg+xml" />
         </Head>
         {/* Enhanced Header Section */}
         <div className="relative z-10 pt-20 pb-16 px-4 sm:px-6 lg:px-8">
