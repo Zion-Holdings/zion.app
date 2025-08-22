@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
+import dynamic from 'next/dynamic';
 import UltraAdvancedHeroSection2025 from '../components/sections/UltraAdvancedHeroSection2025';
-import UltraAdvancedServicesShowcase2025 from '../components/sections/UltraAdvancedServicesShowcase2025';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { 
@@ -13,6 +13,20 @@ import {
   Network, Palette, GraduationCap, DollarSign, Heart,
   DollarSign as Finance, Factory as Manufacturing, Scale as Legal
 } from 'lucide-react';
+
+const UltraAdvancedServicesShowcase2025 = dynamic(() => import('../components/sections/UltraAdvancedServicesShowcase2025'), {
+  ssr: false,
+  loading: () => (
+    <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
+      <div className="container mx-auto px-4 text-center">
+        <div className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 rounded-full px-4 py-2 text-sm mb-6">
+          <Sparkles className="w-4 h-4 text-cyan-400" />
+          <span className="text-gray-300">Loading services…</span>
+        </div>
+      </div>
+    </section>
+  )
+});
 
 const contactInfo = {
   mobile: '+1 302 464 0950',
