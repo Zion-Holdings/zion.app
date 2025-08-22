@@ -1,23 +1,16 @@
-import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document';
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 
-class MyDocument extends Document {
-	static async getInitialProps(ctx: DocumentContext) {
-		const initialProps = await Document.getInitialProps(ctx);
-		return { ...initialProps };
-	}
-
+export default class MyDocument extends Document {
 	render() {
-		const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ziontechgroup.com';
 		return (
 			<Html lang="en">
 				<Head>
-					<link rel="preconnect" href="https://plausible.io" />
-					<meta name="theme-color" content="#000000" />
-					<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-					<link rel="manifest" href="/site.webmanifest" />
-					<link rel="dns-prefetch" href="//plausible.io" />
 					<link rel="preconnect" href="https://plausible.io" crossOrigin="anonymous" />
-					<meta name="viewport" content="width=device-width, initial-scale=1" />
+					<link rel="dns-prefetch" href="//plausible.io" />
+					<link rel="manifest" href="/site.webmanifest" />
+					<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+					<meta name="theme-color" content="#0b1020" />
+					<meta name="color-scheme" content="dark light" />
 				</Head>
 				<body>
 					<Main />
@@ -27,5 +20,3 @@ class MyDocument extends Document {
 		);
 	}
 }
-
-export default MyDocument;
