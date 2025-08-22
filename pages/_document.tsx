@@ -15,8 +15,10 @@ class MyDocument extends Document {
 					<meta name="theme-color" content="#000000" />
 					<link rel="preconnect" href="https://plausible.io" crossOrigin="anonymous" />
 					<link rel="dns-prefetch" href="//plausible.io" />
-					<link rel="robots" href="/robots.txt" />
-					<link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+					<meta name="color-scheme" content="dark light" />
+					{process.env.NEXT_PUBLIC_NOINDEX === 'true' ? (
+						<meta name="robots" content="noindex, nofollow" />
+					) : null}
 					<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 				</Head>
 				<body>

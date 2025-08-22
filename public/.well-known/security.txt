@@ -1,0 +1,7 @@
+Contact: mailto:kleber@ziontechgroup.com
+Contact: tel:+13024640950
+Policy: https://ziontechgroup.com/security/
+Hiring: https://ziontechgroup.com/careers/
+Preferred-Languages: en
+Canonical: https://ziontechgroup.com/.well-known/security.txt
+Expires: 2026-12-31T23:59:59Z
