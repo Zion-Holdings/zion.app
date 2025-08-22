@@ -239,13 +239,13 @@ export default function PricingEnhanced2026Page() {
           <meta property="og:description" content="Discover our comprehensive 2026 pricing for innovative AI, quantum computing, and enterprise IT services." />
           <meta property="og:type" content="website" />
           <meta property="og:url" content="https://ziontechgroup.com/pricing-enhanced-2026" />
-          <meta property="og:image" content="https://ziontechgroup.com/og-image.jpg" />
+          <meta property="og:image" content="https://ziontechgroup.com/og-image.svg" />
           
           {/* Twitter */}
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content="Enhanced 2026 Pricing - Zion Tech Group" />
           <meta name="twitter:description" content="Discover our comprehensive 2026 pricing for innovative AI, quantum computing, and enterprise IT services." />
-          <meta name="twitter:image" content="https://ziontechgroup.com/og-image.jpg" />
+          <meta name="twitter:image" content="https://ziontechgroup.com/og-image.svg" />
         </Head>
         {/* Enhanced Header Section */}
         <div className="relative z-10 pt-20 pb-16 px-4 sm:px-6 lg:px-8">
