@@ -1,59 +1,86 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import Link from 'next/link';
+import { Check, ExternalLink, TrendingUp, PhoneCall, ChartLine } from 'lucide-react';
 
-export default function AISalesIntelligencePlatform() {
+export default function AISalesIntelligencePlatformPage() {
+	const title = 'AI Sales Intelligence Platform — Zion Tech Group';
+	const description = 'Qualify pipeline, prioritize deals, and coach reps with AI. Lead scoring, call insights, forecasting, and next-best-action across your CRM.';
+	const features = [
+		'Lead and account scoring with explainability',
+		'Call transcript summarization and objection handling',
+		'Opportunity risk alerts and win-likelihood models',
+		'Forecast accuracy dashboards and scenario planning',
+		'Email sequencing suggestions and personalization',
+		'CRM integrations: Salesforce, HubSpot, Pipedrive',
+		'Slack/Teams notifications with actionable insights',
+		'API and warehouse sync for custom BI'
+	];
+
+	const pricingNotes = [
+		'Starter: $99–$299/user/mo (2–10 sellers)',
+		'Growth: $79–$149/user/mo (11–100 sellers)',
+		'Enterprise: Volume pricing + SSO/SCIM + SLAs'
+	];
+
+	const references = [
+		{ name: 'Gong pricing overview', url: 'https://www.gong.io/pricing/' },
+		{ name: 'Outreach pricing', url: 'https://www.outreach.io/pricing' },
+		{ name: 'HubSpot Sales Hub pricing', url: 'https://www.hubspot.com/pricing/sales' }
+	];
+
 	return (
-		<div className="relative isolate">
-			<section className="px-6 lg:px-10 py-16 lg:py-24">
-				<div className="max-w-6xl mx-auto">
-					<h1 className="text-3xl lg:text-5xl font-bold tracking-tight bg-gradient-to-r from-amber-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent">AI Sales Intelligence Platform</h1>
-					<p className="mt-4 text-gray-300 max-w-3xl">Prioritize the right accounts, generate talking points, and automate follow-ups. Bring CRM, intent, and product telemetry together with AI coaching.</p>
+		<>
+			<SEO title={title} description={description} />
+			<section className="relative pt-28 pb-16 md:pt-36 md:pb-24">
+				<div className="container mx-auto px-4">
+					<h1 className="text-3xl md:text-5xl font-extrabold tracking-tight gradient-text-cyan-purple">AI Sales Intelligence Platform</h1>
+					<p className="mt-6 text-lg text-gray-300 max-w-3xl">{description}</p>
+					<div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-gray-400">
+						<span className="inline-flex items-center gap-1"><TrendingUp className="w-4 h-4 text-emerald-400" /> Increase win rates</span>
+						<span className="inline-flex items-center gap-1"><PhoneCall className="w-4 h-4 text-cyan-400" /> Call insights</span>
+						<span className="inline-flex items-center gap-1"><ChartLine className="w-4 h-4 text-purple-400" /> Forecast accuracy</span>
+					</div>
+					<div className="mt-8 flex flex-col sm:flex-row gap-4">
+						<Link href="/contact" className="inline-flex items-center justify-center px-6 py-3 rounded-md bg-white text-black font-semibold hover:bg-gray-200 transition-colors">Request Demo</Link>
+						<Link href="/market-pricing" className="inline-flex items-center justify-center px-6 py-3 rounded-md border border-white/30 text-white font-semibold hover:bg-white/10 transition-colors">Market Pricing</Link>
+					</div>
+				</div>
+			</section>
 
-					<div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-						{[
-							{ title: 'Account Scoring', desc: 'Fit + intent + usage scoring with explainability and next-best-actions.' },
-							{ title: 'AI Coaching', desc: 'Call/email analysis for objections, topics, sentiment, and coaching moments.' },
-							{ title: 'Pipeline Intelligence', desc: 'Deal risk flags, velocity insights, and forecast accuracy dashboards.' },
-							{ title: 'Personalization', desc: 'Auto-drafted emails with product usage insights; one-click review.' },
-							{ title: 'Integrations', desc: 'Salesforce, HubSpot, Gong, Outreach, Salesloft, Apollo.' },
-							{ title: 'Revenue Analytics', desc: 'Win/loss analysis and territory performance.' }
-						].map((f) => (
-							<div key={f.title} className="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur">
-								<h3 className="text-lg font-semibold text-white">{f.title}</h3>
-								<p className="mt-2 text-sm text-gray-300">{f.desc}</p>
+			<main id="main" className="container mx-auto px-4 pb-24">
+				<section className="max-w-5xl mx-auto">
+					<div className="mt-4 grid sm:grid-cols-2 gap-6">
+						{features.map((f) => (
+							<div key={f} className="flex items-start space-x-3 p-4 rounded-xl bg-white/5 border border-white/10">
+								<Check className="w-5 h-5 text-cyan-400 mt-1" />
+								<p className="text-gray-200">{f}</p>
 							</div>
 						))}
 					</div>
 
-					<div className="mt-12">
-						<h2 className="text-2xl font-semibold">Pricing</h2>
-						<div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-							<div className="rounded-2xl border border-amber-400/30 p-6">
-								<h3 className="text-xl font-bold">Starter</h3>
-								<p className="mt-2 text-gray-300">Up to 10 users, account scores, basic coaching.</p>
-								<p className="mt-4 text-3xl font-bold">$290<span className="text-base font-normal text-gray-300">/mo</span></p>
-							</div>
-							<div className="rounded-2xl border border-cyan-400/30 p-6">
-								<h3 className="text-xl font-bold">Growth</h3>
-								<p className="mt-2 text-gray-300">Up to 50 users, coaching + forecast, Salesforce/HubSpot.</p>
-								<p className="mt-4 text-3xl font-bold">$990<span className="text-base font-normal text-gray-300">/mo</span></p>
-							</div>
-							<div className="rounded-2xl border border-emerald-400/30 p-6">
-								<h3 className="text-xl font-bold">Enterprise</h3>
-								<p className="mt-2 text-gray-300">SSO/SCIM, custom models, revops data lake export.</p>
-								<p className="mt-4 text-3xl font-bold">Custom</p>
-							</div>
-						</div>
-						<p className="mt-4 text-sm text-gray-400">Market references: <a className="underline hover:text-cyan-300" href="https://www.gong.io/pricing/" target="_blank" rel="noreferrer">Gong</a>, <a className="underline hover:text-cyan-300" href="https://www.apollo.io/pricing" target="_blank" rel="noreferrer">Apollo</a>, <a className="underline hover:text-cyan-300" href="https://www.salesloft.com/pricing/" target="_blank" rel="noreferrer">Salesloft</a>.</p>
+					<div className="mt-10">
+						<h2 className="text-2xl font-semibold text-white">Pricing</h2>
+						<ul className="mt-4 grid sm:grid-cols-3 gap-4">
+							{pricingNotes.map((p) => (
+								<li key={p} className="rounded-xl border border-cyan-400/30 bg-black/30 p-4 text-gray-200">{p}</li>
+							))}
+						</ul>
+						<p className="mt-3 text-sm text-gray-400">Seat-based pricing aligned with team size. Volume discounts available.</p>
 					</div>
 
-					<div className="mt-12 flex flex-wrap items-center gap-4">
-						<Link href="/contact" className="px-5 py-3 rounded-lg bg-amber-400 text-black font-semibold">Supercharge Sales</Link>
-						<a href="mailto:kleber@ziontechgroup.com" className="px-5 py-3 rounded-lg border border-white/20">Email: kleber@ziontechgroup.com</a>
-						<span className="text-gray-400">Call: +1 302 464 0950</span>
+					<div className="mt-10">
+						<h2 className="text-2xl font-semibold text-white">References</h2>
+						<div className="mt-4 flex flex-wrap gap-4">
+							{references.map((r) => (
+								<a key={r.name} href={r.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300">
+									<ExternalLink className="w-4 h-4" /> {r.name}
+								</a>
+							))}
+						</div>
 					</div>
-				</div>
-			</section>
-		</div>
+				</section>
+			</main>
+		</>
 	);
 }
