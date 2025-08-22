@@ -49,6 +49,8 @@ export default function SEO({ title, description, canonical, ogImage, image, noI
 			<meta property="og:locale" content="en_US" />
 			<meta property="og:image" content={imageUrl} />
 			<meta property="og:image:alt" content={imageAlt} />
+			<meta property="og:image:width" content="1200" />
+			<meta property="og:image:height" content="630" />
 			<meta name="twitter:card" content="summary_large_image" />
 			<meta name="twitter:title" content={pageTitle} />
 			<meta name="twitter:description" content={pageDescription} />
