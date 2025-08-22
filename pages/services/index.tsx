@@ -1,5 +1,5 @@
 import React from 'react';
-import Head from 'next/head';
+import SEO from '../../components/SEO';
 import UltraFuturisticBackground from '../../components/ui/UltraFuturisticBackground';
 import Card from '../../components/ui/Card';
 import Link from 'next/link';
@@ -118,11 +118,7 @@ export default function ServicesIndexPage() {
 
   return (
     <UltraFuturisticBackground variant="quantum" intensity="high">
-      <Head>
-        <title>Services | Zion Tech Group</title>
-        <meta name="description" content="Browse 350+ real micro SaaS, IT, and AI services with transparent pricing and fast onboarding." />
-        <link rel="canonical" href="https://ziontechgroup.com/services" />
-      </Head>
+      <SEO title="Services | Zion Tech Group" description="Browse 350+ real micro SaaS, IT, and AI services with transparent pricing and fast onboarding." canonical="https://ziontechgroup.com/services/" />
 
       <div className="container mx-auto px-4 py-16 space-y-12 text-white">
         <div className="text-center">

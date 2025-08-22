@@ -1,5 +1,5 @@
 import React from 'react';
-import Head from 'next/head';
+import SEO from '../../components/SEO';
 import { motion } from 'framer-motion';
 import { ArrowRight, Star, Clock, Users, Phone, Mail, MapPin, Brain, Atom, Globe, Rocket, Target, Microscope, TrendingUp, Zap, Shield } from 'lucide-react';
 import UltraFuturisticBackground2031 from '../../components/ui/UltraFuturisticBackground2031';
@@ -69,54 +69,7 @@ export default function FuturisticServices2030Page() {
 
   return (
     <>
-      <Head>
-        <title>2030 Futuristic Technology Services | Zion Tech Group - Revolutionary AI, Quantum, Space Tech</title>
-        <meta name="description" content="Experience the future with our revolutionary 2030 technology services. From AI consciousness to space mining, quantum computing to metaverse development - we're building tomorrow's solutions today." />
-        <meta name="keywords" content="2030 technology services, AI consciousness, quantum computing, space mining, metaverse development, neuromorphic computing, DNA computing, Zion Tech Group" />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content="2030 Futuristic Technology Services | Zion Tech Group" />
-        <meta property="og:description" content="Experience the future with our revolutionary 2030 technology services. From AI consciousness to space mining, quantum computing to metaverse development." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://ziontechgroup.com/services/2030-futuristic-services" />
-        <meta property="og:image" content="https://ziontechgroup.com/og-image-2030.jpg" />
-        
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="2030 Futuristic Technology Services | Zion Tech Group" />
-        <meta name="twitter:description" content="Experience the future with our revolutionary 2030 technology services. From AI consciousness to space mining, quantum computing to metaverse development." />
-        <meta name="twitter:image" content="https://ziontechgroup.com/twitter-image-2030.jpg" />
-        
-        {/* Additional Meta Tags */}
-        <meta name="theme-color" content="#8b5cf6" />
-        <link rel="canonical" href="https://ziontechgroup.com/services/2030-futuristic-services" />
-        
-        {/* Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Service",
-              "name": "2030 Futuristic Technology Services",
-              "description": "Revolutionary 2030 technology services including AI consciousness, quantum computing, space mining, and advanced biotechnology",
-              "provider": {
-                "@type": "Organization",
-                "name": "Zion Tech Group",
-                "url": "https://ziontechgroup.com"
-              },
-              "url": "https://ziontechgroup.com/services/2030-futuristic-services",
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+1-302-464-0950",
-                "contactType": "customer service",
-                "email": "kleber@ziontechgroup.com"
-              }
-            })
-          }}
-        />
-      </Head>
+      <SEO title="2030 Futuristic Technology Services | Zion Tech Group - Revolutionary AI, Quantum, Space Tech" description="Experience the future with our revolutionary 2030 technology services. From AI consciousness to space mining, quantum computing to metaverse development - we're building tomorrow's solutions today." canonical="https://ziontechgroup.com/services/2030-futuristic-services/" jsonLd={{"@context":"https://schema.org","@type":"Service","name":"2030 Futuristic Technology Services","description":"Revolutionary 2030 technology services including AI consciousness, quantum computing, space mining, and advanced biotechnology","provider":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"url":"https://ziontechgroup.com/services/2030-futuristic-services","contactPoint":{"@type":"ContactPoint","telephone":"+1-302-464-0950","contactType":"customer service","email":"kleber@ziontechgroup.com"}}} />
 
       <UltraFuturisticBackground2031>
         {/* Ultra Advanced Navigation */}

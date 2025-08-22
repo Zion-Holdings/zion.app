@@ -1,5 +1,5 @@
 import React from 'react';
-import Head from 'next/head';
+import SEO from '../components/SEO';
 import { Phone, Mail, MapPin, Check, ArrowRight, Activity } from 'lucide-react';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 import Button from '../components/ui/Button';
@@ -11,11 +11,7 @@ export default function UptimeSLOMonitorPage() {
 
   return (
     <UltraAdvancedFuturisticBackground>
-      <Head>
-        <title>{service.name} - Zion Tech Group</title>
-        <meta name="description" content={service.description} />
-        <link rel="canonical" href="https://ziontechgroup.com/uptime-slo-monitor" />
-      </Head>
+      <SEO title={`${service.name} - Zion Tech Group`} description={service.description} canonical="https://ziontechgroup.com/uptime-slo-monitor/" />
       <div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
