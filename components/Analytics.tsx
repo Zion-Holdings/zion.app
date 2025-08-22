@@ -13,6 +13,12 @@ export default function Analytics() {
         data-domain={domain}
         src="https://plausible.io/js/script.js"
       />
+      {/* Enable outbound link tracking */}
+      <Script
+        strategy="afterInteractive"
+        data-domain={domain}
+        src="https://plausible.io/js/script.outbound-links.js"
+      />
     </>
   );
 }

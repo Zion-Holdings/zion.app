@@ -65,7 +65,7 @@ const Homepage2025: React.FC = () => {
   return (
     <UltraFuturisticBackground2026 intensity="medium" theme="quantum">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-xl border-b border-white/10">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-xl border-b border-white/10" aria-label="Primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <motion.div
@@ -83,6 +83,7 @@ const Homepage2025: React.FC = () => {
                 <button
                   key={section.id}
                   onClick={() => scrollToSection(section.id)}
+                  aria-current={activeSection === section.id ? 'page' : undefined}
                   className={`flex items-center space-x-2 text-sm font-medium transition-all duration-300 ${
                     activeSection === section.id
                       ? 'text-cyan-400 border-b-2 border-cyan-400'
@@ -144,6 +145,7 @@ const Homepage2025: React.FC = () => {
                     <button
                       key={section.id}
                       onClick={() => scrollToSection(section.id)}
+                      aria-current={activeSection === section.id ? 'page' : undefined}
                       className={`flex items-center space-x-3 w-full text-left px-4 py-2 rounded-lg transition-all duration-300 ${
                         activeSection === section.id
                           ? 'bg-cyan-400/20 text-cyan-400'
