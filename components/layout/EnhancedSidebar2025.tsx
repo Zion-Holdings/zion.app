@@ -34,7 +34,7 @@ const sidebarSections = [
       { name: 'AI Ethics & Governance', href: '/ai-ethics-governance-framework' },
       { name: 'AI Creativity Studio', href: '/ai-creativity-studio' },
       { name: 'AI Education Platform', href: '/ai-education-platform' },
-      { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics' },
+      { name: 'AI Healthcare Diagnostics', href: '/healthcare-solutions' },
       { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence' },
       { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform' },
       { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer' }
@@ -115,7 +115,7 @@ const sidebarSections = [
       { name: 'Real Estate Technology', href: '/real-estate-technology-solutions' },
       { name: 'Entertainment & Media', href: '/entertainment-media-solutions' },
       { name: 'Space Technology', href: '/space-technology' },
-      { name: 'Biotech & Healthcare', href: '/biotech-ai' }
+      { name: 'Biotech & Healthcare', href: '/biotech-ai-research-platform' }
     ]
   },
   {
