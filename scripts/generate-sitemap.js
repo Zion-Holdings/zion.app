@@ -64,6 +64,8 @@ function listServiceLinksFromData() {
 					if (url.hostname.endsWith('ziontechgroup.com')) {
 						let p = url.pathname;
 						if (!p.endsWith('/')) p += '/';
+						// Skip data-driven /services/* routes to avoid stale 404 entries
+						if (p.startsWith('/services/')) continue;
 						links.add(p);
 					}
 				} catch {}
