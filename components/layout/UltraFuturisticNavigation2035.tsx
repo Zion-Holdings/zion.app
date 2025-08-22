@@ -80,7 +80,15 @@ const navigationItems: NavigationItem[] = [
       { name: 'AI Evaluation Orchestrator', href: '/services/ai-evaluation-orchestrator', description: 'Automated LLM evals' },
       { name: 'SEO Automation Suite', href: '/seo-automation-suite', description: 'Technical SEO automation' },
       { name: 'IT Asset Discovery Agent', href: '/services/it-asset-discovery-agent', description: 'Agentless discovery' },
-      { name: 'Managed Postgres HA', href: '/services/managed-postgres-ha', description: 'HA Postgres ops' }
+      { name: 'Managed Postgres HA', href: '/services/managed-postgres-ha', description: 'HA Postgres ops' },
+      { name: 'AI Code Review Copilot', href: '/services/ai-code-review', description: 'Automated PR reviews' },
+      { name: 'LLM Gateway & Observability', href: '/services/llm-gateway', description: 'Unified LLM gateway' },
+      { name: 'MLOps Starter Kit', href: '/services/mlops-starter', description: 'Notebook to prod' },
+      { name: 'Feature Flags at the Edge', href: '/services/feature-flags-edge', description: 'Edge-native flags' },
+      { name: 'PDF Render API', href: '/services/pdf-render-api', description: 'Serverless PDF' },
+      { name: 'Webhook Relay & Replay', href: '/services/webhook-relay-replay', description: 'Safe webhooks' },
+      { name: 'Serverless Cron Manager', href: '/services/serverless-cron-manager', description: 'Scheduled jobs' },
+      { name: 'Status Pages & SLO', href: '/services/status-pages-slo', description: 'Status & SLOs' }
     ]
   },
   {

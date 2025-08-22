@@ -488,7 +488,7 @@ export default function ServicesAdvertisingPage() {
 						<li>Typical SMB budget: $10–$40/user/mo</li>
 						<li>References: {ext('https://otter.ai/pricing')}, {ext('https://www.gong.io/pricing')}</li>
 					</ul>
-					<div><a className="text-cyan-400 underline" href="/ai-meeting-notes">Learn more</a></div>
+					<div><a className="text-cyan-400 underline" href="/services/ai-meeting-transcriber-pro">Learn more</a></div>
 				</section>
 
 				<section id="privacy-request-portal" className="space-y-6">
@@ -574,6 +574,76 @@ export default function ServicesAdvertisingPage() {
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $30–$150/mo</li>
 						<li>References: {ext('https://vercel.com/pricing')}, {ext('https://www.cloudflare.com/plans/')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">AI Code Review Copilot</h2>
+					<p className="text-slate-300">Automated PR reviews for security, performance and quality with AI fix suggestions.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $50–$300/mo</li>
+						<li>References: {ext('https://deepsource.com/pricing')}, {ext('https://www.sonarsource.com/plans-and-pricing/')}, {ext('https://snyk.io/plans/')}</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/ai-code-review">/services/ai-code-review</a></li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">LLM Gateway & Observability</h2>
+					<p className="text-slate-300">Single gateway for OpenAI/Anthropic/etc. with quotas, caching and evals.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $100–$500/mo + usage</li>
+						<li>References: {ext('https://openai.com/api/pricing')}, {ext('https://www.anthropic.com/pricing')}, {ext('https://www.helicone.ai/pricing')}</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/llm-gateway">/services/llm-gateway</a></li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">MLOps Starter Kit</h2>
+					<p className="text-slate-300">From notebook to production with CI/CD, registry and monitoring.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $100–$1,000/mo</li>
+						<li>References: {ext('https://aws.amazon.com/sagemaker/pricing/')}, {ext('https://cloud.google.com/vertex-ai/pricing')}, {ext('https://www.databricks.com/product/pricing')}</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/mlops-starter">/services/mlops-starter</a></li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Feature Flags at the Edge</h2>
+					<p className="text-slate-300">Edge-native feature flagging and gradual rollouts.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $20–$200/mo</li>
+						<li>References: {ext('https://launchdarkly.com/pricing/')}, {ext('https://www.split.io/pricing/')}</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/feature-flags-edge">/services/feature-flags-edge</a></li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Webhook Relay & Replay</h2>
+					<p className="text-slate-300">Capture, inspect, retry and transform webhooks safely.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $10–$100/mo</li>
+						<li>References: {ext('https://hookdeck.com/pricing')}, {ext('https://www.svix.com/pricing/')}</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/webhook-relay-replay">/services/webhook-relay-replay</a></li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Serverless Cron Manager</h2>
+					<p className="text-slate-300">Reliable scheduled jobs with retries, jitter and dashboards.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $10–$60/mo</li>
+						<li>References: {ext('https://upstash.com/pricing')}, {ext('https://developers.cloudflare.com/workers/platform/pricing/#cron-triggers')}</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/serverless-cron-manager">/services/serverless-cron-manager</a></li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">PDF Render API</h2>
+					<p className="text-slate-300">Pixel-perfect serverless PDF rendering with HTML/CSS templates.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $10–$100/mo + usage</li>
+						<li>References: {ext('https://www.docraptor.com/pricing')}, {ext('https://www.pdfmonkey.io/en/pricing')}</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/pdf-render-api">/services/pdf-render-api</a></li>
 					</ul>
 				</section>
 
