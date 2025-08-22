@@ -9,9 +9,7 @@
   "automated-financial-analytics-platform",
   "brain-computer-interface",
   "customer-intelligence-platform",
-  "entertainment-media-solutions",
   "industrial-automation-ai",
-  "industry-solutions",
   "intelligent-project-management-suite",
   "leadership",
   "marketing-ai-platform",
@@ -23,12 +21,10 @@
   "quantum-energy-optimization",
   "quantum-risk-financial-manager",
   "quantum-supply-chain-optimizer",
-  "real-estate-technology-solutions",
-  "services/ai-synthetic-data-studio",
-  "services/edge-personalization-kit",
-  "services/etl-reliability-copilot",
-  "services/zero-trust-sso-mesh",
+  "services/ai-knowledge-graph-studio",
+  "services/data-contracts-hub",
+  "services/llm-guarded-api-gateway",
+  "services/serverless-lakehouse-starter",
   "space-colonization-services",
-  "space-mining-platform",
-  "transportation-logistics-solutions"
+  "space-mining-platform"
 ]

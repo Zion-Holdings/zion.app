@@ -74,10 +74,10 @@ const navigationItems: NavigationItem[] = [
     description: 'Browse by category',
     badge: 'New',
     children: [
-      { name: 'AI & Data', href: '/services#ai-consciousness', description: 'AI, data, ML services' },
-      { name: 'Cloud & FinOps', href: '/services#enterprise-it', description: 'Cloud, cost, platform' },
-      { name: 'Observability', href: '/services#enterprise-it', description: 'Monitoring & telemetry' },
-      { name: 'Developer Tools', href: '/services#enterprise-it', description: 'Developer productivity' },
+      { name: 'AI & Data', href: '/services#ai', description: 'AI, data, ML services' },
+      { name: 'Cloud & FinOps', href: '/services#cloud', description: 'Cloud, cost, platform' },
+      { name: 'Observability', href: '/services#observability', description: 'Monitoring & telemetry' },
+      { name: 'Developer Tools', href: '/services#developer-tools', description: 'Developer productivity' },
       { name: 'Training & Education', href: '/training', description: 'Learning and R&D' },
       { name: 'SEO Automation Suite', href: '/seo-automation-suite', description: 'Technical SEO automation' },
       { name: 'IT Asset Discovery Agent', href: '/it-asset-discovery-agent', description: 'Agentless discovery' },
@@ -111,7 +111,7 @@ const navigationItems: NavigationItem[] = [
   },
   {
     name: 'AI & Consciousness',
-    href: '/ai-services',
+    href: '/services#ai',
     icon: <Brain className="w-5 h-5" />,
     description: 'Revolutionary AI consciousness and emotional intelligence',
     badge: 'New',
@@ -199,7 +199,7 @@ const navigationItems: NavigationItem[] = [
   },
   {
     name: 'Industry Solutions',
-    href: '/industry-solutions',
+    href: '/solutions',
     icon: <Building className="w-5 h-5" />,
     description: 'Industry-specific technology solutions',
     badge: 'Industry',

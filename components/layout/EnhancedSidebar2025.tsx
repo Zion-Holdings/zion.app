@@ -111,9 +111,9 @@ const sidebarSections = [
       { name: 'Education Technology', href: '/education-technology-solutions' },
       { name: 'Government Solutions', href: '/government-technology-solutions' },
       { name: 'Energy & Utilities', href: '/energy-utilities-solutions' },
-      { name: 'Transportation & Logistics', href: '/transportation-logistics-solutions' },
-      { name: 'Real Estate Technology', href: '/real-estate-technology-solutions' },
-      { name: 'Entertainment & Media', href: '/entertainment-media-solutions' },
+      { name: 'Transportation & Logistics', href: '/intelligent-supply-chain-optimization' },
+      { name: 'Real Estate Technology', href: '/innovative-business-solutions' },
+      { name: 'Entertainment & Media', href: '/innovative-business-solutions' },
       { name: 'Space Technology', href: '/space-technology' },
       { name: 'Biotech & Healthcare', href: '/biotech-ai-research-platform' }
     ]
