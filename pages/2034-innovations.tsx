@@ -17,7 +17,6 @@ export default function Innovations2034Page() {
         <title>2034 Cutting-Edge Innovations | Zion Tech Group</title>
         <meta name="description" content="Experience the future with our revolutionary 2034 micro SAAS services, IT solutions, and AI platforms. From AI consciousness to space mining automation, we're building tomorrow's technology today." />
         <meta name="keywords" content="2034 innovations, AI consciousness, quantum computing, space mining, metaverse, neural interfaces, fusion energy, nanotechnology, Zion Tech Group" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href="https://ziontechgroup.com/2034-innovations" />
         
         {/* Open Graph */}

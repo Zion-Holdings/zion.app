@@ -185,7 +185,6 @@ export default function Services2026ShowcaseEnhancedPage() {
           <title>Enhanced 2026 Services Showcase - Zion Tech Group</title>
           <meta name="description" content="Discover our comprehensive collection of innovative 2026 micro SAAS services, AI solutions, quantum computing, and enterprise IT services. Transform your business with cutting-edge technology." />
           <meta name="keywords" content="2026 services, micro SAAS, AI services, quantum computing, enterprise IT, blockchain, 5G networks, edge computing, zero trust security" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="/favicon.ico" />
           
           {/* Open Graph */}
