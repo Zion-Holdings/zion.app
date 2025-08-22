@@ -89,7 +89,12 @@ const navigationItems: NavigationItem[] = [
       { name: 'Vendor Security Questionnaire AI', href: '/services/vendor-security-questionnaire-ai', description: 'Auto‑fill SIG/CAIQ with citations' },
       { name: 'Invoice Reconciliation Copilot', href: '/services/invoice-reconciliation-copilot', description: '3‑way match with anomaly detection' },
       { name: 'Policy Drift & Compliance Monitor', href: '/services/policy-drift-compliance-monitor', description: 'Detect drift and auto‑PR fixes' },
-      { name: 'New 2034 Services', href: '/services?sort=newest', description: 'Latest additions' }
+      { name: 'New Services', href: '/new-services', description: 'Latest additions', featured: true },
+      // Newly added real services
+      { name: 'RAG Evaluation Lab', href: '/services/rag-evaluation-lab', description: 'Benchmark and regression test RAG' },
+      { name: 'Browser Automation Cloud', href: '/services/browser-automation-cloud', description: 'Headless browser automation' },
+      { name: 'Secrets Rotation Automation', href: '/services/secrets-rotation-automation', description: 'Rotate keys and passwords' },
+      { name: 'API Performance Testing', href: '/services/api-performance-testing', description: 'Latency SLO and load tests' }
     ]
   },
   {
