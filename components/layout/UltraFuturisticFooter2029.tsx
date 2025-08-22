@@ -20,30 +20,30 @@ const serviceCategories = [
     title: 'AI & Consciousness',
     icon: Brain,
     services: [
-      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-platform' },
-      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-platform' },
-      { name: 'AI Creativity Orchestrator', href: '/ai-creativity-orchestrator' },
-      { name: 'AI Dream Interpreter', href: '/ai-dream-interpreter-platform' }
+      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029' },
+      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training' },
+      { name: 'AI Creativity Orchestrator', href: '/ai-creativity-studio' },
+      { name: 'AI Dream Interpreter', href: '/ai-market-research' }
     ]
   },
   {
     title: 'Quantum Technology',
     icon: Atom,
     services: [
-      { name: 'Quantum Internet Security', href: '/quantum-internet-security-gateway' },
-      { name: 'Quantum Financial Trading', href: '/quantum-financial-trading-platform' },
-      { name: 'Quantum Creativity Studio', href: '/quantum-creativity-studio' },
-      { name: 'Quantum Learning Accelerator', href: '/quantum-learning-accelerator' }
+      { name: 'Quantum Internet Security', href: '/quantum-internet-security-platform' },
+      { name: 'Quantum Financial Trading', href: '/quantum-financial-trading' },
+      { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery-platform' },
+      { name: 'Quantum Learning Accelerator', href: '/services/quantum-learning-accelerator-2029' }
     ]
   },
   {
     title: 'Space & Metaverse',
     icon: Rocket,
     services: [
-      { name: 'Space Mining Automation', href: '/space-mining-automation-platform' },
+      { name: 'Space Resource Mining', href: '/space-resource-mining-platform' },
       { name: 'Metaverse Digital Reality', href: '/metaverse-digital-reality-platform' },
-      { name: 'AI Predictive Health', href: '/ai-predictive-health-analytics' },
-      { name: 'AI Autonomous Business', href: '/ai-autonomous-business-manager' }
+      { name: 'AI Predictive Health', href: '/services/ai-predictive-health-analytics-2029' },
+      { name: 'AI Autonomous Business', href: '/services/ai-autonomous-business-manager-2029' }
     ]
   },
   {
@@ -84,12 +84,12 @@ const resources = [
 
 const company = [
   { name: 'About Us', href: '/about' },
-  { name: 'Our Team', href: '/team' },
+  { name: 'Our Team', href: '/about' },
   { name: 'Careers', href: '/careers' },
   { name: 'Partners', href: '/partners' },
   { name: 'Investors', href: '/investors' },
-  { name: 'Press', href: '/press' },
-  { name: 'Legal', href: '/legal' },
+  { name: 'Press', href: '/news' },
+  { name: 'Legal', href: '/terms' },
   { name: 'Privacy', href: '/privacy' }
 ];
 
