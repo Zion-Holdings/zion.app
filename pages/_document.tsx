@@ -7,7 +7,6 @@ class MyDocument extends Document {
 	}
 
 	render() {
-		const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ziontechgroup.com';
 		return (
 			<Html lang="en">
 				<Head>
@@ -15,7 +14,7 @@ class MyDocument extends Document {
 					<meta name="theme-color" content="#000000" />
 					<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 					<link rel="manifest" href="/site.webmanifest" />
-					<link rel="canonical" href={siteUrl} />
+					{/* Removed global canonical to prevent duplicates; set per-page via SEO component */}
 					<meta name="viewport" content="width=device-width, initial-scale=1" />
 				</Head>
 				<body>
