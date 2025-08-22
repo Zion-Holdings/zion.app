@@ -2,12 +2,11 @@ import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
-  Zap, Globe, Phone, Mail, MapPin, ArrowRight, 
-  Brain, Atom, Shield, Rocket, Target, BookOpen, Users,
-  Star, Sparkles, Cpu, Lock, Cloud, BarChart3, Settings, Eye, Award, Clock, Heart, Lightbulb,
-  Twitter, Linkedin, Facebook, Instagram, Youtube, Github, MessageCircle, MessageSquare,
-  ArrowUp, ExternalLink, Building, Code, Database, Network, Server, Monitor, Smartphone, Camera, Gamepad2,
-  Palette, Music, Film, BookOpenCheck, HelpCircle, FileText, Video, Headphones
+  Phone, Mail, MapPin, 
+  Brain, Atom, Shield, Rocket, BookOpen,
+  Star, Sparkles, BarChart3, 
+  Twitter, Linkedin, Facebook, Instagram, Youtube, Github, 
+  ArrowUp, Building
 } from 'lucide-react';
 
 const contactInfo = {
@@ -127,6 +126,7 @@ const footerSections = [
     icon: <BookOpen className="w-5 h-5 text-cyan-400" />,
     links: [
       { name: 'Blog', href: '/blog' },
+      { name: 'Resources Hub', href: '/resources' },
       { name: 'Case Studies', href: '/case-studies' },
       { name: 'Support Center', href: '/support' },
       { name: 'Training & Certification', href: '/training' },
@@ -137,6 +137,21 @@ const footerSections = [
       { name: 'Browser Automation Cloud', href: '/browser-automation-cloud' },
       { name: 'Secrets Rotation Automation', href: '/secrets-rotation-automation' },
       { name: 'API Performance Testing', href: '/api-performance-testing' }
+    ]
+  },
+  {
+    title: 'Company',
+    description: 'About Zion Tech Group',
+    icon: <Building className="w-5 h-5 text-gray-400" />,
+    links: [
+      { name: 'About Us', href: '/about', description: 'Our story and mission' },
+      { name: 'Contact', href: '/contact', description: 'Get in touch' },
+      { name: 'Get a Quote', href: '/quote', description: 'Request pricing' },
+      { name: 'Book Demo', href: '/demo', description: 'Schedule a demo' },
+      { name: 'Support', href: '/support', description: 'Technical support' },
+      { name: 'Careers', href: '/careers', description: 'Join our team' },
+      { name: 'Partners', href: '/partners', description: 'Partnership opportunities' },
+      { name: 'News', href: '/news', description: 'Company updates' }
     ]
   }
 ];

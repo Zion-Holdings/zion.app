@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  X, ChevronRight, Home, Star, Users, 
-  Settings, HelpCircle, Mail, Phone, MapPin,
+  ChevronRight, Home, Star, Users, 
+  HelpCircle, Mail, Phone, MapPin,
   Brain, Atom, Shield, Rocket, DollarSign,
-  Globe, Cpu, Database, Lock, Zap,
+  Zap,
   TrendingUp, Award, CheckCircle, Clock,
-  ArrowRight, Search, Menu, X as CloseIcon,
-  Target, BookOpen, Calendar, Video
+  Search, X as CloseIcon,
+  Target, BookOpen, Calendar, Video, FileText
 } from 'lucide-react';
 
 const contactInfo = {
@@ -169,6 +169,10 @@ const quickLinks = [
   { name: 'Pricing', href: '/pricing', icon: <DollarSign className="w-4 h-4" /> },
   { name: 'Market Pricing', href: '/market-pricing', icon: <DollarSign className="w-4 h-4" /> },
   { name: 'Services Advertising', href: '/services-advertising', icon: <BookOpen className="w-4 h-4" /> },
+  { name: 'Get Quote', href: '/quote', icon: <DollarSign className="w-4 h-4" /> },
+  { name: 'Book Demo', href: '/demo', icon: <Video className="w-4 h-4" /> },
+  { name: 'Blog', href: '/blog', icon: <FileText className="w-4 h-4" /> },
+  { name: 'Resources', href: '/resources', icon: <BookOpen className="w-4 h-4" /> },
   { name: 'Events', href: '/events', icon: <Calendar className="w-4 h-4" /> },
   { name: 'Webinars', href: '/webinars', icon: <Video className="w-4 h-4" /> },
   { name: 'About Us', href: '/about', icon: <Users className="w-4 h-4" /> },
@@ -214,11 +218,11 @@ export default function EnhancedSidebar2025({ isOpen, onClose }: EnhancedSidebar
     setExpandedCategory(expandedCategory === title ? null : title);
   };
 
-  const filteredServices = sidebarSections.flatMap(section =>
-    section.items.filter(item =>
-      item.name.toLowerCase().includes(searchQuery.toLowerCase())
-    )
-  );
+  // const filteredServices = sidebarSections.flatMap(section =>
+  //   section.items.filter(item =>
+  //     item.name.toLowerCase().includes(searchQuery.toLowerCase())
+  //   )
+  // );
 
   return (
     <AnimatePresence>
@@ -358,7 +362,11 @@ export default function EnhancedSidebar2025({ isOpen, onClose }: EnhancedSidebar
                 <a href="/pricing" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Pricing</a>
                 <a href="/market-pricing" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Market Pricing</a>
                 <a href="/services-advertising" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Services Advertising</a>
+                <a href="/quote" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Get Quote</a>
+                <a href="/demo" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Book Demo</a>
                 <a href="/contact" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Contact</a>
+                <a href="/blog" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Blog</a>
+                <a href="/resources" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Resources</a>
                 <a href="/rag-evaluation-lab" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">RAG Evaluation Lab</a>
                 <a href="/soc2-compliance-automation" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">SOC 2 Compliance Automation</a>
                 <a href="/browser-automation-cloud" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Browser Automation Cloud</a>
