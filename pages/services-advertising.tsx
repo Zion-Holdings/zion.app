@@ -205,6 +205,33 @@ export default function ServicesAdvertisingPage() {
           </section>
 
           <section>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Strategic Platforms</h2>
+            <p className="text-gray-300 text-center max-w-3xl mx-auto mb-6">High-impact solutions that drive measurable outcomes. Average prices reflect typical mid-market deployments; final quotes vary by scope and integrations.</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[ 
+                { name: 'Zero Trust Security Platform', price: '$4,999/mo', benefit: 'Identity-aware access and micro-segmentation', href: '/zero-trust-security-platform' },
+                { name: 'AI-Powered DevOps Platform', price: '$899/mo', benefit: 'AI-assisted CI/CD and safer releases', href: '/ai-powered-devops-platform' },
+                { name: 'Edge Computing Orchestration', price: '$3,499/mo', benefit: 'Fleet management and policy at the edge', href: '/edge-computing-orchestration-platform' },
+                { name: 'Quantum-Secure Cloud Infrastructure', price: '$5,999/mo', benefit: 'PQC-ready encryption and KMS', href: '/quantum-secure-cloud-infrastructure' },
+                { name: 'AI-Powered Cybersecurity', price: '$2,999/mo', benefit: 'Threat detection and SOAR automation', href: '/ai-powered-cybersecurity' },
+                { name: 'Brain-Computer Interface Platform', price: '$9,999/mo', benefit: 'Neural decoding toolkits and safety', href: '/brain-computer-interface-platform' },
+                { name: 'AI-Powered Space Technology', price: '$14,999/mo', benefit: 'Autonomous ops and mission planning', href: '/ai-powered-space-technology' }
+              ].map((o) => (
+                <a key={o.name} href={o.href} className="block p-6 rounded-2xl bg-black/40 border border-gray-700/60 hover:border-cyan-500/40">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="text-sm text-gray-400 mb-1">From</div>
+                      <div className="text-2xl font-bold text-white">{o.price}</div>
+                    </div>
+                    <div className="text-xs text-emerald-400">{o.benefit}</div>
+                  </div>
+                  <div className="text-gray-200 mt-2">{o.name}</div>
+                </a>
+              ))}
+            </div>
+          </section>
+
+          <section>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Benchmark With Market Pricing</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {pricingRefs.map((group) => (
