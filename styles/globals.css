@@ -406,3 +406,33 @@ h1, h2, h3, h4, h5, h6 {
     color: black;
   }
 }
+
+/* Accessibility and Contrast Tweaks */
+@media (prefers-contrast: more) {
+  a, button {
+    text-underline-offset: 3px;
+    text-decoration-thickness: 2px;
+  }
+}
+
+/* Improve focus visibility */
+:focus-visible {
+  outline: 2px solid rgba(0, 212, 255, 0.8);
+  outline-offset: 2px;
+}
+
+/* Responsive container padding adjustments */
+@media (max-width: 640px) {
+  .container { padding-left: 1rem; padding-right: 1rem; }
+}
+@media (min-width: 641px) and (max-width: 1024px) {
+  .container { padding-left: 1.25rem; padding-right: 1.25rem; }
+}
+
+/* Helper utilities */
+.shadow-glow { box-shadow: 0 0 20px rgba(0, 212, 255, 0.15); }
+.shadow-glow-lg { box-shadow: 0 0 30px rgba(0, 212, 255, 0.25); }
+
+/* Improve link contrast on dark bg */
+.prose a { color: #67e8f9; }
+.prose a:hover { color: #a5f3fc; }
