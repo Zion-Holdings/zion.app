@@ -200,11 +200,11 @@ const navigationItems: NavigationItem[] = [
       { name: 'Healthcare AI', href: '/healthcare-ai-solutions', description: 'AI-powered healthcare' },
       { name: 'Financial Technology', href: '/fintech-solutions', description: 'Next-gen fintech' },
       { name: 'Manufacturing AI', href: '/manufacturing-ai-solutions', description: 'Smart manufacturing' },
-      { name: 'Retail Technology', href: '/retail-technology-solutions', description: 'Digital retail transformation' },
-      { name: 'Education Technology', href: '/education-technology-solutions', description: 'AI-powered learning' },
-      { name: 'Government Solutions', href: '/government-technology-solutions', description: 'Public sector innovation' },
-      { name: 'Energy & Utilities', href: '/energy-utilities-solutions', description: 'Sustainable energy tech' },
-      { name: 'Biotech AI Research', href: '/biotech-ai-research-platform', description: 'AI-driven biotech' }
+      { name: 'Retail Technology', href: '/innovative-business-solutions', description: 'Digital retail transformation' },
+      { name: 'Education Technology', href: '/training', description: 'AI-powered learning' },
+      { name: 'Government Solutions', href: '/enterprise-solutions-showcase', description: 'Public sector innovation' },
+      { name: 'Energy & Utilities', href: '/quantum-energy', description: 'Sustainable energy tech' },
+      { name: 'Biotech AI Research', href: '/biotech-ai', description: 'AI-driven biotech' }
     ]
   },
   {
