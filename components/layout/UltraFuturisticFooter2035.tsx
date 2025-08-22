@@ -141,6 +141,8 @@ const footerSections = [
       { name: 'Case Studies', href: '/case-studies' },
       { name: 'Support Center', href: '/support' },
       { name: 'Training & Certification', href: '/training' },
+      { name: 'Events', href: '/events' },
+      { name: 'Webinars', href: '/webinars' },
       { name: 'Market Pricing', href: '/market-pricing' },
       { name: 'Services Advertising', href: '/services-advertising' },
       { name: 'RAG Evaluation Lab', href: '/rag-evaluation-lab' },

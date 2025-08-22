@@ -63,6 +63,8 @@ const navigationItems: NavigationItem[] = [
       { name: 'Blog', href: '/blog', description: 'Insights and updates' },
       { name: 'Case Studies', href: '/case-studies', description: 'Proven results' },
       { name: 'Developer', href: '/developer', description: 'Docs and SDKs' },
+      { name: 'Events', href: '/events', description: 'Upcoming conferences and meetups' },
+      { name: 'Webinars', href: '/webinars', description: 'Live and on-demand sessions' },
       { name: 'Services Advertising', href: '/services-advertising', description: 'Features, benefits and market pricing links' },
       { name: 'AI Knowledge Graph Studio', href: '/services/ai-knowledge-graph-studio', description: 'Semantic search & lineage' },
       { name: 'LLM Guarded API Gateway', href: '/services/llm-guarded-api-gateway', description: 'Safety and policies for LLM apps' }

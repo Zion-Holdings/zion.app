@@ -1,0 +1,487 @@
+{
+  "totalLinks": 1043,
+  "brokenCount": 62,
+  "internalBrokenCount": 2,
+  "internalBrokenPaths": [
+    "/events/",
+    "/webinars/"
+  ],
+  "byDomain": [
+    [
+      "openai.com",
+      4
+    ],
+    [
+      "drata.com",
+      2
+    ],
+    [
+      "ziontechgroup.com",
+      2
+    ],
+    [
+      "www.servicenow.com",
+      2
+    ],
+    [
+      "www.facebook.com",
+      1
+    ],
+    [
+      "linkedin.com",
+      1
+    ],
+    [
+      "www.snowflake.com",
+      1
+    ],
+    [
+      "www.paloaltonetworks.com",
+      1
+    ],
+    [
+      "www.cloudflare.com",
+      1
+    ],
+    [
+      "www.docraptor.com",
+      1
+    ],
+    [
+      "www.mailgun.com",
+      1
+    ],
+    [
+      "www.transcend.io",
+      1
+    ],
+    [
+      "grafana.com",
+      1
+    ],
+    [
+      "www.thinkific.com",
+      1
+    ],
+    [
+      "plausible.io",
+      1
+    ],
+    [
+      "www.hubspot.com",
+      1
+    ],
+    [
+      "pganalyze.com",
+      1
+    ],
+    [
+      "www.aicpa.org",
+      1
+    ],
+    [
+      "www.bigeye.com",
+      1
+    ],
+    [
+      "www.pigment.com",
+      1
+    ],
+    [
+      "github.com",
+      1
+    ],
+    [
+      "www.anaplan.com",
+      1
+    ],
+    [
+      "www.rootly.com",
+      1
+    ],
+    [
+      "www.kompyte.com",
+      1
+    ],
+    [
+      "pagespeed.web.dev",
+      1
+    ],
+    [
+      "www.databricks.com",
+      1
+    ],
+    [
+      "www.tecton.ai",
+      1
+    ],
+    [
+      "transcend.io",
+      1
+    ],
+    [
+      "www.atera.com",
+      1
+    ],
+    [
+      "www.braze.com",
+      1
+    ],
+    [
+      "www.lansweeper.com",
+      1
+    ],
+    [
+      "www.bamboohr.com",
+      1
+    ],
+    [
+      "www.tenable.com",
+      1
+    ],
+    [
+      "gusto.com",
+      1
+    ],
+    [
+      "trustarc.com",
+      1
+    ],
+    [
+      "www.cookiebot.com",
+      1
+    ],
+    [
+      "trustservicescriteria.aicpa.org",
+      1
+    ],
+    [
+      "ottertune.com",
+      1
+    ],
+    [
+      "www.tipalti.com",
+      1
+    ],
+    [
+      "www.stampli.com",
+      1
+    ],
+    [
+      "developers.cloudflare.com",
+      1
+    ],
+    [
+      "learning.postman.com",
+      1
+    ],
+    [
+      "dmarcian.com",
+      1
+    ],
+    [
+      "valimail.com",
+      1
+    ],
+    [
+      "shopify.dev",
+      1
+    ],
+    [
+      "developers.facebook.com",
+      1
+    ],
+    [
+      "www.workday.com",
+      1
+    ],
+    [
+      "pigment.com",
+      1
+    ],
+    [
+      "www.visier.com",
+      1
+    ],
+    [
+      "www.kinaxis.com",
+      1
+    ],
+    [
+      "www.arkieva.com",
+      1
+    ],
+    [
+      "www.gainsight.com",
+      1
+    ],
+    [
+      "www.datarobot.com",
+      1
+    ],
+    [
+      "www.linkedin.com",
+      1
+    ],
+    [
+      "securityscorecard.com",
+      1
+    ],
+    [
+      "facebook.com",
+      1
+    ]
+  ],
+  "examples": [
+    {
+      "status": 400,
+      "url": "https://www.facebook.com/ziontechgroup",
+      "parent": "https://ziontechgroup.com/"
+    },
+    {
+      "status": 404,
+      "url": "https://linkedin.com/company/ziontechgroup",
+      "parent": "https://ziontechgroup.com/"
+    },
+    {
+      "status": 403,
+      "url": "https://openai.com/safety",
+      "parent": "https://ziontechgroup.com/market-pricing/"
+    },
+    {
+      "status": 403,
+      "url": "https://openai.com/pricing",
+      "parent": "https://ziontechgroup.com/market-pricing/"
+    },
+    {
+      "status": 403,
+      "url": "https://www.snowflake.com/en/pricing/",
+      "parent": "https://ziontechgroup.com/market-pricing/"
+    },
+    {
+      "status": 404,
+      "url": "https://www.paloaltonetworks.com/prisma/cloud/pricing",
+      "parent": "https://ziontechgroup.com/market-pricing/"
+    },
+    {
+      "status": 404,
+      "url": "https://www.cloudflare.com/plans/zero-trust/",
+      "parent": "https://ziontechgroup.com/market-pricing/"
+    },
+    {
+      "status": 404,
+      "url": "https://www.docraptor.com/pricing",
+      "parent": "https://ziontechgroup.com/market-pricing/"
+    },
+    {
+      "status": 403,
+      "url": "https://www.mailgun.com/pricing/",
+      "parent": "https://ziontechgroup.com/market-pricing/"
+    },
+    {
+      "status": 404,
+      "url": "https://www.transcend.io/platform",
+      "parent": "https://ziontechgroup.com/market-pricing/"
+    },
+    {
+      "status": 403,
+      "url": "https://drata.com/pricing",
+      "parent": "https://ziontechgroup.com/market-pricing/"
+    },
+    {
+      "status": 404,
+      "url": "https://grafana.com/docs/grafana-cloud/monitor-infrastructure/slo/",
+      "parent": "https://ziontechgroup.com/market-pricing/"
+    },
+    {
+      "status": 403,
+      "url": "https://openai.com/api/pricing",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "status": 403,
+      "url": "https://www.thinkific.com/pricing/",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "status": 404,
+      "url": "https://plausible.io/pricing",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "status": 404,
+      "url": "https://www.hubspot.com/pricing/starter",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "status": 404,
+      "url": "https://pganalyze.com/blog/postgres-index-tuning",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "status": 404,
+      "url": "https://www.aicpa.org/resources/certification/soc-2",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "status": 404,
+      "url": "https://www.bigeye.com/pricing",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "status": 404,
+      "url": "https://www.pigment.com/pricing",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "status": 404,
+      "url": "https://github.com/enterprise/code-security",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "status": 404,
+      "url": "https://www.anaplan.com/platform/overview",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "status": 403,
+      "url": "https://www.rootly.com/pricing",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "status": 404,
+      "url": "https://www.kompyte.com/pricing",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "status": 404,
+      "url": "https://pagespeed.web.dev/pricing",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "status": 404,
+      "url": "https://www.databricks.com/product/mlops",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "status": 403,
+      "url": "https://openai.com/index/safety/",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "status": 403,
+      "url": "https://www.tecton.ai/",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "status": 404,
+      "url": "https://transcend.io/product/",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "status": 403,
+      "url": "https://www.atera.com/pricing/",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "status": 404,
+      "url": "https://www.braze.com/pricing",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "status": 403,
+      "url": "https://www.lansweeper.com/pricing/",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "status": 403,
+      "url": "https://www.bamboohr.com/pricing/",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "status": 404,
+      "url": "https://www.tenable.com/products/tenable-io/pricing",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "status": 403,
+      "url": "https://gusto.com/product/pricing",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "status": 403,
+      "url": "https://trustarc.com/plans/",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "status": 403,
+      "url": "https://www.cookiebot.com/en/pricing/",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "status": 0,
+      "url": "https://trustservicescriteria.aicpa.org/",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "status": 404,
+      "url": "https://ottertune.com/pricing",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "status": 403,
+      "url": "https://www.tipalti.com/pricing/",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "status": 403,
+      "url": "https://www.stampli.com/pricing/",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "status": 404,
+      "url": "https://developers.cloudflare.com/waf/rate-limits/",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "status": 404,
+      "url": "https://learning.postman.com/docs/designing-and-developing-your-api/mocking-data/overview",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "status": 403,
+      "url": "https://dmarcian.com/pricing",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "status": 403,
+      "url": "https://valimail.com/pricing/",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "status": 404,
+      "url": "https://shopify.dev/docs/performance/best-practices",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "status": 400,
+      "url": "https://developers.facebook.com/docs/whatsapp/pricing/",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "status": 404,
+      "url": "https://www.workday.com/en-us/products/analytics-and-reporting/adaptive-planning/enterprise-planning.html",
+      "parent": "https://ziontechgroup.com/ai-financial-planning-platform"
+    },
+    {
+      "status": 404,
+      "url": "https://pigment.com/pricing",
+      "parent": "https://ziontechgroup.com/ai-financial-planning-platform"
+    },
+    {
+      "status": 404,
+      "url": "https://www.visier.com/pricing/",
+      "parent": "https://ziontechgroup.com/ai-hr-analytics-platform"
+    }
+  ]
+}
