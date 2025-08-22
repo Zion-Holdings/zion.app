@@ -102,7 +102,7 @@ export const validatedServices2025Q4: ValidatedService[] = [
 		benefits: ['Understand what works', 'Share results easily', 'Fast, no bloat'],
 		integrations: ['Next.js', 'GTM', 'Google Search Console'],
 		link: 'https://ziontechgroup.com/services-advertising#smb-web-analytics',
-		references: ['https://plausible.io/pricing', 'https://matomo.org/pricing/']
+		references: ['https://plausible.io/#pricing', 'https://matomo.org/pricing/']
 	},
 	{
 		id: 'it-helpdesk-suite',
