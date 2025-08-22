@@ -12,7 +12,6 @@ class MyDocument extends Document {
 			<Html lang="en" data-theme="dark">
 				<Head>
 					<meta charSet="utf-8" />
-					<meta name="viewport" content="width=device-width, initial-scale=1" />
 					<meta name="theme-color" content="#000000" />
 					<meta name="color-scheme" content="dark light" />
 					<link rel="preconnect" href="https://plausible.io" crossOrigin="anonymous" />

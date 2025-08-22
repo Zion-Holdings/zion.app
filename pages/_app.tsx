@@ -10,11 +10,11 @@ export default function App({ Component, pageProps }: AppProps) {
 	const renderedRef = useRef(false);
 	return (
 		<SEOContext.Provider value={{ renderedRef }}>
-			<DefaultSEO />
 			<Analytics />
 			<Layout>
 				<Component {...pageProps} />
 			</Layout>
+			<DefaultSEO />
 		</SEOContext.Provider>
 	);
 }
