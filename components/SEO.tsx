@@ -19,7 +19,7 @@ const DEFAULTS = {
 	description:
 		"Transform your business with Zion Tech Group's revolutionary AI, quantum computing, and micro SAAS solutions. Leading-edge technology for unprecedented growth.",
 	url: 'https://ziontechgroup.com',
-	image: 'https://ziontechgroup.com/og-image.png'
+	image: '/og-image.svg'
 };
 
 export default function SEO({ title, description, canonical, ogImage, image, noIndex, noindex, nofollow, jsonLd }: SEOProps) {
@@ -30,7 +30,14 @@ export default function SEO({ title, description, canonical, ogImage, image, noI
 	const pagePath = typeof router?.asPath === 'string' ? router.asPath : '/';
 	const derivedCanonical = baseUrl.replace(/\/$/, '') + (pagePath.startsWith('/') ? pagePath : `/${pagePath}`);
 	const canonicalUrl = canonical || derivedCanonical;
-	const imageUrl = image || ogImage || DEFAULTS.image;
+	const providedImage = image || ogImage || DEFAULTS.image;
+	const toAbsoluteImageUrl = (src: string): string => {
+		if (!src) return DEFAULTS.image;
+		if (/^https?:\/\//i.test(src)) return src;
+		if (src.startsWith('/')) return `${baseUrl.replace(/\/$/, '')}${src}`;
+		return `${baseUrl.replace(/\/$/, '')}/${src}`;
+	};
+	const absoluteImageUrl = toAbsoluteImageUrl(providedImage);
 	const isNoIndex = (noIndex ?? false) || (noindex ?? false);
 	const robotsContent = `${isNoIndex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}`;
 	const imageAlt = 'Zion Tech Group - Revolutionary Technology Solutions';
@@ -47,14 +54,14 @@ export default function SEO({ title, description, canonical, ogImage, image, noI
 			<meta property="og:type" content="website" />
 			<meta property="og:site_name" content="Zion Tech Group" />
 			<meta property="og:locale" content="en_US" />
-			<meta property="og:image" content={imageUrl} />
+			<meta property="og:image" content={absoluteImageUrl} />
 			<meta property="og:image:alt" content={imageAlt} />
 			<meta property="og:image:width" content="1200" />
 			<meta property="og:image:height" content="630" />
 			<meta name="twitter:card" content="summary_large_image" />
 			<meta name="twitter:title" content={pageTitle} />
 			<meta name="twitter:description" content={pageDescription} />
-			<meta name="twitter:image" content={imageUrl} />
+			<meta name="twitter:image" content={absoluteImageUrl} />
 			<meta name="twitter:image:alt" content={imageAlt} />
 			{jsonLd ? (
 				<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />

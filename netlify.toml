@@ -31,3 +31,4 @@
     Permissions-Policy = "geolocation=(), microphone=(), camera=()"
     Strict-Transport-Security = "max-age=31536000"
     X-DNS-Prefetch-Control = "on"
+    Cache-Control = "public, max-age=0, must-revalidate"
