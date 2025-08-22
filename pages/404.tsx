@@ -1,20 +1,20 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
+import React from 'react';
+import Link from 'next/link';
+import SEO from '../components/SEO';
 
-const Custom404: NextPage = () => {
+export default function NotFoundPage() {
   return (
-    <div>
-      <Head>
-        <title>404 - Zion Tech Solutions</title>
-        <meta name="description" content="404 page" />
-      </Head>
-      
-      <main>
-        <h1>404</h1>
-        <p>This page is under construction.</p>
-      </main>
-    </div>
+    <>
+      <SEO title="Page Not Found | Zion Tech Group" description="The page you're looking for doesn't exist." noIndex noindex />
+      <section className="min-h-[70vh] flex items-center justify-center px-6">
+        <div className="text-center max-w-xl">
+          <h1 className="text-5xl font-extrabold mb-4">404</h1>
+          <p className="text-gray-300 mb-8">Sorry, we couldn’t find that page.</p>
+          <Link href="/" className="inline-block bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-6 py-3 rounded-lg hover:from-cyan-600 hover:to-blue-600 transition-colors">
+            Go back home
+          </Link>
+        </div>
+      </section>
+    </>
   );
-};
-
-export default Custom404;
+}

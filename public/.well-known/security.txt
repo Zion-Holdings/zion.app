@@ -1,0 +1,5 @@
+Contact: mailto:kleber@ziontechgroup.com
+Policy: https://ziontechgroup.com/security/
+Acknowledgments: https://ziontechgroup.com/security/
+Preferred-Languages: en
+Canonical: https://ziontechgroup.com/.well-known/security.txt

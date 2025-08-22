@@ -1,33 +1,38 @@
-#!/usr/bin/env sh
+#!/bin/bash
 
 echo "🔍 Running pre-commit checks..."
 
-# Temporarily disable ESLint due to Next.js installation issues
-# echo "📝 Running ESLint..."
-# npm run lint || {
-#     echo "❌ ESLint failed. Please fix the issues before committing."
-#     exit 1
-# }
+# Run page structure validation
+echo "  📋 Validating page structure..."
+npm run build:validate
 
-# Run type checking
-echo "🔍 Running TypeScript type check..."
-npm run type-check || {
-    echo "❌ TypeScript type check failed. Please fix the issues before committing."
-    exit 1
-}
-
-# Check for uncommitted changes in package files
-if git diff --cached --name-only | grep -E "package\.json|package-lock\.json" > /dev/null; then
-    echo "📦 Package files changed, running npm install..."
-    npm install
+if [ $? -ne 0 ]; then
+  echo "❌ Page structure validation failed!"
+  echo "   Please fix the issues before committing."
+  echo "   Run 'npm run build:validate' for details."
+  exit 1
 fi
 
-# Check for automation system conflicts
-if [ -f "automation/universal-automation-launcher.sh" ]; then
-    echo "🤖 Checking automation system status..."
-    /bin/bash automation/universal-automation-launcher.sh status > /dev/null 2>&1 || {
-        echo "⚠️  Warning: Automation system may have issues"
-    }
+# Run quick build health check
+echo "  🏥 Running build health check..."
+npm run build:health-check
+
+if [ $? -ne 0 ]; then
+  echo "❌ Build health check failed!"
+  echo "   Please fix the build issues before committing."
+  echo "   Run 'npm run build:health-check' for details."
+  exit 1
 fi
 
-echo "✅ Pre-commit checks passed"
+# Run linting on staged files only
+echo "  🧹 Running lint-staged..."
+npx lint-staged
+
+if [ $? -ne 0 ]; then
+  echo "❌ Lint-staged failed!"
+  echo "   Please fix the issues in staged files."
+  exit 1
+fi
+
+echo "✅ All pre-commit checks passed"
+echo "   🚀 Ready to commit!"
