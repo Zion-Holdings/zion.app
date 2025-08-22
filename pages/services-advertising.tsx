@@ -85,7 +85,7 @@ export default function ServicesAdvertisingPage() {
 
 				<section className="space-y-6">
 					<h2 className="text-2xl font-semibold text-white">Domain & DNS Monitor</h2>
-					<p className="text-slate-300">WHOIS, nameserver, and DNS record drift detection with alerts.</p>
+					<p className="text-slate-300">WHOIS expiry, nameserver changes and DNS record drift with alerts and diffs.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $5–$40/mo</li>
 						<li>References: {ext('https://www.cloudflare.com/plans/')}, {ext('https://www.digicert.com/tls-ssl/ssl-tools')}</li>
@@ -93,38 +93,56 @@ export default function ServicesAdvertisingPage() {
 				</section>
 
 				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Affiliate Attribution & Payouts Hub</h2>
-					<p className="text-slate-300">Cross-device attribution with first-party identity stitching and automated payouts.</p>
+					<h2 className="text-2xl font-semibold text-white">Edge Feature Flags</h2>
+					<p className="text-slate-300">Audience and geo-targeted flags at the edge with gradual rollouts and automatic rollback.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $100–$300/mo</li>
-						<li>References: {ext('https://stripe.com/pricing')}, {ext('https://pay.google.com/about/business/')}, {ext('https://partnerstack.com/')}</li>
+						<li>Typical SMB budget: $50–$500/mo</li>
+						<li>References: {ext('https://vercel.com/pricing')}, {ext('https://www.cloudflare.com/plans/')}</li>
 					</ul>
 				</section>
-				
+
 				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">API Security Scanner</h2>
-					<p className="text-slate-300">Continuously discover APIs and detect OWASP API Top 10 risks with CI gating.</p>
+					<h2 className="text-2xl font-semibold text-white">Affiliate Attribution & Payouts Hub</h2>
+					<p className="text-slate-300">First-party tracking with cross-device identity and automated payouts for partners.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $100–$2,000/mo</li>
-						<li>References: {ext('https://www.cloudflare.com/plans/')}, {ext('https://www.fastly.com/pricing')}</li>
+						<li>Typical SMB budget: $99–$399/mo</li>
+						<li>References: {ext('https://stripe.com/pricing')}, {ext('https://partnerstack.com/')}</li>
 					</ul>
 				</section>
 
 				<section className="space-y-6">
 					<h2 className="text-2xl font-semibold text-white">Podcast Transcription & Insights</h2>
-					<p className="text-slate-300">Transcripts, chapters, show notes, and SEO-ready blog pages with exports.</p>
+					<p className="text-slate-300">Transcripts, chapters, show notes and SEO-ready blog posts with CMS exports.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $10–$60/mo + usage</li>
-						<li>References: {ext('https://openai.com/api/pricing')}, {ext('https://www.descript.com/pricing')}, {ext('https://otter.ai/pricing')}</li>
+						<li>References: {ext('https://openai.com/api/pricing')}, {ext('https://www.descript.com/pricing')}</li>
 					</ul>
 				</section>
 
 				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Edge Feature Flags</h2>
-					<p className="text-slate-300">Audience and geo-targeted flags at the edge with gradual rollouts and fallbacks.</p>
+					<h2 className="text-2xl font-semibold text-white">SMB Website Analytics</h2>
+					<p className="text-slate-300">Privacy-friendly, cookie-less analytics with goals, funnels, and UTM reports.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $50–$500/mo</li>
-						<li>References: {ext('https://vercel.com/pricing')}, {ext('https://www.cloudflare.com/plans/')}</li>
+						<li>Typical SMB budget: $9–$50/mo</li>
+						<li>References: {ext('https://plausible.io/pricing')}, {ext('https://usefathom.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Employee Scheduling Suite</h2>
+					<p className="text-slate-300">Shifts, availability, swaps and notifications with payroll-friendly exports.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $30–$100/mo</li>
+						<li>References: {ext('https://joinhomebase.com/pricing/')}, {ext('https://wheniwork.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">LMS Starter</h2>
+					<p className="text-slate-300">Courses, quizzes, certificates and progress tracking in days.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $30–$150/mo</li>
+						<li>References: {ext('https://teachable.com/pricing')}, {ext('https://www.thinkific.com/pricing/')}</li>
 					</ul>
 				</section>
 
