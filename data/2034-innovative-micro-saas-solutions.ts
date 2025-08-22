@@ -1,94 +1,92 @@
-export type BasicService = {
+export type MicroSaasSolution = {
 	id: string;
 	name: string;
-	description: string;
 	category: string;
-	pricing?: { starter?: string; monthly?: number };
+	tagline: string;
+	description: string;
 	features: string[];
-	link?: string;
-	launchDate?: string;
+	pricing: {
+		starter?: string;
+		monthly?: number;
+		professional?: string;
+		enterprise?: string;
+	};
+	status?: 'Live' | 'Beta' | 'GA';
 	rating?: number;
+	customerCount?: number;
+	demo?: string;
+	contact?: string;
 };
 
-export const innovativeMicroSaasSolutions: BasicService[] = [
+export const innovativeMicroSaasSolutions: MicroSaasSolution[] = [
 	{
-		id: 'affiliate-tracking-hub',
-		name: 'Affiliate Tracking Hub',
-		description: 'Cross-device attribution, fraud prevention, and automated payouts for partner programs.',
-		category: 'Micro SAAS',
-		pricing: { starter: '$40/mo' },
-		features: [
-			'Attribution & UTM stitching',
-			'Fraud prevention signals',
-			'Automated payouts (Stripe)',
-			'Partner portal & analytics'
-		],
-		link: '/services-advertising#affiliate-tracking-hub',
-		launchDate: '2025-08-20',
-		rating: 4.6
+		id: 'ai-contract-risk-analyzer',
+		name: 'AI Contract Risk Analyzer',
+		category: 'Business Operations',
+		tagline: 'Instant clause risk scores with playbook suggestions',
+		description: 'Analyze vendor and customer contracts for risky clauses, missing terms, and negotiation leverage with explainable highlights.',
+		features: ['Clause classification with citations', 'Playbook-aligned suggestions', 'Export to Word/Google Docs'],
+		pricing: { monthly: 149, professional: '$399/mo', enterprise: 'Custom' },
+		status: 'Live',
+		rating: 4.8,
+		customerCount: 220,
+		demo: '/innovative-micro-saas-showcase',
+		contact: 'kleber@ziontechgroup.com'
 	},
 	{
-		id: 'smb-website-analytics',
-		name: 'SMB Website Analytics',
-		description: 'Privacy-friendly dashboards with goals, funnels, and cookie-less tracking.',
-		category: 'Micro SAAS',
-		pricing: { starter: '$9/mo' },
-		features: [
-			'Goal and funnel tracking',
-			'UTM and campaign insights',
-			'Embeddable dashboards',
-			'GDPR-friendly metrics'
-		],
-		link: '/services-advertising#smb-website-analytics',
-		launchDate: '2025-08-20',
-		rating: 4.5
+		id: 'customer-feedback-miner',
+		name: 'Customer Feedback Miner',
+		category: 'Customer Success',
+		tagline: 'Unify reviews, tickets, and NPS into actions',
+		description: 'Aggregate and label customer feedback from email, chat, reviews, and surveys. Prioritize fixes with impact estimates.',
+		features: ['Multi-source ingestion', 'Theme detection and trendlines', 'Impact scoring and roadmap export'],
+		pricing: { monthly: 99, professional: '$249/mo' },
+		status: 'Live',
+		rating: 4.7,
+		customerCount: 340,
+		demo: '/services',
+		contact: 'kleber@ziontechgroup.com'
 	},
 	{
-		id: 'it-helpdesk-suite',
-		name: 'IT Helpdesk Suite',
-		description: 'Ticketing, SLAs, KB, and self-service portal tailored for IT teams and MSPs.',
-		category: 'Micro SAAS',
-		pricing: { starter: '$30/agent/mo' },
-		features: [
-			'SLA policies and automations',
-			'Knowledge base and portal',
-			'CSAT and reporting',
-			'Email and chat integrations'
-		],
-		link: '/services-advertising#it-helpdesk-suite',
-		launchDate: '2025-08-20',
-		rating: 4.5
+		id: 'service-blueprint-mapper',
+		name: 'Service Blueprint Mapper',
+		category: 'Business Operations',
+		tagline: 'From process chaos to clear swimlanes',
+		description: 'Map your customer journeys and internal processes to surface bottlenecks, costs, and automation opportunities.',
+		features: ['Auto swimlane detection', 'SLA/SLO overlays', 'Automation recommendations'],
+		pricing: { monthly: 59, professional: '$149/mo' },
+		status: 'Beta',
+		rating: 4.6,
+		customerCount: 95,
+		demo: '/services',
+		contact: 'kleber@ziontechgroup.com'
 	},
 	{
-		id: 'ecommerce-returns-center',
-		name: 'E‑commerce Returns Center',
-		description: 'Self-service returns, labels, exchanges, and analytics for Shopify/BigCommerce.',
-		category: 'Micro SAAS',
-		pricing: { starter: '$30/mo' },
-		features: [
-			'RMA workflows & labels',
-			'Exchange/credit flows',
-			'Fraud prevention signals',
-			'Analytics and cohort views'
-		],
-		link: '/services-advertising#ecommerce-returns-center',
-		launchDate: '2025-08-20',
-		rating: 4.5
+		id: 'on-call-scheduler',
+		name: 'Automated On‑Call Scheduler',
+		category: 'Customer Support',
+		tagline: 'Fair rotations with fatigue safeguards',
+		description: 'Generate equitable on-call schedules with PTO, skills, and fatigue rules. Syncs with PagerDuty and Slack.',
+		features: ['Rule-based rotations', 'PagerDuty/Slack sync', 'Fatigue and coverage score'],
+		pricing: { monthly: 79, professional: '$199/mo' },
+		status: 'Live',
+		rating: 4.8,
+		customerCount: 140,
+		demo: '/incident-copilot',
+		contact: 'kleber@ziontechgroup.com'
 	},
 	{
-		id: 'ai-seo-optimizer',
-		name: 'AI SEO Content Optimizer',
-		description: 'Guided optimization for keywords, structure, and readability with brief exports.',
-		category: 'Micro SAAS',
-		pricing: { starter: '$30/mo' },
-		features: [
-			'Keyword clustering',
-			'Outline and brief generator',
-			'Quality and readability scoring',
-			'CMS export & tracking'
-		],
-		link: '/services-advertising#ai-seo-optimizer',
-		launchDate: '2025-08-20',
-		rating: 4.6
+		id: 'ai-ux-copy-assistant',
+		name: 'AI UX Copy Assistant',
+		category: 'AI Creativity',
+		tagline: 'Clearer copy, higher conversion',
+		description: 'Generate and A/B test UX microcopy grounded in analytics and heuristics. Export to CMS with guardrails.',
+		features: ['Heuristic-check suggestions', 'Tone/style constraints', 'Experiment export'],
+		pricing: { monthly: 39, professional: '$99/mo' },
+		status: 'Live',
+		rating: 4.7,
+		customerCount: 410,
+		demo: '/seo-automation',
+		contact: 'kleber@ziontechgroup.com'
 	}
 ];

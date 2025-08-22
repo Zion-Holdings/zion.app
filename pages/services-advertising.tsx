@@ -708,6 +708,133 @@ export default function ServicesAdvertisingPage() {
 						<li>References: {ext('https://www.twilio.com/pricing')}, {ext('https://www.vonage.com/communications-apis/pricing')}</li>
 					</ul>
 				</section>
+
+				<section id="ai-sales-enablement-engine" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">AI Sales Enablement Content Engine</h2>
+					<p className="text-slate-300">Battlecards, email cadences, and one-pagers auto‑generated from your product and win/loss data.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $49–$299/mo</li>
+						<li>References: {ext('https://www.jasper.ai/pricing')}, {ext('https://www.copy.ai/pricing')}</li>
+					</ul>
+				</section>
+
+				<section id="iot-device-fleet-manager" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">IoT Device Fleet Manager</h2>
+					<p className="text-slate-300">Provisioning, OTA updates, telemetry, and alerts for sensor fleets with secure identities.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $49–$499/mo + usage</li>
+						<li>References: {ext('https://aws.amazon.com/iot-core/pricing/')}, {ext('https://www.golioth.io/pricing')}</li>
+					</ul>
+				</section>
+
+				<section id="security-awareness-training" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Security Awareness Training Platform</h2>
+					<p className="text-slate-300">Phishing simulations, micro‑lessons, and compliance reporting for the whole company.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $2–$5/user/mo</li>
+						<li>References: {ext('https://www.knowbe4.com/pricing')}, {ext('https://getcurricula.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section id="vulnerability-patch-orchestrator" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Vulnerability & Patch Orchestrator</h2>
+					<p className="text-slate-300">Agentless asset discovery, risk‑based vuln prioritization, and automated patch windows.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $50–$500/mo</li>
+						<li>References: {ext('https://www.tenable.com/products/tenable-io/pricing')}, {ext('https://www.rapid7.com/pricing/')}</li>
+					</ul>
+				</section>
+
+				<section id="hr-onboarding-automation" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">HR Onboarding Automation Hub</h2>
+					<p className="text-slate-300">Automated preboarding, account provisioning, and training checklists across HRIS and IT.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $6–$20/user/mo</li>
+						<li>References: {ext('https://www.bamboohr.com/pricing/')}, {ext('https://www.rippling.com/pricing')}, {ext('https://gusto.com/product/pricing')}</li>
+					</ul>
+				</section>
+
+				<section id="shopify-speed-optimizer" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Shopify Speed & Core Web Vitals Optimizer</h2>
+					<p className="text-slate-300">Theme profiling, image/CSS/JS optimization, and A/B testing for conversion impact.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $19–$79/mo</li>
+						<li>References: {ext('https://nitropack.io/pricing')}, {ext('https://www.shopify.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section id="llm-observability-tracing" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">LLM Observability & Tracing</h2>
+					<p className="text-slate-300">Prompt/version tracking, cost/latency budgets, evals, and error analysis.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $0–$300/mo</li>
+						<li>References: {ext('https://wandb.ai/site/pricing')}, {ext('https://whylabs.ai/pricing')}</li>
+					</ul>
+				</section>
+
+				<section id="dpia-privacy-toolkit" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">DPIA & Privacy Impact Toolkit</h2>
+					<p className="text-slate-300">Templates, workflows, and risk scoring for DPIA/PIA with audit trails.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $50–$500/mo</li>
+						<li>References: {ext('https://www.onetrust.com/platform/privacy-management/')}, {ext('https://trustarc.com/plans/')}</li>
+					</ul>
+				</section>
+
+				<section id="b2b-customer-portal-starter" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">B2B Customer Portal Starter</h2>
+					<p className="text-slate-300">Secure portal with SSO, invoices, usage, and self‑service entitlements.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $50–$300/mo</li>
+						<li>References: {ext('https://stripe.com/pricing')}, {ext('https://auth0.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section id="policy-as-code-governance" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Policy‑as‑Code Governance</h2>
+					<p className="text-slate-300">Author, test, and enforce org policies across services and CI with OPA/Rego.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $0–$500/mo</li>
+						<li>References: {ext('https://www.openpolicyagent.org/')}, {ext('https://www.styra.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section id="apple-mdm-suite" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Apple MDM Suite (ABM/DEP)</h2>
+					<p className="text-slate-300">Zero‑touch enrollment, app management, and compliance for macOS/iOS fleets.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $4–$12/device/mo</li>
+						<li>References: {ext('https://www.jamf.com/pricing/')}, {ext('https://www.kandji.io/pricing')}</li>
+					</ul>
+				</section>
+
+				<section id="soc2-continuous-controls" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">SOC 2 Continuous Controls Monitoring</h2>
+					<p className="text-slate-300">Integrations, evidence collection, and gap alerts mapped to Trust Services Criteria.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $200–$1,000/mo</li>
+						<li>References: {ext('https://www.vanta.com/pricing')}, {ext('https://drata.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section id="ai-red-team-testing" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">AI Red Team & Prompt Injection Testing</h2>
+					<p className="text-slate-300">Automated jailbreaks, sensitive data leaks, and safety evals with reports and fixes.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $0–$500/mo</li>
+						<li>References: {ext('https://www.lakera.ai/')}, {ext('https://github.com/leondz/garak')}</li>
+					</ul>
+				</section>
+
+				<section id="api-monetization-dev-portal" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">API Monetization & Developer Portal</h2>
+					<p className="text-slate-300">Plans, metering, billing, keys, and a docs portal with SDK generation.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $99–$499/mo</li>
+						<li>References: {ext('https://stripe.com/pricing')}, {ext('https://recurly.com/pricing/')}, {ext('https://konghq.com/pricing')}</li>
+					</ul>
+				</section>
+
 				{/* Contact CTA */}
 				<div className="flex flex-col md:flex-row items-center gap-4 p-4 rounded-xl bg-black/30 border border-gray-800">
 					<a href="tel:+13024640950" className="px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white">Call +1 302 464 0950</a>

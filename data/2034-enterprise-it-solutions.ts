@@ -1,110 +1,111 @@
-export type BasicService = {
+export type EnterpriseSolution = {
 	id: string;
 	name: string;
+	category: 'Enterprise Security' | 'DevOps & Automation' | 'Data & Analytics' | 'Cloud Services' | 'Cybersecurity';
+	tagline: string;
 	description: string;
-	category: string;
-	pricing?: { starter?: string; monthly?: number };
 	features: string[];
-	link?: string;
-	launchDate?: string;
-	rating?: number;
+	pricing: {
+		starter: string;
+		professional?: string;
+		enterprise?: string;
+	};
+	marketSize?: string;
+	customerCount?: number;
+	demo?: string;
+	contact?: string;
+	status?: 'Live' | 'Beta' | 'GA';
 };
 
-export const enterpriseITSolutions: BasicService[] = [
+export const enterpriseITSolutions: EnterpriseSolution[] = [
 	{
-		id: 'eks-kubernetes-ops',
-		name: 'Managed Kubernetes on AWS EKS',
-		description: 'Production-grade EKS setup with IaC, autoscaling, observability, cost guardrails, and incident readiness.',
-		category: 'Enterprise IT',
-		pricing: { starter: '$1,500/mo' },
-		features: [
-			'Cluster design and IaC (Terraform)',
-			'Autoscaling & node pool optimization',
-			'Observability (metrics, logs, traces)',
-			'Security baselines & backup/runbooks'
-		],
-		link: '/services-advertising#eks-kubernetes-ops',
-		launchDate: '2025-08-20',
-		rating: 4.8
-	},
-	{
-		id: 'gke-kubernetes-ops',
-		name: 'Managed Kubernetes on Google GKE',
-		description: 'Hardened GKE with cost controls, SRE playbooks, GitOps, and progressive delivery.',
-		category: 'Enterprise IT',
-		pricing: { starter: '$1,500/mo' },
-		features: [
-			'GitOps (ArgoCD/Flux) setup',
-			'Blue/green & canary rollouts',
-			'FinOps dashboards and alerts',
-			'Backup & DR rehearsals'
-		],
-		link: '/services-advertising#gke-kubernetes-ops',
-		launchDate: '2025-08-20',
-		rating: 4.7
-	},
-	{
-		id: 'cloudflare-zero-trust',
-		name: 'Zero Trust SASE with Cloudflare',
-		description: 'Secure access, ZTNA, SWG, DNS filtering, and posture checks with least-privilege access.',
+		id: 'zero-trust-access-2034',
+		name: 'Zero Trust Access Platform',
 		category: 'Enterprise Security',
-		pricing: { starter: '$7/user/mo' },
+		tagline: 'Continuous verification for apps, users, and devices',
+		description: 'Implement identity-aware access across apps and networks with device posture checks, SSO, and least-privilege policies.',
 		features: [
-			'ZTNA and app-level policies',
-			'DNS/HTTP filtering & CASB',
-			'Device posture & identity signals',
-			'Incident & audit reporting'
+			'Identity-aware proxy with SSO/SAML/OIDC',
+			'Device posture and risk-based policies',
+			'Granular app segmentation and audit logs',
 		],
-		link: '/services-advertising#cloudflare-zero-trust',
-		launchDate: '2025-08-20',
-		rating: 4.6
+		pricing: { starter: '$3,000/mo', professional: '$6,000/mo', enterprise: 'Custom' },
+		marketSize: '$20B+ ZTNA/SASE',
+		customerCount: 120,
+		demo: '/enterprise-solutions-showcase',
+		contact: 'kleber@ziontechgroup.com',
+		status: 'Live'
 	},
 	{
-		id: 'microsoft-intune-mdm',
-		name: 'MDM/MAM with Microsoft Intune',
-		description: 'Device enrollment, compliance, app protection, and conditional access with Microsoft Intune.',
-		category: 'Enterprise IT',
-		pricing: { starter: '$8/user/mo' },
+		id: 'ai-devops-copilot-2034',
+		name: 'AI DevOps Copilot',
+		category: 'DevOps & Automation',
+		tagline: 'Faster delivery with policy-as-code and AI runbooks',
+		description: 'Automate CI/CD guardrails, incident runbooks, and cost-aware deployments with GitOps and progressive delivery.',
 		features: [
-			'Zero-touch enrollment (ABM/ADB)',
-			'Compliance & conditional access',
-			'Application lifecycle & patching',
-			'Security baselines & reporting'
+			'Change risk analysis and rollout policies',
+			'AI-generated runbooks and remediation steps',
+			'KPIs: DORA metrics and change failure rate',
 		],
-		link: '/services-advertising#microsoft-intune-mdm',
-		launchDate: '2025-08-20',
-		rating: 4.6
+		pricing: { starter: '$2,500/mo', professional: '$5,000/mo' },
+		marketSize: '$15B+ DevOps',
+		customerCount: 85,
+		demo: '/enterprise-solutions-showcase',
+		contact: 'kleber@ziontechgroup.com',
+		status: 'Live'
 	},
 	{
-		id: 'backup-dr-runbooks',
-		name: 'Backup & DR Runbooks',
-		description: 'Automated backups, restore rehearsals, and audit-ready evidence across cloud workloads.',
-		category: 'Enterprise IT',
-		pricing: { starter: '$99/mo' },
+		id: 'lakehouse-accelerator-2034',
+		name: 'Lakehouse Accelerator',
+		category: 'Data & Analytics',
+		tagline: 'Weeks to governed analytics with ELT and dbt',
+		description: 'Stand up a modern lakehouse with ingestion templates, dbt models, and governance for finance and product analytics.',
 		features: [
-			'Policy-based backups',
-			'Restore rehearsal scheduling',
-			'Immutable and encrypted storage',
-			'Audit evidence exports'
+			'Ingestion templates (Fivetran/Airbyte)',
+			'Dbt model packs and tests',
+			'Lineage, SLAs, and freshness monitors',
 		],
-		link: '/services-advertising#backup-dr-runbook-hub',
-		launchDate: '2025-08-20',
-		rating: 4.5
+		pricing: { starter: '$4,000/mo', professional: '$8,000/mo' },
+		marketSize: '$30B+ Data Analytics',
+		customerCount: 60,
+		demo: '/warehouse-accelerator',
+		contact: 'kleber@ziontechgroup.com',
+		status: 'GA'
 	},
 	{
-		id: 'cloud-cost-optimization',
-		name: 'Cloud Cost Optimization Accelerator',
-		description: 'Rightsizing, SP/RI planning, and anomaly detection with actionable FinOps guardrails.',
-		category: 'Enterprise IT',
-		pricing: { starter: '$99/mo' },
+		id: 'cloud-migration-2034',
+		name: 'Cloud Migration Factory',
+		category: 'Cloud Services',
+		tagline: 'Blueprinted migrations with FinOps guardrails',
+		description: 'Move applications to AWS/Azure/GCP with landing zones, IaC, and cost governance baked in.',
 		features: [
-			'Waste detection & rightsizing',
-			'Commitment planning (SP/RI)',
-			'Anomaly alerting & budgets',
-			'Unit economics dashboards'
+			'Landing zone setup and SSO',
+			'Terraform/IaC pipelines',
+			'FinOps budgets and anomaly alerts',
 		],
-		link: '/services-advertising#cloud-cost-optimization-accelerator',
-		launchDate: '2025-08-20',
-		rating: 4.6
+		pricing: { starter: '$6,000/mo', professional: '$12,000/mo' },
+		marketSize: '$60B+ Cloud Services',
+		customerCount: 40,
+		demo: '/enterprise-solutions-showcase',
+		contact: 'kleber@ziontechgroup.com',
+		status: 'Live'
+	},
+	{
+		id: 'soc-operations-2034',
+		name: 'Cybersecurity Operations Center (vNext)',
+		category: 'Cybersecurity',
+		tagline: '24/7 monitoring, detection, and response with AI',
+		description: 'Deploy SIEM, EDR, and SOAR with playbooks, threat intel, and compliance-ready reporting.',
+		features: [
+			'SIEM/EDR integration and tuning',
+			'Automated SOAR playbooks',
+			'Compliance evidence and dashboards',
+		],
+		pricing: { starter: '$5,000/mo', professional: '$9,000/mo', enterprise: 'Custom' },
+		marketSize: '$180B+ Cybersecurity',
+		customerCount: 55,
+		demo: '/security',
+		contact: 'kleber@ziontechgroup.com',
+		status: 'Live'
 	}
 ];
