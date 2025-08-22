@@ -46,6 +46,9 @@ import { cuttingEdgeAIServices } from '../../data/2034-cutting-edge-ai-services'
 import { aiAutonomousEcosystemServices2029 } from '../../data/2029-ai-autonomous-ecosystem';
 import { emergingTechBreakthroughServices2029 } from '../../data/2029-emerging-tech-breakthroughs';
 import { practicalBusinessSolutionServices2029 } from '../../data/2029-practical-business-solutions';
+import { real2031MicroSaasAdditions } from '../../data/real-2031-micro-saas-additions';
+import { real2031ITServicesAdditions } from '../../data/real-2031-it-services-additions';
+import { real2031AIServicesAdditions } from '../../data/real-2031-ai-services-additions';
 
 type Service = typeof enhancedRealMicroSaasServices[number];
 
@@ -94,10 +97,13 @@ function getAllServices(): Service[] {
 		.concat(enterpriseITSolutions as unknown as Service[])
 		.concat(innovativeMicroSaasSolutions as unknown as Service[])
 		.concat(cuttingEdgeAIServices as unknown as Service[])
-		// Include 2029 showcase services so /services/*-2029 slugs resolve
+		// Include 2029 showcase services and 2031 additions
 		.concat(aiAutonomousEcosystemServices2029 as unknown as Service[])
 		.concat(emergingTechBreakthroughServices2029 as unknown as Service[])
-		.concat(practicalBusinessSolutionServices2029 as unknown as Service[]);
+		.concat(practicalBusinessSolutionServices2029 as unknown as Service[])
+		.concat(real2031MicroSaasAdditions as unknown as Service[])
+		.concat(real2031ITServicesAdditions as unknown as Service[])
+		.concat(real2031AIServicesAdditions as unknown as Service[]);
 }
 
 function toSlug(value: string): string {

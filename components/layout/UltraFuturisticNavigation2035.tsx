@@ -385,7 +385,7 @@ const UltraFuturisticNavigation2035: React.FC = () => {
             {/* Right Side Actions */}
             <div className="hidden lg:flex items-center gap-4">
               {/* Quick Actions */}
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2" role="navigation" aria-label="Quick actions">
                 {quickActions.map((action) => (
                   <Link
                     key={action.name}
@@ -395,6 +395,7 @@ const UltraFuturisticNavigation2035: React.FC = () => {
                         ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white hover:from-cyan-600 hover:to-blue-600 shadow-lg shadow-cyan-500/25'
                         : 'text-gray-300 hover:text-white hover:bg-gray-800/50'
                     }`}
+                    aria-label={action.name}
                   >
                     {action.icon}
                     <span>{action.name}</span>
