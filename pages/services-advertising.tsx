@@ -178,6 +178,86 @@ export default function ServicesAdvertisingPage() {
 					</ul>
 				</section>
 				
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">AI Red Teaming Suite</h2>
+					<p className="text-slate-300">Continuously stress-test LLM apps with curated jailbreak and prompt injection attack packs, automated safety regressions, and scorecards.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $50–$500/mo + API usage</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/ai-red-teaming-suite">/services/ai-red-teaming-suite</a></li>
+						<li>References: https://openai.com/safety, https://www.anthropic.com/news, https://www.promptfoo.dev/pricing</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">API Schema Diff & Registry</h2>
+					<p className="text-slate-300">Versioned OpenAPI registry with CI diffs, breaking-change detection, docs, and SDK hooks to ship safer APIs faster.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $20–$100/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/api-schema-diff-registry">/services/api-schema-diff-registry</a></li>
+						<li>References: https://swagger.io/tools/swaggerhub/pricing/, https://stoplight.io/pricing, https://www.openapis.org/</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">GitHub Secrets Scanner Plus</h2>
+					<p className="text-slate-300">High-signal secret detectors with CI blocking, auto-rotation playbooks, and repository quarantine policies.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $20–$200/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/github-secrets-scanner-plus">/services/github-secrets-scanner-plus</a></li>
+						<li>References: https://docs.github.com/code-security/secret-scanning, https://github.com/features/security, https://github.com/trufflesecurity/trufflehog</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">GDPR DSAR Portal Lite</h2>
+					<p className="text-slate-300">Branded DSAR portal with identity verification, workflows, templated redaction, and auditor-ready exports.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $100–$500/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/gdpr-dsar-portal-lite">/services/gdpr-dsar-portal-lite</a></li>
+						<li>References: https://www.osano.com/pricing, https://www.transcend.io/platform</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Kubernetes Cost Rightsizer</h2>
+					<p className="text-slate-300">SLO-aware CPU/memory rightsizing recommendations with manifest PRs and savings reports.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $50–$300/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/k8s-cost-rightsizer">/services/k8s-cost-rightsizer</a></li>
+						<li>References: https://www.kubecost.com/pricing, https://prometheus.io/</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">PII Redaction Proxy</h2>
+					<p className="text-slate-300">Lossless PII/PHI masking for logs, prompts, and events with low-latency SDKs and audit logs.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $50–$300/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/pii-redaction-proxy">/services/pii-redaction-proxy</a></li>
+						<li>References: https://www.skyflow.com/pricing, https://www.verygoodsecurity.com/pricing</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Postgres Index Advisor Pro</h2>
+					<p className="text-slate-300">Query-aware index recommendations with safe rollout PRs and auto-rollback on regressions.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $20–$150/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/postgres-index-advisor-pro">/services/postgres-index-advisor-pro</a></li>
+						<li>References: https://pganalyze.com/pricing, https://www.postgresql.org/docs/current/auto-explain.html</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">S3 Lifecycle Optimizer</h2>
+					<p className="text-slate-300">Analyze access patterns to apply storage class transitions (IA/Glacier) and retention policies automatically.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $5–$100/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/s3-lifecycle-optimizer">/services/s3-lifecycle-optimizer</a></li>
+						<li>References: https://aws.amazon.com/s3/pricing/, https://aws.amazon.com/s3/storage-classes/</li>
+					</ul>
+				</section>
+
 				<div className="pt-4 text-slate-400 text-sm">See also: <a className="text-cyan-400 underline" href="/market-pricing">Market Pricing</a> for a broader list of benchmarks and links.</div>
 
 				{/* Latest Real Additions (concise) */}
