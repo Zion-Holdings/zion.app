@@ -52,8 +52,16 @@
   "quantum-supply-chain-optimizer",
   "quantum-threat-detection",
   "real-estate-technology-solutions",
+  "services/ab-test-optimizer-for-flags",
+  "services/data-contract-registry",
   "services/data-contracts-hub",
+  "services/email-auth-reputation-suite",
+  "services/incident-postmortem-ai-scribe",
+  "services/rag-quality-observatory",
   "services/serverless-lakehouse-starter",
+  "services/sso-onboarding-toolkit",
+  "services/webhook-dlq-replay-hub",
   "space-colonization-services",
+  "space-mining-automation-platform",
   "space-mining-platform"
 ]

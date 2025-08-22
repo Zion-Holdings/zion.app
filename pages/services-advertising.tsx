@@ -398,7 +398,76 @@ export default function ServicesAdvertisingPage() {
 					<p className="text-slate-300">Rightsizing, SP/RI planning, and anomaly alerts with actionable FinOps guardrails.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $99–$500/mo</li>
-						<li>References: {ext('https://www.kubecost.com/pricing')}, {ext('https://www.cloudzero.com/pricing')}, {ext('https://www.finout.io/pricing')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">RAG Quality Observatory</h2>
+					<p className="text-slate-300">Production evals for RAG: ground-truth sampling, citation checks, answer similarity, and drift KPIs.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $50–$300/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/rag-quality-observatory">/services/rag-quality-observatory</a></li>
+						<li>References: https://langfuse.com/pricing, https://www.promptfoo.dev/pricing</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Webhook DLQ & Replay Hub</h2>
+					<p className="text-slate-300">Verification, idempotent storage, searchable payloads, replays, and DLQ workflows for resilient webhooks.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $49–$199/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/webhook-dlq-replay-hub">/services/webhook-dlq-replay-hub</a></li>
+						<li>References: https://www.hookdeck.com/pricing, https://www.svix.com/pricing</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Data Contract Registry</h2>
+					<p className="text-slate-300">Declarative schemas with CI contract tests, diffs, and lineage mapping for safer data pipelines.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $99–$300/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/data-contract-registry">/services/data-contract-registry</a></li>
+						<li>References: https://openlineage.io, https://www.getdbt.com/pricing/</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Incident Postmortem AI Scribe</h2>
+					<p className="text-slate-300">Ingest alerts, logs, and chat to auto‑draft timelines, RCAs, and Jira‑ready action items.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $39–$149/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/incident-postmortem-ai-scribe">/services/incident-postmortem-ai-scribe</a></li>
+						<li>References: https://www.datadoghq.com/pricing/, https://newrelic.com/pricing</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">SSO & SCIM Onboarding Toolkit</h2>
+					<p className="text-slate-300">Templates, conformance tests, and playbooks to accelerate enterprise SSO/SCIM integrations.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $99–$399/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/sso-onboarding-toolkit">/services/sso-onboarding-toolkit</a></li>
+						<li>References: https://workos.com/pricing, https://auth0.com/pricing</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">A/B Test Optimizer for Feature Flags</h2>
+					<p className="text-slate-300">Attach rigorous experiment design and metrics to your flag system to ship confidently.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $49–$199/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/ab-test-optimizer-for-flags">/services/ab-test-optimizer-for-flags</a></li>
+						<li>References: https://launchdarkly.com/pricing/, https://www.split.io/pricing/</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Email Auth & Reputation Suite</h2>
+					<p className="text-slate-300">DMARC/SPF/DKIM checks, warmup, and inbox placement monitoring for healthier sender reputation.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $29–$149/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/email-auth-reputation-suite">/services/email-auth-reputation-suite</a></li>
+						<li>References: https://postmaster.google.com, https://sendgrid.com/pricing/</li>
 					</ul>
 				</section>
 

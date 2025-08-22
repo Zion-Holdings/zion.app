@@ -456,6 +456,59 @@ export default function MarketPricingPage() {
             </div>
           </div>
 
+          {/* New verified references */}
+          <div className="space-y-6 mt-8">
+            <div className="bg-black/30 rounded-2xl border border-cyan-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">RAG Evaluation & Observability</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Langfuse pricing: <a className="text-cyan-400 underline" href={`https://langfuse.com/pricing`} target="_blank" rel="noopener noreferrer">langfuse.com/pricing</a></li>
+                <li>Promptfoo pricing: <a className="text-cyan-400 underline" href={`https://www.promptfoo.dev/pricing`} target="_blank" rel="noopener noreferrer">promptfoo.dev/pricing</a></li>
+                <li>W&B evals: <a className="text-cyan-400 underline" href={`https://wandb.ai/site/pricing`} target="_blank" rel="noopener noreferrer">wandb.ai/site/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $50–$400/month based on run volume.</div>
+            </div>
+            <div className="bg-black/30 rounded-2xl border border-emerald-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Webhook Reliability</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Hookdeck: <a className="text-cyan-400 underline" href={`https://www.hookdeck.com/pricing`} target="_blank" rel="noopener noreferrer">hookdeck.com/pricing</a></li>
+                <li>Svix: <a className="text-cyan-400 underline" href={`https://www.svix.com/pricing`} target="_blank" rel="noopener noreferrer">svix.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $49–$199/month depending on endpoints and retention.</div>
+            </div>
+            <div className="bg-black/30 rounded-2xl border border-violet-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Data Contracts & Lineage</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>dbt Cloud: <a className="text-cyan-400 underline" href={`https://www.getdbt.com/pricing/`} target="_blank" rel="noopener noreferrer">getdbt.com/pricing</a></li>
+                <li>OpenLineage: <a className="text-cyan-400 underline" href={`https://openlineage.io`} target="_blank" rel="noopener noreferrer">openlineage.io</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $99–$300/month depending on pipelines.</div>
+            </div>
+            <div className="bg-black/30 rounded-2xl border border-indigo-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">SSO/SCIM Enablement</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>WorkOS pricing: <a className="text-cyan-400 underline" href={`https://workos.com/pricing`} target="_blank" rel="noopener noreferrer">workos.com/pricing</a></li>
+                <li>Auth0 pricing: <a className="text-cyan-400 underline" href={`https://auth0.com/pricing`} target="_blank" rel="noopener noreferrer">auth0.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $99–$399/month by MAUs and IdPs.</div>
+            </div>
+            <div className="bg-black/30 rounded-2xl border border-pink-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Experimentation & Flags</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>LaunchDarkly: <a className="text-cyan-400 underline" href={`https://launchdarkly.com/pricing/`} target="_blank" rel="noopener noreferrer">launchdarkly.com/pricing</a></li>
+                <li>Split.io: <a className="text-cyan-400 underline" href={`https://www.split.io/pricing/`} target="_blank" rel="noopener noreferrer">split.io/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $49–$199/month by flags and MAUs.</div>
+            </div>
+            <div className="bg-black/30 rounded-2xl border border-cyan-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Email Deliverability</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Google Postmaster Tools: <a className="text-cyan-400 underline" href={`https://postmaster.google.com`} target="_blank" rel="noopener noreferrer">postmaster.google.com</a></li>
+                <li>SendGrid pricing: <a className="text-cyan-400 underline" href={`https://sendgrid.com/pricing/`} target="_blank" rel="noopener noreferrer">sendgrid.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $29–$149/month plus ESP fees.</div>
+            </div>
+          </div>
+
           <div className="text-center text-slate-400 mt-10">
             Need help benchmarking? <a href="/contact" className="text-cyan-400 underline">Contact us</a> — we align to transparent, vendor-verifiable pricing.
           </div>

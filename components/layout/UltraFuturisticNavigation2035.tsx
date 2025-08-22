@@ -65,7 +65,14 @@ const navigationItems: NavigationItem[] = [
       { name: 'SOC 2 Compliance Automation', href: '/soc2-compliance-automation', description: 'Automate evidence & controls' },
       { name: 'Browser Automation Cloud', href: '/browser-automation-cloud', description: 'Scale headless browser flows' },
       { name: 'Secrets Rotation Automation', href: '/secrets-rotation-automation', description: 'Policy-driven key rotation' },
-      { name: 'API Performance Testing', href: '/api-performance-testing', description: 'Load/soak tests with CI gates' }
+      { name: 'API Performance Testing', href: '/api-performance-testing', description: 'Load/soak tests with CI gates' },
+      { name: 'RAG Quality Observatory', href: '/services/rag-quality-observatory', description: 'RAG evals & drift KPIs' },
+      { name: 'Webhook DLQ & Replay Hub', href: '/services/webhook-dlq-replay-hub', description: 'Reliability for webhooks' },
+      { name: 'Data Contract Registry', href: '/services/data-contract-registry', description: 'Contracts, diffs, lineage' },
+      { name: 'Incident Postmortem AI Scribe', href: '/services/incident-postmortem-ai-scribe', description: 'Timelines, RCAs, actions' },
+      { name: 'SSO & SCIM Onboarding Toolkit', href: '/services/sso-onboarding-toolkit', description: 'Templates & tests' },
+      { name: 'A/B Test Optimizer for Flags', href: '/services/ab-test-optimizer-for-flags', description: 'Experiments on flags' },
+      { name: 'Email Auth & Reputation Suite', href: '/services/email-auth-reputation-suite', description: 'DMARC, warmup, inbox' }
     ]
   },
   {
