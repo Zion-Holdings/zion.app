@@ -1217,6 +1217,96 @@ export default function ServicesAdvertisingPage() {
 					<div><a className="text-cyan-400 underline" href="/services/policy-drift-compliance-monitor">Learn more</a></div>
 				</section>
 
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">API Schema Diff & Registry</h2>
+					<p className="text-slate-300">Versioned OpenAPI registry with CI diffs, docs, and SDK hooks.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $20–$100/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/api-schema-diff-registry">/services/api-schema-diff-registry</a></li>
+						<li>References: https://swagger.io/tools/swaggerhub/pricing/, https://stoplight.io/pricing</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">GitOps Drift Auto‑Remediator</h2>
+					<p className="text-slate-300">Detect infra drift and open PRs with policy‑guided fixes and evidence.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $49–$199/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/gitops-drift-auto-remediator">/services/gitops-drift-auto-remediator</a></li>
+						<li>References: https://www.openpolicyagent.org/, https://www.spacelift.io/pricing</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Synthetic Journey Monitor</h2>
+					<p className="text-slate-300">Record, replay, and alert on critical flows with screenshots and HARs.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $20–$100/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/synthetic-journey-monitor">/services/synthetic-journey-monitor</a></li>
+						<li>References: https://playwright.dev, https://www.checklyhq.com/pricing/</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Postgres Index Advisor Pro</h2>
+					<p className="text-slate-300">Query‑aware index suggestions with safe rollout PRs and rollback.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $29–$149/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/postgres-index-advisor-pro">/services/postgres-index-advisor-pro</a></li>
+						<li>References: https://pganalyze.com/pricing, https://www.postgresql.org/docs/current/auto-explain.html</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">S3 Lifecycle Optimizer</h2>
+					<p className="text-slate-300">Access‑aware transitions to IA/Glacier and retention guardrails.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $15–$99/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/s3-lifecycle-optimizer">/services/s3-lifecycle-optimizer</a></li>
+						<li>References: https://aws.amazon.com/s3/pricing/, https://aws.amazon.com/s3/storage-classes/</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">PII Redaction Proxy</h2>
+					<p className="text-slate-300">Lossless masking for logs, prompts, and event streams with audit.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $29–$149/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/pii-redaction-proxy">/services/pii-redaction-proxy</a></li>
+						<li>References: https://www.skyflow.com/pricing, https://www.verygoodsecurity.com/pricing</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">API Breaking Change Watcher</h2>
+					<p className="text-slate-300">Continuous OpenAPI/GraphQL diffs with CI gates and changelogs.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $20–$100/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/api-breaking-change-watcher">/services/api-breaking-change-watcher</a></li>
+						<li>References: https://www.openapis.org/, https://graphql.org/learn/best-practices/</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">API Security Scanner Pro</h2>
+					<p className="text-slate-300">OWASP API Top 10 detection with CI checks and remediation tips.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $59–$299/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/api-security-scanner-pro">/services/api-security-scanner-pro</a></li>
+						<li>References: https://owasp.org/www-project-api-security/, https://www.fastly.com/pricing</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Vendor Security Questionnaire AI</h2>
+					<p className="text-slate-300">Auto‑fill SIG/CAIQ with mapped controls, citations, and review flows.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $39–$149/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/vendor-security-questionnaire-ai">/services/vendor-security-questionnaire-ai</a></li>
+						<li>References: https://sharedassessments.org/resources/sig/, https://cloudsecurityalliance.org/research/caiq</li>
+					</ul>
+				</section>
+
 				{/* Contact CTA */}
 				<div className="flex flex-col md:flex-row items-center gap-4 p-4 rounded-xl bg-black/30 border border-gray-800">
 					<a href="tel:+13024640950" className="px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white">Call +1 302 464 0950</a>
