@@ -33,6 +33,7 @@ import { augmentedServicesBatch3 } from '../data/real-augmented-services-2025-ba
 import { real2025Q3Additions } from '../data/real-2025-q3-additions';
 import { realQ4Services2025 } from '../data/real-2025-q4-additions';
 import { real2026Q1Additions } from '../data/real-2026-q1-additions';
+import { ultimateFuturisticServices2025 } from '../data/2025-ultimate-futuristic-services';
 
 export default function ServiceFallbackPage() {
   const router = useRouter();
@@ -66,7 +67,8 @@ export default function ServiceFallbackPage() {
         augmentedServicesBatch3 as any,
         real2025Q3Additions as any,
         realQ4Services2025 as any,
-        real2026Q1Additions as any
+        real2026Q1Additions as any,
+        ultimateFuturisticServices2025 as any
       );
     const byLink = all.find(s => {
       try {
@@ -200,7 +202,8 @@ function collectAllServices(): Svc[] {
       augmentedServicesBatch3 as Svc[],
       real2025Q3Additions as Svc[],
       realQ4Services2025 as Svc[],
-      real2026Q1Additions as Svc[]
+      real2026Q1Additions as Svc[],
+      ultimateFuturisticServices2025 as unknown as Svc[]
     );
 }
 
