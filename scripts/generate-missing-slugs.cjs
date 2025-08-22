@@ -7,7 +7,10 @@ const projectRoot = process.cwd();
 const componentsToScan = [
 	'components/layout/UltraFuturisticNavigation2035.tsx',
 	'components/layout/UltraFuturisticFooter2035.tsx',
-	'components/layout/EnhancedSidebar2025.tsx'
+	'components/layout/EnhancedSidebar2025.tsx',
+	// Also scan the active header and footer used by the site
+	'components/layout/Header.tsx',
+	'components/layout/EnhancedFooter.tsx'
 ];
 
 const pagesDir = path.join(projectRoot, 'pages');
@@ -18,7 +21,7 @@ function collectHrefsFromFile(filePath) {
 	const fullPath = path.join(projectRoot, filePath);
 	if (!fs.existsSync(fullPath)) return [];
 	const content = fs.readFileSync(fullPath, 'utf8');
-	const hrefRegex = /href\s*[:=]\s*["'](\/[A-Za-z0-9-_/#?]+)["']/g;
+	const hrefRegex = /href\s*[:=]\s*["'](\/[A-Za-z0-9-_\/\#\?]+)["']/g;
 	const results = new Set();
 	let match;
 	while ((match = hrefRegex.exec(content)) !== null) {
