@@ -77,9 +77,9 @@ const footerSections = [
       { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration-platform' },
       { name: 'Blockchain Infrastructure', href: '/blockchain-infrastructure-platform' },
       { name: 'AI-Powered DevOps', href: '/ai-powered-devops-platform' },
-      { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure-platform' },
-      { name: 'Zero Trust Security', href: '/zero-trust-security-platform' },
-      { name: 'AI-Powered Cybersecurity', href: '/ai-powered-cybersecurity' }
+      { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure' },
+      { name: 'Zero Trust Security', href: '/zero-trust-network-architecture' },
+      { name: 'AI-Powered Cybersecurity', href: '/cybersecurity' }
     ]
   },
   {

@@ -13,12 +13,13 @@ import { enterpriseITSolutions } from '../data/2034-enterprise-it-solutions';
 import { innovativeMicroSaasSolutions } from '../data/2034-innovative-micro-saas-solutions';
 import { cuttingEdgeAIServices } from '../data/2034-cutting-edge-ai-services';
 
-// Import existing service data
-import { realMicroSaasServices2025 } from '../data/2025-real-micro-saas-services';
-import { innovativeAIServices2025 } from '../data/2025-innovative-ai-services';
-import { innovativeITServices2025 } from '../data/2025-innovative-it-services';
-import { emergingTechServices2025 } from '../data/2025-emerging-tech-services';
-import { newRealServices2026 } from '../data/2025-2026-new-real-services';
+// Replace non-existent imports with available data sources
+import { realMarketServices } from '../data/real-market-services';
+import { marketReadyServices } from '../data/market-ready-services';
+import { marketValidatedServices } from '../data/market-validated-services';
+import { realMicroSaasServices } from '../data/real-micro-saas-services';
+import { newRealServices } from '../data/new-real-services';
+import { real2025Q4Additions } from '../data/real-2025-q4-additions';
 
 // Helper function to get service category
 const getServiceCategory = (service: any) => {
@@ -32,6 +33,7 @@ const getServicePricing = (service: any) => {
   if (service.pricing?.starter) return service.pricing.starter;
   if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
   if (service.price?.monthly) return `$${service.price.monthly}/month`;
+  if (typeof service.price === 'string') return `${service.price}${service.period || ''}`;
   return 'Contact for pricing';
 };
 
@@ -54,11 +56,12 @@ const allServices = [
   ...enterpriseITSolutions,
   ...innovativeMicroSaasSolutions,
   ...cuttingEdgeAIServices,
-  ...realMicroSaasServices2025,
-  ...innovativeAIServices2025,
-  ...innovativeITServices2025,
-  ...emergingTechServices2025,
-  ...newRealServices2026
+  ...realMarketServices,
+  ...marketReadyServices,
+  ...marketValidatedServices,
+  ...realMicroSaasServices,
+  ...newRealServices,
+  ...real2025Q4Additions
 ];
 
 const categories = [

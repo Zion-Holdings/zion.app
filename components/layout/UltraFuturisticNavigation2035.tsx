@@ -179,14 +179,14 @@ const navigationItems: NavigationItem[] = [
     badge: 'Enterprise',
     featured: true,
     children: [
-      { name: 'Zero Trust Security', href: '/zero-trust-security-platform', description: 'Next-generation security architecture' },
+      { name: 'Zero Trust Security', href: '/zero-trust-network-architecture', description: 'Next-generation security architecture' },
       { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure', description: 'Quantum-enhanced cloud computing' },
-      { name: 'Autonomous IT Operations', href: '/autonomous-it-operations-center', description: 'Self-managing IT infrastructure' },
-      { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration-platform', description: 'Distributed edge computing' },
+      { name: 'Autonomous IT Operations', href: '/enterprise-ai-operations-center', description: 'Self-managing IT infrastructure' },
+      { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration', description: 'Distributed edge computing' },
       { name: 'Blockchain Infrastructure', href: '/blockchain-infrastructure-platform', description: 'Enterprise blockchain solutions' },
-      { name: 'AI-Powered DevOps', href: '/ai-powered-devops-platform', description: 'Intelligent development operations' },
+      { name: 'AI-Powered DevOps', href: '/advanced-ai-automation-services', description: 'Intelligent development operations' },
       { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity-services', description: 'Next-gen quantum security' },
-      { name: 'AI-Powered Cybersecurity', href: '/ai-powered-cybersecurity', description: 'Intelligent threat detection' }
+      { name: 'AI-Powered Cybersecurity', href: '/cybersecurity', description: 'Intelligent threat detection' }
     ]
   },
   {
