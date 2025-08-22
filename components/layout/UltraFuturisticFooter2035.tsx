@@ -27,6 +27,7 @@ const footerSections = [
       { name: 'Supply Chain Optimization', href: '/intelligent-supply-chain-optimization', featured: true },
       { name: 'AI Financial Planning', href: '/ai-financial-planning-platform', featured: true },
       { name: 'AI Sales Intelligence', href: '/ai-sales-intelligence-platform', featured: true },
+      { name: 'Q3 2025 Additions', href: '/revolutionary-2025-q3-services' },
       { name: 'HR Analytics Platform', href: '/intelligent-hr-analytics-platform' },
       { name: 'AI Decision Engine', href: '/ai-powered-decision-engine' },
       { name: 'Content Automation', href: '/intelligent-content-automation-platform' },

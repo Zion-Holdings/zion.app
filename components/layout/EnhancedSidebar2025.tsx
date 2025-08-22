@@ -135,7 +135,8 @@ const sidebarSections = [
       { name: 'Research & Development', href: '/research-development' },
       { name: 'White Papers', href: '/white-papers' },
       { name: 'Performance Reports', href: '/reports' },
-      { name: 'Market Analysis', href: '/market-pricing' }
+      { name: 'Market Analysis', href: '/market-pricing' },
+      { name: 'Q3 2025 Additions', href: '/revolutionary-2025-q3-services' }
     ]
   },
   {
