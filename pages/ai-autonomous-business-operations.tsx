@@ -56,11 +56,11 @@ export default function AIAutonomousBusinessOperationsPage() {
 						</div>
 						<div className="bg-black/30 rounded-2xl border border-pink-500/30 p-6">
 							<h3 className="text-xl font-semibold mb-2">References</h3>
-							<ul className="list-disc list-inside text-slate-300 space-y-1">
-								<li>GitHub Actions pricing: <a className="text-cyan-400 underline" href="https://github.com/pricing" target="_blank" rel="noopener noreferrer">github.com/pricing</a></li>
-								<li>ServiceNow: <a className="text-cyan-400 underline" href="https://www.servicenow.com/" target="_blank" rel="noopener noreferrer">servicenow.com</a></li>
-								<li>PagerDuty: <a className="text-cyan-400 underline" href="https://www.pagerduty.com/pricing/" target="_blank" rel="noopener noreferrer">pagerduty.com/pricing</a></li>
-							</ul>
+													<ul className="list-disc list-inside text-slate-300 space-y-1">
+							<li>GitHub Actions pricing: <a className="text-cyan-400 underline" href="https://github.com/pricing" target="_blank" rel="noopener noreferrer">github.com/pricing</a></li>
+							<li>ServiceNow ITSM: <a className="text-cyan-400 underline" href="https://www.servicenow.com/products/it-service-management.html" target="_blank" rel="noopener noreferrer">servicenow.com/products/it-service-management.html</a></li>
+							<li>PagerDuty: <a className="text-cyan-400 underline" href="https://www.pagerduty.com/pricing/" target="_blank" rel="noopener noreferrer">pagerduty.com/pricing</a></li>
+						</ul>
 						</div>
 					</section>
 
