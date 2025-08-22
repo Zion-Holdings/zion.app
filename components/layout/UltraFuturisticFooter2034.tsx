@@ -148,288 +148,229 @@ const socialLinks = [
 
 export default function UltraFuturisticFooter2034() {
   return (
-    <footer className="relative bg-black text-white overflow-hidden">
-      {/* Futuristic Background Elements */}
+    <footer className="relative bg-black/90 backdrop-blur-xl border-t border-cyan-500/20 overflow-hidden">
+      {/* Futuristic Background Effects */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-500/5 to-blue-500/10"></div>
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent"></div>
-        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-cyan-500/5 via-transparent to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent" />
+        <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-cyan-500/30 to-transparent" />
+        <div className="absolute top-0 right-1/4 w-px h-full bg-gradient-to-b from-transparent via-blue-500/30 to-transparent" />
+        <div className="absolute top-0 left-1/2 w-px h-full bg-gradient-to-b from-transparent via-purple-500/30 to-transparent" />
       </div>
 
-      <div className="relative z-10">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Main Footer Content */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          {/* Top Section - Company Info & Contact */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
-            {/* Company Information */}
-            <div className="lg:col-span-1">
-              <div className="flex items-center space-x-3 mb-6">
-                <div className="relative">
-                  <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center">
-                    <Zap className="w-7 h-7 text-white" />
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-xl blur-lg opacity-50"></div>
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                    Zion Tech Group
-                  </h3>
-                  <p className="text-cyan-300 text-sm">Future Technology Solutions</p>
-                </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          {/* Company Information */}
+          <div className="space-y-6">
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center">
+                <Zap className="w-6 h-6 text-white" />
               </div>
-              
-              <p className="text-gray-300 mb-6 leading-relaxed">
-                Leading the future of technology with revolutionary AI, quantum computing, and emerging technology solutions. 
-                Empowering businesses to achieve the impossible through cutting-edge innovation.
-              </p>
-
-              {/* Contact Information */}
-              <div className="space-y-3">
-                <div className="flex items-center space-x-3 text-gray-300 hover:text-cyan-300 transition-colors duration-200">
-                  <Phone className="w-4 h-4 text-cyan-400" />
-                  <span>{contactInfo.mobile}</span>
-                </div>
-                <div className="flex items-center space-x-3 text-gray-300 hover:text-cyan-300 transition-colors duration-200">
-                  <Mail className="w-4 h-4 text-cyan-400" />
-                  <span>{contactInfo.email}</span>
-                </div>
-                <div className="flex items-center space-x-3 text-gray-300 hover:text-cyan-300 transition-colors duration-200">
-                  <MapPin className="w-4 h-4 text-cyan-400" />
-                  <span className="text-sm">{contactInfo.address}</span>
-                </div>
-                <div className="flex items-center space-x-3 text-gray-300 hover:text-cyan-300 transition-colors duration-200">
-                  <Globe className="w-4 h-4 text-cyan-400" />
-                  <span>{contactInfo.website}</span>
-                </div>
-              </div>
+              <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                Zion Tech Group
+              </span>
             </div>
-
-            {/* Quick Links */}
-            <div className="lg:col-span-2">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                  <h4 className="text-lg font-semibold text-white mb-4">Company</h4>
-                  <ul className="space-y-2">
-                    {companyLinks.map((link) => (
-                      <li key={link.name}>
-                        <Link
-                          href={link.href}
-                          className="text-gray-400 hover:text-cyan-300 transition-colors duration-200 flex items-center group"
-                        >
-                          <ArrowRight className="w-3 h-3 mr-2 text-cyan-400 group-hover:translate-x-1 transition-transform duration-200" />
-                          {link.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div>
-                  <h4 className="text-lg font-semibold text-white mb-4">Resources</h4>
-                  <ul className="space-y-2">
-                    {resourceLinks.map((link) => (
-                      <li key={link.name}>
-                        <Link
-                          href={link.href}
-                          className="text-gray-400 hover:text-cyan-300 transition-colors duration-200 flex items-center group"
-                        >
-                          <ArrowRight className="w-3 h-3 mr-2 text-cyan-400 group-hover:translate-x-1 transition-transform duration-200" />
-                          {link.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+            <p className="text-gray-300 text-sm leading-relaxed">
+              Pioneering the future of technology with revolutionary AI, quantum computing, and emerging technology solutions that transform businesses and accelerate innovation.
+            </p>
+            <div className="flex space-x-4">
+              <a href="#" className="w-10 h-10 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 rounded-lg flex items-center justify-center hover:from-cyan-500/30 hover:to-blue-500/30 transition-all duration-300 group">
+                <Twitter className="w-5 h-5 text-cyan-400 group-hover:text-cyan-300 transition-colors" />
+              </a>
+              <a href="#" className="w-10 h-10 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 rounded-lg flex items-center justify-center hover:from-cyan-500/30 hover:to-blue-500/30 transition-all duration-300 group">
+                <Linkedin className="w-5 h-5 text-cyan-400 group-hover:text-cyan-300 transition-colors" />
+              </a>
+              <a href="#" className="w-10 h-10 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 rounded-lg flex items-center justify-center hover:from-cyan-500/30 hover:to-blue-500/30 transition-all duration-300 group">
+                <Github className="w-5 h-5 text-cyan-400 group-hover:text-cyan-300 transition-colors" />
+              </a>
+              <a href="#" className="w-10 h-10 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 rounded-lg flex items-center justify-center hover:from-cyan-500/30 hover:to-blue-500/30 transition-all duration-300 group">
+                <Youtube className="w-5 h-5 text-cyan-400 group-hover:text-cyan-300 transition-colors" />
+              </a>
             </div>
           </div>
 
-          {/* Enhanced Contact Information */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-cyan-400 mb-4">Get In Touch</h3>
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <Phone className="w-5 h-5 text-cyan-400" />
-                  <div>
-                    <p className="text-sm text-gray-400">Mobile</p>
-                    <a href={`tel:${contactInfo.mobile}`} className="text-white hover:text-cyan-400 transition-colors">
-                      {contactInfo.mobile}
-                    </a>
-                  </div>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Mail className="w-5 h-5 text-cyan-400" />
-                  <div>
-                    <p className="text-sm text-gray-400">Email</p>
-                    <a href={`mailto:${contactInfo.email}`} className="text-white hover:text-cyan-400 transition-colors">
-                      {contactInfo.email}
-                    </a>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <MapPin className="w-5 h-5 text-cyan-400 mt-1" />
-                  <div>
-                    <p className="text-sm text-gray-400">Address</p>
-                    <p className="text-white">{contactInfo.address}</p>
-                  </div>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Globe className="w-5 h-5 text-cyan-400" />
-                  <div>
-                    <p className="text-sm text-gray-400">Website</p>
-                    <a href={contactInfo.website} className="text-white hover:text-cyan-400 transition-colors">
-                      {contactInfo.website}
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-cyan-400 mb-4">Quick Links</h3>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <a href="/comprehensive-services-showcase-2025" className="block text-gray-300 hover:text-cyan-400 transition-colors">
-                    All Services
-                  </a>
-                  <a href="/pricing" className="block text-gray-300 hover:text-cyan-400 transition-colors">
-                    Pricing
-                  </a>
-                  <a href="/case-studies" className="block text-gray-300 hover:text-cyan-400 transition-colors">
-                    Case Studies
-                  </a>
-                  <a href="/blog" className="block text-gray-300 hover:text-cyan-400 transition-colors">
-                    Blog
-                  </a>
-                </div>
-                <div className="space-y-2">
-                  <a href="/about" className="block text-gray-300 hover:text-cyan-400 transition-colors">
-                    About Us
-                  </a>
-                  <a href="/careers" className="block text-gray-300 hover:text-cyan-400 transition-colors">
-                    Careers
-                  </a>
-                  <a href="/contact" className="block text-gray-300 hover:text-cyan-400 transition-colors">
-                    Contact
-                  </a>
-                  <a href="/support" className="block text-gray-300 hover:text-cyan-400 transition-colors">
-                    Support
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Enhanced Service Categories */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {footerSections.map((section, index) => (
-              <div key={index} className="space-y-4">
-                <h4 className="text-lg font-semibold text-cyan-400 border-b border-cyan-400/30 pb-2">
-                  {section.title}
-                </h4>
-                <ul className="space-y-2">
-                  {section.links.map((link, linkIndex) => (
-                    <li key={linkIndex}>
-                      <a 
-                        href={link.href}
-                        className="text-gray-300 hover:text-cyan-400 transition-colors text-sm hover:pl-2 duration-200"
-                      >
-                        {link.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-
-          {/* Solutions Section */}
-          <div className="mb-16">
-            <h3 className="text-2xl font-bold text-center text-white mb-12">
-              Industry Solutions
+          {/* AI & Technology Services */}
+          <div className="space-y-6">
+            <h3 className="text-lg font-semibold text-white flex items-center space-x-2">
+              <Brain className="w-5 h-5 text-cyan-400" />
+              <span>AI & Technology</span>
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-              {solutionLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className="p-3 text-center bg-white/5 hover:bg-white/10 rounded-lg border border-white/10 hover:border-cyan-500/50 transition-all duration-200 group"
-                >
-                  <div className="text-cyan-400 group-hover:text-cyan-300 transition-colors duration-200 text-sm font-medium">
-                    {link.name}
-                  </div>
-                </Link>
-              ))}
+            <ul className="space-y-3">
+              <li><a href="/ai-services" className="text-gray-300 hover:text-cyan-400 transition-colors text-sm">AI Consciousness Platform</a></li>
+              <li><a href="/ai-autonomous-research-assistant" className="text-gray-300 hover:text-cyan-400 transition-colors text-sm">Autonomous Research AI</a></li>
+              <li><a href="/ai-emotional-intelligence-training" className="text-gray-300 hover:text-cyan-400 transition-colors text-sm">Emotional Intelligence AI</a></li>
+              <li><a href="/ai-predictive-maintenance-platform" className="text-gray-300 hover:text-cyan-400 transition-colors text-sm">Predictive Maintenance</a></li>
+              <li><a href="/ai-content-personalization-engine" className="text-gray-300 hover:text-cyan-400 transition-colors text-sm">Content Personalization</a></li>
+              <li><a href="/ai-autonomous-ecosystem-manager" className="text-gray-300 hover:text-cyan-400 transition-colors text-sm">Autonomous Ecosystem</a></li>
+              <li><a href="/ai-ethics-governance-framework" className="text-gray-300 hover:text-cyan-400 transition-colors text-sm">AI Ethics & Governance</a></li>
+              <li><a href="/ai-creativity-studio" className="text-gray-300 hover:text-cyan-400 transition-colors text-sm">AI Creativity Studio</a></li>
+            </ul>
+          </div>
+
+          {/* Quantum & Emerging Tech */}
+          <div className="space-y-6">
+            <h3 className="text-lg font-semibold text-white flex items-center space-x-2">
+              <Atom className="w-5 h-5 text-purple-400" />
+              <span>Quantum & Emerging</span>
+            </h3>
+            <ul className="space-y-3">
+              <li><a href="/space-resource-mining-platform" className="text-gray-300 hover:text-purple-400 transition-colors text-sm">Space Resource Mining</a></li>
+              <li><a href="/brain-computer-interface-platform" className="text-gray-300 hover:text-purple-400 transition-colors text-sm">Brain-Computer Interface</a></li>
+              <li><a href="/quantum-materials-discovery-platform" className="text-gray-300 hover:text-purple-400 transition-colors text-sm">Quantum Materials</a></li>
+              <li><a href="/autonomous-vehicle-ai-platform" className="text-gray-300 hover:text-purple-400 transition-colors text-sm">Autonomous Vehicles</a></li>
+              <li><a href="/quantum-bio-computing-platform" className="text-gray-300 hover:text-purple-400 transition-colors text-sm">Quantum Bio-Computing</a></li>
+              <li><a href="/quantum-energy-platform" className="text-gray-300 hover:text-purple-400 transition-colors text-sm">Quantum Energy</a></li>
+              <li><a href="/metaverse-ai-development-platform" className="text-gray-300 hover:text-purple-400 transition-colors text-sm">Metaverse Development</a></li>
+              <li><a href="/quantum-networking" className="text-gray-300 hover:text-purple-400 transition-colors text-sm">Quantum Networking</a></li>
+            </ul>
+          </div>
+
+          {/* Enterprise IT & Infrastructure */}
+          <div className="space-y-6">
+            <h3 className="text-lg font-semibold text-white flex items-center space-x-2">
+              <Shield className="w-5 h-5 text-blue-400" />
+              <span>Enterprise IT</span>
+            </h3>
+            <ul className="space-y-3">
+              <li><a href="/quantum-secure-cloud-infrastructure" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">Quantum-Secure Cloud</a></li>
+              <li><a href="/autonomous-it-operations-center" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">Autonomous IT Operations</a></li>
+              <li><a href="/edge-computing-orchestration-platform" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">Edge Computing</a></li>
+              <li><a href="/blockchain-infrastructure-platform" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">Blockchain Infrastructure</a></li>
+              <li><a href="/ai-powered-devops-platform" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">AI-Powered DevOps</a></li>
+              <li><a href="/zero-trust-security-platform" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">Zero Trust Security</a></li>
+              <li><a href="/quantum-networking" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">Quantum Networking</a></li>
+              <li><a href="/advanced-it-infrastructure-services" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">Advanced Infrastructure</a></li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Additional Service Categories */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          {/* Micro SAAS Solutions */}
+          <div className="space-y-6">
+            <h3 className="text-lg font-semibold text-white flex items-center space-x-2">
+              <Rocket className="w-5 h-5 text-green-400" />
+              <span>Micro SAAS Solutions</span>
+            </h3>
+            <ul className="space-y-3">
+              <li><a href="/ai-customer-success-platform" className="text-gray-300 hover:text-green-400 transition-colors text-sm">AI Customer Success</a></li>
+              <li><a href="/intelligent-supply-chain-optimization" className="text-gray-300 hover:text-green-400 transition-colors text-sm">Supply Chain Optimization</a></li>
+              <li><a href="/ai-financial-planning-platform" className="text-gray-300 hover:text-green-400 transition-colors text-sm">Financial Planning AI</a></li>
+              <li><a href="/intelligent-hr-analytics-platform" className="text-gray-300 hover:text-green-400 transition-colors text-sm">HR Analytics Platform</a></li>
+              <li><a href="/ai-sales-intelligence-platform" className="text-gray-300 hover:text-green-400 transition-colors text-sm">Sales Intelligence AI</a></li>
+              <li><a href="/ai-powered-decision-engine" className="text-gray-300 hover:text-green-400 transition-colors text-sm">AI Decision Engine</a></li>
+              <li><a href="/intelligent-content-automation-platform" className="text-gray-300 hover:text-green-400 transition-colors text-sm">Content Automation</a></li>
+              <li><a href="/smart-crm-intelligence-suite" className="text-gray-300 hover:text-green-400 transition-colors text-sm">Smart CRM Suite</a></li>
+            </ul>
+          </div>
+
+          {/* Business Solutions */}
+          <div className="space-y-6">
+            <h3 className="text-lg font-semibold text-white flex items-center space-x-2">
+              <Target className="w-5 h-5 text-orange-400" />
+              <span>Business Solutions</span>
+            </h3>
+            <ul className="space-y-3">
+              <li><a href="/ai-business-intelligence-suite" className="text-gray-300 hover:text-orange-400 transition-colors text-sm">Business Intelligence</a></li>
+              <li><a href="/ai-marketing-automation-platform" className="text-gray-300 hover:text-orange-400 transition-colors text-sm">Marketing Automation</a></li>
+              <li><a href="/ai-sales-intelligence-platform" className="text-gray-300 hover:text-orange-400 transition-colors text-sm">Sales Intelligence</a></li>
+              <li><a href="/ai-customer-service-platform" className="text-gray-300 hover:text-orange-400 transition-colors text-sm">Customer Service AI</a></li>
+              <li><a href="/ai-hr-recruitment-platform" className="text-gray-300 hover:text-orange-400 transition-colors text-sm">HR & Recruitment</a></li>
+              <li><a href="/ai-project-management-suite" className="text-gray-300 hover:text-orange-400 transition-colors text-sm">Project Management</a></li>
+              <li><a href="/ai-financial-analytics-platform" className="text-gray-300 hover:text-orange-400 transition-colors text-sm">Financial Analytics</a></li>
+              <li><a href="/innovative-business-solutions" className="text-gray-300 hover:text-orange-400 transition-colors text-sm">All Business Solutions</a></li>
+            </ul>
+          </div>
+
+          {/* Resources & Support */}
+          <div className="space-y-6">
+            <h3 className="text-lg font-semibold text-white flex items-center space-x-2">
+              <BookOpen className="w-5 h-5 text-pink-400" />
+              <span>Resources & Support</span>
+            </h3>
+            <ul className="space-y-3">
+              <li><a href="/docs" className="text-gray-300 hover:text-pink-400 transition-colors text-sm">Documentation</a></li>
+              <li><a href="/api-documentation" className="text-gray-300 hover:text-pink-400 transition-colors text-sm">API Reference</a></li>
+              <li><a href="/case-studies" className="text-gray-300 hover:text-pink-400 transition-colors text-sm">Case Studies</a></li>
+              <li><a href="/blog" className="text-gray-300 hover:text-pink-400 transition-colors text-sm">Blog & News</a></li>
+              <li><a href="/support" className="text-gray-300 hover:text-pink-400 transition-colors text-sm">Support Center</a></li>
+              <li><a href="/training" className="text-gray-300 hover:text-pink-400 transition-colors text-sm">Training & Certification</a></li>
+              <li><a href="/community" className="text-gray-300 hover:text-pink-400 transition-colors text-sm">Community Forum</a></li>
+              <li><a href="/developer-resources" className="text-gray-300 hover:text-pink-400 transition-colors text-sm">Developer Resources</a></li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Contact Information & Quick Links */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+          {/* Contact Information */}
+          <div className="space-y-6">
+            <h3 className="text-lg font-semibold text-white flex items-center space-x-2">
+              <Phone className="w-5 h-5 text-cyan-400" />
+              <span>Contact Information</span>
+            </h3>
+            <div className="space-y-4">
+              <div className="flex items-center space-x-3">
+                <Phone className="w-5 h-5 text-cyan-400" />
+                <span className="text-gray-300">+1 302 464 0950</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Mail className="w-5 h-5 text-cyan-400" />
+                <span className="text-gray-300">kleber@ziontechgroup.com</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <MapPin className="w-5 h-5 text-cyan-400" />
+                <span className="text-gray-300">364 E Main St STE 1008 Middletown DE 19709</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Globe className="w-5 h-5 text-cyan-400" />
+                <span className="text-gray-300">https://ziontechgroup.com</span>
+              </div>
             </div>
           </div>
 
-          {/* Social Links & Newsletter */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            {/* Social Links */}
-            <div>
-              <h4 className="text-lg font-semibold text-white mb-4">Connect With Us</h4>
-              <div className="flex flex-wrap gap-3">
-                {socialLinks.map((social) => (
-                  <Link
-                    key={social.name}
-                    href={social.href}
-                    className="w-10 h-10 bg-white/5 hover:bg-cyan-500/20 border border-white/10 hover:border-cyan-500/50 rounded-lg flex items-center justify-center text-gray-400 hover:text-cyan-300 transition-all duration-200 group"
-                  >
-                    <social.icon className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" />
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* Newsletter Signup */}
-            <div>
-              <h4 className="text-lg font-semibold text-white mb-4">Stay Updated</h4>
-              <p className="text-gray-400 text-sm mb-4">
-                Get the latest insights on AI, quantum computing, and emerging technologies.
-              </p>
-              <div className="flex space-x-2">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500/50 transition-colors duration-200"
-                />
-                <button className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-200">
-                  Subscribe
-                </button>
-              </div>
+          {/* Quick Links */}
+          <div className="space-y-6">
+            <h3 className="text-lg font-semibold text-white flex items-center space-x-2">
+              <Zap className="w-5 h-5 text-cyan-400" />
+              <span>Quick Links</span>
+            </h3>
+            <div className="grid grid-cols-2 gap-4">
+              <a href="/comprehensive-services-showcase-2025" className="text-gray-300 hover:text-cyan-400 transition-colors text-sm">All Services</a>
+              <a href="/revolutionary-2025-services-showcase" className="text-gray-300 hover:text-cyan-400 transition-colors text-sm">2025 Services</a>
+              <a href="/revolutionary-2026-services" className="text-gray-300 hover:text-cyan-400 transition-colors text-sm">2026 Services</a>
+              <a href="/ultimate-2026-services-showcase" className="text-gray-300 hover:text-cyan-400 transition-colors text-sm">Ultimate 2026</a>
+              <a href="/pricing" className="text-gray-300 hover:text-cyan-400 transition-colors text-sm">Pricing</a>
+              <a href="/about" className="text-gray-300 hover:text-cyan-400 transition-colors text-sm">About Us</a>
+              <a href="/careers" className="text-gray-300 hover:text-cyan-400 transition-colors text-sm">Careers</a>
+              <a href="/contact" className="text-gray-300 hover:text-cyan-400 transition-colors text-sm">Contact</a>
             </div>
           </div>
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-white/10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-              <div className="text-gray-400 text-sm">
-                © 2025 Zion Tech Group. All rights reserved. | 
-                <Link href="/privacy" className="hover:text-cyan-300 transition-colors duration-200 ml-2">Privacy Policy</Link> | 
-                <Link href="/terms" className="hover:text-cyan-300 transition-colors duration-200 ml-2">Terms of Service</Link> | 
-                <Link href="/cookies" className="hover:text-cyan-300 transition-colors duration-200 ml-2">Cookie Policy</Link>
-              </div>
-              
-              <div className="flex items-center space-x-6 text-sm text-gray-400">
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                  <span>99.9% Uptime</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Shield className="w-4 h-4 text-cyan-400" />
-                  <span>Enterprise Security</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Globe className="w-4 h-4 text-cyan-400" />
-                  <span>Global Infrastructure</span>
-                </div>
-              </div>
+        <div className="pt-8 border-t border-cyan-500/20">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <div className="text-gray-400 text-sm">
+              © 2025 Zion Tech Group. All rights reserved. Pioneering the future of technology.
+            </div>
+            <div className="flex space-x-6 text-sm">
+              <a href="/terms" className="text-gray-400 hover:text-cyan-400 transition-colors">Terms of Service</a>
+              <a href="/privacy" className="text-gray-400 hover:text-cyan-400 transition-colors">Privacy Policy</a>
+              <a href="/cookies" className="text-gray-400 hover:text-cyan-400 transition-colors">Cookies</a>
+              <a href="/accessibility" className="text-gray-400 hover:text-cyan-400 transition-colors">Accessibility</a>
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Floating Tech Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/4 left-1/6 w-2 h-32 bg-gradient-to-b from-cyan-500/20 to-transparent" />
+        <div className="absolute top-1/3 right-1/6 w-2 h-24 bg-gradient-to-b from-blue-500/20 to-transparent" />
+        <div className="absolute bottom-1/4 left-1/3 w-3 h-3 bg-purple-400/20 rounded-full animate-pulse" />
+        <div className="absolute bottom-1/3 right-1/4 w-2 h-2 bg-pink-400/20 rounded-full animate-pulse delay-1000" />
       </div>
     </footer>
   );

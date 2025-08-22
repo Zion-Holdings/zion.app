@@ -54,7 +54,6 @@ const navigationItems: NavigationItem[] = [
     badge: 'New',
     children: [
       { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2025', description: 'Emotional intelligence and self-awareness' },
-      { name: 'AI Quantum Neural Network', href: '/ai-quantum-neural-network', description: 'Hybrid AI-Quantum computing platform' },
       { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant', description: 'Self-directed AI research' },
       { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training', description: 'EQ training platform' },
       { name: 'AI Predictive Maintenance', href: '/ai-predictive-maintenance-platform', description: 'Equipment failure prediction' },
@@ -67,8 +66,6 @@ const navigationItems: NavigationItem[] = [
       { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence', description: 'Financial AI analytics' },
       { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform', description: 'Environmental AI solutions' },
       { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer', description: 'Legal document analysis' },
-      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-platform', description: 'Human-AI emotional collaboration' },
-      { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant', description: 'Autonomous research AI' },
       { name: 'AI Autonomous Code Generation', href: '/ai-autonomous-code-generation', description: 'AI that writes code' },
       { name: 'AI Autonomous Marketing', href: '/ai-autonomous-marketing-platform', description: 'Autonomous marketing AI' },
       { name: 'AI Autonomous Sales', href: '/ai-autonomous-sales-platform', description: 'AI that closes deals' },
@@ -116,7 +113,6 @@ const navigationItems: NavigationItem[] = [
       { name: 'Quantum Data Center', href: '/quantum-data-center', description: 'Next-gen data centers' },
       { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity', description: 'Quantum security solutions' },
       { name: 'Quantum Cloud Migration', href: '/quantum-cloud-migration', description: 'Seamless cloud transitions' },
-      { name: 'Autonomous IT Operations', href: '/autonomous-it-operations-center', description: 'Self-managing IT systems' },
       { name: 'Autonomous Data Center', href: '/autonomous-data-center-platform', description: 'AI-managed data centers' },
       { name: 'Advanced IT Infrastructure', href: '/advanced-it-infrastructure-services', description: 'Quantum computing, edge computing, zero-trust security, and autonomous data centers' }
     ]
@@ -138,9 +134,9 @@ const navigationItems: NavigationItem[] = [
       { name: 'Financial Analytics', href: '/automated-financial-analytics-platform', description: 'AI financial analysis' },
       { name: 'Project Management', href: '/intelligent-project-management-suite', description: 'AI project optimization' },
       { name: 'Business Intelligence', href: '/ai-business-intelligence-suite', description: 'Advanced analytics' },
-      { name: 'Marketing Automation', href: '/ai-autonomous-marketing-platform', description: 'Intelligent marketing' },
-      { name: 'Customer Service AI', href: '/ai-autonomous-customer-service', description: 'Automated support' },
-      { name: 'HR & Recruitment', href: '/ai-autonomous-hr-platform', description: 'AI talent management' },
+      { name: 'Marketing Automation', href: '/ai-marketing-automation-platform', description: 'Intelligent marketing' },
+      { name: 'Customer Service AI', href: '/ai-customer-service-platform', description: 'Automated support' },
+      { name: 'HR & Recruitment', href: '/ai-hr-recruitment-platform', description: 'AI talent management' },
       { name: 'Legal Contract Analysis', href: '/ai-legal-contract-analyzer', description: 'Legal document review' },
       { name: 'AI Autonomous Content Studio', href: '/ai-autonomous-content-studio', description: 'Autonomous content creation' },
       { name: 'Quantum Financial Trading', href: '/quantum-enhanced-financial-trading', description: 'Quantum-powered trading' },
@@ -155,7 +151,7 @@ const navigationItems: NavigationItem[] = [
     icon: <Rocket className="w-5 h-5" />,
     description: 'Space technology and metaverse solutions',
     children: [
-      { name: 'Space Mining Platform', href: '/autonomous-space-mining-platform', description: 'Asteroid mining operations' },
+      { name: 'Space Mining Platform', href: '/space-resource-mining-platform', description: 'Asteroid mining operations' },
       { name: 'Space Technology AI', href: '/space-technology-ai-platform', description: 'AI space solutions' },
       { name: 'Metaverse Development', href: '/metaverse-ai-development-platform', description: 'Metaverse platforms' },
       { name: 'Virtual Event Holograms', href: '/virtual-event-hologram-platform', description: 'Holographic events' },
