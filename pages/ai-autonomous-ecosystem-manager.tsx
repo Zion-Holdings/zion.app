@@ -1,24 +1,25 @@
 import React from 'react';
 import ServiceLanding from '../components/sections/ServiceLanding';
 
-export default function AiAutonomousEcosystemManager() {
+export default function AIAutonomousEcosystemManager() {
 	return (
 		<ServiceLanding
 			title="AI Autonomous Ecosystem Manager"
-			description="Coordinate fleets of AI agents and services safely with policy controls, goals, memory, tools, and human-in-the-loop oversight."
-			subtitle="Orchestrate multi-agent systems with safety and control"
-			pricePerMonthUSD={899}
-			implementationWeeks="2-4 weeks"
-			roiNote="Automate complex workflows end-to-end while maintaining compliance"
+			slug="ai-autonomous-ecosystem-manager"
+			description="Coordinate fleets of specialized AI agents to manage complex multi-team workflows. Enforce policies, allocate resources, and ensure safety across the ecosystem."
+			subtitle="Govern multi-agent systems with policy, observability, and guardrails."
+			pricePerMonthUSD={2999}
+			implementationWeeks="Implementation: 4–8 weeks"
+			roiNote="Average ROI 4–9x within 6 months"
 			features={[
-				"Goal-driven multi-agent orchestration",
-				"Tooling, memory, and retrieval integration",
-				"Policy, guardrails, and audit logging",
-				"Human review and approval stages",
-				"Observability and cost controls",
-				"Secure secrets and environment isolation"
+				"Agent registry, roles, and capabilities graph",
+				"Policy engine with human-in-the-loop controls",
+				"Observability: traces, metrics, red-teaming",
+				"Sandboxing and E2E approvals for sensitive actions",
+				"Cost and performance optimization",
+				"Integrations: Kubernetes, Slack/Teams, Jira, GitHub"
 			]}
-			industries={["Operations", "R&D", "Customer Service"]}
+			industries={["Platform Teams", "R&D", "Operations", "Security"]}
 			canonical="https://ziontechgroup.com/ai-autonomous-ecosystem-manager"
 		/>
 	);

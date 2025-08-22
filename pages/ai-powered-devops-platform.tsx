@@ -1,21 +1,26 @@
 import React from 'react';
-import Head from 'next/head';
-import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import ServiceLanding from '../components/sections/ServiceLanding';
 
 export default function AIPoweredDevOpsPlatform() {
-  return (
-    <UltraAdvancedFuturisticBackground>
-      <Head>
-        <title>AI-Powered DevOps Platform | Zion Tech Group</title>
-        <meta name="description" content="AI-assisted CI/CD, safer releases, and incident automation." />
-        <link rel="canonical" href="https://ziontechgroup.com/ai-powered-devops-platform" />
-      </Head>
-      <div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto space-y-6 text-slate-200">
-          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">AI-Powered DevOps Platform</h1>
-          <p className="text-lg text-slate-300">AI code insights, deployment risk scoring, runbook automation, and postmortem assist.</p>
-        </div>
-      </div>
-    </UltraAdvancedFuturisticBackground>
-  );
+	return (
+		<ServiceLanding
+			title="AI‑Powered DevOps Platform"
+			slug="ai-powered-devops-platform"
+			description="Automate CI/CD troubleshooting, flaky test isolation, release risk analysis, and infrastructure drift remediation with AI, reducing mean time to restore and deployment failures."
+			subtitle="Ship faster with fewer incidents using AI-driven DevOps."
+			pricePerMonthUSD={1899}
+			implementationWeeks="Implementation: 2–4 weeks"
+			roiNote="Reduce MTTR 30–60% and change failure rate by 20–40%"
+			features={[
+				"Root-cause analysis for failed builds and deployments",
+				"Flaky test detection and auto-quarantine",
+				"Release diff risk scoring and rollback guidance",
+				"K8s drift detection and policy remediation",
+				"SLO-aware alert correlation and runbook generation",
+				"Integrations: GitHub/GitLab, Jenkins, ArgoCD, Datadog, Sentry"
+			]}
+			industries={["Software", "Fintech", "Healthcare", "Telecom"]}
+			canonical="https://ziontechgroup.com/ai-powered-devops-platform"
+		/>
+	);
 }

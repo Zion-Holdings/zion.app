@@ -1,26 +1,25 @@
 import React from 'react';
 import ServiceLanding from '../components/sections/ServiceLanding';
 
-export default function AiSalesIntelligencePlatform() {
+export default function AISalesIntelligencePlatform() {
 	return (
 		<ServiceLanding
 			title="AI Sales Intelligence Platform"
-			description="Boost sales performance with AI-powered prospecting, lead scoring, and pipeline insights. Automate research and outreach to increase conversion rates and revenue."
-			subtitle="Supercharge your sales with AI"
-			pricePerMonthUSD={249}
-			implementationWeeks="1-2 hours"
-			roiNote="Teams report up to 5x ROI from productivity and win-rate gains"
+			slug="ai-sales-intelligence-platform"
+			description="Auto-prioritize leads, generate personalized outreach, and forecast pipeline with high accuracy. Empower SDRs and AEs with AI copilots embedded in their daily workflows."
+			subtitle="Lift conversion rates 15–35% and shorten sales cycles with AI-first workflows."
+			pricePerMonthUSD={1499}
+			implementationWeeks="Implementation: 1–3 weeks"
+			roiNote="Average ROI 3–8x within 60 days"
 			features={[
-				"Automated prospect research and enrichment",
-				"AI lead scoring and intent signals",
-				"Email and LinkedIn sequencing with personalization",
-				"Meeting summaries and next-step extraction",
-				"Pipeline risk alerts and forecast improvements",
-				"CRM sync (Salesforce, HubSpot, Pipedrive)",
-				"Competitor intelligence and objection handling",
-				"Account-based insights and territory planning"
+				"AI lead scoring using firmographics, intent, and engagement",
+				"One-click hyper-personalized emails and sequences",
+				"Meeting prep briefs and objection handling",
+				"Forecasting with scenario simulations",
+				"CRM automations for notes, tasks, and next steps",
+				"Integrations: Salesforce, HubSpot, Gmail/Outlook, Gong, Zoom"
 			]}
-			industries={["B2B SaaS", "Professional Services", "Manufacturing", "Financial Services"]}
+			industries={["B2B SaaS", "Professional Services", "Manufacturing"]}
 			canonical="https://ziontechgroup.com/ai-sales-intelligence-platform"
 		/>
 	);

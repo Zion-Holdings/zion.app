@@ -1,26 +1,25 @@
 import React from 'react';
 import ServiceLanding from '../components/sections/ServiceLanding';
 
-export default function AiCustomerSuccessPlatform() {
+export default function AICustomerSuccessPlatform() {
 	return (
 		<ServiceLanding
 			title="AI Customer Success Platform"
-			description="Predict churn, identify expansion, and orchestrate customer health actions with AI-driven insights and workflows."
-			subtitle="Proactive retention and expansion"
-			pricePerMonthUSD={299}
-			implementationWeeks="2-5 days"
-			roiNote="Teams report 2–4x ROI via reduced churn and increased NRR"
+			slug="ai-customer-success-platform"
+			description="Predict churn, orchestrate proactive outreach, and increase lifetime value. Our AI monitors accounts across product usage, tickets, billing, and NPS to trigger playbooks that prevent churn and expand revenue."
+			subtitle="Reduce churn by 20–45% and grow NRR with automated, data-driven customer health."
+			pricePerMonthUSD={1999}
+			implementationWeeks="Implementation: 2–4 weeks"
+			roiNote="Average ROI 4–10x within 90 days"
 			features={[
-				"Churn prediction and health scoring",
-				"Playbooks and automated outreach",
-				"Onboarding journeys and QBR automation",
-				"Renewal and expansion opportunity detection",
-				"NPS/CSAT analysis and topic clustering",
-				"CRM and support integrations (Salesforce, HubSpot, Zendesk)",
-				"Executive dashboards and alerts",
-				"Success plan templates and collaboration"
+				"Unified customer health scoring (usage, support, sentiment, billing)",
+				"Churn risk prediction with explainable insights",
+				"Playbook automation (email, CS tasks, in-app guides, offers)",
+				"Expansion signals for upsell/cross-sell",
+				"Executive QBR reports and cohort analytics",
+				"Integrations: HubSpot, Salesforce, Zendesk, Intercom, Segment"
 			]}
-			industries={["B2B SaaS", "Fintech", "Healthcare", "Professional Services"]}
+			industries={["SaaS", "Fintech", "Media", "E‑commerce"]}
 			canonical="https://ziontechgroup.com/ai-customer-success-platform"
 		/>
 	);
