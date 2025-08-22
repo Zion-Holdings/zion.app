@@ -34,7 +34,9 @@ import { real2026Q4NewServices } from '../../data/real-2026-q4-new-services';
 import { real2027Q1Additions } from '../../data/real-2027-q1-additions';
 import { real2027Q2Additions } from '../../data/real-2027-q2-additions';
 import { real2028ServiceExpansions } from '../../data/real-2028-service-expansions';
+
 import { real2029Q1Additions } from '../../data/real-2029-q1-additions';
+import { realMarketServices } from '../../data/real-market-services';
 import { real2029Q2Additions } from '../../data/real-2029-q2-additions';
 
 type Service = typeof enhancedRealMicroSaasServices[number];
@@ -77,6 +79,7 @@ function getAllServices(): Service[] {
 		.concat(real2027Q2Additions as unknown as Service[])
 		.concat(real2028ServiceExpansions as unknown as Service[])
 		.concat(real2029Q1Additions as unknown as Service[])
+		.concat(realMarketServices as unknown as Service[])
 		.concat(real2029Q2Additions as unknown as Service[]);
 }
 

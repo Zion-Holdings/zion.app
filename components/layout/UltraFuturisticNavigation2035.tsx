@@ -72,15 +72,15 @@ const navigationItems: NavigationItem[] = [
     description: 'Browse by category',
     badge: 'New',
     children: [
-      { name: 'AI & Data', href: '/services#ai', description: 'AI, data, ML services' },
-      { name: 'Cloud & FinOps', href: '/services#cloud', description: 'Cloud, cost, platform' },
-      { name: 'Observability', href: '/services#observability', description: 'Monitoring & telemetry' },
-      { name: 'Developer Tools', href: '/services#developer-tools', description: 'Developer productivity' },
-      { name: 'Training & Education', href: '/training', description: 'Learning and R&D' },
+      { name: 'AI & Consciousness', href: '/services#ai-consciousness', description: 'AI, data, ML services' },
+      { name: 'Enterprise IT', href: '/services#enterprise-it', description: 'Cloud, cost, platform' },
+      { name: 'Quantum & Emerging', href: '/services#quantum-emerging', description: 'Monitoring & telemetry' },
+      { name: 'Micro SAAS', href: '/services#micro-saas', description: 'Business tools and automation' },
+      { name: 'Education & Research', href: '/services#education-research', description: 'Learning and R&D' },
+      { name: 'AI Evaluation Orchestrator', href: '/services/ai-evaluation-orchestrator', description: 'Automated LLM evals' },
       { name: 'SEO Automation Suite', href: '/seo-automation-suite', description: 'Technical SEO automation' },
-      { name: 'IT Asset Discovery Agent', href: '/it-asset-discovery-agent', description: 'Agentless discovery' },
-      { name: 'Managed Postgres HA', href: '/managed-postgres-ha', description: 'HA Postgres ops' },
-      { name: 'Micro SAAS', href: '/micro-saas', description: 'Business tools and automation' }
+      { name: 'IT Asset Discovery Agent', href: '/services/it-asset-discovery-agent', description: 'Agentless discovery' },
+      { name: 'Managed Postgres HA', href: '/services/managed-postgres-ha', description: 'HA Postgres ops' }
     ]
   },
   {
@@ -114,12 +114,12 @@ const navigationItems: NavigationItem[] = [
     badge: 'New',
     featured: true,
     children: [
-      { name: 'AI Customer Success Platform', href: '/ai-customer-success-platform', description: 'Predict and prevent churn with AI', featured: true },
-      { name: 'AI Sales Intelligence', href: '/ai-sales-intelligence-platform', description: 'Supercharge sales with AI automation' },
-      { name: 'AI Financial Planning', href: '/ai-financial-planning-platform', description: 'Intelligent financial forecasting' },
-      { name: 'AI Decision Engine', href: '/ai-powered-decision-engine', description: 'AI-powered business decisions' },
-      { name: 'AI Content Automation', href: '/intelligent-content-automation-platform', description: 'Automate content creation' },
-      { name: 'AI HR Analytics', href: '/ai-hr-analytics-platform', description: 'Transform HR with AI insights' },
+      { name: 'AI Customer Success Platform', href: '/services/ai-customer-success-platform', description: 'Predict and prevent churn with AI', featured: true },
+      { name: 'AI Sales Intelligence', href: '/services/ai-sales-intelligence-platform', description: 'Supercharge sales with AI automation' },
+      { name: 'AI Financial Planning', href: '/services/ai-financial-planning-platform', description: 'Intelligent financial forecasting' },
+      { name: 'AI Decision Engine', href: '/services/ai-powered-decision-engine', description: 'AI-powered business decisions' },
+      { name: 'AI Content Automation', href: '/services/intelligent-content-automation-platform', description: 'Automate content creation' },
+      { name: 'AI HR Analytics', href: '/services/ai-hr-analytics-platform', description: 'Transform HR with AI insights' },
       { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2025', description: 'Emotional intelligence and self-awareness' },
       { name: 'AI Quantum Neural Network', href: '/ai-quantum-neural-network', description: 'Hybrid AI-Quantum computing platform' },
       { name: 'AI Autonomous Business Operations', href: '/ai-autonomous-business-operations', description: 'Fully autonomous business management' },
@@ -140,14 +140,14 @@ const navigationItems: NavigationItem[] = [
     badge: 'Hot',
     featured: true,
     children: [
-      { name: 'Customer Success Platform', href: '/ai-customer-success-platform', description: 'AI-powered customer retention', featured: true },
-      { name: 'Supply Chain Optimization', href: '/intelligent-supply-chain-optimization', description: 'AI-powered supply chain management' },
-      { name: 'Financial Planning Platform', href: '/ai-financial-planning-platform', description: 'Intelligent financial planning' },
-      { name: 'HR Analytics Platform', href: '/ai-hr-analytics-platform', description: 'AI-powered HR insights' },
-      { name: 'Sales Intelligence Platform', href: '/ai-sales-intelligence-platform', description: 'AI-powered sales automation' },
-      { name: 'CRM Intelligence Suite', href: '/smart-crm-intelligence-suite', description: 'Transform your CRM with AI' },
-      { name: 'Content Automation Platform', href: '/intelligent-content-automation-platform', description: 'AI-powered content management' },
-      { name: 'Decision Engine', href: '/ai-powered-decision-engine', description: 'AI-powered business decisions' }
+      { name: 'Customer Success Platform', href: '/services/ai-customer-success-platform', description: 'AI-powered customer retention', featured: true },
+      { name: 'Supply Chain Optimization', href: '/services/intelligent-supply-chain-optimization', description: 'AI-powered supply chain management' },
+      { name: 'Financial Planning Platform', href: '/services/ai-financial-planning-platform', description: 'Intelligent financial planning' },
+      { name: 'HR Analytics Platform', href: '/services/ai-hr-analytics-platform', description: 'AI-powered HR insights' },
+      { name: 'Sales Intelligence Platform', href: '/services/ai-sales-intelligence-platform', description: 'AI-powered sales automation' },
+      { name: 'CRM Intelligence Suite', href: '/services/smart-crm-intelligence-suite', description: 'Transform your CRM with AI' },
+      { name: 'Content Automation Platform', href: '/services/intelligent-content-automation-platform', description: 'AI-powered content management' },
+      { name: 'Decision Engine', href: '/services/ai-powered-decision-engine', description: 'AI-powered business decisions' }
     ]
   },
   {
@@ -215,12 +215,15 @@ const navigationItems: NavigationItem[] = [
     name: 'Resources',
     href: '/resources',
     icon: <BookOpen className="w-5 h-5" />,
-    description: 'Guides, reports and tools',
+    description: 'Documentation, support, and learning resources',
     children: [
-      { name: 'Blog', href: '/blog', description: 'Insights and updates' },
-      { name: 'Case Studies', href: '/case-studies', description: 'Proven results' },
-      { name: 'Resources Hub', href: '/resources', description: 'Docs, SDKs, guides' },
-      { name: 'Services Advertising', href: '/services-advertising', description: 'Features, benefits and market pricing links' }
+      { name: 'Documentation', href: '/docs', description: 'Technical documentation' },
+      { name: 'API Reference', href: '/api-documentation', description: 'API documentation' },
+      { name: 'Case Studies', href: '/case-studies', description: 'Success stories' },
+      { name: 'Blog & News', href: '/blog', description: 'Latest insights' },
+      { name: 'Support Center', href: '/support', description: 'Help and support' },
+      { name: 'Training', href: '/training', description: 'Learning resources' },
+      { name: 'Community', href: '/community', description: 'User community' }
     ]
   }
 ];
@@ -228,12 +231,12 @@ const navigationItems: NavigationItem[] = [
 const quickActions = [
   { name: 'Get Started', href: '/contact', icon: <ArrowRight className="w-4 h-4" />, primary: true },
   { name: 'Get a Quote', href: '/quote', icon: <DollarSign className="w-4 h-4" /> },
-  { name: 'Book Demo', href: '/contact', icon: <Video className="w-4 h-4" /> },
+  { name: 'Book Demo', href: '/demo', icon: <Video className="w-4 h-4" /> },
   { name: 'Live Chat', href: '/chat', icon: <MessageCircle className="w-4 h-4" /> },
   { name: 'View Pricing', href: '/pricing', icon: <DollarSign className="w-4 h-4" /> },
   { name: 'Market Pricing', href: '/market-pricing', icon: <BarChart3 className="w-4 h-4" /> },
   { name: 'Services Advertising', href: '/services-advertising', icon: <Sparkles className="w-4 h-4" /> },
-  { name: 'Resources', href: '/resources', icon: <BookOpen className="w-4 h-4" /> },
+  { name: 'Documentation', href: '/docs', icon: <BookOpen className="w-4 h-4" /> },
   { name: 'Support', href: '/support', icon: <HelpCircle className="w-4 h-4" /> }
 ];
 
