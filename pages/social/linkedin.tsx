@@ -1,0 +1,26 @@
+import React, { useEffect } from 'react';
+import Head from 'next/head';
+
+export default function LinkedInRedirect() {
+	useEffect(() => {
+		if (typeof window !== 'undefined') {
+			window.location.replace('https://linkedin.com/company/ziontechgroup');
+		}
+	}, []);
+
+	return (
+		<>
+			<Head>
+				<title>LinkedIn | Zion Tech Group</title>
+				<link rel="canonical" href="https://linkedin.com/company/ziontechgroup" />
+				<meta httpEquiv="refresh" content="0;url=https://linkedin.com/company/ziontechgroup" />
+				<meta name="robots" content="noindex, nofollow" />
+			</Head>
+			<div className="min-h-screen bg-black text-white flex items-center justify-center p-8">
+				<a href="https://linkedin.com/company/ziontechgroup" className="text-cyan-400 underline">
+					Continue to LinkedIn
+				</a>
+			</div>
+		</>
+	);
+}
