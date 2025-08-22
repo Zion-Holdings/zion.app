@@ -4,23 +4,21 @@ import ServiceLanding from '../components/sections/ServiceLanding';
 export default function AiLegalDocumentAnalysis() {
 	return (
 		<ServiceLanding
-			title="AI Legal Document Analysis & Contract Review"
-			description="Analyze NDAs, MSAs, SOWs, and complex agreements with AI-powered clause extraction, risk detection, and negotiation guidance."
-			subtitle="Accelerate legal reviews with intelligent automation"
+			title="AI Legal Document Analysis & Contract Review Platform"
+			description="Review contracts, identify risks, and generate insights with AI. Reduce review time and improve accuracy with auditable recommendations."
+			subtitle="Accelerate legal review with AI"
 			pricePerMonthUSD={2999}
 			implementationWeeks="2-3 weeks"
-			roiNote="Legal teams report 4x ROI via faster reviews and lower outside counsel spend"
+			roiNote="Legal teams report 400% ROI from efficiency and risk reduction"
 			features={[
-				"Clause detection with risk scoring and fallback suggestions",
-				"Obligation extraction and workflow tracking",
-				"Deviation detection against playbooks and standards",
-				"Redline recommendations and negotiation assistant",
-				"Data room scanning and duplicate detection",
-				"Integrated e-sign and matter management hooks",
-				"PII/PHI detection and privacy posture checks",
-				"Audit trail and export to DOCX/PDF"
+				"AI contract analysis and review",
+				"Risk identification and assessment",
+				"Key clause extraction and suggestions",
+				"Compliance and policy checks",
+				"Playbooks and negotiation aids",
+				"Audit trails and redlines"
 			]}
-			industries={["Legal", "SaaS", "Enterprise Procurement", "Finance", "Healthcare"]}
+			industries={["Legal", "Enterprise", "Procurement", "Compliance"]}
 			canonical="https://ziontechgroup.com/ai-legal-document-analysis"
 		/>
 	);
