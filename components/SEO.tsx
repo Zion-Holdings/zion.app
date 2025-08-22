@@ -13,6 +13,9 @@ interface SEOProps {
 	noindex?: boolean;
 	nofollow?: boolean;
 	jsonLd?: Record<string, any> | Record<string, any>[];
+	// Optional Twitter metadata overrides
+	twitterSite?: string;
+	twitterCreator?: string;
 }
 
 const DEFAULTS = {
@@ -23,7 +26,7 @@ const DEFAULTS = {
 	image: 'https://ziontechgroup.com/og-image.svg'
 };
 
-export default function SEO({ title, description, canonical, ogImage, image, noIndex, noindex, nofollow, jsonLd }: SEOProps) {
+export default function SEO({ title, description, canonical, ogImage, image, noIndex, noindex, nofollow, jsonLd, twitterSite, twitterCreator }: SEOProps) {
 	const router = useRouter();
 	const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || DEFAULTS.url;
 	const pageTitle = title || DEFAULTS.title;
@@ -95,12 +98,20 @@ export default function SEO({ title, description, canonical, ogImage, image, noI
 		}
 	];
 
+	// Derive Twitter meta from env if not provided
+	const envTwitterSite = process.env.NEXT_PUBLIC_TWITTER_SITE;
+	const envTwitterCreator = process.env.NEXT_PUBLIC_TWITTER_CREATOR;
+	const finalTwitterSite = twitterSite || envTwitterSite;
+	const finalTwitterCreator = twitterCreator || envTwitterCreator;
+
 	return (
 		<Head>
 			<title>{pageTitle}</title>
 			<meta name="description" content={pageDescription} />
 			<meta name="robots" content={robotsContent} />
 			<link rel="canonical" href={canonicalUrl} />
+			{/* Optional sitemap link for crawlers */}
+			<link rel="sitemap" type="application/xml" href={`${baseUrl.replace(/\/$/, '')}/sitemap.xml`} />
 			<meta property="og:title" content={pageTitle} />
 			<meta property="og:description" content={pageDescription} />
 			<meta property="og:url" content={canonicalUrl} />
@@ -118,6 +129,8 @@ export default function SEO({ title, description, canonical, ogImage, image, noI
 			<meta name="twitter:image" content={imageUrl} />
 			<meta name="twitter:image:alt" content={imageAlt} />
 			{imageType ? <meta name="twitter:image:type" content={imageType} /> : null}
+			{finalTwitterSite ? <meta name="twitter:site" content={finalTwitterSite} /> : null}
+			{finalTwitterCreator ? <meta name="twitter:creator" content={finalTwitterCreator} /> : null}
 			{(jsonLd || defaultJsonLd) ? (
 				<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd || defaultJsonLd) }} />
 			) : null}
