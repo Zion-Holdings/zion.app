@@ -31,7 +31,7 @@ const footerSections = [
       { name: 'AI Decision Engine', href: '/ai-powered-decision-engine' },
       { name: 'Content Automation', href: '/intelligent-content-automation-platform' },
       { name: 'CRM Intelligence Suite', href: '/smart-crm-intelligence-suite' },
-      { name: 'AI Evaluation Orchestrator', href: '/services/ai-evaluation-orchestrator', featured: true },
+      { name: 'AI Evaluation Orchestrator', href: '/ai-evaluation-orchestrator', featured: true },
               { name: 'SEO Automation Suite', href: '/seo-automation-suite' },
               { name: 'IT Asset Discovery Agent', href: '/it-asset-discovery-agent' },
               { name: 'Managed Postgres HA', href: '/managed-postgres-ha' }

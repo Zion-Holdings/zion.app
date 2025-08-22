@@ -1,17 +1,17 @@
 [
   "ai-autonomous-marketing-platform",
-  "ai-consciousness-evolution-2025",
   "ai-creativity-studio",
   "ai-education-platform",
   "ai-financial-intelligence",
-  "ai-healthcare-diagnostics",
   "ai-sustainability-platform",
   "automated-financial-analytics-platform",
   "entertainment-media-solutions",
   "industry-solutions",
   "intelligent-project-management-suite",
   "leadership",
-  "quantum-bio-computing-platform",
   "real-estate-technology-solutions",
+  "services/ai-evaluation-orchestrator",
+  "services/it-asset-discovery-agent",
+  "services/managed-postgres-ha",
   "transportation-logistics-solutions"
 ]
