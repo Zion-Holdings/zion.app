@@ -375,13 +375,34 @@ export default function MarketPricingPage() {
             </div>
 
             <div className="bg-black/30 rounded-2xl border border-emerald-500/30 p-6">
-              <h2 className="text-2xl font-semibold mb-2">Feature Flags & Experiments</h2>
+              <h2 className="text-2xl font-semibold mb-2">Feature Flags & Experimentation</h2>
               <ul className="list-disc list-inside text-slate-300 space-y-1">
-                <li>LaunchDarkly: <a className="text-cyan-400 underline" href={`https://launchdarkly.com/pricing/`} target="_blank" rel="noopener noreferrer">launchdarkly.com/pricing</a></li>
-                <li>Flagsmith: <a className="text-cyan-400 underline" href={`https://www.flagsmith.com/pricing`} target="_blank" rel="noopener noreferrer">flagsmith.com/pricing</a></li>
-                <li>Split.io: <a className="text-cyan-400 underline" href={`https://www.split.io/pricing/`} target="_blank" rel="noopener noreferrer">split.io/pricing</a></li>
+                <li>LaunchDarkly pricing: <a className="text-cyan-400 underline" href={`https://launchdarkly.com/pricing/`} target="_blank" rel="noopener noreferrer">launchdarkly.com/pricing</a></li>
+                <li>Flagsmith pricing: <a className="text-cyan-400 underline" href={`https://www.flagsmith.com/pricing`} target="_blank" rel="noopener noreferrer">flagsmith.com/pricing</a></li>
+                <li>Optimizely Web: <a className="text-cyan-400 underline" href={`https://www.optimizely.com/pricing/`} target="_blank" rel="noopener noreferrer">optimizely.com/pricing</a></li>
+                <li>VWO pricing: <a className="text-cyan-400 underline" href={`https://vwo.com/pricing/`} target="_blank" rel="noopener noreferrer">vwo.com/pricing</a></li>
               </ul>
-              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $50–$800/month depending on flags and MAUs.</div>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $50–$500/month for flags; $100–$1,000/month for experimentation depending on traffic.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-fuchsia-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Synthetic Data & Privacy</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Gretel pricing: <a className="text-cyan-400 underline" href={`https://gretel.ai/pricing`} target="_blank" rel="noopener noreferrer">gretel.ai/pricing</a></li>
+                <li>Mostly AI pricing: <a className="text-cyan-400 underline" href={`https://mostly.ai/pricing/`} target="_blank" rel="noopener noreferrer">mostly.ai/pricing</a></li>
+                <li>Hazy (synthetic data): <a className="text-cyan-400 underline" href={`https://hazy.com/`} target="_blank" rel="noopener noreferrer">hazy.com</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $99–$1,500/month based on datasets, privacy features, and synthesis volume.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-teal-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Data Reliability & Observability</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Monte Carlo: <a className="text-cyan-400 underline" href={`https://www.montecarlodata.com/`} target="_blank" rel="noopener noreferrer">montecarlodata.com</a></li>
+                <li>Bigeye: <a className="text-cyan-400 underline" href={`https://www.bigeye.com/pricing`} target="_blank" rel="noopener noreferrer">bigeye.com/pricing</a></li>
+                <li>OpenTelemetry docs: <a className="text-cyan-400 underline" href={`https://opentelemetry.io/`} target="_blank" rel="noopener noreferrer">opentelemetry.io</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $200–$2,000/month depending on data volume, SLAs, and alerting needs.</div>
             </div>
           </div>
 
