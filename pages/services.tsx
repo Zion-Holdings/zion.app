@@ -14,6 +14,10 @@ import { innovativeMicroSaasSolutions } from '../data/2034-innovative-micro-saas
 import { cuttingEdgeAIServices } from '../data/2034-cutting-edge-ai-services';
 import { real2025Q4AugmentedBatch } from '../data/real-2025-q4-augmented-batch';
 import { real2029Q3Additions } from '../data/real-2029-q3-additions';
+import { enterpriseITSolutions2034Additions } from '../data/augment-2034-enterprise-it-additions';
+import { innovativeMicroSaasSolutions2034Additions } from '../data/augment-2034-micro-saas-additions';
+import { cuttingEdgeAIServices2034Additions } from '../data/augment-2034-ai-services-additions';
+import { aiAutonomousEcosystemServices2029Additions, emergingTechBreakthroughServices2029Additions, practicalBusinessSolutionServices2029Additions } from '../data/augment-2029-ecosystem-additions';
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -28,8 +32,10 @@ import { industryRealServices } from '../data/industry-real-services';
 
 // Helper function to get service category
 const getServiceCategory = (service: any) => {
-  if (service.category) return service.category;
-  if (service.type) return service.type;
+  if (Array.isArray(service?.category)) return service.category[0] || 'Other';
+  if (service?.category) return service.category;
+  if (Array.isArray(service?.type)) return service.type[0] || 'Other';
+  if (service?.type) return service.type;
   return 'Other';
 };
 
@@ -70,7 +76,13 @@ const allServices = [
   ...marketValidatedServices,
   ...industryRealServices,
   ...real2025Q4AugmentedBatch,
-  ...real2029Q3Additions
+  ...real2029Q3Additions,
+  ...enterpriseITSolutions2034Additions,
+  ...innovativeMicroSaasSolutions2034Additions,
+  ...cuttingEdgeAIServices2034Additions,
+  ...aiAutonomousEcosystemServices2029Additions,
+  ...emergingTechBreakthroughServices2029Additions,
+  ...practicalBusinessSolutionServices2029Additions
 ];
 
 const categories = [

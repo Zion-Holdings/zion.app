@@ -51,6 +51,10 @@ import { real2027Q3Additions } from '../../data/real-2027-q3-additions';
 import { aiAutonomousEcosystemServices2029 } from '../../data/2029-ai-autonomous-ecosystem';
 import { emergingTechBreakthroughServices2029 } from '../../data/2029-emerging-tech-breakthroughs';
 import { practicalBusinessSolutionServices2029 } from '../../data/2029-practical-business-solutions';
+import { enterpriseITSolutions2034Additions } from '../../data/augment-2034-enterprise-it-additions';
+import { innovativeMicroSaasSolutions2034Additions } from '../../data/augment-2034-micro-saas-additions';
+import { cuttingEdgeAIServices2034Additions } from '../../data/augment-2034-ai-services-additions';
+import { aiAutonomousEcosystemServices2029Additions, emergingTechBreakthroughServices2029Additions, practicalBusinessSolutionServices2029Additions } from '../../data/augment-2029-ecosystem-additions';
 
 type Service = typeof enhancedRealMicroSaasServices[number];
 
@@ -104,7 +108,14 @@ function getAllServices(): Service[] {
 		// 2029 showcase/pricing arrays to ensure matching /services/* pages are generated
 		.concat(aiAutonomousEcosystemServices2029 as unknown as Service[])
 		.concat(emergingTechBreakthroughServices2029 as unknown as Service[])
-		.concat(practicalBusinessSolutionServices2029 as unknown as Service[]);
+		.concat(practicalBusinessSolutionServices2029 as unknown as Service[])
+		// Additive 2034 and 2029 datasets
+		.concat(enterpriseITSolutions2034Additions as unknown as Service[])
+		.concat(innovativeMicroSaasSolutions2034Additions as unknown as Service[])
+		.concat(cuttingEdgeAIServices2034Additions as unknown as Service[])
+		.concat(aiAutonomousEcosystemServices2029Additions as unknown as Service[])
+		.concat(emergingTechBreakthroughServices2029Additions as unknown as Service[])
+		.concat(practicalBusinessSolutionServices2029Additions as unknown as Service[]);
 }
 
 function toSlug(value: string): string {
