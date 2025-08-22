@@ -5,28 +5,17 @@ import SEO from '../components/SEO';
 export default function NotFoundPage() {
 	return (
 		<>
-			<SEO title="Page Not Found | Zion Tech Group" description="The page you’re looking for doesn’t exist. Explore our services or contact us for help." noindex nofollow />
-			<div className="min-h-[70vh] flex items-center">
-				<div className="max-w-4xl mx-auto px-6 lg:px-10 py-20">
-					<h1 className="text-4xl lg:text-6xl font-extrabold bg-gradient-to-r from-cyan-400 via-fuchsia-400 to-emerald-400 bg-clip-text text-transparent">Page not found</h1>
-					<p className="mt-4 text-gray-300 max-w-2xl">The page you’re looking for doesn’t exist or moved. Explore our services below or contact us and we’ll help you find it.</p>
-
-					<div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-						<Link href="/services" className="rounded-xl border border-white/10 bg-white/5 p-5 hover:border-cyan-400/40">Browse all services</Link>
-						<Link href="/comprehensive-services-showcase-2025" className="rounded-xl border border-white/10 bg-white/5 p-5 hover:border-fuchsia-400/40">Full services showcase</Link>
-						<Link href="/pricing" className="rounded-xl border border-white/10 bg-white/5 p-5 hover:border-emerald-400/40">Pricing</Link>
-						<Link href="/resources" className="rounded-xl border border-white/10 bg-white/5 p-5 hover:border-cyan-400/40">Resources</Link>
-						<Link href="/contact" className="rounded-xl border border-white/10 bg-white/5 p-5 hover:border-fuchsia-400/40">Contact sales</Link>
-						<Link href="/support" className="rounded-xl border border-white/10 bg-white/5 p-5 hover:border-emerald-400/40">Support</Link>
-					</div>
-
-					<div className="mt-12 flex flex-wrap items-center gap-4 text-sm text-gray-400">
-						<span>Mobile: +1 302 464 0950</span>
-						<a className="underline" href="mailto:kleber@ziontechgroup.com">kleber@ziontechgroup.com</a>
-						<span>Address: 364 E Main St STE 1008 Middletown DE 19709</span>
+			<SEO title="Page Not Found — Zion Tech Group" description="Sorry, we couldn't find that page. Explore our services and resources." />
+			<section className="relative pt-28 pb-16 md:pt-36 md:pb-24">
+				<div className="container mx-auto px-4 text-center max-w-3xl">
+					<h1 className="text-4xl md:text-6xl font-extrabold tracking-tight gradient-text-cyan-purple">404 — Page Not Found</h1>
+					<p className="mt-6 text-lg md:text-xl text-gray-300">The page you are looking for doesn’t exist or has been moved.</p>
+					<div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+						<Link href="/" className="inline-flex items-center justify-center px-6 py-3 rounded-md bg-white text-black font-semibold hover:bg-gray-200 transition-colors">Go Home</Link>
+						<Link href="/services/" className="inline-flex items-center justify-center px-6 py-3 rounded-md border border-white/30 text-white font-semibold hover:bg-white/10 transition-colors">Explore Services</Link>
 					</div>
 				</div>
-			</div>
+			</section>
 		</>
 	);
 }
