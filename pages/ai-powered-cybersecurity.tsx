@@ -1,25 +1,21 @@
 import React from 'react';
-import ServiceLanding from '../components/sections/ServiceLanding';
+import Head from 'next/head';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 
-export default function AiPoweredCybersecurity() {
-	return (
-		<ServiceLanding
-			title="AI-Powered Cybersecurity"
-			description="Detect, prioritize, and respond to threats with AI-driven analytics, anomaly detection, and automated playbooks."
-			subtitle="Find and fix risks faster"
-			pricePerMonthUSD={2999}
-			implementationWeeks="3-6 weeks"
-			roiNote="Reduce mean time to detect/respond by up to 50%"
-			features={[
-				"Threat detection with LLM-assisted triage",
-				"Anomaly detection on logs/events",
-				"SOAR playbooks and auto-remediation",
-				"Attack surface and posture management",
-				"Integrations: CrowdStrike, Wiz, Snyk, Splunk",
-				"Compliance reporting and evidence"
-			]}
-			industries={["SaaS", "Finance", "Healthcare", "Retail"]}
-			canonical="https://ziontechgroup.com/ai-powered-cybersecurity"
-		/>
-	);
+export default function AIPoweredCybersecurity() {
+  return (
+    <UltraAdvancedFuturisticBackground>
+      <Head>
+        <title>AI-Powered Cybersecurity | Zion Tech Group</title>
+        <meta name="description" content="Threat detection, anomaly response, and SOAR automation powered by AI." />
+        <link rel="canonical" href="https://ziontechgroup.com/ai-powered-cybersecurity" />
+      </Head>
+      <div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto space-y-6 text-slate-200">
+          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">AI-Powered Cybersecurity</h1>
+          <p className="text-lg text-slate-300">Intelligent threat detection, correlation, and automated response to keep your environment safe.</p>
+        </div>
+      </div>
+    </UltraAdvancedFuturisticBackground>
+  );
 }

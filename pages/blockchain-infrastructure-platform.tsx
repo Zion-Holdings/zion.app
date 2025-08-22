@@ -1,27 +1,22 @@
 import React from 'react';
 import Head from 'next/head';
-import ServiceLanding from '../components/sections/ServiceLanding';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 
-export default function BlockchainInfraPage() {
-	return (
-		<>
-			<Head>
-				<title>Blockchain Infrastructure Platform | Zion Tech Group</title>
-				<meta name="description" content="Enterprise-grade nodes, indexing, and HSM-backed key management with SLAs and audit logs." />
-				<link rel="canonical" href="https://ziontechgroup.com/blockchain-infrastructure-platform" />
-			</Head>
-			<ServiceLanding
-				title="Blockchain Infrastructure Platform"
-				description="Operate enterprise-grade nodes, indexing, and secure key management with SLAs, observability, and auditability."
-				subtitle="Reliable blockchain infrastructure for production workloads"
-				pricePerMonthUSD={2499}
-				implementationWeeks="2-4 weeks"
-				roiNote="Reduce infra toil and incidents; 2–3x ROI versus DIY"
-				features={["Managed nodes with multi-region failover","Archive and tracing nodes","Secure HSM-backed key custody","Indexing and subgraph hosting","Webhooks and event streams","Policy-based transaction approvals","Compliance reporting and audit logs","24/7 SRE support"]}
-				industries={["Fintech", "Exchanges", "Gaming", "Enterprises"]}
-				canonical="https://ziontechgroup.com/blockchain-infrastructure-platform"
-			/>
-		</>
-	);
+export default function BlockchainInfrastructurePlatform() {
+  return (
+    <UltraAdvancedFuturisticBackground>
+      <Head>
+        <title>Blockchain Infrastructure Platform | Zion Tech Group</title>
+        <meta name="description" content="Enterprise blockchain infrastructure, nodes, and compliance-grade tooling." />
+        <link rel="canonical" href="https://ziontechgroup.com/blockchain-infrastructure-platform" />
+      </Head>
+      <div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto space-y-6 text-slate-200">
+          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Blockchain Infrastructure Platform</h1>
+          <p className="text-lg text-slate-300">Managed nodes, key management, policy, and observability for enterprise blockchain workloads.</p>
+        </div>
+      </div>
+    </UltraAdvancedFuturisticBackground>
+  );
 }
 
