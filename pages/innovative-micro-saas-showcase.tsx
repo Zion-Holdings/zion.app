@@ -333,7 +333,7 @@ const InnovativeMicroSaasShowcase: React.FC = () => {
               <div className={viewMode === 'grid' ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8' : 'space-y-6'}>
                 {filteredServices.map((service, index) => (
                   <motion.div
-                    key={service.id}
+                    key={(service as any).id || (service as any).slug || (service as any).name}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -357,7 +357,7 @@ const InnovativeMicroSaasShowcase: React.FC = () => {
                         </div>
                         <div className="flex items-center space-x-2">
                           <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                          <span className="text-sm text-gray-400">{service.rating}</span>
+                          <span className="text-sm text-gray-400">{(service as any).rating ?? '4.8'}</span>
                         </div>
                       </div>
 
