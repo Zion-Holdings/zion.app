@@ -18,6 +18,7 @@ import { realServicesQ12025 } from '../../data/real-services-q1-2025'
 import { realEnterpriseServices2025 } from '../../data/real-enterprise-services-2025';
 import { realMarketAugmentations2025 } from '../../data/real-market-augmentations-2025';
 import { verifiedRealServices2025Batch2 } from '../../data/verified-real-services-2025-batch2';
+import { augmentedServicesBatch3 } from '../../data/real-augmented-services-2025-batch3';
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -47,7 +48,8 @@ export default function ServicesIndexPage() {
       realServicesQ12025 as unknown[],
       realEnterpriseServices2025 as unknown[],
       realMarketAugmentations2025 as unknown[],
-      verifiedRealServices2025Batch2 as unknown[]
+      verifiedRealServices2025Batch2 as unknown[],
+      augmentedServicesBatch3 as unknown[]
     );
   const byCategory: Record<string, unknown[]> = {};
   for (const c of categories) byCategory[c] = [];
@@ -82,6 +84,8 @@ export default function ServicesIndexPage() {
     'Quality & Monitoring': 'quality',
   };
 
+  const [shownCounts, setShownCounts] = React.useState<Record<string, number>>(() => Object.fromEntries(categories.map(c => [c, 12])));
+
   return (
     <UltraFuturisticBackground variant="quantum" intensity="high">
       <Head>
@@ -107,7 +111,7 @@ export default function ServicesIndexPage() {
           <section key={cat} id={anchorMap[cat] || toSlug(cat)}>
             <h2 className="text-2xl md:text-3xl font-semibold text-white mb-4">{cat}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {byCategory[cat].slice(0, 12).map((s) => {
+              {byCategory[cat].slice(0, (shownCounts[cat] ?? 12)).map((s) => {
                 const service = s as { id?: string; name?: string; link?: string; category?: string; tagline?: string; description?: string; price?: string; period?: string };
                 const slug = service.link ? (() => { try { const u = new URL(service.link); const p = u.pathname.replace(/^\/+|\/+$/g, ''); return p.startsWith('services/') ? p.substring('services/'.length) : toSlug(service.id || service.name || ''); } catch { return toSlug(service.id || service.name || ''); } })() : toSlug(service.id || service.name || '');
                 return (
@@ -124,6 +128,16 @@ export default function ServicesIndexPage() {
                 );
               })}
             </div>
+            {byCategory[cat].length > (shownCounts[cat] ?? 12) && (
+              <div className="mt-6 flex justify-center">
+                <button
+                  onClick={() => setShownCounts(prev => ({ ...prev, [cat]: (prev[cat] ?? 12) + 12 }))}
+                  className="px-4 py-2 rounded-lg bg-gray-800/60 border border-gray-700/70 hover:border-cyan-500/50"
+                >
+                  Show more
+                </button>
+              </div>
+            )}
           </section>
         ))}
       </div>
