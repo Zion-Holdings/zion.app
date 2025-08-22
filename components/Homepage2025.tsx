@@ -38,25 +38,49 @@ const Homepage2025: React.FC = () => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               <UltraFuturisticServiceCard2026
+                service={{
+                  id: 'ai-ml',
+                  name: 'AI & Machine Learning',
+                  tagline: 'Advanced artificial intelligence solutions',
+                  description: 'Advanced artificial intelligence solutions for modern businesses',
+                  price: '$999',
+                  period: 'month',
+                  features: ['Machine Learning', 'Deep Learning', 'NLP', 'Computer Vision'],
+                  popular: true,
+                  category: 'AI',
+                  icon: '🧠'
+                }}
                 variant="ai"
-                title="AI & Machine Learning"
-                description="Advanced artificial intelligence solutions for modern businesses"
-                icon="🧠"
-                popular={true}
               />
               <UltraFuturisticServiceCard2026
+                service={{
+                  id: 'quantum-computing',
+                  name: 'Quantum Computing',
+                  tagline: 'Next-generation computing solutions',
+                  description: 'Next-generation computing solutions for complex problems',
+                  price: '$1999',
+                  period: 'month',
+                  features: ['Quantum Algorithms', 'Quantum Security', 'Quantum Simulation'],
+                  popular: false,
+                  category: 'Quantum',
+                  icon: '⚛️'
+                }}
                 variant="quantum"
-                title="Quantum Computing"
-                description="Next-generation computing solutions for complex problems"
-                icon="⚛️"
-                popular={false}
               />
               <UltraFuturisticServiceCard2026
+                service={{
+                  id: 'process-automation',
+                  name: 'Process Automation',
+                  tagline: 'Intelligent automation solutions',
+                  description: 'Intelligent automation to streamline your operations',
+                  price: '$799',
+                  period: 'month',
+                  features: ['Workflow Automation', 'RPA', 'AI Integration', 'Analytics'],
+                  popular: true,
+                  category: 'Automation',
+                  icon: '⚡'
+                }}
                 variant="automation"
-                title="Process Automation"
-                description="Intelligent automation to streamline your operations"
-                icon="⚡"
-                popular={true}
               />
             </div>
           </div>

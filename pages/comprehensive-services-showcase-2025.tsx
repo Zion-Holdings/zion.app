@@ -123,7 +123,9 @@ const ComprehensiveServicesShowcase2025: React.FC = () => {
   };
 
   return (
-    <UltraFuturisticBackground2026 intensity="high" theme="quantum">
+    <>
+      <UltraFuturisticBackground2026 intensity="high" theme="quantum" />
+      
       {/* Header */}
       <header className="relative z-10 pt-8 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -466,7 +468,7 @@ const ComprehensiveServicesShowcase2025: React.FC = () => {
           </motion.div>
         </div>
       </section>
-    </UltraFuturisticBackground2026>
+    </>
   );
 };
 

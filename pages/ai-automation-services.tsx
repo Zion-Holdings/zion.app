@@ -29,9 +29,10 @@ export default function AIAutomationServices() {
         <meta name="contact:website" content="https://ziontechgroup.com" />
       </Head>
 
-      <UltraFuturisticBackground2026 intensity="high" theme="holographic">
-        {/* Hero Section */}
-        <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16">
+      <UltraFuturisticBackground2026 intensity="high" theme="quantum" />
+      
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16">
           <div className="text-center z-10 max-w-6xl mx-auto">
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
@@ -130,7 +131,7 @@ export default function AIAutomationServices() {
                   <UltraFuturisticServiceCard2026 
                     service={service} 
                     variant="enterprise"
-                    theme="holographic"
+                    theme="quantum"
                   />
                 </motion.div>
               ))}
@@ -266,7 +267,6 @@ export default function AIAutomationServices() {
             </motion.div>
           </div>
         </section>
-      </UltraFuturisticBackground2026>
     </>
   );
 }

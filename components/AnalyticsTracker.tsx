@@ -325,7 +325,7 @@ const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({
   // Expose tracking functions globally for external use
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      (window as Record<string, unknown>).ZionAnalytics = {
+      (window as any).ZionAnalytics = {
         trackEvent,
         trackPageView,
         trackServiceInteraction,

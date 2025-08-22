@@ -85,9 +85,12 @@ const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
         const observer = new PerformanceObserver((list) => {
           const entries = list.getEntries();
           entries.forEach((entry) => {
-            setMetrics(prev => ({ ...prev, fid: entry.processingStart - entry.startTime }));
-            if (onMetricsUpdate) {
-              onMetricsUpdate({ ...metrics, fid: entry.processingStart - entry.startTime });
+            const fidEntry = entry as PerformanceEntry & { processingStart?: number };
+            if (fidEntry.processingStart) {
+              setMetrics(prev => ({ ...prev, fid: fidEntry.processingStart - entry.startTime }));
+              if (onMetricsUpdate) {
+                onMetricsUpdate({ ...metrics, fid: fidEntry.processingStart - entry.startTime });
+              }
             }
           });
         });
