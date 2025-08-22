@@ -279,6 +279,60 @@ export default function ServicesAdvertisingPage() {
 					</ul>
 				</section>
 
+				<section id="ai-oncall-copilot" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">AI On‑Call Copilot</h2>
+					<p className="text-slate-300">Summarizes incidents, correlates logs and traces, and proposes fixes with runbooks.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $100–$300/mo</li>
+						<li>References: {ext('https://grafana.com/oss/loki/')}, {ext('https://opentelemetry.io/')}, {ext('https://www.pagerduty.com/pricing/')}</li>
+					</ul>
+				</section>
+
+				<section id="multi-region-failover-simulator" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Multi‑Region Failover Simulator</h2>
+					<p className="text-slate-300">Run DR game‑days with RPO/RTO scoring and generate audit‑ready reports.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $80–$200/mo</li>
+						<li>References: {ext('https://aws.amazon.com/fis/')}, {ext('https://chaos-mesh.org/')}, {ext('https://learn.microsoft.com/azure/architecture/framework/resiliency/')}</li>
+					</ul>
+				</section>
+
+				<section id="edge-personalization-engine" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Edge Personalization Engine</h2>
+					<p className="text-slate-300">Edge rules + AI segments for geo/device personalization and experiments.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $50–$200/mo</li>
+						<li>References: {ext('https://developers.cloudflare.com/workers/')}, {ext('https://vercel.com/edge-network')}</li>
+					</ul>
+				</section>
+
+				<section id="openapi-conformance-gate" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">OpenAPI Conformance Gate</h2>
+					<p className="text-slate-300">CI contract tests, schema diffs, and backward‑compat checks to prevent breakage.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $20–$80/mo</li>
+						<li>References: {ext('https://www.openapis.org/')}, {ext('https://github.com/stoplightio/prism')}</li>
+					</ul>
+				</section>
+
+				<section id="sbom-cve-watchtower" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">SBOM & CVE Watchtower</h2>
+					<p className="text-slate-300">Track SBOMs, watch CVEs, and open PRs for safe upgrades automatically.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $30–$120/mo</li>
+						<li>References: {ext('https://cyclonedx.org/')}, {ext('https://osv.dev/')}, {ext('https://github.com/dependabot')}</li>
+					</ul>
+				</section>
+
+				<section id="llm-cost-guardian" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">LLM Cost Guardian</h2>
+					<p className="text-slate-300">Route by price/latency/quality and enforce budgets with alerts and caps.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $40–$150/mo</li>
+						<li>References: {ext('https://openrouter.ai/')}, {ext('https://platform.openai.com/pricing')}, {ext('https://console.groq.com/pricing')}</li>
+					</ul>
+				</section>
+
 				<section id="backup-dr-runbook-hub" className="space-y-6">
 					<h2 className="text-2xl font-semibold text-white">Backup & DR Runbook Hub</h2>
 					<p className="text-slate-300">Automated backup policies, restore rehearsal, and audit-ready evidence.</p>
@@ -357,6 +411,24 @@ export default function ServicesAdvertisingPage() {
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $50–$200/mo</li>
 						<li>References: {ext('https://www.zendesk.com/pricing/')}, {ext('https://freshdesk.com/pricing')}, {ext('https://www.intercom.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section id="data-lineage-auto-mapper" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Data Lineage Auto‑Mapper</h2>
+					<p className="text-slate-300">Column‑level lineage across warehouses with breaking change detection.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $80–$250/mo</li>
+						<li>References: {ext('https://www.getdbt.com/pricing/')}, {ext('https://www.snowflake.com/pricing/')}, {ext('https://openlineage.io/')}</li>
+					</ul>
+				</section>
+
+				<section id="ai-red-team-simulator" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">AI Red Team Simulator</h2>
+					<p className="text-slate-300">Automated jailbreaks, prompt injections, and safety evals for AI apps.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $60–$200/mo</li>
+						<li>References: {ext('https://owaspai.org/saif/')}, {ext('https://github.com/openai/evals')}</li>
 					</ul>
 				</section>
 
