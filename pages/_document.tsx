@@ -7,16 +7,16 @@ class MyDocument extends Document {
 	}
 
 	render() {
-		const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ziontechgroup.com';
 		return (
 			<Html lang="en">
 				<Head>
-					<link rel="preconnect" href="https://plausible.io" />
-					<meta name="theme-color" content="#000000" />
+					<link rel="preconnect" href="https://plausible.io" crossOrigin="anonymous" />
+					<link rel="dns-prefetch" href="//plausible.io" />
+					<meta name="theme-color" content="#0a0a0a" />
+					<meta name="format-detection" content="telephone=no" />
+					<meta name="color-scheme" content="dark light" />
 					<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 					<link rel="manifest" href="/site.webmanifest" />
-					<link rel="canonical" href={siteUrl} />
-					<meta name="viewport" content="width=device-width, initial-scale=1" />
 				</Head>
 				<body>
 					<Main />
