@@ -22,6 +22,9 @@
   --shadow-purple: 0 0 20px rgba(139, 92, 246, 0.3);
   --shadow-pink: 0 0 20px rgba(236, 72, 153, 0.3);
   --shadow-multi: 0 0 30px rgba(0, 212, 255, 0.2), 0 0 30px rgba(139, 92, 246, 0.2), 0 0 30px rgba(236, 72, 153, 0.2);
+  --focus-outline: rgba(0, 212, 255, 0.5);
+  --card-bg: rgba(0, 0, 0, 0.55);
+  --card-border: rgba(148, 163, 184, 0.25);
 }
 
 /* Base Styles */
@@ -481,3 +484,29 @@ h1, h2, h3, h4, h5, h6 {
 /* Improve link contrast on dark bg */
 .prose a { color: #67e8f9; }
 .prose a:hover { color: #a5f3fc; }
+
+/* Improve base link contrast and focus */
+a { color: #a5f3fc; }
+a:hover { color: #67e8f9; }
+a:focus-visible { outline: 2px solid var(--focus-outline); outline-offset: 2px; border-radius: 6px; }
+
+/* Improve card legibility */
+.card-dark {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+}
+
+/* Adjust neon text visibility on dark backgrounds */
+.neon-cyan, .neon-purple, .neon-pink {
+  filter: drop-shadow(0 0 6px rgba(0,0,0,0.45));
+}
+
+/* Better responsive spacing */
+.container { padding-left: 1rem; padding-right: 1rem; }
+@media (min-width: 1024px) { .container { padding-left: 1.25rem; padding-right: 1.25rem; } }
+
+/* Improve pagination buttons */
+.pagination button:focus-visible {
+  outline: 2px solid var(--focus-outline);
+  outline-offset: 2px;
+}

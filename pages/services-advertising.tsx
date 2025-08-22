@@ -186,9 +186,9 @@ export default function ServicesAdvertisingPage() {
                 { name: 'SOC 2 Evidence Automation', price: '$499/mo', href: '/soc2-evidence-automation' },
                 { name: 'Vector Search Starter', price: '$249/mo', href: '/vector-search-starter' },
                 { name: 'TLS Certificate Monitor', price: '$49/mo', href: '/tls-certificate-monitor' },
-                { name: 'AI Multimodal Fusion', price: '$2,499/mo', href: '/ai-multimodal-fusion-platform' },
-                { name: 'Zero Trust Architecture', price: '$4,999/mo', href: '/zero-trust-network-architecture' },
-                { name: 'Edge Orchestration', price: '$3,499/mo', href: '/edge-computing-orchestration' }
+                { name: 'AI Email Responder', price: '$39/mo', href: '/services/ai-email-responder' },
+                { name: 'Mobile-First Survey Tool', price: '$29/mo', href: '/services/mobile-first-survey-tool' },
+                { name: 'AI SEO Content Optimizer', price: '$49/mo', href: '/services/seo-content-optimizer' }
               ].map((o) => (
                 <a key={o.name} href={o.href} className="block p-6 rounded-2xl bg-black/40 border border-gray-700/60 hover:border-cyan-500/40">
                   <div className="text-sm text-gray-400 mb-1">From</div>
@@ -275,22 +275,49 @@ export default function ServicesAdvertisingPage() {
           </section>
 
           <section>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Benchmark With Market Pricing</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {pricingRefs.map((group) => (
-                <div key={group.title} className="p-6 rounded-2xl bg-black/40 border border-cyan-500/30">
-                  <h3 className="text-xl font-semibold text-white mb-3">{group.title}</h3>
-                  <ul className="text-slate-300 space-y-1">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Pricing References</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {pricingRefs.concat([
+                {
+                  title: 'Email & Sales Engagement',
+                  links: [
+                    { name: 'Reply.io', href: 'https://reply.io/pricing' },
+                    { name: 'Mixmax', href: 'https://mixmax.com/pricing' },
+                    { name: 'HubSpot Sales', href: 'https://www.hubspot.com/pricing/sales' }
+                  ],
+                  note: 'Seats from $29–$99/mo typical.'
+                },
+                {
+                  title: 'Transcription & Media',
+                  links: [
+                    { name: 'Rev', href: 'https://www.rev.com/pricing' },
+                    { name: 'Descript', href: 'https://www.descript.com/pricing' }
+                  ],
+                  note: 'Per minute or per-seat pricing; $12–$30/seat/mo common.'
+                },
+                {
+                  title: 'E-commerce Returns',
+                  links: [
+                    { name: 'Loop Returns', href: 'https://www.loopreturns.com/pricing' },
+                    { name: 'Returnly', href: 'https://www.affirmsolutions.com/platform/returns' }
+                  ],
+                  note: 'SMB plans: $50–$300/mo typical.'
+                }
+              ]).map((group) => (
+                <div key={group.title} className="p-6 rounded-2xl bg-black/40 border border-gray-700/60">
+                  <div className="text-white font-semibold mb-3">{group.title}</div>
+                  <ul className="space-y-2">
                     {group.links.map((l) => (
-                      <li key={l.href}><a className="text-cyan-400 underline" href={l.href} target="_blank" rel="noopener noreferrer">{l.name}: {new URL(l.href).hostname + new URL(l.href).pathname}</a></li>
+                      <li key={l.name}>
+                        <a href={l.href} target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-white flex items-center gap-2">
+                          {l.name} <ExternalLink className="w-4 h-4" />
+                        </a>
+                      </li>
                     ))}
                   </ul>
-                  <div className="text-sm text-slate-400 mt-3">{group.note}</div>
+                  {group.note && <div className="text-xs text-gray-400 mt-3">{group.note}</div>}
                 </div>
               ))}
-            </div>
-            <div className="text-center mt-6">
-              <Button href="/market-pricing" variant="secondary" className="px-8 py-4">Full Market Pricing</Button>
             </div>
           </section>
 
