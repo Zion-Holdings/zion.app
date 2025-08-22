@@ -330,7 +330,7 @@ export default function EnhancedSidebar2025({ isOpen, onClose }: EnhancedSidebar
                 {quickLinks.map((link) => (
                   <Link
                     key={link.name}
-                    href={link.href}
+                    href={link.href.endsWith('/') ? link.href : `${link.href}/`}
                     onClick={onClose}
                     className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-800/50 transition-colors duration-200 group"
                   >
@@ -405,7 +405,7 @@ export default function EnhancedSidebar2025({ isOpen, onClose }: EnhancedSidebar
                           {section.items.map((item) => (
                             <Link
                               key={item.name}
-                              href={item.href}
+                              href={item.href.endsWith('/') ? item.href : `${item.href}/`}
                               onClick={onClose}
                               className="flex items-center justify-between p-2 rounded-lg hover:bg-gray-800/30 transition-colors duration-200 group"
                             >
