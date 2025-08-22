@@ -13,6 +13,8 @@ class MyDocument extends Document {
 					<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 					<link rel="manifest" href="/site.webmanifest" />
 					<meta name="theme-color" content="#000000" />
+					<meta name="color-scheme" content="dark light" />
+					<meta name="format-detection" content="telephone=no" />
 					<link rel="preconnect" href="https://plausible.io" crossOrigin="anonymous" />
 					<link rel="dns-prefetch" href="//plausible.io" />
 					<link rel="robots" href="/robots.txt" />
