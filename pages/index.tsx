@@ -13,6 +13,7 @@ import {
   DollarSign as Finance, Factory as Manufacturing, Scale as Legal
 } from 'lucide-react';
 import SEO from '../components/SEO';
+import Layout from '../components/layout/Layout';
 
 const contactInfo = {
   mobile: '+1 302 464 0950',
@@ -119,7 +120,7 @@ const featuredServices = [
 
 const Home: React.FC = () => {
   return (
-    <>
+    <Layout>
       <SEO 
         title="Zion Tech Group | AI, Quantum & Micro SAAS Solutions"
         description="Revolutionary AI, quantum computing, and micro SAAS solutions that drive growth. Explore our platforms, industry solutions, and micro SaaS offerings."
@@ -414,7 +415,7 @@ const Home: React.FC = () => {
             </motion.div>
           </div>
         </section>
-    </>
+    </Layout>
   );
 };
 
