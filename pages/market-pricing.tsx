@@ -54,7 +54,7 @@ export default function MarketPricingPage() {
                 <li>Wiz pricing overview: <a className="text-cyan-400 underline" href={`https://www.wiz.io/pricing`} target="_blank" rel="noopener noreferrer">wiz.io/pricing</a></li>
                 <li>Prisma Cloud: <a className="text-cyan-400 underline" href={`https://www.paloaltonetworks.com/prisma/cloud/pricing`} target="_blank" rel="noopener noreferrer">paloaltonetworks.com/prisma/cloud/pricing</a></li>
                 <li>HashiCorp Vault: <a className="text-cyan-400 underline" href={`https://www.hashicorp.com/products/vault/pricing`} target="_blank" rel="noopener noreferrer">hashicorp.com/products/vault/pricing</a></li>
-                <li>Cloudflare Zero Trust: <a className="text-cyan-400 underline" href={`https://www.cloudflare.com/products/zero-trust/pricing/`} target="_blank" rel="noopener noreferrer">cloudflare.com/products/zero-trust/pricing</a></li>
+                <li>Cloudflare Zero Trust: <a className="text-cyan-400 underline" href={`https://www.cloudflare.com/zero-trust/`} target="_blank" rel="noopener noreferrer">cloudflare.com/zero-trust</a></li>
               </ul>
               <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $200–$5,000/month based on scale and compliance scope.</div>
             </div>
@@ -170,7 +170,7 @@ export default function MarketPricingPage() {
               <ul className="list-disc list-inside text-slate-300 space-y-1">
                 <li>Skyflow pricing: <a className="text-cyan-400 underline" href={`https://www.skyflow.com/pricing`} target="_blank" rel="noopener noreferrer">skyflow.com/pricing</a></li>
                 <li>VGS pricing: <a className="text-cyan-400 underline" href={`https://www.verygoodsecurity.com/pricing`} target="_blank" rel="noopener noreferrer">verygoodsecurity.com/pricing</a></li>
-                <li>Transcend: <a className="text-cyan-400 underline" href={`https://transcend.io/product/`} target="_blank" rel="noopener noreferrer">transcend.io/product</a></li>
+                <li>Transcend: <a className="text-cyan-400 underline" href={`https://transcend.io/pricing/`} target="_blank" rel="noopener noreferrer">transcend.io/pricing</a></li>
               </ul>
               <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $100–$2,000/month by data volume and systems.</div>
             </div>

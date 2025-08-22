@@ -92,7 +92,7 @@ export default function ServicesAdvertisingPage() {
 					<p className="text-slate-300">WHOIS, nameserver, and DNS record drift detection with alerts.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $5–$40/mo</li>
-						<li>References: {ext('https://www.cloudflare.com/plans/')}, {ext('https://www.digicert.com/tls-ssl/ssl-tools')}</li>
+						<li>References: {ext('https://www.cloudflare.com/plans/')}, {ext('https://www.digicert.com/tls-ssl/ssl-tools/')}</li>
 					</ul>
 				</section>
 
@@ -137,7 +137,7 @@ export default function ServicesAdvertisingPage() {
 					<p className="text-slate-300">Contacts, deals, appointments, and reminders without enterprise complexity.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $15–$60/mo</li>
-						<li>References: {ext('https://www.hubspot.com/pricing/starter')}, {ext('https://www.zoho.com/crm/pricing.html')}</li>
+						<li>References: {ext('https://www.hubspot.com/pricing')}, {ext('https://www.zoho.com/crm/pricing.html')}</li>
 					</ul>
 				</section>
 
@@ -164,11 +164,11 @@ export default function ServicesAdvertisingPage() {
 					<p className="text-slate-300">Privacy-friendly dashboards with goals and funnels. Cookie-less.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $9–$50/mo</li>
-						<li>References: {ext('https://plausible.io/pricing')}, {ext('https://usefathom.com/pricing')}</li>
-					</ul>
-				</section>
+											<li>References: {ext('https://plausible.io/#pricing')}, {ext('https://usefathom.com/pricing')}</li>
+				</ul>
+			</section>
 
-				<section className="space-y-6">
+			<section className="space-y-6">
 					<h2 className="text-2xl font-semibold text-white">Automated Email Follow-ups</h2>
 					<p className="text-slate-300">Time and event sequences with A/B tests and performance analytics.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
@@ -220,11 +220,11 @@ export default function ServicesAdvertisingPage() {
 					<p className="text-slate-300">Privacy-first dashboards with goals, funnels, and UTM insights.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $9–$50/mo</li>
-						<li>References: {ext('https://plausible.io/pricing')}, {ext('https://usefathom.com/pricing')}</li>
-					</ul>
-				</section>
+											<li>References: {ext('https://plausible.io/#pricing')}, {ext('https://usefathom.com/pricing')}</li>
+				</ul>
+			</section>
 
-				<section id="it-helpdesk-suite" className="space-y-6">
+			<section id="it-helpdesk-suite" className="space-y-6">
 					<h2 className="text-2xl font-semibold text-white">IT Helpdesk Suite</h2>
 					<p className="text-slate-300">Ticketing, SLAs, KB, and self-service portal for IT teams and MSPs.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
@@ -265,7 +265,7 @@ export default function ServicesAdvertisingPage() {
 					<p className="text-slate-300">Freshness SLAs, schema drift detection, and anomaly alerts for your warehouse and lakes.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $100–$500/mo</li>
-						<li>References: {ext('https://www.montecarlodata.com/')}, {ext('https://www.bigeye.com/pricing')}, {ext('https://soda.io/')}</li>
+						<li>References: {ext('https://www.montecarlodata.com/')}, {ext('https://www.bigeye.com/')}, {ext('https://soda.io/')}</li>
 					</ul>
 				</section>
 
