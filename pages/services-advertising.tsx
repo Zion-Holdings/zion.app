@@ -345,6 +345,78 @@ export default function ServicesAdvertisingPage() {
 						<li>References: {ext('https://elevenlabs.io/pricing')}</li>
 					</ul>
 				</section>
+
+				<section id="llm-gateway-cost-control" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">LLM Gateway & Cost Control</h2>
+					<p className="text-slate-300">Centralize model access with routing, quotas, audit logs, and cost guardrails.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $99–$399/mo + API usage</li>
+						<li>References: {ext('https://openrouter.ai/models')}, {ext('https://openai.com/api/pricing')}, {ext('https://www.anthropic.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section id="api-observability-starter" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">API Observability Starter</h2>
+					<p className="text-slate-300">OpenTelemetry templates, golden signals dashboards, and SLOs in hours.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $49–$249/mo</li>
+						<li>References: {ext('https://grafana.com/pricing/')}, {ext('https://www.datadoghq.com/pricing/')}</li>
+					</ul>
+				</section>
+
+				<section id="rag-firewall-eval-harness" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">RAG Firewall & Eval Harness</h2>
+					<p className="text-slate-300">Query rewriting, source attribution, and automated evals to harden RAG apps.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $149–$399/mo</li>
+						<li>References: {ext('https://www.pinecone.io/pricing/')}, {ext('https://weaviate.io/pricing')}, {ext('https://openai.com/api/pricing')}</li>
+					</ul>
+				</section>
+
+				<section id="managed-terraform-platform" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Managed Terraform Platform</h2>
+					<p className="text-slate-300">RBAC workspaces, policy as code, and drift detection for AWS/GCP/Azure.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $399–$1,499/mo</li>
+						<li>References: {ext('https://www.hashicorp.com/products/terraform/pricing')}, {ext('https://spacelift.io/pricing')}, {ext('https://www.env0.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section id="warehouse-cost-guardrails" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Warehouse Cost Guardrails</h2>
+					<p className="text-slate-300">Quotas, query linting, and anomaly alerts for Snowflake and BigQuery.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $99–$399/mo</li>
+						<li>References: {ext('https://www.snowflake.com/pricing/')}, {ext('https://cloud.google.com/bigquery/pricing')}</li>
+					</ul>
+				</section>
+
+				<section id="browser-automation-observer" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Browser Automation Observer</h2>
+					<p className="text-slate-300">Run Playwright journeys as monitors with traces, video, and alerts.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $29–$149/mo</li>
+						<li>References: {ext('https://www.checklyhq.com/pricing/')}, {ext('https://www.datadoghq.com/pricing/')}</li>
+					</ul>
+				</section>
+
+				<section id="sso-scim-starter" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">SSO + SCIM Starter</h2>
+					<p className="text-slate-300">SAML/OIDC and SCIM provisioning to accelerate enterprise deals.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $99–$299/mo</li>
+						<li>References: {ext('https://workos.com/pricing')}, {ext('https://auth0.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section id="incident-postmortem-ai" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Incident Postmortem Generator</h2>
+					<p className="text-slate-300">Auto-summarize incidents, produce timelines, and generate action items.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $29–$99/mo</li>
+						<li>References: {ext('https://www.grafana.com/oss/loki/')}, {ext('https://www.elastic.co/observability')}</li>
+					</ul>
+				</section>
 			</div>
 		</div>
 	);
