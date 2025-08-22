@@ -43,7 +43,7 @@ export default function ServicesAdvertisingPage() {
 					</ul>
 				</section>
 
-								<section className="space-y-6">
+				<section className="space-y-6">
 					<h2 className="text-2xl font-semibold text-white">AI Guardrails & Safety</h2>
 					<p className="text-slate-300">Policy engine, PII detection, jailbreak protection, and audit logs for LLM apps.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
@@ -60,98 +60,89 @@ export default function ServicesAdvertisingPage() {
 						<li>References: {ext('https://auth0.com/pricing')}, {ext('https://workos.com/pricing')}, {ext('https://www.okta.com/pricing/')}</li>
 					</ul>
 				</section>
-				
-				{/* New: Additional featured services with pricing references */}
+
+				{/* Enriched sections */}
 				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Email Deliverability Monitor</h2>
-					<p className="text-slate-300">Improve inbox placement with automated warmup, reputation tracking, and blocklist monitoring.</p>
+					<h2 className="text-2xl font-semibold text-white">Churn Prediction for Stripe</h2>
+					<p className="text-slate-300">Predict logo and revenue churn with LTV scoring, cohort charts, and playbooks.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $50–$300/mo</li>
-						<li>References: {ext('https://postmaster.google.com')}, {ext('https://sendgrid.com/pricing/')}, {ext('https://postmarkapp.com/pricing')}</li>
+						<li>Typical SMB budget: $49–$299/mo</li>
+						<li>References: {ext('https://www.profitwell.com/pricing')}, {ext('https://www.paddle.com/pricing')}</li>
 					</ul>
 				</section>
-				
+
 				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Affiliate Attribution & Payouts Hub</h2>
-					<p className="text-slate-300">Cross-device attribution with first-party identity stitching and automated payouts.</p>
+					<h2 className="text-2xl font-semibold text-white">Terraform Drift Detector</h2>
+					<p className="text-slate-300">Detect and auto-remediate infra drift with PRs and policy checks.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $100–$300/mo</li>
-						<li>References: {ext('https://stripe.com/pricing')}, {ext('https://pay.google.com/about/business/')}, {ext('https://partnerstack.com/')}</li>
+						<li>Typical SMB budget: $59–$399/mo</li>
+						<li>References: {ext('https://www.spacelift.io/pricing')}, {ext('https://www.scalr.com/pricing')}</li>
 					</ul>
 				</section>
-				
+
 				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">API Security Scanner</h2>
-					<p className="text-slate-300">Continuously discover APIs and detect OWASP API Top 10 risks with CI gating.</p>
+					<h2 className="text-2xl font-semibold text-white">Cloud Cost Anomaly Monitor</h2>
+					<p className="text-slate-300">Unified anomalies across AWS/GCP/Azure with budgets, alerts, and auto-tagging.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $100–$2,000/mo</li>
-						<li>References: {ext('https://www.cloudflare.com/plans/')}, {ext('https://www.fastly.com/pricing')}</li>
+						<li>Typical SMB budget: $0–$299/mo</li>
+						<li>References: {ext('https://aws.amazon.com/aws-cost-management/aws-cost-anomaly-detection/')}, {ext('https://cloud.google.com/billing/docs/how-to/alerts')}</li>
 					</ul>
 				</section>
-				
+
 				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Podcast Transcription & Insights</h2>
-					<p className="text-slate-300">Transcripts, chapters, show notes, and SEO-ready blog pages with exports.</p>
+					<h2 className="text-2xl font-semibold text-white">WAF Rules & Bot Defense</h2>
+					<p className="text-slate-300">Managed rulesets, rate limits, and bot scoring for Layer 7 protection.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $10–$60/mo + usage</li>
-						<li>References: {ext('https://openai.com/api/pricing')}, {ext('https://www.descript.com/pricing')}, {ext('https://otter.ai/pricing')}</li>
+						<li>Typical SMB budget: $20–$200/mo</li>
+						<li>References: {ext('https://www.cloudflare.com/plans/')}, {ext('https://aws.amazon.com/waf/pricing/')}</li>
 					</ul>
 				</section>
-				
+
 				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Edge Feature Flags</h2>
-					<p className="text-slate-300">Audience and geo-targeted flags at the edge with gradual rollouts and fallbacks.</p>
+					<h2 className="text-2xl font-semibold text-white">SEO Technical Auditor</h2>
+					<p className="text-slate-300">Crawl budgets, Core Web Vitals, sitemaps, and schema with fix plans.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $50–$500/mo</li>
-						<li>References: {ext('https://vercel.com/pricing')}, {ext('https://www.cloudflare.com/plans/')}</li>
+						<li>Typical SMB budget: $29–$199/mo</li>
+						<li>References: {ext('https://ahrefs.com/pricing')}, {ext('https://www.semrush.com/prices/')}</li>
 					</ul>
 				</section>
-				
+
 				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Micro CRM for Local Business</h2>
-					<p className="text-slate-300">Contacts, deals, appointments, and reminders without enterprise complexity.</p>
+					<h2 className="text-2xl font-semibold text-white">Airflow/DAG Health & SLAs</h2>
+					<p className="text-slate-300">Detect late DAGs, retries, and data freshness breaches with root-cause hints.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $15–$60/mo</li>
-						<li>References: {ext('https://www.hubspot.com/pricing/starter')}, {ext('https://www.zoho.com/crm/pricing.html')}</li>
+						<li>Typical SMB budget: $49–$299/mo</li>
+						<li>References: {ext('https://astronomer.io/pricing/')}, {ext('https://www.prefect.io/pricing/')}</li>
 					</ul>
 				</section>
-				
+
 				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Employee Scheduling Suite</h2>
-					<p className="text-slate-300">Shift planning with availability, time-off, swap requests, and notifications.</p>
+					<h2 className="text-2xl font-semibold text-white">LLM Prompt Library & Governance</h2>
+					<p className="text-slate-300">Centralize prompts with versioning, A/B tests, evals, and approvals.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $30–$100/mo</li>
-						<li>References: {ext('https://joinhomebase.com/pricing/')}, {ext('https://wheniwork.com/pricing')}</li>
+						<li>Typical SMB budget: $29–$199/mo</li>
+						<li>References: {ext('https://openai.com/policies/usage-policies')}, {ext('https://www.promptfoo.dev/')}</li>
 					</ul>
 				</section>
-				
+
 				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">LMS Starter</h2>
-					<p className="text-slate-300">Courses, quizzes, certificates, and progress tracking in days.</p>
+					<h2 className="text-2xl font-semibold text-white">Email Warmup & Reputation</h2>
+					<p className="text-slate-300">Automated warmup, blocklist checks, and domain health dashboards.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $30–$150/mo</li>
-						<li>References: {ext('https://teachable.com/pricing')}, {ext('https://www.thinkific.com/pricing/')}</li>
+						<li>Typical SMB budget: $19–$99/mo</li>
+						<li>References: {ext('https://postmaster.google.com/')}, {ext('https://mailchimp.com/pricing/')}, {ext('https://postmarkapp.com/pricing')}</li>
 					</ul>
 				</section>
-				
+
 				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">SMB Website Analytics</h2>
-					<p className="text-slate-300">Privacy-friendly dashboards with goals and funnels. Cookie-less.</p>
+					<h2 className="text-2xl font-semibold text-white">Security Posture Management</h2>
+					<p className="text-slate-300">CIS/NIST controls, misconfig scans, and auto-fix playbooks across clouds.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $9–$50/mo</li>
-						<li>References: {ext('https://plausible.io/pricing')}, {ext('https://usefathom.com/pricing')}</li>
+						<li>Typical SMB budget: $99–$499/mo</li>
+						<li>References: {ext('https://www.wiz.io/pricing')}, {ext('https://orca.security/pricing')}</li>
 					</ul>
 				</section>
-				
-				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Automated Email Follow-ups</h2>
-					<p className="text-slate-300">Time and event sequences with A/B tests and performance analytics.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $20–$100/mo</li>
-						<li>References: {ext('https://mailshake.com/pricing')}, {ext('https://www.gmass.co/pricing')}</li>
-					</ul>
-				</section>
-				
+
 				<div className="pt-4 text-slate-400 text-sm">See also: <a className="text-cyan-400 underline" href="/market-pricing">Market Pricing</a> for a broader list of benchmarks and links.</div>
 			</div>
 		</div>
