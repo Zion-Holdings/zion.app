@@ -37,65 +37,65 @@ const serviceCategories = [
   {
     title: 'AI & Consciousness',
     description: 'Revolutionary AI platforms with consciousness and emotional intelligence',
-    services: innovativeAIServicesEnhanced2025.slice(0, 3),
+    services: innovativeAIServicesEnhanced2025.slice(0, 4),
     icon: Brain,
     color: 'from-violet-500 to-purple-600',
     href: '/ai-services',
-    features: ['Emotional Intelligence', 'Self-Awareness', 'Consciousness Evolution']
+    features: ['Emotional Intelligence', 'Self-Awareness', 'Consciousness Evolution', 'Autonomous Research']
   },
   {
     title: 'Quantum & Emerging Tech',
     description: 'Breakthrough quantum computing and space technology solutions',
-    services: emergingTechServicesEnhanced2025.slice(0, 3),
+    services: emergingTechServicesEnhanced2025.slice(0, 4),
     icon: Atom,
     color: 'from-indigo-500 to-blue-600',
     href: '/quantum-services',
-    features: ['Quantum Computing', 'Space Mining', 'Brain-Computer Interface']
+    features: ['Quantum Computing', 'Space Mining', 'Brain-Computer Interface', 'Autonomous Vehicles']
   },
   {
     title: 'Enterprise IT',
     description: 'Advanced enterprise infrastructure and security solutions',
-    services: innovativeITServicesEnhanced2025.slice(0, 3),
+    services: innovativeITServicesEnhanced2025.slice(0, 4),
     icon: Shield,
     color: 'from-blue-500 to-cyan-600',
     href: '/enterprise-it',
-    features: ['Zero Trust Security', 'Quantum Cloud', 'Autonomous Operations']
+    features: ['Zero Trust Security', 'Quantum Cloud', 'Autonomous Operations', 'Edge Computing']
   },
   {
     title: 'Micro SAAS',
     description: 'Innovative business solutions for modern enterprises',
-    services: innovativeRealMicroSaasServices2025.slice(0, 3),
+    services: innovativeRealMicroSaasServices2025.slice(0, 4),
     icon: Rocket,
     color: 'from-teal-500 to-emerald-600',
     href: '/micro-saas',
-    features: ['Content Automation', 'CRM Intelligence', 'Decision Engine']
+    features: ['Content Automation', 'CRM Intelligence', 'Decision Engine', 'Customer Success']
   },
   {
     title: 'Advanced AI Automation',
     description: 'Revolutionary AI automation for development, testing, DevOps, and security',
-    services: advancedAIAutomationServices2025.slice(0, 3),
+    services: advancedAIAutomationServices2025.slice(0, 4),
     icon: Brain,
     color: 'from-emerald-500 to-teal-600',
     href: '/advanced-ai-automation-services',
-    features: ['Code Review AI', 'Testing Automation', 'DevOps Intelligence']
+    features: ['Code Review AI', 'Testing Automation', 'DevOps Intelligence', 'Security Automation']
   },
   {
     title: 'Advanced IT Infrastructure',
     description: 'Next-generation infrastructure with quantum computing and edge computing',
-    services: advancedITInfrastructureServices2025.slice(0, 3),
+    services: advancedITInfrastructureServices2025.slice(0, 4),
     icon: Cloud,
     color: 'from-indigo-500 to-purple-600',
     href: '/advanced-it-infrastructure-services',
-    features: ['Quantum Cloud', 'Edge Computing', 'Zero Trust Security']
+    features: ['Quantum Cloud', 'Edge Computing', 'Zero Trust Security', 'Autonomous Data Centers']
   },
   {
     title: 'Innovative Business Solutions',
     description: 'AI-powered business intelligence, marketing, sales, and HR solutions',
-    services: innovativeBusinessSolutions2025.slice(0, 3),
+    services: innovativeBusinessSolutions2025.slice(0, 4),
     icon: Target,
     color: 'from-green-500 to-emerald-600',
     href: '/innovative-business-solutions',
-    features: ['Business Intelligence', 'Marketing Automation', 'Sales Intelligence']
+    features: ['Business Intelligence', 'Marketing Automation', 'Sales Intelligence', 'HR Analytics']
   }
 ];
 
@@ -489,59 +489,113 @@ export default function Home() {
       {/* Service Categories Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-              Revolutionary Technology Solutions
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Discover our comprehensive portfolio of cutting-edge technology services that are transforming industries and driving innovation worldwide.
-            </p>
-          </motion.div>
+          <div className="text-center mb-16">
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6"
+            >
+              Revolutionary Technology Services
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-xl text-gray-300 max-w-3xl mx-auto"
+            >
+              Discover our comprehensive portfolio of cutting-edge AI, quantum computing, and enterprise solutions that are transforming industries worldwide.
+            </motion.p>
+          </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {serviceHighlights.map((category, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {serviceCategories.map((category, index) => (
               <motion.div
-                key={index}
-                className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-cyan-500 transition-all duration-300 transform hover:scale-105"
+                key={category.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="group relative"
               >
-                <div className="flex items-center gap-4 mb-6">
-                  <div className={`text-4xl ${category.color} bg-clip-text`}>
-                    {category.icon}
+                <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900/50 to-gray-800/30 border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300 hover:scale-105">
+                  {/* Background Glow */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
+                  
+                  <div className="relative p-8">
+                    {/* Icon */}
+                    <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${category.color} mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                      <category.icon className="w-8 h-8 text-white" />
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors duration-300">
+                      {category.title}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-gray-300 mb-6 leading-relaxed">
+                      {category.description}
+                    </p>
+
+                    {/* Features */}
+                    <div className="space-y-2 mb-6">
+                      {category.features.map((feature, featureIndex) => (
+                        <div key={featureIndex} className="flex items-center text-sm text-gray-400">
+                          <CheckCircle className="w-4 h-4 text-cyan-400 mr-2 flex-shrink-0" />
+                          {feature}
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Services Preview */}
+                    <div className="space-y-3 mb-6">
+                      {category.services.slice(0, 2).map((service) => (
+                        <div key={service.id} className="flex items-center justify-between p-3 rounded-lg bg-gray-800/50 border border-gray-700/30 hover:border-cyan-500/30 transition-colors duration-200">
+                          <div className="flex items-center space-x-3">
+                            <span className="text-2xl">{service.icon}</span>
+                            <div>
+                              <h4 className="text-sm font-medium text-white">{service.name}</h4>
+                              <p className="text-xs text-gray-400">{service.tagline}</p>
+                            </div>
+                          </div>
+                          <div className="text-right">
+                            <div className="text-sm font-bold text-cyan-400">{service.price}</div>
+                            <div className="text-xs text-gray-500">{service.period}</div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* CTA Button */}
+                    <Link 
+                      href={category.href}
+                      className={`inline-flex items-center justify-center w-full px-6 py-3 rounded-xl bg-gradient-to-r ${category.color} text-white font-semibold hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 group-hover:scale-105`}
+                    >
+                      Explore {category.title}
+                      <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                    </Link>
                   </div>
-                  <h3 className="text-2xl font-bold text-white">{category.title}</h3>
                 </div>
-                <p className="text-gray-300 mb-6">{category.description}</p>
-                <div className="space-y-2 mb-6">
-                  {category.services.slice(0, 4).map((service, serviceIndex) => (
-                    <div key={serviceIndex} className="flex items-center gap-2 text-sm text-gray-400">
-                      <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
-                      {service}
-                    </div>
-                  ))}
-                  {category.services.length > 4 && (
-                    <div className="text-sm text-cyan-400">
-                      +{category.services.length - 4} more services
-                    </div>
-                  )}
-                </div>
-                <Link href={category.href}>
-                  <button className="w-full py-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold rounded-lg transition-all duration-300">
-                    Explore {category.title}
-                  </button>
-                </Link>
               </motion.div>
             ))}
           </div>
+
+          {/* View All Services CTA */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="text-center mt-16"
+          >
+            <Link 
+              href="/comprehensive-services-showcase-2025"
+              className="inline-flex items-center px-8 py-4 rounded-2xl bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 text-white font-bold text-lg hover:shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300 hover:scale-105"
+            >
+              <Globe className="w-6 h-6 mr-3" />
+              View Complete Service Portfolio
+              <ArrowRight className="w-6 h-6 ml-3" />
+            </Link>
+          </motion.div>
         </div>
       </section>
 
