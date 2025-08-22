@@ -37,7 +37,11 @@ const sidebarSections = [
       { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics' },
       { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence' },
       { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform' },
-      { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer' }
+      { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer' },
+      { name: 'AI Content Optimization Studio', href: '/services/ai-content-optimization-studio', badge: 'New' },
+      { name: 'IT Helpdesk & Ticketing Suite', href: '/services/it-helpdesk-ticketing-suite', badge: 'New' },
+      { name: 'E‑commerce Returns Management', href: '/services/ecommerce-returns-management', badge: 'New' },
+      { name: 'Automated Email Follow‑ups', href: '/services/automated-email-followups', badge: 'New' }
     ]
   },
   {

@@ -145,7 +145,11 @@ export default function ServicesAdvertisingPage() {
                 { name: 'TLS Certificate Monitor', price: '$49/mo', href: '/tls-certificate-monitor' },
                 { name: 'AI Multimodal Fusion', price: '$2,499/mo', href: '/ai-multimodal-fusion-platform' },
                 { name: 'Zero Trust Architecture', price: '$4,999/mo', href: '/zero-trust-network-architecture' },
-                { name: 'Edge Orchestration', price: '$3,499/mo', href: '/edge-computing-orchestration' }
+                { name: 'Edge Orchestration', price: '$3,499/mo', href: '/edge-computing-orchestration' },
+                { name: 'AI Content Optimization Studio', price: '$129/mo', href: '/services/ai-content-optimization-studio' },
+                { name: 'IT Helpdesk & Ticketing Suite', price: '$159/mo', href: '/services/it-helpdesk-ticketing-suite' },
+                { name: 'E‑commerce Returns Management', price: '$99/mo', href: '/services/ecommerce-returns-management' },
+                { name: 'Automated Email Follow‑ups', price: '$59/mo', href: '/services/automated-email-followups' }
               ].map((o) => (
                 <a key={o.name} href={o.href} className="block p-6 rounded-2xl bg-black/40 border border-gray-700/60 hover:border-cyan-500/40">
                   <div className="text-sm text-gray-400 mb-1">From</div>

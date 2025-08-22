@@ -80,7 +80,11 @@ const navigationItems: NavigationItem[] = [
       { name: 'AI Evaluation Orchestrator', href: '/ai-evaluation-orchestrator', description: 'Automated LLM evals' },
       { name: 'SEO Automation Suite', href: '/seo-automation-suite', description: 'Technical SEO automation' },
       { name: 'IT Asset Discovery Agent', href: '/it-asset-discovery-agent', description: 'Agentless discovery' },
-      { name: 'Managed Postgres HA', href: '/managed-postgres-ha', description: 'HA Postgres ops' }
+      { name: 'Managed Postgres HA', href: '/managed-postgres-ha', description: 'HA Postgres ops' },
+      { name: 'AI Content Optimization Studio', href: '/services/ai-content-optimization-studio', description: 'Briefs & internal links' },
+      { name: 'IT Helpdesk & Ticketing Suite', href: '/services/it-helpdesk-ticketing-suite', description: 'ITSM for SMBs' },
+      { name: 'E‑commerce Returns Management', href: '/services/ecommerce-returns-management', description: 'Automated RMAs & labels' },
+      { name: 'Automated Email Follow‑ups', href: '/services/automated-email-followups', description: 'Sequences & CRM sync' }
     ]
   },
   {

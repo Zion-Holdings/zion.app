@@ -34,7 +34,11 @@ const footerSections = [
       { name: 'AI Evaluation Orchestrator', href: '/ai-evaluation-orchestrator', featured: true },
               { name: 'SEO Automation Suite', href: '/seo-automation-suite' },
               { name: 'IT Asset Discovery Agent', href: '/it-asset-discovery-agent' },
-              { name: 'Managed Postgres HA', href: '/managed-postgres-ha' }
+              { name: 'Managed Postgres HA', href: '/managed-postgres-ha' },
+              { name: 'AI Content Optimization Studio', href: '/services/ai-content-optimization-studio', featured: true },
+              { name: 'IT Helpdesk & Ticketing Suite', href: '/services/it-helpdesk-ticketing-suite' },
+              { name: 'E‑commerce Returns Management', href: '/services/ecommerce-returns-management' },
+              { name: 'Automated Email Follow‑ups', href: '/services/automated-email-followups' }
     ]
   },
   {
