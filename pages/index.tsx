@@ -1,12 +1,17 @@
 import React from 'react';
-import SEO from '../components/SEO';
 import Homepage2025 from '../components/Homepage2025';
+import SEOOptimizer from '../components/SEOOptimizer';
+import AnalyticsTracker from '../components/AnalyticsTracker';
+import ErrorBoundary from '../components/ErrorBoundary';
 
-export default function HomePage() {
-	return (
-		<>
-			<SEO title="Zion Tech Group – Future of Technology" />
-			<Homepage2025 />
-		</>
-	);
-}
+const HomePage: React.FC = () => {
+  return (
+    <ErrorBoundary>
+      <SEOOptimizer />
+      <AnalyticsTracker />
+      <Homepage2025 />
+    </ErrorBoundary>
+  );
+};
+
+export default HomePage;

@@ -38,16 +38,32 @@ export default [
         URL: 'readonly',
         URLSearchParams: 'readonly',
         File: 'readonly',
-        // Canvas and animation globals
-        HTMLCanvasElement: 'readonly',
-        HTMLDivElement: 'readonly',
+        localStorage: 'readonly',
+        sessionStorage: 'readonly',
+        // Performance APIs
+        performance: 'readonly',
+        PerformanceObserver: 'readonly',
+        PerformanceEntry: 'readonly',
+        PerformanceNavigationTiming: 'readonly',
+        // DOM types
+        HTMLElement: 'readonly',
+        HTMLFormElement: 'readonly',
         HTMLButtonElement: 'readonly',
-        HTMLAnchorElement: 'readonly',
         HTMLInputElement: 'readonly',
         HTMLTextAreaElement: 'readonly',
         HTMLSelectElement: 'readonly',
-        CanvasRenderingContext2D: 'readonly',
+        HTMLDivElement: 'readonly',
+        HTMLAnchorElement: 'readonly',
+        HTMLCanvasElement: 'readonly',
+        // Event types
+        Event: 'readonly',
         MouseEvent: 'readonly',
+        KeyboardEvent: 'readonly',
+        MediaQueryListEvent: 'readonly',
+        // Form types
+        FormData: 'readonly',
+        // Canvas and animation globals
+        CanvasRenderingContext2D: 'readonly',
         requestAnimationFrame: 'readonly',
         cancelAnimationFrame: 'readonly'
       }
