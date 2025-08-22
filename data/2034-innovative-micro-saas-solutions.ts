@@ -19,71 +19,77 @@ export interface InnovativeMicroSaasSolution {
   rating?: number;
 }
 
-export const innovativeMicroSaasSolutions: InnovativeMicroSaasSolution[] = [
-  {
-    id: 'ai-customer-success-platform',
-    name: 'AI Customer Success Platform',
-    description: 'Predict churn, trigger playbooks, and automate success workflows using behavioral analytics and AI.',
-    category: 'Customer Success',
-    pricing: { monthly: 199, yearly: 1990, currency: 'USD', starter: '$199/mo' },
-    features: [
-      'Health scoring and churn prediction',
-      'Automated QBR and outreach playbooks',
-      'CSAT/NPS surveys with AI insights',
-      'CRM integrations (Salesforce/HubSpot)'
-    ],
-    link: 'https://ziontechgroup.com/ai-customer-success-platform/',
-    launchDate: '2024-10-05',
-    popular: true,
-    rating: 4.8
-  },
-  {
-    id: 'ai-financial-planning-platform',
-    name: 'AI Financial Planning Platform',
-    description: 'AI-driven FP&A forecasts, scenario modeling, and variance analysis for SMBs and mid-market.',
-    category: 'Finance',
-    pricing: { monthly: 149, yearly: 1490, currency: 'USD', starter: '$149/mo' },
-    features: [
-      'Cohort and revenue modeling',
-      'Dynamic budgeting and forecasting',
-      'Scenario and sensitivity analysis',
-      'ERP/accounting integrations'
-    ],
-    link: 'https://ziontechgroup.com/ai-financial-planning-platform/',
-    launchDate: '2024-09-18',
-    rating: 4.7
-  },
-  {
-    id: 'ai-sales-intelligence-platform',
-    name: 'AI Sales Intelligence Platform',
-    description: 'Prospect scoring, auto-research, and personalized outreach with execution analytics.',
-    category: 'Sales',
-    pricing: { monthly: 129, yearly: 1290, currency: 'USD', starter: '$129/mo' },
-    features: [
-      'Lead scoring and intent signals',
-      'Automated account research',
-      'Personalized sequences with AI',
-      'CRM sync and rep analytics'
-    ],
-    link: 'https://ziontechgroup.com/ai-sales-intelligence-platform/',
-    launchDate: '2024-08-01',
-    popular: true,
-    rating: 4.7
-  },
-  {
-    id: 'intelligent-content-automation-platform',
-    name: 'Intelligent Content Automation Platform',
-    description: 'End-to-end content planning, generation, and distribution with SEO optimization and analytics.',
-    category: 'Content & Marketing',
-    pricing: { monthly: 99, yearly: 990, currency: 'USD', starter: '$99/mo' },
-    features: [
-      'Keyword research and briefs',
-      'Brand voice generation',
-      'Multi-channel distribution',
-      'Performance analytics'
-    ],
-    link: 'https://ziontechgroup.com/intelligent-content-automation-platform/',
-    launchDate: '2024-07-10',
-    rating: 4.6
-  }
+export const innovativeMicroSaasSolutions = [
+	{
+		name: 'Email Deliverability Monitor',
+		description: 'Inbox placement tracking, warmup, reputation and blocklist monitoring with actionable fixes.',
+		category: 'Micro SAAS',
+		pricing: { monthly: 99 },
+		features: [
+			'Domain/ISP reputation and blocklist checks',
+			'Inbox placement tests and warmup',
+			'DKIM/DMARC/SPF auditing',
+			'Alerts and remediation guidance'
+		]
+	},
+	{
+		name: 'Edge Feature Flags',
+		description: 'Geo/audience targeting with instant rollouts at the edge and safe fallbacks.',
+		category: 'Micro SAAS',
+		pricing: { monthly: 79 },
+		features: [
+			'Gradual rollouts and kill switches',
+			'Geo and audience segmentation',
+			'Edge execution for low latency',
+			'SDKs and audit trails'
+		]
+	},
+	{
+		name: 'Podcast Transcription & Insights',
+		description: 'Transcripts, chapters, show notes, and SEO-ready pages with exports.',
+		category: 'Micro SAAS',
+		pricing: { monthly: 29 },
+		features: [
+			'Accurate multi-speaker transcripts',
+			'Chapter and highlight detection',
+			'Auto show notes and blog drafts',
+			'Word-level search and exports'
+		]
+	},
+	{
+		name: 'Local Business Micro CRM',
+		description: 'Lightweight CRM with deals, appointments, reminders, and SMS/email follow-ups.',
+		category: 'Micro SAAS',
+		pricing: { monthly: 39 },
+		features: [
+			'Contacts and pipeline',
+			'Calendars and reminders',
+			'Email/SMS sequences',
+			'Analytics and reporting'
+		]
+	},
+	{
+		name: 'Employee Scheduling Suite',
+		description: 'Shift planning, availability, swaps, and notifications for teams.',
+		category: 'Micro SAAS',
+		pricing: { monthly: 59 },
+		features: [
+			'Shift templates and conflict checks',
+			'Leave management and swaps',
+			'Mobile notifications',
+			'Payroll exports'
+		]
+	},
+	{
+		name: 'LMS Starter',
+		description: 'Launch courses with quizzes, certificates, and progress tracking in days.',
+		category: 'Micro SAAS',
+		pricing: { monthly: 49 },
+		features: [
+			'Courses and modules',
+			'Quizzes and certificates',
+			'Learner progress tracking',
+			'Payment integrations'
+		]
+	}
 ];

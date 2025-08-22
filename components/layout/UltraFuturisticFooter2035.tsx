@@ -122,7 +122,7 @@ const footerSections = [
     icon: <BookOpen className="w-5 h-5 text-cyan-400" />,
     links: [
       { name: 'Documentation', href: '/docs' },
-      { name: 'API Reference', href: '/api-documentation' },
+      { name: 'API Reference', href: '/docs' },
       { name: 'Case Studies', href: '/case-studies' },
       { name: 'Blog & News', href: '/blog' },
       { name: 'Support Center', href: '/support' },

@@ -16,6 +16,13 @@ export default function ServicesAdvertisingPage() {
 			<div className="max-w-6xl mx-auto space-y-10">
 				<h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Services Advertising</h1>
 
+				{/* Quick contact */}
+				<div className="flex flex-col md:flex-row items-center gap-4 p-4 rounded-xl bg-black/30 border border-gray-800">
+					<a href="tel:+13024640950" className="px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white">Call +1 302 464 0950</a>
+					<a href="mailto:kleber@ziontechgroup.com" className="px-4 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-600 text-white">Email kleber@ziontechgroup.com</a>
+					<a href="/pricing" className="px-4 py-2 rounded-lg border border-cyan-500/40 text-cyan-300">View Pricing</a>
+				</div>
+
 				<section className="space-y-6">
 					<h2 className="text-2xl font-semibold text-white">AI Evaluation Orchestrator</h2>
 					<p className="text-slate-300">Automate LLM evals, regression tests, red-teaming, and leaderboards across OpenAI, Anthropic, Groq, and more.</p>
@@ -43,7 +50,7 @@ export default function ServicesAdvertisingPage() {
 					</ul>
 				</section>
 
-								<section className="space-y-6">
+				<section className="space-y-6">
 					<h2 className="text-2xl font-semibold text-white">AI Guardrails & Safety</h2>
 					<p className="text-slate-300">Policy engine, PII detection, jailbreak protection, and audit logs for LLM apps.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
@@ -61,16 +68,34 @@ export default function ServicesAdvertisingPage() {
 					</ul>
 				</section>
 				
-				{/* New: Additional featured services with pricing references */}
+				{/* New additions */}
 				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Email Deliverability Monitor</h2>
-					<p className="text-slate-300">Improve inbox placement with automated warmup, reputation tracking, and blocklist monitoring.</p>
+					<h2 className="text-2xl font-semibold text-white">Status Page & SLO Monitor</h2>
+					<p className="text-slate-300">Public status pages, incident comms, and SLO/error budget tracking.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $50–$300/mo</li>
-						<li>References: {ext('https://postmaster.google.com')}, {ext('https://sendgrid.com/pricing/')}, {ext('https://postmarkapp.com/pricing')}</li>
+						<li>Typical SMB budget: $20–$200/mo</li>
+						<li>References: {ext('https://www.atlassian.com/software/statuspage/pricing')}, {ext('https://www.checklyhq.com/pricing/')}</li>
 					</ul>
 				</section>
-				
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">TLS Certificate Monitor</h2>
+					<p className="text-slate-300">Expiry alerts, issuance auditing, and auto-renew guidance.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $5–$50/mo</li>
+						<li>References: {ext('https://letsencrypt.org/')} , {ext('https://www.ssllabs.com/ssltest/')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Domain & DNS Monitor</h2>
+					<p className="text-slate-300">WHOIS, nameserver, and DNS record drift detection with alerts.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $5–$40/mo</li>
+						<li>References: {ext('https://www.cloudflare.com/plans/')}, {ext('https://www.digicert.com/tls-ssl/ssl-tools')}</li>
+					</ul>
+				</section>
+
 				<section className="space-y-6">
 					<h2 className="text-2xl font-semibold text-white">Affiliate Attribution & Payouts Hub</h2>
 					<p className="text-slate-300">Cross-device attribution with first-party identity stitching and automated payouts.</p>
@@ -88,7 +113,7 @@ export default function ServicesAdvertisingPage() {
 						<li>References: {ext('https://www.cloudflare.com/plans/')}, {ext('https://www.fastly.com/pricing')}</li>
 					</ul>
 				</section>
-				
+
 				<section className="space-y-6">
 					<h2 className="text-2xl font-semibold text-white">Podcast Transcription & Insights</h2>
 					<p className="text-slate-300">Transcripts, chapters, show notes, and SEO-ready blog pages with exports.</p>
@@ -97,7 +122,7 @@ export default function ServicesAdvertisingPage() {
 						<li>References: {ext('https://openai.com/api/pricing')}, {ext('https://www.descript.com/pricing')}, {ext('https://otter.ai/pricing')}</li>
 					</ul>
 				</section>
-				
+
 				<section className="space-y-6">
 					<h2 className="text-2xl font-semibold text-white">Edge Feature Flags</h2>
 					<p className="text-slate-300">Audience and geo-targeted flags at the edge with gradual rollouts and fallbacks.</p>
@@ -106,7 +131,7 @@ export default function ServicesAdvertisingPage() {
 						<li>References: {ext('https://vercel.com/pricing')}, {ext('https://www.cloudflare.com/plans/')}</li>
 					</ul>
 				</section>
-				
+
 				<section className="space-y-6">
 					<h2 className="text-2xl font-semibold text-white">Micro CRM for Local Business</h2>
 					<p className="text-slate-300">Contacts, deals, appointments, and reminders without enterprise complexity.</p>
@@ -115,7 +140,7 @@ export default function ServicesAdvertisingPage() {
 						<li>References: {ext('https://www.hubspot.com/pricing/starter')}, {ext('https://www.zoho.com/crm/pricing.html')}</li>
 					</ul>
 				</section>
-				
+
 				<section className="space-y-6">
 					<h2 className="text-2xl font-semibold text-white">Employee Scheduling Suite</h2>
 					<p className="text-slate-300">Shift planning with availability, time-off, swap requests, and notifications.</p>
@@ -124,7 +149,7 @@ export default function ServicesAdvertisingPage() {
 						<li>References: {ext('https://joinhomebase.com/pricing/')}, {ext('https://wheniwork.com/pricing')}</li>
 					</ul>
 				</section>
-				
+
 				<section className="space-y-6">
 					<h2 className="text-2xl font-semibold text-white">LMS Starter</h2>
 					<p className="text-slate-300">Courses, quizzes, certificates, and progress tracking in days.</p>
@@ -133,7 +158,7 @@ export default function ServicesAdvertisingPage() {
 						<li>References: {ext('https://teachable.com/pricing')}, {ext('https://www.thinkific.com/pricing/')}</li>
 					</ul>
 				</section>
-				
+
 				<section className="space-y-6">
 					<h2 className="text-2xl font-semibold text-white">SMB Website Analytics</h2>
 					<p className="text-slate-300">Privacy-friendly dashboards with goals and funnels. Cookie-less.</p>
@@ -142,7 +167,7 @@ export default function ServicesAdvertisingPage() {
 						<li>References: {ext('https://plausible.io/pricing')}, {ext('https://usefathom.com/pricing')}</li>
 					</ul>
 				</section>
-				
+
 				<section className="space-y-6">
 					<h2 className="text-2xl font-semibold text-white">Automated Email Follow-ups</h2>
 					<p className="text-slate-300">Time and event sequences with A/B tests and performance analytics.</p>

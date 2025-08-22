@@ -391,7 +391,7 @@ const InnovativeMicroSaasShowcase: React.FC = () => {
                       <div className="mb-6">
                         <h4 className="text-sm font-semibold text-purple-400 mb-2">Starting From</h4>
                         <div className="text-2xl font-bold text-white">
-                          {service.pricing.starter}
+                          {(service as any).pricing?.starter || ((service as any).pricing?.monthly ? `$${(service as any).pricing.monthly}/mo` : 'Contact for pricing')}
                         </div>
                         <p className="text-sm text-gray-400">
                           {((service as any).pricing?.professional || '') + (((service as any).pricing?.professional && (service as any).pricing?.enterprise) ? ' • ' : '') + ((service as any).pricing?.enterprise || '')}
