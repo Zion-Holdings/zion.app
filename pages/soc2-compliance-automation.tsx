@@ -2,24 +2,35 @@ import React from 'react';
 import SEO from '../components/SEO';
 import Link from 'next/link';
 
-export default function SOC2ComplianceAutomation() {
-	return (
-		<div className="relative isolate">
-			<SEO title="SOC 2 Compliance Automation — Zion Tech Group" description="Automate SOC 2 with continuous controls, evidence pipelines, and audit workflows." />
-			<section className="px-6 lg:px-10 py-16 lg:py-24">
-				<div className="max-w-6xl mx-auto">
-					<h1 className="text-3xl lg:text-5xl font-bold tracking-tight bg-gradient-to-r from-pink-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent">SOC 2 Compliance Automation</h1>
-					<p className="mt-4 text-gray-300 max-w-3xl">Automate SOC 2 readiness with continuous controls monitoring, evidence collection, asset inventory, vendor risk, and audit workspace. Reduce audit time and cost dramatically.</p>
+export default function SOC2ComplianceAutomationPage() {
+	const title = 'SOC 2 Compliance Automation — Zion Tech Group';
+	const description = 'Automate evidence collection, controls mapping, and auditor-ready reports. Reduce audit time and ensure continuous compliance.';
 
-					<div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-						{[
-							{ title: 'Controls Library', desc: 'Mapped to SOC 2 Trust Service Criteria with policy templates.' },
-							{ title: 'Evidence Automation', desc: 'Pull evidence from cloud, CI, ticketing, security tools.' },
-							{ title: 'Vendor Risk', desc: 'Automated questionnaires, tracking, and remediation workflows.' },
-							{ title: 'Asset Inventory', desc: 'Infrastructure and device inventory with configuration checks.' },
-							{ title: 'Workflow & Tasks', desc: 'Assign remediation tasks, SLAs, and approvals.' },
-							{ title: 'Audit Room', desc: 'Share evidence securely with auditors; immutable logs.' }
-						].map((f) => (
+	const features = [
+		{ title: 'Controls Library', desc: 'Mapped to SOC 2 Trust Service Criteria with policy templates.' },
+		{ title: 'Evidence Automation', desc: 'Pull evidence from cloud, CI, ticketing, security tools.' },
+		{ title: 'Vendor Risk', desc: 'Automated questionnaires, tracking, and remediation workflows.' },
+		{ title: 'Asset Inventory', desc: 'Infrastructure and device inventory with configuration checks.' },
+		{ title: 'Workflow & Tasks', desc: 'Assign remediation tasks, SLAs, and approvals.' },
+		{ title: 'Audit Room', desc: 'Share evidence securely with auditors; immutable logs.' }
+	];
+
+	return (
+		<>
+			<SEO title={title} description={description} />
+			<section className="relative pt-28 pb-16 md:pt-36 md:pb-24">
+				<div className="container mx-auto px-4">
+					<h1 className="text-3xl md:text-5xl font-extrabold tracking-tight gradient-text-cyan-purple">SOC 2 Compliance Automation</h1>
+					<p className="mt-6 text-lg text-gray-300 max-w-3xl">
+						Automate SOC 2 readiness with continuous controls, evidence pipelines, and prebuilt auditor workflows. Integrates with cloud providers and ticketing systems.
+					</p>
+					<div className="mt-8 flex flex-col sm:flex-row gap-4">
+						<Link href="/contact" className="inline-flex items-center justify-center px-6 py-3 rounded-md bg-white text-black font-semibold hover:bg-gray-200 transition-colors">Get a Demo</Link>
+						<Link href="/pricing" className="inline-flex items-center justify-center px-6 py-3 rounded-md border border-white/30 text-white font-semibold hover:bg-white/10 transition-colors">View Pricing</Link>
+					</div>
+
+					<div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+						{features.map((f) => (
 							<div key={f.title} className="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur">
 								<h3 className="text-lg font-semibold text-white">{f.title}</h3>
 								<p className="mt-2 text-sm text-gray-300">{f.desc}</p>
@@ -48,14 +59,8 @@ export default function SOC2ComplianceAutomation() {
 						</div>
 						<p className="mt-4 text-sm text-gray-400">Market references: <a className="underline hover:text-cyan-300" href="https://www.vanta.com/" target="_blank" rel="noreferrer">Vanta</a>, <a className="underline hover:text-cyan-300" href="https://drata.com/" target="_blank" rel="noreferrer">Drata</a>, <a className="underline hover:text-cyan-300" href="https://securityscorecard.com/" target="_blank" rel="noreferrer">SecurityScorecard</a>.</p>
 					</div>
-
-					<div className="mt-12 flex flex-wrap items-center gap-4">
-						<Link href="/contact" className="px-5 py-3 rounded-lg bg-pink-400 text-black font-semibold">Automate SOC 2</Link>
-						<a href="mailto:kleber@ziontechgroup.com" className="px-5 py-3 rounded-lg border border-white/20">Email: kleber@ziontechgroup.com</a>
-						<span className="text-gray-400">Call: +1 302 464 0950</span>
-					</div>
 				</div>
 			</section>
-		</div>
+		</>
 	);
 }
