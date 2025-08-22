@@ -230,7 +230,7 @@ export default function Revolutionary2028Pricing() {
 
                 <div className={`p-8 rounded-2xl bg-gradient-to-br ${tier.color} bg-opacity-10 border border-purple-500/30 hover:border-purple-500/50 transition-all duration-300 h-full relative`}>
                   <div className="text-center mb-8">
-                    <div className={`w-16 h-16 bg-gradient-to-br ${tier.color} rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                    <div className={`w-16 h-16 bg-gradient-to-br ${tier.color} rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:shadow-lg hover:shadow-cyan-400/40 transition-transform duration-300`}>
                       <tier.icon className="w-8 h-8 text-white" />
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-2">{tier.name}</h3>
@@ -253,7 +253,7 @@ export default function Revolutionary2028Pricing() {
                   <div className="text-center">
                     <Link
                       href="/contact"
-                      className={`inline-block w-full px-6 py-3 bg-gradient-to-r ${tier.color} text-white rounded-lg font-semibold hover:opacity-90 transition-all duration-300 transform hover:scale-105`}
+                      className={`inline-block w-full px-6 py-3 bg-gradient-to-r ${tier.color} text-white rounded-lg font-semibold hover:opacity-90 transition-all duration-300 transform hover:shadow-xl hover:shadow-cyan-500/30`}
                     >
                       Get Started
                     </Link>
@@ -349,7 +349,7 @@ export default function Revolutionary2028Pricing() {
                         </div>
                         <Link
                           href={service.link}
-                          className="px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg text-sm hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+                          className="px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg text-sm hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:shadow-xl hover:shadow-cyan-500/30"
                         >
                           Learn More
                         </Link>
@@ -453,7 +453,7 @@ export default function Revolutionary2028Pricing() {
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
               <Link
                 href="/contact"
-                className="px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-xl font-semibold text-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-purple-500/25"
+                className="px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-xl font-semibold text-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:shadow-xl hover:shadow-cyan-500/30 shadow-2xl hover:shadow-purple-500/25"
               >
                 Get Started Today
               </Link>

@@ -455,7 +455,7 @@ export default function EnhancedSidebar2025({ isOpen, onClose }: EnhancedSidebar
                   Transform your business with cutting-edge technology solutions.
                 </p>
                 <Link href="/contact" onClick={onClose}>
-                  <button className="w-full px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:scale-105 transition-all duration-300">
+                  <button className="w-full px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:shadow-xl hover:shadow-cyan-500/30 transition-all duration-300">
                     Contact Us Today
                   </button>
                 </Link>

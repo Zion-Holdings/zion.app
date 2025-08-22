@@ -157,14 +157,14 @@ export default function BlogPage() {
                   <Button
                     href="/blog/ai-automation-trends-2025"
                     size="lg"
-                    className="group-hover:scale-105 transition-transform duration-200"
+                    className="group-hover:shadow-xl hover:shadow-cyan-500/30 transition-transform duration-200"
                   >
                     Read Full Article
                   </Button>
                 </div>
                 
                 <div className="text-center">
-                  <div className="text-8xl group-hover:scale-110 transition-transform duration-300">
+                  <div className="text-8xl group-hover:shadow-lg hover:shadow-cyan-400/40 transition-transform duration-300">
                     {post.image}
                   </div>
                 </div>
@@ -193,7 +193,7 @@ export default function BlogPage() {
                 className="group hover:border-blue-400/30 overflow-hidden"
                 style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
               >
-                <div className="text-6xl mb-6 text-center group-hover:scale-110 transition-transform duration-300">
+                <div className="text-6xl mb-6 text-center group-hover:shadow-lg hover:shadow-cyan-400/40 transition-transform duration-300">
                   {post.image}
                 </div>
                 

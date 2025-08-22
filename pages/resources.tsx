@@ -171,7 +171,7 @@ export default function ResourcesPage() {
                 className="group hover:border-blue-400/30 overflow-hidden"
                 style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
               >
-                <div className="text-6xl mb-6 text-center group-hover:scale-110 transition-transform duration-300">
+                <div className="text-6xl mb-6 text-center group-hover:shadow-lg hover:shadow-cyan-400/40 transition-transform duration-300">
                   {resource.image}
                 </div>
                 
@@ -225,7 +225,7 @@ export default function ResourcesPage() {
                 className="text-center group hover:border-blue-400/30"
                 style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
               >
-                <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="text-5xl mb-6 group-hover:shadow-lg hover:shadow-cyan-400/40 transition-transform duration-300">
                   {tool.image}
                 </div>
                 
@@ -293,7 +293,7 @@ export default function ResourcesPage() {
                 style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
               >
                 <div className="relative">
-                  <div className="text-8xl text-center py-8 group-hover:scale-110 transition-transform duration-300">
+                  <div className="text-8xl text-center py-8 group-hover:shadow-lg hover:shadow-cyan-400/40 transition-transform duration-300">
                     {video.thumbnail}
                   </div>
                   <div className="absolute top-4 right-4 bg-black/80 text-white text-xs px-2 py-1 rounded">
@@ -353,7 +353,7 @@ export default function ResourcesPage() {
               <Button
                 href="/contact"
                 size="lg"
-                className="group-hover:scale-105 transition-transform duration-200"
+                className="group-hover:shadow-xl hover:shadow-cyan-500/30 transition-transform duration-200"
               >
                 Join Discord
               </Button>

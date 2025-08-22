@@ -153,7 +153,7 @@ const CareersPage: React.FC = () => {
                   transition={{ duration: 0.8, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center text-white mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center text-white mx-auto mb-6 group-hover:shadow-lg hover:shadow-cyan-400/40 transition-transform duration-300">
                     {value.icon}
                   </div>
                   <h3 className="text-xl font-bold text-white mb-3">{value.title}</h3>

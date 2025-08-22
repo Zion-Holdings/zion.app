@@ -262,7 +262,7 @@ export default function UltraFuturisticNavigation2027() {
                 href={link.href}
                 className="flex items-center space-x-2 px-4 py-2 text-white hover:text-cyan-400 transition-colors duration-300 group"
               >
-                <link.icon className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
+                <link.icon className="w-4 h-4 group-hover:shadow-lg hover:shadow-cyan-400/40 transition-transform duration-300" />
                 <span className="hidden xl:block">{link.name.replace(/^[^\s]*\s/, '')}</span>
               </Link>
             ))}
@@ -294,7 +294,7 @@ export default function UltraFuturisticNavigation2027() {
                           href={link.href}
                           className="flex items-center space-x-3 p-3 rounded-lg hover:bg-white/5 transition-colors duration-300 group"
                         >
-                          <link.icon className="w-4 h-4 text-cyan-400 group-hover:scale-110 transition-transform duration-300" />
+                          <link.icon className="w-4 h-4 text-cyan-400 group-hover:shadow-lg hover:shadow-cyan-400/40 transition-transform duration-300" />
                           <span className="text-white group-hover:text-cyan-400 transition-colors duration-300">
                             {link.name.replace(/^[^\s]*\s/, '')}
                           </span>
@@ -311,7 +311,7 @@ export default function UltraFuturisticNavigation2027() {
           <div className="hidden lg:flex items-center space-x-4">
             <Link
               href="/contact"
-              className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25"
+              className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 transform hover:shadow-xl hover:shadow-cyan-500/30 shadow-lg shadow-cyan-500/25"
             >
               Get Started
             </Link>

@@ -145,7 +145,7 @@ const Features: React.FC<FeaturesProps> = ({
 
               {/* Icon */}
               <div className="flex items-center mb-6">
-                <div className={`p-3 rounded-xl ${feature.color} shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                <div className={`p-3 rounded-xl ${feature.color} shadow-lg group-hover:shadow-lg hover:shadow-cyan-400/40 transition-transform duration-300`}>
                   {feature.icon}
                 </div>
                 <div className="ml-4">
@@ -192,7 +192,7 @@ const Features: React.FC<FeaturesProps> = ({
               Join thousands of businesses already using our micro SaaS solutions to automate, optimize, and scale their operations.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <button className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:from-blue-500 hover:to-purple-500 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+              <button className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:from-blue-500 hover:to-purple-500 transition-all duration-300 transform hover:shadow-xl hover:shadow-cyan-500/30 shadow-lg hover:shadow-xl">
                 Start Free Trial
               </button>
               <button className="px-8 py-3 border border-blue-500/50 text-blue-300 font-semibold rounded-xl hover:bg-blue-500/10 hover:border-blue-400 transition-all duration-300">

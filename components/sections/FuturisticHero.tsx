@@ -137,12 +137,12 @@ const FuturisticHero: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
               className="group"
             >
-              <div className="relative p-6 rounded-xl bg-gray-900/50 border border-gray-700/50 hover:border-neon-blue/50 transition-all duration-300 hover:transform hover:scale-105">
+              <div className="relative p-6 rounded-xl bg-gray-900/50 border border-gray-700/50 hover:border-neon-blue/50 transition-all duration-300 hover:transform hover:shadow-xl hover:shadow-cyan-500/30">
                 {/* Glow effect */}
                 <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-transparent via-neon-blue/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 
                 {/* Icon */}
-                <div className={`inline-flex p-3 rounded-lg bg-gradient-to-r ${feature.color} mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                <div className={`inline-flex p-3 rounded-lg bg-gradient-to-r ${feature.color} mb-4 group-hover:shadow-lg hover:shadow-cyan-400/40 transition-transform duration-300`}>
                   <feature.icon className="h-6 w-6 text-white" />
                 </div>
                 

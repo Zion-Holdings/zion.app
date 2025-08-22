@@ -185,7 +185,7 @@ const UltraFuturistic2029ServiceShowcase: React.FC<UltraFuturistic2029ServiceSho
             >
               <UltraFuturisticServiceCard
                 service={service}
-                className="h-full transform group-hover:scale-105 transition-transform duration-300"
+                className="h-full transform group-hover:shadow-xl hover:shadow-cyan-500/30 transition-transform duration-300"
               />
             </motion.div>
           ))}

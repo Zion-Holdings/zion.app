@@ -122,7 +122,7 @@ const Enhanced2026ServicesShowcase = () => {
               whileHover={{ scale: 1.05, y: -5 }}
               className="group text-center"
             >
-              <div className={`w-16 h-16 bg-gradient-to-br ${category.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
+              <div className={`w-16 h-16 bg-gradient-to-br ${category.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:shadow-lg hover:shadow-cyan-400/40 transition-transform duration-300`}>
                 <category.icon className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-lg font-bold text-white mb-2">{category.name}</h3>

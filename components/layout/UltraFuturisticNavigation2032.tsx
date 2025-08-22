@@ -172,7 +172,7 @@ export default function UltraFuturisticNavigation2032() {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-3 group">
-              <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 via-purple-600 to-pink-600 rounded-xl flex items-center justify-center transform transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-purple-500/25">
+              <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 via-purple-600 to-pink-600 rounded-xl flex items-center justify-center transform transition-all duration-300 group-hover:shadow-lg hover:shadow-cyan-400/40 group-hover:shadow-lg group-hover:shadow-purple-500/25">
                 <Zap className="w-7 h-7 text-white" />
               </div>
               <div>
@@ -191,7 +191,7 @@ export default function UltraFuturisticNavigation2032() {
                   href={item.href}
                   className="flex items-center space-x-2 text-gray-300 hover:text-cyan-400 transition-colors duration-200 group"
                 >
-                  <item.icon className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                  <item.icon className="w-4 h-4 group-hover:shadow-lg hover:shadow-cyan-400/40 transition-transform" />
                   <span>{item.name}</span>
                 </Link>
               ))}
@@ -246,7 +246,7 @@ export default function UltraFuturisticNavigation2032() {
                     <div className="mt-8 pt-6 border-t border-purple-500/20 text-center">
                       <Link
                         href="/services"
-                        className="inline-flex items-center space-x-2 bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold hover:from-cyan-600 hover:to-purple-700 transition-all duration-200 transform hover:scale-105"
+                        className="inline-flex items-center space-x-2 bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold hover:from-cyan-600 hover:to-purple-700 transition-all duration-200 transform hover:shadow-xl hover:shadow-cyan-500/30"
                       >
                         <span>View All Services</span>
                         <ArrowRight className="w-4 h-4" />
@@ -261,7 +261,7 @@ export default function UltraFuturisticNavigation2032() {
             <div className="hidden lg:flex items-center space-x-4">
               <Link
                 href="/contact"
-                className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-purple-700 transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl shadow-cyan-500/25"
+                className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-purple-700 transition-all duration-200 transform hover:shadow-xl hover:shadow-cyan-500/30 shadow-lg hover:shadow-xl shadow-cyan-500/25"
               >
                 Get Started
               </Link>

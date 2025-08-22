@@ -250,7 +250,7 @@ export default function Revolutionary2026Pricing() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="#pricing" className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-full hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
+              <Link href="#pricing" className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-full hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 transform hover:shadow-xl hover:shadow-cyan-500/30">
                 <DollarSign className="w-5 h-5 mr-2" />
                 View Pricing
               </Link>
@@ -320,7 +320,7 @@ export default function Revolutionary2026Pricing() {
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 className="group relative"
               >
-                <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 p-8 border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 transform hover:scale-105">
+                <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 p-8 border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 transform hover:shadow-xl hover:shadow-cyan-500/30">
                   <div className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}></div>
                   
                   <div className="relative z-10">
@@ -395,7 +395,7 @@ export default function Revolutionary2026Pricing() {
                   </div>
                 )}
                 
-                <div className={`relative overflow-hidden rounded-2xl p-8 border transition-all duration-300 transform hover:scale-105 ${
+                <div className={`relative overflow-hidden rounded-2xl p-8 border transition-all duration-300 transform hover:shadow-xl hover:shadow-cyan-500/30 ${
                   tier.highlight 
                     ? 'bg-gradient-to-br from-gray-800 to-gray-900 border-cyan-500 shadow-2xl shadow-cyan-500/25' 
                     : 'bg-gradient-to-br from-gray-800 to-gray-900 border-gray-700 hover:border-cyan-500/50'
@@ -439,7 +439,7 @@ export default function Revolutionary2026Pricing() {
                     </div>
                     
                                          <button
-                       className={`w-full py-3 px-6 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 ${
+                       className={`w-full py-3 px-6 rounded-xl font-semibold transition-all duration-300 transform hover:shadow-xl hover:shadow-cyan-500/30 ${
                          tier.highlight
                            ? 'bg-gradient-to-r from-cyan-500 to-purple-600 text-white hover:from-cyan-600 hover:to-purple-700'
                            : 'bg-gray-700 text-white hover:bg-gray-600'
@@ -481,7 +481,7 @@ export default function Revolutionary2026Pricing() {
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 className="group relative"
               >
-                <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 p-6 border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 transform hover:scale-105">
+                <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 p-6 border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 transform hover:shadow-xl hover:shadow-cyan-500/30">
                   <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   
                   <div className="relative z-10">
@@ -549,7 +549,7 @@ export default function Revolutionary2026Pricing() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact" className="inline-flex items-center px-8 py-4 bg-white text-purple-600 font-semibold rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
+              <Link href="/contact" className="inline-flex items-center px-8 py-4 bg-white text-purple-600 font-semibold rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:shadow-xl hover:shadow-cyan-500/30">
                 <Phone className="w-5 h-5 mr-2" />
                 Get Started Today
               </Link>

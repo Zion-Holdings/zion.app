@@ -111,7 +111,7 @@ export default function QuantumHolographicNavbar() {
           {/* Enhanced Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
             <div className="relative">
-              <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 via-purple-600 to-blue-500 rounded-2xl flex items-center justify-center transform group-hover:scale-110 transition-all duration-500 shadow-lg shadow-cyan-500/30">
+              <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 via-purple-600 to-blue-500 rounded-2xl flex items-center justify-center transform group-hover:shadow-lg hover:shadow-cyan-400/40 transition-all duration-500 shadow-lg shadow-cyan-500/30">
                 <Zap className="w-7 h-7 text-white" />
               </div>
               <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 via-purple-600 to-blue-500 rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-500" />

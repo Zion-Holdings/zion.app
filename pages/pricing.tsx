@@ -208,7 +208,7 @@ export default function Pricing() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 + index * 0.1 }}
-                  className={`relative bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-gray-600/50 transition-all duration-300 hover:transform hover:scale-105 ${
+                  className={`relative bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-gray-600/50 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/20 ${
                     tier.popular ? 'ring-2 ring-purple-500/50' : ''
                   }`}
                 >
@@ -234,7 +234,7 @@ export default function Pricing() {
 
                     <a
                       href={tier.ctaLink}
-                      className={`block w-full bg-gradient-to-r ${tier.color} text-white py-3 px-6 rounded-xl font-semibold text-center hover:shadow-lg hover:shadow-${tier.color.split('-')[1]}/25 transition-all duration-200 transform hover:scale-105`}
+                      className={`block w-full bg-gradient-to-r ${tier.color} text-white py-3 px-6 rounded-xl font-semibold text-center hover:shadow-lg hover:shadow-${tier.color.split('-')[1]}/25 transition-all duration-200 hover:shadow-2xl`}
                     >
                       {tier.cta}
                     </a>
@@ -360,7 +360,7 @@ export default function Pricing() {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a
                     href="/contact"
-                    className="bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-200 transform hover:scale-105"
+                    className="bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-200 hover:shadow-xl hover:shadow-purple-500/30"
                   >
                     Get Started Today
                   </a>

@@ -507,8 +507,10 @@ h3 {
 }
 
 .image-futuristic:hover {
-  transform: scale(1.05);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(var(--neon-cyan), 0.4),
+    0 0 60px rgba(var(--neon-cyan), 0.2);
 }
 
 .image-futuristic::after {
@@ -554,8 +556,8 @@ h3 {
 }
 
 .list-futuristic li:hover::before {
-  transform: scale(1.2);
   color: rgb(var(--accent-blue));
+  animation: neonGlow 1.5s ease-in-out infinite alternate;
 }
 
 /* Enhanced code block styles */
@@ -734,11 +736,12 @@ h3 {
 }
 
 .service-card-futuristic:hover {
-  transform: translateY(-10px) scale(1.02);
+  transform: translateY(-10px);
   border-color: rgba(var(--accent-cyan), 0.6);
   box-shadow: 
     0 25px 50px rgba(0, 0, 0, 0.4),
-    0 0 30px rgba(var(--accent-cyan), 0.3);
+    0 0 30px rgba(var(--accent-cyan), 0.3),
+    0 0 60px rgba(var(--neon-cyan), 0.2);
 }
 
 .service-card-futuristic-icon {
@@ -749,7 +752,8 @@ h3 {
 }
 
 .service-card-futuristic:hover .service-card-futuristic-icon {
-  transform: scale(1.1) rotate(5deg);
+  transform: rotate(5deg);
+  animation: neonGlow 2s ease-in-out infinite alternate;
 }
 
 .service-card-futuristic-title {
@@ -873,7 +877,9 @@ h3 {
 
 .pricing-futuristic.popular {
   border-color: rgb(var(--accent-purple));
-  transform: scale(1.05);
+  box-shadow: 
+    0 0 30px rgba(var(--accent-purple), 0.3),
+    0 0 60px rgba(var(--accent-purple), 0.1);
 }
 
 .pricing-futuristic.popular::before {
@@ -1181,4 +1187,98 @@ h3 {
     border: 1px solid #ccc;
     box-shadow: none;
   }
+}
+
+/* New neon hover animations to replace scale transforms */
+.neon-hover-cyan {
+  transition: all 0.3s ease;
+}
+
+.neon-hover-cyan:hover {
+  box-shadow: 
+    0 0 20px rgba(var(--neon-cyan), 0.4),
+    0 0 40px rgba(var(--neon-cyan), 0.2),
+    0 0 60px rgba(var(--neon-cyan), 0.1);
+  border-color: rgba(var(--neon-cyan), 0.6);
+}
+
+.neon-hover-blue {
+  transition: all 0.3s ease;
+}
+
+.neon-hover-blue:hover {
+  box-shadow: 
+    0 0 20px rgba(var(--neon-blue), 0.4),
+    0 0 40px rgba(var(--neon-blue), 0.2),
+    0 0 60px rgba(var(--neon-blue), 0.1);
+  border-color: rgba(var(--neon-blue), 0.6);
+}
+
+.neon-hover-purple {
+  transition: all 0.3s ease;
+}
+
+.neon-hover-purple:hover {
+  box-shadow: 
+    0 0 20px rgba(var(--neon-purple), 0.4),
+    0 0 40px rgba(var(--neon-purple), 0.2),
+    0 0 60px rgba(var(--neon-purple), 0.1);
+  border-color: rgba(var(--neon-purple), 0.6);
+}
+
+.neon-hover-pink {
+  transition: all 0.3s ease;
+}
+
+.neon-hover-pink:hover {
+  box-shadow: 
+    0 0 20px rgba(var(--neon-pink), 0.4),
+    0 0 40px rgba(var(--neon-pink), 0.2),
+    0 0 60px rgba(var(--neon-pink), 0.1);
+  border-color: rgba(var(--neon-pink), 0.6);
+}
+
+.neon-hover-green {
+  transition: all 0.3s ease;
+}
+
+.neon-hover-green:hover {
+  box-shadow: 
+    0 0 20px rgba(var(--neon-green), 0.4),
+    0 0 40px rgba(var(--neon-green), 0.2),
+    0 0 60px rgba(var(--neon-green), 0.1);
+  border-color: rgba(var(--neon-green), 0.6);
+}
+
+/* Subtle lift animation without scale */
+.hover-lift {
+  transition: all 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(var(--neon-cyan), 0.2);
+}
+
+/* Pulse animation for icons */
+.hover-pulse {
+  transition: all 0.3s ease;
+}
+
+.hover-pulse:hover {
+  animation: pulse 1s ease-in-out infinite;
+}
+
+/* Glow animation for text */
+.hover-glow {
+  transition: all 0.3s ease;
+}
+
+.hover-glow:hover {
+  text-shadow: 
+    0 0 10px currentColor,
+    0 0 20px currentColor,
+    0 0 30px currentColor;
 }

@@ -207,7 +207,7 @@ export default function UltraAdvancedNavigation() {
             >
               <Link href="/" className="flex items-center space-x-3 group">
                 <div className="relative">
-                  <div className="w-14 h-14 bg-gradient-to-r from-cyan-500 via-purple-600 to-pink-500 rounded-2xl flex items-center justify-center shadow-2xl shadow-cyan-500/30 group-hover:shadow-cyan-500/50 transition-all duration-300 group-hover:scale-110">
+                  <div className="w-14 h-14 bg-gradient-to-r from-cyan-500 via-purple-600 to-pink-500 rounded-2xl flex items-center justify-center shadow-2xl shadow-cyan-500/30 group-hover:shadow-cyan-500/50 transition-all duration-300 group-hover:shadow-lg hover:shadow-cyan-400/40">
                     <Rocket className="w-8 h-8 text-white" />
                   </div>
                   <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500 via-purple-600 to-pink-500 rounded-2xl blur opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
@@ -311,7 +311,7 @@ export default function UltraAdvancedNavigation() {
               <div className="flex items-center space-x-4">
                 <Link
                   href="/contact"
-                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 via-purple-600 to-pink-500 text-white font-bold rounded-2xl hover:from-cyan-600 hover:via-purple-700 hover:to-pink-600 transition-all duration-300 shadow-2xl shadow-cyan-500/30 hover:shadow-cyan-500/50 transform hover:scale-105 border border-transparent hover:border-cyan-400/50"
+                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 via-purple-600 to-pink-500 text-white font-bold rounded-2xl hover:from-cyan-600 hover:via-purple-700 hover:to-pink-600 transition-all duration-300 shadow-2xl shadow-cyan-500/30 hover:shadow-cyan-500/50 transform hover:shadow-xl hover:shadow-cyan-500/30 border border-transparent hover:border-cyan-400/50"
                 >
                   Get Started
                 </Link>

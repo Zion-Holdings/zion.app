@@ -376,7 +376,7 @@ export default function UltraFuturisticFooter2034() {
                     href={social.href}
                     className="w-10 h-10 bg-white/5 hover:bg-cyan-500/20 border border-white/10 hover:border-cyan-500/50 rounded-lg flex items-center justify-center text-gray-400 hover:text-cyan-300 transition-all duration-200 group"
                   >
-                    <social.icon className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" />
+                    <social.icon className="w-5 h-5 group-hover:shadow-lg hover:shadow-cyan-400/40 transition-transform duration-200" />
                   </Link>
                 ))}
               </div>

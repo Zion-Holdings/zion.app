@@ -150,7 +150,7 @@ export default function CaseStudiesPage() {
                 className="group hover:border-blue-400/30 overflow-hidden"
                 style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
               >
-                <div className="text-6xl mb-6 text-center group-hover:scale-110 transition-transform duration-300">
+                <div className="text-6xl mb-6 text-center group-hover:shadow-lg hover:shadow-cyan-400/40 transition-transform duration-300">
                   {study.image}
                 </div>
                 

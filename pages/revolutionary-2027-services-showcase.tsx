@@ -177,11 +177,11 @@ export default function Revolutionary2027ServicesShowcase() {
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <Button href="/contact" className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-lg px-8 py-4 hover:from-cyan-600 hover:to-blue-700 transform hover:scale-105 transition-all duration-300">
+              <Button href="/contact" className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-lg px-8 py-4 hover:from-cyan-600 hover:to-blue-700 transform hover:shadow-xl hover:shadow-cyan-500/30 transition-all duration-300">
                 <Rocket className="w-5 h-5 mr-2" />
                 Get Started Today
               </Button>
-              <Button href="/services" variant="outline" className="border-2 border-purple-500 text-purple-400 text-lg px-8 py-4 hover:bg-purple-500 hover:text-white transform hover:scale-105 transition-all duration-300">
+              <Button href="/services" variant="outline" className="border-2 border-purple-500 text-purple-400 text-lg px-8 py-4 hover:bg-purple-500 hover:text-white transform hover:shadow-xl hover:shadow-cyan-500/30 transition-all duration-300">
                 <Globe className="w-5 h-5 mr-2" />
                 View All Services
               </Button>
@@ -357,7 +357,7 @@ export default function Revolutionary2027ServicesShowcase() {
                         <div className="flex gap-2">
                           <Button 
                             href={service.link} 
-                            className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-sm py-2 hover:from-cyan-600 hover:to-blue-700 transform hover:scale-105 transition-all duration-300"
+                            className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-sm py-2 hover:from-cyan-600 hover:to-blue-700 transform hover:shadow-xl hover:shadow-cyan-500/30 transition-all duration-300"
                           >
                             <ArrowRight className="w-4 h-4 mr-1" />
                             Learn More
@@ -365,7 +365,7 @@ export default function Revolutionary2027ServicesShowcase() {
                           <Button 
                             href="/contact" 
                             variant="outline" 
-                            className="px-4 py-2 border border-gray-600 text-gray-200 hover:bg-gray-700 hover:border-gray-500 transform hover:scale-105 transition-all duration-300"
+                            className="px-4 py-2 border border-gray-600 text-gray-200 hover:bg-gray-700 hover:border-gray-500 transform hover:shadow-xl hover:shadow-cyan-500/30 transition-all duration-300"
                           >
                             <MessageSquare className="w-4 h-4" />
                           </Button>
@@ -434,11 +434,11 @@ export default function Revolutionary2027ServicesShowcase() {
             </div>
 
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <Button href="/contact" className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-lg px-8 py-4 hover:from-cyan-600 hover:to-blue-700 transform hover:scale-105 transition-all duration-300">
+              <Button href="/contact" className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-lg px-8 py-4 hover:from-cyan-600 hover:to-blue-700 transform hover:shadow-xl hover:shadow-cyan-500/30 transition-all duration-300">
                 <Rocket className="w-5 h-5 mr-2" />
                 Start Your Transformation
               </Button>
-              <Button href="/services" variant="outline" className="border-2 border-purple-500 text-purple-400 text-lg px-8 py-4 hover:bg-purple-500 hover:text-white transform hover:scale-105 transition-all duration-300">
+              <Button href="/services" variant="outline" className="border-2 border-purple-500 text-purple-400 text-lg px-8 py-4 hover:bg-purple-500 hover:text-white transform hover:shadow-xl hover:shadow-cyan-500/30 transition-all duration-300">
                 <Globe className="w-5 h-5 mr-2" />
                 Explore All Services
               </Button>

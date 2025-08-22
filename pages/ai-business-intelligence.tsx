@@ -116,7 +116,7 @@ export default function AIBusinessIntelligencePage() {
                   className="group"
                 >
                   View Pricing
-                  <DollarSign className="ml-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+                  <DollarSign className="ml-2 h-5 w-5 group-hover:shadow-lg hover:shadow-cyan-400/40 transition-transform" />
                 </Button>
               </div>
             </motion.div>

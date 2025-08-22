@@ -308,7 +308,7 @@ export default function Services2026ShowcasePage() {
                     >
                       <UltraFuturisticCard
                         variant={mapServiceVariantToCardVariant(service.variant)}
-                        className="h-full group hover:scale-105 transition-transform duration-300"
+                        className="h-full group hover:shadow-xl hover:shadow-cyan-500/30 transition-transform duration-300"
                       >
                         <div className="p-6 h-full flex flex-col">
                           {/* Service Header */}
@@ -378,7 +378,7 @@ export default function Services2026ShowcasePage() {
                             <Link href={service.link}>
                               <Button
                                 variant="primary"
-                                className="w-full group-hover:scale-105 transition-transform"
+                                className="w-full group-hover:shadow-xl hover:shadow-cyan-500/30 transition-transform"
                               >
                                 Learn More
                                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />

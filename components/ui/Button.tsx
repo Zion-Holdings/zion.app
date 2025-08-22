@@ -47,7 +47,7 @@ const Button: React.FC<ButtonComponentProps> = ({
     fullWidth && 'w-full',
     rounded && 'rounded-full',
     !rounded && 'rounded-xl',
-    animated && 'transform hover:scale-105 active:scale-95',
+    animated && 'transform hover:shadow-xl hover:shadow-cyan-500/30 active:scale-95',
     className
   );
 
@@ -121,7 +121,7 @@ const Button: React.FC<ButtonComponentProps> = ({
     'transition-transform duration-200',
     iconPosition === 'left' && 'mr-2',
     iconPosition === 'right' && 'ml-2',
-    animated && 'group-hover:scale-110'
+    animated && 'group-hover:shadow-lg hover:shadow-cyan-400/40'
   );
 
   const loadingSpinner = (

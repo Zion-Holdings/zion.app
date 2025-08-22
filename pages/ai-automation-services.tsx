@@ -61,13 +61,13 @@ export default function AIAutomationServices() {
             >
               <a
                 href="#services"
-                className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:from-emerald-600 hover:to-teal-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-emerald-500/25"
+                className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:from-emerald-600 hover:to-teal-600 transition-all duration-300 transform hover:shadow-xl hover:shadow-cyan-500/30 shadow-lg hover:shadow-emerald-500/25"
               >
                 View Services
               </a>
               <a
                 href="mailto:kleber@ziontechgroup.com"
-                className="border-2 border-emerald-400 text-emerald-400 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-emerald-400 hover:text-black transition-all duration-300 transform hover:scale-105"
+                className="border-2 border-emerald-400 text-emerald-400 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-emerald-400 hover:text-black transition-all duration-300 transform hover:shadow-xl hover:shadow-cyan-500/30"
               >
                 Get Started
               </a>
@@ -252,13 +252,13 @@ export default function AIAutomationServices() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="mailto:kleber@ziontechgroup.com"
-                  className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:from-emerald-600 hover:to-teal-600 transition-all duration-300 transform hover:scale-105"
+                  className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:from-emerald-600 hover:to-teal-600 transition-all duration-300 transform hover:shadow-xl hover:shadow-cyan-500/30"
                 >
                   Start Your Automation Journey
                 </a>
                 <a
                   href="https://ziontechgroup.com"
-                  className="border-2 border-emerald-400 text-emerald-400 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-emerald-400 hover:text-black transition-all duration-300 transform hover:scale-105"
+                  className="border-2 border-emerald-400 text-emerald-400 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-emerald-400 hover:text-black transition-all duration-300 transform hover:shadow-xl hover:shadow-cyan-500/30"
                 >
                   Visit Our Website
                 </a>

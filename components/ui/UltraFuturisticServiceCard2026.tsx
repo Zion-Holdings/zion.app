@@ -160,7 +160,7 @@ const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Pro
         {/* Header */}
         <div className="flex items-start justify-between mb-4">
           <motion.div
-            className="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300"
+            className="text-4xl mb-3 group-hover:shadow-lg hover:shadow-cyan-400/40 transition-transform duration-300"
             animate={{
               rotate: isHovered ? [0, 5, -5, 0] : 0,
             }}

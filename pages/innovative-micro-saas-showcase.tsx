@@ -298,7 +298,7 @@ const InnovativeMicroSaasShowcase: React.FC = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                   onClick={() => setSelectedCategory(category.id)}
-                  className={`flex items-center space-x-3 px-6 py-3 rounded-xl border transition-all duration-300 hover:scale-105 ${
+                  className={`flex items-center space-x-3 px-6 py-3 rounded-xl border transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/30 ${
                     selectedCategory === category.id
                       ? 'border-cyan-500/50 bg-cyan-500/20 text-cyan-400'
                       : 'border-cyan-500/30 bg-white/5 text-gray-300 hover:border-cyan-500/50 hover:bg-cyan-500/10'
@@ -337,7 +337,7 @@ const InnovativeMicroSaasShowcase: React.FC = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className={`group relative overflow-hidden rounded-2xl border transition-all duration-500 hover:scale-105 ${
+                    className={`group relative overflow-hidden rounded-2xl border transition-all duration-500 hover:shadow-xl hover:shadow-cyan-500/30 ${
                       viewMode === 'grid' 
                         ? 'bg-gradient-to-br from-white/5 to-white/2 border-cyan-500/30'
                         : 'bg-white/5 border-cyan-500/30'
@@ -420,7 +420,7 @@ const InnovativeMicroSaasShowcase: React.FC = () => {
                           href={service.demo}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex-1 flex items-center justify-center space-x-2 px-4 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 group-hover:scale-105"
+                          className="flex-1 flex items-center justify-center space-x-2 px-4 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 group-hover:shadow-xl hover:shadow-cyan-500/30"
                         >
                           <span>View Demo</span>
                           <ExternalLink className="w-4 h-4" />
@@ -428,7 +428,7 @@ const InnovativeMicroSaasShowcase: React.FC = () => {
                         
                         <a
                           href={`mailto:${service.contact}?subject=Inquiry about ${service.name}`}
-                          className="flex items-center justify-center w-12 h-12 bg-white/10 border border-cyan-500/30 rounded-lg text-cyan-400 hover:bg-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300 group-hover:scale-105"
+                          className="flex items-center justify-center w-12 h-12 bg-white/10 border border-cyan-500/30 rounded-lg text-cyan-400 hover:bg-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300 group-hover:shadow-xl hover:shadow-cyan-500/30"
                         >
                           <Mail className="w-5 h-5" />
                         </a>
@@ -463,7 +463,7 @@ const InnovativeMicroSaasShowcase: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <a
                   href="/contact"
-                  className="flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
+                  className="flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 transform hover:shadow-xl hover:shadow-cyan-500/30"
                 >
                   <span>Get Started Today</span>
                   <ArrowRight className="w-5 h-5" />

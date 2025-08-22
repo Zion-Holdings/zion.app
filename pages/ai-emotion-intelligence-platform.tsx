@@ -201,7 +201,7 @@ export default function AIEmotionIntelligencePlatform() {
             >
               <Link
                 href="/contact"
-                className="group relative px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold rounded-2xl text-lg hover:from-pink-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-pink-500/25"
+                className="group relative px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold rounded-2xl text-lg hover:from-pink-600 hover:to-purple-600 transition-all duration-300 transform hover:shadow-xl hover:shadow-cyan-500/30 shadow-2xl hover:shadow-pink-500/25"
               >
                 <span className="relative z-10 flex items-center">
                   Start Free Trial
@@ -212,11 +212,11 @@ export default function AIEmotionIntelligencePlatform() {
 
               <Link
                 href="#pricing"
-                className="group px-8 py-4 border-2 border-pink-500/30 text-pink-300 font-semibold rounded-2xl text-lg hover:bg-pink-500/10 hover:border-pink-500/50 transition-all duration-300 transform hover:scale-105"
+                className="group px-8 py-4 border-2 border-pink-500/30 text-pink-300 font-semibold rounded-2xl text-lg hover:bg-pink-500/10 hover:border-pink-500/50 transition-all duration-300 transform hover:shadow-xl hover:shadow-cyan-500/30"
               >
                 <span className="flex items-center">
                   View Pricing
-                  <DollarSign className="ml-2 w-5 h-5 group-hover:scale-110 transition-transform duration-200" />
+                  <DollarSign className="ml-2 w-5 h-5 group-hover:shadow-lg hover:shadow-cyan-400/40 transition-transform duration-200" />
                 </span>
               </Link>
             </motion.div>
@@ -274,9 +274,9 @@ export default function AIEmotionIntelligencePlatform() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="group p-8 rounded-2xl bg-gradient-to-br from-white/5 to-white/10 border border-white/10 hover:border-pink-500/30 transition-all duration-300 transform hover:scale-105 hover:bg-white/10"
+                  className="group p-8 rounded-2xl bg-gradient-to-br from-white/5 to-white/10 border border-white/10 hover:border-pink-500/30 transition-all duration-300 transform hover:shadow-xl hover:shadow-cyan-500/30 hover:bg-white/10"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-r from-pink-500 to-purple-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-16 h-16 bg-gradient-to-r from-pink-500 to-purple-500 rounded-2xl flex items-center justify-center mb-6 group-hover:shadow-lg hover:shadow-cyan-400/40 transition-transform duration-300">
                     <feature.icon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-4">{feature.title}</h3>
@@ -352,7 +352,7 @@ export default function AIEmotionIntelligencePlatform() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className={`relative p-8 rounded-2xl border transition-all duration-300 transform hover:scale-105 ${
+                  className={`relative p-8 rounded-2xl border transition-all duration-300 transform hover:shadow-xl hover:shadow-cyan-500/30 ${
                     plan.popular
                       ? 'bg-gradient-to-br from-pink-500/10 to-purple-500/10 border-pink-500/50 shadow-2xl shadow-pink-500/25'
                       : 'bg-gradient-to-br from-white/5 to-white/10 border-white/10 hover:border-pink-500/30'
@@ -419,7 +419,7 @@ export default function AIEmotionIntelligencePlatform() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12">
                 <Link
                   href="/contact"
-                  className="group relative px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold rounded-2xl text-lg hover:from-pink-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-pink-500/25"
+                  className="group relative px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold rounded-2xl text-lg hover:from-pink-600 hover:to-purple-600 transition-all duration-300 transform hover:shadow-xl hover:shadow-cyan-500/30 shadow-2xl hover:shadow-pink-500/25"
                 >
                   <span className="relative z-10 flex items-center">
                     Start Free Trial
@@ -430,11 +430,11 @@ export default function AIEmotionIntelligencePlatform() {
 
                 <Link
                   href="/contact"
-                  className="group px-8 py-4 border-2 border-pink-500/30 text-pink-300 font-semibold rounded-2xl text-lg hover:bg-pink-500/10 hover:border-pink-500/50 transition-all duration-300 transform hover:scale-105"
+                  className="group px-8 py-4 border-2 border-pink-500/30 text-pink-300 font-semibold rounded-2xl text-lg hover:bg-pink-500/10 hover:border-pink-500/50 transition-all duration-300 transform hover:shadow-xl hover:shadow-cyan-500/30"
                 >
                   <span className="flex items-center">
                     Schedule Demo
-                    <MessageCircle className="ml-2 w-5 h-5 group-hover:scale-110 transition-transform duration-200" />
+                    <MessageCircle className="ml-2 w-5 h-5 group-hover:shadow-lg hover:shadow-cyan-400/40 transition-transform duration-200" />
                   </span>
                 </Link>
               </div>

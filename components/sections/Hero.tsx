@@ -153,7 +153,7 @@ const Hero: React.FC<HeroProps> = ({
               <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
               
               <div className="relative z-10">
-                <div className={`text-3xl sm:text-4xl font-bold ${stat.color} mb-2 group-hover:scale-110 transition-transform duration-300`}>
+                <div className={`text-3xl sm:text-4xl font-bold ${stat.color} mb-2 group-hover:shadow-lg hover:shadow-cyan-400/40 transition-transform duration-300`}>
                   {stat.value}
                 </div>
                 <div className="text-sm text-gray-300 group-hover:text-white transition-colors duration-300">

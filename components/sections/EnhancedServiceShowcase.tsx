@@ -323,7 +323,7 @@ export default function EnhancedServiceShowcase({
             transition={{ duration: 0.6 }}
             className="text-center mt-12"
           >
-            <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
+            <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 transform hover:shadow-xl hover:shadow-cyan-500/30">
               Load More Services
             </button>
           </motion.div>

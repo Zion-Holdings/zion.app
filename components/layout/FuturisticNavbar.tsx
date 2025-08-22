@@ -105,7 +105,7 @@ const FuturisticNavbar: React.FC = () => {
           {/* Enhanced Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
             <div className="relative">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 via-purple-600 to-cyan-500 rounded-2xl flex items-center justify-center transform group-hover:scale-110 transition-all duration-500 shadow-lg shadow-blue-500/30">
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 via-purple-600 to-cyan-500 rounded-2xl flex items-center justify-center transform group-hover:shadow-lg hover:shadow-cyan-400/40 transition-all duration-500 shadow-lg shadow-blue-500/30">
                 <Zap className="w-7 h-7 text-white" />
               </div>
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500 via-purple-600 to-cyan-500 rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-500" />
@@ -134,7 +134,7 @@ const FuturisticNavbar: React.FC = () => {
                   href={item.href}
                   className="flex items-center space-x-2 px-4 py-3 text-gray-300 hover:text-white transition-all duration-300 group relative rounded-xl hover:bg-white/5"
                 >
-                  <span className="group-hover:scale-110 transition-transform duration-300">
+                  <span className="group-hover:shadow-lg hover:shadow-cyan-400/40 transition-transform duration-300">
                     {item.icon}
                   </span>
                   <span className="relative font-medium">
@@ -174,7 +174,7 @@ const FuturisticNavbar: React.FC = () => {
           <div className="hidden lg:block">
             <Link
               href="/contact"
-              className="relative group bg-gradient-to-r from-blue-500 via-purple-600 to-cyan-500 hover:from-blue-600 hover:via-purple-700 hover:to-cyan-600 text-white px-8 py-3 rounded-2xl font-semibold transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/30 overflow-hidden"
+              className="relative group bg-gradient-to-r from-blue-500 via-purple-600 to-cyan-500 hover:from-blue-600 hover:via-purple-700 hover:to-cyan-600 text-white px-8 py-3 rounded-2xl font-semibold transition-all duration-500 transform hover:shadow-xl hover:shadow-cyan-500/30 hover:shadow-2xl hover:shadow-blue-500/30 overflow-hidden"
             >
               <span className="relative z-10 flex items-center space-x-2">
                 <Rocket className="w-4 h-4 group-hover:rotate-12 transition-transform duration-300" />
