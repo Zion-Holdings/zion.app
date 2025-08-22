@@ -8,11 +8,8 @@ import {
   Building, Cpu, Database, Cloud, Lock
 } from 'lucide-react';
 
-// Import our new service data
-import { enterpriseITSolutions } from '../data/2034-enterprise-it-solutions';
-import { innovativeMicroSaasSolutions } from '../data/2034-innovative-micro-saas-solutions';
-import { cuttingEdgeAIServices } from '../data/2034-cutting-edge-ai-services';
-import { real2025Q4AugmentedBatch } from '../data/real-2025-q4-augmented-batch';
+// Import our service data
+import { realMarketServices } from '../data/real-market-services';
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -56,9 +53,7 @@ const getServiceDescription = (service: any) => {
 
 // Create unified services array
 const allServices = [
-  ...enterpriseITSolutions,
-  ...innovativeMicroSaasSolutions,
-  ...cuttingEdgeAIServices,
+  ...realMarketServices,
   ...realMicroSaasServices,
   ...innovativeAIServices,
   ...enterpriseITServices,
@@ -67,8 +62,7 @@ const allServices = [
   ...realOperationalServices,
   ...marketReadyServices,
   ...marketValidatedServices,
-  ...industryRealServices,
-  ...real2025Q4AugmentedBatch
+  ...industryRealServices
 ];
 
 const categories = [
