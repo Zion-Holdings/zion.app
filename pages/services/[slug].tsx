@@ -39,6 +39,7 @@ import { real2029Q1Additions } from '../../data/real-2029-q1-additions';
 import { realMarketServices } from '../../data/real-market-services';
 import { real2029Q2Additions } from '../../data/real-2029-q2-additions';
 import { real2029Q3Additions } from '../../data/real-2029-q3-additions';
+import { ultimateRealMicroSaasServices2025 } from '../../data/2025-ultimate-real-micro-saas-services';
 
 type Service = typeof enhancedRealMicroSaasServices[number];
 
@@ -82,7 +83,8 @@ function getAllServices(): Service[] {
 		.concat(real2029Q1Additions as unknown as Service[])
 		.concat(realMarketServices as unknown as Service[])
 		.concat(real2029Q2Additions as unknown as Service[])
-		.concat(real2029Q3Additions as unknown as Service[]);
+		.concat(real2029Q3Additions as unknown as Service[])
+		.concat(ultimateRealMicroSaasServices2025 as unknown as Service[]);
 }
 
 function toSlug(value: string): string {
@@ -238,36 +240,27 @@ export default function ServiceDetailPage({ service }: { service: Service }) {
 						<Card className="p-6 bg-black/40 border border-gray-700/50">
 							<div className="text-sm text-gray-400 mb-1">Pricing</div>
 							<div className="text-3xl font-bold text-white">{service.price}<span className="text-base font-medium text-gray-400">{service.period}</span></div>
-							<div className="text-sm text-gray-400 mt-2">Trial: {service.trialDays || 14} days • Setup: {service.setupTime || 'Fast'} • Competitors: {(service.competitors || []).slice(0,3).join(', ')}</div>
-							<div className="mt-6 flex gap-3">
+							<div className="mt-2 text-gray-400 text-sm">Includes setup: {service.setupTime || 'Varies by service'}</div>
+							<div className="mt-3 flex gap-3">
 								<Button href="/contact" className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 text-white">Contact Sales</Button>
-								<Button href={service.link} variant="outline" className="flex-1 border border-gray-600 text-gray-200"><ExternalLink className="w-4 h-4 mr-2" /> Learn More</Button>
-							</div>
-						</Card>
-
-						<Card className="p-6 bg-black/40 border border-gray-700/50">
-							<h3 className="text-white font-semibold mb-3">Contact</h3>
-							<div className="space-y-3 text-sm">
-								<div className="flex items-center gap-2 text-cyan-400"><Phone className="w-4 h-4" /><a href={`tel:${contactInfo.mobile.replace(/[^+\\d]/g, '')}`} className="hover:underline">{contactInfo.mobile}</a></div>
-								<div className="flex items-center gap-2 text-purple-400"><Mail className="w-4 h-4" /><a href={`mailto:${contactInfo.email}`} className="hover:underline">{contactInfo.email}</a></div>
-								<div className="flex items-center gap-2 text-green-400"><MapPin className="w-4 h-4" /><a href={`https://maps.google.com/?q=${encodeURIComponent(contactInfo.address)}`} target="_blank" rel="noopener noreferrer" className="text-xs hover:underline">{contactInfo.address}</a></div>
-							</div>
-						</Card>
-
-						{/* Market Position & ROI */}
-						<Card className="p-6 bg-black/40 border border-gray-700/50">
-							<h3 className="text-white font-semibold mb-3">Market & ROI</h3>
-							<div className="space-y-3 text-sm text-gray-300">
-								{service.marketPosition && <p className="leading-relaxed"><span className="text-gray-400">Position:</span> {service.marketPosition}</p>}
-								{service.roi && <p className="leading-relaxed"><span className="text-gray-400">ROI:</span> {service.roi}</p>}
-								{service.competitors?.length ? (
-									<p className="leading-relaxed"><span className="text-gray-400">Competitors:</span> {service.competitors.slice(0,6).join(', ')}</p>
-								) : null}
 								<a href="/market-pricing" className="inline-block mt-2 text-cyan-300 hover:text-cyan-200">See average market prices →</a>
+							</div>
+						</Card>
+
+						<Card className="p-6 bg-black/40 border border-gray-700/50">
+							<div className="text-sm text-gray-400 mb-2">Contact</div>
+							<div className="space-y-2">
+								<div className="flex items-center gap-2 text-gray-300"><Phone className="w-4 h-4 text-cyan-400" /> {contactInfo.mobile}</div>
+								<div className="flex items-center gap-2 text-gray-300"><Mail className="w-4 h-4 text-purple-400" /> {contactInfo.email}</div>
+								<div className="flex items-start gap-2 text-gray-300"><MapPin className="w-4 h-4 text-pink-400" /> <span className="text-xs">{contactInfo.address}</span></div>
+								<div className="pt-2">
+									<a className="inline-flex items-center gap-2 text-cyan-300 hover:text-white" href="/market-pricing"><ExternalLink className="w-4 h-4" /> Market Pricing</a>
+								</div>
 							</div>
 						</Card>
 					</div>
 				</div>
+
 			</div>
 		</UltraFuturisticBackground>
 	);
