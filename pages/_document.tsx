@@ -1,24 +1,22 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document';
+import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document';
 
-export default class MyDocument extends Document {
-	static async getInitialProps(ctx) {
+class MyDocument extends Document {
+	static async getInitialProps(ctx: DocumentContext) {
 		const initialProps = await Document.getInitialProps(ctx);
 		return { ...initialProps };
 	}
 
 	render() {
-		const siteName = 'Zion Tech Group';
-		const themeColor = '#0b0f1a';
+		const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ziontechgroup.com';
 		return (
 			<Html lang="en">
 				<Head>
 					<link rel="preconnect" href="https://plausible.io" />
-					<link rel="dns-prefetch" href="//plausible.io" />
-					<link rel="manifest" href="/site.webmanifest" />
+					<meta name="theme-color" content="#000000" />
 					<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-					<meta name="application-name" content={siteName} />
-					<meta name="theme-color" content={themeColor} />
-					<meta name="color-scheme" content="dark light" />
+					<link rel="manifest" href="/site.webmanifest" />
+					<link rel="canonical" href={siteUrl} />
+					<meta name="viewport" content="width=device-width, initial-scale=1" />
 				</Head>
 				<body>
 					<Main />
@@ -28,3 +26,5 @@ export default class MyDocument extends Document {
 		);
 	}
 }
+
+export default MyDocument;
