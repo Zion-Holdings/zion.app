@@ -124,7 +124,9 @@ const footerSections = [
       { name: 'Support Center', href: '/support' },
       { name: 'Developer Portal', href: '/developer' },
       { name: 'Training & Certification', href: '/training' },
-      { name: 'Community Forum', href: '/community' }
+      { name: 'Community Forum', href: '/community' },
+      { name: 'Market Pricing', href: '/market-pricing' },
+      { name: 'Services Advertising', href: '/services-advertising' }
     ]
   }
 ];
