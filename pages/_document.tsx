@@ -18,7 +18,7 @@ class MyDocument extends Document {
 					<meta name="format-detection" content="telephone=no" />
 					<link rel="dns-prefetch" href="https://plausible.io" />
 					<link rel="preconnect" href="https://plausible.io" crossOrigin="anonymous" />
-					<script defer data-domain="ziontechgroup.com" src="https://plausible.io/js/script.js"></script>
+					{/* Plausible is injected via components/Analytics.tsx to centralize analytics */}
 				</Head>
 				<body>
 					<Main />
