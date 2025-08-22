@@ -19,7 +19,7 @@ const DEFAULTS = {
 	description:
 		"Transform your business with Zion Tech Group's revolutionary AI, quantum computing, and micro SAAS solutions. Leading-edge technology for unprecedented growth.",
 	url: 'https://ziontechgroup.com',
-	image: 'https://ziontechgroup.com/favicon.svg'
+	image: 'https://ziontechgroup.com/og-image.svg'
 };
 
 export default function SEO({ title, description, canonical, ogImage, image, noIndex, noindex, nofollow, jsonLd }: SEOProps) {
