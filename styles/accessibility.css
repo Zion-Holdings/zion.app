@@ -1,0 +1,312 @@
+/* Accessibility Enhancements */
+
+/* High Contrast Mode */
+.high-contrast {
+  --text-primary: #000000 !important;
+  --text-secondary: #333333 !important;
+  --bg-primary: #ffffff !important;
+  --bg-secondary: #f0f0f0 !important;
+  --accent-primary: #0066cc !important;
+  --accent-secondary: #cc0000 !important;
+  --border-primary: #000000 !important;
+  --border-secondary: #666666 !important;
+}
+
+.high-contrast * {
+  color: var(--text-primary) !important;
+  background-color: var(--bg-primary) !important;
+  border-color: var(--border-primary) !important;
+}
+
+.high-contrast .bg-gradient-to-br,
+.high-contrast .bg-gradient-to-r,
+.high-contrast .bg-gradient-to-l {
+  background: var(--bg-primary) !important;
+}
+
+.high-contrast .text-white {
+  color: var(--text-primary) !important;
+}
+
+.high-contrast .text-gray-400,
+.high-contrast .text-gray-500,
+.high-contrast .text-gray-600 {
+  color: var(--text-secondary) !important;
+}
+
+/* Large Text Mode */
+.large-text {
+  font-size: 1.2em !important;
+}
+
+.large-text h1 { font-size: 2.5em !important; }
+.large-text h2 { font-size: 2.2em !important; }
+.large-text h3 { font-size: 1.9em !important; }
+.large-text h4 { font-size: 1.6em !important; }
+.large-text h5 { font-size: 1.3em !important; }
+.large-text h6 { font-size: 1.1em !important; }
+.large-text p { font-size: 1.2em !important; }
+.large-text span { font-size: 1.2em !important; }
+.large-text button { font-size: 1.2em !important; }
+.large-text input { font-size: 1.2em !important; }
+.large-text textarea { font-size: 1.2em !important; }
+.large-text select { font-size: 1.2em !important; }
+
+/* Reduced Motion Mode */
+.reduced-motion *,
+.reduced-motion *::before,
+.reduced-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+.reduced-motion .animate-pulse {
+  animation: none !important;
+}
+
+.reduced-motion .animate-bounce {
+  animation: none !important;
+}
+
+.reduced-motion .animate-spin {
+  animation: none !important;
+}
+
+/* Focus Indicators */
+.focus-visible *:focus {
+  outline: 3px solid #0066cc !important;
+  outline-offset: 2px !important;
+  border-radius: 4px !important;
+}
+
+.focus-visible button:focus,
+.focus-visible a:focus,
+.focus-visible input:focus,
+.focus-visible textarea:focus,
+.focus-visible select:focus {
+  outline: 3px solid #0066cc !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.3) !important;
+}
+
+/* Color Blindness Support */
+.protanopia {
+  filter: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="protanopia"><feColorMatrix type="matrix" values="0.567,0.433,0,0,0 0.558,0.442,0,0,0 0,0.242,0.758,0,0 0,0,0,1,0"/></filter></svg>#protanopia');
+}
+
+.deuteranopia {
+  filter: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="deuteranopia"><feColorMatrix type="matrix" values="0.625,0.375,0,0,0 0.7,0.3,0,0,0 0,0.3,0.7,0,0 0,0,0,1,0"/></filter></svg>#deuteranopia');
+}
+
+.tritanopia {
+  filter: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="tritanopia"><feColorMatrix type="matrix" values="0.95,0.05,0,0,0 0,0.433,0.567,0,0 0,0.475,0.525,0,0 0,0,0,1,0"/></filter></svg>#tritanopia');
+}
+
+/* Skip Links */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.sr-only:focus {
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  padding: 0.5rem !important;
+  margin: 0 !important;
+  overflow: visible !important;
+  clip: auto !important;
+  white-space: normal !important;
+}
+
+/* Screen Reader Only Text */
+.sr-text {
+  position: absolute !important;
+  left: -10000px !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+}
+
+/* High Contrast Focus States */
+.high-contrast .focus-visible *:focus {
+  outline: 4px solid #000000 !important;
+  outline-offset: 3px !important;
+}
+
+/* Large Text Focus States */
+.large-text .focus-visible *:focus {
+  outline: 4px solid #0066cc !important;
+  outline-offset: 3px !important;
+}
+
+/* Button and Link Enhancements */
+button, a, input, textarea, select {
+  min-height: 44px !important;
+  min-width: 44px !important;
+}
+
+button:not([aria-label]):not([aria-labelledby]) {
+  position: relative;
+}
+
+button:not([aria-label]):not([aria-labelledby])::after {
+  content: attr(data-text);
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Form Field Enhancements */
+input, textarea, select {
+  border: 2px solid transparent !important;
+  transition: border-color 0.2s ease !important;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #0066cc !important;
+}
+
+/* Error States */
+.input-error {
+  border-color: #cc0000 !important;
+  background-color: #fff5f5 !important;
+}
+
+.input-error:focus {
+  border-color: #cc0000 !important;
+  box-shadow: 0 0 0 3px rgba(204, 0, 0, 0.3) !important;
+}
+
+/* Success States */
+.input-success {
+  border-color: #00cc00 !important;
+  background-color: #f0fff0 !important;
+}
+
+.input-success:focus {
+  border-color: #00cc00 !important;
+  box-shadow: 0 0 0 3px rgba(0, 204, 0, 0.3) !important;
+}
+
+/* Loading States */
+.loading {
+  position: relative;
+  pointer-events: none;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #0066cc;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  * {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  
+  button, .button {
+    border: 1px solid black !important;
+    background: white !important;
+  }
+}
+
+/* High Contrast Print */
+@media print {
+  .high-contrast * {
+    background: white !important;
+    color: black !important;
+    border: 1px solid black !important;
+  }
+}
+
+/* Responsive Accessibility */
+@media (max-width: 768px) {
+  .large-text {
+    font-size: 1.1em !important;
+  }
+  
+  .large-text h1 { font-size: 2.2em !important; }
+  .large-text h2 { font-size: 1.9em !important; }
+  .large-text h3 { font-size: 1.6em !important; }
+  .large-text h4 { font-size: 1.3em !important; }
+  .large-text h5 { font-size: 1.1em !important; }
+  .large-text h6 { font-size: 1em !important; }
+}
+
+/* Dark Mode Accessibility */
+@media (prefers-color-scheme: dark) {
+  .high-contrast {
+    --text-primary: #ffffff !important;
+    --text-secondary: #cccccc !important;
+    --bg-primary: #000000 !important;
+    --bg-secondary: #1a1a1a !important;
+    --accent-primary: #66b3ff !important;
+    --accent-secondary: #ff6666 !important;
+    --border-primary: #ffffff !important;
+    --border-secondary: #999999 !important;
+  }
+}
+
+/* Reduced Motion Media Query */
+@media (prefers-reduced-motion: reduce) {
+  .reduced-motion *,
+  .reduced-motion *::before,
+  .reduced-motion *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High Contrast Media Query */
+@media (prefers-contrast: high) {
+  .high-contrast {
+    --text-primary: #000000 !important;
+    --text-secondary: #333333 !important;
+    --bg-primary: #ffffff !important;
+    --bg-secondary: #f0f0f0 !important;
+    --accent-primary: #0066cc !important;
+    --accent-secondary: #cc0000 !important;
+    --border-primary: #000000 !important;
+    --border-secondary: #666666 !important;
+  }
+}

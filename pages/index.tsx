@@ -14,6 +14,13 @@ import {
   DollarSign as Finance, Factory as Manufacturing, Scale as Legal
 } from 'lucide-react';
 
+// Import enhanced components
+import SEOEnhancer from '../components/ui/SEOEnhancer';
+import ErrorBoundary from '../components/ui/ErrorBoundary';
+import PerformanceOptimizer from '../components/ui/PerformanceOptimizer';
+import AccessibilityEnhancer from '../components/ui/AccessibilityEnhancer';
+import PerformanceMonitor from '../components/ui/PerformanceMonitor';
+
 const contactInfo = {
   mobile: '+1 302 464 0950',
   email: 'kleber@ziontechgroup.com',
@@ -119,14 +126,22 @@ const featuredServices = [
 
 const Home: React.FC = () => {
   return (
-    <>
-      <Head>
-        <title>Zion Tech Group - Revolutionary Technology Solutions | AI, Quantum Computing, Micro SAAS</title>
-        <meta name="description" content="Transform your business with Zion Tech Group's revolutionary AI, quantum computing, and micro SAAS solutions. Leading-edge technology for unprecedented growth." />
-        <meta name="keywords" content="AI, quantum computing, micro SAAS, technology solutions, business transformation, Zion Tech Group" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="canonical" href="https://ziontechgroup.com" />
-      </Head>
+    <ErrorBoundary>
+      <PerformanceOptimizer>
+        <>
+          <SEOEnhancer
+            title="Zion Tech Group - Revolutionary Technology Solutions | AI, Quantum Computing, Micro SAAS"
+            description="Transform your business with Zion Tech Group's revolutionary AI, quantum computing, and micro SAAS solutions. Leading-edge technology for unprecedented growth."
+            keywords={[
+              'AI', 'quantum computing', 'micro SAAS', 'technology solutions', 
+              'business transformation', 'Zion Tech Group', 'artificial intelligence',
+              'machine learning', 'quantum technology', 'business automation',
+              'cybersecurity', 'cloud infrastructure', 'digital transformation'
+            ]}
+            type="website"
+            url="/"
+            image="/og-image.jpg"
+          />
 
       {/* Hero Section */}
         <UltraAdvancedHeroSection2025 />
@@ -379,7 +394,13 @@ const Home: React.FC = () => {
             </motion.div>
           </div>
         </section>
-    </>
+
+        {/* Enhanced Components */}
+        <AccessibilityEnhancer />
+        <PerformanceMonitor />
+        </>
+      </PerformanceOptimizer>
+    </ErrorBoundary>
   );
 };
 
