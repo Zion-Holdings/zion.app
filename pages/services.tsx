@@ -451,13 +451,21 @@ export default function Services() {
                       {/* Action Button */}
                       <div className="flex flex-col space-y-3">
                         <motion.a
-                          href={(service as any).link || `/services/${((service as any).slug || (service as any).name || 'service')}`}
+                          href={(service as any).link || `/services/${((service as any).slug || (service as any).name || 'service').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`}
                           whileHover={{ scale: 1.02 }}
                           whileTap={{ scale: 0.98 }}
                           className="flex items-center justify-center space-x-2 px-4 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 shadow-lg shadow-cyan-500/25"
                         >
                           <span>Learn More</span>
                           <ArrowRight className="w-4 h-4" />
+                        </motion.a>
+                        <motion.a
+                          href="/contact"
+                          whileHover={{ scale: 1.02 }}
+                          whileTap={{ scale: 0.98 }}
+                          className="flex items-center justify-center space-x-2 px-4 py-3 border border-gray-600 text-gray-200 font-medium rounded-lg hover:bg-white/5 transition-all duration-200"
+                        >
+                          <span>Contact Sales</span>
                         </motion.a>
                       </div>
 
