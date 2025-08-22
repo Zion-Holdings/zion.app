@@ -337,6 +337,54 @@ export default function MarketPricingPage() {
               </ul>
               <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $19–$1,000/month based on agents and SLAs.</div>
             </div>
+
+            <div className="bg-black/30 rounded-2xl border border-red-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">SBOM & Supply Chain Security</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Anchore: <a className="text-cyan-400 underline" href={`https://anchore.com/pricing/`} target="_blank" rel="noopener noreferrer">anchore.com/pricing</a></li>
+                <li>Snyk pricing: <a className="text-cyan-400 underline" href={`https://snyk.io/plans/`} target="_blank" rel="noopener noreferrer">snyk.io/plans</a></li>
+                <li>OWASP Dependency-Track: <a className="text-cyan-400 underline" href={`https://dependencytrack.org/`} target="_blank" rel="noopener noreferrer">dependencytrack.org</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $50–$500/month depending on repos and images.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-emerald-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Meeting Notes & Transcription</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Otter.ai pricing: <a className="text-cyan-400 underline" href={`https://otter.ai/pricing`} target="_blank" rel="noopener noreferrer">otter.ai/pricing</a></li>
+                <li>Descript pricing: <a className="text-cyan-400 underline" href={`https://www.descript.com/pricing`} target="_blank" rel="noopener noreferrer">descript.com/pricing</a></li>
+                <li>Fireflies.ai pricing: <a className="text-cyan-400 underline" href={`https://fireflies.ai/pricing`} target="_blank" rel="noopener noreferrer">fireflies.ai/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $10–$60/user/month depending on minutes and seats.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-teal-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Cookie Consent & CMP</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Cookiebot pricing: <a className="text-cyan-400 underline" href={`https://www.cookiebot.com/en/pricing/`} target="_blank" rel="noopener noreferrer">cookiebot.com/en/pricing</a></li>
+                <li>OneTrust CMP: <a className="text-cyan-400 underline" href={`https://www.onetrust.com/products/cookie-consent/`} target="_blank" rel="noopener noreferrer">onetrust.com/products/cookie-consent</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $10–$100/month based on traffic and regions.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-amber-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Invoice OCR & AP Automation</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Veryfi pricing: <a className="text-cyan-400 underline" href={`https://www.veryfi.com/pricing/`} target="_blank" rel="noopener noreferrer">veryfi.com/pricing</a></li>
+                <li>Docparser pricing: <a className="text-cyan-400 underline" href={`https://docparser.com/pricing`} target="_blank" rel="noopener noreferrer">docparser.com/pricing</a></li>
+                <li>UiPath: <a className="text-cyan-400 underline" href={`https://www.uipath.com/solutions/automated-invoice-processing`} target="_blank" rel="noopener noreferrer">uipath.com/.../invoice-processing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $30–$300/month depending on documents/month.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-sky-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Access Reviews & IGA</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>SailPoint: <a className="text-cyan-400 underline" href={`https://www.sailpoint.com`} target="_blank" rel="noopener noreferrer">sailpoint.com</a></li>
+                <li>Okta pricing: <a className="text-cyan-400 underline" href={`https://www.okta.com/pricing/`} target="_blank" rel="noopener noreferrer">okta.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $100–$1,000/month depending on identities and systems.</div>
+            </div>
           </div>
 
           <div className="space-y-6">

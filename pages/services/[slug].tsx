@@ -43,6 +43,7 @@ import { real2030Q1Additions } from '../../data/real-2030-q1-additions';
 import { enterpriseITSolutions } from '../../data/2034-enterprise-it-solutions';
 import { innovativeMicroSaasSolutions } from '../../data/2034-innovative-micro-saas-solutions';
 import { cuttingEdgeAIServices } from '../../data/2034-cutting-edge-ai-services';
+import { real2031Q1Additions } from '../../data/real-2031-q1-additions';
 
 type Service = typeof enhancedRealMicroSaasServices[number];
 
@@ -88,6 +89,7 @@ function getAllServices(): Service[] {
 		.concat(real2029Q2Additions as unknown as Service[])
 		.concat(real2029Q3Additions as unknown as Service[])
 		.concat(real2030Q1Additions as unknown as Service[])
+		.concat(real2031Q1Additions as unknown as Service[])
 		.concat(enterpriseITSolutions as unknown as Service[])
 		.concat(innovativeMicroSaasSolutions as unknown as Service[])
 		.concat(cuttingEdgeAIServices as unknown as Service[]);
