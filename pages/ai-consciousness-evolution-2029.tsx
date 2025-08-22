@@ -460,6 +460,16 @@ export default function AIConsciousnessEvolution2029() {
       </section>
 
       <UltraFuturisticFooter2029 />
+
+      <div className="container mx-auto px-4 py-8">
+        <div className="bg-black/30 rounded-xl border border-cyan-500/30 p-6">
+          <h2 className="text-2xl font-semibold text-white mb-2">Related Resources</h2>
+          <ul className="list-disc list-inside text-slate-300 space-y-1">
+            <li><a className="text-cyan-400 underline" href="/ai-emotional-intelligence-training">AI Emotional Intelligence Training</a></li>
+            <li><a className="text-cyan-400 underline" href="/ai-autonomous-business-operations">AI Autonomous Business Operations</a></li>
+          </ul>
+        </div>
+      </div>
     </>
   );
 }
