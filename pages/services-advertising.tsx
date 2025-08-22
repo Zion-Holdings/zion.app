@@ -252,6 +252,49 @@ export default function ServicesAdvertisingPage() {
               </a>
             </div>
           </section>
+
+          <section>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">New Real Services You Can Start Today</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { name: 'Candidate Screening Copilot', price: '$69/mo', href: '/services/candidate-screening-copilot', benefits: ['Resume parsing', 'JD scoring', 'ATS sync'] },
+                { name: 'Local SEO Reviews Booster', price: '$29/mo', href: '/services/local-seo-reviews-booster', benefits: ['Smart review routing', 'NPS/CSAT', 'Churn alerts'] },
+                { name: 'Podcast Transcription & SEO Suite', price: '$39/mo', href: '/services/podcast-transcription-seo-suite', benefits: ['Chapters', 'SEO blog', 'Quotes/cards'] },
+                { name: 'AI Product Spec Writer', price: '$79/mo', href: '/services/ai-product-spec-writer', benefits: ['PRDs', 'User stories', 'AC templates'] },
+                { name: 'AI Creative Studio', price: '$149/mo', href: '/services/ai-creative-studio', benefits: ['Brand kit', 'Image & video', 'Approvals'] },
+                { name: 'Zero Trust Network Architecture', price: '$4,999/mo', href: '/services/zero-trust-network-architecture', benefits: ['Policy access', 'MFA/SSO', 'Micro-segmentation'] }
+              ].map((o) => (
+                <a key={o.name} href={o.href} className="block p-6 rounded-2xl bg-black/40 border border-gray-700/60 hover:border-cyan-500/40">
+                  <div className="text-sm text-gray-400 mb-1">From</div>
+                  <div className="text-2xl font-bold text-white">{o.price}</div>
+                  <div className="text-gray-200 mt-2">{o.name}</div>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {o.benefits.map((b) => (
+                      <span key={b} className="px-2 py-1 text-xs bg-gray-800/60 border border-gray-700 rounded text-gray-300">{b}</span>
+                    ))}
+                  </div>
+                </a>
+              ))}
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Benchmarks & Typical Budgets</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                { title: 'Micro SaaS', avg: '$29–$199/mo', notes: 'Self-serve tools for SMB teams' },
+                { title: 'AI Platforms', avg: '$99–$2,499/mo', notes: 'Model costs vary by volume' },
+                { title: 'Enterprise IT', avg: '$1,999–$9,999/mo', notes: 'Includes onboarding & SLAs' }
+              ].map((g) => (
+                <div key={g.title} className="p-6 rounded-2xl bg-black/40 border border-gray-700/60">
+                  <div className="text-sm text-gray-400">Category</div>
+                  <div className="text-xl font-semibold text-white">{g.title}</div>
+                  <div className="text-2xl font-bold text-cyan-400 mt-2">{g.avg}</div>
+                  <div className="text-sm text-gray-400 mt-2">{g.notes}</div>
+                </div>
+              ))}
+            </div>
+          </section>
         </div>
       </div>
     </UltraAdvancedFuturisticBackground>
