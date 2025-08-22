@@ -1464,7 +1464,119 @@ export default function ServicesAdvertisingPage() {
 					</ul>
 					<div className="text-slate-400 text-sm">Full catalog: <a className="text-cyan-400 underline" href="/services">/services</a> • Market pricing: <a className="text-cyan-400 underline" href="/market-pricing">/market-pricing</a></div>
 				</section>
+
+				{/* New 2025–2036 diversified additions */}
+				<section id="finops-ai-advisor" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">FinOps AI Advisor</h2>
+					<p className="text-slate-300">Automated cloud spend governance: budget guardrails, anomaly alerts, and right‑sizing recommendations across AWS, Azure, and GCP.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $49–$299/mo</li>
+						<li>References: {ext('https://aws.amazon.com/aws-cost-management/pricing/')}, {ext('https://azure.microsoft.com/pricing/details/cost-management/')}, {ext('https://cloud.google.com/billing/docs/how-to/cost-management')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/finops-ai-advisor">Learn more</a></div>
+				</section>
+
+				<section id="data-quality-monitor" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Data Quality Monitor</h2>
+					<p className="text-slate-300">Column‑level freshness, null spikes, schema drift, and outlier detection with Slack/Jira alerts and dbt integration.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $49–$199/mo</li>
+						<li>References: {ext('https://www.getdbt.com/pricing/')}, {ext('https://airflow.apache.org/')}, {ext('https://slack.com/pricing')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/data-quality-monitor">Learn more</a></div>
+				</section>
+
+				<section id="gitops-drift-monitor" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">GitOps Drift Monitor</h2>
+					<p className="text-slate-300">Detect and auto‑remediate Kubernetes and IaC drift with policy‑as‑code checks and PR annotations.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $59–$249/mo</li>
+						<li>References: {ext('https://argo-cd.readthedocs.io/')}, {ext('https://www.openpolicyagent.org/')}, {ext('https://www.terraform.io/cloud/pricing')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/gitops-drift-monitor">Learn more</a></div>
+				</section>
+
+				<section id="llm-prompt-analytics" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">LLM Prompt Sandbox & Analytics</h2>
+					<p className="text-slate-300">Test prompts across models, track latency and cost, run A/B evaluations, and publish safe prompt packs.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $25–$199/mo + API usage</li>
+						<li>References: {ext('https://openai.com/api/pricing')}, {ext('https://www.anthropic.com/pricing')}, {ext('https://openrouter.ai/models')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/llm-prompt-analytics">Learn more</a></div>
+				</section>
+
+				<section id="customer-voice-insights" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Customer Voice Insights (NPS/CSAT)</h2>
+					<p className="text-slate-300">Unified feedback hub for NPS, CSAT, reviews, and tickets with AI topic clustering and retention recommendations.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $29–$149/mo</li>
+						<li>References: {ext('https://delighted.com/pricing')}, {ext('https://www.hotjar.com/pricing/')}, {ext('https://www.intercom.com/pricing')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/customer-voice-insights">Learn more</a></div>
+				</section>
+
+				<section id="cloud-cost-anomaly-detector" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Cloud Cost Anomaly Detector</h2>
+					<p className="text-slate-300">Daily and hourly anomaly detection with spend attribution, alert routing, and automatic budget caps.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $39–$199/mo</li>
+						<li>References: {ext('https://aws.amazon.com/aws-cost-management/aws-cost-anomaly-detection/')}, {ext('https://cloud.google.com/billing/docs/how-to/anomaly-detection')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/cloud-cost-anomaly-detector">Learn more</a></div>
+				</section>
+
+				<section id="sdk-changelog-notifier" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">SDK Changelog Notifier</h2>
+					<p className="text-slate-300">Track upstream SDK and API releases; notify breaking changes with migration guides and repo PRs.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $19–$79/mo</li>
+						<li>References: {ext('https://github.com/pricing')}, {ext('https://docs.npmjs.com/policies/npm-pricing')}, {ext('https://about.codecov.io/pricing/')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/sdk-changelog-notifier">Learn more</a></div>
+				</section>
+
+				<section id="sales-call-scoring" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Sales Call Scoring</h2>
+					<p className="text-slate-300">Auto‑transcribe and score calls with objection handling, next steps, and CRM sync.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $29–$199/mo + usage</li>
+						<li>References: {ext('https://openai.com/api/pricing')}, {ext('https://www.twilio.com/pricing/voice')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/sales-call-scoring">Learn more</a></div>
+				</section>
+
+				<section id="policy-as-code-starter" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Policy‑as‑Code Starter</h2>
+					<p className="text-slate-300">OPA/Rego starter kits, CI checks, and violation dashboards for AWS, Kubernetes, and Terraform.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $39–$149/mo</li>
+						<li>References: {ext('https://www.openpolicyagent.org/')}, {ext('https://www.terraform.io/cloud/pricing')}, {ext('https://aws.amazon.com/config/pricing/')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/policy-as-code-starter">Learn more</a></div>
+				</section>
+
+				<section id="slack-security-monitor" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Slack Security Monitor</h2>
+					<p className="text-slate-300">DLP, token leak detection, external shares, and workspace audit alerts with auto‑remediation.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $19–$99/mo</li>
+						<li>References: {ext('https://slack.com/pricing')}, {ext('https://api.slack.com/enterprise/security')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/slack-security-monitor">Learn more</a></div>
+				</section>
+
+				<section id="ai-design-system-assistant" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">AI Design System Assistant</h2>
+					<p className="text-slate-300">Design token suggestions, accessible component variants, and usage linting across React and Tailwind projects.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $29–$149/mo</li>
+						<li>References: {ext('https://tailwindcss.com/')}, {ext('https://mui.com/pricing/')}, {ext('https://figma.com/pricing')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/ai-design-system-assistant">Learn more</a></div>
+				</section>
+
+				</div>
 			</div>
-		</div>
-	);
-}
+		);
+	}
