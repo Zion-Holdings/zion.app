@@ -1217,6 +1217,129 @@ export default function ServicesAdvertisingPage() {
 					<div><a className="text-cyan-400 underline" href="/services/policy-drift-compliance-monitor">Learn more</a></div>
 				</section>
 
+				<section id="diversified-expansions-2026" className="space-y-8">
+					<h2 className="text-2xl font-semibold text-white">New Diversified Additions</h2>
+					<section id="license-key-usage-metering" className="space-y-2">
+						<h3 className="text-xl font-semibold text-white">License Key & Usage Metering Hub</h3>
+						<p className="text-slate-300">Provision license keys, enforce entitlements, and track metered usage with Stripe/Billing and audits.</p>
+						<ul className="list-disc list-inside text-slate-300 space-y-1">
+							<li>Typical SMB budget: $29–$199/mo</li>
+							<li>References: {ext('https://keygen.sh/pricing')}, {ext('https://stripe.com/docs/billing/subscriptions/metered')}</li>
+						</ul>
+						<div><a className="text-cyan-400 underline" href="/services/license-key-usage-metering">Learn more</a></div>
+					</section>
+
+					<section id="multi-tenant-rate-limiter" className="space-y-2">
+						<h3 className="text-xl font-semibold text-white">Multi‑tenant Rate Limiter & Quotas</h3>
+						<p className="text-slate-300">Tenant‑aware quotas, burst limits, and fairness with headers, dashboards, and alerts.</p>
+						<ul className="list-disc list-inside text-slate-300 space-y-1">
+							<li>Typical SMB budget: $39–$299/mo</li>
+							<li>References: {ext('https://docs.konghq.com/hub/kong-inc/rate-limiting/')}, {ext('https://developers.cloudflare.com/waf/rate-limits/')}</li>
+						</ul>
+						<div><a className="text-cyan-400 underline" href="/services/multi-tenant-rate-limiter">Learn more</a></div>
+					</section>
+
+					<section id="data-residency-geo-router" className="space-y-2">
+						<h3 className="text-xl font-semibold text-white">Data Residency & Geo Routing Proxy</h3>
+						<p className="text-slate-300">Route API traffic by geography and data class to meet residency and localization policies.</p>
+						<ul className="list-disc list-inside text-slate-300 space-y-1">
+							<li>Typical SMB budget: $79–$499/mo</li>
+							<li>References: {ext('https://www.cloudflare.com/data-localization/')}, {ext('https://developers.cloudflare.com/workers/')}</li>
+						</ul>
+						<div><a className="text-cyan-400 underline" href="/services/data-residency-geo-router">Learn more</a></div>
+					</section>
+
+					<section id="api-contract-mock-sandbox" className="space-y-2">
+						<h3 className="text-xl font-semibold text-white">API Mock Server & Contract Sandbox</h3>
+						<p className="text-slate-300">Spin up realistic mocks from OpenAPI/GraphQL with contract tests and golden recordings.</p>
+						<ul className="list-disc list-inside text-slate-300 space-y-1">
+							<li>Typical SMB budget: $19–$129/mo</li>
+							<li>References: {ext('https://stoplight.io/open-source/prism')}, {ext('https://learning.postman.com/docs/designing-and-developing-your-api/mocking-data/overview')}</li>
+						</ul>
+						<div><a className="text-cyan-400 underline" href="/services/api-contract-mock-sandbox">Learn more</a></div>
+					</section>
+
+					<section id="stripe-billing-migration" className="space-y-2">
+						<h3 className="text-xl font-semibold text-white">Stripe Billing Migration & Dunning Optimizer</h3>
+						<p className="text-slate-300">Plan/price migration playbooks, tax, proration, coupons, and best‑practice dunning sequences.</p>
+						<ul className="list-disc list-inside text-slate-300 space-y-1">
+							<li>Typical SMB budget: $99–$799 one‑time or $49–$199/mo</li>
+							<li>References: {ext('https://stripe.com/pricing')}, {ext('https://www.chargebee.com/pricing')}, {ext('https://recurly.com/pricing/')}</li>
+						</ul>
+						<div><a className="text-cyan-400 underline" href="/services/stripe-billing-migration">Learn more</a></div>
+					</section>
+
+					<section id="ai-sales-call-coach" className="space-y-2">
+						<h3 className="text-xl font-semibold text-white">AI Sales Call Scoring & Coaching</h3>
+						<p className="text-slate-300">Auto‑score discovery/demo calls, detect next steps, and generate coaching snippets synced to CRM.</p>
+						<ul className="list-disc list-inside text-slate-300 space-y-1">
+							<li>Typical SMB budget: $39–$199/user/mo</li>
+							<li>References: {ext('https://www.avoma.com/pricing')}, {ext('https://www.gong.io')}</li>
+						</ul>
+						<div><a className="text-cyan-400 underline" href="/services/ai-sales-call-coach">Learn more</a></div>
+					</section>
+
+					<section id="sku-demand-forecast" className="space-y-2">
+						<h3 className="text-xl font-semibold text-white">SKU Demand Forecast Copilot</h3>
+						<p className="text-slate-300">Weekly SKU forecasts with confidence bands and purchase order suggestions.</p>
+						<ul className="list-disc list-inside text-slate-300 space-y-1">
+							<li>Typical SMB budget: $99–$699/mo</li>
+							<li>References: {ext('https://aws.amazon.com/forecast/pricing/')}, {ext('https://www.pigment.com/pricing')}</li>
+						</ul>
+						<div><a className="text-cyan-400 underline" href="/services/sku-demand-forecast">Learn more</a></div>
+					</section>
+
+					<section id="video-subtitle-dubbing" className="space-y-2">
+						<h3 className="text-xl font-semibold text-white">Video Subtitling & Dubbing Studio</h3>
+						<p className="text-slate-300">Generate multi‑language subtitles and voiceovers with style controls and review workflows.</p>
+						<ul className="list-disc list-inside text-slate-300 space-y-1">
+							<li>Typical SMB budget: $10–$199/mo + usage</li>
+							<li>References: {ext('https://deepgram.com/pricing')}, {ext('https://elevenlabs.io/pricing')}</li>
+						</ul>
+						<div><a className="text-cyan-400 underline" href="/services/video-subtitle-dubbing">Learn more</a></div>
+					</section>
+
+					<section id="app-store-review-insights" className="space-y-2">
+						<h3 className="text-xl font-semibold text-white">App Store Review Insights</h3>
+						<p className="text-slate-300">Aggregate reviews across stores, detect themes, and surface product issues automatically.</p>
+						<ul className="list-disc list-inside text-slate-300 space-y-1">
+							<li>Typical SMB budget: $29–$199/mo</li>
+							<li>References: {ext('https://appfollow.io/pricing')}, {ext('https://www.appradar.com/pricing')}</li>
+						</ul>
+						<div><a className="text-cyan-400 underline" href="/services/app-store-review-insights">Learn more</a></div>
+					</section>
+
+					<section id="b2b-pricing-entitlements" className="space-y-2">
+						<h3 className="text-xl font-semibold text-white">B2B SaaS Pricing & Entitlement Planner</h3>
+						<p className="text-slate-300">Model plans/features, gates, and usage tiers with entitlements diffed to code.</p>
+						<ul className="list-disc list-inside text-slate-300 space-y-1">
+							<li>Typical SMB budget: $49–$299/mo</li>
+							<li>References: {ext('https://stripe.com/pricing')}, {ext('https://www.paddle.com/pricing')}, {ext('https://www.recurly.com/pricing')}</li>
+						</ul>
+						<div><a className="text-cyan-400 underline" href="/services/b2b-pricing-entitlements">Learn more</a></div>
+					</section>
+
+					<section id="sso-billing-entitlements-sync" className="space-y-2">
+						<h3 className="text-xl font-semibold text-white">SSO Billing & Entitlements Sync</h3>
+						<p className="text-slate-300">Bridge IdP groups/SCIM to billing entitlements for least‑privilege, audit‑ready access.</p>
+						<ul className="list-disc list-inside text-slate-300 space-y-1">
+							<li>Typical SMB budget: $79–$399/mo</li>
+							<li>References: {ext('https://workos.com/pricing')}, {ext('https://auth0.com/pricing')}, {ext('https://www.okta.com/pricing/')}</li>
+						</ul>
+						<div><a className="text-cyan-400 underline" href="/services/sso-billing-entitlements-sync">Learn more</a></div>
+					</section>
+
+					<section id="email-dmarc-monitor" className="space-y-2">
+						<h3 className="text-xl font-semibold text-white">Email DMARC/SPF/DKIM Monitor & Autopilot</h3>
+						<p className="text-slate-300">Monitor authentication, guide DNS fixes, and improve deliverability with safe rollouts.</p>
+						<ul className="list-disc list-inside text-slate-300 space-y-1">
+							<li>Typical SMB budget: $9–$99/mo</li>
+							<li>References: {ext('https://dmarcian.com/pricing')}, {ext('https://valimail.com/pricing/')}</li>
+						</ul>
+						<div><a className="text-cyan-400 underline" href="/services/email-dmarc-monitor">Learn more</a></div>
+					</section>
+				</section>
+
 				{/* Contact CTA */}
 				<div className="flex flex-col md:flex-row items-center gap-4 p-4 rounded-xl bg-black/30 border border-gray-800">
 					<a href="tel:+13024640950" className="px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white">Call +1 302 464 0950</a>
