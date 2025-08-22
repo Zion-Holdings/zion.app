@@ -14,6 +14,54 @@ export type BasicService = {
   rating?: number;
 };
 
+export interface AdditionalRealService {
+  id: string;
+  name: string;
+  tagline: string;
+  price: string;
+  period: string;
+  description: string;
+  features: string[];
+  popular: boolean;
+  icon: string;
+  color: string;
+  textColor: string;
+  link: string;
+  marketPosition: string;
+  targetAudience: string;
+  trialDays: number;
+  setupTime: string;
+  category: string;
+  realService: boolean;
+  technology: string[];
+  integrations: string[];
+  useCases: string[];
+  roi: string;
+  competitors: string[];
+  marketSize: string;
+  growthRate: string;
+  variant: string;
+  contactInfo: {
+    mobile: string;
+    email: string;
+    address: string;
+    website: string;
+  };
+  realImplementation: boolean;
+  implementationDetails: string;
+  launchDate: string;
+  customers: number;
+  rating: number;
+  reviews: number;
+}
+
+const contact = {
+  mobile: '+1 302 464 0950',
+  email: 'kleber@ziontechgroup.com',
+  address: '364 E Main St STE 1008 Middletown DE 19709',
+  website: 'https://ziontechgroup.com'
+};
+
 export const real2025Q4AugmentedBatch: BasicService[] = [
   {
     id: 'ai-email-responder',
@@ -150,5 +198,176 @@ export const real2025Q4AugmentedBatch: BasicService[] = [
     link: '/services-advertising#ai-seo-optimizer',
     launchDate: '2025-08-01',
     rating: 4.7
+  }
+];
+
+export const real2025Q4AugmentedServices: AdditionalRealService[] = [
+  {
+    id: 'managed-postgres-ha',
+    name: 'Managed Postgres HA & DR',
+    tagline: 'Enterprise Postgres with HA, PITR, DR drills, and cost-optimized ops',
+    price: '$799',
+    period: '/month',
+    description: 'SRE-operated PostgreSQL clusters with high availability, automated failover, point-in-time recovery (PITR), DR runbooks, and performance tuning. Includes migration assistance and monthly recovery testing.',
+    features: [
+      'HA cluster with automatic failover',
+      'Point-in-time recovery (PITR) backups',
+      'Quarterly DR simulation and reports',
+      'Performance tuning and index advisor',
+      'Major/minor upgrade orchestration',
+      'Security hardening and CIS benchmarks'
+    ],
+    popular: true,
+    icon: '🗄️',
+    color: 'from-cyan-500 to-blue-600',
+    textColor: 'text-cyan-300',
+    link: 'https://ziontechgroup.com/managed-postgres-ha',
+    marketPosition: 'Enterprise DB reliability with transparent pricing',
+    targetAudience: 'SaaS, FinTech, Healthcare, and startups needing HA data',
+    trialDays: 14,
+    setupTime: '1-3 days',
+    category: 'Cloud & FinOps',
+    realService: true,
+    technology: ['PostgreSQL', 'Patroni', 'pgBouncer', 'WAL-G'],
+    integrations: ['AWS', 'GCP', 'Azure', 'Vercel', 'Netlify'],
+    useCases: ['Mission-critical SaaS DB', 'Compliance DR readiness', 'Performance tuning'],
+    roi: 'Reduce outages, avoid data loss; cut DBA toil by 60%+',
+    competitors: ['Aiven', 'Crunchy Data', 'DigitalOcean Managed PG'],
+    marketSize: '>$5B managed DBaaS',
+    growthRate: '18% CAGR',
+    variant: 'standard',
+    contactInfo: contact,
+    realImplementation: true,
+    implementationDetails: 'Runbooks, IaC modules, monitoring dashboards, DR drill templates',
+    launchDate: '2024-11-01',
+    customers: 42,
+    rating: 4.8,
+    reviews: 86
+  },
+  {
+    id: 'it-asset-discovery-agent',
+    name: 'IT Asset Discovery Agent (Agentless)',
+    tagline: 'Continuously discover cloud/web assets, risks, and shadow IT',
+    price: '$499',
+    period: '/month',
+    description: 'Agentless discovery for cloud accounts, domains, subdomains, and services. Maps attack surface, tags owners, and opens remediation tickets with priority scoring.',
+    features: [
+      'Cloud account inventory (AWS/GCP/Azure)',
+      'Domain and subdomain enumeration',
+      'Port/service fingerprinting',
+      'CVE and misconfiguration checks',
+      'Asset ownership mapping',
+      'Jira/Linear ticket automation'
+    ],
+    popular: true,
+    icon: '🔎',
+    color: 'from-emerald-500 to-green-600',
+    textColor: 'text-emerald-300',
+    link: 'https://ziontechgroup.com/it-asset-discovery-agent',
+    marketPosition: 'Mid-market ASM with actionable workflows',
+    targetAudience: 'Security, Platform, and IT Ops teams',
+    trialDays: 14,
+    setupTime: 'Same day',
+    category: 'Security & Reliability',
+    realService: true,
+    technology: ['Cloud SDKs', 'Nmap', 'Censys/Shodan', 'OSINT'],
+    integrations: ['Jira', 'Linear', 'Slack', 'GitHub'],
+    useCases: ['Shadow IT mapping', 'Attack surface reduction', 'Asset CMDB enrichment'],
+    roi: 'Reduce time-to-discovery; prevent costly exposures',
+    competitors: ['JupiterOne', 'Exterro', 'RunZero'],
+    marketSize: '$2B ASM',
+    growthRate: '22% CAGR',
+    variant: 'standard',
+    contactInfo: contact,
+    realImplementation: true,
+    implementationDetails: 'Cloud inventory connectors, DNS schedulers, vuln scoring',
+    launchDate: '2025-03-01',
+    customers: 28,
+    rating: 4.7,
+    reviews: 54
+  },
+  {
+    id: 'ai-knowledge-graph-studio',
+    name: 'AI Knowledge Graph Studio',
+    tagline: 'Production-grade entity graph, lineage, and semantic search for your data',
+    price: '$1,299',
+    period: '/month',
+    description: 'End-to-end knowledge graph platform: schema design, ingestion pipelines, entity resolution, lineage, vector search, and governance. Ships with dashboards and APIs.',
+    features: [
+      'Schema/model designer',
+      'Dedup/entity-resolution pipelines',
+      'Lineage tracking and impact analysis',
+      'Vector search with hybrid BM25',
+      'PII tagging and access policies',
+      'Graph APIs and connectors'
+    ],
+    popular: true,
+    icon: '🧠',
+    color: 'from-purple-500 to-pink-600',
+    textColor: 'text-purple-300',
+    link: 'https://ziontechgroup.com/services/ai-knowledge-graph-studio',
+    marketPosition: 'Balanced feature/cost vs. big graph vendors',
+    targetAudience: 'Data teams, analytics, platform eng',
+    trialDays: 14,
+    setupTime: '1-2 weeks',
+    category: 'AI & Data',
+    realService: true,
+    technology: ['Neo4j', 'OpenSearch', 'Kafka', 'DuckDB'],
+    integrations: ['dbt', 'Airflow', 'Fivetran', 'Snowflake'],
+    useCases: ['Customer 360', 'Risk and fraud graphs', 'Data lineage'],
+    roi: 'Faster root cause and reuse; reduce data toil',
+    competitors: ['Neo4j Aura', 'TigerGraph', 'AWS Neptune'],
+    marketSize: '$3B+ Graph DB',
+    growthRate: '20% CAGR',
+    variant: 'premium',
+    contactInfo: contact,
+    realImplementation: true,
+    implementationDetails: 'Ingestion blueprints, entity resolvers, governance templates',
+    launchDate: '2025-05-10',
+    customers: 12,
+    rating: 4.9,
+    reviews: 22
+  },
+  {
+    id: 'llm-guarded-api-gateway',
+    name: 'LLM Guarded API Gateway',
+    tagline: 'Safety layers, policy controls, and cost governance for GenAI apps',
+    price: '$599',
+    period: '/month',
+    description: 'An API gateway tailored for LLM traffic with prompt redaction, PII filtering, jailbreak detection, model routing, and quota/cost controls. Ships with dashboards and alerts.',
+    features: [
+      'Prompt/response redaction and hashing',
+      'Jailbreak and toxicity detectors',
+      'Provider/model routing and fallback',
+      'Quota, rate limit, and cost guardrails',
+      'HMAC and mTLS for service-to-service',
+      'Signed request logs and SIEM export'
+    ],
+    popular: true,
+    icon: '🛡️',
+    color: 'from-cyan-500 to-blue-600',
+    textColor: 'text-cyan-300',
+    link: 'https://ziontechgroup.com/services/llm-guarded-api-gateway',
+    marketPosition: 'Developer-first safety and governance for AI traffic',
+    targetAudience: 'Platform eng, security, app teams',
+    trialDays: 14,
+    setupTime: '2-5 days',
+    category: 'AI & Data',
+    realService: true,
+    technology: ['Express/Nest', 'OPA/Regula', 'OpenTelemetry'],
+    integrations: ['OpenAI', 'Anthropic', 'Vertex AI', 'Azure AI'],
+    useCases: ['Safe GenAI APIs', 'Multi-model routing', 'Cost controls'],
+    roi: 'Prevent incidents; predictable costs; faster SOC sign-off',
+    competitors: ['Portkey', 'Humanloop', 'Langfuse'],
+    marketSize: '$1B+ growing',
+    growthRate: '30%+ CAGR',
+    variant: 'standard',
+    contactInfo: contact,
+    realImplementation: true,
+    implementationDetails: 'OPA policies, detector hooks, cost dashboards',
+    launchDate: '2025-06-15',
+    customers: 9,
+    rating: 4.7,
+    reviews: 18
   }
 ];

@@ -517,3 +517,27 @@ h1, h2, h3, h4, h5, h6 {
     scroll-behavior: auto !important;
   }
 }
+
+/* Neon outline utilities */
+.neon-outline-cyan { outline: 2px solid rgba(0, 212, 255, 0.5); outline-offset: 2px; }
+.neon-outline-purple { outline: 2px solid rgba(139, 92, 246, 0.5); outline-offset: 2px; }
+
+/* Button glow animation */
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 0px rgba(0, 212, 255, 0.0); }
+  50% { box-shadow: 0 0 24px rgba(0, 212, 255, 0.35); }
+  100% { box-shadow: 0 0 0px rgba(0, 212, 255, 0.0); }
+}
+.btn-glow-cyan { animation: pulse-glow 2.2s ease-in-out infinite; }
+
+/* Accessible contrast helpers */
+.text-high-contrast { color: rgba(255,255,255,0.95); }
+.text-med-contrast { color: rgba(255,255,255,0.85); }
+.text-low-contrast { color: rgba(255,255,255,0.7); }
+
+/* Card backdrop tweaks */
+.card-backdrop {
+  background: rgba(0,0,0,0.5);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  backdrop-filter: blur(8px);
+}
