@@ -8,7 +8,7 @@ export default class MyDocument extends Document {
 					<meta charSet="utf-8" />
 					<meta name="theme-color" content="#0a0a0a" />
 					<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-					<link rel="icon" href="/favicon.ico" />
+					<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 					<link rel="preconnect" href="https://plausible.io" crossOrigin="anonymous" />
 					<meta name="format-detection" content="telephone=no" />
 					<meta name="color-scheme" content="dark light" />
