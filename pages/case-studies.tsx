@@ -1,29 +1,27 @@
 import React from 'react';
 import Head from 'next/head';
 
-export default function CaseStudies() {
+export default function CaseStudiesPage() {
 	return (
-		<>
+		<div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8">
 			<Head>
 				<title>Case Studies | Zion Tech Group</title>
-				<meta name="description" content="Selected outcomes across AI, cloud, and security initiatives." />
 				<link rel="canonical" href="https://ziontechgroup.com/case-studies" />
+				<meta name="description" content="Proven outcomes across AI, IT, and micro SaaS deployments." />
 			</Head>
-			<div className="min-h-screen pt-28 px-4">
-				<div className="max-w-5xl mx-auto">
-					<h1 className="text-4xl font-bold mb-4">Case Studies</h1>
-					<p className="text-gray-300 mb-8">Curated wins in AI automation, FinOps, observability, and enterprise security.</p>
-					<ul className="space-y-3 list-disc list-inside">
-						<li className="text-gray-200">Cut LLM cost 42% with gateway + prompt caching</li>
-						<li className="text-gray-200">Improved INP 38% via RUM diagnostics & fixes</li>
-						<li className="text-gray-200">Reduced cloud spend 27% in 30 days with FinOps guardrails</li>
-						<li className="text-gray-200">Achieved SOC 2 readiness in 8 weeks with evidence automation</li>
-					</ul>
-					<div className="mt-10">
-						<a href="/contact" className="inline-block px-6 py-3 rounded-lg bg-cyan-600 text-white">Discuss your project</a>
-					</div>
+			<div className="max-w-5xl mx-auto space-y-6 text-slate-200">
+				<h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Case Studies</h1>
+				<p>Read customer success highlights and measurable results. Full library is being published.</p>
+				<ul className="list-disc list-inside space-y-2">
+					<li>Reduced cloud spend 28% in 60 days using FinOps accelerator</li>
+					<li>Cut support response times 65% with AI Email Responder</li>
+					<li>Improved conversion 12% using personalization and analytics</li>
+				</ul>
+				<div className="flex gap-3 pt-2">
+					<a href="/contact" className="px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white">Get a similar outcome</a>
+					<a href="mailto:kleber@ziontechgroup.com" className="px-4 py-2 rounded-lg border border-cyan-500/40 text-cyan-300">Email kleber@ziontechgroup.com</a>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 }
