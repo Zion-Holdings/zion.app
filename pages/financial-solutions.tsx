@@ -1,19 +1,23 @@
 import React from 'react';
 import Head from 'next/head';
-import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
 
-export default function FinancialSolutions() {
+export default function FinancialSolutionsPage() {
 	return (
-		<UltraFuturisticBackground variant="quantum" intensity="high">
+		<div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8 text-white">
 			<Head>
 				<title>Financial Services Solutions | Zion Tech Group</title>
-				<meta name="description" content="AI financial planning, risk analytics, and fraud detection solutions." />
+				<meta name="description" content="Quantum-enhanced trading, AI risk assessment, and financial analytics solutions." />
 				<link rel="canonical" href="https://ziontechgroup.com/financial-solutions" />
 			</Head>
-			<div className="container mx-auto px-4 py-20 text-white">
-				<h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-6">Financial Services</h1>
-				<p className="text-gray-300 max-w-3xl">Deliver wealth intelligence, risk management, and compliance automation. Contact +1 302 464 0950 • kleber@ziontechgroup.com.</p>
+			<div className="max-w-5xl mx-auto space-y-6">
+				<h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Financial Services Solutions</h1>
+				<ul className="list-disc list-inside text-slate-300 space-y-1">
+					<li>Quantum trading simulators and backtesting</li>
+					<li>AI credit risk and fraud detection</li>
+					<li>Customer lifetime value and churn analytics</li>
+					<li>Compliance automation and reporting</li>
+				</ul>
 			</div>
-		</UltraFuturisticBackground>
+		</div>
 	);
 }

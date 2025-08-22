@@ -60,6 +60,36 @@ export default function ServicesAdvertisingPage() {
 						<li>References: {ext('https://auth0.com/pricing')}, {ext('https://workos.com/pricing')}, {ext('https://www.okta.com/pricing/')}</li>
 					</ul>
 				</section>
+
+				{/* New: Additional featured services with pricing references */}
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Email Deliverability Monitor</h2>
+					<p className="text-slate-300">Improve inbox placement with automated warmup, reputation tracking, and blocklist monitoring.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $50–$300/mo</li>
+						<li>References: {ext('https://postmaster.google.com')}, {ext('https://sendgrid.com/pricing/')}, {ext('https://postmarkapp.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">API Security Scanner</h2>
+					<p className="text-slate-300">Continuously discover APIs and detect OWASP API Top 10 risks with CI gating.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $100–$2,000/mo</li>
+						<li>References: {ext('https://www.cloudflare.com/plans/')}, {ext('https://www.fastly.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Edge Feature Flags</h2>
+					<p className="text-slate-300">Audience and geo-targeted flags at the edge with gradual rollouts and fallbacks.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $50–$500/mo</li>
+						<li>References: {ext('https://vercel.com/pricing')}, {ext('https://www.cloudflare.com/plans/')}</li>
+					</ul>
+				</section>
+
+				<div className="pt-4 text-slate-400 text-sm">See also: <a className="text-cyan-400 underline" href="/market-pricing">Market Pricing</a> for a broader list of benchmarks and links.</div>
 			</div>
 		</div>
 	);
