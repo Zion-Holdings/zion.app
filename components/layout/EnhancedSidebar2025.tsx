@@ -86,7 +86,7 @@ const sidebarSections = [
       { name: 'AI Customer Success', href: '/services/ai-customer-success-platform', badge: 'New' },
       { name: 'Supply Chain Optimization', href: '/intelligent-supply-chain-optimization', badge: 'New' },
       { name: 'Financial Planning AI', href: '/services/ai-financial-planning-platform', badge: 'New' },
-      { name: 'HR Analytics Platform', href: '/services/intelligent-hr-analytics-platform', badge: 'New' },
+      { name: 'HR Analytics Platform', href: '/ai-hr-analytics-platform', badge: 'New' },
       { name: 'Sales Intelligence AI', href: '/services/ai-sales-intelligence-platform', badge: 'New' },
       { name: 'AI Decision Engine', href: '/services/ai-powered-decision-engine' },
       { name: 'Content Automation', href: '/services/intelligent-content-automation-platform' },
