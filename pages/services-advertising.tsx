@@ -577,6 +577,69 @@ export default function ServicesAdvertisingPage() {
 					</ul>
 				</section>
 
+				<section id="sso-scim-accelerator" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">SSO & SCIM Accelerator</h2>
+					<p className="text-slate-300">Enterprise SSO (SAML/OIDC) and SCIM user lifecycle with auditor-ready logs.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $150–$600/mo</li>
+						<li>References: {ext('https://auth0.com/pricing')}, {ext('https://workos.com/pricing')}, {ext('https://www.okta.com/pricing/')}</li>
+					</ul>
+				</section>
+
+				<section id="kubernetes-cost-guardrails" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Kubernetes Cost Guardrails</h2>
+					<p className="text-slate-300">Requests/limits, quotas, and budget alerts to keep cluster costs under control.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $99–$399/mo</li>
+						<li>References: {ext('https://www.kubecost.com/pricing')}, {ext('https://cloud.google.com/billing/docs/how-to/budgets')}, {ext('https://aws.amazon.com/aws-cost-management/aws-budgets/')}</li>
+					</ul>
+				</section>
+
+				<section id="data-contracts-observability" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Data Contracts & Observability</h2>
+					<p className="text-slate-300">Contracts-as-code with freshness SLAs, schema drift alerts, and lineage.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $150–$600/mo</li>
+						<li>References: {ext('https://www.montecarlodata.com/')}, {ext('https://www.bigeye.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section id="cloudflare-logs-analytics" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Cloudflare Logs Analytics</h2>
+					<p className="text-slate-300">Dashboards and anomaly alerts from Cloudflare HTTP/DNS logs with cost caps.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $39–$199/mo</li>
+						<li>References: {ext('https://developers.cloudflare.com/logs/reference/log-fields/edge/')}, {ext('https://www.cloudflare.com/plans/')}</li>
+					</ul>
+				</section>
+
+				<section id="github-compliance-bot-pro" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">GitHub Compliance Bot Pro</h2>
+					<p className="text-slate-300">PR policy checks for SOC2/ISO controls with evidence exports.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $20–$120/repo/mo</li>
+						<li>References: {ext('https://docs.github.com/enterprise-cloud@latest/admin/policies/enforcing-policies-for-your-enterprise/about-policies')}, {ext('https://snyk.io/plans/')}</li>
+					</ul>
+				</section>
+
+				<section id="m365-security-baseline-automation" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">M365 Security Baseline Automation</h2>
+					<p className="text-slate-300">CIS/NIST baselines for Microsoft 365 with continuous drift detection.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $99–$299/tenant/mo</li>
+						<li>References: {ext('https://learn.microsoft.com/microsoft-365/security/defender/microsoft-security-baselines-overview')}, {ext('https://www.cisecurity.org/benchmarks/microsoft_365')}</li>
+					</ul>
+				</section>
+
+				<section id="ai-sales-call-summarizer-pro" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">AI Sales Call Summarizer Pro</h2>
+					<p className="text-slate-300">Transcripts, summaries, objections, and CRM tasks in minutes.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $15–$40/user/mo</li>
+						<li>References: {ext('https://otter.ai/pricing')}, {ext('https://www.gong.io/pricing')}</li>
+					</ul>
+				</section>
+
 				{/* Contact CTA */}
 				<div className="flex flex-col md:flex-row items-center gap-4 p-4 rounded-xl bg-black/30 border border-gray-800">
 					<a href="tel:+13024640950" className="px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white">Call +1 302 464 0950</a>
