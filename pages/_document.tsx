@@ -1,17 +1,18 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document';
+import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document';
 
-export default class MyDocument extends Document {
+class MyDocument extends Document {
+	static async getInitialProps(ctx: DocumentContext) {
+		const initialProps = await Document.getInitialProps(ctx);
+		return { ...initialProps };
+	}
+
 	render() {
 		return (
 			<Html lang="en">
 				<Head>
-					<meta name="theme-color" content="#0a0a0a" />
-					<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-					<meta name="color-scheme" content="dark light" />
-					<meta name="format-detection" content="telephone=no" />
-					<link rel="preconnect" href="https://plausible.io" crossOrigin="anonymous" />
-					<link rel="manifest" href="/site.webmanifest" />
 					<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+					<link rel="manifest" href="/site.webmanifest" />
+					<meta name="color-scheme" content="dark light" />
 				</Head>
 				<body>
 					<Main />
@@ -21,3 +22,5 @@ export default class MyDocument extends Document {
 		);
 	}
 }
+
+export default MyDocument;
