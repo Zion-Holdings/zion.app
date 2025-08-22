@@ -1,115 +1,89 @@
-export interface InnovativeMicroSaasService {
+export interface InnovativeMicroSaasSolution {
   id: string;
   name: string;
   description: string;
-  tagline: string;
-  features: string[];
-  pricing: {
-    starter: string;
-    professional: string;
-    enterprise: string;
-    custom: string;
-  };
   category: string;
-  useCases: string[];
-  benefits: string[];
-  marketSize: string;
-  competitors: string[];
-  technology: string[];
-  integrations: string[];
-  support: string[];
-  deployment: string[];
-  compliance: string[];
-  documentation: string;
-  demo: string;
-  contact: string;
-  website: string;
-  launchDate: string;
-  status: 'Live' | 'Beta' | 'Coming Soon';
-  customerCount: number;
-  rating: number;
-  reviews: number;
+  pricing?: {
+    monthly?: number;
+    yearly?: number;
+    currency?: string;
+    usageNotes?: string;
+    starter?: string;
+    professional?: string;
+    enterprise?: string;
+  };
+  features: string[];
+  link: string;
+  launchDate?: string;
+  popular?: boolean;
+  rating?: number;
 }
 
-export const innovativeMicroSaasSolutions = [
-	{
-		id: 'returns-portal',
-		name: 'E-commerce Returns Portal',
-		description: 'Branded returns workflow with label generation, refund rules, RMA tracking, and analytics.',
-		category: 'Micro SAAS',
-		features: [
-			'Label generation and carrier integrations',
-			'Automated approval rules and fraud checks',
-			'Customer notifications and status pages',
-			'Return reason analytics and policies'
-		],
-		pricing: { starter: '$49/month' },
-		link: 'https://ziontechgroup.com/services/returns-portal',
-		rating: 4.6,
-		launchDate: '2025-08-01'
-	},
-	{
-		id: 'podcast-transcriber',
-		name: 'Podcast Transcription & Chapters',
-		description: 'Fast multi-speaker transcription with summaries, chapters, and SEO exports.',
-		category: 'Micro SAAS',
-		features: [
-			'Multi-speaker diarization and timestamps',
-			'Chapters, highlights, and summaries',
-			'Blog/SEO export and RSS integration',
-			'Batch uploads and webhook callbacks'
-		],
-		pricing: { starter: '$25/month' },
-		link: 'https://ziontechgroup.com/services/podcast-transcriber',
-		rating: 4.7,
-		launchDate: '2025-08-01'
-	},
-	{
-		id: 'email-followup-automation',
-		name: 'Email Follow-up Automation',
-		description: 'Sequenced follow-ups with smart delays, A/B testing, and reply detection for SDRs and success teams.',
-		category: 'Micro SAAS',
-		features: [
-			'Templates, snippets, and variables',
-			'Inbox rotation and warm-up checks',
-			'Open/reply tracking and suppressions',
-			'CRM sync and assignment rules'
-		],
-		pricing: { starter: '$39/month' },
-		link: 'https://ziontechgroup.com/services/email-followup-automation',
-		rating: 4.5,
-		launchDate: '2025-08-01'
-	},
-	{
-		id: 'internal-linker-wp',
-		name: 'WordPress Internal Linker',
-		description: 'AI-assisted internal linking with anchor suggestions, orphaned page detection, and reports.',
-		category: 'Micro SAAS',
-		features: [
-			'Anchor suggestions and topic clustering',
-			'Orphaned content detection',
-			'Link health and crawl reports',
-			'Export to CSV/Sheets'
-		],
-		pricing: { starter: '$19/month' },
-		link: 'https://ziontechgroup.com/services/wordpress-internal-linker',
-		rating: 4.4,
-		launchDate: '2025-08-01'
-	},
-	{
-		id: 'micro-crm-local',
-		name: 'Micro CRM for Local Businesses',
-		description: 'Simple CRM with contacts, reminders, text/email campaigns, and pipeline stages.',
-		category: 'Micro SAAS',
-		features: [
-			'Contacts and notes',
-			'Appointment reminders and tasks',
-			'Email/SMS campaigns',
-			'Pipeline and deal tracking'
-		],
-		pricing: { starter: '$29/month' },
-		link: 'https://ziontechgroup.com/services/micro-crm-local',
-		rating: 4.5,
-		launchDate: '2025-08-01'
-	}
+export const innovativeMicroSaasSolutions: InnovativeMicroSaasSolution[] = [
+  {
+    id: 'ai-customer-success-platform',
+    name: 'AI Customer Success Platform',
+    description: 'Predict churn, trigger playbooks, and automate success workflows using behavioral analytics and AI.',
+    category: 'Customer Success',
+    pricing: { monthly: 199, yearly: 1990, currency: 'USD', starter: '$199/mo' },
+    features: [
+      'Health scoring and churn prediction',
+      'Automated QBR and outreach playbooks',
+      'CSAT/NPS surveys with AI insights',
+      'CRM integrations (Salesforce/HubSpot)'
+    ],
+    link: 'https://ziontechgroup.com/ai-customer-success-platform/',
+    launchDate: '2024-10-05',
+    popular: true,
+    rating: 4.8
+  },
+  {
+    id: 'ai-financial-planning-platform',
+    name: 'AI Financial Planning Platform',
+    description: 'AI-driven FP&A forecasts, scenario modeling, and variance analysis for SMBs and mid-market.',
+    category: 'Finance',
+    pricing: { monthly: 149, yearly: 1490, currency: 'USD', starter: '$149/mo' },
+    features: [
+      'Cohort and revenue modeling',
+      'Dynamic budgeting and forecasting',
+      'Scenario and sensitivity analysis',
+      'ERP/accounting integrations'
+    ],
+    link: 'https://ziontechgroup.com/ai-financial-planning-platform/',
+    launchDate: '2024-09-18',
+    rating: 4.7
+  },
+  {
+    id: 'ai-sales-intelligence-platform',
+    name: 'AI Sales Intelligence Platform',
+    description: 'Prospect scoring, auto-research, and personalized outreach with execution analytics.',
+    category: 'Sales',
+    pricing: { monthly: 129, yearly: 1290, currency: 'USD', starter: '$129/mo' },
+    features: [
+      'Lead scoring and intent signals',
+      'Automated account research',
+      'Personalized sequences with AI',
+      'CRM sync and rep analytics'
+    ],
+    link: 'https://ziontechgroup.com/ai-sales-intelligence-platform/',
+    launchDate: '2024-08-01',
+    popular: true,
+    rating: 4.7
+  },
+  {
+    id: 'intelligent-content-automation-platform',
+    name: 'Intelligent Content Automation Platform',
+    description: 'End-to-end content planning, generation, and distribution with SEO optimization and analytics.',
+    category: 'Content & Marketing',
+    pricing: { monthly: 99, yearly: 990, currency: 'USD', starter: '$99/mo' },
+    features: [
+      'Keyword research and briefs',
+      'Brand voice generation',
+      'Multi-channel distribution',
+      'Performance analytics'
+    ],
+    link: 'https://ziontechgroup.com/intelligent-content-automation-platform/',
+    launchDate: '2024-07-10',
+    rating: 4.6
+  }
 ];
