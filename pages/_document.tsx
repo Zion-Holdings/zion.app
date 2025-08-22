@@ -13,7 +13,6 @@ export default class MyDocument extends Document {
 					<link rel="dns-prefetch" href="//fonts.gstatic.com" />
 					<link rel="preconnect" href="https://plausible.io" crossOrigin="anonymous" />
 					<meta name="format-detection" content="telephone=no" />
-					<script defer data-domain="ziontechgroup.com" src="https://plausible.io/js/script.js"></script>
 					<script
 						type="application/ld+json"
 						dangerouslySetInnerHTML={{
