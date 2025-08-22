@@ -1346,6 +1346,69 @@ export default function ServicesAdvertisingPage() {
 					<a href="mailto:kleber@ziontechgroup.com" className="px-4 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-600 text-white">Email kleber@ziontechgroup.com</a>
 					<a href="/pricing" className="px-4 py-2 rounded-lg border border-cyan-500/40 text-cyan-300">View Pricing</a>
 				</div>
+
+				<section id="ziontech-2035-q1-real-expansions" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Newest Real Additions (2035 Q1)</h2>
+					<section id="api-schema-diff-registry-ad" className="space-y-2">
+						<h3 className="text-xl font-semibold text-white">API Schema Diff & Registry</h3>
+						<p className="text-slate-300">OpenAPI/GraphQL registry with CI diffs, breaking-change detection, docs previews, and SDK hooks.</p>
+						<ul className="list-disc list-inside text-slate-300 space-y-1">
+							<li>Typical SMB price: $49/mo</li>
+							<li>Learn more: <a className="text-cyan-400 underline" href="/services/api-schema-diff-registry">/services/api-schema-diff-registry</a></li>
+							<li>References: {ext('https://stoplight.io/pricing')}, {ext('https://swagger.io/tools/swaggerhub/pricing/')}</li>
+						</ul>
+					</section>
+
+					<section id="pii-redaction-proxy-ad" className="space-y-2">
+						<h3 className="text-xl font-semibold text-white">PII Redaction Proxy</h3>
+						<p className="text-slate-300">Lossless, low-latency masking for logs, prompts, and events with reversible tokens and audit trails.</p>
+						<ul className="list-disc list-inside text-slate-300 space-y-1">
+							<li>Typical SMB price: $79/mo</li>
+							<li>Learn more: <a className="text-cyan-400 underline" href="/services/pii-redaction-proxy">/services/pii-redaction-proxy</a></li>
+							<li>References: {ext('https://www.verygoodsecurity.com/pricing')}, {ext('https://www.skyflow.com/pricing')}</li>
+						</ul>
+					</section>
+
+					<section id="k8s-cost-rightsizer-ad" className="space-y-2">
+						<h3 className="text-xl font-semibold text-white">Kubernetes Cost Rightsizer</h3>
+						<p className="text-slate-300">SLO-aware rightsizing with GitOps PRs, canary rollouts, and savings reports.</p>
+						<ul className="list-disc list-inside text-slate-300 space-y-1">
+							<li>Typical SMB price: $59/mo</li>
+							<li>Learn more: <a className="text-cyan-400 underline" href="/services/k8s-cost-rightsizer">/services/k8s-cost-rightsizer</a></li>
+							<li>References: {ext('https://www.kubecost.com/pricing')}, {ext('https://prometheus.io/')}</li>
+						</ul>
+					</section>
+
+					<section id="s3-lifecycle-optimizer-ad" className="space-y-2">
+						<h3 className="text-xl font-semibold text-white">S3 Lifecycle Optimizer</h3>
+						<p className="text-slate-300">Analyze access patterns to auto-move objects to IA/Glacier with dry-run and change logs.</p>
+						<ul className="list-disc list-inside text-slate-300 space-y-1">
+							<li>Typical SMB price: $39/mo</li>
+							<li>Learn more: <a className="text-cyan-400 underline" href="/services/s3-lifecycle-optimizer">/services/s3-lifecycle-optimizer</a></li>
+							<li>References: {ext('https://aws.amazon.com/s3/pricing/')}, {ext('https://aws.amazon.com/s3/storage-classes/')}</li>
+						</ul>
+					</section>
+
+					<section id="ai-red-teaming-suite-ad" className="space-y-2">
+						<h3 className="text-xl font-semibold text-white">AI Red Teaming Suite</h3>
+						<p className="text-slate-300">Curated jailbreak and prompt-injection packs, CI safety gates, and scorecards.</p>
+						<ul className="list-disc list-inside text-slate-300 space-y-1">
+							<li>Typical SMB price: $79/mo + usage</li>
+							<li>Learn more: <a className="text-cyan-400 underline" href="/services/ai-red-teaming-suite">/services/ai-red-teaming-suite</a></li>
+							<li>References: {ext('https://www.promptfoo.dev/pricing')}, {ext('https://openai.com/safety')}</li>
+						</ul>
+					</section>
+
+					<section id="ai-meeting-to-ticket-ad" className="space-y-2">
+						<h3 className="text-xl font-semibold text-white">AI Meeting‑to‑Ticket Copilot</h3>
+						<p className="text-slate-300">Extract action items from meetings and create Jira/GitHub tickets automatically.</p>
+						<ul className="list-disc list-inside text-slate-300 space-y-1">
+							<li>Typical SMB price: $25/user/mo</li>
+							<li>Learn more: <a className="text-cyan-400 underline" href="/services/ai-meeting-to-ticket">/services/ai-meeting-to-ticket</a></li>
+							<li>References: {ext('https://workspace.google.com/pricing')}, {ext('https://www.atlassian.com/software/jira/pricing')}</li>
+						</ul>
+					</section>
+				</section>
 			</div>
 		</div>
 	);

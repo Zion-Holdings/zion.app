@@ -14,6 +14,7 @@ import { innovativeMicroSaasSolutions } from '../data/2034-innovative-micro-saas
 import { cuttingEdgeAIServices } from '../data/2034-cutting-edge-ai-services';
 import { real2025Q4AugmentedBatch } from '../data/real-2025-q4-augmented-batch';
 import { real2029Q3Additions } from '../data/real-2029-q3-additions';
+import { real2035Q1Additions } from '../data/real-2035-q1-additions';
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -70,7 +71,8 @@ const allServices = [
   ...marketValidatedServices,
   ...industryRealServices,
   ...real2025Q4AugmentedBatch,
-  ...real2029Q3Additions
+  ...real2029Q3Additions,
+  ...real2035Q1Additions
 ];
 
 const categories = [
