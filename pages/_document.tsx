@@ -11,6 +11,12 @@ class MyDocument extends Document {
 			<Html lang="en">
 				<Head>
 					<meta name="theme-color" content="#000000" />
+					<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+					<meta name="application-name" content="Zion Tech Group" />
+					<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+					<link rel="manifest" href="/site.webmanifest" />
+					<meta name="apple-mobile-web-app-capable" content="yes" />
+					<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 					<link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
 					<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 					<link

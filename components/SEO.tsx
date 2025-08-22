@@ -23,6 +23,7 @@ export default function SEO({ title, description, canonical, ogImage, noIndex, j
 	const pageDescription = description || DEFAULTS.description;
 	const canonicalUrl = canonical || DEFAULTS.url;
 	const openGraphImage = ogImage || DEFAULTS.ogImage;
+	const imageAlt = 'Zion Tech Group - Revolutionary Technology Solutions';
 
 	return (
 		<Head>
@@ -37,10 +38,12 @@ export default function SEO({ title, description, canonical, ogImage, noIndex, j
 			<meta property="og:site_name" content="Zion Tech Group" />
 			<meta property="og:locale" content="en_US" />
 			<meta property="og:image" content={openGraphImage} />
+			<meta property="og:image:alt" content={imageAlt} />
 			<meta name="twitter:card" content="summary_large_image" />
 			<meta name="twitter:title" content={pageTitle} />
 			<meta name="twitter:description" content={pageDescription} />
 			<meta name="twitter:image" content={openGraphImage} />
+			<meta name="twitter:image:alt" content={imageAlt} />
 			{jsonLd ? (
 				<script
 					type="application/ld+json"
