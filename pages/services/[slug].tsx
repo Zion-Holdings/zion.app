@@ -21,6 +21,7 @@ import { additionalLiveServices2025 } from '../../data/additional-live-services-
 import { real2025Q2Additions } from '../../data/real-2025-q2-additions';
 import { augmentedServicesBatch3 } from '../../data/real-augmented-services-2025-batch3';
 import { realServicesQ22025 } from '../../data/real-services-q2-2025';
+import { real2025Q3Additions } from '../../data/real-2025-q3-additions';
 
 type Service = typeof enhancedRealMicroSaasServices[number];
 
@@ -47,7 +48,8 @@ function getAllServices(): Service[] {
 		.concat(additionalLiveServices2025 as unknown as Service[])
 		.concat(real2025Q2Additions as unknown as Service[])
 		.concat(augmentedServicesBatch3 as unknown as Service[])
-		.concat(realServicesQ22025 as unknown as Service[]);
+		.concat(realServicesQ22025 as unknown as Service[])
+		.concat(real2025Q3Additions as unknown as Service[]);
 }
 
 function toSlug(value: string): string {

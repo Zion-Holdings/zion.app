@@ -12,3 +12,44 @@
 
 [[plugins]]
   package = "netlify-plugin-cloudinary"
+
+# Static redirects for exported site
+[[redirects]]
+  from = "/ai-customer-success-platform"
+  to = "/services/ai-customer-success-platform/"
+  status = 301
+
+[[redirects]]
+  from = "/ai-sales-intelligence-platform"
+  to = "/services/ai-sales-intelligence-platform/"
+  status = 301
+
+[[redirects]]
+  from = "/ai-financial-planning-platform"
+  to = "/services/ai-financial-planning-platform/"
+  status = 301
+
+[[redirects]]
+  from = "/ai-powered-decision-engine"
+  to = "/services/ai-powered-decision-engine/"
+  status = 301
+
+[[redirects]]
+  from = "/intelligent-content-automation-platform"
+  to = "/services/intelligent-content-automation-platform/"
+  status = 301
+
+[[redirects]]
+  from = "/intelligent-hr-analytics-platform"
+  to = "/services/intelligent-hr-analytics-platform/"
+  status = 301
+
+[[redirects]]
+  from = "/smart-crm-intelligence-suite"
+  to = "/services/smart-crm-intelligence-suite/"
+  status = 301
+
+[[redirects]]
+  from = "/affiliate-attribution-suite"
+  to = "/services/affiliate-attribution-suite/"
+  status = 301
