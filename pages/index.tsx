@@ -1,5 +1,4 @@
 import React from 'react';
-import Head from 'next/head';
 import UltraAdvancedHeroSection2025 from '../components/sections/UltraAdvancedHeroSection2025';
 import UltraAdvancedServicesShowcase2025 from '../components/sections/UltraAdvancedServicesShowcase2025';
 import { motion } from 'framer-motion';
@@ -13,6 +12,7 @@ import {
   Network, Palette, GraduationCap, DollarSign, Heart,
   DollarSign as Finance, Factory as Manufacturing, Scale as Legal
 } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const contactInfo = {
   mobile: '+1 302 464 0950',
@@ -120,9 +120,32 @@ const featuredServices = [
 const Home: React.FC = () => {
   return (
     <>
-      <Head>
-        <meta name="keywords" content="AI, quantum computing, micro SAAS, technology solutions, business transformation, Zion Tech Group" />
-      </Head>
+      <SEO 
+        title="Zion Tech Group | AI, Quantum & Micro SAAS Solutions"
+        description="Revolutionary AI, quantum computing, and micro SAAS solutions that drive growth. Explore our platforms, industry solutions, and micro SaaS offerings."
+        canonical="https://ziontechgroup.com/"
+        ogImage="https://ziontechgroup.com/og-image.png"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Zion Tech Group",
+          url: "https://ziontechgroup.com",
+          sameAs: [
+            "https://linkedin.com/company/ziontechgroup",
+            "https://github.com/Zion-Holdings",
+            "https://instagram.com/ziontechgroup",
+            "https://youtube.com/@ziontechgroup"
+          ],
+          contactPoint: [{
+            "@type": "ContactPoint",
+            telephone: "+1 302 464 0950",
+            email: "kleber@ziontechgroup.com",
+            contactType: "customer service",
+            areaServed: "US",
+            availableLanguage: ["English"]
+          }]
+        }}
+      />
 
       {/* Hero Section */}
         <UltraAdvancedHeroSection2025 />
