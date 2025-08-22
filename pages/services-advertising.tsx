@@ -23,7 +23,7 @@ export default function ServicesAdvertisingPage() {
 					<a href="/pricing" className="px-4 py-2 rounded-lg border border-cyan-500/40 text-cyan-300">View Pricing</a>
 				</div>
 
-				<section className="space-y-6">
+				<section id="ai-evaluation-orchestrator" className="space-y-6">
 					<h2 className="text-2xl font-semibold text-white">AI Evaluation Orchestrator</h2>
 					<p className="text-slate-300">Automate LLM evals, regression tests, red-teaming, and leaderboards across OpenAI, Anthropic, Groq, and more.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
@@ -41,7 +41,7 @@ export default function ServicesAdvertisingPage() {
 					</ul>
 				</section>
 
-				<section className="space-y-6">
+				<section id="managed-postgres-ha" className="space-y-6">
 					<h2 className="text-2xl font-semibold text-white">Managed Postgres HA</h2>
 					<p className="text-slate-300">SRE-backed high availability Postgres with PITR backups, failover, and tuning.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
@@ -269,7 +269,7 @@ export default function ServicesAdvertisingPage() {
 					</ul>
 				</section>
 
-				<section className="space-y-6">
+				<section id="cloud-cost-optimization-accelerator" className="space-y-6">
 					<h2 className="text-2xl font-semibold text-white">Cloud Cost Optimization Accelerator</h2>
 					<p className="text-slate-300">Rightsizing, SP/RI planning, and anomaly alerts with actionable FinOps guardrails.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
@@ -278,12 +278,12 @@ export default function ServicesAdvertisingPage() {
 					</ul>
 				</section>
 
-				<section className="space-y-6">
+				<section id="backup-dr-runbook-hub" className="space-y-6">
 					<h2 className="text-2xl font-semibold text-white">Backup & DR Runbook Hub</h2>
 					<p className="text-slate-300">Automated backup policies, restore rehearsal, and audit-ready evidence.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $50–$200/mo</li>
-						<li>References: {ext('https://velero.io/')}, {ext('https://aws.amazon.com/backup/')}, {ext('https://www.veeam.com/')}</li>
+						<li>References: {ext('https://velero.io/')}, {ext('https://aws.amazon.com/backup/pricing/')}, {ext('https://www.veeam.com/pricing.html')}</li>
 					</ul>
 				</section>
 
@@ -302,6 +302,51 @@ export default function ServicesAdvertisingPage() {
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $30–$150/mo</li>
 						<li>References: {ext('https://launchdarkly.com/pricing/')}, {ext('https://www.flagsmith.com/pricing')}, {ext('https://www.split.io/pricing/')}</li>
+					</ul>
+				</section>
+
+				<section id="eks-kubernetes-ops" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Managed Kubernetes on AWS EKS</h2>
+					<p className="text-slate-300">Production-grade EKS with autoscaling, observability, and security baselines.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $1,500–$6,000/mo (+ AWS fees)</li>
+						<li>References: {ext('https://aws.amazon.com/eks/pricing/')}</li>
+					</ul>
+				</section>
+
+				<section id="gke-kubernetes-ops" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Managed Kubernetes on Google GKE</h2>
+					<p className="text-slate-300">Hardened GKE with GitOps, progressive delivery, and FinOps guardrails.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $1,500–$6,000/mo (+ Google Cloud fees)</li>
+						<li>References: {ext('https://cloud.google.com/kubernetes-engine/pricing')}</li>
+					</ul>
+				</section>
+
+				<section id="cloudflare-zero-trust" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Zero Trust SASE with Cloudflare</h2>
+					<p className="text-slate-300">ZTNA, SWG, DNS filtering, and device posture for secure access.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $7–$20/user/mo</li>
+						<li>References: {ext('https://www.cloudflare.com/plans/zero-trust/')}, {ext('https://www.cloudflare.com/plans/')}</li>
+					</ul>
+				</section>
+
+				<section id="microsoft-intune-mdm" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">MDM/MAM with Microsoft Intune</h2>
+					<p className="text-slate-300">Device enrollment, compliance, app protection, and conditional access.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $8–$20/user/mo</li>
+						<li>References: {ext('https://www.microsoft.com/microsoft-365/compare-microsoft-365-enterprise-plans')}</li>
+					</ul>
+				</section>
+
+				<section id="voice-cloning-studio" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">AI Voice Cloning Studio</h2>
+					<p className="text-slate-300">High-quality synthetic voices for product, support, and content teams.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $5–$99/mo + usage</li>
+						<li>References: {ext('https://elevenlabs.io/pricing')}</li>
 					</ul>
 				</section>
 			</div>

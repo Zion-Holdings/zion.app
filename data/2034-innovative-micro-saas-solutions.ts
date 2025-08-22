@@ -1,95 +1,94 @@
-export interface InnovativeMicroSaasSolution {
-  id: string;
-  name: string;
-  description: string;
-  category: string;
-  pricing?: {
-    monthly?: number;
-    yearly?: number;
-    currency?: string;
-    usageNotes?: string;
-    starter?: string;
-    professional?: string;
-    enterprise?: string;
-  };
-  features: string[];
-  link: string;
-  launchDate?: string;
-  popular?: boolean;
-  rating?: number;
-}
+export type BasicService = {
+	id: string;
+	name: string;
+	description: string;
+	category: string;
+	pricing?: { starter?: string; monthly?: number };
+	features: string[];
+	link?: string;
+	launchDate?: string;
+	rating?: number;
+};
 
-export const innovativeMicroSaasSolutions = [
+export const innovativeMicroSaasSolutions: BasicService[] = [
 	{
-		name: 'Email Deliverability Monitor',
-		description: 'Inbox placement tracking, warmup, reputation and blocklist monitoring with actionable fixes.',
+		id: 'affiliate-tracking-hub',
+		name: 'Affiliate Tracking Hub',
+		description: 'Cross-device attribution, fraud prevention, and automated payouts for partner programs.',
 		category: 'Micro SAAS',
-		pricing: { monthly: 99 },
+		pricing: { starter: '$40/mo' },
 		features: [
-			'Domain/ISP reputation and blocklist checks',
-			'Inbox placement tests and warmup',
-			'DKIM/DMARC/SPF auditing',
-			'Alerts and remediation guidance'
-		]
+			'Attribution & UTM stitching',
+			'Fraud prevention signals',
+			'Automated payouts (Stripe)',
+			'Partner portal & analytics'
+		],
+		link: '/services-advertising#affiliate-tracking-hub',
+		launchDate: '2025-08-20',
+		rating: 4.6
 	},
 	{
-		name: 'Edge Feature Flags',
-		description: 'Geo/audience targeting with instant rollouts at the edge and safe fallbacks.',
+		id: 'smb-website-analytics',
+		name: 'SMB Website Analytics',
+		description: 'Privacy-friendly dashboards with goals, funnels, and cookie-less tracking.',
 		category: 'Micro SAAS',
-		pricing: { monthly: 79 },
+		pricing: { starter: '$9/mo' },
 		features: [
-			'Gradual rollouts and kill switches',
-			'Geo and audience segmentation',
-			'Edge execution for low latency',
-			'SDKs and audit trails'
-		]
+			'Goal and funnel tracking',
+			'UTM and campaign insights',
+			'Embeddable dashboards',
+			'GDPR-friendly metrics'
+		],
+		link: '/services-advertising#smb-website-analytics',
+		launchDate: '2025-08-20',
+		rating: 4.5
 	},
 	{
-		name: 'Podcast Transcription & Insights',
-		description: 'Transcripts, chapters, show notes, and SEO-ready pages with exports.',
+		id: 'it-helpdesk-suite',
+		name: 'IT Helpdesk Suite',
+		description: 'Ticketing, SLAs, KB, and self-service portal tailored for IT teams and MSPs.',
 		category: 'Micro SAAS',
-		pricing: { monthly: 29 },
+		pricing: { starter: '$30/agent/mo' },
 		features: [
-			'Accurate multi-speaker transcripts',
-			'Chapter and highlight detection',
-			'Auto show notes and blog drafts',
-			'Word-level search and exports'
-		]
+			'SLA policies and automations',
+			'Knowledge base and portal',
+			'CSAT and reporting',
+			'Email and chat integrations'
+		],
+		link: '/services-advertising#it-helpdesk-suite',
+		launchDate: '2025-08-20',
+		rating: 4.5
 	},
 	{
-		name: 'Local Business Micro CRM',
-		description: 'Lightweight CRM with deals, appointments, reminders, and SMS/email follow-ups.',
+		id: 'ecommerce-returns-center',
+		name: 'E‑commerce Returns Center',
+		description: 'Self-service returns, labels, exchanges, and analytics for Shopify/BigCommerce.',
 		category: 'Micro SAAS',
-		pricing: { monthly: 39 },
+		pricing: { starter: '$30/mo' },
 		features: [
-			'Contacts and pipeline',
-			'Calendars and reminders',
-			'Email/SMS sequences',
-			'Analytics and reporting'
-		]
+			'RMA workflows & labels',
+			'Exchange/credit flows',
+			'Fraud prevention signals',
+			'Analytics and cohort views'
+		],
+		link: '/services-advertising#ecommerce-returns-center',
+		launchDate: '2025-08-20',
+		rating: 4.5
 	},
 	{
-		name: 'Employee Scheduling Suite',
-		description: 'Shift planning, availability, swaps, and notifications for teams.',
+		id: 'ai-seo-optimizer',
+		name: 'AI SEO Content Optimizer',
+		description: 'Guided optimization for keywords, structure, and readability with brief exports.',
 		category: 'Micro SAAS',
-		pricing: { monthly: 59 },
+		pricing: { starter: '$30/mo' },
 		features: [
-			'Shift templates and conflict checks',
-			'Leave management and swaps',
-			'Mobile notifications',
-			'Payroll exports'
-		]
-	},
-	{
-		name: 'LMS Starter',
-		description: 'Launch courses with quizzes, certificates, and progress tracking in days.',
-		category: 'Micro SAAS',
-		pricing: { monthly: 49 },
-		features: [
-			'Courses and modules',
-			'Quizzes and certificates',
-			'Learner progress tracking',
-			'Payment integrations'
-		]
+			'Keyword clustering',
+			'Outline and brief generator',
+			'Quality and readability scoring',
+			'CMS export & tracking'
+		],
+		link: '/services-advertising#ai-seo-optimizer',
+		launchDate: '2025-08-20',
+		rating: 4.6
 	}
 ];

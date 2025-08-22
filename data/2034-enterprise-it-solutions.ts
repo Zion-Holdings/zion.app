@@ -1,90 +1,110 @@
-export interface EnterpriseITSolution {
-  id: string;
-  name: string;
-  description: string;
-  category: string;
-  pricing?: {
-    starter?: string;
-    professional?: string;
-    enterprise?: string;
-  };
-  features: string[];
-  link: string;
-  launchDate?: string;
-  rating?: number;
-}
+export type BasicService = {
+	id: string;
+	name: string;
+	description: string;
+	category: string;
+	pricing?: { starter?: string; monthly?: number };
+	features: string[];
+	link?: string;
+	launchDate?: string;
+	rating?: number;
+};
 
-export const enterpriseITSolutions = [
+export const enterpriseITSolutions: BasicService[] = [
 	{
-		name: 'Zero-Trust Network Architecture Assessment',
-		description: 'Comprehensive ZTNA gap analysis, reference architectures, and phased rollout plan with policy and identity mapping.',
+		id: 'eks-kubernetes-ops',
+		name: 'Managed Kubernetes on AWS EKS',
+		description: 'Production-grade EKS setup with IaC, autoscaling, observability, cost guardrails, and incident readiness.',
 		category: 'Enterprise IT',
-		pricing: { monthly: 4500 },
+		pricing: { starter: '$1,500/mo' },
 		features: [
-			'Identity- and context-based access control design',
-			'Micro-segmentation blueprint and enforcement plan',
-			'Okta/AAD conditional access policy hardening',
-			'Pilot rollout with success metrics'
-		]
+			'Cluster design and IaC (Terraform)',
+			'Autoscaling & node pool optimization',
+			'Observability (metrics, logs, traces)',
+			'Security baselines & backup/runbooks'
+		],
+		link: '/services-advertising#eks-kubernetes-ops',
+		launchDate: '2025-08-20',
+		rating: 4.8
 	},
 	{
-		name: 'Autonomous IT Operations Center',
-		description: 'AIOps with incident auto-triage, runbook automation, and SLO guardrails for self-healing infrastructure.',
+		id: 'gke-kubernetes-ops',
+		name: 'Managed Kubernetes on Google GKE',
+		description: 'Hardened GKE with cost controls, SRE playbooks, GitOps, and progressive delivery.',
 		category: 'Enterprise IT',
-		pricing: { monthly: 6500 },
+		pricing: { starter: '$1,500/mo' },
 		features: [
-			'24/7 incident auto-triage and routing',
-			'Automated remediation via runbooks',
-			'Error budget SLO enforcement',
-			'Post-incident AI summaries'
-		]
+			'GitOps (ArgoCD/Flux) setup',
+			'Blue/green & canary rollouts',
+			'FinOps dashboards and alerts',
+			'Backup & DR rehearsals'
+		],
+		link: '/services-advertising#gke-kubernetes-ops',
+		launchDate: '2025-08-20',
+		rating: 4.7
 	},
 	{
-		name: 'Cloud Cost Optimization & FinOps',
-		description: 'Multi-cloud cost visibility, anomaly detection, and rightsizing with savings targets and reporting.',
-		category: 'Enterprise IT',
-		pricing: { monthly: 3000 },
+		id: 'cloudflare-zero-trust',
+		name: 'Zero Trust SASE with Cloudflare',
+		description: 'Secure access, ZTNA, SWG, DNS filtering, and posture checks with least-privilege access.',
+		category: 'Enterprise Security',
+		pricing: { starter: '$7/user/mo' },
 		features: [
-			'Cost allocation and tagging strategy',
-			'Anomaly detection and alerting',
-			'Idle/over-provisioned resource cleanup',
-			'Quarterly savings reports'
-		]
+			'ZTNA and app-level policies',
+			'DNS/HTTP filtering & CASB',
+			'Device posture & identity signals',
+			'Incident & audit reporting'
+		],
+		link: '/services-advertising#cloudflare-zero-trust',
+		launchDate: '2025-08-20',
+		rating: 4.6
 	},
 	{
-		name: 'Enterprise Observability Platform',
-		description: 'Unified logs, metrics, traces and profiling with golden signals and on-call health dashboards.',
+		id: 'microsoft-intune-mdm',
+		name: 'MDM/MAM with Microsoft Intune',
+		description: 'Device enrollment, compliance, app protection, and conditional access with Microsoft Intune.',
 		category: 'Enterprise IT',
-		pricing: { monthly: 3800 },
+		pricing: { starter: '$8/user/mo' },
 		features: [
-			'OpenTelemetry-based ingestion',
-			'Golden signals dashboards',
-			'Proactive SLO and error budget alerts',
-			'CI/CD and on-call integrations'
-		]
+			'Zero-touch enrollment (ABM/ADB)',
+			'Compliance & conditional access',
+			'Application lifecycle & patching',
+			'Security baselines & reporting'
+		],
+		link: '/services-advertising#microsoft-intune-mdm',
+		launchDate: '2025-08-20',
+		rating: 4.6
 	},
 	{
-		name: 'Secure SDLC & Supply Chain Hardening',
-		description: 'SBOM generation, dependency risk scanning, signed builds, and policy gates in CI.',
+		id: 'backup-dr-runbooks',
+		name: 'Backup & DR Runbooks',
+		description: 'Automated backups, restore rehearsals, and audit-ready evidence across cloud workloads.',
 		category: 'Enterprise IT',
-		pricing: { monthly: 4200 },
+		pricing: { starter: '$99/mo' },
 		features: [
-			'SBOM and vulnerability reporting',
-			'CI policy gates (SAST/DAST/IAST)',
-			'Artifact signing and provenance (SLSA)',
-			'Developer education and playbooks'
-		]
+			'Policy-based backups',
+			'Restore rehearsal scheduling',
+			'Immutable and encrypted storage',
+			'Audit evidence exports'
+		],
+		link: '/services-advertising#backup-dr-runbook-hub',
+		launchDate: '2025-08-20',
+		rating: 4.5
 	},
 	{
-		name: 'Managed Postgres HA (Enterprise)',
-		description: 'SRE-backed HA Postgres with PITR, automated failover, and performance tuning for mission-critical apps.',
+		id: 'cloud-cost-optimization',
+		name: 'Cloud Cost Optimization Accelerator',
+		description: 'Rightsizing, SP/RI planning, and anomaly detection with actionable FinOps guardrails.',
 		category: 'Enterprise IT',
-		pricing: { monthly: 5200 },
+		pricing: { starter: '$99/mo' },
 		features: [
-			'Failover and replication management',
-			'Point-in-time recovery and backups',
-			'Performance tuning and capacity planning',
-			'24/7 monitoring and on-call'
-		]
+			'Waste detection & rightsizing',
+			'Commitment planning (SP/RI)',
+			'Anomaly alerting & budgets',
+			'Unit economics dashboards'
+		],
+		link: '/services-advertising#cloud-cost-optimization-accelerator',
+		launchDate: '2025-08-20',
+		rating: 4.6
 	}
 ];
