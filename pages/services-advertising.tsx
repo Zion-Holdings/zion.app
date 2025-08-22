@@ -1464,6 +1464,76 @@ export default function ServicesAdvertisingPage() {
 					</ul>
 					<div className="text-slate-400 text-sm">Full catalog: <a className="text-cyan-400 underline" href="/services">/services</a> • Market pricing: <a className="text-cyan-400 underline" href="/market-pricing">/market-pricing</a></div>
 				</section>
+
+				<section id="sbom-dependency-risk-monitor" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">SBOM & Dependency Risk Monitor</h2>
+					<p className="text-slate-300">Automatically generate SBOMs, detect CVEs, and enforce SCA/license policies with CI gates and fix PRs.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $29–$199/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/sbom-dependency-risk-monitor">/services/sbom-dependency-risk-monitor</a></li>
+						<li>References: {ext('https://opensource.org/projects/sbom')}, {ext('https://cyclonedx.org/')}, {ext('https://spdx.dev/')}, {ext('https://osv.dev')}</li>
+					</ul>
+				</section>
+
+				<section id="api-schema-diff-registry" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">API Schema Diff & Registry</h2>
+					<p className="text-slate-300">Semantic OpenAPI diffs in CI with breaking change detection, docs previews, and SDK hooks.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $20–$129/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/api-schema-diff-registry">/services/api-schema-diff-registry</a></li>
+						<li>References: {ext('https://swagger.io/tools/swaggerhub/pricing/')}, {ext('https://stoplight.io/pricing')}</li>
+					</ul>
+				</section>
+
+				<section id="dns-failover-traffic-steering" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">DNS Failover & Traffic Steering</h2>
+					<p className="text-slate-300">Health-checked multi-region routing, geo/latency steering, and automatic failover with runbooks.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $20–$149/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/dns-failover-traffic-steering">/services/dns-failover-traffic-steering</a></li>
+						<li>References: {ext('https://www.cloudflare.com/load-balancing/')}, {ext('https://aws.amazon.com/route53/pricing/')}</li>
+					</ul>
+				</section>
+
+				<section id="web-performance-budget-enforcer" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Web Performance Budget Enforcer</h2>
+					<p className="text-slate-300">Automate Lighthouse/Web Vitals budgets with PR annotations, alerts, and trends.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $15–$99/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/web-performance-budget-enforcer">/services/web-performance-budget-enforcer</a></li>
+						<li>References: {ext('https://github.com/GoogleChrome/lighthouse-ci')}, {ext('https://web.dev/vitals/')}</li>
+					</ul>
+				</section>
+
+				<section id="ai-prompt-injection-firewall" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">AI Prompt Injection Firewall</h2>
+					<p className="text-slate-300">Runtime guardrails for LLM apps with jailbreak detection, output filters, and policy actions.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $39–$299/mo + API usage</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/ai-prompt-injection-firewall">/services/ai-prompt-injection-firewall</a></li>
+						<li>References: {ext('https://openai.com/safety')}, {ext('https://www.anthropic.com/safety')}</li>
+					</ul>
+				</section>
+
+				<section id="third-party-api-sla-monitor" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Third-Party API SLA Monitor</h2>
+					<p className="text-slate-300">Global synthetic checks, schema tests, and SLO/error budgets for partner APIs.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $15–$129/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/third-party-api-sla-monitor">/services/third-party-api-sla-monitor</a></li>
+						<li>References: {ext('https://www.apimetrics.io/pricing')}, {ext('https://www.checklyhq.com/pricing/')}</li>
+					</ul>
+				</section>
+
+				<section id="ai-product-feedback-insights" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">AI Product Feedback Insights</h2>
+					<p className="text-slate-300">Aggregate NPS, surveys, reviews, and tickets; use AI to cluster themes and prioritize roadmap.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $19–$149/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/ai-product-feedback-insights">/ai-product-feedback-insights</a></li>
+						<li>References: {ext('https://thematic.com/pricing')}, {ext('https://unitq.com/pricing')}</li>
+					</ul>
+				</section>
 			</div>
 		</div>
 	);

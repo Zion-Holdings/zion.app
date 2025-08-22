@@ -36,7 +36,10 @@ const Header: React.FC = () => {
         { name: 'Industry Solutions', href: '/solutions' },
         { name: 'Cloud Platform', href: '/cloud-platform' },
         { name: 'AI Assistant', href: '/ai-assistant' },
-        { name: 'Status Pages & SLO', href: '/status-pages-slo' }
+        { name: 'Status Pages & SLO', href: '/status-pages-slo' },
+        { name: 'SBOM & SCA', href: '/services/sbom-dependency-risk-monitor' },
+        { name: 'API Schema Registry', href: '/services/api-schema-diff-registry' },
+        { name: 'DNS Failover', href: '/services/dns-failover-traffic-steering' }
       ]
     },
     {
