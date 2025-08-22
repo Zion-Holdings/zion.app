@@ -6,7 +6,7 @@ import SEO from '../components/SEO';
 export default function NotFoundPage() {
 	return (
 		<UltraFuturisticBackground>
-			<SEO title="Page Not Found | Zion Tech Group" description="The page you are looking for doesn't exist." noIndex />
+			<SEO title="Page Not Found | Zion Tech Group" description="The page you are looking for doesn't exist." noIndex nofollow />
 			<div className="container mx-auto px-4 py-24 text-center">
 				<h1 className="text-4xl md:text-6xl font-bold text-white mb-4">Page Not Found</h1>
 				<p className="text-gray-300 mb-8">The page you were looking for doesn't exist. Try one of the options below.</p>

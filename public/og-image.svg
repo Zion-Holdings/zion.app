@@ -1,28 +1,28 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Zion Tech Group - Revolutionary Technology Solutions">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Zion Tech Group - AI, Quantum, Micro SaaS">
   <defs>
-    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#06b6d4"/>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0ea5e9"/>
       <stop offset="50%" stop-color="#8b5cf6"/>
       <stop offset="100%" stop-color="#ec4899"/>
     </linearGradient>
   </defs>
-  <rect width="1200" height="630" fill="#0b0b0f"/>
-  <rect x="0" y="0" width="1200" height="630" fill="url(#g1)" opacity="0.15"/>
-  <g transform="translate(100,130)">
-    <text x="0" y="0" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto" font-size="72" font-weight="800" fill="#ffffff">
+  <rect width="1200" height="630" fill="#0a0a0a"/>
+  <rect x="20" y="20" width="1160" height="590" rx="24" fill="url(#g)" opacity="0.2"/>
+  <g transform="translate(80,120)">
+    <text x="0" y="0" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif" font-size="72" font-weight="800" fill="#ffffff">
       Zion Tech Group
     </text>
-    <text x="0" y="80" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto" font-size="40" font-weight="600" fill="#cbd5e1">
+    <text x="0" y="70" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif" font-size="30" fill="#cbd5e1">
       Revolutionary Technology Solutions
     </text>
-    <text x="0" y="140" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto" font-size="28" font-weight="500" fill="#94a3b8">
-      AI • Quantum Computing • Micro SAAS
+    <text x="0" y="130" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif" font-size="26" fill="#a5b4fc">
+      AI • Quantum Computing • Micro SaaS
     </text>
   </g>
-  <g opacity="0.3">
-    <circle cx="1050" cy="120" r="100" fill="#06b6d4"/>
-    <circle cx="990" cy="180" r="60" fill="#8b5cf6"/>
-    <circle cx="1080" cy="220" r="40" fill="#ec4899"/>
+  <g transform="translate(80,500)">
+    <rect x="0" y="-48" rx="12" width="560" height="64" fill="#111827" opacity="0.7"/>
+    <text x="24" y="-8" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif" font-size="28" fill="#67e8f9">
+      ziontechgroup.com
+    </text>
   </g>
 </svg>
