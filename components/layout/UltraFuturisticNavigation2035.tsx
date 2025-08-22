@@ -220,6 +220,23 @@ const navigationItems: NavigationItem[] = [
     ]
   },
   {
+    name: 'Company',
+    href: '/about',
+    icon: <Users className="w-5 h-5" />,
+    description: 'About the company and updates',
+    children: [
+      { name: 'About Us', href: '/about', description: 'Mission and vision' },
+      { name: 'Team', href: '/team', description: 'Leadership and team' },
+      { name: 'Careers', href: '/careers', description: 'Join our team' },
+      { name: 'Press', href: '/press', description: 'News and announcements' },
+      { name: 'Events', href: '/events', description: 'Conferences and talks' },
+      { name: 'Webinars', href: '/webinars', description: 'Live and on-demand' },
+      { name: 'Partners', href: '/partners', description: 'Strategic partners' },
+      { name: 'Investors', href: '/investors', description: 'Investor relations' },
+      { name: 'Contact', href: '/contact', description: 'Get in touch' }
+    ]
+  },
+  {
     name: 'Resources',
     href: '/resources',
     icon: <BookOpen className="w-5 h-5" />,

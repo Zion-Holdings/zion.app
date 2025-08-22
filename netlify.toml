@@ -40,3 +40,103 @@
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
     X-DNS-Prefetch-Control = "on"
     Content-Security-Policy = "default-src 'self'; object-src 'none'; upgrade-insecure-requests; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://plausible.io; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+
+[[redirects]]
+  from = "/ai-customer-success-automation"
+  to = "/ai-customer-success-platform"
+  status = 301
+
+[[redirects]]
+  from = "/ai-content-marketing-automation"
+  to = "/intelligent-content-automation-platform"
+  status = 301
+
+[[redirects]]
+  from = "/ai-consciousness-evolution"
+  to = "/ai-consciousness-evolution-2029"
+  status = 301
+
+[[redirects]]
+  from = "/ai-ethics-governance"
+  to = "/ai-ethics-governance-framework"
+  status = 301
+
+[[redirects]]
+  from = "/ai-autonomous-ecosystem"
+  to = "/ai-autonomous-ecosystem-manager"
+  status = 301
+
+[[redirects]]
+  from = "/ai-autonomous-business-process-automation"
+  to = "/ai-autonomous-business-operations"
+  status = 301
+
+[[redirects]]
+  from = "/ai-customer-intelligence-platform"
+  to = "/ai-customer-journey-analytics"
+  status = 301
+
+[[redirects]]
+  from = "/ai-financial-fraud-detection"
+  to = "/ai-financial-risk"
+  status = 301
+
+[[redirects]]
+  from = "/quantum-network-security"
+  to = "/quantum-internet-security-platform"
+  status = 301
+
+[[redirects]]
+  from = "/quantum-encryption-gateway"
+  to = "/quantum-internet-security-platform"
+  status = 301
+
+[[redirects]]
+  from = "/quantum-identity-verification"
+  to = "/quantum-internet-security-platform"
+  status = 301
+
+[[redirects]]
+  from = "/quantum-compliance-automation"
+  to = "/quantum-cybersecurity-platform"
+  status = 301
+
+[[redirects]]
+  from = "/quantum-threat-detection"
+  to = "/quantum-cybersecurity-platform"
+  status = 301
+
+[[redirects]]
+  from = "/blockchain-enterprise-platform"
+  to = "/blockchain-infrastructure-platform"
+  status = 301
+
+[[redirects]]
+  from = "/autonomous-it-operations"
+  to = "/autonomous-it-operations-center"
+  status = 301
+
+[[redirects]]
+  from = "/quantum-data-center"
+  to = "/quantum-cloud-infrastructure"
+  status = 301
+
+[[redirects]]
+  from = "/quantum-networking"
+  to = "/quantum-services"
+  status = 301
+
+[[redirects]]
+  from = "/autonomous-vehicle-ai"
+  to = "/autonomous-vehicle-ai-platform"
+  status = 301
+
+[[redirects]]
+  from = "/quantum-materials-discovery"
+  to = "/quantum-materials-discovery-platform"
+  status = 301
+
+[[redirects]]
+  from = "/quantum-internet-security"
+  to = "/quantum-internet-security-platform"
+  status = 301

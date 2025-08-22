@@ -139,10 +139,10 @@ const footerSections = [
 const socialLinks = [
   { name: 'Twitter', href: '/social/twitter', icon: <Twitter className="w-5 h-5" /> },
   { name: 'LinkedIn', href: '/social/linkedin', icon: <Linkedin className="w-5 h-5" /> },
-  { name: 'Facebook', href: 'https://facebook.com/ziontechgroup', icon: <Facebook className="w-5 h-5" /> },
-  { name: 'Instagram', href: 'https://instagram.com/ziontechgroup', icon: <Instagram className="w-5 h-5" /> },
-  { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: <Youtube className="w-5 h-5" /> },
-  { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: <Github className="w-5 h-5" /> }
+  { name: 'Facebook', href: '/social/facebook', icon: <Facebook className="w-5 h-5" /> },
+  { name: 'Instagram', href: '/social/instagram', icon: <Instagram className="w-5 h-5" /> },
+  { name: 'YouTube', href: '/social/youtube', icon: <Youtube className="w-5 h-5" /> },
+  { name: 'GitHub', href: '/social/github', icon: <Github className="w-5 h-5" /> }
 ];
 
 const UltraFuturisticFooter2035: React.FC = () => {
