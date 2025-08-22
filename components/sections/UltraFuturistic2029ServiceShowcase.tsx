@@ -54,16 +54,19 @@ const UltraFuturistic2029ServiceShowcase: React.FC<UltraFuturistic2029ServiceSho
     .filter(service => selectedCategory === 'all' || service.category === selectedCategory)
     .sort((a, b) => {
       switch (sortBy) {
-        case 'innovation':
+        case 'innovation': {
           // Default to 'Advanced' if innovationLevel is not available
           const aLevel = (a as any).innovationLevel || 'Advanced';
           const bLevel = (b as any).innovationLevel || 'Advanced';
           const innovationOrder = { 'Revolutionary': 4, 'Breakthrough': 3, 'Advanced': 2, 'Emerging': 1 };
           return (innovationOrder[bLevel] || 0) - (innovationOrder[aLevel] || 0);
-        case 'price':
+        }
+        case 'price': {
           return parseFloat(a.price.replace(/[^0-9.]/g, '')) - parseFloat(b.price.replace(/[^0-9.]/g, ''));
-        case 'rating':
+        }
+        case 'rating': {
           return b.rating - a.rating;
+        }
         default:
           return 0;
       }
