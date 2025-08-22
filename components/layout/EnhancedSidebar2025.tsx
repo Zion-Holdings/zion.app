@@ -67,7 +67,7 @@ const sidebarSections = [
     items: [
       { name: 'Quantum-Secure Cloud', href: '/quantum-secure-cloud-infrastructure', badge: 'New' },
       { name: 'Autonomous IT Operations', href: '/autonomous-it-operations-center', badge: 'New' },
-      { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration-platform', badge: 'New' },
+      { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration', badge: 'New' },
       { name: 'Blockchain Infrastructure', href: '/blockchain-infrastructure-platform', badge: 'New' },
       { name: 'AI-Powered DevOps', href: '/ai-powered-devops-platform', badge: 'New' },
       { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure-platform' },
