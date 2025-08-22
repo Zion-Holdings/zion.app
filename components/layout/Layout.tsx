@@ -5,6 +5,9 @@ import UltraFuturisticFooter2035 from './UltraFuturisticFooter2035';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraFuturisticBackground2035 from '../backgrounds/UltraFuturisticBackground2035';
 import TopContactBar from './TopContactBar';
+import PerformanceMonitor from '../ui/PerformanceMonitor';
+import AccessibilityEnhancer from '../ui/AccessibilityEnhancer';
+import ErrorBoundary from '../ui/ErrorBoundary';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -14,33 +17,39 @@ export default function Layout({ children }: LayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
-      {/* Futuristic Background */}
-      <UltraFuturisticBackground2035 />
-      
-      {/* Layout Structure */}
-      <div className="relative z-10">
-        {/* Top Contact Bar */}
-        <TopContactBar />
+    <ErrorBoundary>
+      <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
+        {/* Futuristic Background */}
+        <UltraFuturisticBackground2035 />
         
-        {/* Navigation */}
-        <UltraFuturisticNavigation2035 />
-        
-        {/* Sidebar and Main Content */}
-        <div className="flex">
-          <EnhancedSidebar2025 
-            isOpen={sidebarOpen} 
-            onClose={() => setSidebarOpen(false)} 
-          />
+        {/* Layout Structure */}
+        <div className="relative z-10">
+          {/* Top Contact Bar */}
+          <TopContactBar />
           
-          <main id="main" className="flex-1 pt-24 lg:pt-28">
-            {children}
-          </main>
+          {/* Navigation */}
+          <UltraFuturisticNavigation2035 />
+          
+          {/* Sidebar and Main Content */}
+          <div className="flex">
+            <EnhancedSidebar2025 
+              isOpen={sidebarOpen} 
+              onClose={() => setSidebarOpen(false)} 
+            />
+            
+            <main id="main" className="flex-1 pt-24 lg:pt-28">
+              {children}
+            </main>
+          </div>
+          
+          {/* Footer */}
+          <UltraFuturisticFooter2035 />
         </div>
-        
-        {/* Footer */}
-        <UltraFuturisticFooter2035 />
+
+        {/* Enhanced UI Components */}
+        <PerformanceMonitor />
+        <AccessibilityEnhancer />
       </div>
-    </div>
+    </ErrorBoundary>
   );
 }
