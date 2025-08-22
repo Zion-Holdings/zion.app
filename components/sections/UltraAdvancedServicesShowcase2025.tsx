@@ -23,6 +23,7 @@ const UltraAdvancedServicesShowcase2025: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [sortBy, setSortBy] = useState('popularity');
   const [viewMode, setViewMode] = useState('grid');
+  const [displayCount, setDisplayCount] = useState(24);
 
   // Combine all services
   const allServices = [
@@ -259,18 +260,18 @@ const UltraAdvancedServicesShowcase2025: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
           className={`${
             viewMode === 'grid' 
-              ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'
-              : 'space-y-6'
+              ? 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6' 
+              : 'space-y-4'
           }`}
         >
           <AnimatePresence>
-            {filteredServices.map((service, index) => (
+            {filteredServices.slice(0, displayCount).map((service, index) => (
               <motion.div
                 key={service.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
+                transition={{ duration: 0.5, delay: index * 0.03 }}
                 className={`bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300 group ${
                   viewMode === 'list' ? 'flex items-center space-x-6' : ''
                 }`}
@@ -384,6 +385,18 @@ const UltraAdvancedServicesShowcase2025: React.FC = () => {
             ))}
           </AnimatePresence>
         </motion.div>
+
+        {/* Load More */}
+        {filteredServices.length > displayCount && (
+          <div className="mt-10 flex justify-center">
+            <button
+              onClick={() => setDisplayCount((c) => c + 24)}
+              className="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white font-semibold shadow-lg shadow-cyan-500/20 transition-transform hover:scale-105"
+            >
+              Load more ({filteredServices.length - displayCount} more)
+            </button>
+          </div>
+        )}
 
         {/* No Results */}
         {filteredServices.length === 0 && (
