@@ -60,6 +60,69 @@ export default function ServicesAdvertisingPage() {
 						<li>References: {ext('https://auth0.com/pricing')}, {ext('https://workos.com/pricing')}, {ext('https://www.okta.com/pricing/')}</li>
 					</ul>
 				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Affiliate Attribution & Payouts Hub</h2>
+					<p className="text-slate-300">Cross-device attribution with first-party identity stitching and automated payouts.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $100–$300/mo</li>
+						<li>References: {ext('https://stripe.com/pricing')}, {ext('https://pay.google.com/about/business/')}, {ext('https://partnerstack.com/')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Podcast Transcription & Insights</h2>
+					<p className="text-slate-300">Transcripts, chapters, show notes, and SEO-ready blog pages with exports.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $10–$60/mo + usage</li>
+						<li>References: {ext('https://openai.com/api/pricing')}, {ext('https://www.descript.com/pricing')}, {ext('https://otter.ai/pricing')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Micro CRM for Local Business</h2>
+					<p className="text-slate-300">Contacts, deals, appointments, and reminders without enterprise complexity.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $15–$60/mo</li>
+						<li>References: {ext('https://www.hubspot.com/pricing/starter')}, {ext('https://www.zoho.com/crm/pricing.html')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Employee Scheduling Suite</h2>
+					<p className="text-slate-300">Shift planning with availability, time-off, swap requests, and notifications.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $30–$100/mo</li>
+						<li>References: {ext('https://joinhomebase.com/pricing/')}, {ext('https://wheniwork.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">LMS Starter</h2>
+					<p className="text-slate-300">Courses, quizzes, certificates, and progress tracking in days.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $30–$150/mo</li>
+						<li>References: {ext('https://teachable.com/pricing')}, {ext('https://www.thinkific.com/pricing/')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">SMB Website Analytics</h2>
+					<p className="text-slate-300">Privacy-friendly dashboards with goals and funnels. Cookie-less.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $9–$50/mo</li>
+						<li>References: {ext('https://plausible.io/pricing')}, {ext('https://usefathom.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Automated Email Follow-ups</h2>
+					<p className="text-slate-300">Time and event sequences with A/B tests and performance analytics.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $20–$100/mo</li>
+						<li>References: {ext('https://mailshake.com/pricing')}, {ext('https://www.gmass.co/pricing')}</li>
+					</ul>
+				</section>
 			</div>
 		</div>
 	);
