@@ -1034,6 +1034,96 @@ export default function ServicesAdvertisingPage() {
 					</ul>
 				</section>
 
+				<section id="cloud-finops-anomaly-detection" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Cloud FinOps Anomaly Detection</h2>
+					<p className="text-slate-300">Detect spend spikes early across AWS/GCP/Azure with alerts and root-cause drilldowns.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $50–$300/mo</li>
+						<li>References: {ext('https://aws.amazon.com/aws-cost-management/aws-cost-explorer/')} , {ext('https://cloud.google.com/billing/docs/how-to/reports')} , {ext('https://azure.microsoft.com/en-us/products/cost-management')}</li>
+					</ul>
+				</section>
+
+				<section id="kubernetes-cost-optimizer" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Kubernetes Cost Optimizer</h2>
+					<p className="text-slate-300">Rightsize requests/limits, detect idle resources, and generate GitOps remediation PRs.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $100–$600/mo</li>
+						<li>References: {ext('https://www.kubecost.com/pricing')} , {ext('https://cast.ai/pricing')}</li>
+					</ul>
+				</section>
+
+				<section id="sso-scim-starter" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">SSO & SCIM Starter</h2>
+					<p className="text-slate-300">Enterprise SSO and user lifecycle with Okta/Auth0/WorkOS and audit trails.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $100–$1,500/mo</li>
+						<li>References: {ext('https://auth0.com/pricing')} , {ext('https://workos.com/pricing')} , {ext('https://www.okta.com/pricing/')}</li>
+					</ul>
+				</section>
+
+				<section id="zero-trust-access-gateway" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Zero Trust Access Gateway</h2>
+					<p className="text-slate-300">Identity-aware access to apps and SSH with device posture and session logging.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $50–$400/mo</li>
+						<li>References: {ext('https://www.cloudflare.com/products/zero-trust/')} , {ext('https://tailscale.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section id="data-backup-compliance-suite" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Data Backup & Compliance Suite</h2>
+					<p className="text-slate-300">Policy-driven backups with immutability, geo-replication, and restore drills.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $30–$200/mo</li>
+						<li>References: {ext('https://aws.amazon.com/backup/pricing/')} , {ext('https://www.backblaze.com/b2/cloud-storage-pricing.html')}</li>
+					</ul>
+				</section>
+
+				<section id="api-usage-metering-billing" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">API Usage Metering & Billing</h2>
+					<p className="text-slate-300">Per-key metering, rate limiting, and Stripe billing with credits/overage.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $30–$200/mo + Stripe fees</li>
+						<li>References: {ext('https://stripe.com/pricing')} , {ext('https://vercel.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section id="affiliate-attribution-payouts-hub" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Affiliate Attribution & Payouts Hub</h2>
+					<p className="text-slate-300">Cross-device attribution with risk checks and automated partner payouts.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $100–$300/mo</li>
+						<li>References: {ext('https://stripe.com/pricing')} , {ext('https://partnerstack.com/')}</li>
+					</ul>
+				</section>
+
+				<section id="ai-evaluation-orchestrator-2" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">AI Evaluation Orchestrator</h2>
+					<p className="text-slate-300">Automate LLM evals, red‑teaming, and regression tests with leaderboards.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $50–$400/mo + API usage</li>
+						<li>References: {ext('https://openai.com/pricing')} , {ext('https://www.anthropic.com/pricing')} , {ext('https://openrouter.ai/models')}</li>
+					</ul>
+				</section>
+
+				<section id="llm-red-team-simulator-2" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">LLM Red Team & Jailbreak Simulator</h2>
+					<p className="text-slate-300">Adversarial prompts, PII checks, safety scoring, and CI gates.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $50–$500/mo</li>
+						<li>References: {ext('https://github.com/leondz/garak')} , {ext('https://owasp.org/www-project-top-10-for-large-language-model-applications/')}</li>
+					</ul>
+				</section>
+
+				<section id="llm-gateway" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Model Gateway & Cost Router</h2>
+					<p className="text-slate-300">Unified API with cost/latency‑aware routing and fallbacks across LLMs.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $20–$150/mo + API usage</li>
+						<li>References: {ext('https://openrouter.ai/')} , {ext('https://console.groq.com/pricing')} , {ext('https://platform.openai.com/pricing')}</li>
+					</ul>
+				</section>
+
 				{/* Contact CTA */}
 				<div className="flex flex-col md:flex-row items-center gap-4 p-4 rounded-xl bg-black/30 border border-gray-800">
 					<a href="tel:+13024640950" className="px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white">Call +1 302 464 0950</a>
