@@ -18,7 +18,6 @@ class MyDocument extends Document {
 					<meta name="format-detection" content="telephone=no" />
 					<link rel="preconnect" href="https://plausible.io" crossOrigin="anonymous" />
 					<link rel="dns-prefetch" href="//plausible.io" />
-					<link rel="preload" as="image" href="/og-image.svg" imageSrcSet={`${siteUrl.replace(/\/$/, '')}/og-image.svg`} fetchPriority="high" />
 					<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 					<link rel="manifest" href="/site.webmanifest" />
 					<meta name="application-name" content="Zion Tech Group" />
