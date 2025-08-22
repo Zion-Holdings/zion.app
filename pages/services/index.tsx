@@ -43,6 +43,7 @@ import { real2031ITServicesAdditions } from '../../data/real-2031-it-services-ad
 import { real2031AIServicesAdditions } from '../../data/real-2031-ai-services-additions';
 import { real2030Q2Additions } from '../../data/real-2030-q2-additions';
 import { real2027Q3Additions } from '../../data/real-2027-q3-additions';
+import { professionalServices } from '../../data/professional-services';
 import { real2032ServiceExpansions } from '../../data/real-2032-service-expansions';
 import { real2025Q5Additions } from '../../data/real-2025-q5-additions';
 
@@ -100,6 +101,7 @@ export default function ServicesIndexPage() {
       real2031MicroSaasAdditions as unknown[],
       real2031ITServicesAdditions as unknown[],
       real2031AIServicesAdditions as unknown[],
+      professionalServices as unknown[],
       real2032ServiceExpansions as unknown[],
       real2025Q5Additions as unknown[]
     );
@@ -137,6 +139,16 @@ export default function ServicesIndexPage() {
   };
 
   const [shownCounts, setShownCounts] = React.useState<Record<string, number>>(() => Object.fromEntries(categories.map(c => [c, 12])));
+  const [searchQuery, setSearchQuery] = React.useState('');
+
+  const normalized = (value: unknown) => {
+    const obj = value as { id?: string; name?: string; tagline?: string; description?: string };
+    return `${obj.id || ''} ${obj.name || ''} ${obj.tagline || ''} ${obj.description || ''}`.toLowerCase();
+  };
+
+  const filteredAll = searchQuery.trim().length
+    ? all.filter((s) => normalized(s).includes(searchQuery.toLowerCase()))
+    : all;
 
   return (
     <UltraFuturisticBackground variant="quantum" intensity="high">
@@ -153,6 +165,15 @@ export default function ServicesIndexPage() {
             <a href="#cloud" className="px-3 py-1.5 rounded-full bg-gray-800/60 border border-gray-700/70 hover:border-cyan-500/50">Cloud & FinOps</a>
             <a href="#observability" className="px-3 py-1.5 rounded-full bg-gray-800/60 border border-gray-700/70 hover:border-cyan-500/50">Observability</a>
             <a href="#quality" className="px-3 py-1.5 rounded-full bg-gray-800/60 border border-gray-700/70 hover:border-cyan-500/50">Quality & Monitoring</a>
+          </div>
+          <div className="mt-6 max-w-3xl mx-auto">
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Search services by name, feature, or use case..."
+              className="w-full px-4 py-3 rounded-xl bg-gray-900/70 border border-gray-700/70 focus:border-cyan-500/60 outline-none placeholder-gray-500"
+            />
           </div>
         </div>
 

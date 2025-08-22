@@ -51,6 +51,7 @@ import { real2027Q3Additions } from '../../data/real-2027-q3-additions';
 import { aiAutonomousEcosystemServices2029 } from '../../data/2029-ai-autonomous-ecosystem';
 import { emergingTechBreakthroughServices2029 } from '../../data/2029-emerging-tech-breakthroughs';
 import { practicalBusinessSolutionServices2029 } from '../../data/2029-practical-business-solutions';
+import { professionalServices } from '../../data/professional-services';
 import { real2032ServiceExpansions } from '../../data/real-2032-service-expansions';
 import { real2025Q5Additions } from '../../data/real-2025-q5-additions';
 
@@ -107,6 +108,7 @@ function getAllServices(): Service[] {
 		.concat(aiAutonomousEcosystemServices2029 as unknown as Service[])
 		.concat(emergingTechBreakthroughServices2029 as unknown as Service[])
 		.concat(practicalBusinessSolutionServices2029 as unknown as Service[])
+		.concat(professionalServices as unknown as Service[])
 		.concat(real2032ServiceExpansions as unknown as Service[])
 		.concat(real2025Q5Additions as unknown as Service[]);
 }

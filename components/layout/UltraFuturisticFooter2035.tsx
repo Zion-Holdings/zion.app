@@ -78,7 +78,7 @@ const footerSections = [
       { name: 'Quantum Internet Security', href: '/quantum-internet-security-platform' },
       { name: 'Quantum-Secure Cloud Infrastructure', href: '/quantum-secure-cloud-infrastructure' },
       { name: 'Quantum Financial Trading Platform', href: '/quantum-financial-trading' },
-      { name: 'AI-Powered Space Technology', href: '/ai-powered-space-technology' },
+      { name: 'AI-Powered Space Technology', href: '/space-technology-ai-platform' },
       { name: 'Brain-Computer Interface', href: '/brain-computer-interface-platform' },
       { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery-platform' },
       { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai-platform' },
