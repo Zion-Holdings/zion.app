@@ -58,7 +58,7 @@ export default function AIAutonomousBusinessOperationsPage() {
 							<h3 className="text-xl font-semibold mb-2">References</h3>
 							<ul className="list-disc list-inside text-slate-300 space-y-1">
 								<li>GitHub Actions pricing: <a className="text-cyan-400 underline" href="https://github.com/pricing" target="_blank" rel="noopener noreferrer">github.com/pricing</a></li>
-								<li>ServiceNow: <a className="text-cyan-400 underline" href="https://www.servicenow.com/" target="_blank" rel="noopener noreferrer">servicenow.com</a></li>
+								<li>ServiceNow: <a className="text-cyan-400 underline" href="https://developer.servicenow.com/" target="_blank" rel="noopener noreferrer">developer.servicenow.com</a></li>
 								<li>PagerDuty: <a className="text-cyan-400 underline" href="https://www.pagerduty.com/pricing/" target="_blank" rel="noopener noreferrer">pagerduty.com/pricing</a></li>
 							</ul>
 						</div>
