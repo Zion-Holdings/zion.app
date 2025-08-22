@@ -1,145 +1,95 @@
-export type CuttingEdgeAIService = {
-	id: string;
-	name: string;
-	category: string;
-	tagline: string;
-	description: string;
-	features: string[];
-	pricing: {
-		starter?: string;
-		monthly?: number;
-		professional?: string;
-		enterprise?: string;
-	};
-	status?: 'Live' | 'Beta' | 'GA';
-	rating?: number;
-	customerCount?: number;
-	demo?: string;
-	contact?: string;
+import { EnhancedRealMicroSaasService } from './enhanced-real-micro-saas-services';
+
+const contact = {
+	mobile: '+1 302 464 0950',
+	email: 'kleber@ziontechgroup.com',
+	address: '364 E Main St STE 1008 Middletown DE 19709',
+	website: 'https://ziontechgroup.com'
 };
 
-export const cuttingEdgeAIServices = [
+export const cuttingEdgeAIServices: EnhancedRealMicroSaasService[] = [
 	{
-		id: 'agent-observability-control-plane',
-		name: 'Agent Observability & Control Plane',
-		tagline: 'Track prompts, failures, costs, and safety for LLM agents at scale',
-		price: '$149',
+		id: 'llm-evaluation-orchestrator-2034',
+		name: 'LLM Evaluation Orchestrator',
+		tagline: 'Automate evals, red‑teaming, regression tests, and leaderboards',
+		price: '$99',
 		period: '/month',
-		description: 'Centralized observability for autonomous agents: telemetry, latency/cost breakdowns, retries, and policy guardrails with rollups per team and project.',
+		description: 'Run offline/online evals across OpenAI, Anthropic, and open‑source models with automated datasets, safety tests, and dashboards. Export results to your data warehouse.',
 		features: [
-			'Prompt/response tracing',
-			'Cost and latency analytics',
-			'Retry and backoff policies',
-			'Guardrails and redaction',
-			'Export to warehouse'
+			'Quality, safety, grounding eval suites',
+			'Regression testing and trend charts',
+			'Red‑teaming prompts and jailbreak checks',
+			'Provider adapters and cost metering',
+			'Leaderboards and model gating',
+			'CI integration and reports'
 		],
 		popular: true,
-		icon: '🛰️',
-		color: 'from-cyan-700 to-blue-800',
+		icon: '🧪',
+		color: 'from-cyan-600 to-blue-700',
 		textColor: 'text-cyan-300',
-		link: 'https://ziontechgroup.com/services/agent-observability-control-plane',
-		marketPosition: 'Complements OpenAI/Anthropic usage; observability layer similar to LangSmith.',
-		targetAudience: 'AI platform, product teams',
+		link: 'https://ziontechgroup.com/services/ai-evaluation-orchestrator',
+		marketPosition: 'Flexible alternative to bespoke spreadsheets and ad‑hoc evals.',
+		targetAudience: 'AI product, data science, platform teams',
 		trialDays: 14,
 		setupTime: '1 day',
 		category: 'AI & Data',
 		realService: true,
-		technology: ['OpenTelemetry', 'LLM APIs', 'Next.js'],
-		integrations: ['OpenAI', 'Anthropic', 'Groq', 'Vertex AI'],
-		useCases: ['Quality tracking', 'Cost control', 'Governance'],
-		roi: 'Cut LLM spend 15–35% with better routing and caching',
-		competitors: ['LangSmith', 'HumanLoop'],
-		marketSize: '$2B AI ops',
-		growthRate: '28% CAGR',
-		variant: 'neo-grid',
-		contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709', website: 'https://ziontechgroup.com' },
+		technology: ['OpenAI', 'Anthropic', 'Python/JS', 'ClickHouse'],
+		integrations: ['OpenRouter', 'Weights & Biases', 'Datadog'],
+		useCases: ['Model comparisons', 'Release gating', 'Safety audits'],
+		roi: 'Ship safer and cheaper AI features with confidence',
+		competitors: ['W&B Evals', 'Arize Phoenix'],
+		marketSize: '$5B AI Ops',
+		growthRate: '40% YoY',
+		variant: 'ai-futuristic' as any,
+		contactInfo: contact,
 		realImplementation: true,
-		implementationDetails: 'SDK, collectors, dashboards, and policies.',
+		implementationDetails: 'Dataset runners, adapters, dashboards, and CI actions.',
 		launchDate: '2025-03-18',
-		customers: 13,
+		customers: 15,
 		rating: 4.7,
 		reviews: 9
 	},
 	{
-		id: 'synthetic-data-studio',
-		name: 'Synthetic Data Studio',
-		tagline: 'Generate privacy‑preserving data to balance, augment, and test models',
-		price: '$129',
+		id: 'agentic-rag-starter-2034',
+		name: 'Agentic RAG Starter',
+		tagline: 'Retrieval‑augmented generation with tools, evals, and guardrails',
+		price: '$149',
 		period: '/month',
-		description: 'Generate statistically similar tabular and text data with privacy guarantees and drift/gap analysis to boost model performance safely.',
+		description: 'Deploy an agentic RAG stack with ingestion, chunking, vector DB, tool use, and evaluation harness. Includes guardrails and observability.',
 		features: [
-			'Conditional sampling and SDV',
-			'Privacy risk scoring',
-			'Rare class upsampling',
-			'Drift and leakage diagnostics',
-			'Datasets and CI integration'
+			'Document ingestion and chunking',
+			'Embeddings and vector DB',
+			'Tools and function calls',
+			'Evaluation harness and dashboards',
+			'Guardrails and safety filters',
+			'One‑click deploys'
 		],
 		popular: false,
-		icon: '🧪',
-		color: 'from-emerald-700 to-teal-800',
-		textColor: 'text-emerald-300',
-		link: 'https://ziontechgroup.com/services/synthetic-data-studio',
-		marketPosition: 'Affordable alternative to enterprise synthetic data platforms.',
-		targetAudience: 'Data science, MLOps',
+		icon: '🧠',
+		color: 'from-purple-600 to-pink-700',
+		textColor: 'text-purple-200',
+		link: 'https://ziontechgroup.com/services/ai-rag-starter-blueprint',
+		marketPosition: 'Faster path to value vs. bespoke agents with no guardrails.',
+		targetAudience: 'Product, data, platform teams',
 		trialDays: 14,
 		setupTime: '1 day',
 		category: 'AI & Data',
 		realService: true,
-		technology: ['SDV', 'LLMs', 'Python'],
-		integrations: ['Snowflake', 'BigQuery', 'S3'],
-		useCases: ['Data augmentation', 'Testing', 'Privacy'],
-		roi: 'Improve model AUC 1–5 points safely',
-		competitors: ['Mostly AI', 'Tonic'],
-		marketSize: '$1.2B synthetic data',
-		growthRate: '32% CAGR',
-		variant: 'quantum-flow',
-		contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709', website: 'https://ziontechgroup.com' },
+		technology: ['Next.js', 'Pinecone/Weaviate/PGVector', 'OpenAI'],
+		integrations: ['Pinecone', 'Weaviate', 'PGVector'],
+		useCases: ['Knowledge bases', 'Support', 'Internal docs'],
+		roi: 'Launch agentic RAG in days, not weeks',
+		competitors: ['LangChain templates', 'LlamaIndex starters'],
+		marketSize: '$2B RAG tooling',
+		growthRate: '45% CAGR',
+		variant: 'holographic-matrix' as any,
+		contactInfo: contact,
 		realImplementation: true,
-		implementationDetails: 'Connectors, profilers, and generators with notebooks.',
-		launchDate: '2025-03-18',
-		customers: 7,
-		rating: 4.5,
-		reviews: 6
-	},
-	{
-		id: 'evals-redteaming-orchestrator',
-		name: 'Evals & Red‑Teaming Orchestrator',
-		tagline: 'Automate eval suites, adversarial prompts, and regression testing',
-		price: '$89',
-		period: '/month',
-		description: 'Schedule evals across models and datasets, generate adversarial prompts, and track quality regressions with leaderboards and reports.',
-		features: [
-			'Benchmark suites and datasets',
-			'Adversarial prompt generation',
-			'Result dashboards and alerts',
-			'PR checks and CI gates',
-			'Leaderboard and comparisons'
-		],
-		popular: false,
-		icon: '🧠',
-		color: 'from-violet-700 to-fuchsia-800',
-		textColor: 'text-violet-300',
-		link: 'https://ziontechgroup.com/services/evals-redteaming-orchestrator',
-		marketPosition: 'Complements OpenAI Evals with orchestration and reporting.',
-		targetAudience: 'AI platform, QA, security',
-		trialDays: 14,
-		setupTime: '2 hours',
-		category: 'AI & Data',
-		realService: true,
-		technology: ['OpenAI', 'Anthropic', 'Groq'],
-		integrations: ['Weights & Biases', 'Data warehouses'],
-		useCases: ['Regression testing', 'Safety', 'Quality'],
-		roi: 'Reduce incidents and model regressions 20–40%',
-		competitors: ['OpenAI Evals', 'Promptfoo'],
-		marketSize: '$800M eval tooling',
-		growthRate: '30% CAGR',
-		variant: 'holographic-matrix',
-		contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709', website: 'https://ziontechgroup.com' },
-		realImplementation: true,
-		implementationDetails: 'Test runners, adversarial generators, reports.',
-		launchDate: '2025-03-18',
+		implementationDetails: 'Ingestion workers, vector DB, tools, and eval suite.',
+		launchDate: '2025-03-19',
 		customers: 9,
 		rating: 4.6,
-		reviews: 7
+		reviews: 6
 	}
 ];
