@@ -460,10 +460,18 @@ h1, h2, h3, h4, h5, h6 {
 .h2, h2 { font-size: clamp(1.5rem, 3vw + 0.5rem, 2.5rem); }
 .h3, h3 { font-size: clamp(1.25rem, 2vw + 0.5rem, 2rem); }
 
-/* Respect reduced motion */
+/* Reduced Motion Preferences */
 @media (prefers-reduced-motion: reduce) {
-	*, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
 }
+
 
 /* Responsive container padding adjustments */
 @media (max-width: 640px) {
