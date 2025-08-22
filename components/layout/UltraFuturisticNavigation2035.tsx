@@ -268,7 +268,7 @@ const UltraFuturisticNavigation2035: React.FC = () => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    <nav aria-label="Primary" className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled 
         ? 'bg-black/95 backdrop-blur-xl border-b border-gray-800/50 shadow-2xl' 
         : 'bg-transparent'
