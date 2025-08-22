@@ -1,0 +1,17 @@
+import React from 'react';
+import SEO from '../components/SEO';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+
+export default function WebinarsPage() {
+	return (
+		<UltraAdvancedFuturisticBackground>
+			<SEO title="Webinars | Zion Tech Group" description="On-demand and upcoming webinars from Zion Tech Group." canonical="https://ziontechgroup.com/webinars/" />
+			<div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8">
+				<div className="max-w-4xl mx-auto space-y-6">
+					<h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Webinars</h1>
+					<p className="text-slate-300">No webinars are scheduled at this time. Subscribe to updates or <a className="underline text-cyan-400" href="/contact">contact us</a> to request a session.</p>
+				</div>
+			</div>
+		</UltraAdvancedFuturisticBackground>
+	);
+}

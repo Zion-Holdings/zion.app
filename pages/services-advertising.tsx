@@ -1254,7 +1254,7 @@ export default function ServicesAdvertisingPage() {
 						<p className="text-slate-300">Spin up realistic mocks from OpenAPI/GraphQL with contract tests and golden recordings.</p>
 						<ul className="list-disc list-inside text-slate-300 space-y-1">
 							<li>Typical SMB budget: $19–$129/mo</li>
-							<li>References: {ext('https://stoplight.io/open-source/prism')}, {ext('https://learning.postman.com/docs/designing-and-developing-your-api/mocking-data/overview')}</li>
+							<li>References: {ext('https://stoplight.io/open-source/prism')}, {ext('https://www.postman.com/product/mock-server/')}</li>
 						</ul>
 						<div><a className="text-cyan-400 underline" href="/services/api-contract-mock-sandbox">Learn more</a></div>
 					</section>
@@ -1427,7 +1427,7 @@ export default function ServicesAdvertisingPage() {
 					<p className="text-slate-300">Improve CWV with safe theme defers/inlines, optimized images, and app impact insights.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $29–$149/mo</li>
-						<li>References: {ext('https://pagespeed.web.dev/')}, {ext('https://shopify.dev/docs/performance/best-practices')}</li>
+						<li>References: {ext('https://pagespeed.web.dev/')}, {ext('https://shopify.dev/docs/storefronts/best-practices/performance')}</li>
 					</ul>
 					<div><a className="text-cyan-400 underline" href="/services/shopify-speed-optimizer">Learn more</a></div>
 				</section>
