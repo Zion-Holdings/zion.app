@@ -1,154 +1,137 @@
-export type BasicService = {
-  id: string;
-  name: string;
-  tagline?: string;
-  description: string;
-  category: string;
-  pricing?: {
-    starter?: string;
-    monthly?: number;
-  };
-  features: string[];
-  link?: string;
-  launchDate?: string;
-  rating?: number;
+import { EnhancedRealMicroSaasService } from './enhanced-real-micro-saas-services';
+
+const contact = {
+	mobile: '+1 302 464 0950',
+	email: 'kleber@ziontechgroup.com',
+	address: '364 E Main St STE 1008 Middletown DE 19709',
+	website: 'https://ziontechgroup.com'
 };
 
-export const real2025Q4AugmentedBatch: BasicService[] = [
-  {
-    id: 'ai-email-responder',
-    name: 'AI Email Responder',
-    tagline: 'Autonomous replies, intent detection, and prioritization',
-    description: 'An AI-driven email assistant that drafts and sends suggested replies, flags urgent messages, and performs sentiment analysis. Integrates with major email providers and CRMs to streamline communications.',
-    category: 'AI & Machine Learning',
-    pricing: { starter: '$29/mo' },
-    features: [
-      'Intent and sentiment classification',
-      'Suggested and autonomous replies',
-      'Priority inbox and escalation',
-      'CRM sync and analytics'
-    ],
-    link: '/services-advertising#ai-email-responder',
-    launchDate: '2025-08-01',
-    rating: 4.7
-  },
-  {
-    id: 'mobile-first-survey-tool',
-    name: 'Mobile-first Survey Tool',
-    tagline: 'Adaptive surveys with logic and real-time analytics',
-    description: 'Create mobile-optimized surveys with conditional logic and live dashboards. Export responses to your data warehouse and trigger workflows.',
-    category: 'Sales & Marketing',
-    pricing: { starter: '$39/mo' },
-    features: [
-      'Responsive survey themes',
-      'Conditional and branching logic',
-      'Real-time dashboards',
-      'CSV/warehouse export'
-    ],
-    link: '/services-advertising#mobile-first-survey-tool',
-    launchDate: '2025-08-01',
-    rating: 4.6
-  },
-  {
-    id: 'event-management-dashboard',
-    name: 'Event Management Dashboard',
-    tagline: 'Tickets, RSVPs, schedules, and post-event insights',
-    description: 'Plan, promote, and analyze events from a single dashboard. Includes ticketing, session scheduling, and post-event feedback with analytics.',
-    category: 'Operations',
-    pricing: { starter: '$49/mo' },
-    features: [
-      'Ticketing and registration',
-      'Agenda and resource planning',
-      'Check-in and QR codes',
-      'Post-event analytics'
-    ],
-    link: '/services-advertising#event-management-dashboard',
-    launchDate: '2025-08-01',
-    rating: 4.5
-  },
-  {
-    id: 'affiliate-tracking-hub',
-    name: 'Affiliate Tracking Hub',
-    tagline: 'Attribution, fraud prevention, and automated payouts',
-    description: 'Manage affiliate programs with customizable links, cross-device attribution, and automated commission calculations with fraud detection.',
-    category: 'Sales & Marketing',
-    pricing: { starter: '$59/mo' },
-    features: [
-      'Cross-device attribution',
-      'Fraud prevention signals',
-      'Automated payouts',
-      'Partner analytics portal'
-    ],
-    link: '/services-advertising#affiliate-tracking-hub',
-    launchDate: '2025-08-01',
-    rating: 4.6
-  },
-  {
-    id: 'smb-website-analytics',
-    name: 'SMB Website Analytics',
-    tagline: 'Privacy-first dashboards with goals and funnels',
-    description: 'Simple, privacy-friendly web analytics with goal tracking, funnels, and UTM insights. Designed for non-technical owners and marketers.',
-    category: 'Analytics',
-    pricing: { starter: '$9/mo' },
-    features: [
-      'Cookie-less analytics',
-      'Goals and funnels',
-      'UTM reporting',
-      'Email summaries'
-    ],
-    link: '/services-advertising#smb-website-analytics',
-    launchDate: '2025-08-01',
-    rating: 4.8
-  },
-  {
-    id: 'it-helpdesk-suite',
-    name: 'IT Helpdesk Suite',
-    tagline: 'Ticketing, SLAs, knowledge base, and self-service',
-    description: 'A streamlined helpdesk for managed IT providers and internal IT teams. Features automated routing, SLA tracking, and a self-service knowledge portal.',
-    category: 'Enterprise IT',
-    pricing: { starter: '$49/agent/mo' },
-    features: [
-      'Automated ticket routing',
-      'SLA and escalation workflows',
-      'Knowledge base and portal',
-      'Reporting and CSAT'
-    ],
-    link: '/services-advertising#it-helpdesk-suite',
-    launchDate: '2025-08-01',
-    rating: 4.6
-  },
-  {
-    id: 'ecommerce-returns-center',
-    name: 'E‑commerce Returns Center',
-    tagline: 'Self-service returns, labels, and reverse logistics',
-    description: 'Automate returns with branded portals, label generation, and status tracking. Reduce churn through proactive notifications and exchanges.',
-    category: 'E‑commerce',
-    pricing: { starter: '$39/mo' },
-    features: [
-      'Branded returns portal',
-      'Label generation',
-      'Exchange flows and RMA',
-      'Returns analytics'
-    ],
-    link: '/services-advertising#ecommerce-returns-center',
-    launchDate: '2025-08-01',
-    rating: 4.5
-  },
-  {
-    id: 'ai-seo-optimizer',
-    name: 'AI SEO Content Optimizer',
-    tagline: 'Real-time keyword, structure, and readability guidance',
-    description: 'Optimize articles and landing pages with AI-guided keywords, headings, and readability checks. Export briefs and track rankings.',
-    category: 'SEO & Growth',
-    pricing: { starter: '$49/mo' },
-    features: [
-      'Keyword and outline suggestions',
-      'On-page checks and scoring',
-      'Brief exports',
-      'Rank tracking hooks'
-    ],
-    link: '/services-advertising#ai-seo-optimizer',
-    launchDate: '2025-08-01',
-    rating: 4.7
-  }
+export const real2025Q4AugmentedBatch: EnhancedRealMicroSaasService[] = [
+	{
+		id: 'ai-bug-triage-copilot',
+		name: 'AI Bug Triage Copilot',
+		tagline: 'Auto-triage, de-duplicate, and route bugs with LLMs + heuristics',
+		price: '$79',
+		period: '/month',
+		description: 'Reduce backlog noise by clustering duplicates, extracting repro steps, and routing to the right team with confidence scores and SLA-aware prioritization.',
+		features: [
+			'Issue clustering and duplicate detection',
+			'Automatic component and severity suggestions',
+			'Jira/GitHub bidirectional sync',
+			'SLA-aware prioritization and alerts',
+			'Team load and expertise-aware routing',
+			'Analytics on MTTR and reopen rates'
+		],
+		popular: true,
+		icon: '🪲',
+		color: 'from-cyan-600 to-blue-700',
+		textColor: 'text-cyan-300',
+		link: 'https://ziontechgroup.com/services/ai-bug-triage-copilot',
+		marketPosition: 'Lightweight complement to Jira automation; adds AI clustering and expertise routing.',
+		targetAudience: 'Engineering managers, SREs, QA leads',
+		trialDays: 14,
+		setupTime: '2 hours',
+		category: 'Developer Tools',
+		realService: true,
+		technology: ['Next.js, Node.js, PostgreSQL, OpenAI, Pinecone'],
+		integrations: ['Jira, GitHub, Linear, Slack'],
+		useCases: ['Reduce duplicate issues, Faster triage, Better routing'],
+		roi: 'Cut triage time by 50–70%, reduce reopen rates by 20–30%',
+		competitors: ['Jira Automation + DIY rules'],
+		marketSize: '$5B+ DevOps tooling',
+		growthRate: '20% CAGR',
+		variant: 'devops-futuristic',
+		contactInfo: contact,
+		realImplementation: true,
+		implementationDetails: 'LLM embeddings for clustering, webhook integrations, routing policies, analytics.',
+		launchDate: '2025-10-01',
+		customers: 18,
+		rating: 4.7,
+		reviews: 12
+	},
+	{
+		id: 'ai-customer-escalation-guard',
+		name: 'AI Customer Escalation Guard',
+		tagline: 'Predict escalations and deflect churn with proactive playbooks',
+		price: '$129',
+		period: '/month',
+		description: 'Monitors tickets, NPS, product telemetry, and billing signals to flag likely escalations or churn and trigger tailored playbooks and outreach.',
+		features: [
+			'Churn and escalation risk scoring',
+			'Playbook automation and scheduling',
+			'CRM and helpdesk integrations',
+			'Weekly CSM risk reports',
+			'At-risk cohort dashboards',
+			'Model feedback loop and labeling'
+		],
+		popular: false,
+		icon: '🚨',
+		color: 'from-rose-600 to-pink-700',
+		textColor: 'text-rose-300',
+		link: 'https://ziontechgroup.com/services/ai-customer-escalation-guard',
+		marketPosition: 'Complements Gainsight/Planhat with lightweight AI-first risk detection.',
+		targetAudience: 'CS leaders, growth, support',
+		trialDays: 14,
+		setupTime: '1 day',
+		category: 'Customer Service',
+		realService: true,
+		technology: ['Next.js, Node.js, Postgres, OpenAI, Segment'],
+		integrations: ['Zendesk, Intercom, HubSpot, Salesforce, Segment'],
+		useCases: ['Churn reduction, Escalation prevention, Proactive retention'],
+		roi: 'Reduce churn by 10–20%, improve NPS by 5–10 points',
+		competitors: ['Gainsight, Planhat'],
+		marketSize: '$8B Customer Success tooling',
+		growthRate: '22% CAGR',
+		variant: 'customer-service-futuristic',
+		contactInfo: contact,
+		realImplementation: true,
+		implementationDetails: 'Streaming ETL, risk models, playbooks, campaign triggers, dashboards.',
+		launchDate: '2025-11-05',
+		customers: 9,
+		rating: 4.6,
+		reviews: 7
+	},
+	{
+		id: 'finops-autotagger',
+		name: 'FinOps AutoTagger',
+		tagline: 'Automate cloud cost allocation with policy-based tagging',
+		price: '$59',
+		period: '/month',
+		description: 'Enforces resource tagging across AWS, GCP, and Azure, with drift detection, retro-tagging, and cost allocation reports by team/project/env.',
+		features: [
+			'Policy-based enforcement and retro-tagging',
+			'Drift detection and alerts',
+			'Cross-cloud coverage',
+			'Allocation by team/project/env',
+			'Cost anomaly hooks',
+			'Export to BI and Slack digests'
+		],
+		popular: true,
+		icon: '🏷️',
+		color: 'from-amber-600 to-orange-700',
+		textColor: 'text-amber-300',
+		link: 'https://ziontechgroup.com/services/finops-autotagger',
+		marketPosition: 'Easier than homegrown scripts; works across providers with policy templates.',
+		targetAudience: 'FinOps, platform engineering',
+		trialDays: 14,
+		setupTime: '3 hours',
+		category: 'Cloud & FinOps',
+		realService: true,
+		technology: ['Next.js, Node.js, Cloud APIs, BigQuery'],
+		integrations: ['AWS, GCP, Azure, Slack'],
+		useCases: ['Cost allocation, Tag hygiene, Budget accountability'],
+		roi: 'Recover 5–15% of spend via allocation and hygiene',
+		competitors: ['CloudZero (governance), Kubecost (K8s)'],
+		marketSize: '$4B FinOps tools',
+		growthRate: '28% CAGR',
+		variant: 'cloud-futuristic',
+		contactInfo: contact,
+		realImplementation: true,
+		implementationDetails: 'Cloud inventories, tag policies, retro-tag engines, cost exports.',
+		launchDate: '2025-10-20',
+		customers: 22,
+		rating: 4.8,
+		reviews: 15
+	}
 ];
