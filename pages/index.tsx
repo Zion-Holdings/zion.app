@@ -247,7 +247,7 @@ const Home: React.FC = () => {
                   href={`mailto:${contactInfo.email}`}
                   className="group bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-4 rounded-xl font-bold text-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105 inline-flex items-center gap-3 shadow-2xl shadow-purple-500/25"
                 >
-                  <Mail className="w-5 h-5" />
+                  <Mail className="w-4 h-4" />
                   <span>Email Us</span>
                 </a>
               </div>

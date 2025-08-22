@@ -1,53 +1,46 @@
-import React from 'react';
-import Head from 'next/head';
-import UltraAdvancedFuturisticNavigation2025 from './UltraAdvancedFuturisticNavigation2025';
-import UltraAdvancedFuturisticFooter2025 from './UltraAdvancedFuturisticFooter2025';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import UltraFuturisticNavigation2035 from './UltraFuturisticNavigation2035';
+import UltraFuturisticFooter2035 from './UltraFuturisticFooter2035';
+import EnhancedSidebar2025 from './EnhancedSidebar2025';
+import UltraFuturisticBackground2035 from '../backgrounds/UltraFuturisticBackground2035';
+import TopContactBar from './TopContactBar';
 
 interface LayoutProps {
   children: React.ReactNode;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
-  return (
-    <>
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#000000" />
-        <meta name="msapplication-TileColor" content="#000000" />
-        
-        {/* Preconnect to external domains */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        
-        {/* Additional meta tags for better SEO */}
-        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-        <meta name="googlebot" content="index, follow" />
-        
-        {/* Mobile optimization */}
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        
-        {/* Performance optimization */}
-        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-      </Head>
+export default function Layout({ children }: LayoutProps) {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
-      <div className="min-h-screen bg-black text-white flex flex-col">
-        {/* Navigation */}
-        <UltraAdvancedFuturisticNavigation2025 />
+  return (
+    <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
+      {/* Futuristic Background */}
+      <UltraFuturisticBackground2035 />
+      
+      {/* Layout Structure */}
+      <div className="relative z-10">
+        {/* Top Contact Bar */}
+        <TopContactBar />
         
-        {/* Main Content */}
-        <main className="flex-1 relative">
-          {children}
-        </main>
+        {/* Navigation */}
+        <UltraFuturisticNavigation2035 />
+        
+        {/* Sidebar and Main Content */}
+        <div className="flex">
+          <EnhancedSidebar2025 
+            isOpen={sidebarOpen} 
+            onClose={() => setSidebarOpen(false)} 
+          />
+          
+          <main id="main" className="flex-1 pt-24 lg:pt-28">
+            {children}
+          </main>
+        </div>
         
         {/* Footer */}
-        <UltraAdvancedFuturisticFooter2025 />
+        <UltraFuturisticFooter2035 />
       </div>
-    </>
+    </div>
   );
-};
-
-export default Layout;
+}
