@@ -1441,6 +1441,106 @@ export default function ServicesAdvertisingPage() {
 					</ul>
 					<div><a className="text-cyan-400 underline" href="/services/whatsapp-automation-studio">Learn more</a></div>
 				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">A11y Regression Monitor</h2>
+					<p className="text-slate-300">Automated WCAG 2.2 AA checks with CI gates, reports, and Jira/GitHub issue export.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $20–$100/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/a11y-regression-monitor">/services/a11y-regression-monitor</a></li>
+						<li>References: {ext('https://www.w3.org/TR/WCAG22/')}{', '}{ext('https://www.deque.com/axe/')}{', '}{ext('https://playwright.dev')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">AI Test Coverage Booster</h2>
+					<p className="text-slate-300">LLM-assisted test generation with safe diffs, mocks, and flakiness checks to lift coverage fast.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $50–$200/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/ai-test-coverage-booster">/services/ai-test-coverage-booster</a></li>
+						<li>References: {ext('https://jestjs.io/')}{', '}{ext('https://vitest.dev/')}{', '}{ext('https://playwright.dev')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">IAM Shadow Access Detector</h2>
+					<p className="text-slate-300">Map effective permissions and ship least-privilege PRs. Catch unused or risky grants.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $100–$400/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/iam-shadow-access-detector">/services/iam-shadow-access-detector</a></li>
+						<li>References: {ext('https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html')}{', '}{ext('https://cloud.google.com/iam/docs')}{', '}{ext('https://learn.microsoft.com/entra/')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Azure AD/M365 License Optimizer</h2>
+					<p className="text-slate-300">Analyze usage to reclaim or downgrade licenses and track realized savings.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $50–$200/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/azure-ad-license-optimizer">/services/azure-ad-license-optimizer</a></li>
+						<li>References: {ext('https://learn.microsoft.com/graph/')}{', '}{ext('https://www.microsoft.com/microsoft-365/business')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">GitHub Actions Hardening Audit</h2>
+					<p className="text-slate-300">Detect unpinned actions, overbroad permissions, and insecure patterns; auto-open hardening PRs.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $20–$100/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/github-actions-hardening-audit">/services/github-actions-hardening-audit</a></li>
+						<li>References: {ext('https://docs.github.com/actions')}{', '}{ext('https://github.com/step-security/harden-runner')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">LLM Watermarking & Provenance Kit</h2>
+					<p className="text-slate-300">Embed provenance metadata and watermarks for AI-generated content; add verification APIs.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $50–$200/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/llm-watermarking-provenance">/services/llm-watermarking-provenance</a></li>
+						<li>References: {ext('https://c2pa.org/')}{', '}{ext('https://openai.com/policies')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Data Retention Policy Enforcer</h2>
+					<p className="text-slate-300">Automate delete/anonymize actions with evidence exports for auditors.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $50–$200/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/data-retention-policy-enforcer">/services/data-retention-policy-enforcer</a></li>
+						<li>References: {ext('https://gdpr-info.eu/art-5-gdpr/')}{', '}{ext('https://cloud.google.com/bigquery/docs/table-expiration')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Checkout Performance Optimizer</h2>
+					<p className="text-slate-300">Synthetic and RUM-based insights to reduce drop-offs and speed up payment flows.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $30–$150/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/checkout-performance-optimizer">/services/checkout-performance-optimizer</a></li>
+						<li>References: {ext('https://web.dev/vitals/')}{', '}{ext('https://playwright.dev')}{', '}{ext('https://stripe.com/docs/checkout')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">K8s SOC 2 Control Pack</h2>
+					<p className="text-slate-300">OPA/Kyverno policy bundles, continuous checks, and exportable evidence packs.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $50–$200/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/k8s-soc2-control-pack">/services/k8s-soc2-control-pack</a></li>
+						<li>References: {ext('https://www.openpolicyagent.org/')}{', '}{ext('https://kyverno.io/')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Slack-to-Ticket Automation</h2>
+					<p className="text-slate-300">Convert Slack threads into tickets with AI summaries, owners, and two-way sync.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $10–$60/user/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/slack-to-ticket-automation">/services/slack-to-ticket-automation</a></li>
+						<li>References: {ext('https://api.slack.com/automation')}{', '}{ext('https://developer.atlassian.com/cloud/jira/platform/rest/v3/')}</li>
+					</ul>
+				</section>
 			</div>
 		</div>
 	);
