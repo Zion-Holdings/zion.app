@@ -259,6 +259,7 @@ export const realQ4Services2025: RealQ4Service[] = [
 		rating: 4.5,
 		reviews: 28
 	}
+];
 export const real2025Q4Additions = [
   {
     id: 'ai-governance-control-center',
@@ -499,5 +500,221 @@ export const real2025Q4Additions = [
     integrations: ['HubSpot', 'Webflow', 'WordPress', 'Marketo'],
     trialDays: 7,
     setupTime: 'Same day'
+  },
+  {
+	id: 'api-changelog-sdk-publisher',
+	name: 'API Changelog & SDK Publisher',
+	tagline: 'Automate API changelogs and multi-language SDK releases',
+	price: '$59',
+	period: '/month',
+	description: 'Parses OpenAPI changes, generates markdown changelogs, publishes docs, and releases SDKs in JS/TS/Python with versioning.',
+	features: [
+		'OpenAPI diff and changelog generator',
+		'GitHub Actions integration',
+		'SDK scaffolds for JS/TS/Python',
+		'Changelog RSS and webhooks',
+		'Docs site updates'
+	],
+	category: 'Developer Tools',
+	link: 'https://ziontechgroup.com/services/api-changelog-sdk-publisher',
+	marketPosition: 'Bridges the gap between manual release notes and full API platforms.',
+	roi: 'Reduce API release toil; fewer integration regressions.',
+	competitors: ['ReadMe', 'Stoplight', 'Postman'],
+	useCases: ['API versioning', 'SDK release automation', 'DevRel updates'],
+	integrations: ['GitHub', 'OpenAPI', 'npm', 'PyPI'],
+	trialDays: 7,
+	setupTime: 'Same day'
+  },
+  {
+	id: 'browser-performance-optimizer',
+	name: 'Browser Performance Optimizer',
+	tagline: 'Automated audits with actionable code-level suggestions',
+	price: '$69',
+	period: '/month',
+	description: 'Runs Lighthouse/Trace audits on key pages, identifies layout shifts, unused JS/CSS, and image bloat, and opens PRs to fix.',
+	features: [
+		'Lighthouse CI and Web Vitals tracking',
+		'Bundle/route-level analysis',
+		'Image and font optimization PRs',
+		'CLS/LCP/INP regression alerts',
+		'Perf budgets enforcement'
+	],
+	category: 'Quality & Monitoring',
+	link: 'https://ziontechgroup.com/services/browser-performance-optimizer',
+	marketPosition: 'Action-oriented vs dashboards-only tools.',
+	roi: 'Improve Core Web Vitals; higher conversion rates.',
+	competitors: ['Calibre', 'SpeedCurve', 'Lighthouse CI'],
+	useCases: ['Ecommerce perf', 'SEO improvements', 'Release gating'],
+	integrations: ['GitHub', 'Vercel', 'Netlify', 'Slack'],
+	trialDays: 7,
+	setupTime: 'Same day'
+  },
+  {
+	id: 'edge-cron-orchestrator',
+	name: 'Edge Cron Orchestrator',
+	tagline: 'Globally reliable scheduled jobs at the edge',
+	price: '$59',
+	period: '/month',
+	description: 'Define and monitor crons that execute on edge workers with retries, jitter, and observability.',
+	features: [
+		'Cron syntax with retries/jitter',
+		'Edge worker runners',
+		'Alerts on failures and drifts',
+		'Ownership and escalation',
+		'Audit logs'
+	],
+	category: 'Developer Tools',
+	link: 'https://ziontechgroup.com/services/edge-cron-orchestrator',
+	marketPosition: 'Simpler than building custom schedulers.',
+	roi: 'Replace flaky server crons; reduce on-call.',
+	competitors: ['Cloudflare Cron Triggers', 'Temporal.io'],
+	useCases: ['Cache refresh', 'ETL kickoffs', 'SLA reports'],
+	integrations: ['Cloudflare', 'Vercel', 'GitHub'],
+	trialDays: 7,
+	setupTime: 'Same day'
+  },
+  {
+	id: 'saas-billing-anomaly-guard',
+	name: 'SaaS Billing Anomaly Guard',
+	tagline: 'Detect unexpected billing spikes across subscriptions',
+	price: '$119',
+	period: '/month',
+	description: 'Ingests invoices/usage from Stripe and vendors, flags anomalies, and creates tickets with owners.',
+	features: [
+		'Statistical anomaly detection',
+		'Budget thresholds and policies',
+		'Owner routing and workflows',
+		'Integrations catalog',
+		'Monthly executive reports'
+	],
+	category: 'Cloud & FinOps',
+	link: 'https://ziontechgroup.com/services/saas-billing-anomaly-guard',
+	marketPosition: 'FinOps for SaaS line items beyond cloud IaaS.',
+	roi: 'Prevent waste and billing surprises.',
+	competitors: ['Tropic', 'Cledara'],
+	useCases: ['Finance reviews', 'Budget guardrails'],
+	integrations: ['Stripe', 'NetSuite', 'QuickBooks', 'Slack'],
+	trialDays: 14,
+	setupTime: '1 day'
+  },
+  {
+	id: 'ml-feature-store-starter',
+	name: 'ML Feature Store Starter',
+	tagline: 'Production-grade feature store boilerplate for fast starts',
+	price: '$149',
+	period: '/month',
+	description: 'Curated templates for batch/stream features, with governance, versioning, and retrieval APIs.',
+	features: [
+		'Batch/stream ingestion',
+		'Feature registry and lineage',
+		'Online/offline parity',
+		'RBAC and audit',
+		'SDKs and examples'
+	],
+	category: 'AI & Data',
+	link: 'https://ziontechgroup.com/services/ml-feature-store-starter',
+	marketPosition: 'Right-sized alternative to full platforms.',
+	roi: 'Ship models faster with reliable features.',
+	competitors: ['Feast', 'Tecton'],
+	useCases: ['Recommenders', 'Fraud', 'Churn'],
+	integrations: ['Snowflake', 'BigQuery', 'Kafka', 'Redis'],
+	trialDays: 14,
+	setupTime: '3-5 days'
+  },
+  {
+	id: 'slo-burn-rate-coach',
+	name: 'SLO Burn Rate Coach',
+	tagline: 'Real-time guidance to manage error budgets',
+	price: '$49',
+	period: '/month',
+	description: 'Computes burn rates from SLI streams, recommends mitigations, and posts alerts to chat.',
+	features: [
+		'Windowed burn rate policies',
+		'Playbook recommendations',
+		'Chat alerts and on-call integration',
+		'Dashboards and reports',
+		'Incident correlation'
+	],
+	category: 'Observability',
+	link: 'https://ziontechgroup.com/services/slo-burn-rate-coach',
+	marketPosition: 'Operationalizes SRE theory in minutes.',
+	roi: 'Reduce incidents and customer impact.',
+	competitors: ['Nobl9', 'Datadog SLOs'],
+	useCases: ['SRE coaching', 'Release gating'],
+	integrations: ['Datadog', 'Prometheus', 'Slack', 'PagerDuty'],
+	trialDays: 7,
+	setupTime: 'Same day'
+  },
+  {
+	id: 'incident-postmortem-ai-scribe',
+	name: 'Incident Postmortem AI Scribe',
+	tagline: 'Drafts structured postmortems with timelines and actions',
+	price: '$39',
+	period: '/month',
+	description: 'Pulls incident data from chat and tools to produce consistent postmortems and lessons learned.',
+	features: [
+		'Incident timeline extraction',
+		'Root cause and contributing factors',
+		'Action item tracking',
+		'Template library',
+		'Exports to docs'
+	],
+	category: 'Quality & Monitoring',
+	link: 'https://ziontechgroup.com/services/incident-postmortem-ai-scribe',
+	marketPosition: 'Reduce toil and increase learning quality.',
+	roi: 'Faster reviews and better remediation.',
+	competitors: ['Rootly', 'FireHydrant'],
+	useCases: ['SRE reviews', 'Compliance evidence'],
+	integrations: ['Slack', 'Jira', 'GitHub'],
+	trialDays: 7,
+	setupTime: 'Same day'
+  },
+  {
+	id: 'ai-sales-playbook-generator',
+	name: 'AI Sales Playbook Generator',
+	tagline: 'Tailored sequences and scripts by ICP and product line',
+	price: '$99',
+	period: '/month',
+	description: 'Generates compliant playbooks, call scripts, and email sequences with objections and discovery flows.',
+	features: [
+		'Persona and segment templates',
+		'Objection handling library',
+		'Compliance guardrails',
+		'CRM merge fields',
+		'A/B testing'
+	],
+	category: 'Developer Tools',
+	link: 'https://ziontechgroup.com/services/ai-sales-playbook-generator',
+	marketPosition: 'Faster sales enablement with brand voice.',
+	roi: 'Higher SDR ramp speed and conversion.',
+	competitors: ['Seismic', 'Gong Templates'],
+	useCases: ['Outbound', 'Onboarding'],
+	integrations: ['Salesforce', 'HubSpot', 'Outreach'],
+	trialDays: 7,
+	setupTime: 'Same day'
+  },
+  {
+	id: 'customer-journey-analytics-starter',
+	name: 'Customer Journey Analytics Starter',
+	tagline: 'Unify events and visualize drop-offs across funnels',
+	price: '$79',
+	period: '/month',
+	description: 'Opinionated analytics starter with event taxonomy, dashboards, and self-serve funnel exploration.',
+	features: [
+		'Product analytics dashboards',
+		'Event taxonomy templates',
+		'Funnel and cohort analysis',
+		'Attribution and segments',
+		'Embedded sharing'
+	],
+	category: 'AI & Data',
+	link: 'https://ziontechgroup.com/services/customer-journey-analytics-starter',
+	marketPosition: 'Faster than building from scratch.',
+	roi: 'Find growth wins within days.',
+	competitors: ['Mixpanel', 'Amplitude'],
+	useCases: ['Growth', 'Activation', 'Retention'],
+	integrations: ['Segment', 'RudderStack', 'dbt'],
+	trialDays: 7,
+	setupTime: '2 days'
   }
 ];
