@@ -43,6 +43,24 @@ const navigationItems: NavigationItem[] = [
     ]
   },
   {
+    name: 'Company',
+    href: '/about',
+    icon: <Users className="w-5 h-5" />,
+    description: 'Learn about Zion Tech Group',
+    children: [
+      { name: 'About Us', href: '/about', description: 'Our mission and vision' },
+      { name: 'Leadership', href: '/leadership', description: 'Meet the team' },
+      { name: 'Careers', href: '/careers', description: 'Join our team' },
+      { name: 'News & Press', href: '/news', description: 'Latest company news' },
+      { name: 'Partners', href: '/partners', description: 'Our partner ecosystem' },
+      { name: 'Investors', href: '/investors', description: 'Investor relations' },
+      { name: 'Locations', href: '/locations', description: 'Where to find us' },
+      { name: 'Sustainability', href: '/sustainability', description: 'ESG and impact' },
+      { name: 'Diversity & Inclusion', href: '/diversity-inclusion', description: 'Our commitments' },
+      { name: 'Contact', href: '/contact', description: 'Talk to our team' }
+    ]
+  },
+  {
     name: 'Resources',
     href: '/resources',
     icon: <BookOpen className="w-5 h-5" />,
