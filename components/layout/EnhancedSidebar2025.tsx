@@ -108,18 +108,18 @@ const sidebarSections = [
     icon: <Target className="w-5 h-5" />,
     color: 'text-orange-400',
     items: [
-      { name: 'Healthcare Solutions', href: '/healthcare-solutions' },
-      { name: 'Financial Services', href: '/financial-solutions' },
-      { name: 'Manufacturing AI', href: '/manufacturing-ai-solutions' },
+      { name: 'Healthcare & Biotech', href: '/biotech-ai' },
+      { name: 'Financial Services', href: '/billing-analytics' },
+      { name: 'Manufacturing AI', href: '/autonomous-manufacturing' },
       { name: 'Retail Technology', href: '/retail-technology-solutions' },
-      { name: 'Education Technology', href: '/education-technology-solutions' },
-      { name: 'Government Solutions', href: '/government-technology-solutions' },
-      { name: 'Energy & Utilities', href: '/energy-utilities-solutions' },
-      { name: 'Transportation & Logistics', href: '/transportation-logistics-solutions' },
+      { name: 'Education Technology', href: '/training' },
+      { name: 'Government Solutions', href: '/enterprise-solutions-showcase' },
+      { name: 'Energy & Utilities', href: '/quantum-energy' },
+      { name: 'Transportation & Logistics', href: '/quantum-logistics' },
       { name: 'Real Estate Technology', href: '/real-estate-technology-solutions' },
       { name: 'Entertainment & Media', href: '/entertainment-media-solutions' },
       { name: 'Space Technology', href: '/space-technology' },
-      { name: 'Biotech & Healthcare', href: '/biotech-ai-research-platform' }
+      { name: 'Biotech & Healthcare', href: '/biotech-ai' }
     ]
   },
   {

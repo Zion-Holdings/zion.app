@@ -74,10 +74,10 @@ const navigationItems: NavigationItem[] = [
     description: 'Browse by category',
     badge: 'New',
     children: [
-      { name: 'AI & Data', href: '/services#ai-consciousness', description: 'AI, data, ML services' },
-      { name: 'Cloud & FinOps', href: '/services#enterprise-it', description: 'Cloud, cost, platform' },
-      { name: 'Observability', href: '/services#enterprise-it', description: 'Monitoring & telemetry' },
-      { name: 'Developer Tools', href: '/services#enterprise-it', description: 'Developer productivity' },
+      { name: 'AI & Data', href: '/services#ai', description: 'AI, data, ML services' },
+      { name: 'Cloud & FinOps', href: '/services#cloud', description: 'Cloud, cost, platform' },
+      { name: 'Observability', href: '/services#observability', description: 'Monitoring & telemetry' },
+      { name: 'Developer Tools', href: '/services#developer-tools', description: 'Developer productivity' },
       { name: 'Training & Education', href: '/training', description: 'Learning and R&D' },
       { name: 'SEO Automation Suite', href: '/seo-automation-suite', description: 'Technical SEO automation' },
       { name: 'IT Asset Discovery Agent', href: '/it-asset-discovery-agent', description: 'Agentless discovery' },
@@ -204,19 +204,20 @@ const navigationItems: NavigationItem[] = [
   },
   {
     name: 'Industry Solutions',
-    href: '/industry-solutions',
+    href: '/solutions',
     icon: <Building className="w-5 h-5" />,
     description: 'Industry-specific technology solutions',
     badge: 'Industry',
     children: [
-      { name: 'Healthcare AI', href: '/healthcare-ai-solutions', description: 'AI-powered healthcare' },
-      { name: 'Financial Technology', href: '/financial-solutions', description: 'Next-gen fintech' },
-      { name: 'Manufacturing AI', href: '/manufacturing-ai-solutions', description: 'Smart manufacturing' },
+      { name: 'Healthcare & Biotech', href: '/biotech-ai', description: 'AI-powered healthcare' },
+      { name: 'Financial Technology', href: '/billing-analytics', description: 'Next-gen fintech analytics' },
+      { name: 'Manufacturing AI', href: '/autonomous-manufacturing', description: 'Smart manufacturing' },
       { name: 'Retail Technology', href: '/retail-technology-solutions', description: 'Digital retail transformation' },
       { name: 'Education Technology', href: '/training', description: 'AI-powered learning' },
       { name: 'Government Solutions', href: '/enterprise-solutions-showcase', description: 'Public sector innovation' },
       { name: 'Energy & Utilities', href: '/quantum-energy', description: 'Sustainable energy tech' },
-      { name: 'Biotech AI Research', href: '/biotech-ai', description: 'AI-driven biotech' }
+      { name: 'Transportation & Logistics', href: '/quantum-logistics', description: 'Route optimization' },
+      { name: 'Space Technology', href: '/space-technology', description: 'Advanced space tech' }
     ]
   },
   {
