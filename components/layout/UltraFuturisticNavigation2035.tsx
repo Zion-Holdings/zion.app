@@ -232,6 +232,22 @@ const navigationItems: NavigationItem[] = [
       { name: 'Serverless Lakehouse Starter', href: '/services/serverless-lakehouse-starter', description: 'ELT + dbt + dashboards' },
       { name: 'Data Contracts Hub', href: '/services/data-contracts-hub', description: 'Schema diffs & CI gates' }
     ]
+  },
+  {
+    name: 'Company',
+    href: '/about',
+    icon: <Users className="w-5 h-5" />,
+    description: 'About the company and policies',
+    children: [
+      { name: 'About Us', href: '/about', description: 'Mission and vision' },
+      { name: 'Careers', href: '/careers', description: 'Join our team' },
+      { name: 'News', href: '/news', description: 'Company updates' },
+      { name: 'Partners', href: '/partners', description: 'Ecosystem partners' },
+      { name: 'Investors', href: '/investors', description: 'Investor information' },
+      { name: 'Contact', href: '/contact', description: 'Get in touch' },
+      { name: 'Privacy Policy', href: '/privacy', description: 'User privacy' },
+      { name: 'Terms of Service', href: '/terms', description: 'Legal terms' },
+    ]
   }
 ];
 
@@ -239,7 +255,7 @@ const quickActions = [
   { name: 'Get Started', href: '/contact', icon: <ArrowRight className="w-4 h-4" />, primary: true },
   { name: 'Get a Quote', href: '/quote', icon: <DollarSign className="w-4 h-4" /> },
   { name: 'Book Demo', href: '/contact', icon: <Video className="w-4 h-4" /> },
-  { name: 'Live Chat', href: '/chat', icon: <MessageCircle className="w-4 h-4" /> },
+  { name: 'Live Chat', href: '/contact', icon: <MessageCircle className="w-4 h-4" /> },
   { name: 'View Pricing', href: '/pricing', icon: <DollarSign className="w-4 h-4" /> },
   { name: 'Market Pricing', href: '/market-pricing', icon: <BarChart3 className="w-4 h-4" /> },
   { name: 'Services Advertising', href: '/services-advertising', icon: <Sparkles className="w-4 h-4" /> },

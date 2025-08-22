@@ -65,3 +65,38 @@
   from = "/team"
   to = "/about"
   status = 301
+
+[[redirects]]
+  from = "/events"
+  to = "/news"
+  status = 301
+
+[[redirects]]
+  from = "/webinars"
+  to = "/news"
+  status = 301
+
+[[redirects]]
+  from = "/press"
+  to = "/news"
+  status = 301
+
+[[redirects]]
+  from = "/legal"
+  to = "/terms"
+  status = 301
+
+[[redirects]]
+  from = "/api"
+  to = "/api-documentation"
+  status = 301
+
+[[redirects]]
+  from = "/ai-consciousness-evolution-platform"
+  to = "/ai-consciousness-evolution-2029"
+  status = 301
+
+[[redirects]]
+  from = "/ai-creativity-orchestrator"
+  to = "/ai-creativity-studio"
+  status = 301
