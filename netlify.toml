@@ -46,8 +46,38 @@
     Origin-Agent-Cluster = "?1"
 
 [[redirects]]
+  from = "/ai-autonomous-business-operations"
+  to = "/ai-autonomous-ecosystem-manager"
+  status = 301
+
+[[redirects]]
   from = "/ai-consciousness-evolution"
   to = "/ai-consciousness-evolution-2029"
+  status = 301
+
+[[redirects]]
+  from = "/ai-content-marketing-automation"
+  to = "/intelligent-content-automation-platform"
+  status = 301
+
+[[redirects]]
+  from = "/ai-autonomous-ecosystem"
+  to = "/ai-autonomous-ecosystem-manager"
+  status = 301
+
+[[redirects]]
+  from = "/ai-ethics-governance"
+  to = "/ai-ethics-governance-framework"
+  status = 301
+
+[[redirects]]
+  from = "/quantum-network-security"
+  to = "/quantum-internet-security-platform"
+  status = 301
+
+[[redirects]]
+  from = "/quantum-compliance-automation"
+  to = "/quantum-cybersecurity-platform"
   status = 301
 
 [[redirects]]
