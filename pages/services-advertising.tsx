@@ -554,7 +554,7 @@ export default function ServicesAdvertisingPage() {
 					<p className="text-slate-300">Automated WCAG checks with CI annotations and remediation guidance.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $20–$150/mo</li>
-						<li>References: {ext('https://www.deque.com/axe/overview/')}, {ext('https://pagespeed.web.dev/pricing')}</li>
+						<li>References: {ext('https://www.deque.com/axe/')}, {ext('https://pagespeed.web.dev/pricing')}</li>
 					</ul>
 					<div><a className="text-cyan-400 underline" href="/accessibility-scanner">Learn more</a></div>
 				</section>
@@ -695,7 +695,7 @@ export default function ServicesAdvertisingPage() {
 					<p className="text-slate-300">Auto-triage, summarize, and resolve common IT tickets.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $49–$299/mo</li>
-						<li>References: {ext('https://www.servicenow.com/pricing.html')}, {ext('https://www.atlassian.com/software/jira/service-management/pricing')}</li>
+						<li>References: {ext('https://www.servicenow.com/')}, {ext('https://www.atlassian.com/software/jira/service-management/pricing')}</li>
 					</ul>
 				</section>
 

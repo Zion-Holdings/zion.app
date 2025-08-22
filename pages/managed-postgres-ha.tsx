@@ -44,7 +44,7 @@ export default function ManagedPostgresHA() {
 								<p className="mt-4 text-3xl font-bold">Custom</p>
 							</div>
 						</div>
-						<p className="mt-4 text-sm text-gray-400">Market references: <a className="underline hover:text-cyan-300" href="https://www.crunchydata.com/products/crunchy-bridge" target="_blank" rel="noreferrer">Crunchy Bridge</a>, <a className="underline hover:text-cyan-300" href="https://aiven.io/postgresql/pricing" target="_blank" rel="noreferrer">Aiven</a>, <a className="underline hover:text-cyan-300" href="https://cloud.google.com/sql/pricing" target="_blank" rel="noreferrer">Cloud SQL</a>.</p>
+						<p className="mt-4 text-sm text-gray-400">Market references: <a className="underline hover:text-cyan-300" href="https://www.crunchydata.com/products/crunchy-bridge" target="_blank" rel="noreferrer">Crunchy Bridge</a>, <a className="underline hover:text-cyan-300" href="https://aiven.io/postgresql" target="_blank" rel="noreferrer">Aiven</a>, <a className="underline hover:text-cyan-300" href="https://cloud.google.com/sql/pricing" target="_blank" rel="noreferrer">Cloud SQL</a>.</p>
 					</div>
 
 					<div className="mt-14 flex flex-wrap items-center gap-4">
