@@ -50,7 +50,8 @@ const navigationItems: NavigationItem[] = [
     children: [
       { name: 'Blog', href: '/blog', description: 'Insights and updates' },
       { name: 'Case Studies', href: '/case-studies', description: 'Proven results' },
-      { name: 'Developer', href: '/developer', description: 'Docs and SDKs' }
+      { name: 'Developer', href: '/developer', description: 'Docs and SDKs' },
+      { name: 'Services Advertising', href: '/services-advertising', description: 'Features, benefits and market pricing links' }
     ]
   },
   {
