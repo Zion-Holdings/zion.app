@@ -12,13 +12,13 @@ export default function App({ Component, pageProps }: AppProps) {
 		<SEOContext.Provider value={{ renderedRef }}>
 			<a href="#main" className="skip-link">Skip to main content</a>
 			<a href="#main-content" className="skip-link">Skip to content</a>
-			<DefaultSEO />
 			<Analytics />
 			<Layout>
 				<main id="main-content">
 					<Component {...pageProps} />
 				</main>
 			</Layout>
+			<DefaultSEO />
 		</SEOContext.Provider>
 	);
 }
