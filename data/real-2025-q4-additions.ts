@@ -259,6 +259,7 @@ export const realQ4Services2025: RealQ4Service[] = [
 		rating: 4.5,
 		reviews: 28
 	}
+];
 export const real2025Q4Additions = [
   {
     id: 'ai-governance-control-center',
