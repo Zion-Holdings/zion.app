@@ -1,403 +1,481 @@
 import React from 'react';
-import Head from 'next/head';
-import Card from '../components/ui/Card';
-import Button from '../components/ui/Button';
-import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { BookOpen, FileText, Video, Headphones, Download, ExternalLink, ArrowRight, Brain, Rocket, Shield, Zap, Target, Award, Globe, Users, Code, Database, Network, Server, Monitor, Smartphone, Camera, Gamepad2, Palette, Music, Film, BookOpenCheck, Building, MessageCircle, Github, Globe as GlobeIcon, BookOpen as BookOpenIcon, Video as VideoIcon, Headphones as HeadphonesIcon } from 'lucide-react';
+import Layout from '../components/layout/Layout';
 
-export default function ResourcesPage() {
-  const resources = [
-    {
-      title: 'AI Implementation Guide',
-      description: 'A comprehensive guide to implementing AI solutions in your business, from strategy to deployment.',
-      type: 'Guide',
-      category: 'AI & Automation',
-      downloadUrl: '/docs',
-      image: '📚',
-      color: 'text-cyan-400',
-      size: '2.4 MB',
-      format: 'PDF'
-    },
-    {
-      title: 'Cloud Architecture Best Practices',
-      description: 'Learn the best practices for building scalable, secure, and efficient cloud infrastructure.',
-      type: 'Whitepaper',
-      category: 'Cloud Computing',
-      downloadUrl: '/docs',
-      image: '☁️',
-      color: 'text-blue-400',
-      size: '1.8 MB',
-      format: 'PDF'
-    },
-    {
-      title: 'DevOps Automation Checklist',
-      description: 'A practical checklist for implementing DevOps automation in your organization.',
-      type: 'Checklist',
-      category: 'DevOps',
-      downloadUrl: '/docs',
-      image: '⚙️',
-      color: 'text-purple-400',
-      size: '856 KB',
-      format: 'PDF'
-    },
-    {
-      title: 'Data Security Framework',
-      description: 'Comprehensive framework for ensuring data security and compliance in AI systems.',
-      type: 'Framework',
-      category: 'Security',
-      downloadUrl: '/docs',
-      image: '🔒',
-      color: 'text-green-400',
-      size: '3.2 MB',
-      format: 'PDF'
-    },
-    {
-      title: 'Performance Optimization Guide',
-      description: 'Advanced techniques for optimizing AI and automation system performance.',
-      type: 'Guide',
-      category: 'Performance',
-      downloadUrl: '/docs',
-      image: '🚀',
-      color: 'text-orange-400',
-      size: '2.1 MB',
-      format: 'PDF'
-    },
-    {
-      title: 'Technology Stack Comparison',
-      description: 'Detailed comparison of different technology stacks for AI and automation projects.',
-      type: 'Analysis',
-      category: 'Technology',
-      downloadUrl: '/docs',
-      image: '⚡',
-      color: 'text-fuchsia-400',
-      size: '1.5 MB',
-      format: 'PDF'
-    }
-  ];
+const resourceCategories = [
+  {
+    id: 'documentation',
+    title: 'Documentation',
+    description: 'Comprehensive guides, API references, and technical documentation',
+    icon: <FileText className="w-12 h-12 text-cyan-400" />,
+    color: 'text-cyan-400',
+    bgColor: 'bg-cyan-400/10',
+    resources: [
+      {
+        title: 'AI Services API Reference',
+        description: 'Complete API documentation for all AI consciousness and automation services',
+        type: 'API Docs',
+        link: '/docs/ai-services-api',
+        icon: <Brain className="w-6 h-6" />
+      },
+      {
+        title: 'Quantum Computing Guide',
+        description: 'Introduction to quantum computing concepts and our quantum services',
+        type: 'Guide',
+        link: '/docs/quantum-computing',
+        icon: <Rocket className="w-6 h-6" />
+      },
+      {
+        title: 'Autonomous Systems Manual',
+        description: 'How to implement and manage autonomous IT infrastructure',
+        type: 'Manual',
+        link: '/docs/autonomous-systems',
+        icon: <Shield className="w-6 h-6" />
+      },
+      {
+        title: 'Security Best Practices',
+        description: 'Security guidelines and best practices for enterprise deployments',
+        type: 'Guide',
+        link: '/docs/security-best-practices',
+        icon: <Shield className="w-6 h-6" />
+      }
+    ]
+  },
+  {
+    id: 'sdks',
+    title: 'SDKs & Libraries',
+    description: 'Client libraries and development tools for easy integration',
+    icon: <Code className="w-12 h-12 text-blue-400" />,
+    color: 'text-blue-400',
+    bgColor: 'bg-blue-400/10',
+    resources: [
+      {
+        title: 'Python SDK',
+        description: 'Official Python client library for Zion Tech Group services',
+        type: 'SDK',
+        link: 'https://github.com/ziontechgroup/python-sdk',
+        icon: <Code className="w-6 h-6" />,
+        external: true
+      },
+      {
+        title: 'JavaScript SDK',
+        description: 'Node.js and browser JavaScript client library',
+        type: 'SDK',
+        link: 'https://github.com/ziontechgroup/javascript-sdk',
+        icon: <Code className="w-6 h-6" />,
+        external: true
+      },
+      {
+        title: 'Go SDK',
+        description: 'Go client library for high-performance applications',
+        type: 'SDK',
+        link: 'https://github.com/ziontechgroup/go-sdk',
+        icon: <Code className="w-6 h-6" />,
+        external: true
+      },
+      {
+        title: 'REST API Client',
+        description: 'Lightweight REST API client for any programming language',
+        type: 'Client',
+        link: '/docs/rest-api-client',
+        icon: <Code className="w-6 h-6" />
+      }
+    ]
+  },
+  {
+    id: 'tools',
+    title: 'Developer Tools',
+    description: 'Tools and utilities to accelerate development and testing',
+    icon: <Zap className="w-12 h-12 text-purple-400" />,
+    color: 'text-purple-400',
+    bgColor: 'bg-purple-400/10',
+    resources: [
+      {
+        title: 'AI Model Testing Suite',
+        description: 'Comprehensive testing framework for AI models and services',
+        type: 'Tool',
+        link: '/tools/ai-testing-suite',
+        icon: <Brain className="w-6 h-6" />
+      },
+      {
+        title: 'Quantum Simulator',
+        description: 'Local quantum computing simulator for development and testing',
+        type: 'Tool',
+        link: '/tools/quantum-simulator',
+        icon: <Rocket className="w-6 h-6" />
+      },
+      {
+        title: 'Performance Monitor',
+        description: 'Real-time performance monitoring and optimization tools',
+        type: 'Tool',
+        link: '/tools/performance-monitor',
+        icon: <Monitor className="w-6 h-6" />
+      },
+      {
+        title: 'Security Scanner',
+        description: 'Automated security vulnerability scanning and assessment',
+        type: 'Tool',
+        link: '/tools/security-scanner',
+        icon: <Shield className="w-6 h-6" />
+      }
+    ]
+  },
+  {
+    id: 'learning',
+    title: 'Learning Resources',
+    description: 'Tutorials, courses, and educational content',
+    icon: <BookOpen className="w-12 h-12 text-green-400" />,
+    color: 'text-green-400',
+    bgColor: 'bg-green-400/10',
+    resources: [
+      {
+        title: 'AI Consciousness Course',
+        description: 'Learn about AI consciousness and emotional intelligence',
+        type: 'Course',
+        link: '/learning/ai-consciousness',
+        icon: <Brain className="w-6 h-6" />
+      },
+      {
+        title: 'Quantum Computing Fundamentals',
+        description: 'Introduction to quantum computing principles and applications',
+        type: 'Course',
+        link: '/learning/quantum-computing',
+        icon: <Rocket className="w-6 h-6" />
+      },
+      {
+        title: 'Autonomous Systems Workshop',
+        description: 'Hands-on workshop for building autonomous IT infrastructure',
+        type: 'Workshop',
+        link: '/learning/autonomous-systems',
+        icon: <Shield className="w-6 h-6" />
+      },
+      {
+        title: 'Space Technology Primer',
+        description: 'Overview of space technology and resource mining concepts',
+        type: 'Guide',
+        link: '/learning/space-technology',
+        icon: <Globe className="w-6 h-6" />
+      }
+    ]
+  }
+];
 
-  const tools = [
-    {
-      name: 'AI Project Calculator',
-      description: 'Calculate the ROI and timeline for your AI implementation project.',
-      category: 'Calculator',
-      image: '🧮',
-      color: 'text-cyan-400',
-      url: '/contact'
-    },
-    {
-      name: 'Performance Benchmark Tool',
-      description: 'Benchmark your systems against industry standards and best practices.',
-      category: 'Tool',
-      image: '📊',
-      color: 'text-blue-400',
-      url: '/contact'
-    },
-    {
-      name: 'Security Assessment Framework',
-      description: 'Assess the security posture of your AI and automation systems.',
-      category: 'Framework',
-      image: '🛡️',
-      color: 'text-green-400',
-      url: '/contact'
-    },
-    {
-      name: 'Cost Optimization Analyzer',
-      description: 'Analyze and optimize costs for cloud infrastructure and AI services.',
-      category: 'Analyzer',
-      image: '💰',
-      color: 'text-purple-400',
-      url: '/contact'
-    }
-  ];
+const featuredResources = [
+  {
+    title: 'Getting Started Guide',
+    description: 'Quick start guide for new users to get up and running with our services',
+    type: 'Guide',
+    link: '/docs/getting-started',
+    icon: <BookOpenIcon className="w-8 h-8" />,
+    color: 'text-cyan-400',
+    bgColor: 'bg-cyan-400/10'
+  },
+  {
+    title: 'API Playground',
+    description: 'Interactive API testing environment to explore our services',
+    type: 'Tool',
+    link: '/tools/api-playground',
+    icon: <Code className="w-8 h-8" />,
+    color: 'text-blue-400',
+    bgColor: 'bg-blue-400/10'
+  },
+  {
+    title: 'Video Tutorials',
+    description: 'Step-by-step video tutorials for common use cases',
+    type: 'Videos',
+    link: '/resources/videos',
+    icon: <VideoIcon className="w-8 h-8" />,
+    color: 'text-purple-400',
+    bgColor: 'bg-purple-400/10'
+  },
+  {
+    title: 'Community Forum',
+    description: 'Connect with other developers and get help from our team',
+    type: 'Community',
+    link: '/community',
+    icon: <Users className="w-8 h-8" />,
+    color: 'text-green-400',
+    bgColor: 'bg-green-400/10'
+  }
+];
 
-  const categories = ['All', 'AI & Automation', 'Cloud Computing', 'DevOps', 'Security', 'Performance', 'Technology'];
+const quickLinks = [
+  { name: 'API Reference', href: '/docs/api', icon: <FileText className="w-5 h-5" /> },
+  { name: 'SDK Downloads', href: '/downloads', icon: <Download className="w-5 h-5" /> },
+  { name: 'Support Center', href: '/support', icon: <MessageCircle className="w-5 h-5" /> },
+  { name: 'GitHub Repos', href: 'https://github.com/ziontechgroup', icon: <Github className="w-5 h-5" />, external: true },
+  { name: 'Status Page', href: '/status', icon: <Monitor className="w-5 h-5" /> },
+  { name: 'Blog', href: '/blog', icon: <BookOpen className="w-5 h-5" /> }
+];
 
+export default function Resources() {
   return (
-    <>
-      <Head>
-        <title>Resources | Zion Tech Group - Tools & Guides</title>
-        <meta name="description" content="Access comprehensive resources, tools, and guides to help you implement AI and automation solutions effectively." />
-        <meta property="og:title" content="Resources | Zion Tech Group" />
-        <meta property="og:description" content="Tools, guides, and resources for AI implementation." />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Head>
-
-      {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-black via-gray-900 to-black overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(139,92,246,0.1),transparent_50%)]" />
-        
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-7xl font-black mb-8 bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent">
-            Resources & Tools
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            Comprehensive resources, guides, and tools to accelerate your AI and automation journey
-          </p>
-        </div>
-      </section>
-
-      {/* Category Filter */}
-      <section className="py-12 bg-gradient-to-b from-gray-900 to-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-4">
-            {categories.map((category) => (
-              <button
-                key={category}
-                className="px-6 py-3 rounded-full bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white transition-all duration-200 border border-gray-700 hover:border-blue-500"
-              >
-                {category}
-              </button>
-            ))}
+    <Layout>
+      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
+        {/* Hero Section */}
+        <section className="relative py-20 px-4">
+          <div className="container mx-auto max-w-6xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center"
+            >
+              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
+                Resources Hub
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                Everything you need to build with our revolutionary AI consciousness, quantum computing, 
+                and autonomous systems. From documentation to tools, we've got you covered.
+              </p>
+            </motion.div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Downloadable Resources */}
-      <section className="py-20 bg-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-              Downloadable Resources
-            </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Expert guides, frameworks, and whitepapers to help you succeed
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {resources.map((resource, index) => (
-              <Card
-                key={index}
-                className="group hover:border-blue-400/30 overflow-hidden"
-                style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
-              >
-                <div className="text-6xl mb-6 text-center group-hover:scale-110 transition-transform duration-300">
-                  {resource.image}
-                </div>
-                
-                <div className="mb-4">
-                  <span className={`inline-block px-3 py-1 bg-gray-800 text-sm rounded-full mb-3 ${resource.color}`}>
-                    {resource.category}
-                  </span>
-                  <h3 className="text-xl font-bold text-white mb-3 leading-tight">
-                    {resource.title}
-                  </h3>
-                  <p className="text-gray-400 mb-6 leading-relaxed">
-                    {resource.description}
-                  </p>
-                </div>
-
-                <div className="flex items-center justify-between mb-6 text-sm text-gray-400">
-                  <span>{resource.type}</span>
-                  <span>{resource.size}</span>
-                  <span>{resource.format}</span>
-                </div>
-
-                <Button
-                  href={resource.downloadUrl}
-                  size="sm"
-                  className="w-full"
+        {/* Quick Links */}
+        <section className="py-12 px-4">
+          <div className="container mx-auto max-w-6xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="flex flex-wrap justify-center gap-4"
+            >
+              {quickLinks.map((link, index) => (
+                <a
+                  key={index}
+                  href={link.href}
+                  target={link.external ? '_blank' : undefined}
+                  rel={link.external ? 'noopener noreferrer' : undefined}
+                  className="flex items-center gap-3 px-6 py-3 bg-black/40 border border-gray-800 rounded-full text-gray-300 hover:bg-cyan-500/10 hover:border-cyan-500/50 hover:text-cyan-400 transition-all duration-300"
                 >
-                  Download Resource
-                </Button>
-              </Card>
-            ))}
+                  {link.icon}
+                  <span>{link.name}</span>
+                  {link.external && <ExternalLink className="w-4 h-4" />}
+                </a>
+              ))}
+            </motion.div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Interactive Tools */}
-      <section className="py-20 bg-gradient-to-b from-black to-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-              Interactive Tools
-            </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Practical tools and calculators to help you plan and implement your projects
-            </p>
-          </div>
+        {/* Featured Resources */}
+        <section className="py-20 px-4">
+          <div className="container mx-auto max-w-6xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold text-white mb-4">Featured Resources</h2>
+              <p className="text-xl text-gray-300">Essential tools and guides to get you started</p>
+            </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {tools.map((tool, index) => (
-              <Card
-                key={index}
-                className="text-center group hover:border-blue-400/30"
-                style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
-              >
-                <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">
-                  {tool.image}
-                </div>
-                
-                <h3 className="text-lg font-semibold text-white mb-3">
-                  {tool.name}
-                </h3>
-                <p className="text-gray-400 mb-4 text-sm">
-                  {tool.description}
-                </p>
-                
-                <span className={`inline-block px-3 py-1 bg-gray-800 text-xs rounded-full mb-4 ${tool.color}`}>
-                  {tool.category}
-                </span>
-                
-                <Button
-                  href={tool.url}
-                  variant="outline"
-                  size="sm"
-                  className="w-full"
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {featuredResources.map((resource, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.6 + index * 0.1 }}
+                  className="group"
                 >
-                  Launch Tool
-                </Button>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Video Tutorials */}
-      <section className="py-20 bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-              Video Tutorials
-            </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Step-by-step video guides to help you master AI and automation implementation
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: 'Getting Started with AI Automation',
-                duration: '15:32',
-                thumbnail: '🎬',
-                category: 'Beginner'
-              },
-              {
-                title: 'Advanced Cloud Infrastructure Setup',
-                duration: '28:45',
-                thumbnail: '☁️',
-                category: 'Advanced'
-              },
-              {
-                title: 'Security Best Practices for AI Systems',
-                duration: '22:18',
-                thumbnail: '🔒',
-                category: 'Intermediate'
-              }
-            ].map((video, index) => (
-              <Card
-                key={index}
-                className="group hover:border-blue-400/30 overflow-hidden"
-                style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
-              >
-                <div className="relative">
-                  <div className="text-8xl text-center py-8 group-hover:scale-110 transition-transform duration-300">
-                    {video.thumbnail}
-                  </div>
-                  <div className="absolute top-4 right-4 bg-black/80 text-white text-xs px-2 py-1 rounded">
-                    {video.duration}
-                  </div>
-                </div>
-                
-                <div className="p-6">
-                  <span className="inline-block px-2 py-1 bg-gray-800 text-blue-400 text-xs rounded-full mb-3">
-                    {video.category}
-                  </span>
-                  <h3 className="text-lg font-semibold text-white mb-3">
-                    {video.title}
-                  </h3>
-                  
-                  <Button
-                    href="/resources"
-                    variant="outline"
-                    size="sm"
-                    className="w-full"
-                  >
-                    Watch Tutorial
-                  </Button>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Community & Support */}
-      <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Card className="p-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-              Join Our Community
-            </h2>
-            <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-              Connect with experts, share experiences, and get support from our community of AI and automation professionals.
-            </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              {[
-                { icon: '💬', title: 'Discord Community', description: 'Join discussions and get real-time help' },
-                { icon: '📧', title: 'Email Support', description: 'Get expert guidance via email' },
-                { icon: '📚', title: 'Documentation', description: 'Comprehensive guides and references' }
-              ].map((item, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-4xl mb-3">{item.icon}</div>
-                  <h3 className="text-lg font-semibold text-white mb-2">{item.title}</h3>
-                  <p className="text-gray-400 text-sm">{item.description}</p>
-                </div>
+                  <a href={resource.link}>
+                    <div className={`p-6 rounded-2xl border border-gray-800 bg-black/40 hover:bg-black/60 transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-cyan-500/10`}>
+                      <div className={`${resource.bgColor} w-16 h-16 rounded-2xl flex items-center justify-center mb-4`}>
+                        <div className={resource.color}>{resource.icon}</div>
+                      </div>
+                      <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">
+                        {resource.title}
+                      </h3>
+                      <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+                        {resource.description}
+                      </p>
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs text-cyan-400 font-medium">{resource.type}</span>
+                        <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-cyan-400 transition-colors duration-300" />
+                      </div>
+                    </div>
+                  </a>
+                </motion.div>
               ))}
             </div>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                href="/contact"
-                size="lg"
-                className="group-hover:scale-105 transition-transform duration-200"
-              >
-                Join Discord
-              </Button>
-              <Button
-                href="/contact"
-                variant="outline"
-                size="lg"
-              >
-                Contact Support
-              </Button>
-            </div>
-          </Card>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Need More Help?
-          </h2>
-          <p className="text-xl text-blue-100 mb-8">
-                         Can&apos;t find what you&apos;re looking for? Our experts are here to help you succeed.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              href="/contact"
-              variant="secondary"
-              size="lg"
-              className="bg-white text-blue-600 hover:bg-gray-100"
-            >
-              Get Expert Help
-            </Button>
-            <Button
-              href="/services"
-              variant="outline"
-              size="lg"
-              className="border-white text-white hover:bg-white hover:text-blue-600"
-            >
-              Explore Services
-            </Button>
           </div>
-        </div>
-      </section>
-    </>
+        </section>
+
+        {/* Resource Categories */}
+        <section className="py-20 px-4 bg-black/30">
+          <div className="container mx-auto max-w-6xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold text-white mb-4">Resource Categories</h2>
+              <p className="text-xl text-gray-300">Organized resources to help you find what you need</p>
+            </motion.div>
+
+            <div className="space-y-12">
+              {resourceCategories.map((category, categoryIndex) => (
+                <motion.div
+                  key={category.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 1.0 + categoryIndex * 0.2 }}
+                >
+                  <div className="flex items-center gap-4 mb-8">
+                    <div className={`${category.bgColor} w-16 h-16 rounded-2xl flex items-center justify-center`}>
+                      {category.icon}
+                    </div>
+                    <div>
+                      <h3 className={`text-3xl font-bold ${category.color}`}>{category.title}</h3>
+                      <p className="text-xl text-gray-300">{category.description}</p>
+                    </div>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-6">
+                    {category.resources.map((resource, resourceIndex) => (
+                      <motion.div
+                        key={resourceIndex}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8, delay: 1.2 + categoryIndex * 0.2 + resourceIndex * 0.1 }}
+                        className="group"
+                      >
+                        <a
+                          href={resource.link}
+                          target={resource.external ? '_blank' : undefined}
+                          rel={resource.external ? 'noopener noreferrer' : undefined}
+                        >
+                          <div className="p-6 bg-black/40 border border-gray-800 rounded-xl hover:border-cyan-500/50 transition-all duration-300 group-hover:bg-black/60">
+                            <div className="flex items-start justify-between mb-4">
+                              <div className="flex items-center gap-3">
+                                <div className="text-cyan-400">{resource.icon}</div>
+                                <span className="text-xs text-cyan-400 font-medium bg-cyan-400/10 px-2 py-1 rounded-full">
+                                  {resource.type}
+                                </span>
+                              </div>
+                              {resource.external && <ExternalLink className="w-4 h-4 text-gray-400" />}
+                            </div>
+                            <h4 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">
+                              {resource.title}
+                            </h4>
+                            <p className="text-gray-300 text-sm leading-relaxed">
+                              {resource.description}
+                            </p>
+                          </div>
+                        </a>
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Community & Support */}
+        <section className="py-20 px-4">
+          <div className="container mx-auto max-w-6xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.6 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold text-white mb-4">Community & Support</h2>
+              <p className="text-xl text-gray-300">Connect with developers and get the help you need</p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                {
+                  title: 'Developer Community',
+                  description: 'Join our community of developers building the future with AI and quantum computing',
+                  icon: <Users className="w-12 h-12 text-cyan-400" />,
+                  link: '/community',
+                  features: ['Discussion forums', 'Code sharing', 'Project showcases', 'Networking events']
+                },
+                {
+                  title: 'Technical Support',
+                  description: 'Get expert help with implementation, troubleshooting, and optimization',
+                  icon: <MessageCircle className="w-12 h-12 text-blue-400" />,
+                  link: '/support',
+                  features: ['24/7 support', 'Expert engineers', 'Documentation updates', 'Best practices']
+                },
+                {
+                  title: 'Training & Workshops',
+                  description: 'Hands-on training sessions and workshops for teams and organizations',
+                  icon: <BookOpen className="w-12 h-12 text-purple-400" />,
+                  link: '/training',
+                  features: ['Custom training', 'Workshop materials', 'Certification programs', 'Team building']
+                }
+              ].map((community, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 1.8 + index * 0.1 }}
+                  className="p-8 bg-black/40 border border-gray-800 rounded-2xl hover:border-cyan-500/50 transition-all duration-300"
+                >
+                  <div className="flex justify-center mb-6">{community.icon}</div>
+                  <h3 className="text-xl font-bold text-white mb-3 text-center">{community.title}</h3>
+                  <p className="text-gray-300 text-center mb-6 leading-relaxed">{community.description}</p>
+                  
+                  <div className="space-y-3 mb-6">
+                    {community.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-center gap-2 text-sm text-gray-300">
+                        <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
+                        <span>{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <a
+                    href={community.link}
+                    className="w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
+                  >
+                    Learn More
+                    <ArrowRight className="w-4 h-4" />
+                  </a>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-20 px-4 bg-black/30">
+          <div className="container mx-auto max-w-4xl text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 2.0 }}
+            >
+              <h2 className="text-4xl font-bold text-white mb-6">Need Something Specific?</h2>
+              <p className="text-xl text-gray-300 mb-8">
+                Can't find what you're looking for? Our team is here to help you get the resources you need.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="/contact"
+                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-full hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+                >
+                  Contact Support
+                </a>
+                <a
+                  href="/support"
+                  className="px-8 py-4 border-2 border-cyan-500 text-cyan-400 font-semibold rounded-full hover:bg-cyan-500 hover:text-black transition-all duration-300"
+                >
+                  Visit Support Center
+                </a>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      </div>
+    </Layout>
   );
 }

@@ -212,6 +212,19 @@ const navigationItems: NavigationItem[] = [
       { name: 'Serverless Lakehouse Starter', href: '/services/serverless-lakehouse-starter', description: 'ELT + dbt + dashboards' },
       { name: 'Data Contracts Hub', href: '/services/data-contracts-hub', description: 'Schema diffs & CI gates' }
     ]
+  },
+  {
+    name: 'Company',
+    href: '/about',
+    icon: <Building className="w-5 h-5" />,
+    description: 'About Zion Tech Group',
+    children: [
+      { name: 'About Us', href: '/about', description: 'Our mission and vision' },
+      { name: 'Careers', href: '/careers', description: 'Join our team' },
+      { name: 'Contact', href: '/contact', description: 'Get in touch' },
+      { name: 'Get Started', href: '/get-started', description: 'Begin your journey' },
+      { name: 'Quote Request', href: '/quote', description: 'Get a custom quote' }
+    ]
   }
 ];
 

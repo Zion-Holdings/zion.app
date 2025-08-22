@@ -138,6 +138,21 @@ const footerSections = [
       { name: 'Secrets Rotation Automation', href: '/secrets-rotation-automation' },
       { name: 'API Performance Testing', href: '/api-performance-testing' }
     ]
+  },
+  {
+    title: 'Company',
+    description: 'About Zion Tech Group',
+    icon: <Building className="w-5 h-5 text-gray-400" />,
+    links: [
+      { name: 'About Us', href: '/about' },
+      { name: 'Careers', href: '/careers' },
+      { name: 'Contact', href: '/contact' },
+      { name: 'Get Started', href: '/get-started' },
+      { name: 'Quote Request', href: '/quote' },
+      { name: 'Privacy Policy', href: '/privacy' },
+      { name: 'Terms of Service', href: '/terms' },
+      { name: 'Cookie Policy', href: '/cookies' }
+    ]
   }
 ];
 
