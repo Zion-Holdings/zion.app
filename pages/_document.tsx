@@ -30,6 +30,10 @@ export default class MyDocument extends Document {
 					<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 					<link rel="dns-prefetch" href="//plausible.io" />
 					<link rel="preconnect" href="https://plausible.io" crossOrigin="anonymous" />
+					<meta property="og:type" content="website" />
+					<meta property="og:site_name" content="Zion Tech Group" />
+					<meta property="og:image" content="https://ziontechgroup.com/og-default.png" />
+					<meta name="twitter:card" content="summary_large_image" />
 					<script
 						type="application/ld+json"
 						dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
