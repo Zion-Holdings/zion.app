@@ -1,36 +1,46 @@
 import React from 'react';
-import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
-import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import Head from 'next/head';
 
 export default function ContactPage() {
-  const contact = {
-    mobile: '+1 302 464 0950',
-    email: 'kleber@ziontechgroup.com',
-    address: '364 E Main St STE 1008 Middletown DE 19709',
-  };
-  return (
-    <UltraFuturisticBackground variant="quantum" intensity="high">
-      <div className="container mx-auto px-4 pt-28 pb-20 text-white">
-        <div className="text-center max-w-3xl mx-auto mb-10">
-          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Contact Zion Tech Group</h1>
-          <p className="text-gray-300 mt-3">We respond fast. Tell us about your goals and we’ll recommend the best solution.</p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="p-6 bg-black/40 border border-gray-700/60 rounded-2xl">
-            <div className="flex items-center gap-3 text-cyan-300"><Phone className="w-5 h-5" /><a href={`tel:${contact.mobile}`} className="hover:underline">{contact.mobile}</a></div>
-            <div className="mt-3 flex items-center gap-3 text-purple-300"><Mail className="w-5 h-5" /><a href={`mailto:${contact.email}`} className="hover:underline">{contact.email}</a></div>
-            <div className="mt-3 flex items-center gap-3 text-pink-300"><MapPin className="w-5 h-5" /><a href={`https://maps.google.com/?q=${encodeURIComponent(contact.address)}`} target="_blank" rel="noreferrer" className="hover:underline text-sm">{contact.address}</a></div>
-            <div className="mt-3 flex items-center gap-3 text-emerald-300"><Clock className="w-5 h-5" /><span>Mon–Fri: 9AM–6PM EST</span></div>
-          </div>
-          <form className="md:col-span-2 p-6 bg-black/40 border border-gray-700/60 rounded-2xl grid grid-cols-1 md:grid-cols-2 gap-4">
-            <input className="bg-gray-900/60 border border-gray-700/60 rounded-lg px-4 py-3 outline-none focus:border-cyan-500/60" placeholder="Full name" />
-            <input className="bg-gray-900/60 border border-gray-700/60 rounded-lg px-4 py-3 outline-none focus:border-cyan-500/60" placeholder="Company" />
-            <input className="bg-gray-900/60 border border-gray-700/60 rounded-lg px-4 py-3 outline-none focus:border-cyan-500/60 md:col-span-2" placeholder="Email" />
-            <textarea className="bg-gray-900/60 border border-gray-700/60 rounded-lg px-4 py-3 outline-none focus:border-cyan-500/60 md:col-span-2" rows={6} placeholder="Tell us about your project, timeline, and goals"></textarea>
-            <button type="submit" className="md:col-span-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 font-semibold hover:from-cyan-600 hover:to-blue-700">Request a consultation</button>
-          </form>
-        </div>
-      </div>
-    </UltraFuturisticBackground>
-  );
+	return (
+		<>
+			<Head>
+				<title>Contact | Zion Tech Group</title>
+				<link rel="canonical" href="https://ziontechgroup.com/contact" />
+			</Head>
+			<section className="relative py-16 lg:py-24">
+				<div className="container mx-auto px-4">
+					<h1 className="text-3xl md:text-5xl font-extrabold text-white mb-6">Contact Zion Tech Group</h1>
+					<p className="text-gray-300 mb-10 max-w-2xl">Wed love to learn about your goals and recommend the right solutions. Reach us anytime.</p>
+
+					<div className="grid md:grid-cols-3 gap-6">
+						<div className="p-6 rounded-2xl bg-white/5 border border-white/10">
+							<div className="text-sm text-gray-400 mb-2">Mobile</div>
+							<a className="text-xl font-semibold text-white hover:text-cyan-400" href="tel:+13024640950">+1 302 464 0950</a>
+						</div>
+						<div className="p-6 rounded-2xl bg-white/5 border border-white/10">
+							<div className="text-sm text-gray-400 mb-2">E-mail</div>
+							<a className="text-xl font-semibold text-white hover:text-cyan-400" href="mailto:kleber@ziontechgroup.com">kleber@ziontechgroup.com</a>
+						</div>
+						<div className="p-6 rounded-2xl bg-white/5 border border-white/10">
+							<div className="text-sm text-gray-400 mb-2">Address</div>
+							<div className="text-white font-semibold">364 E Main St STE 1008</div>
+							<div className="text-white">Middletown DE 19709</div>
+						</div>
+					</div>
+
+					<div className="mt-10 p-6 rounded-2xl bg-white/5 border border-white/10">
+						<h2 className="text-white text-xl font-semibold mb-3">Get a quote or book a demo</h2>
+						<p className="text-gray-300 mb-4">Email us, call us, or use the quick links below.</p>
+						<div className="flex flex-wrap gap-3">
+							<a href="tel:+13024640950" className="px-5 py-3 rounded-xl bg-white/10 text-white hover:bg-white/20">Call now</a>
+							<a href="mailto:kleber@ziontechgroup.com" className="px-5 py-3 rounded-xl bg-white/10 text-white hover:bg-white/20">Email us</a>
+							<a href="/quote" className="px-5 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white">Get a quote</a>
+							<a href="/demo" className="px-5 py-3 rounded-xl bg-gradient-to-r from-blue-500 to-emerald-600 text-white">Book a demo</a>
+						</div>
+					</div>
+				</div>
+			</section>
+		</>
+	);
 }

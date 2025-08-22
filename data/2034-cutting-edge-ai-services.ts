@@ -33,83 +33,98 @@ export interface CuttingEdgeAIService {
 
 export const cuttingEdgeAIServices = [
 	{
-		id: 'rag-starter-kit',
-		name: 'RAG Starter Kit',
-		description: 'End-to-end Retrieval Augmented Generation stack with embeddings, chunking, evals, and governance.',
-		category: 'AI Services',
+		title: 'AI Customer Success Platform',
+		name: 'AI Customer Success Platform',
+		slug: 'ai-customer-success-platform',
+		description: 'Predict churn, trigger playbooks, and automate outreach using LLMs and product telemetry.',
+		category: 'AI & Data',
 		features: [
-			'Ingestion, chunking, and hybrid search',
-			'Observability, evals, and prompts',
-			'Safety policies and red-teaming',
-			'Reference architectures for AWS/Azure/GCP'
+			'Churn prediction models and risk scoring',
+			'Health scoring from product usage telemetry',
+			'Automated outreach with LLM-generated emails',
+			'Playbooks and workflow automation',
+			'CRM integrations (HubSpot, Salesforce)'
 		],
-		pricing: { starter: '$890/month' },
-		link: 'https://ziontechgroup.com/ai-services',
-		rating: 4.8,
-		launchDate: '2025-08-01'
+		pricing: {
+			starter: '$499/mo',
+			growth: '$1,499/mo',
+			enterprise: 'Custom'
+		}
 	},
 	{
-		id: 'ai-guardrails-policy-engine',
-		name: 'AI Guardrails & Policy Engine',
-		description: 'Safety filters, PII redaction, jailbreak protection, and allow/deny rules for LLM apps.',
-		category: 'AI Services',
+		title: 'AI Sales Intelligence Platform',
+		name: 'AI Sales Intelligence Platform',
+		slug: 'ai-sales-intelligence-platform',
+		description: 'Prospect research, personalized emails, and pipeline prioritization with AI.',
+		category: 'AI & Data',
 		features: [
-			'Prompt/response validation and policies',
-			'PII/PCI redaction and masking',
-			'Jailbreak and toxicity detection',
-			'Audit trails and governance packs'
+			'Account research and persona insights',
+			'Personalized multi-step email sequences',
+			'Call summaries and follow-up generation',
+			'Opportunity scoring and next-best-action',
+			'CRM enrichment and data hygiene'
 		],
-		pricing: { starter: '$290/month' },
-		link: 'https://ziontechgroup.com/ai-services',
-		rating: 4.7,
-		launchDate: '2025-08-01'
+		pricing: {
+			starter: '$399/mo',
+			growth: '$1,299/mo',
+			enterprise: 'Custom'
+		}
 	},
 	{
-		id: 'agent-orchestration-platform',
-		name: 'Agent Orchestration Platform',
-		description: 'Composable multi-agent workflows with tools, memory, handoffs, and safety checkpoints.',
-		category: 'AI Services',
+		title: 'AI Financial Planning Platform',
+		name: 'AI Financial Planning Platform',
+		slug: 'ai-financial-planning-platform',
+		description: 'Scenario modeling, forecasting, and variance analysis powered by AI.',
+		category: 'AI & Data',
 		features: [
-			'Tool use and function calling',
-			'Long/short-term memory strategies',
-			'Human-in-the-loop and quality gates',
-			'Canary deploys and kill switches'
+			'Rolling forecasts and scenario planning',
+			'LLM-based narrative insights on plan vs actuals',
+			'Automated board-ready reporting',
+			'Integrations: QuickBooks, NetSuite, Stripe',
+			'Custom drivers and sensitivity analysis'
 		],
-		pricing: { starter: '$690/month' },
-		link: 'https://ziontechgroup.com/ai-services',
-		rating: 4.7,
-		launchDate: '2025-08-01'
+		pricing: {
+			starter: '$599/mo',
+			growth: '$1,799/mo',
+			enterprise: 'Custom'
+		}
 	},
 	{
-		id: 'ai-evaluation-benchmarking',
-		name: 'AI Evaluation & Benchmarking',
-		description: 'Scenario-based prompt evals, golden sets, regression analysis, and model cost-performance tuning.',
-		category: 'AI Services',
+		title: 'AI HR Analytics Platform',
+		name: 'AI HR Analytics Platform',
+		slug: 'ai-hr-analytics-platform',
+		description: 'Attrition prediction, skills mapping, and workforce planning with AI.',
+		category: 'AI & Data',
 		features: [
-			'Golden sets and rubric scoring',
-			'Regression and drift monitoring',
-			'Cost-performance optimization',
-			'Leaderboard and model routing'
+			'Attrition risk and retention forecasts',
+			'Skills graph and internal mobility recommendations',
+			'DEI and sentiment analytics',
+			'Engagement survey analysis',
+			'ATS/HRIS integrations'
 		],
-		pricing: { starter: '$190/month' },
-		link: 'https://ziontechgroup.com/ai-services',
-		rating: 4.6,
-		launchDate: '2025-08-01'
+		pricing: {
+			starter: '$349/mo',
+			growth: '$1,099/mo',
+			enterprise: 'Custom'
+		}
 	},
 	{
-		id: 'ai-customer-support-agent',
-		name: 'AI Customer Support Agent',
-		description: 'Hybrid AI+Human support agent with knowledge grounding, secure actions, and analytics.',
-		category: 'AI Services',
+		title: 'AI Decision Engine',
+		name: 'AI Decision Engine',
+		slug: 'ai-powered-decision-engine',
+		description: 'Configurable policy rules + LLM tools for approvals, routing, and risk management.',
+		category: 'AI & Data',
 		features: [
-			'Knowledge grounding and secure tools',
-			'Escalations and handoffs',
-			'Quality monitoring and feedback loops',
-			'Analytics and CSAT tracking'
+			'Human-in-the-loop approvals',
+			'Explainable recommendations and risk flags',
+			'Pluggable tools and knowledge connectors',
+			'Audit trails and policy versioning',
+			'Webhook and queue integrations'
 		],
-		pricing: { starter: '$149/month' },
-		link: 'https://ziontechgroup.com/ai-services',
-		rating: 4.7,
-		launchDate: '2025-08-01'
+		pricing: {
+			starter: '$299/mo',
+			growth: '$999/mo',
+			enterprise: 'Custom'
+		}
 	}
 ];

@@ -184,10 +184,10 @@ export default function Services() {
         return (parseInt(getServicePricing(b).replace(/[^0-9]/g, '')) || 0) - 
                (parseInt(getServicePricing(a).replace(/[^0-9]/g, '')) || 0);
       case 'newest':
-        return new Date(b.launchDate || '2020-01-01').getTime() - 
-               new Date(a.launchDate || '2020-01-01').getTime();
+        return new Date((b as any).launchDate || '2020-01-01').getTime() - 
+               new Date((a as any).launchDate || '2020-01-01').getTime();
       case 'rating':
-        return (b.rating || 0) - (a.rating || 0);
+        return (((b as any).rating || 0) as number) - (((a as any).rating || 0) as number);
       default:
         return 0;
     }
@@ -404,7 +404,7 @@ export default function Services() {
               >
                 {paginatedServices.map((service, index) => (
                   <motion.div
-                    key={service.id}
+                    key={(service as any).id || (service as any).slug || (service as any).name}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -461,7 +461,7 @@ export default function Services() {
                       {/* Action Button */}
                       <div className="flex flex-col space-y-3">
                         <motion.a
-                          href={(service as any).link || `/services/${service.id}`}
+                          href={(service as any).link || `/services/${((service as any).slug || (service as any).name || 'service')}`}
                           whileHover={{ scale: 1.02 }}
                           whileTap={{ scale: 0.98 }}
                           className="flex items-center justify-center space-x-2 px-4 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 shadow-lg shadow-cyan-500/25"

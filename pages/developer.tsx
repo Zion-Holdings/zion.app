@@ -1,24 +1,24 @@
 import React from 'react';
 import Head from 'next/head';
-import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
 
 export default function DeveloperPage() {
 	return (
-		<UltraFuturisticBackground>
+		<>
 			<Head>
 				<title>Developer | Zion Tech Group</title>
-				<meta name="description" content="Developer resources: docs, SDKs, API references, and examples." />
 				<link rel="canonical" href="https://ziontechgroup.com/developer" />
 			</Head>
-			<div className="container mx-auto px-4 py-24 space-y-6 text-white">
-				<h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Developer</h1>
-				<p className="text-gray-300">Get started with our APIs and SDKs. Contact: +1 302 464 0950 • kleber@ziontechgroup.com.</p>
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-					<a className="p-6 rounded-2xl bg-black/50 border border-gray-700/60 hover:border-cyan-500/50" href="/docs">Documentation</a>
-					<a className="p-6 rounded-2xl bg-black/50 border border-gray-700/60 hover:border-cyan-500/50" href="/api-documentation">API Reference</a>
-					<a className="p-6 rounded-2xl bg-black/50 border border-gray-700/60 hover:border-cyan-500/50" href="/market-pricing">Market Pricing</a>
+			<section className="relative py-16 lg:py-24">
+				<div className="container mx-auto px-4">
+					<h1 className="text-3xl md:text-5xl font-extrabold text-white mb-6">Developer Portal</h1>
+					<p className="text-gray-300 mb-8 max-w-2xl">Start building with our APIs and micro SaaS services.</p>
+					<ol className="list-decimal list-inside space-y-3 text-gray-300">
+						<li>Explore the <a className="text-cyan-400" href="/api-documentation">API Reference</a>.</li>
+						<li>Request a sandbox from <a className="text-cyan-400" href="mailto:kleber@ziontechgroup.com">kleber@ziontechgroup.com</a>.</li>
+						<li>Review SDKs and examples in <a className="text-cyan-400" href="/resources">Resources</a>.</li>
+					</ol>
 				</div>
-			</div>
-		</UltraFuturisticBackground>
+			</section>
+		</>
 	);
 }
