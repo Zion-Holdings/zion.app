@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import UltraFuturisticNavigation2035 from './UltraFuturisticNavigation2035';
-import UltraFuturisticFooter2035 from './UltraFuturisticFooter2035';
+import UltraFuturisticNavigation2036 from './UltraFuturisticNavigation2036';
+import UltraFuturisticFooter2036 from './UltraFuturisticFooter2036';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
-import UltraFuturisticBackground2035 from '../backgrounds/UltraFuturisticBackground2035';
+import UltraFuturisticBackground2036 from '../backgrounds/UltraFuturisticBackground2036';
 import TopContactBar from './TopContactBar';
 
 interface LayoutProps {
@@ -18,7 +18,7 @@ export default function Layout({ children }: LayoutProps) {
       {/* Skip to content link for accessibility */}
       <a href="#main" className="skip-link">Skip to main content</a>
       {/* Futuristic Background */}
-      <UltraFuturisticBackground2035 />
+      <UltraFuturisticBackground2036 />
       
       {/* Layout Structure */}
       <div className="relative z-10">
@@ -26,7 +26,7 @@ export default function Layout({ children }: LayoutProps) {
         <TopContactBar />
         
         {/* Navigation */}
-        <UltraFuturisticNavigation2035 />
+        <UltraFuturisticNavigation2036 />
         
         {/* Sidebar and Main Content */}
         <div className="flex">
@@ -41,7 +41,7 @@ export default function Layout({ children }: LayoutProps) {
         </div>
         
         {/* Footer */}
-        <UltraFuturisticFooter2035 />
+        <UltraFuturisticFooter2036 />
       </div>
     </div>
   );

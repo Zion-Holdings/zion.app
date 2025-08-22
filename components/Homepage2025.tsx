@@ -14,7 +14,7 @@ import {
 } from '../data/2025-emerging-tech-services-enhanced';
 import { advancedAIAutomationServices } from '../data/2026-advanced-ai-automation-services';
 import { quantumCybersecurityServices } from '../data/2026-quantum-cybersecurity-services';
-import UltraFuturisticBackground2026 from './ui/UltraFuturisticBackground2026';
+import UltraFuturisticBackground2036 from './backgrounds/UltraFuturisticBackground2036';
 import UltraFuturisticServiceCard2026 from './ui/UltraFuturisticServiceCard2026';
 
 const Homepage2025: React.FC = () => {
@@ -63,7 +63,7 @@ const Homepage2025: React.FC = () => {
   ];
 
   return (
-    <UltraFuturisticBackground2026 intensity="medium" theme="quantum">
+    <UltraFuturisticBackground2036 intensity="medium" theme="quantum">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-xl border-b border-white/10" aria-label="Primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -598,7 +598,7 @@ const Homepage2025: React.FC = () => {
           </div>
         </div>
       </footer>
-    </UltraFuturisticBackground2026>
+    </UltraFuturisticBackground2036>
   );
 };
 
