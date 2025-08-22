@@ -277,7 +277,7 @@ export default function ServicesAdvertisingPage() {
 							<strong className="text-white">Feature Flag Auditor</strong> — $29/mo. Hygiene checks + PRs. Learn: <a className="text-cyan-400 underline" href="/services/feature-flag-auditor">/services/feature-flag-auditor</a>. References: {ext('https://launchdarkly.com/pricing/')}{', '}{ext('https://www.flagsmith.com/pricing')}
 						</li>
 						<li>
-							<strong className="text-white">SOC 2 Evidence Collector</strong> — $99/mo. Continuous evidence bundles. Learn: <a className="text-cyan-400 underline" href="/services/soc2-evidence-collector">/services/soc2-evidence-collector</a>. References: {ext('https://trust.servicenow.com/compliance/soc2/')}{', '}{ext('https://www.aicpa.org/resources/article/soc-2-faqs')}
+							<strong className="text-white">SOC 2 Evidence Collector</strong> — $99/mo. Continuous evidence bundles. Learn: <a className="text-cyan-400 underline" href="/services/soc2-evidence-collector">/services/soc2-evidence-collector</a>. References: {ext('https://www.servicenow.com/trust/compliance-reports.html')}{', '}{ext('https://www.aicpa.org/resources/certification/soc-2')}
 						</li>
 						<li>
 							<strong className="text-white">IAM Permission Analyzer</strong> — $79/mo. Least privilege guidance. Learn: <a className="text-cyan-400 underline" href="/services/iam-permission-analyzer">/services/iam-permission-analyzer</a>. References: {ext('https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html')}{', '}{ext('https://cloud.google.com/iam/docs')}
@@ -569,7 +569,7 @@ export default function ServicesAdvertisingPage() {
 					<p className="text-slate-300">Geo and audience‑aware content with edge rendering, flags, and experiments.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $30–$200/mo</li>
-						<li>References: {ext('https://www.optimizely.com/pricing/')}, {ext('https://vwo.com/plans/')}, {ext('https://www.mutinyhq.com/pricing')}</li>
+						<li>References: {ext('https://www.optimizely.com/pricing/')}, {ext('https://vwo.com/plans/')}, {ext('https://www.mutinyhq.com/product')}</li>
 					</ul>
 				</section>
 
@@ -692,7 +692,7 @@ export default function ServicesAdvertisingPage() {
 					<p className="text-slate-300">Layer device posture and risk-based access on top of your IdP for continuous verification.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $100–$800/mo</li>
-						<li>References: {ext('https://www.cloudflare.com/products/zero-trust/pricing/')}, {ext('https://www.zscaler.com/products/zero-trust-exchange')}</li>
+						<li>References: {ext('https://www.cloudflare.com/plans/')}, {ext('https://www.zscaler.com/products/zero-trust-exchange')}</li>
 					</ul>
 				</section>
 
@@ -1171,7 +1171,7 @@ export default function ServicesAdvertisingPage() {
 					<p className="text-slate-300">Flag risky clauses, generate playbook-aligned redlines, and export audit-ready changes.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $99–$299/mo</li>
-						<li>References: {ext('https://kirasystems.com/')} , {ext('https://www.docusign.com/products/clm/pricing')}</li>
+						<li>References: {ext('https://kirasystems.com/')}{' '},{ext('https://www.docusign.com/products/clm')}</li>
 					</ul>
 					<div><a className="text-cyan-400 underline" href="/services/ai-contract-risk-analyzer">Learn more</a></div>
 				</section>
@@ -1355,6 +1355,19 @@ export default function ServicesAdvertisingPage() {
 					<a href="mailto:kleber@ziontechgroup.com" className="px-4 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-600 text-white">Email kleber@ziontechgroup.com</a>
 					<a href="/pricing" className="px-4 py-2 rounded-lg border border-cyan-500/40 text-cyan-300">View Pricing</a>
 				</div>
+
+				<section id="new-2032-expansions" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Fresh 2032 Service Expansions</h2>
+					<ul className="list-disc list-inside text-slate-300 space-y-2">
+						<li><strong className="text-white">AI Governance Reporter</strong> — $149/mo. Learn: <a className="text-cyan-400 underline" href="/services/ai-governance-reporter">/services/ai-governance-reporter</a>. References: https://openai.com/index/safety/</li>
+						<li><strong className="text-white">AI Red Teaming Suite</strong> — $199/mo. Learn: <a className="text-cyan-400 underline" href="/services/ai-red-teaming-suite">/services/ai-red-teaming-suite</a>. References: https://www.promptfoo.dev/pricing</li>
+						<li><strong className="text-white">API Schema Diff & Registry</strong> — $79/mo. Learn: <a className="text-cyan-400 underline" href="/services/api-schema-diff-registry">/services/api-schema-diff-registry</a>. References: https://swagger.io/tools/swaggerhub/pricing/</li>
+						<li><strong className="text-white">Kubernetes Cost Rightsizer</strong> — $129/mo. Learn: <a className="text-cyan-400 underline" href="/services/k8s-cost-rightsizer">/services/k8s-cost-rightsizer</a>. References: https://www.kubecost.com/pricing</li>
+						<li><strong className="text-white">PII Redaction Proxy</strong> — $99/mo. Learn: <a className="text-cyan-400 underline" href="/services/pii-redaction-proxy">/services/pii-redaction-proxy</a>. References: https://www.skyflow.com/pricing</li>
+						<li><strong className="text-white">Synthetic Journey Monitor</strong> — $39/mo. Learn: <a className="text-cyan-400 underline" href="/services/synthetic-journey-monitor">/services/synthetic-journey-monitor</a>. References: https://www.checklyhq.com/pricing/</li>
+					</ul>
+					<div className="text-slate-400 text-sm">Full catalog: <a className="text-cyan-400 underline" href="/services">/services</a> • Market pricing benchmarks: <a className="text-cyan-400 underline" href="/market-pricing">/market-pricing</a></div>
+				</section>
 			</div>
 		</div>
 	);
