@@ -42,7 +42,10 @@ const Header: React.FC = () => {
         { name: 'AI Synthetic Data Studio', href: '/services/ai-synthetic-data-studio' },
         { name: 'Zero-Trust SSO Mesh', href: '/services/zero-trust-sso-mesh' },
         { name: 'ETL Reliability Copilot', href: '/services/etl-reliability-copilot' },
-        { name: 'Edge Personalization Kit', href: '/services/edge-personalization-kit' }
+        { name: 'Edge Personalization Kit', href: '/services/edge-personalization-kit' },
+        { name: 'Kubernetes Cost Anomaly Guard', href: '/services/kubernetes-cost-anomaly-guard' },
+        { name: 'AI Sales Sequence Personalizer', href: '/services/ai-sales-sequence-personalizer' },
+        { name: 'Postgres Performance Tuner', href: '/services/postgres-performance-tuner' }
       ]
     },
     {

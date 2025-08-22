@@ -841,6 +841,137 @@ export default function ServicesAdvertisingPage() {
 					<a href="mailto:kleber@ziontechgroup.com" className="px-4 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-600 text-white">Email kleber@ziontechgroup.com</a>
 					<a href="/pricing" className="px-4 py-2 rounded-lg border border-cyan-500/40 text-cyan-300">View Pricing</a>
 				</div>
+
+				{/* Latest Additions (Q4 2029) */}
+				<section className="space-y-6">
+					<h2 className="text-3xl font-bold text-white">Latest Additions (Q4 2029)</h2>
+					<p className="text-slate-300">New real micro SaaS, IT, and AI solutions available now. Each offering includes transparent pricing, fast onboarding, and enterprise-ready integrations.</p>
+				</section>
+
+				<section id="kubernetes-cost-anomaly-guard" className="space-y-6">
+					<h3 className="text-2xl font-semibold text-white">Kubernetes Cost Anomaly Guard</h3>
+					<p className="text-slate-300">Detect and mitigate sudden spend spikes across clusters with automated policies and FinOps-native dashboards.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $100–$1,000+/mo</li>
+						<li>References: {ext('https://www.kubecost.com/pricing')}, {ext('https://www.cloudzero.com/platform/pricing')}, {ext('https://www.finout.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section id="ai-sales-sequence-personalizer" className="space-y-6">
+					<h3 className="text-2xl font-semibold text-white">AI Sales Sequence Personalizer</h3>
+					<p className="text-slate-300">Hyper-personalized outreach that adapts to buyer signals and learns from replies to increase qualified responses.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $50–$500/mo</li>
+						<li>References: {ext('https://instantly.ai/pricing')}, {ext('https://www.mailshake.com/pricing/')}, {ext('https://www.apollo.io/pricing')}</li>
+					</ul>
+				</section>
+
+				<section id="accessibility-monitoring-remediation" className="space-y-6">
+					<h3 className="text-2xl font-semibold text-white">Accessibility Monitoring & Remediation</h3>
+					<p className="text-slate-300">WCAG 2.2 audits at scale with fix suggestions, CI gates, and compliance reporting.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $50–$500/mo</li>
+						<li>References: {ext('https://www.deque.com/products/axe-monitor/')}, {ext('https://www.evinced.com/')}, {ext('https://wave.webaim.org/')}</li>
+					</ul>
+				</section>
+
+				<section id="postgres-performance-tuner" className="space-y-6">
+					<h3 className="text-2xl font-semibold text-white">Postgres Performance Tuner</h3>
+					<p className="text-slate-300">Automated query insights, index advice, and vacuum scheduling to keep databases fast under load.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $49–$500/mo</li>
+						<li>References: {ext('https://pganalyze.com/pricing')}, {ext('https://ottertune.com/pricing/')}</li>
+					</ul>
+				</section>
+
+				<section id="incident-retrospective-ai-analyzer" className="space-y-6">
+					<h3 className="text-2xl font-semibold text-white">Incident Retrospective AI Analyzer</h3>
+					<p className="text-slate-300">Auto-summarize incidents from alerts, logs, PRs, and chats with action items and owners.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $50–$300/mo</li>
+						<li>References: {ext('https://incident.io/pricing')}, {ext('https://www.pagerduty.com/pricing/')}, {ext('https://rootly.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section id="data-contract-enforcement-studio" className="space-y-6">
+					<h3 className="text-2xl font-semibold text-white">Data Contract Enforcement Studio</h3>
+					<p className="text-slate-300">Define and enforce schemas, SLAs, and ownership to prevent data breakages and stabilize ML features.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $99–$1,000+/mo</li>
+						<li>References: {ext('https://www.montecarlodata.com/')}, {ext('https://www.greatexpectations.io/')}, {ext('https://www.getdbt.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section id="api-security-fuzzing-copilot" className="space-y-6">
+					<h3 className="text-2xl font-semibold text-white">API Security Fuzzing Copilot</h3>
+					<p className="text-slate-300">Adaptive fuzzing for REST/GraphQL with CI gates and reproducible repro steps for developers.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $99–$2,000/mo</li>
+						<li>References: {ext('https://www.stackhawk.com/pricing/')}, {ext('https://brightsec.com/pricing/')}, {ext('https://www.zaproxy.org/')}</li>
+					</ul>
+				</section>
+
+				<section id="warehouse-governance-catalog" className="space-y-6">
+					<h3 className="text-2xl font-semibold text-white">Warehouse Governance Catalog</h3>
+					<p className="text-slate-300">Ownership, PII tags, lineage, and access workflows that fit modern data teams.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $99–$1,000+/mo</li>
+						<li>References: {ext('https://www.secoda.co/pricing')}, {ext('https://launch.atlan.com/pricing')}, {ext('https://openmetadata.org/')}</li>
+					</ul>
+				</section>
+
+				<section id="browser-performance-guardrails" className="space-y-6">
+					<h3 className="text-2xl font-semibold text-white">Browser Performance Guardrails</h3>
+					<p className="text-slate-300">Keep Core Web Vitals on budget with PR checks, budgets, and route-level insights.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $20–$300/mo</li>
+						<li>References: {ext('https://calibreapp.com/pricing')}, {ext('https://www.speedcurve.com/pricing/')}</li>
+					</ul>
+				</section>
+
+				<section id="ml-feature-quality-monitor" className="space-y-6">
+					<h3 className="text-2xl font-semibold text-white">ML Feature Quality Monitor</h3>
+					<p className="text-slate-300">Detect drift, leakage, and anomalies across online/offline features with alerts and dashboards.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $99–$1,000+/mo</li>
+						<li>References: {ext('https://whylabs.ai/pricing')}, {ext('https://www.evidentlyai.com/')}</li>
+					</ul>
+				</section>
+
+				<section id="edge-personalization-orchestrator" className="space-y-6">
+					<h3 className="text-2xl font-semibold text-white">Edge Personalization Orchestrator</h3>
+					<p className="text-slate-300">Real-time content and pricing at the edge using geo, audiences, and telemetry—no backend changes required.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $20–$500/mo + usage</li>
+						<li>References: {ext('https://developers.cloudflare.com/workers/platform/pricing/')}, {ext('https://vercel.com/pricing')}, {ext('https://launchdarkly.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section id="sso-user-lifecycle-orchestrator" className="space-y-6">
+					<h3 className="text-2xl font-semibold text-white">SSO User Lifecycle Orchestrator</h3>
+					<p className="text-slate-300">Automate joiner-mover-leaver flows with SCIM, access review campaigns, and audit-ready logs.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $99–$2,000/mo</li>
+						<li>References: {ext('https://www.okta.com/pricing/')}, {ext('https://workos.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section id="warehouse-change-data-capture-kit" className="space-y-6">
+					<h3 className="text-2xl font-semibold text-white">Warehouse Change Data Capture (CDC) Kit</h3>
+					<p className="text-slate-300">Turnkey CDC from operational DBs to your warehouse with schema evolution, ordering, and replay tools.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $99–$1,500/mo</li>
+						<li>References: {ext('https://www.fivetran.com/pricing')}, {ext('https://airbyte.com/pricing')}, {ext('https://debezium.io/')}</li>
+					</ul>
+				</section>
+
+				{/* Contact footer */}
+				<section className="space-y-3">
+					<h3 className="text-xl font-semibold text-white">Talk to an expert</h3>
+					<p className="text-slate-300 text-sm">Call <a className="text-cyan-400 underline" href="tel:+13024640950">+1 302 464 0950</a> · Email <a className="text-cyan-400 underline" href="mailto:kleber@ziontechgroup.com">kleber@ziontechgroup.com</a> · Visit <a className="text-cyan-400 underline" href="https://ziontechgroup.com" target="_blank" rel="noopener noreferrer">ziontechgroup.com</a></p>
+					<p className="text-slate-400 text-xs">Address: 364 E Main St STE 1008 Middletown DE 19709</p>
+				</section>
+
 			</div>
 		</div>
 	);

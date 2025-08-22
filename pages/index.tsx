@@ -42,6 +42,17 @@ export default function HomePage() {
               <p className="mt-2 text-gray-300">Cloud, security, and automation patterns to scale with reliability and compliance.</p>
             </div>
           </div>
+
+          <div className="mt-16 p-6 rounded-lg bg-white/5 backdrop-blur animated-border">
+            <h3 className="text-xl font-bold">New: Q4 2029 Additions</h3>
+            <p className="mt-2 text-gray-300">Explore our latest offerings including Kubernetes Cost Anomaly Guard, AI Sales Sequence Personalizer, and Postgres Performance Tuner.</p>
+            <div className="mt-4 flex flex-wrap gap-3">
+              <Link href="/services/kubernetes-cost-anomaly-guard" className="px-4 py-2 rounded-md bg-white text-black text-sm font-semibold hover:bg-gray-200">K8s Cost Guard</Link>
+              <Link href="/services/ai-sales-sequence-personalizer" className="px-4 py-2 rounded-md bg-white text-black text-sm font-semibold hover:bg-gray-200">Sales Personalizer</Link>
+              <Link href="/services/postgres-performance-tuner" className="px-4 py-2 rounded-md bg-white text-black text-sm font-semibold hover:bg-gray-200">Postgres Tuner</Link>
+              <Link href="/services-advertising" className="px-4 py-2 rounded-md border border-white/30 text-white text-sm font-semibold hover:bg-white/10">See All New</Link>
+            </div>
+          </div>
         </div>
       </section>
     </>
