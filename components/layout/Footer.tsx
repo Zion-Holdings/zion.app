@@ -74,12 +74,12 @@ const Footer: React.FC = () => {
   ];
 
   const socialLinks = [
-    { name: 'X', href: 'https://x.com/ziontechgroup', icon: Twitter },
-    { name: 'LinkedIn', href: 'https://www.linkedin.com/company/zion-tech-group', icon: Linkedin },
+    { name: 'X', href: '/social/twitter', icon: Twitter },
+    { name: 'LinkedIn', href: '/social/linkedin', icon: Linkedin },
     { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: Github },
-    { name: 'Facebook', href: 'https://facebook.com/ziontechgroup', icon: Facebook },
-    { name: 'Instagram', href: 'https://www.instagram.com/ziontechgroup', icon: Instagram },
-    { name: 'YouTube', href: 'https://www.youtube.com/@ziontechgroup', icon: Youtube }
+    { name: 'Facebook', href: '/social/facebook', icon: Facebook },
+    { name: 'Instagram', href: '/social/instagram', icon: Instagram },
+    { name: 'YouTube', href: '/social/youtube', icon: Youtube }
   ];
 
   return (

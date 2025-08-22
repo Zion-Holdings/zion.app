@@ -55,5 +55,6 @@
   "services/data-contracts-hub",
   "services/serverless-lakehouse-starter",
   "space-colonization-services",
+  "space-mining-automation-platform",
   "space-mining-platform"
 ]

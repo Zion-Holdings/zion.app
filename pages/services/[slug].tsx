@@ -55,6 +55,7 @@ import { professionalServices } from '../../data/professional-services';
 import { real2032ServiceExpansions } from '../../data/real-2032-service-expansions';
 import { real2035Q1Additions } from '../../data/real-2035-q1-additions';
 import { real2035Q2AdditionsExtra } from '../../data/real-2035-q2-additions-extra';
+import { real2026Q4ExpansionsV3 } from '../../data/real-2026-q4-expansions-v3';
 
 type Service = typeof enhancedRealMicroSaasServices[number];
 
@@ -112,7 +113,9 @@ function getAllServices(): Service[] {
 		.concat(professionalServices as unknown as Service[])
 		.concat(real2032ServiceExpansions as unknown as Service[])
 		.concat(real2035Q1Additions as unknown as Service[])
-		.concat(real2035Q2AdditionsExtra as unknown as Service[]);
+		.concat(real2035Q2AdditionsExtra as unknown as Service[])
+		.concat(real2026Q4ExpansionsV3 as unknown as Service[])
+	;
 }
 
 function toSlug(value: string): string {
