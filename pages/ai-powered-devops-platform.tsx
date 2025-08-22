@@ -1,25 +1,21 @@
 import React from 'react';
-import ServiceLanding from '../components/sections/ServiceLanding';
+import Head from 'next/head';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 
-export default function AiPoweredDevOpsPlatform() {
-	return (
-		<ServiceLanding
-			title="AI-Powered DevOps Platform"
-			description="Accelerate delivery with AI-assisted CI/CD, deployment safety checks, change risk prediction, and automated incident response."
-			subtitle="Ship faster with confidence"
-			pricePerMonthUSD={899}
-			implementationWeeks="2-4 weeks"
-			roiNote="Cut change failure rate and MTTR by 30–60%"
-			features={[
-				"LLM-assisted pipeline authoring",
-				"Change risk scoring pre-deploy",
-				"Progressive delivery and auto-rollbacks",
-				"SLO-aware release gates",
-				"Incident correlation and runbook automation",
-				"GitHub/GitLab, Argo, Harness integrations"
-			]}
-			industries={["SaaS", "E-commerce", "Fintech", "Media"]}
-			canonical="https://ziontechgroup.com/ai-powered-devops-platform"
-		/>
-	);
+export default function AIPoweredDevOpsPlatform() {
+  return (
+    <UltraAdvancedFuturisticBackground>
+      <Head>
+        <title>AI-Powered DevOps Platform | Zion Tech Group</title>
+        <meta name="description" content="AI-assisted CI/CD, safer releases, and incident automation." />
+        <link rel="canonical" href="https://ziontechgroup.com/ai-powered-devops-platform" />
+      </Head>
+      <div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto space-y-6 text-slate-200">
+          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">AI-Powered DevOps Platform</h1>
+          <p className="text-lg text-slate-300">AI code insights, deployment risk scoring, runbook automation, and postmortem assist.</p>
+        </div>
+      </div>
+    </UltraAdvancedFuturisticBackground>
+  );
 }
