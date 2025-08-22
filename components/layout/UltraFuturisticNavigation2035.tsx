@@ -306,6 +306,9 @@ const UltraFuturisticNavigation2035: React.FC = () => {
                   <button
                     onClick={() => toggleDropdown(item.name)}
                     className="flex items-center gap-2 px-4 py-2 text-gray-300 hover:text-white transition-colors duration-200 group-hover:text-cyan-400"
+                    aria-haspopup="menu"
+                    aria-expanded={activeDropdown === item.name}
+                    aria-controls={`nav-${item.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-menu`}
                   >
                     {item.icon}
                     <span>{item.name}</span>
@@ -337,6 +340,9 @@ const UltraFuturisticNavigation2035: React.FC = () => {
                         transition={{ duration: 0.2 }}
                         className="absolute top-full left-0 mt-2 w-80 bg-gray-900/95 backdrop-blur-xl border border-gray-800/50 rounded-2xl shadow-2xl shadow-black/50 overflow-hidden"
                         onMouseLeave={closeDropdowns}
+                        role="menu"
+                        id={`nav-${item.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-menu`}
+                        aria-label={`${item.name} submenu`}
                       >
                         <div className="p-6">
                           <div className="flex items-center gap-3 mb-4">
@@ -360,6 +366,7 @@ const UltraFuturisticNavigation2035: React.FC = () => {
                                     : 'text-gray-300 hover:text-white hover:bg-gray-800/50'
                                 }`}
                                 onClick={closeDropdowns}
+                                role="menuitem"
                               >
                                 {child.featured && <Star className="w-4 h-4 text-cyan-400" />}
                                 <div className="flex-1">

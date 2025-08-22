@@ -1,20 +1,22 @@
 import React from 'react';
-import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
-import Button from '../components/ui/Button';
+import Link from 'next/link';
 import SEO from '../components/SEO';
 
-export default function NotFoundPage() {
+export default function Custom404() {
 	return (
-		<UltraFuturisticBackground>
-			<SEO title="Page Not Found | Zion Tech Group" description="The page you are looking for doesn't exist." noIndex nofollow />
-			<div className="container mx-auto px-4 py-24 text-center">
-				<h1 className="text-4xl md:text-6xl font-bold text-white mb-4">Page Not Found</h1>
-				<p className="text-gray-300 mb-8">The page you were looking for doesn't exist. Try one of the options below.</p>
-				<div className="flex flex-col sm:flex-row gap-4 justify-center">
-					<Button href="/" className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-6 py-3 rounded-xl">Go Home</Button>
-					<Button href="/services" variant="outline" className="border border-gray-600 text-gray-200">Browse Services</Button>
+		<>
+			<SEO title="Page Not Found | Zion Tech Group" description="The page you are looking for does not exist." noIndex />
+			<section className="min-h-[60vh] flex items-center justify-center bg-gradient-to-b from-black to-gray-900">
+				<div className="container mx-auto px-4 py-20 text-center">
+					<h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-6">404</h1>
+					<p className="text-gray-300 text-lg mb-8">Sorry, we couldn\'t find that page. Here are some helpful links:</p>
+					<div className="flex flex-col sm:flex-row gap-4 justify-center">
+						<Link href="/" className="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold">Go Home</Link>
+						<Link href="/comprehensive-services-showcase-2025/" className="px-6 py-3 rounded-xl bg-gray-800/60 text-gray-200 hover:bg-gray-800">Browse Services</Link>
+						<Link href="/contact/" className="px-6 py-3 rounded-xl bg-gray-800/60 text-gray-200 hover:bg-gray-800">Contact Us</Link>
+					</div>
 				</div>
-			</div>
-		</UltraFuturisticBackground>
+			</section>
+		</>
 	);
 }

@@ -47,6 +47,8 @@ export default function SEO({ title, description, canonical, ogImage, image, noI
 			<meta name="description" content={pageDescription} />
 			<meta name="robots" content={robotsContent} />
 			<link rel="canonical" href={canonicalUrl} />
+			<link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
+			<link rel="alternate" hrefLang="en" href={canonicalUrl} />
 			<meta property="og:title" content={pageTitle} />
 			<meta property="og:description" content={pageDescription} />
 			<meta property="og:url" content={canonicalUrl} />
