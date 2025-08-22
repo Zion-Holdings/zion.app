@@ -72,11 +72,11 @@ const navigationItems: NavigationItem[] = [
     description: 'Browse by category',
     badge: 'New',
     children: [
-      { name: 'AI & Data', href: '/services#ai', description: 'AI, data, ML services' },
-      { name: 'Developer Tools', href: '/services#developer-tools', description: 'Dev productivity & tooling' },
-      { name: 'Cloud & FinOps', href: '/services#cloud', description: 'Cloud, cost, platform' },
-      { name: 'Observability', href: '/services#observability', description: 'Monitoring & telemetry' },
-      { name: 'Quality & Monitoring', href: '/services#quality', description: 'QA, testing, reliability' },
+      { name: 'AI & Consciousness', href: '/services#ai-consciousness', description: 'AI, data, ML services' },
+      { name: 'Enterprise IT', href: '/services#enterprise-it', description: 'Cloud, cost, platform' },
+      { name: 'Quantum & Emerging', href: '/services#quantum-emerging', description: 'Monitoring & telemetry' },
+      { name: 'Micro SAAS', href: '/services#micro-saas', description: 'Business tools and automation' },
+      { name: 'Education & Research', href: '/services#education-research', description: 'Learning and R&D' },
       { name: 'AI Evaluation Orchestrator', href: '/ai-evaluation-orchestrator', description: 'Automated LLM evals' },
       { name: 'SEO Automation Suite', href: '/seo-automation-suite', description: 'Technical SEO automation' },
       { name: 'IT Asset Discovery Agent', href: '/it-asset-discovery-agent', description: 'Agentless discovery' },
@@ -190,7 +190,7 @@ const navigationItems: NavigationItem[] = [
       { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration-platform', description: 'Distributed edge computing' },
       { name: 'Blockchain Infrastructure', href: '/blockchain-infrastructure-platform', description: 'Enterprise blockchain solutions' },
       { name: 'AI-Powered DevOps', href: '/ai-powered-devops-platform', description: 'Intelligent development operations' },
-      { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity-services', description: 'Next-gen quantum security' },
+      { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity-platform', description: 'Next-gen quantum security' },
       { name: 'AI-Powered Cybersecurity', href: '/ai-powered-cybersecurity', description: 'Intelligent threat detection' }
     ]
   },
@@ -202,9 +202,9 @@ const navigationItems: NavigationItem[] = [
     badge: 'Industry',
     children: [
       { name: 'Healthcare AI', href: '/healthcare-ai-solutions', description: 'AI-powered healthcare' },
-      { name: 'Financial Technology', href: '/fintech-solutions', description: 'Next-gen fintech' },
+      { name: 'Financial Technology', href: '/financial-solutions', description: 'Next-gen fintech' },
       { name: 'Manufacturing AI', href: '/manufacturing-ai-solutions', description: 'Smart manufacturing' },
-      { name: 'Retail Technology', href: '/innovative-business-solutions', description: 'Digital retail transformation' },
+      { name: 'Retail Technology', href: '/retail-technology-solutions', description: 'Digital retail transformation' },
       { name: 'Education Technology', href: '/training', description: 'AI-powered learning' },
       { name: 'Government Solutions', href: '/enterprise-solutions-showcase', description: 'Public sector innovation' },
       { name: 'Energy & Utilities', href: '/quantum-energy', description: 'Sustainable energy tech' },

@@ -92,8 +92,8 @@ const sidebarSections = [
               { name: 'Smart CRM Suite', href: '/smart-crm-intelligence-suite' },
       { name: 'Financial Analytics', href: '/automated-financial-analytics-platform' },
       { name: 'Project Management', href: '/intelligent-project-management-suite' },
-      { name: 'Business Intelligence', href: '/ai-business-intelligence' },
-      { name: 'Marketing Automation', href: '/ai-marketing-automation' },
+      { name: 'Business Intelligence', href: '/ai-business-intelligence-suite' },
+      { name: 'Marketing Automation', href: '/ai-autonomous-marketing-platform' },
       { name: 'Customer Service AI', href: '/ai-customer-service' },
       { name: 'HR & Recruitment', href: '/ai-hr-recruitment' },
       { name: 'Legal Contract Analysis', href: '/ai-legal-contract-analyzer' }
@@ -182,7 +182,7 @@ const companyLinks = [
 const supportLinks = [
   { name: 'Contact Support', href: '/support', description: 'Get help from our team' },
   { name: 'Documentation', href: '/docs', description: 'Technical guides' },
-  { name: 'API Reference', href: '/api-docs', description: 'Developer documentation' },
+  { name: 'API Reference', href: '/docs', description: 'Developer documentation' },
   { name: 'Status Page', href: '/status', description: 'Service status' },
   { name: 'Training', href: '/training', description: 'Learn our platforms' },
   { name: 'Community', href: '/community', description: 'Connect with users' }
