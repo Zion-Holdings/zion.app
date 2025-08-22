@@ -26,6 +26,7 @@ import { realQ4Services2025, } from '../../data/real-2025-q4-additions';
 import { real2025Q4Additions } from '../../data/real-2025-q4-additions';
 import { realMarketServicesExtended } from '../../data/real-market-services-extended';
 import { real2026Additions } from '../../data/real-2026-additions';
+import { real2026Q1Additions } from '../../data/real-2026-q1-additions';
 
 type Service = typeof enhancedRealMicroSaasServices[number];
 
@@ -57,6 +58,7 @@ function getAllServices(): Service[] {
 		.concat(realQ4Services2025 as unknown as Service[])
 		.concat(real2025Q4Additions as unknown as Service[])
 		.concat(realMarketServicesExtended as unknown as Service[])
+		.concat(real2026Q1Additions as unknown as Service[])
 		.concat(real2026Additions as unknown as Service[]);
 }
 
