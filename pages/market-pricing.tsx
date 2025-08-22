@@ -385,6 +385,58 @@ export default function MarketPricingPage() {
             </div>
           </div>
 
+          <div className="space-y-6">
+            <div className="bg-black/30 rounded-2xl border border-indigo-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Headless CMS</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Contentful pricing: <a className="text-cyan-400 underline" href={`https://www.contentful.com/pricing/`} target="_blank" rel="noopener noreferrer">contentful.com/pricing</a></li>
+                <li>Sanity pricing: <a className="text-cyan-400 underline" href={`https://www.sanity.io/pricing`} target="_blank" rel="noopener noreferrer">sanity.io/pricing</a></li>
+                <li>Strapi pricing: <a className="text-cyan-400 underline" href={`https://strapi.io/pricing`} target="_blank" rel="noopener noreferrer">strapi.io/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $0–$1,500/month depending on seats, locales, and environments.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-emerald-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Payments & Subscriptions</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Stripe pricing: <a className="text-cyan-400 underline" href={`https://stripe.com/pricing`} target="_blank" rel="noopener noreferrer">stripe.com/pricing</a></li>
+                <li>Braintree pricing: <a className="text-cyan-400 underline" href={`https://www.braintreepayments.com/braintree-pricing`} target="_blank" rel="noopener noreferrer">braintreepayments.com/braintree-pricing</a></li>
+                <li>Adyen pricing: <a className="text-cyan-400 underline" href={`https://www.adyen.com/pricing`} target="_blank" rel="noopener noreferrer">adyen.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: processing fees + $0–$300/month for billing features.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-sky-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Passkeys & Passwordless</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Auth0 Passkeys: <a className="text-cyan-400 underline" href={`https://auth0.com/docs/authenticate/passwordless/passkeys`} target="_blank" rel="noopener noreferrer">auth0.com/.../passkeys</a></li>
+                <li>Okta Passkeys: <a className="text-cyan-400 underline" href={`https://help.okta.com/oag/en-us/Content/Topics/identity-engine/devices/about-passkeys.htm`} target="_blank" rel="noopener noreferrer">help.okta.com/.../about-passkeys</a></li>
+                <li>WebAuthn guide: <a className="text-cyan-400 underline" href={`https://webauthn.guide/`} target="_blank" rel="noopener noreferrer">webauthn.guide</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $0–$200/month depending on MAUs and auth provider.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-violet-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Headless Commerce</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Shopify Plus: <a className="text-cyan-400 underline" href={`https://www.shopify.com/plus/pricing`} target="_blank" rel="noopener noreferrer">shopify.com/plus/pricing</a></li>
+                <li>commercetools: <a className="text-cyan-400 underline" href={`https://www.commercetools.com/pricing`} target="_blank" rel="noopener noreferrer">commercetools.com/pricing</a></li>
+                <li>BigCommerce Enterprise: <a className="text-cyan-400 underline" href={`https://www.bigcommerce.com/enterprise/pricing/`} target="_blank" rel="noopener noreferrer">bigcommerce.com/enterprise/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: vendor subscriptions + implementation costs; $1k–$10k setup.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-rose-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Audit, Compliance & Trust</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Vanta pricing: <a className="text-cyan-400 underline" href={`https://www.vanta.com/pricing`} target="_blank" rel="noopener noreferrer">vanta.com/pricing</a></li>
+                <li>Drata pricing: <a className="text-cyan-400 underline" href={`https://drata.com`} target="_blank" rel="noopener noreferrer">drata.com</a></li>
+                <li>Secureframe pricing: <a className="text-cyan-400 underline" href={`https://secureframe.com/pricing`} target="_blank" rel="noopener noreferrer">secureframe.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $200–$2,000/month depending on frameworks and integrations.</div>
+            </div>
+          </div>
+
           <div className="text-center text-slate-400 mt-10">
             Need help benchmarking? <a href="/contact" className="text-cyan-400 underline">Contact us</a> — we align to transparent, vendor-verifiable pricing.
           </div>

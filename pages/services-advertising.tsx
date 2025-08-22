@@ -432,7 +432,7 @@ export default function ServicesAdvertisingPage() {
 					<p className="text-slate-300">API and data contracts with schema diffs, lineage, and CI gates to prevent breaks.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $50–$300/mo</li>
-						<li>References: {ext('https://www.optic.dev/')}, {ext('https://stoplight.io/')}, {ext('https://www.postman.com/pricing/')}</li>
+						<li>References: {ext('https://www.optic.dev/')}, {ext('https://openlineage.io/')}, {ext('https://www.postman.com/pricing/')}</li>
 					</ul>
 				</section>
 
@@ -487,6 +487,60 @@ export default function ServicesAdvertisingPage() {
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $30–$150/mo</li>
 						<li>References: {ext('https://launchdarkly.com/pricing/')}, {ext('https://www.flagsmith.com/pricing')}, {ext('https://www.split.io/pricing/')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Passkey Authentication Starter</h2>
+					<p className="text-slate-300">Passwordless FIDO2/WebAuthn passkeys with device sync and fallback flows.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $50–$150/mo</li>
+						<li>References: {ext('https://webauthn.guide/')}, {ext('https://auth0.com/docs/authenticate/passwordless/passkeys')}, {ext('https://support.okta.com/help/s/article/Passkeys-in-Okta-Classic-Engine')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Headless CMS Migration Accelerator</h2>
+					<p className="text-slate-300">Replatform to headless CMS with safe redirects, schema modeling, and performance budgets.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $1,000–$5,000 one-time</li>
+						<li>References: {ext('https://www.contentful.com/pricing/')}, {ext('https://www.sanity.io/pricing')}, {ext('https://strapi.io/pricing')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Payments & Subscriptions Starter</h2>
+					<p className="text-slate-300">Stripe-based billing with dunning, tax, metering, and customer portal.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $0–$200/mo (+ processing)</li>
+						<li>References: {ext('https://stripe.com/pricing')}, {ext('https://www.chargebee.com/pricing/')}, {ext('https://www.recurly.com/pricing/')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Headless Commerce Accelerator</h2>
+					<p className="text-slate-300">Composable storefront with edge personalization, search, and analytics.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $2,000–$10,000 one-time</li>
+						<li>References: {ext('https://www.shopify.com/plus/pricing')}, {ext('https://www.commercetools.com/pricing')}, {ext('https://www.bigcommerce.com/enterprise/pricing/')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Observability on a Budget</h2>
+					<p className="text-slate-300">OpenTelemetry + Grafana Cloud baseline with golden signals and SLOs.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $0–$300/mo</li>
+						<li>References: {ext('https://grafana.com/pricing/')}, {ext('https://opentelemetry.io/docs/')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Data Contracts & Lineage</h2>
+					<p className="text-slate-300">Schema diffs, lineage graphs, and CI approvals to prevent breaking changes.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $50–$300/mo</li>
+						<li>References: {ext('https://www.optic.dev/')}, {ext('https://openlineage.io/')}, {ext('https://www.postman.com/pricing/')}</li>
 					</ul>
 				</section>
 			</div>
