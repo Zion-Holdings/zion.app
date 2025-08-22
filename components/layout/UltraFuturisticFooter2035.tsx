@@ -139,6 +139,8 @@ const footerSections = [
     links: [
       { name: 'Blog', href: '/blog' },
       { name: 'Case Studies', href: '/case-studies' },
+      { name: 'Events', href: '/events' },
+      { name: 'Webinars', href: '/webinars' },
       { name: 'Support Center', href: '/support' },
       { name: 'Training & Certification', href: '/training' },
       { name: 'Market Pricing', href: '/market-pricing' },
