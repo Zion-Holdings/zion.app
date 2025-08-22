@@ -1536,6 +1536,29 @@ export default function ServicesAdvertisingPage() {
 					</ul>
 					<div className="text-slate-400 text-sm">Full catalog: <a className="text-cyan-400 underline" href="/services">/services</a> • Market pricing benchmarks: <a className="text-cyan-400 underline" href="/market-pricing">/market-pricing</a></div>
 				</section>
+
+				<section id="q2-2035-additions" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">New Q2 2035 Additions</h2>
+					<ul className="list-disc list-inside text-slate-300 space-y-2">
+						<li><strong className="text-white">AI RFP & Bid Writer</strong> — $149/mo. Learn: <a className="text-cyan-400 underline" href="/services/ai-rfp-bid-writer">/services/ai-rfp-bid-writer</a>. References: https://www.rfpio.com/, https://loopio.com/</li>
+						<li><strong className="text-white">Cloud SQL Spend Optimizer</strong> — $79/mo. Learn: <a className="text-cyan-400 underline" href="/services/cloud-sql-spend-optimizer">/services/cloud-sql-spend-optimizer</a>. References: https://cloud.google.com/sql/pricing, https://aws.amazon.com/rds/pricing/, https://azure.microsoft.com/pricing</li>
+						<li><strong className="text-white">Customer Interview Insights</strong> — $39/mo. Learn: <a className="text-cyan-400 underline" href="/services/customer-interview-insights">/services/customer-interview-insights</a>. References: https://www.descript.com/pricing, https://otter.ai/pricing</li>
+						<li><strong className="text-white">IT Asset & Attack Surface Mapper</strong> — $129/mo. Learn: <a className="text-cyan-400 underline" href="/services/it-asset-attack-surface">/services/it-asset-attack-surface</a>. References: https://www.axonius.com/pricing, https://www.jupiterone.com/</li>
+						<li><strong className="text-white">Warehouse Query Guard</strong> — $59/mo. Learn: <a className="text-cyan-400 underline" href="/services/warehouse-query-guard">/services/warehouse-query-guard</a>. References: https://www.getdbt.com/pricing/, https://cloud.google.com/bigquery/pricing, https://www.snowflake.com/en/pricing/</li>
+						<li><strong className="text-white">Edge A/B Testing Kit</strong> — $49/mo. Learn: <a className="text-cyan-400 underline" href="/services/edge-ab-testing-kit">/services/edge-ab-testing-kit</a>. References: https://vercel.com/pricing, https://www.cloudflare.com/plans/</li>
+						<li><strong className="text-white">SLA Breach Predictor</strong> — $35/agent/mo. Learn: <a className="text-cyan-400 underline" href="/services/sla-breach-predictor">/services/sla-breach-predictor</a>. References: https://www.zendesk.com/pricing/, https://freshdesk.com/pricing</li>
+						<li><strong className="text-white">Secure Document Redaction Suite</strong> — $89/mo. Learn: <a className="text-cyan-400 underline" href="/services/secure-doc-redaction-suite">/services/secure-doc-redaction-suite</a>. References: https://www.skyflow.com/pricing, https://www.verygoodsecurity.com/pricing</li>
+						<li><strong className="text-white">API Latency & SLO Tracker Pro</strong> — $59/mo. Learn: <a className="text-cyan-400 underline" href="/services/api-latency-slo-tracker-pro">/services/api-latency-slo-tracker-pro</a>. References: https://opentelemetry.io/, https://grafana.com/</li>
+						<li><strong className="text-white">Browser Performance Optimizer</strong> — $39/mo. Learn: <a className="text-cyan-400 underline" href="/services/browser-performance-optimizer">/services/browser-performance-optimizer</a>. References: https://developer.chrome.com/docs/lighthouse/overview/, https://www.checklyhq.com/pricing/</li>
+						<li><strong className="text-white">AI Contract Reviewer</strong> — $69/mo. Learn: <a className="text-cyan-400 underline" href="/services/ai-contract-reviewer">/services/ai-contract-reviewer</a>. References: https://openai.com/api/pricing, https://anthropic.com/pricing</li>
+						<li><strong className="text-white">Security Questionnaire AutoFill</strong> — $59/mo. Learn: <a className="text-cyan-400 underline" href="/services/security-questionnaire-autofill">/services/security-questionnaire-autofill</a>. References: https://www.conveyor.com/, https://www.whistic.com/</li>
+						<li><strong className="text-white">Kubernetes Policy Auditor</strong> — $69/mo. Learn: <a className="text-cyan-400 underline" href="/services/kubernetes-policy-auditor">/services/kubernetes-policy-auditor</a>. References: https://www.openpolicyagent.org/, https://argo-cd.readthedocs.io/</li>
+						<li><strong className="text-white">ML Experiment Tracker Lite</strong> — $25/user/mo. Learn: <a className="text-cyan-400 underline" href="/services/ml-experiment-tracker-lite">/services/ml-experiment-tracker-lite</a>. References: https://mlflow.org/, https://wandb.ai/site/pricing</li>
+						<li><strong className="text-white">IAM Permission Graph</strong> — $79/mo. Learn: <a className="text-cyan-400 underline" href="/services/iam-permission-graph">/services/iam-permission-graph</a>. References: https://aws.amazon.com/iam/, https://cloud.google.com/iam/docs</li>
+						<li><strong className="text-white">ETL Incident Copilot</strong> — $45/mo. Learn: <a className="text-cyan-400 underline" href="/services/etl-incident-copilot">/services/etl-incident-copilot</a>. References: https://airflow.apache.org/, https://www.getdbt.com/</li>
+					</ul>
+					<div className="text-slate-400 text-sm">Full catalog: <a className="text-cyan-400 underline" href="/services">/services</a> • Market pricing: <a className="text-cyan-400 underline" href="/market-pricing">/market-pricing</a></div>
+				</section>
 			</div>
 		</div>
 	);
