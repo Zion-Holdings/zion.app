@@ -1,58 +1,60 @@
-export interface CuttingEdgeAIService {
+export interface CuttingEdgeAIService2034 {
   id: string;
   name: string;
+  tagline: string;
   description: string;
   category: string;
-  pricing?: {
-    monthly?: number;
-    yearly?: number;
-    currency?: string;
-    usageNotes?: string;
-    starter?: string;
-    professional?: string;
-    enterprise?: string;
-  };
+  price?: { monthly?: number; yearly?: number; currency: string };
   features: string[];
   link: string;
+  popular: boolean;
+  icon: string;
+  color: string;
   launchDate?: string;
   rating?: number;
 }
 
-export const cuttingEdgeAIServices = [
-	{
-		name: 'AI Evaluation Orchestrator (Pro)',
-		description: 'Automate LLM evals, regression tests, safety red-teaming, and leaderboards across providers.',
-		category: 'AI & Consciousness',
-		pricing: { monthly: 199 },
-		features: [
-			'Configurable eval suites and datasets',
-			'Anthropic/OpenAI/Groq integrations',
-			'Regression tracking and dashboards',
-			'Guardrail and policy testing'
-		]
-	},
-	{
-		name: 'Customer Success AI',
-		description: 'Retention and expansion with churn prediction, health scoring, and next-best-actions.',
-		category: 'AI & Consciousness',
-		pricing: { monthly: 249 },
-		features: [
-			'Unified customer 360',
-			'Churn/upsell predictions',
-			'Playbooks and automations',
-			'Gainsight/Salesforce integrations'
-		]
-	},
-	{
-		name: 'AI Code Review & Refactor',
-		description: 'Automated PR reviews, refactors, and reliability fixes with tracing-aware suggestions.',
-		category: 'AI & Consciousness',
-		pricing: { monthly: 149 },
-		features: [
-			'Secure code insights',
-			'Performance and reliability refactors',
-			'CI comments and auto-fixes',
-			'Language and framework support'
-		]
-	}
+export const cuttingEdgeAIServices: CuttingEdgeAIService2034[] = [
+  {
+    id: 'llm-eval-orchestrator-2034',
+    name: 'LLM Evaluation Orchestrator',
+    tagline: 'Regression tests, red-teaming, and leaderboards',
+    description: 'Automate LLM evals across providers with test suites, safety red-teaming, and dashboards. CI gate for model changes.',
+    category: 'AI & Data',
+    price: { monthly: 99, yearly: 990, currency: 'USD' },
+    features: [
+      'Provider-agnostic runner',
+      'Dataset and prompt versioning',
+      'Guardrail and jailbreak tests',
+      'CI integration and reports',
+      'Cost and latency tracking'
+    ],
+    link: 'https://ziontechgroup.com/services',
+    popular: true,
+    icon: '🧪',
+    color: 'from-cyan-600 to-blue-700',
+    launchDate: '2025-01-20',
+    rating: 4.8
+  },
+  {
+    id: 'hybrid-rag-starter-2034',
+    name: 'Hybrid RAG Starter',
+    tagline: 'Structured + unstructured retrieval with eval harness',
+    description: 'Production RAG template combining SQL + vector stores with caching, tracing, and evaluation harness.',
+    category: 'AI & Data',
+    price: { monthly: 79, yearly: 790, currency: 'USD' },
+    features: [
+      'Hybrid retrieval (BM25 + vectors)',
+      'Eval harness and datasets',
+      'Prompt caching and tracing',
+      'Guardrails and redaction',
+      'SDKs for Node/Python'
+    ],
+    link: 'https://ziontechgroup.com/services',
+    popular: true,
+    icon: '🔎',
+    color: 'from-purple-600 to-pink-600',
+    launchDate: '2025-01-30',
+    rating: 4.7
+  }
 ];

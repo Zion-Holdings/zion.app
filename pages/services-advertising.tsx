@@ -304,6 +304,70 @@ export default function ServicesAdvertisingPage() {
 						<li>References: {ext('https://launchdarkly.com/pricing/')}, {ext('https://www.flagsmith.com/pricing')}, {ext('https://www.split.io/pricing/')}</li>
 					</ul>
 				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Managed Kubernetes HA</h2>
+					<p className="text-slate-300">HA control plane, backups, GitOps, observability, cost guardrails.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB/Scaleup budget: $1,000–$5,000/mo</li>
+						<li>References: {ext('https://cloud.google.com/kubernetes-engine/pricing')}, {ext('https://aws.amazon.com/eks/pricing/')}, {ext('https://azure.microsoft.com/pricing/details/kubernetes-service/')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">SRE On-Call Automation</h2>
+					<p className="text-slate-300">SLI/SLOs, error budgets, and auto-remediation to cut MTTR.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $500–$3,000/mo</li>
+						<li>References: {ext('https://sre.google/workbook/')}, {ext('https://www.pagerduty.com/pricing/')}, {ext('https://www.atlassian.com/incident-management')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Zero Trust Access (ZTNA)</h2>
+					<p className="text-slate-300">Identity- and device-aware access with SSO and short-lived creds.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $300–$2,000/mo</li>
+						<li>References: {ext('https://www.cloudflare.com/plans/zero-trust/')}, {ext('https://workos.com/pricing')}, {ext('https://www.okta.com/pricing/')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">LLM Evaluation Orchestrator</h2>
+					<p className="text-slate-300">Regression tests, red-teaming, and dashboards across providers.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $50–$400/mo + API usage</li>
+						<li>References: {ext('https://openrouter.ai/models')}, {ext('https://openai.com/api/pricing')}, {ext('https://www.anthropic.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Hybrid RAG Starter</h2>
+					<p className="text-slate-300">Hybrid retrieval (BM25 + vectors), eval harness, caching, tracing.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $50–$1,000/mo</li>
+						<li>References: {ext('https://www.pinecone.io/pricing/')}, {ext('https://weaviate.io/pricing')}, {ext('https://www.elastic.co/pricing')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">API Security Scanner</h2>
+					<p className="text-slate-300">Shadow API discovery and OWASP API Top 10 detection with CI gates.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $100–$2,000/mo</li>
+						<li>References: {ext('https://owasp.org/www-project-api-security/')}, {ext('https://www.cloudflare.com/plans/')}, {ext('https://www.fastly.com/pricing')}</li>
+					</ul>
+				</section>
+
+				{/* Final contact */}
+				<div className="mt-10 p-4 rounded-xl bg-black/30 border border-gray-800">
+					<div className="text-slate-300">Questions or need a quote? Reach us at:</div>
+					<div className="flex flex-col md:flex-row items-start md:items-center gap-3 mt-2">
+						<a href="tel:+13024640950" className="px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white">+1 302 464 0950</a>
+						<a href="mailto:kleber@ziontechgroup.com" className="px-4 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-600 text-white">kleber@ziontechgroup.com</a>
+						<span className="text-slate-400">364 E Main St STE 1008 Middletown DE 19709</span>
+					</div>
+				</div>
 			</div>
 		</div>
 	);

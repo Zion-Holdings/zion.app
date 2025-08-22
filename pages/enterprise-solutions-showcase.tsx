@@ -20,6 +20,26 @@ const contactInfo = {
   website: 'https://ziontechgroup.com'
 };
 
+// Price helpers to normalize varying data shapes
+const getMonthlyPriceValue = (solution: any): number => {
+  if (solution?.price?.monthly) return Number(solution.price.monthly) || 0;
+  if (solution?.pricing?.starter) return parseInt(String(solution.pricing.starter).replace(/[^0-9]/g, '')) || 0;
+  return 0;
+};
+
+const getStarterPriceLabel = (solution: any): string => {
+  if (solution?.pricing?.starter) return String(solution.pricing.starter);
+  if (solution?.price?.monthly) return `$${solution.price.monthly}/month`;
+  if (typeof solution?.price === 'string') return solution.price;
+  return 'Contact for pricing';
+};
+
+const getProPriceLabel = (solution: any): string => {
+  if (solution?.pricing?.professional) return String(solution.pricing.professional);
+  if (solution?.price?.yearly) return `$${solution.price.yearly}/year`;
+  return 'Custom/annual available';
+};
+
 const solutionCategories = [
   {
     id: 'all',
@@ -93,10 +113,7 @@ export default function EnterpriseSolutionsShowcase() {
       if (priceRange === 'all') return matchesSearch;
       
       // Handle different pricing structures
-      let priceValue = 0;
-      if (solution.pricing.starter) {
-        priceValue = parseInt(solution.pricing.starter.replace(/[^0-9]/g, ''));
-      }
+      let priceValue = getMonthlyPriceValue(solution);
       
       switch (priceRange) {
         case 'low':
@@ -350,10 +367,10 @@ export default function EnterpriseSolutionsShowcase() {
                       <div className="mb-6">
                         <h4 className="text-sm font-semibold text-blue-300 mb-2">Starting at</h4>
                         <div className="text-2xl font-bold text-white">
-                          {solution.pricing.starter}
+                          {getStarterPriceLabel(solution)}
                         </div>
                         <div className="text-xs text-gray-400">
-                          {solution.pricing.professional}
+                          {getProPriceLabel(solution)}
                         </div>
                       </div>
 

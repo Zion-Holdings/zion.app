@@ -1,90 +1,89 @@
-export interface EnterpriseITSolution {
+export interface EnterpriseITSolution2034 {
   id: string;
   name: string;
+  tagline: string;
   description: string;
   category: string;
-  pricing?: {
-    starter?: string;
-    professional?: string;
-    enterprise?: string;
+  price: {
+    monthly: number;
+    yearly?: number;
+    currency: string;
   };
   features: string[];
   link: string;
+  popular: boolean;
+  icon: string;
+  color: string;
+  textColor?: string;
   launchDate?: string;
   rating?: number;
 }
 
-export const enterpriseITSolutions = [
-	{
-		name: 'Zero-Trust Network Architecture Assessment',
-		description: 'Comprehensive ZTNA gap analysis, reference architectures, and phased rollout plan with policy and identity mapping.',
-		category: 'Enterprise IT',
-		pricing: { monthly: 4500 },
-		features: [
-			'Identity- and context-based access control design',
-			'Micro-segmentation blueprint and enforcement plan',
-			'Okta/AAD conditional access policy hardening',
-			'Pilot rollout with success metrics'
-		]
-	},
-	{
-		name: 'Autonomous IT Operations Center',
-		description: 'AIOps with incident auto-triage, runbook automation, and SLO guardrails for self-healing infrastructure.',
-		category: 'Enterprise IT',
-		pricing: { monthly: 6500 },
-		features: [
-			'24/7 incident auto-triage and routing',
-			'Automated remediation via runbooks',
-			'Error budget SLO enforcement',
-			'Post-incident AI summaries'
-		]
-	},
-	{
-		name: 'Cloud Cost Optimization & FinOps',
-		description: 'Multi-cloud cost visibility, anomaly detection, and rightsizing with savings targets and reporting.',
-		category: 'Enterprise IT',
-		pricing: { monthly: 3000 },
-		features: [
-			'Cost allocation and tagging strategy',
-			'Anomaly detection and alerting',
-			'Idle/over-provisioned resource cleanup',
-			'Quarterly savings reports'
-		]
-	},
-	{
-		name: 'Enterprise Observability Platform',
-		description: 'Unified logs, metrics, traces and profiling with golden signals and on-call health dashboards.',
-		category: 'Enterprise IT',
-		pricing: { monthly: 3800 },
-		features: [
-			'OpenTelemetry-based ingestion',
-			'Golden signals dashboards',
-			'Proactive SLO and error budget alerts',
-			'CI/CD and on-call integrations'
-		]
-	},
-	{
-		name: 'Secure SDLC & Supply Chain Hardening',
-		description: 'SBOM generation, dependency risk scanning, signed builds, and policy gates in CI.',
-		category: 'Enterprise IT',
-		pricing: { monthly: 4200 },
-		features: [
-			'SBOM and vulnerability reporting',
-			'CI policy gates (SAST/DAST/IAST)',
-			'Artifact signing and provenance (SLSA)',
-			'Developer education and playbooks'
-		]
-	},
-	{
-		name: 'Managed Postgres HA (Enterprise)',
-		description: 'SRE-backed HA Postgres with PITR, automated failover, and performance tuning for mission-critical apps.',
-		category: 'Enterprise IT',
-		pricing: { monthly: 5200 },
-		features: [
-			'Failover and replication management',
-			'Point-in-time recovery and backups',
-			'Performance tuning and capacity planning',
-			'24/7 monitoring and on-call'
-		]
-	}
+export const enterpriseITSolutions: EnterpriseITSolution2034[] = [
+  {
+    id: 'managed-kubernetes-ha-2034',
+    name: 'Managed Kubernetes HA',
+    tagline: 'Production clusters with HA control plane, backups, and SLOs',
+    description: 'We provision, harden, and operate Kubernetes clusters with opinionated defaults, SLOs, and 24/7 monitoring. Includes autoscaling, GitOps, and cost controls.',
+    category: 'Cloud & Infrastructure',
+    price: { monthly: 1999, yearly: 19990, currency: 'USD' },
+    features: [
+      'HA control plane and node pools',
+      'Cluster backups and DR runbooks',
+      'GitOps with ArgoCD/Flux',
+      'HPA/VPA autoscaling and rightsizing',
+      'Observability (OTel, Prometheus, Grafana)'
+    ],
+    link: 'https://ziontechgroup.com/services',
+    popular: true,
+    icon: '☸️',
+    color: 'from-blue-600 to-cyan-700',
+    textColor: 'text-blue-300',
+    launchDate: '2025-01-15',
+    rating: 4.8
+  },
+  {
+    id: 'sre-on-call-automation-2034',
+    name: 'SRE On-Call Automation',
+    tagline: 'Reduce pages with golden signals and error budgets',
+    description: 'We implement SLI/SLO with error budgets, auto-remediation playbooks, and incident tooling integration to reduce MTTR and alert fatigue.',
+    category: 'Reliability & SRE',
+    price: { monthly: 1499, yearly: 14990, currency: 'USD' },
+    features: [
+      'SLI/SLO/Error budget setup',
+      'Auto-remediation workflows',
+      'Incident comms & postmortems',
+      'Runbooks and service catalog',
+      'PagerDuty/Opsgenie integration'
+    ],
+    link: 'https://ziontechgroup.com/services',
+    popular: true,
+    icon: '📟',
+    color: 'from-emerald-600 to-teal-700',
+    textColor: 'text-emerald-300',
+    launchDate: '2025-02-01',
+    rating: 4.7
+  },
+  {
+    id: 'zero-trust-access-2034',
+    name: 'Zero Trust Access (ZTNA)',
+    tagline: 'Beyond VPN: identity- and device-aware access',
+    description: 'Design and rollout of zero trust access using Cloudflare/Zitadel/Okta policies, device posture, and short-lived credentials.',
+    category: 'Security',
+    price: { monthly: 1299, yearly: 12990, currency: 'USD' },
+    features: [
+      'SSO/SAML/OIDC integration',
+      'Per-app and per-API policies',
+      'Device posture and MFA',
+      'Just-in-time access (JIT)',
+      'Audit trails and alerts'
+    ],
+    link: 'https://ziontechgroup.com/services',
+    popular: false,
+    icon: '🛡️',
+    color: 'from-indigo-600 to-purple-700',
+    textColor: 'text-indigo-300',
+    launchDate: '2025-02-10',
+    rating: 4.6
+  }
 ];
