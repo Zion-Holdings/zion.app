@@ -1,16 +1,16 @@
 import React from 'react';
-import SEO from '../components/SEO';
 import Link from 'next/link';
+import SEO from '../components/SEO';
 
-export default function ServerError() {
+export default function Custom500() {
 	return (
-		<>
-			<SEO title="Server Error | Zion Tech Group" description="An unexpected error occurred." noIndex />
-			<div className="container mx-auto px-4 py-24 text-center">
-				<h1 className="text-4xl md:text-6xl font-bold text-white mb-4">Something went wrong</h1>
-				<p className="text-gray-300 mb-8">Please try again later or return to the homepage.</p>
-				<Link href="/" className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-6 py-3 rounded-xl">Go Home</Link>
+		<div className="min-h-[60vh] flex items-center justify-center text-center px-6">
+			<SEO title="Server Error | Zion Tech Group" description="An unexpected error occurred." noindex nofollow />
+			<div>
+				<h1 className="text-5xl font-extrabold mb-4">500</h1>
+				<p className="text-gray-300 mb-8">Something went wrong on our end.</p>
+				<Link href="/" className="text-cyan-400 hover:text-cyan-300">Go back home</Link>
 			</div>
-		</>
+		</div>
 	);
 }
