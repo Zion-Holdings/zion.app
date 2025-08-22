@@ -83,18 +83,12 @@ const navigationItems: NavigationItem[] = [
       { name: 'IT Asset Discovery Agent', href: '/it-asset-discovery-agent', description: 'Agentless discovery' },
       { name: 'Managed Postgres HA', href: '/managed-postgres-ha', description: 'HA Postgres ops' },
       { name: 'Micro SAAS', href: '/micro-saas', description: 'Business tools and automation' },
-      { name: 'AI Contract Risk Analyzer', href: '/services/ai-contract-risk-analyzer', description: 'Clause risk scoring & redlines', featured: true },
-      { name: 'FinOps RI/SP Optimizer', href: '/services/finops-ri-sp-optimizer', description: 'Savings plans recommendations' },
-      { name: 'Kubernetes SLO Auto‑Tuner', href: '/services/k8s-slo-auto-tuner', description: 'SLO discovery & PRs' },
-      { name: 'Vendor Security Questionnaire AI', href: '/services/vendor-security-questionnaire-ai', description: 'Auto‑fill SIG/CAIQ with citations' },
-      { name: 'Invoice Reconciliation Copilot', href: '/services/invoice-reconciliation-copilot', description: '3‑way match with anomaly detection' },
-      { name: 'Policy Drift & Compliance Monitor', href: '/services/policy-drift-compliance-monitor', description: 'Detect drift and auto‑PR fixes' },
-      { name: 'New Services', href: '/new-services', description: 'Latest additions', featured: true },
-      // Newly added real services
-      { name: 'RAG Evaluation Lab', href: '/services/rag-evaluation-lab', description: 'Benchmark and regression test RAG' },
-      { name: 'Browser Automation Cloud', href: '/services/browser-automation-cloud', description: 'Headless browser automation' },
-      { name: 'Secrets Rotation Automation', href: '/services/secrets-rotation-automation', description: 'Rotate keys and passwords' },
-      { name: 'API Performance Testing', href: '/services/api-performance-testing', description: 'Latency SLO and load tests' }
+      { name: 'New 2034 Services', href: '/services?sort=newest', description: 'Latest additions' },
+      { name: 'RAG Evaluation Lab', href: '/rag-evaluation-lab', description: 'Continuous evals for RAG quality' },
+      { name: 'Browser Automation Cloud', href: '/browser-automation-cloud', description: 'Scale Playwright/Puppeteer' },
+      { name: 'Secrets Rotation Automation', href: '/secrets-rotation-automation', description: 'Automated key and secret rotation' },
+      { name: 'API Performance Testing', href: '/api-performance-testing', description: 'Load, latency and regression tests' },
+      { name: 'SOC 2 Compliance Automation', href: '/soc2-compliance-automation', description: 'Controls, evidence and audit room' }
     ]
   },
   {
