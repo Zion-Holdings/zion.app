@@ -31,6 +31,7 @@ import { professionalServices } from '../data/professional-services';
 import { realEnterpriseServices2025 } from '../data/real-enterprise-services-2025';
 import { augmentedServicesBatch3 } from '../data/real-augmented-services-2025-batch3';
 import { real2025Q3Additions } from '../data/real-2025-q3-additions';
+import { realServicesQ42025 } from '../data/real-services-q4-2025';
 
 export default function ServiceFallbackPage() {
   const router = useRouter();
@@ -62,7 +63,8 @@ export default function ServiceFallbackPage() {
         professionalServices as any,
         realEnterpriseServices2025 as any,
         augmentedServicesBatch3 as any,
-        real2025Q3Additions as any
+        real2025Q3Additions as any,
+        realServicesQ42025 as any
       );
     const byLink = all.find(s => {
       try {
