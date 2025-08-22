@@ -1034,6 +1034,66 @@ export default function ServicesAdvertisingPage() {
 					</ul>
 				</section>
 
+				<section id="ai-contract-risk-analyzer" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">AI Contract Risk Analyzer</h2>
+					<p className="text-slate-300">Flag risky clauses, generate playbook-aligned redlines, and export audit-ready changes.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $99–$299/mo</li>
+						<li>References: {ext('https://kirasystems.com/')} , {ext('https://www.docusign.com/products/clm/pricing')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/ai-contract-risk-analyzer">Learn more</a></div>
+				</section>
+
+				<section id="finops-ri-sp-optimizer" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">FinOps RI/SP Optimizer</h2>
+					<p className="text-slate-300">Simulate savings plans and reserved instances with commitment pacing and guardrails.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $79–$299/mo</li>
+						<li>References: {ext('https://aws.amazon.com/savingsplans/pricing/')} , {ext('https://azure.microsoft.com/pricing')} , {ext('https://cloud.google.com/billing')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/finops-ri-sp-optimizer">Learn more</a></div>
+				</section>
+
+				<section id="k8s-slo-auto-tuner" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Kubernetes SLO Auto‑Tuner</h2>
+					<p className="text-slate-300">Derive realistic SLOs, simulate error budgets, and open GitOps PRs safely.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $99–$399/mo</li>
+						<li>References: {ext('https://www.nobl9.com/pricing')} , {ext('https://www.datadoghq.com/pricing/')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/k8s-slo-auto-tuner">Learn more</a></div>
+				</section>
+
+				<section id="vendor-security-questionnaire-ai" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Vendor Security Questionnaire AI</h2>
+					<p className="text-slate-300">Auto‑fill SIG/CAIQ with mapped controls, citations, and reviewer workflows.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $59–$199/mo</li>
+						<li>References: {ext('https://www.vanta.com/pricing')} , {ext('https://drata.com/pricing')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/vendor-security-questionnaire-ai">Learn more</a></div>
+				</section>
+
+				<section id="invoice-reconciliation-copilot" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Invoice Reconciliation Copilot</h2>
+					<p className="text-slate-300">Three‑way match POs, invoices, and receipts with anomaly detection and approvals.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $39–$199/mo</li>
+						<li>References: {ext('https://www.tipalti.com/pricing/')} , {ext('https://www.stampli.com/pricing/')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/invoice-reconciliation-copilot">Learn more</a></div>
+				</section>
+
+				<section id="policy-drift-compliance-monitor" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Policy Drift & Compliance Monitor</h2>
+					<p className="text-slate-300">Detect config drift across cloud and SaaS. Auto‑PR fixes with evidence.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $59–$299/mo</li>
+						<li>References: {ext('https://www.openpolicyagent.org/')} , {ext('https://www.styra.com/pricing')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/policy-drift-compliance-monitor">Learn more</a></div>
+				</section>
+
 				{/* Contact CTA */}
 				<div className="flex flex-col md:flex-row items-center gap-4 p-4 rounded-xl bg-black/30 border border-gray-800">
 					<a href="tel:+13024640950" className="px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white">Call +1 302 464 0950</a>
