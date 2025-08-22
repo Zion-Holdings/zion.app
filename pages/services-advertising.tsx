@@ -60,6 +60,33 @@ export default function ServicesAdvertisingPage() {
 						<li>References: {ext('https://auth0.com/pricing')}, {ext('https://workos.com/pricing')}, {ext('https://www.okta.com/pricing/')}</li>
 					</ul>
 				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Email Deliverability Guardian</h2>
+					<p className="text-slate-300">DMARC, SPF, DKIM automation with warm‑up and blocklist monitoring.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $30–$200/mo</li>
+						<li>References: {ext('https://www.validity.com/products/dmarc-monitor/')}, {ext('https://dmarc.postmarkapp.com/')}, {ext('https://www.inboxally.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Okta SSO & SCIM‑in‑a‑Box</h2>
+					<p className="text-slate-300">Productized SSO and user lifecycle for B2B SaaS. Faster than bespoke builds.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $200–$1,500/mo</li>
+						<li>References: {ext('https://workos.com/pricing')}, {ext('https://auth0.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">LLM Fine‑Tuning Lab</h2>
+					<p className="text-slate-300">Data prep, evals, and safe deployment for your custom models.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $200–$1,500/mo + training usage</li>
+						<li>References: {ext('https://openai.com/index/pricing/#fine-tuning')}, {ext('https://docs.anthropic.com/en/docs/build-with-claude/fine-tuning')}</li>
+					</ul>
+				</section>
 			</div>
 		</div>
 	);
