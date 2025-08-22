@@ -11,6 +11,10 @@ import { emergingTechServicesEnhanced2025 } from '../data/2025-emerging-tech-ser
 import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
 import { advancedITInfrastructureServices2025 } from '../data/2025-advanced-it-infrastructure-services';
 import { innovativeBusinessSolutions2025 } from '../data/2025-innovative-business-solutions';
+import { innovativeNewMicroSaasServices2025 } from '../data/2025-innovative-new-micro-saas-services';
+import { innovativeNewAIServices2025 } from '../data/2025-innovative-new-ai-services';
+import { innovativeNewITServices2025 } from '../data/2025-innovative-new-it-services';
+import { innovativeNewBusinessSolutions2025 } from '../data/2025-innovative-new-business-solutions';
 
 const contactInfo = {
   mobile: '+1 302 464 0950',
@@ -37,7 +41,7 @@ const serviceCategories = [
   {
     title: 'AI & Consciousness',
     description: 'Revolutionary AI platforms with consciousness and emotional intelligence',
-    services: innovativeAIServicesEnhanced2025.slice(0, 3),
+    services: [...innovativeAIServicesEnhanced2025.slice(0, 2), ...innovativeNewAIServices2025.slice(0, 1)],
     icon: Brain,
     color: 'from-violet-500 to-purple-600',
     href: '/ai-services',
@@ -46,7 +50,7 @@ const serviceCategories = [
   {
     title: 'Quantum & Emerging Tech',
     description: 'Breakthrough quantum computing and space technology solutions',
-    services: emergingTechServicesEnhanced2025.slice(0, 3),
+    services: [...emergingTechServicesEnhanced2025.slice(0, 2), ...innovativeNewITServices2025.filter(s => s.category.includes('Quantum')).slice(0, 1)],
     icon: Atom,
     color: 'from-indigo-500 to-blue-600',
     href: '/quantum-services',
@@ -55,7 +59,7 @@ const serviceCategories = [
   {
     title: 'Enterprise IT',
     description: 'Advanced enterprise infrastructure and security solutions',
-    services: innovativeITServicesEnhanced2025.slice(0, 3),
+    services: [...innovativeITServicesEnhanced2025.slice(0, 2), ...innovativeNewITServices2025.slice(0, 1)],
     icon: Shield,
     color: 'from-blue-500 to-cyan-600',
     href: '/enterprise-it',
@@ -64,7 +68,7 @@ const serviceCategories = [
   {
     title: 'Micro SAAS',
     description: 'Innovative business solutions for modern enterprises',
-    services: innovativeRealMicroSaasServices2025.slice(0, 3),
+    services: [...innovativeRealMicroSaasServices2025.slice(0, 2), ...innovativeNewMicroSaasServices2025.slice(0, 1)],
     icon: Rocket,
     color: 'from-teal-500 to-emerald-600',
     href: '/micro-saas',
@@ -73,7 +77,7 @@ const serviceCategories = [
   {
     title: 'Advanced AI Automation',
     description: 'Revolutionary AI automation for development, testing, DevOps, and security',
-    services: advancedAIAutomationServices2025.slice(0, 3),
+    services: [...advancedAIAutomationServices2025.slice(0, 2), ...innovativeNewAIServices2025.filter(s => s.category.includes('Development') || s.category.includes('DevOps')).slice(0, 1)],
     icon: Brain,
     color: 'from-emerald-500 to-teal-600',
     href: '/advanced-ai-automation-services',
@@ -82,7 +86,7 @@ const serviceCategories = [
   {
     title: 'Advanced IT Infrastructure',
     description: 'Next-generation infrastructure with quantum computing and edge computing',
-    services: advancedITInfrastructureServices2025.slice(0, 3),
+    services: [...advancedITInfrastructureServices2025.slice(0, 2), ...innovativeNewITServices2025.filter(s => s.category.includes('Infrastructure') || s.category.includes('Cloud')).slice(0, 1)],
     icon: Cloud,
     color: 'from-indigo-500 to-purple-600',
     href: '/advanced-it-infrastructure-services',
@@ -91,10 +95,37 @@ const serviceCategories = [
   {
     title: 'Innovative Business Solutions',
     description: 'AI-powered business intelligence, marketing, sales, and HR solutions',
-    services: innovativeBusinessSolutions2025.slice(0, 3),
+    services: [...innovativeBusinessSolutions2025.slice(0, 2), ...innovativeNewBusinessSolutions2025.slice(0, 1)],
     icon: Target,
     color: 'from-green-500 to-emerald-600',
     href: '/innovative-business-solutions',
+    features: ['Business Intelligence', 'Marketing Automation', 'Sales Intelligence']
+  },
+  {
+    title: 'New AI Services',
+    description: 'Cutting-edge AI services with autonomous capabilities and quantum integration',
+    services: innovativeNewAIServices2025.slice(0, 3),
+    icon: Brain,
+    color: 'from-pink-500 to-rose-600',
+    href: '/new-ai-services',
+    features: ['Autonomous Research', 'Emotional Intelligence', 'Quantum Neural Networks']
+  },
+  {
+    title: 'New IT Services',
+    description: 'Next-generation IT infrastructure with quantum security and autonomous operations',
+    services: innovativeNewITServices2025.slice(0, 3),
+    icon: Shield,
+    color: 'from-cyan-500 to-blue-600',
+    href: '/new-it-services',
+    features: ['Quantum Security', 'Autonomous Operations', 'Edge Computing']
+  },
+  {
+    title: 'New Business Solutions',
+    description: 'AI-powered business solutions with autonomous capabilities and intelligent automation',
+    services: innovativeNewBusinessSolutions2025.slice(0, 3),
+    icon: Target,
+    color: 'from-emerald-500 to-teal-600',
+    href: '/new-business-solutions',
     features: ['Business Intelligence', 'Marketing Automation', 'Sales Intelligence']
   }
 ];
@@ -502,6 +533,16 @@ export default function Home() {
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Discover our comprehensive portfolio of cutting-edge technology services that are transforming industries and driving innovation worldwide.
             </p>
+            <div className="mt-8">
+              <Link
+                href="/comprehensive-new-services-showcase-2025"
+                className="inline-flex items-center bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/25"
+              >
+                <Rocket className="w-5 h-5 mr-2" />
+                View All New Services 2025
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Link>
+            </div>
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

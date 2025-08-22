@@ -17,6 +17,19 @@ const contactInfo = {
 
 const footerSections = [
   {
+    title: 'New Services 2025',
+    links: [
+      { name: 'Comprehensive Services Showcase', href: '/comprehensive-new-services-showcase-2025' },
+      { name: 'New Micro SAAS Services', href: '/comprehensive-new-services-showcase-2025#services' },
+      { name: 'New AI Services', href: '/comprehensive-new-services-showcase-2025#services' },
+      { name: 'New IT Services', href: '/comprehensive-new-services-showcase-2025#services' },
+      { name: 'New Business Solutions', href: '/comprehensive-new-services-showcase-2025#services' },
+      { name: 'Service Categories', href: '/comprehensive-new-services-showcase-2025#services' },
+      { name: 'Pricing & Plans', href: '/comprehensive-new-services-showcase-2025#services' },
+      { name: 'Contact & Support', href: '/comprehensive-new-services-showcase-2025#contact' }
+    ]
+  },
+  {
     title: 'AI & Consciousness',
     links: [
       { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2025' },

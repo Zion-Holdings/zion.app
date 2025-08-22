@@ -31,19 +31,19 @@ const contactInfo = {
 const navigationItems: NavigationItem[] = [
   {
     name: 'All Services',
-    href: '/comprehensive-services-showcase-2025',
+    href: '/comprehensive-new-services-showcase-2025',
     icon: <Globe className="w-5 h-5" />,
     description: 'Complete portfolio of all technology services',
-    badge: 'Showcase',
+    badge: 'New 2025',
     children: [
-      { name: 'View All Services', href: '/comprehensive-services-showcase-2025', description: 'Complete services portfolio' },
-      { name: 'Service Categories', href: '/comprehensive-services-showcase-2025#categories', description: 'Browse by category' },
-      { name: 'Pricing Comparison', href: '/comprehensive-services-showcase-2025#pricing', description: 'Compare service costs' },
-      { name: 'Service Search', href: '/comprehensive-services-showcase-2025#search', description: 'Find specific services' },
-      { name: 'Latest Innovations', href: '/revolutionary-2025-services-showcase', description: 'Cutting-edge solutions' },
-      { name: '2026 Services', href: '/revolutionary-2026-services', description: 'Next generation solutions' },
-      { name: '2027 Services', href: '/revolutionary-2027-services-showcase', description: 'Future-ready services' },
-      { name: 'Ultimate 2026', href: '/ultimate-2026-services-showcase', description: 'Premium service collection' }
+      { name: 'New Services Showcase 2025', href: '/comprehensive-new-services-showcase-2025', description: 'Latest innovative services portfolio' },
+      { name: 'Micro SAAS Services', href: '/comprehensive-new-services-showcase-2025#services', description: 'New business solutions' },
+      { name: 'AI Services', href: '/comprehensive-new-services-showcase-2025#services', description: 'Cutting-edge AI solutions' },
+      { name: 'IT Services', href: '/comprehensive-new-services-showcase-2025#services', description: 'Next-gen infrastructure' },
+      { name: 'Business Solutions', href: '/comprehensive-new-services-showcase-2025#services', description: 'AI-powered business tools' },
+      { name: 'Service Categories', href: '/comprehensive-new-services-showcase-2025#services', description: 'Browse by category' },
+      { name: 'Pricing & Plans', href: '/comprehensive-new-services-showcase-2025#services', description: 'Service pricing' },
+      { name: 'Contact & Support', href: '/comprehensive-new-services-showcase-2025#contact', description: 'Get in touch' }
     ]
   },
   {
