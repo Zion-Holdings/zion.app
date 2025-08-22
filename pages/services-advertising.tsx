@@ -16,6 +16,7 @@ export default function ServicesAdvertisingPage() {
 			<div className="max-w-6xl mx-auto space-y-10">
 				<h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Services Advertising</h1>
 
+				{/* Original sections */}
 				<section className="space-y-6">
 					<h2 className="text-2xl font-semibold text-white">AI Evaluation Orchestrator</h2>
 					<p className="text-slate-300">Automate LLM evals, regression tests, red-teaming, and leaderboards across OpenAI, Anthropic, Groq, and more.</p>
@@ -60,6 +61,76 @@ export default function ServicesAdvertisingPage() {
 						<li>References: {ext('https://auth0.com/pricing')}, {ext('https://workos.com/pricing')}, {ext('https://www.okta.com/pricing/')}</li>
 					</ul>
 				</section>
+
+				{/* New sections with average market prices and references */}
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Customer Support & Helpdesk</h2>
+					<p className="text-slate-300">Ticketing, live chat, knowledge base, and AI assistants to reduce response times.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $20–$500/mo</li>
+						<li>References: {ext('https://www.zendesk.com/pricing/')}, {ext('https://freshdesk.com/pricing')}, {ext('https://www.intercom.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">E‑commerce Returns Management</h2>
+					<p className="text-slate-300">Automate RMAs, labels, exchanges, and refunds for a delightful post‑purchase experience.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $29–$299/mo + labels</li>
+						<li>References: {ext('https://www.loopreturns.com/pricing')}, {ext('https://www.aftership.com/returns-center/pricing')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Podcast Transcription & Notes</h2>
+					<p className="text-slate-300">Accurate transcriptions with chapters and show notes drafts for SEO & accessibility.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $10–$100/mo</li>
+						<li>References: {ext('https://deepgram.com/pricing')}, {ext('https://www.assemblyai.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Automated Email Follow‑ups</h2>
+					<p className="text-slate-300">Lead nurturing sequences triggered by activity with AI‑personalized copy and CRM sync.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $25–$150/mo</li>
+						<li>References: {ext('https://mailchimp.com/pricing/')} (automations), {ext('https://customer.io/pricing')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Freelancer Portfolio Builder</h2>
+					<p className="text-slate-300">Beautiful portfolios with case studies, testimonials, and SEO.
+					</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $12–$49/mo</li>
+						<li>References: {ext('https://webflow.com/pricing')}, {ext('https://www.squarespace.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Scheduling & Appointments</h2>
+					<p className="text-slate-300">Booking pages, reminders, no‑show reduction, and payments.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $10–$200/mo</li>
+						<li>References: {ext('https://calendly.com/pricing')}, {ext('https://cal.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Feature Flags & Experiments</h2>
+					<p className="text-slate-300">Safe launches and A/B tests with audit trails and targeting.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $50–$800/mo</li>
+						<li>References: {ext('https://launchdarkly.com/pricing/')}, {ext('https://www.flagsmith.com/pricing')}</li>
+					</ul>
+				</section>
+
+				{/* CTA */}
+				<div className="pt-6 border-t border-slate-700/50">
+					<p className="text-slate-300">Call <a href="tel:+13024640950" className="text-cyan-400">+1 302 464 0950</a> or email <a href="mailto:kleber@ziontechgroup.com" className="text-cyan-400">kleber@ziontechgroup.com</a>. Visit us at 364 E Main St STE 1008 Middletown DE 19709.</p>
+				</div>
 			</div>
 		</div>
 	);

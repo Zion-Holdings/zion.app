@@ -23,6 +23,7 @@ import { realOperationalServices } from '../data/real-operational-services';
 import { marketReadyServices } from '../data/market-ready-services';
 import { marketValidatedServices } from '../data/market-validated-services';
 import { industryRealServices } from '../data/industry-real-services';
+import { real2027Q2Additions } from '../data/real-2027-q2-additions';
 
 // Helper function to get service category
 const getServiceCategory = (service: any) => {
@@ -66,7 +67,8 @@ const allServices = [
   ...realOperationalServices,
   ...marketReadyServices,
   ...marketValidatedServices,
-  ...industryRealServices
+  ...industryRealServices,
+  ...real2027Q2Additions
 ];
 
 const categories = [
