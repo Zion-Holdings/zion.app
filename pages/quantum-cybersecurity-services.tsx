@@ -29,7 +29,7 @@ export default function QuantumCybersecurityServices() {
         <meta name="contact:website" content="https://ziontechgroup.com" />
       </Head>
 
-      <UltraFuturisticBackground2026 intensity="high" theme="cyberpunk">
+      <UltraFuturisticBackground2026 intensity="high" theme="cyber">
         {/* Hero Section */}
         <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16">
           <div className="text-center z-10 max-w-6xl mx-auto">
