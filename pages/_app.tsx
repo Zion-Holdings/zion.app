@@ -10,12 +10,11 @@ export default function App({ Component, pageProps }: AppProps) {
 	return (
 		<SEOContext.Provider value={{ renderedRef }}>
 			<a href="#main" className="skip-link">Skip to main content</a>
-			<DefaultSEO />
+			{/* Anchor target for skip link; avoids nested main landmarks */}
+			<div id="main" tabIndex={-1} />
 			<Analytics />
-			<a href="#main-content" className="skip-link">Skip to content</a>
-			<main id="main-content">
-				<Component {...pageProps} />
-			</main>
+			<Component {...pageProps} />
+			<DefaultSEO />
 		</SEOContext.Provider>
 	);
 }

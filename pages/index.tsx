@@ -6,7 +6,7 @@ export default function IndexPage() {
   return (
     <>
       <SEO />
-      <main id="main">
+      <main role="main">
         <Homepage2025 />
       </main>
     </>
