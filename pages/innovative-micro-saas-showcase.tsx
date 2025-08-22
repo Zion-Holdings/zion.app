@@ -63,7 +63,7 @@ const InnovativeMicroSaasShowcase: React.FC = () => {
     const matchesCategory = selectedCategory === 'all' || service.category === selectedCategory;
     const matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         service.tagline.toLowerCase().includes(searchTerm.toLowerCase());
+                         (typeof (service as any).tagline === 'string' && (service as any).tagline.toLowerCase().includes(searchTerm.toLowerCase()));
     return matchesCategory && matchesSearch;
   });
 
@@ -362,7 +362,7 @@ const InnovativeMicroSaasShowcase: React.FC = () => {
                       </div>
 
                       <p className="text-gray-300 mb-4 leading-relaxed">
-                        {service.tagline}
+                        {(service as any).tagline || service.description}
                       </p>
 
                       <p className="text-gray-400 mb-6 text-sm">
@@ -394,7 +394,7 @@ const InnovativeMicroSaasShowcase: React.FC = () => {
                           {service.pricing.starter}
                         </div>
                         <p className="text-sm text-gray-400">
-                          {service.pricing.professional} • {service.pricing.enterprise}
+                          {((service as any).pricing?.professional || '') + (((service as any).pricing?.professional && (service as any).pricing?.enterprise) ? ' • ' : '') + ((service as any).pricing?.enterprise || '')}
                         </p>
                       </div>
 
@@ -402,22 +402,22 @@ const InnovativeMicroSaasShowcase: React.FC = () => {
                       <div className="flex items-center justify-between mb-6 text-sm">
                         <div className="flex items-center space-x-2">
                           <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                            service.status === 'Live' ? 'bg-green-500/20 text-green-400' :
-                            service.status === 'Beta' ? 'bg-yellow-500/20 text-yellow-400' :
+                            ((service as any).status === 'Live') ? 'bg-green-500/20 text-green-400' :
+                            ((service as any).status === 'Beta') ? 'bg-yellow-500/20 text-yellow-400' :
                             'bg-blue-500/20 text-blue-400'
                           }`}>
-                            {service.status}
+                            {(service as any).status || 'Available'}
                           </span>
                         </div>
                         <div className="text-gray-400">
-                          {service.customerCount.toLocaleString()} customers
+                          {(((service as any).customerCount ?? 0) as number).toLocaleString()} customers
                         </div>
                       </div>
 
                       {/* Action Buttons */}
                       <div className="flex items-center space-x-3">
                         <a
-                          href={service.demo}
+                          href={(service as any).demo || '/demo'}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="flex-1 flex items-center justify-center space-x-2 px-4 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 group-hover:scale-105"
@@ -427,7 +427,7 @@ const InnovativeMicroSaasShowcase: React.FC = () => {
                         </a>
                         
                         <a
-                          href={`mailto:${service.contact}?subject=Inquiry about ${service.name}`}
+                          href={`mailto:${(service as any).contact || 'kleber@ziontechgroup.com'}?subject=Inquiry about ${service.name}`}
                           className="flex items-center justify-center w-12 h-12 bg-white/10 border border-cyan-500/30 rounded-lg text-cyan-400 hover:bg-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300 group-hover:scale-105"
                         >
                           <Mail className="w-5 h-5" />
