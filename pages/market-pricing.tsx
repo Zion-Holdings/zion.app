@@ -434,6 +434,38 @@ export default function MarketPricingPage() {
             </div>
           </div>
 
+          <div className="space-y-6">
+            <div className="bg-black/30 rounded-2xl border border-sky-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Voice Agents & Realtime</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Vapi pricing: <a className="text-cyan-400 underline" href={`https://www.vapi.ai/pricing`} target="_blank" rel="noopener noreferrer">vapi.ai/pricing</a></li>
+                <li>Retell.ai pricing: <a className="text-cyan-400 underline" href={`https://retellai.com/pricing`} target="_blank" rel="noopener noreferrer">retellai.com/pricing</a></li>
+                <li>Deepgram streaming: <a className="text-cyan-400 underline" href={`https://developers.deepgram.com/pricing`} target="_blank" rel="noopener noreferrer">developers.deepgram.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $50–$1,200/month by minutes, agents, and languages.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-emerald-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Reverse ETL & Activation</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>RudderStack pricing: <a className="text-cyan-400 underline" href={`https://www.rudderstack.com/pricing/`} target="_blank" rel="noopener noreferrer">rudderstack.com/pricing</a></li>
+                <li>Segment: <a className="text-cyan-400 underline" href={`https://segment.com/pricing`} target="_blank" rel="noopener noreferrer">segment.com/pricing</a></li>
+                <li>Hightouch: <a className="text-cyan-400 underline" href={`https://hightouch.com/pricing`} target="_blank" rel="noopener noreferrer">hightouch.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $49–$1,500/month by destinations and monthly rows.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-indigo-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Observability Pipelines</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Vector: <a className="text-cyan-400 underline" href={`https://vector.dev`} target="_blank" rel="noopener noreferrer">vector.dev</a></li>
+                <li>Calyptia (Fluent Bit): <a className="text-cyan-400 underline" href={`https://calyptia.com/pricing`} target="_blank" rel="noopener noreferrer">calyptia.com/pricing</a></li>
+                <li>Grafana Cloud: <a className="text-cyan-400 underline" href={`https://grafana.com/pricing/`} target="_blank" rel="noopener noreferrer">grafana.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $0–$500/month depending on events and retention.</div>
+            </div>
+          </div>
+
           <div className="text-center text-slate-400 mt-10">
             Need help benchmarking? <a href="/contact" className="text-cyan-400 underline">Contact us</a> — we align to transparent, vendor-verifiable pricing.
           </div>
