@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { useRef, useEffect } from 'react';
 import { useSEOContext } from './SEOContext';
 
 interface SEOProps {
@@ -44,14 +43,11 @@ export default function SEO({ title, description, canonical, ogImage, image, noI
 	const robotsContent = `${isNoIndex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}`;
 	const imageAlt = 'Zion Tech Group - Revolutionary Technology Solutions';
 
+	// Mark SEO rendered synchronously to avoid duplicate default + page-level SEO
 	const seoCtx = useSEOContext();
-	const markedRef = useRef(false);
-	useEffect(() => {
-		if (seoCtx && !markedRef.current) {
-			seoCtx.renderedRef.current = true;
-			markedRef.current = true;
-		}
-	}, [seoCtx]);
+	if (seoCtx && !seoCtx.renderedRef.current) {
+		seoCtx.renderedRef.current = true;
+	}
 
 	// Default JSON-LD if none provided
 	const defaultJsonLd = [
