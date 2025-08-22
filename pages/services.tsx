@@ -5,10 +5,15 @@ import {
   Search, Grid, List,
   Brain, Atom, Shield, Target, Rocket,
   ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
-  Building, Cpu, Database, Cloud, Lock
+  Building, Cpu, Database, Cloud, Lock, Zap
 } from 'lucide-react';
 
-// Import our new service data
+// Import our new 2035 service data
+import { innovative2035MicroSaasServices } from '../data/innovative-2035-micro-saas-services';
+import { innovative2035AIServices } from '../data/innovative-2035-ai-services';
+import { innovative2035ITServices } from '../data/innovative-2035-it-services';
+
+// Import existing service data
 import { enterpriseITSolutions } from '../data/2034-enterprise-it-solutions';
 import { innovativeMicroSaasSolutions } from '../data/2034-innovative-micro-saas-solutions';
 import { cuttingEdgeAIServices } from '../data/2034-cutting-edge-ai-services';
@@ -17,8 +22,6 @@ import { real2029Q3Additions } from '../data/real-2029-q3-additions';
 import { validatedServices2025Q4 } from '../data/real-validated-2025-q4-additions';
 import { real2035Q2Additions } from '../data/real-2035-q2-additions';
 import { real2036ServiceExpansions } from '../data/real-2036-service-expansions';
-
-// Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
 import { enterpriseITServices } from '../data/enterprise-it-services';
@@ -58,8 +61,14 @@ const getServiceDescription = (service: any) => {
   return 'No description available';
 };
 
-// Create unified services array
+// Create unified services array with new 2035 services
 const allServices = [
+  // New 2035 services (featured first)
+  ...innovative2035MicroSaasServices,
+  ...innovative2035AIServices,
+  ...innovative2035ITServices,
+  
+  // Existing services
   ...enterpriseITSolutions,
   ...innovativeMicroSaasSolutions,
   ...cuttingEdgeAIServices,
@@ -88,18 +97,32 @@ const categories = [
     description: 'Complete portfolio of all services'
   },
   {
-    id: 'enterprise-it',
-    name: 'Enterprise IT',
-    icon: <Building className="w-6 h-6" />,
-    color: 'from-blue-500 to-purple-500',
-    description: 'Enterprise solutions and infrastructure'
+    id: 'micro-saas',
+    name: 'Micro SAAS Services',
+    icon: <Rocket className="w-6 h-6" />,
+    color: 'from-green-500 to-emerald-500',
+    description: 'Innovative business solutions and automation'
   },
   {
     id: 'ai-consciousness',
     name: 'AI & Consciousness',
     icon: <Brain className="w-6 h-6" />,
-    color: 'from-cyan-500 to-blue-500',
+    color: 'from-purple-500 to-pink-500',
     description: 'Revolutionary AI consciousness and emotional intelligence'
+  },
+  {
+    id: 'it-infrastructure',
+    name: 'IT & Infrastructure',
+    icon: <Cpu className="w-6 h-6" />,
+    color: 'from-blue-500 to-indigo-500',
+    description: 'Next-generation IT solutions and infrastructure'
+  },
+  {
+    id: 'advanced-solutions',
+    name: 'Advanced Solutions',
+    icon: <Zap className="w-6 h-6" />,
+    color: 'from-yellow-500 to-orange-500',
+    description: 'Cutting-edge technology solutions'
   },
   {
     id: 'quantum-emerging',
@@ -114,13 +137,6 @@ const categories = [
     icon: <Rocket className="w-6 h-6" />,
     color: 'from-pink-500 to-rose-500',
     description: 'Space exploration and virtual worlds'
-  },
-  {
-    id: 'micro-saas',
-    name: 'Micro SAAS',
-    icon: <Target className="w-6 h-6" />,
-    color: 'from-orange-500 to-red-500',
-    description: 'Innovative business solutions'
   },
   {
     id: 'creative-media',

@@ -1,6 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
+  innovative2035MicroSaasServices 
+} from '../data/innovative-2035-micro-saas-services';
+import { 
+  innovative2035AIServices 
+} from '../data/innovative-2035-ai-services';
+import { 
+  innovative2035ITServices 
+} from '../data/innovative-2035-it-services';
+import { 
   innovativeRealMicroSaasServices2025 
 } from '../data/2025-innovative-real-micro-saas-services';
 import { 
@@ -14,7 +23,7 @@ import {
 } from '../data/2025-emerging-tech-services-enhanced';
 import { advancedAIAutomationServices } from '../data/2026-advanced-ai-automation-services';
 import { quantumCybersecurityServices } from '../data/2026-quantum-cybersecurity-services';
-import UltraFuturisticBackground2026 from './ui/UltraFuturisticBackground2026';
+import UltraFuturisticBackground2035 from './backgrounds/UltraFuturisticBackground2035';
 import UltraFuturisticServiceCard2026 from './ui/UltraFuturisticServiceCard2026';
 
 const Homepage2025: React.FC = () => {
@@ -41,6 +50,12 @@ const Homepage2025: React.FC = () => {
   };
 
   const allServices = [
+    // New 2035 services (featured first)
+    ...innovative2035MicroSaasServices,
+    ...innovative2035AIServices,
+    ...innovative2035ITServices,
+    
+    // Existing services
     ...innovativeRealMicroSaasServices2025,
     ...innovativeAIServicesEnhanced2025,
     ...innovativeITServicesEnhanced2025,
@@ -63,7 +78,7 @@ const Homepage2025: React.FC = () => {
   ];
 
   return (
-    <UltraFuturisticBackground2026 intensity="medium" theme="quantum">
+    <UltraFuturisticBackground2035>
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-xl border-b border-white/10" aria-label="Primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -598,8 +613,8 @@ const Homepage2025: React.FC = () => {
           </div>
         </div>
       </footer>
-    </UltraFuturisticBackground2026>
+    </UltraFuturisticBackground2035>
   );
-};
+}
 
 export default Homepage2025;

@@ -18,31 +18,31 @@ export default function Layout({ children }: LayoutProps) {
       {/* Skip to content link for accessibility */}
       <a href="#main" className="skip-link">Skip to main content</a>
       {/* Futuristic Background */}
-      <UltraFuturisticBackground2035 />
-      
-      {/* Layout Structure */}
-      <div className="relative z-10">
-        {/* Top Contact Bar */}
-        <TopContactBar />
-        
-        {/* Navigation */}
-        <UltraFuturisticNavigation2035 />
-        
-        {/* Sidebar and Main Content */}
-        <div className="flex">
-          <EnhancedSidebar2025 
-            isOpen={sidebarOpen} 
-            onClose={() => setSidebarOpen(false)} 
-          />
+      <UltraFuturisticBackground2035>
+        {/* Layout Structure */}
+        <div className="relative z-10">
+          {/* Top Contact Bar */}
+          <TopContactBar />
           
-          <main id="main" role="main" className="flex-1 pt-24 lg:pt-28">
-            {children}
-          </main>
+          {/* Navigation */}
+          <UltraFuturisticNavigation2035 />
+          
+          {/* Sidebar and Main Content */}
+          <div className="flex">
+            <EnhancedSidebar2025 
+              isOpen={sidebarOpen} 
+              onClose={() => setSidebarOpen(false)} 
+            />
+            
+            <main id="main" role="main" className="flex-1 pt-24 lg:pt-28">
+              {children}
+            </main>
+          </div>
+          
+          {/* Footer */}
+          <UltraFuturisticFooter2035 />
         </div>
-        
-        {/* Footer */}
-        <UltraFuturisticFooter2035 />
-      </div>
+      </UltraFuturisticBackground2035>
     </div>
   );
 }
