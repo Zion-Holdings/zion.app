@@ -4,23 +4,23 @@ import ServiceLanding from '../components/sections/ServiceLanding';
 export default function AiFinancialPlanningPlatform() {
 	return (
 		<ServiceLanding
-			title="AI Financial Planning & Wealth Management Platform"
-			description="Personalized planning, investment insights, and retirement strategies powered by AI. Improve client outcomes and advisor productivity."
-			subtitle="Deliver modern advice at scale"
-			pricePerMonthUSD={1499}
-			implementationWeeks="2-3 weeks"
-			roiNote="Advisors report 3x ROI via AUM growth and time savings"
+			title="AI Financial Planning Platform"
+			description="Forecast revenue, optimize budgets, and model scenarios with AI-driven planning and real-time financial intelligence."
+			subtitle="Smarter, faster financial decisions"
+			pricePerMonthUSD={349}
+			implementationWeeks="1-2 weeks"
+			roiNote="Finance teams report 3–6x ROI via faster cycles and improved accuracy"
 			features={[
-				"Goal-based planning with real-time probability of success",
-				"Portfolio optimization with tax-aware rebalancing",
-				"Cash flow analysis and spending categorization",
-				"Scenario modeling and stress testing",
-				"Automated reporting and client portals",
-				"Integrations with custodians and data aggregators",
-				"Compliance checks and surveillance assistance",
-				"Prospect intelligence and opportunity scoring"
+				"Driver-based planning and what-if scenarios",
+				"Automated variance analysis and anomaly detection",
+				"Cohort and retention-aware revenue forecasting",
+				"Cash flow projections and runway insights",
+				"Budget vs. actuals with alerting",
+				"Integrations: NetSuite, QuickBooks, Stripe, Snowflake",
+				"Executive dashboards and board-ready reports",
+				"Headcount planning and hiring plans"
 			]}
-			industries={["RIAs", "Wealth", "Fintech", "Banks"]}
+			industries={["SaaS", "Ecommerce", "Fintech", "Professional Services"]}
 			canonical="https://ziontechgroup.com/ai-financial-planning-platform"
 		/>
 	);
