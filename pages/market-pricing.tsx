@@ -356,6 +356,19 @@ export default function MarketPricingPage() {
             </div>
           </div>
 
+          <div className="space-y-6">
+            <div className="bg-black/30 rounded-2xl border border-green-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">SEO & Internal Linking</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>SurferSEO pricing: <a className="text-cyan-400 underline" href={`https://surferseo.com/pricing/`} target="_blank" rel="noopener noreferrer">surferseo.com/pricing</a></li>
+                <li>Clearscope pricing: <a className="text-cyan-400 underline" href={`https://www.clearscope.io/pricing`} target="_blank" rel="noopener noreferrer">clearscope.io/pricing</a></li>
+                <li>Link Whisper pricing: <a className="text-cyan-400 underline" href={`https://linkwhisper.com/pricing/`} target="_blank" rel="noopener noreferrer">linkwhisper.com/pricing</a></li>
+                <li>Ahrefs pricing: <a className="text-cyan-400 underline" href={`https://ahrefs.com/pricing`} target="_blank" rel="noopener noreferrer">ahrefs.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $20–$300/month per tool depending on seats and sites.</div>
+            </div>
+          </div>
+
           <div className="text-center text-slate-400 mt-10">
             Need help benchmarking? <a href="/contact" className="text-cyan-400 underline">Contact us</a> — we align to transparent, vendor-verifiable pricing.
           </div>

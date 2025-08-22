@@ -22,6 +22,9 @@ import { real2025Q2Additions } from '../../data/real-2025-q2-additions';
 import { augmentedServicesBatch3 } from '../../data/real-augmented-services-2025-batch3';
 import { realServicesQ22025 } from '../../data/real-services-q2-2025';
 import { realServicesQ32025 } from '../../data/real-services-q3-2025';
+import { real2025Q4Additions } from '../../data/real-2025-q4-additions';
+import fs from 'fs';
+import path from 'path';
 
 type Service = typeof enhancedRealMicroSaasServices[number];
 
@@ -49,7 +52,8 @@ function getAllServices(): Service[] {
 		.concat(real2025Q2Additions as unknown as Service[])
 		.concat(augmentedServicesBatch3 as unknown as Service[])
 		.concat(realServicesQ22025 as unknown as Service[])
-		.concat(realServicesQ32025 as unknown as Service[]);
+		.concat(realServicesQ32025 as unknown as Service[])
+		.concat(real2025Q4Additions as unknown as Service[]);
 }
 
 function toSlug(value: string): string {
@@ -85,8 +89,30 @@ export async function getStaticPaths() {
 		else if (s.name) slugs.add(toSlug(s.name));
 	}
 
+	// Exclude slugs that already have explicit pages under /pages/services
+	const existingServicePagesDir = path.join(process.cwd(), 'pages', 'services');
+	let existingServiceSlugs = new Set<string>();
+	try {
+		const entries = fs.readdirSync(existingServicePagesDir, { withFileTypes: true });
+		for (const entry of entries) {
+			if (entry.isFile()) {
+				const match = entry.name.match(/^(.*)\.(tsx|ts|js|jsx)$/);
+				if (match) {
+					const base = match[1];
+					if (base !== 'index' && base !== '[slug]') {
+						existingServiceSlugs.add(base);
+					}
+				}
+			}
+		}
+	} catch (e) {
+		// Ignore missing directory when filtering existing explicit service routes
+	}
+
+	const filtered = Array.from(slugs).filter((slug) => !existingServiceSlugs.has(slug));
+
 	return {
-		paths: Array.from(slugs).map((slug) => ({ params: { slug } })),
+		paths: filtered.map((slug) => ({ params: { slug } })),
 		fallback: false
 	};
 }
