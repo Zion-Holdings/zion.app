@@ -90,6 +90,39 @@ export default function ServicesAdvertisingPage() {
         { name: 'Sentry', href: 'https://sentry.io/pricing/' }
       ],
       note: 'SMB budgets: $100–$2,500/mo. Enterprise: $5k–$200k/yr depending on volume and retention.'
+    },
+    {
+      title: 'Affiliate & Partner Tools',
+      links: [
+        { name: 'Refersion', href: 'https://www.refersion.com/pricing' },
+        { name: 'LeadDyno', href: 'https://www.leaddyno.com/pricing' },
+        { name: 'Post Affiliate Pro', href: 'https://www.postaffiliatepro.com/pricing/' }
+      ],
+      note: 'SMB plans: $49–$199/mo typical.'
+    },
+    {
+      title: 'SEO Content Optimization',
+      links: [
+        { name: 'Surfer SEO', href: 'https://surferseo.com/pricing/' },
+        { name: 'Clearscope', href: 'https://www.clearscope.io/pricing' }
+      ],
+      note: 'Common plans: $59–$199/mo.'
+    },
+    {
+      title: 'Portfolio Builders',
+      links: [
+        { name: 'Webflow', href: 'https://webflow.com/pricing' },
+        { name: 'Carrd', href: 'https://carrd.co/pro' }
+      ],
+      note: 'Starter from $9–$29/mo typical.'
+    },
+    {
+      title: 'CRM (Starter Tiers)',
+      links: [
+        { name: 'HubSpot Starter', href: 'https://www.hubspot.com/pricing/marketing/compare' },
+        { name: 'Zoho Bigin', href: 'https://www.zoho.com/bigin/pricing/' }
+      ],
+      note: 'Entry CRM $9–$45/user/mo typical.'
     }
   ];
 
@@ -382,6 +415,41 @@ export default function ServicesAdvertisingPage() {
                   <div className="text-2xl font-bold text-white">{o.price}</div>
                   <div className="text-gray-200 mt-2">{o.name}</div>
                 </a>
+              ))}
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">New Micro SaaS & IT Solutions</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { name: 'Affiliate Marketing Tracker Pro', price: '$99/mo', href: '/affiliate-marketing-tracker-pro', refs: [{ n: 'Refersion', u: 'https://www.refersion.com/pricing' }] },
+                { name: 'SMB Privacy Web Analytics', price: '$12/mo', href: '/smb-privacy-web-analytics', refs: [{ n: 'Plausible', u: 'https://plausible.io/#pricing' }] },
+                { name: 'MSP Helpdesk & ITSM', price: '$149/mo', href: '/msp-helpdesk-itsm', refs: [{ n: 'Freshdesk', u: 'https://freshdesk.com/pricing' }] },
+                { name: 'AI Content Creation Studio', price: '$39/mo', href: '/ai-content-creation-studio', refs: [{ n: 'Jasper', u: 'https://www.jasper.ai/pricing' }] },
+                { name: 'E-commerce Returns Manager', price: '$59/mo', href: '/ecommerce-returns-manager', refs: [{ n: 'Loop Returns', u: 'https://www.loopreturns.com/pricing' }] },
+                { name: 'Automated Email Follow-ups', price: '$29/mo', href: '/automated-email-followups', refs: [{ n: 'Reply.io', u: 'https://reply.io/pricing' }] },
+                { name: 'Podcast Transcription Pro', price: '$15/mo', href: '/podcast-transcription-pro', refs: [{ n: 'Rev', u: 'https://www.rev.com/pricing' }] },
+                { name: 'Freelancer Portfolio Builder', price: '$9/mo', href: '/freelancer-portfolio-builder', refs: [{ n: 'Webflow', u: 'https://webflow.com/pricing' }] },
+                { name: 'Micro CRM for Local Business', price: '$19/mo', href: '/micro-crm-local-business', refs: [{ n: 'Zoho Bigin', u: 'https://www.zoho.com/bigin/pricing/' }] },
+                { name: 'AI SEO Content Optimizer', price: '$59/mo', href: '/ai-seo-content-optimizer', refs: [{ n: 'Surfer SEO', u: 'https://surferseo.com/pricing/' }] }
+              ].map((o) => (
+                <div key={o.name} className="p-6 rounded-2xl bg-black/40 border border-gray-700/60">
+                  <a href={o.href} className="block group">
+                    <div className="text-sm text-gray-400 mb-1">From</div>
+                    <div className="flex items-center justify-between">
+                      <div className="text-white font-semibold text-lg group-hover:text-cyan-300">{o.name}</div>
+                      <div className="text-cyan-300 font-medium">{o.price}</div>
+                    </div>
+                  </a>
+                  <div className="mt-3 text-sm text-gray-400 flex flex-wrap gap-3">
+                    {o.refs.map((r) => (
+                      <a key={r.n} href={r.u} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-gray-300 hover:text-white">
+                        <ExternalLink className="w-4 h-4" /> {r.n}
+                      </a>
+                    ))}
+                  </div>
+                </div>
               ))}
             </div>
           </section>
