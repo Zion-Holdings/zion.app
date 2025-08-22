@@ -31,6 +31,7 @@ import { professionalServices } from '../data/professional-services';
 import { realEnterpriseServices2025 } from '../data/real-enterprise-services-2025';
 import { augmentedServicesBatch3 } from '../data/real-augmented-services-2025-batch3';
 import { real2025Q3Additions } from '../data/real-2025-q3-additions';
+import { realServicesQ42025 } from '../data/real-services-q4-2025';
 
 export default function ServiceFallbackPage() {
   const router = useRouter();
@@ -187,6 +188,7 @@ function collectAllServices(): Svc[] {
       newRealInnovations as Svc[],
       realMarketServices as Svc[],
       augmentedServicesBatch3 as Svc[]
+      , realServicesQ42025 as Svc[]
     );
 }
 
