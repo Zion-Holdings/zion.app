@@ -1,24 +1,21 @@
 import React from 'react';
-import Head from 'next/head';
-import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
+import SEO from '../components/SEO';
 
-export default function CommunityPage() {
+export default function Community() {
 	return (
-		<UltraFuturisticBackground>
-			<Head>
-				<title>Community | Zion Tech Group</title>
-				<meta name="description" content="Join our community: follow updates, engage with peers, and get support." />
-				<link rel="canonical" href="https://ziontechgroup.com/community" />
-			</Head>
-			<div className="container mx-auto px-4 py-24 space-y-6 text-white">
-				<h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Community</h1>
-				<p className="text-gray-300">Follow us and get help. Call +1 302 464 0950 • kleber@ziontechgroup.com.</p>
-				<ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-					<li className="p-6 rounded-2xl bg-black/50 border border-gray-700/60 hover:border-cyan-500/50"><a href="https://twitter.com/ziontechgroup" target="_blank" rel="noopener noreferrer">Twitter/X</a></li>
-					<li className="p-6 rounded-2xl bg-black/50 border border-gray-700/60 hover:border-cyan-500/50"><a href="https://linkedin.com/company/ziontechgroup" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-					<li className="p-6 rounded-2xl bg-black/50 border border-gray-700/60 hover:border-cyan-500/50"><a href="/support">Support</a></li>
-				</ul>
-			</div>
-		</UltraFuturisticBackground>
+		<>
+			<SEO title="Community | Zion Tech Group" description="Join the community for Q&A, tutorials, and product feedback." canonical="https://ziontechgroup.com/community/" />
+			<section className="relative pt-28 pb-16 md:pt-36 md:pb-24">
+				<div className="container mx-auto px-4">
+					<h1 className="text-4xl md:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Community</h1>
+					<p className="mt-6 text-lg text-gray-300 max-w-3xl">Ask questions, share best practices, and help others succeed with Zion platforms.</p>
+					<ul className="mt-6 space-y-3 text-gray-300">
+						<li><a className="text-cyan-300 hover:text-cyan-200" href="https://github.com/Zion-Holdings" target="_blank" rel="noreferrer">GitHub</a> — source and issues</li>
+						<li><a className="text-cyan-300 hover:text-cyan-200" href="https://linkedin.com/company/ziontechgroup" target="_blank" rel="noreferrer">LinkedIn</a> — updates and thought leadership</li>
+						<li><a className="text-cyan-300 hover:text-cyan-200" href="https://twitter.com/ziontechgroup" target="_blank" rel="noreferrer">Twitter</a> — quick product news</li>
+					</ul>
+				</div>
+			</section>
+		</>
 	);
 }

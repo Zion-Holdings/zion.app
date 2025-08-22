@@ -103,7 +103,10 @@ const navigationItems: NavigationItem[] = [
       { name: '2027 Services', href: '/revolutionary-2027-services-showcase', description: 'Future-ready services' },
       { name: 'Ultimate 2026', href: '/ultimate-2026-services-showcase', description: 'Premium service collection' },
       { name: 'Enterprise Solutions', href: '/enterprise-solutions-showcase', description: 'Enterprise-grade solutions' },
-      { name: 'Innovative Business Solutions', href: '/innovative-business-solutions', description: 'Business transformation services' }
+      { name: 'Innovative Business Solutions', href: '/innovative-business-solutions', description: 'Business transformation services' },
+      { name: 'AI Sales Copilot', href: '/ai-sales-copilot', description: 'Prospecting, outreach, scoring' },
+      { name: 'AI Autonomous Marketing', href: '/ai-autonomous-marketing-platform', description: 'Always-on marketing automation' },
+      { name: 'AI Customer Service', href: '/ai-customer-service', description: 'Omnichannel AI support' }
     ]
   },
   {
@@ -201,11 +204,11 @@ const navigationItems: NavigationItem[] = [
     description: 'Industry-specific technology solutions',
     badge: 'Industry',
     children: [
-      { name: 'Healthcare AI', href: '/healthcare-ai-solutions', description: 'AI-powered healthcare' },
+      { name: 'Healthcare AI', href: '/healthcare-solutions', description: 'AI-powered healthcare' },
       { name: 'Financial Technology', href: '/financial-solutions', description: 'Next-gen fintech' },
       { name: 'Manufacturing AI', href: '/manufacturing-ai-solutions', description: 'Smart manufacturing' },
       { name: 'Retail Technology', href: '/retail-technology-solutions', description: 'Digital retail transformation' },
-      { name: 'Education Technology', href: '/training', description: 'AI-powered learning' },
+      { name: 'Education Technology', href: '/education-technology-solutions', description: 'AI-powered learning' },
       { name: 'Government Solutions', href: '/enterprise-solutions-showcase', description: 'Public sector innovation' },
       { name: 'Energy & Utilities', href: '/quantum-energy', description: 'Sustainable energy tech' },
       { name: 'Biotech AI Research', href: '/biotech-ai', description: 'AI-driven biotech' }
@@ -219,7 +222,8 @@ const navigationItems: NavigationItem[] = [
     children: [
       { name: 'Blog', href: '/blog', description: 'Insights and updates' },
       { name: 'Case Studies', href: '/case-studies', description: 'Proven results' },
-      { name: 'Resources Hub', href: '/resources', description: 'Docs, SDKs, guides' },
+      { name: 'Developer', href: '/developer', description: 'Docs and SDKs' },
+      { name: 'Community', href: '/community', description: 'Forum and updates' },
       { name: 'Services Advertising', href: '/services-advertising', description: 'Features, benefits and market pricing links' }
     ]
   }
