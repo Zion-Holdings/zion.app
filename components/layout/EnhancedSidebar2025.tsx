@@ -84,12 +84,12 @@ const sidebarSections = [
     items: [
       { name: 'AI Customer Success', href: '/ai-customer-success-platform', badge: 'New' },
       { name: 'Supply Chain Optimization', href: '/intelligent-supply-chain-optimization', badge: 'New' },
-              { name: 'Financial Planning AI', href: '/ai-financial-planning-platform', badge: 'New' },
+      { name: 'Financial Planning AI', href: '/ai-financial-planning-platform', badge: 'New' },
       { name: 'HR Analytics Platform', href: '/ai-hr-analytics-platform', badge: 'New' },
-              { name: 'Sales Intelligence AI', href: '/ai-sales-intelligence-platform', badge: 'New' },
-              { name: 'AI Decision Engine', href: '/ai-powered-decision-engine' },
-              { name: 'Content Automation', href: '/intelligent-content-automation-platform' },
-              { name: 'Smart CRM Suite', href: '/smart-crm-intelligence-suite' },
+      { name: 'Sales Intelligence AI', href: '/ai-sales-intelligence-platform', badge: 'New' },
+      { name: 'AI Decision Engine', href: '/ai-powered-decision-engine' },
+      { name: 'Content Automation', href: '/intelligent-content-automation-platform' },
+      { name: 'Smart CRM Suite', href: '/smart-crm-intelligence-suite' },
       { name: 'Financial Analytics', href: '/automated-financial-analytics-platform' },
       { name: 'Project Management', href: '/intelligent-project-management-suite' },
       { name: 'Business Intelligence', href: '/ai-business-intelligence-suite' },
@@ -182,8 +182,8 @@ const companyLinks = [
 const supportLinks = [
   { name: 'Contact Support', href: '/support', description: 'Get help from our team' },
   { name: 'Documentation', href: '/docs', description: 'Technical guides' },
-  { name: 'API Reference', href: '/docs', description: 'Developer documentation' },
-  { name: 'Status Page', href: '/status', description: 'Service status' },
+  { name: 'API Reference', href: '/api-documentation', description: 'Developer documentation' },
+  { name: 'Status Page', href: '/status-pages-slo', description: 'Service status' },
   { name: 'Training', href: '/training', description: 'Learn our platforms' },
   { name: 'Community', href: '/community', description: 'Connect with users' }
 ];
