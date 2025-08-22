@@ -38,7 +38,7 @@ export default function ServicesAdvertisingPage() {
 					<p className="text-slate-300">Production RAG starter with Pinecone/Weaviate/Elastic, eval harness, and observability.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $50–$1,000/mo</li>
-						<li>References: {ext('https://www.pinecone.io/pricing/')}, {ext('https://weaviate.io/pricing')}, {ext('https://www.elastic.co/pricing')}</li>
+						<li>References: {ext('https://www.pinecone.io/pricing/')}, {ext('https://console.weaviate.cloud/pricing')}, {ext('https://www.elastic.co/pricing')}</li>
 					</ul>
 				</section>
 
@@ -56,7 +56,7 @@ export default function ServicesAdvertisingPage() {
 					<p className="text-slate-300">Policy engine, PII detection, jailbreak protection, and audit logs for LLM apps.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $0–$500/mo</li>
-						<li>References: {ext('https://openai.com/safety')}, {ext('https://github.com/guardrails-ai/guardrails')}</li>
+						<li>References: {ext('https://platform.openai.com/docs/guides/safety-best-practices')}, {ext('https://github.com/guardrails-ai/guardrails')}</li>
 					</ul>
 				</section>
 				
@@ -120,7 +120,7 @@ export default function ServicesAdvertisingPage() {
 					<p className="text-slate-300">Transcripts, chapters, show notes, and SEO-ready blog pages with exports.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $10–$60/mo + usage</li>
-						<li>References: {ext('https://openai.com/api/pricing')}, {ext('https://www.descript.com/pricing')}, {ext('https://otter.ai/pricing')}</li>
+						<li>References: {ext('https://platform.openai.com/pricing')}, {ext('https://www.descript.com/pricing')}, {ext('https://otter.ai/pricing')}</li>
 					</ul>
 				</section>
 
@@ -138,7 +138,7 @@ export default function ServicesAdvertisingPage() {
 					<p className="text-slate-300">Contacts, deals, appointments, and reminders without enterprise complexity.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $15–$60/mo</li>
-						<li>References: {ext('https://www.hubspot.com/pricing/starter')}, {ext('https://www.zoho.com/crm/pricing.html')}</li>
+						<li>References: {ext('https://www.hubspot.com/pricing')}, {ext('https://www.zoho.com/crm/pricing.html')}</li>
 					</ul>
 				</section>
 
@@ -165,7 +165,7 @@ export default function ServicesAdvertisingPage() {
 					<p className="text-slate-300">Privacy-friendly dashboards with goals and funnels. Cookie-less.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $9–$50/mo</li>
-						<li>References: {ext('https://plausible.io/#pricing')}, {ext('https://usefathom.com/pricing')}</li>
+						<li>References: {ext('https://plausible.io/pricing')}, {ext('https://usefathom.com/pricing')}</li>
 					</ul>
 				</section>
 
