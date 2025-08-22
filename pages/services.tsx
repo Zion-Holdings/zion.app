@@ -18,6 +18,11 @@ import { validatedServices2025Q4 } from '../data/real-validated-2025-q4-addition
 import { real2035Q2Additions } from '../data/real-2035-q2-additions';
 import { real2036ServiceExpansions } from '../data/real-2036-service-expansions';
 
+// Import our new innovative services
+import { innovative2035MicroSaasExpansion } from '../data/innovative-2035-micro-saas-expansion';
+import { advancedAIEnterpriseServices } from '../data/advanced-ai-enterprise-services';
+import { specializedIndustrySolutions } from '../data/specialized-industry-solutions';
+
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
@@ -76,7 +81,11 @@ const allServices = [
   ...real2029Q3Additions,
   ...validatedServices2025Q4,
   ...real2035Q2Additions,
-  ...real2036ServiceExpansions
+  ...real2036ServiceExpansions,
+  // Add our new innovative services
+  ...innovative2035MicroSaasExpansion,
+  ...advancedAIEnterpriseServices,
+  ...specializedIndustrySolutions
 ];
 
 const categories = [
@@ -149,6 +158,27 @@ const categories = [
     icon: <GraduationCap className="w-6 h-6" />,
     color: 'from-yellow-500 to-orange-500',
     description: 'Learning and research platforms'
+  },
+  {
+    id: 'innovative-ai',
+    name: 'Innovative AI Solutions',
+    icon: <Brain className="w-6 h-6" />,
+    color: 'from-purple-500 to-indigo-500',
+    description: 'Cutting-edge AI and machine learning services'
+  },
+  {
+    id: 'enterprise-ai',
+    name: 'Enterprise AI',
+    icon: <Building className="w-6 h-6" />,
+    color: 'from-blue-500 to-cyan-500',
+    description: 'AI-powered enterprise solutions and automation'
+  },
+  {
+    id: 'industry-solutions',
+    name: 'Industry Solutions',
+    icon: <Cpu className="w-6 h-6" />,
+    color: 'from-emerald-500 to-teal-500',
+    description: 'Specialized solutions for specific industries'
   }
 ];
 
@@ -228,6 +258,7 @@ export default function Services() {
       case 'ai & consciousness':
       case 'ai services':
       case 'artificial intelligence':
+      case 'innovative ai solutions':
         return <Brain className="w-6 h-6 text-cyan-400" />;
       case 'quantum':
       case 'quantum & emerging tech':
@@ -250,6 +281,10 @@ export default function Services() {
       case 'education':
       case 'education & research':
         return <GraduationCap className="w-6 h-6 text-yellow-400" />;
+      case 'enterprise ai':
+        return <Building className="w-6 h-6 text-blue-400" />;
+      case 'industry solutions':
+        return <Cpu className="w-6 h-6 text-emerald-400" />;
       default:
         return <Shield className="w-6 h-6 text-gray-400" />;
     }
