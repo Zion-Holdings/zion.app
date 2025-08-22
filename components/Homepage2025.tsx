@@ -577,7 +577,7 @@ const Homepage2025: React.FC = () => {
                 <li><a href="tel:+13024640950" className="hover:text-cyan-400 transition-colors">+1 302 464 0950</a></li>
                 <li><a href="mailto:kleber@ziontechgroup.com" className="hover:text-cyan-400 transition-colors">kleber@ziontechgroup.com</a></li>
                 <li><a href="https://ziontechgroup.com" className="hover:text-cyan-400 transition-colors">Website</a></li>
-                <li><a href="https://linkedin.com/company/ziontechgroup" className="hover:text-cyan-400 transition-colors">LinkedIn</a></li>
+                					<li><a href="https://www.linkedin.com/company/zion-tech-group" className="hover:text-cyan-400 transition-colors">LinkedIn</a></li>
                 <li><a href="https://twitter.com/ziontechgroup" className="hover:text-cyan-400 transition-colors">Twitter</a></li>
               </ul>
             </div>

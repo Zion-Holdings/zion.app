@@ -93,7 +93,7 @@ const companyInfo = [
 ];
 
 const socialLinks = [
-  { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: Linkedin },
+  	{ name: 'LinkedIn', href: 'https://www.linkedin.com/company/zion-tech-group', icon: Linkedin },
   { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: Twitter },
   { name: 'Facebook', href: 'https://facebook.com/ziontechgroup', icon: Facebook },
   { name: 'Instagram', href: 'https://instagram.com/ziontechgroup', icon: Instagram },

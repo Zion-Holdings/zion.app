@@ -165,7 +165,7 @@ export default function ServicesAdvertisingPage() {
 					<p className="text-slate-300">Privacy-friendly dashboards with goals and funnels. Cookie-less.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $9–$50/mo</li>
-						<li>References: {ext('https://plausible.io/pricing')}, {ext('https://usefathom.com/pricing')}</li>
+						<li>References: {ext('https://plausible.io/#pricing')}, {ext('https://usefathom.com/pricing')}</li>
 					</ul>
 				</section>
 
@@ -344,7 +344,7 @@ export default function ServicesAdvertisingPage() {
 					<p className="text-slate-300">Privacy-first dashboards with goals, funnels, and UTM insights.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $9–$50/mo</li>
-						<li>References: {ext('https://plausible.io/pricing')}, {ext('https://usefathom.com/pricing')}</li>
+						<li>References: {ext('https://plausible.io/#pricing')}, {ext('https://usefathom.com/pricing')}</li>
 					</ul>
 				</section>
 
@@ -452,7 +452,7 @@ export default function ServicesAdvertisingPage() {
 					<p className="text-slate-300">ZTNA, SWG, DNS filtering, and device posture for secure access.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $7–$20/user/mo</li>
-						<li>References: {ext('https://www.cloudflare.com/plans/zero-trust/')}, {ext('https://www.cloudflare.com/plans/')}</li>
+						<li>References: {ext('https://www.cloudflare.com/zero-trust/pricing/')}, {ext('https://www.cloudflare.com/plans/')}</li>
 					</ul>
 				</section>
 
@@ -683,7 +683,7 @@ export default function ServicesAdvertisingPage() {
 					<p className="text-slate-300">Layer device posture and risk-based access on top of your IdP for continuous verification.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $100–$800/mo</li>
-						<li>References: {ext('https://www.cloudflare.com/products/zero-trust/pricing/')}, {ext('https://www.zscaler.com/products/zero-trust-exchange')}</li>
+						<li>References: {ext('https://www.cloudflare.com/zero-trust/pricing/')}, {ext('https://www.zscaler.com/products/zero-trust-exchange')}</li>
 					</ul>
 				</section>
 
