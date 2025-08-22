@@ -4,23 +4,21 @@ import ServiceLanding from '../components/sections/ServiceLanding';
 export default function AiManufacturingOptimization() {
 	return (
 		<ServiceLanding
-			title="AI Manufacturing Optimization & Predictive Maintenance"
-			description="Optimize production schedules, detect anomalies, and predict equipment failures to reduce downtime and boost throughput."
-			subtitle="Smarter factories with AI-driven decisions"
+			title="AI Manufacturing Optimization & Predictive Maintenance Platform"
+			description="Optimize production, predict equipment failures, and improve quality control with AI. Reduce downtime and increase efficiency with data-driven insights."
+			subtitle="Optimize manufacturing with AI"
 			pricePerMonthUSD={6999}
 			implementationWeeks="8-12 weeks"
-			roiNote="Manufacturers report 5x ROI through reduced downtime and scrap"
+			roiNote="Manufacturers report 500% ROI via reduced downtime and improved throughput"
 			features={[
-				"Predictive maintenance on PLC and sensor data",
-				"Production schedule optimization and sequencing",
-				"Vision-based quality inspection and defect detection",
-				"Energy optimization and yield improvement",
-				"Digital twin simulation for what-if planning",
-				"SPC analytics and root cause analysis",
-				"OEE monitoring dashboards and alerts",
-				"ERP/MES integrations and data lake pipelines"
+				"AI predictive maintenance",
+				"Production process optimization",
+				"Quality control automation",
+				"Energy consumption optimization",
+				"Supply chain and logistics insights",
+				"Factory analytics dashboards"
 			]}
-			industries={["Automotive", "Electronics", "CPG", "Industrial"]}
+			industries={["Manufacturing", "Industrial", "Automotive", "Electronics"]}
 			canonical="https://ziontechgroup.com/ai-manufacturing-optimization"
 		/>
 	);
