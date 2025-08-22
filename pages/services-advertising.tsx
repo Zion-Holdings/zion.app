@@ -480,6 +480,73 @@ export default function ServicesAdvertisingPage() {
 						<li>References: {ext('https://aws.amazon.com/systems-manager/pricing/')}, {ext('https://www.okta.com/pricing/')}, {ext('https://workspace.google.com/pricing')}</li>
 					</ul>
 				</section>
+
+				<section id="ai-meeting-notes" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">AI Meeting Notes & Action Items</h2>
+					<p className="text-slate-300">Multi-speaker transcripts, summaries, and CRM-synced action items with redaction.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $10–$40/user/mo</li>
+						<li>References: {ext('https://otter.ai/pricing')}, {ext('https://www.gong.io/pricing')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/ai-meeting-notes">Learn more</a></div>
+				</section>
+
+				<section id="privacy-request-portal" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Privacy Request Portal (DSAR/CCPA/GDPR)</h2>
+					<p className="text-slate-300">Accept, verify, and fulfill privacy requests with audit logs and SLAs.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $50–$300/mo</li>
+						<li>References: {ext('https://www.onetrust.com/platform/privacy-management/')}, {ext('https://transcend.io/pricing')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/privacy-request-portal">Learn more</a></div>
+				</section>
+
+				<section id="accessibility-scanner" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Accessibility Compliance Scanner</h2>
+					<p className="text-slate-300">Automated WCAG checks with CI annotations and remediation guidance.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $20–$150/mo</li>
+						<li>References: {ext('https://www.deque.com/axe/overview/')}, {ext('https://pagespeed.web.dev/pricing')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/accessibility-scanner">Learn more</a></div>
+				</section>
+
+				<section id="image-optimizer-cdn" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Image Optimizer CDN</h2>
+					<p className="text-slate-300">On-the-fly transforms, AVIF/WebP, edge caching, signed URLs, and analytics.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $5–$50/mo + bandwidth</li>
+						<li>References: {ext('https://www.imgix.com/pricing')}, {ext('https://cloudinary.com/pricing')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/image-optimizer-cdn">Learn more</a></div>
+				</section>
+
+				<section id="mlops-starter" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">MLOps Pipeline Starter</h2>
+					<p className="text-slate-300">Model registry, CI gates, and monitoring to ship ML safely and faster.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $99–$500/mo</li>
+						<li>References: {ext('https://mlflow.org/')}, {ext('https://www.kubeflow.org/')}, {ext('https://www.databricks.com/product/mlops')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/mlops-starter">Learn more</a></div>
+				</section>
+
+				<section id="warehouse-accelerator" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Data Warehouse Accelerator</h2>
+					<p className="text-slate-300">ELT connectors, dbt models, and finance/ops dashboards in days.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $1,000–$5,000/project</li>
+						<li>References: {ext('https://www.getdbt.com/pricing/')}, {ext('https://www.fivetran.com/pricing')}, {ext('https://airbyte.com/pricing')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/warehouse-accelerator">Learn more</a></div>
+				</section>
+
+				{/* Contact CTA */}
+				<div className="flex flex-col md:flex-row items-center gap-4 p-4 rounded-xl bg-black/30 border border-gray-800">
+					<a href="tel:+13024640950" className="px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white">Call +1 302 464 0950</a>
+					<a href="mailto:kleber@ziontechgroup.com" className="px-4 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-600 text-white">Email kleber@ziontechgroup.com</a>
+					<a href="/pricing" className="px-4 py-2 rounded-lg border border-cyan-500/40 text-cyan-300">View Pricing</a>
+				</div>
 			</div>
 		</div>
 	);
