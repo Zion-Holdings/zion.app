@@ -73,6 +73,59 @@ body {
   100% { background-position: 0% 50%; }
 }
 
+/* Quantum energy pulse */
+@keyframes quantumPulse {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.3), 0 0 40px rgba(34, 211, 238, 0.2), 0 0 60px rgba(34, 211, 238, 0.1);
+  }
+  50% { 
+    box-shadow: 0 0 40px rgba(34, 211, 238, 0.5), 0 0 80px rgba(34, 211, 238, 0.3), 0 0 120px rgba(34, 211, 238, 0.2);
+  }
+}
+
+/* Holographic shimmer */
+@keyframes holographicShimmer {
+  0% { 
+    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+    background-size: 200% 200%;
+    background-position: 0% 0%;
+  }
+  50% { 
+    background-position: 100% 100%;
+  }
+  100% { 
+    background-position: 0% 0%;
+  }
+}
+
+/* Neon flicker */
+@keyframes neonFlicker {
+  0%, 100% { 
+    opacity: 1;
+    filter: brightness(1) drop-shadow(0 0 5px currentColor);
+  }
+  50% { 
+    opacity: 0.8;
+    filter: brightness(1.2) drop-shadow(0 0 10px currentColor);
+  }
+}
+
+/* Quantum entanglement */
+@keyframes quantumEntanglement {
+  0% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1.1) rotate(90deg); }
+  50% { transform: scale(0.9) rotate(180deg); }
+  75% { transform: scale(1.05) rotate(270deg); }
+  100% { transform: scale(1) rotate(360deg); }
+}
+
+/* Data stream flow */
+@keyframes dataStream {
+  0% { transform: translateY(-100%) rotate(0deg); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
 /* Futuristic particle background */
 @keyframes float {
   0%, 100% { transform: translateY(0px) rotate(0deg); }
@@ -1141,6 +1194,91 @@ h3 {
   .btn-futuristic {
     padding: 0.75rem 1.5rem;
     font-size: 0.875rem;
+  }
+}
+
+/* Enhanced futuristic effects */
+.neon-cyan {
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+  animation: neonFlicker 2s ease-in-out infinite;
+}
+
+.neon-purple {
+  color: #8000ff;
+  text-shadow: 0 0 10px #8000ff, 0 0 20px #8000ff, 0 0 30px #8000ff;
+  animation: neonFlicker 2.5s ease-in-out infinite;
+}
+
+.neon-pink {
+  color: #ff0080;
+  text-shadow: 0 0 10px #ff0080, 0 0 20px #ff0080, 0 0 30px #ff0080;
+  animation: neonFlicker 1.8s ease-in-out infinite;
+}
+
+.quantum-pulse {
+  animation: quantumPulse 3s ease-in-out infinite;
+}
+
+.holographic-shimmer {
+  background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+  background-size: 200% 200%;
+  animation: holographicShimmer 4s ease-in-out infinite;
+}
+
+.quantum-entanglement {
+  animation: quantumEntanglement 8s linear infinite;
+}
+
+.data-stream {
+  animation: dataStream 6s linear infinite;
+}
+
+/* Glassmorphism effects */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Gradient text effects */
+.gradient-text-cyan {
+  background: linear-gradient(45deg, #00ffff, #0080ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-purple {
+  background: linear-gradient(45deg, #8000ff, #ff0080);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-rainbow {
+  background: linear-gradient(45deg, #ff0000, #ff8000, #ffff00, #80ff00, #00ff80, #0080ff, #8000ff, #ff0080);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+}
+
+/* Responsive futuristic elements */
+@media (max-width: 768px) {
+  .neon-cyan, .neon-purple, .neon-pink {
+    text-shadow: 0 0 5px currentColor, 0 0 10px currentColor;
+  }
+  
+  .quantum-pulse, .holographic-shimmer, .quantum-entanglement {
+    animation-duration: 1.5s;
   }
 }
 

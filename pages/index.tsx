@@ -11,6 +11,9 @@ import { emergingTechServicesEnhanced2025 } from '../data/2025-emerging-tech-ser
 import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
 import { advancedITInfrastructureServices2025 } from '../data/2025-advanced-it-infrastructure-services';
 import { innovativeBusinessSolutions2025 } from '../data/2025-innovative-business-solutions';
+import { cuttingEdgeAIServices2025 } from '../data/2025-cutting-edge-ai-services';
+import { cuttingEdgeITInfrastructure2025 } from '../data/2025-cutting-edge-it-infrastructure';
+import { cuttingEdgeMicroSaas2025 } from '../data/2025-cutting-edge-micro-saas';
 
 const contactInfo = {
   mobile: '+1 302 464 0950',
@@ -96,6 +99,16 @@ const serviceCategories = [
     color: 'from-green-500 to-emerald-600',
     href: '/innovative-business-solutions',
     features: ['Business Intelligence', 'Marketing Automation', 'Sales Intelligence']
+  },
+  {
+    title: 'Cutting-Edge 2025',
+    description: 'Latest revolutionary services with quantum computing and AI breakthroughs',
+    services: [...cuttingEdgeAIServices2025, ...cuttingEdgeITInfrastructure2025, ...cuttingEdgeMicroSaas2025].slice(0, 3),
+    icon: Zap,
+    color: 'from-pink-500 to-purple-600',
+    href: '/cutting-edge-services-2025',
+    features: ['Quantum AI', 'Edge Computing', 'Autonomous Systems'],
+    badge: 'New'
   }
 ];
 
@@ -715,6 +728,66 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Cutting-Edge Services CTA Section */}
+      <section className="py-20 bg-gradient-to-br from-pink-900/20 via-purple-900/20 to-indigo-900/20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
+              <span className="gradient-text-rainbow">Cutting-Edge Services 2025</span>
+            </h2>
+            <p className="text-xl text-gray-300 mb-8 max-w-4xl mx-auto">
+              Discover our revolutionary new services featuring quantum computing, AI breakthroughs, and next-generation infrastructure. 
+              Be among the first to experience the future of technology.
+            </p>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+              <div className="bg-gradient-to-br from-violet-500/20 to-purple-600/20 rounded-3xl p-8 border border-violet-500/30">
+                <Brain className="w-16 h-16 text-violet-400 mx-auto mb-4" />
+                <h3 className="text-2xl font-bold text-white mb-3">AI & Machine Learning</h3>
+                <p className="text-gray-300 mb-4">Revolutionary AI services with consciousness and quantum computing integration</p>
+                <div className="text-sm text-violet-300">
+                  {cuttingEdgeAIServices2025.length} cutting-edge services
+                </div>
+              </div>
+              
+              <div className="bg-gradient-to-br from-blue-500/20 to-cyan-600/20 rounded-3xl p-8 border border-blue-500/30">
+                <Cloud className="w-16 h-16 text-blue-400 mx-auto mb-4" />
+                <h3 className="text-2xl font-bold text-white mb-3">IT Infrastructure</h3>
+                <p className="text-gray-300 mb-4">Next-generation infrastructure with quantum security and edge computing</p>
+                <div className="text-sm text-blue-300">
+                  {cuttingEdgeITInfrastructure2025.length} revolutionary solutions
+                </div>
+              </div>
+              
+              <div className="bg-gradient-to-br from-teal-500/20 to-emerald-600/20 rounded-3xl p-8 border border-teal-500/30">
+                <Rocket className="w-16 h-16 text-teal-400 mx-auto mb-4" />
+                <h3 className="text-2xl font-bold text-white mb-3">Micro SAAS</h3>
+                <p className="text-gray-300 mb-4">Innovative business solutions powered by AI and automation</p>
+                <div className="text-sm text-teal-300">
+                  {cuttingEdgeMicroSaas2025.length} intelligent platforms
+                </div>
+              </div>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+              <Link href="/cutting-edge-services-2025" className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold rounded-full hover:from-pink-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
+                <Zap className="mr-2 w-5 h-5" />
+                Explore Cutting-Edge Services
+              </Link>
+              <Link href="/contact" className="inline-flex items-center px-8 py-4 bg-white/10 backdrop-blur-lg text-white font-semibold rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300">
+                <Phone className="mr-2 w-5 h-5" />
+                Get Started
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </section>
 

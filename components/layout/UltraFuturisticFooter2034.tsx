@@ -26,7 +26,8 @@ const footerSections = [
       { name: 'AI Predictive Maintenance', href: '/ai-predictive-maintenance-platform' },
       { name: 'AI Content Personalization', href: '/ai-content-personalization-engine' },
       { name: 'AI Autonomous Ecosystem', href: '/ai-autonomous-ecosystem-manager' },
-      { name: 'AI Ethics & Governance', href: '/ai-ethics-governance-framework' }
+      { name: 'AI Ethics & Governance', href: '/ai-ethics-governance-framework' },
+      { name: 'Cutting-Edge AI Services', href: '/cutting-edge-services-2025', badge: 'New' }
     ]
   },
   {
