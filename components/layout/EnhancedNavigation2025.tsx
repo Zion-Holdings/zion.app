@@ -252,7 +252,7 @@ export default function EnhancedNavigation2025() {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled 
-        ? 'bg-black/95 backdrop-blur-xl border-b border-cyan-500/20 shadow-2xl shadow-cyan-500/10' 
+                        ? 'bg-black/80 backdrop-blur-xl border-b border-cyan-500/20 shadow-2xl shadow-cyan-500/10' 
         : 'bg-black/80 backdrop-blur-lg'
     }`}>
       {/* Top Contact Bar */}
@@ -332,7 +332,7 @@ export default function EnhancedNavigation2025() {
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: -10, scale: 0.95 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute top-full left-0 mt-2 w-80 bg-black/95 backdrop-blur-xl border border-cyan-500/20 rounded-xl shadow-2xl shadow-cyan-500/20 overflow-hidden"
+                      className="absolute top-full left-0 mt-2 w-80 bg-black/85 backdrop-blur-xl border-2 border-cyan-500/40 rounded-xl shadow-2xl shadow-cyan-500/30 overflow-hidden"
                     >
                       <div className="p-4">
                         <div className="mb-3">
@@ -345,7 +345,7 @@ export default function EnhancedNavigation2025() {
                               key={child.name}
                               href={child.href}
                               onClick={closeDropdown}
-                              className="flex items-center space-x-3 p-3 rounded-lg hover:bg-white/10 transition-all duration-200 group"
+                              className="flex items-center space-x-3 p-3 rounded-lg hover:bg-white/15 bg-white/5 transition-all duration-200 group"
                             >
                               <div className="w-2 h-2 bg-cyan-400 rounded-full group-hover:scale-150 transition-transform duration-200"></div>
                               <div className="flex-1">
@@ -404,7 +404,7 @@ export default function EnhancedNavigation2025() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-black/95 backdrop-blur-xl border-t border-cyan-500/20"
+            className="lg:hidden bg-black/90 backdrop-blur-xl border-t border-cyan-500/20"
           >
             <div className="px-4 py-6 space-y-4">
               {navigationItems.map((item) => (
