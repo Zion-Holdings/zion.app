@@ -389,6 +389,46 @@ export default function MarketPricingPage() {
             </div>
           </div>
 
+          <div className="bg-black/30 rounded-2xl border border-emerald-500/30 p-6">
+            <h2 className="text-2xl font-semibold mb-2">Synthetic Monitoring & Browser Automation</h2>
+            <ul className="list-disc list-inside text-slate-300 space-y-1">
+              <li>Checkly pricing: <a className="text-cyan-400 underline" href={`https://www.checklyhq.com/pricing/`} target="_blank" rel="noopener noreferrer">checklyhq.com/pricing</a></li>
+              <li>Browserless pricing: <a className="text-cyan-400 underline" href={`https://www.browserless.io/pricing`} target="_blank" rel="noopener noreferrer">browserless.io/pricing</a></li>
+              <li>Grafana Cloud k6: <a className="text-cyan-400 underline" href={`https://grafana.com/products/cloud/k6/`} target="_blank" rel="noopener noreferrer">grafana.com/products/cloud/k6</a></li>
+            </ul>
+            <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $20–$500/month depending on checks, regions, and concurrency.</div>
+          </div>
+
+          <div className="bg-black/30 rounded-2xl border border-violet-500/30 p-6">
+            <h2 className="text-2xl font-semibold mb-2">Email Deliverability & Monitoring</h2>
+            <ul className="list-disc list-inside text-slate-300 space-y-1">
+              <li>GlockApps pricing: <a className="text-cyan-400 underline" href={`https://glockapps.com/pricing/`} target="_blank" rel="noopener noreferrer">glockapps.com/pricing</a></li>
+              <li>Mailgun monitoring: <a className="text-cyan-400 underline" href={`https://www.mailgun.com/pricing/`} target="_blank" rel="noopener noreferrer">mailgun.com/pricing</a></li>
+              <li>Postmaster Tools: <a className="text-cyan-400 underline" href={`https://postmaster.google.com`} target="_blank" rel="noopener noreferrer">postmaster.google.com</a></li>
+            </ul>
+            <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $15–$300/month plus ESP fees depending on volumes.</div>
+          </div>
+
+          <div className="bg-black/30 rounded-2xl border border-teal-500/30 p-6">
+            <h2 className="text-2xl font-semibold mb-2">Secrets Management & Rotation</h2>
+            <ul className="list-disc list-inside text-slate-300 space-y-1">
+              <li>HashiCorp Vault: <a className="text-cyan-400 underline" href={`https://www.hashicorp.com/products/vault/pricing`} target="_blank" rel="noopener noreferrer">hashicorp.com/products/vault/pricing</a></li>
+              <li>Doppler: <a className="text-cyan-400 underline" href={`https://www.doppler.com/pricing`} target="_blank" rel="noopener noreferrer">doppler.com/pricing</a></li>
+              <li>AWS KMS: <a className="text-cyan-400 underline" href={`https://aws.amazon.com/kms/pricing/`} target="_blank" rel="noopener noreferrer">aws.amazon.com/kms/pricing</a></li>
+            </ul>
+            <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $0–$1,000/month depending on key volume and audit needs.</div>
+          </div>
+
+          <div className="bg-black/30 rounded-2xl border border-rose-500/30 p-6">
+            <h2 className="text-2xl font-semibold mb-2">PDF Generation & Processing</h2>
+            <ul className="list-disc list-inside text-slate-300 space-y-1">
+              <li>DocRaptor: <a className="text-cyan-400 underline" href={`https://docraptor.com/pricing`} target="_blank" rel="noopener noreferrer">docraptor.com/pricing</a></li>
+              <li>PDFMonkey: <a className="text-cyan-400 underline" href={`https://www.pdfmonkey.io/pricing`} target="_blank" rel="noopener noreferrer">pdfmonkey.io/pricing</a></li>
+              <li>CloudConvert: <a className="text-cyan-400 underline" href={`https://cloudconvert.com/pricing`} target="_blank" rel="noopener noreferrer">cloudconvert.com/pricing</a></li>
+            </ul>
+            <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $15–$200/month depending on pages and concurrency.</div>
+          </div>
+
           <div className="text-center text-slate-400 mt-10">
             Need help benchmarking? <a href="/contact" className="text-cyan-400 underline">Contact us</a> — we align to transparent, vendor-verifiable pricing.
           </div>
