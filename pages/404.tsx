@@ -1,20 +1,18 @@
 import React from 'react';
-import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
-import Button from '../components/ui/Button';
+import Link from 'next/link';
 import SEO from '../components/SEO';
 
 export default function NotFoundPage() {
 	return (
-		<UltraFuturisticBackground>
-			<SEO title="Page Not Found | Zion Tech Group" description="The page you are looking for doesn't exist." noIndex nofollow />
-			<div className="container mx-auto px-4 py-24 text-center">
-				<h1 className="text-4xl md:text-6xl font-bold text-white mb-4">Page Not Found</h1>
-				<p className="text-gray-300 mb-8">The page you were looking for doesn't exist. Try one of the options below.</p>
-				<div className="flex flex-col sm:flex-row gap-4 justify-center">
-					<Button href="/" className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-6 py-3 rounded-xl">Go Home</Button>
-					<Button href="/services" variant="outline" className="border border-gray-600 text-gray-200">Browse Services</Button>
-				</div>
+		<>
+			<SEO title="Page Not Found | Zion Tech Group" description="Sorry, the page you are looking for does not exist." noindex />
+			<div className="min-h-[60vh] flex flex-col items-center justify-center text-center p-8">
+				<h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">404</h1>
+				<p className="text-gray-300 mb-8">Sorry, the page you are looking for does not exist.</p>
+				<Link href="/" className="inline-block px-6 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400 focus:ring-offset-black transition-colors">
+					Go back home
+				</Link>
 			</div>
-		</UltraFuturisticBackground>
+		</>
 	);
 }

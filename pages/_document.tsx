@@ -1,20 +1,15 @@
-import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document';
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 
-class MyDocument extends Document {
-	static async getInitialProps(ctx: DocumentContext) {
-		const initialProps = await Document.getInitialProps(ctx);
-		return { ...initialProps };
-	}
-
+export default class MyDocument extends Document {
 	render() {
 		return (
-			<Html lang="en" dir="ltr">
+			<Html lang="en">
 				<Head>
-					<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-					<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-					<link rel="manifest" href="/site.webmanifest" />
-					<meta name="theme-color" content="#0a0a0a" />
+					<meta charSet="utf-8" />
+					<meta name="theme-color" content="#000000" />
 					<meta name="color-scheme" content="dark light" />
+					<link rel="manifest" href="/site.webmanifest" />
+					<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 				</Head>
 				<body>
 					<Main />
@@ -24,5 +19,3 @@ class MyDocument extends Document {
 		);
 	}
 }
-
-export default MyDocument;
