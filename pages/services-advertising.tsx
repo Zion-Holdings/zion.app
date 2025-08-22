@@ -278,75 +278,93 @@ export default function ServicesAdvertisingPage() {
 					</ul>
 				</section>
 
-				<section id="backup-dr-runbook-hub" className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Backup & DR Runbook Hub</h2>
-					<p className="text-slate-300">Automated backup policies, restore rehearsal, and audit-ready evidence.</p>
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">LLM Gateway & Cost Control</h2>
+					<p className="text-slate-300">Unified API across OpenAI, Anthropic, Google, and OSS models with routing, spend caps, guardrails, and audit logs.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $50–$200/mo</li>
+						<li>Typical SMB budget: $99–$499/mo + API usage</li>
+						<li>References: {ext('https://openrouter.ai/models')}, {ext('https://platform.openai.com/docs/pricing')}, {ext('https://www.anthropic.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Data Quality & Lineage Starter</h2>
+					<p className="text-slate-300">Freshness SLAs, schema drift detection, and lineage/impact analysis for warehouses and lakes.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $99–$600/mo</li>
+						<li>References: {ext('https://soda.io/')}, {ext('https://www.montecarlodata.com/')}, {ext('https://www.bigeye.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Affiliate Attribution & Payouts Hub</h2>
+					<p className="text-slate-300">Cross-device attribution with first‑party identity stitching, fraud checks, and automated payouts.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $100–$300/mo</li>
+						<li>References: {ext('https://partnerstack.com/')}, {ext('https://stripe.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">AI Guardrails & Safety</h2>
+					<p className="text-slate-300">Policy checks, PII detection, jailbreak protection, and audit trails for LLM applications.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $0–$500/mo</li>
+						<li>References: {ext('https://openai.com/index/safety/')}, {ext('https://github.com/shreyashankar/gpt-guardrails')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Cloud Backup & DR Runbook Hub</h2>
+					<p className="text-slate-300">Automated policies, restore rehearsal, and audit evidence across Kubernetes and cloud services.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $50–$250/mo</li>
 						<li>References: {ext('https://velero.io/')}, {ext('https://aws.amazon.com/backup/pricing/')}, {ext('https://www.veeam.com/pricing.html')}</li>
 					</ul>
 				</section>
 
 				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">PII Data Vault & Tokenization</h2>
-					<p className="text-slate-300">Vault PII and tokenize sensitive fields with KMS-backed encryption and audit logs.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $200–$800/mo</li>
-						<li>References: {ext('https://www.skyflow.com/pricing')}, {ext('https://www.verygoodsecurity.com/pricing')}</li>
-					</ul>
-				</section>
-
-				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Edge Feature Flag Proxy</h2>
-					<p className="text-slate-300">Serve flags from the edge with geo targeting, kill switches, and provider compatibility.</p>
+					<h2 className="text-2xl font-semibold text-white">Edge Feature Flags & Proxy</h2>
+					<p className="text-slate-300">Geo‑targeted flags at the edge with gradual rollout, kill switches, and provider compatibility.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $30–$150/mo</li>
 						<li>References: {ext('https://launchdarkly.com/pricing/')}, {ext('https://www.flagsmith.com/pricing')}, {ext('https://www.split.io/pricing/')}</li>
 					</ul>
 				</section>
 
-				<section id="eks-kubernetes-ops" className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Managed Kubernetes on AWS EKS</h2>
-					<p className="text-slate-300">Production-grade EKS with autoscaling, observability, and security baselines.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $1,500–$6,000/mo (+ AWS fees)</li>
-						<li>References: {ext('https://aws.amazon.com/eks/pricing/')}</li>
-					</ul>
-				</section>
-
-				<section id="gke-kubernetes-ops" className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Managed Kubernetes on Google GKE</h2>
-					<p className="text-slate-300">Hardened GKE with GitOps, progressive delivery, and FinOps guardrails.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $1,500–$6,000/mo (+ Google Cloud fees)</li>
-						<li>References: {ext('https://cloud.google.com/kubernetes-engine/pricing')}</li>
-					</ul>
-				</section>
-
-				<section id="cloudflare-zero-trust" className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Zero Trust SASE with Cloudflare</h2>
-					<p className="text-slate-300">ZTNA, SWG, DNS filtering, and device posture for secure access.</p>
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Zero Trust SASE</h2>
+					<p className="text-slate-300">ZTNA, SWG, DNS filtering, and device posture for secure hybrid access.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $7–$20/user/mo</li>
 						<li>References: {ext('https://www.cloudflare.com/plans/zero-trust/')}, {ext('https://www.cloudflare.com/plans/')}</li>
 					</ul>
 				</section>
 
-				<section id="microsoft-intune-mdm" className="space-y-6">
+				<section className="space-y-6">
 					<h2 className="text-2xl font-semibold text-white">MDM/MAM with Microsoft Intune</h2>
-					<p className="text-slate-300">Device enrollment, compliance, app protection, and conditional access.</p>
+					<p className="text-slate-300">Device enrollment, compliance, app protection, and conditional access policies.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $8–$20/user/mo</li>
 						<li>References: {ext('https://www.microsoft.com/microsoft-365/compare-microsoft-365-enterprise-plans')}</li>
 					</ul>
 				</section>
 
-				<section id="voice-cloning-studio" className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">AI Voice Cloning Studio</h2>
-					<p className="text-slate-300">High-quality synthetic voices for product, support, and content teams.</p>
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Managed Kubernetes (EKS/GKE)</h2>
+					<p className="text-slate-300">Production‑grade clusters with autoscaling, GitOps, observability, and security baselines.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $5–$99/mo + usage</li>
-						<li>References: {ext('https://elevenlabs.io/pricing')}</li>
+						<li>Typical SMB budget: $1,500–$6,000/mo (+ cloud fees)</li>
+						<li>References: {ext('https://aws.amazon.com/eks/pricing/')}, {ext('https://cloud.google.com/kubernetes-engine/pricing')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">PII Data Vault & Tokenization</h2>
+					<p className="text-slate-300">Vault PII with KMS‑backed encryption, tokenization, and detailed access logs.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $200–$800/mo</li>
+						<li>References: {ext('https://www.skyflow.com/pricing')}, {ext('https://www.verygoodsecurity.com/pricing')}</li>
 					</ul>
 				</section>
 			</div>
