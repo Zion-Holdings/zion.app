@@ -15,7 +15,8 @@ class MyDocument extends Document {
 					<meta name="theme-color" content="#000000" />
 					<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 					<link rel="manifest" href="/site.webmanifest" />
-					<link rel="canonical" href={siteUrl} />
+					<link rel="dns-prefetch" href="//plausible.io" />
+					<link rel="preconnect" href="https://plausible.io" crossOrigin="anonymous" />
 					<meta name="viewport" content="width=device-width, initial-scale=1" />
 				</Head>
 				<body>
