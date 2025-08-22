@@ -28,9 +28,15 @@ export default function SEO({ title, description, canonical, ogImage, image, noI
 	const pageTitle = title || DEFAULTS.title;
 	const pageDescription = description || DEFAULTS.description;
 	const pagePath = typeof router?.asPath === 'string' ? router.asPath : '/';
-	const derivedCanonical = baseUrl.replace(/\/$/, '') + (pagePath.startsWith('/') ? pagePath : `/${pagePath}`);
-	const canonicalUrl = canonical || derivedCanonical;
-	const imageUrl = image || ogImage || DEFAULTS.image;
+	// Derive canonical from baseUrl + path, ensure single slash and trailing slash
+	const rawDerived = baseUrl.replace(/\/$/, '') + (pagePath.startsWith('/') ? pagePath : `/${pagePath}`);
+	const normalizedCanonical = rawDerived.endsWith('/') ? rawDerived : `${rawDerived}/`;
+	const canonicalUrl = canonical || normalizedCanonical;
+	// Prefer explicit image, then ogImage, then default; resolve to absolute URL
+	const requestedImage = image || ogImage || DEFAULTS.image;
+	const imageUrl = /^(https?:)?\/\//.test(requestedImage)
+		? requestedImage
+		: baseUrl.replace(/\/$/, '') + (requestedImage.startsWith('/') ? requestedImage : `/${requestedImage}`);
 	const isNoIndex = (noIndex ?? false) || (noindex ?? false);
 	const robotsContent = `${isNoIndex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}`;
 	const imageAlt = 'Zion Tech Group - Revolutionary Technology Solutions';
