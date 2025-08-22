@@ -36,9 +36,9 @@ const sidebarSections = [
       { name: 'API Performance Testing', href: '/api-performance-testing' },
       { name: 'AI Creativity Studio', href: '/ai-creativity-studio' },
       { name: 'AI Education Platform', href: '/ai-education-platform' },
-      { name: 'AI Healthcare Diagnostics', href: '/healthcare-solutions' },
-      { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence' },
-      { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform' },
+      { name: 'AI Healthcare Diagnostics', href: '/healthcare-solutions', badge: 'Popular' },
+      { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence', badge: 'New' },
+      { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform', badge: 'New' },
       { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer' }
     ]
   },
@@ -57,8 +57,8 @@ const sidebarSections = [
       { name: 'Quantum Robotics', href: '/quantum-robotics' },
       { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity-platform' },
       { name: 'Quantum Logistics', href: '/quantum-logistics-optimization' },
-      { name: 'Quantum Metaverse', href: '/quantum-metaverse' },
-      { name: 'Quantum IoT Platform', href: '/quantum-iot' },
+      { name: 'Quantum Metaverse', href: '/quantum-metaverse', badge: 'New' },
+      { name: 'Quantum IoT Platform', href: '/quantum-iot', badge: 'New' },
       { name: 'Quantum Financial Trading', href: '/quantum-financial-trading' }
     ]
   },
@@ -133,8 +133,8 @@ const sidebarSections = [
       { name: 'Blog & News', href: '/blog' },
       { name: 'Support Center', href: '/support' },
       { name: 'Training & Certification', href: '/training' },
-      { name: 'Community Forum', href: '/community' },
-      { name: 'Developer Resources', href: '/developer-resources' },
+      { name: 'Community Forum', href: '/resources' },
+      { name: 'Developer Resources', href: '/developer' },
       { name: 'Research & Development', href: '/research-development' },
       { name: 'White Papers', href: '/white-papers' },
       { name: 'Performance Reports', href: '/reports' },
