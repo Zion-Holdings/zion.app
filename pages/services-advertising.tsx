@@ -304,65 +304,74 @@ export default function ServicesAdvertisingPage() {
 				</section>
 
 				<section id="ai-email-responder" className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">AI Email Responder</h2>
-					<p className="text-slate-300">Autonomous replies, prioritization, and sentiment analysis integrated with your CRM.</p>
+					<h2 className="text-2xl font-semibold text-white">AI-Powered Email Responder</h2>
+					<p className="text-slate-300">Autonomously triages and drafts replies for routine emails; escalates edge cases with suggested responses and context.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $20–$50/user/mo</li>
-						<li>References: {ext('https://workspace.google.com/pricing')}, {ext('https://www.microsoft.com/microsoft-365/business/compare-all-microsoft-365-business-products')}</li>
+						<li>Typical SMB budget: $29–$199/mo + API usage</li>
+						<li>References: {ext('https://workspace.google.com/marketplace')}, {ext('https://www.microsoft.com/microsoft-365')}</li>
 					</ul>
 				</section>
 
-				<section id="mobile-first-survey-tool" className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Mobile-first Survey Tool</h2>
-					<p className="text-slate-300">Adaptive surveys with conditional logic and real-time dashboards.</p>
+				<section id="mobile-survey-suite" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Mobile-First Survey Suite</h2>
+					<p className="text-slate-300">Adaptive, conversational surveys with offline capture and analytics; export to CSV/Sheets and push to CRM.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $30–$70/mo</li>
+						<li>Typical SMB budget: $19–$149/mo</li>
 						<li>References: {ext('https://www.typeform.com/pricing/')}, {ext('https://www.surveymonkey.com/pricing/')}</li>
+					</ul>
+				</section>
+
+				<section id="niche-productivity-planner" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Niche Productivity Planner</h2>
+					<p className="text-slate-300">Industry templates, SLAs, recurring tasks, and client portals to standardize processes and improve throughput.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $12–$79/user/mo</li>
+						<li>References: {ext('https://asana.com/pricing')}, {ext('https://trello.com/pricing')}</li>
 					</ul>
 				</section>
 
 				<section id="event-management-dashboard" className="space-y-6">
 					<h2 className="text-2xl font-semibold text-white">Event Management Dashboard</h2>
-					<p className="text-slate-300">Ticketing, registration, scheduling, and post-event insights.</p>
+					<p className="text-slate-300">Ticketing, QR check-in, automated comms, session feedback, sponsor analytics, and post-event ROI.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $50–$100/mo (+ fees per ticket)</li>
-						<li>References: {ext('https://www.eventbrite.com/organizer/pricing/')}, {ext('https://ti.to/pricing')}</li>
+						<li>Typical SMB budget: $0–$299/mo + fees</li>
+						<li>References: {ext('https://www.eventbrite.com/fees')}, {ext('https://hopin.com/pricing')}</li>
 					</ul>
 				</section>
 
-				<section id="affiliate-tracking-hub" className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Affiliate Tracking Hub</h2>
-					<p className="text-slate-300">Cross-device attribution, fraud prevention, and automated payouts.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $40–$80/mo</li>
-						<li>References: {ext('https://partnerstack.com/')}, {ext('https://impact.com/pricing/')}</li>
-					</ul>
-				</section>
-
-				<section id="smb-website-analytics" className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">SMB Website Analytics</h2>
-					<p className="text-slate-300">Privacy-first dashboards with goals, funnels, and UTM insights.</p>
+				<section id="smb-web-analytics" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Website Analytics for SMBs</h2>
+					<p className="text-slate-300">Privacy-friendly dashboards for traffic, goals, and conversions; SEO suggestions and public dashboards.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $9–$50/mo</li>
-						<li>References: {ext('https://plausible.io/pricing')}, {ext('https://usefathom.com/pricing')}</li>
+						<li>References: {ext('https://plausible.io/pricing')}, {ext('https://matomo.org/pricing/')}</li>
 					</ul>
 				</section>
 
 				<section id="it-helpdesk-suite" className="space-y-6">
 					<h2 className="text-2xl font-semibold text-white">IT Helpdesk Suite</h2>
-					<p className="text-slate-300">Ticketing, SLAs, KB, and self-service portal for IT teams and MSPs.</p>
+					<p className="text-slate-300">Ticketing, SLAs, knowledge base, client portal, and CSAT tailored for MSPs and internal IT.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $30–$70/agent/mo</li>
-						<li>References: {ext('https://www.zendesk.com/pricing/')}, {ext('https://www.freshworks.com/freshdesk/pricing/')}</li>
+						<li>Typical SMB budget: $25–$89/agent/mo</li>
+						<li>References: {ext('https://www.zendesk.com/pricing/')}, {ext('https://freshdesk.com/pricing')}</li>
 					</ul>
 				</section>
 
-				<section id="ecommerce-returns-center" className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">E‑commerce Returns Center</h2>
-					<p className="text-slate-300">Self-service returns, labels, and exchanges with analytics.</p>
+				<section id="ecommerce-returns" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">E‑commerce Return Management</h2>
+					<p className="text-slate-300">Self-serve RMAs with label generation, warehouse notifications, refund automation, and analytics.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $30–$60/mo</li>
-						<li>References: {ext('https://www.loopreturns.com/pricing/')}, {ext('https://www.returnsgo.com/pricing')}</li>
+						<li>Typical SMB budget: $19–$199/mo + label fees</li>
+						<li>References: {ext('https://www.aftership.com/returns-center/pricing')}, {ext('https://www.shippo.com/pricing/')}</li>
+					</ul>
+				</section>
+
+				<section id="automated-followups" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Automated Email Follow‑ups</h2>
+					<p className="text-slate-300">Sequences with pause‑on‑reply, time windows, mail merge, and A/B tests right from your inbox.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $10–$49/user/mo</li>
+						<li>References: {ext('https://mailshake.com/pricing/')}, {ext('https://yesware.com/pricing/')}</li>
 					</ul>
 				</section>
 
@@ -1346,6 +1355,19 @@ export default function ServicesAdvertisingPage() {
 					<a href="mailto:kleber@ziontechgroup.com" className="px-4 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-600 text-white">Email kleber@ziontechgroup.com</a>
 					<a href="/pricing" className="px-4 py-2 rounded-lg border border-cyan-500/40 text-cyan-300">View Pricing</a>
 				</div>
+
+				<section id="new-2032-expansions" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Fresh 2032 Service Expansions</h2>
+					<ul className="list-disc list-inside text-slate-300 space-y-2">
+						<li><strong className="text-white">AI Governance Reporter</strong> — $149/mo. Learn: <a className="text-cyan-400 underline" href="/services/ai-governance-reporter">/services/ai-governance-reporter</a>. References: https://openai.com/index/safety/</li>
+						<li><strong className="text-white">AI Red Teaming Suite</strong> — $199/mo. Learn: <a className="text-cyan-400 underline" href="/services/ai-red-teaming-suite">/services/ai-red-teaming-suite</a>. References: https://www.promptfoo.dev/pricing</li>
+						<li><strong className="text-white">API Schema Diff & Registry</strong> — $79/mo. Learn: <a className="text-cyan-400 underline" href="/services/api-schema-diff-registry">/services/api-schema-diff-registry</a>. References: https://swagger.io/tools/swaggerhub/pricing/</li>
+						<li><strong className="text-white">Kubernetes Cost Rightsizer</strong> — $129/mo. Learn: <a className="text-cyan-400 underline" href="/services/k8s-cost-rightsizer">/services/k8s-cost-rightsizer</a>. References: https://www.kubecost.com/pricing</li>
+						<li><strong className="text-white">PII Redaction Proxy</strong> — $99/mo. Learn: <a className="text-cyan-400 underline" href="/services/pii-redaction-proxy">/services/pii-redaction-proxy</a>. References: https://www.skyflow.com/pricing</li>
+						<li><strong className="text-white">Synthetic Journey Monitor</strong> — $39/mo. Learn: <a className="text-cyan-400 underline" href="/services/synthetic-journey-monitor">/services/synthetic-journey-monitor</a>. References: https://www.checklyhq.com/pricing/</li>
+					</ul>
+					<div className="text-slate-400 text-sm">Full catalog: <a className="text-cyan-400 underline" href="/services">/services</a> • Market pricing benchmarks: <a className="text-cyan-400 underline" href="/market-pricing">/market-pricing</a></div>
+				</section>
 			</div>
 		</div>
 	);
