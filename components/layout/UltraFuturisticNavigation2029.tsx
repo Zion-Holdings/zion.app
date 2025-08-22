@@ -27,10 +27,10 @@ const serviceCategories = [
     color: 'from-violet-600 via-purple-600 to-indigo-600',
     description: 'Next-generation AI consciousness and creativity',
     services: [
-      { name: 'AI Consciousness Evolution Platform', href: '/ai-consciousness-evolution-platform', description: 'Develop genuine AI consciousness', price: '$19,999/month' },
-      { name: 'AI Emotional Intelligence Platform', href: '/ai-emotional-intelligence-platform', description: 'Real-time emotion analysis and response', price: '$3,999/month' },
-      { name: 'AI Creativity Orchestrator', href: '/ai-creativity-orchestrator', description: 'Multi-model creativity fusion', price: '$5,999/month' },
-      { name: 'AI Dream Interpreter Platform', href: '/ai-dream-interpreter-platform', description: 'Dream analysis with AI psychology', price: '$299/month' }
+      { name: 'AI Consciousness Evolution Platform', href: '/ai-consciousness-evolution-2029', description: 'Develop genuine AI consciousness', price: '$19,999/month' },
+      { name: 'AI Emotional Intelligence Platform', href: '/ai-emotional-intelligence-training', description: 'Real-time emotion analysis and response', price: '$3,999/month' },
+      { name: 'AI Creativity Orchestrator', href: '/ai-creativity-studio', description: 'Multi-model creativity fusion', price: '$5,999/month' },
+      { name: 'AI Dream Interpreter Platform', href: '/ai-market-research', description: 'Dream analysis with AI psychology', price: '$299/month' }
     ]
   },
   {
@@ -39,10 +39,10 @@ const serviceCategories = [
     color: 'from-indigo-600 via-blue-600 to-cyan-600',
     description: 'Quantum computing and beyond',
     services: [
-      { name: 'Quantum Internet Security Gateway', href: '/quantum-internet-security-gateway', description: 'Unbreakable quantum encryption', price: '$15,999/month' },
+      { name: 'Quantum Internet Security Platform', href: '/quantum-internet-security-platform', description: 'Unbreakable quantum encryption', price: '$15,999/month' },
       { name: 'Biotech DNA Computing Platform', href: '/biotech-dna-computing-platform', description: 'DNA-based computation', price: '$25,999/month' },
-      { name: 'Quantum Financial Trading Platform', href: '/quantum-financial-trading-platform', description: 'Quantum-powered trading algorithms', price: '$35,999/month' },
-      { name: 'Quantum Creativity Studio', href: '/quantum-creativity-studio', description: 'Quantum-enhanced creativity', price: '$1,999/month' }
+      { name: 'Quantum Financial Trading Platform', href: '/quantum-financial-trading', description: 'Quantum-powered trading algorithms', price: '$35,999/month' },
+      { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery-platform', description: 'Quantum-enhanced creativity', price: '$1,999/month' }
     ]
   },
   {
@@ -51,9 +51,9 @@ const serviceCategories = [
     color: 'from-blue-600 via-cyan-600 to-teal-600',
     description: 'Autonomous enterprise infrastructure',
     services: [
-      { name: 'Autonomous DevOps Platform', href: '/autonomous-devops-platform', description: 'Fully autonomous DevOps', price: '$6,999/month' },
+      { name: 'Autonomous DevOps Platform', href: '/ai-powered-devops-platform', description: 'Fully autonomous DevOps', price: '$6,999/month' },
       { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure', description: 'Quantum-enhanced cloud performance', price: '$18,999/month' },
-      { name: 'AI-Powered Enterprise Security', href: '/ai-powered-enterprise-security', description: 'AI-driven threat detection', price: '$9,999/month' },
+      { name: 'AI-Powered Enterprise Security', href: '/ai-powered-cybersecurity', description: 'AI-driven threat detection', price: '$9,999/month' },
       { name: 'Autonomous IT Operations Center', href: '/autonomous-it-operations-center', description: 'Self-managing IT infrastructure', price: '$14,999/month' }
     ]
   },
@@ -63,10 +63,10 @@ const serviceCategories = [
     color: 'from-teal-600 via-emerald-600 to-green-600',
     description: 'Space exploration and digital reality',
     services: [
-      { name: 'Space Mining Automation Platform', href: '/space-mining-automation-platform', description: 'Automated asteroid mining', price: '$45,999/month' },
+      { name: 'Space Resource Mining', href: '/space-resource-mining-platform', description: 'Automated asteroid mining', price: '$45,999/month' },
       { name: 'Metaverse Digital Reality Platform', href: '/metaverse-digital-reality-platform', description: 'Immersive virtual worlds', price: '$8,999/month' },
-      { name: 'AI Predictive Health Analytics', href: '/ai-predictive-health-analytics', description: 'Predictive health outcomes', price: '$7,999/month' },
-      { name: 'AI Autonomous Business Manager', href: '/ai-autonomous-business-manager', description: 'Fully autonomous business operations', price: '$12,999/month' }
+      { name: 'AI Predictive Health Analytics', href: '/services/ai-predictive-health-analytics-2029', description: 'Predictive health outcomes', price: '$7,999/month' },
+      { name: 'AI Autonomous Business Manager', href: '/services/ai-autonomous-business-manager-2029', description: 'Fully autonomous business operations', price: '$12,999/month' }
     ]
   },
   {

@@ -4,7 +4,7 @@ import Head from 'next/head';
 export default function LinkedInRedirect() {
 	useEffect(() => {
 		if (typeof window !== 'undefined') {
-			window.location.replace('https://linkedin.com/company/ziontechgroup');
+			window.location.replace('https://www.linkedin.com/company/ziontechgroup');
 		}
 	}, []);
 
@@ -12,8 +12,8 @@ export default function LinkedInRedirect() {
 		<>
 			<Head>
 				<title>LinkedIn | Zion Tech Group</title>
-				<link rel="canonical" href="https://linkedin.com/company/ziontechgroup" />
-				<meta httpEquiv="refresh" content="0;url=https://linkedin.com/company/ziontechgroup" />
+				<link rel="canonical" href="https://www.linkedin.com/company/ziontechgroup" />
+				<meta httpEquiv="refresh" content="0;url=https://www.linkedin.com/company/ziontechgroup" />
 				<meta name="robots" content="noindex, nofollow" />
 			</Head>
 			<div className="min-h-screen bg-black text-white flex items-center justify-center p-8">

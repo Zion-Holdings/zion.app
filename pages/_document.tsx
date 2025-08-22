@@ -11,10 +11,10 @@ class MyDocument extends Document {
 		return (
 			<Html lang="en" data-theme="dark">
 				<Head>
-					<meta charSet="utf-8" />
-					<meta name="viewport" content="width=device-width, initial-scale=1" />
+					<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 					<meta name="theme-color" content="#000000" />
 					<meta name="color-scheme" content="dark light" />
+					<meta name="format-detection" content="telephone=no" />
 					<link rel="preconnect" href="https://plausible.io" crossOrigin="anonymous" />
 					<link rel="dns-prefetch" href="//plausible.io" />
 					<link rel="preload" as="image" href="/og-image.svg" imageSrcSet={`${siteUrl.replace(/\/$/, '')}/og-image.svg`} />

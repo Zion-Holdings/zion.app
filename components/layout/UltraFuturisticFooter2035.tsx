@@ -17,6 +17,17 @@ const contactInfo = {
   website: 'https://ziontechgroup.com'
 };
 
+function normalizeHref(href: string): string {
+  if (!href) return href;
+  if (href.startsWith('http://') || href.startsWith('https://') || href.startsWith('mailto:') || href.startsWith('tel:')) {
+    return href;
+  }
+  if (!href.startsWith('/')) return href;
+  const hasQueryOrHash = href.includes('?') || href.includes('#');
+  if (hasQueryOrHash) return href;
+  return href.endsWith('/') ? href : href + '/';
+}
+
 const footerSections = [
   {
     title: 'Featured Services',
@@ -67,7 +78,7 @@ const footerSections = [
       { name: 'Quantum Internet Security', href: '/quantum-internet-security-platform' },
       { name: 'Quantum-Secure Cloud Infrastructure', href: '/quantum-secure-cloud-infrastructure' },
       { name: 'Quantum Financial Trading Platform', href: '/quantum-financial-trading' },
-      { name: 'AI-Powered Space Technology', href: '/ai-powered-space-technology' },
+      { name: 'AI-Powered Space Technology', href: '/space-technology-ai-platform' },
       { name: 'Brain-Computer Interface', href: '/brain-computer-interface-platform' },
       { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery-platform' },
       { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai-platform' },
@@ -131,17 +142,22 @@ const footerSections = [
       { name: 'Support Center', href: '/support' },
       { name: 'Training & Certification', href: '/training' },
       { name: 'Market Pricing', href: '/market-pricing' },
-      { name: 'Services Advertising', href: '/services-advertising' }
+      { name: 'Services Advertising', href: '/services-advertising' },
+      { name: 'RAG Evaluation Lab', href: '/rag-evaluation-lab' },
+      { name: 'SOC 2 Compliance Automation', href: '/soc2-compliance-automation' },
+      { name: 'Browser Automation Cloud', href: '/browser-automation-cloud' },
+      { name: 'Secrets Rotation Automation', href: '/secrets-rotation-automation' },
+      { name: 'API Performance Testing', href: '/api-performance-testing' }
     ]
   }
 ];
 
 const socialLinks = [
-  { name: 'Twitter', href: '/social/twitter', icon: <Twitter className="w-5 h-5" /> },
-  { name: 'LinkedIn', href: '/social/linkedin', icon: <Linkedin className="w-5 h-5" /> },
-  { name: 'Facebook', href: 'https://facebook.com/ziontechgroup', icon: <Facebook className="w-5 h-5" /> },
-  { name: 'Instagram', href: 'https://instagram.com/ziontechgroup', icon: <Instagram className="w-5 h-5" /> },
-  { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: <Youtube className="w-5 h-5" /> },
+  { name: 'X', href: '/social/twitter/', icon: <Twitter className="w-5 h-5" /> },
+  { name: 'LinkedIn', href: '/social/linkedin/', icon: <Linkedin className="w-5 h-5" /> },
+  { name: 'Facebook', href: 'https://www.facebook.com/ziontechgroup', icon: <Facebook className="w-5 h-5" /> },
+  { name: 'Instagram', href: 'https://www.instagram.com/ziontechgroup', icon: <Instagram className="w-5 h-5" /> },
+  { name: 'YouTube', href: 'https://www.youtube.com/@ziontechgroup', icon: <Youtube className="w-5 h-5" /> },
   { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: <Github className="w-5 h-5" /> }
 ];
 
@@ -254,7 +270,7 @@ const UltraFuturisticFooter2035: React.FC = () => {
                   {section.links.map((link) => (
                     <li key={link.name}>
                       <Link
-                        href={link.href}
+                        href={normalizeHref(link.href)}
                         className={`text-sm transition-colors duration-200 ${
                           link.featured 
                             ? 'text-cyan-400 hover:text-cyan-300' 

@@ -330,7 +330,7 @@ export default function EnhancedSidebar2025({ isOpen, onClose }: EnhancedSidebar
                 {quickLinks.map((link) => (
                   <Link
                     key={link.name}
-                    href={link.href}
+                    href={link.href.endsWith('/') ? link.href : `${link.href}/`}
                     onClick={onClose}
                     className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-800/50 transition-colors duration-200 group"
                   >
@@ -357,6 +357,11 @@ export default function EnhancedSidebar2025({ isOpen, onClose }: EnhancedSidebar
                 <a href="/market-pricing" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Market Pricing</a>
                 <a href="/services-advertising" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Services Advertising</a>
                 <a href="/contact" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Contact</a>
+                <a href="/rag-evaluation-lab" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">RAG Evaluation Lab</a>
+                <a href="/soc2-compliance-automation" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">SOC 2 Compliance Automation</a>
+                <a href="/browser-automation-cloud" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Browser Automation Cloud</a>
+                <a href="/secrets-rotation-automation" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Secrets Rotation Automation</a>
+                <a href="/api-performance-testing" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">API Performance Testing</a>
               </div>
             </div>
 
@@ -400,7 +405,7 @@ export default function EnhancedSidebar2025({ isOpen, onClose }: EnhancedSidebar
                           {section.items.map((item) => (
                             <Link
                               key={item.name}
-                              href={item.href}
+                              href={item.href.endsWith('/') ? item.href : `${item.href}/`}
                               onClick={onClose}
                               className="flex items-center justify-between p-2 rounded-lg hover:bg-gray-800/30 transition-colors duration-200 group"
                             >
