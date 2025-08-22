@@ -17,7 +17,9 @@ import { quantumCybersecurityServices } from '../data/2026-quantum-cybersecurity
 import UltraFuturisticBackground2026 from './ui/UltraFuturisticBackground2026';
 import UltraFuturisticServiceCard2026 from './ui/UltraFuturisticServiceCard2026';
 
-const Homepage2025: React.FC = () => {
+interface Homepage2025Props { showInternalNav?: boolean }
+
+const Homepage2025: React.FC<Homepage2025Props> = ({ showInternalNav = true }) => {
   const [activeSection, setActiveSection] = useState('hero');
   const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
@@ -64,8 +66,10 @@ const Homepage2025: React.FC = () => {
 
   return (
     <UltraFuturisticBackground2026 intensity="medium" theme="quantum">
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-xl border-b border-white/10">
+      {showInternalNav && (
+      <>
+        {/* Navigation */}
+        <nav className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-xl border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <motion.div
@@ -176,6 +180,8 @@ const Homepage2025: React.FC = () => {
           </AnimatePresence>
         </div>
       </nav>
+      </>
+      )}
 
       {/* Hero Section */}
       <section id="hero" className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16">
