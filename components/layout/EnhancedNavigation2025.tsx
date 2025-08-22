@@ -43,7 +43,10 @@ const navigationItems: NavigationItem[] = [
       { name: 'Latest Innovations', href: '/revolutionary-2025-services-showcase', description: 'Cutting-edge solutions' },
       { name: '2026 Services', href: '/revolutionary-2026-services', description: 'Next generation solutions' },
       { name: '2027 Services', href: '/revolutionary-2027-services-showcase', description: 'Future-ready services' },
-      { name: 'Ultimate 2026', href: '/ultimate-2026-services-showcase', description: 'Premium service collection' }
+      { name: 'Ultimate 2026', href: '/ultimate-2026-services-showcase', description: 'Premium service collection' },
+      { name: 'New 2025 Services', href: '/2025-cutting-edge-ai-services', description: 'Latest AI innovations' },
+      { name: 'IT Infrastructure', href: '/2025-innovative-it-infrastructure-services', description: 'Advanced IT solutions' },
+      { name: 'Micro SAAS Solutions', href: '/2025-innovative-micro-saas-solutions', description: 'Business solutions' }
     ]
   },
   {
@@ -74,7 +77,12 @@ const navigationItems: NavigationItem[] = [
       { name: 'AI Autonomous Sales', href: '/ai-autonomous-sales-platform', description: 'AI that closes deals' },
       { name: 'AI Autonomous Customer Service', href: '/ai-autonomous-customer-service', description: 'Autonomous support AI' },
       { name: 'AI Autonomous HR', href: '/ai-autonomous-hr-platform', description: 'Autonomous HR management' },
-      { name: 'Advanced AI Automation', href: '/advanced-ai-automation-services', description: 'AI automation for development, testing, DevOps, security, and data' }
+      { name: 'Advanced AI Automation', href: '/advanced-ai-automation-services', description: 'AI automation for development, testing, DevOps, security, and data' },
+      { name: 'AI Quantum Financial Trading', href: '/ai-quantum-financial-trading', description: 'Quantum AI trading platform' },
+      { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics-platform', description: 'Medical AI diagnostics' },
+      { name: 'AI Autonomous Manufacturing', href: '/ai-autonomous-manufacturing-platform', description: 'Industrial AI automation' },
+      { name: 'AI Cybersecurity Intelligence', href: '/ai-cybersecurity-threat-intelligence', description: 'AI threat detection' },
+      { name: 'AI Content Creation Studio', href: '/ai-content-creation-studio', description: 'AI content generation' }
     ]
   },
   {
@@ -118,7 +126,12 @@ const navigationItems: NavigationItem[] = [
       { name: 'Quantum Cloud Migration', href: '/quantum-cloud-migration', description: 'Seamless cloud transitions' },
       { name: 'Autonomous IT Operations', href: '/autonomous-it-operations-center', description: 'Self-managing IT systems' },
       { name: 'Autonomous Data Center', href: '/autonomous-data-center-platform', description: 'AI-managed data centers' },
-      { name: 'Advanced IT Infrastructure', href: '/advanced-it-infrastructure-services', description: 'Quantum computing, edge computing, zero-trust security, and autonomous data centers' }
+      { name: 'Advanced IT Infrastructure', href: '/advanced-it-infrastructure-services', description: 'Quantum computing, edge computing, zero-trust security, and autonomous data centers' },
+      { name: 'Quantum-Secure Cloud Infrastructure', href: '/quantum-secure-cloud-infrastructure', description: 'Quantum-resistant cloud security' },
+      { name: 'Edge Computing Orchestration Platform', href: '/edge-computing-orchestration-platform', description: 'AI-powered edge orchestration' },
+      { name: 'Blockchain Infrastructure Platform', href: '/blockchain-infrastructure-platform', description: 'Enterprise blockchain solutions' },
+      { name: 'AI-Powered DevOps Platform', href: '/ai-powered-devops-platform', description: 'Autonomous DevOps operations' },
+      { name: 'Zero Trust Security Platform', href: '/zero-trust-security-platform', description: 'AI-powered zero trust security' }
     ]
   },
   {
@@ -146,7 +159,12 @@ const navigationItems: NavigationItem[] = [
       { name: 'Quantum Financial Trading', href: '/quantum-enhanced-financial-trading', description: 'Quantum-powered trading' },
       { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics-platform', description: 'Medical AI diagnostics' },
       { name: 'Autonomous Manufacturing', href: '/autonomous-manufacturing-ai-platform', description: 'AI manufacturing' },
-      { name: 'Innovative Business Solutions', href: '/innovative-business-solutions', description: 'AI-powered business intelligence, marketing, sales, customer service, and HR solutions' }
+      { name: 'Innovative Business Solutions', href: '/innovative-business-solutions', description: 'AI-powered business intelligence, marketing, sales, customer service, and HR solutions' },
+      { name: 'AI Customer Success Platform', href: '/ai-customer-success-platform', description: 'Predictive churn prevention' },
+      { name: 'Intelligent Supply Chain Optimization', href: '/intelligent-supply-chain-optimization', description: 'AI-powered logistics optimization' },
+      { name: 'AI Financial Planning Platform', href: '/ai-financial-planning-platform', description: 'Personalized investment strategies' },
+      { name: 'Intelligent HR Analytics Platform', href: '/intelligent-hr-analytics-platform', description: 'Predictive workforce insights' },
+      { name: 'AI Sales Intelligence Platform', href: '/ai-sales-intelligence-platform', description: 'Predictive lead scoring' }
     ]
   },
   {

@@ -73,6 +73,96 @@ body {
   100% { background-position: 0% 50%; }
 }
 
+/* Futuristic neon glow effects */
+@keyframes neonPulse {
+  0%, 100% { 
+    text-shadow: 
+      0 0 5px currentColor,
+      0 0 10px currentColor,
+      0 0 15px currentColor,
+      0 0 20px currentColor;
+  }
+  50% { 
+    text-shadow: 
+      0 0 10px currentColor,
+      0 0 20px currentColor,
+      0 0 30px currentColor,
+      0 0 40px currentColor;
+  }
+}
+
+@keyframes neonBorder {
+  0%, 100% { 
+    box-shadow: 
+      0 0 5px currentColor,
+      0 0 10px currentColor,
+      0 0 15px currentColor,
+      inset 0 0 5px currentColor;
+  }
+  50% { 
+    box-shadow: 
+      0 0 10px currentColor,
+      0 0 20px currentColor,
+      0 0 30px currentColor,
+      inset 0 0 10px currentColor;
+  }
+}
+
+/* Holographic effects */
+@keyframes hologram {
+  0% { 
+    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+    background-size: 200% 200%;
+    background-position: 0% 0%;
+  }
+  50% { 
+    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.2) 50%, transparent 70%);
+    background-size: 200% 200%;
+    background-position: 100% 100%;
+  }
+  100% { 
+    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+    background-size: 200% 200%;
+    background-position: 0% 0%;
+  }
+}
+
+/* Quantum particle effects */
+@keyframes quantumFloat {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg) scale(1);
+    opacity: 0.8;
+  }
+  25% { 
+    transform: translateY(-20px) rotate(90deg) scale(1.1);
+    opacity: 1;
+  }
+  50% { 
+    transform: translateY(-40px) rotate(180deg) scale(0.9);
+    opacity: 0.6;
+  }
+  75% { 
+    transform: translateY(-20px) rotate(270deg) scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+/* Cyber grid effects */
+@keyframes cyberGrid {
+  0% { 
+    background-position: 0% 0%;
+    opacity: 0.3;
+  }
+  50% { 
+    background-position: 100% 100%;
+    opacity: 0.7;
+  }
+  100% { 
+    background-position: 0% 0%;
+    opacity: 0.3;
+  }
+}
+
 /* Futuristic particle background */
 @keyframes float {
   0%, 100% { transform: translateY(0px) rotate(0deg); }
@@ -1180,5 +1270,107 @@ h3 {
     background: white;
     border: 1px solid #ccc;
     box-shadow: none;
+  }
+}
+
+/* Futuristic utility classes */
+.neon-glow {
+  animation: neonGlow 2s ease-in-out infinite;
+}
+
+.holographic {
+  animation: hologram 3s ease-in-out infinite;
+}
+
+.quantum-float {
+  animation: quantumFloat 4s ease-in-out infinite;
+}
+
+.cyber-grid {
+  background-image: 
+    linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  animation: cyberGrid 5s ease-in-out infinite;
+}
+
+/* Enhanced neon effects */
+.neon-text {
+  animation: neonPulse 2s ease-in-out infinite;
+  text-shadow: 
+    0 0 5px currentColor,
+    0 0 10px currentColor,
+    0 0 15px currentColor;
+}
+
+.neon-border {
+  animation: neonBorder 3s ease-in-out infinite;
+  border: 2px solid currentColor;
+}
+
+.neon-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.neon-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.neon-button:hover::before {
+  left: 100%;
+}
+
+.neon-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 0 10px currentColor,
+    0 0 20px currentColor,
+    0 0 30px currentColor;
+}
+
+/* Futuristic backgrounds */
+.futuristic-bg {
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.3) 0%, transparent 50%);
+  background-size: 200% 200%;
+  animation: gradientShift 15s ease infinite;
+}
+
+.quantum-bg {
+  background: 
+    linear-gradient(45deg, #0f0f23 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #533483 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 20s ease infinite;
+}
+
+/* Responsive design improvements */
+@media (max-width: 768px) {
+  .neon-text {
+    animation: neonPulse 3s ease-in-out infinite;
+  }
+  
+  .quantum-float {
+    animation: quantumFloat 6s ease-in-out infinite;
+  }
+}
+
+@media (max-width: 480px) {
+  .neon-glow {
+    animation: neonGlow 4s ease-in-out infinite;
+  }
+  
+  .holographic {
+    animation: hologram 5s ease-in-out infinite;
   }
 }

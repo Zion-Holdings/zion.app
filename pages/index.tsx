@@ -11,6 +11,9 @@ import { emergingTechServicesEnhanced2025 } from '../data/2025-emerging-tech-ser
 import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
 import { advancedITInfrastructureServices2025 } from '../data/2025-advanced-it-infrastructure-services';
 import { innovativeBusinessSolutions2025 } from '../data/2025-innovative-business-solutions';
+import { cuttingEdgeAIServices2025 } from '../data/2025-cutting-edge-ai-services';
+import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
+import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
 
 const contactInfo = {
   mobile: '+1 302 464 0950',
@@ -96,6 +99,33 @@ const serviceCategories = [
     color: 'from-green-500 to-emerald-600',
     href: '/innovative-business-solutions',
     features: ['Business Intelligence', 'Marketing Automation', 'Sales Intelligence']
+  },
+  {
+    title: 'Cutting-Edge AI Services',
+    description: 'Revolutionary AI solutions for quantum trading, healthcare, manufacturing, and cybersecurity',
+    services: cuttingEdgeAIServices2025.slice(0, 3),
+    icon: Brain,
+    color: 'from-purple-500 to-pink-600',
+    href: '/2025-cutting-edge-ai-services',
+    features: ['Quantum Financial Trading', 'AI Healthcare Diagnostics', 'Autonomous Manufacturing']
+  },
+  {
+    title: 'Innovative IT Infrastructure',
+    description: 'Next-generation IT infrastructure with quantum security and edge computing',
+    services: innovativeITInfrastructureServices2025.slice(0, 3),
+    icon: Shield,
+    color: 'from-indigo-500 to-blue-600',
+    href: '/2025-innovative-it-infrastructure-services',
+    features: ['Quantum-Secure Cloud', 'Edge Computing', 'Blockchain Infrastructure']
+  },
+  {
+    title: 'Innovative Micro SAAS',
+    description: 'Transformative business solutions for customer success, supply chain, and analytics',
+    services: innovativeMicroSaasSolutions2025.slice(0, 3),
+    icon: Rocket,
+    color: 'from-teal-500 to-emerald-600',
+    href: '/2025-innovative-micro-saas-solutions',
+    features: ['AI Customer Success', 'Supply Chain Optimization', 'Financial Planning']
   }
 ];
 
