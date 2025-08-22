@@ -10,6 +10,7 @@ class MyDocument extends Document {
 		return (
 			<Html lang="en" dir="ltr">
 				<Head>
+					<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 					<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 					<link rel="manifest" href="/site.webmanifest" />
 					<meta name="theme-color" content="#000000" />
