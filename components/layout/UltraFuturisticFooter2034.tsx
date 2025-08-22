@@ -20,69 +20,70 @@ const footerSections = [
     title: 'AI & Consciousness',
     links: [
       { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2025' },
-      { name: 'AI Quantum Neural Network', href: '/ai-quantum-neural-network' },
-      { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant' },
       { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training' },
+      { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant' },
       { name: 'AI Predictive Maintenance', href: '/ai-predictive-maintenance-platform' },
       { name: 'AI Content Personalization', href: '/ai-content-personalization-engine' },
       { name: 'AI Autonomous Ecosystem', href: '/ai-autonomous-ecosystem-manager' },
-      { name: 'AI Ethics & Governance', href: '/ai-ethics-governance-framework' }
+      { name: 'AI Ethics & Governance', href: '/ai-ethics-governance-framework' },
+      { name: 'AI Creativity Studio', href: '/ai-creativity-studio-platform' },
+      { name: 'AI Education Platform', href: '/ai-education-platform' }
     ]
   },
   {
     title: 'Quantum & Emerging Tech',
     links: [
+      { name: 'Quantum-Secure Cloud Infrastructure', href: '/quantum-secure-cloud-infrastructure' },
+      { name: 'Quantum-Ready Database', href: '/quantum-ready-database-platform' },
       { name: 'Space Resource Mining', href: '/space-resource-mining-platform' },
       { name: 'Quantum Internet Security', href: '/quantum-internet-security-platform' },
       { name: 'Brain-Computer Interface', href: '/brain-computer-interface-platform' },
       { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery-platform' },
       { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai-platform' },
-      { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform' },
-      { name: 'Quantum Energy Platform', href: '/quantum-energy-platform' },
-      { name: 'Quantum Robotics', href: '/quantum-robotics' }
+      { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform' }
     ]
   },
   {
     title: 'Enterprise IT',
     links: [
-      { name: 'Quantum-Secure Cloud', href: '/quantum-secure-cloud-infrastructure' },
+      { name: 'Zero Trust Security', href: '/zero-trust-network-security' },
+      { name: 'AI DevOps Automation', href: '/ai-devops-automation-platform' },
+      { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration' },
+      { name: 'AI Data Governance', href: '/ai-data-governance-platform' },
+      { name: 'AI API Management', href: '/ai-api-management-platform' },
       { name: 'Autonomous IT Operations', href: '/autonomous-it-operations-center' },
-      { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration-platform' },
-      { name: 'Blockchain Infrastructure', href: '/blockchain-infrastructure-platform' },
-      { name: 'AI-Powered DevOps', href: '/ai-powered-devops-platform' },
-      { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure-platform' },
-      { name: 'Zero Trust Security', href: '/zero-trust-security-platform' },
-      { name: 'Quantum Networking', href: '/quantum-networking' }
+      { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure' },
+      { name: 'Advanced Cybersecurity', href: '/quantum-cybersecurity-services' }
     ]
   },
   {
     title: 'Micro SAAS',
     links: [
+      { name: 'AI Business Intelligence', href: '/ai-business-intelligence-suite' },
+      { name: 'AI Content Personalization', href: '/ai-content-personalization-engine' },
       { name: 'AI Customer Success', href: '/ai-customer-success-platform' },
-      { name: 'Supply Chain Optimization', href: '/intelligent-supply-chain-optimization' },
-      { name: 'Financial Planning AI', href: '/ai-financial-planning-platform' },
-      { name: 'HR Analytics Platform', href: '/intelligent-hr-analytics-platform' },
-      { name: 'Sales Intelligence AI', href: '/ai-sales-intelligence-platform' },
-      { name: 'AI Decision Engine', href: '/ai-powered-decision-engine' },
-      { name: 'Content Automation', href: '/intelligent-content-automation-platform' },
-      { name: 'Smart CRM Suite', href: '/smart-crm-intelligence-suite' }
+      { name: 'AI Financial Planning', href: '/ai-financial-planning-platform' },
+      { name: 'AI Healthcare Analytics', href: '/ai-healthcare-analytics-platform' },
+      { name: 'AI Supply Chain Optimization', href: '/ai-supply-chain-optimization' },
+      { name: 'AI Legal Document Analysis', href: '/ai-legal-document-analysis' },
+      { name: 'AI Real Estate Analytics', href: '/ai-real-estate-analytics' }
     ]
   },
   {
-    title: 'Solutions',
+    title: 'Advanced Solutions',
     links: [
-      { name: 'Healthcare Solutions', href: '/healthcare-solutions' },
-      { name: 'Financial Services', href: '/financial-solutions' },
-      { name: 'Manufacturing AI', href: '/manufacturing-ai-solutions' },
-      { name: 'Retail Technology', href: '/retail-technology-solutions' },
-      { name: 'Education Technology', href: '/education-technology-solutions' },
-      { name: 'Government Solutions', href: '/government-technology-solutions' },
-      { name: 'Energy & Utilities', href: '/energy-utilities-solutions' },
-      { name: 'Transportation & Logistics', href: '/transportation-logistics-solutions' }
+      { name: 'AI Education Personalization', href: '/ai-education-personalization' },
+      { name: 'AI Manufacturing Quality Control', href: '/ai-manufacturing-quality-control' },
+      { name: 'Advanced AI Automation', href: '/advanced-ai-automation-services' },
+      { name: 'Advanced IT Infrastructure', href: '/advanced-it-infrastructure-services' },
+      { name: 'Innovative Business Solutions', href: '/innovative-business-solutions' },
+      { name: 'Industry Solutions', href: '/industry-solutions' },
+      { name: 'Research & Development', href: '/research-development' },
+      { name: 'Space Technology', href: '/space-technology' }
     ]
   },
   {
-    title: 'Resources',
+    title: 'Resources & Support',
     links: [
       { name: 'Documentation', href: '/docs' },
       { name: 'API Reference', href: '/api-documentation' },
@@ -106,7 +107,9 @@ const companyLinks = [
   { name: 'Contact Us', href: '/contact' },
   { name: 'Locations', href: '/locations' },
   { name: 'Sustainability', href: '/sustainability' },
-  { name: 'Diversity & Inclusion', href: '/diversity-inclusion' }
+  { name: 'Diversity & Inclusion', href: '/diversity-inclusion' },
+  { name: 'Terms of Service', href: '/terms' },
+  { name: 'Privacy Policy', href: '/privacy' }
 ];
 
 const resourceLinks = [
@@ -130,9 +133,7 @@ const solutionLinks = [
   { name: 'Education Technology', href: '/education-technology-solutions' },
   { name: 'Government Solutions', href: '/government-technology-solutions' },
   { name: 'Energy & Utilities', href: '/energy-utilities-solutions' },
-  { name: 'Transportation & Logistics', href: '/transportation-logistics-solutions' },
-  { name: 'Real Estate Technology', href: '/real-estate-technology-solutions' },
-  { name: 'Entertainment & Media', href: '/entertainment-media-solutions' }
+  { name: 'Transportation & Logistics', href: '/transportation-logistics-solutions' }
 ];
 
 const socialLinks = [
@@ -245,77 +246,87 @@ export default function UltraFuturisticFooter2034() {
           </div>
 
           {/* Enhanced Contact Information */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+          <div className="col-span-full lg:col-span-3">
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-cyan-400 mb-4">Get In Touch</h3>
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <Phone className="w-5 h-5 text-cyan-400" />
-                  <div>
-                    <p className="text-sm text-gray-400">Mobile</p>
-                    <a href={`tel:${contactInfo.mobile}`} className="text-white hover:text-cyan-400 transition-colors">
-                      {contactInfo.mobile}
-                    </a>
+              <div>
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center">
+                  <MessageCircle className="w-6 h-6 mr-2 text-cyan-400" />
+                  Contact Information
+                </h3>
+                <div className="space-y-3">
+                  <div className="flex items-center space-x-3 group">
+                    <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <Phone className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-300">Phone</p>
+                      <a 
+                        href={`tel:${contactInfo.mobile}`}
+                        className="text-white hover:text-cyan-400 transition-colors duration-300 font-medium"
+                      >
+                        {contactInfo.mobile}
+                      </a>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Mail className="w-5 h-5 text-cyan-400" />
-                  <div>
-                    <p className="text-sm text-gray-400">Email</p>
-                    <a href={`mailto:${contactInfo.email}`} className="text-white hover:text-cyan-400 transition-colors">
-                      {contactInfo.email}
-                    </a>
+                  
+                  <div className="flex items-center space-x-3 group">
+                    <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <Mail className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-300">Email</p>
+                      <a 
+                        href={`mailto:${contactInfo.email}`}
+                        className="text-white hover:text-purple-400 transition-colors duration-300 font-medium"
+                      >
+                        {contactInfo.email}
+                      </a>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <MapPin className="w-5 h-5 text-cyan-400 mt-1" />
-                  <div>
-                    <p className="text-sm text-gray-400">Address</p>
-                    <p className="text-white">{contactInfo.address}</p>
+                  
+                  <div className="flex items-center space-x-3 group">
+                    <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <MapPin className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-300">Address</p>
+                      <p className="text-white font-medium">
+                        {contactInfo.address}
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Globe className="w-5 h-5 text-cyan-400" />
-                  <div>
-                    <p className="text-sm text-gray-400">Website</p>
-                    <a href={contactInfo.website} className="text-white hover:text-cyan-400 transition-colors">
-                      {contactInfo.website}
-                    </a>
+                  
+                  <div className="flex items-center space-x-3 group">
+                    <div className="w-10 h-10 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <Globe className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-300">Website</p>
+                      <a 
+                        href={contactInfo.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-white hover:text-orange-400 transition-colors duration-300 font-medium"
+                      >
+                        {contactInfo.website.replace('https://', '')}
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-cyan-400 mb-4">Quick Links</h3>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <a href="/comprehensive-services-showcase-2025" className="block text-gray-300 hover:text-cyan-400 transition-colors">
-                    All Services
-                  </a>
-                  <a href="/pricing" className="block text-gray-300 hover:text-cyan-400 transition-colors">
-                    Pricing
-                  </a>
-                  <a href="/case-studies" className="block text-gray-300 hover:text-cyan-400 transition-colors">
-                    Case Studies
-                  </a>
-                  <a href="/blog" className="block text-gray-300 hover:text-cyan-400 transition-colors">
-                    Blog
-                  </a>
-                </div>
-                <div className="space-y-2">
-                  <a href="/about" className="block text-gray-300 hover:text-cyan-400 transition-colors">
-                    About Us
-                  </a>
-                  <a href="/careers" className="block text-gray-300 hover:text-cyan-400 transition-colors">
-                    Careers
-                  </a>
-                  <a href="/contact" className="block text-gray-300 hover:text-cyan-400 transition-colors">
-                    Contact
-                  </a>
-                  <a href="/support" className="block text-gray-300 hover:text-cyan-400 transition-colors">
-                    Support
-                  </a>
+              
+              {/* Quick Contact Form */}
+              <div className="mt-6">
+                <h4 className="text-lg font-semibold text-white mb-3">Get Started Today</h4>
+                <div className="space-y-3">
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300"
+                  />
+                  <button className="w-full px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-medium rounded-lg transition-all duration-300 transform hover:scale-105">
+                    Contact Sales Team
+                  </button>
                 </div>
               </div>
             </div>
@@ -325,18 +336,19 @@ export default function UltraFuturisticFooter2034() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {footerSections.map((section, index) => (
               <div key={index} className="space-y-4">
-                <h4 className="text-lg font-semibold text-cyan-400 border-b border-cyan-400/30 pb-2">
+                <h4 className="text-lg font-semibold text-white border-b border-cyan-500/30 pb-2">
                   {section.title}
                 </h4>
                 <ul className="space-y-2">
-                  {section.links.map((link, linkIndex) => (
-                    <li key={linkIndex}>
-                      <a 
+                  {section.links.map((link) => (
+                    <li key={link.name}>
+                      <Link
                         href={link.href}
-                        className="text-gray-300 hover:text-cyan-400 transition-colors text-sm hover:pl-2 duration-200"
+                        className="text-gray-400 hover:text-cyan-300 transition-colors duration-200 flex items-center group"
                       >
+                        <ArrowRight className="w-3 h-3 mr-2 text-cyan-400 group-hover:translate-x-1 transition-transform duration-200" />
                         {link.name}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
