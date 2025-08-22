@@ -167,6 +167,7 @@ const navigationItems: NavigationItem[] = [
       { name: 'Sales Intelligence Platform', href: '/ai-sales-intelligence-platform', description: 'AI-powered sales automation' },
       { name: 'CRM Intelligence Suite', href: '/smart-crm-intelligence-suite', description: 'Transform your CRM with AI' },
       { name: 'Content Automation Platform', href: '/intelligent-content-automation-platform', description: 'AI-powered content management' },
+      { name: 'AI Content Marketing Automation', href: '/ai-content-marketing-automation', description: 'Plan, generate, and distribute content with AI' },
       { name: 'Decision Engine', href: '/ai-powered-decision-engine', description: 'AI-powered business decisions' }
     ]
   },

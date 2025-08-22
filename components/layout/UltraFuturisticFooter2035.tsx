@@ -41,6 +41,7 @@ const footerSections = [
       { name: 'HR Analytics Platform', href: '/ai-hr-analytics-platform' },
       { name: 'AI Decision Engine', href: '/ai-powered-decision-engine' },
       { name: 'Content Automation', href: '/intelligent-content-automation-platform' },
+      { name: 'AI Content Marketing', href: '/ai-content-marketing-automation' },
       { name: 'CRM Intelligence Suite', href: '/smart-crm-intelligence-suite' },
       { name: 'AI Evaluation Orchestrator', href: '/ai-evaluation-orchestrator', featured: true },
       { name: 'SEO Automation Suite', href: '/seo-automation-suite' },
