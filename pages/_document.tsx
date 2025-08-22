@@ -10,7 +10,8 @@ class MyDocument extends Document {
 		return (
 			<Html lang="en">
 				<Head>
-					<meta name="theme-color" content="#000000" />
+														<meta name="theme-color" content="#000000" />
+									<link rel="icon" href="/logo.png" />
 					<link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
 					<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 					<link
@@ -32,7 +33,7 @@ class MyDocument extends Document {
 									url: "https://ziontechgroup.com",
 									logo: "https://ziontechgroup.com/logo.png",
 									sameAs: [
-										"https://www.linkedin.com/company/zion-tech-group",
+										"https://linkedin.com/company/ziontechgroup",
 										"https://github.com/Zion-Holdings",
 										"https://www.instagram.com/ziontechgroup",
 										"https://www.youtube.com/@ziontechgroup"
