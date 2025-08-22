@@ -8,7 +8,8 @@ import {
   Target, Atom,
   BookOpen,
   Truck, DollarSign, BarChart3, Globe, Users, X, Phone, Mail, MapPin, ArrowRight,
-  Star, Sparkles, Cpu, Lock, Cloud, BarChart3 as BarChart3Icon, Settings, Eye, Award, Clock, Heart, Lightbulb
+  Star, Sparkles, Cpu, Lock, Cloud, BarChart3 as BarChart3Icon, Settings, Eye, Award, Clock, Heart, Lightbulb,
+  Palette, Code, Database, Shield as ShieldIcon, Globe as GlobeIcon, Zap as ZapIcon, Target as TargetIcon
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -98,99 +99,117 @@ const navigationItems: NavigationItem[] = [
     description: 'Enterprise solutions and infrastructure',
     children: [
       { name: 'Quantum-Secure Cloud', href: '/quantum-secure-cloud-infrastructure', description: 'Future-proof cloud security' },
-      { name: 'Autonomous IT Operations', href: '/autonomous-it-operations-center', description: 'Self-healing IT infrastructure' },
-      { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration-platform', description: 'Edge processing optimization' },
+      { name: 'Zero Trust Architecture', href: '/zero-trust-network-architecture', description: 'Advanced network security' },
+      { name: 'Autonomous DevOps', href: '/autonomous-devops-orchestrator', description: 'AI-powered infrastructure' },
+      { name: 'Edge Computing', href: '/edge-computing-orchestration-platform', description: 'Distributed computing optimization' },
+      { name: 'AI Cybersecurity', href: '/ai-powered-cybersecurity-platform', description: 'Intelligent threat detection' },
       { name: 'Blockchain Infrastructure', href: '/blockchain-infrastructure-platform', description: 'Enterprise blockchain solutions' },
-      { name: 'AI-Powered DevOps', href: '/ai-powered-devops-platform', description: 'Intelligent development automation' },
-      { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure-platform', description: 'Quantum-enhanced cloud computing' },
-      { name: 'Zero Trust Security Platform', href: '/zero-trust-security-platform', description: 'Advanced cybersecurity' },
-      { name: 'Quantum Networking', href: '/quantum-networking', description: 'Quantum communication protocols' },
-      { name: 'Quantum Data Center', href: '/quantum-data-center', description: 'Next-gen data centers' },
-      { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity', description: 'Quantum security solutions' },
-      { name: 'Quantum Cloud Migration', href: '/quantum-cloud-migration', description: 'Seamless cloud transitions' }
+      { name: 'IoT Security Management', href: '/iot-security-management-platform', description: 'Connected device security' },
+      { name: 'Data Privacy Management', href: '/data-privacy-management-platform', description: 'Compliance and privacy' },
+      { name: 'Cloud Cost Optimization', href: '/cloud-cost-optimization-platform', description: 'AI-powered cost reduction' }
     ]
   },
   {
     name: 'Micro SAAS',
     href: '/micro-saas',
     icon: <Rocket className="w-5 h-5" />,
-    description: 'Innovative business solutions',
+    description: 'Innovative business solutions for modern enterprises',
+    badge: 'Popular',
     children: [
-      { name: 'AI Customer Success', href: '/ai-customer-success-platform', description: 'Churn prediction and retention' },
-      { name: 'Supply Chain Optimization', href: '/intelligent-supply-chain-optimization', description: 'AI-powered logistics' },
-      { name: 'Financial Planning AI', href: '/ai-financial-planning-platform', description: 'Intelligent financial analysis' },
-      { name: 'HR Analytics Platform', href: '/intelligent-hr-analytics-platform', description: 'People intelligence' },
-      { name: 'Sales Intelligence AI', href: '/ai-sales-intelligence-platform', description: 'Sales performance optimization' },
-      { name: 'AI Decision Engine', href: '/ai-powered-decision-engine', description: 'Intelligent decision making' },
-      { name: 'Content Automation', href: '/intelligent-content-automation-platform', description: 'AI content creation' },
-      { name: 'Smart CRM Suite', href: '/smart-crm-intelligence-suite', description: 'AI-enhanced CRM' },
-      { name: 'Financial Analytics', href: '/automated-financial-analytics-platform', description: 'AI financial analysis' },
-      { name: 'Project Management', href: '/intelligent-project-management-suite', description: 'AI project optimization' },
-      { name: 'Business Intelligence', href: '/ai-business-intelligence', description: 'Advanced analytics' },
-      { name: 'Marketing Automation', href: '/ai-marketing-automation', description: 'Intelligent marketing' },
-      { name: 'Customer Service AI', href: '/ai-customer-service', description: 'Automated support' },
-      { name: 'HR & Recruitment', href: '/ai-hr-recruitment', description: 'AI talent management' },
-      { name: 'Legal Contract Analysis', href: '/ai-legal-contract-analyzer', description: 'Legal document review' }
+      { name: 'AI Business Intelligence', href: '/ai-business-intelligence-suite', description: 'Data-driven insights' },
+      { name: 'AI Content Generation', href: '/ai-content-generation-platform', description: 'Automated content creation' },
+      { name: 'AI Customer Service', href: '/ai-customer-service-automation', description: 'Intelligent support automation' },
+      { name: 'AI Sales Intelligence', href: '/ai-sales-intelligence-platform', description: 'Sales performance optimization' },
+      { name: 'AI Marketing Automation', href: '/ai-marketing-automation-suite', description: 'Campaign optimization' },
+      { name: 'AI Project Management', href: '/ai-project-management-platform', description: 'Intelligent project coordination' },
+      { name: 'AI Financial Analytics', href: '/ai-financial-analytics-platform', description: 'Financial insights and optimization' },
+      { name: 'AI HR Management', href: '/ai-hr-management-platform', description: 'HR operations automation' },
+      { name: 'AI Supply Chain', href: '/ai-supply-chain-optimization', description: 'Supply chain optimization' },
+      { name: 'AI Legal Analysis', href: '/ai-legal-document-analysis', description: 'Legal document processing' }
     ]
   },
   {
-    name: 'Solutions',
-    href: '/solutions',
-    icon: <Target className="w-5 h-5" />,
-    description: 'Industry-specific solutions',
+    name: 'Creative & Design',
+    href: '/creative-services',
+    icon: <Palette className="w-5 h-5" />,
+    description: 'AI-powered creative and design solutions',
     children: [
-      { name: 'Healthcare Solutions', href: '/healthcare-solutions', description: 'Medical technology solutions' },
-      { name: 'Financial Services', href: '/financial-solutions', description: 'Fintech and banking solutions' },
-      { name: 'Manufacturing AI', href: '/manufacturing-ai-solutions', description: 'Smart manufacturing' },
-      { name: 'Retail Technology', href: '/retail-technology-solutions', description: 'E-commerce and retail' },
-      { name: 'Education Technology', href: '/education-technology-solutions', description: 'EdTech solutions' },
-      { name: 'Government Solutions', href: '/government-technology-solutions', description: 'Public sector technology' },
-      { name: 'Energy & Utilities', href: '/energy-utilities-solutions', description: 'Smart energy solutions' },
-      { name: 'Transportation & Logistics', href: '/transportation-logistics-solutions', description: 'Smart mobility' },
-      { name: 'Real Estate Technology', href: '/real-estate-technology-solutions', description: 'PropTech solutions' },
-      { name: 'Entertainment & Media', href: '/entertainment-media-solutions', description: 'Digital media solutions' },
-      { name: 'Space Technology', href: '/space-technology', description: 'Space exploration solutions' },
-      { name: 'Biotech & Healthcare', href: '/biotech-ai', description: 'Biotechnology AI solutions' }
+      { name: 'AI Creativity Studio', href: '/ai-creativity-studio', description: 'AI-powered creative content' },
+      { name: 'Metaverse Development', href: '/metaverse-development-studio', description: '3D world creation' },
+      { name: 'Quantum Metaverse', href: '/quantum-metaverse-platform', description: 'Quantum-enhanced experiences' },
+      { name: '3D Design & Modeling', href: '/3d-design-platform', description: 'Advanced 3D creation tools' },
+      { name: 'AI Video Generation', href: '/ai-video-generation', description: 'Automated video content' },
+      { name: 'AI Music Composition', href: '/ai-music-composition', description: 'AI-generated music' }
+    ]
+  },
+  {
+    name: 'Research & Development',
+    href: '/research-development',
+    icon: <BookOpen className="w-5 h-5" />,
+    description: 'Cutting-edge research and development services',
+    children: [
+      { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant', description: 'Self-directed research' },
+      { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery-platform', description: 'Materials science acceleration' },
+      { name: 'Space Technology Research', href: '/space-technology-research', description: 'Space exploration solutions' },
+      { name: 'Biotech AI Research', href: '/biotech-ai-research-platform', description: 'Biological research automation' },
+      { name: 'Neuroscience Research', href: '/neuroscience-research-platform', description: 'Brain research tools' },
+      { name: 'Climate Research AI', href: '/climate-research-ai', description: 'Environmental research automation' }
+    ]
+  },
+  {
+    name: 'Industry Solutions',
+    href: '/industry-solutions',
+    icon: <Truck className="w-5 h-5" />,
+    description: 'Specialized solutions for specific industries',
+    children: [
+      { name: 'Healthcare AI', href: '/healthcare-ai-solutions', description: 'Medical AI applications' },
+      { name: 'Financial Services', href: '/financial-ai-solutions', description: 'Fintech AI solutions' },
+      { name: 'Manufacturing AI', href: '/manufacturing-ai-solutions', description: 'Industrial automation' },
+      { name: 'Retail AI', href: '/retail-ai-solutions', description: 'Retail optimization' },
+      { name: 'Education AI', href: '/education-ai-solutions', description: 'Educational technology' },
+      { name: 'Transportation AI', href: '/transportation-ai-solutions', description: 'Smart transportation' }
+    ]
+  },
+  {
+    name: 'Pricing & Plans',
+    href: '/pricing',
+    icon: <DollarSign className="w-5 h-5" />,
+    description: 'Flexible pricing options for all services',
+    children: [
+      { name: '2025 Pricing', href: '/pricing-2025', description: 'Current year pricing' },
+      { name: '2026 Pricing', href: '/pricing-2026', description: 'Next year pricing' },
+      { name: 'Enterprise Plans', href: '/enterprise-pricing', description: 'Large organization pricing' },
+      { name: 'Startup Plans', href: '/startup-pricing', description: 'Small business pricing' },
+      { name: 'Custom Solutions', href: '/custom-pricing', description: 'Tailored pricing' },
+      { name: 'ROI Calculator', href: '/roi-calculator', description: 'Calculate your return on investment' }
     ]
   },
   {
     name: 'Resources',
     href: '/resources',
     icon: <BookOpen className="w-5 h-5" />,
-    description: 'Knowledge and support',
+    description: 'Educational resources and documentation',
     children: [
       { name: 'Documentation', href: '/docs', description: 'Technical documentation' },
-      { name: 'API Reference', href: '/api-documentation', description: 'API documentation' },
+      { name: 'API Reference', href: '/api-docs', description: 'API documentation' },
+      { name: 'Tutorials', href: '/tutorials', description: 'Step-by-step guides' },
       { name: 'Case Studies', href: '/case-studies', description: 'Success stories' },
-      { name: 'Blog & News', href: '/blog', description: 'Latest insights and updates' },
-      { name: 'Support Center', href: '/support', description: 'Help and support' },
-      { name: 'Training & Certification', href: '/training', description: 'Learning resources' },
-      { name: 'Community Forum', href: '/community', description: 'User community' },
-      { name: 'Developer Resources', href: '/developer-resources', description: 'Developer tools' },
-      { name: 'Research & Development', href: '/research-development', description: 'R&D initiatives' },
-      { name: 'White Papers', href: '/white-papers', description: 'Technical insights' },
-      { name: 'Performance Reports', href: '/reports', description: 'System performance data' },
-      { name: 'Market Analysis', href: '/market-pricing', description: 'Industry insights and pricing' }
+      { name: 'Blog', href: '/blog', description: 'Latest insights and news' },
+      { name: 'Research Papers', href: '/research-papers', description: 'Academic publications' }
     ]
   },
   {
-    name: 'Company',
-    href: '/about',
-    icon: <Users className="w-5 h-5" />,
-    description: 'About Zion Tech Group',
+    name: 'Support',
+    href: '/support',
+    icon: <Settings className="w-5 h-5" />,
+    description: 'Technical support and customer service',
     children: [
-      { name: 'About Us', href: '/about', description: 'Company overview' },
-      { name: 'Leadership Team', href: '/leadership', description: 'Executive team' },
-      { name: 'Careers', href: '/careers', description: 'Job opportunities' },
-      { name: 'News & Press', href: '/news', description: 'Company news' },
-      { name: 'Partners', href: '/partners', description: 'Strategic partnerships' },
-      { name: 'Investors', href: '/investors', description: 'Investment information' },
-      { name: 'Contact Us', href: '/contact', description: 'Get in touch' },
-      { name: 'Locations', href: '/locations', description: 'Global presence' },
-      { name: 'Sustainability', href: '/sustainability', description: 'Environmental commitment' },
-      { name: 'Diversity & Inclusion', href: '/diversity-inclusion', description: 'Our values' },
-      { name: 'Terms of Service', href: '/terms', description: 'Legal terms' },
-      { name: 'Privacy Policy', href: '/privacy', description: 'Data protection' }
+      { name: 'Help Center', href: '/help', description: 'Self-service support' },
+      { name: 'Contact Support', href: '/contact', description: 'Get in touch' },
+      { name: 'Live Chat', href: '/live-chat', description: 'Real-time assistance' },
+      { name: 'Training Programs', href: '/training', description: 'Skill development' },
+      { name: 'Community Forum', href: '/community', description: 'User community' },
+      { name: 'Status Page', href: '/status', description: 'Service status' }
     ]
   }
 ];

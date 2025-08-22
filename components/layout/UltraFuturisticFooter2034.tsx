@@ -2,10 +2,14 @@ import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
-  Zap, Globe, Phone, Mail, MapPin, ArrowRight, 
-  Brain, Atom, Shield, Rocket, Target, BookOpen, Users,
-  Star, Sparkles, Cpu, Lock, Cloud, BarChart3, Settings, Eye, Award, Clock, Heart, Lightbulb,
-  Twitter, Linkedin, Facebook, Instagram, Youtube, Github, MessageCircle, MessageSquare
+  Zap, Brain, Atom, Shield, Rocket, 
+  Globe, Mail, Phone, MapPin, ArrowRight,
+  Star, Sparkles, Cpu, Lock, Cloud, 
+  BarChart3, Settings, Eye, Award, Clock, 
+  Heart, Lightbulb, Target, BookOpen, Truck, 
+  DollarSign, Palette, Code, Database, Users,
+  Twitter, Linkedin, Facebook, Instagram, Youtube,
+  Github, MessageCircle, MessageSquare
 } from 'lucide-react';
 
 const contactInfo = {
@@ -18,6 +22,8 @@ const contactInfo = {
 const footerSections = [
   {
     title: 'AI & Consciousness',
+    description: 'Revolutionary AI consciousness and emotional intelligence solutions',
+    icon: <Brain className="w-6 h-6" />,
     links: [
       { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2025' },
       { name: 'AI Quantum Neural Network', href: '/ai-quantum-neural-network' },
@@ -26,11 +32,19 @@ const footerSections = [
       { name: 'AI Predictive Maintenance', href: '/ai-predictive-maintenance-platform' },
       { name: 'AI Content Personalization', href: '/ai-content-personalization-engine' },
       { name: 'AI Autonomous Ecosystem', href: '/ai-autonomous-ecosystem-manager' },
-      { name: 'AI Ethics & Governance', href: '/ai-ethics-governance-framework' }
+      { name: 'AI Ethics & Governance', href: '/ai-ethics-governance-framework' },
+      { name: 'AI Creativity Studio', href: '/ai-creativity-studio' },
+      { name: 'AI Education Platform', href: '/ai-education-platform' },
+      { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics' },
+      { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence' },
+      { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform' },
+      { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer' }
     ]
   },
   {
     title: 'Quantum & Emerging Tech',
+    description: 'Quantum computing and breakthrough technologies',
+    icon: <Atom className="w-6 h-6" />,
     links: [
       { name: 'Space Resource Mining', href: '/space-resource-mining-platform' },
       { name: 'Quantum Internet Security', href: '/quantum-internet-security-platform' },
@@ -39,111 +53,125 @@ const footerSections = [
       { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai-platform' },
       { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform' },
       { name: 'Quantum Energy Platform', href: '/quantum-energy-platform' },
-      { name: 'Quantum Robotics', href: '/quantum-robotics' }
+      { name: 'Quantum Robotics', href: '/quantum-robotics' },
+      { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity-platform' },
+      { name: 'Quantum Logistics', href: '/quantum-logistics-optimization' },
+      { name: 'Quantum Metaverse', href: '/quantum-metaverse' },
+      { name: 'Quantum IoT Platform', href: '/quantum-iot' },
+      { name: 'Quantum Financial Trading', href: '/quantum-financial-trading' }
     ]
   },
   {
     title: 'Enterprise IT',
+    description: 'Enterprise solutions and infrastructure',
+    icon: <Shield className="w-6 h-6" />,
     links: [
       { name: 'Quantum-Secure Cloud', href: '/quantum-secure-cloud-infrastructure' },
-      { name: 'Autonomous IT Operations', href: '/autonomous-it-operations-center' },
-      { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration-platform' },
+      { name: 'Zero Trust Architecture', href: '/zero-trust-network-architecture' },
+      { name: 'Autonomous DevOps', href: '/autonomous-devops-orchestrator' },
+      { name: 'Edge Computing', href: '/edge-computing-orchestration-platform' },
+      { name: 'AI Cybersecurity', href: '/ai-powered-cybersecurity-platform' },
       { name: 'Blockchain Infrastructure', href: '/blockchain-infrastructure-platform' },
-      { name: 'AI-Powered DevOps', href: '/ai-powered-devops-platform' },
-      { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure-platform' },
-      { name: 'Zero Trust Security', href: '/zero-trust-security-platform' },
-      { name: 'Quantum Networking', href: '/quantum-networking' }
+      { name: 'IoT Security Management', href: '/iot-security-management-platform' },
+      { name: 'Data Privacy Management', href: '/data-privacy-management-platform' },
+      { name: 'Cloud Cost Optimization', href: '/cloud-cost-optimization-platform' }
     ]
   },
   {
     title: 'Micro SAAS',
+    description: 'Innovative business solutions for modern enterprises',
+    icon: <Rocket className="w-6 h-6" />,
     links: [
-      { name: 'AI Customer Success', href: '/ai-customer-success-platform' },
-      { name: 'Supply Chain Optimization', href: '/intelligent-supply-chain-optimization' },
-      { name: 'Financial Planning AI', href: '/ai-financial-planning-platform' },
-      { name: 'HR Analytics Platform', href: '/intelligent-hr-analytics-platform' },
-      { name: 'Sales Intelligence AI', href: '/ai-sales-intelligence-platform' },
-      { name: 'AI Decision Engine', href: '/ai-powered-decision-engine' },
-      { name: 'Content Automation', href: '/intelligent-content-automation-platform' },
-      { name: 'Smart CRM Suite', href: '/smart-crm-intelligence-suite' }
+      { name: 'AI Business Intelligence', href: '/ai-business-intelligence-suite' },
+      { name: 'AI Content Generation', href: '/ai-content-generation-platform' },
+      { name: 'AI Customer Service', href: '/ai-customer-service-automation' },
+      { name: 'AI Sales Intelligence', href: '/ai-sales-intelligence-platform' },
+      { name: 'AI Marketing Automation', href: '/ai-marketing-automation-suite' },
+      { name: 'AI Project Management', href: '/ai-project-management-platform' },
+      { name: 'AI Financial Analytics', href: '/ai-financial-analytics-platform' },
+      { name: 'AI HR Management', href: '/ai-hr-management-platform' },
+      { name: 'AI Supply Chain', href: '/ai-supply-chain-optimization' },
+      { name: 'AI Legal Analysis', href: '/ai-legal-document-analysis' }
     ]
   },
   {
-    title: 'Solutions',
+    title: 'Creative & Design',
+    description: 'AI-powered creative and design solutions',
+    icon: <Palette className="w-6 h-6" />,
     links: [
-      { name: 'Healthcare Solutions', href: '/healthcare-solutions' },
-      { name: 'Financial Services', href: '/financial-solutions' },
+      { name: 'AI Creativity Studio', href: '/ai-creativity-studio' },
+      { name: 'Metaverse Development', href: '/metaverse-development-studio' },
+      { name: 'Quantum Metaverse', href: '/quantum-metaverse-platform' },
+      { name: '3D Design & Modeling', href: '/3d-design-platform' },
+      { name: 'AI Video Generation', href: '/ai-video-generation' },
+      { name: 'AI Music Composition', href: '/ai-music-composition' }
+    ]
+  },
+  {
+    title: 'Research & Development',
+    description: 'Cutting-edge research and development services',
+    icon: <BookOpen className="w-6 h-6" />,
+    links: [
+      { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant' },
+      { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery-platform' },
+      { name: 'Space Technology Research', href: '/space-technology-research' },
+      { name: 'Biotech AI Research', href: '/biotech-ai-research-platform' },
+      { name: 'Neuroscience Research', href: '/neuroscience-research-platform' },
+      { name: 'Climate Research AI', href: '/climate-research-ai' }
+    ]
+  },
+  {
+    title: 'Industry Solutions',
+    description: 'Specialized solutions for specific industries',
+    icon: <Truck className="w-6 h-6" />,
+    links: [
+      { name: 'Healthcare AI', href: '/healthcare-ai-solutions' },
+      { name: 'Financial Services', href: '/financial-ai-solutions' },
       { name: 'Manufacturing AI', href: '/manufacturing-ai-solutions' },
-      { name: 'Retail Technology', href: '/retail-technology-solutions' },
-      { name: 'Education Technology', href: '/education-technology-solutions' },
-      { name: 'Government Solutions', href: '/government-technology-solutions' },
-      { name: 'Energy & Utilities', href: '/energy-utilities-solutions' },
-      { name: 'Transportation & Logistics', href: '/transportation-logistics-solutions' }
+      { name: 'Retail AI', href: '/retail-ai-solutions' },
+      { name: 'Education AI', href: '/education-ai-solutions' },
+      { name: 'Transportation AI', href: '/transportation-ai-solutions' }
     ]
   },
   {
     title: 'Resources',
+    description: 'Educational resources and documentation',
+    icon: <BookOpen className="w-6 h-6" />,
     links: [
       { name: 'Documentation', href: '/docs' },
-      { name: 'API Reference', href: '/api-documentation' },
+      { name: 'API Reference', href: '/api-docs' },
+      { name: 'Tutorials', href: '/tutorials' },
       { name: 'Case Studies', href: '/case-studies' },
-      { name: 'Blog & News', href: '/blog' },
-      { name: 'Support Center', href: '/support' },
-      { name: 'Training & Certification', href: '/training' },
-      { name: 'Community Forum', href: '/community' },
-      { name: 'Developer Resources', href: '/developer-resources' }
+      { name: 'Blog', href: '/blog' },
+      { name: 'Research Papers', href: '/research-papers' }
     ]
   }
 ];
 
 const companyLinks = [
-  { name: 'About Us', href: '/about' },
-  { name: 'Leadership Team', href: '/leadership' },
-  { name: 'Careers', href: '/careers' },
-  { name: 'News & Press', href: '/news' },
-  { name: 'Partners', href: '/partners' },
-  { name: 'Investors', href: '/investors' },
-  { name: 'Contact Us', href: '/contact' },
-  { name: 'Locations', href: '/locations' },
-  { name: 'Sustainability', href: '/sustainability' },
-  { name: 'Diversity & Inclusion', href: '/diversity-inclusion' }
-];
-
-const resourceLinks = [
-  { name: 'Documentation', href: '/docs' },
-  { name: 'API Reference', href: '/api-documentation' },
-  { name: 'Case Studies', href: '/case-studies' },
-  { name: 'Blog & News', href: '/blog' },
-  { name: 'Support Center', href: '/support' },
-  { name: 'Training & Certification', href: '/training' },
-  { name: 'Community Forum', href: '/community' },
-  { name: 'Developer Resources', href: '/developer-resources' },
-  { name: 'Research & Development', href: '/research-development' },
-  { name: 'White Papers', href: '/white-papers' }
-];
-
-const solutionLinks = [
-  { name: 'Healthcare Solutions', href: '/healthcare-solutions' },
-  { name: 'Financial Services', href: '/financial-solutions' },
-  { name: 'Manufacturing AI', href: '/manufacturing-ai-solutions' },
-  { name: 'Retail Technology', href: '/retail-technology-solutions' },
-  { name: 'Education Technology', href: '/education-technology-solutions' },
-  { name: 'Government Solutions', href: '/government-technology-solutions' },
-  { name: 'Energy & Utilities', href: '/energy-utilities-solutions' },
-  { name: 'Transportation & Logistics', href: '/transportation-logistics-solutions' },
-  { name: 'Real Estate Technology', href: '/real-estate-technology-solutions' },
-  { name: 'Entertainment & Media', href: '/entertainment-media-solutions' }
+  { name: 'About Us', href: '/about', description: 'Our mission and vision' },
+  { name: 'Leadership Team', href: '/leadership', description: 'Meet our executive team' },
+  { name: 'Careers', href: '/careers', description: 'Join our team' },
+  { name: 'News & Press', href: '/news', description: 'Latest company updates' },
+  { name: 'Partners', href: '/partners', description: 'Strategic partnerships' },
+  { name: 'Investors', href: '/investors', description: 'Investment information' },
+  { name: 'Contact Us', href: '/contact', description: 'Get in touch' },
+  { name: 'Locations', href: '/locations', description: 'Global presence' },
+  { name: 'Sustainability', href: '/sustainability', description: 'Environmental commitment' },
+  { name: 'Diversity & Inclusion', href: '/diversity-inclusion', description: 'Our values' },
+  { name: 'Terms of Service', href: '/terms', description: 'Legal terms' },
+  { name: 'Privacy Policy', href: '/privacy', description: 'Data protection' }
 ];
 
 const socialLinks = [
-  { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: Twitter },
-  { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: Linkedin },
-  { name: 'Facebook', href: 'https://facebook.com/ziontechgroup', icon: Facebook },
-  { name: 'Instagram', href: 'https://instagram.com/ziontechgroup', icon: Instagram },
-  { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: Youtube },
-  { name: 'GitHub', href: 'https://github.com/ziontechgroup', icon: Github },
-  { name: 'Discord', href: 'https://discord.gg/ziontechgroup', icon: MessageCircle },
-  { name: 'Slack', href: 'https://ziontechgroup.slack.com', icon: MessageSquare }
+  { name: 'Twitter', href: '#', icon: <Twitter className="w-5 h-5" /> },
+  { name: 'LinkedIn', href: '#', icon: <Linkedin className="w-5 h-5" /> },
+  { name: 'Facebook', href: '#', icon: <Facebook className="w-5 h-5" /> },
+  { name: 'Instagram', href: '#', icon: <Instagram className="w-5 h-5" /> },
+  { name: 'YouTube', href: '#', icon: <Youtube className="w-5 h-5" /> },
+  { name: 'GitHub', href: '#', icon: <Github className="w-5 h-5" /> },
+  { name: 'Discord', href: '#', icon: <MessageCircle className="w-5 h-5" /> },
+  { name: 'Slack', href: '#', icon: <MessageSquare className="w-5 h-5" /> }
 ];
 
 export default function UltraFuturisticFooter2034() {
@@ -227,7 +255,7 @@ export default function UltraFuturisticFooter2034() {
                 <div>
                   <h4 className="text-lg font-semibold text-white mb-4">Resources</h4>
                   <ul className="space-y-2">
-                    {resourceLinks.map((link) => (
+                    {footerSections.find(section => section.title === 'Resources')?.links.map((link) => (
                       <li key={link.name}>
                         <Link
                           href={link.href}
@@ -350,7 +378,7 @@ export default function UltraFuturisticFooter2034() {
               Industry Solutions
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-              {solutionLinks.map((link) => (
+              {footerSections.find(section => section.title === 'Industry Solutions')?.links.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
@@ -376,7 +404,7 @@ export default function UltraFuturisticFooter2034() {
                     href={social.href}
                     className="w-10 h-10 bg-white/5 hover:bg-cyan-500/20 border border-white/10 hover:border-cyan-500/50 rounded-lg flex items-center justify-center text-gray-400 hover:text-cyan-300 transition-all duration-200 group"
                   >
-                    <social.icon className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" />
+                    {social.icon}
                   </Link>
                 ))}
               </div>
