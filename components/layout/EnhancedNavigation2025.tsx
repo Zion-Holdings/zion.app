@@ -143,6 +143,8 @@ const navigationItems: NavigationItem[] = [
       { name: 'HR & Recruitment', href: '/ai-autonomous-hr-platform', description: 'AI talent management' },
       { name: 'Legal Contract Analysis', href: '/ai-legal-contract-analyzer', description: 'Legal document review' },
       { name: 'AI Autonomous Content Studio', href: '/ai-autonomous-content-studio', description: 'Autonomous content creation' },
+      { name: 'Feature Flag Auditor', href: '/services/feature-flag-auditor', description: 'Audit flags, safety, and hygiene' },
+      { name: 'API Contract Testing Studio', href: '/services/api-contract-testing-studio', description: 'Contracts, CI gates, mocks' },
       { name: 'Quantum Financial Trading', href: '/quantum-enhanced-financial-trading', description: 'Quantum-powered trading' },
       { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics-platform', description: 'Medical AI diagnostics' },
       { name: 'Autonomous Manufacturing', href: '/autonomous-manufacturing-ai-platform', description: 'AI manufacturing' },

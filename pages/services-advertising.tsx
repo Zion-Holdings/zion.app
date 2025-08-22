@@ -1346,6 +1346,21 @@ export default function ServicesAdvertisingPage() {
 					<a href="mailto:kleber@ziontechgroup.com" className="px-4 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-600 text-white">Email kleber@ziontechgroup.com</a>
 					<a href="/pricing" className="px-4 py-2 rounded-lg border border-cyan-500/40 text-cyan-300">View Pricing</a>
 				</div>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">New: Developer Productivity & Reliability</h2>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li><strong className="text-white">Feature Flag Auditor</strong> — $29/mo. Hygiene checks + PRs. Learn: <a className="text-cyan-400 underline" href="/services/feature-flag-auditor">/services/feature-flag-auditor</a>. References: <a className="text-cyan-400 underline" href="https://launchdarkly.com/pricing/" target="_blank" rel="noopener noreferrer">launchdarkly.com/pricing</a>, <a className="text-cyan-400 underline" href="https://www.flagsmith.com/pricing" target="_blank" rel="noopener noreferrer">flagsmith.com/pricing</a></li>
+						<li><strong className="text-white">API Contract Testing Studio</strong> — $79/mo. Contracts + mocks. Learn: <a className="text-cyan-400 underline" href="/services/api-contract-testing-studio">/services/api-contract-testing-studio</a>. References: <a className="text-cyan-400 underline" href="https://pactflow.io/pricing/" target="_blank" rel="noopener noreferrer">pactflow.io/pricing</a>, <a className="text-cyan-400 underline" href="https://stoplight.io/pricing" target="_blank" rel="noopener noreferrer">stoplight.io/pricing</a>, <a className="text-cyan-400 underline" href="https://www.postman.com/pricing/" target="_blank" rel="noopener noreferrer">postman.com/pricing</a></li>
+						<li><strong className="text-white">SLA/SLO Calculator</strong> — $39/mo. Targets + error budgets. Learn: <a className="text-cyan-400 underline" href="/services/sla-slo-calculator">/services/sla-slo-calculator</a>. References: <a className="text-cyan-400 underline" href="https://www.nobl9.com/pricing" target="_blank" rel="noopener noreferrer">nobl9.com/pricing</a>, <a className="text-cyan-400 underline" href="https://grafana.com/docs/grafana-cloud/monitor-infrastructure/slo/" target="_blank" rel="noopener noreferrer">grafana.com/docs/.../slo</a></li>
+						<li><strong className="text-white">Email Deliverability & Warmup Suite</strong> — $19/mo. Warmup + DMARC/SPF/DKIM. Learn: <a className="text-cyan-400 underline" href="/services/email-deliverability-and-warmup-suite">/services/email-deliverability-and-warmup-suite</a>. References: <a className="text-cyan-400 underline" href="https://folderly.com" target="_blank" rel="noopener noreferrer">folderly.com</a>, <a className="text-cyan-400 underline" href="https://www.mailreach.co/" target="_blank" rel="noopener noreferrer">mailreach.co</a></li>
+					</ul>
+					<div className="flex flex-col md:flex-row items-center gap-4 p-4 rounded-xl bg-black/30 border border-gray-800">
+						<a href="tel:+13024640950" className="px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white">Call +1 302 464 0950</a>
+						<a href="mailto:kleber@ziontechgroup.com" className="px-4 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-600 text-white">Email kleber@ziontechgroup.com</a>
+						<a href="/pricing" className="px-4 py-2 rounded-lg border border-cyan-500/40 text-cyan-300">View Pricing</a>
+					</div>
+				</section>
 			</div>
 		</div>
 	);
