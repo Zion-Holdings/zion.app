@@ -75,7 +75,12 @@ const navigationItems: NavigationItem[] = [
       { name: 'Developer Tools', href: '/services#developer-tools', description: 'Dev productivity & tooling' },
       { name: 'Cloud & FinOps', href: '/services#cloud', description: 'Cloud, cost, platform' },
       { name: 'Observability', href: '/services#observability', description: 'Monitoring & telemetry' },
-      { name: 'Quality & Monitoring', href: '/services#quality', description: 'QA, testing, reliability' }
+      { name: 'Quality & Monitoring', href: '/services#quality', description: 'QA, testing, reliability' },
+      { name: 'Affiliate Analytics', href: '/services/affiliate-partner-analytics-suite', description: 'Track partners and automate payouts' },
+      { name: 'SB Website Analytics', href: '/services/sb-website-analytics-dashboard', description: 'Owner-friendly analytics' },
+      { name: 'MSP Helpdesk', href: '/services/msp-helpdesk-starter', description: 'Ticketing & SLAs' },
+      { name: 'AI Content Studio', href: '/services/ai-content-studio-pro', description: 'SEO briefs & drafts' },
+      { name: 'Returns Automation', href: '/services/returns-automation-suite', description: 'Self-serve returns & labels' }
     ]
   },
   {

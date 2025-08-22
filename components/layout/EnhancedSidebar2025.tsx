@@ -37,7 +37,8 @@ const sidebarSections = [
       { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics' },
       { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence' },
       { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform' },
-      { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer' }
+      { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer' },
+      { name: 'SB Website Analytics', href: '/services/sb-website-analytics-dashboard' }
     ]
   },
   {
@@ -75,7 +76,8 @@ const sidebarSections = [
       { name: 'Quantum Networking', href: '/quantum-networking' },
       { name: 'Quantum Data Center', href: '/quantum-data-center' },
       { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity' },
-      { name: 'Quantum Cloud Migration', href: '/quantum-cloud-migration' }
+      { name: 'Quantum Cloud Migration', href: '/quantum-cloud-migration' },
+      { name: 'MSP Helpdesk', href: '/services/msp-helpdesk-starter' }
     ]
   },
   {
@@ -91,13 +93,9 @@ const sidebarSections = [
       { name: 'AI Decision Engine', href: '/services/ai-powered-decision-engine' },
       { name: 'Content Automation', href: '/services/intelligent-content-automation-platform' },
       { name: 'Smart CRM Suite', href: '/services/smart-crm-intelligence-suite' },
-      { name: 'Financial Analytics', href: '/automated-financial-analytics-platform' },
-      { name: 'Project Management', href: '/intelligent-project-management-suite' },
-      { name: 'Business Intelligence', href: '/ai-business-intelligence' },
-      { name: 'Marketing Automation', href: '/ai-marketing-automation' },
-      { name: 'Customer Service AI', href: '/ai-customer-service' },
-      { name: 'HR & Recruitment', href: '/ai-hr-recruitment' },
-      { name: 'Legal Contract Analysis', href: '/ai-legal-contract-analyzer' }
+      { name: 'Affiliate Analytics', href: '/services/affiliate-partner-analytics-suite' },
+      { name: 'AI Content Studio', href: '/services/ai-content-studio-pro' },
+      { name: 'Returns Automation', href: '/services/returns-automation-suite' }
     ]
   },
   {
