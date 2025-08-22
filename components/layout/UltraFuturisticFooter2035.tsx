@@ -131,7 +131,12 @@ const footerSections = [
       { name: 'Support Center', href: '/support' },
       { name: 'Training & Certification', href: '/training' },
       { name: 'Market Pricing', href: '/market-pricing' },
-      { name: 'Services Advertising', href: '/services-advertising' }
+      { name: 'Services Advertising', href: '/services-advertising' },
+      { name: 'RAG Evaluation Lab', href: '/rag-evaluation-lab' },
+      { name: 'SOC 2 Compliance Automation', href: '/soc2-compliance-automation' },
+      { name: 'Browser Automation Cloud', href: '/browser-automation-cloud' },
+      { name: 'Secrets Rotation Automation', href: '/secrets-rotation-automation' },
+      { name: 'API Performance Testing', href: '/api-performance-testing' }
     ]
   }
 ];
