@@ -92,7 +92,7 @@ export default function ServicesAdvertisingPage() {
 					<p className="text-slate-300">WHOIS, nameserver, and DNS record drift detection with alerts.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $5–$40/mo</li>
-						<li>References: {ext('https://www.cloudflare.com/plans/')}, {ext('https://www.digicert.com/tls-ssl/ssl-tools')}</li>
+						<li>References: {ext('https://www.cloudflare.com/plans/')}, {ext('https://www.digicert.com/kb/ssl-checker/sslchecker-intro')}</li>
 					</ul>
 				</section>
 
@@ -137,7 +137,7 @@ export default function ServicesAdvertisingPage() {
 					<p className="text-slate-300">Contacts, deals, appointments, and reminders without enterprise complexity.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $15–$60/mo</li>
-						<li>References: {ext('https://www.hubspot.com/pricing/starter')}, {ext('https://www.zoho.com/crm/pricing.html')}</li>
+						<li>References: {ext('https://www.hubspot.com/pricing')}, {ext('https://www.zoho.com/crm/pricing.html')}</li>
 					</ul>
 				</section>
 
@@ -265,7 +265,7 @@ export default function ServicesAdvertisingPage() {
 					<p className="text-slate-300">Freshness SLAs, schema drift detection, and anomaly alerts for your warehouse and lakes.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $100–$500/mo</li>
-						<li>References: {ext('https://www.montecarlodata.com/')}, {ext('https://www.bigeye.com/pricing')}, {ext('https://soda.io/')}</li>
+						<li>References: {ext('https://www.montecarlodata.com/')}, {ext('https://docs.bigeye.com/docs/pricing')}, {ext('https://soda.io/')}</li>
 					</ul>
 				</section>
 
