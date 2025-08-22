@@ -163,7 +163,7 @@ const companyLinks = [
 const supportLinks = [
   { name: 'Contact Support', href: '/contact' },
   { name: 'Documentation', href: '/docs' },
-  { name: 'API Reference', href: '/api-documentation-generator' },
+  { name: 'API Reference', href: '/api-documentation' },
   { name: 'Status Page', href: '/status-pages-slo' },
   { name: 'VAPT Services', href: '/vulnerability-assessment-penetration-testing' },
   { name: 'Mobile Device Management (MDM)', href: '/mobile-device-management' },
