@@ -9,6 +9,7 @@ export default function App({ Component, pageProps }: AppProps) {
 	const renderedRef = useRef(false);
 	return (
 		<SEOContext.Provider value={{ renderedRef }}>
+			<a href="#main" className="skip-link">Skip to main content</a>
 			<DefaultSEO />
 			<Analytics />
 			<Component {...pageProps} />

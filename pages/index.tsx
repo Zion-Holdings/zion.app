@@ -1,49 +1,14 @@
 import React from 'react';
 import SEO from '../components/SEO';
-import Link from 'next/link';
+import Homepage2025 from '../components/Homepage2025';
 
-export default function HomePage() {
-  const pageTitle = 'Zion Tech Group — AI, Quantum, and Micro SAAS Solutions';
-  const pageDescription = 'Transform your business with AI, quantum, and micro SAAS. Explore our services, pricing, and solutions built to scale.';
-
+export default function IndexPage() {
   return (
     <>
-      <SEO title={pageTitle} description={pageDescription} />
-      <section className="relative pt-28 pb-16 md:pt-36 md:pb-24">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight gradient-text-cyan-purple">
-              Build the Future with Zion Tech Group
-            </h1>
-            <p className="mt-6 text-lg md:text-xl text-gray-300">
-              AI-powered platforms, quantum-ready architectures, and market-ready micro SAAS. We turn bold ideas into production-grade systems.
-            </p>
-            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/services" className="inline-flex items-center justify-center px-6 py-3 rounded-md bg-white text-black font-semibold hover:bg-gray-200 transition-colors">
-                Explore Services
-              </Link>
-              <Link href="/contact" className="inline-flex items-center justify-center px-6 py-3 rounded-md border border-white/30 text-white font-semibold hover:bg-white/10 transition-colors">
-                Contact Us
-              </Link>
-            </div>
-          </div>
-
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-6 rounded-lg bg-white/5 backdrop-blur animated-border">
-              <h3 className="text-xl font-bold">AI Systems</h3>
-              <p className="mt-2 text-gray-300">Autonomous agents, vector search, and real-time analytics for decision intelligence.</p>
-            </div>
-            <div className="p-6 rounded-lg bg-white/5 backdrop-blur animated-border">
-              <h3 className="text-xl font-bold">Micro SAAS</h3>
-              <p className="mt-2 text-gray-300">Composable products with fast go-to-market, usage-based pricing, and robust APIs.</p>
-            </div>
-            <div className="p-6 rounded-lg bg-white/5 backdrop-blur animated-border">
-              <h3 className="text-xl font-bold">Enterprise Platforms</h3>
-              <p className="mt-2 text-gray-300">Cloud, security, and automation patterns to scale with reliability and compliance.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <SEO />
+      <main id="main">
+        <Homepage2025 />
+      </main>
     </>
   );
 }
