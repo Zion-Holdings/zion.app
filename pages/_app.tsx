@@ -12,10 +12,7 @@ export default function App({ Component, pageProps }: AppProps) {
 			<a href="#main" className="skip-link">Skip to main content</a>
 			<DefaultSEO />
 			<Analytics />
-			<a href="#main-content" className="skip-link">Skip to content</a>
-			<main id="main-content">
-				<Component {...pageProps} />
-			</main>
+			<Component {...pageProps} />
 		</SEOContext.Provider>
 	);
 }
