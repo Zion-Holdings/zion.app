@@ -87,6 +87,11 @@ const footerSections = [
     description: 'Innovative business solutions for modern enterprises',
     icon: <Rocket className="w-5 h-5 text-emerald-400" />,
     links: [
+      { name: 'AI Helpdesk Platform', href: '/services/ai-helpdesk-platform' },
+      { name: 'E-commerce Returns Automation', href: '/services/ecommerce-returns-automation' },
+      { name: 'AI Employee Scheduling', href: '/services/employee-scheduling-ai' },
+      { name: 'AI SEO Optimizer', href: '/services/ai-seo-content-optimizer' },
+      { name: 'AI Content Studio', href: '/services/ai-content-studio' },
       { name: 'AI Content Generator', href: '/ai-content-generator' },
       { name: 'AI Code Review', href: '/ai-code-review' },
       { name: 'AI Meeting Transcriber', href: '/ai-meeting-transcriber-pro' },

@@ -84,6 +84,11 @@ const sidebarSections = [
     color: 'text-emerald-400',
     items: [
       { name: 'AI Customer Success', href: '/services/ai-customer-success-platform', badge: 'New' },
+      { name: 'AI Helpdesk Platform', href: '/services/ai-helpdesk-platform', badge: 'New' },
+      { name: 'E-commerce Returns Automation', href: '/services/ecommerce-returns-automation', badge: 'New' },
+      { name: 'AI Employee Scheduling', href: '/services/employee-scheduling-ai', badge: 'New' },
+      { name: 'AI SEO Optimizer', href: '/services/ai-seo-content-optimizer', badge: 'New' },
+      { name: 'AI Content Studio', href: '/services/ai-content-studio', badge: 'New' },
       { name: 'Supply Chain Optimization', href: '/intelligent-supply-chain-optimization', badge: 'New' },
       { name: 'Financial Planning AI', href: '/services/ai-financial-planning-platform', badge: 'New' },
       { name: 'HR Analytics Platform', href: '/ai-hr-analytics-platform', badge: 'New' },

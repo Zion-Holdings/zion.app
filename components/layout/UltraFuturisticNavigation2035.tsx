@@ -137,6 +137,11 @@ const navigationItems: NavigationItem[] = [
     featured: true,
     children: [
       { name: 'Customer Success Platform', href: '/ai-customer-success-platform', description: 'AI-powered customer retention', featured: true },
+      { name: 'AI Helpdesk Platform', href: '/services/ai-helpdesk-platform', description: 'Automated support & agent assist' },
+      { name: 'E-commerce Returns Automation', href: '/services/ecommerce-returns-automation', description: 'Labels, RMA workflows, analytics' },
+      { name: 'AI Employee Scheduling', href: '/services/employee-scheduling-ai', description: 'Demand forecasting & shift optimization' },
+      { name: 'AI SEO Optimizer', href: '/services/ai-seo-content-optimizer', description: 'On-page AI, keywords, SERP insights' },
+      { name: 'AI Content Studio', href: '/services/ai-content-studio', description: 'Blogs, social, video scripts' },
       { name: 'Supply Chain Optimization', href: '/intelligent-supply-chain-optimization', description: 'AI-powered supply chain management' },
       { name: 'Financial Planning Platform', href: '/ai-financial-planning-platform', description: 'Intelligent financial planning' },
       { name: 'HR Analytics Platform', href: '/ai-hr-analytics-platform', description: 'AI-powered HR insights' },
