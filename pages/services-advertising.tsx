@@ -18,7 +18,10 @@ export default function ServicesAdvertisingPage() {
     'Fast onboarding with templates and playbooks',
     'Enterprise-grade security and compliance',
     '24/7 support with SLAs',
-    'Proven architectures and reference implementations'
+    'Proven architectures and reference implementations',
+    'No long-term lock-in; cancel anytime',
+    'SOC 2-aligned processes and data handling',
+    'Flexible deployment: SaaS or self-hosted options'
   ];
 
   const anchors = [
@@ -103,6 +106,28 @@ export default function ServicesAdvertisingPage() {
               </Button>
             </div>
           </header>
+
+          <section>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">New Real Micro SaaS</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[ 
+                { name: 'API Security Scanner', price: '$299/mo', href: '/services/api-security-scanner', points: ['OWASP Top 10', 'CI/CD checks', 'PII detection'] },
+                { name: 'Email DMARC Analyzer', price: '$99/mo', href: '/services/email-dmarc-analyzer', points: ['DMARC/SPF/DKIM', 'BIMI readiness', 'Weekly reports'] },
+                { name: 'Browser Performance Monitor', price: '$149/mo', href: '/services/browser-performance-monitor', points: ['RUM + Synthetic', 'Core Web Vitals', 'Alerts'] },
+                { name: 'Cloud Cost Optimizer', price: '$399/mo', href: '/services/cloud-cost-optimizer', points: ['Anomalies', 'Rightsizing', 'Budgets'] },
+                { name: 'API Observability Starter', price: '$149/mo', href: '/services/api-observability-starter', points: ['Traces', 'SLOs', 'Deps map'] }
+              ].map((o) => (
+                <a key={o.name} href={o.href} className="block p-6 rounded-2xl bg-black/40 border border-gray-700/60 hover:border-cyan-500/40">
+                  <div className="text-sm text-gray-400 mb-1">From</div>
+                  <div className="text-2xl font-bold text-white">{o.price}</div>
+                  <div className="text-gray-200 mt-2 mb-3">{o.name}</div>
+                  <ul className="text-sm text-gray-300 space-y-1 list-disc list-inside">
+                    {o.points.map((p) => (<li key={p}>{p}</li>))}
+                  </ul>
+                </a>
+              ))}
+            </div>
+          </section>
 
           <section>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Why Zion Tech Group</h2>
