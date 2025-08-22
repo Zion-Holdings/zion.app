@@ -11,6 +11,8 @@ import { emergingTechServicesEnhanced2025 } from '../data/2025-emerging-tech-ser
 import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
 import { advancedITInfrastructureServices2025 } from '../data/2025-advanced-it-infrastructure-services';
 import { innovativeBusinessSolutions2025 } from '../data/2025-innovative-business-solutions';
+import { blockchainWeb3Services2025 } from '../data/2025-blockchain-web3-services-enhanced';
+import { cloudInfrastructureServices2025 } from '../data/2025-cloud-infrastructure-services-enhanced';
 
 const contactInfo = {
   mobile: '+1 302 464 0950',
@@ -20,15 +22,15 @@ const contactInfo = {
 };
 
 const heroStats = [
-  { label: 'Services Delivered', value: '500+', icon: <Star className="w-5 h-5" /> },
-  { label: 'Happy Clients', value: '1000+', icon: <Users className="w-5 h-5" /> },
+  { label: 'Services Delivered', value: '1000+', icon: <Star className="w-5 h-5" /> },
+  { label: 'Happy Clients', value: '2000+', icon: <Users className="w-5 h-5" /> },
   { label: 'Success Rate', value: '99.9%', icon: <Award className="w-5 h-5" /> },
-  { label: 'ROI Average', value: '300%', icon: <TrendingUp className="w-5 h-5" /> }
+  { label: 'ROI Average', value: '400%', icon: <TrendingUp className="w-5 h-5" /> }
 ];
 
 const stats = [
-  { number: '50+', label: 'Services', icon: Star, color: 'text-cyan-400' },
-  { number: '1000+', label: 'Companies Served', icon: Users, color: 'text-purple-400' },
+  { number: '100+', label: 'Services', icon: Star, color: 'text-cyan-400' },
+  { number: '2000+', label: 'Companies Served', icon: Users, color: 'text-purple-400' },
   { number: '99.9%', label: 'Uptime', icon: Shield, color: 'text-green-400' },
   { number: '24/7', label: 'Support', icon: Zap, color: 'text-pink-400' }
 ];
@@ -96,6 +98,24 @@ const serviceCategories = [
     color: 'from-green-500 to-emerald-600',
     href: '/innovative-business-solutions',
     features: ['Business Intelligence', 'Marketing Automation', 'Sales Intelligence']
+  },
+  {
+    title: 'Blockchain & Web3',
+    description: 'Advanced blockchain, DeFi, NFT, and Web3 infrastructure solutions',
+    services: blockchainWeb3Services2025.slice(0, 3),
+    icon: Globe,
+    color: 'from-yellow-500 to-orange-600',
+    href: '/blockchain-web3-services',
+    features: ['DeFi Optimization', 'NFT Management', 'DAO Governance']
+  },
+  {
+    title: 'Cloud & Infrastructure',
+    description: 'Enterprise-grade cloud management, edge computing, and infrastructure solutions',
+    services: cloudInfrastructureServices2025.slice(0, 3),
+    icon: Cloud,
+    color: 'from-cyan-500 to-blue-600',
+    href: '/cloud-infrastructure-services',
+    features: ['Multi-Cloud Management', 'Edge Computing', 'Container Orchestration']
   }
 ];
 
