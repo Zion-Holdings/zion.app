@@ -1,24 +1,21 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 export default class MyDocument extends Document {
-	static async getInitialProps(ctx) {
+	static async getInitialProps(ctx: any) {
 		const initialProps = await Document.getInitialProps(ctx);
 		return { ...initialProps };
 	}
 
 	render() {
-		const siteName = 'Zion Tech Group';
-		const themeColor = '#0b0f1a';
 		return (
 			<Html lang="en">
 				<Head>
-					<link rel="preconnect" href="https://plausible.io" />
-					<link rel="dns-prefetch" href="//plausible.io" />
+					<meta name="theme-color" content="#000000" />
+					<link rel="preconnect" href="https://plausible.io" crossOrigin="anonymous" />
+					<link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+					<link rel="icon" href="/favicon.svg" />
 					<link rel="manifest" href="/site.webmanifest" />
-					<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-					<meta name="application-name" content={siteName} />
-					<meta name="theme-color" content={themeColor} />
-					<meta name="color-scheme" content="dark light" />
+					<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 				</Head>
 				<body>
 					<Main />
