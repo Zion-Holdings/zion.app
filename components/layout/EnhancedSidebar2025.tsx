@@ -8,7 +8,7 @@ import {
   Globe, Cpu, Database, Lock, Zap,
   TrendingUp, Award, CheckCircle, Clock,
   ArrowRight, Search, Menu, X as CloseIcon,
-  Target, BookOpen
+  Target, BookOpen, Calendar, Video
 } from 'lucide-react';
 
 const contactInfo = {
@@ -131,6 +131,8 @@ const sidebarSections = [
       { name: 'API Reference', href: '/api-documentation' },
       { name: 'Case Studies', href: '/case-studies' },
       { name: 'Blog & News', href: '/blog' },
+      { name: 'Events', href: '/events' },
+      { name: 'Webinars', href: '/webinars' },
       { name: 'Support Center', href: '/support' },
       { name: 'Training & Certification', href: '/training' },
       { name: 'Community Forum', href: '/community' },
@@ -169,6 +171,8 @@ const quickLinks = [
   { name: 'Pricing', href: '/pricing', icon: <DollarSign className="w-4 h-4" /> },
   { name: 'Market Pricing', href: '/market-pricing', icon: <DollarSign className="w-4 h-4" /> },
   { name: 'Services Advertising', href: '/services-advertising', icon: <BookOpen className="w-4 h-4" /> },
+  { name: 'Events', href: '/events', icon: <Calendar className="w-4 h-4" /> },
+  { name: 'Webinars', href: '/webinars', icon: <Video className="w-4 h-4" /> },
   { name: 'About Us', href: '/about', icon: <Users className="w-4 h-4" /> },
   { name: 'Contact', href: '/contact', icon: <Mail className="w-4 h-4" /> },
   { name: 'Support', href: '/support', icon: <HelpCircle className="w-4 h-4" /> }
