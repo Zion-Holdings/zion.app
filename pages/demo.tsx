@@ -1,19 +1,19 @@
+import React from 'react';
 import Head from 'next/head';
+import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
 
 export default function DemoPage() {
 	return (
-		<>
+		<UltraFuturisticBackground variant="quantum" intensity="high">
 			<Head>
 				<title>Book a Demo | Zion Tech Group</title>
+				<meta name="description" content="Schedule a live demo with our team." />
 				<link rel="canonical" href="https://ziontechgroup.com/demo" />
 			</Head>
-			<div className="min-h-screen bg-black text-white pt-24">
-				<div className="max-w-3xl mx-auto p-6">
-					<h1 className="text-4xl font-bold mb-4">Book a Demo</h1>
-					<p className="text-gray-300 mb-8">See our AI, IT and Micro SAAS solutions in action.</p>
-					<a href="/contact" className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded text-white inline-block">Request Demo</a>
-				</div>
+			<div className="container mx-auto px-4 py-16 text-white">
+				<h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">Book a Demo</h1>
+				<p className="text-gray-300 max-w-2xl">Contact <a href="mailto:kleber@ziontechgroup.com" className="text-cyan-400 underline">kleber@ziontechgroup.com</a> to schedule a demo.</p>
 			</div>
-		</>
+		</UltraFuturisticBackground>
 	);
 }

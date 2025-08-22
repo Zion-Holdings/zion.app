@@ -236,6 +236,54 @@ export default function ServicesAdvertisingPage() {
           </section>
 
           <section>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">What You Get</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[ 
+                { title: 'AI & Data', points: ['Guardrails & red-teaming', 'LLM evaluation automation', 'Vector search and RAG', 'Cost controls and caching'], note: 'Typical bundles: $499–$2,999/mo' },
+                { title: 'Cloud & FinOps', points: ['Cloud cost reviews', 'SLOs and error budgets', 'Kubernetes & edge ops', 'Managed Postgres HA'], note: 'Typical bundles: $799–$3,999/mo' },
+                { title: 'Observability & Quality', points: ['APM and tracing', 'Synthetics & uptime', 'Email deliverability & DMARC', 'GDPR DSAR automation'], note: 'Typical bundles: $199–$1,499/mo' }
+              ].map((g) => (
+                <div key={g.title} className="p-6 rounded-2xl bg-black/40 border border-gray-700/60">
+                  <div className="text-white font-semibold mb-2">{g.title}</div>
+                  <ul className="text-gray-300 space-y-2 mb-3">
+                    {g.points.map((p) => (
+                      <li key={p} className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-emerald-400 mt-0.5" /><span>{p}</span></li>
+                    ))}
+                  </ul>
+                  <div className="text-sm text-gray-400">{g.note}</div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Average Market Prices</h2>
+            <p className="text-center text-gray-300 mb-4">Reference ranges gathered from vendor public pages and analyst writeups. See full breakdown in <a href="/market-pricing" className="text-cyan-400 underline">Market Pricing</a>.</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="p-6 rounded-2xl bg-black/40 border border-gray-700/60">
+                <div className="text-white font-semibold mb-2">AI Guardrails & Evals</div>
+                <div className="text-gray-300">$199–$1,500/mo (teams), enterprise tiers vary</div>
+                <div className="text-sm text-gray-400 mt-2">Refs: <a target="_blank" rel="noreferrer" className="text-cyan-400 underline" href="https://www.lakera.ai/pricing">Lakera</a>, <a target="_blank" rel="noreferrer" className="text-cyan-400 underline" href="https://humanloop.com/pricing">Humanloop</a></div>
+              </div>
+              <div className="p-6 rounded-2xl bg-black/40 border border-gray-700/60">
+                <div className="text-white font-semibold mb-2">Vector Databases</div>
+                <div className="text-gray-300">$50–$1,500/mo starter to business</div>
+                <div className="text-sm text-gray-400 mt-2">Refs: <a target="_blank" rel="noreferrer" className="text-cyan-400 underline" href="https://www.pinecone.io/pricing/">Pinecone</a>, <a target="_blank" rel="noreferrer" className="text-cyan-400 underline" href="https://qdrant.tech/pricing/">Qdrant</a></div>
+              </div>
+              <div className="p-6 rounded-2xl bg-black/40 border border-gray-700/60">
+                <div className="text-white font-semibold mb-2">Observability</div>
+                <div className="text-gray-300">$99–$2,999/mo depending on ingest and seats</div>
+                <div className="text-sm text-gray-400 mt-2">Refs: <a target="_blank" rel="noreferrer" className="text-cyan-400 underline" href="https://www.datadoghq.com/pricing/">Datadog</a>, <a target="_blank" rel="noreferrer" className="text-cyan-400 underline" href="https://newrelic.com/pricing">New Relic</a></div>
+              </div>
+              <div className="p-6 rounded-2xl bg-black/40 border border-gray-700/60">
+                <div className="text-white font-semibold mb-2">Cloud & Edge</div>
+                <div className="text-gray-300">$200–$10,000+/mo depending on traffic/compute</div>
+                <div className="text-sm text-gray-400 mt-2">Refs: <a target="_blank" rel="noreferrer" className="text-cyan-400 underline" href="https://calculator.aws">AWS Calc</a>, <a target="_blank" rel="noreferrer" className="text-cyan-400 underline" href="https://vercel.com/pricing">Vercel</a></div>
+              </div>
+            </div>
+          </section>
+
+          <section>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Contact Us</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <a href={`tel:${contact.mobile.replace(/[^+\d]/g, '')}`} className="p-6 rounded-2xl bg-black/40 border border-gray-700/60 hover:border-cyan-500/40 flex items-center gap-3">
