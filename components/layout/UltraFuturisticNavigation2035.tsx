@@ -181,19 +181,20 @@ const navigationItems: NavigationItem[] = [
   },
   {
     name: 'Industry Solutions',
-    href: '/industry-solutions',
+    href: '/solutions',
     icon: <Building className="w-5 h-5" />,
     description: 'Industry-specific technology solutions',
     badge: 'Industry',
     children: [
-      { name: 'Healthcare AI', href: '/healthcare-ai-solutions', description: 'AI-powered healthcare' },
-      { name: 'Financial Technology', href: '/financial-solutions', description: 'Next-gen fintech' },
-      { name: 'Manufacturing AI', href: '/manufacturing-ai-solutions', description: 'Smart manufacturing' },
+      { name: 'Healthcare & Biotech', href: '/biotech-ai', description: 'AI-powered healthcare' },
+      { name: 'Financial Technology', href: '/billing-analytics', description: 'Next-gen fintech analytics' },
+      { name: 'Manufacturing AI', href: '/autonomous-manufacturing', description: 'Smart manufacturing' },
       { name: 'Retail Technology', href: '/retail-technology-solutions', description: 'Digital retail transformation' },
       { name: 'Education Technology', href: '/training', description: 'AI-powered learning' },
       { name: 'Government Solutions', href: '/enterprise-solutions-showcase', description: 'Public sector innovation' },
       { name: 'Energy & Utilities', href: '/quantum-energy', description: 'Sustainable energy tech' },
-      { name: 'Biotech AI Research', href: '/biotech-ai', description: 'AI-driven biotech' }
+      { name: 'Transportation & Logistics', href: '/quantum-logistics', description: 'Route optimization' },
+      { name: 'Space Technology', href: '/space-technology', description: 'Advanced space tech' }
     ]
   },
   {
@@ -205,8 +206,8 @@ const navigationItems: NavigationItem[] = [
       { name: 'Blog', href: '/blog', description: 'Insights and updates' },
       { name: 'Case Studies', href: '/case-studies', description: 'Proven results' },
       { name: 'Resources Hub', href: '/resources', description: 'Docs, SDKs, guides' },
-      { name: 'Events', href: '/events', description: 'Conferences and announcements' },
-      { name: 'Webinars', href: '/webinars', description: 'Live and on-demand sessions' },
+      { name: 'Events', href: '/events', description: 'Conferences and workshops' },
+      { name: 'Webinars', href: '/webinars', description: 'On-demand and live sessions' },
       { name: 'Services Advertising', href: '/services-advertising', description: 'Features, benefits and market pricing links' },
       { name: 'Serverless Lakehouse Starter', href: '/services/serverless-lakehouse-starter', description: 'ELT + dbt + dashboards' },
       { name: 'Data Contracts Hub', href: '/services/data-contracts-hub', description: 'Schema diffs & CI gates' }
@@ -215,10 +216,11 @@ const navigationItems: NavigationItem[] = [
 ];
 
 const quickActions = [
-  { name: 'Get Started', href: '/contact', icon: <ArrowRight className="w-4 h-4" />, primary: true },
+  { name: 'Call +1 302 464 0950', href: 'tel:+13024640950', icon: <Phone className="w-4 h-4" />, primary: true },
+  { name: 'Email kleber@ziontechgroup.com', href: 'mailto:kleber@ziontechgroup.com', icon: <Mail className="w-4 h-4" /> },
   { name: 'Get a Quote', href: '/quote', icon: <DollarSign className="w-4 h-4" /> },
   { name: 'Book Demo', href: '/contact', icon: <Video className="w-4 h-4" /> },
-  { name: 'Live Chat', href: '/chat', icon: <MessageCircle className="w-4 h-4" /> },
+  { name: 'Live Chat', href: '/support', icon: <MessageCircle className="w-4 h-4" /> },
   { name: 'View Pricing', href: '/pricing', icon: <DollarSign className="w-4 h-4" /> },
   { name: 'Market Pricing', href: '/market-pricing', icon: <BarChart3 className="w-4 h-4" /> },
   { name: 'Services Advertising', href: '/services-advertising', icon: <Sparkles className="w-4 h-4" /> },

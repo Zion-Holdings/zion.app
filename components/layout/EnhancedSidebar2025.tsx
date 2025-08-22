@@ -8,7 +8,7 @@ import {
   Globe, Cpu, Database, Lock, Zap,
   TrendingUp, Award, CheckCircle, Clock,
   ArrowRight, Search, Menu, X as CloseIcon,
-  Target, BookOpen
+  Target, BookOpen, Calendar, Video
 } from 'lucide-react';
 
 const contactInfo = {
@@ -108,18 +108,18 @@ const sidebarSections = [
     icon: <Target className="w-5 h-5" />,
     color: 'text-orange-400',
     items: [
-      { name: 'Healthcare Solutions', href: '/healthcare-solutions' },
-      { name: 'Financial Services', href: '/financial-solutions' },
-      { name: 'Manufacturing AI', href: '/manufacturing-ai-solutions' },
+      { name: 'Healthcare & Biotech', href: '/biotech-ai' },
+      { name: 'Financial Services', href: '/billing-analytics' },
+      { name: 'Manufacturing AI', href: '/autonomous-manufacturing' },
       { name: 'Retail Technology', href: '/retail-technology-solutions' },
-      { name: 'Education Technology', href: '/education-technology-solutions' },
-      { name: 'Government Solutions', href: '/government-technology-solutions' },
-      { name: 'Energy & Utilities', href: '/energy-utilities-solutions' },
-      { name: 'Transportation & Logistics', href: '/transportation-logistics-solutions' },
+      { name: 'Education Technology', href: '/training' },
+      { name: 'Government Solutions', href: '/enterprise-solutions-showcase' },
+      { name: 'Energy & Utilities', href: '/quantum-energy' },
+      { name: 'Transportation & Logistics', href: '/quantum-logistics' },
       { name: 'Real Estate Technology', href: '/real-estate-technology-solutions' },
       { name: 'Entertainment & Media', href: '/entertainment-media-solutions' },
       { name: 'Space Technology', href: '/space-technology' },
-      { name: 'Biotech & Healthcare', href: '/biotech-ai-research-platform' }
+      { name: 'Biotech & Healthcare', href: '/biotech-ai' }
     ]
   },
   {
@@ -169,6 +169,8 @@ const quickLinks = [
   { name: 'Pricing', href: '/pricing', icon: <DollarSign className="w-4 h-4" /> },
   { name: 'Market Pricing', href: '/market-pricing', icon: <DollarSign className="w-4 h-4" /> },
   { name: 'Services Advertising', href: '/services-advertising', icon: <BookOpen className="w-4 h-4" /> },
+  { name: 'Events', href: '/events', icon: <Calendar className="w-4 h-4" /> },
+  { name: 'Webinars', href: '/webinars', icon: <Video className="w-4 h-4" /> },
   { name: 'About Us', href: '/about', icon: <Users className="w-4 h-4" /> },
   { name: 'Contact', href: '/contact', icon: <Mail className="w-4 h-4" /> },
   { name: 'Support', href: '/support', icon: <HelpCircle className="w-4 h-4" /> }

@@ -1,16 +1,19 @@
 import React from 'react';
-import Link from 'next/link';
 import SEO from '../components/SEO';
+import Link from 'next/link';
 
-export default function RAGEvaluationLab() {
+export default function RAGEvaluationLabPage() {
+	const title = 'RAG Evaluation Lab — Zion Tech Group';
+	const description = 'Measure answer quality, hallucination rate, latency, and cost of your RAG pipelines with production-grade evals and CI gates.';
+
 	return (
 		<>
-			<SEO title="RAG Evaluation Lab — Zion Tech Group" description="Continuously evaluate RAG systems with golden datasets, scenario evals, grounding scores, canaries, and CI quality gates." />
+			<SEO title={title} description={description} />
 			<div className="relative isolate">
-				<section className="px-6 lg:px-10 py-16 lg:py-24">
+				<section className="px-6 lg:px-10 pt-28 pb-16 md:pt-36 md:pb-24">
 					<div className="max-w-6xl mx-auto">
 						<h1 className="text-3xl lg:text-5xl font-bold tracking-tight bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">RAG Evaluation Lab</h1>
-						<p className="mt-4 text-gray-300 max-w-3xl">Continuously evaluate Retrieval-Augmented Generation (RAG) systems with golden datasets, synthetic scenarios, grounding scores, and automated regression alerts. Ship reliable AI assistants with measurable quality.</p>
+						<p className="mt-4 text-gray-300 max-w-3xl">Production-ready evaluations for retrieval-augmented generation. Track accuracy, hallucination rate, latency, and cost. Integrate with CI to prevent regressions.</p>
 
 						<div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 							{[

@@ -5,7 +5,7 @@ import { Check, ExternalLink } from 'lucide-react';
 
 export default function ApiPerformanceTestingPage() {
 	const title = 'API Performance Testing — Zion Tech Group';
-	const description = 'Load, latency and regression testing-as-a-service with CI gates, SLO-aware reports, and thresholds.';
+	const description = 'Load, soak, and stress testing with CI quality gates. Metrics, thresholds, and regression detection for APIs.';
 	const features = [
 		'k6/Gatling-compatible test runner',
 		'SLO-aware latency reports',
@@ -32,7 +32,8 @@ export default function ApiPerformanceTestingPage() {
 
 			<main id="main" className="container mx-auto px-4 pb-24">
 				<section className="max-w-5xl mx-auto">
-					<div className="mt-4 grid sm:grid-cols-2 gap-6">
+					<h2 className="text-2xl font-semibold text-white">What you get</h2>
+					<div className="mt-6 grid sm:grid-cols-2 gap-6">
 						{features.map((f) => (
 							<div key={f} className="flex items-start space-x-3 p-4 rounded-xl bg-white/5 border border-white/10">
 								<Check className="w-5 h-5 text-cyan-400 mt-1" />
@@ -41,13 +42,13 @@ export default function ApiPerformanceTestingPage() {
 						))}
 					</div>
 					<div className="mt-8 flex flex-wrap items-center gap-4">
-						<Link href="/contact" className="px-5 py-3 rounded-lg bg-white text-black font-semibold hover:bg-gray-200">Start from $129/mo</Link>
+						<a href="/contact" className="px-5 py-3 rounded-lg bg-white text-black font-semibold hover:bg-gray-200">Start from $129/mo</a>
 						<a href="https://grafana.com/docs/k6/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300">
 							<ExternalLink className="w-4 h-4" /> k6 Docs
-						</a>
+							</a>
 						<a href="https://gatling.io/open-source/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300">
 							<ExternalLink className="w-4 h-4" /> Gatling OSS
-						</a>
+							</a>
 					</div>
 				</section>
 			</main>

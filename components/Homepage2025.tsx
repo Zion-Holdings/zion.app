@@ -248,7 +248,7 @@ const Homepage2025: React.FC = () => {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 relative">
+      <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 relative content-visibility-auto">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -287,7 +287,7 @@ const Homepage2025: React.FC = () => {
       </section>
 
       {/* AI Services Section */}
-      <section id="ai" className="py-20 px-4 sm:px-6 lg:px-8 relative bg-black/20">
+      <section id="ai" className="py-20 px-4 sm:px-6 lg:px-8 relative bg-black/20 content-visibility-auto">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -326,7 +326,7 @@ const Homepage2025: React.FC = () => {
       </section>
 
       {/* AI Automation Services Section */}
-      <section id="automation" className="py-20 px-4 sm:px-6 lg:px-8 relative">
+      <section id="automation" className="py-20 px-4 sm:px-6 lg:px-8 relative content-visibility-auto">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -365,7 +365,7 @@ const Homepage2025: React.FC = () => {
       </section>
 
       {/* Quantum Cybersecurity Section */}
-      <section id="quantum" className="py-20 px-4 sm:px-6 lg:px-8 relative bg-black/20">
+      <section id="quantum" className="py-20 px-4 sm:px-6 lg:px-8 relative bg-black/20 content-visibility-auto">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -579,8 +579,8 @@ const Homepage2025: React.FC = () => {
                 <li><a href="tel:+13024640950" className="hover:text-cyan-400 transition-colors">+1 302 464 0950</a></li>
                 <li><a href="mailto:kleber@ziontechgroup.com" className="hover:text-cyan-400 transition-colors">kleber@ziontechgroup.com</a></li>
                 <li><a href="https://ziontechgroup.com" className="hover:text-cyan-400 transition-colors">Website</a></li>
-                <li><a href="https://linkedin.com/company/ziontechgroup" className="hover:text-cyan-400 transition-colors">LinkedIn</a></li>
-                <li><a href="https://twitter.com/ziontechgroup" className="hover:text-cyan-400 transition-colors">Twitter</a></li>
+                <li><a href="/social/linkedin" className="hover:text-cyan-400 transition-colors">LinkedIn</a></li>
+                <li><a href="/social/twitter" className="hover:text-cyan-400 transition-colors">X (Twitter)</a></li>
               </ul>
             </div>
           </div>

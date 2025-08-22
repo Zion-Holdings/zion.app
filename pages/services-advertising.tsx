@@ -1340,6 +1340,66 @@ export default function ServicesAdvertisingPage() {
 					</section>
 				</section>
 
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">AI Email Responder Pro</h2>
+					<p className="text-slate-300">Automate inbox triage and replies with brand-safe guardrails and approvals.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $30–$150/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/ai-email-responder-pro">/services/ai-email-responder-pro</a></li>
+						<li>References: https://front.com/pricing, https://www.zendesk.com/pricing/</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Cloud Cost Anomaly Guard</h2>
+					<p className="text-slate-300">Detect spend spikes, attribute drivers, and ship Terraform savings recommendations.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $50–$300/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/cloud-cost-anomaly-guard">/services/cloud-cost-anomaly-guard</a></li>
+						<li>References: https://www.vantage.sh/pricing, https://www.cloudzero.com/pricing</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Serverless Batch Orchestrator</h2>
+					<p className="text-slate-300">Cross-cloud cron at scale with retries, DLQs, notifications, and cost windows.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $20–$120/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/serverless-batch-orchestrator-pro">/services/serverless-batch-orchestrator-pro</a></li>
+						<li>References: https://aws.amazon.com/eventbridge/pricing/, https://cloud.google.com/scheduler/pricing</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Data Contracts Health Monitor</h2>
+					<p className="text-slate-300">Schema diffs, SLA monitors, lineage ownership, and auto ticketing.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $79–$299/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/data-contracts-health-monitor">/services/data-contracts-health-monitor</a></li>
+						<li>References: https://www.datafold.com/pricing, https://www.getmontecarlo.com/pricing</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">License Keys & Usage Metering</h2>
+					<p className="text-slate-300">Provision keys, entitlements, and metered billing with Stripe.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $49–$199/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/license-key-usage-metering">/services/license-key-usage-metering</a></li>
+						<li>References: https://stripe.com/pricing, https://paddle.com/pricing/</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Email DMARC/SPF/DKIM Monitor</h2>
+					<p className="text-slate-300">Fix email auth and safely roll out DMARC policies for deliverability.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $10–$59/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/email-dmarc-monitor">/services/email-dmarc-monitor</a></li>
+						<li>References: https://dmarcian.com/pricing/, https://valimail.com/products/</li>
+					</ul>
+				</section>
+
 				{/* Contact CTA */}
 				<div className="flex flex-col md:flex-row items-center gap-4 p-4 rounded-xl bg-black/30 border border-gray-800">
 					<a href="tel:+13024640950" className="px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white">Call +1 302 464 0950</a>
@@ -1543,6 +1603,42 @@ export default function ServicesAdvertisingPage() {
 						<li>References: {ext('https://www.openpolicyagent.org/')}, {ext('https://kubernetes.io/docs/concepts/overview/')}, {ext('https://argo-cd.readthedocs.io/')}</li>
 					</ul>
 					<div><a className="text-cyan-400 underline" href="/services/kubernetes-policy-auditor">Learn more</a></div>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Browser Automation Cloud</h2>
+					<p className="text-slate-300">Hosted Playwright/Puppeteer runners with recorder, retries, proxy pools, schedules, and analytics. Export to CI or agent scripts.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $50–$300/mo</li>
+						<li>References: {ext('https://playwright.dev/')}, {ext('https://pptr.dev/')}, {ext('https://www.checklyhq.com/pricing/')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Status Pages & SLO Monitor</h2>
+					<p className="text-slate-300">Public status pages, incident comms, and SLO/error budget analytics with burn rate alerts and synthetic checks.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $20–$150/mo</li>
+						<li>References: {ext('https://www.atlassian.com/software/statuspage/pricing')}, {ext('https://sre.google/sre-book/service-level-objectives/')}, {ext('https://www.checklyhq.com/pricing/')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">AI Customer Journey Analytics</h2>
+					<p className="text-slate-300">Unify product events, tickets, chats, and CRM; AI summarizes friction points and recommends experiments with funnels and cohorts.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $100–$600/mo</li>
+						<li>References: {ext('https://mixpanel.com/pricing/')}, {ext('https://amplitude.com/pricing')}, {ext('https://snowflake.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">SOC 2 Evidence Automation</h2>
+					<p className="text-slate-300">Continuously collect and package control evidence from cloud, CI, and ticketing—export-ready for auditors.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $300–$1,500/mo</li>
+						<li>References: {ext('https://trustcenter.transcend.io/')}, {ext('https://vanta.com/pricing')}, {ext('https://drata.com/pricing')}</li>
+					</ul>
 				</section>
 			</div>
 		</div>

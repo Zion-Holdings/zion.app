@@ -527,3 +527,9 @@ h1, h2, h3, h4, h5, h6 {
     scroll-behavior: auto !important;
   }
 }
+
+/* Rendering performance utilities */
+.content-visibility-auto {
+	content-visibility: auto;
+	contain-intrinsic-size: 1000px 2000px;
+}
