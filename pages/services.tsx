@@ -23,6 +23,7 @@ import { realOperationalServices } from '../data/real-operational-services';
 import { marketReadyServices } from '../data/market-ready-services';
 import { marketValidatedServices } from '../data/market-validated-services';
 import { industryRealServices } from '../data/industry-real-services';
+import { real2025Q4AdditionsBatch2 } from '../data/real-2025-q4-additions-batch2';
 
 // Helper function to get service category
 const getServiceCategory = (service: any) => {
@@ -53,6 +54,16 @@ const getServiceDescription = (service: any) => {
   return 'No description available';
 };
 
+// Helper function to get service launch date
+const getServiceLaunchDate = (service: any) => {
+  return service.launchDate || service.releasedAt || service.updatedAt || '2020-01-01';
+};
+
+// Helper function to get service rating
+const getServiceRating = (service: any) => {
+  return service.rating || 0;
+};
+
 // Create unified services array
 const allServices = [
   ...enterpriseITSolutions,
@@ -66,7 +77,8 @@ const allServices = [
   ...realOperationalServices,
   ...marketReadyServices,
   ...marketValidatedServices,
-  ...industryRealServices
+  ...industryRealServices,
+  ...real2025Q4AdditionsBatch2
 ];
 
 const categories = [
@@ -151,7 +163,10 @@ const sortOptions = [
   { value: 'rating', label: 'Highest Rated' }
 ];
 
+import { useRouter } from 'next/router';
+
 export default function Services() {
+  const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [sortBy, setSortBy] = useState('name');
@@ -184,10 +199,10 @@ export default function Services() {
         return (parseInt(getServicePricing(b).replace(/[^0-9]/g, '')) || 0) - 
                (parseInt(getServicePricing(a).replace(/[^0-9]/g, '')) || 0);
       case 'newest':
-        return new Date(b.launchDate || '2020-01-01').getTime() - 
-               new Date(a.launchDate || '2020-01-01').getTime();
+        return new Date(getServiceLaunchDate(b)).getTime() - 
+               new Date(getServiceLaunchDate(a)).getTime();
       case 'rating':
-        return (b.rating || 0) - (a.rating || 0);
+        return getServiceRating(b) - getServiceRating(a);
       default:
         return 0;
     }
@@ -205,6 +220,27 @@ export default function Services() {
   React.useEffect(() => {
     setCurrentPage(1);
   }, [searchQuery, selectedCategory, sortBy]);
+
+  React.useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const q = (router.query.q as string) || '';
+    const filter = (router.query.filter as string) || (router.query.category as string) || '';
+    const sort = (router.query.sort as string) || '';
+
+    if (q) setSearchQuery(q);
+    if (sort) setSortBy(sort);
+
+    if (filter) {
+      // accept id or category name
+      const byId = categories.find(c => c.id.toLowerCase() === filter.toLowerCase());
+      if (byId) {
+        setSelectedCategory(byId.id);
+      } else {
+        const byName = categories.find(c => c.name.toLowerCase() === decodeURIComponent(filter.toLowerCase()));
+        if (byName) setSelectedCategory(byName.id);
+      }
+    }
+  }, [router.query.q, router.query.filter, router.query.category, router.query.sort]);
 
   const getCategoryIcon = (category: string) => {
     switch (category.toLowerCase()) {

@@ -72,11 +72,11 @@ const navigationItems: NavigationItem[] = [
     description: 'Browse by category',
     badge: 'New',
     children: [
-      { name: 'AI & Data', href: '/services#ai', description: 'AI, data, ML services' },
-      { name: 'Developer Tools', href: '/services#developer-tools', description: 'Dev productivity & tooling' },
-      { name: 'Cloud & FinOps', href: '/services#cloud', description: 'Cloud, cost, platform' },
-      { name: 'Observability', href: '/services#observability', description: 'Monitoring & telemetry' },
-      { name: 'Quality & Monitoring', href: '/services#quality', description: 'QA, testing, reliability' }
+      { name: 'AI & Data', href: '/services?filter=ai-consciousness', description: 'AI, data, ML services' },
+      { name: 'Enterprise IT', href: '/services?filter=enterprise-it', description: 'Infra, security, platforms' },
+      { name: 'Quantum & Emerging', href: '/services?filter=quantum-emerging', description: 'Quantum, space, frontier' },
+      { name: 'Micro SAAS', href: '/services?filter=micro-saas', description: 'Business accelerators' },
+      { name: 'Creative & Media', href: '/services?filter=creative-media', description: 'Content, media, design' }
     ]
   },
   {
@@ -116,7 +116,7 @@ const navigationItems: NavigationItem[] = [
       { name: 'AI Decision Engine', href: '/ai-powered-decision-engine', description: 'AI-powered business decisions' },
       { name: 'AI Content Automation', href: '/intelligent-content-automation-platform', description: 'Automate content creation' },
       { name: 'AI HR Analytics', href: '/ai-hr-analytics-platform', description: 'Transform HR with AI insights' },
-      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2025', description: 'Emotional intelligence and self-awareness' },
+      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029', description: 'Emotional intelligence and self-awareness' },
       { name: 'AI Quantum Neural Network', href: '/ai-quantum-neural-network', description: 'Hybrid AI-Quantum computing platform' },
       { name: 'AI Autonomous Business Operations', href: '/ai-autonomous-business-operations', description: 'Fully autonomous business management' },
       { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant', description: 'Self-directed AI research' },

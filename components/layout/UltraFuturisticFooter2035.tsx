@@ -38,7 +38,7 @@ const footerSections = [
     description: 'Revolutionary AI platforms and solutions',
     icon: <Brain className="w-5 h-5 text-cyan-400" />,
     links: [
-      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2025' },
+      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029' },
       { name: 'AI Quantum Neural Network', href: '/ai-quantum-neural-network' },
       { name: 'AI Autonomous Business Operations', href: '/ai-autonomous-business-operations' },
       { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant' },

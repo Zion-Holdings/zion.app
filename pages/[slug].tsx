@@ -64,7 +64,8 @@ export default function ServiceFallbackPage() {
         realEnterpriseServices2025 as any,
         augmentedServicesBatch3 as any,
         real2025Q3Additions as any,
-        realQ4Services2025 as any
+        realQ4Services2025 as any,
+        require('../data/real-2025-q4-additions-batch2').real2025Q4AdditionsBatch2 as any
       );
     const byLink = all.find(s => {
       try {
