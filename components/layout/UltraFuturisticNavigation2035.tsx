@@ -74,10 +74,10 @@ const navigationItems: NavigationItem[] = [
     description: 'Browse by category',
     badge: 'New',
     children: [
-      { name: 'AI & Data', href: '/services#ai-consciousness', description: 'AI, data, ML services' },
-      { name: 'Cloud & FinOps', href: '/services#enterprise-it', description: 'Cloud, cost, platform' },
-      { name: 'Observability', href: '/services#enterprise-it', description: 'Monitoring & telemetry' },
-      { name: 'Developer Tools', href: '/services#enterprise-it', description: 'Developer productivity' },
+      { name: 'AI & Data', href: '/services#ai', description: 'AI, data, ML services' },
+      { name: 'Cloud & FinOps', href: '/services#cloud', description: 'Cloud, cost, platform' },
+      { name: 'Observability', href: '/services#observability', description: 'Monitoring & telemetry' },
+      { name: 'Developer Tools', href: '/services#developer-tools', description: 'Developer productivity' },
       { name: 'Training & Education', href: '/training', description: 'Learning and R&D' },
       { name: 'SEO Automation Suite', href: '/seo-automation-suite', description: 'Technical SEO automation' },
       { name: 'IT Asset Discovery Agent', href: '/it-asset-discovery-agent', description: 'Agentless discovery' },
@@ -88,7 +88,10 @@ const navigationItems: NavigationItem[] = [
       { name: 'SOC 2 Compliance Automation', href: '/soc2-compliance-automation', description: 'Automate evidence & controls' },
       { name: 'Browser Automation Cloud', href: '/browser-automation-cloud', description: 'Scale headless browser flows' },
       { name: 'Secrets Rotation Automation', href: '/secrets-rotation-automation', description: 'Policy-driven key rotation' },
-      { name: 'API Performance Testing', href: '/api-performance-testing', description: 'Load/soak tests with CI gates' }
+      { name: 'API Performance Testing', href: '/api-performance-testing', description: 'Load/soak tests with CI gates' },
+      { name: 'AI Sales Email Autopilot', href: '/services/ai-sales-email-autopilot', description: 'Personalized outbound at scale' },
+      { name: 'Kubernetes Cost & Rightsizing', href: '/services/kubernetes-cost-rightsizing', description: 'SLO-aware cost optimization' },
+      { name: 'CI Flaky Test Detector', href: '/services/ci-flaky-test-detector', description: 'Auto quarantine and PR insights' }
     ]
   },
   {
