@@ -1346,6 +1346,19 @@ export default function ServicesAdvertisingPage() {
 					<a href="mailto:kleber@ziontechgroup.com" className="px-4 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-600 text-white">Email kleber@ziontechgroup.com</a>
 					<a href="/pricing" className="px-4 py-2 rounded-lg border border-cyan-500/40 text-cyan-300">View Pricing</a>
 				</div>
+
+				<section id="new-2032-expansions" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Fresh 2032 Service Expansions</h2>
+					<ul className="list-disc list-inside text-slate-300 space-y-2">
+						<li><strong className="text-white">AI Governance Reporter</strong> — $149/mo. Learn: <a className="text-cyan-400 underline" href="/services/ai-governance-reporter">/services/ai-governance-reporter</a>. References: https://openai.com/index/safety/</li>
+						<li><strong className="text-white">AI Red Teaming Suite</strong> — $199/mo. Learn: <a className="text-cyan-400 underline" href="/services/ai-red-teaming-suite">/services/ai-red-teaming-suite</a>. References: https://www.promptfoo.dev/pricing</li>
+						<li><strong className="text-white">API Schema Diff & Registry</strong> — $79/mo. Learn: <a className="text-cyan-400 underline" href="/services/api-schema-diff-registry">/services/api-schema-diff-registry</a>. References: https://swagger.io/tools/swaggerhub/pricing/</li>
+						<li><strong className="text-white">Kubernetes Cost Rightsizer</strong> — $129/mo. Learn: <a className="text-cyan-400 underline" href="/services/k8s-cost-rightsizer">/services/k8s-cost-rightsizer</a>. References: https://www.kubecost.com/pricing</li>
+						<li><strong className="text-white">PII Redaction Proxy</strong> — $99/mo. Learn: <a className="text-cyan-400 underline" href="/services/pii-redaction-proxy">/services/pii-redaction-proxy</a>. References: https://www.skyflow.com/pricing</li>
+						<li><strong className="text-white">Synthetic Journey Monitor</strong> — $39/mo. Learn: <a className="text-cyan-400 underline" href="/services/synthetic-journey-monitor">/services/synthetic-journey-monitor</a>. References: https://www.checklyhq.com/pricing/</li>
+					</ul>
+					<div className="text-slate-400 text-sm">Full catalog: <a className="text-cyan-400 underline" href="/services">/services</a> • Market pricing benchmarks: <a className="text-cyan-400 underline" href="/market-pricing">/market-pricing</a></div>
+				</section>
 			</div>
 		</div>
 	);
