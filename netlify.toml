@@ -46,26 +46,51 @@
     Origin-Agent-Cluster = "?1"
 
 [[redirects]]
+  from = "/ai-autonomous-ecosystem"
+  to = "/ai-autonomous-ecosystem-manager"
+  status = 301
+
+[[redirects]]
   from = "/ai-consciousness-evolution"
   to = "/ai-consciousness-evolution-2029"
   status = 301
 
 [[redirects]]
-  from = "/quantum-internet-security-gateway"
+  from = "/autonomous-it-operations"
+  to = "/autonomous-it-operations-center"
+  status = 301
+
+[[redirects]]
+  from = "/quantum-internet-security"
   to = "/quantum-internet-security-platform"
   status = 301
 
 [[redirects]]
-  from = "/space-mining-automation-platform"
-  to = "/space-resource-mining-platform"
-  status = 301
-
-[[redirects]]
-  from = "/quantum-creativity-studio"
+  from = "/quantum-materials-discovery"
   to = "/quantum-materials-discovery-platform"
   status = 301
 
 [[redirects]]
-  from = "/team"
-  to = "/about"
+  from = "/autonomous-vehicle-ai"
+  to = "/autonomous-vehicle-ai-platform"
+  status = 301
+
+[[redirects]]
+  from = "/ai-content-marketing-automation"
+  to = "/ai-content-generator"
+  status = 301
+
+[[redirects]]
+  from = "/ai-customer-success-automation"
+  to = "/ai-customer-success-platform"
+  status = 301
+
+[[redirects]]
+  from = "/quantum-networking"
+  to = "/quantum-services"
+  status = 301
+
+[[redirects]]
+  from = "/quantum-data-center"
+  to = "/quantum-services"
   status = 301
