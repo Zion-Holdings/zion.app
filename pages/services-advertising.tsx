@@ -1544,6 +1544,37 @@ export default function ServicesAdvertisingPage() {
 					</ul>
 					<div><a className="text-cyan-400 underline" href="/services/kubernetes-policy-auditor">Learn more</a></div>
 				</section>
+
+				<section id="new-may-2035" className="space-y-6">
+					<h2 className="text-2xl md:text-3xl font-bold text-white">Fresh Additions (May 2035)</h2>
+					<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+						<div className="p-6 rounded-xl bg-black/40 border border-gray-700/60">
+							<h3 className="text-xl font-semibold text-cyan-300">AI Email Responder Pro</h3>
+							<p className="text-gray-300">Autonomous drafting, intent classification, and safe replies with review queues.</p>
+							<a className="text-cyan-400 underline" href="/services/ai-email-responder-pro">Learn more →</a>
+						</div>
+						<div className="p-6 rounded-xl bg-black/40 border border-gray-700/60">
+							<h3 className="text-xl font-semibold text-emerald-300">Mobile-First Survey Studio</h3>
+							<p className="text-gray-300">Adaptive, conversational surveys with branching logic and webhook triggers.</p>
+							<a className="text-cyan-400 underline" href="/services/mobile-first-surveys">Learn more →</a>
+						</div>
+						<div className="p-6 rounded-xl bg-black/40 border border-gray-700/60">
+							<h3 className="text-xl font-semibold text-amber-300">IT Helpdesk Lite</h3>
+							<p className="text-gray-300">Ticketing, SLAs, KB, and client portal for lean IT teams and MSPs.</p>
+							<a className="text-cyan-400 underline" href="/services/it-helpdesk-lite">Learn more →</a>
+						</div>
+						<div className="p-6 rounded-xl bg-black/40 border border-gray-700/60">
+							<h3 className="text-xl font-semibold text-purple-300">Affiliate Tracking Studio</h3>
+							<p className="text-gray-300">Attribution, commissions, and fraud checks with embedded widgets.</p>
+							<a className="text-cyan-400 underline" href="/services/affiliate-tracking-studio">Learn more →</a>
+						</div>
+						<div className="p-6 rounded-xl bg-black/40 border border-gray-700/60">
+							<h3 className="text-xl font-semibold text-rose-300">Podcast Transcriber Studio</h3>
+							<p className="text-gray-300">Transcripts, summaries, quotes, and SEO posts from episodes.</p>
+							<a className="text-cyan-400 underline" href="/services/podcast-transcriber-studio">Learn more →</a>
+						</div>
+					</div>
+				</section>
 			</div>
 		</div>
 	);

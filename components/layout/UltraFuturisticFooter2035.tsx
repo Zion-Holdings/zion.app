@@ -157,8 +157,8 @@ const footerSections = [
 const socialLinks = [
   { name: 'X', href: '/social/twitter/', icon: <Twitter className="w-5 h-5" /> },
   { name: 'LinkedIn', href: '/social/linkedin/', icon: <Linkedin className="w-5 h-5" /> },
-  { name: 'Facebook', href: 'https://www.facebook.com/ziontechgroup', icon: <Facebook className="w-5 h-5" /> },
-  { name: 'Instagram', href: 'https://www.instagram.com/ziontechgroup', icon: <Instagram className="w-5 h-5" /> },
+  { name: 'Facebook', href: '/social/facebook/', icon: <Facebook className="w-5 h-5" /> },
+  { name: 'Instagram', href: '/social/instagram/', icon: <Instagram className="w-5 h-5" /> },
   { name: 'YouTube', href: 'https://www.youtube.com/@ziontechgroup', icon: <Youtube className="w-5 h-5" /> },
   { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: <Github className="w-5 h-5" /> }
 ];
