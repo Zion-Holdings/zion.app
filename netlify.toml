@@ -65,3 +65,112 @@
   from = "/team"
   to = "/about"
   status = 301
+
+[[redirects]]
+  from = "/ai-content-marketing-automation"
+  to = "/intelligent-content-automation-platform"
+  status = 301
+
+[[redirects]]
+  from = "/ai-autonomous-ecosystem"
+  to = "/ai-autonomous-ecosystem-manager"
+  status = 301
+
+[[redirects]]
+  from = "/ai-ethics-governance"
+  to = "/ai-ethics-governance-framework"
+  status = 301
+
+[[redirects]]
+  from = "/autonomous-it-operations"
+  to = "/autonomous-it-operations-center"
+  status = 301
+
+[[redirects]]
+  from = "/quantum-network-security"
+  to = "/quantum-internet-security-platform"
+  status = 301
+
+[[redirects]]
+  from = "/quantum-compliance-automation"
+  to = "/quantum-cybersecurity-platform"
+  status = 301
+
+[[redirects]]
+  from = "/quantum-threat-detection"
+  to = "/quantum-cybersecurity-platform"
+  status = 301
+
+[[redirects]]
+  from = "/quantum-encryption-gateway"
+  to = "/quantum-secure-cloud-infrastructure"
+  status = 301
+
+[[redirects]]
+  from = "/quantum-identity-verification"
+  to = "/quantum-cybersecurity-platform"
+  status = 301
+
+[[redirects]]
+  from = "/quantum-internet-security"
+  to = "/quantum-internet-security-platform"
+  status = 301
+
+[[redirects]]
+  from = "/autonomous-vehicle-ai"
+  to = "/autonomous-vehicle-ai-platform"
+  status = 301
+
+[[redirects]]
+  from = "/quantum-materials-discovery"
+  to = "/quantum-materials-discovery-platform"
+  status = 301
+
+# Section placeholders to existing hubs
+[[redirects]]
+  from = "/team"
+  to = "/about"
+  status = 301
+
+[[redirects]]
+  from = "/events"
+  to = "/news"
+  status = 301
+
+[[redirects]]
+  from = "/webinars"
+  to = "/resources"
+  status = 301
+
+[[redirects]]
+  from = "/press"
+  to = "/news"
+  status = 301
+
+[[redirects]]
+  from = "/legal"
+  to = "/terms"
+  status = 301
+
+[[redirects]]
+  from = "/api"
+  to = "/api-documentation"
+  status = 301
+
+# Fix missing images referenced by meta tags
+[[redirects]]
+  from = "/og-image.jpg"
+  to = "/og-image.svg"
+  status = 200
+
+[[redirects]]
+  from = "/twitter-image.jpg"
+  to = "/og-image.svg"
+  status = 200
+
+# Ensure trailing slash consistency
+[[redirects]]
+  from = "/:splat"
+  to = "/:splat/"
+  status = 301
+  force = true

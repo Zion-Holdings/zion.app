@@ -147,7 +147,11 @@ const footerSections = [
       { name: 'SOC 2 Compliance Automation', href: '/soc2-compliance-automation' },
       { name: 'Browser Automation Cloud', href: '/browser-automation-cloud' },
       { name: 'Secrets Rotation Automation', href: '/secrets-rotation-automation' },
-      { name: 'API Performance Testing', href: '/api-performance-testing' }
+      { name: 'API Performance Testing', href: '/api-performance-testing' },
+      { name: 'Events', href: '/events' },
+      { name: 'Webinars', href: '/webinars' },
+      { name: 'Press', href: '/press' },
+      { name: 'Legal', href: '/legal' }
     ]
   }
 ];

@@ -8,7 +8,7 @@ import {
   Globe, Cpu, Database, Lock, Zap,
   TrendingUp, Award, CheckCircle, Clock,
   ArrowRight, Search, Menu, X as CloseIcon,
-  Target, BookOpen
+  Target, BookOpen, Calendar, Video, MessageSquare
 } from 'lucide-react';
 
 const contactInfo = {
@@ -171,7 +171,11 @@ const quickLinks = [
   { name: 'Services Advertising', href: '/services-advertising', icon: <BookOpen className="w-4 h-4" /> },
   { name: 'About Us', href: '/about', icon: <Users className="w-4 h-4" /> },
   { name: 'Contact', href: '/contact', icon: <Mail className="w-4 h-4" /> },
-  { name: 'Support', href: '/support', icon: <HelpCircle className="w-4 h-4" /> }
+  { name: 'Support', href: '/support', icon: <HelpCircle className="w-4 h-4" /> },
+  { name: 'Events', href: '/events', icon: <Calendar className="w-4 h-4" /> },
+  { name: 'Webinars', href: '/webinars', icon: <Video className="w-4 h-4" /> },
+  { name: 'Press', href: '/press', icon: <MessageSquare className="w-4 h-4" /> },
+  { name: 'Legal', href: '/legal', icon: <Shield className="w-4 h-4" /> }
 ];
 
 const companyLinks = [

@@ -242,7 +242,11 @@ const navigationItems: NavigationItem[] = [
       { name: 'Resources Hub', href: '/resources', description: 'Docs, SDKs, guides' },
       { name: 'Services Advertising', href: '/services-advertising', description: 'Features, benefits and market pricing links' },
       { name: 'Serverless Lakehouse Starter', href: '/services/serverless-lakehouse-starter', description: 'ELT + dbt + dashboards' },
-      { name: 'Data Contracts Hub', href: '/services/data-contracts-hub', description: 'Schema diffs & CI gates' }
+      { name: 'Data Contracts Hub', href: '/services/data-contracts-hub', description: 'Schema diffs & CI gates' },
+      { name: 'Events', href: '/events', description: 'Conferences and appearances' },
+      { name: 'Webinars', href: '/webinars', description: 'On-demand and upcoming sessions' },
+      { name: 'Press', href: '/press', description: 'Press releases and media' },
+      { name: 'Legal', href: '/legal', description: 'Policies and terms' }
     ]
   }
 ];
