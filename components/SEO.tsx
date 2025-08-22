@@ -88,7 +88,23 @@ export default function SEO({ title, description, canonical, ogImage, image, noI
 				"https://github.com/Zion-Holdings",
 				"https://www.instagram.com/ziontechgroup",
 				"https://www.youtube.com/@ziontechgroup"
-			]
+			],
+			"address": {
+				"@type": "PostalAddress",
+				"streetAddress": "364 E Main St STE 1008",
+				"addressLocality": "Middletown",
+				"addressRegion": "DE",
+				"postalCode": "19709",
+				"addressCountry": "US"
+			},
+			"contactPoint": [{
+				"@type": "ContactPoint",
+				"telephone": "+1-302-464-0950",
+				"contactType": "customer support",
+				"email": "kleber@ziontechgroup.com",
+				"areaServed": "US",
+				"availableLanguage": ["English"]
+			}]
 		},
 		{
 			"@context": "https://schema.org",
