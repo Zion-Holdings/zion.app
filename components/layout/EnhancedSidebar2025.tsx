@@ -362,10 +362,14 @@ export default function EnhancedSidebar2025({ isOpen, onClose }: EnhancedSidebar
                 <a href="/pricing" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Pricing</a>
                 <a href="/market-pricing" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Market Pricing</a>
                 <a href="/services-advertising" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Services Advertising</a>
-                <a href="/quote" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Get Quote</a>
+                <a href="/about" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">About Us</a>
+                <a href="/careers" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Careers</a>
+                <a href="/get-started" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Get Started</a>
+                <a href="/quote" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Quote Request</a>
                 <a href="/demo" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Book Demo</a>
                 <a href="/contact" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Contact</a>
                 <a href="/blog" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Blog</a>
+                <a href="/case-studies" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Case Studies</a>
                 <a href="/resources" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Resources</a>
                 <a href="/rag-evaluation-lab" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">RAG Evaluation Lab</a>
                 <a href="/soc2-compliance-automation" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">SOC 2 Compliance Automation</a>

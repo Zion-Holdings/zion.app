@@ -145,13 +145,17 @@ const footerSections = [
     icon: <Building className="w-5 h-5 text-gray-400" />,
     links: [
       { name: 'About Us', href: '/about', description: 'Our story and mission' },
+      { name: 'Careers', href: '/careers', description: 'Join our team' },
       { name: 'Contact', href: '/contact', description: 'Get in touch' },
-      { name: 'Get a Quote', href: '/quote', description: 'Request pricing' },
+      { name: 'Get Started', href: '/get-started', description: 'Start your journey' },
+      { name: 'Quote Request', href: '/quote', description: 'Request pricing' },
       { name: 'Book Demo', href: '/demo', description: 'Schedule a demo' },
       { name: 'Support', href: '/support', description: 'Technical support' },
-      { name: 'Careers', href: '/careers', description: 'Join our team' },
       { name: 'Partners', href: '/partners', description: 'Partnership opportunities' },
-      { name: 'News', href: '/news', description: 'Company updates' }
+      { name: 'News', href: '/news', description: 'Company updates' },
+      { name: 'Privacy Policy', href: '/privacy', description: 'Privacy information' },
+      { name: 'Terms of Service', href: '/terms', description: 'Terms and conditions' },
+      { name: 'Cookie Policy', href: '/cookies', description: 'Cookie information' }
     ]
   }
 ];
