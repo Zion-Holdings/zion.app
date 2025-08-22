@@ -61,12 +61,12 @@ const serviceCategories = [
 const quickLinks = [
   { name: 'Home', href: '/' },
   { name: 'Services', href: '/services' },
-  { name: 'AI Solutions', href: '/ai-solutions' },
-  { name: 'Quantum Tech', href: '/quantum-tech' },
+  { name: 'AI Solutions', href: '/services' },
+  { name: 'Quantum Tech', href: '/quantum-services' },
   { name: 'Enterprise IT', href: '/enterprise-it' },
   { name: 'Space Tech', href: '/space-tech' },
   { name: 'Micro SAAS', href: '/micro-saas' },
-  { name: 'Research', href: '/research' },
+  { name: 'Research', href: '/research-development' },
   { name: 'Pricing', href: '/pricing' },
   { name: 'Contact', href: '/contact' }
 ];

@@ -44,7 +44,7 @@ export default function AICustomerSuccessPlatform() {
 								<p className="mt-4 text-3xl font-bold">Custom</p>
 							</div>
 						</div>
-						<p className="mt-4 text-sm text-gray-400">Market references: <a className="underline hover:text-cyan-300" href="https://www.gainsight.com/pricing/" target="_blank" rel="noreferrer">Gainsight</a>, <a className="underline hover:text-cyan-300" href="https://www.planhat.com/pricing" target="_blank" rel="noreferrer">Planhat</a>, <a className="underline hover:text-cyan-300" href="https://www.churnzero.com/pricing" target="_blank" rel="noreferrer">ChurnZero</a>.</p>
+						<p className="mt-4 text-sm text-gray-400">Market references: <a className="underline hover:text-cyan-300" href="https://www.gainsight.com/pricing/" target="_blank" rel="noreferrer">Gainsight</a>, <a className="underline hover:text-cyan-300" href="https://www.planhat.com/pricing" target="_blank" rel="noreferrer">Planhat</a>, <a className="underline hover:text-cyan-300" href="https://churnzero.com/" target="_blank" rel="noreferrer">ChurnZero</a>.</p>
 					</div>
 
 					<div className="mt-12 flex flex-wrap items-center gap-4">
