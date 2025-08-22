@@ -188,6 +188,12 @@ module.exports = {
         '18': '4.5rem',
         '88': '22rem',
         '128': '32rem',
+        'safe': '1rem',
+        'safe-sm': '1.5rem',
+        'safe-md': '2rem',
+        'safe-lg': '3rem',
+        'safe-xl': '4rem',
+        'safe-2xl': '5rem',
       },
       borderRadius: {
         '4xl': '2rem',
