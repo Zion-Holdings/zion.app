@@ -30,3 +30,4 @@
     X-Frame-Options = "DENY"
     Permissions-Policy = "geolocation=(), microphone=(), camera=()"
     Strict-Transport-Security = "max-age=31536000"
+    X-DNS-Prefetch-Control = "on"

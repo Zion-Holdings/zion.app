@@ -1,0 +1,17 @@
+HTTP/2 200 
+accept-ranges: bytes
+age: 0
+cache-control: public,max-age=0,must-revalidate
+cache-status: "Netlify Edge"; fwd=miss
+content-type: text/html; charset=UTF-8
+date: Fri, 22 Aug 2025 13:32:45 GMT
+etag: "8473bb10109caf5abb059c6c1fbbd004-ssl"
+permissions-policy: geolocation=(), microphone=(), camera=()
+referrer-policy: strict-origin-when-cross-origin
+server: Netlify
+strict-transport-security: max-age=31536000
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-nf-request-id: 01K38ZPMVPR95VA2G1E67DT2KJ
+content-length: 780656
+
