@@ -125,26 +125,42 @@ const Home: React.FC = () => {
         description="Revolutionary AI, quantum computing, and micro SAAS solutions that drive growth. Explore our platforms, industry solutions, and micro SaaS offerings."
         canonical="https://ziontechgroup.com/"
         ogImage="https://ziontechgroup.com/og-image.png"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          name: "Zion Tech Group",
-          url: "https://ziontechgroup.com",
-          sameAs: [
-            "https://linkedin.com/company/ziontechgroup",
-            "https://github.com/Zion-Holdings",
-            "https://instagram.com/ziontechgroup",
-            "https://youtube.com/@ziontechgroup"
-          ],
-          contactPoint: [{
-            "@type": "ContactPoint",
-            telephone: "+1 302 464 0950",
-            email: "kleber@ziontechgroup.com",
-            contactType: "customer service",
-            areaServed: "US",
-            availableLanguage: ["English"]
-          }]
-        }}
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "Zion Tech Group",
+            url: "https://ziontechgroup.com",
+            sameAs: [
+              "https://linkedin.com/company/ziontechgroup",
+              "https://github.com/Zion-Holdings",
+              "https://instagram.com/ziontechgroup",
+              "https://youtube.com/@ziontechgroup"
+            ],
+            contactPoint: [{
+              "@type": "ContactPoint",
+              telephone: "+1 302 464 0950",
+              email: "kleber@ziontechgroup.com",
+              contactType: "customer service",
+              areaServed: "US",
+              availableLanguage: ["English"]
+            }]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: "Zion Tech Group",
+            url: "https://ziontechgroup.com",
+            potentialAction: {
+              "@type": "SearchAction",
+              target: {
+                "@type": "EntryPoint",
+                urlTemplate: "https://ziontechgroup.com/search?q={search_term_string}"
+              },
+              queryInput: "required name=search_term_string"
+            }
+          }
+        ]}
       />
 
       {/* Hero Section */}

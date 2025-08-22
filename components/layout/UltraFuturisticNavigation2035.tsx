@@ -77,10 +77,10 @@ const navigationItems: NavigationItem[] = [
       { name: 'Cloud & FinOps', href: '/services#cloud', description: 'Cloud, cost, platform' },
       { name: 'Observability', href: '/services#observability', description: 'Monitoring & telemetry' },
       { name: 'Quality & Monitoring', href: '/services#quality', description: 'QA, testing, reliability' },
-      { name: 'AI Evaluation Orchestrator', href: '/services/ai-evaluation-orchestrator', description: 'Automated LLM evals' },
-      { name: 'SEO Automation Suite', href: '/services/seo-automation-suite', description: 'Technical SEO automation' },
-      { name: 'IT Asset Discovery Agent', href: '/services/it-asset-discovery-agent', description: 'Agentless discovery' },
-      { name: 'Managed Postgres HA', href: '/services/managed-postgres-ha', description: 'HA Postgres ops' }
+      { name: 'AI Evaluation Orchestrator', href: '/ai-evaluation-orchestrator', description: 'Automated LLM evals' },
+      { name: 'SEO Automation Suite', href: '/seo-automation-suite', description: 'Technical SEO automation' },
+      { name: 'IT Asset Discovery Agent', href: '/it-asset-discovery-agent', description: 'Agentless discovery' },
+      { name: 'Managed Postgres HA', href: '/managed-postgres-ha', description: 'HA Postgres ops' }
     ]
   },
   {
