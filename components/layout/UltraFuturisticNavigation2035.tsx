@@ -33,6 +33,20 @@ const contactInfo = {
 
 const navigationItems: NavigationItem[] = [
   {
+    name: 'Services',
+    href: '/services',
+    icon: <Grid className="w-5 h-5" />,
+    description: 'Browse by category',
+    badge: 'New',
+    children: [
+      { name: 'AI & Data', href: '/services#ai', description: 'AI, data, ML services' },
+      { name: 'Developer Tools', href: '/services#developer-tools', description: 'Dev productivity & tooling' },
+      { name: 'Cloud & FinOps', href: '/services#cloud', description: 'Cloud, cost, platform' },
+      { name: 'Observability', href: '/services#observability', description: 'Monitoring & telemetry' },
+      { name: 'Quality & Monitoring', href: '/services#quality', description: 'QA, testing, reliability' }
+    ]
+  },
+  {
     name: 'All Services',
     href: '/comprehensive-services-showcase-2025',
     icon: <Globe className="w-5 h-5" />,
