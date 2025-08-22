@@ -1,17 +1,6 @@
 [
   "ai-autonomous-marketing-platform",
-  "ai-creativity-studio",
-  "ai-education-platform",
-  "ai-financial-intelligence",
-  "ai-sustainability-platform",
   "automated-financial-analytics-platform",
-  "entertainment-media-solutions",
   "industry-solutions",
-  "intelligent-project-management-suite",
-  "leadership",
-  "real-estate-technology-solutions",
-  "services/ai-evaluation-orchestrator",
-  "services/it-asset-discovery-agent",
-  "services/managed-postgres-ha",
-  "transportation-logistics-solutions"
+  "intelligent-project-management-suite"
 ]
