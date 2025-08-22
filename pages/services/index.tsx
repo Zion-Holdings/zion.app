@@ -46,6 +46,7 @@ import { real2027Q3Additions } from '../../data/real-2027-q3-additions';
 import { professionalServices } from '../../data/professional-services';
 import { real2032ServiceExpansions } from '../../data/real-2032-service-expansions';
 import { real2035Q1Additions } from '../../data/real-2035-q1-additions';
+import { realMarketServicesBatchQ4B2025 } from '../../data/real-market-services-batch-q4b-2025';
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -84,6 +85,7 @@ export default function ServicesIndexPage() {
       realServicesQ32025 as unknown[],
       realQ4Services2025 as unknown[],
       real2025Q4Additions as unknown[],
+      realMarketServicesBatchQ4B2025 as unknown[],
       real2026Q1Additions as unknown[],
       added2026Q2Services as unknown[],
       real2026Q3Additions as unknown[],
