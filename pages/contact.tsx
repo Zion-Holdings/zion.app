@@ -1,31 +1,96 @@
-import React from 'react';
-import Head from 'next/head';
+import React, { useState } from 'react';
+import SEO from '../components/SEO';
 
 export default function ContactPage() {
+	const [status, setStatus] = useState<'idle' | 'submitting' | 'error'>('idle');
+
+	const pageTitle = 'Contact Zion Tech Group — Talk to Our Team';
+	const pageDescription = 'Get in touch with Zion Tech Group for demos, pricing, or partnership inquiries.';
+
 	return (
-		<div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8">
-			<Head>
-				<title>Contact | Zion Tech Group</title>
-				<link rel="canonical" href="https://ziontechgroup.com/contact" />
-				<meta name="description" content="Contact Zion Tech Group: +1 302 464 0950, kleber@ziontechgroup.com, 364 E Main St STE 1008 Middletown DE 19709" />
-			</Head>
-			<div className="max-w-4xl mx-auto space-y-8">
-				<h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Get in touch</h1>
-				<div className="grid md:grid-cols-2 gap-6">
-					<div className="bg-black/30 rounded-2xl border border-cyan-500/30 p-6 space-y-3">
-						<div className="text-slate-300">Phone</div>
-						<a className="text-cyan-400 underline" href="tel:+13024640950">+1 302 464 0950</a>
-					</div>
-					<div className="bg-black/30 rounded-2xl border border-purple-500/30 p-6 space-y-3">
-						<div className="text-slate-300">Email</div>
-						<a className="text-cyan-400 underline" href="mailto:kleber@ziontechgroup.com">kleber@ziontechgroup.com</a>
-					</div>
-					<div className="bg-black/30 rounded-2xl border border-pink-500/30 p-6 md:col-span-2 space-y-3">
-						<div className="text-slate-300">Address</div>
-						<div className="text-slate-200">364 E Main St STE 1008 Middletown DE 19709</div>
-					</div>
+		<>
+			<SEO title={pageTitle} description={pageDescription} canonical="/contact" />
+			<section className="relative pt-28 pb-16 md:pt-36 md:pb-24">
+				<div className="container mx-auto px-4 max-w-3xl">
+					<h1 className="text-3xl md:text-5xl font-extrabold tracking-tight gradient-text-cyan-purple">Contact Us</h1>
+					<p className="mt-4 text-gray-300">We typically respond within one business day.</p>
+
+					<form
+						name="contact"
+						method="POST"
+						data-netlify="true"
+						data-netlify-honeypot="bot-field"
+						action="/thank-you/"
+						className="mt-10 grid grid-cols-1 gap-6 p-6 rounded-lg bg-white/5 backdrop-blur animated-border"
+						onSubmit={() => setStatus('submitting')}
+					>
+						<input type="hidden" name="form-name" value="contact" />
+						<p className="hidden">
+							<label>
+								Don’t fill this out: <input name="bot-field" />
+							</label>
+						</p>
+
+						<div>
+							<label htmlFor="name" className="block text-sm font-medium text-gray-200">Full name</label>
+							<input
+								id="name"
+								name="name"
+								type="text"
+								required
+								className="mt-2 w-full rounded-md bg-black/40 border border-white/10 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+								placeholder="Ada Lovelace"
+							/>
+						</div>
+
+						<div>
+							<label htmlFor="email" className="block text-sm font-medium text-gray-200">Work email</label>
+							<input
+								id="email"
+								name="email"
+								type="email"
+								required
+								className="mt-2 w-full rounded-md bg-black/40 border border-white/10 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+								placeholder="you@company.com"
+							/>
+						</div>
+
+						<div>
+							<label htmlFor="company" className="block text-sm font-medium text-gray-200">Company</label>
+							<input
+								id="company"
+								name="company"
+								type="text"
+								className="mt-2 w-full rounded-md bg-black/40 border border-white/10 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+								placeholder="Zion Tech Group"
+							/>
+						</div>
+
+						<div>
+							<label htmlFor="message" className="block text-sm font-medium text-gray-200">How can we help?</label>
+							<textarea
+								id="message"
+								name="message"
+								rows={6}
+								required
+								className="mt-2 w-full rounded-md bg-black/40 border border-white/10 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+								placeholder="Tell us about your goals, timelines, and constraints."
+							/>
+						</div>
+
+						<div className="flex items-center justify-between gap-4">
+							<p className="text-xs text-gray-400">By submitting, you agree to our <a href="/privacy/" className="text-cyan-400 underline">Privacy Policy</a>.</p>
+							<button
+								type="submit"
+								disabled={status === 'submitting'}
+								className="inline-flex items-center justify-center px-6 py-3 rounded-md bg-white text-black font-semibold hover:bg-gray-200 transition-colors disabled:opacity-60"
+							>
+								{status === 'submitting' ? 'Sending…' : 'Send message'}
+							</button>
+						</div>
+					</form>
 				</div>
-			</div>
-		</div>
+			</section>
+		</>
 	);
 }
