@@ -135,7 +135,8 @@ const sidebarSections = [
       { name: 'Research & Development', href: '/research-development' },
       { name: 'White Papers', href: '/white-papers' },
       { name: 'Performance Reports', href: '/reports' },
-      { name: 'Market Analysis', href: '/market-pricing' }
+      { name: 'Market Analysis', href: '/market-pricing' },
+      { name: 'Services Advertising', href: '/services-advertising' }
     ]
   },
   {
@@ -163,6 +164,8 @@ const quickLinks = [
   { name: 'Home', href: '/', icon: <Home className="w-4 h-4" /> },
   { name: 'All Services', href: '/comprehensive-services-showcase-2025', icon: <Star className="w-4 h-4" /> },
   { name: 'Pricing', href: '/pricing', icon: <DollarSign className="w-4 h-4" /> },
+  { name: 'Market Pricing', href: '/market-pricing', icon: <DollarSign className="w-4 h-4" /> },
+  { name: 'Services Advertising', href: '/services-advertising', icon: <BookOpen className="w-4 h-4" /> },
   { name: 'About Us', href: '/about', icon: <Users className="w-4 h-4" /> },
   { name: 'Contact', href: '/contact', icon: <Mail className="w-4 h-4" /> },
   { name: 'Support', href: '/support', icon: <HelpCircle className="w-4 h-4" /> }

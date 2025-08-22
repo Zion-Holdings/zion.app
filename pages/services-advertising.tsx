@@ -166,6 +166,30 @@ export default function ServicesAdvertisingPage() {
           </section>
 
           <section>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">New in Q4 2025</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { name: 'AI Governance & Control Center', price: '$399/mo', href: '/services/ai-governance-control-center' },
+                { name: 'Cloud Cost Governance Suite', price: '$499/mo', href: '/services/cloud-cost-governance-suite' },
+                { name: 'Customer Feedback Intelligence', price: '$149/mo', href: '/services/customer-feedback-intelligence' },
+                { name: 'API Security Posture Monitor', price: '$299/mo', href: '/services/api-security-posture-monitor' },
+                { name: 'Incident Copilot Automation', price: '$129/mo', href: '/services/incident-copilot-automation' },
+                { name: 'LLM Eval & Regression Lab', price: '$199/mo', href: '/services/llm-eval-and-regression-lab' },
+                { name: 'Managed Feature Flags @ Edge', price: '$79/mo', href: '/services/managed-feature-flags-edge' },
+                { name: 'AI Sales Assistant Outreach', price: '$249/mo', href: '/services/ai-sales-assistant-outreach' },
+                { name: 'SSO & User Lifecycle Hub', price: '$229/mo', href: '/services/sso-and-user-lifecycle-hub' },
+                { name: 'AI Marketing Content Studio', price: '$119/mo', href: '/services/ai-marketing-content-studio' }
+              ].map((o) => (
+                <a key={o.name} href={o.href} className="block p-6 rounded-2xl bg-black/40 border border-gray-700/60 hover:border-cyan-500/40">
+                  <div className="text-sm text-gray-400 mb-1">From</div>
+                  <div className="text-2xl font-bold text-white">{o.price}</div>
+                  <div className="text-gray-200 mt-2">{o.name}</div>
+                </a>
+              ))}
+            </div>
+          </section>
+
+          <section>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Benchmark With Market Pricing</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {pricingRefs.map((group) => (
