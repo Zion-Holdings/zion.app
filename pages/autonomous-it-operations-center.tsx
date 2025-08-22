@@ -1,25 +1,18 @@
-import React from 'react';
 import ServiceLanding from '../components/sections/ServiceLanding';
 
-export default function AutonomousItOperationsCenter() {
-	return (
-		<ServiceLanding
-			title="Autonomous IT Operations Center"
-			description="Self-healing IT operations with AI-powered incident detection, runbook automation, remediation, and SLO governance across hybrid cloud."
-			subtitle="AI-powered, self-healing IT operations"
-			pricePerMonthUSD={1299}
-			implementationWeeks="3-6 weeks"
-			roiNote="Cut MTTR by 50–70% and reduce tickets by 30–40%"
-			features={[
-				"AIOps anomaly detection",
-				"Automated runbooks and remediation",
-				"SLO burn-rate monitoring",
-				"ChatOps and escalation workflows",
-				"Cloud/on-prem integrations",
-				"Compliance and audit trails"
-			]}
-			industries={["Enterprise IT", "SRE/Platform", "Managed Services"]}
-			canonical="https://ziontechgroup.com/autonomous-it-operations-center"
-		/>
-	);
+export default function Page() {
+  return (
+    <ServiceLanding
+      title="Autonomous IT Operations Center"
+      slug="autonomous-it-operations-center"
+      subtitle="Self-optimizing IT operations with AI and automation"
+      description="Automate incident response, change management, and capacity planning with AI-driven runbooks and anomaly detection across infrastructure and apps."
+      features={[ 'Runbook automation', 'Incident summarization', 'Anomaly detection', 'Capacity planning' ]}
+      typicalBudget="$1,000–$10,000/month based on footprint"
+      references={[
+        { name: 'Datadog pricing', href: 'https://www.datadoghq.com/pricing/' },
+        { name: 'PagerDuty pricing', href: 'https://www.pagerduty.com/pricing/' }
+      ]}
+    />
+  );
 }

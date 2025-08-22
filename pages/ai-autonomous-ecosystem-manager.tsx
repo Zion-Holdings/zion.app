@@ -5,6 +5,7 @@ export default function AiAutonomousEcosystemManager() {
 	return (
 		<ServiceLanding
 			title="AI Autonomous Ecosystem Manager"
+			slug="ai-autonomous-ecosystem-manager"
 			description="Coordinate fleets of AI agents and services safely with policy controls, goals, memory, tools, and human-in-the-loop oversight."
 			subtitle="Orchestrate multi-agent systems with safety and control"
 			pricePerMonthUSD={899}

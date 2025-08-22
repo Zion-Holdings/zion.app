@@ -12,6 +12,7 @@ export default function AIAutonomousDecisionEnginePage() {
 			</Head>
 			<ServiceLanding
 				title="AI Autonomous Decision Engine"
+				slug="ai-autonomous-decision-engine"
 				description="Policy-aware autonomous workflows with human-in-the-loop approvals, rollback, and complete audit trails."
 				subtitle="Safely automate complex business decisions"
 				pricePerMonthUSD={1999}

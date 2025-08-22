@@ -1,123 +1,116 @@
 import React from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { CheckCircle, DollarSign, Phone, Mail, ArrowRight } from 'lucide-react';
+import UltraFuturisticBackground from '../ui/UltraFuturisticBackground';
+
+interface ReferenceLink { name: string; href: string }
 
 interface ServiceLandingProps {
-	title: string;
-	slug?: string;
-	description: string;
-	subtitle?: string;
-	pricePerMonthUSD?: number;
-	implementationWeeks?: string;
-	roiNote?: string;
-	features: string[];
-	industries?: string[];
-	ctaHref?: string;
-	canonical?: string;
+  title: string;
+  slug?: string;
+  subtitle?: string;
+  description: string;
+  features?: string[];
+  typicalBudget?: string;
+  references?: ReferenceLink[];
+  // Legacy optional fields used by older pages
+  pricePerMonthUSD?: number;
+  implementationWeeks?: string;
+  roiNote?: string;
+  industries?: string[];
+  ctaHref?: string;
+  canonical?: string;
 }
 
-export default function ServiceLanding(props: ServiceLandingProps) {
-	const {
-		title,
-		slug,
-		description,
-		subtitle,
-		pricePerMonthUSD,
-		implementationWeeks,
-		roiNote,
-		features,
-		industries,
-		ctaHref,
-		canonical
-	} = props;
+export default function ServiceLanding({ title, slug, subtitle, description, features = [], typicalBudget, references = [], pricePerMonthUSD, implementationWeeks, roiNote, industries = [], ctaHref, canonical }: ServiceLandingProps) {
+  const computedCanonical = canonical || (slug ? `https://ziontechgroup.com/${slug.replace(/^\/+/, '')}` : 'https://ziontechgroup.com');
+  return (
+    <UltraFuturisticBackground variant="quantum" intensity="high">
+      <Head>
+        <title>{title} | Zion Tech Group</title>
+        <meta name="description" content={subtitle || description} />
+        <link rel="canonical" href={computedCanonical} />
+        <meta property="og:title" content={`${title} | Zion Tech Group`} />
+        <meta property="og:description" content={subtitle || description} />
+        <meta property="og:url" content={computedCanonical} />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
+      <div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8 text-white">
+        <div className="max-w-5xl mx-auto space-y-8">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-3">{title}</h1>
+            {subtitle && <p className="text-gray-300 text-lg">{subtitle}</p>}
+          </div>
+          <p className="text-gray-300 leading-relaxed">{description}</p>
 
-	const price = typeof pricePerMonthUSD === 'number' ? `$${pricePerMonthUSD.toLocaleString()}/month` : undefined;
-	const contactHref = ctaHref || '/contact';
+          {(pricePerMonthUSD !== undefined || implementationWeeks || roiNote) && (
+            <div className="bg-black/40 border border-gray-700/50 rounded-2xl p-6">
+              <h2 className="text-xl font-semibold mb-3">At a Glance</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-gray-300">
+                {pricePerMonthUSD !== undefined && (
+                  <div>
+                    <div className="text-sm text-gray-400">Starting at</div>
+                    <div className="text-2xl font-bold">${pricePerMonthUSD.toLocaleString()}/month</div>
+                  </div>
+                )}
+                {implementationWeeks && (
+                  <div>
+                    <div className="text-sm text-gray-400">Implementation</div>
+                    <div className="text-lg font-medium">{implementationWeeks}</div>
+                  </div>
+                )}
+                {roiNote && (
+                  <div>
+                    <div className="text-sm text-gray-400">Expected ROI</div>
+                    <div className="text-lg font-medium">{roiNote}</div>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
 
-	return (
-		<>
-			<Head>
-				<title>{title} | Zion Tech Group</title>
-				<meta name="description" content={description} />
-				{canonical ? <link rel="canonical" href={canonical} /> : null}
-			</Head>
-			<section className="relative py-16 lg:py-24">
-				<div className="container mx-auto px-4">
-					<div className="grid lg:grid-cols-3 gap-10">
-						<div className="lg:col-span-2">
-							<motion.h1 initial={{opacity:0,y:8}} whileInView={{opacity:1,y:0}} transition={{duration:.5}} className="text-3xl md:text-5xl font-extrabold text-white mb-4">
-								{title}
-							</motion.h1>
-							{subtitle ? (
-								<p className="text-gray-300 text-lg mb-6">{subtitle}</p>
-							) : null}
-							<p className="text-gray-300 leading-relaxed mb-8">{description}</p>
+          {industries.length > 0 && (
+            <div className="bg-black/40 border border-gray-700/50 rounded-2xl p-6">
+              <h2 className="text-xl font-semibold mb-3">Best For</h2>
+              <div className="flex flex-wrap gap-2">
+                {industries.map((i) => (
+                  <span key={i} className="inline-flex items-center px-3 py-1 rounded-full text-xs bg-white/10 text-gray-300 border border-white/10">{i}</span>
+                ))}
+              </div>
+            </div>
+          )}
 
-							<div className="grid sm:grid-cols-2 gap-4 mb-10">
-								{features.map((feature) => (
-									<div key={feature} className="flex items-start gap-3 p-4 rounded-xl bg-white/5 border border-white/10">
-										<CheckCircle className="w-5 h-5 text-emerald-400 mt-0.5" />
-										<p className="text-gray-200 text-sm">{feature}</p>
-									</div>
-								))}
-							</div>
+          {features.length > 0 && (
+            <div className="bg-black/40 border border-gray-700/50 rounded-2xl p-6">
+              <h2 className="text-xl font-semibold mb-3">Key Features</h2>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-gray-300">
+                {features.map((f) => (
+                  <li key={f} className="list-disc list-inside">{f}</li>
+                ))}
+              </ul>
+            </div>
+          )}
 
-							{industries && industries.length > 0 ? (
-								<div className="mb-10">
-									<h3 className="text-white font-semibold mb-3">Best for</h3>
-									<div className="flex flex-wrap gap-2">
-										{industries.map((i) => (
-											<span key={i} className="inline-flex items-center px-3 py-1 rounded-full text-xs bg-white/10 text-gray-300 border border-white/10">{i}</span>
-										))}
-									</div>
-								</div>
-							) : null}
-						</div>
-
-						<div>
-							<div className="sticky top-28 p-6 rounded-2xl bg-white/5 border border-white/10">
-								<div className="space-y-4">
-									{price ? (
-										<div className="flex items-end gap-2">
-											<span className="text-3xl font-bold text-white">{price.replace('/month','')}</span>
-											<span className="text-gray-400 text-sm">/month</span>
-										</div>
-									) : null}
-									{implementationWeeks || roiNote ? (
-										<div className="text-sm text-gray-400 space-y-1">
-											{implementationWeeks ? <div className="flex items-center gap-2"><ClockIcon /><span>{implementationWeeks}</span></div> : null}
-											{roiNote ? <div className="flex items-center gap-2"><DollarSign className="w-3 h-3" /><span>{roiNote}</span></div> : null}
-										</div>
-									) : null}
-
-									<div className="flex flex-col gap-3 pt-2">
-										<Link href={contactHref} className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold hover:from-cyan-600 hover:to-purple-700 transition-all">
-											<span>Get a Demo</span>
-											<ArrowRight className="w-4 h-4" />
-										</Link>
-										<a href="tel:+13024640950" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white/10 text-white hover:bg-white/20 transition-all">
-											<Phone className="w-4 h-4" />
-											<span>+1 302 464 0950</span>
-										</a>
-										<a href="mailto:kleber@ziontechgroup.com" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white/10 text-white hover:bg-white/20 transition-all">
-											<Mail className="w-4 h-4" />
-											<span>kleber@ziontechgroup.com</span>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-		</>
-	);
-}
-
-function ClockIcon() {
-	return (
-		<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3"><path d="M12 6v6l4 2"></path><circle cx="12" cy="12" r="10"></circle></svg>
-	);
+          {(typicalBudget || references.length > 0) && (
+            <div className="bg-black/40 border border-gray-700/50 rounded-2xl p-6">
+              <h2 className="text-xl font-semibold mb-3">Pricing & References</h2>
+              {typicalBudget && (
+                <div className="text-sm text-gray-400 mb-3">Typical SMB budget: {typicalBudget}</div>
+              )}
+              {references.length > 0 && (
+                <ul className="list-disc list-inside space-y-1 text-cyan-300">
+                  {references.map((r) => (
+                    <li key={r.href}><a className="underline" href={r.href} target="_blank" rel="noopener noreferrer">{r.name}</a></li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          )}
+          <div className="flex flex-col sm:flex-row gap-3">
+            <a href={ctaHref || '/contact'} className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg">Contact Sales</a>
+            <a href="/pricing" className="px-6 py-3 border border-gray-600 text-gray-200 rounded-lg">View Pricing</a>
+          </div>
+        </div>
+      </div>
+    </UltraFuturisticBackground>
+  );
 }

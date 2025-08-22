@@ -12,6 +12,7 @@ export default function FiveGPrivateNetworkPage() {
 			</Head>
 			<ServiceLanding
 				title="5G Private Network Solutions"
+				slug="5g-private-network-solutions"
 				description="Design, deploy, and operate private 5G with secure SIM/eSIM lifecycle, QoS enforcement, MEC integration, and observability."
 				subtitle="Carrier-grade connectivity for campuses and factories"
 				pricePerMonthUSD={7999}
