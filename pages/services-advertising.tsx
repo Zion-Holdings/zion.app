@@ -165,7 +165,7 @@ export default function ServicesAdvertisingPage() {
 					<p className="text-slate-300">Privacy-friendly dashboards with goals and funnels. Cookie-less.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $9–$50/mo</li>
-						<li>References: {ext('https://plausible.io/pricing')}, {ext('https://usefathom.com/pricing')}</li>
+						<li>References: {ext('https://plausible.io/#pricing')}, {ext('https://usefathom.com/pricing')}</li>
 					</ul>
 				</section>
 
@@ -1254,7 +1254,7 @@ export default function ServicesAdvertisingPage() {
 						<p className="text-slate-300">Spin up realistic mocks from OpenAPI/GraphQL with contract tests and golden recordings.</p>
 						<ul className="list-disc list-inside text-slate-300 space-y-1">
 							<li>Typical SMB budget: $19–$129/mo</li>
-							<li>References: {ext('https://stoplight.io/open-source/prism')}, {ext('https://learning.postman.com/docs/designing-and-developing-your-api/mocking-data/overview')}</li>
+							<li>References: {ext('https://stoplight.io/open-source/prism')}, {ext('https://www.postman.com/product/mock-server/')}</li>
 						</ul>
 						<div><a className="text-cyan-400 underline" href="/services/api-contract-mock-sandbox">Learn more</a></div>
 					</section>
@@ -1338,6 +1338,66 @@ export default function ServicesAdvertisingPage() {
 						</ul>
 						<div><a className="text-cyan-400 underline" href="/services/email-dmarc-monitor">Learn more</a></div>
 					</section>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">AI Email Responder Pro</h2>
+					<p className="text-slate-300">Automate inbox triage and replies with brand-safe guardrails and approvals.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $30–$150/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/ai-email-responder-pro">/services/ai-email-responder-pro</a></li>
+						<li>References: https://front.com/pricing, https://www.zendesk.com/pricing/</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Cloud Cost Anomaly Guard</h2>
+					<p className="text-slate-300">Detect spend spikes, attribute drivers, and ship Terraform savings recommendations.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $50–$300/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/cloud-cost-anomaly-guard">/services/cloud-cost-anomaly-guard</a></li>
+						<li>References: https://www.vantage.sh/pricing, https://www.cloudzero.com/pricing</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Serverless Batch Orchestrator</h2>
+					<p className="text-slate-300">Cross-cloud cron at scale with retries, DLQs, notifications, and cost windows.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $20–$120/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/serverless-batch-orchestrator-pro">/services/serverless-batch-orchestrator-pro</a></li>
+						<li>References: https://aws.amazon.com/eventbridge/pricing/, https://cloud.google.com/scheduler/pricing</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Data Contracts Health Monitor</h2>
+					<p className="text-slate-300">Schema diffs, SLA monitors, lineage ownership, and auto ticketing.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $79–$299/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/data-contracts-health-monitor">/services/data-contracts-health-monitor</a></li>
+						<li>References: https://www.datafold.com/pricing, https://www.getmontecarlo.com/pricing</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">License Keys & Usage Metering</h2>
+					<p className="text-slate-300">Provision keys, entitlements, and metered billing with Stripe.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $49–$199/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/license-key-usage-metering">/services/license-key-usage-metering</a></li>
+						<li>References: https://stripe.com/pricing, https://paddle.com/pricing/</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Email DMARC/SPF/DKIM Monitor</h2>
+					<p className="text-slate-300">Fix email auth and safely roll out DMARC policies for deliverability.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $10–$59/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/email-dmarc-monitor">/services/email-dmarc-monitor</a></li>
+						<li>References: https://dmarcian.com/pricing/, https://valimail.com/products/</li>
+					</ul>
 				</section>
 
 				{/* Contact CTA */}
@@ -1427,7 +1487,7 @@ export default function ServicesAdvertisingPage() {
 					<p className="text-slate-300">Improve CWV with safe theme defers/inlines, optimized images, and app impact insights.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $29–$149/mo</li>
-						<li>References: {ext('https://pagespeed.web.dev/')}, {ext('https://shopify.dev/docs/performance/best-practices')}</li>
+						<li>References: {ext('https://pagespeed.web.dev/')}, {ext('https://shopify.dev/docs/storefronts/best-practices/performance')}</li>
 					</ul>
 					<div><a className="text-cyan-400 underline" href="/services/shopify-speed-optimizer">Learn more</a></div>
 				</section>
