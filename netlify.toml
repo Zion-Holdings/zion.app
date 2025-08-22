@@ -6,11 +6,17 @@
 [build.environment]
   NODE_VERSION = "22.18.0"
 
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+# [[plugins]]
+#   package = "@netlify/plugin-nextjs"
 
 [[plugins]]
   package = "netlify-plugin-cloudinary"
+
+[context.branch-deploy.environment]
+  NEXT_PUBLIC_NOINDEX = "true"
+
+[context.deploy-preview.environment]
+  NEXT_PUBLIC_NOINDEX = "true"
 
 [[headers]]
   for = "/_next/*"
