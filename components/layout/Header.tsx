@@ -51,7 +51,9 @@ const Header: React.FC = () => {
         { name: 'Cloud Platform', href: '/cloud-platform' },
         { name: 'AI Assistant', href: '/ai-assistant' },
         { name: 'Analytics', href: '/analytics' },
-        { name: 'Automation', href: '/automation' }
+        { name: 'Automation', href: '/automation' },
+        { name: 'Docs', href: '/docs' },
+        { name: 'Market Pricing', href: '/market-pricing' }
       ]
     },
     { name: 'Pricing', href: '/pricing' },
