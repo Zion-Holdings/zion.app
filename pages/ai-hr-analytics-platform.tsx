@@ -4,21 +4,23 @@ import ServiceLanding from '../components/sections/ServiceLanding';
 export default function AiHrAnalyticsPlatform() {
 	return (
 		<ServiceLanding
-			title="AI HR Analytics Platform"
-			description="Comprehensive HR analytics to analyze employee data, predict turnover, and guide people decisions. Reduce HR costs and improve satisfaction."
-			subtitle="People intelligence with AI"
+			title="AI HR Analytics & People Intelligence Platform"
+			description="Transform HR data into actionable insights with AI-driven analytics. Predict turnover, measure engagement, and make better people decisions."
+			subtitle="Data-driven HR with AI analytics"
 			pricePerMonthUSD={2999}
 			implementationWeeks="3-4 weeks"
-			roiNote="300% ROI via improved retention and reduced costs"
+			roiNote="Organizations report ~3x ROI via improved retention and efficiency"
 			features={[
-				"Turnover prediction",
-				"Engagement analytics",
-				"Performance prediction",
-				"Diversity & inclusion metrics",
-				"Headcount and comp forecasting",
-				"Privacy and governance controls"
+				"Turnover and flight-risk prediction",
+				"Engagement and sentiment analysis",
+				"Diversity, equity, and inclusion dashboards",
+				"Skills mapping and internal mobility",
+				"Workforce forecasting and capacity planning",
+				"Integrations: Workday, BambooHR, Greenhouse, Okta",
+				"Compliance and policy insights",
+				"Executive reporting and drilldowns"
 			]}
-			industries={["Enterprise", "Mid-market", "Healthcare", "Financial Services"]}
+			industries={["Enterprise", "Mid-Market", "HR Consulting"]}
 			canonical="https://ziontechgroup.com/ai-hr-analytics-platform"
 		/>
 	);

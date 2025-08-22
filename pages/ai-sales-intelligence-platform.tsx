@@ -5,20 +5,22 @@ export default function AiSalesIntelligencePlatform() {
 	return (
 		<ServiceLanding
 			title="AI Sales Intelligence Platform"
-			description="Boost sales performance with AI-powered insights, automated research, and personalized outreach. Increase pipeline velocity while reducing manual effort."
-			subtitle="Supercharge sales with AI automation"
+			description="Boost sales performance with AI-powered prospecting, lead scoring, and pipeline insights. Automate research and outreach to increase conversion rates and revenue."
+			subtitle="Supercharge your sales with AI"
 			pricePerMonthUSD={249}
-			implementationWeeks="1-2 weeks"
-			roiNote="Teams report 2-5x reply rates and 300% ROI in 90 days"
+			implementationWeeks="1-2 hours"
+			roiNote="Teams report up to 5x ROI from productivity and win-rate gains"
 			features={[
-				"Automated prospect research and account insights",
-				"Persona-aware sequence generation",
-				"Deliverability checks and send-window optimization",
-				"CRM sync and engagement analytics",
-				"Lead scoring and qualification",
-				"Multi-channel (email + LinkedIn) orchestration"
+				"Automated prospect research and enrichment",
+				"AI lead scoring and intent signals",
+				"Email and LinkedIn sequencing with personalization",
+				"Meeting summaries and next-step extraction",
+				"Pipeline risk alerts and forecast improvements",
+				"CRM sync (Salesforce, HubSpot, Pipedrive)",
+				"Competitor intelligence and objection handling",
+				"Account-based insights and territory planning"
 			]}
-			industries={["SaaS", "B2B", "Agencies", "Professional Services"]}
+			industries={["B2B SaaS", "Professional Services", "Manufacturing", "Financial Services"]}
 			canonical="https://ziontechgroup.com/ai-sales-intelligence-platform"
 		/>
 	);

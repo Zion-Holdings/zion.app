@@ -5,20 +5,22 @@ export default function AiCustomerServicePlatform() {
 	return (
 		<ServiceLanding
 			title="AI-Powered Customer Service Platform"
-			description="Resolve tickets faster with AI triage, suggested replies, and knowledge-grounded answers. Reduce handle time and improve CSAT across channels."
+			description="Deliver instant, accurate support with AI chat, ticket triage, and automated resolutions. Reduce response times and support costs while improving CSAT."
 			subtitle="Intelligent customer service with AI automation"
 			pricePerMonthUSD={199}
 			implementationWeeks="2-4 hours"
-			roiNote="Organizations report 300%+ ROI via reduced costs and improved satisfaction"
+			roiNote="Organizations report ~3x ROI via deflection and faster resolutions"
 			features={[
-				"Smart routing and triage",
-				"Suggested replies and macro generation",
-				"Knowledge-grounded answers (RAG)",
-				"Escalation, analytics, and CSAT",
-				"Email, chat, and helpdesk integrations",
-				"Human handoff with full context"
+				"AI chatbots with retrieval-augmented answers",
+				"Ticket classification, routing, and summarization",
+				"Auto-drafting of replies and macros",
+				"Multilingual support and tone control",
+				"Help center content generation and refresh",
+				"Integrations: Zendesk, Freshdesk, Intercom, Salesforce",
+				"Voice IVR handoff and call summarization",
+				"Workflow analytics and CSAT tracking"
 			]}
-			industries={["Support", "Success", "E-commerce", "SaaS"]}
+			industries={["E-commerce", "SaaS", "Telecom", "Financial Services"]}
 			canonical="https://ziontechgroup.com/ai-customer-service-platform"
 		/>
 	);
