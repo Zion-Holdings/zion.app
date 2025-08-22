@@ -13,12 +13,14 @@ import { enterpriseITSolutions } from '../data/2034-enterprise-it-solutions';
 import { innovativeMicroSaasSolutions } from '../data/2034-innovative-micro-saas-solutions';
 import { cuttingEdgeAIServices } from '../data/2034-cutting-edge-ai-services';
 
-// Import existing service data
-import { realMicroSaasServices2025 } from '../data/2025-real-micro-saas-services';
-import { innovativeAIServices2025 } from '../data/2025-innovative-ai-services';
-import { innovativeITServices2025 } from '../data/2025-innovative-it-services';
-import { emergingTechServices2025 } from '../data/2025-emerging-tech-services';
-import { newRealServices2026 } from '../data/2025-2026-new-real-services';
+// Import existing service data (fixed to available modules)
+import { realMicroSaasServices } from '../data/real-micro-saas-services';
+import { innovative2025Services } from '../data/innovative-2025-services';
+import { enterpriseITServices } from '../data/enterprise-it-services';
+import { emergingTechServices } from '../data/emerging-tech-services';
+import { newRealServices } from '../data/new-real-services';
+import { additionalLiveServices2025 } from '../data/additional-live-services-2025';
+import { additionalLiveServices2025Q4 } from '../data/additional-live-services-2025-q4';
 
 // Helper function to get service category
 const getServiceCategory = (service: any) => {
@@ -30,7 +32,7 @@ const getServiceCategory = (service: any) => {
 // Helper function to get service pricing
 const getServicePricing = (service: any) => {
   if (service.pricing?.starter) return service.pricing.starter;
-  if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
+  if (typeof service.price === 'string') return `${service.price}${service.period || ''}`;
   if (service.price?.monthly) return `$${service.price.monthly}/month`;
   return 'Contact for pricing';
 };
@@ -54,11 +56,13 @@ const allServices = [
   ...enterpriseITSolutions,
   ...innovativeMicroSaasSolutions,
   ...cuttingEdgeAIServices,
-  ...realMicroSaasServices2025,
-  ...innovativeAIServices2025,
-  ...innovativeITServices2025,
-  ...emergingTechServices2025,
-  ...newRealServices2026
+  ...realMicroSaasServices,
+  ...innovative2025Services,
+  ...enterpriseITServices,
+  ...emergingTechServices,
+  ...newRealServices,
+  ...additionalLiveServices2025,
+  ...additionalLiveServices2025Q4
 ];
 
 const categories = [

@@ -24,6 +24,8 @@ export type AdditionalService = {
   competitors?: string[];
   marketSize?: string;
   growthRate?: string;
+  rating?: number;
+  launchDate?: string;
 };
 
 export const additionalLiveServices2025: AdditionalService[] = [
