@@ -480,6 +480,42 @@ export default function ServicesAdvertisingPage() {
 						<li>References: {ext('https://aws.amazon.com/systems-manager/pricing/')}, {ext('https://www.okta.com/pricing/')}, {ext('https://workspace.google.com/pricing')}</li>
 					</ul>
 				</section>
+
+				<section id="ai-synthetic-data-studio" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">AI Synthetic Data Studio</h2>
+					<p className="text-slate-300">Generate privacy-safe datasets for ML with controllable distributions and differential privacy.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $100–$500/mo</li>
+						<li>References: {ext('https://gretel.ai/pricing')}, {ext('https://mostly.ai/pricing')}</li>
+					</ul>
+				</section>
+
+				<section id="zero-trust-sso-mesh" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Zero-Trust SSO Mesh</h2>
+					<p className="text-slate-300">Layer device posture and risk-based access on top of your IdP for continuous verification.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $100–$800/mo</li>
+						<li>References: {ext('https://www.cloudflare.com/products/zero-trust/pricing/')}, {ext('https://www.zscaler.com/products/zero-trust-exchange')}</li>
+					</ul>
+				</section>
+
+				<section id="etl-reliability-copilot" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">ETL Reliability Copilot</h2>
+					<p className="text-slate-300">Freshness forecasts, schema drift detection, and anomaly alerts for warehouses and lakes.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $100–$400/mo</li>
+						<li>References: {ext('https://www.montecarlodata.com/')}, {ext('https://www.bigeye.com/pricing')}, {ext('https://soda.io/')}</li>
+					</ul>
+				</section>
+
+				<section id="edge-personalization-kit" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Edge Personalization Kit</h2>
+					<p className="text-slate-300">Geo, device, and audience-targeted content rules at the CDN edge with experiments.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $30–$150/mo</li>
+						<li>References: {ext('https://vercel.com/pricing')}, {ext('https://www.cloudflare.com/plans/')}</li>
+					</ul>
+				</section>
 			</div>
 		</div>
 	);
