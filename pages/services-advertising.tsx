@@ -40,6 +40,7 @@ export default function ServicesAdvertisingPage() {
 						<li>Typical SMB budget: $50–$1,000/mo</li>
 						<li>References: {ext('https://www.pinecone.io/pricing/')}, {ext('https://weaviate.io/pricing')}, {ext('https://www.elastic.co/pricing')}</li>
 					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/vector-search-starter">Open detail page</a></div>
 				</section>
 
 				<section id="managed-postgres-ha" className="space-y-6">
@@ -70,13 +71,14 @@ export default function ServicesAdvertisingPage() {
 				</section>
 				
 				{/* New additions */}
-				<section className="space-y-6">
+				<section id="status-pages-slo" className="space-y-6">
 					<h2 className="text-2xl font-semibold text-white">Status Page & SLO Monitor</h2>
 					<p className="text-slate-300">Public status pages, incident comms, and SLO/error budget tracking.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $20–$200/mo</li>
 						<li>References: {ext('https://www.atlassian.com/software/statuspage/pricing')}, {ext('https://www.checklyhq.com/pricing/')}</li>
 					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/status-pages-slo">Open detail page</a></div>
 				</section>
 
 				<section className="space-y-6">
@@ -131,6 +133,7 @@ export default function ServicesAdvertisingPage() {
 						<li>Typical SMB budget: $50–$500/mo</li>
 						<li>References: {ext('https://vercel.com/pricing')}, {ext('https://www.cloudflare.com/plans/')}</li>
 					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/feature-flags-edge">Open detail page</a></div>
 				</section>
 
 				<section className="space-y-6">
@@ -250,6 +253,7 @@ export default function ServicesAdvertisingPage() {
 						<li>Typical SMB budget: $30–$100/mo</li>
 						<li>References: {ext('https://www.surferseo.com/pricing/')}, {ext('https://www.semrush.com/prices/')}</li>
 					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/ai-seo-optimizer-pro">Open detail page</a></div>
 				</section>
 
 				<section className="space-y-6">
@@ -484,6 +488,7 @@ export default function ServicesAdvertisingPage() {
 						<li>Typical SMB budget: $50–$150/mo</li>
 						<li>References: {ext('https://aws.amazon.com/systems-manager/pricing/')}, {ext('https://www.okta.com/pricing/')}, {ext('https://workspace.google.com/pricing')}</li>
 					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/it-asset-discovery-agent">Open detail page</a></div>
 				</section>
 
 				<section id="ai-meeting-notes" className="space-y-6">
@@ -503,7 +508,7 @@ export default function ServicesAdvertisingPage() {
 						<li>Typical SMB budget: $50–$300/mo</li>
 						<li>References: {ext('https://www.onetrust.com/platform/privacy-management/')}, {ext('https://transcend.io/pricing')}</li>
 					</ul>
-					<div><a className="text-cyan-400 underline" href="/privacy-request-portal">Learn more</a></div>
+					<div><a className="text-cyan-400 underline" href="/services/privacy-request-portal">Open detail page</a></div>
 				</section>
 
 				<section id="accessibility-scanner" className="space-y-6">
@@ -523,7 +528,7 @@ export default function ServicesAdvertisingPage() {
 						<li>Typical SMB budget: $5–$50/mo + bandwidth</li>
 						<li>References: {ext('https://www.imgix.com/pricing')}, {ext('https://cloudinary.com/pricing')}</li>
 					</ul>
-					<div><a className="text-cyan-400 underline" href="/image-optimizer-cdn">Learn more</a></div>
+					<div><a className="text-cyan-400 underline" href="/services/image-optimizer-cdn">Open detail page</a></div>
 				</section>
 
 				<section id="mlops-starter" className="space-y-6">
@@ -533,7 +538,7 @@ export default function ServicesAdvertisingPage() {
 						<li>Typical SMB budget: $99–$500/mo</li>
 						<li>References: {ext('https://mlflow.org/')}, {ext('https://www.kubeflow.org/')}, {ext('https://www.databricks.com/product/mlops')}</li>
 					</ul>
-					<div><a className="text-cyan-400 underline" href="/mlops-starter">Learn more</a></div>
+					<div><a className="text-cyan-400 underline" href="/services/mlops-starter">Open detail page</a></div>
 				</section>
 
 				<section id="warehouse-accelerator" className="space-y-6">

@@ -14,6 +14,9 @@ import { innovativeMicroSaasSolutions } from '../data/2034-innovative-micro-saas
 import { cuttingEdgeAIServices } from '../data/2034-cutting-edge-ai-services';
 import { real2025Q4AugmentedBatch } from '../data/real-2025-q4-augmented-batch';
 import { real2029Q3Additions } from '../data/real-2029-q3-additions';
+import { additionalEnhancedServices } from '../data/additional-real-services';
+import { added2026Q2Services } from '../data/added-2026-q2-services';
+import { useRouter } from 'next/router';
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -38,6 +41,7 @@ const getServicePricing = (service: any) => {
   if (service.pricing?.starter) return service.pricing.starter;
   if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
   if (service.price?.monthly) return `$${service.price.monthly}/month`;
+  if (typeof service.price === 'string') return `${service.price}${service.period || ''}`;
   return 'Contact for pricing';
 };
 
@@ -70,7 +74,9 @@ const allServices = [
   ...marketValidatedServices,
   ...industryRealServices,
   ...real2025Q4AugmentedBatch,
-  ...real2029Q3Additions
+  ...real2029Q3Additions,
+  ...additionalEnhancedServices,
+  ...added2026Q2Services
 ];
 
 const categories = [
@@ -156,6 +162,7 @@ const sortOptions = [
 ];
 
 export default function Services() {
+  const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [sortBy, setSortBy] = useState('name');
@@ -209,6 +216,14 @@ export default function Services() {
   React.useEffect(() => {
     setCurrentPage(1);
   }, [searchQuery, selectedCategory, sortBy]);
+
+  React.useEffect(() => {
+    const qp = typeof router.query.category === 'string' ? router.query.category : '';
+    if (qp) {
+      const match = categories.find((c) => c.name.toLowerCase() === qp.toLowerCase());
+      if (match) setSelectedCategory(match.id);
+    }
+  }, [router.query.category]);
 
   const getCategoryIcon = (category: string) => {
     switch (category.toLowerCase()) {

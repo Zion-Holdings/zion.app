@@ -1,39 +1,21 @@
-import React, { useRef } from 'react';
 import type { AppProps } from 'next/app';
 import '../styles/globals.css';
-import Layout from '../components/layout/Layout';
-import Analytics from '../components/Analytics';
-import { SEOContext } from '../components/SEOContext';
-import SEO from '../components/SEO';
-import { Inter } from 'next/font/google';
+import dynamic from 'next/dynamic';
 
-const inter = Inter({ subsets: ['latin'], display: 'swap' });
-
-function DefaultSEO() {
-	const renderedRef = useRef(false);
-	return (
-		<SEOContext.Consumer>
-			{(ctx) => {
-				const alreadyRendered = ctx?.renderedRef?.current;
-				if (alreadyRendered) return null;
-				if (!renderedRef.current) renderedRef.current = true;
-				return <SEO />;
-			}}
-		</SEOContext.Consumer>
-	);
-}
+const Navbar = dynamic(() => import('../components/layout/QuantumHolographicNavbar'), { ssr: false });
+const Footer = dynamic(() => import('../components/layout/Footer'));
+const SidebarQuickLinks = dynamic(() => import('../components/layout/SidebarQuickLinks'), { ssr: false });
 
 export default function App({ Component, pageProps }: AppProps) {
-	const renderedRef = useRef(false);
 	return (
-		<SEOContext.Provider value={{ renderedRef }}>
-			<Analytics />
-			<DefaultSEO />
-			<div className={inter.className}>
-				<Layout>
-					<Component {...pageProps} />
-				</Layout>
-			</div>
-		</SEOContext.Provider>
+		<div className="min-h-screen bg-black text-white">
+			<a href="#main" className="skip-link">Skip to content</a>
+			<Navbar />
+			<SidebarQuickLinks />
+			<main id="main" className="pt-20">
+				<Component {...pageProps} />
+			</main>
+			<Footer />
+		</div>
 	);
 }
