@@ -117,6 +117,8 @@ export default function SEO({ title, description, canonical, ogImage, image, noI
 			<meta name="description" content={pageDescription} />
 			<meta name="robots" content={robotsContent} />
 			<link rel="canonical" href={canonicalUrl} />
+			<link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
+			<link rel="alternate" hrefLang="en" href={canonicalUrl} />
 			{/* Optional sitemap link for crawlers */}
 			<link rel="sitemap" type="application/xml" href={`${baseUrl.replace(/\/$/, '')}/sitemap.xml`} />
 			<meta property="og:title" content={pageTitle} />
@@ -126,6 +128,7 @@ export default function SEO({ title, description, canonical, ogImage, image, noI
 			<meta property="og:site_name" content="Zion Tech Group" />
 			<meta property="og:locale" content="en_US" />
 			<meta property="og:image" content={imageUrl} />
+			<meta property="og:image:secure_url" content={imageUrl} />
 			<meta property="og:image:alt" content={imageAlt} />
 			<meta property="og:image:width" content="1200" />
 			<meta property="og:image:height" content="630" />
