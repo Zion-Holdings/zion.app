@@ -6,8 +6,9 @@
   "intelligent-project-management-suite",
   "leadership",
   "real-estate-technology-solutions",
-  "services/ai-evaluation-orchestrator",
-  "services/it-asset-discovery-agent",
-  "services/managed-postgres-ha",
+  "services/ai-knowledge-graph-studio",
+  "services/data-contracts-hub",
+  "services/llm-guarded-api-gateway",
+  "services/serverless-lakehouse-starter",
   "transportation-logistics-solutions"
 ]
