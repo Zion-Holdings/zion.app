@@ -86,6 +86,17 @@ const navigationItems: NavigationItem[] = [
       { name: 'Autonomous Vehicles', href: '/autonomous-vehicles', description: 'Self-driving systems' },
       { name: 'Blockchain', href: '/blockchain', description: 'Decentralized solutions' }
     ]
+  },
+  {
+    name: 'Services',
+    href: '/services',
+    icon: <Globe className="w-5 h-5" />,
+    description: 'All offerings and benchmarks',
+    children: [
+      { name: 'All Services', href: '/services', description: 'Browse all offerings' },
+      { name: 'Services Advertising', href: '/services-advertising', description: 'Features and benefits' },
+      { name: 'Market Pricing', href: '/market-pricing', description: 'Vendor-verified prices' }
+    ]
   }
 ];
 

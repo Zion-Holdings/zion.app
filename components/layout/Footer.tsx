@@ -67,7 +67,10 @@ const Footer: React.FC = () => {
     { name: 'Case Studies', href: '/case-studies' },
     { name: 'Contact', href: '/contact' },
     { name: 'Pricing', href: '/pricing' },
-    { name: 'About', href: '/about' }
+    { name: 'About', href: '/about' },
+    { name: 'All Services', href: '/services' },
+    { name: 'Services Advertising', href: '/services-advertising' },
+    { name: 'Market Pricing', href: '/market-pricing' }
   ];
 
   const socialLinks = [
