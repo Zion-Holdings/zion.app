@@ -31,7 +31,7 @@ export default function RAGEvaluationLabPage() {
 						))}
 					</div>
 
-					<div className="mt-12 flex flex-col sm:flex-row gap-4">
+					<div className="mt-12 flex flex-col sm-flex-row gap-4">
 						<Link href="/contact" className="inline-flex items-center justify-center px-6 py-3 rounded-md bg-white text-black font-semibold hover:bg-gray-200 transition-colors">Contact Sales</Link>
 						<Link href="/services" className="inline-flex items-center justify-center px-6 py-3 rounded-md border border-white/30 text-white font-semibold hover:bg-white/10 transition-colors">Explore Services</Link>
 					</div>

@@ -31,6 +31,18 @@ const contactInfo = {
   website: 'https://ziontechgroup.com'
 };
 
+function normalizeHref(href: string): string {
+  if (!href) return href;
+  if (href.startsWith('http://') || href.startsWith('https://') || href.startsWith('mailto:') || href.startsWith('tel:')) {
+    return href;
+  }
+  if (!href.startsWith('/')) return href;
+  const hasQueryOrHash = href.includes('?') || href.includes('#');
+  if (hasQueryOrHash) return href;
+  return href.endsWith('/') ? href : href + '/';
+}
+
+
 const navigationItems: NavigationItem[] = [
   {
     name: 'Pricing',
@@ -359,15 +371,15 @@ const UltraFuturisticNavigation2035: React.FC = () => {
                           <div className="space-y-2">
                             {item.children?.map((child) => (
                               <Link
-                                key={child.name}
-                                href={child.href}
-                                className={`flex items-center gap-3 p-3 rounded-xl transition-all duration-200 ${
-                                  child.featured 
-                                    ? 'bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 text-cyan-400 hover:bg-cyan-500/20' 
-                                    : 'text-gray-300 hover:text-white hover:bg-gray-800/50'
-                                }`}
-                                onClick={closeDropdowns}
-                              >
+                              key={child.name}
+                              href={normalizeHref(child.href)}
+                              className={`flex items-center gap-3 p-3 rounded-xl transition-all duration-200 ${
+                                child.featured 
+                                  ? 'bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 text-cyan-400 hover:bg-cyan-500/20' 
+                                  : 'text-gray-300 hover:text-white hover:bg-gray-800/50'
+                              }`}
+                              onClick={closeDropdowns}
+                            >
                                 {child.featured && <Star className="w-4 h-4 text-cyan-400" />}
                                 <div className="flex-1">
                                   <div className="font-medium">{child.name}</div>
@@ -393,15 +405,15 @@ const UltraFuturisticNavigation2035: React.FC = () => {
               <div className="flex items-center gap-2" role="navigation" aria-label="Quick actions">
                 {quickActions.map((action) => (
                   <Link
-                    key={action.name}
-                    href={action.href}
-                    className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
-                      action.primary
-                        ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white hover:from-cyan-600 hover:to-blue-600 shadow-lg shadow-cyan-500/25'
-                        : 'text-gray-300 hover:text-white hover:bg-gray-800/50'
-                    }`}
-                    aria-label={action.name}
-                  >
+                  key={action.name}
+                  href={normalizeHref(action.href)}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
+                    action.primary
+                      ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white hover:from-cyan-600 hover:to-blue-600 shadow-lg shadow-cyan-500/25'
+                      : 'text-gray-300 hover:text-white hover:bg-gray-800/50'
+                  }`}
+                  aria-label={action.name}
+                >
                     {action.icon}
                     <span>{action.name}</span>
                   </Link>
@@ -483,7 +495,7 @@ const UltraFuturisticNavigation2035: React.FC = () => {
                             {item.children?.map((child) => (
                               <Link
                                 key={child.name}
-                                href={child.href}
+                                href={normalizeHref(child.href)}
                                 className={`block p-3 rounded-lg transition-colors duration-200 ${
                                   child.featured 
                                     ? 'bg-gradient-to-r from-cyan-500/10 to-blue-500/10 text-cyan-400' 
@@ -509,7 +521,7 @@ const UltraFuturisticNavigation2035: React.FC = () => {
                       {quickActions.map((action) => (
                         <Link
                           key={action.name}
-                          href={action.href}
+                          href={normalizeHref(action.href)}
                           className={`flex items-center gap-3 p-3 rounded-xl text-sm font-medium transition-all duration-200 ${
                             action.primary
                               ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white'
