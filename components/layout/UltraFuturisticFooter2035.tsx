@@ -17,17 +17,6 @@ const contactInfo = {
   website: 'https://ziontechgroup.com'
 };
 
-function normalizeHref(href: string): string {
-  if (!href) return href;
-  if (href.startsWith('http://') || href.startsWith('https://') || href.startsWith('mailto:') || href.startsWith('tel:')) {
-    return href;
-  }
-  if (!href.startsWith('/')) return href;
-  const hasQueryOrHash = href.includes('?') || href.includes('#');
-  if (hasQueryOrHash) return href;
-  return href.endsWith('/') ? href : href + '/';
-}
-
 const footerSections = [
   {
     title: 'Featured Services',
@@ -78,7 +67,7 @@ const footerSections = [
       { name: 'Quantum Internet Security', href: '/quantum-internet-security-platform' },
       { name: 'Quantum-Secure Cloud Infrastructure', href: '/quantum-secure-cloud-infrastructure' },
       { name: 'Quantum Financial Trading Platform', href: '/quantum-financial-trading' },
-      { name: 'AI-Powered Space Technology', href: '/space-technology-ai-platform' },
+      { name: 'AI-Powered Space Technology', href: '/ai-powered-space-technology' },
       { name: 'Brain-Computer Interface', href: '/brain-computer-interface-platform' },
       { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery-platform' },
       { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai-platform' },
@@ -139,8 +128,6 @@ const footerSections = [
     links: [
       { name: 'Blog', href: '/blog' },
       { name: 'Case Studies', href: '/case-studies' },
-      { name: 'Events', href: '/events' },
-      { name: 'Webinars', href: '/webinars' },
       { name: 'Support Center', href: '/support' },
       { name: 'Training & Certification', href: '/training' },
       { name: 'Market Pricing', href: '/market-pricing' },
@@ -155,12 +142,12 @@ const footerSections = [
 ];
 
 const socialLinks = [
-  { name: 'X', href: '/social/twitter/', icon: <Twitter className="w-5 h-5" /> },
-  { name: 'LinkedIn', href: '/social/linkedin/', icon: <Linkedin className="w-5 h-5" /> },
-  { name: 'Facebook', href: 'https://www.facebook.com/ziontechgroup', icon: <Facebook className="w-5 h-5" /> },
-  { name: 'Instagram', href: 'https://www.instagram.com/ziontechgroup', icon: <Instagram className="w-5 h-5" /> },
-  { name: 'YouTube', href: 'https://www.youtube.com/@ziontechgroup', icon: <Youtube className="w-5 h-5" /> },
-  { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: <Github className="w-5 h-5" /> }
+  { name: 'Twitter', href: '/social/twitter', icon: <Twitter className="w-5 h-5" /> },
+  { name: 'LinkedIn', href: '/social/linkedin', icon: <Linkedin className="w-5 h-5" /> },
+  { name: 'Facebook', href: '/social/facebook', icon: <Facebook className="w-5 h-5" /> },
+  { name: 'Instagram', href: '/social/instagram', icon: <Instagram className="w-5 h-5" /> },
+  { name: 'YouTube', href: '/social/youtube', icon: <Youtube className="w-5 h-5" /> },
+  { name: 'GitHub', href: '/social/github', icon: <Github className="w-5 h-5" /> }
 ];
 
 const UltraFuturisticFooter2035: React.FC = () => {
@@ -272,7 +259,7 @@ const UltraFuturisticFooter2035: React.FC = () => {
                   {section.links.map((link) => (
                     <li key={link.name}>
                       <Link
-                        href={normalizeHref(link.href)}
+                        href={link.href}
                         className={`text-sm transition-colors duration-200 ${
                           link.featured 
                             ? 'text-cyan-400 hover:text-cyan-300' 
