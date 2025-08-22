@@ -4,6 +4,9 @@ import Link from 'next/link';
 import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shield, Mail, MapPin, Rocket, Brain, Sparkles, Atom, Dna, Users, Globe, Cpu, Target, Microscope, Lock, Cloud, BarChart3, Settings, Eye, Award, Clock, Heart, Lightbulb, Target as TargetIcon, Zap as ZapIcon, Shield as ShieldIcon, Globe as GlobeIcon } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
+import { ultimateFuturisticMicroSaasServices2025 } from '../data/2025-ultimate-futuristic-micro-saas';
+import { ultimateFuturisticITServices2025 } from '../data/2025-ultimate-futuristic-it-services';
+import { ultimateFuturisticAIServices2025 } from '../data/2025-ultimate-futuristic-ai-services';
 import { innovativeRealMicroSaasServices2025 } from '../data/2025-innovative-real-micro-saas-services';
 import { innovativeAIServicesEnhanced2025 } from '../data/2025-innovative-ai-services-enhanced';
 import { innovativeITServicesEnhanced2025 } from '../data/2025-innovative-it-services-enhanced';
@@ -36,40 +39,59 @@ const stats = [
 
 const serviceCategories = [
   {
+    title: 'Ultimate 2025 Services',
+    description: 'The most advanced and revolutionary technology services ever created',
+    services: [...ultimateFuturisticAIServices2025.slice(0, 2), ...ultimateFuturisticMicroSaasServices2025.slice(0, 1)],
+    icon: Sparkles,
+    color: 'from-cyan-500 via-purple-500 to-pink-500',
+    href: '/ultimate-2025-futuristic-services-showcase',
+    features: ['AI Consciousness', 'Quantum Computing', 'Autonomous Systems'],
+    badge: 'NEW'
+  },
+  {
     title: 'AI & Consciousness',
     description: 'Revolutionary AI platforms with consciousness and emotional intelligence',
-    services: innovativeAIServicesEnhanced2025.slice(0, 3),
+    services: ultimateFuturisticAIServices2025.slice(0, 3),
     icon: Brain,
     color: 'from-violet-500 to-purple-600',
-    href: '/ai-services',
+    href: '/ultimate-2025-futuristic-services-showcase',
     features: ['Emotional Intelligence', 'Self-Awareness', 'Consciousness Evolution']
   },
   {
     title: 'Quantum & Emerging Tech',
     description: 'Breakthrough quantum computing and space technology solutions',
-    services: emergingTechServicesEnhanced2025.slice(0, 3),
+    services: [...ultimateFuturisticITServices2025.filter(s => s.name.toLowerCase().includes('quantum')).slice(0, 2), ...emergingTechServicesEnhanced2025.slice(0, 1)],
     icon: Atom,
     color: 'from-indigo-500 to-blue-600',
-    href: '/quantum-services',
+    href: '/ultimate-2025-futuristic-services-showcase',
     features: ['Quantum Computing', 'Space Mining', 'Brain-Computer Interface']
   },
   {
-    title: 'Enterprise IT',
+    title: 'Enterprise IT & Security',
     description: 'Advanced enterprise infrastructure and security solutions',
-    services: innovativeITServicesEnhanced2025.slice(0, 3),
+    services: ultimateFuturisticITServices2025.slice(0, 3),
     icon: Shield,
     color: 'from-blue-500 to-cyan-600',
-    href: '/enterprise-it',
+    href: '/ultimate-2025-futuristic-services-showcase',
     features: ['Zero Trust Security', 'Quantum Cloud', 'Autonomous Operations']
   },
   {
-    title: 'Micro SAAS',
+    title: 'Micro SAAS Solutions',
     description: 'Innovative business solutions for modern enterprises',
-    services: innovativeRealMicroSaasServices2025.slice(0, 3),
+    services: ultimateFuturisticMicroSaasServices2025.slice(0, 3),
     icon: Rocket,
     color: 'from-teal-500 to-emerald-600',
-    href: '/micro-saas',
+    href: '/ultimate-2025-futuristic-services-showcase',
     features: ['Content Automation', 'CRM Intelligence', 'Decision Engine']
+  },
+  {
+    title: 'Autonomous Systems',
+    description: 'Fully autonomous AI and IT systems that run themselves',
+    services: [...ultimateFuturisticAIServices2025.filter(s => s.name.toLowerCase().includes('autonomous')).slice(0, 2), ...ultimateFuturisticITServices2025.filter(s => s.name.toLowerCase().includes('autonomous')).slice(0, 1)],
+    icon: Cpu,
+    color: 'from-orange-500 to-red-600',
+    href: '/ultimate-2025-futuristic-services-showcase',
+    features: ['Autonomous Operations', 'Self-Healing Systems', 'Zero-Touch Management']
   },
   {
     title: 'Advanced AI Automation',
@@ -359,9 +381,16 @@ export default function Home() {
                     
                     {/* Category Info */}
                     <div className="space-y-4">
-                      <h3 className="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors duration-200">
-                        {category.title}
-                      </h3>
+                      <div className="flex items-center gap-3">
+                        <h3 className="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors duration-200">
+                          {category.title}
+                        </h3>
+                        {category.badge && (
+                          <span className="bg-gradient-to-r from-yellow-500 to-orange-500 text-black text-xs font-bold px-2 py-1 rounded-full">
+                            {category.badge}
+                          </span>
+                        )}
+                      </div>
                       <p className="text-cyan-300/70 text-sm leading-relaxed">
                         {category.description}
                       </p>

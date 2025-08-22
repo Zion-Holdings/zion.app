@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import UltraFuturisticNavigation2035 from './UltraFuturisticNavigation2035';
 import UltraFuturisticFooter2035 from './UltraFuturisticFooter2035';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
-import UltraAdvancedFuturisticBackground from './UltraAdvancedFuturisticBackground';
+import UltraFuturisticBackground2025 from '../backgrounds/UltraFuturisticBackground2025';
 import TopContactBar from './TopContactBar';
 
 interface LayoutProps {
@@ -16,7 +16,7 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
       {/* Futuristic Background */}
-      <UltraAdvancedFuturisticBackground />
+      <UltraFuturisticBackground2025 />
       
       {/* Layout Structure */}
       <div className="relative z-10">

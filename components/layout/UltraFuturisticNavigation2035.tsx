@@ -34,16 +34,17 @@ const contactInfo = {
 const navigationItems: NavigationItem[] = [
   {
     name: 'All Services',
-    href: '/comprehensive-services-showcase-2025',
+    href: '/ultimate-2025-futuristic-services-showcase',
     icon: <Globe className="w-5 h-5" />,
     description: 'Complete portfolio of all technology services',
-    badge: 'Showcase',
+    badge: 'New',
     featured: true,
     children: [
+      { name: 'Ultimate 2025 Showcase', href: '/ultimate-2025-futuristic-services-showcase', description: 'Most advanced services ever created' },
       { name: 'View All Services', href: '/comprehensive-services-showcase-2025', description: 'Complete services portfolio' },
-      { name: 'Service Categories', href: '/comprehensive-services-showcase-2025#categories', description: 'Browse by category' },
-      { name: 'Pricing Comparison', href: '/comprehensive-services-showcase-2025#pricing', description: 'Compare service costs' },
-      { name: 'Service Search', href: '/comprehensive-services-showcase-2025#search', description: 'Find specific services' },
+      { name: 'Service Categories', href: '/ultimate-2025-futuristic-services-showcase#categories', description: 'Browse by category' },
+      { name: 'Pricing Comparison', href: '/ultimate-2025-futuristic-services-showcase#pricing', description: 'Compare service costs' },
+      { name: 'Service Search', href: '/ultimate-2025-futuristic-services-showcase#search', description: 'Find specific services' },
       { name: 'Latest Innovations', href: '/revolutionary-2025-services-showcase', description: 'Cutting-edge solutions' },
       { name: '2026 Services', href: '/revolutionary-2026-services', description: 'Next generation solutions' },
       { name: '2027 Services', href: '/revolutionary-2027-services-showcase', description: 'Future-ready services' },
