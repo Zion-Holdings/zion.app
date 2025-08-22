@@ -807,7 +807,7 @@ export default function ServicesAdvertisingPage() {
 				</section>
 
 				<section id="customer-data-platform-lite" className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Customer Data Platform (CDP) Lite</h2>
+					<h2 className="text-2xl font-semibold text-white">Customer Data Platform Lite</h2>
 					<p className="text-slate-300">Unify events into profiles with traits and audiences, privacy-safe.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $49–$300/mo</li>
@@ -1463,6 +1463,86 @@ export default function ServicesAdvertisingPage() {
 						<li><strong className="text-white">ETL Incident Copilot</strong> — $45/mo. Learn: <a className="text-cyan-400 underline" href="/services/etl-incident-copilot">/services/etl-incident-copilot</a>. References: https://airflow.apache.org/, https://www.getdbt.com/</li>
 					</ul>
 					<div className="text-slate-400 text-sm">Full catalog: <a className="text-cyan-400 underline" href="/services">/services</a> • Market pricing: <a className="text-cyan-400 underline" href="/market-pricing">/market-pricing</a></div>
+				</section>
+
+				<section id="api-schema-diff-registry-ad" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">API Schema Diff & Registry</h2>
+					<p className="text-slate-300">Versioned OpenAPI registry with CI diffs, breaking-change alerts, and docs portal for safer API releases.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $20–$100/mo</li>
+						<li>References: {ext('https://swagger.io/tools/swaggerhub/pricing/')}, {ext('https://stoplight.io/pricing')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/api-schema-diff-registry">Learn more</a></div>
+				</section>
+
+				<section id="incident-postmortem-generator-ad" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Incident Postmortem Generator</h2>
+					<p className="text-slate-300">Automated timelines, contributing factors, and action items from alerts, logs, and chats.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $30–$150/mo</li>
+						<li>References: {ext('https://www.pagerduty.com/pricing/')}, {ext('https://www.datadoghq.com/pricing/')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/incident-postmortem-generator">Learn more</a></div>
+				</section>
+
+				<section id="github-compliance-bot-ad" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">GitHub Compliance Bot</h2>
+					<p className="text-slate-300">Automate policy checks, secrets scans, SCA, and generate SOC2/ISO evidence packs directly from your repos and pipelines.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $20–$99/mo</li>
+						<li>References: {ext('https://semgrep.dev/pricing')}, {ext('https://docs.gitguardian.com/inner-source-monitoring/')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/github-compliance-bot">Learn more</a></div>
+				</section>
+
+				<section id="serverless-cron-manager-ad" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Serverless Cron Manager</h2>
+					<p className="text-slate-300">Unified dashboard, retries, and SLOs for edge/serverless scheduled jobs across Vercel, Netlify, and Cloudflare.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $10–$79/mo</li>
+						<li>References: {ext('https://vercel.com/docs/cron-jobs')}, {ext('https://www.netlify.com/products/background-functions/')}, {ext('https://developers.cloudflare.com/workers/configuration/cron-triggers/')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/serverless-cron-manager">Learn more</a></div>
+				</section>
+
+				<section id="edge-ab-testing-kit-ad" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Edge A/B Testing Kit</h2>
+					<p className="text-slate-300">Audience and geo-targeted experiments at the edge with guardrails and simple SDKs.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $20–$99/mo</li>
+						<li>References: {ext('https://vercel.com/pricing')}, {ext('https://www.cloudflare.com/plans/')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/edge-ab-testing-kit">Learn more</a></div>
+				</section>
+
+				<section id="iam-permission-graph-ad" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">IAM Permission Graph</h2>
+					<p className="text-slate-300">Visualize effective permissions and risky paths across AWS/GCP/Azure with least-privilege guidance.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $49–$199/mo</li>
+						<li>References: {ext('https://aws.amazon.com/iam/')}, {ext('https://cloud.google.com/iam/docs')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/iam-permission-graph">Learn more</a></div>
+				</section>
+
+				<section id="customer-interview-insights-ad" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Customer Interview Insights</h2>
+					<p className="text-slate-300">Transcripts, themes, JTBD summaries, and shareable insight packs from interviews and calls.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $15–$69/mo + usage</li>
+						<li>References: {ext('https://www.descript.com/pricing')}, {ext('https://otter.ai/pricing')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/customer-interview-insights">Learn more</a></div>
+				</section>
+
+				<section id="kubernetes-policy-auditor-ad" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Kubernetes Policy Auditor</h2>
+					<p className="text-slate-300">Continuously check clusters against OPA/Gatekeeper and CIS benchmarks with fix guidance.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $39–$149/mo</li>
+						<li>References: {ext('https://www.openpolicyagent.org/')}, {ext('https://kubernetes.io/docs/concepts/overview/')}, {ext('https://argo-cd.readthedocs.io/')}</li>
+					</ul>
+					<div><a className="text-cyan-400 underline" href="/services/kubernetes-policy-auditor">Learn more</a></div>
 				</section>
 			</div>
 		</div>
