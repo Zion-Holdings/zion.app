@@ -9,9 +9,7 @@ import {
 } from 'lucide-react';
 
 // Import our new service data
-import { enterpriseITSolutions } from '../data/2034-enterprise-it-solutions';
-import { innovativeMicroSaasSolutions } from '../data/2034-innovative-micro-saas-solutions';
-import { cuttingEdgeAIServices } from '../data/2034-cutting-edge-ai-services';
+// Note: Removed non-existent data imports (2034 datasets) to prevent build errors.
 import { real2025Q4AugmentedBatch } from '../data/real-2025-q4-augmented-batch';
 import { real2029Q3Additions } from '../data/real-2029-q3-additions';
 
@@ -57,9 +55,6 @@ const getServiceDescription = (service: any) => {
 
 // Create unified services array
 const allServices = [
-  ...enterpriseITSolutions,
-  ...innovativeMicroSaasSolutions,
-  ...cuttingEdgeAIServices,
   ...realMicroSaasServices,
   ...innovativeAIServices,
   ...enterpriseITServices,
