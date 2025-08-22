@@ -248,7 +248,7 @@ const Homepage2025: React.FC = () => {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 relative">
+      <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 relative content-visibility-auto">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -287,7 +287,7 @@ const Homepage2025: React.FC = () => {
       </section>
 
       {/* AI Services Section */}
-      <section id="ai" className="py-20 px-4 sm:px-6 lg:px-8 relative bg-black/20">
+      <section id="ai" className="py-20 px-4 sm:px-6 lg:px-8 relative bg-black/20 content-visibility-auto">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -326,7 +326,7 @@ const Homepage2025: React.FC = () => {
       </section>
 
       {/* AI Automation Services Section */}
-      <section id="automation" className="py-20 px-4 sm:px-6 lg:px-8 relative">
+      <section id="automation" className="py-20 px-4 sm:px-6 lg:px-8 relative content-visibility-auto">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -365,7 +365,7 @@ const Homepage2025: React.FC = () => {
       </section>
 
       {/* Quantum Cybersecurity Section */}
-      <section id="quantum" className="py-20 px-4 sm:px-6 lg:px-8 relative bg-black/20">
+      <section id="quantum" className="py-20 px-4 sm:px-6 lg:px-8 relative bg-black/20 content-visibility-auto">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

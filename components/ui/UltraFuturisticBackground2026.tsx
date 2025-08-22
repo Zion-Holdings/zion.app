@@ -51,6 +51,8 @@ const UltraFuturisticBackground2026: React.FC<UltraFuturisticBackground2026Props
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
@@ -73,13 +75,14 @@ const UltraFuturisticBackground2026: React.FC<UltraFuturisticBackground2026Props
     const config = intensityValues[intensity];
     const themeConfig = themeConfigs[theme];
 
-    // Initialize particles
-    for (let i = 0; i < config.particles; i++) {
+    // Initialize particles (respect reduced motion)
+    const particleCount = prefersReducedMotion ? Math.min(16, config.particles / 4) : config.particles;
+    for (let i = 0; i < particleCount; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * config.speed,
-        vy: (Math.random() - 0.5) * config.speed,
+        vx: prefersReducedMotion ? 0 : (Math.random() - 0.5) * config.speed,
+        vy: prefersReducedMotion ? 0 : (Math.random() - 0.5) * config.speed,
         size: Math.random() * 3 + 1,
         color: themeConfig.colors[Math.floor(Math.random() * themeConfig.colors.length)],
         life: Math.random() * 100,
@@ -129,7 +132,9 @@ const UltraFuturisticBackground2026: React.FC<UltraFuturisticBackground2026Props
       particles.forEach((particle, index) => {
         particle.x += particle.vx;
         particle.y += particle.vy;
-        particle.life--;
+        if (!prefersReducedMotion) {
+          particle.life--;
+        }
 
         // Wrap around edges
         if (particle.x < 0) particle.x = canvas.width;
@@ -138,7 +143,7 @@ const UltraFuturisticBackground2026: React.FC<UltraFuturisticBackground2026Props
         if (particle.y > canvas.height) particle.y = 0;
 
         // Reset particle if life is over
-        if (particle.life <= 0) {
+        if (!prefersReducedMotion && particle.life <= 0) {
           particle.x = Math.random() * canvas.width;
           particle.y = Math.random() * canvas.height;
           particle.life = particle.maxLife;
@@ -147,46 +152,40 @@ const UltraFuturisticBackground2026: React.FC<UltraFuturisticBackground2026Props
 
         // Draw particle with glow effect
         const alpha = (particle.life / particle.maxLife) * config.opacity;
-        
-        // Glow effect
-        ctx.shadowBlur = 20;
+        ctx.shadowBlur = prefersReducedMotion ? 0 : 20;
         ctx.shadowColor = particle.color;
-        
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = `${particle.color}${Math.floor(alpha * 255).toString(16).padStart(2, '0')}`;
+        ctx.fillStyle = prefersReducedMotion ? particle.color : `${particle.color}${Math.floor(alpha * 255).toString(16).padStart(2, '0')}`;
         ctx.fill();
-
-        // Reset shadow
         ctx.shadowBlur = 0;
 
-        // Draw connections between nearby particles
-        particles.forEach((otherParticle, otherIndex) => {
-          if (index === otherIndex) return;
-          
-          const distance = Math.sqrt(
-            Math.pow(particle.x - otherParticle.x, 2) + 
-            Math.pow(particle.y - otherParticle.y, 2)
-          );
-          
-          if (distance < 100) {
-            const opacity = ((100 - distance) / 100) * alpha * 0.3;
-            ctx.strokeStyle = `${particle.color}${Math.floor(opacity * 255).toString(16).padStart(2, '0')}`;
-            ctx.lineWidth = 0.5;
-            ctx.beginPath();
-            ctx.moveTo(particle.x, particle.y);
-            ctx.lineTo(otherParticle.x, otherParticle.y);
-            ctx.stroke();
-          }
-        });
+        // Draw connections between nearby particles (skip in reduced motion)
+        if (!prefersReducedMotion) {
+          particles.forEach((otherParticle, otherIndex) => {
+            if (index === otherIndex) return;
+            const distance = Math.sqrt(
+              Math.pow(particle.x - otherParticle.x, 2) + 
+              Math.pow(particle.y - otherParticle.y, 2)
+            );
+            if (distance < 100) {
+              const opacity = ((100 - distance) / 100) * alpha * 0.3;
+              ctx.strokeStyle = `${particle.color}${Math.floor(opacity * 255).toString(16).padStart(2, '0')}`;
+              ctx.lineWidth = 0.5;
+              ctx.beginPath();
+              ctx.moveTo(particle.x, particle.y);
+              ctx.lineTo(otherParticle.x, otherParticle.y);
+              ctx.stroke();
+            }
+          });
+        }
       });
 
-      // Draw quantum wave patterns
-      if (theme === 'quantum') {
+      // Skip expensive wave/grid effects if user prefers reduced motion
+      if (!prefersReducedMotion && theme === 'quantum') {
         const time = Date.now() * 0.001;
         ctx.strokeStyle = 'rgba(0, 255, 255, 0.1)';
         ctx.lineWidth = 1;
-        
         for (let i = 0; i < 5; i++) {
           ctx.beginPath();
           for (let x = 0; x < canvas.width; x += 2) {
@@ -203,21 +202,16 @@ const UltraFuturisticBackground2026: React.FC<UltraFuturisticBackground2026Props
         }
       }
 
-      // Draw neon grid
-      if (theme === 'neon') {
+      if (!prefersReducedMotion && theme === 'neon') {
         const gridSize = 50;
-        const time = Date.now() * 0.001;
-        
         ctx.strokeStyle = 'rgba(255, 0, 128, 0.1)';
         ctx.lineWidth = 0.5;
-        
         for (let x = 0; x < canvas.width; x += gridSize) {
           ctx.beginPath();
           ctx.moveTo(x, 0);
           ctx.lineTo(x, canvas.height);
           ctx.stroke();
         }
-        
         for (let y = 0; y < canvas.height; y += gridSize) {
           ctx.beginPath();
           ctx.moveTo(0, y);
@@ -228,6 +222,15 @@ const UltraFuturisticBackground2026: React.FC<UltraFuturisticBackground2026Props
 
       animationRef.current = requestAnimationFrame(animate);
     };
+
+    // If reduced motion, render a single frame and stop
+    if (prefersReducedMotion) {
+      animate();
+      window.removeEventListener('resize', resizeCanvas);
+      return () => {
+        window.removeEventListener('resize', resizeCanvas);
+      };
+    }
 
     animate();
 
