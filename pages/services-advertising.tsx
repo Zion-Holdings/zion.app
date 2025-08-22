@@ -177,6 +177,51 @@ export default function ServicesAdvertisingPage() {
 					</ul>
 				</section>
 				
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">AI Email Responder</h2>
+					<p className="text-slate-300">Automate replies to common inbound emails with safe AI suggesting drafts, routing, and prioritization.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $20–$150/mo + API usage</li>
+						<li>References: {ext('https://openai.com/api/pricing')}, {ext('https://workspace.google.com/pricing')} (Gmail/Workspace), {ext('https://mailgun.com/pricing/')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Helpdesk & Chatbot Starter</h2>
+					<p className="text-slate-300">Ticketing, knowledge base, live chat, and AI assistant for faster support resolution.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $19–$99/agent/mo</li>
+						<li>References: {ext('https://www.zendesk.com/pricing/')}, {ext('https://freshdesk.com/pricing')}, {ext('https://intercom.com/pricing')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">E‑commerce Returns & RMA Hub</h2>
+					<p className="text-slate-300">Self‑serve returns portal with label generation, status tracking, and analytics.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $29–$299/mo</li>
+						<li>References: {ext('https://www.aftership.com/returns/pricing')}, {ext('https://www.loopreturns.com/pricing')}, {ext('https://www.returnly.com/')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Freelancer Portfolio Builder</h2>
+					<p className="text-slate-300">Beautiful, fast portfolio sites with CMS, forms, analytics, and templates per niche.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB/solo budget: $12–$40/mo</li>
+						<li>References: {ext('https://webflow.com/pricing')}, {ext('https://www.framer.com/pricing/')}, {ext('https://carrd.co/pricing')}</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Mobile‑First Survey & Feedback</h2>
+					<p className="text-slate-300">NPS/CSAT micro‑surveys embedded in web, email, and QR flows with exports.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $19–$99/mo</li>
+						<li>References: {ext('https://typeform.com/pricing')}, {ext('https://www.surveymonkey.com/pricing/')}, {ext('https://form.typeform.com/to/')}</li>
+					</ul>
+				</section>
+				
 				<div className="pt-4 text-slate-400 text-sm">See also: <a className="text-cyan-400 underline" href="/market-pricing">Market Pricing</a> for a broader list of benchmarks and links.</div>
 			</div>
 		</div>

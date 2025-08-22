@@ -77,7 +77,7 @@ const navigationItems: NavigationItem[] = [
       { name: 'Quantum & Emerging', href: '/services#quantum-emerging', description: 'Monitoring & telemetry' },
       { name: 'Micro SAAS', href: '/services#micro-saas', description: 'Business tools and automation' },
       { name: 'Education & Research', href: '/services#education-research', description: 'Learning and R&D' },
-      { name: 'AI Evaluation Orchestrator', href: '/ai-evaluation-orchestrator', description: 'Automated LLM evals' },
+      { name: 'AI Evaluation Orchestrator', href: '/services/ai-evaluation-orchestrator', description: 'Automated LLM evals' },
       { name: 'SEO Automation Suite', href: '/seo-automation-suite', description: 'Technical SEO automation' },
       { name: 'IT Asset Discovery Agent', href: '/it-asset-discovery-agent', description: 'Agentless discovery' },
       { name: 'Managed Postgres HA', href: '/managed-postgres-ha', description: 'HA Postgres ops' }
@@ -120,7 +120,7 @@ const navigationItems: NavigationItem[] = [
       { name: 'AI Decision Engine', href: '/ai-powered-decision-engine', description: 'AI-powered business decisions' },
       { name: 'AI Content Automation', href: '/intelligent-content-automation-platform', description: 'Automate content creation' },
       { name: 'AI HR Analytics', href: '/ai-hr-analytics-platform', description: 'Transform HR with AI insights' },
-      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2025', description: 'Emotional intelligence and self-awareness' },
+      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029', description: 'Emotional intelligence and self-awareness' },
       { name: 'AI Quantum Neural Network', href: '/ai-quantum-neural-network', description: 'Hybrid AI-Quantum computing platform' },
       { name: 'AI Autonomous Business Operations', href: '/ai-autonomous-business-operations', description: 'Fully autonomous business management' },
       { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant', description: 'Self-directed AI research' },
@@ -173,7 +173,7 @@ const navigationItems: NavigationItem[] = [
       { name: 'Quantum Logistics', href: '/quantum-logistics-optimization', description: 'Route optimization' },
       { name: 'Quantum Metaverse', href: '/quantum-metaverse', description: 'Quantum-enhanced virtual worlds' },
       { name: 'Quantum IoT Platform', href: '/quantum-iot', description: 'Quantum-secured IoT' },
-      { name: 'AI-Powered Space Technology', href: '/ai-powered-space-technology', description: 'Revolutionary space AI' }
+      { name: 'AI-Powered Space Technology', href: '/space-technology-ai-platform', description: 'Revolutionary space AI' }
     ]
   },
   {
@@ -196,7 +196,7 @@ const navigationItems: NavigationItem[] = [
   },
   {
     name: 'Industry Solutions',
-    href: '/industry-solutions',
+    href: '/solutions',
     icon: <Building className="w-5 h-5" />,
     description: 'Industry-specific technology solutions',
     badge: 'Industry',

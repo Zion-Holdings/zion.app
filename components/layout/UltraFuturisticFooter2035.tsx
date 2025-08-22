@@ -31,10 +31,10 @@ const footerSections = [
       { name: 'AI Decision Engine', href: '/ai-powered-decision-engine' },
       { name: 'Content Automation', href: '/intelligent-content-automation-platform' },
       { name: 'CRM Intelligence Suite', href: '/smart-crm-intelligence-suite' },
-      { name: 'AI Evaluation Orchestrator', href: '/ai-evaluation-orchestrator', featured: true },
-              { name: 'SEO Automation Suite', href: '/seo-automation-suite' },
-              { name: 'IT Asset Discovery Agent', href: '/it-asset-discovery-agent' },
-              { name: 'Managed Postgres HA', href: '/managed-postgres-ha' }
+      { name: 'AI Evaluation Orchestrator', href: '/services/ai-evaluation-orchestrator', featured: true },
+             { name: 'SEO Automation Suite', href: '/seo-automation-suite' },
+               { name: 'IT Asset Discovery Agent', href: '/it-asset-discovery-agent' },
+        { name: 'Managed Postgres HA', href: '/managed-postgres-ha' }
     ]
   },
   {
@@ -42,7 +42,7 @@ const footerSections = [
     description: 'Revolutionary AI platforms and solutions',
     icon: <Brain className="w-5 h-5 text-cyan-400" />,
     links: [
-      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2025' },
+      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029' },
       { name: 'AI Quantum Neural Network', href: '/ai-quantum-neural-network' },
       { name: 'AI Autonomous Business Operations', href: '/ai-autonomous-business-operations' },
       { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant' },
@@ -62,7 +62,7 @@ const footerSections = [
       { name: 'Quantum Internet Security', href: '/quantum-internet-security-platform' },
       { name: 'Quantum-Secure Cloud Infrastructure', href: '/quantum-secure-cloud-infrastructure' },
       { name: 'Quantum Financial Trading Platform', href: '/quantum-financial-trading' },
-      { name: 'AI-Powered Space Technology', href: '/ai-powered-space-technology' },
+      { name: 'AI-Powered Space Technology', href: '/space-technology-ai-platform' },
       { name: 'Brain-Computer Interface', href: '/brain-computer-interface-platform' },
       { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery-platform' },
       { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai-platform' },
