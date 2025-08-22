@@ -1,22 +1,14 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 export default class MyDocument extends Document {
-	static async getInitialProps(ctx: any) {
-		const initialProps = await Document.getInitialProps(ctx);
-		return { ...initialProps };
-	}
-
 	render() {
 		return (
 			<Html lang="en">
 				<Head>
 					<meta name="theme-color" content="#000000" />
-					<link rel="preconnect" href="https://plausible.io" crossOrigin="anonymous" />
-					<link rel="dns-prefetch" href="//plausible.io" />
-					<link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-					<link rel="icon" href="/favicon.svg" />
-					<link rel="manifest" href="/site.webmanifest" />
-					<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+					<meta name="color-scheme" content="dark light" />
+					<link rel="preconnect" href="https://plausible.io" />
+					<link rel="dns-prefetch" href="https://plausible.io" />
 				</Head>
 				<body>
 					<Main />
