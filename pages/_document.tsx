@@ -13,7 +13,6 @@ export default class MyDocument extends Document {
 					<meta name="theme-color" content="#000000" />
 					<link rel="preconnect" href="https://plausible.io" crossOrigin="anonymous" />
 					<link rel="dns-prefetch" href="//plausible.io" />
-					<link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
 					<link rel="icon" href="/favicon.svg" />
 					<link rel="manifest" href="/site.webmanifest" />
 					<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />

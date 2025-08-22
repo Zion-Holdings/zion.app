@@ -34,7 +34,8 @@ const footerSections = [
       { name: 'AI Evaluation Orchestrator', href: '/ai-evaluation-orchestrator', featured: true },
               { name: 'SEO Automation Suite', href: '/seo-automation-suite' },
               { name: 'IT Asset Discovery Agent', href: '/it-asset-discovery-agent' },
-              { name: 'Managed Postgres HA', href: '/managed-postgres-ha' }
+              { name: 'Managed Postgres HA', href: '/managed-postgres-ha' },
+              { name: 'Backup Policy Auditor', href: '/services/backup-policy-auditor' }
     ]
   },
   {

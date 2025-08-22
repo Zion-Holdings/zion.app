@@ -72,6 +72,7 @@ const sidebarSections = [
       { name: 'AI-Powered DevOps', href: '/ai-powered-devops-platform', badge: 'New' },
       { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure-platform' },
       { name: 'Zero Trust Security', href: '/zero-trust-security-platform' },
+      { name: 'Backup Policy Auditor', href: '/services/backup-policy-auditor' },
       { name: 'Quantum Networking', href: '/quantum-services' },
       { name: 'Quantum Data Center', href: '/quantum-services' },
       { name: 'Quantum Cloud Migration', href: '/quantum-cloud-infrastructure' }
