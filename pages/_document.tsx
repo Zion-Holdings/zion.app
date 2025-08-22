@@ -15,6 +15,10 @@ class MyDocument extends Document {
 					<link rel="manifest" href="/site.webmanifest" />
 					<meta name="theme-color" content="#0a0a0a" />
 					<meta name="color-scheme" content="dark light" />
+					<meta name="format-detection" content="telephone=no" />
+					<link rel="preconnect" href="https://plausible.io" crossOrigin="anonymous" />
+					<link rel="dns-prefetch" href="https://plausible.io" />
+					<script defer data-domain="ziontechgroup.com" src="https://plausible.io/js/script.js" />
 				</Head>
 				<body>
 					<Main />
