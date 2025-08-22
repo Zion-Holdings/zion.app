@@ -35,10 +35,10 @@ const footerSections = [
       { name: 'SEO Automation Suite', href: '/seo-automation-suite' },
       { name: 'IT Asset Discovery Agent', href: '/it-asset-discovery-agent' },
       { name: 'Managed Postgres HA', href: '/managed-postgres-ha' },
-      { name: 'RAG Evaluation Lab', href: '/rag-evaluation-lab' },
-      { name: 'Browser Automation Cloud', href: '/browser-automation-cloud' },
-      { name: 'Secrets Rotation Automation', href: '/secrets-rotation-automation' },
-      { name: 'API Performance Testing', href: '/api-performance-testing' },
+      { name: 'RAG Evaluation Lab', href: '/rag-evaluation-lab/' },
+      { name: 'Browser Automation Cloud', href: '/browser-automation-cloud/' },
+      { name: 'Secrets Rotation Automation', href: '/secrets-rotation-automation/' },
+      { name: 'API Performance Testing', href: '/api-performance-testing/' },
       { name: 'SOC 2 Compliance Automation', href: '/soc2-compliance-automation' }
     ]
   },
@@ -137,11 +137,11 @@ const footerSections = [
 ];
 
 const socialLinks = [
-  { name: 'Twitter', href: '/social/twitter', icon: <Twitter className="w-5 h-5" /> },
+  { name: 'X', href: '/social/twitter', icon: <Twitter className="w-5 h-5" /> },
   { name: 'LinkedIn', href: '/social/linkedin', icon: <Linkedin className="w-5 h-5" /> },
-  { name: 'Facebook', href: 'https://facebook.com/ziontechgroup', icon: <Facebook className="w-5 h-5" /> },
-  { name: 'Instagram', href: 'https://instagram.com/ziontechgroup', icon: <Instagram className="w-5 h-5" /> },
-  { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: <Youtube className="w-5 h-5" /> },
+  { name: 'Facebook', href: 'https://www.facebook.com/ziontechgroup', icon: <Facebook className="w-5 h-5" /> },
+  { name: 'Instagram', href: 'https://www.instagram.com/ziontechgroup', icon: <Instagram className="w-5 h-5" /> },
+  { name: 'YouTube', href: 'https://www.youtube.com/@ziontechgroup', icon: <Youtube className="w-5 h-5" /> },
   { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: <Github className="w-5 h-5" /> }
 ];
 
