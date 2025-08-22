@@ -74,10 +74,10 @@ const navigationItems: NavigationItem[] = [
     description: 'Browse by category',
     badge: 'New',
     children: [
-      { name: 'AI & Data', href: '/services#ai-consciousness', description: 'AI, data, ML services' },
-      { name: 'Cloud & FinOps', href: '/services#enterprise-it', description: 'Cloud, cost, platform' },
-      { name: 'Observability', href: '/services#enterprise-it', description: 'Monitoring & telemetry' },
-      { name: 'Developer Tools', href: '/services#enterprise-it', description: 'Developer productivity' },
+      { name: 'AI & Data', href: '/services#ai', description: 'AI, data, ML services' },
+      { name: 'Cloud & FinOps', href: '/services#cloud', description: 'Cloud, cost, platform' },
+      { name: 'Observability', href: '/services#observability', description: 'Monitoring & telemetry' },
+      { name: 'Developer Tools', href: '/services#developer-tools', description: 'Developer productivity' },
       { name: 'Training & Education', href: '/training', description: 'Learning and R&D' },
       { name: 'SEO Automation Suite', href: '/seo-automation-suite', description: 'Technical SEO automation' },
       { name: 'IT Asset Discovery Agent', href: '/it-asset-discovery-agent', description: 'Agentless discovery' },
@@ -181,7 +181,7 @@ const navigationItems: NavigationItem[] = [
       { name: 'Quantum Logistics', href: '/quantum-logistics-optimization', description: 'Route optimization' },
       { name: 'Quantum Metaverse', href: '/quantum-metaverse', description: 'Quantum-enhanced virtual worlds' },
       { name: 'Quantum IoT Platform', href: '/quantum-iot', description: 'Quantum-secured IoT' },
-      { name: 'AI-Powered Space Technology', href: '/ai-powered-space-technology', description: 'Revolutionary space AI' }
+      { name: 'AI-Powered Space Technology', href: '/space-technology-ai-platform', description: 'Revolutionary space AI' }
     ]
   },
   {
