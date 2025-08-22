@@ -10,7 +10,17 @@ export default function MentalHealthCompanionPage() {
 				<meta name="description" content="Evidence-based, privacy-first mental health support with escalation handoffs and safety controls." />
 				<link rel="canonical" href="https://ziontechgroup.com/ai-mental-health-companion" />
 			</Head>
-			<ServiceLanding serviceId="ai-mental-health-companion" />
+			<ServiceLanding
+				title="AI Mental Health Companion"
+				description="Evidence-informed mental wellness companion with CBT exercises, journaling, and crisis routing, built with safety and privacy by design."
+				subtitle="Accessible support between sessions"
+				pricePerMonthUSD={19}
+				implementationWeeks="1-2 weeks"
+				roiNote="Improve engagement and outcomes while reducing clinician workload"
+				features={["CBT and mindfulness exercises","Mood tracking and journaling","Clinician collaboration portal","Crisis detection and hotline routing","PHI minimization and encryption","Mobile-first with offline support"]}
+				industries={["Healthcare", "Employers", "Universities"]}
+				canonical="https://ziontechgroup.com/ai-mental-health-companion"
+			/>
 		</>
 	);
 }

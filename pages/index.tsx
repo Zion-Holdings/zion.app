@@ -1,6 +1,5 @@
 import React from 'react';
 import Head from 'next/head';
-import Layout from '../components/layout/Layout';
 import UltraAdvancedHeroSection2025 from '../components/sections/UltraAdvancedHeroSection2025';
 import UltraAdvancedServicesShowcase2025 from '../components/sections/UltraAdvancedServicesShowcase2025';
 import { motion } from 'framer-motion';
@@ -129,8 +128,7 @@ const Home: React.FC = () => {
         <link rel="canonical" href="https://ziontechgroup.com" />
       </Head>
 
-      <Layout>
-        {/* Hero Section */}
+      {/* Hero Section */}
         <UltraAdvancedHeroSection2025 />
 
         {/* Why Choose Us Section */}
@@ -381,7 +379,6 @@ const Home: React.FC = () => {
             </motion.div>
           </div>
         </section>
-      </Layout>
     </>
   );
 };
