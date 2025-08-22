@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shield, Mail, MapPin, Rocket, BarChart3, Brain, Database, Users, Target, TrendingUp as TrendingUpIcon } from 'lucide-react';
 import Button from '../components/ui/Button';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
-import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
+import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 
 export default function AIBusinessIntelligencePage() {
@@ -56,15 +56,16 @@ export default function AIBusinessIntelligencePage() {
   ];
 
   return (
-    <UltraAdvancedFuturisticBackground 
-      intensity="extreme" 
-      colorScheme="quantum-fusion"
-      particleCount={500}
-      animationSpeed={2.0}
-      enableHolographic={true}
-      enableQuantumEffects={true}
-    >
-      <div className="min-h-screen">
+    <Layout>
+      <UltraAdvancedFuturisticBackground 
+        intensity="extreme" 
+        colorScheme="quantum-fusion"
+        particleCount={500}
+        animationSpeed={2.0}
+        enableHolographic={true}
+        enableQuantumEffects={true}
+      >
+        <div className="min-h-screen">
         <Head>
           <title>AI Business Intelligence Suite - Zion Tech Group | Transform Data into Insights</title>
           <meta name="description" content="Transform data into actionable business insights with our AI-powered BI platform. Real-time analytics, predictive modeling, and automated reporting. Contact: +1 302 464 0950" />
@@ -77,8 +78,6 @@ export default function AIBusinessIntelligencePage() {
           <meta property="og:type" content="website" />
           <link rel="canonical" href="https://ziontechgroup.com/ai-business-intelligence" />
         </Head>
-
-        <UltraAdvancedNavigation />
 
         {/* Hero Section */}
         <section className="relative pt-32 pb-20 overflow-hidden">
@@ -487,7 +486,8 @@ export default function AIBusinessIntelligencePage() {
             </div>
           </div>
         </section>
-      </div>
-    </UltraAdvancedFuturisticBackground>
+              </div>
+      </UltraAdvancedFuturisticBackground>
+    </Layout>
   );
 }

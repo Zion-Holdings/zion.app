@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Star, Mail, Phone, MapPin, Sparkles, Brain, Cpu, Zap, Grid, List, ExternalLink, Rocket, BookOpen } from 'lucide-react';
 import Button from '../components/ui/Button';
 import UltraQuantumHolographicBackground from '../components/ui/UltraQuantumHolographicBackground';
-import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
+import Layout from '../components/layout/Layout';
 import { revolutionaryAI2025Services } from '../data/revolutionary-2025-ai-services';
 import { revolutionaryITInfrastructure2025Services } from '../data/revolutionary-2025-it-infrastructure';
 import { revolutionary2025MicroSaasServices } from '../data/revolutionary-2025-micro-saas';
@@ -74,8 +74,9 @@ export default function Revolutionary2025ServicesShowcase() {
   };
 
   return (
-    <UltraQuantumHolographicBackground intensity={2.0}>
-      <div className="min-h-screen">
+    <Layout>
+      <UltraQuantumHolographicBackground intensity={2.0}>
+        <div className="min-h-screen">
         <Head>
           <title>Revolutionary 2025 Services Showcase - Zion Tech Group | Cutting-Edge AI & IT Solutions</title>
           <meta name="description" content="Explore Zion Tech Group's revolutionary 2025 services including AI consciousness simulation, quantum computing, zero trust security, and innovative micro SaaS solutions. Contact: +1 302 464 0950" />
@@ -88,8 +89,6 @@ export default function Revolutionary2025ServicesShowcase() {
           <meta property="og:type" content="website" />
           <link rel="canonical" href="https://ziontechgroup.com/revolutionary-2025-services-showcase" />
         </Head>
-
-        <UltraAdvancedNavigation />
 
         {/* Hero Section */}
         <section className="relative py-20 px-4 sm:px-6 lg:px-8">
@@ -421,7 +420,8 @@ export default function Revolutionary2025ServicesShowcase() {
             </motion.div>
           </div>
         </section>
-      </div>
-    </UltraQuantumHolographicBackground>
+              </div>
+      </UltraQuantumHolographicBackground>
+    </Layout>
   );
 }
