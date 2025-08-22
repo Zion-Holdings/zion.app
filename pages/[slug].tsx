@@ -3,6 +3,7 @@ import Link from 'next/link';
 import type { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 import fs from 'fs';
 import path from 'path';
+import SEO from '../components/SEO';
 
 interface PageProps {
 	title: string;
@@ -46,21 +47,44 @@ export const getStaticProps: GetStaticProps<PageProps> = async ({ params }) => {
 };
 
 export default function GeneratedPlaceholderPage({ title, slug, description }: InferGetStaticPropsType<typeof getStaticProps>) {
+	const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ziontechgroup.com';
+	const canonical = `${baseUrl.replace(/\/$/, '')}/${slug}/`;
+	const breadcrumbJsonLd = {
+		"@context": "https://schema.org",
+		"@type": "BreadcrumbList",
+		"itemListElement": [
+			{
+				"@type": "ListItem",
+				"position": 1,
+				"name": "Home",
+				"item": baseUrl
+			},
+			{
+				"@type": "ListItem",
+				"position": 2,
+				"name": title,
+				"item": canonical
+			}
+		]
+	};
 	return (
-		<div className="container mx-auto px-4 py-16">
-			<nav className="text-sm text-gray-400 mb-6">
-				<Link href="/" className="hover:text-white">Home</Link>
-				<span className="mx-2">/</span>
-				<span className="text-gray-300">{title}</span>
-			</nav>
-			<h1 className="text-4xl font-bold mb-4">{title}</h1>
-			<p className="text-gray-300 mb-8">{description}</p>
-			<div className="flex gap-4">
-				<Link href="/services" className="px-6 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white">Browse Services</Link>
-				<Link href="/pricing" className="px-6 py-3 rounded-lg border border-cyan-500/40 text-cyan-300">View Pricing</Link>
-				<Link href="/contact" className="px-6 py-3 rounded-lg border border-gray-700 text-gray-200">Contact Sales</Link>
+		<>
+			<SEO title={`${title} | Zion Tech Group`} description={description} canonical={canonical} jsonLd={breadcrumbJsonLd} />
+			<div className="container mx-auto px-4 py-16">
+				<nav className="text-sm text-gray-400 mb-6">
+					<Link href="/" className="hover:text-white">Home</Link>
+					<span className="mx-2">/</span>
+					<span className="text-gray-300">{title}</span>
+				</nav>
+				<h1 className="text-4xl font-bold mb-4">{title}</h1>
+				<p className="text-gray-300 mb-8">{description}</p>
+				<div className="flex gap-4">
+					<Link href="/services" className="px-6 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white">Browse Services</Link>
+					<Link href="/pricing" className="px-6 py-3 rounded-lg border border-cyan-500/40 text-cyan-300">View Pricing</Link>
+					<Link href="/contact" className="px-6 py-3 rounded-lg border border-gray-700 text-gray-200">Contact Sales</Link>
+				</div>
+				<div className="mt-12 text-sm text-gray-500">Auto-generated route: /{slug}</div>
 			</div>
-			<div className="mt-12 text-sm text-gray-500">Auto-generated route: /{slug}</div>
-		</div>
+		</>
 	);
 }

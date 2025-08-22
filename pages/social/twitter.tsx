@@ -11,14 +11,14 @@ export default function TwitterRedirect() {
 	return (
 		<>
 			<Head>
-				<title>Twitter | Zion Tech Group</title>
+				<title>X (Twitter) | Zion Tech Group</title>
 				<link rel="canonical" href="https://x.com/ziontechgroup" />
 				<meta httpEquiv="refresh" content="0;url=https://x.com/ziontechgroup" />
 				<meta name="robots" content="noindex, nofollow" />
 			</Head>
 			<div className="min-h-screen bg-black text-white flex items-center justify-center p-8">
-				<a href="https://twitter.com/ziontechgroup" className="text-cyan-400 underline">
-					Continue to Twitter
+				<a href="https://x.com/ziontechgroup" className="text-cyan-400 underline">
+					Continue to X (Twitter)
 				</a>
 			</div>
 		</>

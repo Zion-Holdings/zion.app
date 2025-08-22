@@ -98,6 +98,13 @@ export default function SEO({ title, description, canonical, ogImage, image, noI
 		}
 	];
 
+	// Merge default JSON-LD with any provided jsonLd entries
+	const mergedJsonLd = Array.isArray(jsonLd)
+		? [...defaultJsonLd, ...jsonLd]
+		: jsonLd
+		? [...defaultJsonLd, jsonLd]
+		: defaultJsonLd;
+
 	// Derive Twitter meta from env if not provided
 	const envTwitterSite = process.env.NEXT_PUBLIC_TWITTER_SITE;
 	const envTwitterCreator = process.env.NEXT_PUBLIC_TWITTER_CREATOR;
@@ -110,6 +117,8 @@ export default function SEO({ title, description, canonical, ogImage, image, noI
 			<meta name="description" content={pageDescription} />
 			<meta name="robots" content={robotsContent} />
 			<link rel="canonical" href={canonicalUrl} />
+			<link rel="alternate" hrefLang="en" href={canonicalUrl} />
+			<link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
 			{/* Optional sitemap link for crawlers */}
 			<link rel="sitemap" type="application/xml" href={`${baseUrl.replace(/\/$/, '')}/sitemap.xml`} />
 			<meta property="og:title" content={pageTitle} />
@@ -131,8 +140,8 @@ export default function SEO({ title, description, canonical, ogImage, image, noI
 			{imageType ? <meta name="twitter:image:type" content={imageType} /> : null}
 			{finalTwitterSite ? <meta name="twitter:site" content={finalTwitterSite} /> : null}
 			{finalTwitterCreator ? <meta name="twitter:creator" content={finalTwitterCreator} /> : null}
-			{(jsonLd || defaultJsonLd) ? (
-				<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd || defaultJsonLd) }} />
+			{mergedJsonLd ? (
+				<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(mergedJsonLd) }} />
 			) : null}
 		</Head>
 	);

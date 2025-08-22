@@ -70,13 +70,36 @@ function main() {
 	// Determine which are missing
 	const missing = unique.filter((p) => !fileExistsForRoute(p));
 
+	// Merge optional extra slugs list if present
+	let extra = [];
+	try {
+		const extraPath = path.join(dataDir, 'extra-missing-slugs.json');
+		if (fs.existsSync(extraPath)) {
+			extra = JSON.parse(fs.readFileSync(extraPath, 'utf8'));
+			if (!Array.isArray(extra)) extra = [];
+		}
+	} catch (_) {
+		extra = [];
+	}
+	const normalizedExtra = extra
+		.filter(Boolean)
+		.map((s) => String(s).trim())
+		.filter((s) => s && !s.startsWith('/'))
+		// exclude any extras that already exist as concrete pages
+		.filter((s) => !fileExistsForRoute('/' + s));
+
+	const finalSlugs = Array.from(new Set([
+		...missing.map((p) => p.replace(/^\//, '')),
+		...normalizedExtra
+	])).sort();
+
 	// Ensure data directory exists
 	fs.mkdirSync(dataDir, { recursive: true });
-	fs.writeFileSync(outputJson, JSON.stringify(missing.map((p) => p.replace(/^\//, '')), null, 2));
+	fs.writeFileSync(outputJson, JSON.stringify(finalSlugs, null, 2));
 
 	console.log(`Discovered ${unique.length} unique internal routes from navigation.`);
-	console.log(`Missing routes (to be generated): ${missing.length}`);
-	missing.forEach((m) => console.log(`- ${m}`));
+	console.log(`Missing routes (to be generated): ${finalSlugs.length}`);
+	finalSlugs.forEach((m) => console.log(`- ${m}`));
 }
 
 main();

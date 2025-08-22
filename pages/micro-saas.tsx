@@ -30,6 +30,22 @@ export default function MicroSaasPage() {
       features: ['Auto rightsizing', 'Idle cleanup', 'Spot orchestration', 'Anomaly detection'],
       link: 'https://ziontechgroup.com/cloud-cost-optimizer',
       contactInfo
+    },
+    {
+      title: '🧪 ML Experiment Tracker Lite',
+      description: 'Track runs, metrics, artifacts, and model cards in minutes with hosted UI.',
+      price: 'Starting at $25/user/month',
+      features: ['Runs & metrics UI', 'Artifact storage', 'Model cards', 'Governance export'],
+      link: 'https://ziontechgroup.com/services/ml-experiment-tracker-lite',
+      contactInfo
+    },
+    {
+      title: '🚀 Edge A/B Testing Kit',
+      description: 'Sub-50ms audience and geo experiments at the edge with guardrail metrics.',
+      price: 'Starting at $49/month',
+      features: ['Holdouts', 'Exposure logging', 'SDKs', 'BI exports'],
+      link: 'https://ziontechgroup.com/services/edge-ab-testing-kit',
+      contactInfo
     }
   ];
 

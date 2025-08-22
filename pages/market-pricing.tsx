@@ -374,6 +374,28 @@ export default function MarketPricingPage() {
 
           <div className="space-y-6">
             <div className="bg-black/30 rounded-2xl border border-teal-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">API Contracts & Mocking</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>PactFlow: <a className="text-cyan-400 underline" href={`https://pactflow.io/pricing/`} target="_blank" rel="noopener noreferrer">pactflow.io/pricing</a></li>
+                <li>Stoplight: <a className="text-cyan-400 underline" href={`https://stoplight.io/pricing`} target="_blank" rel="noopener noreferrer">stoplight.io/pricing</a></li>
+                <li>Postman: <a className="text-cyan-400 underline" href={`https://www.postman.com/pricing/`} target="_blank" rel="noopener noreferrer">postman.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $20–$300/month depending on endpoints, teams, and features.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-indigo-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">SLO Management</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Nobl9 pricing: <a className="text-cyan-400 underline" href={`https://www.nobl9.com/pricing`} target="_blank" rel="noopener noreferrer">nobl9.com/pricing</a></li>
+                <li>Grafana SLO: <a className="text-cyan-400 underline" href={`https://grafana.com/docs/grafana-cloud/monitor-infrastructure/slo/`} target="_blank" rel="noopener noreferrer">grafana.com/docs/.../slo</a></li>
+                <li>Datadog SLOs: <a className="text-cyan-400 underline" href={`https://docs.datadoghq.com/service_management/service_level_objectives/`} target="_blank" rel="noopener noreferrer">docs.datadoghq.com/.../slos</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $0–$300/month; enterprise tiers vary.</div>
+            </div>
+          </div>
+
+          <div className="space-y-6">
+            <div className="bg-black/30 rounded-2xl border border-teal-500/30 p-6">
               <h2 className="text-2xl font-semibold mb-2">API Observability & Debugging</h2>
               <ul className="list-disc list-inside text-slate-300 space-y-1">
                 <li>Treblle pricing: <a className="text-cyan-400 underline" href={`https://treblle.com/pricing`} target="_blank" rel="noopener noreferrer">treblle.com/pricing</a></li>
