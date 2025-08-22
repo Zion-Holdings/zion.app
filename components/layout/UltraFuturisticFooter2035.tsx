@@ -28,9 +28,9 @@ const footerSections = [
       { name: 'AI Financial Planning', href: '/services/ai-financial-planning-platform', featured: true },
       { name: 'AI Sales Intelligence', href: '/services/ai-sales-intelligence-platform', featured: true },
       { name: 'HR Analytics Platform', href: '/ai-hr-analytics-platform' },
-      { name: 'AI Decision Engine', href: '/services/ai-powered-decision-engine' },
-      { name: 'Content Automation', href: '/services/intelligent-content-automation-platform' },
-      { name: 'CRM Intelligence Suite', href: '/services/smart-crm-intelligence-suite' },
+      { name: 'AI Decision Engine', href: '/ai-powered-decision-engine' },
+      { name: 'Content Automation', href: '/intelligent-content-automation-platform' },
+      { name: 'CRM Intelligence Suite', href: '/smart-crm-intelligence-suite' },
       { name: 'AI Evaluation Orchestrator', href: '/services/ai-evaluation-orchestrator', featured: true },
               { name: 'SEO Automation Suite', href: '/seo-automation-suite' },
               { name: 'IT Asset Discovery Agent', href: '/services/it-asset-discovery-agent' },
@@ -133,7 +133,7 @@ const footerSections = [
 
 const socialLinks = [
   { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: <Twitter className="w-5 h-5" /> },
-  { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: <Linkedin className="w-5 h-5" /> },
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/company/zion-tech-group', icon: <Linkedin className="w-5 h-5" /> },
   { name: 'Facebook', href: 'https://facebook.com/ziontechgroup', icon: <Facebook className="w-5 h-5" /> },
   { name: 'Instagram', href: 'https://instagram.com/ziontechgroup', icon: <Instagram className="w-5 h-5" /> },
   { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: <Youtube className="w-5 h-5" /> },

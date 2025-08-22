@@ -44,7 +44,7 @@ export default function AIHRAnalyticsPlatform() {
 								<p className="mt-4 text-3xl font-bold">Custom</p>
 							</div>
 						</div>
-						<p className="mt-4 text-sm text-gray-400">Market references: <a className="underline hover:text-cyan-300" href="https://www.visier.com/pricing/" target="_blank" rel="noreferrer">Visier</a>, <a className="underline hover:text-cyan-300" href="https://chart-hop.com/pricing/" target="_blank" rel="noreferrer">ChartHop</a>, <a className="underline hover:text-cyan-300" href="https://www.deel.com/pricing" target="_blank" rel="noreferrer">Deel</a>.</p>
+						<p className="mt-4 text-sm text-gray-400">Market references: <a className="underline hover:text-cyan-300" href="https://www.visier.com/plans-and-pricing/" target="_blank" rel="noreferrer">Visier</a>, <a className="underline hover:text-cyan-300" href="https://charthop.com/pricing/" target="_blank" rel="noreferrer">ChartHop</a>, <a className="underline hover:text-cyan-300" href="https://www.deel.com/pricing" target="_blank" rel="noreferrer">Deel</a>.</p>
 					</div>
 
 					<div className="mt-12 flex flex-wrap items-center gap-4">
