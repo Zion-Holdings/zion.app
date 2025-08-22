@@ -1,25 +1,21 @@
 import React from 'react';
-import ServiceLanding from '../components/sections/ServiceLanding';
+import Head from 'next/head';
 
-export default function ZeroTrustSecurityPlatform() {
+export default function ZeroTrustSecurityPlatformWrapper() {
 	return (
-		<ServiceLanding
-			title="Zero Trust Security Platform"
-			description="Design and implement Zero Trust architecture: identity-aware access, micro-segmentation, continuous verification, and policy enforcement across apps, infra, and devices."
-			subtitle="Never trust, always verify"
-			pricePerMonthUSD={4999}
-			implementationWeeks="3-6 weeks"
-			roiNote="Reduce breach risk and blast radius; meet compliance faster"
-			features={[
-				"Identity and device posture checks",
-				"Policy enforcement at network and application layers",
-				"Service-to-service authentication (mTLS)",
-				"Micro-segmentation and least privilege",
-				"SIEM/SOAR integrations and automated response",
-				"Reference architectures and runbooks"
-			]}
-			industries={["Financial Services", "Healthcare", "SaaS", "Government"]}
-			canonical="https://ziontechgroup.com/zero-trust-security-platform"
-		/>
+		<>
+			<Head>
+				<title>Zero Trust Security Platform | Zion Tech Group</title>
+				<link rel="canonical" href="https://ziontechgroup.com/zero-trust-security-platform" />
+				<meta name="robots" content="index,follow" />
+			</Head>
+			<div className="min-h-screen bg-black text-white flex items-center justify-center p-8">
+				<div className="max-w-2xl text-center space-y-4">
+					<h1 className="text-3xl md:text-5xl font-bold">Zero Trust Security Platform</h1>
+					<p className="text-gray-300">Identity-aware access and micro-segmentation.</p>
+					<a href="/zero-trust-network-architecture" className="inline-block px-6 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white">View Details</a>
+				</div>
+			</div>
+		</>
 	);
 }

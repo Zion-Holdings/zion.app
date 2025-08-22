@@ -1,25 +1,21 @@
 import React from 'react';
-import ServiceLanding from '../components/sections/ServiceLanding';
+import Head from 'next/head';
 
-export default function EdgeComputingOrchestrationPlatform() {
+export default function EdgeComputingOrchestrationPlatformWrapper() {
 	return (
-		<ServiceLanding
-			title="Edge Computing Orchestration Platform"
-			description="Deploy, manage, and observe workloads across edge locations with secure updates, policy control, and low-latency routing."
-			subtitle="Operate everywhere securely"
-			pricePerMonthUSD={3499}
-			implementationWeeks="4-8 weeks"
-			roiNote="Improve latency up to 60% and reduce bandwidth costs"
-			features={[
-				"Zero-touch provisioning",
-				"Fleet management and canary updates",
-				"Policy and configuration drift detection",
-				"Edge-aware service mesh",
-				"Observability with traces/logs/metrics",
-				"Cloudflare Workers, Fly.io, K3s support"
-			]}
-			industries={["Retail", "Manufacturing", "Telecom", "Media"]}
-			canonical="https://ziontechgroup.com/edge-computing-orchestration-platform"
-		/>
+		<>
+			<Head>
+				<title>Edge Computing Orchestration Platform | Zion Tech Group</title>
+				<link rel="canonical" href="https://ziontechgroup.com/edge-computing-orchestration-platform" />
+				<meta name="robots" content="index,follow" />
+			</Head>
+			<div className="min-h-screen bg-black text-white flex items-center justify-center p-8">
+				<div className="max-w-2xl text-center space-y-4">
+					<h1 className="text-3xl md:text-5xl font-bold">Edge Computing Orchestration</h1>
+					<p className="text-gray-300">Fleet management and policy at the edge.</p>
+					<a href="/edge-computing-orchestration" className="inline-block px-6 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white">View Details</a>
+				</div>
+			</div>
+		</>
 	);
 }

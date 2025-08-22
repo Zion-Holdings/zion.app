@@ -1,25 +1,21 @@
 import React from 'react';
-import ServiceLanding from '../components/sections/ServiceLanding';
+import Head from 'next/head';
 
-export default function AiPoweredCybersecurity() {
+export default function AIPoweredCybersecurityWrapper() {
 	return (
-		<ServiceLanding
-			title="AI-Powered Cybersecurity"
-			description="Detect, prioritize, and respond to threats with AI-driven analytics, anomaly detection, and automated playbooks."
-			subtitle="Find and fix risks faster"
-			pricePerMonthUSD={2999}
-			implementationWeeks="3-6 weeks"
-			roiNote="Reduce mean time to detect/respond by up to 50%"
-			features={[
-				"Threat detection with LLM-assisted triage",
-				"Anomaly detection on logs/events",
-				"SOAR playbooks and auto-remediation",
-				"Attack surface and posture management",
-				"Integrations: CrowdStrike, Wiz, Snyk, Splunk",
-				"Compliance reporting and evidence"
-			]}
-			industries={["SaaS", "Finance", "Healthcare", "Retail"]}
-			canonical="https://ziontechgroup.com/ai-powered-cybersecurity"
-		/>
+		<>
+			<Head>
+				<title>AI-Powered Cybersecurity | Zion Tech Group</title>
+				<link rel="canonical" href="https://ziontechgroup.com/ai-powered-cybersecurity" />
+				<meta name="robots" content="index,follow" />
+			</Head>
+			<div className="min-h-screen bg-black text-white flex items-center justify-center p-8">
+				<div className="max-w-2xl text-center space-y-4">
+					<h1 className="text-3xl md:text-5xl font-bold">AI-Powered Cybersecurity</h1>
+					<p className="text-gray-300">Intelligent threat detection and SOAR automation.</p>
+					<a href="/cybersecurity" className="inline-block px-6 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white">View Details</a>
+				</div>
+			</div>
+		</>
 	);
 }

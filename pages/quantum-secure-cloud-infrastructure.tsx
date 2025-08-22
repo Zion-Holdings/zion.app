@@ -1,25 +1,21 @@
 import React from 'react';
-import ServiceLanding from '../components/sections/ServiceLanding';
+import Head from 'next/head';
 
-export default function QuantumSecureCloudInfrastructure() {
+export default function QuantumSecureCloudInfrastructureWrapper() {
 	return (
-		<ServiceLanding
-			title="Quantum-Secure Cloud Infrastructure"
-			description="Future-proof your cloud with PQC, encrypted networking, and key management designed to resist quantum attacks."
-			subtitle="Protect data beyond the quantum horizon"
-			pricePerMonthUSD={5999}
-			implementationWeeks="6-10 weeks"
-			roiNote="Meet emerging PQC compliance and safeguard long-lived data"
-			features={[
-				"PQC algorithms for data at-rest and in-transit",
-				"Hybrid crypto transition plans",
-				"HSM/KMS integrations and key rotation",
-				"Zero Trust + PQC reference designs",
-				"Threat modeling and validation",
-				"NIST PQC roadmap alignment"
-			]}
-			industries={["Financial Services", "Healthcare", "Government"]}
-			canonical="https://ziontechgroup.com/quantum-secure-cloud-infrastructure"
-		/>
+		<>
+			<Head>
+				<title>Quantum-Secure Cloud Infrastructure | Zion Tech Group</title>
+				<link rel="canonical" href="https://ziontechgroup.com/quantum-secure-cloud-infrastructure" />
+				<meta name="robots" content="index,follow" />
+			</Head>
+			<div className="min-h-screen bg-black text-white flex items-center justify-center p-8">
+				<div className="max-w-2xl text-center space-y-4">
+					<h1 className="text-3xl md:text-5xl font-bold">Quantum-Secure Cloud Infrastructure</h1>
+					<p className="text-gray-300">This service is showcased in our portfolio. Continue to the detailed section.</p>
+					<a href="/ultimate-2025-micro-saas-showcase/#quantum-secure-cloud" className="inline-block px-6 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white">View Details</a>
+				</div>
+			</div>
+		</>
 	);
 }

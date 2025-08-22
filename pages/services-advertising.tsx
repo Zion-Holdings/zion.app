@@ -279,6 +279,32 @@ export default function ServicesAdvertisingPage() {
               </a>
             </div>
           </section>
+
+          <section>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">New in Q2 2026</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { name: 'Affiliate Attribution & Analytics', price: '$99/mo', href: '/services/affiliate-attribution-analytics' },
+                { name: 'Ecommerce Returns Management', price: '$79/mo', href: '/services/returns-management-saas' },
+                { name: 'Mobile-First Survey Engine', price: '$29/mo', href: '/services/mobile-survey-engine' },
+                { name: 'Podcast Transcription Studio', price: '$19/mo', href: '/services/podcast-transcription-studio' },
+                { name: 'Customer Support Helpdesk (SMB)', price: '$49/agent/mo', href: '/services/customer-support-helpdesk' },
+                { name: 'AI Email Autoresponder', price: '$39/user/mo', href: '/services/ai-email-autoresponder' },
+                { name: 'Automated Email Follow‑ups', price: '$24/user/mo', href: '/services/email-followup-automation' },
+                { name: 'Freelancer Portfolio Builder', price: '$10/mo', href: '/services/portfolio-site-builder' },
+                { name: 'Privacy‑Friendly Website Analytics', price: '$7/mo', href: '/services/website-analytics-smb' },
+                { name: 'Event Ops Dashboard', price: '$59/mo', href: '/services/events-ops-dashboard' },
+                { name: 'AI Marketing Content Studio', price: '$49/mo', href: '/services/ai-marketing-content-studio' }
+              ].map((o) => (
+                <a key={o.name} href={o.href} className="block p-6 rounded-2xl bg-black/40 border border-gray-700/60 hover:border-cyan-500/40">
+                  <div className="text-sm text-gray-400 mb-1">From</div>
+                  <div className="text-2xl font-bold text-white">{o.price}</div>
+                  <div className="text-gray-200 mt-2">{o.name}</div>
+                </a>
+              ))}
+            </div>
+            <p className="text-center text-sm text-slate-400 mt-4">Benchmarks: see <a href="/market-pricing" className="text-cyan-400 underline">Market Pricing</a> for easily verifiable averages (e.g., Refersion/LeadDyno, Loop/AfterShip, Typeform/Tally, Zendesk/Freshdesk).</p>
+          </section>
         </div>
       </div>
     </UltraAdvancedFuturisticBackground>

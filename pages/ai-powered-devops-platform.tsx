@@ -1,25 +1,21 @@
 import React from 'react';
-import ServiceLanding from '../components/sections/ServiceLanding';
+import Head from 'next/head';
 
-export default function AiPoweredDevOpsPlatform() {
+export default function AIPoweredDevOpsPlatformWrapper() {
 	return (
-		<ServiceLanding
-			title="AI-Powered DevOps Platform"
-			description="Accelerate delivery with AI-assisted CI/CD, deployment safety checks, change risk prediction, and automated incident response."
-			subtitle="Ship faster with confidence"
-			pricePerMonthUSD={899}
-			implementationWeeks="2-4 weeks"
-			roiNote="Cut change failure rate and MTTR by 30–60%"
-			features={[
-				"LLM-assisted pipeline authoring",
-				"Change risk scoring pre-deploy",
-				"Progressive delivery and auto-rollbacks",
-				"SLO-aware release gates",
-				"Incident correlation and runbook automation",
-				"GitHub/GitLab, Argo, Harness integrations"
-			]}
-			industries={["SaaS", "E-commerce", "Fintech", "Media"]}
-			canonical="https://ziontechgroup.com/ai-powered-devops-platform"
-		/>
+		<>
+			<Head>
+				<title>AI-Powered DevOps Platform | Zion Tech Group</title>
+				<link rel="canonical" href="https://ziontechgroup.com/ai-powered-devops-platform" />
+				<meta name="robots" content="index,follow" />
+			</Head>
+			<div className="min-h-screen bg-black text-white flex items-center justify-center p-8">
+				<div className="max-w-2xl text-center space-y-4">
+					<h1 className="text-3xl md:text-5xl font-bold">AI-Powered DevOps Platform</h1>
+					<p className="text-gray-300">AI-assisted CI/CD and safer releases.</p>
+					<a href="/ci-cd-security-hardening" className="inline-block px-6 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white">View Details</a>
+				</div>
+			</div>
+		</>
 	);
 }

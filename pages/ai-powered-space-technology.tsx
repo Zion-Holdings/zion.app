@@ -1,25 +1,21 @@
 import React from 'react';
-import ServiceLanding from '../components/sections/ServiceLanding';
+import Head from 'next/head';
 
-export default function AiPoweredSpaceTechnology() {
+export default function AIPoweredSpaceTechnologyWrapper() {
 	return (
-		<ServiceLanding
-			title="AI-Powered Space Technology"
-			description="Apply AI to mission planning, anomaly detection, and autonomous operations for satellites and space systems."
-			subtitle="Smarter missions, safer operations"
-			pricePerMonthUSD={14999}
-			implementationWeeks="8-16 weeks"
-			roiNote="Increase mission reliability and reduce operating costs"
-			features={[
-				"Autonomous fault detection and recovery",
-				"Trajectory optimization and scheduling",
-				"Telemetry anomaly detection",
-				"Ground station automation",
-				"Digital twins and simulation",
-				"Standards-compliant data pipelines"
-			]}
-			industries={["Space", "Defense", "Research"]}
-			canonical="https://ziontechgroup.com/ai-powered-space-technology"
-		/>
+		<>
+			<Head>
+				<title>AI-Powered Space Technology | Zion Tech Group</title>
+				<link rel="canonical" href="https://ziontechgroup.com/ai-powered-space-technology" />
+				<meta name="robots" content="index,follow" />
+			</Head>
+			<div className="min-h-screen bg-black text-white flex items-center justify-center p-8">
+				<div className="max-w-2xl text-center space-y-4">
+					<h1 className="text-3xl md:text-5xl font-bold">AI-Powered Space Technology</h1>
+					<p className="text-gray-300">Explore our space AI platform with mission planning and satellite operations.</p>
+					<a href="/space-technology-ai-platform" className="inline-block px-6 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white">View Details</a>
+				</div>
+			</div>
+		</>
 	);
 }
