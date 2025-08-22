@@ -1349,6 +1349,102 @@ export default function ServicesAdvertisingPage() {
 					</section>
 				</section>
 
+				{/* New 2034 Enterprise IT, Micro SAAS, and AI Services */}
+				<section id="new-2034-services" className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">New 2034 Services</h2>
+
+					<section className="space-y-2">
+						<h3 className="text-xl font-semibold text-white">Managed Kubernetes (EKS/AKS/GKE)</h3>
+						<p className="text-slate-300">Production-grade K8s with GitOps, policy-as-code, SLOs, and SRE ops.</p>
+						<ul className="list-disc list-inside text-slate-300 space-y-1">
+							<li>Typical enterprise budget: $2,500–$8,000/mo</li>
+							<li>References: {ext('https://aws.amazon.com/eks/pricing/')}, {ext('https://azure.microsoft.com/pricing/details/kubernetes-service/')}, {ext('https://cloud.google.com/kubernetes-engine/pricing')}</li>
+						</ul>
+						<div><a className="text-cyan-400 underline" href="/services">Learn more</a></div>
+					</section>
+
+					<section className="space-y-2">
+						<h3 className="text-xl font-semibold text-white">Cloud Landing Zone (AWS/Azure/GCP)</h3>
+						<p className="text-slate-300">Secure multi-account foundations with identity, networking, guardrails, and governance automation.</p>
+						<ul className="list-disc list-inside text-slate-300 space-y-1">
+							<li>Typical enterprise budget: $1,500–$5,000/mo</li>
+							<li>References: {ext('https://docs.aws.amazon.com/landing-zone/latest/userguide/what-is-landing-zone.html')}, {ext('https://learn.microsoft.com/azure/cloud-adoption-framework/ready/landing-zone/')}, {ext('https://cloud.google.com/architecture/landing-zones')}</li>
+						</ul>
+						<div><a className="text-cyan-400 underline" href="/services">Learn more</a></div>
+					</section>
+
+					<section className="space-y-2">
+						<h3 className="text-xl font-semibold text-white">FinOps Cloud Cost Management</h3>
+						<p className="text-slate-300">Showback/chargeback, commitment management, and engineering guardrails to reduce spend.</p>
+						<ul className="list-disc list-inside text-slate-300 space-y-1">
+							<li>Typical SMB/enterprise budget: $700–$3,000/mo</li>
+							<li>References: {ext('https://aws.amazon.com/aws-cost-management/')} , {ext('https://www.finops.org/')}</li>
+						</ul>
+						<div><a className="text-cyan-400 underline" href="/services">Learn more</a></div>
+					</section>
+
+					<section className="space-y-2">
+						<h3 className="text-xl font-semibold text-white">Unified Observability Platform</h3>
+						<p className="text-slate-300">Metrics, logs, traces with SLOs and golden signals. OpenTelemetry-first.</p>
+						<ul className="list-disc list-inside text-slate-300 space-y-1">
+							<li>Typical SMB budget: $200–$1,200/mo</li>
+							<li>References: {ext('https://grafana.com/pricing/')}, {ext('https://www.datadoghq.com/pricing/')}, {ext('https://opentelemetry.io/docs/')}</li>
+						</ul>
+						<div><a className="text-cyan-400 underline" href="/services/status-pages-slo">Related: Status Pages & SLO</a></div>
+					</section>
+
+					<section className="space-y-2">
+						<h3 className="text-xl font-semibold text-white">RAG Observability & Guardrails</h3>
+						<p className="text-slate-300">End-to-end RAG quality, safety, and drift detection with dashboards and eval gates.</p>
+						<ul className="list-disc list-inside text-slate-300 space-y-1">
+							<li>Typical SMB budget: $99–$499/mo</li>
+							<li>References: {ext('https://openai.com/policies/usage-policies')}, {ext('https://www.anthropic.com/safety')}, {ext('https://promptfoo.dev/pricing')}</li>
+						</ul>
+						<div><a className="text-cyan-400 underline" href="/rag-evaluation-lab">See also: RAG Evaluation Lab</a></div>
+					</section>
+
+					<section className="space-y-2">
+						<h3 className="text-xl font-semibold text-white">Edge Feature Flags</h3>
+						<p className="text-slate-300">Geo and audience-targeted flags at the edge with experiment support.</p>
+						<ul className="list-disc list-inside text-slate-300 space-y-1">
+							<li>Typical SMB budget: $50–$500/mo</li>
+							<li>References: {ext('https://vercel.com/pricing')}, {ext('https://www.cloudflare.com/plans/')}</li>
+						</ul>
+						<div><a className="text-cyan-400 underline" href="/status-pages-slo">Related: Status Pages & SLO</a></div>
+					</section>
+
+					<section className="space-y-2">
+						<h3 className="text-xl font-semibold text-white">API Schema Diff & Registry</h3>
+						<p className="text-slate-300">Versioned OpenAPI with CI diffs, breaking-change detection, and docs.</p>
+						<ul className="list-disc list-inside text-slate-300 space-y-1">
+							<li>Typical SMB budget: $20–$100/mo</li>
+							<li>References: {ext('https://swagger.io/tools/swaggerhub/pricing/')}, {ext('https://stoplight.io/pricing')}</li>
+						</ul>
+						<div><a className="text-cyan-400 underline" href="/services">Learn more</a></div>
+					</section>
+
+					<section className="space-y-2">
+						<h3 className="text-xl font-semibold text-white">Webhook Relay & Replay</h3>
+						<p className="text-slate-300">Capture, relay, and replay webhooks with retries and analytics.</p>
+						<ul className="list-disc list-inside text-slate-300 space-y-1">
+							<li>Typical SMB budget: $10–$99/mo</li>
+							<li>References: {ext('https://stripe.com/docs/webhooks')}, {ext('https://docs.github.com/webhooks-and-events/webhooks/about-webhooks')}</li>
+						</ul>
+						<div><a className="text-cyan-400 underline" href="/webhook-relay-replay">Product page</a></div>
+					</section>
+
+					<section className="space-y-2">
+						<h3 className="text-xl font-semibold text-white">Serverless Cron Job Scheduler</h3>
+						<p className="text-slate-300">Multi-region cron with retries, jitter, and DLQs. Works with webhooks and queues.</p>
+						<ul className="list-disc list-inside text-slate-300 space-y-1">
+							<li>Typical SMB budget: $9–$59/mo</li>
+							<li>References: {ext('https://docs.aws.amazon.com/lambda/latest/dg/services-cloudwatchevents-expressions.html')}, {ext('https://developers.cloudflare.com/workers/configuration/cron-triggers/')}</li>
+						</ul>
+						<div><a className="text-cyan-400 underline" href="/cron-job-scheduler">Product page</a></div>
+					</section>
+
+				</section>
+
 				{/* Contact CTA */}
 				<div className="flex flex-col md:flex-row items-center gap-4 p-4 rounded-xl bg-black/30 border border-gray-800">
 					<a href="tel:+13024640950" className="px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white">Call +1 302 464 0950</a>
