@@ -23,14 +23,14 @@ const footerSections = [
     description: 'Our most popular and innovative solutions',
     icon: <Star className="w-5 h-5 text-yellow-400" />,
     links: [
-      { name: 'AI Customer Success Platform', href: '/ai-customer-success-platform', featured: true },
-      { name: 'Supply Chain Optimization', href: '/intelligent-supply-chain-optimization', featured: true },
-      { name: 'AI Financial Planning', href: '/ai-financial-planning-platform', featured: true },
-      { name: 'AI Sales Intelligence', href: '/ai-sales-intelligence-platform', featured: true },
-      { name: 'HR Analytics Platform', href: '/intelligent-hr-analytics-platform' },
-      { name: 'AI Decision Engine', href: '/ai-powered-decision-engine' },
-      { name: 'Content Automation', href: '/intelligent-content-automation-platform' },
-      { name: 'CRM Intelligence Suite', href: '/smart-crm-intelligence-suite' }
+      { name: 'AI Customer Success Platform', href: '/services/ai-customer-support-suite', featured: true },
+      { name: 'Supply Chain Optimization', href: '/services/ai-supply-chain-optimization' , featured: true },
+      { name: 'AI Financial Planning', href: '/services/ai-financial-planning-platform', featured: true },
+      { name: 'AI Sales Intelligence', href: '/services/ai-sales-automation' , featured: true },
+      { name: 'HR Analytics Platform', href: '/services/intelligent-hr-analytics' },
+      { name: 'AI Decision Engine', href: '/services/ai-autonomous-decision-engine' },
+      { name: 'Content Automation', href: '/services/intelligent-content-automation' },
+      { name: 'CRM Intelligence Suite', href: '/services/crm-intelligence-suite' }
     ]
   },
   {
@@ -54,16 +54,16 @@ const footerSections = [
     description: 'Breakthrough quantum and space technologies',
     icon: <Atom className="w-5 h-5 text-blue-400" />,
     links: [
-      { name: 'Space Resource Mining', href: '/space-resource-mining-platform' },
+      { name: 'Space Resource Mining', href: '/services/space-resource-mining-platform' },
       { name: 'Quantum Internet Security', href: '/quantum-internet-security-platform' },
       { name: 'Quantum-Secure Cloud Infrastructure', href: '/quantum-secure-cloud-infrastructure' },
       { name: 'Quantum Financial Trading Platform', href: '/quantum-financial-trading' },
-      { name: 'AI-Powered Space Technology', href: '/ai-powered-space-technology' },
+      { name: 'AI-Powered Space Technology', href: '/services/ai-powered-space-technology' },
       { name: 'Brain-Computer Interface', href: '/brain-computer-interface-platform' },
-      { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery-platform' },
+      { name: 'Quantum Materials Discovery', href: '/services/quantum-materials-discovery-platform' },
       { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai-platform' },
-      { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform' },
-      { name: 'Quantum Energy Platform', href: '/quantum-energy-platform' },
+      { name: 'Quantum Bio-Computing', href: '/services/quantum-bio-computing-platform' },
+      { name: 'Quantum Energy Platform', href: '/services/quantum-energy-platform' },
       { name: 'Quantum Robotics', href: '/quantum-robotics' }
     ]
   },
@@ -102,13 +102,13 @@ const footerSections = [
     description: 'Industry-specific technology solutions',
     icon: <Building className="w-5 h-5 text-orange-400" />,
     links: [
-      { name: 'Healthcare Solutions', href: '/healthcare-solutions' },
-      { name: 'Financial Services', href: '/financial-solutions' },
-      { name: 'Manufacturing AI', href: '/manufacturing-ai-solutions' },
-      { name: 'Retail Technology', href: '/retail-technology-solutions' },
-      { name: 'Education Technology', href: '/education-technology-solutions' },
-      { name: 'Government Solutions', href: '/government-technology-solutions' },
-      { name: 'Energy & Utilities', href: '/energy-utilities-solutions' },
+      { name: 'Healthcare Solutions', href: '/services/ai-healthcare-analytics' },
+      { name: 'Financial Services', href: '/services/ai-financial-planning-platform' },
+      { name: 'Manufacturing AI', href: '/services/ai-manufacturing-optimization' },
+      { name: 'Retail Technology', href: '/services/retail-technology-optimizer' },
+      { name: 'Education Technology', href: '/services/education-technology-platform' },
+      { name: 'Government Solutions', href: '/services/government-technology-solutions' },
+      { name: 'Energy & Utilities', href: '/services/energy-utilities-optimizer' },
       { name: 'Biotech AI Research', href: '/biotech-ai-research-platform' }
     ]
   },
@@ -117,14 +117,14 @@ const footerSections = [
     description: 'Documentation, support, and learning',
     icon: <BookOpen className="w-5 h-5 text-cyan-400" />,
     links: [
-      { name: 'Documentation', href: '/docs' },
-      { name: 'API Reference', href: '/api-documentation' },
+      { name: 'Documentation', href: '/resources' },
+      { name: 'API Reference', href: '/docs' },
       { name: 'Case Studies', href: '/case-studies' },
       { name: 'Blog & News', href: '/blog' },
       { name: 'Support Center', href: '/support' },
-      { name: 'Developer Portal', href: '/developer' },
-      { name: 'Training & Certification', href: '/training' },
-      { name: 'Community Forum', href: '/community' }
+      { name: 'Developer Portal', href: '/docs' },
+      { name: 'Training & Certification', href: '/resources' },
+      { name: 'Community Forum', href: '/resources' }
     ]
   }
 ];
