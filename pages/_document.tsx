@@ -18,6 +18,10 @@ export default class MyDocument extends Document {
 					<link rel="robots" href="/robots.txt" />
 					<link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 					<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+					<meta name="color-scheme" content="dark light" />
+					<meta name="format-detection" content="telephone=no" />
+					<link rel="alternate" hrefLang="en" href="https://ziontechgroup.com/" />
+					<link rel="alternate" hrefLang="x-default" href="https://ziontechgroup.com/" />
 				</Head>
 				<body>
 					<Main />

@@ -5,6 +5,9 @@ import Layout from '../components/layout/Layout';
 import Analytics from '../components/Analytics';
 import { SEOContext } from '../components/SEOContext';
 import SEO from '../components/SEO';
+import { Inter } from 'next/font/google';
+
+const inter = Inter({ subsets: ['latin'], display: 'swap' });
 
 function DefaultSEO() {
 	const renderedRef = useRef(false);
@@ -27,9 +30,11 @@ export default function ZionApp({ Component, pageProps }: AppProps) {
 		<SEOContext.Provider value={{ renderedRef }}>
 			<Analytics />
 			<DefaultSEO />
-			<Layout>
-				<Component {...pageProps} />
-			</Layout>
+			<div className={inter.className}>
+				<Layout>
+					<Component {...pageProps} />
+				</Layout>
+			</div>
 		</SEOContext.Provider>
 	);
 }
