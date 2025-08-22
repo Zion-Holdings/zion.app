@@ -1,46 +1,53 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import EnhancedNavigation2025 from './EnhancedNavigation2025';
-import UltraFuturisticFooter2034 from './UltraFuturisticFooter2034';
-import EnhancedSidebar2025 from './EnhancedSidebar2025';
-import UltraAdvancedFuturisticBackground from './UltraAdvancedFuturisticBackground';
-import TopContactBar from './TopContactBar';
+import React from 'react';
+import Head from 'next/head';
+import UltraAdvancedFuturisticNavigation2025 from './UltraAdvancedFuturisticNavigation2025';
+import UltraAdvancedFuturisticFooter2025 from './UltraAdvancedFuturisticFooter2025';
 
 interface LayoutProps {
   children: React.ReactNode;
 }
 
-export default function Layout({ children }: LayoutProps) {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
-      {/* Futuristic Background */}
-      <UltraAdvancedFuturisticBackground />
-      
-      {/* Layout Structure */}
-      <div className="relative z-10">
-        {/* Top Contact Bar */}
-        <TopContactBar />
+    <>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#000000" />
+        <meta name="msapplication-TileColor" content="#000000" />
         
+        {/* Preconnect to external domains */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
+        {/* Additional meta tags for better SEO */}
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta name="googlebot" content="index, follow" />
+        
+        {/* Mobile optimization */}
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        
+        {/* Performance optimization */}
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+      </Head>
+
+      <div className="min-h-screen bg-black text-white flex flex-col">
         {/* Navigation */}
-        <EnhancedNavigation2025 />
+        <UltraAdvancedFuturisticNavigation2025 />
         
-        {/* Sidebar and Main Content */}
-        <div className="flex">
-          <EnhancedSidebar2025 
-            isOpen={sidebarOpen} 
-            onClose={() => setSidebarOpen(false)} 
-          />
-          
-          <main id="main" className="flex-1 pt-24 lg:pt-28">
-            {children}
-          </main>
-        </div>
+        {/* Main Content */}
+        <main className="flex-1 relative">
+          {children}
+        </main>
         
         {/* Footer */}
-        <UltraFuturisticFooter2034 />
+        <UltraAdvancedFuturisticFooter2025 />
       </div>
-    </div>
+    </>
   );
-}
+};
+
+export default Layout;
