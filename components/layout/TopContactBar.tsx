@@ -35,7 +35,7 @@ export default function TopContactBar() {
               {/* Phone */}
               <div className="flex items-center space-x-2 text-gray-300 hover:text-cyan-400 transition-colors duration-200 group">
                 <Phone className="w-4 h-4 text-cyan-400 group-hover:scale-110 transition-transform duration-200" />
-                <a href={`tel:${contactInfo.mobile}`} className="hover:text-cyan-400 transition-colors duration-200">
+                <a href={`tel:${contactInfo.mobile.replace(/[^+\d]/g, '')}`} className="hover:text-cyan-400 transition-colors duration-200">
                   {contactInfo.mobile}
                 </a>
               </div>
