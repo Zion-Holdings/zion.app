@@ -14,6 +14,13 @@ import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-
 import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
 import { cuttingEdgeAIServices2025 } from '../data/2025-cutting-edge-ai-services';
 
+// Import our new 2025 advanced services
+import { advancedCybersecuritySolutions2025 } from '../data/2025-advanced-cybersecurity-solutions';
+import { advancedFintechSolutions2025 } from '../data/2025-advanced-fintech-solutions';
+import { advancedHealthcareTechSolutions2025 } from '../data/2025-advanced-healthcare-tech-solutions';
+import { advancedLogisticsSupplyChainSolutions2025 } from '../data/2025-advanced-logistics-supply-chain-solutions';
+import { advancedEnergySustainabilitySolutions2025 } from '../data/2025-advanced-energy-sustainability-solutions';
+
 // Import our new service data
 import { enterpriseITSolutions } from '../data/2034-enterprise-it-solutions';
 import { innovativeMicroSaasSolutions } from '../data/2034-innovative-micro-saas-solutions';
@@ -108,6 +115,13 @@ const allServices = [
   ...innovativeITInfrastructureServices2025,
   ...innovativeMicroSaasSolutions2025,
   ...cuttingEdgeAIServices2025,
+  
+  // Our new 2025 advanced services
+  ...advancedCybersecuritySolutions2025,
+  ...advancedFintechSolutions2025,
+  ...advancedHealthcareTechSolutions2025,
+  ...advancedLogisticsSupplyChainSolutions2025,
+  ...advancedEnergySustainabilitySolutions2025,
   
   ...enterpriseITSolutions,
   ...innovativeMicroSaasSolutions,
@@ -253,6 +267,41 @@ const categories = [
     description: 'Smart transportation solutions'
   },
   {
+    id: 'cybersecurity',
+    name: 'Cybersecurity',
+    icon: <Shield className="w-6 h-6" />,
+    color: 'from-red-500 to-orange-500',
+    description: 'Advanced cybersecurity solutions'
+  },
+  {
+    id: 'fintech',
+    name: 'Fintech',
+    icon: <Building className="w-6 h-6" />,
+    color: 'from-green-500 to-emerald-500',
+    description: 'Financial technology solutions'
+  },
+  {
+    id: 'healthcare-tech',
+    name: 'Healthcare Technology',
+    icon: <Heart className="w-6 h-6" />,
+    color: 'from-blue-500 to-cyan-500',
+    description: 'Advanced healthcare technology'
+  },
+  {
+    id: 'logistics-supply-chain',
+    name: 'Logistics & Supply Chain',
+    icon: <Truck className="w-6 h-6" />,
+    color: 'from-purple-500 to-pink-500',
+    description: 'Logistics and supply chain optimization'
+  },
+  {
+    id: 'energy-sustainability',
+    name: 'Energy & Sustainability',
+    icon: <Atom className="w-6 h-6" />,
+    color: 'from-yellow-500 to-orange-500',
+    description: 'Energy and sustainability solutions'
+  },
+  {
     id: 'education-research',
     name: 'Education & Research',
     icon: <GraduationCap className="w-6 h-6" />,
@@ -299,6 +348,13 @@ export default function Services() {
     
     const serviceCategory = getServiceCategory(service).toLowerCase();
     const categoryName = categories.find(cat => cat.id === selectedCategory)?.name.toLowerCase();
+    
+    // Handle specific category mappings for new advanced services
+    if (selectedCategory === 'cybersecurity' && serviceCategory.includes('cybersecurity')) return matchesSearch;
+    if (selectedCategory === 'fintech' && serviceCategory.includes('fintech')) return matchesSearch;
+    if (selectedCategory === 'healthcare-tech' && serviceCategory.includes('healthcare')) return matchesSearch;
+    if (selectedCategory === 'logistics-supply-chain' && (serviceCategory.includes('logistics') || serviceCategory.includes('supply chain'))) return matchesSearch;
+    if (selectedCategory === 'energy-sustainability' && (serviceCategory.includes('energy') || serviceCategory.includes('sustainability'))) return matchesSearch;
     
     return matchesSearch && serviceCategory.includes(categoryName || '');
   });
@@ -353,7 +409,7 @@ export default function Services() {
       case 'data & analytics':
       case 'cloud services':
       case 'cybersecurity':
-        return <Building className="w-6 h-6 text-blue-400" />;
+        return <Shield className="w-6 h-6 text-red-400" />;
       case 'ai & consciousness':
       case 'artificial intelligence':
         return <Brain className="w-6 h-6 text-cyan-400" />;
@@ -372,6 +428,14 @@ export default function Services() {
       case 'transportation':
       case 'transportation & logistics':
         return <Truck className="w-6 h-6 text-blue-400" />;
+      case 'fintech':
+        return <Building className="w-6 h-6 text-green-400" />;
+      case 'healthcare-tech':
+        return <Heart className="w-6 h-6 text-blue-400" />;
+      case 'logistics-supply-chain':
+        return <Truck className="w-6 h-6 text-purple-400" />;
+      case 'energy-sustainability':
+        return <Atom className="w-6 h-6 text-yellow-400" />;
       case 'education':
       case 'education & research':
         return <GraduationCap className="w-6 h-6 text-yellow-400" />;
