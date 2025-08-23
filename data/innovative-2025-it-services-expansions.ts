@@ -471,7 +471,7 @@ export const innovative2025ITServiceExpansions: Innovative2025ITServiceExpansion
     competitors: ['VMware vRealize, Microsoft System Center, IBM Cloud Pak, Nutanix, HPE OneView'],
     marketSize: '$59.3B data center automation market',
     growthRate: '22.1% annual growth',
-    variant: 'it-futuristic',
+    variant: 'ai-futuristic',
     contactInfo: contact,
     realImplementation: true,
     implementationDetails: 'Complete intelligent data center automation platform with AI-powered optimization, predictive maintenance, and comprehensive automation capabilities.',
