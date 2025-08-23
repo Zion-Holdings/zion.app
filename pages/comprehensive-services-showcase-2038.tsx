@@ -196,7 +196,7 @@ export default function ComprehensiveServicesShowcase2038() {
         title="Comprehensive Services Showcase 2038 | Zion Tech Group"
         description="Discover Zion Tech Group's revolutionary 2038 services portfolio featuring AI, quantum computing, cybersecurity, metaverse solutions, and more. Transform your business with cutting-edge technology."
         keywords={['AI services', 'quantum computing', 'cybersecurity', 'metaverse', 'biotechnology', 'space technology', 'Zion Tech Group', '2038 services']}
-        image="https://ziontechgroup.com/og-image-2038-services.jpg"
+        ogImage="https://ziontechgroup.com/og-image-2038-services.jpg"
       />
       
       {/* Hero Section */}
