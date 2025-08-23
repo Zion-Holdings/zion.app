@@ -1,13 +1,51 @@
 {
   "summary": {
-    "totalFiles": 0,
-    "filesWithIssues": 0,
-    "totalIssues": 0,
-    "totalWarnings": 0,
-    "buildBreakingFiles": 0,
-    "canBuild": true
+    "totalFiles": 1,
+    "filesWithIssues": 1,
+    "totalIssues": 3,
+    "totalWarnings": 1,
+    "buildBreakingFiles": 1,
+    "canBuild": false
   },
-  "results": [],
-  "buildBreakingFiles": [],
-  "generatedAt": "2025-08-20T22:24:09.864Z"
+  "results": [
+    {
+      "file": "pages/services-enhanced.tsx",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+          "severity": "warning"
+        }
+      ]
+    }
+  ],
+  "buildBreakingFiles": [
+    "pages/services-enhanced.tsx"
+  ],
+  "generatedAt": "2025-08-21T00:58:31.338Z"
 }
