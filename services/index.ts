@@ -236,6 +236,9 @@ export { advancedCloudDevOpsServices2025 } from '../data/2025-advanced-cloud-dev
 export { industrySpecificSolutions } from '../data/2025-industry-specific-solutions';
 export { emergingTechnologyServices } from '../data/2025-emerging-technology-services';
 
+// Export 2025 innovative micro SAAS expansion services
+export { innovative2025MicroSaasExpansionV3 } from '../data/2025-innovative-micro-saas-expansion-v3';
+
 export type {
   PipelineConfig,
   PipelineStage,
