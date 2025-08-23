@@ -26,8 +26,8 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => (
     transition={{ duration: 0.5, delay: index * 0.1 }}
     className="relative group"
   >
-    <div className={`absolute inset-0 bg-gradient-to-r ${service.color} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-20`}></div>
-    <div className={`relative bg-gradient-to-r ${service.color.replace('from-', 'from-').replace('to-', 'to-')} bg-opacity-10 border border-opacity-30 rounded-2xl p-8 hover:border-opacity-50 transition-all duration-300 h-full`}>
+    <div className={`absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-20`}></div>
+    <div className="relative bg-gradient-to-r from-cyan-500/10 to-blue-600/10 bg-opacity-10 border border-cyan-500/30 rounded-2xl p-8 hover:border-cyan-500/50 transition-all duration-300 h-full">
       <div className="flex items-start justify-between mb-6">
         <div className="text-4xl">{service.icon}</div>
         {service.popular && (
@@ -41,7 +41,7 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => (
       <p className="text-gray-300 mb-6 text-sm leading-relaxed">{service.description}</p>
       
       <div className="space-y-3 mb-6">
-        {service.features.slice(0, 4).map((feature: string, idx: number) => (
+        {service.features && service.features.slice(0, 4).map((feature: string, idx: number) => (
           <div key={idx} className="flex items-center space-x-2">
             <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
             <span className="text-gray-300 text-sm">{feature}</span>
@@ -51,32 +51,65 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => (
       
       <div className="flex items-center justify-between mb-6">
         <div>
-          <span className="text-3xl font-bold text-white">{service.price}</span>
-          <span className="text-gray-400 text-sm">{service.period}</span>
+          {/* Handle both pricing structures */}
+          {service.price ? (
+            <>
+              <span className="text-3xl font-bold text-white">{service.price}</span>
+              <span className="text-gray-400 text-sm">{service.period || ''}</span>
+            </>
+          ) : service.pricing ? (
+            <>
+              <span className="text-3xl font-bold text-white">{service.pricing.starter}</span>
+              <span className="text-gray-400 text-sm">Starting from</span>
+            </>
+          ) : (
+            <>
+              <span className="text-3xl font-bold text-white">{service.marketPrice || 'Contact Us'}</span>
+              <span className="text-gray-400 text-sm">Pricing</span>
+            </>
+          )}
         </div>
         <div className="text-right">
           <div className="flex items-center space-x-1 text-yellow-400">
             {[...Array(5)].map((_, i) => (
-              <Star key={i} className={`w-4 h-4 ${i < Math.floor(service.rating) ? 'fill-current' : ''}`} />
+              <Star key={i} className={`w-4 h-4 ${i < Math.floor(service.rating || 0) ? 'fill-current' : ''}`} />
             ))}
           </div>
-          <span className="text-gray-400 text-xs">{service.rating}/5 ({service.reviews} reviews)</span>
+          <span className="text-gray-400 text-xs">{service.rating || 0}/5 ({service.reviews || 0} reviews)</span>
         </div>
       </div>
       
       <div className="space-y-3 mb-6 text-xs text-gray-400">
-        <div className="flex justify-between">
-          <span>Setup Time:</span>
-          <span>{service.setupTime}</span>
-        </div>
-        <div className="flex justify-between">
-          <span>Trial:</span>
-          <span>{service.trialDays} days</span>
-        </div>
-        <div className="flex justify-between">
-          <span>Customers:</span>
-          <span>{service.customers.toLocaleString()}</span>
-        </div>
+        {service.setupTime && (
+          <div className="flex justify-between">
+            <span>Setup Time:</span>
+            <span>{service.setupTime}</span>
+          </div>
+        )}
+        {service.trialDays && (
+          <div className="flex justify-between">
+            <span>Trial:</span>
+            <span>{service.trialDays} days</span>
+          </div>
+        )}
+        {service.customers && (
+          <div className="flex justify-between">
+            <span>Customers:</span>
+            <span>{service.customers.toLocaleString()}</span>
+          </div>
+        )}
+        {service.launchDate && (
+          <div className="flex justify-between">
+            <span>Launch Date:</span>
+            <span>{new Date(service.launchDate).toLocaleDateString()}</span>
+          </div>
+        )}
+        {service.technology && service.technology.length > 0 && (
+          <div className="flex justify-between">
+            <span>Technology:</span>
+            <span>{service.technology.slice(0, 2).join(', ')}</span>
+          </div>
+        )}
       </div>
       
       <a 

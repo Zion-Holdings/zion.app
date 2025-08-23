@@ -108,7 +108,7 @@ const Homepage2025: React.FC = () => {
                 className="p-6 group hover:bg-white/5 rounded-xl transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="text-4xl font-bold text-cyan-400 mb-2 group-hover:text-cyan-300 transition-colors">50+</div>
+                <div className="text-4xl font-bold text-cyan-400 mb-2 group-hover:text-cyan-300 transition-colors">150+</div>
                 <div className="text-gray-300">AI Services</div>
                 <div className="text-xs text-cyan-400 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Cutting-edge solutions</div>
               </motion.div>
@@ -116,7 +116,7 @@ const Homepage2025: React.FC = () => {
                 className="p-6 group hover:bg-white/5 rounded-xl transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="text-4xl font-bold text-blue-400 mb-2 group-hover:text-blue-300 transition-colors">100+</div>
+                <div className="text-4xl font-bold text-blue-400 mb-2 group-hover:text-blue-300 transition-colors">200+</div>
                 <div className="text-gray-300">Quantum Solutions</div>
                 <div className="text-xs text-blue-400 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Next-gen computing</div>
               </motion.div>
@@ -207,6 +207,66 @@ const Homepage2025: React.FC = () => {
                   popular: false,
                   category: 'Quantum & Logistics',
                   icon: '🚚'
+                }}
+                variant="quantum"
+              />
+              <UltraFuturisticServiceCard2026
+                service={{
+                  id: 'ai-autonomous-customer-success',
+                  name: 'AI Autonomous Customer Success',
+                  tagline: 'Fully automated customer success platform',
+                  description: 'Revolutionary platform that autonomously manages customer success and prevents churn',
+                  price: '$1,299',
+                  period: '/month',
+                  features: ['AI Health Scoring', 'Churn Prevention', 'Automated Onboarding'],
+                  popular: true,
+                  category: 'AI & Customer Success',
+                  icon: '🤖💼'
+                }}
+                variant="ai"
+              />
+              <UltraFuturisticServiceCard2026
+                service={{
+                  id: 'quantum-financial-risk',
+                  name: 'Quantum Financial Risk Manager',
+                  tagline: 'Quantum-powered risk assessment',
+                  description: 'Advanced financial risk management with quantum computing algorithms',
+                  price: '$4,999',
+                  period: '/month',
+                  features: ['Quantum Simulations', 'Real-time Risk Assessment', 'AI Predictions'],
+                  popular: true,
+                  category: 'Quantum & Finance',
+                  icon: '⚛️💰'
+                }}
+                variant="quantum"
+              />
+              <UltraFuturisticServiceCard2026
+                service={{
+                  id: 'ai-autonomous-devops',
+                  name: 'AI Autonomous DevOps',
+                  tagline: 'Self-healing infrastructure platform',
+                  description: 'Revolutionary DevOps platform with autonomous issue detection and resolution',
+                  price: '$2,499',
+                  period: '/month',
+                  features: ['Autonomous Monitoring', 'Self-healing Systems', 'Zero-downtime Deployments'],
+                  popular: true,
+                  category: 'AI & DevOps',
+                  icon: '🤖⚙️'
+                }}
+                variant="automation"
+              />
+              <UltraFuturisticServiceCard2026
+                service={{
+                  id: 'quantum-edge-computing',
+                  name: 'Quantum Edge Computing',
+                  tagline: 'Quantum-enhanced edge processing',
+                  description: 'Next-generation edge computing with quantum capabilities for ultra-fast processing',
+                  price: '$3,999',
+                  period: '/month',
+                  features: ['Quantum Processing', 'Real-time AI', 'Edge Security'],
+                  popular: false,
+                  category: 'Quantum & Edge',
+                  icon: '⚛️🌐'
                 }}
                 variant="quantum"
               />

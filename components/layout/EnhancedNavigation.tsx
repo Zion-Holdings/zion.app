@@ -1,5 +1,5 @@
-/// <reference types="dom" />
 
+/// <reference types="dom" />
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Menu, X, ChevronDown } from 'lucide-react';
@@ -27,30 +27,41 @@ const EnhancedNavigation: React.FC = () => {
       label: 'Services',
       href: '/services',
       children: [
-        { label: 'AI & Automation', href: '/ai-automation-services' },
-        { label: 'IT Infrastructure', href: '/it-infrastructure-services' },
-        { label: 'Cloud Solutions', href: '/cloud-solutions' },
-        { label: 'Cybersecurity', href: '/cybersecurity-services' },
-        { label: 'Quantum Computing', href: '/quantum-computing' }
+        { label: 'AI & Automation', href: '/services' },
+        { label: 'IT Infrastructure', href: '/services' },
+        { label: 'Cloud Solutions', href: '/services' },
+        { label: 'Cybersecurity', href: '/services' },
+        { label: 'Quantum Computing', href: '/services' },
+        { label: 'Micro SAAS', href: '/services' },
+        { label: 'Edge Computing', href: '/services' },
+        { label: 'Blockchain', href: '/services' }
       ]
     },
     {
       label: 'Showcase',
       href: '/showcase',
       children: [
-        { label: 'Case Studies', href: '/case-studies' },
-        { label: 'Success Stories', href: '/success-stories' },
-        { label: 'Innovation Lab', href: '/innovation-lab' }
+        { label: 'Case Studies', href: '/showcase' },
+        { label: 'Success Stories', href: '/showcase' },
+        { label: 'Innovation Lab', href: '/showcase' },
+        { label: '2025 Services', href: '/comprehensive-2025-services-showcase' },
+        { label: '2026 Services', href: '/ultimate-2026-services-showcase' },
+        { label: '2027 Services', href: '/revolutionary-2027-services-showcase' },
+        { label: '2028 Services', href: '/revolutionary-2028-pricing' },
+        { label: '2029 Services', href: '/revolutionary-2029-services' }
       ]
     },
     {
       label: 'Resources',
       href: '/resources',
       children: [
-        { label: 'Documentation', href: '/docs' },
-        { label: 'Blog', href: '/blog' },
-        { label: 'Research', href: '/research' },
-        { label: 'Training', href: '/training' }
+        { label: 'Documentation', href: '/resources' },
+        { label: 'Blog', href: '/resources' },
+        { label: 'Research', href: '/resources' },
+        { label: 'Training', href: '/training' },
+        { label: 'White Papers', href: '/white-papers' },
+        { label: 'Webinars', href: '/webinars' },
+        { label: 'Events', href: '/events' }
       ]
     },
     {
@@ -60,7 +71,9 @@ const EnhancedNavigation: React.FC = () => {
         { label: 'About Us', href: '/about' },
         { label: 'Team', href: '/team' },
         { label: 'Careers', href: '/careers' },
-        { label: 'Contact', href: '/contact' }
+        { label: 'Contact', href: '/contact' },
+        { label: 'Get Started', href: '/get-started' },
+        { label: 'Quote Request', href: '/quote' }
       ]
     }
   ];
@@ -167,7 +180,7 @@ const EnhancedNavigation: React.FC = () => {
                 placeholder="Search services..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-64 px-4 py-2 bg-gray-800/50 border border-cyan-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500/50"
+                className="w-64 px-4 py-2 bg-gray-800/50 border border-cyan-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500"
               />
               <button
                 type="submit"
@@ -229,7 +242,7 @@ const EnhancedNavigation: React.FC = () => {
                   placeholder="Search services..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full px-4 py-3 bg-gray-800/50 border border-cyan-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500/50"
+                  className="w-full px-4 py-3 bg-gray-800/50 border border-cyan-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500"
                 />
                 <button
                   type="submit"

@@ -1,5 +1,5 @@
-/// <reference types="dom" />
 
+/// <reference types="dom" />
 import React, { useEffect, useCallback } from 'react';
 
 interface AnalyticsTrackerProps {

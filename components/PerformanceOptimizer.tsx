@@ -1,5 +1,5 @@
-/// <reference types="dom" />
 
+/// <reference types="dom" />
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
