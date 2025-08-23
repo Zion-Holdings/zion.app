@@ -100,31 +100,31 @@ const Homepage2045: React.FC = () => {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
-        ease: "easeOut" as const
+        duration: 0.6
       }
     }
   };
 
   const heroVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      y: 0,
       transition: {
         duration: 1,
-        ease: "easeOut" as const
+        staggerChildren: 0.2
       }
     }
   };
 
   const floatingVariants = {
     animate: {
-      y: [-10, 10, -10],
+      y: [0, -20, 0],
+      x: [0, 10, 0],
+      scale: [1, 1.1, 1],
       transition: {
-        duration: 3,
-        repeat: Infinity,
-        ease: "easeInOut" as const
+        duration: 4,
+        repeat: -1,
+        ease: [0.6, 0.05, -0.01, 0.9]
       }
     }
   };
@@ -159,20 +159,44 @@ const Homepage2045: React.FC = () => {
           <div className="absolute inset-0 overflow-hidden">
             <motion.div
               className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl"
-              variants={floatingVariants}
-              animate="animate"
+              animate={{
+                y: [0, -20, 0],
+                x: [0, 10, 0],
+                scale: [1, 1.1, 1]
+              }}
+              transition={{
+                duration: 4,
+                repeat: -1,
+                ease: "easeInOut"
+              }}
             />
             <motion.div
               className="absolute top-40 right-32 w-24 h-24 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl"
-              variants={floatingVariants}
-              animate="animate"
-              style={{ animationDelay: '1s' }}
+              animate={{
+                y: [0, -15, 0],
+                x: [0, -8, 0],
+                scale: [1, 1.05, 1]
+              }}
+              transition={{
+                duration: 5,
+                repeat: -1,
+                ease: "easeInOut",
+                delay: 1
+              }}
             />
             <motion.div
               className="absolute bottom-32 left-1/3 w-40 h-40 bg-gradient-to-r from-green-500/20 to-teal-500/20 rounded-full blur-3xl"
-              variants={floatingVariants}
-              animate="animate"
-              style={{ animationDelay: '2s' }}
+              animate={{
+                y: [0, -25, 0],
+                x: [0, 12, 0],
+                scale: [1, 1.15, 1]
+              }}
+              transition={{
+                duration: 6,
+                repeat: -1,
+                ease: "easeInOut",
+                delay: 2
+              }}
             />
           </div>
 
