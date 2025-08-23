@@ -27,6 +27,7 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import ThemeToggle from '../ThemeToggle';
 
 // Define Node type for DOM event handling
 type Node = HTMLElement | null;
@@ -382,6 +383,9 @@ const UltraFuturisticNavigation2040: React.FC = () => {
 
           {/* Right Side Actions */}
           <div className="hidden lg:flex items-center space-x-4">
+            {/* Theme Toggle */}
+            <ThemeToggle />
+            
             {/* Search Button */}
             <button
               onClick={() => setIsSearchOpen(!isSearchOpen)}

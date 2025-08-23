@@ -18,6 +18,12 @@ const PerformanceMetrics = lazy(() => import('./PerformanceMetrics'));
 const InteractiveDemo = lazy(() => import('./InteractiveDemo'));
 const PerformanceOptimizer = lazy(() => import('./PerformanceOptimizer'));
 
+// Import new enhanced components
+const ThemeToggle = lazy(() => import('./ThemeToggle'));
+const ServiceComparisonTool = lazy(() => import('./ServiceComparisonTool'));
+const RealTimeChatSupport = lazy(() => import('./RealTimeChatSupport'));
+const EnhancedPerformanceMonitor = lazy(() => import('./EnhancedPerformanceMonitor'));
+
 const Homepage2044: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
@@ -169,6 +175,13 @@ const Homepage2044: React.FC = () => {
       <Layout>
         {/* Main Content */}
         <main className="relative z-10">
+        {/* Theme Toggle */}
+        <div className="fixed top-24 right-6 z-40">
+          <Suspense fallback={<div className="w-12 h-12 bg-gray-800 rounded-lg animate-pulse" />}>
+            <ThemeToggle />
+          </Suspense>
+        </div>
+
         {/* Hero Section */}
         <section 
           className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden"
@@ -596,12 +609,101 @@ const Homepage2044: React.FC = () => {
               </p>
             </motion.div>
             
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+              <Suspense fallback={
+                <div className="h-96 bg-gray-800 rounded-lg animate-pulse" />
+              }>
+                <PerformanceMetrics />
+              </Suspense>
+              
+              <Suspense fallback={
+                <div className="h-96 bg-gray-800 rounded-lg animate-pulse" />
+              }>
+                <EnhancedPerformanceMonitor />
+              </Suspense>
+            </div>
+          </div>
+        </section>
+
+        {/* Service Comparison Section */}
+        <section className="py-16 px-4 relative bg-gray-900/50">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-4xl font-bold text-white mb-6">
+                Compare Our Services
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Make informed decisions with our comprehensive service comparison tool
+              </p>
+            </motion.div>
+            
             <Suspense fallback={
-              <div className="flex justify-center">
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cyan-500"></div>
-              </div>
+              <div className="h-96 bg-gray-800 rounded-lg animate-pulse" />
             }>
-              <PerformanceMetrics />
+              <ServiceComparisonTool 
+                services={[
+                  {
+                    id: 'ai-consciousness',
+                    name: 'AI Consciousness Evolution',
+                    description: 'Next-generation AI with emotional intelligence',
+                    price: '$999/month',
+                    features: [
+                      { name: 'Emotional Intelligence', description: 'Advanced emotional recognition', category: 'core' },
+                      { name: 'Consciousness Integration', description: 'Seamless human-AI interaction', category: 'advanced' },
+                      { name: 'Learning Capabilities', description: 'Continuous self-improvement', category: 'enterprise' }
+                    ],
+                    rating: 4.9,
+                    deploymentTime: '2-4 weeks',
+                    support: '24/7 Premium',
+                    scalability: 'enterprise',
+                    category: 'AI & Consciousness',
+                    icon: <Brain className="w-6 h-6" />,
+                    color: 'bg-purple-500/20'
+                  },
+                  {
+                    id: 'quantum-neural',
+                    name: 'Quantum Neural Networks',
+                    description: 'Quantum-powered AI with consciousness',
+                    price: '$1,499/month',
+                    features: [
+                      { name: 'Quantum Processing', description: 'Exponential computational power', category: 'core' },
+                      { name: 'Neural Integration', description: 'Advanced neural network architecture', category: 'advanced' },
+                      { name: 'Quantum Security', description: 'Unbreakable encryption', category: 'enterprise' }
+                    ],
+                    rating: 4.8,
+                    deploymentTime: '4-6 weeks',
+                    support: '24/7 Enterprise',
+                    scalability: 'enterprise',
+                    category: 'Quantum Computing',
+                    icon: <Atom className="w-6 h-6" />,
+                    color: 'bg-blue-500/20'
+                  },
+                  {
+                    id: 'space-intelligence',
+                    name: 'Space Resource Intelligence',
+                    description: 'AI-powered space exploration platform',
+                    price: '$2,999/month',
+                    features: [
+                      { name: 'Resource Mapping', description: 'Advanced space resource detection', category: 'core' },
+                      { name: 'Autonomous Navigation', description: 'Self-navigating space systems', category: 'advanced' },
+                      { name: 'Interplanetary Communication', description: 'Real-time space communication', category: 'enterprise' }
+                    ],
+                    rating: 4.7,
+                    deploymentTime: '6-8 weeks',
+                    support: '24/7 Mission Critical',
+                    scalability: 'enterprise',
+                    category: 'Space Technology',
+                    icon: <Rocket className="w-6 h-6" />,
+                    color: 'bg-pink-500/20'
+                  }
+                ]}
+              />
             </Suspense>
           </div>
         </section>
@@ -662,6 +764,11 @@ const Homepage2044: React.FC = () => {
           </div>
         </section>
       </main>
+
+      {/* Real-Time Chat Support */}
+      <Suspense fallback={null}>
+        <RealTimeChatSupport />
+      </Suspense>
     </Layout>
     </>
   );
