@@ -23,10 +23,10 @@ const UltraFuturisticFooter2045: React.FC = () => {
       links: [
         { name: 'AI Consciousness Evolution 2045', href: '/ai-consciousness-evolution-2045', icon: <Brain className="w-4 h-4" /> },
         { name: 'Quantum Neural Networks 2045', href: '/quantum-neural-network-platform-2045', icon: <Atom className="w-4 h-4" /> },
-        { name: 'AI Autonomous Business Intelligence 2045', href: '/ai-autonomous-business-intelligence-2045', icon: <Target className="w-4 h-4" /> },
-        { name: 'Quantum Cybersecurity 2045', href: '/quantum-cybersecurity-platform-2045', icon: <Shield className="w-4 h-4" /> },
+        { name: 'AI Guardrails Suite', href: '/ai-guardrails', icon: <Shield className="w-4 h-4" /> },
+        { name: 'Agentic RAG Platform', href: '/agentic-rag', icon: <Target className="w-4 h-4" /> },
         { name: 'Space Resource Intelligence 2045', href: '/space-resource-intelligence-2045', icon: <Rocket className="w-4 h-4" /> },
-        { name: 'Autonomous Customer Success 2045', href: '/autonomous-customer-success-2045', icon: <Users className="w-4 h-4" /> }
+        { name: 'AI Services Platform', href: '/ai-services', icon: <Brain className="w-4 h-4" /> }
       ]
     },
     {
