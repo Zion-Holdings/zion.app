@@ -1,4 +1,27 @@
 {
+<<<<<<< HEAD
+  "generatedAt": "2025-08-14T12:19:56.673Z",
+  "items": [
+    {
+      "title": "Case Study — Autonomous Reports",
+      "href": "/reports/cases/case-2025-08-14-121956",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T12:19:56.637Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide — Techcrunch Pebble Implementation",
+      "href": "/reports/guides/guide-2025-08-14-121956",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T12:19:56.637Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Trigger Homepage Sitemap",
+      "href": "/reports/patterns/pattern-2025-08-14-121956",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T12:19:56.637Z",
+=======
   "generatedAt": "2025-08-14T12:28:26.982Z",
   "items": [
     {
@@ -34,6 +57,7 @@
       "href": "/reports/patterns/pattern-2025-08-14-122826",
       "desc": "New autonomous content",
       "createdAt": "2025-08-14T12:28:26.885Z",
+>>>>>>> origin/automation/git-sync/2025-08-14T12-28-31-229Z
       "source": "cloud-deep-research-factory"
     }
   ]
