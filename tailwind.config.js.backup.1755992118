@@ -27,6 +27,8 @@ module.exports = {
         'neural-network': 'neuralNetwork 10s linear infinite',
         'plasma-flow': 'plasmaFlow 5s ease-in-out infinite',
         'cyber-grid': 'cyberGrid 15s linear infinite',
+<<<<<<< HEAD
+=======
         primary: {
           50: '#eff6ff',
           100: '#dbeafe',
@@ -184,6 +186,7 @@ module.exports = {
         'count-up': 'countUp 2s ease-out forwards',
 =======
         'spin-slow': 'spin 8s linear infinite',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-26b3
       },
       keyframes: {
         fadeIn: {
