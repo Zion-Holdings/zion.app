@@ -65,6 +65,17 @@ export default function ServicesAdvertisingPage() {
 					</ul>
 				</section>
 
+<<<<<<< HEAD
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Browser Automation Cloud</h2>
+					<p className="text-slate-300">Scale Playwright/Puppeteer jobs with proxy pools, recorder-to-code and webhooks.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical budget: $40–$200/mo</li>
+						<li>References: {ext('https://apify.com/pricing')}, {ext('https://www.browserless.io/pricing')}</li>
+						<li>Try: <a href="/services/browser-automation-cloud" className="text-cyan-400 underline">ziontechgroup.com/services/browser-automation-cloud</a></li>
+					</ul>
+				</section>
+=======
           <section>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Featured Offerings</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -87,6 +98,7 @@ export default function ServicesAdvertisingPage() {
               ))}
             </div>
           </section>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-2a34
 
 				<section className="space-y-6">
 					<h2 className="text-2xl font-semibold text-white">API Performance Testing</h2>
@@ -98,6 +110,17 @@ export default function ServicesAdvertisingPage() {
 					</ul>
 				</section>
 
+<<<<<<< HEAD
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Email Deliverability Monitor</h2>
+					<p className="text-slate-300">DMARC/SPF/DKIM health, blocklists, and inbox placement with alerts.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical budget: $15–$60/mo</li>
+						<li>References: {ext('https://dmarc.org/overview/')}, {ext('https://postmarkapp.com/support/category/dmarc')}</li>
+						<li>Try: <a href="/services/email-deliverability-monitor" className="text-cyan-400 underline">ziontechgroup.com/services/email-deliverability-monitor</a></li>
+					</ul>
+				</section>
+=======
           <section>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Average Market Prices</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -141,6 +164,7 @@ export default function ServicesAdvertisingPage() {
               ))}
             </div>
           </section>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-2a34
 
 				<section className="space-y-6">
 					<h2 className="text-2xl font-semibold text-white">Podcast Transcription & Insights</h2>
