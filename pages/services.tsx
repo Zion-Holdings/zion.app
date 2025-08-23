@@ -5,7 +5,7 @@ import {
   Search, Grid, List,
   Brain, Atom, Shield, Target, Rocket,
   ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
-  Building, Cpu, Globe
+  Building, Cpu, Globe, Users
 } from 'lucide-react';
 
 // Import our new service data
@@ -107,6 +107,52 @@ const allServices = [
   ...comprehensiveAdvertisingMarketingServices
 ];
 
+// Add new service categories
+const newServiceCategories = [
+  {
+    id: 'advertising-marketing',
+    name: 'Advertising & Marketing',
+    icon: <Target className="w-6 h-6" />,
+    color: 'from-green-500 to-emerald-500',
+    description: 'AI-powered advertising and marketing automation'
+  },
+  {
+    id: 'ai-consciousness-ethics',
+    name: 'AI Consciousness & Ethics',
+    icon: <Brain className="w-6 h-6" />,
+    color: 'from-violet-500 to-purple-500',
+    description: 'AI consciousness development and ethical governance'
+  },
+  {
+    id: 'quantum-security',
+    name: 'Quantum Security',
+    icon: <Shield className="w-6 h-6" />,
+    color: 'from-blue-500 to-cyan-500',
+    description: 'Quantum-resistant security and encryption'
+  },
+  {
+    id: 'space-colonization',
+    name: 'Space Colonization',
+    icon: <Rocket className="w-6 h-6" />,
+    color: 'from-purple-500 to-pink-500',
+    description: 'Space technology and colonization services'
+  },
+  {
+    id: 'autonomous-vehicles',
+    name: 'Autonomous Vehicles',
+    icon: <Cpu className="w-6 h-6" />,
+    color: 'from-green-500 to-teal-500',
+    description: 'AI-powered autonomous transportation'
+  },
+  {
+    id: 'human-augmentation',
+    name: 'Human Augmentation',
+    icon: <Users className="w-6 h-6" />,
+    color: 'from-orange-500 to-red-500',
+    description: 'Brain-computer interfaces and human enhancement'
+  }
+];
+
 const categories = [
   {
     id: 'all',
@@ -157,6 +203,8 @@ const categories = [
     color: 'from-indigo-500 to-purple-500',
     description: 'AI-powered creative solutions'
   },
+  // Add new categories
+  ...newServiceCategories,
   {
     id: 'healthcare-biotech',
     name: 'Healthcare & Biotech',

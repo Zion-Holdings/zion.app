@@ -3,7 +3,7 @@ import Layout from './layout/Layout';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ArrowRight, Play, Star, Users, Award, TrendingUp, Brain, Shield, Rocket, Loader2,
-  Zap, Globe, Cpu, Eye, Atom
+  Zap, Globe, Cpu, Eye, Atom, Heart
 } from 'lucide-react';
 
 const EnhancedHomepage2026: React.FC = () => {
@@ -55,52 +55,52 @@ const EnhancedHomepage2026: React.FC = () => {
 
   const featuredServices = [
     {
-      title: "Quantum AI Orchestration Platform",
-      description: "Revolutionary AI orchestration leveraging quantum computing for unprecedented performance",
+      title: "AI Content Marketing Automation Pro",
+      description: "Automate your entire content marketing strategy with AI-powered intelligence",
       icon: Brain,
       color: "from-purple-600 to-indigo-700",
-      price: "$4,999/month",
-      features: ["Quantum AI coordination", "Zero-latency switching", "Multi-model management"]
+      price: "$499/month",
+      features: ["AI content generation", "Multi-channel distribution", "SEO optimization"]
     },
     {
-      title: "Autonomous Cybersecurity Orchestrator",
-      description: "AI-powered cybersecurity automation with autonomous threat response",
+      title: "Quantum-Secure Cloud Infrastructure",
+      description: "Future-proof cloud infrastructure with quantum-resistant encryption",
       icon: Shield,
-      color: "from-red-600 to-pink-700",
-      price: "$1,299/month",
-      features: ["Autonomous threat detection", "Real-time response", "Zero-trust architecture"]
+      color: "from-blue-600 to-cyan-700",
+      price: "$899/month",
+      features: ["Quantum-resistant encryption", "Multi-cloud orchestration", "Advanced security"]
     },
     {
-      title: "Quantum Financial Modeling Suite",
-      description: "Quantum-powered financial modeling for superior risk assessment and optimization",
-      icon: Zap,
-      color: "from-yellow-600 to-orange-700",
-      price: "$2,999/month",
-      features: ["Quantum Monte Carlo", "Portfolio optimization", "Risk assessment"]
-    },
-    {
-      title: "Metaverse Commerce Platform",
-      description: "Complete e-commerce solution for virtual worlds and digital asset management",
-      icon: Globe,
-      color: "from-purple-600 to-indigo-700",
-      price: "$799/month",
-      features: ["3D storefronts", "NFT management", "Virtual currency"]
-    },
-    {
-      title: "Autonomous DevOps Orchestrator",
-      description: "AI-powered DevOps automation with intelligent infrastructure management",
+      title: "Autonomous Business Process Orchestrator",
+      description: "AI-powered business process automation that learns and optimizes itself",
       icon: Cpu,
       color: "from-green-600 to-emerald-700",
-      price: "$1,199/month",
-      features: ["Autonomous CI/CD", "Self-healing infrastructure", "Predictive optimization"]
+      price: "$799/month",
+      features: ["AI process discovery", "Workflow optimization", "Intelligent automation"]
     },
     {
-      title: "Quantum Computer Vision Suite",
-      description: "Quantum-powered computer vision for unprecedented image analysis accuracy",
-      icon: Eye,
-      color: "from-cyan-600 to-blue-700",
-      price: "$3,499/month",
-      features: ["Quantum image processing", "Real-time analysis", "3D vision"]
+      title: "Metaverse Commerce & NFT Platform",
+      description: "Complete e-commerce solution for virtual worlds and digital asset management",
+      icon: Globe,
+      color: "from-purple-600 to-pink-700",
+      price: "$599/month",
+      features: ["3D storefronts", "NFT management", "VR integration"]
+    },
+    {
+      title: "AI Healthcare Diagnostics Platform",
+      description: "Advanced medical diagnostics powered by artificial intelligence",
+      icon: Heart,
+      color: "from-red-600 to-pink-700",
+      price: "$1,299/month",
+      features: ["AI image analysis", "Symptom assessment", "Treatment recommendations"]
+    },
+    {
+      title: "Quantum Financial Trading Platform",
+      description: "Quantum-powered financial trading with superior risk assessment",
+      icon: Zap,
+      color: "from-yellow-600 to-orange-700",
+      price: "$2,499/month",
+      features: ["Quantum algorithms", "Risk modeling", "Portfolio optimization"]
     }
   ];
 
@@ -424,6 +424,132 @@ const EnhancedHomepage2026: React.FC = () => {
           </div>
         </motion.section>
 
+        {/* Advertising & Marketing Services Showcase */}
+        <motion.section 
+          className="py-24 px-4 bg-gradient-to-b from-gray-900/80 via-green-900/40 to-gray-800/80 relative overflow-hidden"
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+        >
+          {/* Background Elements */}
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(34,197,94,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(34,197,94,0.05)_1px,transparent_1px)] bg-[size:80px_80px]"></div>
+          
+          <div className="max-w-7xl mx-auto relative z-10">
+            <motion.h2 
+              className="text-5xl md:text-6xl font-black text-center mb-20 bg-gradient-to-r from-green-400 via-emerald-500 to-teal-500 bg-clip-text text-transparent"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              Revolutionary Advertising & Marketing Solutions
+            </motion.h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+              {[
+                {
+                  title: "AI Digital Advertising Platform",
+                  description: "Intelligent advertising automation with AI-powered optimization",
+                  price: "$799/month",
+                  features: ["AI ad creation", "Multi-platform management", "ROI optimization"],
+                  icon: "📢",
+                  color: "from-blue-500 to-cyan-500"
+                },
+                {
+                  title: "Social Media Automation Suite",
+                  description: "Complete social media automation for all major platforms",
+                  price: "$599/month",
+                  features: ["AI content generation", "Multi-platform scheduling", "Engagement automation"],
+                  icon: "📱",
+                  color: "from-purple-500 to-pink-500"
+                },
+                {
+                  title: "Content Marketing Automation",
+                  description: "AI-powered content creation and distribution automation",
+                  price: "$699/month",
+                  features: ["AI content generation", "SEO optimization", "Multi-channel distribution"],
+                  icon: "✍️",
+                  color: "from-green-500 to-emerald-500"
+                },
+                {
+                  title: "Email Marketing Suite",
+                  description: "Advanced email marketing with AI-powered personalization",
+                  price: "$399/month",
+                  features: ["AI personalization", "Automated workflows", "ROI tracking"],
+                  icon: "📧",
+                  color: "from-orange-500 to-red-500"
+                },
+                {
+                  title: "Influencer Marketing Platform",
+                  description: "Complete influencer marketing automation and management",
+                  price: "$899/month",
+                  features: ["AI influencer discovery", "Campaign management", "ROI analytics"],
+                  icon: "🌟",
+                  color: "from-yellow-500 to-orange-500"
+                },
+                {
+                  title: "Marketing Analytics Platform",
+                  description: "Advanced marketing analytics with AI-powered attribution",
+                  price: "$999/month",
+                  features: ["Multi-channel attribution", "Customer journey mapping", "Predictive modeling"],
+                  icon: "📊",
+                  color: "from-cyan-500 to-blue-500"
+                }
+              ].map((service, index) => (
+                <motion.div
+                  key={service.title}
+                  className="p-8 rounded-2xl bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 hover:border-green-400/50 transition-all duration-300 group relative overflow-hidden"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  whileHover={{ y: -5, scale: 1.02 }}
+                >
+                  {/* Background Gradient */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
+                  
+                  <div className="relative z-10">
+                    <div className="text-4xl mb-4">{service.icon}</div>
+                    <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
+                    <p className="text-gray-400 mb-6 text-lg">{service.description}</p>
+                    <div className="text-2xl font-bold text-green-400 mb-6">{service.price}</div>
+                    <ul className="space-y-3 mb-8">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center gap-3 text-gray-300">
+                          <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                    <button 
+                      className="w-full px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold rounded-xl hover:from-green-600 hover:to-emerald-700 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-green-500/50"
+                      onClick={() => window.location.href = '/services'}
+                    >
+                      Learn More
+                    </button>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+            
+            <motion.div 
+              className="text-center"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <button 
+                className="px-12 py-6 bg-gradient-to-r from-green-500 via-emerald-600 to-teal-600 text-white font-bold text-xl rounded-2xl hover:from-green-600 hover:via-emerald-700 hover:to-teal-700 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-green-500/25 focus:outline-none focus:ring-4 focus:ring-green-500/50"
+                onClick={() => window.location.href = '/services'}
+              >
+                Explore All Marketing Services
+              </button>
+            </motion.div>
+          </div>
+        </motion.section>
+
         {/* Enhanced CTA Section with Futuristic Design */}
         <motion.section 
           className="py-24 px-4 bg-gradient-to-r from-cyan-900/40 via-blue-900/40 to-purple-900/40 relative overflow-hidden"
@@ -454,7 +580,7 @@ const EnhancedHomepage2026: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              Join hundreds of companies already leveraging our cutting-edge <span className="text-cyan-400 font-semibold">quantum computing</span> and <span className="text-purple-400 font-semibold">autonomous AI</span> solutions
+              Join hundreds of companies already leveraging our cutting-edge <span className="text-cyan-400 font-semibold">quantum computing</span>, <span className="text-purple-400 font-semibold">autonomous AI</span>, and <span className="text-green-400 font-semibold">revolutionary marketing</span> solutions
             </motion.p>
             <motion.div 
               className="flex flex-col sm:flex-row gap-8 justify-center"

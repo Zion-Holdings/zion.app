@@ -31,6 +31,12 @@ const footerSections: FooterSection[] = [
       { label: 'Cybersecurity', href: '/services?category=cybersecurity', description: 'Enterprise security' },
       { label: 'Enterprise IT', href: '/services?category=enterprise-it', description: 'Enterprise infrastructure' },
       { label: 'Micro SAAS', href: '/services?category=micro-saas', description: 'Business solutions' },
+      { label: 'Advertising & Marketing', href: '/services?category=advertising-marketing', description: 'AI-powered marketing' },
+      { label: 'AI Consciousness & Ethics', href: '/services?category=ai-consciousness-ethics', description: 'AI consciousness' },
+      { label: 'Quantum Security', href: '/services?category=quantum-security', description: 'Quantum-resistant security' },
+      { label: 'Space Colonization', href: '/services?category=space-colonization', description: 'Space technology' },
+      { label: 'Autonomous Vehicles', href: '/services?category=autonomous-vehicles', description: 'AI transportation' },
+      { label: 'Human Augmentation', href: '/services?category=human-augmentation', description: 'Brain-computer interfaces' },
       { label: 'View All Services', href: '/services', description: 'Complete service portfolio' }
     ]
   },

@@ -79,6 +79,42 @@ const navigationItems: NavigationItem[] = [
         href: '/services?category=cloud',
         icon: <Cloud className="w-4 h-4" />,
         description: 'Cloud computing and infrastructure'
+      },
+      {
+        label: 'Advertising & Marketing',
+        href: '/services?category=advertising-marketing',
+        icon: <Target className="w-4 h-4" />,
+        description: 'AI-powered marketing automation'
+      },
+      {
+        label: 'AI Consciousness & Ethics',
+        href: '/services?category=ai-consciousness-ethics',
+        icon: <Brain className="w-4 h-4" />,
+        description: 'AI consciousness development'
+      },
+      {
+        label: 'Quantum Security',
+        href: '/services?category=quantum-security',
+        icon: <Shield className="w-4 h-4" />,
+        description: 'Quantum-resistant security'
+      },
+      {
+        label: 'Space Colonization',
+        href: '/services?category=space-colonization',
+        icon: <Rocket className="w-4 h-4" />,
+        description: 'Space technology services'
+      },
+      {
+        label: 'Autonomous Vehicles',
+        href: '/services?category=autonomous-vehicles',
+        icon: <Cpu className="w-4 h-4" />,
+        description: 'AI-powered transportation'
+      },
+      {
+        label: 'Human Augmentation',
+        href: '/services?category=human-augmentation',
+        icon: <Users className="w-4 h-4" />,
+        description: 'Brain-computer interfaces'
       }
     ]
   },
