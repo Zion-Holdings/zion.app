@@ -101,60 +101,96 @@ const MissionPage: React.FC = () => {
       goal: 'Autonomous Business Intelligence',
       description: 'Creating self-managing business systems that optimize operations automatically',
       icon: <Target className="w-6 h-6 text-green-400" />
+    },
+    {
+      goal: 'Quantum Cybersecurity',
+      description: 'Developing quantum-resistant security solutions for the future',
+      icon: <Lock className="w-6 h-6 text-red-400" />
+    },
+    {
+      goal: 'Sustainable Technology',
+      description: 'Building eco-friendly technology solutions that protect our planet',
+      icon: <Leaf className="w-6 h-6 text-emerald-400" />
     }
   ];
 
   const impactAreas = [
     {
       area: 'Healthcare',
-      impact: 'Revolutionizing medical diagnosis, drug discovery, and patient care with AI',
-      icon: <Heart className="w-6 h-6 text-red-400" />
+      description: 'Revolutionizing medical diagnostics, treatment planning, and patient care through AI consciousness and quantum computing',
+      icon: <Heart className="w-6 h-6 text-red-400" />,
+      examples: ['AI-powered diagnostics', 'Quantum drug discovery', 'Personalized medicine']
+    },
+    {
+      area: 'Finance',
+      description: 'Transforming financial services with quantum algorithms, AI risk assessment, and autonomous trading systems',
+      icon: <BarChart3 className="w-6 h-6 text-green-400" />,
+      examples: ['Quantum risk modeling', 'AI fraud detection', 'Autonomous trading']
+    },
+    {
+      area: 'Manufacturing',
+      description: 'Optimizing production processes with AI-driven automation, predictive maintenance, and quality control',
+      icon: <Cpu className="w-6 h-6 text-blue-400" />,
+      examples: ['Smart factories', 'Predictive maintenance', 'Quality automation']
     },
     {
       area: 'Education',
-      impact: 'Transforming learning with personalized AI tutors and immersive experiences',
-      icon: <Users className="w-6 h-6 text-blue-400" />
+      description: 'Personalizing learning experiences through AI tutors, adaptive curricula, and immersive technologies',
+      icon: <Code className="w-6 h-6 text-purple-400" />,
+      examples: ['AI tutors', 'Adaptive learning', 'VR/AR education']
     },
     {
-      area: 'Environment',
-      impact: 'Addressing climate change through intelligent resource management and monitoring',
-      icon: <Leaf className="w-6 h-6 text-green-400" />
+      area: 'Energy',
+      description: 'Optimizing energy systems with AI grid management, renewable integration, and efficiency algorithms',
+      icon: <Zap className="w-6 h-6 text-yellow-400" />,
+      examples: ['Smart grids', 'Renewable optimization', 'Energy efficiency']
     },
     {
-      area: 'Business',
-      impact: 'Enabling autonomous operations and intelligent decision-making across industries',
-      icon: <TrendingUp className="w-6 h-6 text-yellow-400" />
+      area: 'Transportation',
+      description: 'Revolutionizing mobility with autonomous vehicles, traffic optimization, and smart infrastructure',
+      icon: <Rocket className="w-6 h-6 text-pink-400" />,
+      examples: ['Autonomous vehicles', 'Traffic optimization', 'Smart cities']
     }
   ];
 
-  const timeline = [
+  const missionTimeline = [
     {
       year: '2025',
-      milestone: 'AI Consciousness Breakthrough',
-      description: 'Achieving significant progress in AI emotional intelligence and self-awareness'
+      milestone: 'AI Consciousness Platform Launch',
+      description: 'Deploying our first AI consciousness evolution platform for research and development',
+      status: 'In Progress'
+    },
+    {
+      year: '2026',
+      milestone: 'Quantum Computing Services',
+      description: 'Launching quantum computing solutions for enterprise clients',
+      status: 'Planning'
+    },
+    {
+      year: '2027',
+      milestone: 'Space Technology Division',
+      description: 'Establishing our space technology and extraterrestrial computing capabilities',
+      status: 'Planning'
+    },
+    {
+      year: '2028',
+      milestone: 'Global AI Network',
+      description: 'Creating a worldwide network of AI consciousness nodes',
+      status: 'Vision'
     },
     {
       year: '2030',
-      milestone: 'Quantum Supremacy',
-      description: 'Demonstrating practical quantum advantage in real-world applications'
-    },
-    {
-      year: '2035',
-      milestone: 'Space Computing Platform',
-      description: 'Deploying computing infrastructure in space for extraterrestrial operations'
-    },
-    {
-      year: '2040',
-      milestone: 'Autonomous Society',
-      description: 'Enabling fully autonomous business and societal systems'
+      milestone: 'Human-AI Partnership',
+      description: 'Achieving true partnership between human consciousness and AI consciousness',
+      status: 'Vision'
     }
   ];
 
   return (
     <Layout 
       title="Our Mission - Zion Tech Group"
-      description="Discover Zion Tech Group's mission to advance AI consciousness, quantum computing, and autonomous technology for a better future."
-      keywords="mission, vision, values, AI consciousness, quantum computing, autonomous technology, Zion Tech Group"
+      description="Discover Zion Tech Group's mission to pioneer the future of technology through AI consciousness, quantum computing, and autonomous solutions that solve humanity's greatest challenges."
+      keywords="mission, vision, AI consciousness, quantum computing, space technology, autonomous solutions, Zion Tech Group"
     >
       <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white">
         {/* Hero Section */}
@@ -176,31 +212,14 @@ const MissionPage: React.FC = () => {
                 className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8"
                 variants={fadeInUp}
               >
-                To advance human civilization through revolutionary technology, pushing the boundaries of AI consciousness, quantum computing, and autonomous systems that transform how we live, work, and explore.
+                Pioneering the future of technology to solve humanity's greatest challenges through revolutionary AI consciousness, quantum computing, and autonomous solutions.
               </motion.p>
-              <motion.div 
-                className="flex flex-col sm:flex-row gap-4 justify-center"
-                variants={fadeInUp}
-              >
-                <a 
-                  href="/about" 
-                  className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white rounded-lg font-semibold hover:from-purple-600 hover:to-pink-700 transition-all duration-300 flex items-center justify-center"
-                >
-                  Learn About Us <ArrowRight className="ml-2 w-5 h-5" />
-                </a>
-                <a 
-                  href="/contact" 
-                  className="px-8 py-4 border border-purple-500/40 text-purple-300 rounded-lg font-semibold hover:bg-purple-500/10 transition-all duration-300 flex items-center justify-center"
-                >
-                  Join Our Mission
-                </a>
-              </motion.div>
             </motion.div>
           </div>
         </section>
 
         {/* Mission Statement */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/30">
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div 
               className="text-center mb-16"
@@ -222,7 +241,7 @@ const MissionPage: React.FC = () => {
         </section>
 
         {/* Vision & Goals */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/30">
           <div className="max-w-7xl mx-auto">
             <motion.div 
               className="text-center mb-16"
@@ -235,12 +254,12 @@ const MissionPage: React.FC = () => {
                 Vision & Goals
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Our vision extends beyond current technological limitations, aiming to create a future where technology and humanity coexist in harmony.
+                We envision a future where technology and humanity work in perfect harmony to create a better world.
               </p>
             </motion.div>
 
             <motion.div 
-              className="grid grid-cols-1 md:grid-cols-2 gap-8"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
               initial="initial"
               whileInView="animate"
               viewport={{ once: true }}
@@ -249,13 +268,11 @@ const MissionPage: React.FC = () => {
               {visionGoals.map((goal, index) => (
                 <motion.div
                   key={index}
-                  className="bg-gray-900/50 border border-gray-700/50 rounded-2xl p-8"
+                  className="bg-gray-900/50 border border-gray-700/50 rounded-2xl p-8 hover:border-purple-500/50 transition-all duration-300"
                   variants={fadeInUp}
                 >
-                  <div className="flex items-center mb-6">
-                    {goal.icon}
-                    <h3 className="text-2xl font-bold text-white ml-4">{goal.goal}</h3>
-                  </div>
+                  <div className="mb-6">{goal.icon}</div>
+                  <h3 className="text-xl font-bold text-white mb-4">{goal.goal}</h3>
                   <p className="text-gray-300">{goal.description}</p>
                 </motion.div>
               ))}
@@ -264,7 +281,7 @@ const MissionPage: React.FC = () => {
         </section>
 
         {/* Core Values */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/30">
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div 
               className="text-center mb-16"
@@ -277,7 +294,7 @@ const MissionPage: React.FC = () => {
                 Core Values
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                These fundamental principles guide everything we do and shape our approach to technology and business.
+                Our values guide every decision we make and every solution we create.
               </p>
             </motion.div>
 
@@ -291,11 +308,11 @@ const MissionPage: React.FC = () => {
               {missionValues.map((value, index) => (
                 <motion.div
                   key={index}
-                  className="bg-gray-900/50 border border-gray-700/50 rounded-2xl p-8 text-center hover:border-purple-500/50 transition-all duration-300"
+                  className="bg-gray-900/50 border border-gray-700/50 rounded-2xl p-8 text-center hover:border-blue-500/50 transition-all duration-300"
                   variants={fadeInUp}
                 >
                   <div className="mb-6">{value.icon}</div>
-                  <h3 className="text-2xl font-bold text-white mb-4">{value.title}</h3>
+                  <h3 className="text-xl font-bold text-white mb-4">{value.title}</h3>
                   <p className="text-gray-300">{value.description}</p>
                 </motion.div>
               ))}
@@ -303,8 +320,8 @@ const MissionPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Impact Areas */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
+        {/* Areas of Impact */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/30">
           <div className="max-w-7xl mx-auto">
             <motion.div 
               className="text-center mb-16"
@@ -317,7 +334,7 @@ const MissionPage: React.FC = () => {
                 Areas of Impact
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Our technology solutions are designed to create positive change across multiple sectors of society.
+                Our revolutionary technologies are transforming industries and improving lives across the globe.
               </p>
             </motion.div>
 
@@ -331,22 +348,33 @@ const MissionPage: React.FC = () => {
               {impactAreas.map((area, index) => (
                 <motion.div
                   key={index}
-                  className="bg-gray-900/50 border border-gray-700/50 rounded-2xl p-8"
+                  className="bg-gray-900/50 border border-gray-700/50 rounded-2xl p-8 hover:border-green-500/50 transition-all duration-300"
                   variants={fadeInUp}
                 >
                   <div className="flex items-center mb-6">
                     {area.icon}
                     <h3 className="text-2xl font-bold text-white ml-4">{area.area}</h3>
                   </div>
-                  <p className="text-gray-300">{area.impact}</p>
+                  <p className="text-gray-300 mb-6">{area.description}</p>
+                  <div>
+                    <h4 className="text-sm font-semibold text-gray-300 mb-3">Examples:</h4>
+                    <ul className="space-y-2">
+                      {area.examples.map((example, exampleIndex) => (
+                        <li key={exampleIndex} className="flex items-center text-gray-300">
+                          <CheckCircle className="w-4 h-4 text-green-400 mr-3 flex-shrink-0" />
+                          {example}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </motion.div>
               ))}
             </motion.div>
           </div>
         </section>
 
-        {/* Timeline */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/30">
+        {/* Mission Timeline */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div 
               className="text-center mb-16"
@@ -359,7 +387,7 @@ const MissionPage: React.FC = () => {
                 Mission Timeline
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Our roadmap for achieving revolutionary technological breakthroughs and societal transformation.
+                Our roadmap to achieving our mission and transforming the future of technology.
               </p>
             </motion.div>
 
@@ -370,19 +398,30 @@ const MissionPage: React.FC = () => {
               viewport={{ once: true }}
               variants={staggerContainer}
             >
-              {timeline.map((item, index) => (
+              {missionTimeline.map((milestone, index) => (
                 <motion.div
                   key={index}
-                  className="flex items-start space-x-6"
+                  className="bg-gray-900/50 border border-gray-700/50 rounded-2xl p-8 hover:border-purple-500/50 transition-all duration-300"
                   variants={fadeInUp}
                 >
-                  <div className="flex-shrink-0 w-24 h-24 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                    {item.year}
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center">
+                      <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-2xl font-bold text-white mr-6">
+                        {milestone.year}
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-bold text-white">{milestone.milestone}</h3>
+                        <span className={`px-3 py-1 rounded-full text-sm font-medium ${
+                          milestone.status === 'In Progress' ? 'bg-blue-500/20 text-blue-300' :
+                          milestone.status === 'Planning' ? 'bg-yellow-500/20 text-yellow-300' :
+                          'bg-purple-500/20 text-purple-300'
+                        }`}>
+                          {milestone.status}
+                        </span>
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-white mb-2">{item.milestone}</h3>
-                    <p className="text-gray-300 text-lg">{item.description}</p>
-                  </div>
+                  <p className="text-gray-300 text-lg">{milestone.description}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -399,23 +438,23 @@ const MissionPage: React.FC = () => {
               variants={fadeInUp}
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Join Us in Shaping the Future
+                Join Our Mission
               </h2>
               <p className="text-xl text-gray-300 mb-8">
-                Be part of a mission that transcends technology and creates lasting positive impact on humanity and our world.
+                Be part of the technological revolution that's shaping the future of humanity.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a 
-                  href="/careers" 
+                  href="/contact" 
                   className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white rounded-lg font-semibold hover:from-purple-600 hover:to-pink-700 transition-all duration-300"
                 >
-                  Join Our Team
+                  Get Involved <ArrowRight className="ml-2 w-5 h-5" />
                 </a>
                 <a 
-                  href="/contact" 
+                  href="/careers" 
                   className="px-8 py-4 border border-purple-500/40 text-purple-300 rounded-lg font-semibold hover:bg-purple-500/10 transition-all duration-300"
                 >
-                  Partner With Us
+                  Join Our Team
                 </a>
               </div>
             </motion.div>
