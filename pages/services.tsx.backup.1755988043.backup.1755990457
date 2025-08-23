@@ -163,6 +163,16 @@ const allServices = [
   ...advanced2038Services,
   ...revolutionary2039Services,
   
+<<<<<<< HEAD:pages/services.tsx.backup.1755988043
+  // Our new innovative 2040 services
+  ...innovative2040AIServices,
+  ...innovative2040ITServices,
+  ...innovative2040MicroSaasServices,
+  // Our new comprehensive services
+  ...innovative2038AdvancedServices,
+  ...revolutionary2040FuturisticServices,
+  ...comprehensiveAdvertisingMarketingServices
+=======
   // Our latest innovative services
   ...innovative2040FuturisticServices,
   ...advanced2041EnterpriseServices,
@@ -171,6 +181,7 @@ const allServices = [
   // Our revolutionary 2043-2044 services
   ...revolutionary2043AdvancedServices,
   ...revolutionary2044InnovativeServices
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-649a:pages/services.tsx
 ];
 
 const categories = [

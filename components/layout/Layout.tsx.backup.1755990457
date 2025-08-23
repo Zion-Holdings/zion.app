@@ -1,8 +1,16 @@
+<<<<<<< HEAD
+import React, { ReactNode } from 'react';
+import UltraAdvancedFuturisticNavigation2035 from './UltraAdvancedFuturisticNavigation2035';
+import UltraAdvancedFuturisticFooter2025 from './UltraAdvancedFuturisticFooter2025';
+import EnhancedSidebar2025 from './EnhancedSidebar2025';
+import UltraAdvancedFuturisticBackground2025 from '../backgrounds/UltraAdvancedFuturisticBackground2025';
+=======
 import React, { useState } from 'react';
 import UltraFuturisticNavigation2043 from './UltraFuturisticNavigation2043';
 import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraFuturisticBackground2043 from '../backgrounds/UltraFuturisticBackground2043';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-649a
 import TopContactBar from './TopContactBar';
 import PerformanceMonitor from '../PerformanceMonitor';
 import AccessibilityEnhancer from '../AccessibilityEnhancer';
@@ -18,6 +26,14 @@ export default function Layout({ children, seo }: LayoutProps) {
   const [showEnhancements, setShowEnhancements] = useState(false);
 
   return (
+<<<<<<< HEAD
+    <div className="min-h-screen bg-gray-900 text-white">
+      <UltraAdvancedFuturisticNavigation2035 />
+      <main className="relative z-10">
+        {children}
+      </main>
+      <UltraAdvancedFuturisticFooter2025 />
+=======
     <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
       {/* Skip to content link for accessibility */}
       <a href="#main" className="skip-link">Skip to main content</a>
@@ -50,6 +66,7 @@ export default function Layout({ children, seo }: LayoutProps) {
       </div>
 
       {/* Accessibility and Performance Tools */}
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-649a
       <AccessibilityEnhancer />
       <PerformanceOptimizer showMetrics={true} autoOptimize={true} />
     </div>
