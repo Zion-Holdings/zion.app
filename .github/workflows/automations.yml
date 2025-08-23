@@ -1,9 +1,12 @@
-name: Autonomous Cloud Automations
+name: Cloud Automations
 
 on:
+  workflow_dispatch:
   schedule:
-    - cron: '*/15 * * * *' # every 15 minutes
-  workflow_dispatch: {}
+    - cron: '*/30 * * * *' # every 30 minutes
+
+permissions:
+  contents: write
 
 jobs:
   run-automations:
@@ -19,29 +22,20 @@ jobs:
           node-version: '20'
           cache: 'npm'
       - name: Install deps
-        run: npm ci --no-audit --no-fund
-      - name: Generate ideas
-        run: node scripts/generate-ideas.cjs
-      - name: Generate market signals
-        run: node scripts/generate-market-signals.cjs
-      - name: Generate dependency report
-        run: node scripts/generate-deps-report.cjs
-      - name: Generate GitHub ecosystem metrics
-        run: node scripts/generate-github-ecosystem.cjs
-      - name: Generate tech content
-        run: node scripts/generate-tech-content.cjs
-      - name: Generate licenses report
-        run: node scripts/generate-licenses-report.cjs
-      - name: Commit and push if changed
+        run: npm ci
+      - name: Run automations
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: node scripts/run-automations.mjs
+      - name: Commit and push changes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          set -e
-          git config user.name "autonomous-bot"
-          git config user.email "autonomous-bot@users.noreply.github.com"
+          git config user.name "automation-bot"
+          git config user.email "bot@users.noreply.github.com"
           if [ -n "$(git status --porcelain)" ]; then
             git add -A
-            git commit -m "chore(automation): update automation datasets [skip ci]"
+            git commit -m "chore(automation): update AI trends and talent summaries [skip ci]"
             git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }} HEAD:${{ github.ref_name }}
           else
             echo "No changes to commit"

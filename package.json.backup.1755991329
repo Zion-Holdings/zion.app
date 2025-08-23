@@ -436,7 +436,25 @@
     "npm": ">=10.0.0"
   },
   "scripts": {
+<<<<<<< HEAD
+    "pm2:start": "node -e \"const fs=require('fs');fs.mkdirSync('automation/logs',{recursive:true})\" && pm2 start ecosystem.config.cjs --update-env",
+    "pm2:stop": "pm2 stop ecosystem.config.cjs || true",
+    "pm2:restart": "node -e \"const fs=require('fs');fs.mkdirSync('automation/logs',{recursive:true})\" && (pm2 restart ecosystem.config.cjs || pm2 start ecosystem.config.cjs --update-env)",
+    "pm2:status": "pm2 status",
+    "pm2:logs": "pm2 logs --lines 200",
+    "pm2:fastads:start": "node -e \"const fs=require('fs');fs.mkdirSync('automation/logs',{recursive:true})\" && pm2 start ecosystem.fast-ads.local.cjs --update-env",
+    "pm2:fastads:restart": "node -e \"const fs=require('fs');fs.mkdirSync('automation/logs',{recursive:true})\" && (pm2 restart ecosystem.fast-ads.local.cjs || pm2 start ecosystem.fast-ads.local.cjs --update-env)",
+    "pm2:fastads:stop": "pm2 stop ecosystem.fast-ads.local.cjs || true",
+    "pm2:cron:start": "node -e \"const fs=require('fs');fs.mkdirSync('automation/logs',{recursive:true})\" && pm2 start ecosystem.cron.local.cjs --update-env",
+    "pm2:cron:restart": "node -e \"const fs=require('fs');fs.mkdirSync('automation/logs',{recursive:true})\" && (pm2 restart ecosystem.cron.local.cjs || pm2 start ecosystem.cron.local.cjs --update-env)",
+    "pm2:cron:stop": "pm2 stop ecosystem.cron.local.cjs || true",
+    "pm2:bootstrap:logrotate": "pm2 install pm2-logrotate || true && pm2 set pm2-logrotate:max_size 10M && pm2 set pm2-logrotate:retain 30 && pm2 set pm2-logrotate:compress true && pm2 set pm2-logrotate:workerInterval 60 && pm2 set pm2-logrotate:rotateInterval '0 0 * * *'",
+    "functions:run": "node scripts/run-netlify-functions-locally.cjs",
+    "functions:run:execute": "node scripts/run-netlify-functions-locally.cjs --execute",
+    "front:advertise": "node automation/front-index-advertiser.cjs",
+=======
     "automations": "node scripts/run-automations.mjs",
+>>>>>>> origin/cursor/build-talent-marketplace-platform-793e
     "deps:maintain": "node automation/dependency-update-orchestrator.cjs",
     "deps:cron:start": "bash automation/dependency-maintenance-cron.sh",
     "sitemap": "node scripts/generate-sitemap.mjs",

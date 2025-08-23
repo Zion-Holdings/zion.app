@@ -1,3 +1,1 @@
-export default function ForgotPassword() {
-  return <div className="py-10">Forgot Password</div>;
-}
+export default function ForgotPassword() { return <div>Forgot password…</div>; }
