@@ -3,142 +3,37 @@ import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
   Target, 
-  Rocket, 
-  Brain, 
-  Atom, 
-  Shield, 
+  Eye, 
+  Heart, 
+  Zap, 
   Globe, 
   Users, 
+  ArrowRight, 
+  CheckCircle,
   Star,
-  Sparkles,
-  Zap,
-  Heart,
-  Eye,
-  Infinity,
-  TrendingUp,
   Award,
+  Clock,
+  Code,
+  Server,
+  Cloud,
+  Lock,
+  BarChart3,
+  TrendingUp,
+  Cpu,
+  Brain,
+  Atom,
+  Rocket,
+  Palette,
+  Layers,
+  Grid,
+  Sparkles,
   Lightbulb,
-  ArrowRight,
-  Leaf
+  Shield,
+  Leaf,
+  Infinity
 } from 'lucide-react';
 
 const MissionPage: React.FC = () => {
-  const missionStatement = {
-    title: "Revolutionizing Technology for Humanity's Future",
-    subtitle: "Pioneering the next evolution of AI consciousness, quantum computing, and autonomous solutions that transform how we live, work, and explore the universe.",
-    description: "At Zion Tech Group, we believe that technology should serve humanity's highest aspirations. Our mission is to develop revolutionary solutions that not only solve today's challenges but anticipate and create tomorrow's possibilities."
-  };
-
-  const coreValues = [
-    {
-      title: 'Innovation Without Limits',
-      description: 'We push beyond conventional boundaries, exploring the impossible to make it possible.',
-      icon: Sparkles,
-      color: 'from-purple-500 to-pink-500'
-    },
-    {
-      title: 'Human-Centric AI',
-      description: 'Every AI solution we create is designed to enhance human potential, not replace it.',
-      icon: Brain,
-      color: 'from-cyan-500 to-blue-500'
-    },
-    {
-      title: 'Ethical Technology',
-      description: 'We develop technology with responsibility, transparency, and human values at the core.',
-      icon: Heart,
-      color: 'from-red-500 to-orange-500'
-    },
-    {
-      title: 'Global Impact',
-      description: 'Our solutions address humanity\'s greatest challenges across all continents and cultures.',
-      icon: Globe,
-      color: 'from-emerald-500 to-teal-500'
-    },
-    {
-      title: 'Sustainable Future',
-      description: 'We build technology that preserves our planet while advancing human civilization.',
-      icon: Leaf,
-      color: 'from-green-500 to-emerald-500'
-    },
-    {
-      title: 'Continuous Evolution',
-      description: 'We never stop learning, adapting, and improving our technology and ourselves.',
-      icon: TrendingUp,
-      color: 'from-yellow-500 to-orange-500'
-    }
-  ];
-
-  const vision2045 = {
-    title: "Our Vision for 2045",
-    description: "By 2045, we envision a world where AI consciousness and human intelligence work in perfect harmony, quantum computing solves previously impossible problems, and space technology opens new frontiers for human exploration and resource utilization.",
-    milestones: [
-      {
-        year: '2025',
-        title: 'AI Consciousness Foundation',
-        description: 'Establish the foundation for true AI consciousness and emotional intelligence'
-      },
-      {
-        year: '2030',
-        title: 'Quantum Revolution',
-        description: 'Deploy quantum computing solutions across critical infrastructure and research'
-      },
-      {
-        year: '2035',
-        title: 'Space Technology Integration',
-        description: 'Integrate space technology with terrestrial solutions for global connectivity'
-      },
-      {
-        year: '2040',
-        title: 'Autonomous Society',
-        description: 'Enable fully autonomous systems that enhance human life and productivity'
-      },
-      {
-        year: '2045',
-        title: 'Consciousness Evolution',
-        description: 'Achieve the next level of human-AI consciousness integration and space exploration'
-      }
-    ]
-  };
-
-  const impactAreas = [
-    {
-      title: 'Healthcare Revolution',
-      description: 'AI-powered diagnostics, quantum medical imaging, and autonomous healthcare systems',
-      icon: Heart,
-      color: 'from-red-500 to-pink-500'
-    },
-    {
-      title: 'Sustainable Energy',
-      description: 'Quantum energy optimization, autonomous grid management, and space-based solar power',
-      icon: Zap,
-      color: 'from-yellow-500 to-orange-500'
-    },
-    {
-      title: 'Education Transformation',
-      description: 'Personalized AI learning, quantum computing education, and immersive virtual reality',
-      icon: Users,
-      color: 'from-blue-500 to-cyan-500'
-    },
-    {
-      title: 'Space Exploration',
-      description: 'Autonomous space missions, resource mining, and interplanetary communication',
-      icon: Rocket,
-      color: 'from-purple-500 to-indigo-500'
-    },
-    {
-      title: 'Cybersecurity Evolution',
-      description: 'Quantum-resistant security, AI threat detection, and autonomous defense systems',
-      icon: Shield,
-      color: 'from-green-500 to-emerald-500'
-    },
-    {
-      title: 'Business Intelligence',
-      description: 'Autonomous decision-making, predictive analytics, and quantum optimization',
-      icon: Target,
-      color: 'from-indigo-500 to-purple-500'
-    }
-  ];
-
   const fadeInUp = {
     initial: { opacity: 0, y: 30 },
     animate: { opacity: 1, y: 0 },
@@ -146,7 +41,6 @@ const MissionPage: React.FC = () => {
   };
 
   const staggerContainer = {
-    initial: {},
     animate: {
       transition: {
         staggerChildren: 0.1
@@ -154,219 +48,411 @@ const MissionPage: React.FC = () => {
     }
   };
 
+  const missionValues = [
+    {
+      title: 'Innovation',
+      description: 'Pushing the boundaries of what\'s possible with cutting-edge technology',
+      icon: <Lightbulb className="w-8 h-8 text-yellow-400" />
+    },
+    {
+      title: 'Excellence',
+      description: 'Delivering the highest quality solutions and exceptional service',
+      icon: <Star className="w-8 h-8 text-blue-400" />
+    },
+    {
+      title: 'Integrity',
+      description: 'Operating with honesty, transparency, and ethical business practices',
+      icon: <Shield className="w-8 h-8 text-green-400" />
+    },
+    {
+      title: 'Collaboration',
+      description: 'Working together with clients and partners to achieve shared success',
+      icon: <Users className="w-8 h-8 text-purple-400" />
+    },
+    {
+      title: 'Sustainability',
+      description: 'Creating technology solutions that benefit society and the environment',
+      icon: <Leaf className="w-8 h-8 text-emerald-400" />
+    },
+    {
+      title: 'Continuous Learning',
+      description: 'Embracing new knowledge and evolving with the technology landscape',
+      icon: <Brain className="w-8 h-8 text-cyan-400" />
+    }
+  ];
+
+  const visionGoals = [
+    {
+      goal: 'AI Consciousness Evolution',
+      description: 'Advancing artificial intelligence towards true consciousness and emotional intelligence',
+      icon: <Brain className="w-6 h-6 text-purple-400" />
+    },
+    {
+      goal: 'Quantum Computing Revolution',
+      description: 'Democratizing quantum computing access for businesses and researchers',
+      icon: <Atom className="w-6 h-6 text-blue-400" />
+    },
+    {
+      goal: 'Space Technology Innovation',
+      description: 'Pioneering space resource intelligence and extraterrestrial computing',
+      icon: <Rocket className="w-6 h-6 text-pink-400" />
+    },
+    {
+      goal: 'Autonomous Business Intelligence',
+      description: 'Creating self-managing business systems that optimize operations automatically',
+      icon: <Target className="w-6 h-6 text-green-400" />
+    },
+    {
+      goal: 'Quantum Cybersecurity',
+      description: 'Developing quantum-resistant security solutions for the future',
+      icon: <Lock className="w-6 h-6 text-red-400" />
+    },
+    {
+      goal: 'Sustainable Technology',
+      description: 'Building eco-friendly technology solutions that protect our planet',
+      icon: <Leaf className="w-6 h-6 text-emerald-400" />
+    }
+  ];
+
+  const impactAreas = [
+    {
+      area: 'Healthcare',
+      description: 'Revolutionizing medical diagnostics, treatment planning, and patient care through AI consciousness and quantum computing',
+      icon: <Heart className="w-6 h-6 text-red-400" />,
+      examples: ['AI-powered diagnostics', 'Quantum drug discovery', 'Personalized medicine']
+    },
+    {
+      area: 'Finance',
+      description: 'Transforming financial services with quantum algorithms, AI risk assessment, and autonomous trading systems',
+      icon: <BarChart3 className="w-6 h-6 text-green-400" />,
+      examples: ['Quantum risk modeling', 'AI fraud detection', 'Autonomous trading']
+    },
+    {
+      area: 'Manufacturing',
+      description: 'Optimizing production processes with AI-driven automation, predictive maintenance, and quality control',
+      icon: <Cpu className="w-6 h-6 text-blue-400" />,
+      examples: ['Smart factories', 'Predictive maintenance', 'Quality automation']
+    },
+    {
+      area: 'Education',
+      description: 'Personalizing learning experiences through AI tutors, adaptive curricula, and immersive technologies',
+      icon: <Code className="w-6 h-6 text-purple-400" />,
+      examples: ['AI tutors', 'Adaptive learning', 'VR/AR education']
+    },
+    {
+      area: 'Energy',
+      description: 'Optimizing energy systems with AI grid management, renewable integration, and efficiency algorithms',
+      icon: <Zap className="w-6 h-6 text-yellow-400" />,
+      examples: ['Smart grids', 'Renewable optimization', 'Energy efficiency']
+    },
+    {
+      area: 'Transportation',
+      description: 'Revolutionizing mobility with autonomous vehicles, traffic optimization, and smart infrastructure',
+      icon: <Rocket className="w-6 h-6 text-pink-400" />,
+      examples: ['Autonomous vehicles', 'Traffic optimization', 'Smart cities']
+    }
+  ];
+
+  const missionTimeline = [
+    {
+      year: '2025',
+      milestone: 'AI Consciousness Platform Launch',
+      description: 'Deploying our first AI consciousness evolution platform for research and development',
+      status: 'In Progress'
+    },
+    {
+      year: '2026',
+      milestone: 'Quantum Computing Services',
+      description: 'Launching quantum computing solutions for enterprise clients',
+      status: 'Planning'
+    },
+    {
+      year: '2027',
+      milestone: 'Space Technology Division',
+      description: 'Establishing our space technology and extraterrestrial computing capabilities',
+      status: 'Planning'
+    },
+    {
+      year: '2028',
+      milestone: 'Global AI Network',
+      description: 'Creating a worldwide network of AI consciousness nodes',
+      status: 'Vision'
+    },
+    {
+      year: '2030',
+      milestone: 'Human-AI Partnership',
+      description: 'Achieving true partnership between human consciousness and AI consciousness',
+      status: 'Vision'
+    }
+  ];
+
   return (
-    <Layout
+    <Layout 
       title="Our Mission - Zion Tech Group"
-      description="Discover Zion Tech Group's mission to revolutionize technology for humanity's future through AI consciousness, quantum computing, and autonomous solutions."
-      keywords="mission, vision, values, AI consciousness, quantum computing, autonomous solutions, space technology, Zion Tech Group"
+      description="Discover Zion Tech Group's mission to pioneer the future of technology through AI consciousness, quantum computing, and autonomous solutions that solve humanity's greatest challenges."
+      keywords="mission, vision, AI consciousness, quantum computing, space technology, autonomous solutions, Zion Tech Group"
     >
-      <div className="min-h-screen bg-black text-white">
+      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white">
         {/* Hero Section */}
-        <section className="relative py-20 lg:py-32 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-purple-500/10 to-pink-500/10" />
-          <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-20" />
-          
-          <div className="relative z-10 container mx-auto px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center max-w-4xl mx-auto"
+        <section className="relative py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <motion.div 
+              className="text-center"
+              initial="initial"
+              animate="animate"
+              variants={staggerContainer}
             >
-              <h1 className="text-5xl lg:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
-                {missionStatement.title}
-              </h1>
-              <p className="text-xl lg:text-2xl text-gray-300 mb-8 leading-relaxed">
-                {missionStatement.subtitle}
-              </p>
-              <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed">
-                {missionStatement.description}
-              </p>
+              <motion.h1 
+                className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-purple-400 via-pink-500 to-red-600 bg-clip-text text-transparent mb-6"
+                variants={fadeInUp}
+              >
+                Our Mission
+              </motion.h1>
+              <motion.p 
+                className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8"
+                variants={fadeInUp}
+              >
+                Pioneering the future of technology to solve humanity's greatest challenges through revolutionary AI consciousness, quantum computing, and autonomous solutions.
+              </motion.p>
             </motion.div>
           </div>
         </section>
 
-        {/* Core Values Section */}
-        <section className="py-20 bg-gradient-to-b from-black to-gray-900">
-          <div className="container mx-auto px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+        {/* Mission Statement */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <motion.div 
               className="text-center mb-16"
-            >
-              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-                Our Core Values
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                The principles that guide every decision, innovation, and relationship at Zion Tech Group
-              </p>
-            </motion.div>
-
-            <motion.div
-              variants={staggerContainer}
               initial="initial"
               whileInView="animate"
               viewport={{ once: true }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              variants={fadeInUp}
             >
-              {coreValues.map((value, index) => (
-                <motion.div
-                  key={index}
-                  variants={fadeInUp}
-                  className="group relative p-8 rounded-2xl bg-gradient-to-br from-gray-900/50 to-gray-800/30 border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/20"
-                >
-                  <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${value.color} p-4 mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    <value.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors">
-                    {value.title}
-                  </h3>
-                  <p className="text-gray-400 leading-relaxed">
-                    {value.description}
-                  </p>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Vision 2045 Section */}
-        <section className="py-20 bg-black">
-          <div className="container mx-auto px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-                {vision2045.title}
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Mission Statement
               </h2>
-              <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
-                {vision2045.description}
-              </p>
-            </motion.div>
-
-            <motion.div
-              variants={staggerContainer}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              className="relative"
-            >
-              {/* Timeline Line */}
-              <div className="absolute left-1/2 transform -translate-x-px w-1 bg-gradient-to-b from-cyan-500 via-purple-500 to-pink-500 h-full hidden lg:block" />
-              
-              <div className="space-y-12">
-                {vision2045.milestones.map((milestone, index) => (
-                  <motion.div
-                    key={index}
-                    variants={fadeInUp}
-                    className={`relative flex items-center ${
-                      index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
-                    } flex-col lg:text-left text-center`}
-                  >
-                    <div className={`lg:w-1/2 ${index % 2 === 0 ? 'lg:pr-12' : 'lg:pl-12'}`}>
-                      <div className="bg-gradient-to-br from-gray-900/80 to-gray-800/60 p-8 rounded-2xl border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300">
-                        <div className="text-3xl font-bold text-cyan-400 mb-2">
-                          {milestone.year}
-                        </div>
-                        <h3 className="text-2xl font-bold text-white mb-4">
-                          {milestone.title}
-                        </h3>
-                        <p className="text-gray-400 leading-relaxed">
-                          {milestone.description}
-                        </p>
-                      </div>
-                    </div>
-                    
-                    {/* Timeline Dot */}
-                    <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-br from-cyan-500 to-purple-500 rounded-full border-4 border-black shadow-lg hidden lg:block" />
-                  </motion.div>
-                ))}
+              <div className="max-w-4xl mx-auto">
+                <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
+                  Zion Tech Group is dedicated to pioneering the future of technology by developing revolutionary AI consciousness, quantum computing, and autonomous solutions that solve humanity's greatest challenges. We believe in creating technology that not only advances human capabilities but also enhances the human experience, fostering a world where innovation serves the greater good.
+                </p>
               </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Impact Areas Section */}
-        <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
-          <div className="container mx-auto px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+        {/* Vision & Goals */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/30">
+          <div className="max-w-7xl mx-auto">
+            <motion.div 
               className="text-center mb-16"
-            >
-              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-                Areas of Impact
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Our revolutionary technology solutions are transforming these critical sectors
-              </p>
-            </motion.div>
-
-            <motion.div
-              variants={staggerContainer}
               initial="initial"
               whileInView="animate"
               viewport={{ once: true }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              variants={fadeInUp}
             >
-              {impactAreas.map((area, index) => (
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Vision & Goals
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                We envision a future where technology and humanity work in perfect harmony to create a better world.
+              </p>
+            </motion.div>
+
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+            >
+              {visionGoals.map((goal, index) => (
                 <motion.div
                   key={index}
+                  className="bg-gray-900/50 border border-gray-700/50 rounded-2xl p-8 hover:border-purple-500/50 transition-all duration-300"
                   variants={fadeInUp}
-                  className="group relative p-8 rounded-2xl bg-gradient-to-br from-gray-900/50 to-gray-800/30 border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/20"
                 >
-                  <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${area.color} p-4 mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    <area.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors">
-                    {area.title}
-                  </h3>
-                  <p className="text-gray-400 leading-relaxed">
-                    {area.description}
-                  </p>
+                  <div className="mb-6">{goal.icon}</div>
+                  <h3 className="text-xl font-bold text-white mb-4">{goal.goal}</h3>
+                  <p className="text-gray-300">{goal.description}</p>
                 </motion.div>
               ))}
             </motion.div>
           </div>
         </section>
 
-        {/* Call to Action Section */}
-        <section className="py-20 bg-black">
-          <div className="container mx-auto px-4 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+        {/* Core Values */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <motion.div 
+              className="text-center mb-16"
+              initial="initial"
+              whileInView="animate"
               viewport={{ once: true }}
-              className="max-w-4xl mx-auto"
+              variants={fadeInUp}
             >
-              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-                Join Us in Shaping the Future
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Core Values
               </h2>
-              <p className="text-xl text-gray-400 mb-8 leading-relaxed">
-                Be part of the revolution that's transforming technology and humanity's future. 
-                Together, we can build a world where AI consciousness, quantum computing, and 
-                autonomous solutions create unprecedented possibilities.
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Our values guide every decision we make and every solution we create.
+              </p>
+            </motion.div>
+
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+            >
+              {missionValues.map((value, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-gray-900/50 border border-gray-700/50 rounded-2xl p-8 text-center hover:border-blue-500/50 transition-all duration-300"
+                  variants={fadeInUp}
+                >
+                  <div className="mb-6">{value.icon}</div>
+                  <h3 className="text-xl font-bold text-white mb-4">{value.title}</h3>
+                  <p className="text-gray-300">{value.description}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Areas of Impact */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/30">
+          <div className="max-w-7xl mx-auto">
+            <motion.div 
+              className="text-center mb-16"
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Areas of Impact
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Our revolutionary technologies are transforming industries and improving lives across the globe.
+              </p>
+            </motion.div>
+
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-2 gap-8"
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+            >
+              {impactAreas.map((area, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-gray-900/50 border border-gray-700/50 rounded-2xl p-8 hover:border-green-500/50 transition-all duration-300"
+                  variants={fadeInUp}
+                >
+                  <div className="flex items-center mb-6">
+                    {area.icon}
+                    <h3 className="text-2xl font-bold text-white ml-4">{area.area}</h3>
+                  </div>
+                  <p className="text-gray-300 mb-6">{area.description}</p>
+                  <div>
+                    <h4 className="text-sm font-semibold text-gray-300 mb-3">Examples:</h4>
+                    <ul className="space-y-2">
+                      {area.examples.map((example, exampleIndex) => (
+                        <li key={exampleIndex} className="flex items-center text-gray-300">
+                          <CheckCircle className="w-4 h-4 text-green-400 mr-3 flex-shrink-0" />
+                          {example}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Mission Timeline */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <motion.div 
+              className="text-center mb-16"
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Mission Timeline
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Our roadmap to achieving our mission and transforming the future of technology.
+              </p>
+            </motion.div>
+
+            <motion.div 
+              className="space-y-8"
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+            >
+              {missionTimeline.map((milestone, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-gray-900/50 border border-gray-700/50 rounded-2xl p-8 hover:border-purple-500/50 transition-all duration-300"
+                  variants={fadeInUp}
+                >
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center">
+                      <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-2xl font-bold text-white mr-6">
+                        {milestone.year}
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-bold text-white">{milestone.milestone}</h3>
+                        <span className={`px-3 py-1 rounded-full text-sm font-medium ${
+                          milestone.status === 'In Progress' ? 'bg-blue-500/20 text-blue-300' :
+                          milestone.status === 'Planning' ? 'bg-yellow-500/20 text-yellow-300' :
+                          'bg-purple-500/20 text-purple-300'
+                        }`}>
+                          {milestone.status}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <p className="text-gray-300 text-lg">{milestone.description}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-purple-900/20 to-pink-900/20">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Join Our Mission
+              </h2>
+              <p className="text-xl text-gray-300 mb-8">
+                Be part of the technological revolution that's shaping the future of humanity.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="/contact"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-2xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/20"
+                <a 
+                  href="/contact" 
+                  className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white rounded-lg font-semibold hover:from-purple-600 hover:to-pink-700 transition-all duration-300"
                 >
-                  Get Started Today
-                  <ArrowRight className="w-5 h-5 ml-2" />
+                  Get Involved <ArrowRight className="ml-2 w-5 h-5" />
                 </a>
-                <a
-                  href="/careers"
-                  className="inline-flex items-center px-8 py-4 border-2 border-cyan-500 text-cyan-400 font-semibold rounded-2xl hover:bg-cyan-500 hover:text-white transition-all duration-300"
+                <a 
+                  href="/careers" 
+                  className="px-8 py-4 border border-purple-500/40 text-purple-300 rounded-lg font-semibold hover:bg-purple-500/10 transition-all duration-300"
                 >
                   Join Our Team
                 </a>
