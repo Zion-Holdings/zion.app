@@ -5113,6 +5113,11 @@ enhancedRealMicroSaasServices.push(
       website: 'https://ziontechgroup.com'
     },
     realImplementation: true,
+<<<<<<< HEAD
+    implementationDetails: 'Advanced quantum AI trading platform with real-time market analysis, risk management, and automated trading capabilities.',
+    launchDate: '2024-07-01',
+    customers: 22,
+=======
     implementationDetails: 'Gateways deployable as containers/VMs, PQC libraries integrated; QKD support with partner hardware; centralized policy UI and APIs.',
     launchDate: '2024-10-01',
     customers: 96,
@@ -5608,6 +5613,7 @@ export const serviceCategories = [
     implementationDetails: 'Advanced AI BCI platform with neural signal processing, real-time AI integration, secure data handling, and medical-grade safety protocols.',
     launchDate: '2024-03-01',
     customers: 45,
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-b637
     rating: 4.9,
     reviews: 12
   },
