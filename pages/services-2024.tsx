@@ -115,7 +115,7 @@ const Services2024Page: React.FC = () => {
         <link rel="canonical" href="https://ziontechgroup.com/services-2024" />
       </Head>
 
-      <UltraFuturisticBackground2034 intensity={0.8} theme="quantum" />
+      <UltraFuturisticBackground2034 intensity={0.8} />
 
       <div className="relative z-10 min-h-screen">
         {/* Hero Section */}

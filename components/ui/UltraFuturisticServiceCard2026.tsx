@@ -1,4 +1,21 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { 
+  Check, 
+  Star, 
+  ArrowRight, 
+  Zap, 
+  Brain, 
+  Atom, 
+  Rocket,
+  Shield,
+  Cpu,
+  Target,
+  TrendingUp,
+  Users,
+  Clock,
+  Award
+} from 'lucide-react';
 
 interface Service {
   id: string;
@@ -15,193 +32,232 @@ interface Service {
 
 interface UltraFuturisticServiceCard2026Props {
   service: Service;
-  variant?: 'default' | 'quantum' | 'ai' | 'automation' | 'it' | 'emerging' | 'enterprise' | 'premium';
-  theme?: 'quantum' | 'cyber' | 'neon';
-  className?: string;
-  onClick?: () => void;
+  variant?: 'ai' | 'quantum' | 'automation' | 'space' | 'enterprise';
 }
 
 const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Props> = ({
   service,
-  variant = 'default',
-  theme = 'quantum',
-  className = '',
-  onClick
+  variant = 'ai'
 }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const [isExpanded, setIsExpanded] = useState(false);
 
-  // Get variant-specific styles
-  const getVariantStyles = useCallback((variant: string) => {
+  const getVariantStyles = () => {
     switch (variant) {
-      case 'quantum':
-        return {
-          border: 'border-cyan-500/30 hover:border-cyan-400/60',
-          gradient: 'from-cyan-500/20 to-blue-500/20',
-          text: 'text-cyan-400',
-          accent: 'bg-cyan-500/20'
-        };
       case 'ai':
         return {
-          border: 'border-purple-500/30 hover:border-purple-400/60',
-          gradient: 'from-purple-500/20 to-pink-500/20',
-          text: 'text-purple-400',
-          accent: 'bg-purple-500/20'
+          gradient: 'from-cyan-500 to-blue-600',
+          border: 'border-cyan-400/30',
+          hoverBorder: 'hover:border-cyan-400/60',
+          iconBg: 'bg-gradient-to-br from-cyan-400 to-blue-500',
+          badgeBg: 'bg-gradient-to-r from-cyan-500 to-blue-600',
+          featureIcon: <Brain className="w-4 h-4 text-cyan-400" />
+        };
+      case 'quantum':
+        return {
+          gradient: 'from-purple-500 to-pink-600',
+          border: 'border-purple-400/30',
+          hoverBorder: 'hover:border-purple-400/60',
+          iconBg: 'bg-gradient-to-br from-purple-400 to-pink-500',
+          badgeBg: 'bg-gradient-to-r from-purple-500 to-pink-600',
+          featureIcon: <Atom className="w-4 h-4 text-purple-400" />
         };
       case 'automation':
         return {
-          border: 'border-green-500/30 hover:border-green-400/60',
-          gradient: 'from-green-500/20 to-emerald-500/20',
-          text: 'text-green-400',
-          accent: 'bg-green-500/20'
+          gradient: 'from-green-500 to-emerald-600',
+          border: 'border-green-400/30',
+          hoverBorder: 'hover:border-green-400/60',
+          iconBg: 'bg-gradient-to-br from-green-400 to-emerald-500',
+          badgeBg: 'bg-gradient-to-r from-green-500 to-emerald-600',
+          featureIcon: <Zap className="w-4 h-4 text-green-400" />
         };
-      case 'it':
+      case 'space':
         return {
-          border: 'border-blue-500/30 hover:border-blue-400/60',
-          gradient: 'from-blue-500/20 to-indigo-500/20',
-          text: 'text-blue-400',
-          accent: 'bg-blue-500/20'
-        };
-      case 'emerging':
-        return {
-          border: 'border-yellow-500/30 hover:border-yellow-400/60',
-          gradient: 'from-yellow-500/20 to-orange-500/20',
-          text: 'text-yellow-400',
-          accent: 'bg-yellow-500/20'
+          gradient: 'from-blue-500 to-indigo-600',
+          border: 'border-blue-400/30',
+          hoverBorder: 'hover:border-blue-400/60',
+          iconBg: 'bg-gradient-to-br from-blue-400 to-indigo-500',
+          badgeBg: 'bg-gradient-to-r from-blue-500 to-indigo-600',
+          featureIcon: <Rocket className="w-4 h-4 text-blue-400" />
         };
       case 'enterprise':
         return {
-          border: 'border-indigo-500/30 hover:border-indigo-400/60',
-          gradient: 'from-indigo-500/20 to-purple-500/20',
-          text: 'text-indigo-400',
-          accent: 'bg-indigo-500/20'
-        };
-      case 'premium':
-        return {
-          border: 'border-amber-500/30 hover:border-amber-400/60',
-          gradient: 'from-amber-500/20 to-yellow-500/20',
-          text: 'text-amber-400',
-          accent: 'bg-amber-500/20'
+          gradient: 'from-gray-500 to-slate-600',
+          border: 'border-gray-400/30',
+          hoverBorder: 'hover:border-gray-400/60',
+          iconBg: 'bg-gradient-to-br from-gray-400 to-slate-500',
+          badgeBg: 'bg-gradient-to-r from-gray-500 to-slate-600',
+          featureIcon: <Cpu className="w-4 h-4 text-gray-400" />
         };
       default:
         return {
-          border: 'border-white/20 hover:border-white/40',
-          gradient: 'from-white/10 to-white/5',
-          text: 'text-white',
-          accent: 'bg-white/10'
+          gradient: 'from-cyan-500 to-blue-600',
+          border: 'border-cyan-400/30',
+          hoverBorder: 'hover:border-cyan-400/60',
+          iconBg: 'bg-gradient-to-br from-cyan-400 to-blue-500',
+          badgeBg: 'bg-gradient-to-r from-cyan-500 to-blue-600',
+          featureIcon: <Target className="w-4 h-4 text-cyan-400" />
         };
     }
-  }, []);
+  };
 
-  const variantStyles = getVariantStyles(variant);
-
-  const handleCardClick = useCallback(() => {
-    if (onClick) {
-      onClick();
-    }
-  }, [onClick]);
-
-  const toggleExpansion = useCallback(() => {
-    setIsExpanded(!isExpanded);
-  }, [isExpanded]);
+  const styles = getVariantStyles();
 
   return (
-    <div
-      className={`group relative overflow-hidden rounded-2xl transition-all duration-500 transform hover:scale-105 cursor-pointer ${className}`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onClick={handleCardClick}
-      role="button"
-      tabIndex={0}
-      onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          handleCardClick();
-        }
-      }}
-      aria-label={`${service.name} service card`}
+    <motion.div
+      className={`relative group p-8 bg-gradient-to-br from-gray-800/50 to-gray-900/50 border ${styles.border} ${styles.hoverBorder} rounded-3xl transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20 overflow-hidden`}
+      onHoverStart={() => setIsHovered(true)}
+      onHoverEnd={() => setIsHovered(false)}
+      whileHover={{ y: -8 }}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
     >
-      {/* Background */}
-      <div className={`absolute inset-0 bg-gradient-to-br ${variantStyles.gradient} ${variantStyles.border} transition-all duration-500`} />
+      {/* Background Glow Effect */}
+      <div className={`absolute inset-0 bg-gradient-to-br ${styles.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-3xl`} />
       
-      {/* Glow Effect */}
-      <div className={`absolute inset-0 bg-gradient-to-br ${variantStyles.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-xl`} />
-      
-      {/* Content */}
-      <div className="relative z-10 p-6 h-full flex flex-col">
-        {/* Header */}
+      {/* Popular Badge */}
+      {service.popular && (
+        <motion.div
+          className={`absolute -top-3 left-1/2 transform -translate-x-1/2 px-4 py-2 ${styles.badgeBg} text-white text-sm font-semibold rounded-full shadow-lg flex items-center gap-2`}
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.3, delay: 0.2 }}
+        >
+          <Star className="w-4 h-4" />
+          Most Popular
+        </motion.div>
+      )}
+
+      {/* Header Section */}
+      <div className="relative z-10 mb-6">
         <div className="flex items-start justify-between mb-4">
-          <div className="text-4xl mb-3" aria-hidden="true">
+          <div className={`w-16 h-16 ${styles.iconBg} rounded-2xl flex items-center justify-center text-2xl shadow-lg`}>
             {service.icon}
           </div>
-          {service.popular && (
-            <div className={`px-3 py-1 rounded-full text-xs font-semibold ${variantStyles.accent} ${variantStyles.text}`}>
-              Popular
-            </div>
-          )}
-        </div>
-
-        {/* Service Info */}
-        <div className="flex-1">
-          <h3 className={`text-xl font-bold mb-2 ${variantStyles.text}`}>
-            {service.name}
-          </h3>
-          <p className="text-gray-300 text-sm mb-3">
-            {service.tagline}
-          </p>
           
-          {/* Price */}
-          <div className="mb-4">
-            <span className="text-2xl font-bold text-white">
+          <div className="text-right">
+            <div className="text-3xl font-bold text-white mb-1">
               {service.price}
-            </span>
-            <span className="text-gray-400 text-sm ml-1">
-              {service.period}
-            </span>
+            </div>
+            <div className="text-sm text-gray-400">
+              per {service.period}
+            </div>
           </div>
-
-          {/* Features */}
-          <div className="space-y-2 mb-4">
-            {service.features.slice(0, isExpanded ? undefined : 3).map((feature, index) => (
-              <div key={index} className="flex items-center text-sm text-gray-300">
-                <div className={`w-2 h-2 rounded-full mr-3 ${variantStyles.accent}`} />
-                {feature}
-              </div>
-            ))}
-          </div>
-
-          {/* Show More/Less */}
-          {service.features.length > 3 && (
-            <button
-              onClick={toggleExpansion}
-              className={`text-sm ${variantStyles.text} hover:underline focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-cyan-400`}
-            >
-              {isExpanded ? 'Show Less' : `Show ${service.features.length - 3} More`}
-            </button>
-          )}
         </div>
 
-        {/* Action Button */}
-        <button
-          className={`w-full mt-4 py-3 px-4 rounded-lg font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black ${
-            variant === 'default'
-              ? 'bg-white/10 text-white hover:bg-white/20 focus:ring-white/40'
-              : `bg-${variantStyles.text.replace('text-', '')}/20 text-${variantStyles.text.replace('text-', '')} hover:bg-${variantStyles.text.replace('text-', '')}/30 focus:ring-${variantStyles.text.replace('text-', '')}/40`
-          }`}
-          onClick={(e) => {
-            e.stopPropagation();
-            handleCardClick();
-          }}
-        >
-          Get Started
-        </button>
+        <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">
+          {service.name}
+        </h3>
+        
+        <p className="text-gray-300 text-lg mb-3">
+          {service.tagline}
+        </p>
+        
+        <p className="text-gray-400 leading-relaxed">
+          {service.description}
+        </p>
       </div>
 
+      {/* Features Section */}
+      <div className="relative z-10 mb-8">
+        <h4 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+          <TrendingUp className="w-5 h-5 text-cyan-400" />
+          Key Features
+        </h4>
+        
+        <div className="space-y-3">
+          {service.features.map((feature, index) => (
+            <motion.div
+              key={index}
+              className="flex items-center gap-3 text-gray-300"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.3, delay: index * 0.1 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex-shrink-0 w-5 h-5 bg-cyan-400/20 rounded-full flex items-center justify-center">
+                <Check className="w-3 h-3 text-cyan-400" />
+              </div>
+              <span className="text-sm">{feature}</span>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Stats Section */}
+      <div className="relative z-10 mb-8">
+        <div className="grid grid-cols-3 gap-4">
+          <div className="text-center p-3 bg-gray-800/30 rounded-xl border border-gray-700/30">
+            <Users className="w-5 h-5 text-cyan-400 mx-auto mb-2" />
+            <div className="text-sm font-semibold text-white">500+</div>
+            <div className="text-xs text-gray-400">Clients</div>
+          </div>
+          <div className="text-center p-3 bg-gray-800/30 rounded-xl border border-gray-700/30">
+            <Clock className="w-5 h-5 text-blue-400 mx-auto mb-2" />
+            <div className="text-sm font-semibold text-white">24/7</div>
+            <div className="text-xs text-gray-400">Support</div>
+          </div>
+          <div className="text-center p-3 bg-gray-800/30 rounded-xl border border-gray-700/30">
+            <Award className="w-5 h-5 text-purple-400 mx-auto mb-2" />
+            <div className="text-sm font-semibold text-white">99.9%</div>
+            <div className="text-xs text-gray-400">Uptime</div>
+          </div>
+        </div>
+      </div>
+
+      {/* CTA Button */}
+      <motion.button
+        className={`w-full py-4 bg-gradient-to-r ${styles.gradient} text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 flex items-center justify-center gap-2 group/btn`}
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
+      >
+        <span>Get Started</span>
+        <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
+      </motion.button>
+
       {/* Hover Effects */}
-      {isHovered && (
-        <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      )}
-    </div>
+      <motion.div
+        className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"
+        initial={false}
+        animate={isHovered ? { opacity: 1 } : { opacity: 0 }}
+      />
+
+      {/* Floating Elements */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <motion.div
+          className={`absolute top-4 right-4 w-2 h-2 ${styles.iconBg} rounded-full opacity-60`}
+          animate={{
+            scale: [1, 1.5, 1],
+            opacity: [0.6, 1, 0.6]
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        
+        <motion.div
+          className={`absolute bottom-4 left-4 w-1 h-1 ${styles.iconBg} rounded-full opacity-40`}
+          animate={{
+            scale: [1, 2, 1],
+            opacity: [0.4, 0.8, 0.4]
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1
+          }}
+        />
+      </div>
+
+      {/* Category Badge */}
+      <div className={`absolute top-4 left-4 px-3 py-1 ${styles.badgeBg} text-white text-xs font-medium rounded-full opacity-80`}>
+        {service.category}
+      </div>
+    </motion.div>
   );
 };
 
