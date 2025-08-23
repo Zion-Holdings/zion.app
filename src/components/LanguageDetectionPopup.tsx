@@ -29,7 +29,7 @@ export function LanguageDetectionPopup() {
     safeStorage.setItem('zion_has_visited', 'true');
     
     // Get browser language
-    const browserLang = navigator.language.substring(0, 2) as SupportedLanguage;
+    const browserLang = navigator.language as SupportedLanguage;
     
     // Check if browser language is supported and different from current language
     const isSupported = supportedLanguages.some(lang => lang.code === browserLang);

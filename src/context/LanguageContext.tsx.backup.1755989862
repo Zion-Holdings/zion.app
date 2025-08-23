@@ -1,11 +1,20 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import type { ReactNode } from 'react';
 import { safeStorage } from '@/utils/safeStorage';
+<<<<<<< HEAD
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
+import { setCookie, getCookie } from '@/utils/cookies';
+=======
 import Cookies from 'js-cookie';
+>>>>>>> origin/5i6q3p-codex/add-i18n-support-with-next-i18next
 import { useTranslation } from 'react-i18next';
 import { toast } from '../components/ui/use-toast';
 
+<<<<<<< HEAD
+export type SupportedLanguage = 'en' | 'es' | 'fr' | 'pt' | 'ar';
+=======
 export type SupportedLanguage = 'en-US' | 'es-ES';
+>>>>>>> origin/5i6q3p-codex/add-i18n-support-with-next-i18next
 
 export type LanguageContextType = {
   currentLanguage: SupportedLanguage;
@@ -14,9 +23,23 @@ export type LanguageContextType = {
   supportedLanguages: { code: SupportedLanguage; name: string; flag: string }[];
 };
 
+<<<<<<< HEAD
+/**
+ * Default list of languages supported by the application. Exported so
+ * components can fall back to it if the context has not been initialized
+ * correctly.
+ */
+export const SUPPORTED_LANGUAGES = [
+  { code: 'en' as SupportedLanguage, name: 'English', flag: '🇺🇸' },
+  { code: 'es' as SupportedLanguage, name: 'Español', flag: '🇪🇸' },
+  { code: 'fr' as SupportedLanguage, name: 'Français', flag: '🇫🇷' },
+  { code: 'pt' as SupportedLanguage, name: 'Português', flag: '🇧🇷' },
+  { code: 'ar' as SupportedLanguage, name: 'العربية', flag: '🇸🇦' }
+=======
 const supportedLanguages = [
   { code: 'en-US' as SupportedLanguage, name: 'English', flag: '🇺🇸' },
   { code: 'es-ES' as SupportedLanguage, name: 'Español', flag: '🇪🇸' }
+>>>>>>> origin/5i6q3p-codex/add-i18n-support-with-next-i18next
 ];
 
 const supportedLanguages = SUPPORTED_LANGUAGES;
@@ -46,12 +69,43 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
 }) => {
   const { i18n, t } = useTranslation();
   const { isAuthenticated, user } = authState;
+<<<<<<< HEAD
+  // Initialize currentLanguage state with a value that reflects i18next's initial detection or fallback.
+  // This will be refined by the useEffect hook below for initial load logic.
+  const [currentLanguage, setCurrentLanguage] = useState<SupportedLanguage>(() => {
+    const initialI18nLang = i18n.language;
+    if (initialI18nLang) {
+      const shortLang = initialI18nLang.substring(0, 2) as SupportedLanguage;
+      if (supportedLanguages.some(l => l.code === shortLang)) {
+        return shortLang;
+      }
+    }
+    return 'en'; // Default fallback
+  });
+=======
   const [currentLanguage, setCurrentLanguage] = useState<SupportedLanguage>(
     (i18n.language as SupportedLanguage) || 'en-US'
   );
+>>>>>>> origin/5i6q3p-codex/add-i18n-support-with-next-i18next
   const [isRTL, setIsRTL] = useState(i18n.dir() === 'rtl');
 
   useEffect(() => {
+<<<<<<< HEAD
+    const navigatorLocale = typeof window !== "undefined" ? window.navigator.language : 'en'; // Default to 'en' for SSR or tests
+    const cookieLang = getCookie('i18n_lang') as SupportedLanguage | undefined;
+    const storageLang = safeStorage.getItem('i18n_lang') as SupportedLanguage | undefined;
+    const persistedLang = cookieLang || storageLang;
+
+    let langToSet: SupportedLanguage;
+
+    if (navigatorLocale.startsWith('en-')) {
+      // If browser is 'en-US' (or any 'en-*'), force initial language to 'en'.
+      // This makes browser's English preference override any non-English cookie for initial load.
+      langToSet = 'en';
+    } else if (persistedLang && supportedLanguages.some(lang => lang.code === persistedLang)) {
+      // If browser is NOT English, and a valid language cookie/storage exists, use that.
+      langToSet = persistedLang;
+=======
     // Set initial language from cookie or localStorage
     const savedLang = (Cookies.get('zion_language') as SupportedLanguage) ||
       (safeStorage.getItem('zion_language') as SupportedLanguage);
@@ -80,6 +134,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
     // Add RTL class for Tailwind
     if (i18n.dir() === 'rtl') {
       document.documentElement.classList.add('rtl');
+>>>>>>> origin/5i6q3p-codex/add-i18n-support-with-next-i18next
     } else {
       // If browser is NOT English and no valid persisted lang, try to use browser's language if supported.
       const browserBaseLang = navigatorLocale.substring(0, 2) as SupportedLanguage;
@@ -211,8 +266,15 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
       // Change i18n language
       await i18n.changeLanguage(lang);
       setCurrentLanguage(lang);
+<<<<<<< HEAD
+      
+      // Persist language choice with longer expiration (1 year)
+      setCookie('i18n_lang', lang, 365);
+      safeStorage.setItem('i18n_lang', lang);
+=======
       Cookies.set('zion_language', lang, { expires: 365 });
       safeStorage.setItem('zion_language', lang);
+>>>>>>> origin/5i6q3p-codex/add-i18n-support-with-next-i18next
       
       // Get language name for toast
       const langName = supportedLanguages.find(l => l.code === lang)?.name || lang;

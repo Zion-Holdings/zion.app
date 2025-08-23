@@ -115,3 +115,16 @@
 2025-08-23 22:57:41 - Resolving conflicts in src/context/AnalyticsContext.tsx for branch 5dtq58-codex/implement-analytics-and-error-tracking
 2025-08-23 22:57:41 - Resolving conflicts in src/integrations/supabase/client.ts for branch 5dtq58-codex/implement-analytics-and-error-tracking
 2025-08-23 22:57:41 - Resolving conflicts in src/main.tsx for branch 5dtq58-codex/implement-analytics-and-error-tracking
+2025-08-23 22:57:42 - Merge conflicts detected in 5i6q3p-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:57:42 - Resolving conflicts in next.config.js for branch 5i6q3p-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:57:42 - Resolving conflicts in package.json for branch 5i6q3p-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:57:42 - Resolving conflicts in public/locales/en-US/translation.json.backup.1755989848 for branch 5i6q3p-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:57:42 - Resolving conflicts in public/locales/es-ES/translation.json.backup.1755989848 for branch 5i6q3p-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:57:42 - Resolving conflicts in src/context/LanguageContext.tsx for branch 5i6q3p-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:57:42 - Resolving conflicts in src/hooks/useTranslationService.ts for branch 5i6q3p-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:57:42 - Resolving conflicts in src/i18n/index.ts for branch 5i6q3p-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:57:42 - Resolving conflicts in src/i18n/locales/ar/translation.json for branch 5i6q3p-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:57:42 - Resolving conflicts in src/i18n/locales/pt/translation.json for branch 5i6q3p-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:57:42 - Resolving conflicts in src/pages/Checkout.tsx for branch 5i6q3p-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:57:42 - Resolving conflicts in src/pages/Home.tsx for branch 5i6q3p-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:57:42 - Resolving conflicts in src/pages/Marketplace.tsx for branch 5i6q3p-codex/add-i18n-support-with-next-i18next
