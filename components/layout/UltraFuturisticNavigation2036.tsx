@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Menu, ChevronDown, X, Phone, Mail, MapPin, ArrowRight,
   Rocket, BookOpen, DollarSign, BarChart3, Globe, Star, 
-  Cpu, Grid, Building, MessageCircle, Brain, Atom, Target
+  Cpu, Grid, Building, MessageCircle, Brain, Atom, Target, Users, Search
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -145,12 +145,6 @@ const navigationItems: NavigationItem[] = [
         href: '/partners', 
         description: 'Partnership opportunities',
         icon: <div className="w-4 h-4" />
-      },
-      { 
-        name: 'Investors', 
-        href: '/investors', 
-        description: 'Investment information',
-        icon: <DollarSign className="w-4 h-4" />
       },
       { 
         name: 'Careers', 
