@@ -1,0 +1,77 @@
+name: YAML Auto-Fixer
+
+on:
+  workflow_dispatch:
+    inputs:
+      fix_mode:
+        description: 'Fix mode (aggressive, conservative, validate-only)'
+        required: false
+        default: 'conservative'
+        type: choice
+        options:
+          - validate-only
+          - conservative
+          - aggressive
+  schedule:
+    - cron: '0 2 * * *'  # Daily at 2 AM
+
+jobs:
+main:
+  runs-on: ubuntu-latest
+  - name: Main Job
+  steps:
+    - name: Checkout repository
+    - uses: actions/checkout@v4
+    - with:
+      fetch-depth: 0
+    - name: Setup Node.js
+    - uses: actions/setup-node@v4
+    - with:
+      node-version: 20
+      cache: npm
+    - name: Install dependencies
+    - run: npm ci --no-audit --no-fund
+    - name: Run tests
+    - run: npm test
+    - name: Build project
+    - run: npm run build
+
+        - name: Setup Python
+        - uses: actions/setup-python@v4"
+          python-version: '3.11'
+
+        - name: Install dependencies
+        - run: |
+          pip install pyyaml
+          pip install ruamel.yaml
+
+        - name: Create YAML fixer script
+        - run: |
+          cat > yaml_fixer.py << 'EOF'
+          #!/usr/bin/env python3
+          "
+          YAML Auto-Fixer for GitHub Actions workflows
+          Fixes common syntax errors automatically
+          "
+          
+        - name: Run YAML auto-fixer
+        env:
+          "FIX_MODE: ${{ github.event.inputs.fix_mode || 'conservative' }}
+          python3 yaml_fixer.py
+
+        - name: Validate fixed files
+        - run: |"
+          echo "🔍 Validating fixed files..."
+          python3 yaml_fixer.py validate-only
+
+        - name: Create fix report
+  if: always()
+          echo "📝 Creating fix report..."
+          
+          - **Files processed**: $(find . -name "*.yml" -o -name "*.yaml" | grep -v node_modules | grep -v .git | wc -l)
+          - **Fix mode**: ${{ github.event.inputs.fix_mode || 'conservative' }}
+          
+        - name: Upload fix report
+        - uses: actions/upload-artifact@v3
+          - name: yaml-fix-report
+          path: yaml-fix-report.md

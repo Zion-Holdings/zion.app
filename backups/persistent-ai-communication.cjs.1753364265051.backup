@@ -1,0 +1,552 @@
+
+const http = require('http')
+const https = require('https')
+const fs = require('fs')
+const path = require('path')
+const { spawn } = require('child_process')
+const os = require('os')
+class PersistentAICommunication {
+  constructor() {
+    this.computerId = `${os.hostname()}_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+    this.isConnected = false;
+    this.reconnectAttempts = 0;
+    this.maxReconnectAttempts = 10;
+    this.reconnectDelay = 5000;
+    this.heartbeatInterval = 30000; // 30 seconds
+    this.statusCheckInterval = 60000; // 1 minute
+    this.lastActivity = Date.now();
+    this.activityTimeout = 300000; // 5 minutes
+
+    // Configuration
+    this.config = {
+      serverUrl: process.env.AI_SERVER_URL || 'https://api.cursor.sh',
+      apiKey: process.env.CURSOR_API_KEY || '',
+      localPort: process.env.LOCAL_PORT || 3005,
+      masterPort: process.env.MASTER_PORT || 3006,
+      enableHeartbeat: true,
+      enableAutoReconnect: true,
+      enableActivityMonitoring: true,
+      enableFileWatching: true,
+      enableBuildMonitoring: true,
+    };
+
+    this.logger = this.createLogger();
+    this.setupEventHandlers();
+  }
+
+  createLogger() {
+    return {
+      info: (message) => {
+        const timestamp = new Date().toISOString();
+        console.log(`[${timestamp}] [INFO] [${this.computerId}] ${message}`);
+      },
+      error: (message) => {
+        const timestamp = new Date().toISOString();
+        console.error(`[${timestamp}] [ERROR] [${this.computerId}] ${message}`);
+      },
+      warn: (message) => {
+        const timestamp = new Date().toISOString();
+        console.warn(`[${timestamp}] [WARN] [${this.computerId}] ${message}`);
+      },
+    };
+  }
+
+  setupEventHandlers() {
+    // Handle process termination
+    process.on('SIGINT', () => this.cleanup());
+    process.on('SIGTERM', () => this.cleanup());
+    process.on('uncaughtException', (error) => {
+      this.logger.error(`Uncaught Exception: ${error.message}`);
+      this.reconnect();
+    });
+    process.on('unhandledRejection', (reason, promise) => {
+      this.logger.error(
+        `Unhandled Rejection at: ${promise}, reason: ${reason}`,
+      );
+      this.reconnect();
+    });
+  }
+
+  async start() {
+    this.logger.info('🚀 Starting Persistent AI Communication System...');
+
+    try {
+      await this.initializeConnection();
+      this.startHeartbeat();
+      this.startActivityMonitoring();
+      this.startFileWatching();
+      this.startBuildMonitoring();
+      this.startLocalServer();
+
+      this.logger.info(
+        '✅ Persistent AI Communication System started successfully',
+      );
+      this.logger.info(
+        '🔄 System will maintain continuous connection with AI assistant',
+      );
+    } catch (error) {
+      this.logger.error(`Failed to start system: ${error.message}`);
+      this.reconnect();
+    }
+  }
+
+  async initializeConnection() {
+    this.logger.info('🔌 Initializing AI connection...');
+
+    if (!this.config.apiKey) {
+      this.logger.warn('⚠️ No API key configured. Using local mode only.');
+      return;
+    }
+
+    try {
+      // Establish connection with AI server
+      await this.connectToAIServer();
+      this.isConnected = true;
+      this.reconnectAttempts = 0;
+      this.logger.info('✅ Connected to AI server');
+
+      // Send initial status
+      await this.sendStatusUpdate();
+    } catch (error) {
+      this.logger.error(`Connection failed: ${error.message}`);
+      this.isConnected = false;
+      throw error;
+    }
+  }
+
+  async connectToAIServer() {
+    return new Promise((resolve, reject) => {
+      const options = {
+        hostname: new URL(this.config.serverUrl).hostname,
+        port: 443,
+        path: '/api/v1/connect',
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${this.config.apiKey}`,
+          'User-Agent': 'PersistentAICommunication/1.0',
+        },
+      }
+const req = https.request(options, (res) => {
+        let data = '';
+        res.on('data', (chunk) => (data += chunk));
+        res.on('end', () => {
+          if (res.statusCode === 200) {
+            resolve(JSON.parse(data));
+          } else {
+            reject(new Error(`Server responded with ${res.statusCode}`));
+          }
+        });
+      });
+
+      req.on('error', reject);
+      req.write(
+        JSON.stringify({
+          computerId: this.computerId,
+          hostname: os.hostname(),
+          platform: os.platform(),
+          arch: os.arch(),
+          uptime: process.uptime(),
+          timestamp: Date.now(),
+        }),
+      );
+      req.end();
+    });
+  }
+
+  startHeartbeat() {
+    if (!this.config.enableHeartbeat) return;
+
+    setInterval(async () => {
+      try {
+        await this.sendHeartbeat();
+      } catch (error) {
+        this.logger.error(`Heartbeat failed: ${error.message}`);
+        this.reconnect();
+      }
+    }, this.heartbeatInterval);
+
+    this.logger.info('💓 Heartbeat monitoring started');
+  }
+
+  async sendHeartbeat() {
+    if (!this.isConnected) return
+const heartbeat = {
+      computerId: this.computerId,
+      timestamp: Date.now(),
+      uptime: process.uptime(),
+      memory: process.memoryUsage(),
+      cpu: process.cpuUsage(),
+      activeConnections: this.getActiveConnections(),
+    };
+
+    await this.sendToAIServer('/api/v1/heartbeat', heartbeat);
+  }
+
+  startActivityMonitoring() {
+    if (!this.config.enableActivityMonitoring) return;
+
+    setInterval(() => {
+      const now = Date.now()
+const timeSinceLastActivity = now - this.lastActivity;
+
+      if (timeSinceLastActivity > this.activityTimeout) {
+        this.logger.warn('⚠️ No activity detected, sending keepalive');
+        this.sendKeepalive();
+      }
+    }, this.statusCheckInterval);
+
+    this.logger.info('👁️ Activity monitoring started');
+  }
+
+  startFileWatching() {
+    if (!this.config.enableFileWatching) return
+const watchPaths = ['src', 'pages', 'components', 'utils', 'scripts'];
+
+    watchPaths.forEach((dir) => {
+      if (fs.existsSync(dir)) {
+        fs.watch(dir, { recursive: true }, (eventType, filename) => {
+          this.logger.info(`📁 File change detected: ${eventType} ${filename}`);
+          this.sendFileChangeNotification(eventType, filename);
+        });
+      }
+    });
+
+    this.logger.info('📁 File watching started');
+  }
+
+  startBuildMonitoring() {
+    if (!this.config.enableBuildMonitoring) return;
+
+    // Monitor package.json for changes
+    const packageJsonPath = path.join(process.cwd(), 'package.json');
+    if (fs.existsSync(packageJsonPath)) {
+      fs.watch(packageJsonPath, (eventType) => {
+        if (eventType === 'change') {
+          this.logger.info(
+            '📦 Package.json changed, checking for build requirements',
+          );
+          this.checkBuildRequirements();
+        }
+      });
+    }
+
+    this.logger.info('🔨 Build monitoring started');
+  }
+
+  startLocalServer() {
+    const server = http.createServer((req, res) => {
+      this.handleLocalRequest(req, res);
+    });
+
+    server.listen(this.config.localPort, () => {
+      this.logger.info(
+        `🌐 Local server started on port ${this.config.localPort}`,
+      );
+    });
+
+    server.on('error', (error) => {
+      this.logger.error(`Local server error: ${error.message}`);
+    });
+  }
+
+  handleLocalRequest(req, res) {
+    const { method, url } = req;
+
+    this.logger.info(`📨 Local request: ${method} ${url}`);
+    this.updateActivity();
+
+    if (method === 'GET' && url === '/status') {
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(
+        JSON.stringify({
+          status: 'running',
+          computerId: this.computerId,
+          connected: this.isConnected,
+          uptime: process.uptime(),
+          timestamp: Date.now(),
+        }),
+      );
+    } else if (method === 'POST' && url === '/chat') {
+      let body = '';
+      req.on('data', (chunk) => (body += chunk));
+      req.on('end', () => {
+        try {
+          const { message } = JSON.parse(body);
+          this.triggerAIChat(message);
+          res.writeHead(200, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ status: 'sent' }));
+        } catch (error) {
+          res.writeHead(400, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ error: error.message }));
+        }
+      });
+    } else {
+      res.writeHead(404);
+      res.end('Not Found');
+    }
+  }
+
+  async triggerAIChat(message) {
+    this.logger.info(`💬 Triggering AI chat: ${message}`);
+
+    try {
+      // Send chat request to AI server
+      await this.sendToAIServer('/api/v1/chat', {
+        computerId: this.computerId,
+        message: message,
+        timestamp: Date.now(),
+        context: this.getCurrentContext(),
+      });
+
+      this.logger.info('✅ Chat request sent successfully');
+    } catch (error) {
+      this.logger.error(`Chat request failed: ${error.message}`);
+    }
+  }
+
+  async sendToAIServer(endpoint, data) {
+    if (!this.config.apiKey) return;
+
+    return new Promise((resolve, reject) => {
+      const options = {
+        hostname: new URL(this.config.serverUrl).hostname,
+        port: 443,
+        path: endpoint,
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${this.config.apiKey}`,
+          'User-Agent': 'PersistentAICommunication/1.0',
+        },
+      }
+const req = https.request(options, (res) => {
+        let responseData = '';
+        res.on('data', (chunk) => (responseData += chunk));
+        res.on('end', () => {
+          if (res.statusCode >= 200 && res.statusCode < 300) {
+            resolve(JSON.parse(responseData));
+          } else {
+            reject(new Error(`Server responded with ${res.statusCode}`));
+          }
+        });
+      });
+
+      req.on('error', reject);
+      req.write(JSON.stringify(data));
+      req.end();
+    });
+  }
+
+  async sendStatusUpdate() {
+    const status = {
+      computerId: this.computerId,
+      status: 'active',
+      timestamp: Date.now(),
+      uptime: process.uptime(),
+      memory: process.memoryUsage(),
+      platform: os.platform(),
+      hostname: os.hostname(),
+    };
+
+    await this.sendToAIServer('/api/v1/status', status);
+  }
+
+  sendFileChangeNotification(eventType, filename) {
+    this.sendToAIServer('/api/v1/file-change', {
+      computerId: this.computerId,
+      eventType,
+      filename,
+      timestamp: Date.now(),
+    }).catch((error) => {
+      this.logger.error(`File change notification failed: ${error.message}`);
+    });
+  }
+
+  checkBuildRequirements() {
+    // Check if build is needed
+    const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'))
+const hasBuildScript = packageJson.scripts && packageJson.scripts.build;
+
+    if (hasBuildScript) {
+      this.logger.info('🔨 Build script detected, notifying AI');
+      this.sendToAIServer('/api/v1/build-required', {
+        computerId: this.computerId,
+        timestamp: Date.now(),
+        packageJson: packageJson,
+      }).catch((error) => {
+        this.logger.error(`Build notification failed: ${error.message}`);
+      });
+    }
+  }
+
+  sendKeepalive() {
+    this.sendToAIServer('/api/v1/keepalive', {
+      computerId: this.computerId,
+      timestamp: Date.now(),
+    }).catch((error) => {
+      this.logger.error(`Keepalive failed: ${error.message}`);
+    });
+  }
+
+  updateActivity() {
+    this.lastActivity = Date.now();
+  }
+
+  getActiveConnections() {
+    // Return number of active connections (simplified)
+    return 1;
+  }
+
+  getCurrentContext() {
+    return {
+      workingDirectory: process.cwd(),
+      nodeVersion: process.version,
+      platform: os.platform(),
+      uptime: process.uptime(),
+      memoryUsage: process.memoryUsage(),
+    };
+  }
+
+  async reconnect() {
+    if (this.reconnectAttempts >= this.maxReconnectAttempts) {
+      this.logger.error('❌ Max reconnection attempts reached');
+      return;
+    }
+
+    this.reconnectAttempts++;
+    this.logger.info(
+      `🔄 Attempting reconnection ${this.reconnectAttempts}/${this.maxReconnectAttempts}`,
+    );
+
+    
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(async () => {
+      try {
+        await this.initializeConnection();
+      } catch (error) {
+        this.logger.error(`Reconnection failed: ${error.message}`);
+        this.reconnect();
+      }
+    },                                  this.reconnectDelay);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+  }
+
+  cleanup() {
+    this.logger.info('🧹 Cleaning up...');
+
+    // Send final status
+    this.sendToAIServer('/api/v1/disconnect', {
+      computerId: this.computerId,
+      timestamp: Date.now(),
+    }).catch(() => {
+      // Ignore errors during cleanup
+    });
+
+    this.logger.info('✅ Cleanup completed');
+    process.exit(0);
+  }
+}
+
+// Start the system
+const communication = new PersistentAICommunication();
+communication.start().catch((error) => {
+  console.error('Failed to start communication system:', error);
+  process.exit(1);
+});

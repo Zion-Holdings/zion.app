@@ -1,0 +1,13 @@
+[
+  {
+    "id": "seed",
+    "date": "2024-01-01",
+    "title": "Automation seed: AI Trends",
+    "highlights": [
+      "This file will be updated by the cloud automation.",
+      "Add OPENAI_API_KEY as a repo secret to generate richer insights."
+    ],
+    "summary": "Initial seed entry to bootstrap trends page.",
+    "tags": ["ai", "automation"]
+  }
+]

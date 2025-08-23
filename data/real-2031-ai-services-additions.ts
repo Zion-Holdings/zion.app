@@ -1,0 +1,93 @@
+import { EnhancedRealMicroSaasService } from './enhanced-real-micro-saas-services';
+
+const contact = {
+	mobile: '+1 302 464 0950',
+	email: 'kleber@ziontechgroup.com',
+	address: '364 E Main St STE 1008 Middletown DE 19709',
+	website: 'https://ziontechgroup.com'
+};
+
+export const real2031AIServicesAdditions: EnhancedRealMicroSaasService[] = [
+	{
+		id: 'rag-evaluation-lab',
+		name: 'RAG Evaluation Lab',
+		tagline: 'Measure precision/recall, hallucinations, and latency for your RAG',
+		price: '$149',
+		period: '/month',
+		description: 'Hosted evaluation harness for RAG systems with ground-truth datasets, grading rubrics, and cost/latency tracking. Supports prompt variants and retrieval metrics.',
+		features: [
+			'Precision/recall, MRR, nDCG metrics',
+			'Ground-truth datasets and rubric authoring',
+			'Prompt variants with auto grading',
+			'Latency and cost dashboards',
+			'Dataset versioning and CI gates'
+		],
+		popular: true,
+		icon: '🔎',
+		color: 'from-fuchsia-600 to-purple-700',
+		textColor: 'text-fuchsia-300',
+		link: 'https://ziontechgroup.com/services/rag-evaluation-lab',
+		marketPosition: 'Complements Promptfoo and Langfuse with retrieval-focused KPIs.',
+		targetAudience: 'AI teams, data engineers, platform owners',
+		trialDays: 14,
+		setupTime: '1 hour',
+		category: 'AI & Data',
+		realService: true,
+		technology: ['Python', 'TypeScript', 'OpenAI', 'Weaviate/Pinecone'],
+		integrations: ['LangChain', 'LlamaIndex', 'OpenAI', 'Anthropic'],
+		useCases: ['Guardrail evaluation', 'Retrieval tuning', 'Prompt optimization'],
+		roi: 'Improve RAG answer accuracy 10–30% by systematic evaluation.',
+		competitors: ['Promptfoo', 'Langfuse', 'TruLens'],
+		marketSize: '$6B+ AI eval tooling',
+		growthRate: '60% YoY',
+		variant: 'ai-futuristic',
+		contactInfo: contact,
+		realImplementation: true,
+		implementationDetails: 'Dataset pipeline, graders, metric calculators, and CI integrations.',
+		launchDate: '2025-07-25',
+		customers: 26,
+		rating: 4.6,
+		reviews: 16
+	},
+	{
+		id: 'sales-copilot-genai',
+		name: 'Sales Copilot GenAI',
+		tagline: 'Account research, email drafts, and call notes that actually help reps',
+		price: '$79',
+		period: '/user/month',
+		description: 'Context-aware research on accounts, suggested outreach with personalization tokens, and auto-summarized call notes with CRM sync.',
+		features: [
+			'Company news and 10-K mining',
+			'Personalized email and LinkedIn drafts',
+			'Call note summarization and next steps',
+			'CRM sync (deals, contacts, tasks)',
+			'Out-of-office and follow-up scheduler'
+		],
+		popular: true,
+		icon: '🤖',
+		color: 'from-emerald-600 to-teal-700',
+		textColor: 'text-emerald-300',
+		link: 'https://ziontechgroup.com/services/sales-copilot-genai',
+		marketPosition: 'Pragmatic alternative to full RevOps suites; focused on rep workflows.',
+		targetAudience: 'SMB/mid-market sales teams',
+		trialDays: 14,
+		setupTime: '30 minutes',
+		category: 'AI & Data',
+		realService: true,
+		technology: ['TypeScript', 'OpenAI', 'Vectordb'],
+		integrations: ['HubSpot', 'Salesforce', 'Gmail', 'Outlook'],
+		useCases: ['Prospecting', 'Personalized outreach', 'Meeting follow-ups'],
+		roi: 'Lift reply rates 2–5x and save 3–5 hrs/rep/week.',
+		competitors: ['Apollo.io', 'Regie.ai', 'Gong (notes)'],
+		marketSize: '$15B+ sales tech',
+		growthRate: '24% YoY',
+		variant: 'ai-futuristic',
+		contactInfo: contact,
+		realImplementation: true,
+		implementationDetails: 'Multi-source research, template engine, and CRM connectors.',
+		launchDate: '2025-08-03',
+		customers: 33,
+		rating: 4.6,
+		reviews: 20
+	}
+];

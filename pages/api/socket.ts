@@ -1,17 +1,16 @@
 import { Server as IOServer } from 'socket.io';
-import type { Server as HTTPServer } from 'http';
+import type { Server as NetServer, IncomingMessage, ServerResponse } from 'http';
 
 export const config = { api: { bodyParser: false } };
 
-interface ResWithSocket {
-  socket: { server: HTTPServer & { io?: IOServer } };
-  end: (data?: any) => void;
+interface ResponseWithSocket extends ServerResponse {
+  socket: NetServer & { io?: IOServer };
 }
-export default function handler(_req: any, res: ResWithSocket) {
-  const httpServer = res.socket.server;
-  if (!httpServer.io) {
-    const io = new IOServer(httpServer, { path: '/api/socket' });
-    httpServer.io = io;
+
+export default function handler(_req: IncomingMessage, res: ResponseWithSocket) {
+  if (!res.socket.server.io) {
+    const io = new IOServer(res.socket.server, { path: '/api/socket' });
+    res.socket.server.io = io;
 
     io.on('connection', (socket) => {
       socket.on('join-room', (roomId: string) => {
