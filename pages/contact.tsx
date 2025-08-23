@@ -1,5 +1,3 @@
-export default function Contact() { return null }
-=======
 export default function Contact() { return <div className="p-6">Contact</div>; }
 =======
 import type { NextPage } from 'next';
@@ -14,3 +12,7 @@ const ContactPage: NextPage = () => (
 );
 
 export default ContactPage;
+=======
+export default function Contact() {
+  return <div className="p-6">Contact us</div>;
+}
