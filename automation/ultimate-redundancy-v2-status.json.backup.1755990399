@@ -1,4 +1,22 @@
 {
+<<<<<<< HEAD
+  "timestamp": "2025-08-19T17:51:55.520Z",
+  "uptime": 420091,
+  "pm2": {
+    "error": "Command failed: pm2 status --no-daemon --format json\n\n  error: unknown option `--format'\n\n"
+  },
+  "githubActions": {
+    "workflows": 2,
+    "status": "monitoring"
+  },
+  "netlifyFunctions": {
+    "functions": 97,
+    "status": "monitoring"
+  },
+  "totalRecoveries": 0,
+  "totalErrors": 0,
+  "lastHealthCheck": "2025-08-19T17:51:25.576Z"
+=======
   "lastCheck": "2025-08-19T17:52:32.674Z",
   "pm2Status": {},
   "githubActionsStatus": {
@@ -110,4 +128,5 @@
   "lastRecovery": null,
   "totalRecoveries": 0,
   "failures": []
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-4ba9
 }
