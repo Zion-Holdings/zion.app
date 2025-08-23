@@ -4,8 +4,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ArrowRight, Play, TrendingUp, Brain, Shield, Rocket, Globe, Cpu, Database, Atom, Target, Star, Sparkles as SparklesIcon,
   Brain as BrainIcon, Atom as AtomIcon, Shield as ShieldIcon, Rocket as RocketIcon, Zap, Eye, Heart, Infinity,
+<<<<<<< HEAD
+  Users, Building, Cloud, Code, Palette, Lightbulb, Award, Clock, CheckCircle, ArrowUpRight, ChevronDown, Menu, X, Phone, Mail
+=======
   Users, Building, Cloud, Code, Palette, Lightbulb, Award, Clock, CheckCircle, ArrowUpRight, ChevronDown, Menu, X,
   Truck, Server
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-86a5
 } from 'lucide-react';
 
 // Import our new innovative services
@@ -64,14 +68,37 @@ const Homepage2045: React.FC = () => {
     ...realEnterpriseMicroSaas2025,
     ...innovativeITInfrastructureServices2025,
     ...innovativeAIAutonomousServices2025,
+<<<<<<< HEAD
+    ...revolutionary2045AdvancedAIServices,
+    ...revolutionary2045AdvancedITServices,
+    ...innovativeAIAutonomousServicesExpansion2025,
+    ...innovativeITInfrastructureServicesExpansion2025,
+    ...innovativeMicroSaasExpansion2025
+=======
     ...innovativeAIAutonomousServices2025Expansion,
     ...innovativeITInfrastructureServices2025Expansion,
     ...innovativeMicroSaasServices2025Expansion
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-86a5
   ];
 
   // Filter services by category
   const getFilteredServices = useCallback(() => {
     if (selectedCategory === 'all') return allRevolutionaryServices;
+<<<<<<< HEAD
+    return allRevolutionaryServices.filter(service => 
+      service.category.toLowerCase().includes(selectedCategory.toLowerCase()) ||
+      service.type.toLowerCase().includes(selectedCategory.toLowerCase())
+    );
+  }, [selectedCategory, allRevolutionaryServices]);
+
+  const categories = [
+    { id: 'all', name: 'All Services', icon: <SparklesIcon className="w-4 h-4" />, color: 'from-cyan-400 to-blue-500' },
+    { id: 'ai', name: 'AI & ML', icon: <BrainIcon className="w-4 h-4" />, color: 'from-purple-400 to-pink-500' },
+    { id: 'quantum', name: 'Quantum', icon: <AtomIcon className="w-4 h-4" />, color: 'from-indigo-400 to-purple-500' },
+    { id: 'cybersecurity', name: 'Security', icon: <ShieldIcon className="w-4 h-4" />, color: 'from-red-400 to-orange-500' },
+    { id: 'infrastructure', name: 'Infrastructure', icon: <RocketIcon className="w-4 h-4" />, color: 'from-green-400 to-teal-500' },
+    { id: 'micro-saas', name: 'Micro SAAS', icon: <Cloud className="w-4 h-4" />, color: 'from-blue-400 to-indigo-500' }
+=======
     
     const category = categoryData.find(cat => cat.id === selectedCategory);
     if (!category) return allRevolutionaryServices;
@@ -101,6 +128,7 @@ const Homepage2045: React.FC = () => {
     { id: 'supply-chain', name: 'Supply Chain', icon: Truck, color: 'from-orange-500 to-red-500', count: allRevolutionaryServices.filter(s => s.category.includes('Supply') || s.category.includes('Chain')).length },
     { id: 'edge-computing', name: 'Edge Computing', icon: Server, color: 'from-indigo-500 to-purple-500', count: allRevolutionaryServices.filter(s => s.category.includes('Edge') || s.category.includes('Computing')).length },
     { id: 'devops', name: 'DevOps', icon: Code, color: 'from-yellow-500 to-orange-500', count: allRevolutionaryServices.filter(s => s.category.includes('DevOps') || s.category.includes('Orchestration')).length }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-86a5
   ];
 
   const featuredServices = allRevolutionaryServices.slice(0, 6);
@@ -269,6 +297,22 @@ const Homepage2045: React.FC = () => {
               viewport={{ once: true }}
               className="flex flex-wrap justify-center gap-4 mb-12"
             >
+<<<<<<< HEAD
+              {categories.map((category) => (
+                <motion.button
+                  key={category.id}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => setSelectedCategory(category.id)}
+                  className={`flex items-center gap-2 px-6 py-3 rounded-full border-2 transition-all duration-300 ${
+                    selectedCategory === category.id
+                      ? `border-cyan-500 bg-gradient-to-r ${category.color} text-white`
+                      : 'border-gray-600 text-gray-300 hover:border-cyan-500 hover:text-cyan-400'
+                  }`}
+                >
+                  {category.icon}
+                  {category.name}
+=======
               {categoryData.map((category) => (
                 <motion.button
                   key={category.id}
@@ -288,6 +332,7 @@ const Homepage2045: React.FC = () => {
                       {category.count}
                     </span>
                   </span>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-86a5
                 </motion.button>
               ))}
             </motion.div>

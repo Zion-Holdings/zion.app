@@ -286,6 +286,10 @@ const UltraFuturisticNavigation2045: React.FC = () => {
 
   const closeAllDropdowns = () => {
     setActiveDropdown(null);
+<<<<<<< HEAD
+    setIsMobileMenuOpen(false);
+  };
+=======
   }, []);
 
   const navigationItems = [
@@ -307,6 +311,7 @@ const UltraFuturisticNavigation2045: React.FC = () => {
     { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact' }
   ];
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-86a5
 
   return (
     <>

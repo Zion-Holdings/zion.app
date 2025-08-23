@@ -17,11 +17,17 @@
   --neon-orange: #f97316;
   --neon-indigo: #6366f1;
   --neon-teal: #14b8a6;
+<<<<<<< HEAD
+  --quantum-glow: 0 0 20px rgba(0, 212, 255, 0.5);
+  --consciousness-glow: 0 0 25px rgba(168, 85, 247, 0.6);
+  --space-glow: 0 0 30px rgba(59, 130, 246, 0.4);
+=======
   --neon-gold: #fbbf24;
   --neon-emerald: #10b981;
   --neon-rose: #f43f5e;
   --neon-violet: #8b5cf6;
   --neon-sky: #0ea5e9;
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-86a5
 }
 
 /* Base Styles */

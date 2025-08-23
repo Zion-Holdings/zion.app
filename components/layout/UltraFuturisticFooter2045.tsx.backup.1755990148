@@ -45,6 +45,45 @@ const UltraFuturisticFooter2045: React.FC = () => {
 
   const footerSections = [
     {
+<<<<<<< HEAD
+      title: 'Services',
+      items: [
+        { label: 'AI & Machine Learning', href: '/services?category=ai-ml', icon: <Brain className="w-4 h-4" /> },
+        { label: 'IT Infrastructure', href: '/services?category=it-infrastructure', icon: <Server className="w-4 h-4" /> },
+        { label: 'Micro SAAS', href: '/services?category=micro-saas', icon: <Target className="w-4 h-4" /> },
+        { label: 'Quantum Technology', href: '/services?category=quantum', icon: <Atom className="w-4 h-4" /> },
+        { label: 'Cybersecurity', href: '/services?category=cybersecurity', icon: <Shield className="w-4 h-4" /> }
+      ]
+    },
+    {
+      title: 'Solutions',
+      items: [
+        { label: 'Enterprise Solutions', href: '/solutions/enterprise', icon: <Building className="w-4 h-4" /> },
+        { label: 'Startup Solutions', href: '/solutions/startup', icon: <Rocket className="w-4 h-4" /> },
+        { label: 'Government Solutions', href: '/solutions/government', icon: <Shield className="w-4 h-4" /> },
+        { label: 'Healthcare Solutions', href: '/solutions/healthcare', icon: <Heart className="w-4 h-4" /> },
+        { label: 'Financial Solutions', href: '/solutions/financial', icon: <TrendingUp className="w-4 h-4" /> }
+      ]
+    },
+    {
+      title: 'Resources',
+      items: [
+        { label: 'Blog', href: '/blog', icon: <Newspaper className="w-4 h-4" /> },
+        { label: 'Case Studies', href: '/case-studies', icon: <FileText className="w-4 h-4" /> },
+        { label: 'White Papers', href: '/white-papers', icon: <FileText className="w-4 h-4" /> },
+        { label: 'Webinars', href: '/webinars', icon: <Video className="w-4 h-4" /> },
+        { label: 'Training', href: '/training', icon: <GraduationCap className="w-4 h-4" /> }
+      ]
+    },
+    {
+      title: 'Company',
+      items: [
+        { label: 'About Us', href: '/about', icon: <Users className="w-4 h-4" /> },
+        { label: 'Our Team', href: '/team', icon: <Users className="w-4 h-4" /> },
+        { label: 'Careers', href: '/careers', icon: <Briefcase className="w-4 h-4" /> },
+        { label: 'News & Blog', href: '/blog', icon: <Newspaper className="w-4 h-4" /> },
+        { label: 'Case Studies', href: '/case-studies', icon: <FileText className="w-4 h-4" /> }
+=======
       title: 'AI & Autonomous Services',
       links: [
         { name: 'AI Autonomous Business Intelligence', href: '/ai-autonomous-business-intelligence', icon: <Brain className="w-5 h-5" /> },
@@ -86,6 +125,7 @@ const UltraFuturisticFooter2045: React.FC = () => {
         { name: 'Careers', href: '/careers', icon: <Zap className="w-5 h-5" /> },
         { name: 'News & Updates', href: '/news', icon: <Globe className="w-5 h-5" /> },
         { name: 'Press Kit', href: '/press', icon: <Play className="w-5 h-5" /> }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-86a5
       ]
     }
   ];
