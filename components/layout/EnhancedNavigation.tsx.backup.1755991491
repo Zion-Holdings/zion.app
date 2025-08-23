@@ -18,8 +18,15 @@ export default function EnhancedNavigation() {
           <a className="font-semibold">Zion</a>
         </Link>
         <div className="flex items-center gap-4 text-sm">
+<<<<<<< HEAD
+          <Link href="/download"><a>Download</a></Link>
+          <Link href="/services"><a>Services</a></Link>
+          <Link href="/features"><a>Features</a></Link>
+          <Link href="/capabilities"><a>Capabilities</a></Link>
+=======
           <Link href="/dashboard/metrics"><a>Metrics</a></Link>
           <Link href="/automation/status"><a>Automation</a></Link>
+>>>>>>> origin/cursor/deploy-zion-protocol-metrics-dashboard-eac6
           <Link href="/about"><a>About</a></Link>
           <Link href="/blog"><a>Blog</a></Link>
           <Link href="/salary-insights"><a>Salary Insights</a></Link>

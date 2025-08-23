@@ -5,6 +5,14 @@
   "description": "Secure, modular smart contracts and deploy scripts for ZION$ multichain (zkSync, Starknet relay, L2s)",
   "license": "MIT",
   "scripts": {
+<<<<<<< HEAD
+    "build": "hardhat compile",
+    "clean": "hardhat clean && rimraf ./artifacts ./cache",
+    "deploy": "ts-node --transpile-only scripts/deploy/deployZion.ts",
+    "publish-abi": "ts-node --transpile-only scripts/utils/publishAbi.ts",
+    "lint": "eslint --ext .ts ./scripts",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+=======
     "deps:maintain": "node automation/dependency-update-orchestrator.cjs",
     "deps:cron:start": "bash automation/dependency-maintenance-cron.sh",
     "sitemap": "node scripts/generate-sitemap.mjs",
@@ -246,6 +254,7 @@
     "react-datepicker": "^8.4.0",
     "react-dom": "^17.0.2",
     "uuid": "^11.1.0"
+>>>>>>> origin/cursor/deploy-zion-protocol-metrics-dashboard-eac6
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-chai-matchers": "^2.1.0",
