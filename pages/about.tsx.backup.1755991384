@@ -1,4 +1,10 @@
+<<<<<<< HEAD
+export default function About(){
+  return <div style={{padding:20}}>About Zion</div>
+}
 =======
+=======
+>>>>>>> origin/cursor/deploy-zion-brain-ai-system-5783
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
@@ -18,4 +24,8 @@ const About: NextPage = () => {
   );
 };
 
+<<<<<<< HEAD
 export default About;
+=======
+export default About;
+>>>>>>> origin/cursor/deploy-zion-brain-ai-system-5783
