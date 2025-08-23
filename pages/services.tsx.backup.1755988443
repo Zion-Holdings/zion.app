@@ -101,11 +101,11 @@ import { innovative2026MicroSaasAdditions } from '../data/innovative-2026-micro-
 import { innovative2026IndustryAIServices } from '../data/innovative-2026-industry-ai-services';
 import { innovative2026EmergingTechServices } from '../data/innovative-2026-emerging-tech-services';
 
-// Import our new innovative 2027 services
-import { innovative2027AIBusinessIntelligenceServices } from '../data/innovative-2027-ai-business-intelligence';
-import { innovative2027CybersecurityComplianceServices } from '../data/innovative-2027-cybersecurity-compliance';
-import { innovative2027CloudDevOpsServices } from '../data/innovative-2027-cloud-devops';
-import { innovative2027IndustrySolutions } from '../data/innovative-2027-industry-solutions';
+// Import expanded 2036 services
+import { innovative2036AIServicesExpanded } from '../data/innovative-2036-ai-services-expanded';
+import { innovative2036ITServicesExpanded } from '../data/innovative-2036-it-services-expanded';
+import { innovative2036MicroSaasExpanded } from '../data/innovative-2036-micro-saas-expanded';
+import { innovative2036QuantumEmergingTech } from '../data/innovative-2036-quantum-emerging-tech';
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -187,11 +187,20 @@ const allServices = [
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
-  // Add our new innovative 2027 services
-  ...innovative2027AIBusinessIntelligenceServices,
-  ...innovative2027CybersecurityComplianceServices,
-  ...innovative2027CloudDevOpsServices,
-  ...innovative2027IndustrySolutions
+<<<<<<< HEAD
+  // 2026 Innovative Services
+  ...innovative2026AIServicesAdditions,
+  ...innovative2026ITServicesAdditions,
+  ...innovative2026MicroSaasAdditions,
+  ...innovative2026IndustryAIServices,
+  ...innovative2026EmergingTechServices
+=======
+  // New expanded 2036 services
+  ...innovative2036AIServicesExpanded,
+  ...innovative2036ITServicesExpanded,
+  ...innovative2036MicroSaasExpanded,
+  ...innovative2036QuantumEmergingTech
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5d7f
 ];
 
 const categories = [
