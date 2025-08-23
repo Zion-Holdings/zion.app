@@ -30,15 +30,15 @@ const footerSections = [
     description: 'Our most popular and innovative solutions',
     icon: <Star className="w-5 h-5 text-yellow-400" />,
     links: [
-      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029', featured: true },
-      { name: 'Quantum Neural Networks', href: '/quantum-neural-network-platform', featured: true },
-      { name: 'Autonomous Business Operations', href: '/autonomous-business-operations-platform', featured: true },
-      { name: 'Space Resource Mining', href: '/space-resource-mining-platform', featured: true },
-      { name: 'Brain-Computer Interface', href: '/brain-computer-interface-platform', featured: true },
-      { name: 'Quantum Financial Trading', href: '/quantum-financial-trading', featured: true },
-      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training', featured: true },
-      { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery-platform' },
-      { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai-platform' },
+      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-platform', featured: true },
+      { name: 'Quantum Secure Communication', href: '/quantum-secure-communication-hub', featured: true },
+      { name: 'Autonomous DevOps Orchestrator', href: '/autonomous-devops-orchestrator', featured: true },
+      { name: 'AI Autonomous Content Factory', href: '/ai-autonomous-content-factory', featured: true },
+      { name: 'Neural Finance Predictor', href: '/neural-finance-predictor', featured: true },
+      { name: 'Zero Trust Network Automation', href: '/zero-trust-network-automation', featured: true },
+      { name: 'Space Resource Analytics', href: '/space-resource-analytics-platform' },
+      { name: 'Metaverse Development Studio', href: '/metaverse-development-studio-pro' },
+      { name: 'AI Ethics Governance', href: '/ai-ethics-governance-framework' },
       { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform' }
     ]
   },
@@ -108,6 +108,23 @@ const footerSections = [
       { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer' },
       { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics' },
       { name: 'AI Customer Journey Analytics', href: '/ai-customer-journey-analytics' }
+    ]
+  },
+  {
+    title: '2036 Innovations',
+    description: 'Latest cutting-edge innovations and services',
+    icon: <Target className="w-5 h-5 text-pink-400" />,
+    links: [
+      { name: 'AI Autonomous Content Factory', href: '/ai-autonomous-content-factory', featured: true },
+      { name: 'Quantum Secure Communication Hub', href: '/quantum-secure-communication-hub', featured: true },
+      { name: 'Autonomous DevOps Orchestrator', href: '/autonomous-devops-orchestrator', featured: true },
+      { name: 'Space Resource Analytics Platform', href: '/space-resource-analytics-platform' },
+      { name: 'Neural Finance Predictor', href: '/neural-finance-predictor' },
+      { name: 'Metaverse Development Studio Pro', href: '/metaverse-development-studio-pro' },
+      { name: 'AI Ethics Governance Framework', href: '/ai-ethics-governance-framework' },
+      { name: 'Quantum Bio-Computing Platform', href: '/quantum-bio-computing-platform' },
+      { name: 'Zero Trust Network Automation', href: '/zero-trust-network-automation' },
+      { name: 'Autonomous Cloud Cost Optimizer', href: '/autonomous-cloud-cost-optimizer' }
     ]
   }
 ];

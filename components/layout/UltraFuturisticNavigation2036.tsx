@@ -65,6 +65,13 @@ const navigationItems: NavigationItem[] = [
         featured: true
       },
       { 
+        name: '2036 Innovations', 
+        href: '/innovative-2036-services-showcase', 
+        description: 'Latest 2036 innovations and services',
+        icon: <Star className="w-4 h-4" />,
+        featured: true
+      },
+      { 
         name: 'AI & Machine Learning', 
         href: '/ai-services', 
         description: 'Advanced AI solutions',
@@ -89,6 +96,12 @@ const navigationItems: NavigationItem[] = [
         icon: <Play className="w-4 h-4" />
       },
       { 
+        name: 'Micro SAAS', 
+        href: '/micro-saas', 
+        description: 'Innovative micro SAAS solutions',
+        icon: <Play className="w-4 h-4" />
+      },
+      { 
         name: 'Specialized Solutions', 
         href: '/solutions', 
         description: 'Industry-specific solutions',
@@ -110,6 +123,13 @@ const navigationItems: NavigationItem[] = [
         href: '/comprehensive-services-showcase-2025', 
         description: 'Complete services overview',
         icon: <Calculator className="w-4 h-4" />,
+        featured: true
+      },
+      { 
+        name: '2036 Innovations', 
+        href: '/innovative-2036-services-showcase', 
+        description: 'Latest innovations showcase',
+        icon: <Star className="w-4 h-4" />,
         featured: true
       },
       { 

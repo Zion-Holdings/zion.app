@@ -204,6 +204,51 @@ const Homepage2025: React.FC = () => {
                 }}
                 variant="automation"
               />
+              <UltraFuturisticServiceCard2026
+                service={{
+                  id: 'space-technology',
+                  name: 'Space Technology',
+                  tagline: 'Innovative space solutions',
+                  description: 'Cutting-edge space technology and exploration solutions',
+                  price: '$2999',
+                  period: 'month',
+                  features: ['Satellite Technology', 'Space Mining', 'Exploration Tools'],
+                  popular: false,
+                  category: 'Space',
+                  icon: '🚀'
+                }}
+                variant="emerging"
+              />
+              <UltraFuturisticServiceCard2026
+                service={{
+                  id: 'cybersecurity',
+                  name: 'Cybersecurity',
+                  tagline: 'Advanced security solutions',
+                  description: 'Comprehensive cybersecurity and threat protection',
+                  price: '$1499',
+                  period: 'month',
+                  features: ['Threat Detection', 'Zero Trust', 'Incident Response'],
+                  popular: true,
+                  category: 'Security',
+                  icon: '🛡️'
+                }}
+                variant="it"
+              />
+              <UltraFuturisticServiceCard2026
+                service={{
+                  id: 'metaverse',
+                  name: 'Metaverse Development',
+                  tagline: 'Virtual world creation',
+                  description: 'Complete metaverse development and management solutions',
+                  price: '$2199',
+                  period: 'month',
+                  features: ['3D World Building', 'Avatar Creation', 'Social Integration'],
+                  popular: false,
+                  category: 'Metaverse',
+                  icon: '🌐'
+                }}
+                variant="emerging"
+              />
             </div>
             
             <motion.div
@@ -216,6 +261,104 @@ const Homepage2025: React.FC = () => {
               <Link href="/services">
                 <button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 flex items-center gap-2 mx-auto shadow-lg shadow-purple-500/25">
                   View All Services
+                  <ArrowRight className="w-5 h-5" />
+                </button>
+              </Link>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Latest Innovations Showcase */}
+        <section className="py-20 px-4 bg-gradient-to-r from-black/40 to-purple-900/20 relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-pink-500/5"></div>
+          <div className="max-w-6xl mx-auto relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+                Latest Innovations 2036
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Experience the future with our cutting-edge innovations in AI, quantum computing, and space technology
+              </p>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.1 }}
+                viewport={{ once: true }}
+                className="group p-6 bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-400/20 rounded-2xl hover:border-purple-400/40 transition-all duration-300 hover:scale-105"
+              >
+                <div className="text-4xl mb-4">🧠</div>
+                <h3 className="text-xl font-bold text-white mb-3">AI Consciousness Evolution</h3>
+                <p className="text-gray-300 mb-4">Advanced AI consciousness research and development platform for the future of artificial intelligence.</p>
+                <div className="flex items-center justify-between">
+                  <span className="text-purple-400 font-semibold">$5,999/month</span>
+                  <Link href="/ai-consciousness-evolution-platform">
+                    <button className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors">
+                      Learn More
+                    </button>
+                  </Link>
+                </div>
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="group p-6 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-blue-400/20 rounded-2xl hover:border-blue-400/40 transition-all duration-300 hover:scale-105"
+              >
+                <div className="text-4xl mb-4">🔐</div>
+                <h3 className="text-xl font-bold text-white mb-3">Quantum Secure Communication</h3>
+                <p className="text-gray-300 mb-4">Unbreakable quantum-encrypted communication platform for enterprise security.</p>
+                <div className="flex items-center justify-between">
+                  <span className="text-blue-400 font-semibold">$2,499/month</span>
+                  <Link href="/quantum-secure-communication-hub">
+                    <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                      Learn More
+                    </button>
+                  </Link>
+                </div>
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="group p-6 bg-gradient-to-br from-green-500/10 to-emerald-500/10 border border-green-400/20 rounded-2xl hover:border-green-400/40 transition-all duration-300 hover:scale-105"
+              >
+                <div className="text-4xl mb-4">🤖</div>
+                <h3 className="text-xl font-bold text-white mb-3">Autonomous DevOps</h3>
+                <p className="text-gray-300 mb-4">Self-healing, self-optimizing DevOps platform with AI-powered orchestration.</p>
+                <div className="flex items-center justify-between">
+                  <span className="text-green-400 font-semibold">$1,899/month</span>
+                  <Link href="/autonomous-devops-orchestrator">
+                    <button className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
+                      Learn More
+                    </button>
+                  </Link>
+                </div>
+              </motion.div>
+            </div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="text-center mt-12"
+            >
+              <Link href="/innovative-2036-services-showcase">
+                <button className="px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold rounded-lg hover:from-pink-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 flex items-center gap-2 mx-auto shadow-lg shadow-pink-500/25">
+                  Explore All Innovations
                   <ArrowRight className="w-5 h-5" />
                 </button>
               </Link>
