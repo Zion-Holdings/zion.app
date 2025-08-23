@@ -1,9 +1,0 @@
-[2025-08-08T17:31:41.145Z] 🚀 Venture orchestrator started
-[2025-08-08T17:31:41.146Z] ▶ node /workspace/automation/venture-services-analyzer.cjs
-Generated venture plan: /workspace/data/reports/venture/venture-plan-1754674301159.json
-[2025-08-08T17:31:41.163Z] ▶ node /workspace/automation/venture-services-factory.cjs
-Service pages created: 0, registry additions: 0
-[2025-08-08T17:31:41.187Z] ▶ node /workspace/automation/ads-generator.cjs
-Generated ads for 5 services.
-[2025-08-08T17:31:41.210Z] ▶ node /workspace/automation/service-sales-agents-factory.cjs
-Created/ensured 0 sales agents.

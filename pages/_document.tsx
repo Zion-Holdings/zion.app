@@ -1,26 +1,35 @@
+import React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
-export default class ZionDocument extends Document {
-	render() {
+export default class MyDocument extends Document {
+	static override async getInitialProps(ctx: any) {
+		const initialProps = await Document.getInitialProps(ctx);
+		return { ...initialProps };
+	}
+
+	override render() {
+		// Note: Using a meta CSP here for static export. Keep permissive enough for inline JSON-LD and plausible analytics.
+		const csp = [
+			"default-src 'self'",
+			"script-src 'self' 'unsafe-inline' 'unsafe-eval' https://plausible.io",
+			"style-src 'self' 'unsafe-inline'",
+			"img-src 'self' data: https:",
+			"font-src 'self' data: https:",
+			"connect-src 'self' https://plausible.io",
+			"frame-ancestors 'none'",
+			"base-uri 'self'",
+			"form-action 'self'"
+		].join('; ');
+
 		return (
 			<Html lang="en">
-					<Head>
-        <title>_document</title>
-
-						<meta name="viewport" content="width=device-width, initial-scale=1" />
-					<meta name="theme-color" content="#020617" />
-					<meta name="color-scheme" content="dark light" />
-					<link rel="icon" href="/og/zion-tech-group.svg" type="image/svg+xml" />
-					<link rel="manifest" href="/manifest.webmanifest" />
-					<link rel="preconnect" href="https://fonts.googleapis.com" />
-					<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-					<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-					
-        <meta name="description" content="_document — automatically suggested description." />
-        <meta property="og:title" content="_document" />
-        <meta property="og:description" content="_document — automatically suggested description." />
-        <meta name="twitter:card" content="summary_large_image" /></Head>
-				<body className="bg-slate-950 text-white">
+				<Head>
+					<meta httpEquiv="Content-Security-Policy" content={csp} />
+					<meta name="theme-color" content="#000000" />
+					<link rel="preconnect" href="https://plausible.io" />
+					<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+				</Head>
+				<body>
 					<Main />
 					<NextScript />
 				</body>
@@ -28,5 +37,3 @@ export default class ZionDocument extends Document {
 		);
 	}
 }
-
-

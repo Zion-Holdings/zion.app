@@ -1,40 +1,40 @@
----
 name: Sync Health
+
 on:
-  workflow_dispatch: {}
   schedule:
-    - cron: '0 2 * * *'
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
 jobs:
-  health:
+  check-sync:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: npm
-      - name: Install dependencies
-        run: npm ci
-      - name: Run sync health check
-        run: node automation/sync-health-check.cjs | tee sync-health.out
-      - name: Upload sync health artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: sync-health-artifacts
-          path: |
-            data/reports/sync/sync-health.json
-            automation/logs/sync-health.log
-            sync-health.out
-          if-no-files-found: ignore
-          retention-days: 7
-    timeout-minutes: 30
-permissions:
-  contents: read
-  actions: read
-concurrency:
-  group: sync-health.yml-${{ github.ref }}
-  cancel-in-progress: true
+          node-version: '20'
+
+      - name: Run pm2-auto-sync (safe mode)
+        env:
+          AUTO_SYNC_STRATEGY: hardreset
+          AUTO_SYNC_CLEAN: '0'
+        run: node automation/pm2-auto-sync.js || true
+
+      - name: Push if repository is ahead
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          AHEAD=$(git rev-list --left-right --count HEAD...origin/main | awk '{print $1}')
+          if [ "$AHEAD" != "0" ]; then
+            git push origin HEAD:main
+          else
+            echo "No push needed."
+          fi

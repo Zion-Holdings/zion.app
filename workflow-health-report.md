@@ -1,34 +1,10 @@
 # Workflow Health Report
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-Generated: 2025-08-18T12:28:02.665Z
+Generated: 2025-08-19T11:42:40.937Z
 
 ## Summary
-- Total workflows: 227
-- Last run: 2025-08-18T12:28:02.666Z
-=======
-Generated: 2025-08-18T11:23:40.371Z
-
-## Summary
-- Total workflows: 227
-- Last run: 2025-08-18T11:23:40.372Z
->>>>>>> 7206538623a (📊 Add workflow health report [skip ci])
-=======
-Generated: 2025-08-18T11:23:40.371Z
-
-## Summary
-- Total workflows: 227
-- Last run: 2025-08-18T11:23:40.372Z
->>>>>>> 7206538623a (📊 Add workflow health report [skip ci])
-=======
-Generated: 2025-08-18T11:23:40.371Z
-
-## Summary
-- Total workflows: 227
-- Last run: 2025-08-18T11:23:40.372Z
->>>>>>> 7206538623a (📊 Add workflow health report [skip ci])
+- Total workflows: 558
+- Last run: 2025-08-19T11:42:40.937Z
 
 ## Recommendations
 - Consider consolidating similar workflows

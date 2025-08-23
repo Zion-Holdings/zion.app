@@ -1,0 +1,19 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "dependencyDashboard": true,
+  "schedule": ["after 2am on monday"],
+  "packageRules": [
+    {
+      "description": "Automerge devDependencies (minor and patch)",
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchDepTypes": ["devDependencies"],
+      "automerge": true,
+      "automergeType": "pr",
+      "platformAutomerge": true
+    }
+  ],
+  "labels": ["dependencies", "renovate"],
+  "assignees": []
+}

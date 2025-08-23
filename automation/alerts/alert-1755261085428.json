@@ -1,6 +1,0 @@
-{
-  "level": "critical",
-  "category": "dependency_health",
-  "message": "dependency_health health is critical: 0/100",
-  "timestamp": "2025-08-15T12:31:25.427Z"
-}
