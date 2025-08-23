@@ -186,16 +186,20 @@ const companyLinks = [
   { name: 'News & Updates', href: '/news', description: 'Latest company news' },
   { name: 'Case Studies', href: '/case-studies', description: 'Success stories' },
   { name: 'Resources', href: '/resources', description: 'Whitepapers and guides' },
-  { name: 'Blog', href: '/blog', description: 'Industry insights' }
+  { name: 'Blog', href: '/blog', description: 'Industry insights' },
+  { name: 'Partners', href: '/partners', description: 'Partnership opportunities' },
+  { name: 'Investors', href: '/investors', description: 'Investment information' }
 ];
 
 const supportLinks = [
   { name: 'Contact Support', href: '/support', description: 'Get help from our team' },
   { name: 'Documentation', href: '/docs', description: 'Technical guides' },
-  { name: 'API Reference', href: '/api-documentation', description: 'Developer documentation' },
-  { name: 'Status Page', href: '/status-pages-slo', description: 'Service status' },
+  { name: 'API Reference', href: '/api-docs', description: 'Developer documentation' },
+  { name: 'Status Page', href: '/status', description: 'Service status' },
   { name: 'Training', href: '/training', description: 'Learn our platforms' },
-  { name: 'Community', href: '/community', description: 'Connect with users' }
+  { name: 'Community', href: '/community', description: 'Connect with users' },
+  { name: 'FAQ', href: '/support', description: 'Frequently asked questions' },
+  { name: 'Contact Us', href: '/contact', description: 'Get in touch directly' }
 ];
 
 const stats = [

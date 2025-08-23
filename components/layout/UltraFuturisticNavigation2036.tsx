@@ -119,6 +119,18 @@ const navigationItems: NavigationItem[] = [
         href: '/market-pricing', 
         description: 'Market price references',
         icon: <BarChart3 className="w-4 h-4" />
+      },
+      { 
+        name: 'Revolutionary 2026', 
+        href: '/revolutionary-2026-services', 
+        description: '2026 services showcase',
+        icon: <Sparkles className="w-4 h-4" />
+      },
+      { 
+        name: 'Ultimate 2035', 
+        href: '/ultimate-2035-futuristic-services-showcase', 
+        description: 'Future services preview',
+        icon: <Zap className="w-4 h-4" />
       }
     ]
   },
@@ -158,6 +170,12 @@ const navigationItems: NavigationItem[] = [
         href: '/careers', 
         description: 'Join our team',
         icon: <Users className="w-4 h-4" />
+      },
+      { 
+        name: 'News', 
+        href: '/news', 
+        description: 'Company updates',
+        icon: <FileText className="w-4 h-4" />
       }
     ]
   },
@@ -197,6 +215,12 @@ const navigationItems: NavigationItem[] = [
         href: '/training', 
         description: 'Learning resources',
         icon: <BookOpenCheck className="w-4 h-4" />
+      },
+      { 
+        name: 'API Docs', 
+        href: '/api-docs', 
+        description: 'Developer resources',
+        icon: <Code className="w-4 h-4" />
       }
     ]
   },
@@ -236,6 +260,12 @@ const navigationItems: NavigationItem[] = [
         href: '/manufacturing-ai-solutions', 
         description: 'Manufacturing AI',
         icon: <Settings className="w-4 h-4" />
+      },
+      { 
+        name: 'Education', 
+        href: '/education-technology-solutions', 
+        description: 'Education technology',
+        icon: <BookOpen className="w-4 h-4" />
       }
     ]
   }
