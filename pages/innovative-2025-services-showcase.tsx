@@ -44,7 +44,7 @@ const Innovative2025ServicesShowcase: React.FC = () => {
     
     const matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      (service as any).tagline?.toLowerCase().includes(searchTerm.toLowerCase());
+      ('tagline' in service && service.tagline?.toLowerCase().includes(searchTerm.toLowerCase()));
     
     return matchesCategory && matchesSearch;
   });
@@ -269,10 +269,10 @@ const Innovative2025ServicesShowcase: React.FC = () => {
                       {/* Service Icon and Header */}
                       <div className="p-8">
                         <div className="flex items-center justify-between mb-6">
-                          <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${(service as any).color || 'from-blue-500 to-purple-500'} flex items-center justify-center text-3xl`}>
-                            {(service as any).icon || '🚀'}
-                          </div>
-                                                      {(service as any).popular && (
+                                          <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${('color' in service && service.color) || 'from-blue-500 to-purple-500'} flex items-center justify-center text-3xl`}>
+                  {('icon' in service && service.icon) || '🚀'}
+                </div>
+                {('popular' in service && service.popular) && (
                             <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-black text-xs font-bold px-3 py-1 rounded-full">
                               POPULAR
                             </div>
@@ -284,13 +284,13 @@ const Innovative2025ServicesShowcase: React.FC = () => {
                           {service.name}
                         </h3>
                         <p className="text-gray-300 mb-6 leading-relaxed">
-                          {(service as any).tagline || service.description?.substring(0, 100) || 'Innovative service solution'}
+                          {('tagline' in service && service.tagline) || service.description?.substring(0, 100) || 'Innovative service solution'}
                         </p>
 
                         {/* Price */}
                         <div className="flex items-baseline mb-6">
-                          <span className="text-3xl font-bold text-white">{(service as any).price || (service as any).pricing?.starter || 'Contact Us'}</span>
-                          <span className="text-gray-400 ml-2">{(service as any).period || ''}</span>
+                          <span className="text-3xl font-bold text-white">{('price' in service && service.price) || ('pricing' in service && service.pricing?.starter) || 'Contact Us'}</span>
+                          <span className="text-gray-400 ml-2">{('period' in service && service.period) || ''}</span>
                         </div>
 
                         {/* Features */}
@@ -311,22 +311,22 @@ const Innovative2025ServicesShowcase: React.FC = () => {
                         {/* Service Stats */}
                         <div className="grid grid-cols-3 gap-4 mb-6 text-center">
                           <div>
-                            <div className="text-lg font-bold text-white">{(service as any).customers || '1000'}+</div>
+                            <div className="text-lg font-bold text-white">{('customers' in service && service.customers) || '1000'}+</div>
                             <div className="text-xs text-gray-400">Customers</div>
                           </div>
                           <div>
-                            <div className="text-lg font-bold text-white">{(service as any).rating || '4.8'}</div>
+                            <div className="text-lg font-bold text-white">{('rating' in service && service.rating) || '4.8'}</div>
                             <div className="text-xs text-gray-400">Rating</div>
                           </div>
                           <div>
-                            <div className="text-lg font-bold text-white">{(service as any).reviews || '500'}</div>
+                            <div className="text-lg font-bold text-white">{('reviews' in service && service.reviews) || '500'}</div>
                             <div className="text-xs text-gray-400">Reviews</div>
                           </div>
                         </div>
 
                         {/* CTA Button */}
                         <Link
-                          href={`/services/${service.id}`}
+                          href={('link' in service) ? service.link : (('website' in service) ? service.website : '/services')}
                           className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 px-6 rounded-xl font-semibold hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2"
                         >
                           <span>Learn More</span>
