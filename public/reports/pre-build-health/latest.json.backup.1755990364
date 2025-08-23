@@ -5,13 +5,21 @@
     "failedChecks": 1,
     "criticalFailures": 0,
     "canBuild": true,
+<<<<<<< HEAD
+    "timestamp": "2025-08-19T18:52:46.389Z"
+=======
     "timestamp": "2025-08-20T12:26:14.200Z"
+>>>>>>> origin/cursor/bc-37e0a79f-43c4-4216-bd12-ddf1b3362bec-8633
   },
   "results": [
     {
       "name": "Page Structure Validation",
       "status": "PASS",
+<<<<<<< HEAD
+      "result": "All 1 pages are properly structured",
+=======
       "result": "All 23 pages are properly structured",
+>>>>>>> origin/cursor/bc-37e0a79f-43c4-4216-bd12-ddf1b3362bec-8633
       "critical": true
     },
     {
