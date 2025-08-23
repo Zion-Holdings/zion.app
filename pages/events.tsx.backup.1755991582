@@ -1,9 +1,30 @@
 import React from 'react';
+<<<<<<< HEAD
+import Head from 'next/head';
+import Layout from '../components/layout/Layout';
+=======
 import SEO from '../components/SEO';
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-e67c
 
 export default function EventsPage() {
 	return (
 		<>
+<<<<<<< HEAD
+			<Head>
+				<title>Events | Zion Tech Group</title>
+				<meta name="description" content="Upcoming events, conferences, and webinars from Zion Tech Group." />
+				<link rel="canonical" href="https://ziontechgroup.com/events/" />
+			</Head>
+			<Layout>
+				<section className="min-h-[60vh] px-4 py-24">
+					<h1 className="text-5xl font-bold mb-4">Events</h1>
+					<p className="text-gray-300 mb-8">Stay tuned for our upcoming events and conferences.</p>
+				</section>
+			</Layout>
+		</>
+	);
+}
+=======
 			<SEO title="Events | Zion Tech Group" description="Upcoming events, conferences, and community sessions hosted by Zion Tech Group." />
 			<section className="container mx-auto px-4 py-16">
 				<h1 className="text-4xl font-bold mb-6">Events</h1>
@@ -18,3 +39,4 @@ export default function EventsPage() {
 		</>
 	);
 }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-e67c

@@ -98,6 +98,14 @@ const navigationItems: NavigationItem[] = [
     ]
   },
   {
+<<<<<<< HEAD
+    name: 'AI & Consciousness',
+    href: '/ai-services',
+    icon: <Brain className="w-5 h-5" />,
+    description: 'Revolutionary AI consciousness and emotional intelligence',
+    badge: 'Revolutionary',
+    category: 'ai-consciousness',
+=======
     name: 'Resources',
     href: '/resources',
     icon: <BookOpen className="w-5 h-5" />,
@@ -118,6 +126,7 @@ const navigationItems: NavigationItem[] = [
     href: '/contact',
     icon: <Phone className="w-5 h-5" />,
     description: 'Talk to our team',
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-e67c
     featured: true,
     children: [
       { 
