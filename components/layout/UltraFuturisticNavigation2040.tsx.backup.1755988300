@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
+import Link from 'next/link';
+import { motion, AnimatePresence } from 'framer-motion';
+import { 
+  Menu, X, Search, ChevronDown, Zap, Globe, Lock, 
+  Phone, Mail, MapPin, ArrowRight, Star, Users, Award, Sparkles, Target
+=======
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -50,6 +58,7 @@ import {
   Mail,
   ArrowRight,
   Star
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-c719
 } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -147,6 +156,152 @@ const navigationItems: NavigationItem[] = [
         description: 'Comprehensive enterprise technology solutions'
       },
       {
+<<<<<<< HEAD
+        label: 'Government Technology',
+        href: '/government-technology-solutions',
+        icon: <Shield className="w-4 h-4" />,
+        description: 'Public sector technology solutions'
+      },
+      {
+        label: 'Education Technology',
+        href: '/education-technology-solutions',
+        icon: <Users className="w-4 h-4" />,
+        description: 'EdTech and educational solutions'
+      },
+      {
+        label: 'Retail Technology',
+        href: '/retail-technology-solutions',
+        icon: <ShoppingCart className="w-4 h-4" />,
+        description: 'E-commerce and retail technology'
+      }
+    ]
+  },
+  {
+    label: 'Resources',
+    children: [
+      {
+        label: 'Blog & Insights',
+        href: '/blog',
+        icon: <FileText className="w-4 h-4" />,
+        description: 'Industry insights and thought leadership'
+      },
+      {
+        label: 'Case Studies',
+        href: '/case-studies',
+        icon: <Award className="w-4 h-4" />,
+        description: 'Success stories and client results'
+      },
+      {
+        label: 'Documentation',
+        href: '/docs',
+        icon: <BookOpen className="w-4 h-4" />,
+        description: 'Technical guides and documentation'
+      },
+      {
+        label: 'API Reference',
+        href: '/api-documentation',
+        icon: <Code className="w-4 h-4" />,
+        description: 'Developer resources and APIs'
+      },
+      {
+        label: 'Support Center',
+        href: '/support',
+        icon: <HelpCircle className="w-4 h-4" />,
+        description: 'Help, assistance, and support'
+      }
+    ]
+  },
+  {
+    label: 'Company',
+    children: [
+      {
+        label: 'About Us',
+        href: '/about',
+        icon: <Users className="w-4 h-4" />,
+        description: 'Our mission, vision, and values'
+      },
+      {
+        label: 'Leadership Team',
+        href: '/about#leadership',
+        icon: <Award className="w-4 h-4" />,
+        description: 'Meet our executive team'
+      },
+      {
+        label: 'Careers',
+        href: '/careers',
+        icon: <Briefcase className="w-4 h-4" />,
+        description: 'Join our innovative team'
+      },
+      {
+        label: 'News & Updates',
+        href: '/news',
+        icon: <Newspaper className="w-4 h-4" />,
+        description: 'Latest company news and updates'
+      },
+      {
+        label: 'Partners',
+        href: '/partners',
+        icon: <Handshake className="w-4 h-4" />,
+        description: 'Strategic partnerships and alliances'
+      }
+    ]
+  },
+  {
+    label: 'Company',
+    children: [
+      {
+        label: 'About Us',
+        href: '/about',
+        icon: <Users className="w-4 h-4" />,
+        description: 'Learn about Zion Tech Group'
+      },
+      {
+        label: 'Careers',
+        href: '/careers',
+        icon: <Award className="w-4 h-4" />,
+        description: 'Join our revolutionary team'
+      },
+      {
+        label: 'News',
+        href: '/news',
+        icon: <Globe className="w-4 h-4" />,
+        description: 'Latest company updates'
+      },
+      {
+        label: 'Partners',
+        href: '/partners',
+        icon: <Users className="w-4 h-4" />,
+        description: 'Strategic partnerships'
+      }
+    ]
+  },
+  {
+    label: 'Resources',
+    children: [
+      {
+        label: 'Blog',
+        href: '/blog',
+        icon: <BookOpenCheck className="w-4 h-4" />,
+        description: 'Insights and analysis'
+      },
+      {
+        label: 'Whitepapers',
+        href: '/white-papers',
+        icon: <FileText className="w-4 h-4" />,
+        description: 'In-depth research papers'
+      },
+      {
+        label: 'Webinars',
+        href: '/webinars',
+        icon: <Video className="w-4 h-4" />,
+        description: 'Educational content'
+      },
+      {
+        label: 'Support',
+        href: '/support',
+        icon: <MessageCircle className="w-4 h-4" />,
+        description: 'Technical support and help'
+=======
         name: 'AI Autonomous Ecosystem Manager',
         href: '/ai-autonomous-ecosystem-manager',
         description: 'Fully autonomous AI ecosystem management',
@@ -202,6 +357,7 @@ const navigationItems: NavigationItem[] = [
         href: '/ai-financial-intelligence',
         description: 'Intelligent financial analysis',
         icon: <DollarSign className="w-4 h-4" />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-c719
       }
     ]
   },
@@ -221,6 +377,14 @@ const navigationItems: NavigationItem[] = [
         icon: <Atom className="w-4 h-4" />,
         featured: true
       },
+<<<<<<< HEAD
+      { 
+        name: 'Quantum Cybersecurity', 
+        href: '/quantum-cybersecurity-2043', 
+        description: 'Quantum-resistant security',
+        icon: <Shield className="w-4 h-4" />,
+        color: 'from-red-500 to-orange-500'
+=======
       {
         name: 'Quantum Data Encryption Platform',
         href: '/quantum-data-encryption-platform',
@@ -251,6 +415,7 @@ const navigationItems: NavigationItem[] = [
         href: '/quantum-cybersecurity-future-2040',
         description: 'Future-proof quantum security',
         icon: <Shield className="w-4 h-4" />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-c719
       },
       { 
         name: 'Quantum Computing', 
@@ -262,6 +427,21 @@ const navigationItems: NavigationItem[] = [
     ]
   },
   {
+<<<<<<< HEAD
+    name: 'Space Technology',
+    href: '/space-tech',
+    icon: <Rocket className="w-5 h-5" />,
+    description: 'AI-powered space solutions',
+    badge: 'Trending',
+    category: 'space',
+    color: 'from-indigo-500 to-purple-500',
+    children: [
+      { 
+        name: 'Space Resource Intelligence', 
+        href: '/space-resource-intelligence-2043', 
+        description: 'AI-powered space resource management',
+        icon: <Rocket className="w-4 h-4" />,
+=======
     name: 'Enterprise IT',
     href: '/it-services',
     icon: <Cpu className="w-5 h-5" />,
@@ -325,6 +505,7 @@ const navigationItems: NavigationItem[] = [
         href: '/autonomous-business-intelligence-2040',
         description: 'Consciousness-driven BI',
         icon: <BarChart3 className="w-4 h-4" />,
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-c719
         featured: true
       }
     ]
@@ -345,6 +526,14 @@ const navigationItems: NavigationItem[] = [
         icon: <Code className="w-4 h-4" />,
         featured: true
       },
+<<<<<<< HEAD
+      { 
+        name: 'Space Mining Platform', 
+        href: '/space-mining-platform', 
+        description: 'Automated space resource extraction',
+        icon: <Target className="w-4 h-4" />,
+        color: 'from-yellow-500 to-orange-500'
+=======
       {
         name: 'AI Autonomous Customer Support',
         href: '/ai-autonomous-customer-support',
@@ -387,6 +576,7 @@ const navigationItems: NavigationItem[] = [
         href: '/sso-in-a-box',
         description: 'Enterprise SSO solution',
         icon: <Shield className="w-4 h-4" />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-c719
       }
     ]
   },
@@ -394,6 +584,25 @@ const navigationItems: NavigationItem[] = [
     name: 'Solutions',
     href: '/solutions',
     icon: <Target className="w-5 h-5" />,
+<<<<<<< HEAD
+    description: 'Industry-specific solutions',
+    category: 'solutions',
+    color: 'from-emerald-500 to-teal-500',
+    children: [
+      { 
+        name: 'Enterprise Solutions', 
+        href: '/enterprise-solutions', 
+        description: 'Large-scale enterprise deployments',
+        icon: <Building className="w-4 h-4" />,
+        featured: true
+      },
+      { 
+        name: 'Startup Solutions', 
+        href: '/startup-solutions', 
+        description: 'Scalable startup solutions',
+        icon: <TrendingUp className="w-4 h-4" />,
+        color: 'from-green-500 to-emerald-500'
+=======
     description: 'Comprehensive business solutions',
     category: 'solutions',
     color: 'from-indigo-500 to-purple-500',
@@ -467,6 +676,7 @@ const navigationItems: NavigationItem[] = [
         href: '/blog',
         description: 'Latest insights and news',
         icon: <BookOpen className="w-4 h-4" />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-c719
       }
     ]
   },
@@ -478,6 +688,26 @@ const navigationItems: NavigationItem[] = [
     category: 'company',
     color: 'from-gray-500 to-slate-500',
     children: [
+<<<<<<< HEAD
+      { 
+        name: 'About Us', 
+        href: '/about', 
+        description: 'Our story and mission',
+        icon: <Building className="w-4 h-4" />
+      },
+      { 
+        name: 'Careers', 
+        href: '/careers', 
+        description: 'Join our revolutionary team',
+        icon: <Users className="w-4 h-4" />,
+        color: 'from-blue-500 to-cyan-500'
+      },
+      { 
+        name: 'News', 
+        href: '/news', 
+        description: 'Latest updates and insights',
+        icon: <Globe className="w-4 h-4" />
+=======
       {
         name: 'About Us',
         href: '/about',
@@ -507,6 +737,7 @@ const navigationItems: NavigationItem[] = [
         href: '/news',
         description: 'Company updates',
         icon: <Newspaper className="w-4 h-4" />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-c719
       }
     ]
   }
