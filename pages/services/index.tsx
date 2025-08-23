@@ -54,6 +54,21 @@ import { real2026Q4ExpansionsV3 } from '../../data/real-2026-q4-expansions-v3';
 import { real2036MicroSaasAdditions } from '../../data/real-2036-micro-saas-additions';
 import { real2036ITServicesAdditions } from '../../data/real-2036-it-services-additions';
 import { real2036AIServicesAdditions } from '../../data/real-2036-ai-services-additions';
+import { real2037CuttingEdgeServices } from '../../data/real-2037-cutting-edge-services';
+import { real2037ITServices } from '../../data/real-2037-it-services-additions';
+import { real2037AIServices } from '../../data/real-2037-ai-services-additions';
+
+// Define a common service interface
+interface Service {
+  id?: string;
+  name: string;
+  description?: string;
+  price?: string;
+  category?: string;
+  popular?: boolean;
+  launchDate?: string;
+  [key: string]: unknown; // Allow additional properties
+}
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -98,6 +113,9 @@ export default function ServicesIndexPage() {
       realEnterpriseServices2025 as unknown[],
       realMarketAugmentations2025 as unknown[],
       verifiedRealServices2025Batch2 as unknown[],
+      real2037CuttingEdgeServices as unknown[],
+      real2037ITServices as unknown[],
+      real2037AIServices as unknown[],
       additionalLiveServices2025 as unknown[],
       real2025Q2Additions as unknown[],
       augmentedServicesBatch3 as unknown[],
@@ -147,19 +165,19 @@ export default function ServicesIndexPage() {
 
   // Group services by category
   const servicesByCategory = categories.reduce((acc, category) => {
-    acc[category] = validServices.filter((service: any) => 
+    acc[category] = validServices.filter((service: Service) => 
       service.category && service.category.toLowerCase().includes(category.toLowerCase().replace(/\s+/g, ''))
     );
     return acc;
-  }, {} as Record<string, any[]>);
+  }, {} as Record<string, Service[]>);
 
   // Get featured services (marked as popular)
-  const featuredServices = validServices.filter((service: any) => service.popular).slice(0, 6);
+  const featuredServices = validServices.filter((service: Service) => service.popular).slice(0, 6);
 
   // Get latest services (assuming they have a launchDate)
   const latestServices = validServices
-    .filter((service: any) => service.launchDate)
-    .sort((a: any, b: any) => new Date(b.launchDate).getTime() - new Date(a.launchDate).getTime())
+    .filter((service: Service) => service.launchDate)
+    .sort((a: Service, b: Service) => new Date(b.launchDate).getTime() - new Date(a.launchDate).getTime())
     .slice(0, 6);
 
   return (
@@ -167,7 +185,7 @@ export default function ServicesIndexPage() {
       <SEO 
         title="Services - Zion Tech Group"
         description="Discover our comprehensive suite of cutting-edge technology solutions including AI, Quantum Computing, Space Technology, and more."
-        keywords="AI services, quantum computing, space technology, metaverse, cybersecurity, IT services, micro SAAS"
+        keywords={["AI services", "quantum computing", "space technology", "metaverse", "cybersecurity", "IT services", "micro SAAS"]}
       />
       
       <UltraFuturisticBackground>
@@ -201,7 +219,7 @@ export default function ServicesIndexPage() {
                   Featured Services
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {featuredServices.map((service: any, index: number) => (
+                  {featuredServices.map((service: Service, index: number) => (
                     <UltraFuturisticServiceCard2026
                       key={`${service.id || service.name}-${index}`}
                       service={service}
@@ -220,7 +238,7 @@ export default function ServicesIndexPage() {
                   Latest Services (2026)
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {latestServices.map((service: any, index: number) => (
+                  {latestServices.map((service: Service, index: number) => (
                     <UltraFuturisticServiceCard2026
                       key={`${service.id || service.name}-${index}`}
                       service={service}
@@ -271,7 +289,7 @@ export default function ServicesIndexPage() {
                         </span>
                       </h3>
                       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {categoryServices.slice(0, 6).map((service: any, index: number) => (
+                        {categoryServices.slice(0, 6).map((service: Service, index: number) => (
                           <UltraFuturisticServiceCard2026
                             key={`${service.id || service.name}-${index}`}
                             service={service}
@@ -359,7 +377,7 @@ export default function ServicesIndexPage() {
                 Featured Services
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {featuredServices.map((service: any, index: number) => (
+                {featuredServices.map((service: Service, index: number) => (
                   <UltraFuturisticServiceCard2026
                     key={`${service.id || service.name}-${index}`}
                     service={service}
@@ -378,7 +396,7 @@ export default function ServicesIndexPage() {
                 Latest Services (2026)
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {latestServices.map((service: any, index: number) => (
+                {latestServices.map((service: Service, index: number) => (
                   <UltraFuturisticServiceCard2026
                     key={`${service.id || service.name}-${index}`}
                     service={service}
@@ -429,7 +447,7 @@ export default function ServicesIndexPage() {
                       </span>
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                      {categoryServices.slice(0, 6).map((service: any, index: number) => (
+                      {categoryServices.slice(0, 6).map((service: Service, index: number) => (
                         <UltraFuturisticServiceCard2026
                           key={`${service.id || service.name}-${index}`}
                           service={service}
