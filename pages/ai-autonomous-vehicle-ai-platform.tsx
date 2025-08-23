@@ -1,61 +1,61 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
-import { Code, Server, Zap, Target, Users, Award, Clock, CheckCircle, GitBranch, Cloud, Database, Shield } from 'lucide-react';
+import { Car, Brain, Zap, Target, Award, Clock, CheckCircle, Shield, Database, Server, Layers, FileText } from 'lucide-react';
 
-const DevOpsAutomation: React.FC = () => {
+const AIAutonomousVehicleAIPlatform: React.FC = () => {
   const features = [
     {
-      icon: Code,
-      title: "CI/CD Pipelines",
-      description: "Automated build, test, and deployment workflows"
+      icon: Car,
+      title: "Autonomous Navigation",
+      description: "Advanced AI-powered vehicle navigation systems"
     },
     {
-      icon: Server,
-      title: "Infrastructure as Code",
-      description: "Manage infrastructure through code and automation"
+      icon: Brain,
+      title: "Intelligent Decision Making",
+      description: "AI-driven decision making for safe autonomous operation"
     },
     {
       icon: Zap,
-      title: "Automated Testing",
-      description: "Comprehensive testing automation and quality assurance"
+      title: "Real-time Processing",
+      description: "Instant processing of sensor data and environmental information"
     },
     {
       icon: Target,
-      title: "Deployment Automation",
-      description: "Streamlined deployment processes and rollback capabilities"
+      title: "Safety Systems",
+      description: "Comprehensive safety and collision avoidance systems"
     }
   ];
 
   const capabilities = [
-    "Continuous integration and deployment",
-    "Infrastructure automation",
-    "Automated testing and quality gates",
-    "Monitoring and observability",
-    "Security scanning and compliance",
-    "Performance optimization"
+    "Autonomous navigation and pathfinding",
+    "Real-time sensor data processing",
+    "Intelligent decision making",
+    "Safety and collision avoidance",
+    "Traffic pattern recognition",
+    "Environmental awareness"
   ];
 
-  const benefits = [
-    "Faster time to market",
-    "Improved code quality",
-    "Reduced manual errors",
-    "Better collaboration",
-    "Enhanced security",
-    "Cost optimization"
+  const applications = [
+    "Self-driving cars",
+    "Autonomous delivery vehicles",
+    "Industrial automation",
+    "Agricultural vehicles",
+    "Mining and construction",
+    "Public transportation"
   ];
 
   return (
     <Layout
-      title="DevOps Automation - Zion Tech Group"
-      description="Advanced DevOps automation platform streamlining development, testing, and deployment processes for faster delivery and higher quality."
-      keywords="devops automation, CI/CD, infrastructure as code, automated testing, Zion Tech Group"
+      title="AI Autonomous Vehicle AI Platform - Zion Tech Group"
+      description="Revolutionary AI autonomous vehicle platform providing advanced navigation, decision making, and safety systems for next-generation autonomous transportation."
+      keywords="AI autonomous vehicle, self-driving cars, autonomous navigation, vehicle AI, Zion Tech Group"
     >
       <div className="min-h-screen bg-black text-white">
         {/* Hero Section */}
         <section className="relative py-20 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-yellow-900/20 via-orange-900/20 to-red-900/20"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(245,158,11,0.1),transparent_50%)]"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/20 via-teal-900/20 to-cyan-900/20"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(16,185,129,0.1),transparent_50%)]"></div>
           
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
@@ -65,25 +65,25 @@ const DevOpsAutomation: React.FC = () => {
               className="text-center"
             >
               <div className="flex justify-center mb-6">
-                <div className="w-20 h-20 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-2xl flex items-center justify-center">
-                  <Code className="w-10 h-10 text-white" />
+                <div className="w-20 h-20 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-2xl flex items-center justify-center">
+                  <Car className="w-10 h-10 text-white" />
                 </div>
               </div>
               
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent">
-                DevOps Automation
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">
+                AI Autonomous Vehicle AI Platform
               </h1>
               
               <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-                Streamline your development and operations with our advanced DevOps automation platform, 
-                featuring CI/CD pipelines, infrastructure as code, and comprehensive testing automation.
+                Drive the future with our AI autonomous vehicle platform, 
+                featuring advanced navigation, intelligent decision making, and comprehensive safety systems.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-3 bg-gradient-to-r from-yellow-500 to-orange-500 text-white font-semibold rounded-lg hover:from-yellow-600 hover:to-orange-600 transition-all duration-200 transform hover:scale-105">
-                  Automate Now
+                <button className="px-8 py-3 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold rounded-lg hover:from-emerald-600 hover:to-teal-600 transition-all duration-200 transform hover:scale-105">
+                  Start Autonomous Journey
                 </button>
-                <button className="px-8 py-3 border border-yellow-500 text-yellow-400 font-semibold rounded-lg hover:bg-yellow-500 hover:text-white transition-all duration-200">
+                <button className="px-8 py-3 border border-emerald-500 text-emerald-400 font-semibold rounded-lg hover:bg-emerald-500 hover:text-white transition-all duration-200">
                   Request Demo
                 </button>
               </div>
@@ -101,11 +101,11 @@ const DevOpsAutomation: React.FC = () => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
+              <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
                 Revolutionary Features
               </h2>
               <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-                Our DevOps automation platform delivers comprehensive capabilities
+                Our AI autonomous vehicle platform delivers breakthrough capabilities
               </p>
             </motion.div>
 
@@ -117,9 +117,9 @@ const DevOpsAutomation: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-gray-900/50 backdrop-blur-sm border border-yellow-500/20 rounded-xl p-6 hover:border-yellow-500/40 transition-all duration-300"
+                  className="bg-gray-900/50 backdrop-blur-sm border border-emerald-500/20 rounded-xl p-6 hover:border-emerald-500/40 transition-all duration-300"
                 >
-                  <div className="w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-lg flex items-center justify-center mb-4">
                     <feature.icon className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold mb-2 text-white">{feature.title}</h3>
@@ -140,11 +140,11 @@ const DevOpsAutomation: React.FC = () => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
+              <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
                 Core Capabilities
               </h2>
               <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-                Advanced DevOps automation capabilities that transform your workflow
+                Advanced autonomous vehicle capabilities that revolutionize transportation
               </p>
             </motion.div>
 
@@ -158,7 +158,7 @@ const DevOpsAutomation: React.FC = () => {
                   viewport={{ once: true }}
                   className="flex items-center space-x-4"
                 >
-                  <div className="w-8 h-8 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full flex items-center justify-center flex-shrink-0">
                     <CheckCircle className="w-5 h-5 text-white" />
                   </div>
                   <span className="text-gray-300 text-lg">{capability}</span>
@@ -168,7 +168,7 @@ const DevOpsAutomation: React.FC = () => {
           </div>
         </section>
 
-        {/* Benefits Section */}
+        {/* Applications Section */}
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
@@ -178,28 +178,28 @@ const DevOpsAutomation: React.FC = () => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
-                Key Benefits
+              <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
+                Real-World Applications
               </h2>
               <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-                Transform your development and operations with DevOps automation
+                Transform industries with autonomous vehicle technology
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {benefits.map((benefit, index) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {applications.map((application, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="flex items-center space-x-4"
+                  className="bg-gray-900/50 backdrop-blur-sm border border-emerald-500/20 rounded-xl p-6 hover:border-emerald-500/40 transition-all duration-300"
                 >
-                  <div className="w-8 h-8 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full flex items-center justify-center flex-shrink-0">
-                    <CheckCircle className="w-5 h-5 text-white" />
+                  <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-lg flex items-center justify-center mb-4">
+                    <Target className="w-6 h-6 text-white" />
                   </div>
-                  <span className="text-gray-300 text-lg">{benefit}</span>
+                  <h3 className="text-lg font-semibold mb-2 text-white">{application}</h3>
                 </motion.div>
               ))}
             </div>
@@ -216,14 +216,14 @@ const DevOpsAutomation: React.FC = () => {
               viewport={{ once: true }}
               className="text-center"
             >
-              <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
-                Ready to Automate Your DevOps?
+              <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
+                Ready for Autonomous Driving?
               </h2>
               <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-                Streamline your development and operations processes
+                Experience the future of transportation with AI
               </p>
-              <button className="px-10 py-4 bg-gradient-to-r from-yellow-500 to-orange-500 text-white font-semibold text-lg rounded-lg hover:from-yellow-600 hover:to-orange-600 transition-all duration-200 transform hover:scale-105">
-                Start DevOps Automation
+              <button className="px-10 py-4 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold text-lg rounded-lg hover:from-emerald-600 hover:to-teal-600 transition-all duration-200 transform hover:scale-105">
+                Start Autonomous Journey
               </button>
             </motion.div>
           </div>
@@ -233,4 +233,4 @@ const DevOpsAutomation: React.FC = () => {
   );
 };
 
-export default DevOpsAutomation;
+export default AIAutonomousVehicleAIPlatform;

@@ -1,61 +1,61 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
-import { Code, Server, Zap, Target, Users, Award, Clock, CheckCircle, GitBranch, Cloud, Database, Shield } from 'lucide-react';
+import { Target, Zap, Users, Award, Clock, CheckCircle, Shield, Globe, Layers, FileText, BarChart3, TrendingUp } from 'lucide-react';
 
-const DevOpsAutomation: React.FC = () => {
+const MarketingAIPlatform: React.FC = () => {
   const features = [
     {
-      icon: Code,
-      title: "CI/CD Pipelines",
-      description: "Automated build, test, and deployment workflows"
-    },
-    {
-      icon: Server,
-      title: "Infrastructure as Code",
-      description: "Manage infrastructure through code and automation"
+      icon: Target,
+      title: "AI-Powered Targeting",
+      description: "Intelligent audience segmentation and targeting"
     },
     {
       icon: Zap,
-      title: "Automated Testing",
-      description: "Comprehensive testing automation and quality assurance"
+      title: "Automated Campaigns",
+      description: "AI-driven campaign creation and optimization"
     },
     {
-      icon: Target,
-      title: "Deployment Automation",
-      description: "Streamlined deployment processes and rollback capabilities"
+      icon: Users,
+      title: "Customer Intelligence",
+      description: "Deep insights into customer behavior and preferences"
+    },
+    {
+      icon: BarChart3,
+      title: "Performance Analytics",
+      description: "Advanced analytics and performance optimization"
     }
   ];
 
   const capabilities = [
-    "Continuous integration and deployment",
-    "Infrastructure automation",
-    "Automated testing and quality gates",
-    "Monitoring and observability",
-    "Security scanning and compliance",
-    "Performance optimization"
+    "AI-powered audience targeting",
+    "Automated campaign management",
+    "Customer behavior analysis",
+    "Predictive marketing insights",
+    "Real-time optimization",
+    "Multi-channel campaign orchestration"
   ];
 
   const benefits = [
-    "Faster time to market",
-    "Improved code quality",
-    "Reduced manual errors",
-    "Better collaboration",
-    "Enhanced security",
-    "Cost optimization"
+    "Improved campaign performance",
+    "Better customer engagement",
+    "Reduced manual effort",
+    "Data-driven decision making",
+    "Increased ROI",
+    "Personalized customer experiences"
   ];
 
   return (
     <Layout
-      title="DevOps Automation - Zion Tech Group"
-      description="Advanced DevOps automation platform streamlining development, testing, and deployment processes for faster delivery and higher quality."
-      keywords="devops automation, CI/CD, infrastructure as code, automated testing, Zion Tech Group"
+      title="Marketing AI Platform - Zion Tech Group"
+      description="Advanced marketing AI platform providing intelligent targeting, automated campaigns, and customer intelligence for data-driven marketing success."
+      keywords="marketing AI, AI marketing, automated campaigns, customer intelligence, Zion Tech Group"
     >
       <div className="min-h-screen bg-black text-white">
         {/* Hero Section */}
         <section className="relative py-20 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-yellow-900/20 via-orange-900/20 to-red-900/20"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(245,158,11,0.1),transparent_50%)]"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-fuchsia-900/20 via-purple-900/20 to-indigo-900/20"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(168,85,247,0.1),transparent_50%)]"></div>
           
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
@@ -65,25 +65,25 @@ const DevOpsAutomation: React.FC = () => {
               className="text-center"
             >
               <div className="flex justify-center mb-6">
-                <div className="w-20 h-20 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-2xl flex items-center justify-center">
-                  <Code className="w-10 h-10 text-white" />
+                <div className="w-20 h-20 bg-gradient-to-r from-fuchsia-500 to-purple-500 rounded-2xl flex items-center justify-center">
+                  <Target className="w-10 h-10 text-white" />
                 </div>
               </div>
               
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent">
-                DevOps Automation
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-fuchsia-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent">
+                Marketing AI Platform
               </h1>
               
               <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-                Streamline your development and operations with our advanced DevOps automation platform, 
-                featuring CI/CD pipelines, infrastructure as code, and comprehensive testing automation.
+                Revolutionize your marketing with our AI-powered platform, 
+                featuring intelligent targeting, automated campaigns, and deep customer insights.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-3 bg-gradient-to-r from-yellow-500 to-orange-500 text-white font-semibold rounded-lg hover:from-yellow-600 hover:to-orange-600 transition-all duration-200 transform hover:scale-105">
-                  Automate Now
+                <button className="px-8 py-3 bg-gradient-to-r from-fuchsia-500 to-purple-500 text-white font-semibold rounded-lg hover:from-fuchsia-600 hover:to-purple-600 transition-all duration-200 transform hover:scale-105">
+                  Start Marketing AI
                 </button>
-                <button className="px-8 py-3 border border-yellow-500 text-yellow-400 font-semibold rounded-lg hover:bg-yellow-500 hover:text-white transition-all duration-200">
+                <button className="px-8 py-3 border border-fuchsia-500 text-fuchsia-400 font-semibold rounded-lg hover:bg-fuchsia-500 hover:text-white transition-all duration-200">
                   Request Demo
                 </button>
               </div>
@@ -101,11 +101,11 @@ const DevOpsAutomation: React.FC = () => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
+              <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-fuchsia-400 to-purple-400 bg-clip-text text-transparent">
                 Revolutionary Features
               </h2>
               <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-                Our DevOps automation platform delivers comprehensive capabilities
+                Our marketing AI platform delivers comprehensive capabilities
               </p>
             </motion.div>
 
@@ -117,9 +117,9 @@ const DevOpsAutomation: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-gray-900/50 backdrop-blur-sm border border-yellow-500/20 rounded-xl p-6 hover:border-yellow-500/40 transition-all duration-300"
+                  className="bg-gray-900/50 backdrop-blur-sm border border-fuchsia-500/20 rounded-xl p-6 hover:border-fuchsia-500/40 transition-all duration-300"
                 >
-                  <div className="w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-fuchsia-500 to-purple-500 rounded-lg flex items-center justify-center mb-4">
                     <feature.icon className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold mb-2 text-white">{feature.title}</h3>
@@ -140,11 +140,11 @@ const DevOpsAutomation: React.FC = () => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
+              <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-fuchsia-400 to-purple-400 bg-clip-text text-transparent">
                 Core Capabilities
               </h2>
               <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-                Advanced DevOps automation capabilities that transform your workflow
+                Advanced marketing AI capabilities that transform campaigns
               </p>
             </motion.div>
 
@@ -158,7 +158,7 @@ const DevOpsAutomation: React.FC = () => {
                   viewport={{ once: true }}
                   className="flex items-center space-x-4"
                 >
-                  <div className="w-8 h-8 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 bg-gradient-to-r from-fuchsia-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
                     <CheckCircle className="w-5 h-5 text-white" />
                   </div>
                   <span className="text-gray-300 text-lg">{capability}</span>
@@ -178,11 +178,11 @@ const DevOpsAutomation: React.FC = () => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
+              <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-fuchsia-400 to-purple-400 bg-clip-text text-transparent">
                 Key Benefits
               </h2>
               <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-                Transform your development and operations with DevOps automation
+                Transform your marketing with AI-powered insights
               </p>
             </motion.div>
 
@@ -196,7 +196,7 @@ const DevOpsAutomation: React.FC = () => {
                   viewport={{ once: true }}
                   className="flex items-center space-x-4"
                 >
-                  <div className="w-8 h-8 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 bg-gradient-to-r from-fuchsia-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
                     <CheckCircle className="w-5 h-5 text-white" />
                   </div>
                   <span className="text-gray-300 text-lg">{benefit}</span>
@@ -216,14 +216,14 @@ const DevOpsAutomation: React.FC = () => {
               viewport={{ once: true }}
               className="text-center"
             >
-              <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
-                Ready to Automate Your DevOps?
+              <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-fuchsia-400 to-purple-400 bg-clip-text text-transparent">
+                Ready for AI-Powered Marketing?
               </h2>
               <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-                Streamline your development and operations processes
+                Transform your marketing with intelligent AI automation
               </p>
-              <button className="px-10 py-4 bg-gradient-to-r from-yellow-500 to-orange-500 text-white font-semibold text-lg rounded-lg hover:from-yellow-600 hover:to-orange-600 transition-all duration-200 transform hover:scale-105">
-                Start DevOps Automation
+              <button className="px-10 py-4 bg-gradient-to-r from-fuchsia-500 to-purple-500 text-white font-semibold text-lg rounded-lg hover:from-fuchsia-600 hover:to-purple-600 transition-all duration-200 transform hover:scale-105">
+                Start Marketing AI Journey
               </button>
             </motion.div>
           </div>
@@ -233,4 +233,4 @@ const DevOpsAutomation: React.FC = () => {
   );
 };
 
-export default DevOpsAutomation;
+export default MarketingAIPlatform;
