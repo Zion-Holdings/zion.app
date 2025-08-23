@@ -1,53 +1,209 @@
 import React, { Component, ErrorInfo, ReactNode } from 'react';
 import { motion } from 'framer-motion';
-import { AlertTriangle, RefreshCw, Home, Mail, Phone } from 'lucide-react';
+import { 
+  AlertTriangle, RefreshCw, Home, Bug, 
+  X, Info, ArrowLeft, RotateCcw
+} from 'lucide-react';
 
 interface Props {
   children: ReactNode;
   fallback?: ReactNode;
   onError?: (error: Error, errorInfo: ErrorInfo) => void;
+  showDetails?: boolean;
+  enableRecovery?: boolean;
 }
 
 interface State {
   hasError: boolean;
-  error?: Error;
-  errorInfo?: ErrorInfo;
+  error: Error | null;
+  errorInfo: ErrorInfo | null;
+  errorId: string | null;
+  retryCount: number;
+  isRecovering: boolean;
 }
 
-export default class ErrorBoundary extends Component<Props, State> {
-  public state: State = {
-    hasError: false
-  };
+class ErrorBoundary extends Component<Props, State> {
+  constructor(props: Props) {
+    super(props);
+    this.state = {
+      hasError: false,
+      error: null,
+      errorInfo: null,
+      errorId: null,
+      retryCount: 0,
+      isRecovering: false
+    };
+  }
 
-  static getDerivedStateFromError(error: Error): State {
-    // Update state so the next render will show the fallback UI
-    return { hasError: true, error };
+  static getDerivedStateFromError(error: Error): Partial<State> {
+    return {
+      hasError: true,
+      error,
+      errorId: null
+    };
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    // Log error to console
-    console.error('ErrorBoundary caught an error:', error, errorInfo);
-    
+    this.setState({
+      errorInfo,
+      errorId: this.generateErrorId(error)
+    });
+
+    // Log error to console in development
+    if (process.env.NODE_ENV === 'development') {
+      console.error('ErrorBoundary caught an error:', error, errorInfo);
+    }
+
     // Call custom error handler if provided
     if (this.props.onError) {
       this.props.onError(error, errorInfo);
     }
 
-    // Log to analytics if available
+    // Send error to error reporting service (if configured)
+    this.reportError(error, errorInfo);
+  }
+
+  private generateErrorId(error: Error): string {
+    const timestamp = Date.now();
+    const errorHash = this.hashString(error.message + error.stack);
+    return `ERR_${timestamp}_${errorHash}`;
+  }
+
+  private hashString(str: string): string {
+    let hash = 0;
+    for (let i = 0; i < str.length; i++) {
+      const char = str.charCodeAt(i);
+      hash = ((hash << 5) - hash) + char;
+      hash = hash & hash; // Convert to 32-bit integer
+    }
+    return Math.abs(hash).toString(16);
+  }
+
+  private reportError(error: Error, errorInfo: ErrorInfo) {
+    // In a real application, you would send this to your error reporting service
+    // For example: Sentry, LogRocket, Bugsnag, etc.
+    
+    const errorReport = {
+      errorId: this.state.errorId,
+      message: error.message,
+      stack: error.stack,
+      componentStack: errorInfo.componentStack,
+      timestamp: new Date().toISOString(),
+      userAgent: navigator.userAgent,
+      url: window.location.href,
+      retryCount: this.state.retryCount
+    };
+
+    // Store error in localStorage for debugging
+    try {
+      const existingErrors = JSON.parse(localStorage.getItem('zion-errors') || '[]');
+      existingErrors.push(errorReport);
+      localStorage.setItem('zion-errors', JSON.stringify(existingErrors.slice(-10))); // Keep last 10 errors
+    } catch (e) {
+      console.warn('Failed to store error in localStorage:', e);
+    }
+
+    // Send to analytics or error reporting service
     if (typeof window !== 'undefined' && (window as any).gtag) {
       (window as any).gtag('event', 'exception', {
         description: error.message,
-        fatal: false,
-        custom_parameters: {
-          component_stack: errorInfo.componentStack,
-          error_name: error.name,
-          error_stack: error.stack
-        }
+        fatal: true
       });
     }
+  }
 
-    // Send error to custom error reporting endpoint
-    this.reportError(error, errorInfo, errorId);
+  private handleRetry = () => {
+    this.setState({ isRecovering: true });
+    
+    // Clear the error state
+    this.setState({
+      hasError: false,
+      error: null,
+      errorInfo: null,
+      errorId: null,
+      retryCount: this.state.retryCount + 1
+    });
+  };
+
+  private handleGoHome = () => {
+    if (typeof window !== 'undefined') {
+      window.location.href = '/';
+    }
+  };
+
+  private handleGoBack = () => {
+    if (typeof window !== 'undefined' && window.history.length > 1) {
+      window.history.back();
+    } else {
+      this.handleGoHome();
+    }
+  };
+
+  private handleReload = () => {
+    if (typeof window !== 'undefined') {
+      window.location.reload();
+    }
+  };
+
+  private getErrorType(): string {
+    if (!this.state.error) return 'Unknown Error';
+    
+    const error = this.state.error;
+    
+    if (error.name === 'TypeError') return 'Type Error';
+    if (error.name === 'ReferenceError') return 'Reference Error';
+    if (error.name === 'SyntaxError') return 'Syntax Error';
+    if (error.name === 'RangeError') return 'Range Error';
+    if (error.name === 'URIError') return 'URI Error';
+    if (error.name === 'EvalError') return 'Evaluation Error';
+    
+    return error.name || 'Runtime Error';
+  }
+
+  private getErrorMessage(): string {
+    if (!this.state.error) return 'An unexpected error occurred';
+    
+    const error = this.state.error;
+    
+    // Provide user-friendly error messages
+    if (error.message.includes('Failed to fetch')) {
+      return 'Network connection error. Please check your internet connection and try again.';
+    }
+    
+    if (error.message.includes('Chunk load failed')) {
+      return 'Application update error. Please refresh the page to get the latest version.';
+    }
+    
+    if (error.message.includes('Loading chunk')) {
+      return 'Resource loading error. Please refresh the page and try again.';
+    }
+    
+    if (error.message.includes('Unexpected token')) {
+      return 'Application configuration error. Please contact support if this persists.';
+    }
+    
+    return error.message || 'An unexpected error occurred while processing your request.';
+  }
+
+  private getRecoverySuggestions(): string[] {
+    const suggestions: string[] = [];
+    
+    if (this.state.retryCount < 2) {
+      suggestions.push('Try refreshing the page');
+    }
+    
+    if (this.state.retryCount < 3) {
+      suggestions.push('Check your internet connection');
+    }
+    
+    suggestions.push('Clear your browser cache and cookies');
+    suggestions.push('Try using a different browser');
+    
+    if (this.state.retryCount > 2) {
+      suggestions.push('Contact support if the issue persists');
+    }
+    
+    return suggestions;
   }
 
   render() {
@@ -58,54 +214,125 @@ export default class ErrorBoundary extends Component<Props, State> {
       }
 
       return (
-        <div className="min-h-screen bg-black text-white flex items-center justify-center px-4">
-          <div className="max-w-2xl mx-auto text-center">
-            {/* Error Icon */}
-            <div className="mb-8">
-              <div className="w-24 h-24 mx-auto bg-gradient-to-r from-red-500 to-pink-500 rounded-full flex items-center justify-center">
-                <svg 
-                  className="w-12 h-12 text-white" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    strokeWidth={2} 
-                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" 
-                  />
-                </svg>
+        <div className="min-h-screen bg-black text-white flex items-center justify-center p-4">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="max-w-2xl w-full bg-gray-900/90 backdrop-blur-sm border border-red-500/30 rounded-2xl p-8 shadow-2xl"
+          >
+            {/* Error Header */}
+            <div className="text-center mb-8">
+              <div className="inline-flex items-center justify-center w-20 h-20 bg-red-500/20 border border-red-500/30 rounded-full mb-6">
+                <AlertTriangle className="w-10 h-10 text-red-400" />
+              </div>
+              <h1 className="text-3xl font-bold text-white mb-2">
+                Oops! Something went wrong
+              </h1>
+              <p className="text-gray-400 text-lg">
+                We encountered an unexpected error while processing your request
+              </p>
+            </div>
+
+            {/* Error Details */}
+            <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 mb-8">
+              <div className="flex items-center gap-2 mb-4">
+                <Bug className="w-5 h-5 text-red-400" />
+                <h2 className="text-lg font-semibold text-white">
+                  {this.getErrorType()}
+                </h2>
+              </div>
+              
+              <p className="text-gray-300 mb-4">
+                {this.getErrorMessage()}
+              </p>
+
+              {this.state.errorId && (
+                <div className="text-sm text-gray-500 font-mono bg-gray-900/50 p-3 rounded-lg">
+                  Error ID: {this.state.errorId}
+                </div>
+              )}
+
+              {/* Recovery Suggestions */}
+              <div className="mt-6">
+                <h3 className="text-sm font-medium text-gray-400 mb-3 flex items-center gap-2">
+                  <Info className="w-4 h-4" />
+                  Try these solutions:
+                </h3>
+                <ul className="space-y-2">
+                  {this.getRecoverySuggestions().map((suggestion, index) => (
+                    <li key={index} className="text-sm text-gray-300 flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 bg-red-400 rounded-full"></div>
+                      {suggestion}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
 
-            {/* Error Message */}
-            <h1 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-red-400 to-pink-400 bg-clip-text text-transparent">
-              Oops! Something went wrong
-            </h1>
-            
-            <p className="text-xl text-gray-300 mb-8">
-              We're sorry, but something unexpected happened. Our team has been notified and is working to fix this issue.
-            </p>
+            {/* Action Buttons */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <button
+                onClick={this.handleRetry}
+                disabled={this.state.isRecovering}
+                className="flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 disabled:from-gray-600 disabled:to-gray-700 text-white font-medium rounded-lg transition-all duration-200 transform hover:scale-105 disabled:scale-100 disabled:cursor-not-allowed"
+              >
+                {this.state.isRecovering ? (
+                  <>
+                    <RefreshCw className="w-4 h-4 animate-spin" />
+                    Recovering...
+                  </>
+                ) : (
+                  <>
+                    <RotateCcw className="w-4 h-4" />
+                    Try Again
+                  </>
+                )}
+              </button>
 
-            {/* Error Details (Development Only) */}
-            {process.env.NODE_ENV === 'development' && this.state.error && (
-              <details className="mb-8 text-left bg-gray-900 rounded-lg p-4">
-                <summary className="cursor-pointer text-cyan-400 font-semibold mb-2">
-                  Error Details (Development)
+              <button
+                onClick={this.handleGoBack}
+                className="flex items-center justify-center gap-2 px-6 py-3 border-2 border-gray-600 hover:border-gray-500 text-gray-300 hover:text-white font-medium rounded-lg transition-all duration-200 transform hover:scale-105"
+              >
+                <ArrowLeft className="w-4 h-4" />
+                Go Back
+              </button>
+
+              <button
+                onClick={this.handleReload}
+                className="flex items-center justify-center gap-2 px-6 py-3 border-2 border-gray-600 hover:border-gray-500 text-gray-300 hover:text-white font-medium rounded-lg transition-all duration-200 transform hover:scale-105"
+              >
+                <RefreshCw className="w-4 h-4" />
+                Refresh Page
+              </button>
+
+              <button
+                onClick={this.handleGoHome}
+                className="flex items-center justify-center gap-2 px-6 py-3 border-2 border-gray-600 hover:border-gray-500 text-gray-300 hover:text-white font-medium rounded-lg transition-all duration-200 transform hover:scale-105"
+              >
+                <Home className="w-4 h-4" />
+                Go Home
+              </button>
+            </div>
+
+            {/* Technical Details (Development Only) */}
+            {this.props.showDetails && process.env.NODE_ENV === 'development' && this.state.error && (
+              <details className="mt-8">
+                <summary className="text-sm text-gray-400 cursor-pointer hover:text-gray-300 mb-4">
+                  Technical Details (Development)
                 </summary>
-                <div className="text-sm text-gray-400 space-y-2">
+                <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 space-y-4">
                   <div>
-                    <strong>Error:</strong> {this.state.error.message}
+                    <h4 className="text-sm font-medium text-gray-300 mb-2">Error Stack:</h4>
+                    <pre className="text-xs text-gray-400 bg-gray-900/50 p-3 rounded overflow-x-auto">
+                      {this.state.error.stack}
+                    </pre>
                   </div>
-                  <div>
-                    <strong>Name:</strong> {this.state.error.name}
-                  </div>
+                  
                   {this.state.errorInfo && (
                     <div>
-                      <strong>Component Stack:</strong>
-                      <pre className="mt-2 text-xs overflow-auto">
+                      <h4 className="text-sm font-medium text-gray-300 mb-2">Component Stack:</h4>
+                      <pre className="text-xs text-gray-400 bg-gray-900/50 p-3 rounded overflow-x-auto">
                         {this.state.errorInfo.componentStack}
                       </pre>
                     </div>
@@ -114,63 +341,22 @@ export default class ErrorBoundary extends Component<Props, State> {
               </details>
             )}
 
-            {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button
-                onClick={() => window.location.reload()}
-                className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 focus:ring-offset-2 focus:ring-offset-black"
-              >
-                Refresh Page
-              </button>
-
-              <button
-                onClick={() => window.history.back()}
-                className="px-6 py-3 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 focus:ring-offset-2 focus:ring-offset-black"
-              >
-                Go Back
-              </button>
-              
-              <a
-                href="/"
-                className="px-6 py-3 border-2 border-purple-400 text-purple-400 font-semibold rounded-lg hover:bg-purple-400 hover:text-black transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-purple-400/50 focus:ring-offset-2 focus:ring-offset-black text-center"
-              >
-                Go Home
-              </a>
-            </div>
-
-            {/* Contact Information */}
-            <div className="mt-12 pt-8 border-t border-gray-700">
-              <p className="text-gray-400 mb-4">
-                If this problem persists, please contact our support team:
+            {/* Support Information */}
+            <div className="mt-8 text-center">
+              <p className="text-sm text-gray-500">
+                If this problem continues, please contact our support team
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm">
+              <div className="mt-2 text-sm text-gray-400">
+                <span>Email: </span>
                 <a 
-                  href="mailto:kleber@ziontechgroup.com"
-                  className="text-cyan-400 hover:text-cyan-300 transition-colors"
+                  href="mailto:support@ziontechgroup.com" 
+                  className="text-blue-400 hover:text-blue-300 underline"
                 >
-                  kleber@ziontechgroup.com
+                  support@ziontechgroup.com
                 </a>
-                <span className="text-gray-600">|</span>
-                <a 
-                  href="tel:+13024640950"
-                  className="text-cyan-400 hover:text-cyan-300 transition-colors"
-                >
-                  +1 (302) 464-0950
-                </a>
-                <button
-                  onClick={this.handleContactSupport}
-                  className="flex items-center justify-center gap-2 px-4 py-2 text-gray-300 hover:text-cyan-400 transition-colors duration-300"
-                >
-                  Contact Form
-                </button>
               </div>
             </div>
-
-            {/* Error ID for Support */}
-            <div className="mt-6 text-xs text-gray-500">
-              Error ID: {Date.now().toString(36)}-{Math.random().toString(36).substr(2, 5)}
-            </div>
-          </div>
+          </motion.div>
         </div>
       );
     }

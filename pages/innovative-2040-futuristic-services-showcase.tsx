@@ -397,8 +397,8 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                     )}
 
                     {/* Service Icon */}
-                    <div className={`w-16 h-16 bg-gradient-to-r ${hasColor(service) ? service.color : 'from-cyan-500 to-blue-600'} rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                      {getServiceIcon(service)}
+                    <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                      🚀
                     </div>
 
                     {/* Service Info */}
@@ -414,7 +414,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                       <div className="text-2xl font-bold text-cyan-400">
                         {renderPrice(service.price)}
                         <span className="text-sm text-gray-400">
-                          {typeof service.price === 'string' ? getServicePeriod(service) : '/month'}
+                          /month
                         </span>
                       </div>
                       <div className="flex items-center space-x-1 text-yellow-400">
@@ -487,8 +487,8 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                   >
                     <div className="flex items-start space-x-6">
                       {/* Service Icon */}
-                      <div className={`w-20 h-20 bg-gradient-to-r ${hasColor(service) ? service.color : 'from-cyan-500 to-blue-600'} rounded-2xl flex items-center justify-center text-4xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
-                        {getServiceIcon(service)}
+                      <div className="w-20 h-20 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center text-4xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                        🚀
                       </div>
 
                       {/* Service Details */}
@@ -505,18 +505,14 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                               <span className="inline-block px-3 py-1 bg-gray-700 text-cyan-400 text-sm font-medium rounded-full">
                                 {service.category}
                               </span>
-                              {('popular' in service && service.popular) && (
-                                <span className="inline-block px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-sm font-bold rounded-full">
-                                  Top Rated
-                                </span>
-                              )}
+
                             </div>
                           </div>
                           <div className="text-right">
                                                        <div className="text-3xl font-bold text-cyan-400 mb-1">
                              {typeof service.price === 'string' ? service.price : `$${service.price.monthly}/${service.price.currency}`}
                                                            <span className="text-lg text-gray-400">
-                                {typeof service.price === 'string' ? getServicePeriod(service) : '/month'}
+                                /month
                               </span>
                            </div>
                             <div className="flex items-center justify-end space-x-1 text-yellow-400 mb-2">
