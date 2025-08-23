@@ -127,6 +127,11 @@ import { real2026AdvancedServices } from '../data/real-2026-advanced-services';
 import { real2026InnovativeSolutions } from '../data/real-2026-innovative-solutions';
 import { real2026SpecializedServices } from '../data/real-2026-specialized-services';
 
+// Import our latest innovative services
+import { innovative2040FuturisticServices } from '../data/innovative-2040-futuristic-services';
+import { advanced2041EnterpriseServices } from '../data/advanced-2041-enterprise-services';
+import { revolutionary2042MicroSaasServices } from '../data/revolutionary-2042-micro-saas-services';
+
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
