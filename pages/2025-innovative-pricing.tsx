@@ -302,13 +302,14 @@ export default function InnovativePricing2025() {
               <div className="mb-4">
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-2xl font-bold text-purple-400">
-                    ${billingCycle === 'monthly' ? service.price.monthly : service.price.yearly}
+                    ${typeof service.price === 'string' ? service.price : 
+                       billingCycle === 'monthly' ? service.price.monthly : service.price.yearly}
                   </span>
                   <span className="text-gray-400">
                     /{billingCycle === 'monthly' ? 'month' : 'year'}
                   </span>
                 </div>
-                {billingCycle === 'yearly' && (
+                {billingCycle === 'yearly' && typeof service.price !== 'string' && (
                   <div className="text-sm text-green-400">
                     Save ${getYearlyDiscount(service.price.monthly)} annually
                   </div>
@@ -323,10 +324,10 @@ export default function InnovativePricing2025() {
 
               <div className="space-y-2 mb-6">
                 <div className="text-xs text-gray-400">
-                  <span className="text-gray-500">Setup:</span> {service.price.setupTime}
+                  <span className="text-gray-500">Setup:</span> {typeof service.price === 'string' ? 'Custom' : service.price.setupTime}
                 </div>
                 <div className="text-xs text-gray-400">
-                  <span className="text-gray-500">Trial:</span> {service.price.trialDays} days
+                  <span className="text-gray-500">Trial:</span> {typeof service.price === 'string' ? 'Contact' : service.price.trialDays} days
                 </div>
               </div>
 

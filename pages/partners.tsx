@@ -198,12 +198,7 @@ const PartnersPage: React.FC = () => {
   ];
 
   return (
-    <Layout seo={{
-      title: 'Partners - Zion Tech Group | Technology Partnerships & Collaborations',
-      description: 'Partner with Zion Tech Group to accelerate innovation in AI, quantum computing, and space technology. Explore partnership opportunities.',
-      keywords: 'partners, partnerships, Zion Tech Group, technology partners, AI partnerships, quantum computing partners',
-      url: 'https://ziontechgroup.com/partners'
-    }}>
+    <Layout>
       <div className="min-h-screen">
         {/* Hero Section */}
         <section className="relative py-20 lg:py-32 overflow-hidden">

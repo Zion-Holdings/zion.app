@@ -194,12 +194,7 @@ const CareersPage: React.FC = () => {
   });
 
   return (
-    <Layout seo={{
-      title: 'Careers - Zion Tech Group | Join Our Team of Innovators',
-      description: 'Join Zion Tech Group and be part of the future of AI, quantum computing, and space technology. Explore career opportunities and grow with us.',
-      keywords: 'careers, jobs, Zion Tech Group, AI jobs, quantum computing careers, space technology jobs',
-      url: 'https://ziontechgroup.com/careers'
-    }}>
+    <Layout>
       <div className="min-h-screen">
         {/* Hero Section */}
         <section className="relative py-20 lg:py-32 overflow-hidden">

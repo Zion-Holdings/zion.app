@@ -268,13 +268,13 @@ export default function InnovativeServicesShowcase2025() {
                     
                     <div className="flex items-center gap-2 mb-4">
                       <span className="text-2xl font-bold text-purple-400">
-                        {getServicePricing(service)}
+                                              {getServicePricing(service)}
+                    </span>
+                    {typeof service.price !== 'string' && service.price?.yearly && (
+                      <span className="text-sm text-gray-400">
+                        (${service.price.yearly}/year)
                       </span>
-                      {service.price?.yearly && (
-                        <span className="text-sm text-gray-400">
-                          (${service.price.yearly}/year)
-                        </span>
-                      )}
+                    )}
                     </div>
 
                     <p className="text-gray-300 text-sm mb-4 line-clamp-3">
@@ -307,7 +307,7 @@ export default function InnovativeServicesShowcase2025() {
                     </div>
 
                     {/* Benefits */}
-                    {service.benefits && (
+                    {'benefits' in service && service.benefits && (
                       <div className="mb-4">
                         <h4 className="text-white font-semibold text-sm mb-2">Benefits:</h4>
                         <div className="space-y-1">
@@ -325,11 +325,11 @@ export default function InnovativeServicesShowcase2025() {
                     <div className="grid grid-cols-2 gap-4 text-xs text-gray-400 mb-4">
                       <div>
                         <span className="block text-gray-500">Setup Time:</span>
-                        <span>{service.price?.setupTime || 'Contact us'}</span>
+                        <span>{typeof service.price === 'string' ? 'Contact us' : service.price?.setupTime || 'Contact us'}</span>
                       </div>
                       <div>
                         <span className="block text-gray-500">Trial:</span>
-                        <span>{service.price?.trialDays || 0} days</span>
+                        <span>{typeof service.price === 'string' ? 'Contact us' : service.price?.trialDays || 0} days</span>
                       </div>
                     </div>
 

@@ -176,12 +176,7 @@ const GetStartedPage: React.FC = () => {
   };
 
   return (
-    <Layout seo={{
-      title: 'Get Started - Zion Tech Group | Begin Your Technology Journey',
-      description: 'Start your journey with Zion Tech Group. Get step-by-step guidance, resources, and support to implement our AI, quantum, and space technology solutions.',
-      keywords: 'get started, onboarding, implementation, Zion Tech Group, AI implementation, quantum computing setup',
-      url: 'https://ziontechgroup.com/get-started'
-    }}>
+    <Layout>
       <div className="min-h-screen">
         {/* Hero Section */}
         <section className="relative py-20 lg:py-32 overflow-hidden">

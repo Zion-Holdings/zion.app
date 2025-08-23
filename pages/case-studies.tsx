@@ -160,12 +160,7 @@ const CaseStudiesPage: React.FC = () => {
   const regularStudies = filteredCaseStudies.filter(study => !study.featured);
 
   return (
-    <Layout seo={{
-      title: 'Case Studies - Zion Tech Group | Customer Success Stories',
-      description: 'Explore real-world case studies showcasing how Zion Tech Group solutions drive business transformation and deliver measurable ROI.',
-      keywords: 'case studies, customer success, ROI, business transformation, AI success stories, quantum computing case studies',
-      url: 'https://ziontechgroup.com/case-studies'
-    }}>
+    <Layout>
       <div className="min-h-screen">
         {/* Hero Section */}
         <section className="relative py-20 lg:py-32 overflow-hidden">

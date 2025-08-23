@@ -222,12 +222,7 @@ const BlogPage: React.FC = () => {
   };
 
   return (
-    <Layout seo={{
-      title: 'Blog - Zion Tech Group | Technology Insights & Tutorials',
-      description: 'Explore in-depth articles, tutorials, and insights on AI, quantum computing, space technology, and emerging tech trends.',
-      keywords: 'blog, technology blog, AI blog, quantum computing blog, space technology blog, tutorials',
-      url: 'https://ziontechgroup.com/blog'
-    }}>
+    <Layout>
       <div className="min-h-screen">
         {/* Hero Section */}
         <section className="relative py-20 lg:py-32 overflow-hidden">

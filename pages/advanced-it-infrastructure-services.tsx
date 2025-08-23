@@ -287,7 +287,7 @@ export default function AdvancedITInfrastructureServices() {
                           <h4 className="text-xl font-semibold text-white mb-2">{service.name}</h4>
                           <p className="text-gray-300 text-sm mb-4">{service.tagline}</p>
                           <div className="flex items-center justify-between mb-4">
-                            <span className="text-2xl font-bold text-white">${service.pricing?.starter || 0}</span>
+                            <span className="text-2xl font-bold text-white">${typeof service.price === 'string' ? service.price : (service.price as any)?.monthly || 0}</span>
                             <span className="text-gray-400">/month</span>
                           </div>
                           <p className="text-gray-300 text-sm mb-4">{service.description}</p>

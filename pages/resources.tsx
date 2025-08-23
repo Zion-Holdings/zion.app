@@ -284,12 +284,7 @@ const ResourcesPage: React.FC = () => {
   };
 
   return (
-    <Layout seo={{
-      title: 'Resources - Zion Tech Group | AI, Quantum & Space Technology Resources',
-      description: 'Access comprehensive resources including whitepapers, guides, case studies, and tools on AI consciousness, quantum computing, space technology, and enterprise IT.',
-      keywords: 'resources, whitepapers, guides, case studies, AI consciousness, quantum computing, space technology, enterprise IT, Zion Tech Group',
-      url: 'https://ziontechgroup.com/resources'
-    }}>
+    <Layout>
       <div className="min-h-screen">
         {/* Hero Section */}
         <section className="relative py-20 lg:py-32 overflow-hidden">
