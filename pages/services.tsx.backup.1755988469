@@ -5,7 +5,11 @@ import {
   Search, Grid, List,
   Brain, Atom, Shield, Target, Rocket,
   ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
+<<<<<<< HEAD
+  Building, Lock, Database
+=======
   Building, Cpu, Database, Cloud, Lock, Sparkles
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-e8d4
 } from 'lucide-react';
 import { innovative2025MicroSaasExpansionV2 } from '../data/innovative-2025-micro-saas-expansion-v2';
 import { innovative2025ITServicesExpansionV2 } from '../data/innovative-2025-it-services-expansion-v2';
@@ -110,10 +114,14 @@ const allServices = [
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
+<<<<<<< HEAD
+  ...innovative2025Services
+=======
   // Add revolutionary 2025-2026 services
   ...revolutionary20252026MicroSaasServices,
   ...revolutionary20252026AIServices,
   ...revolutionary20252026ITInfrastructureServices
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-e8d4
 ];
 
 const categories = [
@@ -188,11 +196,33 @@ const categories = [
     description: 'Learning and research platforms'
   },
   {
+<<<<<<< HEAD
+    id: 'cybersecurity',
+    name: 'Cybersecurity & Security',
+    icon: <Shield className="w-6 h-6" />,
+    color: 'from-red-500 to-orange-500',
+    description: 'Advanced security and compliance solutions'
+  },
+  {
+    id: 'blockchain-defi',
+    name: 'Blockchain & DeFi',
+    icon: <Database className="w-6 h-6" />,
+    color: 'from-yellow-500 to-green-500',
+    description: 'Blockchain and decentralized finance solutions'
+  },
+  {
+    id: 'biometric-identity',
+    name: 'Biometric & Identity',
+    icon: <Lock className="w-6 h-6" />,
+    color: 'from-purple-500 to-indigo-500',
+    description: 'Biometric authentication and identity management'
+=======
     id: 'revolutionary-2025-2026',
     name: 'Revolutionary 2025-2026',
     icon: <Sparkles className="w-6 h-6" />,
     color: 'from-cyan-500 to-purple-500',
     description: 'Cutting-edge services for the future'
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-e8d4
   }
 ];
 
