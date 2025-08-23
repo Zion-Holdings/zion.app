@@ -13,11 +13,11 @@ code{background:rgba(0,0,0,.4);padding:2px 4px;border-radius:6px}
 .build-failure{background:rgba(239,68,68,.2);border:2px solid #ef4444}
 </style>
 <h1>Pre-Build Health Check Report</h1>
-<<<<<<< HEAD
-<p>Generated 8/19/2025, 6:52:46 PM</p>
-=======
 <p>Generated 8/20/2025, 12:26:14 PM</p>
->>>>>>> origin/cursor/bc-37e0a79f-43c4-4216-bd12-ddf1b3362bec-8633
+=======
+<p>Generated 8/19/2025, 11:54:02 PM</p>
+=======
+<p>Generated 8/19/2025, 11:51:14 PM</p>
 <div class="build-status build-success">✅ BUILD READY</div>
 <div class="card">
 <h2>Summary</h2>

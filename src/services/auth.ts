@@ -1,30 +1,13 @@
-import axios, { AxiosRequestHeaders } from 'axios';
+import { apiClient } from '@/utils/apiClient';
 
-// Axios instance
-export const api = axios.create();
-
-// Attach token from localStorage to each request
-api.interceptors.request.use((config) => {
-  const token = localStorage.getItem('token');
-  if (token) {
-    config.headers = {
-      ...(config.headers || {}),
-      Authorization: `Bearer ${token}`,
-    } as AxiosRequestHeaders;
-  }
-  return config;
-});
-
-export async function login(email: string, password: string) {
-  const response = await api.post('/api/auth/login', { email, password });
-  if (response.status === 200 && response.data?.token) {
-    localStorage.setItem('token', response.data.token);
-  }
-  return response;
+export async function register(name: string, email: string, password: string) {
+  const res = await apiClient('/api/auth/register', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ name, email, password }),
+  });
+  const data = await res.json().catch(() => ({}));
+  return { res, data };
 }
-
-export const auth = {
-  login,
-};
-
-export default auth;

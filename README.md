@@ -28,8 +28,21 @@ Cross-platform assistant for hiring managers and remote workers.
 ### Database & RLS
 - Postgres initialized via `infra/db/init.sql` with RLS policies per `user_id`
 
-### Rate limiting
-- Implemented in API with Redis (fallback to in-memory)
+### **Contact Information:**
+- **Mobile**: +1 302 464 0950
+- **Email**: kleber@ziontechgroup.com
+- **Website**: https://ziontechgroup.com
+- **Address**: 364 E Main St STE 1008 Middletown DE 19709
 
-### Branding
-- Icon generator: run `pnpm --filter @zion/extension generate:icons` to produce PNGs from `zion.svg`
+⚠️ **IMPORTANT**: This project uses **Supabase for authentication** and **Netlify for environment variable management**. Proper configuration is essential for the application to function correctly.
+
+### Authentication Setup
+
+---
+This README is auto-generated. Do not edit manually.
+
+## 🌟 Featured Services
+
+- Intelligent Orchestrator (1m): /.netlify/functions/intelligent-orchestrator
+- Anomaly Watchdog (10m): /.netlify/functions/anomaly-watchdog
+- Pulse Sync (1m): /.netlify/functions/pulse-sync

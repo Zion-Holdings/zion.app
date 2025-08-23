@@ -1,9 +1,5 @@
 #!/bin/bash
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 # Test script to merge a small batch of branches first
 set -e
 
@@ -15,8 +11,6 @@ echo "---"
 # Configuration - small batch for testing
 BATCH_SIZE=3
 BACKUP_BRANCH="test-backup-$(date +%Y%m%d-%H%M%S)"
-<<<<<<< HEAD
-=======
 # Test script to merge a small batch of cursor branches into main
 set -e
 
@@ -29,9 +23,7 @@ echo "---"
 BATCH_SIZE=5
 BACKUP_BRANCH="test-merge-backup-$(date +%Y%m%d-%H%M%S)"
 LOG_FILE="test-merge-log-$(date +%Y%m%d-%H%M%S).txt"
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
 =======
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
 # Create a backup branch
 echo "🔒 Creating backup branch: $BACKUP_BRANCH"
@@ -43,10 +35,6 @@ git checkout main
 SUCCESSFUL_MERGES=0
 FAILED_MERGES=0
 CONFLICT_RESOLUTIONS=0
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
 # Get first few cursor branches
 BRANCHES=$(git branch -r | grep "origin/cursor/" | sed 's/origin\///' | head -$BATCH_SIZE)
@@ -54,8 +42,6 @@ BRANCHES=$(git branch -r | grep "origin/cursor/" | sed 's/origin\///' | head -$B
 echo "📋 Testing with branches:"
 echo "$BRANCHES"
 echo "---"
-<<<<<<< HEAD
-=======
 SKIPPED_BRANCHES=0
 TOTAL_PROCESSED=0
 
@@ -64,80 +50,35 @@ log_message() {
     local message="$1"
     echo "$(date '+%Y-%m-%d %H:%M:%S') - $message" | tee -a "$LOG_FILE"
 }
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
 =======
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
 # Function to resolve conflicts in a file
 resolve_conflicts() {
     local file="$1"
     local branch="$2"
     
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     echo "🔧 Resolving conflicts in $file for branch $branch..."
     
     # Check if file has merge conflicts
-    if grep -q "<<<<<<< HEAD" "$file"; then
-        echo "⚠️  Found conflicts in $file, resolving..."
-<<<<<<< HEAD
-=======
     log_message "🔧 Resolving conflicts in $file for branch $branch..."
     
     # Check if file has merge conflicts
-    if grep -q "<<<<<<< HEAD" "$file"; then
-        log_message "⚠️  Found conflicts in $file, resolving..."
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
-=======
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         
         # Create a backup of the conflicted file
         cp "$file" "${file}.backup.$(date +%s)"
         
         # Strategy: Keep both versions where possible, prefer main branch for critical files
         if [[ "$file" == "package.json" || "$file" == "package-lock.json" ]]; then
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             echo "📦 Critical file detected, keeping main version and merging dependencies..."
-            sed -i '/<<<<<<< HEAD/,/=======/d' "$file"
-            sed -i '/>>>>>>> /d' "$file"
-        elif [[ "$file" == "next.config.js" || "$file" == "tsconfig.json" ]]; then
-            echo "⚙️  Config file detected, keeping main version..."
-            sed -i '/<<<<<<< HEAD/,/=======/d' "$file"
-            sed -i '/>>>>>>> /d' "$file"
         else
             echo "📝 Regular file, attempting to merge both versions..."
-<<<<<<< HEAD
-=======
             log_message "📦 Critical file detected, keeping main version and merging dependencies..."
-            sed -i '/<<<<<<< HEAD/,/=======/d' "$file"
-            sed -i '/>>>>>>> /d' "$file"
-        elif [[ "$file" == "next.config.js" || "$file" == "tsconfig.json" ]]; then
-            log_message "⚙️  Config file detected, keeping main version..."
-            sed -i '/<<<<<<< HEAD/,/=======/d' "$file"
-            sed -i '/>>>>>>> /d' "$file"
         else
             log_message "📝 Regular file, attempting to merge both versions..."
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
-=======
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
-            sed -i '/<<<<<<< HEAD/,/=======/d' "$file"
-            sed -i '/>>>>>>> /d' "$file"
-        fi
-        
-<<<<<<< HEAD
-<<<<<<< HEAD
-        echo "✅ Resolved conflicts in $file"
 =======
         log_message "✅ Resolved conflicts in $file"
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
 =======
         echo "✅ Resolved conflicts in $file"
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         CONFLICT_RESOLUTIONS=$((CONFLICT_RESOLUTIONS + 1))
     fi
 }
@@ -163,56 +104,36 @@ can_merge_branch() {
 merge_branch() {
     local branch="$1"
     
-<<<<<<< HEAD
-<<<<<<< HEAD
-    echo "🔄 Attempting to merge $branch..."
-=======
     log_message "🔄 Attempting to merge $branch..."
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
 =======
     echo "🔄 Attempting to merge $branch..."
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     
     # Fetch the latest version of the branch
     git fetch origin "$branch"
     
     # Try to merge
     if git merge --no-commit --no-ff "origin/$branch" 2>/dev/null; then
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         echo "✅ Successfully merged $branch"
         git commit -m "Test merge $branch into main - $(date)"
         SUCCESSFUL_MERGES=$((SUCCESSFUL_MERGES + 1))
         return 0
     else
         echo "⚠️  Merge conflicts detected in $branch, resolving..."
-<<<<<<< HEAD
-=======
         log_message "✅ Successfully merged $branch"
         git commit -m "Merge $branch into main - $(date)"
         SUCCESSFUL_MERGES=$((SUCCESSFUL_MERGES + 1))
         return 0
     else
         log_message "⚠️  Merge conflicts detected in $branch, resolving..."
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
 =======
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         
         # Get list of conflicted files
         CONFLICTED_FILES=$(git diff --name-only --diff-filter=U)
         
         if [ -n "$CONFLICTED_FILES" ]; then
-<<<<<<< HEAD
-<<<<<<< HEAD
-            echo "📋 Conflicted files: $CONFLICTED_FILES"
-=======
             log_message "📋 Conflicted files: $CONFLICTED_FILES"
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
 =======
             echo "📋 Conflicted files: $CONFLICTED_FILES"
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             
             # Resolve conflicts in each file
             for file in $CONFLICTED_FILES; do
@@ -225,10 +146,6 @@ merge_branch() {
             git add .
             
             # Commit the merge
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             git commit -m "Test resolve merge conflicts for $branch - $(date)"
             
             echo "✅ Successfully resolved conflicts and merged $branch"
@@ -236,8 +153,6 @@ merge_branch() {
             return 0
         else
             echo "❌ No conflicted files found, but merge failed. Aborting..."
-<<<<<<< HEAD
-=======
             git commit -m "Resolve merge conflicts for $branch - $(date)"
             
             log_message "✅ Successfully resolved conflicts and merged $branch"
@@ -245,9 +160,7 @@ merge_branch() {
             return 0
         else
             log_message "❌ No conflicted files found, but merge failed. Aborting..."
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
 =======
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             git merge --abort
             FAILED_MERGES=$((FAILED_MERGES + 1))
             return 1
@@ -255,10 +168,6 @@ merge_branch() {
     fi
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 # Process each branch in the test batch
 echo "🔄 Starting test batch processing..."
 echo "---"
@@ -269,8 +178,6 @@ for branch in $BRANCHES; do
     # Check if branch can be merged
     if ! can_merge_branch "$branch"; then
         echo "⏭️  Skipping $branch (already merged or doesn't exist)"
-<<<<<<< HEAD
-=======
 # Main processing loop
 log_message "🧪 Starting test processing..."
 log_message "📊 Batch size: $BATCH_SIZE"
@@ -304,18 +211,12 @@ for ((j=0; j<total_branches; j++)); do
     if ! can_merge_branch "$branch"; then
         log_message "⏭️  Skipping $branch (already merged or doesn't exist)"
         SKIPPED_BRANCHES=$((SKIPPED_BRANCHES + 1))
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
 =======
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         continue
     fi
     
     # Try to merge the branch
     if merge_branch "$branch"; then
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         echo "✅ Test branch $branch processed successfully"
     else
         echo "❌ Failed to process test branch $branch"
@@ -350,9 +251,6 @@ else
 fi
 echo "   1. Review the merged changes: git log --oneline -10"
 echo "   2. Test the application"
-<<<<<<< HEAD
-echo "   3. Delete the test backup branch when satisfied: git push origin --delete $BACKUP_BRANCH"
-=======
         log_message "✅ Branch $branch processed successfully"
         batch_success=$((batch_success + 1))
     else
@@ -403,7 +301,169 @@ log_message "   1. Review the merged changes: git log --oneline -20"
 log_message "   2. Test the application thoroughly"
 log_message "   3. Delete the backup branch when satisfied: git push origin --delete $BACKUP_BRANCH"
 log_message "   4. If test passed, run the full script: ./merge-all-cursor-prs.sh"
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
 =======
 echo "   3. Delete the test backup branch when satisfied: git push origin --delete $BACKUP_BRANCH"
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
+=======
+# Test script to merge a small batch of PRs
+# This will help us test the conflict resolution and merging process
+
+set -e
+
+REPO="Zion-Holdings/zion.app"
+LOG_FILE="test-merge-$(date +%Y%m%d-%H%M%S).log"
+MAX_TEST_PRS=20  # Increased to find non-draft PRs
+
+echo "Starting test PR merge process for $REPO at $(date)" | tee -a "$LOG_FILE"
+echo "Log file: $LOG_FILE" | tee -a "$LOG_FILE"
+
+# Function to log messages
+log() {
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" | tee -a "$LOG_FILE"
+}
+
+# Function to resolve conflicts for a PR
+resolve_pr_conflicts() {
+    local pr_number=$1
+    local branch_name=$2
+    
+    log "Attempting to resolve conflicts for PR #$pr_number (branch: $branch_name)"
+    
+    # Checkout the PR branch
+    if ! git checkout -b "$branch_name" "origin/$branch_name" 2>/dev/null; then
+        log "Failed to checkout branch $branch_name"
+        return 1
+    fi
+    
+    # Try to merge with main
+    if git merge main --no-edit; then
+        log "Successfully resolved conflicts for PR #$pr_number"
+        git push origin "$branch_name" --force
+        git checkout main
+        git branch -D "$branch_name" 2>/dev/null || true
+        return 0
+    else
+        log "Failed to resolve conflicts for PR #$pr_number"
+        git merge --abort 2>/dev/null || true
+        git checkout main
+        git branch -D "$branch_name" 2>/dev/null || true
+        return 1
+    fi
+}
+
+# Function to merge a PR
+merge_pr() {
+    local pr_number=$1
+    local branch_name=$2
+    
+    log "Attempting to merge PR #$pr_number"
+    
+    # Try to merge the PR
+    if gh pr merge "$pr_number" --merge --delete-branch; then
+        log "Successfully merged PR #$pr_number"
+        return 0
+    else
+        log "Failed to merge PR #$pr_number"
+        return 1
+    fi
+}
+
+# Main test function
+main() {
+    local processed=0
+    local merged=0
+    local failed=0
+    local non_draft_found=0
+    
+    # Get a larger batch of open PRs to find non-drafts
+    log "Fetching first $MAX_TEST_PRS open PRs to find non-draft ones..."
+    gh pr list --repo "$REPO" --state open --limit "$MAX_TEST_PRS" --json number,title,headRefName,mergeable,mergeStateStatus,reviewDecision,isDraft > test_prs.json
+    
+    # Process each PR
+    while IFS= read -r pr_data && [ $non_draft_found -lt 3 ]; do  # Only process 3 non-draft PRs
+        local pr_number=$(echo "$pr_data" | jq -r '.number')
+        local title=$(echo "$pr_data" | jq -r '.title')
+        local branch_name=$(echo "$pr_data" | jq -r '.headRefName')
+        local is_draft=$(echo "$pr_data" | jq -r '.isDraft')
+        local mergeable=$(echo "$pr_data" | jq -r '.mergeable')
+        local merge_state=$(echo "$pr_data" | jq -r '.mergeStateStatus')
+        
+        processed=$((processed + 1))
+        
+        log "=== Processing PR #$pr_number ==="
+        log "Title: $title"
+        log "Branch: $branch_name"
+        log "Draft: $is_draft"
+        log "Mergeable: $mergeable"
+        log "Merge State: $merge_state"
+        
+        # Skip draft PRs
+        if [[ "$is_draft" == "true" ]]; then
+            log "Skipping draft PR #$pr_number"
+            continue
+        fi
+        
+        non_draft_found=$((non_draft_found + 1))
+        log "Found non-draft PR #$pr_number, processing..."
+        
+        # Handle different merge states
+        case "$mergeable" in
+            "MERGEABLE")
+                log "PR #$pr_number is mergeable, attempting to merge..."
+                if merge_pr "$pr_number" "$branch_name"; then
+                    merged=$((merged + 1))
+                else
+                    failed=$((failed + 1))
+                fi
+                ;;
+            "CONFLICTING")
+                log "PR #$pr_number has conflicts, attempting to resolve..."
+                if resolve_pr_conflicts "$pr_number" "$branch_name"; then
+                    log "Conflicts resolved, attempting to merge..."
+                    if merge_pr "$pr_number" "$branch_name"; then
+                        merged=$((merged + 1))
+                    else
+                        failed=$((failed + 1))
+                    fi
+                else
+                    failed=$((failed + 1))
+                fi
+                ;;
+            "UNKNOWN")
+                log "PR #$pr_number merge status unknown, attempting to check..."
+                # Force GitHub to check mergeability
+                gh pr view "$pr_number" --repo "$REPO" > /dev/null
+                sleep 5
+                # Check again
+                local new_status=$(gh pr view "$pr_number" --repo "$REPO" --json mergeable,mergeStateStatus --jq '.mergeable + "|" + .mergeStateStatus')
+                log "New status: $new_status"
+                ;;
+            *)
+                log "PR #$pr_number has unexpected mergeable status: $mergeable"
+                failed=$((failed + 1))
+                ;;
+        esac
+        
+        log "---"
+        sleep 3  # Delay between PRs
+        
+    done < <(jq -c '.[]' test_prs.json)
+    
+    # Final summary
+    log "=== TEST MERGE PROCESS COMPLETE ==="
+    log "Total PRs examined: $processed"
+    log "Non-draft PRs found: $non_draft_found"
+    log "Successfully merged: $merged"
+    log "Failed to merge: $failed"
+    if [ $non_draft_found -gt 0 ]; then
+        log "Success rate: $(( (merged * 100) / non_draft_found ))%"
+    fi
+    
+    # Cleanup
+    rm -f test_prs.json
+}
+
+# Error handling
+trap 'log "Script interrupted. Cleaning up..."; git checkout main 2>/dev/null || true; exit 1' INT TERM
+
+# Run main function
+main "$@"

@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Menu, ChevronDown, X, Phone, Mail, MapPin, ArrowRight,
@@ -22,7 +21,6 @@ interface NavigationItem {
   badge?: string;
 }
 
-// Memoized navigation items for better performance
 const navigationItems: NavigationItem[] = [
   {
     label: 'Home',
