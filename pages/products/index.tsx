@@ -1,19 +1,20 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
-const ProductsPage: NextPage = () => {
+const Index: NextPage = () => {
   return (
-    <>
+    <div>
       <Head>
-        <title>Products - Zion</title>
-        <meta name="description" content="Browse our products" />
+        <title>Index - Zion Tech Solutions</title>
+        <meta name="description" content="Index page" />
       </Head>
-      <div className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold mb-6">Products</h1>
-        <p className="text-muted-foreground">Products page coming soon...</p>
-      </div>
-    </>
+      
+      <main>
+        <h1>Index</h1>
+        <p>This page is under construction.</p>
+      </main>
+    </div>
   );
 };
 
-export default ProductsPage;
+export default Index;

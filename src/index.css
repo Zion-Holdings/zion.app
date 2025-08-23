@@ -1,57 +1,22 @@
-/* Tailwind CSS imports are handled by PostCSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* Custom styles */
+@layer base {
+  :root {
+    --font-sans: 'Orbitron', system-ui, sans-serif;
 
-    --background: 0 0% 10%;
-    --foreground: 0 0% 100%;
+    --background: 0 0% 7%;
+    --foreground: 142 71% 45%;
 
-:root[data-theme='light'] {
-  --background: 0 0% 100%;
-  --foreground: 222.2 84% 4.9%;
-  --card: 0 0% 100%;
-  --card-foreground: 222.2 84% 4.9%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 222.2 84% 4.9%;
-  --primary: 221.2 83.2% 53.3%;
-  --primary-foreground: 210 40% 98%;
-  --secondary: 210 40% 96%;
-  --secondary-foreground: 222.2 84% 4.9%;
-  --muted: 210 40% 96%;
-  --muted-foreground: 215.4 16.3% 46.9%;
-  --accent: 210 40% 96%;
-  --accent-foreground: 222.2 84% 4.9%;
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 210 40% 98%;
-  --border: 214.3 31.8% 91.4%;
-  --input: 214.3 31.8% 91.4%;
-  --ring: 221.2 83.2% 53.3%;
-}
+    --card: 0 0% 7%;
+    --card-foreground: 142 71% 45%;
 
-/* Support for Tailwind's dark mode class */
-:root.dark {
-  --background: 222.2 84% 4.9%;
-  --foreground: 210 40% 98%;
-  --card: 222.2 84% 4.9%;
-  --card-foreground: 210 40% 98%;
-  --popover: 222.2 84% 4.9%;
-  --popover-foreground: 210 40% 98%;
-  --primary: 217.2 91.2% 59.8%;
-  --primary-foreground: 222.2 84% 4.9%;
-  --secondary: 217.2 32.6% 17.5%;
-  --secondary-foreground: 210 40% 98%;
-  --muted: 217.2 32.6% 17.5%;
-  --muted-foreground: 215 20.2% 65.1%;
-  --accent: 217.2 32.6% 17.5%;
-  --accent-foreground: 210 40% 98%;
-  --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 210 40% 98%;
-  --border: 217.2 32.6% 17.5%;
-  --input: 217.2 32.6% 17.5%;
-  --ring: 224.3 76.3% 94.1%;
-}
+    --popover: 0 0% 7%;
+    --popover-foreground: 142 71% 45%;
 
-    --primary: 146 70% 40%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 216 84% 50%;
+    --primary-foreground: 142 71% 45%;
 
 /* Global layout improvements */
 html,
@@ -59,63 +24,62 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family:
+    'Inter',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
 
-/* Enhanced container with better responsive behavior */
-.container {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--space-md);
-  padding-right: var(--space-md);
-  max-width: 1200px;
-}
+    --muted: 0 0% 68%;
+    --muted-foreground: 215 20% 65%;
 
     --accent: 228 12% 92%;
     --accent-foreground: 0 0% 7%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive-foreground: 142 71% 45%;
 
     --border: 0 0% 68%;
     --input: 0 0% 68%;
-    --ring: 146 70% 40%;
+    --ring: 216 84% 53%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 10%;
+    --sidebar-background: 0 0% 12%;
 
-    --sidebar-foreground: 0 0% 100%;
+    --sidebar-foreground: 0 0% 7%;
 
-    --sidebar-primary: 146 70% 40%;
+    --sidebar-primary: 216 84% 53%;
 
-    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-primary-foreground: 142 71% 45%;
 
-    --sidebar-accent: 0 0% 68%;
+    --sidebar-accent: 0 0% 20%;
 
-    --sidebar-accent-foreground: 0 0% 7%;
+    --sidebar-accent-foreground: 0 0% 100%;
 
-    --sidebar-border: 0 0% 68%;
+    --sidebar-border: 0 0% 20%;
 
-    --sidebar-ring: 146 70% 40%;
+    --sidebar-ring: 216 84% 53%;
   }
 
   .dark {
-    --background: 0 0% 10%;
-    --foreground: 0 0% 100%;
+    --background: 0 0% 7%;
+    --foreground: 142 71% 45%;
 
     --card: 0 0% 7%;
-    --card-foreground: 0 0% 100%;
+    --card-foreground: 142 71% 45%;
 
     --popover: 0 0% 7%;
-    --popover-foreground: 0 0% 100%;
+    --popover-foreground: 142 71% 45%;
 
-    --primary: 146 70% 40%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 216 84% 50%;
+    --primary-foreground: 142 71% 45%;
 
     --secondary: 0 0% 68%;
     --secondary-foreground: 0 0% 7%;
@@ -127,18 +91,18 @@ body {
     --accent-foreground: 0 0% 7%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive-foreground: 142 71% 45%;
 
     --border: 0 0% 68%;
     --input: 0 0% 68%;
     --ring: 146 70% 40%;
-    --sidebar-background: 0 0% 10%;
+    --sidebar-background: 0 0% 12%;
     --sidebar-foreground: 0 0% 100%;
     --sidebar-primary: 146 70% 40%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 68%;
-    --sidebar-accent-foreground: 0 0% 7%;
-    --sidebar-border: 0 0% 68%;
+    --sidebar-accent: 0 0% 20%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 20%;
     --sidebar-ring: 146 70% 40%;
   }
 
@@ -184,11 +148,10 @@ body {
   }
 }
 
-@media (min-width: 768px) {
-  .container {
-    max-width: 768px;
+@layer base {
+  * {
+    @apply border-border;
   }
-}
 
 @media (min-width: 1024px) {
   .container {
@@ -214,7 +177,7 @@ body {
 :root {
   font-size: 16px;
   line-height: 1.6;
-  
+
   /* Spacing variables */
   --space-xs: 0.25rem;
   --space-sm: 0.5rem;
@@ -222,7 +185,7 @@ body {
   --space-lg: 1.5rem;
   --space-xl: 2rem;
   --space-2xl: 3rem;
-  
+
   /* Font size variables */
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
@@ -233,7 +196,7 @@ body {
   --font-size-3xl: 1.875rem;
   --font-size-4xl: 2.25rem;
   --font-size-5xl: 3rem;
-  
+
   /* Border radius variables */
   --radius: 0.5rem;
 }
@@ -367,7 +330,8 @@ p {
 
 /* Enhanced animations */
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
   50% {
@@ -461,7 +425,9 @@ a:focus-visible {
 }
 
 /* Enhanced form styling */
-input, textarea, select {
+input,
+textarea,
+select {
   background-color: hsl(var(--input));
   border: 1px solid hsl(var(--border));
   border-radius: var(--radius);
@@ -471,13 +437,17 @@ input, textarea, select {
   color: hsl(var(--foreground));
 }
 
-input:disabled, textarea:disabled, select:disabled {
+input:disabled,
+textarea:disabled,
+select:disabled {
   opacity: 0.6;
   cursor: not-allowed;
   background-color: hsl(var(--muted));
 }
 
-input:focus, textarea:focus, select:focus {
+input:focus,
+textarea:focus,
+select:focus {
   outline: none;
   border-color: hsl(var(--ring));
   box-shadow: 0 0 0 3px hsl(var(--ring) / 0.1);
@@ -542,76 +512,133 @@ button,
 /* Enhanced mobile responsiveness */
 @media (max-width: 768px) {
   body {
-    font-size: var(--font-size-sm);
+    @apply bg-background text-foreground font-sans;
   }
 
-  button,
-  .button {
-    padding: var(--space-sm) var(--space-md);
-    font-size: var(--font-size-sm);
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
   }
 
-  h1 {
-    font-size: var(--font-size-3xl);
+  .pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 
-  h2 {
-    font-size: var(--font-size-2xl);
+  /* Custom scrollbar for webkit browsers */
+  ::-webkit-scrollbar {
+    width: 10px;
   }
 
   ::-webkit-scrollbar-track {
-    background: theme('colors.gray.800');
+    background: theme('colors["zion-blue"].DEFAULT');
   }
 
   ::-webkit-scrollbar-thumb {
-    background: theme('colors.green.700');
+    background: theme('colors["zion-purple"].dark');
     border-radius: 5px;
   }
-}
 
   ::-webkit-scrollbar-thumb:hover {
-    background: theme('colors.green.500');
+    background: theme('colors.green.600');
   }
 
-.request-textarea {
-  background-color: hsl(var(--input));
-  border: 1px solid hsl(var(--border));
-  border-radius: var(--radius);
-  padding: var(--space-md);
-  font-size: var(--font-size-base);
-  color: hsl(var(--foreground));
-  resize: vertical;
-  min-height: 120px;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
 
-.request-textarea:focus {
-  outline: none;
-  border-color: hsl(var(--ring));
-  box-shadow: 0 0 0 3px hsl(var(--ring) / 0.1);
-}
+  /* LiveKit UI overrides */
+  [data-lk-theme='default'] {
+    --lk-color-accent: #06B6D4;
+    --lk-button-background: #06B6D4;
+    --lk-button-background-hover: #0891B2;
+    --lk-bg1: #0B1120;
+    --lk-bg2: #0F172A;
+  }
 
-.request-textarea::placeholder {
-  color: hsl(var(--muted-foreground));
-}
-
-/* Enhanced mobile-specific styles */
-@media (max-width: 640px) {
-  .search-dropdown {
-    position: fixed;
-    top: 0;
+  /* Skip link styles */
+  .skip-link {
+    position: absolute;
+    top: -40px;
     left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 50;
-    background: hsl(var(--background));
+    background: #ffffff;
+    color: #000000;
+    padding: 0.5rem 1rem;
+    z-index: 1000;
+    transition: top 0.3s;
   }
 
-  /* Improved placeholder contrast */
-  input::placeholder,
-  textarea::placeholder {
-    color: #b3b3b3;
-    opacity: 1;
+  .skip-link:focus {
+    top: 0;
+  }
+
+/* Basic fallback styles to ensure content renders */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Ensure the app root is visible */
+#__next {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Basic button styles */
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* Basic grid system */
+.grid {
+  display: grid;
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.gap-8 {
+  gap: 2rem;
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .grid-cols-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 0 0.5rem;
   }
 }
   @keyframes slide-up {
@@ -619,6 +646,162 @@ button,
     to { transform: translateY(0); }
   }
 
-  .animate-slide-up {
-    animation: slide-up 0.3s ease-out;
-  }
+/* Ensure text is visible */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 1rem 0;
+  font-weight: 600;
+}
+
+p {
+  margin: 0 0 1rem 0;
+}
+
+/* Basic color utilities */
+.text-white {
+  color: white;
+}
+.text-center {
+  text-align: center;
+}
+.bg-blue-600 {
+  background-color: #2563eb;
+}
+.bg-gray-50 {
+  background-color: #f9fafb;
+}
+.bg-gray-600 {
+  background-color: #4b5563;
+}
+.text-gray-600 {
+  color: #4b5563;
+}
+.text-blue-600 {
+  color: #2563eb;
+}
+.text-3xl {
+  font-size: 1.875rem;
+}
+.text-xl {
+  font-size: 1.25rem;
+}
+.text-lg {
+  font-size: 1.125rem;
+}
+.text-2xl {
+  font-size: 1.5rem;
+}
+.text-4xl {
+  font-size: 2.25rem;
+}
+.font-bold {
+  font-weight: 700;
+}
+.font-semibold {
+  font-weight: 600;
+}
+.mb-4 {
+  margin-bottom: 1rem;
+}
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+.mb-8 {
+  margin-bottom: 2rem;
+}
+.mb-12 {
+  margin-bottom: 3rem;
+}
+.mt-8 {
+  margin-top: 2rem;
+}
+.mr-4 {
+  margin-right: 1rem;
+}
+.p-6 {
+  padding: 1.5rem;
+}
+.p-8 {
+  padding: 2rem;
+}
+.py-16 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+.py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+.rounded-full {
+  border-radius: 9999px;
+}
+.w-16 {
+  width: 4rem;
+}
+.h-16 {
+  height: 4rem;
+}
+.flex {
+  display: flex;
+}
+.items-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+.max-w-3xl {
+  max-width: 48rem;
+}
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+.transition-colors {
+  transition-property:
+    color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.hover\:bg-gray-100:hover {
+  background-color: #f3f4f6;
+}
+.hover\:bg-blue-700:hover {
+  background-color: #1d4ed8;
+}
+.hover\:bg-gray-700:hover {
+  background-color: #374151;
+}
+.min-h-screen {
+  min-height: 100vh;
+}
+.bg-background {
+  background-color: hsl(var(--background));
+}

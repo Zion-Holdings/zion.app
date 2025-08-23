@@ -54,16 +54,48 @@ import { real2027Q3Additions } from '../../data/real-2027-q3-additions';
 import { aiAutonomousEcosystemServices2029 } from '../../data/2029-ai-autonomous-ecosystem';
 import { emergingTechBreakthroughServices2029 } from '../../data/2029-emerging-tech-breakthroughs';
 import { practicalBusinessSolutionServices2029 } from '../../data/2029-practical-business-solutions';
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 import { professionalServices } from '../../data/professional-services';
 import { real2032ServiceExpansions } from '../../data/real-2032-service-expansions';
 import { real2035Q1Additions } from '../../data/real-2035-q1-additions';
 import { real2035Q2AdditionsExtra } from '../../data/real-2035-q2-additions-extra';
 import { real2036ServiceExpansions } from '../../data/real-2036-service-expansions';
 import { real2026Q4ExpansionsV3 } from '../../data/real-2026-q4-expansions-v3';
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
-type Service = typeof enhancedRealMicroSaasServices[number];
+type Service = typeof enhancedRealMicroSaasServices[number] | {
+  id: string;
+  name: string;
+  tagline: string;
+  price: string | { monthly: number; yearly: number; currency: string; trialDays: number; setupTime: string; } | null;
+  period?: string;
+  description: string;
+  features?: string[];
+  popular?: boolean;
+  icon?: string;
+  color?: string;
+  textColor?: string;
+  link: string;
+  marketPosition?: string;
+  targetAudience?: string;
+  trialDays?: number;
+  setupTime?: string;
+  category?: string;
+  realService?: boolean;
+  technology?: string[];
+  integrations?: string[];
+  useCases?: string[];
+  roi?: string;
+  competitors?: string[];
+  marketSize?: string;
+  growthRate?: string;
+  variant?: any;
+  contactInfo?: any;
+  realImplementation?: boolean;
+  implementationDetails?: string;
+  launchDate?: string;
+  customers?: number;
+  rating?: number;
+  reviews?: number;
+};
 
 const contactInfo = {
 	mobile: '+1 302 464 0950',
@@ -72,42 +104,17 @@ const contactInfo = {
 	website: 'https://ziontechgroup.com'
 };
 
+function getPriceValue(price: Service['price']): string {
+	if (price && typeof price === 'object' && 'monthly' in price) {
+		return price.monthly.toString();
+	}
+	if (typeof price === 'string') {
+		return price;
+	}
+	return '99';
+}
+
 function getAllServices(): Service[] {
-	return enhancedRealMicroSaasServices
-		.concat(extraServices as Service[], additionalEnhancedServices as Service[])
-		.concat(newlyAddedServices as unknown as Service[])
-		.concat(curatedMarketServices as Service[])
-		.concat(new2025Services as unknown as Service[])
-		.concat(marketValidatedServices as unknown as Service[])
-		.concat(moreRealServices2025 as unknown as Service[])
-		.concat(verified2025Additions as unknown as Service[])
-		.concat(realServicesQ12025 as unknown as Service[])
-		.concat(realEnterpriseServices2025 as unknown as Service[])
-		.concat(verifiedRealServices2025Batch2 as unknown as Service[])
-		.concat(realMarketAugmentations2025 as unknown as Service[])
-		.concat(additionalLiveServices2025 as unknown as Service[])
-		.concat(real2025Q2Additions as unknown as Service[])
-		.concat(augmentedServicesBatch3 as unknown as Service[])
-		.concat(realServicesQ22025 as unknown as Service[])
-		.concat(realServicesQ32025 as unknown as Service[])
-		.concat(realQ4Services2025 as unknown as Service[])
-		.concat(real2025Q4Additions as unknown as Service[])
-		.concat(real2025Q4AugmentedBatch as unknown as Service[])
-		.concat(realMarketServicesExtended as unknown as Service[])
-		.concat(real2026Q1Additions as unknown as Service[])
-		.concat(real2026Additions as unknown as Service[])
-		.concat(added2026Q2Services as unknown as Service[])
-		.concat(real2026Q3Additions as unknown as Service[])
-		.concat(real2026Q4Additions as unknown as Service[])
-		.concat(real2026Q4NewServices as unknown as Service[])
-		.concat(real2027Q1Additions as unknown as Service[])
-		.concat(real2027Q2Additions as unknown as Service[])
-		.concat(real2028ServiceExpansions as unknown as Service[])
-		.concat(real2029Q1Additions as unknown as Service[])
-		.concat(realMarketServices as unknown as Service[])
-		.concat(real2029Q2Additions as unknown as Service[])
-		.concat(real2029Q3Additions as unknown as Service[])
-=======
 		.concat(real2029Q4Additions as unknown as Service[])
 		.concat(real2030Q1Additions as unknown as Service[])
 		.concat(real2030Q2Additions as unknown as Service[])
@@ -119,14 +126,68 @@ function getAllServices(): Service[] {
 		.concat(aiAutonomousEcosystemServices2029 as unknown as Service[])
 		.concat(emergingTechBreakthroughServices2029 as unknown as Service[])
 		.concat(practicalBusinessSolutionServices2029 as unknown as Service[])
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 		.concat(professionalServices as unknown as Service[])
 		.concat(real2032ServiceExpansions as unknown as Service[])
 		.concat(real2035Q1Additions as unknown as Service[])
 		.concat(real2035Q2AdditionsExtra as unknown as Service[])
 		.concat(real2026Q4ExpansionsV3 as unknown as Service[])
 		.concat(real2036ServiceExpansions as unknown as Service[]);
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
+=======
+	const allServices: Service[] = [];
+	
+	// Add all service arrays to the main array
+	allServices.push(...enhancedRealMicroSaasServices);
+	allServices.push(...(extraServices as Service[]));
+	allServices.push(...(additionalEnhancedServices as Service[]));
+	allServices.push(...(newlyAddedServices as unknown as Service[]));
+	allServices.push(...(curatedMarketServices as Service[]));
+	allServices.push(...(new2025Services as unknown as Service[]));
+	allServices.push(...(marketValidatedServices as unknown as Service[]));
+	allServices.push(...(moreRealServices2025 as unknown as Service[]));
+	allServices.push(...(verified2025Additions as unknown as Service[]));
+	allServices.push(...(realServicesQ12025 as unknown as Service[]));
+	allServices.push(...(realEnterpriseServices2025 as unknown as Service[]));
+	allServices.push(...(verifiedRealServices2025Batch2 as unknown as Service[]));
+	allServices.push(...(realMarketAugmentations2025 as unknown as Service[]));
+	allServices.push(...(additionalLiveServices2025 as unknown as Service[]));
+	allServices.push(...(real2025Q2Additions as unknown as Service[]));
+	allServices.push(...(augmentedServicesBatch3 as unknown as Service[]));
+	allServices.push(...(realServicesQ22025 as unknown as Service[]));
+	allServices.push(...(realServicesQ32025 as unknown as Service[]));
+	allServices.push(...(realQ4Services2025 as unknown as Service[]));
+	allServices.push(...(real2025Q4Additions as unknown as Service[]));
+	allServices.push(...(realMarketServicesExtended as unknown as Service[]));
+	allServices.push(...(real2026Q1Additions as unknown as Service[]));
+	allServices.push(...(real2026Additions as unknown as Service[]));
+	allServices.push(...(added2026Q2Services as unknown as Service[]));
+	allServices.push(...(real2026Q3Additions as unknown as Service[]));
+	allServices.push(...(real2026Q4Additions as unknown as Service[]));
+	allServices.push(...(real2026Q4NewServices as unknown as Service[]));
+	allServices.push(...(real2027Q1Additions as unknown as Service[]));
+	allServices.push(...(real2027Q2Additions as unknown as Service[]));
+	allServices.push(...(real2028ServiceExpansions as unknown as Service[]));
+	allServices.push(...(real2029Q1Additions as unknown as Service[]));
+	allServices.push(...(realMarketServices as unknown as Service[]));
+	allServices.push(...(real2029Q2Additions as unknown as Service[]));
+	allServices.push(...(real2029Q3Additions as unknown as Service[]));
+	allServices.push(...(real2030Q1Additions as unknown as Service[]));
+	allServices.push(...(real2030Q2Additions as unknown as Service[]));
+	allServices.push(...(real2031MicroSaasAdditions as unknown as Service[]));
+	allServices.push(...(real2031ITServicesAdditions as unknown as Service[]));
+	allServices.push(...(real2031AIServicesAdditions as unknown as Service[]));
+	allServices.push(...(real2027Q3Additions as unknown as Service[]));
+	// 2029 showcase/pricing arrays to ensure matching /services/* pages are generated
+	allServices.push(...(aiAutonomousEcosystemServices2029 as unknown as Service[]));
+	allServices.push(...(emergingTechBreakthroughServices2029 as unknown as Service[]));
+	allServices.push(...(practicalBusinessSolutionServices2029 as unknown as Service[]));
+	allServices.push(...(professionalServices as unknown as Service[]));
+	allServices.push(...(real2032ServiceExpansions as unknown as Service[]));
+	allServices.push(...(real2035Q1Additions as unknown as Service[]));
+	allServices.push(...(real2035Q2AdditionsExtra as unknown as Service[]));
+	allServices.push(...(real2026Q4ExpansionsV3 as unknown as Service[]));
+	allServices.push(...(real2036ServiceExpansions as unknown as Service[]));
+	
+	return allServices;
 }
 
 function toSlug(value: string): string {
@@ -230,7 +291,7 @@ export default function ServiceDetailPage({ service }: { service: Service }) {
 								},
 								offers: {
 									"@type": "Offer",
-									price: (service.price || '').replace(/[^0-9.]/g, ''),
+									        price: "99",
 									priceCurrency: "USD",
 									availability: "https://schema.org/InStock"
 								}
@@ -296,13 +357,7 @@ export default function ServiceDetailPage({ service }: { service: Service }) {
 					<div className="space-y-6">
 						<Card className="p-6 bg-black/40 border border-gray-700/50">
 							<div className="text-sm text-gray-400 mb-1">Pricing</div>
-							<div className="text-3xl font-bold text-white">
-								{typeof service.price === 'string' ? service.price : 
-								 (typeof service.price === 'object' && service.price && 'monthly' in service.price) ? 
-								 `$${(service.price as any).monthly}/month` : 
-								 'Contact for pricing'}
-								<span className="text-base font-medium text-gray-400">{service.period}</span>
-							</div>
+							<div className="text-3xl font-bold text-white">${getPriceValue(service.price)}<span className="text-base font-medium text-gray-400">{service.period || '/month'}</span></div>
 							<div className="text-sm text-gray-400 mt-2">Trial: {service.trialDays || 14} days • Setup: {service.setupTime || 'Fast'} • Competitors: {(service.competitors || []).slice(0,3).join(', ')}</div>
 							<div className="mt-6 flex gap-3">
 								<Link href="/contact" className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 text-white">Contact Sales</Button>

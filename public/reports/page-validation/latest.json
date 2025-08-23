@@ -1,14 +1,14 @@
 {
   "summary": {
-    "totalFiles": 1,
-    "filesWithIssues": 1,
-    "totalIssues": 3,
-    "totalWarnings": 1,
-    "buildBreakingFiles": 1,
-    "canBuild": false
+=======
+    "totalFiles": 0,
+    "filesWithIssues": 0,
+    "totalIssues": 0,
+    "totalWarnings": 0,
+    "buildBreakingFiles": 0,
+    "canBuild": true
   },
   "results": [],
   "buildBreakingFiles": [],
-  "generatedAt": "2025-08-21T03:41:49.504Z"
->>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-4bf6
+  "generatedAt": "2025-08-19T18:52:46.253Z"
 }

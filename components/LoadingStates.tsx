@@ -1,355 +1,56 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Loader2, Zap, Brain, Atom, Shield, Rocket, Cpu, Database } from 'lucide-react';
+import { Loader2, Sparkles } from 'lucide-react';
 
 interface SkeletonProps {
   className?: string;
   height?: string;
   width?: string;
+  rounded?: boolean;
 }
 
-export const Skeleton: React.FC<SkeletonProps> = ({ 
+const Skeleton: React.FC<SkeletonProps> = ({ 
   className = '', 
   height = 'h-4', 
-  width = 'w-full' 
+  width = 'w-full', 
+  rounded = true 
 }) => (
   <div 
-    className={`${height} ${width} bg-gray-700/50 rounded animate-pulse ${className}`}
+    className={`${height} ${width} ${rounded ? 'rounded' : ''} bg-gray-200 dark:bg-gray-700 animate-pulse ${className}`}
   />
-);
-
-interface ServiceCardSkeletonProps {
-  className?: string;
-}
-
-export const ServiceCardSkeleton: React.FC<ServiceCardSkeletonProps> = ({ className = '' }) => (
-  <div className={`bg-gray-900/50 backdrop-blur-xl rounded-2xl p-6 border border-cyan-500/20 ${className}`}>
-    <div className="flex items-center space-x-4 mb-4">
-      <Skeleton className="w-12 h-12 rounded-xl" />
-      <div className="flex-1">
-        <Skeleton className="h-5 mb-2" />
-        <Skeleton className="h-4 w-3/4" />
-      </div>
-    </div>
-    <Skeleton className="h-4 mb-2" />
-    <Skeleton className="h-4 mb-2" />
-    <Skeleton className="h-4 w-2/3" />
-    <div className="mt-4 flex space-x-2">
-      <Skeleton className="h-8 w-20" />
-      <Skeleton className="h-8 w-24" />
-    </div>
-  </div>
-);
-
-interface StatsSkeletonProps {
-  count?: number;
-  className?: string;
-}
-
-export const StatsSkeleton: React.FC<StatsSkeletonProps> = ({ count = 4, className = '' }) => (
-  <div className={`grid grid-cols-2 md:grid-cols-4 gap-8 ${className}`}>
-    {Array.from({ length: count }).map((_, i) => (
-      <div key={i} className="text-center">
-        <Skeleton className="h-8 w-20 mx-auto mb-2" />
-        <Skeleton className="h-4 w-24 mx-auto" />
-      </div>
-    ))}
-  </div>
-);
-
-interface CategorySkeletonProps {
-  count?: number;
-  className?: string;
-}
-
-export const CategorySkeleton: React.FC<CategorySkeletonProps> = ({ count = 6, className = '' }) => (
-  <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ${className}`}>
-    {Array.from({ length: count }).map((_, i) => (
-      <div key={i} className="group relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-xl rounded-2xl p-8 border border-cyan-500/20">
-        <Skeleton className="w-16 h-16 rounded-2xl mb-6" />
-        <Skeleton className="h-6 mb-4" />
-        <Skeleton className="h-5 w-24" />
-      </div>
-    ))}
-  </div>
-);
-
-interface HeroSkeletonProps {
-  className?: string;
-}
-
-export const HeroSkeleton: React.FC<HeroSkeletonProps> = ({ className = '' }) => (
-  <section className={`pt-20 pb-32 px-4 sm:px-6 lg:px-8 ${className}`}>
-    <div className="max-w-7xl mx-auto text-center">
-      <div className="mb-8">
-        <Skeleton className="h-16 md:h-20 lg:h-24 w-3/4 mx-auto mb-6" />
-        <Skeleton className="h-6 md:h-8 w-2/3 mx-auto mb-4" />
-        <Skeleton className="h-6 md:h-8 w-1/2 mx-auto" />
-      </div>
-      
-      <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-        <Skeleton className="h-12 w-40" />
-        <Skeleton className="h-12 w-32" />
-      </div>
-      
-      <StatsSkeleton />
-    </div>
-  </section>
 );
 
 interface LoadingSpinnerProps {
   size?: 'sm' | 'md' | 'lg';
   color?: string;
-  className?: string;
+  text?: string;
 }
 
 export const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({ 
   size = 'md', 
-  color = 'text-cyan-400',
-  className = '' 
+  color = 'text-blue-500',
+  text 
 }) => {
   const sizeClasses = {
     sm: 'w-4 h-4',
-    md: 'w-6 h-6',
-    lg: 'w-8 h-8'
+    md: 'w-8 h-8',
+    lg: 'w-12 h-12'
   };
 
   return (
-    <Loader2 
-      className={`${sizeClasses[size]} ${color} animate-spin ${className}`} 
-    />
-  );
-};
-
-interface LoadingDotsProps {
-  className?: string;
-}
-
-export const LoadingDots: React.FC<LoadingDotsProps> = ({ className = '' }) => (
-  <div className={`flex space-x-1 ${className}`}>
-    {[0, 1, 2].map((i) => (
+    <div className="flex flex-col items-center justify-center space-y-3">
       <motion.div
-        key={i}
-        className="w-2 h-2 bg-cyan-400 rounded-full"
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.5, 1, 0.5]
-        }}
-        transition={{
-          duration: 1,
-          repeat: Infinity,
-          delay: i * 0.2
-        }}
-      />
-    ))}
-  </div>
-);
-
-interface LoadingWaveProps {
-  className?: string;
-}
-
-export const LoadingWave: React.FC<LoadingWaveProps> = ({ className = '' }) => (
-  <div className={`flex space-x-1 ${className}`}>
-    {[0, 1, 2, 3, 4].map((i) => (
-      <motion.div
-        key={i}
-        className="w-1 bg-cyan-400 rounded-full"
-        animate={{
-          height: [20, 40, 20],
-          opacity: [0.5, 1, 0.5]
-        }}
-        transition={{
-          duration: 1,
-          repeat: Infinity,
-          delay: i * 0.1
-        }}
-      />
-    ))}
-  </div>
-);
-
-interface LoadingPulseProps {
-  className?: string;
-}
-
-export const LoadingPulse: React.FC<LoadingPulseProps> = ({ className = '' }) => (
-  <motion.div
-    className={`w-4 h-4 bg-cyan-400 rounded-full ${className}`}
-    animate={{
-      scale: [1, 1.2, 1],
-      opacity: [1, 0.5, 1]
-    }}
-    transition={{
-      duration: 1.5,
-      repeat: Infinity,
-      ease: "easeInOut"
-    }}
-  />
-);
-
-interface LoadingOrbitProps {
-  size?: number;
-  className?: string;
-}
-
-export const LoadingOrbit: React.FC<LoadingOrbitProps> = ({ size = 40, className = '' }) => (
-  <div className={`relative ${className}`} style={{ width: size, height: size }}>
-    <motion.div
-      className="absolute inset-0 border-2 border-cyan-400/30 rounded-full"
-      animate={{ rotate: 360 }}
-      transition={{
-        duration: 2,
-        repeat: Infinity,
-        ease: "linear"
-      }}
-    />
-    <motion.div
-      className="absolute top-0 left-1/2 w-2 h-2 bg-cyan-400 rounded-full -translate-x-1/2"
-      animate={{ rotate: 360 }}
-      transition={{
-        duration: 1.5,
-        repeat: Infinity,
-        ease: "linear"
-      }}
-    />
-  </div>
-);
-
-interface LoadingMatrixProps {
-  className?: string;
-}
-
-export const LoadingMatrix: React.FC<LoadingMatrixProps> = ({ className = '' }) => (
-  <div className={`grid grid-cols-3 gap-1 ${className}`}>
-    {Array.from({ length: 9 }).map((_, i) => (
-      <motion.div
-        key={i}
-        className="w-2 h-2 bg-cyan-400 rounded"
-        animate={{
-          opacity: [0.3, 1, 0.3],
-          scale: [0.8, 1, 0.8]
-        }}
-        transition={{
-          duration: 2,
-          repeat: Infinity,
-          delay: i * 0.1
-        }}
-      />
-    ))}
-  </div>
-);
-
-interface LoadingNeuralProps {
-  className?: string;
-}
-
-export const LoadingNeural: React.FC<LoadingNeuralProps> = ({ className = '' }) => (
-  <div className={`relative ${className}`}>
-    <motion.div
-      className="w-8 h-8 border-2 border-cyan-400 rounded-full"
-      animate={{
-        scale: [1, 1.2, 1],
-        rotate: [0, 180, 360]
-      }}
-      transition={{
-        duration: 3,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }}
-    />
-    <motion.div
-      className="absolute inset-0 w-8 h-8 border-2 border-cyan-400/50 rounded-full"
-      animate={{
-        scale: [1, 1.5, 1],
-        opacity: [1, 0, 1]
-      }}
-      transition={{
-        duration: 2,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }}
-    />
-  </div>
-);
-
-interface LoadingQuantumProps {
-  className?: string;
-}
-
-export const LoadingQuantum: React.FC<LoadingQuantumProps> = ({ className = '' }) => (
-  <div className={`relative ${className}`}>
-    <motion.div
-      className="w-6 h-6 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"
-      animate={{
-        x: [-10, 10, -10],
-        y: [-10, 10, -10],
-        scale: [1, 1.2, 1]
-      }}
-      transition={{
-        duration: 2,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }}
-    />
-    <motion.div
-      className="absolute inset-0 w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"
-      animate={{
-        x: [10, -10, 10],
-        y: [10, -10, 10],
-        scale: [1.2, 1, 1.2]
-      }}
-      transition={{
-        duration: 2,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }}
-    />
-  </div>
-);
-
-interface LoadingContentProps {
-  type?: 'spinner' | 'dots' | 'wave' | 'pulse' | 'orbit' | 'matrix' | 'neural' | 'quantum';
-  size?: 'sm' | 'md' | 'lg';
-  text?: string;
-  className?: string;
-}
-
-export const LoadingContent: React.FC<LoadingContentProps> = ({ 
-  type = 'spinner',
-  size = 'md',
-  text = 'Loading...',
-  className = '' 
-}) => {
-  const renderLoader = () => {
-    switch (type) {
-      case 'dots':
-        return <LoadingDots />;
-      case 'wave':
-        return <LoadingWave />;
-      case 'pulse':
-        return <LoadingPulse />;
-      case 'orbit':
-        return <LoadingOrbit />;
-      case 'matrix':
-        return <LoadingMatrix />;
-      case 'neural':
-        return <LoadingNeural />;
-      case 'quantum':
-        return <LoadingQuantum />;
-      default:
-        return <LoadingSpinner size={size} />;
-    }
-  };
-
-  return (
-    <div className={`flex flex-col items-center justify-center space-y-4 ${className}`}>
-      {renderLoader()}
+        animate={{ rotate: 360 }}
+        transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+        className={`${sizeClasses[size]} ${color}`}
+      >
+        <Loader2 className="w-full h-full" />
+      </motion.div>
       {text && (
         <motion.p
-          className="text-gray-400 text-sm font-medium"
-          animate={{ opacity: [0.5, 1, 0.5] }}
-          transition={{ duration: 2, repeat: Infinity }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="text-sm text-gray-600 dark:text-gray-400 text-center"
         >
           {text}
         </motion.p>
@@ -358,4 +59,195 @@ export const LoadingContent: React.FC<LoadingContentProps> = ({
   );
 };
 
-export default LoadingContent;
+interface PageLoaderProps {
+  message?: string;
+  showProgress?: boolean;
+}
+
+export const PageLoader: React.FC<PageLoaderProps> = ({ 
+  message = "Loading Zion Tech Group...",
+  showProgress = true 
+}) => {
+  const [progress, setProgress] = React.useState(0);
+
+  React.useEffect(() => {
+    if (!showProgress) return;
+    
+    const interval = setInterval(() => {
+      setProgress(prev => {
+        if (prev >= 90) return prev;
+        return prev + Math.random() * 10;
+      });
+    }, 200);
+
+    return () => clearInterval(interval);
+  }, [showProgress]);
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-90 backdrop-blur-sm z-50 flex items-center justify-center">
+      <div className="text-center">
+        {/* Logo/Icon */}
+        <motion.div
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="mb-8"
+        >
+          <div className="w-24 h-24 mx-auto bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center">
+            <Sparkles className="w-12 h-12 text-white" />
+          </div>
+        </motion.div>
+
+        {/* Loading Text */}
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-2xl font-bold text-white mb-4"
+        >
+          {message}
+        </motion.h2>
+
+        {/* Progress Bar */}
+        {showProgress && (
+          <motion.div
+            initial={{ opacity: 0, scaleX: 0 }}
+            animate={{ opacity: 1, scaleX: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="w-64 mx-auto"
+          >
+            <div className="w-full bg-gray-700 rounded-full h-2 mb-2">
+              <motion.div
+                className="bg-gradient-to-r from-cyan-500 to-blue-600 h-2 rounded-full"
+                initial={{ width: 0 }}
+                animate={{ width: `${progress}%` }}
+                transition={{ duration: 0.3 }}
+              />
+            </div>
+            <p className="text-sm text-gray-400">{Math.round(progress)}%</p>
+          </motion.div>
+        )}
+
+        {/* Loading Animation */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
+          className="mt-8"
+        >
+          <LoadingSpinner size="md" color="text-cyan-400" />
+        </motion.div>
+      </div>
+    </div>
+  );
+};
+
+interface ContentSkeletonProps {
+  type?: 'card' | 'list' | 'grid' | 'article';
+  count?: number;
+}
+
+export const ContentSkeleton: React.FC<ContentSkeletonProps> = ({ 
+  type = 'card', 
+  count = 1 
+}) => {
+  const renderCardSkeleton = () => (
+    <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+      <div className="flex items-center space-x-4 mb-4">
+        <Skeleton className="w-12 h-12 rounded-full" />
+        <div className="flex-1">
+          <Skeleton className="h-4 w-3/4 mb-2" />
+          <Skeleton className="h-3 w-1/2" />
+        </div>
+      </div>
+      <Skeleton className="h-4 w-full mb-2" />
+      <Skeleton className="h-4 w-5/6 mb-2" />
+      <Skeleton className="h-4 w-4/6" />
+    </div>
+  );
+
+  const renderListSkeleton = () => (
+    <div className="space-y-4">
+      {Array.from({ length: count }).map((_, i) => (
+        <div key={i} className="flex items-center space-x-4 p-4 bg-white dark:bg-gray-800 rounded-lg">
+          <Skeleton className="w-10 h-10 rounded-full" />
+          <div className="flex-1">
+            <Skeleton className="h-4 w-2/3 mb-2" />
+            <Skeleton className="h-3 w-1/2" />
+          </div>
+          <Skeleton className="w-20 h-8" />
+        </div>
+      ))}
+    </div>
+  );
+
+  const renderGridSkeleton = () => (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {Array.from({ length: count }).map((_, i) => (
+        <div key={i} className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+          <Skeleton className="w-full h-32 mb-4 rounded-lg" />
+          <Skeleton className="h-5 w-3/4 mb-3" />
+          <Skeleton className="h-4 w-full mb-2" />
+          <Skeleton className="h-4 w-5/6 mb-2" />
+          <Skeleton className="h-4 w-4/6" />
+        </div>
+      ))}
+    </div>
+  );
+
+  const renderArticleSkeleton = () => (
+    <div className="max-w-4xl mx-auto">
+      <div className="mb-8">
+        <Skeleton className="h-8 w-3/4 mb-4" />
+        <Skeleton className="h-6 w-1/2 mb-6" />
+        <Skeleton className="w-full h-64 rounded-lg mb-6" />
+      </div>
+      
+      <div className="space-y-4">
+        <Skeleton className="h-5 w-full" />
+        <Skeleton className="h-4 w-full" />
+        <Skeleton className="h-4 w-5/6" />
+        <Skeleton className="h-4 w-full" />
+        <Skeleton className="h-4 w-4/6" />
+        <Skeleton className="h-4 w-full" />
+        <Skeleton className="h-4 w-5/6" />
+        <Skeleton className="h-4 w-full" />
+      </div>
+    </div>
+  );
+
+  switch (type) {
+    case 'list':
+      return renderListSkeleton();
+    case 'grid':
+      return renderGridSkeleton();
+    case 'article':
+      return renderArticleSkeleton();
+    default:
+      return (
+        <div className="space-y-4">
+          {Array.from({ length: count }).map((_, i) => (
+            <div key={i}>{renderCardSkeleton()}</div>
+          ))}
+        </div>
+      );
+  }
+};
+
+interface ShimmerEffectProps {
+  className?: string;
+}
+
+export const ShimmerEffect: React.FC<ShimmerEffectProps> = ({ className = '' }) => (
+  <div className={`relative overflow-hidden ${className}`}>
+    <div className="absolute inset-0 -translate-x-full animate-[shimmer_2s_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+  </div>
+);
+
+export default {
+  LoadingSpinner,
+  PageLoader,
+  ContentSkeleton,
+  ShimmerEffect,
+  Skeleton
+};

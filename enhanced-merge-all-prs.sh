@@ -9,7 +9,7 @@ echo "⏰ Started at: $(date)"
 echo "---"
 
 # Configuration
-BATCH_SIZE=50
+BATCH_SIZE=100
 MAX_RETRIES=3
 BACKUP_BRANCH="backup-main-$(date +%Y%m%d-%H%M%S)"
 LOG_FILE="enhanced-merge-log-$(date +%Y%m%d-%H%M%S).txt"

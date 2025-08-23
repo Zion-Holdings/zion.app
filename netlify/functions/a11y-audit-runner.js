@@ -1,27 +1,31 @@
 const path = require('path');
 const { spawnSync } = require('child_process');
 
-function runNode(relativePath, args = []) {
-  const abs = path.resolve(__dirname, '..', '..', relativePath);
+function runNode(relPath, args = []) {
+  const abs = path.resolve(__dirname, '..', '..', relPath);
   const res = spawnSync('node', [abs, ...args], { stdio: 'pipe', encoding: 'utf8' });
   return { status: res.status || 0, stdout: res.stdout || '', stderr: res.stderr || '' };
 }
 
-exports.config = { schedule: '*/20 * * * *' };
+exports.config = {
+  schedule: '*/20 * * * *', // every 20 minutes
+};
 
 exports.handler = async () => {
   const logs = [];
-  const step = (name, fn) => {
+  function logStep(name, fn) {
     logs.push(`\n=== ${name} ===`);
     const { status, stdout, stderr } = fn();
     if (stdout) logs.push(stdout);
     if (stderr) logs.push(stderr);
     logs.push(`exit=${status}`);
     return status;
-  };
+  }
 
-  step('a11y-alt-text-auditor', () => runNode('automation/a11y-alt-text-auditor.cjs'));
-  step('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
+  process.env.CANONICAL_URL = process.env.CANONICAL_URL || process.env.SITE_URL || process.env.URL || 'https://ziontechgroup.com';
 
-  return { statusCode: 200, headers: { 'content-type': 'text/plain' }, body: logs.join('\n') };
+  logStep('a11y:audit', () => runNode('automation/a11y-audit.cjs'));
+  logStep('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
+
+  return { statusCode: 200, body: logs.join('\n') };
 };

@@ -1,492 +1,402 @@
 import React from 'react';
-import Head from 'next/head';
-import { Shield, Scale, Users, Globe, Brain, Heart, Target, Zap } from 'lucide-react';
+import { Metadata } from 'next';
+import Link from 'next/link';
+import { 
+  Brain, Zap, Target, BarChart3, Users, TrendingUp, 
+  MessageSquare, Mail, Phone, MapPin, ArrowRight,
+  Star, CheckCircle, Rocket, Globe, Shield, Cpu,
+  FileText, Image, Video, Music, Palette, Type,
+  User, Search, Eye, Heart, ShoppingCart, Scale,
+  Shield, Lock, Eye, Users2, Award, CheckCircle,
+  AlertTriangle, Target, BarChart3
+} from 'lucide-react';
 
-const AIEthicsGovernancePage: React.FC = () => {
+export const metadata: Metadata = {
+  title: 'AI Ethics Governance | Zion Tech Group',
+  description: 'Comprehensive AI ethics governance platform that ensures responsible AI development and deployment.',
+  keywords: 'AI ethics, AI governance, responsible AI, AI compliance, ethical AI, AI regulations',
+  openGraph: {
+    title: 'AI Ethics Governance | Zion Tech Group',
+    description: 'Comprehensive AI ethics governance platform that ensures responsible AI development and deployment.',
+    url: 'https://ziontechgroup.com/ai-ethics-governance',
+    siteName: 'Zion Tech Group',
+    images: [
+      {
+        url: 'https://ziontechgroup.com/og-image-ai-ethics-governance.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'AI Ethics Governance',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Ethics Governance | Zion Tech Group',
+    description: 'Comprehensive AI ethics governance platform that ensures responsible AI development and deployment.',
+    images: ['https://ziontechgroup.com/og-image-ai-ethics-governance.jpg'],
+  },
+  alternates: {
+    canonical: 'https://ziontechgroup.com/ai-ethics-governance',
+  },
+};
+
+const contactInfo = {
+  mobile: '+1 302 464 0950',
+  email: 'kleber@ziontechgroup.com',
+  address: '364 E Main St STE 1008 Middletown DE 19709',
+  website: 'https://ziontechgroup.com'
+};
+
+export default function AIEthicsGovernance() {
   return (
-    <>
-      <Head>
-        <title>AI Ethics & Governance - Zion Tech Group</title>
-        <meta name="description" content="Ensure responsible AI development with Zion Tech Group's AI ethics and governance framework. Ethical AI principles, compliance, and responsible innovation." />
-        <meta name="keywords" content="AI ethics, AI governance, responsible AI, ethical AI development, AI compliance, Zion Tech Group" />
-        <link rel="canonical" href="https://ziontechgroup.com/ai-ethics-governance" />
-      </Head>
-
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-amber-900 to-slate-900">
-        {/* Hero Section */}
-        <section className="relative py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto text-center">
-            <div className="mb-8">
-              <Shield className="mx-auto h-16 w-16 text-amber-400" />
+    <div className="min-h-screen bg-black text-white">
+      {/* Hero Section */}
+      <section className="relative py-20 lg:py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/20 via-teal-900/20 to-cyan-900/20"></div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 text-sm font-medium mb-8">
+              <Scale className="w-4 h-4 mr-2" />
+              AI Ethics & Governance Platform
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              AI Ethics & Governance
+            
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">
+              AI Ethics Governance
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Building responsible AI systems with ethical principles, 
-              transparent governance, and human-centered design.
+            
+            <p className="text-xl lg:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
+              The world's most comprehensive AI ethics governance platform that ensures responsible AI development, 
+              deployment, and compliance with ethical standards and regulations.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link 
+                href="/contact" 
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-xl font-semibold text-white hover:from-emerald-700 hover:to-teal-700 transition-all duration-300 transform hover:scale-105"
+              >
+                Get Started
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Link>
+              <Link 
+                href="#features" 
+                className="inline-flex items-center px-8 py-4 border border-emerald-500/30 rounded-xl font-semibold text-emerald-300 hover:bg-emerald-500/10 transition-all duration-300"
+              >
+                Learn More
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section id="features" className="py-20 bg-gradient-to-b from-black to-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+              Revolutionary AI Ethics Governance
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Our AI platform handles every aspect of ethical AI governance from development guidelines to compliance monitoring, 
+              ensuring responsible and trustworthy AI systems.
             </p>
           </div>
-        </section>
 
-        {/* Framework Overview */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Ethical AI Framework
-              </h2>
-              <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-                Our comprehensive framework ensures AI systems are developed and deployed 
-                with ethical considerations, transparency, and human welfare at the core.
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-emerald-900/20 to-teal-900/20 border border-emerald-500/20">
+              <div className="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-4">
+                <Scale className="w-6 h-6 text-emerald-400" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Ethical Framework</h3>
+              <p className="text-gray-400">
+                Comprehensive ethical guidelines and principles for AI development and deployment.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700">
-                <Scale className="h-12 w-12 text-amber-400 mb-4" />
-                <h3 className="text-xl font-semibold text-white mb-3">Ethical Principles</h3>
-                <p className="text-gray-300">
-                  Core ethical principles guiding AI development: 
-                  fairness, transparency, accountability, and human dignity.
-                </p>
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-teal-900/20 to-cyan-900/20 border border-teal-500/20">
+              <div className="w-12 h-12 bg-teal-500/20 rounded-xl flex items-center justify-center mb-4">
+                <Shield className="w-6 h-6 text-teal-400" />
               </div>
+              <h3 className="text-xl font-semibold mb-3">Compliance Monitoring</h3>
+              <p className="text-gray-400">
+                Real-time monitoring and enforcement of ethical standards and regulatory requirements.
+              </p>
+            </div>
 
-              <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700">
-                <Users className="h-12 w-12 text-blue-400 mb-4" />
-                <h3 className="text-xl font-semibold text-white mb-3">Human-Centered Design</h3>
-                <p className="text-gray-300">
-                  AI systems designed to enhance human capabilities 
-                  and well-being while respecting human rights.
-                </p>
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-cyan-900/20 to-blue-900/20 border border-cyan-500/20">
+              <div className="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-4">
+                <Eye className="w-6 h-6 text-cyan-400" />
               </div>
+              <h3 className="text-xl font-semibold mb-3">Transparency Tools</h3>
+              <p className="text-gray-400">
+                Comprehensive visibility into AI decision-making processes and outcomes.
+              </p>
+            </div>
 
-              <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700">
-                <Globe className="h-12 w-12 text-green-400 mb-4" />
-                <h3 className="text-xl font-semibold text-white mb-3">Global Standards</h3>
-                <p className="text-gray-300">
-                  Alignment with international AI ethics standards 
-                  and regulatory frameworks across jurisdictions.
-                </p>
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-blue-900/20 to-indigo-900/20 border border-blue-500/20">
+              <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-4">
+                <Users2 className="w-6 h-6 text-blue-400" />
               </div>
+              <h3 className="text-xl font-semibold mb-3">Stakeholder Engagement</h3>
+              <p className="text-gray-400">
+                Tools for involving diverse stakeholders in AI governance and decision-making.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-indigo-900/20 to-purple-900/20 border border-indigo-500/20">
+              <div className="w-12 h-12 bg-indigo-500/20 rounded-xl flex items-center justify-center mb-4">
+                <AlertTriangle className="w-6 h-6 text-indigo-400" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Risk Assessment</h3>
+              <p className="text-gray-400">
+                Comprehensive evaluation of AI system risks and ethical implications.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-900/20 to-pink-900/20 border border-purple-500/20">
+              <div className="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mb-4">
+                <BarChart3 className="w-6 h-6 text-purple-400" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Performance Metrics</h3>
+              <p className="text-gray-400">
+                Measurable indicators of ethical AI performance and compliance.
+              </p>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Core Principles */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-800/20">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-16">
-              Core Ethical Principles
+      {/* Governance Capabilities Section */}
+      <section className="py-20 bg-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+              AI Governance Capabilities
             </h2>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="space-y-6">
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Fairness & Non-Discrimination</h3>
-                  <p className="text-gray-300">
-                    AI systems that treat all individuals fairly, 
-                    avoiding bias and discrimination based on protected characteristics.
-                  </p>
-                </div>
-
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Transparency & Explainability</h3>
-                  <p className="text-gray-300">
-                    Clear understanding of how AI systems make decisions 
-                    and operate, enabling human oversight and accountability.
-                  </p>
-                </div>
-
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Privacy & Data Protection</h3>
-                  <p className="text-gray-300">
-                    Robust protection of personal data and privacy, 
-                    with clear consent mechanisms and data governance.
-                  </p>
-                </div>
-              </div>
-
-              <div className="space-y-6">
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Safety & Reliability</h3>
-                  <p className="text-gray-300">
-                    AI systems that are safe, reliable, and robust, 
-                    with appropriate safeguards and risk mitigation.
-                  </p>
-                </div>
-
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Accountability & Oversight</h3>
-                  <p className="text-gray-300">
-                    Clear lines of responsibility and human oversight 
-                    for AI system decisions and outcomes.
-                  </p>
-                </div>
-
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Human Agency & Control</h3>
-                  <p className="text-gray-300">
-                    AI systems that enhance human capabilities while 
-                    preserving human autonomy and decision-making authority.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Governance Framework */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-16">
-              Governance & Compliance
-            </h2>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                <h3 className="text-xl font-semibold text-white mb-3">Ethics Review Boards</h3>
-                <p className="text-gray-300">
-                  Independent review processes for AI projects, 
-                  ensuring ethical considerations are addressed.
-                </p>
-              </div>
-
-              <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                <h3 className="text-xl font-semibold text-white mb-3">Risk Assessment</h3>
-                <p className="text-gray-300">
-                  Comprehensive risk assessment frameworks for 
-                  AI system development and deployment.
-                </p>
-              </div>
-
-              <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                <h3 className="text-xl font-semibold text-white mb-3">Compliance Monitoring</h3>
-                <p className="text-gray-300">
-                  Ongoing monitoring and auditing of AI systems 
-                  for compliance with ethical standards.
-                </p>
-              </div>
-
-              <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                <h3 className="text-xl font-semibold text-white mb-3">Stakeholder Engagement</h3>
-                <p className="text-gray-300">
-                  Inclusive engagement with diverse stakeholders 
-                  in AI development and governance processes.
-                </p>
-              </div>
-
-              <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                <h3 className="text-xl font-semibold text-white mb-3">Incident Response</h3>
-                <p className="text-gray-300">
-                  Clear protocols for responding to AI-related 
-                  incidents and ethical violations.
-                </p>
-              </div>
-
-              <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                <h3 className="text-xl font-semibold text-white mb-3">Continuous Improvement</h3>
-                <p className="text-gray-300">
-                  Regular review and updates of ethical frameworks 
-                  based on lessons learned and emerging challenges.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Implementation Process */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-800/20">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-16">
-              Implementation Process
-            </h2>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="space-y-6">
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Design Phase</h3>
-                  <p className="text-gray-300">
-                    Ethical considerations integrated into AI system 
-                    design from the earliest stages of development.
-                  </p>
-                </div>
-
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Development Phase</h3>
-                  <p className="text-gray-300">
-                    Ethical testing and validation throughout 
-                    the AI development lifecycle.
-                  </p>
-                </div>
-
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Deployment Phase</h3>
-                  <p className="text-gray-300">
-                    Ethical monitoring and oversight during 
-                    AI system deployment and operation.
-                  </p>
-                </div>
-              </div>
-
-              <div className="space-y-6">
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Training & Education</h3>
-                  <p className="text-gray-300">
-                    Comprehensive training for teams on ethical 
-                    AI principles and governance practices.
-                  </p>
-                </div>
-
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Documentation</h3>
-                  <p className="text-gray-300">
-                    Clear documentation of ethical decisions, 
-                    processes, and compliance measures.
-                  </p>
-                </div>
-
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Audit & Review</h3>
-                  <p className="text-gray-300">
-                    Regular audits and reviews to ensure 
-                    ongoing compliance with ethical standards.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Use Cases */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-16">
-              Applications & Use Cases
-            </h2>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="space-y-6">
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Healthcare AI</h3>
-                  <p className="text-gray-300">
-                    Ethical AI systems for medical diagnosis, 
-                    treatment planning, and patient care.
-                  </p>
-                </div>
-
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Financial Services</h3>
-                  <p className="text-gray-300">
-                    Ethical AI for credit scoring, fraud detection, 
-                    and financial decision-making.
-                  </p>
-                </div>
-
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Criminal Justice</h3>
-                  <p className="text-gray-300">
-                    Ethical AI systems for risk assessment, 
-                    sentencing recommendations, and parole decisions.
-                  </p>
-                </div>
-              </div>
-
-              <div className="space-y-6">
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Education Technology</h3>
-                  <p className="text-gray-300">
-                    Ethical AI for personalized learning, 
-                    student assessment, and educational outcomes.
-                  </p>
-                </div>
-
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Employment & HR</h3>
-                  <p className="text-gray-300">
-                    Ethical AI for hiring, performance evaluation, 
-                    and workplace decision-making.
-                  </p>
-                </div>
-
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Social Media</h3>
-                  <p className="text-gray-300">
-                    Ethical AI for content moderation, 
-                    recommendation systems, and user safety.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Technology & Tools */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-800/20">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-16">
-              Technology & Tools
-            </h2>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="space-y-6">
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Bias Detection</h3>
-                  <p className="text-gray-300">
-                    AI tools for detecting and mitigating bias 
-                    in machine learning models and datasets.
-                  </p>
-                </div>
-
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Explainability Tools</h3>
-                  <p className="text-gray-300">
-                    Technologies for making AI decisions 
-                    interpretable and explainable to humans.
-                  </p>
-                </div>
-
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Privacy-Preserving AI</h3>
-                  <p className="text-gray-300">
-                    Techniques like federated learning and 
-                    differential privacy for data protection.
-                  </p>
-                </div>
-              </div>
-
-              <div className="space-y-6">
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Ethical Testing</h3>
-                  <p className="text-gray-300">
-                    Automated testing frameworks for evaluating 
-                    AI system behavior and ethical compliance.
-                  </p>
-                </div>
-
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Monitoring Systems</h3>
-                  <p className="text-gray-300">
-                    Real-time monitoring of AI systems for 
-                    ethical violations and compliance issues.
-                  </p>
-                </div>
-
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Governance Platforms</h3>
-                  <p className="text-gray-300">
-                    Integrated platforms for managing AI ethics, 
-                    compliance, and governance processes.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Benefits */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-16">
-              Benefits & Impact
-            </h2>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="space-y-6">
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Trust & Confidence</h3>
-                  <p className="text-gray-300">
-                    Building trust with users, customers, and 
-                    stakeholders through ethical AI practices.
-                  </p>
-                </div>
-
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Risk Mitigation</h3>
-                  <p className="text-gray-300">
-                    Reducing risks associated with AI bias, 
-                    discrimination, and unintended consequences.
-                  </p>
-                </div>
-
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Regulatory Compliance</h3>
-                  <p className="text-gray-300">
-                    Ensuring compliance with emerging AI 
-                    regulations and ethical standards.
-                  </p>
-                </div>
-              </div>
-
-              <div className="space-y-6">
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Innovation Leadership</h3>
-                  <p className="text-gray-300">
-                    Positioning as a leader in responsible 
-                    AI development and ethical innovation.
-                  </p>
-                </div>
-
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Sustainable Growth</h3>
-                  <p className="text-gray-300">
-                    Building sustainable AI systems that 
-                    benefit society and avoid harmful impacts.
-                  </p>
-                </div>
-
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Human Well-being</h3>
-                  <p className="text-gray-300">
-                    Ensuring AI systems enhance human 
-                    capabilities and contribute to well-being.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Get Started */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-800/20">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Build Ethical AI Systems
-            </h2>
-            <p className="text-lg text-gray-300 mb-8">
-              Ready to implement ethical AI governance? Our framework will help you 
-              build responsible AI systems that benefit society.
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Our AI platform provides comprehensive governance tools across all aspects of ethical AI development.
             </p>
-            
-            <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700">
-              <Shield className="mx-auto h-12 w-12 text-amber-400 mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-4">Getting Started</h3>
-              <div className="grid md:grid-cols-2 gap-6 text-left">
-                <div>
-                  <h4 className="font-semibold text-white mb-2">For Organizations</h4>
-                  <ul className="space-y-1 text-gray-300 text-sm">
-                    <li>• Ethics framework implementation</li>
-                    <li>• Governance structure design</li>
-                    <li>• Team training and education</li>
-                    <li>• Compliance monitoring</li>
-                  </ul>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-emerald-900/20 to-teal-900/20 border border-emerald-500/20">
+              <div className="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-4">
+                <Search className="w-6 h-6 text-emerald-400" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-emerald-400">Ethical Auditing</h3>
+              <ul className="text-gray-400 space-y-2">
+                <li>• Bias detection</li>
+                <li>• Fairness assessment</li>
+                <li>• Transparency review</li>
+                <li>• Accountability checks</li>
+                <li>• Impact evaluation</li>
+              </ul>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-teal-900/20 to-cyan-900/20 border border-teal-500/20">
+              <div className="w-12 h-12 bg-teal-500/20 rounded-xl flex items-center justify-center mb-4">
+                <Shield className="w-6 h-6 text-teal-400" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-teal-400">Compliance Management</h3>
+              <ul className="text-gray-400 space-y-2">
+                <li>• Regulatory tracking</li>
+                <li>• Policy enforcement</li>
+                <li>• Documentation management</li>
+                <li>• Audit trails</li>
+                <li>• Reporting tools</li>
+              </ul>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-cyan-900/20 to-blue-900/20 border border-cyan-500/20">
+              <div className="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-4">
+                <Eye className="w-6 h-6 text-cyan-400" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-cyan-400">Explainability</h3>
+              <ul className="text-gray-400 space-y-2">
+                <li>• Decision explanations</li>
+                <li>• Model interpretability</li>
+                <li>• Feature importance</li>
+                <li>• Confidence scoring</li>
+                <li>• Uncertainty quantification</li>
+              </ul>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-blue-900/20 to-indigo-900/20 border border-blue-500/20">
+              <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-4">
+                <Users2 className="w-6 h-6 text-blue-400" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-blue-400">Human Oversight</h3>
+              <ul className="text-gray-400 space-y-2">
+                <li>• Human-in-the-loop</li>
+                <li>• Expert review systems</li>
+                <li>• Approval workflows</li>
+                <li>• Escalation procedures</li>
+                <li>• Decision validation</li>
+              </ul>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-indigo-900/20 to-purple-900/20 border border-indigo-500/20">
+              <div className="w-12 h-12 bg-indigo-500/20 rounded-xl flex items-center justify-center mb-4">
+                <AlertTriangle className="w-6 h-6 text-indigo-400" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-indigo-400">Risk Management</h3>
+              <ul className="text-gray-400 space-y-2">
+                <li>• Risk identification</li>
+                <li>• Impact assessment</li>
+                <li>• Mitigation strategies</li>
+                <li>• Monitoring systems</li>
+                <li>• Response planning</li>
+              </ul>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-900/20 to-pink-900/20 border border-purple-500/20">
+              <div className="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mb-4">
+                <BarChart3 className="w-6 h-6 text-purple-400" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-purple-400">Performance Monitoring</h3>
+              <ul className="text-gray-400 space-y-2">
+                <li>• Ethical metrics</li>
+                <li>• Compliance tracking</li>
+                <li>• Performance dashboards</li>
+                <li>• Trend analysis</li>
+                <li>• Alert systems</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+              How AI Ethics Governance Works
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Our AI platform operates in a continuous cycle of monitoring, evaluating, and ensuring ethical AI practices.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-emerald-400">1</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Framework Setup</h3>
+              <p className="text-gray-400">
+                Establishes ethical guidelines, policies, and governance structures for AI systems.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-teal-400">2</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Continuous Monitoring</h3>
+              <p className="text-gray-400">
+                Real-time surveillance of AI systems for ethical compliance and performance.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 bg-cyan-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-cyan-400">3</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Assessment & Reporting</h3>
+              <p className="text-gray-400">
+                Comprehensive evaluation and transparent reporting of AI system ethics and compliance.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-blue-400">4</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Continuous Improvement</h3>
+              <p className="text-gray-400">
+                Iterative enhancement of governance frameworks based on insights and feedback.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-emerald-900/20 via-teal-900/20 to-cyan-900/20">
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+            Ready to Ensure Ethical AI Development?
+          </h2>
+          <p className="text-xl text-gray-300 mb-8">
+            Join the future of responsible AI where governance ensures trust, transparency, and ethical excellence.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link 
+              href="/contact" 
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-xl font-semibold text-white hover:from-emerald-700 hover:to-teal-700 transition-all duration-300 transform hover:scale-105"
+            >
+              Start Your Free Trial
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Link>
+            <a 
+              href={`tel:${contactInfo.mobile}`}
+              className="inline-flex items-center px-8 py-4 border border-emerald-500/30 rounded-xl font-semibold text-emerald-300 hover:bg-emerald-500/10 transition-all duration-300"
+            >
+              <Phone className="mr-2 w-5 h-5" />
+              Call Now
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-20 bg-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div>
+              <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
+              <p className="text-gray-400 mb-8">
+                Ready to implement comprehensive AI ethics governance? Our team is here to help you get started.
+              </p>
+              
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3">
+                  <Phone className="w-5 h-5 text-emerald-400" />
+                  <a href={`tel:${contactInfo.mobile}`} className="text-gray-300 hover:text-white transition-colors">
+                    {contactInfo.mobile}
+                  </a>
                 </div>
-                <div>
-                  <h4 className="font-semibold text-white mb-2">For AI Teams</h4>
-                  <ul className="space-y-1 text-gray-300 text-sm">
-                    <li>• Ethical design principles</li>
-                    <li>• Bias detection tools</li>
-                    <li>• Testing frameworks</li>
-                    <li>• Documentation templates</li>
-                  </ul>
+                <div className="flex items-center space-x-3">
+                  <Mail className="w-5 h-5 text-emerald-400" />
+                  <a href={`mailto:${contactInfo.email}`} className="text-gray-300 hover:text-white transition-colors">
+                    {contactInfo.email}
+                  </a>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <MapPin className="w-5 h-5 text-emerald-400" />
+                  <span className="text-gray-300">{contactInfo.address}</span>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-      </div>
-    </>
-  );
-};
 
-export default AIEthicsGovernancePage;
+            <div className="bg-gradient-to-br from-emerald-900/20 to-teal-900/20 rounded-2xl p-8 border border-emerald-500/20">
+              <h3 className="text-xl font-semibold mb-4">Request a Demo</h3>
+              <p className="text-gray-400 mb-6">
+                See our AI Ethics Governance Platform in action. Schedule a personalized demo today.
+              </p>
+              <Link 
+                href="/contact" 
+                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-xl font-semibold text-white hover:from-emerald-700 hover:to-teal-700 transition-all duration-300"
+              >
+                Schedule Demo
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}

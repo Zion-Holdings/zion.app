@@ -13,6 +13,7 @@ This document describes the implementation of a comprehensive error boundary sys
 A specialized React Error Boundary that wraps all marketplace routes to catch and handle JavaScript errors gracefully.
 
 **Features**:
+
 - ✅ Catches all unhandled errors in marketplace components
 - ✅ Logs errors to Sentry with detailed context
 - ✅ Provides user-friendly error UI with retry options
@@ -20,6 +21,7 @@ A specialized React Error Boundary that wraps all marketplace routes to catch an
 - ✅ Fallback to page reload if SWR retry fails
 
 **Key Methods**:
+
 - `handleRetry()` - Calls SWR `mutate(() => true, undefined, { revalidate: true })` to refresh all cached data
 - `handleError()` - Logs errors to Sentry with marketplace-specific tags
 
@@ -30,6 +32,7 @@ A specialized React Error Boundary that wraps all marketplace routes to catch an
 A layout component that provides consistent structure for marketplace pages with optional sidebar support.
 
 **Features**:
+
 - Flexible layout with optional sidebar
 - Integrates with existing MarketplaceSidebar component
 - Responsive design considerations
@@ -41,6 +44,7 @@ A layout component that provides consistent structure for marketplace pages with
 A centralized data fetching utility with comprehensive error handling and fallback mechanisms.
 
 **Features**:
+
 - ✅ Try/catch wrapper around fetch calls
 - ✅ Returns fallback empty array `[]` on any error
 - ✅ Logs errors to Sentry with function-specific context
@@ -54,6 +58,7 @@ A centralized data fetching utility with comprehensive error handling and fallba
 Updated API endpoint with additional error handling and fallback support.
 
 **Features**:
+
 - ✅ Try/catch around data processing
 - ✅ Returns empty array instead of error responses
 - ✅ Sentry logging with API-specific context
@@ -85,9 +90,9 @@ import { fetchMarketplaceData } from '@/utils/fetchMarketplaceData';
 
 const MyMarketplaceComponent = () => {
   const fetcher = () => fetchMarketplaceData({ limit: 20 });
-  
+
   const { data, error } = useSWR('/api/marketplace/overview', fetcher);
-  
+
   // data will be [] if any error occurs in fetchMarketplaceData
   return (
     <div>
@@ -112,6 +117,7 @@ const MyMarketplaceComponent = () => {
 Location: `__tests__/components/MarketplaceErrorBoundary.test.tsx`
 
 **Coverage**:
+
 - ✅ Renders children when no error
 - ✅ Shows error fallback when error occurs
 - ✅ Logs to Sentry correctly
@@ -173,4 +179,4 @@ await mutate(() => true, undefined, { revalidate: true });
 - `src/routes/MarketplaceRoutes.tsx`
 - `src/pages/Marketplace.tsx`
 - `pages/api/marketplace/overview.ts`
-- `__tests__/components/MarketplaceErrorBoundary.test.tsx` 
+- `__tests__/components/MarketplaceErrorBoundary.test.tsx`

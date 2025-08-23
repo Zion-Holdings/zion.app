@@ -1,6 +1,5 @@
 /* global jest */
 // __mocks__/@sentry/nextjs.js
-
 const Sentry = {
   init: jest.fn(),
   captureException: jest.fn(),
@@ -10,16 +9,18 @@ const Sentry = {
   setUser: jest.fn(),
   setTag: jest.fn(),
   setExtra: jest.fn(),
-  withScope: jest.fn((callback) => callback({
-    setTag: jest.fn(),
-    setContext: jest.fn(),
-    setUser: jest.fn(),
-    setExtra: jest.fn(),
-    setLevel: jest.fn(),
-    addBreadcrumb: jest.fn(),
-    captureException: jest.fn(),
-    captureMessage: jest.fn(),
-  })),
+  withScope: jest.fn((callback) =>
+    callback({
+      setTag: jest.fn(),
+      setContext: jest.fn(),
+      setUser: jest.fn(),
+      setExtra: jest.fn(),
+      setLevel: jest.fn(),
+      addBreadcrumb: jest.fn(),
+      captureException: jest.fn(),
+      captureMessage: jest.fn()
+    }),
+  ),
   // Add any other Sentry methods you use in your application
   // For example, if you use Performance HOCs or other specific functions:
   withSentryConfig: jest.fn((config) => config),
@@ -30,21 +31,22 @@ const Sentry = {
   wrapErrorGetInitialPropsWithSentry: jest.fn((handler) => handler),
   // If you use any specific Sentry integrations or features, mock them as needed
 };
-
-export const init = Sentry.init;
-export const captureException = Sentry.captureException;
-export const captureMessage = Sentry.captureMessage;
-export const addBreadcrumb = Sentry.addBreadcrumb;
-export const setContext = Sentry.setContext;
-export const setUser = Sentry.setUser;
-export const setTag = Sentry.setTag;
-export const setExtra = Sentry.setExtra;
-export const withScope = Sentry.withScope;
-export const withSentryConfig = Sentry.withSentryConfig;
-export const wrapApiHandlerWithSentry = Sentry.wrapApiHandlerWithSentry;
-export const wrapGetServerSidePropsWithSentry = Sentry.wrapGetServerSidePropsWithSentry;
-export const wrapGetStaticPropsWithSentry = Sentry.wrapGetStaticPropsWithSentry;
-export const wrapAppGetInitialPropsWithSentry = Sentry.wrapAppGetInitialPropsWithSentry;
-export const wrapErrorGetInitialPropsWithSentry = Sentry.wrapErrorGetInitialPropsWithSentry;
-
-export default Sentry;
+const init = Sentry.init;
+const captureException = Sentry.captureException;
+const captureMessage = Sentry.captureMessage;
+const addBreadcrumb = Sentry.addBreadcrumb;
+const setContext = Sentry.setContext;
+const setUser = Sentry.setUser;
+const setTag = Sentry.setTag;
+const setExtra = Sentry.setExtra;
+const withScope = Sentry.withScope;
+const withSentryConfig = Sentry.withSentryConfig;
+const wrapApiHandlerWithSentry = Sentry.wrapApiHandlerWithSentry;
+const wrapGetServerSidePropsWithSentry =
+  Sentry.wrapGetServerSidePropsWithSentry;
+const wrapGetStaticPropsWithSentry = Sentry.wrapGetStaticPropsWithSentry;
+const wrapAppGetInitialPropsWithSentry =
+  Sentry.wrapAppGetInitialPropsWithSentry;
+const wrapErrorGetInitialPropsWithSentry =
+  Sentry.wrapErrorGetInitialPropsWithSentry;
+default Sentry;

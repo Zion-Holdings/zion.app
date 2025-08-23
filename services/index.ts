@@ -229,17 +229,12 @@ export type {
   NetworkStatus
 } from './blockchainService';
 
-// Advanced AI & IT Service types
-export type {
-  SecurityThreat,
-  VulnerabilityAssessment,
-  SecurityIncident,
-  SecurityEvent,
-  SecurityPolicy,
-  SecurityRule,
-  ComplianceReport as SecurityComplianceReport,
-  ComplianceRequirement
-} from './aiCybersecurityService';
+// Export new 2025 services
+export { advancedAIMLServices } from '../data/2025-advanced-ai-ml-services';
+export { advancedCybersecurityServices } from '../data/2025-advanced-cybersecurity-services';
+export { advancedCloudDevOpsServices2025 } from '../data/2025-advanced-cloud-devops-services';
+export { industrySpecificSolutions } from '../data/2025-industry-specific-solutions';
+export { emergingTechnologyServices } from '../data/2025-emerging-technology-services';
 
 export type {
   PipelineConfig,

@@ -1,17 +1,27 @@
 [build]
-  command = "npm ci && npm run export"
-  publish = "out"
+  command = "npm ci && npm run sitemap && npm run build"
+  publish = ".next"
+  functions = "netlify/functions"
 
 [build.environment]
-  NODE_VERSION = "20"
-  NETLIFY_NEXT_PLUGIN_SKIP = "true"
-  # When triggering chained builds via build hook, set NETLIFY_RERUN_CHAIN=1 in the hook payload/env
+  NODE_VERSION = "22.12.0"
+  NPM_FLAGS = "--legacy-peer-deps"
+  NPM_CONFIG_LEGACY_PEER_DEPS = "true"
+  SKIP_TYPE_CHECK = "false"
+  ENABLE_SELF_HEALING = "true"
+  AUTO_FIX_BUILD_ISSUES = "true"
+  BUILD_MONITORING = "true"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[[plugins]]
+  package = "netlify-plugin-cloudinary"
 
 [functions]
   directory = "netlify/functions"
   node_bundler = "esbuild"
 
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
 [[plugins]]
   package = "netlify-plugin-cloudinary"
@@ -28,7 +38,7 @@
 # Scheduled Functions (new automations replacing some GitHub Actions cadence)
 [[scheduled.functions]]
   name = "homepage_advertiser"
-  schedule = "*/15 * * * *" # every 15 minutes
+  schedule = "*/20 * * * *" # every 20 minutes
 
 [[scheduled.functions]]
   name = "cloud_orchestrator"
@@ -83,6 +93,14 @@
   schedule = "*/1 * * * *" # every minute
 
 [[scheduled.functions]]
+  name = "orchestrator-swarm"
+  schedule = "*/3 * * * *" # every 3 minutes
+
+[[scheduled.functions]]
+  name = "cloud-swarm-committer"
+  schedule = "*/2 * * * *" # every 2 minutes
+
+[[scheduled.functions]]
   name = "trigger-all-and-commit"
   schedule = "*/1 * * * *" # every minute
 
@@ -103,105 +121,20 @@
   schedule = "*/10 * * * *" # every 10 minutes
 
 [[scheduled.functions]]
-  name = "ultrafast-front-orchestrator"
-  schedule = "*/5 * * * *" # every 5 minutes
-
-[[scheduled.functions]]
-  name = "autonomous-meta-orchestrator"
-  schedule = "*/1 * * * *" # every minute
-
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
-# New ultra-fast tools
-[[scheduled.functions]]
-  name = "features-capabilities-benefits-advertiser"
-  schedule = "*/2 * * * *" # every 2 minutes
-
-[[scheduled.functions]]
-  name = "hyper-front-index-accelerator"
-  schedule = "*/1 * * * *" # every minute
-
-[[scheduled.functions]]
-  name = "dead-code-report"
-  schedule = "7 */6 * * *"
-
-[[scheduled.functions]]
-  name = "security-audit-runner"
-  schedule = "19 */6 * * *"
-
-[[scheduled.functions]]
-  name = "docs-index-runner"
-  schedule = "11 */4 * * *"
-
-[[scheduled.functions]]
-  name = "repo-knowledge-graph-runner"
-  schedule = "23 */6 * * *"
-
-[[scheduled.functions]]
-  name = "image-optimizer-runner"
-  schedule = "29 */6 * * *"
-
-[[scheduled.functions]]
-  name = "ai-changelog-runner"
-  schedule = "41 */6 * * *"
-
-[[scheduled.functions]]
-  name = "newsroom-runner"
-  schedule = "37 */6 * * *"
-
-[[scheduled.functions]]
-  name = "todo-scanner-runner"
-  schedule = "13 */6 * * *"
-
-[[scheduled.functions]]
-  name = "broken-image-scanner-runner"
-  schedule = "17 */6 * * *"
-
-[[scheduled.functions]]
-  name = "external-link-check-runner"
-  schedule = "31 */6 * * *"
-
-[[scheduled.functions]]
-  name = "repo-radar-runner"
-  schedule = "43 */6 * * *"
-
-[[scheduled.functions]]
-  name = "og-image-update-runner"
-  schedule = "47 */6 * * *"
-
-[[scheduled.functions]]
-  name = "docs-search-index-runner"
-  schedule = "53 */6 * * *"
-
-[[scheduled.functions]]
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
-  name = "todo-summary-runner"
-  schedule = "*/30 * * * *"
-
-[[scheduled.functions]]
-  name = "netlify-auto-healer-runner"
-  schedule = "*/20 * * * *"
-
-# New intelligent cloud automations
-[[scheduled.functions]]
-  name = "innovation-lab"
-  schedule = "*/10 * * * *" # every 10 minutes
-
-[[scheduled.functions]]
-  name = "broken-image-scanner"
-  schedule = "0 */6 * * *" # every 6 hours
-
-[[scheduled.functions]]
-  name = "auto-scheduler"
+  name = "feature-catalog"
   schedule = "*/15 * * * *" # every 15 minutes
 
-[[scheduled.functions]]
-  name = "a11y-alt-text-runner"
-  schedule = "*/10 * * * *" # every 10 minutes
+# Additional quality and collaboration automations
+[[plugins]]
+  package = "./netlify/plugins/quality-gates"
+  [plugins.inputs]
+    maxWarnings = 20
+    sizeBudgetKb = 15000
 
-[[scheduled.functions]]
-  name = "metadata-optimizer-runner"
-  schedule = "*/15 * * * *" # every 15 minutes
+[[plugins]]
+  package = "./netlify/plugins/deploy-preview-commenter"
 
+# Scheduled maintenance automation
 [[scheduled.functions]]
   name = "seo-audit-runner"
   schedule = "0 */2 * * *"
@@ -209,7 +142,6 @@
 [[scheduled.functions]]
   name = "ai-trends-radar-runner"
   schedule = "*/30 * * * *"
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
 [[scheduled.functions]]
   name = "stale-content-auditor-runner"
@@ -258,19 +190,32 @@
 
 [[scheduled.functions]]
   name = "content-freshness-score-runner"
-  schedule = "*/10 * * * *"
+  schedule = "7 */12 * * *"
+
+# Newly added intelligent automations
+[[scheduled.functions]]
+  name = "anchor-links-auto-fixer"
+  schedule = "*/5 * * * *"
 
 [[scheduled.functions]]
   name = "internal-link-graph-runner"
   schedule = "*/5 * * * *"
 
 [[scheduled.functions]]
-  name = "anchor-links-auto-fixer"
-  schedule = "*/5 * * * *"
+  name = "topic-cluster-builder-runner"
+  schedule = "13 */6 * * *"
 
 [[scheduled.functions]]
-  name = "pagespeed-insights-runner"
-  schedule = "11 */6 * * *"
+  name = "topics-map-runner"
+  schedule = "*/20 * * * *"
+
+[[scheduled.functions]]
+  name = "robots-auditor"
+  schedule = "0 */6 * * *"
+
+[[scheduled.functions]]
+  name = "canonical-auditor"
+  schedule = "*/60 * * * *"
 
 # New autonomous orchestrations
 [[scheduled.functions]]
@@ -293,8 +238,11 @@
   name = "duplicate-media-finder-runner"
   schedule = "0 2 * * *"
 
-# Newly added intelligent meta orchestrator
+# Autonomous brain and health monitor
 [[scheduled.functions]]
-  name = "intelligent-meta-orchestrator"
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
-  schedule = "*/3 * * * *"
+  name = "autonomous-cloud-brain"
+  schedule = "*/1 * * * *"
+
+[[scheduled.functions]]
+  name = "function-health-monitor"
+  schedule = "*/5 * * * *"

@@ -1,237 +1,202 @@
-import Head from 'next/head'
-import { useRouter } from 'next/router'
-import { motion } from 'framer-motion'
-import { WifiOff, RefreshCw, Home, ShoppingCart, Clock, Bookmark, Search } from 'lucide-react';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { WifiOff, RefreshCw, Home, Signal } from 'lucide-react';
+import SEOHead from '../components/SEOHead';
 
-
-
-
-
-
-
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import Link from 'next/link'
-import { useState, useEffect } from 'react'
-import {logErrorToProduction} from '@/utils/productionLogger'
-
-export default function OfflinePage() {
-  const router = useRouter()
-
-  const [isOnline, setIsOnline] = useState(false)
-  const [lastUpdate, setLastUpdate] = useState<string>('')
-  const [retryCount, setRetryCount] = useState(0)
-
-  useEffect(() => {
-    // Check online status
-    const updateOnlineStatus = () => {
-      setIsOnline(navigator.onLine)
-      if (navigator.onLine) {
-        setLastUpdate(new Date().toLocaleTimeString())
-      }
-    }
-
-    // Set initial status
-    updateOnlineStatus()
-
-    // Listen for online/offline events
-    window.addEventListener('online', updateOnlineStatus)
-    window.addEventListener('offline', updateOnlineStatus)
-
-    return () => {
-      window.removeEventListener('online', updateOnlineStatus)
-      window.removeEventListener('offline', updateOnlineStatus)
-    }
-  }, [])
-
+const OfflinePage: React.FC = () => {
   const handleRetry = () => {
-    try {
-      setRetryCount(prev => prev + 1)
-      window.location.reload()
-    } catch (err) {
-      logErrorToProduction('Failed to reload page', err)
-    }
-  }
+    window.location.reload();
+  };
 
-  const quickActions = [
-    {
-      title: 'Browse Cached Equipment',
-      description: 'View recently visited equipment listings',
-      icon: Search,
-      href: '/equipment',
-      available: true
-    },
-    {
-      title: 'View Bookmarks',
-      description: 'Access your saved items',
-      icon: Bookmark,
-      href: '/bookmarks',
-      available: true
-    },
-    {
-      title: 'Visit Marketplace',
-      description: 'Browse all available services and gear',
-      icon: ShoppingCart,
-      href: '/marketplace',
-      available: true
-    },
-    {
-      title: 'Go to Homepage',
-      description: 'Return to the main page',
-      icon: Home,
-      href: '/',
-      available: true
+  const handleGoHome = () => {
+    window.location.href = '/';
+  };
+
+  const handleCheckConnection = () => {
+    // Check if we're back online
+    if (navigator.onLine) {
+      window.location.reload();
+    } else {
+      // Use a more modern approach instead of alert
+      const notification = document.createElement('div');
+      notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #ef4444;
+        color: white;
+        padding: 16px;
+        border-radius: 8px;
+        z-index: 10000;
+        font-family: system-ui, sans-serif;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      `;
+      notification.textContent = 'You are still offline. Please check your internet connection.';
+      document.body.appendChild(notification);
+      
+      setTimeout(() => {
+        if (document.body.contains(notification)) {
+          document.body.removeChild(notification);
+        }
+      }, 5000);
     }
-  ]
+  };
 
   return (
-    <div className="min-h-screen bg-gray-900 flex items-center justify-center px-4">
-      <div className="max-w-md mx-auto text-center">
+    <>
+      <SEOHead 
+        title="Offline - Zion Tech Group"
+        description="You are currently offline. Check your internet connection and try again."
+        type="website"
+      />
+      
+      <div className="min-h-screen bg-black text-white flex items-center justify-center p-4">
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-          className="space-y-8"
+          className="max-w-2xl mx-auto text-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
         >
           {/* Offline Icon */}
-          <div className="relative">
-            <div className="w-24 h-24 bg-gradient-to-r from-red-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-6">
-              <WifiOff className="w-12 h-12 text-white" />
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-orange-500 rounded-full blur-xl opacity-20 animate-pulse"></div>
-          </div>
+          <motion.div
+            className="w-32 h-32 mx-auto mb-8 bg-gray-800/50 rounded-full flex items-center justify-center border-4 border-gray-700"
+            animate={{ 
+              scale: [1, 1.05, 1],
+              rotate: [0, 5, -5, 0]
+            }}
+            transition={{ 
+              duration: 3,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          >
+            <WifiOff className="w-16 h-16 text-gray-400" />
+          </motion.div>
 
-          {/* Main Content */}
-          <div className="space-y-4">
-            <h1 className="text-3xl font-bold text-white">
-              You're Offline
-            </h1>
-            <p className="text-gray-300 leading-relaxed">
-              It looks like you've lost your internet connection. Don't worry - some of our content is available offline.
+          {/* Main Message */}
+          <h1 className="text-5xl font-bold text-gray-300 mb-6">
+            You're Offline
+          </h1>
+          
+          <p className="text-xl text-gray-400 mb-8 leading-relaxed">
+            It looks like you've lost your internet connection. Don't worry - some of our content is available offline.
+          </p>
+
+          {/* Connection Status */}
+          <motion.div
+            className="bg-gray-900/50 border border-gray-700 rounded-lg p-6 mb-8"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.3 }}
+          >
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <div className={`w-3 h-3 rounded-full ${navigator.onLine ? 'bg-green-400' : 'bg-red-400'}`}></div>
+              <span className="text-gray-300 font-medium">
+                {navigator.onLine ? 'Connection Restored' : 'No Internet Connection'}
+              </span>
+            </div>
+            
+            <p className="text-gray-400 text-sm">
+              {navigator.onLine 
+                ? 'Great! You\'re back online. Click retry to reload the page.'
+                : 'Please check your internet connection and try again.'
+              }
             </p>
-          </div>
+          </motion.div>
 
           {/* Action Buttons */}
-          <div className="space-y-4">
-            <button
-              onClick={handleRefresh}
-              className="w-full px-6 py-3 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-semibold rounded-xl hover:from-cyan-500 hover:to-blue-600 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 flex items-center justify-center space-x-2"
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <motion.button
+              className="px-8 py-4 bg-cyan-500 hover:bg-cyan-600 text-white font-semibold rounded-lg transition-colors duration-200 flex items-center justify-center gap-3"
+              onClick={handleRetry}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              disabled={!navigator.onLine}
             >
               <RefreshCw className="w-5 h-5" />
-              {retryCount > 0 ? `Retry (${retryCount})` : 'Try Again'}
-            </Button>
-            
-          <Button
-            onClick={() => router.push('/')}
-            variant="outline"
-            size="lg"
-            className="flex items-center gap-2"
-          >
-            <Home className="w-5 h-5" />
-            Go to Homepage
-          </Button>
+              Retry Connection
+            </motion.button>
 
-          <Button
-            onClick={() => router.push('/marketplace')}
-            variant="outline"
-            size="lg"
-            className="flex items-center gap-2"
-          >
-            <ShoppingCart className="w-5 h-5" />
-            Go to Marketplace
-          </Button>
-        </div>
+            <motion.button
+              className="px-8 py-4 bg-gray-700 hover:bg-gray-600 text-white font-semibold rounded-lg transition-colors duration-200 flex items-center justify-center gap-3"
+              onClick={handleCheckConnection}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Signal className="w-5 h-5" />
+              Check Connection
+            </motion.button>
 
-          {/* Quick Actions */}
+            <motion.button
+              className="px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors duration-200 flex items-center justify-center gap-3"
+              onClick={handleGoHome}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Home className="w-5 h-5" />
+              Go Home
+            </motion.button>
+          </div>
+
+          {/* Offline Features */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            className="bg-gray-900/30 border border-gray-700 rounded-lg p-6"
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ delay: 0.6 }}
           >
-            <h2 className="text-2xl font-bold text-center mb-8">Available Offline Features</h2>
-            
-            <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              {quickActions.map((action, index) => (
-                <motion.div
-                  key={action.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-                >
-                  <Card className={`h-full transition-all duration-300 hover:shadow-lg ${
-                    action.available 
-                      ? 'hover:scale-105 cursor-pointer' 
-                      : 'opacity-60 cursor-not-allowed'
-                  }`}>
-                    <CardHeader className="text-center">
-                      <div className={`mx-auto w-12 h-12 rounded-full flex items-center justify-center mb-3 ${
-                        action.available 
-                          ? 'bg-blue-100 dark:bg-blue-900/20' 
-                          : 'bg-gray-100 dark:bg-gray-800'
-                      }`}>
-                        <action.icon className={`w-6 h-6 ${
-                          action.available 
-                            ? 'text-blue-600 dark:text-blue-400' 
-                            : 'text-gray-400'
-                        }`} />
-                      </div>
-                      <CardTitle className="text-lg">{action.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent className="text-center">
-                      <p className="text-muted-foreground mb-4">{action.description}</p>
-                      {action.available ? (
-                        <Button 
-                          onClick={() => router.push(action.href)}
-                          variant="outline" 
-                          size="sm" 
-                          className="w-full"
-                        >
-                          Access
-                        </Button>
-                      ) : (
-                        <Button disabled size="sm" className="w-full">
-                          Requires Internet
-                        </Button>
-                      )}
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          {/* Contact Information */}
-          <div className="pt-6 border-t border-gray-700">
-            <p className="text-sm text-gray-400 mb-3">
-              Need immediate assistance?
-            </p>
-            <div className="space-y-2 text-sm">
-              <div className="text-cyan-400">
-                <strong>Phone:</strong> +1 302 464 0950
-              </div>
-              <div className="text-blue-400">
-                <strong>Email:</strong> kleber@ziontechgroup.com
-              </div>
-            </div>
-          </div>
-
-          {/* Offline Features Info */}
-          <div className="bg-gray-800/50 rounded-xl p-4 border border-gray-700/50">
-            <h3 className="text-sm font-semibold text-white mb-2">
+            <h3 className="text-lg font-semibold text-gray-300 mb-4">
               Available Offline
             </h3>
-            <ul className="text-xs text-gray-400 space-y-1 text-left">
-              <li>• Basic service information</li>
-              <li>• Contact details</li>
-              <li>• Company overview</li>
-              <li>• Cached pages</li>
-            </ul>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
+              <div className="flex items-start gap-3">
+                <div className="w-2 h-2 bg-green-400 rounded-full mt-2"></div>
+                <div>
+                  <p className="text-gray-300 font-medium">Basic Navigation</p>
+                  <p className="text-gray-500 text-sm">Core website structure</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start gap-3">
+                <div className="w-2 h-2 bg-green-400 rounded-full mt-2"></div>
+                <div>
+                  <p className="text-gray-300 font-medium">Cached Content</p>
+                  <p className="text-gray-500 text-sm">Previously viewed pages</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start gap-3">
+                <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2"></div>
+                <div>
+                  <p className="text-gray-300 font-medium">Contact Forms</p>
+                  <p className="text-gray-500 text-sm">Will sync when online</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start gap-3">
+                <div className="w-2 h-2 bg-red-400 rounded-full mt-2"></div>
+                <div>
+                  <p className="text-gray-300 font-medium">Dynamic Content</p>
+                  <p className="text-gray-500 text-sm">Requires internet</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Help Text */}
+          <div className="mt-8 text-gray-500">
+            <p className="text-sm">
+              If you continue to have issues, please contact our support team at{' '}
+              <a 
+                href="mailto:support@ziontechgroup.com" 
+                className="text-cyan-400 hover:text-cyan-300 underline"
+              >
+                support@ziontechgroup.com
+              </a>
+            </p>
           </div>
         </motion.div>
       </div>
-    </div>
+    </>
   );
-};
-
-export default OfflinePage;

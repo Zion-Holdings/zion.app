@@ -1,44 +1,9 @@
 import React from 'react';
-import { AlertTriangle, RefreshCw } from 'lucide-react';
-
-
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import {logErrorToProduction} from '@/utils/productionLogger';
-
-
-interface Props {
-  children: React.ReactNode;
+export function EquipmentErrorBoundary() {
+  return (
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
 }
-
-interface State {
-  hasError: boolean;
-  error?: Error;
-}
-
-export class EquipmentErrorBoundary extends React.Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-    this.state = { hasError: false };
-  }
-
-  static getDerivedStateFromError(error: Error): State {
-    return { hasError: true, error };
-  }
-
-  override componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-    logErrorToProduction('Equipment page error:', error, { componentStack: errorInfo.componentStack });
-  }
-
-  override render() {
-    if (this.state.hasError) {
-      return (
-        <div className="container py-8">
-          <h2>Something went wrong.</h2>
-          <p>Please try refreshing the page or contact support if the problem persists.</p>
-        </div>
-      );
-    }
-    return this.props.children;
-  }
-} 

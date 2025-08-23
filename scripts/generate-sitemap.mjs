@@ -10,8 +10,8 @@ import path from 'path';
 function collectRoutes(dir, base = '') {
   if (!fs.existsSync(dir)) return [];
 
-  const entries = fs.readdirSync(dir);
-  const routes = [];
+const BASE_URL = 'https://ziontechgroup.com';
+const PAGES_DIR = path.join(__dirname, '..', 'pages');
 
   for (const entry of entries) {
     if (entry.startsWith('_') || entry === 'api') continue;
@@ -71,4 +71,4 @@ fs.writeFileSync(path.join(process.cwd(), 'public', 'sitemap.xml'), xml);
 const robots = `User-agent: *\nAllow: /\n\nSitemap: ${baseUrl}/sitemap.xml\n`;
 fs.writeFileSync(path.join(process.cwd(), 'public', 'robots.txt'), robots);
 
-console.log(`Generated ${routes.length} routes to sitemap.xml and robots.txt`);
+console.warn(`Generated ${routes.length} routes to sitemap.xml and robots.txt`);
