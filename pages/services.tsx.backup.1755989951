@@ -11,87 +11,16 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 
-<<<<<<< HEAD
-const ServicesPage: React.FC = () => {
-  const mainServices = [
-    {
-      title: "AI Consciousness Evolution",
-      description: "Revolutionary AI systems that develop self-awareness, emotional intelligence, and autonomous learning capabilities.",
-      icon: <Brain className="w-8 h-8" />,
-      color: "from-purple-500 to-pink-600",
-      features: [
-        "Emotional intelligence development",
-        "Self-aware learning systems",
-        "Consciousness evolution algorithms",
-        "Human-AI collaboration frameworks"
-      ],
-      benefits: [
-        "Enhanced decision-making capabilities",
-        "Improved human-AI interaction",
-        "Autonomous problem-solving",
-        "Continuous self-improvement"
-      ]
-    },
-    {
-      title: "Quantum Computing Solutions",
-      description: "Next-generation quantum computing platforms that solve previously impossible computational problems.",
-      icon: <Atom className="w-8 h-8" />,
-      color: "from-blue-500 to-cyan-600",
-      features: [
-        "Quantum algorithm optimization",
-        "Hybrid quantum-classical systems",
-        "Cryptography and security",
-        "Complex problem solving"
-      ],
-      benefits: [
-        "1000x faster computation",
-        "Breakthrough research capabilities",
-        "Unbreakable encryption",
-        "Optimization solutions"
-      ]
-    },
-    {
-      title: "Advanced Cybersecurity",
-      description: "AI-powered security systems that provide real-time threat detection and autonomous response capabilities.",
-      icon: <Shield className="w-8 h-8" />,
-      color: "from-green-500 to-emerald-600",
-      features: [
-        "AI threat intelligence",
-        "Zero-trust architecture",
-        "Automated incident response",
-        "Behavioral analysis"
-      ],
-      benefits: [
-        "99.9% threat detection rate",
-        "Real-time protection",
-        "Reduced false positives",
-        "Compliance assurance"
-      ]
-    },
-    {
-      title: "Space Technology",
-      description: "Autonomous space exploration systems and resource intelligence platforms for the final frontier.",
-      icon: <Rocket className="w-8 h-8" />,
-      color: "from-orange-500 to-red-600",
-      features: [
-        "Autonomous exploration systems",
-        "Space resource intelligence",
-        "Satellite network management",
-        "Mission planning and execution"
-      ],
-      benefits: [
-        "Reduced mission costs",
-        "Enhanced safety protocols",
-        "Real-time decision making",
-        "Resource optimization"
-      ]
-=======
 // Import our new service data
 import { enterpriseITSolutions } from '../data/2034-enterprise-it-solutions';
 import { innovativeMicroSaasSolutions } from '../data/2034-innovative-micro-saas-solutions';
 import { cuttingEdgeAIServices } from '../data/2034-cutting-edge-ai-services';
 import { real2025Q4AugmentedBatch } from '../data/real-2025-q4-augmented-batch';
 import { real2029Q3Additions } from '../data/real-2029-q3-additions';
+
+// Import our new comprehensive services expansion
+import { comprehensiveServicesExpansion } from '../data/2025-comprehensive-services-expansion';
+import { advancedInnovativeServices } from '../data/2025-advanced-innovative-services';
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -148,7 +77,47 @@ const allServices = [
   ...marketValidatedServices,
   ...industryRealServices,
   ...real2025Q4AugmentedBatch,
+<<<<<<< HEAD
   ...real2029Q3Additions
+=======
+  ...real2029Q3Additions,
+  ...validatedServices2025Q4,
+  ...real2035Q2Additions,
+  ...real2036ServiceExpansions,
+  ...innovative2036MicroSaasServices,
+  ...innovative2036ITServices,
+  // Our new 2025 advanced services
+  ...advanced2025MicroSaasExpansion,
+  ...advanced2025ITSolutionsExpansion,
+  ...advanced2025AIServicesExpansion,
+  // Our new innovative services
+  ...innovative2037MicroSaasServices,
+  ...innovative2037ITServices,
+  ...innovative2037AIServices,
+  ...innovative2038CuttingEdgeServices,
+  ...innovative2038ITInfrastructureServices,
+  // Our additional innovative services
+  ...innovative2037Services,
+  ...advanced2038Services,
+  ...revolutionary2039Services,
+  
+  // Our new innovative 2040 services
+  ...innovative2040FuturisticServices,
+  ...innovative2040ITServices,
+  // Our new comprehensive services
+  ...revolutionary2040FuturisticServices,
+  ...revolutionary2041AdvancedServices,
+  // Our latest innovative services
+  ...advanced2041EnterpriseServices,
+  ...revolutionary2042MicroSaasServices,
+  // Our new 2025 innovative services expansion
+  ...innovative2025MicroSaasExpansion,
+  ...innovative2025ITSolutionsExpansion,
+  ...innovative2025AIServicesExpansion,
+  // Our new comprehensive services expansion
+  ...comprehensiveServicesExpansion,
+  ...advancedInnovativeServices
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-a421
 ];
 
 const categories = [
@@ -272,7 +241,6 @@ export default function Services() {
         return (((b as any).rating || 0) as number) - (((a as any).rating || 0) as number);
       default:
         return 0;
->>>>>>> origin/cursor/add-and-advertise-new-services-then-build-a284
     }
   });
 
