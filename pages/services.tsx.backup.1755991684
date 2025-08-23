@@ -337,6 +337,16 @@ export default function ServicesPage() {
                     size="lg"
                     className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600"
                   >
+<<<<<<< HEAD
+                    <MessageSquare className="w-5 h-5 mr-2" />
+                    Contact Sales Team
+                  </Button>
+                  <Button 
+                    href="/pricing" 
+                    variant="secondary" 
+                    size="lg"
+                    className="border-purple-500/30 text-purple-400 hover:bg-purple-500/20"
+=======
                     <div className="text-cyan-400 mb-4 group-hover:scale-110 transition-transform">
                       {icon}
                     </div>
@@ -535,6 +545,7 @@ export default function ServicesPage() {
                       setPriceRange('All');
                     }}
                     variant="primary"
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-2873
                   >
                     <DollarSign className="w-5 h-5 mr-2" />
                     View Pricing
