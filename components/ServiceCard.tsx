@@ -1,171 +1,238 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Star, Check, ArrowRight, Eye, Heart, Infinity } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
+import { 
+  ArrowRight, Clock, Users, Zap, Shield, Brain, Atom, Rocket, 
+  ExternalLink, Heart, Share2, Bookmark
+} from 'lucide-react';
 
 interface ServiceCardProps {
   service: {
+    id: string;
     name: string;
+    tagline: string;
     description: string;
     category: string;
     type: string;
-    slug: string;
-    features?: string[];
-    pricing?: {
-      monthly?: number;
-      yearly?: number;
-      custom?: boolean;
+    pricing: {
+      starter: string;
+      professional: string;
+      enterprise: string;
+      custom: string;
     };
-    rating?: number;
-    reviewCount?: number;
+    features: string[];
+    benefits: string[];
+    useCases: string[];
+    marketSize: string;
+    targetAudience: string;
+    competitiveAdvantage: string;
+    contact: string;
+    mobile: string;
+    address: string;
+    website: string;
+    slug: string;
   };
-  onClick?: () => void;
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ service, onClick }) => {
+const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const [showFeatures, setShowFeatures] = useState(false);
+  const [isLiked, setIsLiked] = useState(false);
+  const [isBookmarked, setIsBookmarked] = useState(false);
+  const [showFullDescription, setShowFullDescription] = useState(false);
 
-  const handleClick = () => {
-    if (onClick) {
-      onClick();
+  // Get category icon and color
+  const getCategoryIcon = (category: string) => {
+    if (category.toLowerCase().includes('ai') || category.toLowerCase().includes('consciousness')) {
+      return { icon: Brain, color: 'from-cyan-500 to-blue-600' };
+    } else if (category.toLowerCase().includes('quantum')) {
+      return { icon: Atom, color: 'from-blue-500 to-indigo-600' };
+    } else if (category.toLowerCase().includes('cybersecurity') || category.toLowerCase().includes('security')) {
+      return { icon: Shield, color: 'from-red-500 to-orange-600' };
+    } else if (category.toLowerCase().includes('space')) {
+      return { icon: Rocket, color: 'from-indigo-500 to-purple-600' };
+    } else if (category.toLowerCase().includes('enterprise') || category.toLowerCase().includes('business')) {
+      return { icon: Users, color: 'from-green-500 to-teal-600' };
     } else {
-      window.location.href = service.slug;
+      return { icon: Zap, color: 'from-purple-500 to-pink-600' };
     }
   };
 
+  const { icon: CategoryIcon, color } = getCategoryIcon(service.category);
+
+  // Truncate description for better card layout
+  const truncatedDescription = service.description.length > 120 
+    ? service.description.substring(0, 120) + '...' 
+    : service.description;
+
+  const fullDescription = service.description;
+
   return (
     <motion.div
-      className="group cursor-pointer"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onClick={handleClick}
-      whileHover={{ y: -5 }}
+      className="group relative bg-gray-800/30 rounded-2xl border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300 hover:bg-gray-800/50 overflow-hidden"
+      onHoverStart={() => setIsHovered(true)}
+      onHoverEnd={() => setIsHovered(false)}
+      whileHover={{ y: -8, scale: 1.02 }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
     >
-      <div className="relative p-6 bg-gradient-to-br from-gray-900/60 to-gray-800/60 border border-gray-700/30 rounded-2xl backdrop-blur-xl hover:border-cyan-500/50 transition-all duration-300 group-hover:shadow-[0_0_30px_rgba(6,182,212,0.2)] h-full">
-        {/* Background Glow Effect */}
-        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        
-        {/* Header */}
-        <div className="relative z-10 mb-4">
-          <div className="flex items-center justify-between mb-3">
-            <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center shadow-[0_0_20px_rgba(6,182,212,0.3)]">
-              <Star className="w-6 h-6 text-white" />
-            </div>
-            
-            {/* Rating */}
-            {service.rating && (
-              <div className="flex items-center space-x-1">
-                <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                <span className="text-sm text-gray-300">{service.rating}</span>
-                {service.reviewCount && (
-                  <span className="text-xs text-gray-500">({service.reviewCount})</span>
-                )}
-              </div>
-            )}
+      {/* Background gradient overlay */}
+      <div className={`absolute inset-0 bg-gradient-to-br ${color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
+      
+      {/* Header */}
+      <div className="p-6">
+        {/* Category badge and actions */}
+        <div className="flex items-start justify-between mb-4">
+          <div className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r ${color} text-white`}>
+            <CategoryIcon className="w-3 h-3 mr-1" />
+            {service.category}
           </div>
           
-          <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">
-            {service.name}
-          </h3>
-          
-          <p className="text-gray-400 text-sm leading-relaxed">
-            {service.description}
-          </p>
-        </div>
-
-        {/* Category and Type */}
-        <div className="relative z-10 mb-4">
-          <div className="flex items-center justify-between">
-            <span className="px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-medium rounded-full border border-cyan-500/30">
-              {service.category}
-            </span>
-            <span className="text-gray-500 text-xs">
-              {service.type}
-            </span>
-          </div>
-        </div>
-
-        {/* Features Preview */}
-        {service.features && service.features.length > 0 && (
-          <div className="relative z-10 mb-4">
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                setShowFeatures(!showFeatures);
-              }}
-              className="text-cyan-400 text-sm font-medium hover:text-cyan-300 transition-colors duration-200 flex items-center space-x-1"
+          <div className="flex items-center space-x-2">
+            <motion.button
+              onClick={() => setIsLiked(!isLiked)}
+              className={`p-2 rounded-lg transition-colors ${
+                isLiked 
+                  ? 'text-red-500 bg-red-500/10' 
+                  : 'text-gray-400 hover:text-red-500 hover:bg-red-500/10'
+              }`}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              aria-label={isLiked ? 'Unlike service' : 'Like service'}
             >
-              <Eye className="w-4 h-4" />
-              <span>{showFeatures ? 'Hide' : 'Show'} Features</span>
-            </button>
+              <Heart className={`w-4 h-4 ${isLiked ? 'fill-current' : ''}`} />
+            </motion.button>
             
-            {showFeatures && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                transition={{ duration: 0.3 }}
-                className="mt-3 space-y-2"
-              >
-                {service.features.slice(0, 3).map((feature, index) => (
-                  <div key={index} className="flex items-center space-x-2 text-sm text-gray-300">
-                    <Check className="w-3 h-3 text-cyan-400 flex-shrink-0" />
-                    <span>{feature}</span>
-                  </div>
-                ))}
-                {service.features.length > 3 && (
-                  <div className="text-xs text-gray-500 text-center pt-2">
-                    +{service.features.length - 3} more features
-                  </div>
-                )}
-              </motion.div>
-            )}
+            <motion.button
+              onClick={() => setIsBookmarked(!isBookmarked)}
+              className={`p-2 rounded-lg transition-colors ${
+                isBookmarked 
+                  ? 'text-yellow-500 bg-yellow-500/10' 
+                  : 'text-gray-400 hover:text-yellow-500 hover:bg-yellow-500/10'
+              }`}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              aria-label={isBookmarked ? 'Remove bookmark' : 'Bookmark service'}
+            >
+              <Bookmark className={`w-4 h-4 ${isBookmarked ? 'fill-current' : ''}`} />
+            </motion.button>
           </div>
-        )}
-
-        {/* Pricing */}
-        {service.pricing && (
-          <div className="relative z-10 mb-4">
-            <div className="bg-gray-800/40 rounded-lg p-3">
-              <div className="text-center">
-                {service.pricing.custom ? (
-                  <div className="text-cyan-400 font-medium">Custom Pricing</div>
-                ) : (
-                  <div className="space-y-1">
-                    {service.pricing.monthly && (
-                      <div className="text-white font-bold">
-                        ${service.pricing.monthly}
-                        <span className="text-gray-400 text-sm font-normal">/month</span>
-                      </div>
-                    )}
-                    {service.pricing.yearly && (
-                      <div className="text-gray-400 text-sm">
-                        ${service.pricing.yearly}/year
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Action Button */}
-        <div className="relative z-10">
-          <button className="w-full px-4 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(6,182,212,0.3)] flex items-center justify-center space-x-2">
-            <span>Learn More</span>
-            <ArrowRight className="w-4 h-4" />
-          </button>
         </div>
 
-        {/* Hover Effects */}
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-          initial={false}
-          animate={{ opacity: isHovered ? 1 : 0 }}
-        />
+        {/* Service title */}
+        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
+          {service.name}
+        </h3>
+
+        {/* Tagline */}
+        <p className="text-sm text-cyan-400 mb-3 font-medium">
+          {service.tagline}
+        </p>
+
+        {/* Description */}
+        <div className="mb-4">
+          <p className="text-gray-300 text-sm leading-relaxed">
+            {showFullDescription ? fullDescription : truncatedDescription}
+          </p>
+          {service.description.length > 120 && (
+            <button
+              onClick={() => setShowFullDescription(!showFullDescription)}
+              className="text-cyan-400 hover:text-cyan-300 text-xs mt-2 transition-colors"
+            >
+              {showFullDescription ? 'Show less' : 'Read more'}
+            </button>
+          )}
+        </div>
+
+        {/* Quick stats */}
+        <div className="grid grid-cols-2 gap-3 mb-4">
+          <div className="flex items-center text-xs text-gray-400">
+            <Clock className="w-3 h-3 mr-1" />
+            <span>Market: {service.marketSize}</span>
+          </div>
+          <div className="flex items-center text-xs text-gray-400">
+            <Users className="w-3 h-3 mr-1" />
+            <span>{service.type}</span>
+          </div>
+        </div>
+
+        {/* Features preview */}
+        <div className="mb-4">
+          <h4 className="text-sm font-semibold text-white mb-2">Key Features</h4>
+          <div className="flex flex-wrap gap-1">
+            {service.features.slice(0, 3).map((feature, index) => (
+              <span
+                key={index}
+                className="inline-block px-2 py-1 bg-gray-700/50 text-gray-300 text-xs rounded-md"
+              >
+                {feature}
+              </span>
+            ))}
+            {service.features.length > 3 && (
+              <span className="inline-block px-2 py-1 bg-gray-700/50 text-gray-400 text-xs rounded-md">
+                +{service.features.length - 3} more
+              </span>
+            )}
+          </div>
+        </div>
+
+        {/* Pricing preview */}
+        <div className="mb-4">
+          <h4 className="text-sm font-semibold text-white mb-2">Starting at</h4>
+          <div className="text-2xl font-bold text-cyan-400">
+            {service.pricing.starter}
+          </div>
+        </div>
       </div>
+
+      {/* Footer actions */}
+      <div className="px-6 pb-6">
+        <div className="flex items-center justify-between">
+          <Link href={service.slug || `/services/${service.id}`}>
+            <motion.button 
+              className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-sm font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Learn More
+              <ArrowRight className="w-4 h-4" />
+            </motion.button>
+          </Link>
+          
+          <div className="flex items-center space-x-2">
+            <motion.button
+              className="p-2 text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              aria-label="Share service"
+            >
+              <Share2 className="w-4 h-4" />
+            </motion.button>
+            
+            <motion.button
+              className="p-2 text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              aria-label="View external link"
+            >
+              <ExternalLink className="w-4 h-4" />
+            </motion.button>
+          </div>
+        </div>
+      </div>
+
+      {/* Hover effect overlay */}
+      <AnimatePresence>
+        {isHovered && (
+          <motion.div
+            className={`absolute inset-0 bg-gradient-to-br ${color} opacity-10 rounded-2xl`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+          />
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 };

@@ -30,35 +30,47 @@ const Footer: React.FC = () => {
     { name: 'Quantum Technology', href: '/quantum-services' },
     { name: 'Space Technology', href: '/space-technology' },
     { name: 'IT Solutions', href: '/it-services' },
-    { name: 'Specialized Solutions', href: '/solutions' },
+    { name: 'Cybersecurity', href: '/cybersecurity' },
+    { name: 'Cloud Platform', href: '/cloud-platform' },
     { name: 'View All Services', href: '/services' }
   ];
 
   const solutions = [
-    { name: 'Services Showcase', href: '/comprehensive-services-showcase-2025' },
-    { name: 'Pricing Plans', href: '/pricing' },
-    { name: 'Case Studies', href: '/case-studies' },
-    { name: 'Resources', href: '/resources' },
-    { name: 'Support', href: '/support' },
-    { name: 'Documentation', href: '/docs' }
+    { name: 'Enterprise Solutions', href: '/solutions/enterprise' },
+    { name: 'Healthcare Solutions', href: '/solutions/healthcare' },
+    { name: 'Financial Solutions', href: '/solutions/financial' },
+    { name: 'Government Solutions', href: '/solutions/government' },
+    { name: 'Manufacturing Solutions', href: '/solutions/manufacturing' },
+    { name: 'Retail Solutions', href: '/solutions/retail' },
+    { name: 'Education Solutions', href: '/solutions/education' },
+    { name: 'Energy Solutions', href: '/solutions/energy' },
+    { name: 'Transportation Solutions', href: '/solutions/transportation' },
+    { name: 'Case Studies', href: '/case-studies' }
   ];
 
   const company = [
     { name: 'About Us', href: '/about' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'Mission', href: '/mission' },
+    { name: 'Values', href: '/values' },
+    { name: 'Team', href: '/team' },
+    { name: 'Leadership', href: '/leadership' },
+    { name: 'Culture', href: '/culture' },
+    { name: 'Careers', href: '/careers' },
     { name: 'Partners', href: '/partners' },
-    { name: 'Investors', href: '/investors' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'Careers', href: '/careers' }
+    { name: 'Investors', href: '/investors' }
   ];
 
   const resources = [
     { name: 'Documentation', href: '/docs' },
+    { name: 'API Reference', href: '/api-docs' },
     { name: 'Blog', href: '/blog' },
-    { name: 'Case Studies', href: '/case-studies' },
+    { name: 'Webinars', href: '/webinars' },
+    { name: 'Events', href: '/events' },
+    { name: 'Training', href: '/training' },
     { name: 'Support Center', href: '/support' },
-    { name: 'Resources', href: '/resources' },
-    { name: 'Training', href: '/training' }
+    { name: 'White Papers', href: '/white-papers' },
+    { name: 'Press', href: '/press' },
+    { name: 'Media Kit', href: '/media-kit' }
   ];
 
   const legal = [
@@ -69,12 +81,12 @@ const Footer: React.FC = () => {
   ];
 
   const socialLinks = [
-    { name: 'X', href: '/social/twitter', icon: Twitter },
-    { name: 'LinkedIn', href: '/social/linkedin', icon: Linkedin },
+    { name: 'LinkedIn', href: 'https://linkedin.com/company/zion-tech-group', icon: Linkedin },
     { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: Github },
-    { name: 'Facebook', href: '/social/facebook', icon: Facebook },
-    { name: 'Instagram', href: '/social/instagram', icon: Instagram },
-    { name: 'YouTube', href: '/social/youtube', icon: Youtube }
+    { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: Twitter },
+    { name: 'Facebook', href: 'https://facebook.com/ziontechgroup', icon: Facebook },
+    { name: 'Instagram', href: 'https://instagram.com/ziontechgroup', icon: Instagram },
+    { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: Youtube }
   ];
 
   return (

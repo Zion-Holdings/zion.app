@@ -1,18 +1,19 @@
-import React, { useState, useCallback, useMemo } from 'react';
+import React, { useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Crown, Building, Rocket } from 'lucide-react';
+import { ArrowRight, Star, CheckCircle, Zap, Brain, Atom, Rocket } from 'lucide-react';
+import { renderServicePrice } from '../../utils/serviceUtils';
 
 interface Service {
   id: string;
   name: string;
-  tagline?: string;
+  tagline: string;
   description: string;
   price: string;
   period: string;
   features: string[];
   popular?: boolean;
   category: string;
-  icon?: string;
+  icon: string;
 }
 
 interface UltraFuturisticServiceCard2026Props {
@@ -26,6 +27,7 @@ interface UltraFuturisticServiceCard2026Props {
 const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Props> = ({
   service,
   variant = 'default',
+  theme = 'quantum',
   className = '',
   onClick
 }) => {
@@ -33,39 +35,76 @@ const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Pro
   const [isExpanded, setIsExpanded] = useState(false);
 
   // Get variant-specific styles
-  const variantStyles = useMemo(() => {
-    if (variant === 'premium') {
-      return {
-        container: 'border-cyan-400/50 bg-gradient-to-br from-cyan-900/20 to-blue-900/20',
-        icon: <Crown className="w-5 h-5 text-yellow-400" />,
-        badge: 'bg-gradient-to-r from-yellow-400 to-orange-500 text-black',
-        button: 'bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700',
-        text: 'text-cyan-50',
-        accent: 'bg-cyan-400'
-      };
+  const getVariantStyles = useCallback((variant: string) => {
+    switch (variant) {
+      case 'quantum':
+        return {
+          border: 'border-cyan-500/30 hover:border-cyan-400/60',
+          gradient: 'from-cyan-500/20 to-blue-500/20',
+          text: 'text-cyan-400',
+          accent: 'bg-cyan-500/20',
+          icon: <Atom className="w-6 h-6 text-cyan-400" />
+        };
+      case 'ai':
+        return {
+          border: 'border-purple-500/30 hover:border-purple-400/60',
+          gradient: 'from-purple-500/20 to-pink-500/20',
+          text: 'text-purple-400',
+          accent: 'bg-purple-500/20',
+          icon: <Brain className="w-6 h-6 text-purple-400" />
+        };
+      case 'automation':
+        return {
+          border: 'border-green-500/30 hover:border-green-400/60',
+          gradient: 'from-green-500/20 to-emerald-500/20',
+          text: 'text-green-400',
+          accent: 'bg-green-500/20',
+          icon: <Zap className="w-6 h-6 text-green-400" />
+        };
+      case 'it':
+        return {
+          border: 'border-blue-500/30 hover:border-blue-400/60',
+          gradient: 'from-blue-500/20 to-indigo-500/20',
+          text: 'text-blue-400',
+          accent: 'bg-blue-500/20',
+          icon: <Rocket className="w-6 h-6 text-blue-400" />
+        };
+      case 'emerging':
+        return {
+          border: 'border-yellow-500/30 hover:border-yellow-400/60',
+          gradient: 'from-yellow-500/20 to-orange-500/20',
+          text: 'text-yellow-400',
+          accent: 'bg-yellow-500/20',
+          icon: <Star className="w-6 h-6 text-yellow-400" />
+        };
+      case 'enterprise':
+        return {
+          border: 'border-indigo-500/30 hover:border-indigo-400/60',
+          gradient: 'from-indigo-500/20 to-purple-500/20',
+          text: 'text-indigo-400',
+          accent: 'bg-indigo-500/20',
+          icon: <CheckCircle className="w-6 h-6 text-indigo-400" />
+        };
+      case 'premium':
+        return {
+          border: 'border-amber-500/30 hover:border-amber-400/60',
+          gradient: 'from-amber-500/20 to-yellow-500/20',
+          text: 'text-amber-400',
+          accent: 'bg-amber-500/20',
+          icon: <Star className="w-6 h-6 text-amber-400" />
+        };
+      default:
+        return {
+          border: 'border-white/20 hover:border-white/40',
+          gradient: 'from-white/10 to-white/5',
+          text: 'text-white',
+          accent: 'bg-white/10',
+          icon: <Star className="w-6 h-6 text-white" />
+        };
     }
-    
-    if (variant === 'enterprise') {
-      return {
-        container: 'border-purple-400/50 bg-gradient-to-br from-purple-900/20 to-pink-900/20',
-        icon: <Building className="w-5 h-5 text-purple-400" />,
-        badge: 'bg-gradient-to-r from-purple-500 to-pink-600',
-        button: 'bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700',
-        text: 'text-purple-50',
-        accent: 'bg-purple-400'
-      };
-    }
-    
-    // Default variant
-    return {
-      container: 'border-gray-600/50 bg-gradient-to-br from-gray-800/20 to-gray-700/20',
-      icon: <Rocket className="w-5 h-5 text-cyan-400" />,
-      badge: 'bg-gradient-to-r from-cyan-500 to-blue-600',
-      button: 'bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700',
-      text: 'text-gray-50',
-      accent: 'bg-cyan-400'
-    };
-  }, [variant]);
+  }, []);
+
+  const variantStyles = getVariantStyles(variant);
 
   const handleCardClick = useCallback(() => {
     if (onClick) {
@@ -94,8 +133,8 @@ const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Pro
       transition={{ duration: 0.6 }}
     >
       {/* Background Layers */}
-      <div className={`absolute inset-0 bg-gradient-to-br ${variantStyles.container} transition-all duration-500`}></div>
-      <div className={`absolute inset-0 bg-gradient-to-br ${variantStyles.container} opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-xl`}></div>
+      <div className={`absolute inset-0 bg-gradient-to-br ${variantStyles.gradient} ${variantStyles.border} transition-all duration-500`}></div>
+      <div className={`absolute inset-0 bg-gradient-to-br ${variantStyles.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-xl`}></div>
       
       {/* Animated Background Elements */}
       <motion.div
@@ -114,16 +153,14 @@ const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Pro
         {/* Header */}
         <div className="flex items-start justify-between mb-4">
           <div className="flex items-center gap-3">
-            <div className="text-4xl mb-2" aria-hidden="true">
-              {service.icon || '🚀'}
-            </div>
+            <div className="text-4xl mb-2" aria-hidden="true">{service.icon}</div>
             <div className="flex items-center gap-2">
               {variantStyles.icon}
             </div>
           </div>
           {service.popular && (
             <motion.div 
-              className={`px-3 py-1 rounded-full text-xs font-semibold ${variantStyles.badge}`}
+              className={`px-3 py-1 rounded-full text-xs font-semibold ${variantStyles.accent} ${variantStyles.text}`}
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ delay: 0.3, type: "spring" }}
@@ -150,7 +187,7 @@ const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Pro
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
           >
-            {service.tagline || service.description.substring(0, 100) + '...'}
+            {service.tagline}
           </motion.p>
           
           <motion.div 
@@ -159,7 +196,7 @@ const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Pro
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
-            <span className="text-2xl font-bold text-white">{service.price}</span>
+            <span className="text-2xl font-bold text-white">{renderServicePrice(service)}</span>
             <span className="text-gray-400 text-sm ml-1">{service.period}</span>
           </motion.div>
 
@@ -199,7 +236,7 @@ const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Pro
 
         {/* Action Button */}
         <motion.button 
-          className={`w-full mt-4 py-3 px-4 rounded-lg font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-cyan-400 ${variantStyles.button} hover:bg-opacity-30 focus:ring-opacity-40 flex items-center justify-center gap-2`}
+          className={`w-full mt-4 py-3 px-4 rounded-lg font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-cyan-400 ${variantStyles.accent} ${variantStyles.text} hover:bg-opacity-30 focus:ring-opacity-40 flex items-center justify-center gap-2`}
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
         >

@@ -149,9 +149,11 @@ export default function CuttingEdge2038ServicesShowcase() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <SEO 
-        title="2038 Cutting-Edge Services Showcase | Zion Tech Group"
-        description="Discover the future of technology with our revolutionary 2038 services. AI-powered solutions, quantum computing, space technology, and intelligent micro SAAS platforms."
-        keywords={["2038 services", "AI services", "quantum computing", "space technology", "micro SAAS", "cybersecurity", "healthcare AI", "climate technology"]}
+        data={{
+          pageTitle: "2038 Cutting-Edge Services Showcase | Zion Tech Group",
+          pageDescription: "Discover the future of technology with our revolutionary 2038 services. AI-powered solutions, quantum computing, space technology, and intelligent micro SAAS platforms.",
+          pageKeywords: ["2038 services", "AI services", "quantum computing", "space technology", "micro SAAS", "cybersecurity", "healthcare AI", "climate technology"]
+        }}
       />
 
       {/* Hero Section */}

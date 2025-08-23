@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import UltraFuturisticNavigation2025 from './UltraFuturisticNavigation2025';
-import UltraFuturisticFooter2025 from './UltraFuturisticFooter2025';
+import { motion } from 'framer-motion';
+import UltraFuturisticNavigation2037 from './UltraFuturisticNavigation2037';
+import UltraFuturisticFooter2037 from './UltraFuturisticFooter2037';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
-import UltraFuturisticBackground2036 from '../backgrounds/UltraFuturisticBackground2036';
-import PerformanceMonitor from '../PerformanceMonitor';
-import AccessibilityEnhancer from '../AccessibilityEnhancer';
-import CookieConsentBanner from '../CookieConsentBanner';
+import UltraFuturisticBackground2037 from '../backgrounds/UltraFuturisticBackground2037';
+import TopContactBar from './TopContactBar';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -20,12 +19,15 @@ export default function Layout({ children }: LayoutProps) {
       <a href="#main" className="skip-link">Skip to main content</a>
       
       {/* Futuristic Background */}
-      <UltraFuturisticBackground2036 />
+      <UltraFuturisticBackground2037 />
       
       {/* Layout Structure */}
       <div className="relative z-10">
+        {/* Top Contact Bar */}
+        <TopContactBar />
+        
         {/* Navigation */}
-        <UltraFuturisticNavigation2025 />
+        <UltraFuturisticNavigation2037 />
         
         {/* Sidebar and Main Content */}
         <div className="flex">
@@ -34,21 +36,14 @@ export default function Layout({ children }: LayoutProps) {
             onClose={() => setSidebarOpen(false)} 
           />
           
-          <main id="main" role="main" className="flex-1 pt-32 lg:pt-36">
+          <main id="main" role="main" className="flex-1 pt-24 lg:pt-28">
             {children}
           </main>
         </div>
         
         {/* Footer */}
-        <UltraFuturisticFooter2025 />
+        <UltraFuturisticFooter2037 />
       </div>
-
-      {/* Accessibility and Performance Tools */}
-      <AccessibilityEnhancer />
-      <PerformanceMonitor />
-      
-      {/* Cookie Consent Banner */}
-      <CookieConsentBanner />
     </div>
   );
 }
