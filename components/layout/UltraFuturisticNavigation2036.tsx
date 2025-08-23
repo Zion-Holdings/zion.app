@@ -152,6 +152,12 @@ const navigationItems: NavigationItem[] = [
         href: '/investors', 
         description: 'Investment information',
         icon: <DollarSign className="w-4 h-4" />
+      },
+      { 
+        name: 'Careers', 
+        href: '/careers', 
+        description: 'Join our team',
+        icon: <Users className="w-4 h-4" />
       }
     ]
   },
@@ -185,6 +191,51 @@ const navigationItems: NavigationItem[] = [
         href: '/support', 
         description: 'Technical support',
         icon: <HelpCircle className="w-4 h-4" />
+      },
+      { 
+        name: 'Training', 
+        href: '/training', 
+        description: 'Learning resources',
+        icon: <BookOpenCheck className="w-4 h-4" />
+      }
+    ]
+  },
+  {
+    name: 'Solutions',
+    href: '/solutions',
+    icon: <Target className="w-5 h-5" />,
+    description: 'Industry solutions',
+    category: 'solutions',
+    children: [
+      { 
+        name: 'Healthcare', 
+        href: '/healthcare-solutions', 
+        description: 'Healthcare technology',
+        icon: <Heart className="w-4 h-4" />
+      },
+      { 
+        name: 'Financial', 
+        href: '/financial-solutions', 
+        description: 'Financial technology',
+        icon: <DollarSign className="w-4 h-4" />
+      },
+      { 
+        name: 'Government', 
+        href: '/government-technology-solutions', 
+        description: 'Government solutions',
+        icon: <Shield className="w-4 h-4" />
+      },
+      { 
+        name: 'Retail', 
+        href: '/retail-technology-solutions', 
+        description: 'Retail technology',
+        icon: <ShoppingCart className="w-4 h-4" />
+      },
+      { 
+        name: 'Manufacturing', 
+        href: '/manufacturing-ai-solutions', 
+        description: 'Manufacturing AI',
+        icon: <Settings className="w-4 h-4" />
       }
     ]
   }

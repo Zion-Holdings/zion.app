@@ -29,7 +29,7 @@ const footerSections = [
       { name: 'Autonomous Business Operations', href: '/autonomous-business-operations-platform', featured: true },
       { name: 'Space Resource Mining', href: '/space-resource-mining-platform', featured: true },
       { name: 'Brain-Computer Interface', href: '/brain-computer-interface-platform', featured: true },
-      { name: 'Quantum Financial Trading', href: '/quantum-financial-trading-platform', featured: true },
+      { name: 'Quantum Financial Trading', href: '/quantum-financial-trading', featured: true },
       { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training', featured: true },
       { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery-platform' },
       { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai-platform' },
@@ -59,7 +59,7 @@ const footerSections = [
     icon: <Atom className="w-5 h-5 text-blue-400" />,
     links: [
       { name: 'Quantum Neural Network Platform', href: '/quantum-neural-network-platform' },
-      { name: 'Quantum Financial Trading Platform', href: '/quantum-financial-trading-platform' },
+      { name: 'Quantum Financial Trading Platform', href: '/quantum-financial-trading' },
       { name: 'Quantum Materials Discovery Platform', href: '/quantum-materials-discovery-platform' },
       { name: 'Quantum Bio-Computing Platform', href: '/quantum-bio-computing-platform' },
       { name: 'Quantum Internet Security Platform', href: '/quantum-internet-security-platform' },
@@ -98,49 +98,36 @@ const footerSections = [
       { name: 'AI Financial Planning Platform', href: '/ai-financial-planning-platform' },
       { name: 'Supply Chain Optimization', href: '/intelligent-supply-chain-optimization' },
       { name: 'Content Automation Platform', href: '/intelligent-content-automation-platform' },
-      { name: 'CRM Intelligence Suite', href: '/smart-crm-intelligence-suite' },
-      { name: 'SEO Automation Suite', href: '/seo-automation-suite' },
-      { name: 'IT Asset Discovery Agent', href: '/it-asset-discovery-agent' },
-      { name: 'Managed Postgres HA', href: '/managed-postgres-ha' }
-    ]
-  },
-  {
-    title: 'Specialized Solutions',
-    description: 'Industry-specific and specialized services',
-    icon: <Target className="w-5 h-5 text-pink-400" />,
-    links: [
-      { name: 'Browser Automation Cloud', href: '/browser-automation-cloud' },
-      { name: 'Secrets Rotation Automation', href: '/secrets-rotation-automation' },
-      { name: 'API Performance Testing', href: '/api-performance-testing' },
-      { name: 'Sales Copilot', href: '/sales-copilot' },
-      { name: 'Serverless Cron Manager', href: '/serverless-cron-manager' },
-      { name: 'SSO in a Box', href: '/sso-in-a-box' },
-      { name: 'Status Pages & SLO Monitor', href: '/status-pages-slo' },
-      { name: 'Synthetic Monitor Recorder', href: '/synthetic-monitor-recorder' },
-      { name: 'TLS Certificate Monitor', href: '/tls-certificate-monitor' },
-      { name: 'Uptime SLO Monitor', href: '/uptime-slo-monitor' }
+      { name: 'AI Meeting Transcriber Pro', href: '/ai-meeting-transcriber-pro' },
+      { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer' },
+      { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics' },
+      { name: 'AI Customer Journey Analytics', href: '/ai-customer-journey-analytics' }
     ]
   }
 ];
 
 const quickLinks = [
-  { name: 'All Services', href: '/comprehensive-services-showcase-2025' },
-  { name: 'Pricing', href: '/pricing' },
-  { name: 'Market Pricing', href: '/market-pricing' },
   { name: 'About Us', href: '/about' },
   { name: 'Contact', href: '/contact' },
-  { name: 'Support', href: '/support' },
+  { name: 'Services', href: '/services' },
+  { name: 'Pricing', href: '/pricing' },
   { name: 'Blog', href: '/blog' },
+  { name: 'Support', href: '/support' },
   { name: 'Careers', href: '/careers' },
-  { name: 'Partners', href: '/partners' },
-  { name: 'Investors', href: '/investors' }
+  { name: 'Partners', href: '/partners' }
+];
+
+const legalLinks = [
+  { name: 'Privacy Policy', href: '/privacy' },
+  { name: 'Terms of Service', href: '/terms' },
+  { name: 'Cookie Policy', href: '/cookies' },
+  { name: 'Accessibility', href: '/accessibility-scanner' }
 ];
 
 const socialLinks = [
   { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: <Linkedin className="w-5 h-5" /> },
-  { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: <Twitter className="w-5 h-5" /> },
   { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: <Github className="w-5 h-5" /> },
-  { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: <Youtube className="w-5 h-5" /> }
+  { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: <Twitter className="w-5 h-5" /> }
 ];
 
 export default function UltraFuturisticFooter2036() {
@@ -300,18 +287,11 @@ export default function UltraFuturisticFooter2036() {
             </div>
             
             <div className="flex items-center space-x-6 text-sm text-white/60">
-              <Link href="/privacy" className="hover:text-cyan-400 transition-colors">
-                Privacy Policy
-              </Link>
-              <Link href="/terms" className="hover:text-cyan-400 transition-colors">
-                Terms of Service
-              </Link>
-              <Link href="/security" className="hover:text-cyan-400 transition-colors">
-                Security
-              </Link>
-              <Link href="/accessibility" className="hover:text-cyan-400 transition-colors">
-                Accessibility
-              </Link>
+              {legalLinks.map((link) => (
+                <Link key={link.name} href={link.href} className="hover:text-cyan-400 transition-colors">
+                  {link.name}
+                </Link>
+              ))}
             </div>
             
             <button
