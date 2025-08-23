@@ -1,303 +1,365 @@
 import React, { useEffect } from 'react';
+import { useRouter } from 'next/router';
 
-interface AnalyticsTrackerProps {
-  trackingId?: string;
-  enablePerformanceMonitoring?: boolean;
-  enableUserBehaviorTracking?: boolean;
-}
+const AnalyticsTracker: React.FC = () => {
+  const router = useRouter();
 
-// Extend PerformanceEntry for FID measurement
-interface FirstInputEntry extends PerformanceEntry {
-  processingStart: number;
-  target?: HTMLElement | null;
-}
-
-// Extend PerformanceEntry for CLS measurement
-interface LayoutShiftEntry extends PerformanceEntry {
-  hadRecentInput?: boolean;
-  value?: number;
-}
-
-const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({
-  trackingId = process.env.NEXT_PUBLIC_GA_TRACKING_ID,
-  enablePerformanceMonitoring = true,
-  enableUserBehaviorTracking = true
-}) => {
   useEffect(() => {
-    // Initialize analytics tracking
-    if (typeof window !== 'undefined') {
-      initializeAnalytics();
-      
-      if (enablePerformanceMonitoring) {
-        initializePerformanceMonitoring();
+    // User interaction tracking
+    let interactionCount = 0;
+    const trackInteraction = () => {
+      interactionCount++;
+      if (interactionCount === 1) {
+        trackMetric('FirstInteraction', Date.now() - (performance.timing?.navigationStart || Date.now()));
       }
-      
-      if (enableUserBehaviorTracking) {
-        initializeUserBehaviorTracking();
-      }
-    }
-  }, [trackingId, enablePerformanceMonitoring, enableUserBehaviorTracking]);
-
-  const initializeAnalytics = () => {
-    // Google Analytics 4 initialization
-    if (trackingId && typeof window !== 'undefined') {
-      // Load Google Analytics script
-      const script = document.createElement('script');
-      script.async = true;
-      script.src = `https://www.googletagmanager.com/gtag/js?id=${trackingId}`;
-      document.head.appendChild(script);
-
-      // Initialize gtag
-      window.dataLayer = window.dataLayer || [];
-      function gtag(...args: unknown[]) {
-        window.dataLayer.push(args);
-      }
-      gtag('js', new Date());
-      gtag('config', trackingId, {
-        page_title: document.title,
-        page_location: window.location.href,
-        custom_map: {
-          'custom_parameter_1': 'user_type',
-          'custom_parameter_2': 'page_category'
-        }
-      });
-
-      // Track page views
-      gtag('event', 'page_view', {
-        page_title: document.title,
-        page_location: window.location.href,
-        page_category: getPageCategory()
-      });
-    }
-  };
-
-  const initializePerformanceMonitoring = () => {
-    // Core Web Vitals monitoring
-    if ('PerformanceObserver' in window) {
-      // First Contentful Paint (FCP)
-      const fcpObserver = new PerformanceObserver((list) => {
-        const entries = list.getEntries();
-        const fcpEntry = entries[entries.length - 1] as PerformanceEntry;
-        if (fcpEntry) {
-          trackPerformanceMetric('FCP', fcpEntry.startTime);
-        }
-      });
-      fcpObserver.observe({ entryTypes: ['first-contentful-paint'] });
-
-      // Largest Contentful Paint (LCP)
-      const lcpObserver = new PerformanceObserver((list) => {
-        const entries = list.getEntries();
-        const lcpEntry = entries[entries.length - 1] as PerformanceEntry;
-        if (lcpEntry) {
-          trackPerformanceMetric('LCP', lcpEntry.startTime);
-        }
-      });
-      lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
-
-      // First Input Delay (FID)
-      const fidObserver = new PerformanceObserver((list) => {
-        const entries = list.getEntries();
-        entries.forEach((entry) => {
-          const fidEntry = entry as FirstInputEntry;
-          if (fidEntry.processingStart) {
-            const fid = fidEntry.processingStart - fidEntry.startTime;
-            trackPerformanceMetric('FID', fid);
-          }
-        });
-      });
-      fidObserver.observe({ entryTypes: ['first-input'] });
-
-      // Cumulative Layout Shift (CLS)
-      let clsValue = 0;
-      const clsObserver = new PerformanceObserver((list) => {
-        const entries = list.getEntries();
-        entries.forEach((entry) => {
-          const clsEntry = entry as LayoutShiftEntry;
-          if (!clsEntry.hadRecentInput && clsEntry.value) {
-            clsValue += clsEntry.value;
-            trackPerformanceMetric('CLS', clsValue);
-          }
-        });
-      });
-      clsObserver.observe({ entryTypes: ['layout-shift'] });
-
-      // Report CLS on page unload
-      window.addEventListener('beforeunload', () => {
-        if (clsValue > 0) {
-          trackPerformanceMetric('CLS', clsValue);
-        }
-      });
-    }
-
-    // Navigation Timing API
-    if ('performance' in window) {
-      window.addEventListener('load', () => {
-        setTimeout(() => {
-          const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
-          if (navigation) {
-            trackPerformanceMetric('TTFB', navigation.responseStart - navigation.requestStart);
-            trackPerformanceMetric('DOMContentLoaded', navigation.domContentLoadedEventEnd - navigation.domContentLoadedEventStart);
-            trackPerformanceMetric('LoadComplete', navigation.loadEventEnd - navigation.loadEventStart);
-            trackPerformanceMetric('FirstPaint', performance.getEntriesByName('first-paint')[0]?.startTime || 0);
-            trackPerformanceMetric('FirstContentfulPaint', performance.getEntriesByName('first-contentful-paint')[0]?.startTime || 0);
-          }
-        }, 0);
-      });
-    }
-  };
-
-  const initializeUserBehaviorTracking = () => {
-    // Track user interactions
-    let sessionStartTime = Date.now();
-    let scrollDepth = 0;
-
-    // Track page views
-    const trackPageView = () => {
-      trackUserBehavior('page_view', {
-        url: window.location.href,
-        title: document.title,
-        timestamp: Date.now(),
-        session_duration: Date.now() - sessionStartTime
-      });
     };
 
-    // Track clicks
-    const trackClick = (event: Event) => {
-      const target = event.target as HTMLElement;
-      if (target) {
-        trackUserBehavior('click', {
-          element: target.tagName.toLowerCase(),
-          text: target.textContent?.substring(0, 100) || '',
-          url: (target as HTMLAnchorElement).href || '',
+    // Viewport tracking
+    const trackViewport = () => {
+      trackMetric('ViewportWidth', window.innerWidth);
+      trackMetric('ViewportHeight', window.innerHeight);
+      trackMetric('PixelRatio', window.devicePixelRatio || 1);
+    };
+
+    // Helper function to track metrics
+    const trackMetric = (name: string, value: number | string) => {
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'custom_metric', {
+          metric_name: name,
+          metric_value: value,
           timestamp: Date.now()
         });
       }
-    };
 
-    // Track scroll depth
-    const trackScroll = () => {
-      const scrollTop = window.pageYOffset;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const scrollPercent = Math.round((scrollTop / docHeight) * 100);
-      
-      if (scrollPercent > scrollDepth) {
-        scrollDepth = scrollPercent;
-        if (scrollPercent % 25 === 0) { // Track at 25%, 50%, 75%, 100%
-          trackUserBehavior('scroll_depth', {
-            depth: scrollPercent,
-            timestamp: Date.now()
-          });
-        }
-      }
-    };
-
-    // Track form interactions
-    const trackFormInteraction = (event: Event) => {
-      const target = event.target as HTMLFormElement;
-      if (target && target.tagName === 'FORM') {
-        trackUserBehavior('form_interaction', {
-          action: target.action,
-          method: target.method,
-          timestamp: Date.now()
+      // Send to custom analytics endpoint
+      if (process.env.NODE_ENV === 'production') {
+        fetch('/api/analytics/metrics', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name,
+            value,
+            timestamp: Date.now(),
+            url: window.location.href,
+            userAgent: navigator.userAgent
+          })
+        }).catch(() => {
+          // Silently handle fetch errors
         });
       }
     };
 
-    // Track time on page
-    const trackTimeOnPage = () => {
-      const timeOnPage = Date.now() - sessionStartTime;
-      trackUserBehavior('time_on_page', {
-        duration: timeOnPage,
-        timestamp: Date.now()
-      });
+    // Helper function to track events
+    const trackEvent = (action: string, parameters: Record<string, unknown>) => {
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', action, {
+          ...parameters,
+          timestamp: Date.now(),
+          page_url: window.location.href
+        });
+      }
+
+      // Send to custom analytics endpoint
+      if (process.env.NODE_ENV === 'production') {
+        fetch('/api/analytics/events', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            action,
+            parameters,
+            timestamp: Date.now(),
+            url: window.location.href,
+            userAgent: navigator.userAgent
+          })
+        }).catch(() => {
+          // Silently handle fetch errors
+        });
+      }
     };
 
-    // Add event listeners
-    document.addEventListener('click', trackClick);
-    document.addEventListener('scroll', trackScroll);
-    document.addEventListener('submit', trackFormInteraction);
-
-    // Track page visibility changes
-    document.addEventListener('visibilitychange', () => {
-      if (document.hidden) {
-        trackTimeOnPage();
-      } else {
-        sessionStartTime = Date.now();
+    // Initialize analytics and performance monitoring
+    const initAnalytics = () => {
+      // Google Analytics 4 initialization
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('config', 'G-XXXXXXXXXX', {
+          page_title: document.title,
+          page_location: window.location.href,
+          custom_map: {
+            dimension1: 'user_type',
+            dimension2: 'service_category',
+            dimension3: 'page_performance'
+          }
+        });
       }
-    });
 
-    // Track before unload
-    window.addEventListener('beforeunload', trackTimeOnPage);
+      // Performance monitoring
+      if ('performance' in window) {
+        // Core Web Vitals monitoring
+        const observer = new PerformanceObserver((list) => {
+          for (const entry of list.getEntries()) {
+            if (entry.entryType === 'largest-contentful-paint') {
+              // Track LCP
+              trackMetric('LCP', entry.startTime);
+            } else if (entry.entryType === 'first-input') {
+              // Track FID - cast to proper type
+              const firstInputEntry = entry as PerformanceEventTiming;
+              trackMetric('FID', firstInputEntry.processingStart - firstInputEntry.startTime);
+            } else if (entry.entryType === 'layout-shift') {
+              // Track CLS - cast to proper type
+              const layoutShiftEntry = entry as LayoutShift;
+              trackMetric('CLS', layoutShiftEntry.value);
+            }
+          }
+        });
 
-    // Initial page view
-    trackPageView();
+        try {
+          observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input', 'layout-shift'] });
+        } catch {
+          // Fallback for older browsers
+        }
+
+        // Track page load performance
+        window.addEventListener('load', () => {
+          setTimeout(() => {
+            const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+            if (navigation) {
+              trackMetric('TTFB', navigation.responseStart - navigation.requestStart);
+              trackMetric('DOMContentLoaded', navigation.domContentLoadedEventEnd - navigation.domContentLoadedEventStart);
+              trackMetric('LoadComplete', navigation.loadEventEnd - navigation.loadEventStart);
+            }
+
+            // Track resource loading performance
+            const resources = performance.getEntriesByType('resource');
+            const slowResources = resources.filter((resource) => (resource as any).duration > 1000);
+            if (slowResources.length > 0) {
+              trackMetric('SlowResources', slowResources.length);
+            }
+          }, 0);
+        });
+      }
+
+      // Add event listeners
+      document.addEventListener('click', trackInteraction);
+      document.addEventListener('scroll', trackInteraction);
+      document.addEventListener('keydown', trackInteraction);
+
+      // Error tracking
+      window.addEventListener('error', (event) => {
+        trackEvent('Error', {
+          message: event.message,
+          filename: event.filename,
+          lineno: event.lineno,
+          colno: event.colno,
+          error: event.error?.stack
+        });
+      });
+
+      // Unhandled promise rejection tracking
+      window.addEventListener('unhandledrejection', (event) => {
+        trackEvent('UnhandledRejection', {
+          reason: event.reason,
+          promise: event.promise
+        });
+      });
+
+      // Network status monitoring
+      if ('navigator' in window && 'connection' in navigator) {
+        const connection = (navigator as any).connection;
+        if (connection) {
+          trackMetric('ConnectionType', connection.effectiveType || 'unknown');
+          trackMetric('ConnectionDownlink', connection.downlink || 0);
+          trackMetric('ConnectionRTT', connection.rtt || 0);
+        }
+      }
+
+      // Memory usage monitoring (if available)
+      if ('memory' in performance) {
+        const memory = (performance as any).memory;
+        if (memory) {
+          setInterval(() => {
+            trackMetric('MemoryUsage', memory.usedJSHeapSize / 1024 / 1024); // MB
+            trackMetric('MemoryLimit', memory.jsHeapSizeLimit / 1024 / 1024); // MB
+          }, 30000); // Every 30 seconds
+        }
+      }
+
+      // Battery status monitoring (if available)
+      if ('getBattery' in navigator) {
+        (navigator as any).getBattery().then((battery: any) => {
+          trackMetric('BatteryLevel', battery.level * 100);
+          trackMetric('BatteryCharging', battery.charging ? 1 : 0);
+        });
+      }
+
+      // Device capabilities tracking
+      trackMetric('DeviceMemory', (navigator as any).deviceMemory || 0);
+      trackMetric('HardwareConcurrency', navigator.hardwareConcurrency || 0);
+      trackMetric('MaxTouchPoints', navigator.maxTouchPoints || 0);
+      trackMetric('UserAgent', navigator.userAgent.length);
+
+      // Viewport tracking
+      trackViewport();
+      window.addEventListener('resize', trackViewport);
+
+      // Page visibility tracking
+      let hiddenTime = 0;
+      let startTime = Date.now();
+      
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+          hiddenTime = Date.now();
+        } else {
+          const visibleTime = Date.now() - hiddenTime;
+          if (hiddenTime > 0) {
+            trackMetric('PageHiddenDuration', visibleTime);
+          }
+          startTime = Date.now();
+        }
+      });
+
+      // Session duration tracking
+      setInterval(() => {
+        const sessionDuration = Date.now() - startTime;
+        trackMetric('SessionDuration', sessionDuration);
+      }, 60000); // Every minute
+    };
+
+    // Initialize when component mounts
+    initAnalytics();
 
     // Cleanup function
     return () => {
-      document.removeEventListener('click', trackClick);
-      document.removeEventListener('scroll', trackScroll);
-      document.removeEventListener('submit', trackFormInteraction);
-      window.removeEventListener('beforeunload', trackTimeOnPage);
+      // Remove event listeners if needed
+      document.removeEventListener('click', trackInteraction);
+      document.removeEventListener('scroll', trackInteraction);
+      document.removeEventListener('keydown', trackInteraction);
+      window.removeEventListener('resize', trackViewport);
     };
-  };
+  }, []);
 
-  const trackPerformanceMetric = (metric: string, value: number) => {
-    if (trackingId && typeof window !== 'undefined') {
-      // Send to Google Analytics
-      if (window.gtag) {
-        window.gtag('event', 'performance_metric', {
-          metric_name: metric,
-          metric_value: value,
-          page_url: window.location.href,
-          timestamp: Date.now()
-        });
-      }
+  // Track page views on route changes
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('config', 'G-XXXXXXXXXX', {
+        page_path: router.asPath,
+        page_title: document.title,
+        page_location: window.location.href
+      });
+    }
 
-      // Log to console in development
-      if (process.env.NODE_ENV === 'development') {
-        // eslint-disable-next-line no-console
-        console.log(`Performance Metric - ${metric}:`, value);
+    // Track custom page view event
+    trackEvent('PageView', {
+      path: router.asPath,
+      title: document.title,
+      referrer: document.referrer,
+      timestamp: Date.now()
+    });
+
+    // Track page performance metrics
+    if ('performance' in window) {
+      const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+      if (navigation) {
+        const startTime = navigation.startTime || 0;
+        trackMetric('PageLoadTime', navigation.loadEventEnd - startTime);
+        trackMetric('DOMReadyTime', navigation.domContentLoadedEventEnd - startTime);
       }
+    }
+  }, [router.asPath]);
+
+  // Helper function to track metrics
+  const trackMetric = (name: string, value: number | string) => {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'custom_metric', {
+        metric_name: name,
+        metric_value: value,
+        timestamp: Date.now()
+      });
+    }
+
+    // Send to custom analytics endpoint
+    if (process.env.NODE_ENV === 'production') {
+      fetch('/api/analytics/metrics', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          value,
+          timestamp: Date.now(),
+          url: window.location.href,
+          userAgent: navigator.userAgent
+        })
+      }).catch(() => {
+        // Silently handle fetch errors
+      });
     }
   };
 
-  const trackUserBehavior = (event: string, data: Record<string, unknown>) => {
-    if (trackingId && typeof window !== 'undefined') {
-      // Send to Google Analytics
-      if (window.gtag) {
-        window.gtag('event', event, {
-          ...data,
-          page_url: window.location.href,
-          timestamp: Date.now()
-        });
-      }
+  // Helper function to track events
+  const trackEvent = (action: string, parameters: Record<string, unknown>) => {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', action, {
+        ...parameters,
+        timestamp: Date.now(),
+        page_url: window.location.href
+      });
+    }
 
-      // Log to console in development
-      if (process.env.NODE_ENV === 'development') {
-        // eslint-disable-next-line no-console
-        console.log(`User Behavior - ${event}:`, data);
-      }
+    // Send to custom analytics endpoint
+    if (process.env.NODE_ENV === 'production') {
+      fetch('/api/analytics/events', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          action,
+          parameters,
+          timestamp: Date.now(),
+          url: window.location.href,
+          userAgent: navigator.userAgent
+        })
+      }).catch(() => {
+        // Silently handle fetch errors
+      });
     }
   };
 
-  const getPageCategory = (): string => {
-    const path = window.location.pathname;
-    if (path === '/') return 'home';
-    if (path.startsWith('/services')) return 'services';
-    if (path.startsWith('/blog')) return 'blog';
-    if (path.startsWith('/about')) return 'about';
-    if (path.startsWith('/contact')) return 'contact';
-    return 'other';
-  };
-
-  return null; // This component doesn't render anything
+  // Component doesn't render anything
+  return null;
 };
+
+// Performance entry types
+interface PerformanceEventTiming extends PerformanceEntry {
+  processingStart: number;
+  processingEnd: number;
+  target?: any;
+}
+
+interface LayoutShift extends PerformanceEntry {
+  value: number;
+  sources?: LayoutShiftSource[];
+}
+
+interface LayoutShiftSource {
+  node?: any;
+  currentRect?: any;
+  previousRect?: any;
+}
 
 // Extend Window interface for gtag
 declare global {
   interface Window {
-    gtag: (...args: unknown[]) => void;
-    dataLayer: unknown[];
+    gtag?: (
+      command: string,
+      action: string,
+      params?: Record<string, unknown>
+    ) => void;
   }
 }
 
