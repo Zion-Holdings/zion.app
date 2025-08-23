@@ -1,414 +1,452 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Zap, TrendingUp, TrendingDown, CheckCircle, AlertCircle, XCircle, Settings, RefreshCw, Target, Lightbulb, ArrowRight } from 'lucide-react';
+import { 
+  Zap, 
+  Settings, 
+  TrendingUp, 
+  AlertTriangle, 
+  CheckCircle, 
+  Clock, 
+  Cpu, 
+  Database,
+  Network,
+  Shield,
+  Rocket,
+  Target,
+  BarChart3,
+  Play,
+  Pause,
+  RotateCcw
+} from 'lucide-react';
 
-interface OptimizationSuggestion {
+interface Optimization {
   id: string;
-  title: string;
+  name: string;
   description: string;
   impact: 'high' | 'medium' | 'low';
-  category: 'performance' | 'seo' | 'accessibility' | 'security';
-  status: 'pending' | 'applied' | 'failed';
-  estimatedImprovement: string;
-  action: string;
+  effort: 'low' | 'medium' | 'high';
+  status: 'pending' | 'in-progress' | 'completed' | 'failed';
+  estimatedSavings: string;
+  category: 'performance' | 'security' | 'scalability' | 'cost';
+  icon: React.ComponentType<any>;
+  priority: number;
+  lastRun?: Date;
+  nextRun?: Date;
 }
 
 const PerformanceOptimizer: React.FC = () => {
-  const [suggestions, setSuggestions] = useState<OptimizationSuggestion[]>([
-    {
-      id: '1',
-      title: 'Enable Image Optimization',
-      description: 'Implement next/image for automatic image optimization and lazy loading',
-      impact: 'high',
-      category: 'performance',
-      status: 'pending',
-      estimatedImprovement: '+15% LCP',
-      action: 'Apply Optimization'
-    },
-    {
-      id: '2',
-      title: 'Implement Code Splitting',
-      description: 'Use dynamic imports to split code into smaller chunks',
-      impact: 'high',
-      category: 'performance',
-      status: 'pending',
-      estimatedImprovement: '+20% Bundle Size',
-      action: 'Apply Optimization'
-    },
-    {
-      id: '3',
-      title: 'Add Service Worker',
-      description: 'Implement service worker for offline functionality and caching',
-      impact: 'medium',
-      category: 'performance',
-      status: 'pending',
-      estimatedImprovement: '+25% Offline Support',
-      action: 'Apply Optimization'
-    },
-    {
-      id: '4',
-      title: 'Optimize Font Loading',
-      description: 'Use font-display: swap and preload critical fonts',
-      impact: 'medium',
-      category: 'performance',
-      status: 'pending',
-      estimatedImprovement: '+10% FID',
-      action: 'Apply Optimization'
-    },
-    {
-      id: '5',
-      title: 'Add Meta Tags',
-      description: 'Implement comprehensive meta tags for better SEO',
-      impact: 'medium',
-      category: 'seo',
-      status: 'pending',
-      estimatedImprovement: '+30% SEO Score',
-      action: 'Apply Optimization'
-    },
-    {
-      id: '6',
-      title: 'Enable Compression',
-      description: 'Implement gzip/brotli compression for static assets',
-      impact: 'high',
-      category: 'performance',
-      status: 'pending',
-      estimatedImprovement: '+40% Load Time',
-      action: 'Apply Optimization'
-    }
-  ]);
+  const [optimizations, setOptimizations] = useState<Optimization[]>([]);
+  const [isRunning, setIsRunning] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [autoOptimize, setAutoOptimize] = useState(false);
+  const [showCompleted, setShowCompleted] = useState(true);
 
-  const [isAnalyzing, setIsAnalyzing] = useState(false);
-  const [currentMetrics, setCurrentMetrics] = useState({
-    lcp: 2.1,
-    fid: 85,
-    cls: 0.12,
-    ttfb: 320,
-    seo: 78,
-    accessibility: 85,
-    performance: 72
-  });
-
-  const [optimizedMetrics, setOptimizedMetrics] = useState({
-    lcp: 2.1,
-    fid: 85,
-    cls: 0.12,
-    ttfb: 320,
-    seo: 78,
-    accessibility: 85,
-    performance: 72
-  });
-
-  const getImpactColor = (impact: string) => {
-    switch (impact) {
-      case 'high':
-        return 'text-red-400 border-red-400/30 bg-red-400/10';
-      case 'medium':
-        return 'text-yellow-400 border-yellow-400/30 bg-yellow-400/10';
-      case 'low':
-        return 'text-green-400 border-green-400/30 bg-green-400/10';
-      default:
-        return 'text-gray-400 border-gray-400/30 bg-gray-400/10';
-    }
-  };
-
-  const getCategoryIcon = (category: string) => {
-    switch (category) {
-      case 'performance':
-        return <Zap className="w-4 h-4" />;
-      case 'seo':
-        return <Target className="w-4 h-4" />;
-      case 'accessibility':
-        return <CheckCircle className="w-4 h-4" />;
-      case 'security':
-        return <AlertCircle className="w-4 h-4" />;
-      default:
-        return <Settings className="w-4 h-4" />;
-    }
-  };
-
-  const getStatusIcon = (status: string) => {
-    switch (status) {
-      case 'applied':
-        return <CheckCircle className="w-5 h-5 text-green-400" />;
-      case 'failed':
-        return <XCircle className="w-5 h-5 text-red-400" />;
-      default:
-        return <AlertCircle className="w-5 h-5 text-yellow-400" />;
-    }
-  };
-
-  const applyOptimization = useCallback((id: string) => {
-    setSuggestions(prev => 
-      prev.map(suggestion => 
-        suggestion.id === id 
-          ? { ...suggestion, status: 'applied' as const }
-          : suggestion
-      )
-    );
-
-    // Simulate metric improvement
-    setTimeout(() => {
-      setOptimizedMetrics(prev => ({
-        ...prev,
-        lcp: Math.max(prev.lcp - 0.3, 0.5),
-        fid: Math.max(prev.fid - 15, 20),
-        cls: Math.max(prev.cls - 0.02, 0.01),
-        ttfb: Math.max(prev.ttfb - 50, 100),
-        seo: Math.min(prev.seo + 5, 100),
-        accessibility: Math.min(prev.accessibility + 3, 100),
-        performance: Math.min(prev.performance + 8, 100)
-      }));
-    }, 1000);
-  }, []);
-
-  const runAnalysis = useCallback(() => {
-    setIsAnalyzing(true);
-    setTimeout(() => {
-      setIsAnalyzing(false);
-      // Simulate finding new suggestions
-      const newSuggestion: OptimizationSuggestion = {
-        id: Date.now().toString(),
-        title: 'Enable HTTP/2 Push',
-        description: 'Implement HTTP/2 server push for critical resources',
-        impact: 'medium',
-        category: 'performance',
+  // Initialize optimizations
+  useEffect(() => {
+    const initialOptimizations: Optimization[] = [
+      {
+        id: 'cache-optimization',
+        name: 'Cache Optimization',
+        description: 'Implement intelligent caching strategies for improved response times',
+        impact: 'high',
+        effort: 'low',
         status: 'pending',
-        estimatedImprovement: '+12% Load Time',
-        action: 'Apply Optimization'
-      };
-      setSuggestions(prev => [...prev, newSuggestion]);
-    }, 2000);
+        estimatedSavings: '40-60%',
+        category: 'performance',
+        icon: Zap,
+        priority: 1
+      },
+      {
+        id: 'database-tuning',
+        name: 'Database Tuning',
+        description: 'Optimize database queries and indexing for better performance',
+        impact: 'high',
+        effort: 'medium',
+        status: 'pending',
+        estimatedSavings: '25-45%',
+        category: 'performance',
+        icon: Database,
+        priority: 2
+      },
+      {
+        id: 'security-hardening',
+        name: 'Security Hardening',
+        description: 'Implement advanced security measures and threat detection',
+        impact: 'high',
+        effort: 'high',
+        status: 'in-progress',
+        estimatedSavings: 'N/A',
+        category: 'security',
+        icon: Shield,
+        priority: 1
+      },
+      {
+        id: 'load-balancing',
+        name: 'Load Balancing',
+        description: 'Distribute traffic across multiple servers for better scalability',
+        impact: 'medium',
+        effort: 'medium',
+        status: 'completed',
+        estimatedSavings: '30-50%',
+        category: 'scalability',
+        icon: Network,
+        priority: 3
+      },
+      {
+        id: 'code-optimization',
+        name: 'Code Optimization',
+        description: 'Refactor and optimize critical code paths for better execution',
+        impact: 'medium',
+        effort: 'high',
+        status: 'pending',
+        estimatedSavings: '15-35%',
+        category: 'performance',
+        icon: Cpu,
+        priority: 4
+      },
+      {
+        id: 'cdn-optimization',
+        name: 'CDN Optimization',
+        description: 'Optimize content delivery network for global performance',
+        impact: 'medium',
+        effort: 'low',
+        status: 'pending',
+        estimatedSavings: '20-40%',
+        category: 'performance',
+        icon: Target, // Changed from Globe to Target as Globe is not imported
+        priority: 5
+      }
+    ];
+
+    setOptimizations(initialOptimizations);
   }, []);
 
-  const getMetricColor = (value: number, threshold: number, reverse: boolean = false) => {
-    const isGood = reverse ? value <= threshold : value >= threshold;
-    return isGood ? 'text-green-400' : 'text-red-400';
-  };
+  // Memoize filtered optimizations
+  const filteredOptimizations = useMemo(() => {
+    let filtered = optimizations;
+    
+    if (selectedCategory !== 'all') {
+      filtered = filtered.filter(opt => opt.category === selectedCategory);
+    }
+    
+    if (!showCompleted) {
+      filtered = filtered.filter(opt => opt.status !== 'completed');
+    }
+    
+    return filtered.sort((a, b) => a.priority - b.priority);
+  }, [optimizations, selectedCategory, showCompleted]);
+
+  // Memoize categories
+  const categories = useMemo(() => [
+    { id: 'all', name: 'All', icon: Settings, color: 'from-gray-500 to-gray-600' },
+    { id: 'performance', name: 'Performance', icon: Zap, color: 'from-cyan-500 to-blue-600' },
+    { id: 'security', name: 'Security', icon: Shield, color: 'from-red-500 to-orange-600' },
+    { id: 'scalability', name: 'Scalability', icon: TrendingUp, color: 'from-green-500 to-teal-600' },
+    { id: 'cost', name: 'Cost', icon: Target, color: 'from-purple-500 to-pink-600' }
+  ], []);
+
+  // Memoize impact colors
+  const getImpactColor = useCallback((impact: Optimization['impact']) => {
+    const colors = {
+      high: 'text-red-400',
+      medium: 'text-yellow-400',
+      low: 'text-green-400'
+    };
+    return colors[impact];
+  }, []);
+
+  // Memoize effort colors
+  const getEffortColor = useCallback((effort: Optimization['effort']) => {
+    const colors = {
+      low: 'text-green-400',
+      medium: 'text-yellow-400',
+      high: 'text-red-400'
+    };
+    return colors[effort];
+  }, []);
+
+  // Memoize status colors and icons
+  const getStatusInfo = useCallback((status: Optimization['status']) => {
+    const statusMap = {
+      pending: { color: 'text-gray-400', icon: Clock, bg: 'bg-gray-500/20' },
+      'in-progress': { color: 'text-blue-400', icon: Play, bg: 'bg-blue-500/20' },
+      completed: { color: 'text-green-400', icon: CheckCircle, bg: 'bg-green-500/20' },
+      failed: { color: 'text-red-400', icon: AlertTriangle, bg: 'bg-red-500/20' }
+    };
+    return statusMap[status];
+  }, []);
+
+  // Handle optimization run
+  const handleRunOptimization = useCallback(async (optimizationId: string) => {
+    setIsRunning(true);
+    
+    // Simulate optimization process
+    setOptimizations(prev => prev.map(opt => 
+      opt.id === optimizationId 
+        ? { ...opt, status: 'in-progress' as const }
+        : opt
+    ));
+
+    // Simulate processing time
+    setTimeout(() => {
+      setOptimizations(prev => prev.map(opt => 
+        opt.id === optimizationId 
+          ? { 
+              ...opt, 
+              status: 'completed' as const, 
+              lastRun: new Date(),
+              nextRun: new Date(Date.now() + 24 * 60 * 60 * 1000) // 24 hours from now
+            }
+          : opt
+      ));
+      setIsRunning(false);
+    }, 3000);
+  }, []);
+
+  // Handle auto-optimization toggle
+  const handleAutoOptimizeToggle = useCallback(() => {
+    setAutoOptimize(!autoOptimize);
+  }, [autoOptimize]);
+
+  // Calculate optimization statistics
+  const stats = useMemo(() => {
+    const total = optimizations.length;
+    const completed = optimizations.filter(opt => opt.status === 'completed').length;
+    const inProgress = optimizations.filter(opt => opt.status === 'in-progress').length;
+    const pending = optimizations.filter(opt => opt.status === 'pending').length;
+    const completionRate = total > 0 ? Math.round((completed / total) * 100) : 0;
+
+    return { total, completed, inProgress, pending, completionRate };
+  }, [optimizations]);
+
+  // Get priority recommendations
+  const priorityRecommendations = useMemo(() => {
+    return filteredOptimizations
+      .filter(opt => opt.status === 'pending')
+      .slice(0, 3)
+      .map(opt => ({
+        ...opt,
+        recommendation: `High impact optimization with ${opt.estimatedSavings} estimated savings`
+      }));
+  }, [filteredOptimizations]);
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
       {/* Header */}
-      <div className="flex items-center justify-between">
-        <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center">
-            <Settings className="w-5 h-5 text-white" />
-          </div>
+      <div className="text-center">
+        <h3 className="text-2xl font-bold text-white mb-2">Performance Optimizer</h3>
+        <p className="text-gray-400">Intelligent optimization recommendations and automation</p>
+      </div>
+
+      {/* Statistics Dashboard */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {[
+          { label: 'Total', value: stats.total, color: 'text-blue-400', icon: Settings },
+          { label: 'Completed', value: stats.completed, color: 'text-green-400', icon: CheckCircle },
+          { label: 'In Progress', value: stats.inProgress, color: 'text-yellow-400', icon: Play },
+          { label: 'Success Rate', value: `${stats.completionRate}%`, color: 'text-purple-400', icon: TrendingUp }
+        ].map((stat, index) => (
+          <motion.div
+            key={index}
+            className="p-4 bg-gray-800/30 rounded-xl border border-gray-700/50 text-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1 }}
+          >
+            <stat.icon className={`w-6 h-6 ${stat.color} mx-auto mb-2`} aria-hidden="true" />
+            <div className={`text-2xl font-bold ${stat.color} mb-1`}>{stat.value}</div>
+            <div className="text-xs text-gray-400">{stat.label}</div>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Auto-Optimization Toggle */}
+      <div className="p-4 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-xl border border-cyan-500/20">
+        <div className="flex items-center justify-between">
           <div>
-            <h3 className="text-lg font-semibold text-white">Performance Optimizer</h3>
-            <p className="text-sm text-gray-400">Real-time optimization suggestions</p>
+            <h4 className="text-sm font-semibold text-cyan-400 mb-1">Auto-Optimization</h4>
+            <p className="text-xs text-gray-300">
+              Automatically run optimizations based on performance thresholds
+            </p>
           </div>
-        </div>
-        
-        <button
-          onClick={runAnalysis}
-          disabled={isAnalyzing}
-          className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 flex items-center space-x-2"
-        >
-          {isAnalyzing ? (
-            <>
-              <RefreshCw className="w-4 h-4 animate-spin" />
-              <span>Analyzing...</span>
-            </>
-          ) : (
-            <>
-              <RefreshCw className="w-4 h-4" />
-              <span>Run Analysis</span>
-            </>
-          )}
-        </button>
-      </div>
-
-      {/* Current vs Optimized Metrics */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Current Metrics */}
-        <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 border border-gray-700/30 rounded-2xl backdrop-blur-xl p-6">
-          <h4 className="text-lg font-semibold text-white mb-4">Current Metrics</h4>
-          <div className="space-y-3">
-            <div className="flex items-center justify-between">
-              <span className="text-gray-400">LCP:</span>
-              <span className={getMetricColor(currentMetrics.lcp, 2.5, true)}>
-                {currentMetrics.lcp}s
-              </span>
-            </div>
-            <div className="flex items-center justify-between">
-              <span className="text-gray-400">FID:</span>
-              <span className={getMetricColor(currentMetrics.fid, 100, true)}>
-                {currentMetrics.fid}ms
-              </span>
-            </div>
-            <div className="flex items-center justify-between">
-              <span className="text-gray-400">CLS:</span>
-              <span className={getMetricColor(currentMetrics.cls, 0.1, true)}>
-                {currentMetrics.cls}
-              </span>
-            </div>
-            <div className="flex items-center justify-between">
-              <span className="text-gray-400">TTFB:</span>
-              <span className={getMetricColor(currentMetrics.ttfb, 600, true)}>
-                {currentMetrics.ttfb}ms
-              </span>
-            </div>
-            <div className="flex items-center justify-between">
-              <span className="text-gray-400">SEO Score:</span>
-              <span className={getMetricColor(currentMetrics.seo, 80)}>
-                {currentMetrics.seo}%
-              </span>
-            </div>
-            <div className="flex items-center justify-between">
-              <span className="text-gray-400">Performance:</span>
-              <span className={getMetricColor(currentMetrics.performance, 80)}>
-                {currentMetrics.performance}%
-              </span>
-            </div>
-          </div>
-        </div>
-
-        {/* Optimized Metrics */}
-        <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 border border-gray-700/30 rounded-2xl backdrop-blur-xl p-6">
-          <h4 className="text-lg font-semibold text-white mb-4">Optimized Metrics</h4>
-          <div className="space-y-3">
-            <div className="flex items-center justify-between">
-              <span className="text-gray-400">LCP:</span>
-              <span className={getMetricColor(optimizedMetrics.lcp, 2.5, true)}>
-                {optimizedMetrics.lcp.toFixed(1)}s
-              </span>
-            </div>
-            <div className="flex items-center justify-between">
-              <span className="text-gray-400">FID:</span>
-              <span className={getMetricColor(optimizedMetrics.fid, 100, true)}>
-                {optimizedMetrics.fid}ms
-              </span>
-            </div>
-            <div className="flex items-center justify-between">
-              <span className="text-gray-400">CLS:</span>
-              <span className={getMetricColor(optimizedMetrics.cls, 0.1, true)}>
-                {optimizedMetrics.cls.toFixed(2)}
-              </span>
-            </div>
-            <div className="flex items-center justify-between">
-              <span className="text-gray-400">TTFB:</span>
-              <span className={getMetricColor(optimizedMetrics.ttfb, 600, true)}>
-                {optimizedMetrics.ttfb}ms
-              </span>
-            </div>
-            <div className="flex items-center justify-between">
-              <span className="text-gray-400">SEO Score:</span>
-              <span className={getMetricColor(optimizedMetrics.seo, 80)}>
-                {optimizedMetrics.seo}%
-              </span>
-            </div>
-            <div className="flex items-center justify-between">
-              <span className="text-gray-400">Performance:</span>
-              <span className={getMetricColor(optimizedMetrics.performance, 80)}>
-                {optimizedMetrics.performance}%
-              </span>
-            </div>
-          </div>
+          <button
+            onClick={handleAutoOptimizeToggle}
+            className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-500/50 ${
+              autoOptimize ? 'bg-cyan-500' : 'bg-gray-600'
+            }`}
+            aria-label={`${autoOptimize ? 'Disable' : 'Enable'} auto-optimization`}
+          >
+            <span
+              className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
+                autoOptimize ? 'translate-x-6' : 'translate-x-1'
+              }`}
+            />
+          </button>
         </div>
       </div>
 
-      {/* Optimization Suggestions */}
-      <div>
-        <div className="flex items-center justify-between mb-6">
-          <h4 className="text-lg font-semibold text-white">Optimization Suggestions</h4>
-          <div className="flex items-center space-x-2 text-sm text-gray-400">
-            <Lightbulb className="w-4 h-4" />
-            <span>{suggestions.filter(s => s.status === 'pending').length} pending</span>
+      {/* Category Filter */}
+      <div className="flex flex-wrap gap-2">
+        {categories.map((category) => (
+          <button
+            key={category.id}
+            onClick={() => setSelectedCategory(category.id)}
+            className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 ${
+              selectedCategory === category.id
+                ? `bg-gradient-to-r ${category.color} text-white shadow-lg`
+                : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50'
+            }`}
+          >
+            <category.icon className="w-4 h-4" aria-hidden="true" />
+            {category.name}
+          </button>
+        ))}
+      </div>
+
+      {/* Show Completed Toggle */}
+      <div className="flex items-center gap-2">
+        <input
+          type="checkbox"
+          id="show-completed"
+          checked={showCompleted}
+          onChange={(e) => setShowCompleted(e.target.checked)}
+          className="w-4 h-4 text-cyan-500 bg-gray-800 border-gray-600 rounded focus:ring-cyan-500/50 focus:ring-2"
+        />
+        <label htmlFor="show-completed" className="text-sm text-gray-300">
+          Show completed optimizations
+        </label>
+      </div>
+
+      {/* Priority Recommendations */}
+      {priorityRecommendations.length > 0 && (
+        <div className="p-4 bg-gradient-to-r from-yellow-500/10 to-orange-500/10 rounded-xl border border-yellow-500/20">
+          <h4 className="text-sm font-semibold text-yellow-400 mb-3">Priority Recommendations</h4>
+          <div className="space-y-2">
+            {priorityRecommendations.map((rec, index) => (
+              <div key={index} className="flex items-center justify-between text-sm">
+                <span className="text-gray-300">{rec.name}</span>
+                <span className="text-yellow-400">{rec.recommendation}</span>
+              </div>
+            ))}
           </div>
         </div>
+      )}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {suggestions.map((suggestion) => (
+      {/* Optimizations List */}
+      <div className="space-y-4">
+        {filteredOptimizations.map((optimization, index) => {
+          const StatusIcon = getStatusInfo(optimization.status).icon;
+          const statusColor = getStatusInfo(optimization.status).color;
+          const statusBg = getStatusInfo(optimization.status).bg;
+
+          return (
             <motion.div
-              key={suggestion.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="relative p-4 bg-gradient-to-br from-gray-900/60 to-gray-800/60 border border-gray-700/30 rounded-xl backdrop-blur-xl hover:border-cyan-500/50 transition-all duration-300"
+              key={optimization.id}
+              className="p-4 bg-gray-800/30 rounded-xl border border-gray-700/50"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: index * 0.1 }}
             >
-              {/* Status Icon */}
-              <div className="absolute top-4 right-4">
-                {getStatusIcon(suggestion.status)}
-              </div>
-
-              {/* Header */}
-              <div className="flex items-start space-x-3 mb-3 pr-12">
-                <div className="w-8 h-8 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                  {getCategoryIcon(suggestion.category)}
-                </div>
+              <div className="flex items-start justify-between">
                 <div className="flex-1">
-                  <h5 className="text-white font-medium mb-1">{suggestion.title}</h5>
-                  <p className="text-gray-400 text-sm leading-relaxed">
-                    {suggestion.description}
-                  </p>
+                  <div className="flex items-center gap-3 mb-2">
+                    <optimization.icon className="w-5 h-5 text-cyan-400" aria-hidden="true" />
+                    <h4 className="text-lg font-semibold text-white">{optimization.name}</h4>
+                    <div className={`px-2 py-1 text-xs font-medium rounded-full ${statusBg} ${statusColor}`}>
+                      <StatusIcon className="w-3 h-3 inline mr-1" aria-hidden="true" />
+                      {optimization.status.replace('-', ' ')}
+                    </div>
+                  </div>
+                  
+                  <p className="text-gray-300 text-sm mb-3">{optimization.description}</p>
+                  
+                  <div className="flex items-center gap-4 text-xs text-gray-400">
+                    <div className="flex items-center gap-1">
+                      <span>Impact:</span>
+                      <span className={getImpactColor(optimization.impact)}>
+                        {optimization.impact.charAt(0).toUpperCase() + optimization.impact.slice(1)}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <span>Effort:</span>
+                      <span className={getEffortColor(optimization.effort)}>
+                        {optimization.effort.charAt(0).toUpperCase() + optimization.effort.slice(1)}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <span>Priority:</span>
+                      <span className="text-purple-400">#{optimization.priority}</span>
+                    </div>
+                    {optimization.estimatedSavings !== 'N/A' && (
+                      <div className="flex items-center gap-1">
+                        <span>Savings:</span>
+                        <span className="text-green-400">{optimization.estimatedSavings}</span>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Last Run Info */}
+                  {optimization.lastRun && (
+                    <div className="mt-2 text-xs text-gray-500">
+                      Last run: {optimization.lastRun.toLocaleString()}
+                      {optimization.nextRun && (
+                        <span className="ml-3">
+                          Next run: {optimization.nextRun.toLocaleString()}
+                        </span>
+                      )}
+                    </div>
+                  )}
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex flex-col gap-2 ml-4">
+                  {optimization.status === 'pending' && (
+                    <button
+                      onClick={() => handleRunOptimization(optimization.id)}
+                      disabled={isRunning}
+                      className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-sm font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 disabled:opacity-50 disabled:cursor-not-allowed"
+                      aria-label={`Run ${optimization.name} optimization`}
+                    >
+                      {isRunning ? (
+                        <div className="flex items-center gap-2">
+                          <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                          Running...
+                        </div>
+                      ) : (
+                        <div className="flex items-center gap-2">
+                          <Play className="w-4 h-4" aria-hidden="true" />
+                          Run
+                        </div>
+                      )}
+                    </button>
+                  )}
+                  
+                  {optimization.status === 'completed' && (
+                    <button
+                      onClick={() => handleRunOptimization(optimization.id)}
+                      className="px-4 py-2 bg-gradient-to-r from-green-500 to-teal-600 text-white text-sm font-medium rounded-lg hover:from-green-600 hover:to-teal-700 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-green-500/50"
+                      aria-label={`Re-run ${optimization.name} optimization`}
+                    >
+                      <div className="flex items-center gap-2">
+                        <RotateCcw className="w-4 h-4" aria-hidden="true" />
+                        Re-run
+                      </div>
+                    </button>
+                  )}
                 </div>
               </div>
-
-              {/* Impact and Improvement */}
-              <div className="flex items-center justify-between mb-3">
-                <span className={`text-xs px-2 py-1 rounded-full border ${getImpactColor(suggestion.impact)}`}>
-                  {suggestion.impact} impact
-                </span>
-                <span className="text-cyan-400 text-sm font-medium">
-                  {suggestion.estimatedImprovement}
-                </span>
-              </div>
-
-              {/* Action Button */}
-              {suggestion.status === 'pending' && (
-                <button
-                  onClick={() => applyOptimization(suggestion.id)}
-                  className="w-full px-3 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-sm font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2"
-                >
-                  <span>{suggestion.action}</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-              )}
-
-              {suggestion.status === 'applied' && (
-                <div className="text-center text-green-400 text-sm font-medium py-2">
-                  ✓ Optimization Applied
-                </div>
-              )}
-
-              {suggestion.status === 'failed' && (
-                <div className="text-center text-red-400 text-sm font-medium py-2">
-                  ✗ Optimization Failed
-                </div>
-              )}
             </motion.div>
-          ))}
-        </div>
+          );
+        })}
       </div>
 
-      {/* Quick Actions */}
-      <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 rounded-2xl p-6">
-        <h4 className="text-lg font-semibold text-white mb-4">Quick Actions</h4>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <button className="p-4 bg-gray-800/40 rounded-xl border border-gray-700/30 hover:border-cyan-500/50 transition-all duration-300 text-left">
-            <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center mb-3">
-              <CheckCircle className="w-4 h-4 text-white" />
-            </div>
-            <h5 className="text-white font-medium mb-1">Run Lighthouse</h5>
-            <p className="text-gray-400 text-sm">Generate comprehensive performance report</p>
-          </button>
-
-          <button className="p-4 bg-gray-800/40 rounded-xl border border-gray-700/30 hover:border-cyan-500/50 transition-all duration-300 text-left">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-lg flex items-center justify-center mb-3">
-              <RefreshCw className="w-4 h-4 text-white" />
-            </div>
-            <h5 className="text-white font-medium mb-1">Clear Cache</h5>
-            <p className="text-gray-400 text-sm">Remove cached resources and data</p>
-          </button>
-
-          <button className="p-4 bg-gray-800/40 rounded-xl border border-gray-700/30 hover:border-cyan-500/50 transition-all duration-300 text-left">
-            <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center mb-3">
-              <Zap className="w-4 h-4 text-white" />
-            </div>
-            <h5 className="text-white font-medium mb-1">Auto-Optimize</h5>
-            <p className="text-gray-400 text-sm">Apply all safe optimizations automatically</p>
-          </button>
+      {/* No Results */}
+      {filteredOptimizations.length === 0 && (
+        <div className="text-center py-8">
+          <BarChart3 className="w-12 h-12 text-gray-500 mx-auto mb-4" aria-hidden="true" />
+          <p className="text-gray-400">No optimizations found for the selected criteria.</p>
         </div>
-      </div>
+      )}
     </div>
   );
 };
