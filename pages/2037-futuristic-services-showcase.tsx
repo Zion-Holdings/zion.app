@@ -215,8 +215,8 @@ export default function FuturisticServicesShowcase2037() {
                     
                     <div className="space-y-4 mb-6">
                       <div className="flex items-center justify-between">
-                        <span className="text-gray-300">Price:</span>
-                        <span className="text-white font-semibold text-lg">{service.price}</span>
+                        <span className="text-white/50 text-sm">Starting Price:</span>
+                        <span className="text-cyan-400 font-semibold">{service.price}</span>
                       </div>
                       <div className="flex items-center justify-between">
                         <span className="text-gray-300">Market:</span>
