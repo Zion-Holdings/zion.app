@@ -60,7 +60,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   // Combine all services
-  const allServices: Service[] = [
+  const allServices = [
     ...innovative2040FuturisticServices,
     ...innovative2040ITServices,
     ...realMicroSaasServices,
@@ -292,7 +292,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                     className="group relative bg-gray-800/50 border border-gray-700/50 rounded-2xl p-6 hover:border-cyan-500/50 hover:bg-gray-800/70 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/10"
                   >
                     {/* Popular Badge */}
-                    {service.popular && (
+                    {'popular' in service && service.popular && (
                       <div className="absolute -top-3 -right-3 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full">
                         Popular
                       </div>
