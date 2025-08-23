@@ -1213,6 +1213,36 @@ export default function ServicesAdvertisingPage() {
 						<li>References: {ext('https://vercel.com/pricing')}, {ext('https://www.cloudflare.com/plans/')}, {ext('https://www.netlify.com/pricing/')}</li>
 					</ul>
 				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">AI Bug Triage Copilot</h2>
+					<p className="text-slate-300">De-duplicate, enrich, and route issues automatically with confidence scoring and SLA-aware prioritization.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $50–$200/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/ai-bug-triage-copilot">/services/ai-bug-triage-copilot</a></li>
+						<li>References: https://www.atlassian.com/software/jira/pricing, https://linear.app/pricing</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">AI Customer Escalation Guard</h2>
+					<p className="text-slate-300">Predict escalations and churn using tickets, telemetry, and billing signals; trigger proactive playbooks.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $100–$400/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/ai-customer-escalation-guard">/services/ai-customer-escalation-guard</a></li>
+						<li>References: https://www.gainsight.com/, https://www.planhat.com/, https://segment.com/pricing</li>
+					</ul>
+				</section>
+
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">FinOps AutoTagger</h2>
+					<p className="text-slate-300">Policy-based cross-cloud tagging, drift detection, and allocation reports for accountable spend.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $30–$150/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/finops-autotagger">/services/finops-autotagger</a></li>
+						<li>References: https://calculator.aws, https://azure.microsoft.com/pricing, https://cloud.google.com/products/calculator</li>
+					</ul>
+				</section>
 			</div>
 		</div>
 	);
