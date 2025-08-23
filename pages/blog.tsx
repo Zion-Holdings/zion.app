@@ -32,17 +32,29 @@ const BlogPage: React.FC = () => {
 
   const blogPosts = [
     {
-      id: 1,
-      title: "The Future of AI Consciousness: Beyond Machine Learning",
-      excerpt: "Exploring how AI systems are evolving from simple pattern recognition to true consciousness and emotional intelligence.",
-      category: "ai",
-      author: "Dr. Sarah Chen",
-      date: "2025-01-15",
-      readTime: "8 min read",
-      views: "2.4k",
-      featured: true,
-      image: "/api/placeholder/600/400",
-      tags: ["AI Consciousness", "Machine Learning", "Ethics"]
+      id: 'quantum-ai-revolution-2025',
+      title: 'Quantum AI Revolution 2025: The Next Frontier of Computing',
+      excerpt: 'Discover how quantum computing is revolutionizing AI and automation in 2025, unlocking unprecedented computational power.',
+      date: 'January 20, 2025',
+      readTime: '12 min read',
+      category: 'Quantum Computing',
+      featured: true
+    },
+    {
+      id: 'ai-automation-trends-2025',
+      title: 'AI Automation Trends 2025: The Future of Autonomous Systems',
+      excerpt: 'Explore the cutting-edge trends shaping the future of AI automation and autonomous technology systems.',
+      date: 'January 17, 2025',
+      readTime: '8 min read',
+      category: 'AI & Automation'
+    },
+    {
+      id: 'sustainable-ai-green-computing-2025',
+      title: 'Sustainable AI: Green Computing Practices for 2025',
+      excerpt: 'Discover how Zion Tech Group is leading the charge in sustainable AI development and green computing practices.',
+      date: 'January 22, 2025',
+      readTime: '10 min read',
+      category: 'Sustainability'
     },
     {
       id: 2,
@@ -111,13 +123,7 @@ const BlogPage: React.FC = () => {
     }
   ];
 
-  const filteredPosts = blogPosts.filter(post => {
-    const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         post.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
-    const matchesCategory = selectedCategory === 'all' || post.category === selectedCategory;
-    return matchesSearch && matchesCategory;
-  });
+  const categories = ['All', 'Quantum Computing', 'AI & Automation', 'Sustainability', 'Content & AI', 'Infrastructure', 'AI Ethics', 'Performance', 'Future of Work'];
 
   const featuredPost = blogPosts.find(post => post.featured);
 
