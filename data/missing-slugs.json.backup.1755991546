@@ -1,8 +1,16 @@
 [
+<<<<<<< HEAD
+  "ai-autonomous-business-intelligence",
+=======
   "ai-autonomous-business-operations-platform",
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-2721
   "ai-autonomous-business-process-automation",
   "ai-autonomous-customer-success",
   "ai-autonomous-ecosystem",
+<<<<<<< HEAD
+  "ai-autonomous-research-platform",
+=======
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-2721
   "ai-autonomous-robotics-platform",
   "ai-content-factory-pro",
   "ai-content-marketing-automation",
@@ -33,7 +41,14 @@
   "autonomous-vehicle-ai-2040",
   "blockchain-enterprise-platform",
   "customer-intelligence-platform",
+<<<<<<< HEAD
+  "energy-technology-solutions",
+  "entertainment-media-solutions",
   "industrial-automation-ai",
+  "intelligent-project-management-suite",
+=======
+  "industrial-automation-ai",
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-2721
   "marketing-ai-platform",
   "metaverse-development-studio-pro",
   "metaverse-development-studio-pro-2045",
@@ -65,6 +80,11 @@
   "quantum-storage-platform-2045",
   "quantum-supply-chain-optimizer",
   "quantum-threat-detection",
+<<<<<<< HEAD
+  "real-estate-technology-solutions",
+  "satellite-technology-solutions",
+=======
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-2721
   "services/data-contracts-hub",
   "services/it-infrastructure",
   "services/quantum-technology",

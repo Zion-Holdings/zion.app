@@ -5,6 +5,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ChevronRight, Home, Star, Users, 
   HelpCircle, Mail, Phone, MapPin,
+<<<<<<< HEAD
+  Brain, Atom, Rocket, DollarSign,
+  Zap,
+  TrendingUp, Award, CheckCircle, Clock,
+  Search, X as CloseIcon,
+  Target, BookOpen, Calendar, Video, FileText, Grid
+=======
   Brain, Atom, Shield, Rocket, DollarSign,
   Zap, Settings, Globe, Heart, Eye, Lock, Cloud,
   BarChart3, Network, Database, Code, Award, Cpu,
@@ -12,6 +19,7 @@ import {
   Search, X as CloseIcon,
   Target, BookOpen, Calendar, Video, FileText,
   Truck, ShoppingCart, BookOpenCheck, Building, MessageCircle, User
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-2721
 } from 'lucide-react';
 
 const contactInfo = {
@@ -23,6 +31,9 @@ const contactInfo = {
 
 const sidebarSections = [
   {
+<<<<<<< HEAD
+    title: 'AI & Machine Learning',
+=======
     title: 'Main Navigation',
     icon: <Home className="w-5 h-5" />,
     items: [
@@ -50,8 +61,21 @@ const sidebarSections = [
   },
   {
     title: 'AI & Consciousness',
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-2721
     icon: <Brain className="w-5 h-5" />,
     items: [
+<<<<<<< HEAD
+      { name: 'AI Services Overview', href: '/ai-services', badge: 'Main' },
+      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029', badge: 'New' },
+      { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant', badge: 'New' },
+      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training', badge: 'Popular' },
+      { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant', badge: 'New' },
+      { name: 'AI Predictive Maintenance', href: '/ai-predictive-maintenance-platform', badge: 'New' },
+      { name: 'AI Content Personalization', href: '/ai-content-personalization-engine', badge: 'New' },
+      { name: 'AI Healthcare Diagnostics', href: '/healthcare-solutions' },
+      { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence' },
+      { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer' }
+=======
       { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029', icon: <Brain className="w-4 h-4" /> },
       { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training', icon: <Heart className="w-4 h-4" /> },
       { name: 'AI Autonomous Operations', href: '/ai-autonomous-business-operations-platform', icon: <Settings className="w-4 h-4" /> },
@@ -60,11 +84,42 @@ const sidebarSections = [
       { name: 'AI Content Personalization', href: '/ai-content-personalization-engine', icon: <FileText className="w-4 h-4" /> },
       { name: 'AI Ecosystem Manager', href: '/ai-autonomous-ecosystem-manager', icon: <Globe className="w-4 h-4" /> },
       { name: 'AI Ethics & Governance', href: '/ai-ethics-governance-framework', icon: <Shield className="w-4 h-4" /> }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-2721
     ]
   },
   {
     title: 'Quantum & Emerging Tech',
     icon: <Atom className="w-5 h-5" />,
+<<<<<<< HEAD
+    color: 'from-blue-500 to-cyan-500',
+    items: [
+      { name: 'Quantum Services Overview', href: '/quantum-services', badge: 'Main' },
+      { name: 'Quantum Neural Networks', href: '/quantum-neural-network-platform', badge: 'Hot' },
+      { name: 'Quantum Internet Security', href: '/quantum-internet-security-platform', badge: 'New' },
+      { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery-platform', badge: 'New' },
+      { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform' },
+      { name: 'Quantum Energy Platform', href: '/quantum-energy-platform' },
+      { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity-platform' },
+      { name: 'Quantum Financial Trading', href: '/quantum-financial-trading' }
+    ]
+  },
+  {
+    title: 'Space Technology',
+    icon: <Rocket className="w-5 h-5" />,
+    color: 'text-orange-400',
+    items: [
+      { name: 'Space Technology Overview', href: '/space-technology', badge: 'Main' },
+      { name: 'Space Resource Mining', href: '/space-resource-mining-platform', badge: 'Hot' },
+      { name: 'AI-Powered Space Tech', href: '/ai-powered-space-technology', badge: 'New' },
+      { name: 'Satellite Technology', href: '/satellite-technology-solutions', badge: 'New' },
+      { name: 'Space Infrastructure', href: '/space-infrastructure-platform' },
+      { name: 'Space Communications', href: '/space-communications-network' },
+      { name: 'Space Robotics', href: '/space-robotics-platform' }
+    ]
+  },
+  {
+    title: 'Enterprise IT',
+=======
     items: [
       { name: 'Quantum Neural Networks', href: '/quantum-neural-network-platform', icon: <Brain className="w-4 h-4" /> },
       { name: 'Quantum Financial Trading', href: '/quantum-financial-trading-platform', icon: <BarChart3 className="w-4 h-4" /> },
@@ -78,8 +133,90 @@ const sidebarSections = [
   },
   {
     title: 'Enterprise Solutions',
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-2721
     icon: <Shield className="w-5 h-5" />,
     items: [
+<<<<<<< HEAD
+      { name: 'IT Services Overview', href: '/it-services', badge: 'Main' },
+      { name: 'Quantum-Secure Cloud', href: '/quantum-secure-cloud-infrastructure', badge: 'New' },
+      { name: 'Autonomous IT Operations', href: '/autonomous-it-operations-center', badge: 'New' },
+      { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration-platform', badge: 'New' },
+      { name: 'Blockchain Infrastructure', href: '/blockchain-infrastructure-platform', badge: 'New' },
+      { name: 'AI-Powered DevOps', href: '/ai-powered-devops-platform', badge: 'New' },
+      { name: 'Zero Trust Security', href: '/zero-trust-security-platform' },
+      { name: 'Browser Automation Cloud', href: '/browser-automation-cloud/' },
+      { name: 'Secrets Rotation Automation', href: '/secrets-rotation-automation/' }
+    ]
+  },
+  {
+    title: 'Industry Solutions',
+    icon: <Target className="w-5 h-5" />,
+    color: 'text-pink-400',
+    items: [
+      { name: 'Healthcare Solutions', href: '/healthcare-solutions', badge: 'Main' },
+      { name: 'Financial Solutions', href: '/financial-solutions', badge: 'Main' },
+      { name: 'Government Solutions', href: '/government-technology-solutions', badge: 'Main' },
+      { name: 'Manufacturing AI', href: '/manufacturing-ai-solutions', badge: 'Main' },
+      { name: 'Retail Technology', href: '/retail-technology-solutions' },
+      { name: 'Education Technology', href: '/education-technology-solutions' },
+      { name: 'Energy Technology', href: '/energy-technology-solutions' }
+    ]
+  },
+  {
+    title: 'Industry Solutions',
+    icon: <Target className="w-5 h-5" />,
+    color: 'text-emerald-400',
+    items: [
+      { name: 'Solutions Overview', href: '/solutions', badge: 'Main' },
+      { name: 'Healthcare Solutions', href: '/healthcare-solutions' },
+      { name: 'Financial Solutions', href: '/financial-solutions' },
+      { name: 'Manufacturing AI Solutions', href: '/manufacturing-ai-solutions' },
+      { name: 'Retail Technology Solutions', href: '/retail-technology-solutions' },
+      { name: 'Government Technology Solutions', href: '/government-technology-solutions' },
+      { name: 'Education Technology Solutions', href: '/education-technology-solutions' },
+      { name: 'Energy & Utilities Solutions', href: '/energy-utilities-solutions' },
+      { name: 'Entertainment & Media', href: '/entertainment-media-solutions' },
+      { name: 'Biotech AI Research', href: '/biotech-ai-research-platform' }
+    ]
+  },
+  {
+    title: 'Resources & Support',
+    icon: <BookOpen className="w-5 h-5" />,
+    color: 'text-amber-400',
+    items: [
+      { name: 'Resources Overview', href: '/resources', badge: 'Main' },
+      { name: 'Documentation', href: '/docs' },
+      { name: 'Blog', href: '/blog' },
+      { name: 'Case Studies', href: '/case-studies' },
+      { name: 'Support', href: '/support' },
+      { name: 'Training', href: '/training' },
+      { name: 'Events', href: '/events' },
+      { name: 'Webinars', href: '/webinars' },
+      { name: 'White Papers', href: '/white-papers' },
+      { name: 'Research & Development', href: '/research-development' }
+    ]
+  },
+  {
+    title: 'Company',
+    icon: <Building className="w-5 h-5" />,
+    color: 'text-emerald-400',
+    items: [
+      { name: 'About Us', href: '/about' },
+      { name: 'Careers', href: '/careers' },
+      { name: 'Contact', href: '/contact' },
+      { name: 'News', href: '/news' }
+    ]
+  },
+  {
+    title: 'Resources',
+    icon: <BookOpen className="w-5 h-5" />,
+    color: 'text-yellow-400',
+    items: [
+      { name: 'Blog', href: '/blog' },
+      { name: 'Whitepapers', href: '/whitepapers' },
+      { name: 'Webinars', href: '/webinars' },
+      { name: 'Support', href: '/support' }
+=======
       { name: 'Quantum-Secure Cloud', href: '/quantum-secure-cloud-infrastructure', icon: <Cloud className="w-4 h-4" /> },
       { name: 'Autonomous IT Operations', href: '/autonomous-it-operations-center', icon: <Settings className="w-4 h-4" /> },
       { name: 'Edge Computing Platform', href: '/edge-computing-orchestration-platform', icon: <Network className="w-4 h-4" /> },
@@ -142,6 +279,7 @@ const sidebarSections = [
       { name: 'Case Studies', href: '/case-studies', icon: <Award className="w-4 h-4" /> },
       { name: 'Support', href: '/support', icon: <HelpCircle className="w-4 h-4" /> },
       { name: 'Training', href: '/training', icon: <BookOpenCheck className="w-4 h-4" /> }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-2721
     ]
   }
 ];
@@ -369,13 +507,73 @@ export default function EnhancedSidebar2025({ isOpen, onClose }: EnhancedSidebar
                       className="w-full flex items-center justify-between p-3 rounded-lg hover:bg-gray-800/50 transition-colors duration-200 group"
                     >
                       <div className="flex items-center space-x-3">
+<<<<<<< HEAD
+                        <div className={`w-8 h-8 rounded-lg bg-gradient-to-r ${section.color} flex items-center justify-center`}>
+=======
                         <div className="w-8 h-8 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center">
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-2721
                           {section.icon}
                         </div>
                         <span className="text-gray-300 group-hover:text-white transition-colors duration-200">
                           {section.title}
                         </span>
                       </div>
+<<<<<<< HEAD
+                      <div>
+                        <span className="font-medium">{section.title}</span>
+                        {section.badge && (
+                          <span className="ml-2 px-2 py-1 text-xs bg-cyan-500/20 text-cyan-300 rounded-full border border-cyan-500/30">
+                            {section.badge}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                    <ChevronDown 
+                      className={`w-4 h-4 text-gray-400 transition-transform duration-200 ${
+                        expandedSections.includes(section.id) ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </button>
+
+                  {/* Section Items */}
+                  <AnimatePresence>
+                    {expandedSections.includes(section.id) && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="ml-11 space-y-1 overflow-hidden"
+                      >
+                        {section.items.map((item) => (
+                          <Link
+                            key={item.href}
+                            href={item.href}
+                            onClick={onClose}
+                            className="block p-2 text-sm text-gray-300 hover:text-white hover:bg-gray-800/30 rounded-md transition-all duration-200 group/item"
+                          >
+                            <div className="flex items-center justify-between">
+                              <span className="truncate">{item.label}</span>
+                              {item.badge && (
+                                <span className={`px-2 py-1 text-xs font-medium rounded-full text-white ${
+                                  item.badge === 'Breakthrough' ? 'bg-gradient-to-r from-red-500 to-pink-600' :
+                                  item.badge === 'New' ? 'bg-gradient-to-r from-green-500 to-emerald-600' :
+                                  item.badge === 'Hot' ? 'bg-gradient-to-r from-orange-500 to-red-600' :
+                                  item.badge === 'Featured' ? 'bg-gradient-to-r from-cyan-500 to-blue-600' :
+                                  'bg-gradient-to-r from-purple-500 to-indigo-600'
+                                }`}>
+                                  {item.badge}
+                                </span>
+                              )}
+                            </div>
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ))}
+=======
                       <ChevronRight 
                         className={`w-4 h-4 text-gray-400 transition-transform duration-200 ${
                           expandedCategory === section.title ? 'rotate-90' : ''
@@ -410,6 +608,7 @@ export default function EnhancedSidebar2025({ isOpen, onClose }: EnhancedSidebar
                   </div>
                 ))}
               </div>
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-2721
             </div>
 
             {/* Company Links */}
