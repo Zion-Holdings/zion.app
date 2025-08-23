@@ -10,7 +10,7 @@ import {
 
 // Import our new service data
 import { enterpriseITSolutions } from '../data/2034-enterprise-it-solutions';
-import { innovativeMicroSaasSolutions } from '../data/2034-innovative-micro-saas-solutions';
+import { innovativeMicroSaasSolutions as innovativeMicroSaasSolutions2034 } from '../data/2034-innovative-micro-saas-solutions';
 import { cuttingEdgeAIServices } from '../data/2034-cutting-edge-ai-services';
 import { real2025Q4AugmentedBatch } from '../data/real-2025-q4-augmented-batch';
 import { real2029Q3Additions } from '../data/real-2029-q3-additions';
@@ -32,6 +32,11 @@ import { revolutionary2039Services } from '../data/revolutionary-2039-services';
 import { innovative2038AdvancedServices } from '../data/innovative-2038-advanced-services';
 import { revolutionary2040FuturisticServices } from '../data/revolutionary-2040-futuristic-services';
 import { comprehensiveAdvertisingMarketingServices } from '../data/comprehensive-advertising-marketing-services';
+
+// Import our new cutting-edge innovative services
+import { cuttingEdgeInnovativeServices } from '../data/2025-cutting-edge-innovative-services';
+import { enterpriseAISolutions } from '../data/2025-enterprise-ai-solutions';
+import { innovativeMicroSaasSolutions } from '../data/2025-innovative-micro-saas-solutions';
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -76,7 +81,7 @@ const getServiceDescription = (service: any) => {
 // Create unified services array
 const allServices = [
   ...enterpriseITSolutions,
-  ...innovativeMicroSaasSolutions,
+  ...innovativeMicroSaasSolutions2034,
   ...cuttingEdgeAIServices,
   ...realMicroSaasServices,
   ...innovativeAIServices,
@@ -101,7 +106,11 @@ const allServices = [
   // Our new comprehensive services
   ...innovative2038AdvancedServices,
   ...revolutionary2040FuturisticServices,
-  ...comprehensiveAdvertisingMarketingServices
+  ...comprehensiveAdvertisingMarketingServices,
+  // Our new cutting-edge innovative services
+  ...cuttingEdgeInnovativeServices,
+  ...enterpriseAISolutions,
+  ...innovativeMicroSaasSolutions
 ];
 
 const categories = [
