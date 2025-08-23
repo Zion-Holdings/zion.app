@@ -18,10 +18,17 @@ export default function EnhancedNavigation() {
           <a className="font-semibold">Zion</a>
         </Link>
         <div className="flex items-center gap-4 text-sm">
+<<<<<<< HEAD
+          <Link href="/services"><a>Services</a></Link>
+          <Link href="/talent"><a>Talents</a></Link>
+          <Link href="/products"><a>Equipment</a></Link>
+          <Link href="/automation"><a>Automation</a></Link>
+=======
           <Link href="/download"><a>Download</a></Link>
           <Link href="/services"><a>Services</a></Link>
           <Link href="/features"><a>Features</a></Link>
           <Link href="/capabilities"><a>Capabilities</a></Link>
+>>>>>>> origin/cursor/create-mobile-launch-landing-and-support-toolkit-3ea3
           <Link href="/about"><a>About</a></Link>
           <Link href="/blog"><a>Blog</a></Link>
           <Link href="/salary-insights"><a>Salary Insights</a></Link>
