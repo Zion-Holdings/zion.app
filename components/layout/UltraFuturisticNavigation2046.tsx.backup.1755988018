@@ -26,7 +26,11 @@ import {
   Globe,
   Cpu,
   Eye,
+<<<<<<< HEAD
+  Heart,
+=======
   Infinity,
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1e39
   TrendingUp,
   Palette,
   Layers,
@@ -39,6 +43,15 @@ import {
   Play,
   DollarSign,
   GraduationCap,
+<<<<<<< HEAD
+  Lock,
+  Key,
+  Network,
+  Satellite,
+  Server,
+  Store,
+  Truck
+=======
   ShieldCheck,
   HardDrive,
   Wifi,
@@ -119,6 +132,7 @@ import {
   Clock,
   Heart,
   Star
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1e39
 } from 'lucide-react';
 
 // Add missing icon components

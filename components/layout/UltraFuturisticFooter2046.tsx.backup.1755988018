@@ -19,12 +19,29 @@ import {
   Rocket,
   Cloud,
   Lock,
+<<<<<<< HEAD
+  Network,
+  FileText,
+  GraduationCap,
+  DollarSign,
+  Satellite,
+  Cpu,
+  Truck,
+  Heart,
+  Building,
+  Users,
+  Target,
+  Briefcase,
+  MessageCircle,
+  Home
+=======
   Key,
   CheckCircle,
   XCircle,
   PlusCircle,
   MinusCircle,
   GraduationCap
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1e39
 } from 'lucide-react';
 
 // Add missing icon components
@@ -96,8 +113,16 @@ const UltraFuturisticFooter2046: React.FC = () => {
     }
   ];
 
+<<<<<<< HEAD
+  const contactInfo = {
+    mobile: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com'
+=======
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1e39
   };
 
   const socialLinks = [
@@ -323,6 +348,9 @@ const UltraFuturisticFooter2046: React.FC = () => {
         {/* Bottom Gradient Bar */}
         <div className="h-1 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500"></div>
       </div>
+<<<<<<< HEAD
+    </footer>
+=======
 
       {/* Scroll to Top Button */}
       <motion.button
@@ -382,6 +410,7 @@ const UltraFuturisticFooter2046: React.FC = () => {
         />
       </div>
     </motion.footer>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1e39
   );
 };
 
