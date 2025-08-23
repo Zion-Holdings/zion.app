@@ -73,6 +73,11 @@ import { revolutionary2046AdvancedMicroSaasServices } from '../data/revolutionar
 import { revolutionary2046AdvancedITServices } from '../data/revolutionary-2046-advanced-it-services';
 import { revolutionary2046AdvancedAIServices } from '../data/revolutionary-2046-advanced-ai-services';
 
+// Import our new 2025 ultimate innovative services
+import { ultimateInnovativeServices2025 } from '../data/2025-ultimate-innovative-services-expansion';
+import { cuttingEdgeEnterpriseSolutions2025 } from '../data/2025-cutting-edge-enterprise-solutions';
+import { innovativeMicroSaasSolutionsV2 } from '../data/2025-innovative-micro-saas-solutions-v2';
+
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
@@ -120,6 +125,11 @@ const allServices = [
   ...innovativeITInfrastructureServices2025,
   ...innovativeMicroSaasSolutions2025,
   ...cuttingEdgeAIServices2025,
+  
+  // Our new 2025 ultimate innovative services
+  ...ultimateInnovativeServices2025,
+  ...cuttingEdgeEnterpriseSolutions2025,
+  ...innovativeMicroSaasSolutionsV2,
   
   ...enterpriseITSolutions,
   ...innovativeMicroSaasSolutions,
