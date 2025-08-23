@@ -65,21 +65,21 @@ const footerSections = [
     ]
   },
   {
-    title: 'Enterprise & Business',
-    description: 'Advanced enterprise and business solutions',
+    title: 'Company & Resources',
+    description: 'About Zion Tech Group and resources',
     icon: <Target className="w-5 h-5 text-purple-400" />,
     color: 'from-orange-500 to-red-500',
     links: [
-      { name: 'Autonomous Business Intelligence 2040', href: '/autonomous-business-intelligence-2040' },
-      { name: 'AI Customer Success 2041', href: '/ai-customer-success-2041' },
-      { name: 'AI Sales Intelligence 2041', href: '/ai-sales-intelligence-2041' },
-      { name: 'AI Autonomous Ecosystem 2041', href: '/ai-autonomous-ecosystem-2041' },
-      { name: 'AI Predictive Maintenance 2041', href: '/ai-predictive-maintenance-2041' },
-      { name: 'AI Content Personalization 2041', href: '/ai-content-personalization-2041' },
-      { name: 'AI Ethics & Governance 2041', href: '/ai-ethics-governance-2041' },
-      { name: 'Quantum Cloud Infrastructure 2041', href: '/quantum-cloud-infrastructure-2041' },
-      { name: 'Quantum Internet Security 2041', href: '/quantum-internet-security-2041' },
-      { name: 'Space Resource Intelligence 2040', href: '/space-resource-intelligence-2040' }
+      { name: 'About Us', href: '/about' },
+      { name: 'Careers', href: '/careers' },
+      { name: 'Contact', href: '/contact' },
+      { name: 'Partners', href: '/partners' },
+      { name: 'News', href: '/news' },
+      { name: 'Blog', href: '/blog' },
+      { name: 'Case Studies', href: '/case-studies' },
+      { name: 'Support', href: '/support' },
+      { name: 'Training', href: '/training' },
+      { name: 'Resources', href: '/resources' }
     ]
   }
 ];
@@ -92,10 +92,10 @@ const contactInfo = {
 };
 
 const socialLinks = [
-  { name: 'Twitter', href: '#', icon: <Twitter className="w-5 h-5" /> },
-  { name: 'LinkedIn', href: '#', icon: <Linkedin className="w-5 h-5" /> },
-  { name: 'YouTube', href: '#', icon: <Youtube className="w-5 h-5" /> },
-  { name: 'GitHub', href: '#', icon: <Github className="w-5 h-5" /> }
+  { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: <Twitter className="w-5 h-5" /> },
+  { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: <Linkedin className="w-5 h-5" /> },
+  { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: <Youtube className="w-5 h-5" /> },
+  { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: <Github className="w-5 h-5" /> }
 ];
 
 const UltraFuturisticFooter2040: React.FC = () => {
