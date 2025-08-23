@@ -373,6 +373,16 @@ export default function Innovative2038ServicesShowcase() {
                       <div className="text-2xl font-bold text-white">{service.price}</div>
                       <div className="text-gray-400">{service.period}</div>
                     </div>
+<<<<<<< HEAD
+                    
+                    <div className="space-y-2 mb-4">
+                      {service.features.slice(0, 3).map((feature, idx) => (
+                        <div key={idx} className="flex items-center text-sm text-gray-300">
+                          <Check className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" />
+                          {feature}
+                        </div>
+                      ))}
+=======
 
                     <div className="border-t border-white/10 pt-4 mb-4">
                       <div className="text-center">
@@ -399,6 +409,7 @@ export default function Innovative2038ServicesShowcase() {
                           <span className="font-medium">Trial:</span> {service.price.trialDays} days
                         </div>
                       )}
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-3902
                     </div>
                     
                     <div className="flex items-center justify-between text-sm text-gray-400 mb-4">

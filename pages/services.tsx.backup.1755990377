@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+import React from 'react';
+import Layout from '../components/layout/Layout';
+import { motion } from 'framer-motion';
+import { Grid, Star } from 'lucide-react';
+=======
 import React, { useState, useEffect } from 'react';
 import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -279,6 +285,7 @@ export default function Services() {
         return <Shield className="w-6 h-6 text-gray-400" />;
     }
   };
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-3902
 
 const Services: React.FC = () => {
   return (

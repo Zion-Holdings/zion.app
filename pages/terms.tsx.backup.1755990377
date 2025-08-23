@@ -1,4 +1,14 @@
 import React from 'react';
+<<<<<<< HEAD
+import Layout from '../components/layout/Layout';
+import { motion } from 'framer-motion';
+import { 
+  FileText, Shield, CheckCircle, AlertTriangle, 
+  ArrowRight, Users, Globe, Database, 
+  Calendar, Phone, Mail, MapPin
+} from 'lucide-react';
+import Link from 'next/link';
+=======
 =======
 import { FileText, Shield, Users, Globe, Clock, CheckCircle, AlertTriangle, Scale } from 'lucide-react';
 
@@ -247,11 +257,20 @@ const Terms: React.FC = () => {
                   month: 'long', 
                   day: 'numeric' 
                 })}
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-3902
               </div>
             </motion.div>
           </div>
         </section>
 
+<<<<<<< HEAD
+        {/* Key Terms Section */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+=======
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
               className="text-center mb-16"
@@ -332,12 +351,17 @@ const Terms: React.FC = () => {
                       <p className="text-gray-300 text-sm">{notice.content}</p>
                     </div>
                   </div>
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-3902
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
+<<<<<<< HEAD
+        {/* Service Terms */}
+        <section className="py-20 bg-black/50">
+=======
 =======
         {/* Service-Specific Terms Section */}
         <section className="py-20">
@@ -346,10 +370,17 @@ const Terms: React.FC = () => {
         {/* Terms Sections */}
         <section className="py-20 px-4 bg-white/5">
           <div className="max-w-4xl mx-auto">
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-3902
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+<<<<<<< HEAD
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+=======
 =======
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Service-Specific Terms
@@ -364,10 +395,31 @@ const Terms: React.FC = () => {
               </h2>
               <p className="text-lg text-gray-300">
                 Detailed terms governing the use of our services and website.
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-3902
               </p>
             </motion.div>
 
             <div className="space-y-8">
+<<<<<<< HEAD
+              {serviceTerms.map((service, index) => (
+                <motion.div
+                  key={service.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl rounded-2xl p-8 border border-gray-700/50"
+                >
+                  <h3 className="text-2xl font-bold text-white mb-6">{service.title}</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {service.terms.map((term, idx) => (
+                      <div key={idx} className="flex items-start gap-3">
+                        <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-300">{term}</span>
+                      </div>
+                    ))}
+                  </div>
+=======
               {sections.map((section, index) => (
                 <motion.div
                   key={index}
@@ -381,12 +433,16 @@ const Terms: React.FC = () => {
                     <h3 className="text-2xl font-bold text-white">{section.title}</h3>
                   </div>
                   <p className="text-gray-300 leading-relaxed">{section.content}</p>
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-3902
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
+<<<<<<< HEAD
+        {/* User Obligations */}
+=======
 =======
         {/* Prohibited Activities Section */}
         <section className="py-20">
@@ -395,10 +451,60 @@ const Terms: React.FC = () => {
         {/* Additional Terms Section */}
         <section className="py-20 px-4">
           <div className="max-w-4xl mx-auto">
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-3902
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+<<<<<<< HEAD
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+            </div>
+          </div>
+        </section>
+
+        {/* Payment Terms */}
+        <section className="py-20 bg-black/50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+                Payment & Billing Terms
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Understanding our payment structure and billing policies
+              </p>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {paymentTerms.map((term, index) => (
+                <motion.div
+                  key={term.term}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 p-6 rounded-2xl border border-gray-700/30 hover:border-purple-500/50 transition-all duration-300"
+                >
+                  <h3 className="text-xl font-bold text-white mb-3">{term.term}</h3>
+                  <p className="text-gray-300 mb-4">{term.description}</p>
+                  <ul className="space-y-2">
+                    {term.details.map((detail, detailIndex) => (
+                      <li key={detailIndex} className="flex items-start space-x-2 text-sm">
+                        <span className="w-1.5 h-1.5 bg-purple-400 rounded-full mt-2 flex-shrink-0" />
+                        <span className="text-gray-300">{detail}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              ))}
+=======
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Prohibited Activities
               </h2>
@@ -541,22 +647,64 @@ const Terms: React.FC = () => {
                 </p>
               </motion.div>
 
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-3902
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1 }}
+<<<<<<< HEAD
+                viewport={{ once: true }}
+                className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl rounded-2xl p-8 border border-gray-700/50"
+              >
+                <h3 className="text-2xl font-bold text-white mb-6">Our Rights</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3 text-gray-300">
+                    <CheckCircle className="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" />
+                    <span>All technology, algorithms, and systems remain our exclusive property</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-gray-300">
+                    <CheckCircle className="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" />
+                    <span>Service improvements and developments belong to Zion Tech Group</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-gray-300">
+                    <CheckCircle className="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" />
+                    <span>Brand names, logos, and trademarks are protected intellectual property</span>
+                  </li>
+                </ul>
+=======
                 className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8"
               >
                 <h3 className="text-xl font-bold text-white mb-4">Governing Law</h3>
                 <p className="text-gray-300 leading-relaxed">
                   These Terms shall be governed by and construed in accordance with the laws of the United States, without regard to its conflict of law provisions. Any disputes arising from these Terms or your use of our services shall be resolved in the courts of the United States.
                 </p>
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-3902
               </motion.div>
 
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
+<<<<<<< HEAD
+                viewport={{ once: true }}
+                className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl rounded-2xl p-8 border border-gray-700/50"
+              >
+                <h3 className="text-2xl font-bold text-white mb-6">Your Rights</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3 text-gray-300">
+                    <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                    <span>License to use our services according to these terms</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-gray-300">
+                    <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                    <span>Ownership of your data and content remains with you</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-gray-300">
+                    <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                    <span>Right to terminate service usage at any time</span>
+                  </li>
+                </ul>
+=======
                 className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8"
               >
                 <h3 className="text-xl font-bold text-white mb-4">Changes to Terms</h3>
@@ -566,11 +714,16 @@ const Terms: React.FC = () => {
                 <p className="text-gray-300 leading-relaxed">
                   What constitutes a material change will be determined at our sole discretion. By continuing to access or use our service after those revisions become effective, you agree to be bound by the revised terms.
                 </p>
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-3902
               </motion.div>
             </div>
           </div>
         </section>
 
+<<<<<<< HEAD
+        {/* Contact Information */}
+        <section className="py-20 bg-black/50">
+=======
 =======
         {/* Limitation of Liability Section */}
         <section className="py-20">
@@ -640,10 +793,17 @@ const Terms: React.FC = () => {
         {/* Contact Section */}
         <section className="py-20 px-4 bg-white/5">
           <div className="max-w-4xl mx-auto text-center">
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-3902
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+<<<<<<< HEAD
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+                Ready to Get Started?
+=======
 =======
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Questions About These Terms?
@@ -689,6 +849,7 @@ const Terms: React.FC = () => {
                 >
                   Download Terms PDF
                 </motion.button>
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-3902
               </div>
             </motion.div>
           </div>
@@ -698,4 +859,8 @@ const Terms: React.FC = () => {
   );
 };
 
+<<<<<<< HEAD
+export default TermsPage;
+=======
 export default Terms;
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-3902
