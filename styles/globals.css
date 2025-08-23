@@ -190,7 +190,6 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: gradient-shift 3s ease-in-out infinite;
->>>>>>> cursor/analyze-improve-and-deploy-ziontechgroup-app-9b2d
 }
 
 /* Enhanced Scrollbar */
@@ -791,7 +790,6 @@ body::after {
 @keyframes cyberpunkSpin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
-=======
   background: rgba(0, 212, 255, 0.4);
   color: #ffffff;
   text-shadow: 0 0 10px rgba(0, 212, 255, 0.8);
@@ -953,7 +951,6 @@ body::after {
 
 .animate-slide-in-down {
   animation: slide-in-down 0.6s ease-out;
->>>>>>> cursor/analyze-improve-and-deploy-ziontechgroup-app-9b2d
 }
 
 /* Enhanced Responsive Design */

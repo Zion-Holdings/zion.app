@@ -179,7 +179,7 @@ export default function Services2026ShowcaseEnhancedPage() {
   };
 
   return (
-    <UltraFuturisticBackground variant="quantum" intensity="high">
+    <UltraFuturisticBackground variant="holographic" intensity="high">
       <div className="min-h-screen">
         <Head>
           <title>Enhanced 2026 Services Showcase - Zion Tech Group</title>
