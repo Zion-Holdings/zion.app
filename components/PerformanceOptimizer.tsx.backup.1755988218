@@ -1,6 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
+<<<<<<< HEAD
+interface PerformanceMetrics {
+  fcp: number;
+  lcp: number;
+  fid: number;
+  cls: number;
+  ttfb: number;
+=======
 // Add browser API types
 declare global {
   interface Window {
@@ -11,6 +19,7 @@ declare global {
     ) => void;
     dataLayer?: unknown[];
   }
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-86a1
 }
 
 const PerformanceOptimizer: React.FC = () => {

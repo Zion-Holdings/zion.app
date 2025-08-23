@@ -88,7 +88,14 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <TopContactBar />
         
         {/* Navigation */}
+<<<<<<< HEAD
+        <UltraFuturisticNavigation2040 
+          onMenuToggle={() => setSidebarOpen(!sidebarOpen)}
+          isSidebarOpen={sidebarOpen}
+        />
+=======
         <UltraFuturisticNavigation2036 />
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-86a1
         
         {/* Sidebar and Main Content */}
         <div className="flex">
