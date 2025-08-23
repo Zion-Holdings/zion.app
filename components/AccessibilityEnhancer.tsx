@@ -113,15 +113,6 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
     }
   }, [applySettings]);
 
-  // Focus management
-  const handleFocusChange = useCallback((_e: React.FocusEvent) => {
-    const target = _e.target as HTMLElement;
-    if (target) {
-      setCurrentFocus(target);
-      announceToScreenReader(`Focused on ${target.textContent || target.tagName.toLowerCase()}`);
-    }
-  }, []);
-
   // Keyboard navigation enhancements
   const handleKeyDown = useCallback(() => {
     // Tab navigation detected
@@ -200,14 +191,22 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
 
   // Set up event listeners
   useEffect(() => {
-    document.addEventListener('focusin', handleFocusChange);
+    const handleFocusChangeWrapper = (e: Event) => {
+      const target = e.target as HTMLElement;
+      if (target) {
+        setCurrentFocus(target);
+        announceToScreenReader(`Focused on ${target.textContent || target.tagName.toLowerCase()}`);
+      }
+    };
+
+    document.addEventListener('focusin', handleFocusChangeWrapper);
     document.addEventListener('keydown', handleKeyDown);
     
     return () => {
-      document.removeEventListener('focusin', handleFocusChange);
+      document.removeEventListener('focusin', handleFocusChangeWrapper);
       document.removeEventListener('keydown', handleKeyDown);
     };
-  }, [handleFocusChange, handleKeyDown]);
+  }, [handleKeyDown]);
 
   // Quick accessibility shortcuts
   const toggleHighContrast = () => {
