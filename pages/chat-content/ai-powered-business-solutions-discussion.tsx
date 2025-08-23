@@ -1,1 +1,1 @@
-export default function Page(){return <div className="prose dark:prose-invert"><h1>AI-Powered Business Solutions</h1><p>Content coming soon.</p></div>}
+export default function Page() { return <div className="p-8">AI Business Solutions Discussion</div>; }

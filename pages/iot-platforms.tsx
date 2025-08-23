@@ -1,1 +1,1 @@
-export default function IoTPlatforms(){return <div className="prose dark:prose-invert"><h1>IoT Platforms</h1><p>Coming soon.</p></div>}
+export default function IoTPlatforms() { return <div className="p-8">IoT Platforms</div>; }

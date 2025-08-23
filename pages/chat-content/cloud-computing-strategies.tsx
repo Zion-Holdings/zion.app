@@ -1,1 +1,1 @@
-export default function Page(){return <div className="prose dark:prose-invert"><h1>Cloud Computing Strategies</h1><p>Content coming soon.</p></div>}
+export default function Page() { return <div className="p-8">Cloud Computing Strategies</div>; }

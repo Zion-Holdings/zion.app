@@ -1,1 +1,1 @@
-export default function ResetPasswordPage(){return <div className="prose dark:prose-invert"><h1>Reset Password</h1><p>Flow coming soon.</p></div>}
+export default function ResetPassword() { return <div className="p-8">Reset Password</div>; }
