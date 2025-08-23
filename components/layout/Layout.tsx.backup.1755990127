@@ -223,6 +223,10 @@ export default function Layout({
         <a href="#main" className="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-cyan-500 text-black px-4 py-2 rounded z-50">
           Skip to main content
         </a>
+<<<<<<< HEAD
+        
+        {/* Futuristic Background */}
+=======
 
         {/* Top Contact Bar */}
         <TopContactBar />
@@ -250,6 +254,7 @@ export default function Layout({
         />
 
         {/* Background */}
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a118
         <UltraFuturisticBackground2036 />
         
         {/* Layout Structure */}
