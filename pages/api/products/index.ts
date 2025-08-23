@@ -1,3 +1,5 @@
+import { PrismaClient } from '@prisma/client';
+import type { Product } from '@/types/product';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { applyCorsHeaders } from '@/middleware/cors';
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';

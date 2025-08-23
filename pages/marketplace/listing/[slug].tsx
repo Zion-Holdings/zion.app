@@ -6,24 +6,47 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { RatingStars } from '@/components/RatingStars';
 import ProductReviews from '@/components/ProductReviews';
-import { ProductGallery } from '@/components/gallery/ProductGallery';
-import { useRouter } from 'next/router';
-import { useDispatch } from 'react-redux';
-import type { AppDispatch } from '@/store';
-import { addItem } from '@/store/cartSlice';
-import { toast } from '@/hooks/use-toast';
-import { getBreadcrumbsForPath } from '@/utils/routeUtils';
-import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
-import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
-import { fetchProducts, validateProductData, ensureProductIntegrity } from '@/services/marketplace';
-import { AppLayout } from '@/layout/AppLayout';
-import {
-  Breadcrumb,
-  BreadcrumbList,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbSeparator,
-} from '@/components/ui/breadcrumb';
+import type { Product } from '@/types/product';
+
+// Alias the Prisma generated Product model type.
+type ProductModel = Product;
+// Define ProductWithReviewStats here or import from a shared types file
+// This should match the type returned by `/api/products/[productId]/details`
+export type ProductWithReviewStats = ProductModel & {
+  averageRating: number | null;
+  reviewCount: number;
+  // Adding fields to match the enriched type from the API / product card expectations
+  title?: string; // Usually mapped from product.name
+  category?: string;
+  images?: { url: string; alt?: string }[];
+  price?: number | null;
+  currency?: string;
+  tags?: string[];
+};
+
+interface RatingStarsProps {
+  value: number;
+  count?: number;
+}
+
+// Using a more robust placeholder that handles null/undefined values for rating
+const RatingStarsDisplay: React.FC<RatingStarsProps> = ({ value, count }) => {
+  const ratingValue = value ?? 0; // Default to 0 if value is null
+  const roundedRating = Math.round(ratingValue);
+  return (
+    <div className="flex items-center">
+      {Array.from({ length: 5 }, (_, i) => (
+        <span key={i} className={i < roundedRating ? 'text-yellow-400' : 'text-gray-300'}>★</span>
+      ))}
+      <span className="ml-1 text-sm text-gray-600 dark:text-gray-400">
+        {ratingValue > 0 ? `${ratingValue.toFixed(1)}/5` : 'Not rated'}
+      </span>
+      {typeof count !== 'undefined' && (
+        <span className="ml-2 text-sm text-gray-600 dark:text-gray-400">({count} reviews)</span>
+      )}
+    </div>
+  );
+};
 
 interface ListingPageProps {
   listing: ProductListing | null;
