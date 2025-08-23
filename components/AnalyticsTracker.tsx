@@ -1,5 +1,3 @@
-/// <reference types="dom" />
-
 import React, { useEffect, useCallback } from 'react';
 
 interface AnalyticsTrackerProps {
@@ -15,7 +13,7 @@ interface AnalyticsTrackerProps {
 interface PerformanceEventTiming extends PerformanceEntry {
   processingStart: number;
   processingEnd: number;
-  target?: EventTarget | null;
+  target?: any;
 }
 
 const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({

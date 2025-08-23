@@ -1,5 +1,3 @@
-/// <reference types="dom" />
-
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -12,7 +10,7 @@ interface PerformanceOptimizerProps {
 interface PerformanceEventTiming extends PerformanceEntry {
   processingStart: number;
   processingEnd: number;
-  target?: EventTarget | null;
+  target?: any;
 }
 
 const PerformanceOptimizer: React.FC<PerformanceOptimizerProps> = ({ 

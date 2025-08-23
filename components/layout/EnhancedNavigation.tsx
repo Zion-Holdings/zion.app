@@ -1,5 +1,3 @@
-/// <reference types="dom" />
-
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Menu, X, ChevronDown } from 'lucide-react';
@@ -84,7 +82,7 @@ const EnhancedNavigation: React.FC = () => {
   // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as Element;
+              const target = event.target as any;
       if (!target.closest('.navigation-dropdown')) {
         closeDropdown();
       }
