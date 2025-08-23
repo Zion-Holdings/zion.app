@@ -1,10 +1,12 @@
-const { execSync } = require('child_process');
-const fs = require('fs');
-const path = require('path');
+// Clean top-level to avoid unused variable lints; use child_process within handler
 
-exports.handler = async function(event, context) {
-  console.log('🤖 Starting fast-front-promoter...');
-  
+exports.config = {
+  // Run every 15 minutes for fast iteration
+  schedule: '*/15 * * * *',
+};
+
+exports.handler = async function() {
+  const { execSync } = require('child_process');
   try {
     const timestamp = new Date().toISOString();
     const reportPath = path.join(process.cwd(), 'fast-front-promoter-report.md');

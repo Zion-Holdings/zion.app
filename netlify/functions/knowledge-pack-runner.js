@@ -1,60 +1,27 @@
-const { execSync } = require('child_process');
-const fs = require('fs');
 const path = require('path');
+const { spawnSync } = require('child_process');
 
-exports.handler = async function(event, context) {
-  console.log('🤖 Starting knowledge-pack-runner...');
-  
-  try {
-    const timestamp = new Date().toISOString();
-    const reportPath = path.join(process.cwd(), 'knowledge-pack-runner-report.md');
-    
-    const reportContent = `# knowledge-pack-runner Report
+function runNode(relPath, args = []) {
+  const abs = path.resolve(__dirname, '..', '..', relPath);
+  const res = spawnSync('node', [abs, ...args], { stdio: 'pipe', encoding: 'utf8' });
+  return { status: res.status || 0, stdout: res.stdout || '', stderr: res.stderr || '' };
+}
 
-Generated: ${timestamp}
+exports.config = { schedule: '*/10 * * * *' };
 
-## Status
-- Task: knowledge-pack-runner
-- Status: Completed
-- Timestamp: ${timestamp}
+exports.handler = async () => {
+  const logs = [];
+  const logStep = (name, fn) => {
+    logs.push(`\n=== ${name} ===`);
+    const { status, stdout, stderr } = fn();
+    if (stdout) logs.push(stdout);
+    if (stderr) logs.push(stderr);
+    logs.push(`exit=${status}`);
+    return status;
+  };
 
-## Next Steps
-- Implement actual knowledge-pack-runner functionality
-- Add proper error handling
-- Add logging and monitoring
-`;
+  logStep('knowledge:pack', () => runNode('automation/knowledge-pack-runner.cjs'));
+  logStep('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
 
-    fs.writeFileSync(reportPath, reportContent);
-    console.log('📝 Report generated');
-    
-    try {
-      execSync('git add ' + reportPath, { stdio: 'inherit' });
-      execSync('git commit -m "🤖 Add knowledge-pack-runner report [skip ci]"', { stdio: 'inherit' });
-      execSync('git push', { stdio: 'inherit' });
-      console.log('✅ Report committed and pushed');
-    } catch (gitError) {
-      console.log('Git error:', gitError.message);
-    }
-    
-    console.log('✅ knowledge-pack-runner completed successfully');
-    
-    return {
-      statusCode: 200,
-      body: JSON.stringify({
-        message: 'knowledge-pack-runner completed successfully',
-        timestamp: timestamp
-      })
-    };
-    
-  } catch (error) {
-    console.error('❌ knowledge-pack-runner failed:', error.message);
-    
-    return {
-      statusCode: 500,
-      body: JSON.stringify({
-        error: error.message,
-        timestamp: new Date().toISOString()
-      })
-    };
-  }
+  return { statusCode: 200, body: logs.join('\n') };
 };

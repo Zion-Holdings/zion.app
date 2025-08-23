@@ -1,5 +1,4 @@
-const path = require('path');
-const { spawnSync } = require('child_process');
+const { execSync } = require('child_process');
 
 function runNode(relPath, args = []) {
   const abs = path.resolve(__dirname, '..', '..', relPath);

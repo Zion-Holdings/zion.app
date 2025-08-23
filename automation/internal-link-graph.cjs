@@ -2,133 +2,119 @@
 
 const fs = require('fs');
 const path = require('path');
-const glob = require('glob');
 
-function ensureDir(p) {
-  fs.mkdirSync(p, { recursive: true });
+function walkDir(startDir, predicate) {
+  const results = [];
+  const stack = [startDir];
+  while (stack.length) {
+    const dir = stack.pop();
+    if (!fs.existsSync(dir)) continue;
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        stack.push(full);
+      } else if (predicate(full)) {
+        results.push(full);
+      }
+    }
+  }
+  return results;
 }
 
-function readFileSafe(p) {
-  try { return fs.readFileSync(p, 'utf8'); } catch { return ''; }
+function readFileSafe(filePath) {
+  try {
+    return fs.readFileSync(filePath, 'utf8');
+  } catch {
+    return '';
+  }
 }
 
-function isPageFile(filePath) {
-  const base = path.basename(filePath);
-  if (base.startsWith('_')) return false; // _app, _document, etc.
-  if (base.endsWith('.d.ts')) return false;
-  return /\.(tsx|jsx|ts|js)$/.test(base);
+function isCodeFile(fp) {
+  return /(\.tsx?|\.jsx?|\.mdx?)$/i.test(fp);
 }
 
-function filePathToRoute(pagesDir, filePath) {
-  const rel = path.relative(pagesDir, filePath).replace(/\\/g, '/');
-  const noExt = rel.replace(/\.(tsx|jsx|ts|js)$/i, '');
-  const segments = noExt.split('/');
-  const cleaned = segments
-    .filter(Boolean)
-    .filter((seg) => !seg.startsWith('_'))
-    .map((seg) => (seg === 'index' ? '' : seg))
-    .filter((seg, i, arr) => !(seg === '' && i < arr.length - 1));
-  const route = '/' + cleaned.join('/');
-  return route === '//' ? '/' : route;
+function isInternal(href) {
+  if (!href) return false;
+  if (href.startsWith('http://') || href.startsWith('https://') || href.startsWith('mailto:') || href.startsWith('#')) return false;
+  return href.startsWith('/');
 }
 
-function extractInternalHrefs(sourceText) {
+function extractInternalHrefs(content) {
   const hrefs = new Set();
-  // Match href="/path" or href='/path' or href={`/path`} or href={"/path"}
-  const regex = /href\s*=\s*(?:\{\s*`([^`#]+)`\s*\}|\{\s*"([^"]+#?)"\s*\}|\{\s*'([^'#]+)'\s*\}|"([^"#]+)"|'([^'#]+)')/g;
+  const linkRegex = /href\s*=\s*\{?\s*["'`]([^"'`\}]+)["'`]/g; // matches href="/path" or href={'/path'}
+  const nextLinkRegex = /<Link\s+href=\{?\s*["'`]([^"'`\}]+)["'`]/g;
   let m;
-  while ((m = regex.exec(sourceText))) {
-    const candidate = m[1] || m[2] || m[3] || m[4] || m[5];
-    if (!candidate) continue;
-    if (!candidate.startsWith('/')) continue; // internal only
-    if (candidate.startsWith('/api')) continue; // ignore API
-    // strip query/hash
-    const clean = candidate.split('#')[0].split('?')[0];
-    if (clean) hrefs.add(clean);
+  while ((m = linkRegex.exec(content))) {
+    if (isInternal(m[1])) hrefs.add(m[1]);
+  }
+  while ((m = nextLinkRegex.exec(content))) {
+    if (isInternal(m[1])) hrefs.add(m[1]);
   }
   return Array.from(hrefs);
 }
 
-function main() {
-  const root = path.resolve(__dirname, '..');
-  const pagesDir = path.join(root, 'pages');
-  const outDir = path.join(root, 'public', 'automation');
-  ensureDir(outDir);
+function normalizePath(p) {
+  if (!p) return p;
+  // Remove trailing index
+  if (p.endsWith('/index')) p = p.slice(0, -('/index'.length));
+  if (p.endsWith('/')) p = p.slice(0, -1);
+  return p || '/';
+}
 
-  const pageFiles = glob.sync('**/*.{tsx,ts,jsx,js}', { cwd: pagesDir, nodir: true, absolute: true });
-  const graph = { generatedAt: new Date().toISOString(), pages: [], edges: [], stats: {} };
+(function main() {
+  const repoRoot = process.cwd();
+  const pagesDir = path.join(repoRoot, 'pages');
+  const componentsDir = path.join(repoRoot, 'components');
+  const sourceFiles = [
+    ...walkDir(pagesDir, isCodeFile),
+    ...walkDir(componentsDir, isCodeFile),
+  ];
 
-  const routeToPage = new Map();
-  for (const f of pageFiles) {
-    if (!isPageFile(f)) continue;
-    const route = filePathToRoute(pagesDir, f);
-    routeToPage.set(route, { route, file: path.relative(root, f), outbound: [], inboundCount: 0 });
+  const pageSet = new Set();
+  for (const fp of walkDir(pagesDir, isCodeFile)) {
+    const rel = '/' + path.relative(pagesDir, fp).replace(/\\/g, '/').replace(/\.(tsx|ts|jsx|js|mdx)$/i, '');
+    pageSet.add(normalizePath(rel));
   }
 
-  for (const [route, info] of routeToPage.entries()) {
-    const src = readFileSafe(path.join(root, info.file));
-    const hrefs = extractInternalHrefs(src);
-    const normalized = hrefs
-      .map((h) => (h.endsWith('/') && h !== '/' ? h.slice(0, -1) : h))
-      .filter((h) => h in Object.fromEntries(Array.from(routeToPage.keys()).map((k) => [k, true])) || true);
-    info.outbound = Array.from(new Set(normalized));
-    for (const to of info.outbound) {
-      graph.edges.push({ from: route, to });
+  const outboundMap = new Map(); // file -> hrefs
+  const inboundCounts = new Map(); // href -> count
+
+  for (const filePath of sourceFiles) {
+    const content = readFileSafe(filePath);
+    const hrefs = extractInternalHrefs(content).map(normalizePath);
+    outboundMap.set(filePath, hrefs);
+    for (const href of hrefs) {
+      inboundCounts.set(href, (inboundCounts.get(href) || 0) + 1);
     }
   }
 
-  // Compute inbound counts
-  for (const edge of graph.edges) {
-    const page = routeToPage.get(edge.to);
-    if (page) page.inboundCount += 1;
+  const graph = [];
+  for (const [filePath, hrefs] of outboundMap.entries()) {
+    for (const href of hrefs) {
+      graph.push({ from: path.relative(repoRoot, filePath).replace(/\\/g, '/'), to: href });
+    }
   }
 
-  graph.pages = Array.from(routeToPage.values()).sort((a, b) => a.route.localeCompare(b.route));
-
-  // Orphans: no inbound and not the root '/'
-  const orphans = graph.pages
-    .filter((p) => p.route !== '/' && p.inboundCount === 0)
-    .map((p) => p.route)
-    .sort();
-
-  const topOutbound = graph.pages
-    .map((p) => ({ route: p.route, count: p.outbound.length }))
-    .sort((a, b) => b.count - a.count)
-    .slice(0, 15);
-
-  graph.stats.totalPages = graph.pages.length;
-  graph.stats.totalEdges = graph.edges.length;
-  graph.stats.orphanCount = orphans.length;
-  graph.stats.topOutbound = topOutbound;
-  graph.stats.orphans = orphans;
-
-  const jsonPath = path.join(outDir, 'internal-link-graph.json');
-  fs.writeFileSync(jsonPath, JSON.stringify(graph, null, 2));
-
-  // Markdown summary
-  const mdLines = [];
-  mdLines.push('# Internal Link Graph');
-  mdLines.push('');
-  mdLines.push(`Generated: ${graph.generatedAt}`);
-  mdLines.push('');
-  mdLines.push(`- Total pages: ${graph.stats.totalPages}`);
-  mdLines.push(`- Total edges: ${graph.stats.totalEdges}`);
-  mdLines.push(`- Orphans: ${graph.stats.orphanCount}`);
-  mdLines.push('');
-  if (orphans.length) {
-    mdLines.push('## Orphan Pages');
-    orphans.forEach((r) => mdLines.push(`- ${r}`));
-    mdLines.push('');
+  const opportunities = [];
+  for (const page of Array.from(pageSet)) {
+    const count = inboundCounts.get(page) || 0;
+    if (count < 2) {
+      opportunities.push({ page, inbound: count, suggestion: 'Add at least 2 more internal links to this page from related content.' });
+    }
   }
-  mdLines.push('## Top Outbound Pages');
-  topOutbound.forEach((t) => mdLines.push(`- ${t.route}: ${t.count}`));
-  mdLines.push('');
-  mdLines.push('## Sample Edges');
-  graph.edges.slice(0, 50).forEach((e) => mdLines.push(`- ${e.from} → ${e.to}`));
-  const mdPath = path.join(outDir, 'internal-link-graph.md');
-  fs.writeFileSync(mdPath, mdLines.join('\n'));
 
-  console.log('Internal link graph generated:', path.relative(root, jsonPath), 'and', path.relative(root, mdPath));
-}
+  const outDir = path.join(repoRoot, 'public', 'automation');
+  fs.mkdirSync(outDir, { recursive: true });
 
-main();
+  const nowIso = new Date().toISOString();
+  const payload = {
+    generatedAt: nowIso,
+    totals: { filesScanned: sourceFiles.length, edges: graph.length, pages: pageSet.size },
+    graph,
+  };
+
+  fs.writeFileSync(path.join(outDir, 'internal-link-graph.json'), JSON.stringify(payload, null, 2));
+  fs.writeFileSync(path.join(outDir, 'internal-link-opportunities.json'), JSON.stringify({ generatedAt: nowIso, count: opportunities.length, opportunities }, null, 2));
+
+  console.log(`[internal-link-graph] Wrote graph with ${graph.length} edges; opportunities: ${opportunities.length}`);
+})();
