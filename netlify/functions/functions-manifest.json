@@ -1,124 +1,77 @@
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-  "generatedAt": "2025-08-11T23:20:00.000Z",
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-  "generatedAt": "2025-08-11T23:13:21.127Z",
-=======
-  "generatedAt": "2025-08-11T23:11:05.589Z",
->>>>>>> 5db0abd8a2 (chore(sync): advanced autonomous sync)
-=======
-  "generatedAt": "2025-08-11T23:13:57.257Z",
->>>>>>> 9a6e0bf201 (chore(netlify): resolve schedule conflicts and regenerate functions manifest [skip ci])
->>>>>>> origin/main
-=======
-  "generatedAt": "2025-08-11T23:14:11.662Z",
->>>>>>> 3db1e86f59 (feat(automation): add cache-warmer and anchor-auditor functions; advertise on homepage and hub; extend front promo [skip ci])
+  "generatedAt": "2025-08-18T21:05:52.388Z",
   "functions": [
-    "a11y-audit-runner",
+    "a11y-alt-text-runner",
+    "adaptive-orchestrator",
     "ai-changelog-runner",
-    "anchor-auditor",
+    "ai-trends-radar-runner",
+    "anchor-links-auto-fixer",
+    "auto-discovery-runner",
     "auto-scheduler",
-    "automation-matrix",
-<<<<<<< HEAD
-=======
-    "automation-status-dashboard",
-    "autonomous-innovation-generator",
->>>>>>> 5db0abd8a2 (chore(sync): advanced autonomous sync)
-    "autonomous-invention-orchestrator",
+    "autonomous-meta-orchestrator",
     "broken-image-scanner",
     "broken-image-scanner-runner",
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    "capability-map-runner",
-    "cloud-autonomous-orchestrator-runner",
->>>>>>> 5db0abd8a2 (chore(sync): advanced autonomous sync)
-=======
-    "cache-warmer",
->>>>>>> 3db1e86f59 (feat(automation): add cache-warmer and anchor-auditor functions; advertise on homepage and hub; extend front promo [skip ci])
+    "canonical-auditor",
     "cloud_orchestrator",
+    "code-smell-audit-runner",
+    "component-coupling-graph-runner",
+    "component-size-report",
+    "content-freshness-score-runner",
+    "continuous-content-generation",
     "continuous-front-runner",
     "continuous-orchestrator",
-    "dead-code-audit",
     "dead-code-report",
-<<<<<<< HEAD
-=======
-    "dependency-freshness-radar",
     "deps-auto-upgrade-runner",
->>>>>>> 5db0abd8a2 (chore(sync): advanced autonomous sync)
     "docs-index-runner",
     "docs-search-index-runner",
+    "duplicate-media-finder-runner",
     "external-link-check-runner",
     "fast-front-promoter",
     "fast-orchestrator",
-    "feature-advertiser",
     "features-capabilities-benefits-advertiser",
     "front-ads-promoter",
     "front-enhancer",
-    "front-index-futurizer",
     "front-index-orchestrator",
-    "front-index-scheduler",
     "front-maximizer",
     "front-visionary-expander",
     "frontpage-enhancer",
-    "frontpage-scheduler",
+    "headers-enforcer",
     "home-visionary-expander",
-    "homepage-advertiser-scheduler",
-    "homepage-enhancer",
-    "homepage-updater",
-    "homepage-updater-scheduler",
     "homepage_advertiser",
     "hyper-front-index-accelerator",
     "image-optimizer-runner",
     "innovation-lab",
-<<<<<<< HEAD
-    "internal-link-optimizer",
-    "internal-redirect-healer",
-=======
-<<<<<<< HEAD
-    "license-compliance-runner",
-=======
-    "innovation-lab-pro",
+    "intelligent-meta-orchestrator",
     "internal-link-graph-runner",
->>>>>>> 9a6e0bf201 (chore(netlify): resolve schedule conflicts and regenerate functions manifest [skip ci])
->>>>>>> origin/main
+    "knowledge-pack-runner",
+    "license-compliance-auditor",
     "link-and-health-scheduler",
-    "link-crawler",
-    "maintenance-scheduler",
     "marketing-and-features-promo",
-    "marketing-scheduler",
-    "media-og-and-optimize",
+    "metadata-optimizer-runner",
     "netlify-auto-healer-runner",
-    "newsroom-auto-publisher",
     "newsroom-runner",
     "og-image-update-runner",
+    "orphan-pages-detector",
+    "pagespeed-insights-runner",
     "readme-advertiser",
     "repo-knowledge-graph-runner",
-    "repo-radar-and-graph",
     "repo-radar-runner",
-<<<<<<< HEAD
-    "revenue-ideas-orchestrator",
-    "revenue-optimizer",
-=======
->>>>>>> origin/main
-    "schedule-content-index",
-    "schedule-homepage",
-    "schedule-knowledge-graph",
-    "schedule-site-health",
-    "secrets-leak-scanner-runner",
-    "security-audit",
+    "revenue-ideas-lab",
+    "roadmap-curator",
+    "robots-auditor",
     "security-audit-runner",
-    "site-crawler",
+    "seo-audit-runner",
+    "site-404-map-runner",
     "sitemap_runner",
+    "stale-content-auditor-runner",
+    "test-function",
     "todo-scanner-runner",
     "todo-summary-runner",
+    "topic-cluster-builder-runner",
+    "topics-map-runner",
     "trigger-all-and-commit",
-    "ui-enhancer",
     "ultrafast-front-orchestrator",
     "ultrafast-orchestrator",
-    "ux-heuristics-runner"
+    "unused-media-scanner"
   ]
 }
