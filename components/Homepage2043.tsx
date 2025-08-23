@@ -11,6 +11,13 @@ import { revolutionary2043AdvancedMicroSaas } from '../data/revolutionary-2043-a
 import { revolutionary2043ITServices } from '../data/revolutionary-2043-it-services';
 import { revolutionary2043AIServices } from '../data/revolutionary-2043-ai-services';
 
+// Import our new 2044 revolutionary services
+import { revolutionary2044AdvancedMicroSaas } from '../data/revolutionary-2044-advanced-micro-saas';
+import { revolutionary2044AIServices } from '../data/revolutionary-2044-ai-services';
+import { revolutionary2044ITServices } from '../data/revolutionary-2044-it-services';
+import { revolutionary2044EmergingTechServices } from '../data/revolutionary-2044-emerging-tech-services';
+import { revolutionary2044IndustrySpecializedServices } from '../data/revolutionary-2044-industry-specialized-services';
+
 // Lazy load components for better performance
 const ServiceCard = React.lazy(() => import('./ServiceCard'));
 const TestimonialSection = React.lazy(() => import('./TestimonialSection'));
@@ -50,6 +57,11 @@ const Homepage2043: React.FC = () => {
 
   // Combine all revolutionary services
   const allRevolutionaryServices = [
+    ...revolutionary2044AdvancedMicroSaas,
+    ...revolutionary2044AIServices,
+    ...revolutionary2044ITServices,
+    ...revolutionary2044EmergingTechServices,
+    ...revolutionary2044IndustrySpecializedServices,
     ...revolutionary2043AdvancedMicroSaas,
     ...revolutionary2043ITServices,
     ...revolutionary2043AIServices
@@ -77,18 +89,18 @@ const Homepage2043: React.FC = () => {
   ];
 
   const features = [
-    { icon: Brain, title: "AI Consciousness Evolution", description: "Next-generation AI consciousness and emotional intelligence", href: "/ai-consciousness-evolution-2043", color: "from-purple-500 to-pink-500" },
-    { icon: Atom, title: "Quantum Computing", description: "Revolutionary quantum computing with consciousness integration", href: "/quantum-neural-ecosystem-2043", color: "from-blue-500 to-cyan-500" },
+    { icon: Star, title: "2044 Services Showcase", description: "Discover our revolutionary 2044 technology services", href: "/revolutionary-2044-services-showcase", color: "from-purple-500 to-pink-500" },
+    { icon: Brain, title: "AI Consciousness Evolution", description: "Next-generation AI consciousness and emotional intelligence", href: "/ai-consciousness-evolution-2043", color: "from-cyan-500 to-blue-500" },
+    { icon: Atom, title: "Quantum Computing", description: "Revolutionary quantum computing with consciousness integration", href: "/quantum-neural-ecosystem-2043", color: "from-blue-500 to-indigo-500" },
     { icon: Shield, title: "Future Cybersecurity", description: "Quantum-resistant security with consciousness-based protection", href: "/quantum-cybersecurity-2043", color: "from-red-500 to-orange-500" },
     { icon: Rocket, title: "Space Technology", description: "AI-powered space resource intelligence and management", href: "/space-resource-intelligence-2043", color: "from-indigo-500 to-purple-500" },
-    { icon: Cpu, title: "Autonomous Systems", description: "Fully autonomous AI systems with consciousness", href: "/ai-autonomous-research-2043", color: "from-emerald-500 to-teal-500" },
-    { icon: Database, title: "Business Intelligence", description: "Autonomous business intelligence with consciousness insights", href: "/ai-business-intelligence-2043", color: "from-yellow-500 to-orange-500" }
+    { icon: Cpu, title: "Autonomous Systems", description: "Fully autonomous AI systems with consciousness", href: "/ai-autonomous-research-2043", color: "from-emerald-500 to-teal-500" }
   ];
 
   const stats = [
-    { number: "1500+", label: "Revolutionary Services", icon: Star, description: "Cutting-edge solutions" },
-    { number: "99.99%", label: "Uptime Guarantee", icon: TrendingUp, description: "Reliable performance" },
-    { number: "24/7", label: "AI Support Available", icon: Brain, description: "Always here to help" },
+    { number: "42+", label: "New 2044 Services", icon: Star, description: "Cutting-edge innovations" },
+    { number: "1500+", label: "Total Services", icon: TrendingUp, description: "Comprehensive solutions" },
+    { number: "99.99%", label: "Uptime Guarantee", icon: Shield, description: "Reliable performance" },
     { number: "150+", label: "Countries Served", icon: Globe, description: "Global reach" }
   ];
 

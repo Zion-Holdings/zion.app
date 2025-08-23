@@ -12,6 +12,13 @@ import { revolutionary2043AdvancedMicroSaas } from '../data/revolutionary-2043-a
 import { revolutionary2043ITServices } from '../data/revolutionary-2043-it-services';
 import { revolutionary2043AIServices } from '../data/revolutionary-2043-ai-services';
 
+// Import our new 2044 revolutionary services
+import { revolutionary2044AdvancedMicroSaas } from '../data/revolutionary-2044-advanced-micro-saas';
+import { revolutionary2044AIServices } from '../data/revolutionary-2044-ai-services';
+import { revolutionary2044ITServices } from '../data/revolutionary-2044-it-services';
+import { revolutionary2044EmergingTechServices } from '../data/revolutionary-2044-emerging-tech-services';
+import { revolutionary2044IndustrySpecializedServices } from '../data/revolutionary-2044-industry-specialized-services';
+
 // Import our new service data
 import { enterpriseITSolutions } from '../data/2034-enterprise-it-solutions';
 import { innovativeMicroSaasSolutions } from '../data/2034-innovative-micro-saas-solutions';
@@ -81,9 +88,16 @@ const getServiceDescription = (service: any) => {
   return 'No description available';
 };
 
-// Create unified services array with new 2043 services
+// Create unified services array with new 2043 and 2044 services
 const allServices = [
-  // New 2043 Revolutionary Services (Priority)
+  // New 2044 Revolutionary Services (Highest Priority)
+  ...revolutionary2044AdvancedMicroSaas,
+  ...revolutionary2044AIServices,
+  ...revolutionary2044ITServices,
+  ...revolutionary2044EmergingTechServices,
+  ...revolutionary2044IndustrySpecializedServices,
+  
+  // New 2043 Revolutionary Services (High Priority)
   ...revolutionary2043AdvancedMicroSaas,
   ...revolutionary2043ITServices,
   ...revolutionary2043AIServices,
