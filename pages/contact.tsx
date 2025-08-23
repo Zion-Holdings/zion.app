@@ -1,382 +1,378 @@
-import React, { useState } from 'react';
+import React from 'react';
+import Layout from '../components/layout/Layout';
 import SEO from '../components/SEO';
+import ContactForm from '../components/ContactForm';
 import { motion } from 'framer-motion';
 import { 
-  Phone, Mail, MapPin, Globe, MessageCircle,
-  Clock, Shield, CheckCircle, ArrowRight
+  Phone, Mail, MapPin, Clock, MessageCircle, 
+  ArrowRight, Users, Globe, Shield
 } from 'lucide-react';
 import Link from 'next/link';
 
-const ContactPage: React.FC = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    phone: '',
-    service: '',
-    message: ''
-  });
+const contactInfo = {
+  phone: '+1 302 464 0950',
+  email: 'kleber@ziontechgroup.com',
+  address: '364 E Main St STE 1008, Middletown DE 19709',
+  hours: 'Monday - Friday: 9:00 AM - 6:00 PM EST',
+  website: 'https://ziontechgroup.com'
+};
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
+const contactMethods = [
+  {
+    title: 'Phone Support',
+    description: 'Speak directly with our technology experts',
+    icon: <Phone className="w-8 h-8 text-cyan-400" />,
+    action: `tel:${contactInfo.phone}`,
+    actionText: 'Call Now'
+  },
+  {
+    title: 'Email Inquiry',
+    description: 'Send us a detailed message about your project',
+    icon: <Mail className="w-8 h-8 text-purple-400" />,
+    action: `mailto:${contactInfo.email}`,
+    actionText: 'Send Email'
+  },
+  {
+    title: 'Live Chat',
+    description: 'Get instant answers to your questions',
+    icon: <MessageCircle className="w-8 h-8 text-green-400" />,
+    action: '#chat',
+    actionText: 'Start Chat'
+  }
+];
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
+const services = [
+  'AI & Machine Learning Solutions',
+  'Quantum Computing Services',
+  'Cybersecurity & Compliance',
+  'Cloud Platform Solutions',
+  'Digital Transformation',
+  'Custom Development'
+];
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-  };
-
-  const contactInfo = [
-    {
-      icon: <Phone className="w-6 h-6" />,
-      title: 'Phone',
-      value: '+1 302 464 0950',
-      link: 'tel:+13024640950',
-      color: 'text-cyan-400'
-    },
-    {
-      icon: <Mail className="w-6 h-6" />,
-      title: 'Email',
-      value: 'kleber@ziontechgroup.com',
-      link: 'mailto:kleber@ziontechgroup.com',
-      color: 'text-purple-400'
-    },
-    {
-      icon: <MapPin className="w-6 h-6" />,
-      title: 'Address',
-      value: '364 E Main St STE 1008 Middletown DE 19709',
-      link: 'https://maps.google.com/?q=364+E+Main+St+STE+1008+Middletown+DE+19709',
-      color: 'text-blue-400'
-    },
-    {
-      icon: <Globe className="w-6 h-6" />,
-      title: 'Website',
-      value: 'https://ziontechgroup.com',
-      link: 'https://ziontechgroup.com',
-      color: 'text-green-400'
-    }
-  ];
-
-  const services = [
-    'AI & Automation Services',
-    'IT Infrastructure Solutions',
-    'Cloud & DevOps Services',
-    'Quantum Computing Solutions',
-    'Cybersecurity Services',
-    'Edge Computing Platform',
-    'Blockchain Infrastructure',
-    'Data Governance & Analytics',
-    'Custom Development',
-    'Consulting & Strategy'
-  ];
-
+export default function Contact() {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <Layout>
       <SEO 
-        title="Contact Zion Tech Group - Get in Touch for Innovative Technology Solutions"
-        description="Get in touch with Zion Tech Group for innovative technology solutions. Contact our experts for AI, quantum computing, space technology, and IT services."
-        keywords={["contact", "Zion Tech Group", "AI services", "quantum computing", "IT solutions", "technology consulting"]}
+        title="Contact Zion Tech Group | Get in Touch"
+        description="Contact Zion Tech Group for innovative technology solutions. Get expert consultation for AI, quantum computing, cybersecurity, and cloud services."
+        canonical="https://ziontechgroup.com/contact/"
       />
-
+      
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-purple-500/10 to-pink-500/10"></div>
-        <div className="max-w-6xl mx-auto relative z-10">
+      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 overflow-hidden">
+        <div className="absolute inset-0 bg-gray-800/20"></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+          >
+            <div className="mb-8">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
+                <MessageCircle className="w-4 h-4 mr-2" />
+                Get in Touch
+              </div>
+            </div>
+            
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+              <span className="bg-gradient-to-r from-blue-400 via-cyan-500 to-teal-600 bg-clip-text text-transparent">
+                Let's Build
+              </span>
+              <br />
+              <span className="text-white">Something Amazing</span>
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
+              Ready to transform your business with cutting-edge technology? 
+              Our experts are here to help you navigate the future of innovation.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link 
+                href="#contact-form"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-600 text-white font-semibold rounded-2xl hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105"
+              >
+                Start Your Project
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Link>
+              <Link 
+                href="/services"
+                className="inline-flex items-center px-8 py-4 border border-gray-600 text-white font-semibold rounded-2xl hover:border-blue-400 hover:text-blue-400 transition-all duration-300"
+              >
+                Explore Services
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+        
+        {/* Floating Elements */}
+        <div className="absolute top-20 left-10 opacity-20 animate-float">
+          <MessageCircle className="w-16 h-16 text-blue-400" />
+        </div>
+        <div className="absolute top-40 right-20 opacity-20 animate-float-delayed">
+          <Phone className="w-12 h-12 text-cyan-400" />
+        </div>
+        <div className="absolute bottom-40 left-20 opacity-20 animate-float">
+          <Mail className="w-14 h-14 text-teal-400" />
+        </div>
+      </section>
+
+      {/* Contact Methods */}
+      <section className="py-20 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h1 className="text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
-              Get In Touch
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Ready to transform your business with cutting-edge technology? Let's discuss how our innovative solutions can drive your success.
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Multiple Ways to Connect
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Choose the communication method that works best for you. 
+              Our team is ready to assist with your technology needs.
             </p>
           </motion.div>
 
-          {/* Contact Information Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            {contactInfo.map((info, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {contactMethods.map((method, index) => (
               <motion.div
-                key={info.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                key={method.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="p-6 bg-white/5 rounded-xl border border-white/10 hover:border-cyan-400/30 transition-all duration-300 group"
+                viewport={{ once: true }}
+                className="group"
               >
-                <div className={`${info.color} mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                  {info.icon}
+                <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-blue-500/50 hover:bg-gray-800/70 transition-all duration-300 transform hover:scale-105">
+                  <div className="mb-6">
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-700/50 rounded-xl group-hover:bg-blue-500/10 transition-colors duration-300">
+                      {method.icon}
+                    </div>
+                  </div>
+                  
+                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors duration-300">
+                    {method.title}
+                  </h3>
+                  
+                  <p className="text-gray-400 mb-6 leading-relaxed">
+                    {method.description}
+                  </p>
+                  
+                  <a 
+                    href={method.action}
+                    className="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium group-hover:translate-x-1 transition-all duration-300"
+                  >
+                    {method.actionText}
+                    <ArrowRight className="w-4 h-4 ml-1" />
+                  </a>
                 </div>
-                <h3 className="text-lg font-semibold text-white mb-2">{info.title}</h3>
-                <a 
-                  href={info.link}
-                  target={info.title === 'Website' ? '_blank' : '_self'}
-                  rel={info.title === 'Website' ? 'noopener noreferrer' : ''}
-                  className="text-gray-300 hover:text-cyan-400 transition-colors duration-300"
-                >
-                  {info.value}
-                </a>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Main Content */}
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      {/* Contact Form & Info */}
+      <section id="contact-form" className="py-20 bg-gradient-to-br from-gray-900 to-blue-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
+              initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="space-y-8"
             >
-              <div>
-                <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                  Send Us a Message
-                </h2>
-                <p className="text-gray-300">
-                  Tell us about your project and we'll get back to you within 24 hours with a personalized solution.
-                </p>
-              </div>
-
-              {isSubmitted ? (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="p-8 bg-green-500/10 border border-green-400/30 rounded-xl text-center"
-                >
-                  <CheckCircle className="w-16 h-16 text-green-400 mx-auto mb-4" />
-                  <h3 className="text-2xl font-bold text-green-400 mb-2">Message Sent!</h3>
-                  <p className="text-gray-300 mb-4">
-                    Thank you for reaching out. We'll get back to you within 24 hours.
-                  </p>
-                  <button
-                    onClick={() => setIsSubmitted(false)}
-                    className="px-6 py-3 bg-green-500 hover:bg-green-600 text-white rounded-lg transition-colors duration-300"
-                  >
-                    Send Another Message
-                  </button>
-                </motion.div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                        Full Name *
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        required
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50 transition-all duration-300"
-                        placeholder="Enter your full name"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                        Email Address *
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        required
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50 transition-all duration-300"
-                        placeholder="Enter your email address"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="company" className="block text-sm font-medium text-gray-300 mb-2">
-                        Company
-                      </label>
-                      <input
-                        type="text"
-                        id="company"
-                        name="company"
-                        value={formData.company}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50 transition-all duration-300"
-                        placeholder="Enter your company name"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">
-                        Phone Number
-                      </label>
-                      <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50 transition-all duration-300"
-                        placeholder="Enter your phone number"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label htmlFor="service" className="block text-sm font-medium text-gray-300 mb-2">
-                      Service of Interest
-                    </label>
-                    <select
-                      id="service"
-                      name="service"
-                      value={formData.service}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50 transition-all duration-300"
-                    >
-                      <option value="">Select a service</option>
-                      {services.map((service) => (
-                        <option key={service} value={service}>{service}</option>
-                      ))}
-                    </select>
-                  </div>
-
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                      Message *
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      required
-                      rows={6}
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50 transition-all duration-300 resize-none"
-                      placeholder="Tell us about your project, challenges, or how we can help..."
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
-                  >
-                    {isSubmitting ? (
-                      <span className="flex items-center justify-center">
-                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
-                        Sending Message...
-                      </span>
-                    ) : (
-                      <span className="flex items-center justify-center">
-                        Send Message
-                        <ArrowRight className="w-5 h-5 ml-2" />
-                      </span>
-                    )}
-                  </button>
-                </form>
-              )}
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
+                Start Your Project
+              </h2>
+              <p className="text-xl text-gray-300 mb-8">
+                Tell us about your technology needs and let's explore how we can 
+                help transform your business.
+              </p>
+              
+              <ContactForm />
             </motion.div>
 
-            {/* Additional Information */}
+            {/* Contact Information */}
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
+              initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
               className="space-y-8"
             >
               <div>
-                <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                  Why Choose Zion Tech Group?
-                </h2>
-                <p className="text-gray-300 mb-6">
-                  We combine cutting-edge technology with proven business strategies to deliver exceptional results.
+                <h3 className="text-2xl font-bold text-white mb-6">
+                  Get in Touch
+                </h3>
+                <p className="text-gray-300 mb-8">
+                  We're here to help you navigate the future of technology. 
+                  Reach out and let's start building something amazing together.
                 </p>
               </div>
 
+              {/* Contact Details */}
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Shield className="w-6 h-6 text-cyan-400" />
+                  <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-6 h-6 text-blue-400" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-white mb-2">Enterprise Security</h3>
-                    <p className="text-gray-300 text-sm">
-                      Bank-level security with quantum-resistant encryption and AI-powered threat detection.
+                    <h4 className="text-lg font-semibold text-white mb-1">Phone</h4>
+                    <a 
+                      href={`tel:${contactInfo.phone}`}
+                      className="text-gray-300 hover:text-blue-400 transition-colors duration-300"
+                    >
+                      {contactInfo.phone}
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-6 h-6 text-purple-400" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-white mb-1">Email</h4>
+                    <a 
+                      href={`mailto:${contactInfo.email}`}
+                      className="text-gray-300 hover:text-purple-400 transition-colors duration-300"
+                    >
+                      {contactInfo.email}
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-6 h-6 text-green-400" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-white mb-1">Address</h4>
+                    <p className="text-gray-300">
+                      {contactInfo.address}
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Clock className="w-6 h-6 text-purple-400" />
+                  <div className="w-12 h-12 bg-yellow-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Clock className="w-6 h-6 text-yellow-400" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-white mb-2">24/7 Support</h3>
-                    <p className="text-gray-300 text-sm">
-                      Round-the-clock technical support and monitoring for your critical systems.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <CheckCircle className="w-6 h-6 text-blue-400" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-white mb-2">Proven Results</h3>
-                    <p className="text-gray-300 text-sm">
-                      Track record of successful implementations with measurable ROI and business impact.
+                    <h4 className="text-lg font-semibold text-white mb-1">Business Hours</h4>
+                    <p className="text-gray-300">
+                      {contactInfo.hours}
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* Quick Actions */}
-              <div className="p-6 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-xl border border-cyan-400/20">
-                <h3 className="text-xl font-semibold text-white mb-4">Quick Actions</h3>
-                <div className="space-y-3">
-                  <Link 
-                    href="/get-started"
-                    className="flex items-center justify-between p-3 bg-white/5 rounded-lg hover:bg-white/10 transition-all duration-300 group"
-                  >
-                    <span className="text-gray-300 group-hover:text-white transition-colors">Get Started Guide</span>
-                    <ArrowRight className="w-4 h-4 text-cyan-400 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                  <Link 
-                    href="/quote"
-                    className="flex items-center justify-between p-3 bg-white/5 rounded-lg hover:bg-white/10 transition-all duration-300 group"
-                  >
-                    <span className="text-gray-300 group-hover:text-white transition-colors">Request Quote</span>
-                    <ArrowRight className="w-4 h-4 text-purple-400 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                  <Link 
-                    href="/services"
-                    className="flex items-center justify-between p-3 bg-white/5 rounded-lg hover:bg-white/10 transition-all duration-300 group"
-                  >
-                    <span className="text-gray-300 group-hover:text-white transition-colors">Explore Services</span>
-                    <ArrowRight className="w-4 h-4 text-blue-400 group-hover:translate-x-1 transition-transform" />
-                  </Link>
+              {/* Services Overview */}
+              <div className="pt-8 border-t border-gray-700">
+                <h4 className="text-lg font-semibold text-white mb-4">
+                  Our Services
+                </h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {services.map((service, index) => (
+                    <div key={index} className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                      <span className="text-gray-300 text-sm">{service}</span>
+                    </div>
+                  ))}
                 </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-20 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Why Choose Zion Tech Group?
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              We combine cutting-edge technology with proven expertise to deliver 
+              solutions that drive real business transformation.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="text-center group"
+            >
+              <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-blue-500/50 hover:bg-gray-800/70 transition-all duration-300 transform hover:scale-105">
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <Users className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors duration-300">
+                  Expert Team
+                </h3>
+                <p className="text-gray-400 leading-relaxed">
+                  Our team of technology experts brings years of experience in AI, 
+                  quantum computing, and enterprise solutions.
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="text-center group"
+            >
+              <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-blue-500/50 hover:bg-gray-800/70 transition-all duration-300 transform hover:scale-105">
+                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <Globe className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-4 group-hover:text-purple-400 transition-colors duration-300">
+                  Global Reach
+                </h3>
+                <p className="text-gray-400 leading-relaxed">
+                  We serve clients worldwide, delivering innovative solutions 
+                  that transcend geographical boundaries.
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="text-center group"
+            >
+              <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-blue-500/50 hover:bg-gray-800/70 transition-all duration-300 transform hover:scale-105">
+                <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <Shield className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-4 group-hover:text-green-400 transition-colors duration-300">
+                  Proven Results
+                </h3>
+                <p className="text-gray-400 leading-relaxed">
+                  Our track record speaks for itself - we've helped hundreds of 
+                  businesses achieve their technology transformation goals.
+                </p>
               </div>
             </motion.div>
           </div>
@@ -384,37 +380,40 @@ const ContactPage: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-black/40 to-purple-900/20">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="py-20 bg-gradient-to-br from-gray-900 to-blue-900">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Ready to Transform Your Business?
             </h2>
-            <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
-              Join the future of technology with Zion Tech Group. Let's build something extraordinary together.
+            <p className="text-xl text-gray-400 mb-8">
+              Don't wait to start your digital transformation journey. 
+              Our experts are ready to help you build the future.
             </p>
+            
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/get-started">
-                <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25">
-                  Get Started Today
-                </button>
+              <Link 
+                href="#contact-form"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-600 text-white font-semibold rounded-2xl hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105"
+              >
+                Start Your Project
+                <ArrowRight className="w-5 h-5 ml-2" />
               </Link>
-              <Link href="/services">
-                <button className="px-8 py-4 border-2 border-purple-400 text-purple-400 font-semibold rounded-lg hover:bg-purple-400 hover:text-black transition-all duration-300 transform hover:scale-105">
-                  Explore Services
-                </button>
+              <Link 
+                href="/services"
+                className="inline-flex items-center px-8 py-4 border border-gray-600 text-white font-semibold rounded-2xl hover:border-blue-400 hover:text-blue-400 transition-all duration-300"
+              >
+                Explore Services
               </Link>
             </div>
           </motion.div>
         </div>
       </section>
-    </div>
+    </Layout>
   );
-};
-
-export default ContactPage;
+}
