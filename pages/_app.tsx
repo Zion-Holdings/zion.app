@@ -1,6 +1,7 @@
 import type { AppProps } from 'next/app';
 import React, { useRef } from 'react';
 import '../styles/globals.css';
+import '../styles/accessibility.css';
 import { SEOContext } from '../components/SEOContext';
 import DefaultSEO from '../components/DefaultSEO';
 import Analytics from '../components/Analytics';
