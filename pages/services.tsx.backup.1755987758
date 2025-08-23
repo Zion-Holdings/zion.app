@@ -23,10 +23,20 @@ import { real2036ServiceExpansions } from '../data/real-2036-service-expansions'
 import { innovative2036MicroSaasServices } from '../data/innovative-2036-micro-saas-services';
 import { innovative2036ITServices } from '../data/innovative-2036-it-services';
 
+<<<<<<< HEAD
+// Import our new innovative services
+import { innovative2037Services } from '../data/innovative-2037-services';
+import { advanced2038Services } from '../data/advanced-2038-services';
+import { revolutionary2039Services } from '../data/revolutionary-2039-services';
+import { innovative2038AdvancedServices } from '../data/innovative-2038-advanced-services';
+import { revolutionary2040FuturisticServices } from '../data/revolutionary-2040-futuristic-services';
+import { practicalBusinessITServices2038 } from '../data/practical-business-it-services-2038';
+=======
 // Import new innovative service data
 import { innovative2025MicroSaasExpansions } from '../data/innovative-2025-micro-saas-expansions';
 import { innovative2025ITServiceExpansions } from '../data/innovative-2025-it-services-expansions';
 import { innovative2025AIServiceExpansions } from '../data/innovative-2025-ai-services-expansions';
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-4798
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -114,10 +124,31 @@ const allServices = [
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
+<<<<<<< HEAD
+  // Our new 2025 advanced services
+  ...advanced2025MicroSaasExpansion,
+  ...advanced2025ITSolutionsExpansion,
+  ...advanced2025AIServicesExpansion,
+  // Our new innovative services
+  ...innovative2037MicroSaasServices,
+  ...innovative2037ITServices,
+  ...innovative2037AIServices,
+  ...innovative2038CuttingEdgeServices,
+  ...innovative2038ITInfrastructureServices,
+  // Our additional innovative services
+  ...innovative2037Services,
+  ...advanced2038Services,
+  ...revolutionary2039Services,
+  // Our latest innovative services
+  ...innovative2038AdvancedServices,
+  ...revolutionary2040FuturisticServices,
+  ...practicalBusinessITServices2038
+=======
   // New innovative services
   ...innovative2025MicroSaasExpansions,
   ...innovative2025ITServiceExpansions,
   ...innovative2025AIServiceExpansions
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-4798
 ];
 
 const categories = [
