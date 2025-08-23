@@ -39,6 +39,12 @@ import { real2029Q2Additions } from '../../data/real-2029-q2-additions';
 import { real2029Q3Additions } from '../../data/real-2029-q3-additions';
 import { real2029Q4Additions } from '../../data/real-2029-q4-additions';
 
+<<<<<<< HEAD
+// Import our new 2025 advanced services V2
+import { advancedMicroSaasExpansion2025V2 } from '../../data/2025-advanced-micro-saas-expansion-v2';
+import { advancedITInfrastructureExpansion2025V2 } from '../../data/2025-advanced-it-infrastructure-expansion-v2';
+import { advancedAIServicesExpansion2025V2 } from '../../data/2025-advanced-ai-services-expansion-v2';
+=======
 // Define a proper interface for services that matches UltraFuturisticServiceCard2026
 interface Service {
   id: string;
@@ -53,6 +59,7 @@ interface Service {
   icon: string;
   launchDate?: string;
 }
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-8046
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -171,6 +178,9 @@ export default function ServicesIndexPage() {
       real2029Q1Additions as unknown[],
       real2029Q2Additions as unknown[],
       real2029Q3Additions as unknown[],
+<<<<<<< HEAD
+      real2029Q4Additions as unknown[]
+=======
       real2030Q1Additions as unknown[],
       real2030Q2Additions as unknown[],
       real2031MicroSaasAdditions as unknown[],
@@ -206,16 +216,28 @@ export default function ServicesIndexPage() {
     .concat(advancedITInfrastructureExpansion2025V2 as unknown[])
     .concat(advancedAIServicesExpansion2025V2 as unknown[]);
 
+<<<<<<< HEAD
+  // Filter out services without required properties
+  const validServices = all.filter(service => 
+    service && 
+    typeof service === 'object' && 
+    'name' in service && 
+    'description' in service &&
+    'price' in service
+  );
+=======
   // Transform services to match the expected format
   const transformedServices = all.map(transformServiceData);
   
   // Get valid services with pricing
   const validServices = transformedServices.filter((service: Service) => service.price && typeof service.price === 'string');
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-8046
 
   // Group services by category
   const servicesByCategory = categories.reduce((acc, category) => {
     acc[category] = validServices.filter((service: any) => 
       service.category && service.category.toLowerCase().includes(category.toLowerCase().replace(/\s+/g, ''))
+>>>>>>> 0d3d59dc48bc65c272e3c7f2106b07881fc97407
     );
   const byCategory: Record<string, unknown[]> = {};
   for (const c of categories) byCategory[c] = [];
