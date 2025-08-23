@@ -142,7 +142,7 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
 
   // Focus management
   useEffect(() => {
-    const handleFocusIn = (e: FocusEvent) => {
+    const handleFocusIn = (e: any) => {
       const target = e.target as HTMLElement;
       
       // Announce focus changes for screen readers
@@ -162,7 +162,7 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
       }
     };
 
-    const handleFocusOut = (e: FocusEvent) => {
+    const handleFocusOut = (e: any) => {
       const target = e.target as HTMLElement;
       if (settings.focusIndicators) {
         target.style.outline = '';
