@@ -132,15 +132,6 @@ const AccessibilityEnhancer: React.FC = () => {
     }
   }, [applySettings]);
 
-  // Focus management
-  const handleFocusChange = useCallback((e: Event) => {
-    const target = e.target as HTMLElement;
-    if (target) {
-      setCurrentFocus(target);
-      announceToScreenReader(`Focused on ${target.textContent || target.tagName.toLowerCase()}`);
-    }
-  }, []);
-
   // Keyboard navigation enhancements
   const handleKeyDown = useCallback((e: Event) => {
     // Tab navigation detected
@@ -186,22 +177,24 @@ const AccessibilityEnhancer: React.FC = () => {
       }
     };
 
-    const handleBlur = (event: Event) => {
-      const target = event.target as HTMLElement;
+  // Set up event listeners
+  useEffect(() => {
+    const handleFocusChangeWrapper = (e: Event) => {
+      const target = e.target as HTMLElement;
       if (target) {
-        target.style.outline = '';
-        target.style.outlineOffset = '';
+        setCurrentFocus(target);
+        announceToScreenReader(`Focused on ${target.textContent || target.tagName.toLowerCase()}`);
       }
     };
 
-    document.addEventListener('focusin', handleFocusChange);
-    document.addEventListener('focusout', handleBlur);
-
+    document.addEventListener('focusin', handleFocusChangeWrapper);
+    document.addEventListener('keydown', handleKeyDown);
+    
     return () => {
-      document.removeEventListener('focusin', handleFocusChange);
-      document.removeEventListener('focusout', handleBlur);
+      document.removeEventListener('focusin', handleFocusChangeWrapper);
+      document.removeEventListener('keydown', handleKeyDown);
     };
-  }, [currentFocus, settings.focusIndicator]);
+  }, [handleKeyDown]);
 
   // Highlighter effect
   useEffect(() => {
