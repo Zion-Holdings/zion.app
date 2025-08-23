@@ -1,105 +1,115 @@
-export type TalentProfile = {
-  slug: string;
-  name: string;
-  title: string;
-  location: string;
-  skills: string[];
-  bio: string;
-  hourlyRateUsd: number;
-  availability: 'full-time' | 'part-time' | 'contract';
-  experienceYears: number;
-  region: 'Americas' | 'EMEA' | 'APAC';
-  timezone?: string;
-  rating: number; // 0-5
-  bookings: number; // total number of bookings
-  createdAt: string; // ISO date string for sorting by newest
-  status?: 'available' | 'booked' | 'part-time';
-};
+import type { TalentProfile } from '@/utils/types/talent';
 
 export const TALENT_PROFILES: TalentProfile[] = [
   {
     slug: 'ava-chen',
     name: 'Ava Chen',
     title: 'Senior LLM Engineer',
+    category: 'AI/ML',
     location: 'Toronto, CA',
-    skills: ['LLM Ops', 'RAG', 'OpenAI', 'LangChain', 'Vector DBs', 'TypeScript'],
-    bio: 'Architects robust LLM applications with retrieval, evaluation, and safety guardrails. Ex-FAANG applied scientist.',
-    hourlyRateUsd: 140,
-    availability: 'contract',
-    experienceYears: 8,
-    region: 'Americas',
     timezone: 'America/Toronto',
+    region: 'North America',
+    skills: ['LLM Ops', 'RAG', 'OpenAI', 'LangChain', 'Vector DBs', 'TypeScript'],
+    summary:
+      'Senior LLM Engineer specializing in end-to-end GenAI systems with retrieval, evaluation, and safety guardrails. Proven track record shipping reliable AI products at scale.',
+    bio:
+      'Architects robust LLM applications with retrieval, evaluation, and safety guardrails. Ex-FAANG applied scientist.',
+    hourlyRateUsd: 140,
+    availability: 'Open',
+    profileImageUrl: 'https://i.pravatar.cc/300?img=1',
+    portfolio: [
+      { title: 'RAG Platform Template', url: 'https://example.com/rag' },
+      { title: 'LLM Evaluation Toolkit', url: 'https://example.com/eval' },
+    ],
+    verified: true,
     rating: 4.9,
-    bookings: 72,
-    createdAt: '2025-06-18T00:00:00.000Z',
-    status: 'available',
+    reviewsCount: 28,
+    createdAt: new Date().toISOString(),
   },
   {
     slug: 'marco-silva',
     name: 'Marco Silva',
     title: 'Cloud Solutions Architect',
+    category: 'DevOps/Cloud',
     location: 'Lisbon, PT',
+    timezone: 'Europe/Lisbon',
+    region: 'Europe',
     skills: ['AWS', 'Kubernetes', 'Terraform', 'Serverless', 'Networking'],
+    summary:
+      'Cloud architect focused on scalable multi-account AWS platforms, platform engineering, and secure-by-default patterns for modern teams.',
     bio: 'Designs scalable, secure multi-account AWS platforms and platform engineering toolchains.',
     hourlyRateUsd: 120,
-    availability: 'contract',
-    experienceYears: 10,
-    region: 'EMEA',
-    timezone: 'Europe/Lisbon',
-    rating: 4.7,
-    bookings: 58,
-    createdAt: '2025-05-02T00:00:00.000Z',
-    status: 'available',
+    availability: 'Part-time',
+    profileImageUrl: 'https://i.pravatar.cc/300?img=2',
+    portfolio: [
+      { title: 'Multi-Account AWS Landing Zone', url: 'https://example.com/aws' },
+    ],
+    verified: true,
+    rating: 4.8,
+    reviewsCount: 19,
+    createdAt: new Date().toISOString(),
   },
   {
     slug: 'nina-patel',
     name: 'Nina Patel',
     title: 'Data Scientist • GenAI',
+    category: 'AI/ML',
     location: 'Austin, US',
+    timezone: 'America/Chicago',
+    region: 'North America',
     skills: ['Python', 'PyTorch', 'NLP', 'Evaluation', 'Prompting', 'Dashboards'],
+    summary:
+      'Data scientist delivering measurable outcomes with rigorous evaluation, fast iteration, and pragmatic product sense.',
     bio: 'Builds data products end-to-end with strong model evaluation and product sense.',
     hourlyRateUsd: 110,
-    availability: 'part-time',
-    experienceYears: 6,
-    region: 'Americas',
-    timezone: 'America/Chicago',
-    rating: 4.8,
-    bookings: 33,
-    createdAt: '2025-07-01T00:00:00.000Z',
-    status: 'part-time',
+    availability: 'Open',
+    profileImageUrl: 'https://i.pravatar.cc/300?img=3',
+    portfolio: [{ title: 'NLP Evaluation Dashboard', url: 'https://example.com/nlp' }],
+    verified: false,
+    rating: 4.7,
+    reviewsCount: 12,
+    createdAt: new Date().toISOString(),
   },
   {
     slug: 'kenji-yamada',
     name: 'Kenji Yamada',
     title: 'Full‑Stack AI Engineer',
+    category: 'Engineering',
     location: 'Tokyo, JP',
+    timezone: 'Asia/Tokyo',
+    region: 'Asia',
     skills: ['Next.js', 'TypeScript', 'Rust', 'PostgreSQL', 'OpenAI', 'Vercel'],
+    summary:
+      'Full‑stack developer building sleek, performant AI web apps with modern DX, observability, and delightful UX.',
     bio: 'Delivers sleek, performant AI web apps with modern DX and observability.',
     hourlyRateUsd: 95,
-    availability: 'contract',
-    experienceYears: 7,
-    region: 'APAC',
-    timezone: 'Asia/Tokyo',
+    availability: 'Booked',
+    profileImageUrl: 'https://i.pravatar.cc/300?img=4',
+    portfolio: [{ title: 'AI SaaS Starter', url: 'https://example.com/saas' }],
+    verified: true,
     rating: 4.6,
-    bookings: 41,
-    createdAt: '2025-04-10T00:00:00.000Z',
-    status: 'available',
+    reviewsCount: 34,
+    createdAt: new Date().toISOString(),
   },
   {
     slug: 'lena-mueller',
     name: 'Lena Müller',
     title: 'Security Engineer',
+    category: 'Security',
     location: 'Berlin, DE',
+    timezone: 'Europe/Berlin',
+    region: 'Europe',
     skills: ['Threat Modeling', 'AppSec', 'SAST/DAST', 'Zero Trust', 'IAM'],
+    summary:
+      'Security engineer who hardens platforms with developer‑friendly security programs, practical controls, and measurable impact.',
     bio: 'Hardens platforms with practical, developer‑friendly security programs.',
     hourlyRateUsd: 130,
-    availability: 'contract',
-    experienceYears: 9,
-    region: 'EMEA',
-    timezone: 'Europe/Berlin',
-    rating: 4.9,
-    bookings: 85,
-    createdAt: '2025-06-25T00:00:00.000Z',
-    status: 'booked',
+    availability: 'Open',
+    profileImageUrl: 'https://i.pravatar.cc/300?img=5',
+    portfolio: [{ title: 'Zero Trust Rollout Case Study', url: 'https://example.com/zt' }],
+    verified: false,
+    rating: 4.5,
+    reviewsCount: 9,
+    createdAt: new Date().toISOString(),
   },
 ];

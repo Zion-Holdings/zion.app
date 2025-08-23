@@ -1,87 +1,148 @@
-import { GetStaticPaths, GetStaticProps } from 'next';
-import Link from 'next/link';
-import React from 'react';
-import { TALENT_PROFILES, TalentProfile } from '../../data/talent';
+import { useRouter } from 'next/router';
+import { useEffect, useMemo, useState } from 'react';
+import type { TalentProfile } from '@/utils/types/talent';
+import { TALENT_PROFILES as LOCAL } from '@/data/talent';
 
-type Props = { profile: TalentProfile | null };
+function getBrowserLang(): string | undefined {
+  if (typeof navigator === 'undefined') return undefined;
+  const lang = navigator.language || (navigator as any).userLanguage;
+  return lang?.slice(0, 2);
+}
 
-export default function TalentProfilePage({ profile }: Props) {
-  if (!profile) {
-    return (
-      <div className="py-12">
-        <p className="text-slate-300">Profile not found.</p>
-        <Link href="/talent"><a className="text-cyan-300 underline">Back to directory</a></Link>
-      </div>
-    );
-  }
+export default function TalentProfilePage() {
+  const router = useRouter();
+  const { slug } = router.query as { slug?: string };
+  const [talent, setTalent] = useState<TalentProfile | null>(null);
+  const [base, setBase] = useState<TalentProfile | null>(null);
+  const [translated, setTranslated] = useState(false);
+  const [showOriginal, setShowOriginal] = useState(false);
+
+  const lang = useMemo(() => getBrowserLang(), []);
+
+  useEffect(() => {
+    if (!slug) return;
+    let isMounted = true;
+    (async () => {
+      try {
+        const query = lang ? `?lang=${encodeURIComponent(lang)}` : '';
+        const res = await fetch(`/api/talent/${slug}${query}`);
+        if (res.ok) {
+          const data = await res.json();
+          if (isMounted) {
+            setTalent(data.item || null);
+            setTranslated(Boolean(data.translated));
+          }
+        } else {
+          const fallback = LOCAL.find((t) => t.slug === slug) || null;
+          if (isMounted) setTalent(fallback);
+        }
+        // Also fetch base (original) if translated
+        const resBase = await fetch(`/api/talent/${slug}`);
+        if (resBase.ok) {
+          const data = await resBase.json();
+          if (isMounted) setBase(data.item || null);
+        } else {
+          if (isMounted) setBase(LOCAL.find((t) => t.slug === slug) || null);
+        }
+      } catch {
+        const fallback = LOCAL.find((t) => t.slug === slug) || null;
+        if (isMounted) {
+          setTalent(fallback);
+          setBase(fallback);
+        }
+      }
+    })();
+    return () => {
+      isMounted = false;
+    };
+  }, [slug, lang]);
+
+  const displayed = showOriginal ? base : talent;
+
+  if (!displayed) return <div className="py-10 text-gray-500">Loading...</div>;
+
+  const rateLabel = displayed.requestQuote
+    ? 'Request Quote'
+    : displayed.hourlyRateUsd
+    ? `$${displayed.hourlyRateUsd}/hr`
+    : 'Request Quote';
 
   return (
-    <div className="space-y-6">
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <div className="flex items-center gap-4">
-          <div className="h-16 w-16 rounded-xl bg-gradient-to-br from-cyan-500 to-violet-600 flex items-center justify-center text-white font-semibold ring-1 ring-white/20 shadow-md">
-            {profile.name.split(' ').map((p) => p[0]).slice(0, 2).join('')}
+    <div className="max-w-4xl mx-auto">
+      <div className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/40 shadow-sm overflow-hidden">
+        <div className="p-6">
+          <div className="flex items-start gap-6">
+            <img src={displayed.profileImageUrl || 'https://i.pravatar.cc/300'} alt={displayed.name} className="h-24 w-24 rounded-2xl object-cover ring-2 ring-white/70 dark:ring-gray-800" />
+            <div className="flex-1 min-w-0">
+              <div className="flex flex-wrap items-center gap-2">
+                <h1 className="text-2xl font-bold">{displayed.name}</h1>
+                {displayed.verified && (
+                  <span className="text-xs px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 border border-blue-200">Verified</span>
+                )}
+                {displayed.rating && displayed.rating >= 4.8 && (
+                  <span className="text-xs px-2 py-0.5 rounded-full bg-violet-100 text-violet-700 border border-violet-200">Top Rated</span>
+                )}
+                {displayed.createdAt && (
+                  <span className="text-xs px-2 py-0.5 rounded-full bg-cyan-100 text-cyan-700 border border-cyan-200">New</span>
+                )}
+              </div>
+              <p className="mt-1 text-gray-600 dark:text-gray-300">{displayed.title} {displayed.category ? `• ${displayed.category}` : ''}</p>
+              <div className="mt-1 text-sm text-gray-500">{displayed.location} {displayed.timezone ? `• ${displayed.timezone}` : ''}</div>
+            </div>
+            <div className="text-right">
+              <div className="text-sm text-gray-600">{displayed.availability}</div>
+              <div className="mt-2 font-semibold">{rateLabel}</div>
+              <a href={`mailto:hello@zion.app?subject=Hire ${encodeURIComponent(displayed.name)}`} className="mt-3 inline-flex items-center px-4 py-2 rounded-lg bg-gradient-to-r from-blue-500 via-violet-500 to-cyan-500 text-white shadow hover:opacity-90">Hire Now</a>
+            </div>
           </div>
-          <div>
-            <h1 className="text-2xl md:text-3xl font-semibold text-white">{profile.name}</h1>
-            <p className="text-slate-300">{profile.title} • {profile.location}</p>
-          </div>
-        </div>
-        <div className="text-right">
-          <div className="text-white text-xl font-semibold">${profile.hourlyRateUsd} / hr</div>
-          <div className="text-slate-300 text-sm">{profile.experienceYears}+ years • Rating {profile.rating.toFixed(1)} • {profile.bookings} bookings</div>
-        </div>
-      </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="md:col-span-2 space-y-4">
-          <section className="rounded-2xl border border-white/10 bg-white/5 p-4">
-            <h2 className="font-semibold text-white">Summary</h2>
-            <p className="mt-2 text-slate-300">{profile.bio}</p>
-          </section>
-          <section className="rounded-2xl border border-white/10 bg-white/5 p-4">
-            <h2 className="font-semibold text-white">Skills</h2>
-            <div className="mt-2 flex flex-wrap gap-2">
-              {profile.skills.map((s) => (
-                <span key={s} className="inline-flex items-center rounded-full bg-white/10 px-2 py-1 text-xs text-slate-200 ring-1 ring-white/15">
-                  {s}
-                </span>
+          <div className="mt-4 flex items-center gap-3">
+            {translated && (
+              <span className="text-xs px-2 py-1 rounded-full border bg-emerald-50 text-emerald-700 border-emerald-200">Auto-translated</span>
+            )}
+            {translated && (
+              <button onClick={() => setShowOriginal((v) => !v)} className="text-sm text-violet-700 underline">
+                {showOriginal ? 'View translated' : 'View original'}
+              </button>
+            )}
+          </div>
+
+          <p className="mt-6 text-gray-800 dark:text-gray-100 leading-relaxed">{displayed.summary}</p>
+
+          {displayed.skills?.length ? (
+            <div className="mt-6 flex flex-wrap gap-2">
+              {displayed.skills.map((s) => (
+                <span key={s} className="text-xs px-2 py-1 rounded-full border bg-cyan-50 text-cyan-700 border-cyan-200 dark:bg-cyan-950/30 dark:text-cyan-300 dark:border-cyan-900">{s}</span>
               ))}
             </div>
-          </section>
+          ) : null}
+
+          {displayed.videoUrl && (
+            <div className="mt-8">
+              <div className="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden">
+                <iframe src={displayed.videoUrl} className="w-full h-80" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+              </div>
+            </div>
+          )}
+
+          {displayed.portfolio && displayed.portfolio.length > 0 && (
+            <div className="mt-8">
+              <h3 className="font-semibold">Portfolio</h3>
+              <ul className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {displayed.portfolio.map((p, idx) => (
+                  <li key={idx} className="rounded-xl border border-gray-200 dark:border-gray-800 p-3 hover:border-violet-300/60 transition">
+                    <a href={p.url} target="_blank" rel="noreferrer" className="text-violet-600 hover:underline">{p.title}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {typeof displayed.rating === 'number' && (
+            <div className="mt-8 text-sm text-gray-600 dark:text-gray-300">Rating: ⭐ {displayed.rating.toFixed(1)} {displayed.reviewsCount ? `(${displayed.reviewsCount} reviews)` : ''}</div>
+          )}
         </div>
-        <aside className="space-y-4">
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-            <h3 className="font-semibold text-white">Details</h3>
-            <dl className="mt-2 grid grid-cols-2 gap-2 text-sm">
-              <dt className="text-slate-400">Region</dt>
-              <dd className="text-slate-200">{profile.region}</dd>
-              <dt className="text-slate-400">Timezone</dt>
-              <dd className="text-slate-200">{profile.timezone || '—'}</dd>
-              <dt className="text-slate-400">Availability</dt>
-              <dd className="text-slate-200">{profile.status ? profile.status : profile.availability}</dd>
-              <dt className="text-slate-400">Added</dt>
-              <dd className="text-slate-200">{new Date(profile.createdAt).toLocaleDateString()}</dd>
-            </dl>
-          </div>
-          <Link href="/talent">
-            <a className="block text-center rounded-lg bg-gradient-to-r from-cyan-500 to-violet-600 px-4 py-2 text-white font-medium">Back to Directory</a>
-          </Link>
-        </aside>
       </div>
     </div>
   );
 }
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  return {
-    paths: TALENT_PROFILES.map((p) => ({ params: { slug: p.slug } })),
-    fallback: false,
-  };
-};
-
-export const getStaticProps: GetStaticProps<Props> = async (ctx) => {
-  const slug = ctx.params?.slug as string;
-  const profile = TALENT_PROFILES.find((p) => p.slug === slug) || null;
-  return { props: { profile } };
-};

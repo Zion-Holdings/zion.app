@@ -1,1 +1,3 @@
-export default function Page(){return <div className="py-8 text-slate-300">index</div>}
+export default function AuthIndex() {
+  return <div className="py-10">Auth</div>;
+}

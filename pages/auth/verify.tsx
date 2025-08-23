@@ -1,1 +1,3 @@
-export default function Page(){return <div className="py-8 text-slate-300">verify</div>}
+export default function Verify() {
+  return <div className="py-10">Verify Email</div>;
+}

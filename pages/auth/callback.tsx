@@ -1,1 +1,3 @@
-export default function Page(){return <div className="py-8 text-slate-300">callback</div>}
+export default function AuthCallback() {
+  return <div className="py-10">Auth Callback</div>;
+}

@@ -1,1 +1,3 @@
-export default function Page(){return <div className="py-8 text-slate-300">reset password</div>}
+export default function ResetPassword() {
+  return <div className="py-10">Reset Password</div>;
+}
