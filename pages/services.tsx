@@ -68,6 +68,13 @@ import { cuttingEdgeInnovativeServices2025 } from '../data/2025-cutting-edge-inn
 import { advancedITInfrastructureSolutions2025 } from '../data/2025-advanced-it-infrastructure-solutions';
 import { advancedAIAutomationSolutions2025 } from '../data/2025-advanced-ai-automation-solutions';
 
+// Import our new 2025 V2 innovative services
+import { innovativeMicroSaasServices2025V2 } from '../data/2025-innovative-micro-saas-expansion-v2';
+import { innovativeITInfrastructureServices2025V2 } from '../data/2025-innovative-it-infrastructure-services-v2';
+import { innovativeAIServices2025V2 } from '../data/2025-innovative-ai-services-v2';
+import { industrySpecificSolutions2025V2 } from '../data/2025-industry-specific-solutions-v2';
+import { emergingTechBreakthroughs2025V2 } from '../data/2025-emerging-tech-breakthroughs-v2';
+
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
@@ -99,6 +106,13 @@ const getServiceFeatures = (service: any) => {
   if (service.features) return service.features;
   if (service.keyFeatures) return service.keyFeatures;
   return [];
+};
+
+// Helper function to get service name
+const getServiceName = (service: any) => {
+  if (service.name) return service.name;
+  if (service.title) return service.title;
+  return 'Unnamed Service';
 };
 
 // Helper function to get service description
@@ -178,7 +192,14 @@ const allServices = [
   // Our new 2025 cutting-edge innovative services expansion
   ...cuttingEdgeInnovativeServices2025,
   ...advancedITInfrastructureSolutions2025,
-  ...advancedAIAutomationSolutions2025
+  ...advancedAIAutomationSolutions2025,
+  
+  // Our new 2025 V2 innovative services
+  ...innovativeMicroSaasServices2025V2,
+  ...innovativeITInfrastructureServices2025V2,
+  ...innovativeAIServices2025V2,
+  ...industrySpecificSolutions2025V2,
+  ...emergingTechBreakthroughs2025V2
 ];
 
 const categories = [
@@ -253,6 +274,20 @@ const categories = [
     description: 'AI-powered creative solutions'
   },
   {
+    id: 'industry-solutions',
+    name: 'Industry Solutions',
+    icon: <Building className="w-6 h-6" />,
+    color: 'from-orange-500 to-red-500',
+    description: 'Specialized industry-specific solutions'
+  },
+  {
+    id: 'emerging-tech',
+    name: 'Emerging Technology',
+    icon: <Atom className="w-6 h-6" />,
+    color: 'from-purple-500 to-pink-500',
+    description: 'Breakthrough and cutting-edge technologies'
+  },
+  {
     id: 'healthcare-biotech',
     name: 'Healthcare & Biotech',
     icon: <Heart className="w-6 h-6" />,
@@ -306,7 +341,7 @@ export default function Services() {
 
   // Filter services based on search and category
   const filteredServices = allServices.filter(service => {
-    const matchesSearch = service.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    const matchesSearch = getServiceName(service).toLowerCase().includes(searchQuery.toLowerCase()) ||
                          getServiceDescription(service).toLowerCase().includes(searchQuery.toLowerCase());
     
     if (selectedCategory === 'all') return matchesSearch;
@@ -321,7 +356,7 @@ export default function Services() {
   const sortedServices = [...filteredServices].sort((a, b) => {
     switch (sortBy) {
       case 'name':
-        return a.name.localeCompare(b.name);
+        return getServiceName(a).localeCompare(getServiceName(b));
       case 'price-low':
         return (parseInt(getServicePricing(a).replace(/[^0-9]/g, '')) || 0) - 
                (parseInt(getServicePricing(b).replace(/[^0-9]/g, '')) || 0);
@@ -585,7 +620,7 @@ export default function Services() {
                       {/* Service Header */}
                       <div className="mb-6">
                         <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
-                          {service.name}
+                          {getServiceName(service)}
                         </h3>
                         <p className="text-gray-300 text-sm leading-relaxed">
                           {getServiceDescription(service)}
