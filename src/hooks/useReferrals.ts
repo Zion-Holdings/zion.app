@@ -154,7 +154,7 @@ export function useReferrals() {
       toast({
         title: "Success!",
         description: "Your referral code has been generated",
-        variant: "success",
+        variant: "default",
       });
 
       // Refresh the code
@@ -189,7 +189,7 @@ export function useReferrals() {
       toast({
         title: "Copied!",
         description: "Referral link copied to clipboard",
-        variant: "success",
+        variant: "default",
       });
     } else {
       toast({

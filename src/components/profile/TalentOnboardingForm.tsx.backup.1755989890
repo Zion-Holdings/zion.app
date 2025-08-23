@@ -173,5 +173,11 @@ export function TalentOnboardingForm() {
 
   // Rest of the file remains unchanged...
   // [Previous implementation continues...]
+<<<<<<< HEAD
+
+  return null;
+}
+=======
   return <div>Talent onboarding form coming soon.</div>
 }
+>>>>>>> origin/8h6b38-codex/fix-typescript-module-and-type-errors
