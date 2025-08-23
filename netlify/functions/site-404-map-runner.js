@@ -1,60 +1,32 @@
-const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
+const { spawnSync } = require('child_process');
 
-exports.handler = async function(event, context) {
-  console.log('🤖 Starting site-404-map-runner...');
-  
+function runGitSync() {
   try {
-    const timestamp = new Date().toISOString();
-    const reportPath = path.join(process.cwd(), 'site-404-map-runner-report.md');
-    
-    const reportContent = `# site-404-map-runner Report
-
-Generated: ${timestamp}
-
-## Status
-- Task: site-404-map-runner
-- Status: Completed
-- Timestamp: ${timestamp}
-
-## Next Steps
-- Implement actual site-404-map-runner functionality
-- Add proper error handling
-- Add logging and monitoring
-`;
-
-    fs.writeFileSync(reportPath, reportContent);
-    console.log('📝 Report generated');
-    
-    try {
-      execSync('git add ' + reportPath, { stdio: 'inherit' });
-      execSync('git commit -m "🤖 Add site-404-map-runner report [skip ci]"', { stdio: 'inherit' });
-      execSync('git push', { stdio: 'inherit' });
-      console.log('✅ Report committed and pushed');
-    } catch (gitError) {
-      console.log('Git error:', gitError.message);
-    }
-    
-    console.log('✅ site-404-map-runner completed successfully');
-    
-    return {
-      statusCode: 200,
-      body: JSON.stringify({
-        message: 'site-404-map-runner completed successfully',
-        timestamp: timestamp
-      })
-    };
-    
-  } catch (error) {
-    console.error('❌ site-404-map-runner failed:', error.message);
-    
-    return {
-      statusCode: 500,
-      body: JSON.stringify({
-        error: error.message,
-        timestamp: new Date().toISOString()
-      })
-    };
+    const script = path.resolve(process.cwd(), 'automation', 'advanced-git-sync.cjs');
+    const res = spawnSync('node', [script], { stdio: 'pipe', encoding: 'utf8' });
+    return { status: res.status || 0 };
+  } catch (e) {
+    return { status: 1 };
   }
+}
+
+exports.handler = async () => {
+  const root = process.cwd();
+  const csvPath = path.join(root, 'link_report.csv');
+  const rows = [];
+  if (fs.existsSync(csvPath)) {
+    const lines = fs.readFileSync(csvPath, 'utf8').split(/\r?\n/).slice(1);
+    for (const line of lines) {
+      if (!line.trim()) continue;
+      const [source_url, link_url, final_url, status_code, ok, is_internal, error] = line.split(',');
+      if (status_code === '404') rows.push({ source: source_url, target: final_url || link_url, error: error || 'Not Found' });
+    }
+  }
+  const outDir = path.join(root, 'data', 'reports');
+  fs.mkdirSync(outDir, { recursive: true });
+  fs.writeFileSync(path.join(outDir, 'site-404-map.json'), JSON.stringify({ generatedAt: new Date().toISOString(), totals: rows.length, items: rows }, null, 2));
+  const git = runGitSync();
+  return { statusCode: 200, body: JSON.stringify({ ok: true, git }) };
 };

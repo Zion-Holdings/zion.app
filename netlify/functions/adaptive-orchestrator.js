@@ -1,60 +1,35 @@
-const { execSync } = require('child_process');
-const fs = require('fs');
-const path = require('path');
+const { setTimeout: sleep } = require('timers/promises');
 
-exports.handler = async function(event, context) {
-  console.log('🤖 Starting adaptive-orchestrator...');
-  
-  try {
-    const timestamp = new Date().toISOString();
-    const reportPath = path.join(process.cwd(), 'adaptive-orchestrator-report.md');
-    
-    const reportContent = `# adaptive-orchestrator Report
+exports.handler = async () => {
+  const baseUrl = (process.env.SITE_URL || process.env.URL || process.env.DEPLOY_PRIME_URL || '').replace(/\/$/, '');
+  if (!baseUrl) return { statusCode: 200, body: JSON.stringify({ ok: false, error: 'No base URL' }) };
 
-Generated: ${timestamp}
+  const preferred = [
+    'front-enhancer',
+    'frontpage-enhancer',
+    'homepage-updater',
+    'homepage_advertiser',
+    'sitemap_runner',
+    'readme-advertiser',
+  ];
 
-## Status
-- Task: adaptive-orchestrator
-- Status: Completed
-- Timestamp: ${timestamp}
-
-## Next Steps
-- Implement actual adaptive-orchestrator functionality
-- Add proper error handling
-- Add logging and monitoring
-`;
-
-    fs.writeFileSync(reportPath, reportContent);
-    console.log('📝 Report generated');
-    
+  async function ping(name) {
+    const url = `${baseUrl}/.netlify/functions/${name}`;
     try {
-      execSync('git add ' + reportPath, { stdio: 'inherit' });
-      execSync('git commit -m "🤖 Add adaptive-orchestrator report [skip ci]"', { stdio: 'inherit' });
-      execSync('git push', { stdio: 'inherit' });
-      console.log('✅ Report committed and pushed');
-    } catch (gitError) {
-      console.log('Git error:', gitError.message);
+      const res = await fetch(url, { method: 'GET' });
+      return { name, status: res.status, ok: res.ok };
+    } catch (e) {
+      return { name, status: 0, ok: false, error: String(e) };
     }
-    
-    console.log('✅ adaptive-orchestrator completed successfully');
-    
-    return {
-      statusCode: 200,
-      body: JSON.stringify({
-        message: 'adaptive-orchestrator completed successfully',
-        timestamp: timestamp
-      })
-    };
-    
-  } catch (error) {
-    console.error('❌ adaptive-orchestrator failed:', error.message);
-    
-    return {
-      statusCode: 500,
-      body: JSON.stringify({
-        error: error.message,
-        timestamp: new Date().toISOString()
-      })
-    };
   }
+
+  const results = [];
+  for (const name of preferred) {
+    results.push(await ping(name));
+    await sleep(200);
+  }
+
+  return { statusCode: 200, body: JSON.stringify({ ok: true, results }) };
 };
+
+exports.config = { schedule: '*/5 * * * *' };

@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+const path = require('path');
+const { spawnSync } = require('child_process');
+
+function runNode(relativePath, args = []) {
+  const abs = path.resolve(__dirname, '..', '..', relativePath);
+  const res = spawnSync('node', [abs, ...args], { stdio: 'pipe', encoding: 'utf8' });
+  return { status: res.status || 0, stdout: res.stdout || '', stderr: res.stderr || '' };
+=======
 const fs = require('fs');
 const path = require('path');
 const { spawnSync } = require('child_process');
@@ -15,11 +24,29 @@ function runGitSync() {
   } catch (e) {
     return { status: 1, stderr: String(e) };
   }
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-ecd8
 }
 
 exports.config = { schedule: '*/5 * * * *' };
 
 exports.handler = async () => {
+<<<<<<< HEAD
+  const logs = [];
+  const step = (name, fn) => {
+    logs.push(`\n=== ${name} ===`);
+    const { status, stdout, stderr } = fn();
+    if (stdout) logs.push(stdout);
+    if (stderr) logs.push(stderr);
+    logs.push(`exit=${status}`);
+    return status;
+  };
+
+  step('links:crawler', () => runNode('automation/site-link-crawler.cjs'));
+  step('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
+
+  return { statusCode: 200, headers: { 'content-type': 'text/plain' }, body: logs.join('\n') };
+};
+=======
   try {
     const root = process.cwd();
     const csvPath = path.join(root, 'link_report.csv');
@@ -75,3 +102,4 @@ exports.handler = async () => {
     return { statusCode: 500, body: JSON.stringify({ ok: false, error: String(err) }) };
   }
 };
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-ecd8

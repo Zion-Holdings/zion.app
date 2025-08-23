@@ -774,3 +774,77 @@ package.json[0m
 2025-08-23 23:06:26 - [1;33m⚠️  Found conflicts in package.json, resolving...[0m
 2025-08-23 23:06:26 - [0;34m📦 Package.json detected, merging dependencies intelligently...[0m
 2025-08-23 23:06:26 - [0;32m✅ Resolved conflicts in package.json[0m
+2025-08-23 23:06:26 - [0;32m✅ Successfully resolved conflicts and merged cursor/bc-4c9bcb37-354d-44c8-a4c3-43cbf1ad6b2d-c76c[0m
+2025-08-23 23:06:26 - [0;32m✅ PR #3871 (cursor/bc-4c9bcb37-354d-44c8-a4c3-43cbf1ad6b2d-c76c) processed successfully[0m
+2025-08-23 23:06:26 - [0;34m🔒 Closing PR #3871 via GitHub API...[0m
+2025-08-23 23:06:26 - [0;34m📊 Progress: 20/100, ✅ 20, ❌ 0[0m
+2025-08-23 23:06:26 - [0;34m💾 Pushing batch changes to remote...[0m
+2025-08-23 23:06:27 - [1;33m⚠️  Failed to push changes, continuing...[0m
+2025-08-23 23:06:29 - [0;34m📋 Processing PR #3869: Invent and deploy autonomous cloud automations (branch: cursor/invent-and-deploy-autonomous-cloud-automations-ecd8)[0m
+2025-08-23 23:06:29 - [0;34m🔄 Attempting to merge cursor/invent-and-deploy-autonomous-cloud-automations-ecd8...[0m
+2025-08-23 23:06:30 - [1;33m⚠️  Merge conflicts detected in cursor/invent-and-deploy-autonomous-cloud-automations-ecd8 (attempt 1/3), resolving...[0m
+2025-08-23 23:06:30 - [0;34m📋 Conflicted files: netlify/functions/adaptive-orchestrator.js
+netlify/functions/anchor-links-auto-fixer.js
+netlify/functions/canonical-auditor.js
+netlify/functions/component-coupling-graph-runner.js
+netlify/functions/content-freshness-score-runner.js
+netlify/functions/internal-link-graph-runner.js
+netlify/functions/knowledge-pack-runner.js
+netlify/functions/license-compliance-auditor.js
+netlify/functions/pagespeed-insights-runner.js
+netlify/functions/robots-auditor.js
+netlify/functions/site-404-map-runner.js
+netlify/functions/stale-content-auditor-runner.js
+pages/index.tsx[0m
+2025-08-23 23:06:30 - [0;34m🔧 Resolving conflicts in netlify/functions/adaptive-orchestrator.js for branch cursor/invent-and-deploy-autonomous-cloud-automations-ecd8...[0m
+2025-08-23 23:06:30 - [1;33m⚠️  Found conflicts in netlify/functions/adaptive-orchestrator.js, resolving...[0m
+2025-08-23 23:06:30 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:06:30 - [0;32m✅ Resolved conflicts in netlify/functions/adaptive-orchestrator.js[0m
+2025-08-23 23:06:30 - [0;34m🔧 Resolving conflicts in netlify/functions/anchor-links-auto-fixer.js for branch cursor/invent-and-deploy-autonomous-cloud-automations-ecd8...[0m
+2025-08-23 23:06:30 - [1;33m⚠️  Found conflicts in netlify/functions/anchor-links-auto-fixer.js, resolving...[0m
+2025-08-23 23:06:30 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:06:30 - [0;32m✅ Resolved conflicts in netlify/functions/anchor-links-auto-fixer.js[0m
+2025-08-23 23:06:30 - [0;34m🔧 Resolving conflicts in netlify/functions/canonical-auditor.js for branch cursor/invent-and-deploy-autonomous-cloud-automations-ecd8...[0m
+2025-08-23 23:06:30 - [1;33m⚠️  Found conflicts in netlify/functions/canonical-auditor.js, resolving...[0m
+2025-08-23 23:06:30 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:06:30 - [0;32m✅ Resolved conflicts in netlify/functions/canonical-auditor.js[0m
+2025-08-23 23:06:30 - [0;34m🔧 Resolving conflicts in netlify/functions/component-coupling-graph-runner.js for branch cursor/invent-and-deploy-autonomous-cloud-automations-ecd8...[0m
+2025-08-23 23:06:30 - [1;33m⚠️  Found conflicts in netlify/functions/component-coupling-graph-runner.js, resolving...[0m
+2025-08-23 23:06:30 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:06:30 - [0;32m✅ Resolved conflicts in netlify/functions/component-coupling-graph-runner.js[0m
+2025-08-23 23:06:30 - [0;34m🔧 Resolving conflicts in netlify/functions/content-freshness-score-runner.js for branch cursor/invent-and-deploy-autonomous-cloud-automations-ecd8...[0m
+2025-08-23 23:06:30 - [1;33m⚠️  Found conflicts in netlify/functions/content-freshness-score-runner.js, resolving...[0m
+2025-08-23 23:06:30 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:06:30 - [0;32m✅ Resolved conflicts in netlify/functions/content-freshness-score-runner.js[0m
+2025-08-23 23:06:30 - [0;34m🔧 Resolving conflicts in netlify/functions/internal-link-graph-runner.js for branch cursor/invent-and-deploy-autonomous-cloud-automations-ecd8...[0m
+2025-08-23 23:06:30 - [1;33m⚠️  Found conflicts in netlify/functions/internal-link-graph-runner.js, resolving...[0m
+2025-08-23 23:06:30 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:06:30 - [0;32m✅ Resolved conflicts in netlify/functions/internal-link-graph-runner.js[0m
+2025-08-23 23:06:30 - [0;34m🔧 Resolving conflicts in netlify/functions/knowledge-pack-runner.js for branch cursor/invent-and-deploy-autonomous-cloud-automations-ecd8...[0m
+2025-08-23 23:06:30 - [1;33m⚠️  Found conflicts in netlify/functions/knowledge-pack-runner.js, resolving...[0m
+2025-08-23 23:06:30 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:06:30 - [0;32m✅ Resolved conflicts in netlify/functions/knowledge-pack-runner.js[0m
+2025-08-23 23:06:30 - [0;34m🔧 Resolving conflicts in netlify/functions/license-compliance-auditor.js for branch cursor/invent-and-deploy-autonomous-cloud-automations-ecd8...[0m
+2025-08-23 23:06:30 - [1;33m⚠️  Found conflicts in netlify/functions/license-compliance-auditor.js, resolving...[0m
+2025-08-23 23:06:30 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:06:30 - [0;32m✅ Resolved conflicts in netlify/functions/license-compliance-auditor.js[0m
+2025-08-23 23:06:30 - [0;34m🔧 Resolving conflicts in netlify/functions/pagespeed-insights-runner.js for branch cursor/invent-and-deploy-autonomous-cloud-automations-ecd8...[0m
+2025-08-23 23:06:30 - [1;33m⚠️  Found conflicts in netlify/functions/pagespeed-insights-runner.js, resolving...[0m
+2025-08-23 23:06:30 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:06:30 - [0;32m✅ Resolved conflicts in netlify/functions/pagespeed-insights-runner.js[0m
+2025-08-23 23:06:30 - [0;34m🔧 Resolving conflicts in netlify/functions/robots-auditor.js for branch cursor/invent-and-deploy-autonomous-cloud-automations-ecd8...[0m
+2025-08-23 23:06:30 - [1;33m⚠️  Found conflicts in netlify/functions/robots-auditor.js, resolving...[0m
+2025-08-23 23:06:30 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:06:30 - [0;32m✅ Resolved conflicts in netlify/functions/robots-auditor.js[0m
+2025-08-23 23:06:30 - [0;34m🔧 Resolving conflicts in netlify/functions/site-404-map-runner.js for branch cursor/invent-and-deploy-autonomous-cloud-automations-ecd8...[0m
+2025-08-23 23:06:30 - [1;33m⚠️  Found conflicts in netlify/functions/site-404-map-runner.js, resolving...[0m
+2025-08-23 23:06:30 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:06:30 - [0;32m✅ Resolved conflicts in netlify/functions/site-404-map-runner.js[0m
+2025-08-23 23:06:30 - [0;34m🔧 Resolving conflicts in netlify/functions/stale-content-auditor-runner.js for branch cursor/invent-and-deploy-autonomous-cloud-automations-ecd8...[0m
+2025-08-23 23:06:30 - [1;33m⚠️  Found conflicts in netlify/functions/stale-content-auditor-runner.js, resolving...[0m
+2025-08-23 23:06:30 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:06:30 - [0;32m✅ Resolved conflicts in netlify/functions/stale-content-auditor-runner.js[0m
+2025-08-23 23:06:30 - [0;34m🔧 Resolving conflicts in pages/index.tsx for branch cursor/invent-and-deploy-autonomous-cloud-automations-ecd8...[0m
+2025-08-23 23:06:30 - [1;33m⚠️  Found conflicts in pages/index.tsx, resolving...[0m
+2025-08-23 23:06:30 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:06:30 - [0;32m✅ Resolved conflicts in pages/index.tsx[0m
