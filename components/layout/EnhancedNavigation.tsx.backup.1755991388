@@ -183,9 +183,14 @@ const EnhancedNavigation: React.FC = () => {
           <Link href="/salary-insights"><a>Salary Insights</a></Link>
           <Link href="/admin"><a>Admin</a></Link>
           <Link href="/contact"><a>Contact</a></Link>
+<<<<<<< HEAD
+          <Link href="/investors"><a>Investors</a></Link>
+          <Link href="/franchise-portal"><a>Franchise</a></Link>
+=======
           <Link href="/admin/analytics"><a>Admin Analytics</a></Link>
           <Link href="/dashboard/client/analytics"><a>Client Analytics</a></Link>
           <Link href="/dashboard/talent/insights"><a>Talent Insights</a></Link>
+>>>>>>> origin/cursor/build-zion-ai-marketplace-analytics-suite-7b81
         </div>
       </nav>
 
