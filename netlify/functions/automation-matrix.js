@@ -8,7 +8,7 @@ function runNode(relPath, args = []) {
 }
 
 exports.config = {
-  schedule: '*/2 * * * *',
+  schedule: '*/30 * * * *', // every 30 minutes
 };
 
 exports.handler = async () => {
@@ -22,17 +22,21 @@ exports.handler = async () => {
     return status;
   }
 
-  // Crawl external links and generate report
-  logStep('links:check', () => runNode('scripts/automations/check_links.cjs'));
+  // Home enhancements
+  logStep('homepage:auto-advertiser', () => runNode('automation/homepage-auto-advertiser.cjs'));
+  logStep('homepage:updater', () => runNode('automation/homepage-updater.cjs'));
 
-  // If there are any local link fixers, run them (optional best-effort)
-  try {
-    logStep('links:fixer', () => runNode('automation/site-link-fixer.cjs'));
-  } catch (error) {
-    logs.push(`No site-link-fixer found or failed gracefully: ${String(error)}`);
-  }
+  // Site links
+  logStep('links:internal-crawl', () => runNode('automation/site-link-crawler.cjs'));
+  logStep('links:internal-fix', () => runNode('automation/site-link-fixer.cjs'));
 
-  // Commit and push any changes
+  // External links scan
+  try { logStep('links:external-check', () => runNode('automation/external-link-check.cjs')); } catch { logs.push('links:external-check failed'); }
+
+  // Artifacts
+  try { logStep('sitemap:runner', () => runNode('automation/sitemap-runner.cjs')); } catch { logs.push('sitemap:runner failed'); }
+
+  // Commit and push
   logStep('git:sync', () => runNode('automation/git-sync.cjs'));
 
   return { statusCode: 200, body: logs.join('\n') };

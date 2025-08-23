@@ -22,6 +22,10 @@ exports.handler = async () => {
     return status;
   }
 
+<<<<<<< HEAD:netlify/functions/internal-link-map-runner.js
+  logStep('internal-link-graph', () => runNode('automation/internal-link-graph.cjs'));
+  logStep('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
+=======
   // Generate sitemap for crawling
   logStep('sitemap:generate', () => runNode('scripts/generate-sitemap.js'));
 
@@ -34,6 +38,7 @@ exports.handler = async () => {
 
   // Commit and push
   logStep('git:sync', () => runNode('automation/git-sync.cjs'));
+>>>>>>> origin/cursor/develop-autonomous-cloud-agents-for-automation-orchestration-ded0:netlify/functions/site-crawler.js
 
   return { statusCode: 200, body: logs.join('\n') };
 };

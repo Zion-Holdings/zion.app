@@ -898,3 +898,91 @@ pages/index.tsx[0m
 2025-08-23 23:06:40 - [1;33m⚠️  Found conflicts in pages/index.tsx, resolving...[0m
 2025-08-23 23:06:40 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
 2025-08-23 23:06:40 - [0;32m✅ Resolved conflicts in pages/index.tsx[0m
+2025-08-23 23:06:40 - [0;32m✅ Successfully resolved conflicts and merged cursor/automate-cloud-cron-jobs-and-sync-repository-16dc[0m
+2025-08-23 23:06:40 - [0;32m✅ PR #3865 (cursor/automate-cloud-cron-jobs-and-sync-repository-16dc) processed successfully[0m
+2025-08-23 23:06:40 - [0;34m🔒 Closing PR #3865 via GitHub API...[0m
+2025-08-23 23:06:41 - [0;34m📊 Progress: 24/100, ✅ 24, ❌ 0[0m
+2025-08-23 23:06:43 - [0;34m📋 Processing PR #3864: Develop autonomous cloud agents for automation orchestration (branch: cursor/develop-autonomous-cloud-agents-for-automation-orchestration-ded0)[0m
+2025-08-23 23:06:43 - [0;34m🔄 Attempting to merge cursor/develop-autonomous-cloud-agents-for-automation-orchestration-ded0...[0m
+2025-08-23 23:06:44 - [1;33m⚠️  Merge conflicts detected in cursor/develop-autonomous-cloud-agents-for-automation-orchestration-ded0 (attempt 1/3), resolving...[0m
+2025-08-23 23:06:44 - [0;34m📋 Conflicted files: .github/workflows/agent-of-agents-trigger.yml
+.github/workflows/ci-self-heal.yml
+netlify/functions/adaptive-orchestrator.js
+netlify/functions/automation-insights-runner.js
+netlify/functions/automation-matrix.js
+netlify/functions/canonical-auditor.js
+netlify/functions/fast-front-promoter.js
+netlify/functions/front-enhancer.js
+netlify/functions/functions-manifest.json
+netlify/functions/internal-link-map-runner.js
+netlify/functions/knowledge-pack-runner.js
+netlify/functions/robots-auditor.js
+netlify/functions/structured-data-auditor.js
+netlify/functions/trigger-all-and-commit.js
+netlify/plugins/run-functions-and-rerun/index.js
+pages/index.tsx
+pages/reports/index.tsx[0m
+2025-08-23 23:06:44 - [0;34m🔧 Resolving conflicts in .github/workflows/agent-of-agents-trigger.yml for branch cursor/develop-autonomous-cloud-agents-for-automation-orchestration-ded0...[0m
+2025-08-23 23:06:44 - [1;33m⚠️  Found conflicts in .github/workflows/agent-of-agents-trigger.yml, resolving...[0m
+2025-08-23 23:06:44 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:06:44 - [0;32m✅ Resolved conflicts in .github/workflows/agent-of-agents-trigger.yml[0m
+2025-08-23 23:06:44 - [0;34m🔧 Resolving conflicts in .github/workflows/ci-self-heal.yml for branch cursor/develop-autonomous-cloud-agents-for-automation-orchestration-ded0...[0m
+2025-08-23 23:06:44 - [1;33m⚠️  Found conflicts in .github/workflows/ci-self-heal.yml, resolving...[0m
+2025-08-23 23:06:44 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:06:44 - [0;32m✅ Resolved conflicts in .github/workflows/ci-self-heal.yml[0m
+2025-08-23 23:06:44 - [0;34m🔧 Resolving conflicts in netlify/functions/adaptive-orchestrator.js for branch cursor/develop-autonomous-cloud-agents-for-automation-orchestration-ded0...[0m
+2025-08-23 23:06:44 - [1;33m⚠️  Found conflicts in netlify/functions/adaptive-orchestrator.js, resolving...[0m
+2025-08-23 23:06:44 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:06:44 - [0;32m✅ Resolved conflicts in netlify/functions/adaptive-orchestrator.js[0m
+2025-08-23 23:06:44 - [0;34m🔧 Resolving conflicts in netlify/functions/automation-insights-runner.js for branch cursor/develop-autonomous-cloud-agents-for-automation-orchestration-ded0...[0m
+2025-08-23 23:06:44 - [1;33m⚠️  Found conflicts in netlify/functions/automation-insights-runner.js, resolving...[0m
+2025-08-23 23:06:44 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:06:44 - [0;32m✅ Resolved conflicts in netlify/functions/automation-insights-runner.js[0m
+2025-08-23 23:06:44 - [0;34m🔧 Resolving conflicts in netlify/functions/automation-matrix.js for branch cursor/develop-autonomous-cloud-agents-for-automation-orchestration-ded0...[0m
+2025-08-23 23:06:44 - [0;34mℹ️  No conflicts found in netlify/functions/automation-matrix.js[0m
+2025-08-23 23:06:44 - [0;34m🔧 Resolving conflicts in netlify/functions/canonical-auditor.js for branch cursor/develop-autonomous-cloud-agents-for-automation-orchestration-ded0...[0m
+2025-08-23 23:06:44 - [1;33m⚠️  Found conflicts in netlify/functions/canonical-auditor.js, resolving...[0m
+2025-08-23 23:06:44 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:06:44 - [0;32m✅ Resolved conflicts in netlify/functions/canonical-auditor.js[0m
+2025-08-23 23:06:44 - [0;34m🔧 Resolving conflicts in netlify/functions/fast-front-promoter.js for branch cursor/develop-autonomous-cloud-agents-for-automation-orchestration-ded0...[0m
+2025-08-23 23:06:44 - [1;33m⚠️  Found conflicts in netlify/functions/fast-front-promoter.js, resolving...[0m
+2025-08-23 23:06:44 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:06:44 - [0;32m✅ Resolved conflicts in netlify/functions/fast-front-promoter.js[0m
+2025-08-23 23:06:44 - [0;34m🔧 Resolving conflicts in netlify/functions/front-enhancer.js for branch cursor/develop-autonomous-cloud-agents-for-automation-orchestration-ded0...[0m
+2025-08-23 23:06:44 - [1;33m⚠️  Found conflicts in netlify/functions/front-enhancer.js, resolving...[0m
+2025-08-23 23:06:44 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:06:44 - [0;32m✅ Resolved conflicts in netlify/functions/front-enhancer.js[0m
+2025-08-23 23:06:44 - [0;34m🔧 Resolving conflicts in netlify/functions/functions-manifest.json for branch cursor/develop-autonomous-cloud-agents-for-automation-orchestration-ded0...[0m
+2025-08-23 23:06:44 - [1;33m⚠️  Found conflicts in netlify/functions/functions-manifest.json, resolving...[0m
+2025-08-23 23:06:44 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:06:44 - [0;32m✅ Resolved conflicts in netlify/functions/functions-manifest.json[0m
+2025-08-23 23:06:44 - [0;34m🔧 Resolving conflicts in netlify/functions/internal-link-map-runner.js for branch cursor/develop-autonomous-cloud-agents-for-automation-orchestration-ded0...[0m
+2025-08-23 23:06:44 - [1;33m⚠️  Found conflicts in netlify/functions/internal-link-map-runner.js, resolving...[0m
+2025-08-23 23:06:44 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:06:44 - [0;32m✅ Resolved conflicts in netlify/functions/internal-link-map-runner.js[0m
+2025-08-23 23:06:44 - [0;34m🔧 Resolving conflicts in netlify/functions/knowledge-pack-runner.js for branch cursor/develop-autonomous-cloud-agents-for-automation-orchestration-ded0...[0m
+2025-08-23 23:06:44 - [1;33m⚠️  Found conflicts in netlify/functions/knowledge-pack-runner.js, resolving...[0m
+2025-08-23 23:06:44 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:06:44 - [0;32m✅ Resolved conflicts in netlify/functions/knowledge-pack-runner.js[0m
+2025-08-23 23:06:44 - [0;34m🔧 Resolving conflicts in netlify/functions/robots-auditor.js for branch cursor/develop-autonomous-cloud-agents-for-automation-orchestration-ded0...[0m
+2025-08-23 23:06:44 - [1;33m⚠️  Found conflicts in netlify/functions/robots-auditor.js, resolving...[0m
+2025-08-23 23:06:44 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:06:44 - [0;32m✅ Resolved conflicts in netlify/functions/robots-auditor.js[0m
+2025-08-23 23:06:44 - [0;34m🔧 Resolving conflicts in netlify/functions/structured-data-auditor.js for branch cursor/develop-autonomous-cloud-agents-for-automation-orchestration-ded0...[0m
+2025-08-23 23:06:44 - [1;33m⚠️  Found conflicts in netlify/functions/structured-data-auditor.js, resolving...[0m
+2025-08-23 23:06:44 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:06:44 - [0;32m✅ Resolved conflicts in netlify/functions/structured-data-auditor.js[0m
+2025-08-23 23:06:44 - [0;34m🔧 Resolving conflicts in netlify/functions/trigger-all-and-commit.js for branch cursor/develop-autonomous-cloud-agents-for-automation-orchestration-ded0...[0m
+2025-08-23 23:06:44 - [1;33m⚠️  Found conflicts in netlify/functions/trigger-all-and-commit.js, resolving...[0m
+2025-08-23 23:06:44 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:06:44 - [0;32m✅ Resolved conflicts in netlify/functions/trigger-all-and-commit.js[0m
+2025-08-23 23:06:44 - [0;34m🔧 Resolving conflicts in netlify/plugins/run-functions-and-rerun/index.js for branch cursor/develop-autonomous-cloud-agents-for-automation-orchestration-ded0...[0m
+2025-08-23 23:06:44 - [0;34mℹ️  No conflicts found in netlify/plugins/run-functions-and-rerun/index.js[0m
+2025-08-23 23:06:44 - [0;34m🔧 Resolving conflicts in pages/index.tsx for branch cursor/develop-autonomous-cloud-agents-for-automation-orchestration-ded0...[0m
+2025-08-23 23:06:44 - [1;33m⚠️  Found conflicts in pages/index.tsx, resolving...[0m
+2025-08-23 23:06:44 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:06:44 - [0;32m✅ Resolved conflicts in pages/index.tsx[0m
+2025-08-23 23:06:44 - [0;34m🔧 Resolving conflicts in pages/reports/index.tsx for branch cursor/develop-autonomous-cloud-agents-for-automation-orchestration-ded0...[0m
+2025-08-23 23:06:44 - [1;33m⚠️  Found conflicts in pages/reports/index.tsx, resolving...[0m
+2025-08-23 23:06:44 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:06:44 - [0;32m✅ Resolved conflicts in pages/reports/index.tsx[0m

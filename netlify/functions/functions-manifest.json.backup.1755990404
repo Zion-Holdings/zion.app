@@ -1,9 +1,15 @@
 {
+<<<<<<< HEAD
+  "generatedAt": "2025-08-12T01:40:00.000Z",
+  "functions": [
+    "a11y-alt-text-runner",
+=======
   "generatedAt": "2025-08-12T05:04:56.817Z",
   "functions": [
     "a11y-alt-text-runner",
     "adaptive-orchestrator",
     "agent-of-agents",
+>>>>>>> origin/cursor/develop-autonomous-cloud-agents-for-automation-orchestration-ded0
     "ai-changelog-runner",
     "ai-trends-radar-runner",
     "auto-discovery-runner",
@@ -81,8 +87,11 @@
     "seo-audit-runner",
     "site-crawler",
     "sitemap_runner",
+<<<<<<< HEAD
+=======
     "stale-content-auditor-runner",
     "structured-data-auditor",
+>>>>>>> origin/cursor/develop-autonomous-cloud-agents-for-automation-orchestration-ded0
     "todo-scanner-runner",
     "todo-summary-runner",
     "topic-cluster-builder-runner",
