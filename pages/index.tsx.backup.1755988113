@@ -23,6 +23,18 @@ const HomePage: React.FC = () => {
   };
 
   return (
+<<<<<<< HEAD
+    <ErrorBoundary>
+      <SEOOptimizer />
+      <AnalyticsTracker />
+      <PerformanceOptimizer />
+      <AccessibilityEnhancer />
+      <MobileOptimizer showDebugInfo={false}>
+        <Homepage2025 />
+        <PerformanceMonitor showUI={true} />
+      </MobileOptimizer>
+    </ErrorBoundary>
+=======
     <>
       <Head>
         <title>Zion Tech Group — Autonomous Innovation Hub</title>
@@ -269,6 +281,7 @@ const HomePage: React.FC = () => {
         </main>
       </div>
     </>
+>>>>>>> origin/cursor/add-more-project-content-0e0b
   );
 };
 
