@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+export default function Home() {
+  return <div className="p-6">Welcome to Zion</div>;
+=======
 import React from 'react';
 import Head from 'next/head';
 
@@ -142,4 +146,5 @@ export default function HomePage() {
       </div>
     </>
   );
+>>>>>>> origin/cursor/build-failed-due-to-missing-dotenv-module-c691
 }

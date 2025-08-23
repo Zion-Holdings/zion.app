@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+export default function About() {
+  return <div className="p-6">About Zion</div>;
+}
+=======
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -173,6 +178,15 @@ export default function AboutPage() {
                     </Link>
                   </div>
                 </div>
+<<<<<<< HEAD
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-blue-400">99.9%</div>
+                  <div className="text-sm text-white/70">Uptime</div>
+                </div>
+              </div>
+            </div>
+          </section>
+=======
           <div className="max-w-6xl mx-auto">
             <nav className="mb-8">
               <a href="/" className="text-cyan-400 hover:text-cyan-300 transition-colors">
@@ -356,6 +370,7 @@ export default function AboutPage() {
               </div>
             </section>
           </div>
+>>>>>>> cursor/update-content-and-fix-links-74fc
 =======
               </section>
 
@@ -366,8 +381,10 @@ export default function AboutPage() {
               </footer>
             </article>
           </div>
+>>>>>>> 0ae946bee62d031392f0f6f25b15cd207de60919
         </main>
       </div>
     </>
   );
 }
+>>>>>>> origin/cursor/build-failed-due-to-missing-dotenv-module-c691

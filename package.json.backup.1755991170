@@ -229,7 +229,11 @@
     "child_process": "^1.0.2",
     "chokidar": "^4.0.3",
     "cron-parser": "^5.3.0",
+<<<<<<< HEAD
+    "ethers": "^5.7.2",
+=======
     "dotenv": "^16.4.5",
+>>>>>>> origin/cursor/build-failed-due-to-missing-dotenv-module-c691
     "events": "^3.3.0",
     "framer-motion": "^6.5.1",
     "fs": "^0.0.1-security",
