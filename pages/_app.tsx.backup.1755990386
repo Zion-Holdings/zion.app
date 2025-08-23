@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+import '../styles/globals.css'
+import '../styles/accessibility.css'
+import type { AppProps } from 'next/app'
+
+export default function App({ Component, pageProps }: AppProps) {
+  return <Component {...pageProps} />
+}
+=======
 import type { AppProps } from 'next/app';
 import '../styles/globals.css';
 import SmartHeader from '../components/SmartHeader';
@@ -19,3 +28,4 @@ export default function ZionApp({ Component, pageProps }: AppProps) {
     </FuturisticLayout>
   );
 }
+>>>>>>> origin/cursor/analyze-website-for-navigation-automation-1ae1

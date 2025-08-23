@@ -1,6 +1,12 @@
 import React from 'react';
+<<<<<<< HEAD
+import Head from 'next/head';
+import UltraFuturisticBackground from '../../components/ui/UltraFuturisticBackground';
+import Card from '../../components/ui/Card';
+=======
 import { useNavigation } from '../../hooks/useNavigation';
 import SmartSidebar from '../../components/SmartSidebar';
+>>>>>>> origin/cursor/analyze-website-for-navigation-automation-1ae1
 import Link from 'next/link';
 import { enhancedRealMicroSaasServices } from '../../data/enhanced-real-micro-saas-services';
 import { additionalEnhancedServices } from '../../data/additional-real-services';
@@ -63,6 +69,20 @@ import { advanced2025MicroSaasExpansion } from '../../data/2025-advanced-micro-s
 import { advanced2025ITSolutionsExpansion } from '../../data/2025-advanced-it-solutions-expansion';
 import { advancedAIServicesExpansion2025 } from '../../data/2025-advanced-ai-services-expansion';
 
+<<<<<<< HEAD
+// Import our new 2025 innovative services
+import { innovativeMicroSaasExpansion2025 } from '../../data/2025-innovative-micro-saas-expansion';
+import { innovative2025ITSolutionsExpansion } from '../../data/2025-innovative-it-solutions-expansion';
+import { innovative2025AISolutionsExpansion } from '../../data/2025-innovative-ai-solutions-expansion';
+
+// Import our new 2025 innovative services V3
+import { innovativeMicroSaasExpansionV32025 } from '../../data/2025-innovative-micro-saas-expansion-v3';
+import { innovativeITServicesExpansion2025V3 } from '../../data/2025-innovative-it-services-expansion-v3';
+import { innovativeAIServicesExpansion2025V3 } from '../../data/2025-innovative-ai-services-expansion-v3';
+
+function toSlug(value: string) {
+  return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+=======
 export default function ServicesPage() {
   const { navigation, isLoading, error } = useNavigation();
 
@@ -280,6 +300,7 @@ export default function ServicesPage() {
       </div>
     </div>
   );
+>>>>>>> origin/cursor/analyze-website-for-navigation-automation-1ae1
 }
 
 const categories = [
