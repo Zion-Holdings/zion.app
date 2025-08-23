@@ -1033,6 +1033,8 @@ export default function ServicesAdvertisingPage() {
 					</ul>
 				</section>
 
+<<<<<<< HEAD
+=======
 				<section id="ai-contract-risk-analyzer" className="space-y-6">
 					<h2 className="text-2xl font-semibold text-white">AI Contract Risk Analyzer</h2>
 					<p className="text-slate-300">Flag risky clauses, generate playbook-aligned redlines, and export audit-ready changes.</p>
@@ -1183,6 +1185,7 @@ export default function ServicesAdvertisingPage() {
 					</ul>
 				</section>
 
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-6510
 				{/* Contact CTA */}
 				<div className="flex flex-col md:flex-row items-center gap-4 p-4 rounded-xl bg-black/30 border border-gray-800">
 					<a href="tel:+13024640950" className="px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white">Call +1 302 464 0950</a>
