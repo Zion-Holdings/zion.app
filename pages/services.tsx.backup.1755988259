@@ -105,7 +105,11 @@ import { innovative2040FuturisticServices } from '../data/innovative-2040-futuri
 
 // Import our new 2025 advanced enterprise services
 import { advancedEnterpriseServices } from '../data/2025-advanced-enterprise-services-expansion';
+<<<<<<< HEAD
+import { innovativeMicroSaasServices } from '../data/innovative-2025-micro-saas-expansions';
+=======
 import { innovative2025MicroSaasExpansion } from '../data/2025-innovative-micro-saas-expansion';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0a83
 import { cuttingEdgeITInfrastructureServices } from '../data/2025-cutting-edge-it-infrastructure';
 // Import our new Q4 2025 innovative services
 import { innovative2025Q4MicroSaasServices } from '../data/innovative-2025-q4-micro-saas-services';
@@ -326,7 +330,10 @@ const allServices = [
   ...ultimate2025AIServicesExpansion,
   // Our new 2025 advanced enterprise services
   ...advancedEnterpriseServices,
+<<<<<<< HEAD
+=======
   ...innovative2025MicroSaasExpansion,
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0a83
   ...cuttingEdgeITInfrastructureServices
 ];
 

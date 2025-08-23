@@ -403,8 +403,13 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                     )}
 
                     {/* Service Icon */}
+<<<<<<< HEAD
+                    <div className={`w-16 h-16 bg-gradient-to-r ${service.color || 'from-blue-600 to-indigo-600'} rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                      {service.icon}
+=======
                     <div className={`w-16 h-16 bg-gradient-to-r ${(service as any).color || 'from-cyan-500 to-blue-600'} rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform duration-300`}>
                       {(service as any).icon || '🚀'}
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0a83
                     </div>
 
                     {/* Service Info */}
@@ -493,8 +498,13 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                   >
                     <div className="flex items-start space-x-6">
                       {/* Service Icon */}
+<<<<<<< HEAD
+                      <div className={`w-20 h-20 bg-gradient-to-r ${service.color || 'from-blue-600 to-indigo-600'} rounded-2xl flex items-center justify-center text-4xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
+                        {service.icon}
+=======
                       <div className={`w-20 h-20 bg-gradient-to-r ${(service as any).color || 'from-cyan-500 to-blue-600'} rounded-2xl flex items-center justify-center text-4xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
                         {(service as any).icon || '🚀'}
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0a83
                       </div>
 
                       {/* Service Details */}
@@ -511,7 +521,11 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                               <span className="inline-block px-3 py-1 bg-gray-700 text-cyan-400 text-sm font-medium rounded-full">
                                 {service.category}
                               </span>
+<<<<<<< HEAD
+                              {getServiceProperty(service, 'popular', false) && (
+=======
                               {(service as any).popular && (
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0a83
                                 <span className="inline-block px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-sm font-bold rounded-full">
                                   Popular
                                 </span>
@@ -520,8 +534,13 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                           </div>
                           <div className="text-right">
                                                        <div className="text-3xl font-bold text-cyan-400 mb-1">
+<<<<<<< HEAD
+                                                           {typeof service.price === 'string' ? service.price : `$${service.price.monthly}/${service.price.currency}`}
+                              <span className="text-lg text-gray-400">
+=======
                              {typeof service.price === 'string' ? service.price : `$${service.price.monthly}/${service.price.currency}`}
                                                            <span className="text-lg text-gray-400">
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0a83
                                 {typeof service.price === 'string' ? (service as any).period || '/month' : '/month'}
                               </span>
                            </div>
