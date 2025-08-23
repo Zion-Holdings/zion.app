@@ -55,9 +55,11 @@ import { real2026Q4ExpansionsV3 } from '../../data/real-2026-q4-expansions-v3';
 import { real2036MicroSaasAdditions } from '../../data/real-2036-micro-saas-additions';
 import { real2036ITServicesAdditions } from '../../data/real-2036-it-services-additions';
 import { real2036AIServicesAdditions } from '../../data/real-2036-ai-services-additions';
-import { real2037AIServicesAdditions } from '../../data/real-2037-ai-services-additions';
-import { real2037ITServicesAdditions } from '../../data/real-2037-it-services-additions';
-import { real2037MicroSaasAdditions } from '../../data/real-2037-micro-saas-additions';
+import { innovative2025MicroSaasBatch } from '../../data/innovative-2025-micro-saas-batch';
+import { innovative2025ITEnterpriseBatch } from '../../data/innovative-2025-it-enterprise-batch';
+import { innovative2024CuttingEdgeServices } from '../../data/innovative-2024-2025-cutting-edge-services';
+import { specializedIndustrySolutions } from '../../data/specialized-industry-solutions-2024';
+import { emergingTechnologyInnovationServices } from '../../data/emerging-technology-innovation-services';
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -81,7 +83,11 @@ const categories = [
   'Education',
   'Government',
   'Energy',
-  'Transportation'
+  'Transportation',
+  'Biotechnology',
+  'Neurotechnology',
+  'Advanced Robotics',
+  'Renewable Energy'
 ];
 
 export default function ServicesIndexPage() {
@@ -138,10 +144,27 @@ export default function ServicesIndexPage() {
       real2026Q4ExpansionsV3 as unknown[],
       real2036MicroSaasAdditions as unknown[],
       real2036ITServicesAdditions as unknown[],
-      real2036AIServicesAdditions as unknown[],
-      real2037AIServicesAdditions as unknown[],
-      real2037ITServicesAdditions as unknown[],
-      real2037MicroSaasAdditions as unknown[]
+      real2036AIServicesAdditions as unknown[]
+    )
+    .concat(innovative2025MicroSaasBatch as unknown[])
+    .concat(innovative2025ITEnterpriseBatch as unknown[])
+    .concat(innovative2024CuttingEdgeServices as unknown[])
+    .concat(specializedIndustrySolutions as unknown[])
+    .concat(emergingTechnologyInnovationServices as unknown[]);
+
+  // Filter out services without required properties
+  const validServices = all.filter(service => 
+    service && 
+    typeof service === 'object' && 
+    'name' in service && 
+    'description' in service &&
+    'price' in service
+  );
+
+  // Group services by category
+  const servicesByCategory = categories.reduce((acc, category) => {
+    acc[category] = validServices.filter((service: any) => 
+      service.category && service.category.toLowerCase().includes(category.toLowerCase().replace(/\s+/g, ''))
     );
   const byCategory: Record<string, unknown[]> = {};
   for (const c of categories) byCategory[c] = [];
@@ -205,7 +228,7 @@ export default function ServicesIndexPage() {
                   {categories.length} Categories
                 </span>
                 <span className="px-4 py-2 bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/30 rounded-full text-green-300">
-                  Latest 2036 Tech
+                  Latest 2024-2025 Tech
                 </span>
               </div>
             </div>
