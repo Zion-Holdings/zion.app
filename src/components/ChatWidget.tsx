@@ -17,33 +17,20 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
   const { user } = useAuth();
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [text, setText] = useState('');
-  const socketRef = useRef<any>(null);
-  const inputRef = useRef<HTMLTextAreaElement | null>(null);
+  const socketRef = useRef<any>();
 
-  // Load stored messages for this room when opened
   useEffect(() => {
     if (!isOpen) return;
-    try {
-      const stored = safeStorage.getItem(`chat-widget-${roomId}`);
-      if (stored) {
-        setMessages(JSON.parse(stored));
-      }
-    } catch (err) {
-      logWarn('ChatWidget: failed to load history', { data:  { data: err } });
+
+    if ("Notification" in window && Notification.permission === "default") {
+      Notification.requestPermission();
     }
-  }, [isOpen, roomId]);
-
-  useEffect(() => {
-    if (!isOpen) return;
 
     async function setup() {
-      const mod = await import('socket.io-client');
-      const io = mod.default as typeof import('socket.io-client').default;
-      if (!isMounted) return;
-      socket = (io as any)({ path: '/api/socket', transports: ['websocket'] });
-      socketRef.current = socket;
-      socket.emit('join-room', roomId);
-      socket.on('receive-message', (msg: Message) => {
+      const { io } = await import('socket.io-client');
+      socketRef.current = io({ path: '/api/socket', transports: ['websocket'] });
+      socketRef.current.emit('join-room', roomId);
+      socketRef.current.on('receive-message', (msg: ChatMessage) => {
         setMessages(prev => [...prev, msg]);
         triggerNotification('New message', msg.content);
       });
@@ -63,22 +50,6 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
     }
   };
 
-  // Persist messages whenever they change while open
-  useEffect(() => {
-    if (!isOpen) return;
-    try {
-      safeStorage.setItem(`chat-widget-${roomId}`, JSON.stringify(messages));
-    } catch (err) {
-      logWarn('ChatWidget: failed to save history', { data:  { data: err } });
-    }
-  }, [messages, roomId, isOpen]);
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    if (e.key === 'Enter' && !e.shiftKey) {
-      e.preventDefault();
-      handleSend();
-    }
-  };
-
   const handleSend = () => {
     if (!socketRef.current || !text.trim() || !user) return;
     const msg: ChatMessage = {
@@ -87,11 +58,12 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
       recipient_id: recipientId,
       content: text,
       created_at: new Date().toISOString(),
-      read: false
+      read: false,
     };
     socketRef.current.emit('send-message', { roomId, message: msg });
     setMessages(prev => [...prev, msg]);
     setText('');
+    // TODO: persist message via backend
   };
 
   if (!isOpen) return null;
