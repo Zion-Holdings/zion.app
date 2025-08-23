@@ -1,74 +1,41 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Users, Award, TrendingUp, Globe } from 'lucide-react';
+import { LucideIcon } from 'lucide-react';
 
-const StatsSection: React.FC = () => {
-  const stats = [
-    {
-      icon: Users,
-      value: '500+',
-      label: 'Active Clients',
-      description: 'Trusted by businesses worldwide'
-    },
-    {
-      icon: Award,
-      value: '98%',
-      label: 'Satisfaction Rate',
-      description: 'Consistently high client satisfaction'
-    },
-    {
-      icon: TrendingUp,
-      value: '60%',
-      label: 'Cost Reduction',
-      description: 'Average savings for our clients'
-    },
-    {
-      icon: Globe,
-      value: '5x',
-      label: 'Efficiency Gain',
-      description: 'Performance improvement achieved'
-    }
-  ];
+interface Stat {
+  number: string;
+  label: string;
+  icon: LucideIcon;
+}
 
+interface StatsSectionProps {
+  stats: Stat[];
+}
+
+const StatsSection: React.FC<StatsSectionProps> = ({ stats }) => {
   return (
-    <section className="py-20 px-4 bg-gray-900/50">
+    <section className="py-24 px-4 relative">
       <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Proven <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Results</span>
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Our innovative services deliver measurable results and transform businesses across industries
-          </p>
-        </motion.div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
-            <motion.div 
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+            <motion.div
+              key={stat.label}
               className="text-center group"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+              viewport={{ once: true }}
             >
-              <div className="w-12 h-12 bg-gray-800/50 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
-                <stat.icon className="w-6 h-6 text-cyan-400" aria-hidden="true" />
+              <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-[0_0_40px_rgba(6,182,212,0.3)] group-hover:shadow-[0_0_60px_rgba(6,182,212,0.5)] transition-all duration-300">
+                <stat.icon className="w-10 h-10 text-white" />
               </div>
-              <div className="text-4xl font-bold text-white mb-1 group-hover:text-cyan-400 transition-colors duration-300">
-                {stat.value}
+              
+              <div className="text-4xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">
+                {stat.number}
               </div>
-              <div className="text-sm text-gray-300 mb-2 font-medium">
+              
+              <div className="text-gray-400 font-medium">
                 {stat.label}
-              </div>
-              <div className="text-xs text-gray-400">
-                {stat.description}
               </div>
             </motion.div>
           ))}

@@ -2,9 +2,80 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Phone, Mail, MapPin, Globe, ArrowRight, Star, Shield, Zap, Brain, Cpu, Code, Cloud,
-  Facebook, Twitter, Linkedin, Instagram, Youtube, Github, MessageCircle, Clock, Building
+  ArrowRight, 
+  Rocket, 
+  BookOpen, 
+  Phone, 
+  Mail, 
+  MapPin, 
+  Star,
+  Brain,
+  Atom,
+  Shield,
+  Linkedin,
+  Twitter,
+  Github,
+  Youtube,
+  Globe,
+  Users,
+  Briefcase,
+  Target,
+  Building,
+  Code,
+  FileText,
+  Video,
+  Shield as ShieldIcon,
+  Cloud,
+  Zap
 } from 'lucide-react';
+
+// Memoized footer data for better performance
+const footerData = {
+  company: {
+    name: 'Zion Tech Group',
+    description: 'Pioneering the future of technology with innovative AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide.',
+    address: '364 E Main St STE 1008, Middletown DE 19709',
+    phone: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com',
+    founded: '2024'
+  },
+  quickLinks: [
+    { label: 'About Us', href: '/about', icon: Users },
+    { label: 'Services', href: '/services', icon: Briefcase },
+    { label: 'Solutions', href: '/solutions', icon: Target },
+    { label: 'Case Studies', href: '/case-studies', icon: Building },
+    { label: 'Blog', href: '/blog', icon: FileText },
+    { label: 'Careers', href: '/careers', icon: Users }
+  ],
+  services: [
+    { label: 'AI & Machine Learning', href: '/services?category=ai-ml', icon: Brain },
+    { label: 'Quantum Computing', href: '/services?category=quantum', icon: Atom },
+    { label: 'Space Technology', href: '/services?category=space-tech', icon: Rocket },
+    { label: 'Cybersecurity', href: '/services?category=cybersecurity', icon: ShieldIcon },
+    { label: 'Cloud Infrastructure', href: '/services?category=cloud', icon: Cloud },
+    { label: 'Enterprise Solutions', href: '/solutions/enterprise', icon: Building }
+  ],
+  resources: [
+    { label: 'Documentation', href: '/docs', icon: Code },
+    { label: 'API Reference', href: '/api-documentation', icon: Code },
+    { label: 'Webinars', href: '/webinars', icon: Video },
+    { label: 'White Papers', href: '/white-papers', icon: FileText },
+    { label: 'Support', href: '/support', icon: Zap },
+    { label: 'Status', href: '/status', icon: Globe }
+  ],
+  social: [
+    { label: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: <Linkedin className="w-5 h-5" /> },
+    { label: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: <Twitter className="w-5 h-5" /> },
+    { label: 'GitHub', href: 'https://github.com/ziontechgroup', icon: <Github className="w-5 h-5" /> },
+    { label: 'YouTube', href: 'https://youtube.com/ziontechgroup', icon: <Youtube className="w-5 h-5" /> }
+  ],
+  legal: [
+    { label: 'Privacy Policy', href: '/privacy' },
+    { label: 'Terms of Service', href: '/terms' },
+    { label: 'Cookie Policy', href: '/cookies' },
+    { label: 'Accessibility', href: '/accessibility' }
+  ]
+};
 
 const UltraFuturisticFooter2040: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -66,17 +137,12 @@ const UltraFuturisticFooter2040: React.FC = () => {
   ];
 
   return (
-    <footer className="relative bg-black/90 text-white overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-gray-900/50 to-transparent" />
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-30" />
-      </div>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 py-16">
-        {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
-          {/* Company Info */}
+    <footer className="bg-gradient-to-br from-gray-900 via-black to-gray-900 border-t border-cyan-400/20" role="contentinfo">
+      {/* Main Footer Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
+          
+          {/* Company Information */}
           <div className="lg:col-span-2">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -99,21 +165,41 @@ const UltraFuturisticFooter2040: React.FC = () => {
 
               {/* Contact Information */}
               <div className="space-y-3">
-                <div className="flex items-center space-x-3 text-gray-300 hover:text-cyan-400 transition-colors">
-                  <Phone className="w-4 h-4 text-cyan-400" />
-                  <a href="tel:+13024640950" className="hover:text-cyan-400 transition-colors">
-                    +1 302 464 0950
+                <div className="flex items-center space-x-3 text-gray-300 hover:text-cyan-400 transition-colors duration-300">
+                  <Phone className="w-4 h-4 flex-shrink-0" />
+                  <a 
+                    href={`tel:${footerData.company.phone}`}
+                    className="hover:underline"
+                    aria-label={`Call us at ${footerData.company.phone}`}
+                  >
+                    {footerData.company.phone}
                   </a>
                 </div>
-                <div className="flex items-center space-x-3 text-gray-300 hover:text-purple-400 transition-colors">
-                  <Mail className="w-4 h-4 text-purple-400" />
-                  <a href="mailto:kleber@ziontechgroup.com" className="hover:text-purple-400 transition-colors">
-                    kleber@ziontechgroup.com
+                
+                <div className="flex items-center space-x-3 text-gray-300 hover:text-cyan-400 transition-colors duration-300">
+                  <Mail className="w-4 h-4 flex-shrink-0" />
+                  <a 
+                    href={`mailto:${footerData.company.email}`}
+                    className="hover:underline"
+                    aria-label={`Email us at ${footerData.company.email}`}
+                  >
+                    {footerData.company.email}
                   </a>
                 </div>
                 <div className="flex items-center space-x-3 text-gray-300">
                   <MapPin className="w-4 h-4 text-blue-400" />
                   <span>364 E Main St STE 1008, Middletown DE 19709</span>
+                </div>
+              </div>
+
+              {/* Company Stats */}
+              <div className="mt-6 pt-6 border-t border-gray-700/50">
+                <div className="flex items-center space-x-6 text-sm text-gray-400">
+                  <span>Founded {footerData.company.founded}</span>
+                  <span>•</span>
+                  <span>Global Reach</span>
+                  <span>•</span>
+                  <span>24/7 Support</span>
                 </div>
               </div>
             </motion.div>
@@ -128,54 +214,108 @@ const UltraFuturisticFooter2040: React.FC = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <h4 className="text-lg font-semibold mb-4 text-cyan-400">{section.title}</h4>
+              <h3 className="text-lg font-semibold text-white mb-6 flex items-center">
+                <Rocket className="w-5 h-5 mr-2 text-cyan-400" />
+                Quick Links
+              </h3>
               <ul className="space-y-3">
                 {section.links.map((link) => (
                   <li key={link.name}>
                     <Link 
                       href={link.href}
-                      className="text-gray-300 hover:text-cyan-400 transition-colors duration-200 text-sm"
+                      className="flex items-center space-x-2 text-gray-300 hover:text-cyan-400 transition-colors duration-300 group"
                     >
-                      {link.name}
+                      <link.icon className="w-4 h-4 opacity-60 group-hover:opacity-100" />
+                      <span className="hover:underline">{link.label}</span>
                     </Link>
                   </li>
                 ))}
               </ul>
             </motion.div>
 
-        {/* Service Highlights */}
+          {/* Services */}
+          <div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <h3 className="text-lg font-semibold text-white mb-6 flex items-center">
+                <Briefcase className="w-5 h-5 mr-2 text-cyan-400" />
+                Services
+              </h3>
+              <ul className="space-y-3">
+                {footerData.services.map((service) => (
+                  <li key={service.label}>
+                    <Link
+                      href={service.href}
+                      className="flex items-center space-x-2 text-gray-300 hover:text-cyan-400 transition-colors duration-300 group"
+                    >
+                      <service.icon className="w-4 h-4 opacity-60 group-hover:opacity-100" />
+                      <span className="hover:underline">{service.label}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          </div>
+
+          {/* Resources */}
+          <div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <h3 className="text-lg font-semibold text-white mb-6 flex items-center">
+                <BookOpen className="w-5 h-5 mr-2 text-cyan-400" />
+                Resources
+              </h3>
+              <ul className="space-y-3">
+                {footerData.resources.map((resource) => (
+                  <li key={resource.label}>
+                    <Link
+                      href={resource.href}
+                      className="flex items-center space-x-2 text-gray-300 hover:text-cyan-400 transition-colors duration-300 group"
+                    >
+                      <resource.icon className="w-4 h-4 opacity-60 group-hover:opacity-100" />
+                      <span className="hover:underline">{resource.label}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Newsletter Signup */}
         <motion.div
+          className="mt-16 pt-12 border-t border-gray-700/50"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
-          className="mb-12 p-8 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-cyan-400/20 rounded-xl backdrop-blur-sm"
+          transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <div className="text-center mb-6">
-            <h3 className="text-2xl font-bold text-cyan-400 mb-2">Featured Services</h3>
-            <p className="text-gray-300">Transform your business with our cutting-edge solutions</p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="text-center p-4 bg-black/20 rounded-lg border border-cyan-400/20">
-              <Brain className="w-8 h-8 text-cyan-400 mx-auto mb-3" />
-              <h4 className="font-semibold text-cyan-400 mb-2">AI Content Intelligence</h4>
-              <p className="text-sm text-gray-300 mb-3">AI-powered content optimization and analytics</p>
-              <div className="text-cyan-400 font-semibold">$499/month</div>
-            </div>
-            
-            <div className="text-center p-4 bg-black/20 rounded-lg border border-purple-400/20">
-              <Cloud className="w-8 h-8 text-purple-400 mx-auto mb-3" />
-              <h4 className="font-semibold text-purple-400 mb-2">Cloud Cost Optimization</h4>
-              <p className="text-sm text-gray-300 mb-3">AI-driven cloud cost management</p>
-              <div className="text-purple-400 font-semibold">$399/month</div>
-            </div>
-            
-            <div className="text-center p-4 bg-black/20 rounded-lg border border-green-400/20">
-              <Code className="w-8 h-8 text-green-400 mx-auto mb-3" />
-              <h4 className="font-semibold text-green-400 mb-2">No-Code Automation</h4>
-              <p className="text-sm text-gray-300 mb-3">Visual workflow automation platform</p>
-              <div className="text-green-400 font-semibold">$299/month</div>
+          <div className="max-w-2xl mx-auto text-center">
+            <h3 className="text-2xl font-bold text-white mb-4">
+              Stay Updated with Revolutionary Tech
+            </h3>
+            <p className="text-gray-400 mb-6">
+              Get the latest insights on AI consciousness, quantum computing, and space technology.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="flex-1 px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 focus:border-transparent"
+                aria-label="Email address for newsletter"
+              />
+              <button className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/50">
+                Subscribe
+              </button>
             </div>
           </div>
         </motion.div>
@@ -183,107 +323,40 @@ const UltraFuturisticFooter2040: React.FC = () => {
         {/* Bottom Section */}
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            {/* Copyright */}
-            <div className="text-gray-400 text-sm">
-              <p>&copy; {currentYear} Zion Tech Group. All rights reserved.</p>
-              <div className="flex items-center space-x-4 mt-2 text-xs">
-                <Link href="/privacy" className="hover:text-cyan-400 transition-colors">Privacy Policy</Link>
-                <Link href="/terms" className="hover:text-cyan-400 transition-colors">Terms of Service</Link>
-                <Link href="/cookies" className="hover:text-cyan-400 transition-colors">Cookie Policy</Link>
+            {/* Copyright and Legal */}
+            <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 text-sm text-gray-400">
+              <span>© {currentYear} Zion Tech Group. All rights reserved.</span>
+              <div className="flex items-center space-x-4">
+                {footerData.legal.map((link) => (
+                  <Link
+                    key={link.label}
+                    href={link.href}
+                    className="hover:text-cyan-400 transition-colors duration-300"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
               </div>
             </div>
 
             {/* Social Links */}
             <div className="flex items-center space-x-4">
-              {socialLinks.map((social) => (
+              {footerData.social.map((social) => (
                 <a
                   key={social.name}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-gray-800 hover:bg-cyan-500/20 rounded-lg flex items-center justify-center text-gray-400 hover:text-cyan-400 transition-all duration-200 border border-gray-700 hover:border-cyan-400/40"
-                  aria-label={social.name}
+                  className="p-2 text-gray-400 hover:text-cyan-400 hover:bg-gray-800/50 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/50"
+                  aria-label={`Visit our ${social.label} page`}
                 >
                   <social.icon className="w-5 h-5" />
                 </a>
               ))}
             </div>
           </div>
-
-          {/* Trust Indicators */}
-          <div className="mt-8 pt-8 border-t border-gray-800">
-            <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 text-sm text-gray-400">
-              <div className="flex items-center space-x-2">
-                <Shield className="w-4 h-4 text-green-400" />
-                <span>Enterprise Security</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Zap className="w-4 h-4 text-yellow-400" />
-                <span>99.9% Uptime</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Globe className="w-4 h-4 text-blue-400" />
-                <span>Global Infrastructure</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Star className="w-4 h-4 text-purple-400" />
-                <span>4.8/5 Customer Rating</span>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
-
-      {/* Footer Bottom */}
-      <div className="py-8 px-4 border-t border-gray-800/50">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-            <motion.div
-              className="flex items-center space-x-6 text-sm text-gray-400"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <span>&copy; 2024 Zion Tech Group. All rights reserved.</span>
-              <Link href="/privacy" className="hover:text-cyan-400 transition-colors duration-300">Privacy Policy</Link>
-              <Link href="/terms" className="hover:text-cyan-400 transition-colors duration-300">Terms of Service</Link>
-              <Link href="/cookies" className="hover:text-cyan-400 transition-colors duration-300">Cookie Policy</Link>
-            </motion.div>
-
-            <motion.button
-              onClick={scrollToTop}
-              className="group flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-gray-800/50 to-gray-700/50 border border-gray-600/50 text-gray-400 hover:text-cyan-400 hover:border-cyan-500/50 rounded-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              aria-label="Scroll to top"
-            >
-              <ArrowUp className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform duration-300" />
-              <span>Back to Top</span>
-            </motion.button>
-          </div>
-        </div>
-      </div>
-
-      {/* Enhanced Scroll to Top Button */}
-      <AnimatePresence>
-        {isVisible && (
-          <motion.button
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.8 }}
-            onClick={scrollToTop}
-            className="fixed bottom-8 right-8 z-50 w-12 h-12 bg-gradient-to-r from-cyan-400 to-blue-500 text-white rounded-full shadow-2xl hover:shadow-cyan-400/50 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 group"
-            aria-label="Scroll to top"
-          >
-            <ArrowUp className="w-6 h-6 mx-auto group-hover:-translate-y-1 transition-transform duration-300" />
-          </motion.button>
-        )}
-      </AnimatePresence>
     </footer>
   );
 };

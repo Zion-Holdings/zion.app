@@ -1,9 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, LucideIcon } from 'lucide-react';
 
 interface Feature {
-  icon: React.ComponentType<{ className?: string }>;
+  icon: LucideIcon;
   title: string;
   description: string;
   href: string;
@@ -15,60 +15,64 @@ interface FeaturesGridProps {
 }
 
 const FeaturesGrid: React.FC<FeaturesGridProps> = ({ features }) => {
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0 }
-  };
-
-  const staggerContainer = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-
   return (
-    <motion.div
-      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
-      variants={staggerContainer}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
-    >
-      {features.map((feature, index) => (
+    <section className="py-24 px-4 relative">
+      <div className="max-w-7xl mx-auto">
         <motion.div
-          key={index}
-          className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 p-6 lg:p-8 cursor-pointer hover:border-white/20 transition-all duration-300"
-          variants={fadeInUp}
-          whileHover={{ y: -10, scale: 1.02 }}
-          onClick={() => window.location.href = feature.href}
-          role="button"
-          tabIndex={0}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-              window.location.href = feature.href;
-            }
-          }}
-          aria-label={`Learn more about ${feature.title}`}
+          className="text-center mb-20"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
         >
-          <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
-          <div className="relative">
-            <div className={`w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-gradient-to-br ${feature.color} p-3 lg:p-4 mb-6`}>
-              <feature.icon className="w-full h-full text-white" aria-hidden="true" />
-            </div>
-            <h3 className="text-xl lg:text-2xl font-semibold text-white mb-4">{feature.title}</h3>
-            <p className="text-gray-300 leading-relaxed text-base lg:text-lg">{feature.description}</p>
-            <div className="mt-6 flex items-center text-cyan-400 group-hover:text-cyan-300 transition-colors">
-              <span className="text-sm lg:text-base font-medium">Learn More</span>
-              <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 ml-3 group-hover:translate-x-2 transition-transform" />
-            </div>
-          </div>
+          <h2 className="text-5xl font-bold text-white mb-6">
+            Revolutionary Technology Features
+          </h2>
+          <p className="text-xl text-gray-400 max-w-4xl mx-auto">
+            Discover the cutting-edge features that make our 2044 technology revolutionary
+          </p>
         </motion.div>
-      ))}
-    </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {features.map((feature, index) => (
+            <motion.div
+              key={feature.title}
+              className="group relative"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+              viewport={{ once: true }}
+            >
+              <div className="relative p-8 bg-gradient-to-br from-gray-900/60 to-gray-800/60 border border-gray-700/30 rounded-3xl backdrop-blur-xl hover:border-cyan-500/50 transition-all duration-300 group-hover:shadow-[0_0_50px_rgba(6,182,212,0.2)]">
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                <div className="relative z-10">
+                  <div className={`w-16 h-16 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center mb-6 shadow-[0_0_30px_rgba(6,182,212,0.3)]`}>
+                    <feature.icon className="w-8 h-8 text-white" />
+                  </div>
+                  
+                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors duration-300">
+                    {feature.title}
+                  </h3>
+                  
+                  <p className="text-gray-400 leading-relaxed mb-6">
+                    {feature.description}
+                  </p>
+                  
+                  <a
+                    href={feature.href}
+                    className="inline-flex items-center text-cyan-400 hover:text-cyan-300 font-medium transition-colors duration-300 group-hover:translate-x-2"
+                  >
+                    Learn More
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 
