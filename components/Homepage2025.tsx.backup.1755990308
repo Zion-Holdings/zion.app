@@ -2,8 +2,18 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { 
+<<<<<<< HEAD
+  ArrowRight, Star, CheckCircle, Users, Globe, 
+  Award, Zap, Shield, Brain, Rocket, Atom,
+  Sparkles, Clock, TrendingUp, Monitor,
+  Building, Code, MessageCircle, BarChart3, Palette, BookOpen,
+  FileText, Handshake, Newspaper, Grid, GraduationCap,
+  HeartIcon, DollarSign, Target, Network, Server,
+  Cpu, Database, Cloud, Lock, Truck
+=======
   ArrowRight, Star, 
   Brain, Atom, Shield, Zap, TrendingUp, Globe, MapPin, Rocket
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-d425
 } from 'lucide-react';
 import UltraFuturisticServiceCard2026 from './ui/UltraFuturisticServiceCard2026';
 
@@ -527,6 +537,60 @@ const Homepage2025: React.FC = () => {
             </p>
           </motion.div>
 
+<<<<<<< HEAD
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="flex flex-wrap justify-center gap-4"
+          >
+            {technologies.map((tech, index) => (
+              <motion.span
+                key={tech}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3, delay: 0.4 + index * 0.05 }}
+                viewport={{ once: true }}
+                className="px-6 py-3 bg-white/5 border border-gray-800 rounded-full text-gray-300 hover:text-white hover:border-cyan-500/50 transition-all duration-300 hover:bg-white/10"
+              >
+                {tech}
+              </motion.span>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 px-4 text-center">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">
+              Ready to Shape the Future?
+            </h2>
+            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+              Join the revolution and transform your business with cutting-edge technology solutions
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Link href="/contact">
+                <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25 focus:outline-none focus:ring-4 focus:ring-cyan-500/50">
+                  <span className="flex items-center space-x-2">
+                    <span>Get Started Today</span>
+                    <ArrowRight className="w-5 h-5" />
+                  </span>
+                </button>
+              </Link>
+              <Link href="/services">
+                <button className="px-8 py-4 border-2 border-purple-400 text-purple-400 font-semibold rounded-xl hover:bg-purple-400 hover:text-black transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-purple-400/50">
+                  <span className="flex items-center space-x-2">
+                    <span>Explore Services</span>
+=======
         {/* Services Preview */}
         <section className="py-20 px-4">
           <div className="max-w-6xl mx-auto">
@@ -654,11 +718,18 @@ const Homepage2025: React.FC = () => {
                 <button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-purple-500/25">
                   <span className="flex items-center gap-2 justify-center">
                     View All Services
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-d425
                     <ArrowRight className="w-5 h-5" />
                   </span>
                 </button>
               </Link>
             </div>
+<<<<<<< HEAD
+          </motion.div>
+        </div>
+      </section>
+    </div>
+=======
           </div>
         </section>
 
@@ -946,6 +1017,7 @@ const Homepage2025: React.FC = () => {
         </section>
       </main>
     </Layout>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-d425
   );
 });
 
