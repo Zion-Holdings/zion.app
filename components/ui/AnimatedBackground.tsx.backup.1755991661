@@ -1,5 +1,9 @@
 import { motion } from 'framer-motion';
 
+<<<<<<< HEAD
+export type AnimatedBackgroundProps = {
+  className?: string;
+=======
 interface AnimatedBackgroundProps {
   variant?: 'particles' | 'matrix' | 'cyber-grid' | 'hologram' | 'data-stream' | 'quantum' | 'metaverse';
   intensity?: 'low' | 'medium' | 'high';
@@ -379,6 +383,7 @@ const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
       style={{ background: 'transparent' }}
     />
   );
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-19ef
 };
 
 export default function AnimatedBackground({ className }: AnimatedBackgroundProps) {
