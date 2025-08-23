@@ -1,9 +1,60 @@
 import React, { useState, useCallback, useMemo } from 'react';
 import { motion } from 'framer-motion';
+<<<<<<< HEAD
+import Link from 'next/link';
+import {
+  Brain,
+  Atom,
+  Rocket,
+  Shield,
+  Globe,
+  Cpu,
+  Database,
+  Target,
+  Sparkles,
+  ArrowRight,
+  ExternalLink,
+  Phone,
+  Mail,
+  MapPin,
+  Linkedin,
+  Twitter,
+  Github,
+  Youtube,
+  Facebook,
+  Instagram,
+  MessageCircle,
+  Clock,
+  Users,
+  Award,
+  CheckCircle,
+  Star,
+  Zap,
+  TrendingUp,
+  Lightbulb,
+  Code,
+  Palette,
+  Layers,
+  Grid,
+  BarChart3,
+  Settings,
+  HelpCircle,
+  FileText,
+  Video,
+  BookOpen,
+  GraduationCap,
+  Heart,
+  Infinity,
+  Eye,
+  Heart as HeartIcon,
+  Cloud,
+  Handshake
+=======
 import { 
   Phone, Mail, MapPin, Globe, Shield, Rocket, Brain, Atom, 
   Facebook, Twitter, Linkedin, Instagram, Youtube, Github, Zap, Heart, Star,
   Users, Lock, Cloud, Code, Database, Network, Settings, Target, Play
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-871e
 } from 'lucide-react';
 
 // Footer sections data
@@ -54,6 +105,24 @@ const footerSections = [
   }
 ];
 
+<<<<<<< HEAD
+// Contact information
+const contactInfo = [
+  { icon: Phone, label: 'Call Us', value: '+1 302 464 0950', href: 'tel:+13024640950' },
+  { icon: Mail, label: 'Email Us', value: 'kleber@ziontechgroup.com', href: 'mailto:kleber@ziontechgroup.com' },
+  { icon: MapPin, label: 'Visit Us', value: '364 E Main St STE 1008, Middletown DE 19709', href: '#' }
+];
+
+// Social media links
+const socialLinks = [
+  { icon: Linkedin, href: 'https://linkedin.com/company/ziontechgroup', label: 'LinkedIn', color: 'hover:text-blue-400' },
+  { icon: Twitter, href: 'https://twitter.com/ziontechgroup', label: 'Twitter', color: 'hover:text-blue-400' },
+  { icon: Github, href: 'https://github.com/ziontechgroup', label: 'GitHub', color: 'hover:text-gray-400' },
+  { icon: Youtube, href: 'https://youtube.com/ziontechgroup', label: 'YouTube', color: 'hover:text-red-400' },
+  { icon: Facebook, href: 'https://facebook.com/ziontechgroup', label: 'Facebook', color: 'hover:text-blue-600' },
+  { icon: Instagram, href: 'https://instagram.com/ziontechgroup', label: 'Instagram', color: 'hover:text-pink-400' }
+];
+=======
   const contactInfo = {
     mobile: '+1 302 464 0950',
     email: 'kleber@ziontechgroup.com',
@@ -115,6 +184,7 @@ const footerSections = [
     { name: 'YouTube', icon: <Youtube className="w-5 h-5" />, href: 'https://youtube.com/@ziontechgroup', color: 'from-red-500 to-red-600' },
     { name: 'GitHub', icon: <Github className="w-5 h-5" />, href: 'https://github.com/ziontechgroup', color: 'from-gray-600 to-gray-700' }
   ];
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-871e
 
 // Quick stats
 const quickStats = [
@@ -439,6 +509,42 @@ const UltraFuturisticFooter2045: React.FC = () => {
         </motion.div>
       </div>
 
+<<<<<<< HEAD
+      {/* Bottom Section - Divider & Copyright */}
+      <div className="border-t border-gray-800/50 pt-8">
+        <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+          <div className="flex items-center space-x-2 text-gray-400">
+            <span className="text-sm">© {currentYear} Zion Tech Group. All rights reserved.</span>
+            <Heart className="w-4 h-4 text-red-400 animate-pulse" />
+          </div>
+          <div className="flex items-center space-x-6 text-sm text-gray-400">
+            <Link href="/privacy" className="hover:text-cyan-400 transition-colors duration-200">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="hover:text-cyan-400 transition-colors duration-200">
+              Terms of Service
+            </Link>
+            <Link href="/accessibility" className="hover:text-cyan-400 transition-colors duration-200">
+              Accessibility
+            </Link>
+          </div>
+        </div>
+
+        {/* Scroll to Top Button */}
+        <motion.button
+          onClick={scrollToTop}
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          viewport={{ once: true }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          className="fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-white shadow-lg hover:shadow-xl transition-all duration-300 z-50"
+          aria-label="Scroll to top"
+        >
+          <ArrowRight className="w-6 h-6 transform rotate-[-90deg]" />
+        </motion.button>
+=======
       {/* Enhanced Floating Elements */}
       <div className="absolute inset-0 -z-10 pointer-events-none">
         <motion.div
@@ -465,6 +571,7 @@ const UltraFuturisticFooter2045: React.FC = () => {
             ease: "easeInOut"
           }}
         />
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-871e
       </div>
     </footer>
   );
