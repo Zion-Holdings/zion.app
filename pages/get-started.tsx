@@ -1,13 +1,7 @@
 import React, { useState } from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
-import { 
-  Users, Award, Target, Globe, Brain, Atom, Shield, Rocket, 
-  Star, TrendingUp, CheckCircle, Phone, Mail, MapPin,
-  ArrowRight, Zap, Cpu, Database, Cloud, Palette,
-  Play, FileText, Video, Download, Calendar, Clock,
-  CheckCircle as Success, ArrowRight as Next, ArrowLeft as Previous, Code
-} from 'lucide-react';
+import { Users, Award, Target, Globe, Brain, Atom, Shield, Rocket, Star, TrendingUp, CheckCircle, Phone, Mail, MapPin, ArrowRight, Zap, Cpu, Database, Cloud, Palette, Play, FileText, Video, Download, Calendar, Clock, ArrowLeft as ArrowLeft, Code } from 'lucide-react';
 import Link from 'next/link';
 
 const GetStartedPage: React.FC = () => {
@@ -129,7 +123,7 @@ const GetStartedPage: React.FC = () => {
       duration: '1-2 weeks',
       icon: <Users className="w-6 h-6" />,
       actions: [
-        'Team training sessions',
+        'Users training sessions',
         'Documentation delivery',
         'Ongoing support setup'
       ]
@@ -303,7 +297,7 @@ const GetStartedPage: React.FC = () => {
                   disabled={currentStep === 1}
                   className="p-2 rounded-lg bg-gray-800/50 border border-gray-700/50 text-gray-400 hover:text-white hover:border-cyan-500/50 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  <Previous className="w-5 h-5" />
+                  <ArrowLeft className="w-5 h-5" />
                 </button>
                 
                 <div className="flex gap-2">
@@ -325,7 +319,7 @@ const GetStartedPage: React.FC = () => {
                   disabled={currentStep === 5}
                   className="p-2 rounded-lg bg-gray-800/50 border border-gray-700/50 text-gray-400 hover:text-white hover:border-cyan-500/50 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  <Next className="w-5 h-5" />
+                  <ArrowRight className="w-5 h-5" />
                 </button>
               </div>
             </div>

@@ -18,7 +18,7 @@ const TeamPage: React.FC = () => {
       image: "/images/team/kleber.jpg"
     },
     {
-      name: "AI Consciousness Team",
+      name: "AI Consciousness Users",
       role: "AI & Consciousness Division",
       description: "Experts in next-generation artificial intelligence and consciousness systems, pioneering emotional AI and self-aware systems",
       expertise: ["Emotional AI", "Consciousness Systems", "Ethical AI Governance"],
@@ -26,7 +26,7 @@ const TeamPage: React.FC = () => {
       image: "/images/team/ai-team.jpg"
     },
     {
-      name: "Quantum Technology Team",
+      name: "Quantum Technology Users",
       role: "Quantum Computing Division",
       description: "Pioneers in quantum computing and quantum-resistant solutions, developing the next generation of computational power",
       expertise: ["Quantum Computing", "Quantum Security", "Quantum Neural Networks"],
@@ -34,7 +34,7 @@ const TeamPage: React.FC = () => {
       image: "/images/team/quantum-team.jpg"
     },
     {
-      name: "Space Technology Team",
+      name: "Space Technology Users",
       role: "Space Technology Division",
       description: "Innovators in space exploration and resource intelligence, developing AI-powered space solutions",
       expertise: ["Space Exploration", "Resource Intelligence", "AI Space Systems"],
@@ -71,7 +71,7 @@ const TeamPage: React.FC = () => {
   ];
 
   const stats = [
-    { number: "50+", label: "Expert Team Members", icon: Users },
+    { number: "50+", label: "Expert Users Members", icon: Users },
     { number: "2000+", label: "Revolutionary Services", icon: Zap },
     { number: "99.99%", label: "Client Satisfaction", icon: Star },
     { number: "24/7", label: "Support Available", icon: Clock }
@@ -91,10 +91,10 @@ const TeamPage: React.FC = () => {
             >
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-500/30 text-blue-300 text-sm font-medium mb-6">
                 <Users className="w-4 h-4 mr-2" />
-                Meet Our Team
+                Meet Our Users
               </div>
               <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent mb-6">
-                Leadership Team
+                Leadership Users
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
                 Meet the visionary leaders and expert teams driving Zion Tech Group's mission 
@@ -104,7 +104,7 @@ const TeamPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Leadership Team Section */}
+        {/* Leadership Users Section */}
         <section className="py-20 px-4">
           <div className="max-w-7xl mx-auto">
             <motion.div

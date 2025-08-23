@@ -44,7 +44,7 @@ const PricingPage: React.FC = () => {
         "Priority Support",
         "Advanced Analytics",
         "Custom Integrations",
-        "Team Management",
+        "Users Management",
         "Advanced Security"
       ],
       icon: Brain,

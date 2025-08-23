@@ -1,13 +1,7 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
-import { 
-  Users, Award, Target, Globe, Brain, Atom, Shield, Rocket, 
-  Star, TrendingUp, CheckCircle, Phone, Mail, MapPin,
-  ArrowRight, Zap, Cpu, Database, Cloud, Palette,
-  Handshake, Building, Network, Code, Server, Lock,
-  Globe as World, Shield as Security, Rocket as Launch
-} from 'lucide-react';
+import { Users, Award, Target, Globe, Brain, Atom, Shield, Rocket, Star, TrendingUp, CheckCircle, Phone, Mail, MapPin, ArrowRight, Zap, Cpu, Database, Cloud, Palette, Handshake, Building, Network, Code, Server, Lock } from 'lucide-react';
 import Link from 'next/link';
 
 const PartnersPage: React.FC = () => {
@@ -547,7 +541,7 @@ const PartnersPage: React.FC = () => {
                 </Link>
                 <a href="mailto:partnerships@ziontechgroup.com" className="btn-secondary">
                   <Mail className="w-5 h-5 mr-2" />
-                  Email Partnerships Team
+                  Email Partnerships Users
                 </a>
               </div>
             </motion.div>

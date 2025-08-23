@@ -279,7 +279,7 @@ const CuttingEdgeInnovativeServicesShowcase2025: React.FC = () => {
                 Advanced <span className="bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent">IT Services</span>
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Next-generation IT infrastructure and solutions powered by quantum computing and AI
+                ArrowRight-generation IT infrastructure and solutions powered by quantum computing and AI
               </p>
             </motion.div>
 

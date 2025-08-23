@@ -1,16 +1,6 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
-import { 
-  Brain, Rocket, Shield, Zap, Target, Atom, BookOpen, ArrowRight,
-  Truck, DollarSign, BarChart3, Globe, Users, Star, Sparkles, 
-  Cpu, Lock, Cloud, Settings, Eye, Award, Clock, Heart, Lightbulb,
-  Search, Grid, List, TrendingUp, Shield as ShieldIcon, Globe as GlobeIcon,
-  User, ShoppingCart, Bell, HelpCircle, FileText, Video, Headphones, 
-  Code, Database, Network, Server, Monitor, Smartphone,
-  Camera, Gamepad2, Palette, Music, Film, BookOpenCheck,
-  Building, MessageCircle, Sparkles as SparklesIcon, Zap as ZapIcon,
-  Target as TargetIcon, Atom as AtomIcon, Brain as BrainIcon
-} from 'lucide-react';
+import { Brain, Rocket, Shield, Zap, Target, Atom, BookOpen, ArrowRight, Truck, DollarSign, BarChart3, Globe, Users, Star, Sparkles, Cpu, Lock, Cloud, Settings, Eye, Award, Clock, Heart, Lightbulb, Search, Grid, List, TrendingUp, User, ShoppingCart, Bell, HelpCircle, FileText, Video, Headphones, Code, Database, Network, Server, Monitor, Smartphone, Camera, Gamepad2, Palette, Music, Film, BookOpenCheck, Building, MessageCircle } from 'lucide-react';
 
 const ComprehensiveServicesShowcase2025: React.FC = () => {
   const serviceCategories = [
@@ -31,7 +21,7 @@ const ComprehensiveServicesShowcase2025: React.FC = () => {
     {
       name: 'Quantum Technology',
       icon: <Atom className="w-8 h-8" />,
-      description: 'Next-generation quantum computing and security solutions',
+      description: 'ArrowRight-generation quantum computing and security solutions',
       services: [
         'Quantum Neural Network Platform',
         'Quantum Financial Trading Platform',

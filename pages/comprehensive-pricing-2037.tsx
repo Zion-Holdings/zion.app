@@ -460,7 +460,7 @@ export default function ComprehensivePricing2037() {
                 whileTap={{ scale: 0.95 }}
                 className="bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-8 py-4 rounded-full font-semibold text-lg flex items-center gap-2 hover:from-cyan-600 hover:to-purple-700 transition-all duration-300"
               >
-                Contact Sales Team
+                Contact Sales Users
                 <ArrowRight className="w-5 h-5" />
               </motion.button>
               <motion.button

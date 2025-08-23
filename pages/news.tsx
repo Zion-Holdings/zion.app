@@ -56,7 +56,7 @@ const NewsPage: React.FC = () => {
     },
     {
       id: 5,
-      title: "Quantum Neural Networks: The Next Frontier in Machine Learning",
+      title: "Quantum Neural Networks: The ArrowRight Frontier in Machine Learning",
       excerpt: "Our quantum neural network platform demonstrates 1000x performance improvements over classical approaches for complex optimization problems.",
       category: "Quantum Computing",
       date: "2024-12-05",

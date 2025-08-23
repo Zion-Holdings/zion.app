@@ -10,6 +10,12 @@ import {
 const UltraFuturisticFooter2045: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
+  const contactInfo = {
+    mobile: '+1 (555) 123-4567',
+    email: 'contact@ziontechgroup.com',
+    address: '123 Innovation Drive, Tech Valley, CA 94000'
+  };
+
   const footerSections = [
     {
       title: 'Revolutionary Services 2045',
@@ -58,12 +64,12 @@ const UltraFuturisticFooter2045: React.FC = () => {
   ];
 
   const socialLinks = [
-    { name: 'Facebook', icon: Facebook, href: 'https://facebook.com/ziontechgroup', color: 'from-blue-500 to-blue-600' },
-    { name: 'Twitter', icon: Twitter, href: 'https://twitter.com/ziontechgroup', color: 'from-cyan-400 to-blue-500' },
-    { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/company/ziontechgroup', color: 'from-blue-600 to-blue-700' },
-    { name: 'Instagram', icon: Instagram, href: 'https://instagram.com/ziontechgroup', color: 'from-purple-500 to-pink-500' },
-    { name: 'YouTube', icon: Youtube, href: 'https://youtube.com/@ziontechgroup', color: 'from-red-500 to-red-600' },
-    { name: 'GitHub', icon: Github, href: 'https://github.com/ziontechgroup', color: 'from-gray-600 to-gray-700' }
+    { name: 'Facebook', icon: Facebook, href: 'https://facebook.com', color: 'from-blue-500 to-blue-600' },
+    { name: 'Twitter', icon: Twitter, href: 'https://twitter.com', color: 'from-cyan-400 to-blue-500' },
+    { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com', color: 'from-blue-600 to-blue-700' },
+    { name: 'Instagram', icon: Instagram, href: 'https://instagram.com', color: 'from-purple-500 to-pink-500' },
+    { name: 'YouTube', icon: Youtube, href: 'https://youtube.com', color: 'from-red-500 to-red-600' },
+    { name: 'GitHub', icon: Github, href: 'https://github.com', color: 'from-gray-600 to-gray-700' }
   ];
 
   const fadeInUp = {
@@ -148,9 +154,7 @@ const UltraFuturisticFooter2045: React.FC = () => {
                         href={link.href}
                         className="flex items-center space-x-3 text-gray-400 hover:text-cyan-400 transition-all duration-200 group hover:translate-x-1"
                       >
-                        <div className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform duration-200">
-                          {link.icon}
-                        </div>
+                        <div className="w-2 h-2 bg-cyan-400 rounded-full group-hover:scale-125 transition-transform duration-200"></div>
                         <span className="text-sm group-hover:text-cyan-400 transition-colors duration-200">
                           {link.name}
                         </span>
@@ -210,7 +214,7 @@ const UltraFuturisticFooter2045: React.FC = () => {
                     className={`p-2 rounded-lg bg-gray-900/50 border border-cyan-500/20 text-gray-400 ${social.color} transition-all duration-200 hover:scale-110 hover:border-cyan-500/50`}
                     aria-label={social.name}
                   >
-                    {social.icon}
+                    <social.icon className="w-5 h-5" />
                   </Link>
                 ))}
               </div>

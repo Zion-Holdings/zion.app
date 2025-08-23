@@ -312,7 +312,7 @@ const Events: React.FC = () => {
                   Partner With Us
                 </button>
                 <button className="px-8 py-4 border-2 border-green-400 text-green-400 font-semibold rounded-lg hover:bg-green-400 hover:text-black transition-all duration-300 transform hover:scale-105">
-                  Contact Events Team
+                  Contact Events Users
                 </button>
               </div>
             </motion.div>

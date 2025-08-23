@@ -1,13 +1,7 @@
 import React, { useState } from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
-import { 
-  Users, Award, Target, Globe, Brain, Atom, Shield, Rocket, 
-  Star, TrendingUp, CheckCircle, Phone, Mail, MapPin,
-  ArrowRight, Zap, Cpu, Database, Cloud, Palette,
-  FileText, Building, TrendingUp as Chart, DollarSign,
-  Clock, Users as Team, Target as Goal, CheckCircle as Success
-} from 'lucide-react';
+import { Users, Award, Target, Globe, Brain, Atom, Shield, Rocket, Star, TrendingUp, CheckCircle, Phone, Mail, MapPin, ArrowRight, Zap, Cpu, Database, Cloud, Palette, FileText, Building, DollarSign, Clock } from 'lucide-react';
 import Link from 'next/link';
 
 const CaseStudiesPage: React.FC = () => {
@@ -266,7 +260,7 @@ const CaseStudiesPage: React.FC = () => {
                             <span className="text-white font-medium">{featuredStudy.duration}</span>
                           </div>
                           <div className="flex items-center justify-between">
-                            <span className="text-gray-400">Team Size:</span>
+                            <span className="text-gray-400">Users Size:</span>
                             <span className="text-white font-medium">{featuredStudy.teamSize}</span>
                           </div>
                           <div className="flex items-center justify-between">
@@ -398,11 +392,11 @@ const CaseStudiesPage: React.FC = () => {
                           {study.duration}
                         </span>
                         <span className="flex items-center gap-1">
-                          <Team className="w-3 h-3" />
+                          <Users className="w-3 h-3" />
                           {study.teamSize}
                         </span>
                         <span className="flex items-center gap-1">
-                          <Chart className="w-3 h-3" />
+                          <TrendingUp className="w-3 h-3" />
                           {study.roi} ROI
                         </span>
                       </div>
@@ -458,7 +452,7 @@ const CaseStudiesPage: React.FC = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
                 { number: '500+', label: 'Successful Implementations', icon: <CheckCircle className="w-8 h-8" /> },
-                { number: '300%', label: 'Average ROI', icon: <Chart className="w-8 h-8" /> },
+                { number: '300%', label: 'Average ROI', icon: <TrendingUp className="w-8 h-8" /> },
                 { number: '99.9%', label: 'Customer Satisfaction', icon: <Star className="w-8 h-8" /> },
                 { number: '24/7', label: 'Support Available', icon: <Clock className="w-8 h-8" /> }
               ].map((metric, index) => (

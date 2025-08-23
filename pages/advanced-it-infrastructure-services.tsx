@@ -2,15 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { 
-  CheckCircle, ArrowRight, Star, TrendingUp, Phone, 
-  Shield, Mail, Brain, Sparkles, Atom, 
-  Cloud, 
-  Award, 
-  Shield as ShieldIcon, 
-  Server, Network, Shield as SecurityIcon,
-  Wifi, Building
-} from 'lucide-react';
+import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Shield, Mail, Brain, Sparkles, Atom, Cloud, Award, Server, Network, Wifi, Building } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 import { advancedITInfrastructureServices } from '../data/2025-advanced-it-infrastructure-services';
 
@@ -31,7 +23,7 @@ const heroStats = [
 const serviceCategories = [
   {
     title: 'Quantum Cloud Computing',
-    description: 'Next-generation cloud infrastructure with quantum processing capabilities',
+    description: 'ArrowRight-generation cloud infrastructure with quantum processing capabilities',
     services: advancedITInfrastructureServices.filter(s => s.category === 'Quantum Cloud Computing'),
     icon: Cloud,
     color: 'from-indigo-500 to-purple-600',
@@ -49,7 +41,7 @@ const serviceCategories = [
     title: 'Cybersecurity',
     description: 'Comprehensive security framework with continuous verification',
     services: advancedITInfrastructureServices.filter(s => s.category === 'Cybersecurity'),
-    icon: SecurityIcon,
+    icon: Shield,
     color: 'from-red-500 to-orange-600',
     features: ['Zero Trust', 'Threat Detection', 'Compliance Automation']
   },
@@ -63,7 +55,7 @@ const serviceCategories = [
   },
   {
     title: 'Quantum Networking',
-    description: 'Next-generation networking with quantum encryption and optimization',
+    description: 'ArrowRight-generation networking with quantum encryption and optimization',
     services: advancedITInfrastructureServices.filter(s => s.category === 'Quantum Networking'),
     icon: Network,
     color: 'from-purple-500 to-pink-600',

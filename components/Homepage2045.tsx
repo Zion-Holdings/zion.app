@@ -20,7 +20,6 @@ const Homepage2045: React.FC = () => {
   const [hoveredService, setHoveredService] = useState<string | null>(null);
   
   useEffect(() => {
-    setIsClient(true);
     setIsVisible(true);
     
     // Auto-rotate featured services
@@ -61,13 +60,12 @@ const Homepage2045: React.FC = () => {
   };
 
   const categories = [
-<<<<<<< HEAD
-    { id: 'all', name: 'All Services', icon: SparklesIcon, color: 'from-purple-500 to-pink-500' },
-    { id: 'ai', name: 'AI & Consciousness', icon: BrainIcon, color: 'from-cyan-500 to-blue-500' },
-    { id: 'quantum', name: 'Quantum Technology', icon: AtomIcon, color: 'from-blue-500 to-indigo-500' },
-    { id: 'cybersecurity', name: 'Cybersecurity', icon: ShieldIcon, color: 'from-red-500 to-orange-500' },
-    { id: 'space', name: 'Space Technology', icon: RocketIcon, color: 'from-indigo-500 to-purple-500' },
-    { id: 'business', name: 'Business Solutions', icon: Target, color: 'from-emerald-500 to-teal-500' }
+    { id: 'all', name: 'All Services', icon: SparklesIcon, color: 'from-purple-500 to-pink-500', count: allRevolutionaryServices.length },
+    { id: 'ai', name: 'AI & Consciousness', icon: BrainIcon, color: 'from-cyan-500 to-blue-500', count: revolutionary2045AdvancedAIServices.length },
+    { id: 'quantum', name: 'Quantum Technology', icon: AtomIcon, color: 'from-blue-500 to-indigo-500', count: allRevolutionaryServices.filter(s => s.category.includes('Quantum')).length },
+    { id: 'cybersecurity', name: 'Cybersecurity', icon: ShieldIcon, color: 'from-red-500 to-orange-500', count: allRevolutionaryServices.filter(s => s.category.includes('Security')).length },
+    { id: 'business', name: 'Business Solutions', icon: Target, color: 'from-emerald-500 to-teal-500', count: allRevolutionaryServices.filter(s => s.type === 'Micro SAAS').length },
+    { id: 'it', name: 'IT Infrastructure', icon: Cpu, color: 'from-yellow-500 to-orange-500', count: revolutionary2045AdvancedITServices.length }
   ];
 
   const features = [
@@ -80,69 +78,13 @@ const Homepage2045: React.FC = () => {
   ];
 
   const stats = [
-    { number: "2500+", label: "Revolutionary Services", icon: Star },
-=======
-    { id: 'all', name: 'All Services', icon: SparklesIcon, color: 'from-purple-500 to-pink-500', count: allRevolutionaryServices.length },
-    { id: 'ai', name: 'AI & Consciousness', icon: BrainIcon, color: 'from-cyan-500 to-blue-500', count: revolutionary2045AdvancedAIServices.length },
-    { id: 'quantum', name: 'Quantum Technology', icon: AtomIcon, color: 'from-blue-500 to-indigo-500', count: allRevolutionaryServices.filter(s => s.category.includes('Quantum')).length },
-    { id: 'cybersecurity', name: 'Cybersecurity', icon: ShieldIcon, color: 'from-red-500 to-orange-500', count: allRevolutionaryServices.filter(s => s.category.includes('Security')).length },
-    { id: 'business', name: 'Business Solutions', icon: Target, color: 'from-emerald-500 to-teal-500', count: allRevolutionaryServices.filter(s => s.type === 'Micro SAAS').length },
-    { id: 'it', name: 'IT Infrastructure', icon: Cpu, color: 'from-yellow-500 to-orange-500', count: revolutionary2045AdvancedITServices.length }
-  ];
-
-  const features = [
-    { icon: Brain, title: "AI Consciousness Evolution 2045", description: "Next-generation AI consciousness with emotional intelligence", href: "/ai-consciousness-evolution-platform-2045", color: "from-purple-500 to-pink-500" },
-    { icon: Atom, title: "Quantum AI Hybrid Computing", description: "Quantum-powered AI with consciousness integration", href: "/quantum-ai-hybrid-computing-platform-2045", color: "from-blue-500 to-cyan-500" },
-    { icon: Shield, title: "Quantum Cybersecurity Intelligence", description: "Quantum-resistant security with AI consciousness", href: "/quantum-cybersecurity-intelligence-2045", color: "from-red-500 to-orange-500" },
-    { icon: Rocket, title: "Autonomous Business Intelligence", description: "Fully autonomous AI business intelligence", href: "/autonomous-ai-business-intelligence-2045", color: "from-indigo-500 to-purple-500" },
-    { icon: Cpu, title: "Quantum Cloud Infrastructure", description: "Quantum-powered cloud with consciousness", href: "/quantum-cloud-infrastructure-platform-2045", color: "from-emerald-500 to-teal-500" },
-    { icon: Database, title: "Autonomous DevOps Intelligence", description: "AI-powered DevOps optimization", href: "/autonomous-devops-intelligence-platform-2045", color: "from-yellow-500 to-orange-500" }
-  ];
-
-  const stats = [
     { number: "3000+", label: "Revolutionary Services", icon: Star },
->>>>>>> main
     { number: "99.99%", label: "Uptime Guarantee", icon: TrendingUp },
     { number: "24/7", label: "AI Support Available", icon: Brain },
     { number: "250+", label: "Countries Served", icon: Globe }
   ];
 
   const handleGetStarted = useCallback(() => {
-<<<<<<< HEAD
-    if (typeof window !== 'undefined') {
-      window.location.href = '/revolutionary-2045-pricing-showcase';
-    }
-  }, []);
-
-  const handleWatchDemo = useCallback(() => {
-    if (typeof window !== 'undefined') {
-      window.location.href = '/services';
-    }
-  }, []);
-
-  const handleServiceClick = useCallback((service: any) => {
-    if (typeof window !== 'undefined') {
-      window.location.href = service.slug;
-    }
-  }, []);
-
-  // Don't render until client-side
-  if (!isClient) {
-    return (
-      <Layout>
-        <div className="min-h-screen flex items-center justify-center">
-          <div className="text-center">
-            <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-              <Zap className="w-8 h-8 text-white" />
-            </div>
-            <h2 className="text-2xl font-bold text-white mb-2">Loading...</h2>
-            <p className="text-gray-400">Preparing revolutionary technology</p>
-          </div>
-        </div>
-      </Layout>
-    );
-  }
-=======
     window.location.href = '/contact';
   }, []);
 
@@ -157,14 +99,12 @@ const Homepage2045: React.FC = () => {
   const handleCategoryChange = useCallback((categoryId: string) => {
     setSelectedCategory(categoryId);
   }, []);
->>>>>>> main
 
   return (
     <Layout>
       {/* Main Content */}
       <main className="relative z-10">
         {/* Hero Section */}
-<<<<<<< HEAD
         <section 
           className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden"
           aria-labelledby="hero-heading"
@@ -187,7 +127,7 @@ const Homepage2045: React.FC = () => {
             <div 
               className="absolute top-1/2 left-1/2 w-80 h-80 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-full blur-3xl animate-pulse delay-500 shadow-[0_0_100px_rgba(16,185,129,0.5)]"
               style={{
-                transform: `translate(${(mousePosition.x - (typeof window !== 'undefined' ? window.innerWidth / 2 : 0)) * 0.015}px, ${(mousePosition.y - (typeof window !== 'undefined' ? window.innerHeight / 2 : 0)) * 0.015}px)`
+                transform: `translate(${(mousePosition.x - (typeof window !== 'undefined' ? window.innerWidth / 2 : 0)) * 0.02}px, ${(mousePosition.y - (typeof window !== 'undefined' ? window.innerHeight / 2 : 0)) * 0.02}px)`
               }}
             ></div>
             
@@ -399,101 +339,8 @@ const Homepage2045: React.FC = () => {
           <div className="max-w-7xl mx-auto">
             <motion.div
               className="text-center mb-20"
-=======
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-          {/* Animated Background */}
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-gradient-to-br from-black via-purple-900/20 to-cyan-900/20" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.3),transparent_50%)]" />
-            
-            {/* Floating Elements */}
-            <motion.div
-              animate={{ 
-                x: [0, 100, 0],
-                y: [0, -100, 0],
-                rotate: [0, 360, 0]
-              }}
-              transition={{ 
-                duration: 20,
-                repeat: -1,
-                ease: "linear"
-              }}
-              className="absolute top-20 left-20 w-32 h-32 border border-cyan-400/20 rounded-lg"
-            />
-            <motion.div
-              animate={{ 
-                x: [0, -100, 0],
-                y: [0, 100, 0],
-                rotate: [0, -360, 0]
-              }}
-              transition={{ 
-                duration: 25,
-                repeat: -1,
-                ease: "linear"
-              }}
-              className="absolute top-40 right-32 w-24 h-24 border border-purple-400/20 rounded-full"
-            />
-            <motion.div
-              animate={{ 
-                x: [0, 150, 0],
-                y: [0, -150, 0],
-                rotate: [0, 720, 0]
-              }}
-              transition={{ 
-                duration: 30,
-                repeat: -1,
-                ease: "linear"
-              }}
-              className="absolute bottom-32 left-32 w-40 h-40 border border-pink-400/20 transform rotate-45"
-            />
-          </div>
-
-          {/* Hero Content */}
-          <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 50 }}
-              transition={{ duration: 1 }}
-              className="space-y-8"
             >
-              {/* Main Heading */}
-              <div className="space-y-6">
-                <motion.h1 
-                  className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1, delay: 0.2 }}
-                >
-                  <span className="bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-                    Zion Tech Group
-                  </span>
-                </motion.h1>
-                <motion.h2 
-                  className="text-2xl md:text-3xl lg:text-4xl font-semibold text-white/90"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1, delay: 0.4 }}
-                >
-                  Revolutionary Technology Solutions for 2045 and Beyond
-                </motion.h2>
-                <motion.p 
-                  className="text-lg md:text-xl text-white/70 max-w-4xl mx-auto"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1, delay: 0.6 }}
-                >
-                  Experience the future of technology with our cutting-edge AI consciousness, quantum computing, and autonomous systems. 
-                  Transform your business with revolutionary micro SAAS solutions that operate with true intelligence.
-                </motion.p>
-              </div>
-
-              {/* CTA Buttons */}
-              <motion.div 
-                className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.8 }}
-              >
+              <motion.div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <button
                   onClick={handleGetStarted}
                   className="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-xl text-lg transition-all duration-300 hover:from-cyan-600 hover:to-purple-600 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25"
@@ -778,12 +625,10 @@ const Homepage2045: React.FC = () => {
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
->>>>>>> main
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-<<<<<<< HEAD
             >
               <h2 className="text-5xl font-bold text-white mb-6">
                 Revolutionary Technology Features
@@ -897,43 +742,6 @@ const Homepage2045: React.FC = () => {
                   Schedule Demo
                   <Play className="w-6 h-6 ml-3 inline" />
                 </button>
-=======
-              className="space-y-8"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-white">
-                Ready to Transform Your Business?
-              </h2>
-              <p className="text-lg text-white/70">
-                Join the future of technology with our revolutionary AI consciousness, quantum computing, and autonomous systems. 
-                Contact us today to discover how we can help you achieve unprecedented success.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <button
-                  onClick={handleGetStarted}
-                  className="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-xl text-lg transition-all duration-300 hover:from-cyan-600 hover:to-purple-600 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25"
-                >
-                  <span className="relative z-10 flex items-center gap-2">
-                    Get Started Today
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                  </span>
-                </button>
-                
-                <a
-                  href="tel:+1 302 464 0950"
-                  className="group px-8 py-4 border-2 border-white/20 text-white font-semibold rounded-xl text-lg transition-all duration-300 hover:border-cyan-400 hover:text-cyan-400 hover:bg-white/5 hover:scale-105"
-                >
-                  <span className="flex items-center gap-2">
-                    <Clock className="w-5 h-5" />
-                    Call Now
-                  </span>
-                </a>
-              </div>
-              
-              <div className="text-sm text-white/50">
-                <p>Contact: kleber@ziontechgroup.com | +1 302 464 0950</p>
-                <p>Address: 364 E Main St STE 1008 Middletown DE 19709</p>
->>>>>>> main
               </div>
             </motion.div>
           </div>
