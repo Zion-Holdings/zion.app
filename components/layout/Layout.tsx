@@ -3,10 +3,9 @@ import Head from 'next/head';
 import UltraFuturisticNavigation2040 from './UltraFuturisticNavigation2040';
 import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
-import TopContactBar from './TopContactBar';
 import UltraFuturisticBackground2036 from '../backgrounds/UltraFuturisticBackground2036';
-import PerformanceMonitor from '../PerformanceMonitor';
-import AccessibilityEnhancer from '../AccessibilityEnhancer';
+import EnhancedPerformanceMonitor from '../EnhancedPerformanceMonitor';
+import EnhancedAccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
 import CookieConsentBanner from '../CookieConsentBanner';
 
 interface LayoutProps {
@@ -238,13 +237,20 @@ export default function Layout({
         </div>
 
         {/* Accessibility and Performance Tools */}
-        <AccessibilityEnhancer />
-        <PerformanceMonitor />
+        <EnhancedAccessibilityEnhancer />
+        <EnhancedPerformanceMonitor />
         
         {/* Cookie Consent Banner */}
         <CookieConsentBanner />
       </div>
 
+      {/* Enhanced Accessibility and Performance Tools */}
+      <EnhancedAccessibilityEnhancer />
+      <EnhancedPerformanceMonitor />
+      
+      {/* Cookie Consent Banner */}
+      <CookieConsentBanner />
+      
       {/* Service Worker Update Notification */}
       <div id="sw-update-notification" className="hidden fixed bottom-4 right-4 bg-cyan-600 text-white p-4 rounded-lg shadow-lg z-50 max-w-sm">
         <div className="flex items-start gap-3">
@@ -259,7 +265,7 @@ export default function Layout({
             <div className="flex gap-2">
               <button 
                 onClick={() => window.location.reload()} 
-                className="bg-white text-cyan-600 px-3 py-1 rounded text-sm font-medium hover:bg-cyan-50 transition-colors"
+                className="bg-white text-cyan-600 px-3 py-1 rounded text-sm font-medium hover:bg-cyan-500 transition-colors"
               >
                 Update Now
               </button>
