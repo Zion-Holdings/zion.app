@@ -16,12 +16,12 @@ This warning means Tailwind CSS tried to evaluate a `theme(...)` expression but 
 
 ### How to resolve
 
-* Double‑check the string passed to `theme()` matches a valid key in your Tailwind configuration.
-* Ensure any arbitrary values using `theme()` are properly formatted. For example:
+- Double‑check the string passed to `theme()` matches a valid key in your Tailwind configuration.
+- Ensure any arbitrary values using `theme()` are properly formatted. For example:
   ```html
   class="w-[calc(var(--sidebar-width-icon)_+_theme('spacing.4'))]"
   ```
   uses `theme('spacing.4')`, which must exist under `theme.spacing`.
-* If you recently renamed variables in your config, search your codebase for outdated references.
+- If you recently renamed variables in your config, search your codebase for outdated references.
 
 The build will continue even when this warning appears, but the affected class will produce no CSS until the theme value is corrected.

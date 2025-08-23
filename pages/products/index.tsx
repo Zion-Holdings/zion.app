@@ -1,19 +1,10 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
+import React from 'react';
 
-const ProductsPage: NextPage = () => {
+export default function ProductsIndexPage() {
   return (
-    <>
-      <Head>
-        <title>Products - Zion</title>
-        <meta name="description" content="Browse our products" />
-      </Head>
-      <div className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold mb-6">Products</h1>
-        <p className="text-muted-foreground">Products page coming soon...</p>
-      </div>
-    </>
+    <div className="container mx-auto px-4 py-10">
+      <h1 className="text-2xl font-semibold">Products</h1>
+      <p className="mt-2 text-gray-600 dark:text-gray-300">Browse Zion products.</p>
+    </div>
   );
-};
-
-export default ProductsPage;
+}

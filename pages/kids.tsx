@@ -1,8 +1,7 @@
-import dynamic from 'next/dynamic';
-
-const StorybookComponent = dynamic(() => import('@/pages/academy/Storybook'), {
-  ssr: false,
-  loading: () => <p>Loading storybook...</p> // Optional loading component
-});
-
-export default StorybookComponent;
+import React from 'react';
+import Head from 'next/head';
+  return (
+    <>
+      <Head><title>kids - Zion App</title><meta name="description" content="kids page" /></Head><div className="container mx-auto px-4 py-8"><h1 className="text-3xl font-bold mb-6">kids</h1><p className="text-lg mb-4">This page is under construction.</p><div className="mt-4"><a href="/" className="text-blue-600 hover:underline">;
+            ← Back to Home</a></div></div></>;
+  );

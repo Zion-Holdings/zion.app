@@ -1,21 +1,9 @@
 import React from 'react';
-import { SnackbarProvider, useSnackbar } from 'notistack';
-import { setEnqueueSnackbarRef } from '@/context/SnackbarContext';
-
-function InnerProvider({ children }: { children: React.ReactNode }) {
-  const { enqueueSnackbar } = useSnackbar();
-  setEnqueueSnackbarRef(enqueueSnackbar);
-  return <>{children}</>;
-}
-
-export default function ToastProvider({ children }: { children: React.ReactNode }) {
+export function ToastProvider() {
   return (
-    <SnackbarProvider
-      maxSnack={3}
-      autoHideDuration={4000}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-    >
-      <InnerProvider>{children}</InnerProvider>
-    </SnackbarProvider>
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
   );
 }

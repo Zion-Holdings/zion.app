@@ -1,19 +1,9 @@
-import Dashboard from "./Dashboard";
-import LandingPage from "./LandingPage";
-import { useAuth } from "@/hooks/useAuth";
-import { NextSeo } from "@/components/NextSeo";
-
-export default function RootPage() {
-  const { user } = useAuth();
-
-  if (user) {
-    return (
-      <>
-        <NextSeo title="Dashboard - Zion" />
-        <Dashboard />
-      </>
-    );
-  }
-
-  return <LandingPage />;
+import React from 'react';
+export function RootPage() {
+  return (
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
 }

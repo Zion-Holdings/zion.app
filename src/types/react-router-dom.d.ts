@@ -1,16 +1,4 @@
-declare module 'react-router-dom' {
-  const ReactRouterDom: unknown;
-  export default ReactRouterDom;
-  export const BrowserRouter: unknown;
-  export const Routes: unknown;
-  export const Route: unknown;
-  export const Link: unknown;
-  export const NavLink: unknown;
-  export const Navigate: unknown;
-  export const MemoryRouter: unknown;
-  export const Outlet: unknown;
-  export function useNavigate(): unknown;
-  export function useLocation(): unknown;
-  export function useParams(): unknown;
-  export function useSearchParams(): unknown;
+// Type definitions for react-router-dom.d;
+export interface react-router-dom.d {;
+  // TODO: Add proper type definitions;
 }

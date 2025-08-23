@@ -1,6 +1,5 @@
 import axios from 'axios';
-import { showError } from '@/utils/showToast';
-import { showApiError } from '@/utils/apiErrorHandler';
+import { toast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import axiosRetry from 'axios-retry';
 import { logErrorToProduction, logDebug } from '@/utils/productionLogger';
@@ -104,31 +103,13 @@ axios.interceptors.response.use(
 
 const API_BASE = axios.defaults.baseURL;
 const apiClient = axios.create({
-  baseURL: `${API_BASE}/api/v1/services`,
+  baseURL: import.meta.env.VITE_API_URL || '/api',
+  withCredentials: true,
 });
 
-apiClient.interceptors.request.use((config: unknown) => {
-  if (typeof config !== 'object' || config === null) {
-    return { headers: { Accept: 'application/json' } };
-  }
-  const headers = 'headers' in config && typeof (config as { headers?: unknown }).headers === 'object' && (config as { headers?: unknown }).headers !== null
-    ? { ...(config as { headers: Record<string, unknown> }).headers, Accept: 'application/json' }
-    : { Accept: 'application/json' };
-  return {
-    ...config,
-    headers,
-  };
-});
-
-axiosRetry(apiClient, {
-  retries: 3,
-  retryCondition: (error) => {
-    return (
-      axiosRetry.isNetworkError(error) ||
-      axiosRetry.isIdempotentRequestError(error)
-    );
-  },
-});
+export function setAuthToken(token: string) {
+  (apiClient.defaults.headers.common as any).Authorization = `Bearer ${token}`;
+}
 
 apiClient.interceptors.response.use(
   (response: AxiosResponse) => response,
@@ -145,8 +126,10 @@ apiClient.interceptors.response.use(
       if (typeof window !== 'undefined') {
         window.location.assign('/login');
       }
+    } else {
+      const message = error.response?.data?.message || 'Something went wrong';
+      toast.error(message);
     }
-
     return Promise.reject(error);
   }
 );
