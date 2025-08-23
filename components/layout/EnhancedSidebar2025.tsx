@@ -7,7 +7,8 @@ import {
   BarChart3, Code, Smartphone, Server, Users, Award, 
   TrendingUp, BookOpen, FileText, GraduationCap, Headphones,
   Zap, Globe, Lock, Phone, Mail, MapPin, Star, MessageCircle,
-  ExternalLink, Home, Briefcase, Info, HelpCircle, Shield as ShieldIcon, Play
+  ExternalLink, Home, Briefcase, Info, HelpCircle, Shield as ShieldIcon, Play,
+  Building
 } from 'lucide-react';
 
 const EnhancedSidebar2025: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ 
@@ -88,6 +89,19 @@ const EnhancedSidebar2025: React.FC<{ isOpen: boolean; onClose: () => void }> = 
         { label: 'Network Automation', href: '/network-automation' },
         { label: 'IT Asset Management', href: '/it-asset-management' },
         { label: 'Compliance Automation', href: '/compliance-automation' }
+      ]
+    },
+    {
+      id: 'main-pages',
+      title: 'Company & Resources',
+      icon: Building,
+      color: 'from-indigo-500 to-purple-500',
+      items: [
+        { label: 'About Us', href: '/about', badge: 'Company' },
+        { label: 'Case Studies', href: '/case-studies', badge: 'Success' },
+        { label: 'Blog', href: '/blog', badge: 'Insights' },
+        { label: 'Careers', href: '/careers', badge: 'Join Us' },
+        { label: 'Contact', href: '/contact', badge: 'Get In Touch' }
       ]
     },
     {

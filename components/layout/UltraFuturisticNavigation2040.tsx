@@ -129,6 +129,13 @@ const navigationItems: NavigationItem[] = [
     ]
   },
   {
+    label: 'Case Studies',
+    href: '/case-studies',
+    icon: <FileText className="w-4 h-4" />,
+    description: 'Success stories and client results',
+    neonColor: 'shadow-emerald-400/50'
+  },
+  {
     label: 'About',
     href: '/about',
     icon: <Users className="w-4 h-4" />,
@@ -164,6 +171,13 @@ const navigationItems: NavigationItem[] = [
         neonColor: 'shadow-green-400/50'
       }
     ]
+  },
+  {
+    label: 'Careers',
+    href: '/careers',
+    icon: <Users className="w-4 h-4" />,
+    description: 'Join our team and build the future',
+    neonColor: 'shadow-indigo-400/50'
   },
   {
     label: 'Contact',
