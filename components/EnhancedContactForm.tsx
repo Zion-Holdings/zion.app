@@ -1,463 +1,662 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Send, Phone, Mail, MapPin, CheckCircle, AlertCircle, 
-  User, Building, MessageSquare, Globe, Zap
+  Send, CheckCircle, AlertCircle, User, Mail, Phone, MessageSquare, 
+  Building, MapPin, Clock, Star, Zap, Shield
 } from 'lucide-react';
 
-interface ContactFormData {
+interface FormData {
   firstName: string;
   lastName: string;
   email: string;
-  company: string;
   phone: string;
+  company: string;
+  website: string;
   service: string;
-  message: string;
   budget: string;
   timeline: string;
+  message: string;
+  priority: 'low' | 'medium' | 'high' | 'urgent';
 }
 
-interface ContactFormProps {
-  showTitle?: boolean;
-  variant?: 'default' | 'compact' | 'full';
-  onSuccess?: (data: ContactFormData) => void;
+interface FormErrors {
+  [key: string]: string;
 }
 
-const EnhancedContactForm: React.FC<ContactFormProps> = ({
-  showTitle = true,
-  variant = 'default',
-  onSuccess
-}) => {
-  const [formData, setFormData] = useState<ContactFormData>({
+const EnhancedContactForm: React.FC = () => {
+  const [formData, setFormData] = useState<FormData>({
     firstName: '',
     lastName: '',
     email: '',
-    company: '',
     phone: '',
+    company: '',
+    website: '',
     service: '',
-    message: '',
     budget: '',
-    timeline: ''
+    timeline: '',
+    message: '',
+    priority: 'medium'
   });
 
-  const [errors, setErrors] = useState<Partial<ContactFormData>>({});
+  const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [currentStep, setCurrentStep] = useState(1);
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const services = [
-    'AI & Machine Learning',
-    'Quantum Computing',
+    'AI & Consciousness Solutions',
+    'Quantum Computing Platform',
+    'Cybersecurity & Zero-Trust',
     'Space Technology',
-    'Cybersecurity',
-    'Cloud Solutions',
-    'Micro SaaS',
+    'Enterprise Solutions',
     'Custom Development',
-    'Consulting'
+    'Consulting & Strategy',
+    'Other'
   ];
 
   const budgets = [
+    'Under $10K',
     '$10K - $50K',
     '$50K - $100K',
     '$100K - $500K',
-    '$500K - $1M',
-    '$1M+'
+    '$500K+',
+    'To be discussed'
   ];
 
   const timelines = [
-    'Immediate (1-3 months)',
-    'Short-term (3-6 months)',
-    'Medium-term (6-12 months)',
-    'Long-term (12+ months)'
+    'Immediate (1-2 weeks)',
+    'Quick (1-2 months)',
+    'Standard (3-6 months)',
+    'Long-term (6+ months)',
+    'Flexible'
   ];
 
-  const validateForm = (): boolean => {
-    const newErrors: Partial<ContactFormData> = {};
+  const priorities = [
+    { value: 'low', label: 'Low', color: 'text-green-400', bg: 'bg-green-500/20' },
+    { value: 'medium', label: 'Medium', color: 'text-yellow-400', bg: 'bg-yellow-500/20' },
+    { value: 'high', label: 'High', color: 'text-orange-400', bg: 'bg-orange-500/20' },
+    { value: 'urgent', label: 'Urgent', color: 'text-red-400', bg: 'bg-red-500/20' }
+  ];
 
-    if (!formData.firstName.trim()) newErrors.firstName = 'First name is required';
-    if (!formData.lastName.trim()) newErrors.lastName = 'Last name is required';
-    if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = 'Please enter a valid email';
+  // Validation functions
+  const validateField = useCallback((name: string, value: string): string => {
+    switch (name) {
+      case 'firstName':
+        return value.trim().length < 2 ? 'Must be at least 2 characters' : '';
+      case 'lastName':
+        return value.trim().length < 2 ? 'Must be at least 2 characters' : '';
+      case 'email': {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return !emailRegex.test(value) ? 'Please enter a valid email address' : '';
+      }
+      case 'phone': {
+        const phoneRegex = /^[+]?[1-9][\d]{0,15}$/;
+        return value && !phoneRegex.test(value.replace(/\s/g, '')) ? 'Please enter a valid phone number' : '';
+      }
+      case 'website':
+        if (value && !value.startsWith('http://') && !value.startsWith('https://')) {
+          return 'Please include http:// or https://';
+        }
+        return '';
+      case 'message':
+        return value.trim().length < 10 ? 'Message must be at least 10 characters' : '';
+      default:
+        return '';
     }
-    if (!formData.company.trim()) newErrors.company = 'Company name is required';
-    if (!formData.service) newErrors.service = 'Please select a service';
-    if (!formData.message.trim()) newErrors.message = 'Message is required';
+  }, []);
+
+  const validateStep = useCallback((step: number): boolean => {
+    const newErrors: FormErrors = {};
+    let isValid = true;
+
+    switch (step) {
+      case 1: {
+        const step1Fields = ['firstName', 'lastName', 'email'];
+        step1Fields.forEach(field => {
+          const error = validateField(field, formData[field as keyof FormData] as string);
+          if (error) {
+            newErrors[field] = error;
+            isValid = false;
+          }
+        });
+        break;
+      }
+      case 2: {
+        const step2Fields = ['company', 'service'];
+        step2Fields.forEach(field => {
+          if (!formData[field as keyof FormData]) {
+            newErrors[field] = 'This field is required';
+            isValid = false;
+          }
+        });
+        break;
+      }
+      case 3: {
+        if (!formData.message.trim()) {
+          newErrors.message = 'Please provide project details';
+          isValid = false;
+        }
+        break;
+      }
+    }
 
     setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
+    return isValid;
+  }, [formData, validateField]);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  // Handle input changes
+  const handleInputChange = useCallback((name: string, value: string) => {
+    setFormData(prev => ({ ...prev, [name]: value }));
+    
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors(prev => ({ ...prev, [name]: '' }));
+    }
+  }, [errors]);
+
+  // Handle next step
+  const handleNext = useCallback(() => {
+    if (validateStep(currentStep)) {
+      setCurrentStep(prev => Math.min(prev + 1, 3));
+    }
+  }, [currentStep, validateStep]);
+
+  // Handle previous step
+  const handlePrevious = useCallback(() => {
+    setCurrentStep(prev => Math.max(prev - 1, 1));
+  }, []);
+
+  // Handle form submission
+  const handleSubmit = useCallback(async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!validateForm()) return;
+    if (!validateStep(currentStep)) {
+      return;
+    }
 
     setIsSubmitting(true);
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    
-    if (onSuccess) {
-      onSuccess(formData);
+    try {
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
+      setShowSuccess(true);
+      
+      setTimeout(() => {
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          company: '',
+          website: '',
+          service: '',
+          budget: '',
+          timeline: '',
+          message: '',
+          priority: 'medium'
+        });
+        setCurrentStep(1);
+        setShowSuccess(false);
+      }, 5000);
+      
+    } catch {
+      // Handle error silently
+    } finally {
+      setIsSubmitting(false);
     }
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        firstName: '', lastName: '', email: '', company: '', phone: '',
-        service: '', message: '', budget: '', timeline: ''
-      });
-    }, 3000);
-  };
+  }, [currentStep, validateStep]);
 
-  const handleInputChange = (field: keyof ContactFormData, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
-    if (errors[field]) {
-      setErrors(prev => ({ ...prev, [field]: undefined }));
-    }
-  };
-
-  if (variant === 'compact') {
-    return (
-      <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6">
-        <div className="text-center mb-6">
-          <h3 className="text-2xl font-bold text-white mb-2">Get Started Today</h3>
-          <p className="text-gray-400">Transform your business with cutting-edge technology</p>
-        </div>
-        
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="grid grid-cols-2 gap-4">
-            <input
-              type="text"
-              placeholder="First Name"
-              value={formData.firstName}
-              onChange={(e) => handleInputChange('firstName', e.target.value)}
-              className="px-4 py-3 bg-white/5 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 transition-colors"
-            />
-            <input
-              type="text"
-              placeholder="Last Name"
-              value={formData.lastName}
-              onChange={(e) => handleInputChange('lastName', e.target.value)}
-              className="px-4 py-3 bg-white/5 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 transition-colors"
-            />
-          </div>
-          
-          <input
-            type="email"
-            placeholder="Email"
-            value={formData.email}
-            onChange={(e) => handleInputChange('email', e.target.value)}
-            className="w-full px-4 py-3 bg-white/5 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 transition-colors"
-          />
-          
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-          >
-            {isSubmitting ? (
-              <>
-                <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                Sending...
-              </>
-            ) : (
-              <>
-                <Send className="w-5 h-5" />
-                Get Free Consultation
-              </>
-            )}
-          </button>
-        </form>
-      </div>
-    );
-  }
+  // Get step progress
+  const getStepProgress = useCallback(() => {
+    return (currentStep / 3) * 100;
+  }, [currentStep]);
 
   return (
-    <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
-      {showTitle && (
-        <div className="text-center mb-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-block p-3 rounded-full bg-gradient-to-r from-cyan-400/20 to-blue-500/20 border border-cyan-400/30 mb-4"
-          >
-            <MessageSquare className="w-8 h-8 text-cyan-400" />
-          </motion.div>
-          <h2 className="text-3xl font-bold text-white mb-3">Let's Build the Future Together</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Ready to transform your business with cutting-edge AI, quantum computing, and space technology? 
-            Get in touch for a free consultation and discover how we can accelerate your digital transformation.
-          </p>
-        </div>
-      )}
-
+    <div className="relative">
+      {/* Success Message */}
       <AnimatePresence>
-        {isSubmitted ? (
+        {showSuccess && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.8 }}
-            className="text-center py-12"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
           >
-            <div className="inline-block p-4 rounded-full bg-green-500/20 border border-green-400/30 mb-6">
-              <CheckCircle className="w-12 h-12 text-green-400" />
-            </div>
-            <h3 className="text-2xl font-bold text-white mb-3">Thank You!</h3>
-            <p className="text-gray-400 mb-6">
-              We've received your message and will get back to you within 24 hours.
-            </p>
-            <div className="flex items-center justify-center space-x-6 text-sm text-gray-500">
-              <div className="flex items-center space-x-2">
-                <Phone className="w-4 h-4" />
-                <span>+1 (555) 123-4567</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Mail className="w-4 h-4" />
-                <span>hello@ziontechgroup.com</span>
-              </div>
-            </div>
-          </motion.div>
-        ) : (
-          <motion.form
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            onSubmit={handleSubmit}
-            className="space-y-6"
-          >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">
-                  First Name *
-                </label>
-                <input
-                  type="text"
-                  value={formData.firstName}
-                  onChange={(e) => handleInputChange('firstName', e.target.value)}
-                  className={`w-full px-4 py-3 bg-white/5 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 transition-all ${
-                    errors.firstName ? 'border-red-500' : 'border-gray-600 focus:border-cyan-400'
-                  }`}
-                  placeholder="Enter your first name"
-                />
-                {errors.firstName && (
-                  <p className="mt-1 text-sm text-red-400 flex items-center gap-1">
-                    <AlertCircle className="w-4 h-4" />
-                    {errors.firstName}
-                  </p>
-                )}
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">
-                  Last Name *
-                </label>
-                <input
-                  type="text"
-                  value={formData.lastName}
-                  onChange={(e) => handleInputChange('lastName', e.target.value)}
-                  className={`w-full px-4 py-3 bg-white/5 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 transition-all ${
-                    errors.lastName ? 'border-red-500' : 'border-gray-600 focus:border-cyan-400'
-                  }`}
-                  placeholder="Enter your last name"
-                />
-                {errors.lastName && (
-                  <p className="mt-1 text-sm text-red-400 flex items-center gap-1">
-                    <AlertCircle className="w-4 h-4" />
-                    {errors.lastName}
-                  </p>
-                )}
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">
-                  Email *
-                </label>
-                <input
-                  type="email"
-                  value={formData.email}
-                  onChange={(e) => handleInputChange('email', e.target.value)}
-                  className={`w-full px-4 py-3 bg-white/5 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 transition-all ${
-                    errors.email ? 'border-red-500' : 'border-gray-600 focus:border-cyan-400'
-                  }`}
-                  placeholder="Enter your email address"
-                />
-                {errors.email && (
-                  <p className="mt-1 text-sm text-red-400 flex items-center gap-1">
-                    <AlertCircle className="w-4 h-4" />
-                    {errors.email}
-                  </p>
-                )}
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">
-                  Company *
-                </label>
-                <input
-                  type="text"
-                  value={formData.company}
-                  onChange={(e) => handleInputChange('company', e.target.value)}
-                  className={`w-full px-4 py-3 bg-white/5 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 transition-all ${
-                    errors.company ? 'border-red-500' : 'border-gray-600 focus:border-cyan-400'
-                  }`}
-                  placeholder="Enter your company name"
-                />
-                {errors.company && (
-                  <p className="mt-1 text-sm text-red-400 flex items-center gap-1">
-                    <AlertCircle className="w-4 h-4" />
-                    {errors.company}
-                  </p>
-                )}
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">
-                  Phone Number
-                </label>
-                <input
-                  type="tel"
-                  value={formData.phone}
-                  onChange={(e) => handleInputChange('phone', e.target.value)}
-                  className="w-full px-4 py-3 bg-white/5 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 focus:border-cyan-400 transition-all"
-                  placeholder="Enter your phone number"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">
-                  Service Interest *
-                </label>
-                <select
-                  value={formData.service}
-                  onChange={(e) => handleInputChange('service', e.target.value)}
-                  className={`w-full px-4 py-3 bg-white/5 border rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-400/50 transition-all ${
-                    errors.service ? 'border-red-500' : 'border-gray-600 focus:border-cyan-400'
-                  }`}
-                >
-                  <option value="">Select a service</option>
-                  {services.map((service) => (
-                    <option key={service} value={service} className="bg-gray-800 text-white">
-                      {service}
-                    </option>
-                  ))}
-                </select>
-                {errors.service && (
-                  <p className="mt-1 text-sm text-red-400 flex items-center gap-1">
-                    <AlertCircle className="w-4 h-4" />
-                    {errors.service}
-                  </p>
-                )}
-              </div>
-            </div>
-
-            {variant === 'full' && (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Budget Range
-                  </label>
-                  <select
-                    value={formData.budget}
-                    onChange={(e) => handleInputChange('budget', e.target.value)}
-                    className="w-full px-4 py-3 bg-white/5 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-400/50 focus:border-cyan-400 transition-all"
-                  >
-                    <option value="">Select budget range</option>
-                    {budgets.map((budget) => (
-                      <option key={budget} value={budget} className="bg-gray-800 text-white">
-                        {budget}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Timeline
-                  </label>
-                  <select
-                    value={formData.timeline}
-                    onChange={(e) => handleInputChange('timeline', e.target.value)}
-                    className="w-full px-4 py-3 bg-white/5 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-400/50 focus:border-cyan-400 transition-all"
-                  >
-                    <option value="">Select timeline</option>
-                    {timelines.map((timeline) => (
-                      <option key={timeline} value={timeline} className="bg-gray-800 text-white">
-                        {timeline}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-            )}
-
-            <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">
-                Message *
-              </label>
-              <textarea
-                value={formData.message}
-                onChange={(e) => handleInputChange('message', e.target.value)}
-                rows={4}
-                className={`w-full px-4 py-3 bg-white/5 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 transition-all ${
-                  errors.message ? 'border-red-500' : 'border-gray-600 focus:border-cyan-400'
-                }`}
-                placeholder="Tell us about your project and how we can help..."
-              />
-              {errors.message && (
-                <p className="mt-1 text-sm text-red-400 flex items-center gap-1">
-                  <AlertCircle className="w-4 h-4" />
-                  {errors.message}
-                </p>
-              )}
-            </div>
-
-            <motion.button
-              type="submit"
-              disabled={isSubmitting}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="w-full px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3 shadow-xl hover:shadow-2xl hover:shadow-cyan-500/25"
+            <motion.div
+              className="bg-white rounded-2xl p-8 max-w-md mx-4 text-center"
+              initial={{ scale: 0.8, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.8, y: 20 }}
             >
-              {isSubmitting ? (
-                <>
-                  <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                  Sending Message...
-                </>
-              ) : (
-                <>
-                  <Send className="w-5 h-5" />
-                  Send Message
-                </>
-              )}
-            </motion.button>
-
-            <div className="text-center text-sm text-gray-500">
-              <p>We'll respond within 24 hours</p>
-              <div className="flex items-center justify-center space-x-6 mt-3">
-                <div className="flex items-center space-x-2">
-                  <Phone className="w-4 h-4" />
-                  <span>+1 (555) 123-4567</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Mail className="w-4 h-4" />
-                  <span>hello@ziontechgroup.com</span>
-                </div>
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <CheckCircle className="w-8 h-8 text-green-600" />
               </div>
-            </div>
-          </motion.form>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Message Sent!</h3>
+              <p className="text-gray-600 mb-4">
+                Thank you for contacting Zion Tech Group. We'll get back to you within 24 hours.
+              </p>
+              <button
+                onClick={() => setShowSuccess(false)}
+                className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+              >
+                Close
+              </button>
+            </motion.div>
+          </motion.div>
         )}
       </AnimatePresence>
+
+      <div className="bg-gray-900/50 backdrop-blur-md border border-gray-700/50 rounded-2xl p-8">
+        {/* Header */}
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold text-white mb-4">Get Started Today</h2>
+          <p className="text-gray-300 max-w-2xl mx-auto">
+            Ready to transform your business with revolutionary technology? Let's discuss your project 
+            and explore how Zion Tech Group can help you achieve your goals.
+          </p>
+        </div>
+
+        {/* Progress Bar */}
+        <div className="mb-8">
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-sm text-gray-400">Step {currentStep} of 3</span>
+            <span className="text-sm text-gray-400">{Math.round(getStepProgress())}%</span>
+          </div>
+          <div className="w-full bg-gray-700 rounded-full h-2">
+            <motion.div
+              className="h-2 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full"
+              initial={{ width: 0 }}
+              animate={{ width: `${getStepProgress()}%` }}
+              transition={{ duration: 0.5 }}
+            />
+          </div>
+        </div>
+
+        {/* Form */}
+        <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Step 1: Basic Information */}
+          <AnimatePresence mode="wait">
+            {currentStep === 1 && (
+              <motion.div
+                key="step1"
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                className="space-y-4"
+              >
+                <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+                  <User className="w-5 h-5 text-cyan-400" />
+                  Basic Information
+                </h3>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-300 mb-2">
+                      First Name *
+                    </label>
+                    <input
+                      type="text"
+                      value={formData.firstName}
+                      onChange={(e) => handleInputChange('firstName', e.target.value)}
+                      className={`w-full px-4 py-3 bg-gray-800/50 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-colors ${
+                        errors.firstName ? 'border-red-500' : 'border-gray-600'
+                      }`}
+                      placeholder="Enter your first name"
+                    />
+                    {errors.firstName && (
+                      <p className="text-red-400 text-sm mt-1 flex items-center gap-1">
+                        <AlertCircle className="w-4 h-4" />
+                        {errors.firstName}
+                      </p>
+                    )}
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-300 mb-2">
+                      Last Name *
+                    </label>
+                    <input
+                      type="text"
+                      value={formData.lastName}
+                      onChange={(e) => handleInputChange('lastName', e.target.value)}
+                      className={`w-full px-4 py-3 bg-gray-800/50 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-colors ${
+                        errors.lastName ? 'border-red-500' : 'border-gray-600'
+                      }`}
+                      placeholder="Enter your last name"
+                    />
+                    {errors.lastName && (
+                      <p className="text-red-400 text-sm mt-1 flex items-center gap-1">
+                        <AlertCircle className="w-4 h-4" />
+                        {errors.lastName}
+                      </p>
+                    )}
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-300 mb-2">
+                    Email Address *
+                  </label>
+                  <input
+                    type="email"
+                    value={formData.email}
+                    onChange={(e) => handleInputChange('email', e.target.value)}
+                    className={`w-full px-4 py-3 bg-gray-800/50 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-colors ${
+                      errors.email ? 'border-red-500' : 'border-gray-600'
+                    }`}
+                    placeholder="Enter your email address"
+                  />
+                  {errors.email && (
+                    <p className="text-red-400 text-sm mt-1 flex items-center gap-1">
+                      <AlertCircle className="w-4 h-4" />
+                      {errors.email}
+                    </p>
+                  )}
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-300 mb-2">
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    value={formData.phone}
+                    onChange={(e) => handleInputChange('phone', e.target.value)}
+                    className={`w-full px-4 py-3 bg-gray-800/50 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-colors ${
+                      errors.phone ? 'border-red-500' : 'border-gray-600'
+                    }`}
+                    placeholder="Enter your phone number"
+                  />
+                  {errors.phone && (
+                    <p className="text-red-400 text-sm mt-1 flex items-center gap-1">
+                      <AlertCircle className="w-4 h-4" />
+                      {errors.phone}
+                    </p>
+                  )}
+                </div>
+              </motion.div>
+            )}
+
+            {/* Step 2: Company & Service */}
+            {currentStep === 2 && (
+              <motion.div
+                key="step2"
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                className="space-y-4"
+              >
+                <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+                  <Building className="w-5 h-5 text-cyan-400" />
+                  Company & Service Details
+                </h3>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-300 mb-2">
+                    Company Name *
+                  </label>
+                  <input
+                    type="text"
+                    value={formData.company}
+                    onChange={(e) => handleInputChange('company', e.target.value)}
+                    className={`w-full px-4 py-3 bg-gray-800/50 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-colors ${
+                      errors.company ? 'border-red-500' : 'border-gray-600'
+                    }`}
+                    placeholder="Enter your company name"
+                  />
+                  {errors.company && (
+                    <p className="text-red-400 text-sm mt-1 flex items-center gap-1">
+                      <AlertCircle className="w-4 h-4" />
+                      {errors.company}
+                    </p>
+                  )}
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-300 mb-2">
+                    Website
+                  </label>
+                  <input
+                    type="url"
+                    value={formData.website}
+                    onChange={(e) => handleInputChange('website', e.target.value)}
+                    className={`w-full px-4 py-3 bg-gray-800/50 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-colors ${
+                      errors.website ? 'border-red-500' : 'border-gray-600'
+                    }`}
+                    placeholder="https://yourcompany.com"
+                  />
+                  {errors.website && (
+                    <p className="text-red-400 text-sm mt-1 flex items-center gap-1">
+                      <AlertCircle className="w-4 h-4" />
+                      {errors.website}
+                    </p>
+                  )}
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-300 mb-2">
+                    Service Interest *
+                  </label>
+                  <select
+                    value={formData.service}
+                    onChange={(e) => handleInputChange('service', e.target.value)}
+                    className={`w-full px-4 py-3 bg-gray-800/50 border rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-colors ${
+                      errors.service ? 'border-red-500' : 'border-gray-600'
+                    }`}
+                  >
+                    <option value="">Select a service</option>
+                    {services.map((service) => (
+                      <option key={service} value={service}>{service}</option>
+                    ))}
+                  </select>
+                  {errors.service && (
+                    <p className="text-red-400 text-sm mt-1 flex items-center gap-1">
+                      <AlertCircle className="w-4 h-4" />
+                      {errors.service}
+                    </p>
+                  )}
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-300 mb-2">
+                      Budget Range
+                    </label>
+                    <select
+                      value={formData.budget}
+                      onChange={(e) => handleInputChange('budget', e.target.value)}
+                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-colors"
+                    >
+                      <option value="">Select budget range</option>
+                      {budgets.map((budget) => (
+                        <option key={budget} value={budget}>{budget}</option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-300 mb-2">
+                      Timeline
+                    </label>
+                    <select
+                      value={formData.timeline}
+                      onChange={(e) => handleInputChange('timeline', e.target.value)}
+                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-colors"
+                    >
+                      <option value="">Select timeline</option>
+                      {timelines.map((timeline) => (
+                        <option key={timeline} value={timeline}>{timeline}</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+              </motion.div>
+            )}
+
+            {/* Step 3: Project Details */}
+            {currentStep === 3 && (
+              <motion.div
+                key="step3"
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                className="space-y-4"
+              >
+                <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+                  <MessageSquare className="w-5 h-5 text-cyan-400" />
+                  Project Details
+                </h3>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-300 mb-2">
+                    Project Priority
+                  </label>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                    {priorities.map((priority) => (
+                      <label
+                        key={priority.value}
+                        className={`cursor-pointer p-3 rounded-lg border-2 transition-all ${
+                          formData.priority === priority.value
+                            ? 'border-cyan-500 bg-cyan-500/20'
+                            : 'border-gray-600 hover:border-gray-500'
+                        }`}
+                      >
+                        <input
+                          type="radio"
+                          name="priority"
+                          value={priority.value}
+                          checked={formData.priority === priority.value}
+                          onChange={(e) => handleInputChange('priority', e.target.value)}
+                          className="sr-only"
+                        />
+                        <div className="text-center">
+                          <div className={`text-lg font-semibold ${priority.color}`}>
+                            {priority.label}
+                          </div>
+                        </div>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-300 mb-2">
+                    Project Details *
+                  </label>
+                  <textarea
+                    value={formData.message}
+                    onChange={(e) => handleInputChange('message', e.target.value)}
+                    rows={6}
+                    className={`w-full px-4 py-3 bg-gray-800/50 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-colors resize-none ${
+                      errors.message ? 'border-red-500' : 'border-gray-600'
+                    }`}
+                    placeholder="Tell us about your project, goals, and requirements..."
+                  />
+                  {errors.message && (
+                    <p className="text-red-400 text-sm mt-1 flex items-center gap-1">
+                      <AlertCircle className="w-4 h-4" />
+                      {errors.message}
+                    </p>
+                  )}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          {/* Navigation Buttons */}
+          <div className="flex items-center justify-between pt-6">
+            <div>
+              {currentStep > 1 && (
+                <button
+                  type="button"
+                  onClick={handlePrevious}
+                  className="px-6 py-3 border border-gray-600 text-gray-300 rounded-lg hover:bg-gray-800/50 transition-colors"
+                >
+                  Previous
+                </button>
+              )}
+            </div>
+
+            <div className="flex items-center gap-3">
+              {currentStep < 3 ? (
+                <button
+                  type="button"
+                  onClick={handleNext}
+                  className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 flex items-center gap-2"
+                >
+                  Next Step
+                  <Zap className="w-4 h-4" />
+                </button>
+              ) : (
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="px-8 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg hover:from-green-600 hover:to-emerald-700 transition-all duration-300 flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? (
+                    <>
+                      <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4" />
+                      Send Message
+                    </>
+                  )}
+                </button>
+              )}
+            </div>
+          </div>
+        </form>
+
+        {/* Contact Information */}
+        <div className="mt-12 pt-8 border-t border-gray-700/50">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="text-center">
+              <div className="w-12 h-12 bg-cyan-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                <Mail className="w-6 h-6 text-cyan-400" />
+              </div>
+              <h4 className="text-white font-semibold mb-2">Email</h4>
+              <p className="text-gray-400">kleber@ziontechgroup.com</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                <Phone className="w-6 h-6 text-blue-400" />
+              </div>
+              <h4 className="text-white font-semibold mb-2">Phone</h4>
+              <p className="text-gray-400">+1 302 464 0950</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                <MapPin className="w-6 h-6 text-purple-400" />
+              </div>
+              <h4 className="text-white font-semibold mb-2">Address</h4>
+              <p className="text-gray-400">364 E Main St STE 1008<br />Middletown DE 19709</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Trust Indicators */}
+        <div className="mt-8 text-center">
+          <div className="flex items-center justify-center gap-6 text-gray-400">
+            <div className="flex items-center gap-2">
+              <Shield className="w-4 h-4" />
+              <span className="text-sm">Secure & Private</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Clock className="w-4 h-4" />
+              <span className="text-sm">24/7 Support</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Star className="w-4 h-4" />
+              <span className="text-sm">500+ Happy Clients</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
