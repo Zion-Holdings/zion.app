@@ -1,2 +1,12 @@
-import { useRouter } from 'next/router';
-export default function TalentPerson() { const { query } = useRouter(); return <div className="p-8">Talent: {String(query.slug || '')}</div>; }
+import React from 'react';
+
+const Component = () => {
+  return (
+    <div>
+      <h1>Page Content</h1>
+      <p>This page is under construction.</p>
+    </div>
+  );
+};
+
+export default Component;
