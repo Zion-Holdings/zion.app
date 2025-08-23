@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import UltraAdvancedFuturisticNavigation2025 from './UltraAdvancedFuturisticNavigation2025';
 import UltraAdvancedFuturisticFooter2025 from './UltraAdvancedFuturisticFooter2025';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
+<<<<<<< HEAD
+import UltraFuturisticBackground2040 from '../backgrounds/UltraFuturisticBackground2040';
+=======
 import UltraAdvancedFuturisticBackground2025 from '../backgrounds/UltraAdvancedFuturisticBackground2025';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-20fd
 import TopContactBar from './TopContactBar';
 import PerformanceMonitor from '../PerformanceMonitor';
 import AccessibilityEnhancer from '../AccessibilityEnhancer';
@@ -15,7 +19,12 @@ interface LayoutProps {
 
 export default function Layout({ children, seo }: LayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+<<<<<<< HEAD
+  const [isLoading, setIsLoading] = useState(true);
+  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+=======
   const [showEnhancements, setShowEnhancements] = useState(false);
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-20fd
 
   return (
     <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
@@ -23,15 +32,24 @@ export default function Layout({ children, seo }: LayoutProps) {
       <a href="#main" className="skip-link">Skip to main content</a>
       
       {/* Futuristic Background */}
+<<<<<<< HEAD
+      <UltraFuturisticBackground2040 />
+=======
       <UltraAdvancedFuturisticBackground2025 theme="quantum-neon" intensity="medium" />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-20fd
       
       {/* Layout Structure */}
       <div className="relative z-10">
         {/* Top Contact Bar */}
         <TopContactBar />
         
+<<<<<<< HEAD
+        {/* Enhanced Navigation */}
+        <UltraFuturisticNavigation2040 />
+=======
         {/* Navigation */}
         <UltraAdvancedFuturisticNavigation2025 />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-20fd
         
         {/* Sidebar and Main Content */}
         <div className="flex">
@@ -45,6 +63,16 @@ export default function Layout({ children, seo }: LayoutProps) {
           </main>
         </div>
         
+<<<<<<< HEAD
+        {/* Enhanced Footer */}
+        <UltraFuturisticFooter2040 />
+      </div>
+
+      {/* Accessibility and Performance Tools */}
+      <AccessibilityEnhancer>
+        <PerformanceMonitor />
+      </AccessibilityEnhancer>
+=======
         {/* Footer */}
         <UltraAdvancedFuturisticFooter2025 />
       </div>
@@ -68,6 +96,7 @@ export default function Layout({ children, seo }: LayoutProps) {
           <AccessibilityEnhancer showUI={true} />
         </>
       )}
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-20fd
       
       {/* Cookie Consent Banner */}
       <CookieConsentBanner />

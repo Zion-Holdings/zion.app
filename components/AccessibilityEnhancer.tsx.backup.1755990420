@@ -1,5 +1,10 @@
+<<<<<<< HEAD
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+=======
 import React, { useState, useEffect, useCallback, useRef, FocusEvent } from 'react';
 import { motion } from 'framer-motion';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-20fd
 import { 
   Eye, EyeOff, Volume2, VolumeX, Type, 
   Contrast, ZoomIn, ZoomOut, RotateCcw,

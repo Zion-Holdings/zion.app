@@ -1,5 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
+<<<<<<< HEAD
+import { AnimatePresence } from 'framer-motion';
+=======
 import { motion } from 'framer-motion';
 import { 
   Globe, Phone, Mail, MapPin, 
@@ -12,9 +15,20 @@ import {
   BarChart3, MessageCircle, Code, DollarSign,
   HelpCircle, FileText, Server
 } from 'lucide-react';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-20fd
 
 const footerSections = [
   {
+<<<<<<< HEAD
+    title: 'Core Services',
+    links: [
+      { label: 'AI & Machine Learning', href: '/ai-services', description: 'Advanced AI solutions' },
+      { label: 'Quantum Computing', href: '/quantum-computing', description: 'Next-gen quantum tech' },
+      { label: 'Cybersecurity', href: '/cybersecurity', description: 'Enterprise security' },
+      { label: 'Cloud Platform', href: '/cloud-platform', description: 'Scalable cloud infrastructure' },
+      { label: 'Space Technology', href: '/space-tech', description: 'Innovative space solutions' },
+      { label: 'View All Services', href: '/services', description: 'Complete service portfolio' }
+=======
     title: 'Micro SAAS Services',
     description: 'Professional micro SAAS solutions for modern businesses',
     icon: <Rocket className="w-5 h-5 text-cyan-400" />,
@@ -30,6 +44,7 @@ const footerSections = [
       { name: 'Social Media Scheduler Pro', href: '/social-media-scheduler' },
       { name: 'Lead Generation Automation', href: '/lead-generation-automation' },
       { name: 'Customer Support Automation', href: '/customer-support-automation' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-20fd
     ]
   },
   {
@@ -56,6 +71,25 @@ const footerSections = [
     icon: <Brain className="w-5 h-5 text-purple-400" />,
     color: 'from-purple-500 to-pink-500',
     links: [
+<<<<<<< HEAD
+      { label: 'Blog', href: '/blog', description: 'Industry insights' },
+      { label: 'Documentation', href: '/docs', description: 'Technical guides' },
+      { label: 'API Reference', href: '/api-documentation', description: 'Developer resources' },
+      { label: 'Support', href: '/support', description: 'Help & assistance' },
+      { label: 'Get Started', href: '/get-started', description: 'Quick start guide' },
+      { label: 'Pricing', href: '/pricing', description: 'Service pricing' }
+    ]
+  },
+  {
+    title: 'Solutions',
+    links: [
+      { label: 'Healthcare', href: '/healthcare-solutions', description: 'Medical technology' },
+      { label: 'Finance', href: '/financial-solutions', description: 'Fintech solutions' },
+      { label: 'Manufacturing', href: '/manufacturing-ai-solutions', description: 'Industry 4.0' },
+      { label: 'Government', href: '/government-technology-solutions', description: 'Public sector' },
+      { label: 'Education', href: '/education-technology-solutions', description: 'EdTech solutions' },
+      { label: 'Innovative 2040 Services', href: '/innovative-2040-futuristic-services-showcase', description: 'Future tech solutions' }
+=======
       { name: 'AI Content Generation Suite', href: '/ai-content-generation-suite', featured: true },
       { name: 'AI Customer Service Automation', href: '/ai-customer-service-automation', featured: true },
       { name: 'AI Sales Intelligence Platform', href: '/ai-sales-intelligence-platform', featured: true },
@@ -84,12 +118,26 @@ const footerSections = [
       { name: 'Quantum Internet Security 2041', href: '/quantum-internet-security-2041' },
       { name: 'AI Customer Success 2041', href: '/ai-customer-success-2041' },
       { name: 'AI Sales Intelligence 2041', href: '/ai-sales-intelligence-2041' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-20fd
     ]
   }
 ];
 
+<<<<<<< HEAD
+const socialLinks = [
+  { icon: <Linkedin className="w-5 h-5" />, href: 'https://www.linkedin.com/company/zion-tech-group', label: 'LinkedIn' },
+  { icon: <Twitter className="w-5 h-5" />, href: 'https://twitter.com/ziontechgroup', label: 'Twitter' },
+  { icon: <Github className="w-5 h-5" />, href: 'https://github.com/Zion-Holdings', label: 'GitHub' },
+  { icon: <Youtube className="w-5 h-5" />, href: 'https://youtube.com/@ziontechgroup', label: 'YouTube' },
+  { icon: <Facebook className="w-5 h-5" />, href: 'https://www.facebook.com/ziontechgroup', label: 'Facebook' }
+];
+
+const contactInfo = {
+  phone: '+1 302 464 0950',
+=======
 const contactInfo = {
   mobile: '+1 302 464 0950',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-20fd
   email: 'kleber@ziontechgroup.com',
   address: '364 E Main St STE 1008 Middletown DE 19709',
   website: 'https://ziontechgroup.com'
@@ -112,6 +160,24 @@ const quickLinks = [
 ];
 
 const UltraAdvancedFuturisticFooter2025: React.FC = () => {
+<<<<<<< HEAD
+  return (
+    <footer className="bg-gray-900 text-white">
+      <div className="max-w-7xl mx-auto px-4 py-8">
+        <div className="text-center">
+          <p>© 2025 Zion Tech Group. All rights reserved.</p>
+          <div className="mt-4">
+            <Link href="/about" className="text-gray-400 hover:text-white mx-2">
+              About
+            </Link>
+            <Link href="/contact" className="text-gray-400 hover:text-white mx-2">
+              Contact
+            </Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+=======
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -348,6 +414,7 @@ const UltraAdvancedFuturisticFooter2025: React.FC = () => {
         <ArrowUp className="w-6 h-6 mx-auto" />
       </motion.button>
     </>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-20fd
   );
 };
 
