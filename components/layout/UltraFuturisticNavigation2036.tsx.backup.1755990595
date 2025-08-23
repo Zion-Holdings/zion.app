@@ -1,8 +1,27 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
+<<<<<<< HEAD
+import {
+  Menu,
+  X,
+  ChevronDown,
+  Search,
+  Phone,
+  Mail,
+  MapPin,
+  Star,
+  Clock,
+  MessageCircle,
+  Calculator,
+  Play,
+  DollarSign,
+  Shield,
+  Zap
+=======
 import { 
   Menu, ChevronDown, X, Zap, Grid, Star, Search, Target
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5d7f
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -101,6 +120,42 @@ const navigationItems: NavigationItem[] = [
         icon: <Play className="w-4 h-4" />
       },
       { 
+<<<<<<< HEAD
+        name: 'Space Technology', 
+        href: '/space-technology', 
+        description: 'Space exploration solutions',
+        icon: <Rocket className="w-4 h-4" />
+      },
+      { 
+        name: 'IT Solutions', 
+        href: '/it-services', 
+        description: 'Enterprise IT infrastructure',
+        icon: <Shield className="w-4 h-4" />
+      },
+      { 
+        name: 'Industry Solutions', 
+        href: '/solutions', 
+        description: 'Industry-specific solutions',
+        icon: <Play className="w-4 h-4" />
+      },
+      { 
+        name: 'Cybersecurity', 
+        href: '/cybersecurity', 
+        description: 'Advanced security solutions',
+        icon: <Shield className="w-4 h-4" />
+      },
+      { 
+        name: 'Business Automation', 
+        href: '/business-automation', 
+        description: 'Intelligent process optimization',
+        icon: <Zap className="w-4 h-4" />
+      },
+      { 
+        name: 'Specialized Solutions', 
+        href: '/solutions', 
+        description: 'Industry-specific solutions',
+        icon: <Play className="w-4 h-4" />
+=======
         name: 'Cybersecurity', 
         href: '/services?category=security', 
         description: 'Security and compliance',
@@ -123,6 +178,7 @@ const navigationItems: NavigationItem[] = [
         href: '/services?category=emerging', 
         description: 'Cutting-edge technologies',
         icon: <Zap className="w-4 h-4" />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5d7f
       }
     ]
   },
@@ -183,6 +239,9 @@ const navigationItems: NavigationItem[] = [
         name: 'Market Pricing', 
         href: '/market-pricing', 
         description: 'Market price references',
+<<<<<<< HEAD
+        icon: <Play className="w-4 h-4" />
+=======
         icon: <Star className="w-4 h-4" />
       },
       { 
@@ -243,6 +302,7 @@ const navigationItems: NavigationItem[] = [
         href: '/solutions?industry=government', 
         description: 'Public sector solutions',
         icon: <Target className="w-4 h-4" />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5d7f
       }
     ]
   },

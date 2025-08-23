@@ -28,6 +28,17 @@ const footerSections = [
     description: 'Our latest revolutionary solutions',
     icon: <Star className="w-5 h-5 text-yellow-400" />,
     links: [
+<<<<<<< HEAD
+      { name: 'Innovative 2036 Services', href: '/innovative-2036-services-showcase', featured: true },
+      { name: 'AI Autonomous Code Generation', href: '/ai-autonomous-code-generation', featured: true },
+      { name: 'Quantum AI Brain-Computer Interface', href: '/quantum-ai-brain-computer-interface', featured: true },
+      { name: 'Space Resource Mining Platform', href: '/space-resource-mining-platform', featured: true },
+      { name: 'Zero Trust Network Architecture', href: '/zero-trust-network-architecture', featured: true },
+      { name: 'AI Autonomous Customer Service', href: '/ai-autonomous-customer-service', featured: true },
+      { name: 'Quantum Financial Trading Platform', href: '/quantum-financial-trading-platform', featured: true },
+      { name: 'Intelligent Supply Chain Optimization', href: '/intelligent-supply-chain-optimization' },
+      { name: 'Metaverse AI Development Platform', href: '/metaverse-ai-development-platform' }
+=======
       { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029', featured: true },
       { name: 'Quantum Neural Networks', href: '/quantum-neural-network-platform', featured: true },
       { name: 'Autonomous Business Operations', href: '/autonomous-business-operations-platform', featured: true },
@@ -38,6 +49,7 @@ const footerSections = [
       { name: 'Quantum Internet Security', href: '/quantum-internet-security-platform' },
       { name: 'AI Content Generator', href: '/ai-content-generator' },
       { name: 'Quantum IoT Platform', href: '/quantum-iot-platform' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5d7f
     ]
   },
   {
@@ -323,6 +335,8 @@ const UltraFuturisticFooter2036: React.FC = () => {
                     </Link>
                   ))}
                 </div>
+<<<<<<< HEAD
+=======
                 <div className="flex items-center space-x-3 text-gray-300 hover:text-cyan-400 transition-colors">
                   <Mail className="w-5 h-5" />
                   <a 
@@ -353,6 +367,7 @@ const UltraFuturisticFooter2036: React.FC = () => {
                 </div>
               </div>
             </motion.div>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5d7f
 
                 {/* Social Media Links */}
                 <div className="pt-4">

@@ -1,10 +1,14 @@
 import React, { useEffect, useRef } from 'react';
 
+<<<<<<< HEAD
+const UltraFuturisticBackground2036: React.FC = () => {
+=======
 interface UltraFuturisticBackground2036Props {
   children?: React.ReactNode;
 }
 
 const UltraFuturisticBackground2036: React.FC<UltraFuturisticBackground2036Props> = ({ children }) => {
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5d7f
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -25,10 +29,17 @@ const UltraFuturisticBackground2036: React.FC<UltraFuturisticBackground2036Props
       vy: number;
       size: number;
       color: string;
+<<<<<<< HEAD
+      opacity: number;
+    }> = [];
+
+    // Initialize particles
+=======
       alpha: number;
     }> = [];
 
     // Create particles
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5d7f
     for (let i = 0; i < 100; i++) {
       particles.push({
         x: Math.random() * canvas.width,
@@ -36,8 +47,13 @@ const UltraFuturisticBackground2036: React.FC<UltraFuturisticBackground2036Props
         vx: (Math.random() - 0.5) * 0.5,
         vy: (Math.random() - 0.5) * 0.5,
         size: Math.random() * 2 + 1,
+<<<<<<< HEAD
+        color: ['#00d4ff', '#8b5cf6', '#ec4899', '#3b82f6', '#10b981'][Math.floor(Math.random() * 5)],
+        opacity: Math.random() * 0.5 + 0.1
+=======
         color: ['#00d4ff', '#8b5cf6', '#ec4899', '#3b82f6'][Math.floor(Math.random() * 4)],
         alpha: Math.random() * 0.5 + 0.3
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5d7f
       });
     }
 
@@ -46,7 +62,11 @@ const UltraFuturisticBackground2036: React.FC<UltraFuturisticBackground2036Props
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       // Update and draw particles
+<<<<<<< HEAD
+      particles.forEach(particle => {
+=======
       particles.forEach((particle) => {
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5d7f
         particle.x += particle.vx;
         particle.y += particle.vy;
         particle.life--;
@@ -58,6 +78,33 @@ const UltraFuturisticBackground2036: React.FC<UltraFuturisticBackground2036Props
         if (particle.y > canvas.height) particle.y = 0;
 
         // Draw particle
+<<<<<<< HEAD
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+        ctx.fillStyle = particle.color;
+        ctx.globalAlpha = particle.opacity;
+        ctx.fill();
+
+        // Draw connections
+        particles.forEach(otherParticle => {
+          const distance = Math.sqrt(
+            Math.pow(particle.x - otherParticle.x, 2) + 
+            Math.pow(particle.y - otherParticle.y, 2)
+          );
+          
+          if (distance < 100) {
+            ctx.beginPath();
+            ctx.moveTo(particle.x, particle.y);
+            ctx.lineTo(otherParticle.x, otherParticle.y);
+            ctx.strokeStyle = particle.color;
+            ctx.globalAlpha = (100 - distance) / 100 * 0.1;
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        });
+      });
+
+=======
         ctx.save();
         ctx.globalAlpha = particle.alpha;
         ctx.fillStyle = particle.color;
@@ -88,6 +135,7 @@ const UltraFuturisticBackground2036: React.FC<UltraFuturisticBackground2036Props
         });
       });
 
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5d7f
       requestAnimationFrame(animate);
     };
 
@@ -100,6 +148,14 @@ const UltraFuturisticBackground2036: React.FC<UltraFuturisticBackground2036Props
     };
 
     window.addEventListener('resize', handleResize);
+<<<<<<< HEAD
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return (
+    <>
+      {/* Canvas Background */}
+=======
 
     return () => {
       window.removeEventListener('resize', handleResize);
@@ -109,12 +165,105 @@ const UltraFuturisticBackground2036: React.FC<UltraFuturisticBackground2036Props
   return (
     <div className="relative min-h-screen overflow-hidden">
       {/* Animated Canvas Background */}
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5d7f
       <canvas
         ref={canvasRef}
         className="fixed inset-0 w-full h-full pointer-events-none z-0"
         style={{ background: 'radial-gradient(ellipse at center, rgba(0,0,0,0.8) 0%, rgba(0,0,0,1) 100%)' }}
       />
 
+<<<<<<< HEAD
+      {/* Animated Grid */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-purple-500/5"></div>
+        
+        {/* Animated Grid Lines */}
+        <div className="absolute inset-0 opacity-20">
+          {Array.from({ length: 20 }).map((_, i) => (
+            <motion.div
+              key={`vertical-${i}`}
+              className="absolute top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-cyan-400 to-transparent"
+              style={{ left: `${(i * 100) / 20}%` }}
+              animate={{
+                opacity: [0.2, 0.8, 0.2],
+                scaleY: [0.8, 1, 0.8]
+              }}
+              transition={{
+                duration: 3 + i * 0.2,
+                repeat: Infinity,
+                delay: i * 0.1
+              }}
+            />
+          ))}
+          
+          {Array.from({ length: 15 }).map((_, i) => (
+            <motion.div
+              key={`horizontal-${i}`}
+              className="absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-400 to-transparent"
+              style={{ top: `${(i * 100) / 15}%` }}
+              animate={{
+                opacity: [0.2, 0.8, 0.2],
+                scaleX: [0.8, 1, 0.8]
+              }}
+              transition={{
+                duration: 4 + i * 0.3,
+                repeat: Infinity,
+                delay: i * 0.15
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Floating Geometric Shapes */}
+        <motion.div
+          className="absolute top-20 left-20 w-32 h-32 border border-cyan-400/20 rounded-lg"
+          animate={{
+            rotate: [0, 360],
+            scale: [1, 1.1, 1],
+            opacity: [0.2, 0.4, 0.2]
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        />
+
+        <motion.div
+          className="absolute top-40 right-32 w-24 h-24 border border-purple-400/20 rounded-full"
+          animate={{
+            rotate: [360, 0],
+            scale: [1, 1.2, 1],
+            opacity: [0.2, 0.5, 0.2]
+          }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        />
+
+        <motion.div
+          className="absolute bottom-32 left-32 w-40 h-40 border border-pink-400/20 transform rotate-45"
+          animate={{
+            rotate: [45, 405],
+            scale: [1, 0.9, 1],
+            opacity: [0.2, 0.3, 0.2]
+          }}
+          transition={{
+            duration: 30,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        />
+
+        {/* Additional Floating Elements */}
+        <motion.div
+          className="absolute top-1/3 left-1/4 w-16 h-16 border border-blue-400/20 rounded-full"
+          animate={{
+            y: [0, -20, 0],
+            opacity: [0.1, 0.3, 0.1]
+=======
       {/* Floating Geometric Shapes */}
       <div className="fixed inset-0 pointer-events-none z-10">
         {/* Large floating circles */}
@@ -127,6 +276,7 @@ const UltraFuturisticBackground2036: React.FC<UltraFuturisticBackground2036Props
             y: [0, -30, 0],
             scale: [1, 1.1, 1],
             opacity: [0.2, 0.3, 0.2]
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5d7f
           }}
           transition={{
             duration: 8,
@@ -134,6 +284,14 @@ const UltraFuturisticBackground2036: React.FC<UltraFuturisticBackground2036Props
             ease: "easeInOut"
           }}
         />
+<<<<<<< HEAD
+
+        <motion.div
+          className="absolute top-2/3 right-1/3 w-20 h-20 border border-green-400/20 transform rotate-12"
+          animate={{
+            y: [0, 15, 0],
+            opacity: [0.1, 0.4, 0.1]
+=======
         
         <motion.div
           className="absolute bottom-20 right-20 w-96 h-96 rounded-full opacity-20"
@@ -144,10 +302,14 @@ const UltraFuturisticBackground2036: React.FC<UltraFuturisticBackground2036Props
             y: [0, 30, 0],
             scale: [1, 0.9, 1],
             opacity: [0.2, 0.3, 0.2]
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5d7f
           }}
           transition={{
             duration: 12,
             repeat: Infinity,
+<<<<<<< HEAD
+            ease: "easeInOut"
+=======
             ease: "easeInOut",
             delay: 2
           }}
@@ -209,6 +371,7 @@ const UltraFuturisticBackground2036: React.FC<UltraFuturisticBackground2036Props
             repeat: Infinity,
             ease: "easeInOut",
             delay: 3
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5d7f
           }}
         />
 
@@ -323,6 +486,11 @@ const UltraFuturisticBackground2036: React.FC<UltraFuturisticBackground2036Props
         ))}
       </div>
 
+<<<<<<< HEAD
+      {/* Overlay Gradient */}
+      <div className="fixed inset-0 pointer-events-none z-0 bg-gradient-to-br from-black/80 via-black/60 to-black/80"></div>
+    </>
+=======
       {/* Grid Pattern Overlay */}
       <div className="fixed inset-0 pointer-events-none z-20">
         <div 
@@ -380,6 +548,7 @@ const UltraFuturisticBackground2036: React.FC<UltraFuturisticBackground2036Props
         {children}
       </div>
     </div>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5d7f
   );
 };
 

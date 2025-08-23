@@ -24,6 +24,13 @@
   --neon-orange: #f59e0b;
   --neon-red: #ef4444;
   
+<<<<<<< HEAD
+  /* Animation Durations */
+  --animation-fast: 0.2s;
+  --animation-normal: 0.3s;
+  --animation-slow: 0.5s;
+  --animation-slower: 0.8s;
+=======
   --shadow-cyan: 0 0 20px rgba(0, 212, 255, 0.3);
   --shadow-purple: 0 0 20px rgba(139, 92, 246, 0.3);
   --shadow-pink: 0 0 20px rgba(236, 72, 153, 0.3);
@@ -39,6 +46,7 @@
   --glow-purple: 0 0 20px rgba(139, 92, 246, 0.5);
   --glow-pink: 0 0 20px rgba(236, 72, 153, 0.5);
   --glow-blue: 0 0 20px rgba(59, 130, 246, 0.5);
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5d7f
 }
 
 /* Base Styles */
