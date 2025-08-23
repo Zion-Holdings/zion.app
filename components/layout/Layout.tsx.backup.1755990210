@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import UltraFuturisticNavigation2045 from './UltraFuturisticNavigation2045';
+<<<<<<< HEAD
+import UltraFuturisticFooter2045 from './UltraFuturisticFooter2045';
+=======
 import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-93a0
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraFuturisticBackground2045 from '../backgrounds/UltraFuturisticBackground2045';
 import TopContactBar from './TopContactBar';
@@ -142,15 +146,27 @@ export default function Layout({
       {/* Skip to content link for accessibility */}
       <a href="#main" className="skip-link">Skip to main content</a>
       
+<<<<<<< HEAD
+      {/* Ultra-Futuristic Background 2045 */}
+      <UltraFuturisticBackground2045 
+        intensity="medium" 
+        theme="ultra-futuristic" 
+      />
+=======
       {/* Futuristic Background */}
       <UltraFuturisticBackground2045 theme="consciousness" intensity="medium" />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-93a0
       
       {/* Layout Structure */}
       <div className="relative z-10">
         {/* Top Contact Bar */}
         <TopContactBar />
         
+<<<<<<< HEAD
+        {/* Ultra-Futuristic Navigation 2045 */}
+=======
         {/* Navigation */}
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-93a0
         <UltraFuturisticNavigation2045 />
         
         {/* Sidebar and Main Content */}
