@@ -59,7 +59,7 @@ const navigationItems: NavigationItem[] = [
         featured: true
       },
       { 
-        name: 'Quantum Neural Network 2043', 
+        name: 'Quantum AI Neural Network 2043', 
         href: '/quantum-ai-neural-2043', 
         description: 'Quantum-powered AI neural networks',
         icon: <Atom className="w-4 h-4" />,
@@ -237,6 +237,14 @@ const navigationItems: NavigationItem[] = [
     description: 'Learn about Zion Tech Group',
     category: 'about',
     color: 'from-blue-500 to-indigo-500'
+  },
+  {
+    name: 'Contact',
+    href: '/contact',
+    icon: <Mail className="w-5 h-5" />,
+    description: 'Get in touch with our team',
+    category: 'contact',
+    color: 'from-pink-500 to-purple-500'
   }
 ];
 

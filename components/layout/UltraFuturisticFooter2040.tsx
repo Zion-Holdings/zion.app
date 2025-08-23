@@ -68,14 +68,13 @@ const footerSections = [
     icon: <Target className="w-5 h-5 text-purple-400" />,
     color: 'from-orange-500 to-red-500',
     links: [
-      { name: 'AI Business Intelligence 2043', href: '/ai-business-intelligence-2043' },
-      { name: 'Autonomous Customer Success 2043', href: '/autonomous-customer-success-2043' },
-      { name: 'AI Marketing Automation 2043', href: '/ai-marketing-automation-2043' },
-      { name: 'Autonomous Supply Chain 2043', href: '/autonomous-supply-chain-2043' },
-      { name: 'Autonomous DevOps Platform 2043', href: '/autonomous-devops-2043' },
-      { name: 'Autonomous Data Center 2043', href: '/autonomous-data-center-2043' },
-      { name: 'AI IT Service Management 2043', href: '/ai-itsm-2043' },
-      { name: 'AI Healthcare Platform 2043', href: '/ai-healthcare-platform-2043' }
+      { name: 'About Us', href: '/about' },
+      { name: 'Contact', href: '/contact' },
+      { name: 'Services', href: '/services' },
+      { name: 'Pricing', href: '/pricing' },
+      { name: 'Support', href: '/support' },
+      { name: 'Privacy Policy', href: '/privacy' },
+      { name: 'Terms of Service', href: '/terms' }
     ]
   }
 ];
