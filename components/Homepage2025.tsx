@@ -1,7 +1,99 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback, memo } from 'react';
 import Layout from './layout/Layout';
 import { motion } from 'framer-motion';
 import { ArrowRight, Play, Users, TrendingUp, Brain, Shield, Rocket, Globe, Lock, Cpu, Database, Cloud, BarChart3 } from 'lucide-react';
+
+// Memoized feature components for better performance
+const FeatureCard = memo(({ feature, index }: { feature: any; index: number }) => (
+  <motion.div
+    className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 p-8 cursor-pointer"
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+    viewport={{ once: true, margin: "-50px" }}
+    whileHover={{ y: -10, scale: 1.02 }}
+    onClick={() => window.location.href = feature.href}
+    role="button"
+    tabIndex={0}
+    onKeyDown={(e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        window.location.href = feature.href;
+      }
+    }}
+    aria-label={`Learn more about ${feature.title}`}
+  >
+    <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+    <div className="relative">
+      <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 p-3 mb-6">
+        <feature.icon className="w-full h-full text-white" aria-hidden="true" />
+      </div>
+      <h3 className="text-xl font-semibold text-white mb-4">{feature.title}</h3>
+      <p className="text-gray-300 leading-relaxed">{feature.description}</p>
+      <div className="mt-4 flex items-center text-cyan-400 group-hover:text-cyan-300 transition-colors">
+        <span className="text-sm font-medium">Learn More</span>
+        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+      </div>
+    </div>
+  </motion.div>
+));
+
+FeatureCard.displayName = 'FeatureCard';
+
+// Memoized service card component
+const ServiceCard = memo(({ service, index }: { service: any; index: number }) => (
+  <motion.div
+    className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 cursor-pointer"
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+    viewport={{ once: true, margin: "-50px" }}
+    whileHover={{ y: -5, scale: 1.02 }}
+    onClick={() => window.location.href = service.href}
+    role="button"
+    tabIndex={0}
+    onKeyDown={(e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        window.location.href = service.href;
+      }
+    }}
+    aria-label={`Learn more about ${service.title}`}
+  >
+    <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
+    <div className="relative p-6">
+      <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${service.gradient} p-3 mb-4`}>
+        <service.icon className="w-full h-full text-white" aria-hidden="true" />
+      </div>
+      <h3 className="text-xl font-semibold text-white mb-3">{service.title}</h3>
+      <p className="text-gray-300 leading-relaxed mb-4">{service.description}</p>
+      <div className="flex items-center text-cyan-400 group-hover:text-cyan-300 transition-colors">
+        <span className="text-sm font-medium">Learn More</span>
+        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+      </div>
+    </div>
+  </motion.div>
+));
+
+ServiceCard.displayName = 'ServiceCard';
+
+// Memoized stats component
+const StatsCard = memo(({ stat, index }: { stat: any; index: number }) => (
+  <motion.div
+    className="text-center group"
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+    viewport={{ once: true, margin: "-50px" }}
+    whileHover={{ y: -5 }}
+  >
+    <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+      <stat.icon className="w-8 h-8 text-cyan-400" aria-hidden="true" />
+    </div>
+    <div className="text-3xl md:text-4xl font-bold text-white mb-2">{stat.number}</div>
+    <div className="text-gray-400">{stat.label}</div>
+  </motion.div>
+));
+
+StatsCard.displayName = 'StatsCard';
 
 const Homepage2025: React.FC = () => {
   // Performance optimization: Reduce particle count and use useCallback
@@ -34,6 +126,15 @@ const Homepage2025: React.FC = () => {
   const handleWatchDemo = useCallback(() => {
     window.location.href = '/demo';
   }, []);
+
+  const services = [
+    { icon: Brain, title: "AI & Machine Learning", description: "Advanced AI solutions for enterprise automation", gradient: "from-purple-500 to-pink-500", href: "/ai-services" },
+    { icon: Cpu, title: "Quantum Computing", description: "Next-generation computational power", gradient: "from-cyan-500 to-blue-500", href: "/quantum-computing" },
+    { icon: Shield, title: "Cybersecurity", description: "Military-grade protection for digital assets", gradient: "from-red-500 to-orange-500", href: "/cybersecurity" },
+    { icon: Cloud, title: "Cloud Infrastructure", description: "Scalable cloud solutions for growth", gradient: "from-emerald-500 to-teal-500", href: "/cloud-platform" },
+    { icon: BarChart3, title: "Data Analytics", description: "Transform data into actionable insights", gradient: "from-indigo-500 to-purple-500", href: "/data-analytics" },
+    { icon: Lock, title: "Blockchain Solutions", description: "Secure, transparent digital infrastructure", gradient: "from-yellow-500 to-orange-500", href: "/blockchain" }
+  ];
 
   return (
     <Layout>
@@ -106,14 +207,14 @@ const Homepage2025: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             >
               <button 
-                className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25 focus:outline-none focus:ring-4 focus:ring-cyan-500/50"
+                className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25 focus:outline-none focus:ring-4 focus:ring-cyan-500 focus:ring-opacity-50"
                 onClick={handleGetStarted}
                 aria-label="Get started with Zion Tech Group services"
               >
                 Get Started Today
               </button>
               <button 
-                className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50"
+                className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400 focus:ring-opacity-50"
                 onClick={handleWatchDemo}
                 aria-label="Watch a demo of our services"
               >
@@ -144,21 +245,7 @@ const Homepage2025: React.FC = () => {
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
-                <motion.div
-                  key={index}
-                  className="text-center group"
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  whileHover={{ y: -5 }}
-                >
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <stat.icon className="w-8 h-8 text-cyan-400" aria-hidden="true" />
-                  </div>
-                  <div className="text-3xl md:text-4xl font-bold text-white mb-2">{stat.number}</div>
-                  <div className="text-gray-400">{stat.label}</div>
-                </motion.div>
+                <StatsCard key={index} stat={stat} index={index} />
               ))}
             </div>
           </div>
@@ -184,37 +271,7 @@ const Homepage2025: React.FC = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {features.map((feature, index) => (
-                <motion.div
-                  key={index}
-                  className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 p-8 cursor-pointer"
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  whileHover={{ y: -10, scale: 1.02 }}
-                  onClick={() => window.location.href = feature.href}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                      window.location.href = feature.href;
-                    }
-                  }}
-                  aria-label={`Learn more about ${feature.title}`}
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="relative">
-                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 p-3 mb-6">
-                      <feature.icon className="w-full h-full text-white" aria-hidden="true" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-white mb-4">{feature.title}</h3>
-                    <p className="text-gray-300 leading-relaxed">{feature.description}</p>
-                    <div className="mt-4 flex items-center text-cyan-400 group-hover:text-cyan-300 transition-colors">
-                      <span className="text-sm font-medium">Learn More</span>
-                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </div>
-                </motion.div>
+                <FeatureCard key={index} feature={feature} index={index} />
               ))}
             </div>
           </div>
@@ -239,45 +296,8 @@ const Homepage2025: React.FC = () => {
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                { icon: Brain, title: "AI & Machine Learning", description: "Advanced AI solutions for enterprise automation", gradient: "from-purple-500 to-pink-500", href: "/ai-services" },
-                { icon: Cpu, title: "Quantum Computing", description: "Next-generation computational power", gradient: "from-cyan-500 to-blue-500", href: "/quantum-computing" },
-                { icon: Shield, title: "Cybersecurity", description: "Military-grade protection for digital assets", gradient: "from-red-500 to-orange-500", href: "/cybersecurity" },
-                { icon: Cloud, title: "Cloud Infrastructure", description: "Scalable cloud solutions for growth", gradient: "from-emerald-500 to-teal-500", href: "/cloud-platform" },
-                { icon: BarChart3, title: "Data Analytics", description: "Transform data into actionable insights", gradient: "from-indigo-500 to-purple-500", href: "/data-analytics" },
-                { icon: Lock, title: "Blockchain Solutions", description: "Secure, transparent digital infrastructure", gradient: "from-yellow-500 to-orange-500", href: "/blockchain" }
-              ].map((service, index) => (
-                <motion.div
-                  key={index}
-                  className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 cursor-pointer"
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  whileHover={{ y: -5, scale: 1.02 }}
-                  onClick={() => window.location.href = service.href}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                      window.location.href = service.href;
-                    }
-                  }}
-                  aria-label={`Learn more about ${service.title}`}
-                >
-                  <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
-                  <div className="relative p-6">
-                    <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${service.gradient} p-3 mb-4`}>
-                      <service.icon className="w-full h-full text-white" aria-hidden="true" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-white mb-3">{service.title}</h3>
-                    <p className="text-gray-300 leading-relaxed mb-4">{service.description}</p>
-                    <div className="flex items-center text-cyan-400 group-hover:text-cyan-300 transition-colors">
-                      <span className="text-sm font-medium">Learn More</span>
-                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </div>
-                </motion.div>
+              {services.map((service, index) => (
+                <ServiceCard key={index} service={service} index={index} />
               ))}
             </div>
           </div>
@@ -301,14 +321,14 @@ const Homepage2025: React.FC = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button 
-                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-cyan-500/50"
+                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-cyan-500 focus:ring-opacity-50"
                   onClick={() => window.location.href = '/get-started'}
                   aria-label="Start your journey with Zion Tech Group"
                 >
                   Start Your Journey
                 </button>
                 <button 
-                  className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50"
+                  className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400 focus:ring-opacity-50"
                   onClick={() => window.location.href = '/demo'}
                   aria-label="Schedule a demo of our services"
                 >
