@@ -8,12 +8,22 @@ import {
 } from 'lucide-react';
 import Head from 'next/head';
 
+// Import futuristic components
+import FuturisticAnimatedBackground from './effects/FuturisticAnimatedBackground';
+import UltraFuturisticNavigation2046 from './layout/UltraFuturisticNavigation2046';
+import UltraFuturisticFooter2046 from './layout/UltraFuturisticFooter2046';
+
 // Import our new revolutionary services
 import { revolutionary2044AdvancedMicroSaas } from '../data/revolutionary-2044-advanced-micro-saas';
 import { revolutionary2044ITServices } from '../data/revolutionary-2044-it-services';
 import { revolutionary2044AIServices } from '../data/revolutionary-2044-ai-services';
 import { realPracticalMicroSaasServices2025 } from '../data/2025-real-practical-micro-saas-services';
 import { advancedAIITSpecializedServices2025 } from '../data/2025-advanced-ai-it-specialized-services';
+
+// Import our new innovative services expansion v3
+import { innovativeMicroSaasExpansionV3 } from '../data/2025-innovative-micro-saas-expansion-v3';
+import { innovativeITInfrastructureExpansionV3 } from '../data/2025-innovative-it-infrastructure-expansion-v3';
+import { innovativeAIServicesExpansionV3 } from '../data/2025-innovative-ai-services-expansion-v3';
 
 const EnhancedHomepage2045: React.FC = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -37,7 +47,10 @@ const EnhancedHomepage2045: React.FC = () => {
     ...revolutionary2044ITServices,
     ...revolutionary2044AIServices,
     ...realPracticalMicroSaasServices2025,
-    ...advancedAIITSpecializedServices2025
+    ...advancedAIITSpecializedServices2025,
+    ...innovativeMicroSaasExpansionV3,
+    ...innovativeITInfrastructureExpansionV3,
+    ...innovativeAIServicesExpansionV3
   ];
 
   const categories = [
@@ -90,14 +103,13 @@ const EnhancedHomepage2045: React.FC = () => {
       </Head>
 
       <div className="min-h-screen bg-black text-white overflow-hidden">
-        {/* Animated Background */}
+        {/* Simple Background */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"></div>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(120,119,198,0.3),transparent_50%)]"></div>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,119,198,0.3),transparent_50%)]"></div>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_40%_80%,rgba(120,219,255,0.3),transparent_50%)]"></div>
-          
-          {/* Floating Particles */}
+        </div>
           <div className="absolute inset-0 overflow-hidden">
             {[...Array(50)].map((_, i) => (
               <motion.div
@@ -452,71 +464,8 @@ const EnhancedHomepage2045: React.FC = () => {
           </div>
         </section>
 
-        {/* Footer */}
-        <footer className="relative z-10 bg-black/90 backdrop-blur-xl border-t border-cyan-500/20 py-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-              <div>
-                <div className="flex items-center space-x-2 mb-4">
-                  <div className="w-10 h-10 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center">
-                    <Zap className="w-6 h-6 text-white" />
-                  </div>
-                  <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                    Zion Tech Group
-                  </span>
-                </div>
-                <p className="text-gray-400 mb-4">
-                  Revolutionary technology solutions for the future of business.
-                </p>
-                <div className="flex space-x-4">
-                  <a href="https://linkedin.com/company/ziontechgroup" className="text-gray-400 hover:text-cyan-400 transition-colors">
-                    <Linkedin className="w-5 h-5" />
-                  </a>
-                  <a href="https://twitter.com/ziontechgroup" className="text-gray-400 hover:text-cyan-400 transition-colors">
-                    <Twitter className="w-5 h-5" />
-                  </a>
-                  <a href="https://github.com/ziontechgroup" className="text-gray-400 hover:text-cyan-400 transition-colors">
-                    <Github className="w-5 h-5" />
-                  </a>
-                </div>
-              </div>
-              
-              <div>
-                <h3 className="text-white font-semibold mb-4">Services</h3>
-                <ul className="space-y-2">
-                  <li><a href="/services?category=ai" className="text-gray-400 hover:text-cyan-400 transition-colors">AI & Machine Learning</a></li>
-                  <li><a href="/services?category=quantum" className="text-gray-400 hover:text-cyan-400 transition-colors">Quantum Computing</a></li>
-                  <li><a href="/services?category=cybersecurity" className="text-gray-400 hover:text-cyan-400 transition-colors">Cybersecurity</a></li>
-                  <li><a href="/services?category=it" className="text-gray-400 hover:text-cyan-400 transition-colors">IT Infrastructure</a></li>
-                </ul>
-              </div>
-              
-              <div>
-                <h3 className="text-white font-semibold mb-4">Company</h3>
-                <ul className="space-y-2">
-                  <li><a href="/about" className="text-gray-400 hover:text-cyan-400 transition-colors">About Us</a></li>
-                  <li><a href="/team" className="text-gray-400 hover:text-cyan-400 transition-colors">Our Team</a></li>
-                  <li><a href="/careers" className="text-gray-400 hover:text-cyan-400 transition-colors">Careers</a></li>
-                  <li><a href="/contact" className="text-gray-400 hover:text-cyan-400 transition-colors">Contact</a></li>
-                </ul>
-              </div>
-              
-              <div>
-                <h3 className="text-white font-semibold mb-4">Contact</h3>
-                <div className="space-y-2 text-gray-400">
-                  <p>+1 302 464 0950</p>
-                  <p>kleber@ziontechgroup.com</p>
-                  <p>364 E Main St STE 1008<br />Middletown DE 19709</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-              <p>&copy; 2025 Zion Tech Group. All rights reserved.</p>
-            </div>
-          </div>
-        </footer>
-      </div>
+        {/* Enhanced Footer */}
+        <UltraFuturisticFooter2046 />
     </>
   );
 };
