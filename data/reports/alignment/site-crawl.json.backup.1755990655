@@ -24,6 +24,9 @@
     "url": "https://ziontechgroup.com/products"
   },
   {
+<<<<<<< HEAD
+    "url": "https://ziontechgroup.netlify.app/#"
+=======
     "url": "https://ziontechgroup.com/blog"
   },
   {
@@ -43,5 +46,6 @@
   },
   {
     "url": "https://ziontechgroup.com/talent/lena-mueller"
+>>>>>>> origin/cursor/automated-project-verification-and-merge-af4c
   }
 ]
