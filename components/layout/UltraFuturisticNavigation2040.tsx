@@ -23,7 +23,9 @@ import {
   BookOpen,
   FileText,
   Video,
-  Code
+  Code,
+  Cpu,
+  Star
 } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -59,42 +61,110 @@ const navigationItems: NavigationItem[] = [
     neonColor: 'shadow-blue-400/50',
     children: [
       {
-        label: 'AI & Machine Learning',
-        href: '/services?category=ai-ml',
+        label: 'AI & Consciousness 2045',
+        href: '/ai-consciousness-evolution-2045',
         icon: <Brain className="w-4 h-4" />,
-        description: 'Advanced AI solutions for enterprise',
+        description: 'Next-generation AI consciousness',
         featured: true,
         neonColor: 'shadow-purple-400/50'
       },
       {
-        label: 'Quantum Computing',
-        href: '/services?category=quantum',
+        label: 'Quantum Neural Networks 2045',
+        href: '/quantum-neural-network-platform-2045',
         icon: <Atom className="w-4 h-4" />,
-        description: 'Next-generation quantum solutions',
+        description: 'Quantum-powered AI with consciousness',
         featured: true,
         neonColor: 'shadow-blue-400/50'
       },
       {
-        label: 'Space Technology',
-        href: '/services?category=space-tech',
+        label: 'Space Resource Intelligence 2045',
+        href: '/space-resource-intelligence-2045',
         icon: <Rocket className="w-4 h-4" />,
-        description: 'Innovative space tech applications',
+        description: 'AI-powered space exploration',
         featured: true,
         neonColor: 'shadow-pink-400/50'
       },
       {
-        label: 'Cybersecurity',
-        href: '/services?category=cybersecurity',
+        label: 'Quantum Cybersecurity 2045',
+        href: '/quantum-cybersecurity-platform-2045',
         icon: <Shield className="w-4 h-4" />,
-        description: 'Advanced security solutions',
+        description: 'Quantum-resistant security',
         neonColor: 'shadow-red-400/50'
       },
       {
-        label: 'Cloud Infrastructure',
-        href: '/services?category=cloud',
+        label: 'Autonomous Business Intelligence 2045',
+        href: '/ai-autonomous-business-intelligence-2045',
+        icon: <Cpu className="w-4 h-4" />,
+        description: 'Fully autonomous AI business intelligence',
+        neonColor: 'shadow-emerald-400/50'
+      },
+      {
+        label: 'Quantum Cloud Infrastructure 2045',
+        href: '/quantum-cloud-infrastructure-2045',
         icon: <Cloud className="w-4 h-4" />,
-        description: 'Scalable cloud solutions',
+        description: 'Quantum-powered cloud solutions',
         neonColor: 'shadow-indigo-400/50'
+      },
+      {
+        label: 'View All Services',
+        href: '/revolutionary-2045-pricing-showcase',
+        icon: <Star className="w-4 h-4" />,
+        description: 'Complete service catalog',
+        neonColor: 'shadow-yellow-400/50'
+      }
+    ]
+  },
+  {
+    label: 'Revolutionary 2045',
+    href: '/revolutionary-2045-pricing-showcase',
+    icon: <Star className="w-4 h-4" />,
+    description: 'Cutting-edge 2045 technology solutions',
+    badge: 'BREAKTHROUGH',
+    neonColor: 'shadow-purple-400/50',
+    children: [
+      {
+        label: 'AI Consciousness Evolution',
+        href: '/ai-consciousness-evolution-2045',
+        icon: <Brain className="w-4 h-4" />,
+        description: 'Next-generation AI consciousness',
+        featured: true,
+        neonColor: 'shadow-purple-400/50'
+      },
+      {
+        label: 'Quantum AI Fusion',
+        href: '/quantum-ai-fusion-2045',
+        icon: <Atom className="w-4 h-4" />,
+        description: 'Quantum computing meets AI consciousness',
+        featured: true,
+        neonColor: 'shadow-blue-400/50'
+      },
+      {
+        label: 'Space Resource Intelligence',
+        href: '/space-resource-intelligence-2045',
+        icon: <Rocket className="w-4 h-4" />,
+        description: 'AI-powered space exploration',
+        neonColor: 'shadow-pink-400/50'
+      },
+      {
+        label: 'Autonomous DevOps Platform',
+        href: '/autonomous-devops-platform-2045',
+        icon: <Code className="w-4 h-4" />,
+        description: 'Fully autonomous DevOps operations',
+        neonColor: 'shadow-emerald-400/50'
+      },
+      {
+        label: 'Quantum Network Security',
+        href: '/quantum-network-security-2045',
+        icon: <Shield className="w-4 h-4" />,
+        description: 'Quantum-resistant network security',
+        neonColor: 'shadow-red-400/50'
+      },
+      {
+        label: 'View All Revolutionary Services',
+        href: '/revolutionary-2045-pricing-showcase',
+        icon: <Star className="w-4 h-4" />,
+        description: 'Complete revolutionary service catalog',
+        neonColor: 'shadow-yellow-400/50'
       }
     ]
   },
