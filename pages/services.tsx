@@ -42,6 +42,10 @@ import { innovative2025MicroSaasExpansion } from '../data/innovative-2025-micro-
 import { innovative2025ITSolutionsExpansion } from '../data/innovative-2025-it-solutions-expansion';
 import { innovative2025AIServicesExpansion } from '../data/innovative-2025-ai-services-expansion';
 
+// Import our new 2025 Q4 innovative services
+import { innovative2025Q4NewServices } from '../data/innovative-2025-q4-new-services';
+import { advancedITInfrastructureServices2025 } from '../data/advanced-it-infrastructure-services-2025';
+import { comprehensiveServicesAdvertising2025 } from '../data/comprehensive-services-advertising-2025';
 // Import our new 2025 innovative services expansion v2
 import { innovative2025MicroSaasExpansionV2 } from '../data/2025-innovative-micro-saas-expansion-v2';
 import { innovative2025ITServicesExpansionV2 } from '../data/2025-innovative-it-services-expansion-v2';
@@ -103,6 +107,9 @@ const allServices = [
   ...realOperationalServices,
   ...marketReadyServices,
   ...marketValidatedServices,
+  // Our new 2025 Q4 innovative services
+  ...innovative2025Q4NewServices,
+  ...advancedITInfrastructureServices2025,
   ...industryRealServices,
   ...real2025Q4AugmentedBatch,
   ...real2029Q3Additions,
@@ -139,6 +146,10 @@ const allServices = [
   ...innovative2025MicroSaasExpansion,
   ...innovative2025ITSolutionsExpansion,
   ...innovative2025AIServicesExpansion,
+  // Our new 2025 Q4 innovative services
+  ...innovative2025Q4NewServices,
+  ...advancedITInfrastructureServices2025,
+  ...comprehensiveServicesAdvertising2025,
   // Our new 2025 innovative services expansion v2
   ...innovative2025MicroSaasExpansionV2,
   ...innovative2025ITServicesExpansionV2,
